@@ -1,0 +1,399 @@
+# RiboDiPA R package
+
+#### Keren Li, Matthew Hope, Xiaozhong A. Wang, Ji-Ping Wang
+
+#### 2025-10-30
+
+* [What is RiboDiPA?](#what-is-ribodipa)
+* [RiboDiPA pipeline](#ribodipa-pipeline)
+* [Installation](#installation)
+* [Input files](#input-files)
+* [RiboDiPA main features](#ribodipa-main-features)
+* [The RiboDiPA pipeline](#the-ribodipa-pipeline)
+  + [0. Ribo-DiPA Wrapper Function](#ribo-dipa-wrapper-function)
+  + [1. P-site mapping](#p-site-mapping)
+  + [2. Data binning](#data-binning)
+  + [3. Differential pattern analysis](#differential-pattern-analysis)
+  + [4. Plotting and genome visualization](#plotting-and-genome-visualization)
+  + [Conclusion](#conclusion)
+* [Session info](#session-info)
+
+#### Maintainer: Ji-Ping Wang, <jzwang@northwestern.edu>
+
+**Reference for Method**: Li K., Hope C.M., Wang X.A., Wang J.-P. (2020) “RiboDiPA: A novel tool for differential pattern analysis in Ribo-seq data.” *Nucleic Acid Research*, 2020,48(21), gkaa1049, <https://doi.org/10.1093>
+
+## What is RiboDiPA?
+
+Ribosome profiling (also known as Ribo-seq) is a next-generation sequencing technique to investigate the translational activities of ribosomes across a wide variety of contexts. Ribo-seq data not only provide the abundance of ribosomes bound to transcripts in the form of counts of ribosome protected fragments (RPFs), but also positional information across transcripts that could be indicative of differences in translational regulation.
+
+**RiboDiPA**, short for **Ribo**some **Di**ferential **P**attern **A**nalysis, is a bioinformatics pipeline developed for analysis of the pattern of Ribo-seq footprint data. RiboDiPA is released as an R package to support statistical inference of translational differences between conditions. Briefly, this involves mapping Ribo-seq data to P-site counts along a total transcript of a gene, followed by binning these counts and performing bin-wise and gene-wise statistical testing for differential patterns.
+
+## RiboDiPA pipeline
+
+RiboDiPA is an R package that utilizes parallel computing functionality with some core functions written in C++, released as part of the Bioconductor suite of tools.
+
+## Installation
+
+```
+if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("RiboDiPA")
+```
+
+## Input files
+
+1. Ribo-seq alignment files (BAM), one per sample.
+2. Gene Transfer Format (GTF) file for the reference genome of interest.
+
+## RiboDiPA main features
+
+The RiboDiPA R package executes four major functions to perform differential pattern analysis of Ribo-seq data, with optional visualization of results. An overview of the process can be seen in Figure 1:
+
+![](data:image/png;base64...)
+
+Figure 1
+
+1. **GTF file parsing and exon merging**: For a given gene, all exons annotated in the GTF file are merged into a total transcript. This provides a global picture of changes across conditions for a gene, as the total transcript will capture changes in ribosome occupancy even when transcript isoform usage might change across conditions.
+2. **BAM file processing and P-site mapping**: The Ribo-seq alignment files (.bam) are processed to calculate the P-site position for each RPF, with adaptable rules that users’ can specify to call P-sites from the data. The mapped P-site frequency at each nucleotide position along the total transcript is compiled for each gene of each sample.
+3. **Data binning**: To overcome the inherent sparseness of Ribo-seq data, P-site positions are merged into bins using one of three methods: 1) an adaptive bin-width method that varies by gene, based on the Freedman-Diaconis rule 2) a fixed bin width method (as small as a single codon) that the user may specify, or 3) binning by exon, using boundaries specified in the GTF file.
+4. **Differential pattern analysis**: Pattern analysis of genes is performed on binned data for a given gene, comparing bin by bin across conditions to identify regions with statistically significant differences. The results of this testing are output as \(p\)-values and \(q\)-values for each gene. Additionally, a supplementary statistic, the \(T\)-value, is also produced to identify genes with a larger changes across conditions among significant genes, and is calculated based on a singular value decomposition procedure. \(T\)-value is intended to account for both the magnitude and number of differential bins, thus providing a way to prioritize subsets of significant genes for further investigation.
+
+Optionally: **Visualization of Ribo-seq footprints**: RiboDiPA also provides functionality for the visualization of mapped P-site frequency data for a given gene, as well as the binned data directly used for testing, with significantly different bins marked.
+
+## The RiboDiPA pipeline
+
+The following vignette is intended to provide a walkthrough for running the RiboDiPA R package, pointing out both the main workflow and optional functionality for users. It presumes that you have successfully installed RiboDiPA package from Bioconductor.
+
+The data provided for the purposes of the vignette are adapted from Kasari et al, and represent a high-quality dataset collected in yeast. These data compare wild type cells to cells depleted for New1, which was shown by the authors to be a regulator involved in translation termination. As is often the case for data included in vignettes, the provided files are subsets of the full data set, and are intended to illustrate the functionality of RiboDiPA. We note that a typical full-scale analysis of real data for most users will be computing intensive. The computing time depends upon the number of samples, the sequencing depth of the samples, and the complexity of the organism, in terms of number of genes and exons. For example, the total computing time of the wild type versus New1 comparison (4 samples) on a 20-core node is about 10 minutes. RiboDiPA utilizes the parallel computing functionality of R and automatically detects the number of cores available to run jobs in parallel and improve performance. While a personal computer is more than sufficient for the illustration purposes of this vignette, for optimal performance with real data, we recommend that users run RiboDiPA on a server or computing cluster.
+
+### 0. Ribo-DiPA Wrapper Function
+
+For users’ convenience, we have provided a wrapper function to permit execution of the Ribo-DiPA pipeline, which minimally requires a GTF file and BAM files, separated by experiment and replicate.
+
+```
+## Download sample files from GitHub
+library(BiocFileCache)
+file_names <- c("WT1.bam", "WT2.bam", "MUT1.bam", "MUT2.bam", "eg.gtf")
+url <- "https://github.com/jipingw/RiboDiPA-data/raw/master/"
+bfc <- BiocFileCache()
+bam_path <- bfcrpath(bfc,paste0(url,file_names))
+```
+
+This will produce a list of four BAM files: WT1.bam, WT2.bam, MUT1.bam, and MUT2.bam, which represent two biological replicates each of wild type cells and New1 mutant cells, respectively. These BAM files were subset on the interval chrIV:553,166-581,762 using samtools, which is a roughly 30kb region that contains 16 genes. Alternatively, users can declare the names of their BAM files directly in a vector.
+
+We recommend that users utilize the identical GTF file used to produce the experimental alignments. For example, a GTF file sourced from Ensembl will not work with BAM files aligned with a GTF file sourced from UCSC. The GTF file, “eg.gtf”, provided in the package is adapted from Ensembl, Saccharomyces cerevisiae release R64-1-1, and only contains features on chromosome IV. Users may also declare their GTF file directly.
+
+```
+## Make the class label for the experiment
+classlabel <- data.frame(
+    condition = c("mutant", "mutant", "wildtype", "wildtype"),
+    comparison = c(2, 2, 1, 1)
+)
+rownames(classlabel) <- c("mutant1","mutant2","wildtype1","wildtype2")
+```
+
+The class label determines the comparison performed by RiboDiPA, and minimally requires a column named `comparison` which labels the reference condition “1” and the treatment condition “2”, with the option of including conditions that should not be compared labeled with “0”. In this case “wildtype” represents the reference condition, and “mutant” represents the treatment.
+
+```
+## Run the RiboDiPA pipeline with default parameters
+result.wrp <- RiboDiPA(bam_path[1:4], bam_path[5], classlabel, cores = 2)
+```
+
+The `RiboDiPA()` function is a wrapper function that calls all other necessary functions in the package. The default approaches for this wrapper are to do automatic generation of P-site offsets and adaptive binning of the mapped P-sites, although all parameters available in the other functions of the package are available to be modified in the wrapper.
+
+The argument `cores` specifies the number of CPU cores to be used in the calculation. The user should replace it by the maximum number of available cores for maximum computing efficiency (or leave it unspeficied, in which case, the number of cores is set to the value of `detectCores(logical = FALSE)`).
+
+```
+## View the table of output from RiboDiPA
+head(result.wrp$gene[order(result.wrp$gene$qvalue), ])
+#>               tvalue       pvalue       qvalue
+#> YDR050C 7.135543e-02 1.788608e-18 1.413000e-16
+#> YDR064W 6.267031e-02 6.599787e-07 2.606916e-05
+#> YDR062W 4.701957e-02 3.167373e-02 8.340748e-01
+#> YDR059C 1.646677e-01 1.259123e-01 1.000000e+00
+#> YDL019C 4.576056e-05 1.837478e-01 1.000000e+00
+#> YDR143C 9.665726e-03 3.227685e-01 1.000000e+00
+```
+
+The `RiboDiPA()` function outputs a list of genes with their \(T\)-value, \(p\)-value, and adjusted \(p\)-values indicated, stored in the value `gene`, along with other intermediate data objects used in the calculation. In most cases, we expect that users will sort by the adjusted \(p\)-value in order to see the most significant genes genome-wide, which we show above. Genes YDR049-YDR065 are located within the interval selected for this vignette, and we can clearly see highly significant gene hits with TPI1 and RPS13 (YDR050C and YDR064W, respectively), with \(q\)-values of 1.41e-16 and 2.61e-05.
+
+In subsequent sections we will walk through the corresponding functions in more detail.
+
+### 1. P-site mapping
+
+A P-site is the exact position on mRNA that has been translated by the ribosome, where the growing nascent chain of the polypeptide (covalently attached to tRNA) is located. In practice, RPFs that have been aligned to the genome have different lengths, therefore a procedure is required to map a given RPF to a P-site position to get a clear picture of ribosome translational activity.
+
+The `psiteMapping()` function will take the input data, and use user-specified rules to map RPFs to P-sites, or generate those rules automatically using the procedure described in Lauria et al (2018). Additionally, if there are multiple transcript isoforms in a sample that utilize the same exon in the genome, in can be difficult (or impossible) to assign a given RPF to a particular transcript in a Ribo-seq experiment. RiboDiPA circumvents this problem by combining all exons into a “total transcript” and performs testing at the gene level. Therefore, in addition to the P-site offset generation and mapping, the `psiteMapping()` function also generates total transcript coordinates for each exon.
+
+```
+## Perform individual P-site mapping procedure
+data.psite <- psiteMapping(bam_file_list = bam_path[1:4],
+    gtf_file = bam_path[5], psite.mapping = "auto", cores = 2)
+```
+
+P-site mapping outputs a list of values: `coverage`, the coverage across each gene; `counts`, the number of P-sites counts per gene; `exons`, the total transcript coordinates and genomic coordinates for each exon in the genome; and `psite.mapping`, the P-site mapping offsets. For the `coverage` object, rows correspond to replicates and columns correspond to nucleotide positions with respect to the total transcript. Similarly, for the `counts` object, rows represent genes and columns represent samples. Now, let us examine the offsets generated automatically by the function:
+
+```
+## P-site mapping offset rule generated
+data.psite$psite.mapping
+```
+
+The read length of the RPF is listed (`qwidth`), followed by the nucleotide offset from the 5’ end (`psite`). For instance, reads of length 28 have an offset of 12, meaning that the P-site will be mapped 12 nucleotides from the 5’ end of the read.
+
+As mentioned above, the optimal P-site offsets from the 5’ end of reads is calibrated using a two-step algorithm on start codons genome-wide, closely following the procedure of Lauria et al (2018). First, for a given read length, the offset is calculated by taking the distance between the first nucleotide of the start codon and the 5’ most nucleotide of the read, and then defining the offset as the 5’ position with the most reads mapped to it. This process is repeated for all read lengths and then the temporary global offset is defined to be the offset of the read length with the maximum count. Lastly, for each read length, the adjusted offset is defined to be the one corresponding to the local maximum found in the profiles of the start codons closest to the temporary global offset.
+
+In case of insufficient reads mapped to the start codons, we recommend users to use the `center` option to take the center of the read as the P-site, or to provide their own offset rules by simply using a matrix with two columns, labeled `qwidth` and `psite`, passed into the `psite.mapping` parameter of the `psiteMapping()` function. We note that specifying fixed rules for the P-site offsets might be especially useful when comparing across different experiments collected in the same organism, to insure consistency in the comparison.
+
+```
+## Use user specified psite mapping offset rule
+offsets <- cbind(qwidth = c(28, 29, 30, 31, 32),
+    psite = c(18, 18, 18, 19, 19))
+data.psite2 <- psiteMapping(bam_path[1:4], bam_path[5],
+    psite.mapping = offsets, cores = 2)
+```
+
+Lastly, the `psiteMapping()` function uses the parallel computing package doParallel to speed up the process of mapping P-sites. To utilize this feature, specify the number of cores available for the job using the `cores` parameter. If `cores` is not specified, this function will automatically detect the number of cores on your computer to run jobs in parallel.
+
+### 2. Data binning
+
+Once reads have been mapped to P-sites in the various experiments, the next step is to bin mapped P-sites together to permit statistical testing. The smallest bin one could imagine is a single-codon (three nucleotides) which would provide the highest resolution of binning, but entails some practical problems. For instance, very long genes will have more codons, therefore after correction for multiple hypothesis testing, only the most pronounced perturbations would show statistical significance at large genes. Alternatively, the largest bin imaginable is to use an entire gene as one bin, although positional information across the gene will be lost. Therefore, a robust method to choose the right bin size per gene to permit discovery is needed, which is the essence of the RiboDiPA adaptive binning method.
+
+The adaptive method uses a procedure based on the Freedman-Diaconisis rule to pick an optimal number of bins of equal width for each gene, where different genes will have different bin widths, but the positions and number of bins for a gene will be the same across replicates and conditions to permit testing.
+
+```
+## Merge the P-site data into bins with a fixed or an adaptive width
+data.binned <- dataBinning(data = data.psite$coverage, bin.width = 0,
+    zero.omit = FALSE, bin.from.5UTR = TRUE, cores = 2)
+```
+
+The function `dataBinning()` returns a list of binned P-site footprint matrices. In each matrix, rows correspond to replicates, and columns correspond to bins. If the parameter `bin.width` is not specified or set to zero, this indicates that the function will run in the adaptive binning mode (as opposed to fixed-width mode, see below). In general, we recommend to use adaptive binning, due to the fact that most Ribo-seq experiments are sparse and have few numbers of reads, on a per codon basis.
+
+If the `zero.omit` argument is set to `TRUE`, bins with all zeros across all replicates are removed from the differential pattern analysis. When the length of total transcript is not an integer multiple of the bin width, binning will start from the 5’ end if `bin.from.5UTR` argument is `TRUE`, or from the 3’ end otherwise. In general, bin width is equal for every bin across the total transcript, except for the last two bins, which are adjusted to prevent the last bin from being very small in the case where the bin width does not divide the total transcript length evenly.
+
+```
+## Merge the P-site data on each codon
+data.codon <- dataBinning(data = data.psite$coverage, bin.width = 1,
+    zero.omit = FALSE, bin.from.5UTR = TRUE, cores = 2)
+```
+
+In cases where coverage permits, users can also specify a fixed width of bin, all the way down to 1, which represents single-codon resolution. This can be useful for examining details at regions that are very likely to have changes in translational regulation, namely near the start and stop codons. For instance, we examined 50 codons upstream and downstream of the stop and start codons respectively to identify a patterns of stacked ribosomes near the stop codon in the case of New1 deletion (see Li et al, 2020).
+
+```
+## Merge the P-site data on each exon and perform differential pattern analysis
+result.exon <- diffPatternTestExon(psitemap = data.psite,
+    classlabel = classlabel, method = c('gtxr', 'qvalue'))
+```
+
+In cases where users would prefer to use exons as the bins for statistical testing, we have provided a function called `diffPatternTestExon()`. This function rolls data binning and differential pattern testing into one function and outputs the same structure qw `diffPatternTest()` function. For organisms like yeast where alternative splicing is minimal, this option may not be very useful, but for higher organisms with many exons and much more alternative splicing, it may provide useful insight.
+
+### 3. Differential pattern analysis
+
+Once appropriate bins have been generated, the RiboDiPA package performs differential pattern testing on P-site counts bin by bin for each gene. Briefly, counts are modeled by a negative binomial distribution to call bins with statistically significant differences across conditions, and then the smallest p-value for a given gene is adjusted to control for multiple hypothesis testing across all genes.
+
+```
+## Perform differential pattern analysis
+result.pst <- diffPatternTest(data = data.binned,
+    classlabel = classlabel, method=c('gtxr', 'qvalue'))
+```
+
+The `diffPatternTest()` function takes the output from data binning as input, and also requires a class label object, describing the comparison to be made. The class label object is simply a data frame with two columns, `condition` and `comparison`, where `condition` labels the conditions tested, and `comparison` labels the experimental conditions numerically, where “1” indicates the control condition, “2” indicates the treatment condition, and “0” indicates replicates that should not be compared, if present.
+
+The output of this function is a list that contains a data frame object `gene` as well as other objects that store intermediate calculations. `gene` contains gene-level \(T\)-value, \(p\)-value, and \(q\)-value (if \(q\)-value is specified as the metric for multiple comparison error correction) of all genes. The `bin` object contains bin-level test \(p\)-value and corresponding adjusted \(p\)-value for each bin of each gene.
+
+\(T\)-value, bin-level \(p\)-value, and bin-level adjusted \(p\)-value and gene-level adjusted \(p\)-value and \(q\)-value (in this case measured by the qvalue) of all genes. The gene-level \(p\)-value and \(q\)-value are the main result of the testing, and therefore the main output of the package.
+
+Additionally, the \(T\)-value is a supplementary statistic that quantifies the magnitude of difference between conditions, with larger numbers indicating a greater difference. The \(T\)-value is defined to be 1-cosine of the angle between the first right singular vectors of the footprint matrices of the two conditions under comparison. It ranges from 0-1, with larger values representing larger differences between conditions, and practically speaking, can be used to identify genes with larger magnitude of pattern difference beyond statistical significance. This might be helpful to investigators to prioritize certain genes for investigation among many that may pass the significance test for differential pattern.
+
+Optionally, users may specify which method to use for correction of type I error for multiple hypothesis testing. The \(q\)-value method from `qvalue` package is the default method of FDR control at the gene-level, and the hybrid Hochberg-Hommel method `gtxr` from `elitism` pacakge is the default method of multiplicity correction at bin-level. Other options defined by the package `elitism` is invoked by the option to the parameter method.
+
+### 4. Plotting and genome visualization
+
+RiboDiPA implemented two plot functions for visualizing the footprint data and test results including :1) individual gene plotting in the landscape of total transcript; and 2) track plotting through genome browser using R package `igvR`.
+
+##### Individual gene plotting
+
+The individual gene plotting is implemented with the package `ggplot2`. Two plotting functions, `plotTrack()` and `plotTest()`, are provided, with the former for mapped P-site plotting and the latter for binned data that are generated from the mapped P-sites.
+
+The `plotTrack()` function visualizes reads mapped to P-site positions on a per gene basis. The input argument `data` is the output object of `psiteMapping()` or the `psiteMapping()` output object from the wrapper `RiboDiPA()` function (i.e., `result.wrp$data.psite` from the example codes above). The counts of RPFs mapped to P-sites is shown on the y-axis, while the total transcript in nucleotides is shown on the x-axis.
+
+```
+## Plot ribosome per nucleotide tracks of specified genes.
+plotTrack(data = data.psite, genes.list = c("YDR050C", "YDR064W"),
+    replicates = NULL, exons = FALSE)
+```
+
+![](data:image/png;base64...)![](data:image/png;base64...)
+
+`plotTrack()` always shows the total transcript with the 5’ end on the left and the 3’ end on the right with the corresponding genomic coordinates of the start codon and stop codon labelled. User can specify one or more genes to be plotted at a time. If the exons argument is set to `TRUE`, RPFs per exon of the specified genes are also ouput.
+
+```
+## Plot binned ribosome tracks of siginificant genes: YDR086C and YDR210W.
+## you can specify the thrshold to redefine the significant level
+plotTest(result = result.pst, genes.list = NULL, threshold = 0.05)
+```
+
+![](data:image/png;base64...)![](data:image/png;base64...)
+
+The `plotTest()` plots the binned RPF footprint used in the differential pattern testing. The input argument `result` for `plotTest()` is the entire output object of `diffPatternTest()` or `diffPatternTestExon()` or `RiboDiPA()` function. For replicates marked as “1” in `classlabel` (see `diffPatternTest()` function), the tracks are colored blue and replicates marked as “2” are colored red. Differential bins are colored black, with bin-level adjusted \(p\)-value annotated underneath the the track of the last replicate. If `genes.list` is not specified, all genes with significant differential pattern will be output.
+
+Lastly, the threshold parameter allows users to specify a threshold of signifance level for seleciton of significant genes. A threshold value of 0.05 will only plot genes with \(q\)-value less than or equal to 0.05.
+
+##### Track plotting via genome browser
+
+Three functions, `bpTrack()`, `binTrack()`, and `exonTrack()`, are provided to support the track plotting through genome browser by utilizing `igvR`. The uses can examine the ribosome footprint in the genomic landscape and the differential pattern test results. All three functions output `GRanges` objects as input of `igvR` for track visualization, respectively, RPF in base pair, binned RPF from `diffPatternTest()` with differential pattern test results, and RPF by exons with test results.
+
+To visualize these tracks in genome browser, users should install `igvR` through Bioconductor. Some simple illustration examples are given below.
+
+```
+##base-bair RPF track
+library(igvR)
+thred <- 0.05
+igv <- igvR()
+setBrowserWindowTitle(igv, "ribosome footprint track example")
+setGenome(igv, "saccer3")
+
+data(data.psite)
+names.rep <- c("mutant1", "mutant2", "wildtype1", "wildtype2")
+tracks.bp <- bpTrack(data = data.psite, names.rep = names.rep,
+    genes.list = c("YDR050C", "YDR062W", "YDR064W"))
+
+for(track.name in names.rep){
+    track.rep <- tracks.bp[[track.name]]
+    track <- GRangesQuantitativeTrack(trackName = paste(track.name, "bp"),
+        track.rep[,1], color = "green")
+    displayTrack(igv, track)
+}}
+```
+
+```
+## bin track and test results
+data(result.pst)
+data(data.psite)
+tracks.bin <- binTrack(data = result.pst, exon.anno = data.psite$exons)
+
+for(track.name in names(tracks.bin)){
+    track.rep <- tracks.bin[[track.name]]
+    resize(track.rep, width(track.rep) + 1)
+    track <- GRangesQuantitativeTrack(trackName = paste(track.name, "binned"),
+        track.rep[,1], color = "black")
+    displayTrack(igv, track)
+}
+
+track.rep2 <- tracks.bin[[1]]
+sig.bin <- (values(track.rep2)[,5] <= thred)
+log10.padj <- - log10(values(track.rep2)[,5])
+mcols(track.rep2) <- data.frame(log10padj = log10.padj)
+track.rep2 <- track.rep2[which(sig.bin),]
+track <- GRangesQuantitativeTrack(trackName = "- log 10 of padj",
+    track.rep2, color = "red", trackHeight = 40)
+displayTrack(igv, track)
+```
+
+The first input argument of `bpTrack()`, `data`, is the output object of `psiteMapping()` or `RiboDiPA()` function. If the replicate names `names.rep` is not specified, column names of `data$counts` will be used as track label on `igvR` visualization. Also, if a list of genes for visualization is not provided, then all genes listed in `data$coverage` will be plotted.
+
+The function `binTrack()` uses the output object of `diffPatterbTest()` or `RiboDiPA()` function for the argument `data`, and the value `exons` of `psiteMapping()` function output for the argument `exon.anno`. Besides of ribosome binned tracks, differential pattern test results is also reported in the value of `binTrack()`. In Figure 2, a both base-pair RPF track and binned track are shown through `igvR`. The green bars are the ribosome tracks per bp, the black bars are the binned tracks, while red bars are plotted at significant bins (i.e., adjusted bin-level p-value \(\leq 0.05\)), with \(-\log\_{10}\) of adjusted p-value also plotted.
+
+![Figure 2: igvR genome browser tracks](data:image/png;base64... "fig:")
+
+```
+## bin track and test results
+igv2 <- igvR()
+setBrowserWindowTitle(igv2, "ribosome footprint per exon example")
+setGenome(igv2, "saccer3")
+data(result.exon)
+tracks.exon <- exonTrack(data = result.exon, gene = "tY(GUA)D")
+for(track.name in names(tracks.exon)){
+    track.rep <- tracks.exon[[track.name]]
+    for(tx.name in names(track.rep)){
+        track.tx <- tracks.exon[[track.name]][[tx.name]]
+        track <- GRangesQuantitativeTrack(trackName =
+            paste(track.name, tx.name), track.tx[,1], color = track.name)
+        displayTrack(igv2, track)
+    }
+}
+```
+
+For higher organisms, where exons are used as the bins for statistical testing through the function `diffPatternTestExon()`, `exonTrack()` is the proper function to output tracks for visualization purpose. It outputs a list of lists. Each element is a list of `GRanges` objects representing replicates, and each second level list element is exon-level P-site footprint counts in a transcript.
+
+The argument `data` uses the output object of `diffPatternTestExon()`. The second argument `gene` requires a single gene name to be plotted, since different genes may have different number of transcripts.
+
+### Conclusion
+
+This concludes our vignette. For additional information, please consult the reference manual for each individual function, as well as the associated paper for this package for methodological details (Li et al, 2020).
+
+## Session info
+
+```
+sessionInfo()
+#> R version 4.5.1 Patched (2025-08-23 r88802)
+#> Platform: x86_64-pc-linux-gnu
+#> Running under: Ubuntu 24.04.3 LTS
+#>
+#> Matrix products: default
+#> BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+#> LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+#>
+#> locale:
+#>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+#>  [3] LC_TIME=en_GB              LC_COLLATE=C
+#>  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+#>  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+#>  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+#> [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+#>
+#> time zone: America/New_York
+#> tzcode source: system (glibc)
+#>
+#> attached base packages:
+#> [1] stats4    stats     graphics  grDevices utils     datasets  methods
+#> [8] base
+#>
+#> other attached packages:
+#>  [1] BiocFileCache_3.0.0         dbplyr_2.5.1
+#>  [3] RiboDiPA_1.18.0             GenomicAlignments_1.46.0
+#>  [5] SummarizedExperiment_1.40.0 MatrixGenerics_1.22.0
+#>  [7] matrixStats_1.5.0           GenomicFeatures_1.62.0
+#>  [9] AnnotationDbi_1.72.0        Biobase_2.70.0
+#> [11] Rsamtools_2.26.0            Biostrings_2.78.0
+#> [13] XVector_0.50.0              GenomicRanges_1.62.0
+#> [15] IRanges_2.44.0              S4Vectors_0.48.0
+#> [17] Seqinfo_1.0.0               BiocGenerics_0.56.0
+#> [19] generics_0.1.4
+#>
+#> loaded via a namespace (and not attached):
+#>   [1] DBI_1.2.3             bitops_1.0-9          gridExtra_2.3
+#>   [4] httr2_1.2.1           inline_0.3.21         biomaRt_2.66.0
+#>   [7] rlang_1.1.6           magrittr_2.0.4        compiler_4.5.1
+#>  [10] RSQLite_2.4.3         loo_2.8.0             mgcv_1.9-3
+#>  [13] png_0.1-8             vctrs_0.6.5           reshape2_1.4.4
+#>  [16] txdbmaker_1.6.0       stringr_1.5.2         pkgconfig_2.0.3
+#>  [19] crayon_1.5.3          fastmap_1.2.0         labeling_0.4.3
+#>  [22] elitism_1.1.1         rmarkdown_2.30        UCSC.utils_1.6.0
+#>  [25] densEstBayes_1.0-2.2  purrr_1.1.0           bit_4.6.0
+#>  [28] xfun_0.53             cachem_1.1.0          cigarillo_1.0.0
+#>  [31] GenomeInfoDb_1.46.0   jsonlite_2.0.0        progress_1.2.3
+#>  [34] blob_1.2.4            DelayedArray_0.36.0   BiocParallel_1.44.0
+#>  [37] parallel_4.5.1        prettyunits_1.2.0     R6_2.6.1
+#>  [40] StanHeaders_2.32.10   bslib_0.9.0           stringi_1.8.7
+#>  [43] RColorBrewer_1.1-3    rtracklayer_1.70.0    jquerylib_0.1.4
+#>  [46] rstan_2.32.7          Rcpp_1.1.0            iterators_1.0.14
+#>  [49] knitr_1.50            Matrix_1.7-4          splines_4.5.1
+#>  [52] tidyselect_1.2.1      qvalue_2.42.0         dichromat_2.0-0.1
+#>  [55] abind_1.4-8           yaml_2.3.10           doParallel_1.0.17
+#>  [58] codetools_0.2-20      curl_7.0.0            pkgbuild_1.4.8
+#>  [61] lattice_0.22-7        tibble_3.3.0          plyr_1.8.9
+#>  [64] withr_3.0.2           KEGGREST_1.50.0       S7_0.2.0
+#>  [67] evaluate_1.0.5        RcppParallel_5.1.11-1 pillar_1.11.1
+#>  [70] filelock_1.0.3        foreach_1.5.2         RCurl_1.98-1.17
+#>  [73] hms_1.1.4             ggplot2_4.0.0         rstantools_2.5.0
+#>  [76] scales_1.4.0          glue_1.8.0            tools_4.5.1
+#>  [79] BiocIO_1.20.0         data.table_1.17.8     locfit_1.5-9.12
+#>  [82] XML_3.99-0.19         grid_4.5.1            QuickJSR_1.8.1
+#>  [85] nlme_3.1-168          restfulr_0.0.16       cli_3.6.5
+#>  [88] rappdirs_0.3.3        S4Arrays_1.10.0       dplyr_1.1.4
+#>  [91] V8_8.0.1              gtable_0.3.6          DESeq2_1.50.0
+#>  [94] sass_0.4.10           digest_0.6.37         reldist_1.7-2
+#>  [97] SparseArray_1.10.0    rjson_0.2.23          farver_2.1.2
+#> [100] memoise_2.0.1         htmltools_0.5.8.1     lifecycle_1.0.4
+#> [103] httr_1.4.7            bit64_4.6.0-1
+```

@@ -1,0 +1,23 @@
+---
+name: bioconductor-mbamethyl
+description: the package is available on all platforms; click for details.
+homepage: https://bioconductor.org/packages/release/bioc/html/MBAmethyl.html
+---
+
+# bioconductor-mbamethyl
+
+## Overview
+
+Use the Bioconductor R package **MBAmethyl** for: the package is available on all platforms; click for details.
+
+## Installation
+
+```r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("MBAmethyl")
+```
+
+## Reference documentation
+
+See files in `references/` for vignettes and tutorials.

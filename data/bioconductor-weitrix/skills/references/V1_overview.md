@@ -1,0 +1,171 @@
+# 1. Concepts and practical details
+
+Paul Harrison
+
+#### 2025-10-30
+
+# Contents
+
+* [1 Concepts](#concepts)
+  + [1.1 What is a weitrix?](#what-is-a-weitrix)
+  + [1.2 Rows and columns](#rows-and-columns)
+  + [1.3 Weights](#weights)
+    - [1.3.1 Calibration](#calibration)
+    - [1.3.2 Examples](#examples)
+  + [1.4 Linear models and components of variation](#linear-models-and-components-of-variation)
+  + [1.5 Dispersion](#dispersion)
+  + [1.6 Testing with topconfects or limma](#testing-with-topconfects-or-limma)
+* [2 Practical details](#practical-details)
+  + [2.1 Big datasets](#big-datasets)
+  + [2.2 Parallelism fine tuning](#parallelism-fine-tuning)
+    - [2.2.1 BiocParallel problems](#biocparallel-problems)
+    - [2.2.2 OpenBLAS](#openblas)
+
+# 1 Concepts
+
+## 1.1 What is a weitrix?
+
+A “weitrix” is a SummarizedExperiment object (or subclass thereof) with two assays, one containing the actual measurements and the other the associated weights. A “weitrix” metadata entry stores the names of these assays. There are several ways to construct a weitrix:
+
+* `as_weitrix(x, weights)` constructs a weitrix, where `x` is a matrix of measurements and `weights` is a corresponding matrix of weights.
+* A SummarizedExperiment can be marked as a weitrix using `bless_weitrix`. This requires specifying the names of the two assays to be used.
+* Anything the limma package knows how to work with can be converted to a weitrix using `as_weitrix`. (Most functions in the weitrix package will attempt this conversion automatically.)
+
+The usual SummarizedExperiment accessor functions can be used: `assay` `rowData` `colData` `metadata`
+
+Additionally, the blessed assays be accessed using: `weitrix_x` `weitrix_weights`
+
+## 1.2 Rows and columns
+
+`weitrix` follows the Bioconductor convention of placing features in rows and units of observation (samples, cells) in columns. This is the transpose of the normal R convention!
+
+## 1.3 Weights
+
+A weight determines the importance of an observation. One way of thinking about a weight is that it is as if this one observation is actually an average over some number of real observations. For example if an observation is an average over some number of reads, the number of reads might be used as the weight.
+
+The choice of weight is somewhat arbitrary. You can use it simply to tell model fitting (such as that in `weitrix_components`) what to pay most attention to. It’s better to pay more attention to more accurately measured observations.
+
+A weight of 0 indicates completely missing data.
+
+The concept of weights used in this package is the same as for weights specified to the `lm` function or the limma `lmFit` function.
+
+### 1.3.1 Calibration
+
+Weights can be calibrated per row so they are one over the variance of a measurement. When testing using `weitrix_confects` or limma, a calibrated weitrix will produce better results than an uncalibrated one. Two main functions for calibrating weights are provided:
+
+* `weitrix_calibrate_all`: A model is fitted to squared residuals, using as predictors the existing weights, the fitted linear model predictions, or further known covariates. A gamma GLM with log link function is used. The weights then become 1 over the predictions of this model. This is similar to the `voom` and `vooma` functions in limma, but allowing a more complex model.
+* `weitrix_calibrate_trend`: A model is fitted to dispersions for each row (see section in “dispersion” below). A gamma GLM with log link function is used. Weights in each row are then scaled down by the model prediction. This is similar to the trend option in limma’s `eBayes` function, but allows other predictors beyond the row average. This is less powerful than `weitrix_calibrate_all`, but also requires less computation and memory.
+
+Calibration performance should be judged using the `weitrix_calplot` function. This can be used to plot weighted residuals against any known covariates. Properly calibrated weighted residuals should have uniform variance, i.e. no trend should be visible relative to any known covariate. `weitrix_calplot` can also plot residuals against 1/sqrt(weight) (i.e. the expected residual standard deviation), which we call a “funnel plot” due to its desired shape.
+
+### 1.3.2 Examples
+
+Some examples of possible measurements and weights:
+
+* poly(A) tail length is measured for a collection of reads. The measurement is the average log tail length (number of non-templated “A”s), and the weight is the number of reads. See the poly(A) tail length vignette.
+* Several different polyadenylation sites are observed per gene. A “shift” score is assigned to each site: the proportion of all reads upstrand of the site minus the proportion of all reads downstrand of it. The measurement is an average over the site score for each read, and the weight is the number of reads. See alternative polyadenylation vignette.
+* A read aligning to a gene is assigned to a particular exon. For a particular sample, gene, and exon, the measurement is the proportion of reads aligning to that exon out of all reads aligning to that gene, and the weight is the total reads aligning to the gene. `counts_proportions` can be used to construct an approporiate weitrix. Some further calibration is possible based on the average proportion in each exon over all samples (a somewhat rough-and-ready strategy compared to using a GLM).
+
+## 1.4 Linear models and components of variation
+
+An important feature of the weitrix package is the ability to extract components of variation, similar to PCA. The novel feature compared to PCA is that this is possible with unevenly weighted matrices or matrices with many missing values. Also, by default components are varimax rotated for improved interpretability.
+
+This is implemented as an extension of the idea of fitting a linear model to each row. It is implemented in `weitrix_components`, a major workhorse function in this package. A pre-specified design matrix can be given (by default this contains only an intercept term), and then zero or more additional components requested. The result is:
+
+* a “col” matrix containing the specified design matrix and additionally the “scores” of novel components of variation for each sample.
+* a “row” matrix containing for each row estimated coefficients and additionally the “loadings” of novel components of variation.
+
+These two matrices can be multiplied together to approximate the original data. This will impute any missing values, as well as smoothing existing data.
+
+The example vignettes contain examples of how this function is used.
+
+## 1.5 Dispersion
+
+After constructing a model of systematic variation in a weitrix using `weitrix_components`, possibly with several components discoved from the data, each row’s residual “dispersion” can be estimated with `weitrix_dispersion`.
+
+The term “dispersion” as used in this package is similar to variance but taking weights into account. For example if weights represent numbers of reads, it is the read-level variance. After calibration of a weitrix, it is also relative to the calibrated trend.
+
+For a particular row with measurements \(y\), weights \(w\), design matrix \(X\) (including discovered component scores), fitted coefficients \(\hat\beta\), and residual degrees of freedom \(\nu\) (number of non-zero weights minus number of columns in \(X\)), the dispersion \(\sigma^2\) is estimated with:
+
+\[
+\hat\varepsilon = y-X\hat\beta
+\]
+
+\[
+\hat\sigma^2 = {1 \over \nu} \sum\_i w\_i \hat\varepsilon\_i^2
+\]
+
+Similarly where \(R^2\) values are reported, these are proportions of *weighted* variation that have been explained.
+
+**Using dispersion for outlier detection:** Genes with high dispersion on a calibrated weitrix and relative to a simple linear model will often be of biological interest. This can be a good starting point for exploratory analysis. Calibration serves to de-emphasize variation that is not of interest, for example higher variability due to low read counts. In a calibrated weitrix, the expected dispersion is 1.
+
+Use `weitrix_sd_confects` to find genes with variability confidently exceeding the expected level.
+
+## 1.6 Testing with topconfects or limma
+
+A top confident contrasts from linear models fitted to each row can be tested using the function `weitrix_confects`. This follows the [topconfects](https://bioconductor.org/packages/release/bioc/html/topconfects.html) approach, finding rows with confidently large effect sizes, which are not necessarily those with the smallest p-values.
+
+If you prefer a more traditional analysis, a weitrix can be converted to an EList object for use with limma with `weitrix_elist`. However note that limma’s use of weights is approximate if contrasts are used or if F-tests rather than a t-tests are used.
+
+The `$col` matrix of a `Components` may be used as a design matrix for differential analysis with `weitrix_confects` or with limma. **Warning:** This may produce liberal results, because the design matrix is itself uncertain and this isn’t taken into account. Use this with caution.
+
+Whatever method is used, weights should first be calibrated to remove trends due to known covariates as described above. Both `weitrix_confects` and limma analysis estimate the per-row dispersion, apply Empirical Bayes squeezing of dispersions, and then use this when estimating how accurately coefficients and contrasts have been estimated. This can be seen as a further row-by-row calibration step.
+
+If you have a limited number of columns, then the better the initial calibration step is performed the more effective Empirical Bayes squeezing of dispersions will be and the more significant results will be found. If you have many columns the squeezing of dispersions will only have a minor effect, and these considerations become less important.
+
+# 2 Practical details
+
+## 2.1 Big datasets
+
+weitrix can use DelayedArray assays. Functions that produce weitrices will used `DelayedArray` output assays if given `DelayedArray` input assays.
+
+weitrix will attempt to perform calculations blockwise in parallel. weitrix tries to use DelayedArray and BiocParallel defaults. Adjust with `DelayedArray::setRealizationBackend`, `DelayedArray::setAutoBlockSize`, and use `BiocParallel::register` to adjust the parallel processing engine.
+
+It is always possible to convert an assay back to a normal R matrix with `as.matrix`.
+
+Set the DelayedArray realization backend to `HDF5Array` if weitrices will be too big to fit in memory uncompressed. The `HDF5Array` backend stores data on disk, in temporary files.
+
+If using `DelayedArray::setRealizationBackend("HDF5Array")` you may also want to set `HDF5Array::setHDF5DumpDir`.
+
+A weitrix can be permanently stored to disk using `HDF5Array::saveHDF5SummarizedExperiment`.
+
+Example setup:
+
+```
+library(DelayedArray)
+library(HDF5Array)
+
+# Store intermediate results in a directory called __dump__
+# You may need to clean up this directory manually
+setRealizationBackend("HDF5Array")
+setHDF5DumpDir("__dump__")
+```
+
+## 2.2 Parallelism fine tuning
+
+### 2.2.1 BiocParallel problems
+
+Parallel processing in R and Bioconductor remains finicky but is necessary for large datasets. weitrix uses BiocParallel’s default parallel processing settings. It will temporarily start worker processes when needed.
+
+If weitrix hangs or produces weird errors, try configuring BiocParallel to use serial processing by default:
+
+```
+BiocParallel::register( BiocParallel::SerialParam() )
+```
+
+If you are using `weitrix` interactively, fork-based worker processes seem to mess up X11-based plotting. Start workers before opening any plots:
+
+```
+RhpcBLASctl::blas_set_num_threads(1)
+BiocParallel::bpstart()
+```
+
+### 2.2.2 OpenBLAS
+
+If using parallel processing, multi-threaded linear algebra libraries will just slow things down. If you have installed OpenBLAS you may need to disable multi-threading. You can see the BLAS R is using in `sessionInfo()`. Disable multi-threading using the `RhpcBLASctl` package:
+
+```
+RhpcBLASctl::blas_set_num_threads(1)
+```
+
+This needs to be done before using `BiocParallel::bpstart()`. In the default case of using `MulticoreParam` and not having used `bpstart()`, weitrix temporarily starts a worker pool for large computations, and ensures this is set for workers. If you stray from this default case we assume you know what you are doing.

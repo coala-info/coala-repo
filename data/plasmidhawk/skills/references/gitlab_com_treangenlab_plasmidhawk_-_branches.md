@@ -1,0 +1,1 @@
+Branches · treangenlab / PlasmidHawk · GitLab Branches Overview Active Stale All Stale branches patch-4 77355f0f &middot; Add new file &middot; Feb 02, 2020 data 00f97927 &middot; Update README.md &middot; Dec 31, 2020 master default protected 915a86ee &middot; Update README.md &middot; Jan 06, 2021

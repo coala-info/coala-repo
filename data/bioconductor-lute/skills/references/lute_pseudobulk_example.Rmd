@@ -1,0 +1,306 @@
+---
+title: "Pseudobulk cell size rescaling example"
+author:
+- Sean K. Maden
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: bibliography.bib
+package: lute
+output:
+  BiocStyle::html_document:
+    code_folding: show
+    toc: no
+    tocfloat: no
+  BiocStyle::pdf_document: 
+    toc: no
+    toc_depth: 0
+vignette: > 
+  %\VignetteIndexEntry{Pseudobulk cell size rescaling example}
+  %\usepackage[UTF-8]{inputenc} 
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r setup, include=FALSE}
+libv <- c("lute", "ggplot2")
+sapply(libv, library, character.only = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This vignette shows an example pseudobulk experiment testing cell size scale 
+factors using a small example dataset of single-nucleus RNA-seq data (snRNA-seq) 
+from human cortex (@darmanis_survey_2015). Predictions are made using `lute`, 
+and results plots are generated using `ggplot2`.
+
+# Experiment setup
+
+## Load example data
+
+In this example, we source a real snRNA-seq dataset of human brain, including 
+cortex and hippocampus published in darmanis_survey_2015. The full data along 
+with other real single-cell RNA-seq datasets may be accessed from the `scRNAseq` 
+package.
+
+Load a stored subset of the example dataset with the following.
+
+```{r}
+path <- system.file("extdata", "scRNAseq/darmanis_example.rda", package="lute")
+data <- get(load(path))
+```
+
+The loaded dataset is of type `SingleCellExperiment`, which is handled by the 
+`lute()` function (see `?lute` for details). Before calling the framework 
+function, it needs to be processed to (1) define cell types and samples of 
+interest (2) subset on cell type markers, and (3) define pseudobulks for each 
+available sample.
+
+For this experiment, we will consider two principal cell types for brain, neuron 
+and glial cells (a.k.a. "K2"). 
+
+## Define cell types of interest
+
+First, identify nuclei labeled from only these types and remove the rest. Then 
+define a new label `"k2"` using the valid remaining nuclei.
+
+```{r}
+sampleIdVariable <- "experiment_sample_name"
+oldTypes <- "cell.type"; newTypes <- "k2"
+# remove non-k2 types
+filterK2 <- data[[oldTypes]] %in% 
+  c("neurons", "oligodendrocytes", "astrocytes", "OPC", "microglia")
+data <- data[,filterK2]
+# define new k2 variable
+data[[newTypes]] <- ifelse(data[[oldTypes]]=="neurons", "neuron", "glial")
+data[[newTypes]] <- factor(data[[newTypes]])
+```
+
+## Filter samples
+
+Next, define the samples of interest for the experiment. We will select samples 
+having at least 20 nuclei.
+
+```{r}
+minNuclei <- 20
+nucleiPerSample <- table(data[[sampleIdVariable]])
+sampleIdVector <- unique(data[[sampleIdVariable]])
+sampleIdVector <- sampleIdVector[nucleiPerSample >= minNuclei]
+sampleIdVector # view
+```
+
+Next, save samples having non-zero amounts of neuron and glial cells.
+
+```{r}
+sampleIdVector <- unlist(lapply(sampleIdVector, function(sampleId){
+  numTypes <- length(
+    unique(
+      data[,data[[sampleIdVariable]]==sampleId][[newTypes]]))
+  if(numTypes==2){sampleId}
+}))
+sampleIdVector
+```
+
+View the summaries by sample id, then save these as the true cell type proportions.
+These will be used later to assess the predictions.
+
+```{r}
+proportionsList <- lapply(sampleIdVector, function(sampleId){
+  prop.table(table(data[,data$experiment_sample_name==sampleId]$k2))
+})
+dfProportions <- do.call(rbind, proportionsList)
+rownames(dfProportions) <- sampleIdVector
+colnames(dfProportions) <- paste0(colnames(dfProportions), ".true")
+dfProportions <- as.data.frame(dfProportions)
+knitr::kable(dfProportions) # view
+```
+
+## Make pseudobulks with cell size scale factors
+
+Define the cell size scale factors and use these to make the pseudobulks. 
+For demonstration we set these to have large difference (i.e. neuron/glial > 3).
+While we set these manually, the cell scale factors could also be defined from 
+library sizes or by referencing the `cellScaleFactors` package ([link](https://github.com/metamaden/cellScaleFactors/tree/main)).
+
+```{r}
+cellScalesVector <- c("glial" = 3, "neuron" = 10)
+```
+
+Next make the pseudobulk datasets. 
+
+```{r}
+assayName <- "counts"
+pseudobulkList <- lapply(sampleIdVector, function(sampleId){
+  dataIteration <- data[,data[[sampleIdVariable]]==sampleId]
+  ypb_from_sce(
+    singleCellExperiment = dataIteration, assayName = assayName, 
+    cellTypeVariable = newTypes, cellScaleFactors = cellScalesVector)
+})
+
+dfPseudobulk <- do.call(cbind, pseudobulkList)
+
+dfPseudobulk <- as.data.frame(dfPseudobulk)
+
+colnames(dfPseudobulk) <- sampleIdVector
+
+knitr::kable(head(dfPseudobulk))
+```
+
+# Get predictions
+
+## Predictions with scaling
+
+Predict the neuron proportions using non-negative least squares (NNLS), the 
+default deconvolution algorithm used by `lute()`. First, get the scaled proportions
+by setting the argument `cellScaleFactors = cellScalesVector`.
+
+```{r}
+scaledResult <- lute(
+  singleCellExperiment = data, 
+  bulkExpression = as.matrix(dfPseudobulk), 
+  cellScaleFactors = cellScalesVector,
+  typemarkerAlgorithm = NULL,
+  cellTypeVariable = newTypes,
+  assayName = assayName)
+proportions.scaled <- scaledResult[[1]]@predictionsTable
+knitr::kable(proportions.scaled) # view
+```
+
+## Predictions without scaling
+
+Next, get the unscaled result without setting `s`.
+
+```{r}
+unscaledResult <- lute(
+  singleCellExperiment = data, 
+  bulkExpression = as.matrix(dfPseudobulk), 
+  typemarkerAlgorithm = NULL,
+  cellTypeVariable = newTypes,
+  assayName = assayName)
+proportionsUnscaled <- unscaledResult[[1]]@predictionsTable
+knitr::kable(proportionsUnscaled) # view
+```
+
+Note proportions didn't change for samples which had all glial or all neuron 
+(`AB_S8` and `AB_S3`).
+
+# Plot differences
+
+## Get the plot data tables
+
+We will show the outcome of performing the cell scale factor adjustments using
+scatterplots and boxplots. Begin by appending the neuron proportion predictions
+from scaling treatments (scaled and unscaled) to the true proportions table 
+`dfProportions`.
+
+```{r}
+dfProportions$neuron.unscaled <- proportionsUnscaled$neuron
+dfProportions$neuron.scaled <- proportions.scaled$neuron
+knitr::kable(dfProportions) # view
+```
+
+Calculate bias as the difference between true and predicted neuron proportions. 
+Then calculate the error as the absolute of the bias thus defined.
+
+```{r}
+# get bias
+dfProportions$bias.neuron.unscaled <- 
+  dfProportions$neuron.true-dfProportions$neuron.unscaled
+dfProportions$bias.neuron.scaled <- 
+  dfProportions$neuron.true-dfProportions$neuron.scaled
+# get error
+dfProportions$error.neuron.unscaled <- 
+  abs(dfProportions$bias.neuron.unscaled)
+dfProportions$error.neuron.scaled <- 
+  abs(dfProportions$bias.neuron.scaled)
+```
+
+Make the tall version of `dfProportions` in order to generate a plot with facets
+on the scale treatment (either "scaled" or "unscaled").
+
+```{r}
+dfPlotTall <- rbind(
+  data.frame(true = dfProportions$neuron.true, 
+             predicted = dfProportions$neuron.scaled,
+             error = dfProportions$error.neuron.scaled,
+             sampleId = rownames(dfProportions),
+             type = rep("scaled", nrow(dfProportions))),
+  data.frame(true = dfProportions$neuron.true, 
+             predicted = dfProportions$neuron.unscaled, 
+             error = dfProportions$error.neuron.unscaled,
+             sampleId = rownames(dfProportions),
+             type = rep("unscaled", nrow(dfProportions)))
+)
+dfPlotTall <- as.data.frame(dfPlotTall)
+```
+
+## Make scatterplots of true versus predicted neuron proportions
+
+Show sample results scatterplots of true (x-axis) by predicted (y-axis) neuron 
+proportions. Also include a reference line (slope = 1, yintercept = 0) showing
+where agreement is absolute between proportions.
+
+Also shows RMSE in plot titles.
+
+```{r}
+
+dfPlotTallNew <- dfPlotTall
+
+rmseScaled <- 
+  rmse(
+    dfPlotTallNew[dfPlotTallNew$type=="scaled",]$true,
+    dfPlotTall[dfPlotTall$type=="scaled",]$predicted, "mean")
+
+rmseUnscaled <- 
+  rmse(
+    dfPlotTallNew[dfPlotTallNew$type=="unscaled",]$true,
+    dfPlotTallNew[dfPlotTallNew$type=="unscaled",]$predicted, "mean")
+
+dfPlotTallNew$type <- 
+  ifelse(grepl("un.*", dfPlotTallNew$type),
+         paste0(dfPlotTallNew$type,
+                " (RMSE = ", round(rmseScaled, 3), ")"),
+         paste0(dfPlotTallNew$type,
+                " (RMSE = ", round(rmseUnscaled, 3), ")"))
+
+textSize <- 15
+ggplot(dfPlotTallNew, aes(x = true, y = predicted)) + 
+  geom_point(size = 4, alpha = 0.5) + geom_abline(slope = 1, intercept = 0) + 
+  xlim(0, 1) + ylim(0, 1) + facet_wrap(~type) + theme_bw() +
+  xlab("True") + ylab("Predicted") +
+  theme(text = element_text(size = textSize),
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Make boxplots with jittered points for neuron errors
+
+Show jitters and boxplots by sample, depicting the neuron error (y-axis) by 
+scale treatment (x-axis). The sample IDs are depicted by the point colors.
+
+```{r}
+ggplot(dfPlotTall, aes(x = type, y = error, color = sampleId)) + 
+  geom_jitter(alpha = 0.5, size = 4) + theme_bw() +
+  geom_boxplot(alpha = 0, color = "cyan") +
+  theme(text = element_text(size = textSize),
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  xlab("Type") + ylab("Error (Neuron)")
+```
+
+This process could be readily repeated for the remaining cell types, or just 
+glial cells in this case.
+
+# Conclusions
+
+This vignette showed how to conduct a basic pseudobulk experiment using cell 
+size scale factors and an example snRNAseq dataset from human brain 
+@darmanis_survey_2015. Some key details include sourcing and snRNA-seq data, 
+defining a new cell type variable, setting the scale factors, making predictions, 
+and performing comparative analyses of the prediction results. Further details 
+about the importance of cell size scale factors are discussed in 
+@maden_challenges_2023, and examples of their utilizations may be found in 
+@monaco_rna-seq_2019, @racle_epic_2020, and @sosina_strategies_2021.
+
+# Session info
+
+```{r}
+sessionInfo()
+```
+
+# Works cited

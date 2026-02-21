@@ -1,0 +1,1 @@
+About IMSEQ - IMmunogenetic SEQuence Analysis About About IMSEQ was developed at Charité Unverstitätsmedizin Berlin . It is published under the GPL v2 license . For questions regarding IMSEQ , please contact Leon Kuchenbecker . IMSEQ &copy; Copyright 2016 Charité Universitätsmedizin Berlin.

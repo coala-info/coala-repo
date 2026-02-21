@@ -1,0 +1,117 @@
+---
+title: "Introduction to stJoincount"
+author: 
+- name: Jiarong Song
+  affiliation: Department of Translational genomics, University of Southern California
+  email: songjiar@usc.edu
+output: 
+  BiocStyle::html_document:
+    toc: true
+    number_sections: false
+vignette: >
+  %\VignetteIndexEntry{Introduction to stJoincount}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r set up, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message = FALSE, warning=FALSE}
+library(stJoincount)
+library(pheatmap)
+library(ggplot2)
+```
+
+v0.99.16
+
+stJoincount: Quantification tool for spatial correlation between clusters in spatial transcriptomics preprocessed data using join count statistic approach.  
+
+# Introduction
+Spatial dependency is the relationship between location and attribute similarity. The measure reflects whether an attribute of a variable observed at one location is independent of values observed at neighboring locations. Positive spatial dependency exists when neighboring attributes are more similar than what could be explained by chance. Likewise, a negative spatial dependency is reflected by a dissimilarity of neighboring attributes. Join count analysis allows for quantification of the spatial dependencies of nominal data in an arrangement of spatially adjacent polygons.
+
+This tool requires data produced with the 10X Genomics Visium Spatial Gene Expression platform with customized clusters. The purpose of this R package is to perform join count analysis for spatial correlation between clusters. 
+
+
+# Installation
+
+Users can install `stJoincount` with:
+
+```{r "install", eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+      install.packages("BiocManager")
+  }
+BiocManager::install("stJoincount")
+```
+
+Examples of how to run this tool are below:  
+
+# Preprocessing
+In this vignette, we are going to use an human breast cancer spatial transcriptomics sample.
+```{r}
+fpath <- system.file("extdata", "dataframe.rda", package="stJoincount")
+load(fpath)
+head(humanBC)
+```
+
+Within the ‘extdata’ user can find a dataframe "humanBC.rda". This example data is a `data.frame` that comes from a `Seurat` object of a human breast cancer sample. It contains the following information that is essential to this algorithm - barcode (index), cluster (they could either be categorical or numerical labels), central pixel location (imagerow and imagecol). This dataframe is simplified after combining metadata with spatial coordinates.
+The index contains barcodes, and at least three other columns that have these information are required and the column names should be the same as following:
+`imagerow`: The row pixel coordinate of the center of the spot
+`imagecol`: The column pixel coordinate of the center of the spot
+`Cluster`: The label that corresponding to this barcode
+
+The following codes demonstrate how to generate the described `data.frame` from `Seurat`/`spatialExperiment` Objects.
+
+An example data preparation from Seurat:
+```{r}
+fpath <- system.file("extdata", "SeuratBC.rda", package="stJoincount")
+load(fpath)
+df <- dataPrepFromSeurat(seuratBC, "label")
+```
+
+An example data preparation from SpatialExperiment object:
+```{r}
+fpath <- system.file("extdata", "SpeBC.rda", package="stJoincount")
+load(fpath)
+df2 <- dataPrepFromSpE(SpeObjBC, "label")
+```
+
+# Raster processing
+This tool first converts a labeled spatial tissue map into a raster object, in which each spatial feature is represented by a pixel coded by label assignment. This process includes automatic calculation of optimal raster resolution and extent for the sample.
+```{r}
+resolutionList <- resolutionCalc(humanBC)
+resolutionList
+```
+
+```{r}
+mosaicIntegration <- rasterizeEachCluster(humanBC)
+```
+
+# Visualization
+After the labeled spatial sample being converted, the raster map can be visualized by:
+```{r, fig.dim = c(6, 6)}
+mosaicIntPlot(humanBC, mosaicIntegration)
+```
+
+# Join count analysis
+A neighbors list is then created from the rasterized sample, in which adjacent and diagonal neighbors for each pixel are identified. After adding binary spatial weights to the neighbors list, a multi-categorical join count analysis is performed to tabulate "joins" between all possible combinations of label pairs. The function returns the observed join counts, the expected count under conditions of spatial randomness, and the variance calculated under non-free sampling.
+```{r}
+joincount.result <- joincountAnalysis(mosaicIntegration)
+```
+
+The z-score is then calculated as the difference between observed and expected counts, divided by the square root of the variance. A heatmap of z-scores represents the result from the join count analysis for all possible label pairs.
+
+```{r, fig.dim = c(6, 6)}
+matrix <- zscoreMatrix(humanBC, joincount.result)
+zscorePlot(matrix)
+```
+
+```{r}
+sessionInfo()
+```
+

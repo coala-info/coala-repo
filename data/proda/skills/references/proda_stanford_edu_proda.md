@@ -1,0 +1,1 @@
+.proda { background-color: #c0c0c0; background-attachment: fixed; }

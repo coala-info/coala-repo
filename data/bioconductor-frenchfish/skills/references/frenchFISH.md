@@ -1,0 +1,110 @@
+# Correcting FISH probe counts with frenchFISH
+
+#### Adam Berman
+
+#### 2025-10-30
+
+Abstract
+
+Chromosomal aberration and DNA copy number change are robust hallmarks of cancer. Imaging of spots generated using fluorescence in situ hybridisation (FISH) of locus specific probes is routinely used to detect copy number changes in tumour nuclei. However, it often does not perform well on solid tumour tissue sections, where partially represented or overlapping nuclei are common. To overcome these challenges, we have developed a computational approach called FrenchFISH, which comprises a nuclear volume correction method coupled with two types of Poisson models: either a Poisson model for improved manual spot counting without the need for control probes; or a homogenous Poisson Point Process model for automated spot counting. We benchmarked the performance of FrenchFISH against previous approaches in a controlled simulation scenario and exemplify its use in 12 ovarian cancer FFPE-tissue sections, for which we assess copy number alterations in three loci (c-Myc, hTERC and SE7). We show that FrenchFISH outperforms standard spot counting approaches and that the automated spot counting is significantly faster than manual without loss of performance. FrenchFISH is a general approach that can be used to enhance clinical diagnosis on sections of any tissue.
+
+**Note:** if you use frenchFISH in published research, please cite:
+
+> Macintyre, G., Piskorz, A.M., Ross, E., Morse, D.B., Yuan, K., Ennis, D., Pike, J.A., Goranova, T., McNeish, I.A., Brenton, J.D., Markowetz, F. (2018) FrenchFISH: Poisson models for quantifying DNA copy-number from fluorescence in situ hybridisation of tissue sections *bioRxiv* [10.1101/487926](https://doi.org/10.1101/487926)
+
+## Adjusting automatically counted spots
+
+To provide a real-world use case for frenchFISH, let’s take some FISH probe counts which were generated using FISHalyseR, an existing Bioconductor package which uses computer vision to automatically count spots visible in FISH images. These data, saved in SampleFISH.jpg\_data.csv, are the output of FISHalyseR’s vignette, and includes counts for two color probes (a red one and a green one) that were generated for 44 cell nuclei. First, we must use frenchFISH’s built-in function to convert the CSV output of FISHalyseR to a probe count matrix formatted correctly for input to frenchFISH’s getAutomaticCountsEstimates function:
+
+```
+fishalyserCsvPath <- system.file("extdata",
+                                 "SampleFISH.jpg_data.csv",
+                                 package="frenchFISH")
+automatic_counts <- convertFishalyserCsvToCountMatrix(fishalyserCsvPath)
+```
+
+Once the count matrix has been created, we can run frenchFISH to quantify the copy number of each probed region by both correcting for nuclear volume correction and implementing a homogenous Poisson Point Process model. In addition to our count matrix, we include the nuclear radius of the cells we are using and the height of our tissue section (which should be modified as appropriate depending on the cell type and section height you are using). Note that before running the Poisson model, we set the seed to insure our results will be reproducible:
+
+```
+set.seed(366)
+nuclear_radius <- 40
+section_height <- 5
+corrected_automatic_counts <- getAutomaticCountsEstimates(automatic_counts,
+                                                          nuclear_radius,
+                                                          section_height)
+#>
+#> Number of observations  not used in the estimation process:  0
+#> Total number of time observations:  46
+#> Number of events:  70
+#>
+#> Convergence code:  0
+#> Convergence attained
+#> Loglikelihood:  -41.805
+#>
+#> Estimated coefficients:
+#>    b0
+#> 0.376
+#> Full coefficients:
+#>    b0
+#> 0.376
+#> attr(,"TypeCoeff")
+#> [1] "Fixed: No  fixed parameters"
+#>
+#>
+#> Number of observations  not used in the estimation process:  0
+#> Total number of time observations:  46
+#> Number of events:  74
+#>
+#> Convergence code:  0
+#> Convergence attained
+#> Loglikelihood:  -40.183
+#>
+#> Estimated coefficients:
+#>    b0
+#> 0.434
+#> Full coefficients:
+#>    b0
+#> 0.434
+#> attr(,"TypeCoeff")
+#> [1] "Fixed: No  fixed parameters"
+```
+
+We can now see our corrected spot counts for each probe (including high and low confidence intervals and the median):
+
+```
+print(corrected_automatic_counts)
+#>   Probe    lowCI   median   highCI
+#> 1     R 17.32674 22.01444 27.97039
+#> 2     G 18.48725 23.32874 29.43814
+```
+
+## Adjusting manually counted spots
+
+Next, let’s simulate a matrix of spot counts that have been manually counted for three color probes (a red one, a green one, and a blue one) across 20 cell nuclei. Note that this time, no area column is included as a first column:
+
+```
+manual_counts <- cbind(red = round(runif(20,0,5), 0),
+                       green = round(runif(20,0,5), 0),
+                       blue = round(runif(20,0,5), 0))
+```
+
+To adjust these spot counts using frenchFISH, we simply input this matrix, along with the nuclear radius of our cell type and section height into the
+getManualCountsEstimates function:
+
+```
+nuclear_radius <- 8
+section_height <- 4
+corrected_manual_counts <- getManualCountsEstimates(manual_counts,
+                                                    nuclear_radius,
+                                                    section_height)
+```
+
+Here are the corrected spot counts as computed by Markov chain Monte Carlo modelling at five different percentiles per probe:
+
+```
+print(corrected_manual_counts)
+#>   Probe     X2.5      X25      X50      X75    X97.5
+#> 1   red 4.342802 5.363568 5.951144 6.601724 7.988650
+#> 2 green 5.270190 6.416228 7.049840 7.717275 9.168405
+#> 3  blue 4.479317 5.487391 6.073667 6.708877 8.077575
+```

@@ -1,0 +1,1 @@
+.parser textarea { width: 100%; height: 7em; display: block; margin-bottom:1em; }

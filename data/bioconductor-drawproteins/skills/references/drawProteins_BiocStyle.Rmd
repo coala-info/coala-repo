@@ -1,0 +1,290 @@
+---
+title: "Using drawProteins"
+author:
+- name: "Dr Paul Brennan"
+affiliation: 
+- "Centre for Medical Education, School of Medicine, Cardiff University, 
+    Cardiff, Wales, United Kingdom"
+email: BrennanP@cardiff.ac.uk
+package: drawProteins
+date: "`r Sys.Date()`"
+output: BiocStyle::html_document
+vignette: >
+    %\VignetteIndexEntry{Using drawProteins}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r load_packages, eval = TRUE, echo=FALSE}
+library(BiocStyle)
+library(drawProteins)
+library(httr)
+library(ggplot2)
+library(knitr)
+opts_chunk$set(comment=NA,
+                fig.align = "center",
+                out.width = "100%",
+                dpi = 100)
+```
+
+# Overview of drawProteins
+This package has been created to allow the creation of protein schematics based
+on the data obtained from the Uniprot Protein Database. 
+
+The basic workflow is:
+1. to provide one or more Uniprot IDs
+2. get a list of feature from the Uniprot API
+3. draw the basic chains of these proteins
+4. add features as desired
+
+drawProteins uses the package httr to interact with the Uniprot API and extract 
+a JSON object into R. The JSON object is used to create a data.table. 
+
+The graphing package ggplot2 is then used to create the protein schematic. 
+
+# Getting the data from Uniprot
+
+Currently, drawProteins interacts with the 
+[Uniprot database]<http://www.uniprot.org/>. At least one working 
+Uniprot accession numbers must be provided. More than one can be provided but
+they must be separated by a single space. The spaces are replaced to create an
+url that can be used to query the Uniprot API 
+
+The `get_features()` function uses the Uniprot API to return the features of a
+protein - the chain, domain information and other annotated features such as
+"repeats" and "motifs". Post-translational modifications, such as
+phosphorylations, are also provided. 
+
+The `httr::content()` function is then used to extract the content. From the
+`get_features()` function, this will provide lists of lists. The length of the
+parent lists corresponds to the number of accession numbers provided.
+Interestingly, the order sometimes appears different to that provided. Each of
+lists inside the parent list are a list of six - one for each protein - that
+contains names of the proteins and the features. 
+
+As an example, we will retrieve the details of a protein called Rel A or
+NF-kappaB, p65, a well studied transcription factor. 
+
+With internet access, this can be retreived from Uniprot with this code:
+```{r download_rel_json, eval=TRUE, echo=TRUE}
+# accession numbers of rel A
+    drawProteins::get_features("Q04206") ->
+    rel_json
+```
+
+# Turning Uniprot data into a dataframe
+The next step in the workflow is to convert the data from the Uniprot API into 
+a dataframe that can be used with ggplot2. 
+
+The `feature_to_dataframe()` function will convert the list of lists of six
+provided by the `get_features()` function to a dataframe which can then be
+used to plot the schematics. 
+
+The `feature_to_dataframe()` function will also add an "order" value to allow
+plotting. The order goes from the bottom in the manner of a graph. 
+
+```{r generate_dataframe}
+drawProteins::feature_to_dataframe(rel_json) -> rel_data
+
+# show in console
+head(rel_data[1:4])
+
+```
+
+
+# Draw the protein chains and domains
+The data can be plotted with ggplot2 using the `geom_rect()` and `geom_label`. 
+The first step is to make canvas with `draw_canvas` which is based on the 
+longest protein that is being drawin. This can be done using a pipe in the
+following way.
+
+```{r using_draw_canvas, fig.height=3, fig.wide = TRUE}
+draw_canvas(rel_data) -> p
+p
+```
+
+Then we can plot the protein chain. We use the `draw_chain()` function to which
+we have to provide the ggplot object `p` and the data which is 
+called `rel_data`.
+```{r using draw_chains, fig.height=3, fig.wide = TRUE}
+p <- draw_chains(p, rel_data)
+p
+```
+
+
+Now, we add the domains which are drawn to scale in terms of their lengths. We
+use the `draw_domains()` function to which we have to provide the
+ggplot object `p` and the data which is called `rel_data`. 
+The default is to label the chains. The labels can be removed using the 
+argument `label_chains = FALSE`.
+```{r using draw_domains, fig.height=3, fig.wide = TRUE}
+p <- draw_domains(p, rel_data)
+p
+```
+
+
+To show this visualisation better, a white background helps as well as removing
+the y-axis and the grid.
+Also changing the size of the text using the base_size argument. 
+This can be done with this code:
+```{r white_background, fig.height=3, fig.wide = TRUE}
+# white background and remove y-axis
+p <- p + theme_bw(base_size = 20) + # white background
+    theme(panel.grid.minor=element_blank(), 
+        panel.grid.major=element_blank()) +
+    theme(axis.ticks = element_blank(), 
+        axis.text.y = element_blank()) +
+    theme(panel.border = element_blank())
+p
+```
+
+
+# Checking the other features
+
+```{r show_draw_regions, fig.height=3, fig.wide = TRUE}
+draw_regions(p, rel_data) # adds activation domain
+
+```
+
+```{r show_draw_repeat, fig.height=3, fig.wide = TRUE}
+draw_repeat(p, rel_data) # doesn't add anything in this case
+
+```
+
+```{r show_draw_motif, fig.height=3, fig.wide = TRUE}
+draw_motif(p, rel_data) # adds 9aa Transactivation domain & NLS
+```
+
+
+```{r show_draw_phospho, fig.height=3, fig.wide = TRUE}
+# add phosphorylation sites from Uniprot
+draw_phospho(p, rel_data, size = 8)
+```
+
+# Putting it all together
+In this way it's possible to chose the geoms that give the information desired 
+in the way you like. Some customisation is possible as described below. 
+
+For Rel A, my recommendation would be the following workflow.
+```{r relA_workflow, fig.height=3.5, fig.wide = TRUE}
+draw_canvas(rel_data) -> p
+p <- draw_chains(p, rel_data)
+p <- draw_domains(p, rel_data)
+p <- draw_regions(p, rel_data)
+p <- draw_motif(p, rel_data)
+p <- draw_phospho(p, rel_data, size = 8) 
+
+p <- p + theme_bw(base_size = 20) + # white backgnd & change text size
+    theme(panel.grid.minor=element_blank(), 
+        panel.grid.major=element_blank()) +
+    theme(axis.ticks = element_blank(), 
+        axis.text.y = element_blank()) +
+    theme(panel.border = element_blank())
+p
+```
+
+### Adding titles to the plots 
+
+Using ggplot2 then allows the addition of titles:
+```{r add_titles, fig.height=4, fig.wide = TRUE}
+# add titles
+rel_subtitle <- paste0("circles = phosphorylation sites\n",
+                "RHD = Rel Homology Domain\nsource:Uniprot")
+
+p <- p + labs(title = "Rel A/p65",
+                subtitle = rel_subtitle)
+p
+```
+
+
+# Drawing schematic for multiple proteins
+
+With internet access, the script below shows the workflow for five proteins of
+the NFkappaB transcription factor family. 
+```{r five_NFkappaB, fig.height=10, fig.wide = TRUE}
+# accession numbers of five NF-kappaB proteins
+prot_data <- drawProteins::get_features("Q04206 Q01201 Q04864 P19838 Q00653")
+prot_data <- drawProteins::feature_to_dataframe(prot_data)
+    
+
+p <- draw_canvas(prot_data)
+p <- draw_chains(p, prot_data)
+p <- draw_domains(p, prot_data)
+p <- draw_repeat(p, prot_data)
+p <- draw_motif(p, prot_data)
+p <- draw_phospho(p, prot_data, size = 8)
+
+# background and y-axis
+p <- p + theme_bw(base_size = 20) + # white backgnd & change text size
+    theme(panel.grid.minor=element_blank(),
+        panel.grid.major=element_blank()) +
+    theme(axis.ticks = element_blank(),
+        axis.text.y = element_blank()) +
+    theme(panel.border = element_blank())
+
+# add titles
+rel_subtitle <- paste0("circles = phosphorylation sites\n",
+                "RHD = Rel Homology Domain\nsource:Uniprot")
+
+p <- p + labs(title = "Schematic of human NF-kappaB proteins",
+                subtitle = rel_subtitle)
+
+
+# move legend to top
+p <- p + theme(legend.position="top") + labs(fill="")
+p
+```
+
+
+# Customising the draw functions
+Currently, it's possible to customise the chain colour and outline. It's 
+possible to remove the labels. 
+
+```{r customising, fig.height=6, fig.wide = TRUE}
+data("five_rel_data")
+p <- draw_canvas(five_rel_data)
+p <- draw_chains(p, five_rel_data, 
+            label_chains = FALSE,
+            fill = "hotpink", 
+            outline = "midnightblue")
+p
+```
+
+
+It's also possible to change the size and colour of the phosphorylation symbols.
+
+```{r custom_phospho, fig.height=8, fig.wide = TRUE}
+p <- draw_canvas(five_rel_data)
+p <- draw_chains(p, five_rel_data, 
+            fill = "lightsteelblue1", 
+            outline = "grey", 
+            label_size = 5) 
+p <- draw_phospho(p, five_rel_data, size = 10, fill = "red")
+p + theme_bw()
+```
+
+It's also possible to change the labels to a custom list. But remember that the
+plots are drawn from the bottom up. 
+```{r change_labels, fig.height=8, fig.wide = TRUE}
+p <- draw_canvas(five_rel_data)
+p <- draw_chains(p, five_rel_data, 
+            fill = "lightsteelblue1", 
+            outline = "grey",
+            labels = c("p50/p105",
+                        "p50/p105",
+                        "p52/p100", 
+                        "p52/p100",
+                        "Rel B",
+                        "c-Rel", 
+                        "p65/Rel A"),
+            label_size = 5) 
+p <- draw_phospho(p, five_rel_data, size = 8, fill = "red")
+p + theme_bw()
+```
+
+# Session info
+Here is the output of `sessionInfo()` on the system on which this document was
+compiled:
+```{r session_Info, echo=FALSE}
+sessionInfo()
+```

@@ -1,0 +1,164 @@
+# Protein workflow
+
+#### Petra Palenikova & Rick Scavetta
+
+#### 2025-10-29
+
+* [Introduction](#introduction)
+  + [Method description](#method-description)
+    - [0) Re-formatting of input file](#re-formatting-of-input-file)
+    - [1) Hierarchical clustering](#hierarchical-clustering)
+    - [2) Export files and visualizations](#export-files-and-visualizations)
+* [Example protein workflow](#example-protein-workflow)
+  + [Visualization of normalised protein data](#visualization-of-normalised-protein-data)
+  + [Cluster analysis](#cluster-analysis)
+
+# Introduction
+
+Complexome profiling or complexomics is a mass spectrometry-based method used in biology to study macromolecular complexes in their native form. Protein complexes are assessed by evaluating their migration profile across fractions. First, lysed protein sample is separated into fractions, typically by blue native electrophoresis (BN-PAGE) or density gradient centrifugation. Individual fractions are analysed by protein mass spectrometry. This allows to identify protein migration profiles across the fractions and to assess protein co-migration. It is often desirable to compare co-migration between multiple biological samples. Typically, this would require analysing each sample separately, using multiple lanes of blue native gel/multiple density gradients. However, this approach might introduce technical biases making the qualitative comparison of migration profiles as well as quantitative comparison of protein amount between different biological samples difficult. To mitigate these technical biases, biological samples can be labeled by means detectable by mass spectrometry (e.g. SILAC, TMT, iTRAQ) and analysed simultaneously. Stable Isotope Labelling with Amino acids in Cell culture (SILAC) is a method when cells are grown in the presence of amino acids with either low natural abundance “heavy” isotopes of carbon and nitrogen or the most frequent “light” isotopes. This labelling allows for reciprocally labelled samples to be mixed and multiplexed at the very early steps of experiment, making it a useful tool when experimental design requires comparison of 2 biological samples.
+
+Here we present a package to analyse data produced by SILAC complexomics experiments. This package does not interpret raw mass spectrometry data. Protein workflow of this package uses normalised protein data as an input. It allows to performs cluster analysis and contains tools for visualization of results. The analysis is indented for samples that were SILAC labelled, therefore the input file should contain both “heavy” and “light” proteins.
+
+## Method description
+
+### 0) Re-formatting of input file
+
+Input file format was designed so it is easily readable by human. Downstream analysis requires a slightly different format so it is necessary to perfomr this change before performing the analysis.
+
+### 1) Hierarchical clustering
+
+Clustering allows to identify similarity between migration profiles of proteins in an unbiased way. We can check co-migration of known protein complexes by simply filtering the data, however, clustering provides additional information by allowing to identify unknown proteins that show similar migration profile as our proteins of interest.
+
+This package contains functions to perform hierarchical clustering using Pearson correlation (cantered or uncentered) as a distance measure and one of the three linkage methods (single, average or complete).
+
+### 2) Export files and visualizations
+
+We provide several functions to export intermediate steps of the analysis. Plotting functionality includes:
+
+* proteinPlot - line plot for a selected protein
+* groupHeatMap - heatmap for a selected group of proteins
+* oneGroupTwoLabelsCoMigration - scatter plot for a selected group of proteins
+* twoGroupsWithinLabelCoMigration - scatter plot for 2 selected groups of proteins
+* makeBarPlotClusterSummary - bar plot showing number of proteins per cluster
+
+# Example protein workflow
+
+**Read in data, convert to correct format**
+
+```
+library(ComPrAn)
+inputFile <- system.file("extData", "dataNormProts.txt", package = "ComPrAn")
+
+forAnalysis <- protImportForAnalysis(inputFile)
+```
+
+### Visualization of normalised protein data
+
+**Have a look at a selected protein (line plot)**
+
+```
+protein <- "P52815"
+max_frac <- 23
+# example protein plot, quantitative comparison between labeled and unlabeled
+# samples (default settings)
+proteinPlot(forAnalysis[forAnalysis$scenario == "B",], protein, max_frac)
+```
+
+![](data:image/png;base64...)
+
+**Make a heatmap for a selected group of proteins**
+
+```
+groupDataFileName <- system.file("extData","exampleGroup.txt",package="ComPrAn")
+groupName <- 'group1'
+groupData <- data.table::fread(groupDataFileName)
+# example heatmap, quantitative comparison between labeled and unlabeled samples
+# (default settings)
+groupHeatMap(dataFrame = forAnalysis[forAnalysis$scenario == "B",],
+                groupData, groupName)
+#> Joining with `by = join_by(`Protein Group Accessions`)`
+```
+
+![](data:image/png;base64...)
+
+**Co-migration plot of single protein group between label states**
+
+```
+groupDataVector <- c("Q16540","P52815","P09001","Q13405","Q9H2W6")
+groupName <- 'group1'
+max_frac <- 23
+# example co-migration plot, non-quantitative comparison of migration profile
+# of a sigle protein goup between labeled and unlabeled samples
+# (default settings)
+oneGroupTwoLabelsCoMigration(forAnalysis, max_frac = max_frac,
+                                groupDataVector,groupName)
+#> Warning: No shared levels found between `names(values)` of the manual scale and the
+#> data's fill values.
+#> Warning: No shared levels found between `names(values)` of the manual scale and the
+#> data's linetype values.
+```
+
+![](data:image/png;base64...)
+
+**Co-migration plot of two protein groups within label state**
+
+```
+group1DataVector <- c("Q16540","P52815","P09001","Q13405","Q9H2W6")
+group1Name <- 'group1'
+group2DataVector <- c("Q9NVS2","Q9NWU5","Q9NX20","Q9NYK5","Q9NZE8")
+group2Name <- 'group2'
+max_frac <- 23
+# example co-migration plot, non-quantitative comparison of migration profile
+# of two protein goups within label states (default settings)
+twoGroupsWithinLabelCoMigration(dataFrame = forAnalysis, max_frac = max_frac,
+                                group1Data = group1DataVector,
+                                group1Name = group1Name,
+                                group2Data = group2DataVector,
+                                group2Name = group2Name)
+#> Joining with `by = join_by(`Protein Group Accessions`)`
+#> Warning: No shared levels found between `names(values)` of the manual scale and the
+#> data's fill values.
+#> Warning: No shared levels found between `names(values)` of the manual scale and the
+#> data's linetype values.
+```
+
+![](data:image/png;base64...)
+
+### Cluster analysis
+
+**Create components neccessary for clustering:** (distance matrix for labeled and unlabeled samples, protein table for both samples)
+
+```
+clusteringDF <- clusterComp(forAnalysis,scenar = "A", PearsCor = "centered")
+```
+
+**Assign clusters to data frames**
+
+```
+labTab_clust <- assignClusters(.listDf = clusteringDF,sample = "labeled",
+                                    method = 'average', cutoff = 0.85)
+unlabTab_clust <- assignClusters(.listDf = clusteringDF,sample = "unlabeled",
+                                    method = 'average', cutoff = 0.85)
+```
+
+**Make bar plots** summarizing numbers of proteins per cluster for labeled and unlabeled samples
+
+```
+makeBarPlotClusterSummary(labTab_clust, name = 'labeled')
+```
+
+![](data:image/png;base64...)
+
+```
+makeBarPlotClusterSummary(unlabTab_clust, name = 'unlabeled')
+```
+
+![](data:image/png;base64...)
+
+**Create table containing proteins and their assigned clusters**
+
+```
+tableForClusterExport <- exportClusterAssignments(labTab_clust,unlabTab_clust)
+```
+
+#### *End of file*

@@ -1,0 +1,103 @@
+---
+title: "Permutation-Based Testing"
+output: rmarkdown::html_document
+vignette: >
+  %\VignetteIndexEntry{Permutation-Based Testing}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r set.up, include=FALSE, messages=FALSE, warnings=FALSE}
+knitr::opts_chunk$set(message=FALSE, collapse = TRUE, comment="")
+
+# R packages
+library(devtools)
+load_all()
+```
+
+By default, **CaDrA** performs both forward and backward search algorithm to look for a subset of features whose union is maximally associated with an outcome of interest, based on (currently) one of four scoring functions (**Kolmogorov-Smirnov**, **Conditional Mutual Information**, **Wilcoxon**, and **custom-defined**). To test whether the strength of the association between the set of features and the observed input scores (e.g., pathway activity, drug sensitivity, etc.) is greater than it would be expected by chance, **CaDrA** supports permutation-based significance testing. Importantly, the permutation test iterates over the entire search procedure (e.g., if `top_N = 7`, each permutation iteration will consist of running the search over the top 7 features).
+
+# Load packages
+
+```r
+library(CaDrA)
+```
+
+# Load required datasets
+
+1. A `binary features matrix` also known as `Feature Set` (such as somatic mutations, copy number alterations, chromosomal translocations, etc.) The 1/0 row vectors indicate the presence/absence of ‘omics’ features in the samples. The `Feature Set` can be a matrix or an object of class **SummarizedExperiment** from **SummarizedExperiment** package) 
+2. A vector of continuous scores (or `Input Scores`) representing a functional response of interest (such as protein expression, pathway activity, etc.)
+
+```{r load.data}
+# Load pre-simulated feature set 
+# See ?sim_FS for more information
+data(sim_FS)
+
+# Load pre-computed input-score
+# See ?sim_Scores for more information
+data(sim_Scores)
+```
+
+# Find a subset of features that maximally associated with a given outcome of interest
+
+Here we are using **Kolmogorow-Smirnow** (KS) scoring method to search for best features
+
+```{r ks.method}
+candidate_search_res <- CaDrA::candidate_search(
+  FS = sim_FS,
+  input_score = sim_Scores,
+  method = "ks_pval",          # Use Kolmogorow-Smirnow scoring function 
+  method_alternative = "less", # Use one-sided hypothesis testing
+  weights = NULL,              # If weights is provided, perform a weighted-KS test
+  search_method = "both",      # Apply both forward and backward search
+  top_N = 7,                   # Number of top features to kick start the search
+  max_size = 10,               # Allow at most 10 features in meta-feature matrix
+  best_score_only = FALSE      # Return all results from the search
+)
+```
+
+# Visualize best meta-features result
+
+```{r ks.meta.plot}
+# Extract the best meta-feature result
+topn_best_meta <- CaDrA::topn_best(topn_list = candidate_search_res)
+
+# Visualize meta-feature result
+CaDrA::meta_plot(topn_best_list = topn_best_meta)
+```
+
+# Perform permutation-based testing
+
+```{r}
+# Set seed for permutation-based testing
+set.seed(123)
+
+perm_res <- CaDrA::CaDrA(
+  FS = sim_FS, 
+  input_score = sim_Scores, 
+  method = "ks_pval",             # Use Kolmogorow-Smirnow scoring function 
+  method_alternative = "less",    # Use one-sided hypothesis testing
+  weights = NULL,                 # If weights is provided, perform a weighted-KS test
+  search_method = "both",         # Apply both forward and backward search
+  top_N = 7,                      # Repeat the search with the top N features
+  max_size = 10,                  # Allow at most 10 features in the meta-feature matrix
+  n_perm = 100,                   # Number of permutations to perform
+  perm_alternative = "one.sided", # One-sided permutation-based p-value alternative type
+  plot = FALSE,                   # We will plot later
+  ncores = 2                      # Number of cores to perform parallelization
+)
+```
+
+# Visualize permutation result
+
+```{r ks.permutation.plot}
+# Visualize permutation results
+permutation_plot(perm_res = perm_res)
+```
+
+# SessionInfo
+
+```{r RsessionInfo}
+sessionInfo()
+```
+

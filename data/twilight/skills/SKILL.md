@@ -1,0 +1,57 @@
+---
+name: twilight
+description: TWILIGHT (Tall and Wide Alignments at High Throughput) is a high-performance alignment tool optimized for massive genomic and proteomic datasets.
+homepage: https://github.com/TurakhiaLab/TWILIGHT
+---
+
+# twilight
+
+## Overview
+TWILIGHT (Tall and Wide Alignments at High Throughput) is a high-performance alignment tool optimized for massive genomic and proteomic datasets. It employs a progressive alignment algorithm combined with tiling strategies and a divide-and-conquer approach to handle sequence counts and lengths that typically exceed the memory or time constraints of standard aligners. While it functions on CPU-only systems, it is built to leverage NVIDIA (CUDA) or AMD (HIP) GPUs for significant performance gains.
+
+## Core CLI Usage
+
+The primary interface for TWILIGHT requires an unaligned FASTA file and a guide tree in Newick format.
+
+### Default Alignment
+To perform a standard progressive alignment:
+```bash
+twilight -t <guide_tree.nwk> -s <unaligned.fasta> -o <output_alignment.fasta>
+```
+
+### Adding New Sequences
+If you have an existing alignment and a tree that includes placements for new sequences, use the addition mode (available in v0.2.0+):
+```bash
+twilight -a -t <tree_with_placements.nwk> -s <new_sequences.fasta> -o <updated_alignment.fasta>
+```
+
+### Iterative Mode (No Guide Tree)
+When a guide tree is unavailable, TWILIGHT utilizes a Snakemake-based iterative workflow to estimate the tree using external tools before aligning.
+1. Ensure the iterative dependencies are installed via `installIterative.sh`.
+2. Run the workflow through the provided Snakemake configuration in the `workflow/` directory.
+
+## Expert Tips and Best Practices
+
+- **Hardware Acceleration**: TWILIGHT automatically detects the best available compute backend (CPU, NVIDIA GPU, or AMD GPU) if built using the `buildTWILIGHT.sh` script. For maximum throughput on large datasets, ensure your environment has functional CUDA or HIP drivers.
+- **Memory Management**: For "wide" alignments (sequences >10,000 bases), TWILIGHT's tiling strategy is essential. If you encounter memory issues on CPU, consider reducing the number of threads or moving the workload to a GPU with high VRAM.
+- **Protein Alignment**: As of v0.2.0, protein support is available but continuously improving. When aligning proteins, ensure you are using the latest version (v0.2.3+) to benefit from recent bug fixes in profile size counting and median extraction.
+- **Tree Flexibility**: The tool supports "Flexible Tree Support," allowing the input guide tree to contain more sequences than are present in the actual FASTA file. This is useful for aligning subsets of a larger phylogenetic study.
+- **Gappy Columns**: TWILIGHT uses a novel heuristic to handle gappy columns efficiently. This makes it particularly robust for datasets with high indel rates or fragmented sequences.
+
+## Installation Quick-Start
+
+**Conda (Recommended for CPU/NVIDIA):**
+```bash
+conda install -c bioconda twilight
+```
+
+**From Source (Required for AMD GPU/HIP):**
+```bash
+git clone https://github.com/TurakhiaLab/TWILIGHT.git
+cd TWILIGHT
+bash ./install/buildTWILIGHT.sh hip
+```
+
+## Reference documentation
+- [TWILIGHT GitHub Repository](./references/github_com_TurakhiaLab_TWILIGHT.md)
+- [Bioconda Twilight Overview](./references/anaconda_org_channels_bioconda_packages_twilight_overview.md)

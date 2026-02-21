@@ -1,0 +1,309 @@
+title: “adverSCarial, generate and analyze the vulnerability of scRNA-seq
+classifiers to adversarial attacks”
+shorttitle: “adverSCarial”
+author: Ghislain FIEVET ghislain.fievet@gmail.com
+package: adverSCarial
+abstract: >
+adverSCarial is an R Package designed for generating and analyzing the vulnerability of scRNA-seq
+classifiers to adversarial attacks. The package is versatile and provides a format for integrating
+any type of classifier. It offers functions for studying and generating two types of attacks,
+single gene attack and max change attack. The single gene attack involves making a small modification
+to the input to alter the classification. The max change attack involves making a large modification
+to the input without changing its classification.
+The package provides a comprehensive solution for evaluating the robustness of scRNA-seq classifiers
+against adversarial attacks.
+vignette: >
+%\VignetteIndexEntry{Vign04\_advRandWalkMinChange}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+
+# advRandWalkMinChange
+
+The `CHETAH` classifier is not vulnerable to one gene attack on `DC`cluster. We can use the `advRandWalkMinChange` function to generate a more complex attack, still looking for a minimum change in the input.
+
+We will find a list of genes suscpetibles to move the classification by using the `findMarkers` function from `scran`. Then we will use the `advRandWalkMinChange`
+function to shorten the list as much as possible.
+
+# Load data
+
+```
+library(adverSCarial)
+library(TENxPBMCData)
+library(CHETAH)
+library(scater)
+library(scran)
+library(stringr)
+```
+
+We get two pbmc datasets, *train\_3k* to train the CHETAH classifier, and *test\_4k* to run the adverSCarial functions.
+
+```
+train_3k <- TENxPBMCData(dataset = "pbmc3k")
+test_4k <- TENxPBMCData(dataset = "pbmc4k")
+
+# Convert from ensemble id to hgnc symbol
+test_4k <- sceConvertToHGNC(test_4k)
+train_3k <- sceConvertToHGNC(train_3k)
+
+cell_types_3k <- system.file("extdata", "pbmc3k_cell_types.tsv", package="adverSCarial")
+cell_types_3k <- read.table(cell_types_3k, sep="\t")
+colData(train_3k)$celltypes <- cell_types_3k$cell_type
+colnames(train_3k) <- colData(train_3k)[['Barcode']]
+colnames(test_4k) <- colData(test_4k)[['Barcode']]
+```
+
+Annotation of the *test\_4k* dataset with CHETAH, and processing of the SingleCellExperiment object.
+
+```
+input <- CHETAHclassifier(input = test_4k, ref_cells = train_3k)
+input <- Classify(input = input, 0.00001)
+colData(test_4k)$celltypes <- input$celltype_CHETAH
+
+test_4k <- logNormCounts(test_4k)
+dec <- modelGeneVar(test_4k)
+hvg <- getTopHVGs(dec, prop=0.1)
+test_4k <- runPCA(test_4k, ncomponents=25, subset_row=hvg)
+test_4k <- runUMAP(test_4k, dimred = 'PCA')
+```
+
+```
+CHETAHClassifier <- function(expr, clusters, target){
+    reference_3k <- train_3k
+    input <- CHETAHclassifier(input = expr, ref_cells = reference_3k)
+    input <- Classify(input = input, 0.01)
+    final_predictions = input$celltype_CHETAH[clusters == target]
+    ratio <- as.numeric(sort(table(final_predictions), decreasing = TRUE)[1]) /
+        sum(as.numeric(sort(table(final_predictions), decreasing = TRUE)))
+    predicted_class <- names(sort(table(final_predictions), decreasing = TRUE)[1])
+    if ( ratio < 0.3){
+        predicted_class <- "NA"
+    }
+    c(predicted_class, ratio)
+}
+```
+
+# Advanced attacks with `advRandWalkMinChange`
+
+We use the `advRandWalkMinChange` function to generate a complex attack, looking for a minimum change of several genes in the input.
+
+First step is to look for a list of genes suscpetibles to move the classification. We get this list by using the `findMarkers` function from `scran`.
+
+```
+markers <- c("IL7R", "CCR7", "CD14", "LYZ", "S100A4", "MS4A1", "CD8A", "FCGR3A", "MS4A7",
+              "GNLY", "NKG7", "FCER1A", "CST3", "PPBP")
+
+test_4k_subset <- test_4k[, test_4k$celltypes %in% c("CD14+ Mono", "DC")]
+fm_t4k <- findMarkers(test_4k_subset, test_4k_subset$celltypes)
+genes_4walk <- rownames(fm_t4k[['DC']][abs(fm_t4k[['DC']]$summary.logFC)>1,])
+
+# Remove the officiel markers from the candidates
+genes_4walk <- genes_4walk[!genes_4walk %in% markers]
+
+genes_4walk
+```
+
+```
+##  [1] "HLA-DRA"  "S100A12"  "HLA-DQB1" "HLA-DPA1" "HLA-DPB1" "HLA-DRB1"
+##  [7] "S100A8"   "HLA-DQA1" "S100A9"   "CD74"     "VCAN"     "HLA-DMA"
+## [13] "CTSS"     "FTL"      "FCN1"     "TYROBP"   "NEAT1"
+```
+
+Then we define a list of modifications to test:
+
+```
+modifications <- list()
+modifications[[1]] <- list("perc99")
+modifications[[2]] <- list("perc1")
+```
+
+Then we process to a random walk parameter search on these genes and these modifications:
+
+```
+rand_walk_min_change <- advRandWalkMinChange(test_4k, colData(test_4k)$celltypes, "DC", CHETAHClassifier,
+                                             genes=genes_4walk, modifications=modifications,
+                                             walkLength=15, argForClassif = 'SingleCellExperiment')
+
+head(rand_walk_min_change)
+```
+
+```
+## DataFrame with 6 rows and 22 columns
+##     prediction         odd genesModified typeModified   iteration     HLA.DRA
+##    <character> <character>   <character>  <character> <character> <character>
+## 1 UNDETERMINED    0.484375             2         TRUE          15          NA
+## 2   CD14+ Mono    0.578125             3         TRUE          14          NA
+## 3 UNDETERMINED         0.5             4         TRUE          13          NA
+## 4 UNDETERMINED         0.5             5         TRUE          11      perc99
+## 5   CD14+ Mono         0.5             7         TRUE          10      perc99
+## 6 UNDETERMINED     0.59375             8         TRUE           9      perc99
+##       S100A12    HLA.DQB1    HLA.DPA1    HLA.DPB1    HLA.DRB1      S100A8
+##   <character> <character> <character> <character> <character> <character>
+## 1          NA       perc1       perc1          NA          NA          NA
+## 2          NA       perc1       perc1          NA          NA      perc99
+## 3          NA       perc1       perc1          NA          NA       perc1
+## 4          NA       perc1       perc1          NA          NA       perc1
+## 5          NA       perc1       perc1          NA          NA       perc1
+## 6          NA       perc1       perc1          NA       perc1       perc1
+##      HLA.DQA1      S100A9        CD74        VCAN     HLA.DMA        CTSS
+##   <character> <character> <character> <character> <character> <character>
+## 1          NA          NA          NA          NA          NA          NA
+## 2          NA          NA          NA          NA          NA          NA
+## 3          NA          NA          NA          NA       perc1          NA
+## 4          NA          NA          NA          NA       perc1          NA
+## 5          NA          NA       perc1       perc1       perc1          NA
+## 6          NA          NA       perc1       perc1       perc1          NA
+##           FTL        FCN1      TYROBP       NEAT1
+##   <character> <character> <character> <character>
+## 1          NA          NA          NA          NA
+## 2          NA          NA          NA          NA
+## 3          NA          NA          NA          NA
+## 4          NA          NA          NA          NA
+## 5          NA          NA          NA          NA
+## 6          NA          NA          NA          NA
+```
+
+The first line of `rand_walk_min_change` contains the parameter for the attack:
+
+```
+best_results <- rand_walk_min_change[1,]
+best_results <- as.data.frame(best_results[6:ncol(best_results)])
+best_results <- best_results[,best_results!="NA"]
+best_results
+```
+
+```
+##   HLA.DQB1 HLA.DPA1
+## 1    perc1    perc1
+```
+
+Then we modify the rna expression matrix to fool the classifier:
+
+```
+min_change_attack_rna_matrix <- test_4k
+for ( i in seq_len(length(colnames(best_results)))){
+    gene2modif <- colnames(best_results)[i]
+    gene2modif <- str_replace(gene2modif, "\\.", "-")
+    modif <- best_results[1,i]
+    min_change_attack_rna_matrix <- advModifications(min_change_attack_rna_matrix,
+        gene2modif, colData(test_4k)$celltypes, "DC", advMethod=modif, argForClassif="SingleCellExperiment")
+}
+```
+
+And we check it successfully changed the classification.
+
+```
+res_classif <- CHETAHClassifier(min_change_attack_rna_matrix, colData(test_4k)$celltypes, "DC")
+```
+
+```
+res_classif
+```
+
+```
+## [1] "UNDETERMINED" "0.484375"
+```
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.3.0 (2023-04-21)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 22.04.1 LTS
+##
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=fr_FR.UTF-8        LC_COLLATE=en_US.UTF-8
+##  [5] LC_MONETARY=fr_FR.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=fr_FR.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=fr_FR.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: Europe/Paris
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods
+## [8] base
+##
+## other attached packages:
+##  [1] stringr_1.5.0               scran_1.28.1
+##  [3] scater_1.28.0               scuttle_1.10.1
+##  [5] CHETAH_1.16.0               ggplot2_3.4.2
+##  [7] TENxPBMCData_1.18.0         HDF5Array_1.28.1
+##  [9] rhdf5_2.44.0                DelayedArray_0.26.3
+## [11] S4Arrays_1.0.4              Matrix_1.5-4.1
+## [13] SingleCellExperiment_1.22.0 SummarizedExperiment_1.30.1
+## [15] Biobase_2.60.0              GenomicRanges_1.52.0
+## [17] GenomeInfoDb_1.36.0         IRanges_2.34.0
+## [19] S4Vectors_0.38.1            BiocGenerics_0.46.0
+## [21] MatrixGenerics_1.12.0       matrixStats_0.63.0
+## [23] adverSCarial_0.99.38        knitr_1.42
+##
+## loaded via a namespace (and not attached):
+##   [1] RColorBrewer_1.1-3            jsonlite_1.8.4
+##   [3] magrittr_2.0.3                ggbeeswarm_0.7.2
+##   [5] corrplot_0.92                 zlibbioc_1.46.0
+##   [7] vctrs_0.6.2                   memoise_2.0.1
+##   [9] DelayedMatrixStats_1.22.0     RCurl_1.98-1.12
+##  [11] base64enc_0.1-3               htmltools_0.5.5
+##  [13] AnnotationHub_3.8.0           curl_5.0.0
+##  [15] BiocNeighbors_1.18.0          Rhdf5lib_1.22.0
+##  [17] htmlwidgets_1.6.2             plyr_1.8.8
+##  [19] plotly_4.10.1                 cachem_1.0.8
+##  [21] uuid_1.1-0                    igraph_1.4.2
+##  [23] mime_0.12                     lifecycle_1.0.3
+##  [25] pkgconfig_2.0.3               rsvd_1.0.5
+##  [27] R6_2.5.1                      fastmap_1.1.1
+##  [29] GenomeInfoDbData_1.2.10       shiny_1.7.4
+##  [31] digest_0.6.31                 colorspace_2.1-0
+##  [33] AnnotationDbi_1.62.1          dqrng_0.3.0
+##  [35] irlba_2.3.5.1                 ExperimentHub_2.8.0
+##  [37] RSQLite_2.3.1                 beachmat_2.16.0
+##  [39] filelock_1.0.2                fansi_1.0.4
+##  [41] httr_1.4.6                    compiler_4.3.0
+##  [43] bit64_4.0.5                   withr_2.5.0
+##  [45] BiocParallel_1.34.1           viridis_0.6.3
+##  [47] DBI_1.1.3                     dendextend_1.17.1
+##  [49] rappdirs_0.3.3                bluster_1.10.0
+##  [51] tools_4.3.0                   vipor_0.4.5
+##  [53] beeswarm_0.4.0                interactiveDisplayBase_1.38.0
+##  [55] httpuv_1.6.11                 glue_1.6.2
+##  [57] rhdf5filters_1.12.1           promises_1.2.0.1
+##  [59] grid_4.3.0                    pbdZMQ_0.3-9
+##  [61] cluster_2.1.4                 reshape2_1.4.4
+##  [63] generics_0.1.3                gtable_0.3.3
+##  [65] tidyr_1.3.0                   data.table_1.14.8
+##  [67] metapod_1.8.0                 BiocSingular_1.16.0
+##  [69] ScaledMatrix_1.8.1            utf8_1.2.3
+##  [71] XVector_0.40.0                RcppAnnoy_0.0.20
+##  [73] ggrepel_0.9.3                 BiocVersion_3.17.1
+##  [75] pillar_1.9.0                  limma_3.56.1
+##  [77] IRdisplay_1.1                 later_1.3.1
+##  [79] dplyr_1.1.2                   BiocFileCache_2.8.0
+##  [81] lattice_0.21-8                bit_4.0.5
+##  [83] tidyselect_1.2.0              locfit_1.5-9.7
+##  [85] Biostrings_2.68.1             gridExtra_2.3
+##  [87] edgeR_3.42.2                  xfun_0.39
+##  [89] statmod_1.5.0                 pheatmap_1.0.12
+##  [91] stringi_1.7.12                lazyeval_0.2.2
+##  [93] yaml_2.3.7                    evaluate_0.21
+##  [95] codetools_0.2-19              tibble_3.2.1
+##  [97] BiocManager_1.30.20           cli_3.6.1
+##  [99] uwot_0.1.14                   IRkernel_1.3.2
+## [101] xtable_1.8-4                  repr_1.1.6
+## [103] munsell_0.5.0                 Rcpp_1.0.10
+## [105] bioDist_1.72.0                dbplyr_2.3.2
+## [107] png_0.1-8                     parallel_4.3.0
+## [109] ellipsis_0.3.2                blob_1.2.4
+## [111] sparseMatrixStats_1.12.0      bitops_1.0-7
+## [113] viridisLite_0.4.2             scales_1.2.1
+## [115] purrr_1.0.1                   crayon_1.5.2
+## [117] rlang_1.1.1                   cowplot_1.1.1
+## [119] KEGGREST_1.40.0
+```

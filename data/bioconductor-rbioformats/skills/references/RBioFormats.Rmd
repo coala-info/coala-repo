@@ -1,0 +1,245 @@
+---
+title: "RBioFormats: an R interface to the Bio-Formats library"
+author: Andrzej Oleś
+package: "`r paste(pkg_ver('RBioFormats'), sprintf('(Bio-Formats library version: %s)', RBioFormats::BioFormats.version()))`"
+output:
+  BiocStyle::html_document:
+    toc_float: yes
+vignette: >
+  %\VignetteIndexEntry{RBioFormats: an R interface to the Bio-Formats library}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+---
+
+# Introduction
+
+`r Biocpkg('RBioFormats')` provides an interface from R to the OME
+[Bio-Formats](https://github.com/ome/bioformats) Java library. Bio-Formats is a
+solution for reading data of various image types, including many popular in life
+sciences as well as proprietary microscopy image formats. It supports over 150
+file formats from domains such as High Content Screening, time lapse imaging,
+digital pathology and other complex multidimensional image formats.
+
+Image pixel data is typically complemented by image metadata containing, for
+example, technical and temporal parameters of the acquisition in the case of
+microscopy images. Such annotation can be an invaluable source of additional
+insight helpful during postprocessing or analyzing of the image data.
+
+The package builds on top of the infrastructure provided by 
+`r Biocpkg('EBImage')` by extending its class abstracting image data. The
+primary motivation behind developing `r Biocpkg('RBioFormats')` was to fill the
+gap between data acquisition and analysis by providing a tool which allows to
+directly read the acquired images without the need of any tedious image format
+conversion in between.
+
+The following chapters provide some practical examples illustrating the use of
+the package. Along the way the classes used for representing image data and
+metadata are described too.
+
+
+# Getting started
+
+`r Biocpkg("EBImage")` is an R package distributed as part of the
+[Bioconductor](http://bioconductor.org) project. To install the package, start R
+(version 4.2 or higher) and enter:
+
+```{r installation, eval=FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("RBioFormats")
+```
+
+Once `r Biocpkg("RBioFormats")` is installed, it can be loaded by the following
+command.
+
+```{r library}
+library("RBioFormats")
+```
+
+
+# Reading images
+
+Images can be loaded into R with the help of the package function `read.image`.
+The following examples illustrates how to load a sample grayscale image
+
+```{r readgrey}
+f <- system.file("images", "sample.png", package = "EBImage")
+
+img <- read.image(f)
+img
+```
+
+or an RGB image.
+
+```{r readrgb}
+f <- system.file("images", "sample-color.png", package = "EBImage")
+
+img <- read.image(f)
+print(img, short = TRUE)
+```
+
+Note the use of `short = TRUE` argument to `print` in the example above for
+displaying object summary without the image data preview. There is also a
+convenience function to query just for the order of dimensions.
+
+```{r dimorder}
+dimorder(img)
+```
+
+
+# The *AnnotatedImage* class
+
+`r Rpackage('RBioFormats')` stores image data in an *AnnotatedImage* class which
+extends the *Image* class from `r Biocpkg('EBImage')`.
+
+```{r classdef}
+getClassDef("AnnotatedImage")
+```
+
+Compared to the original *Image* class the *AnnotatedImage* class features an
+additional `metadata` slot containing image metadata.
+
+```{r metadata}
+meta <- metadata(img)
+meta
+```
+
+To alter the length of the printed output use the `list.len` attribute to
+`print`.
+
+```{r printmeta}
+print(meta, list.len = 99L)
+```
+
+
+# Image metadata
+
+Image metadata is represented by an *ImageMetadata* class structured as a named
+list of coreMetadata, globalMetadata and seriesMetadata.
+
+```{r metaNames}
+names(meta)
+cMeta <- meta$coreMetadata
+names( cMeta )
+```
+
+`coreMetadata` stores information which is guaranteed to exist for any image
+type, whereas the latter two metadata types are format-specific and can be
+empty.
+
+Each of these metadata sublists has an corresponding accessor function, e.g.,
+
+```{r coreMetadata}
+identical( coreMetadata(meta), cMeta)
+```
+
+and similarly for `globalMetadata` and `seriesMetadata`.  These accessors are
+useful for extracting the corresponding metadata directly from an
+*AnnotatedImage* object
+
+```{r coreMetadata2}
+identical( coreMetadata(img), cMeta )
+```
+
+
+# Working with large data sets
+
+The `read.metadata` function allows to access image metadata without loading the
+corresponding pixel data.
+
+```{r read.metadata}
+f <- system.file("images", "nuclei.tif", package = "EBImage")
+metadata <- read.metadata(f)
+
+metadata
+```
+
+This approach is especially useful when working with image series and/or stacks
+which have high memory requirements. Information from the metadata can be used
+as input to functions which read and process the data chunk-wise rather than
+loading it all at once. For this purpose the `subset` argument to `read.image`
+comes in handy. Just to give you an idea the following toy example iterates over
+individual time frames.  Similarly a region if interest from within individual
+image frames could be extracted by providing ranges on the `X` and `Y` planar
+dimensions. To subset image series specify them in the `series` argument.
+
+```{r read.image slices, fig.small=TRUE}
+for(t in seq_len(coreMetadata(metadata)$sizeT)) {
+  frame <- read.image(f, subset = list(T = t))
+  EBImage::display(frame)
+}
+```
+
+
+# OME-XML representation
+
+The OME-XML DOM tree representation of the metadata can be accessed using tools
+from the `r CRANpkg('XML')` or `r CRANpkg('xml2')` package.  For details on
+working with XML data in R see the corresponding package's documentation.
+
+```{r parseXML, message=FALSE}
+library("xml2")
+
+omexml <- read.omexml(f)
+read_xml(omexml)
+```
+
+
+# Session info {.unnumbered}
+
+Here is the output of `sessionInfo()` on the system on which this
+document was compiled:
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
+
+# Appendix A: Working with test images {.unnumbered}
+
+For development purposes it is useful to have images of a specific size or pixel
+type for testing. Mock files containing gradient images can be generated with
+
+```{r mockFile, out.width='256px', out.height='256px'}
+f <- mockFile(sizeX = 256, sizeY = 256)
+img <- read.image(f)
+
+library("EBImage")
+display(img, method = "raster")
+```
+
+Note that the native image data range is different depending on pixel type.
+
+```{r defaultRange, echo=FALSE, results='asis', R.options=list(digits = 15)}
+types <- c("int8", "uint8", "int16", "uint16", "int32", "uint32", "float", "double")
+
+ranges <- sapply(types, function(t) {
+  minmax <- FormatTools$defaultMinMax(FormatTools$pixelTypeFromString(t))
+  setNames(minmax, c("min", "max"))
+  })
+knitr::kable(ranges)
+```
+
+Image data returned by `r Biocpkg('RBioFormats')` is by default scaled to the
+[0:1] range. This behavior can be controlled using the `normalize` argument to
+`read.image`.
+
+```{r range}
+sapply(types, function(t) {
+  img <- read.image(mockFile(sizeX = 65536, sizeY = 11, pixelType = t), normalize = FALSE)
+  if (typeof(img)=="raw") 
+    img <- readBin(img, what = "int", n = length(img), size = 1L)
+  setNames(range(img), c("min", "max"))  
+})
+```
+
+# Appendix B: Compared to *EBImage* {.unnumbered}
+
+Loading images using `r Biocpkg('RBioFormats')` should give the same results as
+using the `r Biocpkg('EBImage')` package.
+
+```{r comparewithref}
+library("EBImage")
+f <- system.file("images", "sample-color.png", package = "EBImage")
+identical(readImage(f), as.Image(read.image(f)))
+```

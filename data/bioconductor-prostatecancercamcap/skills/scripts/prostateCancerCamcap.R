@@ -1,0 +1,101 @@
+# Code example from 'prostateCancerCamcap' vignette. See references/ for full tutorial.
+
+### R code from vignette source 'prostateCancerCamcap.Rnw'
+
+###################################################
+### code chunk number 1: prostateCancerCamcap.Rnw:23-24
+###################################################
+library(GEOquery)
+
+
+###################################################
+### code chunk number 2: prostateCancerCamcap.Rnw:30-38 (eval = FALSE)
+###################################################
+##   url <- "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE70nnn/GSE70768/matrix/"
+##   destfile <-"GSE70768_series_matrix.txt.gz"
+##   
+##   if(!file.exists(destfile)){
+##   download.file(paste(url,destfile,sep=""),destfile=destfile)
+##   }
+##   
+## geoData <- getGEO(filename=destfile)
+
+
+###################################################
+### code chunk number 3: prostateCancerCamcap.Rnw:48-113 (eval = FALSE)
+###################################################
+## 
+## pd <- pData(geoData)
+## Group <- gsub("sample type: ", "", pd$characteristics_ch1)
+## Group[grep("CRPC",pd$title)] <- "CRPC"
+## 
+## 
+## pd2 <- data.frame("geo_accession" = pd$geo_accession, Sample = pd$description, 
+##       Sample_Group = Group,Gleason=gsub("tumour gleason: ","",pd$characteristics_ch1.1), 
+##       iCluster = gsub("(derived data) iclusterplus group: ","",pd$characteristics_ch1.3,fixed=TRUE),
+##       ECE=gsub("extra-capsular extension (ece): ","",pd$characteristics_ch1.4,fixed=TRUE),
+##       PSM = gsub("positive surgical margins (psm): ","",pd$characteristics_ch1.5,fixed=TRUE),
+##       BCR = gsub("biochemical relapse (bcr): ","",pd$characteristics_ch1.6,fixed=TRUE),
+##       TotalTime = gsub("time to bcr (months): ","",pd$characteristics_ch1.7,fixed=TRUE),
+##       ERG = gsub("tmprss2: ERG gene fusion status: ","",pd$characteristics_ch1.8,fixed=TRUE),
+##       Age = gsub("age at diag: ","",pd$characteristics_ch1.9,fixed=TRUE),
+##       PSA = gsub("psa at diag: ","",pd$characteristics_ch1.10,fixed=TRUE),
+##       ClinicalStage = gsub("clinical stage: ","",pd$characteristics_ch1.11,fixed=TRUE),
+##       PathStage = gsub("clinical stage: ","",pd$characteristics_ch1.12,fixed=TRUE),
+##       FollowUpTime =gsub("total follow up (months): ","",pd$characteristics_ch1.13,fixed=TRUE)
+##                 )
+## 
+## pd2$iCluster <- gsub("N/A", NA, pd2$iCluster)
+## pd2$iCluster[which(pd2$iCluster == "")] <- NA
+## 
+## weirdValue <- setdiff(pd2$iCluster, 
+##         c("clust1","clust2","clust3","clust4","clust5",NA))
+## 
+## if(length(weirdValue) > 0) pd2$iCluster[pd2$iCluster %in% weirdValue] <- NA
+## 
+## pd2$Gleason <- gsub("N/A", NA, pd2$Gleason)
+## weirdValue <- setdiff(pd2$Gleason, 
+##       c("10=5+5","6=3+3","7=3+4","7=4+3","8=3+5","9=5+4",NA))
+## 
+## if(length(weirdValue) > 0) pd2$Gleason[pd2$Gleason %in% weirdValue] <- NA
+## pd2$Gleason <- factor(pd2$Gleason, 
+##     levels = c("6=3+3","7=3+4","7=4+3","8=3+5","9=5+4","10=5+5"))
+## 
+## pd2$ECE <- gsub("unknown",NA,pd2$ECE)
+## pd2$ECE[which(pd2$ECE == "")] <- NA
+## 
+## weirdValue <- setdiff(pd2$ECE, c("N","Y",NA))
+## if(length(weirdValue) > 0) pd2$ECE[pd2$ECE %in% weirdValue] <- NA
+## 
+## 
+## pd2$PSM <- gsub("unknown",NA,pd2$PSM)
+## pd2$PSM[which(pd2$PSM == "")] <- NA
+## 
+## weirdValue <- setdiff(pd2$PSM, c("N","Y",NA))
+## if(length(weirdValue) > 0) pd2$PSM[pd2$PSM %in% weirdValue] <- NA
+## 
+## 
+## 
+## pd2$BCR <- gsub("N/A", NA, pd2$BCR)
+## pd2$BCR[which(pd2$BCR == "")] <- NA
+## 
+## weirdValue <- setdiff(pd2$BCR, c("N","Y",NA))
+## if(length(weirdValue) > 0) pd2$BCR[pd2$BCR %in% weirdValue] <- NA
+## 
+## 
+## pd2$TotalTime <- gsub("N/A", NA, pd2$TotalTime)
+## pd2$TotalTime[which(pd2$TotalTime == "")] <- NA
+## 
+## pd2$FollowUpTime[which(pd2$FollowUpTime=="")] <- NA
+## 
+## rownames(pd2) <- pd2$geo_accession
+
+
+###################################################
+### code chunk number 4: prostateCancerCamcap.Rnw:118-121 (eval = FALSE)
+###################################################
+## pData(geoData) <- pd2
+## camcap <- geoData
+## save(camcap, file="data/camcap.rda",compress="xz")
+
+

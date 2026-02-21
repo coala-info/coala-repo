@@ -1,0 +1,16 @@
+# bioconductor-bsgenome.mmulatta.ucsc.rhemac8 Bioconductor Package Report
+
+## BSgenome.Mmulatta.UCSC.rheMac8
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac8.html
+- **Package**: BSgenome.Mmulatta.UCSC.rheMac8
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

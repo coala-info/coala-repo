@@ -1,0 +1,256 @@
+# cyanoFilter
+
+### A Semi-Automated Framework for Identifying Phytplanktons and Cyanobacteria Population in Flow Cytometry Data
+
+#### Olusoji O. D., Spaak J., Neyens T.,De Laender F., Aerts M.
+
+#### 2025-10-29
+
+## Introduction
+
+Flow cytometry is a well-known technique for identifying cell populations contained in a biological smaple. It is largely applied in biomedical and medical sciences for cell sorting, counting, biomarker detections and protein engineering. The technique also provides an energy efficient alternative to microscopy that has long been the standard technique for cell population identification. Cyanobacteria are bacteria phylum believe to contribute more than 50% of atmospheric oxygen via oxygen and are found almost everywhere. These bacteria are also one of the known oldest life forms known to obtain their energy via photosynthesis.
+
+## Crucial Synechococcus Properties
+
+## Illustrations
+
+We load the package and necessary dependencies below. We also load tidyverse for some data cleaning steps that we need to carry out.
+
+```
+library(dplyr)
+library(magrittr)
+library(tidyr)
+library(purrr)
+library(flowCore)
+library(flowDensity)
+library(cyanoFilter)
+```
+
+To illustrate the funtions contained in this package, we use two datafiles contained by default in the package. These are just demonstration dataset, hence are not documented in the helpfiles.
+
+```
+metadata <- system.file("extdata", "2019-03-25_Rstarted.csv",
+  package = "cyanoFilter",
+  mustWork = TRUE)
+metafile <- read.csv(metadata, skip = 7, stringsAsFactors = FALSE,
+  check.names = TRUE)
+#columns containing dilution, $\mu l$ and id information
+metafile <- metafile %>%
+  dplyr::select(Sample.Number,
+                Sample.ID,
+                Number.of.Events,
+                Dilution.Factor,
+                Original.Volume,
+                Cells.L)
+```
+
+Each row in the csv file corresponds to a measurement from two types of cyanobacteria cells carried out at one of three dilution levels. The columns contain information about the dilution level, the number of cells per micro-litre (\(cell/\mu l\)), number of particles measured and a unique identification code for each measurement. The *Sample.ID* column is structured in the format cyanobacteria\_dilution. We extract the cyanobacteria part of this column into a new column and also rename the \(cell/\mu l\) column with the following code:
+
+```
+#extract the part of the Sample.ID that corresponds to BS4 or BS5
+metafile <- metafile %>% dplyr::mutate(Sample.ID2 =
+                                         stringr::str_extract(metafile$Sample.ID, "BS*[4-5]")
+                                       )
+#clean up the Cells.muL column
+names(metafile)[which(stringr::str_detect(names(metafile), "Cells."))] <- "CellspML"
+```
+
+### Good Measurements
+
+To determine the appropriate data file to read from a FCM datafile, the desired minimum, maximum and column containing the \(cell\mu l\) values are supplied to the **goodfcs()** function. The code below demonstrates the use of this function for a situation where the desired minimum and maximum for \(cell/\mu l\) is 50 and 1000 respectively.
+
+```
+metafile <- metafile %>% mutate(Status = cyanoFilter::goodFcs(metafile = metafile,
+                                                              col_cpml = "CellspML",
+                                        mxd_cellpML = 1000,
+                                        mnd_cellpML = 50)
+                                )
+knitr::kable(metafile)
+```
+
+| Sample.Number | Sample.ID | Number.of.Events | Dilution.Factor | Original.Volume | CellspML | Sample.ID2 | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | BS4\_20000 | 6918 | 20000 | 10 | 62.02270 | BS4 | good |
+| 2 | BS4\_10000 | 6591 | 10000 | 10 | 116.76311 | BS4 | good |
+| 3 | BS4\_2000 | 6508 | 2000 | 10 | 517.90008 | BS4 | good |
+| 4 | BS5\_20000 | 5976 | 20000 | 10 | 48.31036 | BS5 | bad |
+| 5 | BS5\_10000 | 5844 | 10000 | 10 | 90.51666 | BS5 | good |
+| 6 | BS5\_2000 | 5829 | 2000 | 10 | 400.72498 | BS5 | good |
+
+The function adds an extra column, *Status*, with entries *good* or *bad* to the metafile. Rows containing \(cell/\mu l\) values outside the desired minimum and maximum are labelled *bad*. Note that the *Status* column for the fourth row is labelled *bad*, because it has a \(cell/\mu l\) value outside the desired range.
+
+### Files to Retain
+
+Although any of the files labelled good can be read from the FCM file, the **retain()** function can help select either the file with the highest \(cell/\mu l\) or that with the smallest \(cell/\mu l\) value. To do this, one supplies the function with the status column, \(cell/\mu l\) column and the desired decision. The code below demonstrates this action for a case where we want to select the file with the maximum \(cell/\mu l\) from the good measurements for each unique sample ID.
+
+```
+broken <- metafile %>% group_by(Sample.ID2) %>% nest()
+metafile$Retained <- unlist(map(broken$data, function(.x) {
+  retain(meta_files = .x, make_decision = "maxi",
+  Status = "Status",
+  CellspML = "CellspML")
+ })
+)
+knitr::kable(metafile)
+```
+
+| Sample.Number | Sample.ID | Number.of.Events | Dilution.Factor | Original.Volume | CellspML | Sample.ID2 | Status | Retained |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | BS4\_20000 | 6918 | 20000 | 10 | 62.02270 | BS4 | good | No! |
+| 2 | BS4\_10000 | 6591 | 10000 | 10 | 116.76311 | BS4 | good | No! |
+| 3 | BS4\_2000 | 6508 | 2000 | 10 | 517.90008 | BS4 | good | Retain |
+| 4 | BS5\_20000 | 5976 | 20000 | 10 | 48.31036 | BS5 | bad | No! |
+| 5 | BS5\_10000 | 5844 | 10000 | 10 | 90.51666 | BS5 | good | No! |
+| 6 | BS5\_2000 | 5829 | 2000 | 10 | 400.72498 | BS5 | good | Retain |
+
+This function adds another column, *Retained*, to the metafile. The third and sixth row in the metadata are with the highest \(cell/\mu l\) values, thus one can proceed to read the fourth and sixth file from the corresponding FCS file for *BS4* and *BS5* respectively. This implies that we are reading in only two FCS files rather than the six measured files.
+
+### Flow Cytometer File Processing
+
+To read **B4\_18\_1.fcs** file into **R**, we use the **read.FCS()** function from the **flowCore** package. The *dataset* option enables the specification of the precise file to be read. Since this datafile contains one file only, we set this option to 1. If this option is set to 2, it gives an error since **text.fcs** contains only one datafile.
+
+```
+flowfile_path <- system.file("extdata", "B4_18_1.fcs", package = "cyanoFilter",
+  mustWork = TRUE)
+flowfile <- read.FCS(flowfile_path, alter.names = TRUE,
+  transformation = FALSE, emptyValue = FALSE,
+  dataset = 1)
+flowfile
+#> flowFrame object ' B4_18_1'
+#> with 8729 cells and 11 observables:
+#>            name                   desc     range   minRange  maxRange
+#> $P1    FSC.HLin Forward Scatter (FSC..     1e+05    0.00000     99999
+#> $P2    SSC.HLin Side Scatter (SSC-HL..     1e+05  -34.47928     99999
+#> $P3  GRN.B.HLin Green-B Fluorescence..     1e+05  -21.19454     99999
+#> $P4  YEL.B.HLin Yellow-B Fluorescenc..     1e+05  -10.32744     99999
+#> $P5  RED.B.HLin Red-B Fluorescence (..     1e+05   -5.34720     99999
+#> $P6  NIR.B.HLin Near IR-B Fluorescen..     1e+05   -4.30798     99999
+#> $P7  RED.R.HLin Red-R Fluorescence (..     1e+05  -25.49018     99999
+#> $P8  NIR.R.HLin Near IR-R Fluorescen..     1e+05  -16.02002     99999
+#> $P9    SSC.ALin Side Scatter Area (S..     1e+05    0.00000     99999
+#> $P10      SSC.W Side Scatter Width (..     1e+05 -111.00000     99999
+#> $P11       TIME                   Time     1e+05    0.00000     99999
+#> 368 keywords are stored in the 'description' slot
+```
+
+The **R** object *flowfile* contains measurements about 8729 cells across 10 channels since the time channel does not contain any information about the properties of the measured cells.
+
+### Transformation and visualisation
+
+To examine the need for transformation, a visual representation of the information in the expression matrix is of great use. The **ggpairsDens()** function produces a panel plot of all measured channels. Each plot is also smoothed to show the cell density at every part of the plot.
+
+```
+flowfile_nona <- noNA(x = flowfile)
+ggpairsDens(flowfile_nona, notToPlot = "TIME")
+```
+
+![](data:image/png;base64...)
+
+**Panel plot for all channels measured in flowfile\_nona. A bivariate kernel smoothed color density is used to indicate the cell density.**
+
+We obtain Figure above by using the **ggpairsDens()** function after removing all `NA` values from the expression matrix with the **nona()** function. There is a version of the function, **pairs\_plot()** that produces standard base scatter plots also smoothed to indicate cell density.
+
+```
+flowfile_noneg <- noNeg(x = flowfile_nona)
+flowfile_logtrans <- lnTrans(x = flowfile_noneg,
+  notToTransform = c("SSC.W", "TIME"))
+ggpairsDens(flowfile_logtrans, notToPlot = "TIME")
+```
+
+![](data:image/png;base64...)
+
+Panel plot for log-transformed channels for flowfile\_logtrans. A bivariate kernel smoothed color density is used to indicate the cell density.
+
+The second figure is the result of performing a logarithmic transformation in addition to the previous actions taken. The logarithmic transformation appears satisfactory in this case, as it allow a better examination of the information contained in each panel of the figure. Moreover, the clusters are clearly visible in this figure compared to the former figure. Other possible transformation (linear, bi-exponential and arcsinh) can be pursued if the logarithm transformation is not satisfactory. Functions for these transformations are provided in the **flowCore** package.
+
+## Gating
+
+Flow cytometry outcomes can be divided into 3 and they are not entirely mutually exclusive but this is not a problem as scientists are often interested in a pre-defined outcome.
+
+* Margin Events are particles too big to be measured
+* Doublets/Multiplets are cells with disproportionate Area, Height relationship
+* Singlets are the ‘normal cells’ but these could either be dead cells/particles (debris) or living cells (good cells).
+
+The set of functions below identifies margin events and singlets. Doublets are normally pre-filtered during the event acquiring phase when running the flow cytometer.
+
+The set of functions below identifies margin events and singlets. Doublets are normally pre-filtered during the event
+
+### Gating margin events
+
+To remove margin events, the **cellmargin()** function takes the column in the expression matrix corresponding to measurements about the width of each cell. The code below demonstrates the removal of margin events using the SSC.W column with the option to estimate the cut point between the margin events and the good cells.
+
+```
+flowfile_marginout <- cellMargin(flowframe = flowfile_logtrans,
+                                 Channel = 'SSC.W', type = 'estimate',
+                                 y_toplot = "FSC.HLin")
+plot(flowfile_marginout)
+```
+
+![](data:image/png;base64...)
+
+Smoothed Scatterplot of measured width (SSC.W) and height (FSC.HLin). The red line is the estimated cut point by flowDensity, and every particle below the red line has their width properly measured.
+
+```
+summary(flowfile_marginout,
+       channels = c('FSC.HLin', 'SSC.HLin',
+                    'SSC.W'))
+#>       Length        Class         Mode
+#>            1 MarginEvents           S4
+```
+
+*flowfile\_marginout* is an S4 object of class `MarginEvents` with **summary()**, **plot()**, **fullFlowframe()** and **reducedFlowframe()** methods. Running **plot()** on *flowfile\_marginout* produces a plot of the width channel against the channel supplied in *y\_toplot*. This action returns the figure @ref(fig:marginEvents). flowfile\_marginout contains the following slots:
+
+* *fullflowframe*, flowframe with indicator for margin and non-margin events in the expression matrix,
+* *reducedflowframe*, flowframe containing only non-margin events
+* *N\_margin*, number of margin events contained in the input flowframe
+* *N\_nonmargin*, number of non-margin events
+* *N\_particle*, number of particles in the input flowframe
+
+Running **plot()** on *flowfile\_marginout* gives you the number of margin and non-margin particles as well as descriptives on channels supplied. These descriptives are computed on the flowfile after the margin events have been removed.
+
+### Gating Debris
+
+To identify debris, we leverage on the presence of chlorophyll *a*
+
+```
+cells_nodebris <-  debrisNc(flowframe = reducedFlowframe(flowfile_marginout),
+                             ch_chlorophyll = "RED.B.HLin", ch_p2 = "YEL.B.HLin",
+                             ph = 0.05)
+plot(cells_nodebris)
+```
+
+![](data:image/png;base64...)
+
+Smoothed Scatterplot of measured chlorophyll *a* channel (RED.B.HLin) and phycoerythrin channel (YEL.B.HLin). The red lines are the estimated minimum intersection points between the detected peaks.
+
+### Gating cyanobacteria
+
+The **phyto\_filter()** function employs the following algorithm to separate particles into different clusters;
+
+1. Search for peaks along the supplied pigment and cell complexity channels.
+2. Idneify the minimum intersection point between the peaks observed these channels.
+3. Divide particles into groups based on the minimum intersection points identified in 1 and label each group.
+4. Formulate all possible combinations of labels in step 2.
+5. Assign a new label to the combinations in 3.
+6. Retain clusters that make up a desired proportion of the total number of particles clustered.
+
+```
+bs4_gate1 <- phytoFilter(flowfile = reducedFlowframe(cells_nodebris),
+               pig_channels = c("RED.B.HLin", "YEL.B.HLin", "RED.R.HLin"),
+               com_channels = c("FSC.HLin", "SSC.HLin"))
+
+plot(bs4_gate1)
+```
+
+![](data:image/png;base64...)
+
+Smoothed Scatterplot of all channels used in the gating process.
+
+The resulting object is a S4 object of class **PhytoFilter** with the following slots:
+
+* *reducedframe*, a flowFrame with all debris removed
+* *fullframe*, flowFrame with all measured particles and indicator for debris and cyanobacteria cells
+* *Cell\_count*, the number of BS4 cells counted
+* *Debris\_Count*, the number of debris particles.
+
+## Acknowledgements

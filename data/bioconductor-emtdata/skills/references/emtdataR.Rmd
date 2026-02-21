@@ -1,0 +1,132 @@
+---
+title: "emtdata"
+author: "Malvika D. Kharbanda"
+date: "`r BiocStyle::doc_date()`"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    toc: yes
+    toc_depth: 2
+    number_sections: yes
+    fig_caption: yes
+    df_print: paged
+vignette: >
+  %\VignetteIndexEntry{emtdata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# emtdata
+The emtdata package is an ExperimentHub package for three data sets with an Epithelial to Mesenchymal Transition (EMT). This package provides pre-processed RNA-seq data where the epithelial to mesenchymal transition was induced on cell lines. These data come from three publications [Cursons et al. (2015)](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA322427), [Cursons etl al. (2018)](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJEB25042) and [Foroutan et al. (2017)](https://doi.org/10.4225/49/5a2a11fa43fe3). In each of these publications, EMT was induces across multiple cell lines following treatment by TGFb among other stimulants. This data will be useful in determining the regulatory programs modified in order to achieve an EMT. Data were processed by the Davis laboratory in the Bioinformatics division at WEHI.
+  
+This package can be installed using the code below:
+
+```{r install}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("emtdata")
+```
+
+# Download data from the emtdata R package
+
+Data in this package can be downloaded using the `ExperimentHub` interface as shown below. To download the data, we first need to get a list of the data available in the `emtdata` package and determine the unique identifiers for each data. The `query()` function assists in getting this list.
+
+```{r load-packages, message=FALSE}
+library(emtdata)
+library(ExperimentHub)
+library(SummarizedExperiment)
+```
+
+```{r get-emtdata}
+eh = ExperimentHub()
+query(eh , 'emtdata')
+```
+
+Data can then be downloaded using the unique identifier.
+
+```{r download-emtdata-cursons2018-id}
+eh[['EH5440']]
+```
+
+Alternatively, data can be downloaded using object name accessors in the `emtdata` package as below:
+
+```{r download-emtdata-cursons2018-accessor}
+#metadata are displayed
+cursons2018_se(metadata = TRUE)
+#data are loaded
+cursons2018_se()
+```
+
+# Accessing SummarizedExperiment object
+
+```{r access-se}
+cursons2018_se = eh[['EH5440']]
+
+#read counts
+assay(cursons2018_se)[1:5, 1:5]
+
+#genes
+rowData(cursons2018_se)
+
+#sample information
+colData(cursons2018_se)
+```
+
+# Exploratory analysis and visualization
+
+Below we demonstrate how the SummarizedExperiment object can be interacted with. A simple MDS analyis is demonstrated for each of the datasets within this package. This transcriptomic data can be used for differential expression (DE) analyis and co-expression analysis to better understand the processes underlying EMT or MET. 
+
+## cursons2018
+
+This gene expression data comes from the human mammary epithelial (HMLE) cell line. A mesenchymal HMLE (mesHMLE) phenotype was induced following treatment with TGFb. The mesHMLE subline was then treated with mir200c to reinduce an epithelial phenotype.
+
+See help page `?cursons2018_se` for further reference
+
+```{r}
+library(edgeR)
+library(RColorBrewer)
+cursons2018_dge <- asDGEList(cursons2018_se)
+cursons2018_dge <- calcNormFactors(cursons2018_dge)
+plotMDS(cursons2018_dge)
+```
+
+## cursons2015
+
+This gene expression data comes from the PMC42-ET, PMC42-LA and MDA-MB-468 cell lines. Mesenchymal phenotype was induced in PMC42 cell lines with EGF treatment and in MDA-MB-468 with either EGF treatment or kept under Hypoxia. 
+
+See help page `?cursons2015_se` for further reference. 
+
+```{r}
+cursons2015_se = eh[['EH5441']]
+cursons2015_dge <- asDGEList(cursons2015_se)
+cursons2015_dge <- calcNormFactors(cursons2015_dge)
+colours <- brewer.pal(7, name = "Paired")
+plotMDS(cursons2015_dge, dim.plot = c(2,3), col=rep(colours, each = 3)) 
+```
+
+## foroutan2017
+
+This gene expression data comes from multiple different studies (microarary and RNA-seq), with cell lines treated using TGFb to induce a mesenchymal shift. Data were combined using SVA and ComBat to remove batch effects.
+
+See help page `?foroutan2017_se` for further reference
+
+```{r}
+foroutan2017_se = eh[['EH5439']]
+foroutan2017_dge <- asDGEList(foroutan2017_se, assay_name = "logExpr")
+foroutan2017_dge <- calcNormFactors(foroutan2017_dge)
+tgfb_col <- as.numeric(foroutan2017_dge$samples$Treatment %in% 'TGFb') + 1
+plotMDS(foroutan2017_dge, labels = foroutan2017_dge$samples$Treatment, col = tgfb_col)
+```
+
+# Session information
+
+```{r sessionInfo}
+sessionInfo()
+```

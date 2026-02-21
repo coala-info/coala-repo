@@ -1,0 +1,133 @@
+---
+title: "The vignette for running  scShapes"
+author: "Malindrie Dharmaratne"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{The vignette for running  scShapes}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Pulling and running singularity container
+
+```
+$ singularity pull --name scShapes.sif shub://Malindrie/scShapes
+$ singularity shell scShapes.sif
+Singularity scShapes.sif:~ > 
+```
+## Pulling and running docker container
+
+```
+$ docker pull maldharm/scshapes
+$ docker run -it maldharm/scshapes
+root@516e456b0762:/#
+```
+
+To use containerized `scShapes` package, need to launch `R` or execute an R script through `Rscript`.
+
+## Install `scShapes` from `install_github`
+
+```r
+devtools::install_github('Malindrie/scShapes')
+```
+
+```{r setup}
+library(scShapes)
+library(BiocParallel)
+set.seed(0xBEEF)
+```
+
+## Example
+
+This is a basic example which shows how you can use scShapes for identifying differential distributions in single-cell RNA-seq data. For this example data we use the toy example data `scData` included in the package.
+
+
+```{r example, results='hide', message=FALSE, warning=FALSE}
+
+# Loading and preparing data for input 
+
+data(scData)
+```
+
+We first filter the genes to keep only genes expressed in at least 10% of cells:
+
+```{r filtered}
+
+scData_filt <- filter_counts(scData$counts, perc.zero = 0.1)
+```
+
+In order to normalize for differences in sequencing depth, the log of the total UMI counts assigned per cell will be used as an offset in the GLM. This function is inbuilt in the algorithm; however the user is required to input the library sizes. In our example data this information together with the covariates is given under the lists `lib_size` and `covariates` respectively.  
+
+Perform Kolmogorov-Smirnov test to select genes belonging to the family of ZINB distributions.
+
+```{r message=FALSE, warning=FALSE}
+scData_KS <- ks_test(counts=scData$counts, cexpr=scData$covariates, lib.size=scData$lib_size, BPPARAM=SnowParam(workers=8,type="SOCK"))
+
+# Select genes significant from the KS test.
+# By default the 'ks_sig' function performs Benjamini-Hochberg correction for multiple   hypothese testing
+# and selects genes significant at p-value of 0.01
+
+scData_KS_sig <- ks_sig(scData_KS)
+
+# Subset UMI counts corresponding to the genes significant from the KS test
+scData.sig.genes <- scData$counts[rownames(scData$counts) %in% names(scData_KS_sig$genes),]
+```
+
+Fit the 4 distributions P,NB,ZIP,ZINB for genes that belong to the ZINB family of distributions by fitting GLM with log of the library sizes as an offset and cell types as a covariate in the GLM.
+
+```{r message=FALSE, warning=FALSE}
+scData_models <- fit_models(counts=scData.sig.genes, cexpr=scData$covariates, lib.size=scData$lib_size, BPPARAM=SnowParam(workers=8,type="SOCK"))
+```
+
+Once the 4 distributions are fitted, we next calculate the BIC value for each model and select the model with the least BIC value.
+
+```{r message=FALSE, warning=FALSE}
+scData_bicvals <- model_bic(scData_models)
+
+# select model with least bic value
+scData_least.bic <- lbic_model(scData_bicvals, scData$counts)
+```
+
+To ensure the fit of the models selected based on the least BIC value, additionally we perform LRT to test for model adequacy and presence of zero-inflation.
+
+```{r message=FALSE, warning=FALSE}
+scData_gof <- gof_model(scData_least.bic, cexpr=scData$covariates, lib.size=scData$lib_size, BPPARAM=SnowParam(workers=8,type="SOCK"))
+```
+
+Finally based on the results of the model adequacy tests, we can identify the distribution of best fit for each gene. 
+
+```{r message=FALSE, warning=FALSE}
+scData_fit <- select_model(scData_gof)
+```
+
+Once the distribution of best fit is identified for genes of interest, it is also possible to extract parameters of interest for the models.
+
+```{r message=FALSE, warning=FALSE}
+scData_params <- model_param(scData_models, scData_fit, model=NULL)
+```
+
+If our dataset consists of multiple conditions we can follow the above approach to identify the best fir distribution shape for each gene under each treatment condition (selecting the subset of genes common between conditions). Then using the dataframe of genes and distribution followed under each condition, now we can identify genes changing distribution between conditions. 
+
+For example suppose we follow above pipeline for scRNA-seq data on two treatment conditions 'CTRL' and 'STIM' and have identified the best distribution fit for each gene under each condition independently. Suppose the dataframe `ifnb.distr`; with genes as rows and columns as 'CTRL' and 'STIM' with the corresponding distribution name a particular gene follows, then we can identify genes changing distribution shape between 'CTRL' and 'STIM' as;     
+
+```{r eval=FALSE}
+ifnb.DD.genes <- change_shape(ifnb.distr)
+```
+This will give a list of two lists with genes changing distribution between condition and genes changing distribution from unimodal in one condition to zero-inflated in the other condition.  
+
+# Session Information
+
+Here is the output of sessionInfo() on the system on which this document 
+was compiled:
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,1 @@
+Created by potrace 1.14, written by Peter Selinger 2001-2017

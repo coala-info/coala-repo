@@ -1,0 +1,311 @@
+# DEsingle
+
+#### Zhun Miao
+
+#### 2018-06-21
+
+![](data:image/png;base64...)
+
+## Introduction
+
+**`DEsingle`** is an R package for **differential expression (DE) analysis of single-cell RNA-seq (scRNA-seq) data**. It will detect differentially expressed genes between two groups of cells in a scRNA-seq raw read counts matrix.
+
+**`DEsingle`** employs the Zero-Inflated Negative Binomial model for differential expression analysis. By estimating the proportion of real and dropout zeros, it not only detects DE genes **at higher accuracy** but also **subdivides three types of differential expression with different regulatory and functional mechanisms**.
+
+For more information, please refer to the [manuscript](https://doi.org/10.1093/bioinformatics/bty332) by *Zhun Miao, Ke Deng, Xiaowo Wang and Xuegong Zhang*.
+
+## Citation
+
+If you use **`DEsingle`** in published research, please cite:
+
+> Zhun Miao, Ke Deng, Xiaowo Wang, Xuegong Zhang (2018). DEsingle for detecting three types of differential expression in single-cell RNA-seq data. Bioinformatics, bty332. [10.1093/bioinformatics/bty332.](https://doi.org/10.1093/bioinformatics/bty332)
+
+## Installation
+
+To install **`DEsingle`** from [**Bioconductor**](http://bioconductor.org/packages/DEsingle/):
+
+```
+if(!require(BiocManager)) install.packages("BiocManager")
+BiocManager::install("DEsingle")
+```
+
+To install the *developmental version* from [**GitHub**](https://github.com/miaozhun/DEsingle/):
+
+```
+if(!require(devtools)) install.packages("devtools")
+devtools::install_github("miaozhun/DEsingle", build_vignettes = TRUE)
+```
+
+To load the installed **`DEsingle`** in R:
+
+```
+library(DEsingle)
+```
+
+## Input
+
+**`DEsingle`** takes two inputs: `counts` and `group`.
+
+The input `counts` is a scRNA-seq **raw read counts matrix** or a **`SingleCellExperiment`** object which contains the read counts matrix. The rows of the matrix are genes and columns are cells.
+
+The other input `group` is a vector of factor which specifies the two groups in the matrix to be compared, corresponding to the columns in `counts`.
+
+## Test data
+
+Users can load the test data in **`DEsingle`** by
+
+```
+library(DEsingle)
+data(TestData)
+```
+
+The toy data `counts` in `TestData` is a scRNA-seq read counts matrix which has 200 genes (rows) and 150 cells (columns).
+
+```
+dim(counts)
+#> [1] 200 150
+counts[1:6, 1:6]
+#>        E3.46.3383 E3.51.3425 E3.46.3388 E3.51.3423 E3.46.3382 E3.49.3407
+#> BTG4           22          0         12         26          0          0
+#> GABRB1          0          0          0          0          0          0
+#> IL9             0          0          0          0          0          0
+#> TAPBPL          2          0          5          1          0          2
+#> KANK4           0          0          0          0          0          0
+#> CPSF2          12          0         95          0          5        115
+```
+
+The object `group` in `TestData` is a vector of factor which has two levels and equal length to the column number of `counts`.
+
+```
+length(group)
+#> [1] 150
+summary(group)
+#>   1   2
+#>  50 100
+```
+
+## Usage
+
+### With read counts matrix input
+
+Here is an example to run **`DEsingle`** with read counts matrix input:
+
+```
+# Load library and the test data for DEsingle
+library(DEsingle)
+data(TestData)
+
+# Specifying the two groups to be compared
+# The sample number in group 1 and group 2 is 50 and 100 respectively
+group <- factor(c(rep(1,50), rep(2,100)))
+
+# Detecting the DE genes
+results <- DEsingle(counts = counts, group = group)
+
+# Dividing the DE genes into 3 categories at threshold of FDR < 0.05
+results.classified <- DEtype(results = results, threshold = 0.05)
+```
+
+### With SingleCellExperiment input
+
+The [`SingleCellExperiment`](http://bioconductor.org/packages/SingleCellExperiment/) class is a widely used S4 class for storing single-cell genomics data. **`DEsingle`** also could take the `SingleCellExperiment` data representation as input.
+
+Here is an example to run **`DEsingle`** with `SingleCellExperiment` input:
+
+```
+# Load library and the test data for DEsingle
+library(DEsingle)
+library(SingleCellExperiment)
+data(TestData)
+
+# Convert the test data in DEsingle to SingleCellExperiment data representation
+sce <- SingleCellExperiment(assays = list(counts = as.matrix(counts)))
+
+# Specifying the two groups to be compared
+# The sample number in group 1 and group 2 is 50 and 100 respectively
+group <- factor(c(rep(1,50), rep(2,100)))
+
+# Detecting the DE genes with SingleCellExperiment input sce
+results <- DEsingle(counts = sce, group = group)
+
+# Dividing the DE genes into 3 categories at threshold of FDR < 0.05
+results.classified <- DEtype(results = results, threshold = 0.05)
+```
+
+## Output
+
+`DEtype` subdivides the DE genes found by `DEsingle` into 3 types: **`DEs`**, **`DEa`** and **`DEg`**.
+
+* **`DEs`** refers to ***“different expression status”***. It is the type of genes that show significant difference in the proportion of real zeros in the two groups, but do not have significant difference in the other cells.
+* **`DEa`** is for ***“differential expression abundance”***, which refers to genes that are significantly differentially expressed between the groups without significant difference in the proportion of real zeros.
+* **`DEg`** or ***“general differential expression”*** refers to genes that have significant difference in both the proportions of real zeros and the expression abundances between the two groups.
+
+The output of `DEtype` is a matrix containing the DE analysis results, whose rows are genes and columns contain the following items:
+
+* `theta_1`, `theta_2`, `mu_1`, `mu_2`, `size_1`, `size_2`, `prob_1`, `prob_2`: MLE of the zero-inflated negative binomial distribution’s parameters of group 1 and group 2.
+* `total_mean_1`, `total_mean_2`: Mean of read counts of group 1 and group 2.
+* `foldChange`: total\_mean\_1/total\_mean\_2.
+* `norm_total_mean_1`, `norm_total_mean_2`: Mean of normalized read counts of group 1 and group 2.
+* `norm_foldChange`: norm\_total\_mean\_1/norm\_total\_mean\_2.
+* `chi2LR1`: Chi-square statistic for hypothesis testing of H0.
+* `pvalue_LR2`: P value of hypothesis testing of H20 (Used to determine the type of a DE gene).
+* `pvalue_LR3`: P value of hypothesis testing of H30 (Used to determine the type of a DE gene).
+* `FDR_LR2`: Adjusted P value of pvalue\_LR2 using Benjamini & Hochberg’s method (Used to determine the type of a DE gene).
+* `FDR_LR3`: Adjusted P value of pvalue\_LR3 using Benjamini & Hochberg’s method (Used to determine the type of a DE gene).
+* `pvalue`: P value of hypothesis testing of H0 (Used to determine whether a gene is a DE gene).
+* `pvalue.adj.FDR`: Adjusted P value of H0’s pvalue using Benjamini & Hochberg’s method (Used to determine whether a gene is a DE gene).
+* `Remark`: Record of abnormal program information.
+* `Type`: Types of DE genes. *DEs* represents differential expression status; *DEa* represents differential expression abundance; *DEg* represents general differential expression.
+* `State`: State of DE genes, *up* represents up-regulated; *down* represents down-regulated.
+
+To extract the significantly differentially expressed genes from the output of `DEtype` (**note that the same threshold of FDR should be used in this step as in `DEtype`**):
+
+```
+# Extract DE genes at threshold of FDR < 0.05
+results.sig <- results.classified[results.classified$pvalue.adj.FDR < 0.05, ]
+```
+
+To further extract the three types of DE genes separately:
+
+```
+# Extract three types of DE genes separately
+results.DEs <- results.sig[results.sig$Type == "DEs", ]
+results.DEa <- results.sig[results.sig$Type == "DEa", ]
+results.DEg <- results.sig[results.sig$Type == "DEg", ]
+```
+
+## Parallelization
+
+**`DEsingle`** integrates parallel computing function with [`BiocParallel`](http://bioconductor.org/packages/BiocParallel/) package. Users could just set `parallel = TRUE` in function `DEsingle` to enable parallelization and leave the `BPPARAM` parameter alone.
+
+```
+# Load library
+library(DEsingle)
+
+# Detecting the DE genes in parallelization
+results <- DEsingle(counts = counts, group = group, parallel = TRUE)
+```
+
+Advanced users could use a `BiocParallelParam` object from package `BiocParallel` to fill in the `BPPARAM` parameter to specify the parallel back-end to be used and its configuration parameters.
+
+### For Unix and Mac users
+
+The best choice for Unix and Mac users is to use `MulticoreParam` to configure a multicore parallel back-end:
+
+```
+# Load library
+library(DEsingle)
+library(BiocParallel)
+
+# Set the parameters and register the back-end to be used
+param <- MulticoreParam(workers = 18, progressbar = TRUE)
+register(param)
+
+# Detecting the DE genes in parallelization with 18 cores
+results <- DEsingle(counts = counts, group = group, parallel = TRUE, BPPARAM = param)
+```
+
+### For Windows users
+
+For Windows users, use `SnowParam` to configure a Snow back-end is a good choice:
+
+```
+# Load library
+library(DEsingle)
+library(BiocParallel)
+
+# Set the parameters and register the back-end to be used
+param <- SnowParam(workers = 8, type = "SOCK", progressbar = TRUE)
+register(param)
+
+# Detecting the DE genes in parallelization with 8 cores
+results <- DEsingle(counts = counts, group = group, parallel = TRUE, BPPARAM = param)
+```
+
+See the [*Reference Manual*](https://bioconductor.org/packages/release/bioc/manuals/BiocParallel/man/BiocParallel.pdf) of [`BiocParallel`](http://bioconductor.org/packages/BiocParallel/) package for more details of the `BiocParallelParam` class.
+
+## Visualization of results
+
+Users could use the `heatmap()` function in `stats` or `heatmap.2` function in `gplots` to plot the heatmap of the DE genes DEsingle found, as we did in Figure S3 of the [*manuscript*](https://doi.org/10.1093/bioinformatics/bty332).
+
+## Interpretation of results
+
+For the interpretation of results when **`DEsingle`** applied to real data, please refer to the *Three types of DE genes between E3 and E4 of human embryonic cells* part in the [*Supplementary Materials*](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty332/4983067#supplementary-data) of our [*manuscript*](https://doi.org/10.1093/bioinformatics/bty332).
+
+## Help
+
+Use `browseVignettes("DEsingle")` to see the vignettes of **`DEsingle`** in R after installation.
+
+Use the following code in R to get access to the help documentation for **`DEsingle`**:
+
+```
+# Documentation for DEsingle
+?DEsingle
+```
+
+```
+# Documentation for DEtype
+?DEtype
+```
+
+```
+# Documentation for TestData
+?TestData
+?counts
+?group
+```
+
+You are also welcome to view and post *DEsingle* tagged questions on [Bioconductor Support Site of DEsingle](https://support.bioconductor.org/t/desingle/) or contact the author by email for help.
+
+## Author
+
+*Zhun Miao* <miaoz13@tsinghua.org.cn>
+
+MOE Key Laboratory of Bioinformatics; Bioinformatics Division and Center for Synthetic & Systems Biology, TNLIST; Department of Automation, Tsinghua University, Beijing 100084, China.
+
+## Session info
+
+```
+sessionInfo()
+#> R version 4.5.1 Patched (2025-08-23 r88802)
+#> Platform: x86_64-pc-linux-gnu
+#> Running under: Ubuntu 24.04.3 LTS
+#>
+#> Matrix products: default
+#> BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+#> LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+#>
+#> locale:
+#>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+#>  [3] LC_TIME=en_GB              LC_COLLATE=C
+#>  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+#>  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+#>  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+#> [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+#>
+#> time zone: America/New_York
+#> tzcode source: system (glibc)
+#>
+#> attached base packages:
+#> [1] stats     graphics  grDevices utils     datasets  methods   base
+#>
+#> other attached packages:
+#> [1] DEsingle_1.30.0
+#>
+#> loaded via a namespace (and not attached):
+#>  [1] nlme_3.1-168        cli_3.6.5           knitr_1.50
+#>  [4] rlang_1.1.6         xfun_0.53           miscTools_0.6-28
+#>  [7] generics_0.1.4      jsonlite_2.0.0      zoo_1.8-14
+#> [10] gamlss.data_6.0-7   htmltools_0.5.8.1   sass_0.4.10
+#> [13] stats4_4.5.1        rmarkdown_2.30      grid_4.5.1
+#> [16] evaluate_1.0.5      jquerylib_0.1.4     MASS_7.3-65
+#> [19] fastmap_1.2.0       mvtnorm_1.3-3       numDeriv_2016.8-1.1
+#> [22] yaml_2.3.10         lifecycle_1.0.4     compiler_4.5.1
+#> [25] codetools_0.2-20    sandwich_3.1-1      pscl_1.5.9
+#> [28] gamlss_5.5-0        bbmle_1.0.25.1      VGAM_1.1-13
+#> [31] BiocParallel_1.44.0 lattice_0.22-7      digest_0.6.37
+#> [34] R6_2.6.1            parallel_4.5.1      splines_4.5.1
+#> [37] bslib_0.9.0         Matrix_1.7-4        tools_4.5.1
+#> [40] bdsmatrix_1.3-7     gamlss.dist_6.1-1   maxLik_1.5-2.1
+#> [43] survival_3.8-3      cachem_1.1.0
+```

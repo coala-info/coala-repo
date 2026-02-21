@@ -1,0 +1,1 @@
+@import url("https://gobics.de/css/common.css"); dt {padding-top: 1ex;} .result { padding: 10px; max-width: 60em; background: white; color: black; } .wide { padding: 1ex; } ul.vert_space > li {padding-bottom:10px;}

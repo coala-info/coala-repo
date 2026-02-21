@@ -1,0 +1,45 @@
+---
+name: cutqc
+description: The `cutqc` tool is a Shell-based wrapper designed to simplify the preprocessing of FASTQ files.
+homepage: https://github.com/obenno/cutqc
+---
+
+# cutqc
+
+## Overview
+The `cutqc` tool is a Shell-based wrapper designed to simplify the preprocessing of FASTQ files. It automates the workflow of trimming adapters (via `cutadapt`) and assessing read quality (via `fastqc`), then uses RMarkdown and Plotly to generate a comprehensive visual report. This skill should be used when you need to process raw sequencing reads and require a consolidated view of quality metrics to verify the effectiveness of the trimming process.
+
+## Command Line Usage
+
+The tool is invoked via the `cutqc.sh` script and supports two primary subcommands: `cutqc` for paired-end processing and `qc_only` for single-file quality checks.
+
+### Paired-End Trimming and QC
+Use the `cutqc` subcommand to process paired-end reads. This performs trimming and runs FastQC on both the raw and trimmed data.
+
+```bash
+cutqc.sh cutqc <in_read1.fq.gz> <in_read2.fq.gz> <out_report.html> [cutadapt_options]
+```
+
+*   **Mandatory Arguments**: The first three arguments (Read 1, Read 2, and the output HTML filename) are positional and required.
+*   **Passing Options**: Any arguments provided after the output HTML are passed directly to `cutadapt`. Use this to specify adapter sequences (e.g., `-a`, `-g`, `-A`, `-G`).
+
+### Single-File Quality Control
+Use the `qc_only` subcommand to generate a quality report for a single FASTQ file without performing trimming.
+
+```bash
+cutqc.sh qc_only <in_read.fq.gz> [output_report.html]
+```
+
+## Best Practices and Expert Tips
+
+*   **Gzipped Inputs Only**: `cutqc` strictly requires gzipped input files (`.fq.gz` or `.fastq.gz`). Ensure files are compressed before running the tool.
+*   **Avoid Output Flags**: When providing additional `cutadapt` options, **do not** include `-o` or `-p`. The `cutqc.sh` script manages output file paths internally; adding these flags will cause conflicts or errors.
+*   **Interactive Reports**: The resulting HTML report uses Plotly, allowing you to zoom and hover over data points to inspect specific quality scores or sequence distributions.
+*   **Conda Installation**: The most reliable way to ensure all dependencies (R, RMarkdown, Cutadapt, FastQC) are present is to install via Bioconda:
+    ```bash
+    conda install -c bioconda cutqc
+    ```
+
+## Reference documentation
+- [cutqc - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_cutqc_overview.md)
+- [GitHub - obenno/cutqc: A simple wrapper for cutadapt and fastqc](./references/github_com_obenno_cutqc.md)

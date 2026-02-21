@@ -1,0 +1,111 @@
+# Contribution guidelines
+
+Lukas M. Weber1,2 and Charlotte Soneson3,4
+
+1Institute of Molecular Life Sciences, University of Zurich, Zurich, Switzerland
+2SIB Swiss Institute of Bioinformatics, Zurich, Switzerland
+3Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland
+4SIB Swiss Institute of Bioinformatics, Basel, Switzerland
+
+#### 4 November 2025
+
+#### Package
+
+HDCytoData 1.30.0
+
+# Contents
+
+* [1 Contribution guidelines](#contribution-guidelines)
+  + [1.1 Open GitHub issue](#open-github-issue)
+  + [1.2 Prepare object files](#prepare-object-files)
+  + [1.3 Create pull request](#create-pull-request)
+  + [1.4 Contact Bioconductor maintainers to upload `.rda` files](#contact-bioconductor-maintainers-to-upload-.rda-files)
+* [2 Acknowledgment of contributions](#acknowledgment-of-contributions)
+* [3 Code of conduct](#code-of-conduct)
+
+# 1 Contribution guidelines
+
+We welcome contributions or suggestions for new datasets to include in the `HDCytoData` package. Suitable datasets are any high-dimensional cytometry datasets that either: (i) are useful for benchmarking purposes, e.g. containing some sort of ground truth or known signal (e.g. a known ground truth in simulated data, or a known biological result in experimental data), and/or (ii) are useful for other activities such as teaching, examples, and tutorials.
+
+Below, we summarize the key steps required to contribute a new dataset to the `HDCytoData` package. For more details on how to use Bioconductor’s `ExperimentHub` resource and creating `ExperimentHub` packages, see the `ExperimentHub` vignettes available from [Bioconductor](http://bioconductor.org/packages/ExperimentHub).
+
+## 1.1 Open GitHub issue
+
+Open a GitHub issue (or pull request, if you already have all files available) at the [HDCytoData](https://github.com/lmweber/HDCytoData) GitHub page to contact the maintainers and discuss the suitability of the new dataset.
+
+Using GitHub (instead of email) ensures that there is a public record of the contribution. If you are unfamiliar with GitHub, please contact the maintainers by email for assistance.
+
+## 1.2 Prepare object files
+
+If the contribution is approved, the following are required for each dataset:
+
+1. Formatted `SummarizedExperiment` and `flowSet` objects containing table(s) of expression values and all row, column, and other metadata required for users to fully understand the dataset (e.g. sample IDs, group IDs, patient IDs, cluster labels, spike-in labels, channel names, protein marker names, protein marker classes, etc.) Note that expression values should be be raw values (not transformed).
+
+   The objects should be saved as `.rda` files with filenames `dataset_name_SE.rda` and `dataset_name_flowSet.rda` (where `dataset_name` is the name of the new dataset; e.g. `Levine_32dim_SE.rda` and `Levine_32dim_flowSet.rda`).
+
+   For an example of the object structures, load one of the existing datasets and inspect the various elements of the `SummarizedExperiment` and `flowSet` objects:
+
+```
+library(HDCytoData)
+
+# example: SummarizedExperiment
+d_SE <- Levine_32dim_SE()
+
+d_SE
+length(assays(d_SE))
+dim(d_SE)
+head(assay(d_SE))
+rowData(d_SE)
+colData(d_SE)
+metadata(d_SE)
+
+# example: flowSet
+d_flowSet <- Levine_32dim_flowSet()
+```
+
+```
+## Warning in updateObjectFromSlots(object, ..., verbose = verbose): dropping
+## slot(s) 'colnames' from object = 'flowSet'
+```
+
+```
+d_flowSet
+length(d_flowSet)
+fsApply(d_flowSet, dim)
+head(exprs(d_flowSet[[1]]))
+parameters(d_flowSet[[1]])@data
+colnames(d_flowSet)
+description(d_flowSet[[1]])
+```
+
+```
+## Warning in .local(object, ...): '.local' is deprecated.
+## Use 'keyword' instead.
+## See help("Deprecated")
+```
+
+2. A reproducible R script showing how the formatted `SummarizedExperiment` and `flowSet` objects were generated from the original raw data files (`.fcs` files). The script should be named `make-data-dataset-name.R` (e.g. `make-data-Levine-32dim.R`), and will be saved in the `inst/scripts` directory in the source code of the `HDCytoData` package for reproducibility purposes.
+
+   For an example, see the script for one of the existing datasets, e.g. [inst/scripts/make-data-Levine-32dim.R](https://github.com/lmweber/HDCytoData/blob/master/inst/scripts/make-data-Levine-32dim.R) (see [GitHub](https://github.com/lmweber/HDCytoData) for more examples).
+3. Comprehensive documentation describing the dataset, what it can be used for, and the object structure. This should be formatted as an `.Rd` file, to be saved in the `man` directory in the source code of the `HDCytoData` package. (Note that `Roxygen` cannot be used for `ExperimentHub` packages, so the `.Rd` file needs to be written manually.)
+
+   For an example, see the help file for one of the existing datasets, e.g. `?Levine_32dim`, or source code at [man/Levine\_32dim\_SE.Rd](https://github.com/lmweber/HDCytoData/blob/master/man/Levine_32dim_SE.Rd) (see [GitHub](https://github.com/lmweber/HDCytoData) for more examples).
+4. Metadata to describe the dataset in the `ExperimentHub` database, which will be saved in the file [inst/scripts/make-metadata.R](https://github.com/lmweber/HDCytoData/blob/master/inst/scripts/make-metadata.R). For examples, see the metadata for the existing datasets in this file.
+
+For more details on how to structure the files for a dataset stored on `ExperimentHub`, see the vignette titled “Creating An ExperimentHub Package” on the [Bioconductor](http://bioconductor.org/packages/ExperimentHub) page.
+
+## 1.3 Create pull request
+
+Once all the parts described above have been generated, create a fork of the `HDCytoData` GitHub repository, add the files (except the `.rda` files), and send a pull request. Please make sure that the files are in the correct directories, and that the package passes all the usual Bioconductor and CRAN checks.
+
+## 1.4 Contact Bioconductor maintainers to upload `.rda` files
+
+In consultation with the `HDCytoData` maintainers, you will then need to contact the Bioconductor `ExperimentHub` maintainers to upload the `.rda` files. The `ExperimentHub` maintainers will then manually add them to the `ExperimentHub` database, as described in the “Creating An ExperimentHub Package” vignette on the [Bioconductor](http://bioconductor.org/packages/ExperimentHub) page. Note that any future updates (e.g. bug fixes) to the `.rda` files will need to be manually added in the same way, so please check the objects carefully.
+
+# 2 Acknowledgment of contributions
+
+Names of contributors will be added to the `contributor` field in the DESCRIPTION file of the `HDCytoData` package in order to recognize the contribution.
+
+# 3 Code of conduct
+
+This project is released in accordance with the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct). By contributing to this project, you agree to abide by its terms. Any concerns regarding the code of conduct may be reported by contacting the package maintainers by email.

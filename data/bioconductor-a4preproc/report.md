@@ -1,0 +1,16 @@
+# bioconductor-a4preproc Bioconductor Package Report
+
+## a4Preproc
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/a4Preproc.html
+- **Package**: a4Preproc
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

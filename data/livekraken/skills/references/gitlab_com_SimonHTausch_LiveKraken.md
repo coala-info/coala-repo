@@ -1,0 +1,1 @@
+Simon H. Tausch / LiveKraken · GitLab LiveKraken Project information LiveKraken classifies metagenomic reads from Illumina Sequencers in real time. Read more 199 Commits 8 Branches 4 Tags 1 Release README BSD 3-Clause &quot;New&quot; or &quot;Revised&quot; License CHANGELOG Created on September 13, 2017 Loading

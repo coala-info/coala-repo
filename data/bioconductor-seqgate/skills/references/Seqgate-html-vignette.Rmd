@@ -1,0 +1,238 @@
+---
+title: "SeqGate: Filter lowly expressed features"
+author:
+    - name: Christelle Reynès
+      affiliation: IGF, CNRS, INSERM, Univ Montpellier, Montpellier France
+      email: christelle.reynes@igf.cnrs.fr
+    - name: Stéphanie Rialle
+      affiliation: BioCampus Montpellier, CNRS, INSERM, Univ Montpellier, Montpellier France
+      email: stephanie.rialle@mgx.cnrs.fr
+package: SeqGate
+abstract: >
+    Differential expression studies are very common experiments in RNA-Seq. 
+    They imply the application of statistical tests to a very high number of 
+    genes (or transcripts). Some lowly expressed genes are not likely to be 
+    significant, thus it is a good practice to filter them in order to increase 
+    the differential genes detection sensitivity. The application of a filtering
+    method for these lowly expressed genes is very common but generally an 
+    arbitrary threshold is chosen. Here we propose a novel filtering method, 
+    SeqGate, based on the replicates of the experiment that allows to 
+    rationalize the determination of the threshold by taking advandage of the 
+    data themselves.
+output:
+    BiocStyle::html_document
+vignette: >
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteIndexEntry{SeqGate: Filter lowly expressed features}
+    %\VignetteEncoding{UTF-8}
+---
+
+<!--
+```{r, echo=FALSE} 
+library(knitr)
+opts_chunk$set(cache=FALSE, error=FALSE)
+```
+-->
+
+<!--
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+-->
+
+
+# Introduction: SeqGate method description
+
+In order to find a threshold value to filter lowly expressed features, SeqGate 
+analyzes the distribution of counts found in replicates along with zero counts. 
+More specifically, features with a customizable minimal proportion of zeros in 
+one condition are selected. The distribution of counts found in replicates of 
+that same condition along with those zeros is computed. The chosen threshold is 
+the count value corresponding to the customizable percentile of this 
+distribution. Finally, features having a customizable proportion (90% by 
+default) of replicates with counts below that value in all conditions are 
+filtered. Default value for all customizable parameters have been set through 
+extensive simulation batch testing and can be considered as adequate in most 
+situations.
+
+# Installation
+
+To install SeqGate, start R and enter:
+
+```{r install}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("SeqGate")
+```
+
+# Filtering with SeqGate
+
+First load SeqGate:
+```{r load_SeqGate}
+library(SeqGate)
+```
+
+## Input data
+
+The main input data is a
+[SummarizedExperiment] (https://bioconductor.org/packages/release/bioc/html/
+SummarizedExperiment.html)
+object which contains an assay with count data. Briefly, a SummarizedExperiment
+container contains one or more assays, each represented by a matrix-like object
+of numeric or other mode. The rows typically represent genomic ranges of
+interest and the columns represent samples. For SeqGate, the
+SummarizedExperiment object must contain at least one assay of numeric counts,
+and a DataFrame describing the columns, in particular a column telling the
+biological condition the sample belongs to.
+To apply SeqGate, the SummarizedExperiment object, the assay name and the column
+describing the condition of each sample in the colData dataframe, must be given.
+
+### Toy dataset
+
+Let's load some toy data set. This data set is an extract from a human
+transcriptome dataset produced by Strub *et al.* (2011), in which human cells 
+expressing the Microphtalmia Transcription Factor (MiTF) are compared to cells 
+in which the MiTF is repressed. The extract counts 1,000 genes with expression 
+measured in 3 samples for each biological condition (the full table of read 
+counts is available in the Supplementary materials of Dillies, M.A. *et al.* 
+(2012)).
+
+```{r load_dataTest}
+data(data_MiTF_1000genes)
+head(data_MiTF_1000genes)
+```
+
+And now we define a vector indicating the biological condition corresponding to 
+each column of data_MiTF_1000. Here the two biological conditions are 'A' and 
+'B'.
+```{r define_cond}
+cond<-c("A","A","B","B","A","B")
+```
+
+### Getting the SummarizedExperiment input
+
+The toy dataset that we have just loaded is not yet a SummarizedExperiment
+object, such as required in Seqgate input. We thus need to create it, 
+from the count matrix and the biological condition annotation.
+
+```{r create_se}
+rowData <- DataFrame(row.names=rownames(data_MiTF_1000genes))
+colData <- DataFrame(Conditions=cond)
+counts_strub <- SummarizedExperiment(
+                  assays=list(counts=data_MiTF_1000genes),
+                  rowData=rowData,
+                  colData=colData)
+```
+
+
+## Filtering with default options
+
+By default, SeqGate only needs the SummarizedExperiment object along with the
+name of the assay we want to work with, and the name of the column which
+contains the biological conditions annotation. Thus, we can apply the SeqGate
+method filtering, by calling the following code:
+
+```{r apply_basic}
+counts_strub <- applySeqGate(counts_strub,"counts","Conditions")
+```
+As a result, the input SummarizedExperiment object now includes a new column in
+the rowData DataFrame, named onFilter. This column is a logical vector that
+indicates if the gene should be kept after filtering (TRUE) or not (FALSE). The
+metadata of the object also include a new element, named "threshold", which
+gives the value of the applied threshold.
+
+Thus, to get the matrix of features intended to be kept for the downstream
+analysis:
+```{r get_kept_features}
+keptGenes <- assay(counts_strub[rowData(counts_strub)$onFilter == TRUE,])
+head(keptGenes)
+dim(keptGenes)
+```
+
+To get the applied threshold:
+
+```{r threshold}
+metadata(counts_strub)$threshold
+```
+
+We can also get the matrix of filtered genes:
+
+```{r get_filtered}
+filteredOut <- assay(counts_strub[rowData(counts_strub)$onFilter == FALSE,])
+head(filteredOut)
+```
+
+To conclude, we can see that, from the initial set of 1,000 genes,
+`r nrow(keptGenes)` have been kept, after the application of a threshold of
+`r metadata(counts_strub)$threshold`: all genes having less than
+`r names(metadata(counts_strub)$threshold)`
+replicates with less than `r metadata(counts_strub)$threshold` reads are
+discarded.
+
+## Setting custom filtering parameters
+
+### Parameters detailed explanation
+
+Besides the three mandatory parameters described above, the applySeqGate 
+function also have three other parameters, that can be set to refine the 
+filtering:
+
+* prop0: this is minimal proportion of zeros among a condition to consider that
+    the feature is not or lowly expressed.
+* percentile: percentile used on the 'max' distribution to determine the
+    filtering threshold value.
+* propUpThresh: proportion of counts to be above the threshold in at least one
+    condition to keep the feature.
+
+By default, 'prop0' is set to the maximum number of replicates minus one,
+divided by the maximum number of replicates. In the example above, as we have 3
+replicates in both conditions, the maximum number of replicates is 3. Thus, the
+parameter 'prop0' is set to 2/3. This means that we consider that the gene is
+lowly expressed if it has 2 zeros among its 3 replicates.
+
+The distribution of maximum counts from all the lowly expressed genes (selected
+according to 'prop0') is then computed. The idea is to see how high a count can
+be in a replicate alongside a zero in another replicate. In order to introduce
+flexibility, we do not simply take the maximum count of the distribution but a
+'percentile' of this distribution. By default, when the number of replicates in
+at least one condition is below 5, 'percentile' is set to 0.9. In the above
+example, the 90th percentile of the distribution of maximum counts seen 
+alongside a zero is `r metadata(counts_strub)$threshold`, and this is the 
+threshold that we will apply in order to actually filter the lowly expressed 
+genes.
+
+Finally, the filter is applied according to a last parameter: propUpThresh.
+SeqGate does keep those genes whose counts are above the computed threshold in
+at least 'propUpThresh' replicates, in at least one condition. Still in the
+example used precedently, this means that all genes whose counts are above
+`r metadata(counts_strub)$threshold` in 3 x 0.9 = 2.7 replicates, are kept. 
+As it is not possible to consider 2.7 replicates, the value is rounded to the 
+next integer, that is 3 in this case. Finally in this example, a gene is kept if
+all its 3 replicates have a count above `r metadata(counts_strub)$threshold`, 
+in at least one condition.
+
+### Custom filtering parameters example
+
+Default value for all customizable parameters have been set through extensive 
+simulation batch testing and can be considered as adequate in most situations.
+However, one may consider that the default parameters are not suited to its 
+experiment.
+In that case, custom values can be given:
+
+```{r apply_custom}
+counts_strub <- applySeqGate(counts_strub,"counts","Conditions",
+             prop0=1/3,
+             percentile=0.8,
+             propUpThresh=0.5)
+```
+
+This time, from the initial set of 1,000 genes, 
+`r nrow(assay(counts_strub[rowData(counts_strub)$onFilter == TRUE,]))` have been kept, 
+after the application of a threshold of `r metadata(counts_strub)$threshold`.
+
+# SessionInfo
+
+```{r sessionInfo}
+sessionInfo()
+```

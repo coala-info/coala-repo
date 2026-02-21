@@ -1,0 +1,50 @@
+---
+name: fseq
+description: fseq is a Java-based tool designed to transform discrete sequence tags into a continuous density signal.
+homepage: http://fureylab.web.unc.edu/software/fseq/
+---
+
+# fseq
+
+## Overview
+fseq is a Java-based tool designed to transform discrete sequence tags into a continuous density signal. Unlike simple window-based counters, it uses a Parzen window density estimator to create a smooth "signal" across the genome. This approach is particularly effective for identifying regions of open chromatin or transcription factor binding sites where the density of reads indicates a functional element. It supports background modeling to account for genomic alignability and ploidy/copy-number corrections for complex samples like cancer cell lines.
+
+## Usage Patterns
+
+### Basic Peak Calling
+To generate density estimates from BED files with default parameters:
+```bash
+fseq -v -of wig -o ./output_dir input1.bed input2.bed
+```
+
+### DNase-seq Specific Configuration
+For DNase-seq data, where the 5' end of the read is the primary indicator of hypersensitivity, fragment size estimation should be disabled:
+```bash
+fseq -f 0 -of narrowPeak -o ./dnase_peaks input.bed
+```
+
+### Advanced Signal Normalization
+To account for mappability and copy number variations (essential for cancer cell lines):
+- **Background Correction**: Use `-b` with a directory containing `.bff` (Binary F-seq) files to adjust for genome uniqueness.
+- **Ploidy/Input Correction**: Use `-p` to provide a directory of control/input data to normalize against local genomic copy number.
+
+```bash
+fseq -b ./hg19_bff_dir -p ./input_control_dir -of wig input.bed
+```
+
+## Command Line Options Reference
+- `-d <dir>`: Input directory (defaults to current).
+- `-f <int>`: Fragment size. Set to `0` for 5' end data (DNase-seq); otherwise, fseq estimates this from data.
+- `-l <int>`: Feature length (default: 600bp). Controls the smoothness of the density estimate.
+- `-of <wig|bed|npf>`: Output format. `npf` refers to the narrowPeak format (BED6+3).
+- `-s <int>`: Wiggle track step size (default: 1). Increasing this reduces output file size.
+- `-t <float>`: Threshold in standard deviations (default: 4.0) for calling peaks.
+
+## Best Practices
+- **Memory Management**: As a Java application, ensure the JVM has enough heap space for large genomes by prefixing the command if necessary (e.g., `java -Xmx4G -jar fseq.jar ...` if not using the bioconda wrapper).
+- **Input Format**: fseq primarily consumes BED files. If starting with MAQ/Mapview data, use the provided `mapviewToBed.pl` script.
+- **Mappability**: Always use background files (`-b`) when working with short reads (20-35bp) to avoid false positives in repetitive regions.
+- **Output Selection**: Use `wig` for visualization in the UCSC Genome Browser and `narrowPeak` for downstream bioinformatic intersections and motif analysis.
+
+## Reference documentation
+- [F-Seq: A Feature Density Estimator for High-Throughput Sequence Tags](./references/fureylab_web_unc_edu_software_fseq.md)

@@ -1,0 +1,74 @@
+---
+title: "crisprVerse: ecosystem of R packages for CRISPR gRNA design"
+author: 
+- name: Jean-Philippe Fortin
+  affiliation: Data Science and Statistical Computing, gRED, Genentech
+  email: fortin946@gmail.com
+- name: Luke Hoberecht
+  affiliation: Data Science and Statistical Computing, gRED, Genentech
+  email: lukehob3@gmail.com
+date: "`r Sys.Date()`"
+output: 
+  BiocStyle::html_document:
+    toc_float: true
+    number_sections: true
+vignette: >
+  %\VignetteIndexEntry{crisprVerse}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+
+# Installation and getting started
+
+The [crisprVerse](https://github.com/crisprVerse) is a collection of packages for CRISPR guide RNA (gRNA) design that can easily be installed 
+with the `crisprVerse` package. This provides 
+a convenient way of downloading and installing all crisprVerse packages 
+with a single R command. 
+
+The package can be installed from the Bioconductor devel branch using
+the following commands in an R session:
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(version="devel")
+BiocManager::install("crisprVerse")
+```
+
+The core crisprVerse includes the packages that are commonly used for 
+gRNA design, and are attached when you attach the `crisprVerse` package:
+
+```{r}
+library(crisprVerse)
+```
+
+You can check that all crisprVerse packages are up-to-date 
+with the function `crisprVerse_update()`.
+
+
+
+# Components
+
+The following packages are installed and loaded with the `crisprVerse` package: 
+
+
+* `r BiocStyle::Biocpkg("crisprBase")` to specify and manipulate CRISPR nucleases.
+* `r BiocStyle::Biocpkg("crisprBowtie")` to perform gRNA spacer sequence
+alignment with Bowtie.
+* `r BiocStyle::Biocpkg("crisprScore")` to annotate gRNAs with on-target
+and off-target scores.
+* `r BiocStyle::Biocpkg("crisprScoreData")` pre-trained data for crisprScore
+* `r BiocStyle::Biocpkg("crisprDesign")` to design and manipulate gRNAs
+with `GuideSet` objects. 
+* `r BiocStyle::Biocpkg("crisprViz")` to visualize gRNAs.
+
+# Reproducibility
+
+```{r}
+sessionInfo()
+```
+
+
+

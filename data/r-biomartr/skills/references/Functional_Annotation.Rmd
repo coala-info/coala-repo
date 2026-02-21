@@ -1,0 +1,679 @@
+---
+title: "Functional Annotation with biomartr"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Functional Annotation with biomartr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r, echo = FALSE, message = FALSE}
+options(width = 750)
+knitr::opts_chunk$set(
+  comment = "#>",
+  error = FALSE,
+  tidy = FALSE)
+```
+
+
+## Functional Annotation Retrieval from `Ensembl Biomart`
+
+> **_NOTE:_** To make sure that you have a sufficiently stable (internet) connection between R and the respective databases, please set the default `timeout` setting __on your local machine__ from 60sec to at least 30000sec before running any retrieval functions via:
+
+```r
+options(timeout = 30000)
+```
+
+### Getting Started 
+
+The `Ensembl Biomart` database enables users to retrieve a vast diversity of annotation data
+for specific organisms. Initially, Steffen Durinck and Wolfgang Huber provided a powerful interface between
+the R language and `Ensembl Biomart` by implementing the R package [biomaRt](https://www.bioconductor.org/packages/release/bioc/html/biomaRt.html). 
+
+The purpose of the `biomaRt` package was to mimic the ENSEMBL BioMart database structure to construct queries that can be sent to the Application Programming Interface (API) of BioMart. Although, this procedure was very useful in the past, it seems not intuitive from an organism centric point of view. Usually, users wish to download functional annotation for a particular organism of interest. However, the BioMart and thus the `biomaRt` package require that users already know in which `mart` and  `dataset` the organism of interest will be found which requires significant efforts of searching and screening. In addition, once the  `mart` and  `dataset` of a particular organism of interest were found and specified the user must again learn which `attribute` has to be specified to retrieve the functional annotation information of interest. 
+
+The new functionality implemented in the `biomartr` package aims to overcome this 
+search bottleneck by extending the functionality of the [biomaRt](https://www.bioconductor.org/packages/release/bioc/html/biomaRt.html) package. The new `biomartr` package introduces a more organism cantered annotation retrieval concept which does not require to screen for `marts`, `datasets`, and `attributes` beforehand. With `biomartr` users only need to specify the `scientific name` of the organism of interest to then retrieve available `marts`, `datasets`, and `attributes` for the corresponding organism of interest.   
+
+This paradigm shift enables users to quickly construct queries to the BioMart database without having to learn the particular database structure and organization of BioMart. 
+
+The following sections will introduce users to the functionality and data retrieval precedures of `biomartr` and will show how `biomartr`
+extends the functionality of the initial [biomaRt](https://www.bioconductor.org/packages/release/bioc/html/biomaRt.html) package.
+
+### The old `biomaRt` query methodology		
+
+The best way to get started with the _old_ methodology presented by the established [biomaRt](https://www.bioconductor.org/packages/release/bioc/html/biomaRt.html) package is to understand the workflow of its data retrieval process. The query logic of the `biomaRt` package derives from the database organization of `Ensembl Biomart` which stores a vast diversity of annotation data
+for specific organisms. In detail, the `Ensembl Biomart` database is organized into so called:		
+ `marts`, `datasets`, and `attributes`. `Marts` denote a higher level category of functional annotation such as `SNP` (e.g. for functional annotation of particular single nucleotide polymorphisms (SNPs)) or `FUNCGEN` (e.g. for functional annotation of regulatory regions or relationsships of genes). `Datasets` denote the
+particular species of interest for which functional annotation is available __within__ this specific `mart`. It can happen that
+`datasets` (= particular species of interest) are available in one `mart` (= higher category of functional annotation) but not in an other `mart`.
+For the actual retrieval of functional annotation information users must then specify the `type` of functional annotation information they 
+wish to retrieve. These `types` are called `attributes` in the `biomaRt` notation.
+ 
+Hence, when users wish to retrieve information for a specific organism of interest, they first need to specify a particular `mart` and `dataset` in which the information of the corresponding organism of interest can be found. Subsequently they can specify the `attributes` argument to retrieve a particular type of functional annotation (e.g. Gene Ontology terms).
+
+The following section shall illustrate how `marts`, `datasets`, and `attributes` could be explored
+using `biomaRt` before the `biomartr` package existed.
+ 		
+The availability of `marts`, `datasets`, and `attributes` can be checked by the following functions:		
+
+```{r,eval=FALSE}		
+# install the biomaRt package		
+# source("https://bioconductor.org/biocLite.R")		
+# biocLite("biomaRt")		
+# load biomaRt		
+library(biomaRt)		
+# look at top 10 databases		
+head(biomaRt::listMarts(host = "https://www.ensembl.org"), 10)		
+```	
+
+Users will observe that several `marts` providing annotation for specific classes of organisms or groups of organisms are available.		
+
+For our example, we will choose the `hsapiens_gene_ensembl` `mart` and list all available datasets that are element of this `mart`.		
+
+```{r,eval=FALSE}		
+head(biomaRt::listDatasets(biomaRt::useMart("ENSEMBL_MART_ENSEMBL", host = "https://www.ensembl.org")), 10)		
+```		
+
+The `useMart()` function is a wrapper function provided by `biomaRt` to connect a selected BioMart database (`mart`) with a corresponding dataset stored within this `mart`.		
+We select dataset `hsapiens_gene_ensembl` and now check for available attributes (annotation data) that can be accessed for `Homo sapiens` genes.	
+
+```{r,eval=FALSE}		
+head(biomaRt::listAttributes(biomaRt::useDataset(
+                                         dataset = "hsapiens_gene_ensembl", 		
+                                         mart    = useMart("ENSEMBL_MART_ENSEMBL",		
+                                         host    = "https://www.ensembl.org"))), 10)		
+```		
+		
+Please note the nested structure of this attribute query. For an attribute query procedure an additional wrapper function named `useDataset()` is needed in which `useMart()` and a corresponding dataset needs to be specified. The result is a table storing the name of available attributes for		
+_Homo sapiens_ as well as a short description.		
+
+Furthermore, users can retrieve all filters for _Homo sapiens_ that can be specified by the actual BioMart query process.		
+		
+```{r,eval=FALSE}		
+ head(biomaRt::listFilters(biomaRt::useDataset(dataset = "hsapiens_gene_ensembl", 		
+                                               mart    = useMart("ENSEMBL_MART_ENSEMBL",		
+                                               host    = "https://www.ensembl.org"))), 10)		
+```		
+ 		
+After accumulating all this information, it is now possible to perform an actual BioMart query by using the `getBM()` function.		
+ 		
+In this example we will retrieve attributes: `start_position`,`end_position` and `description`		
+for the _Homo sapiens_ gene `"GUCA2A"`.		
+ 		
+Since the input genes are `ensembl gene ids`, we need to specify the `filters` argument `filters = "hgnc_symbol"`.		
+ 		
+```{r,eval=FALSE}		
+ # 1) select a mart and data set		
+ mart <- biomaRt::useDataset(dataset = "hsapiens_gene_ensembl", 		
+                    mart    = useMart("ENSEMBL_MART_ENSEMBL",		
+                    host    = "https://www.ensembl.org"))		
+ 		
+ # 2) run a biomart query using the getBM() function		
+ # and specify the attributes and filter arguments		
+ geneSet <- "GUCA2A"		
+ 		
+ resultTable <- biomaRt::getBM(attributes = c("start_position","end_position","description"),		
+                      filters    = "hgnc_symbol", 		
+                      values     = geneSet, 		
+                      mart       = mart)		
+ 		
+ resultTable 		
+```		
+ 		
+When using `getBM()` users can pass all attributes retrieved by `listAttributes()` to the `attributes` argument of the `getBM()` function.		
+  
+  
+## Extending `biomaRt` using the new query system of the `biomartr` package
+
+### Getting Started with `biomartr`
+
+This query methodology provided by `Ensembl Biomart` and the `biomaRt` package is a very well defined approach
+for accurate annotation retrieval. Nevertheless, when learning this query methodology it (subjectively)
+seems non-intuitive from the user perspective. Therefore, the `biomartr` package provides another
+query methodology that aims to be more organism centric.
+
+Taken together, the following workflow allows users to perform fast BioMart queries for 
+attributes using the `biomart()` function implemented in this `biomartr` package:
+
+1) get attributes, datasets, and marts via : `organismAttributes()`
+
+2) choose available biological features (filters) via: `organismFilters()`
+
+3) specify a set of query genes: e.g. retrieved with `getGenome()`, `getProteome()` or `getCDS()`
+
+4) specify all arguments of the `biomart()` function using steps 1) - 3) and
+perform a BioMart query
+
+__Note that dataset names change very frequently due to the update of dataset versions.
+So in case some query functions do not work properly, users should check with
+`organismAttributes(update = TRUE)` whether or not their dataset name has been changed.
+For example, `organismAttributes("Homo sapiens", topic = "id", update = TRUE)`
+might reveal that the dataset `ENSEMBL_MART_ENSEMBL` has changed.__
+
+
+## Retrieve marts, datasets, attributes, and filters with biomartr
+
+### Retrieve Available Marts
+
+The `getMarts()` function allows users to list all available databases that can be accessed through BioMart interfaces.
+
+```{r,eval=FALSE}
+# load the biomartr package
+library(biomartr)
+
+# list all available databases
+biomartr::getMarts()
+```
+
+```
+     mart                  version                       
+   <chr>                 <chr>                         
+ 1 ENSEMBL_MART_ENSEMBL  Ensembl Genes 104             
+ 2 ENSEMBL_MART_MOUSE    Mouse strains 104             
+ 3 ENSEMBL_MART_SEQUENCE Sequence                      
+ 4 ENSEMBL_MART_ONTOLOGY Ontology                      
+ 5 ENSEMBL_MART_GENOMIC  Genomic features 104          
+ 6 ENSEMBL_MART_SNP      Ensembl Variation 104         
+ 7 ENSEMBL_MART_FUNCGEN  Ensembl Regulation 104        
+ 8 plants_mart           Ensembl Plants Genes 51       
+ 9 plants_variations     Ensembl Plants Variations 51  
+10 fungi_mart            Ensembl Fungi Genes 51        
+11 fungi_variations      Ensembl Fungi Variations 51   
+12 protists_mart         Ensembl Protists Genes 51     
+13 protists_variations   Ensembl Protists Variations 51
+14 metazoa_mart          Ensembl Metazoa Genes 51      
+15 metazoa_variations    Ensembl Metazoa Variations 51 
+```
+
+### Retrieve Available Datasets from a Specific Mart
+
+Now users can select a specific database to list all available data sets that can be accessed through this database. In this example we choose
+the `ENSEMBL_MART_ENSEMBL` database.
+
+```{r,eval=FALSE}
+head(biomartr::getDatasets(mart = "ENSEMBL_MART_ENSEMBL") , 5)
+```
+
+```
+ dataset                 description                        version     
+  <chr>                   <chr>                              <chr>       
+1 fcatus_gene_ensembl     Cat genes (Felis_catus_9.0)        Felis_catus
+2 umaritimus_gene_ensembl Polar bear genes (UrsMar_1.0)      UrsMar_1.0  
+3 ogarnettii_gene_ensembl Bushbaby genes (OtoGar3)           OtoGar3     
+4 lcrocea_gene_ensembl    Large yellow croaker genes (L_cro L_crocea_2.0
+5 sformosus_gene_ensembl  Asian bonytongue genes (fSclFor1. fSclFor1.1 
+```
+
+Now you can select the dataset `hsapiens_gene_ensembl` and list all available attributes that can be retrieved from this dataset.
+
+```{r,eval=FALSE}
+tail(biomartr::getDatasets(mart = "ENSEMBL_MART_ENSEMBL") , 38)
+```
+
+```
+1 csabaeus_gene_ensembl    Vervet-AGM genes (ChlSab1.1)  ChlSab1.1      
+ 2 chircus_gene_ensembl     Goat genes (ARS1)             ARS1           
+ 3 mmulatta_gene_ensembl    Macaque genes (Mmul_10)       Mmul_10        
+ 4 mmonoceros_gene_ensembl  Narwhal genes (NGI_Narwhal_1) NGI_Narwhal_1  
+ 5 csemilaevis_gene_ensembl Tongue sole genes (Cse_v1.0)  Cse_v1.0       
+ 6 cpbellii_gene_ensembl    Painted turtle genes (Chryse Chrysemys_pict
+ 7 clanigera_gene_ensembl   Long-tailed chinchilla genes ChiLan1.0      
+ 8 catys_gene_ensembl       Sooty mangabey genes (Caty_1 Caty_1.0       
+ 9 tguttata_gene_ensembl    Zebra finch genes (bTaeGut1_ bTaeGut1_v1.p  
+10 nleucogenys_gene_ensembl Gibbon genes (Nleu_3.0)       Nleu_3.0       
+#  with 28 more rows
+```
+
+### Retrieve Available Attributes from a Specific Dataset
+
+Now that you have selected a database (`hsapiens_gene_ensembl`) and a dataset (`hsapiens_gene_ensembl`),
+users can list all available attributes for this dataset using the `getAttributes()` function.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# list all available attributes for dataset: hsapiens_gene_ensembl
+head( biomartr::getAttributes(mart    = "ENSEMBL_MART_ENSEMBL", 
+                              dataset = "hsapiens_gene_ensembl"), 10 )
+```
+
+```
+Starting retrieval of attribute information from mart ENSEMBL_MART_ENSEMBL and dataset hsapiens_gene_ensembl ...
+                            name                  description
+1                ensembl_gene_id               Gene stable ID
+2        ensembl_gene_id_version       Gene stable ID version
+3          ensembl_transcript_id         Transcript stable ID
+4  ensembl_transcript_id_version Transcript stable ID version
+5             ensembl_peptide_id            Protein stable ID
+6     ensembl_peptide_id_version    Protein stable ID version
+7                ensembl_exon_id               Exon stable ID
+8                    description             Gene description
+9                chromosome_name     Chromosome/scaffold name
+10                start_position              Gene start (bp)
+```
+
+### Retrieve Available Filters from a Specific Dataset
+
+Finally, the `getFilters()` function allows users to list available filters
+for a specific dataset that can be used for a `biomart()` query.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# list all available filters for dataset: hsapiens_gene_ensembl
+head( biomartr::getFilters(mart    = "ENSEMBL_MART_ENSEMBL", 
+                           dataset = "hsapiens_gene_ensembl"), 10 )
+```
+
+```
+Starting retrieval of filters information from mart ENSEMBL_MART_ENSEMBL and dataset hsapiens_gene_ensembl ...
+                 name                            description
+1     chromosome_name               Chromosome/scaffold name
+2               start                                  Start
+3                 end                                    End
+4          band_start                             Band Start
+5            band_end                               Band End
+6        marker_start                           Marker Start
+7          marker_end                             Marker End
+8       encode_region                          Encode region
+9              strand                                 Strand
+10 chromosomal_region e.g. 1:100:10000:-1, 1:100000:200000:1
+```
+
+## Organism Specific Retrieval of Information
+
+In most use cases, users will work with a single or a set of model organisms. In this process they will mostly be
+interested in specific annotations for this particular model organism. The `organismBM()`
+function addresses this issue and provides users with an organism centric query to `marts` and `datasets`
+which are available for a particular organism of interest.
+
+
+__Note__ that when running the following functions for the first time, the data retrieval procedure will take some time, due to the remote access to BioMart. The corresponding result is then saved in a `*.txt` file named `_biomart/listDatasets.txt` within the `tempdir()` folder, allowing subsequent queries to be performed much faster.
+The `tempdir()` folder, however, will be deleted after a new R session was established. In this case
+the inital call of the subsequent functions again will take time to retrieve all organism specific data from the BioMart database.
+
+This concept of locally storing all organism specific database linking information available in BioMart into
+an internal file allows users to significantly speed up subsequent retrieval queries for that particular organism.
+
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# retrieving all available datasets and biomart connections for
+# a specific query organism (scientific name)
+biomartr::organismBM(organism = "Homo sapiens")
+```
+
+```
+ Starting retrieval of all available BioMart datasets for Homo sapiens ...
+Datasets for the following marts will be retrieved:                                                         
+                    mart                        version
+1   ENSEMBL_MART_ENSEMBL              Ensembl Genes 104
+2     ENSEMBL_MART_MOUSE              Mouse strains 104
+3  ENSEMBL_MART_SEQUENCE                       Sequence
+4  ENSEMBL_MART_ONTOLOGY                       Ontology
+5   ENSEMBL_MART_GENOMIC           Genomic features 104
+6       ENSEMBL_MART_SNP          Ensembl Variation 104
+7   ENSEMBL_MART_FUNCGEN         Ensembl Regulation 104
+8            plants_mart        Ensembl Plants Genes 51
+9      plants_variations   Ensembl Plants Variations 51
+10            fungi_mart         Ensembl Fungi Genes 51
+11      fungi_variations    Ensembl Fungi Variations 51
+12         protists_mart      Ensembl Protists Genes 51
+13   protists_variations Ensembl Protists Variations 51
+14          metazoa_mart       Ensembl Metazoa Genes 51
+Processing mart ENSEMBL_MART_ENSEMBL ...
+Processing mart ENSEMBL_MART_MOUSE ...
+Processing mart ENSEMBL_MART_SEQUENCE ...
+Processing mart ENSEMBL_MART_ONTOLOGY ...
+Processing mart ENSEMBL_MART_GENOMIC ...
+Processing mart ENSEMBL_MART_SNP ...
+Processing mart ENSEMBL_MART_FUNCGEN ...
+Processing mart plants_mart ...
+Processing mart plants_variations ...
+Processing mart fungi_mart ...
+Processing mart fungi_variations ...
+Processing mart protists_mart ...
+Processing mart protists_variations ...
+Processing mart metazoa_mart ...
+ A tibble: 15 x 5                                                                                          
+   organism_name description               mart      dataset      version
+   <chr>         <chr>                     <chr>     <chr>        <chr>  
+ 1 hsapiens      Human genes (GRCh38.p13)  ENSEMBL_ hsapiens_ge GRCh38
+ 2 hsapiens      Human sequences (GRCh38. ENSEMBL_ hsapiens_ge GRCh38
+ 3 hsapiens      encode                    ENSEMBL_ hsapiens_en GRCh38
+ 4 hsapiens      marker_feature_end        ENSEMBL_ hsapiens_ma GRCh38
+ 5 hsapiens      marker_feature            ENSEMBL_ hsapiens_ma GRCh38
+ 6 hsapiens      karyotype_end             ENSEMBL_ hsapiens_ka GRCh38
+ 7 hsapiens      karyotype_start           ENSEMBL_ hsapiens_ka GRCh38
+ 8 hsapiens      Human Somatic Short Vari ENSEMBL_ hsapiens_sn GRCh38
+ 9 hsapiens      Human Structural Variant ENSEMBL_ hsapiens_st GRCh38
+10 hsapiens      Human Short Variants (SN ENSEMBL_ hsapiens_snp GRCh38
+11 hsapiens      Human Somatic Structural ENSEMBL_ hsapiens_st GRCh38
+12 hsapiens      Human Regulatory Evidenc ENSEMBL_ hsapiens_pe GRCh38
+13 hsapiens      Human Regulatory Feature ENSEMBL_ hsapiens_re GRCh38
+14 hsapiens      Human Other Regulatory R ENSEMBL_ hsapiens_ex GRCh38
+15 hsapiens      Human miRNA Target Regio ENSEMBL_ hsapiens_mi GRCh38
+```
+
+The result is a table storing all `marts` and `datasets` from which annotations can be retrieved
+for _Homo sapiens_. Furthermore, a short description as well as the version of the data set
+being accessed (very useful for publications) is returned.
+
+Users will observe that 3 different `marts` provide 6 different `datasets` storing annotation information for
+_Homo sapiens_.
+
+> **_Please note__*, however, that scientific names of organisms must be written correctly! For ex. "Homo Sapiens" will be treated differently (not recognized) than "Homo sapiens" (recognized).__
+
+Similar to the `biomaRt` package query methodology, users need to specify `attributes` and `filters` to be able to perform
+accurate BioMart queries. Here the functions `organismAttributes()` and `organismFilters()` provide useful and intuitive
+concepts to obtain this information.
+
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# return available attributes for "Homo sapiens"
+head(biomartr::organismAttributes("Homo sapiens"), 20)
+```
+
+```
+1 ensembl_gene_id               Gene stable ID         hsapiens_ge ENSEMBL_M
+ 2 ensembl_gene_id_version       Gene stable ID version hsapiens_ge ENSEMBL_M
+ 3 ensembl_transcript_id         Transcript stable ID   hsapiens_ge ENSEMBL_M
+ 4 ensembl_transcript_id_version Transcript stable ID  hsapiens_ge ENSEMBL_M
+ 5 ensembl_peptide_id            Protein stable ID      hsapiens_ge ENSEMBL_M
+ 6 ensembl_peptide_id_version    Protein stable ID ver hsapiens_ge ENSEMBL_M
+ 7 ensembl_exon_id               Exon stable ID         hsapiens_ge ENSEMBL_M
+ 8 description                   Gene description       hsapiens_ge ENSEMBL_M
+ 9 chromosome_name               Chromosome/scaffold n hsapiens_ge ENSEMBL_M
+10 start_position                Gene start (bp)        hsapiens_ge ENSEMBL_M
+11 end_position                  Gene end (bp)          hsapiens_ge ENSEMBL_M
+12 strand                        Strand                 hsapiens_ge ENSEMBL_M
+13 band                          Karyotype band         hsapiens_ge ENSEMBL_M
+14 transcript_start              Transcript start (bp)  hsapiens_ge ENSEMBL_M
+15 transcript_end                Transcript end (bp)    hsapiens_ge ENSEMBL_M
+16 transcription_start_site      Transcription start s hsapiens_ge ENSEMBL_M
+17 transcript_length             Transcript length (in hsapiens_ge ENSEMBL_M
+18 transcript_tsl                Transcript support le hsapiens_ge ENSEMBL_M
+19 transcript_gencode_basic      GENCODE basic annotat hsapiens_ge ENSEMBL_M
+20 transcript_appris             APPRIS annotation      hsapiens_ge ENSEMBL_M
+```
+
+Users will observe that the `organismAttributes()` function returns a data.frame storing attribute names, data sets, and marts which
+are available for `Homo sapiens`. After the ENSEMBL release 87 the `ENSEMBL_MART_SEQUENCE` service provided
+by Ensembl does not work properly and thus the `organismAttributes()` function prints out warning messages to make the user aware
+when certain marts provided by Ensembl do not work properly, yet. 
+
+An additional feature provided by `organismAttributes()` is the `topic` argument. The `topic` argument allows users to to search for specific attributes,  topics, or categories for faster filtering.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# search for attribute topic "id"
+head(biomartr::organismAttributes("Homo sapiens", topic = "id"), 20)
+```
+
+```
+  name                          description            dataset      mart      
+   <chr>                         <chr>                  <chr>        <chr>     
+ 1 ensembl_gene_id               Gene stable ID         hsapiens_ge ENSEMBL_M
+ 2 ensembl_gene_id_version       Gene stable ID version hsapiens_ge ENSEMBL_M
+ 3 ensembl_transcript_id         Transcript stable ID   hsapiens_ge ENSEMBL_M
+ 4 ensembl_transcript_id_version Transcript stable ID  hsapiens_ge ENSEMBL_M
+ 5 ensembl_peptide_id            Protein stable ID      hsapiens_ge ENSEMBL_M
+ 6 ensembl_peptide_id_version    Protein stable ID ver hsapiens_ge ENSEMBL_M
+ 7 ensembl_exon_id               Exon stable ID         hsapiens_ge ENSEMBL_M
+ 8 study_external_id             Study external refere hsapiens_ge ENSEMBL_M
+ 9 go_id                         GO term accession      hsapiens_ge ENSEMBL_M
+10 dbass3_id                     DataBase of Aberrant  hsapiens_ge ENSEMBL_M
+11 dbass5_id                     DataBase of Aberrant  hsapiens_ge ENSEMBL_M
+12 hgnc_id                       HGNC ID                hsapiens_ge ENSEMBL_M
+13 protein_id                    INSDC protein ID       hsapiens_ge ENSEMBL_M
+14 mim_morbid_description        MIM morbid description hsapiens_ge ENSEMBL_M
+15 mim_morbid_accession          MIM morbid accession   hsapiens_ge ENSEMBL_M
+16 mirbase_id                    miRBase ID             hsapiens_ge ENSEMBL_M
+17 refseq_peptide                RefSeq peptide ID      hsapiens_ge ENSEMBL_M
+18 refseq_peptide_predicted      RefSeq peptide predic hsapiens_ge ENSEMBL_M
+19 wikigene_id                   WikiGene ID            hsapiens_ge ENSEMBL_M
+20 mobidblite                    MobiDBLite             hsapiens_ge ENSEMBL_M
+```
+
+Now, all `attribute names` having `id` as part of their `name` are being returned.
+
+Another example is `topic = "homolog"`.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# search for attribute topic "homolog"
+head(biomartr::organismAttributes("Homo sapiens", topic = "homolog"), 20)
+```
+
+```
+  <chr>                                         <chr>           <chr>   <chr> 
+ 1 mspretus_homolog_ensembl_gene                 Algerian mouse hsapie ENSEM
+ 2 mspretus_homolog_associated_gene_name         Algerian mouse hsapie ENSEM
+ 3 mspretus_homolog_ensembl_peptide              Algerian mouse hsapie ENSEM
+ 4 mspretus_homolog_chromosome                   Algerian mouse hsapie ENSEM
+ 5 mspretus_homolog_chrom_start                  Algerian mouse hsapie ENSEM
+ 6 mspretus_homolog_chrom_end                    Algerian mouse hsapie ENSEM
+ 7 mspretus_homolog_canonical_transcript_protein Query protein  hsapie ENSEM
+ 8 mspretus_homolog_subtype                      Last common an hsapie ENSEM
+ 9 mspretus_homolog_orthology_type               Algerian mouse hsapie ENSEM
+10 mspretus_homolog_perc_id                      %id. target Al hsapie ENSEM
+11 mspretus_homolog_perc_id_r1                   %id. query gen hsapie ENSEM
+12 mspretus_homolog_goc_score                    Algerian mouse hsapie ENSEM
+13 mspretus_homolog_wga_coverage                 Algerian mouse hsapie ENSEM
+14 mspretus_homolog_dn                           dN with Algeri hsapie ENSEM
+15 mspretus_homolog_ds                           dS with Algeri hsapie ENSEM
+16 mspretus_homolog_orthology_confidence         Algerian mouse hsapie ENSEM
+17 vpacos_homolog_ensembl_gene                   Alpaca gene st hsapie ENSEM
+18 vpacos_homolog_associated_gene_name           Alpaca gene na hsapie ENSEM
+19 vpacos_homolog_ensembl_peptide                Alpaca protein hsapie ENSEM
+20 vpacos_homolog_chromosome                     Alpaca chromos hsapie ENSEM
+```
+
+Or `topic = "dn"` and `topic = "ds"` for `dn` and `ds` value retrieval.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# search for attribute topic "dn"
+head(biomartr::organismAttributes("Homo sapiens", topic = "dn"))
+```
+
+```
+  name                  description            dataset               mart      
+  <chr>                 <chr>                  <chr>                 <chr>     
+1 cdna_coding_start     cDNA coding start      hsapiens_gene_ensembl ENSEMBL_M
+2 cdna_coding_end       cDNA coding end        hsapiens_gene_ensembl ENSEMBL_M
+3 mspretus_homolog_dn   dN with Algerian mouse hsapiens_gene_ensembl ENSEMBL_M
+4 vpacos_homolog_dn     dN with Alpaca         hsapiens_gene_ensembl ENSEMBL_M
+5 pformosa_homolog_dn   dN with Amazon molly   hsapiens_gene_ensembl ENSEMBL_M
+6 cpalliatus_homolog_dn dN with Angola colobus hsapiens_gene_ensembl ENSEMBL_M
+```
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# search for attribute topic "ds"
+head(biomartr::organismAttributes("Homo sapiens", topic = "ds"))
+```
+
+```
+  name                description            dataset               mart        
+  <chr>               <chr>                  <chr>                 <chr>       
+1 ccds                CCDS ID                hsapiens_gene_ensembl ENSEMBL_MAR
+2 cds_length          CDS Length             hsapiens_gene_ensembl ENSEMBL_MAR
+3 cds_start           CDS start              hsapiens_gene_ensembl ENSEMBL_MAR
+4 cds_end             CDS end                hsapiens_gene_ensembl ENSEMBL_MAR
+5 mspretus_homolog_ds dS with Algerian mouse hsapiens_gene_ensembl ENSEMBL_MAR
+6 vpacos_homolog_ds   dS with Alpaca         hsapiens_gene_ensembl ENSEMBL_MAR
+```
+
+Analogous to the `organismAttributes()` function, the `organismFilters()` function returns
+all filters that are available for a query organism of interest.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# return available filters for "Homo sapiens"
+head(biomartr::organismFilters("Homo sapiens"), 20)
+```
+
+```
+   name                                description          dataset    mart    
+   <chr>                               <chr>                <chr>      <chr>   
+ 1 chromosome_name                     Chromosome/scaffold hsapiens_ ENSEMBL
+ 2 start                               Start                hsapiens_ ENSEMBL
+ 3 end                                 End                  hsapiens_ ENSEMBL
+ 4 band_start                          Band Start           hsapiens_ ENSEMBL
+ 5 band_end                            Band End             hsapiens_ ENSEMBL
+ 6 marker_start                        Marker Start         hsapiens_ ENSEMBL
+ 7 marker_end                          Marker End           hsapiens_ ENSEMBL
+ 8 encode_region                       Encode region        hsapiens_ ENSEMBL
+ 9 strand                              Strand               hsapiens_ ENSEMBL
+10 chromosomal_region                  e.g. 1:100:10000:-1 hsapiens_ ENSEMBL
+11 with_ccds                           With CCDS ID(s)      hsapiens_ ENSEMBL
+12 with_chembl                         With ChEMBL ID(s)    hsapiens_ ENSEMBL
+13 with_clone_based_ensembl_gene       With Clone-based (E hsapiens_ ENSEMBL
+14 with_clone_based_ensembl_transcript With Clone-based (E hsapiens_ ENSEMBL
+15 with_dbass3                         With DataBase of Ab hsapiens_ ENSEMBL
+16 with_dbass5                         With DataBase of Ab hsapiens_ ENSEMBL
+17 with_ens_hs_transcript              With Ensembl Human  hsapiens_ ENSEMBL
+18 with_ens_hs_translation             With Ensembl Human  hsapiens_ ENSEMBL
+19 with_entrezgene_trans_name          With EntrezGene tra hsapiens_ ENSEMBL
+20 with_embl                           With European Nucle hsapiens_ ENSEMBL
+```
+
+The `organismFilters()` function also allows users to search for filters that correspond to
+a specific topic or category.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# search for filter topic "id"
+head(biomartr::organismFilters("Homo sapiens", topic = "id"), 20)
+```
+
+```
+   name                          description               dataset     mart    
+   <chr>                         <chr>                     <chr>       <chr>   
+ 1 with_protein_id               With INSDC protein ID ID hsapiens_g ENSEMBL
+ 2 with_mim_morbid               With MIM morbid ID(s)     hsapiens_g ENSEMBL
+ 3 with_refseq_peptide           With RefSeq peptide ID(s) hsapiens_g ENSEMBL
+ 4 with_refseq_peptide_predicted With RefSeq peptide pred hsapiens_g ENSEMBL
+ 5 ensembl_gene_id               Gene stable ID(s) [e.g.  hsapiens_g ENSEMBL
+ 6 ensembl_gene_id_version       Gene stable ID(s) with v hsapiens_g ENSEMBL
+ 7 ensembl_transcript_id         Transcript stable ID(s)  hsapiens_g ENSEMBL
+ 8 ensembl_transcript_id_version Transcript stable ID(s)  hsapiens_g ENSEMBL
+ 9 ensembl_peptide_id            Protein stable ID(s) [e. hsapiens_g ENSEMBL
+10 ensembl_peptide_id_version    Protein stable ID(s) wit hsapiens_g ENSEMBL
+11 ensembl_exon_id               Exon ID(s) [e.g. ENSE000 hsapiens_g ENSEMBL
+12 dbass3_id                     DataBase of Aberrant 3'  hsapiens_g ENSEMBL
+13 dbass5_id                     DataBase of Aberrant 5'  hsapiens_g ENSEMBL
+14 hgnc_id                       HGNC ID(s) [e.g. HGNC:10 hsapiens_g ENSEMBL
+15 protein_id                    INSDC protein ID(s) [e.g hsapiens_g ENSEMBL
+16 mim_morbid_accession          MIM morbid accession(s)  hsapiens_g ENSEMBL
+17 mirbase_id                    miRBase ID(s) [e.g. hsa- hsapiens_g ENSEMBL
+18 refseq_peptide                RefSeq peptide ID(s) [e. hsapiens_g ENSEMBL
+19 refseq_peptide_predicted      RefSeq peptide predicted hsapiens_g ENSEMBL
+20 wikigene_id                   WikiGene ID(s) [e.g. 1]   hsapiens_g ENSEMBL
+```
+
+## Construct BioMart queries with `biomartr`
+
+The short introduction to the functionality of
+`organismBM()`, `organismAttributes()`, and `organismFilters()`
+will allow users to perform BioMart queries in a very intuitive 
+organism centric way. The main function to perform BioMart queries
+is `biomart()`.
+
+
+For the following examples we will assume that we are interested in the annotation of specific genes from the _Homo sapiens_ proteome. We want to map the corresponding refseq gene id to a set of other gene ids used in other databases. For this purpose, first we need consult the `organismAttributes()` function.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+
+head(biomartr::organismAttributes("Homo sapiens", topic = "id"))
+```
+```
+ name                          description                  dataset    mart   
+  <chr>                         <chr>                        <chr>      <chr>  
+1 ensembl_gene_id               Gene stable ID               hsapiens_ ENSEMB
+2 ensembl_gene_id_version       Gene stable ID version       hsapiens_ ENSEMB
+3 ensembl_transcript_id         Transcript stable ID         hsapiens_ ENSEMB
+4 ensembl_transcript_id_version Transcript stable ID version hsapiens_ ENSEMB
+5 ensembl_peptide_id            Protein stable ID            hsapiens_ ENSEMB
+6 ensembl_peptide_id_version    Protein stable ID version    hsapiens_ ENSEMB
+```
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# retrieve the proteome of Homo sapiens from refseq
+file_path <- biomartr::getProteome( db       = "refseq",
+                                    organism = "Homo sapiens",
+                                    path     = file.path("_ncbi_downloads","proteomes") )
+
+Hsapiens_proteome <- biomartr::read_proteome(file_path, format = "fasta")
+
+# remove splice variants from id
+gene_set <- unlist(sapply(strsplit(Hsapiens_proteome@ranges@NAMES[1:5], ".",fixed = TRUE), function(x) x[1]))
+
+result_BM <- biomartr::biomart( genes      = gene_set, # genes were retrieved using biomartr::getGenome()
+                                mart       = "ENSEMBL_MART_ENSEMBL", # marts were selected with biomartr::getMarts()
+                                dataset    = "hsapiens_gene_ensembl", # datasets were selected with biomartr::getDatasets()
+                                attributes = c("ensembl_gene_id","ensembl_peptide_id"), # attributes were selected with biomartr::getAttributes()
+                                filters    = "refseq_peptide") # specify what ID type was stored in the fasta file retrieved with biomartr::getGenome()
+
+result_BM 
+```
+
+```
+  refseq_peptide ensembl_gene_id ensembl_peptide_id
+1      NP_000005 ENSG00000175899    ENSP00000323929
+2      NP_000006 ENSG00000156006    ENSP00000286479
+3      NP_000007 ENSG00000117054    ENSP00000359878
+4      NP_000008 ENSG00000122971    ENSP00000242592
+5      NP_000009 ENSG00000072778    ENSP00000349297
+```
+
+
+The `biomart()` function takes as arguments a set of genes (gene ids specified in the `filter` argument), the corresponding `mart` and `dataset`, as well as the `attributes` which shall be returned.
+
+## Gene Ontology 
+
+The `biomartr` package also enables a fast and intuitive retrieval of GO terms
+and additional information via the `getGO()` function. Several databases can be selected
+to retrieve GO annotation information for a set of query genes. So far, the `getGO()`
+function allows GO information retrieval from the `Ensembl Biomart` database. 
+
+In this example we will retrieve GO information for a set of _Homo sapiens_ genes
+stored as `hgnc_symbol`.
+
+### GO Annotation Retrieval via BioMart
+
+The `getGO()` function takes several arguments as input to retrieve GO information from BioMart. 
+First, the scientific name of the `organism` of interest needs to be specified. Furthermore, a set of
+`gene ids` as well as their corresponding `filter` notation (`GUCA2A` gene ids have `filter` notation `hgnc_symbol`; see `organismFilters()` for details)
+need to be specified. The `database` argument then defines the database from which GO information shall be retrieved.
+
+```{r,eval=FALSE}
+# show all elements of the data.frame
+options(tibble.print_max = Inf)
+# search for GO terms of an example Homo sapiens gene
+GO_tbl <- biomartr::getGO(organism = "Homo sapiens", 
+                          genes    = "GUCA2A",
+                          filters  = "hgnc_symbol")
+
+GO_tbl
+```
+
+
+Hence, for each _gene id_ the resulting table stores all annotated GO terms found in `Ensembl Biomart`.
+

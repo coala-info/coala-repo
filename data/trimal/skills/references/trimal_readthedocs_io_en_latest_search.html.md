@@ -1,0 +1,1 @@
+Search &mdash; trimAl trimAl Installation Usage Scores Trimming algorithms trimAl Search Please activate JavaScript to enable the search functionality. &#169; Copyright 2025, trimAl team. Built with Sphinx using a theme provided by Read the Docs .

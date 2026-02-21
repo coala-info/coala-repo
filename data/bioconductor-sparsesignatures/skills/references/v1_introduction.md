@@ -1,0 +1,27 @@
+# Introduction
+
+Daniele Ramazzotti, Avantika Lal, Keli Liu, Luca De Sano, Robert Tibshirani and Arend Sidow
+
+#### October 30, 2025
+
+#### Package
+
+SparseSignatures 2.20.0
+
+Point mutations occurring in a genome can be divided into 96 categories based on the base being mutated, the base it is mutated into and its two flanking bases. Therefore, for any patient, it is possible to represent all the point mutations occurring in that patient’s tumor as a vector of length 96, where each element represents the count of mutations for a given category in the patient.
+
+A mutational signature represents the pattern of mutations produced by a mutagen or mutagenic process inside the cell. Each signature can also be represented by a vector of length 96, where each element represents the probability that this particular mutagenic process generates a mutation of the 96 above mentioned categories. In this R package, we provide a set of functions to extract and visualize the mutational signatures that best explain the mutation counts of a large number of patients.
+
+## 0.1 Changelog
+
+* *2.9.3* New vignette.
+* *2.0.0* Migration from Travis-CI to Github Actions and Major refactoring.
+* *1.0.4* Move NMF to Depends section.
+* *1.0.3* Issue with the basis function solved.
+* *1.0.0* package released on Bioconductor in May 2018.
+
+## 0.2 Algorithms and useful links
+
+| Acronym | Extended name | Reference |
+| --- | --- | --- |
+| SparseSignatures | De Novo Mutational Signature Discovery in Tumor Genomes using SparseSignatures | <https://www.biorxiv.org/content/10.1101/384834v3> |

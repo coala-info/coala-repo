@@ -1,0 +1,1 @@
+Branches · genomeinformatics / xengsort · GitLab Branches Overview Active Stale All Active branches master default protected c38f0324 &middot; Version 2.1.0 &middot; Dec 04, 2025 Stale branches fqup 5f474da2 &middot; document index module &middot; Aug 19, 2020 develop 1ae75047 &middot; Fix MANIFEST &middot; Sep 10, 2024 !18

@@ -1,0 +1,60 @@
+---
+title: "Overview of concordexR"
+author: "Lambda Moses, Kayla Jackson"
+date: "`r format(Sys.Date(), '%b %d, %Y')`"
+output:
+    BiocStyle::html_document:
+        toc: true
+        number_sections: true
+        toc_depth: 3
+        toc_float:
+            collapsed: true
+vignette: >
+  %\VignetteIndexEntry{overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>", fig.align = "center"
+)
+```
+
+The goal of concordexR is to identify spatial homogeneous regions (SHRs) as defined in the recent manuscrpt["Identification of spatial homogenous regions in tissues with concordex"](https://doi.org/10.1101/2023.06.28.546949). Briefly, SHRs are are domains that are homogeneous with respect to cell type composition. concordex relies on the the k-nearest-neighbor (kNN) graph to representing similarities between cells and uses common clustering algorithms to identify SHRs.
+
+## Installation
+
+This package is under active development will be available in the Bioconductor version 3.20 release. 
+
+Until then, please install the package from Github or from the Bioconductor devel branch. 
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+
+#BiocManager::install("concordexR", version="devel")
+devtools::install_github("pachterlab/concordexR")
+```
+
+## Example of main functionality
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(concordexR)
+library(SFEData)
+
+sfe <- McKellarMuscleData("small")
+```
+
+```{r}
+res <- calculateConcordex(sfe, labels=colData(sfe)[["in_tissue"]])
+```
+
+
+## SessionInfo
+```{r}
+sessionInfo()
+```

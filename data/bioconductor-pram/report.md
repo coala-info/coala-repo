@@ -1,0 +1,16 @@
+# bioconductor-pram Bioconductor Package Report
+
+## pram
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/pram.html
+- **Package**: pram
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: https://github.com/pliu55/pram
+- **Skill**: generated
+

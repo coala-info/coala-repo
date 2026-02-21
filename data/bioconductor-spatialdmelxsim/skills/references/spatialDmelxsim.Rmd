@@ -1,0 +1,145 @@
+---
+title: "spatialDmelxsim"
+author: "Michael Love"
+output: BiocStyle::html_document
+date: "`r doc_date()`"
+package: "`r pkg_ver('spatialDmelxsim')`"
+vignette: >
+    %\VignetteIndexEntry{spatialDmelxsim}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+# Allelic counts of D melanogaster x D simulans cross
+
+This package contains data of allelic expression counts of spatial
+slices of a fly embryo, which is a *D melanogaster* x *D simulans*
+cross. The experiment is a reciprocal cross (see `strain`), with three
+replicates of one parental arrangement and two of another, which was
+sufficient to ensure at least one embryo of each sex for each parental
+arrangement.
+
+Data was downloaded from `GSE102233` as described in the publication:
+
+> Combs PA, Fraser HB (2018) 
+> Spatially varying cis-regulatory divergence in Drosophila embryos 
+> elucidates cis-regulatory logic. 
+> *PLOS Genetics* 14(11): e1007631. 
+> https://doi.org/10.1371/journal.pgen.1007631
+
+The scripts for creating the *SummarizedExperiment* object can be
+found in `inst/scripts/make-data.R`.
+
+We can find the resource via *ExperimentHub*:
+
+```{r}
+library(ExperimentHub)
+eh <- ExperimentHub()
+query(eh, "spatialDmelxsim")
+```
+
+Or load directly with a function defined within this package:
+
+```{r}
+suppressPackageStartupMessages(library(SummarizedExperiment))
+library(spatialDmelxsim)
+se <- spatialDmelxsim()
+```
+
+The rownames of the *SummarizedExperiment* are Ensembl IDs. For
+simplicity of code for plotting individual genes, we will change the
+rownames to gene symbols (those used in the paper). We check first
+that all genes have a symbol, because rownames cannot contain an NA.
+
+```{r}
+table(is.na(mcols(se)$paper_symbol))
+rownames(se) <- mcols(se)$paper_symbol
+```
+
+Note we use the following annotation of alleles:
+
+* a1: *D simulans*
+* a2: *D melanogaster*
+
+Then we calculate the allelic ratio for *D simulans* allele: 
+
+```{r}
+assay(se, "total") <- assay(se, "a1") + assay(se, "a2") 
+assay(se, "ratio") <- assay(se, "a1") / assay(se, "total")
+```
+
+We plot the ratio over the slice, using the `normSlice` column of
+metadata. This is the original `slice` number, scaled up to 27 (rep2
+had 26 slices and rep4 had 25 slices).
+
+```{r}
+plotGene <- function(gene) {
+    x <- se$normSlice
+    y <- assay(se, "ratio")[gene,]
+    col <- as.integer(se$rep)
+    plot(x, y, xlab="normSlice", ylab="sim / total ratio",
+        ylim=c(0,1), main=gene, col=col)
+    lw <- loess(y ~ x, data=data.frame(x,y=unname(y)))
+    lines(sort(lw$x), lw$fitted[order(lw$x)], col="red", lwd=2)
+    abline(h=0.5, col="grey")
+}
+```
+
+An example of a gene with global bias toward the *simulans* allele.
+
+```{r DOR}
+plotGene("DOR")
+```
+
+Example of some genes with spatial patterning of allelic expression:
+
+```{r uif}
+plotGene("uif")
+```
+
+```{r bmm}
+plotGene("bmm")
+```
+
+```{r hb}
+plotGene("hb")
+```
+
+```{r CG4500}
+plotGene("CG4500")
+```
+
+Other interesting spatial genes can be found by consulting the Combs
+and Fraser (2018) paper, in Supplementary Figure 6 "Complete heatmap
+of ASE for genes with svASE." Other species-specific genes are found
+in Supplementary Figure 7 "Genes with species-specific expression,
+regardless of parent of origin." Note that the SF6 spatially varying
+ASE genes are labelled in `mcols(se)$scASE`.
+
+# Additional details
+
+As said above, the file `inst/scripts/make-data.R` provides the script
+that was used to construct the *SummarizedExperiment* object from the
+data available on GEO. Here are some additional details:
+
+* The original allelic counts on GEO were assembled for 2,959 of the
+  genes (labelled in `mcols(se)$matchDm557`). When compiling the data I
+  noticed that other genes, where the genomic locations of dm5.57 and
+  dm6 were not a match, had missing allelic counts. The current
+  dataset is provided with respect to dm6.
+* For those genes with missing allelic counts, I instead used the FPKM
+  data on GEO and the allelic counts that were not missing, to predict
+  the total allelic count from abundance, per sample (with ~82% r2).
+* Finally I used an ASE file on GEO to impute the allelic counts from
+  the allelic ratio and predicted total allelic count. These 5,673
+  genes are labelled in `mcols(se)$predicted`.
+* There are two symbol columns in `mcols(se)`. One is the SYMBOL that
+  matches the Ensembl `gene_id` according to `org.Dm.eg.db`. The other
+  is the symbol that I obtained from the per-sample FPKM matrices
+  which have both Ensembl and gene symbols. The `paper_symbol` column
+  is therefore better for matching genes according to their ID in the
+  paper figures.
+
+```{r}
+sessionInfo()
+```

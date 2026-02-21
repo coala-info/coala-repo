@@ -1,0 +1,831 @@
+# An introduction to the SingleCellAlleleExperiment class
+
+Jonas Schuck1,2,3\*, Ahmad Al Ajami1,2,3\*\*, Federico Marini4,5\*\*\* and Katharina Imkeller1,2,3\*\*\*\*
+
+1Goethe University, University Hospital Frankfurt, Neurological Institute (Edinger Institute), Frankfurt/Main
+2University Cancer Center, Frankfurt/Main
+3Frankfurt Cancer Institute, Frankfurt/Main
+4Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), Mainz
+5Research Center for Immunotherapy (FZI), Mainz
+
+\*schuck@med.uni-frankfurt.de
+\*\*alajami@med.uni-frankfurt.de
+\*\*\*marinif@uni-mainz.de
+\*\*\*\*imkeller@med.uni-frankfurt.de
+
+#### 30 October 2025
+
+#### Package
+
+SingleCellAlleleExperiment 1.6.0
+
+# 1 Installation
+
+From Bioconductor:
+
+```
+if (!require("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("SingleCellAlleleExperiment")
+```
+
+# 2 Introduction to the workflow
+
+## 2.1 Biological background and motivation
+
+Immune molecules such as B and T cell receptors, human leukocyte antigens (HLAs) or killer Ig-like receptors (KIRs) are encoded in the genetically most diverse loci of the human genome. Many of these immune genes are hyperpolymorphic, showing high allelic diversity across human populations. In addition, typical immune molecules are polygenic, which means that multiple functionally similar genes encode the same protein subunit.
+
+However, interactive single-cell methods commonly used to analyze immune cells in large patient cohorts do not consider this. This leads to erroneous quantification of important immune mediators and impaired inter-donor comparability.
+
+## 2.2 Workflow for unraveling the immunogenetic diversity in scData
+
+We have developed a workflow that allows quantification of expression and interactive exploration of donor-specific alleles of different immune genes. The workflow is divided into two software packages and one additional data package:
+
+1. The *[scIGD](https://github.com/AGImkeller/scIGD)* software package consist of a *[Snakemake](https://snakemake.readthedocs.io/en/stable/)* workflow designed to automate and streamline the genotyping process for immune genes, focusing on key targets such as HLAs and KIRs, and enabling allele-specific quantification from single-cell RNA-sequencing (scRNA-seq) data using donor-specific references. For detailed information of the performed steps and how to utilize this workflow, please refer to its documentation here: *[scIGD](https://github.com/AGImkeller/scIGD)*.
+2. To harness the full analytical potential of the results, we’ve developed a dedicated `R` package, `SingleCellAlleleExperiment` presented in this repository. This package provides a comprehensive multi-layer data structure, enabling the representation of immune genes at specific levels, including alleles, genes, and groups of functionally similar genes and thus, allows data analysis across these immunologically relevant, different layers of annotation.
+3. The *[scaeData](https://github.com/AGImkeller/scaeData)* is an `R/ExperimentHub` data package providing datasets generated and processed by the *[scIGD](https://github.com/AGImkeller/scIGD)* software package which can be used to explore the data and potential downstream analysis workflows using the here presented novel `SingleCellAlleleExperiment` data structure. Refer to *[scaeData](https://github.com/AGImkeller/scaeData)* for more information regarding the available datasets and source of raw data.
+
+This workflow is designed to support both **10x** and **BD Rhapsody** data, encompassing amplicon/targeted sequencing as well as whole-transcriptome-based data, providing flexibility to users working with different experimental setups.
+
+![Workflow for scIGD](data:image/png;base64...)
+**Figure 1:** Overview of the scIGD workflow for unraveling immunogenomic diversity in single-cell data, highlighting the integration of the SingleCellAlleleExperiment package for comprehensive data analysis.
+
+# 3 Introduction to the `SingleCellAlleleExperiment (SCAE)` class
+
+The `SingleCellAlleleExperiment (SCAE)` class serves as a comprehensive multi-layer data structure, enabling the representation of immune genes at specific levels, including alleles, genes, and groups of functionally similar genes and thus, allows data analysis across these immunologically relevant, different layers of annotation. The implemented data object is derived from the *[SingleCellExperiment](https://bioconductor.org/packages/3.22/SingleCellExperiment)* class and follows similar conventions, where rows should represent features (genes, transcripts) and columns should represent cells.
+
+![A schematics of the SingleCellAlleleExperiment class](data:image/png;base64...)
+**Figure 2:** Scheme of SingleCellAlleleExperiment object structure with lookup table.
+
+For the integration of the relevant additional data layers (see **Figure 2**), the quantification data for alleles, generated by the novel *[scIGD](https://github.com/AGImkeller/scIGD)* software package, is aggregated into two additional data layers via an ontology-based design principle using a lookup table during object generation.
+
+For example, the counts of the alleles `A*01:01:01:01` and `A*02:01:01:01` that are present in the raw input data will be combined into the `HLA-A` immune gene layer (see **Table 1** below). Next, all counts of immune genes corresponding to `HLA-class I` are combined into the `HLA-class I` functional class layer. See the structure of the used lookup table below.
+
+**Table 1:** Scheme of the lookup table used to aggregate allele information into multiple data layers.
+
+| Allele | Gene | Function |
+| --- | --- | --- |
+| A\*01:01:01 | HLA-A | HLA class I |
+| A\*01:01:01 | HLA-A | HLA class I |
+| … | … | … |
+| DRB1\*01:01:01 | HLA-DRB1 | HLA class II |
+
+The resulting `SCAE` data object can be used in combination with established single cell analysis packages like *[scater](https://bioconductor.org/packages/3.22/scater)* and *[scran](https://bioconductor.org/packages/3.22/scran)* to perform downstream analysis on immune gene expression, allowing data exploration on functional and allele level. See the vignette for further information and insights on how to perform downstream analysis using exemplary data from the accompanying `R/Experimenthub` package *[scaeData](https://github.com/AGImkeller/scaeData)*.
+
+## 3.1 Expected input and dataset description
+
+The read in function of the SCAE package `read_allele_counts()` expects specific files that are generated by the previous steps of the workflow, performed in the *[scIGD](https://github.com/AGImkeller/scIGD)* package. One input parameter needs to state the path to a directory containing all the input files. The file identifiers can be
+specifically stated as parameters. The default file identifiers, as they are outputted from **scIGD** are listed below:
+The stated input directory should contain the following files:
+
+* **cells\_x\_genes.barcodes.txt** (list of barcodes/cell identifiers)
+* **cells\_x\_genes.features.txt** (list of feature identifiers)
+* **cells\_x\_genes\_mtx.mtx** (Contains the quantification matrix)
+* **lookup\_table.csv** (Info for generating multiple data layers)
+
+The dataset used for the here shown downstream analysis is taken from the accompanying data package *[scaeData](https://github.com/AGImkeller/scaeData)*. Specifically we are using the `pbmc_5k` dataset. Find more information about the data, including the source of the raw data here: *[scaeData](https://github.com/AGImkeller/scaeData)*.
+
+---
+
+# 4 Exemplary downstream analysis
+
+## 4.1 Loading suggested packages
+
+The following packages are abundant for performing the here stated downstream analysis and visualization. Make sure they are installed to use this vignette.
+
+```
+library(SingleCellAlleleExperiment)
+library(scaeData)
+library(scater)
+library(scran)
+library(scuttle)
+library(DropletUtils)
+library(ggplot2)
+library(patchwork)
+library(org.Hs.eg.db)
+library(AnnotationDbi)
+```
+
+## 4.2 Generation of a SingleCellAlleleExperiment object
+
+Download and save the **“pbmc\_10k”** dataset from the accompanying `ExperimentHub/scaeData` package.
+
+```
+example_data_10k <- scaeData::scaeDataGet(dataset="pbmc_10k")
+```
+
+```
+## Retrieving barcode identifiers for **pbmc 10k** dataset...DONE
+```
+
+```
+## Retrieving feature identifiers for **pbmc 10k** dataset...DONE
+```
+
+```
+## Retrieving quantification matrix for **pbmc 10k** dataset...DONE
+```
+
+```
+example_data_10k
+```
+
+```
+## $dir
+## [1] "/home/biocbuild/.cache/R/ExperimentHub/"
+##
+## $barcodes
+## [1] "18b71750d05aa0_9522"
+##
+## $features
+## [1] "18b7172512aef9_9523"
+##
+## $matrix
+## [1] "18b71776a9c18a_9524"
+```
+
+The return value of the `scaeDataGet()` function is a list containing four elements. The `$dir` slot contains the directory where the files downloaded from `ExperimentHub` are saved on your device. The remaining three slots `$barcodes`, `$features`, `$matrix` contain the corresponding file names (named by ExperimentHub). The list is then used to pass the saved information to the related parameters of the `read_allele_counts()` function of the here presented package. See next section.
+
+For the usage of the corresponding lookup table, specify a directory containing the lookup table as seen in the next chunk. For the available example datasets in `scaeData`, you can choose one of the following names. This provides the lookup table to the corresponding dataset:
+
+* “pbmc\_5k\_lookup\_table.csv” is used for the `pbmc\_5k" dataset.
+* “pbmc\_10k\_lookup\_table.csv” is used for the `pbmc\_10k" dataset.
+* “pbmc\_20k\_lookup\_table.csv” is used for the `pbmc\_20k" dataset.
+
+These are part of the `scaeData` package, but are not fetched from `ExperimentHub` but rather read in as internal files.
+
+```
+lookup_name <- "pbmc_10k_lookup_table.csv"
+lookup <- utils::read.csv(system.file("extdata", lookup_name, package="scaeData"))
+```
+
+```
+head(lookup)
+```
+
+```
+##          Allele  Gene    Function
+## 1 A*02:01:01:01 HLA-A HLA_class_I
+## 2 A*24:02:01:01 HLA-A HLA_class_I
+## 3 B*15:01:01:01 HLA-B HLA_class_I
+## 4 B*44:03:01:01 HLA-B HLA_class_I
+## 5 C*03:03:01:01 HLA-C HLA_class_I
+## 6 C*16:01:01:01 HLA-C HLA_class_I
+```
+
+After the directories of the data files and the lookup table are known and saved, proceed to generate a `SingleCellAlleleExperiment` object.
+
+This is an essential step. The read in function `read_allele_counts()` is used to read in data and generate a `SCAE` object. The `SingleCellAlleleExperiment` Constructor is exported as well. However, as the raw data is processed during the read in, we recommend to use `read_allele_counts()`. Find information about the read in using the Constructor in its function documentation `?SingleCellAlleleExperiment`.
+
+### 4.2.1 Description of Read in parameters
+
+If you used the *[scIGD](https://github.com/AGImkeller/scIGD)* package to generate your input files **(RECOMMENDED AND EXPECTED)**, then state the path containing all expected files to the `sample_dir` parameter in the `read_allele_counts()` function and the corresponding lookup table. In case you renamed the files, specify the new file identifiers in the corresponding parameters `lookup_file`, `barcode_file`, `gene_file`, `matrix_file`, otherwise leave it to the stated default values.
+
+The `read_allele_counts()` function also provides multiple parameters to perform filtering steps on the cells contained in your data. For this, **multiple parameter combinations are possible and showcased below.** Advanced filtering can be performed based on a [**knee plot**](https://liorpachter.wordpress.com/tag/knee-plot/).
+
+The first parameter, where you state which **filter mode** you want to use, gives the following valid options: `filter_mode=c("yes", "no", "custom")`.
+
+* `filter_mode = "no"`: Default filter mode. Filtering based on **threshold=0**, filtering out columns (cells) with a count sum of 0 over all features.
+* `filter_mode = "yes"` : Advanced filtering is performed on the computed **inflection point of a knee plot** based on barcode ranks. This is an **optional** functionality.
+* `filter_mode = "custom"` : Custom filter mode. Filtering performed on a threshold stated in the `filter_threshold` parameter. (Useful for example after you looked at the knee plot after using filter\_mode=“yes” and decide to use a different filter threshold)
+
+Additionally, the `verbose` parameter gives you an option to toggle runtime-information for the different steps during object generation. Messages regarding the filtering process (used thresholds) will not be toggled off if `verbose = FALSE`.
+
+**Exemplary read in using all described filter modes generating a SCAE object are shown in the following code-chunks:**
+
+---
+
+#### 4.2.1.1 `filter_mode="no"`
+
+Default filter mode. Filtering based on **threshold=0**, filtering out columns (cells) with a count sum of 0 over all features.
+
+```
+scae <- read_allele_counts(example_data_10k$dir,
+                           sample_names="example_data",
+                           filter_mode="no",
+                           lookup_file=lookup,
+                           barcode_file=example_data_10k$barcodes,
+                           gene_file=example_data_10k$features,
+                           matrix_file=example_data_10k$matrix,
+                           filter_threshold=NULL,
+                           verbose=FALSE)
+```
+
+---
+
+#### 4.2.1.2 `filter_mode="yes"`
+
+Advanced filtering is performed on the computed **inflection point of a knee plot** based on barcode ranks. This is an **optional** functionality. To be able to use this filter mode, the *[DropletUtils](https://bioconductor.org/packages/3.22/DropletUtils)* package needs to be installed on your machine.
+
+```
+scae <- read_allele_counts(example_data_10k$dir,
+                           sample_names="example_data",
+                           filter_mode="yes",
+                           lookup_file=lookup,
+                           barcode_file=example_data_10k$barcodes,
+                           gene_file=example_data_10k$features,
+                           matrix_file=example_data_10k$matrix,
+                           log=TRUE)
+```
+
+```
+## Filtering performed based on the inflection point at: 421.101378089684 UMI counts.
+```
+
+```
+scae
+```
+
+```
+## class: SingleCellAlleleExperiment
+## dim: 62766 11631
+## metadata(1): knee_info
+## assays(2): counts logcounts
+## rownames(62766): ENSG00000279928.2 ENSG00000228037.1 ... HLA_class_I
+##   HLA_class_II
+## rowData names(3): Ensembl_ID NI_I Quant_type
+## colnames(11631): AAACCCAAGGTAGTCG AAACCCACAATCCAGT ... TTTGTTGTCTGTACAG
+##   TTTGTTGTCTTCTAAC
+## colData names(3): Sample Barcode sizeFactor
+## reducedDimNames(0):
+## mainExpName: NULL
+## altExpNames(0):
+## ---------------
+## Including a total of 23 immune related features:
+## Allele-level information (13): A*02:01:01:01 A*24:02:01:01 ...
+##   DPB1*03:01:01:01 DPB1*11:01:01:01
+## Immune genes (8): HLA-A HLA-B ... HLA-DPA1 HLA-DPB1
+## Functional level information (2): HLA_class_I HLA_class_II
+```
+
+If this filter mode is chosen, the information to the corresponding plot including the inflection point used for filtering is stored in `metadata(scae)[["knee_info"]]`:
+
+```
+metadata(scae)[["knee_info"]]
+```
+
+```
+## $knee_df
+## DataFrame with 1363483 rows and 2 columns
+##                       rank     total
+##                  <numeric> <integer>
+## AAACCCAAGAAACCCA  885249.0         1
+## AAACCCAAGAAACTCA  290624.0         2
+## AAACCCAAGAAATTCG   95797.5         4
+## AAACCCAAGAACAAGG  885249.0         1
+## AAACCCAAGAACAGGA  885249.0         1
+## ...                    ...       ...
+## TTTGTTGTCTTTCAGC    885249         1
+## TTTGTTGTCTTTCTAG    885249         1
+## TTTGTTGTCTTTGATC    885249         1
+## TTTGTTGTCTTTGCGC    885249         1
+## TTTGTTGTCTTTGCTA    885249         1
+##
+## $knee_point
+## [1] 4275.858
+##
+## $inflection_point
+## [1] 421.1014
+```
+
+This can be used to plot the corresponding knee plot and potentially infer a new threshold for filtering (then used with **filter\_mode=“custom”**). Note that only using `filter_mode="yes"` computes the information for the knee plot. See corresponding code chunks for further information about the other filter modes.
+
+```
+knee_df <- metadata(scae)[["knee_info"]]$knee_df
+knee_point <- metadata(scae)[["knee_info"]]$knee_point
+inflection_point <- metadata(scae)[["knee_info"]]$inflection_point
+
+ggplot(knee_df, aes(x=rank, y=total)) +
+       geom_point() +
+       scale_x_log10() +
+       scale_y_log10() +
+       annotation_logticks() +
+       labs(x="Barcode rank", y="Total UMI count") +
+       geom_hline(yintercept=S4Vectors::metadata(knee_df)$knee,
+                  color="dodgerblue", linetype="dashed") +
+       geom_hline(yintercept=S4Vectors::metadata(knee_df)$inflection,
+                  color="forestgreen", linetype="dashed") +
+       annotate("text", x=2, y=S4Vectors::metadata(knee_df)$knee * 1.2,
+                label="knee", color="dodgerblue") +
+       annotate("text", x=2.25, y=S4Vectors::metadata(knee_df)$inflection * 1.2,
+                label="inflection", color="forestgreen") +  theme_bw()
+```
+
+![](data:image/png;base64...)
+
+---
+
+#### 4.2.1.3 `filter_mode="custom"`
+
+Custom filter mode. Filtering performed on a threshold stated in the `filter_threshold` parameter.
+
+```
+#this is the object used in the further workflow
+scae <- read_allele_counts(example_data_10k$dir,
+                           sample_names="example_data",
+                           filter_mode="custom",
+                           lookup_file=lookup,
+                           barcode_file=example_data_10k$barcodes,
+                           gene_file=example_data_10k$features,
+                           matrix_file=example_data_10k$matrix,
+                           filter_threshold=282)
+scae
+```
+
+---
+
+### 4.2.2 Description of optional functionalities
+
+Three optional functionalities can be toggled on or off during read in:
+
+* Optional filtering performed on the inflection point of a computed knee plot based on barcode ranks. Use `filter_mode="yes"` for this optional filter mode. Find more information about the different filter modes in the prior section.
+* Computation of a `logcounts` assay using Library Factors. Use `log=TRUE/FALSE` to toggle on or off accordingly. **Turned on by default**. If you want to compute the logcounts using a different method, be aware that the count matrix is extended (adding additional rows) during the object generation, **its abundant to compute scaling factors only on data layers present in the raw data (non-immune and alleles)**. Otherwise the scaling factors would not be correct. Find information about subsetting the object in sections further below.
+* Computation of additional gene symbols in case the raw data only contains Ensembl gene identifiers. Use `gene_symbols=TRUE/FALSE` to toggle on or off accordingly. **Turned off by default**. Uses the org.HS package.
+
+---
+
+## 4.3 Showcasing content of object slots
+
+### 4.3.1 RowData
+
+Two new classification columns are introduced in the `rowData` slot. Namely the `NI_I` column (classification of each row as `NI = non_immune` or `I = immune`) and `Quant_type` column (classification of each row to which data layer it is corresponding to). Both columns are used jointly to identify each row of the object to its corresponding data layer (see **figure 1**).
+
+```
+rowData(scae)
+```
+
+```
+## DataFrame with 62766 rows and 3 columns
+##                            Ensembl_ID        NI_I  Quant_type
+##                           <character> <character> <character>
+## ENSG00000279928.2   ENSG00000279928.2          NI           G
+## ENSG00000228037.1   ENSG00000228037.1          NI           G
+## ENSG00000142611.17 ENSG00000142611.17          NI           G
+## ENSG00000284616.1   ENSG00000284616.1          NI           G
+## ENSG00000157911.11 ENSG00000157911.11          NI           G
+## ...                               ...         ...         ...
+## HLA-DQA1                     HLA-DQA1           I           G
+## HLA-DPA1                     HLA-DPA1           I           G
+## HLA-DPB1                     HLA-DPB1           I           G
+## HLA_class_I               HLA_class_I           I           F
+## HLA_class_II             HLA_class_II           I           F
+```
+
+### 4.3.2 ColData
+
+Contains sample and barcode information. If the `logcounts` assay is computed, find another column containing the `sizeFactors` here.
+
+```
+head(colData(scae))
+```
+
+```
+## DataFrame with 6 rows and 3 columns
+##                        Sample          Barcode sizeFactor
+##                   <character>      <character>  <numeric>
+## AAACCCAAGGTAGTCG example_data AAACCCAAGGTAGTCG  0.8482773
+## AAACCCACAATCCAGT example_data AAACCCACAATCCAGT  2.1232252
+## AAACCCACACCGTCTT example_data AAACCCACACCGTCTT  1.1389457
+## AAACCCACATAGATCC example_data AAACCCACATAGATCC  0.6082479
+## AAACCCACATCGTCCT example_data AAACCCACATCGTCCT  0.0704607
+## AAACCCACATCTCATT example_data AAACCCACATCTCATT  1.4581167
+```
+
+### 4.3.3 Metadata
+
+Only contains information if `filter_mode="yes"` is used.
+
+```
+metadata(scae)[["knee_info"]]
+```
+
+```
+## $knee_df
+## DataFrame with 1363483 rows and 2 columns
+##                       rank     total
+##                  <numeric> <integer>
+## AAACCCAAGAAACCCA  885249.0         1
+## AAACCCAAGAAACTCA  290624.0         2
+## AAACCCAAGAAATTCG   95797.5         4
+## AAACCCAAGAACAAGG  885249.0         1
+## AAACCCAAGAACAGGA  885249.0         1
+## ...                    ...       ...
+## TTTGTTGTCTTTCAGC    885249         1
+## TTTGTTGTCTTTCTAG    885249         1
+## TTTGTTGTCTTTGATC    885249         1
+## TTTGTTGTCTTTGCGC    885249         1
+## TTTGTTGTCTTTGCTA    885249         1
+##
+## $knee_point
+## [1] 4275.858
+##
+## $inflection_point
+## [1] 421.1014
+```
+
+---
+
+### 4.3.4 Utilize layer specific `getter-functions()`
+
+On top of the established `getters` from the SCE package, new getters are implemented to retrieve the different data layers integrated in the SCAE object.
+
+#### 4.3.4.1 Non-immune genes
+
+```
+scae_nonimmune_subset <- scae_subset(scae, "nonimmune")
+
+head(rownames(scae_nonimmune_subset))
+```
+
+```
+## [1] "ENSG00000279928.2"  "ENSG00000228037.1"  "ENSG00000142611.17"
+## [4] "ENSG00000284616.1"  "ENSG00000157911.11" "ENSG00000269896.2"
+```
+
+#### 4.3.4.2 Alleles
+
+```
+scae_alleles_subset <- scae_subset(scae, "alleles")
+
+head(rownames(scae_alleles_subset))
+```
+
+```
+## [1] "A*02:01:01:01" "A*24:02:01:01" "B*15:01:01:01" "B*44:03:01:01"
+## [5] "C*03:03:01:01" "C*16:01:01:01"
+```
+
+#### 4.3.4.3 Immune genes
+
+```
+scae_immune_genes_subset <- scae_subset(scae, "immune_genes")
+
+head(rownames(scae_immune_genes_subset))
+```
+
+```
+## [1] "HLA-A"    "HLA-B"    "HLA-C"    "HLA-DRA"  "HLA-DRB1" "HLA-DQA1"
+```
+
+#### 4.3.4.4 Functional gene groups
+
+```
+scae_functional_groups_subset <- scae_subset(scae, "functional_groups")
+
+head(rownames(scae_functional_groups_subset))
+```
+
+```
+## [1] "HLA_class_I"  "HLA_class_II"
+```
+
+---
+
+## 4.4 Expression evaluation
+
+Checking the expression for the allele-layer, immune gene layer and functional class layer. Allele identifiers are in the form of `A*02:01:01:01`. The immune genes are in the form of `HLA-A` and the functional classes `HLA_class_I`. Here we see that `HLA_class_I` and `HLA-C` are the most abundant functional class and immune gene respectively, given the underlying dataset.
+
+```
+scae_immune_layers_subset <- c(rownames(scae_subset(scae, "alleles")),
+                               rownames(scae_subset(scae, "immune_genes")),
+                               rownames(scae_subset(scae, "functional_groups")))
+
+scater::plotExpression(scae, scae_immune_layers_subset)
+```
+
+![](data:image/png;base64...)
+
+# 5 Downstream analysis on immune genes
+
+In the following sections, main steps for dimensional reduction are performed, offering insights into the different data layers of the SCAE object as well as giving an idea on how to perform immune gene expression analysis.
+
+## 5.1 Subsetting the different layers
+
+The non-immune genes are combined with each of the integrated immune gene allele-aware layers to determine three different subsets.
+
+### 5.1.1 Non-immune genes + alleles
+
+```
+rn_scae_ni <- rownames(scae_subset(scae, "nonimmune"))
+rn_scae_alleles <- rownames(scae_subset(scae, "alleles"))
+
+scae_nonimmune__allels_subset <- scae[c(rn_scae_ni, rn_scae_alleles), ]
+
+scae_nonimmune__allels_subset
+```
+
+```
+## class: SingleCellAlleleExperiment
+## dim: 62756 11631
+## metadata(1): knee_info
+## assays(2): counts logcounts
+## rownames(62756): ENSG00000279928.2 ENSG00000228037.1 ...
+##   DPB1*03:01:01:01 DPB1*11:01:01:01
+## rowData names(3): Ensembl_ID NI_I Quant_type
+## colnames(11631): AAACCCAAGGTAGTCG AAACCCACAATCCAGT ... TTTGTTGTCTGTACAG
+##   TTTGTTGTCTTCTAAC
+## colData names(3): Sample Barcode sizeFactor
+## reducedDimNames(0):
+## mainExpName: NULL
+## altExpNames(0):
+## ---------------
+## Including a total of 13 immune related features:
+## Allele-level information (13): A*02:01:01:01 A*24:02:01:01 ...
+##   DPB1*03:01:01:01 DPB1*11:01:01:01
+## Immune genes (0):
+## Functional level information (0):
+```
+
+### 5.1.2 Non-immune genes + immune genes
+
+```
+rn_scae_i <- rownames(scae_subset(scae, "immune_genes"))
+
+scae_nonimmune__immune <- scae[c(rn_scae_ni, rn_scae_i), ]
+
+scae_nonimmune__immune
+```
+
+```
+## class: SingleCellAlleleExperiment
+## dim: 62751 11631
+## metadata(1): knee_info
+## assays(2): counts logcounts
+## rownames(62751): ENSG00000279928.2 ENSG00000228037.1 ... HLA-DPA1
+##   HLA-DPB1
+## rowData names(3): Ensembl_ID NI_I Quant_type
+## colnames(11631): AAACCCAAGGTAGTCG AAACCCACAATCCAGT ... TTTGTTGTCTGTACAG
+##   TTTGTTGTCTTCTAAC
+## colData names(3): Sample Barcode sizeFactor
+## reducedDimNames(0):
+## mainExpName: NULL
+## altExpNames(0):
+## ---------------
+## Including a total of 8 immune related features:
+## Allele-level information (0):
+## Immune genes (8): HLA-A HLA-B ... HLA-DPA1 HLA-DPB1
+## Functional level information (0):
+```
+
+### 5.1.3 Non-immune genes + functional class
+
+```
+rn_scae_functional <- rownames(scae_subset(scae, "functional_groups"))
+
+scae_nonimmune__functional <- scae[c(rn_scae_ni, rn_scae_functional), ]
+
+scae_nonimmune__functional
+```
+
+```
+## class: SingleCellAlleleExperiment
+## dim: 62745 11631
+## metadata(1): knee_info
+## assays(2): counts logcounts
+## rownames(62745): ENSG00000279928.2 ENSG00000228037.1 ... HLA_class_I
+##   HLA_class_II
+## rowData names(3): Ensembl_ID NI_I Quant_type
+## colnames(11631): AAACCCAAGGTAGTCG AAACCCACAATCCAGT ... TTTGTTGTCTGTACAG
+##   TTTGTTGTCTTCTAAC
+## colData names(3): Sample Barcode sizeFactor
+## reducedDimNames(0):
+## mainExpName: NULL
+## altExpNames(0):
+## ---------------
+## Including a total of 2 immune related features:
+## Allele-level information (0):
+## Immune genes (0):
+## Functional level information (2): HLA_class_I HLA_class_II
+```
+
+## 5.2 Dimensional Reduction
+
+### 5.2.1 Model variance and HVGs for all data layers
+
+Using the `modelGeneVar()` function prior to `getTopHVGs`. Both functions are part from the `Biocpkg("scran")` package. Compute a list of HVGs for each data layer. Return the top 0.1 % HVGs per layer using `getTopHVGs`.
+
+```
+df_ni_a <- modelGeneVar(scae_nonimmune__allels_subset)
+```
+
+```
+## Warning in regularize.values(x, y, ties, missing(ties), na.rm = na.rm):
+## collapsing to unique 'x' values
+```
+
+```
+top_ni_a <- getTopHVGs(df_ni_a, prop=0.1)
+```
+
+```
+df_ni_g <- modelGeneVar(scae_nonimmune__immune)
+```
+
+```
+## Warning in regularize.values(x, y, ties, missing(ties), na.rm = na.rm):
+## collapsing to unique 'x' values
+```
+
+```
+top_ni_g <- getTopHVGs(df_ni_g, prop=0.1)
+```
+
+```
+df_ni_f <- modelGeneVar(scae_nonimmune__functional)
+```
+
+```
+## Warning in regularize.values(x, y, ties, missing(ties), na.rm = na.rm):
+## collapsing to unique 'x' values
+```
+
+```
+top_ni_f <- getTopHVGs(df_ni_f, prop=0.1)
+```
+
+### 5.2.2 PCA
+
+Compute PCA for each layer and store the results in the object. Its Important to make unique identifiers for each layer/run or the results will be overwritten and just saved as `PCA`. Here, the `runPCA` functions from the `Biocpkg("scater")` package is used.
+
+```
+assay <- "logcounts"
+
+scae <- runPCA(scae, ncomponents=10, subset_row=top_ni_a,
+               exprs_values=assay, name="PCA_a")
+
+scae <- runPCA(scae, ncomponents=10, subset_row=top_ni_g,
+               exprs_values=assay, name="PCA_g")
+
+scae <- runPCA(scae, ncomponents=10, subset_row=top_ni_f,
+               exprs_values=assay, name="PCA_f")
+```
+
+```
+reducedDimNames(scae)
+```
+
+```
+## [1] "PCA_a" "PCA_g" "PCA_f"
+```
+
+### 5.2.3 t-SNE
+
+The same goes for running t-SNE with the `runTSNE` function from the `Biocpkg("scater")` package. Unique identifiers are stated here for each layer as well. For simplicity, we only compute the t-SNE on the `gene layer`. Information regarding how this process is conducted on the other additional layers, can be seen in the non evaluated code chunks below:
+
+```
+set.seed(18)
+scae <- runTSNE(scae, dimred="PCA_g",  name="TSNE_g")
+```
+
+The following two chunks show how the t-SNE could be computed on the `allele` and `functional_group` layer. These chunks are not run by default:
+
+```
+set.seed(18)
+scae <- runTSNE(scae, dimred="PCA_a",  name="TSNE_a")
+```
+
+```
+set.seed(18)
+scae <- runTSNE(scae, dimred="PCA_f",  name="TSNE_f")
+```
+
+List of results from the performed reduced dimension analysis.
+
+```
+reducedDimNames(scae)
+```
+
+```
+## [1] "PCA_a"  "PCA_g"  "PCA_f"  "TSNE_g"
+```
+
+## 5.3 Visualization of results
+
+Exemplary visualization for the t-SNE results on gene level for immune genes that relate to HLA-class I. In the given dataset, it is the immune genes `HLA-DRB1`, plotted alongside their alleles. This allows for insights into potential genetic differences shown on allele-level.
+
+---
+
+### 5.3.1 HLA-A immune gene and alleles
+
+```
+tsne <- "TSNE_g"
+
+tsne_g_a  <- plotReducedDim(scae, dimred=tsne, colour_by="HLA-DRB1") +
+             ggtitle("HLA-DRB1 gene")
+
+tsne_g_a1 <- plotReducedDim(scae, dimred=tsne, colour_by="DRB1*07:01:01:01") +
+             ggtitle("Allele DRB1*07:01:01:01")
+
+tsne_g_a2 <- plotReducedDim(scae, dimred=tsne, colour_by="DRB1*13:01:01:01") +
+             ggtitle("Allele DRB1*13:01:01:01")
+
+p2 <- tsne_g_a + tsne_g_a1 + tsne_g_a2
+p2
+```
+
+![](data:image/png;base64...)
+
+---
+
+# 6 Additional
+
+As the SCAE object is extending the SCE object, it is also compatible with the `Biocpkg("iSEE")` package for interactive data exploration.
+
+# 7 Session Information
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods
+## [8] base
+##
+## other attached packages:
+##  [1] org.Hs.eg.db_3.22.0              AnnotationDbi_1.72.0
+##  [3] patchwork_1.3.2                  DropletUtils_1.30.0
+##  [5] scran_1.38.0                     scater_1.38.0
+##  [7] ggplot2_4.0.0                    scuttle_1.20.0
+##  [9] scaeData_1.5.0                   SingleCellAlleleExperiment_1.6.0
+## [11] SingleCellExperiment_1.32.0      SummarizedExperiment_1.40.0
+## [13] Biobase_2.70.0                   GenomicRanges_1.62.0
+## [15] Seqinfo_1.0.0                    IRanges_2.44.0
+## [17] S4Vectors_0.48.0                 BiocGenerics_0.56.0
+## [19] generics_0.1.4                   MatrixGenerics_1.22.0
+## [21] matrixStats_1.5.0                BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##   [1] DBI_1.2.3                 gridExtra_2.3
+##   [3] httr2_1.2.1               rlang_1.1.6
+##   [5] magrittr_2.0.4            compiler_4.5.1
+##   [7] RSQLite_2.4.3             DelayedMatrixStats_1.32.0
+##   [9] png_0.1-8                 vctrs_0.6.5
+##  [11] pkgconfig_2.0.3           crayon_1.5.3
+##  [13] fastmap_1.2.0             dbplyr_2.5.1
+##  [15] XVector_0.50.0            labeling_0.4.3
+##  [17] rmarkdown_2.30            ggbeeswarm_0.7.2
+##  [19] purrr_1.1.0               bit_4.6.0
+##  [21] xfun_0.53                 bluster_1.20.0
+##  [23] cachem_1.1.0              beachmat_2.26.0
+##  [25] jsonlite_2.0.0            blob_1.2.4
+##  [27] rhdf5filters_1.22.0       DelayedArray_0.36.0
+##  [29] Rhdf5lib_1.32.0           BiocParallel_1.44.0
+##  [31] irlba_2.3.5.1             parallel_4.5.1
+##  [33] cluster_2.1.8.1           R6_2.6.1
+##  [35] bslib_0.9.0               RColorBrewer_1.1-3
+##  [37] limma_3.66.0              jquerylib_0.1.4
+##  [39] Rcpp_1.1.0                bookdown_0.45
+##  [41] knitr_1.50                R.utils_2.13.0
+##  [43] Matrix_1.7-4              igraph_2.2.1
+##  [45] tidyselect_1.2.1          dichromat_2.0-0.1
+##  [47] abind_1.4-8               yaml_2.3.10
+##  [49] viridis_0.6.5             codetools_0.2-20
+##  [51] curl_7.0.0                lattice_0.22-7
+##  [53] tibble_3.3.0              withr_3.0.2
+##  [55] KEGGREST_1.50.0           S7_0.2.0
+##  [57] Rtsne_0.17                evaluate_1.0.5
+##  [59] BiocFileCache_3.0.0       ExperimentHub_3.0.0
+##  [61] Biostrings_2.78.0         pillar_1.11.1
+##  [63] BiocManager_1.30.26       filelock_1.0.3
+##  [65] BiocVersion_3.22.0        sparseMatrixStats_1.22.0
+##  [67] scales_1.4.0              glue_1.8.0
+##  [69] metapod_1.18.0            tools_4.5.1
+##  [71] AnnotationHub_4.0.0       BiocNeighbors_2.4.0
+##  [73] ScaledMatrix_1.18.0       locfit_1.5-9.12
+##  [75] cowplot_1.2.0             rhdf5_2.54.0
+##  [77] grid_4.5.1                edgeR_4.8.0
+##  [79] HDF5Array_1.38.0          beeswarm_0.4.0
+##  [81] BiocSingular_1.26.0       vipor_0.4.7
+##  [83] cli_3.6.5                 rsvd_1.0.5
+##  [85] rappdirs_0.3.3            S4Arrays_1.10.0
+##  [87] viridisLite_0.4.2         dplyr_1.1.4
+##  [89] gtable_0.3.6              R.methodsS3_1.8.2
+##  [91] sass_0.4.10               digest_0.6.37
+##  [93] SparseArray_1.10.0        ggrepel_0.9.6
+##  [95] dqrng_0.4.1               farver_2.1.2
+##  [97] R.oo_1.27.1               memoise_2.0.1
+##  [99] htmltools_0.5.8.1         lifecycle_1.0.4
+## [101] h5mread_1.2.0             httr_1.4.7
+## [103] statmod_1.5.1             bit64_4.6.0-1
+```

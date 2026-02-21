@@ -1,0 +1,286 @@
+---
+title: "GNOSIS: Genomics explorer using statistical and survival analysis in R"
+author:
+- name: Lydia King
+  affiliation: [
+    "University of Galway, Ireland"
+  ]
+package: GNOSIS
+output:
+  BiocStyle::html_document:
+    toc: false
+vignette: >
+  %\VignetteIndexEntry{GNOSIS Overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+Exploratory, statistical and survival analysis of cancer genomic data is 
+extremely important and can lead to new discoveries, such as the identification 
+of novel genomic prognostic markers, that have the potential to advance our 
+understanding of cancer and ultimately benefit patients. These analyses are 
+often performed on data available from a number of consortia websites, such as 
+cBio Cancer Genomics Portal (cBioPortal), which is one of the best known and
+commonly used consolidated curations that hosts data from large consortium 
+efforts. While cBioPortal provides both graphical user interface (GUI)-based and 
+representational state transfer mediated means for researchers to explore and 
+analyse clinical and genomics data, its capabilities have their limitations and 
+oftentimes, to explore specific hypotheses, users need to perform a more 
+sophisticated ‘off site’ analysis that typically requires users to have some 
+prior programming experience.  
+
+To overcome these limitations and provide a GUI that facilitates the 
+visualisation and interrogation of cancer genomics data, particularly 
+cBioPortal-hosted data, using standard biostatistical methodologies, we 
+developed an R Shiny app called GeNomics explOrer using StatistIcal and Survival 
+analysis in R (GNOSIS). GNOSIS was initially developed as part of our study, 
+using the METABRIC data, to investigate whether survival outcomes are associated 
+with genomic instability in luminal breast cancers and was further developed to 
+enable the exploration, analysis and incorporation of a diverse range of genomic 
+features with clinical data in a research or clinical setting. 
+
+GNOSIS leverages a number of R packages and provides an intuitive GUI with 
+multiple tab panels supporting a range of functionalities, including data upload 
+and initial exploration, data recoding and subsetting, data visualisations, 
+statistical analysis, mutation analysis and, in particular, survival analysis 
+to identify prognostic markers. In addition, GNOSIS also helps researchers carry 
+out reproducible research by providing downloadable input logs (Shiny_Log.txt)
+from each session. 
+
+GNOSIS has been submitted to Bioconductor to aid researchers in carrying out a 
+reproducable, comprehensive statistical and survival analysis using data 
+obtained from cBioPortal, or otherwise.
+
+# Installation
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+
+BiocManager::install("GNOSIS")
+```
+
+# Loading the package
+
+```{r,include=TRUE, results="hide", message=FALSE, warning=FALSE}
+library(GNOSIS)
+```
+
+# Launching GNOSIS
+
+```{r, eval=FALSE}
+GNOSIS()
+```
+
+# GNOSIS layout 
+
+The GNOSIS GUI has 4 main elements:
+(1) A sidebar where each analysis tab can be selected, the Exploratory Tables tab
+    is selected and displayed.
+(2) Tab panels within each tab, allowing multiple operations to be carried out
+    and viewed in the one tab.
+(3) A box sidebar allowing users to select inputs, alter arguments and customise
+    and export visualisations.
+(4) Main viewing panel displaying output.
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Pic.png")
+```
+
+# Data upload and preview 
+
+Users can upload their own clinical, CNA or mutation data stored on their local
+machine, or select a cBioPortal study to upload:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_File_Upload.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Select_Study.png")
+```
+
+<br>
+
+A preview of the uploaded/selected data is provided in the GNOSIS viewing panel 
+to ensure that the data has been read in correctly:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Preview_Clinical.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Preview_CNA.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Preview_MAF.png")
+```
+<br>
+
+In the case where a cBioPortal study does not contain CNA and/or MAF data, a 
+warning will be produced alerting users to this. 
+
+In addition, users can select specific columns of each dataframe to inspect:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Column_Selection.png")
+```
+
+# Data reformatting and filtering
+
+To prepare the data for downstream analysis a number a things can be done. 
+Firstly users can change the type of variables to numeric or factors using the 
+box sidebar, which contains a space to select relevant variables:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Reformatting.png")
+```
+
+<br>
+
+Subsequently, users can subset the data based on up to three categorical 
+variables and carry out survival variable recoding.
+
+Here we filter the data to only include patients who received chemotherapy:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Filtering.png")
+```
+
+We also recode the overall and disease-specific survival to 0/1: 
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Survival_Recoding.png")
+```
+
+<br>
+ 
+In cases where CNA data is uploaded, users may produce and segment CNA metrics 
+for each patient, as well as select and extract specific genes for further 
+analysis: 
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_CNA_Calc.png")
+```
+
+# Data visualisation 
+
+Users can produce a range of visualisations including boxplots, scatterplots, 
+barplots, histograms and density plots.
+
+Here is an example of a customisable boxplot, that can also be downloaded:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Boxplot.png")
+```
+
+# Statistical and survival analysis 
+
+The primary function offered by GNOSIS is statistically robust survival analysis. 
+GNOSIS contains several step-wise tabs to provide a complete survival analysis 
+of the data under investigation.
+
+Users can produce KM survival curves and the corresponding logrank tests to 
+identify survival-associated categorical variables, both visually and 
+statistically. 
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_KM_Curves_Clinical.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_KM_Curves_CNA.png")
+```
+
+<br>
+
+Users can perform a selection of association tests to identify variables that 
+are associated with each other. This enables users to identify potential 
+confounding variables in the analysis. 
+
+Statistical association tests available include the Chi-squared test, Fisher’s 
+exact test, simulated Fisher’s exact test, ANOVA, Kruskal-Wallis test, 
+pairwise t-test and Dunn’s test. 
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Association.png")
+```
+
+<br>
+
+Users can produce both univariate and multivariable Cox models to identify 
+survival-associated variables, and test the assumptions of these models using 
+graphical diagnostics based on the scaled Schoenfeld residuals: 
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Univariate_Cox.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Multivariable_Cox.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Cox_Assumption.png")
+```
+
+<br>
+
+The corresponding adjusted survival curves, survival curves adjusted for the 
+covariates in the multivariable Cox model, can also be produced and customised:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Adjusted_KM_Curves.png")
+```
+
+<br>
+
+In the case where the PH assumption of the multivariable Cox model is violated, 
+users can apply recursive partitioning survival trees: 
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Rpart_Tree.png")
+```
+
+# Mutation Analysis
+
+An additional function of GNOSIS is the ability to summarise, analyse and 
+visualise mutation annotation format (MAF) files using maftools. 
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_MAF_Summary_Text.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_MAF_Summary_Plot.png")
+```
+<br>
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_MAF_Lollipop_Plot.png")
+```
+
+# Input Log
+
+GNOSIS facilitates reproducible research by allowing users to download an input 
+log containing information on all the inputs selected throughout the session:
+
+```{r,echo=FALSE}
+knitr::include_graphics("figures/GNOSIS_Input_Log.png")
+```
+
+# Additional Resources
+
+For details on the implementation, layout and application of GNOSIS see the 
+corresponding [publication](https://hrbopenresearch.org/articles/5-8#). 
+Demonstration videos providing a walkthrough of GNOSIS are also provided on 
+[Zenodo](https://zenodo.org/record/5788659). 
+
+# Session Info
+
+```{r}
+sessionInfo()
+```

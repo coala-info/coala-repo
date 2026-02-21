@@ -1,0 +1,14 @@
+# survey: Analysis of Complex Survey Samples
+
+Summary statistics, two-sample tests, rank tests, generalised linear models, cumulative link models, Cox models, loglinear models, and general maximum pseudolikelihood estimation for multistage stratified, cluster-sampled, unequally weighted survey samples. Variances by Taylor series linearisation or replicate weights. Post-stratification, calibration, and raking. Two-phase subsampling designs. Graphics. PPS sampling without replacement. Small-area estimation.</p>
+
+### Metadata
+- **Conda (r channel)**: https://anaconda.org/r/r-survey
+- **R-project (CRAN)**: https://cloud.r-project.org/web/packages/survey/index.html
+- **Home (project)**: http://r-survey.r-forge.r-project.org/survey/
+- **Package**: survey
+- **Version**: 4.4-8
+- **Author**: Thomas Lumley [aut], Peter Gao [aut], Ben Schneider [aut], "Thomas Lumley" [cre]
+- **Maintainer**: "Thomas Lumley" <t.lumley at auckland.ac.nz>
+- **Skill**: generated
+

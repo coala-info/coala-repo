@@ -1,0 +1,223 @@
+---
+title: "Mass Spectrometry Data on ExperimentHub"
+author:
+- name: Laurent Gatto
+package: MsDataHub
+output:
+  BiocStyle::html_document:
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{Mass Spectrometry Data on ExperimentHub}
+  %\VignetteEngine{knitr::rmarkdown}
+  %%\VignetteKeywords{Mass Spectrometry, MS, MSMS, Proteomics, Metabolomics}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+```
+
+```{r env, echo = FALSE, message = FALSE}
+library(Spectra)
+library(PSMatch)
+library(QFeatures)
+```
+
+
+
+# Introduction
+
+The `MsDataHub` package provides example mass spectrometry data,
+peptide spectrum matches or quantitative data from proteomics and
+metabolomics experiments. The data are served through the
+`ExperimentHub` infrastructure, which allows download them only ones
+and cache them for further use. Currently available data are summarised
+in the table below and details in the next section.
+
+```{r data}
+library("MsDataHub")
+DT::datatable(MsDataHub())
+```
+
+# Installation
+
+To install the package:
+
+```{r install1, eval = FALSE}
+if (!require("BiocManager"))
+    install.packages("BiocManager")
+
+BiocManager::install("MsDataHub")
+```
+
+
+# Available data
+
+## TripleTOF
+
+- Type: Raw MS data
+- Files: `PestMix1_DDA.mzML` and `PestMix1_SWATH.mzML`
+- More details: `?TripleTOF`
+
+Load with
+
+```{r, eval = TRUE}
+f <- PestMix1_DDA.mzML()
+library(Spectra)
+Spectra(f)
+```
+
+```{r, eval = TRUE}
+f <- PestMix1_SWATH.mzML()
+Spectra(f)
+```
+
+## sciex
+
+- Type: Raw MS data
+- Files: `20171016_POOL_POS_1_105-134.mzML` and `20171016_POOL_POS_3_105-134.mzML`
+- More details: `?sciex`
+
+Load with
+
+```{r, eval = TRUE}
+f <- X20171016_POOL_POS_1_105.134.mzML()
+Spectra(f)
+```
+```{r, eval = TRUE}
+f <- X20171016_POOL_POS_3_105.134.mzML()
+Spectra(f)
+```
+
+## PXD000001
+
+- Type: Raw MS data and peptide spectrum matches
+- Files:
+  `TMT_Erwinia_1uLSike_Top10HCD_isol2_45stepped_60min_01-20141210.mzML.gz`
+  and
+  `TMT_Erwinia_1uLSike_Top10HCD_isol2_45stepped_60min_01-20141210.mzid`
+- More details: `?PDX000001`
+
+Load with
+
+```{r, eval = TRUE}
+f <- TMT_Erwinia_1uLSike_Top10HCD_isol2_45stepped_60min_01.20141210.mzML.gz()
+Spectra(f)
+```
+
+```{r, eval = TRUE}
+f <- TMT_Erwinia_1uLSike_Top10HCD_isol2_45stepped_60min_01.20141210.mzid()
+library(PSMatch)
+PSM(f)
+```
+
+## CPTAC
+
+- Type: tab-delimited quantitative proteomics data tables (as produced
+  by MaxQuant)
+- Files: `cptac_a_b_c_peptides.txt`, `cptac_a_b_peptides.txt` and
+  `cptac_peptides.txt`
+- More details: `?cptac`
+
+Load with
+
+```{r, eval = TRUE}
+library(QFeatures)
+f <- cptac_peptides.txt()
+ecols <- grep("Intensity\\.", names(read.delim(f)))
+readSummarizedExperiment(f, ecols, sep = "\t")
+```
+
+```{r, eval = TRUE}
+cptac_a_b_c_peptides.txt()
+cptac_a_b_peptides.txt()
+```
+
+## FAAH KO
+
+- Type: Raw MS data, in netCDF format.
+- File: `ko15.CDF`
+- More details: `?cdf`
+
+Load with
+
+```{r, eval = TRUE}
+f <- ko15.CDF()
+Spectra(f)
+```
+
+## DIA-NN software outputs
+
+- Type: tab-delimited DIA quantitative proteomics data tables produced
+  by [DIA-NN](https://github.com/vdemichev/DiaNN).
+- Files:
+  - Label-free DIA: `benchmarkingDIA.tsv`
+  - mTRAQ plexDIA: `Report.Derks2022.plexDIA.tsv`
+- More details: `?benchmarkingDIA.tsv` and
+  `?Report.Derks2022.plexDIA.tsv`
+
+Load with
+
+```{r lfdia, eval = TRUE, message = FALSE}
+library(QFeatures)
+lfdia <- read.delim(MsDataHub::benchmarkingDIA.tsv())
+readQFeaturesFromDIANN(lfdia)
+```
+
+```{r pledia, eval = TRUE, message = FALSE}
+plexdia <- read.delim(MsDataHub::Report.Derks2022.plexDIA.tsv())
+readQFeaturesFromDIANN(plexdia, multiplexing = "mTRAQ")
+```
+
+## DIA-NN single-cell proteomics reports
+
+- Type: tab-delimited DIA quantitative proteomics data tables produced
+  by [DIA-NN](https://github.com/vdemichev/DiaNN).
+- Files:
+  - Single-cell abel-free: `Ai2025_aCMs_report.tsv`
+  - Single-cell label-free: `Ai2025_iCMs_report.tsv`
+- More details: `?Ai2025`.
+
+## Proteomics contaminant databases
+
+- Type: fasta files, as documented in `camprotR`'s [cRAP
+  databases](https://cambridgecentreforproteomics.github.io/camprotR/articles/crap.html)
+  vignette.
+- Files:
+  - `crap_gpm.fasta`: the common Repository of Adventitious Proteins
+    (cRAP) from the Global Proteome Machine (GPM) organisation.
+  - `crap_ccp.fasta`: Cambridge Centre for Proteomics' own cRAP fasta
+    database.
+  - `crap_maxquant.fasta.gz`: MaxQuant's contaminant database.
+- More details: `?cRAP`.
+
+# Adding data to `MsDataHub`
+
+1. If you would like additional dataset to `MsDataHub`, start by
+   opening an
+   [issue](https://github.com/rformassspectrometry/MsDataHub/issues)
+   in the package's GitHub repository and describe the new data. In
+   particular, provide information about it's provenance, its use, its
+   format(s) and acknowledge that the data may be shared freely with
+   the community without any restrictions. You may provide an open
+   licence specifying the terms it can be re-used, typically a
+   CC-BY-SA license.
+2. By contribution to the package, you acknowledge that you will
+   comply to the R for Mass Spectrometry project [code of
+   conduct](https://rformassspectrometry.github.io/RforMassSpectrometry/articles/RforMassSpectrometry.html#code-of-conduct).
+3. A maintainer of the package will reply to your issue, confirming
+   that the data can be added.
+4. At this point, if you are familiar with the development of
+   `ExperimentHub` packages and GitHub *pull requests*, you may
+   directly send one that adds your data to the package. Make sure (1)
+   add appropriate references in the manual page and (2) to add
+   yourself as a contributor of the package in the DESCRIPTION file.
+5. Alternatively, a maintainer will add the dataset to the package and
+   may require your input to make sure the documentation file is
+   complete.
+
+# Session information {-}
+
+```{r sessioninfo, echo=FALSE}
+sessionInfo()
+```

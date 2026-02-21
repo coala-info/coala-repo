@@ -1,0 +1,16 @@
+# bioconductor-gigseadata Bioconductor Package Report
+
+## GIGSEAdata
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/data/experiment/html/GIGSEAdata.html
+- **Package**: GIGSEAdata
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

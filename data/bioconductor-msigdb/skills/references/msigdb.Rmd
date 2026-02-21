@@ -1,0 +1,181 @@
+---
+title: "msigdb: The molecular signatures database (MSigDB) in R"
+author: "Dharmesh D. Bhuva"
+date: "`r BiocStyle::doc_date()`"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    toc: yes
+    toc_depth: 2
+    number_sections: yes
+    fig_caption: yes
+    df_print: paged
+vignette: >
+  %\VignetteIndexEntry{msigdb}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  comment = "#>"
+)
+```
+
+# The Molecular Signatures Database (MSigDB)
+
+The [molecular signatures database (MSigDB)](https://www.gsea-msigdb.org/gsea/msigdb) is one of the largest collections of molecular signatures or gene expression signatures. A variety of gene expression signatures are hosted on this database including experimentally derived signatures and signatures representing pathways and ontologies from other curated databases. This rich collection of gene expression signatures (\>25,000) can facilitate a wide variety of signature-based analyses, the most popular being gene set enrichment analyses. These signatures can be used to perform enrichment analysis in a DE experiment using tools such as GSEA, fry (from limma) and camera (from limma). Alternatively, they can be used to perform single-sample gene-set analysis of individual transcriptomic profiles using approaches such as [singscore](https://doi.org/doi:10.18129/B9.bioc.singscore), ssGSEA and [GSVA](https://doi.org/doi:10.18129/B9.bioc.GSVA).
+
+This package provides the gene sets in the MSigDB in the form of `GeneSet` objects. This data structure is specifically designed to store information about gene sets, including their member genes and metadata. Other packages, such as `msigdbr` and `EGSEAdata` provide these gene sets too, however, they do so by storing them as lists or tibbles. These structures are not specific to gene sets therefore do not allow storage of important metadata associated with each gene set, for example, their short and long descriptions. Additionally, the lack of structure allows creation of invalid gene sets. Accessory functions implemented in the `GSEABase` package provide a neat interface to interact with `GeneSet` objects.
+
+This package can be installed using the code below:
+
+```{r install, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("msigdb")
+```
+
+# Download data from the msigdb R package
+
+This ExperimentHub package processes the latest version of the MSigDB database into R objects that can be queried using the [GSEABase](https://doi.org/doi:10.18129/B9.bioc.GSEABase) R/Bioconductor package. The entire database is stored in a `GeneSetCollection` object which in turn stores each signature as a `GeneSet` object. All empty gene expression signatures (i.e. no genes formed the signature) have been dropped. Data in this package can be downloaded using the `ExperimentHub` interface as shown below.
+
+To download the data, we first need to get a list of the data available in the `msigdb` package and determine the unique identifiers for each data. The `query()` function assists in getting this list.
+
+```{r load-packages, message=FALSE}
+library(msigdb)
+library(ExperimentHub)
+library(GSEABase)
+```
+
+```{r get-msigdb}
+eh = ExperimentHub()
+query(eh , 'msigdb')
+```
+
+Data can then be downloaded using the unique identifier.
+
+```{r download-msigdb-sym-id}
+eh[['EH5421']]
+```
+
+Data can also be downloaded using the custom accessor \`msigdb::getMsigdb()\`:
+
+```{r download-msigdb-sym-getMsigdb}
+#use the custom accessor to select a specific version of MSigDB
+msigdb.hs = getMsigdb(org = 'hs', id = 'SYM', version = '7.4')
+msigdb.hs
+```
+
+# Downloading and integrating KEGG gene sets
+
+KEGG gene sets cannot be integrated within this ExperimentHub package due to licensing limitations. However, users can download, process and integrate the data directly from the MSigDB when needed. This can be done using the code that follows.
+
+```{r append-kegg}
+msigdb.hs = appendKEGG(msigdb.hs)
+msigdb.hs
+```
+
+# Accessing the GeneSet and GeneSetCollection objects
+
+A GeneSetCollection object is effectively a list therefore all list processing functions such as `length` and `lapply` can be used to process its constituents
+
+```{r process-gsc}
+length(msigdb.hs)
+```
+
+Each signature is stored in a `GeneSet` object and can be processed using functions in the `GSEABase` R/Bioconductor package.
+
+```{r access-gs}
+gs = msigdb.hs[[1000]]
+gs
+#get genes in the signature
+geneIds(gs)
+#get collection type
+collectionType(gs)
+#get MSigDB category
+bcCategory(collectionType(gs))
+#get MSigDB subcategory
+bcSubCategory(collectionType(gs))
+#get description
+description(gs)
+#get details
+details(gs)
+```
+
+We can also summarise some of these values across the entire database. Description of these codes can be found at the MSigDB website (<https://www.gsea-msigdb.org/gsea/msigdb>).
+
+```{r summarise-gsc}
+#calculate the number of signatures in each category
+table(sapply(lapply(msigdb.hs, collectionType), bcCategory))
+#calculate the number of signatures in each subcategory
+table(sapply(lapply(msigdb.hs, collectionType), bcSubCategory))
+#plot the distribution of sizes
+hist(sapply(lapply(msigdb.hs, geneIds), length),
+     main = 'MSigDB signature size distribution',
+     xlab = 'Signature size')
+```
+
+# Subset collections from the MSigDB
+
+Most gene set analysis is performed within specific collections rather than across the entire database. This package comes with functions to subset specific collections. The list of all collections and sub-collections present within a GeneSetCollection object can be listed using the functions below:
+
+```{r list-collections}
+listCollections(msigdb.hs)
+listSubCollections(msigdb.hs)
+```
+
+Specific collections can be retrieved using the code below:
+
+```{r}
+#retrieeve the hallmarks gene sets
+subsetCollection(msigdb.hs, 'h')
+#retrieve the biological processes category of gene ontology
+subsetCollection(msigdb.hs, 'c5', 'GO:BP')
+```
+
+# Preparing collections for limma::fry
+
+Any gene-set collection can be easily transformed for usage with `limma::fry` by first transforming it into a list of gene IDs and following that with a transformation to indices as shown below.
+
+```{r load-limma, message=FALSE}
+library(limma)
+
+#create expression data
+allg = unique(unlist(geneIds(msigdb.hs)))
+emat = matrix(0, nrow = length(allg), ncol = 6)
+rownames(emat) = allg
+colnames(emat) = paste0('sample', 1:6)
+head(emat)
+```
+
+```{r subset-msigdb}
+#retrieve collections
+hallmarks = subsetCollection(msigdb.hs, 'h')
+msigdb_ids = geneIds(hallmarks)
+
+#convert gene sets into a list of gene indices
+fry_indices = ids2indices(msigdb_ids, rownames(emat))
+fry_indices[1:2]
+```
+
+# Accessing the mouse MSigDB
+
+The mouse MSigDB has been created in collaboration with Gordon K. Smyth and Alex Garnham from WEHI. The code they use to generate the mouse MSigDB has been used in this package. Detailed description of the steps conducted to convert human gene expression signatures to mouse can be found at <http://bioinf.wehi.edu.au/MSigDB>. Mouse homologs for human genes were obtained using the HCOP database (as of 18/03/2021).
+
+All the above functions apply to the mouse MSigDB and can be used to interact with the collection.
+
+```{r download-msig-sym-id-mouse}
+msigdb.mm = getMsigdb(org = 'mm', id = 'SYM', version = '7.4')
+msigdb.mm
+```
+
+# Session information
+
+```{r sessionInfo}
+sessionInfo()
+```

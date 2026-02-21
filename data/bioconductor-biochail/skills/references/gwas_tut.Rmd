@@ -1,0 +1,399 @@
+---
+title: "01 BiocHail -- GWAS tutorial from hail.is"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{01 BiocHail -- GWAS tutorial}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+# Introduction
+
+This document explores using Hail 0.2 with R
+via basilisk.
+
+The computations follow the
+[GWAS tutorial](https://hail.is/docs/0.2/tutorials/01-genome-wide-association-study.html) 
+in the hail documentation.  We won't do all the computations
+there, and we add some material dealing with R-python
+interfacing.  We'll note that the actual computations on
+large data are done in Spark, but we don't interact directly
+with Spark at all in this document.
+
+Most of the computations are done via reticulate
+calls to python; the access to the hail environment
+is through basilisk.  We also take advantage of
+R markdown's capacity to execute python code directly.
+If an R chunk computes `x`, a python chunk can refer
+to it as `r.x`.  If a python chunk computes `r.x`,
+an R chunk can refer to this value as `x`.
+
+# Installing `BiocHail`
+
+`BiocHail` should be installed as follows:
+
+```{r, eval = FALSE}
+if (!require("BiocManager"))
+    install.packages("BiocManager")
+BiocManager::install("BiocHail")
+```
+
+As of 1.0.0, a JDK for Java version `<=` 11.0 is necessary
+to use the version of Hail that is installed with the package.
+This package should be usable on MacOS with suitable java
+support.  If Java version `>=` 8.x is used, warnings from
+Apache Spark may be observed.  To the best of our knowledge
+the conditions to which the warnings pertain do not affect program performance.
+
+
+# Acquire a slice of the 1000 genomes genotypes and annotations
+
+In this section we import the 1000 genomes VCF slice
+distributed by the hail project.  `hail_init` uses basilisk,
+which ensures that a specific version of hail and
+its dependencies are available in an isolated virtual environment.
+
+```{r getlib,message=FALSE}
+library(BiocHail)
+library(ggplot2)
+```
+
+## Initialization, data acquisition, rendering
+
+Here is a curiosity of R-hail interaction.  Note that
+the following chunk computes `mt`, a MatrixTable
+representation of 1000 genomes data, but our
+attempt to print it in markdown fails.
+```{r get1, eval=FALSE}
+hl <- hail_init()
+mt <- get_1kg(hl)
+mt
+print(mt$rows()$select()$show(5L)) # limited info
+```
+
+We can use the python syntax in a `python` R markdown
+chunk to see what we want.  We use prefix `r.` to
+find references defined in our R session (compiling
+the vignette).
+```{python abc, eval=FALSE}
+r.mt.rows().select().show(5) # python chunk!
+```
+
+The sample IDs:
+```{python ch2, eval=FALSE}
+r.mt.s.show(5)  # python chunk!
+```
+
+## Helper functions
+
+Some methods return data
+immediately useful in R.
+```{r getdim, eval=FALSE}
+mt$count()
+```
+We can thus define a function `dim` to behave with
+hail MatrixTable instances
+in a familiar way, along with some others.
+```{r dodim, eval=FALSE}
+dim.hail.matrixtable.MatrixTable <- function(x) { 
+  tmp <- x$count()
+  c(tmp[[1]], tmp[[2]]) 
+}
+dim(mt)
+ncol.hail.matrixtable.MatrixTable <- function(x) { 
+ dim(x)[2]
+}
+nrow.hail.matrixtable.MatrixTable <- function(x) { 
+ dim(x)[1]
+}
+nrow(mt)
+```
+These can be useful on their own, or when calling python methods.
+
+## Acquiring `column fields`
+
+```{r domo, eval=FALSE}
+annopath <- path_1kg_annotations()
+tab <- hl$import_table(annopath, impute=TRUE)$key_by("Sample")
+```
+```{python ch3, eval=FALSE}
+r.tab.describe()# python chunk!
+r.tab.show(width=100)
+```
+
+## Adding the sample annotation to the MatrixTable; aggregation
+
+We combine the `tab` defined above, with the MatrixTable instance,
+using python code reaching to R via `r.`.
+```{python ch4, eval=FALSE}
+r.mt = r.mt.annotate_cols(pheno = r.tab[r.mt.s])   # python chunk! 
+r.mt.col.describe()
+```
+
+Aggregation methods can be used to obtain contingency tables or descriptive statistics.
+
+First, we get the frequencies of superpopulation membership:
+```{r getsup, eval=FALSE}
+mt$aggregate_cols(hl$agg$counter(mt$pheno$SuperPopulation))
+```
+
+Then statistics on caffeine consumption:
+```{r lkcaf, eval=FALSE}
+uu <- mt$aggregate_cols(hl$agg$stats(mt$pheno$CaffeineConsumption))
+names(uu)
+uu$mean
+uu$stdev
+```
+
+# Working with variants; quality assessment
+
+The significance of the aggregation functions is that the computations
+are performed by Spark, on potentially huge distributed data structures.
+
+Now we aggregate over rows (SNPs).  We'll use python directly:
+```{python ch5, eval=FALSE}
+from pprint import pprint  # python chunk!
+snp_counts = r.mt.aggregate_rows(r.hl.agg.counter(r.hl.Struct(ref=r.mt.alleles[0], alt=r.mt.alleles[1])))
+pprint(snp_counts)
+```
+
+## A histogram of read depths
+
+Hail uses the concept of 'entries' for matrix elements, and each 'entry'
+is a 'struct' with potentially many fields.
+
+Here we'll use R to compute a histogram of sequencing depths
+over all samples and variants.
+
+```{r dohist, eval=FALSE}
+p_hist <- mt$aggregate_entries(
+     hl$expr$aggregators$hist(mt$DP, 0L, 30L, 30L))
+names(p_hist)
+length(p_hist$bin_edges)
+length(p_hist$bin_freq)
+midpts <- function(x) diff(x)/2+x[-length(x)]
+dpdf <- data.frame(x=midpts(p_hist$bin_edges), y=p_hist$bin_freq)
+ggplot(dpdf, aes(x=x,y=y)) + geom_col() + ggtitle("DP") + ylab("Frequency")
+```
+
+An exercise: produce a function `mt_hist` that produces
+a histogram of measures from any of the relevant
+VCF components of a MatrixTable instance.
+
+Note also all the aggregators available:
+```{r lkagg, eval=FALSE}
+names(hl$expr$aggregators)
+```
+
+We'd also note that hail has a [direct interface to ggplot2](https://hail.is/docs/0.2/tutorials/09-ggplot.html).
+
+## Quality summaries
+
+A high-level function adds quality metrics to the MatrixTable.
+
+```{r update, eval=FALSE}
+mt <- hl$sample_qc(mt)
+```{python ch6, eval=FALSE}
+r.mt.col.describe()  # python!
+```
+
+The call rate histogram is given by:
+```{r lkcr, eval=FALSE}
+callrate <- mt$sample_qc$call_rate$collect()
+graphics::hist(callrate)
+```
+
+## Filtering
+
+### Sample quality
+
+We'll use the python code given for filtering, in which per-sample
+mean read depth and call rate are must exceed (arbitrarily chosen) thresholds.
+
+```{python dofilt, eval=FALSE}
+# python chunk!
+r.mt = r.mt.filter_cols((r.mt.sample_qc.dp_stats.mean >= 4) & (r.mt.sample_qc.call_rate >= 0.97))
+print('After filter, %d/284 samples remain.' % r.mt.count_cols())
+```
+
+### Genotype quality
+
+Again we use the python code for filtering according to
+
+- relative purity of reads underlying homozygous reference or alt calls
+- good balance of ref/alt counts for het calls
+
+```{python gtfilt, eval=FALSE}
+ab = r.mt.AD[1] / r.hl.sum(r.mt.AD)
+
+filter_condition_ab = ((r.mt.GT.is_hom_ref() & (ab <= 0.1)) |
+                        (r.mt.GT.is_het() & (ab >= 0.25) & (ab <= 0.75)) |
+                        (r.mt.GT.is_hom_var() & (ab >= 0.9)))
+
+fraction_filtered = r.mt.aggregate_entries(r.hl.agg.fraction(~filter_condition_ab))
+print(f'Filtering {fraction_filtered * 100:.2f}% entries out of downstream analysis.')
+r.mt = r.mt.filter_entries(filter_condition_ab)
+```
+Note that filtering _entries_ does not change MatrixTable shape.
+
+```{r after, eval=FALSE}
+dim(mt)
+```
+
+### Variant characteristics
+
+Allele frequencies, Hardy-Weinberg equilibrium test results
+and other summaries are obtained using the `variant_qc` function.
+```{r addvarqc, eval=FALSE}
+mt = hl$variant_qc(mt)
+```
+```{python lkvarqc, eval=FALSE}
+r.mt.row.describe()  #! python
+```
+
+# GWAS execution
+
+A built-in procedure for testing for association between the
+(simulated) caffeine consumption measure and genotype
+will be used.
+
+The following commands eliminate variants with minor allele frequency
+less than 0.01, along with those with small $p$-values in
+tests of Hardy-Weinberg equilibrium.
+
+```{python dofilts, eval=FALSE}
+r.mt = r.mt.filter_rows(r.mt.variant_qc.AF[1] > 0.01)
+r.mt = r.mt.filter_rows(r.mt.variant_qc.p_value_hwe > 1e-6)
+r.mt.count()
+```
+
+## Association test for quantitative response
+
+Now we perform a naive test of association.  The Manhattan
+plot generated by hail can be displayed for interaction
+using bokeh.  We comment this out for now; it should
+be possible to embed the bokeh display in this document but the details
+are not ready-to-hand.
+```{python naivet, eval=FALSE}
+r.gwas = r.hl.linear_regression_rows(y=r.mt.pheno.CaffeineConsumption,
+                                 x=r.mt.GT.n_alt_alleles(),
+                                 covariates=[1.0])
+# r.pl = r.hl.plot.manhattan(r.gwas.p_value)
+# import bokeh
+# bokeh.plotting.show(r.pl)
+```
+The "QQ plot" that helps evaluate adequacy of the analysis
+can be formed using `hl.plot.qq` for very large applications;
+here we collect the results for plotting in R.
+
+First we estimate $\lambda_{GC}$
+```{r dolam, eval=FALSE}
+pv = gwas$p_value$collect()
+x2 = stats::qchisq(1-pv,1)
+lam = stats::median(x2, na.rm=TRUE)/stats::qchisq(.5,1)
+lam
+```
+And the qqplot:
+```{r doqq, eval=FALSE}
+qqplot(-log10(ppoints(length(pv))), -log10(pv), xlim=c(0,8), ylim=c(0,8),
+  ylab="-log10 p", xlab="expected")
+abline(0,1)
+```
+
+There is hardly any point to examining a Manhattan plot in
+this situation.  But let's see how it might be done.
+We'll use igvR to get an interactive and extensible display.
+
+```{r eval=FALSE}
+locs <- gwas$locus$collect()
+conts <- sapply(locs, function(x) x$contig)
+pos <- sapply(locs, function(x) x$position)
+library(igvR)
+mytab <- data.frame(chr=as.character(conts), pos=pos, pval=pv)
+gt <- GWASTrack("simp", mytab, chrom.col=1, pos.col=2, pval.col=3)
+igv <- igvR()
+setGenome(igv, "hg19")
+displayTrack(igv, gt)
+```
+
+## Evaluating population stratification
+
+An approach to assessing population stratification
+is provided as `hwe_normalized_pca`.  See
+the hail [methods docs](https://hail.is/docs/0.2/methods/genetics.html#hail.methods.hwe_normalized_pca)
+for details.
+
+We are avoiding a tuple assignment in the tutorial document.
+```{python dopca, eval=FALSE}
+r.pcastuff = r.hl.hwe_normalized_pca(r.mt.GT)
+r.mt = r.mt.annotate_cols(scores=r.pcastuff[1][r.mt.s].scores)
+```
+
+We'll collect the key information and plot.
+```{r lkpcs, eval=FALSE}
+sc <- pcastuff[[2]]$scores$collect()
+pc1 = sapply(sc, "[", 1)
+pc2 = sapply(sc, "[", 2)
+fac = mt$pheno$SuperPopulation$collect()
+myd = data.frame(pc1, pc2, pop=fac)
+library(ggplot2)
+ggplot(myd, aes(x=pc1, y=pc2, colour=factor(pop))) + geom_point()
+```
+
+Now repeat the association test with adjustments for
+population of origin and gender.
+
+```{python redog, eval=FALSE}
+r.gwas2 = r.hl.linear_regression_rows(
+    y=r.mt.pheno.CaffeineConsumption,
+    x=r.mt.GT.n_alt_alleles(),
+    covariates=[1.0,r.mt.pheno.isFemale,r.mt.scores[0],
+        r.mt.scores[1], r.mt.scores[2]])
+```
+New value of $\lambda_{GC}$:
+
+```{r dolam2, eval=FALSE}
+pv = gwas2$p_value$collect()
+x2 = stats::qchisq(1-pv,1)
+lam = stats::median(x2, na.rm=TRUE)/stats::qchisq(.5,1)
+lam
+```
+A manhattan plot for chr8:
+```{r doman, eval=FALSE}
+locs <- gwas2$locus$collect()
+conts <- sapply(locs, function(x) x$contig)
+pos <- sapply(locs, function(x) x$position)
+mytab <- data.frame(chr=as.character(conts), pos=pos, pval=pv)
+ggplot(mytab[mytab$chr=="8",], aes(x=pos, y=-log10(pval))) + geom_point()
+```
+
+# Conclusions
+
+The tutorial document proceeds with some illustrations of
+arbitrary aggregations.  We will skip these for now.
+
+Additional vignettes will address
+
+- A more realistic higher-volume VCF
+- Working with UKBB Summary statistics in GCP
+    - https://pan.ukbb.broadinstitute.org/docs/hail-format/index.html
+- Representing linkage disequilibrium
+    - https://pan-dev.ukbb.broadinstitute.org/docs/ld/index.html
+- Simulating variant collections using Balding-Nichols
+- Simulating variant collections using Pritchard-Stephens-Donnelly
+- Connecting genotypes with phenotype data in FHIR
+
+
+# SessionInfo {-}
+
+```{r sessionInfo}
+sessionInfo()
+```
+

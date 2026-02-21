@@ -1,0 +1,322 @@
+---
+title: "scmeth Vignette"
+author: "Divy S. Kangeyan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+    %\VignetteIndexEntry{Vignette Title}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+Contents
+-----------
+1. Introduction 
+
+2. Installation
+
+3. Input files
+
+4. Usage
+
+    4.1 Report 
+    
+    4.2 Functions
+    
+---------------------
+
+    
+1. Introduction
+---------------------
+<p style="text-align: justify;">
+Though a small chemical change in the genome, DNA methylation has significant
+impact in several diseases, developmental processes and other biological 
+changes. Hence methylation data should be analyzed carefully to gain 
+biological insights. **scmeth** package offers a few functions to assess
+the quality of the methylation data. 
+</p>
+
+<p style="text-align: justify;">
+This bioconductor package contains functions to perform quality control and 
+preprocessing analysis for single-cell methylation data. *scmeth* is 
+especially customized to be used with the output from the FireCloud 
+implementation of methylation pipeline. In addition to individual functions,
+**report** function in the package provides all inclusive report using most of
+the functions. If users prefer they can just use the **report** function to 
+gain summary of their data.
+</p>
+
+2. Installation and package loading
+------------------------------------
+**scmeth** is available in bioconductor and can be downloaded using the 
+following commands
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("scmeth")
+```
+
+Load the package
+```{r, warning=FALSE, message=FALSE}
+library(scmeth)
+```
+
+3. Input files
+---------------------
+<p style="text-align: justify;">
+Main input for most of the function is a *bsseq* object. In the FireCloud 
+implementation it is stored as hdf5 file which can be read via 
+*loadHDF5SummarizedExperiment* function in *HDF5Array* package.
+Code chunk below shows how it can be loaded.
+</p>
+
+```{r, eval=FALSE}
+directory <- system.file("extdata", "bismark_data", package='scmeth')
+bsObject <- HDF5Array::loadHDF5SummarizedExperiment(directory)
+```
+
+
+
+4. Usage
+---------------------
+
+4.1 Report
+--------------
+
+<p style="text-align: justify;">
+A comprehensive quality control report can be generated in the package via 
+**report** function. report function takes the bs object, 
+the directory where the report should be saved, organism that this data is 
+obtained from and the genomic build. Following is an example usage of the 
+**report** function.
+</p>
+
+<p style="text-align: justify;">
+**report** function also takes two optional arguments: *subSample* and 
+*offset*. With subsample parameter users can choose how many CpGs to consider
+in the analysis out of all the CpG information available. Our analysis 
+have shown that conducting analysis with one million CpGs is suffice to capture
+the quality of the samples. However when more CpGs are added they reflect
+the full data precisely. Offset parameter is to avoid any telomere region
+when subsetting from the beginning of the data. Hence Offset parameter would
+avoid first n number of CpGs.
+</p>
+
+```{r, eval=FALSE}
+report(bsObject, '~/Documents', Hsapiens, "hg38")
+```
+
+
+<p style="text-align: justify;">
+Command above generated an html report named *qcReport.html*. It will be stored
+in the indicated directory. 
+</p>
+
+--------------------------------------------------------------------------------
+
+4.2 Functions
+-----------------
+<p style="text-align: justify;">
+This section will elaborate on some of the main functions and show the usage 
+of these functions based on a sample data set that comes along with the 
+package.
+</p>
+
+<p style="text-align: justify;">
+**scmeth** package contains several functions to assess different metrics and 
+success of the sequencing process. 
+</p>
+### coverage
+<p style="text-align: justify;">
+One main metric is the CpG coverage. Coverage of the CpG can be assessed in 
+different ways. Very basic one is to check how many CpG were observed in each 
+sample. **coverage** function can be used to get this information. 
+</p>
+
+Loading the data
+```{r,  warning=FALSE, message=FALSE, comment=FALSE}
+directory <- system.file("extdata", "bismark_data", package='scmeth')
+bsObject <- HDF5Array::loadHDF5SummarizedExperiment(directory)
+```
+
+```{r}
+scmeth::coverage(bsObject)
+```
+
+### readmetrics
+Read information is important to assess whether sequencing and alignment 
+succeeded. **readmetrics** function outputs a visualization showing number
+of reads seen in each samples and of those reads what proportion of 
+them were mapped to the reference genome. 
+```{r, fig.width=6, fig.height=3}
+readmetrics(bsObject)
+```
+
+### repmask
+<p style="text-align: justify;">
+CpG Islands are characterized by their high GC content, high level of observed 
+to expected ratio of CpGs and length over 500 bp. However some repeat regions 
+in the genome also fit the same criteria although they are not bona fide CpG 
+Island. Therefore it is important to see how many CpGs are observed in the non 
+repeat regions of the genome. **repMask** functions provide information on the 
+CpG coverage in non repeat regions of the genome. In order to build the repeat 
+mask regions of the genome **repmask** function will require the organism and 
+the genome build information.
+</p>
+
+```{r, warning=FALSE, message=FALSE}
+library(BSgenome.Mmusculus.UCSC.mm10)
+load(system.file("extdata", 'bsObject.rda', package='scmeth'))
+repMask(bs, Mmusculus, "mm10")
+```
+
+### Coverage by Chromosome
+<p style="text-align: justify;">
+There are several other ways the number of CpGs captured can be visualized. 
+One of the way is to observe how the CpGs are distributed across different 
+chromosomes. ***chromosomeCoverage** outputs CpG coverage by individual 
+chromosomes.(Since the example data only contains information in chromosome 1
+only the CpGs covered in chromosome 1 is shown.)
+
+</p>
+
+```{r, warning=FALSE}
+chromosomeCoverage(bsObject)
+```
+
+### featureCoverage
+<p style="text-align: justify;">
+Another way to observe the distribution of CpGs is to classify them by the 
+genomic features they belong. Some of the features are very specific to the CpG
+dense regions such as CpG Islands, CpG Shores, CpG Shelves etc. Others are 
+general genomic features such as introns, exons, promoters etc. This 
+information can be obtained by **featureCoverage** function. In addition to the
+bs object this function requires the genomic features of interest and the 
+genome build. Each element in the table represents the fraction of CpGs
+seen in particular cell in specific region compared to all the CpGs seen in 
+that region.
+</p>
+```{r, warning=FALSE,message=FALSE}
+#library(annotatr)
+featureList <- c('cpg_islands', 'cpg_shores', 'cpg_shelves')
+DT::datatable(featureCoverage(bsObject, features=featureList, "hg38"))
+```
+</p>
+
+
+
+### cpgDensity
+<p style="text-align: justify;">
+CpGs are not distributed across the genome uniformly. Most of the genome 
+contains very low percentage of CpGs except for the CpG dense regions,
+i.e. CpG islands. Bisulfite sequencing targets all the CpGs across the genome,
+however reduced representation bisulfite sequencing (RRBS) target CpG dense CpG
+islands. Therefore CpG density plot will be a great diagnostic to see whether 
+the protocol succeeded. In order to calculate the CpG density a window length 
+should be specified. By default **cpgDensity** function chooses 1kB regions. 
+Therefore CpG density plot can be used to check whether the protocol
+specifically targeted CpG dense or CpG sparse regions or whether CpGs were 
+obtained uniformly across the regions.
+</p>
+
+```{r, warning=FALSE, message=FALSE}
+library(BSgenome.Hsapiens.NCBI.GRCh38)
+DT::datatable(cpgDensity(bsObject, Hsapiens, windowLength=1000, small=TRUE))
+```
+
+### downsample
+<p style="text-align: justify;">
+In addition to the CpG coverage, methylation data can be assessed via down
+sampling analysis, methylation bias plot and methylation distribution. Down 
+sampling analysis is a technique to assess whether the sequencing process 
+achieved the saturation level in terms of CpG capture. In order to perform 
+down sampling analysis CpGs that are covered at least will be sampled via 
+binomial random sampling with given probability. At each probability level 
+the number of CpGs captured is assessed. If the number of CpG captured attains
+a plateau then the sequencing was successful. **downsample** function provides
+a matrix of CpG coverage for each sample at various down sampling rates. The
+report renders this information into a plot. Downsampling rate ranges from 
+0.01 to 1, however users can change the downsampling rates.
+</p>
+
+```{r,warning=FALSE}
+DT::datatable(scmeth::downsample(bsObject))
+```
+
+
+### mbiasPlot
+<p style="text-align: justify;">
+Methylation bias plot shows the methylation along the reads. In a high quality 
+samples methylation across the read would be more or less a horizontal line. 
+However there could be fluctuations in the beginning or the end of the read due
+to the quality of the bases. Single cell sequencing samples also can show 
+jagged trend in the methylation bias plot due to low read count. Methylation
+bias can be assessed via **mbiasPlot** function. This function takes the mbias
+file generated from FireCloud pipeline and generates the methylation bias plot.
+</p>
+
+```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=6}
+
+methylationBiasFile <- '2017-04-21_HG23KBCXY_2_AGGCAGAA_TATCTC_pe.M-bias.txt'
+mbiasList <- mbiasplot(mbiasFiles=system.file("extdata", methylationBiasFile,
+                                         package='scmeth'))
+
+mbiasDf <- do.call(rbind.data.frame, mbiasList)
+meanTable <- stats::aggregate(methylation ~ position + read, data=mbiasDf, FUN=mean)
+sdTable <- stats::aggregate(methylation ~ position + read, data=mbiasDf, FUN=sd)
+seTable <- stats::aggregate(methylation ~ position + read, data=mbiasDf, FUN=function(x){sd(x)/sqrt(length(x))})
+sum_mt<-data.frame('position'=meanTable$position,'read'=meanTable$read,
+                       'meth'=meanTable$methylation, 'sdMeth'=sdTable$methylation,
+                       'seMeth'=seTable$methylation)
+
+sum_mt$upperCI <- sum_mt$meth + (1.96*sum_mt$seMeth)
+sum_mt$lowerCI <- sum_mt$meth - (1.96*sum_mt$seMeth)
+sum_mt$read_rep <- paste(sum_mt$read, sum_mt$position, sep="_")
+
+g <- ggplot2::ggplot(sum_mt)
+g <- g + ggplot2::geom_line(ggplot2::aes_string(x='position', y='meth',
+                                                colour='read'))
+g <- g + ggplot2::geom_ribbon(ggplot2::aes_string(ymin = 'lowerCI',
+                        ymax = 'upperCI', x='position', fill = 'read'),
+                        alpha=0.4)
+g <- g + ggplot2::ylim(0,100) + ggplot2::ggtitle('Mbias Plot')
+g <- g + ggplot2::ylab('methylation')
+g
+
+```
+</p>
+
+### methylationDist
+<p style="text-align: justify;">
+**methylationDist** function provides the methylation distribution of the 
+samples. In this visualization methylation is divided into quantiles and
+ordered according to the cells with the lowest methylation to highest 
+methylation. In single cell analysis almost all CpGs will be in the highest
+quantile or the lowest quantile. This visualization provides information on 
+whether there are cells with intermediate methylation. Ideally , in single
+cell methylation most methylation should be either 1 or 0. If there
+are large number of intermediate methylation this indicates there might be
+some error in sequencing. 
+</p>
+```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=3}
+methylationDist(bsObject)
+```
+
+
+### bsConversionPlot
+<p style="text-align: justify;">
+Another important metric in methylation analysis is the bisulfite conversion 
+rate. Bisulfite conversion rate indicates out of all the Cytosines in the non
+CpG context what fraction of them were methylated. Ideally this number should
+be 1 or 100% indicating none of the non CpG context cytosines are methylated. 
+However in real data this will not be the case, yet bisulfite conversion
+rate below 95% indicates some problem with sample preparation. 
+**bsConversionPlot** function generates a plot showing this metric for each 
+sample.
+</p>
+```{r, warning=FALSE, message=FALSE, fig.width=4, fig.height=6}
+bsConversionPlot(bsObject)
+```
+
+```{r, warning=FALSE, message=FALSE}
+sessionInfo()
+```

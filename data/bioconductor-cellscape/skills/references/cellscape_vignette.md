@@ -1,0 +1,153 @@
+# CellScape vignette
+
+CellScape is a visualization tool for integrating single cell phylogeny with genomic content to clearly display evolutionary progression and tumour heterogeneity.
+
+## Installation
+
+To install CellScape, type the following commands in R:
+
+```
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
+BiocManager::install("cellscape")
+```
+
+## Examples
+
+Run the examples by:
+
+```
+example("cellscape")
+```
+
+One of these, for example, is copy number data of a triple negative breast cancer patient published in Wang et al. (2014).
+
+![](data:image/png;base64...)
+
+Screen capture of CellScape for copy number data
+
+## Required parameters
+
+\(cnv\\_data\) (data frame) (Required if not providing mut\_data nor mut\_data\_matrix) Single cell copy number segments data. This data frame includes the following columns:
+
+1. character() \(single\\_cell\\_id\) - single cell id
+2. character() \(chr\) - chromosome number
+3. numeric() \(start\) - start position
+4. numeric() \(end\) - end position
+5. numeric() \(copy\\_number\) - copy number state.
+
+\(mut\\_data\) (data frame) (Required if not providing cnv\_data nor mut\_data\_matrix) Single cell targeted mutation data frame. This data frame includes the following columns:
+
+1. character() \(single\\_cell\\_id\) - single cell id
+2. character() \(chr\) - chromosome number
+3. numeric() \(coord\) - genomic coordinate
+4. numeric() \(VAF\) - variant allele frequency [0, 1].
+
+\(mut\\_data\\_matrix\) (matrix) (Required if not providing cnv\_data nor mut\_data) Single cell targeted mutation matrix. Rows are single cell IDs, columns are mutations. Rows and columns must be named, column names in the format “<chromosome>:<coordinate>”. Note that the order of these rows and columns will not be preserved, unless mutation order is the same as that specified in the mut\_order parameter. Also note that every single cell id must be present in the tree\_edges data frame.
+
+\(tree\\_edges\) (data frame) Edges for the single cell phylogenetic tree. This data frame includes the following columns:
+
+1. character() \(source\) - edge source (single cell id)
+2. character() \(target\) - edge target (single cell id)
+3. numeric() (Optional) \(dist\) - edge distance
+
+## Parameters that are optional for CellScape, but required for a TimeScape
+
+These parameters may be included if the data is time-series, and the user would like to view a TimeScape of the data alongside the CellScape:
+
+\(gtype\\_tree\\_edges\) (data frame) Genotype tree edges of a rooted tree. This data frame includes the following columns:
+
+1. character() \(source\) - source node id
+2. character() \(target\) - target node id.
+
+\(sc\\_annot\) (data frame) (Required for TimeScape) Annotations (genotype and sample id) for each single cell. This data frame includes the following columns:
+
+1. character() “single\_cell\_id” - single cell id
+2. character() “genotype” - genotype assignment
+3. character() (Optional) “timepoint” - id of the sampled time point.
+
+If these two additional parameters are included, a TimeScape will be appended to the bottom of the view, like so:
+
+## Optional parameters
+
+### Clone colours
+
+The colours of each clone may be changed by the \(clone\\_colours\) parameter. This data frame includes the following columns:
+
+1. character() \(clone\\_id\) - the clone ids
+2. character() \(colour\) - the corresponding Hex colour for each clone id.
+
+### Mutation order
+
+The order of targeted mutations in the heatmap may be specified by the \(mut\\_order\) vector. Each element in the vector describes a mutation by its chromosome and coordinate, and is formatted as such: “<chromosome>:<coordinate>”.
+
+### Titles
+
+Many titles throughout the view can be changed by the following parameters:
+
+1. \(timepoint\\_title\) character() (Optional) Legend title for timepoint groups. Default is “Timepoint”.
+2. \(clone\\_title\) character() (Optional) Legend title for clones. Default is “Clone”.
+3. \(xaxis\\_title\) character() (Optional) For TimeScape - x-axis title. Default is “Time Point”.
+4. \(yaxis\\_title\) character() (Optional) For TimeScape - y-axis title. Default is “Clonal Prevalence”.
+
+## Interactivity
+
+Interactive components:
+
+1. Mouseover any single cell in the phylogeny to view its corresponding genomic profile in the heatmap, and vice versa.
+2. Mouseover any part of the heatmap to view the CNV or VAF value for that copy number segment or mutation site, respectively.
+3. Mouseover any branch of the phylogeny to view downstream single cells, both in the phylogeny and heatmap.
+4. Mouseover any clone to view its corresponding single cells in the phylogeny and heatmap.
+5. If present, use the scale tree/graph tool in the tool bar to scale the phylogeny by the provided edge distances.
+6. Use the branch flip tool in the tool bar to click any node in the phylogeny to flip the order of its descendant branches.
+7. Use the re-root tool in the tool bar to click any node in order to re-root the tree using the clicked node as the new root.
+8. Use the switch view tool in the tool bar to change the phylogeny view from force-directed to unidirectional, and vice versa.
+9. Use the tree trimming tool in the tool bar to remove any branch of the phylogeny by clicking it.
+10. Use the selection tool in the tool bar to select single cell genomic profiles and view their corresponding single cells in the phylogeny.
+11. If time-series information is present such that the TimeScape is displayed below the CellScape, clones and time points are interactively linked in both views on mouseover.
+12. Click the download buttons to download a PNG or SVG of the view.
+
+## Obtaining the data
+
+#### Targeted mutation data:
+
+To obtain single-cell targeted mutation data, extract reference and variant allele counts for target positions from your single-cell BAM files. Then compute variant allele frequencies (variant\_count / (variant\_count + reference\_count)). Finally, import the data into R, and wrangle it into a data frame with single cell ID, chromosome, coordinate, and VAF.
+
+#### Copy number data:
+
+To obtain single-cell copy number data, extract binned read counts from single-cell BAM files, apply GC and/or mappability correction to the raw counts, and infer copy number segments. Segments can be inferred using tools based on Hidden Markov Models (e.g. HMMcopy, <http://bioconductor.org/packages/release/bioc/html/HMMcopy.html>), or Circular Binary Segmentation (e.g. DNAcopy, <https://bioconductor.org/packages/release/bioc/html/DNAcopy.html>). For HMMcopy, the function HMMsegment provides the chromosome, start position, end position, copy number state, and median copy number value for all inferred segments. This can be wangled into a data frame with single cell ID, chromosome start, chromosome end, and copy number (either the integer copy number state, or the segment median). Recommended parameter settings for single-cell copy number inference with HMMcopy can be found here: <http://www.nature.com/nmeth/journal/vaop/ncurrent/full/nmeth.4140.html>.
+
+#### Clonal composition data:
+
+E-scape takes as input a clonal phylogeny and clonal prevalences per clone per sample. At the time of submission many methods have been proposed for obtaining these values, and accurate estimation of these quantities is the focus of ongoing research. We describe a method for estimating clonal phylogenies and clonal prevalence using PyClone (Roth et al., 2014; source code available at <https://bitbucket.org/aroth85/pyclone/wiki/Home>) and citup (Malikic et al., 2016; source code available at <https://github.com/sfu-compbio/citup>). In brief, PyClone inputs are prepared by processing fastq files resulting from a targeted deep sequencing experiment. Using samtools mpileup (<http://samtools.sourceforge.net/mpileup.shtml>), the number of nucleotides matching the reference and non-reference are counted for each targeted SNV. Copy number is also required for each SNV. We recommend inferring copy number from whole genome or whole exome sequencing of samples taken from the same anatomic location / timepoint as the samples to which targeted deep sequencing was applied. Copy number can be inferred using Titan (Ha et al., 2014; source code available at <https://github.com/gavinha/TitanCNA>). Sample specific SNV information is compiled into a set of TSV files, one per sample. The tables includes mutation id, reference and variant read counts, normal copy number, and major and minor tumour copy number (see PyClone readme). PyClone is run on these files using the `PyClone run_analysis_pipeline` subcommand, and produces the `tables/cluster.tsv` in the working directory. Citup can be used to infer a clonal phylogeny and clone prevalences from the cellular prevalences produced by PyClone. The `tables/cluster.tsv` file contains per sample, per SNV cluster estimates of cellular prevalence. The table is reshaped into a TSV file of cellular prevalences with rows as clusters and columns as samples, and the `mean` of each cluster taken from `tables/cluster.tsv` for the values of the table. The iterative version of citup is run on the table of cellular frequencies, producing an hdf5 output results file. Within the hdf5 results, the `/results/optimal` can be used to identify the id of the optimal tree solution. The clonal phylogeny as an adjacency list is then the `/trees/{tree_solution}/adjacency_list` entry and the clone frequencies are the `/trees/{tree_solution}/clone_freq` entry in the hdf5 file. The adjacency list can be written as a TSV with the column names `source`, `target` to be input into E-scape, and the clone frequencies should be reshaped such that each row represents a clonal frequency in a specific sample for a specific clone, with the columns representing the time or space ID, the clone ID, and the clonal prevalence.
+
+## Documentation
+
+To view the documentation for CellScape, type the following command in R:
+
+```
+?cellscape
+```
+
+or:
+
+```
+browseVignettes("cellscape")
+```
+
+## References
+
+CellScape was developed at the Shah Lab for Computational Cancer Biology at the BC Cancer Research Centre.
+
+References:
+
+Eirew, Peter, et al. “Dynamics of genomic clones in breast cancer patient xenografts at single-cell resolution.” Nature 518.7539 (2015): 422-426.
+
+Ha, Gavin, et al. “TITAN: inference of copy number architectures in clonal cell populations from tumor whole-genome sequence data.” Genome research 24.11 (2014): 1881-1893.
+
+Malikic, Salem, et al. “Clonality inference in multiple tumor samples using phylogeny.” Bioinformatics 31.9 (2015): 1349-1356.
+
+Roth, Andrew, et al. “PyClone: statistical inference of clonal population structure in cancer.” Nature methods 11.4 (2014): 396-398.
+
+Wang, Yong, et al. “Clonal evolution in breast cancer revealed by single nucleus genome sequencing.” Nature 512.7513 (2014): 155-160.

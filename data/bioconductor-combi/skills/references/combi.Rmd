@@ -1,0 +1,200 @@
+---
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    keep_md: true
+vignette: >
+  %\VignetteIndexEntry{Manual for the combi pacakage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# combi package: vignette
+
+\setcounter{tocdepth}{5}
+\tableofcontents
+
+# Introduction
+
+This package implements a novel data integration model for sample-wise integration of different views. It accounts for compositionality and employs a non-parametric mean-variance trend for sequence count data. The resulting model can be conveniently plotted to allow for explorative visualization of variability shared over different views.
+
+<!-- # Publication -->
+
+<!-- The underlying method of the combi package is described in detail in the following article:  -->
+
+# Installation
+
+The package can be installed and loaded using the following commands:
+
+```{r load-packages, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::opts_chunk$set(cache = FALSE, autodep = TRUE, warning = FALSE, 
+                      message = FALSE, echo = TRUE, eval = TRUE, 
+                      tidy = TRUE, fig.width = 9, fig.height = 6, purl = TRUE, 
+                      fig.show = "hold", cache.lazy = FALSE)
+palStore = palette()
+#Load all fits, to avoid refitting every time rebuilding the vignette
+load(system.file("extdata", "zhangFits.RData", package = "combi"))
+```
+
+```{r install, eval = FALSE}
+library(BiocManager)
+BiocManager::install("combi", update = FALSE)
+```
+
+```{r installDevtools, eval = FALSE}
+library(devtools)
+install_github("CenterForStatistics-UGent/combi")
+```
+
+```{r loadcombipackage}
+suppressPackageStartupMessages(library(combi))
+cat("combi package version", 
+    as.character(packageVersion("combi")), "\n")
+```
+
+```{r loadData}
+data(Zhang)
+```
+
+## Unconstrained integration
+
+For an unconstrained ordination, a named list of datasets with overlapping samples must be supplied. The datasets can currently be supplied as a raw data matrix (with features in the columns), or as a phyloseq, SummarizedExperiment or ExpressionSet object. In addition, information on the required distribution ("quasi" for quasi-likelihood fitting, "gaussian" for normal data) and compositional nature (TRUE/FALSE) should be supplied
+
+```{r unconstr}
+microMetaboInt = combi(
+ list("microbiome" = zhangMicrobio, "metabolomics" = zhangMetabo),
+ distributions = c("quasi", "gaussian"), compositional = c(TRUE, FALSE),
+ logTransformGaussian = FALSE)
+```
+
+One can print basic infor about the ordination
+
+```{r show}
+microMetaboInt
+```
+
+A simple plot function is available for the result, for samples and shapes, a data frame should also be supplied
+
+```{r simplePlot}
+plot(microMetaboInt)
+```
+
+```{r colourPlot}
+plot(microMetaboInt, samDf = zhangMetavars, samCol = "ABX")
+```
+
+By default, only the most important features (furthest away from the origin) are shown. To show all features, one can resort to point cloud plots or density plots as follows:
+
+```{r cloudPlot}
+plot(microMetaboInt, samDf = zhangMetavars, samCol = "ABX", 
+     featurePlot = "points")
+```
+
+```{r denPlot}
+plot(microMetaboInt, samDf = zhangMetavars, samCol = "ABX", 
+     featurePlot = "density")
+```
+
+The drawback is that now no feature labels are shown.
+
+## Adding projections
+
+As an aid to interpretation of compositional views, links between features can be plotted and projected onto samples by providing their names or approximate coordinates
+
+```{r projections}
+#First define the plot, and return the coordinates
+mmPlot = plot(microMetaboInt, samDf = zhangMetavars, samCol = "ABX", returnCoords = TRUE, featNum = 10)
+#Providing feature names, and sample coordinates, but any combination is allowed
+addLink(mmPlot, links = cbind("Staphylococcus_819c11","OTU929ffc"), Views = 1, samples = c(0,1))
+```
+
+## Coordinates
+
+Finally, one can extract the coordinates for use in third-party software
+
+```{r extractCoords}
+coords = extractCoords(microMetaboInt, Dim = c(1,2))
+```
+
+## Constrained integration
+
+For a constrained ordination also a data frame of sample variables should be supplied
+
+```{r constr}
+microMetaboIntConstr = combi(
+     list("microbiome" = zhangMicrobio, "metabolomics" = zhangMetabo),
+     distributions = c("quasi", "gaussian"), compositional = c(TRUE, FALSE),
+     logTransformGaussian = FALSE, covariates = zhangMetavars)
+```
+
+Also here we can get a quick overview
+
+```{r printConstr}
+microMetaboIntConstr
+```
+
+and plot the ordination
+
+```{r colourPlotConstr}
+plot(microMetaboIntConstr, samDf = zhangMetavars, samCol = "ABX")
+```
+
+## Diagnostics
+
+Convergence of the iterative algorithm can be assessed as follows:
+
+```{r convPlot}
+convPlot(microMetaboInt)
+```
+
+Influence of the different views can be investigated through
+
+```{r inflPlot}
+inflPlot(microMetaboInt, samples = 1:20, plotType = "boxplot")
+```
+
+# FAQ
+
+## Why are not all my samples shown in the constrained ordination?
+
+Confusion often arises as to why less distinct sample dots are shown than there are samples in the constrained ordination. This occurs when few, categorical constraining variables are supplied as below.
+
+```{r linFewVars, eval = FALSE}
+#Linear with only 2 variables
+microMetaboIntConstr2Vars = combi(
+     list("microbiome" = zhangMicrobio, "metabolomics" = zhangMetabo),
+     distributions = c("quasi", "gaussian"), compositional = c(TRUE, FALSE),
+     logTransformGaussian = FALSE, covariates = zhangMetavars[, c("Sex", "ABX")])
+```
+
+Every constrained sample score is a linear combination of constraining variables, and in this case there are only 2x2=4 distinct sample scores possible, leading to the sample dots from the same gender and treatment to be plotted on top of each other.
+
+```{r plotFewVars}
+plot(microMetaboIntConstr2Vars, samDf = zhangMetavars, samCol = "ABX")
+```
+
+In general, it is best to include all measured sample variables in a constrained analysis, and let the combi-algorithm find out which ones are the most important drivers of variability.
+
+## The combi function crashes, what should I do
+
+The _combi_ method works by iteratively solving systems of non-linear equations through Newton-Raphson. This can lead to numerical instability, with errors like "infinite values returned by jacobian" in the _nleqslv_ function. This class of problems has no general solution, but is mainly a matter of trial and error. Following two things can be tried:
+
+ 1) Tweaking the _prevCutOff_ and _minFraction_ parameters to remove more sparse features.
+ 2) Tweaking the _initPower_ parameter, which will lead to different starting values, and hopefully a solution path that is numerically more stable.
+
+```{r Tweak, eval = FALSE}
+#Linear with only 2 variables
+microMetaboTweak = combi(
+     list("microbiome" = zhangMicrobio, "metabolomics" = zhangMetabo),
+     distributions = c("quasi", "gaussian"), compositional = c(TRUE, FALSE),
+     logTransformGaussian = FALSE, initPower = 1.5, minFraction = 0.25, prevCutOff = 0.8)
+```
+
+
+# Session info
+
+This vignette was generated with following version of R:
+
+```{r sessionInfo}
+sessionInfo()
+```

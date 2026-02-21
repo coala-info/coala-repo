@@ -1,0 +1,1 @@
+v1.0.0 -initial release v1.0.1 -latest release Bug fix: Fixed the problem that this program terminates abnormally if a query length is under 11 residues. v1.0.2 -latest release New option: If query length is shorter than the number given in parameter with '-n' in amino acid residues, the query will be skipped from the analysis.

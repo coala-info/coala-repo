@@ -1,0 +1,1 @@
+Index &mdash; CPAT 3.0.5 documentation CPAT latest CPAT Index Edit on GitHub Index Symbols Symbols 1. output.ORF_seqs.fa 2. output.ORF_prob.tsv 3. output.ORF_prob.best.tsv 4. output.no_ORF.txt 5. output1.r 6. CPAT_run_info.log &#169; Copyright 2024, Liguo Wang. Revision ea5aca3e . Built with Sphinx using a theme provided by Read the Docs .

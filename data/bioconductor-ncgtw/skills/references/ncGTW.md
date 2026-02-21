@@ -1,0 +1,332 @@
+# ncGTW User Manual
+
+Chiung-Ting Wu
+
+#### 2025-10-30
+
+#### Package
+
+ncGTW 1.24.0
+
+# Contents
+
+* [1 Introduction](#introduction)
+* [2 Quick Start](#quick-start)
+* [3 Misaligned Feature Detection and Realignment](#misaligned-feature-detection-and-realignment)
+  + [3.1 RT Structure Incorporation](#rt-structure-incorporation)
+  + [3.2 XCMS Preprocessing](#xcms-preprocessing)
+  + [3.3 ncGTW Workflow](#ncgtw-workflow)
+    - [3.3.1 Misaligned Feature Detection](#misaligned-feature-detection)
+    - [3.3.2 Misaligned Feature Realignment](#misaligned-feature-realignment)
+  + [3.4 Peak-filling with Realigned RT](#peak-filling-with-realigned-rt)
+* [References](#references)
+
+# 1 Introduction
+
+Neighbor-wise Compound-specific Graphical Time Warping (ncGTW) [[1](#ref-ncgtw19)] is an
+alignment algorithm that can align LC-MS profiles by leveraging expected
+retention time (RT) drift structures and compound-specific warping functions.
+This algorithm is improved from graphical time warping (GTW) [[2](#ref-gtw16)], a popular
+dynamic time warping (DTW) based alignment method [[3](#ref-dtw90)]. Specifically, ncGTW
+uses individualized warping functions for different compounds and assigns
+constraint edges on warping functions of neighboring samples. That is, ncGTW
+avoids the popular but not accurate assumption which assumes all the m/z bins in
+the same sample share the same warping function. This assumption often fails
+when the dataset contains hundreds of samples or the data acquisition time
+longer than a week. Moreover, by considering the RT drifts structure, ncGTW can
+align RT more accurately.
+
+`ncGTW` is an R package developed as a plug-in of `xcms`, a popular LC-MS data
+analysis R package [[4](#ref-xcms06)–[6](#ref-xcms10)]. Due to the same warping function
+assumption or bad parameter settings, `xcms` may have some misaligned features,
+and there is a function in `ncGTW` to identify such misalignments. After
+identifying the misaligned features, the user can realign these features with
+the alignment function in `ncGTW` to obtain a better alignment result for more
+accurate analysis, such as peak-regrouping or peak-filling with `xcms`.
+
+You can install the latest version of ncGTW from GitHub by
+
+```
+devtools::install_github("ChiungTingWu/ncGTW")
+```
+
+or from Bioconductor by
+
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("ncGTW")
+```
+
+# 2 Quick Start
+
+To check there are misaligned features from `xcms` or not, one can input two
+`xcms` grouping results with different values of RT window parameter (`xcms`
+grouping parameter, `bw`) to the function `misalignDetect()`. One value of `bw`
+should be the expected maximal RT drift, and another should be near to the RT
+sampling resolution (the inverse of scan frequency). If there are some detected
+misaligned features, the user can decide to adjust the paramters in `xcms` or
+use `ncGTW` to realign them. Besides the `xcms` aligment results, the only
+paramter with no default in `misalignDetect()` is `ppm`, which should be set as
+same as `ppm` of the peak detection in `xcms`.
+
+```
+excluGroups <- misalignDetect(xcmsLargeWin, xcmsSmallWin, ppm)
+```
+
+# 3 Misaligned Feature Detection and Realignment
+
+## 3.1 RT Structure Incorporation
+
+To demonstrate the workflow of ncGTW, an example dataset is included in the
+package. The aquisition time of the dataset is more than two weeks, in which the
+20 samples are selected from a large dataset for a quick demonstration.
+
+```
+library(xcms)
+library(ncGTW)
+filepath <- system.file("extdata", package = "ncGTW")
+file <- list.files(filepath, pattern = "mzxml", full.names = TRUE)
+# The paths of the 20 samples
+```
+
+To incorporate the RT structure, the order of the paths in `file` should be as
+same as the sample acquisition order (run order). In the example dataset, the
+index in each file name is the acquisition order, so we sort the paths according
+to `tempInd`. When dealing with other dataset, the user should make sure the
+order of the paths is as same the order of data acquisition.
+
+```
+tempInd <- matrix(0, length(file), 1)
+for (n in seq_along(file)){
+    tempCha <- file[n]
+    tempLen <- nchar(tempCha)
+    tempInd[n] <- as.numeric(substr(tempCha, regexpr("example", tempCha) + 7,
+        tempLen - 6))
+}
+file <- file[sort.int(tempInd, index.return = TRUE)$ix]
+# Sort the paths by data acquisition order to incorporate the RT structure
+```
+
+## 3.2 XCMS Preprocessing
+
+As a plug-in, the inputs of `ncGTW` are the alignment results from `xcms`, so
+first we need to apply `xcms` on the dataset. The parameters should be decided
+by the user when dealing with other datasets.
+
+```
+CPWmin <- 2
+CPWmax <- 25
+ppm <- 15
+xsnthresh <- 3
+LM <- FALSE
+integrate <- 2
+RTerror <- 6
+MZerror <- 0.05
+prefilter <- c(8, 1000)
+# XCMS parameters
+ds <- xcmsSet(file, method="centWave", peakwidth=c(CPWmin, CPWmax), ppm=ppm,
+    noise=xsnthresh, integrate=integrate, prefilter=prefilter)
+gds <- group(ds, mzwid=MZerror, bw=RTerror)
+agds <- retcor(gds, missing=5)
+# XCMS peak detection and RT alignment
+```
+
+To detect the misaligned features, `ncGTW` needs two XCMS grouping results with
+different values of `bw`. The larger one should be expected maximal RT drift,
+and the smaller one should be the RT sampling resolution (the inverse of scan
+frequency).
+
+```
+bwLarge <- RTerror
+bwSmall <- 0.3
+# Two different values of bw parameter
+xcmsLargeWin <- group(agds, mzwid=MZerror, bw=bwLarge)
+xcmsSmallWin <- group(agds, mzwid=MZerror, bw=bwSmall, minfrac=0)
+# Two resolution of XCMS grouping results
+```
+
+## 3.3 ncGTW Workflow
+
+After XCMS preprocessing, `ncGTW` can be applied on the results. There are two
+major steps in `ncGTW`, misaligned feature detection and misaligned feature
+realignment.
+
+### 3.3.1 Misaligned Feature Detection
+
+To detect the misaligned features, `misalignDetect()` needs two different XCMS
+grouping results as inputs. This function tells which features in `xcmsLargeWin`
+could be broken into several small features in `xcmsSmallWin`, and the detected
+features should be misaligned features. `ppm` is one criteria to decide the
+small features in `xcmsLargeWin` are from the same compounds or not, and should
+be set as same as the one in XCMS peak detection.
+
+```
+excluGroups <- misalignDetect(xcmsLargeWin, xcmsSmallWin, ppm)
+# Detect misaligned features
+show(excluGroups)
+#>      index    mzmed    mzmin    mzmax    rtmed    rtmin    rtmax npeaks extdata
+#> [1,]     1 630.5534 630.5527 630.5546 349.4897 347.2043 355.5610     14      14
+#> [2,]     9 931.5268 931.5251 931.5275 336.6458 335.6331 339.6014     17      17
+```
+
+There are two peak groups (features) are detected as shown in `excluGroups`.
+Before realigning them, the raw profile of each detected feature of each sample
+needs to load from the files. `loadProfile()` loads the needed information with
+file paths (`file`) and the detected features (`excluGroups`) as inputs.
+
+```
+ncGTWinputs <- loadProfile(file, excluGroups)
+# Load raw profiles from the files
+```
+
+The user can also check the detected features are really misaligned or not by
+viewing the extracted ion chromatogram. `plotGroup()` draws the extracted ion
+chromatogram. `ncGTWinputs` is the loaded information from `loadProfile()`,
+`xcmsLargeWin@rt$corrected` is the alignment by XCMS, and `ind` is just a
+parameter for indexing the chromatograms. The user are free to set `ind`.
+
+```
+for (n in seq_along(ncGTWinputs))
+    plotGroup(ncGTWinputs[[n]], slot(xcmsLargeWin, 'rt')$corrected, ind=n)
+```
+
+![](data:image/png;base64...)![](data:image/png;base64...)
+
+```
+    # (Optional) Draw the detected misaligned features
+```
+
+From the two figures, it is clear that these two features are really misaligned.
+The color of curves changes from green, purple, to red according to the sample
+run order.
+
+### 3.3.2 Misaligned Feature Realignment
+
+After the needed information is loaded to `ncGTWinputs`, we can start to realign
+the detected features with `ncGTW`. The parameter `parSamp` is for parallel
+computing, which decides how many samples would be aligned together each time.
+In this example, there are 20 samples, and `parSamp` are set as 5. Thus, there
+would be four sub-groups of samples, and there are five samples in each
+sub-group. Also, `bpParam` is set as four workers to align the four sub-groups
+simultaneously. After all sub-groups are aligned, `ncGTW` would integrate the
+four alignment results together to generate the final realignment.
+If the user do not need parallel computing, `parSamp` could be set as same as
+the total sample number. However, if sample number is larger than 100, it is
+strongly recommended to split the samples into several sub-groups.
+
+```
+ncGTWoutputs <- vector('list', length(ncGTWinputs))
+# Prepare the output variable
+ncGTWparam <- new("ncGTWparam")
+# Initialize the parameters of ncGTW alignment with default
+for (n in seq_along(ncGTWinputs))
+    ncGTWoutputs[[n]] <- ncGTWalign(ncGTWinputs[[n]], xcmsLargeWin, parSamp=5,
+        bpParam=SnowParam(workers=4), ncGTWparam=ncGTWparam)
+# Perform ncGTW alignment
+```
+
+After realignment, we need to send the realignment result to `adjustRT()` to
+generate new RT warping functions to replace `xcmsLargeWin@rt$corrected`, and
+send them back to `xcms` for further analysis.
+
+```
+ncGTWres <- xcmsLargeWin
+# Prepare a new xcmsSet to contain the realignment result
+ncGTWRt <- vector('list', length(ncGTWinputs))
+for (n in seq_along(ncGTWinputs)){
+    adjustRes <- adjustRT(ncGTWres, ncGTWinputs[[n]], ncGTWoutputs[[n]], ppm)
+    # Generate the new warping functions
+    peaks(ncGTWres) <- ncGTWpeaks(adjustRes)
+    # Relocate the peaks to the new RT points according to the realignment.
+    ncGTWRt[[n]] <- rtncGTW(adjustRes)
+    # Temporary variable for new warping functions
+}
+```
+
+Again, the user can also check the realignment by viewing the extracted ion
+chromatogram with `plotGroup()`.
+
+```
+for (n in seq_along(ncGTWinputs))
+    plotGroup(ncGTWinputs[[n]], ncGTWRt[[n]], ind = n)
+```
+
+![](data:image/png;base64...)![](data:image/png;base64...)
+
+```
+    # (Optional) Draw the realigned features
+```
+
+From the two figures, it is clear that the two misaligned features now are
+realigned accurately, comparing to the XCMS alignment.
+
+## 3.4 Peak-filling with Realigned RT
+
+One of the most obvious impact of the realignment is the quality of peak-filling
+in `xcms`. Due to the more accurate warping functions, the peak-filling step has
+a higher change to retrieve the missing peaks back. That is, the guessing of the
+positions of the missing peaks becomes more accurate according to the new
+warping functions. Here we demonstrate the differences of peak-filling of the
+two misaligned features.
+
+```
+groups(ncGTWres) <- excluGroups[ , 2:9]
+groupidx(ncGTWres) <- groupidx(xcmsLargeWin)[excluGroups[ , 1]]
+# Only consider the misaligned features
+rtCor <- vector('list', length(file))
+for (n in seq_along(file)){
+    rtCor[[n]] <- vector('list', dim(excluGroups)[1])
+    for (m in seq_len(dim(groups(ncGTWres))[1]))
+        rtCor[[n]][[m]] <- ncGTWRt[[m]][[n]]
+}
+slot(ncGTWres, 'rt')$corrected <- rtCor
+# Replace the XCMS warping function to ncGTW warping function
+XCMSres <- xcmsLargeWin
+groups(XCMSres) <- excluGroups[ , 2:9]
+groupidx(XCMSres) <- groupidx(xcmsLargeWin)[excluGroups[ , 1]]
+# Consider only the misaligned features with XCMS warping function
+```
+
+After extracting the misaligned features and replacing the old warping
+functions, we can apply `fillPeaks` in `xcms` for peak-filling. Since
+`fillPeaks` accepts only one warping function for each sample, we need to
+replace the function `fillPeaksChromPar()` first.
+
+```
+assignInNamespace("fillPeaksChromPar", ncGTW:::fillPeaksChromPar, ns="xcms",
+    envir=as.environment("package:xcms"))
+# Replace fillPeaksChromPar() in XCMS
+ncGTWresFilled <- fillPeaks(ncGTWres)
+XCMSresFilled <- fillPeaks(XCMSres)
+# Peak-filling with old and new warping functions
+compCV(XCMSresFilled)
+#>           [,1]
+#> [1,] 0.3687170
+#> [2,] 0.3514152
+compCV(ncGTWresFilled)
+#>           [,1]
+#> [1,] 0.2286355
+#> [2,] 0.1187307
+# Compare the coefficient of variation
+```
+
+For the first misaligned feature, the coefficient of variation (CV) decreases
+from 0.369 to 0.229, and for the second one, the CV decreases from 0.351 to
+0.119. Thus, it is very clear that new warping functions improve the quality of
+peak-filling significantly.
+
+# References
+
+1. Wu C-T, Herrington D, Wang Y, Ebbels T, Karaman I, Wang Y, et al. Alignment of lc-ms profiles by neighbor-wise compound-specific graphical time warping with misalignment detection. bioRxiv. 2019;715334.
+
+2. Wang Y, Miller DJ, Poskanzer K, Wang Y, Tian L, Yu G. Graphical time warping for joint alignment of multiple curves. In: Advances in neural information processing systems 29. 2016. pp. 3648–56.
+
+3. Sakoe H, Chiba S, Waibel A, Lee K. Dynamic programming algorithm optimization for spoken word recognition. Readings in speech recognition. 1990;159:224.
+
+4. Smith CA, Want EJ, O’Maille G, Abagyan R, Siuzdak G. XCMS: Processing mass spectrometry data for metabolite profiling using nonlinear peak alignment, matching, and identification. Analytical chemistry. 2006;78:779–87.
+
+5. Tautenhahn R, Boettcher C, Neumann S. Highly sensitive feature detection for high resolution lc/ms. BMC bioinformatics. 2008;9:504.
+
+6. Benton HP, Want EJ, Ebbels TM. Correction of mass calibration gaps in liquid chromatography–mass spectrometry metabolomics data. Bioinformatics. 2010;26:2488–9.

@@ -1,0 +1,16 @@
+# bioconductor-chipenrich Bioconductor Package Report
+
+## chipenrich
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/chipenrich.html
+- **Package**: chipenrich
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

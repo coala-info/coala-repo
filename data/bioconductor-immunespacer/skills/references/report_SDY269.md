@@ -1,0 +1,92 @@
+# SDY269: Correlating HAI with Flow Cytometry and ELISPOT Results
+
+#### Renan Sauteraud
+
+#### 2019-03-27
+
+* [1 Summary](#summary)
+* [2 Load ImmuneSpaceR and other libraries](#load-immunespacer-and-other-libraries)
+* [3 Connect to the study and get datasets](#connect-to-the-study-and-get-datasets)
+* [4 Transform data](#transform-data)
+* [5 Merge data and phenodata](#merge-data-and-phenodata)
+
+`ImmuneSpaceR` code produces consistent results, regardless of whether it is being executed from a module or UI based report on the server or on a local machine. This vignette reproduces a report available on [the ImmuneSpace portal](https://www.immunespace.org/reports/Studies/SDY269/runReport.view?reportId=module%3ASDY269%2Freports%2Fschemas%2Fhai_flow_elispot.Rmd) using the same code.
+
+# 1 Summary
+
+This report investigate the association between the number influenza-specific cells measured by ELISPOT measured at day 7 with the number of plasmablast measured by flow cytometry and day 7 and the HAI response measured at day 28 (log-fold day28/day0). It basically reproduces Figure 1 d-e) of  [Nakaya et al. (2011)](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3140559/) published as part of the original study.
+
+# 2 Load ImmuneSpaceR and other libraries
+
+```
+library(ImmuneSpaceR)
+library(ggplot2)
+library(data.table)
+```
+
+# 3 Connect to the study and get datasets
+
+```
+study <- CreateConnection("SDY269")
+dt_hai <- study$getDataset("hai", reload = TRUE)
+dt_fcs <- study$getDataset("fcs_analyzed_result", reload = TRUE)
+dt_elispot <- study$getDataset("elispot", reload = TRUE)
+```
+
+# 4 Transform data
+
+```
+# Compute max fold change for HAI, and remove time zero
+dt_hai <- dt_hai[, hai_response := value_preferred / value_preferred[study_time_collected == 0],
+by = "virus,cohort,participant_id"][study_time_collected == 28]
+dt_hai <- dt_hai[, list(hai_response = max(hai_response)), by = "cohort,participant_id"]
+
+# Define variable for ELISPOT, keep only the IgG class
+dt_elispot <- dt_elispot[, elispot_response := spot_number_reported + 1][study_time_collected == 7 & analyte == "IgG"]
+
+# Compute % plasmablasts
+dt_fcs <- dt_fcs[, fcs_response := (as.double(population_cell_number) + 1) /
+as.double(base_parent_population)][study_time_collected == 7]
+```
+
+# 5 Merge data and phenodata
+
+```
+# Let's key the different datasets
+setkeyv(dt_hai, c("participant_id"))
+setkeyv(dt_fcs, c("participant_id"))
+setkeyv(dt_elispot, c("participant_id"))
+dt_all <- dt_hai[dt_fcs, nomatch = 0][dt_elispot, nomatch = 0]
+```
+
+The figure below shows the absolute number of plasmablast cells measured by flow cytometry vs. the number of frequency of influenza-specific cells measured by ELISPOT.
+
+```
+ggplot(dt_all, aes(x = as.double(fcs_response), y = elispot_response, color = cohort)) +
+geom_point() +
+scale_y_log10() +
+scale_x_log10() +
+geom_smooth(method="lm") +
+xlab("Total plasmablasts (%)") +
+ylab("Influenza specific cells\n (per 10^6 PBMCs)") +
+theme_IS()
+```
+
+![](data:image/png;base64...)
+
+The figure below shows the HAI fold increase over baseline vs. the number of frequency of influenza-specific cells measured by ELISPOT.
+
+```
+ggplot(dt_all, aes(x = as.double(hai_response), y = elispot_response, color = cohort)) +
+geom_point() +
+scale_x_continuous(trans = "log2") +
+scale_y_log10() +
+geom_smooth(method = "lm") +
+xlab("HAI fold") +
+ylab("Influenza specific cells\n (per 10^6 PBMCs)") +
+theme_IS()
+```
+
+![](data:image/png;base64...)
+
+In each case, we observe good correlations between the different responses, at least for the TIV cohort.

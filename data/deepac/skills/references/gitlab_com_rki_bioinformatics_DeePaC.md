@@ -1,0 +1,1 @@
+rki_bioinformatics / DeePaC · GitLab D DeePaC Project information Predicting pathogenic potentials of short DNA reads with reverse-complement deep neural networks. Read more deep learning next-generat... pathogenicity + 1 more bacteria 768 Commits 6 Branches 19 Tags 16 Releases README MIT License CHANGELOG CONTRIBUTING GitLab Pages Created on March 20, 2018 Loading

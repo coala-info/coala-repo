@@ -1,0 +1,253 @@
+# PathwaySplice: Pathway analysis for alternative splicing in RNA-seq datasets that accounts for different number of gene features
+
+#### *Aimin Yan, Gabriel J. Odom, Yuguang Ban, Xi Chen, and Lily Wang*
+
+#### *2019-01-04*
+
+* [1. Introduction](#introduction)
+* [2. Package quick start guide](#package-quick-start-guide)
+* [3. Testing customized gene sets](#testing-customized-gene-sets)
+  + [MSigDB hallmark pathways and Reactome pathways](#msigdb-hallmark-pathways-and-reactome-pathways)
+  + [KEGG pathways](#kegg-pathways)
+* [4. Comparison of results before and after bias correction](#comparison-of-results-before-and-after-bias-correction)
+* [5. Comparison of results under different parameter settings](#comparison-of-results-under-different-parameter-settings)
+* [6. Conclusion](#conclusion)
+* [References](#references)
+
+# 1. Introduction
+
+In alternative splicing analysis of RNA-seq data, one popular approach is to first identify gene features (e.g. exons or junctions) significantly associated with splicing using methods such as DEXSeq (Anders, Reyes, and Huber 2012) or JunctionSeq (Hartley and Mullikin 2016), and then perform pathway analysis based on the list of genes associated with the significant gene features. For results from the [DEXSeq](https://bioconductor.org/packages/release/bioc/html/DEXSeq.html) package, **gene features** represent non-overlapping exon counting bins (Anders, Reyes, and Huber (2012); Figure 1), while for results from the [JunctionSeq](https://bioconductor.org/packages/release/bioc/html/JunctionSeq.html) package, they represent non-overlapping exon *or* splicing-junction counting bins.
+
+Pathway analysis without explicit adjustment can be biased toward pathways that include genes with a large number of gene features; this is because these genes are more likely to be selected as “significant genes” in pathway analysis. This is a major challenge in RNA-seq data analysis, and this package offers a solution. The main features of the `PathwaySplice` package include:
+
+1. Perform pathway analysis that explicitly adjusts for the number of exons or junctions associated with each gene.
+2. Visualize selection bias due to different number of exons or junctions across different genes.
+3. Formally test for selection bias using logistic regression.
+4. Support gene sets based on Gene Ontology categories, user defined gene sets, and other broadly defined gene sets (e.g. MSigDB).
+5. Identify specific genes that drive pathway significance.
+6. Organize significant pathways within an enrichment map, where pathways with large numbers of overlapping genes are grouped together in a network graph.
+
+# 2. Package quick start guide
+
+After installing the `PathwaySplice` package, load the package namespace via:
+
+```
+# if (!requireNamespace("BiocManager", quietly=TRUE))
+    # install.packages("BiocManager")
+# BiocManager::install("PathwaySplice")
+library(PathwaySplice)
+```
+
+The latest version can also be installed by
+
+```
+library(devtools)
+install_github("SCCC-BBC/PathwaySplice")
+```
+
+The input file of the `PathwaySplice` functions are a vector of \(p\)-values associated with gene features and a mapping between gene features and genes. This information can be obtained from `DEXSeq` or `JunctionSeq` output files. As an example, `PathwaySplice` includes a gene-feature annotated dataset, based on an RNA-seq study of bone marrow CD34+ cells from eight myelodysplastic syndrome (MDS) patients with SF3B1 mutations and four patients without the mutation (Dolatshad et al. 2015). This dataset was downloaded from the GEO database with accession key [GSE63569](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63569).
+
+First, we use the `JunctionSeq` package to perform differential exon usage analysis. For demonstration, we selected gene features mapped to a random subset of 5,000 genes. The example dataset can be loaded directly:
+
+```
+data(featureBasedData)
+head(featureBasedData)
+```
+
+Next, convert the example data to a gene-based table with the `makeGeneTable` function. The \(p\)-value method is the default.
+
+```
+gene.based.table <- makeGeneTable(featureBasedData, stat = "pvalue")
+head(gene.based.table)
+```
+
+Here, the `geneWisePvalue` column is simply the minimum feature-based \(p\)-value among gene features for gene ENSG00000000938, `numFeature` represents the number of gene features for that gene, `fdr` measures the false discovery rate (FDR) adjustment for the \(p\)-value given in the `genewisePvalue` column, and `sig.gene = 1` indicates that the gene is significant at the \(\alpha = 0.05\) level.
+
+To assess selection bias, i.e. whether genes with more features are more likely to be selected as significant, the `lrTestBias` function fits a logistic regression to test the association between `sig.gene` and `numFeature`.
+
+```
+lrTestBias(gene.based.table, boxplot.width = 0.3)
+```
+
+```
+#> [1] "P-value from logistic regression is 3.98e-205"
+```
+
+![](data:image/png;base64...)
+
+Note that typically selection bias remains even when the `stat = "fdr"` option is used to select significant genes in `makeGeneTable` instead of `stat = "pvalue"` (the default option). This is because FDR has a monotonic relationship with \(p\)-values. For example, in our `featureBasedData` example data set, when selecting significant genes using the `"fdr"` option, substantial selection bias remained (as shown in the boxplot below).
+
+```
+gene.based.table.fdr <- makeGeneTable(featureBasedData, stat = "fdr")
+lrTestBias(gene.based.table.fdr, boxplot.width = 0.3)
+```
+
+```
+#> [1] "P-value from logistic regression is 2.18e-93"
+```
+
+![](data:image/png;base64...)
+
+To perform pathway analysis that adjusts for the number of gene features, we use the `runPathwaySplice` function, which implements the methodology described in Young et al. (2010). The `runPathwaySplice` function returns a [`tibble`](https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html) object. Tibbles are similar in structure to data frames but use a different `print` method: they show only the first few rows and as many columns that will fit on the screen. Therefore, your tibbles may print differently than what is shown here.
+
+```
+result.adjusted <- runPathwaySplice(genewise.table = gene.based.table.fdr,
+                                    genome = "hg19",
+                                    id = "ensGene",
+                                    test.cats = c("GO:BP"),
+                                    go.size.limit = c(5, 30),
+                                    method = "Wallenius",
+                                    use.genes.without.cat = TRUE)
+```
+
+![](data:image/png;base64...)
+
+```
+head(result.adjusted)
+```
+
+The returned `result.adjusted` tibble has the statistical significance of each pathway shown in the `over_represented_pvalue` column, significant genes which drive pathway significance are given in the `SIGgene_ensembl` column (not shown), and the corresponding gene symbols is returned in the `SIGgene_symbol` column (also not shown). An additional bias plot is also generated; this visualizes the relationship between the proportion of significant genes and the mean number of gene features within gene bins. Note that the default option for `use.genes.without.cat` is `FALSE`, meaning that genes not mapped to any tested categories are ignored in the analysis. In order for all genes in `genewise.table` to be counted towards the total number of genes outside the category (i.e. genes in the background), we set this option to `TRUE`.
+
+To visualize pathway analysis results in a pathway enrichment network, we use the `enrichmentMap` function. The `pathway.res` input of this function is the output of `runPathwaySplice` function shown above. The `n = 7` argument means that the produced figure will show the 7 most significant pathways in an enrichment map. A file named `network.layout.for.cytoscape.gml` is generated in the `output.file.dir` directory specified by users. This file can be used as an input file for Cytoscape software (Shannon et al. 2003), which allows users to further manually adjust the appearance of the generated network.
+
+```
+enmap <- enrichmentMap(pathway.res = result.adjusted,
+                       n = 7,
+                       output.file.dir = tempdir(),
+                       similarity.threshold = 0.5,
+                       scaling.factor = 2)
+```
+
+![](data:image/png;base64...)
+
+In the enrichment map, the **node size** indicates the number of significant genes within the pathway. The **node hue** indicates pathway significance, where smaller \(p\)-values correspond to dark red color. Pathways with [Jaccard coefficient](https://en.wikipedia.org/wiki/Jaccard_index) greater than the value of `similarity.thereshold` will be connected on the network, indicating that these connected pathways contain common set of genes. The **edge thickness** corresponds to Jaccard similarity coefficient between the two pathways, scaled by the value supplied to `scaling.factor`. Note that the input of enrichmentMap function is an object returned from `runPathwaySplice` function, so enrichmentMap function supports both GO annotation as well as customized genesets.
+
+# 3. Testing customized gene sets
+
+### MSigDB hallmark pathways and Reactome pathways
+
+To perform pathway analysis with other user-defined gene sets, one needs to specify the pathway database in [`.gmt` format](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats) first, then use the `gmtGene2Cat` function before passing this output as the value of the `gene2cat` argument in the `pathwaySplice` function. The MSigDB hallmark gene sets can be downloaded from [the Broad institute](http://software.broadinstitute.org/gsea/msigdb/collections.jsp). Similarly, Reactome pathways in `.gmt` format can be downloaded from [REACTOME](https://reactome.org/download-data): in the “Specialized data formats” page section click the “Reactome Pathways Gene Set” link to download the zipped file.
+
+For demonstration, we have included a sample of hallmark gene sets in the package. The `gmtGene2Cat` function takes in a directory wherein a `.gmt` file is stored and imports that file for internal use. Analysis for hallmark gene sets can be accomplished using the following code:
+
+```
+dir.name <- system.file("extdata", package = "PathwaySplice")
+hallmark.local.pathways <- file.path(dir.name, "h.all.v6.0.symbols.gmt.txt")
+hlp <- gmtGene2Cat(hallmark.local.pathways, genomeID = "hg19")
+
+result.hallmark <- runPathwaySplice(genewise.table = gene.based.table.fdr,
+                                    genome = "hg19",
+                                    id = "ensGene",
+                                    gene2cat = hlp,
+                                    go.size.limit = c(5, 100),
+                                    method = "Wallenius",
+                                    binsize = 20,
+                                    use.genes.without.cat = TRUE)
+```
+
+### KEGG pathways
+
+The KEGG pathways in `.gmt` format can be obtained by calling the `outKegg2gmt` function, which creates a `.gmt` file based on the organism specified. This is a wrapper for the `get.kegg.genesets` function from the [EnrichmentBrowser package](https://bioconductor.org/packages/release/bioc/html/EnrichmentBrowser.html) and modifies the output into a `.gmt` file (Geistlinger, Csaba, and Zimmer 2016). This function takes in an organism id (`"hsa"` is for *homo sapiens* or `"mmu"` for *Mus musculus* (mouse)) and a file path where the `.gmt` file created by the `outKegg2Gmt` function should be stored. The following code can be used to perform pathway analysis on KEGG pathways. The first command (`outKegg2Gmt`) writes a `.gmt` file for homo sapiens in the directory specified; the second command reads this `.gmt` file, transforms these gene sets, and saves them as the `kegg.pathways` object; then the last command performs the pathway splice analysis.
+
+```
+outKegg2Gmt("hsa", file.path(dir.name, "kegg.gmt.txt"))
+
+kegg.pathways <- gmtGene2Cat(file.path(dir.name, "kegg.gmt.txt"),
+                             genomeID = "hg19")
+
+result.kegg <- runPathwaySplice(genewise.table = gene.based.table.fdr,
+                                genome = "hg19",
+                                id = "ensGene",
+                                gene2cat = kegg.pathways,
+                                go.size.limit = c(5, 100),
+                                method = "Wallenius",
+                                use.genes.without.cat = TRUE)
+```
+
+# 4. Comparison of results before and after bias correction
+
+To demonstrate the advantage of using the `PathwaySplice` package, we will illustrate pathway analysis using the entire 23,520 genes in the MDS dataset described in Section 2. Initial analysis was conducted using the `JunctionSeq` package to obtain \(p\)-values for differential exon usage. Because each gene may contain multiple exon counting bins or gene features (Anders, Reyes, and Huber 2012), the initial analysis can return multiple \(p\)-values associated with gene features belonging to that gene. We then used the `makeGeneTable` function to represent each gene by the minimum \(p\)-value among all gene features mapped to it. We saved this output in the `"AllGeneTable.rds"` file, which can be loaded using the following code.
+
+```
+dir <- system.file("extdata", package="PathwaySplice")
+all.gene.table <- readRDS(file.path(dir, "AllGeneTable.rds"))
+```
+
+We next compared splicing pathway analysis results before and after adjusting for the number of exon counting bins associated with each gene. This can be accomplished using the `compareResults` function:
+
+```
+res.adj <- runPathwaySplice(genewise.table = all.gene.table,
+                            genome = "hg19",
+                            id = "ensGene",
+                            test.cats = "GO:BP",
+                            go.size.limit = c(5, 30),
+                            method = "Wallenius")
+
+res.unadj <- runPathwaySplice(genewise.table = all.gene.table,
+                              genome = "hg19",
+                              id = "ensGene",
+                              test.cats = "GO:BP",
+                              go.size.limit = c(5, 30),
+                              method = "Hypergeometric")
+compareResults(n.go = 20,
+               adjusted = res.adj,
+               unadjusted = res.unadj,
+               gene.based.table = all.gene.table,
+               output.dir = tempdir(),
+               type.boxplot = "Only3")
+```
+
+This function produces several files in the output directory specified by `output.dir`, including:
+
+* A Venn diagram that compares the overlap of the most significant `n.go` gene sets using adjusted and unadjusted analysis.
+* A boxplot that compares the distribution of the numbers of
+  + gene features belonging to all genes in the top `n.go` significant pathways identified by both adjusted and unadjusted analysis (`All`),
+  + genes within the significant gene sets uniquely identified using adjusted analysis (`Adjusted`), and
+  + genes within the significant gene sets uniquely identified using unadjusted analysis (`Unadjusted`).
+* A `.csv` file with gene set names corresponding to different sections of the Venn diagram.
+
+The Venn diagram below shows that among the top 20 most significant GO categories identified using adjusted and unadjusted analysis, there were 12 common GO categories.
+![](data:image/png;base64...)
+In the boxplot below, the `Unadjusted_20` boxplot shows the distribution of bias factors (i.e. numer of exon counting bins or gene features) for genes belonging to the 8 most significant GO categories identified only in unadjusted analysis (top row, corresponding to the blue color in the Venn diagram). The `Adjusted_20` boxplot shows the distribution of bias factors for genes belonging to the 8 most significant GO categories identified only in adjusted analysis (middle row, corresponding to the pink/orange color in the Venn diagram). The `All` boxplot shows distribution of bias factors for genes belonging to all 20 most significant GO categories. This plot shows that genes in GO categories which are unique to unadjusted analysis tend to have larger numbers of exon counting bins.
+![](data:image/png;base64...)
+
+# 5. Comparison of results under different parameter settings
+
+In the `runPathwaySplice` function, the choices for the `method` argument are:
+
+* `"Hypergeometric"` – do not adjust for bias.
+* `"Wallenius"` – adjust bias based on the [Wallenius non-central hypergeometric distribution](https://en.wikipedia.org/wiki/Wallenius%27_noncentral_hypergeometric_distribution) (Wallenius 1963).
+* `"Sampling"` – use random sampling to approximate the true distribution.
+
+The `"Sampling"` option takes `gene.based.table.fdr` as input to the `genewise.table` argument and then calculates weights for each gene using a spline regression model, which is the probability a gene being significant given the number of gene features (e.g. exons) associated with it. Next, random subsets of genes are sampled from the experiment. Each subset contains the same number of genes as the observed number of significant genes. For genes in each subset, the probability of selecting a gene is equal to the weights calculated above, and the number of genes belonging to a GO category is then calculated. Many random subsets of genes are generated to produce the null distribution necessary to estimate the \(p\)-value of a GO category (the number of random subsets is controlled by the `repcnt` argument to the `runPathwaySplice` function, and it defaults to 2000).
+
+The figure below plots pathway analysis \(p\)-values for the MDS dataset obtained using the Hypergeometric test, Wallenius approximation, and `repcnt = 30000` random samples. These values are plotted against \(p\)-values obtained using `repcnt = 200000` random samples. This plot was constructed via the `compareResults2` function, which takes in output data frames from the `runPathwaySplice` function after providing different values to `methods`.
+
+```
+PathwaySplice:::compareResults2(result.hyper,
+                result.Wall,
+                result.Sampling,
+                result.Sampling.200k)
+```
+
+![](data:image/png;base64...) In the figure above, each dot represents a GO category. The results show that GO category \(p\)-values for `repcnt = 30000` random samples and `repcnt = 200000` random samples are virtually indistinguishable (blue pluses and red triangles are almost exactly the same). Also, \(p\)-values based on the Wallenius approximation (green crosses) are highly correlated with the results from the 200,000 random samples. On the other hand, unadjusted results using the Hypergeometric distribution (solid black dots) are markedly different from both random sampling and Wallenius \(p\)-values. In terms of computational cost, generating and analyzing 200,000 random samples took more than one hour, while \(p\)-values from the Wallenius approximation took less than one minute to compute. Therefore, we recommend using the Wallenius approximation (which we made the default for `runPathwaySplice` function), unless the number of gene sets tested is small (e.g less than 100).
+
+# 6. Conclusion
+
+Performing pathway analysis without adjusting for the number of gene features can be biased toward pathways that include genes with a large number of gene features. Without adjustment, genes with more features are more likely to be selected as “significant genes” in pathway analysis. The `PathwaySplice` package is a potential solution to combat this major challenge in RNA-seq data analysis. To this end, this package assists end users in the following: perform pathway analysis while adjusting for the number features associated with each gene and allowing for a variety of potential types of gene sets; visualize and formally test for potential selection bias; identify specific genes which may drive pathway significance; and organize significant pathways within an enrichment map.
+
+# References
+
+Anders, Simon, Alejandro Reyes, and Wolfgang Huber. 2012. “Detecting differential usage of exons from RNA-seq data.” *Genome Research* 22 (10):2008–17. <https://doi.org/10.1101/gr.133744.111>.
+
+Dolatshad, H, A Pellagatti, M Fernandez-Mercado, B H Yip, L Malcovati, M Attwood, B Przychodzen, et al. 2015. “Disruption of SF3B1 results in deregulated expression and splicing of key genes and pathways in myelodysplastic syndrome hematopoietic stem and progenitor cells.” *Leukemia* 29 (5). Nature Publishing Group:1092–1103. <https://doi.org/10.1038/leu.2014.331>.
+
+Geistlinger, Ludwig, Gergely Csaba, and Ralf Zimmer. 2016. “Bioconductor’s Enrichmentbrowser: Seamless Navigation Through Combined Results of Set- & Network-Based Enrichment Analysis.” *BMC Bioinformatics* 17:45. <https://doi.org/10.1186/s12859-016-0884-1>.
+
+Hartley, Stephen W., and James C. Mullikin. 2016. “Detection and visualization of differential splicing in RNA-Seq data with JunctionSeq.” *Nucleic Acids Research*, June. Oxford University Press, gkw501. <https://doi.org/10.1093/nar/gkw501>.
+
+Shannon, P., Andrew Markiel, Owen Ozier, Nitin S Baliga, Jonathan T Wang, Daniel Ramage, Nada Amin, Benno Schwikowski, and Trey Ideker. 2003. “Cytoscape: A Software Environment for Integrated Models of Biomolecular Interaction Networks.” *Genome Research* 13 (11):2498–2504. <https://doi.org/10.1101/gr.1239303>.
+
+Wallenius, Kenneth T. 1963. “Biased Sampling: The Noncentral Hypergeometric Probability Distribution.” Technical Report 70. Stanford, California: Department of Statistics, Stanford University. <https://statistics.stanford.edu/sites/default/files/LIE%20ONR%2070.pdf>.
+
+Young, Matthew D, Matthew J Wakefield, Gordon K Smyth, and Alicia Oshlack. 2010. “Gene ontology analysis for RNA-seq: accounting for selection bias.” *Genome Biology* 11 (2). BioMed Central:R14. <https://doi.org/10.1186/gb-2010-11-2-r14>.

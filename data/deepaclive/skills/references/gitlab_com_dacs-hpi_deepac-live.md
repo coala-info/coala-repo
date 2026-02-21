@@ -1,0 +1,1 @@
+dacs-hpi / DeePaC-Live · GitLab D DeePaC-Live Project information A Deep Learning framework for real-time detection of novel pathogens. Live analysis of Illumina sequencing runs based on mapping with HiLive2 and pathogenicity prediction directly from NGS reads. Read more 52 Commits 2 Branches 5 Tags 3 Releases README MIT License CONTRIBUTING Created on April 19, 2020 Loading

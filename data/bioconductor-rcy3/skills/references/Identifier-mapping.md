@@ -1,0 +1,218 @@
+# Identifier mapping
+
+by Alexander Pico
+
+#### 2025-12-04
+
+#### Package
+
+RCy3 2.30.1
+
+This vignette will show you how to map or translate identifiers from one database
+(e.g., Ensembl) to another (e.g, Entrez Gene). This is a common requirement
+for data analysis. In the context of Cytoscape, for example, identifier mapping is
+needed when you want to import data to overlay on a network but you don’t have
+matching keys. There are three distinct examples below, highlighting different
+lessons that may apply to your use cases.
+
+# 1 Installation
+
+```
+if(!"RCy3" %in% installed.packages()){
+    install.packages("BiocManager")
+    BiocManager::install("RCy3")
+}
+library(RCy3)
+```
+
+# 2 Required Software
+
+The whole point of RCy3 is to connect with Cytoscape. You will need to install and launch Cytoscape:
+
+* Download the latest Cytoscape from <http://www.cytoscape.org/download.php>
+* Complete installation wizard
+* Launch Cytoscape
+
+```
+cytoscapePing()
+```
+
+# 3 Example: Species specific considerations
+
+When planning to import data, you need to consider the key columns you have in
+your network data and in your table data. It’s always recommended that you use
+proper identifiers as your keys (e.g., from databases like Ensembl and Uniprot-TrEMBL).
+Relying on conventional symbols and names is not standard and error prone.
+
+Let’s start with the sample network provided by Cytoscape.
+
+**Caution: Loading a session file will discard your current session. Save first,
+if you have networks or data you want to keep. Use saveSession(‘path\_to\_file’).**
+
+```
+openSession()  #Closes current session (without saving) and opens a sample session file
+```
+
+You should now see a network with just over 300 nodes. If you look at the Node
+Table, you’ll see that there are proper identifiers in the *name* columns, like
+“YDL194W”. These are the Ensembl-supported IDs for Yeast.
+
+## 3.1 Perform identifier mapping
+
+You need to know a few things about your network in order to run this function,
+e.g., the species and starting (or source) identifier type. This isn’t usually
+a problem, but **this example highlights a unique case where the Ensembl ID type
+for a particular species (i.e., Yeast) has a particular format (e.g., YDL194W)**,
+rather than the more typical ENSXXXG00001232 format.
+
+So, with this knowledge, you can run the following function:
+
+```
+mapped.cols <- mapTableColumn('name','Yeast','Ensembl','Entrez Gene')
+```
+
+We are asking Cytoscape to look in the *name* column for *Yeast Ensembl* IDs and
+then provide a new columns of corresponding *Entrez Gene* IDs. And if you look
+back at the Node Table, you’ll see that new column (all the way to the right).
+That’s it!
+
+The return value is a data frame of all the mappings between Ensembl and Entrez Gene
+that were found for your network in case you want those details:
+
+```
+mapped.cols[1:3,] #first three entries
+```
+
+*Note: the row names of the return data frame are the node SUIDs from Cytoscape.
+These are handy if you want to load the mappings yourself (see last example).*
+
+# 4 Example: From proteins to genes
+
+For this next example, you’ll need the STRING app to access the STRING database
+from within Cytoscape:
+\* Install the STRING app from <https://apps.cytoscape.org/apps/stringapp>
+
+```
+#available in Cytoscape 3.7.0 and above
+installApp('STRINGapp')
+```
+
+Now we can import protein interaction networks with a ton of annotations from
+the STRING database with a simple commandsGET function, like this:
+
+```
+string.cmd = 'string disease query disease="breast cancer" cutoff=0.9 species="Homo sapiens" limit=150'
+commandsGET(string.cmd)
+
+# for more information on string commands:
+# commandsHelp('string')
+# commandsHelp('string disease query')
+```
+
+Check out the Node Table and you’ll see display names and identifiers. In particular,
+the *canonical name* column appears to hold Uniprot-TrEMBL IDs. Nice, we can use that!
+
+## 4.1 Perform identifier mapping
+
+Say we have a dataset keyed by Ensembl gene identifiers. Well, then we would want
+to perform this mapping:
+
+```
+mapped.cols <- mapTableColumn('stringdb::canonical name','Human','Uniprot-TrEMBL','Ensembl')
+```
+
+Scroll all the way to the right in the Node Table and you’ll see a new column with
+Ensembl IDs. **This example highlights a useful translation from protein to gene
+identifiers (or vice versa), but is also a caution to be aware of the assumptions
+involved when making this translation.** For example, a typical gene encodes for many
+proteins, so you may have many-to-one mappings in your results.
+
+# 5 Example: Mixed identifiers
+
+From time to time, you’ll come across a case where the identifiers in your network
+are of mixed types. This is a rare scenario, but here is one approach to solving
+it.
+
+First, you’ll need the WikiPathways app to access the WikiPathways
+database. The pathways in WikiPathways are curated by a community of interested
+researchers and citizen scientists. As such, there are times where authors might
+use different sources of identifiers. They are valid IDs, just not all from the same
+source. Future versions of the WikiPathways app will provide pre-mapped columns
+to a single ID type. But in the meantime (and relevant to other use cases), **this
+example highlights how to handle a source of mixed identifier types.**
+
+* Install the WikiPathways app from <https://apps.cytoscape.org/apps/wikipathways>
+
+```
+#available in Cytoscape 3.7.0 and above
+installApp('WikiPathways')
+```
+
+Now we can import an Apoptosis Pathway from WikiPathways. Either from the web
+site (<https://wikipathways.org>), or from the Network Search Tool in Cytoscape
+GUI or from the rWikiPathways package, we could identify the pathway as WP254.
+
+```
+wp.cmd = 'wikipathways import-as-pathway id="WP254"'
+commandsGET(wp.cmd)
+
+# for more information on wikipathways commands:
+# commandsHelp('wikipathways')
+# commandsHelp('wikipathways import-as-pathway')
+```
+
+Take look in the *XrefId* column and you’ll see a mix of identifier types. The
+next column over, *XrefDatasource*, conveniently names each type’s source. Ignoring
+the metabolites for this example, we just have a mix of Ensembl and Entrez Gene
+to deal with.
+
+## 5.1 Perform identifier mapping
+
+Say we want a column with only Ensembl IDs. The easiest approach is to simply
+overwrite all the non-Ensembl IDs, i.e., in this case, Entrez Gene IDs. Let’s
+collect the mappings first:
+
+```
+mapped.cols <- mapTableColumn('XrefId','Human','Entrez Gene','Ensembl')
+```
+
+Next, we want to remove the  values from the *Ensembl* column in our resulting
+mapped.cols data frame. We’ll also remove the original source columns (to avoid
+confusion) and rename our *Ensembl* column to *XrefId* to prepare to overwrite.
+Then we’ll load that into Cytosacpe:
+
+```
+only.mapped.cols <- mapped.cols[complete.cases(mapped.cols), 'Ensembl', drop=FALSE]
+colnames(only.mapped.cols) <- 'XrefId'
+loadTableData(only.mapped.cols,table.key.column = 'SUID')
+```
+
+Done! See the updated *XrefId* column in Cytoscape with all Ensembl IDs.
+
+*Note: you’ll want to either update the* XrefDatasource\* column as well or simply make
+a note to ignore it at this point.\*
+
+# 6 More advanced cases
+
+This identifier mapping function is intended to handle the majority of common
+ID mapping problems. It has limitation, however.
+
+```
+?mapTableColumn
+```
+
+If you need an ID mapping solution for species or ID types not covered by this
+tool, or if you want to connect to alternative sources of mappings, then check
+out the BridgeDb app: <http://apps.cytoscape.org/apps/bridgedb>. Note that metabolite
+databases are currently not supported!
+
+```
+#available in Cytoscape 3.7.0 and above
+installApp('BridgeDb')
+```
+
+And then browse the available function with
+
+```
+commandsHelp('bridgedb')
+```

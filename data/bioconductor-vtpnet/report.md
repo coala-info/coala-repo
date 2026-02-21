@@ -1,0 +1,16 @@
+# bioconductor-vtpnet Bioconductor Package Report
+
+## vtpnet
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/vtpnet.html
+- **Package**: vtpnet
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

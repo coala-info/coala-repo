@@ -1,0 +1,102 @@
+---
+title: "CBNplot"
+output:
+  BiocStyle::html_document:
+    toc: true
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{CBNplot}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+# CBNplot: Bayesian network plot for clusterProfiler results
+
+
+## Introduction
+
+The R package to infer and plot Bayesian networks. The network are inferred from expression data based on [clusterProfiler](https://github.com/YuLab-SMU/clusterProfiler) or ReactomePA results. It makes use of libraries including [clusterProfiler](https://github.com/YuLab-SMU/clusterProfiler), [ReactomePA](https://github.com/YuLab-SMU/ReactomePA), [bnlearn](https://www.bnlearn.com/), [graphite](https://bioconductor.org/packages/release/bioc/html/graphite.html) and [depmap](https://bioconductor.org/packages/release/data/experiment/html/depmap.html). In this vignette, the description of functions and several use cases are depicted using random data. The more detailed use cases including the analysis of the dataset [GSE133624](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE133624), which contains RNA-Seq data of bladder cancer, can be found on the book ([https://noriakis.github.io/CBNplot/](https://noriakis.github.io/CBNplot/)).
+
+## Installation
+```{r, eval=FALSE}
+BiocManager::install("CBNplot")
+```
+
+## Usage
+### Generation of data
+
+```{r deg, include=TRUE, echo=TRUE, message=FALSE, cache=FALSE, warning=FALSE, comment=FALSE, fig.height = 10, fig.width = 10}
+library(CBNplot)
+library(bnlearn)
+library(org.Hs.eg.db)
+
+## Load data
+data(gaussian.test)
+
+## Draw genes in the KEGG pathway as DEG
+kegg <- org.Hs.egPATH2EG
+mapped <- mappedkeys(kegg)
+genes <- as.list(kegg[mapped])[["00532"]]
+
+## Random data
+counts <- head(gaussian.test, length(genes))
+row.names(counts) <- genes
+
+## Perform enrichment analysis
+pway <- clusterProfiler::enrichKEGG(gene = genes)
+pway <- clusterProfiler::setReadable(pway, org.Hs.eg.db, keyType="ENTREZID")
+```
+
+
+### The use of CBNplot
+
+
+## bngeneplot
+
+Then use CBNplot. Basically, you need to supply the enrichment analysis result, normalized expression value and samples to be included. For `bngeneplot`, the pathway number in the `result` slot of enrichment analysis results must be given.
+
+```{r usecase, include=TRUE, echo=TRUE, message=FALSE, cache=FALSE, warning=FALSE, comment=FALSE, fig.height = 10, fig.width = 10}
+bngeneplot(results = pway,exp = counts, pathNum = 1, expRow="ENTREZID")
+```
+
+Data frame of raw values used in the inference, data frame containing strength and direction, averaged network, and plot can be obtained by specifying `returnNet=TRUE`
+```{r usecase2, include=TRUE, echo=TRUE, message=FALSE, cache=FALSE, warning=FALSE, comment=FALSE, fig.height = 10, fig.width = 10}
+ret <- bngeneplot(results = pway,exp = counts, pathNum = 1, returnNet=TRUE, , expRow="ENTREZID")
+head(ret$str)
+```
+
+The resulting network can be converted to `igraph` object using `bnlearn::as.igraph()`.
+
+```{r igraph, include=TRUE, include=TRUE, echo=TRUE, message=FALSE, cache=FALSE}
+g <- bnlearn::as.igraph(ret$av)
+igraph::evcent(g)$vector
+```
+
+
+## bnpathplot
+
+The relationship between pathways can be drawn by `bnpathplot`. The number to be included in the inference can be specified by `nCategory`.
+
+```{r usecase3, include=TRUE, echo=TRUE, message=FALSE, cache=FALSE, warning=FALSE, comment=FALSE, fig.height = 10, fig.width = 10}
+bnpathplot(results = pway,exp = counts, nCategory=5, shadowText = TRUE, expRow="ENTREZID")
+```
+
+## bngeneplotCustom and bnpathplotCustom
+
+`bngeneplotCustom` and `bnpathplotCustom` can be used to customize visualization with more flexibility, like highlighting the nodes and edges of interest by `glowEdgeNum` and `hub`.
+
+```{r usecase4, include=TRUE, echo=TRUE, message=FALSE, cache=FALSE, warning=FALSE, comment=FALSE, fig.height = 10, fig.width = 10}
+bnpathplotCustom(results = pway, exp = counts, expRow="ENTREZID",
+                 fontFamily="serif", glowEdgeNum=1, hub=1)
+bngeneplotCustom(results = pway, exp = counts, expRow="ENTREZID",
+                 pathNum=1, fontFamily="sans", glowEdgeNum=NULL, hub=1)
+```
+
+The detailed usage for the package, like including covariates to the plot and probabilistic reasoning is available in the package documentation ([https://noriakis.github.io/CBNplot/](https://noriakis.github.io/CBNplot/)).
+
+```{r}
+sessionInfo()
+```
+
+
+

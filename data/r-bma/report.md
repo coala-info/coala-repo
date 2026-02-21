@@ -1,0 +1,16 @@
+# BMA: Bayesian Model Averaging
+
+Package for Bayesian model averaging and variable selection for linear models,
+        generalized linear models and survival models (cox
+        regression).</p>
+
+### Metadata
+- **Conda (r channel)**: https://anaconda.org/r/r-bma
+- **R-project (CRAN)**: https://cloud.r-project.org/web/packages/BMA/index.html
+- **Home (project)**: http://stats.research.att.com/volinsky/bma.html, https://github.com/hanase/BMA
+- **Package**: BMA
+- **Version**: 3.18.20
+- **Author**: Adrian Raftery [aut], Jennifer Hoeting [aut], Chris Volinsky [aut], Ian Painter [aut], Ka Yee Yeung [aut], Hana Sevcikova [cre]
+- **Maintainer**: Hana Sevcikova <hanas at uw.edu>
+- **Skill**: generated
+

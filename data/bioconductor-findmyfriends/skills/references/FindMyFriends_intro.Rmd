@@ -1,0 +1,420 @@
+---
+title: "Creating pangenomes using FindMyFriends"
+author: "Thomas Lin Pedersen"
+date: "`r doc_date()`"
+package: "`r pkg_ver('FindMyFriends')`"
+abstract: >
+  FindMyFriends is a framework for doing microbial comparative genomics. It 
+  defines a class system for working with pangenome data that allows transparent
+  access to the underlying sequence data, while being able to handle huge
+  collections of genomes. It also defines a set of novel algorithms that makes
+  it possible to create high quality pangenomes at high speed, leveraging 
+  alignment free sequence comparison techniques.
+vignette: >
+  %\VignetteIndexEntry{Creating pangenomes using FindMyFriends}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+output: 
+  BiocStyle::html_document:
+    toc: FALSE
+    fig_caption: TRUE
+---
+
+*  *  *
+
+# Introduction
+FindMyFriends is an R package for creating pangenomes of large sets of microbial
+organisms, together with tools to investigate the results. The number of 
+tools to create pangenomes is large and some of the more notable ones are Roary,
+OrthoMCL, PanOCT, inParanoid and Sybil. Within the R framework micropan 
+(available from CRAN) is currently the only other entry, but the scope of 
+FindMyFriends is much broader. 
+
+Within comparative microbiol genomics, a pangenome is defined as a collection of
+all the genes present in a set of related organisms and grouped together by some
+sort of homology. This homology measure has mainly been some sort of blast 
+derived similarity, but as you shall see here, this is not the only possibility.
+
+Pangenomes have many uses, both as organisational tools and as a mean to get
+insight into the collective genomic information present within a group of
+organisms. An example of the former is to ensure an equal functional annotation
+of all genes within a set of genomes by annotating pangenome gene groups rather
+than single genes. An example of the latter is to use a pangenome together with 
+phenotypic information to discover new links between genes and phenotypes.
+
+Usually pangenomes are calculated from the result of blasting all genes in the 
+organisms under investigation against each other. This step is very 
+time-consuming due to the complexity of the BLAST algorithm and the need to 
+compare everything with everything (resulting in a quadratic scaling). 
+FindMyFriends generally takes a different approach by ditching BLAST altogether.
+In its absence FindMyFriends uses alignment free sequence comparisons, based on
+decomposition of the sequences into K-mer feature vectors. K-mers are words of
+equal length derived by sliding a window of size K over the sequence and a K-mer
+feature vector is simply the count of each unique word, as seen below
+
+```
+GATTCGATTAG  ->  ATT: 2
+                 CGA: 1
+                 GAT: 2
+                 TAG: 1
+                 TCG: 1
+                 TTA: 1
+                 TTC: 1
+```
+
+With this decomposition the problem of calculating sequence similarity is 
+reduced to a vector similarity problem, for which there are many different 
+solution. The one employed in FindMyFriends is called cosine similarity, which
+is effectively the cosine to the angle between the two vectors. If the vector
+space is strictly positive then the value is bound between 0 and 1 with 1 being
+100 % similarity.
+
+Apart from the use of K-mers over BLAST, FindMyFriends also advocate a different
+approach to how the grouping is performed. Normally the final (or close to 
+final) grouping is derived directly from the main similarity comparison step. In
+FindMyFriends this is turned around, and the main similarity step is very 
+coarse, resulting in very large gene groups, unsuited as a final result. These
+groups are then investigated in more detail with regards to the sequence 
+similarity, neighborhood similarity and sequence length. This division makes it
+possible to employ a very fast, but not very precise algorithm for the first 
+step, and only use time to investigate gene pairs with a high likelihood of 
+being equal. In the end this approach results in a linear scaling with regards
+to the number of genes, as well as a general speedup, and to my knowledge
+FindMyFriends is currently by far the fastest algorithm for creating pangenomes.
+
+FindMyFriends is flexible and there are many ways to go about creating 
+pangenomes - you can even specify them manually making it possible to import
+results from other algorithms into the framework. This vignette will only focus
+on the currently recommended approach.
+
+## Data to use in this vignette
+This vignette will use a collection of 10 different *Mycoplasma pneumonia* and
+*hyopneumonia* strains. These organisms have an appreciable small genome making 
+it easier to distribute and analyse.
+
+```{r, echo=TRUE, eval=TRUE}
+# Unpack files
+location <- tempdir()
+unzip(system.file('extdata', 'Mycoplasma.zip', package='FindMyFriends'),
+      exdir=location)
+genomeFiles <- list.files(location, full.names=TRUE, pattern='*.fasta')
+```
+
+# Creating a *Mycoplasma* pangenome
+
+## Creating a Pangenome object from a set of fasta files
+The first step in performing a pangenomic analysis with FindMyFriends is to load
+gene data into a Pangenome object. This is done with the aptly named `pangenome`
+function, which takes a list of fasta files, a boolean indicating whether the
+genes are translated and optionally information about the position of each gene
+on the chromosome and a boolean indicating whether to read all sequences into 
+memory. 
+
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+library(FindMyFriends)
+
+mycoPan <- pangenome(genomeFiles[1:9], 
+                     translated = TRUE, 
+                     geneLocation = 'prodigal', 
+                     lowMem = FALSE)
+mycoPan
+```
+
+The last parameters of the function call warrants some more explanation. Some of 
+the algorithms in FindMyFriends uses positional information and this must be
+supplied with the geneLocation parameter. This can be done in a number of ways: 
+As a data.frame with one row per gene, as a function that takes the header info 
+of each gene from the fasta file and returns a data.frame with on row per gene, 
+or as a string identifying the annotator used to find the gene (currently only 
+Prodigal is supported). The gene info has the following format (all columns 
+required):
+
+```{r, echo=TRUE, eval=TRUE}
+head(geneLocation(mycoPan))
+```
+
+The contig column holds information on the contig/chromosome on which the gene 
+is located, the start and stop columns gives the start and stop position of 
+translation and the strand column identifies on which strand the gene is 
+located. Additional columns are allowed, but is currently unused.
+
+The last parameter (lowMem) specifies whether all sequences should be read into
+memory (the default) or be kept as references to the original fasta files. The 
+latter is useful in cases where the size of the sequence data becomes 
+prohibitively large but is not needed for our little toy example.
+
+Metadata about the organisms can be added and queried using the `addOrgInfo` 
+method. For instance we might add some taxonomy data.
+
+```{r, echo=TRUE, eval=TRUE}
+library(reutils)
+orgMeta <- lapply(orgNames(mycoPan), function(name) {
+    uid <- esearch(name, 'assembly')
+    taxuid <- elink(uid, dbTo = 'taxonomy')
+    reutils::content(esummary(taxuid), as = 'parsed')
+})
+orgMeta <- lapply(lapply(orgMeta, lapply, unlist), as.data.frame)
+orgMeta <- do.call(rbind, orgMeta)
+
+mycoPan <- addOrgInfo(mycoPan, orgMeta)
+head(orgInfo(mycoPan))
+```
+
+The raw sequences are easily accessible as an XStringSet object, or split by
+organism into an XStringSetList object:
+
+```{r, echo=TRUE, eval=TRUE}
+genes(mycoPan)
+genes(mycoPan, split = 'organism')
+```
+
+Apart from that the object really needs some grouping before there is anything
+interesting to do with it.
+
+## Object defaults
+A lot of the methods in FindMyFriends contains similar parameters, and a lot of
+these. To save typing when doing the analyses, these parameters can be set on a
+per-object manner. At creation a set of defaults is already set, which can be 
+queried and modified:
+
+```{r, echo=TRUE, eval=TRUE}
+# Query current defaults
+head(defaults(mycoPan))
+
+# Set a new default
+defaults(mycoPan)$lowerLimit <- 0.6
+```
+
+Values supplied as arguments to a method will always override object defaults.
+
+## Calculating pangenomes
+Pangenome calculation is generally split into two steps; one focusing on a 
+coarse clustering of genes based on sequence similarity and one focusing on 
+refining this clustering by comparing sequences and chromosomal neighborhood 
+between genes in the clusters. Currently the fastest approach to the first step
+is based on the CD-Hit algorithm (`cdhitGrouping`), but other approaches exists 
+(`gpcGrouping` and `graphGrouping`). There is no advantages to using the slower 
+algorithms, so there use is generally not encouraged. `cdhitGrouping` works by
+repeatedly combining gene groups based on lower and lower similarity threshold. 
+At each step the longest member of each gene group is chosen as a representative
+for the group in the following step. You generally want to set the lowest 
+threshold rather low to ensure that genes belonging to the same group are 
+definitely clustered together.
+
+```{r, echo=TRUE, eval=TRUE, results='hide', message=FALSE}
+mycoPan <- cdhitGrouping(mycoPan, kmerSize = 5, cdhitIter = TRUE, nrep = 3)
+```
+
+Looking at our mycoPan object now reveals some additional information about the
+gene groups:
+
+```{r, echo=TRUE, eval=TRUE}
+mycoPan
+```
+
+This is not the end of our analysis, as these gene groups needs to be refined.
+The refinement step is done with the `neighborhoodSplit` function (or 
+`kmerSplit` if chromosomal position is unavailable). This function investigates
+each gene group and compares the member genes based on sequence similarity, 
+chromosomal neighborhood similarity, sequence length and genome mebership, and
+uses this information to build up a weighted graph with the member genes as 
+nodes. Edges reflect similarity and are only created if the two genes passes all
+thresholds with regards to the different comparisons. From this graph cliques 
+(complete subgraphs i.e. subgraphs were all nodes are connected to each other)
+are extracted sequentially, starting with the clique containing the highest
+weighted edges. This ensures that all members of the resulting gene groups share
+a similarity with all other members and avoids the inclusion of genes being very
+similar to a few genes but not all. After this main step highly similar gene 
+groups lying in parallel (sharing a gene group either up- or downstream) are 
+merged together to create the final grouping.
+
+```{r, echo=TRUE, eval=TRUE, results='hide', message=FALSE}
+mycoPan <- neighborhoodSplit(mycoPan, lowerLimit = 0.8)
+```
+
+As can be seen this step results in an increase in the number of gene groups:
+
+```{r, echo=TRUE, eval=TRUE}
+mycoPan
+```
+
+In general you should expect that the use of FindMyFriends will result in a 
+higher number of gene groups than other algorithms. This is due to its strict
+approach to defining similarity and in general you can expect the final result
+to be of very high quality.
+
+## Pangenome post-processing
+Once the pangenome has been calculated it is possible to perform a range of 
+different post-processing steps and analyses on results.
+
+### Paralogue linking
+FindMyFriend forcefully avoids grouping genes from the same genome together.
+While it is generally a boon to split up paralogue gene groups, as the genes 
+might have different functionality within the cell (and probably be under 
+different regulation), it can be nice to maintain a link between groups with a
+certain similarity. Such a link can be obtained by calculating a kmer similarity
+between representatives from each gene group. Once paralogue links have been 
+created they can be used when extracting raw sequences and the information will 
+be taken into account when calculating organism statistics. Furthermore it is 
+possible to merge paralogues into true gene groups (effectively undoing the 
+neighborhood splitting).
+
+```{r, echo=TRUE, eval=TRUE}
+mycoPan <- kmerLink(mycoPan, lowerLimit=0.8)
+
+genes(mycoPan, split='paralogue')[[1]]
+
+mycoPan
+collapseParalogues(mycoPan, combineInfo='largest')
+```
+
+### Removing genes
+Usually genes are detected automatically by programs suchs as Prodigal and 
+Glimmer, but while these programs are generally good, they are not perfect. A
+pangenome analysis can potentially reveal genes that, while annotated, are no
+longer functioning due to frameshifts etc. These will be apparant as members of
+gene groups that have vastly different length than the majority of the members.
+Removing such genes will in general improve whatever downstream analysis that
+the data will be used for. Using the `removeGene()` function it is possible to
+remove single or sets of genes from your pangenome object.
+
+```{r, echo=TRUE, eval=TRUE}
+# Remove a gene by raw index
+removeGene(mycoPan, ind=60)
+
+# Remove the first organism by index
+removeGene(mycoPan, organism=1)
+# or by name
+name <- orgNames(mycoPan)[1]
+removeGene(mycoPan, organism=name)
+
+# Remove the second member of the first gene group
+removeGene(mycoPan, group=1, ind=2)
+```
+
+## Investigating the results
+Having a nice structure around your pangenome data is just a part of a great
+framework - having a set of analyses at hand for investigating the results is
+another part. Luckily, by being part of Bioconductor and using the standard data
+representations, a lot of the functionality already provided in Bioconductor is 
+at your disposal. The two main data types that you might want to extract in 
+order to do further analysis is the pangenome matrix and raw sequences:
+
+```{r, echo=TRUE, eval=TRUE}
+# Get the pangenome matrix as an ExpressionSet object
+as(mycoPan, 'ExpressionSet')
+# or as a regular matrix
+as(mycoPan, 'matrix')[1:6, ]
+
+# Get all genes split into gene groups
+genes(mycoPan, split='group')
+```
+
+Apart from what is already available within Bioconductor, FindMyFriends also
+comes with a set of tools to investigate the results further. Two of these 
+calculates different statistics on the two main gene groupings in the dataset,
+namely gene groups and organisms. These functions are called `groupStat()`and 
+`orgStat()` and are very straightforward to use:
+
+```{r, echo=TRUE, eval=TRUE}
+groupStat(mycoPan)[[1]]
+
+head(orgStat(mycoPan))
+```
+
+To get a very broad overview of your result `plotStat()` can help you:
+
+```{r, echo=TRUE, eval=TRUE, fig.height=18, fig.width=9, fig.align='center'}
+plotStat(mycoPan, color='Species', type='qual', palette=6)
+```
+
+Three other plot functions exists to let you asses general properties of the 
+pangenome. `plotEvolution()` lets you follow the number of singleton, accessory
+and core genes as the number of organisms increases. Generally this type of plot
+is very biased towards the order of organisms, so while it is possible to supply
+a progression of organisms, the default approach is to create bootstraped values
+for the plot:
+
+```{r, echo=TRUE, eval=TRUE, fig.height=6, fig.width=9, fig.align='center'}
+plotEvolution(mycoPan)
+```
+
+`plotSimilarity()` creates a heatplot of the similarity matrix of the organisms
+in the pangenome. The similarity of two organisms is here defined as either the
+percent of shared genes or the cosine similarity of their total kmer feature
+vector. The ordering can be done manually or automatically according to a 
+hierachcal clustering:
+
+```{r, echo=TRUE, eval=TRUE, fig.height=9, fig.width=9, fig.align='center'}
+# Pangenome matrix similarity
+plotSimilarity(mycoPan)
+# Kmer similarity
+plotSimilarity(mycoPan, type='kmer', kmerSize=5)
+# No ordering
+plotSimilarity(mycoPan, ordering='none')
+```
+
+`plotTree()` Plots a dendrogram of the organisms in the pangenome based either 
+on the pangenome matrix or kmer counts. The tree can be augmented with 
+additional information from either orgInfo or supplied manually:
+
+```{r, echo=TRUE, eval=TRUE, fig.width=9, fig.height=9, fig.align='center'}
+plotTree(mycoPan, clust='ward.D2', dist='minkowski')
+plotTree(mycoPan, type='kmer', kmerSize=5, clust='ward.D2', 
+         dist='cosine', circular=TRUE, info='Species') + 
+    ggplot2::scale_color_brewer(type='qual', palette=6)
+```
+
+Apart from these general statistics it is possible to get the neighborhood of 
+any given gene group as a weighted graph to further investigate how the up- and 
+downstream genes are organised.
+
+```{r, echo=TRUE, eval=TRUE}
+library(igraph)
+getNeighborhood(mycoPan, group=15, vicinity=5)
+```
+
+The resulting graph object can be plotted and handled by the functionality of 
+the igraph package or plotted directly using FindMyFriends `plotNeighborhood()`
+method, which applies appropriate styling to the plot, making it easier to 
+interpret:
+
+```{r, echo=TRUE, eval=TRUE, fig.align='center', fig.height=9, fig.width=9}
+plotNeighborhood(mycoPan, group=15, vicinity=5)
+```
+
+### Panchromosomal analysis
+While pangenomes are often envisioned as presence/absence matrices, this is not
+the only way to organise the information. As chromosomal position is available
+in most circumstances, the information can also be converted into a 
+panchromosomal graph where each gene group is a vertex and chromosomal adjacency
+is weighted edges. The graph will generally be very sparse, consisting of long 
+strings of gene groups interspersed with regions of higher variability.
+
+```{r, echo=TRUE, eval=TRUE}
+pcGraph(mycoPan)
+```
+
+This graph structure can be used for a range of things and actually is the basis
+for the last part of the neighborhood splitting step (merging parallel gene 
+groups). Often local regions of high variability can point to insertion/deletion
+events, frameshifts, problems with the gene grouping (god forbid) or general
+regions of high chromosomal plasticity. These regions can of course be detected
+in FindMyFriends and investigated accordingly.
+
+```{r, echo=TRUE, eval=TRUE}
+localVar <- variableRegions(mycoPan, flankSize=6)
+localVar[[1]]
+plot(localVar[[1]]$graph)
+```
+
+## Additional tools
+What is explained above is just a small part of what is possible with 
+FindMyFriends. There are tie-ins with other packages such as 
+`r Biocpkg("PanVizGenerator")`, and support for functional annotation of gene 
+groups, to name a few. Go explore!
+
+## Session
+```{r, echo=TRUE, eval=TRUE}
+sessionInfo()
+```

@@ -1,0 +1,380 @@
+## Introduction
+
+DEComplexDisease is designed to find the differential expressed genes (DEGs) for complex diseases, which are characterized by the heterogeneous expression profiles. Different from the established DEG analysis tools, it does not assume the patients of complex diseases to share the common DEGs. By applying a bi-clustering algorithm, DEComplexDisease finds the DEGs shared by many patients. In this way, DEComplexDisease describes the DEGs of complex disease in a novel syntax, e.g. a gene list composed of 200 genes are differentially expressed in 30% percent of studied complex disease patients.
+
+Applying the DEComplexDisease analysis results, users are possible to find the patients affected by the same mechanism based on the shared signatures. This can be achieved by modelling the breakpoints of the bi-clustering analysis and enrichment analysis to the feature patients or genes, e.g. the patient carrying the same mutations. DEComplexDisease also supplies visualization tools for nearly all the output.
+
+## Package installation
+
+```
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("DEComplexDisease")
+```
+
+## Clear the session
+
+DEComplexDisease needs huge computing powers to do the whole analysis for the reasons that (1) it is designed for big data, which usually have hundreds of patients; (2) it implements a bi-clustering algorithm in many steps. Therefore, it is highly recommended to use multi-core parallel computing.
+
+In `DEComplexDisease` package, we use `mclapply` tool of `parallel` package to do the multiple process computing. Users just need set “cores = n” in the `DEComplexDisease` functions to make use of multi-core hardware, where is “n” is the core number.
+
+Before the analysis, it is better start a new session or run
+
+```
+rm(list=ls())
+```
+
+to clear the current session. Otherwise, the whole session will be copy to each process, which may consume Huge ROM memory. Once the memory is ran out, `DEComplexDisease` may report wrong results or other problems.
+
+In this manual, all the examples assume users to have a 4-core computer by setting `cores`=4.
+
+## Prepare input data
+
+`DEComplexDisease` takes two mandatory inputs: an expression matrix (exp) and a sample annotation vector (cl). The expression matrix can be the RNA-seq counts data or normalized microarray expression data. The samples annotation vector (cl) is a vector to indicate the disease states of samples. Mandatorily, `cl` has the same length and order with the columns of `exp`. `cl` only has two possible values: 1 and 0. 1 indicates the corresponding samples to be patients and 0 is control or normal samples. The optional input is the clinical annotation data, which can be use for visualization in Plot() function. The clinical annotation should have the `row.names` matched by the column names of `exp`.
+
+```
+library("DEComplexDisease")
+#load RNA-seq counts matrix
+data(exp)
+#load sample annotation vector
+data(cl)
+#load sample ER status annotation
+data(ann.er)
+exp[1:5,1:5]
+```
+
+```
+##          TCGA.D8.A27G.01A TCGA.A2.A04N.01A TCGA.A8.A096.01A
+## POLRMTP1               59                5               80
+## C6orf52                93               59               25
+## NDUFS6               3356             2160             3529
+## KCTD17                761              438              988
+## CEP126                510              317             1303
+##          TCGA.BH.A0BZ.01A TCGA.BH.A0E2.01A
+## POLRMTP1               91               58
+## C6orf52                40              196
+## NDUFS6               6269             2684
+## KCTD17                972              437
+## CEP126                497              199
+```
+
+```
+head(cl, 4)
+```
+
+```
+## TCGA.D8.A27G.01A TCGA.A2.A04N.01A TCGA.A8.A096.01A TCGA.BH.A0BZ.01A
+##                1                1                1                1
+```
+
+## Transform expression matrix into binary DEG matrix
+
+DEComplexDisease applies `bi.deg` function to estimate the distribution parameters that describes the gene expression profiles of control samples. The normal samples are collected based on `cl`. `bi.deg` has three methods to estimate the reference expression profiles of control samples: “edger”, “deseq2” or “normalized”. “edger” or “deseq2” is used for RNA-seq counts data by implementing the algorithms developed by [edgeR](http://bioconductor.org/packages/release/bioc/html/edgeR.html) or [DESeq2](http://www.bioconductor.org/packages/release/bioc/html/DESeq2.html). The dispersion (disp) and mean (mu) are estimated for each gene. The count number of \(x\_{i,j}\) is tested by
+
+```
+p=pnbinom(x, size=1/disp, mu=mu, lower.tail = F)
+```
+
+“normalized” is used for normalized RNA-seq or microarray data. The mean (mu) and standard deviation (sd) is estimated for each gene. The z-score and p-value is calculated by
+
+```
+  z=(x-mu)/sd
+  p=pnorm(z,lower.tail=F)
+```
+
+Using the p-value cutoff defined by the users, `bi.deg` assigns 1 or -1 to indicate the up- or down-regulated genes, where 1 is the up-regulated genes and -1 is the down-regulated genes. The other genes are assigned with 0. In this example,
+
+```
+deg=bi.deg(exp, cl, method="edger", cutoff=0.05, cores=4)
+```
+
+```
+## Design matrix not provided. Switch to the classic mode.
+```
+
+`bi.deg` returns a `deg` object, which is a matrix of 1,0 and -1. Users can use Plot() to view the analysis results.
+
+```
+Plot(deg, ann=ann.er, show.genes=row.names(deg)[1:5])
+```
+
+![plot of chunk unnamed-chunk-4](data:image/png;base64...)
+
+Here, users can use `show.genes` to display the selected genes. Otherwise, the `max.n` genes with maximum enrichment will be showed. In this example, we also use a `ann` to show the annotation for ER status of the patients.
+
+## Cross-validated patient-specific DEGs
+
+The DEGs from `bi.deg` have noises, e.g. the DEGs not associated with disease, when one sample is tested again references. The idea behind his analysis is that the disease associated DEGs are supposed to be observed in other patients. In another words, when there are enough samples, the patients can be used to cross-validation of high-confident DEGs. `deg.specific` implements a bi-clustering analysis algorithm to the binary DEG matrix to find the high-confident disease associated DEGs.
+
+`deg.specific` is used to find the cross-validated DEGs. Users only need to choose the proper minimum gene and minimum patient number by setting `min.genes` and `min.patients`. Please note that `min.patients` includes the seed patient itself.
+
+```
+res.deg=deg.specific(deg, min.genes=30, min.patients=5, cores=4)
+```
+
+If users only want to see the results some selected patients, use `test.patients` to reduce the computation time.
+
+```
+res.deg.test=deg.specific(deg, test.patients=colnames(deg)[1:10], min.genes=50,
+            min.patients=8, cores=4)
+```
+
+`deg.specific` returns a `deg.specific` object, which is a list comprising of the cross-validated DEGs and the support neighbors. If `test.patients` is set, a `deg.specific.test` object is returned. Users can use Plot() to visualize the `deg.specific` and `deg.specific.test` object. In Figure 2, we shows the validated DEGs in all used breast cancer patients.
+
+```
+Plot(res.deg, ann=ann.er, max.n=5 )
+```
+
+![plot of chunk unnamed-chunk-7](data:image/png;base64...)
+
+For `res.deg.test`, it can also be plotted :
+
+```
+Plot(res.deg.test, ann=ann.er, max.n=5)
+```
+
+![plot of chunk unnamed-chunk-8](data:image/png;base64...)
+
+## Patient-seeded modules
+
+In this work, the DEG modules refer to the DEG list shared by many patients. DEG modules are supposed to be the signatures of patients shared the similar causal mechanism. `seed.module` and `cluster.module` are designed to find such modules.
+
+Like `deg.specific`, `seed.module` carries out a bi-clustering analysis to the output of `bi.deg` using each patient as a seed. The difference is that this function has more complex setting and steps to predict DEGs modules shared by many patients.
+
+```
+seed.mod1 = seed.module(deg, res.deg=res.deg, min.genes=50, min.patients=20,
+                        overlap=0.85, cores=4)
+```
+
+or
+
+```
+seed.mod2 = seed.module(deg, test.patients=colnames(deg)[1:10], min.genes=50,
+                        min.patients=20, overlap=0.85,  cores=4)
+```
+
+No matter whatever the parameter setting is, `seed.module` will firstly try to find a modules shared by all the patients, where the final patient number may be less than the `min.patients` and gene number may be less than `min.genes`. If such module exists, it will named as `M0` and the module genes of `M0` will be removed from further discovery to module genes. That is to say, module genes of `M0` will not be included in other modules.
+
+The bi-clustering analysis is started by a DEG seed, composing of the DEGs of a patient. If `res.deg` is set, only the patients with cross-validated DEGs will be used as seeds and the seed will initialized with the cross-validated DEGs. Otherwise, all the patients will be used and all the DEGs are used as seed. The DEGs of patients will be gradually removed to check if the left seed are observed in `min.patients` when keeping the similarity is not less than `overlap`. `seed.module` will record the track of gene-patient number in the bi-clustering analysis, which is stored in a `curve` key of output for each patient. If `test.patients` is set, only the patients listed in `test.patients` are used as seed for bi-clustering analysis.
+
+`seed.module` will record the bi-clustering results at three scenarios:
+
+* `max.genes` records the patient and genes information when the seed is observed in `min.patient`.
+* `max.patients` stores the patient and gene information when `min.genes` are observed, which is also the terminated point of bi-clustering analysis.
+* `model` stores the gene/patient information when the gene-patients number `curve` has satisfied some modelling criteria defined by 'model.method', which may indicate the inclusion/exclusion of molecular mechanism.
+
+In current version, 'model.method' has four possible values: “slope.clustering”, “max.square”, “min.slope” and “min.similarity”, which indicate the different four different modelling methods:
+
+* `slope.clustering` has maximum slope changes, which may indicate the inclusion/exclusion of molecular mechanism;
+* `max.square` is the gene-patients number that has the maximum product;
+* `min.slope` has the minimum slope in gene-patient number curve;
+* `min.similarity` is the point with minimum similarity scores
+
+`seed.module` will return a 'seed.module' object. This is a list. It has one key with prefix of “decd”:
+
+* “decd.input”, the input information, including binary DEG matrix, test.patients and other parameter setting.
+
+It may have one key of “M0”:
+
+* “M0”, a modules shared by all the patients. In many cases, M0 is NULL when M0 is not predicted.
+
+Other keys are patient IDs, which are the modules predicted with DEG seed of the patient. Each one have several keys:
+
+* “curve”, the patient-gene number during bi-clustering analysis;
+* “max.genes”, the patient and genes when 'min.patients' is observed in bi-clustering analysis;
+* “max.patients”, the patient and genes when 'min.genes' is reached in bi-clustering analysis";
+* “model”, the patient and genes at the breakpoint of the `curve`;
+* “genes.removed”, the ordered genes that are removed from module during bi-clustering analysis;
+* “patients.added”, the ordered patients that are added to module during bi-clustering analysis
+
+The 'seed.module' object can visualized with Plot().
+
+```
+Plot(seed.mod1, ann=ann.er, type="model", max.n=5)
+```
+
+![plot of chunk unnamed-chunk-11](data:image/png;base64...)
+
+## Clustering patient-seeded modules
+
+For the big data, there are usually many patient samples and DEComplexDisease may predict too many patient-seeded modules. `cluster.module` is used to cluster the patient-seeded modules by a modified k-means based on their patient and gene signature similarity. The patients within the same cluster are ranked based on their connecting degrees so that to find the representative patient(s). if `vote.seed` is set as false, the bi-clustering analysis results of the representative patient will be used as the final results of the module. Otherwise, a generic seed will be generated by a voting method and the final results is predicted by bi-clustering analysis using the new seed. All the modules will marked as “M1”, “M2”, “M3”…
+
+```
+cluster.mod1 <- cluster.module(seed.mod1, cores=4)
+```
+
+or
+
+```
+cluster.mod2 <- cluster.module(seed.mod1, vote.seed=TRUE, cores=4)
+```
+
+`cluster.module` returns a `cluster.module` object.
+
+```
+sort(names(cluster.mod1), decreasing=TRUE)
+```
+
+```
+## [1] "decd.input"      "decd.clustering" "M4"              "M3"
+## [5] "M2"              "M1"              "M0"
+```
+
+```
+names(cluster.mod1[["decd.input"]])
+```
+
+```
+## [1] "overlap"       "deg"           "test.patients" "min.genes"
+## [5] "min.patients"  "model.method"  "vote.seed"
+```
+
+```
+names(cluster.mod1[["decd.clustering"]])
+```
+
+```
+## [1] "group"     "represent"
+```
+
+```
+names(cluster.mod1[["M1"]])
+```
+
+```
+## [1] "max.genes"      "max.patients"   "genes.removed"  "patients.added"
+## [5] "curve"          "seed"           "model"
+```
+
+A `cluster.module` has one key with prefix of “decd”:
+
+* “decd.input”, the input information, including binary DEG matrix, used.genes, used.patients and other parameter setting.
+
+Other keys has a prefix of “M”, which indicates modules. Each module have several keys:
+
+* “curve”, the patient-gene number during bi-clustering analysis;
+* “max.genes”, the patient and genes when `min.patients` is observed in bi-clustering analysis;
+* “max.patients”, the patient and genes when `min.genes` is reached in bi-clustering analysis";
+* “model”, the patient and genes at the breakpoint of the `curve`;
+* “genes.removed”, the ordered genes that are removed from module during bi-clustering analysis;
+* “patients.added”, the ordered patients that are added to module during bi-clustering analysis
+
+The `deg.module` can be visualized by Plot().
+
+```
+Plot(cluster.mod1, ann=ann.er, type="model", max.n=5)
+```
+
+![plot of chunk unnamed-chunk-15](data:image/png;base64...)
+
+## The patient and gene overlaps
+
+The DEG modules may have partial overlaps for either genes or patients. Use “module.overlap” to check the gene and patient overlap among modules. This function is useful to check the relationship of modules and to choose the proper modules during the exploratory discovery steps.
+
+```
+module.overlap(cluster.mod1, max.n=5)
+```
+
+![plot of chunk unnamed-chunk-16](data:image/png;base64...)
+
+## Module comparison
+
+`module.compare` is used to compare the modules from different studies, e.g. the different diseases or the different data for the same disease. In following examples, we calculated the modules for both ER+ and ER- breast cancer patients. The modules are compared with `module.compare`.
+
+```
+res.mod1 <- seed.module(deg[,1:26],  min.genes=50, min.patients=10, overlap=0.85, cores=4)
+res.mod1 <- cluster.module(res.mod1)
+res.mod2 <- seed.module(deg[,27:52], min.genes=50, min.patients=10, overlap=0.85, cores=4)
+res.mod2 <- cluster.module(res.mod2)
+```
+
+```
+module.compare(res.mod1, res.mod2, max.n1=5, max.n2=5)
+```
+
+![plot of chunk unnamed-chunk-18](data:image/png;base64...)
+
+Please note that, although this function is designed to do module comparison, it does not work to find the modules with distinct composition among conditions.
+
+## The curve for gene-patient number in module discovery
+
+In the module discovery steps, a bi-clustering algorithm is applied to the binary DEG matrix. The DEGs of seed patients are gradually removed to a number of `min.genes`, which may result to a increased patient number from `min.patients`. In the output of `deg.module` tool, the track of gene-patient number change is recorded as `curve` for each module.
+
+```
+names(cluster.mod1[["M1"]][["curve"]])
+```
+
+```
+## [1] "no.gene"    "no.patient" "score"
+```
+
+```
+head(cluster.mod1[["M1"]][["curve"]][["no.gene"]])
+```
+
+```
+## [1] 84 82 81 75 72 71
+```
+
+```
+head(cluster.mod1[["M1"]][["curve"]][["no.patient"]])
+```
+
+```
+## [1] 10 11 12 13 14 15
+```
+
+`module.curve` can show the patient-gene numbers in a simple way.
+
+```
+module.curve(cluster.mod1, "M1")
+```
+
+![plot of chunk unnamed-chunk-20](data:image/png;base64...)
+
+In this curve, `module.curve` highlights the points of “max.genes”, “model”,“max.patients”.
+
+## Modelling of patient-gene number in module discovery
+
+With the default setting, `deg.module` may fail to find the best breakpoints for the `model` of some modules. It is possible for users to modify the `model` results for all or some modules. `module.modelling` provides such a tool. It provides two manners to modify the modelling results by either setting `keep.gene.num` or change the `model.method`.
+
+Users can change the `model` results by manually setting the `keep.gene.num`, which is the the gene number where the `model` results is select. `keep.gene.num` can a integer value or a vector. If it is a integer number, all the modules will have the same `keep.gene.num` and this will change the modelling results for all the modules. If it is a vector, its elements should have module names as their names. Otherwise, only the first element will be used and all the modules will be set. When `keep.gene.num` is vector, it is not necessary to have the same length as modules. It is possible to only changes some of the modules. And the left modules will use the default setting.
+
+In current version, `model.method` has four possible values: “slope.clustering”, “max.square”, “min.slope” and “min.similarity”, which indicate the different four different modelling methods:
+
+* `slope.clustering` has maximum slope changes, which may indicate the inclusion/exclusion of molecular mechanisms.
+* `max.square` is the gene-patients number that has the maximum product;
+* `min.slope` is the point with minimum slope in gene-patient number curve;
+* `min.similarity` is based on the similarity scores and the point with minimum similarity scores is choosed.
+
+```
+x=c(50,40)
+names(x)<-c("M1","M3")
+new.cluster.mod1=module.modeling(cluster.mod1, keep.gene.num = x, model.method='slope.clustering',
+                                cores=4)
+#here, only "M1" and "M3" are modified
+new.cluster.mod1=module.modeling(cluster.mod1, keep.gene.num = 50)
+# here, all the modules are modified
+module.curve(new.cluster.mod1, "M1")
+```
+
+![plot of chunk unnamed-chunk-21](data:image/png;base64...)
+
+## Find the modules associated with feature patients or genes
+
+In complex diseases, many patients have the similar clinical trait or carry the same gene mutation. These feature patients are supposed to affected by the common mechanism. `model.screen` is used to find the modules that are potentially associated with the feature patients or genes.
+
+```
+module.screen(cluster.mod1, feature.patients=sample(colnames(deg),10))
+```
+
+![plot of chunk unnamed-chunk-22](data:image/png;base64...)
+
+```
+#search modules
+
+module.screen(seed.mod1, feature.patients=sample(colnames(deg),10),
+              method="fisher.test")
+```
+
+![plot of chunk unnamed-chunk-22](data:image/png;base64...)

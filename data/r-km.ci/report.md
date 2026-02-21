@@ -1,0 +1,17 @@
+# km.ci: Confidence Intervals for the Kaplan-Meier Estimator
+
+Computes various confidence intervals for the Kaplan-Meier
+        estimator, namely: Peto's CI, Rothman CI, CI's based on
+        Greenwood's variance, Thomas and Grunkemeier CI and the
+        simultaneous confidence bands by Nair and Hall and Wellner.</p>
+
+### Metadata
+- **Conda (r channel)**: https://anaconda.org/r/r-km.ci
+- **R-project (CRAN)**: https://cloud.r-project.org/web/packages/km.ci/index.html
+- **Home (project)**: https://CRAN.R-project.org/package=km.ci
+- **Package**: km.ci
+- **Version**: 0.5-6
+- **Author**: Ralf Strobl
+- **Maintainer**: Tobias Verbeke <tobias.verbeke at openanalytics.eu>
+- **Skill**: generated
+

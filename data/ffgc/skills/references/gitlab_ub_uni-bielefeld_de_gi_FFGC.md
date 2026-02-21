@@ -1,0 +1,1 @@
+AGGI Projects / FFGC · GitLab FFGC Project information Family Free Genome Comparison (FFGC) is a self-contained workflow system that provides functionality for all steps of a family-free gene order analysis starting from annotated genome sequences. Read more 286 Commits 2 Branches 7 Tags 5 Releases README BSD 2-Clause with views sentence Created on April 20, 2021 Loading

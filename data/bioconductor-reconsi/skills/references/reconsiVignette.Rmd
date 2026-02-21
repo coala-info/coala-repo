@@ -1,0 +1,184 @@
+---
+output:
+    rmarkdown::html_vignette:
+        toc: true
+        keep_md: true
+vignette: >
+    %\VignetteIndexEntry{Manual for the RCM pacakage}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+# reconsi package: vignette
+
+\setcounter{tocdepth}{5}
+\tableofcontents
+
+# Introduction
+
+The aim of this package is to improve simultaneous inference for correlated 
+hypotheses using collapsed null distributions. These collapsed null distributions 
+are estimated in an empirical Bayes framework through resampling. Wilcoxon rank sum test and two sample t-test
+are natively implemented, but any other test can be used.
+
+# Installation
+
+```{r installBioConductor, eval = FALSE}
+library(BiocManager)
+BiocManager::install("reconsi")
+```
+
+```{r installAndLoadGitHub, eval = FALSE}
+library(devtools)
+install_github("CenterForStatistics-UGent/reconsi")
+```
+
+```{r loadReconsi}
+suppressPackageStartupMessages(library(reconsi))
+cat("reconsi package version", as.character(packageVersion("reconsi")), "\n")
+```
+
+## General use
+
+We illustrate the general use of the package on a synthetic dataset. The default 
+Wilcoxon rank-sum test is used.
+
+```{r syntData}
+#Create some synthetic data with 90% true null hypothesis
+ p = 200; n = 50
+x = rep(c(0,1), each = n/2)
+ mat = cbind(
+ matrix(rnorm(n*p/10, mean = 5+x),n,p/10), #DA
+ matrix(rnorm(n*p*9/10, mean = 5),n,p*9/10) #Non DA
+ )
+ #Provide just the matrix and grouping factor, and test using the collapsed null
+ fdrRes = reconsi(mat, x)
+  #The estimated tail-area false discovery rates.
+  estFdr = fdrRes$Fdr
+```
+
+The method provides an estimate of the proportion of true null hypothesis, which 
+is close to the true 90%.
+
+```{r p0}
+fdrRes$p0
+```
+
+The result of the procedure can be represented graphically as follows:
+
+```{r plotNull}
+plotNull(fdrRes)
+```
+
+The approximate correlation matrix of test statistic in the univariate $h$ distribution can be visualized as follows:
+
+```{r plotApproxCovar}
+plotApproxCovar(fdrRes)
+```
+
+On the other hand, one can also view the full variance-covariance matrix of the test statistics as found by the resamples. Here we demonstrate how it can recover a block correlation structure in the data.
+
+```{r plotCovar}
+matBlock = mat
+matBlock[x==0,] = matBlock[x==0,] + rep(c(-1,2), each = n*p/4)
+fdrResBlock = reconsi(matBlock, x)
+plotCovar(fdrResBlock)
+```
+
+It is also possible to provide a custom test function, which must accept at
+least a 'y' response variable and a 'x' grouping factor. Additionally, quantile, distribution and density functions should be supplied for transformation through quantiles to z-values.
+
+```{r customFunction}
+ #With a custom function, here linear regression
+fdrResLm = reconsi(mat, x, B = 5e1,
+                      test = function(x, y){
+fit = lm(y~x)
+c(summary(fit)$coef["x","t value"], fit$df.residual)},
+distFun = function(q){pt(q = q[1], df = q[2])})
+```
+
+This framework also accepts more than 2 groups, and additional covariates 
+through the "argList" argument.
+
+```{r customFunction2}
+ #3 groups
+ p = 100; n = 60
+x = rep(c(0,1,2), each = n/3)
+mu0 = 5
+ mat = cbind(
+ matrix(rnorm(n*p/10, mean = mu0+x),n,p/10), #DA
+ matrix(rnorm(n*p*9/10, mean = mu0),n,p*9/10) #Non DA
+ )
+ #Provide an additional covariate through the 'argList' argument
+ z = rpois(n , lambda = 2)
+ fdrResLmZ = reconsi(mat, x, B = 5e1,
+ test = function(x, y, z){
+ fit = lm(y~x+z)
+ c(summary(fit)$coef["x","t value"], fit$df.residual)},
+distFun = function(q){pt(q = q[1], df = q[2])},
+ argList = list(z = z))
+```
+
+If the null distribution of the test statistic is not known, it is also possbile
+to execute the procedure on the scale of the original test statistics, rather 
+than z-values by setting zValues = FALSE. This may be numerically less stable.
+
+```{r kruskal}
+fdrResKruskal = reconsi(mat, x, B = 5e1,
+test = function(x, y){kruskal.test(y~x)$statistic}, zValues = FALSE)
+```
+
+Alternatively, the same resampling instances may be used to determine the marginal null distributions as to estimate the collapsed null distribution, by setting the "resamZvals" flag to true.
+
+```{r resamZvals}
+fdrResKruskalPerm = reconsi(mat, x, B = 5e1,
+test = function(x, y){
+ kruskal.test(y~x)$statistic}, resamZvals = TRUE)
+```
+
+When no grouping variable is available, one can perform a bootstrap as resampling procedure. This is achieved by simply not supplying a grouping variable "x". Here we perform a one sample Wilcoxon rank sum test for equality of the means to 0.
+
+```{r bootstrap}
+fdrResBootstrap = reconsi(Y = mat, B = 5e1, test = function(y, x, mu){
+                                      testRes = t.test(y, mu = mu)
+                                      c(testRes$statistic, testRes$parameter)}, argList = list(mu = mu0),
+                                  distFun = function(q){pt(q = q[1],
+                                                           df = q[2])})
+```
+
+## Case study
+
+We illustrate the package using an application from microbiology. The species
+composition of a community of microorganisms can be determined through 
+sequencing. However, this only yields compositional information, and knowledge 
+of the population size can be acquired by cell counting through flow cytometry.
+Next, the obtained species compositions can multiplied by the total population 
+size to yield approximate absolute cell counts per species. Evidently, this 
+introduces strong correlation between the tests due to the common factor. In 
+other words: random noise in the estimation of the total cell counts will affect 
+all hypotheses. Therefore, we employ resampling to estimate the collapsed null distribution, that will account for this 
+dependence.
+
+The dataset used is taken from Vandeputte _et al._, 2017 (see [manuscript](https://www.ncbi.nlm.nih.gov/pubmed/29143816)), a study on gut microbiome 
+in healthy and Crohn's disease patients. The test looks for differences in absolute abundance between healthy and diseased patients. It relies on the _phyloseq_ package, which is the preferred way to interact with our machinery for microbiome data.
+
+```{r Vandeputte}
+#The grouping and flow cytometry variables are present in the phyloseq object, they only need to be called by their name.
+data("VandeputteData")
+testVanDePutte = testDAA(Vandeputte, groupName = "Health.status", FCname = "absCountFrozen", B = 1e2L)
+```
+
+The estimated tail-area false discovery rates can then simply be extracted as
+
+```{r vandeputteFdr}
+FdrVDP = testVanDePutte$Fdr
+quantile(FdrVDP)
+```
+
+# Session info
+
+Finally all info on R and package version is shown
+
+```{r sessionInfo}
+sessionInfo()
+```

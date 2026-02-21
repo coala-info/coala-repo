@@ -1,0 +1,1 @@
+.wy-table-responsive table td { white-space: normal !important; } .wy-table-responsive { overflow: visible !important; }

@@ -1,0 +1,260 @@
+---
+title: "The *gcapc* user's guide"
+author: |
+  | Mingxiang Teng <mxteng@jimmy.harvard.edu>
+  | Rafael A. Irizarry <rafa@jimmy.harvard.edu>
+  | Department of Biostatistics, Dana-Farber Cancer Institute &
+  | Harvard T.H. Chan School of Public Health, Boston, MA, USA
+date: "`r Sys.Date()`"
+output:
+  BiocStyle::html_document:
+    toc: true
+bibliography: gcapc.bib
+graphics: yes
+vignette: >
+  %\VignetteIndexEntry{The gcapc user's guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignettePackage{gcapc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r para, echo = FALSE, results='hide'}
+BiocStyle::markdown()
+knitr::opts_chunk$set(dev="png",fig.show="hold",
+               fig.width=8,fig.height=4.5,fig.align="center",
+               message=FALSE,collapse=TRUE)
+set.seed(1)
+```
+
+# Introduction
+
+ChIP-seq has been widely utilized as the standard technology to detect
+protein binding regions, where peak calling algorithms were developed
+particularly to serve the analysis. Existing peak callers lack of power
+on ranking peaks' significance due to sequencing technology might undergo
+sequence context biases, *e.g.* GC bias. *gcapc* is designed to address this
+deficiency by modeling GC effects into peak calling. *gcapc* can also help
+refine the significance of peaks called by other peak callers, or correct
+the GC-content bias for a read count table for a predefined set of genomic
+regions across a series of samples. The *gcapc* package requires the
+inputs as one ChIP-seq BAM file (for peak calling/refining) or a read
+count table (for GC effects removal) as well as other optional parameters.
+
+A common analysis for peak calling/refining contains four steps.
+
+  1. Reads coverage. In this step, BAM file records will be converted to
+  coverages on basepair resolution for forward and reverse strands
+  separately.
+
+  1. Binding width estimation. This parameter is a measurement for the size
+  of protein binding region in crosslinked complexes of ChIP experiments.
+  Also, peak detection half size are estimated based on region signals from
+  two strands.
+
+  1. GC effects estimation. Generalized linear mixture models followed by EM
+  algorithms are performed to evaluate potential GC effects.
+
+  1. Peak calling/refining. For peak calling, enrichment scores are
+  evaluated by permutation analysis for significance. Peaks are reported
+  with enrichment scores and p-values. For peak refining, peaks called by
+  other peak callers should be provided as a GRanges object. New enrichment
+  significances are added as meta columns for the input peaks.
+
+For correcting GC effects on a count table, one step analysis based on
+function *refineSites* is enough.
+
+# Getting Started
+
+Load the package in R
+
+```{r library}
+library(gcapc)
+```
+
+# Preparing Inputs
+
+Preparing inputs for correcting GC effects on a count table should be easy by
+referring to the function man page. Here, we focus on inputs for peak calling
+and refining. The inputs could be as minimum as a path to a BAM file, which is
+an indexed alignment records for sequencing reads. However, additional
+options are encouraged to be specified to accelerate the analysis and
+improve the accuracy. The following set are the options which can be
+customized by users.
+
+  1. BAM records filtering options. In the function *read5endCoverage*,
+  reads can be filtered for selected chromosomes, mapping quality,
+  duplicate removal, etc. Downstream analysis could be highly accelerated
+  if only a subset of chromosomes are analyzed. This actually suggests
+  a divide and conquer strategy if one ChIP-seq experiment is extremely
+  deeply sequenced. In that case, analysis based on each chromosome
+  level could save lots of memory.
+
+  1. Sequencing fragments options. If one has prior knowledge on the
+  size of sequencing fragments. The optional arguments in function
+  *bindWidth* could be specified to limit searching in narrower
+  ranges; Or, this function can be omitted if binding width are known
+  in advance. Note that this binding width might not be equivalent to
+  the binding width of protein in biology, since it could be affected
+  by crosslinking operations.
+
+  1. Sampling size for GC effects estimation. The default is 0.05, which
+  means 5% of genome will be used if analysis is based on whole genome.
+  However, for smaller genomes or small subset of chromosomes, this size
+  should be tuned higher to ensure accuracy. Or, sample genome multiple
+  times, and use average estimation to aviod sampling bias. Note: larger
+  sample size or more sampling times result longer computation of
+  GC effects estimation.
+
+  1. GC ranges for GC effects estimation. As illustrated in the man pages,
+  GC ranges (*gcrange* parameter) should be carefully selected. The reason
+  is that regions with extremely low/high GC content sometimes act as
+  outliers, and can drive the regression lines when selected forground
+  regions are too few in mixture model fitting. This happens when
+  the studied binding protein has too few genome-wide binding events.
+
+  1. EM algorithm priors and convergence. Options for EM algorithms can
+  be tuned to accelerate the iterations.
+
+  1. Permutation times. As we suggested in the function help page, a
+  proper times of permutation could save time as well as ensuring accuracy.
+
+In this vignette, we will use enbedded file *chipseq.bam* as one example
+to illustrate this package. This file contains about ~80000 reads from
+human chromosome 21 for CTCF ChIP-seq data.
+
+```{r data}
+bam <- system.file("extdata", "chipseq.bam", package="gcapc")
+```
+
+# Peak Calling/Refining
+
+For details of the algorithms, please refer to our paper [@teng].
+
+## Reads coverage
+
+The first step is to generate the reads coverage for both forward and reverse
+strands. The coverage is based on single nucleotide resolution and uses only
+the 5' ends of BAM records. That means, if duplicates are not allowed, the
+maximum coverage for every nucleotide is 1.
+
+```{r rc5end}
+cov <- read5endCoverage(bam)
+cov
+```
+
+Obejct *cov* is a two-element list representing coverages for forward and
+reverse strands, respectively, while each element is a list for coverages
+on individual chromosomes.
+
+## Binding width
+
+The second step is to estimate the binding width and peak detection half
+window size of ChIP-seq experiment.
+This step could be omitted if binding width is known in advance. Binding
+width is further treated as the size of region unit for effective GC
+bias estimation and peak calling. Peak detection half
+window size is used to define width of flanking regions.
+
+If additional information is known from sequencing fragments, this step
+could be speeded up. For example, narrowing down the range size helps.
+
+```{r bdwidth1}
+bdw <- bindWidth(cov, range=c(50L,300L), step=10L)
+bdw
+```
+
+## GC effects
+
+This step performs GC effects estimation using the proposed models. It is
+noted that by allowing to display the plots, one can view intermediate
+results which provide you direct sense on your ChIP-seq data, such as the
+extent of GC effects. Also, the EM algorithms iterations are enabled by
+default to display the trace of log likelihood changes, and other
+notification messages are printed for courtesy.
+
+```{r gcbias}
+layout(matrix(1:2,1,2))
+gcb <- gcEffects(cov, bdw, sampling=c(0.25,1), plot=TRUE, model='poisson')
+```
+
+Here, 25% of windows were sampled with 1 repeat.
+The left figure provides the correlation between forward and reverse
+strands signals, by using the estimated binding width as region unit.
+The right figure shows the raw and predicted GC effects using mixture model.
+
+Two other options need to be noted here are *supervise* and *model*.
+If *supervise* option is specified as a GRanges object, it provides a set of
+potential peaks and allows more efficient sampling procedure. In detail, the
+two mixtures are sampled separately from forground (signal) and background
+regions. *model* option allows switching between Poisson and Negative Binomial
+distribution (default) in model fitting. Theoratically, Negative Binomial
+assumption is more accurate than poisson. Nevertheless, Poisson is a good
+approximation to Negative Binomial for GC effect estimation here, and shows
+much faster computing speed than Negative Binomial especially when the total
+number of selected bins is large.
+
+## Peak significance
+
+This is the last step for peak calling. It uses information generated in
+previous steps, calculates enrichment scores and performs permutation analysis
+to propose significant peak regions. Final peaks are formated into *GRanges*
+object, and meta columns are used to record significance. Additional
+notification messages are also printed.
+
+```{r gcapc, results='hide'}
+layout(matrix(1:2,1,2))
+peaks <- gcapcPeaks(cov, gcb, bdw, plot=TRUE, permute=100L)
+peaks <- gcapcPeaks(cov, gcb, bdw, plot=TRUE, permute=50L)
+```
+```{r gcapcpeaks}
+peaks
+```
+It is noted that here two tests using different number of permutation times
+results almost the same cutoff on enrichment scores, which suggests small
+number of permutations are allowed to save time. The left figure shows here
+the cutoff on enrichment scores based on 50 times of permutations, and
+right figure shows it based on 100 times of permutations. Note that we only
+used chromosome 21 for illustration, thus increased permutation times
+from default 5 to 50 here.
+
+## Peak refining
+In order to remove GC effects on other peak callers' outputs, this package
+provides function to refine enrichment significance for given peaks.
+Peaks have to be provided as a GRanges object. A flexible set of peaks are
+preferred to reduce potential false negative, meaning both significant
+(e.g. p<=0.05) and non-significant (e.g. p>0.05) peaks are preferred to be
+included. If the total number of peaks is not too big, a reasonable set of
+peaks include all those with p-value/FDR less than 0.99 by other peak callers.
+
+```{r refine, results='hide', fig.width=4.5}
+newpeaks <- refinePeaks(cov, gcb, bdw, peaks=peaks, permute=50L)
+plot(newpeaks$es,newpeaks$newes,xlab='old score',ylab='new score')
+```
+```{r refinepeaks}
+newpeaks
+```
+Here, two new meta columns are added into previous peaks (GRanges), including
+adjusted significance and p-values. It is noted that the new  enrichment
+scores are actually the same as previously calculated (figure above) since
+the peak regions were previously called by *gcapc*. In practice, peak regions
+and their significances called by other peak callers mostly would be different
+from *gcapc* if there is strong GC bias. If refining those peak significances,
+the improvement should be obvious as we showed in our paper.
+
+# Correcting GC Effects for A Count Table
+
+In this package, function *refineSites* is provided in case that some are more
+interested in correcting GC effects for pre-defined regions instead of peak
+calling. We used this function to adjust signals for ENCODE reported sites
+in our paper [@teng]. This function is eay-to-use, with a count table and
+corresponding genomic regions are the two required inputs. For detail of
+using this function, please read the function man page.
+
+# Summary
+
+In this vignette, we went through main functions in this package, and
+illustrated how they worked. By following these steps, users will be able to
+remove potential GC effects either for peak identification or for read
+count signals.
+
+# References

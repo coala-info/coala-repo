@@ -1,0 +1,1 @@
+The ARAGORN web site has moved to http://www.trna.se/ARAGORN/. You will be redirected in a few seconds.

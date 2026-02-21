@@ -1,0 +1,132 @@
+---
+title: "Introduction to snifter"
+author:
+  - name: Alan O'Callaghan
+    email: alan.ocallaghan@outlook.com
+package: snifter
+output:
+  BiocStyle::html_document:
+    toc_float: yes
+    fig_width: 10
+    fig_height: 8
+vignette: >
+  %\VignetteIndexEntry{Introduction to snifter}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    error = FALSE,
+    warning=FALSE,
+    message=FALSE,
+    collapse = TRUE,
+    comment = "#>"
+)
+library("BiocStyle")
+```
+
+# Introduction
+
+snifter provides an R wrapper for the [openTSNE](https://opentsne.readthedocs.io/en/latest/)
+implementation of fast interpolated t-SNE (FI-tSNE).
+It is based on `r Biocpkg("basilisk")` and `r CRANpkg("reticulate")`.
+This vignette aims to provide a brief overview of typical use 
+when applied to scRNAseq data, but it does not provide a comprehensive
+guide to the available options in the package.
+
+It is highly advisable to review the documentation in snifter and the 
+[openTSNE documentation](https://opentsne.readthedocs.io/en/latest/)
+to gain a full understanding of the available options.
+
+# Setting up the data
+
+We will illustrate the use of snifter by generating some toy data.
+First, we'll load the needed libraries, and set a random seed to
+ensure the simulated data are reproducible
+(note: it is good practice to ensure that a t-SNE embedding is robust
+by running the algorithm multiple times).
+
+```{r setup}
+library("snifter")
+library("ggplot2")
+theme_set(theme_bw())
+set.seed(42)
+
+n_obs <- 500
+n_feats <- 200
+means_1 <- rnorm(n_feats)
+means_2 <- rnorm(n_feats)
+counts_a <- replicate(n_obs, rnorm(n_feats, means_1))
+counts_b <- replicate(n_obs, rnorm(n_feats, means_2))
+counts <- t(cbind(counts_a, counts_b))
+label <- rep(c("A", "B"), each = n_obs)
+```
+
+# Running t-SNE
+
+The main functionality of the package lies in the `fitsne`
+function. This function returns a matrix of t-SNE co-ordinates. In this case,
+we pass in the 20 principal components computed based on the 
+log-normalised counts. We colour points based on the discrete 
+cell types identified by the authors.
+
+```{r run}
+fit <- fitsne(counts, random_state = 42L)
+ggplot() +
+    aes(fit[, 1], fit[, 2], colour = label) +
+    geom_point(pch = 19) +
+    scale_colour_discrete(name = "Cluster") +
+    labs(x = "t-SNE 1", y = "t-SNE 2")
+```
+
+# Projecting new data into an existing embedding
+
+The openTNSE package, and by extension snifter,
+also allows the embedding of new data into
+an existing t-SNE embedding.
+Here, we will split the data into "training"
+and "test" sets. Following this, we generate a t-SNE embedding
+using the training data, and project the test data into this embedding.
+
+```{r split}
+test_ind <- sample(nrow(counts), nrow(counts) / 2)
+train_ind <- setdiff(seq_len(nrow(counts)), test_ind)
+train_mat <- counts[train_ind, ]
+test_mat <- counts[test_ind, ]
+
+train_label <- label[train_ind]
+test_label <- label[test_ind]
+
+embedding <- fitsne(train_mat, random_state = 42L)
+```
+
+Once we have generated the embedding, we can now `project` the unseen test
+data into this t-SNE embedding.
+
+```{r plot-embed}
+new_coords <- project(embedding, new = test_mat, old = train_mat)
+ggplot() +
+    geom_point(
+        aes(embedding[, 1], embedding[, 2],
+            colour = train_label,
+            shape = "Train"
+        )
+    ) +
+    geom_point(
+        aes(new_coords[, 1], new_coords[, 2], 
+            colour = test_label,
+            shape = "Test"
+        )
+    ) +
+    scale_colour_discrete(name = "Cluster") +
+    scale_shape_discrete(name = NULL) +
+    labs(x = "t-SNE 1", y = "t-SNE 2")
+```
+
+
+# Session information {.unnumbered}
+
+```{r}
+sessionInfo()
+```

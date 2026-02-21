@@ -1,0 +1,69 @@
+---
+title: "Run PathoStat"
+author: "Solaiappan Manimaran, Yue Zhao"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+    %\VignetteIndexEntry{PathoStat intro}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+
+## Introduction
+
+PathoStat is a R shiny package, designed for performing 
+Statistical Microbiome Analysis on metagenomics results 
+from sequencing data samples. In particular, it supports 
+analyses on the PathoScope generated report files.
+
+The package includes:
+
+* Data Summary and Filtering 
+* Relative Abundance plots (Stacked Bar Plot, Heatmap)
+* Multiple species boxplot visualization
+* Diversity analysis (Alpha and Beta diversity)
+* Differential Expression (DEseq2, edgeR)
+* Dimension Reduction (PCA, PCoA)
+* Biomarker identification
+
+## Installation
+
+To begin, install [Bioconductor](http://www.bioconductor.org/) and simply
+run the following to automatically install PathoStat and all the dependencies 
+as follows.
+
+```r
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("PathoStat")
+```
+
+If you want to install the latest development version of PathoStat from Github, 
+use [devtools](https://github.com/hadley/devtools) to install it as follows:
+```r
+require(devtools)
+install_github("mani2012/PathoStat", build_vignettes=TRUE)
+```
+
+## Run Pathostat
+
+```{r eval=FALSE}
+require(PathoStat)
+runPathoStat()
+```
+
+
+# Session info
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
+

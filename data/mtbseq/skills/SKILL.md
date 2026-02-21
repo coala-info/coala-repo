@@ -1,0 +1,53 @@
+---
+name: mtbseq
+description: MTBseq is a semi-automated bioinformatics pipeline specifically tailored for the Mycobacterium tuberculosis complex (MTBC).
+homepage: https://github.com/ngs-fzb/MTBseq_source
+---
+
+# mtbseq
+
+## Overview
+MTBseq is a semi-automated bioinformatics pipeline specifically tailored for the Mycobacterium tuberculosis complex (MTBC). It streamlines the processing of raw Illumina sequencing data through a standardized workflow that includes read mapping, variant detection, and the functional annotation of mutations. Its primary value lies in its ability to consistently identify phylogenetic markers for lineage classification and known polymorphisms associated with drug resistance, making it a standard tool for both epidemiological surveillance and clinical research.
+
+## Installation and Environment
+The most reliable way to deploy MTBseq is via Conda. Note that the pipeline has strict dependency requirements, particularly regarding Java versions for GATK 3.8 compatibility.
+
+```bash
+# Recommended installation
+conda install -c bioconda mtbseq
+
+# Critical: If using version 1.0.4, you must downgrade picard to maintain compatibility
+conda install picard=2.27.5
+```
+
+**Expert Tip**: MTBseq requires **Java 8** (Oracle or OpenJDK). It will not function correctly with Java 9 or higher due to its reliance on GenomeAnalysisTK 3.8.
+
+## Common CLI Patterns
+
+### Initial Setup and Verification
+Before running a full analysis, verify that all third-party binaries and Perl modules are correctly detected by the pipeline.
+```bash
+MTBseq --check
+```
+
+### Variant Calling and Joining
+The pipeline typically operates in stages, starting from individual sample processing to the aggregation of results for comparative analysis.
+
+- **Processing Samples**: The main `MTBseq` command handles the mapping and initial variant calling.
+- **Aggregating Results**: Use the `TBjoin` functionality (often invoked through the main script or specific library modules) to merge individual sample data into a comprehensive project-wide table.
+- **Filtering for SNPs**: In version 1.1.0 and later, use the `--snp_vars` option during the join step to extract high-confidence SNPs from general variant files.
+
+### Workflow Best Practices
+1. **Input Preparation**: Ensure your Illumina FASTQ files follow standard naming conventions. The pipeline is designed to recognize paired-end data automatically.
+2. **Resource Management**: Since the pipeline involves mapping (BWA) and local realignment (GATK), ensure your environment has sufficient memory (typically 8GB+ per sample) and that `bwa` and `samtools` are in your PATH.
+3. **Handling Large Datasets**: For large cohorts, the `TBjoin` step can become a bottleneck. Ensure your `/tmp` directory has sufficient space, as GATK and Picard generate significant intermediate data.
+
+## Troubleshooting and Version Notes
+- **Version 1.1.0 Changes**: The `--all_vars` option has been deprecated/removed as it is now hardcoded into the necessary internal steps.
+- **GATK Errors**: If you encounter Java-related crashes, verify your version with `java -version`. You must see `1.8.x`.
+- **Bioconda Fixes**: If the bioconda version fails to find GATK, ensure you have registered the GATK jar if required by your specific environment's license configuration.
+
+## Reference documentation
+- [MTBseq Source Overview](./references/github_com_ngs-fzb_MTBseq_source.md)
+- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_mtbseq_overview.md)
+- [Version 1.1.0 Release Notes](./references/github_com_ngs-fzb_MTBseq_source_tags.md)

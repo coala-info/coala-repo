@@ -1,0 +1,196 @@
+---
+title: "Overview of Voyager"
+author: "Lambda Moses, Lior Pachter"
+date: "`r format(Sys.Date(), '%b %d, %Y')`"
+output:
+    BiocStyle::html_document:
+        toc: true
+        number_sections: true
+        toc_depth: 3
+        toc_float:
+            collapsed: true
+vignette: >
+  %\VignetteIndexEntry{Functionality overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", fig.align = "center"
+)
+```
+
+As including a more detailed vignette inside the package makes the package exceed the tarball size, more detailed vignettes are hosted on [an external website](https://pachterlab.github.io/voyager/index.html). This is a simplified vignette.
+
+# Installation
+This package can be installed from Bioconductor:
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager")) install.packages("BiocManager")
+BiocManager::install("Voyager")
+# Devel version
+# install.packages("remotes")
+remotes::install_github("pachterlab/Voyager")
+```
+
+# Introduction
+In non-spatial scRNA-seq, the [`SingleCellExperiment`](https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html) (SCE) package implements a data structure and other packages such as [`scater`](https://bioconductor.org/packages/release/bioc/html/scater.html) implement methods for quality control (QC), basic exploratory data analysis (EDA), and plotting functions, using SCE to organize the data and results. `Voyager` to [`SpatialFeatureExperiment`](https://bioconductor.org/packages/release/bioc/html/SpatialFeatureExperiment.html) (SFE) aims to be analogous `scater` to SFE, implementing basic exploratory _spatial_ data analysis (ESDA) and plotting. SFE inherits from SCE and [`SpatialExperiment`](https://bioconductor.org/packages/release/bioc/html/SpatialExperiment.html) (SPE), so all methods written for SCE and SPE can be used for SFE as well.
+
+In this first version, ESDA is based on the classic geospatial package [`spdep`](https://r-spatial.github.io/spdep/index.html), but future versions will incorporate methods from [`GWmodel`](https://cran.r-project.org/web/packages/GWmodel/index.html), [`adespatial`](https://cran.r-project.org/web/packages/adespatial/index.html), and etc. 
+
+These are the main functionalities of the `Voyager` at present:
+
+* Univariate global spatial statistics, such as Moran's I, Geary's C, permutation testing of I and C, correlograms, global G, and semivariogram.
+* Univariate local spatial statistics, such as local Moran's I, local Geary's C, Getis-Ord Gi\*, Moran scatter plot, and local spatial heteroscedasticity (LOSH).
+* Multivariate spatial statistics, such as MULTISPATI PCA and a multivariate generalization of local Geary's C.
+* Bivariate spatial statistics, such as Lee's L (global and local) and cross variograms.
+* Plotting gene expression and `colData` along with annotation geometries, with colorblind friendly default palettes. The actual geometries are plotted, not just centroids as in `Seurat`. The tissue image can be plotted behind the geometries.
+* Plotting permutation testing results and correlograms, multiple genes in the same plot, can color by gene, sample, or any other attribute.
+* Clustering correlograms and Moran's scatter plots
+* Plotting local spatial statistics in space
+* Plotting dimension reduction in space
+* Plotting spatial neighborhood graphs
+* Plotting variograms and variogram maps
+
+Future versions may add user friendly wrappers of some successful spatial transcriptomics data analysis packages for spatially variable genes, cell type deconvolution, and spatial regions on CRAN, Bioconductor, pip, and conda, to provide a uniform syntax and avoid object conversion, as is done in `Seurat` for some non-spatial scRNA-seq methods.
+
+# Dataset
+Here we use a mouse skeletal muscle Visium dataset from [Large-scale integration of single-cell transcriptomic data captures transitional progenitor states in mouse skeletal muscle regeneration](https://www.nature.com/articles/s42003-021-02810-x). It's in the `SFEData` package, as an SFE object, which contains Visium spot polygons, myofiber and nuclei segmentations, and myofiber and nuclei morphological metrics.
+```{r, message=FALSE}
+library(SFEData)
+library(SpatialFeatureExperiment)
+library(SpatialExperiment)
+library(ggplot2)
+library(Voyager)
+library(scater)
+library(scran)
+library(pheatmap)
+```
+
+This is the H&E image:
+```{r}
+if (!file.exists("tissue_lowres_5a.jpeg")) {
+    download.file("https://raw.githubusercontent.com/pachterlab/voyager/main/vignettes/tissue_lowres_5a.jpeg",
+                  destfile = "tissue_lowres_5a.jpeg")
+}
+```
+
+```{r}
+knitr::include_graphics("tissue_lowres_5a.jpeg")
+```
+
+```{r}
+sfe <- McKellarMuscleData()
+```
+
+This dataset was not originally in the standard Space Ranger output format, so we can't use `read10xVisiumSFE()`. But the image can be added later for plotting.
+
+```{r}
+sfe <- addImg(sfe, imageSource = "tissue_lowres_5a.jpeg", sample_id = "Vis5A", 
+              image_id = "lowres", scale_fct = 1024/22208)
+```
+
+The image needs to be flipped to match the spots, because the origin of the image is at the top left corner while the origin of the spots is at the bottom left.
+```{r}
+sfe <- mirrorImg(sfe, sample_id = "Vis5A", image_id = "lowres")
+```
+
+```{r}
+# Only use spots in tissue here
+sfe <- sfe[,colData(sfe)$in_tissue]
+sfe <- logNormCounts(sfe)
+sfe
+```
+
+# Univariate spatial statistics
+A spatial neighborhood graph is required for all `spdep` analyses.
+```{r}
+colGraph(sfe, "visium") <- findVisiumGraph(sfe)
+```
+
+All of the numerous univariate methods can be used with `runUnivariate()`, which stores global results in `rowData(sfe)` and local results in `localResults(sfe)`. Here we compute Moran's I for one gene. While Ensembl IDs are used internally, the user can specify more human readable gene symbols. A warning will be given if the gene symbol matches multiple Ensembl IDs.
+```{r}
+features_use <- c("Myh1", "Myh2")
+```
+
+```{r}
+sfe <- runUnivariate(sfe, type = "moran", features = features_use, 
+                     colGraphName = "visium", swap_rownames = "symbol")
+# Look at the results
+rowData(sfe)[rowData(sfe)$symbol %in% features_use,]
+```
+
+Since Moran's I is very commonly used, one can call `runMoransI` rather than `runUnivariate`.
+
+Compute a local spatial statistic, Getis-Ord Gi\*, which is commonly used to detect hotspots and coldspots. The `include_self` argument is only for Getis-Ord Gi\*; when set to `TRUE` Gi\* is computed as the spatial graph includes self-directing edges, and otherwise Gi is computed.
+```{r}
+sfe <- runUnivariate(sfe, type = "localG", features = features_use,
+                     colGraphName = "visium", include_self = TRUE, 
+                     swap_rownames = "symbol")
+# Look at the results
+head(localResults(sfe, name = "localG")[[1]])
+```
+
+Spatial statistics can also be computed for numeric columns of `colData(sfe)`, with `colDataUnivariate()`, and for numeric attributes of the geometries with `colGeometryUnivariate()` and `annotGeometryUnivariate()`, all with very similar arguments.
+
+# Bivariate spatial statistics
+Akin to `runUnivariate()` and `calculateUnivariate()`, the uniform user interface for bivariate spatial statistics is `runBivariate()` and `calculateBivariate()`. Here we find top highly variable genes (HVGs) and compute a spatially informed correlation matrix, with Lee's L. Note that global bivariate results can't be stored in the SFE object in this version of `Voyager`.
+
+```{r}
+gs <- modelGeneVar(sfe)
+hvgs <- getTopHVGs(gs, fdr.threshold = 0.01)
+```
+
+```{r}
+res <- calculateBivariate(sfe, "lee", hvgs)
+```
+
+```{r, fig.width=6, fig.height=6}
+pheatmap(res, color = scales::viridis_pal()(256), cellwidth = 1, cellheight = 1,
+         show_rownames = FALSE, show_colnames = FALSE)
+```
+Here we see groups of genes correlated to each other, taking spatial autocorrelation into account. This matrix can be used in WGCNA to find gene coexpression modules. Note that Lee's L of a gene with itself is not 1, because of a spatial smoothing factor.
+
+# Multivariate spatial statistics
+Multivariate spatial statistics also have a uniform user interface, `runMultivariate()`. The matrix results will go to `reducedDims`, while vector and data frame results can go into `colData`. Here we perform a form of spatially informed PCA, which maximizes the product of Moran's I and variance explained by each principal component. This method is called MULTISPATI, which is originally implemented in the `adespatial` package, but a much faster albeit less flexible implementation is used in `Voyager`. Because of the Moran's I, MULTISPATI can give negative eigenvalues, signifying negative spatial autocorrelation. The number of the most negative components to compute is specified in the `nfnega` argument.
+
+```{r}
+hvgs2 <- getTopHVGs(gs, n = 1000)
+sfe <- runMultivariate(sfe, "multispati", colGraphName = "visium", subset_row = hvgs2,
+                       nfposi = 10, nfnega = 10)
+```
+
+# Plotting
+Plot gene expression and `colData(sfe)` together with annotation geometry. Here `nCounts` is the total UMI counts per spot, which is in `colData`.
+```{r}
+plotSpatialFeature(sfe, c("nCounts", "Myh1"), colGeometryName = "spotPoly", 
+                   annotGeometryName = "myofiber_simplified", 
+                   aes_use = "color", linewidth = 0.5, fill = NA,
+                   annot_aes = list(fill = "area"), swap_rownames = "symbol")
+```
+
+Plot local results, with the image. The `maxcell` argument is the maximum number of pixels to plot from the image. If the image has more pixels than that, then it will be downsampled to speed up plotting.
+```{r}
+plotLocalResult(sfe, "localG", features = features_use, 
+                colGeometryName = "spotPoly", divergent = TRUE, 
+                diverge_center = 0, swap_rownames = "symbol",
+                image_id = "lowres", maxcell = 5e+4)
+```
+
+Plot the eigenvalues:
+```{r}
+ElbowPlot(sfe, ndims = 10, nfnega = 10, reduction = "multispati") + theme_bw()
+```
+
+
+Plot dimension reduction (projection of each cell's gene expression profile on each dimension) in space:
+```{r}
+spatialReducedDim(sfe, "multispati", ncomponents = 2, image_id = "lowres", 
+                  maxcell = 5e+4, divergent = TRUE, diverge_center = 0)
+```
+
+# Session info
+```{r}
+sessionInfo()
+```

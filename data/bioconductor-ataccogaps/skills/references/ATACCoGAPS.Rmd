@@ -1,0 +1,182 @@
+---
+title: "ATACCoGAPS"
+author: "Rossin Erbe"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ATACCoGAPS}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+## Introduction
+Coordinated Gene Association in Pattern Sets (CoGAPS) is a technique for latent space learning. CoGAPS is a member of the Nonnegative Matrix Factorization (NMF) class of algorithms. NMFs factorize a data matrix into two related matrices containing gene weights, the Amplitude (A) matrix, and sample weights, the Pattern (P) Matrix. Each column of A or row of P defines a feature and together this set of features defines the latent space among features and samples, respectively. In NMF, the values of the elements in the A and P matrices are constrained to be greater than or equal to zero. This constraint simultaneously reflects the non-negative nature of molecular data and enforces the additive nature of the resulting feature dimensions, generating solutions that are biologically intuitive to interpret (Seung and Lee (1999)).
+
+This package extends CoGAPS for usage with scATACseq data, allowing for summarization to genomic peaks or motifs as features for input into CoGAPS. A count matrix - peaks or motifs by cells is used as input, yielding patterns of accessibility that distinguish biological variation between cells.
+
+
+## Installation
+```{r, eval = FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("ATACCoGAPS")
+```
+
+## Package Overview
+```{r, message = FALSE}
+library(ATACCoGAPS)
+```
+
+
+To outline the ATACCoGAPS pipeline, we will use as an example data set single-cell ATAC sequencing data containing 10 cell lines, published by Schep et al, 2017. The data was downloaded from GEO accession number GSE99172 and preprocessed using dataSubsetBySparsity() from the ATACCoGAPS package to remove cells and peaks with more than 99% sparsity (more than 99% zeroes). We will use a subset of the data containing 50 random cells from each cell line and the top ~5000 most variable peaks as an example for this vignette.
+
+```{r}
+data("subsetSchepData")
+data("schepPeaks")
+data("schepCellTypes")
+```
+
+
+We use these data to set the hyperparameters of the CoGAPS algorithm. Here we tell CoGAPS to find 7 patterns in 10000 iterations of the algorithm. We use the sparseOptimization method as our data are sparse single-cell data. We run the algorithm distributed across the genome since we have more genomic features than cells (if it was the opposite we would set the distributed pattern to "single-cell"). We then input the peak and cell type information to be returned as part of our result object. 
+```{r}
+params <- CogapsParams(nPatterns=7, nIterations=10000, seed=42, sparseOptimization=TRUE, distributed="genome-wide", geneNames=schepPeaks, sampleNames=as.character(schepCellTypes))
+
+params
+```
+
+
+We now call CoGAPS via the R function. CoGAPS is a Bayesian Non-Negative Matrix Factorization algorithm (Fertig et al, 2010). It factorizes count matrices from RNA or epigenetic sequencing data and returns patterns which distinguish both features and samples, allowing for the discovery of regulatory differences between samples. In the case of scATAC-seq our features are usually peaks and our samples are indvidual cells.
+
+```{r, eval = FALSE}
+schepCogapsResult <- CoGAPS(data = subsetSchepData, params = params, nThreads = 1)
+```
+
+Without parallelization the above takes a little while to run, so we provide the pre-computed output object
+```{r}
+data("schepCogapsResult")
+```
+
+# Pattern Matrix Visualization
+
+The first quick visualization of CoGAPS results is generally plotting the Pattern Matrix (the output matrix which is patterns x cells). These plots allow us to determine which patterns differentiate which cell types.
+
+We can either plot each pattern indvidually
+```{r}
+#colors to plot by
+col <- viridis::plasma(n=12)
+
+
+cgapsPlot(cgaps_result = schepCogapsResult, sample.classifier = schepCellTypes, cols = col, ylab = "Pattern Weight")
+```
+
+Or all together in a heatmap
+```{r, fig.width=8, fig.height=8}
+heatmapPatternMatrix(cgaps_result = schepCogapsResult, sample.classifier = schepCellTypes, cellCols = col, col = viridis::magma(n=9))
+```
+
+We can note which patterns differentiate which cell types (for example that pattern 9 seems to be defining the LCL cells). If any patterns are unclear, such as pattern 5, we can perform a Wilcoxon Rank Sum test to determine which cell types are most significantly associated with the pattern.
+```{r}
+#get the pattern Matrix
+patMatrix <- getSampleFactors(schepCogapsResult)
+#perform a pairwise Wilcoxon test
+pairwise.wilcox.test(patMatrix[,5], schepCellTypes, p.adjust.method = "BH")
+```
+We see that pattern 5 is most strongly associated with the K562 cells.
+
+
+If we do not have pre-established cell annotations, we can cluster cells by pattern association.
+```{r, fig.width=8, fig.height=8}
+cellClass <- patternMarkerCellClassifier(schepCogapsResult)
+cellClasses <- cellClass$cellClassifier
+
+heatmapPatternMatrix(schepCogapsResult, as.factor(cellClasses), col = viridis::magma(n=9))
+```
+
+
+# Finding Regulatory Differences between Cell Types
+
+Now that we know which patterns distinguish which cell types, we can look at those same patterns in the amplitude matrix (peaks by patterns) to determine which peaks are differentially accessible between the patterns and thus which peaks are differentially accessible between the cell types.
+
+We can use the patternMarker Statistic (Stein-O'Brien et al, 2017) to find which peaks are most differentially accessible. To show the degree of differentiation, we can plot the most pattern differentiating peaks for each pattern from the original data.
+```{r, fig.width=8, fig.height=8}
+heatmapPatternMarkers(cgaps_result = schepCogapsResult, atac_data = subsetSchepData, celltypes = schepCellTypes, numregions = 5, colColors = col, col = viridis::plasma(n = 2))
+```
+
+
+
+# Pathway Based Analysis
+
+To make use of these pttern marker peaks, one option is to try to find genes that fall within these peaks and determine whether the accessibility of certain groups of genes suggests differential pathway activation. 
+```{r, message = FALSE}
+data("schepGranges")
+
+#loading TxDb of human genes
+library(Homo.sapiens)
+
+#find genes known to fall within thresholded patternMarker peaks for each pattern
+genes <- genePatternMatch(cogapsResult = schepCogapsResult, generanges = schepGranges, genome = Homo.sapiens)
+
+#download hallmark pathways using msigdbr
+library(dplyr)
+```
+
+```{r}
+pathways <- msigdbr::msigdbr(species = "Homo sapiens", category =
+                             "H") %>% dplyr::select(gs_name, gene_symbol) %>% as.data.frame()
+
+#match these pattern Gene sets to hallmark pathways, using an adjusted p-value threshold of 0.001.
+matchedPathways <- pathwayMatch(gene_list = genes, pathways = pathways, p_threshold = 0.001)
+
+lapply(matchedPathways, function(x) {x[4]})
+```
+Several patterns do not return Hallmark pathways at this level of significance, but those that do seem logical in the cell types those patterns differentiate. 
+
+
+
+# Motif/Transcription Factor Based Analysis
+
+The other way we can use pattern marker peak information is to match to DNA motifs and known Transcription Factor binding at those motifs.
+```{r}
+motifResults <- simpleMotifTFMatch(cogapsResult = schepCogapsResult, generanges = schepGranges, organism = "Homo sapiens", genome = "hg19", motifsPerRegion = 1)
+
+```
+
+We can get a summary of TF binding, generally having more confidence in those TFs that have higher numbers of motifs at which the same TF could bind.
+```{r}
+motifResults$tfMatchSummary[[1]]
+```
+
+
+We can also examine the accessibility of the TF itself in a cell type of interest in order to gather information on whether the TF is expressed to bind at accessible sites. We'll test the accessibility of EGR1 in monocytes as an example.
+```{r}
+#get peaks overlapping with the gene
+EGR1peaks <- geneAccessibility("EGR1", schepGranges, subsetSchepData, Homo.sapiens)
+
+#make binary accessibility matrix
+binaryMatrix <- (subsetSchepData > 0) + 0
+
+#find accessibility of those peaks relative to others among monocyte cells
+foldAccessibility(peaksAccessibility = EGR1peaks$EGR1, cellTypeList = schepCellTypes, cellType = "Monocyte", binaryMatrix = binaryMatrix)
+```
+EGR1 is 1.42 times more accessible than average in Monocytes
+
+
+## Session Info
+
+```{r, echo = FALSE}
+sessionInfo()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

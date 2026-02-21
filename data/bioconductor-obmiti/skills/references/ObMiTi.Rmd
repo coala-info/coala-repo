@@ -1,0 +1,282 @@
+---
+title: "Using ObMiTi"
+author: "Omar Elashkar"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+    %\VignetteIndexEntry{Using ObMiTi}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+# ObMiTi
+
+A  MusMus Dataset of Ob/ob and WT mice on different diets.
+
+# Overview
+
+In this document, we introduce the purpose of `ObMiTi` package,
+its contents and its potential use cases. This package is a 
+ dataset of RNA-seq samples. The samples are of
+6 ob/ob mice and 6 wild type mice divided further into High 
+fat diet and normal diet. From each mice 7 tissues has been analyzed.
+The duration of dieting was 20 weeks.
+
+The package document the data collection, pre-processing and 
+processing. In addition to the documentation the package contains the scripts
+that were used to generate the data object from the processed data. 
+This data is deposited as `RangedSummarizedExperiment` object
+and can be accessed through `ExperimentHub`.
+
+# Introduction
+
+## What is `ObMiTi`?
+
+It is an R package for documenting and distributing a  dataset. The 
+package doesn't contain any R functions.
+
+## What is contained in `ObMiTi`?
+
+The package contains two different things:
+
+1. Scripts for documenting/reproducing the data in `inst/scripts`
+2. Access to the final `RangedSummarizedExperiment` through `ExperimentHub`.
+
+## What is `ObMiTi` for?
+
+The `RangedSummarizedExperiment` object contains the `counts`, `colData`,
+`rowRanges` and `metadata` which can be used for the purposes of 
+differential gene expression and get set enrichment analysis.
+
+# Installation
+
+The `ObMiTi` package can be installed from Bioconductor using 
+`BiocManager`.
+
+```{r, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("ObMiTi")
+```
+
+
+# Generating `ObMiTi`
+
+
+## 1. RNA-Seq Analysis
+
+RNA-seq analysis of wild type, and ob/ob mice at 25 weeks of age (n = 3 mice per group) . 
+The sequencing library was constructed using Illumina’s TruSeq RNA Prep kit (Illumina Inc., San Diego, CA, USA), 
+and data generation was performed using the NextSeq 500 platform (Illumina Inc.) following the manufacturer’s protocol.
+
+## 2. Quality Control
+* Program: Trimmomatic (0.36)
+* Input: `*.fastq.gz` 
+* Options: PE ILLUMINACLIP:TruSeq3-PE.fa:2:30:10
+
+## 3. Aligning reads
+* Program: `HISAT2` (2.0.5)
+* Input: `*.fastq.gz` and `GRCm38` bowtie2 index for the mouse genome
+* Output: `*.
+* Options: defaults
+
+## 4. Counting
+* Program: `FeatureCount
+* Input: `*.bam`
+* Output: `MouseRNA-seq.txt`
+* Options: defaults
+
+
+## Processing
+
+The aim of this step is to construct a self-contained object with minimal 
+manipulations of the pre-processed data followed by a simple exploration
+of the data in the next section. 
+
+### Making a summarized experiment object `ob_counts`
+
+The required steps to make this object from the pre-processed data are 
+documented in the script and are supposed to be fully reproducible when run 
+through this package. The output is a `RangedSummarizedExperiment` object 
+containing the peak counts and the phenotype and features data and metadata.
+
+The `RangedSummarizedExperiment` contains 
+* The gene counts matrix `counts`
+* The phenotype data `colData`. The column `name` links samples 
+with the counts columns.
+* The feature data `rowRanges`
+* The metadata `metadata` which contain a `data.frame` of extra details about the sample collected and phenotype.
+
+## Exploring the `ob_counts` object
+
+In this section, we conduct a simple exploration of the data objects to show 
+the content of the package and how they can be loaded and used.
+
+```{r}
+# loading required libraries
+library(ExperimentHub)
+library(SummarizedExperiment)
+```
+
+
+```{r}
+# query package resources on ExperimentHub
+eh <- ExperimentHub()
+query(eh, "ObMiTi")
+
+# load data from ExperimentHub
+ob_counts <- query(eh, "ObMiTi")[[1]] 
+
+# print object
+ob_counts
+```
+
+
+The count matrix can be accessed using `assay`. Here we show the first five 
+entries of the first five samples.
+
+```{r}
+# print count matrix
+assay(ob_counts)[1:5, 1:5]
+```
+
+The phenotype/samples data is a `data.frame`, It can be accessed using `colData`.
+
+```{r}
+#  View Structure of counts
+str(colData(ob_counts))
+
+# Studies' metadata available
+names(colData(ob_counts))
+
+
+# Sample GSM ID (Same ob_counts$geo_accession)
+rownames(colData(ob_counts))
+
+# Sample strain, tissue and diet ID
+ob_counts$title
+
+# Frequencies of different diets
+table(ob_counts$diet.ch1)
+
+# Frequncies of tissues
+table(ob_counts$tissue.ch1)
+
+# crosstable of tissue and diet and stratify by genotype
+table(ob_counts$diet.ch1, ob_counts$tissue.ch1,ob_counts$genotype.ch1)
+
+
+# Summarize Numeric data
+summary(data.frame(colData(ob_counts)))
+```
+
+Other columns in `colData` are selected information about the samples/runs or
+identifiers to different databases. The following table provides the 
+description of each of these columns. Here are a brief description about the key columns.
+
+| col_name              | description                                              |
+|-----------------------|----------------------------------------------------------|
+| title                   | Sample title include strain, diet, tissue and replicate                                     |
+| genotype.ch1                 | the mice type; either ob/ob or WT                        |
+| diet.ch1                  | The diet type; either high fat (HFD) or Normal diet (ND) |
+| tissue.ch1               | tissue type. 7 tissues included*                         |
+
+|-----------------------|----------------------------------------------------------|
+\* Ao: arota, Ep=Epididymis; He=Heart; Hi=Hippocampus; 
+Hy=Hypothalamus; Li=Liver; Sk=Skeletal Muscle.
+
+
+Additional information about mice characteristics can be accessed from the `metadata`. The main dataframe passed is measures. You can access measures as:
+```{r}
+metadata(ob_counts)$measures
+```
+
+The information presented in `measures` table  is described in the table below:
+
+| col_name              | description                                              |
+|-----------------------|----------------------------------------------------------|
+| blood                 | Total blood volume                     |
+| weight                | mice weight                            |
+| fasting_glucose       | Fasting blood glucose measurement      |
+| brain                 | Brain  weight                          |
+| Li                    | Liver weight                           |
+| Ep                    | Epididymis weight                      |
+| mesentrec_fact        | Mesenteric fat weight                  |
+| reteroperitoneal_fact | Reteroperitoneal fat weight            |
+| ALT_UL                | ALT measurment (U/L)                   |
+| AST_UL                | AST measurement (U/L)                  |
+| T.Chol_mgdL           | Total cholesterol measurement  (mg/dL) |
+| FFA_uEql              | Free fatty acids measurement           |
+| Glucose_mgdL          | Glucose measrurement  (mg/dL)          |
+| Triglyceride_mgdL     | Triglyceride measurement (mg/dL)       |
+| Leptin_ngmL           | Leptin measurement   (ng/dL)           |
+| fat                   | Mice's fat mass by echo MRI            |
+| lean                  | Lean body mass  by echo MRI            |
+| free_water            | Free water measurement  by echo MRI    |
+| total water           | Total water measurement by echo MRI    |
+|-----------------------|----------------------------------------|
+
+The features data are a `GRanges` object and can be accessed using `rowRanges`.
+```{r}
+# print GRanges object
+rowRanges(ob_counts)
+```
+
+Notice there are two types of data in this object. 
+The first is the coordinates of the identified genes 
+`ranges(ob_counts)`. The second is the annotation of 
+the these genes `mcols(ob_counts)`.
+The following table show the description of the second
+annotation item. All annotations were obtained 
+using `biomaRt` package as described in the `inst/scripts`.
+
+
+| col_name  | description                                                       |
+|-----------|-------------------------------------------------------------------|
+| ranges    | The range of start and end of gene                                |
+| strand    | Either this gene is located on the positive or negative strand    |
+| gene_id   | Ensembl gene id                                                   |
+| entrez_id | Entrez gene id (if available)                                     |
+| symbol    | Common gene symbol (if available)                                 |
+| biotype   | The biological function of gene as classified by Ensembl database |
+|-----------|-------------------------------------------------------------------|
+
+
+# Example of using `ObMiTi`
+
+
+## Selecting Protein Coding genes
+```{r}
+se <- ob_counts[rowRanges(ob_counts)$biotype == 'protein_coding',]
+
+```
+
+## Plot first 100 genes
+
+```{r}
+plot(log(assay(se)[1:100,]))
+```
+
+
+
+# Citing `ObMiTi`
+For citing the package use:
+
+```{r citation, warning=FALSE, eval=FALSE}
+#citing the package
+citation("ObMiTi")
+```
+
+# Session Info
+
+```{r session_info}
+devtools::session_info()
+```

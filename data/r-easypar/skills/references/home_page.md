@@ -1,0 +1,69 @@
+[Skip to contents](#main)
+
+[easypar](index.html)
+1.0.0
+
+* [Get started](articles/easypar.html)
+* [Reference](reference/index.html)
+* Articles
+
+  [LSF array jobs with easypar](articles/lsf.html)
+  [PBSpro array jobs with easypar](articles/pbspro.html)
+* [Changelog](news/index.html)
+
+![](logo.png)
+
+# easypar
+
+`easypar` makes it easy to implement parallel computations in R. If youo have a function that carries out your desired computation, `easypar` will take care of the burden of turning that function into a runnable parallel piece of R code. The package offers two possible solutions for parallelisation. It can generate a parallel function call exploiting the `foreach` and `doParallel` paradigms for parallel computing, or can generate a ready-to-use array job for the popular LSF (Platform Load Sharing Facility) and Slurm workload manages for distributed high performance computing. With `easypar`, speeding up R computations through parallelism is a trivial task.
+
+#### Help and support
+
+[![](https://img.shields.io/badge/GitHub%20Pages-https://caravagnalab.github.io/easypar/-yellow.svg)](https://caravagnalab.github.io/easypar)
+
+---
+
+### Installation
+
+```
+# install.packages("devtools")
+devtools::install_github("caravagnalab/easypar")
+```
+
+---
+
+#### Copyright and contacts
+
+Cancer Data Science (CDS) Laboratory, University of Trieste, Italy.
+
+[![](https://img.shields.io/badge/CDS%20Lab%20Github-caravagnalab-seagreen.svg)](https://github.com/caravagnalab) [![](https://img.shields.io/badge/CDS%20Lab%20webpage-https://www.caravagnalab.org/-red.svg)](https://www.caravagnalab.org/)
+
+## Links
+
+* [Browse source code](https://github.com/caravagnalab/easypar/)
+* [Report a bug](https://github.com/caravagnalab/easypar/issues)
+
+## License
+
+* [Full license](LICENSE.html)
+* GPL (>= 3)
+
+## Citation
+
+* [Citing easypar](authors.html#citation)
+
+## Developers
+
+* Giulio Caravagna
+   Author, maintainer
+* [More about authors...](authors.html)
+
+## Dev status
+
+* [![R-CMD-check](https://github.com/caravagn/easypar/workflows/R-CMD-check/badge.svg)](https://github.com/caravagn/easypar/actions)
+* [![R-CMD-check](https://github.com/caravagn/easypar/workflows/pkgdown/badge.svg)](https://github.com/caravagn/easypar/actions)
+* [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+
+Developed by Giulio Caravagna.
+
+Site built with [pkgdown](https://pkgdown.r-lib.org/) 2.0.3.

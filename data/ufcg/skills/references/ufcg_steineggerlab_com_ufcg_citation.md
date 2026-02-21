@@ -1,0 +1,1 @@
+Cite UFCG Kim, D., Gilchrist, C. L., Chun, J., &amp; Steinegger, M. (2023). UFCG: database of universal fungal core genes and pipeline for genome-wide phylogenetic analysis of fungi. Nucleic Acids Research , 51 (D1), D777-D784. UFCG Home About Database Genes Species Pipeline Manual Tutorial Download Links GitHub Steinegger Lab License Cite us

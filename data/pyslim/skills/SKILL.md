@@ -1,0 +1,72 @@
+---
+name: pyslim
+description: pyslim is a Python interface designed to bridge the gap between SLiM (a forward-time population genetic simulator) and tskit.
+homepage: https://github.com/tskit-dev/pyslim
+---
+
+# pyslim
+
+## Overview
+pyslim is a Python interface designed to bridge the gap between SLiM (a forward-time population genetic simulator) and tskit. It allows researchers to perform computationally efficient "hybrid" simulations. Instead of running a forward simulation until every lineage coalesces, you can stop SLiM early and use pyslim to "recapitate" the tree sequence—simulating the remaining ancestral history backwards in time. It also provides tools to annotate tree sequences with SLiM-specific metadata, such as individual ages, sexes, and subpopulation spatial coordinates.
+
+## Installation
+Install via pip or conda:
+```bash
+pip install pyslim
+# OR
+conda install -c conda-forge pyslim
+```
+
+## Core Workflows and Best Practices
+
+### Loading and Initializing
+Always use `pyslim.load()` rather than `tskit.load()` when working with SLiM-generated files to ensure that SLiM-specific metadata is correctly parsed into a `SlimTreeSequence` object.
+
+```python
+import pyslim
+ts = pyslim.load("simulation.trees")
+print(f"Simulation tick: {ts.metadata['SLiM']['tick']}")
+```
+
+### Recapitation
+Recapitation is the most common use case. It attaches ancestral trees to the roots of a SLiM simulation. This is much faster than running SLiM until stationarity.
+
+*   **Best Practice**: Ensure the `recombination_rate` matches your SLiM simulation.
+*   **Best Practice**: Use a realistic `Ne` (effective population size) for the ancestral population.
+
+```python
+recap_ts = ts.recapitate(recombination_rate=1e-8, ancestral_Ne=1000)
+```
+
+### Adding Neutral Mutations
+To save time, simulate only selected mutations in SLiM and add neutral mutations afterward using `msprime` via the pyslim interface.
+
+```python
+import msprime
+# Add mutations with a specific rate
+mutated_ts = msprime.sim_mutations(recap_ts, rate=1e-8)
+```
+
+### Handling Metadata
+pyslim provides access to SLiM-specific attributes stored in the metadata of individuals, nodes, and populations.
+
+*   **Individuals**: Access SLiM-specific data like `age`, `sex`, and `flags`.
+*   **Nodes**: Identify which nodes are "simplified" or "vacant".
+*   **Populations**: Access subpopulation IDs used during the forward simulation.
+
+```python
+# Example: Accessing individual ages
+for ind in ts.individuals():
+    print(f"Individual {ind.id} age: {ind.metadata.age}")
+```
+
+### Nucleotide-Based Simulations
+If your SLiM simulation used a nucleotide model, ensure you handle the `nucleotide_based` flag. You can use `pyslim.nucleotide_at()` to check the state at specific positions.
+
+### Performance Tips
+*   **Simplification**: If your tree sequence is too large, use `ts.simplify()` to keep only the individuals of interest before performing heavy operations like recapitation.
+*   **Memory**: For very large tree sequences, avoid converting the entire genotype matrix to a NumPy array; use tskit's built-in iterators.
+
+## Reference documentation
+- [pyslim GitHub Repository](./references/github_com_tskit-dev_pyslim.md)
+- [pyslim Overview](./references/anaconda_org_channels_bioconda_packages_pyslim_overview.md)

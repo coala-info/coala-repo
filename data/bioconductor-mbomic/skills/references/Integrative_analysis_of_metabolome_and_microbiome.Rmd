@@ -1,0 +1,140 @@
+---
+title: "Integrative analysis of metabolome and microbiome"
+author: "Congcong Gong"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Integrative analysis of metabolome and microbiome}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  tidy = FALSE,
+  warning = FALSE,
+  message = FALSE
+)
+
+```
+
+```{r setup}
+library(mbOmic)
+```
+
+# Introduction
+
+The `mbOmic` package contains a set of analysis functions for microbiomics and metabolomics data, designed to analyze the inter-omic correlation between microbiology and metabolites, referencing the workflow of Jonathan Braun et al[^McHardy].
+
+[^McHardy]: McHardy, I. H., Goudarzi, M., Tong, M., Ruegger, P. M., Schwager, E., Weger, J. R., Graeber, T. G., Sonnenburg, J. L., Horvath, S., Huttenhower, C., McGovern, D. P., Fornace, A. J., Borneman, J., & Braun, J. (2013). Integrative analysis of the microbiome and metabolome of the human intestinal mucosal surface reveals exquisite inter-relationships. *Microbiome*, *1*(1), 17. <https://doi.org/10.1186/2049-2618-1-17>
+
+```{r}
+# knitr::include_graphics(system.file('extdata', 'intro.png', 'mbOmic'))
+```
+
+# Examples
+
+Load metabolites and OTU abundance data of plant.[^Huang] The OTU had been binned into genera level and were save as the metabolites_and_genera.rda file
+
+[^Huang]: Huang, W., Sun, D., Chen, L., & An, Y. (2021). Integrative analysis of the microbiome and metabolome in understanding the causes of sugarcane bitterness. Scientific Reports, 11(1), 1-11.
+
+```{r}
+path <- system.file('extdata', 'metabolites_and_genera.rda', package = 'mbOmic')
+
+load(path)
+```
+
+### Construct `mbSet` object.
+
+`bSet` is S4 class containing the metabolites abundance matrix.
+
+We can use `bSet` function to directly create `bSet` class.
+
+```{r}
+names(metabolites)[1] <- 'rn'
+m <- mSet(m = metabolites)
+m
+```
+
+There are some function to get or set information of a `bSet`, such as `samples` and `features`.
+
+Extract the samples names from `bSet` class by function `Samples`.
+
+```{r}
+samples(m)
+#[1] "BS1" "BS2" "BS3" "BS4" "BS5" "BS6" "SS1" "SS2" "SS3" "SS4" "SS5" "SS6"
+```
+
+### Remove bad analytes (OTU and metatoblites)
+
+Removal of analytes only measured in \<2 of samples can perform by `clean_analytes`.
+
+```{r}
+m <- clean_analytes(m, fea_num = 2)
+```
+
+### Generate metabolite module
+
+`mbOmic` can generate metabolite module by `coExpress` function. The `coExpress` function is the encapsulation of one-step network construction and module detection of `WGCNA` package. The `coExpress` function firstly pick up the soft-threshold. The `threshold.d` and `threshold` parameters are used to detect whether is $R^2$ changing and appropriate.
+
+If there are no appropriate threshold was detected and you do not set the `power` parameter, the `coExpress` will throw a error, "No power detected! pls set the power parameter". 
+
+```{r, fig.width= 6, fig.height= 5}
+net <- try({
+  coExpress(m,message = TRUE,threshold.d = 0.02, threshold = 0.8, plot = TRUE) 
+})
+class(net)
+```
+
+If you can't get a good scale-free topology index no matter how high set the soft-thresholding power, you can directly set the power value by the parameter `power`, **but should be looked into carefully**. The appropriate soft-thresholding power can be chosen based on the number of samples as in the table below (recommend by `WGCNA` package).
+
+| **Number of samples** | **Unsigned and signed hybrid networks** | **Signed networks** |
+|:---------------------:|:---------------------------------------:|:-------------------:|
+|         \<20          |                    9                    |         18          |
+|        20\~30         |                    8                    |         16          |
+|        30\~40         |                    7                    |         14          |
+|         \>40          |                    6                    |         12          |
+
+```{r}
+net <- coExpress(m,message = TRUE,threshold.d = 0.02, threshold = 0.8, power = 9)
+```
+
+
+### Calculate the Spearman metabolite-genera correlation
+
+you can calculate the correlation between metabolites and OTUs by `corr` function. It return a data table containing `rho`, `p value`, and `adjust p value`. Moreover, the `corr` can run in parallel mode.
+
+```{r}
+b <- genera
+names(b)[1] <- 'rn'
+b <- bSet(b=b)
+spearm <- corr(m = m, b = b, method = 'spearman')
+# head(spearm)
+spearm[p<=0.001]
+```
+
+### plot the network
+
+Finally, you can vaisulize the network by `plot_network` function, taking the `coExpress`and `corr` output. The orange nodes correspondes to OTU(genera)).
+
+
+```{r, fig.align='center', fig.width= 6, fig.height= 5, dpi=150}
+# svg('../inst/doc/network1.svg')
+plot_network(net, spearm[abs(rho) >= 0.8 & p <= 0.001], interaction = FALSE)
+# dev.off()
+```
+
+
+```{r, fig.align='center', fig.width= 6, fig.height= 5, dpi=150}
+plot_network(net, spearm[abs(rho) >= 0.8 & p <= 0.001], seed = 123, interaction = TRUE, return =  TRUE)
+# visSave(tmp, file = '../inst/doc/network2.html')
+```
+
+## SessionInfo
+```{r}
+devtools::session_info()
+```
+
+
+

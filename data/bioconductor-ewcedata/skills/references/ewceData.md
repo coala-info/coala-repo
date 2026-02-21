@@ -1,0 +1,105 @@
+# Data package for Expression Weighted Celltype Enrichment *EWCE*
+
+## Alan Murphy, Hiranyamaya (Hiru) Dash and Nathan Skene
+
+### 2025-11-06
+
+* [Citation](#chp:citation)
+* [Overview](#chp:overview)
+* [Data](#chp:data)
+* [References](#chp:references)
+
+# Citation
+
+If you use the EWCE package, please cite
+
+[Skene, et al. Identification of Vulnerable Cell Types in Major Brain Disorders Using Single Cell Transcriptomes and Expression Weighted Cell Type Enrichment.Front. Neurosci, 2016.](https://www.frontiersin.org/articles/10.3389/fnins.2016.00016/full)
+
+If you use the cortex/hippocampus single cell data associated with this package
+then please cite the following papers:
+
+[Zeisel, et al. Cell types in the mouse cortex and hippocampus revealed by single-cell RNA-seq. Science, 2015.](http://www.sciencemag.org/content/early/2015/02/18/science.aaa1934.abstract)
+
+# Overview
+
+The *EWCE* package is designed to facilitate expression weighted celltype enrichment analysis as described in our Frontiers in Neuroscience paper [@skene\_2016].
+
+The package was originally designed to work with the single cell cortical transcriptome data from the Linnarsson lab[Zeisel 2015](#ref-zeisel2015cell) which is available at <http://linnarssonlab.org/cortex/>. Using this package it is possible to read in any single cell transcriptome data, provided that you have a cell by gene expression matrix (with each cell as a seperate column) and a seperate annotation dataframe, with a row for each cell.
+
+The *EWCE* process involves testing for whether the genes in a target list have higher levels of expression in a given cell type than can reasonably be expected by chance. The probability distribution for this is estimated by randomly generating gene lists of equal length from a set of background genes.
+
+The *EWCE* method can be applied to any gene list. In the paper we reported it’s application to genetic and transcriptomic datasets, and in this vignette we detail how this can be done.
+
+# Data
+
+The data in the `ewceData` package are used throughout EWCE’s associated vignette to give insight into its functionality. These datasets are:
+
+* **cortex\_mrna** - Karolinska Cortex/Hippocamus dataset
+* **hypothalamus\_mrna** - Karolinska Hypothalamus dataset
+* **celltype\_data**/**ctd** - Subset of the genes from Karolinska cortex/hippocampus and hypothalamus single cell transcriptome datasets.
+* **example\_genelist** - A list of genes genetically associated with Alzheimer’s disease.
+* **mouse\_to\_human\_homologs** - Table of Human–>Mouse orthologs for all human genes, containing the MGI and HGNC symbols, Human and Mouse Entrez and Ensembl gene IDs for all human orthologs for mouse genes. Whenin the mouse genes are defined based on a list of all MGI markers from the [MGI website](http://www.informatics.jax.org/).
+* Example tables of differential expression. A list of genes found to be differentially expressed in:
+
+  + **tt\_alzh\_BA36** - the BA36 in Alzheimer’s disease.
+  + **tt\_alzh\_BA44** - the BA44 in Alzheimer’s disease.
+  + **tt\_alzh** - the BA46 in Alzheimer’s disease.
+
+All the data can be loaded by using the dataset name:
+
+```
+library(ewceData)
+```
+
+```
+ensembl_transcript_lengths_GCcontent <- ensembl_transcript_lengths_GCcontent()
+mouse_to_human_homologs <- mouse_to_human_homologs()
+all_mgi_wtEnsembl <- all_mgi_wtEnsembl()
+all_mgi <- all_mgi()
+all_hgnc_wtEnsembl <- all_hgnc_wtEnsembl()
+all_hgnc <- all_hgnc()
+example_genelist <- example_genelist()
+tt_alz <- tt_alzh()
+tt_alzh_BA36 <- tt_alzh_BA36()
+tt_alzh_BA44 <- tt_alzh_BA44()
+ctd <- ctd()
+schiz_genes <- schiz_genes()
+hpsd_genes <- hpsd_genes()
+rbfox_genes <- rbfox_genes()
+id_genes <- id_genes()
+cortex_mrna <- cortex_mrna()
+hypothalamus_mrna <- hypothalamus_mrna()
+alzh_gwas_top100 <- alzh_gwas_top100()
+mgi_synonym_data <- mgi_synonym_data()
+```
+
+This package also contains a single cell transcriptome (SCT) data from *“Cell types in the mouse cortex and hippocampus revealed by single-cell RNA-seq”, Science, 2015* with the expression and annotation data, formatted as a CTD object.
+
+Important note: The code (available in inst/scripts/make-data.R) to derive this data can be used on other downloaded paper’s data. Note you do NOT have to format your input single cell data like the Linnarsson data. Just read it into R such that you have an expression matrix and an annotation data frame. The three columns that you must have in the annotation data frame are “cell\_id”, “level1class” and “level2class”.
+
+To check the data, we can quickly plot the distribution of expression of a given gene across all the cell types:
+
+```
+library(ggplot2)
+library(cowplot)
+theme_set(theme_cowplot())
+```
+
+```
+cortex_mrna_dt <- cortex_mrna()
+gene="Necab1"
+cellExpDist = data.frame(e=cortex_mrna_dt$exp[gene,],
+                          l1=cortex_mrna_dt$annot[
+                            colnames(cortex_mrna_dt$exp),]$level1class)
+ggplot(cellExpDist) + geom_boxplot(aes(x=l1,y=e)) + xlab("Cell type") +
+  ylab("Unique Molecule Count") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+![plot of chunk unnamed-chunk-2](data:image/png;base64...)
+
+# References
+
+Zeisel A, Muñoz-Manchado AB, Codeluppi S, Lönnerberg P, La Manno G, Juréus A, Marques S, Munguba H, He L, Betsholtz C, others (2015).
+“Cell types in the mouse cortex and hippocampus revealed by single-cell RNA-seq.”
+*Science*, **347**(6226), 1138–1142.

@@ -1,0 +1,82 @@
+---
+title: "BioMart Gene Ontology Gene Sets Collections"
+author: "Zuguang Gu (z.gu@dkfz.de)"
+date: '`r Sys.Date()`'
+output: rmarkdown::html_document
+vignette: >
+  %\VignetteIndexEntry{BioMart Gene Ontology Gene Sets Collections}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r, echo = FALSE, message = FALSE}
+library(knitr)
+knitr::opts_chunk$set(
+    error = FALSE,
+    tidy  = FALSE,
+    message = FALSE,
+    echo = FALSE)
+library(GetoptLong)
+library(DT)
+library(BioMartGOGeneSets)
+```
+
+
+```{r}
+table = readRDS(system.file("extdata", "all_supported_organisms.rds", package = "BioMartGOGeneSets"))
+table$genesets = paste0("BP (", table$n_bp_genesets, "), CC (", table$n_cc_genesets, "), MF (", table$n_mf_genesets, ")")
+colnames(table)[colnames(table) == "n_gene"] = "genes"
+df_genes = table[table$mart == "genes_mart", c("dataset", "name", "version", "taxon_id", "genbank_accession", "genesets"), drop = FALSE]
+df_plants = table[table$mart == "plants_mart", c("dataset", "name", "version", "taxon_id", "genbank_accession", "genesets"), drop = FALSE]
+df_metazoa = table[table$mart == "metazoa_mart", c("dataset", "name", "version", "taxon_id", "genbank_accession", "genesets"), drop = FALSE]
+df_fungi = table[table$mart == "fungi_mart", c("dataset", "name", "version", "taxon_id", "genbank_accession", "genesets"), drop = FALSE]
+df_protists = table[table$mart == "protists_mart", c("dataset", "name", "version", "taxon_id", "genbank_accession", "genesets"), drop = FALSE]
+```
+
+Version information:
+
+```{r, echo = TRUE}
+BioMartGOGeneSets
+```
+
+
+
+# {.tabset}
+
+## Ensembl organisms (vertebrates) (`r nrow(df_genes)` organisms)
+
+```{r}
+datatable(df_genes, rownames = FALSE)
+```
+
+## Plants (`r nrow(df_plants)` organisms)
+
+```{r}
+datatable(df_plants, rownames = FALSE)
+```
+
+## Metazoa (`r nrow(df_metazoa)` organisms)
+
+```{r}
+datatable(df_metazoa, rownames = FALSE)
+```
+
+## Fungi (`r nrow(df_fungi)` organisms)
+
+```{r}
+datatable(df_fungi, rownames = FALSE)
+```
+
+## Protists (`r nrow(df_protists)` organisms)
+
+```{r}
+datatable(df_protists, rownames = FALSE)
+```

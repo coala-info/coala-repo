@@ -1,0 +1,76 @@
+shinyTANDEM: A graphical user interface for
+rTANDEM
+
+Frederic Fournier*, Arnaud Droit(cid:132)
+
+January 4, 2019
+
+Contents
+
+1 Licensing
+
+2 Introduction
+
+3 Words of caution
+
+4 shinyTANDEM typical usage
+
+2
+
+2
+
+2
+
+2
+
+*frederic.fournier@crchuq.ulaval.ca
+(cid:132)arnaud.droit@crchuq.ulaval.ca
+
+1
+
+1 Licensing
+
+This package is distributed under Gnu General Public License v3.
+
+2
+
+Introduction
+
+shinyTANDEM is a graphical user interface for rTANDEM that is based
+It is primarily
+on the shiny package and is displayed in a web browser.
+designed to visualize small to medium sized rTANDEM result objects, but
+it can also parse results that are in an xml ﬁle. The package also provides an
+interface for creating parameter objects, launching searches, or performing
+conversions between R objects and xml ﬁles.
+
+3 Words of caution
+
+The datasets visualized with shinyTANDEM are fully loaded into memory
+and are constantly mined for data. Given this, the graphical interface is best
+suited for the visualization of small to medium sized datasets. Even with
+datasets of acceptable size, it should be expected that your browser will be
+less responsive than it would be while browsing static pages on the web.
+
+shinyTANDEM can load dataset from RDS ﬁles or from xml ﬁles, but
+the user should take into consideration that loading a dataset from a xml
+ﬁle is equivalent to ﬁrst parsing the xml into an R object. Such parsing will
+go reasonably quickly for small ﬁles (up to a couple of MB), but will take
+considerable time for medium ﬁles (up to a couple hundres of MB). It is not
+advised to try to load a dataset directly from an xml ﬁle if the ﬁle is more
+than a couple hundreds MB in size. In such a case, use rTANDEM function
+GetResultFromXML to parse the xml ﬁle and to create an R object, then
+load this object in the graphical interface.
+
+4
+
+shinyTANDEM typical usage
+
+The graphical interface is launched with the function shinyTANDEM(). If an
+rTANDEM dataset is loaded in the session, it can be passed as a parameter
+to the function. The package comes with an example dataset (see exam-
+ple(shinyTANDEM)). To exit the GUI, use your interupt command (usually
+Ctrl+C or Esc).
+
+2
+

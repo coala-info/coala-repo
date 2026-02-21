@@ -1,0 +1,55 @@
+---
+name: snakemake-storage-plugin-fs
+description: The `snakemake-storage-plugin-fs` allows Snakemake to interface with a local filesystem as if it were a remote storage provider.
+homepage: https://github.com/snakemake/snakemake-storage-plugin-fs
+---
+
+# snakemake-storage-plugin-fs
+
+## Overview
+
+The `snakemake-storage-plugin-fs` allows Snakemake to interface with a local filesystem as if it were a remote storage provider. It uses `rsync` to manage data transfers, ensuring that files are efficiently moved or mirrored between the execution environment and a designated storage path. This is particularly useful for managing data persistence and retrieval in distributed computing setups where a shared filesystem is mounted across nodes.
+
+## Installation
+
+Install the plugin via Conda/Mamba from the Bioconda channel:
+
+```bash
+conda install -c bioconda snakemake-storage-plugin-fs
+```
+
+## Command Line Usage
+
+To use the filesystem storage plugin, specify it as the default provider or for specific files using the `fs` protocol.
+
+### Basic Configuration
+Set the plugin as the default storage provider and define the base path:
+
+```bash
+snakemake --default-storage-provider fs \
+          --storage-fs-prefix /path/to/storage/root \
+          --storage-fs-query "path/to/data"
+```
+
+### On-Demand Retrieval
+For workflows where data should only be retrieved when needed (e.g., to save disk space on a local node), the plugin supports symlinking instead of full rsync copies if the input is annotated as on-demand eligible.
+
+```bash
+snakemake --default-storage-provider fs \
+          --storage-fs-prefix /path/to/storage/root \
+          --storage-fs-on-demand
+```
+
+## Expert Tips and Best Practices
+
+- **Rsync Efficiency**: The plugin is optimized to use `rsync` arguments that preserve symlinks (copying the referent) while avoiding the unnecessary copying of permissions and ownership that might conflict with the destination directory's settings.
+- **Permission Management**: The plugin is designed to inherit ownership and permissions from the destination directory. If you are working in a shared group environment, ensure the target directory has the `setgid` bit set to maintain consistent group ownership.
+- **SLURM Integration**: When using this plugin within SLURM jobs, be explicit about the `prefix`. A common pitfall is confusion between the local scratch space and the remote-local storage prefix. Always verify that the `prefix` points to the persistent storage and not a transient job directory.
+- **Directory Merges**: Version 1.0.6+ includes fixes to clean up target paths before storage to prevent unintended directory nesting/merging during `rsync` operations.
+- **Latency Handling**: Note that as of version 1.0.0, `latency-wait` support was moved to Snakemake core. Use the standard `--latency-wait` flag in Snakemake to handle filesystem synchronization delays.
+
+## Reference documentation
+
+- [Snakemake Storage Plugin FS Overview](./references/anaconda_org_channels_bioconda_packages_snakemake-storage-plugin-fs_overview.md)
+- [GitHub Repository README](./references/github_com_snakemake_snakemake-storage-plugin-fs.md)
+- [Version Release Notes and Bug Fixes](./references/github_com_snakemake_snakemake-storage-plugin-fs_tags.md)

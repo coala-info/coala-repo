@@ -1,0 +1,443 @@
+# Introduction to CellBench
+
+Shian Su
+
+#### 2025-10-29
+
+# Contents
+
+* [1 Introduction](#introduction)
+* [2 Quick start](#quick-start)
+* [3 Downloading benchmark data](#downloading-benchmark-data)
+* [4 Key objects and concepts](#key-objects-and-concepts)
+  + [4.1 Function piping](#function-piping)
+  + [4.2 Mapping or list-apply](#mapping-or-list-apply)
+  + [4.3 List of datasets](#list-of-datasets)
+  + [4.4 List of functions](#list-of-functions)
+  + [4.5 Benchmark tibble and list-columns](#benchmark-tibble-and-list-columns)
+  + [4.6 Applying methods](#applying-methods)
+* [5 Advanced usage](#advanced-usage)
+  + [5.1 Multithreading](#multithreading)
+  + [5.2 Function return caching](#function-return-caching)
+  + [5.3 Constructing functions with parameter range](#constructing-functions-with-parameter-range)
+* [6 Summary](#summary)
+
+# 1 Introduction
+
+CellBench is a package to assist with creating benchmarks for single cell analysis methods. We provide functions for working with `SingleCellExperiments` objects and a framework for constructing benchmarks for different single cell datasets across different methods or combinations of methods.
+
+The aim of this package is to make it simpler for developers to construct combinatorial designs and provide a flat data structure to store the organised outputs of analysis methods. We provide some fully constructed benchmarking pipelines for a set of single-cell benchmark datasets, and we hope that the framework will allow users to easily construct benchmarks in an organised and expressive manner.
+
+For more realistic examples, run `cellbench_case_study()` to see a case study using CellBench.
+
+# 2 Quick start
+
+There are 3 fundamental components to the benchmarks in this package, `list`s of data, `list`s of functions and a `tibble` with a `list-column` that we will call a `benchmark_tbl`. For simplicity we use randomly generated data and simple functions, but hopefully it’s clear how the idea extends into more complex functions and benchmarks.
+
+As a motivating example, we will have a simple look at what count-per-million library size normalisation and log-transformation does for our MDS plots. In addition to `CellBench` we will require the `limma` package.
+
+```
+library(CellBench)
+library(limma)
+
+datasets <- list(
+    sample_10x = readRDS(cellbench_file("10x_sce_sample.rds"))
+)
+
+norm_method <- list(
+    none = counts,
+    cpm = function(x) t(t(1e6 * counts(x)) / colSums(counts(x)))
+)
+
+transform <- list(
+    none = identity,
+    log2 = function(x) log2(x+1)
+)
+```
+
+Now we have 3 `list`s.
+
+* A `list` of datasets. In this context it is a single `SingleCellExperiment`, but it can be any arbitrary object. Ideally all objects in the list are of the same type, this makes it success more likely when the same methods are applied across all datasets.
+* Two `list`s of functions. These are the functions that will perform one step of our pipeline stored neatly in a single object.
+  + The first list of functions will either extract the count (no normalisation) or perform count-per-million (cpm) library size normalisation.
+  + The second list of functions will wither return the object as-is (no transformation) or log2-transform the counts/cpm values with an offset of 1 to account for 0 counts/cpms.
+
+```
+res1 <- datasets %>%
+    apply_methods(norm_method)
+
+res1
+#> # A tibble: 2 × 3
+#>   data       norm_method result
+#>   <fct>      <fct>       <list>
+#> 1 sample_10x none        <int [3,000 × 60]>
+#> 2 sample_10x cpm         <dbl [3,000 × 60]>
+```
+
+So we see that we have a `result` for every combination of `data` and `norm_method` method applied. We can then apply the transform methods.
+
+```
+res2 <- res1 %>%
+    apply_methods(transform)
+
+res2
+#> # A tibble: 4 × 4
+#>   data       norm_method transform result
+#>   <fct>      <fct>       <fct>     <list>
+#> 1 sample_10x none        none      <int [3,000 × 60]>
+#> 2 sample_10x none        log2      <dbl [3,000 × 60]>
+#> 3 sample_10x cpm         none      <dbl [3,000 × 60]>
+#> 4 sample_10x cpm         log2      <dbl [3,000 × 60]>
+```
+
+Now the `result` column has been updated to reflect the matrix produced from each transform method applied each result from the previous table. Thus it is simple to generate combinatorial benchmarking schemes simply by successively applying further `list`s of functions.
+
+Finally we want to visualise the final results of each pipeline, here we will use `plotMDS` from the `limma` package and colour points by the `cell_line` column extracted from the `colData()` (column data) of the original data.
+
+To set this up we generate colours from the `cell_line` information in the original data. Then we use `pipeline_collapse()` to collapse the data and method names into a single columns to be used as the title in our plots.
+
+```
+# generate colour values from cell line information
+cell_line <- factor(colData(datasets$sample_10x)$cell_line)
+cell_line_col <- c("red", "blue", "green")[cell_line]
+
+collapsed_res <- res2 %>%
+    pipeline_collapse()
+
+collapsed_res
+#> # A tibble: 4 × 2
+#>   pipeline                 result
+#>   <fct>                    <list>
+#> 1 sample_10x » none » none <int [3,000 × 60]>
+#> 2 sample_10x » none » log2 <dbl [3,000 × 60]>
+#> 3 sample_10x » cpm » none  <dbl [3,000 × 60]>
+#> 4 sample_10x » cpm » log2  <dbl [3,000 × 60]>
+```
+
+We can then loop through the rows and generate plots showing how each combination of normalisation and transformation affects our MDS visualisation.
+
+```
+par(mfrow = c(2, 2)) # declare 2x2 plotting grid
+
+# loop through row of summarised pipeline table
+for (i in 1:nrow(collapsed_res)) {
+    title <- collapsed_res$pipeline[i]
+    expr_mat <- collapsed_res$result[[i]] # note the use of [[]] due to list
+
+    limma::plotMDS(
+        expr_mat,
+        main = title,
+        pch = 19, # draw circles rather than label name
+        col = cell_line_col
+    )
+}
+```
+
+![](data:image/png;base64...)
+
+```
+par(mfrow = c(1, 1)) # undo plotting grid for future plots
+```
+
+So we can see that applying a simple library size normalisation and log2 transform can dramatically improve the visual inference in our PCA plots.
+
+# 3 Downloading benchmark data
+
+This package provides access to the single cell mixology data produced by Tian et al. (2018). These can be accessed through the `load_*_data()` functions, when run for the first time they will download the data from the web. On subsequent runs they will load the data from a local cache.
+
+Each set of data is loaded as a list of SingleCellExperiment objects. They are grouped into the mixing strategy used to produce the datasets, each dataset within the same mixing strategy can be expected to have the same columns in their colData.
+
+```
+# loading the individual sets of data
+sc_data <- load_sc_data()
+mrna_mix_data <- load_mrna_mix_data()
+cell_mix_data <- load_cell_mix_data()
+
+# loading all datasets
+all_data <- load_all_data()
+```
+
+To clear the data from the local cache, you can run `clear_cached_datasets()`.
+
+```
+# removes all locally cached CellBench datasets
+clear_cached_datasets()
+```
+
+# 4 Key objects and concepts
+
+## 4.1 Function piping
+
+In this package many examples make heavy use of the pipe operator `%>%` from [magrittr](https://magrittr.tidyverse.org). This is useful for writing cleaner code that is easier to debug.
+
+```
+# the following two statements are equivalent
+f(x)
+x %>% f()
+
+# as are these
+f(x, y)
+x %>% f(y)
+
+# and these
+h(g(f(x)))
+x %>% f() %>% g() %>% h()
+
+# or these
+h(g(f(x, a), b), c)
+x %>% f(a) %>% g(b) %>% h(c)
+```
+
+We can see in the last example that with many functions composed together, the piped form reads from left to right and it’s clear which arguments belong to which function, whereas in the nested form it is more difficult to clearly identify what is happening. In general piping data into a function calls the function with the data serving as the first argument, more complex behaviour can be achieved and is describe on the [magrittr](https://magrittr.tidyverse.org) web page.
+
+## 4.2 Mapping or list-apply
+
+Lists in R are containers for a collection of arbitrary objects. In this package we encourage users to use lists as containers for a series of identically-typed objects, using them as if they were vectors for data types that vectors cannot contain. For example we store our datasets in lists of SingleCellExperiment objects and analysis methods in lists of functions, these data types would not be accepted within a vector.
+
+To work with lists we encourage using `lapply` or `purrr::map`, these allow functions to be applied to each element of a list and return the result in a list.
+
+```
+x <- list(
+    a = 1,
+    b = 2,
+    c = 3
+)
+
+lapply(x, sqrt)
+#> $a
+#> [1] 1
+#>
+#> $b
+#> [1] 1.414214
+#>
+#> $c
+#> [1] 1.732051
+```
+
+## 4.3 List of datasets
+
+The benchmarking workflow starts with a list of datasets, even if you only have one dataset you will need to store it in a list for workflow to function. In our example the dataset was a sample of the 10X cell mixture dataset.
+
+```
+sample_10x <- readRDS(cellbench_file("10x_sce_sample.rds"))
+
+# even with a single dataset we need to construct a list
+datasets <- list(
+    sample_10x = sample_10x
+)
+
+# we can add more datasets to the pipeline by adding to the list
+# here we have two datasets that are random samplings of the genes in the 10x
+# sample data
+datasets <- list(
+    subsample1_10x = sample_genes(sample_10x, n = 1000),
+    subsample2_10x = sample_genes(sample_10x, n = 1000)
+)
+
+# could have been any other kind of object as long as they are consistent
+datasets <- list(
+    set1 = matrix(rnorm(500, mean = 2, sd = 1), ncol = 5, nrow = 100),
+    set2 = matrix(rnorm(500, mean = 2, sd = 1), ncol = 5, nrow = 100)
+)
+```
+
+Any kind of object can be stored in a list, so there is great flexibility in what kind of starting point can be used for the benchmarking workflow.
+
+## 4.4 List of functions
+
+In R functions themselves are a type of object, so they too can be stored in lists, this is rarely used in common R but this allows very simple addition of methods.
+
+```
+# counts is a function that can be run with counts(x) here it is named
+# "none" as it denotes the lack of normalisation
+norm_method <- list(
+    none = counts,
+    cpm = function(x) t(t(1e6 * counts(x)) / colSums(counts(x)))
+)
+
+# "identity" is a useful function that simply returns its input
+# it allows the comparison between applying and not applying a method
+transform <- list(
+    none = identity,
+    log2 = function(x) log2(x+1)
+)
+```
+
+The key thing to note is that the function must be callable and take a single argument. This may mean you need to write a wrapper function or use `purrr::partial()` to fill in some arguments. For example both `mean` and `sd` have `na.rm` arguments, because the element of the list must itself be a function, simply writing something like `mean(na.rm = TRUE)` will not work, as it is an incomplete function call. Instead we have two main options:
+
+```
+# using anonymous function wrappers
+metric <- list(
+    mean = function(x) { mean(x, na.rm = TRUE) },
+    sd = function(x) { sd(x, na.rm = TRUE) }
+)
+
+# using purrr partial function
+partial <- purrr::partial # explicit namespacing to avoid ambiguity
+metric <- list(
+    mean = partial(mean, na.rm = TRUE),
+    sd = partial(sd, na.rm = TRUE)
+)
+
+# example use with kmeans
+clustering <- list(
+    kmeans_4 = partial(kmeans, centers = 4),
+    kmeans_5 = partial(kmeans, centers = 5),
+    kmeans_6 = partial(kmeans, centers = 6)
+)
+```
+
+`purrr::partial()` is known as partial-application of a function: it takes a function and arguments to that function, then returns a new function that is the function with the provided arguments filled in. This is slightly more explicit than creating the function wrapper, since the function wrapper can perform many more tasks within its body than just setting arguments, whereas `purrr::partial()` makes it clear all you’re doing is setting some arguments.
+
+## 4.5 Benchmark tibble and list-columns
+
+The `benchmark_tbl` is a very light wrapper around the standard tibble provided by `tibble::tibble()`. This is like a regular `data.frame()` except it has some pretty printing features that are particularly useful for [list-columns](https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html). A list column is a special type of column where the values are not atomic, i.e. cannot be stored in a vector. This allows arbitrary data types to be stored in a column but with the caveat that pulling out that column returns a list rather than a vector. This has implications for how to perform mutations using `dplyr` verbs and in general will not behave expectedly with vectorised functions.
+
+In the framework established by this package, the first column will be the name of the data, followed by columns specifying the names of the analysis steps and ending with a list-column containing the result of the specified dataset after processing by the chain of analysis methods.
+
+```
+class(res2)
+#> [1] "benchmark_tbl" "tbl_df"        "tbl"           "data.frame"
+```
+
+Because they are tibbles, they respond well to `dplyr` verbs, or most regular `data.frame` manipulations.
+
+```
+res2 %>% dplyr::filter(norm_method == "cpm")
+#> # A tibble: 2 × 4
+#>   data       norm_method transform result
+#>   <fct>      <fct>       <fct>     <list>
+#> 1 sample_10x cpm         none      <dbl [3,000 × 60]>
+#> 2 sample_10x cpm         log2      <dbl [3,000 × 60]>
+```
+
+## 4.6 Applying methods
+
+The final idea that ties together the CellBench framework is the `apply_methods()` function, which takes a `benchmark_tbl` and applies a `list` of functions. The result is that each row is processed through each method, a new column is added specifying the method applied and the result is updated to the new value.
+
+```
+# datasets
+datasets <- list(
+    sample_10x = readRDS(cellbench_file("10x_sce_sample.rds"))
+)
+
+# first set of methods in pipeline
+norm_method <- list(
+    none = counts,
+    cpm = function(x) t(t(1e6 * counts(x)) / colSums(counts(x)))
+)
+
+# second set of methods in pipeline
+transform <- list(
+    none = identity,
+    log2 = function(x) log2(x+1)
+)
+
+datasets %>%
+    apply_methods(norm_method)
+#> # A tibble: 2 × 3
+#>   data       norm_method result
+#>   <fct>      <fct>       <list>
+#> 1 sample_10x none        <int [3,000 × 60]>
+#> 2 sample_10x cpm         <dbl [3,000 × 60]>
+```
+
+`apply_methods` takes the name of the variable holding the methods list and puts uses it as the column name for those methods, and the names of the methods within the list are used as the values in that column. The `data` column will store the name of the names within the dataset list, but not inherit the name of the variable holding the dataset list.
+
+The way that the `apply_methods` is written means that you can simply pipe data through the methods without saving any intermediate results.
+
+```
+datasets %>%
+    apply_methods(norm_method) %>%
+    apply_methods(transform)
+#> # A tibble: 4 × 4
+#>   data       norm_method transform result
+#>   <fct>      <fct>       <fct>     <list>
+#> 1 sample_10x none        none      <int [3,000 × 60]>
+#> 2 sample_10x none        log2      <dbl [3,000 × 60]>
+#> 3 sample_10x cpm         none      <dbl [3,000 × 60]>
+#> 4 sample_10x cpm         log2      <dbl [3,000 × 60]>
+```
+
+# 5 Advanced usage
+
+## 5.1 Multithreading
+
+Application of methods can be done in parallel, this is done by setting the global threads used by CellBench. This option may cause conflicts if the applied methods have their own internal parallelism. If any of the methods have internal parallelism then it is recommended to leave CellBench in single threaded mode.
+
+**CAUTION**: Multi-threading with CellBench uses significantly more memory than one might expect, each thread can potentially make a full copy of all data in the environment. Be aware of this when working on memory-intensive tasks.
+
+```
+# set cellbench to use 4 threads
+set_cellbench_threads(4)
+```
+
+## 5.2 Function return caching
+
+CellBench can use the `memoise` to cache function results so that calling functions with the same arguments simply loads results from the local cache rather than repeating computation. Because of the atypical way that CellBench calls functions (as a member of a list), caching in memory using memoise doesn’t appear to work, so it is necessary to cache on disk.
+
+To use function return value caching in CellBench we first declare a folder to store our return values and then replace our regular methods with their cached versions.
+
+**NOTE**: Caching a method that has pseudo-random behaviours means that the same result will be retrieved from the cache, negating the pseudo-random property of the method. This is generally undesirable.
+
+**CAUTION**: Be careful when using caching with multiple threads, if more than one instance of a function runs with the exact same arguments, then the instances will attempt to write to the cache simultaneously and corrupt it.
+
+**CAUTION**: Since only the function call signature and input value is considered for retrieving cached results, if the body of the underlying function is altered then CellBench will retrieve an outdated result.
+
+**CAUTION**: As each result is save to disk, be careful with caching functions that produce large output and need to be run on many different inputs.
+
+```
+set_cellbench_cache_path(".CellBenchCache")
+methods <- list(
+    method1 = cache_method(method1),
+    method2 = cache_method(method2)
+)
+```
+
+The function cache can be cleared using `clear_cellbench_cache()`. This will only work if the cache was set in the same session as it is cleared. Otherwise the cache folder will need to be located manually and deleted.
+
+```
+# clears the cache set by set_cellbench_cache_path() in the same session
+clear_cellbench_cache()
+```
+
+## 5.3 Constructing functions with parameter range
+
+CellBench provides a helper function `fn_arg_seq` to create a list of functions with varying parameters values, making it easy to search out the parameters space.
+
+It takes a function as its first argument, then vectors of argument values with the name of the argument used by the function. A list of functions is returned with the specified argument filled in using each value in the vector. If multiple argument vectors are given then a vector of functions is returned with each combination of parameter values applied.
+
+```
+# f is a function of three parameters
+f <- function(x, y, z) {
+    x + y + z
+}
+
+# f_list is a list of functions with two of the parameters pre-filled
+f_list <- fn_arg_seq(f, y = 1:2, z = 3:4)
+
+f_list
+#> List of 4 partial functions
+#>  $ f(y = 1, z = 3)
+#>  $ f(y = 2, z = 3)
+#>  $ f(y = 1, z = 4)
+#>  $ f(y = 2, z = 4)
+```
+
+```
+names(f_list)[1]
+#> [1] "f(y = 1, z = 3)"
+g <- f_list[[1]]
+g(10)
+#> [1] 14
+
+names(f_list)[2]
+#> [1] "f(y = 2, z = 3)"
+h <- f_list[[2]]
+h(20)
+#> [1] 25
+```
+
+# 6 Summary
+
+CellBench provides a lightweight and flexible framework for working with benchmarks that have multiple steps and result in combinatorial designs for application of methods. It makes use of simple and transparent R objects that are easy to understand and manipulate, using basic data and function list constructs as its input. The resulting tables are compatible with the popular `dplyr` manipulations and in general encourages a clean coding style that is easy to understand, debug and extend.

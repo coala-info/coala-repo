@@ -1,0 +1,488 @@
+---
+title: "Retrofit Colon Vignette"
+author: "Adam Keebum Park, Roopali Singh"
+date: "`r Sys.Date()`"
+output: BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Retrofit Colon Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = '##', results = 'markup', warning = FALSE)
+```
+
+# Introduction
+
+Spatial transcriptomic (ST) technologies produce gene expression from a mixture of potentially heterogeneous cells at each spot. However, ST data measured at each spatial location may represent gene expression of multiple cell types. Existing cell-type deconvolution methods rely on external, cell-type-annotated single-cell transcriptomic reference, which can be limited by sample availability, reference quality, and platform effects. We have developed RETROFIT, a statistical method for reference-free deconvolution of spatial transcriptomics data to estimate cell type mixtures. 
+
+Other existing methods for such analysis are [NMFreg](https://pubmed.ncbi.nlm.nih.gov/30923225/), [Stereoscope](https://www.nature.com/articles/s42003-020-01247-y), [SPOTlight](https://academic.oup.com/nar/article/49/9/e50/6129341) and [RCTD](https://www.nature.com/articles/s41587-021-00830-w), and a reference-free method: [STdeconvolve](https://www.nature.com/articles/s41467-022-30033-z). We have compared RETROFIT with these similar packages in our future preprint: Roopali Singh, Xi He, Adam Keebum Park, Ross Cameron Hardison, Xiang Zhu, Qunhua Li. RETROFIT: Reference-free deconvolution of cell-type mixtures in spatial transcriptomics, Preprint Forthcoming (2023).
+
+For getting started with RETROFIT, please see [Simulation Vignette](https://github.com/qunhualilab/retrofit/blob/main/vignettes/SimulationVignette.Rmd). This is a more advanced vignette with analysis of a real ST data.
+
+In this Vignette, we will estimate cell type composition of a Human Colon tissue generated using the 10x Genomics Visium platform in this [Paper](https://www.sciencedirect.com/science/article/pii/S009286742031686X). We will annotate cell types using marker gene lists as well as single cell reference. We will also reproduce some of the results from the paper for illustration.
+
+# Package Installation and other requirements
+
+Install and load the packages using the following steps:
+```{r, eval=FALSE}
+if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("retrofit")
+```
+
+```{r, load_library, message=FALSE}
+library(retrofit)
+```
+
+# Spatial Transcriptomics Data
+
+All data required for this vignette is stored in vignetteColonData file. First, we load the entire data and then extract the Colon ST data, using the following command:
+
+```{r, data}
+utils::data("vignetteColonData")
+X <- vignetteColonData$a3_x
+```
+Here, we are using a real spatial transcriptomic data of a Human Colon tissue (prepared at 12 post-conception weeks) that tells us expression of G genes in S spots. This ST data matrix will consist of G = 722 genes and S = 1080 spots i.e., a matrix of order G x S.
+
+
+# Reference-free Deconvolution
+
+RETROFIT deconvolves ST data into multiple components, representing different cell types. As a rule of thumb, we recommend using a higher number of components than the actual expected number of cell types in the data. Initialize the following parameters for deconvolution:
+- iterations: Number of iterations (default = 4000)
+- L: Number of components required
+```{r, decompose initialization}
+iterations  <- 10
+L           <- 16
+```
+After initialization, run RETROFIT on the data (X) as follows:
+
+```{r, decompose}
+result <- retrofit::decompose(X, L=L, iterations=iterations, verbose=TRUE)
+H   <- result$h
+W   <- result$w
+Th  <- result$th
+```
+
+After deconvolution of ST data, we have our estimates of W (a matrix of order G x L), H (a matrix of order L x S) and Theta (a vector of L components). Here, we are using number of iterations as 10 for demonstration purposes. For reproducing results in the paper, we need to run RETROFIT for iterations = 4000. The whole computation is omitted here due to time complexity (> 10min). We will load the results from 4000 iterations for the rest of the analysis.
+
+```{r, load_retrofit_results}
+H   <- vignetteColonData$a3_results_4k_iterations$decompose$h
+W   <- vignetteColonData$a3_results_4k_iterations$decompose$w
+Th  <- vignetteColonData$a3_results_4k_iterations$decompose$th
+```
+
+Above results are obtained by running the code below.
+
+```{r, reproducible codes, eval=FALSE}
+iterations <- 4000
+set.seed(1)
+result <- retrofit::decompose(X, L=L, iterations=iterations)
+```
+
+After we have deconvolved our ST data matrix into different components, we need to annotate the components to get the proportion of, say K, cell types. We can do this in two ways: (a) using an annotated single cell reference or (b) using the known marker genes.  
+
+# Cell-type Annotation via annotated single-cell reference
+
+Here, we will annotate components using single-cell reference from the [same paper](https://www.sciencedirect.com/science/article/pii/S009286742031686X). Load the single-cell reference data:
+
+```{r, sc}
+sc_ref <- vignetteColonData$sc_ref
+```
+
+This file contains average gene expression values of G = 722 genes for K = 8 cell types. Run the following command to get K cell-type mixtures from the ST data X:
+
+```{r, annotate with sc}
+K <- ncol(sc_ref) # number of cell types
+result    <- annotateWithCorrelations(sc_ref, K, W, H)
+H_sc      <- result$h
+W_sc      <- result$w
+H_sc_prop <- result$h_prop
+W_sc_prop <- result$w_prop
+```
+
+We assign components to the cell type it has maximum correlation with, as shown in figure above. In this manner, all cell types in the reference will now be mapped to a component from RETROFIT. Here, H_sc_prop represents your cell type proportions for K = 8 cell types in S = 1080 spots.
+
+```{r, visualize correlation matrix between the sc reference and W}
+W_norm <- W
+for(i in seq_len(nrow(W))){
+    W_norm[i,]<-W[i,]/sum(W[i,])
+}
+
+corrplot::corrplot(stats::cor(sc_ref, W_norm), 
+                   is.corr=FALSE, 
+                   mar=c(0,0,1,0), 
+                   col = colorRampPalette(c("white", "deepskyblue", "blue4"))(100), 
+                   main="Correlation-based Mapping Matrix")
+```
+
+# Cell-type Annotation via known marker genes
+
+Here, we will annotate using known marker genes for the cell types. This information is also collected from the [same paper](https://www.sciencedirect.com/science/article/pii/S009286742031686X). Load the marker gene list:
+
+```{r, marker}
+marker_ref <- vignetteColonData$marker_ref
+```
+
+This file contains the list of marker genes for K = 8 cell types. Run the following command to get K cell-type mixtures from the ST data X:
+
+```{r, annotate with marker}
+K <- length(marker_ref) # number of cell types
+result      <- retrofit::annotateWithMarkers(marker_ref, K, W, H)
+H_mark      <- result$h
+W_mark      <- result$w
+H_mark_prop <- result$h_prop
+W_mark_prop <- result$w_prop
+gene_sums   <- result$gene_sums
+```
+
+```{r, visualize correlation matrix marker}
+corrplot::corrplot(gene_sums, 
+                   is.corr=FALSE, 
+                   mar=c(0,0,1,0), 
+                   col=colorRampPalette(c("white", "deepskyblue", "blue4"))(100), 
+                   main="Marker-based Mapping Matrix")
+```
+
+We assign components to the cell type it has maximum average marker expression in, as shown in the figure above. Here, H_mark_prop represents your cell-type proportions for K = 8 cell types in S = 1080 spots.
+
+You can verify that the mappings from both methods are largely similar.
+
+# Choosing optimal $\lambda$ via performance metric $\delta$
+
+For simplicity, we load the matrix of correlations between the estimated gene expression profile for each cell type via RETROFIT,
+and the corresponding cell-type-specific marker gene expressions at different $\lambda$ settings.
+
+```{r, delta data}
+utils::data("lambdaCorrelationData")
+```
+Compute the performance delta metric for different $\lambda$ settings:
+
+```{r, compute delta}
+delta_metric(lambdaCorrelationData$cor_matrix)
+```
+This shows that the performance metric is highest for $\lambda = 0.01$ and hence that is the $\lambda$ we use to generate the final results for this ST data.
+
+# Results and visualization
+
+Hereon, we will be reproducing some of the analysis from the paper using marker-based mapping results. 
+
+## Figure 4A: Proportion of different cell types in the tissue.
+
+Proportion of cell-types in this tissue:
+
+```{r}
+
+rowSums(H_mark_prop)/ncol(H_mark_prop)
+```
+
+## Figure 4C: Localization of cell types with the dominant cell type in each spot
+
+Load the coordinates for the spots in the tissue and the tissue image:
+
+```{r}
+coords<-vignetteColonData$a3_coords
+bfc <- BiocFileCache::BiocFileCache(ask=FALSE)
+url <- "https://user-images.githubusercontent.com/90921267/210159136-96b56551-f414-4b0b-921e-98f05a98c8bc.png"
+loc <- BiocFileCache::bfcadd(bfc, "img", fpath=url)
+t <- grid::rasterGrob(png::readPNG(loc), 
+                      width=ggplot2::unit(1,"npc"), 
+                      height=ggplot2::unit(1,"npc"), 
+                      interpolate = FALSE)
+```
+
+Find the cell-type with maximum proportion in each spot and plot:
+
+```{r, fig.dim = c(4.5, 4.5*(456/480))}
+dat<-as.data.frame(cbind(coords,t(H_mark_prop)))
+colnames(dat)<-c(colnames(coords),rownames(H_mark_prop))
+
+df<-dat[,-c(seq(from=1, to=3))]
+df$CellType<-NA
+for(i in seq_len(nrow(df))){
+  df$CellType[i]<-names(which.max(df[i,-c(seq(from=1,to=2))]))
+}
+df$CellType<-factor(df$CellType,levels=c("Epithelial", "Immune", "Myo.Meso","Muscle",
+                                        "Neural", "Endothelium", "Pericytes","Fibroblasts"))
+
+ggplot2::ggplot(df, ggplot2::aes(x=imagerow, y=imagecol))  +
+  ggplot2::annotation_custom(t, 700, 6400, 990, 6550) +
+  ggplot2::geom_point(size=1.8, shape=21, ggplot2::aes(fill=CellType))+
+  ggplot2::scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9","#009E73", "#CC79A7",
+                             "#0072B2", "#D55E00" ,"#F0E442"),
+                    labels=c("Epithelial", "Immune","Myofibroblasts/\nMesothelium",
+                             "Muscle","Neural","Endothelium",
+                             "Pericytes","Fibroblasts"))+
+  ggplot2::xlab("") + ggplot2::ylab("") + ggplot2::theme_classic()+
+  ggplot2::theme(legend.position = "none",
+                 axis.line = ggplot2::element_blank(),
+                 plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"), 
+                 axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),  axis.ticks.y = ggplot2::element_blank())                   
+```
+
+## Figure 4D: Gene expression of Epithelial marker genes across spots
+
+Plot the spatial expression for Epithelial markers:
+
+```{r, fig.dim = c(4.5, 4.5*(456/480))}
+df <- as.data.frame(cbind(coords, t(X[marker_ref$Epithelial,]))) 
+df$metagene <- unname(rowSums(df[,-c(seq(from=1,to=5))])) 
+df$metagene[df$metagene>quantile(df$metagene,0.95)]<-quantile(df$metagene,0.95)
+
+ggplot2::ggplot(df, ggplot2::aes(x=imagerow, y=imagecol))  +
+  # Omitted background image to reduce the vignette size
+  # ggplot2::annotation_custom(t, 700, 6400, 990, 6550) +
+  ggplot2::geom_point(size=1.5, ggplot2::aes(color=metagene))+
+  ggplot2::scale_color_gradientn(name="Epithelial Markers ",
+                                 colors=colorspace::adjust_transparency("grey20",
+                                                                        alpha = c(0,0.5,1)),
+                                 n.breaks=3) +
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.2, 'cm'), #change legend key size
+                 legend.key.width = ggplot2::unit(0.8, 'cm'),
+                 legend.title = ggplot2::element_text(size=10),
+                 legend.position = "bottom",
+                 legend.box.margin=ggplot2::margin(-20,-10,-5,-10),
+                 plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"),
+                 axis.line=ggplot2::element_blank(),
+                 legend.text=ggplot2::element_text(size=8),
+                 axis.text.x = ggplot2::element_blank(), 
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.x=ggplot2::element_blank(),
+                 axis.ticks.y=ggplot2::element_blank())
+```
+
+## Figure 4E: Proportion of Epithelial cells across spots
+
+Plot the estimated proportions for Epithelial cell-type:
+
+```{r, fig.dim = c(4.5, 4.5*(456/480))}
+df<-dat[,-c(seq(from=1,to=3))]
+ggplot2::ggplot(df, ggplot2::aes(x=imagerow, y=imagecol))  +
+  # Omitted background image to reduce the vignette size
+  # ggplot2::annotation_custom(t, 700, 6400, 990, 6550) +
+  ggplot2::geom_point(size=1.5, ggplot2::aes(color=Epithelial))+
+  ggplot2::scale_color_gradientn(name="Epithelial ",
+                                 colors=colorspace::adjust_transparency("grey20",
+                                                                        alpha = c(0,0.5,1)),
+                                 n.breaks=3, limits=c(0,1)) +
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.2, 'cm'), #change legend key size
+        legend.key.width = ggplot2::unit(0.8, 'cm'),
+        legend.title = ggplot2::element_text(size=10),
+        legend.position = "bottom",
+        legend.box.margin=ggplot2::margin(-20,-10,-5,-10),
+        plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"),
+        axis.line=ggplot2::element_blank(),
+        legend.text=ggplot2::element_text(size=8),
+        axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+        axis.ticks.x=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank())
+```
+
+Verify that the spatial pattern exhibited by the epithelial markers is largely similar to that of the estimated proportion for epithelial cells.
+
+## Figure 5A: Proportion of different cell types in different spots 
+
+Visualize the proportion of different cell types and colocalization patterns:
+
+```{r, fig.dim = c(10,5)}
+## Structure Plots
+plotfn <- function(df=NULL)
+{
+  #reshape to long format
+  df$num <- seq_len(nrow(df))
+  df1 <- reshape2::melt(df,id.vars = "num")
+  #reversing order for cosmetic reasons
+  df1 <- df1[rev(seq_len(nrow(df1))),]
+  
+  #plot
+  p <- ggplot2::ggplot(df1, ggplot2::aes(x=num,y=value,fill=variable))+
+    ggplot2::geom_bar(stat="identity",position="fill",width = 1, space = 0)+
+    ggplot2::scale_x_continuous(expand = c(0, 0))+
+    ggplot2::scale_y_continuous(expand = c(0, 0))+
+    ggplot2::labs(x = NULL, y = NULL)+
+    ggplot2::theme_grey(base_size=7)+
+    ggplot2::theme(legend.text = ggplot2::element_text(size = 20),legend.position = "bottom",
+          legend.key.size = ggplot2::unit(0.4, "cm"),
+          legend.title = ggplot2::element_blank(),
+          axis.ticks = ggplot2::element_blank(),
+          axis.text.y = ggplot2::element_text(size = 15),
+          axis.text.x = ggplot2::element_blank())+
+    ggplot2::scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9", 
+                               "#009E73", "#CC79A7", "#0072B2",
+                               "#D55E00", "#F0E442"))
+  
+  p
+}
+
+df<-as.data.frame(t(H_mark_prop[c(2,4,6,5,7,1,8,3),]))
+#pick max cluster, match max to cluster
+maxval <- apply(df,1,max)
+matchval <- vector(length=nrow(df))
+for(j in seq_len(nrow(df))) matchval[j] <- match(maxval[j],df[j,])
+#add max and match to df
+df_q <- df
+df_q$maxval <- maxval
+df_q$matchval <- matchval
+#order dataframe ascending match and decending max
+df_q <- df_q[with(df_q, order(matchval,-maxval)), ]
+#remove max and match
+df_q$maxval <- NULL
+df_q$matchval <- NULL
+
+
+plotfn(df=df_q)+
+  ggplot2::theme(legend.position="bottom")+
+  ggplot2::ggtitle("Fetal 12 PCW (B)")+ 
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust=0.5,size=25))
+```
+
+## Figure 5D: Spots with 1 dominant cell type i.e., proportion > 0.5
+
+Plot the proportion of only dominant cell types i.e., cell types with proportion > 0.5 in a spot.
+
+```{r, fig.dim = c(4.5, 4.5*(456/480))}
+df<-dat
+df_new<-df[df$Epithelial>0.5 | df$Fibroblasts>0.5 | df$Myo.Meso>0.5 |
+            df$Endothelium>0.5 | df$Pericytes>0.5 | df$Neural>0.5 |
+            df$Immune>0.5 | df$Muscle>0.5,-c(seq(from=1, to=3))]
+df_new$CellType<-1*(df_new$Epithelial>0.5) + 2*(df_new$Immune>0.5) +
+  3*(df_new$Myo.Meso>0.5) + 4*(df_new$Muscle>0.5) + 5*(df_new$Neural>0.5)+
+  6*(df_new$Endothelium>0.5) + 7*(df_new$Pericytes>0.5) + 8*(df_new$Fibroblasts>0.5)
+df_new$CellType<-factor(df_new$CellType)
+
+ggplot2::ggplot(df_new, ggplot2::aes(x=imagerow, y=imagecol))  + 
+  # Omitted background image to reduce the vignette size
+  # ggplot2::annotation_custom(t, 700, 6400, 990, 6550) + 
+  ggplot2::geom_point(size=1.8, shape=21, ggplot2::aes(fill=CellType))+
+  ggplot2::scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9",
+                             "#009E73", "#CC79A7", "#0072B2", 
+                             "#D55E00", "#F0E442"),
+                    labels=c("Epithelial","Immune", 
+                             "Myofibroblasts\nMesothelium",
+                             "Muscle", "Neural", "Endothelium", 
+                             "Pericytes", "Fibroblasts"))+ 
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.5, 'cm'), #change legend key size
+        legend.key.width = ggplot2::unit(1, 'cm'), 
+        legend.title = ggplot2::element_blank(),
+        legend.position = "none",
+        plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"), 
+        axis.line=ggplot2::element_blank(),
+        legend.text=ggplot2::element_text(size=9),
+        axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+        axis.ticks.x=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank())
+```
+
+## Figure 5E: Co-localized spots for Epithelial cells
+
+Visualize the spots that contain cell types co-localized with Epithelial cells:
+
+```{r, fig.dim = c(4.5, 4.5*(456/480))}
+#Epithelial
+df<-dat
+df_new<-df[df$Epithelial>0.25,] 
+df_new<-df_new[df_new$Fibroblasts>0.25 | df_new$Myo.Meso>0.25 |
+                  df_new$Endothelium>0.25 | df_new$Pericytes>0.25 | df_new$Neural>0.25 |
+                  df_new$Immune>0.25 | df_new$Muscle>0.25,-c(seq(from=1, to=3))]
+
+df_new$CellType<-NA
+for(i in seq_len(nrow(df_new))){
+  df_new$CellType[i]<-names(which.max(df_new[i,-c(seq(from=1,to=2),4)]))
+}
+
+df_new$CellType<-factor(df_new$CellType,c("Immune", "Myo.Meso",
+                                         "Muscle","Neural",
+                                         "Endothelium", 
+                                         "Pericytes","Fibroblasts"))
+
+ggplot2::ggplot(df_new, ggplot2::aes(x=imagerow, y=imagecol))  + 
+  ggplot2::ylim(min(df$imagecol),max(df$imagecol)) +
+  ggplot2::xlim(min(df$imagerow),max(df$imagerow))+
+  ggplot2::geom_point(size=1.8, shape=21, ggplot2::aes(fill=CellType))+
+  ggplot2::scale_fill_manual(values=c("#E69F00", "#56B4E9", "#0072B2","#F0E442"),
+    labels=c("Immune", "Myofibroblasts\nMesothelium", "Endothelium", 
+      "Fibroblasts"))+ 
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+ 
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.2, 'cm'), #change legend key size
+        legend.key.width = ggplot2::unit(1, 'cm'), 
+        legend.title = ggplot2::element_blank(),
+        legend.position = "bottom",
+        plot.margin = ggplot2::margin(-0.15, -0.5, 0.2, -0.55, "cm"), #A3
+        axis.line = ggplot2::element_blank(),
+        axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+        axis.ticks.x=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank())
+```
+
+## Figure 6C: Concordance between expression profiles of found genes obtained from RETROFIT and scRNA-seq data
+
+```{r, fig.dim = c(12, 12)}
+df<-vignetteColonData$marker_ref_df
+gene1<-vignetteColonData$fetal12_genes
+gene1<-gene1[!(gene1 %in% df$Gene)] #common genes
+W1<-vignetteColonData$a3_results_4k_iterations$annotateWithCorrelations$w
+W12<-vignetteColonData$intestine_w_12pcw
+W12<-W12[gene1,]
+W12_prop<-W12 
+w_rowsums1 <- rowSums(W12)
+for (i in seq_along(w_rowsums1)){
+  if(w_rowsums1[i] > 0){
+    W12_prop[i,] <- W12_prop[i,]/w_rowsums1[i]
+  }
+}
+W1_prop<-W1[gene1,-c(seq(from=1,to=2))]
+
+dat<-data.frame(gene=c(rep(gene1,8)),
+               celltype=factor(c(rep("Epithelial",length(gene1)),rep("Fibroblasts",length(gene1)),
+                                 rep("Myofibroblasts\nMesothelium",length(gene1)),rep("Endothelium",length(gene1)),
+                                 rep("Pericytes",length(gene1)),rep("Neural",length(gene1)),
+                                 rep("Immune",length(gene1)),rep("Muscle",length(gene1))
+               ),levels=c("Epithelial","Immune","Fibroblasts","Endothelium",
+                          "Neural","Pericytes", "Myofibroblasts\nMesothelium","Muscle")), 
+               stage=c(rep("Fetal 12 PCW (B)",length(gene1)*8)),
+               gene_exp1=c(W1_prop[gene1,"Epithelial"],W1_prop[gene1,"Fibroblasts"],
+                           W1_prop[gene1,"Myo.Meso"],W1_prop[gene1,"Endothelium"],
+                           W1_prop[gene1,"Pericytes"],W1_prop[gene1,"Neural"],
+                           W1_prop[gene1,"Immune"],W1_prop[gene1,"Muscle"]
+               ),
+               gene_exp2=c(W12_prop[gene1,"Epithelial"],W12_prop[gene1,"Fibroblasts"],
+                           W12_prop[gene1,"Myo.Meso"],W12_prop[gene1,"Endothelium"],
+                           W12_prop[gene1,"Pericytes"],W12_prop[gene1,"Neural"],
+                           W12_prop[gene1,"Immune"],W12_prop[gene1,"Muscle"]
+               ))
+
+ggplot2::ggplot(dat, ggplot2::aes(celltype, gene)) +  
+  ggplot2::geom_point(shape=21, ggplot2::aes(fill=gene_exp1, size=gene_exp2)) +
+  ggplot2::theme_classic() +
+  ggplot2::scale_fill_gradientn(colors = pals::brewer.blues(20)[2:20],
+                                name = "Expression (RETROFIT)") + 
+  ggplot2::facet_grid(cols=ggplot2::vars(stage))+
+  ggplot2::theme(axis.text.x=ggplot2::element_text(size=20, angle = 45, hjust = 1),
+                 axis.text.y=ggplot2::element_text(size=20),
+                 legend.title=ggplot2::element_text(size=20),
+                 legend.text=ggplot2::element_text(size=20),
+                 legend.key.width=ggplot2::unit(0.3,"cm"),
+                 legend.position="right"
+                 ) + 
+  ggplot2::guides(size=ggplot2::guide_legend("Expression (scRNA-seq)"))+
+  ggplot2::xlab('')+ 
+  ggplot2::ylab('Genes')+ 
+  ggplot2::theme()
+```
+
+Please read the paper for more information: Roopali Singh, Xi He, Adam Keebum Park, Ross Cameron Hardison, Xiang Zhu, Qunhua Li, RETROFIT: Reference-free deconvolution of cell-type mixtures in spatial transcriptomics, Preprint Forthcoming (2023).
+
+# Session information
+
+```{r}
+sessionInfo()
+```
+
+
+

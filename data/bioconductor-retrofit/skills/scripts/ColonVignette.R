@@ -1,0 +1,338 @@
+# Code example from 'ColonVignette' vignette. See references/ for full tutorial.
+
+## ----setup, include=FALSE-----------------------------------------------------
+knitr::opts_chunk$set(echo = TRUE, comment = '##', results = 'markup', warning = FALSE)
+
+## ----eval=FALSE---------------------------------------------------------------
+# if(!requireNamespace("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# BiocManager::install("retrofit")
+
+## ----load_library, message=FALSE----------------------------------------------
+library(retrofit)
+
+## ----data---------------------------------------------------------------------
+data("vignetteColonData")
+X = vignetteColonData$a3_x
+
+## ----decompose initialization-------------------------------------------------
+iterations  = 10
+L           = 20
+
+## ----decompose----------------------------------------------------------------
+result = retrofit::decompose(X, L=L, iterations=iterations, verbose=TRUE)
+H   = result$h
+W   = result$w
+Th  = result$th
+
+## ----load_retrofit_results----------------------------------------------------
+H   = vignetteColonData$a3_results_4k_iterations$decompose$h
+W   = vignetteColonData$a3_results_4k_iterations$decompose$w
+Th  = vignetteColonData$a3_results_4k_iterations$decompose$th
+
+## ----reproducible codes, eval=FALSE-------------------------------------------
+# iterations = 4000
+# set.seed(1)
+# result = retrofit::decompose(x, L=L, iterations=iterations)
+
+## ----sc-----------------------------------------------------------------------
+sc_ref = vignetteColonData$sc_ref
+
+## ----annotate with sc---------------------------------------------------------
+K = ncol(sc_ref) # number of cell types
+result    = annotateWithCorrelations(sc_ref, K, W, H)
+H_sc      = result$h
+W_sc      = result$w
+H_sc_prop = result$h_prop
+W_sc_prop = result$w_prop
+
+## ----visualize correlation matrix between the sc reference and W--------------
+W_norm <- W
+for(i in 1:nrow(W)){
+    W_norm[i,]=W[i,]/sum(W[i,])
+}
+
+corrplot::corrplot(stats::cor(sc_ref, W_norm), 
+                   is.corr=FALSE, 
+                   mar=c(0,0,1,0), 
+                   col = colorRampPalette(c("white", "deepskyblue", "blue4"))(100), 
+                   main="Correlation-based Mapping Matrix")
+
+## ----marker-------------------------------------------------------------------
+marker_ref = vignetteColonData$marker_ref
+
+## ----annotate with marker-----------------------------------------------------
+K = length(marker_ref) # number of cell types
+result      = retrofit::annotateWithMarkers(marker_ref, K, W, H)
+H_mark      = result$h
+W_mark      = result$w
+H_mark_prop = result$h_prop
+W_mark_prop = result$w_prop
+gene_sums   = result$gene_sums
+
+## ----visualize correlation matrix marker--------------------------------------
+corrplot::corrplot(gene_sums, 
+                   is.corr=FALSE, 
+                   mar=c(0,0,1,0), 
+                   col=colorRampPalette(c("white", "deepskyblue", "blue4"))(100), 
+                   main="Marker-based Mapping Matrix")
+
+## -----------------------------------------------------------------------------
+
+rowSums(H_mark_prop)/ncol(H_mark_prop)
+
+## -----------------------------------------------------------------------------
+coords=vignetteColonData$a3_coords
+img <- png::readPNG(RCurl::getURLContent("https://user-images.githubusercontent.com/90921267/210159136-96b56551-f414-4b0b-921e-98f05a98c8bc.png"))
+t <- grid::rasterGrob(img, width=ggplot2::unit(1,"npc"), height=ggplot2::unit(1,"npc"), interpolate = FALSE)
+
+## ----fig.dim = c(4.5, 4.5*(456/480))------------------------------------------
+dat=as.data.frame(cbind(coords,t(H_mark_prop)))
+colnames(dat)=c(colnames(coords),rownames(H_mark_prop))
+
+df=dat[,-c(1:3)]
+df$CellType=NA
+for(i in 1:nrow(df)){
+  df$CellType[i]=names(which.max(df[i,-c(1:2)]))
+}
+df$CellType=factor(df$CellType,levels=c("Epithelial", "Immune", "Myo.Meso","Muscle",
+                                        "Neural", "Endothelium", "Pericytes","Fibroblasts"))
+
+ggplot2::ggplot(df, ggplot2::aes(x=imagerow, y=imagecol))  +
+  ggplot2::geom_point(size=1.8, shape=21, ggplot2::aes(fill=CellType))+
+  ggplot2::scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9","#009E73", "#CC79A7",
+                             "#0072B2", "#D55E00" ,"#F0E442"),
+                    labels=c("Epithelial", "Immune","Myofibroblasts/\nMesothelium",
+                             "Muscle","Neural","Endothelium",
+                             "Pericytes","Fibroblasts"))+
+  ggplot2::xlab("") + ggplot2::ylab("") + ggplot2::theme_classic()+
+  ggplot2::theme(legend.position = "none",
+                 axis.line = ggplot2::element_blank(),
+                 plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"), 
+                 axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),  axis.ticks.y = ggplot2::element_blank())                   
+
+## ----fig.dim = c(4.5, 4.5*(456/480))------------------------------------------
+df = as.data.frame(cbind(coords, t(X[marker_ref$Epithelial,]))) 
+df$metagene = unname(rowSums(df[,-c(1:5)])) 
+df$metagene[df$metagene>quantile(df$metagene,0.95)]=quantile(df$metagene,0.95)
+
+ggplot2::ggplot(df, ggplot2::aes(x=imagerow, y=imagecol))  +
+  # ggplot2::annotation_custom(t, 700, 6400, 990, 6550) +
+  ggplot2::geom_point(size=1.5, ggplot2::aes(color=metagene))+
+  ggplot2::scale_color_gradientn(name="Epithelial Markers ",
+                                 colors=colorspace::adjust_transparency("grey20",
+                                                                        alpha = c(0,0.5,1)),
+                                 n.breaks=3) +
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.2, 'cm'), #change legend key size
+                 legend.key.width = ggplot2::unit(0.8, 'cm'),
+                 legend.title = ggplot2::element_text(size=10),
+                 legend.position = "bottom",
+                 legend.box.margin=ggplot2::margin(-20,-10,-5,-10),
+                 plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"),
+                 axis.line=ggplot2::element_blank(),
+                 legend.text=ggplot2::element_text(size=8),
+                 axis.text.x = ggplot2::element_blank(), 
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.x=ggplot2::element_blank(),
+                 axis.ticks.y=ggplot2::element_blank())
+
+## ----fig.dim = c(4.5, 4.5*(456/480))------------------------------------------
+df=dat[,-c(1:3)]
+ggplot2::ggplot(df, ggplot2::aes(x=imagerow, y=imagecol))  +
+  # ggplot2::annotation_custom(t, 700, 6400, 990, 6550) +
+  ggplot2::geom_point(size=1.5, ggplot2::aes(color=Epithelial))+
+  ggplot2::scale_color_gradientn(name="Epithelial ",
+                                 colors=colorspace::adjust_transparency("grey20",
+                                                                        alpha = c(0,0.5,1)),
+                                 n.breaks=3, limits=c(0,1)) +
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.2, 'cm'), #change legend key size
+        legend.key.width = ggplot2::unit(0.8, 'cm'),
+        legend.title = ggplot2::element_text(size=10),
+        legend.position = "bottom",
+        legend.box.margin=ggplot2::margin(-20,-10,-5,-10),
+        plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"),
+        axis.line=ggplot2::element_blank(),
+        legend.text=ggplot2::element_text(size=8),
+        axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+        axis.ticks.x=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank())
+
+## ----fig.dim = c(10,5)--------------------------------------------------------
+## Structure Plots
+plotfn <- function(df=NULL)
+{
+  #reshape to long format
+  df$num <- 1:nrow(df)
+  df1 <- reshape2::melt(df,id.vars = "num")
+  #reversing order for cosmetic reasons
+  df1 <- df1[rev(1:nrow(df1)),]
+  
+  #plot
+  p <- ggplot2::ggplot(df1, ggplot2::aes(x=num,y=value,fill=variable))+
+    ggplot2::geom_bar(stat="identity",position="fill",width = 1, space = 0)+
+    ggplot2::scale_x_continuous(expand = c(0, 0))+
+    ggplot2::scale_y_continuous(expand = c(0, 0))+
+    ggplot2::labs(x = NULL, y = NULL)+
+    ggplot2::theme_grey(base_size=7)+
+    ggplot2::theme(legend.text = ggplot2::element_text(size = 20),legend.position = "bottom",
+          legend.key.size = ggplot2::unit(0.4, "cm"),
+          legend.title = ggplot2::element_blank(),
+          axis.ticks = ggplot2::element_blank(),
+          axis.text.y = ggplot2::element_text(size = 15),
+          axis.text.x = ggplot2::element_blank())+
+    ggplot2::scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9", 
+                               "#009E73", "#CC79A7", "#0072B2",
+                               "#D55E00", "#F0E442"))
+  
+  p
+}
+
+df=as.data.frame(t(H_mark_prop[c(2,4,6,5,7,1,8,3),]))
+#pick max cluster, match max to cluster
+maxval <- apply(df,1,max)
+matchval <- vector(length=nrow(df))
+for(j in 1:nrow(df)) matchval[j] <- match(maxval[j],df[j,])
+#add max and match to df
+df_q <- df
+df_q$maxval <- maxval
+df_q$matchval <- matchval
+#order dataframe ascending match and decending max
+df_q <- df_q[with(df_q, order(matchval,-maxval)), ]
+#remove max and match
+df_q$maxval <- NULL
+df_q$matchval <- NULL
+
+
+plotfn(df=df_q)+
+  ggplot2::theme(legend.position="bottom")+
+  ggplot2::ggtitle("Fetal 12 PCW (B)")+ 
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust=0.5,size=25))
+
+## ----fig.dim = c(4.5, 4.5*(456/480))------------------------------------------
+df=dat
+df_new=df[df$Epithelial>0.5 | df$Fibroblasts>0.5 | df$Myo.Meso>0.5 |
+            df$Endothelium>0.5 | df$Pericytes>0.5 | df$Neural>0.5 |
+            df$Immune>0.5 | df$Muscle>0.5,-c(1:3)]
+df_new$CellType=1*(df_new$Epithelial>0.5) + 2*(df_new$Immune>0.5) +
+  3*(df_new$Myo.Meso>0.5) + 4*(df_new$Muscle>0.5) + 5*(df_new$Neural>0.5)+
+  6*(df_new$Endothelium>0.5) + 7*(df_new$Pericytes>0.5) + 8*(df_new$Fibroblasts>0.5)
+df_new$CellType=factor(df_new$CellType)
+
+ggplot2::ggplot(df_new, ggplot2::aes(x=imagerow, y=imagecol))  + 
+  # ggplot2::annotation_custom(t, 700, 6400, 990, 6550) + 
+  ggplot2::geom_point(size=1.8, shape=21, ggplot2::aes(fill=CellType))+
+  ggplot2::scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9",
+                             "#009E73", "#CC79A7", "#0072B2", 
+                             "#D55E00", "#F0E442"),
+                    labels=c("Epithelial","Immune", 
+                             "Myofibroblasts\nMesothelium",
+                             "Muscle", "Neural", "Endothelium", 
+                             "Pericytes", "Fibroblasts"))+ 
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.5, 'cm'), #change legend key size
+        legend.key.width = ggplot2::unit(1, 'cm'), 
+        legend.title = ggplot2::element_blank(),
+        legend.position = "none",
+        plot.margin = ggplot2::margin(-0.2, -0.2, 0.2, -1, "cm"), 
+        axis.line=ggplot2::element_blank(),
+        legend.text=ggplot2::element_text(size=9),
+        axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+        axis.ticks.x=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank())
+
+## ----fig.dim = c(4.5, 4.5*(456/480))------------------------------------------
+#Epithelial
+df=dat
+df_new=df[df$Epithelial>0.25,] 
+df_new=df_new[df_new$Fibroblasts>0.25 | df_new$Myo.Meso>0.25 |
+                  df_new$Endothelium>0.25 | df_new$Pericytes>0.25 | df_new$Neural>0.25 |
+                  df_new$Immune>0.25 | df_new$Muscle>0.25,-c(1:3)]
+
+df_new$CellType=NA
+for(i in 1:nrow(df_new)){
+  df_new$CellType[i]=names(which.max(df_new[i,-c(1:2,4)]))
+}
+
+df_new$CellType=factor(df_new$CellType,c("Immune", "Myo.Meso",
+                                         "Muscle","Neural",
+                                         "Endothelium", 
+                                         "Pericytes","Fibroblasts"))
+
+ggplot2::ggplot(df_new, ggplot2::aes(x=imagerow, y=imagecol))  + 
+  ggplot2::ylim(min(df$imagecol),max(df$imagecol)) +
+  ggplot2::xlim(min(df$imagerow),max(df$imagerow))+
+  ggplot2::geom_point(size=1.8, shape=21, ggplot2::aes(fill=CellType))+
+  ggplot2::scale_fill_manual(values=c("#E69F00", "#56B4E9", "#0072B2","#F0E442"),
+    labels=c("Immune", "Myofibroblasts\nMesothelium", "Endothelium", 
+      "Fibroblasts"))+ 
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::theme_classic()+ 
+  ggplot2::theme(legend.key.height = ggplot2::unit(0.2, 'cm'), #change legend key size
+        legend.key.width = ggplot2::unit(1, 'cm'), 
+        legend.title = ggplot2::element_blank(),
+        legend.position = "bottom",
+        plot.margin = ggplot2::margin(-0.15, -0.5, 0.2, -0.55, "cm"), #A3
+        axis.line = ggplot2::element_blank(),
+        axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(),
+        axis.ticks.x=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank())
+
+## ----fig.dim = c(12, 12)------------------------------------------------------
+df=vignetteColonData$marker_ref_df
+gene1=vignetteColonData$fetal12_genes
+gene1=gene1[!(gene1 %in% df$Gene)] #common genes
+W1=vignetteColonData$a3_results_4k_iterations$annotateWithCorrelations$w
+W12=vignetteColonData$intestine_w_12pcw
+W12=W12[gene1,]
+W12_prop=W12 
+w_rowsums1 = rowSums(W12)
+for (i in 1:length(w_rowsums1)){
+  if(w_rowsums1[i] > 0){
+    W12_prop[i,] = W12_prop[i,]/w_rowsums1[i]
+  }
+}
+W1_prop=W1[gene1,-c(1:2)]
+
+dat=data.frame(gene=c(rep(gene1,8)),
+               celltype=factor(c(rep("Epithelial",length(gene1)),rep("Fibroblasts",length(gene1)),
+                                 rep("Myofibroblasts\nMesothelium",length(gene1)),rep("Endothelium",length(gene1)),
+                                 rep("Pericytes",length(gene1)),rep("Neural",length(gene1)),
+                                 rep("Immune",length(gene1)),rep("Muscle",length(gene1))
+               ),levels=c("Epithelial","Immune","Fibroblasts","Endothelium",
+                          "Neural","Pericytes", "Myofibroblasts\nMesothelium","Muscle")), 
+               stage=c(rep("Fetal 12 PCW (B)",length(gene1)*8)),
+               gene_exp1=c(W1_prop[gene1,"Epithelial"],W1_prop[gene1,"Fibroblasts"],
+                           W1_prop[gene1,"Myo.Meso"],W1_prop[gene1,"Endothelium"],
+                           W1_prop[gene1,"Pericytes"],W1_prop[gene1,"Neural"],
+                           W1_prop[gene1,"Immune"],W1_prop[gene1,"Muscle"]
+               ),
+               gene_exp2=c(W12_prop[gene1,"Epithelial"],W12_prop[gene1,"Fibroblasts"],
+                           W12_prop[gene1,"Myo.Meso"],W12_prop[gene1,"Endothelium"],
+                           W12_prop[gene1,"Pericytes"],W12_prop[gene1,"Neural"],
+                           W12_prop[gene1,"Immune"],W12_prop[gene1,"Muscle"]
+               ))
+
+ggplot2::ggplot(dat, ggplot2::aes(celltype, gene)) +  
+  ggplot2::geom_point(shape=21, ggplot2::aes(fill=gene_exp1, size=gene_exp2)) +
+  ggplot2::theme_classic() +
+  ggplot2::scale_fill_gradientn(colors = pals::brewer.blues(20)[2:20],
+                                name = "Expression (RETROFIT)") + 
+  ggplot2::facet_grid(cols=ggplot2::vars(stage))+
+  ggplot2::theme(axis.text.x=ggplot2::element_text(size=20, angle = 45, hjust = 1),
+                 axis.text.y=ggplot2::element_text(size=20),
+                 legend.title=ggplot2::element_text(size=20),
+                 legend.text=ggplot2::element_text(size=20),
+                 legend.key.width=ggplot2::unit(0.3,"cm"),
+                 legend.position="right"
+                 ) + 
+  ggplot2::guides(size=ggplot2::guide_legend("Expression (scRNA-seq)"))+
+  ggplot2::xlab('')+ 
+  ggplot2::ylab('Genes')+ 
+  ggplot2::theme()
+
+## -----------------------------------------------------------------------------
+sessionInfo()
+

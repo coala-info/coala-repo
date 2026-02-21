@@ -1,0 +1,1 @@
+Branches · David BIKARD / CRISPRbact · GitLab Branches Overview Active Stale All Stale branches library_design 0bf05f15 &middot; cleaned-up the code a bit &middot; Dec 04, 2019 dev 3e6a8eab &middot; Fix typo in ci &middot; Dec 31, 2019 !2 master default protected c0ddc610 &middot; Update to 0.3.11 &middot; May 02, 2020

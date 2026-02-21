@@ -1,0 +1,289 @@
+---
+title: "VplotR"
+author: "Jacques Serizay"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+    %\VignetteIndexEntry{VplotR}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r, eval = TRUE, echo=FALSE, results="hide", warning=FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+suppressPackageStartupMessages({
+    library(GenomicRanges)
+    library(ggplot2)
+    library(VplotR)
+})
+```
+
+- [Introduction](#introduction)
+    - [Overview](#overview)
+    - [Installation](#installation)
+- [Importing sequencing datasets](#importing-sequencing-datasets)
+    - [Using `importPEBamFiles()` function](#using-importpebamfiles-function)
+    - [Provided datasets](#provided-datasets)
+- [Fragment size distribution](#fragment-size-distribution)
+- [Vplot(s)](#vplots)
+    - [Single Vplot](#single-vplot)
+    - [Multiple Vplots](#multiple-vplots)
+    - [Vplots normalization](#vplots-normalization)
+- [Footprints](#footprints)
+- [Local fragment distribution](#local-fragment-distribution)
+- [Session Info](#session-info)
+
+## Introduction
+
+### Overview 
+
+VplotR is an R package streamlining the process of generating V-plots, 
+i.e. two-dimensional paired-end fragment density plots. 
+It contains functions to import paired-end sequencing bam files from any 
+type of DNA accessibility experiments (e.g. ATAC-seq, DNA-seq, MNase-seq) 
+and can produce V-plots and one-dimensional footprint profiles over single 
+or aggregated genomic loci of interest. The R package is well integrated 
+within the Bioconductor environment and easily fits in standard genomic 
+analysis workflows. Integrating V-plots into existing analytical frameworks 
+has already brought additional insights in chromatin organization 
+(Serizay et al., 2020). 
+
+The main user-level functions of VplotR are `getFragmentsDistribution()`, 
+`plotVmat()`, `plotFootprint()` and `plotProfile()`.
+
+* `getFragmentsDistribution()` computes the distribution of fragment sizes
+  over sets of genomic ranges;
+* `plotVmat()` is used to compute fragment density and generate V-plots;
+* `plotFootprint()` generates the MNase-seq or ATAC-seq footprint at a 
+  set of genomic ranges.
+* `plotProfile()` is used to plot the distribution of paired-end fragments 
+  at a single locus of interest.
+
+### Installation
+
+VplotR can be installed from Bioconductor: 
+
+```{r eval = FALSE}
+if(!requireNamespace("BiocManager", quietly = TRUE))
+install.packages("BiocManager")
+BiocManager::install("VplotR")
+library("VplotR")
+```
+
+## Importing sequencing datasets
+
+### Using `importPEBamFiles()` function
+
+Paired-end .bam files are imported using the `importPEBamFiles()` 
+function as follows:
+
+```{r eval = TRUE}
+library(VplotR)
+bamfile <- system.file("extdata", "ex1.bam", package = "Rsamtools")
+fragments <- importPEBamFiles(
+    bamfile, 
+    shift_ATAC_fragments = TRUE
+)
+fragments
+```
+
+### Provided datasets
+
+Several datasets are available for this package: 
+
+* Sets of tissue-specific ATAC-seq experiments in young adult C. elegans
+  (Serizay et al., 2020):
+
+```{r, eval = TRUE}
+data(ce11_proms)
+ce11_proms
+data(ATAC_ce11_Serizay2020)
+ATAC_ce11_Serizay2020
+```
+
+* MNase-seq experiment in yeast (Henikoff et al., 2011) 
+  and ABF1 binding sites:
+
+```{r, eval = TRUE}
+data(ABF1_sacCer3)
+ABF1_sacCer3
+data(MNase_sacCer3_Henikoff2011)
+MNase_sacCer3_Henikoff2011
+```
+
+## Fragment size distribution
+
+A preliminary control to check the distribution of fragment
+sizes (regardless of their location relative to genomic loci) can be 
+performed using the `getFragmentsDistribution()` function.
+
+```{r, eval = TRUE}
+df <- getFragmentsDistribution(
+    MNase_sacCer3_Henikoff2011, 
+    ABF1_sacCer3
+)
+p <- ggplot(df, aes(x = x, y = y)) + geom_line() + theme_ggplot2()
+p
+```
+
+## Vplot(s)
+
+### Single Vplot
+
+Once data is imported, a V-plot of paired-end fragments over loci of 
+interest is generated using the `plotVmat()` function:
+
+```{r, eval = TRUE}
+p <- plotVmat(x = MNase_sacCer3_Henikoff2011, granges = ABF1_sacCer3)
+p
+```
+
+### Multiple Vplots
+
+The generation of multiple V-plots can be parallelized using a list of 
+parameters:
+
+```{r, eval = TRUE}
+list_params <- list(
+    "MNase\n@ ABF1" = list(MNase_sacCer3_Henikoff2011, ABF1_sacCer3), 
+    "MNase\n@ random loci" = list(
+        MNase_sacCer3_Henikoff2011, sampleGRanges(ABF1_sacCer3)
+    )
+)
+p <- plotVmat(
+    list_params, 
+    cores = 1
+)
+p
+```
+
+For instance, ATAC-seq fragment density can be visualized at different classes
+of ubiquitous and tissue-specific promoters in *C. elegans*. 
+
+```{r, eval = TRUE}
+list_params <- list(
+    "Germline ATACseq\n@ Ubiq. proms" = list(
+        ATAC_ce11_Serizay2020[['Germline']], 
+        ce11_proms[ce11_proms$which.tissues == 'Ubiq.']
+    ), 
+    "Germline ATACseq\n@ Germline proms" = list(
+        ATAC_ce11_Serizay2020[['Germline']], 
+        ce11_proms[ce11_proms$which.tissues == 'Germline']
+    ),
+    "Neuron ATACseq\n@ Ubiq. proms" = list(
+        ATAC_ce11_Serizay2020[['Neurons']], 
+        ce11_proms[ce11_proms$which.tissues == 'Ubiq.']
+    ), 
+    "Neuron ATACseq\n@ Neuron proms" = list(
+        ATAC_ce11_Serizay2020[['Neurons']], 
+        ce11_proms[ce11_proms$which.tissues == 'Neurons']
+    )
+)
+p <- plotVmat(
+    list_params, 
+    cores = 1,
+    nrow = 2, ncol = 5
+)
+p
+```
+
+### Vplots normalization
+
+Different normalization approaches are available using the `normFun` argument. 
+
+* Un-normalized raw counts can be plotted by specifying `normFun = 'none'`. 
+
+```{r, eval = TRUE}
+# No normalization 
+p <- plotVmat(
+    list_params, 
+    cores = 1, 
+    nrow = 2, ncol = 5, 
+    verbose = FALSE,
+    normFun = 'none'
+)
+p
+```
+
+* By default, plots are normalized by the library depth of the sequencing run 
+and by the number of loci used to compute fragment density. 
+
+```{r, eval = TRUE}
+# Library depth + number of loci of interest (default)
+p <- plotVmat(
+    list_params, 
+    cores = 1, 
+    nrow = 2, ncol = 5, 
+    verbose = FALSE,
+    normFun = 'libdepth+nloci'
+)
+p
+```
+
+* Alternatively, heatmaps can be internally z-scored or scaled to a specific 
+quantile. 
+
+```{r, eval = TRUE}
+# Zscore
+p <- plotVmat(
+    list_params, 
+    cores = 1, 
+    nrow = 2, ncol = 5, 
+    verbose = FALSE,
+    normFun = 'zscore'
+)
+p
+# Quantile
+p <- plotVmat(
+    list_params, 
+    cores = 1, 
+    nrow = 2, ncol = 5, 
+    verbose = FALSE,
+    normFun = 'quantile', 
+    s = 0.99
+)
+p
+```
+
+## Footprints
+
+VplotR also implements a function to profile the footprint from MNase or 
+ATAC-seq over sets of genomic loci. For instance, CTCF is known for its 
+~40-bp large footprint at its binding loci. 
+
+```{r}
+p <- plotFootprint(
+    MNase_sacCer3_Henikoff2011,
+    ABF1_sacCer3
+)
+p
+```
+
+## Local fragment distribution
+
+VplotR provides a function to plot the distribution of paired-end 
+fragments over an individual genomic window.
+
+```{r}
+data(MNase_sacCer3_Henikoff2011_subset)
+genes_sacCer3 <- GenomicFeatures::genes(TxDb.Scerevisiae.UCSC.sacCer3.sgdGene::
+    TxDb.Scerevisiae.UCSC.sacCer3.sgdGene
+)
+p <- plotProfile(
+    fragments = MNase_sacCer3_Henikoff2011_subset,
+    window = "chrXV:186,400-187,400", 
+    loci = ABF1_sacCer3, 
+    annots = genes_sacCer3,
+    min = 20, max = 200, alpha = 0.1, size = 1.5
+)
+p
+```
+
+## Session Info
+```{r echo = TRUE, collapse = TRUE, eval = TRUE}
+sessionInfo()
+```
+

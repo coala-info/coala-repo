@@ -1,0 +1,63 @@
+---
+name: r-liger
+description: Skill for using the CRAN R package r-liger.
+homepage: https://cloud.r-project.org/web/packages/liger/index.html
+---
+
+# r-liger
+
+## Overview
+`liger` is a lightweight R implementation of Gene Set Enrichment Analysis (GSEA). It determines whether a predefined set of genes shows statistically significant, concordant differences between biological states. It is particularly powerful for identifying biological signals when individual genes do not reach statistical significance but show collective trends.
+
+## Installation
+```R
+install.packages("liger")
+# Or for the development version:
+# devtools::install_github("JEFworks/liger")
+```
+
+## Core Functions
+
+### Single Gene Set Testing
+Use `gsea()` to test a specific gene set against a named vector of values (e.g., log2 fold changes).
+```R
+# values: named numeric vector (names = gene symbols)
+# geneset: character vector of gene symbols
+res <- gsea(values = my_vals, geneset = my_gs, plot = TRUE, n.rand = 1000)
+```
+
+### Bulk Testing
+Use `bulk.gsea()` or `iterative.bulk.gsea()` to test a list of gene sets. The iterative version is more computationally efficient for large lists.
+```R
+# set.list: a list of character vectors
+results <- iterative.bulk.gsea(values = my_vals, set.list = gene_set_list)
+```
+
+## Interpreting Results
+The output provides several key metrics:
+- **p.val / q.val**: Statistical significance based on permutations.
+- **sscore (Enrichment Score)**: 
+    - Positive: Genes in the set are generally higher in the ranked list.
+    - Negative: Genes in the set are generally lower in the ranked list.
+- **edge (Leading Edge)**:
+    - Positive: Enrichment is driven by genes at the top of the list (upregulated).
+    - Negative: Enrichment is driven by genes at the bottom of the list (downregulated).
+
+| sscore | edge | Interpretation |
+| :--- | :--- | :--- |
+| Positive | Positive | Upregulated in Condition X |
+| Negative | Negative | Upregulated in Condition Y (Downregulated in X) |
+| Positive | Negative | Depleted in Condition Y (but not necessarily enriched in X) |
+| Negative | Positive | Depleted in Condition X |
+
+## Workflow Tips
+1. **Permutations**: The precision of the p-value is limited by `n.rand`. For example, `n.rand = 1000` can only provide a minimum p-value of 0.001. Increase `n.rand` for higher precision.
+2. **Gene Universe**: Ensure the names of your `values` vector match the symbols used in your `geneset` list.
+3. **Comparison with fgsea**: While `fgsea` is faster for simple ranking, `liger` can detect "depletion" patterns (where a gene set is significantly missing from a specific rank range) which `fgsea` may ignore.
+
+## Reference documentation
+- [Comparison of liger with fgsea](./references/comparison.Rmd)
+- [Gene Set Enrichment Analysis with LIGER](./references/gsea.Rmd)
+- [Interpreting Enrichment Scores and Edge Values](./references/interpreting.Rmd)
+- [Exploring Permutation P-values](./references/permpvals.Rmd)
+- [Highlighting the power of gene set enrichment analysis using simulation](./references/simulation.Rmd)

@@ -1,0 +1,321 @@
+---
+title: "Understanding protein groups with adjacency matrices"
+output:
+    BiocStyle::html_document:
+        toc_float: true
+vignette: >
+    %\VignetteIndexEntry{Understanding protein groups with adjacency matrices}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+    %\VignettePackage{PSMatch}
+    %\VignetteDepends{mzR,BiocStyle,msdata,SummarizedExperiment,factoextra}
+---
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+**Package**: `r Biocpkg("PSMatch")`<br />
+**Authors**: `r packageDescription("PSMatch")[["Author"]] `<br />
+**Last modified:** `r file.info("AdjacencyMatrix.Rmd")$mtime`<br />
+**Compiled**: `r date()`
+
+```{r setup, message = FALSE, echo = FALSE}
+library("PSMatch")
+```
+
+# Introduction
+
+This vignette is one among several illustrating how to use the
+`PSMatch` package, focusing on the modelling peptide-protein relations
+using adjacency matrices and connected components. For a general
+overview of the package, see the `PSMatch` package manual page
+(`?PSMatch`) and references therein.
+
+
+# Peptide-protein relation
+
+Let's start by loading and filter PSM data as illustrated in the
+[*Working with PSM
+data*](https://rformassspectrometry.github.io/PSMatch/articles/PSM.html) vignette.
+
+```{r}
+library("PSMatch")
+id <- msdata::ident(full.names = TRUE, pattern = "TMT") |>
+PSM() |>
+filterPsmDecoy() |>
+filterPsmRank()
+id
+```
+
+When identification data is stored as a table, the relation between
+peptides is typically encoded in two columns, once containing the
+peptide sequences and the second the protein identifiers these
+peptides stem from. Below are the 10 first observations of our
+identification data table.
+
+```{r}
+data.frame(id[1:10, c("sequence", "DatabaseAccess")])
+```
+
+This information can however also be encoded as an adjacency matrix
+with peptides along the rows and proteins along the columns, and a 1
+(or more generally a value > 0) indicating that a peptides belongs to
+the corresponding proteins. Such a matrix is created below for our
+identification data.
+
+```{r}
+adj <- makeAdjacencyMatrix(id)
+dim(adj)
+adj[1:5, 1:5]
+```
+
+This matrix models the relation between the `r length(unique(id$sequence))`
+peptides and the `r length(unique(id$DatabaseAccess))` is our identification
+data. These numbers can be verified by checking the number of unique
+peptides sequences and database accession numbers. For the latter, if the 
+peptide stems from multiple proteins, these proteins are separated by default 
+with a semicolon `;`.
+
+
+```{r}
+length(unique(id$sequence))
+length(unique(unlist(strsplit(id$DatabaseAccess, ";"))))
+```
+
+Some values are > 1 because some peptide sequences are observed more
+than once, for example carrying different modifications or the same
+one at different sites or having different precursor charge states. 
+The adjacency matrix can be made binary by setting 
+`madeAdjacencyMatrix(id, binary = TRUE)`.
+
+This large matrix is too large to be explored manually and is anyway
+not interesting on its own. Subsets of this matrix that define
+proteins defined by a set of peptides (whether shared or unique) is
+relevant. These are represented by subsets of this large matrix named
+connected component. We can easily compute all these connected
+components to produce the multiple smaller and relevant adjacency
+matrices.
+
+```{r}
+cc <- ConnectedComponents(adj)
+length(cc)
+cc
+```
+
+Among the `r length(unique(id$sequence))` and the
+`r length(unique(id$DatabaseAccess))` proteins, we have `r length(cc)`
+connected components.
+
+954 thereof, such as the one shown below, correspond to single
+proteins identified by a single peptide:
+
+```{r}
+connectedComponents(cc, 1)
+```
+
+7 thereof represent protein groups identified by a single shared
+peptide:
+
+```{r}
+connectedComponents(cc, 527)
+```
+
+501 represent single proteins identified by multiple unique peptides:
+
+```{r}
+connectedComponents(cc, 38)
+```
+
+Finally, arguable those that warrant additional exploration are those
+that are composed of multiple peptides and multiple proteins. There
+are 14 thereof in this identification; here's an example:
+
+```{r}
+connectedComponents(cc, 920)
+```
+
+# Visualising adjacency matrices
+
+
+Let's identify the connected components that have at least 3 peptides
+(i.e. rows in the adjacency matrix) and 3 proteins (i.e. columns in
+the adjacency matrix).
+
+```{r}
+(i <- which(nrows(cc) > 2 & ncols(cc) > 2))
+dims(cc)[i, ]
+```
+
+We will use the second adjacency matrix, with index 1082 to learn
+about the `plotAdjacencyMatrix()` function and explore how to inform
+our peptides filtering beyond the `filterPsm*()` functions.
+
+```{r}
+cx <- connectedComponents(cc, 1082)
+cx
+```
+
+We can now visualise the the `cx` adjacency matrix with the
+`plotAdjacencyMatrix()` function. The nodes of the graph represent
+proteins and petides - by default, proteins are shown as blue squares
+and peptides as white circles. Edge connect peptides/circles to
+proteins/squares, indicating that a peptide belongs to a protein.
+
+
+```{r}
+plotAdjacencyMatrix(cx)
+```
+
+We can immediately observe that peptide `VVPVGLRALVWVQR` is associated
+to all four proteins; it holds that protein group together, defines
+that connected component formed by these four proteins. If we were to
+drop that peptides, we would obtain two single proteins, `ECA3399`
+(defined by `KLKPRRR`), `ECA3398` (defined by `RRKRKPDSLKK` and
+`KPTARRRKRK`) and a protein group formed of `ECA3415` and `ECA3406`
+(defined by three shared peptides).
+
+## Colouring the graph nodes
+
+To help with the interpretation of the graph and the potential
+benefits of additional manual peptide filtering, it is possible to
+customise the node colours. Protein and peptide node colours can be
+controlled with the `protColors` and `pepColors` arguments
+respectively. Let's start with the former.
+
+### Colouring protein nodes
+
+`protColors` can either be a numeric or a character. The default value
+is 0, which produces the figure above. Any value > 0 will lead to more
+proteins being highlighted using different colours. Internally, string
+distances between protein names are computed and define if proteins
+should be coded with the same colours (if they are separated by small
+distances, i.e. they have similar names) or different colours (large
+distance, dissimilar names).
+
+By setting the argument to 1, we see that proteins starting with
+`ECA33` and those starting with `ECA34` are represented with different
+colours.
+
+```{r}
+plotAdjacencyMatrix(cx, 1)
+```
+
+We can further distinguish `ECA3406`, and `ECA314` and `ECA33*9` by
+setting `protColors` to 2.
+
+```{r}
+plotAdjacencyMatrix(cx, 2)
+```
+
+`protColors` can also be a character of colours named by protein
+names. We will illustrate this use below, as it functions the same way
+as `pepColors`.
+
+### Colouring peptide nodes
+
+`pepColors` can either be `NULL` to represent peptides as white nodes
+(as we have seen in all examples above). Alternatively, it can be set
+to a character of colours names after the peptides sequences. Let's
+use the search engine score (here `MS.GF.RawScore`) to annotate the
+peptide nodes.
+
+We can extract this metric from the PSM object we started with and
+create a colour palette representing the range of scores.
+
+The named vector of scores:
+
+```{r}
+score <- id$MS.GF.RawScore
+names(score) <- id$sequence
+head(score)
+```
+
+The matching named vector of colours:
+
+```{r}
+cls <- as.character(cut(score, 12,
+                        labels = colorRampPalette(c("white", "red"))(12)))
+names(cls) <- id$sequence
+head(cls)
+```
+
+Below, we see that all these peptides have relatively low scores
+(light red), and that two of the three of the `ECA34*` proteins have
+the highest scores.
+
+```{r}
+plotAdjacencyMatrix(cx, pepColors = cls)
+```
+
+# Using quantitative data
+
+To conclude this vignette, we show how this same data modelling and
+exploration can be initiated from a quantitative dataset. We will use
+part of the CPTAC data that is available in the `msdata` package.
+
+Once we have the path to the tsv data, we identify the columns that
+contain quantitation values (i.e. those starting with `Intensity.`)
+and them create a `SummarizedExperiment` using the
+[readSummarizedExperiment()](https://rformassspectrometry.github.io/QFeatures/reference/readQFeatures.html)
+function from the `r Biocpkg("QFeatures")` package.
+
+```{r, message = FALSE}
+basename(f <- msdata::quant(full.names = TRUE))
+(i <- grep("Intensity\\.", names(read.delim(f))))
+library(QFeatures)
+se <- readSummarizedExperiment(f, quantCols = i, sep = "\t")
+```
+
+Below, we create a vector of protein groups (not leading razor protein
+names) and name it using the peptide sequences.
+
+```{r}
+prots <- rowData(se)$Proteins
+names(prots) <- rowData(se)$Sequence
+head(prots)
+```
+
+Below, the `makeAdjacencyMatrix()` will split the protein groups into
+individual proteins using a `;` (used by default, so not required
+here) to construct the adjacency matrix, which itself can be used to
+compute the connected components.
+
+```{r}
+adj <- makeAdjacencyMatrix(prots, split = ";")
+dim(adj)
+adj[1:3, 1:3]
+cc <- ConnectedComponents(adj)
+cc
+```
+
+# Prioritising connected components
+
+
+The `prioritiseConnectedComponents()` function can be used to help
+prioritise the most interesting connected components to
+investigate. The function computes a set of metrics describing the
+components composed of as least several peptides and proteins (150 in
+the example above) and ranks them from the most to the least
+interesting.
+
+```{r}
+head(cctab <- prioritiseConnectedComponents(cc))
+```
+
+The prioritisation table can then be further summarised using a
+principal component to identify outliers (for example component 1200
+below) or groups of *similar* components to explore.
+
+```{r, message = FALSE}
+library(factoextra)
+fviz_pca(prcomp(cctab, scale = TRUE, center = TRUE))
+```
+
+
+
+# Session information
+
+```{r si}
+sessionInfo()
+```

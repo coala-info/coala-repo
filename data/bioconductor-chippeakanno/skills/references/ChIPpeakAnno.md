@@ -1,0 +1,2932 @@
+# ChIPpeakAnno: annotate, visualize, and compare peak data
+
+Jianhong Ou1, Kai Hu2, Haibo Liu2, Junhui Li2, Jun Yu3 and Lihua Julie Zhu2
+
+1Duke Univeristy, Durham, USA
+2UMass Chan Medical School, Worcester, USA
+3Novo Nordisk Dicerna TRU, Boston, USA
+
+#### 29 October 2025
+
+#### Abstract
+
+A guide to utilizing *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* (Zhu et al. [2010](#ref-zhu2010); Zhu [2013](#ref-zhu2013)) for common analysis of any genmoic interval data such as [peak data](https://en.wikipedia.org/wiki/Peak_calling) collected with the classic [ChIP-seq](https://en.wikipedia.org/wiki/ChIP_sequencing) or the cutting-edge [CUT&RUN](https://en.wikipedia.org/wiki/CUT%26Tag_sequencing) experiments, [ATAC-seq](https://en.wikipedia.org/wiki/ATAC-seq), and their variants. *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* offers a range of functions for peak annotaion, visualization, and peak profile comparison.
+
+#### Package
+
+ChIPpeakAnno 3.44.0
+
+# 1 Introduction
+
+Several experimental techniques including ChIP-ChIP (Blat and Kleckner [1999](#ref-blat1999)), ChIP-seq (Barski et al. [2007](#ref-barski2007); Johnson et al. [2007](#ref-johnson2007)), and CUT&RUN (Skene and Henikoff [2017](#ref-skene2017)) have gained widespread use in molecular biology. These techniques enable the study of protein-DNA interactions by identifying the genomic regions that are associated with specific proteins, such as transcription factor binding sites, or epigenetic markers like histone modification. Through these approaches, researchers gain valuable insights into the regulation of genes and the structure of chromatin.
+
+The analysis involves several key procedures as outlined below, you can also integrate other omics data to gain a more comprehensive view of the gene regulation mechanisms. The steps where *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* package can be utilized are displayed in pink boxes.
+
+![A workflow for ChIP-seq data analysis](data:image/png;base64...)
+
+Figure 1: A workflow for ChIP-seq data analysis
+
+Explanations of selected terms:
+
+* Peak calling: identify the genomic regions of significant read enrichment (peaks), which represent the binding sites of the protein or epigenetic marker of interest
+* Peak annotation: associate peaks with nearby genomic features, usually gene transcripts, to understand their functional implications
+* Enrichment analysis: identify the gene ontology (GO) terms or biological pathways that are associated with the annotated genes
+* Motif analysis: identify the enriched DNA patterns within peaks to understand the binding preference of the target protein
+
+Various algorithms have been developed to identify peaks from experimental data (Thomas et al. [2017](#ref-thomas2017)). Once the peak files are obtained, they are commonly converted into formats like [*BED*](https://en.wikipedia.org/wiki/BED_%28file_format%29) and its variants. These formats allow the data to be easily loaded into genome browsers, such as the UCSC Genome Browser, as custom tracks. This enables investigators to examine the proximity of the peaks to different genomic features like promoters, enhancers, or other regulatory elements. However manually navigating through the genome browser can be a daunting task due to the typically large number of peaks that are spread across the genome.
+
+The *Bioconductor* package *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* is a pioneering tool that facilitates the batch annotation of peaks obtained from various technologies. One notable feature of *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* is its ability to dynamically retrieve up-to-date annotations by leveraging the *[biomaRt](https://bioconductor.org/packages/3.22/biomaRt)* package. This enables users to access the most current annotation files. Additionally, users can supply their own annotation data or utilize existing annotation packages. Furthermore, *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* provides functions to retrieve sequences surrounding the peaks, which can be utilized for peak validation via PCR and motif discovery (Durinck et al. [2005](#ref-Durinck2005)). The package also facilitates the identification of enriched GO or pathway terms. In addition, *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* includes several helper functions that aid in visualizing binding patterns and comparing peak profiles across multiple samples or experimental conditions.
+
+*[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* has been continuously enhanced since its initial release in 2010, as evident from its active development111 <https://github.com/jianhong/ChIPpeakAnno/blob/devel/NEWS>. New features are being regularly added based on user requests. If you have any usage related questions, please search for solutions or post new questions on the [Bioconductor Support Site](https://support.bioconductor.org/new/post/), which is actively monitored by many seasoned users and developers. For feature request, bug report, or any other concerns, raise an issue on the [ChIPpeakAnno](https://github.com/jianhong/ChIPpeakAnno) GitHub repository. Your input and contributions will be greatly appreciated and carefully considered.
+
+# 2 Quick demo
+
+This section provides a quick example on utilizing *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* to annotate peaks identified with *MACS* or *MACS2* (Zhang et al. [2008](#ref-zhang2008)). Several steps are typically involved and are discussed in more details in the following sections:
+
+* Convert peaks to *GRanges* (Section [3](#readinpeak))
+* Handle replicates (Section [4](#handlereplicates))
+* Prepare annotation file (Section [5](#prepanno))
+* Annotate peaks (Section [7](#annopeaks))
+* Add other feature IDs (Section [8](#addids))
+
+From Section [3](#readinpeak) to [11](#profilecompare), we delve into detailed use cases, showcasing the versatility of *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* in various scenarios. Section [12](#workflow1) to [13](#workflow2) present several commonly employed analytical pipelines, offering step-by-step illustrations for different settings.
+
+## 2.1 Convert peaks to *GRanges*
+
+The *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* package provides an example peak file in *narrowPeak* format, which is generated by *MACS*. To work with this example file, we need to locate it with `system.file` and convert it into a *GRanges* object using `toGRanges` function.
+
+```
+library(ChIPpeakAnno)
+
+macs_peak <- system.file("extdata", "MACS_peaks.xls",
+                         package = "ChIPpeakAnno")
+macs_peak_gr <- toGRanges(macs_peak, format = "MACS")
+head(macs_peak_gr, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 6 metadata columns:
+##       seqnames            ranges strand |    length    summit      tags
+##          <Rle>         <IRanges>  <Rle> | <integer> <integer> <integer>
+##   X01     chr1 25323511-25324015      * |       505       252        45
+##   X02     chr1 25362685-25362997      * |       313       211        33
+##       -10*log10(pvalue) fold_enrichment       FDR
+##               <numeric>       <numeric> <numeric>
+##   X01             59.17           17.01       5.8
+##   X02             60.63           22.41       4.2
+##   -------
+##   seqinfo: 12 sequences from an unspecified genome; no seqlengths
+```
+
+## 2.2 Prepare annotations
+
+This section demonstrates how to prepare annotation file from [Ensembl](https://useast.ensembl.org/index.html) package. The Ensembl package is generally favored, as it offers more comprehensive and superior annotation. For more information, please refer to Section [5](#prepanno).
+
+```
+# Use Ensembl annotation package:
+library(EnsDb.Hsapiens.v86)
+
+ensembl.hs86.transcript <- transcripts(EnsDb.Hsapiens.v86)
+```
+
+## 2.3 Annotate peaks
+
+```
+# Use Ensembl annotation package:
+macs_peak_ensembl <- annotatePeakInBatch(macs_peak_gr,
+                                         AnnotationData = ensembl.hs86.transcript)
+head(macs_peak_ensembl, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 15 metadata columns:
+##                       seqnames            ranges strand |    length    summit
+##                          <Rle>         <IRanges>  <Rle> | <integer> <integer>
+##   X01.ENST00000564413     chr1 25323511-25324015      * |       505       252
+##   X02.ENST00000487234     chr1 25362685-25362997      * |       313       211
+##                            tags -10*log10(pvalue) fold_enrichment       FDR
+##                       <integer>         <numeric>       <numeric> <numeric>
+##   X01.ENST00000564413        45             59.17           17.01       5.8
+##   X02.ENST00000487234        33             60.63           22.41       4.2
+##                              peak         feature start_position end_position
+##                       <character>     <character>      <integer>    <integer>
+##   X01.ENST00000564413         X01 ENST00000564413       25335846     25337218
+##   X02.ENST00000487234         X02 ENST00000487234       25342592     25351654
+##                       feature_strand insideFeature distancetoFeature
+##                          <character>   <character>         <numeric>
+##   X01.ENST00000564413              -    downstream             13707
+##   X02.ENST00000487234              +    downstream             20093
+##                       shortestDistance fromOverlappingOrNearest
+##                              <integer>              <character>
+##   X01.ENST00000564413            11831          NearestLocation
+##   X02.ENST00000487234            11031          NearestLocation
+##   -------
+##   seqinfo: 12 sequences from an unspecified genome; no seqlengths
+```
+
+For more regarding the metadata columns, please refer to the Section [7.3](#findnearest). Of note, the metadata does not come with “gene symbol” column. We can add it using the `addGeneIDs` function as below.
+
+## 2.4 Add gene symbols
+
+To add *gene symbols*, we can leverage either the organism annotation package, namely *[org.Hs.eg.db](https://bioconductor.org/packages/3.22/org.Hs.eg.db)*, or the *[bioRmart](https://bioconductor.org/packages/3.22/bioRmart)* package. The latter offers the most current information but may have a slower performance as it requires querying the [BioMart](https://useast.ensembl.org/info/data/biomart/index.html) databases in real time. Once the required package is loaded, you can use the `addGeneIDs` function to add *gene symbols*. The following example utilizes the *[bioRmart](https://bioconductor.org/packages/3.22/bioRmart)* method.
+
+```
+library(biomaRt)
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL",
+                dataset = "hsapiens_gene_ensembl")
+
+# Use Ensembl annotation package:
+macs_peak_ensembl <- addGeneIDs(annotatedPeak = macs_peak_ensembl,
+                                mart = mart,
+                                feature_id_type = "ensembl_transcript_id",
+                                IDs2Add = "hgnc_symbol")
+head(macs_peak_ensembl, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 16 metadata columns:
+##                       seqnames            ranges strand |    length    summit
+##                          <Rle>         <IRanges>  <Rle> | <integer> <integer>
+##   X01.ENST00000564413     chr1 25323511-25324015      * |       505       252
+##   X02.ENST00000487234     chr1 25362685-25362997      * |       313       211
+##                            tags -10*log10(pvalue) fold_enrichment       FDR
+##                       <integer>         <numeric>       <numeric> <numeric>
+##   X01.ENST00000564413        45             59.17           17.01       5.8
+##   X02.ENST00000487234        33             60.63           22.41       4.2
+##                              peak         feature start_position end_position
+##                       <character>     <character>      <integer>    <integer>
+##   X01.ENST00000564413         X01 ENST00000564413       25335846     25337218
+##   X02.ENST00000487234         X02 ENST00000487234       25342592     25351654
+##                       feature_strand insideFeature distancetoFeature
+##                          <character>   <character>         <numeric>
+##   X01.ENST00000564413              -    downstream             13707
+##   X02.ENST00000487234              +    downstream             20093
+##                       shortestDistance fromOverlappingOrNearest hgnc_symbol
+##                              <integer>              <character> <character>
+##   X01.ENST00000564413            11831          NearestLocation       RSRP1
+##   X02.ENST00000487234            11031          NearestLocation     TMEM50A
+##   -------
+##   seqinfo: 12 sequences from an unspecified genome; no seqlengths
+```
+
+Now, a *hgnc\_symbol* metadata column has been successfully inserted to the resulting *GRanges* object. It is crucial to specify the correct `feature_id_type` and `IDs2Add` for the function to work properly. By default, `feature_id_type = "ensembl_gene_id"`.
+
+The following sections demonstration each topic in more details.
+
+# 3 Convert peaks to *GRanges*
+
+Peak files are represented as *GRanges* objects in *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)*. To facilitate the conversion of commonly used peak formats including *BED* (and its variants), *GFF*, and *CSV*, we have implemented a helper function called `toGRanges`.
+
+```
+# Convert GFF to GRanges:
+macs_peak_gff <- system.file("extdata", "GFF_peaks_hg38.gff",
+                             package = "ChIPpeakAnno")
+macs_peak_gr1 <- toGRanges(macs_peak_gff, format = "GFF", header = FALSE)
+head(macs_peak_gr1, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 4 metadata columns:
+##       seqnames        ranges strand |   source     type     score     phase
+##          <Rle>     <IRanges>  <Rle> | <factor> <factor> <numeric> <integer>
+##   [1]     chr1 778513-779367      + |  bed2gff       NA         1      <NA>
+##   [2]     chr1 779643-780198      + |  bed2gff       NA         1      <NA>
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+```
+# Convert BED to GRanges:
+macs_peak_bed <- system.file("extdata", "MACS_output_hg38.bed",
+                             package = "ChIPpeakAnno")
+macs_peak_gr2 <- toGRanges(macs_peak_bed, format = "BED", header = FALSE)
+head(macs_peak_gr2, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 1 metadata column:
+##               seqnames      ranges strand |     score
+##                  <Rle>   <IRanges>  <Rle> | <numeric>
+##   MACS_peak_1     chr1 28341-29610      * |         1
+##   MACS_peak_2     chr1 90821-91234      * |         1
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+# 4 Handle replicates
+
+## 4.1 Obtain final peak set from replicates
+
+For experiments with two or more biological replicates, there are several strategies222 <https://ro-che.info/articles/2018-07-11-chip-seq-consensus> to retrieve a final peak set:
+
+* Take the intersection of peaks:
+  + Most conservative, reduces noise by considering the most robust and consistently enriched peaks
+  + May result in small number of peaks with narrower widths
+* Take the union of all peaks: may lead to large number of peaks
+  + Least conservative, provides a more comprehensive view of the binding landscape
+  + Useful for identifying condition-specific or rare binding events
+* Merge the overlapping peaks: may lead to peaks with broader widths
+  + Can be achieved with `ChIPpeakAnno::findOverlapsOfPeaks`
+* Use peak coverage voting to determine a final set:
+  + Can be achieved with *[consensusSeekeR](https://bioconductor.org/packages/3.22/consensusSeekeR)*
+* Statistical model based approaches that leverage peak coverage and/or read depth information
+
+Investigators may choose one of these strategies based on their research questions and the quality of their data.
+
+## 4.2 Assess the concordance of peak replicates
+
+Concordant peaks refer to the peaks that come from different biological replicates and exhibit a high degree of overlap in their genomic coordinates and signal intensity. The presence of concordant peaks indicates that the observed signal is likely to be true positive rather than arising from random noise or technical artifacts. You can evaluate the concordance of replicates by visualizing the peak overlappings.
+
+### 4.2.1 Find overlapping peaks
+
+Here are examples demonstrating how to identify overlapping peaks using the sample peaks provided in the *[ChIPpeapAnno](https://bioconductor.org/packages/3.22/ChIPpeapAnno)* package. By default, two peaks are considered “overlapping” if “one range has its start or end strictly inside the other (`maxgap = -1L`)”. If you set `maxgap = 1000`, two peaks will be classified as “overlapping” if the number of positions that separate them is less than 1000. Additionally, specifying `minoverlap = 100` ensures that only peaks with a minimum of 100 overlapping positions are treated as “overlapping”. When `0 < minoverlap < 1`, the function will identify overlaps based on the percentage covered of peak interval.
+
+```
+# For two samples:
+data(peaks1)
+data(peaks2)
+head(peaks1, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 0 metadata columns:
+##         seqnames          ranges strand
+##            <Rle>       <IRanges>  <Rle>
+##   Site1        1   967654-967754      +
+##   Site2        2 2010897-2010997      +
+##   -------
+##   seqinfo: 6 sequences from an unspecified genome; no seqlengths
+```
+
+```
+head(peaks2, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 0 metadata columns:
+##      seqnames          ranges strand
+##         <Rle>       <IRanges>  <Rle>
+##   t1        1   967659-967869      +
+##   t2        2 2010898-2011108      +
+##   -------
+##   seqinfo: 6 sequences from an unspecified genome; no seqlengths
+```
+
+```
+ol <- findOverlapsOfPeaks(peaks1, peaks2)
+names(ol)
+```
+
+```
+## [1] "venn_cnt"           "peaklist"           "uniquePeaks"
+## [4] "mergedPeaks"        "peaksInMergedPeaks" "overlappingPeaks"
+## [7] "all.peaks"
+```
+
+```
+# For three samples:
+data(peaks3)
+ol2 <- findOverlapsOfPeaks(peaks1, peaks2, peaks3,
+                           connectedPeaks = "min")
+
+# Find peaks with at least 90% overlap:
+ol3 <- findOverlapsOfPeaks(peaks1, peaks2, minoverlap = 0.9)
+```
+
+The results are an object of *overlappingPeaks*. This object provides comprehensive information about the overlappings, allowing for further visualization and interpretation:
+
+* *venn\_cnt*: an object of *VennCounts*, which can be used to draw a Venn diagram
+* *peaklist*: a list of *GRanges* objects that contains all merged overlapping peaks or unique peaks
+* *uniquePeaks*: an object of *GRanges* that consists of all unique peaks
+* *mergedPeaks*: an object of *GRanges* that consists of all merged overlapping peaks
+* *peaksInMergedPeaks*: an object of *GRanges* that consists of all peaks in each samples involved in the overlapping peaks
+* *overlappingPeaks*: a list of data frames that consists of the annotation of all overlapping peaks
+* *all.peaks*: a list of *GRanges* objects that consists the input peaks with formatted rownames
+
+To determine the number of peaks that are unique to each peak set (i.e., not overlapping with any peaks in other set), you can use the following code:
+
+```
+# For peaks1:
+length(ol$peaklist[["peaks1"]])
+```
+
+```
+## [1] 1
+```
+
+```
+# For peaks2:
+length(ol$peaklist[["peaks2"]])
+```
+
+```
+## [1] 6
+```
+
+To obtain the merged overlapping peaks, you have two options:
+
+* You can use `ol$mergedPeaks` to obtain all the merged overlapping peaks from all peak sets in `ol`. This means that if you have multiple peak sets, this command will output all the peaks that overlap with peaks from any other peak sets
+* Alternatively, you can use `ol$peaklist[["peaks1///peaks2"]]`, where `"peaks1///peaks2"` represents a *GRanges* object that contains all the merged overlapping peaks from *peaks1* and *peaks2*. When you only have two peak sets, `ol$mergedPeaks` is equivalent to `ol$peaklist[["peaks1///peaks2"]]`. However, if more peak sets are involved, e.g. three peak sets, `ol$peaklist[["peaks1///peaks2///peaks3"]]` would represent merged overlapping peaks that consist of peaks from all three sets. In other words, `ol$mergedPeaks` is equivalent to `ol$peaklist[["peaks1///peaks2"]]` plus `ol$peaklist[["peaks2///peaks3"]]` and `ol$peaklist[["peaks1///peaks2///peaks3"]]`
+
+### 4.2.2 Visualize the overlaps using Venn diagram
+
+The output from `findOverlapsOfPeaks` can be directly fed to `makeVennDiagram` to draw a Venn diagram and evaluate the degree of overlap between peak sets. Additionally, the `makeVennDiagram` function also calculates a P-value, which indicates whether the observed overlap is statistically significant or not.
+
+```
+# For two samples:
+venn <- makeVennDiagram(ol, totalTest = 100,
+                        fill = c("#009E73", "#F0E442"),
+                        col = c("#D55E00", "#0072B2"),
+                        cat.col = c("#D55E00", "#0072B2"))
+```
+
+![Venn diagram showing the number of overlapping peaks for two samples](data:image/png;base64...)
+
+Figure 2: Venn diagram showing the number of overlapping peaks for two samples
+
+```
+# For three samples:
+venn2 <- makeVennDiagram(ol2, totalTest = 100,
+                         fill = c("#CC79A7", "#56B4E9", "#F0E442"),
+                         col = c("#D55E00", "#0072B2", "#E69F00"),
+                         cat.col = c("#D55E00", "#0072B2", "#E69F00"))
+```
+
+![Venn diagram showing the number of overlapping peaks for two samples](data:image/png;base64...)
+
+Figure 3: Venn diagram showing the number of overlapping peaks for two samples
+
+```
+# For peaks overlap at least 90%:
+venn3 <- makeVennDiagram(ol3, totalTest = 100,
+                         fill = c("#009E73", "#F0E442"),
+                         col = c("#D55E00", "#0072B2"),
+                         cat.col = c("#D55E00", "#0072B2"))
+```
+
+![Venn diagram showing the number of overlapping peaks for two samples](data:image/png;base64...)
+
+Figure 4: Venn diagram showing the number of overlapping peaks for two samples
+
+The parameter `totalTest` refers to the total number of potential peaks that are considered in the [hypergeometric test](https://en.wikipedia.org/wiki/Hypergeometric_distribution). It should be set to a value larger than the largest number of peaks in the replicates. Refer to Section [11.1](#hypertest) on how to choose `totalTest`. Since P-value is sensitive to the choice of `totalTest`, we recommend using permutation test, implemented as `peakPermTest` in `Biocpkg("ChIPpeakAnno")`. For details, go to Section [11.2](#permtest).
+
+### 4.2.3 Use other tools to plot Venn diagram
+
+Users can leverage the `ol$venn_cnt` object and choose other tools to draw Venn diagram. Below illustrates how to use *[Vennerable](https://CRAN.R-project.org/package%3DVennerable)* library for plotting.
+
+```
+if (!library(Vennerable)) {
+  install.packages("Vennerable", repos="http://R-Forge.R-project.org")
+  library(Vennerable)
+}
+
+n <- which(colnames(ol$vennCounts) == "Counts") - 1
+set_names <- colnames(ol$vennCounts)[1:n]
+weight <- ol$vennCounts[, "Counts"]
+names(weight) <- apply(ol$vennCounts[, 1:n], 1, base::paste, collapse = "")
+v <- Venn(SetNames = set_names, Weight = weight)
+plot(v)
+```
+
+### 4.2.4 Visualize the distribution of relative positions for overlapping peaks
+
+As mentioned earlier, two peaks are considered as “overlapping” if their distances are within `maxgap`. To visualize the distribution of the relative positions of *peaks1* to *peaks2*, we can create a pie chart using the `ol$overlappingPeaks` object. This object contains detailed information about the relative positions of peaks for each pair of peak sets. For instance, `ol$overlappingPeaks[["peaks1\\\peaks2"]]` represents the relative positions of overlapping peaks between *peaks1* and *peaks2*.
+
+```
+names(ol$overlappingPeaks)
+```
+
+```
+## [1] "peaks1///peaks2"
+```
+
+```
+dim(ol$overlappingPeaks[["peaks1///peaks2"]])
+```
+
+```
+## [1] 12 14
+```
+
+```
+ol$overlappingPeaks[["peaks1///peaks2"]][1:2, ]
+```
+
+```
+##          peaks1 seqnames   start     end width strand peaks2 seqnames   start
+## Site1_t1  Site1        1  967654  967754   101      +     t1        1  967659
+## Site2_t2  Site2        2 2010897 2010997   101      +     t2        2 2010898
+##              end width strand overlapFeature shortestDistance
+## Site1_t1  967869   211      +   overlapStart                5
+## Site2_t2 2011108   211      +   overlapStart                1
+```
+
+```
+unique(ol$overlappingPeaks[["peaks1///peaks2"]][["overlapFeature"]])
+```
+
+```
+## [1] "overlapStart"   "inside"         "overlapEnd"     "includeFeature"
+```
+
+```
+pie1(table(ol$overlappingPeaks[["peaks1///peaks2"]]$overlapFeature))
+```
+
+![](data:image/png;base64...)
+
+The column *overlapFeature* describes the relative positions of peaks between *peaks1* and *peaks2*:
+
+* *upstream*: the peak from *peaks1* is located upstream of the peak from *peaks2* and is within a distance of `maxgap`
+* *downstream*: the peak from *peaks1* is located downstream of the peak from *peaks2* and is within a distance of `maxgap`
+* *overlapStart*: the peak from *peaks1* overlaps with the *start* of peak from *peaks2*
+* *overlapEnd*: the peak from *peaks1* overlaps with the *end* of peak from *peaks2*
+* *inside*: the peak from *peaks1* is completely contained within the peak from *peaks2*
+* *includeFeature*: the peak from *peaks1* contains the entire range of the peak from *peaks2*. Note that the term *Feature* here refers to the peak in *peaks2* rather than a *genomic feature* as used in peak annotation context
+
+The utilization of a Venn diagram, in conjunction with a pie chart, enables a more comprehensive evaluation of peak concordance among biological replicates.
+
+# 5 Prepare annotation file
+
+An annotation file contains genomic coordinates and other relevant information for various genomic features, such as genes, transcripts, promoters, enhancers, and more. By comparing the peaks with these coordinates, researchers can determine which features are most enriched or associated with the peaks, which can help them understand the functional relevance of the peaks and provide insights into the potential regulatory elements or genes involved.
+
+## 5.1 Commonly used annotations
+
+Popular annotation files come from two sources and are typically stored in tab-delimited formats, such as *GTF* or *BED*.
+
+Table 1: Commonly used annotation resources
+
+| Resource | Generated\_by | Annotation\_criteria | URL |
+| --- | --- | --- | --- |
+| Ensembl | EMBL-EBI | Comprehensive (most transcripts) | <https://ftp.Ensembl.org/pub/> |
+| NCBI RefSeq | NCBI | Conservative (fewer transcripts) | <https://ftp.ncbi.nlm.nih.gov/refseq/> |
+
+In addition, the [UCSC Genome Browser](https://hgdownload.soe.ucsc.edu/downloads.html) team provides processed annotations based on the above resources that can be visualized easily with the browser. For human and mouse, there are four `GTF` files provided respectively.
+
+Table 2: UCSC Genome Browser hosted annotation files
+
+| Human | Mouse | Remark |
+| --- | --- | --- |
+| [hg38.refGene.gtf.gz](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.refGene.gtf.gz) | [mm10.refGene.gtf.gz](https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/genes/mm10.refGene.gtf.gz) | Based on RefSeq transcripts aligned by UCSC followed by manual curation |
+| [hg38.ncbiRefSeq.gtf.gz](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.ncbiRefSeq.gtf.gz) | [mm10.ncbiRefSeq.gtf.gz](https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/genes/mm10.ncbiRefSeq.gtf.gz) | Based on RefSeq transcripts as aligned by NCBI |
+| [hg38.knownGene.gtf.gz](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.knownGene.gtf.gz) | [mm10.knownGene.gtf.gz](https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/genes/mm10.knownGene.gtf.gz) | Based on Ensembl gene models |
+
+We would recommend using *EnsDb* annotations because they are usually more comprehensive and consistent.
+
+## 5.2 Bioconductor supported *TxDb* and *EnsDb*
+
+In *Bioconductor*, the tab-delimited files are often converted into *TxDb* or *EnsDb* object. Both can be created with the tab delimited files mentioned above. While *EnsDb* is tailored to *Ensembl* annotations and contains additional information such as *gene\_name*, *symbol*, and *gene\_biotype*, the *TxDb* counterpart is typically created from RefSeq or UCSC Genome Browser hosted annotations.
+
+There is a comprehensive list of pre-built *Bioconductor* maintained *TxDb* and *EnsDb* packages such as *[TxDb.Hsapiens.UCSC.hg38.knownGene](https://bioconductor.org/packages/3.22/TxDb.Hsapiens.UCSC.hg38.knownGene)* and *[EnsDb.Hsapiens.v86](https://bioconductor.org/packages/3.22/EnsDb.Hsapiens.v86)*. The list is regularly updated and can be found [here](https://www.bioconductor.org/packages/release/data/annotation/).
+
+## 5.3 Obtain *EnsDb* and *TxDb* from `AnnotationHub`
+
+Users can also retrieve annotations using the *[AnnotationHub](https://bioconductor.org/packages/3.22/AnnotationHub)* package. By default, *[AnnotationHub](https://bioconductor.org/packages/3.22/AnnotationHub)* uses a snapshot that matches the version of *Bioconductor* being used, so it may be slightly more up-to-date compared to the pre-built packages. Additionally, users have the option to switch to an earlier version333 <https://bioconductor.org/packages/release/bioc/vignettes/AnnotationHub/inst/doc/AnnotationHub.html#configuring-annotationhub-objects>. Below are examples of how to obtain annotations using *[AnnotationHub](https://bioconductor.org/packages/3.22/AnnotationHub)*.
+
+```
+library(AnnotationHub)
+
+ah <- AnnotationHub()
+
+# Obtain EnsDb:
+EnsDb_Mmusculus_all <- query(ah, pattern = c("Mus musculus", "EnsDb"))
+head(EnsDb_Mmusculus_all, n = 2)
+```
+
+```
+## AnnotationHub with 2 records
+## # snapshotDate(): 2025-10-28
+## # $dataprovider: Ensembl
+## # $species: Mus musculus
+## # $rdataclass: EnsDb
+## # additional mcols(): taxonomyid, genome, description,
+## #   coordinate_1_based, maintainer, rdatadateadded, preparerclass, tags,
+## #   rdatapath, sourceurl, sourcetype
+## # retrieve records with, e.g., 'object[["AH53222"]]'
+##
+##             title
+##   AH53222 | Ensembl 87 EnsDb for Mus Musculus
+##   AH53726 | Ensembl 88 EnsDb for Mus Musculus
+```
+
+```
+EnsDb_Mmusculus <- EnsDb_Mmusculus_all[["AH53222"]]
+class(EnsDb_Mmusculus)
+```
+
+```
+## [1] "EnsDb"
+## attr(,"package")
+## [1] "ensembldb"
+```
+
+```
+# Obtain TxDb:
+TxDb_Mmusculus_all <- query(ah, pattern = c("Mus musculus", "TxDb"))
+head(TxDb_Mmusculus_all, n = 2)
+```
+
+```
+## AnnotationHub with 2 records
+## # snapshotDate(): 2025-10-28
+## # $dataprovider: UCSC
+## # $species: Mus musculus
+## # $rdataclass: TxDb
+## # additional mcols(): taxonomyid, genome, description,
+## #   coordinate_1_based, maintainer, rdatadateadded, preparerclass, tags,
+## #   rdatapath, sourceurl, sourcetype
+## # retrieve records with, e.g., 'object[["AH52263"]]'
+##
+##             title
+##   AH52263 | TxDb.Mmusculus.UCSC.mm10.ensGene.sqlite
+##   AH52264 | TxDb.Mmusculus.UCSC.mm10.knownGene.sqlite
+```
+
+```
+TxDb_Mmusculus <- TxDb_Mmusculus_all[["AH52264"]]
+class(TxDb_Mmusculus)
+```
+
+```
+## [1] "TxDb"
+## attr(,"package")
+## [1] "GenomicFeatures"
+```
+
+## 5.4 Build custom *EnsDb* and *TxDb*
+
+To create the most up-to-date or custom *TxDb* and *EnsDb* objects, you can utilize functions such as `makeTxDbFromUCSC`, `makeTxDbFromEnsembl`, and `ensDbFromGRanges` from the *[GenomicFeatures](https://bioconductor.org/packages/3.22/GenomicFeatures)*444 <https://bioconductor.org/packages/devel/bioc/vignettes/GenomicFeatures/inst/doc/GenomicFeatures.html> package and the *[Ensembldb](https://bioconductor.org/packages/3.22/Ensembldb)*555 <https://www.bioconductor.org/packages/devel/bioc/vignettes/Ensembldb/inst/doc/Ensembldb.html#102_Building_annotation_packages> package.
+
+## 5.5 Use `biomaRt`
+
+The *[biomaRt](https://bioconductor.org/packages/3.22/biomaRt)* package offers a convenient interface to the [BioMart](https://useast.Ensembl.org/info/data/biomart/index.html) databases that are prominently maintained by *Ensembl*. By querying *[biomaRt](https://bioconductor.org/packages/3.22/biomaRt)*, you can access the latest available annotations from *Ensembl*. Check [this vignette](https://bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/accessing_Ensembl.html) for details.
+
+*[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* provides a helper function called `getAnnotation`, which simplifies the retrieval of desired annotations by leveraging *[biomaRt](https://bioconductor.org/packages/3.22/biomaRt)*. Here is an example:
+
+```
+library(biomaRt)
+
+listMarts()
+head(listDatasets(useMart("ENSEMBL_MART_ENSEMBL")), n = 2)
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL",
+                dataset = "mmusculus_gene_ensembl")
+anno_from_biomart <- getAnnotation(mart,
+                                   featureType = "transcript")
+head(anno_from_biomart, n = 2)
+```
+
+### 5.5.1 Convert annotations into *GRanges*
+
+To annotate peaks, the chosen annotation file needs to be converted into *GRanges* class first. This can be achieved with `toGRanges` function, accessor functions, or `getAnnotation` function.
+
+## 5.6 Use `toGRanges` function
+
+*[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* offers a helper function called `toGRanges`, which can convert annotations from various formats including *GFF*, *BED*, *CSV*, *TxDb*, and *EnsDb* into *GRanges*. Below is an example.
+
+```
+library(EnsDb.Hsapiens.v86)
+
+anno_ensdb_transcript <- toGRanges(EnsDb.Hsapiens.v86,
+                                   feature = "transcript")
+head(anno_ensdb_transcript, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 3 metadata columns:
+##                   seqnames      ranges strand |           tx_id         gene_id
+##                      <Rle>   <IRanges>  <Rle> |     <character>     <character>
+##   ENST00000456328     chr1 11869-14409      + | ENST00000456328 ENSG00000223972
+##   ENST00000450305     chr1 12010-13670      + | ENST00000450305 ENSG00000223972
+##                     gene_name
+##                   <character>
+##   ENST00000456328     DDX11L1
+##   ENST00000450305     DDX11L1
+##   -------
+##   seqinfo: 357 sequences (1 circular) from 2 genomes (hg38, GRCh38)
+```
+
+Similarly, set `feature = "gene"` to retrieve gene annotations in *GRanges* format.
+
+### 5.6.1 Use accessor functions
+
+If you are working with *TxDb* or *EnsDb* objects, you can obtain annotations in *GRanges* format with various accessor functions such as `genes` and `transcripts`, which are designed for easy fetching of the desired information.
+
+```
+anno_ensdb_transcript <- transcripts(EnsDb.Hsapiens.v86)
+
+head(anno_ensdb_transcript, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 6 metadata columns:
+##                   seqnames      ranges strand |           tx_id
+##                      <Rle>   <IRanges>  <Rle> |     <character>
+##   ENST00000456328        1 11869-14409      + | ENST00000456328
+##   ENST00000450305        1 12010-13670      + | ENST00000450305
+##                               tx_biotype tx_cds_seq_start tx_cds_seq_end
+##                              <character>        <integer>      <integer>
+##   ENST00000456328   processed_transcript             <NA>           <NA>
+##   ENST00000450305 transcribed_unproces..             <NA>           <NA>
+##                           gene_id         tx_name
+##                       <character>     <character>
+##   ENST00000456328 ENSG00000223972 ENST00000456328
+##   ENST00000450305 ENSG00000223972 ENST00000450305
+##   -------
+##   seqinfo: 357 sequences (1 circular) from GRCh38 genome
+```
+
+### 5.6.2 Use `getAnnotation` function
+
+The output from `getAnnotation` function is in *GRanges* format, refer to Section [5.5](#usebiomart) for details.
+
+# 6 Visualize peak distributions
+
+Plotting peak distributions is a valuable quality control measure as it provides an overview of the localization of peaks across the genome. Unexpected distributions can indicate potential issues with the data. In addition, you can select appropriate annotation file depending on the distribution of your peaks. For instance, if peaks are enriched near promoters, you may focus on annotating them with nearby transcripts.
+
+## 6.1 Plot peak distributions relative to genomic features
+
+The `binOverFeature` function can be used to plot the distribution of peak counts relative to a specific genomic feature. The following example shows the distribution of peaks in the `macs_peak_gr2` dataset relative to the `gene` feature (transcription start site (TSS)).
+
+```
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+
+annotation_data <- transcripts(TxDb.Hsapiens.UCSC.hg38.knownGene)
+binOverFeature(macs_peak_gr2,
+               featureSite = "FeatureStart",
+               nbins = 20,
+               annotationData = annotation_data,
+               xlab = "peak distance from TSS (bp)",
+               ylab = "peak count",
+               main = "Distribution of aggregated peak numbers around TSS")
+```
+
+![Peak count distribution around TSSs](data:image/png;base64...)
+
+Figure 5: Peak count distribution around TSSs
+
+By default, `featureSite = "FeatureStart"` meaning that distance is calculated as peak to feature start (i.e. TSS for transcript). The plot above, describing the distribution of peaks around TSS, exhibits a signal summit around TSS, a characteristic pattern observed in peaks obtained from transcription factor binding experiments.
+
+You can also plot peak distribution over multiple genomic features including exon, intron, enhancer, proximal promoter, 5’ UTR and 3’ UTR in a single bar graph using `assignChromosomeRegion`.
+
+```
+chromosome_region <- assignChromosomeRegion(macs_peak_gr2,
+                                            TxDb = TxDb.Hsapiens.UCSC.hg38.knownGene,
+                                            nucleotideLevel = FALSE,
+                                            precedence=c("Promoters",
+                                                         "immediateDownstream",
+                                                         "fiveUTRs",
+                                                         "threeUTRs",
+                                                         "Exons",
+                                                         "Introns"))
+
+# optional helper function to rotate x-axis labels for barplot():
+# ref: https://stackoverflow.com/questions/10286473/rotating-x-axis-labels-in-r-for-barplot
+rotate_x <- function(data, rot_angle) {
+  plt <- barplot(data, xaxt = "n")
+  text(plt, par("usr")[3],
+       labels = names(data),
+       srt = rot_angle, adj = c(1.1,1.1),
+       xpd = TRUE, cex = 0.6)
+}
+
+rotate_x(chromosome_region[["percentage"]], 45)
+```
+
+![Bar graph showing peak distributions over different genomic features](data:image/png;base64...)
+
+Figure 6: Bar graph showing peak distributions over different genomic features
+
+By default, `nucleotideLevel = FALSE` meaning that peaks are treated as ranges when determining overlaps with genomic features. If a peak intersects with multiple features, the feature assignment is determined by the order specified in the `precedence` argument. If `precedence` is not set, counts for each overlapping feature will be incremented. Otherwise, if `nucleotideLevel = TRUE`, the summit of the peak (a single position, not suitable for broad peaks) will be used when determining overlaps.
+
+## 6.2 Plot peak distributions over different feature levels
+
+In addition to inspecting the peak enrichment pattern by plotting the distribution against genomic features, users can plot distributions over different feature levels, each containing multiple categories, using the `genomicElementDistribution` function.
+
+* *Transcript Level*: “geneLevel”
+  + “Promoter”
+  + “Gene body”
+  + “Downstream”
+  + “Distal Intergenic”
+* *Exon Level*: “Exons”
+  + “5’ UTR”
+  + “CDS”
+  + “3’ URT”
+  + “Other exon”
+* *Exon/Intron/Intergenic*: “ExonIntron”
+  + “Exon”
+  + “Intron”
+  + “Intergenic”
+
+Please note that peaks can be classified into multiple categories from different levels, leading to the total percentage of annotated features being greater than 100%. At each level, since a peak spans a genomic range, it may overlap with multiple categories of features. In such cases, by default `nucleotideLevel = FALSE`, which means that the precedence is determined by the order listed in the `labels` argument.
+
+The `genomicElementDistribution` function accepts either a single peak object or a list of peak objects as input. If a single peak object if provided, a pie chart will be created; if a list of peak objects is provided, a bar graph will be created.
+
+### 6.2.1 Pie graph with one peak set
+
+```
+genomicElementDistribution(macs_peak_gr1,
+                           TxDb = TxDb.Hsapiens.UCSC.hg38.knownGene)
+```
+
+![Pie graph showing peak distributions over features at different levels](data:image/png;base64...)
+
+Figure 7: Pie graph showing peak distributions over features at different levels
+
+As can be seen, a significant number of peaks originate from promoter regions.
+
+### 6.2.2 Bar graph with a list of peak sets
+
+```
+macs_peaks <- GRangesList(rep1 = macs_peak_gr1,
+                          rep2 = macs_peak_gr2)
+genomicElementDistribution(macs_peaks,
+                           TxDb = TxDb.Hsapiens.UCSC.hg38.knownGene)
+```
+
+![Bar graph showing peak distributions over features at different levels](data:image/png;base64...)
+
+Figure 8: Bar graph showing peak distributions over features at different levels
+
+The consistent patterns from “rep1” and “rep2” indicate a high correlation between them.
+
+## 6.3 Plot peak overlaps for multiple features
+
+We can create an [UpSet](https://en.wikipedia.org/wiki/UpSet_Plot) plot to view peak overlaps across multiple genomic features.
+
+```
+library(UpSetR)
+
+res <- genomicElementUpSetR(macs_peak_gr1,
+                            TxDb.Hsapiens.UCSC.hg38.knownGene)
+upset(res[["plotData"]],
+      nsets = length(colnames(res$plotData)),
+      nintersects = NA)
+```
+
+![UpSet plot showing the overlappings of peak distributions among different genomic features](data:image/png;base64...)
+
+Figure 9: UpSet plot showing the overlappings of peak distributions among different genomic features
+
+UpSet plot can be considered as a “high dimensional Venn diagram” that allows for the visualization of overlaps for multiple sets. For example, in the above plot, it is evident that the feature set “gene body” (from the “Transcript Level”) and the feature set “intron” (from the “Exon/Intron/Intergenic”) share the highest number of common peaks. Type `?genomicElementUpSetR` for the definition of `distal_promoter`.
+
+# 7 Annotate peaks
+
+With the annotation data, you can assign the peaks identified in your experiments to nearby features of your choice such as genes and transcripts. This process is known as peak annotation. The `annotatePeakInBatch` function offers a highly flexible approach to perform peak annotation with various `output` option.
+
+For example, you can annotate peaks based on their nearest (`output = "nearestLocation"`) or overlapping (`output = "overlapping"`) features using the peak-centric method. Alternatively, you can annotate peaks based on their relative locations to features using the feature-centric method. For example, if a peak is located upstream of a gene within a certain distance (e.g. promoter region), you can assign that gene to the peak (`output = "upstream"`). The `bindingRegion` option allows for even more flexibility in specifying teh relative locations. Detailed explanations see below.
+
+The choice between the peak-centric and feature-centric methods depends on your research question, although most users initially opt for the peak-centric approach as it is easier to interpret.
+
+## 7.1 Peak-centric method
+
+You can assign the nearest or overlapping features to your peaks by setting the `output` option to the following values:
+
+* *output*: criteria for assigning features
+  + “nearestLocation”: (default) output the features that are nearest to the peaks based on the absolute value of the difference between the peak location and the feature location, as calculated by `abs(PeakLocForDistance - FeatureLocForDistance)`
+  + “overlapping”: output features that overlap with the peaks within the maximum distance specified by the `maxgap` parameter
+  + “both”: output both the nearest feature and overlapping features that are not the nearest
+  + “shortestDistance”: output the features that have the shortest distance to the peaks; the “shortest distance” is determined from either end of the feature to either end of the peak
+
+Other relevant parameters:
+
+* *PeakLocForDistance*: location of the peak for distance calculation
+  + “middle”: (recommended) use the center of the peak
+  + “start”: (default) use the peak edge that is smaller in coordinate
+  + “end”: use the peak edge that is larger in coordinate
+  + “endMinusStart”: use “end” defined above if feature is on the plus strand, and “start” if minus strand
+* *FeatureLocForDistance*: location of the feature for distance calculation
+  + “middle”: use the center of the feature
+  + “start”: use the feature edge that is smaller in coordinate
+  + “end”: use the feature edge that is large in coordinate
+  + “TSS”: (default) use “start” defined above if feature is on the plus strand and “end” if on the minus strand
+  + “geneEnd”: use “end” defined above if feature is on the plus strand and “start” if on the minus strand
+* *maxgap*: the maximum *gap* that is allowed between the peak and the feature ranges for them to be considered as overlapping; it is defined as the number of bases that separates the two ranges, the *gap* between two adjacent ranges is 0
+
+The following diagram illustrates how to annotate peaks using the peak-centric method. When `output = "nearestLocation"`, the distance between the peak and the feature is calculated as `abs(PeakLocForDistance - FeatureLocForDistance)`; for demonstration, `PeakLocForDistance = "start"` and `FeatureLocForDistance = "TSS"`.
+
+![How does peak-centric annotation method work](data:image/png;base64...)
+
+Figure 10: How does peak-centric annotation method work
+
+## 7.2 Feature-centric method
+
+Peaks can also be annotated based on their relative locations to nearby features. For example, by setting `output = "upstream"`, peaks will be annotated to features that they are located upstream of.
+
+### 7.2.1 Relative peak-to-feature location
+
+You can use the following options to specify the desired relative locations of the peaks to the features.
+
+* *output*: criteria for assigning features
+  + “upstream”: output the feature if the peak resides upstream of it
+  + “upstrem&inside”: output the feature if the peak resides upstream of it or contained within it
+  + “inside”: output the feature if the peak is completely contained within it
+  + “inside&downstream”: output the feature if the peak resides within it or downstream of it
+  + “downstream”: output the feature if the peak resides downstream of it
+  + “upstreamORdownstream”: output the feature if the peak resides upstream or downstream of it
+
+Other relevant parameter:
+
+* *maxgap*: allowed *gap* when determining overlap between two ranges; will be ignored if `output = "inside"`
+
+The following diagram illustrates how peaks are annotated using the feature-centric method.
+
+![How does feature-centric annotation method work](data:image/png;base64...)
+
+Figure 11: How does feature-centric annotation method work
+
+When using the feature-centric method, the `annotatePeakInBatch` function will output the feature as long as the peak range overlaps with the target region, except when `output = "inside"`. In this case, the entire peak range must be completely contained within the feature range to output it.
+
+### 7.2.2 More customization with `bindingRegion`
+
+The `bindingRegion` parameter, which refers to the regions that the target TF binds to, adds further flexibility to the feature-centric method when defining the target region. For example, if you would like to annotate peaks to features where the peaks are located within specific regions relative to them, such as from 2000bp upstream to 500bp downstream of TSS (where most promoters are found), you can set `output = "overlapping"`, `FeatureLocForDistance = "TSS"`, and `bindingRegion = c(-2000, 500)`. Once `bindingRegion` is specified, the `maxgap` will be ignored.
+
+The following diagram demonstrates several examples of how to use `bindingRegion` to define target regions.
+
+![How to define target region with bindingRegion](data:image/png;base64...)
+
+Figure 12: How to define target region with bindingRegion
+
+Bi-directional promoters are genomic regions that are located upstream of the TSS of two adjacent genes that are transcribed in opposite directions (Adachi and Lieber [2002](#ref-adachi2002)). Those promoters typically regulate the expression of both genes. To annotate peaks located in such regions, you can use `output = "overlapping", FeatureLocForDistance = "TSS"`, and `bindingRegion = c(-5000, 3000)`. By default, `select = "all"`, meaning that all overlapping features will be outputted. If you want to annotate peaks to features with the nearest bi-directional promoters, you can use `output = "nearestBiDirectionalPromoters"` along with `bindingRegion`. In this setting, at most one feature will be reported from each direction. When using `output = "nearestBiDirectionalPromoters"`, both `maxgap` and `FeatureLocForDistance` will be ignored.
+
+To illustrate, we can use the `myPeakList` provided by *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)*. As different major genome releases (e.g. *hg19* vs *hg38*) may have variations in feature coordinates, it is highly recommended to use an annotation file that matches the genome version used when generating your peak file. In the case of `myPeakList`, the peaks were originally called against *hg18*, so it is necessary to use a matching annotation file created with *hg18*. Alternatively, you can use the `rtracklayer::liftOver()` function to convert `myPeakList` to *hg38* coordinates. For step-by-step instructions, refer to “Step3” in Section [11.2.1](#custompool).
+
+## 7.3 Example 1: find the nearest features
+
+We can annotate the peaks by assigning the nearby features to them. This can be achieved by setting `output = "nearestLocation"`. When this option is used, the results may include “overlapping” features as long as they are the nearest ones to the peaks.
+
+```
+library(TxDb.Hsapiens.UCSC.hg18.knownGene)
+
+data(myPeakList)
+peak_to_anno <- myPeakList[1:100]
+anno_data <- transcripts(TxDb.Hsapiens.UCSC.hg18.knownGene)
+
+annotated_peak <- annotatePeakInBatch(peak_to_anno,
+                                      output = "nearestLocation",
+                                      PeakLocForDistance = "start",
+                                      FeatureLocForDistance = "TSS",
+                                      AnnotationData = anno_data)
+head(annotated_peak, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 9 metadata columns:
+##                      seqnames        ranges strand |         peak     feature
+##                         <Rle>     <IRanges>  <Rle> |  <character> <character>
+##   X1_93_556427.ann16     chr1 556660-556760      * | X1_93_556427       ann16
+##   X1_41_559455.ann19     chr1 559774-559874      * | X1_41_559455       ann19
+##                      start_position end_position feature_strand insideFeature
+##                           <integer>    <integer>    <character>   <character>
+##   X1_93_556427.ann16         556325       557910              +        inside
+##   X1_41_559455.ann19         559396       560212              +        inside
+##                      distancetoFeature shortestDistance
+##                              <numeric>        <integer>
+##   X1_93_556427.ann16               335              335
+##   X1_41_559455.ann19               378              338
+##                      fromOverlappingOrNearest
+##                                   <character>
+##   X1_93_556427.ann16          NearestLocation
+##   X1_41_559455.ann19          NearestLocation
+##   -------
+##   seqinfo: 24 sequences from an unspecified genome; no seqlengths
+```
+
+Here is a breakdown of the options:
+
+* `output = "nearestLocation"`: (default)
+  + output the nearest features calculated as `abs(PeakLocForDistance - FeatureLocForDistance)`. The output can consist of both “strictly nearest features (non-overlapping)” and “overlapping features” as long as it is the nearest
+* `PeakLocForDistance = "start"` (default):
+  + “start” means using the 5’ end (relative to plus strand) of the peak to calculate the distance to features
+* `FeatureLocForDistance = "TSS"` (default):
+  + “TSS” means using the 5’ end (relative to plus strand) for features on the plus strand and use the 3’ end (also relative to plus strand) for features on the minus strand to calculate the distance to features
+
+Here is a breakdown of the resulting metadata columns:
+
+* *peak*: id of the peak
+* *feature*: id of the feature such as Ensembl gene ID
+* *start\_position*, *end\_position*, *feature\_strand*: feature coordinates
+* *insideFeature*: relative location of the peak to the feature
+  + “upstream”: peak resides upstream of the feature
+  + “downstream”: peak resides downstream of the feature
+  + “inside”: peak resides inside the feature
+  + “overlapStart”: peak overlaps with the start of the feature
+  + “overlapEnd”: peak overlaps with the end of the feature
+  + “includeFeature”: peak includes the feature entirely
+* *distancetoFeature*: peak-to-feature distance as calculated with `abs(PeakLocForDistance - FeatureLocForDistance)`
+* *shortestDistance*: the shortest distance from either end of the peak to either end the feature
+* *fromOverlappingOrNearest*: relevant only when `output = "both"`; “nearestLocation” indicates that the feature is the closest to the peak, can overlap with the peak; “Overlapping” means that the feature overlaps with the peak and it is not the nearest; when `output = "nearestLocation"`, this column should consist of only “NearestLocation”
+
+## 7.4 Example 2: find the nearest and overlapping features
+
+In addition, `annotatePeakInBatch` can also report both the nearest features and overlapping features by setting `output = "both"` and the `maxgap` parameter. For example, the following command outputs the nearest features plus all overlapping features that are within 100bp away.
+
+```
+annotated_peak <- annotatePeakInBatch(peak_to_anno,
+                                      AnnotationData = anno_data,
+                                      output = "both",
+                                      maxgap = 100)
+head(annotated_peak, n = 4)
+```
+
+```
+## GRanges object with 4 ranges and 9 metadata columns:
+##                        seqnames        ranges strand |         peak     feature
+##                           <Rle>     <IRanges>  <Rle> |  <character> <character>
+##     X1_93_556427.ann16     chr1 556660-556760      * | X1_93_556427       ann16
+##   X1_93_556427.ann3352     chr1 556660-556760      * | X1_93_556427     ann3352
+##     X1_41_559455.ann19     chr1 559774-559874      * | X1_41_559455       ann19
+##   X1_41_559455.ann3352     chr1 559774-559874      * | X1_41_559455     ann3352
+##                        start_position end_position feature_strand insideFeature
+##                             <integer>    <integer>    <character>   <character>
+##     X1_93_556427.ann16         556325       557910              +        inside
+##   X1_93_556427.ann3352          79158       735413              -        inside
+##     X1_41_559455.ann19         559396       560212              +        inside
+##   X1_41_559455.ann3352          79158       735413              -        inside
+##                        distancetoFeature shortestDistance
+##                                <numeric>        <integer>
+##     X1_93_556427.ann16               335              335
+##   X1_93_556427.ann3352            178753           178653
+##     X1_41_559455.ann19               378              338
+##   X1_41_559455.ann3352            175639           175539
+##                        fromOverlappingOrNearest
+##                                     <character>
+##     X1_93_556427.ann16          NearestLocation
+##   X1_93_556427.ann3352              Overlapping
+##     X1_41_559455.ann19          NearestLocation
+##   X1_41_559455.ann3352              Overlapping
+##   -------
+##   seqinfo: 24 sequences from an unspecified genome; no seqlengths
+```
+
+Now, the `fromOverlappingOrNearest` column consists of both “NearestLocation” and “Overlapping” categories.
+
+## 7.5 Visualize peak-to-feature distances
+
+The relative location distribution of peak-to-feature can be visualized using the information stored in the *insideFeature* metadata column.
+
+```
+pie1(table(annotated_peak$insideFeature))
+```
+
+![Peak distribution around features](data:image/png;base64...)
+
+Figure 13: Peak distribution around features
+
+## 7.6 Use custom annotation data
+
+You also have the option to create and pass user-defined feature coordinates in *GRanges* format as `annotationData`. For example, if you have a list of transcript factor binding sites obtained by literature mining and would like to use it to annotate your peaks. you can convert the TF binding site coordinates into a *GRanges* object and then pass that object into `annotatePeakInBatch`.
+
+```
+TF_binding_sites <- GRanges(seqnames = c("1", "2", "3", "4", "5", "6", "1",
+                                         "2", "3", "4", "5", "6", "6", "6",
+                                         "6", "6", "5"),
+                            ranges = IRanges(start = c(967659, 2010898, 2496700,
+                                                       3075866, 3123260, 3857500,
+                                                       96765, 201089, 249670,
+                                                       307586, 312326, 385750,
+                                                       1549800, 1554400, 1565000,
+                                                       1569400, 167888600),
+                                             end = c(967869, 2011108, 2496920,
+                                                     3076166,3123470, 3857780,
+                                                     96985, 201299, 249890, 307796,
+                                                     312586, 385960, 1550599,
+                                                     1560799, 1565399, 1571199,
+                                                     167888999),
+                                             names = paste("t", 1:17, sep = "")),
+                            strand = c("*", "*", "*", "*", "*", "*", "*", "*", "*",
+                                       "*", "*", "*", "*", "*", "*", "*", "*"))
+
+annotated_peak2 <- annotatePeakInBatch(peaks1, AnnotationData = TF_binding_sites)
+head(annotated_peak2, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 9 metadata columns:
+##            seqnames          ranges strand |        peak     feature
+##               <Rle>       <IRanges>  <Rle> | <character> <character>
+##   Site1.t1        1   967654-967754      + |       Site1          t1
+##   Site2.t2        2 2010897-2010997      + |       Site2          t2
+##            start_position end_position feature_strand insideFeature
+##                 <integer>    <integer>    <character>   <character>
+##   Site1.t1         967659       967869              *  overlapStart
+##   Site2.t2        2010898      2011108              *  overlapStart
+##            distancetoFeature shortestDistance fromOverlappingOrNearest
+##                    <numeric>        <integer>              <character>
+##   Site1.t1                -5                5          NearestLocation
+##   Site2.t2                -1                1          NearestLocation
+##   -------
+##   seqinfo: 6 sequences from an unspecified genome; no seqlengths
+```
+
+Another example of using user-defined `AnnotationData` is to annotate peaks by promoters. A promoter is typically defined as the DNA sequence located immediately upstream of the TSS of a gene. The specific size of a promoter can vary depending on the gene, its regulatory complexity, and the species being studied. In practice, the promoter region can be defined as 2000bp upstream and 500bp downstream from the TSS. To prepare a custom annotation file containing only promoters, users can leverage the accessor function `promoters`. Similar results can be obtained using the feature-centric approach mentioned in Section [7.2](#featurecentric).
+
+```
+promoter_regions <- promoters(TxDb.Hsapiens.UCSC.hg18.knownGene,
+                              upstream = 2000, downstream = 500)
+head(promoter_regions, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 2 metadata columns:
+##              seqnames    ranges strand |     tx_id     tx_name
+##                 <Rle> <IRanges>  <Rle> | <integer> <character>
+##   uc001aaa.2     chr1 -884-1615      + |         1  uc001aaa.2
+##   uc009vip.1     chr1 -884-1615      + |         2  uc009vip.1
+##   -------
+##   seqinfo: 49 sequences (1 circular) from hg18 genome
+```
+
+```
+annotated_peak3 <- annotatePeakInBatch(peak_to_anno,
+                                       AnnotationData = promoter_regions)
+head(annotated_peak3, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 9 metadata columns:
+##                           seqnames        ranges strand |         peak
+##                              <Rle>     <IRanges>  <Rle> |  <character>
+##   X1_93_556427.uc001abb.1     chr1 556660-556760      * | X1_93_556427
+##   X1_41_559455.uc001abc.1     chr1 559774-559874      * | X1_41_559455
+##                               feature start_position end_position
+##                           <character>      <integer>    <integer>
+##   X1_93_556427.uc001abb.1  uc001abb.1         556707       559206
+##   X1_41_559455.uc001abc.1  uc001abc.1         557396       559895
+##                           feature_strand insideFeature distancetoFeature
+##                              <character>   <character>         <numeric>
+##   X1_93_556427.uc001abb.1              +  overlapStart               -47
+##   X1_41_559455.uc001abc.1              +        inside              2378
+##                           shortestDistance fromOverlappingOrNearest
+##                                  <integer>              <character>
+##   X1_93_556427.uc001abb.1               47          NearestLocation
+##   X1_41_559455.uc001abc.1               21          NearestLocation
+##   -------
+##   seqinfo: 24 sequences from an unspecified genome; no seqlengths
+```
+
+# 8 Add other feature IDs
+
+Depending on the annotation file you use, the feature assigned to your peaks may have different feature IDs. For example, if you annotate your peaks with genes using the `TxDb.Hsapiens.UCSC.hg38.knownGene` annotation file, the feature id provided in the annotation file will be “entrez ID”. On the other hand, if you annotate your peaks using the `EnsDb.Hsapiens.v86` annotation file, the feature id in the annotation will be “Ensembl gene ID”.
+
+```
+anno_txdb <- genes(TxDb.Hsapiens.UCSC.hg38.knownGene)
+head(anno_txdb$gene_id, n = 5)
+```
+
+```
+## [1] "1"         "10"        "100"       "1000"      "100008586"
+```
+
+```
+anno_ensdb <- genes(EnsDb.Hsapiens.v86)
+head(anno_ensdb$gene_id, n = 5)
+```
+
+```
+## [1] "ENSG00000223972" "ENSG00000227232" "ENSG00000278267" "ENSG00000243485"
+## [5] "ENSG00000237613"
+```
+
+The feature id in the annotation file will be listed under the “feature” metadata column in your annotated peak *GRanges* object. To link these feature IDs to other IDs such as “symbol”, you can use the `addGeneIDs` function.
+
+The `addGeneIDs` function can accept either a vector of feature IDs or an annotated peak *GRanges* object as input. It works by creating a mapping between the input feature IDs and the IDs to be linked, using either an organism annotation dataset (`OrgDb` object, such as `org.Hs.eg.db`) or a *BioMart* dataset (`Mart` object, such as `useMart(biomart = "Ensembl", dataset = "hsapiens_gene_Ensembl")`).
+
+To use the function correctly, you need to provide the input feature ID type using the `feature_id_type` argument, and specify the feature ID types that need to be linked via the `IDs2Add` argument. The supported `feature_id_type` and `IDs2Add` differ between `OrgDb` and `Mart`. Below summarizes the commonly used ID types.
+
+* Use *OrgDb*
+  + *feature\_id\_type*: input feature ID type
+    - “ensembl\_gene\_id”
+    - “entrez\_id”
+    - “gene\_symbol”
+    - “gene\_alias”
+    - “refseq\_id”
+  + *IDs2Add*: features ID types to be linked
+    - “ensembl”
+    - “ensembltrans”
+    - “ensemblprot”
+    - “entrez\_id”
+    - “refseq”
+    - “symbol”
+* Use *Mart*
+  + *feature\_id\_type*: input feature ID type, use `listFilters(mart)` to see the full list
+    - “ensembl\_gene\_id”
+    - “ensembl\_transcript\_id”
+    - “ensembl\_exon\_id”
+    - “external\_gene\_name”
+    - “entrezgene\_id”
+  + *IDs2Add*: feature ID types to be linked, use `listAttributes(mart)` to see the full list
+    - “ensembl\_gene\_id”
+    - “ensembl\_transcript\_id”
+    - “ensembl\_exon\_id”
+    - “gene\_biotype”
+    - “transcript\_biotype”
+    - “entrezgene\_id”
+    - “hgnc\_symbol”
+    - “entrezgene\_trans\_name”
+
+## 8.1 Example1: find gene symbols for a vector of entrez IDs
+
+The following example demonstrates how to use the `addGeneIDs` function to find gene symbols for a vector of entrez IDs using `OrgDb`. Note that the `"org.Hs.eg.db"` package name must be quoted.
+
+```
+library(org.Hs.eg.db)
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+
+ucsc.hg38.knownGene <- genes(TxDb.Hsapiens.UCSC.hg38.knownGene)
+entrez_ids <- head(ucsc.hg38.knownGene$gene_id, n = 10)
+print(entrez_ids)
+```
+
+```
+##  [1] "1"         "10"        "100"       "1000"      "100008586" "100008587"
+##  [7] "100009613" "100009667" "100009676" "10001"
+```
+
+```
+res <- addGeneIDs(entrez_ids,
+                  orgAnn = "org.Hs.eg.db",
+                  feature_id_type = "entrez_id",
+                  IDs2Add = "symbol")
+head(res, n = 3)
+```
+
+```
+##   entrez_id symbol
+## 1         1   A1BG
+## 2        10   NAT2
+## 3       100    ADA
+```
+
+## 8.2 Example2: add gene symbols to annotated peaks
+
+For this example, we annotate the `macs_peak_gr2` (obtained in Section [3](#readinpeak)) using transcript information from *TxDb*, and add gene symbols to them.
+
+```
+txdb.hg38.transcript <- transcripts(TxDb.Hsapiens.UCSC.hg38.knownGene)
+head(txdb.hg38.transcript, n = 4)
+```
+
+```
+## GRanges object with 4 ranges and 2 metadata columns:
+##       seqnames      ranges strand |     tx_id           tx_name
+##          <Rle>   <IRanges>  <Rle> | <integer>       <character>
+##   [1]     chr1 11121-14413      + |         1 ENST00000832824.1
+##   [2]     chr1 11125-14405      + |         2 ENST00000832825.1
+##   [3]     chr1 11410-14413      + |         3 ENST00000832826.1
+##   [4]     chr1 11411-14413      + |         4 ENST00000832827.1
+##   -------
+##   seqinfo: 711 sequences (1 circular) from hg38 genome
+```
+
+```
+head(names(txdb.hg38.transcript), n = 4)
+```
+
+```
+## NULL
+```
+
+It appears that the `txdb.hg38.transcript` contains a metadata column called *tx\_name*, which holds the Ensembl transcript IDs. However, the `annotatePeakInBatch` function requires this information to be stored as the names of the `txdb.hg38.trancsript` object (`names(txdb.hg38.transcript)`). This is necessary to generate annotated peaks that are compatible with the `addGeneIDs` function. To achieve this, we need to extract the transcript IDs and assign them as names. Below is how.
+
+```
+tr_id <- txdb.hg38.transcript$tx_name
+tr_id <- sub("\\..*$", "", tr_id) # get rid of the trailing version number
+names(txdb.hg38.transcript) <- tr_id
+head(txdb.hg38.transcript, n = 4)
+```
+
+```
+## GRanges object with 4 ranges and 2 metadata columns:
+##                   seqnames      ranges strand |     tx_id           tx_name
+##                      <Rle>   <IRanges>  <Rle> | <integer>       <character>
+##   ENST00000832824     chr1 11121-14413      + |         1 ENST00000832824.1
+##   ENST00000832825     chr1 11125-14405      + |         2 ENST00000832825.1
+##   ENST00000832826     chr1 11410-14413      + |         3 ENST00000832826.1
+##   ENST00000832827     chr1 11411-14413      + |         4 ENST00000832827.1
+##   -------
+##   seqinfo: 711 sequences (1 circular) from hg38 genome
+```
+
+Now, we can annotate `macs_peak_gr2` with `annotatePeakInBatch`.
+
+```
+res <- annotatePeakInBatch(macs_peak_gr2,
+                           AnnotationData = txdb.hg38.transcript)
+head(res, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 10 metadata columns:
+##                               seqnames      ranges strand |     score
+##                                  <Rle>   <IRanges>  <Rle> | <numeric>
+##   MACS_peak_1.ENST00000834619     chr1 28341-29610      * |         1
+##   MACS_peak_2.ENST00000495576     chr1 90821-91234      * |         1
+##                                      peak         feature start_position
+##                               <character>     <character>      <integer>
+##   MACS_peak_1.ENST00000834619 MACS_peak_1 ENST00000834619          28589
+##   MACS_peak_2.ENST00000495576 MACS_peak_2 ENST00000495576          89551
+##                               end_position feature_strand  insideFeature
+##                                  <integer>    <character>    <character>
+##   MACS_peak_1.ENST00000834619        29345              + includeFeature
+##   MACS_peak_2.ENST00000495576        91105              -   overlapStart
+##                               distancetoFeature shortestDistance
+##                                       <numeric>        <integer>
+##   MACS_peak_1.ENST00000834619              -248              248
+##   MACS_peak_2.ENST00000495576               284              129
+##                               fromOverlappingOrNearest
+##                                            <character>
+##   MACS_peak_1.ENST00000834619          NearestLocation
+##   MACS_peak_2.ENST00000495576          NearestLocation
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+As anticipated, the resulting `feature` column contains Ensembl transcript IDs. Next, we utilize the `mart` option to add gene symbols.
+
+```
+library(biomaRt)
+
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL",
+                dataset = "hsapiens_gene_ensembl")
+res <- addGeneIDs(res,
+                  mart = mart,
+                  feature_id_type = "ensembl_transcript_id",
+                  IDs2Add = "hgnc_symbol")
+head(res, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 11 metadata columns:
+##                               seqnames      ranges strand |     score
+##                                  <Rle>   <IRanges>  <Rle> | <numeric>
+##   MACS_peak_1.ENST00000834619     chr1 28341-29610      * |         1
+##   MACS_peak_2.ENST00000495576     chr1 90821-91234      * |         1
+##                                      peak         feature start_position
+##                               <character>     <character>      <integer>
+##   MACS_peak_1.ENST00000834619 MACS_peak_1 ENST00000834619          28589
+##   MACS_peak_2.ENST00000495576 MACS_peak_2 ENST00000495576          89551
+##                               end_position feature_strand  insideFeature
+##                                  <integer>    <character>    <character>
+##   MACS_peak_1.ENST00000834619        29345              + includeFeature
+##   MACS_peak_2.ENST00000495576        91105              -   overlapStart
+##                               distancetoFeature shortestDistance
+##                                       <numeric>        <integer>
+##   MACS_peak_1.ENST00000834619              -248              248
+##   MACS_peak_2.ENST00000495576               284              129
+##                               fromOverlappingOrNearest hgnc_symbol
+##                                            <character> <character>
+##   MACS_peak_1.ENST00000834619          NearestLocation MIR1302-2HG
+##   MACS_peak_2.ENST00000495576          NearestLocation
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+Use `listMarts` to show available `biomart` and use `listDatasets` to show available `dataset`. Be aware that, unlike using `OrgDb` option, we must supply `hgnc_symbol` instead of `symbol` for the `IDs2Add` argument.
+
+# 9 Enrichment analysis
+
+Enrichment analysis is a crucial step in determining whether specific biological processes, pathways, or functional categories are over-represented among the genes associated with the peaks. This analysis provides functional implications for the annotated peaks. Two commonly used method for enrichment analysis are gene ontology (GO) and pathway enrichment.
+
+The GO is a structured vocabulary that categorizes genes and their products into three main categories: *Molecular Function* (what it does), *Biological Process* (how it does it), and *Cellular Component* (where it does it). A pathway, on the other hand, refers to a set of predefined genes involved in a coordinated sequence of molecular events or cellular processes that collectively perform a specific biological function. Examples of biological pathways include the “Glycolysis pathway”, which breaks down glucose into pyruvate; and the “MAPK signaling pathway”, which is involved in cell proliferation, differentiation, and response to external stimuli. While GO enrichment analysis provides more general insights, pathway analysis focuses specifically on predefined pathways. Both methods are commonly practiced and can be achieved with the `getEnrichedGO` and `getEnrichedPATH` function in *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)*.
+
+In the following demonstration, we first annotate `macs_peak_gr2` (obtained in Section [2.1](#readinpeakdemo)) using genes from *EnsDb*, and perform GO and pathway enrichment analysis.
+
+```
+anno_data <- genes(EnsDb.Hsapiens.v86)
+annotated_peak4 <- annotatePeakInBatch(macs_peak_gr2,
+                                       AnnotationData = anno_data,
+                                       output = "both")
+
+enriched_go <- getEnrichedGO(annotated_peak4,
+                             orgAnn = "org.Hs.eg.db",
+                             feature_id_type = "ensembl_gene_id")
+enrichmentPlot(enriched_go, label_wrap = 60)
+```
+
+![Histogram showing enriched GO terms](data:image/png;base64...)
+
+Figure 14: Histogram showing enriched GO terms
+
+Please ensure to enclose the `"org.Hs.eg.db"` in quotes, and that the `feature_id_type` matches the ID type stored in the `feature` metadata column of your annotated peak object. If you are using genes from *TxDb* for peak annotation, the `feature` is likely `entrez_id`. If you are using genes from *EnsDb* for annotation, the `feature` should be `ensembl_gene_id`. The code snippet below shows the number of enriched GO terms in each category, “bp” for “biological process”, “cc” for “cellular component”, and “mf” for “molecular function”. By default, `multiAdjMethod = NULL` meaning that no multiple testing correction is performed.
+
+```
+length(enriched_go[["bp"]][["go.id"]])
+```
+
+```
+## [1] 69
+```
+
+```
+length(enriched_go[["cc"]][["go.id"]])
+```
+
+```
+## [1] 8
+```
+
+```
+length(enriched_go[["mf"]][["go.id"]])
+```
+
+```
+## [1] 21
+```
+
+It turns out that if using the subset of annotated `macs_peak_gr2` leads to zero enriched GO terms under the “bp” and “cc” categories, and 6 hits under the “mf” category. It suggests taht there are no significantly enriched “bp” or “cc” terms associated with the subset of peaks. However, there are 6 significantly enriched “mf” terms.
+
+```
+head(enriched_go[["mf"]], n = 2)
+```
+
+```
+##        go.id                                 go.term
+## 1 GO:0005031 tumor necrosis factor receptor activity
+## 2 GO:0005031 tumor necrosis factor receptor activity
+##                                                                                                                                       Definition
+## 1 Combining with tumor necrosis factor, a proinflammatory cytokine produced by monocytes and macrophages, to initiate a change in cell function.
+## 2 Combining with tumor necrosis factor, a proinflammatory cytokine produced by monocytes and macrophages, to initiate a change in cell function.
+##   Ontology count.InDataset count.InGenome      pvalue totaltermInDataset
+## 1       MF               2             10 0.001219478               1431
+## 2       MF               2             10 0.001219478               1431
+##   totaltermInGenome EntrezID
+## 1            270956     8718
+## 2            270956     8764
+```
+
+Pathway enrichment analysis can be performed using popular databases such as *Reactome* and *KEGG (Kyoto Encyclopedia of Genes and Genomes)*. *Reactome* is renowned for its detailed and expert-curated information, while *KEGG* offers a broader scope of information, including pathways, diseases, drugs, and more organisms. The `getEnrichedPATH` function can use either database by specifying the `pathAnn` parameter.
+
+For demonstration, we will use the built-in dataset `annotatedPeaks` with *Reactome* database. Be aware that the `feature_id_type` for this dataset is `ensembl_gene_id`. To switch to the *KEGG* database, simply set `pathAnn = "KEGGREST"`.
+
+```
+library(reactome.db)
+
+data(annotatedPeak)
+enriched_path <- getEnrichedPATH(annotatedPeak,
+                                 orgAnn = "org.Hs.eg.db",
+                                 feature_id_type = "ensembl_gene_id",
+                                 pathAnn = "reactome.db")
+```
+
+To visualize the enriched pathways, we can use the `enrichmentPlot` function.
+
+```
+enrichmentPlot(enriched_path)
+```
+
+![Histogram showing enriched pathways](data:image/png;base64...)
+
+Figure 15: Histogram showing enriched pathways
+
+To use `getEnrichedGO` and `getEnrichedPATH`, an `OrgDb` annotation package is necessary. For species that are less common and do not have a valid `OrgDb` available, users can find alternative methods in [this post](https://support.bioconductor.org/p/9153901/#9153953).
+
+# 10 Motif analysis
+
+Sequence motif refer to a recurring pattern in DNA that is believed to have a biological function. These motifs often indicate binding sites for proteins like TFs, some other motifs play a role at the RNA level such as ribosome binding and transcription termination. For peaks obtained through experiments like TF ChIP-seq, motif analysis aids in validating expected binding factors or discovering the TFBSs, while unanticipated motifs suggest the presence of co-binding factors.
+
+*[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* provides several functions that are related to motif analysis, details see below.
++ `getAllPeakSequence`: obtain genomic sequences around peaks
++ Obtained sequences can be used for motif discovery or PCR validation
++ `oligoSummary`: find consensus sequences (motifs) in peak sequences
++ `summarizePatternInPeaks`: check if given motifs appear in peak sequences
+
+## 10.1 Obtain sequences surrounding the peaks
+
+Here is an example of how to retrieve the peak sequences, including 20bp upstream and 20bp downstream, for the `macs_peak_gr2` peaks obtained in Section [3](#readinpeak).
+
+```
+library(BSgenome.Hsapiens.UCSC.hg38)
+
+sequence_around_peak <- getAllPeakSequence(macs_peak_gr2,
+                                           upstream = 20,
+                                           downstream = 20,
+                                           genome = BSgenome.Hsapiens.UCSC.hg38)
+head(sequence_around_peak, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 4 metadata columns:
+##               seqnames      ranges strand |     score  upstream downstream
+##                  <Rle>   <IRanges>  <Rle> | <numeric> <numeric>  <numeric>
+##   MACS_peak_1     chr1 28341-29610      * |         1        20         20
+##   MACS_peak_2     chr1 90821-91234      * |         1        20         20
+##                             sequence
+##                          <character>
+##   MACS_peak_1 CTGTAGTTGCTCATCTGAAG..
+##   MACS_peak_2 GCTGCTGCTGTCTGTAGCTG..
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome
+```
+
+The `genome` argument can accept either a *BSgenome* object or a *Mart* object. It is important to ensure that the genome version used matches the one used for creating the peak file. You can find a full list of available *BSgenome* objects on this [site](https://www.bioconductor.org/packages/release/data/annotation/).
+
+The following example demonstrates on how to use the `mart` option. It is slower compared to using a *BSgenome* because it queries the *BioMart* for annotations on the fly if `AnnotationData` is not set. Refer to Section [5.5](#usebiomart) for more on *Mart*.
+
+```
+library(biomaRt)
+
+mart <- useMart(biomart="ENSEMBL_MART_ENSEMBL",
+                dataset="hsapiens_gene_ensembl")
+
+sequence_around_peak <- getAllPeakSequence(macs_peak_gr2[1],
+                                           upstream = 20,
+                                           downstream = 20,
+                                           genome = mart)
+```
+
+To save the sequences into *fasta*, use the `write2FASTA` function.
+
+```
+write2FASTA(sequence_around_peak, file = "macs_peak_gr2.fa")
+```
+
+## 10.2 Discover consensus sequences (motifs) in the peaks
+
+The `oligoSummary` function utilizes Markov models to ascertain if a motif is enriched in a set of sequences relative to the background. As a prerequisite, we must first calculate the frequencies of all combinations of short oligonucleotides of a specified length in the background (Leung, Marsh, and Speed [1996](#ref-leung1996over)). This can be accomplished using the `oligoFrequency` function. In the example below, we aim to identify consensus sequences of length 6.
+
+```
+freqs <- oligoFrequency(BSgenome.Hsapiens.UCSC.hg38$chr1)
+motif_summary <- oligoSummary(sequence_around_peak,
+                              oligoLength = 6,
+                              MarkovOrder = 3,
+                              freqs = freqs,
+                              quickMotif = TRUE)
+```
+
+Here is a breakdown of the arguments:
+
+* *oligoLength*: the length of the motifs to search for
+* *MarkovOrder*: the order of a Markov chain, which determines how much the current state in the chain depends on previous states; simply put, a zero-order Markov chain does not consider any context or dependencies between adjacent elements, while higher-order Markov chains capture longer-range dependencies in sequences, making them more suitable for modeling complex sequence patterns
+* *freqs*: the background motif frequencies used for the Markov model
+* *quickMotif*: whether or not to generate the motif matrices
+
+The resulting `motif_summary` is a list containing three elements:
+
+* *zscore*: the Z-score of each oligonucleotide, which quantifies how many standard deviations away the observed count is from the expected count; a high positive score suggests that the motif is significantly over-represented in the peaks
+* *counts*: the count numbe of each oligonucleotide
+* *motifs*: a list of motif matrices when `quickMotif = TRUE`
+
+We can use histogram (`hist`) to visualize the resulting Z-scores and labels top hits with the `text` function. Below, we label the name of the motif that has the highest Z-score.
+
+```
+zscore <- sort(motif_summary$zscore)
+h <- hist(zscore, breaks = 100, main = "Histogram of Z-score")
+text(x = zscore[length(zscore)],
+     y = h$counts[length(h$counts)] + 1,
+     labels = names(zscore[length(zscore)]),
+     adj = 0,
+     srt = 90)
+```
+
+![Histogram showing Z-score distribution](data:image/png;base64...)
+
+Figure 16: Histogram showing Z-score distribution
+
+To illustrate how the Z-score can be influenced by the enrichment level of various motifs, the following code utilizes simulated data. We first generate 5000 sequences with lengths ranging between 100 and 2000 nucleotides. Subsequently,we randomly introduce motif 1 into 10% of the sequences and motif 2 into 15% of the sequences.
+
+```
+set.seed(1)
+
+# motifs to simulate
+simulate_motif_1 <- "AATTTA"
+simulate_motif_2 <- "TGCATG"
+
+# sample 5000 sequences with lengths ranging from 100 to 2000 nucleotides
+# randomly insert motif_1 to 10% of the sequences, and motif_2 to 15% of the sequences
+simulation_seqs <- sapply(sample(c(1, 2, 0),
+                                 5000,
+                                 prob = c(0.1, 0.15, 0.75),
+                                 replace = TRUE),
+                           function(x) {
+                             seq <- sample(c("A", "T", "C", "G"),
+                                           sample.int(1900, 1) + 100,
+                                           replace = TRUE)
+                             insert_pos <- sample.int(length(seq) - 6, 1)
+                             if (x == 1) {
+                               seq[insert_pos:(insert_pos + 5)] <- strsplit(simulate_motif_1, "")[[1]]
+                             } else if (x == 2) {
+                               seq[insert_pos:(insert_pos + 5)] <- strsplit(simulate_motif_2, "")[[1]]
+                             }
+                             paste(seq, collapse = "")
+                           }
+)
+
+motif_summary_simu <- oligoSummary(simulation_seqs,
+                                   oligoLength = 6,
+                                   MarkovOrder = 3,
+                                   quickMotif = TRUE)
+zscore_simu <- sort(motif_summary_simu$zscore,
+                    decreasing = TRUE)
+h_simu <- hist(x = zscore_simu,
+               breaks = 100,
+               main = "Histogram of Z-score for simulation data")
+text(x = zscore_simu[1:2],
+     y = rep(5, 2),
+     labels = names(zscore_simu[1:2]),
+     adj = 0,
+     srt = 90)
+```
+
+![Histogram showing Z-score distribution for simulation data](data:image/png;base64...)
+
+Figure 17: Histogram showing Z-score distribution for simulation data
+
+As evident from the simulation results, the higher the probability of the motif, the larger the resulting Z-score. In addition, you can visualize the motif using the *[motifStack](https://bioconductor.org/packages/3.22/motifStack)* package.
+
+```
+library(motifStack)
+
+pfm <- new("pfm", mat = motif_summary_simu$motifs[[1]],
+           name = "sample motif 1")
+motifStack(pfm)
+```
+
+![](data:image/png;base64...)
+
+To loop through each element in `motif_summary$motifs`, we can use the `mapply` function.
+
+```
+pfms <- mapply(function(motif, id) { new("pfm", mat = motif, name = as.character(id)) },
+               motif_summary$motifs,
+               seq_along(motif_summary$motifs))
+
+motifStack(pfms[[1]])
+```
+
+![Plot showing the first motif detected](data:image/png;base64...)
+
+Figure 18: Plot showing the first motif detected
+
+## 10.3 Scan pre-defined sequence patterns in the peaks
+
+If you have a list of motifs (sequence patterns), the `summarizePatternInPeaks` function can be utilized to determine whether they are present in the peaks.
+
+```
+example_pattern_file <- system.file("extdata/examplePattern.fa",
+                                    package = "ChIPpeakAnno")
+readLines(example_pattern_file)
+```
+
+```
+## [1] ">ExamplePattern" "GGNCCK"          ">ExamplePattern" "AACCNM"
+```
+
+```
+pattern_in_peak <- summarizePatternInPeaks(patternFilePath = example_pattern_file,
+                                           BSgenomeName = BSgenome.Hsapiens.UCSC.hg38,
+                                           peaks = macs_peak_gr2[1:200],
+                                           bgdForPerm = "chromosome",
+                                           nperm = 100,
+                                           method = "permutation.test")
+
+pattern_in_peak$motif_enrichment
+```
+
+```
+##        patternNum totalNumPatternWithSameLen patternRate cutOffPermutationTest
+## GGNCCK       1351                     169140 0.007987466           0.002140105
+## AACCNM        586                     169140 0.003464586           0.003781629
+```
+
+```
+head(pattern_in_peak$motif_occurrence, n = 2)
+```
+
+```
+##   motifChr motifStartInChr motifEndInChr      motifName motifPattern
+## 1     chr1           28746         28751 ExamplePattern       GGNCCK
+## 2     chr1           29049         29054 ExamplePattern       GGNCCK
+##   motifStartInPeak motifEndInPeak motifFound motifFoundStrand peakChr peakStart
+## 1              406            411     GGACCG                +    chr1     28341
+## 2              709            714     GGGCCG                +    chr1     28341
+##   peakEnd peakWidth peakStrand
+## 1   29610      1270          *
+## 2   29610      1270          *
+```
+
+The `summarziePatternInPeaks` function provides two distinct methods (`method = c("binom.test", "permutation.test")`) for evaluating the significance of given motif enrichment within target peaks. When utilizing the “binom.test” method, the expected frequencies for each motif must be determined first, which can be achieved via `expectFrequencyMethod = c("Markov", "Naive")`. When employing the “permutation.test” method, users need to provide parameters such as the number of permutation (“nperm”), the significance level (“alpha”), and methods how background sequences are determined (`bgdForPerm = c("shuffle", "chromosome"), chromosome = c("asPeak", "random")`).
+
+The outcome from `summarizePatternInPeaks` comprises two tables. The “motif\_enrichment” table succinctly summarizes the enrichment statistics for each motif. Specifically, when `method = "binom.test"`, the last column “pValueBinomTest” represents the P-values resulting from the binomial test. Conversely, when `method = "permutation.test"`, the last column “cutOffPermutationTest” denotes the threshold value derived from the permutation test, determined by the specified signifiance level. The “motif\_occurrence” table contains detailed information regarding the occurrences of each motif within every peak.
+
+## 10.4 Alternative tools
+
+Besides using *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)*, users can extract the sequences with the `getAllPeakSequence` function and employ other tools such as [MEME Suite](https://meme-suite.org/meme/doc/streme.html) for motif-related analysis.
+
+# 11 Peak profile comparison
+
+When analyzing two or more peak sets from different experiments (e.g. two TFs), it can be insightful to examine whether the peak profiles correlate, and if they do, how do they compare to each other. *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* not only offers functions to assess if there is a significant overlap among multiple peak sets, but it also provides visualization functions for easy comparison of peak patterns side-by-side.
+
+The significance of overlap can be determined with hypergeometric test or permutation test, both of which are available in *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)*. Please be advised that, due to the inherent challenges in estimating the `totalTest` parameter for the hypergeometric test, we strongly discourage the use of this approach.
+
+## 11.1 Use hypergeometric test to determine overlap among peak sets
+
+The hypergeometric test is grounded in the principle of the hypergeometric distribution, which is a probability distribution that describes the likelihood of drawing a specific number of successes (k) from a sample size of n, given a finite population (N) that contains K successes when sampling is done without replacement. The null hypothesis posits that the sample is drawn randomly from the population, implying that the there is no overlap between the two sets of peaks. A small P-value indicates that the null should be rejected, indicating a significant overlap between the two sets of peaks.
+
+In *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)*, the hypergeometric test is incorporated into the `makeVennDiagram` function, as detailed in Section [4.2.2](#venn). The following example illustrates how to compute the hypergeometric test P-values for peak sets from three TF ChIP-seq experiments.
+
+```
+tf1 <- toGRanges(system.file("extdata/TAF.broadPeak", package = "ChIPpeakAnno"),
+                 format = "broadPeak")
+tf2 <- toGRanges(system.file("extdata/Tead4.broadPeak", package = "ChIPpeakAnno"),
+                 format = "broadPeak")
+tf3 <- toGRanges(system.file("extdata/YY1.broadPeak", package = "ChIPpeakAnno"),
+                 format = "broadPeak")
+```
+
+To effectively apply the hypergeometric test, we first need to estimate the total number of binding sites, i.e. `totalTest`. The selection of `totalTest` affects the stringency of the test, with smaller values resulting in a more conservative outcome (larger P-values). For practical guidance on how to choose an appropriate value for `totalTest`, you can refer to this [post](https://stat.ethz.ch/pipermail/bioconductor/2010-November/036540.html).
+
+In our example, we assume that potential binding regions (which include coding regions and promoter regions) constitute 3% (fairly rough estimation) of the entire genome. Since the example data is derived from chromosome 2, we can estimate the number of total binding sites as `(length of chr2) * 3% / (mean peak length)`.
+
+```
+overlapping_peaks <- findOverlapsOfPeaks(tf1,
+                                         tf2,
+                                         tf3,
+                                         connectedPeaks = "keepAll")
+mean_peak_width <- mean(width(unlist(GRangesList(overlapping_peaks[["all.peaks"]]))))
+
+total_binding_sites <- length(BSgenome.Hsapiens.UCSC.hg38[["chr2"]]) * 0.03 / mean_peak_width
+venn1 <- makeVennDiagram(overlapping_peaks,
+                         totalTest = total_binding_sites,
+                         connectedPeaks = "keepAll",
+                         fill = c("#CC79A7", "#56B4E9", "#F0E442"),
+                         col = c("#D55E00", "#0072B2", "#E69F00"),
+                         cat.col = c("#D55E00", "#0072B2", "#E69F00"))
+```
+
+![Venn diagram1 showing overlapping peaks](data:image/png;base64...)
+
+Figure 19: Venn diagram1 showing overlapping peaks
+
+For the P-values of each peak pair:
+
+```
+venn1[["p.value"]]
+```
+
+```
+##      tf1 tf2 tf3         pval
+## [1,]   0   1   1 4.565072e-52
+## [2,]   1   0   1 0.000000e+00
+## [3,]   1   1   0 2.744460e-88
+```
+
+For the overlapping peak counts:
+
+```
+venn1[["vennCounts"]]
+```
+
+```
+##      tf1 tf2 tf3   Counts count.tf1 count.tf2 count.tf3
+## [1,]   0   0   0 4953.594         0         0         0
+## [2,]   0   0   1  621.000         0         0       621
+## [3,]   0   1   0 2097.000         0      2097         0
+## [4,]   0   1   1  309.000         0       310       319
+## [5,]   1   0   0   59.000        59         0         0
+## [6,]   1   0   1  166.000       172         0       170
+## [7,]   1   1   0    8.000         8         8         0
+## [8,]   1   1   1  476.000       545       537       521
+## attr(,"class")
+## [1] "VennCounts"
+```
+
+The parameter `connectedPeaks` denotes how to calculate peak counts when multiple peaks from different groups overlap. If `connectedPeaks = "keepFirstListConsistent"`, the counts from the first group will be consistently displayed in the plot. If `connectedPeaks = "keepAll"`, you will see multiple numbers: all original peak counts for each group will be displayed in parentheses, while the count of the minimally involved peaks will be displayed outside the parentheses.
+
+```
+venn2 <- makeVennDiagram(overlapping_peaks,
+                         totalTest = total_binding_sites,
+                         connectedPeaks = "keepFirstListConsistent",
+                         fill = c("#CC79A7", "#56B4E9", "#F0E442"),
+                         col = c("#D55E00", "#0072B2", "#E69F00"),
+                         cat.col = c("#D55E00", "#0072B2", "#E69F00"))
+```
+
+![Venn diagram2 showing overlapping peaks](data:image/png;base64...)
+
+Figure 20: Venn diagram2 showing overlapping peaks
+
+Given that all the P-values are extremely small, we must reject the null hypothesis. This indicates that each pair of peak sets significantly overlaps with each other. A major drawback of this approach is the necessity to estimate a `totalTest`, which could dramatically affect the test results. For instance, if we choose “2%” instead of “3%” in the above example, the P-value for `tf1` vs. `tf2` increases to 0.49, meaning we can no longer reject the null. To circumvent the requirement of `totalTest`, we have integrated a permutation test in the `peakPermTest` function.
+
+## 11.2 Use permutation test to determine overlap among peak sets
+
+The permutation test is a non-parametric test, which means it does not require the data to adhere to any specific distribution. The test statistic is determined according to the observed data, and the null distribution of the test statistic is estimated using a permutation (re-sampling) procedure.
+
+In our scenario, the number of overlapping peaks is treated as the test statistic. Its null distribution is estimated by first re-sampling peaks from a random peak list (the *peak pool*, which represents all potential binding sites) followed by counting the number of overlapping peaks. The random peak list is generated using the distributions found from the input peaks, ensuring that the peak widths and relative binding positions to the features (such as *TSS* and *geneEnd*) follow the same distributions as the input peaks. When the null hypothesis is valid, the number of overlapping peaks is not significantly different from what would be expected by chance. Here are some sample codes using `peakPermTest`.
+
+Example1 demonstrates a permutation test for non-relevant peak sets.
+
+```
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+
+txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
+set.seed(123)
+
+# Example1: non-relevant peak sets
+utr5 <- unique(unlist(fiveUTRsByTranscript(txdb)))
+utr3 <- unique(unlist(threeUTRsByTranscript(txdb)))
+
+utr5 <- utr5[sample.int(length(utr5), 1000)]
+utr3 <- utr3[sample.int(length(utr3), 1000)]
+
+pt1 <- peakPermTest(peaks1 = utr3,
+                    peaks2 = utr5,
+                    TxDb = txdb,
+                    maxgap = 500,
+                    seed = 1)
+plot(pt1)
+```
+
+![Permutation test for non-relevant peak sets](data:image/png;base64...)
+
+Figure 21: Permutation test for non-relevant peak sets
+
+Example2 demonstrates a permutation test for highly relevant peak sets.
+
+```
+# Example2: highly relevant peak sets
+cds <- unique(unlist(cdsBy(txdb)))
+ol <- findOverlaps(cds, utr3, maxgap = 1)
+peaks2 <- c(cds[sample.int(length(cds), 500)],
+            cds[queryHits(ol)][sample.int(length(ol), 500)])
+pt2 <- peakPermTest(peaks1 = utr3,
+                    peaks2 = peaks2,
+                    TxDb = txdb,
+                    maxgap = 500,
+                    seed = 1)
+plot(pt2)
+```
+
+![Permutation test for highly relevant peak sets](data:image/png;base64...)
+
+Figure 22: Permutation test for highly relevant peak sets
+
+As observed, for highly relevant peak sets, the P-value is very small.
+
+### 11.2.1 Use custom *peak pool*
+
+The `peakPermTest` function can automatically generate a *peak pool* given the peak binding type (`bindingType = c("TSS", "geneEnd")`), annotation type (`featureType = c("transcript", "exon")`), and annotation data (*TxDb*). Additionally, users have the option to construct the *peak pool* from actual binding sites derived from experimental data, with hot spots removed. Hot spots refer to genomic regions that have a high likelihood of being bound by many TFs in ChIP-seq experiments (Yip et al. [2012](#ref-yip2012)). We recommend removing hot spots prior to the permutation test to prevent overestimation of the association between two input peak sets. Users are also advised to remove [ENCODE blacklist](https://github.com/Boyle-Lab/Blacklist/tree/master/lists) regions. The blacklists were constructed by identifying consistently problematic regions across independent cell lines and types of experiments for each species in the *ENCODE* and *modENCODE* datasets (Consortium [2012](#ref-encode2012)).
+
+Below is an example of creating a *peak pool* for the human genome using the TF binding site clusters downloaded from [ENCODE](https://hgdownload.cse.ucsc.edu/goldenpath/hg38/encRegTfbsClustered/). The following steps are involved:
+
+* Step1: download TF binding sites
+* Step2: download hot spots
+* Step3: liftover hot spots to hg38 (if necessary)
+* Step4: select peak sets to test
+* Step5: remove hot spots from binding pool
+* Step6: perform permutation test
+
+```
+# Step1: download TF binding sites
+temp <- tempfile()
+download.file(file.path("https://hgdownload.cse.ucsc.edu/",
+                        "goldenpath/",
+                        "hg38/",
+                        "encRegTfbsClustered/",
+                        "encRegTfbsClusteredWithCells.hg38.bed.gz"),
+              temp)
+df_tfbs <- read.delim(gzfile(temp, "r"), header = FALSE)
+unlink(temp)
+
+colnames(df_tfbs)[1:4] <- c("seqnames", "start", "end", "TF")
+tfbs_hg38 <- GRanges(as.character(df_tfbs$seqnames),
+                     IRanges(df_tfbs$start, df_tfbs$end),
+                     TF = df_tfbs$TF)
+
+# Step2: download hot spots
+base_url <- "http://metatracks.encodenets.gersteinlab.org/metatracks/"
+
+temp1 <- tempfile()
+temp2 <- tempfile()
+download.file(file.path(base_url,
+                        "HOT_All_merged.tar.gz"),
+              temp1)
+download.file(file.path(base_url,
+                        "HOT_intergenic_All_merged.tar.gz"),
+              temp2)
+untar(temp1, exdir = dirname(temp1))
+untar(temp2, exdir = dirname(temp1))
+bedfiles <- dir(dirname(temp1), "bed$")
+hot_spots_hg19 <- sapply(file.path(dirname(temp1), bedfiles), toGRanges, format = "BED")
+unlink(temp1)
+unlink(temp2)
+
+names(hot_spots_hg19) <- gsub("_merged.bed", "", bedfiles)
+hot_spots_hg19 <- sapply(hot_spots_hg19, unname)
+hot_spots_hg19 <- GRangesList(hot_spots_hg19)
+
+# Step3: liftover hot spots to hg38
+library(R.utils)
+
+temp_chain_gz <- tempfile()
+temp_chain <- tempfile()
+base_url_chain <- "http://hgdownload.cse.ucsc.edu/goldenpath/"
+download.file(file.path(base_url_chain,
+                        "hg19/liftOver/",
+                        "hg19ToHg38.over.chain.gz"),
+              temp_chain_gz)
+gunzip(filename = temp_chain_gz, destname = temp_chain)
+chain_file <- import.chain(hg19_to_hg38)
+unlink(temp_chain_gz)
+unlink(temp_chain)
+
+hot_spots_hg38 <- liftOver(hot_spots_hg19, chain_file)
+
+# Step4: select peak sets to test
+tfbs_hg38_by_TF <- split(tfbs_hg38, tfbs_hg38$TF)
+TAF1 <- tfbs_hg38_by_TF[["TAF1"]]
+TEAD4 <- tfbs_hg38_by_TF[["TEAD4"]]
+
+# Step5: remove hot spots from binding pool
+tfbs_hg38 <- subsetByOverlaps(tfbs_hg38, hot_spots_hg38, invert=TRUE)
+tfbs_hg38 <- reduce(tfbs_hg38)
+
+# Step6: perform permutation test
+pool <- new("permPool",
+            grs = GRangesList(tfbs_hg38),
+            N = length(TAF1))
+pt3 <- peakPermTest(TAF1, TEAD4, pool = pool, ntimes = 500)
+plot(pt3)
+```
+
+![Permutation test using custom peak pool](data:image/png;base64...)
+
+Figure 23: Permutation test using custom peak pool
+
+## 11.3 Visualize TSS enrichment signal of multiple experiments
+
+If you have peak files obtained from multiple TF ChIP-seq experiments and would like to compare their enriched signals around TSS using raw signals such as read coverage. *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* provides two functions, `featureAlignedHeatmap` and `featureAlignedDistribution`, to visualize their binding patterns side-by-side.
+
+To illustrate this, we first need to prepare both the peak data and coverage information (*bigWig*). This involves four steps:
+
+* Step1: read in example peak files
+* Step2: find peaks that are shared by all
+* Step3: read in example coverage files
+* Step4: visualize binding patterns
+
+```
+# Step1: read in example peak files
+extdata_path <- system.file("extdata", package = "ChIPpeakAnno")
+broadPeaks <- dir(extdata_path, "broadPeak")
+gr_TFs <- sapply(file.path(extdata_path, broadPeaks), toGRanges, format = "broadPeak")
+names(gr_TFs) <- gsub(".broadPeak", "", broadPeaks)
+names(gr_TFs)
+```
+
+```
+## [1] "TAF"   "Tead4" "YY1"
+```
+
+Now, we have imported peak files for three TFs (“TAF”, “Tead”, and “YY1”) into the `gr_TFs` object. The next step is to identify overlapping peaks to ensure that we are comparing binding patterns over the same genomic regions.
+
+```
+# Step2: find peaks that are shared by all
+ol <- findOverlapsOfPeaks(gr_TFs)
+gr_TFs_ol <- ol$peaklist$`TAF///Tead4///YY1`
+
+# Step3: read in example coverage files
+# here we read in coverage data from -2000bp to -2000bp of each shared peak center
+gr_TFs_ol_center <- reCenterPeaks(gr_TFs_ol, width = 4000) # use the center of the peaks and extend 2000bp upstream and downstream to obtain peaks with uniform length of 4000bp
+
+bigWigs <- dir(extdata_path, "bigWig")
+coverage_list <- sapply(file.path(extdata_path, bigWigs),
+                        import, # rtracklayer::import
+                        format = "BigWig",
+                        which = gr_TFs_ol_center,
+                        as = "RleList")
+
+names(coverage_list) <- gsub(".bigWig", "", bigWigs)
+names(coverage_list)
+```
+
+```
+## [1] "TAF"   "Tead4" "YY1"
+```
+
+### 11.3.1 Heatmap
+
+```
+# Step4: visualize binding patterns
+sig <- featureAlignedSignal(coverage_list, gr_TFs_ol_center)
+
+# since the bigWig files are only a subset of the original files,
+# filter to keep peaks that are with coverage data for all peak sets
+keep <- rowSums(sig[[1]]) > 0 & rowSums(sig[[2]]) > 0 & rowSums(sig[[3]]) > 0
+sig <- sapply(sig, function(x) x[keep, ], simplify = FALSE)
+gr_TFs_ol_center <- gr_TFs_ol_center[keep]
+
+featureAlignedHeatmap(sig, gr_TFs_ol_center,
+                      upper.extreme=c(3, 0.5, 4))
+```
+
+![Heatmap of coverages for selected TFs](data:image/png;base64...)
+
+Figure 24: Heatmap of coverages for selected TFs
+
+By default, the rows in the heatmap are ordered by the total coverage per row from the first sample (“TAF” in this example). We can reorder the rows by tuning the `sortBy` option. For example, setting `sortBy = "YY1"` will order the rows by the “YY1” sample in the dataset. You can also sort the rows based on hierarchical clustering results. Here is a demonstration:
+
+```
+# perform hierarchical clustering on rows
+sig_rowsums <- sapply(sig, rowSums, na.rm = TRUE)
+row_distance <- dist(sig_rowsums)
+hc <- hclust(row_distance)
+
+# use hierarchical clustering order to sort
+gr_TFs_ol_center$sort_by <- hc$order
+featureAlignedHeatmap(sig, gr_TFs_ol_center,
+                      upper.extreme = c(3, 0.5, 4),
+                      sortBy = "sort_by")
+```
+
+![Heatmap of coverages for selected TFs sorted by hierarchical clustering](data:image/png;base64...)
+
+Figure 25: Heatmap of coverages for selected TFs sorted by hierarchical clustering
+
+### 11.3.2 Density plot
+
+Additionally, we can create a density plot using the `featureAlignedDistribution` function.
+
+```
+featureAlignedDistribution(sig, gr_TFs_ol_center,
+                           type = "l")
+```
+
+![Distribution of coverage densities for selected TFs](data:image/png;base64...)
+
+Figure 26: Distribution of coverage densities for selected TFs
+
+# 12 Common workflow 1: single TF with replicates
+
+For experiments targeting a single TF with replicates, a common analytic strategy is outlined below.
+
+* Step1: import data
+  + Convert `BED/GFF` files into *GRanges*
+  + Find overlapping peaks among replicates
+  + Add metadata (optional)
+  + Visualize replicate concordance using a Venn diagram
+* Step2: prepare annotation file
+* Step3: visualize peak distribution
+* Step4: annotate peaks
+  + Find possible enhancers
+  + Find potential bi-directional promoters
+* Step5: perform enrichment analysis
+* Step6: conduct motif analysis
+
+## 12.1 Step1: import data
+
+Common peak formats such as *BED*, *GFF*, and *MACS* can be converted into *GRanges* format using the `toGRanges` function. After importing the data, concordance across peak replicates will be evaluated with `findOverlapsOfPeaks` and `makeVennDiagram`. Be aware that the metadata columns will be dropped for the merged overlapping peaks. To add them back, we can use the `addMetadata` function. For example, `addMetadata(ol, colNames = "score", FUN = mean)` will add a “score” column to each merged overlapping peak by taking the mean score of individual peaks involved.
+
+```
+library(ChIPpeakAnno)
+
+# Convert BED/GFF into GRanges
+bed1 <- system.file("extdata", "MACS_output_hg38.bed",
+                    package = "ChIPpeakAnno")
+gr1 <- toGRanges(bed1, format = "BED", header = FALSE)
+gff1 <- system.file("extdata", "GFF_peaks_hg38.gff",
+                    package = "ChIPpeakAnno")
+gr2 <- toGRanges(gff1, format = "GFF", header = FALSE)
+
+# Find overlapping peaks
+ol <- findOverlapsOfPeaks(gr1, gr2)
+
+# Add "score" metadata column to overlapping peaks
+ol <- addMetadata(ol, colNames = "score", FUN = mean)
+head(ol$mergedPeaks, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 1 metadata column:
+##       seqnames        ranges strand |                           peakNames
+##          <Rle>     <IRanges>  <Rle> |                     <CharacterList>
+##   [1]     chr1 778411-780198      * | gr1__MACS_peak_13,gr2__001,gr2__002
+##   [2]     chr1 789471-791811      * |          gr2__003,gr1__MACS_peak_14
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+```
+venn <- makeVennDiagram(ol,
+                        fill = c("#009E73", "#F0E442"),
+                        col = c("#D55E00", "#0072B2"),
+                        cat.col = c("#D55E00", "#0072B2"))
+```
+
+![Venn diagram showing the number of overlapping peaks for gr1 and gr2](data:image/png;base64...)
+
+Figure 27: Venn diagram showing the number of overlapping peaks for gr1 and gr2
+
+For the P-value of hypergeometric test:
+
+```
+venn[["p.value"]]
+```
+
+```
+##      gr1 gr2 pval
+## [1,]   1   1    0
+```
+
+For overlapping peak counts:
+
+```
+venn[["vennCounts"]]
+```
+
+```
+##      gr1 gr2 Counts count.gr1 count.gr2
+## [1,]   0   0      0         0         0
+## [2,]   0   1     61         0        61
+## [3,]   1   0     63        63         0
+## [4,]   1   1    165       167       168
+## attr(,"class")
+## [1] "VennCounts"
+```
+
+As observed, the extremely small P-value suggests a high relevance between the two peak sets, reflecting good consistency among experimental replicates.
+
+## 12.2 Step2: prepare annotation file
+
+Similar to the peak files, the annotation file must also be converted into a *GRanges* object. Annotation *GRanges* can be constructed from not only *BED*, *GFF*, and user-defined text files, but also from *EnsDb* and *TxDb* objects using the `toGRanges` function. For *EnsDb* and *TxDb* objects, annotation can also be prepared with accessor functions, as detailed in Section [5.2](#txdbensdb). Note that the version of genome used to create the annotation file must match the genome used for peak calling, as feature positions may vary across different genome releases. As an example, if you are using `Mus_musculus.v103` for read mapping, it’s best to use `EnsDb.Mmusculus.v103` for annotation.
+
+```
+library(EnsDb.Hsapiens.v86)
+
+ensembl.hs86.gene <- toGRanges(EnsDb.Hsapiens.v86, feature = "gene")
+head(ensembl.hs86.gene, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 1 metadata column:
+##                   seqnames      ranges strand |   gene_name
+##                      <Rle>   <IRanges>  <Rle> | <character>
+##   ENSG00000223972     chr1 11869-14409      + |     DDX11L1
+##   ENSG00000227232     chr1 14404-29570      - |      WASH7P
+##   -------
+##   seqinfo: 357 sequences (1 circular) from 2 genomes (hg38, GRCh38)
+```
+
+## 12.3 Step3: visualize peak distribution
+
+### 12.3.1 Peak distribution relative to features
+
+Now, given the merged overlapping peaks and annotation data, we can visualize the distribution of the distance from the merged overlapping peaks to the nearest features, such as *genes* (*TSSs*), using the `binOverFeature` function.
+
+```
+binOverFeature(ol$mergedPeaks,
+               nbins = 20,
+               annotationData = ensembl.hs86.gene,
+               xlab = "peak distance from TSSs (bp)",
+               ylab = "peak count",
+               main = "Distribution of aggregated peak numbers around TSS")
+```
+
+![Peak count distribution around transcription start sites](data:image/png;base64...)
+
+Figure 28: Peak count distribution around transcription start sites
+
+### 12.3.2 Peak distribution over multiple feature levels
+
+We can use the `genomicElementDistribution` to summarize the distribution of peaks over different types of genomic features such exon, intron, enhancer, UTR. When inputting a single peak file, a pie graph will be generated.
+
+```
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+
+genomicElementDistribution(ol$mergedPeaks,
+                           TxDb = TxDb.Hsapiens.UCSC.hg38.knownGene)
+```
+
+![Pie graph showing peak distributions over different genomic features](data:image/png;base64...)
+
+Figure 29: Pie graph showing peak distributions over different genomic features
+
+As can be seen, a significant number of peaks originate from promoter regions, which is consistent with the signature of peaks obtained from Tf binding experiments. When inputting a list of peak sets (e.g. replicates), a bar graph will be generated.
+
+```
+macs_peaks <- GRangesList(rep1 = gr1,
+                          rep2 = gr2)
+genomicElementDistribution(macs_peaks,
+                           TxDb = TxDb.Hsapiens.UCSC.hg38.knownGene)
+```
+
+![Bar graph showing peak distributions over different genomic features for two replicates](data:image/png;base64...)
+
+Figure 30: Bar graph showing peak distributions over different genomic features for two replicates
+
+According to the bar graph, the two peak replicates are consistent.
+
+### 12.3.3 Peak overlappings for multiple features
+
+To visualize peak overlap for multiple feature sets, we can utilize the *UpSet* plot (for details, see Section [6.3](#upset)).
+
+```
+library(UpSetR)
+
+res <- genomicElementUpSetR(ol$mergedPeak,
+                            TxDb.Hsapiens.UCSC.hg38.knownGene)
+upset(res[["plotData"]],
+      nsets = length(colnames(res$plotData)),
+      nintersects = NA)
+```
+
+![UpSet plot showing peak overlappings for multiple features](data:image/png;base64...)
+
+Figure 31: UpSet plot showing peak overlappings for multiple features
+
+## 12.4 Step4: annotate peaks
+
+Based on the above distribution of aggregated peak numbers around the TSS and the distribution of peaks in different chromosomal regions, most of the peaks locate near the TSS. Therefore, it is reasonable to adopt the feature-centric method to annotate the peaks residing in the promoter regions. Promoters can be specified with the `bindingRegion` parameter. In the following example, the promoter region is defined as 2000bp upstream and 500bp downstream of the TSS (`bindingRegion = c(-2000, 500)`).
+
+```
+ol_anno <- annotatePeakInBatch(ol$mergedPeak,
+                               AnnotationData = ensembl.hs86.gene,
+                               output = "nearestBiDirectionalPromoters",
+                               bindingRegion = c(-2000, 500))
+head(ol_anno, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 9 metadata columns:
+##      seqnames        ranges strand |                           peakNames
+##         <Rle>     <IRanges>  <Rle> |                     <CharacterList>
+##   X1     chr1 778411-780198      * | gr1__MACS_peak_13,gr2__001,gr2__002
+##   X1     chr1 778411-780198      * | gr1__MACS_peak_13,gr2__001,gr2__002
+##             peak         feature feature.ranges feature.strand  distance
+##      <character>     <character>      <IRanges>          <Rle> <integer>
+##   X1          X1 ENSG00000228327  725885-778626              -         0
+##   X1          X1 ENSG00000237491  778770-810060              +         0
+##      insideFeature distanceToSite     gene_name
+##        <character>      <integer>   <character>
+##   X1  overlapStart              0 RP11-206L10.2
+##   X1  overlapStart              0 RP11-206L10.9
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+You can export the annotation to a CSV file:
+
+```
+ol_anno <- unname(ol_anno) # remove names to avoid duplicate row.names error
+ol_anno$peakNames <- NULL # remove peakNames to avoid unimplemented type 'list' error
+write.csv(as.data.frame(ol_anno), "ol_anno.csv")
+```
+
+To visualize the distribution of peaks around features:
+
+```
+pie1(table(ol_anno$insideFeature))
+```
+
+![Pie chart showing peak distribution around features](data:image/png;base64...)
+
+Figure 32: Pie chart showing peak distribution around features
+
+### 12.4.1 Find peaks located in bi-directional promoters
+
+In addition to using the `output = "nearestBiDirectionalPromoters"` option, *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* provides another helper function called `peaksNearBDP` to fetch statistics for peaks situated in bi-directional promoters.
+
+```
+peaks_near_BDP <- peaksNearBDP(ol$mergedPeaks,
+                    AnnotationData = ensembl.hs86.gene,
+                    MaxDistance = 5000)
+# MaxDistance will be translated into "bindingRegion =
+# c(-MaxDistance, MaxDistance)" internally
+
+peaks_near_BDP$n.peaks
+```
+
+```
+## [1] 165
+```
+
+```
+peaks_near_BDP$n.peaksWithBDP
+```
+
+```
+## [1] 18
+```
+
+```
+peaks_near_BDP$percentPeaksWithBDP
+```
+
+```
+## [1] 0.1090909
+```
+
+```
+head(peaks_near_BDP$peaksWithBDP, n = 2)
+```
+
+```
+## GRangesList object of length 2:
+## $`1`
+## GRanges object with 2 ranges and 10 metadata columns:
+##      seqnames        ranges strand |                           peakNames
+##         <Rle>     <IRanges>  <Rle> |                     <CharacterList>
+##   X1     chr1 778411-780198      * | gr1__MACS_peak_13,gr2__001,gr2__002
+##   X1     chr1 778411-780198      * | gr1__MACS_peak_13,gr2__001,gr2__002
+##        bdp_idx        peak         feature feature.ranges feature.strand
+##      <integer> <character>     <character>      <IRanges>          <Rle>
+##   X1         1          X1 ENSG00000228327  725885-778626              -
+##   X1         1          X1 ENSG00000237491  778770-810060              +
+##       distance insideFeature distanceToSite     gene_name
+##      <integer>   <character>      <integer>   <character>
+##   X1         0  overlapStart              0 RP11-206L10.2
+##   X1         0  overlapStart              0 RP11-206L10.9
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+##
+## $`4`
+## GRanges object with 2 ranges and 10 metadata columns:
+##      seqnames        ranges strand |                  peakNames   bdp_idx
+##         <Rle>     <IRanges>  <Rle> |            <CharacterList> <integer>
+##   X4     chr1 920981-921619      * | gr1__MACS_peak_17,gr2__005         4
+##   X4     chr1 920981-921619      * | gr1__MACS_peak_17,gr2__005         4
+##             peak         feature feature.ranges feature.strand  distance
+##      <character>     <character>      <IRanges>          <Rle> <integer>
+##   X4          X4 ENSG00000223764  916865-921016              -         0
+##   X4          X4 ENSG00000187634  923928-944581              +      2308
+##      insideFeature distanceToSite   gene_name
+##        <character>      <integer> <character>
+##   X4  overlapStart              0 RP11-54O7.3
+##   X4      upstream           2308      SAMD11
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+### 12.4.2 Find peaks located in enhancers
+
+Enhancers are DNA sequences that can amplify gene expression and are frequently used as biomarkers for cancer diagnosis and treatment. They can be identified using a variety of experimental methods such as 3C, 5C, and HiC (Lieberman-Aiden et al. [2009](#ref-lieberman2009)). With enhancers obtained through these experimental techniques, we can locate peaks that locate to potential enhancer regions. The following example uses 5C data derived with the *hg19* genome assembly, hence, it’s necessary to use a matching annotation file.
+
+```
+library(EnsDb.Hsapiens.v75)
+
+ensembl.hs75.gene <- toGRanges(EnsDb.Hsapiens.v75, feature = "gene")
+
+DNA5C <- system.file("extdata",
+                     "wgEncodeUmassDekker5CGm12878PkV2.bed.gz",
+                     package="ChIPpeakAnno")
+DNAinteractiveData <- toGRanges(gzfile(DNA5C))
+# the example bed.gz file can also be downloaded from:
+# https://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeUmassDekker5C/wgEncodeUmassDekker5CGm12878PkV2.bed.gz
+
+peaks_near_enhancer <-  findEnhancers(peaks = ol$mergedPeaks,
+                                      annoData = ensembl.hs75.gene,
+                                      DNAinteractiveData = DNAinteractiveData)
+head(peaks_near_enhancer, n = 2)
+```
+
+```
+## GRanges object with 1 range and 14 metadata columns:
+##      seqnames              ranges strand |                   peakNames
+##         <Rle>           <IRanges>  <Rle> |             <CharacterList>
+##   X1     chr1 151619224-151619324      * | gr2__229,gr1__MACS_peak_229
+##              feature      feature.ranges feature.strand feature.shift.ranges
+##          <character>           <IRanges>          <Rle>            <IRanges>
+##   X1 ENSG00000143393 151264273-151300191              -  151619414-151655333
+##      feature.shift.strand  distance insideFeature distanceToSite   gene_name
+##                     <Rle> <integer>   <character>      <integer> <character>
+##   X1                    +        89      upstream             89       PI4KB
+##      DNAinteractive.idx        peak DNAinteractive.ranges DNAinteractive.blocks
+##               <integer> <character>             <IRanges>         <IRangesList>
+##   X1                814          X1   151283079-151636526  1-5699,335673-353448
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+## 12.5 Step5: perform enrichment analysis
+
+With annotated peaks, we can use the `getEnrichedGO` and `getEnrichedPATH` functions to respectively retrieve a list of enriched GO or pathway terms.
+
+```
+library(org.Hs.eg.db)
+
+enriched_go <- getEnrichedGO(annotatedPeak = ol_anno,
+                             orgAnn = "org.Hs.eg.db",
+                             feature_id_type = "ensembl_gene_id",
+                             condense = TRUE)
+enrichmentPlot(enriched_go)
+```
+
+![Histogram showing enriched GO terms](data:image/png;base64...)
+
+Figure 33: Histogram showing enriched GO terms
+
+Likewise, the following pertains to pathway enrichment analysis.
+
+```
+library(reactome.db)
+
+enriched_pathway <- getEnrichedPATH(annotatedPeak = ol_anno,
+                                    orgAnn = "org.Hs.eg.db",
+                                    pathAnn = "KEGGREST",
+                                    maxP = 0.05)
+enrichmentPlot(enriched_pathway)
+```
+
+![Histogram showing enriched pathways](data:image/png;base64...)
+
+Figure 34: Histogram showing enriched pathways
+
+```
+# To remove the common suffix " - Homo sapiens (human)":
+enrichmentPlot(enriched_pathway, label_substring_to_remove = " - Homo sapiens \\(human\\)")
+```
+
+![Histogram showing enriched pathways](data:image/png;base64...)
+
+Figure 35: Histogram showing enriched pathways
+
+## 12.6 Step6: conduct motif analysis
+
+To perform motif analysis, we first need to extract sequences surrounding the peaks, then acquire the consensus sequences. We can also visualize the top motifs discovered.
+
+```
+library(BSgenome.Hsapiens.UCSC.hg38)
+
+seq_around_peak <- getAllPeakSequence(ol$mergedPeaks,
+                                      upstream = 20,
+                                      downstream = 20,
+                                      genome = BSgenome.Hsapiens.UCSC.hg38)
+head(seq_around_peak, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 4 metadata columns:
+##       seqnames        ranges strand |                           peakNames
+##          <Rle>     <IRanges>  <Rle> |                     <CharacterList>
+##   [1]     chr1 778411-780198      * | gr1__MACS_peak_13,gr2__001,gr2__002
+##   [2]     chr1 789471-791811      * |          gr2__003,gr1__MACS_peak_14
+##        upstream downstream               sequence
+##       <numeric>  <numeric>            <character>
+##   [1]        20         20 TGCGCCATGTTGCTAGGCTG..
+##   [2]        20         20 AGAATTGAATTGAATGGACT..
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome
+```
+
+We can use the `write2FASTA` function to store the result in a FASTA file. The following code snippet generates Z-scores for short oligos of length 6.
+
+```
+freqs <- oligoFrequency(BSgenome.Hsapiens.UCSC.hg38$chr1)
+motif_summary <- oligoSummary(seq_around_peak,
+                              oligoLength = 6,
+                              MarkovOrder = 3,
+                              freqs = freqs,
+                              quickMotif = TRUE)
+zscore <- sort(motif_summary$zscore)
+h <- hist(zscore,
+          breaks = 100,
+          main = "Histogram of Z-score")
+text(x = zscore[length(zscore)],
+     y = h$counts[length(h$counts)] + 1,
+     labels = names(zscore[length(zscore)]),
+     adj = 0,
+     srt = 90)
+```
+
+![Histogram showing Z-score distribution for oligos of length 6](data:image/png;base64...)
+
+Figure 36: Histogram showing Z-score distribution for oligos of length 6
+
+We can use `motifStack` to visualize the top discovered motifs.
+
+```
+library(motifStack)
+
+pfm <- new("pfm", mat = motif_summary$motifs[[1]],
+           name = "sample motif 1")
+motifStack(pfm)
+```
+
+![Sequence log of detected motif 1](data:image/png;base64...)
+
+Figure 37: Sequence log of detected motif 1
+
+# 13 Common workflow 2: comparing binding profiles for multiple TFs
+
+Given two or more peak sets from different TFs, it might be intriguing to examine if the peak profiles are correlated, and if so, how does the peak patterns compare to each other. The workflow presented here demonstrates how to compare the binding profiles of three TFs. The steps are outlined below.
+
+* Step1: import data
+* Step2: determine if there is significant overlap among peak sets
+* Step3: visualize and compare the binding patterns
+  + Heatmap
+  + Density plot
+
+## 13.1 Step1: import data
+
+```
+tf1 <- toGRanges(system.file("extdata/TAF.broadPeak", package = "ChIPpeakAnno"),
+                 format = "broadPeak")
+tf2 <- toGRanges(system.file("extdata/Tead4.broadPeak", package = "ChIPpeakAnno"),
+                 format = "broadPeak")
+tf3 <- toGRanges(system.file("extdata/YY1.broadPeak", package = "ChIPpeakAnno"),
+                 format = "broadPeak")
+```
+
+## 13.2 Step2: determine if there is significant overlap among peak sets
+
+To examine the associations across different peak sets, *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* implements both hypergeometric test (`makeVennDiagram`, for details see Section [11.1](#hypertest)) and permutation test (`peakPermTest`, for details see Section [11.2](#permtest)). For demonstration, here we use hypergeometric test.
+
+```
+library(BSgenome.Hsapiens.UCSC.hg38)
+
+overlapping_peaks <- findOverlapsOfPeaks(tf1,
+                                         tf2,
+                                         tf3,
+                                         connectedPeaks = "keepAll")
+mean_peak_width <- mean(width(unlist(GRangesList(overlapping_peaks[["all.peaks"]]))))
+
+total_binding_sites <- length(BSgenome.Hsapiens.UCSC.hg38[["chr2"]]) * 0.03 / mean_peak_width
+venn1 <- makeVennDiagram(overlapping_peaks,
+                         totalTest = total_binding_sites,
+                         connectedPeaks = "keepAll",
+                         fill = c("#CC79A7", "#56B4E9", "#F0E442"),
+                         col = c("#D55E00", "#0072B2", "#E69F00"),
+                         cat.col = c("#D55E00", "#0072B2", "#E69F00"))
+```
+
+![Venn diagram showing overlapping peaks for three TFs](data:image/png;base64...)
+
+Figure 38: Venn diagram showing overlapping peaks for three TFs
+
+For the P-values of each peak pair:
+
+```
+venn1[["p.value"]]
+```
+
+```
+##      tf1 tf2 tf3         pval
+## [1,]   0   1   1 4.565072e-52
+## [2,]   1   0   1 0.000000e+00
+## [3,]   1   1   0 2.744460e-88
+```
+
+Given that the P-values are all extremely low, there is a significant overlap between each pair of peak sets.
+
+## 13.3 Step3: visualize and compare the binding patterns
+
+We can leverage heatmap and density plot to effectively visualize and compare the binding patterns of multiple TFs. For detailed instructions, refer to [11.3](#multiexp).
+
+```
+ol_tfs <- findOverlapsOfPeaks(tf1, tf2, tf3,
+                              connectedPeaks = "keepAll")
+gr_ol_tfs <- ol_tfs$peaklist$`tf1///tf2///tf3`
+
+TF_width <- width(gr_ol_tfs)
+gr_ol_tfs_center <- reCenterPeaks(gr_ol_tfs, width = 4000)
+
+extdata_path <- system.file("extdata", package = "ChIPpeakAnno")
+bigWigs <- dir(extdata_path, "bigWig")
+coverage_list <- sapply(file.path(extdata_path, bigWigs),
+                        import, # rtracklayer::import
+                        format = "BigWig",
+                        which = gr_ol_tfs_center,
+                        as = "RleList")
+
+names(coverage_list) <- gsub(".bigWig", "", bigWigs)
+
+sig <- featureAlignedSignal(coverage_list, gr_ol_tfs_center)
+# since the bigWig files are only a subset of the original files,
+# filter to keep peaks that are with coverage data for all peak sets
+keep <- rowSums(sig[[1]]) > 0 & rowSums(sig[[2]]) > 0 & rowSums(sig[[3]]) > 0
+sig <- sapply(sig, function(x) x[keep, ], simplify = FALSE)
+gr_ol_tfs_center <- gr_ol_tfs_center[keep]
+
+featureAlignedHeatmap(sig, gr_ol_tfs_center,
+                      upper.extreme=c(3, 0.5, 4))
+```
+
+![Heatmap of coverages for selected TFs](data:image/png;base64...)
+
+Figure 39: Heatmap of coverages for selected TFs
+
+By default, the rows are arranged according to the total coverage per row from the first sample. Below is an example of how to sort by the third sample (“YY1”) in the dataset through tuning the `sortBy` option.
+
+```
+featureAlignedHeatmap(sig, gr_ol_tfs_center,
+                      upper.extreme=c(3, 0.5, 4),
+                      sortBy = "YY1")
+```
+
+![Heatmap of coverages for selected TFs sorted by YY1 sample](data:image/png;base64...)
+
+Figure 40: Heatmap of coverages for selected TFs sorted by YY1 sample
+
+To generate a density plot, use the `featureAlignedDistribution` function.
+
+```
+featureAlignedDistribution(sig, gr_ol_tfs_center,
+                           type="l")
+```
+
+![Distribution of coverage densities for selected TFs](data:image/png;base64...)
+
+Figure 41: Distribution of coverage densities for selected TFs
+
+As observed, the binding of “YY1” is significantly stronger, while the binding of “Tead” is considerably weaker.
+
+# 14 Have questions?
+
+For questions related to usage, please post your queries on the [Bioconductor Support Site](https://support.bioconductor.org/new/post/). If you wish to report a bug or request a new feature, kindly raise an issue on the [ChIPpeakAnno](https://github.com/jianhong/ChIPpeakAnno) GitHub repository.
+
+# 15 Selected Q & A
+
+## 15.1 How to import peaks?
+
+*[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* provides a helper function, `toGRanges`, specifically designed for importing files. Users also have the option to use other tools, such as `rtracklayer::import`.
+
+## 15.2 How to properly annotate peaks from ChIP-seq data?
+
+*[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* offers a variety of options for annotating peaks, which can be specified with the `output` argument in the `annotatePeakInBatch` function.
+
+* If you are interested in the nearest features surrounding the peaks, set `output = "nearestLocation"`, `output = "shortestDistance"`, or `output = "overlapping"`. This is a peak-centric method, for details see Section [7.1](#peakcentric).
+* If you are interested in the peaks binding to the promoter regions, you can set `output = "upstream"`. For more flexibility, you can adjust the `bindingRegion` option. This is a feature-centric method, for details see Section [7.2](#featurecentric)
+
+## 15.3 Should I use `annotatePeakInBatch` or `annoPeaks`?
+
+You should use `annotatePeakInBatch` as it serves as the primary wrapper function that internally calls `annoPeaks`. Historically, `annotatePeakInBatch` was primarily composed of peak-centric methods. Over time, feature-centric methods, initially implemented in the `annoPeaks` function, were integrated into `annotatePeakInBatch`.
+
+## 15.4 How to prepare annotation data for `annotatePeakInBatch`?
+
+Ensure that the annotation data is in *GRanges* format for `annotatePeakInBatch` to work. You can convert *TxDb*, *EnsDb*, or even *GFF* and *BED*, etc. into *GRanges* using the `toGRanges` function. Additionally, you can leverage the `getAnnotation` function to fetch annotation data from *BioMart*. If needed, you can even create a personalized annotation file. For detailed instructions, see Section [5](#prepanno).
+
+## 15.5 Can I output either the nearest or overlapping features?
+
+This question pertains to this [post](https://support.bioconductor.org/p/9154859/#9154869).
+
+When you set `output = "both"`, both the “nearest” and “overlapping” features will be output. If your preference is to assign only one type of feature to each peak (either “nearest” or “overlapping”, with a preference for “overlapping” in cases where the “nearest” feature is not “overlapping”), you can use the following strategy: first, annotate peaks with overlapping features; second, annotate peaks lacking overlapping features with the nearest features; last, concatenate the two sets of results. The example codes are provided below:
+
+```
+library(ensembldb)
+library(EnsDb.Hsapiens.v75)
+data(myPeakList)
+annoData <- annoGR(EnsDb.Hsapiens.v75)
+
+# Step1: annotate peaks to the overlapping features, if "select = 'all'", multiple features can be assigned to a single peak.
+anno_overlapping <- annotatePeakInBatch(myPeakList,
+                                        AnnotationData = annoData,
+                                        output = "overlapping",
+                                        select = "first")
+anno_overlapping_non_na <- anno_overlapping[!is.na(anno_overlapping$feature)]
+
+# Step2: annotate peaks that are without overlapping features to nearest features
+myPeakList_non_overlapping <- myPeakList[!(names(myPeakList) %in% anno_overlapping_non_na$peak)]
+anno_nearest <- annotatePeakInBatch(myPeakList_non_overlapping,
+                                    AnnotationData = annoData,
+                                    output = "nearestLocation",
+                                    select = "first")
+
+# Step3: concatenate the two
+anno_final <- c(anno_overlapping_non_na, anno_nearest)
+```
+
+The provided code allocates either the “overlapping” or “nearest” feature to each peak. If the “overlapping” feature is not the “nearest”, only the “overlapping” one will be reported.
+
+## 15.6 Why is the sum of peak numbers in the Venn diagram NOT equal to the sum of the peaks in the original peak lists?
+
+This question is a common scenario in calculating the intersection of peaks. Peaks, being a range of continuous points rather than single points, present a challenge in determining the overlapping regions. Consider the intersection of two lists of range objects: list A (1~3, 4~5, 7~9) and list B (2~8), the number of overlapping ranges depends on the reference chosen, if we use list B as the reference, the output would be one range; however, if we use list A as the reference, the output would be three ranges.
+
+## 15.7 How does `findOverlapsOfPeaks` count the number of overlapping peaks?
+
+This question is in response to this [post](https://support.bioconductor.org/p/133486/#133603).
+
+When counting the number of overlapping peaks using `findOverlapsOfPeaks`, the `connectedPeaks` option comes into play. If multiple peaks involve in any group of connected or overlapping peaks in any input peak list, setting `connectedPeaks = "merge"` will increment the overlapping counts by one. On the other hand, setting `connectedPeaks = "min"` will add the minimal number of involved peaks in each group of connected or overlapped peaks to the overlapping counts. If `connectedPeaks = "keepAll"`, it will add the number of involved peaks for each peak list to the corresponding overlapping counts. In addition, it will output counts as if `connectedPeaks` was set to “min”.
+
+For examples, if 5 peaks in group1 overlap with 2 peaks in group 2:
+
+* Setting `connectedPeaks = "merge"` will add 1 to the overlapping counts
+* Setting `connectedPeaks = "min"` will add 2 to the overlapping counts
+* Setting `connectedPeaks = "keepAll"` will add 5 peaks to “count.group1”, 2 to “count.group2”, and 2 to the overlapping counts
+
+## 15.8 Is there a way to show the number of peaks in original peak lists?
+
+You have the option to configure `connectedPeaks = "keepAll"` in both the `findOverlapsOfPeaks` and `makeVennDiagram` functions.
+
+## 15.9 How to extract the original peak IDs of the overlapping peaks?
+
+In the output of `findOverlapsOfPeaks`, each element in the peak list contains a metadata column names *peakNames*, which is a CharacterList. This CharacterList is a list of the contributing peak IDs with prefixes, e.g. “peaks1\_peakname1”, “peaksi\_peaknamej”, where “i” denotes the peak group i and “j” denotes the specific peak j within that group. Users can retrieve the original peak name by splitting these strings. Here are the sample codes:
+
+```
+library(ChIPpeakAnno)
+library(reshape2)
+
+# Step1: read in two peak files
+bed <- system.file("extdata",
+                   "MACS_output.bed",
+                   package = "ChIPpeakAnno")
+gff <- system.file("extdata",
+                   "GFF_peaks.gff",
+                   package = "ChIPpeakAnno")
+gr1 <- toGRanges(bed, format = "BED",
+                 header = FALSE)
+gr2 <- toGRanges(gff, format = "GFF",
+                 header = FALSE, skip = 3)
+names(gr2) <- seq(length(gr2)) # add names to gr2 for Step4
+
+# Step2: find overlapping peaks
+ol <- findOverlapsOfPeaks(gr1, gr2)
+peakNames <- ol$peaklist[['gr1///gr2']]$peakNames
+
+# Step3: extract original peak names
+peakNames <- melt(peakNames,
+                  value.name = "merged_peak_id") # reshape df
+head(peakNames, n = 2)
+```
+
+```
+##   merged_peak_id <NA>              <NA>
+## 1              1    1 gr1__MACS_peak_13
+## 2              1    1            gr2__1
+```
+
+```
+peakNames <- cbind(peakNames[, 1],
+                   do.call(rbind,
+                           strsplit(as.character(peakNames[, 3]), "__")))
+
+colnames(peakNames) <- c("merged_peak_id", "group", "peakName")
+head(peakNames, n = 2)
+```
+
+```
+##      merged_peak_id group peakName
+## [1,] "1"            "gr1" "MACS_peak_13"
+## [2,] "1"            "gr2" "1"
+```
+
+```
+# Step4: split by peak group
+gr1_subset <- gr1[peakNames[peakNames[, "group"] %in% "gr1", "peakName"]]
+gr2_subset <- gr2[peakNames[peakNames[, "group"] %in% "gr2", "peakName"]]
+head(gr1_subset, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 1 metadata column:
+##                seqnames        ranges strand |     score
+##                   <Rle>     <IRanges>  <Rle> | <numeric>
+##   MACS_peak_13     chr1 713791-715332      * |   2550.61
+##   MACS_peak_14     chr1 724851-727191      * |     58.34
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+```
+head(gr2_subset, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 4 metadata columns:
+##     seqnames        ranges strand |   source     type     score     phase
+##        <Rle>     <IRanges>  <Rle> | <factor> <factor> <numeric> <integer>
+##   1     chr1 713893-714747      + |  bed2gff region_0         0      <NA>
+##   2     chr1 715023-715578      + |  bed2gff region_1         0      <NA>
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+Alternatively, the following snippet should also work.
+
+```
+gr1_renamed <- ol$all.peaks$gr1
+gr2_renamed <- ol$all.peaks$gr2
+head(gr1_renamed, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 1 metadata column:
+##                    seqnames      ranges strand |     score
+##                       <Rle>   <IRanges>  <Rle> | <numeric>
+##   gr1__MACS_peak_1     chr1 28341-29610      * |    160.81
+##   gr1__MACS_peak_2     chr1 90821-91234      * |    133.12
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+```
+head(gr2_renamed, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 4 metadata columns:
+##          seqnames        ranges strand |   source     type     score     phase
+##             <Rle>     <IRanges>  <Rle> | <factor> <factor> <numeric> <integer>
+##   gr2__1     chr1 713893-714747      + |  bed2gff region_0         0      <NA>
+##   gr2__2     chr1 715023-715578      + |  bed2gff region_1         0      <NA>
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+```
+peakNames <- melt(ol$peaklist[['gr1///gr2']]$peakNames,
+                  value.name = "merged_peak_id")
+gr1_subset <- gr1_renamed[peakNames[grepl("^gr1", peakNames[, 3]), 3]]
+gr2_subset <- gr2_renamed[peakNames[grepl("^gr2", peakNames[, 3]), 3]]
+head(gr1_subset, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 1 metadata column:
+##                     seqnames        ranges strand |     score
+##                        <Rle>     <IRanges>  <Rle> | <numeric>
+##   gr1__MACS_peak_13     chr1 713791-715332      * |   2550.61
+##   gr1__MACS_peak_14     chr1 724851-727191      * |     58.34
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+```
+head(gr2_subset, n = 2)
+```
+
+```
+## GRanges object with 2 ranges and 4 metadata columns:
+##          seqnames        ranges strand |   source     type     score     phase
+##             <Rle>     <IRanges>  <Rle> | <factor> <factor> <numeric> <integer>
+##   gr2__1     chr1 713893-714747      + |  bed2gff region_0         0      <NA>
+##   gr2__2     chr1 715023-715578      + |  bed2gff region_1         0      <NA>
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+## 15.10 How to select the proper number for `totalTest` when using `makeVennDiagram`?
+
+During the evaluation of the association between two sets of peak data using the hypergeometric distribution, it is essential to determine the total number of potential binding sites, the `totalTest` parameter in the `makeVennDiagram`. This parameter should have a value larger than the largest number of peaks in the peak list. The choice of `totalTest` influences teh stringency of the test, with smaller values yielding more stringent tests and larger P-values. The computation time for calculating P-values remains independent of the `totalTest` value. For practical guidance on selecting an appropriate `totalTest` value, please refer to this [post](https://stat.ethz.ch/pipermail/bioconductor/2010-November/036540.html).
+
+# 16 How to cite ChIPpeakAnno
+
+If you use *[ChIPpeakAnno](https://bioconductor.org/packages/3.22/ChIPpeakAnno)* in your work, please cite it as follows:
+
+```
+## Please cite the paper below for the ChIPpeakAnno package.
+##
+##   Lihua J Zhu, Claude Gazin, Nathan D Lawson, Herve Pages, Simon M Lin,
+##   David S Lapointe and Michael R Green, ChIPpeakAnno: a Bioconductor
+##   package to annotate ChIP-seq and ChIP-chip data. BMC Bioinformatics.
+##   2010, 11:237
+##
+##   Zhu LJ. Integrative analysis of ChIP-chip and ChIP-seq dataset.
+##   Methods Mol Biol. 2013;1067:105-24.
+##
+## To see these entries in BibTeX format, use 'print(<citation>,
+## bibtex=TRUE)', 'toBibtex(.)', or set
+## 'options(citation.bibtex.max=999)'.
+```
+
+# 17 Session info
+
+Here is the output of `sessionInfo()` on the system on which this document was compiled running pandoc 2.7.3:
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] grid      stats4    stats     graphics  grDevices utils     datasets
+## [8] methods   base
+##
+## other attached packages:
+##  [1] reshape2_1.4.4
+##  [2] EnsDb.Hsapiens.v75_2.99.0
+##  [3] motifStack_1.54.0
+##  [4] BSgenome.Hsapiens.UCSC.hg38_1.4.5
+##  [5] BSgenome_1.78.0
+##  [6] rtracklayer_1.70.0
+##  [7] BiocIO_1.20.0
+##  [8] Biostrings_2.78.0
+##  [9] XVector_0.50.0
+## [10] GenomeInfoDb_1.46.0
+## [11] reactome.db_1.94.0
+## [12] org.Hs.eg.db_3.22.0
+## [13] TxDb.Hsapiens.UCSC.hg18.knownGene_3.2.2
+## [14] UpSetR_1.4.0
+## [15] TxDb.Hsapiens.UCSC.hg38.knownGene_3.22.0
+## [16] AnnotationHub_4.0.0
+## [17] knitr_1.50
+## [18] biomaRt_2.66.0
+## [19] EnsDb.Hsapiens.v86_2.99.0
+## [20] ensembldb_2.34.0
+## [21] AnnotationFilter_1.34.0
+## [22] GenomicFeatures_1.62.0
+## [23] AnnotationDbi_1.72.0
+## [24] Biobase_2.70.0
+## [25] ChIPpeakAnno_3.44.0
+## [26] GenomicRanges_1.62.0
+## [27] Seqinfo_1.0.0
+## [28] IRanges_2.44.0
+## [29] S4Vectors_0.48.0
+## [30] BiocGenerics_0.56.0
+## [31] generics_0.1.4
+## [32] BiocFileCache_3.0.0
+## [33] dbplyr_2.5.1
+## [34] BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##   [1] RColorBrewer_1.1-3          jsonlite_2.0.0
+##   [3] magrittr_2.0.4              magick_2.9.0
+##   [5] farver_2.1.2                rmarkdown_2.30
+##   [7] vctrs_0.6.5                 multtest_2.66.0
+##   [9] Cairo_1.7-0                 memoise_2.0.1
+##  [11] Rsamtools_2.26.0            RCurl_1.98-1.17
+##  [13] base64enc_0.1-3             tinytex_0.57
+##  [15] htmltools_0.5.8.1           S4Arrays_1.10.0
+##  [17] progress_1.2.3              lambda.r_1.2.4
+##  [19] curl_7.0.0                  SparseArray_1.10.0
+##  [21] sass_0.4.10                 bslib_0.9.0
+##  [23] htmlwidgets_1.6.4           plyr_1.8.9
+##  [25] httr2_1.2.1                 futile.options_1.0.1
+##  [27] cachem_1.1.0                GenomicAlignments_1.46.0
+##  [29] lifecycle_1.0.4             pkgconfig_2.0.3
+##  [31] Matrix_1.7-4                R6_2.6.1
+##  [33] fastmap_1.2.0               MatrixGenerics_1.22.0
+##  [35] digest_0.6.37               TFMPvalue_0.0.9
+##  [37] regioneR_1.42.0             RSQLite_2.4.3
+##  [39] seqLogo_1.76.0              labeling_0.4.3
+##  [41] filelock_1.0.3              httr_1.4.7
+##  [43] abind_1.4-8                 compiler_4.5.1
+##  [45] FDb.UCSC.tRNAs_1.0.1        bit64_4.6.0-1
+##  [47] withr_3.0.2                 S7_0.2.0
+##  [49] BiocParallel_1.44.0         DBI_1.2.3
+##  [51] MASS_7.3-65                 rappdirs_0.3.3
+##  [53] DelayedArray_0.36.0         rjson_0.2.23
+##  [55] gtools_3.9.5                caTools_1.18.3
+##  [57] tools_4.5.1                 glue_1.8.0
+##  [59] VennDiagram_1.7.3           restfulr_0.0.16
+##  [61] InteractionSet_1.38.0       ade4_1.7-23
+##  [63] TFBSTools_1.48.0            seqinr_4.2-36
+##  [65] gtable_0.3.6                tidyr_1.3.1
+##  [67] data.table_1.17.8           hms_1.1.4
+##  [69] xml2_1.4.1                  BiocVersion_3.22.0
+##  [71] pillar_1.11.1               stringr_1.5.2
+##  [73] splines_4.5.1               dplyr_1.1.4
+##  [75] lattice_0.22-7              survival_3.8-3
+##  [77] bit_4.6.0                   DirichletMultinomial_1.52.0
+##  [79] universalmotif_1.28.0       tidyselect_1.2.1
+##  [81] RBGL_1.86.0                 GO.db_3.22.0
+##  [83] gridExtra_2.3               grImport2_0.3-3
+##  [85] bookdown_0.45               ProtGenerics_1.42.0
+##  [87] SummarizedExperiment_1.40.0 futile.logger_1.4.3
+##  [89] xfun_0.53                   matrixStats_1.5.0
+##  [91] stringi_1.8.7               UCSC.utils_1.6.0
+##  [93] lazyeval_0.2.2              yaml_2.3.10
+##  [95] evaluate_1.0.5              codetools_0.2-20
+##  [97] cigarillo_1.0.0             tibble_3.3.0
+##  [99] BiocManager_1.30.26         graph_1.88.0
+## [101] cli_3.6.5                   jquerylib_0.1.4
+## [103] dichromat_2.0-0.1           Rcpp_1.1.0
+## [105] png_0.1-8                   XML_3.99-0.19
+## [107] parallel_4.5.1              ggplot2_4.0.0
+## [109] blob_1.2.4                  prettyunits_1.2.0
+## [111] jpeg_0.1-11                 bitops_1.0-9
+## [113] txdbmaker_1.6.0             pwalign_1.6.0
+## [115] scales_1.4.0                purrr_1.1.0
+## [117] crayon_1.5.3                rlang_1.1.6
+## [119] KEGGREST_1.50.0             formatR_1.14
+```
+
+Adachi, N., and M. R. Lieber. 2002. “Bidirectional Gene Organization: A Common Architectural Feature of the Human Genome.” Journal Article. *Cell* 109 (7): 807–9. [https://doi.org/10.1016/s0092-8674(02)00758-4](https://doi.org/10.1016/s0092-8674%2802%2900758-4).
+
+Barski, A., S. Cuddapah, K. Cui, T. Y. Roh, D. E. Schones, Z. Wang, G. Wei, I. Chepelev, and K. Zhao. 2007. “High-Resolution Profiling of Histone Methylations in the Human Genome.” Journal Article. *Cell* 129 (4): 823–37. <https://doi.org/10.1016/j.cell.2007.05.009>.
+
+Blat, Y., and N. Kleckner. 1999. “Cohesins Bind to Preferential Sites Along Yeast Chromosome Iii, with Differential Regulation Along Arms Versus the Centric Region.” Journal Article. *Cell* 98 (2): 249–59. [https://doi.org/10.1016/s0092-8674(00)81019-3](https://doi.org/10.1016/s0092-8674%2800%2981019-3).
+
+Consortium, Encode Project. 2012. “An Integrated Encyclopedia of Dna Elements in the Human Genome.” Journal Article. *Nature* 489 (7414): 57–74. <https://doi.org/10.1038/nature11247>.
+
+Durinck, Steffen, Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma, and Wolfgang Huber. 2005. “BioMart and Bioconductor: A Powerful Link Between Biological Databases and Microarray Data Analysis.” *Bioinformatics* 21 (16): 3439–40. <https://doi.org/10.1093/bioinformatics/bti525>.
+
+Johnson, D. S., A. Mortazavi, R. M. Myers, and B. Wold. 2007. “Genome-Wide Mapping of in Vivo Protein-Dna Interactions.” Journal Article. *Science* 316 (5830): 1497–1502. <https://doi.org/10.1126/science.1141319>.
+
+Leung, Ming-Ying, Genevieve M Marsh, and Terence P Speed. 1996. “Over-and Underrepresentation of Short Dna Words in Herpesvirus Genomes.” *Journal of Computational Biology* 3 (3): 345–60.
+
+Lieberman-Aiden, E., N. L. van Berkum, L. Williams, M. Imakaev, T. Ragoczy, A. Telling, I. Amit, et al. 2009. “Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome.” Journal Article. *Science* 326 (5950): 289–93. <https://doi.org/10.1126/science.1181369>.
+
+Skene, P. J., and S. Henikoff. 2017. “An Efficient Targeted Nuclease Strategy for High-Resolution Mapping of Dna Binding Sites.” Journal Article. *Elife* 6. <https://doi.org/10.7554/eLife.21856>.
+
+Thomas, R., S. Thomas, A. K. Holloway, and K. S. Pollard. 2017. “Features That Define the Best Chip-Seq Peak Calling Algorithms.” Journal Article. *Brief Bioinform* 18 (3): 441–50. <https://doi.org/10.1093/bib/bbw035>.
+
+Yip, Kevin Y, Chao Cheng, Nitin Bhardwaj, James B Brown, Jing Leng, Anshul Kundaje, Joel Rozowsky, et al. 2012. “Classification of Human Genomic Regions Based on Experimentally Determined Binding Sites of More Than 100 Transcription-Related Factors.” *Genome Biol* 13 (9): R48.
+
+Zhang, Y., T. Liu, C. A. Meyer, J. Eeckhoute, D. S. Johnson, B. E. Bernstein, C. Nusbaum, et al. 2008. “Model-Based Analysis of Chip-Seq (Macs).” Journal Article. *Genome Biol* 9 (9): R137. <https://doi.org/10.1186/gb-2008-9-9-r137>.
+
+Zhu, Lihua J, Claude Gazin, Nathan D Lawson, Hervé Pagès, Simon M Lin, David S Lapointe, and Michael R Green. 2010. “ChIPpeakAnno: A Bioconductor Package to Annotate Chip-Seq and Chip-Chip Data.” *BMC Bioinformatics* 11 (1): 237.
+
+Zhu, Lihua Julie. 2013. “Integrative Analysis of Chip-Chip and Chip-Seq Dataset.” In *Tiling Arrays*, 105–24. Springer.

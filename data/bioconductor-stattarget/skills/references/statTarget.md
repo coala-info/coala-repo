@@ -1,0 +1,286 @@
+# statTarget
+
+Hemi Luan
+
+#### Modified: 5 Jan 2022. Compiled: 30 Oct 2025
+
+# Contents
+
+* [1 Welcome to statTarget !](#welcome-to-stattarget)
+  + [1.1 Package overview](#package-overview)
+  + [1.2 Citation](#citation)
+  + [1.3 What does statTarget offer statistically](#what-does-stattarget-offer-statistically)
+    - [1.3.1 Running Signal Correction (the shiftCor function) from the GUI](#running-signal-correction-the-shiftcor-function-from-the-gui)
+    - [1.3.2 Running Statistical Analysis (the statAnalysis function) from the GUI](#running-statistical-analysis-the-statanalysis-function-from-the-gui)
+    - [1.3.3 Generation of input file (the transX function)](#generation-of-input-file-the-transx-function)
+    - [1.3.4 Random Forest classfication and variable importance measures](#random-forest-classfication-and-variable-importance-measures)
+  + [1.4 References](#references)
+
+# 1 Welcome to statTarget !
+
+`Quality Control (QC)` has been considered as an essential step in the
+MS-based omics platform for high reproducibility and accuracy of data.
+The repetitive use of the same QC samples is more and more accepted for
+evaluation and correction of the signal drift during the sequence of MS run order,
+especially beneficial to improve the quality of data in multi-blocks
+experiments.
+
+We have released a new version named [statTargetAPP](https://github.com/statTarget/statTarget2/releases/tag/statTarget) with GUI interface. If interested, you can contact via email (Prof. Hemi Luan <hm-luan at msn.com>)
+
+## 1.1 Package overview
+
+A streamlined tool provides graphical user interface for quality control based signal correction, integration of metabolomics and proteomics data from multi-batch experiments, and the comprehensive statistic analysis.
+(URL: <https://stattarget.github.io>)
+
+## 1.2 Citation
+
+Please cite the following article when using statTarget or QC-RFSC algorithm:
+
+Luan H., Ji F., Chen Y., Cai Z. (2018) statTarget: A streamlined tool for signal drift correction and interpretations of quantitative mass spectrometry-based omics data. Analytica Chimica Acta. dio: <https://doi.org/10.1016/j.aca.2018.08.002>
+
+Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correction and interpretations of metabolomics/proteomics data using random forest regression. bioRxiv 253583; doi: <https://doi.org/10.1101/253583>
+
+## 1.3 What does statTarget offer statistically
+
+The statTarget has two basic sections. The first section
+is Signal Correction (See the shiftCor function). It includes ‘Ensemble Learning’ for QC based signal correction. For example, QC-based random forest correction (QC-RFSC). In addition, Combat is also provided for QC free datasets. The second section is Statistical Analysis (See the statAnalysis function). It provides comprehensively computational and statistical methods that are commonly applied to analyze Omics data, and offers multiple results for biomarker discovery.
+
+`Section 1 - Signal Correction` provide `ensemble learning method` for QC based signal correction. i.e. QC based random forest signal correction (QC-RFSC) that fit the QC data,
+and each metabolites in the true sample will be normalized to the QC sample.
+
+`Section 2 - Statistical Analysis` provide features including Data preprocessing, Data descriptions, Multivariate statistics analysis and Univariate analysis.
+
+Data preprocessing : 80-precent rule, sum normalization (SUM) and probabilistic quotient normalization (PQN), glog transformation, KNN imputation, median imputation, and minimum imputation.
+
+Data descriptions : Mean value, Median value, sum, Quartile, Standard
+derivatives, etc.
+
+Multivariate statistics analysis : PCA, PLSDA, VIP, Random forest, Permutation-based feature selection.
+
+Univariate analysis : Welch’s T-test, Shapiro-Wilk normality test and Mann-Whitney test.
+
+Biomarkers analysis: ROC, Odd ratio, Adjusted P-value, Box plot and Volcano plot.
+
+### 1.3.1 Running Signal Correction (the shiftCor function) from the GUI
+
+`Meta File`
+
+Meta information includes the Sample name, class, batch and order.
+Do not change the name of each column
+
+1. Class: The QC should be labeled as NA
+2. Order : Injection sequence.
+3. Batch: The analysis blocks or batches
+4. Sample: Sample name should be consistent in Meta file and Profile file. \*The QC sample name should be tagged with “QC”.
+
+(See the example data)
+
+`Profile File`
+
+Expression data includes the sample name and expression
+data.(See the example data)
+
+`NA.Filter`
+
+Modified n precent rule function. A variable will be kept if it has a non-zero value for at least n precent of samples in any one group. (Default: 0.8)
+
+`MLmethod`
+
+The QC-based signal correction (i.e. QC-RFSC.) or QC-free methods (Combat)
+
+`Ntree`
+
+Number of trees to grow for QC-RFSC (Default: 500) .
+
+`Imputation`
+
+The parameter for imputation method.(i.e.,
+nearest neighbor averaging, “KNN”; minimum values, “min”; Half of minimum values
+“minHalf” median values, “median”. (Default: KNN)
+
+```
+## Examples Code
+
+library(statTarget)
+
+datpath <- system.file('extdata',package = 'statTarget')
+samPeno <- paste(datpath,'MTBLS79_sampleList.csv', sep='/')
+samFile <- paste(datpath,'MTBLS79.csv', sep='/')
+shiftCor(samPeno,samFile, Frule = 0.8, MLmethod = "QCRFSC", imputeM = "KNN")
+# Combat for QC-free datasets
+samPeno2 <- paste(datpath,'MTBLS79_dQC_sampleList.csv', sep='/')
+shiftCor_dQC(samPeno2,samFile, Frule = 0.8, MLmethod = "Combat")
+
+See ?shiftCor for off-line help
+```
+
+### 1.3.2 Running Statistical Analysis (the statAnalysis function) from the GUI
+
+`Stat File`
+
+Expression data includes the sample name, group, and expression data with long format.
+
+`NA.Filter`
+
+Modified n precent rule function. A variable will be kept if it has a non-zero value for at least n precent of samples in any one group. (Default: 0.8)
+
+`Imputation`
+
+The parameter for imputation method.(i.e., nearest neighbor averaging, “KNN”;
+minimum values, “min”; Half of minimum values “minHalf”; median values,
+“median”. (Default: KNN)
+
+`Normalization`
+
+The parameter for normalization method (i.e probabilistic quotient
+normalization, “PQN”; integral normalization , “SUM”, and “none”).
+
+`Glog`
+
+Generalised logarithm (glog) transformation for Variance stabilization
+(Default: TRUE)
+
+`Scaling Method`
+
+Scaling method before statistic analysis i.e. PCA or PLS(DA).
+Center can be used for specifying the Center scaling.
+Pareto can be used for specifying the Pareto scaling.
+Auto can be used for specifying the Auto scaling (or unit variance scaling).
+Vast can be used for specifying the vast scaling.
+Range can be used for specifying the Range scaling. (Default: Pareto)
+
+`Permutation times`
+
+The number of permutation times for cross-validation of PLS-DA model, and variable importance of randomforest model
+
+`PCs`
+
+PCs in the Xaxis or Yaxis: Principal components in
+PCA-PLS model for the x or y-axis (Default: 1 and 2)
+
+`nvarRF`
+
+The number of variables with top permutation importance in randomforest model.
+(Default: 20)
+
+`Labels`
+
+To show the name of sample or groups in the Score plot. (Default: TRUE)
+
+`Multiple testing`
+
+This multiple testing correction via false discovery rate (FDR)
+estimation with Benjamini-Hochberg method. The false discovery rate
+for conceptualizing the rate of type I errors in null hypothesis
+testing when conducting multiple comparisons. (Default: TRUE)
+
+`Volcano FC`
+
+The up or down -regulated metabolites using Fold Changes cut off
+values in the Volcano plot. (Default: > 2 or < 0.5)
+
+`Volcano Pvalue`
+
+The significance level for metabolites in the Volcano plot.(Default: 0.05)
+
+```
+## Examples Code
+
+library(statTarget)
+
+datpath <- system.file('extdata',package = 'statTarget')
+file <- paste(datpath,'data_example.csv', sep='/')
+statAnalysis(file,Frule = 0.8, normM = "NONE", imputeM = "KNN", glog = TRUE,scaling = "Pareto")
+```
+
+### 1.3.3 Generation of input file (the transX function)
+
+The transX function is to generate statTarget input file formats from Mass Spectrometry Data softwares, such as XCMS, MZmine2, SIEVE and SKYLINE. ‘?transX’ for off-line help.
+
+```
+## Examples Code
+
+library(statTarget)
+
+datpath <- system.file('extdata',package = 'statTarget')
+dataXcms <- paste(datpath,'xcmsOutput.tsv', sep='/')
+dataSkyline <- paste(datpath,'skylineDemo.csv', sep='/')
+transX(dataXcms,'xcms')
+transX(dataSkyline,'skyline')
+
+See ?transX for off-line help
+```
+
+### 1.3.4 Random Forest classfication and variable importance measures
+
+rForest provides the Breiman’s random forest algorithm for classification and permutation-based variable importance measures (PIMP-algorithm).
+
+```
+## Examples Code
+
+library(statTarget)
+
+datpath <- system.file('extdata',package = 'statTarget')
+statFile <- paste(datpath,'data_example.csv', sep='/')
+getFile <- read.csv(statFile,header=TRUE)
+
+# Random Forest classfication
+rFtest <- rForest(getFile,ntree = 10,times = 5)
+
+# Prediction of test data using random forest in statTarget.
+predictOutput <- predict_RF(rFtest, getFile[1:19,3:8])
+
+# Multi-dimensional scaling plot of proximity matrix from randomForest.
+mdsPlot(rFtest$randomForest,rFtest$pimpTest)
+
+# Create plots for Gini importance and permutation-based variable Gini importance measures.
+pvimPlot(rFtest$randomForest,rFtest$pimpTest)
+
+graphics.off()
+
+See ?rForest for off-line help
+```
+
+Once data files have been analysed it is time to investigate them.
+Please get this info. through the GitHub page.
+(URL: <https://stattarget.github.io>)
+
+#### 1.3.4.1 Results of Signal Correction (ShiftCor)
+
+* **The output file:**
+
+```
+statTarget -- shiftCor
+-- After_shiftCor             # The fold for intergrated and corrected data
+   -- shift_all_cor.csv         # The corrected data of samples and QCs
+   -- shift_QC_cor.csv          # The corrected data of QCs only
+   -- shift_sample_cor.csv      # The corrected data of samples only
+   -- loplot                    # The fold for quality control images
+      -- *.pdf                  # The quality control images for each features
+
+-- Before_shiftCor            # The fold for raw data
+   -- shift_QC_raw.csv          # The raw data of QCs
+   -- shift_sam_raw.csv         # The raw data of samples
+
+-- RSDresult                  # The fold for variation analysis and quality assessment
+   -- RSD_all.csv               # The RSD values of each feature
+   -- RSDdist_QC_stat.csv       # The RSD distribution of QCs in each batch and all batches
+   -- RSD distribution.pdf      # The RSD distribution plot in samples and QCs of all batches
+   -- RSD variation.pdf         # The RSD variation plot for pre- and post- signal correction
+```
+
+## 1.4 References
+
+Luan H., Ji F., Chen Y., Cai Z. (2018) statTarget: A streamlined tool for signal drift correction and interpretations of quantitative mass spectrometry-based omics data. Analytica Chimica Acta. dio: <https://doi.org/10.1016/j.aca.2018.08.002>
+
+Luan H., Ji F., Chen Y., Cai Z. (2018) Quality control-based signal drift correction and interpretations of metabolomics/proteomics data using random forest regression. bioRxiv 253583; doi: <https://doi.org/10.1101/253583>
+
+Dunn, W.B., et al.,Procedures for large-scale metabolic profiling of
+serum and plasma using gas chromatography and liquid chromatography coupled
+to mass spectrometry. Nature Protocols 2011, 6, 1060.
+
+Luan H., LC-MS-Based Urinary Metabolite Signatures in Idiopathic
+Parkinson’s Disease. J Proteome Res., 2015, 14,467.
+
+Luan H., Non-targeted metabolomics and lipidomics LC-MS data
+from maternal plasma of 180 healthy pregnant women. GigaScience 2015 4:16

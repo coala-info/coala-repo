@@ -1,0 +1,1 @@
+Index &mdash; sinto 0.10.1 documentation sinto Installation User guide Processing scATAC-seq data sinto Index Index &#169; Copyright 2020, Tim Stuart, Warren W. Kretzschmar. Built with Sphinx using a theme provided by Read the Docs .

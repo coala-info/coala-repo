@@ -1,0 +1,416 @@
+# 4. Parameter Guide
+
+This article introduces the available options in `scMultiSim`.
+
+The following flow chart shows the workflow of `scMultiSim` and each parameter’s role in the simulation.
+
+![scMultiSim parameters flow chart](https://github.com/ZhangLabGT/scMultiSim/raw/img/img/params.png)
+
+## Options: General
+
+### rand.seed
+
+> integer (default: `0`)
+
+scMultiSim should produce the same result if all other parameters are the same.
+
+### threads
+
+> integer (default: `1`)
+
+Use multithreading only when generating the CIF matrix.
+It will not speed up the simulation a lot, thus not recommended.
+
+### speed.up
+
+> logical (default: `FALSE`)
+
+Enable experimental speed-up mode.
+It is recommended to **enable** this option, and it will be the default in the future.
+Currently, it is disabled for reproducibility.
+
+## Options: Genes
+
+### GRN
+
+> A data frame with 3 columns as below.
+> Supply `NA` to disable the GRN effect. (required)
+
+| Column | Value |
+| --- | --- |
+| 1 | target gene ID: `integer or character`; |
+| 2 | regulator gene ID: `integer or character`; |
+| 3 | effect: `number`. |
+
+If `num.genes` presents, the gene IDs should not exceed this number.
+The gene IDs should start from 1 and should not ship any intermidiate numbers.
+
+Two sample datasets `GRN_params_100` and `GRN_params_1000` from
+[Dibaeinia, P., & Sinha, S. (2020)](https://doi.org/10.1016/j.cels.2020.08.003) are provided for testing and inspection.
+
+### num.genes
+
+> integer (default: `NULL`)
+
+If a GRN is supplied, override the total number of genes.
+It should be larger than the largest gene ID in the GRN.
+Otherwise, the number of genes will be determined by `N_genes * (1 + r_u)`,
+where `r_u` is `unregulated.gene.ratio`.
+
+If GRN is disabled,
+this option specifies the total number of genes.
+
+### unregulated.gene.ratio
+
+> number > 0 (default: `0.1`)
+
+Ratio of unreulated to regulated genes.
+When a GRN is supplied with `N` genes,
+scMultiSim will simulate `N * r_u` extra (unregulated) genes.
+
+### giv.mean, giv.sd, giv.prob
+
+> (default: `0, 1, 0.3`)
+
+The parameters used to sample the GIV matrix.
+With probability `giv.prob`, the value is sampled from N(`giv.mean`, `giv.sd`).
+Otherwise the value is 0.
+
+### dynamic.GRN
+
+> list (default: `NULL`)
+
+Enables dynamic (cell-specific GRN).
+Run `scmultisim_help("dynamic.GRN")` to see more explaination.
+
+### hge.prop, hge.mean, hge.sd
+
+> (default: `0, 5, 1`)
+
+Treat some random genes as highly-expressed (house-keeping) genes.
+A proportion of `hge.prop` genes will have expression scaled by a
+multiplier sampled from N(`hge.mean`, `hge.sd`).
+
+### hge.range
+
+> integer (default: `1`)
+
+When selecting highly-expressed genes, only choose genes with ID > `hge.range`.
+
+### hge.max.var
+
+> number (default: `500`)
+
+When selecting highly-expressed genes, only choose genes
+with variation < `hge.max.var`.
+
+## Options: Cells
+
+### num.cells
+
+> integer (default: `1000`)
+
+The number of cells to be simulated.
+
+### tree
+
+> phylo (default: `Phyla5()`)
+
+The cell differential tree,
+which will be used to generate cell trajectories (if `discrete.cif = T`)
+or clusters (if `discrete.cif = F`).
+In discrete population mode, only the tree tips will be used.
+Three demo trees, `Phyla5()`, `Phyla3()` and `Phyla1()`, are provided.
+
+### discrete.cif
+
+> logical (default: `FALSE`)
+
+Whether the cell population is discrete (continuous otherwise).
+
+### discrete.min.pop.size, discrete.min.pop.index
+
+> integer, integer (default: `70, 1`)
+
+In discrete population mode, specify one cluster to have the
+smallest cell population.
+The cluster will contain `discrete.min.pop.size` cells.
+`discrete.min.pop.index` should be a valid cluster index (tree tip number).
+
+### discrete.pop.size
+
+> integer vector (default: `NA`); e.g. `c(200, 250, 300)`
+
+Manually specify the size of each cluster.
+
+## Options: CIF
+
+### num.cifs
+
+> integer (default: `50`)
+
+Total number of differential and non-differential CIFs,
+which can be viewed as latent representation of cells.
+
+### diff.cif.fraction
+
+> number (default: `0.9`)
+
+Fraction of differential CIFs.
+Differential CIFs encode the cell type information,
+while non-differential CIFs are randomly sampled for each cell.
+
+### cif.center, cif.sigma
+
+> (default: `1, 0.1`)
+
+The distribution used to sample CIF values.
+
+### use.impulse
+
+> logical (default: `FALSE`)
+
+In continuous population mode, when sampling CIFs along the tree,
+use the impulse model rather than the default gaussian random walk.
+
+## Options: Simulation - ATAC
+
+### atac.effect
+
+> number ∈ [0, 1] (default: `0.5`)
+
+The influence of chromatin accessability data on gene expression.
+
+### region.distrib
+
+> vector of length 3, should sum to 1 (default: `c(0.1, 0.5, 0.4)`)
+
+The probability that a gene is regulated by 0, 1, 2
+consecutive regions, respectively.
+
+### atac.p\_zero
+
+> number ∈ [0, 1] (default: `0.8`)
+
+The proportion of zeros we see in the simulated scATAC-seq data.
+
+### riv.mean, riv.sd, riv.prob
+
+> (default: `0, 1, 0.3`)
+
+The parameters used to sample the RIV (Region Identity Vectors).
+With probability `riv.prob`, the value is sampled from N(`riv.mean`, `riv.sd`).
+Otherwise the value is 0.
+
+## Customization
+
+### mod.cif.giv
+
+> function (default: `NULL`)
+
+Modify the generated CIF and GIV.
+The function takes four arguments: the kinetic parameter index (1=kon, 2=koff, 3=s),
+the current CIF matrix, the GIV matrix, and the cell metadata dataframe.
+It should return a list of two elements: the modified CIF matrix and the modified GIV matrix.
+
+```
+sim_true_counts(list(
+    # ...
+    mod.cif.giv = function(i, cif, giv, meta) {
+        # modify cif and giv
+        return(list(cif, giv))
+    }
+))
+```
+
+### ext.cif.giv
+
+> function (default: `NULL`)
+
+Add extra CIF and GIV.
+The function takes one argument, the kinetic parameter index (1=kon, 2=koff, 3=s).
+It should return a list of two elements: the extra CIF matrix `(n_extra_cif x n_cells)`
+and the GIV matrix `(n_genes x n_extra_cif)`. Return `NULL` for no extra CIF and GIV.”
+
+```
+sim_true_counts(list(
+    # ...
+    ext.cif.giv = function(i) {
+        # add extra cif and giv
+        return(list(extra_cif, extra_giv))
+    }
+))
+```
+
+## Optins: Simulation
+
+### vary
+
+> character (default: `"s"`)
+
+Can be `"all", "kon", "koff", "s", "except_kon", "except_koff", "except_s"`.
+It specifies which kinetic parameters to vary across cells, i.e. which kinetic parameters have differential CIFs
+sampled from the tree.
+
+### bimod
+
+> number (default: `0`)
+
+A number between 0 and 1, which adjust the bimodality of the gene expression distribution.
+
+### scale.s
+
+> number (default: `1`)
+
+Manually scale the final `s` parameter, thus the gene expression.
+When discrete.cif = T, it can be a vector specifying the scale.s for each cluster.
+In this case, you can use smaller value for cell types known to be small (like naive cells).
+
+### intrinsic.noise
+
+> number (default: `1`)
+
+A number between 0 and 1, which specify the weight of the random sample from the Beta-Poisson distribution.
+
+```
+       0 <----------------------> 1
+Theoritical mean          Random sample from
+                      Beta-Poisson distribution
+```
+
+## Options: Simulation - RNA Velocity
+
+### do.velocity
+
+> logical (default: `FALSE`)
+
+When set to `TRUE`,
+simulate using the full kinetic model and generate RNA velocity data.
+Otherwise, the Beta-Poission model will be used.
+
+### beta
+
+> number (default: `0.4`)
+
+The splicing rate of each gene in the kinetic model.
+
+### d
+
+> number (default: `1`)
+
+The degradation rate of each gene in the kinetic model.
+
+### num.cycles
+
+> number (default: `3`)
+
+The number of cycles run before sampling the gene expression of a cell.
+
+### cycle.len
+
+> number (default: `1`)
+
+In velocity mode, a multiplier for the cell cycle length.
+It is multiplied by the expected time to
+transition from k\_on to k\_off and back to form the the length of a cycle.
+
+## Options: Simulation - Spatial Cell-Cell Interaction
+
+The simulation of cell-cell interaction can be enabled by passing a `list` as the `cci` option.
+In this list, you can specify the following options:
+
+### grid.size
+
+> integer
+
+Manually specify the width and height of the grid.
+
+### layout
+
+> “enhanced”, “layers”, “islands”, or a function (default: `"enhanced"`)
+
+Specify the layout of the cell types.
+scMultiSim provides three built-in layouts: `"enhanced"`, `"layers"`, and `"islands"`.
+
+If set to `"islands"`, you can specify which cell types are the islands, e.g. `"islands:1,2"`.
+
+If using a custom function, it should take two arguments: `function (grid_size, cell_types)`
+
+* grid\_size: (integer) The width and height of the grid.
+* cell\_types: (integer vector) Each cell’s cell type.
+
+It should return a `n_cell x 2` matrix, where each row is the x and y coordinates of a cell.
+
+### step.size
+
+> number
+
+If using continuous population, use this step size to further divide the
+cell types on the tree. For example, if the tree only has one branch `a -> b`
+and the branch length is 1 while the step size is 0.34, there will be totally three cell types: a\_b\_1, a\_b\_2, a\_b\_3.
+
+### params
+
+> data.frame
+
+The spatial effect between a ligand and a receptor gene.
+It should be a data frame similar to the GRN parameter, i.e. with columns `receptor`, `ligand`, and `effect`.
+
+Example:
+
+```
+cci = list(
+  params = data.frame(
+    target    = c(2,   6,   10,   8, 20,  30),
+    regulator = c(101, 102, 103, 104, 105, 106),
+    effect    = 20
+  )
+)
+```
+
+### cell.type.interaction
+
+> “random” or a matrix
+
+Specify which cell types can communicate using which ligand-receptor pair.
+It should be a 3d `n_cell_types x n_cell_types x n_ligand_pair` numeric matrix.
+The value at (i, j, k) is 1 if there exist CCI of LR-pair k between cell type i and cell type j.
+
+This matrix can be generated using the `cci_cell_type_params()` function.
+It can fill the matrix randomly, or return an empty matrix for you to fill manually.
+If you want to fill it randomly, you can simply supply `"random"` for this option.
+
+### cell.type.lr.pairs
+
+> integer vector
+
+If `cell.type.interaction` is `"random"`, specify how many LR pairs should be enabled between each cell type pair.
+Should be a range, e.g. `4:6`. The actual number of LR pairs will be uniformly sampled from this range.
+
+### max.neighbors
+
+> integer
+
+The number of interacting cells for each cell.
+If the cell’s available neighbor count is not large enough, the actual interacting cells may be smaller than this value.
+
+### radius
+
+> number (default: `1`), or “gaussian:sigma”
+
+Which cells should be considered as neighbors.
+The interacting cells are those within these neighbors.
+
+When it is a number, it controls the maximum distance between two cells for them to interact.
+
+When it is a string, it should be in the format `gaussian:sigma`, for example, `gaussian:1.2`.
+In this case, the probability of two cells interacting is proportional to the distance with a Gaussian kernel applied.
+
+### start.layer
+
+> integer
+
+From which layer (time step) the simulation should start.
+If set to 1, the simulation will start with one cell in the grid and add one more cell in each following layer.
+If set to `num_cells`, the simulation will start from all cells available in the grid
+and only continues for a few static layers, which will greatly speed up the simulation.

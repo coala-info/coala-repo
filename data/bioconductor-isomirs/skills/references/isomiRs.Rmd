@@ -1,0 +1,259 @@
+---
+title: "Characterization of miRNA and isomiR molecules"
+shorttitle: "isomiRs analysis"
+author: "Lorena Pantano"
+date: "`r BiocStyle::doc_date()`"
+package: "`r BiocStyle::pkg_ver('isomiRs')`"
+abstract: >
+  isomiRs package version: `r packageVersion("isomiRs")`
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    toc: true
+    toc_depth: 3
+    fig_width: 5
+bibliography: isomirs.bib
+vignette: >
+  %\VignetteIndexEntry{miRNA and isomiR analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding[utf8]{inputenc}
+  %\VignetteKeywords{smallRNA, miRNAs, isomiRs, DifferentailExpression}
+---
+
+```{r setup, echo=FALSE, results="hide"}
+library(BiocStyle)
+knitr::opts_chunk$set(tidy=FALSE, cache=FALSE,
+                      dev="png",
+                      message=FALSE, error=FALSE,
+                      warning=TRUE)
+```	
+
+
+[Lorena Pantano](lorena.pantano@gmail.com) - Harvard TH Chan School of Public Health, Boston, US
+
+
+Georgia Escaramis - CIBERESP (CIBER Epidemiologia y Salud Publica)
+
+
+## Introduction
+
+miRNAs are small RNA fragments (18-23 nt long) that influence gene expression
+during development and cell stability. Morin et al [@morin], discovered
+isomiRs first time after sequencing human stem cells.
+
+IsomiRs are miRNAs that vary slightly in sequence, which result from variations
+in the cleavage site during miRNA biogenesis (5’-trimming and 3’-trimming
+variants), nucleotide additions to the 3’-end of the mature miRNA
+(3’-addition variants) and nucleotide modifications (substitution variants)[@emarti].
+
+There are many tools designed for isomiR detection, however the majority are
+web application where user can not control the analysis. The two main command
+tools for isomiRs mapping are SeqBuster and sRNAbench [@barturen2014]. `r Biocpkg("isomiRs")`.
+package is designed to analyze the output of SeqBuster tool or any other
+tool after converting to the desire format.
+
+## Citing isomiRs
+
+If you use the package, please cite this paper [@isomirs].
+
+## Input format
+
+The input should be the output of SeqBuster-miraligner tool (*.mirna files). It
+is compatible with
+[mirTOP](http://github.com/mirtop/mirtop) tool as well,
+which parses BAM files with alignments against miRNA precursors.
+
+For each sample the file should have the following format:
+
+```
+seq                     name           freq mir           start end  mism  add  t5  t3
+TGTAAACATCCTACACTCAGCT  seq_100014_x23  23  hsa-miR-30b-5p  17  40   0       0  0   GT
+TGTAAACATCCCTGACTGGAA   seq_100019_x4   4   hsa-miR-30d-5p  6   26   13TC    0  0   g
+TGTAAACATCCCTGACTGGAA   seq_100019_x4   4   hsa-miR-30e-5p  17  37   12CT    0  0   g
+CAAATTCGTATCTAGGGGATT   seq_100049_x1   1   hsa-miR-10a-3p  63  81   0       TT 0   ata
+TGACCTAGGAATTGACAGCCAGT seq_100060_x1   1   hsa-miR-192-5p  25  47   8GT     0  c   agt
+```
+
+This is the standard output of SeqBuster-miraligner tool, but can be converted from
+any other tool having the mapping information on the precursors. Read more on
+[miraligner manual](http://seqcluster.readthedocs.org/mirna_annotation.html).
+
+## IsomirDataSeq class
+
+This object will store all raw data from the input files and some processed
+information used for visualization and statistical analysis. It is a subclass of `SummarizedExperiment` with `colData` and `counts` methods. 
+Beside that, the object contains
+raw and normalized counts from miraligner allowing to update the summarization of miRNA expression.
+
+### Access data
+
+The user can access the normalized count matrix with `counts(object, norm=TRUE)`.
+
+You can browse for the same miRNA or isomiRs in all samples with `isoSelect` method.
+
+```{r package-select,message=FALSE}
+library(isomiRs)
+data(mirData)
+head(isoSelect(mirData, mirna="hsa-let-7a-5p", 1000))
+```
+
+`metadata(mirData)` contains two lists: `rawList` is a list with same
+length than number of samples and stores the input files
+for each sample; `isoList` is a list with same length than
+number of samples and stores information for each isomiR type summarizing
+the different changes for the different isomiRs (trimming at 3',
+trimming a 5', addition and substitution). For instance, you can get
+the data stored in `isoList` for sample 1 and 5' changes
+with this code `metadata(ids)[["isoList"]][[1]]["t5sum"]`.
+
+
+### isomiRs annotation
+
+IsomiR names follows this structure:
+
+
+* miRNA name
+* type: ref if the sequence is the same as the miRNA reference. `iso` if the sequence has variations.
+*t5 tag: indicates variations at 5' position. The naming contains two words: `direction - nucleotides`, where direction can be UPPER CASE NT (changes upstream of the 5' reference position) or LOWER CASE NT (changes downstream of the 5' reference position). `0` indicates no variation, meaning the 5' position is the same as the reference. After `direction`, it follows the nucleotide/s that are added (for upstream changes) or deleted (for downstream changes).
+*t3 tag: indicates variations at 3' position. The naming contains two words: `direction - nucleotides`, where direction can be LOWER CASE NT (upstream of the 3' reference position) or UPPER CASE NT (downstream of the 3' reference position). `0` indicates no variation, meaning the 3' position is the same as the reference. After `direction`, it follows the nucleotide/s that are added (for downstream changes) or deleted (for upstream chanes).
+*ad tag: indicates nucleotides additions at 3' position. The naming contains two words: `direction - nucleotides`, where direction is UPPER CASE NT (upstream of the 5' reference position). `0` indicates no variation, meaning the 3' position has no additions. After `direction`, it follows the nucleotide/s that are added.
+*mm tag: indicates nucleotides substitutions along the sequences. The naming contains three words: `position-nucleotideATsequence-nucleotideATreference`.
+*seed tag: same as `mm` tag, but only if the change happens between nucleotide 2 and 8.
+
+
+In general nucleotides in UPPER case mean insertions respect to the reference sequence, and nucleotides in LOWER case mean deletions respect to the reference sequence.
+
+## Reading input
+
+We are going to use a small RNAseq data from human
+brain samples [@pantano2016] to give some basic examples of isomiRs analyses.
+
+In this data set we will find two groups:
+
+*pc: 7 control individuals
+*pt: 7 patients with Parkinson's Disease in early stage.
+
+
+```{r package-load,message=FALSE}
+library(isomiRs)
+data(mirData)
+```
+
+
+The function `IsomirDataSeqFromFiles` needs a vector with the paths for each file
+and a data frame with the design experiment similar to the one used for
+a mRNA differential expression analysis. Row names of the data frame should
+be the names for each sample in the same order than the list of files.
+
+```{r package-plot-iso,message=FALSE,eval=FALSE}
+ids <- IsomirDataSeqFromFiles(fn_list, design=de)
+```
+
+## Manipulation
+
+### Descriptive analysis
+
+You can plot isomiRs expression with `isoPlot`. In this figure you
+will see how abundant is each type of isomiRs at different positions
+considering the total abundance and the total number of sequences.
+The `type` parameter controls what type of isomiRs to show. It can be
+trimming (iso5 and iso3), addition (add) or substitution (subs) changes.
+
+```{r package-plot-iso-t5,message=FALSE}
+ids <- isoCounts(mirData)
+isoPlot(ids, type="all")
+```
+
+### Count data
+
+`isoCounts` gets the count matrix that can be used for many
+different downstream analyses changing the way isomiRs are collapsed. The
+following command will merge all isomiRs into one feature: the reference
+miRNA.
+
+```{r package-count,message=FALSE}
+head(counts(ids))
+```
+
+The normalization uses `rlog` from `r Biocpkg("DESeq2")` package and
+allows quick integration to another analyses like heatmap, clustering or PCA.
+
+
+```{r package-norm,message=FALSE}
+library(pheatmap)
+ids = isoNorm(ids, formula = ~ condition)
+pheatmap(counts(ids, norm=TRUE)[1:100,], 
+         annotation_col = data.frame(colData(ids)[,1,drop=FALSE]),
+         show_rownames = FALSE, scale="row")
+```
+
+### Annotation
+
+To get a detail description for each isomiR, the function
+`isoAnnotate` can return the naming, sequence and
+importance value for each sample and isomiR. The importance
+is calculated by:
+
+$$importance = \frac{isomiR\_reads}{miRNA\_reads}$$
+
+The columns are:
+
+* seq: sequence of the isomiR
+* uid: isomiR name
+* edit_mature_position: showing the position at the mature
+  sequence where the nucleotide change happened: 
+  `position:nt_ref:nt_isomiR`.
+* one column for each sample with the importance value
+
+```{r package-isoannotation}
+head(isoAnnotate(ids))
+```
+
+
+## Classification
+
+### Differential expression analysis
+
+The `isoDE` uses functions from `r Biocpkg("DESeq2")` package.
+This function has parameters to create a matrix using only the reference
+miRNAs, all isomiRs, or some of them.
+This matrix and the design matrix are the inputs for DESeq2. The output
+will be a DESeqDataSet object, allowing to generate any plot or table
+explained in DESeq2 package vignette.
+
+```{r package-de,message=FALSE}
+dds <- isoDE(ids, formula=~condition)
+library(DESeq2)
+plotMA(dds)
+head(results(dds, format="DataFrame"))
+```
+
+You can differentiate between reference sequences and isomiRs at 5' end
+with this command:
+
+```{r package-de-iso5,message=FALSE}
+dds = isoDE(ids, formula=~condition, ref=TRUE, iso5=TRUE)
+head(results(dds, tidy=TRUE))
+```
+
+Alternative, for more complicated cases or if you want to control
+more the differential expression analysis paramters you can use
+directly `r Biocpkg("DESeq2")` package feeding it with the output of
+`counts(ids)` and `colData(ids)` like this:
+
+```{r package-de-with-deseq2}
+dds = DESeqDataSetFromMatrix(counts(ids),
+                             colData(ids), design = ~condition)
+```
+
+## Session info
+
+Here is the output of `sessionInfo` on the system on which
+this document was compiled:
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+
+# References

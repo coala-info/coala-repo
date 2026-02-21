@@ -1,0 +1,135 @@
+---
+title: "Molecular subtyping for ovarian cancer"
+author: "Gregory M Chen"
+package: consensusOV
+output:
+    BiocStyle::html_document:
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Molecular subtyping for ovarian cancer}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE)
+```
+
+# Introduction
+
+`r Biocpkg("consensusOV")` is a package for molecular subtyping for ovarian cancer. It is intended for whole-transcriptome gene expression datasets from patients with high-grade serous ovarian carcinoma. This package includes implementations of four previously published subtype classifiers 
+([Helland et al., 2011](https://doi.org/10.1371/journal.pone.0018064);
+[Bentink et al., 2012](https://doi.org/10.1371/journal.pone.0030269);
+[Verhaak et al., 2013](https://doi.org/10.1172/JCI65833);
+[Konecny et al., 2014](https://doi.org/10.1093/jnci/dju249))
+and a consensus random forest classifier ([Chen et al., 2018](https://doi.org/10.1158/1078-0432.CCR-18-0784)).
+
+The `get.subtypes()` function is a wrapper for the other package subtyping functions  `get.consensus.subtypes()`, `get.konecny.subtypes()`, `get.verhaak.subtypes()`,
+`get.bentink.subtypes()`, `get.helland.subtypes()`. It can take as input either a matrix of gene expression values and a vector of Entrez IDs; or an `ExpressionSet` from the `r Biocpkg("Biobase")` package. If `expression.dataset` is a matrix, it should be formatted with genes as rows and patients as columns; and `entrez.ids` should be a vector with length the same as `nrow(expression.dataset)`. The `method` argument specifies which of the five subtype classifiers to use.
+
+# Load Data
+```{r load_pkgs, message=FALSE}
+library(consensusOV)
+library(Biobase)
+library(genefu)
+```
+
+The package contains a subset of the ovarian cancer microarray dataset
+[GSE14764](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14764) as example data.
+```{r load_data, message=FALSE}
+data(GSE14764.eset)
+dim(GSE14764.eset)
+GSE14764.expression.matrix <- exprs(GSE14764.eset)
+GSE14764.expression.matrix[1:5,1:5]
+GSE14764.entrez.ids <- fData(GSE14764.eset)$EntrezGene.ID
+head(GSE14764.entrez.ids)
+```
+
+# Subtyping
+
+```{r subtyping}
+bentink.subtypes <- get.subtypes(GSE14764.eset, method = "Bentink")
+bentink.subtypes$Bentink.subtypes
+konecny.subtypes <- get.subtypes(GSE14764.eset, method = "Konecny")
+konecny.subtypes$Konecny.subtypes
+helland.subtypes <- get.subtypes(GSE14764.eset, method = "Helland")
+helland.subtypes$Helland.subtypes
+```
+
+```{r subtyping2, results="hide"}
+
+# to align with the Verhaak subtypes, we need to remove the "geneid." in the rownames
+temp_eset <- GSE14764.eset
+rownames(temp_eset) <- gsub("geneid.", "", rownames(temp_eset))
+
+verhaak.subtypes <- get.subtypes(temp_eset, method = "Verhaak")
+```
+
+```{r subtyping3}
+verhaak.subtypes$Verhaak.subtypes
+consensus.subtypes <- get.subtypes(GSE14764.eset, method = "consensusOV")
+consensus.subtypes$consensusOV.subtypes
+```
+
+```{r alternative_subtyping}
+## Alternatively, e.g.
+data(sigOvcAngiogenic)
+bentink.subtypes <- get.subtypes(GSE14764.expression.matrix, GSE14764.entrez.ids, method = "Bentink")
+```
+
+Each subtyping function outputs a list with two values. The first value is a factor of subtype labels. The second is an classifier-specific values. For the Konecny, Helland, Verhaak, and Consensus classifiers, this object is a dataframe with subtype specific scores. For the Bentink classifier, the object is the output of the `genefu` function call. 
+
+Subtype classifiers can alternatively be called using inner functions.
+
+```{r subtyping_ex_2}
+bentink.subtypes <- get.bentink.subtypes(GSE14764.expression.matrix, GSE14764.entrez.ids)
+```
+
+# Subtype Scores
+
+The Konecny, Helland, Verhaak, and Consensus classifiers produce real-valued subtype scores. We can use these in various ways - for example, here, we compute correlations between correspinding subtype scores.
+
+We can compare the subtype scores between the Verhaak and Helland classifiers:
+
+```{r verhaak_helland, fig.height = 8, fig.width = 8}
+vest <- verhaak.subtypes$gsva.out
+vest <- vest[,c("IMR", "DIF", "PRO", "MES")]
+hest <- helland.subtypes$subtype.scores
+hest <- hest[, c("C2", "C4", "C5", "C1")]
+dat <- data.frame(
+	as.vector(vest), 
+	rep(colnames(vest), each=nrow(vest)),
+	as.vector(hest), 
+	rep(colnames(hest), each=nrow(hest)))
+colnames(dat) <- c("Verhaak", "vsc", "Helland", "hsc")
+## plot
+library(ggplot2)
+ggplot(dat, aes(Verhaak, Helland)) + geom_point() + facet_wrap(vsc~hsc, nrow = 2, ncol = 2)
+```
+
+Corresponding correlation values are 
+`r round(cor(verhaak.subtypes$gsva.out[,"DIF"], helland.subtypes$subtype.scores[,"C4"]), digits=2)`, 
+`r round(cor(verhaak.subtypes$gsva.out[,"IMR"], helland.subtypes$subtype.scores[,"C2"]), digits=2)`,
+`r round(cor(verhaak.subtypes$gsva.out[,"MES"], helland.subtypes$subtype.scores[,"C1"]), digits=2)`, and 
+`r round(cor(verhaak.subtypes$gsva.out[,"PRO"], helland.subtypes$subtype.scores[,"C5"]), digits=2)`.
+
+Likewise, we can compare the subtype scores between the Konecny and Helland classifier:
+
+```{r konecny_helland, fig.height = 8, fig.width = 8}
+kost <- konecny.subtypes$spearman.cc.vals
+hest <- helland.subtypes$subtype.scores
+hest <- hest[, c("C2", "C4", "C5", "C1")]
+dat <- data.frame(
+	as.vector(kost), 
+	rep(colnames(kost), each=nrow(kost)),
+	as.vector(hest), 
+	rep(colnames(hest), each=nrow(hest)))
+colnames(dat) <- c("Konecny", "ksc", "Helland", "hsc")
+## plot
+ggplot(dat, aes(Konecny, Helland)) + geom_point() + facet_wrap(ksc~hsc, nrow = 2, ncol = 2)
+```
+
+Corresponding correlation values are 
+`r round(cor(konecny.subtypes$spearman.cc.vals[,"C1_immL"], helland.subtypes$subtype.scores[,"C2"]), digits=2)`, 
+`r round(cor(konecny.subtypes$spearman.cc.vals[,"C2_diffL"], helland.subtypes$subtype.scores[,"C4"]), digits=2)`, 
+`r round(cor(konecny.subtypes$spearman.cc.vals[,"C3_profL"], helland.subtypes$subtype.scores[,"C5"]), digits=2)`, 
+and `r round(cor(konecny.subtypes$spearman.cc.vals[,"C4_mescL"], helland.subtypes$subtype.scores[,"C1"]), digits=2)`.
+

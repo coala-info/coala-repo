@@ -1,0 +1,1 @@
+LICENSE.txt · main · Simon Roux / SpacerExtractor · GitLab This project is licensed under the GNU General Public License v3.0 or later . Learn more Loading

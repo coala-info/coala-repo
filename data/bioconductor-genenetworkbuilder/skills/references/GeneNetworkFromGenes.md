@@ -1,0 +1,110 @@
+# Generate Network from a list of gene
+
+# Using data from STRING
+
+If you only have RNAseq results, you may want to try if GeneNetworkBuilder could build a network for differential expressed gene. Here is the sample code for that.
+
+```
+library(GeneNetworkBuilder)
+gR <- NULL
+try({ ## just in case STRINGdb not work
+    library(STRINGdb)
+    curr_version_table <-
+      read.table(url("https://string-db.org/api/tsv-no-header/version"),
+                 colClasses = "character")$V1[1]
+    string_db <- STRINGdb$new( version=curr_version_table, species=9606,
+                           score_threshold=400)
+    data(diff_exp_example1)
+    example1_mapped <- string_db$map( diff_exp_example1, "gene", removeUnmappedRows = TRUE )
+    i <- string_db$get_interactions(example1_mapped$STRING_id)
+    colnames(example1_mapped) <- c("gene", "P.Value", "logFC", "symbols")
+    ## get significant up regulated genes.
+    genes <- unique(example1_mapped$symbols[example1_mapped$P.Value<0.005 & example1_mapped$logFC>3])
+    ### rooted network, guess the root by connections
+    x<-networkFromGenes(genes = genes, interactionmap=i, level=3)
+    ## filter network
+    ## unique expression data by symbols column
+    expressionData <- uniqueExprsData(example1_mapped,
+                                       method = 'Max',
+                                       condenseName = "logFC")
+    ## merge binding table with expression data by symbols column
+    cifNetwork<-filterNetwork(rootgene=x$rootgene,
+                              sifNetwork=x$sifNetwork,
+                              exprsData=expressionData, mergeBy="symbols",
+                              miRNAlist=character(0),
+                              tolerance=1, cutoffPVal=0.001, cutoffLFC=1)
+    ## convert the id back to symbol
+    IDsMap <- expressionData$gene
+    names(IDsMap) <- expressionData$symbols
+    cifNetwork <- convertID(cifNetwork, IDsMap)
+    ## add additional info for searching, any character content columns
+    cifNetwork$info1 <- sample(c("groupA", "groupB"),
+                               size = nrow(cifNetwork),
+                               replace = TRUE)
+    cifNetwork$info2 <- sample(c(FALSE, TRUE),
+                               size = nrow(cifNetwork),
+                               replace = TRUE)
+    cifNetwork$info3 <- sample(seq.int(7),
+                               size = nrow(cifNetwork),
+                               replace = TRUE)
+    ## polish network
+    gR<-polishNetwork(cifNetwork, edgeWeight='combined_score')
+    ## browse network
+    browseNetwork(gR)
+
+    ## try predefined colors
+    cifNetwork$color <- sample(rainbow(7), nrow(cifNetwork), replace = TRUE)
+    ## polish network
+    gR<-polishNetwork(cifNetwork, nodecolor="color")
+    ## browse network
+    browseNetwork(gR)
+
+    ### unrooted network
+    x<-networkFromGenes(genes = genes, interactionmap=i, unrooted=TRUE)
+    ## filter network
+    ## unique expression data by symbols column
+    expressionData <- uniqueExprsData(example1_mapped,
+                                       method = 'Max',
+                                       condenseName = "logFC")
+    ## merge binding table with expression data by symbols column
+    cifNetwork<-filterNetwork(sifNetwork=x$sifNetwork,
+                              exprsData=expressionData, mergeBy="symbols",
+                              miRNAlist=character(0),
+                              tolerance=1, cutoffPVal=0.001,
+                              cutoffLFC=1) # set minify=FALSE to retrieve all the interactions
+    ## convert the id to symbol
+    IDsMap <- expressionData$gene
+    names(IDsMap) <- expressionData$symbols
+    cifNetwork <- convertID(cifNetwork, IDsMap)
+    ## polish network
+    gR<-polishNetwork(cifNetwork, edgeWeight = 'combined_score')
+    ## browse network
+    browseNetwork(gR)
+})
+```
+
+```
+## Warning:  we couldn't map to STRING 15% of your identifiers
+```
+
+### Subset the network by gene list
+
+If you are only interested in a subset of gene list such as genes involved in one gene ontology, you can subset the graph.
+
+```
+if(!is.null(gR)){
+  library(org.Hs.eg.db)
+  goGenes <- mget("GO:0002274", org.Hs.egGO2ALLEGS)[[1]]
+  goGenes <- unique(unlist(mget(unique(goGenes), org.Hs.egSYMBOL)))
+  gRs <- subsetNetwork(gR, goGenes)
+  browseNetwork(gRs)
+}
+```
+
+## Communicate with cytoscape
+
+If you have [`RCy3`](https://bioconductor.org/packages/RCy3) package installed, the gRs can be visualized in cytoscape (>=3.6.1).
+
+```
+cy3Network(gRs)
+```

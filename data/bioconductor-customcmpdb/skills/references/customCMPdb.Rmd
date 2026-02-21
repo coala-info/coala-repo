@@ -1,0 +1,305 @@
+---
+title: "_customCMPdb_: Integrating Community and Custom Compound Collections"
+author: "Authors: Yuzhu Duan, Dan Evans, Kevin Horan, Austin Leong, Siddharth Sai and Thomas Girke"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
+output:
+  BiocStyle::html_document:
+    toc_float: true
+    code_folding: show
+vignette: >
+  %\VignetteIndexEntry{customCMPdb}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+fontsize: 14pt
+bibliography: bibtex.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+<style>
+pre code {
+  white-space: pre !important;
+  overflow-x: scroll !important;
+  word-break: keep-all !important;
+  word-wrap: initial !important;
+}
+</style>
+
+<!---
+- Compile from command-line
+Rscript -e "rmarkdown::render('customCMPdb.Rmd', c('BiocStyle::html_document', 'pdf_document')); 
+knitr::knit('customCMPdb.Rmd', tangle=TRUE)"
+-->
+
+```{r setup, echo=FALSE, messages=FALSE, warnings=FALSE}
+suppressPackageStartupMessages({
+  library(customCMPdb); library(ChemmineR)
+})
+```
+
+# Introduction
+
+This package serves as a query interface for important community collections of
+small molecules, while also allowing users to include custom compound
+collections. Both annotation and structure information is provided.  The
+annotation data is stored in an SQLite database, while the structure
+information is stored in Structure Definition Files (SDF). Both are hosted 
+on Bioconductor's `AnnotationHub`. A detailed description of the included 
+data types is provided under the _Supplemental Material_ section of this vignette. 
+At the time of writing, the following community databases are included: 
+
++ [DrugAge](https://genomics.senescence.info/drugs/) [@Barardo2017-xk]
++ [DrugBank](https://www.drugbank.ca/) [@Wishart2018-ap]
++ [CMAP02](https://portals.broadinstitute.org/cmap/) [@Lamb2006-du]
++ [LINCS](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92742) [@Subramanian2017-fu]
+
+In addition to providing access to the above compound collections, the package
+supports the integration of custom collections of compounds, that will be
+automatically stored for the user in the same data structure as the
+preconfigured databases. Both custom collections and those provided by this
+package can be queried in a uniform manner, and then further analyzed with
+cheminformatics packages such as `ChemmineR`, where SDFs are imported into
+flexible S4 containers [@Cao2008-np].
+
+# Installation and Loading
+As Bioconductor package `customCMPdb` can be installed with the 
+`BiocManager::install()` function.
+```{r install, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("customCMPdb")
+```
+
+To obtain the most recent updates of the package immediately, one can also install it 
+directly from GitHub as follows.
+```{r inst_git, eval=FALSE}
+devtools::install_github("yduan004/customCMPdb", build_vignettes=TRUE)
+```
+
+Next the package needs to be loaded in a user's R session.
+```{r load, eval=TRUE, message=FALSE}
+library(customCMPdb)
+library(help = "customCMPdb")  # Lists package info
+```
+
+Open vignette of this package.
+```{r load_vignette, eval=FALSE, message=FALSE}
+browseVignettes("customCMPdb")  # Opens vignette
+```
+
+# Overview
+The following introduces how to load and query the different datasets.
+
+## DrugAge Annotations
+The compound annotation tables are stored in an SQLite database. This data can be 
+loaded into a user's R session as follows (here for `drugAgeAnnot`).
+
+```{r sql, eval=TRUE, message=FALSE}
+conn <- loadAnnot()
+library(RSQLite)
+dbListTables(conn)
+drugAgeAnnot <- dbReadTable(conn, "drugAgeAnnot")
+head(drugAgeAnnot)
+dbDisconnect(conn)
+```
+
+## DrugAge SDF
+The corresponding structures for the above DrugAge example can be loaded into an `SDFset` 
+object as follows.
+```{r da, eval=TRUE, message=FALSE, results=FALSE}
+da_sdfset <- loadSDFwithName(source="DrugAge")
+```
+
+Instructions on how to work with `SDFset` objects are provided in the `ChemmineR` vignette 
+[here](https://bioconductor.org/packages/ChemmineR/). For instance, one can plot any of 
+the loaded structures with the `plot` function.
+
+```{r da_chemmineR, eval=TRUE, message=FALSE, results=FALSE}
+ChemmineR::cid(da_sdfset) <- ChemmineR::sdfid(da_sdfset)
+ChemmineR::plot(da_sdfset[1])
+```
+
+## DrugBank SDF
+The SDF from DrugBank can be loaded into R the same way.  The
+corresponding SDF file was downloaded from
+[here](https://www.drugbank.ca/releases/latest#structures). During the import
+into R `ChemmineR` checks the validity of the imported compounds.
+
+```{r db, eval=FALSE}
+db_sdfset <- loadSDFwithName(source="DrugBank")
+```
+
+## CMAP SDF
+
+The import of the SDF of the CMAP02 database works the same way.
+```{r cmap, eval=TRUE, message=FALSE, results=FALSE}
+cmap_sdfset <- loadSDFwithName(source="CMAP2")
+```
+
+## LINCS SDF
+
+The same applies to the SDF of the small molecules included in the LINCS database.
+```{r lincs, eval=TRUE, message=FALSE, results=FALSE}
+lincs_sdfset <- loadSDFwithName(source="LINCS")
+```
+
+For reproducibility, the R code for generating the above datasets is included
+in the `inst/scripts/make-data.R` file of this package. The file location 
+on a user's system can be obtained with `system.file("scripts/make-data.R", 
+package="customCMPdb")`.
+
+# Custom Annotation Database 
+## Load Annotation Database
+The SQLite Annotation Database is hosted on Bioconductor's `AnnotationHub`. 
+Users can download it to a local `AnnotationHub` cache directory. The path to this
+directory can be obtained as follows.
+```{r download_db, eval=TRUE, message=FALSE}
+library(AnnotationHub)
+ah <- AnnotationHub()
+annot_path <- ah[["AH79563"]]
+```
+
+## Add Custom Annotation Tables
+The following introduces how users can import to the SQLite database 
+their own compound annotation tables. In this case, the corresponding
+ChEMBL IDs need to be included under the `chembl_id` column. 
+The name of the custom data set can be specified under the `annot_name` 
+argument. Note, this name is case insensitive. 
+```{r custom, eval=TRUE, message=FALSE, results=FALSE}
+chembl_id <- c("CHEMBL1000309", "CHEMBL100014", "CHEMBL10",
+               "CHEMBL100", "CHEMBL1000", NA)
+annot_tb <- data.frame(cmp_name=paste0("name", 1:6),
+        chembl_id=chembl_id,
+        feature1=paste0("f", 1:6),
+        feature2=rnorm(6))
+addCustomAnnot(annot_tb, annot_name="myCustom")
+```
+
+## Delete Custom Annotation Tables
+The following shows how to delete custom annotation tables
+by referencing them by their name. To obtain a list of custom
+annotation tables present in the database, the `listAnnot` function 
+can be used.
+```{r del, eval=TRUE, message=FALSE}
+listAnnot()
+deleteAnnot("myCustom")
+listAnnot()
+```
+
+## Set to Default
+The `defaultAnnot` function sets the annotation SQLite database back to the
+original version provided by `customCMPdb`. This is achieved by deleting the
+existing (e.g. custom) database and re-downloading a fresh instance from 
+`AnnotationHub`.
+```{r default, eval=FALSE}
+defaultAnnot()
+```
+
+# Query Annotation Database
+The `queryAnnotDB` function can be used to query the compound annotations from
+the default resources as well as the custom resources stored in the SQLite
+annotation database. The query can be a set of ChEMBL IDs. In this case it
+returns a `data.frame` containing the annotations of the matching compounds
+from the selected annotation resources specified under the \code{annot}
+argument. The `listAnnot` function returns the names that can be assigned to
+the `annot` argument.
+```{r query, eval=TRUE, message=FALSE}
+query_id <- c("CHEMBL1064", "CHEMBL10", "CHEMBL113", "CHEMBL1004", "CHEMBL31574")
+listAnnot()
+qres <- queryAnnotDB(query_id, annot=c("drugAgeAnnot", "lincsAnnot"))
+qres
+# query the added custom annotation
+addCustomAnnot(annot_tb, annot_name="myCustom")
+qres2 <- queryAnnotDB(query_id, annot=c("lincsAnnot", "myCustom"))
+qres2
+```
+
+Since the supported compound databases use different identifiers, a ChEMBL
+ID mapping table is used to connect identical entries across databases as
+well as to link out to other resources such as ChEMBL itself or PubChem. For
+custom compounds, where ChEMBL IDs are not available yet, one can use
+alternative and/or custom identifiers.
+```{r not_chembl, eval=TRUE, message=FALSE}
+query_id <- c("BRD-A00474148", "BRD-A00150179", "BRD-A00763758", "BRD-A00267231")
+qres3 <- queryAnnotDB(chembl_id=query_id, annot=c("lincsAnnot"))
+qres3
+```
+
+# Supplemental Material
+## Description of Annotation Tables in SQLite Database
+The DrugAge database is manually curated by experts. It contains an extensive 
+compilation of drugs, compounds and supplements (including natural products and 
+nutraceuticals) with anti-aging properties that extend longevity in model 
+organisms [@Barardo2017-xk]. The DrugAge build2 database was downloaded from
+[here](https://genomics.senescence.info/drugs/dataset.zip) as a CSV file. The 
+downloaded `drugage.csv` file contains `compound_name`, `synonyms`, `species`, `strain`,
+`dosage`, `avg_lifespan_change`, `max_lifespan_change`, `gender`, `significance`,
+and `pubmed_id` annotation columns. Since the DrugAge database only contains the
+drug name as identifiers, it is necessary to map the drug name to other uniform
+drug identifiers, such as ChEMBL IDs. In this package,
+the drug names have been mapped to [ChEMBL](https://www.ebi.ac.uk/chembl/) [@Gaulton2012-ji],
+[PubChem](https://pubchem.ncbi.nlm.nih.gov/) [@Kim2019-tg] and DrugBank IDs semi-manually
+and stored under the `inst/extdata` directory named as `drugage_id_mapping.tsv`. 
+Part of the id mappings in the `drugage_id_mapping.tsv` table is generated 
+by the \code{processDrugage} function for compound names that have ChEMBL 
+ids from the ChEMBL database (version 24). The missing IDs were added 
+manually. A semi-manual approach was to use this 
+[web service](https://cts.fiehnlab.ucdavis.edu/batch). After the semi-manual process,
+the left ones were manually mapped to ChEMBL, PubChem and DrugBank ids. The 
+entries that are mixture like green tee extract or peptide like Bacitracin were commented.
+Then the `drugage_id_mapping` table was built into the annotation SQLite database
+named as `compoundCollection_0.1.db` with table name of `drugAgeAnnot` by `buildDrugAgeDB` function.
+
+The DrugBank annotation table (`DrugBankAnnot`) was downloaded from the DrugBank database
+in [xml file](https://www.drugbank.ca/releases/latest).
+The most recent release version at the time of writing this document is 5.1.5.  
+The extracted xml file was processed by the \code{dbxml2df} function in this package.
+`dbxml2df` and `df2SQLite` functions in this package were used to load the xml 
+file into R and covert to a data.frame R object, then stored in the 
+`compoundCollection` SQLite annotation database.
+There are 55 annotation columns in the DrugBank annotation table, such as
+`drugbank_id`, `name`, `description`, `cas-number`, `groups`, `indication`, 
+`pharmacodynamics`, `mechanism-of-action`, `toxicity`, `metabolism`, `half-life`, 
+`protein-binding`, `classification`, `synonyms`, `international-brands`, `packagers`, 
+`manufacturers`, `prices`, `dosages`, `atc-codes`, `fda-label`, `pathways`, `targets`. 
+The DrugBank id to ChEMBL id mappings were obtained from 
+[UniChem](ftp://ftp.ebi.ac.uk/pub/databases/chembl/UniChem/data/wholeSourceMapping/src_id1/src1src2.txt.gz).
+
+The CMAP02 annotation table (`cmapAnnot`) was processed from the downloaded compound 
+[instance table](http://www.broadinstitute.org/cmap/cmap_instances_02.xls)
+using the `buildCMAPdb` function defined by this package. The CMAP02 instance table contains
+the following drug annotation columns: `instance_id`, `batch_id`, `cmap_name`, `INN1`,
+`concentration (M)`, `duration (h)`, `cell2`, `array3`, `perturbation_scan_id`, 
+`vehicle_scan_id4`, `scanner`, `vehicle`, `vendor`, `catalog_number`, `catalog_name`. 
+Drug names are used as drug identifies. The `buildCMAPdb` function maps the drug 
+names to external drug ids including `UniProt` [@The_UniProt_Consortium2017-bx], 
+`PubChem`, `DrugBank` and `ChemBank` [@Seiler2008-dw] ids. It also adds additional
+annotation columns such as `directionality`, `ATC codes` and `SMILES structure`.
+The generated `cmap.db` SQLite database from `buildCMAPdb` function contains both
+compound annotation table and structure information. The ChEMBL id mappings were
+further added to the annotation table via PubChem CID to ChEMBL id mappings from 
+[UniChem](ftp://ftp.ebi.ac.uk/pub/databases/chembl/UniChem/data/wholeSourceMapping/src_id1/src1src22.txt.gz).
+The CMAP02 annotation table was stored in the `compoundCollection` SQLite annotation
+database. Then the CMAP internal IDs to ChEMBL id mappings were added to the ID 
+mapping table. 
+
+The LINCS 2017 compound annotation table (`lincsAnnot`) was downloaded from 
+[GEO](ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE92nnn/GSE92742/suppl/GSE92742_Broad_LINCS_pert_info.txt.gz)
+where only compounds were selected. The annotation columns are `lincs_id`, `pert_name`,
+`pert_type`, `is_touchstone`, `inchi_key_prefix`, `inchi_key`, `canonical_smiles`, `pubchem_cid`.
+The annotation table was stored in the `compoundCollection` SQLite annotation database. 
+Since the annotation only contains LINCS id to PubChem CID mapping, the LINCS ids 
+were also mapped to ChEMBL ids via inchi key.
+
+The SQLite annotation database also contains compound annotation tables of
+`drugAge4` and `lincs2`. They contain annotations for compounds
+in DrugAge build 4 database, and the newest LINCS beta database released in 2020
+at [CLUE](https://clue.io/releases/data-dashboard).
+
+# Session Info
+```{r sessionInfo}
+sessionInfo()
+```
+
+# References
+

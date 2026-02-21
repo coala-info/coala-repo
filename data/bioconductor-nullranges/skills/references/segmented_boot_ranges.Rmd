@@ -1,0 +1,321 @@
+---
+title: "Segmented block bootstrap"
+author: "Wancen Mu"
+date: "`r format(Sys.Date(), '%m/%d/%Y')`"
+output:
+  rmarkdown::html_document:
+    highlight: tango
+    toc: true
+    toc_float: true	
+vignette: |
+  %\VignetteIndexEntry{Segmented block bootstrap}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction to segmented block bootstrap
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=5, fig.height=5)
+```
+
+The following vignette describes the *nullranges* implementation of
+the block bootstrap with respect to a genomic segmentation. See the
+Introduction vignette for an overview of the idea of bootstrapping,
+and there is additionally a vignette on block boostrapping without
+respect to segmentation.
+
+As proposed by Bickel et al (2010), *nullranges* contains an
+implementation of a block bootstrap, such that features are sampled
+from the genome in blocks. Blocks are sampled and placed within
+regions of a genomic *segmentation*. That is, for a genome segmented
+into states 1,2,...,S, blocks from state $s$ will be used to tile the
+ranges of state $s$ in each bootstrap sample.
+
+The segmented block bootstrap has two options, either to:
+
+* Perform a de-novo segmentation of the genome using feature density,
+  e.g. gene density
+* Use exiting segmentation (e.g. ChromHMM, etc.) downloaded from
+  AnnotationHub or external to Bioconductor (BED files imported with
+  *rtracklayer*)
+
+In this vignette, we give an example of segmenting the hg38 genome by
+Ensembl gene density, then we profile the time to generate a single
+block bootstrap sample. Finally, we use a toy dataset to visualize
+what a segmented block bootstrap sample looks like with respect to a
+genome segmentation. Future versions of this vignette will demonstrate
+the functions used within an overlap analysis. See also the unsegmented
+block bootstrap vignette in *nullranges*, if it is not desired to
+bootstrap with respect to a genome segmentation.
+
+A finally consideration is whether the blocks should scale
+proportionally to the segment state length (e.g. should segmentation
+states that make up less of the genome have smaller blocks, and
+vice-versa). This option is controlled by `proportionLength` and
+visualized at the end of this vignette.
+
+# Segmentation by gene density
+
+First we obtain the Ensembl genes for segmenting by gene density.
+
+```{r}
+suppressPackageStartupMessages(library(EnsDb.Hsapiens.v86))
+edb <- EnsDb.Hsapiens.v86
+filt <- AnnotationFilterList(GeneIdFilter("ENSG", "startsWith"))
+g <- genes(edb, filter = filt)
+```
+
+We perform some processing to align these features with our excluded
+regions and our features of interest (DNase hypersensitive sites, or
+DHS, defined below).
+
+```{r}
+library(GenomeInfoDb)
+g <- keepStandardChromosomes(g, pruning.mode = "coarse")
+seqlevels(g, pruning.mode="coarse") <- setdiff(seqlevels(g), "MT")
+# normally we would assign a new style, but for recent host issues
+## seqlevelsStyle(g) <- "UCSC" 
+seqlevels(g) <- paste0("chr", seqlevels(g))
+genome(g) <- "hg38"
+g <- sortSeqlevels(g)
+g <- sort(g)
+table(seqnames(g))
+```
+
+## Import excluded region
+
+We next import excluded regions (as created by \citet{encode_exclude}).
+
+<!-- plan here is to use Mikhail's `excluderanges` once it is available -->
+
+<!-- for now we don't use `exclude`... -->
+
+```{r eval=FALSE}
+library(excluderanges)
+data("exclude")
+table(seqnames(exclude))
+```
+
+## CBS segmentation
+
+We load the *nullranges* and *plyranges* packages, and *patchwork* in
+order to produce grids of plots.
+
+```{r}
+library(nullranges)
+suppressPackageStartupMessages(library(plyranges))
+library(patchwork)
+```
+
+We subset the excluded ranges to those which are 500 bp or larger. The
+motivation for this step is to avoid segmenting the genome into many
+small pieces due to an abundance of short excluded regions. Note that
+we re-save the excluded ranges to `exclude`.
+
+We use a CBS segmentation as implemented in *DNAcopy* \citep{dnacopy}.
+
+```{r seg-cbs}
+set.seed(5)
+#exclude <- exclude %>%
+#  plyranges::filter(width(exclude) >= 500)
+L_s <- 1e6
+#seg <- segmentDensity(g, n = 3, L_s = L_s,
+#                      exclude = exclude, type = "cbs")
+seg <- segmentDensity(g, n = 3, L_s = L_s,
+                      exclude = NULL, type = "cbs")
+plots <- lapply(c("ranges","barplot","boxplot"), function(t) {
+  #  plotSegment(seg, exclude, type = t)
+  plotSegment(seg, type = t)
+})
+plots[[1]]
+plots[[2]] + plots[[3]]
+```
+
+Note here, the default *ranges* plot gives whole genome and every
+fractured bind regions represents state transformations
+happens. However, some transformations within small ranges cannot be
+visualized, e.g 1kb. If user want to look into specific ranges of
+segmentation state, the *region* argument is flexible to support.
+
+```{r}
+region <- GRanges("chr16", IRanges(3e7,4e7))
+#plotSegment(seg, exclude, type="ranges", region=region)
+plotSegment(seg, type = "ranges", region = region)
+```
+
+
+## Alternatively: HMM segmentation
+
+Here we use an alternative segmentation implemented in the *RcppHMM*
+CRAN package, using the `initGHMM`, `learnEM`, and `viterbi`
+functions. 
+
+```{r seg-hmm}
+#seg_hmm <- segmentDensity(g, n = 3, L_s = L_s,
+#                          exclude = exclude, type = "hmm")
+seg_hmm <- segmentDensity(g, n = 3, L_s = L_s,
+                          exclude = NULL, type = "hmm")
+plots <- lapply(c("ranges","barplot","boxplot"), function(t) {
+  # plotSegment(seg_hmm, exclude, type = t)
+  plotSegment(seg_hmm, type = t)
+})
+plots[[1]]
+plots[[2]] + plots[[3]]
+```
+
+# Segmented block bootstrap within chromosome
+
+# Timing on DHS peaks
+
+Here, we use a set of DNase hypersensitivity sites (DHS) from the
+ENCODE project in A549 cell line. Here, for speed, we load an existing
+data object which has been processed with the following steps:
+
+* Download DNase hypersensitive peaks in A549 from *AnnotationHub* 
+* Subset to standard chromosomes and remove mitochondrial DNA
+* Use a chain file from UCSC to lift ranges from hg19 to hg38
+* Sort the DHS features to be bootstrapped
+
+These steps are included in *nullrangesOldData* in the
+`scripts/DHSA549Hg38.R` script.
+
+```{r}
+library(nullrangesData)
+dhs <- DHSA549Hg38()
+table(seqnames(dhs))
+```
+
+Now we apply a segmented block bootstrap with blocks of size 500kb,
+to the peaks. We are currently interested in profiling the speed of
+this operation (future vignette iterations will also demonstrate its
+use in a workflow).
+
+```{r}
+blockLength <- 5e5
+```
+
+Here, we test the speed of the various options for bootstrapping. Note
+that we use the `exclude` object from the previous step, which does
+not contain small ranges. If one wanted to also avoid generation of
+bootstrapped features that overlap small excluded ranges, then omit
+this filtering step (use the original, complete `exclude` feature
+set).
+
+```{r}
+library(microbenchmark)
+microbenchmark(
+  list=alist(
+    prop = bootRanges(dhs, seg, blockLength, 1, exclude = NULL, proportionLength = TRUE),
+    no_prop = bootRanges(dhs, seg, blockLength, 1, exclude = NULL, proportionLength = FALSE)
+), times=10)
+```
+
+# Visualizing the segmented block bootstrap
+
+Below we present a toy example for visualizing the segmented block
+bootstrap, visualized with *plotgardener*.
+
+Define a helper function for plotting *GRanges* using
+*plotgardener*. A key aspect here is that we color the original and
+bootstrapped ranges by the genomic state (the state of the
+segmentation that the original ranges fall in).
+
+```{r}
+suppressPackageStartupMessages(library(plotgardener))
+my_palette <- function(n) {
+  head(c("red","green3","red3","dodgerblue",
+         "blue2","green4","darkred"), n)
+}
+plotGRanges <- function(gr) {
+  pageCreate(width = 5, height = 5, xgrid = 0,
+                ygrid = 0, showGuides = TRUE)
+  for (i in seq_along(seqlevels(gr))) {
+    chrom <- seqlevels(gr)[i]
+    chromend <- seqlengths(gr)[[chrom]]
+    suppressMessages({
+      p <- pgParams(chromstart = 0, chromend = chromend,
+                    x = 0.5, width = 4*chromend/500, height = 2,
+                    at = seq(0, chromend, 50),
+                    fill = colorby("state_col", palette=my_palette))
+      prngs <- plotRanges(data = gr, params = p,
+                          chrom = chrom,
+                          y = 2 * i,
+                          just = c("left", "bottom"))
+      annoGenomeLabel(plot = prngs, params = p, y = 0.1 + 2 * i)
+    })
+  }
+}
+```
+
+Create a genome segmentation:
+
+```{r}
+library(GenomicRanges)
+seq_nms <- rep(c("chr1","chr2"), c(4,3))
+seg <- GRanges(
+  seqnames = seq_nms,
+  IRanges(start = c(1, 101, 201, 401, 1, 201, 301),
+          width = c(100, 100, 200, 100, 200, 100, 100)),
+  seqlengths=c(chr1=500,chr2=400),
+  state = c(1,2,1,3,3,2,1),
+  state_col = factor(1:7)
+)
+```
+
+We can visualize with our helper function:
+
+```{r toysegments}
+plotGRanges(seg)
+```
+
+Now create small ranges distributed uniformly across the toy genome:
+
+```{r toyranges}
+set.seed(1)
+n <- 200
+gr <- GRanges(
+  seqnames=sort(sample(c("chr1","chr2"), n, TRUE)),
+  IRanges(start=round(runif(n, 1, 500-10+1)), width=10)
+)
+suppressWarnings({
+  seqlengths(gr) <- seqlengths(seg)
+})
+gr <- gr[!(seqnames(gr) == "chr2" & end(gr) > 400)]
+gr <- sort(gr)
+idx <- findOverlaps(gr, seg, type="within", select="first")
+gr <- gr[!is.na(idx)]
+idx <- idx[!is.na(idx)]
+gr$state <- seg$state[idx]
+gr$state_col <- factor(seg$state_col[idx])
+plotGRanges(gr)
+```
+
+## Not scaling blocks to segmentation length
+
+We can visualize block bootstrapped ranges when the blocks do not
+scale to segment state length:
+
+```{r toy-no-prop}
+set.seed(1)
+gr_prime <- bootRanges(gr, seg, blockLength = 25, R = 1, 
+                       proportionLength = FALSE)[[1]]
+plotGRanges(gr_prime)
+```
+
+## Scaling blocks to segmentation length
+
+Again, this time the blocks scale to the segment state length:
+
+```{r toy-prop}
+set.seed(1)
+gr_prime <- bootRanges(gr, seg, blockLength = 50, R = 1, 
+                       proportionLength = TRUE)[[1]]
+plotGRanges(gr_prime)
+```
+
+# Session information
+
+```{r}
+sessionInfo()
+```

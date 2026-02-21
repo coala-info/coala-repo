@@ -1,0 +1,177 @@
+# How to do meta-analysis of CLIP-seq peaks from multiple samples with RCAS
+
+#### Bora Uyar, Ricardo Wurmus, Altuna Akalin
+
+#### 2025-10-30
+
+* [Introduction](#introduction)
+* [Preparing the inputs](#preparing-the-inputs)
+  + [Project Data File](#project-data-file)
+  + [GTF File (genome annotations)](#gtf-file-genome-annotations)
+* [Creating a RSQLite database](#creating-a-rsqlite-database)
+* [Generating a meta-analysis report](#generating-a-meta-analysis-report)
+* [Acknowledgements](#acknowledgements)
+
+```
+library(RCAS)
+```
+
+**Warning**: Due to space limitations, we demonstrate the useful functions in this workflow without images. In order to see an HTML report generated based on the full genome annotations and complete datasets described in the vignette, please see [here](https://bimsbstatic.mdc-berlin.de/akalin/buyar/RCAS/1.4.2/RCAS.html).
+
+For the most up-to-date functionality, usage and installation instructions, and example outputs, see our [github repository here](https://github.com/BIMSBbioinfo/RCAS).
+
+# Introduction
+
+The first release of RCAS was designed to produce quality controls and exploratory plots for the analysis of transcriptome-wide regions of interest with regard to their feature specific distributions, sequence motif signals, and biological function enrichments. However, this workflow didn’t include functions to directly compare multiple samples. However, it may be often desirable to see how the biological content of one sample relates to the content obtained from different samples. For instance, one can design a CLIP-seq based experiment with multiple conditions each containing multiple biological replicates and want to address the following common questions:
+
+* Are the transcript-feature specific distributions of the samples **reproducible across biological replicates**?
+* Can we observe differences between the motif patterns of samples from different conditions? If so, can we pinpoint which transcript features shows the biggest difference?
+
+Since the release of RCAS 1.4.0, it is possible to process more than one input BED files and generate a self-containing HTML report with plots and tables that compare/contrast the input samples.
+
+In this vignette, we will use example datasets from CLIP based sequencing experiments to show how to use the meta-analysis functionality of the RCAS package. However, the same workflow can be applied to any kind of high-throughput dataset that pertains to transripts and can be expressed as genomic ranges in a BED format file.
+
+# Preparing the inputs
+
+When starting from scratch, the two necessary inputs are:
+
+1. **Project Data File**: A tab-separated file that contains information about the samples and BED file locations of each sample. This file must contain minimally two columns: - sampleName: The name of the sample (must be unique in each row) - bedFilePath: The path to the BED format file that contains the genomic ranges for the analysed sample.
+2. **GTF File**: GTF file contains the genome annotations in [GTF format](https://www.ensembl.org/info/website/upload/gff.html).
+
+## Project Data File
+
+In this vignette, we will analyse the peak regions discovered via CLIP-sequencing experiments of the [RNA-binding protein FUS](http://www.uniprot.org/uniprot/P35637) by [Nakaya et al, 2013](https://www.ncbi.nlm.nih.gov/pubmed/23389473), [Synaptic Functional Regulator FMR1](http://www.uniprot.org/uniprot/Q06787) by [Ascano et al. 2012](https://www.ncbi.nlm.nih.gov/pubmed/23235829), and [Eukaryotic initiation factor 4A-III](http://www.uniprot.org/uniprot/P38919) by [Sauliere et al, 2012](https://www.ncbi.nlm.nih.gov/pubmed/23085716). We use two replicates from both experiments and constrain the analysis to a small portion of the genome (the first 1 million base pairs of chromosome 1). Both the genome annotations and the peaks detected within these regions are available as built-in data in the RCAS package. To obtain the full datasets, please refer to the [doRiNa database](http://dorina.mdc-berlin.de/regulators).
+
+First, we detect the paths to these datasets:
+
+```
+FUS_rep1_path <- system.file('extdata', 'FUS_Nakaya2013c_hg19.bed', package = 'RCAS')
+FUS_rep2_path <- system.file('extdata', 'FUS_Nakaya2013d_hg19.bed', package = 'RCAS')
+FMR1_rep1_path <- system.file('extdata', 'FMR1_Ascano2012a_hg19.bed', package = 'RCAS')
+FMR1_rep2_path <- system.file('extdata', 'FMR1_Ascano2012b_hg19.bed', package = 'RCAS')
+EIF4A3_rep1_path <- system.file('extdata', 'EIF4A3Sauliere20121a.bed', package = 'RCAS')
+EIF4A3_rep2_path <- system.file('extdata', 'EIF4A3Sauliere20121b.bed', package = 'RCAS')
+```
+
+Then, we create a file containing the sample names and the locations of the BED files for each sample.
+
+```
+projData <- data.frame('sampleName' = c('FUS_1', 'FUS_2', 'FMR1_1', 'FMR1_2', 'EIF4A3_1', 'EIF4A3_2'),
+                       'bedFilePath' = c(FUS_rep1_path, FUS_rep2_path,
+                                         FMR1_rep1_path, FMR1_rep2_path,
+                                         EIF4A3_rep1_path, EIF4A3_rep2_path),
+                       stringsAsFactors = FALSE)
+
+projDataFile <- file.path(getwd(), 'myProjDataFile.tsv')
+write.table(projData, projDataFile, sep = '\t', quote =FALSE, row.names = FALSE)
+```
+
+## GTF File (genome annotations)
+
+The second input is the path to the GTF file containing genome annotations. Here we use the first 1 million bases of the chromosome 1 from the Ensembl Database (version 75 - corresponds to GRCh37 build - hg19 in UCSC).
+
+```
+gtfFilePath <- system.file("extdata", "hg19.sample.gtf", package = "RCAS")
+```
+
+# Creating a RSQLite database
+
+In order to avoid redundant preprocessing of the same input files, we have developed a function `RCAS::createDB` to save all preprocessed data into an SQLite database using the R package [RSQLite](https://cran.r-project.org/web/packages/RSQLite/index.html). With this function, all input files from the project data file are processed, the resulting processed data are saved in the following SQL tables:
+
+* **gtfData**: Contains the gene annotations parsed from the `gtfFilePath` argument. The fields of this table are: seqnames, start, end, width, strand, source, type, score, gene\_id, gene\_name, transcript\_id, exon\_id, and exon\_number.
+* **bedData**: Contains all the content of the input BED files. The fields of the table are: group, sampleName, seqnames, start, end, width, and strand.
+* **annotationSummaries**: Contains the number of overlaps between the input sample and the target transcript features categorised by feature type (i.e. transcripts, exons, promoters, UTRs, introns, cds).
+* **geneOverlaps**: Contains the number of overlaps between the input sample and the target genes.
+* **featureBoundaryCoverageProfiles**: Contains the coverage scores computed by [genomation::scoreMatrix function](https://bioconductor.org/packages/release/bioc/vignettes/genomation/inst/doc/GenomationManual.html)
+* **discoveredMotifs**: Contains enriched motifs per each transcript feature for each sample.
+* **processedSamples**: Contains a mapping between the processed sample and the path to the BED file that contains the data for the corresponding sample.
+
+To create a database with preprocessed data, use `RCAS::createDB()` function. When starting a fresh database, we can provide a file name that does not exist at the corresponding folder must be provided. If a database already exists at the given location, an error will be returned.
+
+```
+databasePath <- file.path(getwd(), 'myProject.sqlite')
+invisible(createDB(dbPath = databasePath, projDataFile = projDataFile, gtfFilePath = gtfFilePath, genomeVersion = 'hg19'))
+```
+
+However, it is also possible to update an existing database by setting the `update` argument to `TRUE`. This is useful when you want to add new datasets to an existing project. This will only add processed data for samples that don’t already exist in the database. This will not attempt to overwrite existing data for existing samples.
+
+```
+createDB(dbPath = databasePath, projDataFile = projDataFile, gtfFilePath = gtfFilePath, genomeVersion = 'hg19', update = TRUE)
+```
+
+It is also possible to turn off certain analysis modules by setting `annotationSummary`, `coverageProfiles`, or `motifAnalysis` modules to `FALSE`. For instance, the following command will create the same database except for the `discoveredMotifs` table.
+
+```
+createDB(dbPath = databasePath, projDataFile = projDataFile, gtfFilePath = gtfFilePath, genomeVersion = 'hg19', motifAnalysis = FALSE)
+```
+
+If the user wishes to overwrite datasets for existing samples, all relevant data for the given samples must be first purged from the database. It is possible to do so via:
+
+Here we erase all entries relevant to samples ‘FMR1\_1’ and ‘FMR1\_2’.
+
+```
+RCAS::deleteSampleDataFromDB(dbPath = databasePath, sampleNames = c('FMR1_1', 'FMR1_2'))
+```
+
+To have a quick look into the contents of any given database, we can use the `RCAS::summarizeDatabaseContent()` function. This returns a table of number of row entries for each sample in any given table that exists in the database.
+
+```
+knitr::kable(RCAS::summarizeDatabaseContent(dbPath = databasePath))
+```
+
+Each table of the database can be read into memory using the `RSQLite::dbReadTable()` function. To read a specific table from a database, firstly a connection to the sqlite dump needs to be created.
+
+```
+mydb <- RSQLite::dbConnect(RSQLite::SQLite(), databasePath)
+```
+
+List the tables that exist in the connection:
+
+```
+RSQLite::dbListTables(mydb)
+```
+
+A table can be read into an R object:
+
+```
+annotationSummaries <- RSQLite::dbReadTable(mydb, 'annotationSummaries')
+knitr::kable(annotationSummaries)
+```
+
+**Warning**: It is important to consider that the tables read into an R object from an sqlite database are of the `data.frame` class. For most tables it is the desired format, however some of the tables need converting from `data.frame` to the desired class (e.g. `GenomicRanges` for `gtfData` table) for downstream processing.
+
+# Generating a meta-analysis report
+
+Once an sqlite database is obtained, `RCAS::runReportMetaAnalysis()` function can be utilized to quickly generate comparative analysis reports between whichever sample groups are desired to be compared. To generate this report, only two inputs are required:
+
+1. **dbPath**: The path to a pre-generated RCAS sqlite database.
+2. **sampleTablePath**: A tab-separated file with two columns (no rownames) - header 1: sampleName. Name of the sample to include in the report. This must exist in the database. - header 2: sampleGroup. This can be anything that somehow logically groups the entries in the `sampleName` column. For example, replicates of the same biological condition can be assigned the same `sampleGroup` value.
+
+Here is how to generate a stand-alone HTML report with interactive figures and tables from a pre-calculated RCAS database that compares CLIP datasets from two replicates of `FUS` and two replicates of `EIF4A3`.
+
+Let’s first create a sample data file. The sample names found in this file should be a subset of the original project data file used to generate the sqlite database.
+
+```
+sampleData <- data.frame('sampleName' = c('FUS_1', 'FUS_2', 'EIF4A3_1', 'EIF4A3_2'),
+                         'sampleGroup' = c('FUS', 'FUS', 'EIF4A3', 'EIF4A3'),
+                         stringsAsFactors = FALSE)
+sampleDataFile <- file.path(getwd(), 'mySampleDataTable.tsv')
+write.table(sampleData, sampleDataFile, sep = '\t', quote =FALSE, row.names = FALSE)
+```
+
+Now, we are ready to get an HTML report:
+
+```
+runReportMetaAnalysis(dbPath = databasePath, sampleTablePath = sampleDataFile,
+                      outFile = file.path(getwd(), 'myProject.html'))
+```
+
+# Acknowledgements
+
+RCAS is developed in the group of [Altuna Akalin](http://bioinformatics.mdc-berlin.de/team.html#altuna-akalin-phd) (head of the Scientific Bioinformatics Platform) at the Berlin Institute of Medical Systems Biology ([BIMSB](https://www.mdc-berlin.de/13800178/en/bimsb)) at the Max-Delbrueck-Center for Molecular Medicine ([MDC](https://www.mdc-berlin.de)) in Berlin.
+
+RCAS is developed as a bioinformatics service as part of the [RNA Bioinformatics Center](http://www.denbi.de/index.php/rbc), which is one of the eight centers of the German Network for Bioinformatics Infrastructure ([de.NBI](http://www.denbi.de/)).
+
+To cite RCAS in publications use:
+
+> Bora Uyar, Dilmurat Yusuf, Ricardo Wurmus, Nikolaus Rajewsky, Uwe Ohler, Altuna Akalin; RCAS: an RNA centric annotation system for transcriptome-wide regions of interest. Nucleic Acids Res 2017 gkx120. doi: 10.1093/nar/gkx120

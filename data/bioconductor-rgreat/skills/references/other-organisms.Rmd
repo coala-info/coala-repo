@@ -1,0 +1,258 @@
+---
+title: "Work with other organisms"
+author: "Zuguang Gu ( z.gu@dkfz.de )"
+date: '`r Sys.Date()`'
+output: html_document
+---
+
+```{r, echo = FALSE, message = FALSE}
+library(knitr)
+knitr::opts_chunk$set(
+    error = FALSE,
+    tidy  = FALSE,
+    message = FALSE,
+    warning = FALSE,
+    fig.align = "center")
+```
+
+## Use TxDb packages
+
+In the Bioconductor annotation ecosystem, there are **TxDb.\*** packages which
+provide data for Gene Ontology gene sets. The **TxDb.\*** packages supported in **rGREAT** are:
+
+```{r}
+library(rGREAT)
+rGREAT:::BIOC_ANNO_PKGS$txdb
+```
+
+To perform GREAT anlaysis with GO gene sets for other organisms, you can either
+specify the genome version:
+
+```{r, eval = FALSE}
+great(gr, "GO:BP", "galGal6")
+```
+
+or with the full name of the corresponding TxDb package:
+
+```{r, eval = FALSE}
+great(gr, "GO:BP", "TxDb.Ggallus.UCSC.galGal6.refGene")
+```
+
+These two are internally the same.
+
+## Use BioMart GO gene sets
+
+You can specify a BioMart dataset (which corresponds to a specific organism), e.g.:
+
+```{r, eval = FALSE}
+# Giant panda
+great(gr, "GO:BP", biomart_dataset = "amelanoleuca_gene_ensembl")
+```
+
+<p style="color:red">Make sure the genome version fit your data.</p>
+
+A full list of supported BioMart datasets (organisms) as well as the genomo versions can be found with the function `BioMartGOGeneSets::supportedOrganisms()`.
+
+## Use MSigDB gene sets
+
+MSigDB contains gene sets only for human, but it can be extended to other organisms
+by mapping to the homologues genes. The package [**msigdbr**](https://cran.r-project.org/web/packages/msigdbr/index.html) has
+already mapped genes to many other organisms. A full list of supported organisms in **msigdbr** can be obtained by：
+
+```{r}
+library(msigdbr)
+msigdbr_species()
+```
+
+To obtain gene sets for non-human organisms, e.g.:
+
+```{r}
+h_gene_sets = msigdbr(species = "chimpanzee", category = "H")
+head(h_gene_sets)
+```
+
+If the organism you selected has a corresponding TxDb package available which provides TSS information, 
+you need to make sure the gene sets use Entrez gene ID as the identifier (Most TxDb packages use Entrez ID
+as primary ID, you can check the variable `rGREAT:::BIOC_ANNO_PKGS`).
+
+```{r}
+# convert to a list of gene sets
+h_gene_sets = split(h_gene_sets$entrez_gene, h_gene_sets$gs_name)
+h_gene_sets = lapply(h_gene_sets, as.character)  # just to make sure gene IDs are all in character.
+h_gene_sets[1:2]
+```
+
+Now we can perform the local GREAT analysis.
+
+```{r, eval = FALSE}
+great(gr, h_gene_sets, "panTro6")
+```
+
+## Use NCBI genomes and gene sets
+
+NCBI provides genome data for a huge number of organisms. It is quite easy to
+obtain the GO gene sets for a specific organism with the **AnnotationHub**
+package where NCBI is also the data source. Users please go to the
+documentation of **AnnotationHub** to find out how to get GO gene sets with it.
+
+It is relatively more difficult to obtain gene coordinates for a specific organism. 
+Here the function `getGenomeDataFromNCBI()` accepts a
+RefSeq accession number for a given genome assembly and returns information of the
+genome as well as the genes.
+
+The RefSeq accession number can be obtained from
+https://www.ncbi.nlm.nih.gov/data-hub/genome/. Here we take dolphin as an
+example. Its accession number is "GCF_011762595.1" and its genome page is at
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_011762595.1/. We can get its genes with the command:
+
+```{r, eval = .Platform$OS.type == "unix"}
+genes = getGenomeDataFromNCBI("GCF_011762595.1", return_granges = TRUE)
+genes
+```
+
+The chromosome length information is also included in `genes`:
+
+```{r, eval = .Platform$OS.type == "unix"}
+seqlengths(genes)
+```
+
+Now you can send `genes` to `great()` to perform the enrichment analysis.
+
+```{r, eval = FALSE}
+great(gr, your_go_gene_sets, tss_source = genes, ...)
+```
+
+
+The `GRanges` object can only be constructd if the genome is assembled on the
+"chromosome-level". If it is not, e.g. on the scaffold or on the contig level.
+`getGenomeDataFromNCBI()` returns the raw output which includes two data frames,
+one for the genome, and one for the genes. Let's still take "GCF_011762595.1"
+as an example, but set `return_granges` to `FALSE` (which is the default value in the function):
+
+```{r, eval = .Platform$OS.type == "unix"}
+lt = getGenomeDataFromNCBI("GCF_011762595.1", return_granges = FALSE)
+names(lt)
+```
+
+The first several rows in the two data frames.
+
+```{r, eval = .Platform$OS.type == "unix"}
+head(lt$genome)
+head(lt$gene)
+```
+
+In the original data from NCBI, genes are associated to contigs, and that is why
+the first column in `lt$gene` contains RefSeq contig IDs. When the genome is
+assembled on the chromosome level, the contigs are chromosomes. For some organisms,
+there is no official chromosome name, then a specific contig ID from `lt$genome`
+can be used to map to the contig names.
+
+In the following code, we assume in users' input regions, the Genbank accession IDs
+are used for contigs, then we need to construct a gene `GRanges` object which also takes
+Genback accession IDs. This can be easily done as follows:
+
+First we construct a mapping vector between Genbank IDs and RefSeq IDs:
+
+```{r, eval = .Platform$OS.type == "unix"}
+map = structure(lt$genome$genbankAccession, names = lt$genome$refseqAccession)
+head(map)
+```
+
+Next apply `map` on the first column of `lt$gene` and then convert it into a `GRanges` object.
+Just make sure in the ID convertion, `NA` may be procudes and need to be removed.
+
+```{r, eval = .Platform$OS.type == "unix"}
+genes = lt$gene
+genes[, 1] = map[ genes[, 1] ]
+genes = genes[!is.na(genes[, 1]), ]
+genes = GRanges(seqnames = genes[, 1], ranges = IRanges(genes[, 2], genes[, 3]),
+                strand = genes[, 4], gene_id = genes[, 5])
+```
+
+In `lt$genome` there is also contig length information. Simply construct it and set it to 
+the `seqlengths` of `genes`.
+
+
+```{r, eval = .Platform$OS.type == "unix"}
+sl = structure(lt$genome$length, names = lt$genome$genbankAccession)
+sl = sl[!is.na(names(sl))]
+seqlengths(genes) = sl
+genes
+```
+
+And similarly, `genes` can be directly sent to enrichment analysis.
+
+```{r, eval = FALSE}
+great(gr, your_go_gene_sets, tss_source = genes, ...)
+```
+
+Let's demonstrate how to obtain GO gene sets for a less-studied organism from
+the `OrgDb` object. Still taking dolphin as an example, we can get its gene
+coordinates with the `getGenomeDataFromNCBI()` function by specifying its
+GenBank accession number. The `OrgDb` object for dolphin can be obtained with
+the **AnnotationHub** package. First construct an `AnnotationHub` object:
+
+```{r, eval = FALSE}
+library(AnnotationHub)
+ah = AnnotationHub()
+```
+
+Next we need to search dolphin on Annotation hub. It is sometimes not easy to
+find the dataset from AnnotationHub as you want. In this example, we use query
+words of "truncatus" and "OrgDb" (unfortunately, the word "dolphin" can not
+find the correct file).
+
+```{r, eval = FALSE}
+query(ah, c("truncatus", "OrgDb"))
+```
+
+The returned message shows the ID of the OrgDb database for dolphin is
+"AH112418". Then we can directly obtain the `OrgDb` object by:
+
+```{r, eval = FALSE}
+orgdb = ah[["AH112418"]]
+```
+
+With another helper function `getGeneSetsFromOrgDb()`, we can obtain the GO
+gene sets for dolphin:
+
+```{r, eval = FALSE}
+go_gs = getGeneSetsFromOrgDb(orgdb)
+great(gr, go_gs, tss_source = genes, ...)
+```
+
+## Use KEGG gene sets
+
+KEGG supports a huge number of organisms. How to obtain the pathway gene sets
+for an organism has been introduced in the vignette ["Work with other geneset
+databases"](other-geneset-databases.html#kegg-pathways). Now the task is
+to obtain the gene/TSS definitions of that organism. On the KEGG database, each
+organism has a RefSeq accession ID associated and this ID can be found on the
+webpage of the organism. For example, the web page of turkey is
+https://www.genome.jp/kegg-bin/show_organism?org=mgp where the
+RefSeq assembly access ID is "GCF_000146605.3". This ID can be used later
+with `getGenomeDataFromNCBI()` to get the gene coordinates of that genome assembly.
+
+**rGREAT** has a function `getKEGGGenome()` which automatically extracts the RefSeq
+accession ID for an organism:
+
+```{r}
+getKEGGGenome("mgp")
+```
+
+Then, the following code performs GREAT analysis for any organism supported on KEGG, e.g. turkey:
+
+```r
+genes = getGenomeDataFromNCBI(getKEGGGenome("mgp"))
+gene_sets = getKEGGPathways("mgp")
+
+great(..., gene_sets, genes)
+```
+
+## Self-define TSS and gene sets
+
+Since `great()` allows both self-defined TSS and gene sets, this means `great()` can be independent to organisms. 
+Please refer to the vignette ["Analyze with local GREAT"](local-GREAT.html#manually-set-gene-sets-and-transcriptome-annotations) to
+find out how to manuallly set both TSS and gene sets.
+
+

@@ -1,0 +1,168 @@
+---
+title: "Checking Arguments in R Functions"
+author: "Benjamin Nutter"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+    fig_caption: no
+    number_section: no
+    toc: no
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Checking Arguments in R Functions}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(error=TRUE)
+suppressPackageStartupMessages(library(ArgumentCheck))
+```
+
+Whenever I write a function, it often seems that unless I'm extraordinarily thoughtful, I write code that works well for my intent at the time, but as I test and further develop the code, I find that the function is hardly foolproof.  Most commonly, when I give my code to someone else to use, they inevitably use it in some way I hadn't anticipated.  This results in the function producing an error the user doesn't understand.  Or worse, the function executes, but quietly produces bad input.  These kinds of problems can be a hindrance to getting people to use your package.
+
+Another common problem I've noticed is that an argument may be valid for a certain set of values, but I don't limit the argument to just those values.  For example, in my [`StudyPlanning` package](https://github.com/nutterb/StudyPlanning) package, I use an `alpha` argument to define the Type I error in statistical tests.  Calculations `alpha` are only valid when 0 < `alpha` < 1.  Failing to restrict this argument properly would allow a well-intentioned user to enter 5.0, perhaps thinking the significance level is 5% instead of 0.05.  This vignette will give examples of how to check a function's arguments and return useful warnings and messages to the user that in a way that assists the user in the proper use of the function.
+
+For an example, we'll use the function below, which calculates the volume of a cylinder.  It accepts two arguments: `height`, giving the height of the cylinder; and `radius`, giving the radius of the cylinder.  Without any parameter checking, the function could be written as follows:
+
+```{r, eval=FALSE}
+cylinder.volume <- function(height, radius)
+{
+  pi * radius^2 * height  
+}
+```
+
+One thing we should note right away is that `height` and `radius` are both non-negative variables.  It would probably be a good idea to disallow negative values from being used.
+
+Normally, when I get to this point, my first instinct is to use `stop`.  I might try something like
+
+```{r}
+cylinder.volume <- function(height, radius)
+{
+  if (height < 0) stop("'height' must be >= 0")
+  if (radius < 0) stop("'radius' must be >= 0")
+  pi * radius^2 * height  
+}
+```
+
+Now watch what happens when we run `cylinder.volume` with negative values.
+
+```{r}
+cylinder.volume(height = -3, 
+                radius = -4)
+```
+
+Here, we run into the problematic aspect of `stop`: It terminates the function the first time it encounters `stop`.  There are two errors in this function call, but the user may not encounter the second error until correcting the first.
+
+```{r}
+cylinder.volume(height = 3, 
+                radius = -4)
+```
+
+The philosophy behind `ArgumentCheck` is that, as much as possible, we should return to the user as many error and warning messages at one time as we can.  This will inevitably increase the length of the function code, but the benefits should be pretty clear.
+
+With `ArgumentCheck`, we'll create an object that, based on the results of a logical test, will store any error and warning messages we wish to capture and allow us to delay the call to `stop` until we have performed all of our checks.
+
+With this philosophy in mind, let's rewrite `cylinder.volume` to return two error messages simultaneously.
+
+```{r}
+cylinder.volume <- function(height, radius)
+{
+  #* Establish a new 'ArgCheck' object
+  Check <- ArgumentCheck::newArgCheck()
+  
+  #* Add an error if height < 0
+  if (height < 0) 
+    ArgumentCheck::addError(
+      msg = "'height' must be >= 0",
+      argcheck = Check
+    )
+  
+  #* Add an error if radius < 0
+  if (radius < 0)
+    ArgumentCheck::addError(
+      msg = "'radius' must be >= 0",
+      argcheck = Check
+    )
+  
+  #* Return errors and warnings (if any)
+  ArgumentCheck::finishArgCheck(Check)
+  
+  pi * radius^2 * height 
+}
+```
+
+With this new definition, we first create an object to store our messages, we check the arguments and add any errors we note, and the `finishArgCheck` will call `stop` if there are any errors and `warning` if there are any warnings.  The final result looks like this.
+
+```{r}
+cylinder.volume(height = -3,
+                radius = -4)
+```
+
+Notice that in the previous example, we get both of the errors.  This allows us to make both of the necessary changes to our function call prior to calling it again.  In functions with greater complexity, this has the potential to reduce the time it takes to get the function call right.
+
+Something else you may want to note is that so far, the parameter checking on this function is flawed.  The way we've written the checks assumes that we won't be passing vectors to `cylinder.volume`.  The behavior gets kind of strange when we do.  Look at the following results:
+
+```{r}
+cylinder.volume(height = c(-3, 3),
+                radius = -4)
+cylinder.volume(height = c(3, 3),
+                radius = 8)
+cylinder.volume(height = c(3, -3),
+                radius = c(8, 4))
+```
+
+As you can tell, the result depends on the length of the vectors and the value of the first element of the vectors.  In the third example, the function evaluates the volume even though we passed an inappropriate value in `height`.  An important point to make now would be that you might not always think of every situation when writing your argument checks.  But, if you look at the warning messages returned above, they aren't very friendly to read.  If you're getting unfriendly warning or error messages, that's probably a place that needs a better argument check.
+
+At this point, we have two options we can consider.  We could terminate the function if _any_ negative values are noticed, perhaps by adding `any` to our logical expression, as below:
+
+```{r, eval=FALSE}
+if (any(height < 0))
+  ArgumentCheck::addError(
+    msg = "'height' must be >= 0",
+    argcheck = Check
+  )
+```
+
+Alternatively, we can allow the function to process, but we can adjust the inputs so that they don't include the negative values.  For something like this, it is better to use the `addWarning` function instead of `addError`.
+
+```{r}
+cylinder.volume <- function(height, radius)
+{
+  #* Establish a new 'ArgCheck' object
+  Check <- ArgumentCheck::newArgCheck()
+  
+  #* Add an warning if height < 0
+  if (any(height < 0)){
+    ArgumentCheck::addWarning(
+      msg = "'height' must be >= 0. Negative values have been set to NA",
+      argcheck = Check
+    )
+    
+    height[height < 0] <- NA
+  }
+  
+  #* Add an error if radius < 0
+  if (any(radius < 0)){
+    ArgumentCheck::addWarning(
+      msg = "'radius' must be >= 0. Negative values have been set to NA",
+      argcheck = Check
+    )
+    
+    radius[radius < 0] <- NA
+  }
+  
+  #* Return errors and warnings (if any)
+  ArgumentCheck::finishArgCheck(Check)
+  
+  pi * radius^2 * height 
+}
+
+cylinder.volume(height = c(3, -3, 8, -1),
+                radius = c(4, -4, -2, 3))
+```
+
+Notice how much cleaner that warning message looks now!
+
+Using the warning instead of the error, the function is able to evaluate where the values are appropriate while still informing the user of any changes made to the inputs.  Whether or not this is a good idea is up for debate, and in most cases, I would argue that it is _not_ a good idea.  Generally speaking, I feel it is better to require the user to decide when to alter the inputs, but there are a couple of cases where I've done it anyway.  For instance, in functions I've written in the `StudyPlanning` package, I said earlier that I use an `alpha` argument that accepts values between 0 and 1.  Once, I wanted to look at the change in power as `alpha` varied from 0 to 0.3, incremented by 0.05.  However, when I used `alpha = seq(0, 0.3, by=.05)`, I got an error.  `alpha = 0` is not a valid input for calculating power.  The `alpha` argument is a case where I remove any values 0 or 1 and print a warning indicating the change. 
+
+Good argument checks are a service to your users and yourself.  A good set of argument checks can prevent users from entering values you didn't intend to be entered (and causing all manner of cryptic error messages to debug).  Good argument checks and returned messages also make it easier for the user to understand where the problems in their code are.  The better you communicate with your user, the more likely your work is to be used by others.

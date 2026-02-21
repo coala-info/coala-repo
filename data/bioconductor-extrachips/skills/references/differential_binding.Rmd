@@ -1,0 +1,702 @@
+---
+title: "extraChIPs: Differential Binding Analysis"
+author:
+- name: Stevie Pederson
+  affiliation: Black Ochre Data Laboratories, Telethon Kids Institute
+  email: stephen.pederson.au@gmail.com
+package: extraChIPs
+output:
+  BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Differential Binding Analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, warning = FALSE, fig.height = 8, fig.width = 10
+)
+```
+
+
+# Introduction
+
+The [GRAVI](https://github.com/steveped/GRAVI) workflow, for which this package 
+is designed, uses sliding windows for differential binding analysis in a manner 
+similar to the package `csaw`, but also incorporating `macs2` peaks.
+The workflow itself extends to integrating multiple ChIP targets and external 
+data sources, and as such, this package introduces a handful of functions to 
+enable these analyses.
+
+The majority of examples below use extremely simplified datasets to provide
+general guidance on using the functions.
+Some results may appear trivial as a result, but will hopefully prove far more
+useful in a true experimental context.
+
+# Installation
+
+In order to use the package `extraChIPs` and follow this vignette, we recommend 
+using the package `BiocManager` hosted on CRAN.
+Once this is installed, the additional packages required for this vignette 
+(`tidyverse`, `Rsamtools`, `csaw`, `BiocParallel` and `rtracklayer`) can also 
+be installed.
+
+```{r install, eval = FALSE}
+if (!"BiocManager" %in% rownames(installed.packages()))
+  install.packages("BiocManager")
+pkg <- c("tidyverse", "Rsamtools", "csaw", "BiocParallel", "rtracklayer")
+BiocManager::install(pkg)
+BiocManager::install("extraChIPs")
+```
+
+# Differential Binding and ChIP-Seq Analysis
+
+## Sliding Windows
+
+The starting point for differential binding analysis using sliding windows is
+to define windows, then count reads within each window using the bam files.
+Commonly one or IP input/control samples is also produced during a ChIP-Seq
+experiment.
+The example files provided here contain a small subset of reads from chromosome 
+10 across two experimental and one input sample.
+
+The approach taken below is to define a set of sliding windows, using the 
+capabilities of `csaw`, but to then use `macs` peaks to define regions of most 
+likely signal.
+First we can define our windows and count the alignments using existing tools.
+In the following, we'll use a sliding window of 180bp and a step size of 60bp,
+meaning each nucleotide is covered by 3 windows.
+
+```{r wincounts}
+library(tidyverse)
+library(Rsamtools)
+library(csaw)
+library(BiocParallel)
+library(rtracklayer)
+bfl <- system.file(
+  "extdata", "bam", c("ex1.bam", "ex2.bam", "input.bam"), package = "extraChIPs"
+) %>% 
+  BamFileList()
+names(bfl) <- c("ex1", "ex2", "input")
+rp <- readParam(
+  pe = "none",
+  dedup = TRUE,
+  restrict = "chr10"
+)
+wincounts <- windowCounts(
+  bam.files = bfl,
+  spacing = 60,
+  width = 180,
+  ext = 200,
+  filter = 1,
+  param = rp
+)
+```
+
+This produces a `RangesSummarizedExperiment` with windows included which passed 
+the minimum threshold of 1 total read.
+As we've only counted reads within a very small window, the complete library 
+sizes will be highly inaccurate.
+The true library sizes can be added here noting that *this step is not normally* 
+*required*, but given these values are essential for accurate CPM values, they 
+will be added here.
+
+```{r add-totals}
+wincounts$totals <- c(964076L, 989543L, 1172179L)
+```
+
+We can also add some key information to the `colData` element of this object, 
+which will also be propagated to all downstream objects.
+
+```{r update-coldata}
+wincounts$sample <- colnames(wincounts)
+wincounts$treat <- as.factor(c("ctrl", "treat", NA))
+colData(wincounts)
+```
+
+A density plot can be simply drawn of these counts, with the vast majority of 
+windows receiving very low counts, due to the nature of transcription factor 
+binding, where long stretches are unbound.
+The windows with higher counts tend to be associated with the samples targeting
+a transcription factor (TF), as seen in the two treatment group samples.
+
+```{r plot-densities}
+library(extraChIPs)
+plotAssayDensities(wincounts, colour = "treat", trans = "log1p")
+```
+
+
+## Filtering of Sliding Windows
+
+After counting all reads in the sliding windows, the next step is to discard 
+windows for which counts are unlikely to represent TF binding.
+The package `extraChIPs` uses a set of consensus peaks to automatically 
+set a threshold based on 1) counts strongly above the counts from the input 
+sample, and 2) the windows with the overall highest signal.
+Thresholds are determined such that `q = 0.5` of the retained windows overlap
+on of the supplied consensus peaks.
+Higher values for `q` will return more windows, however many of these will 
+tend to only marginally overlap a peak.
+Experience has shown that values such as `q = 0.5` tend to return a considerable
+proportion of windows containing true TF binding signal.
+
+First we can load the peaks, supplied here as a simple `bed` file.
+
+```{r peaks}
+peaks <- import.bed(
+  system.file("extdata", "peaks.bed.gz", package = "extraChIPs")
+)
+peaks <- granges(peaks)
+```
+
+The we can pass these to the function `dualFilter()` which utilises the strategy
+described above.
+On large datasets, this can be quite time-consuming, as can the initial counting
+step.
+Due to the small example dataset, a more inclusive threshold for `q` will 
+be used here.
+
+```{r filtcounts}
+filtcounts <- dualFilter(
+  x = wincounts[, !is.na(wincounts$treat)],
+  bg = wincounts[, is.na(wincounts$treat)], 
+  ref = peaks,
+  q = 0.8 # Better to use q = 0.5 on real data
+)
+```
+
+The returned object will by default contain `counts` and `logCPM` assays, with
+the complete library sizes used for the calculation of `logCPM` values.
+
+```{r plotcpm}
+plotAssayDensities(filtcounts, assay = "logCPM", colour = "treat")
+plotAssayPCA(filtcounts, assay = "logCPM", colour = "treat", label = "sample")
+```
+
+Whilst the initial set of counts contained `r nrow(wincounts)` windows, these
+have now been reduced to `r nrow(filtcounts)` windows.
+Similarly, the input sample is no longer included in the data object.
+
+```{r dims}
+dim(wincounts)
+dim(filtcounts)
+```
+
+The `rowData` element of the returned object will contain a logical column 
+indicating where each specific retained window overlapped one of the supplied 
+consensus peaks.
+
+```{r filt-ranges}
+rowRanges(filtcounts)
+mean(rowRanges(filtcounts)$overlaps_ref)
+```
+
+
+## Using Voom
+
+Multiple approaches are available for analysis of differential binding, and 
+given the small example dataset, only a brief example of conventional results
+will be used.
+`extraChIPs` does provide a simple coercion function to convert `logCPM` to a 
+`voom` object, which requires the relationship between **library sizes** and
+**`logCPM` values** to be intact.
+Whist this will not be discussed further here should this be a viable approach 
+for an analysis, the following code may prove helpful.
+
+```{r voom}
+v <- voomWeightsFromCPM(
+  cpm = assay(filtcounts, "logCPM"), 
+  lib.size = filtcounts$totals, 
+  isLogCPM = TRUE
+)
+```
+
+## Merging Windows
+
+After an analysis has been performed, common values contained in the output may
+be estimated signal (`logCPM`), estimated change (`logFC`) with both raw and 
+adjusted p-values.
+Given the dependency of neighbouring windows, any adjusted p-values will not be
+appropriate and a merging of overlapping windows will be performed.
+
+For our example dataset we'll add these manually, however this is just for
+demonstration purposes for the eventual merging of windows.
+
+```{r add-vals}
+rowRanges(filtcounts)$logCPM <- rowMeans(assay(filtcounts,"logCPM"))
+rowRanges(filtcounts)$logFC <- rowDiffs(assay(filtcounts,"logCPM"))[,1]
+rowRanges(filtcounts)$PValue <- 1 - pchisq(rowRanges(filtcounts)$logFC^2, 1)
+```
+
+Now we have some example values, we can merge any overlapping windows using 
+`mergeByCol()`.
+During this process, overlapping ranges are merged into a single range with
+representative values taken from one of the initial sliding windows.
+The recommended approach for retaining statistical independence between windows
+is to choose the window with the largest signal as representative of the
+entire merged window.
+
+```{r add-ol}
+res_gr <- mergeByCol(filtcounts, col = "logCPM", pval = "PValue")
+res_gr$overlaps_ref <- overlapsAny(res_gr, peaks)
+```
+
+A `GRanges` object is returned with representative values for each merged 
+window.
+The `mcol` `keyval_range` provides the original range from which the 
+representative values were taken.
+A column with adjusted p-values will also be added if `p_adj_method` is not 
+set to "none".
+
+## Mapping of Windows To Genes
+
+Once the binding characteristics of a transcription factor have been
+characterised, a common next step is to assess which genes are likely to be
+under regulatory influence.
+Whilst no definitive, single methodology exists for this process, the function
+`mapByFeature()` offers an intuitive approach, taking into account any defined
+regulatory features.
+These regulatory features may be defined by simple proximity to TSS regions, by
+histone marks, downloaded from external repositories or any other possibility.
+Whilst these features can improve the precision of mapping, even without these
+this function can still enable a useful assignment of target gene to binding 
+event.
+
+The process undertaken inside `mapByFeature()` is a sequential checking of each 
+range's association with regulatory features and the most likely target as a 
+result.
+These steps are:
+
+1. **Check for any HiC interactions**
+  + All genes which directly overlap an interaction anchor are considered part 
+  of the regulatory network for that interaction, and as such, all genes 
+  associated with both anchors are assigned to a peak which overlaps a HiC 
+  Interaction
+2. **Check for any overlaps with a promoter** 
+  + All genes regulated by that promoter are assigned as regulatory targets.
+  By default, this is by direct promoter/gene overlap (`prom2gene = 0`)
+3. **Check for any overlaps with an enhancer**
+  + Peaks which overlap an enhancer are assigned to *all* genes within the 
+  distance specified by `enh2gene` (default = 100kb)
+4. **Check for genes with no previous mappings**
+  + Peaks *with no previous mappings* are assigned to all directly overlapping 
+  genes, or the nearest gene within a specified distance 
+  (default `gr2gene` = 100kb)
+  
+As a result, if no promoters, enhancers or interactions are supplied, all genes 
+will be mapped to peaks using step 4
+
+The two essential data objects to perform simple gene assignment are 1) a set 
+of ranges representing binding events of interest, such as `res_gr` above, and 
+2) a set of ranges defining genes, as contained in the example dataset 
+`ex_genes`.
+This contains the two `mcols` *gene* and *symbol*, and we can ask for both in 
+the returned object.
+
+```{r ex-mapping1}
+data("ex_genes")
+data("ex_prom")
+mapByFeature(
+  res_gr, genes = ex_genes, prom = ex_prom, cols = c("gene", "symbol")
+)
+```
+
+For this dataset, we have an example HiC interaction, which we can now pass to 
+the mapping process.
+(This time we'll save the object)
+
+```{r ex-mapping2}
+data("ex_hic")
+res_gr_mapped <- mapByFeature(
+  res_gr, 
+  genes = ex_genes, 
+  prom = ex_prom,
+  gi = ex_hic, 
+  cols = c("gene", "symbol")
+)
+res_gr_mapped
+```
+
+The 5^th^ to 7^th^ windows are now mapped to both *LDB1* and *PPRC1*, whereas 
+previously these windows were only mapped to *LDB1*.
+
+# Visualisation of Results
+
+## Association with Features
+
+The association of windows or peaks with defined features, such as histone 
+marks or regulatory elements can be important for describing the binding
+characteristics of any given transcription factor.
+We have already defined the association of the merged windows with consensus 
+peaks identified by `macs2`.
+We can easily visualise these using `plotPie()`
+
+```{r plot-pie}
+res_gr %>% 
+  as_tibble() %>% 
+  plotPie("overlaps_ref")
+```
+
+These distribution charts can be drawn across three separate categories.
+Let's include promoters.
+
+```{r plot-dual-pie}
+res_gr$Feature <- bestOverlap(
+  res_gr, GRangesList(Promoter = ex_prom), missing = "None"
+)
+res_gr %>% 
+  as_tibble() %>% 
+  plotPie(x = "Feature", fill = "overlaps_ref") 
+```
+
+In a real world context where we're dealing with thousands of ranges and 
+multiple features, this represents a quick an easy way to asses binding 
+characteristics.
+As these are all `ggplot2` objects, they can be easily customised using
+`theme` and `scale_fill_*` capabilities.
+
+## Profile Heatmaps
+
+A very common approach to visualising the results of altered TF binding is to 
+plot *profile heatmaps* centred around the window (or peak), and extending out 
+a given number of of bases.
+The data required for this is referred to in `extraChIPs` as profile data, and
+given that extracting this from a set of `BigWigFile`s can be time consuming,
+this step is performed prior to the actual plotting, so that ranges can be added
+or excluded as desired.
+
+First we need to define a `BigWigFileList` as these are conventionally very 
+large files which shouldn't be retained in memory, but are just accessed to
+import the key regions for a particular process.
+
+```{r bwfl}
+bwfl <- system.file(
+  "extdata", "bigwig", c("ex1.bw", "ex2.bw"), package = "extraChIPs"
+) %>% 
+  BigWigFileList() %>% 
+  setNames(c("ex1", "ex2"))
+```
+
+Now we have our `BigWigFileList` we can define the profile data
+
+```{r get-profile}
+pd <- getProfileData(bwfl, res_gr)
+pd
+```
+
+This produces a `GRangesList` with a `GRanges` element for every file in the 
+`BigWigFileList`, which has the profile data stored in the final column.
+Each element of these columns is a `DataFrame` with the region broken into a 
+defined number of bins, and an average coverage value calculated.
+We can then simply plot this data by specifying this column in the function
+`plotProfileHeatmap()`, which produces a `ggplot2` object able to be 
+customised in the conventional manner.
+Here, we'll add a colour scale and `theme_bw()`
+
+```{r profile-heatmap}
+plotProfileHeatmap(pd, "profile_data") +
+  scale_fill_viridis_c() +
+  labs(fill = "CPM") +
+  theme_bw()
+```
+
+In our initial merging of sliding windows we chose our representative values to
+be from the sliding window with the highest signal.
+This may not be at the centre of the final merged window, but having retained 
+this in the `keyval_range` column, we can use this range for generation of
+the profile data, ensuring we have our profile heatmaps centred at the point
+of the highest signal.
+
+```{r centred-heatmap}
+pd <- getProfileData(bwfl, colToRanges(res_gr, "keyval_range"))
+plotProfileHeatmap(pd, "profile_data")  +
+  scale_fill_viridis_c() +
+  labs(fill = "CPM") +
+  theme_bw()
+```
+
+As we're using `ggplot2` we can also separate peaks by any of the categorical
+columns in our initial ranges, such as the `overlaps_ref` column.
+This will not only create facets along the y-axis, but the traces for each panel
+are drawn separately for each facet, and these can be simply assigned colours or 
+linetype using standard `ggplot2` syntax.
+
+```{r facet-heatmap}
+plotProfileHeatmap(
+  pd, "profile_data", facetY = "overlaps_ref", linetype = "overlaps_ref"
+)  +
+  scale_fill_viridis_c() +
+  scale_colour_manual(values = c("red", "black")) +
+  labs(fill = "CPM") +
+  theme_bw()
+```
+
+
+## Inspection of Ranges
+
+Another important step in the analysis of ChIP-Seq data is to look at the 
+binding patterns using coverage, and inspect these in reference to genes and any 
+other feature of interest.
+The function `plotHFGC()` provides a simple, standardised layout using the
+visualisation tools from `Gviz`.
+If supplied, tracks will be drawn in the order 1) HiC; 2) Features; 3) Genes, 
+and 4) Coverage.
+Whilst a simple and intuitive function to use, it also provides a great deal of 
+flexibility for advanced customisation.
+All plots require a `GRanges` object to define the plotting region, with all 
+other tracks being optional.
+
+### Displaying Genes
+
+Let's start by plotting the entire region contained in `res_gr` using the 
+minimal data possible, a `GRanges` object and some cytogenetic bands.
+
+```{r plot-empty-hfgc}
+data("grch37.cytobands")
+gr <- range(res_gr)
+plotHFGC(gr, cytobands = grch37.cytobands)
+```
+
+This is clearly of minimal interest, so let's add some transcript models.
+These are supplied here in the layout required by the defaults of the 
+`GeneRegionTrack()` function, with all exons and transcripts annotated.
+
+```{r add-genes}
+data("ex_trans")
+plotHFGC(gr, genes = ex_trans, cytobands = grch37.cytobands)
+```
+
+As these are collapsed into *meta-transcripts* by default, let's 1) add colour, 
+2) expand transcripts, and 3) zoom out a little.
+The initial range is highlighted by default, but this can also be turned off if
+preferred.
+
+```{r plot-trans}
+plotHFGC(
+  gr, 
+  genes = ex_trans, genecol = "wheat",
+  collapseTranscripts = FALSE,
+  cytobands = grch37.cytobands, zoom = 1.2
+)
+```
+
+The object `ex_trans` contains the column `status`, and we might like to use 
+this to display these genes on separate tracks.
+In this case, we would pass a `GRangesList` to the `genes` argument, and each 
+element within that list will be drawn as a separate track.
+
+- Colours should be provided as a *named* list with on element for each element
+of the genes `GRangesList`, or as a single colour
+- `collapseTranscripts` can also be provided as a matching (`*named*) list with 
+each element being applied to the respective track, or as a single value
+
+```{r split-trans}
+status_trans <- splitAsList(ex_trans, ex_trans$status)
+plotHFGC(
+  gr, 
+  genes = status_trans, 
+  genecol = list(Up = "forestgreen", Unchanged = "grey", Undetected = "grey80"),
+  collapseTranscripts = list(Up = FALSE, Unchanged = FALSE, Undetected = "meta"),
+  cytobands = grch37.cytobands, zoom = 1.2
+)
+```
+
+This idea of providing a matching *named* list is applied across the genes, 
+features and coverage tracks in the sections below.
+
+### Adding Features
+
+Another useful track to add might be some key features such as promoters.
+Unlike the genes track, features must **always** be a `GRangesList`, with each
+element defining a different type of feature.
+Given that we only have promoters, we'll still need to set this up as a 
+`GRangesList`
+
+
+```{r plot-hfgc}
+data("ex_prom")
+feat_grl <- GRangesList(Promoters = ex_prom)
+plotHFGC(
+  gr, 
+  features = feat_grl, featcol = list(Promoters = "red"),
+  genes = status_trans, 
+  genecol = list(Up = "forestgreen", Unchanged = "grey", Undetected = "grey80"),
+  collapseTranscripts = list(Up = FALSE, Unchanged = FALSE, Undetected = "meta"),
+  cytobands = grch37.cytobands, zoom = 1.2
+)
+```
+
+
+### Adding HiC Interactions
+
+Adding the HiC Interactions becomes very simple.
+All that we need is a GInteractions object.
+
+```{r plot-with-hic}
+plotHFGC(
+  gr, 
+  hic = ex_hic,
+  features = feat_grl, featcol = list(Promoters = "red"),
+  genes = status_trans, 
+  genecol = list(Up = "forestgreen", Unchanged = "grey", Undetected = "grey80"),
+  collapseTranscripts = list(Up = FALSE, Unchanged = FALSE, Undetected = "meta"),
+  cytobands = grch37.cytobands, zoom = 1.2
+)
+```
+
+If interactions extend beyond the plot range (`gr`), the plotting range will be 
+automatically extended to incorporate all interactions.
+Given these can extend to a very long distance, only interactions within 10Mb
+are included by default.
+This can be modified using the `max` argument.
+
+### Adding Peaks/Coverage
+
+The simplest approach to adding coverage is to simply provide a single 
+`BigWigFileList`.
+In this scenario, each individual file will be drawn on a separate track.
+Colours for lines are passed as a simple vector/list with names matching the
+names of the `BigWigFileList`.
+
+```{r plot-with-coverage}
+plotHFGC(
+  gr, 
+  hic = ex_hic,
+  features = feat_grl, featcol = list(Promoters = "red"),
+  genes = status_trans, 
+  coverage = bwfl, linecol = c(ex1 = "#4B0055", ex2 = "#007094"),
+  genecol = list(Up = "forestgreen", Unchanged = "grey", Undetected = "grey80"),
+  collapseTranscripts = list(Up = FALSE, Unchanged = FALSE, Undetected = "meta"),
+  cytobands = grch37.cytobands, zoom = 1.2
+)
+```
+
+Alternatively, by providing a list of `BigWigFileList` objects, each list 
+element will be drawn as a single overlaid track.
+In this way, unlimited coverage tracks can effectively be drawn.
+
+If choosing this option, colours must again be passed as a matching, *named* 
+list.
+
+```{r plot-with-tracks}
+cov_list <- list(TF1 = bwfl)
+plotHFGC(
+  gr, 
+  hic = ex_hic,
+  features = feat_grl, featcol = list(Promoters = "red"),
+  genes = status_trans, 
+  coverage = cov_list, 
+  linecol = list(TF1 = c(ex1 = "#4B0055", ex2 = "#007094")),
+  genecol = list(Up = "forestgreen", Unchanged = "grey", Undetected = "grey80"),
+  collapseTranscripts = list(Up = FALSE, Unchanged = FALSE, Undetected = "meta"),
+  cytobands = grch37.cytobands, zoom = 1.2
+)
+```
+
+### Adding Annotations To Coverage
+
+An indication of which regions are associated with increased or decreased 
+binding can also be a useful annotation to add to plots such as the above.
+Although we technically performed no statistical testing, let's consider a
+window with logFC below -1 to be showing decreased binding.
+
+Similar to the features track, where the names of `GRangesList` elements denote
+the different feature types, able to then assigned a colour, coverage annotation
+tracks follow these same rules.
+For each coverage track being annotated, a `GRangesList` object can denote the
+ranges which can be assigned different colours.
+
+```{r cov-annot}
+cov_annot <- splitAsList(res_gr, res_gr$logFC < -1) %>% 
+  setNames(c("Unchanged", "Decreased")) %>% 
+  endoapply(granges)
+```
+
+In the above, we have Unchanged and Decreased binding denoted as annotations.
+In keeping with the approach of having a matching list element for every 
+coverage track, we would need to pass this as a list which matched the 
+coverage track
+
+```{r plot-annot}
+plotHFGC(
+  gr, 
+  hic = ex_hic,
+  features = feat_grl, featcol = list(Promoters = "red"),
+  genes = status_trans, 
+  coverage = cov_list, 
+  annotation = list(TF1 = cov_annot), 
+  annotcol = c(Unchanged = "grey", Decreased = "#3333CC"),
+  linecol = list(TF1 = c(ex1 = "#4B0055", ex2 = "#007094")),
+  genecol = list(Up = "forestgreen", Unchanged = "grey", Undetected = "grey80"),
+  collapseTranscripts = "meta",
+  cytobands = grch37.cytobands, zoom = 1.2
+)
+```
+
+Plots are able to be tweaked considerably further via multiple parameters, 
+however these basic approaches cover the elemental functionality of `plotHFCG()`
+for enabling simple & reproducible plotting across regions for multiple sites
+within a larger experiment.
+
+## Comparison Across Replicates Or Experiments
+
+Summaries about eh relationship between multiple ChIP-Seq replicates, or even 
+sets of results, can form an important part of many analysis.
+In the case of comparing replicates, two options are possible using 
+`plotOverlaps()`.
+For 1-3 replicates Venn Diagrams are enabled, whilst UpSet plots are possible 
+for 2 or more replicates.
+
+```{r ex-grl}
+set.seed(100)
+grl <- GRangesList(
+  a = GRanges(c("chr1:1-10", "chr1:21-30", "chr1:31-40")),
+  b = GRanges(c("chr1:12-15", "chr1:21-30", "chr1:46-50"))
+)
+grl$a$score <- rnorm(3)
+grl$b$score <- rnorm(3)
+```
+
+During generation of these plots, ranges are reduced using 
+`GenomicRanges::reduce()` to ensure common ranges between replicates.
+
+```{r ex-plotoverlaps}
+plotOverlaps(grl)
+plotOverlaps(grl, type = "upset")
+```
+
+The gap width used for range reduction can also be passed through 
+`plotOverlaps()`, with the default being `min.gapwidth = 1L`.
+
+```{r ex-plotoverlaps-gapwidth}
+plotOverlaps(grl, type = "upset", min.gapwidth = 2)
+```
+
+In the case of UpSet plots, a common value across replicates 
+(e.g. logCPM, score) can be averaged and a boxplot added as an additional panel
+above the conventional UpSet plot.
+
+```{r ex-plotoverlaps-upset}
+plotOverlaps(grl, type = "upset", var = "score")
+```
+
+When comparing results, it may simpler to pass character vectors of genes.
+
+```{r ex-plotoverlaps-genes}
+list(
+    mapped_to_target = unlist(res_gr_mapped$symbol),
+    de_genes = c("LDB1", "FOXA1", "ESR2")
+) %>% 
+    plotOverlaps()
+```
+
+Whilst this example is simple, larger datasets with multiple elements can be 
+easily explored in this manner.
+
+# Session Info
+
+```{r session-info}
+sessionInfo()
+```
+

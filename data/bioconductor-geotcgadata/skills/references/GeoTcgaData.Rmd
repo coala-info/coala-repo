@@ -1,0 +1,308 @@
+---
+title: "GeoTcgaData"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{GeoTcgaData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+--------
+
+## Authors
+Erqiang Hu
+
+Department of Bioinformatics, School of Basic Medical Sciences, 
+Southern Medical University.
+
+
+## Introduction
+GEO and TCGA provide us with a wealth of data, such as RNA-seq, DNA Methylation,
+single nucleotide Variation and Copy number variation data. 
+It's easy to download data from TCGA using the  gdc tool or `TCGAbiolinks`, 
+and some software provides organized TCGA data, such as 
+[UCSC Xena](http://xena.ucsc.edu/) , UCSCXenaTools, and 
+[sangerbox](http://vip.sangerbox.com/), but processing these data into a format
+suitable for bioinformatics  analysis requires more work. This R package was 
+developed to handle these data.
+
+```{r setup}
+library(GeoTcgaData)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+### RNA-seq data differential expression analysis
+
+It is convenient to use TCGAbiolinks  or 
+[`GDCRNATools`](https://bioconductor.org/packages/GDCRNATools/) to download 
+and analysis Gene expression data.  `TCGAbiolinks` use `edgeR` package to do 
+differential expression analysis, while `GDCRNATools` can implement three most 
+commonly used methods: limma, edgeR , and DESeq2 to identify differentially 
+expressed  genes (DEGs).
+
+Alicia Oshlack  et al. claimed that unlike the chip data, 
+the RNA-seq data had one [bias](https://pubmed.ncbi.nlm.nih.gov/20132535/)[1]: 
+the larger the transcript length / mean read count , the more likely it was to 
+be  identified as a differential gene, 
+while there was no such trend in the 
+[chip data](https://pubmed.ncbi.nlm.nih.gov/19371405/)[2].
+
+
+ However, when we use their chip data for difference analysis
+ (using the limma package), we find that chip data has the same trend as 
+ RNA-seq data. And we also found this trend in the difference analysis results 
+ given by the data 
+ [authors](https://genome.cshlp.org/content/18/9/1509.long)[3].
+
+ 
+
+ It is worse noting that only technical replicate data, which has small gene 
+ dispersions, shows this [bias](https://pubmed.ncbi.nlm.nih.gov/28545404/)[4]. 
+ This is because in technical replicate RNA-seq data a long gene has more 
+ reads mapping to it compared to a short gene of similar expression, 
+ and most of the statistical methods used to detect differential expression
+ have stronger detection ability for genes with more reads. However, we have 
+ not deduced why there is such a bias in the current difference 
+ analysis algorithms. 
+
+Some software, such as [CQN](http://www.bioconductor.org/packages/cqn/) ,
+present a 
+[normalization algorithm](https://pubmed.ncbi.nlm.nih.gov/22285995/) [5]
+to correct systematic biases(gene length bias and 
+[GC-content bias](https://pubmed.ncbi.nlm.nih.gov/22177264/)[6]. 
+But they did not provide sufficient evidence to prove that the correction is 
+effective. We use the 
+[Marioni dataset](https://pubmed.ncbi.nlm.nih.gov/19371405/)[2] to verify the
+correction effect of CQN and find that there is still a deviation 
+after correction:
+
+
+
+[GOseq](http://bioconductor.org/packages/goseq/) [1]based on 
+Wallenius' noncentral hypergeometric distribution can effectively correct the 
+gene length deviation in enrichment analysis. However, the current RNA-seq data 
+often have no gene length bias, but only the expression amount(read count) 
+bias, GOseq may overcorrect these data, correcting originally unbiased data 
+into reverse bias.
+
+GOseq also fails to correct for expression bias, therefore, read count bias 
+correction is still a challenge for us.
+
+```{r, message=FALSE, warning=FALSE}
+# use user-defined data
+df <- matrix(rnbinom(400, mu = 4, size = 10), 25, 16)
+df <- as.data.frame(df)
+rownames(df) <- paste0("gene", 1:25)
+colnames(df) <- paste0("sample", 1:16)
+group <- sample(c("group1", "group2"), 16, replace = TRUE)
+result <- differential_RNA(counts = df, group = group,
+    filte = FALSE, method = "Wilcoxon")
+# use SummarizedExperiment object input
+df <- matrix(rnbinom(400, mu = 4, size = 10), 25, 16)
+rownames(df) <- paste0("gene", 1:25)
+colnames(df) <- paste0("sample", 1:16)
+group <- sample(c("group1", "group2"), 16, replace = TRUE)
+
+nrows <- 200; ncols <- 20
+counts <- matrix(
+    runif(nrows * ncols, 1, 1e4), nrows,
+    dimnames = list(paste0("cg",1:200),paste0("S",1:20))
+)
+
+colData <- S4Vectors::DataFrame(
+  row.names = paste0("sample", 1:16),
+  group = group
+)
+data <- SummarizedExperiment::SummarizedExperiment(
+         assays=S4Vectors::SimpleList(counts=df),
+         colData = colData)
+
+result <- differential_RNA(counts = data, groupCol = "group",
+    filte = FALSE, method = "Wilcoxon") 
+```
+
+
+### DNA Methylation data integration 
+
+use `TCGAbiolinks` data. 
+
+The codes may need to be modified if `TCGAbiolinks` updates. 
+So please read its documents.
+
+```{r, message=FALSE, warning=FALSE}
+# use user defined data
+library(ChAMP)
+cpgData <- matrix(runif(2000), nrow = 200, ncol = 10)
+rownames(cpgData) <- paste0("cpg", seq_len(200))
+colnames(cpgData) <- paste0("sample", seq_len(10))
+sampleGroup <- c(rep("group1", 5), rep("group2", 5))
+names(sampleGroup) <- colnames(cpgData)
+cpg2gene <- data.frame(cpg = rownames(cpgData), 
+    gene = rep(paste0("gene", seq_len(20)), 10))
+result <- differential_methy(cpgData, sampleGroup, 
+    cpg2gene = cpg2gene, normMethod = NULL)
+# use SummarizedExperiment object input
+library(ChAMP)
+cpgData <- matrix(runif(2000), nrow = 200, ncol = 10)
+rownames(cpgData) <- paste0("cpg", seq_len(200))
+colnames(cpgData) <- paste0("sample", seq_len(10))
+sampleGroup <- c(rep("group1", 5), rep("group2", 5))
+names(sampleGroup) <- colnames(cpgData)
+cpg2gene <- data.frame(cpg = rownames(cpgData), 
+    gene = rep(paste0("gene", seq_len(20)), 10))
+colData <- S4Vectors::DataFrame(
+    row.names = colnames(cpgData),
+    group = sampleGroup
+)
+data <- SummarizedExperiment::SummarizedExperiment(
+         assays=S4Vectors::SimpleList(counts=cpgData),
+         colData = colData)
+result <- differential_methy(cpgData = data, 
+    groupCol = "group", normMethod = NULL, 
+    cpg2gene = cpg2gene)  
+```
+**Note:** `ChAMP`has a large number of dependent packages.
+If you cannot install it  successfully, you can download each dependent package 
+separately(Source or Binary) and install it  locally.
+
+We provide two models to get methylation difference genes:  
+
+if model = "cpg", step1: calculate difference cpgs; 
+step2: calculate difference genes; 
+
+if model = "gene", step1: calculate the methylation level of genes;
+step2: calculate difference genes.
+
+We find that only model = "gene" has no deviation of CpG number. 
+
+
+### Copy number variation data integration and differential gene extraction
+
+use TCGAbiolinks to download TCGA data(Gene Level Copy Number Scores)
+
+```{r, message=FALSE, warning=FALSE}
+# use random data as example
+aa <- matrix(sample(c(0, 1, -1), 200, replace = TRUE), 25, 8)
+rownames(aa) <- paste0("gene", 1:25)
+colnames(aa) <- paste0("sample", 1:8)
+sampleGroup <- sample(c("A", "B"), ncol(aa), replace = TRUE)
+diffCnv <- differential_CNV(aa, sampleGroup)
+```
+
+
+
+### Difference analysis of single nucleotide Variation data 
+We provide SNP_QC function to do quality control of SNP data
+```{r, message=FALSE, warning=FALSE}
+snpDf <- matrix(sample(c("AA", "Aa", "aa"), 100, replace = TRUE), 10, 10)
+snpDf <- as.data.frame(snpDf)
+sampleGroup <- sample(c("A", "B"), 10, replace = TRUE)
+result <- SNP_QC(snpDf)
+```
+
+Then use differential_SNP to do differential analysis.
+```{r, message=FALSE, warning=FALSE}
+#' snpDf <- matrix(sample(c("mutation", NA), 100, replace = TRUE), 10, 10)
+#' snpDf <- as.data.frame(snpDf)
+#' sampleGroup <- sample(c("A", "B"), 10, replace = TRUE)
+#' result <- differential_SNP(snpDf, sampleGroup)
+```
+
+
+### GEO chip data processing
+The function `gene_ave` could average the expression data of different 
+ids for the same gene in the GEO chip data. For example:
+
+```{r, message=FALSE, warning=FALSE}
+aa <- c("MARCH1","MARC1","MARCH1","MARCH1","MARCH1")
+bb <- c(2.969058399,4.722410064,8.165514853,8.24243893,8.60815086)
+cc <- c(3.969058399,5.722410064,7.165514853,6.24243893,7.60815086)
+file_gene_ave <- data.frame(aa=aa,bb=bb,cc=cc)
+colnames(file_gene_ave) <- c("Gene", "GSM1629982", "GSM1629983")
+result <- gene_ave(file_gene_ave, 1)
+```
+
+Multiple genes symbols may correspond to a same chip id. The result of 
+function `repAssign` is to assign the expression of this id to each gene, 
+and function `repRemove` deletes the expression. For example:
+
+```{r}
+aa <- c("MARCH1 /// MMA","MARC1","MARCH2 /// MARCH3",
+        "MARCH3 /// MARCH4","MARCH1")
+bb <- c("2.969058399","4.722410064","8.165514853","8.24243893","8.60815086")
+cc <- c("3.969058399","5.722410064","7.165514853","6.24243893","7.60815086")
+input_file <- data.frame(aa=aa,bb=bb,cc=cc)
+repAssign_result <- repAssign(input_file," /// ")
+repRemove_result <- repRemove(input_file," /// ")
+```
+
+### Other downstream analyses
+
+1. The function `id_conversion_TCGA` could convert  ENSEMBL gene id to 
+gene Symbol in TCGA. For example:
+
+```{r, message=FALSE, warning=FALSE}
+data(profile)
+result <- id_conversion_TCGA(profile)
+```
+
+The parameter `profile` is a data.frame or matrix of gene expression 
+data in TCGA.
+
+**Note:** In previous versions(< 1.0.0) the `id_conversion` and 
+`id_conversion_TCGA` used HGNC data to convert human gene id.  
+In future versions, we will use `clusterProfiler::bitr` for ID conversion. 
+
+
+2. The function `countToFpkm` and `countToTpm` could convert 
+count data to FPKM or TPM data.
+
+```{r}
+data(gene_cov)
+lung_squ_count2 <- matrix(c(1,2,3,4,5,6,7,8,9),ncol=3)
+rownames(lung_squ_count2) <- c("DISC1","TCOF1","SPPL3")
+colnames(lung_squ_count2) <- c("sample1","sample2","sample3")
+result <- countToFpkm(lung_squ_count2, keyType = "SYMBOL", 
+    gene_cov = gene_cov)
+```
+
+```{r, message=FALSE, warning=FALSE}
+data(gene_cov)
+lung_squ_count2 <- matrix(c(0.11,0.22,0.43,0.14,0.875,
+    0.66,0.77,0.18,0.29),ncol=3)
+rownames(lung_squ_count2) <- c("DISC1","TCOF1","SPPL3")
+colnames(lung_squ_count2) <- c("sample1","sample2","sample3")
+result <- countToTpm(lung_squ_count2, keyType = "SYMBOL", 
+    gene_cov = gene_cov)
+```
+
+```{r}
+sessionInfo()
+```
+
+## References
+1. Young MD, Wakefield MJ, Smyth GK, Oshlack A (2010) Gene ontology analysis 
+for RNA-seq: accounting for selection bias. Genome Biol 11: R14.
+2. Oshlack A, Wakefield MJ (2009) Transcript length bias in RNA-seq data 
+confounds systems biology. Biol Direct 4: 14.
+3. Marioni JC, Mason CE, Mane SM, Stephens M, Gilad Y (2008) RNA-seq: an 
+assessment of technical reproducibility and comparison with gene expression 
+arrays. Genome Res 18: 1509-1517.
+4. Yoon S, Nam D (2017) Gene dispersion is the key determinant of the read 
+count bias in differential expression analysis of RNA-seq data. 
+BMC Genomics 18: 408.
+5. Hansen KD, Irizarry RA, Wu Z (2012) Removing technical variability in 
+RNA-seq data using conditional quantile normalization. 
+Biostatistics 13: 204-216.
+6. Risso D, Schwartz K, Sherlock G, Dudoit S (2011) GC-content normalization
+for RNA-Seq data. BMC Bioinformatics 12: 480.
+

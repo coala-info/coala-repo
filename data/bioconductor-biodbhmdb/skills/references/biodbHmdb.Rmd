@@ -1,0 +1,163 @@
+---
+title: "An introduction to biodbHmdb"
+author: "Pierrick Roger"
+date: "`r BiocStyle::doc_date()`"
+package: "`r BiocStyle::pkg_ver('biodbHmdb')`"
+vignette: |
+    %\VignetteIndexEntry{Introduction to the biodbHmdb package.}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+output:
+    BiocStyle::html_document:
+        toc: yes
+        toc_depth: 4
+        toc_float:
+            collapsed: false
+    BiocStyle::pdf_document: default
+bibliography: references.bib
+---
+
+# Introduction
+
+biodbHmdb is a *biodb* extension package that implements a connector to
+HMDB Metabolites.
+
+We present here the different ways to search for *HMDB* [@wishart2013_HMDB]
+entries with this package.
+
+Note that the whole *HMDB* is downloaded locally by *biodb* and stored on disk,
+since this is the only way to access *HMDB* programmatically.
+Any search on *HMDB* is hence currently run on the local machine.
+
+# Installation
+
+Install using Bioconductor:
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install('biodbHmdb')
+```
+
+# Initialization
+
+The first step in using *biodbHmdb*, is to create an instance of the biodb
+class `BiodbMain` from the main *biodb* package. This is done by calling the
+constructor of the class:
+```{r, results='hide'}
+mybiodb <- biodb::newInst()
+```
+During this step the configuration is set up, the cache system is initialized
+and extension packages are loaded.
+
+We will see at the end of this vignette that the *biodb* instance needs to be
+terminated with a call to the `terminate()` method.
+
+# Creating a connector to HMDB Metabolites
+
+In *biodb* the connection to a database is handled by a connector instance that
+you can get from the factory.
+biodbHmdb implements a connector to a remote database.
+Here is the code to instantiate a connector:
+```{r}
+conn <- mybiodb$getFactory()$createConn('hmdb.metabolites')
+```
+
+For this vignette, we will avoid the downloading of the full HMDB Metabolites
+database, and use instead an extract containing a few entries:
+```{r}
+dbExtract <- system.file("extdata", 'generated', "hmdb_extract.zip",
+    package="biodbHmdb")
+conn$setPropValSlot('urls', 'db.zip.url', dbExtract)
+```
+
+# Accessing entries
+
+To get the number of entries stored inside the database, run:
+```{r}
+conn$getNbEntries()
+```
+
+To get some of the first entry IDs (accession numbers) from the database, run:
+```{r}
+ids <- conn$getEntryIds(2)
+ids
+```
+
+To retrieve entries, use:
+```{r}
+entries <- conn$getEntry(ids)
+entries
+```
+
+To convert a list of entries into a dataframe, run:
+```{r}
+x <- mybiodb$entriesToDataframe(entries, compute=FALSE)
+x
+```
+
+# Searching by name
+
+We use here the generic *biodb* method `searchForEntries()` to search for
+entries by name:
+```{r}
+id <- conn$searchForEntries(list(name='1-Methylhistidine'), max.results=1)
+id
+```
+We limit the search result to one entry with the `max.results` field.
+
+The first parameter is the filtering criterion, expressed as a list whose
+single key (in our case) is the *biodb* field on which we want to filter.
+The value is the text we want to search for.
+See the documentation of `searchForEntries()` inside `?biodb::BiodbConn`.
+
+We could also use several strings to search for, in which case an entry will be
+matched if its field value contains all the specified strings:
+```{r}
+conn$searchForEntries(list(name=c('propanoic', 'acid')), max.results=1)
+```
+
+To look at the values of the entry, you may convert it to a data frame:
+```{r}
+entryDf <- conn$getEntry(id)$getFieldsAsDataframe(fields=c('accession', 'name'))
+```
+See table \@ref(tab:entryByNameTable) for the content of this data frame.
+
+```{r entryByNameTable, echo=FALSE, results='asis'}
+knitr::kable(entryDf, "pipe", caption="The entry returned when searching by name.")
+```
+
+# Searching inside the "description" field
+
+Searching inside the `description` field can be done in the same way as for the
+`name` field.
+Here is a search with multiple strings to match:
+```{r}
+id <- conn$searchForEntries(list(description=c('Parkinson', 'sclerosis')), max.results=1)
+id
+```
+
+Again, you can look at the values of the entry through a data frame:
+```{r}
+entryDf <- conn$getEntry(id)$getFieldsAsDataframe(fields=c('accession', 'name', 'description'))
+```
+See table \@ref(tab:entryByDescTable) for the content of this data frame.
+
+```{r entryByDescTable, echo=FALSE, results='asis'}
+knitr::kable(entryDf, "pipe", caption="The entry returned when searching by description.")
+```
+
+# Closing biodb instance
+
+When done with your *biodb* instance you have to terminate it, in order to
+ensure release of resources (file handles, database connection, etc):
+```{r}
+mybiodb$terminate()
+```
+
+# Session information
+
+```{r}
+sessionInfo()
+```
+
+# References

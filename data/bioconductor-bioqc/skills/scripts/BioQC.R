@@ -1,0 +1,106 @@
+# Code example from 'BioQC' vignette. See references/ for full tutorial.
+
+## ----setup, include=FALSE-----------------------------------------------------
+options(fig_caption=TRUE)
+library(knitr)
+opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="center")
+
+## ----lib, warning=FALSE, message=FALSE, results="hide"------------------------
+library(BioQC)
+gmtFile <- system.file("extdata/exp.tissuemark.affy.roche.symbols.gmt",
+                        package="BioQC")
+gmt <- readGmt(gmtFile)
+
+## ----load_data, warning=FALSE, message=FALSE, results="hide"------------------
+file <- system.file("extdata/kidney_example.rda", package="BioQC")
+load(file)
+print(eset)
+
+## ----run_bioqc----------------------------------------------------------------
+system.time(bioqcRes <- wmwTest(eset, gmt,
+                                 valType="p.greater"))
+
+## ----visualize_bioqc_prepare--------------------------------------------------
+bioqcResFil <- filterPmat(bioqcRes, 1E-6)
+bioqcAbsLogRes <- absLog10p(bioqcResFil)
+
+## ----heatmap, fig.width=8, fig.height=4, dev='png', fig.cap="BioQC scores (defined as abs(log10(p))) of the samples visualized in heatmap. Red and blue indicate high and low scores respectively."----
+library(RColorBrewer)
+heatmap(bioqcAbsLogRes, Colv=NA, Rowv=TRUE,
+        cexRow=0.85, scale="row",
+        col=rev(brewer.pal(7, "RdBu")),
+        labCol=1:ncol(bioqcAbsLogRes))
+
+## ----vis_bioqc, fig.width=8, fig.height=4, dev='png', fig.cap="BioQC scores (defined as abs(log10(p))) of the samples. K and P represent kidney and pancreas signature scores respectively."----
+filRes <- bioqcAbsLogRes[c("Kidney_NGS_RNASEQATLAS_0.6_3",
+                           "Pancreas_Islets_NR_0.7_3"),]
+matplot(t(filRes), pch=c("K", "P"), type="b", lty=1L,
+        ylab="BioQC score", xlab="Sample index")
+
+## ----rt_pcr_result, fig.width=8, fig.height=4, dev='png', fig.cap="Correlation between qRT-PCR results and BioQC pancreas score"----
+amylase <- eset$Amylase
+elastase <- eset$Elastase
+pancreasScore <- bioqcAbsLogRes["Pancreas_Islets_NR_0.7_3",]
+par(mfrow=c(1,2), mar=c(3,3,1,1), mgp=c(2,1,0))
+plot(amylase~pancreasScore, log="y", pch=21, bg="red",
+     xlab="BioQC pancreas score", ylab="Amylase")
+text(pancreasScore[23:25],amylase[23:25], 23:25, pos=1)
+plot(elastase~pancreasScore, log="y", pch=21, bg="red",
+     xlab="BioQC pancreas score", ylab="Elastase")
+text(pancreasScore[23:25],elastase[23:25], 23:25, pos=1)
+
+
+## ----load_limma, warning=FALSE, message=FALSE, results="hide"-----------------
+library(limma)
+
+## ----deg, fig.width=5, fig.height=5, dev='png', fig.cap="Log2 fold change (logFC) values reported by *limma* with one contaminated sample included (y-axis) or excluded (x-axis). Genes strongly affected by the contamination are indicated by red dots."----
+
+isNeph <- with(pData(eset), Strain=="FVB/NJ" &
+                 TREATMENTNAME %in% c("Nephrectomy-Losartan", "Sham-Losartan"))
+isContam <- with(pData(eset), INDIVIDUALNAME %in% c("BN7", "FNL8", "FN6"))
+esetNephContam <- eset[,isNeph]
+esetNephExclContam <- eset[, isNeph & !isContam]
+getDEG <- function(eset) {
+  group <- factor(eset$TREATMENTNAME, levels=c("Sham-Losartan","Nephrectomy-Losartan"))
+  design <- model.matrix(~group)
+  colnames(design) <- c("ShamLo", "NephLo")
+  contrast <- makeContrasts(contrasts="NephLo", levels=design)
+  exprs(eset) <- normalizeBetweenArrays(log2(exprs(eset)))
+  fit <- lmFit(eset, design=design)
+  fit <- contrasts.fit(fit, contrast)
+  fit <- eBayes(fit)
+  tt <- topTable(fit, n=nrow(eset))
+  return(tt)
+}
+
+esetNephContam.topTable <- getDEG(esetNephContam)
+esetNephExclContam.topTable <- getDEG(esetNephExclContam)
+esetFeats <- featureNames(eset)
+esetNephTbl <- data.frame(feature=esetFeats,
+                          OrigGeneSymbol=esetNephContam.topTable[esetFeats,]$OrigGeneSymbol,
+                          GeneSymbol=esetNephContam.topTable[esetFeats,]$GeneSymbol,
+                          Contam.logFC=esetNephContam.topTable[esetFeats,]$logFC,
+                          ExclContam.logFC=esetNephExclContam.topTable[esetFeats,]$logFC)
+par(mfrow=c(1,1), mar=c(3,3,1,1)+0.5, mgp=c(2,1,0))
+with(esetNephTbl, smoothScatter(Contam.logFC~ExclContam.logFC,
+                                xlab="Excluding one contaminating sample [logFC]",
+                                ylab="Including one contaminating sample [logFC]"))
+abline(0,1)
+isDiff <- with(esetNephTbl, abs(Contam.logFC-ExclContam.logFC)>=2)
+with(esetNephTbl, points(Contam.logFC[isDiff]~ExclContam.logFC[isDiff], pch=16, col="red"))
+diffTable <- esetNephTbl[isDiff,]
+diffGenes <- unique(diffTable[,"GeneSymbol"])
+pancreasSignature <- gmt[["Pancreas_Islets_NR_0.7_3"]]$genes
+diffGenesPancreas <- diffGenes %in% pancreasSignature
+diffTable$isPancreasSignature <- diffTable$GeneSymbol %in% pancreasSignature
+colnames(diffTable) <- c("Probeset", "GeneSymbol", "Human ortholog",
+                         "Log2FC", "Log2FC (excl. contam.)",
+                         "IsPancreasSignature")
+diffTable <- diffTable[order(diffTable$Log2FC, decreasing=TRUE),]
+
+## ----kable_deg, include=FALSE-------------------------------------------------
+kable(diffTable, caption="Genes that are identified as strongly changed ony if the contaminated sample is included.")
+
+## ----session_info-------------------------------------------------------------
+sessionInfo()
+

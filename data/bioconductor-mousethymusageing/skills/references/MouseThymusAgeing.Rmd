@@ -1,0 +1,170 @@
+---
+title: Overview of the MouseThymusAgeing datasets
+author: Mike Morgan
+date: "November 4, 2020"
+output:
+  BiocStyle::html_document:
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{Available datasets}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: thymus.bib
+---
+
+```{r, echo=FALSE, results="hide"}
+knitr::opts_chunk$set(error=FALSE, warning=FALSE, message=FALSE)
+```
+
+# Introduction
+
+The `r Biocpkg("MouseThymusAgeing")` package provides convenient access to the single-cell RNA sequencing (scRNA-seq) datasets from @baran-gale_ageing_2020. The study used single-cell transcriptomic profiling to resolve how the epithelial composition of the mouse thymus 
+changes with ageing. The datasets from the paper are provided as count matrices with relevant sample-level and feature-level meta-data. All data 
+are provided post-processing and QC. The raw sequencing data can be directly acquired from ArrayExpress using accessions 
+[E-MTAB-8560](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-8560/) and [E-MTAB-8737](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-8737/).
+
+# Installation
+
+The package can be installed from Bioconductor. Bioconductor packages can be accessed using the `r CRANpkg("BiocManager")` package.
+
+```{r getPackage, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("MouseThymusAgeing")
+```
+
+To use the package, load it in the typical way.
+
+```{r Load, message=FALSE}
+library(MouseThymusAgeing)
+```
+
+# Processsing Overview
+
+Detailed experimental protocols are available in [the manuscript](https://elifesciences.org/articles/56221) and analytical details are provided 
+in the accompanying [GitHub repo](https://github.com/WTSA-Homunculus/Ageing2019).
+
+This data package contains 2 single-cell data sets from the paper. The first details the initial transcriptomic profiling of defined TEC 
+populations using the plate-based SMART-seq2 chemistry. These cells were sorted from mice at 1, 4, 16, 32 and 52 weeks of age using the 
+following flow cytometry phenotypes:
+
+* mTEClo: Cd45- EpCam+ Ly51- Cd80lo MHCIIlo Dsg3-
+* mTEChi: Cd45- EpCam+ Ly51- Cd80hi MHCIIhi Dsg3-
+* cTEC: Cd45- EpCam+ Ly51+ Cd80-
+* Dsg3+ TEC: Cd45- EpCam+ Ly51- Cd80lo MHCIIlo Dsg3+
+
+In each case cells were sorted from 5 separate mice at each age into a 384 well plate containing lysis buffer, with cells from different ages 
+and days block sorted into different areas of each plate to minimise the confounding between batch effects, mouse age and sorted subpopulation. The single-cell libraries were prepared according to the [SMART-seq2 protocol](https://doi.org/10.1038/nprot.2014.006) and sequenced on an Illumina 
+NovaSeq 6000.
+
+The computational processing invovled the following steps:
+
+* Read trimming with trimmomatic, prior to alignment to the mm10 genome with STAR v2.5.3a, and read de-duplication using Picard Tools. 
+* FeatureCounts was used to count reads on each gene using the Ensembl v95 annotation.
+* Poor quality cells were removed based on excess of ERCC92 spiked-in sequences, poor sequencing coverage and low gene-detection.
+* Gene counts were normalized using size factors estimated using `computeSumFactors()` function from `r Biocpkg("scran")` [@l._lun_pooling_2016].
+* Highly variable genes were identified, and used to subset the log (+1 pseudocount) normalised expression prior to PCA.
+* Shared nearest neighbour (SNN) graph building was performed using `r CRANpkg("igraph")` and cells were clustered using the Walktrap community 
+detection algorithm [@pons_computing_2005]. Clusters were manually annotated based on inspecting the expression of marker genes.
+
+The second dataset contains cells that were profiling from TEC at 8, 20 and 36 weeks old, derived from a transgenic model system that is also able 
+to lineage trace cells that derive from those that express the thymoproteasomal gene, $\beta$-5t. When this gene is expressed it drives 
+the expression of a fluorescent reporter gene, ZsGreen (ZsG). The mouse is denoted $\mbox{3xtg}^{\beta5t}$. Each mouse (3 replicates per age) 
+first had their transgene induced using doxycycline, and 4 weeks later the TEC were collected by flow cytometry in separate ZsG+ and ZsG- groups. 
+Within each of these groups cells were FAC-sorted into mTEC (Cd45+EpCam+MHCII+Ly51-UEA1+) and cTEC (Cd45+EpCam+Ly51+UEA1+) populations. For this 
+experiment we made us of recent developments in multiplexing with hashtag oligos (HTO; cell-hashing)[@stoeckius_cell_2018]. Consequently, the 
+cells were super-loaded onto  the 10X Genomics Chromium chips before library prep and sequencing on an Illumina NovaSeq 6000.
+
+The computational processing for these data is different to above. Specifically:
+
+* Demultiplexing, read alignment, UMI deduplication and feature counting were all performed using _Cellranger_ v3.1.0.
+* Non-empty droplets were called separately using the `emptyDrops()` from the `r Biocpkg("DropletUtils")` [@lun_emptydrops_2019].
+* Cells were de-multiplexed into specific samples by assigning each cell to its best-matching hashtag oligo using the approach by 
+[@stoeckius_cell_2018] - this was also able to identify multiplet cells containing multiple HTOs.
+* Cells were filtered based on low sequencing coverage and high deviation of mitochondrial content from the population median.
+* Size factors were estimated as above using `computeSumFactors()` function from `r Biocpkg("scran")` [@l._lun_pooling_2016], and used for 
+normalization with a `log(X + 1)` transformation.
+* A SNN-graph was then built using `r CRANpkg("igraph")` as above, and cell were also clustered using Walktrap community detection algorithm 
+[@pons_computing_2005]. These clusters were annotated with concordant labels from the above data set. The exception being that many more clusters 
+were identified, and thus each cluster was suffixed with a number to uniquely identify them.
+
+# Package data format
+
+The SMART-seq2 data is stored in subsets according to the sorting day (numbered 1-5). For the droplet data, the data can be accessed according 
+to the specific multiplexed samples (6 in total). For the SMART-seq2 the exported object `SMARTseqMetadata` provides the relevant metadata
+information for each sorting day, the equivalent object `DropletMetadata` contains the relevant information for each separate sample. Specific 
+descriptions of each column can be accessed using `?SMARTseqMetadata` and `?DropletMetadata`.
+
+```{r}
+head(SMARTseqMetadata, n = 5)
+```
+
+All of the data access functions allow you to select the particular samples or sorting days that you would like to access for the relevant data 
+set. By loading only the samples or sorting days that you are interested in for your particular analysis, you will save time when downloading 
+and loading the data, and also reduce memory consumption on your machine.
+
+Droplet single-cell experiments tend to be much larger owing to the ability to encapsulate and process many more cells than in either 96- or 384-well 
+plates. The droplet scRNA-seq made use of hashtag oligonucleotides to multiplex samples, allowing for replicated experimental design without 
+breaking the bank.
+
+```{r}
+head(DropletMetadata, n = 5)
+```
+
+
+## Data access
+
+Package data are provided as `SingleCellExperiment` objects, an extension of the Bioconductor `SummarizedExperiment` object for high-throughput 
+omics experiment data. `SingleCellExperiment` object uses memory-efficient storage and sparse matrices to store the single-cell experiment data, 
+whilst allowing the layering of additional feature- and cell-wise meta-data to facilitate single-cell analyses.  This section will detail how 
+to access and interact with these objects from the `MouseThymusAgeing` package.
+
+```{r, message=FALSE}
+smart.sce <- MouseSMARTseqData(samples="day2")
+smart.sce
+```
+
+The gene counts are stored in the `assays(sce, "counts")` slot, which can be accessed using the convenience function `counts`. The gene counts are 
+stored in a memory efficient sparse matrix class from the `r CRANpkg("Matrix")` package.
+
+```{r, message=FALSE}
+head(counts(smart.sce)[, 1:10])
+```
+
+The normalisation factors per cell can be accessed using the `sizeFactors()` function.
+
+```{r}
+head(sizeFactors((smart.sce)))
+```
+
+These are used to normalise the data. To generate single-cell expression values on a log-normal scale, we can apply the `logNormCounts` from the 
+`r Biocpkg("scuttle")` package. This will add the `logcounts` entry to the `assays` slot in our object.
+
+```{r, message=FALSE}
+library(scuttle)
+smart.sce <- logNormCounts(smart.sce)
+```
+
+With these normalised counts we can perform our standard down-stream analytical tasks, such as identifying highly variable genes, projecting 
+cells into a reduced dimensional space and clustering using a nearest-neighbour graph.  You can further inspect the cell-wise meta-data attached 
+to each dataset, stored in the `colData` for each `r Biocpkg("SingleCellExperiment")` object.
+
+```{r, message=FALSE}
+head(colData(smart.sce))
+```
+
+Details of what information is stored can be found in the documentation using `?DropletMetadata` and `?SMARTseqMetada`. In each object we also 
+have the pre-computed reduced dimensions that can be accessed through the `reducedDim(<sce>, "PCA")` slot.
+
+
+
+
+
+# Session Information
+
+```{r}
+sessionInfo()
+```
+
+# References
+

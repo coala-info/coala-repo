@@ -1,0 +1,97 @@
+---
+title: "SCATEData package"
+author: 
+  - name: Zhicheng Ji, Weiqiang Zhou, Wenpin Hou, Hongkai Ji
+    affiliation: 
+      - &id1 "Deparment of Biostatistics, Bloomberg School of Public Health, Johns Hopkins University"
+package: SCATEData
+output: 
+  BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{1. SCATEData package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Overview
+
+The `SCATEData` is an extensive data resources containing the location of genomic regions bins, the mean and standard deviation of normalized bulk DNase-seq signals across ENCODE samples, and the clustering of the genomic bins based on bulk DNase-seq signals. These data have been formatted as `GenomicRanges` Bioconductor objects and hosted on Bioconductor's `ExperimentHub` platform. 
+
+`SCATEData` provides data resources for the package `SCATE` to  extract and enhance the sparse and discrete Single-cell ATAC-seq Signal. 
+
+For more details, see our paper describing the `SCATE` package:
+
+- Zhicheng Ji, Weiqiang Zhou, Wenpin Hou, Hongkai Ji, [*Single-cell ATAC-seq Signal Extraction and Enhancement with SCATE*](https://doi.org/10.1186/s13059-020-02075-3), Genome Biol 21, 161 (2020).
+
+
+
+# Datasets
+
+The package contains the following datasets, which can be used by `SCATE` to extract and enhance the sparse Single-cell ATAC-seq signals. They are grouped into datasets useful for (i) running `SCATE`, and (ii) providing examples.
+
+- Loaded by `SCATE`:
+    - hg19.rds
+    - mm10.rds
+    
+- scATAC-seq example files:
+    - GSM1596831.bam		
+    - GSM1596940.bam		
+    - GSM1597041.bam		
+    - SRR1779856.bam		
+    - SRR1779973.bam		
+    - GSM1596840.bam		
+    - GSM1596942.bam		
+    - GSM1597096.bam		
+    - SRR1779874.bam		
+    - SRR1780018.bam
+    - GSM1596874.bam		
+    - GSM1596944.bam		
+    - SRR1779746.bam		
+    - SRR1779956.bam		
+    - SRR1780020.bam
+    - GSM1596881.bam		
+    - GSM1596961.bam		
+    - SRR1779805.bam		
+    - SRR1779959.bam		
+    - SRR1780054.bam
+    - GSM1596831.bam.bai	
+    - GSM1596940.bam.bai	
+    - GSM1597041.bam.bai	
+    - SRR1779856.bam.bai	
+    - SRR1779973.bam.bai	
+    - GSM1596840.bam.bai	
+    - GSM1596942.bam.bai	
+    - GSM1597096.bam.bai	
+    - SRR1779874.bam.bai	
+    - SRR1780018.bam.bai
+    - GSM1596874.bam.bai	
+    - GSM1596944.bam.bai	
+    - SRR1779746.bam.bai	
+    - SRR1779956.bam.bai	
+    - SRR1780020.bam.bai
+    - GSM1596881.bam.bai	
+    - GSM1596961.bam.bai	
+    - SRR1779805.bam.bai	
+    - SRR1779959.bam.bai	
+    - SRR1780054.bam.bai
+
+These `.bam` files are Single-cell ATAC-seq reads and the corresponding `.bam.bai` files are for indexing and searching for the reads in these files.
+For more extensive documentation, please refer to the metadata or help files for the objects.
+
+# How to load data
+
+Please refer to [`SCATE` tutorial](https://github.com/Winnie09/SCATE) for the loading and use of the data.
+
+
+# Citation
+
+If the `SCATEData` package is useful in your work, please cite the following paper:
+- Zhicheng Ji, Weiqiang Zhou, Wenpin Hou, Hongkai Ji, [*Single-cell ATAC-seq Signal Extraction and Enhancement with SCATE*](https://doi.org/10.1186/s13059-020-02075-3), Genome Biol 21, 161 (2020).
+
+

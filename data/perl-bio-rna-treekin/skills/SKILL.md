@@ -1,0 +1,36 @@
+---
+name: perl-bio-rna-treekin
+description: This skill provides guidance for using the `Bio::RNA::Treekin` Perl library and its associated scripts to handle RNA folding kinetics data.
+homepage: https://metacpan.org/pod/Bio::RNA::Treekin
+---
+
+# perl-bio-rna-treekin
+
+## Overview
+This skill provides guidance for using the `Bio::RNA::Treekin` Perl library and its associated scripts to handle RNA folding kinetics data. Treekin typically produces large text-based output files representing the population of various RNA secondary structure states over time. This toolset allows for programmatic access to these states, filtering of low-occupancy structures, and integration with the ViennaRNA Package ecosystem.
+
+## Usage Patterns
+
+### Parsing Treekin Output
+The primary use case is reading the standard output from `treekin`. The library handles the header information (time points and state indices) and the subsequent data rows.
+
+- **Data Extraction**: Use the library to extract specific time points or to find the time at which a specific structure reaches its maximum concentration.
+- **State Mapping**: Map the numerical indices used in Treekin output back to their corresponding RNA secondary structures (dot-bracket notation) if a barrier file or structure list is provided.
+
+### Common CLI Tasks
+While often used as a library, the package provides utilities for:
+- **Filtering**: Removing trajectories of structures that never exceed a certain occupancy threshold.
+- **Reformatting**: Converting `.tkn` output into CSV or TSV formats for use in R, Python (Pandas), or Excel.
+- **Normalization**: Ensuring population sums are consistent across time steps.
+
+### Integration with ViennaRNA
+- Use this tool in conjunction with `RNAsubopt` and `barriers`.
+- Typically, the workflow is: `RNAsubopt` (generate states) -> `barriers` (calculate rates) -> `treekin` (simulate kinetics) -> `perl-bio-rna-treekin` (analyze results).
+
+## Best Practices
+- **Memory Management**: Treekin files can become extremely large for long sequences or complex landscapes. When processing, prefer stream-parsing (line-by-line) over loading the entire dataset into memory.
+- **Log-Time Scaling**: Treekin often outputs time in a logarithmic scale. Ensure your analysis scripts account for the non-linear spacing of time points when calculating rates of change.
+- **Precision**: Maintain high floating-point precision when handling very low population values (e.g., $10^{-10}$) to avoid rounding errors in thermodynamic calculations.
+
+## Reference documentation
+- [Bio::RNA::Treekin Documentation](./references/metacpan_org_pod_Bio__RNA__Treekin.md)

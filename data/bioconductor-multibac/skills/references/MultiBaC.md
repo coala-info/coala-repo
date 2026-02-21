@@ -1,0 +1,729 @@
+# MultiBaC user’s guide
+
+Manuel Ugidos1, Sonia Tarazona2 and Maria J. Nueda3
+
+1Gene Expression and RNA Metabolism Laboratory, Instituto de Biomedicina de Valencia, Consejo Superior de Investigaciones Científicas (CSIC), Valencia, Spain.
+2Multivariate Statistical Engineering Group, Department of Applied Statistics, Operations Research and Quality, Universitat Politècnica de València, Valencia, Spain
+3Department of Mathematics, Alicante Universiy, Spain
+
+#### 30 October 2025
+
+#### Package
+
+MultiBaC 1.20.0
+
+# Contents
+
+* [1 Introduction](#introduction)
+* [2 Batch effect correction on a single omic](#batch-effect-correction-on-a-single-omic)
+  + [2.1 About ARSyN](#about-arsyn)
+    - [2.1.1 ARSyN method overview](#arsyn-method-overview)
+    - [2.1.2 How to cite ARSyN](#how-to-cite-arsyn)
+  + [2.2 Example: Yeast expression data](#example-yeast-expression-data)
+  + [2.3 ARSyNbac input data](#arsynbac-input-data)
+  + [2.4 ARSyNbac correction](#arsynbac-correction)
+    - [2.4.1 ARSyNbac batch effect correction](#arsynbac-batch-effect-correction)
+    - [2.4.2 ARSyNbac noise reduction](#arsynbac-noise-reduction)
+    - [2.4.3 ARSyNbac both modalities](#arsynbac-both-modalities)
+* [3 Batch effect correction on a multiomic dataset](#batch-effect-correction-on-a-multiomic-dataset)
+  + [3.1 About MultiBaC](#about-multibac)
+    - [3.1.1 MultiBaC method overview](#multibac-method-overview)
+    - [3.1.2 How to cite MultiBaC](#how-to-cite-multibac)
+  + [3.2 Example: Yeast multiomic dataset](#example-yeast-multiomic-dataset)
+  + [3.3 MultiBaC input data](#multibac-input-data)
+  + [3.4 MultiBaC correction](#multibac-correction)
+  + [3.5 Running MultiBaC step by step](#running-multibac-step-by-step)
+    - [3.5.1 PLS model fitting](#pls-model-fitting)
+    - [3.5.2 Prediction of missing omics](#prediction-of-missing-omics)
+    - [3.5.3 Batch effect correction](#batch-effect-correction)
+* [4 Visualization of ARSyN and MultiBaC results](#visualization-of-arsyn-and-multibac-results)
+  + [4.1 Inner correlation in PLS models](#inner-correlation-in-pls-models)
+  + [4.2 Batch effect estimation plot](#batch-effect-estimation-plot)
+  + [4.3 PCA plots](#pca-plots)
+* [5 Session info](#session-info)
+* [References](#references)
+
+# 1 Introduction
+
+Simultaneously generating multiple omic measurements (e.g. transcriptomics, metabolomics,
+proteomics or epigenomics) of the same molecular system for one particular study is not always possible. As a consequence, researchers sometimes combine compatible data generated in different labs or in different batches. In such cases, data will usually be affected by an unwanted effect associated to the experimentation event (lab, batch, technology, etc.) that, especially for high throughput molecular assays, may result in important levels of noise contaminating the biological signal. This unwanted source of variation is commonly known as ``batch effect’’ and is very frequently seen as the first source of variability in the omic dataset, standing out over the experimental conditions under study.
+
+Removing batch effects becomes then necessary in order to obtain meaningful results from statistical analyses. Provided that the omic experiment has been designed in such a way that batch effects are not confounded with the effects of interest (treatment, disease, cell type, etc.), the so-called Batch Effect Correction Algorithms (BECAs) can be used to remove, or at least mitigate, systematic biases.Therefore these methods are extremely useful to combine data from different laboratories or measured at different times. One of these BECAs is the ARSyN method [[1](#ref-Nueda2012)], which relies on the ANOVA-Simultaneous Components Analysis (ASCA) framework to decompose the omic signal into experimental effects and other unwanted effects. ARSyN applies Principal Component Analysis (PCA) to estimate the systematic variation due to batch effect and then removes it from the original data.
+
+BECAs have been traditionally applied to remove batch effects from omic data of the same
+type, as for example gene expression. However, while removing batch effects from a single omic data type with an appropriate experimental design is relatively straightforward, it can become unapproachable when dealing with multiomic datasets. In the multiomic scenario, each omic modality may have been measured by a different lab or at a different moment in time, and so it is obtained within a different batch. When this is the case, the batch effect will be confounded with the ``omic type effect’’ and will be impossible to remove from the data. However, in some scenarios, the multiomic batch effect can be corrected. MultiBaC is the first BECA dealing with batch effect correction in multiomic datasets. MultiBaC can remove batch effects across different omics generated within separate batches provided that at least one common omic data type is included in all the batches.
+
+The **MultiBaC** package includes two BECAs: the ARSyN method for correcting batch effect from a single omic data type and the MultiBac method, which deals with the batch effect problem on multi-omic assays.
+
+# 2 Batch effect correction on a single omic
+
+## 2.1 About ARSyN
+
+### 2.1.1 ARSyN method overview
+
+ARSyN (ASCA Removal of Systematic Noise) is a method that combines Analysis of Variance (ANOVA) and Principal Component Analysis (PCA) for the identification of structured variation from the estimated ANOVA models for experimental and unwanted effects on an omic data matrix. ARSyN can remove undesired signals to obtain noise-filtered data for further analysis [[1](#ref-Nueda2012)]. In **MultiBaC** package, ARSyN has been adapted for filtering the noise associated to identified or unidentified batch effects. This adaptation has been called ARSyNbac.
+
+In the ARSyN method, the ANOVA model separates the signal identified with each one of the factors involved in the experimental design from the residuals. The algorithm can be applied on multi-factorial experimental designs. One of the factors in the model can be the batch each sample belongs to, if this information is known. In such case, the ANOVA model is applied to separate the batch effect from the remaining effects and residuals. The PCA analysis will hence detect the possible existence of a structured variation due to the batch effect, that is identified with the principal components explaining a given proportion of the total variation in the data, which can be set by the user.
+
+However, ARSyN can also be applied when the batch factor is not known since the PCA on the residual matrix can detect correlated structure associated to a source of variation not included in the experimental design. We alert of this signal in the residuals when the first eigenvalues of the PCA are noticeably higher than the rest, because if there is not any structure the eigenvalues will be approximately equal. In this case the selection of components is controlled by the beta argument. Components that represent more than beta times the average variability are identified as systematic noise and removed from the original data.
+
+### 2.1.2 How to cite ARSyN
+
+Nueda MJ, Ferrer A, Conesa A.(2012). [ARSyN: A method for the identification and removal of systematic noise in multifactorial time course microarray experiments](https://doi.org/10.1093/biostatistics/kxr042). *Biostatistics* 13:553-66.
+
+## 2.2 Example: Yeast expression data
+
+The yeast expression example data sets were collected from the Gene Expression Omnibus (GEO) database and from three different laboratories (batches). In all of them, the effect of glucose starvation in yeast was analyzed. Lab A is the Department of Biochemistry and Molecular Biology from Universitat de Valencia (accession number GSE11521) [[2](#ref-JE1)]; Lab B is the Department of Molecular and Cellular Biology from Harvard University (accession number GSE56622) [[5](#ref-RIBO)]; and Lab C is the Department of Biology from Johns Hopkins University (accession number GSE43747) [[6](#ref-PARCLIP)].
+
+After a proper data pre-processing for each case, a voom transformation (with limma R package) was applied when necessary. Finally TMM normalization was performed on the whole set of samples from all labs. A reduced dataset was obtained by selecting 200 omic variables from each data matrix and just 3 samples from lab A. This yeast multiomic reduced dataset is included in *MutiBaC* package to illustrate the usage of the package. The gene expression matrices can be loaded by using the *data(“multiyeast”)* instruction.
+
+The three studies used equivalent yeast strains and experimental conditions but, as shown in Figure [1](#fig:init) , the main effect on expression is due to data belonging to different labs, which are the batches in this case.
+
+![PCA plot of original gene expression data (before correction). Batches are completely separated from each other. Plot generated with MultiBaC package (see Visualization of results Section).](data:image/png;base64...)
+
+Figure 1: PCA plot of original gene expression data (before correction)
+Batches are completely separated from each other. Plot generated with MultiBaC package (see Visualization of results Section).
+
+## 2.3 ARSyNbac input data
+
+The **MultiBaC** package uses *MultiAssayExperiment* objects, a type of Bioconductor container for multiomic studies, that can be created from a list of matrices or *data.frame* objects. These matrices must have features in rows and samples in columns as shown next for one of the data matrices from the yeast example (A.rna). It is important that all data matrices share the variable space. If the number of omic variables and order are not the same, the *createMbac* function will select the common variables. Hence, it is mandatory that rows are named with the same type of identifiers.
+
+```
+data("multiyeast")
+head(A.rna)
+```
+
+```
+##         A.rna_Glu+_1 A.rna_Glu+_2 A.rna_Glu+_3 A.rna_Glu-_1 A.rna_Glu-_2
+## YOR324C     7.174264     6.976815     7.482661     8.020596     7.736636
+## YGL104C     4.239493     4.284775     3.100898     4.957403     3.673252
+## YOR142W     8.819824     8.496966     9.026971    10.374525    10.294006
+## YOR052C     6.721211     7.011932     7.557519     8.504503     8.586738
+## YGR038W     5.878483     5.894121     6.468361     7.856822     7.806318
+## YER087W     5.131089     5.295029     5.750657     2.920250     5.496136
+##         A.rna_Glu-_3
+## YOR324C     7.922425
+## YGL104C     1.587184
+## YOR142W    10.979224
+## YOR052C     8.221168
+## YGR038W     8.108436
+## YER087W     2.879254
+```
+
+A *MultiAssayExperiment* object needs to be created for each batch (lab in this example). The *mbac* new data structure is a list of *MultiAssayExperiment* objects and can be easily generated with the *createMbac* function in the package. The resulting *mbac* object will be the *ARSyNbac* input.
+
+```
+data_RNA<- createMbac (inputOmics = list(A.rna, B.rna, C.rna),
+                    batchFactor = c("A", "B", "C"),
+                    experimentalDesign = list("A" =  c("Glu+", "Glu+",
+                                                "Glu+", "Glu-",
+                                               "Glu-", "Glu-"),
+                                       "B" = c("Glu+", "Glu+",
+                                               "Glu-", "Glu-"),
+                                       "C" = c("Glu+", "Glu+",
+                                               "Glu-", "Glu-")),
+                    omicNames = "RNA")
+```
+
+These are the arguments for the *createMbac* function:
+
+* **inputOmics** A list containing all the matrices or data.frame objects to be analysed. MultiAssayExperiment objects can alternatively be provided.
+* **batchFactor** Either a vector or a factor indicating the batch were each input matrix belongs to (i.e. study, lab, time point, etc.). If NULL (default) no batch is considered and just ARSyNbac noise reduction mode could be applied.
+* **experimentalDesign** A list with as many elements as batches. Each element can be a factor, a character vector or a data.frame indicating the experimental conditions for each sample in that batch. When being a data.frame with more than one column (multi-factorial experimental designs), the different columns will be combined into a single one to be used by MultiBaC or ARSyNbac. In any case, the experimental setting must be the same for all batches. In addition, the names of the elements in this list must be the same as declared in *batches* argument. If not (or if NULL), names are forced to be the same in as in *batches* argument and in the same order.
+* **omicNames** Vector of names for each input matrix. The common omic is required to have the same name across batches.
+* **commonOmic** Name of the common omic between the batches. It must be one of the names in omicNames argument. If NULL (default), the omic name which is common to all batches is selected as commonOmic.
+
+The *mbac* R structure generated by the *createMbac* function is an S3 object that initially contains just one slot, the *ListOfBatches* object. This *mbac* structure will incorporate more elements as they are created when running *ARSyNbac* or *MultiBaC* functions. These new slots are *CorrectedData*, *PLSmodels*, *ARSyNmodels* or *InnerRelation* and are described next:
+
+* **ListOfBatches**: A list of MultiAssayExperiment objects (one per batch).
+* **CorrectedData**: Same structure than ListOfBatches but with the corrected data matrices instead of the original ones.
+* **PLSmodels**: PLS models created by MultiBaC method (one model per non-common omic data type). Only available for MultiBaC method.
+* **ARSyNmodels**: ARSyN models created either by ARSyNbac or MultiBaC functions.
+* **InnerRelation**: Table of class *data.frame* containing the inner correlation (i.e. correlation between the scores of X (t) and Y (u) matrices) for each PLS model across all components, for model validation purposes. Only available for MultiBaC method.
+* **commonOmic**: Name of the common omic between the batches.
+
+In addition to plot, other method is supplied for visualizing mbac objects: summary, which show the structure of the object.
+
+```
+summary(data_RNA)
+```
+
+```
+## [1] "Object of class mbac: It contains 3 different bacthes and 1 omic type(s)."
+```
+
+|  | RNA |
+| --- | --- |
+| A | TRUE |
+| B | TRUE |
+| C | TRUE |
+
+## 2.4 ARSyNbac correction
+
+The function to remove batch effects or unwanted noise from a single omic data matrix in the **MultiBaC** package is the *ARSyNbac* function, which allows for the following arguments:
+
+```
+ARSyNbac (mbac, batchEstimation = TRUE, filterNoise = TRUE,
+          Interaction=FALSE, Variability = 0.90, beta = 2,
+          modelName = "Model 1",
+          showplot = TRUE)
+```
+
+* **mbac**: mbac object generated by *createMbac*.
+* **batchEstimation**: Logical. If TRUE (default) the batch effect is estimated and used to correct the data. Use TRUE when the source of the batch effect is known.
+* **filterNoise^**: Logical. If TRUE (default) structured noise is removed form residuals. Use this option when there is an unknown source of batch effect in data.
+* **Interaction**: Logical. Whether to model the interaction between factors or not (FALSE by default).
+* **Variability**: From 0 to 1. Minimum percent of data variability that must be explained by each model. Used in batch correction mode. By default, 0.90.
+* **beta**: Numeric. Components that represent more than beta times the average variability are identified as systematic noise in residuals. Used in noise reduction mode. By default, 2.
+* **modelName**: Name of the model created. This name will be showed if you use the explaine\_var plot function. By default, “Model 1”.
+* **showplot**: Logical. If TRUE (default), the explained\_var plot is showed. This plot represents the number of components selected for the ARSyN model.
+
+Therefore, the *ARSyNbac* function offers three types of analysis: **ARSyNbac batch effect correction**, when the batch information is provided, **ARSyNbac noise reduction**, if the batch information is unknown, and the combination of both modes when there is a known source of batch effect and another possible unknown source of unwanted variability. In the following sections we explain how to proceed with each one of them.
+
+### 2.4.1 ARSyNbac batch effect correction
+
+When the batch is identified in the *batchFactor* argument of the *mbac* input object, its effect can be estimated and removed by choosing *batchEstimation = TRUE* (considering one source of batch effect only, *filterNoise = FALSE*). Moreover, a possible interaction between the experimental factors and the batch factor can be studied by setting *Interaction=TRUE*.
+
+```
+par(mfrow = c(1,2))
+arsyn_1 <- ARSyNbac(data_RNA, modelName = "RNA", Variability = 0.95,
+                 batchEstimation = TRUE, filterNoise = FALSE, Interaction = FALSE)
+plot(arsyn_1, typeP="pca.cor", bty = "L",
+     pch = custom_pch, cex = 3, col.per.group = custom_col,
+     legend.text = c("Color: Batch", names(data_RNA$ListOfBatches),
+                     "Fill: Cond.", unique(colData(data_RNA$ListOfBatches$A)$tfactor)),
+     args.legend = list("x" = "topright",
+                        "pch" = c(NA, 15, 15, 15,
+                                  NA, 15, 0),
+                        "col" = c(NA, "brown2", "dodgerblue", "forestgreen",
+                                  NA, 1, 1),
+                        "bty" = "n",
+                        "cex" = 1.2))
+```
+
+![Batch correction when Interaction=FALSE. Left: Explained variance plot. Default plot when showplot = TRUE. It represents the number of components (x axis) needed to explain a certain variability (y axis) of the effect of interest (batch effect). The number of components selected in the model is indicated with a triangle symbol. Gray dashed line indicates the threshold given by the Variability argument (in percentage). Right: PCA plot of corrected gene expression data when not considering the interaction batch-condition.](data:image/png;base64...)
+
+Figure 2: Batch correction when Interaction=FALSE
+Left: Explained variance plot. Default plot when showplot = TRUE. It represents the number of components (x axis) needed to explain a certain variability (y axis) of the effect of interest (batch effect). The number of components selected in the model is indicated with a triangle symbol. Gray dashed line indicates the threshold given by the Variability argument (in percentage). Right: PCA plot of corrected gene expression data when not considering the interaction batch-condition.
+
+According to the left plot in Figure [2](#fig:arsyn1), two principal components (PCs) have been selected to explain at least 95% of the total variability of batch effect. PCA of corrected data with this analysis is shown in the right panel. Now the main source of variability in the data (PC1) is given by the experimental condition, while samples are not clustered by batches anymore.
+
+```
+par(mfrow = c(1,2))
+arsyn_2 <- ARSyNbac(data_RNA, modelName = "RNA", Variability = 0.95,
+                 batchEstimation = TRUE, filterNoise = FALSE, Interaction = TRUE)
+plot(arsyn_2, typeP="pca.cor", bty = "L",
+     pch = custom_pch, cex = 3, col.per.group = custom_col,
+     legend.text = c("Color: Batch", names(data_RNA$ListOfBatches),
+                     "Fill: Cond.", unique(colData(data_RNA$ListOfBatches$A)$tfactor)),
+     args.legend = list("x" = "topright",
+                        "pch" = c(NA, 15, 15, 15,
+                                  NA, 15, 0),
+                        "col" = c(NA, "brown2", "dodgerblue", "forestgreen",
+                                  NA, 1, 1),
+                        "bty" = "n",
+                        "cex" = 1.2))
+```
+
+![Batch correction when Interaction = TRUE. Left: Explained variance plot. Default plot when showplot = TRUE. It represents the number of components (x axis) needed to explain a certain variability (y axis) of the effect of interest (batch effect). The number of components selected in the model is indicated with a triangle symbol. Gray dashed line indicates the threshold given by the Variability argument (in percentage). Right: PCA plot of corrected gene expression data considering the interaction batch-condition.](data:image/png;base64...)
+
+Figure 3: Batch correction when Interaction = TRUE
+Left: Explained variance plot. Default plot when showplot = TRUE. It represents the number of components (x axis) needed to explain a certain variability (y axis) of the effect of interest (batch effect). The number of components selected in the model is indicated with a triangle symbol. Gray dashed line indicates the threshold given by the Variability argument (in percentage). Right: PCA plot of corrected gene expression data considering the interaction batch-condition.
+
+In Figure [3](#fig:arsyn2) (right panel) all the points with negative PC1 correspond to Glu- samples, and the positive PC1 to Glu+ samples, as happened when not including the interaction in the model (Figure [2](#fig:arsyn1), right panel). However, in this second model, PC1 explains a higher percentage of the variability in the data, indicating a better batch effect correction. In general, we recomend the use of the default argument (Interaction=FALSE), as including part of the signal as batch effect could lead to a dilution of the effect of the signal of interest. However, the interaction between batch and experimental condition is sometimes strong and we should consider to include it in the model in order to get a better correction of the data.
+
+The PCA plots shown in Figures [1](#fig:init), [2](#fig:arsyn1) and [3](#fig:arsyn2) have been created by the customized *plot* function in **MultiBaC** package. More details about this function can be found at the “Visualization of ARSyN and MultiBaC results” section, where a complete description of the arguments in *plot* is given.
+
+### 2.4.2 ARSyNbac noise reduction
+
+When batch is not identified, **ARSyNbac** analyses the existence of systematic noise in the residuals by setting *batchEstimation = FALSE* and *filterNoise = TRUE*.
+
+```
+par(mfrow = c(1,2))
+arsyn_3 <- ARSyNbac(data_RNA, modelName = "RNA", beta = 0.5,
+                 batchEstimation = FALSE, filterNoise = TRUE)
+plot(arsyn_3, typeP="pca.cor", bty = "L",
+     pch = custom_pch, cex = 3, col.per.group = custom_col,
+     legend.text = c("Color: Batch", names(data_RNA$ListOfBatches),
+                     "Fill: Cond.", unique(colData(data_RNA$ListOfBatches$A)$tfactor)),
+     args.legend = list("x" = "topright",
+                        "pch" = c(NA, 15, 15, 15,
+                                  NA, 15, 0),
+                        "col" = c(NA, "brown2", "dodgerblue", "forestgreen",
+                                  NA, 1, 1),
+                        "bty" = "n",
+                        "cex" = 1.2))
+```
+
+![Noise reduction mode. Left: Explained variance plot. Default plot when showplot = TRUE. It represents the percentage of variability in the residuals (y axis) explained by a model with a given number of principal components (x axis). The number of selected components in the final model is indicated with a triangle symbol, and computed to explain beta times the average variability of the residuals. Right: PCA plot of corrected gene expression data.](data:image/png;base64...)
+
+Figure 4: Noise reduction mode
+Left: Explained variance plot. Default plot when showplot = TRUE. It represents the percentage of variability in the residuals (y axis) explained by a model with a given number of principal components (x axis). The number of selected components in the final model is indicated with a triangle symbol, and computed to explain beta times the average variability of the residuals. Right: PCA plot of corrected gene expression data.
+
+In Figure [4](#fig:arsyn3) we can see that even though the batch is considered unidentified (batchEstimation=FALSE), ARSyN has removed the noise from the data by estimating the main source of unwanted variation. In this noise reduction mode, we can modulate the magnitude of the residual noise removal with the beta parameter. Basically, components that represent more than beta times the average variability are identified as systematic noise in residuals (3 components were selected in this model). Thus a greater beta value leads to the selection of a lower number of components in the residuals.
+
+### 2.4.3 ARSyNbac both modalities
+
+When the source of the batch effect is known but there might be an extra unknown source of unwanted variability, **ARSyNbac** can perform both previous ways by setting *batchEstimation = TRUE* and *filterNoise = TRUE*. Note that this mode could also be useful if the known batch effect does not represent the main source of noise in our data.
+
+```
+par(mfrow = c(1,2))
+arsyn_4 <- ARSyNbac(data_RNA, modelName = "RNA", beta = 0.5,
+                 batchEstimation = TRUE, filterNoise = TRUE,
+                 Interaction = TRUE,
+                 Variability = 0.95)
+plot(arsyn_4, typeP="pca.cor", bty = "L",
+     pch = custom_pch, cex = 3, col.per.group = custom_col,
+     legend.text = c("Color: Batch", names(data_RNA$ListOfBatches),
+                     "Fill: Cond.", unique(colData(data_RNA$ListOfBatches$A)$tfactor)),
+     args.legend = list("x" = "topright",
+                        "pch" = c(NA, 15, 15, 15,
+                                  NA, 15, 0),
+                        "col" = c(NA, "brown2", "dodgerblue", "forestgreen",
+                                  NA, 1, 1),
+                        "bty" = "n",
+                        "cex" = 1.2))
+```
+
+![Both modes together. Left: Explained variance plot. Default plot when showplot = TRUE. It represents the percentage of variability in the residuals (y axis) explained by a model with a given number of principal components (x axis). The number of selected components in the final model is indicated with a triangle symbol, and computed to explain beta times the average variability of the residuals. Right: PCA plot of corrected gene expression data.](data:image/png;base64...)
+
+Figure 5: Both modes together
+Left: Explained variance plot. Default plot when showplot = TRUE. It represents the percentage of variability in the residuals (y axis) explained by a model with a given number of principal components (x axis). The number of selected components in the final model is indicated with a triangle symbol, and computed to explain beta times the average variability of the residuals. Right: PCA plot of corrected gene expression data.
+
+In Figure [5](#fig:arsyn4) we can see that performing both modalities together, ARSyNbac reaches its maximum PC1 variance explained (specially compared to [3](#fig:arsyn2)). In this third mode, we can modulate the magnitude of the residual noise removal with the beta parameter and the batch effect associated explained variance. In this example, as shown in [4](#fig:arsyn3), known batch effect represents the main (and almost unique) source of unwanted variatio. Thus, in other scenarios with more than one batch source, the result with this third mode might be very different form the other two previous ways of operation.
+
+# 3 Batch effect correction on a multiomic dataset
+
+## 3.1 About MultiBaC
+
+### 3.1.1 MultiBaC method overview
+
+Multiomic data integration has become a popular approach to understand how biological systems work. However, generating this kind of datasets is still costly and time consuming. Consequently, it is quite common that not all the samples or omic data types are produced at the same time or in the same lab, but in different batches. In addition, when research groups cannot produce their own multiomic datasets, they usually collect them from different public repositories and, therefore, from different studies or laboratories (again, from different batches). Thus, in both situations, batch effects need to be previously removed from such datasets for successful data integration. Methods to correct batch effects on a single data type cannot be applied to correct batch effects across omics and, hence, we developed the MultiBaC strategy, which corrects batch effects from multiomic datasets distributed across different labs or data acquisition events.
+
+However, there are some requirements for the multi-omic data set in order to remove across-omics batch effects with MultiBaC:
+
+* There must be, at least, one common omic data type in all the batches. We may have, for instance, gene expression data measurements in all the batches, and then other different omic data types in each batch. It is not necessary that the commom omic (e.g. gene expression) is measured with the same technology. We could have microarray expression data in one batch and RNA-seq data in another batch, for example.
+* The omic feature identifiers must be the same for all the common data matrices. We cannot use, for instance, Ensembl identifiers in one batch and RefSeq in another batch. It is not necessary to have the same number of omic features, e.g. genes, in all the batches. MultiBac will extract the common identifiers from all the common data type matrices to perform the analysis.
+* Within the same batch, the experimental design must be the same for all the omic in that batch, that is, the same experimental groups, with the same number of replicates obtained from the same individuals. All these samples must be in the same order in all the omic data matrices.
+
+### 3.1.2 How to cite MultiBaC
+
+Ugidos M, Tarazona S, Prats-Montalb'an JM, Ferrer A, Conesa A.(2020). [MultiBaC: A strategy to remove batch effects between different omic data types](https://doi.org/10.1177/0962280220907365). *Statistical Methods in Medical Research*.
+
+## 3.2 Example: Yeast multiomic dataset
+
+The yeast multiomic dataset comes from the same studies that the yeast expression data described in ARSyNbac section. While the three labs produced gene expression data (RNA), each of them generated a different additional omic data type. Lab A collected transcription rates (GRO, with accession number GSE1002) [[2](#ref-JE1)]. Lab B obtained translation rates (RIBO, with accession number GSE56622) [[5](#ref-RIBO)]. Finally, Lab C measured global PAR-CLIP data (PAR-CLIP, with accession number GSE43747) [[6](#ref-PARCLIP)]. Therefore, labs have one shared (RNA) and one distinct (GRO, RIBO and PAR-CLIP, respectively) data types. This distributed multiomic scenario represents the type of correction problem MultiBaC addresses. A scheme of the data structure is shown in Figure [6](#fig:design).
+
+![Scheme of the yeast example data structure.](data:image/png;base64...)
+
+Figure 6: Scheme of the yeast example data structure
+
+This yeast multiomic dataset is included in the **MutiBaC** package to illustrate the usage of the package. The six matrices can be loaded by using the *data(“multiyeast”)* instruction.
+
+## 3.3 MultiBaC input data
+
+As commented before, the **MultiBaC** package uses *MultiAssayExperiment* objects, a type of Bioconductor container for multiomic studies, that can be created from a list of matrices or *data.frame* objects. These matrices must have features in rows and samples in columns (see example in ARSyNbac section). Since *MultiBaC* computes regression models between omics from the same batch, it is important that matrices from the same batch have the same experimental design: the same number of samples and in the same order. *MultiBaC* relates the commonOmic information from the different batches as well. Thus, it is also important that *commonOmic* matrices share the variable space. In this case, if the number of omic variables and order are not the same, *MultiBaC* will take the common variables for the model. Hence, it is mandatory that rows are named with the same type of identifiers.
+
+The *mbac* object that will be the *MultiBaC* function input can be easily generated with the *createMbac* function in the package:
+
+```
+my_mbac <- createMbac (inputOmics = list(A.rna, A.gro,
+                                               B.rna, B.ribo,
+                                               C.rna, C.par),
+                    batchFactor = c("A", "A",
+                                    "B", "B",
+                                    "C", "C"),
+                    experimentalDesign = list("A" =  c("Glu+", "Glu+",
+                                                "Glu+", "Glu-",
+                                               "Glu-", "Glu-"),
+                                       "B" = c("Glu+", "Glu+",
+                                               "Glu-", "Glu-"),
+                                       "C" = c("Glu+", "Glu+",
+                                               "Glu-", "Glu-")),
+                    omicNames = c("RNA", "GRO",
+                                  "RNA", "RIBO",
+                                  "RNA", "PAR"))
+```
+
+More details about the *createMbac* function can be found in ARSyNbac input data Section. Note that we do not need to indicate which is the common omic (in commonOmic argument) since there is only one omic in common (RNA) for all the batches (labs) and the function detects it as the common omic.
+
+## 3.4 MultiBaC correction
+
+Once the *mbac* object has been created with the *createMbac* function, it is used as the input data for *MultiBaC* function (*mbac* argument), which is the wrapper function for correction of multiomic batch effects.
+
+```
+MultiBaC (mbac,
+          test.comp = NULL, scale = FALSE,
+          center = TRUE, crossval = NULL,
+          Interaction = FALSE,
+          Variability = 0.90,
+          showplot = TRUE,
+          showinfo = TRUE)
+```
+
+The arguments of the *MultiBaC* function correspond to the different steps of the MultiBaC method:
+
+* **mbac**: mbac object generated by *createMbac*.
+* **test.comp**: Maximum number of components allowed for PLS models. If NULL (default), the minimal effective rank of the matrices is used as the maximum number of components.
+* **scale**: Logical. Whether X and Y matrices must be scaled. By default, FALSE.
+* **center**: Logical. Whether X and Y matrices must be centered. By default, TRUE.
+* **crossval**: Integer: number of cross-validation segments. The number of samples (rows of ‘x’) must be at least >= crossvalI. If NULL (default), a leave-one-out crossvalidation is performed.
+* **Interaction**: Logical. Whether to model the interaction between experimental factors and bacth factor in ARSyN models. By default, FALSE.
+* **Variability**: From 0 to 1. Minimum percent of data variability that must be explained for each ARSyN model. By default, 0.90.
+* **showplot**: Logical. If TRUE (default), the Q2 and the explained variance plots are shown.
+* **showinfo**: Logical. If TRUE (default), the information about the function progress is shown.
+
+The usage of MultiBaC function on the yeast example data is shown bellow:
+
+```
+my_final_mbac <- MultiBaC (my_mbac,
+                        test.comp = NULL, scale = FALSE,
+                        center = TRUE, crossval = NULL,
+                        Interaction = TRUE,
+                        Variability = 0.9,
+                        showplot = TRUE,
+                        showinfo = TRUE)
+```
+
+```
+## Step 1: Create PLS models
+```
+
+```
+##   - Model for batch A
+```
+
+```
+##   - Model for batch B
+```
+
+```
+##   - Model for batch C
+```
+
+```
+## Step 2: Generating missing omics
+```
+
+```
+## Step 3: Batch effect correction using ARSyNbac
+```
+
+```
+## [1] "Table: Inner correlation between scores for each PLS model computed."
+##
+##
+##                    A: GRO     B: RIBO      C: PAR
+## -------------  ----------  ----------  ----------
+## Component: 1    0.9471967   0.9987790   0.9396986
+## Component: 2    0.9277123   0.9991239   0.9998556
+## Component: 3    0.9992129   1.0000000   1.0000000
+## Component: 4    0.9999867          NA          NA
+## Component: 5    1.0000000          NA          NA
+```
+
+![Q2 and explained variance plots. Q2 plot (left) shows the number ob components (x) needed to reach a certain Q2 value (y). The number of components selected for each model is indicated with a triangle symbol. Gray dashed line indicates the 0.7 Q2 threshold. Explained variance plot (right) represents the number of components (x) needed to explain a certain varibility (y) of the effect of interest (batch effect). The number of components selected for each model is indicated with a triangle symbol. Gray dashed line indicates the Variability argument in percentage.](data:image/png;base64...)
+
+Figure 7: Q2 and explained variance plots
+Q2 plot (left) shows the number ob components (x) needed to reach a certain Q2 value (y). The number of components selected for each model is indicated with a triangle symbol. Gray dashed line indicates the 0.7 Q2 threshold. Explained variance plot (right) represents the number of components (x) needed to explain a certain varibility (y) of the effect of interest (batch effect). The number of components selected for each model is indicated with a triangle symbol. Gray dashed line indicates the Variability argument in percentage.
+
+By default (*showinfo = TRUE*), the table containing the inner correlations of PLS models is displayed in propmt. Moreover, the default plots (*showplot = TRUE*) are “Q2 plot” and “Explained variance plot” (see Figure [7](#fig:main-multibac2)), which contain important information about *MultiBaC* performance. The “Q2 plot” represents the PLS model prediction capability given by the \(Q^2\) score. The x axis indicates the number of components extracted for the PLS models and the y axis the \(Q^2\) value. The performance of the MultiBaC method will be better for higher \(Q^2\) values, since a high \(Q^2\) indicates a good PLS prediction of the missing omics and hence will result in a better estimation of the batch effect. Note that, depending on the rank of the matrices, each PLS model could have a different maximum number of components. The “Explained variance plot” provides the batch effect related variability explained using the ASCA decomposition that ARSyN method provides. The x axis indicates the number of components extracted for the ASCA model and y axis reflects the percentage of explained variance. In this case, a higher explained variance leads to a better batch effect estimation. In both plots, the number of components selected for each model is indicated with a triangule symbol. In the “Q2 plot”, the selected number of components is the one that maximize the Q2 value while in the “Explained variance plot”, this number is the minimum number of components that reaches a explained variability (y axis) higher than the *Variability* argument of the function (gray dashed line).
+
+## 3.5 Running MultiBaC step by step
+
+All the different steps performed by the *MultiBaC* wrapper function can be independently computed with specific functions, as described next, from the initial *mbac* object. The MultiBaC strategy can be divided into three main steps that will be described next in detail: 1) PLS model fitting, 2) Prediction of missing omics, and 3) Batch effect correction.
+
+### 3.5.1 PLS model fitting
+
+The *genModelList* function produces the PLS models between distinct and common omic data types. It computes the optimal number of components via a crossvalidation approach.
+
+```
+my_mbac_2 <- genModelList (my_mbac, test.comp = NULL,
+                          scale = FALSE, center = TRUE,
+                          crossval = NULL,
+                          showinfo = TRUE)
+```
+
+```
+##   - Model for batch A
+```
+
+```
+##   - Model for batch B
+```
+
+```
+##   - Model for batch C
+```
+
+The arguments of the *genModelList* function are:
+
+* **mbac**: mbac type object.
+* **test.comp** Maximum number of components allowed in PLS models. If NULL (default), the minimal effective rank of the matrices is used as the maximum number of components.
+* **scale**: Logical. Whether X and Y matrices must be scaled. By default, FALSE.
+* **center**: Logical. Whether X and Y matrices must be centered. By default, TRUE.
+* **crossval** Integer indicating the number of cross-validation segments. The number of samples (rows of ‘x’) must be at least >= crossvalI. If NULL (default), a leave-one-out crossvalidation is conducted.
+* **showinfo**: A logical value indicating whether to show the information about the function progress. By default, TRUE.
+
+The output of *genModelList* is a *mbac* object with a new slot, *PLSmodels*, a list of the PLS models obtained with the *ropls* package. Each slot of the output corresponds to a batch in *ListOfBatches*. If one batch contains more than one non-common omic, the “batch” element in *genModelList* contains in turn as many elements as non-common omics in that batch, i.e. one PLS model per non-common omic.
+
+### 3.5.2 Prediction of missing omics
+
+The prediction of the initially missing omics is performed with the *genMissingOmics* function from the output of the *genModelList* function.
+
+```
+multiBatchDesign <- genMissingOmics(my_mbac_2)
+```
+
+The result after running *genMissingOmics* is a list of *MultiAssayExperiment* structures. In this case, each batch contains all the omics introduced in MultiBaC. For instance, if two batches are being studying, “A” and “B”, given that “A” contains “RNA-seq” and “GRO-seq” data and “B” contains “RNA-seq” and “Metabolomics” data, after applying *genMissingOmics* function, batch “A” will contain “RNA-seq”, “GRO-seq” and also the predicted “Metabolomics” data.
+
+### 3.5.3 Batch effect correction
+
+```
+my_finalwise_mbac <- batchCorrection(my_mbac_2,
+                                     multiBatchDesign = multiBatchDesign,
+                                     Interaction = TRUE,
+                                     Variability = 0.90)
+```
+
+As described before, ARSyN applies an ANOVA-like decomposition to the data matrix in order to estimate the batch effect and, next, a PCA is applied on each submatrix. The number of principal components for each PCA is adjusted by the *Variability* argument. The output of this function consists of two different objects: *CorrectedData* and *ARSyNmodels*. The first one has the same structure than *ListOfBatches* slot. However, in this case, all batches contain all the omics introduced in MultiBaC after correcting the batch effect on each omic data type separately. Note that we discard the predicted omic matrices and only use the corrected original matrices for further statistical analyses. The *ARSyNmodels* slot contains the ASCA decomposition models for each omic data type.
+
+# 4 Visualization of ARSyN and MultiBaC results
+
+As mentioned before, the *ARSyNbac* and *MultiBaC* outputs are *mbac* type objects. Since the *mbac* class incorporates a plotting method, the *plot function* can by applied on *mbac* objects to graphically display additional information about the performance of the methods and the data characteristics. The *plot* function for *mbac* objects accepts several additional arguments:
+
+```
+plot (x, typeP = "def",
+      col.by.batch = TRUE,
+      col.per.group = NULL,
+      comp2plot = c(1,2),
+      legend.text = NULL,
+      args.legend = NULL, ...)
+```
+
+Description of the arguments:
+
+* **x**: Object of class “mbac” returned by *MultiBaC* method.
+* **typeP**: The type of plot to be displayed. Options are: “def” (default option, “Q2 plot” and “Explained variance plot” in case of MultiBaC and “Explained variance plot” in case of ARSyNbac outputs), “inner” (inner correlation plots for each PLS model acroos the components for MultiBaC output), “pca.org” (PCA plot of original data for MultiBaC or ARSyNbac outputs), “pca.cor” (PCA plot of corrected data for MultiBaC or ARSyNbac outputs), “pca.both” (PCA plots for both original and corrected data for MultiBaC or ARSyNbac outputs), and “batch” (“Batch effect estimation” plot for all the outputs). Remember that PCA plots can only be generated when all the omics share the same variable space (e.g. gene identifiers are provided as names of variables for all data matrices).
+* **col.by.batch**: Argument for PCA plots. TRUE or FALSE. If TRUE (default), samples are colored according to the batch factor. If FALSE, samples are colored according to the experimental conditions.
+* **col.per.group**: Argument for PCA plots. Color for each group (given by batches or experimental conditions). If NULL (default), the colors are taken from a predefined pallete.
+* **comp2plot**: Argument for PCA or InnerRel plot. It indicates which components are to be plotted. The default is c(1,2), which means that, in PCA plots, component 1 is plotted in “x” axis and component 2 in “y” axis, and for InnerRel plots, the inner relation plots of components 1 and 2 are to be shown. If more components are indicated, the function will return as many plots as needed to show all the components.
+* **legend.text**: A vector of text used to construct a legend for the plot. Argument for PCA plot. If NULL (default) batch or conditions names included in the mbac object are used.
+* **args.legend**: list of additional arguments to pass to legend(); names of the list are used as argument names. Only used if legend.text is supplied.
+* **…**: Other graphical arguments.
+
+While the *plot* function can generate all the plot types described above, each plot can also be independently generated by its corresponding function: *Q2\_plot (mbac)*, *explained\_varPlot (mbac)*, *plot\_pca (mbac, typeP = c(“pca.org”, “pca.cor”, “pca.both”), col.by.batch, col.per.group, comp2plot, legend.text, args.legend)*, *batchEstPlot (mbac)*, or *inner\_relPlot (mbac, comp2plot = c(1,2))*.
+
+All these plots are useful to validate and understand *MultiBaC* or *ARSyNbac* performance. All of them can be used with a *MultiBaC* output, while those that show information related to the PLS models are not available for an *ARSyNbac* output (see *typeP* argument).
+
+In addition to “Q2 plot” and “Explained variance plot” (Figure [7](#fig:main-multibac2)), which are the default plots, and were explained in previous sections, next sections are devoted to describe the rest of plots in **MultiBaC** package.
+
+## 4.1 Inner correlation in PLS models
+
+An important aspect to be validated in MultiBaC is the inner correlation between X and Y scores in PLS models. As we indicated before, *MultiBaC* function displays by default this information as numerical output but a visual representation can also be invoked.
+
+```
+plot (my_final_mbac, typeP = "inner", comp2plot = c(1,2))
+```
+
+```
+## Hit <Return> to see next plot:
+```
+
+```
+## Inner correlation of scores. Batch: A; Model for omic: GRO
+```
+
+![Plot of inner relations of PLS components. Only results for batch 'A' are shown as example. Each panel represents the inner correlation of one component of the PCA model. Red line indicates the diagonal when the correlation is maximal (1:1).](data:image/png;base64...)
+
+Figure 8: Plot of inner relations of PLS components
+Only results for batch ‘A’ are shown as example. Each panel represents the inner correlation of one component of the PCA model. Red line indicates the diagonal when the correlation is maximal (1:1).
+
+```
+## Warning in par(initpar): graphical parameter "cin" cannot be set
+```
+
+```
+## Warning in par(initpar): graphical parameter "cra" cannot be set
+```
+
+```
+## Warning in par(initpar): graphical parameter "csi" cannot be set
+```
+
+```
+## Warning in par(initpar): graphical parameter "cxy" cannot be set
+```
+
+```
+## Warning in par(initpar): graphical parameter "din" cannot be set
+```
+
+```
+## Warning in par(initpar): graphical parameter "page" cannot be set
+```
+
+The inner correlation between scores of the PLS model that relates both omic data types in batch “A” is shown in Figure [8](#fig:inner). While we have only shown the plot for batch “A”, running *plot* (typeP = “inner”)}, the inner correlation plots for all the PLS models generated during MultiBaC performance are displayed using the tag *“Hit  to see next plot:”*, thus requiring user’s interaction to show the complete set of plots. The information about the model (batches and omics included) is shown in the R prompt too. The “inner correlation plot” is a pivotal result, since it represents the validation of the PLS model. The correlation between x score (t) and y score (u) (in every component) is suppossed to be linear, as shown in Figure [8](#fig:inner). If a non-linear correlation is observed, a transformation of data would be desirable.
+
+## 4.2 Batch effect estimation plot
+
+This plot illustrates the magnitude of the estimated batch effects. Tipically, this plot is used before *MultiBaC* or *ARSyNbac* performance since it just requires a basic *mbac* returned by *createMbac* function.
+
+```
+plot (my_final_mbac, typeP = "batch")
+```
+
+```
+## Ignoring unknown labels:
+## • size : "2"
+## • font_face : "italic"
+```
+
+![Batch effect estimation plot. Dashed lines represent theoretical batch magnitudes. Violin plots represent the distribution of batch effect coefficents observed in data.](data:image/png;base64...)
+
+Figure 9: Batch effect estimation plot
+Dashed lines represent theoretical batch magnitudes. Violin plots represent the distribution of batch effect coefficents observed in data.
+
+Theoretical batch effect magnitudes for the yeast example are displayed in Figure [9](#fig:batchest). The violin plot shows the distribution of batch effect coefficients along the variable space (genes in case of RNA-seq data). Coefficients with higher values are the one that contribute the most to the existence of a batch effect, thus when the distribution is closer to zero, the batch effect is lower. MultiBaC correction performance has been tested and validated with small and medium batch effect magnitudes while it decreases at high magnitudes. ARSyN is not so much affected by the batch effect magnitude.
+
+## 4.3 PCA plots
+
+The goodness of *ARSyNbac* or *MultiBaC* correction can be assessed with the PCA plots before and after the correction. In the case of *MultiBaC*, this plot can only be generated when all the omic data matrices share the same variable space. In our yeast example, every omic data type was obtained as gene-related information, thus matrices can be merged by variables (genes) and the PCA is feasible.
+
+An example of the usage of these PCA plots for the *ARSyNbac* output can be found in the ARSyN section. Here we illustrate how to generate and interpret them for MultiBaC correction. The PCA on the original data (Figure [10](#fig:pca-org)) and on the corrected data (Figure [11](#fig:pca-cor)) were obtained with the *plot* function by using either *“typeP = pca.org”* or *“typeP = pca.cor”*, respectively.
+
+```
+plot (my_final_mbac, typeP = "pca.org",
+      cex.axis = 1, cex.lab = 1, cex = 3, bty = "L",
+      cex.main = 1.2, pch = 19)
+```
+
+![Default PCA plot on the original data.](data:image/png;base64...)
+
+Figure 10: Default PCA plot on the original data
+
+```
+plot (my_final_mbac, typeP = "pca.cor",
+      cex.axis = 1, cex.lab = 1, cex = 3, bty = "L",
+      cex.main = 1.2, pch = 19)
+```
+
+![Default PCA plot on the corrected data.](data:image/png;base64...)
+
+Figure 11: Default PCA plot on the corrected data
+
+By default, this function takes random colors to represent each group (batches by default). However, it would be useful to display the experimental factors information too. For that, we recommend the use of custom *col.per.group* and *pch* arguments. An example is shown in Figure [12](#fig:pcaplot2), using typeP = pca.both to show both PCA plots together. We could also plot more than two components indicating the desired number with *comp2plot* argument. The user can also include a custom legend by using two arguments: *legend.text* and *args.legend*. With *legend.text* we indicate the text labels of the legend and the rest of the legend arguments are collected in *args.legend* (x, y, pch, fill, col, bty, etc). If *legend.text* is not provided to the function, *args.legend* is not considered.
+
+```
+custom_col <- c("brown2", "dodgerblue", "forestgreen")
+custom_pch <- c(19,19,19,1,1,1,15,15,15,0,0,0, # batch A
+                  19,19,1,1,17,17,2,2,  # batch B
+                  19,19,1,1,18,18,5,5)  # batch C
+
+plot(my_final_mbac, typeP = "pca.both", col.by.batch = TRUE,
+     col.per.group = custom_col, comp2plot = 1:3,
+     cex.axis = 1.3, cex.lab = 1.2, cex = 3, bty = "L",
+     cex.main = 1.7, pch = custom_pch,
+     legend.text = c("Color", names(my_final_mbac$ListOfBatches),
+                     "Shape", c("RNA", "GRO", "RIBO", "PAR"),
+                     "Fill", levels(colData(my_final_mbac$ListOfBatches$A)$tfactor)),
+     args.legend = list("x" = "topright",
+                        "pch" = c(NA, 15, 15, 15,
+                                  NA, 19, 15, 17, 18,
+                                  NA, 19, 1),
+                        "col" = c(NA, "brown2", "dodgerblue", "forestgreen",
+                                  NA, rep(1, 4),
+                                  NA, 1, 1),
+                        "bty" = "n",
+                        "cex" = 2))
+```
+
+![Customized PCA plots. Original (left panels) and Corrected (right panels) data. Upper panels show the second principal component (PC) against the first one while panels at the bottom show the third PC against the first one.](data:image/png;base64...)
+
+Figure 12: Customized PCA plots
+Original (left panels) and Corrected (right panels) data. Upper panels show the second principal component (PC) against the first one while panels at the bottom show the third PC against the first one.
+
+In this case, batch effect correction is observable in common data (RNA-seq, dots). Batch effect has been removed as common data is placed all together and after the correction, the components (especially the second and the third component) separate the common data based on the experimental condition instead of separating batches. As shown in the legend, point shape indicates the omic data type, however batch effect correction is only visible in common data.
+
+# 5 Session info
+
+Here is the output of *sessionInfo()* on the system on which this document was compiled:
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods
+## [8] base
+##
+## other attached packages:
+##  [1] ropls_1.42.0                ggplot2_4.0.0
+##  [3] MultiAssayExperiment_1.36.0 SummarizedExperiment_1.40.0
+##  [5] Biobase_2.70.0              GenomicRanges_1.62.0
+##  [7] Seqinfo_1.0.0               IRanges_2.44.0
+##  [9] S4Vectors_0.48.0            BiocGenerics_0.56.0
+## [11] generics_0.1.4              MatrixGenerics_1.22.0
+## [13] matrixStats_1.5.0           MultiBaC_1.20.0
+## [15] BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##  [1] MultiDataSet_1.38.0  gtable_0.3.6         xfun_0.53
+##  [4] bslib_0.9.0          devtools_2.4.6       remotes_2.5.0
+##  [7] lattice_0.22-7       vctrs_0.6.5          tools_4.5.1
+## [10] tibble_3.3.0         pkgconfig_2.0.3      BiocBaseUtils_1.12.0
+## [13] Matrix_1.7-4         RColorBrewer_1.1-3   S7_0.2.0
+## [16] desc_1.4.3           lifecycle_1.0.4      compiler_4.5.1
+## [19] farver_2.1.2         tinytex_0.57         statmod_1.5.1
+## [22] htmltools_0.5.8.1    usethis_3.2.1        sass_0.4.10
+## [25] yaml_2.3.10          pillar_1.11.1        jquerylib_0.1.4
+## [28] MASS_7.3-65          ellipsis_0.3.2       limma_3.66.0
+## [31] cachem_1.1.0         DelayedArray_0.36.0  magick_2.9.0
+## [34] sessioninfo_1.2.3    abind_1.4-8          pcaMethods_2.2.0
+## [37] tidyselect_1.2.1     digest_0.6.37        dplyr_1.1.4
+## [40] purrr_1.1.0          bookdown_0.45        labeling_0.4.3
+## [43] rprojroot_2.1.1      fastmap_1.2.0        grid_4.5.1
+## [46] cli_3.6.5            SparseArray_1.10.0   magrittr_2.0.4
+## [49] S4Arrays_1.10.0      dichromat_2.0-0.1    pkgbuild_1.4.8
+## [52] withr_3.0.2          scales_1.4.0         plotrix_3.8-4
+## [55] calibrate_1.7.7      rmarkdown_2.30       XVector_0.50.0
+## [58] memoise_2.0.1        evaluate_1.0.5       qqman_0.1.9
+## [61] knitr_1.50           rlang_1.1.6          Rcpp_1.1.0
+## [64] glue_1.8.0           BiocManager_1.30.26  pkgload_1.4.1
+## [67] rstudioapi_0.17.1    jsonlite_2.0.0       R6_2.6.1
+## [70] fs_1.6.6
+```
+
+# References
+
+1. Nueda MJ, Ferrer A, Conesa A. ARSyN: A method for the identification and removal of systematic noise in multifactorial time course microarray experiments. Biostatistics. 2012;13:553–66.
+
+2. Pelechano V, Pérez-Ortín JE. There is a steady-state transcriptome in exponentially growing yeast cells. Yeast. 2010;27:413–22. doi:[10.1002/yea.1768](https://doi.org/10.1002/yea.1768).
+
+3. García-Martínez J, Aranda A, Pérez-Ortín J. Genomic run-on evaluates transcription rates for all yeast genes and identifies gene regulatory mechanisms. Molecular Cell. 15:303–13. doi:[10.1016/j.molcel.2004.06.004](https://doi.org/10.1016/j.molcel.2004.06.004).
+
+4. Pelechano V, Chávez S, Pérez-Ortín JE. A complete set of nascent transcription rates for yeast genes. PloS one. 5:e15442; e15442–2. doi:[10.1371/journal.pone.0015442](https://doi.org/10.1371/journal.pone.0015442).
+
+5. Zid BM, O’Shea EK. Promoter sequences direct cytoplasmic localization and translation of mRNAs during starvation in yeast. Nature. 514:117–21. doi:[10.1038/nature13578](https://doi.org/10.1038/nature13578).
+
+6. Freeberg MA, Han T, Moresco JJ, Kong A, Yang Y-C, Lu ZJ, et al. Pervasive and dynamic protein binding sites of the mRNA transcriptome in saccharomyces cerevisiae. Genome biology. 14:R13–3. doi:[10.1186/gb-2013-14-2-r13](https://doi.org/10.1186/gb-2013-14-2-r13).

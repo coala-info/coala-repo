@@ -1,0 +1,172 @@
+---
+title: "Access GSE159526 data using Bioconductor's ExperimentHub"
+author: 
+  - name: Victor Yuan
+    affiliation:
+    - University of British Columbia, Vancouver, Canada
+    email: vyuan@bcchr.ca
+output: 
+  BiocStyle::html_document:
+    self_contained: yes
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    code_folding: show
+date: "`r doc_date()`"
+package: "`r pkg_ver('GSE159526')`"
+vignette: >
+  %\VignetteIndexEntry{Introduction to GSE159526}
+  %\VignetteEncoding{UTF-8}  
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>",
+    
+    crop = NULL 
+    #https://stat.ethz.ch/pipermail/bioc-devel/2020-April/016656.html
+)
+```
+
+
+```{r vignetteSetup, echo=FALSE, message=FALSE, warning = FALSE}
+## Track time spent on making the vignette
+startTime <- Sys.time()
+
+## Bib setup
+library("RefManageR")
+
+## Write bibliography information
+bib <- c(
+    R = citation(),
+    BiocStyle = citation("BiocStyle")[1],
+    knitr = citation("knitr")[1],
+    RefManageR = citation("RefManageR")[1],
+    rmarkdown = citation("rmarkdown")[1],
+    sessioninfo = citation("sessioninfo")[1],
+    testthat = citation("testthat")[1],
+    GSE159526 = citation("GSE159526")[1]
+)
+```
+
+# How to access GSE159526 with Bioconductor
+
+## Citing `GSE159526`
+
+We hope that `r Biocpkg("GSE159526")` will be useful for your research. Please 
+use the following information to cite the package and the overall approach. 
+Thank you!
+
+```{r "citation"}
+## Citation info
+citation("GSE159526")
+```
+
+# Quick start to using to `GSE159526`
+
+Install the R packages minfi and ExperimentHub:
+
+```{r, eval = FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+Biocmanager::install("ExperimentHub")
+BiocManager::install("minfi")
+```
+
+There are 3 objects associated with GSE159526:
+
+**EH6130** - Raw DNA methylation data, .idat files read into r with `minfi` and 
+saved as an `rgset` object.
+
+**EH6131** - Processed filtered DNA methylation data. Described in 
+`r Citep(bib[["GSE159526"]])`.
+
+**EH6132** - Sample information stored as a `tibble`/`data.frame` object.
+
+```{r "start", message=FALSE, eval=FALSE}
+library(ExperimentHub)
+
+eh <- ExperimentHub()
+query(eh, "GSE159526")
+
+# raw rgset
+library(minfi)
+GSE159526_rgset <- eh[['EH6130']] # requires minfi
+
+# normalized processed data matrix
+GSE159526_data <- eh[['EH6131']]
+
+# sample information
+GSE159526_pdat <- eh[['EH6132']]
+```
+
+# Reproducibility
+
+The `r Biocpkg("GSE159526")` package `r Citep(bib[["GSE159526"]])` was made 
+possible thanks to:
+
+* R `r Citep(bib[["R"]])`
+* `r Biocpkg("BiocStyle")` `r Citep(bib[["BiocStyle"]])`
+* `r CRANpkg("knitr")` `r Citep(bib[["knitr"]])`
+* `r CRANpkg("RefManageR")` `r Citep(bib[["RefManageR"]])`
+* `r CRANpkg("rmarkdown")` `r Citep(bib[["rmarkdown"]])`
+* `r CRANpkg("sessioninfo")` `r Citep(bib[["sessioninfo"]])`
+* `r CRANpkg("testthat")` `r Citep(bib[["testthat"]])`
+
+This package was developed using `r BiocStyle::Biocpkg("biocthis")`.
+
+Code for creating the vignette:
+
+```{r createVignette, eval=FALSE}
+## Create the vignette
+library("rmarkdown")
+system.time(render(here::here("vignettes", "GSE159526.Rmd"), 
+                   "BiocStyle::html_document"))
+
+## Extract the R code
+library("knitr")
+knit("GSE159526.Rmd", tangle = TRUE)
+```
+
+Date the vignette was generated.
+
+```{r reproduce1, echo=FALSE}
+## Date the vignette was generated
+Sys.time()
+```
+
+Wallclock time spent generating the vignette.
+
+```{r reproduce2, echo=FALSE}
+## Processing time in seconds
+totalTime <- diff(c(startTime, Sys.time()))
+round(totalTime, digits = 3)
+```
+
+`R` session information.
+
+```{r reproduce3, echo=FALSE}
+## Session info
+library("sessioninfo")
+options(width = 120)
+session_info()
+```
+
+# Bibliography
+
+This vignette was generated using `r Biocpkg("BiocStyle")` 
+`r Citep(bib[["BiocStyle"]])` with `r CRANpkg("knitr")` 
+`r Citep(bib[["knitr"]])` and `r CRANpkg("rmarkdown")` 
+`r Citep(bib[["rmarkdown"]])` running behind the scenes.
+
+Citations made with `r CRANpkg("RefManageR")` `r Citep(bib[["RefManageR"]])`.
+
+```{r vignetteBiblio, results="asis", echo=FALSE, warning=FALSE, message=FALSE}
+## Print bibliography
+PrintBibliography(bib, .opts = list(hyperlink = "to.doc", style = "html"))
+```

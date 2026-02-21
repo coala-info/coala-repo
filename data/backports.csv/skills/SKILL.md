@@ -1,0 +1,69 @@
+---
+name: backports.csv
+description: The `backports.csv` skill enables Python 2 environments to utilize the superior CSV handling logic found in Python 3.
+homepage: https://github.com/ryanhiebert/backports.csv
+---
+
+# backports.csv
+
+## Overview
+
+The `backports.csv` skill enables Python 2 environments to utilize the superior CSV handling logic found in Python 3. The primary issue with the standard Python 2 `csv` module is its lack of native Unicode support, as it expects 8-bit bytes. This backport allows you to work with Unicode strings directly, ensuring consistency when migrating code between Python versions or handling international datasets in legacy systems.
+
+## Installation
+
+Install the package via pip:
+
+```bash
+pip install backports.csv
+```
+
+## Implementation Patterns
+
+### Correct Import
+To use the backport, ensure you are importing from the `backports` namespace rather than the standard library:
+
+```python
+from backports import csv
+```
+
+### File Handling with io.open
+The most critical best practice when using `backports.csv` is pairing it with `io.open`. This mimics the Python 3 `open` behavior, allowing you to specify encodings and newline handling.
+
+**Reading CSVs:**
+Always use `newline=''` as the `csv` module performs its own universal newline handling.
+
+```python
+import io
+from backports import csv
+
+def read_unicode_csv(filepath):
+    with io.open(filepath, mode='r', newline='', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            # row contains unicode strings
+            yield row
+```
+
+**Writing CSVs:**
+Ensure the file is opened in write mode with the appropriate encoding.
+
+```python
+import io
+from backports import csv
+
+def write_unicode_csv(filepath, data):
+    with io.open(filepath, mode='w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        for row in data:
+            writer.writerow(row)
+```
+
+## Expert Tips
+
+*   **Binary Objects:** If you are forced to work with a binary file-like object instead of a file path, wrap the object in `io.TextIOWrapper` to provide the text interface the module expects.
+*   **DictReader/DictWriter:** The backport includes the full Python 3 API, including `csv.DictReader` and `csv.DictWriter`, which are highly recommended for readability when headers are present.
+*   **Dialect Safety:** It is safe to specify `newline=''` in the `open` call; the `backports.csv` module is designed to handle the line endings internally to prevent double-spacing issues on Windows.
+
+## Reference documentation
+- [backports.csv: Backport of Python 3's csv module](./references/github_com_ryanhiebert_backports.csv.md)

@@ -1,0 +1,70 @@
+---
+name: hifive
+description: HiFive is a high-performance Python library and toolset designed for the end-to-end analysis of HiC and 5C datasets.
+homepage: https://github.com/bxlab/hifive
+---
+
+# hifive
+
+## Overview
+
+HiFive is a high-performance Python library and toolset designed for the end-to-end analysis of HiC and 5C datasets. It transforms raw mapped reads into normalized interaction matrices using HDF5 dictionaries to minimize memory overhead and storage requirements. The tool supports sophisticated normalization algorithms and provides built-in functionality for binning, plotting, and quality control.
+
+## Installation and Setup
+
+HiFive is available via Bioconda and pip. Note that while older versions were Python 2.7 dependent, recent updates have introduced Python 3 support.
+
+```bash
+# Installation via Conda (Recommended)
+conda install -c bioconda hifive
+
+# Installation via Pip
+pip install hifive
+```
+
+## Core Workflow and CLI Patterns
+
+The HiFive workflow typically follows a sequential path: Data Preparation -> Project Creation -> Normalization -> Analysis/Visualization.
+
+### 1. Data Preparation
+Before analysis, you must define the genomic partitions (fragments for 5C or fragment-ends/fends for HiC).
+
+*   **HiC Fends**: Generate a fend file from a genome fasta or restriction site list.
+*   **5C Fragments**: Generate a fragment file from a BED file of primer/probe locations.
+
+### 2. Project Management
+Create a project object that links your data to the genomic partitions.
+
+*   **hic-project**: Used to initialize a HiC project.
+    *   Commonly involves specifying the fend file and the mapped data (BAM/MAT).
+    *   Example: `hifive hic-project [options] <fend_file> <data_file>`
+*   **fivec-project**: Used for 5C data initialization at the fragment level.
+
+### 3. Normalization
+HiFive supports several normalization strategies, including probability-based and matrix-balancing approaches.
+
+*   **HiC Normalization**: Typically performed at the fragment-end level to account for restriction site biases.
+*   **5C Normalization**: Performed at the fragment level.
+
+### 4. Quality Control with QuASAR
+QuASAR is a key feature of HiFive used to estimate the quality and reproducibility of HiC libraries without requiring replicates.
+
+*   **quasar-qc**: Run this to generate quality scores for your HiC data.
+*   **quasar-replicate**: Compare two different libraries to assess reproducibility.
+
+### 5. Visualization and Export
+*   **hic-mrheatmap**: Generates multi-resolution heatmaps from normalized HiC projects.
+*   **Export formats**: Supports outputting heatmaps as text, `.npz` (Numpy), or image files.
+
+## Expert Tips
+
+*   **Parallelization**: If `mpi4py` is installed and MPI is configured on your system, HiFive can parallelize HiC normalization and heatmap generation, significantly reducing processing time for large genomes.
+*   **Memory Efficiency**: Because HiFive uses HDF5, you can process datasets that are larger than your available RAM. Ensure your environment has sufficient disk space for these intermediate `.h5` files.
+*   **Data Formats**: While BAM is standard, HiFive's ability to handle raw text formats and MAT files makes it compatible with various upstream mapping pipelines.
+*   **Troubleshooting Filtering**: If the `hic-project` step filters out too many fends, verify your restriction enzyme site file matches the genome version used for mapping.
+
+## Reference documentation
+- [hifive - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_hifive_overview.md)
+- [GitHub - bxlab/hifive: Tools for handling HiC and 5C data](./references/github_com_bxlab_hifive.md)
+- [Commits · bxlab/hifive · GitHub](./references/github_com_bxlab_hifive_commits_master.md)
+- [Issues · bxlab/hifive · GitHub](./references/github_com_bxlab_hifive_issues.md)

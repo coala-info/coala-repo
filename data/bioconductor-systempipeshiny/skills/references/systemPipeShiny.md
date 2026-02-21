@@ -1,0 +1,739 @@
+Code
+
+* Show All Code
+* Hide All Code
+
+# systemPipeShiny
+
+Author: Le Zhang, Daniela Cassol, Ponmathi Ramasamy, Jianhai Zhang, Gordon Mosher and Thomas Girke
+
+#### Last update: 30 October, 2025
+
+![](data:image/png;base64...)
+
+# 1 Introduction
+
+**systemPipeShiny**
+(SPS) extends the widely used [systemPipeR](https://bioconductor.org/packages/systemPipeR/)
+(SPR) workflow
+environment with a versatile graphical user interface provided by a [Shiny
+App](https://shiny.rstudio.com). This allows non-R users, such as
+experimentalists, to run many systemPipeR’s workflow designs, control, and
+visualization functionalities interactively without requiring knowledge of R.
+Most importantly, `SPS` has been designed as a general purpose framework for
+interacting with other R packages in an intuitive manner. Like most Shiny Apps,
+SPS can be used on both local computers as well as centralized server-based
+deployments that can be accessed remotely as a public web service for using
+SPR’s functionalities with community and/or private data. The framework can
+integrate many core packages from the R/Bioconductor ecosystem. Examples of
+SPS’ current functionalities include: (a) interactive creation of experimental
+designs and metadata using an easy to use tabular editor or file uploader; (b)
+visualization of workflow topologies combined with auto-generation of R
+Markdown preview for interactively designed workflows; (c) access to a wide
+range of data processing routines; (d) and an extendable set of visualization
+functionalities. Complex visual results can be managed on a ‘Canvas Workbench’
+allowing users to organize and to compare plots in an efficient manner combined
+with a session snapshot feature to continue work at a later time. The present
+suite of pre-configured visualization examples include different methods to
+plot a count table. The modular design of
+SPR makes it easy to design custom functions without any knowledge of Shiny,
+as well as extending the environment in the future with contributions from
+the community.
+
+This vignette only includes the basics of SPS. For **full documentations** of SPS,
+visit our website at: <https://systempipe.org/sps>.
+
+# 2 Demos
+
+SPS has provided a variety of options to change how it work. Here are some examples. At the time of writing, there is an interactive tutorial (guide) embedded in the demos
+that users can access from the upper-right corner. The tutorial introduces
+major functionalities of SPS.
+
+| Type and link | option changed | notes |
+| --- | --- | --- |
+| [Default full installation](https://tgirke.shinyapps.io/systemPipeShiny/) | [See installation](#installation) | full app, may take longer (~15s) to load |
+| [Minimum installation](https://tgirke.shinyapps.io/systemPipeShiny_min/) | [See installation](#installation) | no modules installed |
+| [Login enabled](https://tgirke.shinyapps.io/systemPipeShiny_loading/) | `login_screen = TRUE; login_theme = "empty"` | no modules installed |
+| [Login and login themes](https://tgirke.shinyapps.io/systemPipeShiny_loading_theme/) | `login_screen = TRUE; login_theme = "random"` | no modules installed |
+| [App admin page](https://tgirke.shinyapps.io/systemPipeShiny_loading/?admin) | `admin_page = TRUE` | use the link or simply add “?admin” to the end of URL of any demos |
+
+For the login required demos, the app account name is **“user”** password **“user”**.
+
+For the admin login, account name **“admin”**, password **“admin”**.
+
+**Please DO NOT delete or change password when you are trying the admin features.**
+Although *shinyapps.io* will reset the app once a while, this will affect other people
+who are viewing the demo simultaneously.
+
+# 3 Installation
+
+### 3.0.1 Full
+
+```
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("systemPipeShiny", dependencies=TRUE)
+```
+
+This will install **all** required packages including suggested packages that
+are required by the core modules. Be aware, it will take quite some time if you
+are installing on Linux where only source installation is available. Windows and Mac
+binary installations will be much faster.
+
+### 3.0.2 Minimum
+
+To install the package, please use the `BiocManager::install` command:
+
+```
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("systemPipeShiny")
+```
+
+By the minimum installation, all the 3 core modules are **not** installed. You
+can still start the app, and when you start the app and click on these modules,
+it will tell to enable these modules, what packages to install and waht
+command you need to run.
+Just follow the instructions. Install as you need.
+
+### 3.0.3 Most recent
+
+To obtain the most recent updates immediately, one can install it directly from
+[GitHub](https://github.com/systemPipeR/systemPipeShiny) as follow:
+
+```
+if (!requireNamespace("remotes", quietly=TRUE))
+    install.packages("remotes")
+remotes::install("systemPipeR/systemPipeShiny", dependencies=TRUE)
+```
+
+Similarly, `remotes::install("systemPipeR/systemPipeShiny")` for the minimum develop
+version.
+
+### 3.0.4 Linux
+
+If you are on Linux, you may also need the following libraries **before installing SPS**.
+Different distributions
+may have different commands, but the following commands are examples for Ubuntu:
+
+```
+sudo apt-get install -y libicu-dev
+sudo apt-get install -y pandoc
+sudo apt-get install -y zlib1g-dev
+sudo apt-get install -y libcurl4-openssl-dev
+sudo apt-get install -y libssl-dev
+sudo apt-get install -y make
+```
+
+# 4 Main functionalities
+
+Currently, `SPS` includes 5 main functional categories (*Fig 1*):
+
+1. Pre-defined modules include (open-box ready):
+   1. A workbench for designing and configuring data analysis workflows,
+   2. Downstream analysis and visualization tools for RNA-Seq, and
+   3. A space to make quick ggplots.
+2. A section with user custom tabs: users define their own SPS tabs.
+3. An image editing tab “Canvas” which allows users to edit plots made from
+   the previous two categories.
+4. Login / admin feature: deploy-ready app security and management toolkits.
+5. Deep customization: user defined app tabs, looking, notification, tutorials,
+   and more.
+
+Besides, SPS provides many functions to extend the default Shiny development, like
+more UI components, server functions and useful general R ulitlieslike error catching,
+logging, and more. These functionalitlies are distributed as
+SPS supporting packages: [spsComps](https://github.com/lz100/spsComps),
+[drawer](https://github.com/lz100/drawer), and [spsUtil](https://github.com/lz100/spsUtil).
+
+![](data:image/png;base64...)
+
+**Figure 1.** Design of `systemPipeShiny.`
+
+The framework provides an
+interactive web interface for workflow management and data visualization.
+
+Within the functional categories, `SPS` functions are modularized in
+sub-components, here referred to as **SPS tabs** that are similar to
+menu tabs in other GUI applications that organize related and inter-connected
+functionalies into groups. On the backend, **SPS tabs** are based on [Shiny modules](https://shiny.rstudio.com/articles/modules.html),
+that are stored in separate files. This modular structure is highly extensible
+and greatly simplifies the design of new `SPS` tabs by both users and/or developers.
+Details about extending existing tabs and designing new ones are provided in
+[advanced sections on our website](https://systempipe.org/sps/).
+
+# 5 SPS example usage
+
+The following instructions go through use each module step by step.
+
+This vignette is the simplified version of instruactions. Due to package size limit,
+we cannot write the full instructions here. We **highly recommend** you to read the full
+details on our website: <https://systempipe.org/sps/> for instructions,
+animations, videos, and advanced sections.
+
+## 5.1 Load package
+
+Load the `systemPipeShiny` package in your R session.
+
+```
+library(systemPipeShiny)
+```
+
+## 5.2 Initialize `SPS` project
+
+Before launching the `SPS` application, a project environment needs to be created with the
+following command.
+
+```
+spsInit()
+```
+
+For this toy example, the project directory structure is written to a temporary
+directory on a user’s system. For a real project, it should be written to a
+defined and user controlled location on a system rather than a temporary
+directory.
+
+```
+sps_tmp_dir <- tempdir()
+spsInit(app_path = sps_tmp_dir, change_wd = FALSE, project_name = "SPSProject")
+## [SPS-INFO] 2025-10-30 02:52:12.556846 Start to create a new SPS project
+## [SPS-INFO] 2025-10-30 02:52:12.55917 Create project under /tmp/RtmpffIHfg/SPSProject
+## [SPS-INFO] 2025-10-30 02:52:12.560604 Now copy files
+## [SPS-INFO] 2025-10-30 02:52:12.576728 Create SPS database
+## [SPS-INFO] 2025-10-30 02:52:12.58145 Created SPS database method container
+## [SPS-INFO] 2025-10-30 02:52:12.613867 Creating SPS db...
+## [SPS-DANGER] 2025-10-30 02:52:12.891566 Done, Db created at '/tmp/RtmpffIHfg/SPSProject/config/sps.db'. DO NOT share this file with others or upload to open access domains.
+## [SPS-INFO] 2025-10-30 02:52:12.897049 Key md5 46dbecf5526ed89db8268e6b94a3ea78000b7cbf3b3603f557e490d162b49ba8
+## [SPS-INFO] 2025-10-30 02:52:12.8982 SPS project setup done!
+sps_dir <- file.path(sps_tmp_dir, "SPSProject")
+```
+
+### 5.2.1 SPS project structure
+
+The file and directory structure of an SPS project is organized as follows.
+
+```
+SPS_xx/
+├── server.R               |
+├── global.R               | Most important server, UI and global files, unless special needs, `global.R` is the only file you need to edit manually
+├── ui.R                   |
+├── deploy.R               | Deploy helper file
+├── config                 | Important app config files. Do not edit them if you don't know
+│   ├── sps.db             | SPS database
+│   ├── sps_options.yaml   | SPS default option list
+│   └── tabs.csv           | SPS tab information
+├── data                   | App example data files
+│   ├── xx.csv
+├── R                      | All SPS additional tab files and helper R function files
+│   ├── tab_xx.R
+├── README.md
+├── results                | Not in use for this current version, you can store some data been generated from the app
+│   └── README.md
+└── www                    | Internet resources
+    ├── about              | About tab information
+    │   └── xx.md
+    ├── css                | CSS files
+    │   └── sps.css
+    ├── img                | App image resources
+    │   └── xx.png
+    ├── js                 | Javascripts
+    │   └── xx.js
+    ├── loading_themes     | Loading screen files
+    │   └── xx.html
+    └── plot_list          | Image files for plot gallery
+        └── plot_xx.jpg
+```
+
+## 5.3 Launch `SPS`
+
+By default, the working directory will be set inside the project folder automatically.
+To launch the `SPS` Shiny application, one only needs to execute the following command.
+
+```
+shiny::runApp()
+```
+
+After the SPS app has been launched, clicking the “Continue to app” button
+on the welcome screen will open the main dashboard (Fig.2).
+
+![](data:image/jpeg;base64...)
+
+**Figure 2:** Snapshot of SPS’ UI.
+
+1. Welcome screen.
+2. Module tabs.
+3. User defined custom tabs.
+4. The Canvas tab.
+5. All SPS tabs has this description on top. It is highly recommend to click here
+   to expand and read the full the description for the first time.
+
+Alternatively, when using RStudio one can click the ![](data:image/png;base64...)`Run App` button in the top right corner.
+
+In addition, in Rstudio the *global.R* file will be automatically
+opened when the `SPS` project is created. Custom changes can be made inside this file
+before the app launches. The [advanced section](#extend-sps) explains how
+to change and create new custom tabs.
+
+## 5.4 Workflow management
+
+The workflow management module in `SPS` allows one to modify or create the
+configuration files required for running data analysis workflows in
+[systemPipeR](https://systempipe.org/docs/systemPipeR/) (SPR). This includes
+three types of important files: a sample metadata (targets) file, a
+workflow file (in R Markdown format) defining the workflow steps, and workflow running
+files in [Common Workflow Language (CWL)](https://www.commonwl.org/) format. In SPS, one can easily create
+these files under the “Workflow Management” module, located in navigation bar
+on the left of the dashboard (Fig2 - 2).
+
+The current version of `SPS` allows to:
+
+1. create a workflow environment;
+2. create and/or check the format of targets / workflow / CWL files;
+3. download the prepared workflow files to run elsewhere, like a cluster;
+4. directly execute the workflow from SPS.
+
+### 5.4.1 1. setup a workflow
+
+![](data:image/jpeg;base64...)
+
+**Figure 3. A.** Workflow Management - Targets File
+
+1. In the workflow module, read the instructions and choose step 1. Step 1 should be
+   automatically opened for you on start.
+2. Choose a folder where you want to create the workflow environment.
+3. Choose a workflow template. These are SPR workflows and mainly are next-generation
+   sequencing workflows.
+4. Click “Gen workflow” to create the workflow project.
+5. You should see a pop-up saying about the project path and other information.
+   Clicking the pop-up will jump you to the step 2. The status tracker and banner for
+   step 1 should all turn green.
+
+### 5.4.2 2. Prepare a target file
+
+The targets file defines all input file paths and other sample information of
+analysis workflows. To better undertand the structure of this file, one can
+consult the [“Structure of targets
+file”](https://systempipe.org/docs/systemPipeR/#structure-of-targets-file)
+section in the SPR vignette. Essentially, this is the tabular file representation
+of the `colData` slot in an `SummarizedExperiment` object which stores sample
+IDs and other meta information.
+
+The following step-by-step instructions explain how to create and/or modify targets
+files using RNA-Seq as an example (Fig.3 A):
+
+1. Your project targets file is loaded for you, but you can choose to upload a different one.
+2. You can edit, right click to add/remove rows/columns (The first row is treated as column names).
+3. SPR target file includes a header block, that can also be edited in the SPS app. Each headers needs to start with a “#”. Header is only useful for RNA-Seq workflow in current SPR. You can define sample comparison groups
+   here. Leave it as default for other projects.
+4. The section on the left provides sample statistics and information whether files exist inside the workflow project’s `data` directory. Choose any column you want from the dropdown to check and watch the statistics bar change in this section.
+5. statistic status bar.
+6. Clicking on “Add to task” can help you to check if your target file has any formatting problem. You should see a green success pop-up if everything is right. Now your target file is ready and you can click “save” to download it and later use in a SPR project.
+
+![](data:image/jpeg;base64...)
+
+**Figure 3. A.** Workflow Management - Targets File
+
+### 5.4.3 3. Prepare a workflow object
+
+In SPR, workflows are defined in Rmarkdown files, you can read details and obtain them [here](https://systempipe.org/sp/spr/templates/).
+
+Now let us follow the order below to see how SPS helps you to prepare a workflow file for a RNAseq project (Fig.3 B):
+
+1. The left panal is the workflow designer. All steps from the template from your
+   choosen workflow will be displayed here. The arrows indicates the execution order
+   of the entire workflow.
+2. All the steps are draggable. Drag and place steps to a different place to change the
+   order. Note: if you change the order, it may break the dependency. SPS will check
+   this for you. After changing orders, steps marked in pink mean these steps are
+   broken. You need to fix the dependency before you can save it.
+3. To config a step, such as, changing name, fixing dependency. Click the
+   button next to each step, a modal will show up and you can make changes there.
+4. To add a step, click the  button. There, you will have
+   more options to choose which will be explained in the next figure.
+5. History is enabled in this designer, you can undo
+   or redo anytime you want.
+   Current SPS stores max 100 steps of history for you.
+6. To delete a step, simply drag it to the trash can.
+7. After you are done with all edits, click here to save the workflow so we can
+   run or download it in the next major step.
+8. On the right side is the workflow dependency plot. This plot shows how each
+   step is connected and the **expected** execution order. It does not mean the
+   the workflow will be run in the same order. The order is determined by the order
+   you have in the left-side designer.
+9. Enlarge the left or right panel. If you have a small monitor screen, this can help.
+
+![](data:image/png;base64...)
+
+**Figure 3. B.1** Workflow Management - Workflow Designer
+
+#### 5.4.3.1 R step and sysArgs step
+
+On the designer there are two types of workflow steps. One is R step, which only
+has R code. Then it is the time to run these R steps, they will be run in the same
+R session as the Shiny app and in a separate environment different than your global
+environment. In other words, all R steps are in **the same environment**, they can communicate
+with each other, meaning you can define a variable in one step and use it in other
+R steps.
+
+sysArgs steps, on the other hand, is different, as its name suggest, it will invoke
+system commands (like bash) when run. Details of how to create these steps will be
+discussed on *Fig 3.B.5*, *Fig 3.B.6*.
+
+#### 5.4.3.2 View and modify steps
+
+Current SPS allows users to view some basic information of R steps like, step name,
+select dependency(ies). Besides, users are welcome to change the R code they want
+in the second sub-tab (Fig 3.B.2).
+
+![](data:image/png;base64...)
+
+**Figure 3. B.2** Workflow Management - config R
+
+Modification of sysArgs steps is limited to step name and dependency. However, this
+kind steps will provide more information to view, like the files that were used to
+create this step, raw commandline code
+that will be run, targets (metadata) and output dataframes. This information
+is distributed in different subtabs (Fig 3.B.3).
+
+![](data:image/png;base64...)
+
+**Figure 3. B.3** Workflow Management - config sysArgs
+
+#### 5.4.3.3 Create a new step
+
+After clicking the  button in Fig 3.B.1, you would need
+to choose whether to create an R or sysArgs step (Figure 3. B.5).
+
+![](data:image/png;base64...)
+
+**Figure 3. B.5** Workflow Management - Choose new step type
+
+**Create a new R step**
+
+Create a new R step is simple. In the modal, type the step name, R code,
+and select dependency (Fig 3. B.6).
+
+![](data:image/png;base64...)
+
+**Figure 3. B.6** Workflow Management - New R step
+
+**Create a new sysArgs step**
+
+Basic info for sysArgs step is simialr to R step (Fig 3. B.7).
+
+![](data:image/png;base64...)
+
+**Figure 3. B.7** Workflow Management - New sysArgs step
+
+To generate some commandline line, there are three items need to be prepared:
+**targets**, **CWL file**, **CWL yaml file** (Fig.3. B.8).
+
+* targets: metadata that will populate the basecommand sample-wisely. Columns in
+  targets will be injected into CWL yaml and then, yaml file will replace variables in parsed CWL base command.
+* CWL file: provide the base command.
+* CWL yaml file: provides CWL variables.
+
+1. Choose the targets source. Targets in SPR workflow steps can come from either a
+   fresh file or inherit from a previous sysArg step(s) (output from a previous
+   step can become input of the next(s)).
+2. If you choose from a previous step(s), select the steps from here. If a new
+   file, upload here.
+3. Then, the targets or inherited targets table is displayed here for you to take a
+   look. Later we will use these column to replace CWL yaml variables.
+4. Choose the CWL and CWL yaml file you want to use. All `.cwl` and `.yaml` or `.yml`
+   files inside your workflow project `param/cwl` folder will be listed here. You
+   could drop more of these files you want to this folder. They will become aviable
+   the next time you create a new step.
+5. If you have all the three items, you can start to use which column from the targets
+   to replace each CWL yaml variables.
+6. Try to parse the command, see if the results is as what you expect. If not, try to
+   change options above and try again.
+7. If everything looks fine, save and create the step.
+
+![](data:image/png;base64...)
+
+**Figure 3. B.8** Workflow Management - New sysArgs step
+
+### 5.4.4 4. Prepare CWL files (optional)
+
+In the new version of SPR, all individual system workflow steps are called by the
+CWL files. Each SPR workflow has a set of CWL files and normally users do not need
+to make any change. In case you want to learn more about CWL and create some new
+CWL files, Step 4 is a good place to practice.
+
+To run a CWL step in SPR, 3 files are required:
+
+* targets: to determine how many samples will be run and sample names.
+* CWL running file: can be translated to bash code;
+* CWL input: variables to inject into the running file
+
+SPR is the parser between R and CWL by injecting sample information from targets
+to `CWL input` file and then CWL parser translates it to bash code.
+
+1. Most people are not familiar this part, so read instructions carefully.
+2. Your project targets has been loaded for you, and an example CWL running and input
+   for **hisat2** is also loaded for you. Directly parse the code. See what commandline
+   code you get.
+3. Change the targets injecting column, and parse again, see what has changed.
+4. You can edit the CWL running and input files
+5. Try to parse the new file and see what has changed.
+6. If new CWL files has been created, you can edit workflow Rmd files by adding your
+   new steps.
+
+![](data:image/jpeg;base64...)
+
+**Figure 3. C.** Workflow Management - CWL File
+
+### 5.4.5 5. Run or finish workflow preparation
+
+Up until this step, congratulations, the workflow is prepared. You can choose to
+download the workflow project files as a bundle or continue to run the workflow.
+
+![](data:image/jpeg;base64...)
+
+**Figure 4.A.B** Workflow Runner
+
+1. On step 5 you can choose to download the prepared workflow or directly run the
+   workflow. However, if you do not have the required commandline tools, workflow will
+   most likely fail. Make sure you system has these tools ([Read about these tools](http://bioconductor.org/packages/release/bioc/vignettes/systemPipeR/inst/doc/systemPipeR.html#261_Third-party_software_tools)).
+2. Open up the runner. It is a “Rstudio-like” interface.
+3. Code editor. Required workflow running code is pre-entered for you. You can simply
+   hit “Run” to start. Of course, you can delete the default code and run random R
+   code.
+4. Output R console.
+5. Workflow running log.
+6. View any plot output. and send a copy of your current plot to SPS Canvas tab or
+   download it.
+
+## 5.5 RNA-Seq Module
+
+This is a module which takes a **raw count table** to do normalization,
+Differential gene expression (DEG) analysis, and finally helps users to generate
+different plots to visualize the results.
+
+### 5.5.1 Prepare metadata and count table
+
+To start, we require two files, the metadata file (targets) and a raw count table (Fig. 5).
+
+![](data:image/jpeg;base64...)
+
+**Figure 5** RNAseq
+
+1. This is the RNAseq module UI when you first click it. All sub-tabs are disbled
+   at the beginning. Other tabs will enabled as you proceed with different options.
+2. First, we need a metadata file to tell SPS what samples and conditions to use.
+   Here, we use the metadata file from SPR, which is also known as “targets” file.
+   If you are not familiar with the targets file, we suggest to use the workflow module
+   step 2 to practice creating and checking the format. You can also use the example to
+   see how it looks like.
+3. The loaded targets table is display here. You can use the box below each column
+   name to filter what samples to include/exclude. Only the “SampleName” and “Factor”
+   columns are used, other columns are ignored. `SampleName` should be a unique character
+   string without space for each row. `Factor` is the experiment design factors, or
+   conditions, or treatments.
+4. If you want to DEG analysis, DEG comparison groups are defined in the targets
+   file header.
+5. The header will be parsed into comparison groups which contain individual comparisons.
+   If the parsed comparison is not what you want, edit the header lines and reupload.
+6. If everything is expected, confirm to use this table.
+7. You should see the progress timeline of step 1 becomes green if your targets
+   and header pass the format checking.
+8. (Not on figure) Similarly, use example or upload a count table and confirm to use it.
+
+Note: For the count table, the first column will be used as gene names. Other column
+names will be treated as sample names, and values in these columns are treated as
+raw counts. Make sure columns except the first one are **numeric**, and replace `NA`
+with `0`.
+
+Upon successfully confirm targets and count table, you should see the “Normalize Data”
+subtab is enabled. You can click on the top navigation or click the pop-up for the next
+step.
+
+### 5.5.2 Process raw count
+
+If this UI is displayed, that means your targets and count table are accepted by
+SPS (Fig 6). On this sub-tab, you can choose:
+
+1. Transform your count data with “raw”, “rlog” or “VST” and visualize the results
+   in other sub-tabs.
+2. Do DEG analysis.
+
+These two options are independent.
+
+![](data:image/jpeg;base64...)
+
+**Figure 6** RNAseq Normalization
+
+1. At step 1 panel, choose how SPS can help you, count transformation or DEG analysis.
+   The former will jump you to step 2, latter will jump to step 3.
+2. There are many options. If you are not clear, hover your mouse on the option,
+   and some tips will show up.
+3. To start data transformation or DEG analysis.
+4. A gallery of different plot options will show up when the data process is done.
+5. When the data process is done, you can download results from the right side panel.
+   Check all items you want and SPS will help you to zip it into one file to download.
+6. If at least one item is checked, downloading is enabled.
+7. Progress timeline will also change upon successful data process.
+8. Different visualization options will be enabled depending on the data process options.
+
+### 5.5.3 Plot options
+
+SPS RNAseq module provides 6 different plot options to cluster transformed count table.
+
+![](data:image/jpeg;base64...)
+
+**Figure 6** RNAseq plots
+
+1. Change plot options to customize your plots.
+2. Most plots are [Plotly](https://plotly.com) plots, which means you can interact
+   with these plots, like hiding/show groups, zoom in/out, etc.
+3. All SPS plots are resizable. Dragging the bottom-right corner icon to resize your
+   plot.
+4. Click “To canvas” to take a screenshot of current plot and edit it in `SPS Canvas`
+   tab. Or clicking the down-arrow button to directly save current plot to a png or jpg.
+
+### 5.5.4 DEG report
+
+This is a special sub-tab designed to filter and visualize DEG results. This sub-tab
+can be accessed once the DEG is calculated on the “Normalize Data” sub-tab.
+
+![](data:image/jpeg;base64...)
+
+**Figure 7** RNAseq DEG
+
+1. DEG summary plot. You can view what are the DEG results across different comparision
+   groups.
+2. Switch to view a ggplot friendly table. Different from the table you could download from
+   “Normalize Data” subtab, this DEG table is rearranged so you can easily make a ggplot from it.
+3. You can change the filter settings here, so DEGs will be re-filtered and you do not need
+   to go back to “Normalize Data” subtab to recalculate DEG.
+4. DEG plotting options. Choose from a volcano plot, an upset plot (intersection),
+   a MA plot or a heatmap.
+
+### 5.5.5 Interact with other bioconductor packages.
+
+#### 5.5.5.1 Locally
+
+If you are familiar with R and want to continue other analysis after these, simple stop SPS:
+
+1. After count transformation, there is a `spsRNA_trans` object stored in your R
+   environment. `raw` method gives you a normalized count table. Other two methods
+   give you a `DESeq2` class object. You can use it for other analysis.
+2. After DEG analysis, SPS stores a global object called `spsDEG.`
+   It is a `summerizedExperiment` object which has all individual tables from all
+   DEG comparisons. You can use it for other downstream analysis.
+
+#### 5.5.5.2 Remotely
+
+If you are using SPS from a remote server, you can choose to download results from
+“Normalize Data” sub-tab. Choose results in tabular format or `summerizedExperiment`
+format which is saved in a `.rds` file.
+
+## 5.6 Quick {ggplot} module
+
+This module enables you to quickly upload datasets and make a {[ggplot](https://ggplot2.tidyverse.org/)}
+in a second by using some functionalities from {[Esquisse](https://dreamrs.github.io/esquisse/index.html)}.
+
+![](data:image/jpeg;base64...)
+
+**Figure 8** Quick ggplot
+
+1. Provide a tabular data table by uploading or use example.
+2. Drag variables from into different ggplot aesthetic boxes to make a ggplot.
+3. Change to different plot types.
+4. Customize other different plotting options.
+
+For a more specific guide, read [Esquisse official guide](https://dreamrs.github.io/esquisse/articles/get-started.html).
+
+## 5.7 Canvas
+
+SPS Canvas is a place to display and edit scrennshots from different plots. To start
+to use Canvas, you need to take some screenshots but clicking “To Canvas” buttons
+on different tabs/modules. After clicking, the screenshots will be automatically sent
+from these places to this Canvas.
+
+![](data:image/jpeg;base64...)
+
+**Figure 9** Canvas
+
+1. The Canvas area.
+2. Canvas drawing grids. By default, your objects are limited to these drawing grids, but you can change it from top options inside “canvas”.
+   The grid area size is automatically calculated to fit your screen size when you start SPS.
+3. Object information. When you select any object on the Canvas, a bounding box will show to display the object’s dimensions, scale, angle and other information.
+   You can disable them in the “View” menu
+4. To edit your screenshots, simply drag your screenshots from left to Canvas working area.
+5. You can add text or titles, and change the font color, decorations in this panel.
+6. Different Canvas options. Several menus and buttons help you to better control the Canvas.
+   Hover your mouse on buttons will display a tooltip of their functionality.
+
+Keyboard shortcuts are also enabled with SPS Canvas. Go to “help” menu to see these
+options.
+
+# 6 Advanced features
+
+To read the detailed advanced features, please to go our [website](https://systempipe.org/sps/).
+
+# 7 Session Information
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base
+##
+## other attached packages:
+## [1] systemPipeShiny_1.20.0 drawer_0.2.0.1         spsComps_0.3.4.0
+## [4] spsUtil_0.2.2.1        shiny_1.11.1           BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##  [1] shinyjqui_0.4.1          gtable_0.3.6             xfun_0.53
+##  [4] bslib_0.9.0              ggplot2_4.0.0            shinyjs_2.1.0
+##  [7] htmlwidgets_1.6.4        tzdb_0.5.0               vctrs_0.6.5
+## [10] tools_4.5.1              generics_0.1.4           tibble_3.3.0
+## [13] RSQLite_2.4.3            blob_1.2.4               R.oo_1.27.1
+## [16] pkgconfig_2.0.3          data.table_1.17.8        RColorBrewer_1.1-3
+## [19] S7_0.2.0                 assertthat_0.2.1         R.cache_0.17.0
+## [22] lifecycle_1.0.4          compiler_4.5.1           farver_2.1.2
+## [25] stringr_1.5.2            shinytoastr_2.2.0        codetools_0.2-20
+## [28] httpuv_1.6.16            shinyWidgets_0.9.0       htmltools_0.5.8.1
+## [31] sass_0.4.10              yaml_2.3.10              lazyeval_0.2.2
+## [34] plotly_4.11.0            later_1.4.4              pillar_1.11.1
+## [37] crayon_1.5.3             jquerylib_0.1.4          tidyr_1.3.1
+## [40] R.utils_2.13.0           openssl_2.3.4            DT_0.34.0
+## [43] cachem_1.1.0             mime_0.13                styler_1.11.0
+## [46] tidyselect_1.2.1         digest_0.6.37            stringi_1.8.7
+## [49] dplyr_1.1.4              purrr_1.1.0              bookdown_0.45
+## [52] shinydashboardPlus_2.0.6 fastmap_1.2.0            grid_4.5.1
+## [55] cli_3.6.5                magrittr_2.0.4           dichromat_2.0-0.1
+## [58] scales_1.4.0             promises_1.4.0           bit64_4.6.0-1
+## [61] rmarkdown_2.30           httr_1.4.7               bit_4.6.0
+## [64] otel_0.2.0               R.methodsS3_1.8.2        askpass_1.2.1
+## [67] memoise_2.0.1            evaluate_1.0.5           knitr_1.50
+## [70] viridisLite_0.4.2        rlang_1.1.6              Rcpp_1.1.0
+## [73] xtable_1.8-4             glue_1.8.0               shinyAce_0.4.4
+## [76] DBI_1.2.3                formatR_1.14             BiocManager_1.30.26
+## [79] shinydashboard_0.7.3     vroom_1.6.6              rstudioapi_0.17.1
+## [82] jsonlite_2.0.0           R6_2.6.1                 fs_1.6.6
+## [85] shinyFiles_0.9.3
+```

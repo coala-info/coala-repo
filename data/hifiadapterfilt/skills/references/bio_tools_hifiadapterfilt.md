@@ -1,0 +1,1 @@
+This is a development version of the registry. There is no guarantee that the data entered here will be preserved in the future. If you want to add new tools please use the stable version avaliable at bio.tools . {{alert.msg}}

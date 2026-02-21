@@ -1,0 +1,1 @@
+Branches · cgps / card_trick · GitLab Branches Overview Active Stale All Stale branches jose 0208643f &middot; typo corrections and stdout option &middot; Aug 20, 2019 JFsanchezherrero/card_trick!1 master default protected 112ff5b5 &middot; Add DOI to README &middot; Oct 09, 2020

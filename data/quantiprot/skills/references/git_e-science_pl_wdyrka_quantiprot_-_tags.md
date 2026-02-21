@@ -1,0 +1,1 @@
+Tags · Witold Dyrka / quantiprot · GitLab Tags Tags give the ability to mark specific points in history as being important 0.2.5 21556435 &middot; Python 3.11 compatibility fix, rqa module bugfix &middot; Aug 31, 2023 version 0.2.5

@@ -1,0 +1,168 @@
+---
+title: "03 Working with UK Biobank summary statistics"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{03 Working with UK Biobank summary statistics}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+# Overview
+
+In this document we illustrate some approaches to
+working with UK Biobank summary statistics.
+Be sure that that the python module `ukbb_pan_ancestry`
+has been installed where reticulate can find it.
+(We don't use basilisk as of 12/24/2022 because of
+issues in the terra spark cluster.)
+
+```{r setup,message=FALSE, eval=FALSE}
+library(BiocHail)
+```
+
+If the above command indicates that BiocHail is not available,
+see the Installation section near the end of this document.
+
+## Initialization and description
+
+### Standalone
+
+We have produced a representation of summary
+statistics for a sample of 9888 loci.  This 5GB resource
+can be retrieved and cached with the following code:
+```{r getukbb, eval=FALSE}
+hl = hail_init()
+ss = get_ukbb_sumstat_10kloci_mt(hl) # can take about a minute to unzip 5GB
+ss$count()   # but if a persistent MatrixTable is at the location given
+             # by env var HAIL_UKBB_SUMSTAT_10K_PATH it goes quickly
+```
+To get a description of available content, we need a python chunk:
+```{python lkdesc, eval=FALSE}
+r.ss.describe()
+```
+
+### Terra
+Here's a basic description of the summary stats table, with code that
+works in terra.bio:
+```{r lkba, eval=FALSE}
+hl = bare_hail()
+hl$init(idempotent=TRUE, spark_conf=list(
+  'spark.hadoop.fs.gs.requester.pays.mode'= 'CUSTOM',
+  'spark.hadoop.fs.gs.requester.pays.buckets'= 'ukb-diverse-pops-public',
+  'spark.hadoop.fs.gs.requester.pays.project.id'= Sys.getenv("GOOGLE_PROJECT")))
+```
+We need to use a python chunk to get the output, using gs:// storage references.
+```{python lkrhl, eval=FALSE}
+r.hl.read_matrix_table('gs://ukb-diverse-pops-public/sumstats_release/results_full.mt').describe()
+```
+
+## Exploring the subset
+
+### Metadata on study phenotypes
+
+We'll collect the column metadata to start to understand details
+of annotation of phenotypes.
+```{r lkss, eval=FALSE}
+sscol = ss$cols()$collect() # OK because we are just working over column metadata
+ss1 = sscol[[1]]
+names(ss1)
+ss1$get("phenocode")
+ss1$get("description")
+```
+
+We've introduced a function that extracts selected fields for a given
+phenotype, that accommodates availability of results for specific populations.
+
+```{r lkmul, eval=FALSE}
+multipop_df(ss1)
+```
+This can be iterated over all the elements of `sscol` to produce
+a comprehensive searchable table.  Here's a small illustration:
+```{r dodt, message=FALSE, eval=FALSE}
+library(DT)
+ndf = do.call(rbind, lapply(sscol[1:10], multipop_df))
+datatable(ndf)
+```
+
+### Metadata on loci
+
+We'll trim the material to be worked with by sampling both rows and columns.
+(2023.01.08: In future revisions we will be able to control the seed for random sampling.)
+
+```{r dotrim, eval=FALSE}
+sss = ss$sample_rows(.01)$sample_cols(.01)
+sss$count()
+```
+
+Row metadata are simple to collect:
+```{r getrm, eval=FALSE}
+rss = sss$rows()$collect()
+rss1 = rss[[1]]
+names(rss1)
+names(rss1$locus)
+rss1$locus$contig
+sapply(c("contig", "position"), function(x) rss1$locus[[x]])
+```
+
+### Summary statistics
+
+The summary statistics themselves reside in entries of the MatrixTable.  This
+can be expensive to collect and so filtering methods beyond random sampling
+must be mastered.  But here is a basic view.
+
+```{r getent, eval=FALSE}
+sse = sss$entries()$collect()
+length(sse)
+names(sse[[1]])
+sse1 = sse[[1]]
+```
+
+The `summary_stats` component has the association p-values -- log10 transformed?
+```{r lkss11, eval=FALSE}
+length(sse1$summary_stats)
+names(sse1$summary_stats[[1]])
+sse1$summary_stats[[1]]$Pvalue
+```
+
+# Exercises
+
+## Infrastructure
+
+- Define an interface to this subset of 10k loci that supports queries like
+    - has disease x been studied in UK Biobank?
+    - how many phenotypes have been studied in K populations, K=2, 3, ...?
+    - how consistent is the annotation -- are numbers of controls and cases always
+recorded?
+- Do the UK Biobank portals produce information to resolve these questions?
+    - if so, what are the API calls to obtain answers?
+    - if not, what is missing from the portals to allow answers to be obtained?
+
+## Substantive
+
+- List the genes that are near the loci collected in the 10k random sample 
+- (Hard) What is the most significant finding (position, phenotype, population) in the 10k subset?
+
+# Installing `BiocHail`
+
+`BiocHail` should be installed as follows:
+
+```{r, eval = FALSE}
+if (!require("BiocManager"))
+    install.packages("BiocManager")
+BiocManager::install("BiocHail")
+```
+
+
+# SessionInfo {-}
+
+```{r sessionInfo}
+sessionInfo()
+```
+

@@ -1,0 +1,15 @@
+This is the result of some tinkering around at one time when investigating
+yet another density estimation idea.
+I found it useful to use normal mixtures as examples, including the
+Marron-Wand densities.
+Martin Mächler, ETH Zurich, Switzerland
+March 1997, June 2002
+---------
+o The Marron-Wand densities are not regular data sets, e.g., they can't be
+used without the normix package. ==> hence in ./R/ and not ./data/
+o bug in qnorMix() --- the interval for uniroot is sometimes too small
+--> tests/ex.R -- fixed fo 1.0-6
+HOWEVER: improve qnorMix() for long input vectors:
+- sort(p)
+- compute qnormMix( range(p) ) = qnorMix( p[c(1, n)] )
+use splinefun() in between as good starting values for uniroot()!

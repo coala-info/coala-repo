@@ -1,0 +1,753 @@
+flowVS: Variance stabilization in flow cytometry (and microarrays)
+
+Ariful Azad, Bartek Rajwa, Alex Pothen
+
+October 30, 2025
+
+Email: azad@iu.edu
+
+Contents
+
+1 Licensing
+
+2 Variance stabilization in flow cytometry
+
+2.1 Why variance stabilization might be needed . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Our approach . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3 Related work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3 Examples
+
+3.1 Healthy Data (HD) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.2
+
+Immune Tolerance Data (ITN)
+
+4 Variance stabilization in microarray data
+
+4.1 Example . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5 Sessioninfo
+
+2
+
+2
+2
+2
+2
+
+3
+3
+6
+
+7
+9
+
+12
+
+1
+
+1 Licensing
+
+Under the Artistic License, you are free to use and redistribute this software for academic and personal use.
+
+2 Variance stabilization in flow cytometry
+
+2.1 Why variance stabilization might be needed
+
+Scientists often compare cell populations (clusters of cells with similar marker expressions) to detect changes
+in populations across biological conditions. The between-population changes might help us to diagnose
+diseases, develop new drugs and understand the immune system in general. Comparing cell populations in
+conventional statistical framework (e.g., t-test, F-test, etc.) often requires variance homogeneity of the cell
+populations. Furthermore, algorithms for constructing meta-clustering and templates such as flowMatch [1,2,
+4] and FLAME [10] can also use the homogeneity of clusters when creating homogeneous meta-clusters. Hence,
+within-population variance stabilization might be beneficial in between-population comparisons, which could
+enhance our effort in automating biological discovery based on flow cytometry.
+
+2.2 Our approach
+
+In this software package flowVS [3], we developed a variance stabilization (VS) method based on maximum
+likelihood (ML) estimation, which is built on top of a commonly used inverse hyperbolic since (asinh)
+transformation. The choice of asinh function is motivated by its success as a variance stabilizer for microarray
+data [6,9]. flowVS stabilizes the within-population variances separately for each fluorescence channel z across
+a collection of N samples. After transforming z by asinh(z/c), where c is a normalization cofactor, flowVS
+identifies one-dimensional clusters (density peaks) in the transformed channel. Assume that a total of m
+1-D clusters are identified from N samples with the i-th cluster having variance σ2
+i . Then the asinh(z/c)
+transformation works as a variance stabilizer if the variances of the 1-D clusters are approximately equal,
+i.e., σ2
+m. To evaluate the homogeneity of variance (also known as homoskedasticity), we use
+Bartlett’s likelihood-ratio test [5]. From a wide range of cofactors, our algorithm selects one that minimizes
+Bartlett’s test statistics, resulting in a transformation with the best possible VS. Note that, in contrast to
+other transformation approaches, our algorithm apply the same transformation to corresponding channels
+in every sample. flowVS is therefore an explicit VS method that stabilizes within-population variances in
+each channel by evaluating the homoskedasticity of clusters with a likelihood-ratio test.
+
+2 ∼ ... ∼ σ2
+
+1 ∼ σ2
+
+The scope and limitations of flowVS are as follows:
+
+• flowVS is a method for selecting parameters for transformation so that within-population variances
+
+are stabilized. Currently, one dimensional transformation is supported.
+
+• flowVS stabilizes variance separately on each fluorescence channel. The same channel in all samples
+
+will be transformed with the same parameter.
+
+• For each channel, flowVS stabilizes variance of a collection of flow cytometry samples. Variance can
+
+not be efficiently stabilized from a single sample.
+
+2.3 Related work
+
+Several packages are available in Bioconductor (http://www.bioconductor.org/) for transforming flow cy-
+tometry data. The flowCore package provides several transformation routines that transform data using
+logarithm, hyperlog, generalized Box-Cox, and biexponential (e.g., logicle and generalized arcsinh) functions.
+flowCore also provides several functions to estimate parameters of the transformations, for example, the
+estimateLogicle function estimates the parameters for logicle transformation. Current software packages
+estimate parameters of transformations in a data-driven manner to maximize the likelihood (flowTrans by
+Finak et al. [8]), to satisfy the normality (flowScape by Ray et al. [12]), and to comply with simulations
+(FCSTrans by Qian et al. [11]). flowTrans estimates transformation parameters for each sample by maxi-
+mizing the likelihood of data being generated by a multivariate-normal distribution on the transformed scale.
+
+2
+
+flowScape optimizes the normalization factor of asinh transformation by the Jarque-Bera test of normality.
+FCSTrans selects the parameters of the linear, logarithm, and logicle transformations with an extensive set of
+simulations. However, normalizing data may not necessarily stabilize its variance, e.g., for a Poisson variable
+z, (cid:112)z + 3/8 is an approximate variance-stabilizer, whereas z2/3 is a normalizer [7]. Therefore, we consider
+an approach built upon the well-known asinh transformation and estimate transformation parameters for
+explicitly stabilizing within-population variations.
+
+3 Examples
+
+3.1 Healthy Data (HD)
+
+In the flowVS package, we have included a healthy donor (HD) dataset consisting of 12 samples from three
+healthy individuals, “A”, “C”, and “D”. From each individual, the samples were drawn on two different days
+and two technical replicates were created from each sample (i.e., 3 × 2 × 2 = 12 samples). Each HD sample
+was stained using labeled antibodies against CD45, CD3, CD4, CD8, and CD19 protein markers. Here, an
+HD sample “C 4 2” means that it is collected on day 4 from individual “C” and it is the second replicate
+on that day. We have identified lymphocytes in each sample of the HD dataset and apply the subsequent
+analysis on lymphocytes.
+
+We stabilize within-population variances in each channel of the HD dataset. At first, we load the HD
+dataset from flowVS package and estimate the optimum cofactors for CD3 and CD4 channels. The optimum
+parameters are identified by the estParamFlowVS function. The function outputs the search intervals and
+Bartlett’s statistics at the local optimum cofactor in each interval. The global optimum cofactor is computed
+from the local optimum cofactors.
+
+library(flowVS) #load library
+
+## Example 1: Healthy data from flowVS package
+data(HD)
+## identify optimum cofactor for CD3 and CD4 channels
+cofactors = estParamFlowVS(HD[1:5],channels=c('CD3', 'CD4'))
+
+time
+
+cf range
+
+Bartlett's stat
+
+## ====================================================================
+## Channel CD3 : Finding optimum cofactor for asinh transformation
+## ====================================================================
+##
+opt cf
+## ====================================================================
+1.00 ]
+0.37,
+0.52
+## [
+2.72 ]
+1.00,
+1.71
+## [
+7.39 ]
+2.72,
+5.60
+## [
+20.09 ]
+7.39,
+17.09
+## [
+54.60 ]
+20.09,
+33.27
+## [
+148.41 ]
+54.60,
+117.97
+## [
+403.43 ]
+306.02
+148.41,
+## [
+1096.63 ]
+430.90
+## [
+403.43,
+2875.95
+2980.96 ]
+## [ 1096.63,
+7064.65
+8103.08 ]
+## [ 2980.96,
+## [ 8103.08, 22026.47 ]
+8879.01
+##
+## Optimum cofactor for
+## ====================================================================
+##
+## ====================================================================
+## Channel CD4 : Finding optimum cofactor for asinh transformation
+
+9450.42
+9457.66
+8156.03
+8355.33
+8284.71
+8219.30
+5324.25
+5597.57
+3353.36
+93.60
+433.64
+
+2.91
+2.14
+2.02
+1.73
+1.79
+2.05
+1.51
+2.04
+2.00
+1.96
+1.70
+
+7064.652
+
+CD3
+
+:
+
+3
+
+Figure 1: Transforming two fluorescence channels in the HD data. Bartlett’s statistics (Y-axis) is computed
+from density peaks after data is transformed by different cofactors (X-axis). An optimum cofactor is obtained
+where Bartlett’s statistics is minimum (indicated by red circles).
+
+time
+
+cf range
+
+Bartlett's stat
+
+## ====================================================================
+##
+opt cf
+## ====================================================================
+1.00 ]
+0.37,
+0.40
+## [
+2.72 ]
+1.00,
+1.10
+## [
+7.39 ]
+2.72,
+2.89
+## [
+20.09 ]
+7.39,
+8.11
+## [
+54.60 ]
+20.09,
+21.28
+## [
+148.41 ]
+54.60,
+58.90
+## [
+403.43 ]
+148.41,
+389.22
+## [
+1096.63 ]
+1058.00
+## [
+403.43,
+2875.95
+2980.96 ]
+## [ 1096.63,
+5879.78
+## [ 2980.96,
+8103.08 ]
+8879.01
+## [ 8103.08, 22026.47 ]
+##
+## Optimum cofactor for
+## ====================================================================
+
+4261.51
+4261.65
+4332.86
+4379.35
+4351.10
+4584.70
+44099.60
+24545.94
+5068.62
+87.73
+1778.80
+
+2.00
+1.97
+2.22
+1.69
+2.22
+2.46
+1.99
+2.08
+1.74
+1.77
+2.02
+
+5879.785
+
+CD4
+
+:
+
+After computing the optimum cofactors for the requested channels, we use transFlowVS function to
+actually transform the data by asinh transformation with the cofactors. The density plots show that the
+variance of populations are relatively stabilized after the transformation.
+
+## transform CD3 and CD4 channels in all samples
+HD.VS = transFlowVS(HD, channels=c('CD3', 'CD4'), cofactors)
+
+## Transforming flowSet by asinh function with supplied cofactors.
+
+## density plot (from flowViz package)
+densityplot(~CD3+CD4, HD.VS, main="Transfromed CD3 and CD4 channels in HD data")
+
+4
+
+40005000600070008000900010000500100015002000Optimum cofactor for CD3 : 7064.65CofactorsBartlett's statistics300040005000600070008000900001000200030004000Optimum cofactor for CD4 : 5879.78CofactorsBartlett's statisticsFigure 2: The density plots after the data is transformed by asins transformation with the optimum cofactors.
+
+5
+
+Transfromed CD3 and CD4 channels in HD dataA_1_1A_1_2A_2_1A_2_2C_3_1C_3_2C_4_1C_4_2D_2_1D_2_2D_4_1D_4_20246CD30246CD43.2 Immune Tolerance Data (ITN)
+
+We use the Immune Tolerance Network (ITN) dataset from the flowStats package in Bioconductor to
+demonstrate the use of flowVS. The ITN dataset is collected from 15 patients. It includes 3 patient groups
+with 5 samples each. Each sample was stained using labeled antibodies against CD3, CD4, CD8, CD69 and
+HLADr. We identify lymphocytes in each sample of the ITN dataset beforehand by the lymphs function in
+flowVS.
+
+## Example 2: ITN data from flowStats package
+suppressMessages(library(flowStats))
+data(ITN)
+# identify lymphocytes
+ITN.lymphs = fsApply(ITN,lymphs, list("FS"=c(200, 600),"SS"=c(0, 400)), "FSC", "SSC",FALSE)
+## identify optimum cofactor for CD3 and CD4 channels
+cofactors = estParamFlowVS(ITN.lymphs[1:5],channels=c('CD3', 'CD4'))
+
+CD3
+
+time
+
+cf range
+
+Bartlett's stat
+
+1.80
+1.43
+1.75
+1.61
+1.79
+1.43
+1.94
+1.20
+1.76
+1.40
+1.95
+
+401.20
+263.64
+240.97
+439.69
+600.87
+2885.17
+358.35
+284.10
+327.90
+387.17
+400.39
+
+## ====================================================================
+## Channel CD3 : Finding optimum cofactor for asinh transformation
+## ====================================================================
+##
+opt cf
+## ====================================================================
+1.00 ]
+0.37,
+0.94
+## [
+2.72 ]
+1.00,
+2.62
+## [
+7.39 ]
+2.72,
+3.56
+## [
+20.09 ]
+7.39,
+14.53
+## [
+54.60 ]
+20.09,
+25.12
+## [
+148.41 ]
+54.60,
+59.83
+## [
+403.43 ]
+389.22
+148.41,
+## [
+1096.63 ]
+645.10
+## [
+403.43,
+1201.64
+2980.96 ]
+## [ 1096.63,
+3266.40
+8103.08 ]
+## [ 2980.96,
+## [ 8103.08, 22026.47 ]
+14035.42
+##
+## Optimum cofactor for
+## ====================================================================
+##
+## ====================================================================
+## Channel CD4 : Finding optimum cofactor for asinh transformation
+## ====================================================================
+opt cf
+##
+## ====================================================================
+1.00 ]
+0.37,
+0.98
+## [
+2.72 ]
+1.00,
+2.62
+## [
+7.39 ]
+2.72,
+4.66
+## [
+20.09 ]
+7.39,
+19.38
+## [
+54.60 ]
+20.09,
+21.34
+## [
+148.41 ]
+54.60,
+59.83
+## [
+403.43 ]
+148.41,
+162.62
+## [
+1096.63 ]
+444.07
+## [
+403.43,
+1203.73
+2980.96 ]
+## [ 1096.63,
+3266.40
+## [ 2980.96,
+8103.08 ]
+8879.01
+## [ 8103.08, 22026.47 ]
+##
+## Optimum cofactor for
+## ====================================================================
+
+4372.87
+3714.75
+2311.40
+96.73
+72.21
+938.72
+3223.24
+4721.12
+4954.40
+5037.34
+5044.16
+
+1.92
+1.42
+2.25
+1.41
+1.92
+1.43
+1.75
+1.61
+1.74
+1.72
+1.71
+
+Bartlett's stat
+
+3.555431
+
+21.33612
+
+cf range
+
+time
+
+CD4
+
+:
+
+:
+
+6
+
+Figure 3: Transforming two fluorescence channels in the ITN data. Bartlett’s statistics (Y-axis) is computed
+from density peaks after data is transformed by different cofactors (X-axis). An optimum cofactor is obtained
+where Bartlett’s statistics is minimum (indicated by red circles).
+
+After computing the optimum cofactors for the requested channels, we use transFlowVS function to
+actually transform the data by asinh transformation with the cofactors. The density plots show that the
+variance of populations are relatively stabilized after the transformation.
+
+## transform CD4 channel in all samples
+ITN.VS = transFlowVS(ITN.lymphs, channels=c('CD3', 'CD4'), cofactors)
+
+## Transforming flowSet by asinh function with supplied cofactors.
+
+## density plot (from flowViz package)
+densityplot(~CD3+CD4, ITN.VS, main="Transfromed CD3 and CD4 channels in ITN data")
+
+4 Variance stabilization in microarray data
+
+The VS approach based on optimizing Bartlett’s statistics can also be used to stabilize variance in microarray
+data. Assume that the expressions of m genes are measured from N samples in a microarray experiment.
+After transforming the data by the asinh function, the mean µi and variance σ2
+i of the ith gene gi are com-
+puted from the expressions of gi in all samples. We then stabilizes the variances of the genes by transforming
+data using the asinh function with an optimum choice of cofactor. Unlike FC, a single cofactor is selected
+for all genes in microarrays.
+
+The function microVS performs the variance stabilization in microarray data. This function transforms
+a microarray data matrix z by asinh(z/c) transformation where c is a normalizing cofactor. The cofactor
+is searched in the range [cfLow, cfHigh] and an optimum cofactor is obtained for which the transformed
+data is variance stabilized. The optimum cofactor is obtained by minimizing Bartlett’s test statistics for
+homogeneity of variance.
+
+7
+
+2.02.53.03.54.04.55.0240260280300320Optimum cofactor for CD3 : 3.56CofactorsBartlett's statistics1015202530200400600800Optimum cofactor for CD4 : 21.34CofactorsBartlett's statisticsFigure 4: The density plots after the data is transformed by asins transformation with the optimum cofactors.
+
+8
+
+Transfromed CD3 and CD4 channels in ITN datasample01sample02sample03sample04sample05sample06sample07sample08sample09sample10sample11sample12sample13sample14sample150246810CD3012345CD44.1 Example
+
+We have applied the microVS to the publicly available Kidney microarray data provided by Huber et al. [9].
+The Kidney data reports the expression of 8704 genes from two neighboring parts of a kidney tumor by using
+cDNA microarray technology. For different values of the cofactor, flowVS transforms the Kidney data with
+the asinh function and identifies the optimum cofactor by minimizing Bartlett’s statistics. The figure below
+shows that a minimum value of Bartlett’s statistics is obtained when the cofactor is set to exp(6) (∼ 400).
+The optimum cofactor is then used with the asinh function to transform the Kidney data.
+
+suppressMessages(library(vsn))
+data(kidney)
+kidney.microVS = microVS(exprs(kidney)) #variance stabilization
+
+Bartlett's stat
+
+## ====================================================================
+## Finding optimum cofactor for asinh transformation
+## ====================================================================
+## cofactor(log scale)
+## ====================================================================
+29380.95
+##
+26322.83
+##
+22577.36
+##
+18128.08
+##
+13515.48
+##
+10073.42
+##
+9005.62
+##
+10362.98
+##
+13159.53
+##
+16115.28
+##
+##
+18483.08
+##
+## Optimum cofactor : exp(6)
+## ====================================================================
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+9
+
+To take a closer look at the transformed data by microVS, we plot the variances of genes against the
+ranks of their means. For this purpose, we included a plotting function plotMeanSd that is modified from the
+meanSdPlot function in vsn package. We compare the performance of microVS and vsn in the figures below
+by using the plotMeanSd function. Here, the ranks of means distribute the data evenly along the x-axis and
+thus make it easy to visualize the homogeneity of variances. We also show the running median estimator of
+standard deviation by the red lines. Both vsn and microVS remove the mean-variance dependence because
+the red lines are approximately horizontal for both transformations. Hence, flowVS performs at least as well
+as a state-of-the-art approach developed for microarray data.
+
+suppressMessages(library(vsn))
+data(kidney)
+kidney.vsn = vsn2(exprs(kidney)) #variance stabilization by vsn
+plotMeanSd(kidney.microVS, main="Kidney data: VS by flowVS")
+plotMeanSd(exprs(kidney.vsn), main="Kidney data: VS by vsn")
+
+10
+
+02468101000015000200002500030000Optimum cofactor: exp(6)Cofactors (log scale)Bartlett's statisticsFigure 5: Variance stabilization of the Kidney microarray data by flowVs and vsn packages.
+
+11
+
+020004000600080000.00.20.40.60.8Kidney data: VS by flowVSRank of means (ascending order)Standard deviation020004000600080000.00.51.01.5Kidney data: VS by vsnRank of means (ascending order)Standard deviation5 Sessioninfo
+
+Here is the output of sessionInfo on the system on which this document was compiled:
+
+toLatex(sessionInfo())
+
+• R version 4.5.1 Patched (2025-08-23 r88802), x86_64-pc-linux-gnu
+
+• Locale: LC_CTYPE=en_US.UTF-8, LC_NUMERIC=C, LC_TIME=en_GB, LC_COLLATE=C,
+
+LC_MONETARY=en_US.UTF-8, LC_MESSAGES=en_US.UTF-8, LC_PAPER=en_US.UTF-8, LC_NAME=C,
+LC_ADDRESS=C, LC_TELEPHONE=C, LC_MEASUREMENT=en_US.UTF-8, LC_IDENTIFICATION=C
+
+• Time zone: America/New_York
+
+• TZcode source: system (glibc)
+
+• Running under: Ubuntu 24.04.3 LTS
+
+• Matrix products: default
+
+• BLAS: /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+
+• LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0
+
+• Base packages: base, datasets, grDevices, graphics, methods, stats, utils
+
+• Other packages: Biobase 2.70.0, BiocGenerics 0.56.0, flowCore 2.22.0, flowStats 4.22.0, flowVS 1.42.0,
+
+flowViz 1.74.0, generics 0.1.4, knitr 1.50, lattice 0.22-7, vsn 3.78.0
+
+• Loaded via a namespace (and not attached): BiocManager 1.30.26, DEoptimR 1.1-4, IDPmisc 1.1.21,
+KernSmooth 2.23-26, MASS 7.3-65, Matrix 1.7-4, R6 2.6.1, RColorBrewer 1.1-3, RCurl 1.98-1.17,
+RProtoBufLib 2.22.0, Rcpp 1.1.0, Rgraphviz 2.54.0, S4Vectors 0.48.0, S7 0.2.0, XML 3.99-0.19,
+affy 1.88.0, affyio 1.80.0, bitops 1.0-9, cli 3.6.5, clue 0.3-66, cluster 2.1.8.1, colorspace 2.1-2,
+compiler 4.5.1, corpcor 1.6.10, cytolib 2.22.0, data.table 1.17.8, deSolve 1.40, deldir 2.0-4,
+dichromat 2.0-0.1, dplyr 1.1.4, evaluate 1.0.5, farver 2.1.2, fda 6.3.0, fds 1.8, flowWorkspace 4.22.0,
+ggplot2 4.0.0, glue 1.8.0, graph 1.88.0, grid 4.5.1, gtable 0.3.6, hdrcde 3.4, hexbin 1.28.5, highr 0.11,
+interp 1.1-6, jpeg 0.1-11, ks 1.15.1, latticeExtra 0.6-31, lifecycle 1.0.4, limma 3.66.0, magrittr 2.0.4,
+matrixStats 1.5.0, mclust 6.1.1, mnormt 2.1.1, mvtnorm 1.3-3, ncdfFlow 2.56.0, parallel 4.5.1,
+pcaPP 2.0-5, pillar 1.11.1, pkgconfig 2.0.3, png 0.1-8, pracma 2.4.6, preprocessCore 1.72.0,
+rainbow 3.8, rlang 1.1.6, robustbase 0.99-6, rrcov 1.7-7, scales 1.4.0, splines 4.5.1, statmod 1.5.1,
+stats4 4.5.1, tibble 3.3.0, tidyselect 1.2.1, tools 4.5.1, vctrs 0.6.5, xfun 0.53
+
+References
+
+[1] A. Azad, S. Pyne, and A. Pothen. Matching phosphorylation response patterns of antigen-receptor-
+
+stimulated T cells via flow cytometry. BMC Bioinformatics, 13(Suppl 2):S10, 2012.
+
+[2] Ariful Azad, Arif Khan, Bartek Rajwa, Saumyadipta Pyne, and Alex Pothen. Classifying immunophe-
+notypes with templates from flow cytometry. In Proceedings of the International Conference on Bioin-
+formatics, Computational Biology and Biomedical Informatics (ACM BCB), page 256. ACM, 2013.
+
+[3] Ariful Azad, Bartek Rajwa, and Alex Pothen. flowvs: channel-specific variance stabilization in flow
+
+cytometry. BMC bioinformatics, 17(1):1–14, 2016.
+
+[4] Ariful Azad, Bartek Rajwa, and Alex Pothen. Immunophenotype discovery, hierarchical organization,
+
+and template-based classification of flow cytometry samples. Frontiers in oncology, 6:188, 2016.
+
+[5] M.S. Bartlett. Properties of sufficiency and statistical tests. Proceedings of the Royal Society of London.
+
+Series A: Mathematical and Physical Sciences, 160(901):268–282, 1937.
+
+12
+
+[6] Blythe P Durbin, Johanna S Hardin, Douglas M Hawkins, and David M Rocke. A variance-stabilizing
+transformation for gene-expression microarray data. Bioinformatics, 18(suppl 1):S105–S110, 2002.
+
+[7] Bradley Efron. Transformation theory: How normal is a family of distributions? The Annals of
+
+Statistics, 10(2):323–339, 1982.
+
+[8] G. Finak, J.M. Perez, A. Weng, and R. Gottardo. Optimizing transformations for automated, high
+
+throughput analysis of flow cytometry data. BMC Bioinformatics, 11(1):546, 2010.
+
+[9] W. Huber, A. Von Heydebreck, H. S¨ultmann, A. Poustka, and M. Vingron. Variance stabilization applied
+to microarray data calibration and to the quantification of differential expression. Bioinformatics,
+18(suppl 1):S96–S104, 2002.
+
+[10] S. Pyne, X. Hu, K. Wang, E. Rossin, T.I. Lin, L.M. Maier, C. Baecher-Allan, G.J. McLachlan,
+P. Tamayo, D.A. Hafler, et al. Automated high-dimensional flow cytometric data analysis. Proceedings
+of the National Academy of Sciences, 106(21):8519–8524, 2009.
+
+[11] Yu Qian, Yue Liu, John Campbell, Elizabeth Thomson, Y Megan Kong, and Richard H Scheuermann.
+FCSTrans: An open source software system for fcs file conversion and data transformation. Cytometry
+Part A, 81(5):353–356, 2012.
+
+[12] S. Ray and S. Pyne. A computational framework to emulate the human perspective in flow cytometric
+
+data analysis. PLoS One, 7(5):e35693, 2012.
+
+13
+

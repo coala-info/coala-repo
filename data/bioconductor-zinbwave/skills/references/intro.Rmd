@@ -1,0 +1,406 @@
+---
+title: "An introduction to ZINB-WaVE"
+author: "Davide Risso"
+date: "Last modified: April 19, 2019; Compiled: `r format(Sys.time(), '%B %d, %Y')`"
+bibliography: biblio.bib
+output:
+  BiocStyle::html_document:
+    toc: true
+vignette: >
+  %\VignetteEncoding{UTF-8}
+---
+
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{zinbwave Vignette}
+-->
+
+# Installation
+
+The recommended way to install the `zinbwave` package is
+
+```{r, eval=FALSE}
+install.packages("BiocManager")
+BiocManager::install("zinbwave")
+```
+
+Note that `zinbwave` requires R (>=3.4) and Bioconductor (>=3.6).
+
+# Introduction
+
+```{r options, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(warning=FALSE, error=FALSE, message=FALSE)
+set.seed(1133)
+```
+
+This vignette provides an introductory example on how to work with the `zinbwave`
+package, which implements the ZINB-WaVE method proposed in [@risso2017].
+
+First, let's load the packages and set serial computations.
+
+```{r load_packs}
+library(zinbwave)
+library(scRNAseq)
+library(matrixStats)
+library(magrittr)
+library(ggplot2)
+library(biomaRt)
+library(sparseMatrixStats)
+
+# Register BiocParallel Serial Execution
+BiocParallel::register(BiocParallel::SerialParam())
+```
+
+## The ZINB-WaVE model
+
+ZINB-WaVE is a general and flexible model for the analysis of high-dimensional zero-inflated count data, such as those recorded in single-cell RNA-seq assays. Given \(n\) samples (typically, \(n\) single cells) and \(J\) features (typically, \(J\) genes) that can be counted for each sample, we denote with \(Y_{ij}\) the count of feature \(j\) (\(j=1,\ldots,J\)) for sample \(i\) (\(i=1,\ldots,n\)). To account for various technical and
+biological effects, typical of single-cell sequencing
+technologies, we model \(Y_{ij}\) as a random variable following a zero-inflated negative binomial (ZINB) distribution with parameters \(\mu_{ij}\), \(\theta_{ij}\), and
+\(\pi_{ij}\), and consider the following regression models for the parameters:
+
+\begin{align}
+\label{eq:model1}
+\ln(\mu_{ij}) &= \left( X\beta_\mu + (V\gamma_\mu)^\top + W\alpha_\mu + O_\mu\right)_{ij}\,,\\
+\label{eq:model2}
+\text{logit}(\pi_{ij}) &= \left(X\beta_\pi + (V\gamma_\pi)^\top + W\alpha_\pi + O_\pi\right)_{ij} \,, \\
+\label{eq:model3}
+\ln(\theta_{ij}) &= \zeta_j \,,
+\end{align}.
+
+where the elements of the regression models are as follows.
+
+- $X$ is a known $n \times M$ matrix corresponding to $M$ cell-level covariates and ${\bf \beta}=(\beta_\mu,\beta_\pi)$ its associated $M \times J$ matrices of regression parameters. $X$ can typically include covariates that induce variation of interest, such as cell types, or covariates that induce unwanted variation, such as batch or quality control (QC) measures. By default, it includes only a constant column of ones, ${\bf 1}_n$, to account for gene-specific intercepts.
+- $V$ is a known $J \times L$ matrix corresponding to $J$ gene-level covariates, such as gene length or GC-content, and ${\bf \gamma} = (\gamma_\mu , \gamma_\pi)$ its associated $L\times n$ matrices of regression parameters. By default, $V$ only includes a constant column of ones, ${\bf 1}_J$, to account for cell-specific intercepts, such as size factors representing differences in library sizes.
+- $W$ is an unobserved $n \times K$ matrix corresponding to $K$ unknown cell-level covariates, which could be of "unwanted variation" or of interest (such as cell type), and ${\bf \alpha} = (\alpha_\mu,\alpha_{\pi})$ its associated $K \times J$ matrices of regression parameters.
+- $O_\mu$ and $O_\pi$ are known $n \times J$ matrices of offsets.
+- $\zeta\in\mathbb{R}^J$ is a vector of gene-specific dispersion parameters on the log scale.
+
+## Example dataset
+
+To illustrate the methodology, we will make use of the Fluidigm C1 dataset of
+[@Pollen2014]. The data consist of 65 cells, each sequenced at high and low depth.
+The data are publicly available as part of the [scRNAseq package](https://www.bioconductor.org/packages/release/data/experiment/html/scRNAseq.html), in the form of a `SummarizedExperiment` object.
+
+```{r pollen}
+fluidigm <- ReprocessedFluidigmData(assays = "tophat_counts")
+fluidigm
+
+table(colData(fluidigm)$Coverage_Type)
+```
+
+# Gene filtering
+
+First, we filter out the lowly expressed genes, by removing those genes that do
+not have at least 5 reads in at least 5 samples.
+
+```{r filter}
+filter <- rowSums(assay(fluidigm)>5)>5
+table(filter)
+
+fluidigm <- fluidigm[filter,]
+```
+
+This leaves us with `r sum(filter)` genes.
+
+We next identify the 100 most variable genes, which will be the input of our
+ZINB-WaVE procedure. Although we apply ZINB-WaVE to only these genes primarily
+for computational reasons, it is generally a good idea to focus on a subset of
+highly-variable genes, in order to remove transcriptional noise and focus on the
+more biologically meaningful signals. However, at least 1,000 genes are probably
+needed for real analyses.
+
+```{r variance}
+assay(fluidigm) %>% log1p %>% rowVars -> vars
+names(vars) <- rownames(fluidigm)
+vars <- sort(vars, decreasing = TRUE)
+head(vars)
+
+fluidigm <- fluidigm[names(vars)[1:100],]
+```
+
+Before proceeding, we rename the first assay of `fluidigm` "counts" to avoid needing to specify which assay we should use for the `zinbwave` workflow. This is an optional step.
+
+```{r rename}
+assayNames(fluidigm)[1] <- "counts"
+```
+
+# ZINB-WaVE
+
+The easiest way to obtain the low-dimensional representation of the data with ZINB-WaVE is to use the `zinbwave` function. This function takes as input a `SummarizedExperiment` object and returns a `SingleCellExperiment` object.
+
+```{r zinbwave}
+fluidigm_zinb <- zinbwave(fluidigm, K = 2, epsilon=1000)
+```
+
+By default, the `zinbwave` function fits a ZINB model with $X = {\bf 1}_n$ and $V = {\bf 1}_J$. In this case, the model is a factor model akin to principal component analysis (PCA), where $W$ is a factor matrix and $\alpha_\mu$ and $\alpha_\pi$ are loading matrices. 
+By default, the `epsilon` parameter is set to the number of genes. We empirically 
+found that a high `epsilon` is often required to obtained a good low-level 
+representation. See `?zinbModel` for details. Here we set `epsilon=1000`.
+
+The parameter $K$ controls how many latent variables we want to infer
+from the data. $W$ is stored in the `reducedDim` slot of the object. (See the `SingleCellExperiment` vignette for details).
+
+In this case, as we specified $K=2$, we can visualize the resulting $W$ matrix in a simple plot, color-coded by cell-type.
+
+```{r zinb_plot}
+W <- reducedDim(fluidigm_zinb)
+
+data.frame(W, bio=colData(fluidigm)$Biological_Condition,
+           coverage=colData(fluidigm)$Coverage_Type) %>%
+    ggplot(aes(W1, W2, colour=bio, shape=coverage)) + geom_point() + 
+    scale_color_brewer(type = "qual", palette = "Set1") + theme_classic()
+```
+
+## Adding covariates
+
+The ZINB-WaVE model is more general than PCA, allowing the inclusion of additional sample and gene-level covariates that might help to infer the unknown factors.
+
+### Sample-level covariates
+
+Typically, one could include batch information as sample-level covariate, to
+account for batch effects. Here, we illustrate this capability by including the coverage (high or low) as a sample-level covariate.
+
+The column `Coverage_Type` in the `colData` of `fluidigm` contains the coverage information. We can specify a design matrix that includes an intercept and an indicator
+variable for the coverage, by using the formula interface of `zinbFit`.
+
+```{r zinb_coverage}
+fluidigm_cov <- zinbwave(fluidigm, K=2, X="~Coverage_Type", epsilon=1000)
+```
+
+```{r zinb_plot2}
+W <- reducedDim(fluidigm_cov)
+
+data.frame(W, bio=colData(fluidigm)$Biological_Condition,
+           coverage=colData(fluidigm)$Coverage_Type) %>%
+    ggplot(aes(W1, W2, colour=bio, shape=coverage)) + geom_point() + 
+    scale_color_brewer(type = "qual", palette = "Set1") + theme_classic()
+```
+
+In this case, the inferred $W$ matrix is essentially the same with or without
+covariates, indicating that the scaling factor included in the model (the $\gamma$ parameters associated with the intercept of $V$) are enough to achieve a good low-dimensional representation of the data.
+
+### Gene-level covariates
+
+Analogously, we can include gene-level covariates, as columns of $V$. Here, we 
+illustrate this capability by including gene length and GC-content.
+
+We use the `biomaRt` package to compute gene length and GC-content.
+
+```{r gcc, eval=FALSE}
+mart <- useMart("ensembl")
+mart <- useDataset("hsapiens_gene_ensembl", mart = mart)
+bm <- getBM(attributes=c('hgnc_symbol', 'start_position',
+                         'end_position', 'percentage_gene_gc_content'),
+            filters = 'hgnc_symbol',
+            values = rownames(fluidigm),
+            mart = mart)
+
+bm$length <- bm$end_position - bm$start_position
+len <- tapply(bm$length, bm$hgnc_symbol, mean)
+len <- len[rownames(fluidigm)]
+gcc <- tapply(bm$percentage_gene_gc_content, bm$hgnc_symbol, mean)
+gcc <- gcc[rownames(fluidigm)]
+```
+
+We then include the gene-level information as `rowData` in the `fluidigm` object.
+
+```{r rowdata, eval=FALSE}
+rowData(fluidigm) <- data.frame(gccontent = gcc, length = len)
+```
+
+```{r zinb_gcc, eval=FALSE}
+fluidigm_gcc <- zinbwave(fluidigm, K=2, V="~gccontent + log(length)", epsilon=1000)
+```
+
+# t-SNE representation
+
+A t-SNE representation of the data can be obtained by computing the cell distances
+in the reduced space and running the t-SNE algorithm on the distance.
+
+```{r tsne}
+set.seed(93024)
+
+library(Rtsne)
+W <- reducedDim(fluidigm_cov)
+tsne_data <- Rtsne(W, pca = FALSE, perplexity=10, max_iter=5000)
+
+data.frame(Dim1=tsne_data$Y[,1], Dim2=tsne_data$Y[,2], 
+           bio=colData(fluidigm)$Biological_Condition,
+           coverage=colData(fluidigm)$Coverage_Type) %>%
+    ggplot(aes(Dim1, Dim2, colour=bio, shape=coverage)) + geom_point() + 
+    scale_color_brewer(type = "qual", palette = "Set1") + theme_classic()
+```
+
+# Normalized values and deviance residuals
+
+Sometimes it is useful to have normalized values for visualization and residuals
+for model evaluation. Both quantities can be computed with the `zinbwave()` 
+function.
+
+```{r norm}
+fluidigm_norm <- zinbwave(fluidigm, K=2, epsilon=1000, normalizedValues=TRUE,
+                    residuals = TRUE)
+```
+
+The `fluidigm_norm` object includes normalized values and residuals as additional `assays`.
+
+```{r assays}
+fluidigm_norm
+```
+
+# The `zinbFit` function
+
+The `zinbwave` function is a user-friendly function to obtain the low-dimensional representation of the data, and optionally the normalized values and residuals from the model.
+
+However, it is sometimes useful to store all the parameter estimates and the value of the likelihood. The `zinbFit` function allows the user to create an object of class `zinbModel` that can be used to store all the parameter estimates and have greater control on the results.
+
+```{r zinb}
+zinb <- zinbFit(fluidigm, K=2, epsilon=1000)
+```
+
+As with `zinbwave`, by default, the `zinbFit` function fits a ZINB model with $X = {\bf 1}_n$ and $V = {\bf 1}_J$.
+
+If a user has run `zinbFit` and wants to obtain normalized values or the low-dimensional representation of the data in a `SingleCellExperiment` format, they can pass the `zinbModel` object to `zinbwave` to avoid repeating all the computations.
+
+Here, we also specify `observationalWeights = TRUE` to compute observational weights, useful for differential expression (see next section).
+
+```{r zinbwave2}
+fluidigm_zinb <- zinbwave(fluidigm, fitted_model = zinb, K = 2, epsilon=1000,
+                          observationalWeights = TRUE)
+```
+
+# Differential Expression
+
+The `zinbwave` package can be used to compute observational weights to "unlock" bulk RNA-seq tools for single-cell applications, as illustrated in [@van2018observation].
+
+`zinbwave` optionally computes the observational weights when specifying `observationalWeights = TRUE` as in the code chuck above. See the man page of `zinbwave`.
+The weights are stored in an `assay` named `weights` and can be accessed with the following call.
+
+```{r weights}
+weights <- assay(fluidigm_zinb, "weights")
+```
+
+Note that in this example, the value of the penalty parameter `epsilon` was set at `1000`, although we do not recommend this for differential expression analysis in real applications. Our evaluations have shown that a value of `epsilon=1e12` gives good performance across a range of datasets, although this number is still arbitrary. In general, values between `1e6` and `1e13` give best performances.
+
+## Differential expression with edgeR
+
+Once we have the observational weights, we can use them in `edgeR` to perform differential expression. Specifically, we use a moderated F-test in which the denominator residual degrees of freedom are adjusted by the extent of zero inflation (see [@van2018observation] for details).
+
+Here, we compare NPC to GW16. Note that we start from only 100 genes for computational reasons, but in real analyses we would use all the expressed genes.
+
+```{r edger}
+library(edgeR)
+
+dge <- DGEList(assay(fluidigm_zinb))
+dge <- calcNormFactors(dge)
+
+design <- model.matrix(~Biological_Condition, data = colData(fluidigm))
+dge$weights <- weights
+dge <- estimateDisp(dge, design)
+fit <- glmFit(dge, design)
+
+lrt <- glmWeightedF(fit, coef = 3)
+topTags(lrt)
+```
+
+## Differential expression with DESeq2
+
+Analogously, we can use the weights in a `DESeq2` analysis by using observation-level weights in the parameter estimation steps. In this case, there is no need to pass the weights to `DESeq2` since they are already in the `weights` assay of the object.
+
+```{r deseq2}
+library(DESeq2)
+
+counts(fluidigm_zinb) <- as.matrix(counts(fluidigm_zinb))
+dds <- DESeqDataSet(fluidigm_zinb, design = ~ Biological_Condition)
+
+dds <- DESeq(dds, sfType="poscounts", useT=TRUE, minmu=1e-6)
+res <- lfcShrink(dds, contrast=c("Biological_Condition", "NPC", "GW16"),
+                 type = "normal")
+head(res)
+```
+
+Note that `DESeq2`'s default normalization procedure is based on geometric means of counts, which are zero for genes with at least one zero count. This greatly limits the number of genes that can be used for normalization in scRNA-seq applications. We therefore use the normalization method suggested in the `phyloseq` package, which calculates the geometric mean for a gene by only using its positive counts, so that genes with zero counts could still be used for normalization purposes. 
+The `phyloseq` normalization procedure can be applied by setting the argument `type` equal to `poscounts` in `DESeq`. 
+
+For UMI data, for which the expected counts may be very low, the likelihood ratio test implemented in `nbinomLRT` should be used. For other protocols (i.e., non-UMI), the Wald test in `nbinomWaldTest` can be used, with null distribution a t-distribution with degrees of freedom corrected by the observational weights. In both cases, we recommend the minimum expected count to be set to a small value (e.g., `minmu=1e-6`).
+
+# Using `zinbwave` with Seurat
+
+The factors inferred in the `zinbwave` model can be added as one of the low dimensional data representations in the `Seurat` object, for instance to find subpopulations using Seurat's cluster analysis method.
+
+We first need to convert the `SingleCellExperiment` object into a `Seurat` object, using Seurat's `CreateSeuratObject` function.
+
+Note that the following workflow has been tested with Seurat's version 4.0.1.
+
+Here we create a simple Seurat object with the raw data. Please, refer to the Seurat's vignettes for a typical analysis, which includes filtering, normalization, etc.
+
+```{r seurat, eval=FALSE}
+library(Seurat)
+
+seu <- as.Seurat(x = fluidigm_zinb, counts = "counts", data = "counts")
+```
+
+Note that our `zinbwave` factors are automatically in the Seurat object.
+
+Finally, we can use the `zinbwave` factors for cluster analysis.
+
+```{r seurat3, eval=FALSE}
+seu <- FindNeighbors(seu, reduction = "zinbwave",
+                     dims = 1:2 #this should match K
+                     )
+seu <- FindClusters(object = seu)
+```
+
+# Working with large datasets
+
+When working with large datasets, `zinbwave` can be computationally demanding.
+We provide an approximate strategy, implemented in the `zinbsurf` function, that
+uses only a random subset of the cells to infer the low dimensional space and 
+subsequently projects all the cells into the inferred space.
+
+```{r surf}
+fluidigm_surf <- zinbsurf(fluidigm, K = 2, epsilon = 1000,
+                          prop_fit = 0.5)
+
+W2 <- reducedDim(fluidigm_surf)
+
+data.frame(W2, bio=colData(fluidigm)$Biological_Condition,
+           coverage=colData(fluidigm)$Coverage_Type) %>%
+    ggplot(aes(W1, W2, colour=bio, shape=coverage)) + geom_point() + 
+    scale_color_brewer(type = "qual", palette = "Set1") + theme_classic()
+```
+
+Note that here we use 50% of the data to get a reasonable approximation, since
+we start with only 130 cells. We found that for datasets with tens of thousands 
+of cells, 10% (the default value) is usally a reasonable choice.
+
+Note that this is an experimental feature and has not been thoroughly tested. Use at your own risk!
+
+# A note on performance and parallel computing
+
+The `zinbwave` package uses the `BiocParallel` package to allow for parallel
+computing. Here, we used the `register` command
+to ensure that the vignette runs with serial computations.
+
+However, in real datasets, parallel computations can speed up the computations 
+dramatically, in the presence of many genes and/or many cells. 
+
+There are two ways of allowing parallel computations in `zinbwave`. The first is
+to `register()` a parallel back-end (see `?BiocParallel::register` for details).
+Alternatively, one can pass a `BPPARAM` object to `zinbwave` and `zinbFit`, e.g.
+
+```{r, eval=FALSE}
+library(BiocParallel)
+zinb_res <- zinbwave(fluidigm, K=2, BPPARAM=MulticoreParam(2))
+```
+
+We found that `MulticoreParam()` may have some performance issues on Mac; hence,
+we recommend `DoparParam()` when working on Mac.
+
+# Session Info
+
+```{r}
+sessionInfo()
+```
+
+# References

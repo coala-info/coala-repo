@@ -1,0 +1,793 @@
+# packFinder
+
+Jack Gisby
+
+#### 2025-10-30
+
+# Contents
+
+* [1 Introduction](#introduction)
+* [2 Getting Started](#getting-started)
+  + [2.1 R Package Dependencies](#r-package-dependencies)
+  + [2.2 Command Line Dependencies](#command-line-dependencies)
+* [3 Searching for Potential Transposable Elements using packFinder](#searching-for-potential-transposable-elements-using-packfinder)
+  + [3.1 Getting Data](#getting-data)
+  + [3.2 Using packSearch](#using-packsearch)
+* [4 Analysing Potential Transposable Elements using packFinder](#analysing-potential-transposable-elements-using-packfinder)
+  + [4.1 Clustering of Transposable Elements](#clustering-of-transposable-elements)
+  + [4.2 Reading VSEARCH Output Files](#reading-vsearch-output-files)
+  + [4.3 Clustering of TIR Sequences](#clustering-of-tir-sequences)
+  + [4.4 Alignment of Transposable Elements](#alignment-of-transposable-elements)
+  + [4.5 BLAST Analysis](#blast-analysis)
+* [5 Data Formats and Conversion](#data-formats-and-conversion)
+  + [5.1 packSearch Dataframe](#packsearch-dataframe)
+  + [5.2 GRanges](#granges)
+  + [5.3 FASTA](#fasta)
+* [6 Step-wise packSearch Functions](#step-wise-packsearch-functions)
+  + [6.1 Identifying Potential TIRs](#identifying-potential-tirs)
+  + [6.2 Obtaining TSD Sequences](#obtaining-tsd-sequences)
+  + [6.3 Filtering TIR Matches](#filtering-tir-matches)
+  + [6.4 Get Transposon Sequences](#get-transposon-sequences)
+* [7 References](#references)
+* **Appendix**
+* [A Session Information](#session-information)
+
+# 1 Introduction
+
+The goal of packFinder was to implement a simple tool for the prediction of
+potential Pack-TYPE elements. packFinder uses the following prior knowledge,
+provided by the user, to detect transposons:
+
+1. Terminal Inverted Repeat (TIR) Base Sequence
+2. Length of Terminal Site Duplication (TSD)
+3. Length of the Transposon
+
+These features, shown in **Figure 1**, provide enough information to detect
+autonomous and pack-TYPE elements. For a transposon to be predicted by
+packFinder its TSD sequences must be identical to each other, its forward TIR
+sequence must match the base sequence provided and its reverse TIR sequence
+must match its reverse complement.
+
+![](data:image/jpeg;base64...)
+
+**Important structural features of Pack-TYPE transposons**
+
+Transposons are therefore predicted by searching a given genome for these
+characteristics, and further analysis steps can reveal the nature of these
+elements - while the packFinder tool is sensitive for the detection of
+transposons, it does not discriminate between autonomous and Pack-TYPE
+elements.
+
+Autonomous elements will contain a transposase gene within the
+terminal inverted repeats and tend to be larger than their Pack-TYPE
+counterparts; pack-TYPE elements instead capture sections of host genomes.
+Following cluster analysis, BLAST can be used to discern which predicted
+elements are autonomous (transposase-containing) and with are true
+Pack-TYPE elements.
+
+# 2 Getting Started
+
+Users may download packFinder and use the primary function - packSearch -
+to locate potential transposons in a given set of DNA sequences. In addition
+to R packages, the command line tool `VSEARCH` must be installed prior to use
+of clustering and alignment functions.
+
+## 2.1 R Package Dependencies
+
+CRAN and Bioconductor packages will be automatically installed
+when downloading `packFinder`. The package may be installed
+from the development branch of Bioconductor, as long as R version
+4.0.0 is installed.
+
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# The following initializes usage of Bioc devel
+BiocManager::install(version='devel')
+
+BiocManager::install("packFinder")
+```
+
+## 2.2 Command Line Dependencies
+
+While this allows R to run the packSearch pipeline within packFinder,
+VSEARCH must be installed for use of clustering and alignment functions
+within packSearch. Detailed installation instructions are available from
+the README file on the VSEARCH github <https://github.com/torognes/vsearch>).
+The command line can be used to install VSEARCH on Linux and MacOS operating
+systems (using wget and tar) while VSEARCH can be downloaded and extracted for
+use on Windows systems.
+
+For Linux and MacOS systems, correct installation of VSEARCH should allow
+users to use all functions within packFinder whereas for windows users, the
+absolute path to the VSEARCH executable file must be specified when calling
+packFinder clustering and alignment functions. This vignette will assume a
+MacOS/Linux operating system - see ?packClust for examples using windows.
+
+# 3 Searching for Potential Transposable Elements using packFinder
+
+## 3.1 Getting Data
+
+Both DNA to be searched and the TIR query must be in XString format
+(see Biostrings). The TIR query should be coerced to a DNAString object
+while the DNA sequence, or set of sequences, should be a DNAStringSet.
+Bioconductor’s `Biostrings` provides methods for the conversion of various
+formats to `DNAString` objects, including from character vectors and
+fasta files.
+
+```
+# Convert a character vector to a DNAString
+Biostrings::DNAString("CATG")
+```
+
+```
+## 4-letter DNAString object
+## seq: CATG
+```
+
+```
+# Convert a list of character vectors to a DNAStringSet
+Biostrings::DNAStringSet(c(
+    "CATG",
+    "GTAC"
+))
+```
+
+```
+## DNAStringSet object of length 2:
+##     width seq
+## [1]     4 CATG
+## [2]     4 GTAC
+```
+
+```
+# Convert a FASTA file to a DNAStringSet
+Biostrings::readDNAStringSet(
+    system.file("extdata", "packMatches.fasta", package = "packFinder"),
+    format = "fasta"
+)
+```
+
+```
+## DNAStringSet object of length 6:
+##     width seq                                               names
+## [1]  1518 CACTACAAAAAAAAAGTCGAATT...AAAATGATCACTTTTTTGTAGTG Chr3 | start = 10...
+## [2]   713 CACTACAAGGACAATGAAATTTA...CGTTTACCTGTTTTCTTGTAGTG Chr3 | start = 10...
+## [3]  1708 CACTACAAAACAAAGTGGATTAC...TTAAAATGATCTTTTTTGTAGTG Chr3 | start = 28...
+## [4]   728 CACTACAAGGACAATGAAATTTT...CTTTTACCTGTTTTCTTGTAGTG Chr3 | start = 34...
+## [5]  2266 CACTACAACAAATATCCACATTC...TAATGTGGATATTTGTTGTAGTG Chr3 | start = 35...
+## [6]  2463 CACTACAAGAATATTAAACTTTA...GAAAAGTCATTTTTCTTGTAGTG Chr3 | start = 37...
+```
+
+## 3.2 Using packSearch
+
+In this example we search a subset of chromosome 3, from the Arabidopsis
+thaliana reference sequence; our query will be first 8 bases of the CACTA1
+autonomous transposable element’s TIR. The CACTA transposons have TSD
+sequences that are 3 bases long, and the Pack-CACTA elements tend to be
+between 300 to 3500 bases in width. Since the first 8 bases of the Pack-CACTA
+TIRs tend to be conserved between elements, the default allowable mismatch of
+0 was used.
+
+```
+data("arabidopsisThalianaRefseq")
+
+packMatches <- packSearch(
+    Biostrings::DNAString("CACTACAA"),
+    arabidopsisThalianaRefseq,
+    elementLength = c(300, 3500),
+    tsdLength = 3
+)
+```
+
+```
+## Getting forward matches
+```
+
+```
+## 90 forward matches identified.
+```
+
+```
+## Getting reverse matches
+```
+
+```
+## 97 reverse matches identified.
+```
+
+```
+## Filtering matches based on TSD sequences
+```
+
+```
+## Initial filtering complete. 6 elements predicted.
+```
+
+```
+head(packMatches)
+```
+
+```
+##   seqnames   start     end width strand TSD
+## 1     Chr3  100830  102347  1518      * TGT
+## 2     Chr3 1068802 1069514   713      * ATA
+## 3     Chr3 2807747 2809454  1708      * GGT
+## 4     Chr3 3487540 3488267   728      * ATA
+## 5     Chr3 3582297 3584562  2266      * ATA
+## 6     Chr3 3738747 3741209  2463      * TTG
+```
+
+In this subset, we identified six potential Pack-TYPE elements, however at
+this stage it is unclear what genetic information can be found between the
+inverted TIR sequences **Figure 1**. These elements could contain transposase
+genes, making them autonomous elements, or may be Pack-TYPE elements that
+have captured parts of the Arabidopsis thaliana host genome. Additionally,
+of the Pack-TYPE elements detected, some may share sequences of related
+chromosomal origin between their TIRs.
+
+`packSearch` returns a dataframe of ranges, in the format produced by
+coercing a GRanges object to a dataframe: `data.frame(GRanges)`.
+This format is used to transfer the transposon ranges between the functions
+in `packFinder`.
+
+# 4 Analysing Potential Transposable Elements using packFinder
+
+## 4.1 Clustering of Transposable Elements
+
+In order to make downstream analysis more efficient and understand the
+relations between the identified elements, we can use VSEARCH to cluster
+predicted transposons. Here we run VSEARCH with the default parameters,
+meaning:
+
+*An identity of 60% between two elements is required to form a cluster*The method of identity detection is the VSEARCH default
+
+The identity and method of identity definition can be altered depending on
+analysis (see VSEARCH documentation).
+
+```
+packMatches <- packClust(
+    packMatches,
+    arabidopsisThalianaRefseq,
+    saveFolder = "tempOutput"
+)
+```
+
+```
+## Rognes T, Flouri T, Nichols B, Quince C, Mahe F (2016)
+## VSEARCH: a versatile open source tool for metagenomics
+## PeerJ 4:e2584 doi: 10.7717/peerj.2584 https://doi.org/10.7717/peerj.2584
+##
+## vsearch v2.14.1_win_x86_64, 7.9GB RAM, 4 cores
+## https://github.com/torognes/vsearch
+##
+## vsearch v2.14.1_win_x86_64, 7.9GB RAM, 4 cores
+## https://github.com/torognes/vsearch
+##
+## Reading file data/packMatches.fasta 100%
+## 9396 nt in 6 seqs, min 713, max 2463, avg 1566
+## Counting k-mers 100%
+## Clustering 100%
+## Sorting clusters 100%
+## Writing clusters 100%
+## Clusters: 5 Size min 1, max 2, avg 1.2
+## Singletons: 4, 66.7% of seqs, 80.0% of clusters
+## Sorting clusters by abundance 100%
+```
+
+```
+##   seqnames   start     end width strand TSD cluster
+## 1     Chr3  100830  102347  1518      + TGT       3
+## 2     Chr3 1068802 1069514   713      + ATA       4
+## 3     Chr3 2807747 2809454  1708      + GGT       2
+## 4     Chr3 3487540 3488267   728      + ATA       4
+## 5     Chr3 3582297 3584562  2266      + ATA       1
+## 6     Chr3 3738747 3741209  2463      + TTG       0
+```
+
+Of the 6 elements identified in this data subset, only two were found to be
+in the same cluster. When a new cluster is created, the transposon is
+designated as being on the forwards strand (+); elements that are subsequently
+assigned to this cluster are given a strand designation relative to the
+original element in the cluster.
+
+For this data, as there are few clusters,
+all of the elements have been designated as being on the forwards strand.
+Adjusting the identity % required or changing the identity definition could
+lead to more effective clustering, or lead to false-positives.
+
+Note, by default `filterWildcards` is called when clustering
+or aligning sequences; this prevents low quality sequences from clustering
+together, and by default removes sequences with a proportion of wildcards
+(“N”) above 5%.
+
+## 4.2 Reading VSEARCH Output Files
+
+Based on the results of packClust, we found that the second and fourth matches
+have similar sequences. Additionally, these potential elements have a similar
+width and so it is feasible that these are elements that have been duplicated
+by a transposase. To investigate the extent of the similarities, we can read
+the more detailed VSEARCH output files:
+
+* USEARCH cluster format `.uc` - containing a summary of the clustering done
+  by VSEARCH
+* BLAST output - a BLAST compatible summary containing details of the BLAST
+  matches between clusters
+
+```
+readUc(system.file(
+    "extdata",
+    "packMatches.uc",
+    package = "packFinder"
+))
+```
+
+```
+##    type cluster width identity strand  cigarAlignment query target
+## 1     S       0  2463        *      *               *     6      *
+## 2     S       1  2266        *      *               *     5      *
+## 3     S       2  1708        *      *               *     3      *
+## 4     S       3  1518        *      *               *     1      *
+## 5     S       4   728        *      *               *     4      *
+## 6     H       4   713     84.1      + 94MD117M16I501M     2      4
+## 7     C       0     1        *      *               *     6      *
+## 8     C       1     1        *      *               *     5      *
+## 9     C       2     1        *      *               *     3      *
+## 10    C       3     1        *      *               *     1      *
+## 11    C       4     2        *      *               *     4      *
+```
+
+```
+readBlast(system.file(
+    "extdata",
+    "packMatches.blast6out",
+    package = "packFinder"
+))
+```
+
+```
+##   query_id subject_id identity alignment_length mismatches gap_opens q.start
+## 1        2          4     84.1              729         99         2       1
+##   q.end s.start s.end evalue bit_score
+## 1   713       1   728     -1         0
+```
+
+## 4.3 Clustering of TIR Sequences
+
+Additionally, tirClust can provide a summary of the similarities between
+the TIR sequences of clustered transposons. While in this example “CACTACAA”
+has been used as the TIR search query, the CACTA TIR sequence is longer than
+8 base pairs - although the rest of the TIR sequence may be less well
+conserved.
+
+For each cluster, tirClust creates a consensus sequence for
+the forward and reverse TIR regions; in this case we will consider the first
+25 base pairs of each TIR. Additionally, clustering of these TIRs is carried
+out using kmer clustering before being plotted as a dendrogram for
+visualisation.
+
+```
+consensusSeqs <- tirClust(packMatches,
+    arabidopsisThalianaRefseq,
+    tirLength = 25
+)
+```
+
+![](data:image/png;base64...)
+
+```
+head(consensusSeqs)
+```
+
+```
+## DNAStringSet object of length 6:
+##     width seq                                               names
+## [1]    26 CACTACAAAAAAAAAGTCGAATTGAA                        f3
+## [2]    26 CACTACAAGGACAATGAAATTTWCCT                        f4
+## [3]    26 CACTACAAAACAAAGTGGATTACATC                        f2
+## [4]    26 CACTACAACAAATATCCACATTCTTA                        f1
+## [5]    26 CACTACAAGAATATTAAACTTTAATA                        f0
+## [6]    26 CACTACAAAAAAGTGATCATTTTATA                        r3
+```
+
+As expected, the forward and reverse TIRs of each transposon are very similar;
+this is also true for the two clustered transposons. From the dendrogram,
+groups are visible that weren’t found by the VSEARCH clustering; this indicates
+that, while the TIR sequences are related, these groups likely have different
+genetic material between their TIR sequences.
+
+## 4.4 Alignment of Transposable Elements
+
+After clusters of transposable elements have been identified, it may be useful
+to produce an alignment. Since we know that the transposable elements
+identified by VSEARCH have a minimum 60% sequence similarity, it will be
+possible to produce good quality sequence alignments. This can be useful
+for downstream analysis, such as BLAST searching. In this instance, an
+alignment was done for cluster 4; so an alignment of only two sequences
+was carried out.
+
+```
+packMatches <- packAlign(
+    packMatches,
+    arabidopsisThalianaRefseq,
+    saveFolder = "tempOutput"
+)
+```
+
+```
+## Rognes T, Flouri T, Nichols B, Quince C, Mahe F (2016)
+## VSEARCH: a versatile open source tool for metagenomics
+## PeerJ 4:e2584 doi: 10.7717/peerj.2584 https://doi.org/10.7717/peerj.2584
+##
+## vsearch v2.14.1_win_x86_64, 7.9GB RAM, 4 cores
+## https://github.com/torognes/vsearch
+##
+## vsearch v2.14.1_win_x86_64, 7.9GB RAM, 4 cores
+## https://github.com/torognes/vsearch
+##
+## Reading file data//packMatches.fasta 100%
+## 9396 nt in 6 seqs, min 713, max 2463, avg 1566
+## Masking 100%
+## Aligning 100%
+## Matching query sequences: 5 of 6 (83.33%)
+```
+
+As with VSEARCH clustering, a `.uc` and `.blast` file are created by the
+alignment. The alignment function returns a summary of the `.uc` file,
+however the full details of each file can be recovered as before.
+
+## 4.5 BLAST Analysis
+
+BLAST search has not been implemented in this package, so it is expected that
+the user will define clusters of transposable elements above before BLAST
+investigation. This stage will identify the tranposable elements that are
+autonomous and confirm which matches are likely pack-TYPE elements.
+
+Since
+this example included only a small subset of the Arabidopsis thaliana genome,
+and there were very few elements identified, a BLASTN search was carried out
+for cluster 4. In a larger study, it would have been wise to instead select
+more interesting clusters and BLAST a subset of these.
+
+```
+# the packMatches dataframe is exported as a FASTA file for NCBI blast search
+packsToFasta(
+    packMatches,
+    "tempOutput/packMatches.fasta",
+    arabidopsisThalianaRefseq
+)
+```
+
+```
+## [1] "FASTA written to tempOutput/packMatches.fasta"
+```
+
+After running the cluster 4 sequence using NCBI’s BLASTX service, two major
+hits were found (GENBANK: AAD28056.1 and AAF06087.1) for the sequence. One
+match appeared to be similar to a putative En/Spm-like transposon protein,
+suggesting that this transposon may not be a Pack-TYPE element as it may not
+have captured genetic material from the host genome.
+
+# 5 Data Formats and Conversion
+
+## 5.1 packSearch Dataframe
+
+Dataframes are used by packFinder to contain the locations of predicted
+elements and additional metadata, such as TSD sequence and cluster
+designation. The dataframe is in a similar format to that stored by
+GenomicRanges. The dataframe can be saved and restored, as below, for longer
+term storage and export of packFinder results. packMatches refers to the
+object created in previous steps, by applying packSearch followed by packClust.
+
+```
+packsToCsv(packMatches, "tempOutput/packMatches.csv")
+```
+
+```
+## [1] "File successfully written to tempOutput/packMatches.csv"
+```
+
+```
+print(getPacksFromCsv("tempOutput/packMatches.csv"))
+```
+
+```
+##   seqnames   start     end width strand TSD cluster
+## 1     Chr3  100830  102347  1518      + TGT       3
+## 2     Chr3 1068802 1069514   713      + ATA       4
+## 3     Chr3 2807747 2809454  1708      + GGT       2
+## 4     Chr3 3487540 3488267   728      + ATA       4
+## 5     Chr3 3582297 3584562  2266      + ATA       1
+## 6     Chr3 3738747 3741209  2463      + TTG       0
+```
+
+## 5.2 GRanges
+
+As mentioned previously, the packFinder dataframe is in a similar format to
+that stored by GenomicRanges. The data produced by packFinder can therefore
+be quickly converted to and from a GRanges object, as below.
+
+```
+packsGRanges <- packsToGRanges(packMatches)
+print(packsGRanges)
+```
+
+```
+## GRanges object with 6 ranges and 2 metadata columns:
+##       seqnames          ranges strand |         TSD   cluster
+##          <Rle>       <IRanges>  <Rle> | <character> <integer>
+##   [1]     Chr3   100830-102347      + |         TGT         3
+##   [2]     Chr3 1068802-1069514      + |         ATA         4
+##   [3]     Chr3 2807747-2809454      + |         GGT         2
+##   [4]     Chr3 3487540-3488267      + |         ATA         4
+##   [5]     Chr3 3582297-3584562      + |         ATA         1
+##   [6]     Chr3 3738747-3741209      + |         TTG         0
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+```
+print(getPacksFromGRanges(packsGRanges))
+```
+
+```
+##   seqnames   start     end width strand TSD cluster
+## 1     Chr3  100830  102347  1518      + TGT       3
+## 2     Chr3 1068802 1069514   713      + ATA       4
+## 3     Chr3 2807747 2809454  1708      + GGT       2
+## 4     Chr3 3487540 3488267   728      + ATA       4
+## 5     Chr3 3582297 3584562  2266      + ATA       1
+## 6     Chr3 3738747 3741209  2463      + TTG       0
+```
+
+If many elements are discovered by packFinder it may be necessary to identify
+overlapping elements, that could not be produced by a transposase, and remove
+them; this can be done using GenomicRanges.
+
+## 5.3 FASTA
+
+Additionally, the dataframe produced by packFinder can be exported to and
+restored from FASTA formats. While this will not save additional metadata
+columns, such as cluster designations, the core information will be
+preserved in the FASTA title field.
+
+```
+packsToFasta(
+    packMatches,
+    "tempOutput/packMatches.fasta",
+    arabidopsisThalianaRefseq
+)
+```
+
+```
+## [1] "FASTA written to tempOutput/packMatches.fasta"
+```
+
+```
+print(getPacksFromFasta("tempOutput/packMatches.fasta"))
+```
+
+```
+##   seqnames   start     end width strand TSD
+## 1     Chr3  100830  102347  1518      + TGT
+## 2     Chr3 1068802 1069514   713      + ATA
+## 3     Chr3 2807747 2809454  1708      + GGT
+## 4     Chr3 3487540 3488267   728      + ATA
+## 5     Chr3 3582297 3584562  2266      + ATA
+## 6     Chr3 3738747 3741209  2463      + TTG
+```
+
+# 6 Step-wise packSearch Functions
+
+While it is recommended to use packSearch to identify potential Pack-TYPE
+elements, it is possible to run the individual functions that make up the
+packSearch pipeline. Below are the steps used by packSearch to predict
+transposons, using the same parameters as the previous example.
+
+## 6.1 Identifying Potential TIRs
+
+Potential TIR sequences are first identified by pattern matching.
+
+```
+forwardMatches <- identifyTirMatches(
+    Biostrings::DNAString("CACTACAA"),
+    arabidopsisThalianaRefseq,
+    strand = "+",
+    tsdLength = 3
+)
+nrow(forwardMatches)
+```
+
+```
+## [1] 90
+```
+
+```
+reverseMatches <- identifyTirMatches(
+    Biostrings::reverseComplement(Biostrings::DNAString("CACTACAA")),
+    arabidopsisThalianaRefseq,
+    strand = "-",
+    tsdLength = 3
+)
+nrow(reverseMatches)
+```
+
+```
+## [1] 97
+```
+
+## 6.2 Obtaining TSD Sequences
+
+The function `getTsds` may be used to quickly obtain the TSD sequences for
+TIRs. This function can also be used for obtaining TSDs from the ranges of
+known full transposons, given a dataframe in the format produced by packSearch.
+
+```
+forwardMatches$TSD <- getTsds(
+    forwardMatches,
+    arabidopsisThalianaRefseq,
+    3,
+    strand = "+"
+)
+
+head(forwardMatches)
+```
+
+```
+##   seqnames  start    end width strand TSD
+## 1     Chr3 100830 100837     8      + TGT
+## 2     Chr3 135422 135429     8      + TTA
+## 3     Chr3 139547 139554     8      + AAC
+## 4     Chr3 146399 146406     8      + AAC
+## 5     Chr3 179436 179443     8      + TTT
+## 6     Chr3 216837 216844     8      + ATT
+```
+
+```
+reverseMatches$TSD <- getTsds(
+    reverseMatches,
+    arabidopsisThalianaRefseq,
+    3,
+    strand = "-"
+)
+
+head(reverseMatches)
+```
+
+```
+##   seqnames  start    end width strand TSD
+## 1     Chr3    447    454     8      - AAT
+## 2     Chr3  42505  42512     8      - CGT
+## 3     Chr3  84518  84525     8      - ATT
+## 4     Chr3  95521  95528     8      - TTG
+## 5     Chr3 102340 102347     8      - TGT
+## 6     Chr3 186733 186740     8      - GTG
+```
+
+## 6.3 Filtering TIR Matches
+
+The main step of the algorithm matches TIR sequences together based on their
+proximity and TSD sequence.
+
+```
+identifyPotentialPackElements(
+    forwardMatches,
+    reverseMatches,
+    arabidopsisThalianaRefseq,
+    c(300, 3500)
+)
+```
+
+```
+##   seqnames   start     end width strand
+## 1     Chr3  100830  102347  1518      *
+## 2     Chr3 1068802 1069514   713      *
+## 3     Chr3 2807747 2809454  1708      *
+## 4     Chr3 3487540 3488267   728      *
+## 5     Chr3 3582297 3584562  2266      *
+## 6     Chr3 3738747 3741209  2463      *
+```
+
+After attaching the TSD sequences to the dataframe of matches, the output
+matches that of the previous example run using the packSearch pipeline.
+
+## 6.4 Get Transposon Sequences
+
+The function `getSeqs` may be used to obtain transposon sequences from a
+dataframe in the format produced by packSearch. This could additionally be
+used on other dataframes of ranges, such as that produced by
+identifyTirMatches above.
+
+```
+getPackSeqs(packMatches, arabidopsisThalianaRefseq)
+```
+
+```
+## DNAStringSet object of length 6:
+##     width seq                                               names
+## [1]  1518 CACTACAAAAAAAAAGTCGAATT...AAAATGATCACTTTTTTGTAGTG Chr3
+## [2]   713 CACTACAAGGACAATGAAATTTA...CGTTTACCTGTTTTCTTGTAGTG Chr3
+## [3]  1708 CACTACAAAACAAAGTGGATTAC...TTAAAATGATCTTTTTTGTAGTG Chr3
+## [4]   728 CACTACAAGGACAATGAAATTTT...CTTTTACCTGTTTTCTTGTAGTG Chr3
+## [5]  2266 CACTACAACAAATATCCACATTC...TAATGTGGATATTTGTTGTAGTG Chr3
+## [6]  2463 CACTACAAGAATATTAAACTTTA...GAAAAGTCATTTTTCTTGTAGTG Chr3
+```
+
+# 7 References
+
+# Appendix
+
+Much of the information on the properties of Pack-TYPE transposable elements
+was obtained from the following papers during the development of
+`packFinder`.
+
+* Catoni, M. et al. (2019) ‘Mobilization of Pack-CACTA transposons in
+  Arabidopsis suggests the mechanism of gene shuffling’,
+  *Nucleic Acids Research*. Oxford University Press, 47(3), pp. 1311–1320.
+  doi: 10.1093/nar/gky1196.
+* Jiang, N. et al. (2004) ‘Pack-MULE transposable elements mediate gene
+  evolution in plants’, *Nature*, 431(7008), pp. 569–573.
+  doi: 10.1038/nature02953.
+
+The Bioconductor packages `GenomicRanges` and `Biostrings` were
+used extensively for detection of tranposable elements, and manipulation of
+DNA sequences.
+
+Finally, the `packFinder` package has now been described in *PLOS Genetics*:
+
+Gisby, J. S. & Catoni, M. (2022) The widespread nature of Pack-TYPE transposons
+reveals their importance for plant genome evolution. *PLOS Genetics* 18(2):
+e1010078. doi:
+[10.1371/journal.pgen.1010078](https://doi.org/10.1371/journal.pgen.1010078)
+
+# A Session Information
+
+This vignette was compiled during the following session:
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base
+##
+## other attached packages:
+## [1] packFinder_1.22.0 BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##  [1] jsonlite_2.0.0       compiler_4.5.1       BiocManager_1.30.26
+##  [4] crayon_1.5.3         Rcpp_1.1.0           tinytex_0.57
+##  [7] GenomicRanges_1.62.0 Biostrings_2.78.0    magick_2.9.0
+## [10] parallel_4.5.1       kmer_1.1.2           jquerylib_0.1.4
+## [13] IRanges_2.44.0       Seqinfo_1.0.0        yaml_2.3.10
+## [16] fastmap_1.2.0        lattice_0.22-7       R6_2.6.1
+## [19] XVector_0.50.0       generics_0.1.4       knitr_1.50
+## [22] BiocGenerics_0.56.0  bookdown_0.45        phylogram_2.1.0
+## [25] bslib_0.9.0          rlang_1.1.6          cachem_1.1.0
+## [28] xfun_0.53            sass_0.4.10          cli_3.6.5
+## [31] magrittr_2.0.4       digest_0.6.37        grid_4.5.1
+## [34] lifecycle_1.0.4      nlme_3.1-168         S4Vectors_0.48.0
+## [37] evaluate_1.0.5       stats4_4.5.1         ape_5.8-1
+## [40] rmarkdown_2.30       tools_4.5.1          htmltools_0.5.8.1
+```

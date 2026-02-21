@@ -1,0 +1,327 @@
+---
+title: "An introduction to rScudo"
+date: "`r Sys.Date()`"
+author:
+-   name: Matteo Ciciani
+    affiliation: &aff Centre for Integrative Biology (CIBIO), University of
+        Trento, Italy
+    email: matteo.ciciani@gmail.com
+-   name: Thomas Cantore
+    affiliation: *aff
+-   name: Mario Lauria
+    affiliation:
+        - Department of Mathematics, University of Trento, Italy
+        - The Microsoft Research-University of Trento Centre for
+            Computational and Systems Biology (COSBI), Rovereto, Italy
+output:
+    BiocStyle::html_document:
+        toc_float: true
+vignette: >
+    %\VignetteIndexEntry{Signature-based Clustering for Diagnostic Purposes}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+# Introduction
+
+This package implements in R the SCUDO rank-based signature identification
+method^[Lauria M. Rank-based transcriptional signatures. Systems Biomedicine.
+2013; 1(4):228-239.<br style="line-height: 15pt" />Lauria M, Moyseos P, Priami
+C. SCUDO: a tool for signature-based clustering of expression profiles. Nucleic
+Acids Research. 2015; 43(W1):W188-92.]. SCUDO (Signature-based Clustering for
+Diagnostic Purposes) is a method for the analysis and classification of gene
+expression profiles for diagnostic and classification purposes. The `rScudo`
+package implements the very same algorithm that participated in the SBV IMPROVER
+Diagnostic Signature Challenge, an open international competition designed to
+assess and verify computational approaches for classifying clinical samples
+based on gene expression. SCUDO earned second place overall in the competition,
+and first in the Multiple Sclerosis sub-challenge, out of 54 submissions^[Tarca
+AL, Lauria M, Unger M, Bilal E, Boue S, Kumar Dey K, Hoeng J, Koeppl H, Martin
+F, Meyer P, et al. IMPROVER DSC Collaborators. Strengths and limitations of
+microarray-based phenotype prediction: lessons learned from the IMPROVER
+Diagnostic Signature Challenge. Bioinformatics. 2013; 29:2892–2899.].
+
+The method is based on the identification of sample-specific gene signatures and
+their subsequent analysis using a measure of signature-to-signature similarity.
+The computation of a similarity matrix is then used to draw a map of the
+signatures in the form of a graph, where each node corresponds to a sample and a
+connecting edge, if any, encodes the level of similarity between the connected
+nodes (short edge = high similarity; no edge = negligible similarity). The
+expected result is the emergence of a partitioning of the set of samples in
+separate and homogeneous clusters on the basis of signature similarity (clusters
+are also sometimes referred to as communities).
+
+The package has been designed with the double purpose of facilitating
+experimentation on different aspects of the SCUDO approach to classification,
+and enabling performance comparisons with other methods. Given the novelty
+of the method, a lot of work remain to be done in order to fully optimize it,
+and to fully characterize its classification performance. For this purpose the
+package includes features that allow the user to implement his/her own signature
+similarity function, and/or clustering and classification methods. It also adds
+functions to implement steps that were previously performed manually, such as
+determining optimal signature length and computing classification performance
+indices, in order to facilitate the application and the evaluation of the
+method.
+
+# Method in brief
+
+Starting from gene expression data, the functions `scudoTrain` and
+`scudoNetwork` perform the basic SCUDO pipeline, which can be
+summarized in 4 steps:
+
+1. First, fold-changes are computed for each gene. Then, a feature selection
+step is performed. The user can specify whether to use a parametric or a non
+parametric test. The test used also depends on the number of groups present in
+the dataset. This step can be optionally skipped.
+
+2. The subsequent operations include single sample gene ranking and the
+extraction of signatures formed by up-regulated and down-regulated genes. The
+length of the signatures are customizable. Consensus signtures are then
+computed, both for up- and down-regulated genes and for each group. The
+computation of consensus signatures is performed aggregating the ranks of the
+genes in each sample and ranking again the genes.
+
+3. An all-to-all distance matrix is then computed using a distance similar to
+the GSEA^[Subramanian A, Tamayo P, Mootha VK, Mukherjee S, Ebert BL, Gillette
+MA, Paulovich A, Pomeroy SL, Golub TR, Lander ES, Mesirov JP. Gene set
+enrichment analysis: A knowledge-based approach for interpreting genome-wide
+expression profiles. PNAS. 2005; 102(43):15545-15550.] (Gene Set Enrichment
+Analysis): the distance between two samples is computed as the mean of the
+enrichment scores (ES) of the signatures of each sample in the expression
+profile of the other sample. The distance function used is customizable.
+
+4. Finally, a user-defined threshold N is used to generate a network of samples.
+The distance matrix is treated as an adjacency matrix, but only the distances
+that fall below the N^th^ quantile of distances are used to draw edges in the
+network. This is performed by the function `scudoNetwork`. The network
+can then be displayed in R or using Cytoscape.
+
+The function `scudoTrain` returns an object of class `scudoResults`,
+which contains sample-specific gene signatures, consensus gene signatures for
+each group and the sample distance matrix.
+
+After the identification of a list of genes that can be used to partition the
+samples in separated communities, the same procedure can be applied to a testing
+dataset. The function `scudoTest` performs steps 2 and 3 on a testing
+dataset, taking into account only the genes selected in the training phase.
+
+Alteranatively, the function `scudoClassify` can be used to perform
+supervised classification. This function takes as input a training set,
+containing samples with known classification, and a testing set of samples with
+unknown classification. For each sample in the testing set, the function
+computes a network formed by all the samples in the training set and a single
+sample from the training set. Then, classification scores are computed for each
+sample in the testing set looking at the neighbors of that sample in the
+network. See the documentation of the function for a detailed description of the
+computation of the classification scores.
+
+# Example workflow
+
+## Data preparation
+
+In this example we will use the `r Biocpkg("ALL")` dataset, containing gene
+expression data from T- and B-cells acute lymphoblastic leukemia patients. In
+this first part, we are interested in distinguishing B-cells and T-cells
+samples, based on gene expression profiles. We begin by loading relevant
+libraries and subsetting the dataset, dividing it in a training and a testing
+set, using the function `createDataPartition` from the package
+`r CRANpkg("caret")`.
+
+```{r, message=FALSE}
+library(rScudo)
+library(ALL)
+data(ALL)
+
+bt <- as.factor(stringr::str_extract(pData(ALL)$BT, "^."))
+
+set.seed(123)
+inTrain <- caret::createDataPartition(bt, list = FALSE)
+trainData <- ALL[, inTrain]
+testData <- ALL[, -inTrain]
+```
+
+## Analysis of the training set
+
+We start by analyzing the training set. We first run `scudoTrain`,
+which returns an object of class `ScudoResults`. This function computes the
+all-to-all distance matrix, which is a potentially  computationally intensive
+operation, however its implementation has been carefully optimized for speed. As
+a result, the function can handle relatively large data sets; the execution of
+the code below takes only about 3 seconds on a PC equipped with a Intel Core
+i7-8700T 2.40GHz CPU and 16GB of RAM running Windows 10 Pro.
+
+```{r}
+trainRes <- scudoTrain(trainData, groups = bt[inTrain], nTop = 100,
+    nBottom = 100, alpha = 0.1)
+trainRes
+```
+
+From this object we can extract the signatures for each sample and the consensus
+signatures for each group.
+
+```{r}
+upSignatures(trainRes)[1:5,1:5]
+consensusUpSignatures(trainRes)[1:5, ]
+```
+
+The function `scudoNetwork` can be used to generate a network of
+samples from the object `trainRes`. This function returns an
+`r CRANpkg("igraph")` object. The parameter `N` controls the percentage of edges
+to keep in the network. We can plot this network using the function
+`scudoPlot`.
+
+```{r}
+trainNet <- scudoNetwork(trainRes, N = 0.25)
+scudoPlot(trainNet, vertex.label = NA)
+```
+
+You can also render the network in Cytoscape, using the function
+`scudoCytoscape`. Note that Cytoscape has to be open when running this
+function.
+
+```{r, eval=FALSE}
+scudoCytoscape(trainNet)
+```
+
+Since we obtained a very good separation of the two groups, we proceed to
+analyze the testing set.
+
+## Analysis of the testing set
+
+We can use a `ScudoResults` object and the function `scudoTest` to
+analyze the testing set. The feature selection is not performed in the testing
+set. Instead, only the features selected in the training step are used in the
+analysis of the testing set.
+
+```{r}
+testRes <- scudoTest(trainRes, testData, bt[-inTrain], nTop = 100,
+    nBottom = 100)
+testRes
+```
+
+We can generate a network of samples and plot it.
+
+```{r}
+testNet <- scudoNetwork(testRes, N = 0.25)
+scudoPlot(testNet, vertex.label = NA)
+```
+
+We can use a community clustering algorithm to identify clusters of samples. In
+the following example we use the function `cluster spinglass` from
+the package `r CRANpkg("igraph")` to perform clustering of our network. In
+Cytoscape we can perform a similar analysis using clustering functions from the
+clusterMaker app.
+
+```{r}
+testClust <- igraph::cluster_spinglass(testNet, spins = 2)
+plot(testClust, testNet, vertex.label = NA)
+```
+
+### Supervised classification
+
+`scudoClassify` performs supervised classification of sample in a
+testing set using a model built from samples in a training set. It uses a method
+based on neighbors in the graph to assign a class label to each sample in the
+testing set. We suggest to use the same `N`, `nTop`, `nBottom` and `alpha` that
+were used in the training step.
+
+```{r}
+classRes <- scudoClassify(trainData, testData, N = 0.25, nTop = 100,
+    nBottom = 100, trainGroups = bt[inTrain], alpha = 0.1)
+```
+
+Classification performances can be explored using the
+`confusionMatrix` function from `r CRANpkg("caret")`.
+
+```{r}
+caret::confusionMatrix(classRes$predicted, bt[-inTrain])
+```
+
+## Example of multigroup analysis
+
+The analysis can also be performed on more than two groups. In this section, we
+try to predict the stage of B-cells ALL using gene expression data. We focus
+only on stages B1, B2 and B3, since they have a suitable sample size.
+
+```{r}
+isB <- which(as.character(ALL$BT) %in% c("B1", "B2", "B3"))
+ALLB <- ALL[, isB]
+stage <- ALLB$BT[, drop = TRUE]
+table(stage)
+```
+
+We divide the dataset in a training and a testing set and we apply
+`scudoTrain`, identifying suitable parameter values. Then, we perform
+supervised classification of the samples in the testing set using the function
+`scudoClassify`.
+
+```{r}
+inTrain <- as.vector(caret::createDataPartition(stage, p = 0.6, list = FALSE))
+
+stageRes <- scudoTrain(ALLB[, inTrain], stage[inTrain], 100, 100, 0.01)
+stageNet <- scudoNetwork(stageRes, 0.2)
+scudoPlot(stageNet, vertex.label = NA)
+
+classStage <- scudoClassify(ALLB[, inTrain], ALLB[, -inTrain], 0.25, 100, 100,
+    stage[inTrain], alpha = 0.01)
+caret::confusionMatrix(classStage$predicted, stage[-inTrain])
+```
+
+## Increasing performance through parameter tuning
+
+Parameters such as `nTop` and `nBottom` can be optimally tuned using techniques
+such as cross-validation. The package `r CRANpkg("caret")` offers a framework to
+perform grid search for parameters tuning. Here we report an example of
+cross-validation, in the context of the multigroup analysis previously
+performed. Since feature selection represents a performance bottleneck, we
+perform it before the cross-validation. Notice that we also transpose the
+dataset, since functions in `r CRANpkg("caret")` expect features on columns and
+samples on rows.
+
+```{r}
+trainData <- exprs(ALLB[, inTrain])
+virtControl <- rowMeans(trainData)
+trainDataNorm <- trainData / virtControl
+pVals <- apply(trainDataNorm, 1, function(x) {
+    stats::kruskal.test(x, stage[inTrain])$p.value})
+trainDataNorm <- t(trainDataNorm[pVals <= 0.01, ])
+```
+
+We use the function `scudoModel` to generate a suitable input model
+for `train`. `scudoModel` takes as input the parameter
+values that have to be explored and generates all possible parameter
+combinations. We then call the function `trainControl` to specify
+control parameters for the training procedure and perform it using
+`train`. Then we run `scudoClassify` on the testing set
+using the best tuning parameters found by the cross-validation. We use
+parallelization to speed up the cross-validation.
+
+```{r}
+cl <- parallel::makePSOCKcluster(2)
+doParallel::registerDoParallel(cl)
+
+model <- scudoModel(nTop = (2:6)*20, nBottom = (2:6)*20, N = 0.25)
+control <- caret::trainControl(method = "cv", number = 5,
+    summaryFunction = caret::multiClassSummary)
+cvRes <- caret::train(x = trainDataNorm, y = stage[inTrain], method = model,
+    trControl = control)
+
+parallel::stopCluster(cl)
+
+classStage <- scudoClassify(ALLB[, inTrain], ALLB[, -inTrain], 0.25,
+    cvRes$bestTune$nTop, cvRes$bestTune$nBottom, stage[inTrain], alpha = 0.01)
+caret::confusionMatrix(classStage$predicted, stage[-inTrain])
+```
+
+# Session info
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,1 @@
+Click [here](https://bioconductor.org/packages/devel/bioc/vignettes/globalSeq/inst/doc/globalSeq.pdf) to download vignette.

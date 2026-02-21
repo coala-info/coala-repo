@@ -1,0 +1,240 @@
+# Complex Object (Patient) Clustering with Multi-view Data Using ANF
+
+#### Tianle Ma
+
+#### October 29, 2025
+
+Abstract
+
+Cancer genomics projects have generated tons of multi-omic data. Integrating multi-omic data for patient clustering and cancer subtyping is an important and challenging task. Based a popular method, Similarity Network Fusion (SNF), we present Affinity Network Fusion (ANF) that have several advantages over SNF. The package ANF provides methods for affinity matrix construction and fusion as well as spectral clustering. This vignette explains the basic usage of the package.
+
+**If you use ANF in published research, please cite:**
+
+> Tianle Ma, Aidong Zhang, Integrate Multi-omic Data Using Affinity Network Fusion (ANF) for Cancer Patient Clustering, <https://arxiv.org/abs/1708.07136>
+
+# Basic usage of ANF package (demonstration with synthetic data)
+
+In the following, let’s first generate a synthetic dataset and use it for demonstrating the basic usage of ANF.
+
+For complex objects (e.g., patients) with multi-view data, we can use a feature matrix representing each view. For example, gene expression matrix and miRNA expression matrix can represent two views of patients.
+
+In the following, rows of a feature matrix represent objects, and columns represent features. Note each feature matrix contains a number of features from a feature space (corresponding one view). We can concatenate all features together as we will experiment later. However, since features from different feature spaces are usually heterogeneous, it may be a good idea to analyze them in its own feature space first, and then combine the results later. This is basically how ANF works.
+
+### Generating the first view (feature matrix) of 200 samples
+
+For simplicity, let’s generate the first view (matrix `feature1`) of 200 samples: 100 samples for class 1 (the first 100 rows of matrix `feature1`), and 100 samples for class 2 (the last 100 rows of matrix `feature1`), using multi-variate Gaussian distribution.
+
+```
+library(MASS)
+true.class = rep(c(1,2),each=100)
+feature.mat1 = mvrnorm(100, rep(0, 20), diag(runif(20,0.2,2)))
+feature.mat2 = mvrnorm(100, rep(0.5, 20), diag(runif(20,0.2,2)))
+feature1 = rbind(feature.mat1, feature.mat2)
+```
+
+### KMeans and spectral clustering based on only the first view
+
+Let’s perform KMeans clustering. The Normalized Mutual Information (NMI) is only 0.26.
+
+```
+library(igraph)
+set.seed(1)
+km = kmeans(feature1, 2)
+compare(km$cluster, true.class, method='nmi')
+```
+
+```
+## [1] 0.3659917
+```
+
+Let’s perform spectral clustering using functions in ANF package. The NMI is 0.29, slightly higher than KMeans.
+
+```
+library(ANF)
+d = dist(feature1)
+d = as.matrix(d)
+A1 = affinity_matrix(d, 10)
+labels = spectral_clustering(A1, 2)
+compare(labels, true.class, method='nmi')
+```
+
+```
+## [1] 0.3310489
+```
+
+### Generating the second view (feature matrix) for the above 200 samples
+
+Similar to the first view, we can generate a second view (matrix `feature2`). The rows of `feature1` and `feature2` have one-to-one correspondence.
+
+```
+feature.mat1 = mvrnorm(100, rep(10, 30), diag(runif(30,0.2,3)))
+feature.mat2 = mvrnorm(100, rep(9.5, 30), diag(runif(30,0.2,3)))
+feature2 = rbind(feature.mat1, feature.mat2)
+```
+
+### KMeans and spectral clustering based on only the second view
+
+Similarly, the NMI of KMeans clustering and spectral clustering are 0.14 (can be different because of random initialization) and 0.19 respectively.
+
+```
+set.seed(123)
+km = kmeans(feature2, 2)
+compare(km$cluster, true.class, method='nmi')
+```
+
+```
+## [1] 0.1084515
+```
+
+```
+d = dist(feature2)
+d = as.matrix(d)
+A2 = affinity_matrix(d, 10)
+labels = spectral_clustering(A2, 2)
+compare(labels, true.class, method='nmi')
+```
+
+```
+## [1] 0.3045581
+```
+
+### Concatenate all features from two views and perform KMeans clustering (NMI = 0.58)
+
+```
+feature.cat = cbind(feature1, feature2)
+set.seed(1)
+km = kmeans(feature.cat, 2)
+compare(km$cluster, true.class, method='nmi')
+```
+
+```
+## [1] 0.5541718
+```
+
+### Use ANF for clustering (NMI = 0.76)
+
+ANF performs better than KMeans on concatenated features
+
+```
+W = ANF(list(A1, A2), K=30)
+labels = spectral_clustering(W,2)
+compare(labels, true.class, method='nmi')
+```
+
+```
+## [1] 0.6597573
+```
+
+# Apply ANF to harmonized TCGA dataset
+
+## Load data
+
+`HarmonizedTCGAData` package (<https://github.com/BeautyOfWeb/HarmonizedTCGAData>) contains three R objects: `Wall`, `project_ids` and `surv.plot`:
+
+`Wall` contains a complex list affinity matrices. In fact, `Wall` a list (five cancer type) of list (six feature normalization types: `raw.all`, `raw.sel`, `log.all`, `log.sel`, `vst.sel`, `normalized`) of list (three feature spaces or views: `fpkm`, `mirna`, and `methy450`) of matrices. The rownames of each matrix are case IDs (i.e., patient IDs), and the column names of each matrix are aliquot IDs (which contains case IDs as prefix).
+
+`project_ids` is a named character vector that maps the case\_id (represent a patient) to project\_id (one-to-one corresponds to disease type). This is used for evaluating clustering results, such as calculating Normalized Mutual Information (NMI) and Adjusted Rand Index (ARI).
+
+`surv.plot` is a data.frame containing patient survival data for survival analysis, providing an “indirect” way to evaluate clustering results.
+
+`HarmonizedTCGAData` package contains more details about the above three data objects and simple examples of how to use them. We suggest users to read the vignettes of `HarmonizedTCGAData` first since it covers easier examples of using `ANF` and `HarmonizedTCGAData` packages.
+
+In the following, we are majorly focusing on reproducing the results of the companion paper <https://arxiv.org/abs/1708.07136> The code below may be a little harder to follow than simply using `ANF` package.
+
+```
+library(ExperimentHub)
+eh <- ExperimentHub()
+myfiles <- query(eh, "HarmonizedTCGAData")
+Wall <- myfiles[[1]]
+project_ids <- myfiles[[2]]
+surv.plot <- myfiles[[3]]
+```
+
+## Spectral clustering using affinity matrices
+
+We can perform spectral clustering on a patient affinity matrix. Take adrend\_gland cancer for example. We can cluseter patients using affinity matrix derived from log2 transformation of raw counts of differentially expressed genes.
+
+```
+affinity.mat <- Wall[["adrenal_gland"]][["log.sel"]][["fpkm"]]
+labels <- spectral_clustering(affinity.mat, k = 2)
+```
+
+Since we know true disease types, which correspond to project ids in `project_ids`, we can calculate NMI and ARI.
+
+```
+true.disease.types <- as.factor(project_ids[rownames(affinity.mat)])
+table(labels, true.disease.types)
+```
+
+```
+##       true.disease.types
+## labels TCGA-ACC TCGA-PCPG
+##      1        0       176
+##      2       76         1
+```
+
+```
+nmi <- igraph::compare(true.disease.types, labels, method = "nmi")
+
+adjusted.rand = igraph::compare(true.disease.types, labels, method = "adjusted.rand")
+
+# we can also calculate p-value using `surv.plot` data
+surv.plot <- surv.plot[rownames(affinity.mat), ]
+f <- survival::Surv(surv.plot$time, !surv.plot$censored)
+fit <- survival::survdiff(f ~ labels)
+pval <- stats::pchisq(fit$chisq, df = length(fit$n) - 1, lower.tail = FALSE)
+
+message(paste("NMI =", nmi, ", ARI =", adjusted.rand, ", p-val =", pval))
+```
+
+In this package, We have provided a function `eval_clu` that streamlines the above process from spectral clustering to calculating NMI, ARI and p-value. Here is an example of how to use `eval_clu`:
+
+```
+res <- eval_clu(project_ids, w = affinity.mat, surv = surv.plot)
+```
+
+```
+##            labels
+## true_class    1   2
+##   TCGA-ACC    0  76
+##   TCGA-PCPG 176   1
+```
+
+For adrenal\_gland cancer, we only misclassify one out of 253 patients using this affinity matrix. That is a pretty good result (In fact, this the best result we can achieve. Users can try using other matrices and compare the results). However, for many cases, using a single affinity matrix does a “terrible” job in clustering patients into correct disease types. Take uterus cancer for example (the NMI is near 0).
+
+```
+res <- eval_clu(project_ids, w = Wall$uterus$raw.all$fpkm)
+```
+
+```
+##            labels
+## true_class    1   2
+##   TCGA-UCEC 153 268
+##   TCGA-UCS    3  51
+```
+
+## Use ANF to fuse multiple affinity matrices for patient clustering
+
+Instead of using one affinity matrix, we can “fuse” multiple affinity matrices using ANF, and then perform spectral clustering on the fused affinity matrix.
+
+Let’s take uterus cancer for example.
+
+```
+# fuse three matrices: "fpkm" (gene expression), "mirnas" (miRNA expression) and "methy450" (DNA methylation)
+fused.mat <- ANF(Wall = Wall$uterus$raw.all)
+# Spectral clustering on fused patient affinity matrix
+labels <- spectral_clustering(A = fused.mat, k = 2)
+# Or we can directly evaluate clustering results using function `eval_clu`, which calls `spectral_clustering` and calculate NMI and ARI (and p-value if patient survival data is available. `surv.plot` does not contain information for uterus cancer patients)
+res <- eval_clu(true_class = project_ids[rownames(fused.mat)], w = fused.mat)
+```
+
+```
+##            labels
+## true_class    1   2
+##   TCGA-UCEC 410  11
+##   TCGA-UCS   14  40
+```
+
+Now NMI is 0.485. The clusering results is significantly better than using a single pateint affinity matrix. This demonstrates the power of ANF.
+
+We have majorly used ANF to produce results in this paper: <https://arxiv.org/abs/1708.07136> To reproduce the results, please refer to <https://github.com/BeautyOfWeb/Clustering-TCGAFiveCancerTypes/blob/master/vignettes/ANF%20for%20Cancer%20Patient%20Clustering.Rmd> (the last section).

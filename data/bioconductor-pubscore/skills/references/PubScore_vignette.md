@@ -1,0 +1,358 @@
+# PubScore
+
+#### Tiago Lubiana
+
+#### 2020-04-28
+
+```
+library(knitr)
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>"
+)
+```
+
+# Introduction
+
+PubScore is an R package with 2 goals : - (1) provide a quantitative score of the relevance of a list of genes regarding any topic a - (2) visualize combinations of genes and terms of interest interactively.
+
+Querying the PubMed, PubScore gets the article count for gene/term combination and creates a score to calculate the literature enrichment for a list of genes.
+
+Let’s start by installing the package.
+
+Let’s explore how to calculate a literature score for selected genes, and estimate the likelihood of such a score (or higher) happening by chance.
+
+#Basic Usage
+
+To start, we will look at a list of genes. Pretend that they were the result of some previous analysis. They might be important to the function of some different immune cells (B cells, macrophages and NK cells).
+
+However, you are implementing a novel method, and you are not sure if the method is actually working. So, your goal is:
+
+1 - Decide if the method is indeed working by searching the literature. 2 - Fish out of the many genes, the ones that you want to focus your research effort on.
+
+```
+library(PubScore)
+# list of genes :
+selected_genes <- c('CD79A', 'CD14', 'NKG7', 'CST3', 'AIF1')
+
+# These genes were selected from a panel containing the following genes
+total_genes <- c('CD79A', 'CD14', 'NKG7', 'CST3', 'AIF1', 'FOXA1', 'PPT2', 'ZFP36L1','AFF4', 'ANTXR2', "HDAC8", "VKORC1" )
+
+terms_of_interest <- c("B cells", "macrophages", "NK cells")
+```
+
+First, let’s create a PubScore object
+
+```
+pub <- pubscore(terms_of_interest = terms_of_interest, genes = selected_genes )
+#> ~~~ Initializing PubScore Object ~~~
+#> Running PubScore:
+print(getScore(pub))
+#> [1] 681.6667
+```
+
+This score is the average number of articles for each gene x term combination of the list on PubMed. In the object we also have many other attributes, but let’s keep then for later.
+
+The number does not mean much. Higher values mean that the genes are more associated to the terms. But, what is the score I would expect by chance? Let’s run a permutation test to estimate this p-value.
+
+For this, we need the list of all genes that could have been selected. This was assigned above to the variable total\_genes
+
+```
+pub <- test_score(pub, total_genes =  total_genes)
+#> Running the PubScore test for all genes. Might take a while to finish queries!
+#> Running 1e+05 simulations
+#> The p-value by simulation is:
+#> 0.00515
+```
+
+It seems that this list is indeed enriched for genes related to these terms. How surprising! (not really, it was built in that way). Let’s look at the interactive heatmap and understand better the relation of these genes and these terms.
+
+```
+p <- heatmapViz(pub)
+library(plotly)
+#> Loading required package: ggplot2
+#>
+#> Attaching package: 'plotly'
+#> The following object is masked from 'package:ggplot2':
+#>
+#>     last_plot
+#> The following object is masked from 'package:stats':
+#>
+#>     filter
+#> The following object is masked from 'package:graphics':
+#>
+#>     layout
+ggplotly(p)
+```
+
+The heatmap makes it clear that CD79 is associated in the literature with B cells, and CD14 with all the terms. Well, if you hover the interactive plot with the mouse, you can see that it is more associated with macropahges than with NK cells or B cells.
+
+If you want to explore a bit more, there is also a network visualization:
+
+```
+p <- networkViz(pub)
+plot(p)
+```
+
+![](data:image/png;base64...)
+
+#Advanced Usage
+
+Now let’s advance to a real-world scenarium.
+
+We will use the scDengue dataset, of dengue-infected monocytes, from the FCBF package. This package (Disclaimer: also developed by us) runs an algorithm for feature selection coupled with redundancy removal. It select variables that are generally good for classification tasks.
+
+We will see the if the genes selected by FCBF (in the context of macrophage infection) genes are already related in PubMed to dengue. And, using the plot\_literature\_score pinpoint the genes that are contributing mostly to this effect.
+
+```
+library("FCBF")
+library('SingleCellExperiment')
+#> Loading required package: SummarizedExperiment
+#> Loading required package: GenomicRanges
+#> Loading required package: stats4
+#> Loading required package: BiocGenerics
+#> Loading required package: parallel
+#>
+#> Attaching package: 'BiocGenerics'
+#> The following objects are masked from 'package:parallel':
+#>
+#>     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+#>     clusterExport, clusterMap, parApply, parCapply, parLapply,
+#>     parLapplyLB, parRapply, parSapply, parSapplyLB
+#> The following objects are masked from 'package:stats':
+#>
+#>     IQR, mad, sd, var, xtabs
+#> The following objects are masked from 'package:base':
+#>
+#>     Filter, Find, Map, Position, Reduce, anyDuplicated, append,
+#>     as.data.frame, basename, cbind, colnames, dirname, do.call,
+#>     duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,
+#>     lapply, mapply, match, mget, order, paste, pmax, pmax.int, pmin,
+#>     pmin.int, rank, rbind, rownames, sapply, setdiff, sort, table,
+#>     tapply, union, unique, unsplit, which, which.max, which.min
+#> Loading required package: S4Vectors
+#>
+#> Attaching package: 'S4Vectors'
+#> The following object is masked from 'package:plotly':
+#>
+#>     rename
+#> The following object is masked from 'package:base':
+#>
+#>     expand.grid
+#> Loading required package: IRanges
+#>
+#> Attaching package: 'IRanges'
+#> The following object is masked from 'package:plotly':
+#>
+#>     slice
+#> Loading required package: GenomeInfoDb
+#> Loading required package: Biobase
+#> Welcome to Bioconductor
+#>
+#>     Vignettes contain introductory material; view with
+#>     'browseVignettes()'. To cite Bioconductor, see
+#>     'citation("Biobase")', and for packages 'citation("pkgname")'.
+#> Loading required package: DelayedArray
+#> Loading required package: matrixStats
+#>
+#> Attaching package: 'matrixStats'
+#> The following objects are masked from 'package:Biobase':
+#>
+#>     anyMissing, rowMedians
+#>
+#> Attaching package: 'DelayedArray'
+#> The following objects are masked from 'package:matrixStats':
+#>
+#>     colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+#> The following objects are masked from 'package:base':
+#>
+#>     aperm, apply, rowsum
+# load expression data
+data(scDengue)
+```
+
+Let’s run the FCBF algorithm to select genes that are relevant to split the infected from the control cells.
+
+```
+infection <- SummarizedExperiment::colData(scDengue)
+target <- infection$infection
+
+exprs <- as.data.frame(SummarizedExperiment::assay(scDengue,'logcounts'))
+discrete_expression <- as.data.frame(FCBF::discretize_exprs(exprs))
+
+fcbf_features <- fcbf(discrete_expression, target, thresh = 0.05, verbose = FALSE)
+#> [1] "Number of prospective features =  480"
+total_features <- rownames(exprs)
+head(fcbf_features)
+#>                 index        SU
+#> ENSG00000166825  9078 0.1588510
+#> ENSG00000187860 11698 0.1373811
+#> ENSG00000180574 10849 0.1273208
+#> ENSG00000117984  3818 0.1256254
+#> ENSG00000157601  7792 0.1256254
+#> ENSG00000116774  3696 0.1189097
+```
+
+The scDengue dataset is using Ensemble IDs, and usually papers use gene symbols (as TP53 and CD3D).
+
+This is important, as PubScore will search for the genes on pubmed EXACTLY as they are on your vector. The package biomaRt can be used to fix this, as it contains the reference databases we need.
+
+```
+library(biomaRt)
+
+ensembl = useMart("ensembl",dataset="hsapiens_gene_ensembl")
+reference = biomaRt::getBM(attributes = c('ensembl_gene_id', 'hgnc_symbol'),
+mart = ensembl)
+
+total_genes <- reference[reference$ensembl_gene_id %in% total_features,]$hgnc_symbol
+
+fcbf_genes<- reference[reference$ensembl_gene_id %in% rownames(fcbf_features),]$hgnc_symbol
+```
+
+Unfortunately, not all genes in the datasets had an equivalent gene symbol. PubScore does not deal with empty gene-names, so we need to remove them
+
+```
+total_genes <- total_genes[total_genes != ""]
+fcbf_genes <- fcbf_genes[fcbf_genes != ""]
+```
+
+First let’s visualize the association of the fcbf\_genes with dengue-related terms.
+
+The PubScore package queries the PubMed database, so it takes about 0.7s for each search.
+
+As we have 62 genes and 2 terms, 62 \* 0.7 = 43.8 s, the function should take less than a minute to run.
+
+After getting the literature object from the get\_literature score function, we can visualize the gene-term relationships with the plot\_literature\_score function.
+
+```
+terms_of_interest <- c('Dengue')
+
+pub <- pubscore(terms_of_interest = terms_of_interest, genes = fcbf_genes )
+#> ~~~ Initializing PubScore Object ~~~
+#> Running PubScore:
+print(getScore(pub))
+#> [1] 0.5645161
+
+p_map <- heatmapViz(pub)
+library(plotly)
+ggplotly(p_map)
+```
+
+```
+p_net <- networkViz(pub)
+plot(p_net)
+```
+
+![](data:image/png;base64...)
+
+There are a few genes that have been related to dengue previously, such as MAVS. There is a Nature Immunology research highligh entitled “Dengue suppresses MAVS”. (www.nature.com/articles/ni.3527)
+
+FES may be a false positive, but MX1 is related to antiviral response and NFKB2 is related to inflamation.
+
+Qualitatetively, it seems that indeed some of these genes are already related to Dengue. But how many Dengue-related genes would I expect by chance alone?
+
+For this, we need to estimate the null distribution of the scores by randomly selecting genes. That is the goal of the ‘test\_score’ function.
+
+WARNING: This functions takes 6 hours to run. That is because a lot of requests are made to pubmed. We ran it and made the final output available here so you don’t need it. It is commented out of the code because of that, but feel free to run it.
+
+```
+#' pub <- test_score(pub, total_genes = total_genes)
+#' all_counts <- get_all_counts(pub)
+#' save(all_counts, file= '../data/all_counts.RData')
+data("all_counts")
+set_all_counts(pub) <- all_counts
+```
+
+We will re-do the p-value estimation just to be really clear about how it is done.
+
+```
+# A table with all possible combinations is generated
+simulation_of_literature_null <- get_all_counts(pub)
+
+# Then, a number of genes equal to your original list is picked
+# and, from this list, we get a score.
+# This process is repeated 10 thousand times.
+
+message('Running 10000 simulations')
+#> Running 10000 simulations
+distribution_of_scores <- c()
+for (i in seq_len(10000)){
+
+genes_to_sample_now <- sample(total_genes, 62)
+
+simu_now <- simulation_of_literature_null[simulation_of_literature_null$Genes %in% genes_to_sample_now,]$count
+
+#the list score is made by the sum of all scores divided by the number of combinations (62 genes x 1 term)
+list_score <- sum(simu_now) / (62 * 1)
+distribution_of_scores <- c(distribution_of_scores,list_score )
+
+}
+
+distribution_of_scores<- data.frame(d = distribution_of_scores)
+
+# The score to compare is the one of the original list
+score <- getScore(pub)
+
+# Then you ask: how many of the null simulations had a score
+# as high as the one of the original list?
+# This is the simulated p-value!
+
+pvalue <-sum(distribution_of_scores[,1] >= score)/length(distribution_of_scores[,1])
+
+print('The p-value by simulation is:')
+#> [1] "The p-value by simulation is:"
+print(pvalue)
+#> [1] 0.1368
+```
+
+Hm, the pvalue does not indicates confidently that the list of genes obtained is more related to Dengue than what we would expect by chance. This might be a sign that FCBF did not work very well for this discretization/dataset. Or that the information regarding the association of these genes to Dengue is largely absent from the literature.
+
+Let’s look at the top genes associated with Dengue in the literature, in the literature object.
+
+```
+all_counts <- get_all_counts(pub)
+head(all_counts$Genes[order(all_counts$count, decreasing = TRUE)], 10)
+#>  [1] PC     JUN    IMPACT ACHE   SRI    SET    CS     PROC   MET    SHE
+#> 16150 Levels: MT-TF MT-RNR1 MT-TV MT-RNR2 MT-TL1 MT-ND1 MT-TM MT-ND2 ... SNORA59A
+```
+
+Hm there are clearly problems with these genes… they are ambiguous! PC is a Personal Computer, JUN is June, IMPACT and ACHE are words.
+
+We will have to blacklist a few genes to avoid these outliers. After some digging, I manually selected this list of ambiguously named genes.
+
+Genes blacklisted :
+“PC”, “JUN”, “IMPACT”, “ACHE”, “SRI”, “SET”, “CS”, “PROC”, “MET”, “SHE”, “CAD”, “DDT”, “PIGS”, “SARS”, “REST”, “GC”, “CP”, “STAR”, “SI”, “GAN”, “MARS”, “SDS”, “AGA”, “NHS”, “CPE”, “POR”, “MAX”, “CAT”, “LUM”, “ANG”, “POLE”, “CLOCK”, “TANK”, “ITCH”, “SDS”, “AES”, “CIC”, “FST”, “CAPS”, “COPE”, “F2”, “AFM”, “SPR”, “PALM”, “C2”, “BAD”, “GPI”, “CA2”, “SMS”, “INVS”, “WARS”, “HP”, “GAL”, “SON”, “AFM”, “BORA”, “MBP”, “MAK”, “MALL”, “COIL”, “CAST”"
+
+We can run the test\_score method again. Be cool, it will not do the enourmous pubmed queries a second time.
+
+```
+pub <- test_score(pub, remove_ambiguous = TRUE, nsim = 10000)
+#> Running 10000 simulations
+#> The p-value by simulation is:
+#> 0.0293
+```
+
+The pvalue after removing the noise is around 0.04. It will oscilate slightly everytime, as there is a component of randomness in the simulation. More simulations (higher nsim) will lead to more reliable estimates of p.
+
+I’d like to point that the threshold of 95% is rather arbitrary and there is a big movement to reject the hard definition of statistical significance.
+
+Anywaysm in this case, the p-value is even shorter than the old-fashioned 0.05, so I can say confidently that the list returned by FCBF is more related to the “Dengue” term" than expected by chance.
+
+To finish this vignettE, if you want to select your own list of ambiguously named genes, you can do so in the retest function.
+
+```
+retested_literature_object <- test_score(pub, remove_ambiguous = TRUE,
+ambiguous_terms =
+c("PC", "JUN", "IMPACT"), nsim = 10000)
+#> Running 10000 simulations
+#> The p-value by simulation is:
+#> 0.1376
+```
+
+And that’s it!
+
+To wrap up, you can use PubScore to:
+
+* Visualize gene-term associations in a cool
+* Calculate enrichments for lists of genes regarding literally any term of English
+* Get a clear, meaningful p-value for the enrichment

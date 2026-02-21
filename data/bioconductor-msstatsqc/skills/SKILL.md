@@ -1,0 +1,23 @@
+---
+name: bioconductor-msstatsqc
+description: the package is available on all platforms; click for details.
+homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsQC.html
+---
+
+# bioconductor-msstatsqc
+
+## Overview
+
+Use the Bioconductor R package **MSstatsQC** for: the package is available on all platforms; click for details.
+
+## Installation
+
+```r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("MSstatsQC")
+```
+
+## Reference documentation
+
+See files in `references/` for vignettes and tutorials.

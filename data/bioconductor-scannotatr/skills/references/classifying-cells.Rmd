@@ -1,0 +1,185 @@
+---
+title: "Introduction to scAnnotatR"
+author: "Vy Nguyen"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{1. Introduction to scAnnotatR}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+## Introduction
+
+scAnnotatR is an R package for cell type prediction on single cell 
+RNA-sequencing data. Currently, this package supports data in the forms 
+of a Seurat object or a SingleCellExperiment object.
+
+More information about Seurat object can be found here: 
+https://satijalab.org/seurat/
+More information about SingleCellExperiment object can be found here: 
+https://osca.bioconductor.org/
+
+scAnnotatR provides 2 main features:
+
+- A set of pretrained and robust classifiers for basic 
+immune cells. See the section below.
+- A user-friendly and fully customizable framework to train
+new classification models. These models can then be easily
+saved and reused in the future. Details usage of this framework is explained
+in vignettes 2 and 3.
+
+## Installation
+
+The `scAnnotatR` package can be directly installed from Bioconductor:
+
+```{r, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+if (!require(scAnnotatR))
+  BiocManager::install("scAnnotatR")
+```
+
+For more information, see https://bioconductor.org/install/.
+
+## Included models
+
+The `scAnnotatR` package comes with several pre-trained models to classify
+cell types.
+
+```{r}
+# load scAnnotatR into working space
+library(scAnnotatR)
+```
+
+The models are stored in the `default_models` object:
+
+```{r}
+default_models <- load_models("default")
+names(default_models)
+```
+
+The `default_models` object is named a list of classifiers. Each classifier 
+is an instance of the `scAnnotatR S4 class`. For example:
+
+```{r}
+default_models[['B cells']]
+```
+
+## Basic pipeline to identify cell types in a scRNA-seq dataset using scAnnotatR   
+
+### Preparing the data
+
+To identify cell types available in a dataset, we need to load the dataset as 
+[Seurat](https://satijalab.org/seurat/) or [SingleCellExperiment](https://osca.bioconductor.org/) object.
+
+For this vignette, we use a small sample datasets that is available as a
+`Seurat` object as part of the package.
+
+```{r}
+# load the example dataset
+data("tirosh_mel80_example")
+tirosh_mel80_example
+```
+
+The example dataset already contains the clustering results as part of the metadata. This is **not** necessary for the
+classification process.
+
+```{r}
+head(tirosh_mel80_example[[]])
+```
+
+### Cell classification
+
+To launch cell type identification, we simply call the `classify_cells` 
+function. A detailed description of all parameters can be found through
+the function's help page `?classify_cells`.
+
+Here we use only 3 classifiers for B cells, T cells and NK cells to reduce 
+computational cost of this vignette. If users want to use all pretrained 
+classifiers on their dataset, `cell_types = 'all'` can be used.
+```{r}
+seurat.obj <- classify_cells(classify_obj = tirosh_mel80_example, 
+                             assay = 'RNA', slot = 'counts',
+                             cell_types = c('B cells', 'NK', 'T cells'), 
+                             path_to_models = 'default')
+```
+
+#### Parameters
+
+  * The option **cell_types = 'all'** tells the function to use all available
+    cell classification models.
+    Alternatively, we can limit the identifiable cell types: 
+    * by specifying: `cell_types = c('B cells', 'T cells')`
+    * or by indicating the applicable classifier using the **classifiers** option: 
+      `classifiers = c(default_models[['B cells']], default_models[['T cells']])`
+
+  * The option **path_to_models = 'default'** is to automatically use the 
+    package-integrated pretrained models (without loading the models into the
+    current working space). This option can be used to load a local database instead.
+    For more details see the vignettes on training your own classifiers.
+
+## Result interpretation
+
+The `classify_cells` function returns the input object
+but with additional columns in the metadata table.
+
+```{r}
+# display the additional metadata fields
+seurat.obj[[]][c(50:60), c(8:ncol(seurat.obj[[]]))]
+```
+New columns are:
+
+  * **predicted_cell_type**: The predicted cell type, also containing any 
+    ambiguous assignments. In these cases, the possible cell types are separated
+    by a "/"
+
+  * **most_probable_cell_type**: contains the most probably cell type ignoring any 
+    ambiguous assignments.
+
+  * columns with syntax `[celltype]_p`: probability of a cell to belong 
+    to a cell type. Unknown cell types are marked as NAs.
+
+### Result visualization
+
+The predicted cell types can now simply be visualized using the matching
+plotting functions. In this example, we use Seurat's `DimPlot` function:
+
+```{r fig.width = 4, fig.height = 2.5}
+# Visualize the cell types
+Seurat::DimPlot(seurat.obj, group.by = "most_probable_cell_type")
+```
+
+With the current number of cell classifiers, we identify cells belonging to 2 cell types (B cells and T cells) and to 2 subtypes of T cells (CD4+ T cells and CD8+ T cells). The other cells (red points) are not among the cell types that can be classified by the predefined classifiers. Hence, they have an empty label.
+
+For a certain cell type, users can also view the prediction probability. Here we show an example of B cell prediction probability:
+
+```{r fig.width = 4, fig.height = 2.5}
+# Visualize the cell types
+Seurat::FeaturePlot(seurat.obj, features = "B_cells_p")
+```
+
+Cells predicted to be B cells with higher probability have darker color, while the lighter color shows lower or even zero probability of a cell to be B cells. For B cell classifier, the threshold for prediction probability is currently at 0.5, which means cells having prediction probability at 0.5 or above will be predicted as B cells. 
+
+The automatic cell identification by scAnnotatR matches the traditional cell assignment, ie. the approach based on cell canonical marker expression. Taking a simple example, we use CD19 and CD20 (MS4A1) to identify B cells:
+
+```{r fig.width = 7.25, fig.height = 2.5}
+# Visualize the cell types
+Seurat::FeaturePlot(seurat.obj, features = c("CD19", "MS4A1"), ncol = 2)
+```
+
+We see that the marker expression of B cells exactly overlaps the B cell prediction made by scAnnotatR.
+
+## Session Info
+```{r}
+sessionInfo()
+```

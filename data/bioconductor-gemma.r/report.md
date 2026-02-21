@@ -1,0 +1,16 @@
+# bioconductor-gemma.r Bioconductor Package Report
+
+## gemma.R
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/gemma.R.html
+- **Package**: gemma.R
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: https://github.com/PavlidisLab/gemma.R
+- **Skill**: generated
+

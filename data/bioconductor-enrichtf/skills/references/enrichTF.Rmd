@@ -1,0 +1,208 @@
+---
+title: "enrichTF-Introduction"
+author: "Zheng Wei, Shining Ma, Duren Zhana"
+date: "`r Sys.Date()`"
+output: 
+    html_document:
+        toc: true
+        toc_float: true
+        number_sections: true
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{An Introduction to enrichTF}
+  %\VignetteEncoding{UTF-8}
+  
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning = FALSE)
+```
+
+
+
+
+# Introduction
+As transcription factors (TFs) play a crucial role in regulating the transcription process through binding on the genome alone or in a combinatorial manner, TF enrichment analysis is an efficient and important procedure to locate the candidate functional TFs from a set of experimentally defined regulatory regions. While it is commonly accepted that structurally related TFs may have similar binding preference to sequences (i.e. motifs) and one TF may have multiple motifs, TF enrichment analysis is much more challenging than motif enrichment analysis. Here we present a R package for TF enrichment analysis which combine motif enrichment with the PECA model.
+
+# Quick Start
+
+
+## Download and Installation
+
+
+The package enrichTF is part of Bioconductor project starting from Bioc 3.9 built on R 3.6. To install the latest version of enrichTF, please check your current Bioconductor version and R version first. The latest version of R is recommended, and then you can download and install enrichTF and all its dependencies as follows:
+
+```{r installpkg,eval=FALSE,message=FALSE,warning=FALSE}
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("enrichTF")
+```
+
+## Loading
+Similar with other R packages, please load enrichTF each time before using the package.
+
+```{r loading00,eval=TRUE,message=FALSE}
+library(enrichTF)
+```
+
+
+
+## Running with the default configuration
+
+It is quite convenient to run the default pipeline.
+
+Users only need to provide a region list in BED format which contains 3 columns (chr, start, end). It could be the peak calling result of sequencing data like ATAC-seq etc.
+
+All required data and software will be installed automatically.
+
+```{r eval=TRUE}
+# Provide your region list in BED format with 3 columns.
+foregroundBedPath <- system.file(package = "enrichTF", "extdata","testregion.bed")
+# Call the whole pipeline
+PECA_TF_enrich(inputForegroundBed = foregroundBedPath, genome = "testgenome") # change"testgenome" to one of "hg19", "hg38", "mm9", 'mm10' ! "testgenome" is only a test example.
+```
+
+
+
+# How TF Enrichment Works
+
+## Basic Concept for Relations
+
+In this work, we define four kinds of relations which will be introduced in detail. And we will show how to test on enriched TFs rather than enriched motifs.
+
+### Region-gene Relation Table
+
+When users input a region list in BED format, the relations between regions and one gene can be obtained from two ways:
+
+1.    The regions which are overlapped with the functional region of this gene. This type of relation can be obtained from gene reference data.
+
+2.    The regions are enhancers or other distal regulatory elements of this gene. This type of relation can be derived from 3D genome sequencing experiments such as Hi-C and HiChIP.
+
+As we have already integrated and organized the potential relations between regions and genes from both gene reference and experiment profiles, users can use this source to obtain region-gene relations for their input region list quite easily.
+
+Moreover, users can also customize potential relations from their own work.
+
+
+### Gene-TF Relation Matrix
+
+The correlation scores between genes and TFs come from our previous approach named PECA. These scores are scaled in the range [-1,1]. Users can also customize this relation matrix based on their own experiment data.
+
+
+### TF-motif Relation Table
+
+As we know, one TF may relate to multiple motifs. Here, we manually annotated more than 700 motifs with their corresponding TFs.
+
+### Motif-region Relation Table
+
+
+We scan all annotated motifs on each input region to check if there are some motifs located in this region. Then, the motif-region relation table can be generated.
+
+## Enrichment Test
+
+
+Based on the foreground region list from users, this package can randomly sample the same number of regions from genome as background.
+
+### Enrichment t-test
+
+
+Foreground and background region lists can both be connected with genes in Region-gene Relation Table, so both of them will get a gene list. We name them as the foreground gene list and background gene list, respectively.
+
+For each TF, we will perform t-test and obtain p-values for TF-Gene scores of foreground vs those of background. These scores come from Gene-TF Relation Matrix.
+
+
+
+### Enrichment Fisher's exact test without threshold
+
+
+Each TF may be correlated with multiple motifs. For each motif, this package will do the following Fisher’s exact test to test if one motif is enriched in foreground regions.
+
+|                      | # with TF's  motif  | # without TF's  motif  |
+|----------------------|---------------------|------------------------|
+| # Foreground regions |                     |                        |
+| # Background regions |                     |                        |
+
+Finally, the package will select the motif with the most significant p-value to represent this TF and then compute p-values for all of the TFs.
+
+
+### Enrichment Fisher's exact test with threshold
+
+Similar to previous section, the package will perform Fisher’s exact test with TF-Gene relation matrix. Different thresholds ([-1,1] with interval 0.1) for TF-Gene relation scores are used to filter the connected genes with foreground and background. In this way, we select the most significant p-value to represent this TF and calculate the p-values for all of TFs.
+
+### FDR
+
+Finally, false discover rate correction is applied on the results of Fisher's exact test with threshold. We rank all of the TFs based on their enrichment significance.
+
+
+# Customized Workflow
+
+There are 4 steps to customize the workflow. You can follow the order below:
+
+```{r}
+printMap()
+
+```
+
+## Prepare inputs
+The function of `genBackground` is to generate random background regions based on the input regions and to set the length of input sequence regions. We try to select background sequence regions that match the GC-content distribution of the input sequence regions. The default length and number of background regions are 1000 and 10,000, respectively. The length of sequence regions used for motif finding is important. Here, we set 1000 as default value, which means for each region, we get sequences from -500 to +500 relative from center.
+For example,
+```{r loading01}
+setGenome("testgenome")
+foregroundBedPath <- system.file(package = "enrichTF", "extdata","testregion.bed")
+gen <- genBackground(inputForegroundBed = foregroundBedPath)
+```
+## Motifscan
+
+The function of `regionConnectTargetGene` is to connect foreground and background regions to their target genes, which are predicted from PECA model.
+
+For example,
+```{r loading02}
+conTG <- enrichRegionConnectTargetGene(gen)
+```
+## Connect regions with target genes
+
+The function `MotifsInRegions` is to scan for motif occurrences using the prepared PWMs and obtain the promising candidate motifs in these regions.
+
+
+For example,
+```{r loading03}
+findMotif <- enrichFindMotifsInRegions(gen,motifRc="integrate")
+```
+## TF enrichment test
+The function of `TFsEnrichInRegions` is to test whether each TF is enriched on input regions.
+For example,
+```{r eval=TRUE}
+result <- enrichTFsEnrichInRegions(gen)
+```
+
+
+## Building a pipeline
+
+Users can build a pipeline easily based on pipeFrame (pipeline framework)
+
+```{r}
+library(magrittr)
+setGenome("testgenome")
+foregroundBedPath <- system.file(package = "enrichTF", "extdata","testregion.bed")
+result <- genBackground(inputForegroundBed = foregroundBedPath) %>%
+enrichRegionConnectTargetGene%>%
+enrichFindMotifsInRegions(motifRc="integrate") %>%
+enrichTFsEnrichInRegions
+```
+
+## Result
+
+Here we show an example result when applying this package on our own data.
+
+```{r}
+
+examplefile  <- system.file(package = "enrichTF", "extdata","result.example.txt")
+read.table(examplefile, sep='\t', header = TRUE)%>%
+  knitr::kable() 
+
+```
+
+
+# Session Information
+
+```{r}
+sessionInfo()
+```

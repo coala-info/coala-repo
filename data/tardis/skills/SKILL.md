@@ -1,0 +1,51 @@
+---
+name: tardis
+description: Tardis is a command-line pre-processor that simplifies the "split-apply-combine" workflow common in bioinformatics.
+homepage: https://github.com/AgResearch/tardis
+---
+
+# tardis
+
+## Overview
+
+Tardis is a command-line pre-processor that simplifies the "split-apply-combine" workflow common in bioinformatics. It allows you to take a standard shell command, mark up the inputs and outputs, and automatically distribute the workload across a high-performance computing (HPC) cluster. Tardis handles the technical overhead of file splitting (including paired-end data), job submission, error monitoring, and the final merging of results, making parallel processing feel like running a single local command.
+
+## Command Line Usage and Best Practices
+
+### Core Workflow
+Tardis functions by "reconditioning" a shell command. You provide a command as you would run it locally, but with markup indicating which files should be treated as parallelizable inputs or outputs.
+
+1.  **Input Splitting**: Tardis uses a fast C-based splitter (`kseq_split`) for FASTA and FASTQ files.
+2.  **Execution**: It generates individual shell scripts for each "chunk" and submits them to the cluster scheduler (Slurm or Condor) or runs them locally.
+3.  **Synchronization**: The main Tardis process waits for all sub-tasks to complete.
+4.  **Unconditioning**: It automatically concatenates output chunks into a final file, supporting text, XML, and PDF formats.
+
+### Configuration Management
+Tardis relies on TOML files for configuration. It follows a specific priority order:
+1.  **System Config**: `/etc/tardis/tardis.toml` (always read unless `--no-sysconfig` is used).
+2.  **User/Local Config**: Tardis reads the *first* one it finds in this order:
+    *   File specified by `--userconfig`
+    *   `tardis.toml` in the current directory
+    *   `~/.tardis.toml`
+3.  **CLI Arguments**: Command line flags always override TOML settings.
+
+### Handling Bioinformatics Data
+*   **Paired-End Reads**: When processing paired FASTQ files, Tardis ensures they are split in "lock-step," maintaining the relationship between pairs across chunks.
+*   **Compressed Files**: You do not need to manually decompress `.gz` files; Tardis handles compressed inputs and can optionally compress outputs automatically.
+*   **Filtering**: Use Tardis to filter sequences on the fly (e.g., by length) during the splitting phase to save compute time.
+*   **Random Sampling**: For QC or testing, use the random sampling feature to process only a subset of the input data while maintaining paired-end integrity.
+
+### Error Handling and Restarts
+Tardis is designed to be robust against cluster failures:
+*   **Integrity Checks**: If a chunk fails or an output file is missing, Tardis will not generate the final concatenated output, preventing silently corrupted results.
+*   **Debugging**: If a job fails, Tardis retains all intermediate shell scripts and data chunks.
+*   **Manual Restarts**: Because each chunk is written to a standalone shell script, you can manually re-run a specific failed chunk by executing its corresponding script without restarting the entire pipeline.
+
+### Expert Tips
+*   **Local Testing**: Use the `hpctype = "local"` setting in your config or CLI to test your command markup on a small subset of data before submitting hundreds of jobs to a cluster.
+*   **File of Filenames**: If you have a massive list of files, Tardis can treat a "file of filenames" as a single input stream, parallelizing across the files listed in the document.
+*   **Resource Encapsulation**: Use Tardis to hide the complexity of the scheduler. The end-user only needs to know the application's API; Tardis handles the `sbatch` or `condor_submit` logic internally.
+
+## Reference documentation
+- [bioconda / tardis Overview](./references/anaconda_org_channels_bioconda_packages_tardis_overview.md)
+- [AgResearch/tardis GitHub Repository](./references/github_com_AgResearch_tardis.md)

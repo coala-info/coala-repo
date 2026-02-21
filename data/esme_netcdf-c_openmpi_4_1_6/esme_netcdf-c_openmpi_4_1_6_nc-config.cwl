@@ -1,0 +1,17 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: nc-config
+label: esme_netcdf-c_openmpi_4_1_6_nc-config
+doc: "The provided text is an error log from a container runtime (Apptainer/Singularity)
+  indicating a failure to build a SIF image due to insufficient disk space. It does
+  not contain help information or argument definitions for the tool.\n\nTool homepage:
+  http://www.unidata.ucar.edu/software/netcdf/"
+inputs: []
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+stdout: esme_netcdf-c_openmpi_4_1_6_nc-config.out

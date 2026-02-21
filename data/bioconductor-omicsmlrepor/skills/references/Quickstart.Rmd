@@ -1,0 +1,251 @@
+---
+title: "OmicsMLRepoR - Quickstart"
+author: "Sehyun Oh, Kaelyn Long"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{Quickstart}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+output:
+  BiocStyle::html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(comment = "#>", 
+                      collapse = TRUE, 
+                      message = FALSE, 
+                      warning = FALSE)
+```
+
+# Introduction
+
+Our OmicsMLRepo project aims to improve the AI/ML-readiness of Omics datasets 
+available through Bioconductor. One of the main activities under this project 
+is metadata harmonization (e.g., remove redundant information) and 
+standardization (i.e., incorporate ontology).
+
+Currently, we released the harmonized version of metadata for two Bioconductor 
+data packages - `r BiocStyle::Biocpkg("curatedMetagenomicData")`containing 
+human microbiome data and `r BiocStyle::Biocpkg("cBioPortalData")` package 
+on cancer genomics data. OmicsMLRepoR is a software package allowing users 
+to easily access the harmonized metadata and to leverage
+ontology in metadata search.
+
+OmicsMLRepoR package provides the three major functions:\
+1. Download the harmonized metadata\
+2. Browse the harmonized metadata using ontology\
+3. Manipulate the 'shape' of the harmonized metadata
+
+
+## Load package
+```{r}
+suppressPackageStartupMessages({
+    library(OmicsMLRepoR)
+    library(dplyr)
+    library(curatedMetagenomicData)
+    library(cBioPortalData)
+})
+```
+
+## Load the metadata
+
+You can download the harmonized version of metadata using the `getMetadata` 
+function. Currently, two options are available - `cMD` and `cBioPortalData`.
+
+```{r}
+cmd <- getMetadata("cMD")
+cmd
+```
+
+```{r}
+cbio <- getMetadata("cBioPortal")
+cbio
+```
+
+# Access metadata
+Harmonized metadata can be easily searched by `dplyr` functions. To fully 
+leverage ontologies incorporated in harmonized metadata and provide more robust 
+data browsing experience, the package provides the `tree_filter` function. 
+Note, that `tree_filter` can be used on the attributes mapped to the ontology
+terms:
+
+```{r echo=FALSE}
+colnames(cmd)[grep("_ontology_term_id", colnames(cmd))] %>% 
+    gsub("_ontology_term_id", "", .)
+```
+
+
+## Robust search using ontology
+Compared to the typical searching in the original metadata from the 
+`curatedMetagenomicData`, OmicsMLRepoR enables more robust data browsing, 
+including case-insensitive, synonyms and descendant searching capabilities.
+
+Searching the same information in the original, unharmonized metadata
+(`sampleMetadata`) from the `curatedMetagenomicData` package is much less 
+robust:
+
+```{r}
+## Information spread out in two different columns
+nrow(sampleMetadata |> filter(study_condition == "CRC"))
+nrow(sampleMetadata |> filter(disease == "CRC"))
+
+## Case sensitive
+nrow(sampleMetadata |> filter(study_condition == "CRC"))
+nrow(sampleMetadata |> filter(study_condition == "crc"))
+
+## Synonyms not covered
+nrow(sampleMetadata |> filter(study_condition == "Colorectal Carcinoma"))
+nrow(sampleMetadata |> filter(study_condition == "Colorectal Cancer"))
+```
+
+### Not case-sensitive
+`tree_filter` is not case-sensitive.
+```{r}
+nrow(cmd |> tree_filter(disease, "Colorectal Carcinoma"))
+nrow(cmd |> tree_filter(disease, "colorectal carcinoma"))
+```
+
+### Include synonyms
+`tree_filter` includes the synonyms of the queried terms in its searching.
+```{r}
+syn_res1 <- cmd |> tree_filter(disease, "CRC")
+syn_res2 <- cmd |> tree_filter(disease, "Colorectal Cancer")
+syn_res3 <- cmd |> tree_filter(disease, "Colorectal Carcinoma")
+
+nrow(syn_res1)
+nrow(syn_res2)
+nrow(syn_res3)
+```
+
+Check that the returned results are identical.
+```{r}
+unique(syn_res1$disease)
+unique(syn_res2$disease)
+unique(syn_res3$disease)
+```
+
+### Search descendants in ontology tree
+`tree_filter` includes all the descendants of the queried term in its searching.
+```{r}
+onto_res <- cmd |> tree_filter(disease, "Intestinal Disorder")
+unique(onto_res$disease)
+```
+
+## Multiple searching terms
+For example, you can search for any row including a disease related to either 
+"migraine" or "diabetes."
+
+```{r}
+res_or <- cmd %>% tree_filter(disease, c("migraine", "diabetes"), "OR")
+```
+
+We can also change the "OR" argument (default) to either "AND" or "NOT" and 
+change the filtering action. "AND" will return any rows including a disease
+value that is related to both "migraine" and "diabetes," and "NOT" will return
+any rows including a disease value that is not related to either "migraine" or
+"diabetes."
+
+```{r}
+res_and <- cmd %>% tree_filter(disease, c("migraine", "diabetes"), "AND")
+res_not <- cmd %>% tree_filter(disease, c("migraine", "diabetes"), "NOT")
+```
+
+You can combine `tree_filter` and `dplyr` functions. For example, if you want 
+all rows with a disease value related to either "migraine" or "diabetes," as 
+well as with an age_years value under 30,
+
+```{r}
+res_or_below30 <- cmd %>% 
+    filter(age_years < 30) %>%
+    tree_filter(disease, c("migraine", "diabetes"))
+```
+
+
+## Collapse/Expand metadata
+
+Some metadata columns (e.g., `biomarker`) contain multiple, similar
+attributes separated with a specific delimiter (i.e., `<;>`). Our
+harmonization use this structure because they are related information
+often looked up together.
+
+```{r}
+cmd_biomarker <- cmd %>% 
+    filter(!is.na(biomarker)) %>% 
+    select(curation_id, biomarker)
+wtb <- getWideMetaTb(cmd_biomarker, "biomarker")
+head(wtb)
+```
+
+```{r}
+ltb <- getLongMetaTb(cmd, targetCols = "target_condition")
+dim(cmd)
+dim(ltb)
+```
+
+
+# Download omics data
+## curatedMetagenomicData
+
+```{r debug_needed, echo=FALSE}
+cmd_sub <- tree_filter(cmd, target_condition, "Alzheimer's disease")
+```
+
+```{r}
+cmd_dat <- cmd %>%
+    tree_filter(col = "disease", "Type 2 Diabetes Mellitus") %>%
+    filter(sex == "Female") %>%
+    filter(age_group == "Elderly") %>%
+    returnSamples("relative_abundance", rownames = "short")
+```
+
+## cBioPortalData
+```{r}
+cbio_sub <- cbio %>%
+    getLongMetaTb("treatment_name", "<;>") %>%
+    filter(treatment_name == "Fluorouracil") %>%
+    filter(age_at_diagnosis > 50) %>%
+    filter(sex == "Female") %>%
+    getShortMetaTb(idCols = "curation_id", targetCols = "treatment_name")
+
+dim(cbio_sub)
+studies <- unique(cbio_sub$studyId)
+studies
+```
+
+A simple `for` loop can collect samples from multiple studies.
+```{r}
+cbio_api <- cBioPortal()
+resAll <- as.list(vector(length = length(studies)))
+
+for (i in seq_along(studies)) {
+    study <- studies[i]
+    samples <- cbio_sub %>%
+        filter(studyId == study) %>%
+        pull(sampleId)
+
+    res <- cBioPortalData(
+        api = cbio_api,
+        by = "hugoGeneSymbol",
+        studyId = study,
+        sampleIds = samples,
+        genePanelId = "IMPACT341"
+    )
+    
+    resAll[[i]] <- res
+}
+```
+
+
+# Session Info
+<details>
+```{r}
+sessionInfo()
+```
+</details>
+

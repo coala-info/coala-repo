@@ -1,0 +1,364 @@
+---
+title: "Usage of Annotation Resources with the CompoundDb Package"
+output:
+    BiocStyle::html_document:
+        toc_float: true
+vignette: >
+    %\VignetteIndexEntry{Usage of Annotation Resources with the CompoundDb Package}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+    %\VignettePackage{CompoundDb}
+    %\VignetteDepends{CompoundDb,RSQLite,Spectra,BiocStyle}
+bibliography: references.bib
+---
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+**Authors**: `r packageDescription("CompoundDb")[["Author"]] `<br />
+**Last modified:** `r file.info("CompoundDb-usage.Rmd")$mtime`<br />
+**Compiled**: `r date()`
+
+```{r, echo = FALSE, message = FALSE}
+library(CompoundDb)
+library(BiocStyle)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+
+# Introduction
+
+The `r Biocpkg("CompoundDb")` package provides the functionality to create
+chemical *compound* databases from a variety of sources and to use such
+annotation databases (`CompDb`) [@rainer_modular_2022]. A detailed description
+on the creation of annotation resources is given in the *Creating CompoundDb
+annotation resources* vignette. This vignette focuses on how annotations can be
+search for and retrieved.
+
+
+# Installation
+
+The package (including dependencies) can be installed with the code below:
+
+```{r, eval = FALSE}
+install.packages("BiocManager")
+BiocManager::install("CompoundDb")
+```
+
+
+# General usage
+
+In this vignette we use a small `CompDb` database containing annotations for a
+small number of metabolites build using
+[MassBank](https://massbank.eu/MassBank/) release *2020.09*. The respective
+`CompDb` database which is loaded below contains in addition to general compound
+annotations also MS/MS spectra for these compounds.
+
+```{r load}
+library(CompoundDb)
+cdb <- CompDb(system.file("sql/CompDb.MassBank.sql", package = "CompoundDb"))
+cdb
+```
+
+General information about the database can be accessed with the `metadata`
+function.
+
+```{r}
+metadata(cdb)
+```
+
+
+## Querying compound annotations
+
+The `CompoundDb` package is designed to provide annotation resources for small
+molecules, such as metabolites, that are characterized by an exact mass and
+additional information such as their IUPAC International Chemical Identifier
+[InChI](https://en.wikipedia.org/wiki/International_Chemical_Identifier) or
+their chemical formula. The available annotations (*variables*) for compounds
+can differ between databases. The `compoundVariables()` function can be used to
+retrieve a list of all available compound annotations for a specific `CompDb`
+database.
+
+```{r}
+compoundVariables(cdb)
+```
+
+The actual compound annotations can then be extracted with the `compounds()`
+function which returns by default all columns listed by
+`compoundVariables()`. We can also define specific columns we want to extract
+with the `columns` parameter.
+
+```{r}
+head(compounds(cdb, columns = c("name", "formula", "exactmass")))
+```
+
+As a technical detail, `CompDb` databases follow a very simple database layout
+with only few constraints to allow data import and representation for a variety
+of sources (e.g. MassBank, HMDB, MoNa, ChEBI). For the present database, which
+is based on MassBank, the mapping between entries in the *ms_compound* database
+table and MS/MS spectra is for example 1:1 and the *ms_compound* table contains
+thus highly redundant information. Thus, if we would include the column
+`"compound_id"` in the query we would end up with redundant values:
+
+```{r}
+head(compounds(cdb, columns = c("compound_id", "name", "formula")))
+```
+
+By default, `compounds()` extracts the data for **all** compounds stored in the
+database. The function supports however also *filters* to get values for
+specific entries only. These can be defined as *filter expressions* which are
+similar to the way how e.g. a `data.frame` would be subsetted in R. In the
+example below we extract the compound ID, name and chemical formula for a
+compound *Mellein*.
+
+```{r}
+compounds(cdb, columns = c("compound_id", "name", "formula"),
+          filter = ~ name == "Mellein")
+```
+
+Note that a filter expression always has to start with `~` followed by the
+*variable* on which the data should be subsetted and the condition to select the
+entries of interest. An overview of available filters for a `CompDb` can be
+retrieved with the `supportedFilter()` function which returns the name of the
+filter and the database column on which the filter selects the values:
+
+```{r}
+supportedFilters(cdb)
+```
+
+Also, filters can be combined to create more specific filters in the same manner
+this would be done in R, i.e. using `&` for *and*, `|` for *or* and `!` for
+*not*. To illustrate this we extract below all compound entries from the table
+for compounds with the name *Mellein* and that have a `"compound_id"` which is
+either 1 or 5.
+
+```{r}
+compounds(cdb, columns = c("compound_id", "name", "formula"),
+          filter = ~ name == "Mellein" & compound_id %in% c(1, 5))
+```
+
+Similarly, we can define a filter expression to retrieve compounds with an exact
+mass between 310 and 320.
+
+```{r}
+compounds(cdb, columns = c("name", "exactmass"),
+          filter = ~ exactmass > 310 & exactmass < 320)
+```
+
+In addition to *filter expressions*, we can also define and combine filters
+using the actual filter classes. This provides additional conditions that would
+not be possible with regular filter expressions. Below we fetch for examples
+only compounds from the database that contain a *H14* in their formula. To this
+end we use a `FormulaFilter` with the condition `"contains"`. Note that all
+filters that base on character matching (i.e. `FormulaFilter`, `InchiFilter`,
+`InchikeyFilter`, `NameFilter`) support as conditions also `"contains"`,
+`"startsWith"` and `"endsWith"` in addition to `"="` and `"!="`.
+
+```{r}
+compounds(cdb, columns = c("name", "formula", "exactmass"),
+          filter = FormulaFilter("H14", "contains"))
+```
+
+It is also possible to combine filters if they are defined that way, even if it
+is a little less straight forward than with the filter expressions. Below we
+combine the `FormulaFilter` with the `ExactmassFilter` to retrieve only
+compounds with an `"H14"` in their formula and an exact mass between 310 and
+320.
+
+```{r}
+filters <- AnnotationFilterList(
+    FormulaFilter("H14", "contains"),
+    ExactmassFilter(310, ">"),
+    ExactmassFilter(320, "<"),
+    logicOp = c("&", "&"))
+compounds(cdb, columns = c("name", "formula", "exactmass"),
+          filter = filters)
+```
+
+
+## Additional functionality for `CompDb` databases
+
+*CompoundDb* defines additional functions to work with `CompDb` databases. One
+of them is the `mass2mz()` function that allows to directly calculate ion
+(adduct) m/z values for exact (monoisotopic) masses of compounds in a
+database. Below we use this function to calculate `[M+H]+` and `[M+Na]+` ions
+for all unique chemical formulas in our example `CompDb` database.
+
+```{r}
+mass2mz(cdb, adduct = c("[M+H]+", "[M+Na]+"))
+```
+
+To get a `matrix` with adduct m/z values for discrete compounds (identified
+by their InChIKey) we specify `name = "inchikey"`.
+
+```{r}
+mass2mz(cdb, adduct = c("[M+H]+", "[M+Na]+"), name = "inchikey")
+```
+
+Alternatively we could also use `name = "compound_id"` to get a value for each
+row in the compound database table, but for this example database this would
+result in highly redundant information.
+
+`mass2mz()` bases on the `MetaboCoreUtils::mass2mz` function and thus supports
+all pre-defined adducts from that function. These are (for positive polarity):
+
+```{r}
+MetaboCoreUtils::adductNames()
+```
+
+and for negative polarity:
+
+```{r}
+MetaboCoreUtils::adductNames(polarity = "negative")
+```
+
+In addition, user-supplied adduct definitions are also supported (see the help
+of `mass2mz()` in the `r Biocpkg("MetaboCoreUtils")` package for details).
+
+
+## Accessing and using MS/MS data
+
+`CompDb` database can also store and provide MS/MS spectral data. These can be
+accessed *via* a `Spectra` object from the `r Biocpkg("Spectra")`
+Bioconductor. Such a `Spectra` object for a `CompDb` can be created with the
+`Spectra()` function as in the example below.
+
+```{r}
+sps <- Spectra(cdb)
+sps
+```
+
+This `Spectra` object uses a `MsBackendCompDb` to *represent* the MS data of the
+`CompDb` database. In fact, only the compound identifiers and the precursor m/z
+values from all spectra are stored in memory while all other data is retrieved
+on-the-fly from the database when needed.
+
+The `spectraVariables()` function lists all available annotations for a spectrum
+from the database, which includes also annotations of the associated compounds.
+
+```{r}
+spectraVariables(sps)
+```
+
+Individual variables can then be accessed with `$` and the variable name:
+
+```{r}
+head(sps$adduct)
+```
+
+For more information on how to use `Spectra` objects in your analysis have also
+a look at the package
+[vignette](https://rformassspectrometry.github.io/Spectra/articles/Spectra.html)
+or a [tutorial](https://jorainer.github.io/SpectraTutorials/) on how to perform
+MS/MS spectra matching with `Spectra`.
+
+Similar to the `compounds()` function, a call to `Spectra()` will give access to
+**all** spectra in the database. Using the same filtering framework it is
+however also possible to *extract* only specific spectra from the
+database. Below we are for example accessing only the MS/MS spectra of the
+compound *Mellein*. Using the `filter` in the `Spectra()` call can be
+substantially faster than first initializing a `Spectra` with the full data and
+then subsetting that to selected spectra.
+
+```{r}
+mellein <- Spectra(cdb, filter = ~ name == "Mellein")
+mellein
+```
+
+Instead of all spectra we extracted now only a subset of `r length(mellein)`
+spectra from the database.
+
+As a simple toy example we perform next pairwise spectra comparison between the
+5 spectra from *Mellein* with all the MS/MS spectra in the database.
+
+```{r, message = FALSE}
+library(Spectra)
+cormat <- compareSpectra(mellein, sps, ppm = 40)
+```
+
+Note that the `MsBackendCompDb` does not support parallel processing, thus,
+while `compareSpectra()` would in general support parallel processing, it gets
+automatically be disabled if a `Spectra` with a `MsBackendCompDb` is used.
+
+```{r}
+cormat <- compareSpectra(mellein, sps, ppm = 40, BPPARAM = MulticoreParam(2))
+```
+
+
+# Ion databases
+
+The `CompDb` database layout is designed to provide compound annotations, but in
+mass spectrometry (MS) ions are measured. These ions are generated e.g. by
+electro spray ionization (ESI) from the original compounds in a sample. They are
+characterized by their specific mass-to-charge ratio (m/z) which is measured by
+the MS instrument. Eventually, also a retention time is available. Also, for the
+same compound several different ions (adducts) can be formed and measured, all
+with a different m/z. This type of data can be represented by an `IonDb`
+database, which extends the `CompDb` and hence inherits all of its properties
+but adds additional database tables to support also ion annotations. Also,
+`IonDb` objects provide functionality to add new ion annotations to an existing
+database. Thus, this type of database can be used to build lab-internal
+annotation resources containing ions, m/z and retention times for pure standards
+measured on a specific e.g. LC-MS setup.
+
+`CompDb` databases, such as the `cdb` from this example, are however by default
+*read-only*, thus, we below create a new database connection, copy the content
+of the `cdb` to that database and convert the `CompDb` to an `IonDb`.
+
+```{r}
+library(RSQLite)
+## Create a temporary database
+con <- dbConnect(SQLite(), tempfile())
+## Create an IonDb copying the content of cdb to the new database
+idb <- IonDb(con, cdb)
+idb
+```
+
+The `IonDb` defines an additional function `ions` that allows to retrieve ion
+information from the database.
+
+```{r}
+ions(idb)
+```
+
+The present database does not yet contain any ion information. Below we define a
+data frame with ion annotations and add that to the database with the
+`insertIon()` function. The column `"compound_id"` needs to contain the
+identifiers of the compounds to which the ion should be related to. In the
+present example we add 2 different ions for the compound with the ID 1
+(*Mellein*). Note that the specified m/z values as well as the retention times
+are completely arbitrary.
+
+```{r}
+ion <- data.frame(compound_id = c(1, 1),
+                  ion_adduct = c("[M+H]+", "[M+Na]+"),
+                  ion_mz = c(123.34, 125.34),
+                  ion_rt = c(196, 196))
+idb <- insertIon(idb, ion)
+```
+
+These ions have now be added to the database.
+
+```{r}
+ions(idb)
+```
+
+Ions can also be deleted from a database with the `deleteIon` function (see the
+respective help page for more information).
+
+Note that we can also retrieve compound annotation information for the
+ions. Below we extract the associated compound name and its exact mass.
+
+```{r}
+ions(idb, columns = c("ion_adduct", "name", "exactmass"))
+```
+
+
+# Session information
+
+```{r}
+sessionInfo()
+```
+
+# References

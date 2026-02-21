@@ -1,0 +1,170 @@
+---
+title: "Outlier Protein and Phosphosite Target Identifier"
+output: # pdf_document
+    md_document:
+        variant: gfm
+vignette: |
+    %\VignetteIndexEntry{Outlier Protein and Phosphosite Target Identifier}
+    %\VignetteEngine{knitr::knitr}
+    %\VignetteIndexEntry{oppti}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi = 300)
+knitr::opts_chunk$set(cache=FALSE)
+```
+
+```{r, echo = FALSE, hide=TRUE, message=FALSE, warning=FALSE}
+library('oppti')
+```
+# Installation
+To install this package, start R (version "4.1") and enter:
+
+```{r, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("oppti")
+```
+
+For older versions of R, please refer to the appropriate Bioconductor release.
+
+# Documentation
+To view documentation for the version of this package installed in your system, start R and enter:
+
+```{r, eval = FALSE}
+browseVignettes("oppti")
+``` 
+
+
+# Analyze proteomics data of a single cohort
+You can easily analyze outlying (dysregulated) markers for each sample in a 
+cohort. Lets generate a toy proteomics data for a cohort of 30 disease samples,
+each quantifying 100 proteins.
+```{r, eval = TRUE}
+set.seed(1)
+cohort1.proteomes = as.data.frame(matrix(abs(rnorm(100*30)), 100, 30)) 
+rownames(cohort1.proteomes) = paste('marker', 1:100, sep = '')
+colnames(cohort1.proteomes) = paste('cohort1.sample', 1:30, sep = '')
+```
+Outlier analysis is run by the `oppti` function:
+```{r, eval = TRUE}
+library('oppti')
+result = oppti(cohort1.proteomes)
+```
+
+The outlier scores of each marker in each sample are then returned in the 
+first element of the result:
+```{r, eval = TRUE} 
+cohort1.outlier.scores = result[[1]] 
+```
+```{r, eval = TRUE, echo = FALSE, size = 8}
+knitr::kable(cohort1.outlier.scores[[1]][1:10,1:4], digits = 2, 
+    caption = "Example matrix of the outlier scores, displayed for the
+    first 10 proteins (rows) and the first 4 samples (columns)",
+    row.names = TRUE)
+```
+
+In this toy example, marker5 has a (somewhat) elevated outlier score in
+sample3, suggesting a protruding expression in the disease state of sample3
+relative to a normal state (i.e., the consensus co-expression network inferred
+for marker5). In contrast, a negative sign in the outlier score indicates a 
+negative dysregulation event, i.e., relatively "lower" protein expression is
+expected in the observed disease state compared to the normal state. The 
+landscape of these aberrant expressions analyzed for a cohort of individuals 
+may serve for the discovery of personalized actionable targets.
+
+The outlier scores correspond to deviations of the observed expressions from 
+the estimated normal states. The estimated normals are given in the second 
+element of the result:
+```{r, eval = TRUE} 
+cohort1.normal.states = result[[2]] 
+```
+```{r, eval = TRUE, echo = FALSE, size = 8}
+knitr::kable(cohort1.normal.states[[1]][1:10,1:4], digits = 2, 
+    caption = "Example matrix of the normal states",
+    row.names = TRUE)
+```
+
+You can evaluate markers by the odds of obtaining these deviations purely by 
+chance. A Kolmogorov-Smirnov test is performed for each marker between its 
+observed and estimated states, and the p-values are reported in the third 
+element of the result:
+```{r, eval = TRUE} 
+cohort1.markers.tests = result[[3]] 
+```
+```{r, eval = TRUE, echo = FALSE, size = 8}
+knitr::kable(cohort1.markers.tests[[1]][1:10,], digits = 4, 
+    caption = "Statistical significance of outlying markers",
+    row.names = TRUE)
+```
+
+# Analyze proteomics data of multiple cohorts
+For pan-cancer analyses, the normalized proteomics data from different cohorts
+can be supplied to `oppti` in a list object. Lets generate another toy
+proteomics data for a separate cohort of 20 disease samples, each quantifying 
+80 proteins (say, 50 of which are overlapping with those quantified in the 
+first cohort).
+```{r, eval = TRUE}
+cohort2.proteomes = as.data.frame(matrix(abs(rnorm(80*20)), 80, 20)) 
+rownames(cohort2.proteomes) = paste('marker', 51:130, sep = '')
+colnames(cohort2.proteomes) = paste('cohort2.sample', 31:50, sep = '')
+```
+
+To run `oppti` for both cohorts, the data are simply fed in a single list
+object:
+```{r, eval = TRUE}
+result = oppti(list(cohort1.proteomes,cohort2.proteomes))
+```
+
+Again, the outlier scores of each marker in each sample are returned in the
+first element of the result. 
+```{r, eval = TRUE} 
+outlier.scores = result[[1]]
+```
+
+However, this object is a list of 2 elements per se, corresponding to two
+cohorts. To obtain the outlier scores of the first cohort:
+```{r, eval = TRUE} 
+cohort1.outlier.scores = outlier.scores[[1]]
+```
+```{r, eval = TRUE, echo = FALSE, size = 8}
+knitr::kable(cohort1.outlier.scores[1:10,1:4], digits = 2, 
+    caption = "Example outlier scores in cohort1",
+    row.names = TRUE)
+```
+
+Similarly, for the second cohort the outlier scores are obtained by:
+```{r, eval = TRUE} 
+cohort2.outlier.scores = outlier.scores[[2]]
+```
+```{r, eval = TRUE, echo = FALSE, size = 8}
+knitr::kable(cohort2.outlier.scores[1:10,1:4], digits = 2, 
+    caption = "Example outlier scores in cohort2",
+    row.names = TRUE)
+```
+
+You can evaluate the markers in terms of outlying events they exhibit across 
+the cohort by using the `draw.sc.plots` flag. The outlier samples will be 
+marked on a scatter plot displaying disease (observed) vs normal (estimated) 
+expressions. Note that you can always set `panel.markers` parameter to restrict 
+your analysis to a specific set of markers.
+```{r, eval = FALSE} 
+result = oppti(list(cohort1.proteomes,cohort2.proteomes), draw.sc.plots = TRUE,
+    panel.markers = rownames(cohort1.proteomes)[46:55])
+```
+
+To display the summary results of the markers' outlying events across cohorts 
+you can use `draw.ou.plots`:
+```{r, eval = FALSE} 
+result = oppti(list(cohort1.proteomes,cohort2.proteomes), draw.ou.plots = TRUE,
+    panel.markers = rownames(cohort1.proteomes)[46:55])
+```
+
+To narrow down the summary results to a number of markers 
+you can use `draw.ou.markers`:
+```{r, eval = FALSE} 
+result = oppti(list(cohort1.proteomes,cohort2.proteomes), 
+    draw.ou.markers = c('marker50', 'marker55'), 
+    panel.markers = rownames(cohort1.proteomes)[46:55])
+```

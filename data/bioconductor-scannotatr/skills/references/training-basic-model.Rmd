@@ -1,0 +1,262 @@
+---
+title: "Training basic model classifying a cell type from scRNA-seq data"
+author: "Vy Nguyen"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{2. Training basic model}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+## Introduction
+
+One of key functions of the scAnnotatR package is to provide users 
+easy tools to train their own model classifying new cell types from labeled 
+scRNA-seq data.
+
+This vignette shows how to train a basic 
+classification model for an independent cell type, which is not a child of 
+any other cell type.
+
+## Preparing train object and test object
+
+The workflow starts with either a [Seurat](https://satijalab.org/seurat/) or 
+[SingleCellExperiment](https://osca.bioconductor.org/) object where cells have already
+been assigned to different cell types. 
+
+To do this, users may have annotated 
+scRNA-seq data (by a FACS-sorting process, for example), create a Seurat/
+SingleCellExperiment (SCE) object based on the sequencing data and assign the 
+predetermined cell types as cell meta data. If the scRNA-seq data has not 
+been annotated yet, another possible approach is to follow the basic 
+workflow (Seurat, for example) until assigning cell type identity to clusters.
+
+In this vignette, we use the human lung dataset from Zilionis et al., 2019,
+which is available in the scRNAseq (2.4.0) library. The dataset is stored as a
+SCE object.
+
+To start the training workflow, we first install and load the necessary libraries. 
+```{r, eval = FALSE}
+# use BiocManager to install from Bioconductor
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# the scAnnotatR package
+if (!require(scAnnotatR))
+  BiocManager::install("scAnnotatR")
+
+# we use the scRNAseq package to load example data
+if (!require(scRNAseq))
+  BiocManager::install("scRNAseq")
+```
+
+```{r}
+library(scRNAseq)
+library(scAnnotatR)
+```
+
+First, we load the dataset. To reduce the computational complexity of this vignette, we only use the first 5000 cells of the dataset.
+
+```{r}
+zilionis <- ZilionisLungData()
+zilionis <- zilionis[, 1:5000]
+```
+
+We split this dataset into two parts, one for the training and the other for the testing.
+```{r}
+pivot = ncol(zilionis)%/%2
+train_set <- zilionis[, 1:pivot]
+test_set <- zilionis[, (1+pivot):ncol(zilionis)]
+```
+
+In this dataset, the cell type meta data is stored in the *Most likely LM22 cell type*
+slot of the SingleCellExperiment object (in both the train object and test object). 
+
+If the cell type is stored not stored as the default identification (set through
+`Idents` for Seurat object) the slot must be set as a parameter in the training
+and testing function (see below).
+
+```{r}
+unique(train_set$`Most likely LM22 cell type`)
+```
+```{r}
+unique(test_set$`Most likely LM22 cell type`)
+```
+
+We want to train a classifier for B cells and their phenotypes. Considering memory B cells,
+naive B cells and plasma cells as B cell phenotypes, we convert all those cells to a uniform 
+cell label, ie. B cells. All non B cells are converted into 'others'.
+
+```{r}
+# change cell label
+train_set$B_cell <- unlist(lapply(train_set$`Most likely LM22 cell type`,
+                                  function(x) if (is.na(x)) {'ambiguous'} else if (x %in% c('Plasma cells', 'B cells memory', 'B cells naive')) {'B cells'} else {'others'}))
+
+test_set$B_cell <- unlist(lapply(test_set$`Most likely LM22 cell type`,
+                                 function(x) if (is.na(x)) {'ambiguous'} else if (x %in% c('Plasma cells', 'B cells memory', 'B cells naive')) {'B cells'} else {'others'}))
+```
+
+We observe that there are cells marked NAs. Those can be understood as 1/different from all indicated cell types or 2/any unknown cell types. Here we consider the second case, ie. we don't know whether they are positive or negative to B cells. To avoid any effect of these cells, we can assign them as 'ambiguous'. All cells tagged 'ambiguous' will be ignored by scAnnotatR from training and testing. 
+
+We may want to check the number of cells in each category:
+```{r}
+table(train_set$B_cell)
+```
+
+## Defining marker genes
+
+Next, we define a set of marker genes, which will be used in training the 
+classification model. Supposing we are training a model for classifying 
+B cells, we define the set of marker genes as follows:
+```{r}
+selected_marker_genes_B <- c("CD19", "MS4A1", "CD79A", "CD79B", 'CD27', 'IGHG1', 'IGHG2', 'IGHM',
+                         "CR2", "MEF2C", 'VPREB3', 'CD86', 'LY86', "BLK", "DERL3")
+```
+
+## Train model
+
+When the model is being trained, three pieces of information must be 
+provided: 
+
+  * the Seurat/SCE object used for training
+  * the set of applied marker genes
+  * the cell type defining the trained model
+
+In case the dataset does not contain any cell classified as the target
+cell type, the function will fail. 
+
+If the cell type annotation is not set in the default identification slot
+(`Idents` for `Seurat` objects) the name 
+of the metadata field must be provided to the `sce_tag_slot parameter`. 
+
+When training on an imbalanced dataset (f.e. a datasets containing 90% B cells and
+only very few other cell types), the trained model may bias toward the 
+majority group and ignore the presence of the minority group. To avoid this, 
+the number of positive cells and negative cells will be automatically balanced 
+before training. Therefore, a smaller number cells will be randomly picked  
+from the majority group. To use the same set of cells while training multiple 
+times for one model, users can use `set.seed`. 
+```{r}
+set.seed(123)
+classifier_B <- train_classifier(train_obj = train_set, cell_type = "B cells", 
+                                 marker_genes = selected_marker_genes_B,
+                                 assay = 'counts', tag_slot = 'B_cell')
+```
+```{r}
+classifier_B
+```
+The classification model is a `scAnnotatR` object. 
+Details about the classification model are accessible via getter methods. 
+
+For example:
+
+```{r}
+caret_model(classifier_B)
+```
+
+## Test model
+
+The `test_classifier` model automatically tests a classifier's performance
+against another dataset. Here, we used the `test_set` created before:
+
+```{r}
+classifier_B_test <- test_classifier(classifier = classifier_B, test_obj = test_set,  
+                                     assay = 'counts', tag_slot = 'B_cell')
+```
+
+### Interpreting test model result
+
+Apart from the output exported to console, test classifier function also returns an object, which is a list of:
+  
+  * **test_tag**: actual cell label, this can be different from the label provided by users because of ambiguous characters or the incoherence in cell type and sub cell type label assignment.  
+
+  * **pred**: cell type prediction using current classifier
+
+  * **acc**: prediction accuracy at the fixed probability threshold, the probability threshold value can also be queried using *p_thres(classifier)*
+
+  * **auc**: AUC score provided by current classifier
+  
+  * **overall_roc**: True Positive Rate and False Positive Rate with a certain number of prediction probability thresholds
+  
+Every classifier internally consists of a trained SVM and a probability threshold. Only cells that are classified with a probability exceeding
+this threshold are classified as the respective cell type. The *overall_roc* slot summarizes the True Positive Rate (sensitivity) and False Positive Rate (1 - specificity) obtained by the trained model according to different thresholds.
+
+```{r}
+classifier_B_test$overall_roc
+```
+
+In this example of B cell classifier, the current threshold is at 0.5. The higher sensitivity can be reached if we set the p_thres at 0.4. However, we will then have lower specificity, which means that we will incorrectly classify some cells as B cells. At the sime time, we may not retrieve all actual B cells with higher p_thres (0.6, for example).
+
+There is of course a certain trade-off between the sensitivity and the specificity of the model. Depending on the need of the project or the user-own preference, a probability threshold giving higher sensitivity or higher specificity can be chosen. In our perspective, p_thres at 0.5 is a good choice for the current B cell model.
+
+### Plotting ROC curve
+
+Apart from numbers, we also provide a method to plot the ROC curve. 
+```{r}
+roc_curve <- plot_roc_curve(test_result = classifier_B_test)
+```
+```{r}
+plot(roc_curve)
+```
+
+### Which model to choose?
+
+Changes in the training data, in the set of marker genes and in the prediction 
+probability threshold will all lead to a change in model performance.
+
+There are several ways to evaluate the trained model, including the overall 
+accuracy, the AUC score and the sensitivity/specificity of the model when 
+testing on an independent dataset. In this example, we choose the model
+which has the best AUC score.
+
+*Tip: Using more general markers of the whole population leads to higher 
+sensitivity. This sometimes produces lower specificity because of close 
+cell types (T cells and NK cells, for example). While training some models, 
+we observed that we can use the markers producing high sensitivity but at 
+the same time can improve the specificity by increasing the probability 
+threshold. Of course, this can only applied in some cases, because 
+some markers can even have a larger affect on the specificity than the 
+prediction probability threshold.*
+
+## Save classification model for further use
+
+New classification models can be stored using the `save_new_model` function:
+
+```{r}
+# no copy of pretrained models is performed
+save_new_model(new_model = classifier_B, path_to_models = tempdir(),
+               include.default = FALSE) 
+```
+
+Parameters:
+
+  * **new_model**: The new model that should be added to the database in the
+                   specified directory.
+  * **path_to_models**: The directory where the new models should be stored.
+  * **include.default**: If set, the default models shipped with the package
+                         are added to the database.
+
+Users can also choose whether copy all pretrained models of the packages to the
+new model database. If not, in the future, user can only choose to use either 
+default pretrained models or new models by specifying only one path to models.
+
+Models can be deleted from the model database using the `delete_model` function:
+
+```{r}
+# delete the "B cells" model from the new database
+delete_model("B cells", path_to_models = tempdir())
+```
+
+## Session Info
+```{r}
+sessionInfo()
+```

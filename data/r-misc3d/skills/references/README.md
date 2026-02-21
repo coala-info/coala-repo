@@ -1,0 +1,17 @@
+This package provides a small collection of functions for 3D data:
+contour3d Uses rgl, standard, or grid graphics to render isosurfaces,
+or three-dimensional contours, computed by the marching
+cubes algorithm.
+image3d Crude 3d analog of image() using rgl to plot points on a
+three dimensional grid representing values in a three
+dimensional array. Assumes high values are inside and
+uses alpha blending to make outside points more
+transparent.
+parametric3d Plots a two-parameter surface in three dimensions. Based
+on Mathematica's Param3D
+slices3d Uses tkrplot to create an interactive slice view of three or
+four dimensional volume data, such as MRI data.
+Additional support functions are available for managing triangle mesh
+representations of surfaces, rendering these surfaces with lighting and
+(minimal) shading in standard or grid graphics, and writing out triangular
+mesh scenes to different textual file formats.

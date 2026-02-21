@@ -1,0 +1,418 @@
+---
+title: Counting barcodes in sequencing screens
+author:
+- name: Aaron Lun
+  email: infinite.monkeys.with.keyboards@gmail.com
+date: "Revised: February 6, 2020"  
+output:
+  BiocStyle::html_document
+package: screenCounter
+vignette: >
+  %\VignetteIndexEntry{Counting barcodes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo=FALSE, results="hide"}
+knitr::opts_chunk$set(error=FALSE, message=FALSE)
+```
+
+```{r, echo=FALSE, results="hide"}
+library(BiocStyle)
+```
+
+# Overview
+
+The _screenCounter_ package implements several functions to quantify the frequency of barcodes in a sequencing screen experiment.
+These functions on the raw FASTQ files, yielding a matrix of counts for each barcode in each sample for downstream analysis.
+Quantification can be performed for both single and combinatorial barcodes, though only single-end sequencing data are currently supported.
+
+# Counting single barcodes
+
+The "barcode" is considered to be the entire sequence structure that is used to label a particular molecular or biological entity.
+This includes regions of variable sequence that distinguish one barcode from another as well as constant sequences that flank or separate the variable regions.
+The most common barcode design uses only one variable region, which we refer to as a "single barcode".
+
+```
+# Example of a single barcode:
+
+CAGCAGCATGCTGNNNNNNNNNNNNNNCAGCATCGTGC
+-------------^^^^^^^^^^^^^^-----------
+constant     variable      constant
+flank        region        flank
+```
+
+To demonstrate, let's mock up a FASTQ file from a single-end sequencing screen.
+For simplicity, we will assume that each read only contains the barcode.
+However, it is entirely permissible to have additional (unknown) flanking sequences in the read.
+
+```{r}
+# Our pool of known variable sequences, one per barcode:
+known <- c("AAAAAAAA", "CCCCCCCC", "GGGGGGGG", "TTTTTTTT")
+
+# Mocking up some sequence data, where each read randomly contains 
+# one of the variable sequences, flanked by constant regions. 
+library(Biostrings)
+chosen <- sample(known, 1000, replace=TRUE)
+reads <- sprintf("GTAC%sCATG", chosen)
+names(reads) <- sprintf("READ_%i", seq_along(reads))
+
+# Writing to a FASTQ file.
+single.fq <- tempfile(fileext=".fastq")
+writeXStringSet(DNAStringSet(reads), file=single.fq, format="fastq")
+```
+
+We quantify single barcodes across one or more files using the `matrixOfSingleBarcodes()` function.
+This produces a `SummarizedExperiment` containing a count matrix of frequencies of each barcode (row) in each file (column).
+The order of rows corresponds to the order of variable regions in `known` that distinguishes each barcode.
+
+```{r}
+library(screenCounter)
+out <- matrixOfSingleBarcodes(single.fq, 
+    flank5="GTAC", flank3="CATG", choices=known)
+out
+assay(out)
+```
+
+We specify the constant sequences that immediately flank the variable region^[A template structure can also be specified in `template=`, which may be more convenient.].
+This improves stringency of barcode identification as the barcode will not be recognized in the read sequence unless the constant sequences match perfectly.
+It also improves speed as the matching of the variable sequence is only performed at positions along the read where the flanking constant sequences have matched.
+
+Obviously, users should not supply the full length of the flanking sequence if that sequence is not captured in the read.
+For example, the 3' flanking sequence may be lost in experiments using short reads that only reach to the end of the variable region.
+In such cases, an empty string should be specified as `flank3=`.
+
+# Counting combinatorial barcodes
+
+A more complex experimental design involves combinatorial barcodes where multiple variable regions are randomly ligated to form a single sequence.
+This exploits combinatorial complexity to generate a large number of unique barcodes from a limited pool of known variable sequences.
+
+```
+# Example of a combinatorial barcode:
+
+CAGCTANNNNNNNNNNCACGNNNNNNNNNNCAGCT
+------^^^^^^^^^^----^^^^^^^^^^-----
+      variable      variable
+```
+
+To demonstrate, let's mock up another FASTQ file of single-end read data.
+Again, for simplicity, we will assume that each read sequence contains only the barcode.
+
+```{r}
+# Our pool of known variable sequences:
+known1 <- c("AAAA", "CCCC", "GGGG", "TTTT")
+known2 <- c("ATTA", "CGGC", "GCCG", "TAAT")
+
+# Mocking up some sequence data, where each read randomly contains 
+# two of the variable sequences within a template structure.
+library(Biostrings)
+chosen1 <- sample(known1, 1000, replace=TRUE)
+chosen2 <- sample(known2, 1000, replace=TRUE)
+reads <- sprintf("GTAC%sCATG%sGTAC", chosen1, chosen2)
+names(reads) <- sprintf("READ_%i", seq_along(reads))
+
+# Writing to a FASTQ file.
+combo.fq <- tempfile(fileext=".fastq")
+writeXStringSet(DNAStringSet(reads), file=combo.fq, format="fastq")
+```
+
+We quantify combinatorial barcodes across one or more files using the `matrixOfComboBarcodes()` function.
+This requires a template for the barcode structure to specify how the variable sequences are used to construct the final barcode.
+It is permissible for each variable sequence to be sampled from a different known pool.
+
+```{r}
+out <- matrixOfComboBarcodes(combo.fq,
+    template="GTACNNNNCATGNNNNGTAC",
+    choices=list(first=known1, second=known2))
+out
+```
+
+This function yields a `SummarizedExperiment` object containing a matrix of frequencies of each barcode (row) in each file (column).
+
+```{r}
+assay(out)
+```
+
+The identities of the variable regions in each combinatorial barcode are specified in the `rowData`, 
+which contains the variable sequences in `known1` and `known2` that define each barcode.
+
+```{r}
+rowData(out)
+```
+
+# Counting dual barcodes
+
+Another experimental design involves the use of dual barcodes, often to modulate the expression of two genes at once.
+The aim is to, again, count the frequency of each combination of barcodes among the observed read pairs.
+This differs from the combinatorial barcodes in that the dual barcodes are present on paired reads, with one barcode per read;
+in addition, not all combinations of two barcodes may be valid.
+
+```
+# Example of a dual barcode:
+
+# READ 1:
+CAGCTANNNNNNNNNNCACG
+------^^^^^^^^^^----
+      variable
+
+# READ 2:
+CACGGTTNNNNNNNNNNCAGC
+-------^^^^^^^^^^----
+       variable
+```
+
+To demonstrate, let's mock up some FASTQ files of paired-end read data.
+Again, for simplicity, we will assume that each read sequence contains only the barcode.
+
+```{r}
+# Creating an example dual barcode sequencing experiment.
+known.pool1 <- c("AGAGAGAGA", "CTCTCTCTC",
+    "GTGTGTGTG", "CACACACAC")
+known.pool2 <- c("ATATATATA", "CGCGCGCGC",
+    "GAGAGAGAG", "CTCTCTCTC")
+
+# Mocking up the barcode sequences.
+N <- 1000
+read1 <- sprintf("CAGCTACGTACG%sCCAGCTCGATCG",
+   sample(known.pool1, N, replace=TRUE))
+names(read1) <- seq_len(N)
+
+read2 <- sprintf("TGGGCAGCGACA%sACACGAGGGTAT",
+   sample(known.pool2, N, replace=TRUE))
+names(read2) <- seq_len(N)
+
+# Writing them to FASTQ files.
+tmp <- tempfile()
+tmp1 <- paste0(tmp, "_1.fastq")
+writeXStringSet(DNAStringSet(read1), filepath=tmp1, format="fastq")
+tmp2 <- paste0(tmp, "_2.fastq")
+writeXStringSet(DNAStringSet(read2), filepath=tmp2, format="fastq")
+```
+
+Let us imagine that only a subset of the barcode combinations are actually valid.
+This is often the case because, in these studies, 
+the combinations are explicitly designed to refer to known phenomena (e.g., gene combinations)
+rather than being randomized as described for combinatorial barcodes.
+
+```{r}
+choices <- expand.grid(known.pool1, known.pool2)
+choices <- DataFrame(barcode1=choices[,1], barcode2=choices[,2])
+choices <- choices[sample(nrow(choices), nrow(choices)*0.9),]
+```
+
+We quantify dual barcodes across one or more _pairs_ of files using the `matrixOfDualBarcodes()` function.
+This requires templates for the barcode structure to specify how the variable sequences are used to construct each final barcode;
+the first template corresponds to the first barcode, while the second template corresponds to the second barcode.
+Many of the options available for single barcode matching in `matrixOfSingleBarcodes()` are also available here
+and can be specificed separately for each barcode.
+
+```{r}
+out <- matrixOfDualBarcodes(list(c(tmp1, tmp2)), 
+    choices=choices,
+    template=c("CAGCTACGTACGNNNNNNNNNCCAGCTCGATCG",
+               "TGGGCAGCGACANNNNNNNNNACACGAGGGTAT"))
+out
+```
+
+This function yields a `SummarizedExperiment` object containing a matrix of frequencies 
+of each barcode pair (row) in each pair of files (column).
+
+```{r}
+assay(out)
+```
+
+Further diagnostics about the mapping are provided in the `colData`:
+
+```{r}
+colData(out)
+```
+
+The identities of the variable regions corresponding to each row are specified in the `rowData`, 
+which contains the variable sequences in `barcode1` and `barcode1` that define each barcode combination.
+
+```{r}
+rowData(out)
+```
+
+By default, we assume that the read sequence in the first FASTQ file contains the first barcode (i.e., `choices[,1]`)
+and the second FASTQ file contains the second barcode.
+If the arrangement is randomized, we can set `randomized=TRUE` to search the first FASTQ file for the second barcode and vice versa.
+Note that this will filter out read pairs that match different valid combinations in both arrangements.
+
+# Counting dual barcodes (single-end)
+
+A variation of the dual barcode design involves both variable regions being on a single read.
+
+```
+# Example of a dual barcode:
+
+CAGCTANNNNNNNNNNCACGCACGGTTNNNNNNNNNNCAGC
+------^^^^^^^^^^-----------^^^^^^^^^^----
+      variable             variable
+```
+
+To demonstrate, let's mock up another FASTQ file of single-end read data.
+Again, for simplicity, we will assume that each read sequence contains only the barcode.
+
+```{r}
+# Creating an example dual barcode sequencing experiment.
+known.pool1 <- c("AGAGAGAGA", "CTCTCTCTC",
+    "GTGTGTGTG", "CACACACAC")
+known.pool2 <- c("ATATATATA", "CGCGCGCGC",
+    "GAGAGAGAG", "CTCTCTCTC")
+
+# Mocking up the barcode sequences.
+N <- 1000
+read <- sprintf("CAGCTACGTACG%sCCAGCTCGATCG%sACACGAGGGTAT",
+   sample(known.pool1, N, replace=TRUE),
+   sample(known.pool2, N, replace=TRUE))
+names(read) <- seq_len(N)
+
+# Writing them to FASTQ files.
+tmp <- tempfile(fileext=".fastq")
+writeXStringSet(DNAStringSet(read), filepath=tmp, format="fastq")
+```
+
+Let us imagine that only a subset of the barcode combinations are actually valid:
+
+```{r}
+choices <- expand.grid(known.pool1, known.pool2)
+choices <- DataFrame(barcode1=choices[,1], barcode2=choices[,2])
+choices <- choices[sample(nrow(choices), nrow(choices)*0.9),]
+```
+
+We quantify single-end dual barcodes across files using the `matrixOfDualBarcodesSingleEnd()` function.
+Many of the options available for single barcode matching in `matrixOfSingleBarcodes()` are also available here
+and can be specificed separately for each barcode.
+
+```{r}
+out <- matrixOfDualBarcodesSingleEnd(tmp, choices=choices,
+    template="CAGCTACGTACGNNNNNNNNNCCAGCTCGATCGNNNNNNNNNACACGAGGGTAT")
+out
+```
+
+This function yields a `SummarizedExperiment` object containing a matrix of frequencies 
+of each valid barcode combination (row) in each file (column).
+
+```{r}
+assay(out)
+```
+
+Further diagnostics about the mapping are provided in the `colData`:
+
+```{r}
+colData(out)
+```
+
+The identities of the variable regions corresponding to each row are specified in the `rowData`, 
+which contains the variable sequences in `barcode1` and `barcode1` that define each barcode combination.
+
+```{r}
+rowData(out)
+```
+
+# Counting random barcodes
+
+In this barcode design, the variable region is not sampled from a pool of known sequences but is instead randomly synthesized from a nucleotide mixture.
+We cannot use any of the previous functions as they need a known pool;
+rather, we need to extract the observed sequences (and their frequencies) from the reads.
+To demonstrate, let's mock up a FASTQ file from a single-end sequencing screen with a single random variable region.
+
+```{r}
+# Mocking up a 8-bp random variable region.
+N <- 1000
+randomized <- lapply(1:N, function(i) {
+    paste(sample(c("A", "C", "G", "T"), 8, replace=TRUE), collapse="")
+})
+barcodes <- sprintf("CCCAGT%sGGGATAC", randomized)
+names(barcodes) <- sprintf("READ_%i", seq_along(barcodes))
+
+# Writing to a FASTQ file.
+single.fq <- tempfile(fileext=".fastq")
+writeXStringSet(DNAStringSet(barcodes), file=single.fq, format="fastq")
+```
+
+For this design, we can count the frequency of each observed barcode using the `matrixOfRandomBarcodes()` function.
+This produces a `SummarizedExperiment` containing a count matrix of frequencies for each barcode.
+
+```{r}
+library(screenCounter)
+out <- matrixOfRandomBarcodes(single.fq,
+    template="CCCAGTNNNNNNNNGGGATAC")
+out
+head(assay(out))
+```
+
+# Further options
+
+## Supporting mismatches 
+
+Mismatch tolerance can be enabled by setting `substitutions` to the desired number of mismatches.
+This may improve barcode recovery in the presence of sequencing errors.
+While such errors are rare per base^[At least on Illumina machines.], they will be more likely to occur when considering the entire length of the barcode.
+
+In practice, mismatch tolerance is turned off by default in all counting functions.
+This is because many errors are introduced during barcode synthesis, more than those due to library preparation or sequencing.
+Synthesis errors result in genuinely different barcodes (e.g., guides targeting different regions, or different molecular tags) that should not be counted together.
+Nonetheless, this setting may be useful for debugging experiments with low mapping rates.
+
+Indels are not tolerated in any matches.
+
+## Searching the other strand
+
+By default, the counting functions will search the read sequence on both the original strand reported by the sequencer and on the reverse complement.
+It is possible to change this behaviour with the `strand=` argument to only search one of the strands.
+The most appropriate setting requires knowledge of the sequencing protocol and the barcode design.
+For example:
+
+- Single-end sequencing of a construct where the barcode is only covered by a read sequenced from one of the ends.
+  This requires `strand="original"` if the barcode is on the forward strand of the reachable end, or `strand="reverse"` if it is on the reverse strand.
+  If the sequencing is performed from a randomly chosen end, only 50% of the reads will contain barcodes.
+- Single-end sequencing of a construct where the barcode can be covered by reads from either end.
+  This requires `strand="both"` to search both strands of each read.
+  This avoids loss of 50% of reads provided that the constant regions are captured by reads from both ends.
+
+Paired-end sequencing of single or combinatorial barcodes requires some more consideration:
+
+- A construct where the barcode can only be covered by a read sequenced from one of the ends _and_ that end is known in advance.
+  In this case, the data can be treated as single-end.
+  Counting can be performed using the file containing reads from that end with `strand="original"` or `strand="reverse"`.
+- A construct where the barcode can only be covered by a read sequenced from one of the ends _and_ that end is randomly chosen.
+  Users can run the counting functions on each file separately with `strand="original"` or `strand="reverse"` and sum the counts.
+  (We assume that the chance of randomly encountering the barcode sequence and its flanking constant regions is negligible,
+  so each read pair will not contribute more than once to the final count.)
+- Paired-end sequencing of a construct where the barcode can be covered by both reads.
+  In this case, one of the files can be chosen for use with `strand="both"`.
+  Alternatively, users can consolidate read pairs into a consensus read^[For example, see [_FLASh_](https://ccb.jhu.edu/software/FLASH/) or [_vsearch_](https://github.com/torognes/) with `--fastq_mergepairs`.] prior to using `strand="both"`.
+
+For paired-end sequencing of dual barcodes, each paired barcode is covered by exactly one paired read in the same direction.
+This means that we should never have to set `strand="both"` as the strand orientation should be known ahead of time.
+The most that should need to be done is to set `strand` separately for each barcode,
+which is achieved by passing a vector of length 2 to specify the orientation for the first and second barcodes, respectively;
+or to set `randomized=TRUE` as described above.
+
+## Parallelization across files
+
+Counting functions are parallelized across files using the `r Biocpkg("BiocParallel")` framework.
+Each file is processed separately on a single worker to create the final matrix of counts.
+
+```{r}
+# Pretend that these are different samples:
+all.files <- c(single.fq, single.fq, single.fq)
+
+# Parallel execution:
+library(BiocParallel)
+out <- matrixOfSingleBarcodes(all.files, 
+    flank5="GTAC", flank3="CATG", choices=known,
+    BPPARAM=SnowParam(2))
+out
+```
+
+Users should read the `r Biocpkg("BiocParallel", "Introduction_To_BiocParallel.pdf", "relevant documentation")` to determine the most effective parallelization approach for their system.
+For example, users working on a cluster should use `BatchToolsParam()`, while users on a local non-Windows machines may prefer to use `MulticoreParam()`.
+
+# Session information
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,23 @@
+---
+name: bioconductor-rtn
+description: the package is available on all platforms; click for details.
+homepage: https://bioconductor.org/packages/release/bioc/html/RTN.html
+---
+
+# bioconductor-rtn
+
+## Overview
+
+Use the Bioconductor R package **RTN** for: the package is available on all platforms; click for details.
+
+## Installation
+
+```r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("RTN")
+```
+
+## Reference documentation
+
+See files in `references/` for vignettes and tutorials.

@@ -1,0 +1,18 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - sbol-utilities
+  - graph-sbol
+label: sbol-utilities_graph-sbol
+doc: "The provided text does not contain help information for the tool, but appears
+  to be a log of a failed container build or execution. No arguments could be extracted
+  from the input.\n\nTool homepage: https://github.com/SynBioDex/SBOL-utilities"
+inputs: []
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/sbol-utilities:1.0a16--pyhdfd78af_0
+stdout: sbol-utilities_graph-sbol.out

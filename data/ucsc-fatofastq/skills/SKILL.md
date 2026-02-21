@@ -1,0 +1,47 @@
+---
+name: ucsc-fatofastq
+description: `ucsc-fatofastq` (specifically the `faToFastq` binary) is a specialized utility from the UCSC Genome Browser "kent" tool suite.
+homepage: https://hgdownload.cse.ucsc.edu/admin/exe
+---
+
+# ucsc-fatofastq
+
+## Overview
+
+`ucsc-fatofastq` (specifically the `faToFastq` binary) is a specialized utility from the UCSC Genome Browser "kent" tool suite. It bridges the gap between FASTA and FASTQ formats by synthesizing the quality score line required by the FASTQ specification. Since FASTA files do not contain sequencing quality data, this tool assigns a uniform, "fake" quality value to every base. This is particularly useful for testing pipelines or using tools like certain aligners and simulators that strictly require FASTQ input even when quality data is irrelevant to the specific task.
+
+## Command Line Usage
+
+The primary binary for this package is named `faToFastq`.
+
+### Basic Conversion
+To convert a FASTA file to a FASTQ file:
+```bash
+faToFastq input.fa output.fastq
+```
+
+### Handling Permissions
+If you have downloaded the binary directly from the UCSC servers rather than installing via a package manager like Conda, you must ensure the file is executable:
+```bash
+chmod +x faToFastq
+./faToFastq input.fa output.fastq
+```
+
+## Expert Tips and Best Practices
+
+### Quality Score Characteristics
+*   **Placeholder Values**: The tool typically generates a high-quality placeholder character (often 'I', representing a Phred score of 40 in Sanger/Illumina 1.8+ encoding) for every base. 
+*   **Downstream Impact**: Be aware that because all bases are assigned the same high quality, downstream variant callers or filters that rely on quality scores will treat these "fake" reads as highly reliable. This is ideal for reference sequences but may mask issues in actual sequencing data.
+
+### Input Requirements
+*   **FASTA Formatting**: Ensure your input FASTA follows standard conventions (header line starting with `>` followed by sequence). The tool reads the sequence length to generate a matching length of quality characters.
+*   **Multi-record Files**: The tool correctly handles multi-record FASTA files, generating a corresponding FASTQ entry for every sequence in the input file.
+
+### Integration in Pipelines
+*   **Compatibility**: Use this tool when working with older mapping software or specific sequence analysis scripts that do not have a "FASTA-mode" toggle.
+*   **Storage**: FASTQ files are significantly larger than FASTA files because of the added quality string. If you are faking quality values just to pass a file through a tool, consider deleting the resulting FASTQ or piping the output if the downstream tool supports it to save disk space.
+
+## Reference documentation
+- [ucsc-fatofastq - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_ucsc-fatofastq_overview.md)
+- [Index of /admin/exe/linux.x86_64](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)
+- [Index of /admin/exe](./references/hgdownload_cse_ucsc_edu_admin_exe.md)

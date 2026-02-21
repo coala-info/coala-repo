@@ -1,0 +1,16 @@
+# bioconductor-cn.farms Bioconductor Package Report
+
+## cn.farms
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/cn.farms.html
+- **Package**: cn.farms
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

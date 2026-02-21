@@ -1,0 +1,87 @@
+# Code example from 'BH-explanation' vignette. See references/ for full tutorial.
+
+## -----------------------------------------------------------------------------
+library("ggplot2")
+library("dplyr")
+library("wesanderson")
+library("grid")
+library("gridExtra")
+library("IHW")
+
+## -----------------------------------------------------------------------------
+simpleSimulation <- function(m,m1,betaA,betaB){
+    pvalue <- runif(m)
+    H <- rep(0,m)
+    alternatives <- sample(1:m,m1)
+    
+    pvalue[alternatives] <- rbeta(m1,betaA,betaB)
+    H[alternatives] <-1
+ 
+    simDf <- data.frame(pvalue = pvalue, group=runif(m), filterstat = runif(m), H=H)
+    return(simDf)
+}
+
+set.seed(1)
+sim <- simpleSimulation(1000, 700, 0.3, 8)
+sim$rank <- rank(sim$pvalue)
+
+histogram_plot <- ggplot(sim, aes(x=pvalue)) + 
+                    geom_histogram(binwidth=0.1, fill = wes_palette("Chevalier1")[4]) + 
+                    xlab("p-value") + 
+                    theme_bw()
+                        
+bh_threshold <- get_bh_threshold(sim$pvalue, .1)
+
+bh_plot <- ggplot(sim, aes(x=rank, y=pvalue)) +
+  geom_step(col=wes_palette("Chevalier1")[4]) + 
+  ylim(c(0,0.2)) +
+  geom_abline(intercept=0, slope= 0.1/1000, col = wes_palette("Chevalier1")[2]) +
+  geom_hline(yintercept=bh_threshold, linetype=2) + 
+  annotate("text",x=250, y=0.065, label="BH testing") + 
+  geom_hline(yintercept = 0.1, linetype=2) + 
+  annotate("text",x=250, y=0.11, label="uncorrected testing") + 
+  geom_hline(yintercept = 0.1/1000, linetype=2) +
+  annotate("text",x=850, y=0.1/1000+0.01, label="Bonferroni testing") + 
+  ylab("p-value") + xlab("rank of p-value") +
+  theme_bw() + scale_colour_manual(values=wes_palette("Chevalier1")[c(3,4)]) 
+
+
+## ----fig.width=11, fig.height=5-----------------------------------------------
+grid.arrange(histogram_plot, bh_plot, nrow=1)
+
+## ----eval=FALSE---------------------------------------------------------------
+# pdf(file="bh_explanation.pdf", width=11, height=5)
+# grid.arrange(histogram_plot, bh_plot, nrow=1)
+# dev.off()
+
+## -----------------------------------------------------------------------------
+set.seed(1)
+sim <- simpleSimulation(10000, 2000, 0.3, 8)
+sim$rank <- rank(sim$pvalue)
+
+histogram_plot <- ggplot(sim, aes(x=pvalue)) + 
+                    geom_histogram(binwidth=0.1, fill = wes_palette("Chevalier1")[4]) + 
+                    xlab("p-value") + 
+                    theme_bw(14)
+                        
+
+bh_threshold <- get_bh_threshold(sim$pvalue, .1)
+
+bh_plot <- ggplot(sim, aes(x=rank, y=pvalue)) +
+  geom_step(col=wes_palette("Chevalier1")[4], size=1.2) + 
+  scale_x_continuous(limits=c(0,2000),expand = c(0, 0))+
+  scale_y_continuous(limit=c(0,0.06), expand=c(0,0)) +
+  geom_abline(intercept=0, slope= 0.1/10000, col = wes_palette("Chevalier1")[2], size=1.2) +
+  annotate("text",x=500, y=1.3*bh_threshold, label="BH rejection threshold") + 
+  geom_hline(yintercept=bh_threshold, linetype=2, size=1.2) + 
+  ylab("p-value") + xlab("rank of p-value") +
+  theme_bw() + scale_colour_manual(values=wes_palette("Chevalier1")[c(3,4)])
+
+## ----fig.width=11, fig.height=5-----------------------------------------------
+grid.arrange(histogram_plot, bh_plot, nrow=1)
+
+## ----eval=FALSE---------------------------------------------------------------
+# pdf(file="bh_explanation_high_pi0.pdf", width=11, height=5)
+# grid.arrange(histogram_plot, bh_plot, nrow=1)
+# dev.off()
+

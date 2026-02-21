@@ -1,0 +1,1 @@
+Tags · Clement Coclet / mvp · GitLab Tags Tags give the ability to mark specific points in history as being important 1.0.0 15dae484 &middot; Merge branch 'dev' into 'main' &middot; Sep 14, 2023 Release: MVP 1.0.0 First release of MVP

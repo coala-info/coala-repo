@@ -1,0 +1,155 @@
+# BloodGen3Module: Modular Repertoire Analysis and Visualization
+
+#### Darawan Rinchai
+
+---
+
+The **BloodGen3Module** package provides functions for R users to perform module repertoire analyses and generate fingerprint representations.
+
+The steps involved in module repertoire analysis and visualization include:
+
+1. Annotating the gene expression data matrix with module membership information.
+2. Running statistical tests to determine the proportion of constitutive genes that are differentially expressed for each module.
+3. Expressing results “at the module level” as the percentage of genes that are increased or decreased.
+4. Visualizing results from group comparisons as a fingerprint grid and results from individual sample comparisons as a fingerprint heatmap.
+
+## Installation
+
+---
+
+It is recommended to use the install\_github function from the devtools package in order to install the R package.
+
+```
+#Installation from Github:
+devtools::install_github("Drinchai/BloodGen3Module")
+
+#Installation from Bioconductor:
+if (!requireNamespace("BiocManager", quietly=TRUE))
+install.packages("BiocManager")
+BiocManager::install("BloodGen3Module")
+```
+
+## Usage
+
+---
+
+##Load library
+
+```
+library(BloodGen3Module)
+```
+
+## Input
+
+---
+
+To perform the modular repertoire analysis, the R package requires a sample annotation table and a normalized expression data matrix. For illustrative purposes, the sample input files can be downloaded from:ExperimentHub (“GSE13013”)
+
+```
+#Load expression data
+#Example expression data for package testting
+library(ExperimentHub)
+library(SummarizedExperiment)
+
+dat = ExperimentHub()
+res = query(dat , "GSE13015")
+GSE13015 = res[["EH5429"]]
+```
+
+## Group comparison analysis
+
+---
+
+The **Groupcomparison** function will perform group comparison analyses. The results are expressed “at the module level” as the percentage of genes that are increased or decreased for a given module.
+
+• Expression matrix and sample annotation files are required to perform this analysis. • The sample annotation file must be loaded using a specific name = “sample.info”. • The names of the columns for the conditions used in the analysis must be specified.
+
+## Using t-test statistical analysis
+
+```
+Group_df <- Groupcomparison(GSE13015,
+                            sample_info = NULL,
+                            FC = 1.5,
+                            pval = 0.1 ,
+                            FDR = TRUE,
+                            Group_column = "Group_test",
+                            Test_group = "Sepsis",
+                            Ref_group = "Control",
+                            SummarizedExperiment = TRUE)
+```
+
+## Using limma statistical analysis
+
+```
+Group_limma <- Groupcomparisonlimma(GSE13015,
+                                    sample_info = NULL,
+                                    FC = 1.5,
+                                    pval = 0.1 ,
+                                    FDR = TRUE,
+                                    Group_column = "Group_test",
+                                    Test_group = "Sepsis",
+                                    Ref_group = "Control",
+                                    SummarizedExperiment = TRUE)
+```
+
+## Fingerprint grid visualization
+
+---
+
+The **gridplot** function will generate a grid plot as a PDF file. A specific working directory for the analysis must be specified to save the file. The result of the plot should be returned in the same working directory. The default cut off for visualization is set at 15%; it can be changed to any value between 0 and 100%.
+
+```
+gridplot(Group_df,
+         cutoff = 15,
+         Ref_group = "Control",
+         filename= tempfile())
+```
+
+## Individual single sample analysis
+
+---
+
+The **Individualcomparison** function will perform an individual sample comparison analysis in reference to a control sample or group of samples. The results are expressed “at the module level” as the percentage of genes that are increased or decreased.
+
+• Expression matrix and sample annotation files are required to perform this analysis. • The sample annotation file must be loaded using a specific name = “sample.info”. • The names of the columns for the conditions used in the analysis must be specified. • The default cut off is set at fold change (FC) =1.5 and absolute difference (DIFF) =10.
+
+```
+Individual_df = Individualcomparison(GSE13015,
+                                     sample_info = NULL,
+                                     FC = 1.5,
+                                     DIFF = 10,
+                                     Group_column = "Group_test",
+                                     Ref_group = "Control",
+                                     SummarizedExperiment = TRUE)
+```
+
+## Individual fingerprint visualization
+
+The **fingerprintplot** ffunction will generate fingerprint heatmap plots as a PDF file. The file will be saved in the working directory specified for the analysis.
+
+The default cut off for visualization is set at 15%, it can changed to any value between 0-100%.
+
+```
+fingerprintplot(Individual_df,
+                sample_info = NULL,
+                cutoff = 15,
+                rowSplit= TRUE ,
+                Group_column= "Group_test",
+                show_ref_group = FALSE,
+                Ref_group =  "Control",
+                Aggregate = "A28",
+                filename = tempfile() ,
+                height = NULL,
+                width = NULL)
+```
+
+```
+## png
+##   2
+```
+
+##Notes \*\*\* • It is important to note that:
+- Expression matrix must be none Log2 transformed as it will be automatically transformed when running theses function.
+- rownames of sample information (sample\_info) must be the same names as in colnames of data.matrix
+
+##Publication \*\*\* BloodGen3Module: blood transcriptional module repertoire analysis and visualization using R <https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab121/6149124>

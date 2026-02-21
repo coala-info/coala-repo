@@ -1,0 +1,603 @@
+# Converting Common Data Formats to Phyloseq and TreeSummarizedExperiment
+
+The “dar” package is a versatile and user-friendly tool designed to accept inputs in a variety of formats. It primarily utilizes the `phyloseq` format but also supports the `TreeSummarizedExperiment` format. This flexibility allows users to conduct differential abundance analysis smoothly, irrespective of their initial data format. To facilitate this, a detailed guide is available to aid users in converting other prevalent data formats, such as `biome`, `mothur`, `metaphlan`, and more, into the necessary `phyloseq` or `TreeSummarizedExperiment` formats.
+
+```
+suppressPackageStartupMessages(library(mia))
+suppressPackageStartupMessages(library(phyloseq))
+```
+
+## Importing Data from `biome` Format
+
+The `biome` format is a commonly used format in bioinformatics to represent microbiome sequencing data. Here’s how you can import data in `biome` format to both `phyloseq` and `TreeSummarizedExperiment.`
+
+### To Phyloseq
+
+To convert data from the `biome` format to the `phyloseq` format, you can use the `phyloseq::import_biom()` function. Here’s a step-by-step example of how to perform this conversion:
+
+```
+# Example of a rich dense biom file
+rich_dense_biom  <-
+  system.file("extdata", "rich_dense_otu_table.biom",  package = "phyloseq")
+
+# Import biom as a phyloseq-class object
+phy <- phyloseq::import_biom(
+  rich_dense_biom,
+  parseFunction = parse_taxonomy_greengenes
+)
+
+phy
+#> phyloseq-class experiment-level object
+#> otu_table()   OTU Table:         [ 5 taxa and 6 samples ]
+#> sample_data() Sample Data:       [ 6 samples by 4 sample variables ]
+#> tax_table()   Taxonomy Table:    [ 5 taxa by 7 taxonomic ranks ]
+
+# Print sample_data
+phyloseq::sample_data(phy)
+#>         BarcodeSequence  LinkerPrimerSequence BODY_SITE Description
+#> Sample1    CGCTTATCGAGA CATGCTGCCTCCCGTAGGAGT       gut   human gut
+#> Sample2    CATACCAGTAGC CATGCTGCCTCCCGTAGGAGT       gut   human gut
+#> Sample3    CTCTCTACCTGT CATGCTGCCTCCCGTAGGAGT       gut   human gut
+#> Sample4    CTCTCGGCCTGT CATGCTGCCTCCCGTAGGAGT      skin  human skin
+#> Sample5    CTCTCTACCAAT CATGCTGCCTCCCGTAGGAGT      skin  human skin
+#> Sample6    CTAACTACCAAT CATGCTGCCTCCCGTAGGAGT      skin  human skin
+
+# Print tax_table
+phyloseq::tax_table(phy)
+#> Taxonomy Table:     [5 taxa by 7 taxonomic ranks]:
+#>          Kingdom    Phylum           Class                 Order
+#> GG_OTU_1 "Bacteria" "Proteobacteria" "Gammaproteobacteria" "Enterobacteriales"
+#> GG_OTU_2 "Bacteria" "Cyanobacteria"  "Nostocophycideae"    "Nostocales"
+#> GG_OTU_3 "Archaea"  "Euryarchaeota"  "Methanomicrobia"     "Methanosarcinales"
+#> GG_OTU_4 "Bacteria" "Firmicutes"     "Clostridia"          "Halanaerobiales"
+#> GG_OTU_5 "Bacteria" "Proteobacteria" "Gammaproteobacteria" "Enterobacteriales"
+#>          Family               Genus            Species
+#> GG_OTU_1 "Enterobacteriaceae" "Escherichia"    NA
+#> GG_OTU_2 "Nostocaceae"        "Dolichospermum" NA
+#> GG_OTU_3 "Methanosarcinaceae" "Methanosarcina" NA
+#> GG_OTU_4 "Halanaerobiaceae"   "Halanaerobium"  "Halanaerobiumsaccharolyticum"
+#> GG_OTU_5 "Enterobacteriaceae" "Escherichia"    NA
+
+# Recipe init
+rec <- dar::recipe(phy, var_info = "BODY_SITE", tax_info = "Genus")
+
+rec
+#> ── DAR Recipe ──────────────────────────────────────────────────────────────────
+#> Inputs:
+#>
+#>      ℹ phyloseq object with 5 taxa and 6 samples
+#>      ℹ variable of interes BODY_SITE (class: character, levels: gut, skin)
+#>      ℹ taxonomic level Genus
+```
+
+### To TreeSummarizedExperiment
+
+To convert data from the `biome` format to the `TreeSummarizedExperiment` format, you can use the `mia::importBIOM()` function. Here’s a step-by-step example of how to perform this conversion:
+
+```
+# Example of a rich dense biom file
+rich_dense_biom  <-
+  system.file("extdata", "rich_dense_otu_table.biom",  package = "phyloseq")
+
+# Import biom as a phyloseq-class object
+tse <- mia::importBIOM(rich_dense_biom)
+
+tse
+#> class: TreeSummarizedExperiment
+#> dim: 5 6
+#> metadata(0):
+#> assays(1): counts
+#> rownames(5): GG_OTU_1 GG_OTU_2 GG_OTU_3 GG_OTU_4 GG_OTU_5
+#> rowData names(7): taxonomy1 taxonomy2 ... taxonomy6 taxonomy7
+#> colnames(6): Sample1 Sample2 ... Sample5 Sample6
+#> colData names(4): BarcodeSequence LinkerPrimerSequence BODY_SITE
+#>   Description
+#> reducedDimNames(0):
+#> mainExpName: NULL
+#> altExpNames(0):
+#> rowLinks: NULL
+#> rowTree: NULL
+#> colLinks: NULL
+#> colTree: NULL
+
+# Print sample_data
+colData(tse)
+#> DataFrame with 6 rows and 4 columns
+#>         BarcodeSequence  LinkerPrimerSequence   BODY_SITE Description
+#>             <character>           <character> <character> <character>
+#> Sample1    CGCTTATCGAGA CATGCTGCCTCCCGTAGGAGT         gut   human gut
+#> Sample2    CATACCAGTAGC CATGCTGCCTCCCGTAGGAGT         gut   human gut
+#> Sample3    CTCTCTACCTGT CATGCTGCCTCCCGTAGGAGT         gut   human gut
+#> Sample4    CTCTCGGCCTGT CATGCTGCCTCCCGTAGGAGT        skin  human skin
+#> Sample5    CTCTCTACCAAT CATGCTGCCTCCCGTAGGAGT        skin  human skin
+#> Sample6    CTAACTACCAAT CATGCTGCCTCCCGTAGGAGT        skin  human skin
+
+# Print tax_table
+rowData(tse)
+#> DataFrame with 5 rows and 7 columns
+#>            taxonomy1         taxonomy2              taxonomy3
+#>          <character>       <character>            <character>
+#> GG_OTU_1 k__Bacteria p__Proteobacteria c__Gammaproteobacteria
+#> GG_OTU_2 k__Bacteria  p__Cyanobacteria    c__Nostocophycideae
+#> GG_OTU_3  k__Archaea  p__Euryarchaeota     c__Methanomicrobia
+#> GG_OTU_4 k__Bacteria     p__Firmicutes          c__Clostridia
+#> GG_OTU_5 k__Bacteria p__Proteobacteria c__Gammaproteobacteria
+#>                     taxonomy4             taxonomy5         taxonomy6
+#>                   <character>           <character>       <character>
+#> GG_OTU_1 o__Enterobacteriales f__Enterobacteriaceae    g__Escherichia
+#> GG_OTU_2        o__Nostocales        f__Nostocaceae g__Dolichospermum
+#> GG_OTU_3 o__Methanosarcinales f__Methanosarcinaceae g__Methanosarcina
+#> GG_OTU_4   o__Halanaerobiales   f__Halanaerobiaceae  g__Halanaerobium
+#> GG_OTU_5 o__Enterobacteriales f__Enterobacteriaceae    g__Escherichia
+#>                       taxonomy7
+#>                     <character>
+#> GG_OTU_1                    s__
+#> GG_OTU_2                    s__
+#> GG_OTU_3                    s__
+#> GG_OTU_4 s__Halanaerobiumsacc..
+#> GG_OTU_5                    s__
+
+# Change the column names of the tax_table
+colnames(rowData(tse)) <-
+  c("Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species")
+
+rowData(tse)
+#> DataFrame with 5 rows and 7 columns
+#>              Kingdom            Phylum                  Class
+#>          <character>       <character>            <character>
+#> GG_OTU_1 k__Bacteria p__Proteobacteria c__Gammaproteobacteria
+#> GG_OTU_2 k__Bacteria  p__Cyanobacteria    c__Nostocophycideae
+#> GG_OTU_3  k__Archaea  p__Euryarchaeota     c__Methanomicrobia
+#> GG_OTU_4 k__Bacteria     p__Firmicutes          c__Clostridia
+#> GG_OTU_5 k__Bacteria p__Proteobacteria c__Gammaproteobacteria
+#>                         Order                Family             Genus
+#>                   <character>           <character>       <character>
+#> GG_OTU_1 o__Enterobacteriales f__Enterobacteriaceae    g__Escherichia
+#> GG_OTU_2        o__Nostocales        f__Nostocaceae g__Dolichospermum
+#> GG_OTU_3 o__Methanosarcinales f__Methanosarcinaceae g__Methanosarcina
+#> GG_OTU_4   o__Halanaerobiales   f__Halanaerobiaceae  g__Halanaerobium
+#> GG_OTU_5 o__Enterobacteriales f__Enterobacteriaceae    g__Escherichia
+#>                         Species
+#>                     <character>
+#> GG_OTU_1                    s__
+#> GG_OTU_2                    s__
+#> GG_OTU_3                    s__
+#> GG_OTU_4 s__Halanaerobiumsacc..
+#> GG_OTU_5                    s__
+
+# Recipe init
+rec <- dar::recipe(tse, var_info = "BODY_SITE", tax_info = "Genus")
+
+rec
+#> ── DAR Recipe ──────────────────────────────────────────────────────────────────
+#> Inputs:
+#>
+#>      ℹ phyloseq object with 5 taxa and 6 samples
+#>      ℹ variable of interes BODY_SITE (class: character, levels: gut, skin)
+#>      ℹ taxonomic level Genus
+```
+
+## Importing Data from `qiime` Format
+
+The `qiime` format is another commonly used format in bioinformatics for microbiome sequencing data. Here’s how you can import data in `qiime` format to both `Phyloseq` and `TreeSummarizedExperiment.`
+
+### To Phyloseq
+
+To convert data from the `qiime` format to the `Phyloseq` format, you can use the `phyloseq::import_qiime()` function. Here’s a step-by-step example of how to perform this conversion:
+
+```
+# Import QIIME data
+phy_qiime <- phyloseq::import_qiime(
+  otufilename = system.file("extdata", "GP_otu_table_rand_short.txt.gz", package = "phyloseq"),
+  mapfilename = system.file("extdata", "master_map.txt", package = "phyloseq"),
+  treefilename = system.file("extdata", "GP_tree_rand_short.newick.gz", package = "phyloseq")
+)
+#> Processing map file...
+#> Processing otu/tax file...
+#> Reading file into memory prior to parsing...
+#> Detecting first header line...
+#> Header is on line 2
+#> Converting input file to a table...
+#> Defining OTU table...
+#> Parsing taxonomy table...
+#> Processing phylogenetic tree...
+#>  /home/biocbuild/bbs-3.22-bioc/R/site-library/phyloseq/extdata/GP_tree_rand_short.newick.gz ...
+
+phy_qiime
+#> phyloseq-class experiment-level object
+#> otu_table()   OTU Table:         [ 500 taxa and 26 samples ]
+#> sample_data() Sample Data:       [ 26 samples by 7 sample variables ]
+#> tax_table()   Taxonomy Table:    [ 500 taxa by 7 taxonomic ranks ]
+#> phy_tree()    Phylogenetic Tree: [ 500 tips and 499 internal nodes ]
+
+# Recipe init
+rec <- dar::recipe(phy_qiime, var_info = "SampleType", tax_info = "Genus")
+
+rec
+#> ── DAR Recipe ──────────────────────────────────────────────────────────────────
+#> Inputs:
+#>
+#>      ℹ phyloseq object with 500 taxa and 26 samples
+#>      ℹ variable of interes SampleType (class: character, levels: Feces, Freshwater, Freshwater (creek), Mock, Ocean, Sediment (estuary), Skin, Soil, Tongue)
+#>      ℹ taxonomic level Genus
+```
+
+### To TreeSummarizedExperiment
+
+To convert data from the `qiime` format to the `TreeSummarizedExperiment` format, you can use the `mia::importQIIME2()` function. Here’s a step-by-step example of how to perform this conversion:
+
+```
+# Import QIIME data to tse
+tse_qiime <- mia::importQIIME2(
+  featureTableFile = system.file("extdata", "table.qza", package = "mia"),
+  taxonomyTableFile = system.file("extdata", "taxonomy.qza", package = "mia"),
+  sampleMetaFile = system.file("extdata", "sample-metadata.tsv", package = "mia"),
+  refSeqFile = system.file("extdata", "refseq.qza", package = "mia"),
+  phyTreeFile = system.file("extdata", "tree.qza", package = "mia")
+)
+
+tse_qiime
+#> class: TreeSummarizedExperiment
+#> dim: 770 34
+#> metadata(0):
+#> assays(1): counts
+#> rownames(770): 4b5eeb300368260019c1fbc7a3c718fc
+#>   fe30ff0f71a38a39cf1717ec2be3a2fc ... 98d250a339a635f20e26397dafc6ced3
+#>   1830c14ead81ad012f1db0e12f8ab6a4
+#> rowData names(8): kingdom phylum ... species Confidence
+#> colnames(34): L1S105 L1S140 ... L6S68 L6S93
+#> colData names(9): sample.id barcode.sequence ...
+#>   reported.antibiotic.usage days.since.experiment.start
+#> reducedDimNames(0):
+#> mainExpName: NULL
+#> altExpNames(0):
+#> rowLinks: a LinkDataFrame (770 rows)
+#> rowTree: 1 phylo tree(s) (770 leaves)
+#> colLinks: NULL
+#> colTree: NULL
+#> referenceSeq: a DNAStringSet (770 sequences)
+
+# Recipe init
+rec <- dar::recipe(tse_qiime, var_info = "body.site", tax_info = "genus")
+
+rec
+#> ── DAR Recipe ──────────────────────────────────────────────────────────────────
+#> Inputs:
+#>
+#>      ℹ phyloseq object with 770 taxa and 34 samples
+#>      ℹ variable of interes body.site (class: character, levels: gut, left palm, right palm, tongue)
+#>      ℹ taxonomic level genus
+```
+
+## Importing Data from `mothur` Format
+
+The `mothur` format is another commonly used format in bioinformatics for microbiome sequencing data. Here’s how you can import data in `mothur` format to both `Phyloseq` and `TreeSummarizedExperiment.`
+
+### To Phyloseq
+
+To convert data from the `mothur` format to the `Phyloseq` format, you can use the `phyloseq::import_mothur()` function. Here’s a step-by-step example of how to perform this conversion:
+
+```
+# Import Mothur data
+phy_mothur <- phyloseq::import_mothur(
+  mothur_list_file = system.file("extdata", "esophagus.fn.list.gz", package = "phyloseq"),
+  mothur_group_file = system.file("extdata", "esophagus.good.groups.gz", package = "phyloseq"),
+  mothur_tree_file = system.file("extdata", "esophagus.tree.gz", package = "phyloseq")
+)
+
+phy_mothur
+#> phyloseq-class experiment-level object
+#> otu_table()   OTU Table:         [ 591 taxa and 3 samples ]
+#> phy_tree()    Phylogenetic Tree: [ 591 tips and 590 internal nodes ]
+
+# Recipe init
+rec <- dar::recipe(phy_mothur)
+
+rec
+#> ── DAR Recipe ──────────────────────────────────────────────────────────────────
+#> Inputs:
+#>
+#>      ℹ phyloseq object with 591 taxa and 3 samples
+#>      ✖ undefined variable of interest. Use add_var() to add it to Recipe!
+#>      ✖ undefined taxonomic level. Use add_tax() to add it to Recipe!
+```
+
+### To TreeSummarizedExperiment
+
+To convert data from the `mothur` format to the `TreeSummarizedExperiment` format, you can use the `mia::importMothur()` function. Here’s a step-by-step example of how to perform this conversion:
+
+```
+# Import Mothur data to TreeSummarizedExperiment
+tse_mothur <- mia::importMothur(
+  sharedFile = system.file("extdata", "mothur_example.shared", package = "mia"),
+  taxonomyFile = system.file("extdata", "mothur_example.cons.taxonomy", package = "mia"),
+  designFile = system.file("extdata", "mothur_example.design", package = "mia")
+) |> methods::as("TreeSummarizedExperiment")
+
+tse_mothur
+#> class: TreeSummarizedExperiment
+#> dim: 100 100
+#> metadata(0):
+#> assays(1): counts
+#> rownames(100): Otu001 Otu002 ... Otu099 Otu100
+#> rowData names(8): OTU Size ... Family Genus
+#> colnames(100): Sample1 Sample2 ... Sample99 Sample100
+#> colData names(7): group sex ... numOtus Group
+#> reducedDimNames(0):
+#> mainExpName: NULL
+#> altExpNames(0):
+#> rowLinks: NULL
+#> rowTree: NULL
+#> colLinks: NULL
+#> colTree: NULL
+
+# Recipe init
+rec <- dar::recipe(tse_mothur, var_info = "drug", tax_info = "Genus")
+
+rec
+#> ── DAR Recipe ──────────────────────────────────────────────────────────────────
+#> Inputs:
+#>
+#>      ℹ phyloseq object with 100 taxa and 100 samples
+#>      ℹ variable of interes drug (class: character, levels: A, B)
+#>      ℹ taxonomic level Genus
+```
+
+## Importing Data from `metaphlan` Format
+
+The `metaphlan` format is another commonly used format in bioinformatics for microbiome sequencing data. Here’s how you can import data in `metaphlan` format to `TreeSummarizedExperiment.`
+
+### To TreeSummarizedExperiment
+
+To convert data from the `metaphlan` format to the `TreeSummarizedExperiment` format, you can use the `mia::importMetaPhlAn()` function. Here’s a step-by-step example of how to perform this conversion:
+
+```
+# Importing data from Metaphlan
+tse_metaphlan <- mia::importMetaPhlAn(
+  file = system.file("extdata", "merged_abundance_table.txt", package = "mia")
+)
+
+# Recipe init
+tse_metaphlan <- TreeSummarizedExperiment::TreeSummarizedExperiment(
+  assays = list(counts = SummarizedExperiment::assay(tse_metaphlan)),
+  rowData = SummarizedExperiment::rowData(tse_metaphlan),
+  colData = SummarizedExperiment::colData(tse_metaphlan) |>
+    as.data.frame() |>
+    dplyr::mutate(condition = rep(c("A", "B"), times = 3))
+)
+
+rec <- dar::recipe(tse_metaphlan, var_info = "condition", tax_info = "Genus")
+
+rec
+#> ── DAR Recipe ──────────────────────────────────────────────────────────────────
+#> Inputs:
+#>
+#>      ℹ phyloseq object with 16 taxa and 6 samples
+#>      ℹ variable of interes condition (class: character, levels: A, B)
+#>      ℹ taxonomic level Genus
+```
+
+## Conclusion
+
+In this guide, we have explored various methods for importing microbiome sequencing data from different formats into `Phyloseq` and `TreeSummarizedExperiment.` We’ve covered the `biome`, `qiime`, `mothur`, `metaphlan`, and `humann` formats, providing step-by-step examples for each.
+
+The flexibility of these tools allows for a smooth transition between different data formats, making it easier to conduct your analysis irrespective of the initial data format. By following the steps outlined in this guide, you should be able to successfully convert your data and carry out further differential abundance analysis.
+
+Remember, the specific details of your data may require you to adjust the parameters in the import functions. Always inspect your data after conversion to ensure it has been imported correctly.
+
+## Session info
+
+```
+devtools::session_info()
+#> ─ Session info ───────────────────────────────────────────────────────────────
+#>  setting  value
+#>  version  R version 4.5.1 Patched (2025-08-23 r88802)
+#>  os       Ubuntu 24.04.3 LTS
+#>  system   x86_64, linux-gnu
+#>  ui       X11
+#>  language (EN)
+#>  collate  C
+#>  ctype    en_US.UTF-8
+#>  tz       America/New_York
+#>  date     2025-10-29
+#>  pandoc   2.7.3 @ /usr/bin/ (via rmarkdown)
+#>  quarto   1.7.32 @ /usr/local/bin/quarto
+#>
+#> ─ Packages ───────────────────────────────────────────────────────────────────
+#>  package                  * version  date (UTC) lib source
+#>  abind                      1.4-8    2024-09-12 [2] CRAN (R 4.5.1)
+#>  ade4                       1.7-23   2025-02-14 [2] CRAN (R 4.5.1)
+#>  ape                        5.8-1    2024-12-16 [2] CRAN (R 4.5.1)
+#>  assertthat                 0.2.1    2019-03-21 [2] CRAN (R 4.5.1)
+#>  beachmat                   2.26.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  beeswarm                   0.4.0    2021-06-01 [2] CRAN (R 4.5.1)
+#>  Biobase                  * 2.70.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  BiocBaseUtils              1.12.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  BiocGenerics             * 0.56.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  BiocNeighbors              2.4.0    2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  BiocParallel               1.44.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  BiocSingular               1.26.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  biomformat                 1.38.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  Biostrings               * 2.78.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  bitops                     1.0-9    2024-10-03 [2] CRAN (R 4.5.1)
+#>  bluster                    1.20.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  brio                       1.1.5    2024-04-24 [2] CRAN (R 4.5.1)
+#>  bslib                      0.9.0    2025-01-30 [2] CRAN (R 4.5.1)
+#>  ca                         0.71.1   2020-01-24 [2] CRAN (R 4.5.1)
+#>  cachem                     1.1.0    2024-05-16 [2] CRAN (R 4.5.1)
+#>  Cairo                      1.7-0    2025-10-29 [2] CRAN (R 4.5.1)
+#>  caTools                    1.18.3   2024-09-04 [2] CRAN (R 4.5.1)
+#>  cellranger                 1.1.0    2016-07-27 [2] CRAN (R 4.5.1)
+#>  circlize                   0.4.16   2024-02-20 [2] CRAN (R 4.5.1)
+#>  cli                        3.6.5    2025-04-23 [2] CRAN (R 4.5.1)
+#>  clue                       0.3-66   2024-11-13 [2] CRAN (R 4.5.1)
+#>  cluster                    2.1.8.1  2025-03-12 [3] CRAN (R 4.5.1)
+#>  coda                       0.19-4.1 2024-01-31 [2] CRAN (R 4.5.1)
+#>  codetools                  0.2-20   2024-03-31 [3] CRAN (R 4.5.1)
+#>  colorspace                 2.1-2    2025-09-22 [2] CRAN (R 4.5.1)
+#>  ComplexHeatmap             2.26.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  crayon                     1.5.3    2024-06-20 [2] CRAN (R 4.5.1)
+#>  crosstalk                  1.2.2    2025-08-26 [2] CRAN (R 4.5.1)
+#>  dar                      * 1.6.0    2025-10-29 [1] Bioconductor 3.22 (R 4.5.1)
+#>  data.table                 1.17.8   2025-07-10 [2] CRAN (R 4.5.1)
+#>  DBI                        1.2.3    2024-06-02 [2] CRAN (R 4.5.1)
+#>  DECIPHER                   3.6.0    2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  decontam                   1.30.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  DelayedArray               0.36.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  DelayedMatrixStats         1.32.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  dendextend                 1.19.1   2025-07-15 [2] CRAN (R 4.5.1)
+#>  devtools                   2.4.6    2025-10-03 [2] CRAN (R 4.5.1)
+#>  dichromat                  2.0-0.1  2022-05-02 [2] CRAN (R 4.5.1)
+#>  digest                     0.6.37   2024-08-19 [2] CRAN (R 4.5.1)
+#>  DirichletMultinomial       1.52.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  doParallel                 1.0.17   2022-02-07 [2] CRAN (R 4.5.1)
+#>  dplyr                      1.1.4    2023-11-17 [2] CRAN (R 4.5.1)
+#>  ellipsis                   0.3.2    2021-04-29 [2] CRAN (R 4.5.1)
+#>  emmeans                    2.0.0    2025-10-29 [2] CRAN (R 4.5.1)
+#>  estimability               1.5.1    2024-05-12 [2] CRAN (R 4.5.1)
+#>  evaluate                   1.0.5    2025-08-27 [2] CRAN (R 4.5.1)
+#>  farver                     2.1.2    2024-05-13 [2] CRAN (R 4.5.1)
+#>  fastmap                    1.2.0    2024-05-15 [2] CRAN (R 4.5.1)
+#>  fillpattern                1.0.2    2024-06-24 [2] CRAN (R 4.5.1)
+#>  foreach                    1.5.2    2022-02-02 [2] CRAN (R 4.5.1)
+#>  fs                         1.6.6    2025-04-12 [2] CRAN (R 4.5.1)
+#>  furrr                      0.3.1    2022-08-15 [2] CRAN (R 4.5.1)
+#>  future                     1.67.0   2025-07-29 [2] CRAN (R 4.5.1)
+#>  generics                 * 0.1.4    2025-05-09 [2] CRAN (R 4.5.1)
+#>  GenomicRanges            * 1.62.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  GetoptLong                 1.0.5    2020-12-15 [2] CRAN (R 4.5.1)
+#>  ggbeeswarm                 0.7.2    2023-04-29 [2] CRAN (R 4.5.1)
+#>  ggnewscale                 0.5.2    2025-06-20 [2] CRAN (R 4.5.1)
+#>  ggplot2                    4.0.0    2025-09-11 [2] CRAN (R 4.5.1)
+#>  ggrepel                    0.9.6    2024-09-07 [2] CRAN (R 4.5.1)
+#>  ggtext                     0.1.2    2022-09-16 [2] CRAN (R 4.5.1)
+#>  GlobalOptions              0.1.2    2020-06-10 [2] CRAN (R 4.5.1)
+#>  globals                    0.18.0   2025-05-08 [2] CRAN (R 4.5.1)
+#>  glue                       1.8.0    2024-09-30 [2] CRAN (R 4.5.1)
+#>  gplots                     3.2.0    2024-10-05 [2] CRAN (R 4.5.1)
+#>  gridExtra                  2.3      2017-09-09 [2] CRAN (R 4.5.1)
+#>  gridtext                   0.1.5    2022-09-16 [2] CRAN (R 4.5.1)
+#>  gtable                     0.3.6    2024-10-25 [2] CRAN (R 4.5.1)
+#>  gtools                     3.9.5    2023-11-20 [2] CRAN (R 4.5.1)
+#>  heatmaply                  1.6.0    2025-07-12 [2] CRAN (R 4.5.1)
+#>  hms                        1.1.4    2025-10-17 [2] CRAN (R 4.5.1)
+#>  htmltools                  0.5.8.1  2024-04-04 [2] CRAN (R 4.5.1)
+#>  htmlwidgets                1.6.4    2023-12-06 [2] CRAN (R 4.5.1)
+#>  httr                       1.4.7    2023-08-15 [2] CRAN (R 4.5.1)
+#>  igraph                     2.2.1    2025-10-27 [2] CRAN (R 4.5.1)
+#>  IRanges                  * 2.44.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  irlba                      2.3.5.1  2022-10-03 [2] CRAN (R 4.5.1)
+#>  iterators                  1.0.14   2022-02-05 [2] CRAN (R 4.5.1)
+#>  jquerylib                  0.1.4    2021-04-26 [2] CRAN (R 4.5.1)
+#>  jsonlite                   2.0.0    2025-03-27 [2] CRAN (R 4.5.1)
+#>  KernSmooth                 2.23-26  2025-01-01 [3] CRAN (R 4.5.1)
+#>  knitr                      1.50     2025-03-16 [2] CRAN (R 4.5.1)
+#>  labeling                   0.4.3    2023-08-29 [2] CRAN (R 4.5.1)
+#>  lattice                    0.22-7   2025-04-02 [3] CRAN (R 4.5.1)
+#>  lazyeval                   0.2.2    2019-03-15 [2] CRAN (R 4.5.1)
+#>  lifecycle                  1.0.4    2023-11-07 [2] CRAN (R 4.5.1)
+#>  listenv                    0.9.1    2024-01-29 [2] CRAN (R 4.5.1)
+#>  magick                     2.9.0    2025-09-08 [2] CRAN (R 4.5.1)
+#>  magrittr                   2.0.4    2025-09-12 [2] CRAN (R 4.5.1)
+#>  MASS                       7.3-65   2025-02-28 [3] CRAN (R 4.5.1)
+#>  Matrix                     1.7-4    2025-08-28 [3] CRAN (R 4.5.1)
+#>  MatrixGenerics           * 1.22.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  matrixStats              * 1.5.0    2025-01-07 [2] CRAN (R 4.5.1)
+#>  memoise                    2.0.1    2021-11-26 [2] CRAN (R 4.5.1)
+#>  mgcv                       1.9-3    2025-04-04 [3] CRAN (R 4.5.1)
+#>  mia                      * 1.18.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  microbiome                 1.32.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  multcomp                   1.4-29   2025-10-20 [2] CRAN (R 4.5.1)
+#>  MultiAssayExperiment     * 1.36.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  multtest                   2.66.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  mvtnorm                    1.3-3    2025-01-10 [2] CRAN (R 4.5.1)
+#>  nlme                       3.1-168  2025-03-31 [3] CRAN (R 4.5.1)
+#>  parallelly                 1.45.1   2025-07-24 [2] CRAN (R 4.5.1)
+#>  patchwork                  1.3.2    2025-08-25 [2] CRAN (R 4.5.1)
+#>  permute                    0.9-8    2025-06-25 [2] CRAN (R 4.5.1)
+#>  phyloseq                 * 1.54.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  pillar                     1.11.1   2025-09-17 [2] CRAN (R 4.5.1)
+#>  pkgbuild                   1.4.8    2025-05-26 [2] CRAN (R 4.5.1)
+#>  pkgconfig                  2.0.3    2019-09-22 [2] CRAN (R 4.5.1)
+#>  pkgload                    1.4.1    2025-09-23 [2] CRAN (R 4.5.1)
+#>  plotly                     4.11.0   2025-06-19 [2] CRAN (R 4.5.1)
+#>  plyr                       1.8.9    2023-10-02 [2] CRAN (R 4.5.1)
+#>  png                        0.1-8    2022-11-29 [2] CRAN (R 4.5.1)
+#>  purrr                      1.1.0    2025-07-10 [2] CRAN (R 4.5.1)
+#>  R6                         2.6.1    2025-02-15 [2] CRAN (R 4.5.1)
+#>  ragg                       1.5.0    2025-09-02 [2] CRAN (R 4.5.1)
+#>  rappdirs                   0.3.3    2021-01-31 [2] CRAN (R 4.5.1)
+#>  rbiom                      2.2.1    2025-06-27 [2] CRAN (R 4.5.1)
+#>  RColorBrewer               1.1-3    2022-04-03 [2] CRAN (R 4.5.1)
+#>  Rcpp                       1.1.0    2025-07-02 [2] CRAN (R 4.5.1)
+#>  readr                      2.1.5    2024-01-10 [2] CRAN (R 4.5.1)
+#>  readxl                     1.4.5    2025-03-07 [2] CRAN (R 4.5.1)
+#>  registry                   0.5-1    2019-03-05 [2] CRAN (R 4.5.1)
+#>  remotes                    2.5.0    2024-03-17 [2] CRAN (R 4.5.1)
+#>  reshape2                   1.4.4    2020-04-09 [2] CRAN (R 4.5.1)
+#>  rhdf5                      2.54.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  rhdf5filters               1.22.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  Rhdf5lib                   1.32.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  rjson                      0.2.23   2024-09-16 [2] CRAN (R 4.5.1)
+#>  rlang                      1.1.6    2025-04-11 [2] CRAN (R 4.5.1)
+#>  rmarkdown                  2.30     2025-09-28 [2] CRAN (R 4.5.1)
+#>  rsvd                       1.0.5    2021-04-16 [2] CRAN (R 4.5.1)
+#>  Rtsne                      0.17     2023-12-07 [2] CRAN (R 4.5.1)
+#>  S4Arrays                   1.10.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  S4Vectors                * 0.48.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  S7                         0.2.0    2024-11-07 [2] CRAN (R 4.5.1)
+#>  sandwich                   3.1-1    2024-09-15 [2] CRAN (R 4.5.1)
+#>  sass                       0.4.10   2025-04-11 [2] CRAN (R 4.5.1)
+#>  ScaledMatrix               1.18.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  scales                     1.4.0    2025-04-24 [2] CRAN (R 4.5.1)
+#>  scater                     1.38.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  scuttle                    1.20.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  Seqinfo                  * 1.0.0    2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  seriation                  1.5.8    2025-08-20 [2] CRAN (R 4.5.1)
+#>  sessioninfo                1.2.3    2025-02-05 [2] CRAN (R 4.5.1)
+#>  shape                      1.4.6.1  2024-02-23 [2] CRAN (R 4.5.1)
+#>  SingleCellExperiment     * 1.32.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  slam                       0.1-55   2024-11-13 [2] CRAN (R 4.5.1)
+#>  SparseArray                1.10.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  sparseMatrixStats          1.22.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  stringi                    1.8.7    2025-03-27 [2] CRAN (R 4.5.1)
+#>  stringr                    1.5.2    2025-09-08 [2] CRAN (R 4.5.1)
+#>  SummarizedExperiment     * 1.40.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  survival                   3.8-3    2024-12-17 [3] CRAN (R 4.5.1)
+#>  systemfonts                1.3.1    2025-10-01 [2] CRAN (R 4.5.1)
+#>  testthat                   3.2.3    2025-01-13 [2] CRAN (R 4.5.1)
+#>  textshaping                1.0.4    2025-10-10 [2] CRAN (R 4.5.1)
+#>  TH.data                    1.1-4    2025-09-02 [2] CRAN (R 4.5.1)
+#>  tibble                     3.3.0    2025-06-08 [2] CRAN (R 4.5.1)
+#>  tidyr                      1.3.1    2024-01-24 [2] CRAN (R 4.5.1)
+#>  tidyselect                 1.2.1    2024-03-11 [2] CRAN (R 4.5.1)
+#>  tidytree                   0.4.6    2023-12-12 [2] CRAN (R 4.5.1)
+#>  treeio                     1.34.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  TreeSummarizedExperiment * 2.18.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  TSP                        1.2-5    2025-05-27 [2] CRAN (R 4.5.1)
+#>  tzdb                       0.5.0    2025-03-15 [2] CRAN (R 4.5.1)
+#>  UpSetR                     1.4.0    2019-05-22 [2] CRAN (R 4.5.1)
+#>  usethis                    3.2.1    2025-09-06 [2] CRAN (R 4.5.1)
+#>  utf8                       1.2.6    2025-06-08 [2] CRAN (R 4.5.1)
+#>  vctrs                      0.6.5    2023-12-01 [2] CRAN (R 4.5.1)
+#>  vegan                      2.7-2    2025-10-08 [2] CRAN (R 4.5.1)
+#>  vipor                      0.4.7    2023-12-18 [2] CRAN (R 4.5.1)
+#>  viridis                    0.6.5    2024-01-29 [2] CRAN (R 4.5.1)
+#>  viridisLite                0.4.2    2023-05-02 [2] CRAN (R 4.5.1)
+#>  webshot                    0.5.5    2023-06-26 [2] CRAN (R 4.5.1)
+#>  withr                      3.0.2    2024-10-28 [2] CRAN (R 4.5.1)
+#>  xfun                       0.53     2025-08-19 [2] CRAN (R 4.5.1)
+#>  xml2                       1.4.1    2025-10-27 [2] CRAN (R 4.5.1)
+#>  xtable                     1.8-4    2019-04-21 [2] CRAN (R 4.5.1)
+#>  XVector                  * 0.50.0   2025-10-29 [2] Bioconductor 3.22 (R 4.5.1)
+#>  yaml                       2.3.10   2024-07-26 [2] CRAN (R 4.5.1)
+#>  yulab.utils                0.2.1    2025-08-19 [2] CRAN (R 4.5.1)
+#>  zoo                        1.8-14   2025-04-10 [2] CRAN (R 4.5.1)
+#>
+#>  [1] /tmp/RtmpxvaRZh/Rinst3e30fb71cf6981
+#>  [2] /home/biocbuild/bbs-3.22-bioc/R/site-library
+#>  [3] /home/biocbuild/bbs-3.22-bioc/R/library
+#>  * ── Packages attached to the search path.
+#>
+#> ──────────────────────────────────────────────────────────────────────────────
+```

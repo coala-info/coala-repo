@@ -1,0 +1,29 @@
+# Code example from 'phastCons30way.UCSC.hg38' vignette. See references/ for full tutorial.
+
+## ----setup, echo=FALSE--------------------------------------------------------
+options(width=80)
+
+## ----echo=FALSE---------------------------------------------------------------
+avgs <- readRDS(system.file("extdata", "avgs.rds", package="GenomicScores"))
+
+## ----retrieve2, message=FALSE, cache=FALSE, eval=FALSE------------------------
+# availableGScores()
+
+## ----echo=FALSE---------------------------------------------------------------
+avgs
+
+## ----retrieve3, message=FALSE, cache=FALSE, eval=FALSE------------------------
+# phast <- getGScores("phastCons30way.UCSC.hg38")
+
+## ----retrieve4, message=FALSE, eval=FALSE-------------------------------------
+# gscores(phast, GRanges(seqnames="chr22", IRanges(start=50967020:50967025, width=1)))
+
+## ----eval=FALSE---------------------------------------------------------------
+# makeGScoresPackage(phast, maintainer="Me <me@example.com>", author="Me", version="1.0.0")
+
+## ----echo=FALSE---------------------------------------------------------------
+cat("Creating package in ./phastCons30way.UCSC.hg38\n")
+
+## ----session_info, cache=FALSE------------------------------------------------
+sessionInfo()
+

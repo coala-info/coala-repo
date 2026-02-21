@@ -1,0 +1,72 @@
+---
+title: "Getting Tumour Methylation Data with TumourMethData"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{getting_tumour_methylation_from_TumourMethData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message = F}
+library(TumourMethData)
+```
+
+## Introduction
+
+DNA methylation is a repressive epigenetic modification involving the addition
+of methyl groups to DNA and occurs almost exclusively at CpG dinucleotides
+in mammals. Altered DNA methylation plays a profound role in the development and 
+progression of cancer. However, much of our knowledge of DNA methylation in 
+cancer has been garnered from methylation microarrays which measure methylation 
+at only a small subset (generally <1%) of the almost 30 million CpG sites in 
+humans, mostly those located close to gene promoters. Thus, whole genome 
+bisulfite sequenicng (WGBS) studies in tumours which measure DNA methylation 
+across the entire genome provide an invaluable resource for gaining a 
+comprehensive understanding of DNA methylation changes in cancer, especially at 
+regulatory regions located far from genes. 
+
+While packages such as `curatedTCGAData` provide DNA methylation data
+generated with microarrays for a range of different cancer types,   
+`TumourMethData` provides a collection of whole genome DNA methylation datasets 
+for several different cancers (primary prostate cancer, prostate cancer 
+metastases, esophageal cancer and rhabdoid tumour at present) as well as 
+matching normal samples where available. 
+
+These whole genome methylation datasets are provided as 
+`RangedSummarizedExperiments`, facilitating easy download of the data and 
+extraction of methylation values for regions of interest. 
+
+Furthermore, RNA-seq transcripts counts are also provided for several of the 
+datasets, enabling thorough analysis of how DNA methylation is associated with 
+transcription and how this relationship is perturbed in cancer. 
+
+## Downloading data
+
+We can view the available datasets with `TumourMethDatasets`.
+
+```{r, eval=TRUE}
+# Show available methylation datasets
+data("TumourMethDatasets", package = "TumourMethData")
+print(TumourMethDatasets)
+```
+
+We use `download_meth_dataset` to download the methylation dataset we are
+interested in using mcrpc_wgbs_hg38_chr11 as an example. 
+
+```{r, eval=TRUE}
+# Download esophageal WGBS data
+mcrpc_wgbs_hg38_chr11 = download_meth_dataset(dataset = "mcrpc_wgbs_hg38_chr11")
+print(mcrpc_wgbs_hg38_chr11)
+```
+
+## SessionInfo
+```{r}
+sessionInfo()
+```

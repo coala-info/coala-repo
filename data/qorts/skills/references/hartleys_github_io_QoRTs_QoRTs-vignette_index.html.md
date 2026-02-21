@@ -1,0 +1,1 @@
+QoRTs-vignette Next: About this document ... errorcolor## Error in loadNamespace(name): there is no package called 'BiocStyle' About this document ... hartleys 2017-10-20

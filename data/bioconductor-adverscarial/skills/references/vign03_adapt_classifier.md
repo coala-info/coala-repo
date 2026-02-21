@@ -1,0 +1,486 @@
+title: “adverSCarial, generate and analyze the vulnerability of scRNA-seq
+classifiers to adversarial attacks”
+shorttitle: “adverSCarial”
+author: Ghislain FIEVET ghislain.fievet@gmail.com
+package: adverSCarial
+abstract: >
+adverSCarial is an R Package designed for generating and analyzing the vulnerability of scRNA-seq
+classifiers to adversarial attacks. The package is versatile and provides a format for integrating
+any type of classifier. It offers functions for studying and generating two types of attacks,
+min change attack and max change attack. The min change attack involves making a small modification
+to the input to alter the classification. The max change attack involves making a large modification
+to the input without changing its classification.
+The package provides a comprehensive solution for evaluating the robustness of scRNA-seq classifiers
+against adversarial attacks.
+vignette: >
+%\VignetteIndexEntry{Vign03\_adapt\_classifiers}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+
+# Prepare a classifier with `CHETAH` and `scType`
+
+All classifiers needs to be formated in a certain way to be compatible with the adverSCarial package. We provide an example on a simple formating with `CHETAH`, and a more advanced formating with `scType`.
+
+## `CHETAH`
+
+Here we demonstrate how to implement a classifier working with the single-gene and max-change attack, by taking the example of `CHETAH` a Bioconductor scRNA-seq classifier.
+
+## Load data
+
+```
+library(adverSCarial)
+library(TENxPBMCData)
+library(CHETAH)
+library(scater)
+library(scran)
+```
+
+First let’s load a `train` and a `test` dataset.
+
+```
+train_3k <- TENxPBMCData(dataset = "pbmc3k")
+test_4k <- TENxPBMCData(dataset = "pbmc4k")
+
+cell_types_3k <- system.file("extdata", "pbmc3k_cell_types.tsv", package="adverSCarial")
+cell_types_3k <- read.table(cell_types_3k, sep="\t")
+colData(train_3k)$celltypes <- cell_types_3k$cell_type
+colnames(train_3k) = colData(train_3k)[['Barcode']]
+colnames(test_4k) = colData(test_4k)[['Barcode']]
+```
+
+Then we process the `test_4k` to annotate and visualize the cell types.
+
+We annotate cells with `CHETAH`.
+
+```
+input <- CHETAHclassifier(input = test_4k, ref_cells = train_3k)
+input <- Classify(input = input, 0.00001)
+colData(test_4k)$celltypes <- input$celltype_CHETAH
+```
+
+Process data.
+
+```
+test_4k <- logNormCounts(test_4k)
+dec <- modelGeneVar(test_4k)
+hvg <- getTopHVGs(dec, prop=0.1)
+test_4k <- runPCA(test_4k, ncomponents=25, subset_row=hvg)
+test_4k <- runUMAP(test_4k, dimred = 'PCA')
+```
+
+Visualize the results
+
+```
+plotUMAP(test_4k, colour_by="celltypes")
+```
+
+![plot of chunk chetah dimplot](data:image/png;base64...)
+
+## Adapt the classifier
+
+`CHETAH` is a classifier that, when given a SingleCellExperiment object, returns a specific cell type from each cell. We need to adjust the classifier so that it can be used by *adverSCarial*.
+
+Each classifier function has to be formated as follow to be used with the following functions: advSingleGene, advMaxChange, advGridMinChange, advRandWalkMinChange, maxChangeOverview, minSingleGeneOverview.
+
+```
+    classifier = function(expr, clusters, target){
+
+                # `score` should be numeric between 0 and 1
+                # 1 being the highest confidance into the cell type classification.
+                c(
+                    prediction="cell type",
+                    odd=score)
+    }
+```
+
+The `expr` argument contrains the RNA expression values, can be a *matrix*, a *data.frame* or a *SingleCellExperiment*.
+The list `clusters` consists of the cluster IDs for each cell in `expr`, and `target` is the ID of the cluster for which we want to have a classification. The function returns a vector with the classification result, and a trust indice.
+
+This is how you can adapt `CHETAH` for `adverSCarial`.
+
+```
+CHETAHClassifier <- function(expr, clusters, target){
+    if (!exists("reference_3k")) {
+        reference_3k <<- train_3k
+    }
+    input <- CHETAHclassifier(input = expr, ref_cells = reference_3k)
+    input <- Classify(input = input, 0.01)
+    final_predictions = input$celltype_CHETAH[clusters == target]
+    ratio <- as.numeric(sort(table(final_predictions), decreasing = TRUE)[1]) /
+        sum(as.numeric(sort(table(final_predictions), decreasing = TRUE)))
+    predicted_class <- names(sort(table(final_predictions), decreasing = TRUE)[1])
+    if ( ratio < 0.3){
+        predicted_class <- "NA"
+    }
+    c(prediction=predicted_class,
+      odd=ratio)
+}
+```
+
+This classifier takes as input a SingleCellExperiment object, you need to specify the `argForClassif="SingleCellExperiment"`
+argument in *adverSCarial* function. If your classifier takes as input a *matrix* or a *data.frame* you can let the default
+`argForClassif="data.frame"` argument.
+
+You can now test `CHETAH` classifier with `adverSCarial` tools.
+
+Let’s run a `maxChangeAttack`.
+
+```
+adv_max_change <- advMaxChange(test_4k, colData(test_4k)$celltypes, "CD14+ Mono", CHETAHClassifier, advMethod="perc99", maxSplitSize = 2000, argForClassif="SingleCellExperiment")
+```
+
+Let’s run this attack and verify if it is successful.
+
+First we modify the `test_4k` SingleCellExperiment object on the target cluster, on the genes previously determined.
+
+```
+test_4k_adver <- advModifications(test_4k, adv_max_change@values, colData(test_4k)$celltypes, "CD14+ Mono", argForClassif="SingleCellExperiment")
+```
+
+Then we verify that classification is still `DC`.
+
+```
+rf_result <- CHETAHClassifier(test_4k_adver, colData(test_4k)$celltypes, "CD14+ Mono")
+```
+
+```
+rf_result
+```
+
+```
+## [1] "CD14+ Mono" "1"
+```
+
+## `scType`
+
+Here we demonstrate how to implement a classifier working with all the attacks, include the gradient-based CGD, by taking the example of `scType` a scRNA-seq classifier.
+
+Ianevski, A., Giri, A.K., Aittokallio, T. Fully-automated and ultra-fast cell-type identification using specific marker combinations from single-cell transcriptomic data. Nat Commun, 2022;13:1246. <https://doi.org/10.1038/s41467-022-28803-w>
+
+## Load data
+
+```
+df_pbmc_test <- read.table("/home/gui/Dropbox/INSERM/jupyterlab/0033_these/data/v2/seurat_scaled_pbmc_test.txt")
+expr_df <- df_pbmc_test[, -which(names(df_pbmc_test) == "y")]
+clusters_df <- df_pbmc_test$y
+names(clusters_df) <- rownames(df_pbmc_test)
+```
+
+RNA expression matrix.
+
+```
+expr_df[1:5,1:5]
+```
+
+```
+##                   AL627309.1  AP006222.2 RP11.206L10.2 RP11.206L10.9
+## AAACATACAACCAC-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AAACATTGATCAGC-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AAACGCACTGGTAC-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AAATGTTGCCACAA-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AACACGTGCAGAGG-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+##                    LINC00115
+## AAACATACAACCAC-1 -0.08223981
+## AAACATTGATCAGC-1 -0.08223981
+## AAACGCACTGGTAC-1 -0.08223981
+## AAATGTTGCCACAA-1 -0.08223981
+## AACACGTGCAGAGG-1 -0.08223981
+```
+
+Cell clusters
+
+```
+head(clusters_df)
+```
+
+```
+## AAACATACAACCAC-1 AAACATTGATCAGC-1 AAACGCACTGGTAC-1 AAATGTTGCCACAA-1
+##   "Memory CD4 T"   "Memory CD4 T"   "Memory CD4 T"   "Memory CD4 T"
+## AACACGTGCAGAGG-1 AACCGCCTAGCGTT-1
+##   "Memory CD4 T"   "Memory CD4 T"
+```
+
+We can find how to use scType here: <https://github.com/IanevskiAleksandr/sc-type>
+We adapt it so it returns:
+
+* the predicted cell type
+* a score of the prediction
+* a matrix of the likelihood of each cell type for each cell. Cell types are rows and cells are columns.
+* the list of the predicted cell type for each cell
+
+Each classifier function has to be formated as follow to be used with the all the functions of the package, especially for advCGD.
+
+```
+    classifier = function(expr, clusters, target){
+                c(
+                    prediction="cell type",
+                    odd=score,
+                    typePredictions=my_matrix,
+                    cellTypes=my_vector)
+    }
+```
+
+```
+scType_classifier = function(expr, clusters, target){
+    expr = t(expr)
+    library(HGNChelper)
+    source("https://raw.githubusercontent.com/IanevskiAleksandr/sc-type/master/R/sctype_score_.R")
+    source("https://raw.githubusercontent.com/IanevskiAleksandr/sc-type/master/R/gene_sets_prepare.R")
+    db_ = "https://raw.githubusercontent.com/IanevskiAleksandr/sc-type/master/ScTypeDB_full.xlsx";
+    tissue = "Immune system" # e.g. Immune system,Pancreas,Liver,Eye,Kidney,Brain,Lung,Adrenal,Heart,Intestine,Muscle,Placenta,Spleen,Stomach,Thymus
+    # prepare gene sets
+    gs_list <- gene_sets_prepare(db_, tissue)
+
+    es.max = sctype_score(scRNAseqData = expr, scaled = T,
+                          gs = gs_list$gs_positive, gs2 = gs_list$gs_negative)
+
+    if (sum(clusters == target) == 0 ){
+        return( c("UNDETERMINED",1))
+    }
+    cell_types <- apply(t(es.max[, clusters == target]), 1, function(x){
+        names(x[x == max(x)])[1]
+    })
+    table_cell_type <- table(cell_types)
+    str_class <- names(table_cell_type[order(table_cell_type, decreasing=T)][1])
+    my_odd <- mean(es.max[str_class, clusters==target])/10
+    resSCtype <- list(
+        # Cell type prediction for the cluster
+        prediction=str_class,
+        # Score of the predicted cell type
+        odd=my_odd,
+        # Score for each cell type for each cell
+        typePredictions=es.max,
+        # Cell type for each cell
+        cellTypes=cell_types)
+
+    return(resSCtype)
+}
+```
+
+We check if the classifier works properly by asking him to predict the “NK” cluster.
+
+```
+classifier_results <- scType_classifier(expr_df, clusters_df, "NK")
+classifier_results$prediction
+```
+
+```
+## [1] "Natural killer  cells"
+```
+
+The score of the prediction.
+
+```
+classifier_results$odd
+```
+
+```
+## [1] 0.4461257
+```
+
+Likelihood of each cell type for each cell.
+
+```
+classifier_results$typePredictions[,clusters_df == "NK"][1:6,1:5]
+```
+
+```
+##                    AAACCGTGTATGCG-1 AACGCCCTCGTACA-1 AAGATTACCTCAAG-1
+## Pro-B cells             -0.05520064       0.03507093       0.16081207
+## Pre-B cells             -0.59654036      -0.68228753      -0.44937559
+## Naive B cells           -0.93855041      -0.04346109      -0.26012173
+## Memory B cells          -1.00357418      -0.13690767      -0.34668843
+## Plasma B cells          -0.60566221       0.28942711       0.07276648
+## Naive CD8+ T cells       0.79524385       1.51477730       1.87037543
+##                    AAGCAAGAGGTGTT-1 ACAAATTGTTGCGA-1
+## Pro-B cells              -0.2828646        0.9118437
+## Pre-B cells              -0.9487842        0.5254085
+## Naive B cells            -1.2664716        1.7915419
+## Memory B cells           -1.3210825        1.6398264
+## Plasma B cells           -0.9335834        2.1244301
+## Naive CD8+ T cells        0.9343186        0.2921489
+```
+
+Predicted cell type for each cell.
+
+```
+head(classifier_results$cellTypes)
+```
+
+```
+##        AAACCGTGTATGCG-1        AACGCCCTCGTACA-1        AAGATTACCTCAAG-1
+## "Natural killer  cells" "Natural killer  cells" "Natural killer  cells"
+##        AAGCAAGAGGTGTT-1        ACAAATTGTTGCGA-1        ACAGGTACTGGTGT-1
+##   "CD8+ NKT-like cells" "Natural killer  cells" "Natural killer  cells"
+```
+
+Let’s run a CGD attack
+
+```
+# Get significant genes
+sign_genes <- getSignGenes(expr_df, clusters_df)
+head(sign_genes$results)
+```
+
+```
+##            gene         pval
+## HLA.DRA HLA.DRA 1.004947e-70
+## PRF1       PRF1 6.443834e-62
+## NKG7       NKG7 1.070165e-79
+## FCER1A   FCER1A 2.765930e-18
+## TYROBP   TYROBP 8.127634e-85
+## IL32       IL32 1.260937e-66
+```
+
+```
+# Run the attack
+result_cgd <- advCGD(expr_df, clusters_df, "NK", classifier=scType_classifier ,
+                     genes=sign_genes$results$gene[1:100] ,alpha=2, epsilon=2)
+```
+
+Modified genes
+
+```
+result_cgd$modGenes
+```
+
+```
+## [1] "NKG7" "GZMB"
+```
+
+Modified RNA expression matrix
+
+```
+result_cgd$expr[1:5,1:5]
+```
+
+```
+##                   AL627309.1  AP006222.2 RP11.206L10.2 RP11.206L10.9
+## AAACATACAACCAC-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AAACATTGATCAGC-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AAACGCACTGGTAC-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AAATGTTGCCACAA-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+## AACACGTGCAGAGG-1 -0.05812316 -0.03357571   -0.04166819   -0.03364562
+##                    LINC00115
+## AAACATACAACCAC-1 -0.08223981
+## AAACATTGATCAGC-1 -0.08223981
+## AAACGCACTGGTAC-1 -0.08223981
+## AAATGTTGCCACAA-1 -0.08223981
+## AACACGTGCAGAGG-1 -0.08223981
+```
+
+Check the new classification of the result.
+
+```
+new_classifier_results <- scType_classifier(result_cgd$expr, clusters_df, "NK")
+new_classifier_results$prediction
+```
+
+```
+## [1] "CD8+ NKT-like cells"
+```
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.3.0 (2023-04-21)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 22.04.1 LTS
+##
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=fr_FR.UTF-8        LC_COLLATE=en_US.UTF-8
+##  [5] LC_MONETARY=fr_FR.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=fr_FR.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=fr_FR.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: Europe/Paris
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods
+## [8] base
+##
+## other attached packages:
+##  [1] HGNChelper_0.8.1            scran_1.29.0
+##  [3] scater_1.29.0               scuttle_1.11.0
+##  [5] CHETAH_1.17.0               ggplot2_3.4.2
+##  [7] TENxPBMCData_1.19.0         HDF5Array_1.29.3
+##  [9] rhdf5_2.45.0                DelayedArray_0.27.5
+## [11] SparseArray_1.1.10          S4Arrays_1.1.4
+## [13] Matrix_1.5-4.1              SingleCellExperiment_1.23.0
+## [15] SummarizedExperiment_1.31.1 Biobase_2.61.0
+## [17] GenomicRanges_1.53.1        GenomeInfoDb_1.37.2
+## [19] IRanges_2.35.2              S4Vectors_0.39.1
+## [21] BiocGenerics_0.47.0         MatrixGenerics_1.13.0
+## [23] matrixStats_1.0.0           adverSCarial_1.3.6
+##
+## loaded via a namespace (and not attached):
+##   [1] RColorBrewer_1.1-3            jsonlite_1.8.5
+##   [3] magrittr_2.0.3                ggbeeswarm_0.7.2
+##   [5] farver_2.1.1                  corrplot_0.92
+##   [7] zlibbioc_1.47.0               vctrs_0.6.3
+##   [9] memoise_2.0.1                 DelayedMatrixStats_1.23.0
+##  [11] RCurl_1.98-1.12               htmltools_0.5.5
+##  [13] AnnotationHub_3.9.1           curl_5.0.1
+##  [15] BiocNeighbors_1.19.0          Rhdf5lib_1.23.0
+##  [17] htmlwidgets_1.6.2             plyr_1.8.8
+##  [19] plotly_4.10.2                 cachem_1.0.8
+##  [21] igraph_1.5.0                  mime_0.12
+##  [23] lifecycle_1.0.3               pkgconfig_2.0.3
+##  [25] rsvd_1.0.5                    R6_2.5.1
+##  [27] fastmap_1.1.1                 GenomeInfoDbData_1.2.10
+##  [29] shiny_1.7.4                   digest_0.6.32
+##  [31] colorspace_2.1-0              AnnotationDbi_1.63.1
+##  [33] dqrng_0.3.0                   irlba_2.3.5.1
+##  [35] ExperimentHub_2.8.0           RSQLite_2.3.1
+##  [37] beachmat_2.17.8               labeling_0.4.2
+##  [39] filelock_1.0.2                fansi_1.0.4
+##  [41] httr_1.4.6                    compiler_4.3.0
+##  [43] bit64_4.0.5                   withr_2.5.0
+##  [45] BiocParallel_1.35.2           viridis_0.6.3
+##  [47] DBI_1.1.3                     highr_0.10
+##  [49] dendextend_1.17.1             rappdirs_0.3.3
+##  [51] bluster_1.11.1                tools_4.3.0
+##  [53] vipor_0.4.5                   beeswarm_0.4.0
+##  [55] interactiveDisplayBase_1.39.0 zip_2.3.0
+##  [57] httpuv_1.6.11                 glue_1.6.2
+##  [59] rhdf5filters_1.13.3           promises_1.2.0.1
+##  [61] grid_4.3.0                    cluster_2.1.4
+##  [63] reshape2_1.4.4                generics_0.1.3
+##  [65] gtable_0.3.3                  tidyr_1.3.0
+##  [67] data.table_1.14.8             metapod_1.9.0
+##  [69] BiocSingular_1.17.0           ScaledMatrix_1.9.1
+##  [71] utf8_1.2.3                    XVector_0.41.1
+##  [73] RcppAnnoy_0.0.20              ggrepel_0.9.3
+##  [75] BiocVersion_3.18.0            pillar_1.9.0
+##  [77] stringr_1.5.0                 limma_3.57.6
+##  [79] later_1.3.1                   dplyr_1.1.2
+##  [81] BiocFileCache_2.9.0           lattice_0.21-8
+##  [83] bit_4.0.5                     tidyselect_1.2.0
+##  [85] locfit_1.5-9.8                Biostrings_2.69.1
+##  [87] knitr_1.43                    gridExtra_2.3
+##  [89] edgeR_3.43.7                  xfun_0.39
+##  [91] statmod_1.5.0                 pheatmap_1.0.12
+##  [93] stringi_1.7.12                lazyeval_0.2.2
+##  [95] yaml_2.3.7                    evaluate_0.21
+##  [97] codetools_0.2-19              tibble_3.2.1
+##  [99] BiocManager_1.30.21           cli_3.6.1
+## [101] uwot_0.1.15                   xtable_1.8-4
+## [103] munsell_0.5.0                 Rcpp_1.0.10
+## [105] bioDist_1.73.0                dbplyr_2.3.2
+## [107] png_0.1-8                     parallel_4.3.0
+## [109] ellipsis_0.3.2                blob_1.2.4
+## [111] sparseMatrixStats_1.13.0      bitops_1.0-7
+## [113] viridisLite_0.4.2             scales_1.2.1
+## [115] openxlsx_4.2.5.2              purrr_1.0.1
+## [117] crayon_1.5.2                  rlang_1.1.1
+## [119] cowplot_1.1.1                 KEGGREST_1.41.0
+```

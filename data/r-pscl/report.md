@@ -1,0 +1,18 @@
+# pscl: Political Science Computational Laboratory
+
+Bayesian analysis of item-response theory (IRT) models,
+  roll call analysis; computing highest density regions; 
+  maximum likelihood estimation of zero-inflated and hurdle models for count data;
+  goodness-of-fit measures for GLMs;
+  data sets used in writing	and teaching; seats-votes curves.</p>
+
+### Metadata
+- **Conda (r channel)**: https://anaconda.org/r/r-pscl
+- **R-project (CRAN)**: https://cloud.r-project.org/web/packages/pscl/index.html
+- **Home (project)**: http://github.com/atahk/pscl
+- **Package**: pscl
+- **Version**: 1.5.9
+- **Author**: Simon Jackman [aut, cre], Alex Tahk [ctb], Achim Zeileis [ctb], Christina Maimone [ctb], James Fearon [ctb], Zoe Meers [ctb]
+- **Maintainer**: Simon Jackman <simon.jackman at sydney.edu.au>
+- **Skill**: generated
+

@@ -1,0 +1,150 @@
+# The theory behind onlineFDR
+
+* [FDR Control](#fdr-control)
+* [FWER Control](#fwer-control)
+* [Accounting for dependent p-values](#accounting-for-dependent-p-values)
+
+## FDR Control
+
+Consider a sequence of hypotheses \(H\_1, H\_2, H\_3, \ldots\) that arrive sequentially in a stream, with corresponding \(p\)-values \((p\_1, p\_2, p\_3, \ldots)\). A testing procedure provides a sequence of adjusted significance thresholds \(\alpha\_i\), with corresponding decision rule: \[
+R\_i = \left\{\begin{array}{ccc}
+1 & \text{if } p\_i \leq \alpha\_i & (\text{reject } H\_i)\\
+0 & \text{otherwise } & (\text{accept } H\_i)
+\end{array}\right\}
+\]
+
+In *online* testing, the significance thresholds can only be functions of the prior decisions, i.e. \(\alpha\_i = \alpha\_i(R\_1, R\_2, \ldots, R\_{i-1})\).
+
+Javanmard and Montanari (2015, 2018) proposed two procedures for online control. The first is LOND, which stands for (significance) Levels based On Number of Discoveries. The second is LORD, which stands for (significance) Levels based On Recent Discovery. LORD was subsequently extended by Ramdas *et al.* (2017). Ramdas *et al.* (2018) also proposed the SAFFRON procedure, which provides an adaptive method of online FDR control, which includes a variant of Alpha-investing. Finally, Tian & Ramdas (2019) proposed the ADDIS procedure as an improvement of SAFFRON in the presence of conservative nulls.
+
+### LOND
+
+The LOND procedure controls the FDR for independent or positively dependent (PRDS) \(p\)-values. Given an overall significance level \(\alpha\), we choose a sequence of non-negative numbers \(\beta = (\beta\_i)\_{i \in \mathbb{N}}\) such that they sum to \(\alpha\). The values of the adjusted significance thresholds \(\alpha\_i\) are chosen as follows: \[ \alpha\_i = \beta\_i (D(i-1) + 1) \] where \(D(n) = \sum\_{i=1}^n R\_i\) denotes the number of discoveries (i.e. rejections) in the first \(n\) hypotheses tested.
+
+LOND can be adjusted to also control FDR under arbitrarily dependent \(p\)-values. To do so, it is modified with \(\tilde{\beta}\_i = \beta\_i/H(i)\) in place of \(\beta\_i\), where \(H(i) = \sum\_{j=1}^i \frac{1}{j}\) is the \(i\)-th harmonic number. Note that this leads to a substantial loss in power compared to the unadjusted LOND procedure. The correction factor is similar to the classical one used by Benjamini and Yekutieli (2001), except that in this case the \(i\)-th hypothesis among \(N\) is penalised by a factor of \(H(i)\) to give consistent results across time (as compared to a factor \(H(N)\) for the Benjamini and Yekutieli method).
+
+The default sequence of \(\beta\) is given by \[\beta\_j = C \alpha \frac{\log(\max(j, 2))}{j e^{\sqrt{\log j}}}\] where \(C \approx 0.07720838\), as proposed by Javanmard and Montanari (2018) equation 31.
+
+### LORD
+
+The LORD procedure controls the FDR for independent \(p\)-values. We first fix a sequence of non-negative numbers \(\gamma = (\gamma\_i)\_{i \in \mathbb{N}}\) such that \(\gamma\_i \geq \gamma\_j\) for \(i \leq j\) and \(\sum\_{i=1}^{\infty} \gamma\_i = 1\). At each time \(i\), let \(\tau\_i\) be the last time a discovery was made before \(i\): \[
+\tau\_i = \max \left\{ l \in \{1, \ldots, i-1\} : R\_l = 1\right\}
+\]
+
+LORD depends on constants \(w\_0\) and \(b\_0\), where \(w\_0 \geq 0\) represents the initial ‘wealth’ of the procedure and \(b\_0 > 0\) represents the ‘payout’ for rejecting a hypothesis. We require \(w\_0+b\_0 \leq \alpha\) for FDR control to hold.
+
+Javanmard and Montanari (2018) presented three different versions of LORD, which have different definitions of the adjusted significance thresholds \(\alpha\_i\). Versions 1 and 2 have since been superseded by the LORD++ procedure of Ramdas *et al.* (2017), so we do not describe them here.
+
+* **LORD++**: The significance thresholds for LORD++ are chosen as follows: \[
+  \alpha\_i = \gamma\_i w\_0 + (\alpha - w\_0) \gamma\_{i-\tau\_1} +
+  \alpha \sum\_{j : \tau\_j < i, \tau\_j \neq \tau\_1} \gamma\_{i - \tau\_j}
+  \]
+* **LORD 3**: The significance thresholds depend on the time of the last discovery time and the wealth accumulated at that time, with \[
+  \alpha\_i = \gamma\_{i - \tau\_i} W(\tau\_i)
+  \] where \(\tau\_1 = 0\). Here \(\{W(j)\}\_{j \geq 0}\) represents the ‘wealth’ available at time \(j\), and is defined recursively:
+
+\[
+\begin{aligned}
+W(0) &= w\_0 \\
+W(j) &= W(j-1) - \alpha\_{j-1} + b\_0 R\_j
+\end{aligned}
+\]
+
+* **D-LORD**: This is equivalent to the LORD++ procedure with discarding. Given a discarding threshold \(\tau \in (0,1)\) and initial wealth \(w\_0 \leq \tau\alpha\) the significance thresholds are chosen as follows: \[
+  \alpha\_t = \min\{\tau, \tilde{\alpha}\_t\}
+  \] where \[
+  \tilde{\alpha}\_t = w\_0 \gamma\_{S^t} +
+  (\tau\alpha - w\_0)\gamma\_{S^t - \kappa\_1^\*} +
+  \tau\alpha \sum\_{j \geq 2} \gamma\_{S^t - \kappa\_j^\*}
+  \] and \[
+  \kappa\_j = \min\{i \in [t-1] : \sum\_{k \leq i}
+  1 \{p\_k \leq \alpha\_k\} \geq j\}, \;
+  \kappa\_j^\* = \sum\_{i \leq \kappa\_j} 1 \{p\_i \leq \tau \}, \;
+  S^t = \sum\_{i < t} 1 \{p\_i \leq \tau \}
+  \]
+
+LORD++ is an instance of a monotone rule, and provably controls the FDR for independent p-values provided \(w\_0 \leq \alpha\). LORD 3 is a non-monotone rule, and FDR control is only demonstrated empirically. In some scenarios with large \(N\), LORD 3 will have a slightly higher power than LORD++ (see Robertson *et al.*, 2018), but since it is a non-monotone rule we would recommend using LORD++ (which is the default), especially since it also has a provable guarantee of FDR control.
+
+In all versions, the default sequence of \(\gamma\) is given by \[\gamma\_j = C \frac{\log(\max(j, 2))}{j e^{\sqrt{\log j}}}\] where \(C \approx 0.07720838\), as proposed by Javanmard and Montanari (2018) equation 31.
+
+Javanmard and Montanari (2018) also proposed an adjusted version of LORD that is valid for arbitrarily *dependent* p-values. Similarly to LORD 3, the adjusted significance thresholds are set equal to \[ \alpha\_i = \xi\_i W(\tau\_i)\] where (assuming \(w\_0 \leq b\_0\)), \(\sum\_{j=1}^{\infty} \xi\_i (1 + \log(j)) \leq \alpha / b\_0\)
+
+The default sequence of \(\xi\) is given by \[ \xi\_j = \frac{C \alpha }{b\_0 j \log(\max(j, 2))^3}\] where \(C \approx 0.139307\).
+
+Note that allowing for dependent p-values can lead to a substantial loss in power compared with the LORD procedures described above.
+
+### SAFFRON
+
+The SAFFRON procedure controls the FDR for independent p-values, and was proposed by Ramdas *et al.* (2018). The algorithm is based on an estimate of the proportion of true null hypotheses. More precisely, SAFFRON sets the adjusted test levels based on an estimate of the amount of alpha-wealth that is allocated to testing the true null hypotheses.
+
+SAFFRON depends on constants \(w\_0\) and \(\lambda\), where \(w\_0\) satisfies \(0 \leq w\_0 \leq \alpha\) and represents the initial ‘wealth’ of the procedure, and \(\lambda \in (0,1)\) represents the threshold for a ‘candidate’ hypothesis. A ‘candidate’ refers to p-values smaller than \(\lambda\), since SAFFRON will never reject a p-value larger than \(\lambda\). These candidates can be thought of as the hypotheses that are a-priori more likely to be non-null.
+
+The SAFFRON procedure runs as follows:
+
+1. At each time \(t\), define the number of candidates after the \(j\)-th rejection as \[ C\_{j+} = C\_{j+}(t) = \sum\_{i = \tau\_j + 1}^{t-1} C\_i\] where \(C\_t = 1\{p\_t \leq \lambda \}\) is the indicator for candidacy.
+2. SAFFRON starts with \(\alpha\_1 = \min\{(1 - \lambda)\gamma\_1 w\_0, \lambda\}\). Subsequent test levels are chosen as \(\alpha\_t = \min\{ \lambda, \tilde{\alpha}\_t\}\), where \[
+   \tilde{\alpha}\_t = (1 - \lambda) [w\_0 \gamma\_{t-C\_{0+}} +
+   (\alpha - w\_0)\gamma\_{t-\tau\_1-C\_{1+}} +
+   \alpha \sum\_{j \geq 2}
+   \gamma\_{t - \tau\_j- C\_{j+}}]
+   \]
+
+The default sequence of \(\gamma\) for SAFFRON is given by \(\gamma\_j \propto j^{-1.6}\).
+
+### Alpha-investing
+
+Ramdas et al. (2018) proposed a variant of the Alpha-investing algorithm of Foster and Stine (2008) that guarantees FDR control for independent p-values. This procedure uses SAFFRON’s update rule with the constant \(\lambda\) replaced by a sequence \(\lambda\_i = \alpha\_i\). This is also equivalent to using the ADDIS algorithm (see below) with \(\tau = 1\) and \(\lambda\_i = \alpha\_i\).
+
+### ADDIS
+
+The ADDIS procedure controls the FDR for independent p-values, and was proposed by Tian & Ramdas (2019). The algorithm compensates for the power loss of SAFFRON with conservative nulls, by including both adaptivity in the fraction of null hypotheses (like SAFFRON) and the conservativeness of nulls (unlike SAFFRON).
+
+ADDIS depends on constants \(w\_0, \lambda\) and \(\tau\). \(w\_0\) represents the initial `wealth’ of the procedure and satisfies \(0 \leq w\_0 \leq \alpha\). \(\tau \in (0,1]\) represents the threshold for a hypothesis to be selected for testing: p-values greater than \(\tau\) are implicitly ‘discarded’ by the procedure. Finally, \(\lambda \in [0,\tau)\) sets the threshold for a p-value to be a candidate for rejection: ADDIS will never reject a p-value larger than \(\lambda\).
+
+The significance thresholds for ADDIS are chosen as follows: \[
+\alpha\_t = \min\{\lambda, \tilde{\alpha}\_t\}
+\] where \[
+\tilde{\alpha}\_t = (\tau - \lambda)[w\_0 \gamma\_{S^t-C\_{0+}} +
+(\alpha - w\_0)\gamma\_{S^t - \kappa\_1^\*-C\_{1+}} +
+\alpha \sum\_{j \geq 2} \gamma\_{S^t - \kappa\_j^\* - C\_{j+}}
+\] and \[
+\kappa\_j = \min\{i \in [t-1] : \sum\_{k \leq i}
+1 \{p\_k \leq \alpha\_k\} \geq j\}, \;
+\kappa\_j^\* = \sum\_{i \leq \kappa\_j} 1 \{p\_i \leq \tau \}, \;
+S^t = \sum\_{i < t} 1 \{p\_i \leq \tau \}, \;
+C\_{j+} = \sum\_{i = \kappa\_j + 1}^{t-1} 1\{p\_i \leq \lambda\}
+\]
+
+The default sequence of \(\gamma\) for ADDIS is the same as for SAFFRON given [here](#SAFFRON_gamma).
+
+## FWER Control
+
+### Alpha-spending
+
+The Alpha-spending procedure controls the FWER for a potentially infinite stream of p-values using a Bonferroni-like test. Given an overall significance level \(\alpha\), the significance thresholds are chosen as \[\alpha\_i = \alpha \gamma\_i\] where \(\sum\_{i=1}^{\infty} \gamma\_i = 1\) and \(\gamma\_i \geq 0\). The procedure strongly controls the FWER for arbitrarily dependent p-values.
+
+Note that the procedure also controls the generalised familywise error rate (k-FWER) for \(k > 1\) if \(\alpha\) is replaced by \(\min(1,k\alpha)\).
+
+The default sequence of \(\gamma\) is the same as that for \(\xi\) for LORD given [here](#LORD_gamma).
+
+### Online Fallback
+
+The online fallback procedure of Tian & Ramdas (2019b) provides a uniformly more powerful method than Alpha-spending, by saving the significance level of a previous rejection. More specifically, online fallback tests hypothesis \(H\_i\) at level \[\alpha\_i = \alpha \gamma\_i + R\_{i-1} \alpha\_{i-1}\] where \(R\_i = 1\{p\_i \leq \alpha\_i\}\) denotes a rejected hypothesis. The procedure strongly controls the FWER for arbitrarily dependent p-values.
+
+The default sequence of \(\gamma\) is the same as that for \(\xi\) for LORD given [here](#LORD_gamma).
+
+### ADDIS-spending
+
+The ADDIS-spending procedure strongly controls the FWER for independent p-values, and was proposed by Tian & Ramdas (2021). The procedure compensates for the power loss of Alpha-spending, by including both adapativity in the fraction of null hypotheses and the conservativeness of nulls.
+
+ADDIS depends on constants \(\lambda\) and \(\tau\), where \(\lambda < \tau\). Here \(\tau \in (0,1)\) represents the threshold for a hypothesis to be selected for testing: p-values greater than \(\tau\) are implicitly `discarded’ by the procedure, while \(\lambda \in (0,1)\) sets the threshold for a p-value to be a candidate for rejection: ADDIS-spending will never reject a p-value larger than \(\lambda\).
+
+Note that the procedure controls the generalised familywise error rate (k-FWER) for \(k > 1\) if \(\alpha\) is replaced by \(\min(1,k\alpha)\). Tian and Ramdas (2019b) also presented a version for handling local dependence, see the Section on Asynchronous testing below.
+
+The default sequence of \(\gamma\) for ADDIS-spending is the same as for SAFFRON given [here](#SAFFRON_gamma).
+
+## Accounting for dependent p-values
+
+As noted above, the LORD, SAFFRON, ADDIS and ADDIS-spending procedures assume independent p-values, while the LOND procedure is also valid under positive dependencies (like the Benjamini-Hochberg method, see below). Adjusted versions of LOND and LORD available for arbitrarily dependent p-values. Alpha-spending and online fallback also control the FWER and FDR for arbitrarily dependent p-values.
+
+By way of comparison, the usual Benjamini-Hochberg method for controlling the FDR assumes that the p-values are positively dependent (PRDS). As an example, the PRDS is satisfied for multivariate normal test statistics with a positive correlation matrix). See Benjamini & Yekutieli (2001) for further technical details.

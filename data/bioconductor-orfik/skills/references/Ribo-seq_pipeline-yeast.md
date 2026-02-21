@@ -1,0 +1,321 @@
+# Ribo-seq pipeline (Yeast)
+
+Haakon Tjeldnes & Kornel Labun
+
+#### 22 December 2025
+
+#### Package
+
+ORFik 1.30.2
+
+# Contents
+
+* [1 Introduction](#introduction)
+* [2 Pipeline](#pipeline)
+
+# 1 Introduction
+
+Welcome to the `ORFik` package.
+`ORFik` is an R package for analysis of transcript and translation features through manipulation of sequence data and NGS data.
+
+This vignette will preview a simple Ribo-seq pipeline using ORFik. It is important you read all the other vignettes before this one, since functions will not be explained here in detail.
+
+# 2 Pipeline
+
+This pipeline will shows steps needed to analyse Ribo-seq from:
+
+* Tsvetkov et al, 2020 (Saccharomyces cerevisiae, 8 GB ram requirement, 6 samples (6 Ribo-seq, 6 RNA-seq))
+
+The following steps are done:
+
+1. Define directory paths
+2. Download Ribo-seq & RNA-seq data from SRA (subset to 2 million reads per library)
+3. Download genome annotation and contaminants
+4. Trim & Align data
+5. Make ORFik experiment
+6. QC
+7. Heatmaps
+8. Count table analysis: TE tables
+9. Differentially translated genes
+10. Peak analysis
+11. Feature table
+12. Gene plotting (Advanced)
+13. uORF analysis (Advanced)
+
+```
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Ribo-seq HEK293 (2020) Investigative analysis of quality of new Ribo-seq data
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Article: https://f1000research.com/articles/9-174/v2#ref-5
+# Design: Wild type (WT) vs codon optimized (CO) (gene F9)
+library(ORFik)
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Config
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Specify paths wanted for NGS data, genome, annotation and STAR index
+# If you use local files, make a conf variable with existing directories
+# Seperate Ribo-seq and RNA-seq into separate folders with type argument
+conf <- config.exper(experiment = "Tsvetkov_Yeast",
+                     assembly = "Yeast_SacCer3",
+                     type = c("Ribo-seq", "RNA-seq"))
+# Will create default config paths, if you want more control of where the
+# data is stored, check out function config() function
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Download fastq files for experiment and rename (Skip if you have the files already)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# SRA Meta data download (work for ERA, DRA and GEO too)
+study <- download.SRA.metadata("PRJNA644594", auto.detect = TRUE)
+# Auto detection worked, all Ribo-seq and RNA-seq samples detected
+# NOTE: Could not detect condition CO, only wild type (WT)
+
+# Split study into (Ribo-seq / RNA-seq)
+study.rfp <- study[LIBRARYTYPE == "RFP",]
+study.rna <- study[LIBRARYTYPE == "RNA",]
+# Download fastq files (uses SRR numbers (RUN column) from study))
+# The sample_title column had good names to rename files:
+download.SRA(study.rfp, conf["fastq Ribo-seq"],
+             rename = study.rfp$sample_title, subset = 2000000)
+download.SRA(study.rna, conf["fastq RNA-seq"],
+             rename = study.rna$sample_title, subset = 2000000)
+
+# Which organism is this, scientific name, like "Homo sapiens" or "Danio rerio"
+organism <- study$ScientificName[1] # Usually you find organism here, else set it yourself
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Annotation (Download genome, transcript annotation and contaminants)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+
+annotation <- getGenomeAndAnnotation(
+  organism = organism,
+  genome = TRUE, GTF = TRUE,
+  phix = TRUE, ncRNA = TRUE, tRNA = TRUE, rRNA = TRUE,
+  output.dir = conf["ref"], optimize = TRUE, gene_symbols = TRUE,
+  pseudo_5UTRS_if_needed = 100 # If species have not 5' UTR (leader) definitions, make 100nt pseudo leaders.
+)
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# STAR index (index the genome and contaminants seperatly)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Remove max.ram = 20 and SAsparse = 2, if you have more than 64GB ram
+index <- STAR.index(annotation, max.ram = 20, SAsparse = 2)
+
+# Show all annotations you have made with ORFik so far, validate your genome has gtf, genome and STAR index flags as TRUE.
+list.genomes()
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Alignment (with depletion of phix, rRNA, ncRNA and tRNAs) & (with MultiQC of final STAR alignment)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+paired.end.rfp <- study.rfp$LibraryLayout == "PAIRED"
+paired.end.rna <- study.rna$LibraryLayout == "PAIRED"
+
+STAR.align.folder(conf["fastq Ribo-seq"], conf["bam Ribo-seq"], index,
+                  paired.end = paired.end.rfp,
+                  steps = "tr-ge", # (trim needed: adapters found, then genome)
+                  adapter.sequence = "TCGTATGCCGTC", # Adapters are not auto detected by fastp
+                  trim.front = 0, min.length = 20)
+
+STAR.align.folder(conf["fastq RNA-seq"], conf["bam RNA-seq"], index,
+                  paired.end = paired.end.rna,
+                  steps = "tr-ge", # (trim needed: adapters found, then genome)
+                  adapter.sequence = "TCGTATGCCGTC", # Adapters are not auto detected by fastp
+                  trim.front = 0, min.length = 20)
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Create experiment (Starting point if alignment is finished)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# We now collect all the information into 1 object per library type
+library(ORFik)
+create.experiment(file.path(conf["bam Ribo-seq"], "aligned/"),
+                  exper = conf["exp Ribo-seq"],
+                  fa = annotation["genome"],
+                  txdb = paste0(annotation["gtf"], ".db"),
+                  organism = organism,
+                  pairedEndBam = paired.end.rfp,
+                  rep = study.rfp$REPLICATE,
+                  condition = study.rfp$CONDITION,
+                  runIDs = study.rfp$Run)
+
+create.experiment(file.path(conf["bam RNA-seq"], "aligned/"),
+                  exper = conf["exp RNA-seq"],
+                  fa = annotation["genome"],
+                  txdb = paste0(annotation["gtf"], ".db"),
+                  organism = organism,
+                  pairedEndBam = paired.end.rna,
+                  rep = study.rna$REPLICATE,
+                  condition = study.rna$CONDITION,
+                  runIDs = study.rna$Run)
+
+library(ORFik)
+# Show the experiments you have made with ORFik so far
+list.experiments(validate = FALSE)
+df.rfp <- read.experiment("Tsvetkov_Yeast_Ribo-seq")
+df.rna <- read.experiment("Tsvetkov_Yeast_RNA-seq")
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Convert files and run Annotation vs alignment QC
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# General QC
+ORFikQC(df.rfp)
+ORFikQC(df.rna)
+# After ribo-seq QC is done, check that reads are centering on ~28nt if normal riboseq,
+# and hopefully > 20% of alignments overlaps mrna.
+
+# PCA for Ribo-seq vs RNA-seq
+fpkm_table <- cbind(countTable(df.rfp, type = "fpkm"), countTable(df.rna, type = "fpkm"))
+pcaPlot(fpkm_table) # The samples seperate well between library types
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# P-shifting of Ribo-seq reads:
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# From ORFikQC it looks like 20, 21, 27:30 are candidates for Ribosomal footprints
+shiftFootprintsByExperiment(df.rfp, accepted.lengths = c(20:21, 27:30))
+# Now check if you are happy with shifts, these libraries have some interesting
+# periodicity for read length 20 and 27,
+# it has identical amount of reads in frame 0 and 1, not optimal for ORF detection.
+shiftPlots(df.rfp, output = "auto", downstream = 30) # Barplots, better details
+shiftPlots(df.rfp, output = "auto", downstream = 30, type = "heatmap") # Heatmaps, better overview
+
+# Ribo-seq specific QC
+remove.experiments(df.rfp) # Remove loaded data (it is not pshifted)
+RiboQC.plot(df.rfp, BPPARAM = BiocParallel::SerialParam(progressbar = TRUE))
+# A high rRNA concentration, using rRNA depletion protocols before sequencing could have fixed this
+remove.experiments(df.rfp)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Create heatmaps (Ribo-seq)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Pre-pshifting
+heatMapRegion(df.rfp, region = c("TIS"), shifting = "5prime", type = "ofst",
+              outdir = file.path(QCfolder(df.rfp), "heatmaps/pre-pshift/"))
+remove.experiments(df.rfp)
+# After pshifting
+heatMapRegion(df.rfp, region = c("TIS"), shifting = "5prime", type = "pshifted",
+              outdir = file.path(QCfolder(df.rfp), "heatmaps/pshifted/"))
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Count table analysis: TE tables
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Shifting looks good, let's make count tables of pshifted libraries:
+# As a note: Correlation between count tables of pshifted vs raw libs is ~ 40% usually.
+countTable_regions(df.rfp, lib.type = "pshifted", rel.dir = "pshifted")
+
+# TE per library match
+countsRFP <- countTable(df.rfp, region = "cds", type = "fpkm", collapse = FALSE, count.folder = "pshifted")
+countsRNA <- countTable(df.rna, region = "mrna", type = "fpkm", collapse = FALSE)
+countsTE <- (countsRFP + 1) / (countsRNA + 1) # with pseudo count
+summary(countsTE) # Good stability of TE, no strong ribosome abundance regulation
+
+# TE per condition (WT vs CO) (collapse replicates)
+countsRFP <- countTable(df.rfp, region = "cds", type = "fpkm", collapse = TRUE, count.folder = "pshifted")
+countsRNA <- countTable(df.rna, region = "mrna", type = "fpkm", collapse = TRUE)
+countsTE <- (countsRFP + 1) / (countsRNA + 1) # with pseudo count
+summary(countsTE) # Quite similar abundance over groups
+# TE merged all libraries
+countsRFP <- countTable(df.rfp, region = "cds", type = "fpkm", collapse = "all", count.folder = "pshifted")[[1]]
+countsRNA <- countTable(df.rna, region = "mrna", type = "fpkm", collapse = "all")[[1]]
+countsTE <- (countsRFP + 1) / (countsRNA + 1) # with pseudo count
+summary(countsTE[countsRFP > 10 & countsRNA > 10]) # Gene with biggest normalized ratio is 8 ribosomes per mrna fragment
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Differential translation analysis (condition: WT vs CO)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# The design is by default chosen by this factor: The condition column in this case
+design(df.rfp, multi.factor = FALSE)
+# We now run, and here get 210 unique DTEG genes
+res <- DTEG.analysis(df.rfp, df.rna)
+# Now let's check if the Heat shock group overexpress the HSP90 Gene (formal name: HSC82):
+symbols <- symbols(df.rfp) # Let's fetch the gene symbols table we made earlier
+HSP90_tx_id <- symbols[grep("HSC82", external_gene_name, ignore.case = T)]$ensembl_tx_name
+res[id == HSP90_tx_id]
+# It does, good good (Not for subset, not enough coverage there, only if you downloaded full libraries).
+# How is it regulated ?
+res[id == HSP90_tx_id]$Regulation # By mRNA abundance (No change in subset)
+significant_genes <- res[Regulation != "No change",]
+
+# If you downloaded the full libraries, do this to use pshifted libraries instead.
+# Not a valid result for pshifted libraries using subset
+res <- DTEG.analysis(df.rfp, df.rna, design = "condition",
+                     RFP_counts = countTable(df.rfp, region = "cds", type = "summarized",
+                                             count.folder = "pshifted"))
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Peak detection (strong peaks in CDS)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+
+peaks <- findPeaksPerGene(loadRegion(df.rfp, "cds"), reads = RFP_WT_r1, type = "max")
+
+# Where along the coding sequences are the strongest peaks ?
+ORFik::windowCoveragePlot(peaks, type = "cds", scoring = "transcriptNormalized")
+
+# The gene does not have a strong max peak in WT rep1
+"YMR186W_mRNA" %in% peaks$gene_id # FALSE
+
+peaks_HSR <- findPeaksPerGene(loadRegion(df.rfp, "cds"), reads = RFP_HSR_r1, type = "max")
+# The gene does not have a strong max peak in CO rep1 either
+"YMR186W_mRNA" %in% peaks$gene_id # FALSE
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Codon analysis (From WT rep 1 & HSR rep 1)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+codon_table <- codon_usage_exp(df.rfp[df.rfp$rep == 1,], outputLibs(df.rfp[df.rfp$rep == 1,], type = "pshifted", output.mode = "list"),
+                               cds = loadRegion(df.rfp, "cds", filterTranscripts(df.rfp, minThreeUTR = NULL)))
+codon_usage_plot(codon_table) # There is an increased dwell time on (R:CGC) of A-sites in both conditions
+codon_usage_plot(codon_table, ignore_start_stop_codons = TRUE)
+# There is an increased dwell time on (R:CGG) of A-sites of HSP condition, why ?
+
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Feature table (From HSR rep 3)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+cds <- loadRegion(df.rfp, "cds")
+cds <- ORFik:::removeMetaCols(cds) # Dont need them
+cds <- cds[filterTranscripts(df.rfp, minThreeUTR = NULL)] # Filter to sane transcripts (annotation is not perfect)
+dt <- computeFeatures(cds,
+                RFP = fimport(filepath(df.rfp[6,], "pshifted")),
+                RNA = fimport(filepath(df.rna[6,], "ofst")), Gtf = df.rfp,
+                grl.is.sorted = TRUE, faFile = df.rfp,
+                weight.RFP = "score", weight.RNA = "score",
+                riboStart = 21, uorfFeatures = FALSE)
+# The features of significant DTEGs.
+dt[names(cds) %in%  significant_genes$id,]
+# All genes with strong 3nt periodicity of Ribo-seq
+dt[ORFScores > 5,]
+# Not all genes start with ATG, possible errors in annotation
+table(dt$StartCodons) # 5 Genes with ATA start codons ?
+# All genes with strong start codon peak
+dt[startCodonCoverage > 5,]
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# Gene plotting (advanced under development!)
+# (Using package that extends ORFik for interactive html plots (RiboCrypt))
+# Will create interactive plot for Ribo-seq and RNA-seq sample: Wild type rep 3
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# This package also available on Bioconductor since Bioc version 3.14
+# BiocManager::install("RiboCrypt")
+devtools::install_github("m-swirski/RiboCrypt", dependencies = TRUE) # Restart R if you already had RiboCrypt installed
+library(RiboCrypt)
+cds <- loadRegion(df.rfp, "cds")
+mrna <- loadRegion(df.rfp, "mrna")
+RiboCrypt::multiOmicsPlot_list(mrna[HSP90_tx_id], cds[HSP90_tx_id], reference_sequence = findFa(df.rfp@fafile), reads = list(fimport(filepath(df.rna[6,], "ofst")), fimport(filepath(df.rfp[6,], "pshifted"))),
+                               ylabels = c("RNA", "RFP"), withFrames = c(F, T), frames_type = "columns")
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+# All ORF type predictions
+# Prediction using peridicity (Similar to RiboCode, ORFScore, minimum coverage, and comparison
+# to upstream and downstream window)
+# Will create 3 files in format (.rds), GRangesList of candidate ORFs, of predicted ORFs and a table
+# of all scores per ORF used for prediction
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤#
+prediction_output_folder <- file.path(libFolder(df.rfp), "predicted_orfs")
+tx_subset <- symbols[grep("^HSP|^HSC", external_gene_name)]$ensembl_tx_name # Predict on all HSP/HSC genes
+# Run on 2 first libraries
+ORFik::detect_ribo_orfs(df.rfp[1:2,], prediction_output_folder,
+                        c("uORF", "uoORF", "annotated", "NTE", "NTT", "doORF", "dORF"),
+                        startCodon = "ATG|CTG|TTG|GTG",
+                        mrna = loadRegion(df.rfp, "mrna", tx_subset),
+                        cds = loadRegion(df.rfp, "cds", tx_subset)) # Human also has a lot of ACG uORFs btw
+table <- riboORFs(df.rfp[1:2,], type = "table", prediction_output_folder)
+# Remember we are only predicting on 2 million reads, so we wont find that much
+print(table(table[predicted == TRUE,]$type)) # 16 N-terminal extension of CDS predicted.
+table[ensembl_tx_name == HSP90_tx_id & predicted == TRUE,]
+
+# I highly advice to check results with results of the python predictor RiboCode,
+# it is by far the best alternative to ORFik prediction out there (I have tested:
+# RiboTaper (deprecated), ORFquant (very bad), RiboTricer (very bad), RiboNT (OK), RiboCode (very good!))
+# I will link to my optimized github fork of RiboCode which supports input of ORFik covRle objects later
+# (100x speedup compared to bam input, by using directly an internal hdf5 file!)
+```

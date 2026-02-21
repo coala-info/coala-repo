@@ -1,0 +1,73 @@
+---
+title: "Provide LRBaseDb databases for AnnotationHub"
+author: "Koki Tsuyuzaki"
+graphics: no
+package: AHLRBaseDbs
+output:
+    BiocStyle::html_document:
+        toc_float: true
+vignette: >
+    %\VignetteIndexEntry{Provide LRBaseDb databases for AnnotationHub}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+    %\VignetteDepends{AnnotationHub}
+---
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+**Authors**: `r packageDescription("AHLRBaseDbs")[["Author"]] `<br />
+**Last modified:** `r file.info("creating-LRBaseDbs.Rmd")$mtime`<br />
+**Compiled**: `r date()`
+
+# Installation
+To install this package, start R (>= 4.1.0) and enter:
+
+```{r install, eval=FALSE}
+if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("AHLRBaseDbs")
+```
+
+# Fetch `LRBaseDb` databases from `AnnotationHub`
+
+The `AHLRBaseDbs` package provides the metadata for all `LRBaseDb` SQLite
+databases in `r Biocpkg("AnnotationHub")`.
+First we load/update the `AnnotationHub` resource.
+
+```{r load-lib, message = FALSE}
+library(AnnotationHub)
+ah <- AnnotationHub()
+```
+
+Next we list all `LRBaseDb` entries from `AnnotationHub`.
+
+```{r list-LRBaseDb}
+query(ah, "LRBaseDb")
+```
+
+We can confirm the metadata in AnnotationHub in Bioconductor S3 bucket
+with `mcols()`.
+
+```{r confirm-metadata}
+mcols(query(ah, "LRBaseDb"))
+```
+
+We can query only the LRBaseDb SQLite files for species *Mus musculus*.
+
+```{r query-mouse}
+qr <- query(ah, c("LRBaseDb", "Mus musculus"))
+# filepath_mmu <- qr[[1]]
+```
+
+This filepath is can be specified with the argument of `RSQLite::dbConnect` and
+`LRBaseDbi::LRBaseDb` and also used as the argument of `scTensor`, which is an
+R/Bioconductor package for the detection of cell-cell interaction detection.
+
+For the details, check the vignettes of `RSQLite`, `LRBaseDbi`, and `scTensor`.
+
+# Session information {.unnumbered}
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```

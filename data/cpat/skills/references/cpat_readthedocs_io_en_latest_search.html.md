@@ -1,0 +1,1 @@
+Search &mdash; CPAT 3.0.5 documentation CPAT latest CPAT Search Please activate JavaScript to enable the search functionality. &#169; Copyright 2024, Liguo Wang. Revision ea5aca3e . Built with Sphinx using a theme provided by Read the Docs .

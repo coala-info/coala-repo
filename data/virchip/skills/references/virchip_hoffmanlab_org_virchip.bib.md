@@ -1,0 +1,1 @@
+@article {virchip2022, author = {Karimzadeh, Mehran and Hoffman, Michael M.}, title = {Virtual ChIP-seq: Predicting transcription factor binding by learning from the transcriptome}, year = {2022}, volume = {23}, nummber = {126}, publisher = {Nature Publishing Group}, journal = {Genome Biology} }

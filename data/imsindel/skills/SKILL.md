@@ -1,0 +1,49 @@
+---
+name: imsindel
+description: IMSindel is a specialized bioinformatics tool designed to bridge the gap in structural variant calling by focusing on intermediate-size indels (typically ≥50 bp).
+homepage: https://github.com/NCGG-MGC/IMSindel
+---
+
+# imsindel
+
+## Overview
+
+IMSindel is a specialized bioinformatics tool designed to bridge the gap in structural variant calling by focusing on intermediate-size indels (typically ≥50 bp). While standard tools often struggle with these variants due to short read lengths, IMSindel employs a combination of de novo assembly and gapped global-local alignment. It specifically analyzes BWA soft-clipped fragments and unmapped reads to reconstruct indel sequences with high accuracy, making it a vital tool for clinical and research genomics where structural variation impacts gene function.
+
+## Tool Usage and Best Practices
+
+### Core Command Syntax
+The basic execution requires a coordinate-sorted and indexed BAM file, the corresponding reference FASTA, and a target chromosome.
+
+```bash
+imsindel --bam input.bam --chr 1 --outd ./results --reffa reference.fa --indelsize 10000
+```
+
+### Key Parameters and Tuning
+*   **--indelsize**: Set this to the maximum expected indel size you wish to detect.
+*   **--thread**: IMSindel uses `mafft` for alignment. Increase this value to utilize multiple CPU cores and significantly reduce processing time.
+*   **--baseq / --mapq**: Defaults are set to 20. For high-sensitivity discovery in low-coverage data, you may lower these, but be aware of increased false positive rates.
+*   **--exclude-region**: Provide a BED-like file (1-based coordinates) to ignore repetitive regions or known artifacts, which improves both speed and precision.
+
+### Workflow Requirements
+1.  **Input Preparation**: Ensure your BAM file is indexed (`samtools index input.bam`).
+2.  **Soft-clipping**: The tool relies on BWA soft-clipped fragments. Ensure your alignment was performed with a tool that preserves soft-clipping (like `bwa mem`).
+3.  **Dependencies**: Ensure `samtools`, `mafft`, and `glsearch` are in your system PATH.
+
+### Interpreting Results
+The output file contains 12 columns. Key columns for analysis include:
+*   **Column 1 (indel_type)**: DEL (deletion) or INS (insertion).
+*   **Column 2 (call_type)**: `Hete` (Heterozygous, ratio 0.15–0.7) or `Homo` (Homozygous, ratio >0.7).
+*   **Column 6 (indel_length)**: The size of the detected variant.
+*   **Column 12 (depth)**: Marked as `High` if the total read depth is ≥10, providing a quick confidence filter.
+
+### Expert Tips
+*   **Memory Management**: For large chromosomes, ensure the `--temp` directory has sufficient space for `mafft` and `glsearch` temporary files.
+*   **Docker Execution**: If using the Docker container, remember to mount your data volumes correctly and ensure the user has write permissions to the output directory.
+    ```bash
+    docker run --rm -v /path/to/data:/data imsindel --bam /data/input.bam --chr 1 --outd /data/out --reffa /data/ref.fa
+    ```
+
+## Reference documentation
+- [IMSindel GitHub Repository](./references/github_com_NCGG-MGC_IMSindel.md)
+- [IMSindel Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_imsindel_overview.md)

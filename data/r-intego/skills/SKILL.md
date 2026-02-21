@@ -1,0 +1,41 @@
+---
+name: r-intego
+description: R package intego (documentation from project home).
+homepage: https://cran.r-project.org/web/packages/intego/index.html
+---
+
+# r-intego
+
+name: r-intego
+description: Use this skill when working with the R package "intego" to integrate multiple Gene Ontology (GO) semantic similarity measures. This is useful for functional genomics tasks, such as gene clustering or gene function prediction, where a single robust similarity score is needed from multiple underlying GO-based metrics.
+
+# r-intego
+
+## Overview
+The `intego` package (Integrated Gene Ontology) provides tools to integrate different semantic similarity measures between genes based on Gene Ontology. By combining multiple measures, it aims to provide a more reliable and comprehensive functional similarity score than any single metric alone. It specifically implements the InteGO and InteGO2 algorithms.
+
+## Installation
+To install the package from CRAN:
+```R
+install.packages("intego")
+```
+
+## Main Functions
+The package focuses on two primary integration functions:
+
+- `InteGO1(similarity_matrices)`: Implements the initial integration approach. It takes a list of similarity matrices (each calculated using a different semantic similarity measure) and returns a single integrated matrix.
+- `InteGO2(similarity_matrices)`: Implements the updated integration approach, which is generally more robust for handling diverse semantic similarity inputs.
+
+## Workflow
+1. **Calculate Individual Similarities**: Use external packages like `GOSemSim` to calculate several different semantic similarity matrices (e.g., Resnik, Lin, Wang) for the same set of genes.
+2. **Prepare Input**: Combine these matrices into a list. Ensure that all matrices have the same dimensions and the same row/column names (gene identifiers).
+3. **Integrate**: Apply `InteGO1` or `InteGO2` to the list.
+4. **Analysis**: Use the resulting integrated similarity matrix for downstream tasks like hierarchical clustering (`hclust`) or visualization.
+
+## Tips
+- **Consistency**: Ensure that the gene sets are identical across all input matrices before integration.
+- **Selection**: `InteGO2` is typically preferred for most modern functional genomics workflows as it handles the variance between different semantic similarity methods more effectively.
+- **Data Source**: The quality of the integration depends on the diversity of the input measures; using a mix of information-content-based and graph-based measures often yields the best results.
+
+## Reference documentation
+- [home_page.md](./references/home_page.md)

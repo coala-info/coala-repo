@@ -1,0 +1,14 @@
+{
+  "format": "1.0",
+  "entries": [
+    {
+      "path": ".venv/lib/python3.12/site-packages/cwlagent/data/testdata/templates/minimal.dat",
+      "format": "any_file",
+      "description": "Found in project",
+      "source": "local",
+      "tags": [
+        "local"
+      ]
+    }
+  ]
+}

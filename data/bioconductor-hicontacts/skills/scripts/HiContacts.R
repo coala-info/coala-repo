@@ -1,0 +1,192 @@
+# Code example from 'HiContacts' vignette. See references/ for full tutorial.
+
+## ----eval = TRUE, echo=FALSE, results="hide", warning=FALSE-------------------
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>", 
+    crop = NULL
+)
+suppressPackageStartupMessages({
+    library(ggplot2)
+    library(dplyr)
+    library(GenomicRanges)
+    library(HiCExperiment)
+    library(HiContactsData)
+    library(HiContacts)
+})
+
+## -----------------------------------------------------------------------------
+citation('HiContacts')
+
+## -----------------------------------------------------------------------------
+library(dplyr)
+library(ggplot2)
+library(HiCExperiment)
+library(HiContacts)
+library(HiContactsData)
+library(rtracklayer)
+library(InteractionSet)
+cool_file <- HiContactsData('yeast_wt', format = 'cool')
+hic <- import(cool_file, format = 'cool')
+hic
+
+## -----------------------------------------------------------------------------
+## Square matrix
+plotMatrix(hic, use.scores = 'balanced', limits = c(-4, -1))
+
+## Horizontal matrix
+plotMatrix(
+    refocus(hic, 'II'),
+    use.scores = 'balanced', limits = c(-4, -1), 
+    maxDistance = 200000
+)
+
+## -----------------------------------------------------------------------------
+mcool_file <- HiContactsData('yeast_wt', format = 'mcool')
+loops <- system.file("extdata", 'S288C-loops.bedpe', package = 'HiCExperiment') |> 
+    import() |> 
+    makeGInteractionsFromGRangesPairs()
+p <- import(mcool_file, format = 'mcool', focus = 'IV') |> 
+    plotMatrix(loops = loops, limits = c(-4, -1), dpi = 120)
+
+## -----------------------------------------------------------------------------
+borders <- system.file("extdata", 'S288C-borders.bed', package = 'HiCExperiment') |> 
+    import()
+p <- import(mcool_file, format = 'mcool', focus = 'IV') |> 
+    plotMatrix(loops = loops, borders = borders, limits = c(-4, -1), dpi = 120)
+
+## -----------------------------------------------------------------------------
+aggr_centros <- HiContacts::aggregate(
+    hic, targets = loops, BPPARAM = BiocParallel::SerialParam()
+)
+plotMatrix(
+    aggr_centros, use.scores = 'detrended', limits = c(-1, 1), scale = 'linear', 
+    cmap = bgrColors()
+)
+
+## -----------------------------------------------------------------------------
+mcool_file <- HiContactsData('mESCs', format = 'mcool')
+hic <- import(mcool_file, format = 'mcool', focus = 'chr2', resolution = 160000)
+hic <- autocorrelate(hic)
+scores(hic)
+summary(scores(hic, 'autocorrelated'))
+plotMatrix(hic, use.scores = 'autocorrelated', limits = c(-1, 1), scale = 'linear')
+
+## -----------------------------------------------------------------------------
+hic <- import(mcool_file, format = 'mcool', focus = 'chr18:20000000-35000000', resolution = 40000)
+detrended_hic <- detrend(hic)
+patchwork::wrap_plots(
+    plotMatrix(detrended_hic, use.scores = 'expected', scale = 'log10', limits = c(-3, -1), dpi = 120),
+    plotMatrix(detrended_hic, use.scores = 'detrended', scale = 'linear', limits = c(-1, 1), dpi = 120)
+)
+
+## -----------------------------------------------------------------------------
+mcool_file_1 <- HiContactsData('yeast_eco1', format = 'mcool')
+mcool_file_2 <- HiContactsData('yeast_wt', format = 'mcool')
+hic_1 <- import(mcool_file_1, format = 'mcool', focus = 'II:1-300000', resolution = 2000)
+hic_2 <- import(mcool_file_2, format = 'mcool', focus = 'II:1-300000', resolution = 2000)
+merged_hic <- merge(hic_1, hic_2) 
+hic_1
+hic_2
+merged_hic
+
+## -----------------------------------------------------------------------------
+hic_1 <- import(mcool_file_1, format = 'mcool', focus = 'II', resolution = 2000)
+hic_2 <- import(mcool_file_2, format = 'mcool', focus = 'II', resolution = 2000)
+div_hic <- divide(hic_1, by = hic_2) 
+div_hic
+p <- patchwork::wrap_plots(
+    plotMatrix(hic_1, use.scores = 'balanced', scale = 'log10', limits = c(-4, -1)),
+    plotMatrix(hic_2, use.scores = 'balanced', scale = 'log10', limits = c(-4, -1)),
+    plotMatrix(div_hic, use.scores = 'balanced.fc', scale = 'log2', limits = c(-2, 2), cmap = bwrColors())
+)
+
+## -----------------------------------------------------------------------------
+hic_1_despeckled <- despeckle(hic_1)
+hic_1_despeckled5 <- despeckle(hic_1, focal.size = 5)
+p <- patchwork::wrap_plots(
+    plotMatrix(hic_1, use.scores = 'balanced', scale = 'log10', limits = c(-4, -1)),
+    plotMatrix(hic_1_despeckled, use.scores = 'balanced.despeckled', scale = 'log10', limits = c(-4, -1)),
+    plotMatrix(hic_1_despeckled5, use.scores = 'balanced.despeckled', scale = 'log10', limits = c(-4, -1))
+)
+
+## -----------------------------------------------------------------------------
+mcool_file <- HiContactsData('yeast_wt', format = 'mcool')
+hic <- import(mcool_file, format = 'mcool', resolution = 16000)
+
+# - Get compartments
+hic <- getCompartments(hic, chromosomes = c('XV', 'XVI'))
+hic
+
+# - Export compartments as bigwig and bed files
+export(IRanges::coverage(metadata(hic)$eigens, weight = 'eigen'), 'compartments.bw')
+export(
+    topologicalFeatures(hic, 'compartments')[topologicalFeatures(hic, 'compartments')$compartment == 'A'], 
+    'A-compartments.bed'
+)
+export(
+    topologicalFeatures(hic, 'compartments')[topologicalFeatures(hic, 'compartments')$compartment == 'B'], 
+    'B-compartments.bed'
+)
+
+# - Generate saddle plot
+plotSaddle(hic)
+
+## -----------------------------------------------------------------------------
+# - Compute insulation score
+hic <- refocus(hic, 'II:1-300000') |> 
+    zoom(resolution = 1000) |> 
+    getDiamondInsulation(window_size = 8000) |> 
+    getBorders()
+hic
+
+# - Export insulation as bigwig track and borders as bed file
+export(IRanges::coverage(metadata(hic)$insulation, weight = 'insulation'), 'insulation.bw')
+export(topologicalFeatures(hic, 'borders'), 'borders.bed')
+
+## -----------------------------------------------------------------------------
+mcool_file <- HiContactsData('mESCs', format = 'mcool')
+hic <- import(mcool_file, format = 'mcool', focus = 'chr18:20000000-35000000', resolution = 40000)
+v4C <- virtual4C(hic, viewpoint = GRanges('chr18:31000000-31050000'))
+plot4C(v4C, ggplot2::aes(x = center, y = score))
+
+## -----------------------------------------------------------------------------
+mcool_file <- HiContactsData('yeast_wt', format = 'mcool')
+hic <- import(mcool_file, format = 'mcool', resolution = 1000)
+cisTransRatio(hic)
+
+## -----------------------------------------------------------------------------
+# Without a pairs file
+mcool_file <- HiContactsData('yeast_wt', format = 'mcool')
+hic <- import(mcool_file, format = 'mcool', resolution = 1000)
+ps <- distanceLaw(hic)
+plotPs(ps, ggplot2::aes(x = binned_distance, y = norm_p))
+
+# With a pairs file
+pairsFile(hic) <- HiContactsData('yeast_wt', format = 'pairs.gz')
+ps <- distanceLaw(hic)
+plotPs(ps, ggplot2::aes(x = binned_distance, y = norm_p))
+plotPsSlope(ps, ggplot2::aes(x = binned_distance, y = slope))
+
+# Comparing P(s) curves
+c1 <- import(
+    HiContactsData('yeast_wt', format = 'mcool'), 
+    format = 'mcool',
+    resolution = 1000, 
+    pairsFile = HiContactsData('yeast_wt', format = 'pairs.gz')
+)
+c2 <- import(
+    HiContactsData('yeast_eco1', format = 'mcool'), 
+    format = 'mcool',
+    resolution = 1000, 
+    pairsFile = HiContactsData('yeast_eco1', format = 'pairs.gz')
+)
+ps_1 <- distanceLaw(c1) |> mutate(sample = 'WT')
+ps_2 <- distanceLaw(c2) |> mutate(sample = 'Eco1-AID')
+ps <- rbind(ps_1, ps_2)
+plotPs(ps, ggplot2::aes(x = binned_distance, y = norm_p, group = sample, color = sample))
+plotPsSlope(ps, ggplot2::aes(x = binned_distance, y = slope, group = sample, color = sample))
+
+## -----------------------------------------------------------------------------
+sessionInfo()
+

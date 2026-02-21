@@ -1,0 +1,87 @@
+---
+title: "CoSIAdata, an Experimental Hub Package of VST Stabilized RNA-Seq Data that accompanies the CoSIA Package"
+output: 
+  BiocStyle::html_document:
+    toc: true
+    toc_float: true
+    fig_width: 5
+    
+vignette: >
+    %\VignetteIndexEntry{CoSIAdata}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+author: Anisha Haldar, Vishal H. Oza, Amanda D. Clark, Nathaniel S. DeVoss, Brittany N. Lasseigne
+date: 2023-02-13
+---
+
+```{css, echo=FALSE}
+.row {
+    margin-left: -200px;
+}
+```
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+
+**** 
+# CoSIAdata Introduction
+
+VST Stabilized RNA-Seq Expression Data from Bgee across six species and more 
+than 132 tissues are made available through the CoSIAdata package. 
+The six species available through the package are *Homo sapiens*, 
+*Mus musculus*, *Rattus norvegicus*, *Danio rerio*, *Drosophila melanogaster*, 
+and *Caenorhabditis elegans*. Each species is found in an individualized Rdata 
+file from ExperimentHub and can be used in conjunction with CoSIA, a 
+visualization tool for comparing across species using gene expression metrics. 
+CoSIAdata's individualized datasets provide the Anatomical Entity Name, 
+Anatomical Entity Id, Ensembl Id, and Experimental Id to accompany the 
+VST Stabilized RNA-Seq Expression Data allowing for species, tissue, and 
+gene-specific analysis to be conducted. 
+
+The example below demonstrates the process of downloading these 
+datasets from Experimental Hub.
+
+##Installation of CoSIAdata
+In R:
+```{r installation, eval = FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("CoSIAdata")
+library(CoSIAdata)
+```
+
+
+## Using CoSIAdata
+CoSIAdata has species-specific helper functions for accessing expression data
+```{r download-c.elegan_data, eval = FALSE}
+c_elegans_vst_counts <- CoSIAdata::Caenorhabditis_elegans()
+```
+
+## Behind the Scenes of CoSIAdata
+CoSIAdata retrieves from `ExperimentHub` using the query functions
+```{r behind_CoSIAdata, eval = FALSE}
+eh <- ExperimentHub()
+query(eh, "CoSIAdata")
+head(eh[["EH7863"]])
+```
+## Accessing CoSIAdata Metadata
+
+To get a list of species in CoSIAdata and other information about the datasets, query `ExperimentHub` as below
+```{r query_CoSIAdata}
+eh <- ExperimentHub::ExperimentHub()
+AnnotationHub::query(eh, "CoSIAdata")
+```
+
+
+Session Info
+```{r}
+sessionInfo()
+```
+

@@ -1,0 +1,37 @@
+# SRGnet An R package for studying synergistic response to gene mutations from transcriptomics data
+
+#### *Isar Nassiri, Matthew McCall*
+
+#### *December 23, 2016*
+
+## 1. Introduction
+
+Cooperating oncogenic mutations regulate genes at the genomic scale synergistically. This means their combined mutation produce an effect greater than the sum of their individual effects (McMurray, et al., 2008). We introduce a pipeline to provide a broader biological context for cooperation response genes (CRGs) by investigating the network of interactions between CRGs and differentially expressed genes, and provide a rationale for studying synergistic response to gene mutations. The proposed methodology is implemented in the SRGnet R/Bioconductor package. This package can be used to identify regulatory modules downstream of CRGs and provide a richer context in which to investigate control points in cellular regulation. We demonstrate the application of SRGnet to analyze transcriptomic profiles from a murine colon cancer model.
+
+## 2. Input data
+
+SRGnet uses three input files including the list of cooperation response genes (CRGs), list of differentially expressed genes (DEGs) and their mean of expression values, and transcriptomic profile of single and combined treatments. The package reads the example files from folder of data in home directory. New inputs should be prepared in the same structure and title with example files, and imported to the workspace before call the SRGnet functin.
+
+## 3. Inference of integrated network of SRGs
+
+The **“SRGnet”** function can be used if user has transcriptomic profile, list of differentially expressed genes, and list of cooperation response genes as inputs. The function can be ran in two mode of Slow or Fast. In fast mode, step of expectation maximization for estimation of hyperparameters is omitted. User can run the **“SRGnet”** function in fast or slow mode by using the “F” or “S” as input, respectively [*e.g.* SRGnet(“F”)].
+
+## 4. Outputs
+
+The output of **“SRGnet”** includes the topology of synergistic response to gene mutations (SRG) specific networks, which can be found in home directory of package as text file.
+
+## 5. Example of application
+
+We used an iterative network inference method based on differential coexpression and discriminant analyzes with backward screening to construct an integrated network of synergistic response to gene mutations (SRG network). To infer a SRG network, we focused on the sets of genes with synergistic expression patterns to reduce the search space and limit the complexity of the network inference. Application of this method on the transcriptomics of young adult mouse colonic epithelium (YAMC) in four conditions: YAMC control, mutant p53-expressing (mp53), activated Ras-expressing, and both mutant genes (mp53/Ras) cells is used to provide the sample results. You can use the “SRGnet” function in slow or fast mode to see the example results. Example code to run the SRGnet function is as follows:
+
+data(Differentially\_expressed\_genes)
+
+data(Transcriptomics)
+
+data(PLCRG)
+
+SRGnet(“F”) # Fast mode “F”
+
+## 6. Reference
+
+McMurray, H.R., et al. Synergistic response to oncogenic mutations defines gene class critical to cancer phenotype. Nature 2008;453(7198):1112-1116.

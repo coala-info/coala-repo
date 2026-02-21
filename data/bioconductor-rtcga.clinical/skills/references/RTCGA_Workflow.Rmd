@@ -1,0 +1,62 @@
+---
+title: "RTCGA package workflow"
+subtitle: "[rtcga.github.io/RTCGA/](https://rtcga.github.io/RTCGA/)"
+author: "Marcin Kosinski&nbsp;&nbsp;<small><a href='http://r-addict.com'><i class='fa fa-comment'></i></a>&nbsp;&nbsp;<a href='https://stackoverflow.com/users/3857701'><i class='fa fa-stack-overflow'></i></a>&nbsp;&nbsp;<a href='https://github.com/MarcinKosinski'><i class='fa fa-github'></i></a>&nbsp;&nbsp;<a href='mailto:m.p.kosinski@gmail.com'><i class='fa fa-envelope-o'></i></a></small><br>"
+date: "2016-12-09"
+output:
+  html_document:
+    theme: readable
+    highlight: tango
+    fig_width: 17
+    fig_height: 10
+    toc: false
+vignette: >
+  %\VignetteIndexEntry{Integrating TCGA Data - RTCGA Workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r, include=FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+library(knitr)
+opts_chunk$set(
+	comment = "",
+	fig.width = 12, 
+	message = FALSE,
+	warning = FALSE,
+	tidy.opts = list(
+		keep.blank.line = TRUE,	
+		width.cutoff = 150
+		),
+	options(width = 200),
+	eval = TRUE
+)
+```
+
+
+<img src="https://raw.githubusercontent.com/RTCGA/RTCGA/master/RTCGA_workflow.png" height="500" width="800">
+
+Data packages **not yet** submitted to Bioconductor from 2016-01-28 release date of TCGA data.
+
+- [RTCGA.mutations.20160128](http://github.com/RTCGA/RTCGA.mutations.20160128/)
+- [RTCGA.rnaseq.20160128](http://github.com/RTCGA/RTCGA.rnaseq.20160128/)
+- [RTCGA.clinical.20160128](http://github.com/RTCGA/RTCGA.clinical.20160128/)
+- [RTCGA.mRNA.20160128](http://github.com/RTCGA/RTCGA.mRNA.20160128/)
+- [RTCGA.miRNASeq.20160128](http://github.com/RTCGA/RTCGA.miRNASeq.20160128/)
+- [RTCGA.RPPA.20160128](http://github.com/RTCGA/RTCGA.RPPA.20160128/)
+- [RTCGA.CNV.20160128](http://github.com/RTCGA/RTCGA.CNV.20160128/)
+- [RTCGA.methylation.20160128](http://github.com/RTCGA/RTCGA.methylation.20160128/)
+
+
+
+Data packages submitted to Bioconductor from 2015-11-01 release date of TCGA data.
+
+- [RTCGA.mutations](http://bioconductor.org/packages/RTCGA.mutations/)
+- [RTCGA.rnaseq](http://bioconductor.org/packages/RTCGA.rnaseq/)
+- [RTCGA.clinical](http://bioconductor.org/packages/RTCGA.clinical/)
+- [RTCGA.PANCAN12](http://bioconductor.org/packages/RTCGA.PANCAN12/)
+- [RTCGA.mRNA](http://bioconductor.org/packages/RTCGA.mRNA/)
+- [RTCGA.miRNASeq](http://bioconductor.org/packages/RTCGA.miRNASeq/)
+- [RTCGA.RPPA](http://bioconductor.org/packages/RTCGA.RPPA/)
+- [RTCGA.CNV](http://bioconductor.org/packages/RTCGA.CNV/)
+- [RTCGA.methylation](http://bioconductor.org/packages/RTCGA.methylation/)
+

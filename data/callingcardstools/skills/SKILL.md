@@ -1,0 +1,63 @@
+---
+name: callingcardstools
+description: callingcardstools is a specialized suite of command-line utilities and a Python API designed to process raw Calling Cards sequencing data.
+homepage: https://github.com/cmatKhan/callingCardsTools
+---
+
+# callingcardstools
+
+## Overview
+callingcardstools is a specialized suite of command-line utilities and a Python API designed to process raw Calling Cards sequencing data. It is a core component of the nf-core/callingcards pipeline but can be used independently to identify transposon insertion sites (peaks), calculate enrichment at genomic features, and perform rank response analysis. The tool is optimized for yeast models but provides the necessary objects and functions to handle mammalian data as well.
+
+## Installation and Discovery
+The tool is primarily distributed via Bioconda and PyPI.
+
+- **Installation**:
+  ```bash
+  conda install -c bioconda callingcardstools
+  # OR
+  pip install callingcardstools
+  ```
+- **Command Discovery**: The CLI uses a hierarchical structure. Always start with the global help flag to see available subcommands:
+  ```bash
+  callingcardstools --help
+  ```
+- **Subcommand Help**: Each specific tool provides its own help documentation:
+  ```bash
+  callingcardstools [subcommand] --help
+  ```
+
+## Core Workflows and CLI Patterns
+
+### Yeast Peak Calling
+The `call_peaks` functionality is central to the yeast workflow. It identifies significant clusters of transposon insertions.
+
+- **Input Format**: Typically uses qBED files representing experiment data.
+- **Combining Replicates**: In versions 1.7.0 and later, you can pass a list of files to the peak caller to combine replicates into a single analysis.
+- **Deduplication**: The tool includes internal logic to deduplicate experiment qBEDs. Note that the `consider_strand` argument was removed in version 1.5.0 to streamline memory usage.
+- **Output**: The output includes a `name` column (restored in v1.5.1) for easier integration with downstream annotation tools.
+
+### Promoter Enrichment Analysis
+This module (often referred to as `yeast_peak_calling` or `yeast_promoter_enrichment`) calculates the significance of insertions near specific genomic features.
+
+- **Statistical Methods**: The tool supports multiple methods for calculating significance, including:
+  - Poisson p-values
+  - Hypergeometric p-values
+  - Enrichment scores
+- **Refinement**: Ensure you are using the latest version (1.8.1+) to benefit from corrected Poisson p-value calculations.
+
+### Rank Response Analysis
+Used to analyze the relationship between transcription factor binding and gene expression or other response metrics.
+
+- **Key Parameters**: Use the `rank_by_binding_effect` flag to ensure the analysis correctly accounts for the magnitude of the binding signal.
+- **Submodule**: These functions are located within the `rank_response` submodule of the API but are accessible via the CLI.
+
+## Expert Tips and Best Practices
+- **Memory Management**: For large datasets, ensure you are using version 1.5.0 or later, as the PeakCalling module was overhauled to use `pyranges` for significantly reduced memory consumption.
+- **Containerization**: If local installation fails due to dependency conflicts (e.g., with `pyranges` or `poetry`), use the official Docker or Singularity containers hosted on Galaxyhub or Quay.io.
+- **QC Outputs**: When running yeast QC, look for the "equivalence class" output to understand the complexity and potential biases in your sequencing library.
+- **BAM Integration**: While the tool primarily works with qBED and Fastq, ongoing development (see Issue #14) suggests a transition toward BAM-based parsing for better integration with standard bioinformatics workflows.
+
+## Reference documentation
+- [GitHub Repository Overview](./references/github_com_cmatKhan_callingCardsTools.md)
+- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_callingcardstools_overview.md)

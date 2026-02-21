@@ -1,0 +1,23 @@
+---
+name: bioconductor-tidyomics
+description: the package is available on all platforms; click for details.
+homepage: https://bioconductor.org/packages/release/bioc/html/tidyomics.html
+---
+
+# bioconductor-tidyomics
+
+## Overview
+
+Use the Bioconductor R package **tidyomics** for: the package is available on all platforms; click for details.
+
+## Installation
+
+```r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("tidyomics")
+```
+
+## Reference documentation
+
+See files in `references/` for vignettes and tutorials.

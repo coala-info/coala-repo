@@ -1,0 +1,31 @@
+# ENCODExplorerData: a collection of ENCODE file metadata
+
+#### 10 December 2019
+
+# Contents
+
+* [1 ENCODExplorerData: A compilation of metadata from ENCODE](#encodexplorerdata-a-compilation-of-metadata-from-encode)
+
+# 1 ENCODExplorerData: A compilation of metadata from ENCODE
+
+Charles Joly Beauparlant, Eric Fournier and Arnaud Droit.
+
+This package and the underlying ENCODExplorerData code are distributed under
+the Artistic license 2.0. You are free to use and redistribute this software.
+
+“The ENCODE (Encyclopedia of DNA Elements) Consortium is an international
+collaboration of research groups funded by the National Human Genome Research
+Institute (NHGRI). The goal of ENCODE is to build a comprehensive parts list of
+functional elements in the human genome, including elements that act at the
+protein and RNA levels, and regulatory elements that control cells and
+circumstances in which a gene is active”1[ ] 1 source : [ENCODE Projet Portal](https://www.encodeproject.org/) .
+
+This package has been designed to facilitate data access by compiling the
+metadata associated with ENCODE files and making it available in the format
+of a data table. While this data can be accessed as-is, we recommend using
+the ENCODExplorer companion package, which contains utility functions
+for using the online ENCODE search function, downloading selected files,
+and retrieving control-treatment experimental designs from ENCODE.
+
+To generate up-to-date version of the data tables exported by this package,
+simply run the `inst/scripts/make-data.R` script.

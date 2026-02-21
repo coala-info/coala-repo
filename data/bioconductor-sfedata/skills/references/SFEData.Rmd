@@ -1,0 +1,82 @@
+---
+title: "Example SpatialFeatureExperiment datasets"
+output: BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Example SpatialFeatureExperiment datasets}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Installation
+
+This package can be installed from Bioconductor with the following command:
+```{r, eval=FALSE}
+if (!requireNamespace(BiocManager, quietly = TRUE)) install.packages("BiocManager")
+BiocManager::install("SFEData")
+```
+
+# Usage
+
+```{r setup}
+library(SFEData)
+```
+
+Example spatial transcriptomics datasets with [Simple Features](https://r-spatial.github.io/sf/) annotations as `SpatialFeatureExperiment` objects. These are the datasets available from this package and functions to download the datasets:
+
+Visium:
+
+* Full Visium dataset of the first time point, including spots outside tissue (`McKellarMuscleData()`)
+* Small subset of the full Visium dataset for function examples. (`McKellarMuscleData()`)
+* A second small subset of the full Visium dataset with a different `sample_id` used for function examples involving multiple samples (`McKellarMuscleData()`)
+
+Slide-seq2:
+
+* Slide-seq2 human melanoma brain metastasis dataset (`BiermannMelaMetasData()`)
+* Slide-seq2 human melanoma extracranial metastasis dataset (`BiermannMelaMetasData()`)
+
+Xenium:
+
+* 10X Xenium formalin fixed paraffin embedded (FFPE) Xenium dataset for human
+breast cancer (2 biological replica, `JanesickBreastData()`)
+
+CosMX:
+
+* Nanostring CosMX FFPE human non small cell lung cancer data (`HeNSCLCData()`)
+* CosMX output subset from mouse quarter brain (`CosMXOutput()`)
+
+MERFISH:
+
+* Vizgen MERFISH mouse liver data (`VizgenLiverData()`)
+* Vizgen output subset of unpublished brain cancer data (`VizgenOutput()`)
+
+seqFISH:
+
+* seqFISH mouse gastrulation data (`LohoffGastrulationData()`)
+
+Xenium:
+* Xenium output subset of mouse brain data (`XeniumOutput()`)
+
+This package is used extensively in examples and vignettes of the `SpatialFeatureExperiment` and `Voyager` packages. The same function is used for different samples from the same study, and the `dataset` argument determines which sample is downloaded:
+```{r}
+sfe <- McKellarMuscleData(dataset = "small")
+```
+
+The outputs (in `*Output()`) are not SFE objects, but a small subset in the format of the standard output of the technology, used to unit test read functions. Where the files are saved is controlled by the `file_path` argument.
+```{r}
+(fp <- CosMXOutput(file_path = "foo"))
+```
+
+```{r}
+unlink("foo", recursive = TRUE)
+```
+
+```{r}
+sessionInfo()
+```

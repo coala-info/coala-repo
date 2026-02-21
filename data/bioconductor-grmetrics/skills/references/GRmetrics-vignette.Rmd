@@ -1,0 +1,375 @@
+---
+title: "GRmetrics: an R package for calculation and visualization of 
+dose-response metrics based on growth rate inhibition"
+author: "Nicholas Clark"
+date: "`r doc_date()`"
+output: 
+  BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{GRmetrics: an R package for calculation and visualization of dose-response metrics based on growth rate inhibition}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+```
+
+# Background
+
+Quantifying drug response is the cornerstone of many pharmacological 
+experiments ranging from pharmacogenomics studies to small-scale analyses of 
+drug resistance. In general, cells are grown in the presence or absence of 
+drugs for a few days and the endpoint cell count values (or a surrogate) is 
+compared. From the relative cell count, metrics of drug sensitivity such as 
+IC50 or Emax values are evaluated. In cases where the untreated control 
+cells grow over the course of the assay, these traditional metrics are 
+confounded by 
+the number of divisions that take place over the course of an assay. In 
+particular, for drugs that impact growth rate and block cell division, 
+slow-growing cell lines will appear more resistant than fast-growing lines 
+although the biological effect on a per-division basis may be the same.
+
+Hafner 
+et al. recently proposed alterative drug-response metrics based on growth rate 
+inhibition (GR metrics) that are robust to differences in nominal division rate 
+and assay duration. Using these metrics requires only to know the number of 
+cells (or a surrogate) at the time of treatment; note that this value may also 
+be inferred from the nominal division rate and the value of an untreated 
+sample at the endpoint.
+
+To facilitate the use of these GR metrics, we have developed 
+an R package that provides functions to analyze and visualize drug response 
+data with these new metrics across multiple conditions and cell lines.
+
+# Installation
+
+The **GRmetrics** package can be installed through Bioconductor
+
+```{r eval=FALSE}
+install.packages("BiocManager")
+BiocManager::install("GRmetrics")
+```
+
+# References:
+Hafner, M., Niepel, M. Chung, M. and Sorger, P.K., *Growth Rate Inhibition 
+Metrics Correct For Confounders In Measuring Sensitivity To Cancer Drugs*. 
+Nature Methods 13.6 (2016): 521-527.
+(http://dx.doi.org/10.1038/nmeth.3853)
+
+Corresponding MATLAB and Python scripts available on repo:
+
+https://github.com/datarail/gr_metrics.
+
+Note: Most, but not all of these scripts have been reproduced in this R 
+package. Namely, this package does not contain code for "Case C" of the 
+MATLAB scripts nor does it contain an R script to generate the example input 
+data. The python script for generating the example data can be found in the 
+"inst/scripts/" directory.
+
+Browser interface and online tools: http://www.grcalculator.org
+
+Much of the description below has been adapted from:
+
+https://github.com/datarail/gr_metrics/blob/master/README.md.
+
+# Input data
+The main function of the package is **GRfit**, which takes in a data frame 
+containing information about concentration, cell counts over time, and 
+additional grouping variables for a dose-response assay and calculates 
+growth-rate inhibition (GR) metrics for each experiment in the dataset.
+
+There are two cases of data input accepted by the **GRfit** function. 
+They are described in detail below. Case "A" is the default option.
+
+## Case A: a single file with control values assigned to treated measurements
+The control values (both control and time 0 cell counts) are pre-computed by 
+the user and assigned to each treatment (row) in appropriate columns in the 
+input file. Control cell counts should be in a column labeled 
+*cell_count\_\_ctrl* and the time 0 cell counts in a column labeled 
+*cell_count\_\_time0*.
+
+An example input data frame for "Case A", named "inputCaseA", is contained 
+within the package.
+To access it, use the following code:
+
+```{r include=FALSE}
+library(GRmetrics)
+data(inputCaseA)
+```
+
+```{r eval=FALSE}
+library(GRmetrics)
+data(inputCaseA)
+```
+
+**The mandatory inputs for "Case A" (short-format input) are:**
+
+- **inputData** - the name of an input data frame with the following columns 
+as well as other grouping columns
+    1. **cell_line** - name of the cell line used in the experiment
+    2. **treatment** - name of the treatment used in the experiment (use a dash "-" for untreated "control" measurements)
+    3. **concentration** - concentration value (not log-transformed) of the treatment - use 0 for untreated measurements - concentrations for other measurements must be positive numbers
+    4. **cell_count** - measure of cell number (or a surrogate of cell number) at the end of treatment
+    5. **cell_count\_\_time0** - column with initial (Time 0) cell 
+    counts - the measure of cell number in untreated wells grown in parallel 
+    until the time of treatment
+    6. **cell_count\_\_ctrl** - column with the Control cell 
+  count: the measure of cell number in control (e.g. untreated or 
+  DMSO-treated) wells from the same plate at the end of treatment
+
+Other columns (e.g. *replicate*, *condition*, etc.) may be added for additional 
+metadata and to group the experiments.
+
+## Case C: a single file with control values stacked with treated measurements
+In the most general case, the control cell counts are in the same file and 
+format as the treated cell counts. Control cell counts will be averaged (using 
+a 50%-trimmed mean) and automatically matched to the treated cell counts based 
+on the keys (columns in the data file). The control cell count values must 
+have a value of 0 for *concentration* and a value for *time* that matches the 
+treated measurements. The time 0 cell count values must have value of 0 for 
+*time*. If the structure of the data is complex, the provided scripts may 
+inappropriately match control and treated cell counts, so users instead should 
+format their data as described in case A. 
+
+An example input data frame for "Case C", named "inputCaseC", is contained 
+within the package.
+To access it, use the following code:
+ 
+```{r}
+data(inputCaseC)
+```
+
+**The mandatory inputs for "Case C" (long-format input) are:**
+
+- **inputData** - the name of an input data frame with the following columns 
+as well as other grouping columns
+    1. **cell_line** - name of the cell line used in the experiment
+    2. **treatment** - name of the treatment used in the experiment (use a dash "-" for untreated "control" measurements)
+    3. **concentration** - concentration value (not log-transformed) of the treatment - use 0 for untreated measurements - concentrations for other measurements must be positive numbers
+    4. **cell_count** - measure of cell number (or a surrogate of cell number)
+    5. **time** - time of cell number measurement - use 0 for measurements at the beginning of the assay. For measurements at the end of the assay, use the length of the assay after treatment, e.g. "72", for a typical 3-day (72 hour) assay.
+    
+    (Note: time-course calculations have not been implemented yet, all measurements must be at the time of treatment or at the end of the assay.)
+
+Other columns (e.g. *replicate*, *condition*, etc.) may be added for additional 
+metadata and to group the experiments.
+
+## Functions
+The package contains 3 visualization functions: **GRdrawDRC**, **GRscatter**, 
+and **GRbox**.
+
+All of these functions take in an object created by **GRfit** as well as 
+additional arguments. The results can be viewed in a static ggplot image or an 
+interactive plotly (turned on/off by the *plotly* parameter).
+
+- **GRdrawDRC**   this function draws the (growth-rate inhibition) 
+dose-response curve using the parameters calculated by the **GRfit** function. 
+If *points* is set to TRUE, then it will also plot the points used to fit each 
+curve.
+- **GRscatter**   this function draws a scatterplot of a given GR metric 
+(GR50, GRmax, etc.) with the *xaxis* value(s) plotted against the *yaxis* 
+value(s).
+- **GRbox**   this function draws boxplots of a given GR metric 
+(GR50, GRmax, etc.) for values of a given grouping variable. It overlays the 
+points used to make these boxplots and can color them according to another 
+grouping variable.
+
+The package also contains 4 accessor functions, which extract data from the 
+SummarizedExperiment object created by **GRfit**. These functions are: 
+**GRgetMetrics**, **GRgetDefs**, **GRgetValues**, and **GRgetGroupVars**.
+
+- **GRgetMetrics**  this function returns a table of GR metrics and 
+traditional metrics along with goodness of fit measures. It also identifies 
+each fit as flat or sigmoidal.
+- **GRgetDefs** this function returns a table containing the definition of 
+each GR metric, traditional metric, and goodness of fit measure calculated.
+- **GRgetValues** this function returns a table of the original data (in the 
+form of "Case A") with columns for GR values and relative cell counts.
+- **GRgetGroupVars**   this function returns a vector of the grouping 
+variables used to create the object. These are the variables in the dataset 
+that are not averaged over.
+
+# Examples
+
+Load example data (Case A)
+```{r}
+data(inputCaseA)
+```
+
+Calculate GR values and solve for GR metrics parameters (i.e. fit curves)
+
+```{r include=FALSE}
+drc_output = GRfit(inputCaseA, groupingVariables = c('cell_line','treatment'))
+```
+
+```{r eval=FALSE}
+drc_output = GRfit(inputCaseA, groupingVariables = c('cell_line','treatment'))
+```
+See overview of output data (SummarizedExperiment object)
+
+```{r}
+drc_output
+```
+
+Review output table of GR metrics parameters
+
+```{r}
+drc_output %>% GRgetMetrics() %>% head()
+```
+
+View descriptions of each GR metric (or goodness of fit measure)
+
+```{r}
+drc_output %>% GRgetDefs() %>% head()
+```
+
+Review output table of GR values
+
+```{r}
+drc_output %>% GRgetValues() %>% head()
+```
+
+View grouping variables used for calculation
+
+```{r}
+GRgetGroupVars(drc_output)
+```
+
+You can also export your results. Here are two examples:
+```{r eval=FALSE}
+# Write GR metrics parameter table to tab-separated text file
+write.table(GRgetMetrics(drc_output), file = "filename.tsv", quote = FALSE,
+sep = "\t", row.names = FALSE)
+# Write original data plus GR values to comma-separated file
+write.table(GRgetValues(drc_output), file = "filename.csv", quote = FALSE,
+sep = ",", row.names = FALSE)
+```
+
+# Visualizations
+You can draw GR dose-response curves as an interactive plot (via the plotly package) or a static plot (via the ggplot2 package). By default, an interactive plot is displayed, but you can make a static plot by using "plotly = FALSE". You can also specify the range of the graph with the "min" and "max" parameters.
+```{r}
+# Draw dose-response curves
+GRdrawDRC(drc_output)
+GRdrawDRC(drc_output, experiments = c('BT20 drugA', 'MCF10A drugA', 
+                                      'MCF7 drugA'))
+GRdrawDRC(drc_output, experiments = c('BT20 drugA', 'MCF10A drugA', 
+                                      'MCF7 drugA'), 
+          min = 10^(-4), max = 10^2)
+GRdrawDRC(drc_output, plotly = FALSE)
+```
+
+You can also draw scatterplots and boxplots of GR metrics with plotly or ggplot2. 
+Here is an example using example data in the format of Case C.
+
+```{r include=FALSE}
+output1 = GRfit(inputData = inputCaseC, groupingVariables = c('cell_line','treatment'), case = "C")
+```
+
+```{r eval=FALSE}
+output1 = GRfit(inputData = inputCaseC, groupingVariables = c('cell_line','treatment'), case = "C")
+```
+
+```{r}
+# Draw scatterplots
+GRscatter(output1, 'GR50', 'treatment', c('drugA','drugD'), 'drugB')
+GRscatter(output1, 'GR50', 'treatment', c('drugA','drugD'), 'drugB', 
+          plotly = FALSE)
+
+# Draw boxplots
+GRbox(output1, metric ='GRinf', groupVariable = 'cell_line', 
+      pointColor = 'treatment')
+GRbox(output1, metric ='GRinf', groupVariable = 'cell_line', 
+      pointColor = 'treatment',
+      factors = c('BT20', 'MCF10A'))
+GRbox(output1, metric ='GRinf', groupVariable = 'cell_line', 
+      pointColor = 'treatment',
+      factors = c('BT20', 'MCF10A'), plotly = FALSE)
+GRbox(output1, metric ='GR50', groupVariable = 'cell_line', 
+      pointColor = 'treatment', wilA = 'BT20', wilB = c('MCF7', 'MCF10A'),
+      plotly = FALSE)
+
+```
+
+# GR metric details
+We have developed scripts to calculate normalized growth rate inhibition (GR) 
+values and corresponding metrics (GR50, GRmax, ...) based on cell counts 
+measured in dose-response experiments. Users provide a tab-separated data file 
+in which each row represents a separate treatment condition and the columns 
+specify the keys that define the treatment condition (e.g. cell line, drug or 
+other perturbagen, perturbagen concentration, treatment time, replicate) and 
+the measured cell counts (or surrogate). The experimentally measured cell 
+counts that are required for GR metric calculation are as follows: 
+- measured cell counts after perturbagen treatment (*cell_count*, *x(c)*)
+- measured cell counts of control (e.g. untreated or DMSO-treated) wells on 
+the same plate (*cell_count\_\_ctrl*, *x_ctrl*)
+- measured cell counts from an untreated sample grown in parallel until the 
+time of treatment (*cell_count\_\_time0*, *x_0*)
+
+The provided GR scripts compute over the user’s data to calculate GR values 
+individually for each treatment condition (cell line, time, drug, 
+concentration, ...) using the formula:
+
+    GR(c) = 2 ^ ( log2(x(c)/x_0) / log2(x_ctrl/x_0) ) - 1
+
+Based on a set of GR values across a range of concentrations, the data are 
+fitted with a sigmoidal curve:
+
+    GR(c) = GRinf + (1-GRinf)/(1 + (c/(GEC50))^Hill )
+
+The following GR metrics are calculated:
+
+- **GR50**, the concentration at which the effect reaches a GR value of 0.5 
+based on interpolation of the fitted curve.
+
+- **GRmax**, the effect at the highest tested concentration. Note that 
+*GRmax* can differ from *GRinf* if the dose-response does not reach its 
+plateau value. For robustness, we take this as the minimum mean GR value at 
+the two highest concentrations.
+
+- **GR_AOC**, the area over the dose-response curve, which is the integral of 
+*1-GR(c)* over the range of concentrations tested, normalized by the range of 
+concentration. 
+
+- **GEC50**, the drug concentration at half-maximal effect, which reflects the 
+potency of the drug.
+
+- **GRinf**, GR(c->inf), which reflects asymptotic drug efficacy. 
+
+- **h_GR**, The Hill coefficient of the fitted (GR) curve, which reflects how steep the dose response curve is
+
+- **r2_GR**, The coefficient of determination - essentially how well the (GR) curve fits to the data points
+
+- **pval_GR**, The p-value of the F-test comparing the fit of the (GR) curve to a horizontal line fit
+
+- **flat_fit_GR**, For data that doesn't significantly fit better to a curve than a horizontal line fit (p > 0.05), the y value (GR) of the flat line
+
+The following traditional metrics are calculated:
+
+- **IC50**, The concentration at which relative cell count = 0.5
+
+- **Emax**, The maximal effect of the drug (minimal relative cell count value). 
+For robustness, we take this as the minimum mean relative cell count at the 
+two highest concentrations.
+
+- **AUC**, The 'Area Under the Curve' - The area below the fitted (traditional) dose response curve
+
+- **EC50**, The concentration at half-maximal effect (not growth rate normalized)
+
+- **Einf**, The asymptotic effect of the drug (not growth rate normalized)
+
+- **h**, The Hill coefficient of the fitted (traditional) dose response curve, which - reflects how steep the dose response curve is
+
+- **r2_rel_cell**, The coefficient of determination - essentially how well the (traditional) curve fits to the data points
+
+- **pval_rel_cell**, The p-value of the F-test comparing the fit of the (traditional) curve to a horizontal line fit
+
+- **flat_fit_rel_cell**, For data that doesn't significantly fit better to a curve than a horizontal line fit (p > 0.05), the y value (relative cell count) of the flat line
+
+In addition to the metrics, the scripts report the r-squared of the fit and
+evaluate the significance of the sigmoidal fit based on an F-test. If the fit 
+is not significant (p > 0.05), the sigmoidal fit is replaced 
+by a constant value (flat fit). This can be circumvented by using the "force" 
+option in the *GRfit* function. Additional information and considerations 
+are described in the supplemental material of the manuscript referred above.
+
+ 

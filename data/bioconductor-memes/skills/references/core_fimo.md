@@ -1,0 +1,179 @@
+# Motif Scanning using FIMO
+
+# See package website for full vignette
+
+The Bioconductor build system does not have the MEME Suite installed, therefore these vignettes will not contain any R output. To view the full vignette, visit this article page on the memes website [at this link](https://snystrom.github.io/memes-manual/articles/core_fimo.html)
+
+```
+suppressPackageStartupMessages(library(GenomicRanges))
+suppressPackageStartupMessages(library(magrittr))
+suppressPackageStartupMessages(library(universalmotif))
+library(memes)
+```
+
+## Inputs
+
+FIMO searches input sequences for occurrances of a motif. `runFimo()` has two required inputs: fasta-format sequences, with optional genomic coordinate headers, and a set of motifs to detect within the input sequences.
+
+### Sequence Inputs:
+
+Sequence input to `runFimo()` can be as a path to a .fasta formatted file, or as a `Biostrings::XStringSet` object. Unlike other memes functions, `runFimo()` **does not** accept a `Biostrings::BStringSetList` as input. This is to simplify ranged join operations (see [joins](#joins)) on output data.
+
+By default, `runFimo()` will parse genomic coordinates from sequence entries from the fasta headers. These are generated automatically if using `get_sequences()` to generate sequences for input from a `GRanges` object.
+
+```
+data("example_chip_summits", package = "memes")
+
+dm.genome <- BSgenome.Dmelanogaster.UCSC.dm3::BSgenome.Dmelanogaster.UCSC.dm3
+
+# Take 100bp windows around ChIP-seq summits
+summit_flank <- example_chip_summits %>%
+  plyranges::anchor_center() %>%
+  plyranges::mutate(width = 100)
+
+# Get sequences in peaks as Biostring::BStringSet
+sequences <- summit_flank %>%
+  get_sequence(dm.genome)
+
+# get_sequence includes genomic coordinate as the fasta header name
+names(sequences)[1:2]
+```
+
+### Motif Inputs:
+
+Motif input to `runFimo()` can be as a path to a .meme formatted file, a list of `universalmotif` objects, or a singular `universalmotif` object. `runFimo()` will not use any of the default search path behavior for a motif database as in `runAme()` or `runTomTom()`.
+
+```
+e93_motif <- MotifDb::MotifDb %>%
+  # Query the database for the E93 motif using it's gene name
+  MotifDb::query("Eip93F") %>%
+  # Convert from motifdb format to universalmotif format
+  universalmotif::convert_motifs() %>%
+  # The result is a list, to simplify the object, return it as a single universalmotif
+  .[[1]]
+
+# Rename the motif from it's flybase gene number to a more user-friendly name
+e93_motif["name"] <- "E93_FlyFactor"
+```
+
+## Note about default settings
+
+`runFimo()` is configured to use different default behavior relative to the commandline and MEME-Suite Server versions. By default, `runFimo()` runs using `text` mode, which greatly increases speed and allows returning all detected matches to the input motifs. By default `runFimo()` will add the sequence of the matched region to the output data; however, this operation can be very slow for large sets of regions and can drastically increase the size of the output data. To speed up the operation and decrease data size, set `skip_matched_sequence = TRUE`. Sequence information can be added back later using `add_sequence()`.
+
+```
+fimo_results <- runFimo(sequences, e93_motif)
+```
+
+## Data integration with join operations
+
+The `plyranges` package provides an extended framework for performing range-based operations in R. While several of its utilities are useful for range-based analyses, the `join_` functions are particularly useful for integrating FIMO results with input peak information. A few common examples are briefly highlighted below:
+
+`plyranges::join_overlap_left()` can be used to add peak-level metadata to motif position information:
+
+```
+fimo_results_with_peak_info <- fimo_results %>%
+  plyranges::join_overlap_left(summit_flank)
+
+fimo_results_with_peak_info[1:5]
+```
+
+`plyranges::intersect_()` can be used to simultaneously subset input peaks to the ranges overlapping motif hits while appending motif-level metadata to each overlap.
+
+```
+input_intersect_hits <- summit_flank %>%
+  plyranges::join_overlap_intersect(fimo_results)
+
+input_intersect_hits[1:5]
+```
+
+## Identifying matched sequence
+
+When setting `skip_match_sequence = TRUE`, FIMO does not automatically return the matched sequence within each hit. These sequences can be easily recovered in R using `add_sequence()` on the FIMO results `GRanges` object.
+
+```
+fimo_results_with_seq <- fimo_results %>%
+  plyranges::join_overlap_left(summit_flank) %>%
+  add_sequence(dm.genome)
+```
+
+Returning the sequence of the matched regions can be used to re-derive PWMs from different match categories as follows (here done for different binding categories):
+
+```
+motifs_by_binding <- fimo_results_with_seq %>%
+  # Split on parameter of interest
+  split(mcols(.)$peak_binding_description) %>%
+  # Convert GRangesList to regular list() to use `purrr`
+  as.list() %>%
+  # imap passes the list entry as .x and the name of that object to .y
+  purrr::imap(~{
+    # Pass the sequence column to create_motif to generate a PCM
+    create_motif(.x$sequence,
+                 # Append the binding description to the motif name
+                 name = paste0("E93_", .y))
+    })
+```
+
+Motifs from each category can be visualized with `universalmotif::view_motifs()`
+
+```
+motifs_by_binding %>%
+  view_motifs()
+```
+
+To allow better comparison to the reference motif, we can append it to the list as follows:
+
+```
+motifs_by_binding <- c(
+  # Add the E93 FlyFactor motif to the list as a reference
+  list("E93_FlyFactor" = e93_motif),
+  motifs_by_binding
+)
+```
+
+Visualizing the motifs as ICMs reveals subtle differences in E93 motif sequence between each category.
+
+```
+motifs_by_binding %>%
+  view_motifs()
+```
+
+Visualizing the results as a position-probability matrix (PPM) does a better job of demonstrating that the primary differences between each category are coming from positions 1-4 in the matched sequences.
+
+```
+motifs_by_binding %>%
+  view_motifs(use.type = "PPM")
+```
+
+Finally, the sequence-level information can be used to visualize all sequences and their contribution to the final PWM using `plot_sequence_heatmap`.
+
+```
+plot_sequence_heatmap(fimo_results_with_seq$sequence)
+```
+
+## Importing Data from previous FIMO Runs
+
+`importFimo()` can be used to import an `fimo.tsv` file from a previous run on the MEME server or on the commandline. Details for how to save data from the FIMO webserver are below.
+
+### Saving data from FIMO Web Server
+
+To download TSV data from the FIMO Server, right-click the FIMO TSV output link and “Save Target As” or “Save Link As” (see example image below), and save as `<filename>.tsv`. This file can be read using `importFimo()`.
+
+![](data:image/png;base64...)
+
+# Citation
+
+memes is a wrapper for a select few tools from the MEME Suite, which were developed by another group. In addition to citing memes, please cite the MEME Suite tools corresponding to the tools you use.
+
+If you use `runFimo()` in your analysis, please cite:
+
+Charles E. Grant, Timothy L. Bailey, and William Stafford Noble, “FIMO: Scanning for occurrences of a given motif”, Bioinformatics, 27(7):1017-1018, 2011. [full text](http://bioinformatics.oxfordjournals.org/content/early/2011/02/16/bioinformatics.btr064.full)
+
+## Licensing Restrictions
+
+The MEME Suite is free for non-profit use, but for-profit users should purchase a license. See the [MEME Suite Copyright Page](http://meme-suite.org/doc/copyright.html) for details.
+
+# Session Info
+
+```
+sessionInfo()
+```

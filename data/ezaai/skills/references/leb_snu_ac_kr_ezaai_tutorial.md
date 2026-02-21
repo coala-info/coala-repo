@@ -1,0 +1,1 @@
+EzAAI - Moved ️You are at the old page EzAAI has moved to a new website with updated resources: https://endixk.github.io/ezaai Go to the new EzAAI website You will be redirected in 20 seconds. EzAAI Home Tutorial Download GitHub Data Cite us &copy; Laboratory of Evolutionary Bioinformatics , Seoul National University. 2021-

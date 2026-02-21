@@ -1,0 +1,901 @@
+# Introduction to the AnVIL package
+
+Nitesh Turaga1, Vincent Carey, BJ Stubbs, Marcel Ramos and Martin Morgan1\*
+
+1Roswell Park Comprehensive Cancer Center
+
+\*Martin.Morgan@RoswellPark.org
+
+#### 5 February 2026
+
+#### Abstract
+
+The AnVIL is cloud computing resource developed in part by the
+National Human Genome Research Institute. The AnVIL package provides
+end-user and developer functionality. For the end-user, AnVIL
+provides fast binary package installation, utilities for working
+with Terra / AnVIL table and data resources, and convenient
+functions for file movement to and from Google cloud storage. For
+developers, AnVIL provides programmatic access to the Terra,
+Leonardo, Rawls, and Dockstore RESTful programming interface,
+including helper functions to transform JSON responses to more
+formats more amenable to manipulation in *R*.
+
+#### Package
+
+AnVIL 1.22.5
+
+# Contents
+
+* [1 Installation](#installation)
+* [2 Quick start](#quick-start)
+  + [2.1 Up to speed with *AnVIL*](#up-to-speed-with-anvil)
+  + [2.2 Use in the AnVIL cloud](#use-in-the-anvil-cloud)
+  + [2.3 Local use](#local-use)
+  + [2.4 Graphical interfaces](#graphical-interfaces)
+* [3 For end users](#for-end-users)
+  + [3.1 Fast binary package installation](#fast-binary-package-installation)
+  + [3.2 Working with Google cloud-based resources](#working-with-google-cloud-based-resources)
+    - [Using `gcloud_*()` for account management](#using-gcloud_-for-account-management)
+    - [Using `gsutil_*()` for file and bucket management](#using-gsutil_-for-file-and-bucket-management)
+  + [3.3 Using `av*()` to work with AnVIL tables and data](#using-av-to-work-with-anvil-tables-and-data)
+    - [Tables, reference data, and persistent files](#tables-reference-data-and-persistent-files)
+    - [Using `avtable*()` for accessing tables](#using-avtable-for-accessing-tables)
+    - [Using `avdata()` for accessing Workspace Data](#using-avdata-for-accessing-workspace-data)
+    - [Using `avbucket()` and workspace files](#using-avbucket-and-workspace-files)
+  + [3.4 Using `avnotebooks*()` for notebook management](#using-avnotebooks-for-notebook-management)
+  + [3.5 Using `avworkflows_*()` for workflows](#using-avworkflows_-for-workflows)
+  + [3.6 Using `avworkspace_*()` for workspaces](#using-avworkspace_-for-workspaces)
+  + [3.7 Using `drs_*()` for resolving DRS (Data Repository Service) URIs](#using-drs_-for-resolving-drs-data-repository-service-uris)
+* [4 For developers](#for-developers)
+  + [4.1 Set-up](#set-up)
+  + [4.2 Service APIs](#service-apis)
+    - [Construction](#construction)
+    - [Invoke endpoints](#invoke-endpoints)
+    - [Process responses](#process-responses)
+    - [Test endpoints](#test-endpoints)
+  + [4.3 Service implementations](#service-implementations)
+  + [4.4 Extending the `Service` class to implement your own RESTful interface](#extending-the-service-class-to-implement-your-own-restful-interface)
+* [5 Support, bug reports, and source code availability](#support-bug-reports-and-source-code-availability)
+* [Appendix](#appendix)
+  + [Acknowledgments](#acknowledgments)
+  + [Session info](#session-info)
+
+# 1 Installation
+
+Install the *AnVIL* package with
+
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager", repos = "https://cran.r-project.org")
+BiocManager::install("AnVIL")
+```
+
+Once installed, load the package with
+
+```
+library(AnVILGCP)
+library(AnVIL)
+```
+
+# 2 Quick start
+
+## 2.1 Up to speed with *AnVIL*
+
+The [AnVIL project](https://anvilproject.org/) is an analysis, visualization, and informatics
+cloud-based space for data access, sharing and computing across large
+genomic-related data sets.
+
+The *AnVIL* project supports use of *R* through Jupyter notebooks and
+*RStudio*. Support for *RStudio* is preliminary as of April 2020.
+
+This package provides access to *AnVIL* resources from within the
+*AnVIL* cloud, and also from stand-alone computing resources such as a
+user’s laptop.
+
+Use of this package requires AnVIL and Google cloud computing billing
+accounts. Consult [AnVIL training guides](https://anvilproject.org/training/guides) for details on
+establishing these accounts.
+
+The remainder of this vignette assumes that an AnVIL account has been
+established and successfully linked to a Google cloud computing
+billing account.
+
+## 2.2 Use in the AnVIL cloud
+
+In the AnVIL cloud environment, clone or create a new workspace. Click
+on the `Cloud Environment` button at the top right of the
+screen. Choose the `R / Bioconductor` runtime to use in a Jupyter
+notebook, or `RStudio` to use in RStudio. When creating a Jupyter
+notebook, choose `R` as the engine.
+
+A new layout is being introduced in Fall of 2022. If the workspace has
+an ‘Analyses’ tab, navigate to it and look for the ‘Environment
+Configuration’ button to the right of the screen. For a Jupyter
+notebook-based environment, select `jupyter` ‘Environment Settings’
+followed by `Customize` and the `R / Bioconductor` application
+configuration. *RStudio* is available by clicking on the `RStudio / Bioconductor` ‘Environment Settings’ button.
+
+For tasks more complicated than manipulation and visualization of
+tabular data (e.g., performing steps of a single-cell work flow) the
+default Jupyter notebook configuration of 1 CPU and 3.75 GB of memory
+will be insufficient; the RStudio image defaults to 4 CPU and 15 GB of
+memory
+
+## 2.3 Local use
+
+Local use requires that the gcloud SDK is installed, and that the
+billing account used by AnVIL can be authenticated with the
+user. These requirements are satisfied when using the AnVIL compute
+cloud. For local use, one must
+
+* [Install](https://cloud.google.com/sdk/install) the gcloud sdk (for Linux and Windows,
+  `cloudml::gcloud_install()` provides an alternative way to install
+  gcloud).
+* Define an environment variable or `option()` named `GCLOUD_SDK_PATH`
+  pointing to the root of the SDK installation, e.g,
+
+  ```
+  dir(file.path(Sys.getenv("GCLOUD_SDK_PATH"), "bin"), "^(gcloud|gsutil)$")
+  ## [1] "gcloud" "gsutil"
+  ```
+
+  Test the installation with `gcloud_exists()`
+
+  ```
+  ## the code chunks in this vignette are fully evaluated when
+  ## gcloud_exists() returns TRUE
+  GCPtools::gcloud_exists()
+  ## [1] FALSE
+  ```
+
+## 2.4 Graphical interfaces
+
+Several commonly used functions have an additional ‘gadget’ interface,
+allowing selection of workspaces (`avworkspace_gadget()`, DATA tables
+(`avtable_gadget()`) and workflows `avworkflow_gadget()` using a
+simple tabular graphical user interface. The `browse_workspace()`
+function allows selection of a workspace to be opened as a browser
+tab.
+
+# 3 For end users
+
+## 3.1 Fast binary package installation
+
+The AnVIL cloud compute environment makes use of Docker containers
+with defined installations of binary system software. Bioconductor
+has arranged to build ‘binary’ *R* packages that work out of the
+box with the `BiocManager::install()` function. Binary packages
+(when available and current) install without requiring compilation,
+and are faster to install than packages built from source.
+
+```
+BiocManager::install("GenomicFeatures")
+```
+
+Thus `BiocManager::install()` can be used as an improved method for
+installing *CRAN* and *Bioconductor* binary and source packages.
+
+Because package installation is fast, it can be convenient to install
+packages into libraries on a project-specific basis, e.g., to create a
+‘snapshot’ of packages for reproducible analysis. Use
+
+```
+add_libpaths("~/my/project")
+```
+
+as a convenient way to prepend a project-specific library path to
+`.libPaths()`. New packages will be installed into this library.
+
+## 3.2 Working with Google cloud-based resources
+
+The AnVIL package implements functions to facilitate access to Google
+cloud resources.
+
+### Using `gcloud_*()` for account management
+
+The `gcloud_*()` family of functions provide access to Google cloud
+functions implemented by the `gcloud` binary. `gcloud_project()`
+returns the current billing account.
+
+```
+gcloud_account() # authentication account
+gcloud_project() # billing project information
+```
+
+A convenient way to access *any* `gcloud` SDK command is to use
+`gcloud_cmd()`, e.g.,
+
+```
+gcloud_cmd("projects", "list") %>%
+    readr::read_table() %>%
+    filter(startsWith(PROJECT_ID, "anvil"))
+```
+
+This translates into the command line `gcloud projects list`. Help is
+also available within *R*, e.g.,
+
+```
+gcloud_help("projects")
+```
+
+Use `gcloud_help()` (with no arguments) for an overview of available
+commands.
+
+### Using `gsutil_*()` for file and bucket management
+
+The `gsutil_*()` family of functions provides an interface to google
+bucket manipulation. The following refers to publicly available 1000
+genomes data available in Google Cloud Storage.
+
+```
+src <- "gs://genomics-public-data/1000-genomes/"
+```
+
+`gsutil_ls()` lists bucket content; `gsutil_stat()` additional detail
+about fully-specified buckets.
+
+```
+gsutil_ls(src)
+
+other <- paste0(src, "other")
+gsutil_ls(other, recursive = TRUE)
+
+sample_info <- paste0(src, "other/sample_info/sample_info.csv")
+gsutil_stat(sample_info)
+```
+
+`gsutil_cp()` copies buckets from or to Google cloud storage; copying
+to cloud storage requires write permission, of course. One or both of
+the arguments can be cloud endpoints.
+
+```
+fl <- tempfile()
+gsutil_cp(sample_info, fl)
+
+csv <- readr::read_csv(fl, guess_max = 5000L, col_types = readr::cols())
+csv
+```
+
+`gsutil_pipe()` provides a streaming interface that does not require
+intermediate disk storage.
+
+```
+pipe <- gsutil_pipe(fl, "rb")
+readr::read_csv(pipe, guess_max = 5000L, col_types = readr::cols()) %>%
+    dplyr::select("Sample", "Family_ID", "Population", "Gender")
+```
+
+`gsutil_rsync()` synchronizes a local file hierarchy with a remote
+bucket. This can be a powerful operation when `delete = TRUE`
+(removing local or remote files), and has default option `dry = TRUE`
+to indicate the consequences of the sync.
+
+```
+destination <- tempfile()
+stopifnot(dir.create(destination))
+source <- paste0(src, "other/sample_info")
+
+## dry run
+gsutil_rsync(source, destination)
+
+gsutil_rsync(source, destination, dry = FALSE)
+dir(destination, recursive = TRUE)
+
+## nothing to synchronize
+gsutil_rsync(source, destination, dry = FALSE)
+
+## one file requires synchronization
+unlink(file.path(destination, "README"))
+gsutil_rsync(source, destination, dry = FALSE)
+```
+
+`localize()` and `delocalize()` provide ‘one-way’
+synchronization. `localize()` moves the content of the `gs://`
+`source` to the local file system. `localize()` could be used at the
+start of an analysis to retrieve data stored in the google cloud to
+the local compute instance. `delocalize()` performs the complementary
+operation, copying local files to a `gs://` destination. The `unlink = TRUE` option to `delocalize()` unlinks local `source` files
+recursively. It could be used at the end of an analysis to move
+results to the cloud for long-term persistent storage.
+
+## 3.3 Using `av*()` to work with AnVIL tables and data
+
+### Tables, reference data, and persistent files
+
+AnVIL organizes data and analysis environments into
+‘workspaces’. AnVIL-provided data resources in a workspace are managed
+under the ‘DATA’ tab as ‘TABLES’, ‘REFERENCE DATA’, and ‘OTHER DATA’;
+the latter includes ‘’Workspace Data’ and ‘Files’, with ‘Files’
+corresponding to a google cloud bucket associated with the
+workspace. These components of the graphical user interface are
+illustrated in the figure below.
+
+The AnVIL package provides programmatic tools to access different
+components of the data workspace, as summarized in the following
+table.
+
+| Workspace | AnVIL function |
+| --- | --- |
+| TABLES | `avtables()` |
+| REFERENCE DATA | None |
+| OTHER DATA | `avbucket()` |
+| Workspace Data | `avdata()` |
+| Files | `avfiles_ls()`, `avfiles_backup()`, `avfiles_restore()` |
+
+Data tables in a workspace are available by specifying the `namespace`
+(billing account) and `name` (workspace name) of the workspace. When
+on the AnVIL in a Jupyter notebook or RStudio, this information can be
+discovered with
+
+```
+avworkspace_namespace()
+avworkspace_name()
+```
+
+It is also possible to specify, when not in the AnVIL compute
+environment, the data resource to work with.
+
+```
+## N.B.: IT MAY NOT BE NECESSARY TO SET THESE WHEN ON ANVIL
+avworkspace_namespace("pathogen-genomic-surveillance")
+avworkspace_name("COVID-19")
+```
+
+### Using `avtable*()` for accessing tables
+
+Accessing data tables use the `av*()` functions. Use `avtables()` to
+discover available tables, and `avtable()` to retrieve a particular
+table
+
+```
+avtables()
+sample <- avtable("sample")
+sample
+```
+
+The data in the table can then be manipulated using standard *R*
+commands, e.g., to identify SRA samples for which a final assembly
+fasta file is available.
+
+```
+sample %>%
+    select("sample_id", contains("fasta")) %>%
+    filter(!is.na(final_assembly_fasta))
+```
+
+Users can easily add tables to their own workspace using
+`avtable_import()`, perhaps as the final stage of a pipe
+
+```
+my_cars <-
+    mtcars |>
+    as_tibble(rownames = "model") |>
+    mutate(model = gsub(" ", "_", model))
+job_status <- avtable_import(my_cars)
+```
+
+Tables are imported ‘asynchronously’, and large tables (more than 1.5
+million elements; see the `pageSize` argument) are uploaded in
+pages. The `job status` is a tibble summarizing each page; the status
+of the upload can be checked with
+
+```
+avtable_import_status(job_status)
+```
+
+The transcript of a session where page size is set intentionally small
+for illustration is
+
+```
+(job_status <- avtable_import(my_cars, pageSize = 10))
+## pageSize = 10 rows (4 pages)
+##   |===================================================================| 100%
+## # A tibble: 4 × 5
+##    page from_row to_row job_id                               status
+##   <int>    <int>  <int> <chr>                                <chr>
+## 1     1        1     10 a32e9706-f63c-49ed-9620-b214746b9392 Uploaded
+## 2     2       11     20 f2910ac2-0954-4fb9-b36c-970845a266b7 Uploaded
+## 3     3       21     30 e18adc5b-d26f-4a8a-a0d7-a232e17ac8d2 Uploaded
+## 4     4       31     32 d14efb89-e2dd-4937-b80a-169520b5f563 Uploaded
+(job_status <- avtable_import_status(job_status))
+## checking status of 4 avtable import jobs
+##   |===================================================================| 100%
+## # A tibble: 4 × 5
+##    page from_row to_row job_id                               status
+##   <int>    <int>  <int> <chr>                                <chr>
+## 1     1        1     10 a32e9706-f63c-49ed-9620-b214746b9392 Done
+## 2     2       11     20 f2910ac2-0954-4fb9-b36c-970845a266b7 Done
+## 3     3       21     30 e18adc5b-d26f-4a8a-a0d7-a232e17ac8d2 ReadyForUpsert
+## 4     4       31     32 d14efb89-e2dd-4937-b80a-169520b5f563 ReadyForUpsert
+(job_status <- avtable_import_status(job_status))
+## checking status of 4 avtable import jobs
+##   |===================================================================| 100%
+## # A tibble: 4 × 5
+##    page from_row to_row job_id                               status
+##   <int>    <int>  <int> <chr>                                <chr>
+## 1     1        1     10 a32e9706-f63c-49ed-9620-b214746b9392 Done
+## 2     2       11     20 f2910ac2-0954-4fb9-b36c-970845a266b7 Done
+## 3     3       21     30 e18adc5b-d26f-4a8a-a0d7-a232e17ac8d2 Done
+## 4     4       31     32 d14efb89-e2dd-4937-b80a-169520b5f563 Done
+```
+
+The Terra data model allows for tables that represent samples of other
+tables. The following create or add rows to `participant_set` and
+`sample_set` tables. Each row represents a sample from the
+corresponding ‘origin’ table.
+
+```
+## editable copy of '1000G-high-coverage-2019' workspace
+avworkspace("anvil-datastorage/1000G-high-coverage-2019")
+sample <-
+    avtable("sample") %>%                               # existing table
+    mutate(set = sample(head(LETTERS), nrow(.), TRUE))  # arbitrary groups
+sample %>%                                   # new 'participant_set' table
+    avtable_import_set("participant", "set", "participant")
+sample %>%                                   # new 'sample_set' table
+    avtable_import_set("sample", "set", "name")
+```
+
+The `TABLES` data in a workspace are usually provided as curated
+results from AnVIL. Nonetheless, it can sometimes be useful to delete
+individual rows from a table. Use `avtable_delete_values()`.
+
+### Using `avdata()` for accessing Workspace Data
+
+The ‘Workspace Data’ is accessible through `avdata()` (the example
+below shows that some additional parsing may be necessary).
+
+```
+avdata()
+```
+
+### Using `avbucket()` and workspace files
+
+Each workspace is associated with a google bucket, with the content
+summarized in the ‘Files’ portion of the workspace. The location of
+the files is
+
+```
+bucket <- avbucket()
+bucket
+```
+
+The content of the bucket can be viewed with
+
+```
+avfiles_ls()
+```
+
+If the workspace is owned by the user, then persistent data can be
+written to the bucket.
+
+```
+## requires workspace ownership
+uri <- avbucket()                             # discover bucket
+bucket <- file.path(uri, "mtcars.tab")
+write.table(mtcars, gsutil_pipe(bucket, "w")) # write to bucket
+```
+
+A particularly convenient operation is to back up files or directories
+from the compute node to the bucket
+
+```
+## backup all files and folders in the current working directory
+avfiles_backup(getwd(), recursive = TRUE)
+
+## backup all files in the current directory
+avfiles_backup(dir())
+
+## backup all files to gs://<avbucket()>/scratch/
+avfiles_backup(dir, paste0(avbucket(), "/scratch"))
+```
+
+Note that the backup operations have file naming behavior like the
+Linux `cp` command; details are described in the help page
+`gsutil_help("cp")`.
+
+Use `avfiles_restore()` to restore files or directories from the
+workspace bucket to the compute node.
+
+## 3.4 Using `avnotebooks*()` for notebook management
+
+Python (`.ipynb`) or R (`.Rmd`) notebooks are associated with
+individual workspaces under the DATA tab, `Files/notebooks`
+location.
+
+Jupyter notebooks are exposed through the Terra interface under the
+NOTEBOOKS tab, and are automatically synchronized between the
+workspace and the current runtime.
+
+R markdown documents may also be associated with the workspace (under
+DATA `Files/notebooks`) but are not automatically synchronized with
+the current runtime. The functions in this section help manage R
+markdown documents.
+
+Available notebooks in the workspace are listed with
+`avnotebooks()`. Copies of the notebooks on the current runtime are
+listed with `avnotebooks(local = TRUE)`. The default location of the
+notebooks is `~/<avworkspace_name()>/notebooks/`.
+
+Use `avnotebooks_localize()` to synchronize the version of the
+notebooks in the workspace to the current runtime. This operation
+might be used when a new runtime is created, and one wishes to start
+with the notebooks found in the workspace. If a newer version of the
+notebook exists in the workspace, this will overwrite the older
+version on the runtime, potentially causing data loss. For this
+reason, `avnotebooks_localize()` by default reports the actions that
+will be performed, without actually performing them. Use
+`avnotebooks_localize(dry = FALSE)` to perform the localization.
+
+Use `avnotebooks_delocalize()` to synchronize local versions of the
+notebooks on the current runtime to the workspace. This operation
+might be used when developing a workspace, and wishing to update the
+definitive notebook in the workspace. When `dry = FALSE`, this
+operation also overwrites older workspace notebook files with their
+runtime version.
+
+## 3.5 Using `avworkflows_*()` for workflows
+
+See the vignette “Running an AnVIL workflow within R”, in this
+package, for details on running workflows and managing output.
+
+## 3.6 Using `avworkspace_*()` for workspaces
+
+`avworkspace()` is used to define or return the ‘namespace’ (billing
+project) and ‘name’ of the workspace on which operations are to
+act. `avworkspace_namespace()` and `avworkspace_name()` can be used to
+set individual elements of the workspace.
+
+`avworkspace_clone()` clones a workspace to a new location. The clone
+includes the ‘DATA’, ‘NOTEBOOK’, and ‘WORKFLOWS’ elements of the
+workspace.
+
+## 3.7 Using `drs_*()` for resolving DRS (Data Repository Service) URIs
+
+The Data Repository Service (DRS) is a GA4GH standard that separates a
+resource location (e.g., google bucket of a VCF file) from the URI
+that identifies the resource. A URI with the form `drs://...` is submitted to
+the Terra / AnVIL DRS, and translated to bucket (e.g., `gs://...`) or
+`https://...` URIs. One use case for DRS is when the location (e.g.,
+google bucket) of the resouce moves. In this case the DRS identifier
+does not change, so no changes are needed to code or data resources
+that referenced the object. A second use case is when access to a
+resource is restricted. The DRS URI in conjunction with appropriate
+credentials can then be translated to a ‘signed’ https URL that
+encodes authentication information, allowing standard software like a
+web browser, or R commands like `download.file()` or
+`VariantAnnotation::readVcf()` to access the resource. A Terra [support
+article](https://support.terra.bio/hc/en-us/articles/360039330211) provides more information, though not about DRS in R!
+
+The following DRS URIs identify a 1000 Genomes VCF file and it’s index
+
+```
+uri <- c(
+    vcf = "drs://dg.ANV0/6f633518-f2de-4460-aaa4-a27ee6138ab5",
+    tbi = "drs://dg.ANV0/4fb9e77f-c92a-4deb-ac90-db007dc633aa"
+)
+```
+
+Information about the URIs can be discovered with `drs_stat()`
+
+```
+tbl <- drs_stat(uri)
+## # A tibble: 2 × 9
+##   drs      fileName   size gsUri accessUrl timeUpdated hashes       bucket name
+##   <chr>    <chr>     <dbl> <chr> <chr>     <chr>       <list>       <chr>  <chr>
+## 1 drs://d… NA21144… 7.06e9 gs:/… NA        2020-07-08… <named list> fc-56… CCDG…
+## 2 drs://d… NA21144… 4.08e6 gs:/… NA        2020-07-08… <named list> fc-56… CCDG…
+```
+
+Column names indicate the information that is avaialable, e.g., the
+google object (`gsUri`) and size (`size`) of the object, and the
+object’s file name (`fileName`)
+
+`drs_cp()` provides a convient way to translate DRS URIs to `gs://`
+URIs, and to copy files from their cloud location to the local disk or
+another bucket, e.g.,
+
+```
+drs_cp(uri, "/tmp")     # local temporary directory
+drs_cp(uri, avbucket()) # workspace bucket
+```
+
+`drs_access_url()` translates the DRS URI to a standard HTTPS URI, but
+with additional authentication information embedded. These HTTPS URIs
+are usually time-limited. They can be used like regular HTTPS URIs, e.g,
+
+```
+suppressPackageStartupMessages({
+    library(VariantAnnotation)
+})
+https <- drs_access_url(uri)
+vcffile <- VcfFile(https[["vcf"]], https[["tbi"]])
+scanVcfHeader(vcffile)
+## class: VCFHeader
+## samples(1): NA21144
+## meta(3): fileformat reference contig
+## fixed(2): FILTER ALT
+## info(16): BaseQRankSum ClippingRankSum ... ReadPosRankSum VariantType
+## geno(11): GT AB ... PL SB
+
+variants <- readVcf(vcffile, param = GRanges("chr1:1-1000000"))
+nrow(variants)
+## [1] 123077
+```
+
+The buckets are both ‘requester pays’ (see
+`gsutil_requesterpays(uri)`), so these queries are billed to the
+current project.
+
+# 4 For developers
+
+## 4.1 Set-up
+
+## 4.2 Service APIs
+
+AnVIL applications are exposed to the developer through RESTful API
+services. Each service is represented in *R* as an object. The object
+is created by invoking a constructor, sometimes with arguments. We
+illustrate basic functionality with the `Terra()` service.
+
+Currently, APIs using the OpenAPI Specification (OAS) Version 2
+(formerly known as Swagger) are supported. AnVIL makes use of the
+[rapiclient](https://cran.r-project.org/package%3Drapiclient) codebase to provide a unified representation of the
+API protocol.
+
+### Construction
+
+Create an instance of the service. This consults a Swagger / OpenAPI
+schema corresponding to the service to create an object that knows
+about available endpoints. Terra / AnVIL project services usually have
+Swagger / OpenApi-generated documentation, e.g., for the [Terra
+service](https://api.firecloud.org).
+
+```
+terra <- Terra()
+```
+
+Printing the return object displays a brief summary of endpoints
+
+```
+terra
+```
+
+The schema for the service groups endpoints based on tag values,
+providing some level of organization when exploring the service. Tags
+display consists of endpoints (available as a tibble with
+`tags(terra)`).
+
+```
+terra %>% tags("Status")
+```
+
+### Invoke endpoints
+
+Access an endpoint with `$`; without parentheses `()` this generates a
+brief documentation string (derived from the schema
+specification. Including parentheses (and necessary arguments) invokes
+the endpoint.
+
+```
+terra$status
+terra$status()
+```
+
+Some arguments appear in the ‘body’ of a REST request. Provide these
+as a list specified with `.__body__ = list(...)`; use `args()` to
+discover whether arguments should be present in the body of the
+request. For instance,
+
+```
+args(terra$createBillingProjectFull)
+```
+
+shows that all arguments should be included in the `.__body__=`
+argument. A more complicated example is
+
+```
+args(terra$overwriteWorkspaceMethodConfig)
+```
+
+where the same argument name appears in both the URL and the
+body. Again, the specification of the body arguments should be in
+`.__body__ = list()`. As a convenience, arguments appearing *only* in
+the body can also be specified in the `...` argument of the reqeust.
+
+`operations()` and `schemas()` return a named list of endpoints, and
+of argument and return value schemas. `operations(terra)$XXX()` can be
+used an alternative to direct invocation `terra$XXX()`. `schemas()`
+can be used to construct function arguments with complex structure.
+
+`empty_object()` is a convenience function to construct an ‘empty’
+object (named list without content) required by some endpoints.
+
+### Process responses
+
+Endpoints return objects of class `response`, defined in the [httr](https://cran.r-project.org/package%3Dhttr) package
+
+```
+status <- terra$status()
+class(status)
+```
+
+Several convenience functions are available to help developers
+transform return values into representations that are more directly
+useful.
+
+`str()` is invoked for the side-effect of displaying the list-like
+structure of the response. Note that this is not the literal structure
+of the `response` object (use `utils::str(status)` for that), but
+rather the structure of the JSON response received from the service.
+
+```
+str(status)
+```
+
+`as.list()` returns the JSON response as a list, and `flatten()`
+attempts to transform the list into a tibble. `flatten()` is effective
+when the response is in fact a JSON row-wise representation of
+tibble-like data.
+
+```
+lst <- status %>% as.list()
+lengths(lst)
+lengths(lst$systems)
+str(lst$systems)
+```
+
+### Test endpoints
+
+Testing endpoints is challenging. Endpoints cannot be evaluated
+directly because they required credentialed access, and because remote
+calls involve considerable latency and sometimes
+bandwidth. Traditional ‘mocks’ are difficult to implement because of
+the auto-generated nature of endpoints from APIs. Simply checking for
+identical API YAML files (e.g., using md5sums) only indicates a change
+in the file without assessing whether the R code invoking the endpoint
+is the same (e.g., because arguments were added, removed, or renamed).
+
+The approach adopted here is to take a ‘snapshot’ of the current
+API. This is then compared to the updated API. Endpoints that are used
+in the code but that have been removed or have updated arguments are
+then manually checked for conformance to the updated API. Once
+endpoints are brought into line with the new API, the snapshot is
+updated to reflect the new API.
+
+Non-exported functions in the AnVIL package facilitate these steps. For
+instance, `AnVIL:::.api_test_write(Terra(), "Terra")` creates a
+snapshot of the current API. This is saved as
+`tests/testthat/api-Terra.rds`. The service is then updated (following
+the README of `inst/services/terra`) and the updated API compared to
+the original with `AnVIL::.api_test_check(Terra(), "Terra")`. The
+result is a list of functions that are common to both APIs, or added,
+removed, or updated (different arguments) in the new API. A static
+example is
+
+```
+> .api_test_check(Terra(), "Terra") |> lengths()
+        common          added        removed        updated  common_in_use
+           135             24              3             11              9
+removed_in_use updated_in_use
+             0              3
+```
+
+with the `removed_in_use` and `updated_in_use` endpoints
+
+```
+> .api_test_check(Terra(), "Terra")[c("removed_in_use", "updated_in_use")]
+$removed_in_use
+character(0)
+
+$updated_in_use
+[1] "cloneWorkspace"         "entityQuery"            "flexibleImportEntities"
+```
+
+requiring manual inspection. Manual inspection means that each use in
+the AnVIL R package code is examined and updated to match the new
+API. Once the R code is aligned with the new API, `.api_test_write()`
+is re-run. The commit consists of the updated API files in
+`inst/services`, updated R code, and the updated snapshot.
+
+Unit tests (in `test_api.R`) are implemented to fail when the
+`removed_in_use` or `updated_in_use` fields are not zero-length.
+
+## 4.3 Service implementations
+
+The AnVIL package implements and has made extensive use of the
+following services:
+
+* *Terra* (<https://api.firecloud.org/>; `Terra()`) provides access to
+  terra account and workspace management, and is meant as the primary
+  user-facing ‘orchestration’ API.
+
+* *Leonardo* (<https://leonardo.dev.anvilproject.org/>; `Leonardo()`)
+  implements an interface to the AnVIL container deployment service,
+  useful for management Jupyter notebook and RStudio sessions running
+  in the AnVIL compute cloud.
+* *Rawls* (<https://rawls.dsde-prod.broadinstitute.org>; `Rawls()`)
+  implements functionality that often overlaps with (and is delegated
+  to) the *Terra* interface; the *Rawls* interface implements
+  lower-level functionality, and some operations (e.g., populating a
+  DATA TABLE) are more difficult to accomplish with *Rawls*.
+
+The *Dockstore* service (<https://dockstore.org/swagger.json>,
+`Dockstore()`) is available but has received limited
+testing. *Dockstore* is used to run CWL- or WDL-based work flows,
+including workflows using *R* / *Bioconductor*. See the separate
+vignette ‘Dockstore and *Bioconductor* for AnVIL’ for initial
+documentation.
+
+## 4.4 Extending the `Service` class to implement your own RESTful interface
+
+The AnVIL package provides useful functionality for exposing other
+RESTful services represented in Swagger. To use this in other
+packages,
+
+* Add to the package DESCRIPTION file
+
+  ```
+  Imports: AnVIL
+  ```
+* Arrange (e.g., via roxygen2 `@importFrom`, etc.) for the NAMESPACE
+  file to contain
+
+  ```
+  importFrom AnVIL, Service
+  importMethodsFrom AnVIL, "$"   # pehaps also `tags()`, etc
+  importClassesFrom AnVIL, Service
+  ```
+* Implement your own class definition and constructor. Use `?Service`
+  to provide guidance on argument specification. For instance, to
+  re-implement the terra service.
+
+  ```
+  .MyService <- setClass("MyService", contains = "Service")
+
+  MyService <-
+      function()
+  {
+      .MyService(Service(
+          "myservice",
+          host = "api.firecloud.org",
+          api_url = "https://api.firecloud.org/api-docs.yaml",
+          authenticate = FALSE
+      ))
+  }
+  ```
+
+Use `api_reference_url` and `api_reference_md5sum` of `Service()` as a
+mechanism to provide some confidence that the service created by the
+user at runtime is consistent with the service intended by the
+developer.
+
+# 5 Support, bug reports, and source code availability
+
+For user support, please ask for help on the *Bioconductor* [support
+site](https://support.bioconductor.org). Remember to tag your question with ‘AnVIL’, so that the
+maintainer is notified. Ask for developer support on the
+[bioc-devel](https://stat.ethz.ch/mailman/listinfo/bioc-devel) mailing list.
+
+Please report bugs as ‘issues’ on [GitHub](https://github.com/Bioconductor/AnVIL).
+
+Retrieve the source code for this package from it’s canonical location.
+
+```
+git clone https://git.bioconductor.org/packages/AnVIL
+```
+
+The package source code is also available on [GitHub](https://github.com/Bioconductor/AnVIL)
+
+# Appendix
+
+## Acknowledgments
+
+Research reported in this software package was supported by the US
+National Human Genomics Research Institute of the National Institutes
+of Health under award number [U24HG010263](https://projectreporter.nih.gov/project_info_description.cfm?aid=9789931&icde=49694078). The content is solely
+the responsibility of the authors and does not necessarily represent
+the official views of the National Institutes of Health.
+
+## Session info

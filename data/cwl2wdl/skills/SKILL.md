@@ -1,0 +1,46 @@
+---
+name: cwl2wdl
+description: The `cwl2wdl` tool is a Python-based utility that facilitates the migration of workflows between the two most prominent workflow description standards in bioinformatics.
+homepage: https://github.com/adamstruck/cwl2wdl
+---
+
+# cwl2wdl
+
+## Overview
+
+The `cwl2wdl` tool is a Python-based utility that facilitates the migration of workflows between the two most prominent workflow description standards in bioinformatics. It parses CWL files and generates their WDL equivalents, handling complex structures such as task scattering, sub-workflows, and environment variable requirements. It is primarily used as a command-line utility to produce WDL code that can be further refined or executed in WDL-compatible engines like Cromwell.
+
+## Command Line Usage
+
+### Basic Conversion
+The primary way to use the tool is by passing a CWL file as the first argument. By default, the tool prints the resulting WDL to standard output.
+
+```bash
+cwl2wdl <cwl_file>
+```
+
+### Development Execution
+If running from the source repository or a development environment, use the development script:
+
+```bash
+python cwl2wdl_dev.py <cwl_file>
+```
+
+### Saving Output
+Since the tool outputs to `stdout`, use shell redirection to create a `.wdl` file:
+
+```bash
+cwl2wdl my_workflow.cwl > my_workflow.wdl
+```
+
+## Expert Tips and Best Practices
+
+- **Handle Reserved Words**: WDL has specific reserved keywords. While the tool includes internal checks to avoid conflicts, manually verify that input identifiers in your source files do not clash with WDL syntax.
+- **Requirement Support**: The tool supports `EnvVarRequirement` and `CommandLineBinding`. Ensure these are correctly defined in your source to see them reflected in the `runtime` or `task` sections of the generated WDL.
+- **Workflow Outputs**: The converter supports output definitions in workflows and nested sub-workflows. If outputs are missing in the generated WDL, verify that the source file explicitly defines them, as the tool relies on these definitions for the mapping.
+- **Scatter Logic**: The tool supports scattering for both individual tasks and sub-workflows. This is a critical feature for parallelizing bioinformatics steps.
+- **Validation**: Use the built-in validation and formatting options provided by the `argparse` implementation to ensure the source file is parsed correctly before attempting a full conversion.
+
+## Reference documentation
+- [Main Repository and Usage](./references/github_com_adamstruck_cwl2wdl.md)
+- [Feature History and Support Details](./references/github_com_adamstruck_cwl2wdl_commits_master.md)

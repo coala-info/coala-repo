@@ -1,0 +1,16 @@
+# bioconductor-scvir Bioconductor Package Report
+
+## scviR
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/scviR.html
+- **Package**: scviR
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: https://github.com/vjcitn/scviR
+- **Skill**: generated
+

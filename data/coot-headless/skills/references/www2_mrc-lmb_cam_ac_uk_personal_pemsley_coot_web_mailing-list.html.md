@@ -1,0 +1,1 @@
+There is a new and improved Coot email list now hosted by the JISCMail service: http://www.jiscmail.ac.uk/lists/coot.html Here are the official mailing list behavior guidelines.

@@ -1,0 +1,1 @@
+Branches · ncbipy / entrezpy · GitLab Branches Overview Active Stale All Stale branches dev a0825c39 &middot; Fix possible infinite loop during requests &middot; Apr 15, 2021 master default protected 94c06176 &middot; Merge branch 'david1995-master-patch-72959' into 'master' &middot; Jun 05, 2021

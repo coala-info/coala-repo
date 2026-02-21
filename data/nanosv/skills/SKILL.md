@@ -1,0 +1,59 @@
+---
+name: nanosv
+description: NanoSV is a structural variation (SV) caller designed specifically for the high error rates and unique alignment patterns of long-read sequencing data.
+homepage: https://github.com/mroosmalen/nanosv
+---
+
+# nanosv
+
+## Overview
+NanoSV is a structural variation (SV) caller designed specifically for the high error rates and unique alignment patterns of long-read sequencing data. It identifies breakpoint-junctions by analyzing split- and gapped-aligned reads, clustering them based on genomic position and orientation. While it supports various long-read technologies, it is most extensively validated on Oxford Nanopore (ONT) data for detecting deletions, insertions, inversions, and translocations.
+
+## Pre-processing and Mapping
+NanoSV requires a coordinate-sorted and indexed BAM file as input. The choice of mapper significantly impacts the quality of SV calls.
+
+### Recommended Mappers
+*   **LAST**: Recommended for the highest accuracy. It handles split-read alignments effectively but is computationally intensive.
+*   **Minimap2**: A faster alternative often used for ONT data.
+    ```bash
+    minimap2 -t 8 -a reference.fa reads.fastq | samtools view -bS - | samtools sort -o reads.sorted.bam
+    ```
+*   **BWA MEM**: Use the `-x ont2d` flag for Nanopore data.
+
+### LAST Alignment Workflow
+If using LAST, follow this specific sequence to ensure compatibility:
+1.  **Index**: `lastdb referencedb reference.fa`
+2.  **Train**: `last-train -Q1 referencedb reads_sample.fastq > my-params`
+3.  **Align & Pipe**:
+    ```bash
+    lastal -Q1 -p my-params referencedb reads.fastq | \
+    last-split | \
+    maf-convert -f reference.dict sam -r 'ID:sample_id PL:nanopore SM:sample' /dev/stdin | \
+    samtools view -h -b - | \
+    samtools sort -o reads.sorted.bam
+    ```
+
+## Execution Patterns
+The basic command structure for NanoSV is:
+```bash
+NanoSV -t 8 -o output.vcf reads.sorted.bam
+```
+
+### Key Arguments
+*   `-t, --threads`: Set based on available CPU cores (default is 4).
+*   `-b, --bed`: Provide a BED file for coverage depth calculations. For human data, the default is `human_hg19.bed`.
+*   `-c, --config`: Path to a custom `config.ini` to override default detection heuristics.
+*   `-s, --sambamba`: Path to the `sambamba` or `samtools` executable if not in your PATH.
+
+## Expert Tips and Best Practices
+*   **Parallelization by Chromosome**: For large genomes (e.g., Human), NanoSV can be slow. Speed up processing by splitting the BAM file by chromosome and running NanoSV instances in parallel.
+*   **BAM Indexing**: Ensure your BAM file is indexed (`samtools index reads.sorted.bam`) before running NanoSV, or the tool will fail to access the data.
+*   **Tuning Sensitivity**: Modify the `config.ini` file to adjust sensitivity:
+    *   `cluster_count`: Increase this (e.g., to 5 or 10) to reduce false positives in high-coverage data.
+    *   `min_mapq`: Increase (e.g., to 30) to ignore alignments in repetitive regions.
+    *   `max_split`: If a read has too many segments (default 10), it may be a low-quality alignment; lowering this can filter noise.
+*   **Depth Support**: Ensure `depth_support = True` is set in your config (default) to use coverage changes as orthogonal evidence for deletions and duplications.
+
+## Reference documentation
+- [NanoSV User Guide](./references/github_com_mroosmalen_nanosv.md)
+- [Bioconda NanoSV Overview](./references/anaconda_org_channels_bioconda_packages_nanosv_overview.md)

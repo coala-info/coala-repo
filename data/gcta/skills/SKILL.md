@@ -1,0 +1,42 @@
+---
+name: gcta
+description: GCTA is a comprehensive software package designed to analyze complex trait variation using large-scale GWAS data.
+homepage: https://cnsgenomics.com/software/gcta/
+---
+
+# gcta
+
+## Overview
+GCTA is a comprehensive software package designed to analyze complex trait variation using large-scale GWAS data. It allows researchers to estimate heritability, perform association studies, and investigate the genetic architecture of traits by accounting for the joint effects of all SNPs simultaneously rather than one at a time.
+
+## Common CLI Patterns
+
+### Genetic Relationship Matrix (GRM)
+The foundation of most GCTA analyses is the GRM, which estimates genetic relatedness between individuals.
+- **Calculate GRM**: `gcta64 --bfile input_data --make-grm --out output_prefix`
+- **Calculate GRM for specific chromosomes**: `gcta64 --bfile input_data --chr 1 --make-grm --out output_chr1`
+- **Sparse GRM (for large biobanks)**: `gcta64 --grm input_prefix --make-bfile --sparse-cutoff 0.05 --out sparse_grm`
+
+### Heritability Estimation (GREML)
+Estimate the proportion of variance explained by SNPs (h2-SNP).
+- **Basic GREML**: `gcta64 --grm input_prefix --pheno traits.txt --reml --out results`
+- **With Covariates**: `gcta64 --grm input_prefix --pheno traits.txt --qcovar quantitative_covar.txt --covar categorical_covar.txt --reml --out results`
+
+### Association Analysis
+- **MLMA (Mixed Linear Model Association)**: Accounts for population stratification and relatedness.
+  `gcta64 --bfile input_data --grm input_prefix --mlma --pheno traits.txt --out mlma_results`
+- **COJO (Conditional and Joint Analysis)**: Identifies independent signals using summary statistics.
+  `gcta64 --bfile reference_panel --cojo-file summary_stats.txt --cojo-slct --out cojo_results`
+
+### Data Management
+- **Subsetting individuals**: `gcta64 --bfile input_data --keep samples.txt --make-bed --out subset_data`
+- **Subsetting SNPs**: `gcta64 --bfile input_data --extract snps.txt --make-bed --out subset_snps`
+
+## Expert Tips
+- **Memory Management**: For very large datasets, use the `--thread-num` flag to specify CPU cores and ensure your system has sufficient RAM for the GRM calculation (N x N matrix).
+- **File Formats**: GCTA primarily uses PLINK binary files (.bed, .bim, .fam). Ensure your phenotype files are space or tab-delimited with Family ID (FID) and Individual ID (IID) in the first two columns.
+- **Standardization**: By default, GCTA standardizes genotypes. If working with rare variants or specific scaling needs, review the `--center` and `--autosome` flags.
+- **Validation**: Always check the `.log` file generated after every run to verify the number of samples and SNPs actually included in the analysis.
+
+## Reference documentation
+- [GCTA Overview](./references/anaconda_org_channels_bioconda_packages_gcta_overview.md)

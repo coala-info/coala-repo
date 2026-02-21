@@ -1,0 +1,514 @@
+# Annotation & Alignment
+
+Haakon Tjeldnes & Kornel Labun
+
+#### 22 December 2025
+
+#### Package
+
+ORFik 1.30.2
+
+# Contents
+
+* [1 Introduction](#introduction)
+* [2 How ORFik organizes stored files](#how-orfik-organizes-stored-files)
+  + [2.1 Specify output folders](#specify-output-folders)
+* [3 Download RNA-seq NGS data](#download-rna-seq-ngs-data)
+* [4 Annotation (Fasta genome and gtf file)](#annotation-fasta-genome-and-gtf-file)
+  + [4.1 Download genome and gtf files](#download-genome-and-gtf-files)
+    - [4.1.1 Contaminants](#contaminants)
+  + [4.2 Local annotation](#local-annotation)
+  + [4.3 Annotation without defined UTRs](#annotation-without-defined-utrs)
+    - [4.3.1 Create 5’ UTR annotation from CAGE](#create-5-utr-annotation-from-cage)
+    - [4.3.2 Create Pseudo 5’ UTR annotation](#create-pseudo-5-utr-annotation)
+    - [4.3.3 Fixing malformed gtf/gff](#fixing-malformed-gtfgff)
+* [5 RNA-seq alignment](#rna-seq-alignment)
+  + [5.1 Indexing](#indexing)
+  + [5.2 Trimming and Aligning the data](#trimming-and-aligning-the-data)
+    - [5.2.1 Trimming data](#trimming-data)
+    - [5.2.2 Aligning the data](#aligning-the-data)
+    - [5.2.3 UMIs](#umis)
+    - [5.2.4 Collapsing duplicated reads](#collapsing-duplicated-reads)
+  + [5.3 Solving errors when aligning:](#solving-errors-when-aligning)
+    - [5.3.1 RAM usage warnings](#ram-usage-warnings)
+    - [5.3.2 Systems that restricts max open files](#systems-that-restricts-max-open-files)
+    - [5.3.3 Restart STAR from crashed step](#restart-star-from-crashed-step)
+* [6 Create an ORFik experiment of the Yeast data](#create-an-orfik-experiment-of-the-yeast-data)
+  + [6.1 Post alignment QC report](#post-alignment-qc-report)
+  + [6.2 Convert libraries to new formats](#convert-libraries-to-new-formats)
+  + [6.3 Outputting libraries to R](#outputting-libraries-to-r)
+  + [6.4 FPKM values (normalized counts)](#fpkm-values-normalized-counts)
+
+# 1 Introduction
+
+Welcome to the `ORFik` package.
+`ORFik` is an R package for analysis of transcript and translation features through manipulation of sequence data and NGS data.
+
+This vignette will walk you through how to how to download annotation and align data with ORFik.
+
+Here we will show a full example of aligning RNA-seq from yeast using the SacCer3 genome.
+
+# 2 How ORFik organizes stored files
+
+Working with NGS data and genome annotations, results ++, can be hassle to organize
+and to remember where everything is stored,
+ORFik tries to simplify this job for you by creating a fixed set of how files are organized.
+Using ORFiks organizing system is optional (you can specify all the paths manually if you want to),
+but using it will most likely make you code faster.
+
+## 2.1 Specify output folders
+
+Usually fastq files, processed data (bam files) and annotation (genome references)
+are stored in separate locations, for better clarity and re-usability of files.
+
+Given a single parrent folder (for example “~/Bio\_data/”), where all your Biological analysis
+is stored,
+ORFik uses a folder structure of separating these 3 types:
+
+* 1. fastq files (raw\_data)
+* 2. bam files (processed\_data)
+* 3. annotation reference files (gtf + fasta genome references)
+* 4. experiment projects (ORFik experiments, NGS + reference linking + analysis)
+
+This is defined in the config() function, and only is needed to run once (config is stored for later experiments),
+so all other experiments will reuse the parent file structure. ORFik will try to automatically
+create suitable locations if the following function is not run;
+
+```
+  library(ORFik)                        # This package
+  # Here the default values are shown:
+  where_to_save_config <- config_file() # Bioc Cache directory default
+
+  parent_folder <- "~/bio_data/" # Change if you want it somewhere else
+  fastq.dir <- file.path(parent_folder, "raw_data") # Raw fast files
+  bam.dir <- file.path(parent_folder, "processed_data") # Processed files
+  reference.dir <- file.path(parent_folder, "references") # Genome references
+  exp.dir <- file.path(base.dir, "ORFik_experiments/") # ORFik experiments
+  config.save(where_to_save_config,
+              fastq.dir, bam.dir, reference.dir, reference.dir)
+```
+
+Either way if you made a custom config or let ORFik do it for you in next step, you can check what it is
+by now running config(). Modify and rerun steps above to get wanted directories.
+
+```
+  config()
+```
+
+We have created the general folder structure, we must now create the folder structure for a specific experiment,
+like our yeast RNA-seq experiment from Chalmers et al.
+
+```
+  conf <- config.exper(experiment = "CHALMERS_Yeast", # short experiment info: here I used author + species
+                     assembly = "Yeast_SacCer3", # Reference folder
+                     type = c("RNA-seq")) # fastq and bam type
+  conf
+```
+
+conf will show where the specific experiment will be stored.
+
+# 3 Download RNA-seq NGS data
+
+We will now download the NGS data, if you have in-lab data, you don’t need this step, since you already have access to the fastq files.
+
+On the other hand, if you want to use published data, you need to download it. I here show what would work for the paired end RNA-seq experiment SRP012047.
+
+ORFik comes with a read archive run downloader (Archives supported are: SRA, ERA, DRA or GSE).
+We will now show how to get metadata and data.
+
+1. Download using metadata table:
+   The good thing here is that you can specify a project, and it will find all SRR numbers for you, in this vignette we will only download the 2 runs called SRR453566 and SRR453571. We will also only subset to download the 50000 first reads of the libraries, so you can replicate this faster. If you want to try full data it will take ~ 100 seconds to download on stable connection.
+
+```
+info <- download.SRA.metadata("SRP012047", outdir = conf["fastq RNA-seq"])
+# Let's take 2 first runs in this experiment:
+info <- info[1:2,]
+```
+
+Now let’s download the subset, using the metadata table (ORFik will automatically extract SRR numbers and download):
+
+```
+# Subset
+# 18 MB, ~ 40 sec download time ->
+download.SRA(info, conf["fastq RNA-seq"], subset = 50000)
+
+# Or you could do the full libraries
+# 1.6 GB, ~ 100 sec download time
+# (Full size files have faster MB/s download speed than subsets) ->
+# download.SRA(info, conf["fastq RNA-seq"])
+```
+
+We now have the RNA-seq run, separated into 2 files stored in the raw data fastq folder,
+there are 2 files since this is paired end data. We could for ease also just have
+specified the SRR number directly in download.SRA, but then we get no meta-data csv file,
+which is handy for auto-detection of paired end data, the organism name etc. This is shown below:
+
+```
+organism <- info$ScientificName[1]
+is_paired_end <- all(info$LibraryLayout == "PAIRED")
+```
+
+# 4 Annotation (Fasta genome and gtf file)
+
+There are two ways to use annotation:
+
+* 1. Download using ORFik (This is safer, to make sure you use a high quality genome build,
+     and the gtf converted txdb object is correct)
+* 2. Use your local annotation (ORFik includes some tricks to improve your custom annotation)
+
+## 4.1 Download genome and gtf files
+
+To download the genome annotation we use the getGenomeAndAnnotation function.
+We need to decide 3 things:
+
+* organism: Give scientific name of organism, with either " " or "\_" between
+  genus(saccharomyces) and species (cerevisiae).
+* output.dir: Where to output the annotation
+* assembly\_type: If using ensembl as db argument, you need to decide if you want “primary\_assembly” or “toplevel”.
+
+The uncompressed toplevel file of human genome is > 70 GB, so for large genomes (like for human) you should usually set to primary\_assembly (3 GB for human, no chromosome haplotypes).
+For small organisms like yeast, they don’t have a primary assembly, so use “toplevel”.
+
+```
+  annotation <- getGenomeAndAnnotation(
+                      organism = organism,
+                      output.dir = conf["ref"],
+                      optimize = TRUE,
+                      pseudo_5UTRS_if_needed = 100 # If species have not 5' UTR (leader) definitions, make 100nt pseudo leaders.
+                      )
+```
+
+The function will also create a txdb object to speed up loading of gtf annotation, and index your genome to a .fai file (fasta index),
+for faster access to genomic regions.
+
+If you rerun this function after is has completed, it will not re-download, only output the correct object paths, this makes it easy to rerun the script (for other experiments of same species), when you have some steps already completed before.
+
+### 4.1.1 Contaminants
+
+If you you want to remove contaminants: phix, non coding RNAs, ribosomal RNAs, or tRNAs, also specify these in the function. By default it will download phix from refseq and the other contaminants are usually defined within the genome annotation of the species, so they are extracted from the .gtf file.
+
+```
+  annotation <- getGenomeAndAnnotation(
+                      organism = organism,
+                      genome = TRUE, GTF = TRUE,
+                      phix = TRUE, ncRNA = TRUE, tRNA = TRUE, rRNA = TRUE,
+                      output.dir = conf["ref"],
+                      assembly_type = "toplevel" # Usually leave this to "auto"
+                      )
+```
+
+Note that some species does not have well annotated rRNAs, tRNAs etc in their gtf files. For this ORFik contains some clever tricks:
+
+* rRNA:
+  You can set rRNA = “silva” to download the Silva database (~ 2GB file)
+* ncRNA:
+  If the gtf does not have Non-coding RNAs, they can be extracted by setting ncRNA = “auto”, it will then check if the organism exists in the NONCODE database and automatically download them for you if they exists.
+* tRNA:
+  Genomes without defined tRNAs are rare, and no web API to access tRNAs for all common experimental organisms exists.
+  So in that rare case, you must manually download and add the sequences from tRNAs using tRNA scan or similar databases (then add this
+  file to the getGenomeAndAnnotation call using argument tRNA = “path/to/downloaded/tRNAs.fasta”)
+
+## 4.2 Local annotation
+
+If you are not downloading annotation through ORFik, we need to create the Txdb object (Bioconductor optimized annotation format)
+
+This will save you a lot of the common warnings and problems downstream:
+- correct seqlevels
+- correct seqlengths
+- correct organism assigned
+- faster loading
+
+```
+  gtf <- "/path/to/local/annotation.gtf"
+  genome <- "/path/to/local/genome.fasta"
+  makeTxdbFromGenome(gtf, genome, organism = "Saccharomyces cerevisiae")
+```
+
+The txdb is saved in same directory as the gtf, with an extension “.db”
+
+It should be noted that Bioconductor BSGenome packages are not currently supported as annotation for ORFik alignments, since they lack some of the functionality needed for ORFik.
+They might be supported in the future and can already be used for all other parts of ORFik.
+
+## 4.3 Annotation without defined UTRs
+
+If you do not have defined UTRs in your annotation, this will give you considerable less quality results (no results using leaders can be created). So optimial is always to
+find an annotation with UTRs. If that is not possible ORFik contains two ways to create 5’ UTR annotation,
+3’ UTR annotation will be included soon.
+
+### 4.3.1 Create 5’ UTR annotation from CAGE
+
+If you have CAGE libraries, ORFik can in a simple way create 5’ UTRs for your annotation:
+
+```
+  txdb <- "/path/to/local/annotation.gtf.db"
+  cage <- "/path/to/CAGE.ofst" # Can be bed, wig etc (ofst is fastest)
+  reassigned_txdb <- assignTSSByCage(txdb, cage)
+  AnnotationDbi::saveDb("/path/to/local/annotation_cage.db")
+```
+
+### 4.3.2 Create Pseudo 5’ UTR annotation
+
+If you do not have CAGE, you can also just specify some fixed 5’ UTR lengths, for all
+CDS transcripts that does not have a 5’ UTR.
+
+```
+  txdb <- "/path/to/local/annotation.gtf.db"
+  reassigned_txdb <- assignTSSByCage(txdb, cage = NULL, pseudoLength = 100)
+  AnnotationDbi::saveDb(reassigned_txdb,
+                        "/path/to/local/annotation_pseudo_leaders.db")
+  leaders <- loadRegion(reassigned_txdb, "leaders")
+```
+
+### 4.3.3 Fixing malformed gtf/gff
+
+If you have a non reference-genome gff, your gff might be malformed.
+Your gtf/gff needs to follow the gtf/gff standardizations: [specifications](https://www.ensembl.org/info/website/upload/gff.html).
+
+Most importantly it need the 8 first coordinate columns correctly defined,
+and the 9th attribute column needs at least gene\_id and transcript\_id!
+Else it will be useless in most of R analysis in ORFik.
+Even better if it also has gene\_biotype column defined, this will make
+you able to load for example all long-non-coding RNA coordinates directly.
+
+# 5 RNA-seq alignment
+
+ORFik uses the STAR aligner, which is splice aware and fast and shown to usually map the highest amount of reads.
+The sad thing is that it only works on unix systems (Linux or Mac).
+
+For windows users: installing and running ORFik on Windows subsystem for Linux (WSL)
+will work, if you want to align data with ORFik.
+
+To align the data we need two steps, the indexing of the genome step and the
+alignment to the genome step.
+
+## 5.1 Indexing
+
+To index the genome just give it the annotation output from previous step. This will also make an index for each of the depletion steps like phix, if you specified them in the earlier step.
+
+```
+index <- STAR.index(annotation)
+```
+
+If you run this function again after index exists in current file location, it will not re-index, but just output the correct object paths. Do remake = TRUE if you want to re-index.
+
+## 5.2 Trimming and Aligning the data
+
+### 5.2.1 Trimming data
+
+ORFik uses the fastp for trimming reads, this also only works on unix (Linux or Mac OS). If you are on windows, or you want to trim the reads yourself, just run the trimming and give the folder with the trimmed reads as input in next step.
+
+Most Illumina sequencing contains 3’ adapters. This is because let’s say you sequence 100 bases, but the actual RNA read is only 28 nt long, you still need 72 bases as fillers, to not screw up that all should be 100 bases long.
+The great thing with fastp is that it has auto detection and removal of adapters, if you check out the resulting files you will see fastp has auto removed the Illumina adapters. In rare cases some libraries are have a double set of adapters, or low quality adapters, in those cases run fastqc (or another 3’ adapter analyzer) to see what it missed.
+
+The final rule is that for Ribo-seq, your trimmed reads should be no longer than 55 nt, else STAR (using the default local alignment) will not be able to find the 28nt of the read that align (STAR must by default align ~ 50% of the read). For RNA-seq,
+adapter trimming is not really that crucial, as local alignment will find the hit anyway.
+
+### 5.2.2 Aligning the data
+
+Now let’s see what we need as inputs for the trimming / alignment pipeline:
+We need usually 9 arguments (more are possible if you need them):
+
+* input.dir.rna: directory with raw fastq files (or user pre-trimmed files)
+* output.dir.rna: output directory for bam files
+* index: the STAR index from previous step
+* paired.end: “yes” in this case, or “no” if single end.
+* steps: steps wanted from trimming, depletion and alignment wanted:
+  (a string: which steps to do? (default: “tr-ge”, write “all” to get all: “tr-co-ge”)
+  tr: trimming (only for unix / WSL), co: deplete contaminants included, ph: phix depletion, rR: rrna depletion,
+  nc: ncrna depletion, tR: trna depletion, ge: genome alignment)
+  Write your wanted steps, seperated by “-”. Order does not matter.
+  To just do trim and alignment to genome write “tr-ge”
+* adapter.sequence “auto”, or if you know add it, usually more secure with manual. Presets are “illumina”, “small\_RNA” and “nextera”.
+* max.cpus How many cpus maximum to use
+* trim.front How many bases to trim front. Only if you believe there are low quality reads in front.
+* min.length minimum length of reads that pass to the bam file.
+
+```
+alignment <-
+  STAR.align.folder(conf["fastq RNA-seq"], conf["bam RNA-seq"], index,
+                    paired.end = is_paired_end,
+                    steps = "tr-ge", # (trim needed: adapters found, then genome)
+                    adapter.sequence = "auto",
+                    max.cpus = 30, trim.front = 3, min.length = 20)
+```
+
+If you used the fastp (tr step), you will get a pre-alignment QC report. Just like FastQC in html format. You will also get a MultiQC report from STAR runs made by ORFik for you.
+
+### 5.2.3 UMIs
+
+Some of the newer NGS libraries contains Unique molecular identifiers. If you need to store the UMI in the read header, fastp supports this.
+A direct wrapper for this in STAR.align.folder is currently not implemented yet, but will be soon!
+For now you can call fastp directly through a system call:
+
+```
+dir.create("~/UMIandTrimmed")
+system(paste(install.fastp(),
+             "-i", "~/sample1.fastq.gz",
+             "-o", "~/UMIandTrimmed/sample1.UMIandTrimmed.fastq.gz"
+             "--adapter_sequence=AGATCGGAAGAGC",
+             "--umi",
+             "--umi_loc", "read1",
+             "--umi_len", 12))
+# Read fastp documentation for info about umi arguments
+```
+
+A speed up, if UMIs are not needed is also to just trim the UMIs away. Using the “trim.front” argument in STAR.align.folder.
+This can be done when sequencing is not done on very low input samples and sequencing <= 80 million reads. A good intro can be found here: [dnatech.genomecenter.ucdavis.edu](https://dnatech.genomecenter.ucdavis.edu/faqs/what-are-umis-and-why-are-they-used-in-high-throughput-sequencing/)
+
+### 5.2.4 Collapsing duplicated reads
+
+Collapsing of duplicated reads is supported (all identical reads merged, with a replicate counter in the header),
+to do this, first only trim the reads to remove adapters.
+If your reads are < 50 bases long on average, it is a good idea to collapse duplicated reads (much faster alignment and processing). Note in this case the reads are paired end, so then collapsing is very dangerous. But for single end reads, you could do this:
+
+```
+alignment <-
+  STAR.align.folder(conf["fastq RNA-seq"], conf["bam RNA-seq"], index,
+                    paired.end = is_paired_end,
+                    steps = "tr", # (Only trim)
+                    adapter.sequence = "auto",
+                    max.cpus = 30, trim.front = 3, min.length = 20)
+trimmed_files <- file.path(conf["bam RNA-seq"], "trim")
+# Check that trimmed reads are average < 50 bases, else collapsing makes little sense for speedup.
+trim_table <- ORFik:::trimming.table(trimmed_files)
+stopifnot(all(trim_table$trim_mean_length < 50))
+trimmed_fastq <- list.files(path = trimmed_files, pattern = "fastq", full.names = TRUE)
+ORFik::collapse.fastq(files = trimmed_fastq, outdir = file.path(conf["bam Ribo-seq"], "collapsed") # Collapse all files in trim folder
+# Then align using collapsed reads
+alignment <-
+  STAR.align.folder(trimmed_files, conf["bam RNA-seq"], index,
+                    paired.end = is_paired_end,
+                    steps = "ge", # (Only genome alignment from collapsed)
+                    max.cpus = 30, min.length = 20)
+```
+
+Usually, RNA-seq is > 50 bases, so only do this for short reads like Ribo-seq!
+
+## 5.3 Solving errors when aligning:
+
+Running STAR is a heavy job for most machines, so you may experience an error if your machine is not good enough or you have
+a non-default OS config (Aligning human genome on 32GB memory computer will make it useless for any other task until alignment is done,
+so if you have access to a multi-core server with more memory, you should use it).
+
+We will now go through some possible problems and how to fix them.
+
+### 5.3.1 RAM usage warnings
+
+STAR is very memory hungry, therefor if you want to index and align large genomes like human (3 GB usually), you might need to adjust 2 parameters.
+If you have less than 40 GB free memory (32 GB might work), adjust this during indexing:
+
+* 20 GB max ram usage during genome generation
+* 2 SA sparse (suffix array should be sparse, this will give slower mapping)
+
+```
+index <- STAR.index(annotation, max.ram = 20, SAsparse = 2)
+```
+
+### 5.3.2 Systems that restricts max open files
+
+STAR can use a lot of threads, each threads makes many several files open. Some systems have a restriction on how many files you can have open. This is found by doing “ulimit -Hn” in the terminal.
+If STAR crashes from this error, you need either increase amount of open files allowed (requires root access) or decrease the amount of cores used by STAR (does not require root access):
+
+```
+STAR.align.folder(conf["fastq RNA-seq"], conf["bam RNA-seq"], index,
+                    max.cpus = 4) # Reduce cores to 4 usually works for most systems
+```
+
+### 5.3.3 Restart STAR from crashed step
+
+STAR can sometimes crash, maybe your disc becomes full or you specified a wrong parameter etc.
+ORFik has some clever tricks to continue alignment from where it crashed.
+Let’s say the trimming is done and it fails during genome alignment. Then
+of course if you rerun the function as it was, it would re-trim the raw fastq-reads.
+To continue using the completed trim files instead and only do genome alignment, do:
+
+```
+STAR.align.folder(conf["fastq RNA-seq"], conf["bam RNA-seq"], index,
+                    max.cpus = 4, steps = "tr-ge", resume = "ge") # Resume ge using completed tr
+```
+
+This would save you the time to re-trim, or update the path of input files to the fastq files
+of the trimmed folder.
+
+# 6 Create an ORFik experiment of the Yeast data
+
+The next step is to make an ORFik experiment (check out the ORFik experiment vignette if you are unfamiliar with this class).
+
+If you renamed the files during the fastq step properly, this will make the ORFik experiment able to guess correctly what the data is. If there are replicates etc.
+If you did not, you can still rename the bam files now.
+
+We can now easily make an ORFik experiment from the data we have:
+
+```
+txdb_file <- paste0(annotation["gtf"], ".db") # Get txdb file, not raw gtf
+fa <- annotation["genome"]
+create.experiment(exper = "yeast_exp_RNA",
+                  dir = paste0(conf["bam RNA-seq"], "/aligned/"),
+                  txdb = txdb_file,
+                  fa = fa,
+                  organism = organism,
+                  viewTemplate = FALSE,
+                  pairedEndBam = is_paired_end # True/False per bam file
+                  )
+```
+
+The files is now saved to default directory, which is: saveDir = “~/Bio\_data/ORFik\_experiments/”
+
+```
+df <- read.experiment("yeast_exp_RNA")
+```
+
+If you are not happy with the libtype, stage, replicates and so on for the file, you can edit the ORFik experiment in R (recreate experiment, wanted slots) or edit in Libre Office, Excel or another spreadsheet viewer.
+
+## 6.1 Post alignment QC report
+
+See ?QCreport for details of what you will get as output
+
+```
+  QCreport(df)
+```
+
+## 6.2 Convert libraries to new formats
+
+Now you have an experiment, but bam files are big and slow to load. Let’s convert to some faster formats.
+
+If you want optimzed format identical to bam file (contains cigar information), use .ofst. (Fastest, not readable in IGV) (ofst files are made when running ORFikQC)
+
+```
+  remove.experiments(df) # Remove loaded libraries
+  convertLibs(df, type = "ofst")
+```
+
+If you want peaks only, use wig files (Fast, readable in IGV)
+
+```
+  remove.experiments(df)
+  convertLibs(df, type = "wig")
+```
+
+As an example of how to load the data to R in the optimized format .ofst.
+
+## 6.3 Outputting libraries to R
+
+This will output the libraries to the environment specified, default .GlobalEnv (the default R environment). The files are named from the experiment table RNA\_1\_WT, RNA\_1\_treated etc.
+
+```
+  remove.experiments(df)
+  outputLibs(df, type = "ofst")
+```
+
+## 6.4 FPKM values (normalized counts)
+
+After you have run QCreport you will have count tables of peaks over the mrna’s, 5’ UTRs, CDS and 3’ UTRs.
+
+Let’s do an example to find the ratio between fpkm of between the CDS and mRNAs transcript regions.
+
+```
+  mrna <- countTable(df, region = "mrna", type = "fpkm")
+  cds <- countTable(df, region = "cds", type = "fpkm")
+  ratio <- cds / mrna
+```
+
+We now have a ratio of fpkm values between CDS and mrna.
+
+You can now continue to the Ribo-seq pipeline to see a more advanced example.

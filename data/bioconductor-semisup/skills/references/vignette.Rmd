@@ -1,0 +1,15 @@
+
+---
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{vignette frame}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Click [here](https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf) to download vignette.
+
+<div>
+<object data="https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf" width="100%" height="500px">
+</object>
+</div>

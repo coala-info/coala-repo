@@ -1,0 +1,71 @@
+---
+name: svviz
+description: svviz is a specialized tool designed to help researchers confirm structural variants by visualizing how high-throughput sequencing reads align to both the reference genome and a proposed variant sequence.
+homepage: https://github.com/svviz/svviz
+---
+
+# svviz
+
+## Overview
+
+svviz is a specialized tool designed to help researchers confirm structural variants by visualizing how high-throughput sequencing reads align to both the reference genome and a proposed variant sequence. Unlike standard genome browsers that show reads in a single genomic context, svviz re-aligns reads to both the "ref" and "alt" alleles, making it much easier to distinguish true variants from alignment artifacts or mapping errors.
+
+Use this skill when you need to:
+- Manually inspect individual SVs to confirm their validity.
+- Process a list of variants from a VCF file to generate summary visualizations.
+- Compare read support across multiple samples for the same variant.
+- Export high-quality visualizations of structural variants for publication.
+
+## Installation and Setup
+
+The tool is primarily available via Bioconda or pip:
+
+```bash
+# Using Conda (Recommended)
+conda install bioconda::svviz
+
+# Using pip
+pip install svviz
+```
+
+To verify the installation and see the tool in action, run the built-in demo:
+```bash
+svviz demo
+```
+
+## Common CLI Patterns
+
+### Visualizing a Single Variant
+To inspect a specific variant, provide the reference genome, the variant description, and one or more BAM files.
+
+```bash
+svviz <ref.fasta> <variant_description> <sample1.bam> [sample2.bam ...]
+```
+*Note: The variant description format depends on the SV type (e.g., "chr1 1000000 deletion 500").*
+
+### Batch Processing with VCF
+For large-scale validation, use the batch mode to process all variants in a VCF file. This typically generates a summary report or a series of static images.
+
+```bash
+svviz --batch <variants.vcf> <ref.fasta> <sample.bam>
+```
+
+### Interactive Web View
+By default, svviz often launches an interactive web-based browser. You can specify the port if needed:
+```bash
+svviz <ref.fasta> <variant> <sample.bam> --port 8080
+```
+
+## Expert Tips and Best Practices
+
+- **Reference Requirement**: Always ensure the reference FASTA file is indexed and matches the coordinates used in your BAM and VCF files. svviz will fail if the reference is not provided.
+- **Performance Optimization**: Use the `--fast` flag when working with Illumina data. This increases processing speed (approx. 2x) by using a less exhaustive alignment algorithm for secondary hits, which is usually sufficient for short-read data.
+- **Ambiguous Reads**: svviz categorizes reads as "ref-supporting," "alt-supporting," or "ambiguous." Pay close attention to the ambiguous category; if a large portion of reads are ambiguous, the variant may be in a repetitive region or the variant description may be inaccurate.
+- **Insert Size Distribution**: Use the option to output insert size distribution plots (`--isizes-plot`) to help diagnose if the library prep characteristics match the expected support for the variant.
+- **Long Read Support**: While svviz supports PacBio and Nanopore data, ensure you use the appropriate alignment parameters or wrappers if provided in the version's documentation to handle the higher error rates.
+- **Transition to svviz2**: For new projects, consider checking if your requirements are better met by `svviz2`, which is the successor to the original tool and includes updated algorithms and documentation.
+
+## Reference documentation
+
+- [svviz GitHub Repository](./references/github_com_svviz_svviz.md)
+- [Bioconda svviz Package Overview](./references/anaconda_org_channels_bioconda_packages_svviz_overview.md)

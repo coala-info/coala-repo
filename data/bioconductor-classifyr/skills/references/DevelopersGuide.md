@@ -1,0 +1,84 @@
+# **ClassifyR** Developer’s Guide
+
+Dario Strbenac, Ellis Patrick
+ The University of Sydney, Australia.
+
+#### 29 October 2025
+
+# Contents
+
+* [1 Introduction](#introduction)
+* [2 New Model Building Function Requirements](#new-model-building-function-requirements)
+  + [2.1 Input Data Types](#input-data-types)
+  + [2.2 Registering the Function](#registering-the-function)
+  + [2.3 Documenting the Function](#documenting-the-function)
+  + [2.4 Incorprating Changes into the Package](#incorprating-changes-into-the-package)
+  + [2.5 Feature Ranking and Selection](#feature-ranking-and-selection)
+  + [2.6 Model Training Function](#model-training-function)
+  + [2.7 Extractor Functions](#extractor-functions)
+  + [2.8 Model Prediction Function](#model-prediction-function)
+* [3 New Model Evaluation Function Requirements](#new-model-evaluation-function-requirements)
+* [4 Coding Style](#coding-style)
+
+# 1 Introduction
+
+**ClassifyR** is regularly maintained and new functionality is often added. This may be done by users of **ClassifyR**. This guide will summarise the technical concepts of how **ClassifyR** works and assist users to contribute new functionality to the package by understanding the design principles of **ClassifyR**. Almost all functions in **ClassifyR** are S4 methods, which has the added benefit of checking that the type of input data matches what is required. Basic variables in R have no strict type, unlike most other programming languages.
+
+# 2 New Model Building Function Requirements
+
+## 2.1 Input Data Types
+
+Data used for predictive modelling can take many shapes and forms. ClassifyR will ensure that any of the three valid input types of *matrix*, [*DataFrame*](https://rdrr.io/bioc/S4Vectors/man/DataFrame-class.html?msclkid=d4c61dbecf2711eca5117852a38e18a4) and [*MultiAssayExperiment*](http://bioconductor.org/packages/release/bioc/vignettes/MultiAssayExperiment/inst/doc/QuickStartMultiAssay.html) will be a *DataFrame* before it is sent to a modelling function.
+
+Importantly, ClassifyR implements a number of methods for classification using different kinds of changes in measurements between classes. Most classifiers work with features where the means are different. In addition to changes in means (DM), **ClassifyR** also allows for classification using differential variability (DV; changes in scale) and differential distribution (DD; changes in location and/or scale).
+
+## 2.2 Registering the Function
+
+**ClassifyR** keeps track of functions used for model building, to allow automated naming of axes labels or tick marks in a nice format. To do this, each function has a pretty name associated with it in the file *constants.R*. Firstly, find `.ClassifyRenvir[["functionsTable"]]` in that file, which is basically a two-column matrix stored in an environment and add your new function and its pretty name as an additional row of that matrix.
+
+Secondly, there is a convenience cross-validation function named `crossValidate`. It allows convenient specification of feature selection and modelling combinations with keywords. To add a new feature ranking method, add a new entry to `.selectionKeywordToFunction` in `utilities.R` by adding a new keyword and function pair. There is a similar statement in the same R file for modelling functions, in which a new classifier, for instance, would be added.
+
+## 2.3 Documenting the Function
+
+Firstly, in the main vignette, there are a couple of tables summarising the feature selection and model building functions available. Add your function to the relevant table and put a tick mark in the appropriate column(s) to summarise what kind of analysis it offers.
+
+Secondly, there is a `NEWS` file in `inst` folder. Add a new entry for the new functionality.
+
+## 2.4 Incorprating Changes into the Package
+
+Please make a pull request at [ClassifyR’s GitHub website](https://github.com/SydneyBioX/ClassifyR). Your code will be reviewed and you will be added as a contributor the the `DESCRIPTION` file of the package.
+
+## 2.5 Feature Ranking and Selection
+
+The various functions in **ClassifyR** for prioritising features return a ranking, from best to worst, of features because the package takes care of the actual feature selection process. Based on the specification of the range of values of top features to try, the set of variables with either the best resubstitution (default) or nested cross-validation performance is found by the private function `.doSelection`.
+
+The input data may be one table or a collection of tables. The `DataFrame` variable type stores metadata about the variables in its columns. Therefore, the ranking function simply returns a numeric indices of the features ranked from best to worst.
+
+## 2.6 Model Training Function
+
+The function can return a trained model of any type.
+
+## 2.7 Extractor Functions
+
+Sometimes, feature ranking / selection is not done before a model is trained. Also, some trained models do implicit feature selection, such as random forest. If a new modelling function has implicit feature selection, it also needs to be accompanied by a function to extract the selected features. See `forestFeatures` in `interfaceRandomForest.R` for one such example. The return value of such a function needs to be a list of length 2. The first element has all of the features, ranked from best to worst. The second element has indicies corresponding only to the selected features.
+
+In the random forest example, the feature ranking is based on the variable importance score calculated by the random forest package (i.e. `randomForest::importance(forest)`) and the selection is based on the non-zero occurrence of a variable in the forest (i.e. `randomForest::varUsed(forest) > 0`). These two vectors are returned in a list for use by **ClassifyR**.
+
+## 2.8 Model Prediction Function
+
+If there is such a function, (for some classifiers, one function does both training and prediction and there is no separate prediction function), the first parameter needs to be the trained model from the previous step and the second parameter needs to be the test data.
+
+# 3 New Model Evaluation Function Requirements
+
+The function must accept a list of `ClassifyResult` elements, the container class which stores all of the useful information about a cross-validation after it has completed. For accessors to use to access class slots, please see `?ClassifyResult`.
+
+![](data:image/png;base64...)
+
+# 4 Coding Style
+
+To help maintain consistency with the existing code, please:
+
+* Use `camelCase` coding style for variable names and `CamelCase` for class names.
+* Use vectorised loops such as `lapply` and `mapply`. Don’t use `for` loops.
+* Use `<-` for variable assignment rater than `=`.
+* Follow the other [style requirements of Bioconductor](http://bioconductor.org/developers/how-to/coding-style/).

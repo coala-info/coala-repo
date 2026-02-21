@@ -1,0 +1,1 @@
+Index of /pub/databases/Pfam/Tools/OldPfamScan Index of /pub/databases/Pfam/Tools/OldPfamScan Name Last modified Size Description Parent Directory &nbsp; - &nbsp; HMMER2/ 2013-10-16 01:37 - &nbsp; HMMER3.0/ 2013-10-16 01:37 - &nbsp; PfamScan1.5/ 2017-03-01 14:46 - &nbsp;

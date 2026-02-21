@@ -1,0 +1,205 @@
+---
+title: "BridgeDbR Tutorial"
+author: "Egon Willighagen"
+package: BridgeDbR
+output: 
+  BiocStyle::html_document:
+    toc_float: true
+    includes:
+      in_header: bioschemas.html
+vignette: >
+  %\VignetteIndexEntry{Tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+bibliography: tutorial.bib
+csl: biomed-central.csl
+references:
+- id: dummy
+  title: no title
+  author:
+  - family: noname
+    given: noname
+---
+
+# Introduction
+
+[BridgeDb](https://github.com/bridgedb/BridgeDb) is a combination of an application programming interface (API), library, and set of data files
+for mapping identifiers for identical objects [@VanIersel2010]. Because BridgeDb is
+use by projects in bioinformatics, like [WikiPathways](http://wikipathways.org/) [@Pico2008] and
+[PathVisio](http://pathvisio.org/) [@VanIersel2008],
+identifier mapping databases are available for gene products (including proteins), metabolites, and metabolic conversions. We are also working on a disease database mapping file.
+
+Questions can be directed to the [BridgeDb Google Group](https://groups.google.com/forum/#!forum/bridgedb-discuss).
+
+The [Bioconductor BridgeDbR package](https://doi.org/10.18129/B9.bioc.BridgeDbR)
+page describes how to install the package. After installation, the library can be loaded with the following command:
+
+```{r}
+library(BridgeDbR)
+```
+
+*Note: if you have trouble with rJava (required package), please follow the instructions [here](https://github.com/hannarud/r-best-practices/wiki/Installing-RJava-(Ubuntu)) for Ubuntu.
+
+# Concepts
+
+BridgeDb has a few core concepts which are explained in this section. Much of the API requires one to
+be familiar with these concepts, though some are not always applicable. The first concept is an example
+of that: organisms, which do not apply to metabolites.
+
+## Organisms
+
+However, for genes the organism is important: the same gene has different identifiers in different
+organisms. BridgeDb identifies organisms by their latin name and with a two character code. Because
+identifier mapping files provided by PathVisio have names with these short codes, it can be useful to
+have a conversion method:
+
+```{r}
+code <- getOrganismCode("Rattus norvegicus")
+code
+```
+
+## Data Sources
+
+Identifiers have a context and this context is often a database. For example, metabolite identfiers
+can be provided by the Human Metabolome Database (HMDB), ChemSpider, PubChem, ChEBI, and many others. Similarly,
+gene product identifiers can be provided by databases like Ensembl, (NCBI) Entrez Gene, Uniprot etc. Such a database providing identifiers is called a data source in BridgeDb.
+
+Importantly, each such data source is identified by a human readable long name and by a short
+system code. This package has methods to interconvert one into the other:
+
+```{r}
+fullName <- getFullName("Ce")
+fullName
+code <- getSystemCode("ChEBI")
+code
+```
+
+## Identifier Patterns
+
+Another useful aspect of BridgeDb is that it knows about the patterns of identifiers. If this
+pattern is unique enough, it can be used used to automatically find the data sources that
+match a particular identifier. For example:
+
+```{r}
+getMatchingSources("HMDB00555")
+getMatchingSources("ENSG00000100030")
+```
+
+You may notice unexpected datasources in the results. That often means that the matcher
+for the identifier structure for that resources is very general. For example, the identifier
+for Wikipedia can be more or less any string.
+
+## Identifier Mapping Databases
+
+The BridgeDb package primarily provides the software framework, and not identifier mapping
+data. Identifier Mapping databases can be downloaded from various websites. The package
+knows about the download location (provided by PathVisio), and we can query for all gene
+product identifier mapping databases:
+
+```{r, eval=FALSE}
+getBridgeNames()
+```
+
+## Downloading
+
+The package provides
+a convenience method to download such identifier mapping databases. For example, we can save the
+identifier mapping database for rat to the current folder with:
+
+```{r, eval=FALSE}
+dbLocation <- getDatabase("Rattus norvegicus", location = getwd())
+```
+
+The dbLocation variable then contains the location of the identifier mapping file that was
+downloaded.
+
+Mapping databases can also be manually downloaded for genes, metabolites, and gene variants
+from [https://bridgedb.github.io/data/gene_database/](https://bridgedb.github.io/data/gene_database/):
+
+* Genes, Transcripts, and Proteins
+* Metabolites
+* Metabolic Interactions
+
+Add the dbLocation with the following lines (first obtain in which folder, aka working directory 'wd', you are currently).
+Add the correct folder location at the dots:
+```{r, eval=FALSE}
+getwd()
+dbLocation <- ("/home/..../BridgeDb/wikidata_diseases.bridge")
+```
+
+## Loading Databases
+
+Once you have downloaded an identifier mapping database, either manually or via the `getDatabase()`
+method, you need to load the database for the identifier mappings to become available.
+It is important to note that the location given to the `loadDatabase()` method is ideally
+an absolute path.
+
+```{r, eval=FALSE}
+mapper <- loadDatabase(dbLocation)
+```
+
+# Mapping Identifiers
+
+With a loaded database, identifiers can be mapped. The mapping method uses system codes. So, to
+map the human Entrez Gene identifier (system code: L) 196410 to Affy identifiers (system code: X) we
+use:
+
+```{r, eval=FALSE}
+location <- getDatabase("Homo sapiens")
+mapper <- loadDatabase(location)
+map(mapper, "L", "196410", "X")
+```
+
+Mind you, this returns more than one identifier, as BridgeDb is generally a one to many mapping database.
+
+## Mapping multiple identifiers
+
+For mapping multiple identifiers, for example in a data frame, you can use the new "maps()"
+convenience method. Let's assume we have a data frame, data, with a HMDB identifier in the second column,
+we can get Wikidata identifiers with this code:
+
+```{r, eval=FALSE}
+input <- data.frame(
+    source = rep("Ch", length(data[, 2])),
+    identifier = data[, 2]
+)
+wikidata <- maps(mapper, input, "Wd")
+```
+
+# Metabolomics
+
+While you can download the gene and protein identifier mapping databases with the *getDatabase()* method,
+this mapping database cannot be used for metabolites. The mapping database for metabolites will have to
+be downloaded manually from Figshare, e.g. the
+[February 2018 release](https://figshare.com/articles/Metabolite_BridgeDb_ID_Mapping_Database_20180201_/5845134)
+version. A full overview of mappings files can be found in this
+[Figshare collection](https://figshare.com/collections/Metabolite_BridgeDb_ID_Mapping_Database/4456148).
+
+Each mapping file record will allow you to download the *.bridge* file with the mappings.
+
+If reproducibility is important to you, you can download the file with (mind you, these files are
+quite large):
+
+```{r, eval=FALSE}
+## Set the working directory to download the Metabolite mapping file
+location <- "data/metabolites.bridge"
+checkfile <- paste0(getwd(), "/", location)
+
+## Download the Metabolite mapping file (if it doesn't exist locally yet):
+if (!file.exists(checkfile)) {
+    download.file(
+        "https://figshare.com/ndownloader/files/26001794",
+        location
+    )
+}
+# Load the ID mapper:
+mapper <- BridgeDbR::loadDatabase(checkfile)
+```
+
+With this mapper you can then map metabolite identifiers:
+
+```{r, eval=FALSE}
+map(mapper, "456", source = "Cs", target = "Ck")
+```
+
+# References

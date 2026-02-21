@@ -1,0 +1,1 @@
+Search &#8212; MIRA 2.0.1a1 documentation Getting Started User Guide API FAQ News GitHub Search Please activate JavaScript to enable the search functionality. Searching for multiple words only shows matches that contain all words. &copy; Copyright 2022, Allen W. Lynch. Created using Sphinx 4.5.0.

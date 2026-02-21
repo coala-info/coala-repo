@@ -1,0 +1,1 @@
+Branches · Microbial Genomics / Relative Kmer Project · GitLab Branches Overview Active Stale All Stale branches lennard_dev a7c0816f &middot; regex to run kmc with gzip files &middot; Jan 09, 2020 !12 dev 8a6f91b2 &middot; Update README.md &middot; Feb 13, 2020 !16 master default protected 6f57cbd8 &middot; Merge branch 'dev' into 'master' &middot; Feb 13, 2020

@@ -1,0 +1,207 @@
+# SeqArray Overview
+
+Dr. Xiuwen Zheng (Department of Biostatistics, University of Washington, Seattle)
+
+Jun 25, 2016
+
+# Introduction
+
+Whole-genome sequencing (WGS) data is being generated at an unprecedented rate
+
+* 1000 Genomes Project Phase 3 (1KG)
+  + 81 million variants and 2,504 individuals
+  + <https://www.internationalgenome.org/>
+* Variant Call Format (VCF)
+  + a generic and flexible text-based format
+  + VCF files are large and data retrieval is relatively slow
+
+# Methods
+
+**CoreArray (C++ library)**
+
+* designed for large-scale data management of genome-wide variants
+* data format (GDS) to store multiple array-oriented datasets in a single file
+
+**Two R packages**
+
+* gdsfmt – R interface to CoreArray Genomic Data Structure (GDS) files
+* SeqArray – specifically designed for data management of genome-wide sequence variants from Variant Call Format (VCF) files
+
+# Methods – Advantages
+
+* SeqArray provides the same capabilities as VCF
+* Stores data in a binary and array-oriented manner
+
+  + efficient access using the R language
+* Genotypes are stored in a compressed manner
+
+  + 2-bit array to store alleles (95% sites are bi-allelic)
+  + rare variants: highly compressed
+  + 1KG, 203.5 billion genotypes, saved in 4.3G (2.26% if a byte stores a genotype)
+* Parallel access
+
+  + multiple cluster nodes and/or cores
+
+# Methods – File Contents
+
+```
+File: SeqArray/extdata/CEU_Exon.gds (387.3K)
+|--+ description   [  ] *
+|--+ sample.id   { Str8 90 ZIP_ra(30.8%), 222B }
+|--+ variant.id   { Int32 1348 ZIP_ra(35.7%), 1.9K }
+|--+ position   { Int32 1348 ZIP_ra(86.4%), 4.6K }
+|--+ chromosome   { Str8 1348 ZIP_ra(2.66%), 91B }
+|--+ allele   { Str8 1348 ZIP_ra(17.2%), 928B }
+|--+ genotype   [  ] *
+|  \--+ data   { Bit2 2x90x1348 ZIP_ra(28.4%), 16.8K } *
+|--+ phase   [  ]
+|  \--+ data   { Bit1 90x1348 ZIP_ra(0.36%), 55B } *
+|--+ annotation   [  ]
+|  |--+ id   { Str8 1348 ZIP_ra(41.0%), 5.8K }
+|  |--+ qual   { Float32 1348 ZIP_ra(0.91%), 49B }
+|  |--+ filter   { Int32,factor 1348 ZIP_ra(0.89%), 48B } *
+|  |--+ info   [  ]
+|  |  |--+ AA   { Str8 1348 ZIP_ra(24.2%), 653B } *
+|  |  \--+ HM2   { Bit1 1348 ZIP_ra(117.2%), 198B } *
+|  \--+ format   [  ]
+|     \--+ DP   [  ] *
+|        \--+ data   { Int32 90x1348 ZIP_ra(33.8%), 160.3K }
+\--+ sample.annotation   [  ]
+   \--+ family   { Str8 90 ZIP_ra(34.7%), 135B }
+```
+
+# Methods – Key Functions
+
+**Table 1**: The key functions in the SeqArray package.
+
+| Function | Description |
+| --- | --- |
+| seqVCF2GDS | Reformats VCF files |
+| seqSetFilter | Defines a data subset of samples or variants |
+| seqGetData | Gets data from a SeqArray file with a defined filter |
+| seqApply | Applies a user-defined function over array margins |
+| seqParallel | Applies functions in a computing cluster |
+
+# Benchmark
+
+* Dataset
+  + 1000 Genomes Project Phase 3, chromosome 1
+  + 6,468,094 variants, 2,504 individuals
+  + original VCF.gz file: 1.2G
+  + reformat to a SeqArray file: 458M (zlib compression)
+* Calculate the frequencies of reference alleles
+  1. R code (sequential version)
+  2. R code (parallel version)
+  3. R and C++ integration via the Rcpp package
+
+# Benchmark – Test 1 (sequentially)
+
+```
+# load the R package
+library(SeqArray)
+
+# open the file
+genofile <- seqOpen("1KG_chr1.gds")
+
+# apply a user-defined function over variants
+system.time(afreq <- seqApply(genofile, "genotype",
+    FUN = function(x) { mean(x==0L, na.rm=TRUE) },
+    as.is="double", margin="by.variant")
+)
+```
+
+**10.8 minutes** on Linux with Intel Xeon CPU @2GHz and 128GB RAM `function(x) { mean(x==0L, na.rm=TRUE) }` is a user-defined function, where `x` is an integer matrix:
+
+```
+                           sample
+  allele [,1] [,2] [,3] [,4] [,5]
+    [1,]    0    1    0   NA    1
+    [2,]    0    0    0    1    0
+```
+
+0 – reference allele, 1 – the first alternative allele
+
+# Benchmark – Test 2 (in parallel)
+
+`seqParallel()` splits genotypes into 4 non-overlapping parts according to different cores.
+
+```
+# load the R package
+library(parallel)
+
+# create a computing cluster with 4 cores
+seqParallelSetup(4)
+
+# run in parallel
+system.time(afreq <- seqParallel(gdsfile=genofile,
+    FUN = function(f) {
+        seqApply(f, "genotype", as.is="double", margin="by.variant",
+            FUN = function(x) mean(x==0L, na.rm=TRUE))
+    }, split = "by.variant")
+)
+```
+
+**3.1 minutes** (vs. 10.8m in Test 1)
+
+# Benchmark – Test 3 (C++ Integration)
+
+```
+library(Rcpp)
+
+# dynamically define an inline C/C++ function in R
+cppFunction('double RefAlleleFreq(IntegerMatrix x) {
+    int nrow = x.nrow(), ncol = x.ncol();
+    int cnt=0, zero_cnt=0, g;
+    for (int i = 0; i < nrow; i++) {
+        for (int j = 0; j < ncol; j++) {
+            if ((g = x(i, j)) != NA_INTEGER) {
+                cnt ++;
+                if (g == 0) zero_cnt ++;
+            }
+    }}
+    return double(zero_cnt) / cnt;
+}')
+
+system.time(
+    afreq <- seqApply(genofile, "genotype", RefAlleleFreq,
+        as.is="double", margin="by.variant")
+)
+```
+
+**1.5 minutes** (significantly faster! vs. 10.8m in Test 1)
+
+# Conclusion
+
+**SeqArray is of great interest to**
+
+* R users involved in data analyses of large-scale sequence variants
+* particularly those with limited experience of parallel / high-performance computing
+
+**SeqVarTools (Bioconductor)**
+
+* variant analysis, such like allele frequencies, HWE, Mendelian errors, etc
+* functions to display genotypes / annotations in a readable format
+
+**SNPRelate (Bioconductor)**
+
+* a parallel computing toolset for relatedness and principal component analysis
+
+# Resource
+
+<https://gds-stat.s3.amazonaws.com/download/1000g/index.html>
+
+1000 Genomes Project Phase 3:
+
+* Autosomes (2.60GB, 2,504 individuals and 81,271,745 variants): 1KG\_ALL.autosome.phase3\_shapeit2\_mvncall\_integrated\_v5a.20130502.genotypes.gds
+* Chromosome X (94.1MB, 2,504 individuals and 3,468,093 variants): 1KG\_ALL.chrX.phase3\_shapeit2\_mvncall\_integrated\_v1b.20130502.genotypes.gds
+* Chromosome Y (2.70MB, 1,233 males and 62,042 variants): 1KG\_ALL.chrY.phase3\_integrated\_v2a.20130502.genotypes.gds
+
+# Acknowledgements
+
+Department of Biostatistics at University of Washington – Seattle
+
+Genetic Analysis Center:
+
+* Stephanie M. Gogarten
+* David Levine
+* Cathy Laurie

@@ -1,0 +1,16 @@
+# bioconductor-consensusseeker Bioconductor Package Report
+
+## consensusSeekeR
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/consensusSeekeR.html
+- **Package**: consensusSeekeR
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: https://github.com/adeschen/consensusSeekeR
+- **Skill**: generated
+

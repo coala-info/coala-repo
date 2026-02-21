@@ -1,0 +1,96 @@
+---
+title: "Overview of the SPIAT package"
+author: "Anna Trigos, Yuzhou Feng, Tianpei Yang, Mabel Li, John Zhu, Volkan Ozcoban, Maria Doyle"
+date: "`r BiocStyle::doc_date()`"
+output:
+  BiocStyle::html_document:
+    self_contained: yes
+    toc_float: true
+    toc_depth: 4
+package: "`r pkg_ver('SPIAT')`"
+bibliography: "`r file.path(system.file(package='SPIAT', 'vignettes'), 'introduction.bib')`"    
+vignette: >
+  %\VignetteIndexEntry{Overview of the SPIAT package}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  crop = NULL,
+  echo = TRUE, fig.width = 3.8, fig.height = 3.8, dpi = 72, out.width = "60%")
+```
+
+
+# Introduction
+
+SPIAT (**Sp**atial **I**mage **A**nalysis of **T**issues) is an R
+package with a suite of data processing, quality control, visualisation and data 
+analysis tools. SPIAT is compatible with data
+generated from single-cell spatial proteomics platforms (e.g. OPAL,
+CODEX, MIBI, cellprofiler). SPIAT reads spatial data in the form of X and Y
+coordinates of cells, marker intensities and cell phenotypes.
+
+SPIAT includes six analysis modules that allow visualisation,
+calculation of cell colocalisation, categorisation of the immune
+microenvironment relative to tumour areas, analysis of cellular
+neighborhoods, and the quantification of spatial heterogeneity,
+providing a comprehensive toolkit for spatial data analysis.
+
+An overview of the functions available is shown in the figure below.
+
+```{r, echo=FALSE, fig.height=4.2, fig.width=2.6, fig.align='centre', out.width = "85%"}
+knitr::include_graphics("SPIAT-overview.jpg")
+```
+
+# You can access the vignettes for other modules of SPIAT here:
+
+## [Data reading and formatting](data_reading-formatting.html)
+## [Quality control and visualisation](quality-control_visualisation.html)
+## [Basic analysis](basic_analysis.html)
+## [Cell colocalisation](cell-colocalisation.html)
+## [Spatial heterogeneity](spatial-heterogeneity.html)
+## [Tissue structure](tissue-structure.html)
+## [Cellular neighborhood](neighborhood.html)
+
+# Installing `SPIAT`
+
+`r Biocpkg("SPIAT")` is a `R` package available via the
+[Bioconductor](http://bioconductor.org) repository for packages. 
+
+```{r install, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+      install.packages("BiocManager")}
+BiocManager::install("SPIAT")
+```
+
+You can also install the latest development version from Github.
+
+```{r install_github, eval = FALSE}
+if (!requireNamespace("devtools", quietly = TRUE)) {
+      install.packages("devtools")}
+devtools::install_github("TrigosTeam/SPIAT")
+```
+
+# Citing `SPIAT`
+
+We hope that `r Biocpkg("SPIAT")` will be useful for your research.
+Please use the following information to cite the package and the overall
+approach. Thank you!
+
+```{r "citation"}
+## Citation info
+citation("SPIAT")
+```
+
+
+# Author Contributions
+
+AT, YF, TY, ML, JZ, VO, MD are authors of the package code. MD and YF
+wrote the vignette. AT, YF and TY designed the package.
+

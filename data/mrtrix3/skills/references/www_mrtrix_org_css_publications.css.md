@@ -1,0 +1,1 @@
+.publication-item{margin:0;padding:0}@media (max-width: 480px){h4.publication-header{font-size:12pt}}@media (max-width: 480px){p.publication-content{font-size:8pt}}.publication-badge{margin-left:5px}.publication-li{margin:0px;list-style-type:none}

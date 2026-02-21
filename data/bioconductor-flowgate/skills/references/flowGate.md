@@ -1,0 +1,831 @@
+# flowGate
+
+### Enabling conventional cytometry analysis in R
+
+# Introduction
+
+There are currently two general strategies for working with cytometry data in R. The first is to perform the entire analysis from within the R coding environment. There are some excellent packages and standards that allow the import of FCS files, compensation, data transformation, plotting, and exporting summary statistics. However, manual gating of flow cytometry data remains cumbersome and difficult to perform accurately. Of note, there are packages available now that enable automatic, data-driven gates that avoid these problems, but are themselves complex to properly prepare and validate the automatic gates. Moreover, these data-driven gates represent an unfamiliar workflow for the majority of cytometerists that are accustomed to GUI-based analyses such as those enabled by FlowJo\(^{TM}\), Kaluza\(^{TM}\), and other cytometry analysis software.
+
+The second strategy is to first perform compensation, transformation, and gating in FlowJo, and then import the resulting workspace object into R using the flowWorkspace package. This has the advantage of allowing cytometerists to work in a familiar way while still enabling the use of cutting-edge cytometry tools. However, this approach lacks all of the other benefits that an R-exclusive cytometry package would allow. In particular, it is dependent on expensive, closed-source software and does not allow for easy commenting and version control. Nevertheless, manual gating remains sufficiently difficult in R as to make this the more common method.
+
+flowGate was developed to fill in this missing ability for manual, GUI-based gating in R, finally enabling a familiar cytometry analysis pipeline completely within R. This vignette will demonstrate the flowGate function within the context of a complete cytometry analysis pipeline and is geared toward a researcher who has never used R for flow cytometry analysis at all.
+
+# Setting up flowGate
+
+## Installing from Bioconductor
+
+flowGate is now submitted to the Bioconductor project, so installing it should be pretty straightforward. Note that it’s still possible to install the unstable devel version from github (see instructions below), but for general use, the Bioconductor version is the better choice.
+
+1. Install RStudio (<https://posit.co/download/rstudio-desktop/>). flowGate uses the Shiny package to make interactive gating possible, which tends to work best from inside the RStudio IDE. You don’t strictly need to use RStudio to make this work, but this vignette is assuming that you are, and if you don’t have a reason not to use RStudio, I recommend that you do at least while you are working through this vignette.
+2. If you are using a Windows operating system, install Rtools (<https://cran.r-project.org/bin/windows/Rtools/>)
+3. From within R, run the following code:
+
+```
+if(!requireNamespace("BiocManager", quietly = TRUE)){
+    install.packages("BiocManager")
+}
+
+BiocManager::install("flowGate")
+```
+
+## Installing from GitHub
+
+If you’d prefer to install the devel version from GitHub, please complete steps 1 and 2 above, then proceed here instead:
+
+3. Make sure that you have a GitHub account (<http://github.com>)
+4. Install BioConductor dependencies (see code below). Once flowGate is submitted to BioConductor, this step won’t be necessary, but for the meantime, the code we will use to install flowGate from github doesn’t know how to automatically install dependencies that are hosted on BioConductor, so we need to do it ourselves first. Run the following code on your computer before proceeding:
+
+```
+if(!requireNamespace("BiocManager", quietly = TRUE)){
+  install.packages("BiocManager")
+}
+
+if(!requireNamespace("flowCore", quietly = TRUE)){
+  BiocManager::install("flowCore")
+}
+
+if(!requireNamespace("flowWorkspace", quietly = TRUE)){
+  BiocManager::install("flowWorkspace")
+}
+
+if(!requireNamespace("ggcyto", quietly = TRUE)){
+  BiocManager::install("ggcyto")
+}
+```
+
+Once you have the BioConductor dependencies installed, you should be able to run the following code to download and install flowGate.
+
+```
+# install devtools if you don't already have it
+if(!requireNamespace("devtools", quietly = TRUE)){
+  install.packages("devtools")
+}
+
+devtools::install_github("NKInstinct/flowGate")
+```
+
+Again, if you aren’t sure which version to use, please go with the Bioconductor version.
+
+# Preparing your cytometry data
+
+Before you can start drawing gates on your data, you need to read it into R and compensate it . If this seems a little complex, don’t worry—it can be a bit much to wrap your head around the first time you do it, but once you know the options you would like to use, you can write them all into a single function and then use that for automatic data import and transformation in the future. We’ll cover preparing just such a function at the end of this section in case you aren’t sure how to do that.
+
+## Assemble a flowSet from seperate .FCS files
+
+The example flow data used in this package comes from the GvHD data included in flowCore, the base package for flow cytometry data analysis in R. The GvHD data that comes with flowCore is already stored in a flowSet, so for this example, you can find the first three samples from GvHD bundled with flowGate as individual .FCS files, which we will turn into a flowSet here.
+
+```
+library(flowGate)
+#> Loading required package: flowWorkspace
+#> As part of improvements to flowWorkspace, some behavior of
+#> GatingSet objects has changed. For details, please read the section
+#> titled "The cytoframe and cytoset classes" in the package vignette:
+#>
+#>   vignette("flowWorkspace-Introduction", "flowWorkspace")
+#> Loading required package: ggcyto
+#> Loading required package: ggplot2
+#> Loading required package: flowCore
+#> Loading required package: ncdfFlow
+#> Loading required package: BH
+library(flowCore)
+
+path_to_fcs <- system.file("extdata", package = "flowGate")
+```
+
+The `system.file()` command above is needed to get at the .FCS files that have shipped with flowGate. However, when you are ready to read your own flow data into R, you can provide a simple path to the directory you are interested in. For example, if your target directory is something called “Flow Data” in your current directory, you could simply pass `path_to_fcs <- "./Flow Data/"` and that would do the same thing.
+
+```
+fs <- read.flowSet(path = path_to_fcs,
+                   pattern = ".FCS$",
+                   full.names = TRUE)
+```
+
+Running this command first finds all of the files at the location specified by path\_to\_fcs and checks if any of them ends in .FCS (that’s the `pattern = ".FCS$"` part of the code). All of them that satisfy the pattern are loaded into a flowSet called fs. Note that there are a lot of customization options here—have a look at the flowCore vignettes if you want to change something about this default behaviour.
+
+### Working with large flowSets
+
+If you have a lot of flow data, you might not want to load it all into a flowSet following the above instructions. This is because the whole flowSet we just created exists in RAM, and if it is extremely large, it might cause problems depending on how much RAM you have available to you. Instead, you can use the ncdfFlow package to directly access the data on your hard drive. This will cause all operations on the data to be slightly slower, but will not consume an enormous chunk of system RAM. It also has some benefits for keeping all your data and analyses together, which we’ll touch on when we talk about saving gated cytometry data. For those reasons, I tend to prefer this NCDF approach for cytometry analysis, but it doesn’t really matter which one you use, especially when just starting out.
+
+```
+# Not run for the purposes of the vignette
+library(ncdfFlow)
+fs <- read.ncdfFlowSet(files = list.files(path = path_to_fcs,
+                                          pattern = ".FCS$",
+                                          full.names = TRUE))
+```
+
+## Convert the flowSet to a GatingSet
+
+FlowSets are excellent containers for holding flow data, but they cannot store information about gating very well. The flowWorkspace package introduces a new, similar data structure called a GatingSet that holds both the flowSet we just made and all gating information about it. Thankfully, once we have made a flowSet, it is very easy to prepare a GatingSet.
+
+```
+library(flowWorkspace)
+gs <- GatingSet(fs)
+```
+
+## Compensate the data
+
+So far we have created a flowSet and then turned it into a GatingSet. This GatingSet is a container that can hold many different kinds of information. Currently, it has the raw expression values recorded off of the cytometer and experimental metadata. Both of these were contained in the FCS file, and so were loaded into the flowSet and then brought over to the GatingSet. Next, we are going to add a compensation matrix to this container, so that the data are properly compensated. For these specific example data, the compensation matrix is stored in an external file which we will import and apply to the GatingSet. There are other ways to compensate, which we will mention below.
+
+```
+path_to_comp <- system.file("extdata",
+                            "compdata",
+                            "compmatrix",
+                            package = "flowCore")
+comp_matrix <- read.table(path_to_comp,
+                          header = TRUE,
+                          skip = 2,
+                          check.names = FALSE)
+
+comp <- compensation(comp_matrix)
+
+gs <- compensate(gs, comp)
+```
+
+### Using acquisition-defined compensation
+
+Although the above example uses an externally-stored compensation matrix, a common use-case will be that you have acquired flow data for which you performed instrument-level compensation. In this case, the compensation matrix is saved directly in the .FCS file upon export, and you can read that into the comp object instead of loading an external file.
+
+There are several places in a .FCS file where a compensation matrix can be stored. My Fortessa X20 stores it in the $SPIL slot of a .FCS, but other cytometers may behave differently. To find out where yours is, you need to first call `spillover()` on one of the samples in your flowSet (**not the GatingSet!**), and then look at the output. One of the slots that gets returned to you will look like a compensation matrix—take note of which one that is and then store it in a variable called comp.
+
+Here is an example. Note that since the .FCS files used in this example do not have an acquisition-defined compensation, trying to run this code using these data will fail.
+
+```
+# Not run for the purposes of the vignette
+
+# Find out which slot the compensation data are in.
+spillover(some_new_fs[[3]])
+
+# You need to select one of the samples contained in the flowSet. I chose the
+# third one here ([[3]]), but that is completely arbitrary. The should all have
+# the exact same compensation matrix.
+
+# This command should output a list of several objects. One of them should look
+# like a compensation matrix. If we were running this command on data from my
+# Fortessa, it would be the first object in the list (the $SPIL slot), but look
+# at your data and see which object you want to work with. Once you know which
+# object is your compensation matrix, proceed.
+
+comp_matrix <- spillover(some_new_fs[[3]])[[1]]
+
+# Note that I have selected the first object in the list, which corresponds to
+# where my acquisition-defined matrices are stored. If yours is in a different
+# list object, put that object's number in place of the [[1]] above.
+
+# From here, it is exactly like before:
+
+comp <- compensation(comp_matrix)
+
+some_new_gs <- compensate(some_new_gs, comp)
+```
+
+### Creating a new compensation matrix from single-colour controls
+
+It is also possible, using the flowCore package, to automatically create a compensation matrix from single colour control samples. Exactly how to do this is beyond the scope of this vignette, so you are encouraged to look into the flowCore vignettes for further instructions.
+
+## Putting it all together—create an import function
+
+As mentioned above, all of that seems like a lot of work just to import the flow data into R. However, a lot of the complexity of this import step comes from not knowing exactly how your specific experiment is set up. Once you know that, you can write all of this into a single function that holds all of your defaults, and then you can just call that function to import your data. If we were to do that with the above data import, it would look something like this:
+
+```
+import_gs <- function(path, pattern, compensation_matrix){
+
+  fs <- read.flowSet(path = path,
+                     pattern = pattern,
+                     full.names = TRUE)
+
+  gs <- GatingSet(fs)
+
+  comp <- compensation(compensation_matrix)
+  gs <- compensate(gs, comp)
+
+  return(gs)
+}
+```
+
+Now that we have defined this function, we can do all of the above steps in a couple of lines of code:
+
+```
+#Setup the paths to your data as before
+path_to_fcs <- system.file("extdata",
+                           package = "flowGate")
+
+path_to_comp<- system.file("extdata",
+                           "compdata",
+                           "compmatrix",
+                           package = "flowCore")
+
+comp_matrix <- read.table(path_to_comp,
+                          header = TRUE,
+                          skip = 2,
+                          check.names = FALSE)
+
+#Then run the import function we just created
+gs <- import_gs(path = path_to_fcs,
+                pattern = ".FCS$",
+                compensation_matrix = comp_matrix)
+```
+
+This is a pretty basic function, and there’s a lot more we could do to make it more useful for other experiments with slightly different conditions, but it’s a good start for now and hopefully demonstrates that once you have the hang of it, importing cytometry data into R is neither difficult nor time consuming.
+
+## What about transforming the data?
+
+If you are used to working with flow data in R, you might be wondering why we haven’t applied transforms (biex, arcsinh, etc) to the fluorescent channels of these data yet. flowGate is designed so that you can apply biexponential scaling to your flow data directly when gating, rather than at this import step, meaning you can set the biex parameters yourself while looking at the data. Note that in this way, the data are transformed at the *plotting* level rather than the data level. We’ll talk a little more about that later.
+
+**However:** if you have very large flow files, you might notice some odd behaviour when trying to draw polygon gates in particular, where your data seems to move around the plot. The gate that you’re drawing will move with them, so you can kind of “roll with it” if you like, but if you find this unworkable, you should apply your transformations first before trying to draw gates on your data. Because flowGate is written to allow on-the-fly changes to almost all aspects of your plot, R has to re-calculate the transformation every time you change anything else in the plot, which can cause this artifact when working with large amounts of data.
+
+The flowCore and flowWorkspace vignettes go into great detail about how to apply transformations (start with the flowWorkspace one since it’s designed for GatingSet data), and if you just want a decent transform without any fuss, have a look at the `estimateLogicle` function in flowWorkspace.
+
+# Interactive gating
+
+Now that we have a compensated and transformed GatingSet object holding all of our flow cytometry data, it is time to start gating through it. If you were working on your own data, you would probably be able to jump right in knowing what parameters are in your dataset, but since this is an example set, it is helpful to have a quick look at the channel names contained in the data.
+
+There are two kinds of names for each channel in this GatingSet object: the detector name (such as “FL1-H”) and, if specified, the marker name (such as “CD15 FITC”). We can access the first kind of name with `colnames()` like we did above, and the second kind with `markernames()`:
+
+```
+colnames(gs)
+#> [1] "FSC-H" "SSC-H" "FL1-H" "FL2-H" "FL3-H" "FL2-A" "FL4-H" "Time"
+
+markernames(gs)
+#>        FL1-H        FL2-H        FL3-H        FL4-H
+#>  "CD15 FITC"    "CD45 PE" "CD14 PerCP"   "CD33 APC"
+```
+
+Note that not every detector name has a corresponding marker name. Thankfully, flowGate can handle either kind of name interchangeably, so it’s not hard to use whichever is more appropriate for the situation.
+
+## Draw your first gate
+
+As with most cytometry experiments, the first thing we are going to look at is cells, as defined by their forward and side scatter. Ironically, because this vignette is non-interactive, you will have to do some of the legwork here yourself to draw your gates. I will annotate this to help you follow along, but your best bet is to run this code while reading to see how it works.
+
+```
+gs_gate_interactive(gs,
+                    filterId = "Leukocytes",
+                    dims = list("FSC-H", "SSC-H"))
+```
+
+```
+#> [1] 2
+```
+
+When you first run the gs\_gate\_interactive command, a window like this should appear
+
+![](data:image/png;base64...)
+
+An image of the flowGate window
+
+The sidebar on the left lets you decide what kind of gate you want to draw, and the main window in the middle shows a plot of your data that you can interact with. You can also set the number of bins with a slider to the left - more bins means the data will be plotted with higher resolution (more, smaller dots).
+
+To draw a gate, the first thing you need to do is pick what kind of gate you want to draw. It is very important that you pick the kind of gate you want to draw **first**, and then draw it second. Doing it the other way tends to cause errors.
+
+To select your leukocytes, switch the gating mode over to polygon by clicking on the polygon radio button
+
+![](data:image/png;base64...)
+
+A flowGate window with polygon selected
+
+Once you have clicked on the kind of gate you want, you can proceed to draw it. Polygon gates (like this one) are drawn by clicking multiple times to trace a polygon. Other gates are drawn differently (Rectangle and Span gates are drawn by clicking and dragging a rectangle, and Quadrant gates are drawn by clicking once where the four quadrants meet).
+
+Go ahead and draw a polygon gate on your data.
+
+![](data:image/png;base64...)
+
+A flowGate window with a polygon drawn on it
+
+If you think you’ve mis-clicked and want to start over, just hit the “Reset” button on the top left and then start drawing your polygon again. Once you are happy with it, click “Done” to close the window and apply the gate to your whole GatingSet.
+
+### Other notes about gating
+
+When you are finished gating, R will return a list containing a few items that help you to re-create the gate you just drew. The first is the actual gate definition as a flowCore gate object. This will give you the filterID, the coordinates, gate type, and so on, and can be passed to other cytometry packages or added to other GatingSets like any gate. The second is the number of bins you chose to display the data as: this is useful if you want to exactly re-create the plot you gated on later. Finally, the third item in the list is the scaling parameters used in the gating. In this case, we didn’t turn on any scaling since we were looking at linear data, so it should return “unused”, but in a moment, we’ll look at what that means more directly.
+
+If something goes wrong when you are drawing your gates (such as if you draw a polygon gate when you still have “rectangle gate” selected), the shiny app can hang. If you exit out of the shiny window without clicking on “done” first, or if you do click “done” but get some warnings or errors, it’s a good idea to make sure that the shiny app isn’t still running in the background. Have a look at your R Console window and see if there is a stop sign.
+
+![](data:image/png;base64...)
+
+A stop sign shown in the R Console tab
+
+If that button is there, it means that the shiny app is still running and you should stop it before proceeding. Trying to do anything else in R while the shiny app runs in the background can cause all kinds of mysterious errors.
+
+## Plot the data with the new gate
+
+Now that we have drawn a leukocytes gate, it is a good idea to have a look at the plot and see that it looks the way we want it to. There are a number of ways to plot flow cytometry data in R—my favourite is with the ggcyto package, which is automatically installed with flowGate for visualization purposes. Since we only want to peek at the data right now to make sure our gate looks right, we can use the easy-but-rigid `autoplot()` function, like so:
+
+```
+autoplot(gs[[1]], gate = "Leukocytes")
+#> Warning: `aes_()` was deprecated in ggplot2 3.0.0.
+#> ℹ Please use tidy evaluation idioms with `aes()`
+#> ℹ The deprecated feature was likely used in the ggcyto package.
+#>   Please report the issue to the authors.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
+#> Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
+#> ℹ Please use tidy evaluation idioms with `aes()`.
+#> ℹ See also `vignette("ggplot2-in-packages")` for more information.
+#> ℹ The deprecated feature was likely used in the ggcyto package.
+#>   Please report the issue to the authors.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
+```
+
+![](data:image/png;base64...)
+
+The important thing here is that you have a gate drawn on a hex plot with a percentage in the middle of it—don’t worry if it doesn’t look exactly like the one here, and don’t worry if the plot doesn’t look the way you want it to for publication. We’ll cover how to make very nice plots at the end.
+
+**Common Mistake:** if, when you run autoplot, you don’t see a gate but you do see a big “0%” sitting roughly where your gate should be, that means you didn’t switch the window to polygon gate before drawing your polygon, and the program is trying to make a rectangle gate out of the very first point you clicked for your polygon (hence an invisibly-small rectangle with 0% of the events in it). Again, we’re working on making this mistake harder to make, but for now, just redo the gate by re-running `gs_gate_interactive()` again. Just make sure you add `regate = TRUE` to the command so flowGate knows to delete this Leukocytes gate before trying to add another Leukocytes gate to root.
+
+## Draw more gates
+
+Now that we have a Leukocytes gate drawn, we can drill down into them and gate on the other markers in our sample. The next likely gate will be to take all of the CD45+ cells for further analysis. For illustrative purposes, let’s gate this one with a 1-D span gate on a histogram.
+
+```
+gs_gate_interactive(gs,
+                    filterId = "CD45",
+                    dims = "CD45",
+                    subset = "Leukocytes")
+```
+
+```
+#> [1] 3
+```
+
+Note that this time, unlike previously, we specify the dimensions (`dims`) we want to work with (CD45), and also the `subset` we want to look at (the “parent gate”, in this case Leukocytes). Running `gs_gate_interactive()` with these arguments will draw a histogram instead of a dot plot, but otherwise the window will look as before.
+
+![](data:image/png;base64...)
+
+A flowGate window showing an histogram
+
+Switch the gating mode over to “Span”
+
+![](data:image/png;base64...)
+
+A flowGate window with Span selected
+
+Then draw your gate. For span and rectangle gates, you draw them by clicking and dragging a rectangle on the plot. In fact, the only difference between span and rectangle gates is that span only considers the horizontal dimensions, while rectangle considers both. So for this gate, you can draw the rectangle as *tall* as you want, since span gates don’t care about the vertical dimensions of the rectangle. This can be useful for drawing the gate exactly where you want it, since you can use the vertical dimensions to help line it up with your histogram peaks.
+
+![](data:image/png;base64...)
+
+A flowGate window showing a span gate on top of an histogram
+
+As before, when you are happy with the gate, click Done to close the window and apply the gate. Unlike with polygon and quadrant gates, you don’t need to click Reset if you want to adjust the rectangle on your graph—you can just adjust or redraw it as many times as you like (note: nothing bad will happen if you click Reset when drawing rectangles, so don’t worry if you do).
+
+Now, as before, we can have a peek at the gate. This time, however, we’re going to use the more expanded ggcyto command to start to get familiar with it. ggcyto uses the same grammar of graphics that ggplot uses, so if you are already familiar with ggplot, this should be very straightforward. If not, a full introduction to the grammar of graphics is beyond the scope of this vignette, but look at the code below and see if you can follow what is happening.
+
+```
+ggcyto(gs[[1]], aes("CD45")) +
+  geom_density() +
+  geom_gate("CD45") +
+  geom_stats()
+#> Warning: Using the `size` aesthetic with geom_segment was deprecated in ggplot2 3.4.0.
+#> ℹ Please use the `linewidth` aesthetic instead.
+#> ℹ The deprecated feature was likely used in the ggcyto package.
+#>   Please report the issue to the authors.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
+```
+
+![](data:image/png;base64...)
+
+The idea behind the grammar of graphics is that you can draw any graph by first specifying the data the graph comes from, and then specifying the kind of image you want to make from those data. In this case, the first line of code tells ggcyto that we want to make a graph based on the first sample contained in gs (`gs[[1]]`), and that we want to look at the CD45 dimension of these data. In the grammar of graphics, this is called an aesthetic, hence “aes”.
+
+After this line specifying what sort of data we want to look at, the next three apply types of images to the data. The first, `geom_density()`, draws a density plot of the CD45 aesthetic in our data. The second, `geom_gate("CD45")`, adds the gate named “CD45” to our data. The third, `geom_stats()`, adds all relevant stats (in this case the percent parent) to any gates drawn on the graph.
+
+Using `ggcyto()` instead of `autoplot()` is a little more cumbersome to type, but provides much more customization to the resulting graph, and is well worth learning how to use if you are regularly going to use R and flowGate for flow analysis. For that reason, the rest of this vignette will use `ggcyto()` calls to generate graphs, so we can get more familiar with what they look like.
+
+## Draw the last quadrant gate
+
+The last gate to add to this plot is a quadrant gate on CD33 and CD15. As before, we’ll call `gs_gate_interactive()` with the appropriate arguments, then switch our gating mode to quadrant, and then click exactly once, where you want the center of the quadrant gate to be. As with the polygon gate, if you mis-click, you can click on Reset to reset your selection and then try again.
+
+```
+gs_gate_interactive(gs[[1]],
+                    filterId = "CD33 CD15",
+                    dims = list("CD33", "CD15"),
+                    subset = "CD45")
+```
+
+![](data:image/png;base64...)
+
+A flowGate window showing badly-scaled cells
+
+Note this time, however, the fact that we haven’t transformed any fluorescent channels is really causing problems. Fortunately, you can click on the “use FlowJo Biex” checkbox to enable re-scaling this plot on a flowJo-style biexponential scale.
+
+![](data:image/png;base64...)
+
+A flowGate window showing scaled cells
+
+This enables a number of extra sliders that allow you to set maximum values, biexponential widths, and extra positive and negative decades in real time. Adjust these sliders until your plot looks like something you can confidently draw a quadrant gate on.
+
+![](data:image/png;base64...)
+
+A flowGate window showing scaled and gated cells
+
+```
+#> [1] 4 5 6 7
+```
+
+As before, we can check the gate by plotting it with ggcyto. This time, however, we’ll need to pass a flowJo biexponential scale to the plot as well, so it will look like the one above. This is done with the `scale_x_flowjo_biex` and `scale_y_flowjo_biex` commands. Note that you can use the output from gs\_gate\_interactive to copy the exact biex scaling params you just used.
+
+```
+ggcyto(gs[[1]], aes("CD33", "CD15")) +
+  geom_hex(bins = 128) +
+  geom_gate("CD33 CD15") +
+  scale_x_flowjo_biexp(maxValue = 252245, widthBasis = -29, pos = 4) +
+  scale_y_flowjo_biexp(maxValue = 250000, widthBasis = -12, pos = 5) +
+  geom_stats()
+```
+
+But wait! Running this command gives an error: the gate “CD33 CD15” isn’t found. It’s always a good idea to check your spelling when you see errors like this, but we can confirm that we did definitely just make a quadrant gate called “CD33 CD15” and apply it to gs, so it should be in there like any others.
+
+You may already have a hunch of what’s going on here, but to check for sure, it’s a good idea to ask gs for the names of all stored gates
+
+```
+gs_get_pop_paths(gs)
+#> [1] "root"
+#> [2] "/Leukocytes"
+#> [3] "/Leukocytes/CD45"
+#> [4] "/Leukocytes/CD45/CD33 APC-CD15 FITC+"
+#> [5] "/Leukocytes/CD45/CD33 APC+CD15 FITC+"
+#> [6] "/Leukocytes/CD45/CD33 APC+CD15 FITC-"
+#> [7] "/Leukocytes/CD45/CD33 APC-CD15 FITC-"
+```
+
+As you can see above, when you draw a quadrant gate, it actually puts four new gates on the plot (one for each quadrant). Since all four of these can’t be named “CD33 CD15”, the quadrant gate ignores the filterId you give it and makes up unique names for the four gates based on the marker names involved in the plot. So to plot this quadrant gate, we need to specify all four of these gates.
+
+```
+ggcyto(gs[[1]], aes("CD33", "CD15")) +
+  geom_hex(bins = 128) +
+  scale_x_flowjo_biexp(maxValue = 252245, widthBasis = -29, pos = 4) +
+  scale_y_flowjo_biexp(maxValue = 250000, widthBasis = -12, pos = 5) +
+  geom_gate(c("CD33 APC-CD15 FITC+",
+              "CD33 APC+CD15 FITC+",
+              "CD33 APC+CD15 FITC-",
+              "CD33 APC-CD15 FITC-")) +
+  geom_hline(yintercept = 80.2426) +
+  geom_vline(xintercept = 97.42192) +
+  geom_stats()
+#> Warning: Removed 4 rows containing missing values or values outside the scale range
+#> (`geom_path()`).
+#> `geom_path()`: Each group consists of only one observation.
+#> ℹ Do you need to adjust the group aesthetic?
+#> Warning: Removed 4 rows containing missing values or values outside the scale range
+#> (`geom_path()`).
+#> `geom_path()`: Each group consists of only one observation.
+#> ℹ Do you need to adjust the group aesthetic?
+#> Warning: Removed 4 rows containing missing values or values outside the scale range
+#> (`geom_path()`).
+#> `geom_path()`: Each group consists of only one observation.
+#> ℹ Do you need to adjust the group aesthetic?
+```
+
+![](data:image/png;base64...)
+
+(Note also that there is a slight bug in ggcyto where adding a flowjo\_biex scale to the graph makes the quad gates not appear. Note that the gates still exist and still must be added to the plot in order to show their stats, but the gates themselves aren’t drawn as they had been previously. As a work-around, you can add a horizontal and a vertical line with `geom_hline()` and `geom_vline()`, and can get the exact coordinates of their intercepts from the output of the gs\_gate\_interactive command’s gate definition).
+
+If you are comfortable with the stringr package, you can also specify this a little more efficiently by first selecting all of the population paths that contain the word “CD33” and then passing this list to geom\_gate:
+
+```
+quadgates <- gs_get_pop_paths(gs)[stringr::str_detect(gs_get_pop_paths(gs),
+                                                      "CD33")]
+
+ggcyto(gs[[1]], aes("CD33", "CD15")) +
+  geom_hex(bins = 128) +
+  scale_x_flowjo_biexp(maxValue = 252245, widthBasis = -29, pos = 4) +
+  scale_y_flowjo_biexp(maxValue = 250000, widthBasis = -12, pos = 5) +
+  geom_gate(quadgates) +
+  geom_hline(yintercept = 80.2426) +
+  geom_vline(xintercept = 97.42192) +
+  geom_stats()
+#> Warning: Removed 4 rows containing missing values or values outside the scale range
+#> (`geom_path()`).
+#> `geom_path()`: Each group consists of only one observation.
+#> ℹ Do you need to adjust the group aesthetic?
+#> Warning: Removed 4 rows containing missing values or values outside the scale range
+#> (`geom_path()`).
+#> `geom_path()`: Each group consists of only one observation.
+#> ℹ Do you need to adjust the group aesthetic?
+#> Warning: Removed 4 rows containing missing values or values outside the scale range
+#> (`geom_path()`).
+#> `geom_path()`: Each group consists of only one observation.
+#> ℹ Do you need to adjust the group aesthetic?
+```
+
+![](data:image/png;base64...)
+
+Again, this isn’t that important, so if stringr is unfamiliar to you, don’t worry about it yet and come back to this idea when you’re more comfortable with working with strings.
+
+## Save your GatingSet object
+
+Once you have your gates drawn to your satisfaction, the last thing to do is to save your GatingSet object so that you don’t need to re-draw your gates when you come back to them. One detail about the flowWorkspace package that we haven’t covered yet is that GatingSet objects are very different from most R objects, and so saving your GatingSet using normal R proceedures will fail (i.e. if you try to save it as a .Rds it won’t load properly). If you want to understand what is going on under the hood, have a look at the flowWorkspace vignette. To save this object, you need the `save_gs()` function from flowWorkspace. This saves your GatingSet object as a directory that you can then load in with `load_gs()`. Although not necessary, I like to end this directory name with “.gs” to remind myself that the whole directory is the GatingSet object, so it’s helpful to think of it more like a single file than a directory.
+
+```
+save_gs(gs, "GvHD GatingSet.gs")
+
+#Load it back in
+gs <- load_gs(file.path("GvHD GatingSet.gs"))
+```
+
+One very important note here—in some versions of flowWorkspace, the `load_gs()` command is very sensitive to the way file paths are specified in a system, and in particular fails when you try to use it in a Windows environment. Wrapping your filepath with `file.path()` from base R will solve this problem and make it work across any OS.
+
+It’s also worth mentioning that another benefit of the NCDF style of flow cytometry data that we mentioned all the way back in data import is that the NCDF data itself gets saved inside this GatingSet, which means that the whole thing (data, gates, compensation, etc) are stored in your GatingSet.gs directory. This is another reason that I like using the NCDF style of import, but as long as you don’t move the .FCS files that are making up your GatingSet, you shouldn’t run into any problems if you load the GatingSet through the conventional workflow (just like in FlowJo—don’t move your FCS files around after starting to analyze them!).
+
+# Rapidly Apply Gating Strategies
+
+At this point, we know how to import flow data into R and interactively draw gates on it. Below, we’ll talk about how to nicely plot and export the gated flow data for a complete cytometry analysis solution. However, before we get to that, there is an important second function included in flowGate that we need to talk about, which will let you work through a gating strategy much more efficiently than above.
+
+You may have noticed reading through the above section that gating on flow data using gs\_gate\_interactive requires a lot of typing. This is by design—one of the motivating forces behind developing flowGate was a desire to make cytometry data analysis easier to document and reproduce. Therefore, we designed gs\_gate\_interactive to do as little “invisible” work as possible, and make the user explicitly state all of the different components that made up their gating strategy.
+
+Nevertheless, working with gs\_gate\_interactive quickly becomes cumbersome when you have a moderately complex gating strategy you’d like to apply to one or more GatingSets. To get around this problem while still insisting on leaving a written record of how you gated your samples, flowGate comes with a helper function called `gs_apply_gating_strategy()`. If you are familiar with the purrr package, this function is essentially just a wrapper around pwalk that lets you apply a pre-defined gating strategy to a GatingSet without re-typing the commands each time. However, the purrr package is a level-up in complexity when you are first learning R, so instead of making you go learn how to think functionally, we wrote gs\_apply\_gating\_strategy to let you leverage this powerful package for flow analysis right away.
+
+## Define your gating strategy
+
+To make use of gs\_apply\_gating\_strategy, you first need to create a gating strategy in a format the function can recognize. This strategy must be a tibble, a special kind of dataframe implemented in the tidyverse family of packages (which includes purrr), where each column name is one of the parameters you would normally define in gs\_gate\_interactive, and each row is a new gate you are going to draw. You can make this tibble any way you want, but we’ve found that the easiest approach is using the `tribble()` function from the tibble package, which lets you define a tibble as if you were actually writing it down on a piece of paper. To demonstrate, we’ll re-create the above gating strategy here.
+
+```
+strategy <- tibble::tribble(
+  ~filterId,    ~dims,                  ~subset,      ~bins,
+  "Leukocytes", list("FSC-H", "SSC-H"), "root",       256,
+  "CD45",       list("CD45"),           "Leukocytes", 256,
+  "CD33 CD15",  list("CD33", "CD15"),    "CD45",      64
+)
+```
+
+When using the `tribble()` function, you define column names with a “~” and then the name (unquoted), and then fill in each row of data with whatever is supposed to be there. As usual in R, whitespace doesn’t really matter much, so you are free to lay out the tribble exactly as a table to make it nice and human readable. In the above example, this will result in a four-column tibble, with a column for `filterId`, `dims`, `subset`, and `bins`, which are the four arguments we used above when gating through our data. Any arguments not specified here will use their defaults, or can be set outside the strategy, which we’ll talk about in a second.
+
+## Applying the gating strategy
+
+Once the gating strategy is defined, applying it to your gating set is extremely easy. Just call the following:
+
+```
+gs_apply_gating_strategy(gs, gating_strategy = strategy)
+```
+
+That single command will now go through your GatingSet object and apply the gating strategy line-by-line, automatically popping up the interactive window each time it moves to a new line and letting you draw the gate you want. This way, you don’t need to write out a full call to gs\_gate\_interactive for each new gate you want to apply to your GatingSet, but you still get a record of the gating strategy you used and each parameter contained in it.
+
+## Adding unchanging parameters
+
+As mentioned above, any parameters not included in the gating strategy will use their defaults from gs\_gate\_interactive. If you don’t want to use the default behaviour, you could just add a new column to the gating strategy. However, this will get annoying if that new column doesn’t change ever. For example, if we wanted to run the above gating strategy, but use `bins = 64` for all the gates, it would be annoying to have to include that in the strategy. Instead, we can add it to the call to `gs_apply_gating_strategy` directly:
+
+```
+strategy <- tibble::tribble(
+  ~filterId,    ~dims,                  ~subset,
+  "Leukocytes", list("FSC-H", "SSC-H"), "root",
+  "CD45",       list("CD45"),           "Leukocytes",
+  "CD33 CD15",  list("CD33", "CD15"),    "CD45"
+)
+
+gs_apply_gating_strategy(gs, gating_strategy = strategy, bins = 64)
+```
+
+# Data Export—Images and Summary Statistics
+
+Now that we have gated on our samples, the last step is to have a look at the different flow samples and pick some example plots to show others, as well as extract statistics like percent of parent populations and MFI. Again, the flowCore, ggcyto, and flowWorkspace packages are very feature-rich in this department, so what we will show below is only the tip of the iceberg. However, this should cover many of the conventional cytometry use cases and let you do complete, basic cytometry analysis using only R.
+
+## Plot data nicely
+
+Imagine we wanted to show the overall proportions of leukocytes, based on the very first gate we drew. Since there’s only three samples in the GatingSet, the best way to do this is just plot three dotplots showing each sample’s FSC-H and SSC-H, gated with our polygon gate. Fortunately, we already know how to do this. Remember how above, each time we plotted something, we specified that we only wanted the first sample in gs with `gs[[1]]`? All we need to do is not specify anything and ggcyto will plot all three graphs.
+
+```
+ggcyto(gs, aes("FSC-H", "SSC-H")) +
+  geom_hex() +
+  geom_gate("Leukocytes") +
+  geom_stats()
+```
+
+![](data:image/png;base64...)
+
+These graphs do a good job conveying the information we want to show, but they look a little primitive compared to graphs that commercial software produces, so let’s try to use the huge customization possibilities in ggcyto to make them nicer. We’ll change three things: change the gates from bright red to a semi-transparent grey, make the stats overlays slightly more friendly numbers, and increase the bins to make the dots a little less crude. Have a look at the code below and see if you can understand what is happening before reading on.
+
+**NB:** the ggcyto package insists on “colour” as the only spelling of the word. Trying to set the “color” of your gate will result in hours of fruitless debugging.
+
+```
+ggcyto(gs, aes("FSC-H", "SSC-H")) +
+  geom_hex(bins = 128) +
+  geom_gate("Leukocytes", colour = "grey3", alpha = 0.2) +
+  geom_stats(digits = 1)
+```
+
+![](data:image/png;base64...)
+
+That’s starting to look much classier, while still clearly presenting the data. The last thing I like to do with presentation plots is to remove the grey in the background. Changing the overall appearance of a plot is accomplished with the `theme_` family of layers to add to a ggcyto object. There are some default themes, as well as packages with other nice ones out there. It’s also possible to get extremely fine control over theme elements with the `theme()` layer, but that’s an advanced topic that you should look into the first time you run into a theme problem you can’t fix with a pre-loaded one.
+
+```
+ggcyto(gs, aes("FSC-H", "SSC-H")) +
+  geom_hex(bins = 128) +
+  geom_gate("Leukocytes", colour = "grey3", alpha = 0.2) +
+  geom_stats(digits = 1) +
+  theme_minimal()
+```
+
+![](data:image/png;base64...)
+
+## Retrieving summary statistics
+
+In this case, we only care about CD33 and CD15 expression on three samples, so the graphs above are sufficient to convey all the information we want. Normally, however, it’s necessary to retrieve some summary statistics such as percent of parent or MFI from many different populations and then graph them somehow. flowWorkspace has a number of functions we can use to access this information. The easiest is `gs_pop_get_counts_fast()`, which returns a basic table of population counts without any fuss.
+
+```
+gs_pop_get_count_fast(gs)
+#>           name                           Population           Parent Count
+#>         <char>                               <char>           <char> <int>
+#>  1: s10a01.FCS                          /Leukocytes             root  1320
+#>  2: s10a01.FCS                     /Leukocytes/CD45      /Leukocytes   512
+#>  3: s10a01.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+ /Leukocytes/CD45    46
+#>  4: s10a01.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+ /Leukocytes/CD45    16
+#>  5: s10a01.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC- /Leukocytes/CD45    70
+#>  6: s10a01.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC- /Leukocytes/CD45   380
+#>  7: s10a02.FCS                          /Leukocytes             root  1273
+#>  8: s10a02.FCS                     /Leukocytes/CD45      /Leukocytes   886
+#>  9: s10a02.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+ /Leukocytes/CD45    30
+#> 10: s10a02.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+ /Leukocytes/CD45     1
+#> 11: s10a02.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC- /Leukocytes/CD45    24
+#> 12: s10a02.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC- /Leukocytes/CD45   831
+#> 13: s10a03.FCS                          /Leukocytes             root  2319
+#> 14: s10a03.FCS                     /Leukocytes/CD45      /Leukocytes  1741
+#> 15: s10a03.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+ /Leukocytes/CD45    12
+#> 16: s10a03.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+ /Leukocytes/CD45     0
+#> 17: s10a03.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC- /Leukocytes/CD45     1
+#> 18: s10a03.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC- /Leukocytes/CD45  1728
+#>     ParentCount
+#>           <int>
+#>  1:        3420
+#>  2:        1320
+#>  3:         512
+#>  4:         512
+#>  5:         512
+#>  6:         512
+#>  7:        3405
+#>  8:        1273
+#>  9:         886
+#> 10:         886
+#> 11:         886
+#> 12:         886
+#> 13:        3435
+#> 14:        2319
+#> 15:        1741
+#> 16:        1741
+#> 17:        1741
+#> 18:        1741
+```
+
+However, geting anything useful out of that table will require a bit more data cleaning. Instead, we can use `gs_pop_get_stats()`, which is a more robust version of `gs_pop_get_counts_fast()`. Here, we can specify whether we want percent (of parent) or count, or can even specify our own functions to derive a stat. We can also specify certain gates if we don’t want to look at all the populations contained within the GatingSet.
+
+```
+gs_pop_get_stats(gs, type = "percent")
+#>         sample                                  pop      percent
+#>         <char>                               <char>        <num>
+#>  1: s10a01.FCS                                 root 1.0000000000
+#>  2: s10a01.FCS                          /Leukocytes 0.3859649123
+#>  3: s10a01.FCS                     /Leukocytes/CD45 0.3878787879
+#>  4: s10a01.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+ 0.0898437500
+#>  5: s10a01.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+ 0.0312500000
+#>  6: s10a01.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC- 0.1367187500
+#>  7: s10a01.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC- 0.7421875000
+#>  8: s10a02.FCS                                 root 1.0000000000
+#>  9: s10a02.FCS                          /Leukocytes 0.3738619677
+#> 10: s10a02.FCS                     /Leukocytes/CD45 0.6959937156
+#> 11: s10a02.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+ 0.0338600451
+#> 12: s10a02.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+ 0.0011286682
+#> 13: s10a02.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC- 0.0270880361
+#> 14: s10a02.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC- 0.9379232506
+#> 15: s10a03.FCS                                 root 1.0000000000
+#> 16: s10a03.FCS                          /Leukocytes 0.6751091703
+#> 17: s10a03.FCS                     /Leukocytes/CD45 0.7507546356
+#> 18: s10a03.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+ 0.0068925905
+#> 19: s10a03.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+ 0.0000000000
+#> 20: s10a03.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC- 0.0005743825
+#> 21: s10a03.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC- 0.9925330270
+#>         sample                                  pop      percent
+
+gs_pop_get_stats(gs, type = "percent", nodes = "CD45")
+#>        sample    pop   percent
+#>        <char> <char>     <num>
+#> 1: s10a01.FCS   CD45 0.3878788
+#> 2: s10a02.FCS   CD45 0.6959937
+#> 3: s10a03.FCS   CD45 0.7507546
+```
+
+Specifying our own function is how we get MFI from this command, although the resulting table is a little different in that it returns the MFI for each channel for each population:
+
+```
+gs_pop_get_stats(gs, type = pop.MFI)
+#>         sample                                  pop FSC-Height SSC-Height
+#>         <char>                               <char>      <num>      <num>
+#>  1: s10a01.FCS                                 root      197.0      145.5
+#>  2: s10a01.FCS                          /Leukocytes      346.0      106.0
+#>  3: s10a01.FCS                     /Leukocytes/CD45      330.5       84.0
+#>  4: s10a01.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+      426.0      225.0
+#>  5: s10a01.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+      393.0      131.5
+#>  6: s10a01.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC-      334.5       71.5
+#>  7: s10a01.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC-      321.0       81.5
+#>  8: s10a02.FCS                                 root      155.0       73.0
+#>  9: s10a02.FCS                          /Leukocytes      311.0       88.0
+#> 10: s10a02.FCS                     /Leukocytes/CD45      324.0       86.5
+#> 11: s10a02.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+      463.0      291.0
+#> 12: s10a02.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+      680.0      513.0
+#> 13: s10a02.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC-      384.5      109.0
+#> 14: s10a02.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC-      317.0       85.0
+#> 15: s10a03.FCS                                 root      256.0       91.0
+#> 16: s10a03.FCS                          /Leukocytes      307.0       98.0
+#> 17: s10a03.FCS                     /Leukocytes/CD45      309.0       94.0
+#> 18: s10a03.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC+      339.0      111.5
+#> 19: s10a03.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC+        NaN        NaN
+#> 20: s10a03.FCS /Leukocytes/CD45/CD33 APC+CD15 FITC-      228.0       73.0
+#> 21: s10a03.FCS /Leukocytes/CD45/CD33 APC-CD15 FITC-      309.0       94.0
+#>         sample                                  pop FSC-Height SSC-Height
+#>        CD15 FITC    CD45 PE  CD14 PerCP   CD33 APC Time (51.20 sec.)
+#>            <num>      <num>       <num>      <num>             <num>
+#>  1:   13.5996876   30.45058   -9.643422   8.711668               270
+#>  2:    5.4676127  144.97336  -16.788250  15.042021               272
+#>  3:    9.6229916  785.92584  -94.139992  27.272420               263
+#>  4:  331.2456818  841.37839  -82.922741  35.039520               275
+#>  5:  318.6315460  964.64413 -120.808823 366.754135               229
+#>  6:    0.1012886  775.45840  -93.690350 242.710533               279
+#>  7:    9.3366413  777.21405  -94.580257  23.122594               262
+#>  8:    2.0787711   50.52770   -4.050773   5.188426               378
+#>  9:    4.4729295  615.16132  -79.856590  21.387505               367
+#> 10:    4.8510027  710.75040  -91.941307  23.976637               362
+#> 11:  237.5526505 1049.94025 -129.168713  62.134062               301
+#> 12: 1915.9261475 1457.85132 -258.817078 143.360886               640
+#> 13:    1.8730214  689.62305  -91.864277 115.895218               392
+#> 14:    4.7642722  698.62616  -91.074135  23.106012               362
+#> 15:    0.9790034  853.45288 -115.138008  26.940256               373
+#> 16:    0.4265432 1048.86206 -142.170654  32.176792               382
+#> 17:    0.6490263  975.08081 -131.160278  29.779650               387
+#> 18:  373.4992218  941.59219 -141.635803  30.404140               322
+#> 19:          NaN        NaN         NaN        NaN               NaN
+#> 20:   -5.9972925 1228.10071 -126.859680 313.914093                56
+#> 21:    0.6288088  975.24161 -131.019043  29.771698               387
+#>        CD15 FITC    CD45 PE  CD14 PerCP   CD33 APC Time (51.20 sec.)
+```
+
+## Where to go from here
+
+As with any tabular data in R, you can save any of these results tables as .csv files by storing them in a variable and then calling `write.csv()` around it:
+
+```
+results <- gs_pop_get_stats(gs, type = "percent")
+
+writs.csv(results, "results.csv")
+```
+
+This would let you analyze these data in any software you like, just like you already do with your analysis software of choice. However, R is a powerhouse of analysis and graphing capabilities, and so the best thing to do with these data is to analyze and display them in R. This is a huge subject that goes far beyond the scope of this vignette, but if you’ve never tried R’s graphing and data carpentry capabilities before, I highly recommend Wickham and Grolemund’s R for Data Science (<https://r4ds.had.co.nz/>), which will give you an excellent introduction to all of these subjects and let you quickly plot graphs from these data without needing any external software.
+
+# Acknowledgements
+
+The authors thank Dr. Meromit Singer and the Partners and HMS computing cores for help getting our lab started in applying bioinformatics methods. The original code for flowGate was based on the choose\_cells() function from Monocle3 by the Trapnell lab (<https://cole-trapnell-lab.github.io/monocle3/>). Andrew Wight was funded by an AAI Intersect fellowship for cross-training immunologists in computational biology & a grant from the Claudia Adams Barr foundation. FlowJo is a registered trademark of Beckton, Dickenson, and Company. Kaluza is a registered trademark of Beckman Coulter Inc.
+
+# Session Info
+
+```
+sessionInfo()
+#> R version 4.5.1 Patched (2025-08-23 r88802)
+#> Platform: x86_64-pc-linux-gnu
+#> Running under: Ubuntu 24.04.3 LTS
+#>
+#> Matrix products: default
+#> BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+#> LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+#>
+#> locale:
+#>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+#>  [3] LC_TIME=en_GB              LC_COLLATE=C
+#>  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+#>  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+#>  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+#> [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+#>
+#> time zone: America/New_York
+#> tzcode source: system (glibc)
+#>
+#> attached base packages:
+#> [1] stats     graphics  grDevices utils     datasets  methods   base
+#>
+#> other attached packages:
+#> [1] flowGate_1.10.0      ggcyto_1.38.0        ncdfFlow_2.56.0
+#> [4] BH_1.87.0-1          flowCore_2.22.0      ggplot2_4.0.0
+#> [7] flowWorkspace_4.22.0
+#>
+#> loaded via a namespace (and not attached):
+#>  [1] sass_0.4.10         generics_0.1.4      stringi_1.8.7
+#>  [4] lattice_0.22-7      digest_0.6.37       magrittr_2.0.4
+#>  [7] evaluate_1.0.5      grid_4.5.1          RColorBrewer_1.1-3
+#> [10] fastmap_1.2.0       plyr_1.8.9          jsonlite_2.0.0
+#> [13] graph_1.88.0        promises_1.4.0      BiocManager_1.30.26
+#> [16] gridExtra_2.3       scales_1.4.0        XML_3.99-0.19
+#> [19] Rgraphviz_2.54.0    jquerylib_0.1.4     shiny_1.11.1
+#> [22] cli_3.6.5           crayon_1.5.3        rlang_1.1.6
+#> [25] RProtoBufLib_2.22.0 Biobase_2.70.0      withr_3.0.2
+#> [28] cachem_1.1.0        yaml_2.3.10         otel_0.2.0
+#> [31] cytolib_2.22.0      tools_4.5.1         dplyr_1.1.4
+#> [34] httpuv_1.6.16       BiocGenerics_0.56.0 mime_0.13
+#> [37] vctrs_0.6.5         R6_2.6.1            matrixStats_1.5.0
+#> [40] stats4_4.5.1        lifecycle_1.0.4     stringr_1.5.2
+#> [43] S4Vectors_0.48.0    pkgconfig_2.0.3     later_1.4.4
+#> [46] pillar_1.11.1       bslib_0.9.0         hexbin_1.28.5
+#> [49] gtable_0.3.6        Rcpp_1.1.0          data.table_1.17.8
+#> [52] glue_1.8.0          xfun_0.53           tibble_3.3.0
+#> [55] tidyselect_1.2.1    knitr_1.50          dichromat_2.0-0.1
+#> [58] xtable_1.8-4        farver_2.1.2        htmltools_0.5.8.1
+#> [61] labeling_0.4.3      rmarkdown_2.30      compiler_4.5.1
+#> [64] S7_0.2.0
+```

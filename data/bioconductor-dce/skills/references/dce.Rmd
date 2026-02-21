@@ -1,0 +1,351 @@
+---
+title: "Get started"
+author: "Kim Philipp Jablonski, Martin Pirkl"
+date: "`r Sys.Date()`"
+graphics: yes
+output: BiocStyle::html_document
+bibliography: bibliography.bib
+vignette: >
+    %\VignetteIndexEntry{Get started}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+# Overview
+
+One cause of diseases like cancer is the dysregulation of signalling pathways. The interaction of two or more genes is changed and cell behaviour is changed in the malignant tissue.
+
+The estimation of causal effects from observational data has previously been used to elucidate gene interactions. We extend this notion to compute Differential Causal Effects (DCE). We compare the causal effects between two conditions, such as a malignant tissue (e.g., from a tumor) and a healthy tissue to detect differences in the gene interactions.
+
+However, computing causal effects solely from given observations is difficult, because it requires reconstructing the gene network beforehand. To overcome this issue, we use prior knowledge from literature. This largely improves performance and makes the estimation of DCEs more accurate.
+
+Overall, we can detect pathways which play a prominent role in tumorigenesis. We can even pinpoint specific interaction in the pathway that make a large contribution to the rise of the disease.
+
+You can learn more about the theory in our [publication](https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab847/6470558).
+
+# Installation
+
+```{r eval=FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("dce")
+```
+
+# Load required packages
+
+Load `dce` package and other required libraries.
+
+```{r message=FALSE}
+# fix "object 'guide_edge_colourbar' of mode 'function' was not found"
+# when building vignettes
+# (see also https://github.com/thomasp85/ggraph/issues/75)
+library(ggraph)
+
+library(curatedTCGAData)
+library(TCGAutils)
+library(SummarizedExperiment)
+
+library(tidyverse)
+library(cowplot)
+library(graph)
+library(dce)
+
+set.seed(42)
+```
+
+# Introductory example
+
+To demonstrate the basic idea of Differential Causal Effects (DCEs), we first artificially create a wild-type network by setting up its adjacency matrix.
+The specified edge weights describe the direct causal effects and total causal effects are defined accordingly [@pearl2010causal].
+In this way, the detected dysregulations are endowed with a causal interpretation and spurious correlations are ignored. This can be achieved by using valid adjustment sets, assuming that the underlying network indeed models causal relationships accurately.
+In a biological setting, these networks correspond, for example, to a KEGG pathway  [@kanehisa2004kegg] in a healthy cell.
+Here, the edge weights correspond to proteins facilitating or inhibiting each others expression levels.
+
+```{r}
+graph_wt <- matrix(c(0, 0, 0, 1, 0, 0, 1, 1, 0), 3, 3)
+rownames(graph_wt) <- colnames(graph_wt) <- c("A", "B", "C")
+graph_wt
+```
+
+In case of a disease, these pathways can become dysregulated.
+This can be expressed by a change in edge weights.
+
+```{r}
+graph_mt <- graph_wt
+graph_mt["A", "B"] <- 2.5 # dysregulation happens here!
+graph_mt
+
+cowplot::plot_grid(
+  plot_network(graph_wt, edgescale_limits = c(-3, 3)),
+  plot_network(graph_mt, edgescale_limits = c(-3, 3)),
+  labels = c("WT", "MT")
+)
+```
+
+By computing the counts based on the edge weights (root nodes are randomly initialized), we can generate synthetic expression data for each node in both networks. Both `X_wt` and `X_mt` then induce causal effects as defined in their respective adjacency matrices.
+
+```{r}
+X_wt <- simulate_data(graph_wt)
+X_mt <- simulate_data(graph_mt)
+
+X_wt %>%
+  head
+```
+
+Given the network topology (without edge weights!) and expression data from both WT and MT conditions, we can estimate the difference in causal effects for each edge between the two conditions. These are the aforementioned Differential Causal Effects (DCEs).
+
+```{r}
+res <- dce(graph_wt, X_wt, X_mt)
+
+res %>%
+  as.data.frame %>%
+  drop_na
+```
+
+Visualizing the result shows that we can recover the dysregulation of the edge from `A` to `B`.
+Note that since we are computing total causal effects, the causal effect of  `A` on `C` has changed as well.
+
+```{r}
+plot(res) +
+  ggtitle("Differential Causal Effects between WT and MT condition")
+```
+
+
+# DCE reconstruction with non-trivial network
+
+To get a better feeling for the behavior of *dce*, we will look at DCE estimates for a larger pathway.
+In particular, we create a $20$ node wild-type (WT) network with edge probability $0.3$ as well as a dysregulated mutated (MT) network.
+
+
+```{r}
+set.seed(1337)
+
+# create wild-type and mutant networks
+graph_wt <- create_random_DAG(20, 0.3)
+graph_mt <- resample_edge_weights(graph_wt)
+
+cowplot::plot_grid(
+  plot_network(as(graph_wt, "matrix"), labelsize = 0, arrow_size = 0.01),
+  plot_network(as(graph_mt, "matrix"), labelsize = 0, arrow_size = 0.01),
+  labels = c("WT", "MT")
+)
+```
+
+Next, we simulate gene expression data and compute DCEs.
+
+```{r}
+# simulate gene expression data for both networks
+X_wt <- simulate_data(graph_wt)
+X_mt <- simulate_data(graph_mt)
+
+# compute DCEs
+res <- dce::dce(graph_wt, X_wt, X_mt)
+
+df_dce <- res %>%
+  as.data.frame %>%
+  drop_na %>%
+  arrange(dce_pvalue)
+```
+
+Finally, we compare the estimated to the ground truth DCEs.
+
+```{r}
+# compute ground truth DCEs
+dce_gt <- trueEffects(graph_mt) - trueEffects(graph_wt)
+dce_gt_ind <- which(dce_gt != 0, arr.ind = TRUE)
+
+# create plot
+data.frame(
+  source = paste0("n", dce_gt_ind[, "row"]),
+  target = paste0("n", dce_gt_ind[, "col"]),
+  dce_ground_truth = dce_gt[dce_gt != 0]
+) %>%
+  inner_join(df_dce, by = c("source", "target")) %>%
+  rename(dce_estimate = dce) %>%
+ggplot(aes(x = dce_ground_truth, y = dce_estimate)) +
+  geom_abline(color = "gray") +
+  geom_point() +
+  xlab("DCE (ground truth") +
+  ylab("DCE (estimate)") +
+  theme_minimal()
+```
+
+We observe that *dce* is able to nicely recover DCEs of moderate as well as large and small magnitude.
+
+
+# Application to real data
+
+Pathway dysregulations are a common cancer hallmark [@hanahan2011hallmarks].
+It is thus of interest to investigate how the causal effect magnitudes in relevant pathways vary between normal and tumor samples.
+
+## Retrieve gene expression data
+
+As a showcase, we download breast cancer (BRCA) RNA transcriptomics profiling data from TCGA [@tomczak2015cancer].
+
+```{r}
+brca <- curatedTCGAData(
+  diseaseCode = "BRCA",
+  assays = c("RNASeq2*"),
+  version = "2.0.1",
+  dry.run = FALSE
+)
+```
+
+This will retrieve all available samples for the requested data sets.
+These samples can be classified according to their site of origin.
+
+```{r}
+sampleTables(brca)
+
+data(sampleTypes, package = "TCGAutils")
+sampleTypes %>%
+  dplyr::filter(Code %in% c("01", "06", "11"))
+```
+
+We can extract Primary Solid Tumor and matched Solid Tissue Normal samples.
+
+```{r}
+# split assays
+brca_split <- splitAssays(brca, c("01", "11"))
+
+# only retain matching samples
+brca_matched <- as(brca_split, "MatchedAssayExperiment")
+
+brca_wt <- assay(brca_matched, "01_BRCA_RNASeq2GeneNorm-20160128")
+brca_mt <- assay(brca_matched, "11_BRCA_RNASeq2GeneNorm-20160128")
+```
+
+## Retrieve biological pathway of interest
+
+KEGG [@kanehisa2004kegg] provides the breast cancer related pathway `hsa05224`.
+It can be easily retrieved using `dce`.
+
+```{r}
+pathways <- get_pathways(pathway_list = list(kegg = c("Breast cancer")))
+brca_pathway <- pathways[[1]]$graph
+```
+
+Luckily, it shares all genes with the cancer data set.
+
+```{r}
+shared_genes <- intersect(nodes(brca_pathway), rownames(brca_wt))
+glue::glue(
+  "Covered nodes: {length(shared_genes)}/{length(nodes(brca_pathway))}"
+)
+```
+
+## Estimate Differential Causal Effects
+
+We can now estimate the differences in causal effects between matched tumor and normal samples on a breast cancer specific pathway.
+
+```{r warning=FALSE}
+res <- dce::dce(brca_pathway, t(brca_wt), t(brca_mt))
+```
+
+Interpretations may now begin.
+
+```{r}
+res %>%
+  as.data.frame %>%
+  drop_na %>%
+  arrange(desc(abs(dce))) %>%
+  head
+
+plot(
+  res,
+  nodesize = 20, labelsize = 1,
+  node_border_size = 0.05, arrow_size = 0.01,
+  use_symlog = TRUE,
+  shadowtext = TRUE
+)
+```
+
+# Latent Confounding Adjustment
+
+We illustrate here how `dce` can help to adjust for some special types of unobserved confounding, such as batch effects. One needs a relatively large data set in order to detect confounding well.
+
+We first generate the unconfounded data:
+
+```{r}
+set.seed(1)
+epsilon <- 1e-100
+network_size <- 50
+graph_wt <- as(create_random_DAG(network_size, prob = .2), "matrix")
+graph_wt["n1", "n2"] <- epsilon
+graph_mt <- graph_wt
+graph_mt["n1", "n2"] <- 2
+
+cowplot::plot_grid(
+  plot_network(graph_wt, edgescale_limits = c(-2, 2)),
+  plot_network(graph_mt, edgescale_limits = c(-2, 2)),
+  labels = c("WT", "MT")
+)
+
+truth <- trueEffects(graph_mt) - trueEffects(graph_wt)
+plot_network(graph_wt, value_matrix = truth, edgescale_limits = c(-2, 2))
+
+X_wt <- simulate_data(n = 100, graph_wt)
+X_mt <- simulate_data(n = 100, graph_mt)
+```
+
+For the unconfounded data `dce` estimates the differential causal effects well:
+```{r}
+res <- dce(graph_mt, X_wt, X_mt, deconfounding = FALSE)
+
+qplot(truth[truth != 0], res$dce[truth != 0]) +
+  geom_abline(color = "red", linetype = "dashed") +
+  xlab("true DCE") +
+  ylab("estimated DCE")
+
+plot_network(graph_wt, value_matrix = -log(res$dce_pvalue)) +
+  ggtitle("-log(p-values) for DCEs between WT and MT condition")
+```
+
+On the other hand, if our data come from two different batches, where the gene expression of each gene is shifted by some amount depending on the batch, then `dce` will have many false positive findings:
+
+```{r}
+batch <- sample(c(0, 1), replace = TRUE, nrow(X_wt))
+bX_wt <- apply(X_wt, 2, function(x) x + max(x) * runif(1) * batch)
+bX_mt <- apply(X_mt, 2, function(x) x + max(x) * runif(1) * batch)
+
+res_without_deconf <- dce(graph_mt, bX_wt, bX_mt, deconfounding = FALSE)
+
+cowplot::plot_grid(
+  plot_network(
+    graph_wt,
+    value_matrix = -log(res_without_deconf$dce_pvalue + epsilon)
+  ) +
+    ggtitle("-log(p-values) without deconfounding"),
+  qplot(truth[truth != 0], res_without_deconf$dce[truth != 0]) +
+    geom_abline(color = "red", linetype = "dashed") +
+    xlab("true DCE") +
+    ylab("estimated DCE"),
+  nrow = 1
+)
+```
+
+However, the performance is improved when the confounding adjustment is used:
+```{r}
+res_with_deconf <- dce(graph_mt, bX_wt, bX_mt, deconfounding = 1)
+
+cowplot::plot_grid(
+  plot_network(
+    graph_wt,
+    value_matrix = -log(res_with_deconf$dce_pvalue + epsilon)
+  ) +
+    ggtitle("-log(p-values) with deconfounding"),
+  qplot(truth[truth != 0], res_with_deconf$dce[truth != 0]) +
+    geom_abline(color = "red", linetype = "dashed") +
+    xlab("true DCE") +
+    ylab("estimated DCE"),
+  nrow = 1
+)
+```
+
+# Session information
+
+```{r}
+sessionInfo()
+```
+
+# References

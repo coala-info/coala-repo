@@ -1,0 +1,50 @@
+---
+name: graphmap
+description: GraphMap is a highly sensitive mapper designed specifically for third-generation sequencing data.
+homepage: https://github.com/lbcb-sci/graphmap2
+---
+
+# graphmap
+
+## Overview
+
+GraphMap is a highly sensitive mapper designed specifically for third-generation sequencing data. It is optimized to handle the high error rates and long lengths characteristic of Oxford Nanopore and PacBio reads. You should use this skill to generate accurate alignments (SAM format) for genomic or transcriptomic data, or to perform fast read-to-read overlapping (MHAP format) using the "Owler" mode for de novo assembly.
+
+## Common CLI Patterns
+
+### Basic Genomic Alignment
+To map long reads to a reference genome:
+`graphmap align -r reference.fa -d reads.fastq -o output.sam`
+
+### RNA-Seq and Spliced Alignment
+For mapping RNA-seq reads where spliced alignments are required:
+`graphmap align -x rnaseq -r reference.fa -d reads.fastq -o output.sam`
+
+### Transcriptome Mapping with GTF
+To map reads directly to a transcriptome constructed from a genome and a GTF annotation:
+`graphmap align -r reference.fa --gtf reference.gtf -d reads.fastq -o output.sam`
+*Note: This internally constructs the transcriptome and converts final alignments back to genomic coordinates with 'N' operations in the CIGAR string.*
+
+### Read-to-Read Overlapping (Owler)
+To find overlaps between reads for assembly:
+`graphmap owler -r reads.fasta -d reads.fasta -o output.mhap`
+
+## Expert Tips and Best Practices
+
+### Indexing and Memory Management
+*   **Index Size**: GraphMap's hash-based index is memory-intensive, requiring approximately 14x the reference size. For a human genome, expect memory usage to peak around 42 GB.
+*   **On-the-fly Indexing**: Use `--fly-index` to build the index in memory without saving it to disk.
+*   **Rebuilding**: Use `--auto-rebuild-index` to ensure the index is compatible with the current version, or `--rebuild-index` to force a fresh build.
+
+### Tuning Sensitivity and Speed
+*   **Minimizers**: By default, GraphMap uses a minimizer window of 5. To increase sensitivity at the cost of speed, reduce this (e.g., `--minimizer-window 1` to disable). To increase speed on large references, increase the window size.
+*   **Repetitive Seeds**: Use `--freq-percentile 0.99` to skip the top 1% of most repetitive seeds. This significantly improves performance on large, repetitive genomes with minimal impact on sensitivity.
+*   **Sensitive Mode**: Use `-x sensitive` (or the older `--double-index`) to maximize sensitivity for difficult datasets.
+
+### Handling Specific Genomic Features
+*   **Circular Genomes**: GraphMap natively handles circular chromosomes, preventing the drop in coverage typically seen at the linear start/end points of a reference.
+*   **Secondary Alignments**: If you are seeing unexpected newlines in output, ensure you are using the latest version (v0.5.2+), which fixed issues with secondary alignment formatting.
+
+## Reference documentation
+- [GraphMap2 GitHub Repository](./references/github_com_lbcb-sci_graphmap2.md)
+- [Bioconda GraphMap Overview](./references/anaconda_org_channels_bioconda_packages_graphmap_overview.md)

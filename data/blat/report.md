@@ -1,0 +1,117 @@
+# blat CWL Generation Report
+
+## blat
+
+### Tool Description
+Standalone BLAT v. 36 fast sequence search command line tool
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/blat:36--0
+- **Homepage**: https://genome.ucsc.edu/FAQ/FAQblat.html
+- **Package**: https://anaconda.org/channels/bioconda/packages/blat/overview
+- **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/blat/overview
+- **Total Downloads**: 56.9K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
+### Original Help Text
+```text
+blat - Standalone BLAT v. 36 fast sequence search command line tool
+usage:
+   blat database query [-ooc=11.ooc] output.psl
+where:
+   database and query are each either a .fa, .nib or .2bit file,
+      or a list of these files with one file name per line.
+   -ooc=11.ooc tells the program to load over-occurring 11-mers from
+      an external file.  This will increase the speed
+      by a factor of 40 in many cases, but is not required.
+   output.psl is the name of the output file.
+   Subranges of .nib and .2bit files may be specified using the syntax:
+      /path/file.nib:seqid:start-end
+   or
+      /path/file.2bit:seqid:start-end
+   or
+      /path/file.nib:start-end
+   With the second form, a sequence id of file:start-end will be used.
+options:
+   -t=type        Database type.  Type is one of:
+                    dna - DNA sequence
+                    prot - protein sequence
+                    dnax - DNA sequence translated in six frames to protein
+                  The default is dna.
+   -q=type        Query type.  Type is one of:
+                    dna - DNA sequence
+                    rna - RNA sequence
+                    prot - protein sequence
+                    dnax - DNA sequence translated in six frames to protein
+                    rnax - DNA sequence translated in three frames to protein
+                  The default is dna.
+   -prot          Synonymous with -t=prot -q=prot.
+   -ooc=N.ooc     Use overused tile file N.ooc.  N should correspond to 
+                  the tileSize.
+   -tileSize=N    Sets the size of match that triggers an alignment.  
+                  Usually between 8 and 12.
+                  Default is 11 for DNA and 5 for protein.
+   -stepSize=N    Spacing between tiles. Default is tileSize.
+   -oneOff=N      If set to 1, this allows one mismatch in tile and still
+                  triggers an alignment.  Default is 0.
+   -minMatch=N    Sets the number of tile matches.  Usually set from 2 to 4.
+                  Default is 2 for nucleotide, 1 for protein.
+   -minScore=N    Sets minimum score.  This is the matches minus the 
+                  mismatches minus some sort of gap penalty.  Default is 30.
+   -minIdentity=N Sets minimum sequence identity (in percent).  Default is
+                  90 for nucleotide searches, 25 for protein or translated
+                  protein searches.
+   -maxGap=N      Sets the size of maximum gap between tiles in a clump.  Usually
+                  set from 0 to 3.  Default is 2. Only relevent for minMatch > 1.
+   -noHead        Suppresses .psl header (so it's just a tab-separated file).
+   -makeOoc=N.ooc Make overused tile file. Target needs to be complete genome.
+   -repMatch=N    Sets the number of repetitions of a tile allowed before
+                  it is marked as overused.  Typically this is 256 for tileSize
+                  12, 1024 for tile size 11, 4096 for tile size 10.
+                  Default is 1024.  Typically comes into play only with makeOoc.
+                  Also affected by stepSize: when stepSize is halved, repMatch is
+                  doubled to compensate.
+   -mask=type     Mask out repeats.  Alignments won't be started in masked region
+                  but may extend through it in nucleotide searches.  Masked areas
+                  are ignored entirely in protein or translated searches. Types are:
+                    lower - mask out lower-cased sequence
+                    upper - mask out upper-cased sequence
+                    out   - mask according to database.out RepeatMasker .out file
+                    file.out - mask database according to RepeatMasker file.out
+   -qMask=type    Mask out repeats in query sequence.  Similar to -mask above, but
+                  for query rather than target sequence.
+   -repeats=type  Type is same as mask types above.  Repeat bases will not be
+                  masked in any way, but matches in repeat areas will be reported
+                  separately from matches in other areas in the psl output.
+   -minRepDivergence=NN   Minimum percent divergence of repeats to allow 
+                  them to be unmasked.  Default is 15.  Only relevant for 
+                  masking using RepeatMasker .out files.
+   -dots=N        Output dot every N sequences to show program's progress.
+   -trimT         Trim leading poly-T.
+   -noTrimA       Don't trim trailing poly-A.
+   -trimHardA     Remove poly-A tail from qSize as well as alignments in 
+                  psl output.
+   -fastMap       Run for fast DNA/DNA remapping - not allowing introns, 
+                  requiring high %ID. Query sizes must not exceed 5000.
+   -out=type      Controls output file format.  Type is one of:
+                    psl - Default.  Tab-separated format, no sequence
+                    pslx - Tab-separated format with sequence
+                    axt - blastz-associated axt format
+                    maf - multiz-associated maf format
+                    sim4 - similar to sim4 format
+                    wublast - similar to wublast format
+                    blast - similar to NCBI blast format
+                    blast8- NCBI blast tabular format
+                    blast9 - NCBI blast tabular format with comments
+   -fine          For high-quality mRNAs, look harder for small initial and
+                  terminal exons.  Not recommended for ESTs.
+   -maxIntron=N  Sets maximum intron size. Default is 750000.
+   -extendThroughN  Allows extension of alignment through large blocks of Ns.
+```
+
+
+## Metadata
+- **Skill**: generated

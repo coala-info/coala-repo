@@ -1,0 +1,1 @@
+A web page that points a browser to a different page after 2 seconds Logbook's documentation is maintained elsewhere. You will be redirected to the new documentation within 2 seconds. If the browser does not automatically redirect you, you may want to go to the destination manually.

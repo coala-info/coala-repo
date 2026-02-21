@@ -1,0 +1,1 @@
+.. include:: ../README.rst :end-line: 25 Report issues and view source code `here `__. .. include:: release_notes.rst .. toctree:: :maxdepth: 1 :hidden: installation basic_usage scatac

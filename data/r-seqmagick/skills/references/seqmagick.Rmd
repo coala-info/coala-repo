@@ -1,0 +1,115 @@
+---
+title: "seqmagick: sequence manipulation"
+author: 
+- name: Guangchuang Yu
+  email: guangchuangyu@gmail.com
+  affiliation: Department of Bioinformatics, School of Basic Medical Sciences, Southern Medical University
+date: "`r Sys.Date()`"
+bibliography: seqmagick.bib
+biblio-style: apalike
+output:
+  prettydoc::html_pretty:
+    toc: true
+    highlight: github
+    theme: cayman
+  pdf_document:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{seqmagick introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r style, echo=FALSE, results="asis", message=FALSE}
+knitr::opts_chunk$set(tidy = FALSE,
+		   message = FALSE)
+```
+
+
+```{r echo=FALSE, results="hide", message=FALSE}
+library(magrittr)
+library(Biostrings)
+library("seqmagick")
+```
+
+# Download sequences
+
+## Genbank
+
+```{r eval=FALSE}
+tmpgb <- tempfile(fileext = '.gb')
+tmpfa <- tempfile(fileext = '.fa')
+download_genbank(acc='AB115403', format='genbank', outfile=tmpgb)
+download_genbank(acc='AB115403', format='fasta', outfile=tmpfa)
+## readLines(tmpgb)[1:10]
+## readLines(tmpfa)
+```
+
+# File conversion
+
+## fasta and phylip conversion
+
+```{r eval=F}
+fa_file <- system.file("extdata/HA.fas", package="seqmagick")
+## use the small subset to save compilation time of the vignette
+fa2 <- tempfile(fileext = '.fa')
+fa_read(fa_file) %>% bs_filter('ATGAAAGTAAAA', by='sequence') %>% fa_write(fa2, type='interleaved')
+
+
+alnfas <- tempfile(fileext = ".fas")
+fa_read(fa2) %>% bs_aln(quiet=TRUE) %>% fa_write(alnfas)
+
+## phylip format is only for aligned sequences
+tmpphy <- tempfile(fileext = ".phy")
+fas2phy(alnfas, tmpphy, type = 'sequential')
+```
+
+`seqmagick` supports both `sequential` and `interleaved` formats, users can specify the format by `type` parameter.
+
+
+```{r eval=F}
+phy2fas(tmpphy, alnfas, type = 'interleaved')
+```
+
+
+## interleaved and sequential format conversion
+
+
+
+```{r eval=F}
+tmpfas <- tempfile(fileext='.fa')
+fa_read(fa2) %>% fa_write(tmpfas, type="sequential")
+```
+
+```{r eval=F} 
+tmpphy2 <- tempfile(fileext = '.phy')
+phy_read(tmpphy) %>% phy_write(tmpphy2, type="interleaved")
+```
+
+# Sequence manipulation
+
+
+```{r eval=F}
+bs <- fa_read(fa_file)
+bs_filter(bs, 'ATGAAAGTAAAA', by='sequence')
+
+aln <- bs_filter(bs, 'ATGAAAGTAAAA', by='sequence') %>% bs_aln(quiet=TRUE)
+
+bs_consensus(aln)
+```
+
+
+
+# Bugs/Feature requests
+
+If you have any, [let me know](https://github.com/YuLab-SMU/seqmagick/issues). Thx!
+
+# Session info
+
+Here is the output of `sessionInfo()` on the system on which this document was compiled:
+```{r echo=FALSE}
+sessionInfo()
+```
+
+
+# References

@@ -1,0 +1,51 @@
+---
+name: grabix
+description: grabix is a lightweight command-line utility that provides random access to text files compressed with `bgzip`.
+homepage: https://github.com/arq5x/grabix
+---
+
+# grabix
+
+## Overview
+grabix is a lightweight command-line utility that provides random access to text files compressed with `bgzip`. By generating a custom index file (`.gbi`), it allows for nearly instantaneous retrieval of arbitrary lines or ranges. This tool is an essential alternative to standard `zcat | sed` pipelines, which are prohibitively slow for large datasets because they require linear decompression.
+
+## Core Commands and Usage
+
+### 1. Preparation and Indexing
+Before using grabix for retrieval, the target file must be compressed with `bgzip` (part of the samtools/htslib suite) and then indexed by grabix.
+
+*   **Compress a file**:
+    `bgzip input.bed`
+*   **Create a grabix index**:
+    `grabix index input.bed.gz`
+    *Note: This creates a companion file named `input.bed.gz.gbi`.*
+
+### 2. Extracting Specific Lines
+Line numbers in grabix are 1-based.
+
+*   **Extract a single line (e.g., line 100)**:
+    `grabix grab input.bed.gz 100`
+*   **Extract a range of lines (e.g., lines 100 through 110)**:
+    `grabix grab input.bed.gz 100 110`
+
+### 3. Random Sampling
+Grabix uses reservoir sampling to select random lines efficiently.
+
+*   **Extract 100 random lines**:
+    `grabix random input.bed.gz 100`
+
+### 4. File Inspection
+*   **Get total line count**:
+    `grabix size input.bed.gz`
+*   **Verify BGZF format**:
+    `grabix check input.bed.gz`
+    *Use this to confirm if a `.gz` file was compressed with `bgzip` or standard `gzip` (which grabix cannot index).*
+
+## Expert Tips and Best Practices
+*   **Standard Gzip Incompatibility**: grabix only works with BGZF files. If `grabix check` returns an error, you must recompress the file using `bgzip`.
+*   **Header Handling**: grabix treats headers like any other line. If your file has a header, line 1 will be the header.
+*   **Performance**: The `.gbi` index is much smaller than the original file but allows for O(1) or near O(1) access time to any position in the file.
+*   **Pipe Support**: While grabix is designed for random access to files on disk, you can pipe its output into other tools (e.g., `grabix grab file.gz 1 1000 | sort -k1,1 -k2,2n`).
+
+## Reference documentation
+- [grabix - a wee tool for random access into BGZF files](./references/github_com_arq5x_grabix.md)

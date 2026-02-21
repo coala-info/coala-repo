@@ -1,0 +1,326 @@
+# Combine LC-MS Metabolomics Datasets with metabCombiner
+
+Hani Habra
+
+#### October 30, 2025
+
+# Contents
+
+* [1 Introduction](#introduction)
+  + [1.1 Input Requirements](#input-requirements)
+  + [1.2 Workflow Overview](#workflow-overview)
+  + [1.3 Data Formatting and Filtering](#data-formatting-and-filtering)
+    - [1.3.1 Data Formatting](#data-formatting)
+    - [1.3.2 Feature Filters](#feature-filters)
+  + [1.4 Feature m/z Grouping and Pairwise Alignment Detection](#feature-mz-grouping-and-pairwise-alignment-detection)
+  + [1.5 Anchor Selection and RT Mapping](#anchor-selection-and-rt-mapping)
+    - [1.5.1 Anchor Selection](#anchor-selection)
+    - [1.5.2 Model-fitting](#model-fitting)
+  + [1.6 Feature Pair Alignment Scoring](#feature-pair-alignment-scoring)
+
+```
+head(list.files())
+#> [1] "metabCombiner_vignette.R"   "metabCombiner_vignette.Rmd"
+```
+
+# 1 Introduction
+
+In the computational analysis of LC-MS metabolomics data, a key step is to align the measurements of identical compounds commonly represented as <mass-to-charge ratio (m/z), retention time (RT)> features. Feature alignment between datasets acquired under non-identical conditions presents numerous opportunities in untargeted metabolomics. The key challenge is achieving a correspondence between identical features, most of which are not easily identified. `metabCombiner` determines a list possible feature pair alignments (FPAs) and determines their validity through a pairwise similarity score. We will show here how to use the basic `metabCombiner` workflow to perform cross-dataset alignment analysis.
+
+## 1.1 Input Requirements
+
+The inputs for this workflow are two peak-picked and aligned LC-MS metabolomics data frames, with columns for m/z, RT, and individual sample abundance values. It is recommended, but not required, to have columns for feature identity and adduct type. Any “extra” input dataset columns may be included in the final output, though these will not have any role in any of the outlined steps.
+
+Typically you will need to load a dataset from file into an R data.frame, e.g. using this template. If using this, be sure to set the stringsAsFactors to FALSE.
+
+```
+metdata = read.delim("path_to_data_file.txt", sep = "\t", header = TRUE,
+                    stringsAsFactors = FALSE)
+```
+
+There are four major assumptions that these datasets must conform to:
+
+1. They have been acquired in the same ionization mode (positive or negative)
+2. The samples in both datasets are biologically similar and possess a strong overlap in terms of their metabolomic composition
+3. The elution order of metabolites is mostly preserved. Datasets acquired from excessively disparate chromatographic techniques (such as between an RPLC dataset and a HILIC dataset) are not suitable for this workflow.
+4. Abundance values are not normalized or transformed in such a way that would remove information about their ranked abundance order
+
+For certain functionality described here, we also recommend that sample columns across all
+
+## 1.2 Workflow Overview
+
+The workflow we outline here is composed of five major steps:
+
+1. Data Formatting and Filtering
+2. Feature m/z Grouping and Pairwise Alignment Detection
+3. Anchor Selection and RT Mapping Spline
+4. Feature Pair Alignment Scoring
+5. Combined Table Reduction
+
+We demonstrate each step on a pair of human plasma metabolomics datasets contained within the package.
+
+```
+#loading package
+library(metabCombiner)
+data("plasma30")
+data("plasma20")
+```
+
+Let’s begin by taking a look at some of our input dataset column headings.
+
+```
+#header names of plasma dataset
+names(plasma20)
+#>  [1] "feature"          "identity"         "adduct"           "mz"
+#>  [5] "rt"               "CHEAR.20min.1"    "CHEAR.20min.2"    "CHEAR.20min.3"
+#>  [9] "CHEAR.20min.4"    "CHEAR.20min.5"    "Blank.20min.1"    "Blank.20min.2"
+#> [13] "POOL.20min.1"     "POOL.20min.2"     "POOL.20min.3"     "POOL.20min.4"
+#> [17] "POOL.20min.5"     "RedCross.20min.1" "RedCross.20min.2" "RedCross.20min.3"
+#> [21] "RedCross.20min.4" "RedCross.20min.5"
+```
+
+They consist of generic feature labels, compound identities and adduct variants (where known or guessed), followed by the required m/z, rt, and sample abundance columns. Sample names consist of “CHEAR”, “RedCross”, “POOL”, and “Blank”. The column names of `plasma30` are nearly identical to those of `plasma20`.
+
+## 1.3 Data Formatting and Filtering
+
+A `metabData` object is a specifically-formatted single metabolomics dataset object. The constructor function `metabData()` consists of two parts: a) detecting the specific sample columns and b) filtering features.
+
+### 1.3.1 Data Formatting
+
+The `metabData()` function will look for feature information in the following order:
+
+1. mz (required): feature m/z values
+2. rt (required): feature rt values
+3. id (recommended): feature compound identifiers
+4. adduct (recommended): feature adduct annotations
+5. Q (optional): relative abundance levels between 0 & 1 (elaborated on later)
+6. samples (required): sample abundance values
+7. extra (optional): non-analyzed dataset columns
+
+For the first five of these (mz, rt, id, adduct, Q), `metabData` searches for the first column whose name contains the supplied keyword and uses it for the indicated field. For the latter two fields (extra, samples), `metabData` searches for all columns containing any of the keywords contained in the respective arguments. Regular expressions are also accepted for any of the indicated fields. Each column is checked for correctness (e.g. no negative m/z & rt values, correct data type, etc…) and no columns may overlap.
+
+Examples of keyword uses are below:
+
+```
+p20 = metabData(plasma20, mz = "mz", rt = "rt", id = "id", adduct = "adduct",
+                samples = "CHEAR.20min",...)
+
+##all of the following values for id argument give the same result
+p20 = metabData(plasma20, ..., id = "identity", ...)    #full column name
+p20 = metabData(plasma20, ..., id = "^id", ...)  #column names starting with id
+
+#any one of these three keywords
+p20 = metabData(plasma20, ..., id = c("compound,identity,name"),...)
+
+##all of the following inputs for samples argument give the same result
+p20 = metabData(plasma20, samples = c("CHEAR.20min.1, CHEAR.20min.2,
+                                CHEAR.20min.3, CHEAR.20min.4, CHEAR.20min.5")
+
+p20 = metabData(plasma20, samples = names(plasma20)[6:10], ...)
+
+#recommended: use a keyword common and exclusive to sample names of interest
+p20 = metabData(plasma20, ..., samples = "CHEAR", ...)
+p20 = metabData(plasma20, ..., samples = "CH", ...)
+```
+
+To use one set of samples (e.g. CHEAR) for this analysis and retain the rest as “extra columns”. Be sure that the correct sample and “extra” column names have been selected.
+
+```
+p20 = metabData(plasma20, mz = "mz", rt = "rt", id = "id", adduct = "adduct",
+                samples = "CHEAR", extra = c("Red", "POOL", "Blank"),...)
+
+getSamples(p20)   #should return column names containing "CHEAR"
+getExtra(p20)   #should return column containing "Red Cross", "POOL", "Blank"
+```
+
+### 1.3.2 Feature Filters
+
+The second half consists of three specific filters: 1) retention time range, 2) missingness, 3) duplicates.
+
+The retention time range filter restricts features to those between the *rtmin* and *rtmax* arguments. By default these are set to the minimum and maximum observed retention times, but they should roughly correspond to the first and last observed shared metabolites. Consider the head and tail retention times of the *plasma20* dataset below. While the head appear to be at a normal start time of 0.5 min, the tail features are spaced far apart, indicating a long void region. Therefore, we set the *rtmax* argument to 17 min for this exercise, filtering five tailing features.
+
+```
+head(sort(plasma20$rt), 10)
+#>  [1] 0.4955 0.4955 0.4955 0.4955 0.4955 0.4956 0.4956 0.4956 0.4956 0.4956
+tail(sort(plasma20$rt), 10)
+#>  [1] 16.7641 16.7697 16.7753 16.8030 16.8418 17.1192 17.1961 17.4244 17.5957
+#> [10] 19.4220
+```
+
+The missingness filter eliminates features below some threshold percentage indicated by the *misspc* argument. By default this is set to 50% missingness. Optionally, 0 values can be treated as missing by setting the *zero* argument to TRUE. Missing value imputation can be performed independently before or after this analysis. There are no missing values in our example data.
+
+The duplicate filter detects and removes features within close m/z and RT distances (e.g 0.0025Da & 0.05 min). The *duplicate* argument controls the <m/z, RT> tolerances. Features with lower missingness, followed by higher median/mean intensity values are retained; otherwise the first feature that appears is kept.
+
+Once feature-filtering is performed, the central measure of feature intensities specified by the *measure* argument (either median or mean) determines the ranked abundance order, which is translated to a numeric Q value between 0 and 1. Optionally these may be read from the input column using the *Q* argument, but otherwise these are calculated by default.
+
+Here is the full `metabData` function call for our “plasma20” dataset.
+
+```
+p20 <- metabData(table = plasma20, mz = "mz", rt = "rt", id = "identity", adduct = "adduct", samples = "CHEAR", extra = c("Red", "POOL"), rtmin = "min", rtmax = 17.25, measure = "median", zero = FALSE, duplicate = c(0.0025, 0.05))
+```
+
+For the above call, the program defaults are used except for the arguments table, samples, extra, rtmax which needed specification. We must also use `metabData` for the other dataset we wish to align.
+
+```
+p30 <- metabData(table = plasma30, samples = "Red", extra = c("CHEAR", "POOL", "Blank"))
+getSamples(p30) ##should print out red cross sample names
+#> [1] "RedCross.30min.1" "RedCross.30min.2" "RedCross.30min.3" "RedCross.30min.4"
+#> [5] "RedCross.30min.5"
+getExtra(p30) ##should print out extra sample names
+#>  [1] "CHEAR.30min.1" "CHEAR.30min.2" "CHEAR.30min.3" "CHEAR.30min.4"
+#>  [5] "CHEAR.30min.5" "Blank.30min.1" "Blank.30min.2" "POOL.30min.1"
+#>  [9] "POOL.30min.2"  "POOL.30min.3"  "POOL.30min.4"  "POOL.30min.5"
+getStats(p30) ##prints a list of dataset statistics
+#> $input_size
+#> [1] 8286
+#>
+#> $filtered_by_rt
+#> [1] 0
+#>
+#> $filtered_as_duplicates
+#> [1] 0
+#>
+#> $filtered_by_missingness
+#> [1] 0
+#>
+#> $final_count
+#> [1] 8286
+print(p30)   ##object summary
+#> A metabData object
+#> -------------------------
+#> Total Samples: 5   Total Extra: 12
+#> Mass Range: 50.083-997.6268 Da
+#> Time Range: 0.485-29.9931 minutes
+#> Input Feature Count: 8286
+#> Final Feature Count: 8286
+```
+
+## 1.4 Feature m/z Grouping and Pairwise Alignment Detection
+
+With our two *metabData* objects, we proceed with the main alignment workflow. First we group features from the datasets by m/z and construct a *metabCombiner* object, the main construct for this program. This is done using the `metabCombiner` constructor function.
+
+First, we must designate an “X” dataset and a “Y” dataset. In theory the choice is not impactful to the final result, but in practice we designate the Y dataset to have the shorter overall chromatographic retention time range. Second, we specify a m/z tolerance *binGap* argument, which determines the tolerance for consecutive feature m/z grouping. The default value is 0.005 Daltons. Datasets with poor mass accuracy or larger m/z deviations between shared compounds should merit larger values for this argument. In this pair of datasets, some shared compounds have larger than 0.005 Da deviations (e.g Caffeine) so a larger value is used here.
+
+```
+p.combined = metabCombiner(xdata = p30, ydata = p20, binGap = 0.0075)
+```
+
+The main component of *metabCombiner* objects is the combined table, which can be obtained using the `combinedTable` method.
+
+```
+p.results = combinedTable(p.combined)
+names(p.results)[1:15]
+#>  [1] "rowID"   "idx"     "idy"     "mzx"     "mzy"     "rtx"     "rty"
+#>  [8] "rtProj"  "Qx"      "Qy"      "group"   "score"   "rankX"   "rankY"
+#> [15] "adductx"
+```
+
+The first 15 column names are printed above, consisting of input from the x dataset (idx, mzx, rtx, …), input from the y dataset (idy, mzy, rty, …), and some columns (rtProj, score, rankx, ranky) which serve as placeholders for downstream computations. Samples and “extra” columns are arrayed following these 15 fields.
+
+## 1.5 Anchor Selection and RT Mapping
+
+A central step of the workflow is retention time mapping, and we break it into two parts: anchor selection and Spline fitting.
+
+### 1.5.1 Anchor Selection
+
+The method of selecting anchors relies on mutually abundant pairs of features. This is performed using the `selectAnchors` function. The results of this function can be viewed using the `getAnchors` method.
+
+```
+p.combined.2 = selectAnchors(p.combined, windx = 0.03,windy = 0.02, tolQ = 0.3, tolmz = 0.003, tolrtq = 0.3, useID = FALSE)
+a = getAnchors(p.combined.2)
+plot(a$rtx, a$rty, main = "Fit Template", xlab = "rtx", ylab = "rty")
+```
+
+![](data:image/png;base64...)
+
+Shown above is a rough outline of the path through which we may fit a nonlinear curve. The arguments *windx* and *windy* are retention time windows drawn in the X and Y direction around the anchor points; in general, smaller values for these window arguments increases the number of anchors (including outliers). *tolmz* and *tolQ* restrict the m/z and Q differences of selected anchors. *tolrtq* restricts their linear retention time quantile differences.
+
+*useID* modifies the anchor selection algorithm by first searching for shared identities (i.e. feature pairs where idx is the same as idy, case-insensitive) before searching for the remaining abundant feature pairs. *useID* is set to FALSE by default, but prior or acquired knowledge of matching features may be useful for enhancing the selection process.
+
+### 1.5.2 Model-fitting
+
+The next step is to fit a non-linear smooth curve through retention times of the anchors computed in the previous step, with *rty* values modeled on *rtx*. There are two methods for spline-fitting in the package: `fit_loess` for loess and `fit_gam` for Generalized Additive Models (GAM). Both methods function similarly by first doing iterations of outlier filtering, followed by 10-fold cross validation to optimize a hyperparameter (*span* for loess or *k* for GAM). This guide will mostly cover `fit_gam`, a modified form of the `gam` function implemented in the *mgcv* R package.
+
+```
+set.seed(100) #controls cross validation pseudo-randomness
+
+p.combined.3 = fit_gam(p.combined.2, useID = FALSE, k = seq(12,20,2), iterFilter = 2, coef = 2, prop = 0.5, bs = "bs", family = "gaussian", m = c(3,2))
+#> Performing filtering iteration: 1
+#> Performing filtering iteration: 2
+#> Performing 10-fold cross validation
+#> Fitting Model with k = 14
+```
+
+The most important parameters here are *k* and *iterFilter*. *k* represents the basis dimension (and thus the flexibility of the smooth curve) and accepts multiple integer choices, whereas *iterFilter* controls the number of outlier filtering iterations. In each iteration, GAM fits with different values of *k* are fit to the data and if a point’s absolute error : mean absolute model error ratio exceeds the *coef* argument in over *prop* of the model fits, that point is deemed an outlier. Outliers will still be part of the output, but they are assigned a weight of 0. By default, *coef* and *frac* are set to 2 and 0.5, respectively. 10-fold cross-validation follows to select the best k value.
+
+Other important parameters are *useID*, which if set to TRUE prevents identity-based outliers marked from the previous step from being excluded; *bs* gives the choice of smoother (currently only “bs” for B-splines and “ps” for P-splines supported); and *family*, which accepts either “scat” (default) or “gaussian.” Choosing the “scat” option makes the model less susceptible to outliers, but is slower & more computationally intensive, whereas “gaussian” computes faster but is more susceptible to outliers. Other parameters are part of the gam function in the mgcv package.
+
+##plotting
+
+*metabCombiner* contains a built-in plotting method for model fits that is based on R’s base plotting graphics. These plots can modified like a normal R plot (e.g. with titles, axis labels, legends, etc…). We highly recommend inspecting plots to tune parameters from the RT mapping steps. Note that if you’re `fit_loess` as opposed to `fit_gam`, be sure to set *fit* to “loess” instead of the default “gam”.
+
+```
+plot(p.combined.3, main = "Example metabCombiner Plot", xlab = "P30 RTs", ylab = "P20 RTs", lcol = "blue", pcol = "black", lwd = 3, pch = 19,
+     outlier = "highlight")
+
+grid(lty = 2, lwd = 1)
+```
+
+![](data:image/png;base64...)
+
+## 1.6 Feature Pair Alignment Scoring
+
+We assign to all feature pair alignments (FPAs) a score between 0 & 1, based on an expression penalizing differences in observed m/z, relative abundance (Q), and relative predicted RT error. A score close to 1 implies a high degree of observed similarity, implying a potentially matching compounds, whereas a score near 0 implies a discardable misalignment. See `help(scorePairs)` for more details on the expression used to score features.
+
+```
+p.combined.4 = calcScores(p.combined.3, A = 70, B = 15, C = 0.5, usePPM = FALSE, useAdduct = FALSE, groups = NULL)
+```
+
+The arguments *A*,*B*,*C* are positive numeric weights penalizing m/z, RT fit, and Q deviations, respectively. The values of these parameters should generally be between 50-120 for *A*, 5-15 for *B*, and 0-1 for *C*, depending on factors such as mass accuracy, fit quality, and biological sample similarity. An in-package function called `evaluateParams` can help provide a general region of values that can be used, based on matching identity strings (case-insensitive). This is the only package method in which shared identified compounds are required, and we recommend that these be sufficiently representative.
+
+```
+scores = evaluateParams(p.combined.3, A = seq(50, 120, 10), B = 5:15, C = seq(0,1,0.1), usePPM = FALSE, minScore = 0.5, penalty = 10)
+
+head(scores)
+#>    A  B   C score totalScore
+#> 1 70 15 0.3     0   90.49315
+#> 2 60 15 0.3     0   89.78850
+#> 3 70 14 0.3     0   89.12690
+#> 4 60 14 0.3     0   88.90638
+#> 5 60 13 0.2     0   86.95682
+#> 6 80 15 0.3     0   84.07691
+```
+
+The function is similar to `calcScores`, only multiple values are accepted for the weight parameters and the result is a table showing the approximate region of optimal values. Here, we see that smaller A values (50-70), higher B values (14-15), and average C values (0.3-0.4) are the best scores based on the shared known identities contained in this pair of datasets.
+
+This function applies retention-time mapping using the previously computed model. Both functions can be limited to a subset of groups using the *groups* argument. Relative parts-per-million (PPM) mass error may be used instead of absolute error; if doing this, the recommend values for *A* no longer apply. The best values are between 0.01 and 0.05, but this has not been extensively tested. Finally, *useAdduct* allows for penalizing mismatched (non-empty and non-bracketed) adduct annotations by dividing the score by a constant specified by *adduct* argument. Be sure that adduct labels are correct before using this feature.
+
+##Table Annotation & Reduction
+
+In the final step of this pipeline, we use all information gathered from this analysis to discern true and false Feature Pair Alignments (FPAs) in the constructed combined table. Here are some guidelines for performing this challenging task effectively using the `labelRows` function. `labelRows` processes all FPAs and makes automated judgments based on calculated score and rank values.
+
+```
+combined.table = combinedTable(p.combined.4)
+
+##version 1: score-based conflict detection
+combined.table.2 = labelRows(combined.table, minScore = 0.5, maxRankX = 3, maxRankY = 3, method = "score", delta = 0.2, remove = FALSE, balanced = TRUE)
+
+##version 2: mzrt-based conflict detection
+combined.table.3 = labelRows(combined.table, minScore = 0.5, maxRankX = 3, maxRankY = 3, method = "mzrt", balanced = TRUE, delta = c(0.003,0.5,0.003,0.2))
+```
+
+Some arguments that must be specified are the *minScore*, *maxRankX* & *maxRankY* threshold values, as well as the *delta* value. Conflicts occur between pairs of FPAs that share one feature in common and may require inspection to discern the correct match. There are two methods for detecting conflicts: 1) “score” and 2) “mzrt”. In both, the top-scoring FPAs (rankX = 1 & rankY = 1) are used as a benchmark; if the difference in scores of the conflicting FPAs is small (first method), or the unshared feature is within a set m/z & rt tolerance (second method), then both FPAs are flagged. Otherwise, the lower-ranked FPA is deemed removable.
+
+The function adds three new columns that follow the first fifteen fields. The column called “labels” contains program- annotated assignments: “IDENTITY” for feature pairs with matching identity strings, “REMOVE” if they meet at least one of several removal criteria, or “CONFLICT” if two or more conflicting FPAs (i.e. sharing a feature in common) require closer inspection to discern the correct match. Rows labeled “CONFLICT” are assigned a “subgroup” number; features conflicting with multiple subgroups are assigned an “alt” (alternative subgroup) number. Selecting the best match among a conflicting pair or leaving multiple possibilities until further validation is an option we leave to the user. Additional information, such as chromatographic region-specific retention time fit tolerance, retention order, spectral quality, and adduct/fragment annotations may resolve these conflicts or find mismatches FPAs that do not have a conflicting match.
+
+##Printing the Report Table
+
+*metabCombiner* contains a specially-designed report file printing option, `write2file`. This is similar to the `write.table` in base R, but it adds a blank line between m/z groups that facilitate examination of each individual group separately from the other groups. Note that the *sep* character is replaced by a ‘.’ if it appears in any character string in the dataset (e.g. a comma in any named compound identity).
+
+```
+write2file(combined.table, file = "Combined.Table.Report.txt", sep = "\t")
+```
+
+#Additional Notes
+
+Both *metabData* and *metabCombiner* objects contain *stats* slots for important object statistics that may be viewed with the `getStats` method. Printing the objects also provides a useful analytical summary. Samples, Extra, and nonmatched features can be obtained from *metabCombiner* objects, using `getSamples`, `getExtra`, and `nonmatched` methods respectively.

@@ -1,0 +1,1 @@
+body { padding: 5px; margin: 15px; font-family: Verdana, arial, sans-serif; font-size: 80%; } hr { border-width: 1px 0px 0px 0px; border-style: solid; border-color: black; height: 1px; } p { padding: 5px; } pre { font-size: 100%; font-family: Courier New, Monospace; } h1.title { color:maroon; font-size:200%; }

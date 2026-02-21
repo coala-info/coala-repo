@@ -1,0 +1,475 @@
+---
+title: "Sojourner: an R package for statistical analysis of single molecule trajectories"
+
+author:
+- name: Sheng Liu
+  affiliation:
+      - Department of Biology, Krieger School of Arts and Sciences, Johns Hopkins University
+- name: Sun Jay Yoo
+  affiliation:
+      - Department of Biomedical Engineering, Johns Hopkins University
+      - Department of Computer Science, Johns Hopkins University
+- name: Xiaona Tang
+  affiliation:
+      - Department of Biology, Krieger School of Arts and Sciences, Johns Hopkins University
+- name: Young Soo Sung
+  affiliation:
+      - Department of Computer Science, Johns Hopkins University
+- name: Carl Wu
+  affiliation:
+      - Department of Molecular Biology and Genetics, School of Medicine, Johns Hopkins University
+      - Department of Biology, Krieger School of Arts and Sciences, Johns Hopkins University
+
+package: sojourner
+date: "`r Sys.Date()`"
+output:
+    # rmarkdown::html_vignette:
+        BiocStyle::html_document:
+          toc: true
+          toc_depth: 3
+          toc_float: true
+          number_sections: true
+
+# output: 
+# BiocStyle::pdf_document
+          
+          
+vignette: >
+    %\VignetteIndexEntry{Sojourner: an R package for statistical analysis of single molecule trajectories}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo = FALSE, results = 'asis'}
+  BiocStyle::markdown()
+```
+
+![](sojourner_logo.png){width=30%}
+
+# Introduction
+
+A basic task in 2D single molecule tracking is to determine diffusion
+coefficient from molecule trajectories identified after initial image data
+acquisition. The trajectory (term used interchangeably with "tracks") of a
+molecule is presented as a table of $x$,$y$-coordinates in the unit of pixel,
+which then can be converted to other measurement, such as $\mu$m, according to
+the resolution of the camera. The *sojourner* package provides methods to
+import/export, process, and analyze such data. Analysis techniques include the
+diffusion coefficient using the mean square displacement (MSD), displacement
+cumulative distribution function (CDF), as well as hidden Markov model (HMM)
+methods (in next release) from such input data. This vignette covers basic usage
+of the package.
+
+## Installation
+
+Using BiocManager:
+
+```{r, eval = FALSE}
+if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("sojourner")
+```
+
+Or, using the release version from GitHub:
+
+```{r, eval = FALSE}
+devtools::install_github("sheng-liu/sojourner", build_vignettes = TRUE)
+```
+
+To load the package:
+
+```{r, eval=TRUE, messsage = FALSE, warning=FALSE, results = 'hide'}
+library(sojourner)
+```
+
+# Basic Track Data Structure
+
+The input file for *sojourner* is the Diatrack (.txt or .mat), ImageJ Particle
+Tracker (.csv), SLIMfast (.txt), or u-track (.mat) output file. Tracks are
+extracted from the output files and then stored in a `trackll`, a list of track
+lists. A track denotes a single trajectory stored in a `data.frame` recording
+$x$, $y$, $z$ and (video) frame number. A `trackl` track list is a collection of
+track data from one video file output. Lastly, a "trackll" is a collection of
+"trackl" in one folder.
+
+In this example, the folder "SWR1_2" contains one track list with 207 tracks and
+one track list with 139 tracks:
+
+```{r, eval = TRUE, results = 'hide'}
+folder=system.file("extdata","SWR1_2",package="sojourner")
+trackll = createTrackll(folder=folder, input=3)
+```
+
+```{r, eval = TRUE}
+str(trackll,max.level=2, list.len=2)
+```
+
+Multiple folders can also be stored in a single trackll. Here, `trackll` denotes
+a list of folders, and each `trackl` contains all tracks from every file in the
+folder. This structure can be constructed as such:
+
+```{r, eval = FALSE}
+trackll=list(FOLDER=list(track=track))
+```
+
+```{r, eval = FALSE}
+# Construct trackll from data.frame
+trackl=list(track_1=dataframe_1,
+            track_2=dataframe_2,
+            track_3=dataframe_3,
+            ...
+            track_n=dataframe_n)
+
+trackll=list(FOLDER_1=trackl_1,
+             FOLDER_2=trackl_2,
+             FOLDER_3=trackl_3,
+             ...
+             FOLDER_n=trackl_n,)
+```
+
+Merging all tracks from every file in the folder into a single `trackl` in a
+`trackll` can also be done through `mergeTracks()`. In this example, both track
+lists from "SWR1_2" were merged together to form a list of 346 tracks.
+
+```{r, eval = TRUE, results = 'hide'}
+folder=system.file("extdata","SWR1_2",package="sojourner")
+trackll = createTrackll(folder=folder, input=3)
+trackll <- mergeTracks(folder=folder, trackll=trackll)
+```
+
+```{r, eval = TRUE}
+str(trackll,max.level=2, list.len=2)
+```
+
+To see the coordinates of an individual track:
+
+```{r, eval = TRUE, warning=FALSE, echo = TRUE, results = 'hold'}
+# Specify the folder name and the track name
+trackll[["SWR1_2"]]["mage6.1.4.1.1"]
+# Alternatively, specify the index of the folder and the track
+# trackll[[1]][1]
+```
+
+# Track Data Manipulation
+
+*sojourner* provides tools to manage and manipulate track data. Below are a few
+examples of the commonly used functions to import, process, and export single
+molecule track data.
+
+## Reading Track Data
+
+First, read in track data taken from Diatrack, ImageJ Particle Tracker,
+SLIMfast, or u-track. In this example, we read data from ImageJ .csv-formatted
+files from "SWR1_2".
+
+```{r, eval=TRUE, warning=FALSE, echo=TRUE, results = 'hold'}
+# Designate a folder and then create trackll from ImageJ .csv data
+folder=system.file("extdata","SWR1_2",package="sojourner")
+trackll = createTrackll(folder=folder, input=3)
+
+# Alternatively, use interact to open file browser and select input data type
+# trackll = createTrackll(interact = TRUE)
+```
+
+## Processing Track Data
+
+### Linking Skipped Frames
+
+Different tracking softwares (Diatrack, ImageJ Particle Tracker, SLIMfast, 
+u-track) often use varying algorithms to stitch together single 
+molecule localizations into trajectories. Sometimes, a molecule can disappear 
+for several frames and can classify single trajectories as two. 
+`linkSkippedFrames()` allows users to link trajectories that skip (or do not 
+appear for) a number of frames. In this example, all tracks that skip a 
+maximum of 10 frames and reappear within 5 pixels are linked:
+
+
+```{r, eval=TRUE, warning=FALSE, echo = TRUE}
+# Basic function call of linkSkippedFrames
+trackll.linked <- linkSkippedFrames(trackll, tolerance = 5, maxSkip = 10)
+```
+
+### Filtering Tracks by Length
+
+`filterTrack()` can be used to filter out track that have lengths (defined by 
+number of frames) that fall within a specified range. In this example, only
+tracks that appear for at least 7 frames are kept:
+
+```{r, eval=TRUE, warning=FALSE, echo = TRUE}
+trackll.filter=filterTrack(trackll ,filter=c(7,Inf))
+
+# See the min and max length of the trackll
+# trackLength() is a helper function output track length of trackll
+lapply(trackLength(trackll),min)
+lapply(trackLength(trackll.filter),min)
+```
+
+### Trim Tracks to a Length
+
+`trimTrack()` is used to to trim/cutoff tracks. Given a specified range of 
+track lengths (defined by number of frames), only tracks that fall within the 
+range are kept, otherwise trimmed to the upper limit. In this example, all 
+tracks with lengths greater than 20 have their lengths trimmed to 20:
+
+```{r, eval=TRUE, warning=FALSE, echo = TRUE}
+trackll.trim=trimTrack(trackll,trimmer=c(1,20))
+
+# See the min and max length of the trackll
+# trackLength() is a helper function output track length of trackll
+lapply(trackLength(trackll),max)
+lapply(trackLength(trackll.trim),max)
+```
+
+### Applying Image Masks
+
+In order to apply a binary image mask to track data, one can use 
+`maskTracks()`. In this example, we use image masks for each track file 
+generated by thresholding the initial fluorescent glow of the nucleus. See man 
+pages for `indexCell()`, `filterOnCell()`, and `sampleTracks()` for more 
+advanced functionality (e.g. separating tracks, filtering, and sampling by 
+masked cells).
+
+```{r, eval=TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+# Basic masking with folder path with image masks
+folder = system.file("extdata","ImageJ",package="sojourner")
+trackll = createTrackll(folder, input = 3)
+trackll.filter=filterTrack(trackll ,filter=c(7,Inf))
+trackll.masked <- maskTracks(folder = folder, trackll = trackll.filter)
+```
+
+To plot the masks:
+```{r, eval=TRUE, warning=FALSE, echo=TRUE, results = 'hide',fig.show="hide"}
+# Plot mask
+plotMask(folder)
+```
+
+To plot the nuclear overlay of the un-masked data:
+```{r, eval=TRUE, warning=FALSE, echo=TRUE, results = 'hide',fig.show="hide"}
+# If nuclear image is available
+plotNucTrackOverlay(folder=folder,trackll=trackll)
+```
+
+To plot the nuclear overlay of the masked data:
+```{r, eval=TRUE, warning=FALSE, echo=TRUE, results = 'hide',fig.show="hide"}
+# If nuclear image is available
+plotNucTrackOverlay(folder=folder,trackll=trackll.masked)
+```
+
+## Exporting Track Data
+
+To export a `trackll`, use `exportTrackll()` to save track data into a .csv file
+in the working directory. This function saves the data into the same format used
+by ImageJ Particle Tracker, fully preserving all track information, and
+maintaining short read/write computation time and readability in Excel/etc.
+
+```{r, eval=FALSE}
+# Basic function call to exportTrackll into working directory
+exportTrackll(trackll)
+
+# Read exported trackll saved in working directory
+trackll.2 <- createTrackll(folder = getwd(), input = 3)
+```
+
+# Plotting Tracks
+
+The first thing one may want to do is to see how the tracks look like in 2-D
+space.  The track name is useful in this case if one wants to see specific
+trajectories and its associated movies.
+
+All one needs to do is to create a .csv file contains trajectory names in its
+first column. *sojourner* package contains such an example .csv file.
+
+```{r, eval = FALSE}
+# specify the path of the file containing trajectory index names, index file
+index.file2=system.file("extdata","INDEX","indexFile2.csv",
+package="sojourner")
+# specify the folders containing the output files
+folder1=system.file("extdata","SWR1",package="sojourner")
+folder2=system.file("extdata","HTZ1",package="sojourner")
+# plot trajectories specified in the trajectory index file
+plotTrackFromIndex(index.file=index.file2,
+                   movie.folder=c(folder1,folder2),input=3)
+```
+
+
+The output plots the tracks based on its name, with the information contained
+in its name (i.e. start frame and length/duration), one can also pull out its
+movie. See `? plotTrack` for more plotting options.
+
+# Distribution of Trajectory Lengths
+
+One may be interested to see the distribution of the (time) length of the
+tracks. This can be done by calculating and plotting the dwell times:
+
+```{r, eval = TRUE, warning=FALSE}
+dwellTime(trackll,plot=TRUE) # default t.interval=10, x.scale=c(0,250)
+```
+
+# Calculating Diffusion Coefficient Using MSD-Based Method
+
+Below is an example of simple analysis workflow using diffusion coefficient. 
+
+## Data Import
+
+We will need to first create a basic data structure (trackll, i.e. list of track list) for all analysis. It contains the trajectory information of all tracks in a specified folder, using createTrackll() function. 
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+
+# Specify folder with data
+folder=system.file("extdata","HSF",package="sojourner")
+
+# Create track list
+trackll<-createTrackll(folder=folder, interact=FALSE, input=3, ab.track=FALSE, cores=1, frameRecord=TRUE)
+
+# Take a look at the list by 
+str(trackll,1)
+
+```
+
+## Data Clean Up
+
+We then clean up the data with filters and masks. In this case, we select only the tracks with 3 frames or more, and remove tracks that is outside of the nuclei.
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+# Filter/choose tracks 3 frames or longer for all analysis
+trackll.fi<-filterTrack(trackll=trackll, filter=c(min=3,max=Inf))
+
+# Apply mask and remove tracks outside nuclei
+trackll.fi.ma<-maskTracks(folder,trackll.fi)
+
+```
+
+## Visulization of Trajectories
+
+To see how the tracks look like, we can plot the tracks over cell image (e.g. bright field image or nuclei overall fluorescence) to see the distribution of tracks.
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide',fig.show="hide"}
+
+# Overlay all tracks on nuclei
+plotNucTrackOverlay(folder=folder,trackll=trackll.fi,cores=1, max.pixel=128,nrow=2,ncol=2,width=16,height=16)
+
+# Overlay tracks after nuclear mask
+plotNucTrackOverlay(folder=folder,trackll=trackll.fi.ma,cores=1, max.pixel=128,nrow=2,ncol=2,width=16,height=16)
+```
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+# Overlay tracks color coded for diffusion coefficient
+plotTrackOverlay_Dcoef(trackll=trackll.fi.ma, Dcoef.range=c(-2,1), rsquare=0.8, t.interval=0.01, dt=6, resolution=0.107)
+
+```
+
+We used Dcoef.range to select tracks whose Dcoef is within the range. Other tracks will not be plotted.
+
+## Analysis
+
+We then move on to the analysis of the biophysical properties of a molecule, e.g. mean square displacement (MSD), diffusion coefficient (Dcoef), residence time (RT) etc. 
+
+For an overall view of one factor, we may want to merge all tracks in a folder. 
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+
+# Merge tracks from different image files in the folder
+trackll.fi.ma.me=c(mergeTracks(folder, trackll.fi.ma))
+
+
+```
+
+And sometimes, we may have data of same type in multiple folders and want to combine them together. 
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+folder2=system.file('extdata','HSF_2',package='sojourner')
+trackll2=createTrackll(folder2,input=2, cores = 1)
+trackll2=maskTracks(folder2,trackll2)
+trackll2=mergeTracks(folder2,trackll2)
+
+# Combine the tracklls together
+Trackll.combine=combineTrackll(trackll=c(trackll,trackll2),merged=TRUE)
+```
+
+Now we can calculate msd, Dcoef, and residence time of a molecule. 
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+# calculate MSD for all tracks longer than 3 frames
+msd(Trackll.combine,dt=20,resolution=0.107,summarize=TRUE,cores=1,plot=TRUE,output=TRUE)
+
+```
+
+For some analysis, we may just want to a portion of the trajectory, this can be done by using trimTrack() function.
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide',fig.show="hide"}
+trackll.combine.trim=trimTrack(Trackll.combine,trimmer=c(1,11))
+
+msd(trackll.combine.trim,dt=10,resolution=0.107,summarize=TRUE,cores=1,plot=TRUE,output=TRUE)
+```
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+
+Dcoef(trackll=trackll.combine.trim,dt=5, filter=c(min=6,max=Inf), method="static", plot=TRUE, output=TRUE)
+
+```
+
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide',fig.show="hide"}
+## calculating displacement CDF
+
+# Calculate all dislacement frequency and displacement CDF for all tracks longer than 3 frames
+displacementCDF(trackll.combine.trim, dt=1, plot=TRUE, output=TRUE)
+
+```
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide',fig.show="hide"}
+## Analysis for Residence time. 
+
+# Calculate 1-CDF (survival probability) of the dwell time/residence time of all tracks (not trimmed) longer than 3 frames
+compare_RT_CDF(trackll= Trackll.combine, x.max=100, filter=c(min=3,max=Inf), t.interval=0.5, output=FALSE)
+```
+
+
+```{r, eval = TRUE, warning=FALSE, echo=TRUE, results = 'hide'}
+# Calculate residence time of tracks by 2-component exponential decay fitting of the 1-CDF curve
+fitRT(trackll= trackll.fi.ma.me, x.max=100, N.min=1.5, t.interval=0.5)
+
+```
+
+This is just a brief example of analysis one can do using the statistic tools provided in sojourner package. Further information regarding function usage or analysis techniques can be found in function help docs and on https://sheng-liu.github.io/sojourner/ website.
+
+# sojournerGUI: A Shiny Interface
+
+A Shiny app implementation of many of the core features of sojourner. Namely,
+the basic abilities of reading trackll video files (of all supported types),
+processing tracks (linking, filtering, trimming, masking, merging), and
+analyzing tracks (MSD, Dcoef, CDF, and dwell time). The application interface
+provides a code-free GUI, suited with dynamic and interactive plots, that is
+relatively easy to use. The app is still in alpha development and only supports
+the base functions needed for educational capabilities and such. A command
+history log, named *command_history.R* in the working directory, will be
+continuously updated each time a command is called for diagnostic, replication,
+and tracking purposes.
+
+## Launching
+
+```{r, eval=FALSE, echo=TRUE, results='hide', warning=FALSE}
+sojournerGUI()
+```
+
+## Helpful Tips
+
+* If in doubt, check the console output of each command inputted through the 
+GUI. These will show error and warning messages as needed.
+
+* Normal distribution, compare folder, and kernel density masking features are 
+currently not supported.
+
+* Reading tracks depends on a **running session of R**, as it uses its 
+native `file.choose()` function.
+
+# SessionInfo
+
+Here is the sessionInfo() on which this document was compiled:
+
+```{r, eval = TRUE}
+sessionInfo()
+```
+
+
+

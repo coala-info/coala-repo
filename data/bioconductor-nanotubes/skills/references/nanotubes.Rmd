@@ -1,0 +1,108 @@
+---
+title: "Cap Analysis of Gene Expression (CAGE) data from mouse nanotube experiment"
+author: "Malte Thodberg"
+package: nanotubes
+abstract: >
+  Cap Analysis of Gene Expression (CAGE) data from mouse lung biopsies, obtained from "Identification of Gene Transcription Start Sites and Enhancers Responding to Pulmonary Carbon Nanotube Exposure in Vivo" by Bornholdt et al. The package includes the study design (Ctrl samples vs Nano samples treated with nanotubes) and CAGE Transcription Start Site (CTSS) data stored as BigWig-files.
+output: 
+    BiocStyle::html_document
+vignette: >
+    %\VignetteIndexEntry{nanotubes}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}  
+---
+
+# Installation
+
+Install the most recent stable version from Bioconductor:
+
+```{r bioconductor, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("nanotubes")
+```
+
+And load `nanotubes`:
+
+```{r library, results='hide', message=FALSE}
+library(nanotubes)
+```
+
+Alternatively, you can install the development version directly from GitHub using `devtools`:
+
+```{r github, eval=FALSE}
+devtools::install_github("MalteThodberg/nanotubes")
+```
+
+# Citation
+
+If you use nanotubes, please cite the following article:
+
+```{r citation, eval=TRUE}
+citation("nanotubes")
+```
+
+# Getting help
+
+For general questions about the usage of nanotubes, use the [official Bioconductor support forum](https://support.bioconductor.org) and tag your question "nanotubes". We strive to answer questions as quickly as possible.
+
+For technical questions, bug reports and suggestions for new features, we refer to the [nanotubes github page](https://github.com/MalteThodberg/nanotubes/issues)
+
+# Data description
+
+CAGE Transcription Start Sites (CTSSs), the number of CAGE tag 5'-end mapping to each genomic location data was obtained from the authors of the original study. Remaining data used in the study can be downloaded from [GSE70386](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70386).
+
+One technical replicate was not included.
+
+# Accessing study design and BigWig-Files
+
+Load the data into R to get an overview of the included samples:
+
+```{r nanotubes}
+data("nanotubes")
+knitr::kable(nanotubes)
+```
+
+Load a data from a BigWig-file into R using the `r BiocStyle::Biocpkg("rtracklayer")` package:
+
+```{r rtracklayer, message=FALSE}
+library(rtracklayer)
+bw_fname <- system.file("extdata", nanotubes$BigWigPlus[1], 
+                        package = "nanotubes", 
+                        mustWork = TRUE)
+import(bw_fname)
+```
+
+# Importing into CAGEfightR
+
+The data contained in the package is correctly formatted for analysis with the `r BiocStyle::Biocpkg("CAGEfightR")` package:
+
+```{r CAGEfightR, eval=FALSE}
+library(CAGEfightR)
+
+# Setup paths
+bw_plus <- system.file("extdata", nanotubes$BigWigPlus, 
+                        package = "nanotubes", 
+                        mustWork = TRUE)
+bw_minus <- system.file("extdata", nanotubes$BigWigMinus, 
+                        package = "nanotubes", 
+                        mustWork = TRUE)
+
+# Save as named BigWigFileList
+bw_plus <- BigWigFileList(bw_plus)
+bw_minus <- BigWigFileList(bw_minus)
+names(bw_plus) <- names(bw_minus) <- nanotubes$Name
+
+# Quantify
+CTSSs <- quantifyCTSSs(bw_plus, bw_minus, design=nanotubes)
+```
+
+See the [CAGEfightR vignette](https://bioconductor.org/packages/release/bioc/vignettes/CAGEfightR/inst/doc/Introduction_to_CAGEfightR.html) for more details.
+
+# Session info
+
+```{r session}
+sessionInfo()
+```
+
+

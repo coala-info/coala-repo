@@ -1,0 +1,14 @@
+# phytools: Phylogenetic Tools for Comparative Biology (and Other Things)
+
+A wide range of methods for phylogenetic analysis - concentrated in phylogenetic comparative biology, but also including numerous techniques for visualizing, analyzing, manipulating, reading or writing, and even inferring phylogenetic trees. Included among the functions in phylogenetic comparative biology are various for ancestral state reconstruction, model-fitting, and simulation of phylogenies and trait data. A broad range of plotting methods for phylogenies and comparative data include (but ...
+
+### Metadata
+- **Conda (r channel)**: https://anaconda.org/r/r-phytools
+- **R-project (CRAN)**: https://cloud.r-project.org/web/packages/phytools/index.html
+- **Home (project)**: https://github.com/liamrevell/phytools
+- **Package**: phytools
+- **Version**: 2.5-2
+- **Author**: Liam J. Revell [aut, cre]
+- **Maintainer**: Liam J. Revell <liam.revell at umb.edu>
+- **Skill**: generated
+

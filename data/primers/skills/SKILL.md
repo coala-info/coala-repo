@@ -1,0 +1,54 @@
+---
+name: primers
+description: The `primers` tool is a streamlined CLI and Python library specifically engineered for DNA assembly.
+homepage: https://github.com/Lattice-Automation/primers
+---
+
+# primers
+
+## Overview
+The `primers` tool is a streamlined CLI and Python library specifically engineered for DNA assembly. While general tools like Primer3 exist, `primers` is optimized for workflows where additional sequences must be added to the 5' ends of primers. It employs a linear penalty function to evaluate primer pairs based on their melting temperatures (both the annealing portion and the total sequence), GC ratios, and secondary structure stability (minimum free energy).
+
+## Common CLI Patterns
+
+### Basic Primer Design
+To generate a standard pair of primers for a target sequence:
+```bash
+primers create CTACTAATAGCACACACGGGGACTAGCATCTATCTCAGCTACGATCAGCATC
+```
+
+### Adding 5' Overhangs (e.g., Golden Gate)
+To add specific sequences like BsaI (`GGTCTC`) or BpiI (`GAAGAC`) recognition sites to the FWD and REV primers:
+```bash
+primers create -f GGTCTC -r GAAGAC [TARGET_SEQUENCE]
+```
+
+### Optimizing Homology Arm Length (e.g., Gibson Assembly)
+If you have a long potential homology sequence but want the tool to choose the best subsequence (between 15 and 25 bp) to minimize penalties:
+```bash
+primers create -f [LONG_HOMOLOGY_SEQ] -fl 15 25 [TARGET_SEQUENCE]
+```
+
+### Off-target Binding Check
+To ensure primers do not bind elsewhere in a larger context (like a backbone or genome), provide the background sequence with `-t`:
+```bash
+primers create -t [BACKGROUND_SEQUENCE] [TARGET_SEQUENCE]
+```
+
+### Scoring Existing Primers
+To evaluate primers you already have against a template:
+```bash
+primers score [FWD_SEQ] [REV_SEQ] -s [TEMPLATE_SEQUENCE]
+```
+
+## Expert Tips and Best Practices
+
+*   **Tm vs. Ttm**: Distinguish between `tm` (the melting temperature of the portion that binds to the template) and `ttm` (the total melting temperature including the 5' addition). Use `tm` for setting your initial PCR annealing temperature.
+*   **Secondary Structure (dg)**: The `dg` value represents the minimum free energy of the secondary structure. Values closer to 0 are better; highly negative values indicate stable hairpins or dimers that may inhibit PCR.
+*   **Penalty Scores**: The `p` column represents the total penalty. Lower scores indicate better primers. If scores are high, check the JSON output (`--json`) to see which specific constraint (Tm difference, GC ratio, etc.) is driving the penalty.
+*   **JSON Integration**: Use the `--json` flag when you need to pipe results into other tools or scripts for automated assembly design. It provides a detailed breakdown of the scoring components (e.g., `penalty_tm_diff`, `penalty_dg`).
+*   **Sequence Input**: Ensure sequences are provided in the 5' to 3' direction. The tool automatically handles the reverse complementation required for the REV primer.
+
+## Reference documentation
+- [github_com_Lattice-Automation_primers.md](./references/github_com_Lattice-Automation_primers.md)
+- [anaconda_org_channels_bioconda_packages_primers_overview.md](./references/anaconda_org_channels_bioconda_packages_primers_overview.md)

@@ -1,0 +1,221 @@
+---
+title: "Getting started"
+author: "<h4>Authors: Alan Murphy, Brian Schilder, and Nathan Skene</h4>"
+date: "<h4>Updated: `r format( Sys.Date(), '%b-%d-%Y')`</h4>"
+bibliography: ../inst/cit/EWCE.bib
+csl: ../inst/cit/nature.csl
+output:
+  BiocStyle::html_document:
+    md_extensions: [ 
+      "-autolink_bare_uris" 
+    ]
+vignette: >
+  %\VignetteIndexEntry{Getting started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+# Introduction
+
+The `EWCE` R package is designed to facilitate expression weighted cell type
+enrichment analysis as described in our *Frontiers in Neuroscience* 
+paper [@skene_2016]. `EWCE` can be applied to any gene list. 
+ 
+Using `EWCE` essentially involves two steps:
+
+1. Prepare a single-cell reference; i.e. CellTypeDataset (CTD). Alternatively, 
+you can use one of the pre-generated CTDs we provide via the package `ewceData`
+(which comes with `EWCE`).  
+2. Run cell type enrichment on a gene list using the `bootstrap_enrichment_test` function. 
+
+**NOTE**: This documentation is for the development version of `EWCE`. See [Bioconductor](https://bioconductor.org/packages/release/bioc/html/EWCE.html) for documentation on the current release version. 
+
+# Setup
+
+```{r setup, include=TRUE}
+library(EWCE) 
+set.seed(1234)
+
+#### Package name ####
+pkg <- tolower("EWCE")
+#### Username of DockerHub account ####
+docker_user <- "neurogenomicslab"
+```
+
+# Run cell-type enrichment tests 
+
+## 1. Prepare input data
+
+### CellTypeDataset
+
+Load a CTD previously generated from mouse cortex and hypothalamus single-cell RNA-seq data (from the Karolinska Institute). 
+
+#### CTD levels 
+
+Each level of a CTD corresponds to increasingly refined cell-type/-subtype annotations. For example, in the CTD  `ewceData::ctd()` level 1 includes the cell-type "interneurons", while level 2 breaks these this group into 16 different interneuron subtypes ("Int...").
+
+```{r}
+ctd <- ewceData::ctd()
+```
+
+#### Plot CTD mean_exp
+
+Plot the expression of four markers genes across all cell types in the CTD.
+
+```{r, fig.width=7, fig.height=5, error=TRUE}
+plt_exp <- EWCE::plot_ctd(ctd = ctd,
+                        level = 1,
+                        genes = c("Apoe","Gfap","Gapdh"),
+                        metric = "mean_exp")
+```
+
+```{r, fig.width=9, fig.height=5, error=TRUE}
+plt_spec <- EWCE::plot_ctd(ctd = ctd,
+                         level = 2,
+                         genes = c("Apoe","Gfap","Gapdh"),
+                         metric = "specificity")
+```
+
+
+### Gene list
+
+Gene lists input into *EWCE*  can comes from any source (e.g. GWAS, candidate genes, pathways). 
+
+Here, we provide an example gene list of Alzheimer's disease-related nominated from a GWAS.
+
+```{r}
+hits <- ewceData::example_genelist()
+print(hits)
+```
+
+ 
+## 2. Run cell type enrichment tests
+
+We now run the cell type enrichment tests on the gene list. Since the CTD is from mouse data (and is annotated using mouse genes) we specify the argument `sctSpecies="mouse"`. `bootstrap_enrichment_test` will automaticlaly convert the mouse genes to human genes.
+
+Since the gene list came from GWAS in humans, we set `genelistSpecies="human"`.
+
+*Note*: We set the seed at the top of this vignette to
+ensure reproducibility in the bootstrap sampling function.
+
+#### Hyperparameters
+
+*Note*: We use 100 repetitions here for the purposes of a quick example, but in practice you would want to use `reps=10000` for publishable results.
+
+#### Parallelisation
+
+You can now speed up the bootstrapping process by parallelising across
+multiple cores with the parameter `no_cores` (`=1` by default).
+
+```{r}
+reps <- 100
+annotLevel <- 1
+```
+
+```{r }
+full_results <- EWCE::bootstrap_enrichment_test(sct_data = ctd,
+                                                sctSpecies = "mouse",
+                                                genelistSpecies = "human",
+                                                hits = hits, 
+                                                reps = reps,
+                                                annotLevel = annotLevel)
+```
+
+ 
+
+The main table of results is stored in `full_results$results`.
+
+In this case, microglia were the only cell type that was significantly enriched in the Alzheimer's disease gene list.
+
+```{r }
+knitr::kable(full_results$results)
+```
+
+The results can be visualised using another function, which shows for each cell type, the number of standard deviations from the mean the level of expression was found to be in the target gene list, relative to the bootstrapped mean.
+
+The dendrogram at the top shows how the cell types are hierarchically clustered by transcriptional similarity.
+ 
+```{r, error=TRUE}
+plot_list <- EWCE::ewce_plot(total_res = full_results$results,
+                           mtc_method = "BH",
+                           ctd = ctd)
+print(plot_list$withDendro)
+```
+     
+
+# Docker
+
+`r pkg` is now available via 
+[DockerHub](https://hub.docker.com/repository/docker/`r docker_user`/`r pkg`) 
+as a containerised environment with Rstudio and 
+all necessary dependencies pre-installed.
+
+## Installation 
+
+## Method 1: via Docker
+
+First, [install Docker](https://docs.docker.com/get-docker/) 
+if you have not already. 
+
+Create an image of the [Docker](https://www.docker.com/) container 
+in command line:  
+
+```
+docker pull `r docker_user`/`r pkg`
+```
+
+Once the image has been created, you can launch it with:  
+
+```
+docker run \
+  -d \
+  -e ROOT=true \
+  -e PASSWORD=bioc \
+  -v ~/Desktop:/Desktop \
+  -v /Volumes:/Volumes \
+  -p 8787:8787 \
+  `r docker_user`/`r pkg`
+```  
+
+* The `-d` ensures the container will run in "detached" mode,
+which means it will persist even after you've closed your command line session.  
+* Optionally, you can also install the [Docker Desktop](https://www.docker.com/products/docker-desktop) 
+to easily manage your containers.  
+* You can set the password to whatever you like by changing the 
+`-e PASSWORD=...` flag.  
+* The username will be *"rstudio"* by default.
+
+## Method 2: via Singularity
+
+If you are using a system that does not allow Docker 
+(as is the case for many institutional computing clusters), 
+you can instead [install Docker images via Singularity](https://sylabs.io/guides/2.6/user-guide/singularity_and_docker.html).  
+
+```
+singularity pull docker://`r docker_user`/`r pkg`
+```
+
+
+## Usage 
+
+Finally, launch the containerised Rstudio by entering the 
+following URL in any web browser:
+*http://localhost:8787/* 
+
+Login using the credentials set during the Installation steps.  
+
+     
+     
+# Session Info
+
+<details>
+
+```{r Session Info}
+utils::sessionInfo()
+```
+
+</details>
+
+
+# References
+

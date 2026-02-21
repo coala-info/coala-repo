@@ -1,0 +1,42 @@
+---
+name: cstag
+description: `cstag` is a specialized Python library designed to handle the `cs` tag produced by the minimap2 aligner.
+homepage: https://github.com/akikuno/cstag
+---
+
+# cstag
+
+## Overview
+
+`cstag` is a specialized Python library designed to handle the `cs` tag produced by the minimap2 aligner. It provides a suite of tools to transform these tags between formats, generate consensus sequences, mask low-quality data, and export alignment differences into standard formats like VCF or interactive HTML reports. It is essential for workflows involving long-read sequencing analysis where precise alignment differences need to be parsed or visualized.
+
+## Core Functions and Usage
+
+### Generating and Converting Tags
+*   **Generate cs tags**: Use `cstag.call(cigar, md, seq)` to create a tag from standard SAM fields. Set `long=True` to generate the verbose format.
+*   **Format Conversion**: 
+    *   Use `cstag.shorten(cs_tag)` to reduce storage footprint.
+    *   Use `cstag.lengthen(cs_tag, cigar, seq)` to restore full sequence information to a shortened tag.
+
+### Manipulation and Analysis
+*   **Reverse Complement**: Use `cstag.revcomp(cs_tag)` when analyzing the opposite strand; it correctly handles the internal logic of the difference string.
+*   **Splitting**: Use `cstag.split(cs_tag)` to break a tag into a list of its constituent operations (matches, substitutions, insertions, deletions).
+*   **Masking**: Use `cstag.mask(cs_tag, cigar, qual, phred_threshold)` to convert low-quality base calls into `N` characters within the tag, preventing false-positive variant calls.
+
+### Consensus and Variant Calling
+*   **Consensus Generation**: Use `cstag.consensus(cs_tags, positions)` to merge multiple overlapping alignments into a single representative cs tag.
+*   **VCF Export**: 
+    *   For single tags: `cstag.to_vcf(cs_tag, chrom, pos)`.
+    *   For multiple tags (VAF calculation): Pass lists of tags, chromosomes, and positions to `to_vcf()` to automatically calculate Depth (DP), Reference Depth (RD), Alternate Depth (AD), and Variant Allele Frequency (VAF).
+
+### Visualization
+*   **HTML Reports**: Use `cstag.to_html(cs_tag, description)` to generate a standalone HTML file. This is the preferred method for visual inspection of complex mutations and indels.
+
+## Expert Tips
+*   **Reference Reconstruction**: If the original reference sequence is unavailable, use `cstag.to_sequence(cs_tag)` to reconstruct the reference subsequence directly from the alignment information.
+*   **Handling SAM/BAM**: While the `cstag` library is for Python-based manipulation, use the companion `cstag-cli` tool if you need to add cs tags directly to existing SAM/BAM files.
+*   **Quality Control**: Always apply `cstag.mask()` before `cstag.to_vcf()` if your data has variable Phred quality scores to ensure the resulting VCF only contains high-confidence variants.
+
+## Reference documentation
+- [github_com_akikuno_cstag.md](./references/github_com_akikuno_cstag.md)
+- [anaconda_org_channels_bioconda_packages_cstag_overview.md](./references/anaconda_org_channels_bioconda_packages_cstag_overview.md)

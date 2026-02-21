@@ -1,0 +1,78 @@
+---
+name: fqtk
+description: fqtk is a high-performance bioinformatics toolkit written in Rust, optimized for the rapid demultiplexing of FASTQ files.
+homepage: https://github.com/fulcrumgenomics/fqtk
+---
+
+# fqtk
+
+## Overview
+
+fqtk is a high-performance bioinformatics toolkit written in Rust, optimized for the rapid demultiplexing of FASTQ files. Its core functionality centers on the `demux` command, which identifies and sorts reads into sample-specific files based on a provided metadata TSV. The tool is highly versatile, utilizing a "read structure" syntax to define exactly where sample barcodes, molecular identifiers (UMIs), and template sequences are located within each read. It is multi-threaded by default and handles IUPAC ambiguity codes in barcodes, making it suitable for complex library preparations and high-throughput sequencing workflows.
+
+## Read Structure Syntax
+
+Read structures define the composition of each input FASTQ. They consist of `<number><operator>` pairs.
+
+*   **T**: Template read (the actual genomic/transcriptomic sequence).
+*   **B**: Sample barcode (used for demultiplexing).
+*   **M**: Unique Molecular Identifier (UMI).
+*   **C**: Cellular Barcode.
+*   **S**: Skip/Ignore these bases.
+*   **+**: Used with the last operator to denote "all remaining bases" (e.g., `150T+`).
+
+**Example Structures:**
+*   `8B92T`: 8bp sample barcode followed by 92bp of template.
+*   `16C10M+T`: 16bp cellular barcode, 10bp UMI, and the rest is template.
+
+## Common CLI Patterns
+
+### Basic Single-End Demultiplexing
+For a single FASTQ where the first 8 bases are the barcode:
+```bash
+fqtk demux \
+  --inputs sample_R1.fq.gz \
+  --read-structures 8B+T \
+  --sample-metadata metadata.tsv \
+  --output output_dir/
+```
+
+### Dual-Indexed Paired-End Demultiplexing
+For a standard run with two template reads (R1, R2) and two index reads (I1, I2):
+```bash
+fqtk demux \
+  --inputs r1.fq.gz i1.fq.gz i2.fq.gz r2.fq.gz \
+  --read-structures 100T 8B 8B 100T \
+  --sample-metadata metadata.tsv \
+  --output output_dir/
+```
+
+### Customizing Output Types
+By default, only template (T) reads are written. To also output UMIs (M) or Barcodes (B) into separate FASTQs:
+```bash
+fqtk demux \
+  --inputs r1.fq.gz \
+  --read-structures 8B12M+T \
+  --output-types T M \
+  --sample-metadata metadata.tsv \
+  --output output_dir/
+```
+
+## Metadata Requirements
+
+The `--sample-metadata` file must be a headered TSV containing:
+1.  `sample_id`: The unique name for the sample.
+2.  `barcode`: The expected barcode sequence. For dual-indexing, concatenate the barcodes in the order they appear in the `--inputs` list.
+
+## Expert Tips and Best Practices
+
+*   **Pre-concatenate Lanes**: If your sequencing data is split across multiple lanes (e.g., L001, L002), concatenate the files for each read type (R1, R2, etc.) before running `fqtk demux`.
+*   **IUPAC Support**: You can use IUPAC ambiguity codes (like `N`, `R`, `Y`) in the `barcode` column of your metadata. An observed base matches if it is at least as specific as the expected code.
+*   **Mismatch Tuning**: 
+    *   Use `--max-mismatches` (default: 1) to control stringency.
+    *   Use `--min-mismatch-delta` (default: 2) to ensure a read is not "close" to a second-best sample, preventing misassignment.
+*   **Performance**: The tool defaults to 8 threads. For very large datasets, ensure you have at least 3 threads available (`-t` option).
+*   **Unmatched Reads**: Reads that fail to match any sample are placed in files prefixed with `unmatched` (change this with `-u`). Check the `demux-metrics.txt` in the output directory to diagnose low assignment rates.
+
+## Reference documentation
+- [fqtk GitHub Repository](./references/github_com_fulcrumgenomics_fqtk.md)

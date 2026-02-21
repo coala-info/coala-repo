@@ -1,0 +1,1 @@
+Index of /pub/databases/Pfam/Tools Index of /pub/databases/Pfam/Tools Name Last modified Size Description Parent Directory &nbsp; - &nbsp; ActSitePred/ 2013-05-22 06:25 - &nbsp; OldPfamScan/ 2017-03-01 14:46 - &nbsp; README 2015-08-20 13:47 142 &nbsp; PfamScan.tar.gz 2017-03-01 14:48 28K &nbsp;

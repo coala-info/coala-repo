@@ -1,0 +1,46 @@
+---
+title: "Sequence Analysis with OmaDB"
+author: "Klara Kaleb"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Sequence Mapping with OmaDB}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Another useful function of the OmaDB package is its functionality to exactly and partially match sequences. We will explore this further in this vignette. 
+
+Let's say we have a sequence of interest that we want to map, in this case:
+
+```{r}
+ sequence = "MNDPSLLGYPNVGPQQQQQQQQQQHAGLLGKGTPNALQQQLHMNQLTGIPPPGLMNNSDVHTSSNNNSRQLLDQLANGNANMLNMNMDNNNNNNNNNNNNNNNGGGSGVMMNASTAAVNSIGMVPTVGTPVNINVNASNPLLHPHLDDPSLLNNPIWKLQLHLAAVSAQSLGQPNIYARQNAMKKYLATQQAQQAQQQAQQQAQQQVPGPFGPGPQAAPPALQPTDFQQSHIAEASKSLVDCTKQALMEMADTLTDSKTAKKQQPTGDSTPSGTATNSAVSTPLTPKIELFANGKDEANQALLQHKKLSQYSIDEDDDIENRMVMPKDSKYDDQLWHALDLSNLQIFNISANIFKYDFLTRLYLNGNSLTELPAEIKNLSNLRVLDLSHNRLTSLPAELGSCFQLKYFYFFDNMVTTLPWEFGNLCNLQFLGVEGNPLEKQFLKILTEKSVTGLIFYLRDNRPEIPLPHER"
+```
+
+We can pass it to the mapSequence() function which returns a list of targets. From this list we can then construct protein objects for which we can obtain further infromation - such as its oma group or its domains. The example response object, generated via mapSequence(sequence), is below.
+
+```{r, warning=FALSE, message=FALSE}
+library(OmaDB)
+
+load('../data/sequence_map.rda')
+
+getObjectAttributes(sequence_map)
+
+targets = getAttribute(sequence_map,'targets')
+
+length(targets) 
+
+protein = targets[[1]][['entry_url']]
+
+```
+
+One can also directly obtain GO annotations for a given query sequence (protein$ogene_ontology), which results in an object as below:
+
+```{r, warning=FALSE, message=FALSE}
+
+load('../data/sequence_annotation.rda')
+
+sequence_annotation 
+
+```
+

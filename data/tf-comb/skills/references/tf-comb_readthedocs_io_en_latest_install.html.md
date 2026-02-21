@@ -1,0 +1,1 @@
+Install &mdash; TF-COMB 0.1.0 documentation TF-COMB latest Install Examples Methods API reference Changelog TF-COMB Install Edit on GitHub Install  Install from the github repository using: $ pip install git+git://github.com/loosolab/TF-COMB Previous Next &#169; Copyright 2021, Loosolab. Revision 4678b17b . Built with Sphinx using a theme provided by Read the Docs .

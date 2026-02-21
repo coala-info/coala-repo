@@ -1,0 +1,443 @@
+---
+title: "Population reference dataset GDS files"
+author: Pascal Belleau, Astrid Deschênes and Alexander Krasnitz
+output:
+    BiocStyle::html_document:
+        number_sections: yes
+        toc: true
+    pkgdown:
+        number_sections: yes
+        as_is: true
+urlcolor: darkred
+linkcolor: darkred
+bibliography: aicsBiblio.bibtex
+vignette: >
+    %\VignetteIndexEntry{Population reference dataset GDS files}
+    %\VignettePackage{RAIDS}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
+BiocStyle::markdown()
+
+suppressPackageStartupMessages({
+    library(knitr)
+    library(RAIDS)
+    library(SNPRelate)
+    library(gdsfmt)
+})
+
+set.seed(121444)
+```
+
+<br />
+**Package**: `r Rpackage("RAIDS")`<br />
+**Authors**: `r packageDescription("RAIDS")[["Author"]]`<br />
+**Version**: `r packageDescription("RAIDS")$Version`<br />
+**Compiled date**: `r Sys.Date()`<br />
+**License**: `r packageDescription("RAIDS")[["License"]]`<br />
+
+
+<br>
+<br>
+
+
+
+
+This vignette explains, in further details, the format of the population 
+reference files that are required to run the ancestry inference tool. 
+
+Two different files are generated from a reference dataset:
+
+- The Population Reference GDS File
+- The Population Reference SNV Annotation GDS file
+
+
+<br>
+<br>
+
+# Population Reference GDS File
+
+The *Population Reference GDS file* should contain the genome-wide SNV 
+information related to the population data set with known genetic ancestry. 
+This reference data set will be used to generate the simulated samples. It is 
+also used to generate the PCA on which the samples of interest are going to 
+be projected. 
+
+The *Population Reference GDS file* is a GDS object of class 
+[SNPGDSFileClass](https://www.bioconductor.org/packages/release/bioc/vignettes/) from [SNPRelate](https://www.bioconductor.org/packages/release/bioc/html/SNPRelate.html) 
+package [@Zheng2012].
+
+Beware that related profiles should be flagged in the *Population Reference GDS file* files. 
+
+```{r runRefGDS, echo=TRUE, eval=TRUE, collapse=TRUE, warning=FALSE, message=FALSE}
+#############################################################################
+## Load required packages
+#############################################################################
+library(RAIDS)    
+library(SNPRelate)
+
+pathRef <- system.file("extdata/", package="RAIDS")
+
+fileReferenceGDS <- file.path(pathRef, "PopulationReferenceDemo.gds")
+
+gdsRef <- snpgdsOpen(fileReferenceGDS)
+
+## Show the file format
+print(gdsRef)
+
+closefn.gds(gdsRef)
+```
+
+<br>
+
+This output lists all variables stored in the *Population Reference GDS file*. 
+At the first level, it stores variables *sample.id*, *snp.id*, etc. 
+The additional information displayed in the braces indicate the data type, 
+size, compressed or not with compression ratio.
+
+The mandatory fields are:
+
+* **sample.id**: a *character* string (saved in *Str8* format) used as unique identifier for each sample
+* **sample.annot**: a *data.frame* where each row correspond to a sample and containing those columns:
+    * **sex**: a *character* string (saved in *Str8* format) used as identifier of the sex of the sample
+    * **pop.Group**: a *character* string (saved in *Str8* format) representing the sub-population ancestry of the sample (ex:GBR, etc)
+    * **superPop**: a *character* string (saved in *Str8* format) representing the super-population ancestry of the sample (ex:EUR, AFR, EAS, SAS, AMR)
+    * **batch**: an *integer* (saved in *Float64* format) representing the batch of provenance of the sample 
+* **snp.id**: a a *character* string (saved in *Str8* format) used as unique identifier for each SNV
+* **snp.chromosome**: an *integer* or *character* (saved in *UInt16 * format) mapping for each chromosome. Integer: numeric values 1-26, mapped in order from 1-22, 23=X, 24=XY (the pseudoautosomal region), 25=Y, 26=M (the mitochondrial probes), and 0 for probes with unknown positions; it does not allow NA. Character: “X”, “XY”, “Y” and “M” can be used here, and a blank string indicating unknown position
+* **snp.position**: an *integer* (saved in *Int32* format) representing the base position of each SNV on the chromosome, and 0 for unknown position; it does not allow NA.
+* **snp.allele**: a *character* string (saved as *Str8* format) representing the reference allele and alternative allele for each of the SNVs present in the *snp.id* field
+* **snp.AF**: a *numeric* value between 0 and 1 (saved as *PackedReal24* format) representing the allelic frequency of the alternative allele in the general population for each of the SNVs present in the *snp.id* field
+* **snp.EAS_AF**: a *numeric* value between 0 and 1 (saved as *PackedReal24* format) representing the allelic frequency of the alternative allele in the East Asian population  for each of the SNVs present in the *snp.id* field
+* **snp.EUR_AF**: a *numeric* value between 0 and 1 (saved as *PackedReal24* format) representing the allelic frequency of the alternative allele in the European population  for each of the SNVs present in the *snp.id* field
+* **snp.AFR_AF**: a *numeric* value between 0 and 1 (saved as *PackedReal24* format) representing the allelic frequency of the alternative allele in the African population  for each of the SNVs present in the *snp.id* field
+* **snp.AMR_AF**: a *numeric* value between 0 and 1 (saved as *PackedReal24* format) representing the allelic frequency of the alternative allele in the American population  for each of the SNVs present in the *snp.id* field
+* **snp.SAS_AF**: a *numeric* value between 0 and 1 (saved as *PackedReal24* format) representing the allelic frequency of the alternative allele in the South Asian population  for each of the SNVs present in the *snp.id* field
+* **genotype**: a SNV genotypic *matrix* of *integer* values (saved in *Bit2* format) (i.e., the number of A alleles) with SNVs as rows and samples as columns (number of SNVs × number of Samples)
+* **sample.ref**: an *integer* (saved in *Bit1* format) indicating if the sample is retained to be used as reference (=1) or removed (=0) as related samples have to be discarded
+
+<br>
+
+This following example shows how to create a *Population GDS Reference file*. 
+This example is for demonstration purpose only and use hard coded values. 
+A working *Population GDS Reference file* would have to contain multiple 
+samples from 
+each continental population and would also have to contain the SNVs from the 
+entire genome.
+
+To generate a real *Population GDS Reference file*, the pipeline to process 
+the information would depend of the selected source.
+If the source files are in VCF format, you can use Bioconductor 
+[VariationAnnotation](https://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html)
+package to extract the genotypic information (beware it may use a lot of 
+memory).
+Often, you will need to parse metadata files to get information such as the 
+sex and population of the profiles. In addition, the Bioconductor 
+[GENESIS](https://bioconductor.org/packages/release/bioc/html/GENESIS.html) 
+package can 
+be used to compute kinship coefficients to identify the unrelated profiles.
+
+
+```{r createRefGDS, echo=TRUE, eval=TRUE, collapse=TRUE, warning=FALSE, message=FALSE}
+#############################################################################
+## Load required packages
+#############################################################################
+library(RAIDS)    
+library(SNPRelate)
+library(gdsfmt)
+
+## Create a temporary GDS Reference file in the temporary directory
+fileNewReferenceGDS <- file.path(tempdir(), "reference_DEMO.gds")
+
+gdsRefNew <- createfn.gds(fileNewReferenceGDS)
+
+## The entry 'sample.id' contain the unique identifiers of 10 samples 
+## that constitute the reference dataset
+sample.id <- c("HG00243", "HG00150", "HG00149", "HG00246", "HG00138", 
+                    "HG01334", "HG00268", "HG00275", "HG00290", "HG00364")
+add.gdsn(node=gdsRefNew, name="sample.id", val=sample.id, 
+            storage="string", check=TRUE)
+
+## A data frame containing the information about the 10 samples 
+## (in the same order than in the 'sample.id') is created and added to 
+## the 'sample.annot' entry
+## The data frame must contain those columns: 
+##     'sex': '1'=male, '2'=female
+##     'pop.group': acronym for the population (ex: GBR, CDX, MSL, ASW, etc..)
+##     'superPop': acronym for the super-population (ex: AFR, EUR, etc...)
+##     'batch': number identifying the batch of provenance 
+sampleInformation <- data.frame(sex=c("1", "2", "1", "1", "1", 
+        "1", "2", "2", "1", "2"), pop.group=c(rep("GBR", 6), rep("FIN", 4)), 
+        superPop=c(rep("EUR", 10)), batch=rep(0, 10), stringsAsFactors=FALSE)
+add.gdsn(node=gdsRefNew, name="sample.annot", val=sampleInformation, 
+            check=TRUE)
+
+## The identifier of each SNV is added in the 'snp.id' entry
+snvID <- c("s29603", "s29605", "s29633", "s29634", "s29635", "s29637", 
+            "s29638", "s29663", "s29664", "s29666", "s29667", "s29686", 
+            "s29687", "s29711", "s29741", "s29742", "s29746", "s29750", 
+            "s29751", "s29753")
+add.gdsn(node=gdsRefNew, name="snp.id", val=snvID, check=TRUE)
+
+## The chromosome of each SNV is added to the 'snp.chromosome' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvChrom <- c(rep(1, 20))
+add.gdsn(node=gdsRefNew, name="snp.chromosome", val=snvChrom, storage="uint16",
+            check=TRUE)
+
+## The position on the chromosome of each SNV is added to 
+## the 'snp.position' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvPos <- c(3467333, 3467428, 3469375, 3469387, 3469502, 3469527, 
+                    3469737, 3471497, 3471565, 3471618)
+add.gdsn(node=gdsRefNew, name="snp.position", val=snvPos, storage="int32",
+            check=TRUE)
+
+## The allele information of each SNV is added to the 'snp.allele' entry
+## The order of the SNVs is the same than in the 'snp.allele' entry
+snvAllele <- c("A/G", "C/G", "C/T", "C/T", "T/G", "C/T", 
+                    "G/A", "A/G", "G/A", "G/A")
+add.gdsn(node=gdsRefNew, name="snp.allele", val=snvAllele, storage="string",
+            check=TRUE)
+
+## The allele frequency in the general population (between 0 and 1) of each 
+## SNV is added to the 'snp.AF' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvAF <- c(0.86, 0.01, 0.00, 0.00, 0.01, 0.00, 0.00, 0.00, 0.00, 0.01)
+add.gdsn(node=gdsRefNew, name="snp.AF", val=snvAF, storage="packedreal24",
+            check=TRUE)
+
+## The allele frequency in the East Asian population (between 0 and 1) of each 
+## SNV is added to the 'snp.EAS_AF' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvAF <- c(0.80, 0.00, 0.00, 0.01, 0.00, 0.00, 0.01, 0.00, 0.02, 0.00)
+add.gdsn(node=gdsRefNew, name="snp.EAS_AF", val=snvAF, storage="packedreal24",
+            check=TRUE)
+
+## The allele frequency in the European population (between 0 and 1) of each 
+## SNV is added to the 'snp.EUR_AF' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvAF <- c(0.91, 0.00, 0.01, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.03)
+add.gdsn(node=gdsRefNew, name="snp.EUR_AF", val=snvAF, storage="packedreal24",
+            check=TRUE)
+
+## The allele frequency in the African population (between 0 and 1) of each 
+## SNV is added to the 'snp.AFR_AF' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvAF <- c(0.85, 0.04, 0.00, 0.00, 0.00, 0.01, 0.00, 0.00, 0.00, 0.00)
+add.gdsn(node=gdsRefNew, name="snp.AFR_AF", val=snvAF, storage="packedreal24",
+            check=TRUE)
+
+## The allele frequency in the American population (between 0 and 1) of each 
+## SNV is added to the 'snp.AMR_AF' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvAF <- c(0.83, 0.01, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.02)
+add.gdsn(node=gdsRefNew, name="snp.AMR_AF", val=snvAF, storage="packedreal24",
+            check=TRUE)
+
+## The allele frequency in the South Asian population (between 0 and 1) of each 
+## SNV is added to the 'snp.SAS_AF' entry
+## The order of the SNVs is the same than in the 'snp.id' entry
+snvAF <- c(0.89, 0.00, 0.00, 0.00, 0.05, 0.00, 0.00, 0.01, 0.00, 0.00)
+add.gdsn(node=gdsRefNew, name="snp.SAS_AF", val=snvAF, storage="packedreal24",
+            check=TRUE)
+
+## The genotype of each SNV for each sample is added to the 'genotype' entry
+## The genotype correspond to the number of A alleles
+## The rows represent the SNVs is the same order than in 'snp.id' entry
+## The columns represent the samples is the same order than in 'sample.id' entry
+genotypeInfo <- matrix(data=c(2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+                        0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0), nrow=10, byrow=TRUE)
+add.gdsn(node=gdsRefNew, name="genotype", val=genotypeInfo, 
+            storage="bit2", check=TRUE)
+
+## The entry 'sample.ref' is filled with 1 indicating that all 10 
+## samples are retained to be used as reference
+## The order of the samples is the same than in the 'sample.id' entry
+add.gdsn(node=gdsRefNew, name="sample.ref", val=rep(1L, 10), 
+            storage="bit1", check=TRUE)
+
+## Show the file format
+print(gdsRefNew)
+
+closefn.gds(gdsRefNew)
+
+unlink(fileNewReferenceGDS, force=TRUE)
+
+```
+
+<br>
+<br>
+
+# Population Reference Annotation GDS file
+
+The *Population Reference Annotation GDS file* contains phase information
+and block group information for all the SNVs present in 
+*Population Reference GDS file*.  
+If the source files are in VCF format, you can use Bioconductor 
+[VariationAnnotation](https://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html)
+package to extract the phase information (beware it may use a lot of 
+memory).
+A block can be a linkage disequelibrium block
+relative to a population or a gene. A bioconductor package like 
+[GENESIS](https://bioconductor.org/packages/release/bioc/html/GENESIS.html) 
+can be used to get the block information.
+
+
+```{r runRefAnnotGDS, echo=TRUE, eval=TRUE, collapse=TRUE, warning=FALSE, message=FALSE}
+#############################################################################
+## Load required packages
+#############################################################################
+library(RAIDS)    
+library(SNPRelate)
+
+pathReference <- system.file("extdata/tests", package="RAIDS")
+
+fileReferenceAnnotGDS <- file.path(pathReference, "ex1_good_small_1KG.gds")
+
+gdsRefAnnot <- openfn.gds(fileReferenceAnnotGDS)
+
+## Show the file format
+print(gdsRefAnnot)
+
+closefn.gds(gdsRefAnnot)
+```
+
+<br>
+
+This output lists all variables stored in 
+the *Population Reference Annotation GDS file*. 
+At the first level, it stores variables *phase*, *block.annot*, etc. 
+The additional information displayed in the braces indicate the data type, 
+size, compressed or not + compression ratio.
+
+The mandatory fields are:
+
+* **phase**: a *integer* (saved in *Bit2* format) representing the phase of the SNVs in the *Population Annotation GDS file*; 0 means the first allele is a reference; 1 means the first allele is the alternative and 3 means unknown. The first allele combine with the genotype of the variant determine the phase for a biallelic variant. The SNVs (rows) and samples (columns) in phase are in the same order as in the *Population Annotation GDS file*. 
+* **block.annot**: a *data.frame* containing those columns:
+    * **block.id**: a *character* string (saved in *Str8* format) representing an identifier of block group. A block can be linkage disequilibrium block relative to a population or a gene.
+    * **block.desc**: a *character* string (saved in *Str8* format) describing the block group.
+* **bloc**: a *matrix* of *integer* values (saved in *Int32* format) where each row representing a SNV in the *Population Annotation GDS file* in the same order. The columns are the block groups described in *block.annot*. Each *integer*  in the *matrix* representing a specific block.
+
+<br>
+<br>
+
+This following example shows how to create a 
+*Population Reference Annotation GDS file*. 
+This example is for demonstration purpose only. A working 
+*Population Reference Annotation GDS file* would have to contain multiple 
+samples from each continental population and would also have to contain 
+the SNVs from the entire genome.
+
+```{r createRefAnnotGDS, echo=TRUE, eval=TRUE, collapse=TRUE, warning=FALSE, message=FALSE}
+#############################################################################
+## Load required packages
+#############################################################################
+library(RAIDS)    
+library(gdsfmt)
+
+## Create a temporary GDS Reference file in the temporary directory
+fileNewReferenceAnnotGDS <- 
+        file.path(tempdir(), "reference_SNV_Annotation_DEMO.gds")
+
+gdsRefAnnotNew <- createfn.gds(fileNewReferenceAnnotGDS)
+
+## The entry 'phase' contain the phase of the SNVs in the
+## Population Annotation GDS file
+## 0 means the first allele is a reference; 1 means the first allele is
+## the alternative and 3 means unknown
+## The SNVs (rows) and samples (columns) in phase are in the same order as
+## in the Population Annotation GDS file.
+phase <- matrix(data=c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+                        0, 0, 0, 1, 1, 0, 0, 0, 1, 1,
+                        0, 0, 0, 1, 1, 0, 0, 0, 0, 1,
+                        1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+                        0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
+                        0, 1, 0, 1, 1, 0, 1, 1, 1, 1,
+                        0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 1, 0, 1, 1, 0, 1, 1, 1, 1), ncol=10, byrow=TRUE)
+add.gdsn(node=gdsRefAnnotNew, name="phase", val=phase, storage="bit2", 
+                check=TRUE)
+
+## The entry 'blockAnnot' contain the information for each group of blocks
+## that are present in the 'block' entry.
+blockAnnot <- data.frame(block.id=c("EAS.0.05.500k", "EUR.0.05.500k",
+                    "AFR.0.05.500k", "AMR.0.05.500k", "SAS.0.05.500k"),
+                block.desc=c(
+                    "EAS populationblock base on SNP 0.05 and windows 500k",
+                    "EUR populationblock base on SNP 0.05 and windows 500k",
+                    "AFR populationblock base on SNP 0.05 and windows 500k",
+                    "AMR populationblock base on SNP 0.05 and windows 500k",
+                    "SAS populationblock base on SNP 0.05 and windows 500k"),
+                stringsAsFactors=FALSE)
+add.gdsn(node=gdsRefAnnotNew, name="block.annot", val=blockAnnot, check=TRUE)
+
+## The entry 'block' contain the block information for the SNVs in the
+## Population Annotation GDS file.
+## The SNVs (rows) are in the same order as in 
+## the Population Annotation GDS file.
+## The block groups (columns) are in the same order as in 
+## the 'block.annot' entry.
+block <- matrix(data=c(-1, -1, -1, -1, -1,
+                        -2, -2,  1, -2, -2,
+                        -2,  1,  1,  1, -2,
+                        -2,  1,  1,  1, -2,
+                        -2, -3, -2, -3, -2,
+                         1,  2,  2,  2,  1,
+                         1,  2,  2,  2,  1,
+                        -3, -4, -3, -4, -3,
+                         2, -4,  3, -4, -3,
+                         2, -4,  3, -4, -3), ncol=5, byrow=TRUE)
+add.gdsn(node=gdsRefAnnotNew, name="block", val=block, storage="int32", 
+            check=TRUE)
+
+## Show the file format
+print(gdsRefAnnotNew)
+
+closefn.gds(gdsRefAnnotNew)
+
+unlink(fileNewReferenceAnnotGDS, force=TRUE)
+
+```
+
+<br>
+<br>
+
+# Pre-processed files, from 1000 Genomes in hg38, are available
+
+Pre-processed files used in the RAIDS associated publication, are 
+available at this address:
+
+
+[https://labshare.cshl.edu/shares/krasnitzlab/aicsPaper](https://labshare.cshl.edu/shares/krasnitzlab/aicsPaper)
+
+Beware that some of those files are voluminous.
+
+<br>
+<br>
+
+# Session info
+
+Here is the output of `sessionInfo()` on the system on which this document was 
+compiled:
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
+
+<br>
+<br>
+
+# References

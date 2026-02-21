@@ -1,0 +1,16 @@
+# bioconductor-category Bioconductor Package Report
+
+## Category
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/Category.html
+- **Package**: Category
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

@@ -1,0 +1,766 @@
+---
+title: "Usage of the metaseqR2 package"
+author: "Panagiotis Moulos"
+date: "`r BiocStyle::doc_date()`"
+output: 
+  BiocStyle::html_document:
+    toc: true
+    toc_float: true 
+vignette: >
+  %\VignetteIndexEntry{RNA-Seq data analysis with metaseqR2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteDepends{BiocStyle}
+---
+
+RNA-Seq data analysis using mulitple statistical algorithms with metaseqR2
+================================================================================
+
+During the past years, a lot of packages have been developed for the analysis of
+RNA-Seq data, introducing several approaches. Many of them live in Bioconductor.
+Furthermore, different statistical approaches and heuristics are used in a
+continuous effort to improve overall accuracy. Such approaches include packages
+using the negative binomial distribution to model the null hypotheses (*DESeq*, 
+*DESeq2*, *edgeR*, *NBPSeq*, "ABSSeq"), packages using Bayesian statistics 
+(*baySeq*, *EBSeq*) or more hybrid solutions (*NOISeq*, *voom*). In addition, 
+packages specialized to RNA-Seq data normalization have also been developed 
+(*EDASeq*, *RUVSeq*). The first version of the *metaseqR* package (pronounced 
+meta-seek-er) provided an interface to several algorithms for normalization and 
+statistical analysis and at the same time provided PANDORA, a novel p-value 
+combination method. PANDORA successfully combines several statistical algorithms
+by weighting their outcomes according to their performance with realistically 
+simulated data sets generated from real data. Using simulated as well as real 
+data, it was shown that PANDORA improves the overall detection of differentially
+expressed genes by reducing false hits while maintaining true positives. To our
+knowledge, PANDORA remains the only fully functional method proposing this 
+combinatorial approach for the analysis of RNA-Seq data.
+
+metaseqR2, is the continuation of
+[metaseqR](https://pubmed.ncbi.nlm.nih.gov/25452340/). While it has been 
+(at times) heavily refactored, it still offers the same functionalities with as 
+much backwards compatibility as possible. Like metaseqR, metaseqR2, incoporates 
+several algorithms for normalization and statistical analysis. In particular, we
+extended the offered algorithms with *DESeq2*, *ABSSeq* and *DSS*. metaseqR2, 
+like metaseqR also builds a full report with several interactive and 
+non-interactive diagnostic plots so that the users can easily explore the 
+results and have whatever they need for this part of their research in one 
+place. The report has been modernized and remains one of its strongest points as
+it provides an automatically generated summary, based on the pipeline inputs and
+the results, which can be used directly as a draft in methods paragraph in 
+scientific publications. It also provides a lot of diagnostic figures and each 
+figure is accompanied by a small explanatory text, and a list of references 
+according to the algorithms used in the pipeline. metaseqR2 continues to provide
+an interface for RNA-Seq data meta-analysis by providing the ability to use 
+different algorithms for the statistical testing part and combining the p-values
+using popular published methods (e.g. Fisher's method, Whitlock's method), 
+two package-specific methods (intersection, union of statistically significant 
+results) and of course PANDORA.
+
+Another major difference as compared to the older metaseqR package is the 
+annotation system that is adopted by metaseqR2. More specifically, metaseqR2
+introduces the `buildAnnotationDatabase` function which builds a local SQLite
+database with the supported by metaseqR annotations as well as additional
+versions added in the current package. This function, given a short and
+comprehensive number of arguments, automatically downloads, processes and 
+imports to a portable database, all annotation types required by the
+main analysis pipeline. Therefore, the user neither has to embed nor download
+the required annotation each time. But most importantly, with the current 
+package, the user is able also to provide an own GTF file with custom annotation
+elements that are the imported to the metaseqR2 database and annotation system
+and can be used for the respective analyses.
+
+Apart from local database building, there also other major additions (such) as
+improved analysis for 3'UTR mRNA sequencing (Lexogen Quant-Seq protocol) which 
+can be found towards the end of this page.
+
+Throughout the rest of this document, `metaseqr2` refers to the name of the  
+analysis pipeline while *metaseqR2* refers to the name of the package.
+
+# Getting started
+
+## Installation
+
+To install the metaseqR2 package, start R and enter:
+
+```{r install-0, eval=FALSE, echo=TRUE}
+if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("metaseqR2")
+```
+
+## Introduction
+
+```{r load-library, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+library(metaseqR2)
+```
+
+Detailed instructions on how to run the metaseqr2 pipeline can be found under 
+the main documentation of the metaseqR2 package.
+
+Briefly, to run metaseqr2 you need:
+
+1. Input RNA-Seq data. These can come in three forms:
+  * A text tab delimited file in a spreadsheet-like format containing at least
+    unique gene identifiers (corresponding to one of metaseqR2 supported 
+    annotation sources, that is Ensembl, UCSC, RefSeq) *or* if you are using
+    a custom annotation (with a GTF file), unique gene identifiers corresponding
+    to this GTF file. This case is applicable in case of receiving a ready-made
+    counts table from an external source, such as a sequencing facility or a
+    public dataset.
+  * A text tab delimited file in a spreadsheet-like format containing all the
+    required annotation elements and additional columns with read counts. This
+    solution is applicable only for gene analysis (`transLevel = "gene"` and 
+    `countType = "gene"`). Generally, it is not recommended to embed the
+    annotation and this case is supported only for backwards compatibility.
+  * A set of BAM files, aligned according to the mRNA sequencing protocol,
+    usually a spliced aligner like HiSat or STAR. This is the recommended 
+    analysis procedure and the BAM files are declared in a targets text file.
+2. A local annotation database. This is not required as all required annotation 
+   can be downloaded on the fly, but it is recommended for speed, if you have a 
+   lot of analyses to perform.
+3. A list of statistical contrasts for which you wish to check differential
+   expression
+4. An internet connection so that the interactive report can be properly 
+   rendered, as the required JavaScript libraries are not embedded to the
+   package. This is required only once as the report is then self-contained.
+
+For demonstration purposes, a very small dataset (with embedded annotation) is
+included with the package.
+
+## Types of analyses performed with metaseqR2
+
+Several types of differential analysis of gene expression can be performed and
+reported with metaseqR2 depending on the biological question asked and the type
+of data generated. For example, an investigator may be interested in gene- or
+transcript-level differential expression analysis when a 3'UTR sequencing kit
+has been used or interested for differential exon usage when a classical
+polyA RNA-Seq protocol has been applied.
+
+These analysis types are being defined essentially by two arguments:
+* `countType` which can be `gene`, `exon`, `utr` corresponding to total RNA
+sequencing, polyA RNA sequencing or 3' UTR sequencing respectively.
+* `transLevel` which can be `gene`, `transcript`, `exon` corresponding to
+differetial expression analysis using gene models (or essentially the dominant
+transcripts), individual transcripts or exons respectively.
+
+Therefore, the selection of `countType="exon"` and `transLevel="gene"` assumes
+that we have a dataset where polyA RNA sequencing has been applied followed by
+splicing-aware alignment while `countType="utr"` and `transLevel="transcript"`
+assumes that we have a dataset where 3'UTR sequencing (e.g. Lexogen Quant-Seq) 
+has been applied to look for differential expression based on read occupancy on
+the 3' UTR regions.
+
+The following combinations are available:
+* `countType="gene"`, `transLevel="gene"` for differential expression analysis
+using a pre-calculated counts table or BAM files from total RNA sequencing.
+* `countType="gene"`, `transLevel="transcript"` for differential expression 
+analysis using a pre-calculated counts table or BAM files from total RNA 
+sequencing and for each transcript.
+* `countType="gene"`, `transLevel="exon"` for differential expression analysis
+of exons using BAM files from polyA RNA sequencing.
+* `countType="exon"`, `transLevel="gene"` for differential expression analysis
+using BAM files from polyA RNA sequencing.
+* `countType="exon"`, `transLevel="transcript"` for differential expression 
+analysis of transcripts using BAM files from total RNA sequencing.
+* `countType="utr"`, `transLevel="gene"` for differential expression analysis
+of genes using BAM files from 3' UTR RNA sequencing.
+* `countType="utr"`, `transLevel="transcript"` for differential expression 
+analysis of transcripts using BAM files from 3' UTR RNA sequencing.
+
+## Data filtering
+
+The metaseqR2 pipeline has several options for gene filtering at the gene and 
+exon levels. These filters span various areas including:
+* The presence of a minimum number of reads in a fraction of the samples per 
+condition or experiment-wise.
+* The exclusion of specific biotypes (e.g. exluding pseudogenes)
+* The filtering based on several expression attributes such as average read
+presence over *n* kbs or the exclusion of genes whose expression is below the
+expression of a set of genes known *not* to be expressed in the biological
+mechanism under investigation
+* Filters based on exon expression such as the minimum fraction of exons that
+should contain reads over a gene.
+
+In addition, the metaseqR2 pipeline offers several analysis "presets" with
+respect to the filtering layers applied, the statistical analysis stringency and
+the amount of data exported.
+
+All the aforementioned parameters are well-documented in the main manual of the
+package and the respective man pages.
+
+# Running the `metaseqr2` pipeline
+
+**Note**: When conducting an analysis with metaseqR2, it is advised that you
+set a seed for random number generation using `set.seed()`. This should be set
+because some quality control charts in the metaseqR2 report are created by
+downsampling the initial dataset analyzed. Therefore, to guarantee the
+reproducibility of these plots, a seed must be provided.
+
+```{r seed-0, eval=TRUE, echo=TRUE}
+set.seed(42)
+```
+
+Running a metaseqr2 pipeline instance is quite straightforward. Again, see the
+examples in the main help page. Below, an example and the command window output 
+follow:
+
+```{r data-1, eval=TRUE, echo=TRUE}
+data("mm9GeneData",package="metaseqR2")
+```
+
+```{r head-1, eval=TRUE, echo=TRUE}
+head(mm9GeneCounts)
+```
+
+```{r random-1, eval=TRUE, echo=TRUE}
+sampleListMm9
+```
+
+```{r random-2, eval=TRUE, echo=TRUE}
+libsizeListMm9
+```
+
+## Analysis at the gene level with gene counts
+
+Following, a full example with the informative messages that are printed in the
+command window:
+
+```{r example-1, eval=TRUE, echo=TRUE, tidy=FALSE, message=TRUE, warning=FALSE}
+library(metaseqR2)
+
+data("mm9GeneData",package="metaseqR2")
+
+# You can explore the results in the session's temporary directory
+print(tempdir())
+
+result <- metaseqr2(
+    counts=mm9GeneCounts,
+    sampleList=sampleListMm9,
+    contrast=c("adult_8_weeks_vs_e14.5"),
+    libsizeList=libsizeListMm9,
+    annotation="embedded",
+    embedCols=list(
+        idCol=4,
+        gcCol=5,
+        nameCol=8,
+        btCol=7
+    ),
+    org="mm9",
+    countType="gene",
+    normalization="edger",
+    statistics="edger",
+    pcut=0.05,
+    qcPlots=c(
+        "mds","filtered","correl","pairwise","boxplot","gcbias",
+        "lengthbias","meandiff","meanvar","deheatmap","volcano",
+        "mastat"
+    ),
+    figFormat=c("png","pdf"),
+    exportWhat=c("annotation","p_value","adj_p_value","fold_change"),
+    exportScale=c("natural","log2"),
+    exportValues="normalized",
+    exportStats=c("mean","sd","cv"),
+    exportWhere=file.path(tempdir(),"test1"),
+    restrictCores=0.01,
+    geneFilters=list(
+         length=list(
+                length=500
+         ),
+         avgReads=list(
+                averagePerBp=100,
+                quantile=0.25
+         ),
+         expression=list(
+                median=TRUE,
+                mean=FALSE,
+                quantile=NA,
+                known=NA,
+                custom=NA
+         ),
+         biotype=getDefaults("biotypeFilter","mm9")
+    ),
+    outList=TRUE
+)
+```
+
+To get a glimpse on the results, run:
+
+```{r head-2, eval=TRUE, echo=TRUE}
+head(result[["data"]][["adult_8_weeks_vs_e14.5"]])
+```
+
+You may also want to check the interactive HTML report generated in the output 
+directory defined by the `exportWhere` argument above.
+
+Now, the same example but with more than one statistical selection algorithms, a
+different normalization, an analysis preset and filtering applied prior to
+normalization:
+
+```{r example-2, eval=TRUE, echo=TRUE, tidy=FALSE, message=FALSE, warning=FALSE}
+library(metaseqR2)
+
+data("mm9GeneData",package="metaseqR2")
+
+result <- metaseqr2(
+    counts=mm9GeneCounts,
+    sampleList=sampleListMm9,
+    contrast=c("adult_8_weeks_vs_e14.5"),
+    libsizeList=libsizeListMm9,
+    annotation="embedded",
+    embedCols=list(
+        idCol=4,
+        gcCol=5,
+        nameCol=8,
+        btCol=7
+    ),
+    org="mm9",
+    countType="gene",
+    whenApplyFilter="prenorm",
+    normalization="edaseq",
+    statistics=c("deseq","edger"),
+    metaP="fisher",
+    #qcPlots=c(
+    #    "mds","biodetection","countsbio","saturation","readnoise","filtered",
+    #    "correl","pairwise","boxplot","gcbias","lengthbias","meandiff",
+    #    "meanvar","rnacomp","deheatmap","volcano","mastat","biodist","statvenn"
+    #),
+    qcPlots=c(
+        "mds","filtered","correl","pairwise","boxplot","gcbias",
+        "lengthbias","meandiff","meanvar","deheatmap","volcano",
+        "mastat"
+    ),
+    restrictCores=0.01,
+    figFormat=c("png","pdf"),
+    preset="medium_normal",
+    exportWhere=file.path(tempdir(),"test2"),
+    outList=TRUE
+)
+```
+
+A similar example with no filtering applied and no Venn diagram generation:
+
+```{r example-3, eval=TRUE, echo=TRUE, tidy=FALSE, message=FALSE, warning=FALSE}
+library(metaseqR2)
+
+data("mm9GeneData",package="metaseqR2")
+
+result <- metaseqr2(
+    counts=mm9GeneCounts,
+    sampleList=sampleListMm9,
+    contrast=c("adult_8_weeks_vs_e14.5"),
+    libsizeList=libsizeListMm9,
+    annotation="embedded",
+    embedCols=list(
+        idCol=4,
+        gcCol=5,
+        nameCol=8,
+        btCol=7
+    ),
+    org="mm9",
+    countType="gene",
+    normalization="edaseq",
+    statistics=c("deseq","edger"),
+    metaP="fisher",
+    qcPlots=c(
+        "mds","filtered","correl","pairwise","boxplot","gcbias",
+        "lengthbias","meandiff","meanvar","deheatmap","volcano",
+        "mastat"
+    ),
+    restrictCores=0.01,
+    figFormat=c("png","pdf"),
+    preset="medium_normal",
+    outList=TRUE,
+    exportWhere=file.path(tempdir(),"test3")
+)
+```
+
+Another example with the full PANDORA algorithm (not evaluated here):
+
+```{r example-4, eval=TRUE, echo=TRUE, tidy=FALSE, message=FALSE, warning=FALSE}
+library(metaseqR2)
+
+data("mm9GeneData",package="metaseqR2")
+
+result <- metaseqr2(
+    counts=mm9GeneCounts,
+    sampleList=sampleListMm9,
+    contrast=c("adult_8_weeks_vs_e14.5"),
+    libsizeList=libsizeListMm9,
+    annotation="embedded",
+    embedCols=list(
+        idCol=4,
+        gcCol=5,
+        nameCol=8,
+        btCol=7
+    ),
+    org="mm9",
+    countType="gene",
+    normalization="edaseq",
+    statistics=c("edger","limma"),
+    metaP="fisher",
+    figFormat="png",
+    preset="medium_basic",
+    qcPlots=c(
+        "mds","filtered","correl","pairwise","boxplot","gcbias",
+        "lengthbias","meandiff","meanvar","deheatmap","volcano",
+        "mastat"
+    ),
+    restrictCores=0.01,
+    outList=TRUE,
+    exportWhere=file.path(tempdir(),"test4")
+)
+```
+
+## Analysis at the gene level with exon counts
+
+**Note**: Be sure to have constructed a metaseqR2 annotation database prior to
+continuing with the following examples!
+
+As example BAM files from a realistic dataset that can demonstrate the full 
+availabilities of metaseqR2 do not fit within the Bioconductor package, you can 
+find additional examples in our GitHub 
+[page](https://github.com/pmoulos/metaseqR2) where issues can be reported too.
+
+## Estimating p-value weights
+
+In metaseqR2, the PANDORA algorithm is expaned with additional 3 algorithms.
+Briefly, PANDORA use of the area under False Discovery Curves to assess the 
+performance of each statistical test with simulated datasets created from true 
+datasets (e.g. your own dataset, as long as it has a sufficient number of
+replicates). Then, the performance assessment can be used to construct p-value 
+weights for each test and use these weights to supply the p-value weights 
+parameter of metaseqr2 when `metaP` is `"weight"`, `"pandora"` or `"whitlock"` 
+(see the next sections for p-value combination methods). The following example 
+shows how to create such weights (depending on the size of the dataset, it might
+take some time to run):
+
+```{r example-5, eval=TRUE, echo=TRUE, tidy=FALSE, message=FALSE, warning=FALSE}
+data("mm9GeneData",package="metaseqR2")
+weights <- estimateAufcWeights(
+    counts=as.matrix(mm9GeneCounts[,9:12]),
+    normalization="edaseq",
+    statistics=c("edger","limma"),
+    nsim=1,N=10,ndeg=c(2,2),top=4,modelOrg="mm10",
+    rc=0.01,libsizeGt=1e+5
+)
+```
+
+...and the weights...
+
+```{r head-3, eval=TRUE, echo=TRUE}
+weights
+```
+
+## Combining p-values from multiple tests
+
+Although the main `metaseqr2` function takes care of p-value combination,
+sometimes there is the need of simply importing externally calculated p-values
+and using the respective metaseqR2 functions to produce combined p-values. We
+demonstrate this capability using p-values from all metaseqR2 supported 
+algorithms, applied to data from 
+[Giakountis et al., 2016](https://doi.org/10.1016/j.celrep.2016.05.038).
+
+```{r example-6, eval=TRUE, echo=TRUE, tidy=FALSE, message=FALSE, warning=FALSE}
+data("hg19pvalues",package="metaseqR2")
+
+# Examine the data
+head(hg19pvalues)
+
+# Now combine the p-values using the Simes method
+pSimes <- apply(hg19pvalues,1,combineSimes)
+
+# The harmonic mean method with PANDORA weights
+w <- getWeights("human")
+pHarm <- apply(hg19pvalues,1,combineHarmonic,w)
+
+# The PANDORA method
+pPandora <- apply(hg19pvalues,1,combineWeight,w)
+```
+
+# metaseqR2 components
+
+## Brief description
+
+The metaseqR2 package includes several functions which are responsible for 
+running each part of the pipeline (data reading and summarization, filtering, 
+normalization, statistical analysis and meta-analysis and reporting). Although 
+metaseqR2 is designed to run as a pipeline, where all the parameters for each 
+individual part can be passed in the main function, several of the individual 
+functions can be run separately so that the more experienced user can build 
+custom pipelines. All the HTML help pages contain analytical documentation on 
+how to run these functions, their inputs and outputs and contain basic examples.
+For example, runnning
+
+```{r help-2, eval=TRUE, echo=TRUE, message=FALSE}
+help(statEdger)
+```
+
+will open the help page of the wrapper function over the edgeR statistical 
+testing algorithm which contains an example of data generation, processing, up 
+to statistical selection.
+
+Most of the diagnostic plots, work with simple matrices as inputs, so they can 
+be easily used outside the main pipeline, as long as all the necessary arguments
+are given. In metaseqR2, most of the individual diagnostic plot creation 
+functions are not exported, mostly for documentation simplicity and avoidance of
+confusion for non-experts. They can still be used by calling them as 
+non-exported objects (e.g. `metaseqR2:::diagplotMds`). Finally, it should be
+noted that a report can be generated only when running the whole metaseqr2
+pipeline and in the current version there is no support for generating custom 
+reports. The final reports contains full interactive graphs and the required
+JavaScript libraries to generate them are automatically downloaded.
+
+## Backwards compatibility
+
+If you have older pipelines based on metaseqR and the `metaseqr` function where
+the argument coding style is different (e.g. `sample.list` instead of 
+`sampleList`) then `metaseqr2` will do its best to convert old arguments to new
+arguments so that old commands do not break and the only that should be changed 
+is `metaseqr` to `metaseqr2`. Note however that you _should not_ mix old and new
+arguments. In this case, the new pipeline will fail.
+
+# The report
+
+In the end of each metaseqr2 pipeline run, a detailed HTML report of the
+procedure and the findings is produced. Apart from description of the process,
+all the input parameters and other data related to the differential expression
+analysis, the report contains a lot of interactive graphs. Specifically, all the
+quality control and result inspection plots are interactive. This is achieved
+by making extensive use of the JavaScript libraries 
+[Highcharts](https://www.highcharts.com/), [Plotly](https://plot.ly/) and 
+[jvenn](http://jvenn.toulouse.inra.fr/app/index.html) to create more 
+user-friendly and directly explorable plots. By default metaseqr2 produces all
+available diagnostic plots, according always to input. For example, if the
+*biotype* feature is not available in a case where `annotation="embedded"`, 
+plots like `biodetection` and `countsbio` will not be available. If not all 
+diagnostic plots are not required, a selection can be made with the `qcPlots`
+argument, possibly making the report "lighter" and less browser-demanding.
+
+The HTML report creation mechanism is through the packages rmarkdown and knitr. 
+This means that the [Pandoc](https://pandoc.org/) libraries must be installed. 
+A lot of details on this can be found in Pandoc's website as well as knitr and
+rmarkdown websites and guides. Although the generic mechanism is more
+computationally demanding than standard HTML (e.g. using *brew* as in the
+previous metaseqR), the results are more standardized, cross-platform and fully
+reproducible.
+
+During development, we found out that knitr faces certain difficulties in our 
+settings, that is embedding a lot of predefined graphs in JSON format and  all 
+required libraries and data in a single HTML page. This situation led to crashes
+because of memory usage and of course, very large HTML files. We resolved this 
+by using (according to usage scenario and where the report is intended to be 
+seen):
+
+1. A flavor of [IndexedDB](https://javascript.info/indexeddb) called 
+[Dexie](https://dexie.org/)
+2. A JavaScript port of SQLite called 
+[sql.js](https://github.com/kripken/sql.js/)
+
+Regarding case (1), IndexedDB is a modern technology to create simple,
+in-browser object databases which has several usages, but mostly to avoid the
+burden of synchronously loading big-sized objects at the same time of simple 
+HTML rendering. IndexedDB is supported by all modern browser and is essentially 
+a replacement for `localStorage` which had space limitations. Dexie is a simple
+interface to IndexedDB. Thus, all the plot data are created and stored in Dexie 
+for rendering when needed. This rendering method can be used both when the 
+report is seen as a stand-alone document, locally, without the presence of a web
+server or internet connection, and is the default method.
+
+Regarding case (2), all the predefined plot data are stored in a report-specific
+SQLite database which is then queried using sql.js. This way can be chosen
+when it is known that the report will be presented through a web server (e.g. 
+Apache) as in any other case, modern web browser (except MS Edge) do not allow
+by default opening local files from an HTML page for security reasons. Also,
+sql.js is quite large as a library (altough downloaded once for recurring
+reports). This method produces slightly smaller files but is slightly slower.
+Using Dexie is the preferred and safest method for both scenarios.
+
+In both cases, the serialized JSON used for Highcharts and jvenn plots is placed
+in `data/reportdb.js` when using Dexie or `data/reportdb.sqlite` when using 
+sql.js. Experienced users can then open these files and tweak the plots as
+desired. The above paths are relative to the report's location `exportWhere` 
+arguments.
+
+metaseqR2 report has the following sections, depending also on which diagnostic
+and exploration plots have been asked from the run command. As plots are 
+categorized, if no plot from a specific category is asked, then this category
+will not appear. Below, the categories:
+
+## Summary
+
+The Summary section is further categorized in several subsections. Specifically:
+
+* Analysis summary: This section contains an auto-generated text that 
+analytically describes the computational process followed and summarized the
+results of each step. This text can be used as is or with slight modifications
+in a _Methods_ section of an article.
+* Input options: This section provides a list of the input arguments to the
+pipeline in a more human-readable format.
+* Filtering: This section reports in detail the number of filtered genes
+decomposed according to the number of genes removed by each applied filter.
+* Differential expression: This section reports in detail the number of
+differentially expressed genes for each contrast, both when using only a p-value
+cutoff as well as an FDR cutoff (numbers in parentheses), that is, genes passing
+the multiple testing correction procedure selected. These numbers also are 
+calculated based on a simple fold change cutoff in log<sub>2</sub> scale. 
+Finally, when multiple algorithms are used with p-value combination, this
+section reports all the findings analytically per algorithm.
+* Command: This section contains the command used to run the metaseqr2 pipeline 
+for users that want to experiment.
+* Run log: This section contains critical messages displayed within the R 
+session running `metaseqr2` displayed as a log.
+
+## Quality control 
+
+The Quality control section contains several interactive plots concerning the 
+overall quality control of each sample provided as well as overall assessments. 
+The quality control plots are the Multidimensional Scaling (MDS) plot, the 
+Biotypes detection (Biodetection) plot, the Biotype abundance (Countsbio) plot, 
+the Read saturation (Saturation) plot, the Read noise (ReadNoise) plot, the 
+Correlation heatmap (Correlation), the Pairwise sample scatterplots (Pairwise) 
+and the Filtered entities (Filtered) plot. Each plot is accompanied by a 
+detailed description of what it depicts. Where multiple plot are available (e.g.
+one for each sample), a selection list on the top of the respective section 
+allows the selection of the sample to be displayed.
+
+## Normalization
+
+The Normalization section contains several interactive plots that can be used to
+inspect and assess the normalization procedure. Therefore, normalization plots 
+are usually paired, showing the same data instance normalized and not 
+normalized. The normalization plots are the Expression boxplots (Boxplots)
+plots, the GC content bias (GC bias) plots, the Gene length bias (Length bias) 
+plots, the Within condition mean-difference (Mean-Difference) plots, the 
+Mean-variance relationship (Mean-Variance) plot and the RNA composition (Rna 
+composition) plot. Each plot is accompanied by a detailed description of what it
+depicts. Where multiple plot are available (e.g. one for each sample), a 
+selection list on the top of the respective section allows the selection of the 
+sample to be displayed.
+
+## Statistics
+
+The Statistics section contains several interactive plots that can be used to 
+inspect and explore the outcome of statistical testing procedures. The 
+statistics plots are the Volcano plot (Volcano), the MA or Mean-Difference 
+across conditions (MA) plot, the Expression heatmap (Heatmap) plot, the 
+Chromosome and biotype distributions (Biodist) plot, the Venn diagram across 
+statistical tests (StatVenn), the Venn diagram across contrasts (FoldVenn) and
+the Deregulogram. Each plot is accompanied by a detailed description of what it 
+depicts. Please note that the heatmap plots show only the top percentage of 
+differentially expressed genes as this is controlled by the `reportTop` 
+parameter of the pipeline. When multiple plots are available (e.g. one for each
+contrast), a selection list on the top of the respective section allows the 
+selection of the sample to be displayed.
+
+## Results
+
+The Results section contains a snapshot of the differentially expressed genes in
+table format with basic information about each gene and some links to external 
+resources. Certain columns of the table are colored according to significance. 
+Larger bars and more intense colors indicate higher significance. For example, 
+bar in the *p_value* column is larger if the genes has higher statistical 
+significance and the fold change cell background is bright red if the gene is 
+highly up-regulated. From the **Results** section, full gene lists can be 
+downloaded in text tab-delimited format and viewed with a spreadsheet
+application like MS Excel. A selector on the top of the section above the table
+allows the display of different contrasts.
+
+## References
+
+The References section contains bibliographical references regading the
+algorihtms used by the metaseqr2 pipeline and is adjusted according to the
+algorithms selected.
+
+# Genome browser tracks
+
+metaseqR2 utilizes Bioconductor facilities to create normalized bigWig files.
+It also creates a link to open single stranded tracks in the genome browser and
+a track hub to display stranded tracks, in case where a stranded RNA-Seq 
+protocol has been applied. Just make sure that their output directory is served 
+by a web server like Apache. See main documentation for more details.
+
+Please note that if requested, metaseqR2 will try to create tracks even with a
+custom organism. This is somewhat risky as
+
+* the track generation may fail
+* for heavily customized cases, you will manually have to crate aso .2bit files
+for visualization in e.g. the UCSC Genome Browser
+
+Nevertheless, we have chosen to allow the track generation as, many times a user
+just uses slight modifications of e.g. the human genome annotation, where some
+elements may be manually curated, of elements are added (e.g. non-annotated
+non-coding RNAs). Therefore, in case of custom organisms, a warning is thrown
+but the functionality is not turned off. Please turn off manually if you are
+sure you do not want tracks. You may also use the `createSignalTracks` function
+directly.
+
+# List of required packages
+
+Although this is not usually the content of a vignette, the complex nature of
+the package requires this list to be populated also here. Therefore, metaseqR2
+would benefit from the existence of all the following packages:
+
+ * ABSSeq
+ * Biobase
+ * BiocGenerics
+ * BiocManager
+ * BiocParallel
+ * BiocStyle
+ * biomaRt
+ * Biostrings
+ * BSgenome
+ * corrplot
+ * DESeq
+ * DESeq2
+ * DSS
+ * DT
+ * EDASeq
+ * edgeR
+ * GenomeInfoDb
+ * GenomicAlignments
+ * GenomicFeatures
+ * GenomicRanges
+ * gplots
+ * graphics
+ * grDevices
+ * heatmaply
+ * htmltools
+ * httr
+ * IRanges
+ * jsonlite
+ * knitr
+ * limma
+ * log4r
+ * magrittr
+ * methods
+ * NBPSeq
+ * NOISeq
+ * pander
+ * parallel
+ * qvalue
+ * rmarkdown
+ * rmdformats
+ * RMySQL
+ * Rsamtools
+ * RSQLite
+ * rtracklayer
+ * RUnit
+ * S4Vectors
+ * stats
+ * stringr
+ * SummarizedExperiment
+ * survcomp
+ * TCC
+ * utils
+ * VennDiagram
+ * vsn
+ * zoo
+
+A recent version of [Pandoc](https://pandoc.org/) is also required, ideally
+above 2.0.
+
+# Session Info
+
+```{r si-1, eval=TRUE, echo=TRUE}
+sessionInfo()
+```

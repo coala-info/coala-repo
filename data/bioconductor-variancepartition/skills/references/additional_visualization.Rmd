@@ -1,0 +1,127 @@
+---
+title: "Additional visualizations of variance structure"
+author: "Developed by [Gabriel Hoffman](http://gabrielhoffman.github.io/)"
+date: "Run on `r format(Sys.time())`"
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    toc: true
+    toc_depth: 2
+    fig_width: 6
+    fig_height: 6
+  # BiocStyle::html_document:
+  #   toc_float: false
+  BiocStyle::pdf_document: default
+package: variancePartition
+vignette: |
+  %\VignetteIndexEntry{2) Additional visualizations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r knitr, echo=FALSE, results='hide'}
+library("knitr")
+opts_chunk$set(
+  tidy = FALSE, dev = "png", fig.show = "show",
+  # fig.width=7,fig.height=7,
+  echo = TRUE,
+  message = FALSE, warning = FALSE
+)
+``` 
+
+ The correlation structure between samples in complex study designs can be decomposed into the contribution of multiple dimensions of variation.  `variancePartition` provides a statistical and visualization framework to interpret sources of variation.  Here I describe a visualization of the correlation structure between samples for a single gene.
+
+```{r initialize, cache=FALSE, echo=FALSE}
+# load library
+library("variancePartition")
+```
+ In the example dataset described in the main vignette, samples are correlated because they can come from the same individual or the same tissue.  The function `plotCorrStructure()` shows the correlation structure caused by each variable as well and the joint correlation structure.  Figure 1 shows the correlation between samples from the same individual where (a) shows the samples sorted based on clustering of the correlation matrix and (b) shows the original order.  Figure 1 c) and d) shows the same type of plot except demonstrating the effect of tissue.  The total correlation structure from summing individual and tissue correlation matricies is shown in Figure 2.  The code to generate these plots is shown below. 
+
+# Plot variance structure
+```{r corStruct, results='hide'}
+# Fit linear mixed model and examine correlation stucture
+# for one gene
+data(varPartData)
+
+form <- ~ Age + (1 | Individual) + (1 | Tissue)
+
+fitList <- fitVarPartModel(geneExpr[1:2, ], form, info)
+
+# focus on one gene
+fit <- fitList[[1]]
+```
+
+## By Individual
+### Reorder samples
+```{r corStructa, fig.width=7, fig.height=7}
+# Figure 1a
+# correlation structure based on similarity within Individual
+# reorder samples based on clustering
+plotCorrStructure(fit, "Individual")
+```
+
+### Original order of samples
+```{r corStructb, fig.width=7, fig.height=7}
+# Figure 1b
+# use original order of samples
+plotCorrStructure(fit, "Individual", reorder = FALSE)
+```
+
+## By Tissue
+### Reorder samples
+```{r corStructc, fig.width=7, fig.height=7}
+# Figure 1c
+# correlation structure based on similarity within Tissue
+# reorder samples based on clustering
+plotCorrStructure(fit, "Tissue")
+```
+
+### Original order of samples
+```{r corStructd, fig.width=7, fig.height=7}
+# Figure 1d
+# use original order of samples
+plotCorrStructure(fit, "Tissue", reorder = FALSE)
+```
+
+## By Individual and Tissue
+### Reorder samples
+```{r corStructe, fig.width=7, fig.height=7}
+# Figure 2a
+# correlation structure based on similarity within
+# Individual *and* Tissue, reorder samples based on clustering
+plotCorrStructure(fit)
+```
+
+### Original order of samples
+```{r corStructf, fig.width=7, fig.height=7}
+# Figure 2b
+# use original order of samples
+plotCorrStructure(fit, reorder = FALSE)
+```
+
+
+
+# Session Info
+<details>
+```{r session, echo=FALSE}
+sessionInfo()
+```
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

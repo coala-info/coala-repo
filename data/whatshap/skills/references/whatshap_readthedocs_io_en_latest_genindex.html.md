@@ -1,0 +1,1 @@
+Index &mdash; whatshap 2.8 documentation whatshap Installation User guide Questions and Answers Contributing Various notes How to cite Changes whatshap Index Index &#169; Copyright 2014. Built with Sphinx using a theme provided by Read the Docs .

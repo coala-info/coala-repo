@@ -1,0 +1,200 @@
+---
+title: "Use sitePath to find fixation and parallel sites"
+author: "Chengyang Ji"
+package: sitePath
+output: 
+    BiocStyle::html_document:
+        toc_float: false
+abstract: >
+    In viral evolution, fixed substitutions in the nucleic acid or protein level are closely associated with maintaining viral function, while parallel mutation reflects the competitive nature in adaptive selection. The continued accumulation of large-scale viral sequence data enhances the challenge of identifying important mutations in a quick and accurate manner. In sitePath, the phylogenetic tree was separated into a set of inheritable phylogenetic pathways via an automated pathway-division method. Then, for each phylogenetic pathway, the identification of fixed substitutions was transformed into a local-optimal-solution problem directed by a minimal entropy algorithm. Finally, the parallel mutation was determined based on the recurrence of mutations among at least two phylogenetic pathways.
+vignette: >
+  %\VignetteIndexEntry{An introduction to sitePath}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+The `sitePath` package is made for the high-throughput identification of fixed substitutions and parallel mutations in viruses from a single phylogenetic tree. This is achieved by three major steps:
+
+1. Clustering phylogenetic terminals
+2. Identifying phylogenetic pathways
+3. Finding fixed and parallel mutations
+
+# Clustering phylogenetic terminals
+
+The firs step is to import phylogenetic tree and multiple sequence alignment files. For now, `sitePath` accepts `phylo` object and `alignment` object. Functions from `ggtree` and `seqinr` are able to handle most file formats.
+
+## Import tree file
+
+The S3 `phylo` class is a common data structure for phylogenetic analysis in R. The CRAN package [ape](https://cran.r-project.org/web/packages/ape/index.html) provides basic parsing function for reading tree files. The Bioconductor package [treeio](https://bioconductor.org/packages/release/bioc/html/treeio.html) provides more comprehensive parsing utilities.
+
+
+```{r import_tree, message=FALSE}
+library(sitePath)
+
+tree_file <- system.file("extdata", "ZIKV.newick", package = "sitePath")
+tree <- read.tree(tree_file)
+```
+
+It is highly recommended that the file stores a rooted tree as R would consider the tree is rooted by default and re-rooting the tree in R is difficult. Also, we expect the tree to have no super long branches. A bad example is shown below:
+
+```{r bad_tree_example, echo=FALSE}
+bad_tree <- read.tree(system.file("extdata", "WNV.newick", package = "sitePath"))
+
+ggtree::ggtree(bad_tree) + ggplot2::ggtitle("Do not use a tree like this")
+```
+
+
+## Import sequence alignment file
+
+Most multiple sequence alignment format can be parsed by [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html). There is a wrapper function for parsing and adding the sequence alignment. Set "cl.cores" in `options` to the number of cores you want to use for multiprocessing.
+
+```{r add_alignment, message=FALSE}
+alignment_file <- system.file("extdata", "ZIKV.fasta", package = "sitePath")
+
+options(list("cl.cores" = 1)) # Set this bigger than 1 to use multiprocessing
+
+paths <- addMSA(tree, msaPath = alignment_file, msaFormat = "fasta")
+```
+
+## Clustering using site polymorphism
+
+The `addMSA` function will match the sequence names in tree and alignment. Also, the function uses polymorphism of each site to cluster sequences for identifying phylogenetic pathways.
+
+# Identifying phylogenetic pathways
+
+After importing the tree and sequence file, `sitePath` is ready to identify phylogenetic pathways.
+
+## The impact of threshold on resolving lineages
+
+The impact of threshold depends on the tree topology hence there is no universal choice. The function `sneakPeak` samples thresholds and calculates the resulting number of paths. *The use of this function can help choose the threshold.*
+
+```{r sneakPeek_plot}
+preassessment <- sneakPeek(paths, makePlot = TRUE)
+```
+
+## Choose a threshold
+
+The default threshold is the first 'stable' value to produce the same number of phylogenetic pathways. You can directly use the return of `addMSA` if you want the default or choose other threshold by using function `lineagePath`. The choice of the threshold really depends. Here 18 is used as an example.
+
+```{r get_lineagePath}
+paths <- lineagePath(preassessment, 18)
+paths
+```
+
+You can visualize the result.
+
+```{r plot_paths}
+plot(paths)
+```
+
+# Finding fixed and parallel mutations
+
+Now you're ready to find fixation and parallel mutations.
+
+## Entropy minimization
+
+The `sitesMinEntropy` function perform entropy minimization on every site for each lineage. The fixation and parallel mutations can be derived from the function's return value.
+
+```{r min_entropy}
+minEntropy <- sitesMinEntropy(paths)
+```
+
+## Fixation mutations
+
+The hierarchical search is done by `fixationSites` function. The function detects the site with fixation mutation.
+
+```{r find_fixations}
+fixations <- fixationSites(minEntropy)
+fixations
+```
+
+To get the position of all the resulting sites, `allSitesName` can be used on the return of `fixationSites` and also other functions like `SNPsites` and `parallelSites`. 
+
+```{r}
+allSites <- allSitesName(fixations)
+allSites
+```
+
+If you want to retrieve the result of a single site, you can pass the result of `fixationSites` and the site index to `extractSite` function. The output is a `sitePath` object which stores the tip names.
+
+```{r get_sitePath}
+sp <- extractSite(fixations, 139)
+```
+
+It is also possible to retrieve the tips involved in the fixation of the site.
+
+```{r get_tipNames}
+extractTips(fixations, 139)
+```
+
+Use `plot` on a `sitePath` object to visualize the fixation mutation of a single site. Alternatively, use `plotSingleSite` on an `fixationSites` object with the site specified.
+
+```{r plot_sitePath}
+plot(sp)
+plotSingleSite(fixations, 139)
+```
+
+To have an overall view of the transition of fixation mutation:
+
+```{r plot_fixations}
+plot(fixations)
+```
+
+## Parallel mutations
+
+Parallel mutation can be found by the `parallelSites` function. There are four ways of defining the parallel mutation: `all`, `exact`, `pre` and `post`. Here `exact` is used as an example.
+
+```{r}
+paraSites <- parallelSites(minEntropy, minSNP = 1, mutMode = "exact")
+paraSites
+```
+
+The result of a single site can be visualized by `plotSingleSite` function.
+
+```{r}
+plotSingleSite(paraSites, 105)
+```
+
+To have an overall view of the parallel mutations:
+
+```{r plot_parallel}
+plot(paraSites)
+```
+
+# Miscellaneous
+
+This part is extra and experimental but might be useful when pre-assessing your data. We'll use an example to demonstrate.
+
+## Inspect one site
+
+The `plotSingleSite` function will color the tree according to amino acids if you use the output of `lineagePath` function.
+
+```{r plot_sites}
+plotSingleSite(paths, 139)
+plotSingleSite(paths, 763)
+```
+
+## SNP sites
+
+An SNP site could potentially undergo fixation event. The `SNPsites` function predicts possible SNP sites and the result could be what you'll expect to be fixation mutation. Also, a tree plot with mutation could be visualized with `plotMutSites` function.
+
+```{r find_SNP}
+snps <- SNPsites(paths)
+plotMutSites(snps)
+plotSingleSite(paths, snps[4])
+plotSingleSite(paths, snps[5])
+```
+
+# Session info {.unnumbered}
+```{r session_info}
+sessionInfo()
+```

@@ -1,0 +1,349 @@
+---
+title: "tidyFlowCore"
+author: 
+  - name: Timothy Keyes
+    affiliation:
+    - Stanford University School of Medicine
+    email: tkeyes@stanford.edu
+output: 
+  BiocStyle::html_document:
+    self_contained: yes
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    code_folding: show
+date: "`r doc_date()`"
+package: "`r pkg_ver('tidyFlowCore')`"
+vignette: >
+  %\VignetteIndexEntry{tidyFlowCore}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>",
+    crop = NULL ## Related to https://stat.ethz.ch/pipermail/bioc-devel/2020-April/016656.html
+)
+```
+
+
+```{r vignetteSetup, echo=FALSE, message=FALSE, warning = FALSE}
+## Track vignette build time
+startTime <- Sys.time()
+
+## Bib setup
+library(RefManageR)
+
+## Write bibliography information
+bib <- c(
+    R = citation(),
+    BiocStyle = citation("BiocStyle")[1],
+    knitr = citation("knitr")[1],
+    RefManageR = citation("RefManageR")[1],
+    rmarkdown = citation("rmarkdown")[1],
+    sessioninfo = citation("sessioninfo")[1],
+    testthat = citation("testthat")[1],
+    tidyverse = citation("dplyr")[1],
+    HDCytoData = citation("HDCytoData")[1],
+    tidyFlowCore = citation("tidyFlowCore")[1]
+)
+```
+
+# Basics
+
+## Installing `tidyFlowCore`
+
+`R` is an open-source statistical environment which can be easily modified to enhance its functionality via packages. `r Biocpkg("tidyFlowCore")` is an `R` package available via [Bioconductor](http://bioconductor.org), an open-source repository for R packages related to biostatistics and biocomputing. 
+
+`R` can be installed on any operating system from [CRAN](https://cran.r-project.org/), after which you can install `r Biocpkg("tidyFlowCore")` by using the following commands in your `R` session:
+
+```{r "install", eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+      install.packages("BiocManager")
+  }
+
+BiocManager::install("tidyFlowCore")
+
+## Check that you have a valid Bioconductor installation
+BiocManager::valid()
+```
+
+## Preliminaries
+
+`r Biocpkg("tidyFlowCore")` adopts the so-called "tidy" functional programming paradigm developed by Wickham et al. in the `tidyverse` ecosystem of R packages `r Citep(bib[["tidyverse"]])`. For information about the `tidyverse` ecosytem broadly, feel free to reference the (free) [R for Data Science](https://r4ds.hadley.nz/) book, the [tidyverse website](https://www.tidyverse.org/), or [this paper](https://www.biorxiv.org/content/10.1101/2023.09.10.557072v2) describing the larger `tidyomics` project.
+
+`r Biocpkg("tidyFlowCore")` integrates the `flowCore` Bioconductor package's data analysis capabilities with those of the `tidyverse`. If you're relatively unfamiliar with the Bioconductor project, you might be interested in [this blog post](http://lcolladotor.github.io/2014/10/16/startbioc/#.VkOKbq6rRuU).
+
+## Asking for help
+
+Learning to use `R` and `Bioconductor` can be challenging, so it's important to know where to get help. The main place to ask questions about `tidyFlowCore` is the [Bioconductor support site](https://support.bioconductor.org/). Use the `tidyFlowCore` tag there and look at [previous posts](https://support.bioconductor.org/tag/tidyFlowCore/). 
+
+You can also ask questions on GitHub or Twitter. But remember, if you're asking for help, follow the [posting guidelines](http://www.bioconductor.org/help/support/posting-guide/). Make sure to include a simple example that reproduces your issue (a ["reprex"](https://reprex.tidyverse.org/articles/learn-reprex.html)) and your session info to help developers understand and solve your problem.
+
+## Citing `tidyFlowCore`
+
+If you use `r Biocpkg("tidyFlowCore")` for your research, please use the following citation.
+
+```{r "citation"}
+citation("tidyFlowCore")
+```
+
+# `tidyFlowCore` quick start
+
+`tidyFlowCore` allows you to treat `flowCore` data structures like tidy `data.frame`s or `tibbles`. It does so by implementing dplyr, tidyr, and ggplot2 verbs that can be deployed directly on the `flowFrame` and `flowSet` S4 classes. 
+
+In this section, we give a brief example of how `tidyFlowCore` can enable a data analysis pipeline to use all the useful functions of the `flowCore` package and many of the functions of the `dplyr`, `tidyr`, and `ggplot2` packages. 
+
+## Load required packages
+
+```{r, warning = FALSE}
+library(tidyFlowCore)
+library(flowCore)
+```
+
+
+
+## Read data
+
+For our example here, we download some publicly available mass cytometry (CyTOF) data downloadable through the `r Citep(bib[["HDCytoData"]])` package. These data are made available as a `flowCore::flowSet` S4 object, `Bioconductor`'s standard data structure for cytometry data. 
+
+```{r example, eval = requireNamespace('tidyFlowCore')}
+# read data from the HDCytoData package
+bcr_flowset <- HDCytoData::Bodenmiller_BCR_XL_flowSet()
+```
+
+To read more about this dataset, run the following command: 
+
+```{r, eval = FALSE}
+?HDCytoData::Bodenmiller_BCR_XL_flowSet
+```
+
+
+## Data transformation
+
+The `flowCore` package natively supports multiple types of data preprocessing and transformations for cytometry data through the use of its `tranform` class. 
+
+For example, if we want to apply the standard arcsinh transformation often used for CyTOF data to our current dataset, we could use the following code: 
+
+```{r}
+asinh_transformation <- flowCore::arcsinhTransform(a = 0, b = 1/5, c = 0)
+transformation_list <- 
+  flowCore::transformList(
+    colnames(bcr_flowset), 
+    asinh_transformation
+  )
+
+transformed_bcr_flowset <- flowCore::transform(bcr_flowset, transformation_list)
+```
+
+Alternatively, we can also use the `tidyverse`'s functional programming paradigm to perform the same transformation. For this, we use the `mutate`-`across` framework via `tidyFlowCore`:
+
+```{r}
+transformed_bcr_flowset <- 
+  bcr_flowset |>
+  dplyr::mutate(across(-ends_with("_id"), \(.x) asinh(.x / 5)))
+```
+
+## Cell type counting
+
+Suppose we're interested in counting the number of cells that belong to each cell type (encoded in the `population_id` column of `bcr_flowset`) in our dataset. Using standard `flowCore` functions, we could perform this calculation in a few steps: 
+
+```{r}
+# extract all expression matrices from our flowSet 
+combined_matrix <- flowCore::fsApply(bcr_flowset, exprs)
+
+# take out the concatenated population_id column 
+combined_population_id <- combined_matrix[, 'population_id']
+
+# perform the calculation
+table(combined_population_id)
+```
+
+`tidyFlowCore` allows us to perform the same operation simply using the `dplyr` package's `count` function, with output provided in the convenient form of a `tibble`: 
+
+```{r}
+bcr_flowset |> 
+  dplyr::count(population_id)
+```
+
+`tidyFlowCore` also makes it easy to perform the counting after grouping by other variables in our metadata. For example, we can see that `bcr_flowset` contains data from multiple .FCS files, each of which is associated with a file name. 
+
+```{r}
+flowCore::pData(object = bcr_flowset)
+```
+
+`tidyFlowCore` makes it easy to perform grouped tidy operations, like counting, using information in our `flowSet`'s metadata: 
+
+```{r}
+bcr_flowset |> 
+  # use the .tidyFlowCore_identifier pronoun to access the name of 
+  # each experiment in the flowSet 
+  dplyr::count(.tidyFlowCore_identifier, population_id)
+```
+
+
+## Nesting and unnesting
+
+`flowFrame` and `flowSet` data objects have a clear relationship with one another in the `flowCore` application programming interface (API). Essentially, `flowSet`s are nested `flowFrame`s - or, in other words, `flowSet`s are made up of multiple `flowFrame`s!
+
+`tidyFlowCore` provides a useful API for converting between `flowSet` and `flowFrame` data structures at various degrees of nesting using the `group`/`nest` and `ungroup`/`unnest` verbs. Note that in the `dplyr` and `tidyr` APIs, `group`/`nest` and `ungroup`/`unnest` are **not** synonyms (grouped `data.frames` are different from nested `data.frames`). However, because of how `flowFrame`s and `flowSet`s are structured, `tidyFlowCore`'s `group`/`nest` and `ungroup`/`unnest` functions have identical behavior, respectively.
+
+```{r}
+# unnesting a flowSet results in a flowFrame with an additional column, 
+# 'tidyFlowCore_name` that identifies cells based on which experiment in the 
+# original flowSet they come from
+bcr_flowset |> 
+  dplyr::ungroup()
+```
+
+
+```{r}
+# flowSets can be unnested and re-nested for various analyses
+bcr_flowset |> 
+  dplyr::ungroup() |> 
+  # group_by cell type
+  dplyr::group_by(population_id) |> 
+  # calculate the mean HLA-DR expression of each cell population
+  dplyr::summarize(mean_hladr_expression = mean(`HLA-DR(Yb174)Dd`)) |> 
+  dplyr::select(population_id, mean_hladr_expression)
+```
+
+
+
+## Plotting
+
+`tidyFlowCore` also provides a direct interface between `ggplot2` and `flowFrame` or `flowSet` data objects. For example...
+
+```{r}
+# cell population names, from the HDCytoData documentation
+population_names <- 
+  c(
+    "B-cells IgM-", 
+    "B-cells IgM+", 
+    "CD4 T-cells", 
+    "CD8 T-cells", 
+    "DC", 
+    "monocytes", 			
+    "NK cells", 			
+    "surface-"
+  )
+
+# calculate mean CD20 expression across all cells
+mean_cd20_expression <- 
+  bcr_flowset |> 
+  dplyr::ungroup() |> 
+  dplyr::summarize(mean_expression = mean(asinh(`CD20(Sm147)Dd` / 5))) |> 
+  dplyr::pull(mean_expression)
+
+# calculate mean CD4 expression across all cells
+mean_cd4_expression <- 
+  bcr_flowset |> 
+  dplyr::ungroup() |> 
+  dplyr::summarize(mean_expression = mean(asinh(`CD4(Nd145)Dd` / 5))) |> 
+  dplyr::pull(mean_expression)
+
+bcr_flowset |> 
+  # preprocess all columns that represent protein measurements
+  dplyr::mutate(dplyr::across(-ends_with("_id"), \(.x) asinh(.x / 5))) |> 
+  # plot a CD4 vs. CD45 scatterplot
+  ggplot2::ggplot(ggplot2::aes(x = `CD20(Sm147)Dd`, y = `CD4(Nd145)Dd`)) +
+  # add some reference lines
+  ggplot2::geom_hline(
+    yintercept = mean_cd4_expression, 
+    color = "red", 
+    linetype = "dashed"
+  ) + 
+  ggplot2::geom_vline(
+    xintercept = mean_cd20_expression, 
+    color = "red", 
+    linetype = "dashed"
+  ) + 
+  ggplot2::geom_point(size = 0.1, alpha = 0.1) +
+  # facet by cell population
+  ggplot2::facet_wrap(
+    facets = ggplot2::vars(population_id), 
+    labeller = 
+      ggplot2::as_labeller(
+        \(population_id) population_names[as.numeric(population_id)]
+      )
+  ) + 
+  # axis labels
+  ggplot2::labs(
+    x = "CD20 expression (arcsinh)", 
+    y = "CD4 expression (arcsinh)"
+  )
+```
+
+Using some standard functions from the `ggplot2` library, we can create a scatterplot of CD4 vs. CD20 expression in the different cell populations included in the `bcr_flowset` `flowSet`. We can see, unsurprisingly, that both B-cell populations are highest for CD20 expression, whereas CD4+ T-helper cells are highest for CD4 expression. 
+
+
+
+
+
+# Reproducibility
+
+The `r Biocpkg("tidyFlowCore")` package `r Citep(bib[["tidyFlowCore"]])` was made possible thanks to the following: 
+
+* R `r Citep(bib[["R"]])`
+* `r Biocpkg("BiocStyle")` `r Citep(bib[["BiocStyle"]])`
+* `r CRANpkg("knitr")` `r Citep(bib[["knitr"]])`
+* `r CRANpkg("RefManageR")` `r Citep(bib[["RefManageR"]])`
+* `r CRANpkg("rmarkdown")` `r Citep(bib[["rmarkdown"]])`
+* `r CRANpkg("sessioninfo")` `r Citep(bib[["sessioninfo"]])`
+* `r CRANpkg("testthat")` `r Citep(bib[["testthat"]])`
+* `r CRANpkg("tidyverse")` `r Citep(bib[["tidyverse"]])`
+
+This package was developed using `r BiocStyle::Biocpkg("biocthis")`.
+
+
+Code for creating the vignette
+
+```{r createVignette, eval=FALSE}
+## Create the vignette
+library("rmarkdown")
+system.time(render("tidyFlowCore.Rmd", "BiocStyle::html_document"))
+
+## Extract the R code
+library("knitr")
+knit("tidyFlowCore.Rmd", tangle = TRUE)
+```
+
+Date the vignette was generated.
+
+```{r reproduce1, echo=FALSE}
+## Date the vignette was generated
+Sys.time()
+```
+
+Wallclock time spent generating the vignette.
+
+```{r reproduce2, echo=FALSE}
+## Processing time in seconds
+totalTime <- diff(c(startTime, Sys.time()))
+round(totalTime, digits = 3)
+```
+
+`R` session information.
+
+```{r reproduce3, echo=FALSE}
+## Session info
+library("sessioninfo")
+options(width = 120)
+session_info()
+```
+
+
+
+# Bibliography
+
+This vignette was generated using `r Biocpkg("BiocStyle")` `r Citep(bib[["BiocStyle"]])`
+with `r CRANpkg("knitr")` `r Citep(bib[["knitr"]])` and `r CRANpkg("rmarkdown")` `r Citep(bib[["rmarkdown"]])` running behind the scenes.
+
+Citations made with `r CRANpkg("RefManageR")` `r Citep(bib[["RefManageR"]])`.
+
+```{r vignetteBiblio, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
+## Print bibliography
+PrintBibliography(bib, .opts = list(hyperlink = "to.doc", style = "html"))
+```

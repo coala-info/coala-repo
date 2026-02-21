@@ -1,0 +1,287 @@
+---
+title: "The biobtreeR users guide"
+author: "Tamer Gür"
+graphics: no
+package: biobtreeR
+output:
+  BiocStyle::html_document:
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{The biobtreeR users guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+# Introduction
+
+The biobtreeR package provides an interface to [biobtree](https://github.com/tamerh/biobtree) tool which allows mapping the bioinformatics datasets via identifiers and special keywors with simple or advance chain query capability.
+
+# Getting started 
+
+```{r}
+library(biobtreeR)
+
+# Create an folder and set as an output directory 
+# It is used for database and configuration files
+
+# temporary directory is used for demonstration purpose
+bbUseOutDir(tempdir())
+
+```
+
+
+## Build database 
+For mapping queries, biobtreeR use a database which stored in local storage. Database can be built 2 ways, first way is to retrieve pre built database. These database consist of commonly studied datasets and model organism and updated regularly following the major uniprot and ensembl data releases. 
+
+
+```{r}
+# Called once and saves the built in database to local disk
+
+# Included datasets hgnc,hmdb,taxonomy,go,efo,eco,chebi,interpro
+# Included uniprot proteins and ensembl genomes belongs to following organisms:
+# homo_sapiens, danio_rerio(zebrafish), gallus_gallus(chicken), mus_musculus, Rattus norvegicus, saccharomyces_cerevisiae, 
+# arabidopsis_thaliana, drosophila_melanogaster, caenorhabditis_elegans, Escherichia coli, Escherichia coli str. K-12 substr. MG1655, Escherichia coli K-12
+
+# Requires ~ 6 GB free storage
+bbBuiltInDB()
+
+```
+
+For the genomes which are not included in the pre built database can be built in local computer. All the ensembl and ensembl genomes organisms are supported.
+List of these genomes and their taxonomy identifiers can be seen from ensembl websites [1](https://www.ensembl.org/info/about/species.html),[2](http://bacteria.ensembl.org/species.html),[3](http://fungi.ensembl.org/species.html),[4](http://plants.ensembl.org/species.html),[5](http://protists.ensembl.org/index.html),[6](http://metazoa.ensembl.org/species.html),
+```{r eval=FALSE}
+  
+# multiple species genomes supported with comma seperated taxonomy identifiers
+bbBuildCustomDB(taxonomyIDs = "1408103,206403")
+
+```
+
+
+## Start web server
+
+Once database is retrieved or built to local disk queries are performed via lightweight local server. Local server provide web interface for data expoloration in addition to the R functions for performing queries for R pipelines. Local server runs as a background process so both web interface and R functions can be used at the same time once it is started. While web server running web interface can be accessed via address http://localhost:8888/ui
+
+
+```{r}
+ bbStart()
+```
+
+
+## Search identifiers and keywords
+
+Searching dataset identfiers and keywords such as gene name or accessions is performed with bbSearch function by passing comma seperated terms.
+
+```{r}
+bbSearch("tpi1,vav_human,ENST00000297261")
+```
+
+If source parameter is passed search performed within the dataset.
+
+```{r}
+bbSearch("tpi1,ENSG00000164690","ensembl")
+```
+
+Search results url is retrieved with 
+
+```{r}
+bbSearch("tpi1,vav_human,ENST00000297261",showURL =TRUE)
+```
+
+## Chain mapping and filtering 
+Mapping and filtering queries are performed via bibobtree's mapping query syntax which allowed chain mapping and filtering capability from identifiers to target identifiers or attributes. Mapping query syntax consist of single or multiple mapping queries in the format `map(dataset_id).filter(Boolean query expression).map(...).filter(...)...` and allow performing chain mapping among datasets. For mapping queries bbMapping function is used, for instance in following example, maps protein to its go terms and in the second query mapping has been done with filter.
+
+```{r}
+bbMapping("AT5G3_HUMAN",'map(go)',attrs = "type")
+```
+
+```{r}
+bbMapping("AT5G3_HUMAN",'map(go).filter(go.type=="biological_process")',attrs = "type")
+```
+
+In the example for the first parameter single protein accession has been used but similar with bbSearch functions multiple identifers or keywords can be used. In the last query type attribute was used to filter mapping only with biological process go terms. Dataset attributes are used in the filters starts with their dataset name as in the above example it starts with `go.`
+
+In order use in filter expressions, each datasets attributes lists with `bbListAttrs`function via sample identifier. For instance following query shows gene ontology attributes.
+
+```{r}
+bbListAttrs("go")
+```
+
+```{r}
+bbListAttrs("uniprot")
+```
+
+# Example Use cases
+
+In this section biobtreeR functionalities will be discussed in detail via gene and protein centric example use cases. For live demo of web interface including these use cases with additional chemistry centric use cases can be accessed via https://www.ebi.ac.uk/~tgur/biobtree/
+
+## Gene centric use cases
+
+Ensembl, Ensembl Genomes and HGNC datasets are used for gene related data. One of the most common gene related dataset identfiers are `ensembl`,`hgnc`,`transcript`,`exon`. Let's start with listing their attiributes,
+
+```{r}
+bbListAttrs("hgnc")
+```
+
+```{r}
+bbListAttrs("ensembl")
+```
+
+```{r}
+bbListAttrs("transcript")
+```
+
+```{r}
+bbListAttrs("exon")
+```
+
+```{r}
+bbListAttrs("cds")
+```
+Note that there are several other gene related datasets without attributes and can be used in mapping queries such as probesets, genebank and entrez etc. Full dataset list can be discovered with `bbListDatasets`. Now lets build example mapping queries,
+
+**Map gene names to Ensembl transcript identifiers**
+
+```{r}
+res<-bbMapping("ATP5MC3,TP53",'map(transcript)')
+head(res)
+```
+
+**Map gene names to exon identifiers and retrieve the region**
+
+```{r}
+res<-bbMapping("ATP5MC3,TP53",'map(transcript).map(exon)',attrs = "seq_region")
+head(res)
+```
+
+**Map human gene to its ortholog identifiers**
+
+```{r}
+res<-bbMapping("shh",'filter(ensembl.genome=="homo_sapiens").map(ortholog)')
+head(res)
+```
+
+**Map gene to its paralogs**
+
+```{r}
+bbMapping("fry,mog",'map(paralog)',showInputColumn = TRUE)
+```
+
+
+**Map ensembl identifier or gene name to the entrez identifier**
+```{r}
+bbMapping("ENSG00000073910,shh" ,'map(entrez)')
+```
+
+**Map refseq identifiers to hgnc identifiers**
+
+```{r}
+bbMapping("NM_005359,NM_000546",'map(hgnc)',attrs = "symbols")
+```
+
+**Get all Ensembl human identifiers and gene names on chromosome Y with lncRNA type**
+```{r}
+res<-bbMapping("homo_sapiens",'map(ensembl).filter(ensembl.seq_region=="Y" && ensembl.biotype=="lncRNA")',attrs = 'name')
+head(res)
+```
+
+**Get CDS from genes**
+
+```{r}
+bbMapping("tpi1,shh",'map(transcript).map(cds)')
+```
+
+**Get all Ensembl human identifiers and gene names within or overlapping range**
+```{r}
+bbMapping("9606",'map(ensembl).filter((114129278>ensembl.start && 114129278<ensembl.end) || (114129328>ensembl.start && 114129328<ensembl.end))',attrs = "name")
+```
+
+In the above example as a first parameter taxonomy identifier is used instead of specifying as homo sapiens like in the previous example. Both of these usage are equivalent and produce same output as homo sapiens refer to taxonomy identifer 9606.
+
+**Built in function for genomic range queries**
+
+To simplfy previous use case query 3 builtin range query functions are provided. These functions are `overlaps`, `within` and `covers`. These functions can be used for `ensembl`, `transcript`, `exon` and `cds`
+entries which have start and end genome coordinates. For instance previous query can be written following way with `overlaps` function which list all the overlapping genes in human with given range.
+
+```{r}
+bbMapping("9606",'map(ensembl).filter(ensembl.overlaps(114129278,114129328))',attrs = "name")
+```
+
+
+
+**Map Affymetrix identifiers to Ensembl identifiers and gene names**
+
+```{r}
+bbMapping("202763_at,213596_at,209310_s_at",source ="affy_hg_u133_plus_2" ,'map(transcript).map(ensembl)',attrs = "name")
+```
+
+Note that all mappings can be done with opposite way, for instance from gene name to Affymetrix identifiers mapping is performed following way
+
+```{r}
+bbMapping("CASP3,CASP4",'map(transcript).map(affy_hg_u133_plus_2)')
+```
+
+**Retrieve all the human gene names which contains TTY**
+```{r}
+res<-bbMapping("homo sapiens",'map(ensembl).filter(ensembl.name.contains("TTY"))',attrs = "name")
+head(res)
+```
+
+## Protein centric use cases
+
+Uniprot is used for protein related dataset such as protein identifiers, accession, sequence, features, variants, and mapping information to other datasets. Let's list some protein related datasets attributes and then execute example queries similary with gene centric examples,
+
+```{r}
+bbListAttrs("uniprot")
+```
+
+```{r}
+bbListAttrs("ufeature")
+```
+
+```{r}
+bbListAttrs("pdb")
+```
+
+```{r}
+bbListAttrs("interpro")
+```
+
+
+**Map gene names to reviewed uniprot identifiers**
+
+```{r}
+bbMapping("msh6,stk11,bmpr1a,smad4,brca2","map(uniprot)",source ="hgnc")
+```
+
+**Filter proteins by sequence mass and retrieve protein sequences**
+
+```{r}
+bbMapping("clock_human,shh_human,aicda_human,at5g3_human,p53_human","filter(uniprot.sequence.mass > 45000)" ,attrs = "sequence$mass,sequence$seq")
+```
+
+**Helix type feature locations of a protein**
+
+```{r}
+bbMapping("shh_human",'map(ufeature).filter(ufeature.type=="helix")' ,attrs = "location$begin,location$end")
+```
+
+**Get all variation identifiers from a gene with given condition**
+
+```{r}
+bbMapping("tp53",'map(uniprot).map(ufeature).filter(ufeature.original=="I" && ufeature.variation=="S").map(variantid)',source = "hgnc")
+```
+
+
+# Stop web server
+When working with biobtreeR completed, the biobtreeR web server should stop.
+
+```{r}
+bbStop()
+```
+
+# Session Info
+
+```{r}
+sessionInfo()
+```

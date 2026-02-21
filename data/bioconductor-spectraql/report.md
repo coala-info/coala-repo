@@ -1,0 +1,16 @@
+# bioconductor-spectraql Bioconductor Package Report
+
+## SpectraQL
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/SpectraQL.html
+- **Package**: SpectraQL
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: https://github.com/RforMassSpectrometry/SpectraQL
+- **Skill**: generated
+

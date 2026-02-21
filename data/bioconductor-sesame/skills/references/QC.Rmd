@@ -1,0 +1,139 @@
+---
+title: "Quality Control"
+date: "`r BiocStyle::doc_date()`"
+package: sesame
+output: BiocStyle::html_document
+fig_width: 6
+fig_height: 5
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{1. Quality Control}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r message=FALSE, warning=FALSE, results="hide"}
+library(sesame)
+sesameDataCache()
+```
+
+# Calculate Quality Metrics
+
+The main function to calculate the quality metrics is `sesameQC_calcStats`.
+This function takes a SigDF, calculates the QC statistics, and returns a single
+S4 `sesameQC` object, which can be printed directly to the console. To calculate
+QC metrics on a given list of samples or all IDATs in a folder, one can use
+`sesameQC_calcStats` within the standard `openSesame` pipeline. When used with
+`openSesame`, a list of `sesameQC`s will be returned. Note that one should turn
+off preprocessing using `prep=""`:
+
+```{r qc1, eval=FALSE}
+## calculate metrics on all IDATs in a specific folder
+qcs = openSesame(idat_dir, prep="", func=sesameQC_calcStats)
+```
+
+SeSAMe divides sample quality metrics into multiple groups. These groups are
+listed below and can be referred to by short keys. For example, "intensity"
+generates signal intensity-related quality metrics.
+
+```{r echo=FALSE}
+library(knitr)
+kable(data.frame(
+    "Short Key" = c(
+        "detection",
+        "numProbes",
+        "intensity",
+        "channel",
+        "dyeBias",
+        "betas"),
+    "Description" = c(
+        "Signal Detection",
+        "Number of Probes",
+        "Signal Intensity",
+        "Color Channel",
+        "Dye Bias",
+        "Beta Value")))
+```
+
+By default, `sesameQC_calcStats` calculates all QC groups. To save time, one
+can compute a specific QC group by specifying one or multiple short keys in
+the `funs=` argument:
+
+```{r qc2}
+sdfs <- sesameDataGet("EPIC.5.SigDF.normal")[1:2] # get two examples
+## only compute signal detection stats
+qcs = openSesame(sdfs, prep="", func=sesameQC_calcStats, funs="detection")
+qcs[[1]]
+```
+
+> We consider signal detection the most important QC metric.
+
+One can retrieve the actual stat numbers from `sesameQC` using the
+sesameQC_getStats (the following generates the fraction of probes with
+detection success):
+
+```{r qc3}
+sesameQC_getStats(qcs[[1]], "frac_dt")
+```
+
+After computing the QCs, one can optionally combine the `sesameQC` objects into
+a data frame for easy comparison.
+
+```{r qc4}
+## combine a list of sesameQC into a data frame
+head(do.call(rbind, lapply(qcs, as.data.frame)))
+```
+
+Note that when the input is an `SigDF` object, calling `sesameQC_calcStats`
+within `openSesame` and as a standalone function are equivalent.
+
+```{r qc5, message=FALSE}
+sdf <- sesameDataGet('EPIC.1.SigDF')
+qc = openSesame(sdf, prep="", func=sesameQC_calcStats, funs=c("detection"))
+## equivalent direct call
+qc = sesameQC_calcStats(sdf, c("detection"))
+qc
+```
+
+# Rank Quality Metrics
+
+```{r qc6, echo=FALSE}
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+SeSAMe features comparison of your sample with public data sets. The
+`sesameQC_rankStats()` function ranks the input `sesameQC` object with
+`sesameQC` calculated from public datasets. It shows the rank percentage of the
+input sample as well as the number of datasets compared.
+
+```{r qc7}
+sdf <- sesameDataGet('EPIC.1.SigDF')
+qc <- sesameQC_calcStats(sdf, "intensity")
+qc
+sesameQC_rankStats(qc, platform="EPIC")
+```
+
+# Quality Control Plots
+
+SeSAMe provides functions to create QC plots. Some functions takes sesameQC as
+input while others directly plot the SigDF objects. Here are some examples:
+
+- `sesameQC_plotBar()` takes a list of sesameQC objects and creates bar
+plot for each metric calculated.
+
+- `sesameQC_plotRedGrnQQ()` graphs the dye bias between the two color channels.
+
+- `sesameQC_plotIntensVsBetas()` plots the relationship between $\beta$ values
+  and signal intensity and can be used to diagnose artificial readout and
+  influence of signal background.
+
+- `sesameQC_plotHeatSNPs()` plots SNP probes and can be used to detect sample
+  swaps.
+
+More about quality control plots can be found in [Supplemental
+Vignette](https://zhou-lab.github.io/sesame/v1.16/supplemental.html#qc).
+
+# Session Info
+
+```{r}
+sessionInfo()
+```

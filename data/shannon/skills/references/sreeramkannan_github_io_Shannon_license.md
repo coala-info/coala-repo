@@ -1,0 +1,1 @@
+License Shannon About Download FAQ License Manual Installation Getting Started License Shannon is distributed under a GPL 3.0 license. See license details here . &copy; 2016 Sreeram Kannan with help from Jekyll Bootstrap and Twitter Bootstrap

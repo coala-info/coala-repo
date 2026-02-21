@@ -1,0 +1,430 @@
+# CONSTANd
+
+Joris Van Houtven, Geert Jan Bex and Dirk Valkenborg\*
+
+\*dirk.valkenborg@uhasselt.be
+
+#### 10/18/2020
+
+#### Abstract
+
+Normalizes the data matrix by raking the Nrows by Ncols matrix such that the row means and column means equal 1, allowing for comparison of values between samples within the same and even across different CONSTANd-normalized data matrices.
+
+# Contents
+
+* [1 Introduction](#introduction)
+  + [1.1 Getting started](#getting-started)
+  + [1.2 Data assumptions](#s:assumptions)
+    - [1.2.1 Example of a *bad* MA plot](#example-of-a-bad-ma-plot)
+* [2 Normalizing a data matrix (single assay)](#normalizing-a-data-matrix-single-assay)
+* [3 Normalization across multiple assays](#normalization-across-multiple-assays)
+* [4 Optional arguments](#optional-arguments)
+  + [4.1 target](#target)
+  + [4.2 maxIterations and precision](#maxiterations-and-precision)
+* [5 Making MA plots](#s:maplots)
+  + [5.1 MA plot trick for normalized data](#ma-plot-trick-for-normalized-data)
+* [6 Subsequent Differential Expression Analysis (DEA)](#subsequent-differential-expression-analysis-dea)
+* [7 Session info](#session-info)
+
+```
+knitr::opts_chunk$set(echo = TRUE,dev="CairoPNG")
+library(knitr)
+library(tidyr)
+library(ggplot2)
+library(gridExtra)
+library(magick)
+```
+
+```
+## Linking to ImageMagick 6.9.12.98
+## Enabled features: fontconfig, freetype, fftw, heic, lcms, pango, raw, webp, x11
+## Disabled features: cairo, ghostscript, rsvg
+```
+
+```
+## Using 2 threads
+```
+
+```
+library(limma)
+```
+
+# 1 Introduction
+
+CONSTANd normalization has been proven to work on [mass spectrometry intensity values](https://doi.org/10.1074/mcp.M115.056911) (Maes et al.) in shotgun proteomics and on [RNA-seq count data](https://scholar.google.com/scholar?hl=nl&as_sdt=0%2C5&q=Constrained+standardization+of+count+data+from+massive+parallel+sequencing+joris+van+houtven) (Van Houtven et al.), but is in principle applicable to any kind of quantification matrices, for instance in other -omics disciplines. It normalizes the data matrix `data` by raking (using the RAS method by Bacharach, see references) the Nrows by Ncols matrix such that the row means and column means equal 1. The result is a normalized data matrix `K=RAS`, a product of row mulipliers `R` and column multipliers `S` with the original matrix `A`. Missing information needs to be presented as `NA` values and not as zero values, because CONSTANd is able to ignore missing values when calculating the mean.
+
+## 1.1 Getting started
+
+The `CONSTANd` package has to be loaded to use the function.
+To load `CONSTANd`, type the following command after launching R.
+
+```
+#install.packages("BiocManager")
+#BiocManager::install("CONSTANd")
+library(CONSTANd)
+```
+
+## 1.2 Data assumptions
+
+To warrant that the normalization procedure itself is not biased, three assumptions about the data are made (as for any type of data-driven normalization method) which may be verified by making MA-plots (see examples in section [5](#s:maplots)):
+
+* **The majority of features (peptides/genes/…) are not differentially expressed**, to avoid a bias in the estimate of the mean value. It is assumed that up-down shifts are not due to biological causes. The reference set used in the normalization step is the set of all peptides identified in the experiment.
+  *MA-plot: the observations form a single ‘cloud’ with a dense center and less dense edges, as opposed to, for instance, two clouds or a cloud with uniform density*.
+* **The number of up-regulated features is roughly equal to the number of down-regulated ones**. If the data were skewed, this would lead to a bias in the normalization result.
+  *MA-plot: the cloud of observations exhibits a bilateral symmetry about some axis (usually horizontal, but inclinations may occur)*.
+* **Any systematic bias present is linearly proportional to the magnitude of the quantification values**. Only this way it is possible to find one appropriate normalization factor for each quantification sample.
+  *MA-plot: the axis of bilateral symmetry is a straight line (which may be inclined), i.e., the moving average M-values of the central cloud form an approximately **straight** line*.
+
+### 1.2.1 Example of a *bad* MA plot
+
+The following MA plot violates all three assumptions. In case your MA plots exhibit any of such characteristics, it is not advised to use CONSTANd - or any other data-driven method - to normalize your data, and to instead use advanced model-based approaches or, if appropriate, clean your data first.
+
+![This MA plot violates all assumptions: there is more than one cloud, there are more upregulated entities, and the bias changes strongly in the region with small magnitudes (A-values).](data:image/png;base64...)
+
+Figure 1: This MA plot violates all assumptions: there is more than one cloud, there are more upregulated entities, and the bias changes strongly in the region with small magnitudes (A-values)
+
+# 2 Normalizing a data matrix (single assay)
+
+The data matrix is an `Nrows` by `Ncols` matrix (e.g. an `assay` from a `SummarizedExperiment`), representing quantification values of any kind, as long as they form an **identically processed (sub)set (IPS)**. An IPS consists of measurements from biological samples who have been processed from biological harvesting of the tissue to the detection and quantitation of the features of interest (RNA, proteins, …) in near-identical fashion. In practice, this means that there exist no factors (*except* those of *biological interest*) which may cause a systematic bias in the quantification values. One \_counter\_example in proteomics is samples measured on a different day or a different instrument, one \_counter\_example in RNA-seq would be samples measured after using different library preparation protocols. In the next section, we demonstrate how in such such cases the IPSs are normalized separately as if they were individual assays (see this section), after which they may be re-combined.
+
+First, let’s load the ‘Leishmania’ [mRNA-level data set from GEO](https://ftp.ncbi.nlm.nih.gov/geo/series/GSE95nnn/GSE95353/suppl/GSE95353_SL_SEQ_LOGSTAT_counttable.txt.gz) (Gene Expression Omnibus) with identifier GSE95353. You can either download and unzip it yourself, are use the file that comes with this package.
+
+```
+leish <- read.csv("../inst/extdata/GSE95353_SL_SEQ_LOGSTAT_counttable.txt" , sep='\t')
+```
+
+We only need the LOG and STAT samples, which correspond to biological quadruplicates of Leishmania in two lifestages (LOG and STAT).
+
+```
+rownames(leish) <- leish$gene
+leish <- leish[, c("SL.LOG1", "SL.LOG2", "SL.LOG3", "SL.LOG4",
+                   "SL.STAT1", "SL.STAT2", "SL.STAT3", "SL.STAT4")]
+conditions <- c(rep("LOG", 4), rep("STAT", 4))
+```
+
+Let’s remove genes with low count numbers (`median > 0`) for good practice, and make sure that zero counts are replaced by `NA` to use CONSTANd.
+
+```
+# first set NA to 0 for calculating the row medians
+leish[is.na(leish)] <- 0
+leish <- leish[apply(leish, 1, median, na.rm = FALSE) > 0,]
+leish.norm <- CONSTANd(leish)$normalized_data
+```
+
+```
+## Warning in CONSTANd(leish): Zeros in quantification matrix detected; replacing
+## with NA.
+```
+
+Let’s make a PCA plot (optionally impute `NA` as zero) before and after normalization to see if it was successful:
+
+```
+leish[is.na(leish)] <- 0
+# scale raw data
+leish.pc.raw <- prcomp(x=t(leish), scale. = TRUE)
+leish.norm[is.na(leish.norm)] <- 0
+# CONSTANd already scaled the data
+leish.pc.norm <- prcomp(x=t(leish.norm))
+par(mfrow=c(1,2))
+colors = ifelse(conditions == 'LOG', 'blue', 'red')
+plot(leish.pc.raw$x[,'PC1'], leish.pc.raw$x[,'PC2'],
+     xlab='PC1', ylab='PC2', main='raw counts', col=colors)
+plot(leish.pc.norm$x[,'PC1'], leish.pc.norm$x[,'PC2'],
+     xlab='PC1', ylab='PC2', main='normalized counts', col=colors)
+```
+
+![LOG samples (blue) are separated more clearly by PC1 from the STAT samples (red) in the Leishmania data set after CONSTANd normalization.](data:image/png;base64...)
+
+Figure 2: LOG samples (blue) are separated more clearly by PC1 from the STAT samples (red) in the Leishmania data set after CONSTANd normalization
+
+Indeed, the PCA plot indicates that the first principal component, which is the direction along which there is most varability in the measurements, successfully defines a separation between the biological conditions. In other words: after normalization the biological differences between the samples dominate any other sources of systematic bias.
+
+# 3 Normalization across multiple assays
+
+Here, we demonstrate multiple IPSs involved in one experiment may be normalized separately as if they were individual assays (see previous section), after which they may be re-combined for joint analysis.
+We demonstrate CONSTANd normalization across multiple assays using the [Organs example data set](https://qcquan.net/static/Organs_input.zip) from [QCQuan](https://qcquan.net/), a proteomics webtool built around the CONSTANd algorithm.
+The Organs data set entails samples from 8 different mouse organs in biological quadruplicate, whose peptides have been measured in 4 different instrument runs (1 per mouse) using TMT-labeled (8-plex) tandem mass spectrometry.
+
+<img src=“organ\_experiment\_design.png” alt=“Organs data set experimental setup: 8 mouse organ samples spread across 4 TMT 8-plex tndem-MS runs, one for each mouse. Image source: Bailey, Derek J., et al. ”Intelligent data acquisition blends targeted and discovery methods." Journal of proteome research 13.4 (2014): 2152-2161. <https://doi.org/10.1021/pr401278j>." width=“50%” class=“widefigure” />
+
+Figure 3: Organs data set experimental setup: 8 mouse organ samples spread across 4 TMT 8-plex tndem-MS runs, one for each mouse
+Image source: Bailey, Derek J., et al. “Intelligent data acquisition blends targeted and discovery methods.” Journal of proteome research 13.4 (2014): 2152-2161. <https://doi.org/10.1021/pr401278j>.
+
+You can either download the original data from the web, unzip it and set `LOAD_ORIGINAL=TRUE`, or load the cleaned data from this package.
+
+```
+LOAD_ORIGINAL = FALSE
+# load extra functions to clean the original data and study design files
+source('../inst/script/functions.R')
+if (LOAD_ORIGINAL) {  # load original from web
+    BR1 <- read.csv('Organs_PSMs_1.txt', sep='\t')
+    BR2 <- read.csv('Organs_PSMs_2.txt', sep='\t')
+    BR3 <- read.csv('Organs_PSMs_3.txt', sep='\t')
+    BR4 <- read.csv('Organs_PSMs_4.txt', sep='\t')
+    organs <- list(BR1, BR2, BR3, BR4)
+    organs <- clean_organs(organs)
+} else {  # load cleaned file that comes with this package
+    organs <- readRDS('../inst/extdata/organs_cleaned.RDS')
+}
+# construct the study design from the QCQuan DoE file and arrange it properly
+study.design <- read.csv("../inst/extdata/Organs_DoE.tsv", sep='\t', header = FALSE)
+study.design <- rearrange_organs_design(study.design)
+```
+
+The data is now cleaned up just enough to demonstrate the effect of normalization. In a proper analysis one may want to do additional checks, cleaning, and summarization steps. However, none of those affect the use of CONSTANd and one can use CONSTANd on the PSM, peptide or protein level, although the outcome may of course differ.
+
+```
+# the data has been summarized to peptide level
+head(rownames(organs[[1]]))
+```
+
+```
+## [1] "AAAPAPEEEMDECEQALAAEPK"         "AAASTDYYK"
+## [3] "AADAHVDAHYYEQNEQPTGTCAACITGGNR" "AADKDTCFSTEGPNLVTR"
+## [5] "AAESSAMAATEK"                   "AAFDDAIAELDTLSEESYKDSTLIMQLLR"
+```
+
+```
+# only the quantification columns were kept, which here happen to be all of them
+quanCols <- colnames(organs[[1]])
+quanCols
+```
+
+```
+## [1] "126"  "127N" "127C" "128C" "129N" "129C" "130C" "131"
+```
+
+```
+organs <- lapply(organs, function(x) x[,quanCols])
+# make unique quantification column names
+for (i in seq_along(organs)) {
+  colnames(organs[[i]]) <- paste0('BR', i, '_', colnames(organs[[i]])) }
+```
+
+In MS-based proteomics, anlyzing samples even with the same intrument on the same day but in a different run can cause systematic bias between the runs. Therefore, we normalize each BR run dataframe independently:
+
+```
+organs.norm.obj <- lapply(organs, function(x) CONSTANd(x))
+organs.norm <- lapply(organs.norm.obj, function(x) x$normalized_data)
+```
+
+However, after CONSTANd normalization these values become comparable. We demonstrate this again using PCA plots, after merging the non-normalized data frames and merging the normalized data frames. Let’s prepare the merge by doing some administration on our column names.
+
+```
+merge_list_of_dataframes <- function(list.dfs) {
+    return(Reduce(function(x, y) {
+        tmp <- merge(x, y, by = 0, all = FALSE)
+        rownames(tmp) <- tmp$Row.names
+        tmp$Row.names <- NULL
+        return(tmp)
+    }, list.dfs))}
+organs.df <- merge_list_of_dataframes(organs)
+organs.norm.df <- merge_list_of_dataframes(organs.norm)
+```
+
+We can now make PCA plots using data from all 4 runs:
+
+```
+# PCA can't deal with NA values: impute as zero (this makes sense in a multiplex)
+organs.df[is.na(organs.df)] <- 0
+organs.norm.df[is.na(organs.norm.df)] <- 0
+# scale raw data
+organs.pc <- prcomp(x=t(organs.df), scale. = TRUE)
+# CONSTANd already scaled the data
+organs.norm.pc <- prcomp(x=t(organs.norm.df))
+```
+
+The randomized study design and separate design file makes coloring the PCA plot a bit tedious.
+
+```
+# prepare plot color mappings
+organs.pcdf <- as.data.frame(organs.pc$x)
+organs.pcdf <- merge(organs.pcdf, study.design, by=0)
+rownames(organs.pcdf) <- organs.pcdf$Row.names
+organs.norm.pcdf <- as.data.frame(organs.norm.pc$x)
+organs.norm.pcdf <- merge(organs.norm.pcdf, study.design, by=0)
+rownames(organs.norm.pcdf) <- organs.norm.pcdf$Row.names
+```
+
+![Before normalization, the samples in the Organs data set are all scattered across the PCA plot. After normalization, they are correctly grouped according to biological condition, even though all 4 samples in each group have been measured in a different MS run. The big separation in PC1 suggests that the muscle tissue is very different from the tissues of other types of organs!](data:image/png;base64...)
+
+Figure 4: Before normalization, the samples in the Organs data set are all scattered across the PCA plot
+After normalization, they are correctly grouped according to biological condition, even though all 4 samples in each group have been measured in a different MS run. The big separation in PC1 suggests that the muscle tissue is very different from the tissues of other types of organs!
+
+# 4 Optional arguments
+
+## 4.1 target
+
+The variable `target=1` sets the mean quantification value in each row and column during the raking process. After normalization, each row and column mean in the matrix will be equal to `target` up to a certain `precision` (see further). Setting a custom value does not affect the normalization procedure, but *does* scale the output values. Caution: quantification values from matrices normalized with different target values may under normal circumstances *not* be directly compared. Change this value only when you need to and when you know what you are doing.
+
+## 4.2 maxIterations and precision
+
+The variable `maxIterations=50` is an integer value that defines a hard stop on the number of raking cycles, forcing the algorithm to return even if the desired precision was not reached (a warning will be printed). The variable `precision=1e-5)` defines the stopping criteria based on the L1-norm as defined by Friedrich Pukelsheim, Bruno Simeone in “On the Iterative Proportional Fitting Procedure: Structure of Accumulation Points and L1-Error Analysis”.
+
+# 5 Making MA plots
+
+We recommend building upon the following function to make MA plots when using CONSTANd.
+
+```
+MAplot <- function(x,y,use.order=FALSE, R=NULL, cex=1.6, showavg=TRUE) {
+  # make an MA plot of y vs. x that shows the rolling average,
+  M <- log2(y/x)
+  xlab = 'A'
+  if (!is.null(R)) {r <- R; xlab = "A (re-scaled)"} else r <- 1
+  A <- (log2(y/r)+log2(x/r))/2
+  if (use.order) {
+    orig.order <- order(A)
+    A <- orig.order
+    M <- M[orig.order]
+    xlab = "original rank of feature magnitude within IPS"
+  }
+  # select only finite values
+  use <- is.finite(M)
+  A <- A[use]
+  M <- M[use]
+  # plot
+  print(var(M))
+  plot(A, M, xlab=xlab, cex.lab=cex, cex.axis=cex)
+  # rolling average
+  if (showavg) { lines(lowess(M~A), col='red', lwd=5) }
+}
+```
+
+When verifying that input data adheres to the assumptions in section [1.2](#s:assumptions), one could use this function (preferably on each pair of biological conditions in each IPS) without optional arguments:
+
+```
+# Example for cerebrum and kidney conditions in run (IPS) 1 in the Organs data set.
+cerebrum1.colnames <- rownames(study.design %>% dplyr::filter(run=='BR1', condition=='cerebrum'))
+kidney1.colnames <- rownames(study.design %>% dplyr::filter(run=='BR1', condition=='kidney'))
+cerebrum1.raw <- organs.df[,cerebrum1.colnames]
+kidney1.raw <- organs.df[,kidney1.colnames]
+# rowMeans in case of multiple columns
+if (!is.null(dim(cerebrum1.raw))) cerebrum1.raw <- rowMeans(cerebrum1.raw)
+if (!is.null(dim(kidney1.raw))) kidney1.raw <- rowMeans(kidney1.raw)
+MAplot(cerebrum1.raw, kidney1.raw)
+```
+
+```
+## [1] 1.557956
+```
+
+![](data:image/png;base64...)
+
+## 5.1 MA plot trick for normalized data
+
+On the normalized data, then, we recommend using the `R` vector (be careful to select only non-discarded features) from the CONSTANd output to return a sensible measure of feature magnitude after normalization:
+
+```
+cerebrum1.norm <- organs.norm.df[,cerebrum1.colnames]
+kidney1.norm <- organs.norm.df[,kidney1.colnames]
+# rowMeans in case of multiple columns
+if (!is.null(dim(cerebrum1.norm))) cerebrum1.norm <- rowMeans(cerebrum1.norm)
+if (!is.null(dim(kidney1.norm))) kidney1.norm <- rowMeans(kidney1.norm)
+BR1.R <- organs.norm.obj[[1]]$R[rownames(organs.norm.df)]
+MAplot(cerebrum1.norm, kidney1.norm, R=BR1.R)
+```
+
+```
+## [1] 1.557956
+```
+
+![](data:image/png;base64...)
+
+Note that this re-scaling only affects the horizontal A axis values, rendering such an MA plot comparable with one representing raw data. If the `S` vector from the output, then, has values close to 1 (meaning the sample sizes were very similar) then this MA plot will look a lot like the one with raw data.
+
+If, for some reason, you do not want to re-scale the normalized data using the R vector, you can also use `use.order=TRUE` option to make the A axis (horizontal axis) display the data in the order they appear in the `MAplot` function inputs. In that case, the `R` argument has no effect.
+
+# 6 Subsequent Differential Expression Analysis (DEA)
+
+You can use CONSTANd-normalized data for DEA just like you usually would (on non-transformed quantification values). For instance, you could perform a [moderated t-test](http://www.biostat.jhsph.edu/~kkammers/software/eupa/R_guide.html):
+
+```
+get_design_matrix <- function(referenceCondition, study.design) {
+    # ANOVA-like design matrix for use in moderated_ttest, indicating group
+    # (condition) membership of each entry in all_samples.
+    otherConditions = setdiff(unique(study.design$condition), referenceCondition)
+    all_samples = rownames(study.design)
+    N_samples = length(all_samples)
+    N_conditions = 1+length(otherConditions)
+    design = matrix(rep(0,N_samples*N_conditions), c(N_samples, N_conditions))
+    design[, 1] <- 1  # reference gets 1 everywhere
+    rownames(design) <- all_samples
+    colnames(design) <- c(referenceCondition, otherConditions)
+    for (i in 1:N_samples) {  # for each channel in each condition, put a "1" in the design matrix.
+        design[as.character(rownames(study.design)[i]), as.character(study.design$condition[i])] <- 1 }
+    return(design)
+}
+moderated_ttest <- function(dat, design_matrix, scale) {
+  # inspired by http://www.biostat.jhsph.edu/~kkammers/software/eupa/R_guide.html
+  design_matrix <- design_matrix[match(colnames(dat), rownames(design_matrix)),]  # fix column order
+  reference_condition <- colnames(design_matrix)[colSums(design_matrix) == nrow(design_matrix)]
+  nfeatures <- dim(dat)[1]
+
+  fit <- limma::eBayes(lmFit(dat, design_matrix))
+
+  reference_averages <- fit$coefficients[,reference_condition]
+  logFC <- fit$coefficients
+  logFC <- log2((logFC+reference_averages)/reference_averages)
+  # correct the reference
+  logFC[,reference_condition] <- logFC[,reference_condition] - 1
+  # moderated q-value corresponding to the moderated t-statistic
+  if(nfeatures>1) {
+    q.mod <- apply(X = fit$p.value, MARGIN = 2, FUN = p.adjust, method='BH')
+  } else q.mod <- fit$p.value
+  return(list(logFC=logFC, qval=q.mod))
+}
+
+design_matrix <- get_design_matrix('cerebrum', study.design)
+result <- moderated_ttest(organs.norm.df, design_matrix)
+```
+
+# 7 Session info
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base
+##
+## other attached packages:
+## [1] CONSTANd_1.18.0  limma_3.66.0     magick_2.9.0     gridExtra_2.3
+## [5] ggplot2_4.0.0    tidyr_1.3.1      knitr_1.50       BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##  [1] gtable_0.3.6        jsonlite_2.0.0      dplyr_1.1.4
+##  [4] compiler_4.5.1      BiocManager_1.30.26 tinytex_0.57
+##  [7] Rcpp_1.1.0          tidyselect_1.2.1    dichromat_2.0-0.1
+## [10] jquerylib_0.1.4     scales_1.4.0        statmod_1.5.1
+## [13] yaml_2.3.10         fastmap_1.2.0       R6_2.6.1
+## [16] labeling_0.4.3      generics_0.1.4      Cairo_1.7-0
+## [19] tibble_3.3.0        bookdown_0.45       bslib_0.9.0
+## [22] pillar_1.11.1       RColorBrewer_1.1-3  rlang_1.1.6
+## [25] cachem_1.1.0        xfun_0.53           sass_0.4.10
+## [28] S7_0.2.0            cli_3.6.5           withr_3.0.2
+## [31] magrittr_2.0.4      digest_0.6.37       grid_4.5.1
+## [34] lifecycle_1.0.4     vctrs_0.6.5         evaluate_1.0.5
+## [37] glue_1.8.0          farver_2.1.2        rmarkdown_2.30
+## [40] purrr_1.1.0         tools_4.5.1         pkgconfig_2.0.3
+## [43] htmltools_0.5.8.1
+```

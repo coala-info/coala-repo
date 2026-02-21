@@ -1,0 +1,1 @@
+[ { "title": "genepop’007: a complete re-implementation of the genepop software for Windows and Linux", "author": [ { "given": "François", "family": "Rousset", "role": {}, "email": {}, "comment": {} } ], "journal": "Molecular Ecology Resources", "year": "2008", "volume": "8", "pages": "103-106" } ]

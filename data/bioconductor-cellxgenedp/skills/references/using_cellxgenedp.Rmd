@@ -1,0 +1,352 @@
+---
+title: "Discover and download datasets and files from the cellxgene data portal"
+author:
+- name: Martin Morgan
+  affiliation: Roswell Park Comprehensive Cancer Center
+  email: Martin.Morgan@RoswellPark.org
+package: cellxgenedp
+output:
+  BiocStyle::html_document
+abstract: |
+    The cellxgene data portal (https://cellxgene.cziscience.com/) provides a
+    graphical user interface to collections of single-cell sequence data
+    processed in standard ways to 'count matrix' summaries. The cellxgenedp
+    package provides an alternative, R-based inteface, allowing flexible data
+    discovery, viewing, and downloading.
+vignette: |
+    %\VignetteIndexEntry{Discover and download datasets and files from the cellxgene data portal}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+# Installation and use
+
+This package is available in _Bioconductor_ version 3.15 and
+later. The following code installs [cellxgenedp][] as well as other
+packages required for this vignette.
+
+[cellxgenedp]: https://bioconductor.org/packages/cellxgenedp
+
+```{r, eval = FALSE}
+pkgs <- c("cellxgenedp", "zellkonverter", "SingleCellExperiment", "HDF5Array")
+required_pkgs <- pkgs[!pkgs %in% rownames(installed.packages())]
+BiocManager::install(required_pkgs)
+```
+
+Use the following `pkgs` vector to install from GitHub (latest,
+unchecked, development version) instead
+```{r, eval = FALSE}
+pkgs <- c(
+    "mtmorgan/cellxgenedp", "zellkonverter", "SingleCellExperiment", "HDF5Array"
+)
+```
+
+Load the package into your current _R_ session. We make extensive use
+of the dplyr packages, and at the end of the vignette use
+SingleCellExperiment and zellkonverter, so load those as well.
+
+```{r}
+suppressPackageStartupMessages({
+    library(zellkonverter)
+    library(SingleCellExperiment) # load early to avoid masking dplyr::count()
+    library(dplyr)
+    library(cellxgenedp)
+})
+```
+
+# `cxg()` Provides a 'shiny' interface
+
+The following sections outline how to use the [cellxgenedp][] package
+in an _R_ script; most functionality is also available in the `cxg()`
+shiny application, providing an easy way to identify, download, and
+visualize one or several datasets. Start the app
+
+```{r, eval = FALSE}
+cxg()
+```
+
+choose a project on the first tab, and a dataset for visualization, or
+one or more datasets for download!
+
+# Collections, datasets and files
+
+Retrieve metadata about resources available at the cellxgene data
+portal using `db()`:
+
+```{r}
+db <- db()
+```
+
+Printing the `db` object provides a brief overview of the available
+data, as well as hints, in the form of functions like `collections()`,
+for further exploration.
+
+```{r}
+db
+```
+
+The portal organizes data hierarchically, with 'collections'
+(research studies, approximately), 'datasets', and 'files'. Discover
+data using the corresponding functions.
+
+```{r}
+collections(db)
+
+datasets(db)
+
+files(db)
+```
+
+Each of these resources has a unique primary identifier (e.g.,
+`file_id`) as well as an identifier describing the relationship of the
+resource to other components of the database (e.g.,
+`dataset_id`). These identifiers can be used to 'join' information
+across tables.
+
+## Using `dplyr` to navigate data
+
+A collection may have several datasets, and datasets may have several
+files. For instance, here is the collection with the most datasets
+
+```{r}
+collection_with_most_datasets <-
+    datasets(db) |>
+    count(collection_id, sort = TRUE) |>
+    slice(1)
+```
+
+We can find out about this collection by joining with the
+`collections()` table.
+
+```{r}
+left_join(
+    collection_with_most_datasets |> select(collection_id),
+    collections(db),
+    by = "collection_id"
+) |> glimpse()
+```
+
+We can take a similar strategy to identify all datasets belonging to
+this collection
+```{r}
+left_join(
+    collection_with_most_datasets |> select(collection_id),
+    datasets(db),
+    by = "collection_id"
+)
+```
+
+## `facets()` provides information on 'levels' present in specific columns
+
+Notice that some columns are 'lists' rather than atomic vectors like
+'character' or 'integer'.
+
+```{r}
+datasets(db) |>
+    select(where(is.list))
+```
+
+This indicates that at least some of the datasets had more than one
+type of `assay`, `cell_type`, etc. The `facets()` function provides a
+convenient way of discovering possible levels of each column, e.g.,
+`assay`, `organism`, `self_reported_ethnicity`, or `sex`, and the
+number of datasets with each label.
+
+```{r facets}
+facets(db, "assay")
+facets(db, "self_reported_ethnicity")
+facets(db, "sex")
+```
+
+## Filtering faceted columns
+
+Suppose we were interested in finding datasets from the 10x 3' v3
+assay (`ontology_term_id` of `EFO:0009922`) containing individuals of
+African American ethnicity, and female sex. Use the `facets_filter()`
+utility function to filter data sets as needed
+
+```{r african_american_female}
+african_american_female <-
+    datasets(db) |>
+    filter(
+        facets_filter(assay, "ontology_term_id", "EFO:0009922"),
+        facets_filter(self_reported_ethnicity, "label", "African American"),
+        facets_filter(sex, "label", "female")
+    )
+```
+
+Use `nrow(african_american_female)` to find the number of datasets
+satisfying our criteria. It looks like there are up to
+
+```{r}
+african_american_female |>
+    summarise(total_cell_count = sum(cell_count))
+```
+
+cells sequenced (each dataset may contain cells from several
+ethnicities, as well as males or individuals of unknown gender, so we
+do not know the actual number of cells available without downloading
+files). Use `left_join` to identify the corresponding collections:
+
+```{r}
+## collections
+left_join(
+    african_american_female |> select(collection_id) |> distinct(),
+    collections(db),
+    by = "collection_id"
+)
+```
+
+## Publication and other external data
+
+Many collections include publication information and other external
+data. This information is available in the return value of
+`collections()`, but the helper function `publisher_metadata()`,
+`authors()`, and `links()` may facilite access.
+
+Suppose one is interested in the publication "A single-cell atlas of
+the healthy breast tissues reveals clinically relevant clusters of
+breast epithelial cells". Discover it in the collections
+
+```{r}
+title_of_interest <- paste(
+    "A single-cell atlas of the healthy breast tissues reveals clinically",
+    "relevant clusters of breast epithelial cells"
+)
+collection_of_interest <-
+    collections(db) |>
+    dplyr::filter(startsWith(name, title_of_interest))
+collection_of_interest |>
+    glimpse()
+```
+
+Use the `collection_id` to extract publisher metadata (including a DOI
+if available) and author information
+
+```{r}
+collection_id_of_interest <- pull(collection_of_interest, "collection_id")
+publisher_metadata(db) |>
+    filter(collection_id == collection_id_of_interest) |>
+    glimpse()
+authors(db) |>
+    filter(collection_id == collection_id_of_interest)
+```
+
+Collections may have links to additional external data, in this case a
+DOI and two links to `RAW_DATA`.
+
+```{r}
+external_links <- links(db)
+external_links
+external_links |>
+    count(link_type)
+external_links |>
+    filter(collection_id == collection_id_of_interest)
+```
+
+Conversely, knowledge of a DOI, etc., can be used to discover details
+of the corresponding collection.
+
+```{r}
+doi_of_interest <- "https://doi.org/10.1016/j.xcrm.2021.100219"
+links(db) |>
+    filter(link_type == "DOI" & link_url == doi_of_interest) |>
+    left_join(collections(db)) |>
+    glimpse()
+```
+
+# Visualizing data in `cellxgene`
+
+Discover files associated with our first selected dataset
+
+```{r}
+selected_files <-
+    left_join(
+        african_american_female |> select(dataset_id),
+        files(db),
+        by = "dataset_id"
+    )
+selected_files
+```
+
+The `filetype` column lists the type of each file. The cellxgene service
+can be used to visualize *datasets* that have `CXG` files.
+
+```{r, eval = FALSE}
+selected_files |>
+    filter(filetype == "CXG") |>
+    slice(1) |> # visualize a single dataset
+    datasets_visualize()
+```
+
+Visualization is an interactive process, so `datasets_visualize()`
+will only open up to 5 browser tabs per call.
+
+# File download and use
+
+Datasets usually contain `CXG` (cellxgene visualization), `H5AD`
+(files produced by the python AnnData module), and `Rds` (serialized
+files produced by the _R_ Seurat package). There are no public parsers
+for `CXG`, and the `Rds` files may be unreadable if the version of
+Seurat used to create the file is different from the version used to
+read the file. We therefore focus on the `H5AD` files. For
+illustration, we download one of our selected files.
+
+```{r}
+local_file <-
+    selected_files |>
+    filter(
+        dataset_id == "24205601-0780-4bf2-b1d9-0e3cacbc2cd6",
+        filetype == "H5AD"
+    ) |>
+    files_download(dry.run = FALSE)
+basename(local_file)
+```
+
+These are downloaded to a local cache (use the internal function
+`cellxgenedp:::.cellxgenedb_cache_path()` for the location of the
+cache), so the process is only time-consuming the first time.
+
+`H5AD` files can be converted to _R_ / _Bioconductor_ objects using
+the [zellkonverter][] package.
+
+```{r}
+h5ad <- readH5AD(local_file, use_hdf5 = TRUE)
+h5ad
+```
+
+The `SingleCellExperiment` object is a matrix-like object with rows
+corresponding to genes and columns to cells. Thus we can easily
+explore the cells present in the data.
+
+```{r}
+h5ad |>
+    colData(h5ad) |>
+    as_tibble() |>
+    count(sex, donor_id)
+```
+
+# Next steps
+
+The [Orchestrating Single-Cell Analysis with Bioconductor][OSCA]
+online resource provides an excellent introduction to analysis and
+visualization of single-cell data in _R_ / _Bioconductor_. Extensive
+opportunities for working with AnnData objects in _R_ but using the
+native python interface are briefly described in, e.g., `?AnnData2SCE`
+help page of [zellkonverter][].
+
+[zellkonverter]: https://bioconductor.org/packages/zelkonverter
+[OSCA]: https://bioconductor.org/books/OSCA
+
+The [hca][] package provides programmatic access to the Human Cell
+Atlas [data portal][HCAportal], allowing retrieval of primary as well
+as derived single-cell data files.
+
+[hca]: https://bioconductor.org/packages/hca
+[HCAportal]: https://data.humancellatlas.org/explore
+
+# Session info {.unnumbered}
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```

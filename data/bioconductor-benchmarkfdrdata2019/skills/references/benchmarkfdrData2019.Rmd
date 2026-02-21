@@ -1,0 +1,440 @@
+---
+title: "Exploring and updating FDR benchmarking results"
+author: 
+- name: Patrick Kimes
+  affiliation: Dana-Farber Cancer Institute
+- name: Keegan Korthauer
+  affiliation: Dana-Farber Cancer Institute
+- name: Stephanie Hicks
+  affiliation: Johns Hopkins University
+output:
+  BiocStyle::html_document:
+    toc_float: true
+package: benchmarkfdrData2019
+abstract: |
+  Instructions on how to re-create results from Korthauer and Kimes et al. (2019) on benchmarking methods that control the false discovery rate (FDR).
+vignette: |
+  %\VignetteIndexEntry{Exploring and updating FDR benchmarking results}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r, echo=FALSE, results="hide", message=FALSE}
+require(knitr)
+opts_chunk$set(error=FALSE, message=FALSE, warning=FALSE)
+```
+
+```{r style, echo=FALSE, results='asis'}
+BiocStyle::markdown()
+```
+
+# Introduction
+
+This package provides a _R_ / _Bioconductor_ resource to 
+re-create plots and extend the analyses of
+[Korthauer and Kimes et al. (2019)](https://www.biorxiv.org/content/10.1101/458786v1).
+In this paper, methods controlling the False Discovery Rate (FDR) were applied
+to a collection of simulated and biological data sets to generate the
+benchmarking summaries provided with this package. Here, we give an example of
+how to load summary objects, plot results, and apply a new method to the
+dataset.
+
+The package can be installed from R (version >= 3.6) using the
+[`BiocManager`](https://cran.r-project.org/package=BiocManager) package,
+available on CRAN.
+
+```{r install-bioc, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("benchmarkfdrData2019")
+```
+
+# Load Packages
+
+```{r load-pkgs}
+suppressPackageStartupMessages({
+    library(ExperimentHub)
+    library(benchmarkfdrData2019)
+    library(SummarizedBenchmark)
+    library(dplyr)
+    library(ggplot2)
+    library(rlang)
+})
+```
+
+In addition to the `r Biocpkg("ExperimentHub")` and `r Biocpkg("benchmarkfdrData2019")`
+packages, we also load the `r Biocpkg("SummarizedBenchmark")` package. Benchmarking
+results made available with this package for all case studies and simulations described
+in Korthauer and Kimes et al. (2019) were created using the `SummarizedBenchmark`
+package and are stored as _SummarizedBenchmark_ objects.
+
+However, note that the objects were generated using the [`fdrbenchmark`](https://github.com/areyesq89/SummarizedBenchmark/tree/fdrbenchmark)
+branch of the corresponding `SummarizedBenchmark` GitHub repository, and do not include
+all of the features described in newer versions of the package (e.g. available on _Bioconductor_).
+
+In this vignette, we use the release version of the `SummarizedBenchmark` package
+[available on Bioconductor](http://bioconductor.org/packages/SummarizedBenchmark/).
+However, the `fdrbenchmark` version of the `SummarizedBenchmark` package can be
+installed from GitHub, again, using the `BiocManager` package.
+
+```{r, eval = FALSE}
+BiocManager::install("areyesq89/SummarizedBenchmark", ref = "fdrbenchmark")
+```
+
+# Load Data 
+
+The data are available for downloaded from the _Bioconductor_ 
+[ExperimentHub](http://bioconductor.org/packages/ExperimentHub) 
+web resource. The complete list of resources availble with the
+`benchmarkfdrData2019` package can be queried using the following
+command.
+
+```{r}
+hub <- ExperimentHub()
+bfdrData <- query(hub, "benchmarkfdrData2019")
+bfdrData
+```
+
+The above command only returns the metadata associated with each
+data object available on ExperimentHub. Individual resources must
+be retrieved from ExperimentHub before they can be loaded in R.
+Here, we retrieve and load two resource objects to illustrate the
+analyses that can be performed using the data available with this package.
+
+First, we load the benchmark results for a ChIP-seq case study where differential
+binding was tested using the `r Biocpkg("csaw")` package with region width used
+as the independent covariate. The resource is stored with the title `"cbp-csaw-benchmark"`.
+First, we determine the corresponding ExperimentHub ID for the resource.
+
+```{r getid-chipres}
+cbp_id <- bfdrData$ah_id[bfdrData$title == "cbp-csaw-benchmark"]
+cbp_id
+```
+
+Using the ID, we can now access the metadata associated with the resource by
+subsetting  `bfdrData` using single brackets (`[`). Using double brackets (`[[`)
+will retrieve the resource from the ExperimentHub server.
+
+```{r load-chipres}
+bfdrData[cbp_id]
+
+chipres <- bfdrData[[cbp_id]]
+chipres
+```
+
+Next, we load the benchmark results from a yeast in silico RNA-seq experiment
+where differential expression was tested using DESeq2 with a strong (simulated)
+independent and informative covariate. Unlike the ChIP-seq analysis above, with
+the in silico experiment, we know ground truth, and therefore can evaluate FDR
+control as well as the true positive rate (TPR) at nominal FDR significance
+thresholds.
+
+Since the in silico experiments were repeated 100 times, the data object is
+a list of 100 _SummarizedBenchmark_ objects for each replication. The resource
+is stored with the title `"yeast-results-de5"`. Here, we demonstrate an alternative approach
+to retrieving the resource from the ExperimentHub server. Rather than subset `bfdrData`
+using double brackets (`[[`), we retrieve the resource by calling the
+resource name as a function (`yeast-results-de5()`). This functionality is available
+for all resources available with this package (including the ChIP-seq resource
+loaded above).
+
+```{r load-yeastres}
+yeast_id <- bfdrData$ah_id[bfdrData$title == "yeast-results-de5"]
+bfdrData[yeast_id]
+
+yeastres <- `yeast-results-de5`()
+length(yeastres)
+yeastres[[1]]
+```
+
+To be able to work with the latest release of the `SummarizedBenchmark` package,
+we must fill in a missing slot of the _SummarizedBenchmark_ objects.
+
+```{r fix-sbobjs}
+chipres@BenchDesign <- BenchDesign()
+yeastres <- lapply(yeastres, function(x) { x@BenchDesign <- BenchDesign(); x })
+```
+
+## SummarizedBenchmark Objects
+
+The _SummarizedBenchmark_ objects include the original p-values, informative covariate,
+and corrected significance values for the various methods compared in Korthauer and Kimes et al. (2019).
+
+_SummarizedBenchmark_ objects are an extension of the Bioconductor _SummarizedExperiment_
+class, with results organized as a rectangular "assay", with associated row and column
+metadata. Here, the rows of the objects correspond to individual hypothesis tests and
+the columns correspond to the approaches used for multiple testing correction.
+
+We can take a look at the names of the methods included in the ChIP-seq results object.
+
+```{r colnames}
+colnames(chipres)
+```
+
+Notice that the results include the IHW and BL methods multiple times.
+These `ihw-` and `bl-` columns correspond to separate runs of the
+methods with different parameter settings. Briefly, the IHW method requires specifying an
+alpha FDR threshold while running the method. Here, the method was run with alpha values of
+`0.01, 0.02, .., 0.10`. The BL method was run with spline degrees of freedom `2, 3, 4, 5`.
+
+The corrected significance returned by each method is included in the single assay, `"bench"`
+(corresponding to the benchmarked results). 
+
+```{r show-assay}
+dim(assay(chipres, "bench"))
+head(assay(chipres, "bench"))
+```
+
+The ASH (`ashq`) results are `NA` as the method was not applied to the data.
+
+# Exploratory Analysis
+
+Given the multiple-testing-corrected results provided in the `"bench"` assay of the
+_SummarizedBenchmark_ objects, we can take a look at several performance metrics
+to compare the various methods. For the ChIP-seq case study, we can take a look at the
+number of rejections at various significance cutoffs. With the in silico yeast
+experiments, since truth is known, we can also look at FDR and TPR, as well as other
+related metrics.
+
+_SummarizedBenchmark_ objects include functionality to easily add and evaluate metrics
+for data stored as assays. This is performed by first adding performance metrics
+with `addPerformanceMetric`, followed by a call to `estimatePerformanceMetrics`.
+While custom performance metrics can be defined by users, the package fortunately
+includes several default metrics that can be added by name.
+
+```{r default-metrics}
+availableMetrics()
+```
+
+## ChIP-seq Case Study
+
+We will add the `"rejections"` metric to the `"bench"` assay and compute the number
+of rejections for each method at cutoffs between 0.01 and 0.10.
+
+```{r chip-add-metrics}
+chipres <- addPerformanceMetric(chipres,
+                                evalMetric = "rejections",
+                                assay = "bench")
+```
+
+Next, we compute the number of rejections and organize this as a tidy data.frame.
+
+```{r chip-est-metrics}
+chipdf <- estimatePerformanceMetrics(chipres,
+                                     alpha = seq(0.01, 0.10, by = .01),
+                                     tidy = TRUE)
+
+dim(chipdf)
+head(chipdf)
+```
+
+Each row in the data.frame corresponds to a `method + metric + cutoff` combination
+(e.g. `"unadjusted" + "rejections" + "alpha = 0.01"`). This information is stored in
+the `"label"`, `"performanceMetric"`, and `"alpha"` columns, with the corresponding
+metric value in the `"value"` column. All other columns contain method metadata,
+such as the package version, when the method was evaluated.
+
+We will now clean up the IHW and BL methods which, as described above, include multiple
+parameter settings.
+
+```{r chip-clean-cols}
+## subset IHW
+chipdf <- dplyr:::filter(chipdf, !(grepl("ihw", label) & param.alpha != alpha))
+chipdf <- dplyr:::mutate(chipdf, label = gsub("(ihw)-a\\d+", "\\1", label))
+
+## subset BL
+chipdf <- dplyr:::filter(chipdf, ! label %in% paste0("bl-df0", c(2, 4, 5)))
+```
+
+We only keep a subset of the columns and drop NA values.
+
+```{r chip-subset-cols}
+chipdf <- dplyr::select(chipdf, label, performanceMetric, alpha, value)
+chipdf <- dplyr::filter(chipdf, !is.na(value))
+head(chipdf)
+```
+
+We now plot the number of rejections.
+
+```{r chip-plot-rejs, fig.width = 8, fig.height = 5}
+ggplot(chipdf, aes(x = alpha, y = value, color = label)) +
+    geom_point() +
+    geom_line() +
+    scale_color_viridis_d("Method") +
+    scale_x_continuous(breaks = seq(0, 1, .01), limits = c(0, .11)) +
+    ylab("Rejections") +
+    theme_bw() +
+    ggtitle("Number of rejections across multiple-testing methods",
+            "ChIP-seq CBP differential analysis with informative covariate")
+```
+
+## Yeast in silico Data
+
+We can similarly add performance metrics to each replication of the
+yeast in silico experiment and aggregate across replicates. We
+demonstrate this process using a subset of the 100 replications
+in the interest of computational cost.
+
+```{r yeast-subset}
+yeastres10 <- yeastres[1:10]
+```
+
+As with the ChIP-seq results, we can add and evaluate performance
+metrics using `addPerformanceMetric` and `estimatePerformanceMetrics`.
+However, note that the yeast in silico results already include
+several default performance metrics.
+
+```{r yeast-already-metrics}
+names(performanceMetrics(yeastres10[[1]])[["qvalue"]])
+```
+
+We can skip the process of adding performance metrics and just use
+these metrics.
+
+```{r yeast-eval-metrics}
+yeastdf <- lapply(yeastres10, estimatePerformanceMetrics,
+                  alpha = seq(0.01, 0.10, by = .01), tidy = TRUE)
+```
+
+Finally, we merge the 10 replications to a single data.frame.
+
+```{r yeast-merge-reps}
+yeastdf <- dplyr::bind_rows(yeastdf, .id = "rep")
+```
+
+As above, we clean IHW and BL results, remove `NA` values, and only keep
+a subset of useful columns.
+
+```{r yeast-clean-cols}
+## subset IHW
+yeastdf <- dplyr:::filter(yeastdf,
+                          !(grepl("ihw", label) & param.alpha != alpha))
+yeastdf <- dplyr:::mutate(yeastdf, label = gsub("(ihw)-a\\d+", "\\1", label))
+
+## subset BL
+yeastdf <- dplyr:::filter(yeastdf, ! label %in% paste0("bl-df0", c(2, 4, 5)))
+
+yeastdf <- dplyr::select(yeastdf, rep, label, performanceMetric, alpha, value)
+yeastdf <- dplyr::filter(yeastdf, !is.na(value))
+head(yeastdf)
+```
+
+Finally, we summarize across replications for each method, for each metric,
+at each nominal threshold.
+
+```{r yeast-summarize}
+yeastdf <- dplyr::group_by(yeastdf, label, performanceMetric, alpha) 
+yeastdf <- dplyr::summarize(yeastdf,
+                            meanValue = mean(value),
+                            seValue = sd(value) / sqrt(n()))
+yeastdf <- dplyr::ungroup(yeastdf)
+```
+
+Now, we can plot the average and standard errors across replicates for each
+method. Here, we will just plot FDR and TPR.
+
+```{r yeast-plot-all, fig.width = 9, fig.height = 5}
+yeastdf %>%
+    dplyr::filter(performanceMetric %in% c("FDR", "TPR")) %>%
+    ggplot(aes(x = alpha, y = meanValue,
+               color = label,
+               ymin = meanValue - seValue,
+               ymax = meanValue + seValue)) + 
+    geom_point() +
+    geom_errorbar(width = .01 / 4, alpha = 1/4) +
+    geom_line(alpha = 1/2) +
+    scale_color_viridis_d("Method") +
+    scale_x_continuous(breaks = seq(0, 1, .01), limits = c(0, .11)) +
+    facet_wrap(~ performanceMetric, scales = 'free_y', nrow = 1) +
+    ylab("average across replicates") +
+    theme_bw() +
+    geom_abline(aes(intercept = i_, slope = s_), color = 'red', linetype = 2,
+                data = tibble(performanceMetric = 'FDR', i_ = 0, s_ = 1)) +
+    ggtitle("FDR and TPR across multiple-testing methods",
+            "yeast in silico experiment with informative covariate")
+```
+
+We have also included a red line to the FDR plot to assess whether methods
+are appropriately controlling the FDR at the nominal thresholds.
+
+# Adding Methods
+
+The summary objects made available with this packages were constructed using an older version
+of the `SummarizedBenchmark` package. Since then, functions have been added to the package
+for updating benchmark comparisons and adding new methods to an existing _SummarizedBenchmark_
+object. Unfortuntately, these functions cannot be used with the current objects made
+available with this package.
+
+However, the summary objects include both unadjusted p-values (as the `unadjusted` column) and
+corresponding independent covariate values (as the `ind_covariate` rowData column). These values
+can be used to apply new methods which only depend on these inputs. 
+
+```{r chip-show-data}
+dat <- tibble(pval = assay(chipres)[, "unadjusted"],
+              covariate = rowData(chipres)$ind_covariate)
+dat
+```
+
+To analyze this data using the `SummarizedBenchmark` package, we can
+construct a new _BenchDesign_ object with any collection of new methods
+to benchmark, and the above data as input. More details on the
+_SummarizedBenchmark_ package and the _BenchDesign_ class can be found in
+[the package vignettes](http://bioconductor.org/packages/SummarizedBenchmark/).
+
+As an illustration of how a new method could be applied to this data, we will
+re-apply the Benjamini-Hochberg correction and show that the results that we
+obtain in this re-analysis match the results reported in the loaded
+_SummarizedBenchmark_ object.
+
+We construct a _BenchDesign_ with a single method, `newBH`, and the data given above.
+
+```{r chip-new-benchdesign}
+bh_method <- BDMethod(x = p.adjust,
+                      params = rlang::quos(p = pval,
+                                           method = "BH"))
+new_design <- BenchDesign(newBH = bh_method, data = dat)
+new_design
+```
+
+To evaluate the benchmark experiment stored in the _BenchDesign_ object, we call
+`buildBench`.
+
+```{r chip-eval-buildBench}
+new_res <- buildBench(new_design)
+new_res
+```
+
+Now that we have a _SummarizedBenchmark_ object, we can evaluate performance
+metrics as before.
+
+```{r chip-new-metrics}
+new_res <- addPerformanceMetric(new_res,
+                                evalMetric = "rejections",
+                                assay = "default")
+new_df <- estimatePerformanceMetrics(new_res,
+                                     alpha = seq(0.01, 0.10, by = 0.01),
+                                     tidy = TRUE)
+```
+
+Finally, we subset on columns of interest and examine how many tests would be
+rejected using BH in our re-analysis.
+
+```{r chip-new-result}
+new_df <- dplyr::select(new_df, label, value, performanceMetric, alpha)
+new_df
+```
+
+We verify that this matches the number of rejections reported in the
+results from above.
+
+```{r chip-verify-bh}
+dplyr::filter(chipdf, label == "bh")
+```
+
+Since the results are now just data.frame objects with similar columns,
+they can be combined to compare new results with previous results.
+
+# Session Information
+
+```{r}
+sessionInfo()
+```

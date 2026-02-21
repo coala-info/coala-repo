@@ -1,0 +1,1 @@
+.bd-main .bd-content .bd-article-container:has(embed.interactive-figure) { max-width: 100%; /* default is 60em */ }

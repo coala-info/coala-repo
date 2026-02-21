@@ -1,0 +1,55 @@
+---
+name: magmax
+description: MAGmax is a specialized tool designed to maximize the recovery of genomes from metagenomic data.
+homepage: https://github.com/soedinglab/MAGmax
+---
+
+# magmax
+
+## Overview
+MAGmax is a specialized tool designed to maximize the recovery of genomes from metagenomic data. Unlike traditional dereplication tools that simply select a single representative bin, MAGmax can group related bins, merge them, and perform a targeted reassembly to produce a superior consensus genome. It is highly effective for consolidating fragmented bins across multiple samples into high-quality Metagenome-Assembled Genomes (MAGs).
+
+## Core Workflows
+
+### 1. Full Dereplication with Reassembly (Default)
+This is the most robust mode. It groups bins by sequence identity, merges them, and uses the original reads to reassemble a higher-quality bin.
+- **Required Inputs**: Bins directory (`-b`), Reads directory (`-r`), and Mapping ID directory (`-m`).
+- **Command**:
+  ```bash
+  magmax -b ./bins_dir -r ./reads_dir -m ./mapid_dir -f fasta -t 24
+  ```
+
+### 2. Quality-Based Selection (No Reassembly)
+Use this mode when you want to pick the single best bin from each cluster without the computational overhead of reassembly. It selects representatives based on a quality score: `completeness - 5 * contamination`.
+- **Required Inputs**: Bins directory (`-b`) only.
+- **Command**:
+  ```bash
+  magmax -b ./bins_dir --no-reassembly -f fasta -t 16
+  ```
+
+### 3. Sensitive Mode (Connectivity-Based)
+Use this mode to prioritize genomes that are most representative of the population (highest ANI connectivity) rather than just the highest quality score. This is useful for identifying dominant strains.
+- **Command**:
+  ```bash
+  magmax -b ./bins_dir --sensitive -f fasta
+  ```
+
+## Expert Tips and Best Practices
+
+### Optimizing Performance
+- **Pre-computed Quality**: If you have already run CheckM2, provide the report using `-q quality_report.tsv` to skip the internal quality assessment step.
+- **Pre-computed ANI**: If you have skani results (from `skani triangle -E`), provide them via `--anifile ani_edges` to bypass the clustering calculation.
+- **Thread Management**: Always specify `-t` to match your environment's CPU capacity, as the reassembly and ANI calculations are resource-intensive.
+
+### Handling Input Formats
+- **File Extensions**: Use `-f` to specify your bin extension (e.g., `fasta`, `fa`, `fna`).
+- **Sample Splitting**: If your input bins are not already organized or named by sample ID, use the `--split` flag to ensure clusters are handled correctly across the dataset.
+- **Assembler Choice**: While `spades` is the default and recommended assembler for the reassembly step, you can switch to `megahit` using `--assembler megahit` for faster but potentially less exhaustive results.
+
+### Threshold Tuning
+- **Completeness/Purity**: The defaults are 50% completeness (`-c 50`) and 95% purity (`-p 95`). For high-quality (HQ) MAG requirements, increase these to `-c 90 -p 95`.
+- **Clustering Stringency**: Adjust the ANI threshold for grouping bins using `-i`. The default is 99 (99% ANI).
+
+## Reference documentation
+- [MAGmax GitHub Repository](./references/github_com_soedinglab_MAGmax.md)
+- [MAGmax Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_magmax_overview.md)

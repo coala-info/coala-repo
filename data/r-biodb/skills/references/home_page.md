@@ -1,0 +1,624 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fceabiodb%2Fbiodb)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fceabiodb%2Fbiodb)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ceabiodb%2Fbiodb)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+This repository was archived by the owner on Dec 6, 2022. It is now read-only.
+
+[ceabiodb](/ceabiodb)
+/
+**[biodb](/ceabiodb/biodb)**
+Public archive
+
+* [Notifications](/login?return_to=%2Fceabiodb%2Fbiodb) You must be signed in to change notification settings
+* [Fork
+  2](/login?return_to=%2Fceabiodb%2Fbiodb)
+* [Star
+   13](/login?return_to=%2Fceabiodb%2Fbiodb)
+
+An R package framework for accessing biological and chemical databases and developing or extending new connectors.
+
+### License
+
+[AGPL-3.0 license](/ceabiodb/biodb/blob/master/LICENSE)
+
+[13
+stars](/ceabiodb/biodb/stargazers) [2
+forks](/ceabiodb/biodb/forks) [Branches](/ceabiodb/biodb/branches) [Tags](/ceabiodb/biodb/tags) [Activity](/ceabiodb/biodb/activity)
+
+[Star](/login?return_to=%2Fceabiodb%2Fbiodb)
+
+[Notifications](/login?return_to=%2Fceabiodb%2Fbiodb) You must be signed in to change notification settings
+
+* [Code](/ceabiodb/biodb)
+* [Issues
+  99](/ceabiodb/biodb/issues)
+* [Pull requests
+  1](/ceabiodb/biodb/pulls)
+* [Actions](/ceabiodb/biodb/actions)
+* [Projects
+  0](/ceabiodb/biodb/projects)
+* [Wiki](/ceabiodb/biodb/wiki)
+* [Security
+  0](/ceabiodb/biodb/security)
+* [Insights](/ceabiodb/biodb/pulse)
+
+Additional navigation options
+
+* [Code](/ceabiodb/biodb)
+* [Issues](/ceabiodb/biodb/issues)
+* [Pull requests](/ceabiodb/biodb/pulls)
+* [Actions](/ceabiodb/biodb/actions)
+* [Projects](/ceabiodb/biodb/projects)
+* [Wiki](/ceabiodb/biodb/wiki)
+* [Security](/ceabiodb/biodb/security)
+* [Insights](/ceabiodb/biodb/pulse)
+
+# ceabiodb/biodb
+
+master
+
+[Branches](/ceabiodb/biodb/branches)[Tags](/ceabiodb/biodb/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[1,544 Commits](/ceabiodb/biodb/commits/master/)   1,544 Commits | | |
+| [R](/ceabiodb/biodb/tree/master/R "R") | | [R](/ceabiodb/biodb/tree/master/R "R") |  |  |
+| [inst](/ceabiodb/biodb/tree/master/inst "inst") | | [inst](/ceabiodb/biodb/tree/master/inst "inst") |  |  |
+| [longtests](/ceabiodb/biodb/tree/master/longtests "longtests") | | [longtests](/ceabiodb/biodb/tree/master/longtests "longtests") |  |  |
+| [man](/ceabiodb/biodb/tree/master/man "man") | | [man](/ceabiodb/biodb/tree/master/man "man") |  |  |
+| [src](/ceabiodb/biodb/tree/master/src "src") | | [src](/ceabiodb/biodb/tree/master/src "src") |  |  |
+| [tests](/ceabiodb/biodb/tree/master/tests "tests") | | [tests](/ceabiodb/biodb/tree/master/tests "tests") |  |  |
+| [vignettes](/ceabiodb/biodb/tree/master/vignettes "vignettes") | | [vignettes](/ceabiodb/biodb/tree/master/vignettes "vignettes") |  |  |
+| [.BBSoptions](/ceabiodb/biodb/blob/master/.BBSoptions ".BBSoptions") | | [.BBSoptions](/ceabiodb/biodb/blob/master/.BBSoptions ".BBSoptions") |  |  |
+| [.Rbuildignore](/ceabiodb/biodb/blob/master/.Rbuildignore ".Rbuildignore") | | [.Rbuildignore](/ceabiodb/biodb/blob/master/.Rbuildignore ".Rbuildignore") |  |  |
+| [.gitignore](/ceabiodb/biodb/blob/master/.gitignore ".gitignore") | | [.gitignore](/ceabiodb/biodb/blob/master/.gitignore ".gitignore") |  |  |
+| [DESCRIPTION](/ceabiodb/biodb/blob/master/DESCRIPTION "DESCRIPTION") | | [DESCRIPTION](/ceabiodb/biodb/blob/master/DESCRIPTION "DESCRIPTION") |  |  |
+| [LICENSE](/ceabiodb/biodb/blob/master/LICENSE "LICENSE") | | [LICENSE](/ceabiodb/biodb/blob/master/LICENSE "LICENSE") |  |  |
+| [Makefile](/ceabiodb/biodb/blob/master/Makefile "Makefile") | | [Makefile](/ceabiodb/biodb/blob/master/Makefile "Makefile") |  |  |
+| [NAMESPACE](/ceabiodb/biodb/blob/master/NAMESPACE "NAMESPACE") | | [NAMESPACE](/ceabiodb/biodb/blob/master/NAMESPACE "NAMESPACE") |  |  |
+| [NEWS](/ceabiodb/biodb/blob/master/NEWS "NEWS") | | [NEWS](/ceabiodb/biodb/blob/master/NEWS "NEWS") |  |  |
+| [README.md](/ceabiodb/biodb/blob/master/README.md "README.md") | | [README.md](/ceabiodb/biodb/blob/master/README.md "README.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* AGPL-3.0 license
+
+# biodb package
+
+[![Codecov test coverage](https://camo.githubusercontent.com/d8307b68e568ab73e3014e233fcc2c7cea05e92c4faedce78fb94f157ed980d7/68747470733a2f2f636f6465636f762e696f2f67682f706b726f672f62696f64622f6272616e63682f6d61737465722f67726170682f62616467652e737667)](https://codecov.io/gh/pkrog/biodb?branch=master)
+
+An R package for connecting to chemical and biological databases.
+
+## Introduction
+
+*biodb* is a framework for developing database connectors. It is delivered with
+some non-remote connectors (for CSV file or SQLite db), but the main interest
+of the package is to ease development of your own connectors. Some connectors
+are already available in other packages (e.g.:
+[biodbChebi](https://github.com/pkrog/biodbChebi),
+[biodbHmdb](https://github.com/pkrog/biodbHmdb),
+[biodbKegg](https://github.com/pkrog/biodbKegg),
+[biodbLipidmaps](https://github.com/pkrog/biodbLipidmaps),
+[biodbUniprot](https://github.com/pkrog/biodbUniprot)) on GitHub.
+For now, the targeted databases are the ones that store molecules, proteins,
+lipids and MS spectra. However other type of databases (NMR database for
+instance) could also be targeted.
+
+With *biodb* you can:
+
+* Define your own database connector.
+* Access entries by accession number and let *biodb* download them for you.
+* Take advantage of the cache system, that saves the results of all sent requests for you. If you send again the same request, the cached result will be used instead of contacting the database. The cache system can be disabled.
+* Download locally a downloadable database and access entries by accession number locally.
+* Rely on *biodb* to access correctly the database, respecting the published access policy (i.e.: not sending too much requests). *biodb* uses a special class for scheduling requests on each database.
+* Switch from one database to another easily (providing they offer the same type of information), not changing a line in your code. This is because entries are populated with values found from the database, using always the same keys.
+* Search for MS and MSMS spectra by peaks in Mass spectra databases.
+* Export any database into a CSV file or record it into an SQLite file.
+
+## Installation
+
+Install the latest stable version using Bioconductor:
+
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install('biodb')
+```
+
+### Installing from GitHub
+
+You can install the latest development version of *biodb* from GitHub:
+
+```
+install.packages('devtools')
+devtools::install_github('pkrog/biodb', dependencies=TRUE)
+```
+
+### Installing extension packages
+
+Alongside *biodb* you can install the following R extension packages that use *biodb* for implementing connectors to online databases:
+
+* [biodbChebi](https://github.com/pkrog/biodbChebi) for accessing the [ChEBI](https://www.ebi.ac.uk/chebi/) database.
+* [biodbHmdb](https://github.com/pkrog/biodbHmdb) for accessing the [HMDB](http://www.hmdb.ca/) database.
+* [biodbKegg](https://github.com/pkrog/biodbKegg) for accessing the [KEGG](https://www.kegg.jp/) databases.
+* [biodbUniprot](https://github.com/pkrog/biodbUniprot) for accessing the [UniProt](https://www.uniprot.org/) database.
+
+Installation of one of those extension packages can be done with the following command (replace 'biodbKegg' with the name of the wanted package):
+
+```
+devtools::install_github('pkrog/biodbKegg', dependencies=TRUE)
+```
+
+### Installation with Bioconda
+
+**biodb** is part of [Bioconda](https://github.com/orgs/bioconda/dashboard), so you can install it using Conda. This means also that it is possible to install it automatically in Galaxy, for a tool, if the Conda system is enabled.
+
+## Databases and fields accessible with biodb
+
+The *biodb* package contains the following in-house database connectors:
+
+* Compound CSV File (an in-house database stored inside a CSV file).
+* Mass CSV File (an in-house database stored inside a CSV file).
+* Mass SQLite (an in-house database stored inside an SQLite file).
+
+Here are some of the fields accessible through the retrieved entries (more fields are defined in extension packages):
+
+* Chemical formula.
+* InChI.
+* InChI Key.
+* SMILES.
+* Common names and IUPAC names.
+* Charge.
+* Average mass.
+* Monoisotopic mass.
+* Molecular mass.
+* MS device.
+* MS Level.
+* MS mode.
+* MS precursor M/Z.
+* MS precursor annotation.
+* Peaks' M/Z values.
+* Peaks' intensities.
+* Peaks' relative intensities.
+* Attributions of peaks.
+* Compositions of peaks.
+* Peak table.
+* Chromatographic column name.
+* Chromatographic column length.
+* Chromatographic column diameter.
+* Chromatographic solvent.
+* Chromatographic retention time.
+* Chromatographic retention time unit.
+
+## Examples
+
+### Getting entries from a remote database
+
+Here is an example on how to retrieve entries from ChEBI database and get a
+data frames of them (you must first install both *biodb* and *biodbChebi*
+packages):
+
+```
+bdb <- boidb::newInst()
+chebi <- bdb$getFactory()$createConn('chebi')
+entries <- chebi$getEntry(c('2528', '7799', '15440'))
+bdb$entriesToDataframe(entries)
+```
+
+### Searching for a compound
+
+All compound databases (ChEBI, Compound CSV File, KEGG Compound, ...) can be searched for compounds using the same function. Once you have your connector instance, you just have to call `searchCompound()` on it:
+
+```
+myconn$searchCompound(name='phosphate')
+```
+
+The function will return a character vector containing all identifiers of matching entries.
+
+It is also possible to search by mass, choosing the mass field you want (if this mass particular field is handled by the database):
+
+```
+myconn$searchCompound(mass=230.02, mass.field='monoisotopic.mass', mass.tol=0.01)
+```
+
+Searching by both name and mass is also possible.
+
+```
+myconn$searchCompound(name='phosphate', mass=230.02, mass.field='monoisotopic.mass', mass.tol=0.01)
+```
+
+### Searching for a mass spectrum
+
+All mass spectra databases (Mass CSV File and Mass SQLite) can be searched for mass spectra using the same function `searchMsEntries()`:
+
+```
+myconn$searchMsEntries(mz.min=40, mz.max=41)
+```
+
+The function will return a character vector containing all identifiers of matching entries (i.e.: spectra containing at least one peak inside this M/Z range).
+
+### Annotating a mass spectrum
+
+Annotating a mass spectrum can be done either using a mass spectra database or a compound database.
+
+When using a mass spectra database, the function to call is `searchMsPeaks()`:
+
+```
+myMassConn$searchMsPeaks(myInputDataFrame, mz.tol=0.1, mz.tol.unit='plain', ms.mode='pos')
+```
+
+It returns a new data frame containing the annotations.
+
+When using a compound database, the function to call is `annotateMzValues()`:
+
+```
+myCompoundConn$annotateMzValues(myInputDataFrame, mz.tol=0.1, mz.tol.unit='plain', ms.mode='neg')
+```
+
+It returns a new data frame containing the annotations.
+
+### Defining a new field
+
+Defining a new field for a database is done in two steps, using definitions written inside a YAML file.
+
+First we define the new field. Here we define the ChEBI database field for stars indicator (quality curation indicator):
+
+```
+fields:
+  n_stars:
+    description: The ChEBI example stars indicator.
+    class: integer
+```
+
+Then we define the parsing expression to use in ChEBI connector in order to parse the field's value:
+
+```
+databases:
+  chebi:
+    parsing.expr:
+      n_stars: //chebi:return/chebi:entityStar
+```
+
+We now have just to load the YAML file definition into biodb (in extension packages, this is done automatically):
+
+```
+mybiodb$loadDefinitions('my_definitions.yml')
+```
+
+Parsing may be more complex for some fields or databases. In that case it is possible to write specific code in the database entry class for parsing these fields.
+
+### Defining a new connector
+
+Defining a new connector is done by writing two RC classes and a YAML definition:
+
+* An RC class for the connector, named `MyDatabaseConn.R`.
+* An RC class for the entry, named `MyDatabaseEntry.R`.
+* A definition YAML file containing metadata about the new connector, like:
+
+* The URLs (main URL, web service base URL, etc.) for a remote database.
+* The timing for querying a remote database (maximum number of requests per second).
+* The name.
+* The parsing expressions used for parsing the entry fields.
+* The type of content retrieved from the database when downloading an entry (plain text, XML, HTML, JSON, ...).
+
+For a good starting example of defining a new remote connector, see *biodbChebi* the ChEBI extension for *biodb* at <https://github.com/pkrog/biodbChebi>. In particular:
+
+* [The connector class](https://github.com/pkrog/biodbChebi/blob/master/R/ChebiConn.R).
+* [The entry class](https://github.com/pkrog/biodbChebi/blob/master/R/ChebiEntry.R).
+* [The definitions file](https://github.com/pkrog/biodbChebi/blob/master/inst/definitions.yml).
+
+## Using the extension generator
+
+A set of classes and methods are provided by *biodb* to generate a skeleton of
+a new repository for a new connector. The easiest way to use this feature is
+through the method `biodb::genNewExtPkg()`.
+Here is an example which creates an new repository for a new connector to the
+Foo remote database on how to use it with some comments:
+
+```
+biodb::genNewExtPkg(
+  path      = 'the/path/to/biodbFoo', # The repository folder.
+# pkgName   = 'myName',       # By default the laste folder of `path` is used
+                              # so you do not need to modify it.
+  email     = 'your@e.mail',  # The author's email.
+  dbName    = 'foo.db',       # The connector name that will be used by biodb.
+  dbTitle   = 'Foo database', # A short description of the connector's database.
+# pkgLicense = '...',         # The generated license is always AGPL-3.
+  firstname = 'Your firstname',
+  lastname  = 'Your lastname',
+  connType  = 'compound',     # Use 'mass' for an MS database or 'plain' for any
+                              # other type. Run `biodb::getConnTypes()` to get a
+                              # full list of all available types.
+  entryType = 'txt',          # Other possible types are: 'plain', 'csv',
+                              # 'html', 'json', 'list', 'sdf' and  'xml'.
+                              # Run `biodb::getEntryTypes()` to get a full list
+                              # of all available types.
+  editable  = FALSE,          # If the database is editable in memory.
+  writable  = FALSE,          # If the database is writable on disk (like a CSV
+                              # file).
+  remote    = TRUE,           # If the database is accessed through web protocol
+                              # like HTTPS, as oppose to local database stored
+                              # inside an SQLite file or a CSV file.
+  downloadable = FALSE,       # Set it to TRUE for a remote database that allows
+                              # the download of its full content (e.g.: through
+                              # the download of a zip file).
+  makefile     = TRUE,        # Generate a Makefile file, useful for maintenance
+                              # UNIX/Linux systems.
+  rcpp         = FALSE,       # If set to TRUE, the package will be configured
+                              # to use Rcpp and skeleton files will be generated
+                              # with examples and test examples.
+# vignetteName = '...',       # By default the vignette name will be the package
+                              # name.
+  githubRepos  = 'id/repos'   # The repository URL on GitHub (e.g.:
+                              # 'pkrog/biodbChebi').
+)
+```
+
+## Documentation
+
+Once in R, you can get an introduction to the package with:
+
+```
+?biodb
+```
+
+Then each class has its own documentation. For instance, to get help about the
+`BiodbFactory` class:
+
+```
+?biodb::BiodbFactory
+```
+
+Several vignettes are also available. To get a list of them run:
+
+```
+vignette(package='biodb')
+```
+
+To open a vignette in a browser, use its name:
+
+```
+vignette('new_connector', package='biodb')
+```
+
+## Contributing
+
+If you wish to contribute to the *biodb* package, you first need to create an account under GitHub. You can then either ask to become a contributor or fork the project and submit a merge request.
+
+Debugging, enhancement or creation of a database connector or an entry parser are of course most welcome.
+
+## About
+
+An R package framework for accessing biological and chemical databases and developing or extending new connectors.
+
+### Topics
+
+[r](/topics/r "Topic: r")
+[chemistry](/topics/chemistry "Topic: chemistry")
+[cheminformatics](/topics/cheminformatics "Topic: cheminformatics")
+[biology](/topics/biology "Topic: biology")
+[databases](/topics/databases "Topic: databases")
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[AGPL-3.0 license](#AGPL-3.0-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/ceabiodb/biodb/activity)
+
+[Custom properties](/ceabiodb/biodb/custom-properties)
+
+### Stars
+
+[**13**
+stars](/ceabiodb/biodb/stargazers)
+
+### Watchers
+
+[**2**
+watching](/ceabiodb/biodb/watchers)
+
+### Forks
+
+[**2**
+forks](/ceabiodb/biodb/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fceabiodb%2Fbiodb&report=ceabiodb+%28user%29)
+
+## [Releases](/ceabiodb/biodb/releases)
+
+[23
+tags](/ceabiodb/biodb/tags)
+
+## [Packages 0](/orgs/ceabiodb/packages?repo_name=biodb)
+
+No packages published
+
+## [Contributors 5](/ceabiodb/biodb/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [R
+  94.6%](/ceabiodb/biodb/search?l=r)
+* [C++
+  2.1%](/ceabiodb/biodb/search?l=c%2B%2B)
+* [TeX
+  2.0%](/ceabiodb/biodb/search?l=tex)
+* [Makefile
+  1.3%](/ceabiodb/biodb/search?l=makefile)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

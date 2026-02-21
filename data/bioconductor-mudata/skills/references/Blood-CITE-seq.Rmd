@@ -1,0 +1,184 @@
+---
+title: "CITE-seq data with CiteFuse and MuData"
+author:
+- name: "Danila Bredikhin"
+  affiliation: "European Molecular Biology Laboratory, Heidelberg, Germany"
+  email: "danila.bredikhin@embl.de"
+- name: "Ilia Kats"
+  affiliation: "German Cancer Research Center, Heidelberg, Germany"
+  email: "i.kats@dkfz-heidelberg.de"
+date: "`r Sys.Date()`"
+output:
+  BiocStyle::html_document:
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{Blood CITE-seq with MuData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>"
+)
+```
+
+## Introduction
+
+CITE-seq data provide RNA and surface protein counts for the same cells. 
+This tutorial shows how MuData can be integrated into with Bioconductor 
+workflows to analyse CITE-seq data.
+
+## Installation
+
+The most recent dev build can be installed from GitHub:
+
+```{r, eval = FALSE}
+library(remotes)
+remotes::install_github("ilia-kats/MuData")
+```
+
+Stable version of `MuData` will be available in future bioconductor versions.
+
+## Loading libraries
+
+```{r setup, message = FALSE}
+library(MuData)
+library(SingleCellExperiment)
+library(MultiAssayExperiment)
+library(CiteFuse)
+library(scater)
+
+library(rhdf5)
+```
+
+## Loading data
+
+We will use CITE-seq data available within 
+[`CiteFuse` Bioconductor package](http://www.bioconductor.org/packages/release/bioc/html/CiteFuse.html).
+
+```{r}
+data("CITEseq_example", package = "CiteFuse")
+lapply(CITEseq_example, dim)
+```
+
+This dataset contains three matrices — one with `RNA` counts, one with 
+antibody-derived tags (`ADT`) counts and one with hashtag oligonucleotide 
+(`HTO`) counts.
+
+## Processing count matrices
+
+While CITE-seq analysis workflows such as 
+[CiteFuse](http://www.bioconductor.org/packages/release/bioc/vignettes/CiteFuse/inst/doc/CiteFuse.html) 
+should be consulted for more details, below we exemplify simple data 
+transformations in order to demonstrate how their output can be saved to 
+an H5MU file later on.
+
+Following the CiteFuse tutorial, we start with creating a `SingleCellExperiment` 
+object with the three matrices:
+
+```{r}
+sce_citeseq <- preprocessing(CITEseq_example)
+sce_citeseq
+```
+
+We will add a new assay with normalised RNA counts:
+
+```{r}
+sce_citeseq <- scater::logNormCounts(sce_citeseq)
+sce_citeseq  # new assay: logcounts
+```
+
+To the ADT modality, we will add an assay with normalised counts:
+
+```{r}
+sce_citeseq <- CiteFuse::normaliseExprs(
+  sce_citeseq, altExp_name = "ADT", transform = "log"
+)
+altExp(sce_citeseq, "ADT")  # new assay: logcounts
+```
+
+We will also generate reduced dimensions:
+
+```{r}
+sce_citeseq <- scater::runPCA(
+  sce_citeseq, exprs_values = "logcounts", ncomponents = 20
+)
+```
+
+```{r}
+scater::plotReducedDim(sce_citeseq, dimred = "PCA", 
+                       by_exprs_values = "logcounts", colour_by = "CD27")
+```
+
+## Making a MultiAssayExperiment object
+
+An appropriate structure for multimodal datasets is 
+[`MultiAssayExperiment`](https://bioconductor.org/packages/MultiAssayExperiment/).
+
+We will make a respective MultiAssayExperiment object from `sce_citeseq`:
+
+```{r}
+experiments <- list(
+  ADT = altExp(sce_citeseq, "ADT"),
+  HTO = altExp(sce_citeseq, "HTO")
+)
+
+# Drop other modalities from sce_citeseq
+altExp(sce_citeseq) <- NULL
+experiments[["RNA"]] <- sce_citeseq
+
+mae <- MultiAssayExperiment(experiments)
+```
+
+## Writing to H5MU
+
+We can write the contents of the MultiAssayExperiment object into an H5MU file:
+
+```{r}
+writeH5MU(mae, "citefuse_example.h5mu")
+```
+
+We can check that all the modalities were written to the file:
+
+```{r}
+h5 <- rhdf5::H5Fopen("citefuse_example.h5mu")
+h5ls(H5Gopen(h5, "mod"), recursive = FALSE)
+```
+
+... both assays for ADT — raw counts are stored in `X` and normalised counts 
+are in the corresponding layer:
+
+```{r}
+h5ls(H5Gopen(h5, "mod/ADT"), FALSE)
+h5ls(H5Gopen(h5, "mod/ADT/layers"), FALSE)
+```
+
+... as well as reduced dimensions (PCA):
+
+```{r}
+h5ls(H5Gopen(h5, "mod/RNA/obsm"), FALSE)
+# There is an alternative way to access groups:
+# h5&'mod'&'RNA'&'obsm'
+rhdf5::H5close()
+```
+
+## References
+
+- [Muon: multimodal omics analysis framework](https://www.biorxiv.org/content/10.1101/2021.06.01.445670) preprint
+
+- [mudata](https://mudata.readthedocs.io/) (Python) documentation
+
+- muon [documentation](https://muon.readthedocs.io/) and [web page](https://gtca.github.io/muon/)
+
+- Kim HJ, Lin Y, Geddes TA, Yang P, Yang JYH (2020). “CiteFuse enables multi-modal analysis of CITE-seq data.” Bioinformatics, 36(14), 4137–4143. https://doi.org/10.1093/bioinformatics/btaa282.
+
+- Ramos M, Schiffer L, Re A, Azhar R, Basunia A, Cabrera CR, Chan T, Chapman P, Davis S, Gomez-Cabrero D, Culhane AC, Haibe-Kains B, Hansen K, Kodali H, Louis MS, Mer AS, Reister M, Morgan M, Carey V, Waldron L (2017). “Software For The Integration Of Multi-Omics Experiments In Bioconductor.” Cancer Research, 77(21); e39-42.
+
+
+## Session Info
+
+```{r}
+sessionInfo()
+```

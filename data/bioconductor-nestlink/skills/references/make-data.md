@@ -1,0 +1,439 @@
+# make-data 4 ExperimentHub
+
+Christian Panse1\*
+
+1Functional Genomics Center Zurich, UZH|ETHZ
+
+\*cp@fgcz.ethz.ch
+
+#### 2018-12-13
+
+#### Abstract
+
+Mass spectrometry data are available via ProteomeXchange with identifier
+[PXD009301](https://www.ebi.ac.uk/pride/archive/projects/PXD009301)
+NGS datasets are available at the European Nucleotide Archive (ENA)
+under accession number
+[PRJEB25673](https://www.ebi.ac.uk/ena/data/search?query=PRJEB25673).
+NGS and MS data were handled and
+annotated using the [B-Fabric](https://fgcz-bfabric.uzh.ch) Türker et al. ([2010](#ref-bfabric))
+information management system and are available
+for registered users under the project identifiers 1644 and 1875.
+The following content is descibed in more detail in Egloff et al. ([2018](#ref-NestLink))
+(under review NMETH-A35040).
+
+# Contents
+
+* [1 Timeline Plots](#timeline-plots)
+* [2 Make Data (replaces `make-data.R`)](#make-data-replaces-make-data.r)
+  + [2.1 `NL42_100K.fastq.gz`](#nl42_100k.fastq.gz)
+  + [2.2 `knownNB.txt`](#knownnb.txt)
+  + [2.3 `nanobodyFlycodeLinkage.RData`](#nanobodyflycodelinkage.rdata)
+  + [2.4 `NB.tryptic` and `FC.tryptic`](#nb.tryptic-and-fc.tryptic)
+  + [2.5 `F255744.RData` and `WU160118.RData`](#f255744.rdata-and-wu160118.rdata)
+    - [2.5.1 Mass spec data](#mass-spec-data)
+    - [2.5.2 Compute the peptide spectrum matches](#compute-the-peptide-spectrum-matches)
+    - [2.5.3 Workflow available through B-Fabric](#workflow-available-through-b-fabric)
+    - [2.5.4 make-data for NestLink](#make-data-for-nestlink)
+  + [2.6 `PGexport2_normalizedAgainstSBstandards_Peptides.csv`](#pgexport2_normalizedagainstsbstandards_peptides.csv)
+* [3 Uploading to S3](#uploading-to-s3)
+* [4 Overview/Getting started using Bioconductor *ExperimentHub*](#overviewgetting-started-using-bioconductor-experimenthub)
+* [5 Session info](#session-info)
+* [References](#references)
+
+# 1 Timeline Plots
+
+The package contains only a subset of the most important data generated over
+a period of five years. To get an impression an overview of all annotated sample (S) and workunits (W) in the [B-Fabric](https://fgcz-bfabric.uzh.ch) system, Türker et al. ([2010](#ref-bfabric)), is graphed in the timeline plots.
+
+the NGS data p1644
+![](data:image/jpeg;base64...)
+
+the mass spec data p1875
+![](data:image/jpeg;base64...)
+
+# 2 Make Data (replaces `make-data.R`)
+
+## 2.1 `NL42_100K.fastq.gz`
+
+Sample NGS data contains 100K merged MiSeq reads that demonstrate the linkage
+between nanobodies (NB) and flycodes (FC) in FASTQ.
+
+```
+NL42_100K <- NestLink:::.getReadsFromFastq("inst/extdata/NL42_100K.fastq.gz")
+save(NL42_100K, file="inst/extdata/NestLink_NL42_100K.RData")
+```
+
+## 2.2 `knownNB.txt`
+
+An optional part of the NestLink workflow is the usage of known nanobodies
+in the sequencing experiment to estimate sensitity and specificity levels.
+This example file contains nucleotide sequences of nanobodies that should be
+detectable in this experiment. In the later workflow, these nanabodies are
+highlighted and labeled as known NB.
+
+## 2.3 `nanobodyFlycodeLinkage.RData`
+
+NGS ground truth derived by applying the function `runNGSAnalysis`
+to the two previous files.
+
+```
+expFile <- query(eh, c("NestLink", "NL42_100K.fastq.gz"))[[1]]
+expect_true(file.exists(expFile))
+scratchFolder <- tempdir()
+setwd(scratchFolder)
+
+knownNB_File <- query(eh, c("NestLink", "knownNB.txt"))[[1]]
+knownNB_data <- read.table(knownNB_File,
+                           sep='\t',
+                           header = TRUE,
+                           row.names = 1,
+                           stringsAsFactors = FALSE)
+
+knownNB <- Biostrings::translate(DNAStringSet(knownNB_data$Sequence))
+names(knownNB) <- rownames(knownNB_data)
+knownNB <- sapply(knownNB, toString)
+
+param <- list()
+param[['NB_Linker1']] <- "GGCCggcggGGCC"
+param[['NB_Linker2']] <- "GCAGGAGGA"
+param[['ProteaseSite']] <- "TTAGTCCCAAGA"
+param[['FC_Linker']] <- "GGCCaaggaggcCGG"
+param[['knownNB']] <- knownNB
+param[['nReads']] <- 100
+param[['minRelBestHitFreq']] <- 0.8
+param[['minConsensusScore']] <- 0.9
+param[['maxMismatch']] <- 1
+param[['minNanobodyLength']] <- 348
+param[['minFlycodeLength']] <- 33
+param[['FCminFreq']] <- 1
+
+nanobodyFlycodeLinkage.RData <- runNGSAnalysis(file = expFile[1], param)
+```
+
+## 2.4 `NB.tryptic` and `FC.tryptic`
+
+Both files are the output of the previous NGS step generating the linkage between NBs and FCs.
+
+* <https://fgcz-gstore.uzh.ch/projects/p1644/analysis_20170609_o3040/p1644o3482-4_S4.extendedFrags_uniqNB2FC.txt>
+* <https://fgcz-gstore.uzh.ch/projects/p1644/analysis_20170609_o3040/p1644o3482-5_S5.extendedFrags_uniqNB2FC.txt>
+
+The files are used to demonstrate the detectability of the AA sequences.
+
+The wrapper functions are extended by the SSRC prediction and the parent ion mass (pim) determined by using *[protViz](https://CRAN.R-project.org/package%3DprotViz)*.
+
+The column `ESP_Prediction` was generated by using the service from <https://genepattern.broadinstitute.org>, see also Fusaro et al. ([2009](#ref-pmid19169245)).
+
+```
+library(NestLink)
+NB <- getNB()
+FC <- getFC()
+```
+
+The first ten lines of each table is shown below:
+
+| peptide | ESP\_Prediction | cond | pim | ssrc | peptideLength |
+| --- | --- | --- | --- | --- | --- |
+| AAAGITYYADSVK | 0.82378 | NB | 1329.6685 | 21.93845 | 13 |
+| AACCPVAR | 0.39342 | NB | 904.4127 | 5.56465 | 8 |
+| AADPGSWGQGTPVTVSSELK | 0.64844 | NB | 1986.9767 | 26.10345 | 20 |
+| AADYYYGMNHWGK | 0.15954 | NB | 1575.6685 | 24.80345 | 13 |
+| AANPFGLVQGFGSWGK | 0.44514 | NB | 1635.8278 | 40.19691 | 16 |
+| AAPDYWGQGTPVTVSSELK | 0.39622 | NB | 2005.9865 | 31.76845 | 19 |
+
+|  | peptide | ESP\_Prediction | cond | pim | ssrc | peptideLength |
+| --- | --- | --- | --- | --- | --- | --- |
+| 120 | GSAAAAADSWLTVR | 0.75450 | FC | 1375.696 | 27.80445 | 14 |
+| 121 | GSAAAAATDWLTVR | 0.76422 | FC | 1389.712 | 29.00445 | 14 |
+| 122 | GSAAAAATGWLTVR | 0.65522 | FC | 1331.707 | 28.60445 | 14 |
+| 123 | GSAAAAATVWLR | 0.65496 | FC | 1173.637 | 29.10445 | 12 |
+| 124 | GSAAAAAYEWLTVR | 0.72754 | FC | 1465.743 | 33.10445 | 14 |
+| 125 | GSAAAADAAWQEGGR | 0.53588 | FC | 1417.645 | 11.70445 | 15 |
+
+## 2.5 `F255744.RData` and `WU160118.RData`
+
+### 2.5.1 Mass spec data
+
+the mass spec files below are available through
+[ProteomeXchange PXD009301](https://www.ebi.ac.uk/pride/archive/projects/PXD009301).
+
+### 2.5.2 Compute the peptide spectrum matches
+
+the mass spectra were assigned to peptide sequences using the most important
+parameter listed in the table
+below and the Matrix Science’s Mascot Server Perkins et al. ([1999](#ref-pmid10612281)) version 2.5.
+
+| Parameter | Value |
+| --- | --- |
+| COM | 170819\_MS1708116\_NL5idx4to5\_Competition2BG\_db8\_db10\_swissprot\_d\_merge |
+| FASTA 1 | [p1875\_db8\_20160704.fasta](http://fgcz-ms.uzh.ch/fasta/p1875_db8_20160704.fasta) |
+| FASTA 2 | [p1875\_db10\_20170817.fasta](http://fgcz-ms.uzh.ch/fasta/p1875_db10_20170817.fasta) |
+| TOL | 10 |
+| TOLU | ppm |
+| ITOL | 0.6 |
+| ITOLU | Da |
+| USERNAME | egloffp |
+| CHARGE | 2+ |
+| IT\_MODS | Deamidated (NQ),Oxidation (M) |
+| INSTRUMENT | ESI-TRAP |
+| release | fgcz\_swissprot\_d\_20140403.fasta |
+
+The results were exported as XML.
+The XML was parsed and exported as data.frame using *[protViz](https://CRAN.R-project.org/package%3DprotViz)* Panse and Grossmann ([2019](#ref-protViz)) function `protViz:::as.data.frame.mascot`.
+
+### 2.5.3 Workflow available through B-Fabric
+
+The above-described results and workflows are available for registered
+users in B-Fabric.
+However, it is not necessary to access B-Fabric in order to use this package.
+
+* Go to from <http://fgcz-bfabric.uzh.ch>
+* Search for [workunit id 160118](https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-workunit.html?id=160118)
+* Download the [resource with id 444589](https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-resource.html?id=444589)
+* [p1875\_db8\_20160704.fasta](http://fgcz-ms.uzh.ch/fasta/p1875_db8_20160704.fasta)
+* [p1875\_db10\_20170817.fasta](http://fgcz-ms.uzh.ch/fasta/p1875_db10_20170817.fasta)
+
+### 2.5.4 make-data for NestLink
+
+The following code snippet was executed to generate the data set shiped with the
+*[NestLink](https://bioconductor.org/packages/3.22/NestLink)* package.
+
+Here only the metadata were extracted (no MS2).
+
+```
+load("~/Downloads/444589.RData")
+library(protViz)
+library(NestLink)
+WU160118 <- do.call('rbind', lapply(list("F255737", "F255744", "F255747",
+  "F255749", "F255751", "F255760", "F255761", "F255762"),
+  function(datfilename){
+      df <- as.data.frame.mascot(get(datfilename))
+      df$datfilename <- datfilename
+      df
+    }
+  ))
+save(WU160118, file = "../inst/extdata/WU160118.RData",
+     compress = TRUE, compression_level = 9)
+```
+
+The data ships with the *[NestLink](https://bioconductor.org/packages/3.22/NestLink)* package and can be browsed using
+the following code snippet:
+
+```
+library(ExperimentHub)
+eh <- ExperimentHub();
+load(query(eh, c("NestLink", "WU160118.RData"))[[1]])
+class(WU160118)
+```
+
+```
+## [1] "data.frame"
+```
+
+```
+PATTERN <- "^GS[ASTNQDEFVLYWGP]{7}(WR|WLTVR|WQEGGR|WLR|WQSR)$"
+idx <- grepl(PATTERN, WU160118$pep_seq)
+WU <- WU160118[idx & WU160118$pep_score > 25,]
+```
+
+| x |
+| --- |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_02\_IMACelution.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_03\_IMACelution.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_05\_HiLoadElution.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_04\_HiLoadElution.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_08\_MaxBindingBG.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_07\_MaxBindingBG.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_09\_MaxBinding.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_10\_MaxBinding.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_12\_Competition1.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_13\_Competition1.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_14\_Competition1BG.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_15\_Competition1BG.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_17\_Competition2.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_18\_Competition2.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_19\_Competition2BG.raw” |
+| “S:/p1875/Proteomics/FUSION\_2/egloffp\_20170814\_NL5idx4to5/20170814\_20\_Competition2BG.raw” |
+
+## 2.6 `PGexport2_normalizedAgainstSBstandards_Peptides.csv`
+
+contains mass spectrometry based label free quantitative (LFQ) results of nanobodies expressed in SMEG and COLI species.
+
+* Workunit : 158716 - QEXACTIVEHF\_1
+
+  + `20170919_16_62465_nl5idx1-3_6titratecoli.raw`
+  + `20170919_05_62465_nl5idx1-3_6titratecoli.raw`
+* Workunit : 158717 - QEXACTIVEHF\_1
+
+  + `20170919_14_62466_nl5idx1-3_7titratesmeg.raw`
+  + `20170919_09_62466_nl5idx1-3_7titratesmeg.raw`
+
+Two LC-MS/MS runs were aligned in Progenesis QI (Nonlinear Dynamics) with an
+alignment score of 93.1 %, followed by peak picking with an allowed ion
+charge of +2 to +5.
+
+# 3 Uploading to S3
+
+```
+#!/bin/bash
+
+aws --profile AnnotationContributor s3 cp NestLink/F255744.RData s3://annotation-contributor/NestLink/F255744.RData --acl public-read
+
+aws --profile AnnotationContributor s3 cp NestLink/WU160118.RData s3://annotation-contributor/NestLink/WU160118.RData --acl public-read
+
+aws --profile AnnotationContributor s3 cp NestLink s3://annotation-contributor/NestLink --recursive --acl public-read
+```
+
+# 4 Overview/Getting started using Bioconductor *[ExperimentHub](https://bioconductor.org/packages/3.22/ExperimentHub)*
+
+load metadata
+
+```
+fl <- system.file("extdata", "metadata.csv", package='NestLink')
+kable(metadata <- read.csv(fl, stringsAsFactors=FALSE))
+```
+
+| Title | Description | BiocVersion | Genome | SourceType | SourceUrl | SourceVersion | Species | TaxonomyId | Coordinate\_1\_based | DataProvider | Maintainer | RDataClass | DispatchClass | RDataPath | Tags | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Sample NGS NB FC linkage data | Sample NGS demonstratig the linkage between nanobodies (NB) and flycodes (FC). data in FASTQ | 3.9 | NA | FASTQ | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-project.html?id=1644> | Nov 28 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Lennart Opitz lopitz@fgcz.ethz.ch | DNAStringSet | FilePath | NestLink/NL42\_100K.fastq.gz | NA | md5=4a13c5c61a5b29f4fd8830c1c15419b6; |
+| Flycodes tryptic digested | Flycodes tryptic digested amino acid sequences with ESP\_Prediction score. | 3.9 | NA | TXT | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-project.html?id=1875> | Nov 28 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Christian Panse cp@fgcz.ethz.ch | data.frame | FilePath | NestLink/FC.tryptic | NA | md5=f6faa7458350ce1805bec30e9ffdeaae; |
+| Nanobodies tryptic digested | Nanobodies tryptic digested amino acid sequences with ESP\_Prediction score. | 3.9 | NA | TXT | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-project.html?id=1875> | Nov 28 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Christian Panse cp@fgcz.ethz.ch | data.frame | FilePath | NestLink/NB.tryptic | NA | md5=db85a806c5151113536b710d566d9cf3; |
+| FASTA as ground-truth for unit testing | FASTA data as ground-truth for unit testing. | 3.9 | NA | RData | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-project.html?id=1644> | Nov 28 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Lennart Opitz lopitz@fgcz.ethz.ch | data.frame | FilePath | NestLink/nanobodyFlycodeLinkage.RData | NA | md5=57b2756fb0ebcf73d4036846580cb5b2; |
+| Known nanobodies | Known nanobodies as nucleic acid sequences. | 3.9 | NA | TXT | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-project.html?id=1644> | Nov 28 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Lennart Opitz lopitz@fgcz.ethz.ch | data.frame | FilePath | NestLink/knownNB.txt | NA | md5=003bf82c58f0a96a2bd945d171dc907c; |
+| Quantitaive results for SMEG and COLI | Mass spectrometry based label free quantitative results of nanobodies expressed in SMEG and COLI species. | 3.9 | NA | CSV | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-project.html?id=1875> | Nov 28 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Christian Panse cp@fgcz.ethz.ch | data.frame | FilePath | NestLink/PGexport2\_normalizedAgainstSBstandards\_Peptides.csv | NA | md5=0ca525d0a65d4938f0cbc785b7e0d2d3; bfabric WU158716, WU158717 |
+| F255744 Mascot Search result | F255744 peptide spectrum matches (PSMs) of Flycodes. | 3.9 | NA | TXT | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-resource.html?id=409912> | Dec 13 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Christian Panse cp@fgcz.ethz.ch | data.frame | FilePath | NestLink/F255744.RData | NA | md5=d5e4d13e9ecba4231d1808c6bb0bb454; R409912 |
+| WU160118 Mascot Search results | WU160118 peptide spectrum matches (PSMs) Flycodes. | 3.9 | NA | TXT | <https://fgcz-bfabric.uzh.ch/bfabric/userlab/show-workunit.html?id=160118> | Dec 13 2018 | NA | NA | NA | Functional Genomics Center Zurich (FGCZ) | Markus Seeger m.seeger@imm.uzh.ch, Pascal Egloff p.egloff@imm.uzh.ch, Christian Panse cp@fgcz.ethz.ch | data.frame | FilePath | NestLink/WU160118.RData | NA | md5=a17f4505e322d440bc0e9edf8e5277bb; bfabric WU160118 |
+
+query and load *[NestLink](https://bioconductor.org/packages/3.22/NestLink)* package data from aws s3
+
+```
+library(ExperimentHub)
+
+eh <- ExperimentHub();
+query(eh, "NestLink")
+```
+
+```
+## ExperimentHub with 8 records
+## # snapshotDate(): 2025-10-29
+## # $dataprovider: Functional Genomics Center Zurich (FGCZ)
+## # $species: NA
+## # $rdataclass: data.frame, DNAStringSet
+## # additional mcols(): taxonomyid, genome, description,
+## #   coordinate_1_based, maintainer, rdatadateadded, preparerclass, tags,
+## #   rdatapath, sourceurl, sourcetype
+## # retrieve records with, e.g., 'object[["EH2063"]]'
+##
+##            title
+##   EH2063 | Sample NGS NB FC linkage data
+##   EH2064 | Flycodes tryptic digested
+##   EH2065 | Nanobodies tryptic digested
+##   EH2066 | FASTA as ground-truth for unit testing
+##   EH2067 | Known nanobodies
+##   EH2068 | Quantitaive results for SMEG and COLI
+##   EH2069 | F255744 Mascot Search result
+##   EH2070 | WU160118 Mascot Search results
+```
+
+```
+load(query(eh, c("NestLink", "F255744.RData"))[[1]])
+dim(F255744)
+```
+
+```
+## [1] 15655    21
+```
+
+```
+load(query(eh, c("NestLink", "WU160118.RData"))[[1]])
+dim(WU160118)
+```
+
+```
+## [1] 128390     22
+```
+
+# 5 Session info
+
+Here is the compiled output of `sessionInfo()`:
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods
+## [8] base
+##
+## other attached packages:
+##  [1] knitr_1.50                  scales_1.4.0
+##  [3] ggplot2_4.0.0               NestLink_1.26.0
+##  [5] ShortRead_1.68.0            GenomicAlignments_1.46.0
+##  [7] SummarizedExperiment_1.40.0 Biobase_2.70.0
+##  [9] MatrixGenerics_1.22.0       matrixStats_1.5.0
+## [11] Rsamtools_2.26.0            GenomicRanges_1.62.0
+## [13] BiocParallel_1.44.0         protViz_0.7.9
+## [15] gplots_3.2.0                Biostrings_2.78.0
+## [17] Seqinfo_1.0.0               XVector_0.50.0
+## [19] IRanges_2.44.0              S4Vectors_0.48.0
+## [21] ExperimentHub_3.0.0         AnnotationHub_4.0.0
+## [23] BiocFileCache_3.0.0         dbplyr_2.5.1
+## [25] BiocGenerics_0.56.0         generics_0.1.4
+## [27] BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##  [1] DBI_1.2.3            bitops_1.0-9         deldir_2.0-4
+##  [4] httr2_1.2.1          rlang_1.1.6          magrittr_2.0.4
+##  [7] compiler_4.5.1       RSQLite_2.4.3        mgcv_1.9-3
+## [10] png_0.1-8            vctrs_0.6.5          pwalign_1.6.0
+## [13] pkgconfig_2.0.3      crayon_1.5.3         fastmap_1.2.0
+## [16] magick_2.9.0         labeling_0.4.3       caTools_1.18.3
+## [19] rmarkdown_2.30       tinytex_0.57         purrr_1.1.0
+## [22] bit_4.6.0            xfun_0.54            cachem_1.1.0
+## [25] cigarillo_1.0.0      jsonlite_2.0.0       blob_1.2.4
+## [28] DelayedArray_0.36.0  jpeg_0.1-11          parallel_4.5.1
+## [31] R6_2.6.1             bslib_0.9.0          RColorBrewer_1.1-3
+## [34] jquerylib_0.1.4      Rcpp_1.1.0           bookdown_0.45
+## [37] splines_4.5.1        Matrix_1.7-4         tidyselect_1.2.1
+## [40] dichromat_2.0-0.1    abind_1.4-8          yaml_2.3.10
+## [43] codetools_0.2-20     hwriter_1.3.2.1      curl_7.0.0
+## [46] lattice_0.22-7       tibble_3.3.0         withr_3.0.2
+## [49] KEGGREST_1.50.0      S7_0.2.0             evaluate_1.0.5
+## [52] pillar_1.11.1        BiocManager_1.30.26  filelock_1.0.3
+## [55] KernSmooth_2.23-26   BiocVersion_3.22.0   gtools_3.9.5
+## [58] glue_1.8.0           tools_4.5.1          interp_1.1-6
+## [61] grid_4.5.1           latticeExtra_0.6-31  AnnotationDbi_1.72.0
+## [64] nlme_3.1-168         cli_3.6.5            rappdirs_0.3.3
+## [67] S4Arrays_1.10.0      dplyr_1.1.4          gtable_0.3.6
+## [70] sass_0.4.10          digest_0.6.37        SparseArray_1.10.1
+## [73] farver_2.1.2         memoise_2.0.1        htmltools_0.5.8.1
+## [76] lifecycle_1.0.4      httr_1.4.7           bit64_4.6.0-1
+```
+
+# References
+
+Egloff, Pascal, Iwan Zimmermann, Fabian M. Arnold, Cedric A. J. Hutter, Damien Damien Morger, Lennart Opitz, Lucy Poveda, et al. 2018. “Engineered Peptide Barcodes for In-Depth Analyses of Binding Protein Ensembles.” *bioRxiv*. <https://doi.org/10.1101/287813>.
+
+Fusaro, V. A., D. R. Mani, J. P. Mesirov, and S. A. Carr. 2009. “Prediction of high-responding peptides for targeted protein assays by mass spectrometry.” *Nat. Biotechnol.* 27 (2): 190–98.
+
+Panse, Christian, and Jonas Grossmann. 2019. *protViz: Visualizing and Analyzing Mass Spectrometry Related Data in Proteomics*. Vienna, Austria: R Foundation for Statistical Computing. <https://www.R-project.org>.
+
+Perkins, David N., Darryl J. C. Pappin, David M. Creasy, and John S. Cottrell. 1999. “Probability-Based Protein Identification by Searching Sequence Databases Using Mass Spectrometry Data.” *Electrophoresis* 20 (18): 3551–67. [https://doi.org/10.1002/(sici)1522-2683(19991201)20:18<3551::aid-elps3551>3.0.co;2-2](https://doi.org/10.1002/%28sici%291522-2683%2819991201%2920%3A18%3C3551%3A%3Aaid-elps3551%3E3.0.co;2-2).
+
+Türker, Can, Fuat Akal, Dieter Joho, Christian Panse, Simon Barkow-Oesterreicher, Hubert Rehrauer, and Ralph Schlapbach. 2010. “B-Fabric: The Swiss Army Knife for Life Sciences.” In *Proceedings of the 13th International Conference on Extending Database Technology - EDBT 10*. ACM Press. <https://doi.org/10.1145/1739041.1739135>.

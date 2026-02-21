@@ -1,0 +1,49 @@
+---
+name: biodiff
+description: `biodiff` is a variant caller designed to determine the exact differences between two biological sequences.
+homepage: https://gitlab.com/LPCDRP/biodiff
+---
+
+# biodiff
+
+## Overview
+`biodiff` is a variant caller designed to determine the exact differences between two biological sequences. It operates on DNA and protein sequences provided in FASTA format and outputs results in the standard Variant Call Format (VCF). Unlike heuristic aligners, it provides a precise comparison, making it highly effective for small-to-medium sequences or single-contig comparisons where exactness is required.
+
+## Usage Instructions
+
+### Basic Command Pattern
+Run `biodiff` by providing a reference FASTA and a query FASTA. The output is sent to stdout by default.
+
+```bash
+biodiff reference.fasta query.fasta > differences.vcf
+```
+
+### Sequence Matching Logic
+*   **Multi-FASTA Files**: `biodiff` matches sequences based on their FASTA headers (up to the first whitespace). Ensure that the sequences you wish to compare share identical IDs in both files.
+*   **Single-Sequence Files**: If both the reference and query files contain exactly one sequence each, `biodiff` will compare them even if the headers do not match. A warning will be emitted, but the comparison will proceed.
+
+### Working with Protein Sequences
+The tool is agnostic to the alphabet used as long as the input is in FASTA format. Use it for protein-to-protein comparisons to identify amino acid substitutions, insertions, or deletions.
+
+## Expert Tips and Best Practices
+
+### Performance Considerations
+*   **Sequence Length**: `biodiff` can be computationally expensive and slow on very large sequences (e.g., whole bacterial genomes > 5MB). For extremely large sequences with high divergence, ensure you have sufficient time for the process to complete.
+*   **Memory Usage**: The tool utilizes standard UNIX `diff` and `mktemp` utilities. Ensure your environment has adequate temporary directory space for large comparisons.
+
+### Downstream Processing
+Since the output is standard VCF, always pipe the output to `bcftools` or `bgzip` for indexing and further analysis:
+
+```bash
+# Generate, compress, and index
+biodiff ref.fa query.fa | bcftools view -Oz -o variants.vcf.gz
+bcftools index variants.vcf.gz
+```
+
+### Troubleshooting Common Issues
+*   **Empty VCF Content**: If you receive a VCF header but no records, the sequences are likely identical.
+*   **Header Mismatches**: If working with multi-FASTA files and no comparisons occur, verify that the IDs before the first whitespace are identical in both the reference and query files.
+
+## Reference documentation
+- [biodiff Overview](./references/anaconda_org_channels_bioconda_packages_biodiff_overview.md)
+- [biodiff README](./references/gitlab_com_LPCDRP_biodiff_-_blob_master_README.md)

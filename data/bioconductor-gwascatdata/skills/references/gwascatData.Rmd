@@ -1,0 +1,38 @@
+---
+title: "gwascatData -- a snapshot of the EBI/EMBL GWAS catalog"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu, Shweta Gopaulakrishnan reshg at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{gwascatData -- a snapshot of the EBI/EMBL GWAS catalog}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::pdf_document:
+    toc: yes
+    number_sections: yes
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+# Introduction
+
+This package defines an AnnotationHub resource
+representing the EBI GWAS catalog on March 30 2021.
+
+```{r get-data}
+library(AnnotationHub)
+ahub = AnnotationHub()
+mymeta <- query(ahub , "gwascatData")
+mymeta
+tag = names(mymeta)[1] 
+tag
+head(ahub[[tag]][,1:6])
+```
+
+The gwascat package includes tooling to transform
+this to a GRanges-like object.
+
+

@@ -1,0 +1,296 @@
+# Meta cohort survival data mcsurvdata package
+
+#### 4 November 2025
+
+# Contents
+
+* [1 Datasets acquisition and processing](#datasets-acquisition-and-processing)
+  + [1.1 Colorectal adenocarcinoma datasets](#colorectal-adenocarcinoma-datasets)
+  + [1.2 Breast cancer datasets](#breast-cancer-datasets)
+* [2 Exploring the ExpressionSet data available in mcsurvdata](#exploring-the-expressionset-data-available-in-mcsurvdata)
+* [3 SessionInfo](#sessioninfo)
+* [4 References](#references)
+* **Appendix**
+
+Adria Caballe Mestres
+adria.caballe@irbbarcelona.org
+
+# 1 Datasets acquisition and processing
+
+## 1.1 Colorectal adenocarcinoma datasets
+
+Four publicly available Affymetrix microarray datasets were downloaded
+from the NCBI GEO repository [1]. These datasets included gene
+expression and clinical information from a total of 1,072 colorectal
+cancer (CRC) patients. GSE14333 [2] is a pool of 290 patients with CRC
+treated at 2 different hospitals: the Peter MacCallum Cancer Center
+(Australia) and the H. Lee Moffitt Cancer Center (United States);
+GSE33113 [3] contains samples from 90 AJCC stage II patients collected
+at the Academic Medical Center in Amsterdam (the Netherlands);
+GSE39582 [4] includes data from 566 CRC patients that form part of the
+Cartes d’Identite des Tumeurs (CIT) program, from the French ligue
+nationale contre le cancer; finally, GSE37892 [5] includes expression
+and clinical information from 130 stage ii and iii CRC patients
+collected at five different hospitals from France (Marseille la
+timone, Nice lacassagne, Marseille institut paolicalmettes, Paris
+lariboisiare, Nancy brabois and Paris saintantoine).
+
+Processing of microarray samples was carried out separately for each
+dataset using packages affy [6] and affyplm [7] from Bioconductor
+[8]. Raw cel files were normalized using RMA background correction and
+summarization [9]. Standard quality controls were performed in order
+to identify abnormal samples. Technical information concerning sample
+processing and hybridization was retrieved from the original CEL
+files: scanning dates were collected in order to define scan batches
+in each dataset separately; technical metrics PM MED, PM IQR, RMA IQR
+and RNA DEG described in [10] were computed and recorded as additional
+features for each sample. Probeset annotation was performed using
+the information available in Affymetrix. No sample was excluded due
+to quality issues.
+
+Microarray datasets were corrected separately by metrics PM IQR, RMA
+IQR and RNA DEG. For doing so, a linear model was fitted separately
+for each probeset that included these metrics as the only explanatory
+variables, and coefficients of such models were used to correct the
+expression values a-priori. Next, a second linear model was fitted to
+each probeset and dataset separately, in order to correct by potential
+technical effects captured by sample’s center of origin and batch
+(scanning day). This correction was carried out using a mixed-effect
+model in which gender, age at diagnosis, stage, tumour location and
+Microsatellite Instability (MSI) status were also included as
+covariates, when available. Scanning day was modeled as a random
+effect in these models, while center was included as a fixed
+(GSE14333) or a random effect (GSE39582 and GSE37892) depending on
+the number of centers involved and on the sample size in each of
+them. Expression intensities were summarized at the gene level
+(entrez) by the first principal component of the probesets mapping to
+the same gene. This component was centered and scaled to the weighted
+mean of the probesets’ means and standard deviations, where the
+contributions to this first component were used as weights. The sign
+of this score was then corrected so that it was congruent to the sign
+of the probeset contributing the most to the first component.
+
+Prior to merging the datasets, each of the expression matrices were
+standardized gene-wise using the GSE39582 dataset as a reference:
+first, we randomly selected a subset of samples from GSE39582 that
+matched as much as possible the frequency distribution in the target
+dataset regarding gender, age, stage, tumour location and MSI; then,
+expression values in the target dataset were centered and scaled
+according to the distribution observed in this subset sampled from
+GSE39582.
+
+MSI status was imputed in each dataset separately using a published
+gene expression signature [11]. For doing so, we summarized the
+signature as describe above; then a clustering analysis based on
+non-parametric density estimation was carried out on the resulting
+score as described in [12] and implemented in [13]. Accuracy of this
+imputation was evaluated in dataset GSE39582, which included
+annotation of tumor microsatellite stability (96% and 81% accuracy for
+% MSS and MSI samples, respectively). Only MSS samples were kept for
+the final processed data leaving a total of 914 microarray samples
+available for analysis.
+
+## 1.2 Breast cancer datasets
+
+Five publicly available Affymetrix microarray datasets were downloaded
+from the NCBI GEO repository [1]. These datasets included gene
+expression and clinical information from a total of 1.082 breast
+cancer patients. GSE1456 [14] contains 159 samples from patients
+receiving surgery in the Karolinska Hospital of Stockholm
+(Sweden). GSE2034 [15] includes data from 286 tumor samples of
+lymph-node-negative patients collected at the Erasmus Medical Center
+in Rotterdam (Netherlands). GSE2990 [16] includes data from 189
+invasive breast carcinomas treated at either the John Radcliffe
+Hospital in Oxford (UK) or the Uppsala University Hospital in Uppsala
+(Sweden). GSE3494 [17] provides the expression profiling and
+survival information of 251 tumours archived at the Uppsala University
+Hospital in Uppsala (Sweden). Finally, GSE7390 [18] contains the
+information of 198 untreated patients at the Bordet Institute in
+Brussels (Belgium).
+
+The processing and normalization strategy described above for colon
+cancer samples was applied to breast cancer cohorts. Eklund metrics
+[10] and batches due to scan day were considered as adjusting
+covariates in a mixed effect model to remove expression changes due to
+possible technical artefacts.
+
+The metabric for breast cancer data [19] was also downloaded but no
+extra data processing was undertaken. Each of the expression matrices
+from GEO were standardized gene-wise using the metabric dataset as a
+reference following the same procedure detailed for the CRC datasets.
+
+ER classification (ER+ or ER-) was imputated using hierarchical
+clustering [12] from the expression of the ESR1 gene. Besides, HER2
+classification (HER2+ or HER2) and PR classification (PR+ or PR-)
+were imputated using hierarchical clustering from the expression of the
+ERBB2 gene and the PGR gene, respectively. Only genes measured in all
+datasets from GEO and metabric were considered. Survival information
+(relapse event and months to relapse) was annotated as part of the KM
+plotter version 2010 [20]. Only ER+ samples were kept for the final
+processed data leaving a total of 2.294 microarray samples available
+for analysis.
+
+# 2 Exploring the ExpressionSet data available in mcsurvdata
+
+The `mcsurvdata` package is loaded by
+
+```
+library(mcsurvdata)
+```
+
+This package contains two *ExpressionSet* objects which can
+be accessed using the *ExperimentHub* interface:
+
+```
+eh <- ExperimentHub()
+dat <- query(eh, "mcsurvdata")
+nda.brca <- dat[["EH1497"]]
+nda.crc <- dat[["EH1498"]]
+```
+
+Survival information is available in attributes `tev` (follow up time)
+`evn` (event information 0 no event 1 event) for both brca and crc
+data. Eklund metrics are also computed in attributes `pm.med`,
+`pm.iqr`, `rma.iqr` and `rna.deg`. Unique characteristics of the
+tumors such as `stage`, `msi` information and `cms` are annotated in the
+colon cancer cohorts, whereas `ER.status`, `PGR.status` and
+`HER2.status` are annotated in the breast cancer cohorts.
+
+# 3 SessionInfo
+
+```
+sessionInfo()
+```
+
+```
+## R version 4.5.1 Patched (2025-08-23 r88802)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 24.04.3 LTS
+##
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.12.0  LAPACK version 3.12.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C
+##  [3] LC_TIME=en_GB              LC_COLLATE=C
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C
+##
+## time zone: America/New_York
+## tzcode source: system (glibc)
+##
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base
+##
+## other attached packages:
+##  [1] Biobase_2.70.0      mcsurvdata_1.28.0   ExperimentHub_3.0.0
+##  [4] AnnotationHub_4.0.0 BiocFileCache_3.0.0 dbplyr_2.5.1
+##  [7] BiocGenerics_0.56.0 generics_0.1.4      knitr_1.50
+## [10] BiocStyle_2.38.0
+##
+## loaded via a namespace (and not attached):
+##  [1] rappdirs_0.3.3       sass_0.4.10          BiocVersion_3.22.0
+##  [4] RSQLite_2.4.3        digest_0.6.37        magrittr_2.0.4
+##  [7] evaluate_1.0.5       bookdown_0.45        fastmap_1.2.0
+## [10] blob_1.2.4           jsonlite_2.0.0       AnnotationDbi_1.72.0
+## [13] DBI_1.2.3            BiocManager_1.30.26  httr_1.4.7
+## [16] purrr_1.1.0          Biostrings_2.78.0    httr2_1.2.1
+## [19] jquerylib_0.1.4      cli_3.6.5            crayon_1.5.3
+## [22] rlang_1.1.6          XVector_0.50.0       bit64_4.6.0-1
+## [25] withr_3.0.2          cachem_1.1.0         yaml_2.3.10
+## [28] tools_4.5.1          memoise_2.0.1        dplyr_1.1.4
+## [31] filelock_1.0.3       curl_7.0.0           vctrs_0.6.5
+## [34] R6_2.6.1             png_0.1-8            stats4_4.5.1
+## [37] lifecycle_1.0.4      Seqinfo_1.0.0        KEGGREST_1.50.0
+## [40] S4Vectors_0.48.0     IRanges_2.44.0       bit_4.6.0
+## [43] pkgconfig_2.0.3      pillar_1.11.1        bslib_0.9.0
+## [46] glue_1.8.0           xfun_0.54            tibble_3.3.0
+## [49] tidyselect_1.2.1     htmltools_0.5.8.1    rmarkdown_2.30
+## [52] compiler_4.5.1
+```
+
+# 4 References
+
+# Appendix
+
+[1] Barrett, T. et al. NCBI GEO: Archive for functional genomics data
+sets - Update. Nucleic Acids Research 41, 991-995 (2013).
+
+[2] Jorissen, R. N. et al. Metastasis-Associated Gene Expression
+Changes Predict Poor Outcomes in Patients with Dukes Stage B and C
+Colorectal Cancer. Clinical Cancer Research 15, 7642-7651 (2009).
+
+[3] De Sousa E Melo, F. et al. Methylation of
+cancer-stem-cell-associated wnt target genes predicts poor prognosis
+in colorectal cancer patients. Cell Stem Cell 9, 476-485 (2011).
+
+[4] Marisa, L. et al. Gene Expression Classification of Colon Cancer
+into Molecular Subtypes: Characterization, Validation, and Prognostic
+Value. PLoS Medicine 10 (2013).
+
+[5] Laibe, S. et al. A seven-gene signature aggregates a subgroup of
+stage II colon cancers with stage III. Omics : a journal of
+integrative biology 16, 560-5 (2012).
+
+[6] Gautier, L., Cope, L., Bolstad, B. M. & Irizarry,
+R. A. affy-analysis of Affymetrix GeneChip data at the probe
+level. Bioinformatics 20, 307-315 (2004).
+
+[7] Bolstad, B. M. et al. Quality Assessment of Affymetrix GeneChip
+Data in Bioinformatics and Computational Biology Solutions Using R and
+Bioconductor (Springer, New York, 2005).
+
+[8] Gentleman, R. C. et al. Bioconductor: open software development
+for computational biology and bioinformatics. Genome Biology 5, R80
+(2004).
+
+[9] Irizarry, R. A. et al. Exploration, normalization, and summaries
+of high density oligonucleotide array probe level data. Biostatistics
+4, 249-264 (2003).
+
+[11] Jorissen, R. N. et al. DNA copy-number alterations underlie gene
+expression differences between microsatellite stable and unstable
+colorectal cancers. Clinical cancer research : an official journal of
+the American Association for Cancer Research 14, 8061-9 (2008).
+
+[12] Azzalini, A. & Torelli, N. Clustering via nonparametric density
+estimation. Statistics and Computing 17, 71-80 (2007).
+
+[13] Azzalini, A. & Menardi, G. Clustering via Nonparametric Density
+Estimation: The R Package pdfCluster. Journal of Statistical
+Software 57, 1-26 (2014). 1301.6559.
+
+[14] Pawitan, Y. et al. Gene expression profiling spares early breast
+cancer patients from adjuvant therapy: derived and validated in two
+population-based cohorts. Breast Cancer Research 7, R953 (2005).
+
+[15] Wang, Y. et al. Gene-expression profiles to predict distant
+metastasis of lymph-node-negative primary breast cancer. The Lancet
+365, 671-679 (2005).
+
+[16] Sotiriou, C. et al. Gene Expression Profiling in Breast Cancer:
+Understanding the Molecular Basis of Histologic Grade To Improve
+Prognosis. JNCI: Journal of the National Cancer Institute 98, 262-272
+(2006).
+
+[17] Miller, L. D. et al. From The Cover: An expression signature for
+p53 status in human breast cancer predicts mutation status,
+transcriptional effects, and patient survival. Proceedings of the
+National Academy of Sciences 102, 13550-13555 (2005).
+
+[18] Desmedt, C. et al. Strong Time Dependence of the 76-Gene
+Prognostic Signature for Node-Negative Breast Cancer Patients in the
+TRANSBIG Multicenter Independent Validation Series. Clinical Cancer
+Research 13, 3207-3214 (2007).
+
+[19] Curtis, C. et al. The genomic and transcriptomic architecture of
+2,000 breast tumours reveals novel subgroups. Nature 486, 346-352
+(2012).
+
+[20] Gyorffy, B. et al. An online survival analysis tool to rapidly
+assess the effect of 22,277 genes on breast cancer prognosis using
+microarray data of 1,809 patients. Breast Cancer Research and
+Treatment 123, 725-731 (2010).

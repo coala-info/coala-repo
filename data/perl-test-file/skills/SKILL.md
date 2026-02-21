@@ -1,0 +1,63 @@
+---
+name: perl-test-file
+description: The `Test::File` module (distributed as `perl-test-file` in Bioconda) provides a suite of convenience functions for validating file attributes within a standard Perl testing framework.
+homepage: https://github.com/briandfoy/test-file
+---
+
+# perl-test-file
+
+## Overview
+
+The `Test::File` module (distributed as `perl-test-file` in Bioconda) provides a suite of convenience functions for validating file attributes within a standard Perl testing framework. It is designed to work in a `Test::More` fashion, allowing you to assert properties like file existence, readability, size, and ownership with minimal boilerplate. This skill helps you install the module and implement robust file-system checks in your Perl test suites.
+
+## Installation
+
+You can install the module using either the system package manager (via Bioconda) or Perl-specific package managers:
+
+- **Conda (Bioconda):**
+  ```bash
+  conda install bioconda::perl-test-file
+  ```
+
+- **CPAN/CPANM:**
+  ```bash
+  cpan Test::File
+  # OR
+  cpanm Test::File
+  ```
+
+## Usage Patterns
+
+### Basic Test Structure
+To use the tool, include it in your Perl test script (`.t` file). It exports functions that automatically interact with `Test::Builder`, making them compatible with standard Perl test runners.
+
+```perl
+use Test::More tests => 3;
+use Test::File;
+
+my $file = 'path/to/data.txt';
+
+file_exists_ok( $file, "Data file should exist" );
+file_readable_ok( $file, "Data file should be readable" );
+file_min_size_ok( $file, 100, "Data file should be at least 100 bytes" );
+```
+
+### Common Assertion Functions
+The module provides several specific checks for file attributes:
+
+- **Existence:** `file_exists_ok($file)`, `file_not_exists_ok($file)`
+- **Permissions:** `file_readable_ok($file)`, `file_writeable_ok($file)`, `file_executable_ok($file)`
+- **Size:** `file_size_ok($file, $size)`, `file_max_size_ok($file, $max)`, `file_min_size_ok($file, $min)`
+- **Type:** `file_is_directory_ok($path)`, `file_is_fixed_ok($file)`
+- **Ownership:** `file_owner_is_ok($file, $user)`, `file_group_is_ok($file, $group)`
+
+## Expert Tips
+
+- **Documentation Access:** Use `perldoc Test::File` on your local machine to see the full list of available assertions and their arguments.
+- **Integration with Test::More:** Since `Test::File` uses `Test::Builder` under the hood, you can mix these assertions freely with standard `ok()`, `is()`, and `like()` calls.
+- **Testing Symlinks:** The module includes specific checks for symbolic links, such as `symlink_target_is_ok`, which is useful for verifying deployment or build artifacts.
+- **Development Workflow:** If you are modifying the module itself, use `perl Makefile.PL && make test` to run the internal test suite and verify changes.
+
+## Reference documentation
+- [github_com_briandfoy_test-file.md](./references/github_com_briandfoy_test-file.md)
+- [anaconda_org_channels_bioconda_packages_perl-test-file_overview.md](./references/anaconda_org_channels_bioconda_packages_perl-test-file_overview.md)

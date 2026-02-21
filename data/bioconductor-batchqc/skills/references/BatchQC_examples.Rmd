@@ -1,0 +1,65 @@
+---
+title: "BatchQC Examples"
+author:
+- name: W. Evan Johnson
+  affiliation:
+  - Division of Infectious Disease, Department of Medicine, Rutgers University 
+  - Director, Center for Data Science, Rutgers University
+  email: wj183@njms.rutgers.edu 
+- name: Jessica McClintock
+  affiliation: 
+  - Division of Infectious Disease, Department of Medicine, Rutgers University 
+  email: jessica.mcclintock@rutgers.edu
+- name: Solaiappan Manimaran
+  affiliation:
+  - Computational Biomedicine, Department of Medicine, Boston University
+package: BatchQC
+output:
+  BiocStyle::html_document
+vignette: |
+  %\VignetteIndexEntry{BatchQC Examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Example 1: Protein Data
+This data set is from protein expression data captured for 39 proteins.
+It has two batches and two conditions corresponding to case and control.
+
+```{r}
+library(BatchQC)
+data(protein_data)
+data(protein_sample_info)
+se_object <- BatchQC::summarized_experiment(protein_data, protein_sample_info)
+```
+
+# Example 2: Signature Data
+This data set is from signature data captured when activating different growth 
+pathway genes in human mammary epithelial cells (GEO accession: GSE73628). 
+This data consists of three batches and ten different conditions corresponding 
+to control and nine different pathways
+
+```{r}
+data(signature_data)
+data(batch_indicator)
+se_object <- BatchQC::summarized_experiment(signature_data, batch_indicator)
+```
+
+# Example 3: Bladderbatch Data
+This data set is from bladder cancer data. This dataset has 57 bladder samples
+with 5 batches and 3 covariate levels (cancer, biopsy, control). Batch 1 
+contains only cancer, 2 has cancer and controls, 3 has only controls, 4 contains
+only biopsy, and 5 contains cancer and biopsy. This data set is from the
+bladderbatch package which must be installed to use this data example set (Leek 
+JT (2023). bladderbatch: Bladder gene expression data illustrating batch 
+effects. R package version 1.38.0).
+
+```{r, eval = FALSE}
+se_object <- BatchQC::bladder_data_upload()
+```
+
+# Session info {.unnumbered}
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```

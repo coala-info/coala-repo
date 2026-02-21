@@ -1,0 +1,1 @@
+{"version":"1.0","provider_name":"Treerecs","provider_url":"https:\/\/project.inria.fr\/treerecs","title":"","type":"rich","width":600,"height":338,"html":" \n\/* *\/\n \n","thumbnail_url":"https:\/\/project.inria.fr\/treerecs\/files\/2011\/12\/treerecs_logo_inline-768x460.png","thumbnail_width":600,"thumbnail_height":359}

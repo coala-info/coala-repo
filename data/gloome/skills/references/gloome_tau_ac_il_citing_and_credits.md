@@ -1,0 +1,1 @@
+GLOOME : Citing &amp; credits Gloome 2.0 Home Overview Faq Gallery Source code Citing &amp; credits GLOOME : Citing & credits GLOOME: Gain Loss Mapping Engine Cohen, O., Ashkenazy, H., Belinky, F., Huchon, D., and Pupko, T. 2010. GLOOME: gain loss mapping engine. Bioinformatics 26(22):2914-2915. [ pdf ] [ abs ]

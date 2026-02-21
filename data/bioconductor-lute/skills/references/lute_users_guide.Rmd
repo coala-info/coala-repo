@@ -1,0 +1,328 @@
+---
+title: "The lute user's guide"
+author:
+- Sean K. Maden
+- Stephanie C. Hicks
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: bibliography.bib
+package: lute
+output:
+  BiocStyle::html_document:
+    code_folding: show
+    toc: no
+    tocfloat: no
+  BiocStyle::pdf_document: 
+    toc: no
+    toc_depth: 0
+vignette: > 
+  %\VignetteIndexEntry{The lute user's guide}
+  %\usepackage[UTF-8]{inputenc} 
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r setup, include=FALSE}
+libv <- c("lute", "SummarizedExperiment", "SingleCellExperiment")
+sapply(libv, library, character.only=TRUE)
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE)
+```
+
+# How to use this guide
+
+User's Guide for `lute`, a framework for bulk transcriptomics deconvolution 
+experiments. We described this new software and method for cell size rescaling 
+is in @maden_lute-preprint_2024. Below, we provided setup instructions, 
+introduced essential deconvolution experiment concepts, provided an example 
+experiment, and linked to resources for further learning.
+
+# Install and setup
+
+The `lute` package is available from Bioconductor or GitHub. Install and run 
+`lute` using R (v4.3.2 or later) with Bioconductor (v3.19 or later). This 
+section walks through install and further setup for the conda environment and 
+Docker image.
+
+## Install
+
+Install `lute` by passing the following to the console from an active R session. 
+With the `BiocManager` package installed, install `lute` from Bioconductor with:
+
+```{r, eval = F}
+BiocManager::install("lute")
+```
+
+Alternatively, install from GitHub using `devtools`:
+
+```{r, eval = F}
+devtools::install("metamaden/lute")
+```
+
+With `lute` successfully installed, run:
+
+```{r}
+library(lute)
+```
+
+## Setup
+
+Setup instructions for `lute`.
+
+### Conda 
+
+From the base directory for the package, create and activate a new environment 
+from the YML script (replacing "lute_v*.yml" with the desired version name):
+
+```
+conda env create /inst/yml/lute_v*.yml
+```
+
+Running `conda info --env` or `conda env list` should now show the new 
+environment. Activate it with `conda activate lute`, and install `lute` as shown 
+above. Install further supported packages and their dependencies with the 
+provided scripts `/inst/yml/lute_supported.sh` and `/inst/yml/lute_supported.R`.
+
+### Docker
+
+Access the `lute` Docker image with tag `madensean758/lute_bioconductor:3.20`:
+
+```
+docker pull madensean758/lute_bioconductor:3.20
+docker run madensean758/lute_bioconductor:3.20
+```
+
+If this times out, it may be necessary to log in to Dockerhub with `docker 
+login`, check your internet connection, or try again later.
+
+# Deconvolution overview
+
+Walks through the definition, experiment elements, simulation assumptions, and 
+rescaling for deconvolution experiments.
+
+## Definition
+
+Deconvolution is the task of quantifying signal from a signal mixture, which
+is sometimes called a signal convolution. Deconvolution experiments try to 
+predict signals from their mixtures as accurately and reliably as possible. 
+
+## Transcriptomics deconvolution
+
+In the field of transcriptomics, deconvolution is often applied to gene 
+expression datasets in order to predict cell type quantities from cell mixtures.
+This technique is applied to bulk tissue specimens of multiple cell types, where
+accurate cell type quantifications can improve bias adjustments or allow testing
+of new hypotheses.
+
+## Experiment elements
+
+Most deconvolution algorithms predict the type-specific proportions from a 
+signature matrix and a convoluted signals matrix in the following manner:
+
+$$P \leftarrow [Y, Z]$$
+Where we have the following term definitions for bulk transcriptomics 
+deconvolution:
+
+* $P$ : $K$-length vector of predicted proportions for the number of cell types 
+$K$.
+
+* $Z$ : Signature expression matrix, with dimensions of $G$ total rows of 
+signature genes by $K$ total columns of cell types.
+
+* $Y$ : The convoluted signals expression matrix, with dimensions of $G$ total 
+rows of signature genes by $J$ total columns of bulk samples.
+
+The above terms are shared by reference-based deconvolution algorithms, which
+are defined by their requirement of a signature matrix $Z$ to make predictions.
+
+Some additional important properties to consider are the preparation steps used
+to generate the terms $Z$ and $Y$. These steps might include data rescaling and
+transformation of the expression signals, or certain selection criteria to 
+arrive at the final set of $G$ signature genes.
+
+## Pseudobulking
+
+Another important representation of deconvolution is in terms of a pseudobulk 
+equation. A pseudobulk is a simulated bulk sample generated using either cell- 
+or type-level reference data. Pseudobulk analysis is a common task for 
+deconvolution experiments. 
+
+We may represent the pseudobulked sample $Y_{PB}$ in terms of the $Z$ signature
+matrix and $P$ cell type proportions, defined as above, as well as some 
+$K$-length vector $S$, which contains cell size estimates used for rescaling 
+$Z$. This looks like the following: 
+
+$$Y_{PB}=Z * P * S$$
+
+## Biological importance of cell size scale factors
+
+Inclusion of the $S$ vector of cell size scaling factors is an important 
+strategy to correct for potential bias due to systematic differences in sizes 
+between the sizes of predicted cell types. It has been used in deconvolution 
+studies of a variety of tissues, including brain and blood 
+(@monaco_rna-seq_2019, @racle_epic_2020, @sosina_strategies_2021). Proportions
+predictions not incorporating cell size scale factors assume equal cell sizes
+between the predicted types, leading to very biased predictions in tissues 
+such as brain that feature principal cell types with very different sizes.
+
+## Deconvolution algorithms
+
+There are dozens of different deconvolution algorithms used in the field of 
+transcriptomics alone. These may be organized in several ways, such as whether 
+they incorporate a variance weighting strategy or cell size scale factors. 
+Another useful way to organize algorithms is by whether they incorporate the
+non-negative least squares (NNLS) algorithm in some way. This is a statistical
+approach with the added constraint of assumed non-negativity for inputs, which
+holds when we consider typical gene expression datasets in the form of counts
+or log-normalized counts.
+
+The next section shows a hierarchical class structure for accessing multiple
+deconvolution algorithms, and we can think of this hierarchy as yet another
+way of organizing and relating different deconvolution algorithms in a useful
+and actionable manner.
+
+# The `lute` framework for deconvolution
+
+`lute` supports deconvolution experiments by coupling convenient management of
+standard experiment tasks with standard mappings of common inputs to their 
+synonyms in supported algorithms for marker selection and deconvolution.
+
+Accessing the framework is as simple as running the `lute()` function using 
+your experiment data (see `?lute` for details). Runnable examples using the 
+framework function are provided below.
+
+## Supported deconvolution algorithms
+
+To view a table of supported algorithms and their details, pass the following 
+code to your R session:
+
+```{r}
+info.table <- luteSupportedDeconvolutionAlgorithms()[,seq(5)]
+knitr::kable(info.table)
+```
+
+## The `deconvolutionParam` class hierarchy
+
+Briefly, `lute` defines a new class hierarchy that organizes deconvolution 
+functions. This was based on the approach uesd by the `bluster` R/Bioconductor 
+package for clustering algorithms.
+
+Classes in this hierarchy each have a method defined for the `deconvolution()`
+generic function (see `?deconvolution` for details). Methods for higher-level 
+parent classes like `referencebasedParam` will perform data summary and marker 
+genes comparisons. For the algorithm-specific classes, such as `nnlsParam` or 
+`musicParam`, the method maps standard inputs like $Y$, $Z$, and $S$ to their 
+algorithm-specific synonyms.
+
+The `deconvolutionParam` class hierarchy for supported algorithms is visualized 
+in the following diagram:
+
+<img style="float: center; width=500" src="deconvolutionParam_hierarchy_diagram.jpeg"/>
+
+The `deconvolutionParam` class hierarchy is intended to be extensible to new 
+algorithms. A future vignette will provide a step-by-step guide to supporting 
+a new algorithms using these classes and their methods.
+
+# Deconvolution experiment example
+
+This section features several runnable examples of deconvolution experiments
+using the `lute()` framework function.
+
+We may begin with an object of type `SingleCellExperiment` (a.k.a. "sce" object) 
+containing cell-level expression data. We may use the main `lute()` framework 
+function to perform a deconvolution experiment with these data.
+
+For demonstration, we generate a randomized sce object with 
+`randomSingleCellExperiment()` (see `?randomSingleCellExperiment` for details). 
+Set the $G$ marker genes to be 10, or 5 per cell type, which we will identify 
+from an initial set of 100 genes:
+
+```{r}
+markersPerType <- 5
+totalGenes <- 100
+exampleSingleCellExperiment <- randomSingleCellExperiment(
+  numberGenes=totalGenes)
+```
+
+We could identify marker genes in `exampleSingleCellExperiment` now by 
+running `lute` without setting the deconvolution algorithm argument:
+
+```{r}
+markers <- lute(singleCellExperiment=exampleSingleCellExperiment,
+                markersPerType=markersPerType, 
+                deconvolutionAlgorithm=NULL)
+length(markers$typemarkerResults)
+```
+
+We identified 10 marker genes from the provided data.
+
+To run a more complete experiment, we need to define $Y$. For this 
+demonstration, we define $Y$ as a pseudobulk from the provided 
+`exampleSingleCellExperiment` data using `ypb_from_sce()` (see `?ypb_from_sce` 
+for details).
+
+```{r}
+examplePseudobulkExpression <- exampleBulkExpression <- ypb_from_sce(
+  singleCellExperiment=exampleSingleCellExperiment)
+```
+
+By default, the pseudobulk used all available cell data in 
+`exampleSingleCellExperiment`. 
+
+Finally, we run marker selection and deconvolution in succession with `lute` as
+follows:
+
+```{r}
+experiment.results <- lute(singleCellExperiment=exampleSingleCellExperiment, 
+                           bulkExpression=as.matrix(exampleBulkExpression), 
+                           typemarkerAlgorithm=NULL)
+```
+
+
+By default, `lute()` does not filter marker genes from user-supplied data 
+(`typemarkerAlgorithm=NULL`). To perform marker selection using the mean ratios 
+method, specify `typemarkerAlgorithm=meanratios` with the `DeconvoBuddies` and 
+`meanratiosParam` packages installed. This calls the `get_mean_ratios()` 
+function `DeconvoBuddies` on the user data. If `deconvolutionAlgorithm` is not 
+"NULL", then the specified deconvolution algorithm will then be called on the 
+selected marker genes.
+
+Returning to the example, inspect the predicted cell type proportions $P$ from 
+`experiment.results` with:
+
+```{r}
+experiment.results$deconvolution.results
+```
+
+# Visualizing results
+
+To visualize the results of the deconvolution experiment, we 
+suggesting using functions such as the 
+[`plot_composition_bar()` function](https://research.libd.org/DeconvoBuddies/reference/plot_composition_bar.html) 
+from the `DeconvoBuddies` package. This function generates a bar plot of the 
+cell compositions estimates. 
+
+# Conclusions and further reading
+
+This User's Guide introduced the `lute` framework for deconvolution, including 
+an outline of deconvolution experiment variables, an introduction to the 
+different deconvolution methods for bulk transcriptomics, and a small runnable
+example showing how to access the NNLS algorithm by calling the `deconvolution`
+generic on an object of class `nnlsParam`.
+
+If you found this guide useful, you may also find the other vignettes included 
+in `lute` to be helpful. The vignette "Pseudobulk cell size rescaling example" 
+shows a small example experiment contrasting predictions with and without using 
+cell scale factors using real human brain single-nucleus RNA-seq data accessed 
+from the `scRNAseq` package.
+
+More background about cell scale factors can be found in the 
+@maden_challenges_2023 commentary, and examples of their uses can be read about 
+in @monaco_rna-seq_2019, @racle_epic_2020, and @sosina_strategies_2021.
+
+# Session Info
+
+```{r}
+sessionInfo()
+```
+
+# Works cited
+

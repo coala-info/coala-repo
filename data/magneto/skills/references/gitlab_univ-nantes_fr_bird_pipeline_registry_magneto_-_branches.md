@@ -1,0 +1,1 @@
+Branches · bird_pipeline_registry / MAGNETO · GitLab Nantes Université Branches Overview Active Stale All Active branches long_reads 7957bfc5 &middot; add long reads parameter and add fastplong for LR qc &middot; Jan 30, 2026 master default protected 98a6cafe &middot; Edit setup.py by updating to 1.5.1 &middot; Jan 05, 2026

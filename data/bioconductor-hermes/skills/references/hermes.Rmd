@@ -1,0 +1,513 @@
+---
+title: "Introduction to `hermes`"
+package: hermes
+author:
+  - Namrata Bhatia
+  - Stefanie Bienert
+  - Benoit Falquet
+  - Haocheng Li
+  - Jeff Luong
+  - Lyndsee Midori Zhang
+  - Alex Richardson
+  - Simona Rossomanno
+  - Tim Treis
+  - Mark Yan
+  - Naomi Chang
+  - Chendi Liao
+  - Carolyn Zhang
+  - Joseph N. Paulson
+  - name: Daniel Sabanés Bové
+    email: daniel.sabanes_bove@rconis.com
+output: 
+  BiocStyle::html_document:
+    toc_float: true
+vignette: |
+  %\VignetteIndexEntry{Introduction to `hermes`}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options:
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Acknowledgments
+
+`hermes` is a successor of the Roche internal `rnaseqTools` R package, and therefore many code ideas have been borrowed from it. Therefore we would like to thank the `rnaseqTools` authors for their work.
+
+In particular, we would like to acknowledge Chendi Liao and Joe Paulson for their guidance and explanations during the development of `hermes`. We also discussed the class design with Valerie Obenchain, and discussed `RNAseq` data standards with Armen Karapetyan. We borrowed some ideas from the Roche internal `biokitr` R package and discussed them with its maintainer Daniel Marbach.
+
+Finally, `hermes` originated as part of the NEST project. 
+We are grateful for the entire team's support.
+
+Thanks a lot to everyone involved!
+
+# Installation
+
+First let's see how we can install the `hermes` package.
+
+## `BioConductor`
+
+With the development version (3.15) of `BioConductor`, 
+you can install the current package version with:
+
+```{r bioc-installation, eval = FALSE}
+if (!require("BiocManager")) {
+  install.packages("BiocManager")
+}
+BiocManager::install("hermes")
+```
+
+## GitHub
+
+You can install the unstable development version from GitHub with:
+
+```{r gh-installation, eval = FALSE}
+if (!require("devtools")) {
+  install.packages("devtools")
+}
+devtools::install_github("insightsengineering/hermes")
+```
+
+# Introduction
+
+The `hermes` R package provides classes, methods and functions to import, quality-check, filter, normalize, analyze `RNAseq` counts data. The core functionality is built on the `BioConductor` ecosystem, especially `SummarizedExperiment`. This is the vignette to read for new users of this package.
+
+In this vignette you are going to learn how to:
+
+* Import `RNAseq` count data into the `hermes` ready format.
+* Annotate gene information automatically from a central database (e.g. `BioMart`).
+* Add quality control (QC) flags to genes and samples.
+* Filter the data set.
+* Normalize the counts.
+* Quickly produce descriptive plots.
+* Perform principal components analysis.
+* Produce a templated QC report.
+* Perform differential expression analysis.
+
+The packages used in this vignette are:
+```{r, message=FALSE}
+library(hermes)
+library(SummarizedExperiment)
+```
+
+The datasets used in this vignette are:
+```{r, message=FALSE, warning=FALSE}
+?expression_set
+?summarized_experiment
+```
+
+# Importing Data
+
+The data for `hermes` needs to be imported into the `HermesData` or `RangedHermesData` format.
+
+## Importing a `SummarizedExperiment`
+
+The simplest way to import data is from a `SummarizedExperiment` (SE) object. This is because a `HermesData` object
+is just a special SE, with few additional requirements and slots.
+
+In a nutshell, the object needs to have a `counts` assay, have certain
+gene and sample variables, and have unique row and column names. The row names, i.e. the gene names, must
+start with a common prefix `GeneID` or `ENSG` to enable easy annotations.
+See `?HermesData` for the detailed requirements.
+
+When the SE follows the minimum conventions, we can just call the `HermesData` constructor on it:
+
+```{r}
+object <- HermesData(summarized_experiment)
+```
+
+And we have a `HermesData` object.
+
+```{r}
+object
+```
+
+Note that in this case deprecated names were used for the `rowData` and `colData` variables,
+therefore they appear under "additional" gene and sample information. However we can
+still call the default constructor because the new names will be filled with missing values, e.g.:
+
+```{r}
+head(annotation(object))
+```
+
+If we want to map old column names to new column names to avoid duplication with new missing value columns,
+we can do this using the `rename()` method. For example here:
+
+```{r}
+object <- summarized_experiment %>%
+  rename(
+    row_data = c(
+      symbol = "HGNC",
+      desc = "HGNCGeneName",
+      chromosome = "Chromosome",
+      size = "WidthBP",
+      low_expression_flag = "LowExpressionFlag"
+    ),
+    col_data = c(
+      low_depth_flag = "LowDepthFlag",
+      technical_failure_flag = "TechnicalFailureFlag"
+    )
+  ) %>%
+  HermesData()
+```
+
+For example we can now see in the annotations that we successfully carried over the information
+since we mapped the old annotations to the new required names above:
+
+```{r}
+head(annotation(object))
+```
+
+For a bit more details we can also call `summary()` on the object.
+
+```{r}
+summary(object)
+```
+
+For the below, let's use the already prepared `HermesData` object.
+
+```{r}
+object <- hermes_data
+```
+
+Likewise, when we receive the error "no 'counts' assay found", we can use the `rename()` function to change the name of the assay in the `SummarizedExperiment` object to `counts`. For example, the following object of type `SummarizedExperiment` would have the assay name `count`, and would produce the assay name error:
+
+```{r}
+object_exp <- summarized_experiment %>%
+  rename(assays = c(count = "counts"))
+```
+
+And we would use the following code to convert the assay name to `counts`, making it able to convert into `HermesData` object:
+
+```{r}
+object_exp <- rename(object_exp,
+  assays = c(counts = "count")
+)
+object_exp <- HermesData(object_exp)
+```
+
+## Importing an `ExpressionSet`
+
+If we start from an `ExpressionSet`, we can first convert it to a `RangedSummarizedExperiment` and then import it to `RangedHermesData`:
+
+```{r}
+se <- makeSummarizedExperimentFromExpressionSet(expression_set)
+object2 <- HermesData(se)
+object2
+```
+
+## Importing a Matrix
+
+In general we can also import a matrix of counts. We just have to pass the required
+gene and sample information as data frames to the constructor.
+
+```{r}
+counts_matrix <- assay(hermes_data)
+object3 <- HermesDataFromMatrix(
+  counts = counts_matrix,
+  rowData = rowData(hermes_data),
+  colData = colData(hermes_data)
+)
+object3
+identical(object, object3)
+```
+
+Note that we can easily access the counts assay (matrix) in the final object with `counts()`:
+
+```{r}
+cnts <- counts(object)
+cnts[1:3, 1:3]
+```
+
+# Annotations
+
+`hermes` provides a modular approach for querying gene annotations, in order to
+allow for future extensions in this or other downstream packages.
+
+## Connection to Database
+
+The first step is to connect to a database. In `hermes` the only option is currently databases that utilize the
+`BioMart` software suite.
+However due to the generic function design, it is simple to extend `hermes` with other data base
+connections.
+
+In order to save time during vignette build, we zoom in here on a subset of the original `object`
+containing only the first 10 genes.
+
+```{r}
+small_object <- object[1:10, ]
+```
+
+The corresponding function takes the common gene ID prefix as argument to determine the
+format of the gene IDs and the filter variable to use in the query later on.
+
+```{r eval=FALSE}
+httr::set_config(httr::config(ssl_verifypeer = 0L))
+connection <- connect_biomart(prefix(small_object))
+```
+
+Here we are using the `prefix()` method to access the prefix saved in the `HermesData` object.
+
+## Querying and Saving Annotations
+
+Then the second step is to query the gene annotations and save them in the object.
+
+```{r eval=FALSE}
+annotation(small_object) <- query(genes(small_object), connection)
+```
+
+Here we are using the `genes()` method to access the gene IDs (row names) of the `HermesData` object.
+Note that not all genes might be found in the data base and the corresponding rows would then be `NA` in the annotations.
+
+# Quality Control Flags
+
+`hermes` provides automatic gene and sample flagging, as well as manual sample flagging functionality.
+
+## Automatic Gene and Sample Flagging
+
+For genes, it is counted how many samples don't pass a minimum expression `CPM` (counts per million reads mapped) threshold.
+If too many, then this gene is flagged as a "low expression" gene.
+
+For samples, two flags are provided. The "technical failure" flag is based on the average Pearson correlation with other
+samples. The "low depth" flag is based on the library size, i.e. the total sum of counts for a sample across all genes.
+
+Thresholds for the above flags can be initialized with `control_quality()`, and the flags are added with `add_quality_flags()`.
+
+```{r}
+my_controls <- control_quality(min_cpm = 10, min_cpm_prop = 0.4, min_corr = 0.4, min_depth = 1e4)
+object_flagged <- add_quality_flags(object, control = my_controls)
+```
+
+## Manual Sample Flagging
+
+Sometimes it is necessary to manually flag certain samples as technical failures, e.g. after looking
+at one of the analyses discussed below. This is possible, too.
+
+```{r}
+object_flagged <- set_tech_failure(object_flagged, sample_ids = "06520011B0023R")
+```
+
+## Accessing Flags
+
+All flags have access functions.
+
+```{r}
+head(get_tech_failure(object_flagged))
+head(get_low_depth(object_flagged))
+head(get_low_expression(object_flagged))
+```
+
+# Filtering Data
+
+We can either filter based on the default QC flags, or based on custom variables from the gene or sample information.
+
+## Based on Default QC Flags
+
+This is simple with the `filter()` function. It is also possible to selectively only filter the genes or the samples using the `what` argument.
+
+```{r}
+object_flagged_filtered <- filter(object_flagged)
+object_flagged_genes_filtered <- filter(object_flagged, what = "genes")
+```
+
+## Based on Custom Variables
+
+This can be done with the `subset()` function. Genes can be filtered with the `subset` argument via expressions using the gene information variables, and samples can be filtered with the `select` argument using the sample information variables. In order to see which ones are available these can be queries first.
+
+```{r}
+names(rowData(object_flagged))
+names(colData(object_flagged))
+head(rowData(object_flagged)$chromosome)
+head(object_flagged$ARMCD)
+object_flagged_subsetted <- subset(
+  object_flagged,
+  subset = chromosome == "5",
+  select = ARMCD == "COH1"
+)
+```
+
+# Normalizing Counts
+
+Normalizing counts within samples (`CPM`), genes (RPKM) or across both (TPM) can be
+achieved with the `normalize()` function. The `normalize()` function can also transform the counts by the variance stabilizing transformation (`vst`) and the regularized log transformation (`rlog`) as proposed in the `DESeq2` package.
+
+```{r}
+object_normalized <- normalize(object_flagged_filtered)
+```
+
+```{r}
+object_rlog_normalized <- normalize(object_flagged_filtered, "rlog")
+```
+
+
+The corresponding assays are saved in the object and can be accessed with `assay()`.
+
+```{r}
+assay(object_normalized, "tpm")[1:3, 1:3]
+```
+
+```{r}
+assay(object_rlog_normalized, "rlog")[1:3, 1:3]
+```
+
+The used control settings can be accessed afterwards from the metadata of the object:
+
+```{r}
+metadata(object_normalized)
+```
+
+Note that also the filtering settings are saved in here. For custom normalization options,
+use `control_normalize()`. For example, to not use log scale but the original scale of the counts:
+
+```{r}
+object_normalized_original <- normalize(
+  object_flagged_filtered,
+  control = control_normalize(log = FALSE)
+)
+assay(object_normalized_original, "tpm")[1:3, 1:3]
+```
+
+# Descriptive Plots
+
+## Simple Plots
+
+A series of simple descriptive plots can be obtained by just calling `autoplot()` on an object.
+
+```{r}
+autoplot(object)
+```
+
+Note that individual plots from these can be produced with the series of `draw_*()` functions, see `?plot_all` for the
+detailed list. Then, these can be customized further.
+For example, we can change the number and color of the bins in the library size histogram:
+
+```{r}
+draw_libsize_hist(object, bins = 10L, fill = "blue")
+```
+
+## Top Genes
+
+Top genes can be calculated and visualized in a barplot.
+
+```{r}
+most_expr_genes <- top_genes(object_normalized, assay_name = "tpm")
+autoplot(most_expr_genes)
+```
+
+By passing another summary function, also the variability can be ranked for example.
+
+```{r}
+most_var_genes <- top_genes(object_normalized, summary_fun = rowSds)
+autoplot(most_var_genes)
+```
+
+## Heatmap of Genes among Samples
+
+Relative expression of genes can be displayed using a heatmap
+
+```{r}
+draw_heatmap(object[1:20], assay_name = "counts")
+```
+
+The heatmap can be grouped by labels in the `HermesData` object, 
+such as `"COUNTRY"` or `"AGEGRP"`.
+
+```{r}
+draw_heatmap(object[1:20], assay_name = "counts", col_data_annotation = "COUNTRY")
+```
+
+## Correlation between Samples
+
+A sample correlation matrix between samples can be obtained with the 
+`correlate()` function. This can be visualized in a heatmap using `autoplot()` 
+again. See `?calc_cor` for detailed options.
+
+```{r}
+cor_mat <- correlate(object)
+autoplot(cor_mat)
+```
+
+# Principal Components
+
+Let's see how we can perform Principal Components Analysis (PCA).
+
+## PCA of Samples
+
+PCA can be performed with `calc_pca()`. The result can be summarized or plotted.
+
+```{r}
+pca_res <- calc_pca(object_normalized, assay_name = "tpm")
+summary(pca_res)$importance
+autoplot(pca_res)
+```
+
+Note that various options are available for the plot, for example we can look at different principal components, and color the samples by sample variables. See `?ggfortify::autoplot.prcomp` for details.
+
+```{r}
+autoplot(
+  pca_res,
+  x = 2, y = 3,
+  data = as.data.frame(colData(object_normalized)), colour = "SEX"
+)
+```
+
+## Correlation with Sample Variables
+
+Subsequently it is easy to correlate the obtained principal components with the sample variables. We obtain a matrix of
+R-squared (R2) values for all combinations, which can again be visualized as a heatmap.
+See `?pca_cor_samplevar` for details.
+
+```{r}
+pca_cor <- correlate(pca_res, object_normalized)
+autoplot(pca_cor)
+```
+
+# QC Report Template
+
+In order to quickly obtain a quality control report for a new `RNAseq` data set, you can proceed as follows.
+
+1. Save your input `SummarizedExperiment` using R's `save()` function in a binary data file (e.g. ending with `.rda` suffix).
+1. Load the `hermes` package in `RStudio` and click on: `File` > `New File` > `R Markdown` > `From Template` and select the QC report template from `hermes`.
+![`Rmd_template_selection`](rmd_template_selection.png){width=4in}
+1. Fill in the few parameters in the `yaml` header, including the required file paths for the input file from above, and where the resulting `HermesData` object should be saved.
+1. Knit the document.
+
+The report contains the above mentioned descriptive plots and PCA analyses and can be a useful starting point for your analysis.
+
+# Differential Expression
+
+In addition to the above QC analyses, simple differential expression analysis is supported by `hermes`.
+In addition to the filtered object (normalization of counts is not required) the variable name of the factor to contrast the samples needs to be provided to `diff_expression()`.
+
+```{r}
+colData(object) <- df_cols_to_factor(colData(object))
+diff_res <- diff_expression(object, group = "SEX", method = "voom")
+head(diff_res)
+```
+
+Note that we use here the utility function `df_cols_to_factor()` which converts by default all character and logical variables to factor variables. This is one possible way here to ensure that the utilized group variable is a factor.
+
+Afterwards a standard volcano plot can be produced.
+
+```{r, fig.small = TRUE}
+autoplot(diff_res, log2_fc_thresh = 8)
+```
+
+# Summary
+
+The `hermes` R package provides classes, methods and functions to import, quality-check, filter, normalize and analyze `RNAseq` counts data. In particular, the robust object-oriented framework allows for easy extensions in the future to address user feature requests. These and other feedback are very welcome - thank you very much in advance for your thoughts on `hermes`!
+
+# Session Info {.unnumbered}
+
+Here is the output of `sessionInfo()` on the system on which this document was
+compiled running `pandoc` `r rmarkdown::pandoc_version()`:
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```

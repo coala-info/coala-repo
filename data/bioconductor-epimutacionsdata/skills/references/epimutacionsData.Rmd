@@ -1,0 +1,113 @@
+---
+title: "epimutacionsData: a  data repostory for epimutacions package"
+author: "Leire Abarrategui"
+date: "`r doc_date()`"
+vignette: >
+  %\VignetteIndexEntry{data repository for epimutacions package}
+  %\VignetteEngine{knitr::rmarkdown}
+output: 
+  BiocStyle::html_document
+
+bibliography: refs.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+The `epimutacionsData` package is a repository of  datasets for the
+`epimutacions` package. It includes 2 datasets to use as an example:
+
+* **Reference panel**: DNA methylation profiles of 
+24 whole cord blood samples from healthy 
+children born via caesarian (GEO: GSE127824)
+* **Case and control samples**: DNA methylation profiling of 
+whole blood samples in healthy children (GSE104812). 
+CHARGE and Kabuki syndromes whole blood samples
+DNA methylation profiles (GEO: GSE97362). 
+* **Candidate regions**: Regions in Illumina 450K array which 
+are candidate to be epimutations. 
+
+
+
+# Installation
+
+The following code explains how to access to the data: 
+
+
+```{r message = FALSE}
+library(ExperimentHub)
+eh <- ExperimentHub()
+query(eh, c("epimutacionsData"))
+```
+
+
+## Candidate epimutations
+
+In Illumina 450K array [@reproducibilityinfinium], 
+probes are unequally distributed along the genome, 
+limiting the number of regions that can fulfil the requirements 
+to be considered an epimutation. 
+So, we have computed a dataset containing 
+the regions that are candidates to become an epimutation. 
+
+To define the candidate epimutations, 
+we relied on the clustering from bumphunter [@jaffe2012bump]. 
+We defined a primary dataset with all the CpGs from the Illumina 450K array.
+Then, we run bumphunter and selected those regions with at least 3 CpGs. 
+As a result, we found 40408 candidate epimutations 
+which are available in the `candRegsGR` dataset.
+
+```{r message = FALSE, eval = FALSE}
+candRegsGR <- eh[["EH6692"]]
+```
+
+## Example datasets
+
+### Reference panel
+
+The package includes an `RGChannelSet` class reference panel
+(`reference_panel`) 
+which contains 22 whole cord blood samples from 
+healthy children born via caesarian from 
+the GSE127824 cohort [@gervin2019systematic].
+
+The reference panel can be found in `EH6691` record of the  `eh` object: 
+
+```{r message = FALSE}
+reference_panel <- eh[["EH6691"]]
+```
+
+### Control and case samples
+
+The `methy` dataset includes 51 DNA methylation profiling 
+of whole blood samples. 48 controls from GSE104812 [@shi2018dna] cohort 
+and 3 cases from GSE97362 [@butcher2017charge]. 
+it is a `GenomicRatioSet` class object. 
+
+```{r message = FALSE}
+methy <- eh[["EH6690"]]
+```
+
+## IDAT files 
+
+The IDAT files contain raw microarray intensities of 4 case samples 
+from GSE131350 cohort. 
+The files are located on the external data of `epimutacionsData` package: 
+
+```{r, message = FALSE, eval = FALSE}
+library(minfi)
+baseDir <- system.file("extdata", package = "epimutacionsData")
+targets <- read.metharray.sheet(baseDir)
+```
+
+
+# sessionInfo()
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+# References

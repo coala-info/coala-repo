@@ -1,0 +1,42 @@
+---
+name: uropa
+description: UROPA (Universal RObust Peak Annotator) is a versatile command-line tool designed to bridge the gap between genomic coordinates (peaks) and biological features (genes, exons, etc.).
+homepage: https://github.molgen.mpg.de/loosolab/UROPA
+---
+
+# uropa
+
+## Overview
+UROPA (Universal RObust Peak Annotator) is a versatile command-line tool designed to bridge the gap between genomic coordinates (peaks) and biological features (genes, exons, etc.). Unlike simple proximity-based annotators, UROPA allows for complex filtering based on feature attributes, directional logic (upstream/downstream), and specific anchor points (TSS, TES, or center). Use this skill to guide the setup of robust annotation pipelines that require more than just "nearest gene" logic.
+
+## CLI Usage and Best Practices
+
+### Installation
+The most reliable way to deploy UROPA is via Bioconda:
+```bash
+conda install -c bioconda uropa
+```
+
+### Core Command Structure
+The primary execution pattern for UROPA involves passing a configuration file (typically JSON) that defines the annotation logic. While the tool is CLI-based, the complexity of the parameters (feature type, anchor, direction, strand) is managed through this configuration.
+
+```bash
+uropa -input <PEAKS_BED> -gtf <ANNOTATION_GTF> -config <CONFIG_JSON> [options]
+```
+
+### Key Parameters for Annotation Logic
+When defining your annotation strategy, consider these four pillars supported by the tool:
+- **Feature Type**: Specify which GTF features to consider (e.g., `gene`, `transcript`, `exon`, `CDS`).
+- **Anchor**: Define the reference point on the feature for distance calculation (e.g., `start`, `end`, `center`, or `SS` for splice sites).
+- **Direction**: Filter for peaks located `upstream`, `downstream`, or `internally` relative to the feature.
+- **Strand**: Enforce strand-specific annotations (e.g., `same`, `opposite`, or `ignore`).
+
+### Expert Tips
+- **Attribute Filtering**: Leverage the ability to filter by GTF attributes. For example, you can restrict annotations to `protein_coding` genes or specific `gene_biotype` values directly within the tool's logic.
+- **Multi-step Annotation**: UROPA can perform multiple annotation runs in a single execution by defining a list of "queries" in the configuration. This is useful for prioritizing certain features (e.g., "first look for TSS within 1kb, then look for any gene body within 5kb").
+- **Output Interpretation**: UROPA generates a comprehensive table. Always check the `distance` and `relative_location` columns to validate that your directional logic (upstream/downstream) was applied as expected.
+- **Resource Management**: For large peak sets or complex GTF files, ensure sufficient memory is allocated, as UROPA builds internal representations of the genomic features to speed up the search process.
+
+## Reference documentation
+- [uropa - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_uropa_overview.md)
+- [loosolab/UROPA: Universal RObust Peak Annotator](./references/github_molgen_mpg_de_loosolab_UROPA.md)

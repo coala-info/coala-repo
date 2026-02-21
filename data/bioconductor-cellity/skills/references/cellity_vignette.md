@@ -1,0 +1,447 @@
+# Introduction to `cellity`: Classification of low quality cells in scRNA-seq data using R
+
+Tomislav Ilicic & Davis McCarthy
+
+#### 2025-10-29
+
+# Contents
+
+* [0.1 What you need](#what-you-need)
+* [0.2 Extract biological and technical features](#extract-biological-and-technical-features)
+* [0.3 PCA-feature based visualisation](#pca-feature-based-visualisation)
+* [0.4 SVM classification](#svm-classification)
+* [0.5 Hybrid approach: PCA-feature based + SVM](#hybrid-approach-pca-feature-based-svm)
+
+This document gives an introduction to and overview of the functionality of the`cellity` package.
+
+The `cellity` package contains functions to help to identify low quality cells in scRNA-seq data.
+It extracts biological and technical features from gene expression data that help to detect low quality cells.
+
+Input Requirements:
+`cellity` requires 1xgene expression matrix (Genes x Cells) and 1x Read statistics matrix (Cells x Metrics) that can be obtained by processing your data first with [`celloline`]. This will map your data and generate a counts-table + statistics about reads. For further details about [`celloline`] please check (<https://github.com/ti243/celloline>).
+
+The package features:
+
+* ability to extract meaningful biological and technical features from gene expression data (supporting mouse and human)
+* PCA-based visualisation of low quality cells and illustration of most informative features
+* SVM-based classification of low quality cells
+
+Future versions of `cellity` may also incorporate:
+
+* Wider range of biological and technical features that could help to distinguish high from low quality cells
+* Alternatives to SVM and PCA for detection and visualisation
+* More organisms and cell types that are supported by default
+
+To get up and running as quickly as possible, see the different uses cases below.
+
+## 0.1 What you need
+
+Assuming you have a matrix containing expression count data summarised at the
+level of genes + a matrix containing read metrics (e.g. number of mapped reads) produced by [`celloline`](https://github.com/ti243/celloline) you are good to go to identify low quality cells in your data.
+
+Here we use the example data provided with
+the package, which gives us:
+
+1. `sample training data`: counts, read statistics, labels
+2. `training features`: all, common
+3. `test features`: all, common
+
+* sample training data: a small portion of the original data used in this study (not included in the package due to large size). It contains both the gene expression (Genes x Cells), read statistics for each cell (Cell x Metrics) and labels (cell x label).
+* training features: list containing all and common features. a single feature-matrix contains biological and technical features extracted from the original data.
+* test features: similar to training features but originates from a different dataset (mES1 in the paper).
+
+These data-sets will help you to understand how to extract your own features, train your own model or simply to use the existing model.
+
+First, lets load the package and all datasets
+
+```
+library(cellity)
+data(sample_counts)
+data(sample_stats)
+```
+
+## 0.2 Extract biological and technical features
+
+Now that the data is loaded, we need to normalise the gene expression counts.
+At the moment counts generated only by HTSeq and Cufflinks are supported.
+The former counts (HTSeq) will be normalised by the number of total reads/library size (see below), the latter (Cufflinks) need to be transformed from FPKM to TPM.
+
+Let us normalise the test sample data in this case produced by HTSeq.
+
+```
+sample_counts_nm <- normalise_by_factor(sample_counts, colSums(sample_counts))
+```
+
+Once the data has been normalised (library size or TPM) the next step is to extract features.
+This function will extract biologically meaningful and technical features that will help to distinguish low from high quality cells.
+
+As it extracts not only biological, but also technical features, we need to provide the read metrics.
+Let us now extract features from the sample data using the .counts and .stats file which usually will be produced by [`celloline`](https://github.com/ti243/celloline).
+
+```
+sample_features <- extract_features(sample_counts_nm, sample_stats)
+```
+
+This will generate a list with two elements. Each entry in the list is a matrix (cells x features).
+The first one will contain all features, the second what we call “common” features.
+All features can be used to predict low quality cells of the same cell type, whereas common features are cell type independent and should be applicable to the majority of cell types. However, “common” features have less power to detect low quality cells.
+
+The function `extract_features` supports only human and mouse data at the moment with pre-defined features. However, if you want to use your own or additional, or define which features are common, you can do so by providing the data in our format (check the data structure below). At the moment we only support human and mouse cells and the dependent databases are already installed. However, if you specify corretly the extra\_genes (that they have the appropriate gene ID (e.g. ENSMUSG for mouse) and you have the specific gene database installed (e.g. org.Mm.eg.db for mouse genes from biomart R)) it might work. See an example below to extract features pretending that our sample case is human:
+
+```
+if (requireNamespace("org.Hs.eg.db", quietly = TRUE)) {
+  #MAKE SURE YOU HAVE THE APPROPRIATE ORGANISM INSTALLED
+  #You would instsall the library below by:
+  #if (!requireNamespace("BiocManager", quietly=TRUE))
+      #install.packages("BiocManager")
+  #BiocManager::install("org.Hs.eg.db")
+  library(org.Hs.eg.db)
+  data("extra_human_genes")
+  data("feature_info")
+  GO_terms <- feature_info[[1]]
+  common_features <- feature_info[[2]]
+  features_human <- extract_features(
+    sample_counts_nm, sample_stats, common_features = common_features,
+    GO_terms = GO_terms, extra_genes = extra_human_genes, organism = "human")
+}
+```
+
+```
+## [1] "[INFO]:Extracting features"
+## [1] "[INFO]:Features extracted."
+```
+
+If some features are not present in the matrix, it means that all of them have the same value (e.g. ERCC are all 0 if no ERCC present in the data).
+
+Once we have extracted all features, we can now do the interesting bit and analyse the quality of our data.
+To do so, we have these possibilities:
+\* PCA-based feature visualisation
+\* SVM classification
+\* Hybrid approach
+
+## 0.3 PCA-feature based visualisation
+
+Let us test the PCA-feature based version first, by using all features:
+
+```
+sample_features_all <- sample_features[[1]]
+sample_qual_pca <- assess_cell_quality_PCA(sample_features_all)
+```
+
+The function `assess_cell_quality_PCA` performs PCA on the features and detects outliers applying `uni.plot` in the [`mvoutlier`](https://cran.r-project.org/web/packages/mvoutlier/mvoutlier.pdf) package on the first two dimensions (PC1 and PC2). It returns a two-dimensional matrix with the name of each sample and indication whether the cell is low (0) or high (1) quality.
+
+To be sure that the annotation makes sense, you can specify a output file where the PCA plot will be written to, coloring low (red) and high (green) quality cells. Moreover, the plot will show the most informative features for PC1 and PC2 and show the distribution between low (red) and high (green) quality cells.
+
+However, since the sample data is very small, it will be hard to determine low from high quality cells with confidence, as they all will be scattered across the plot. Therefore the more data you have, the more confident you can be in using the PCA-based method.
+
+See an example below showing PCA-feature based of the original training data (all 960 mES cells) and the most informative features by using our already extracted training features.
+
+```
+data(training_mES_features)
+training_mES_features_all <- training_mES_features[[1]]
+training_quality_PCA_allF <- assess_cell_quality_PCA(
+  training_mES_features_all, file = "./training_quality_PCA_allF.pdf")
+```
+
+```
+## Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
+## ℹ Please use tidy evaluation idioms with `aes()`.
+## ℹ See also `vignette("ggplot2-in-packages")` for more information.
+## ℹ The deprecated feature was likely used in the cellity package.
+##   Please report the issue to the authors.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+```
+
+```
+## Warning: The `size` argument of `element_rect()` is deprecated as of ggplot2 3.4.0.
+## ℹ Please use the `linewidth` argument instead.
+## ℹ The deprecated feature was likely used in the cellity package.
+##   Please report the issue to the authors.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+```
+
+![](data:image/png;base64...)
+
+As you can see, most cells are green and scattered together, whereas the red cells are outliers. The informative features on the side and bottom tell us that the proportion of intergenic reads are much higher for red cells and correlation of to the mean expression of is lower, compared to green (high quality) cells. This suggests that these red cells are indeed low quality.
+Note: Multiples will usually show a stronger correlation to the mean, if the population is homogenous in size. Therefore, if red cells show higher correlation that might indicate that they are multiples.
+
+You can than use the [`caret`](https://cran.r-project.org/web/packages/caret/caret.pdf) package to compare the predicted labels with the original labels (if you have any) to see agreement. Please note that this classifier predicts a subtype of low quality cells that are not visible under the microscope (deceptive cells, see paper for more information). Therefore it might identify more low quality cells than originally annotated by microscopy.
+
+```
+if (requireNamespace("caret", quietly = TRUE)) {
+  library(caret)
+  data(training_mES_labels)
+  lvs <- c("0", "1")
+  truth <- factor(training_mES_labels[,2],levels = rev(lvs))
+  pred <- factor(training_quality_PCA_allF[,2], levels = rev(lvs))
+  confusionMatrix(pred, truth)
+}
+```
+
+```
+## Confusion Matrix and Statistics
+##
+##           Reference
+## Prediction   1   0
+##          1 691  28
+##          0  94 147
+##
+##                Accuracy : 0.8729
+##                  95% CI : (0.8502, 0.8933)
+##     No Information Rate : 0.8177
+##     P-Value [Acc > NIR] : 2.343e-06
+##
+##                   Kappa : 0.6282
+##
+##  Mcnemar's Test P-Value : 3.985e-09
+##
+##             Sensitivity : 0.8803
+##             Specificity : 0.8400
+##          Pos Pred Value : 0.9611
+##          Neg Pred Value : 0.6100
+##              Prevalence : 0.8177
+##          Detection Rate : 0.7198
+##    Detection Prevalence : 0.7490
+##       Balanced Accuracy : 0.8601
+##
+##        'Positive' Class : 1
+##
+```
+
+Overall we can achieve 90% accuracy, detecting 76% of low quality cells. That is quite good, considering we do not train any classifier.
+Calling the same function using only common features will result in the plot below (using the full original dataset):
+
+```
+training_mES_features_common <- training_mES_features[[2]]
+training_quality_PCA_commonF <- assess_cell_quality_PCA(
+  training_mES_features_common, file = "./training_quality_PCA_commonF.pdf")
+```
+
+![](data:image/png;base64...)
+Since we do not use all features, our top features are related mostly to mitochondria and cytoplasm (please refer to the paper why that is).
+Let us check the accuracy again by comparing to the original labels:
+
+```
+if (requireNamespace("caret", quietly = TRUE)) {
+  pred <- factor(training_quality_PCA_commonF[,2], levels = rev(lvs))
+  confusionMatrix(pred, truth)
+}
+```
+
+```
+## Confusion Matrix and Statistics
+##
+##           Reference
+## Prediction   1   0
+##          1 756  37
+##          0  29 138
+##
+##                Accuracy : 0.9312
+##                  95% CI : (0.9134, 0.9464)
+##     No Information Rate : 0.8177
+##     P-Value [Acc > NIR] : <2e-16
+##
+##                   Kappa : 0.7652
+##
+##  Mcnemar's Test P-Value : 0.3889
+##
+##             Sensitivity : 0.9631
+##             Specificity : 0.7886
+##          Pos Pred Value : 0.9533
+##          Neg Pred Value : 0.8263
+##              Prevalence : 0.8177
+##          Detection Rate : 0.7875
+##    Detection Prevalence : 0.8260
+##       Balanced Accuracy : 0.8758
+##
+##        'Positive' Class : 1
+##
+```
+
+Accuracy now is actually higher, as we detect more high quality cells, however, we detect a slightly lower number of low quality cells.
+Detection accuracy will here often depend on the data and with which type of low quality cells it is cofounded with. In the case of multiples, PCA-feature based version will not be very successful. Therefore let us try an alternative method.
+
+## 0.4 SVM classification
+
+An alternative to the PCA-based approach is to use SVM to classify cells. There are several ways to do so and it will depend if (A) you want to use our data to predict mES cells (B) use our data to predict ANY cell type (C) use your own data to train and predict
+
+###Scenario A: predicting low quality cells in mES data using our original dataset
+Let us consider first the scenario where you want to use our original 960 mES cells to predict quality of cells on another dataset.
+First, load the features, counts and labels from the original training data (960 mES cells) and our test set (mES1 from the paper).
+
+```
+data(mES1_features)
+data(mES1_labels)
+```
+
+This provides us with the full training mES and test set. Now let us use SVM to predict low quality cells on our previous example. To do so, we need to load the hyperparameters wich will optimise SVM classification. Therefore call:
+
+```
+data(param_mES_all)
+mES1_features_all <- mES1_features[[1]]
+mES1_quality_SVM <- assess_cell_quality_SVM(
+  training_mES_features_all, training_mES_labels[,2], param_mES_all,
+  mES1_features_all)
+```
+
+The function `assess_cell_quality_SVM` will perform SVM using an ensemble of models (predict the quality by using different combination of parameters, and then vote) to improve accuracy. It returns, similar to the PCA-feature based version, a matrix with cell names and their label indicating low (0) and high (1) quality cells.
+
+Let us check the accuracy again by comparing to the original labels:
+
+```
+if (requireNamespace("caret", quietly = TRUE)) {
+  truth <- factor(mES1_labels[,2],levels = rev(lvs))
+  pred <- factor(mES1_quality_SVM[,2], levels = rev(lvs))
+  confusionMatrix(pred, truth)
+}
+```
+
+```
+## Confusion Matrix and Statistics
+##
+##           Reference
+## Prediction   1   0
+##          1 439  45
+##          0  89  99
+##
+##                Accuracy : 0.8006
+##                  95% CI : (0.7683, 0.8302)
+##     No Information Rate : 0.7857
+##     P-Value [Acc > NIR] : 0.1863703
+##
+##                   Kappa : 0.467
+##
+##  Mcnemar's Test P-Value : 0.0002035
+##
+##             Sensitivity : 0.8314
+##             Specificity : 0.6875
+##          Pos Pred Value : 0.9070
+##          Neg Pred Value : 0.5266
+##              Prevalence : 0.7857
+##          Detection Rate : 0.6533
+##    Detection Prevalence : 0.7202
+##       Balanced Accuracy : 0.7595
+##
+##        'Positive' Class : 1
+##
+```
+
+It performs quite well by capturing the majority of low quality cells (70%) whilst ensuring to identify also the majority of high quality cells (80%) correctly.
+
+###Scenario B: predicting low quality cells in ANY data using our original dataset
+If you have cells that are not mouse embryonic stem cells, use can use a subset of features (common) to predict cell quality. This will lower the accuracy, but still give a reasonable estimate of low and high quality cells. In the case of very distant cell types (other organisms, or cancer cells) it might be that the common feature won’t be applicable. In this case you need to do go to Scenario C.
+
+Please note that you need to use common features for both, the training and test-set, AND also parameters optimised for common features.
+Let us consider the previous example by only using common features.
+
+```
+data(param_mES_common)
+training_mES_features_common <- training_mES_features[[2]]
+mES1_features_common <- mES1_features[[2]]
+mES1_quality_SVM_common <- assess_cell_quality_SVM(
+  training_mES_features_common, training_mES_labels[,2], param_mES_common,
+  mES1_features_common)
+```
+
+When we now compare accuracy to the original labels we can see that it performs worse than before.
+
+```
+if (requireNamespace("caret", quietly = TRUE)) {
+  truth <- factor(mES1_labels[,2],levels = rev(lvs))
+  pred <- factor(mES1_quality_SVM_common[,2], levels = rev(lvs))
+  confusionMatrix(pred, truth)
+}
+```
+
+```
+## Confusion Matrix and Statistics
+##
+##           Reference
+## Prediction   1   0
+##          1 471  75
+##          0  57  69
+##
+##                Accuracy : 0.8036
+##                  95% CI : (0.7715, 0.833)
+##     No Information Rate : 0.7857
+##     P-Value [Acc > NIR] : 0.1394
+##
+##                   Kappa : 0.3889
+##
+##  Mcnemar's Test P-Value : 0.1390
+##
+##             Sensitivity : 0.8920
+##             Specificity : 0.4792
+##          Pos Pred Value : 0.8626
+##          Neg Pred Value : 0.5476
+##              Prevalence : 0.7857
+##          Detection Rate : 0.7009
+##    Detection Prevalence : 0.8125
+##       Balanced Accuracy : 0.6856
+##
+##        'Positive' Class : 1
+##
+```
+
+###Scenario C: predicting low quality cells in ANY data using YOUR OWN training set
+The last scenario is the most complicated and time consuming.
+Here you have let’s say T-cells and want to be sure that you remove most of your low quality cells. Using all features of mES trainign data won’t work and common features also might not be as accurate. The alternative now would be to go into the lab and annote each cell manually through microscopy. As microscopic annotation can be very time-consuming you don’t want to spend days to check every individual cell and most likely make quite a few mistakes (e.g. multiples are hard to identify if you do not invest enough time).
+
+The best approach that will save you time and still give good prediction accuracy, is to annotate a subset of your data with microscopy.
+You use this subset to extract all features and train your own SVM classifier to predict the remainder of the not annotated cells.
+However, you might have to estimate hyperparameters (which I won’t discuss here as it will be out of scope) but it may work with the optimised hyperparameters we have used above for the original training set.
+
+## 0.5 Hybrid approach: PCA-feature based + SVM
+
+What I would recommend is the hybrid approach, where you (1) perform the PCA-feature based approach on your data, (2) check if it is reasonable and subsequently (3) use our training data (or ideally your own annotated training data) to predict quality of your cells cells. You can than check how well they agree and decide for which version you will go for.
+
+Let us compare the accuracy between the PCA-feature based and SVM version using all features on our mES1 test example:
+
+```
+#PCA QUALITY
+mES1_quality_PCA<-assess_cell_quality_PCA(mES1_features_all)
+mES1_quality_SVM <- assess_cell_quality_SVM(
+  training_mES_features_all, training_mES_labels[,2], param_mES_all,
+  mES1_features_all)
+
+if (requireNamespace("caret", quietly = TRUE)) {
+  truth <- factor(mES1_labels[,2],levels = rev(lvs))
+  pred_PCA <- factor(mES1_quality_PCA[,2], levels = rev(lvs))
+  pred_SVM <- factor(mES1_quality_SVM[,2], levels = rev(lvs))
+
+  c_PCA<-confusionMatrix(pred_PCA, truth)
+  print("PCA accuracy")
+  print(c_PCA$byClass[1:2])
+
+  c_SVM<-confusionMatrix(pred_SVM, truth)
+  print("SVM accuracy")
+  print(c_SVM$byClass[1:2])
+}
+```
+
+```
+## [1] "PCA accuracy"
+## Sensitivity Specificity
+##   0.9147727   0.6666667
+## [1] "SVM accuracy"
+## Sensitivity Specificity
+##   0.8314394   0.6875000
+```
+
+We can see that now the PCA-feature based version performs not as good as the SVM version using all features on detecting low quality cells (specificity), but preserves more high quality cells (sensitivity). Depending on the experimental setting and the question what is more importat: keeping more high or removing more low quality cells, we would choose one of the two methods.
+
+Usually both versions should be in good agreement with each other. If the data you predict is the same cell type as the training data (in this case mES) you can probably rely more on the SVM version more and do PCA as a control to see if overall it makes sense.
+
+In this case, the agreemeent between the two methods is ~86%.
+
+```
+print(length(which((mES1_quality_PCA[,2]==mES1_quality_SVM[,2])==TRUE))/nrow(mES1_labels))
+```
+
+```
+## [1] 0.8854167
+```

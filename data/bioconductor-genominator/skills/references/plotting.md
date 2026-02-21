@@ -1,0 +1,187 @@
+Plotting using Genominator and GenomeGraphs (Beta)
+
+James Bullard
+
+Kasper Daniel Hansen
+
+Modiﬁed: April 18, 2010, Compiled: April 24, 2017
+
+This vignette is preliminary, and should be viewed as subject to change. A number of the functions are
+
+not directly exported by the package – there is a reason for that.
+
+In this vignette we demonstrate how to visualize data using the GenomeGraphs package. The main idea
+is that we want to build a plotting function which we can use to plot regions. The simplest case is the
+following:
+
+First, we make a database:
+
+# the number of annotation regions, not less than 10
+
+> require(Genominator)
+> options(verbose = FALSE)
+> N <- 100000 # the number of observations.
+> K <- 100
+> df <- data.frame(chr = sample(1:16, size = N, replace = TRUE),
++
++
+> eData <- aggregateExpData(importToExpData(df, dbFilename = "pmy.db", overwrite = TRUE, tablename = "ex_tbl"))
+> annoData <- data.frame(chr = sample(1:16, size = K, replace = TRUE),
++
++
++
++
+> rownames(annoData) <- paste("elt", 1:K, sep = ".")
+
+strand = sample(c(1, -1), size = K, replace = TRUE),
+start = (st <- sample(1:1000, size = K, replace = TRUE)),
+end = st + rpois(K, 75),
+feature = c("gene", "intergenic")[sample(1:2, size = K, replace = TRUE)])
+
+location = sample(1:1000, size = N, replace = TRUE),
+strand = sample(c(1L,-1L), size = N, replace = TRUE))
+
+> rp <- Genominator:::makeRegionPlotter(list("track.1" = list(expData = eData, what = "counts")))
+> args(rp)
+
+function (chr, start, end, overlays = NULL, title = NULL, ...)
+NULL
+
+This constructs a function which can be called to view particular pieces of data.
+
+> rp(1, 10, 1000)
+
+1
+
+GenomeGraphs provides a wealth of customization options and means of plotting which for the most part
+
+are transferable using the list.
+
+> rp <- Genominator:::makeRegionPlotter(list("track.1" = list(expData = eData, what = "counts",
++
+> rp(1, 400, 500)
+
+dp = DisplayPars(lwd = .45, color = "grey"))))
+
+2
+
+track.11002003004005006007008009001000lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll246810Here we can plot our annotation using the annotation factory construct. This is probably a little advanced.
+An easier thing is to use Ensembl to do the plotting of the annotation. Often, however, you will want to
+augment the annotation produced by Ensembl.
+
+> annoFactory <- Genominator:::makeAnnoFactory(annoData, featureColumnName = "feature",
++
++
++
+> rp <- Genominator:::makeRegionPlotter(list("track.1" = list(expData = eData, what = "counts",
++
++
++
++
+> rp(annoData[1,"chr"], annoData[1, "start"] - 100, annoData[1, "end"] + 100)
+
+dp = DisplayPars(lwd=.2, color = "grey")),
+"track.2" = list(expData = eData, what = "counts",
+fx = log2, DisplayPars(lwd=.3, color = "black"))),
+
+groupColumnName = NULL, idColumnName = NULL,
+dp = DisplayPars("gene" = "blue",
+"intergenic" = "green"))
+
+annoFactory = annoFactory)
+
+3
+
+track.1400410420430440450460470480490500lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll246810GenomeGraphs also oﬀers a nice way to plot annotation for a given region using data from Ensembl or
+other sources of annotation - in some cases you have to do a little work because of the way that Biomart
+indexes the annotation and the way the Genominator package works (in this case yeast annotation is stored
+with Roman numerals denoting the chromosomes).
+
+> require("biomaRt")
+> mart <- useMart("ensembl", dataset = "scerevisiae_gene_ensembl")
+> annoFactory <- Genominator:::makeAnnoFactory(mart, chrFunction = function(chr) as.roman(chr))
+> load(system.file("data", "chr1_yeast.rda", package = "Genominator"))
+> head(chr1_yeast)
+
+chr location strand
+
+1
+2
+3
+4
+5
+6
+
+1
+1
+1
+1
+1
+1
+
+1
+1
+2
+2
+2
+2
+
+mRNA_1
+
+mRNA_2
+-1 9.038919 8.614710
+-1 9.172428 8.558421
+-1 9.422065 9.131857
+-1 8.679480 8.442943
+-1 8.546894 8.794416
+-1 8.784635 8.918863
+
+> yData <- importToExpData(chr1_yeast, dbFilename = "my.db", tablename = "yeast",
++
+> rp <- Genominator:::makeRegionPlotter(list("track.-" = list(expData = yData, what = c("mRNA_1", "mRNA_2"),
++
+
+fx = rowMeans, strand = -1,
+
+overwrite = TRUE)
+
+4
+
++−track.1track.2750800850900950llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll246810llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll00.511.522.53+
++
+> rp(1, 20000, 50000)
+
+dp = DisplayPars(lwd=.3, color = "grey"))),
+
+annoFactory = annoFactory)
+
+SessionInfo
+
+(cid:136) R version 3.4.0 (2017-04-21), x86_64-pc-linux-gnu
+
+(cid:136) Locale: LC_CTYPE=en_US.UTF-8, LC_NUMERIC=C, LC_TIME=en_US.UTF-8, LC_COLLATE=C,
+
+LC_MONETARY=en_US.UTF-8, LC_MESSAGES=en_US.UTF-8, LC_PAPER=en_US.UTF-8, LC_NAME=C,
+LC_ADDRESS=C, LC_TELEPHONE=C, LC_MEASUREMENT=en_US.UTF-8, LC_IDENTIFICATION=C
+
+(cid:136) Running under: Ubuntu 16.04.2 LTS
+
+(cid:136) Matrix products: default
+
+(cid:136) BLAS: /home/biocbuild/bbs-3.5-bioc/R/lib/libRblas.so
+
+(cid:136) LAPACK: /home/biocbuild/bbs-3.5-bioc/R/lib/libRlapack.so
+
+(cid:136) Base packages: base, datasets, grDevices, graphics, grid, methods, parallel, stats, stats4, utils
+
+(cid:136) Other packages: BiocGenerics 0.22.0, DBI 0.6-1, GenomeGraphs 1.36.0, Genominator 1.30.0,
+
+IRanges 2.10.0, RSQLite 1.1-2, S4Vectors 0.14.0, biomaRt 2.32.0
+
+5
+
++ .  2−track.−2000030000400005000020000300004000050000llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll567891011(cid:136) Loaded via a namespace (and not attached): AnnotationDbi 1.38.0, Biobase 2.36.0, RCurl 1.95-4.8,
+Rcpp 0.12.10, XML 3.98-1.6, bitops 1.0-6, compiler 3.4.0, digest 0.6.12, memoise 1.1.0, tools 3.4.0
+
+6
+

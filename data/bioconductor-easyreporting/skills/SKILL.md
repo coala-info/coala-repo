@@ -1,0 +1,78 @@
+---
+name: bioconductor-easyreporting
+description: the package is available on all platforms; click for details.
+homepage: https://bioconductor.org/packages/release/bioc/html/easyreporting.html
+---
+
+# bioconductor-easyreporting
+
+## Overview
+
+The `easyreporting` package provides an R6-based interface to simplify the creation of Rmarkdown reports. It acts as a wrapper that tracks your analysis steps in real-time, allowing you to append titles, text, code chunks, and variable states to a report file as you work. It is particularly useful for bioinformatics pipelines where documenting data provenance and specific function calls (including sourced scripts) is critical for reproducibility.
+
+## Core Workflow
+
+### 1. Initialization
+Create an `easyreporting` instance to manage the report state. This defines the output path and metadata.
+
+```r
+library(easyreporting)
+
+# Define project path and initialize
+proj_path <- file.path(tempdir(), "my_analysis_report")
+er <- easyreporting(filenamePath=proj_path, 
+                    title="Analysis Report", 
+                    author="Analyst Name")
+```
+
+### 2. Adding Structure and Text
+Use these functions to add narrative context between code blocks.
+
+*   `mkdTitle(er, title="Section Name", level=1)`: Adds a markdown header (levels 1-6).
+*   `mkdGeneralMsg(er, "Your descriptive text here")`: Adds a paragraph of text.
+
+### 3. Adding Code Chunks
+There are three primary ways to include code in the report:
+
+**A. Complete Chunks (Recommended)**
+Best for single function calls or simple assignments.
+```r
+mkdCodeChunkComplete(er, code="data <- read.csv('data.csv')")
+```
+
+**B. Commented Chunks**
+Adds a natural language comment immediately preceding the code.
+```r
+mkdCodeChunkCommented(er, 
+                     comment="Normalize the counts using log2", 
+                     code="norm_counts <- log2(counts + 1)")
+```
+
+**C. Manual Chunks**
+Use for complex blocks where you need to track variable assignments manually.
+```r
+mkdCodeChunkSt(er) # Start chunk
+# ... run your R code ...
+mkdVariableAssignment(er, "result_var", result_val, show=TRUE)
+mkdCodeChunkEnd(er) # End chunk
+```
+
+### 4. Advanced Features
+*   **Sourcing External Scripts:** Use the `sourceFilesList` argument in chunk functions to copy and source external `.R` files into the report environment.
+*   **Custom Options:** Use `makeOptionsList(echoFlag=TRUE, cacheFlag=TRUE)` to control Rmarkdown chunk behavior (e.g., `echo`, `include`, `cache`).
+
+### 5. Compiling the Report
+Once the analysis is complete, compile the tracked content into the final document (usually HTML via `distill`). This automatically appends `sessionInfo()`.
+
+```r
+compile(er)
+```
+
+## Tips for Effective Reporting
+*   **Variable Tracking:** Use `mkdVariableAssignment` to explicitly document the value of a parameter used in the analysis within the report text.
+*   **Path Management:** `easyreporting` handles the copying of sourced scripts to the report directory to ensure the final Rmd is self-contained.
+*   **Level Consistency:** Start with `level=1` for main chapters and `level=2` or `3` for sub-steps like "Data Cleaning" or "Visualization".
+
+## Reference documentation
+- [Bio Pipeline Usage](./references/bio_usage.md)
+- [Standard Usage Guide](./references/standard_usage.md)

@@ -1,0 +1,16 @@
+# bioconductor-brainimager Bioconductor Package Report
+
+## brainImageR
+
+### Package Description
+The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/3.8/bioc/html/brainImageR.html
+- **Package**: brainImageR
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: https://github.com/saralinker/brainImageR
+- **Skill**: generated
+

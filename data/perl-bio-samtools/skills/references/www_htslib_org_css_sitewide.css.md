@@ -1,0 +1,1 @@
+body { padding-top:15px; } .navbar-brand { font-size:24px; font-weight:bold; color:#333; } .homepage-intro h1, .home-boxes .well h3 { margin-top:0; } .home-boxes .well { min-height:180px; } .home-boxes .well h3 a, .home-boxes .well ul a { color:#333; } .copyright { font-size: 80%; color: gray; } .home-boxes .well .btn-lg { white-space:normal; }

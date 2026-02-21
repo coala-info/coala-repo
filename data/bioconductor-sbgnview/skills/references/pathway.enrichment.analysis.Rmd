@@ -1,0 +1,186 @@
+---
+title: "SBGNview Based Pathway Analysis and Visualization Workflow"
+author: 
+  - Xiaoxi Dong
+  - Kovidh Vegesna, kvegesna (AT) uncc.edu
+  - Weijun Luo, luo_weijun (AT) yahoo.com
+date:  "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+    bookdown::html_document2:
+      fig_caption: yes
+      number_sections: yes
+      toc: yes
+      toc_float: 
+        collapsed: false
+editor_options: 
+  chunk_output_type: console
+bibliography: REFERENCES.bib
+vignette: >
+  %\VignetteIndexEntry{Pathway analysis using SBGNview gene set}
+  \usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+# Introduction
+SBGNview has collected pathway data and gene sets from the following databases: Reactome, PANTHER Pathway, SMPDB, MetaCyc and MetaCrop. These gene sets can be used for pathway enrichment analysis.
+
+In this vignette, we will show you a complete pathway analysis workflow based on GAGE + SBGNview. Similar workflows have been documented in the [gage package](https://bioconductor.org/packages/gage/) using GAGE + [Pathview](https://bioconductor.org/packages/pathview/).
+
+
+# Citation
+
+Please cite the following papers when using the open-source SBGNview package. This will help the project and our team:
+
+Luo W, Brouwer C. Pathview: an R/Biocondutor package for pathway-based data integration and visualization. Bioinformatics, 2013, 29(14):1830-1831, <a href=https://doi.org/10.1093/bioinformatics/btt285>doi: 10.1093/bioinformatics/btt285</a>
+
+
+
+Please also cite the GAGE paper when using the gage package:
+
+Luo W, Friedman M, etc. GAGE: generally applicable gene set enrichment for pathway analysis. BMC Bioinformatics, 2009, 10, pp. 161, <a href=https://doi.org/10.1186/1471-2105-10-161>doi: 10.1186/1471-2105-10-161</a>
+
+
+# Installation and quick start
+Please see the [Quick Start tutorial](https://bioconductor.org/packages/devel/bioc/vignettes/SBGNview/inst/doc/SBGNview.quick.start.html) for installation instructions and quick start examples.
+
+
+# Complete pathway analysis + visualization workflow
+
+In this example, we analyze a RNA-Seq dataset of IFNg KO mice vs wild type mice. It contains normalized RNA-seq gene expression data described in  Greer, Renee L., Xiaoxi Dong, et al, 2016.
+
+## Load the gene (RNA-seq) data
+The RNA abundance data was quantile normalized and log2 transformed, stored in a ["SummarizedExperiment"](https://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html) object. SBGNview input user data (gene.data or cpd.data) can be either a numeric matrix or a vector, like those in [pathview](https://bioconductor.org/packages/pathview/). In addition, it can be a "SummarizedExperiment" object, which is commonly used in BioConductor packages. 
+
+```{r , echo = TRUE, results = 'hide', message = FALSE, warning = FALSE}
+library(SBGNview)
+library(SummarizedExperiment)
+data("IFNg", "pathways.info")
+count.data <- assays(IFNg)$counts
+head(count.data)
+wt.cols <- which(IFNg$group == "wt")
+ko.cols <- which(IFNg$group == "ko")
+
+```
+
+## Gene sets from SBGNview pathway collection
+### Load gene set for mouse with ENSEMBL gene IDs
+```{r , echo = TRUE , results = 'hide',   message = FALSE, warning = FALSE}
+ensembl.pathway <- sbgn.gsets(id.type = "ENSEMBL",
+                              species = "mmu",
+                              mol.type = "gene",
+                              output.pathway.name = TRUE
+                              )
+head(ensembl.pathway[[2]])
+```
+
+
+### Pathway or gene set analysis using GAGE
+```{r , echo = TRUE, results = 'hide', message = FALSE, warning = FALSE}
+if(!requireNamespace("gage", quietly = TRUE)) {
+  BiocManager::install("gage", update = FALSE)
+}
+
+library(gage)
+degs <- gage(exprs = count.data,
+           gsets = ensembl.pathway,
+           ref = wt.cols,
+           samp = ko.cols,
+           compare = "paired" #"as.group"
+           )
+head(degs$greater)[,3:5]
+head(degs$less)[,3:5]
+down.pathways <- row.names(degs$less)[1:10]
+head(down.pathways)
+```
+
+## Visualize perturbations in top SBGN pathways
+### Calculate fold changes or gene  perturbations
+The abundance values were log2 transformed. Here we calculate the fold change of IFNg KO group v.s. WT group. 
+```{r , echo = TRUE, results = 'hide', message = FALSE, warning = FALSE}
+ensembl.koVsWt <- count.data[,ko.cols]-count.data[,wt.cols]
+head(ensembl.koVsWt)
+
+#alternatively, we can also calculate mean fold changes per gene, which corresponds to gage analysis above with compare="as.group"
+mean.wt <- apply(count.data[,wt.cols] ,1 ,"mean")
+head(mean.wt)
+mean.ko <- apply(count.data[,ko.cols],1,"mean")
+head(mean.ko)
+# The abundance values were on log scale. Hence fold change is their difference.
+ensembl.koVsWt.m <- mean.ko - mean.wt
+```
+
+
+
+### Visualize pathway perturbations by SBNGview
+```{r , echo = TRUE, results = 'hide', message = FALSE, warning = FALSE}
+#load the SBGNview pathway collection, which may takes a few seconds.
+data(sbgn.xmls)
+down.pathways <- sapply(strsplit(down.pathways,"::"), "[", 1)
+head(down.pathways)
+sbgnview.obj <- SBGNview(
+    gene.data = ensembl.koVsWt,
+    gene.id.type = "ENSEMBL",
+    input.sbgn = down.pathways[1:2],#can be more than 2 pathways
+    output.file = "ifn.sbgnview.less",
+    show.pathway.name = TRUE,
+    max.gene.value = 2,
+    min.gene.value = -2,
+    mid.gene.value = 0,
+    node.sum = "mean",
+    output.format = c("png"),
+    
+    font.size = 2.3,
+    org = "mmu",
+    
+    text.length.factor.complex = 3,
+    if.scale.compartment.font.size = TRUE,
+    node.width.adjust.factor.compartment = 0.04 
+)
+sbgnview.obj
+
+```{r ifng, echo = FALSE,fig.cap="\\label{fig:ifng}SBGNview graph of the most down-regulated pathways in IFNg KO experiment"}
+library(knitr)
+include_graphics("ifn.sbgnview.less_R-HSA-877300_Interferon gamma signaling.svg")
+```
+```{r ifna, echo = FALSE,fig.cap="\\label{fig:ifna}SBGNview graph of the second most down-regulated pathways in IFNg KO experiment"}
+library(knitr)
+include_graphics("ifn.sbgnview.less_R-HSA-909733_Interferon alpha_beta signaling.svg")
+```
+
+
+
+## SBGNview with SummarizedExperiment object
+The 'cancer.ds' is a microarray dataset from a breast cancer study. The dataset was adopted from gage package and processed into a SummarizedExperiment object. It is used to demo SBGNview's visualization ability. 
+```{r , echo = TRUE, results = 'hide', message = FALSE, warning = FALSE}
+data("cancer.ds")
+sbgnview.obj <- SBGNview(
+    gene.data = cancer.ds,
+    gene.id.type = "ENTREZID",
+    input.sbgn = "R-HSA-877300",
+    output.file = "demo.SummarizedExperiment",
+    show.pathway.name = TRUE,
+    max.gene.value = 1,
+    min.gene.value = -1,
+    mid.gene.value = 0,
+    node.sum = "mean",
+    output.format = c("png"),
+    
+    font.size = 2.3,
+    org = "hsa",
+    
+    text.length.factor.complex = 3,
+    if.scale.compartment.font.size = TRUE,
+    node.width.adjust.factor.compartment = 0.04
+   )
+sbgnview.obj
+
+```
+```{r cancerds, echo = FALSE,fig.cap="\\label{fig:cancerds}SBGNview of a cancer dataset gse16873"}
+include_graphics("demo.SummarizedExperiment_R-HSA-877300_Interferon gamma signaling.svg")
+```
+
+
+# Session Info
+```{r}
+sessionInfo()
+```

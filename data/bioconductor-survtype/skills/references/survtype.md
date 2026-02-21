@@ -1,0 +1,195 @@
+# Subtype Identification with Survival Data
+
+#### Dongmin Jung
+
+#### March 19, 2019
+
+* [1 Introduction](#introduction)
+* [2 Example](#example)
+  + [2.1 Clinical data alone](#clinical-data-alone)
+  + [2.2 Gene expression data](#gene-expression-data)
+  + [2.3 Mutation data](#mutation-data)
+* [3 References](#references)
+
+# 1 Introduction
+
+Subtypes (also used interchangeably with classes and clusters) are defined as groups of samples that have distinct molecular and clinical features. Genomic data can be analyzed for discovering patient subtypes, correlated with clinical outcomes such as survival time, or time to disease recurrence. For a clinical perspective, it is important because identification of cancer subtypes enables the appropriate treatment for patients. Here, gene expression profiles can be used to find a list of genes that associates with the clinical variable. Based on such genes, subtypes will be identified. As well as gene expression data, survival analysis may be needed to make a comparison between patients groups with certain gene mutation and those without such a mutation.
+
+Patient groups can be detected by unsupervised learning algorithms, such as hierarchical clustering. However, such groups are identified using only the gene expression data, but not any of the clinical information about the patient. On the other hand, by dividing the patients into classes according to survival information, the resulting classes may not be biologically meaningful since it is based exclusively on the clinical data. In this package, to find a list of genes that correlates with survival time, calculate a univariate Cox proportional-hazards score for each gene and select top genes ranked by the Cox score. To identify subgroups of patients with similar expression profiles, clustering algorithms can be applied on the top genes or subset of the genes selected by a variable selection method for clustering. This package is designed to identify subtypes that are both clinically relevant and biologically meaningful.
+
+# 2 Example
+
+## 2.1 Clinical data alone
+
+By cutting the survival times at the median survival time of the samples, two classes, high-risk and low-risk, can be created using only clinical information. For censored data, we can estimate the probability that each censored observation belongs to the “low-risk” and “high-risk” classes, respectively. Consider data with lung and ovarian cancer in the package “survival”.
+
+```
+library(survtype)
+data(lung)
+lung.survtype <- Surv.survtype(lung, time = "time", status = "status")
+```
+
+```
+## Call:
+## survdiff(formula = Surv(Time, Status) ~ Group, data = cbind(surv.data,
+##     Group))
+##
+##                   N Observed Expected (O-E)^2/E (O-E)^2/V
+## Group=High Risk  25       25     2.11     247.6       276
+## Group=Low Risk  203       38    60.89       8.6       276
+##
+##  Chisq= 276  on 1 degrees of freedom, p= <2e-16
+```
+
+```
+plot.survtype(lung.survtype, pval = TRUE)
+```
+
+![](data:image/png;base64...)
+
+```
+data(ovarian)
+ovarian.survtype <- Surv.survtype(ovarian, time = "futime", status = "fustat")
+```
+
+```
+## Call:
+## survdiff(formula = Surv(Time, Status) ~ Group, data = cbind(surv.data,
+##     Group))
+##
+##                  N Observed Expected (O-E)^2/E (O-E)^2/V
+## Group=High Risk 13       13     4.23     18.15      29.2
+## Group=Low Risk  13       13    21.77      3.53      29.2
+##
+##  Chisq= 29.2  on 1 degrees of freedom, p= 6e-08
+```
+
+```
+plot.survtype(ovarian.survtype, pval = TRUE)
+```
+
+![](data:image/png;base64...)
+
+## 2.2 Gene expression data
+
+With gene expression data, two subsets of patients can be generated based on the expression level of a single gene; that is, one subgroup consists of those patients with expression level of the gene above a chosen threshold value, and the other subgroup consists of the remaining patients. Every possible cutpoint is considered and the value that minimizes the p-value is chosen. That is, for each of the subsets, the single gene and threshold that optimally separates the samples in that subset can be determined. Consider the gene expression levels of the tumor-biopsy specimens collected from 240 DLBCL patients with diffuse large-B-cell lymphoma after chemotherapy. Sample subtype can be identified using survival data and gene expression data. For DLBCL data, there are two subtypes. Among patients, those with poor prognosis (N = 105) have high expression at probe 1072, 5621, 6166 and 4574, but those with good prognosis (N = 135) have high expression at probe 7357, 4131 and 1188. Thus we are able to investgate the association between gene expression and survival data.
+
+```
+DLBCLgenes <- read.csv("https://doi.org/10.1371/journal.pbio.0020108.sd012", header = FALSE)
+DLBCLpatients <- read.csv("https://doi.org/10.1371/journal.pbio.0020108.sd013", header = FALSE)
+colnames(DLBCLpatients) <- c("time", "status")
+rownames(DLBCLpatients) <- colnames(DLBCLgenes)
+plot.survtype(Single.survgroup(DLBCLpatients, time = "time", status = "status", DLBCLgenes[1,]), pval = TRUE)
+
+SE <- SummarizedExperiment(assays=SimpleList(expression = as.matrix(DLBCLgenes)))
+DLBCL.survtype <- Exprs.survtype(DLBCLpatients, time = "time", status = "status",
+                                 assay(SE), num.genes = 50,
+                                 scale = "row", gene.sel = TRUE,
+                                 clustering_method = "ward.D2",
+                                 show_colnames = FALSE)
+plot.survtype(DLBCL.survtype, pval = TRUE)
+```
+
+Consider TCGA LUAD data for cancer patients with stage I.
+
+```
+library(SummarizedExperiment)
+library(TCGAbiolinks)
+query <- GDCquery(project = "TCGA-LUAD",
+                  data.category = "Gene expression",
+                  data.type = "Gene expression quantification",
+                  platform = "Illumina HiSeq",
+                  file.type  = "normalized_results",
+                  experimental.strategy = "RNA-Seq",
+                  legacy = TRUE)
+GDCdownload(query, method = "api")
+data <- GDCprepare(query)
+exprs.LUAD <- assay(data)
+# cancer only
+exprs.LUAD <- exprs.LUAD[,which(substr(colnames(exprs.LUAD), 14, 15) == "01")]
+clinic.LUAD <- GDCquery_clinic("TCGA-LUAD", "clinical")
+# stage I only
+clinic.LUAD <- clinic.LUAD[clinic.LUAD$tumor_stage %in% c("stage i", "stage ia", "stage ib"),]
+rownames(clinic.LUAD) <- clinic.LUAD[,1]
+clinic.LUAD <- clinic.LUAD[,c("days_to_last_follow_up", "vital_status")]
+clinic.LUAD$vital_status <- ifelse(clinic.LUAD$vital_status == "dead", 1, 0)
+# match TCGA ID
+colnames(exprs.LUAD) <- substr(colnames(exprs.LUAD), 1, 12)
+# filtering
+keep <- rowMeans(exprs.LUAD) > 500
+exprs.LUAD <- exprs.LUAD[keep,]
+# log2 transformation
+exprs.LUAD <- log2(exprs.LUAD + 1)
+# normalization
+exprs.LUAD <- quantile_normalization(exprs.LUAD)
+dim(exprs.LUAD)
+LUAD.survtype <- Exprs.survtype(clinic.LUAD, time = "days_to_last_follow_up",
+                                status = "vital_status", exprs.LUAD,
+                                num.genes = 100, scale = "row",
+                                gene.sel = FALSE, clustering_method = "ward.D2",
+                                show_colnames = FALSE)
+plot(LUAD.survtype, pval = TRUE, palette = c("#619CFF", "#F8766D"))
+gene.clust(LUAD.survtype, 2, scale = "row", clustering_method = "ward.D2",
+           show_colnames = FALSE)
+# VEGFA
+VEGFA.survgroup <- Single.survgroup(LUAD.survtype$surv.data,
+                                 time = "days_to_last_follow_up",
+                                 status = "vital_status",
+                                 LUAD.survtype$exprs.data["VEGFA",],
+                                 group.names = c("High Expression",
+                                                 "Low Expression"))
+plot(VEGFA.survgroup, title = "VEGFA", pval = TRUE)
+```
+
+## 2.3 Mutation data
+
+Consider mutation data for TCGA LAML cohort in the package “maftools”. Two groups with or wthout the missense mutation on the gene DNMT3A are most significantly different in terms of survival. Patients with the mutation on DNMT3A have poor prognosis. Since the distribution for the mutation group shows a significantly different survival curve from the non-mutation group, we may then choose to treat the two groups with different strategies.
+
+```
+library(maftools)
+laml.maf <- system.file('extdata', 'tcga_laml.maf.gz', package = 'maftools', mustWork = TRUE)
+laml.clin <- system.file('extdata', 'tcga_laml_annot.tsv', package = 'maftools', mustWork = TRUE)
+laml.maf <- read.csv(laml.maf, sep = "\t")
+laml.clinical.data <- read.csv(laml.clin, sep = "\t", row.names = 1)
+index <- which(laml.clinical.data$days_to_last_followup == -Inf)
+laml.clinical.data <- laml.clinical.data[-index,]
+laml.clinical.data <- data.frame(laml.clinical.data)
+laml.survgroup <- MAF.survgroup(laml.clinical.data, time = "days_to_last_followup",
+                              status = "Overall_Survival_Status", laml.maf,
+                              variants = "Missense_Mutation", num.genes = 10,
+                              top.genes = 1, pval = TRUE)
+```
+
+![](data:image/png;base64...)
+
+```
+head(laml.survgroup$summary)
+```
+
+```
+##        num.samples.with.variants chisq.stat     p.values
+## DNMT3A                        35 17.8550886 0.0000238381
+## NPM1                           1 14.1666667 0.0001673084
+## TP53                          10  9.7655139 0.0017781581
+## FLT3                          15  3.1355832 0.0766009872
+## RUNX1                          7  2.2742381 0.1315397534
+## TET2                           4  0.7644177 0.3819495256
+```
+
+# 3 References
+
+Bair, E., & Tibshirani, R. (2004). Semi-supervised methods to predict patient survival from gene expression data. PLoS biology, 2(4), e108.
+
+Emmert-Streib, F. (2012). Statistical Diagnostics For Cancer: Analyzing High-Dimensional Data. John Wiley & Sons.
+
+Hu, X., & Pan, Y. (2007). Knowledge discovery in bioinformatics: techniques, methods, and applications. John Wiley & Sons.
+
+Le Van, Thanh, et al. (2016). Simultaneous discovery of cancer subtypes and subtype features by molecular data integration. Bioinformatics, 32(17), i445-i454.
+
+Li, J., & Ma, S. (2013). Survival analysis in medicine and genetics. CRC Press.
+
+Rosenwald, Andreas, et al. (2002). The use of molecular profiling to predict survival after chemotherapy for diffuse large-B-cell lymphoma. New England Journal of Medicine, 346(25), 1937-1947.
+
+Royston, P., & Sauerbrei, W. (2008). Multivariable model-building: a pragmatic approach to regression anaylsis based on fractional polynomials for modelling continuous variables. John Wiley & Sons.
+
+Simon, R. M., Korn, E. L., McShane, L. M., Radmacher, M. D., Wright, G. W., & Zhao, Y. (2003). Design and analysis of DNA microarray investigations. Springer.

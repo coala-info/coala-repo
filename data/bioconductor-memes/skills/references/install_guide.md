@@ -1,0 +1,71 @@
+# Install MEME
+
+# See package website for full vignette
+
+The Bioconductor build system does not have the MEME Suite installed, therefore these vignettes will not contain any R output. To view the full vignette, visit this article page on the memes website [at this link](https://snystrom.github.io/memes-manual/articles/install_guide.html)
+
+# Introduction
+
+memes is an R interface to the [MEME Suite](http://meme-suite.org/) family of tools, which provides several utilities for performing motif analysis on DNA, RNA, and protein sequences. It works by detecting a local install of the MEME suite, running the commands, then importing the results directly into R.
+
+## Installing the MEME Suite
+
+memes relies on a local install of the [MEME Suite](http://meme-suite.org/). For installation instructions for the MEME suite, see the [MEME Suite Installation Guide](http://meme-suite.org/doc/install.html?man_type=web).
+
+Briefly, the MEME suite can be installed to a default location (`~/meme/`) on Linux, MacOS, Cygwin, and Windows Linux Subsystem using the following shell commands:
+
+```
+# As of December 2021, version 5.4.1 is the most recent MEME-Suite version
+# Please check the install guide (linked above) for more recent information
+version=5.4.1
+wget http://meme-suite.org/meme-software/$version/meme-$version.tar.gz
+tar zxf meme-$version.tar.gz
+cd meme-$version
+./configure --prefix=$HOME/meme --with-url=http://meme-suite.org/ --enable-build-libxml2 --enable-build-libxslt
+make
+make test
+make install
+```
+
+For additional troubleshooting or to learn more about install configuration, please see the [Installation Guide](http://meme-suite.org/doc/install.html?man_type=web).
+
+## Detecting the MEME Suite
+
+memes needs to know the location of the `meme/bin/` directory on your local machine. You can tell memes the location of your MEME suite install in 4 ways. memes will always prefer the more specific definition if it is a valid path. Here they are ranked from most- to least-specific:
+
+1. Manually passing the install path to the `meme_path` argument of all memes functions
+2. Setting the path using `options(meme_bin = "/path/to/meme/bin/")` inside your R script
+3. Setting `MEME_BIN=/path/to/meme/bin/` in your `.Renviron` file, or `export MEME_BIN=/path/to/meme/bin` in your `~/.bashrc`
+4. memes will try the default MEME install location `~/meme/bin/`
+
+If memes fails to detect your install at the specified location, it will fall back to the next option.
+
+To verify memes can detect your MEME install, use `check_meme_install()` which uses the search herirarchy above to find a valid MEME install. It will report whether any tools are missing, and print the path to MEME that it sees. This can be useful for troubleshooting issues with your install.
+
+```
+library(memes)
+
+# Verify that memes detects your meme install
+# (returns all green checks if so)
+check_meme_install()
+```
+
+```
+# You can manually input a path to meme_path
+# If no meme/bin is detected, will return a red X
+check_meme_install(meme_path = "bad/path")
+```
+
+## FAQS
+
+I get the following error: installation of package ‘R.oo’ had non-zero exit status
+
+* Problem: Your R installation likely lacks the `R.css` file
+* Solution: when installing the package, set `remotes::install_github("snystrom/memes", INSTALL_opts = c("--no-html"))`
+* NOTE: all help documents for memes will be parsed as plain-text so will lack links or other formatting.
+
+# Session Info
+
+```
+sessionInfo()
+```

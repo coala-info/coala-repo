@@ -1,0 +1,53 @@
+---
+name: isafe
+description: iSAFE (integrated Selection of Allele Favored by Evolution) is a specialized tool designed for the fine-mapping of selective sweeps.
+homepage: https://github.com/alek0991/iSAFE
+---
+
+# isafe
+
+## Overview
+
+iSAFE (integrated Selection of Allele Favored by Evolution) is a specialized tool designed for the fine-mapping of selective sweeps. While many genomic tools can identify that a selective sweep has occurred in a general region, iSAFE is specifically engineered to pinpoint the exact causal mutation. It processes phased haplotype data (in VCF or HAP formats) and generates a score for each mutation, where higher scores indicate a higher likelihood of being the favored variant. It is most effective when the favored mutation is ongoing (not yet fixed), but it includes protocols for handling fixed sweeps by incorporating outgroup or control populations.
+
+## Execution Patterns
+
+### Basic Usage with VCF Files
+VCF is the default and most flexible format. Files must be phased, bgzipped, and indexed.
+
+```bash
+isafe --format vcf --input study_region.vcf.gz --AA ancestral_alleles.txt --out output_prefix
+```
+
+### Usage with HAP Files
+HAP format assumes a binary SNP matrix (0 for ancestral, 1 for derived).
+
+```bash
+isafe --format hap --input study_region.hap --out output_prefix
+```
+
+### Handling Fixed or Near-Fixation Sweeps
+If the favored mutation is near fixation (frequency > 0.9), include a control population to maintain accuracy.
+
+```bash
+isafe --input case_population.vcf.gz --vcf-cont control_population.vcf.gz --AA ancestral_alleles.txt --out fixed_sweep_results
+```
+
+### Subsetting Samples
+If your VCF contains multiple populations, use sample ID files (one ID per line) to define your groups.
+
+```bash
+isafe --input global_samples.vcf.gz --sample-case case_ids.txt --sample-cont control_ids.txt --AA hg19_AA.txt --out subset_results
+```
+
+## Tool-Specific Best Practices
+
+*   **Ancestral Allele (AA) Importance**: Always provide an `--AA` file when using VCF format. While iSAFE v1.0.5+ will fallback to using the Reference (REF) allele as ancestral if the file is missing, this significantly reduces accuracy.
+*   **VCF Requirements**: Ensure VCFs are phased. iSAFE ignores non-SNP variants (indels/MNPs) unless they have exactly one ALT allele (binary).
+*   **Region Scaling**: The tool is optimized for regions of approximately 5 Mbp. Performance may vary significantly on much smaller or larger windows.
+*   **HAP Format Constraints**: When using `--format hap`, the tool does not support `--vcf-cont`, `--sample-case`, or `--AA` flags. All outgroup processing must be done manually before creating the HAP file.
+*   **Output Interpretation**: The primary output is `<output>.iSAFE.out`. It contains three columns: `POS` (Position), `iSAFE` (the score), and `DAF` (Derived Allele Frequency). Focus on the highest iSAFE scores to identify the candidate favored mutation.
+
+## Reference documentation
+- [iSAFE GitHub Repository](./references/github_com_alek0991_iSAFE.md)
+- [iSAFE Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_isafe_overview.md)

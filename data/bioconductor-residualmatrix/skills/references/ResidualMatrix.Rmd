@@ -1,0 +1,137 @@
+---
+title: Using the `ResidualMatrix` class
+author: 
+- name: Aaron Lun
+  email: infinite.monkeys.with.keyboards@gmail.com 
+date: "Revised: 30 August 2020"
+output:
+  BiocStyle::html_document:
+    toc_float: true 
+package: ResidualMatrix
+vignette: >
+  %\VignetteIndexEntry{Using the ResidualMatrix}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}    
+---
+
+```{r, echo=FALSE, results="hide", message=FALSE}
+knitr::opts_chunk$set(error=FALSE, message=FALSE, warning=FALSE)
+```
+
+# Overview
+
+A common step in genomics involves computing residuals to regress out uninteresting factors of variation.
+However, doing so naively would discard aspects of the underlying matrix representation.
+The most obvious example is the loss of sparsity when a dense matrix of residuals is computed,
+increasing memory usage and compute time in downstream applications.
+The `r Biocpkg("ResidualMatrix")` package implements the `ResidualMatrix` class (duh), 
+which provides an efficient alternative to explicit calculation of the residuals.
+Users can install this package by following the usual Bioconductor installation process:
+
+```r
+if (!requireNamespace("BiocManager", quietly = TRUE)) { 
+    install.packages("BiocManager")
+}
+BiocManager::install("ResidualMatrix")
+```
+
+# Using the `ResidualMatrix`
+
+The constructor takes a matrix of input values and a design matrix, 
+where residuals are conceptually computed by fitting the linear model to the columns of the input matrix.
+However, the actual calculation of the residuals is delayed until they are explictly required.
+
+```{r}
+design <- model.matrix(~gl(5, 10000))
+
+# Making up a large-ish sparse matrix.
+library(Matrix)
+set.seed(100)
+y0 <- rsparsematrix(nrow(design), 30000, 0.01)
+
+library(ResidualMatrix)
+resids <- ResidualMatrix(y0, design)
+resids
+```
+
+It is simple to obtain the residuals for, say, a single column.
+We could also use the `r Biocpkg("DelayedArray")` block processing machinery to do this for chunks of columns at a time,
+allowing downstream code to compute on the residuals within memory limits.
+
+```{r}
+hist(resids[,1])
+```
+
+In fact, matrix multiplication steps involving a `ResidualMatrix` do not need to compute the residuals at all.
+This means that `ResidualMatrix` objects can be efficiently used in approximate PCA algorithms based on multiplication,
+as shown below for randomized SVD via `r Biocpkg("BiocSingular")`'s `runPCA()` function.
+The only requirement is that the original matrix has a reasonably efficient matrix multiplication operator.
+(We set `center=FALSE` for efficiency as the residuals are already column-centered.)
+
+```{r}
+set.seed(100)
+system.time(pc.out <- BiocSingular::runPCA(resids, 10, center=FALSE,
+    BSPARAM=BiocSingular::RandomParam()))
+str(pc.out)
+```
+
+Similarly, the row and column sums/means can be computed efficiently, 
+based on the matrix multiplication machinery and the original matrix's row and column sum functions.
+
+```{r}
+hist(rowSums(resids))
+```
+
+Other operations will cause the `ResidualMatrix` to collapse into `DelayedMatrix` for further processing.
+
+# Retaining certain factors
+
+We can also specify that we only want to regress out some factors in our `design`.
+For example, let's say we have a dataset with an interesting two-group structure and an uninteresting continuous covariate `BAD`:
+
+```{r}
+design2 <- model.matrix(~gl(2, 10000))
+design2 <- cbind(design2, BAD=runif(nrow(design2)))
+colnames(design2)
+```
+
+We can instruct `ResidualMatrix()` to retain the interesting structure (first two coefficients)
+while regressing out the uninteresting covariate in the third coefficient:
+
+```{r}
+# Making up another large-ish sparse matrix.
+y0 <- rsparsematrix(nrow(design2), 30000, 0.01)
+
+resid2 <- ResidualMatrix(y0, design2, keep=1:2)
+resid2
+```
+
+In this sense, the `ResidualMatrix` is effectively a delayed version of `removeBatchEffect()`,
+the old workhorse function from `r Biocpkg("limma")`.
+
+# Restricting observations
+
+In some cases, we may only be confident in the correctness of `design` for a subset of our samples.
+For example, we may have several batches of observations, each of which contains a subset of control observations.
+All other observations in each batch have unknown structure but are affected by the same additive batch effect as the controls.
+We would like to use the controls to remove the batch effect without making assumptions about the other observations.
+
+To achieve this, we set the `restrict=` argument in the `ResidualMatrix` constructor.
+This performs model fitting using only the specified (control) subset to estimate the batch effect.
+It then uses those estimates to perform regression on all observations.
+This option can also be combined with `keep` if the controls themselves have some structure that should be retained.
+
+```{r}
+batches <- gl(3, 1000)
+controls <- c(1:100, 1:100+1000, 1:100+2000)
+y <- matrix(rnorm(30000), nrow=3000)
+
+resid3 <- ResidualMatrix(y, design=model.matrix(~batches), restrict=controls)
+resid3
+```
+
+# Session information {-}
+
+```{r}
+sessionInfo()
+```

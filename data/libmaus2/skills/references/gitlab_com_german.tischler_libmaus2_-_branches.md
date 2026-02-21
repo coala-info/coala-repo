@@ -1,0 +1,1 @@
+Branches · German Tischler / libmaus2 · GitLab Branches Overview Active Stale All Stale branches experimental_npl_self e9517e3b &middot; Make error message more verbose in NPLSelf &middot; Mar 27, 2021 experimental e3976060 &middot; bump version after &middot; Dec 10, 2022 master default protected e3976060 &middot; bump version after &middot; Dec 10, 2022

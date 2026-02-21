@@ -1,0 +1,15 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: galaxy-ie-helpers_find_matching_history_ids
+label: galaxy-ie-helpers_find_matching_history_ids
+doc: "A tool to find matching history IDs within a Galaxy Interactive Environment.\n
+  \nTool homepage: https://github.com/bgruening/galaxy_ie_helpers"
+inputs: []
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0
+stdout: galaxy-ie-helpers_find_matching_history_ids.out

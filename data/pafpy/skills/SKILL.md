@@ -1,0 +1,74 @@
+---
+name: pafpy
+description: pafpy is a lightweight Python library designed to simplify the handling of PAF files, which are standard outputs for long-read aligners like minimap2.
+homepage: https://github.com/mbhall88/pafpy
+---
+
+# pafpy
+
+## Overview
+pafpy is a lightweight Python library designed to simplify the handling of PAF files, which are standard outputs for long-read aligners like minimap2. It provides an object-oriented interface to alignment data, allowing for efficient iteration and attribute access without the need for manual string splitting or complex regex. Use this skill to automate the extraction of mapping statistics and to integrate PAF processing into larger genomic analysis pipelines.
+
+## Installation
+Install pafpy via pip or conda:
+```bash
+pip install pafpy
+# OR
+conda install -c bioconda pafpy
+```
+
+## Core Usage Patterns
+
+### Iterating Through Alignments
+Always use the `PafFile` context manager to ensure file handles are closed correctly.
+```python
+from pafpy import PafFile
+
+with PafFile("alignments.paf") as paf:
+    for record in paf:
+        # Process each record
+        pass
+```
+
+### Filtering for Primary Alignments
+To avoid over-counting or redundant analysis, filter for primary alignments using the `is_primary()` method.
+```python
+with PafFile("sample.paf") as paf:
+    primary_alignments = [rec for rec in paf if rec.is_primary()]
+```
+
+### Calculating Identity and Coverage
+pafpy provides built-in methods for common bioinformatics metrics:
+- **BLAST Identity**: Use `record.blast_identity()` to get the sequence identity.
+- **Query Coverage**: Use `record.query_coverage` to determine how much of the read aligned to the reference.
+
+```python
+with PafFile("sample.paf") as paf:
+    for record in paf:
+        if record.query_coverage > 0.8:
+            print(f"{record.qname}: {record.blast_identity():.2f}")
+```
+
+### Handling Compressed Files and Streams
+pafpy natively supports gzipped PAF files and reading from standard input.
+```python
+# Reading a gzipped file
+with PafFile("data.paf.gz") as paf:
+    for record in paf:
+        pass
+
+# Reading from a stream (e.g., piped from minimap2)
+import sys
+with PafFile(sys.stdin) as paf:
+    for record in paf:
+        pass
+```
+
+## Expert Tips
+- **Field Access**: Access standard PAF fields directly via attributes: `qname` (query name), `qlen` (query length), `tname` (target name), `tstart`, `tend`, etc.
+- **Tag Handling**: pafpy automatically parses optional tags at the end of the PAF line. Access them via the `tags` attribute.
+- **Memory Efficiency**: Since `PafFile` is an iterator, it processes files line-by-line, making it suitable for very large alignment files without high memory overhead.
+
+## Reference documentation
+- [pafpy GitHub Repository](./references/github_com_mbhall88_pafpy.md)
+- [pafpy Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pafpy_overview.md)

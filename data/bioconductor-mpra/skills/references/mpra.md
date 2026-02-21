@@ -1,0 +1,559 @@
+# The mpra User’s Guide
+
+Leslie Myint, Kasper Daniel Hansen
+
+#### 30 October 2025
+
+#### Abstract
+
+A comprehensive guide to using the mpra package for analyzing massively parallel reporter assays (MPRA).
+
+#### Package
+
+mpra 1.32.0
+
+# Contents
+
+* [1 Introduction](#introduction)
+  + [1.1 How to cite](#how-to-cite)
+* [2 Dependencies](#dependencies)
+* [3 Creating an MPRASet object](#creating-an-mpraset-object)
+  + [3.1 Tissue comparison](#tissue-comparison)
+  + [3.2 Allele comparison](#allele-comparison)
+* [4 Analysis](#analysis)
+  + [4.1 Tissue comparison](#tissue-comparison-1)
+  + [4.2 Allelic comparison](#allelic-comparison)
+  + [4.3 Returning an MPRASet](#returning-an-mpraset)
+* [5 Session Info](#session-info)
+* [References](#references)
+
+# 1 Introduction
+
+The *[mpra](https://bioconductor.org/packages/3.22/mpra)* package provides tools for the analysis of data from massively parallel reporter assays (MPRA). Specifically, it contains the functionality described in (Myint et al. [2019](#ref-mpralm)). The primary analysis purpose is to enable differential analysis of activity measures, but the package can also be used to generate precision weights useful in regression analyses of activity scores on sequence features. The main workhorse of the *[mpra](https://bioconductor.org/packages/3.22/mpra)* package is the `mpralm()` function which draws on the previously proposed voom framework for RNA-seq analysis (Law et al. [2014](#ref-voom)). In this document, we will be looking at MPRA data from a study comparing episomal and lentiviral versions of MPRA (Inoue et al. [2017](#ref-Inoue:2017)). We will also look at MPRA data from a study comparing the regulatory activity of different alleles of thousands of SNPs (Tewhey et al. [2016](#ref-Tewhey:2016)).
+
+## 1.1 How to cite
+
+If you are using this package, please cite (Myint et al. [2019](#ref-mpralm)). If you are using the `mpralm()` function, it would be appropriate to also cite the voom framework (Law et al. [2014](#ref-voom)).
+
+# 2 Dependencies
+
+This document has the following dependencies
+
+```
+library(mpra)
+```
+
+# 3 Creating an MPRASet object
+
+In this package, MPRA data are contained in `MPRASet` objects. Because MPRA data do not have a common prescribed format, these objects must be created manually. In this section, we demonstrate how to do this.
+
+`MPRASet` objects must contain DNA and RNA count information because this is the information used to quantify activity levels of the elements being assayed. DNA and RNA count information should be specified as \(K \times S\) integer count matrices where \(K\) is the total number of barcodes over all elements if barcode-level information is being supplied or the total number of putative regulatory elements (PREs) if element-level information is being supplied. \(S\) is the number of samples (typically, the number of independent transfections).
+
+`MPRASet` objects must also contain element identification information. This should be supplied as a character vector of length \(K\), the number of rows in the DNA and RNA count matrices. These are any strings used to describe/identify the unique PREs being assayed.
+
+Optionally, the barcode sequences and PRE sequences can be specified as length \(K\) character vectors.
+
+In the next sections we provide specific examples for how to specify this information for two common differential analysis settings: tissue and allele comparisons. Although we show simulated data, this information would typically be read from text files.
+
+## 3.1 Tissue comparison
+
+In tissue comparison studies, the same set of PREs is assayed in two or more cell types. In the following example, the experiment looks at four PREs with three barcodes each. Two tissues (liver and kidney) are studied, and each tissue has four replicates (four independent transfections each).
+
+RNA and DNA count matrices would look as below:
+
+```
+E <- 4 # Number of elements
+B <- 3 # Number of barcodes
+s <- 4 # Samples per tissue
+nt <- 2 # Number of tissues
+
+set.seed(434)
+rna <- matrix(rpois(E*B*s*nt, lambda = 30), nrow = E*B, ncol = s*nt)
+dna <- matrix(rpois(E*B*s*nt, lambda = 30), nrow = E*B, ncol = s*nt)
+
+rn <- as.character(outer(paste0("barcode_", seq_len(B), "_"), paste0("elem_", seq_len(E)), FUN = "paste0"))
+cn <- c(paste0("liver_", seq_len(s)), paste0("kidney_", seq_len(s)))
+
+rownames(rna) <- rn
+rownames(dna) <- rn
+colnames(rna) <- cn
+colnames(dna) <- cn
+
+rna
+```
+
+```
+##                  liver_1 liver_2 liver_3 liver_4 kidney_1 kidney_2 kidney_3
+## barcode_1_elem_1      31      26      36      18       27       33       28
+## barcode_2_elem_1      33      28      29      32       28       33       34
+## barcode_3_elem_1      22      43      25      41       28       34       30
+## barcode_1_elem_2      28      27      31      20       37       33       24
+## barcode_2_elem_2      32      31      32      21       38       22       27
+## barcode_3_elem_2      35      36      28      38       26       23       30
+## barcode_1_elem_3      30      34      26      34       40       26       26
+## barcode_2_elem_3      37      27      37      29       25       29       38
+## barcode_3_elem_3      34      30      20      26       30       35       33
+## barcode_1_elem_4      28      27      34      26       29       30       25
+## barcode_2_elem_4      31      32      28      36       31       24       29
+## barcode_3_elem_4      24      28      34      31       37       29       34
+##                  kidney_4
+## barcode_1_elem_1       30
+## barcode_2_elem_1       30
+## barcode_3_elem_1       37
+## barcode_1_elem_2       29
+## barcode_2_elem_2       29
+## barcode_3_elem_2       29
+## barcode_1_elem_3       22
+## barcode_2_elem_3       28
+## barcode_3_elem_3       38
+## barcode_1_elem_4       30
+## barcode_2_elem_4       32
+## barcode_3_elem_4       36
+```
+
+```
+dna
+```
+
+```
+##                  liver_1 liver_2 liver_3 liver_4 kidney_1 kidney_2 kidney_3
+## barcode_1_elem_1      29      34      28      27       27       25       30
+## barcode_2_elem_1      43      37      34      33       43       26       26
+## barcode_3_elem_1      35      23      32      27       19       29       29
+## barcode_1_elem_2      23      30      34      27       32       18       24
+## barcode_2_elem_2      32      29      42      21       37       34       32
+## barcode_3_elem_2      26      23      22      24       32       41       24
+## barcode_1_elem_3      29      38      34      27       31       27       31
+## barcode_2_elem_3      30      36      32      21       34       29       26
+## barcode_3_elem_3      34      28      42      35       26       32       32
+## barcode_1_elem_4      34      25      29      30       44       26       23
+## barcode_2_elem_4      29      26      37      37       28       37       34
+## barcode_3_elem_4      24      28      33      40       31       30       19
+##                  kidney_4
+## barcode_1_elem_1       31
+## barcode_2_elem_1       33
+## barcode_3_elem_1       25
+## barcode_1_elem_2       25
+## barcode_2_elem_2       31
+## barcode_3_elem_2       23
+## barcode_1_elem_3       33
+## barcode_2_elem_3       39
+## barcode_3_elem_3       26
+## barcode_1_elem_4       33
+## barcode_2_elem_4       31
+## barcode_3_elem_4       26
+```
+
+PRE identification strings would look as below. When counts are provided at the barcode level, the `eid` character vector will have repeated elements.
+
+```
+eid <- rep(paste0("elem_", seq_len(E)), each = B)
+eid
+```
+
+```
+##  [1] "elem_1" "elem_1" "elem_1" "elem_2" "elem_2" "elem_2" "elem_3" "elem_3"
+##  [9] "elem_3" "elem_4" "elem_4" "elem_4"
+```
+
+We may also have PRE sequences as below. These sequences must be specified in a character vector of the same length as `eid` and the same number of rows as `rna` and `dna`.
+
+```
+eseq <- replicate(E, paste(sample(c("A", "T", "C", "G"), 10, replace = TRUE), collapse = ""))
+eseq <- rep(eseq, each = B)
+eseq
+```
+
+```
+##  [1] "CAACGTTTGT" "CAACGTTTGT" "CAACGTTTGT" "TTCTCTTTGA" "TTCTCTTTGA"
+##  [6] "TTCTCTTTGA" "ACCTACCTCA" "ACCTACCTCA" "ACCTACCTCA" "CCGTACTACT"
+## [11] "CCGTACTACT" "CCGTACTACT"
+```
+
+The above pieces (`rna`, `dna`, `eid`, and `eseq`) can be supplied as arguments to the `MPRASet` constructor function as below. If `barcode` (barcode sequences) or `eseq` (PRE sequences) is not supplied, it must be specified as `NULL`.
+
+```
+mpraset_example <- MPRASet(DNA = dna, RNA = rna, eid = eid, eseq = eseq, barcode = NULL)
+mpraset_example
+```
+
+```
+## class: MPRASet
+## dim: 12 8
+## metadata(0):
+## assays(2): DNA RNA
+## rownames(12): barcode_1_elem_1 barcode_2_elem_1 ... barcode_2_elem_4
+##   barcode_3_elem_4
+## rowData names(2): eid eseq
+## colnames(8): liver_1 liver_2 ... kidney_3 kidney_4
+## colData names(0):
+```
+
+```
+## (no barcodes present)
+```
+
+## 3.2 Allele comparison
+
+In allele comparison studies, PREs that exist with two or more alleles are assayed. All allelic-versions of the PREs are assayed in the same sample. Because activity comparisons between alleles is desired, these counts must be separated into different columns. In the following example, the experiment looks at four PREs with three barcodes each. There are two alleles per PRE, and there are four replicates (four independent transfections total).
+
+Note that because the different alleles of a single PRE are linked to different barcodes, there is not a natural way to construct the RNA and DNA count matrices as above, where a particular barcode is in a row. Further, sometimes each PRE-allele combination is paired with varying numbers of barcodes. This is yet another reason that DNA and RNA count matrices should not look as above for allelic studies. In the example below, the count matrices shown might look as follows ***before*** they are ready to be made into an `MPRASet` object.
+
+```
+E <- 2 # Number of elements
+B <- 3 # Number of barcodes
+s <- 4 # Total number of samples
+nalleles <- 2 # Number of alleles
+
+set.seed(434)
+rna <- matrix(rpois(E*B*s*nalleles, lambda = 30), nrow = E*B*nalleles, ncol = s)
+dna <- matrix(rpois(E*B*s*nalleles, lambda = 30), nrow = E*B*nalleles, ncol = s)
+
+rn <- expand.grid(barcode = seq_len(B), allele = seq_len(nalleles), elem = seq_len(E))
+rn <- paste0("barcode", rn$barcode, "_elem", rn$elem, "_allele", rn$allele)
+cn <- paste0("sample", seq_len(s))
+
+rownames(rna) <- rn
+rownames(dna) <- rn
+colnames(rna) <- cn
+colnames(dna) <- cn
+
+rna
+```
+
+```
+##                        sample1 sample2 sample3 sample4
+## barcode1_elem1_allele1      31      26      36      18
+## barcode2_elem1_allele1      33      28      29      32
+## barcode3_elem1_allele1      22      43      25      41
+## barcode1_elem1_allele2      28      27      31      20
+## barcode2_elem1_allele2      32      31      32      21
+## barcode3_elem1_allele2      35      36      28      38
+## barcode1_elem2_allele1      30      34      26      34
+## barcode2_elem2_allele1      37      27      37      29
+## barcode3_elem2_allele1      34      30      20      26
+## barcode1_elem2_allele2      28      27      34      26
+## barcode2_elem2_allele2      31      32      28      36
+## barcode3_elem2_allele2      24      28      34      31
+```
+
+```
+dna
+```
+
+```
+##                        sample1 sample2 sample3 sample4
+## barcode1_elem1_allele1      27      33      28      30
+## barcode2_elem1_allele1      28      33      34      30
+## barcode3_elem1_allele1      28      34      30      37
+## barcode1_elem1_allele2      37      33      24      29
+## barcode2_elem1_allele2      38      22      27      29
+## barcode3_elem1_allele2      26      23      30      29
+## barcode1_elem2_allele1      40      26      26      22
+## barcode2_elem2_allele1      25      29      38      28
+## barcode3_elem2_allele1      30      35      33      38
+## barcode1_elem2_allele2      29      30      25      30
+## barcode2_elem2_allele2      31      24      29      32
+## barcode3_elem2_allele2      37      29      34      36
+```
+
+Most often with allelic studies, we will want to aggregate counts over barcodes to have summarized counts for each PRE-allele combination in each sample as below:
+
+```
+agg_output <- lapply(seq_len(E), function(elem_id) {
+    pattern1 <- paste0(paste0("elem", elem_id), "_allele1")
+    bool_rna_allele1 <- grepl(pattern1, rownames(rna))
+    pattern2 <- paste0(paste0("elem", elem_id), "_allele2")
+    bool_rna_allele2 <- grepl(pattern2, rownames(rna))
+    agg_rna <- c(
+        colSums(rna[bool_rna_allele1,]),
+        colSums(rna[bool_rna_allele2,])
+    )
+    names(agg_rna) <- paste0(rep(c("allele1", "allele2"), each = s), "_", names(agg_rna))
+    bool_dna_allele1 <- grepl(pattern1, rownames(dna))
+    bool_dna_allele2 <- grepl(pattern2, rownames(dna))
+    agg_dna <- c(
+        colSums(dna[bool_dna_allele1,]),
+        colSums(dna[bool_dna_allele2,])
+    )
+    names(agg_dna) <- paste0(rep(c("allele1", "allele2"), each = s), "_", names(agg_dna))
+    list(rna = agg_rna, dna = agg_dna)
+})
+agg_rna <- do.call(rbind, lapply(agg_output, "[[", "rna"))
+agg_dna <- do.call(rbind, lapply(agg_output, "[[", "dna"))
+eid <- paste0("elem", seq_len(E))
+rownames(agg_rna) <- eid
+rownames(agg_dna) <- eid
+eseq <- replicate(E, paste(sample(c("A", "T", "C", "G"), 10, replace = TRUE), collapse = ""))
+```
+
+With the relevant information defined, we can use the `MPRASet` constructor function as in the first example:
+
+```
+mpraset_example2 <- MPRASet(DNA = agg_dna, RNA = agg_rna, eid = eid, eseq = eseq, barcode = NULL)
+mpraset_example2
+```
+
+```
+## class: MPRASet
+## dim: 2 8
+## metadata(0):
+## assays(2): DNA RNA
+## rownames(2): elem1 elem2
+## rowData names(2): eid eseq
+## colnames(8): allele1_sample1 allele1_sample2 ... allele2_sample3
+##   allele2_sample4
+## colData names(0):
+```
+
+```
+## (no barcodes present)
+```
+
+# 4 Analysis
+
+## 4.1 Tissue comparison
+
+While the above section demonstrated how to create `MPRASet` objects, we will use preconstructed objects containing data from a comparison of episomal and lentiviral versions of MPRA (Inoue et al. [2017](#ref-Inoue:2017)).
+
+```
+data(mpraSetExample)
+```
+
+We create the design matrix with an indicator for the episomal (mutant integrase) samples and fit the precision-weighted linear model with `mpralm`. In MPRA experiments, activity measures are quantified as the log2 ratio of RNA counts over DNA counts. When there is barcode level information (as in this experiment), there are various ways to summarize information over barcodes to compute the final element- and sample-specific log ratios that are used for subsequent statistical modeling.
+
+We have specified `aggregate = "mean"` to indicate that the element- and sample-specific log ratios will be computed by first computing the log ratio of RNA counts over DNA counts for each barcode, then taking the mean over barcodes in a particular element and sample. This is termed the “average estimator” in (Myint et al. [2019](#ref-mpralm)). In contrast, specifying `aggregate = "sum"` would indicate the use of the “aggregate estimator”, in which counts are first summed over barcodes to create total RNA and DNA counts, and the log ratio activity measure is the ratio of these total counts.
+
+We have specifed `normalize = TRUE` to perform total count normalization on the RNA and DNA libraries. This scales all libraries to have a common size of 10 million reads.
+
+Because this experiment looks at a set of PREs in two different cellular conditions, the different samples (columns of the `MPRASet` object) are independent. Thus we specify `model_type = "indep_groups"` to perform an unpaired analysis. In contrast, if we were performing an allele comparison, we would specify `model_type = "corr_groups"` to performed a paired analysis (indicating that different columns of the `MPRASet` object are linked).
+
+Finally, we specify `plot = TRUE` to plot the relationship between log ratio variability versus element copy number.
+
+```
+design <- data.frame(intcpt = 1, episomal = grepl("MT", colnames(mpraSetExample)))
+mpralm_fit <- mpralm(object = mpraSetExample, design = design, aggregate = "mean", normalize = TRUE, model_type = "indep_groups", plot = TRUE)
+```
+
+![](data:image/png;base64...)
+
+The resulting fit object can be used with `topTable` from the *[limma](https://bioconductor.org/packages/3.22/limma)* package.
+
+```
+toptab <- topTable(mpralm_fit, coef = 2, number = Inf)
+toptab6 <- head(toptab)
+```
+
+Because the element codes are rather long for this dataset, we do some tricks to print the top differential elements:
+
+```
+rownames(toptab6)
+```
+
+```
+## [1] "C:SLEA_hg18:chr2:210861483-210861650|5:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;26:V_HNF1_C:AGTTAATGATTAACCAA;45:V_HNF1_C:AGTTAATGATTAACCAA;64:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;85:V_HNF1_C:AGTTAATGATTAACCAA;104:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;125:V_HNF1_C:AGTTAATGATTAACCAA;144:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC"
+## [2] "R:EP300-NoMod_chr9:12814543-12814714_[chr9:12814543-12814714]"
+## [3] "C:SLEA_hg18:chr2:210861483-210861650|4:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;25:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;46:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;67:V_HNF1_C:AGTTAATGATTAACCAA;86:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;107:V_HNF1_C:AGTTAATGATTAACCAA;126:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;147:V_HNF1_C:AGTTAATGATTAACCAA"
+## [4] "C:SLEA_hg18:chr2:210861483-210861650|6:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;27:V_HNF1_C:AGTTAATGATTAACCAA;46:V_HNF1_C:AGTTAATGATTAACCAA;65:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC;86:V_HNF1_C:AGTTAATGATTAACCAA;105:V_HNF1_C:AGTTAATGATTAACCAA;124:V_HNF1_C:AGTTAATGATTAACCAA;143:V_AHRARNT_02:GGGGATCGCGTGCCAGCCC"
+## [5] "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353_[chr1:38000196-38000367]"
+## [6] "R:EP300-NoMod_chr16:3070958-3071129_[chr16:3070958-3071129]"
+```
+
+```
+rownames(toptab6) <- NULL
+toptab6
+```
+
+```
+##        logFC  AveExpr         t      P.Value    adj.P.Val        B
+## 1 -1.2076627 1.284363 -26.99214 1.450176e-36 3.538429e-33 73.05825
+## 2 -1.7316415 1.668562 -23.50738 4.357972e-33 5.316726e-30 64.87553
+## 3 -1.1603766 1.497371 -23.11093 1.150733e-32 9.359292e-30 64.12459
+## 4 -0.9560848 1.016586 -18.57491 2.136470e-27 1.303247e-24 52.09394
+## 5 -1.1713718 1.730330 -18.25135 5.494116e-27 2.681128e-24 51.09648
+## 6 -0.7639104 0.733524 -17.71599 2.689472e-26 1.093719e-23 49.54888
+```
+
+## 4.2 Allelic comparison
+
+We will also demonstrate an allelic comparison analysis using the data in (Tewhey et al. [2016](#ref-Tewhey:2016)). In this study, the investigators compare reference and alternate allele versions of sequences containing SNPs. These sequences were believed to be eQTLs based on previous work.
+
+We create a design matrix with an indicator for whether the counts come from the “B” allele (as opposed to the “A” allele). We also create an integer `block_vector` to indicate the actual sample that each column in the DNA and RNA count matrices comes from. In this case, columns 1 and 6 of the DNA and RNA count matrices come from sample 1 (the A and B alleles measured in transfection 1), columns 2 and 7 from sample 2, and so on. This information is needed to accurately model the within-sample correlation for a paired analysis.
+
+```
+data(mpraSetAllelicExample)
+
+design <- data.frame(intcpt = 1, alleleB = grepl("allele_B", colnames(mpraSetAllelicExample)))
+block_vector <- rep(1:5, 2)
+mpralm_allele_fit <- mpralm(object = mpraSetAllelicExample, design = design, aggregate = "none", normalize = TRUE, block = block_vector, model_type = "corr_groups", plot = TRUE)
+```
+
+![](data:image/png;base64...)
+
+```
+## Warning in regularize.values(x, y, ties, missing(ties), na.rm = na.rm):
+## collapsing to unique 'x' values
+```
+
+```
+## Warning: Zero sample variances detected, have been offset away from zero
+```
+
+```
+toptab_allele <- topTable(mpralm_allele_fit, coef = 2, number = Inf)
+head(toptab_allele)
+```
+
+```
+##                 logFC  AveExpr         t      P.Value    adj.P.Val        B
+## rs11080327   3.106346 1.694029  79.77254 3.962616e-16 1.484396e-12 26.25693
+## rs9661285   -2.116121 1.299072 -50.01525 5.630061e-14 1.054510e-10 22.30238
+## rs71535706  -1.305818 1.201037 -38.18341 9.812946e-13 1.225310e-09 19.64486
+## rs7257930    1.698574 1.850857  34.93271 2.512428e-12 1.911361e-09 18.79437
+## rs112372623 -1.836127 2.457856 -34.88207 2.551203e-12 1.911361e-09 18.78015
+## rs2191501    1.884512 1.436538  31.93908 6.465886e-12 3.689913e-09 17.99617
+```
+
+## 4.3 Returning an MPRASet
+
+The last section notes an option `endomorphic = TRUE` that changes the
+type of object returned by `mpralm` from an *MArrayLM* object to the
+original object, an *MPRASet* with the statistical results attached as
+`rowData` to the object. “Endomorphic” refers to the fact that the
+same type of object that is passed into the function is returned, but
+with additional information added.
+
+We can demonstrate with the example from above:
+
+```
+design <- data.frame(intcpt = 1,
+                     episomal = grepl("MT", colnames(mpraSetExample)))
+efit <- mpralm(object = mpraSetExample,
+               design = design,
+               aggregate = "sum",
+               normalize = TRUE,
+               model_type = "indep_groups",
+               plot = FALSE,
+               endomorphic = TRUE, coef = 2)
+# for ease of printing, because 'eid' are long here
+rownames(efit) <- paste0("elem_", seq_len(nrow(efit)))
+rowData(efit)
+```
+
+```
+## DataFrame with 2440 rows and 7 columns
+##                              eid      logFC    AveExpr         t     P.Value
+##                      <character>  <numeric>  <numeric> <numeric>   <numeric>
+## elem_1    A:HNF4A-ChMod_chr1:1.. -0.0372331  0.3286243 -0.680443 5.00258e-01
+## elem_2    A:HNF4A-ChMod_chr1:1..  0.2194297  0.2537635  2.642458 1.18004e-02
+## elem_3    A:HNF4A-ChMod_chr1:1.. -0.0371697 -0.1062811 -0.751938 4.56618e-01
+## elem_4    A:HNF4A-ChMod_chr1:1..  0.3260329 -0.0201576  3.223334 2.56696e-03
+## elem_5    A:HNF4A-ChMod_chr1:1..  0.3322387 -0.4469826  5.142783 8.04223e-06
+## ...                          ...        ...        ...       ...         ...
+## elem_2436 R:HNF4A-NoMod_chr9:7..  0.2652956 -0.4381840  5.701967 1.35858e-06
+## elem_2437 R:HNF4A-NoMod_chr9:7..  0.2034860 -0.2556073  4.089514 2.10283e-04
+## elem_2438 R:HNF4A-NoMod_chr9:8..  0.0834214 -0.0859028  0.681994 4.99288e-01
+## elem_2439 R:HNF4A-NoMod_chr9:9..  0.2157308 -0.1195789  2.542841 1.50916e-02
+## elem_2440 R:HNF4A-NoMod_chrY:1..  0.1015237 -0.1142534  1.866165 6.95783e-02
+##             adj.P.Val         B
+##             <numeric> <numeric>
+## elem_1    5.53146e-01  -6.95583
+## elem_2    1.83161e-02  -3.55794
+## elem_3    5.11547e-01  -6.99384
+## elem_4    4.48025e-03  -2.02609
+## elem_5    2.22881e-05   3.21987
+## ...               ...       ...
+## elem_2436 4.33892e-06  4.671009
+## elem_2437 4.47334e-04 -0.252453
+## elem_2438 5.52650e-01 -6.211201
+## elem_2439 2.29145e-02 -3.721659
+## elem_2440 9.28726e-02 -5.477030
+```
+
+The `coef = 2` is passed to `topTable` which is run within `mpralm`.
+This option also returns `scaledDNA` and `scaledRNA` that were used to
+compute log ratios within `mpralm`. This can facilitate plotting
+statistics alongside original or scaled count data.
+
+Just to demonstrate that the scaled counts were in fact the ones used
+for statistics, we can compute the raw LFC and compare to the LFC
+computed by *limma-voom* using precision weights.
+
+```
+sdna <- assay(efit, "scaledDNA")
+srna <- assay(efit, "scaledRNA")
+mt <- rowMeans(log2(srna[,1:3] + 1) - log2(sdna[,1:3] + 1))
+wt <- rowMeans(log2(srna[,4:6] + 1) - log2(sdna[,4:6] + 1))
+raw_lfc <- mt - wt
+# very similar, precision weights modify LFC from limma a bit
+lm(raw_lfc ~ rowData(efit)$logFC)
+```
+
+```
+##
+## Call:
+## lm(formula = raw_lfc ~ rowData(efit)$logFC)
+##
+## Coefficients:
+##         (Intercept)  rowData(efit)$logFC
+##          -0.0007747            0.9999940
+```
+
+# 5 Session Info
+
+R version 4.5.1 Patched (2025-08-23 r88802)
+Platform: x86\_64-pc-linux-gnu
+Running under: Ubuntu 24.04.3 LTS
+
+Matrix products: default
+BLAS: /home/biocbuild/bbs-3.22-bioc/R/lib/libRblas.so
+LAPACK: /usr/lib/x86\_64-linux-gnu/lapack/liblapack.so.3.12.0 LAPACK version 3.12.0
+
+locale:
+[1] LC\_CTYPE=en\_US.UTF-8 LC\_NUMERIC=C
+[3] LC\_TIME=en\_GB LC\_COLLATE=C
+[5] LC\_MONETARY=en\_US.UTF-8 LC\_MESSAGES=en\_US.UTF-8
+[7] LC\_PAPER=en\_US.UTF-8 LC\_NAME=C
+[9] LC\_ADDRESS=C LC\_TELEPHONE=C
+[11] LC\_MEASUREMENT=en\_US.UTF-8 LC\_IDENTIFICATION=C
+
+time zone: America/New\_York
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats4 stats graphics grDevices utils datasets methods
+[8] base
+
+other attached packages:
+[1] mpra\_1.32.0 limma\_3.66.0
+[3] SummarizedExperiment\_1.40.0 Biobase\_2.70.0
+[5] GenomicRanges\_1.62.0 Seqinfo\_1.0.0
+[7] IRanges\_2.44.0 S4Vectors\_0.48.0
+[9] MatrixGenerics\_1.22.0 matrixStats\_1.5.0
+[11] BiocGenerics\_0.56.0 generics\_0.1.4
+[13] BiocStyle\_2.38.0
+
+loaded via a namespace (and not attached):
+[1] Matrix\_1.7-4 jsonlite\_2.0.0 compiler\_4.5.1
+[4] BiocManager\_1.30.26 Rcpp\_1.1.0 tinytex\_0.57
+[7] magick\_2.9.0 dichromat\_2.0-0.1 jquerylib\_0.1.4
+[10] scales\_1.4.0 yaml\_2.3.10 fastmap\_1.2.0
+[13] statmod\_1.5.1 lattice\_0.22-7 R6\_2.6.1
+[16] XVector\_0.50.0 S4Arrays\_1.10.0 knitr\_1.50
+[19] DelayedArray\_0.36.0 bookdown\_0.45 RColorBrewer\_1.1-3
+[22] bslib\_0.9.0 rlang\_1.1.6 cachem\_1.1.0
+[25] xfun\_0.53 sass\_0.4.10 SparseArray\_1.10.0
+[28] cli\_3.6.5 magrittr\_2.0.4 digest\_0.6.37
+[31] grid\_4.5.1 lifecycle\_1.0.4 glue\_1.8.0
+[34] evaluate\_1.0.5 farver\_2.1.2 abind\_1.4-8
+[37] rmarkdown\_2.30 tools\_4.5.1 htmltools\_0.5.8.1
+
+# References
+
+Inoue, Fumitaka, Martin Kircher, Beth Martin, Gregory M Cooper, Daniela M Witten, Michael T McManus, Nadav Ahituv, and Jay Shendure. 2017. “A Systematic Comparison Reveals Substantial Differences in Chromosomal Versus Episomal Encoding of Enhancer Activity.” *Genome Research* 27: 38–52. <https://doi.org/10.1101/gr.212092.116>.
+
+Law, Charity W, Yunshun Chen, Wei Shi, and Gordon K Smyth. 2014. “Voom: Precision Weights Unlock Linear Model Analysis Tools for RNA-seq Read Counts.” *Genome Biology* 15: R29. <https://doi.org/10.1186/gb-2014-15-2-r29>.
+
+Myint, Leslie, Dimitrios G Avramopoulos, Loyal A Goff, and Kasper D Hansen. 2019. “Linear Models Enable Powerful Differential Activity Analysis in Massively Parallel Reporter Assays.” *BMC Genomics* 20: 209. <https://doi.org/10.1186/s12864-019-5556-x>.
+
+Tewhey, Ryan, Dylan Kotliar, Daniel S Park, Brandon Liu, Sarah Winnicki, Steven K Reilly, Kristian G Andersen, et al. 2016. “Direct Identification of Hundreds of Expression-Modulating Variants Using a Multiplexed Reporter Assay.” *Cell* 165: 1519–29. <https://doi.org/10.1016/j.cell.2016.04.027>.

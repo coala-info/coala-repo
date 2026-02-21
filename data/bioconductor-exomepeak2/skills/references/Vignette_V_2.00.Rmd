@@ -1,0 +1,153 @@
+---
+title: "The *exomePeak2* Guide"
+author: 
+- name: Zhen Wei, Jia Meng
+  affiliation:
+  - Department of Biological Sciences, Xi’an Jiaotong-Liverpool University, Suzhou, Jiangsu, 215123, China; Institute of Integrative Biology, University of Liverpool, L7 8TX, Liverpool, United Kingdom;
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+graphics: yes
+vignette: >
+  %\VignetteIndexEntry{The exomePeak2 user's guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignettePackage{exomePeak2}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r para, echo = FALSE, results='hide'}
+knitr::opts_chunk$set(dev="png",fig.show="hold",
+               fig.width=8,fig.height=4.5,fig.align="center",
+               message=FALSE,collapse=TRUE)
+```
+
+# Introduction
+
+**exomePeak2** provides technical independent peak detection and differential methylation analysis for Methylated RNA immunoprecipitation sequencing data (**MeRIP-Seq**). *MeRIP-Seq* is the primary sequencing technology for epi-transcriptomic assessment. The peak calling processes in *MeRIP-Seq* is sensitive to GC content biases, which are generally present in NGS-based assays. Besides, the antibody pull-down efficiency do often vary across different IP replicates, introducing another layer of unwanted technical variation. *exomePeak2* addresses these challenges by introducing a robust set of computation tools tailored for MeRIP-Seq. With *exomePeak2*, users can perform peak calling and differential analysis through a straightforward single-step function.
+
+# Installation
+
+To install exomePeak2 from bioconductor, start R (version >"3.6") and enter:
+
+```{r, eval=FALSE}
+if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("exomePeak2")
+```
+
+For order versions of R, please refer to the appropriate [Bioconductor release](https://www.bioconductor.org/about/release-announcements/}.
+
+# Peak Calling
+
+For the peak calling of the *MeRIP-Seq* experiment, exomePeak2 requires alignment results to be stored in **BAM** format. User need to specify the corresponding **BAM** directories of IP and input samples in the arguments `bam_ip` and `bam_input` of the main function `exomePeak2()`, respectively. 
+
+The following example demonstrates the peak calling from **BAM** and **GFF** files. In addition to **GFF** files, transcript annotation can also be provided by the bioconductor **TxDb** object. **TxDb** will be automatically downloaded if the corresponding UCSC genome name is filled in the `genome` argument.
+
+Note that the genome sequences are necessary for the correction of GC content biases. If the `genome` argument is missing ( `= NULL` ), exomPeak2 will perform peak calling without correcting the PCR amplification bias.
+
+```{r, eval = TRUE}
+library(exomePeak2)
+
+set.seed(1)
+
+GENE_ANNO_GTF = system.file("extdata", "example.gtf", package="exomePeak2")
+
+f1 = system.file("extdata", "IP1.bam", package="exomePeak2")
+f2 = system.file("extdata", "IP2.bam", package="exomePeak2")
+f3 = system.file("extdata", "IP3.bam", package="exomePeak2")
+f4 = system.file("extdata", "IP4.bam", package="exomePeak2")
+IP_BAM = c(f1,f2,f3,f4)
+
+f1 = system.file("extdata", "Input1.bam", package="exomePeak2")
+f2 = system.file("extdata", "Input2.bam", package="exomePeak2")
+f3 = system.file("extdata", "Input3.bam", package="exomePeak2")
+INPUT_BAM = c(f1,f2,f3)
+
+exomePeak2(bam_ip = IP_BAM,
+           bam_input = INPUT_BAM,
+           gff = GENE_ANNO_GTF,
+           genome = "hg19")
+```
+
+Besides the *GRangesList* object of peaks returned by the main function, exomePeak2 will export significant peaks in **BED** and **CSV** format; the files will be automatically saved in a folder named `exomePeak2_output`.
+
+In the peak calling mode, the peak statistics are calculated from the ${\beta}_{i,1}$ terms in the following Poisson GLMs:
+
+$$K_{i,j} \sim Poisson(\lambda_{i,j})$$
+
+$$log2(\lambda_{i,j}) = {\beta}_{i,0} + {\beta}_{i,1}1(\rho(j)=\text{IP}) + t_{i,j}$$
+
+$\lambda_{i,j}$ is the expected value of read abundance for sliding window (bin) $i$ under sample $j$. ${\beta}_{i,0}$ is the intercept coefficient; ${\beta}_{i,1}$ is the coefficient of IP/input log2 fold change; $1(\rho(j)=\text{IP})$ is the regression covariate, which is an indicator (binary) variable of the sample $j$ being IP sample. $t_{i,j}$ is the bin-specific offset accounting for the sequencing depth variation, IP efficiency variation, and the GC content bias. 
+
+$$t_{i,j} = log2(s_j) + log2(f(GC_i))$$
+
+By default, $t_{i,j}$ is further decomposed into the sample-specific size factor $s_j$ and the GC content bias offset $f(GC_i)$.  $\hat s_j$ is estimated using the median read count on the background bins, which are classified by the GMM (K = 2) from the bin's POI values: (IP count + 1)/(input count + 1). $\hat f(GC_i)$ is estimated using cubic splines expanded Poisson GLM on bin's read count with bin's fragment GC content $GC_i$ as covariate. Knots for the cubic splines used are set at `c(0, 0.4, 0.5, 0.6, 1)`. For identifiability, the fitted values $\hat f(GC_i)$ are centered at 1 by dividing its sample mean.
+
+For peak calling, Poisson GLMs using the above design are fitted to identify the significantly modified sliding windows; the default detection criteria is the Wald test p-values < 1e-10 under the alternative hypothesis of ${\beta}_{i,1} > 0$. 
+
+Annotations on the columns of the output table:
+
+- ***chr***: the chromosome name of the peak.
+- ***chromStart***: the start of the peak on the chromosome.
+- ***chromEnd***: the end of the peak on the chromosome.
+- ***name***: the unique ID of the modification peak.
+- ***strand***: the strand of the peak on genome.
+- ***blockCount***: the block (exon) number within the peak.
+- ***blockSizes***: the widths of the blocks.
+- ***blockStarts***: the start positions of the blocks.
+- ***geneID***: the gene ID of the peak; multiple gene IDs will be returned when peak is compatible with > 1 genes.
+- ***RPM.input***: the peak RPM (Reads per million mapped reads) calculated from the pooled input samples.
+- ***RPM.IP***: the peak RPM calculated from the pooled IP samples.
+- ***log2FC***: the estimate of IP over input log2 fold change (coefficient estimates of ${\beta}_{i,1}$).
+- ***pvalue***: the p-value of the peak, which is calculated by the Wald test over the coefficient of ${\beta}_{i,1}$.
+- ***fdr***: the adjusted Wald test p-value using Benjamini Hochberg approach.
+- ***score***: the -log10 p value of the peak.
+
+# Differential Methylation Analysis 
+
+The following example performs differential methylation analysis (comparison of two biological conditions) on exon regions defined by transcript annotation.
+
+```{r, eval = TRUE}
+f1 = system.file("extdata", "treated_IP1.bam", package="exomePeak2")
+TREATED_IP_BAM = c(f1)
+f1 = system.file("extdata", "treated_Input1.bam", package="exomePeak2")
+TREATED_INPUT_BAM = c(f1)
+
+exomePeak2(bam_ip = IP_BAM,
+           bam_input = INPUT_BAM,
+           bam_input_treated = TREATED_INPUT_BAM,
+           bam_ip_treated = TREATED_IP_BAM,
+           gff = GENE_ANNO_GTF,
+           genome = "hg19")
+```
+
+In the differential methylation mode, exomePeak2 will first perform peak calling on the exonic regions by pulling the control and treated samples. Next, it will conduct the differential methylation analysis over the read counts of significant peaks using an interactive Poisson GLM design. 
+
+The peak statistics calculated in the differential methylation setting are based on the interactive coefficient ${\beta}_{i,3}$ of the following regression equation:
+
+$$log2(\lambda_{i,j}) = {\beta}_{i,0} + {\beta}_{i,1}1(\rho(j)=\text{IP}) + {\beta}_{i,2}1(\rho(j)=\text{Treated}) + {\beta}_{i,3}1(\rho(j)=\text{IP&Treated}) + t_{i,j}$$
+
+In the output of differential methylation analysis, The ***diff.log2FC*** and ***pvalue*** are calculated from the coefficient estimates of the interactive term ${\beta}_{i,3}$. The differential log2FC here is interpreted as log( IP over input FC in treated group / IP over input FC in control group). The offset terms $t_{i,j}$ used in the interactive GLM are calculated using the same method as the peak calling.
+
+# Contact
+
+If you encounter any problems during use, please contact the maintainer of exomePeak2:
+
+**Zhen Wei** :  <zhen.wei01@xjtlu.edu.cn>
+
+# References
+1. Hansen, K. D., Irizarry, R. A., & Wu, Z. (2012). Removing technical variability in RNA-seq data using conditional quantile normalization. Biostatistics, 13(2), 204-216.
+
+2. Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome biology, 15(12), 1-21.
+
+3. Benjamini, Y., & Speed, T. P. (2012). Summarizing and correcting the GC content bias in high-throughput sequencing. Nucleic acids research, 40(10), e72-e72.
+
+4. Meng, J., Lu, Z., Liu, H., Zhang, L., Zhang, S., Chen, Y., ... & Huang, Y. (2014). A protocol for RNA methylation differential analysis with MeRIP-Seq data and exomePeak R/Bioconductor package. Methods, 69(3), 274-281.
+
+# Session Info
+```{r}
+sessionInfo()
+```
+
+

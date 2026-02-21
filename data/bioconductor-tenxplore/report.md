@@ -1,0 +1,16 @@
+# bioconductor-tenxplore Bioconductor Package Report
+
+## tenXplore
+
+### Package Description
+the package is available on all platforms; click for details.
+
+### Metadata
+- **Homepage**: https://bioconductor.org/packages/release/bioc/html/tenXplore.html
+- **Package**: tenXplore
+- **Version**: N/A
+- **Author**: N/A
+- **Maintainer**: N/A
+- **GitHub**: Not found
+- **Skill**: generated
+

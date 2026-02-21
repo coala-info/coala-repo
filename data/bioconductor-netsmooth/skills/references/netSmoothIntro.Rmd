@@ -1,0 +1,206 @@
+---
+title: "Introduction to netSmooth package"
+author:
+- name: Jonathan Ronen
+  affiliation: &id Berlin Institute for Medical Systems Biology, Max Delbrück Center
+- name: Altuna Akalin
+  affiliation: *id
+  
+date: "`r Sys.Date()`"
+output:
+  BiocStyle::html_document:
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{netSmooth example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+library(netSmooth)
+library(pheatmap)
+library(SingleCellExperiment)
+```
+
+
+# Introduction
+_netSmooth_ implements a network-smoothing framework to smooth 
+single-cell gene expression data as well as other omics datasets. 
+The algorithm is a graph based diffusion process on networks. The 
+intuition behind the algorithm is that gene networks encoding 
+coexpression patterns may be used to smooth scRNA-seq expression 
+data, since the gene expression values of connected nodes in the 
+network will be predictive of each other. Protein-protein interaction
+(PPI) networks and coexpression networks are among the networks that
+could be used for such procedure. 
+
+
+More precisely, _netSmooth_ works as follows. First, the gene 
+expression values or other quantitative values per gene from each 
+sample is projected on to the provided network. Then, the diffusion 
+process is used to smooth the expression values of adjacent 
+genes in the graph, so that a genes expression value 
+represent an estimate of expression levels based the gene it self, 
+as well as the expression 
+values of the neighbors in the graph. The rate at which expression 
+values of genes diffuse to their neighbors is degree-normalized, so 
+that genes with many edges will affect their neighbors less than 
+genes with more specific interactions. The implementation has one 
+free parameter, `alpha`, which controls if the diffusion will be 
+local or will reach further in the graph. Higher the value, the 
+further the diffusion will reach. The _netSmooth_ package 
+implements strategies to optimize the value of `alpha`.
+
+```{r netsum,echo=FALSE,fig.cap="Network-smoothing concept"}
+# All defaults
+knitr::include_graphics("bckgrnd.png")
+```
+
+In summary, _netSmooth_ enables users to smooth quantitative values 
+associated with genes using a gene interaction network such as a 
+protein-protein interaction network. The following sections of this 
+vignette demonstrate functionality of `netSmooth` package.
+
+
+# Smoothing single-cell gene expression data with netSmooth() function
+The workhorse of the _netSmooth_ package is the `netSmooth()` 
+function. This function takes at least two arguments, 
+a network and genes-by-samples matrix as input, and performs 
+smoothing on genes-by-samples matrix. The network should be 
+organized
+as an adjacency matrix and its row and column names should match
+the row names of genes-by-samples matrix. 
+
+We will demonstrate the usage of the `netSmooth()` function using
+a subset of human PPI and a subset of single-cell RNA-seq data from
+GSE44183-GPL11154. We will first load the example datasets that are available 
+through _netSmooth_ package.
+```{r , echo=TRUE}
+data(smallPPI)
+data(smallscRNAseq)
+```
+
+We can now smooth the gene expression network now with `netSmooth()` function.
+We will use `alpha=0.5`.
+```{r , echo=TRUE, eval=TRUE}
+smallscRNAseq.sm.se <- netSmooth(smallscRNAseq, smallPPI, alpha=0.5)
+smallscRNAseq.sm.sce <- SingleCellExperiment(
+    assays=list(counts=assay(smallscRNAseq.sm.se)),
+    colData=colData(smallscRNAseq.sm.se)
+)
+```
+
+Now, we can look at the smoothed and raw expression values using 
+a heatmap.
+```{r , echo=TRUE, eval=TRUE}
+anno.df <- data.frame(cell.type=colData(smallscRNAseq)$source_name_ch1)
+rownames(anno.df) <- colnames(smallscRNAseq)
+pheatmap(log2(assay(smallscRNAseq)+1), annotation_col = anno.df,
+         show_rownames = FALSE, show_colnames = FALSE,
+         main="before netSmooth")
+
+pheatmap(log2(assay(smallscRNAseq.sm.sce)+1), annotation_col = anno.df,
+         show_rownames = FALSE, show_colnames = FALSE,
+         main="after netSmooth")
+```
+
+## Optimizing the smoothing parameter `alpha`
+By default, the parameter `alpha` will be optimized using a robust
+clustering statistic. Briefly, this approach will try different 
+clustering algorithms and/or parameters and find clusters that can be reproduced
+with different algorithms. The `netSmooth()` function will try different `alpha`
+values controlled by additional arguments to maximize the number of samples in
+robust clusters.
+
+Now, we smooth the expression values using automated alpha optimization and plot
+the heatmaps of raw and smooth versions.
+```{r , echo=TRUE, eval=FALSE}
+smallscRNAseq.sm.se <- netSmooth(smallscRNAseq, smallPPI, alpha='auto')
+smallscRNAseq.sm.sce <- SingleCellExperiment(
+    assays=list(counts=assay(smallscRNAseq.sm.se)),
+    colData=colData(smallscRNAseq.sm.se)
+)
+
+pheatmap(log2(assay(smallscRNAseq.sm.sce)+1), annotation_col = anno.df,
+         show_rownames = FALSE, show_colnames = FALSE,
+         main="after netSmooth (optimal alpha)")
+```
+
+# Getting robust clusters from data
+There is no standard method especially for clustering single cell RNAseq data,
+as different studies produce data with different topologies, which respond
+differently to the various clustering algorithms. In order to avoid optimizing
+different clustering routines for the different datasets, we have implemented a
+robust clustering routine based on [clusterExperiment][ce].
+The _clusterExperiment_ framework for robust clustering is based on consensus
+clustering of clustering assignments obtained from different views of the data
+and different clustering algorithms. The different views are different reduced
+dimensionality projections of the data based on different techniques; thus, no
+single clustering result will dominate the data, and only cluster structures
+which are robust to different analyses will prevail. We implemented a clustering
+framework using the components of _clusterExperiment_ and different
+dimensionality reduction methods.
+
+We can directly use the robust clustering function `robustClusters`.
+```{r , echo=TRUE, eval=TRUE}
+yhat <- robustClusters(smallscRNAseq, makeConsensusMinSize=2, makeConsensusProportion=.9)$clusters
+yhat.sm <- robustClusters(smallscRNAseq.sm.se, makeConsensusMinSize=2, makeConsensusProportion=.9)$clusters
+cell.types <- colData(smallscRNAseq)$source_name_ch1
+knitr::kable(
+  table(cell.types, yhat), caption = 'Cell types and `robustClusters` in the raw data.'
+)
+knitr::kable(
+  table(cell.types, yhat.sm), caption = 'Cell types and `robustClusters` in the smoothed data.'
+)
+```
+
+A cluster assignment of `-1` indicates that the cell could not be placed in a robust cluster, and has consequently been omitted. We see that the clusters are completely uninformative in the raw data, while the smoothed data at least permitted the `robustClusters` procedure to identify a subset of the 8-cell blastomeres as a separate cluster.
+
+# Deciding for the best dimension reduction method for visualization and clustering
+The `robustClusters()` function works by clustering samples in a lower dimension
+embedding using either PCA or t-SNE. Different single cell datasets might respond
+better to different dimensionality reduction techniques. In order to pick the
+right technique algorithmically, we compute the entropy in a 2D embedding. We
+obtained 2D embeddings from the 500 most variable genes using either PCA or
+t-SNE, binned them in a 20x20 grid, and computed the entropy. The entropy in the
+2D embedding is a measure for the information captured by it. We pick the
+embedding with the highest information content. `pickDimReduction()` function
+implements this
+strategy and returns the best embedding according to this strategy.
+
+Below, we pick the best embedding for our example dataset and plot scatter plots
+for different 2D embedding methods.
+```{r , echo=TRUE, eval=TRUE}
+smallscRNAseq <- runPCA(smallscRNAseq, ncomponents=2)
+smallscRNAseq <- runTSNE(smallscRNAseq, ncomponents=2)
+smallscRNAseq <- runUMAP(smallscRNAseq, ncomponents=2)
+
+plotPCA(smallscRNAseq, colour_by='source_name_ch1') + ggtitle("PCA plot")
+plotTSNE(smallscRNAseq, colour_by='source_name_ch1') + ggtitle("tSNE plot")
+plotUMAP(smallscRNAseq, colour_by='source_name_ch1') + ggtitle("UMAP plot")
+```
+
+The `pickDimReduction` method picks the dimensionality reduction method which
+produces the highest entropy embedding:
+
+```{r echo=TRUE, eval=TRUE}
+pickDimReduction(smallscRNAseq)
+```
+
+# Frequently asked questions
+
+### How can I make smoothing faster ?
+Make sure you compile R with openBLAS or variants that are faster.
+
+### What happens if all the genes are not in my network ?
+The smoothing will only be done using the genes in the network then
+unsmoothed genes will be attached to the gene expression matrix.
+
+-------
+
+
+```{r}
+sessionInfo()
+```
+
+[ce]: https://www.bioconductor.org/packages/3.6/bioc/html/clusterExperiment.html "clusterExperiment"

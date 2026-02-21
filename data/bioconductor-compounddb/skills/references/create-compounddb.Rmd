@@ -1,0 +1,736 @@
+---
+title: "Creating CompoundDb annotation resources"
+package: CompoundDb
+output:
+  BiocStyle::html_document:
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{Creating CompoundDb annotation resources}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteKeywords{Mass Spectrometry, Metabolomics, Infrastructure, Bioinformatics}
+  %\VignetteEncoding{UTF-8}
+  %\VignettePackage{MsBackendHmdb}
+  %\VignetteDepends{Spectra,BiocStyle,MsBackendMgf,RSQLite}
+---
+
+```{r style, echo = FALSE, results = 'asis'}
+BiocStyle::markdown()
+```
+
+**Authors**: Johannes Rainer<br />
+**Modified**: `r file.info("create-compounddb.Rmd")$mtime`<br />
+**Compiled**: `r date()`
+
+# Introduction
+
+Chemical compound annotation and information can be retrieved from a variety of
+sources including [HMDB](http://www.hmdb.ca),
+[LipidMaps](http://www.lipidmaps.org) or
+[ChEBI](https://www.ebi.ac.uk/chebi). The `r Biocpkg("CompoundDb")` package
+provides functionality to extract data relevant for (chromatographic) peak
+annotations in metabolomics/lipidomics experiments from these sources and to
+store it into a common format (i.e. an `CompDb` object/database). This vignette
+describes how such `CompDb` objects can be created exemplified with
+package-internal test files that represent data subsets from some annotation
+resources.
+
+The R object to represent the compound annotation is the `CompDb` object. Each
+object (respectively its database) is supposed to contain and provide
+annotations from a single source (e.g. HMDB or LipidMaps) but it is also
+possible to create cross-source databases too.
+
+
+# Creating `CompDb` databases
+
+`CompDb` databases can be created from existing data resources such as the Human
+Metabolome Database (HMDB) by importing all of their data or can alternatively
+be *build* by sequentially adding data and information to the database. This
+section explains first how data can be loaded from existing resources to create
+a `CompDb` database and in the last subsection how an empty `CompDb` can be
+sequentially and manually filled with annotation data \@ref(sec:fill).
+
+The *CompoundDb* package provides the `compound_tbl_sdf()` and the
+`compound_tbl_lipidblast()` functions to extract relevant compound annotation
+from files in SDF (structure-data file) format or in the json files from
+LipidBlast (http://mona.fiehnlab.ucdavis.edu/downloads). *CompoundDb* allows to
+process SDF files from:
+
+- Human Metabolome Database (HMDB), http://www.hmdb.ca
+- Chemical Entities of Biological Interest (ChEBI): https://www.ebi.ac.uk/chebi
+- LIPID MAPS Structure Database (LMSD): http://www.lipidmaps.org
+- PubChem: https://pubchem.ncbi.nlm.nih.gov
+- MoNa (Massbank of North America): http://mona.fiehnlab.ucdavis.edu (for MoNa
+  import see the next section).
+
+Note however that it is also possible to define such a table manually and use
+that to create the database. As simple example for this is provided in the
+section *`CompDb` from custom input* \@ref(sec:custom) below or the help page of
+`createCompDb()` for more details on that.
+
+
+## `CompDb` from HMDB data
+
+Below we use the `compound_tbl_sdf()` to extract compound annotations from a SDF
+file representing a very small subset of the HMDB database. To generate a
+database for the full HMDB we would have to download the *structures.sdf* file
+containing all metabolites and load that file instead.
+
+```{r compound_tbl, message = FALSE, warnings = FALSE}
+library(CompoundDb)
+
+## Locate the file
+hmdb_file <- system.file("sdf/HMDB_sub.sdf.gz", package = "CompoundDb")
+## Extract the data
+cmps <- compound_tbl_sdf(hmdb_file)
+```
+
+The function returns by default a (`data.frame`-equivalent) `tibble` (from the
+*tidyverse*'s *tibble* package).
+
+```{r cmps}
+cmps
+```
+
+The `tibble` contains columns
+
+- `compound_id`: the resource-specific ID of the compound. Can be an `integer`
+  or a `character`.
+- `name`: the name of the compound, mostly a generic or common name.
+- `inchi`: the compound's inchi.
+- `inchikey`: the INCHI key.
+- `formula`: the chemical formula of the compound.
+- `exactmass`: the compounds (monoisotopic) mass.
+- `synonyms`: a `list` of aliases/synonyms for the compound.
+- `smiles`: the SMILES of the compound.
+
+To create a simple compound database, we could pass this `tibble` along with
+additional required metadata information to the `createCompDb()` function. In
+the present example we want to add however also MS/MS spectrum data to the
+database. We thus load below the MS/MS spectra for some of the compounds from
+the respective xml files downloaded from HMDB. To this end we pass the path to
+the folder in which the files are located to the `msms_spectra_hmdb()`
+function. The function identifies the xml files containing MS/MS spectra based
+on their their file name and loads the respective spectrum data. The folder can
+therefore also contain other files, but the xml files from HMDB should not be
+renamed or the function will not recognice them. Note also that at present only
+MS/MS spectrum xml files from HMDB are supported (one xml file per spectrum);
+these could be downloaded from HMDB with the *hmdb_all_spectra.zip* file.
+
+```{r msms_spectra, message = FALSE}
+## Locate the folder with the xml files
+xml_path <- system.file("xml", package = "CompoundDb")
+spctra <- msms_spectra_hmdb(xml_path)
+```
+
+Also here, spectra information can be manually provided by adhering to the
+expected structure of the `data.frame` (see `?createCompDb` for details).
+
+At last we have to create the metadata for the resource. The metadata
+information for a `CompDb` resource is crucial as it defines the origin of the
+annotations and its version. This information should thus be carefully defined
+by the user. Below we use the `make_metadata()` helper function to create a
+`data.frame` in the expected format. The organism should be provided in the
+format e.g. `"Hsapiens"` for human or `"Mmusculus"` for mouse, i.e. capital
+first letter followed by lower case characters without whitespaces.
+
+```{r metadata, message = FALSE}
+metad <- make_metadata(source = "HMDB", url = "http://www.hmdb.ca",
+                       source_version = "4.0", source_date = "2017-09",
+                       organism = "Hsapiens")
+```
+
+With all the required data ready we create the SQLite database for the HMDB
+subset. With `path` we specify the path to the directory in which we want to
+save the database. This defaults to the current working directory, but for this
+example we save the database into a temporary folder.
+
+```{r createCompDb}
+db_file <- createCompDb(cmps, metadata = metad, msms_spectra = spctra,
+                        path = tempdir())
+```
+
+The variable `db_file` is now the file name of the SQLite database. We can pass
+this file name to the `CompDb()` function to get the `CompDb` objects acting as
+the interface to the database.
+
+```{r CompDb}
+cmpdb <- CompDb(db_file)
+cmpdb
+```
+
+To extract all compounds from the database we can use the `compounds()`
+function. The parameter `columns` allows to choose the database columns to
+return. Any columns for any of the database tables are supported. To get an
+overview of available database tables and their columns, the `tables()` function
+can be used:
+
+```{r}
+tables(cmpdb)
+```
+
+Below we extract only selected columns from the *compounds* table.
+
+```{r compounds}
+compounds(cmpdb, columns = c("name", "formula", "exactmass"))
+```
+
+Analogously we can use the `Spectra()` function to extract spectrum data from
+the database. The function returns by default a `Spectra` object from the
+`r Biocpkg("Spectra")` package with all spectra metadata available as *spectra
+variables*.
+
+```{r spectra, message = FALSE}
+library(Spectra)
+sps <- Spectra(cmpdb)
+sps
+```
+
+The available *spectra variables* for the `Spectra` object can be retrieved with
+`spectraVariables()`:
+
+```{r spectraVariables}
+spectraVariables(sps)
+```
+
+Individual spectra variables can be accessed with the `$` operator:
+
+```{r}
+sps$collisionEnergy
+```
+
+And the actual m/z and intensity values with `mz()` and `intensity()`:
+
+```{r}
+mz(sps)
+
+## m/z of the 2nd spectrum
+mz(sps)[[2]]
+```
+
+Note that it is also possible to retrieve specific spectra, e.g. for a provided
+compound, or add compound annotations to the `Spectra` object. Below we use the
+filter expression `~ compound_id == "HMDB0000001"`to get only MS/MS spectra for
+the specified compound. In addition we ask for the `"name"` and
+`"inchikey"` of the compound.
+
+```{r spectra-selected}
+sps <- Spectra(cmpdb, filter = ~ compound_id == "HMDB0000001",
+               columns = c(tables(cmpdb)$msms_spectrum, "name",
+                           "inchikey"))
+sps
+```
+
+The available spectra variables:
+
+```{r}
+spectraVariables(sps)
+```
+
+The compound's name and INCHI key have thus also been added as spectra
+variables:
+
+```{r}
+sps$inchikey
+```
+
+To share or archive the such created `CompDb` database, we can also create a
+dedicated R package containing the annotation. To enable reproducible research,
+each `CompDb` package should contain the version of the originating data source
+in its file name (which is by default extracted from the metadata of the
+resource). Below we create a `CompDb` package from the generated database
+file. Required additional information we have to provide to the function are the
+package creator/maintainer and its version.
+
+```{r createCompoundDbPackage, warning = FALSE}
+createCompDbPackage(
+    db_file, version = "0.0.1", author = "J Rainer", path = tempdir(),
+    maintainer = "Johannes Rainer <johannes.rainer@eurac.edu>")
+```
+
+The function creates a folder (in our case in a temporary directory) that can be
+build and installed with `R CMD build` and `R CMD INSTALL`.
+
+Special care should also be put on the license of the package that can be passed
+with the `license` parameter. The license of the package and how and if the
+package can be distributed will depend also on the license of the originating
+resource.
+
+
+## `CompDb` from custom data {#sec:custom}
+
+A `CompDb` database can also be created from custom, manually defined
+annotations. To illustrate this we create below first a `data.frame` with some
+arbitrary compound annotations. According to the `?createCompDb` help page, the
+data frame needs to have columns `"compound_id"`, `"name"`, `"inchi"`,
+`"inchikey"`, `"formula"`, `"exactmass"`, `"synonyms"`. All columns except
+`"compound_id"` can also contain missing values. It is also possible to define
+additional columns. Below we thus create a `data.frame` with some compound
+annotations as well as additional columns. Note that all these annotations in
+this example are for illustration purposes only and are by no means
+*real*. Also, we don't provide any information for columns `"inchi"`,
+`"inchikey"` and `"formula"` setting all values for these to `NA`.
+
+```{r}
+cmps <- data.frame(
+    compound_id = c("CP_0001", "CP_0002", "CP_0003", "CP_0004"),
+    name = c("A", "B", "C", "D"),
+    inchi = NA_character_,
+    inchikey = NA_character_,
+    formula = NA_character_,
+    exactmass = c(123.4, 234.5, 345.6, 456.7),
+    compound_group = c("G01", "G02", "G01", "G03")
+)
+```
+
+Next we add also *synonyms* for each compound. This columns supports multiple
+values for each row.
+
+```{r}
+cmps$synonyms <- list(
+    c("a", "AA", "aaa"),
+    c(),
+    c("C", "c"),
+    ("d")
+)
+```
+
+We also need to define the *metadata* for our database, which we do with the
+`make_metadata()` function.  With this information we can already create a first
+rudimentary `CompDb` database that contains only compound annotations. We thus
+create below our custom `CompDb` database in a temporary directory. We also
+manually specify the name of our database with the `dbFile` parameter - if not
+provided, the name of the database will be constructed based on information from
+the `metadata` parameter. In a real-case scenario, `path` and `dbFile` should be
+changed to something more meaningful.
+
+```{r}
+metad <- make_metadata(source = "manually defined", url = "",
+                       source_version = "1.0.0", source_date = "2022-03-01",
+                       organism = NA_character_)
+
+db_file <- createCompDb(cmps, metadata = metad, path = tempdir(),
+                        dbFile = "CompDb.test.sqlite")
+```
+
+We can now load this toy database using the `CompDb()` function providing the
+full path to the database file. Note that we load the database in read-write
+mode by specifying `flags = RSQLite::SQLITE_RW` - by default `CompDb()` will
+load databases in read-only mode hence ensuring that the data within the
+database can not be compromised. In our case we would however like to add more
+information to this database later and hence we load it in read-write mode.
+
+```{r}
+cdb <- CompDb(db_file, flags = RSQLite::SQLITE_RW)
+cdb
+```
+
+We can now retrieve annotations from the database with the `compound()`
+function.
+
+```{r}
+compounds(cdb)
+```
+
+Or also search and filter the annotations.
+
+```{r}
+compounds(cdb, filter = ~ name %in% c("B", "A"))
+```
+
+Next we would like to add also MS2 spectra data to the database. This could be
+either done directly in the `createCompDb()` call with parameter `msms_spectra`,
+or with the `insertSpectra()` function that allows to add MS2 spectra data to an
+existing `CompDb` which can be provided as a `Spectra` object. We thus below
+manually create a `Spectra` object with some arbitrary MS2 spectra -
+alternatively, `Spectra` can be imported from a variety of input sources,
+including MGF or MSP files using e.g. the `r Biocpkg("MsBackendMgf")` or
+`r Biocpkg("MsBackendMsp")` packages.
+
+```{r}
+#' Define basic spectra variables
+df <- DataFrame(msLevel = 2L, precursorMz = c(124.4, 124.4, 235.5))
+#' Add m/z and intensity information for each spectrum
+df$mz <- list(
+    c(3, 20, 59.1),
+    c(2, 10, 30, 59.1),
+    c(100, 206, 321.1))
+df$intensity <- list(
+    c(10, 13, 45),
+    c(5, 8, 9, 43),
+    c(10, 20, 400))
+#' Create the Spectra object
+sps <- Spectra(df)
+```
+
+The `Spectra` object needs also to have a variable (column) called
+`"compound_id"` which provides the information with which existing compound in
+the database the spectrum is associated.
+
+```{r}
+compounds(cdb, "compound_id")
+sps$compound_id <- c("CP_0001", "CP_0001", "CP_0002")
+```
+
+We can also add additional information to the spectra, such as the instrument.
+
+```{r}
+sps$instrument <- "AB Sciex TripleTOF 5600+"
+```
+
+And we can now add these spectra to our existing toy `CompDb`. Parameter
+`columns` allows to specify which of the *spectra variables* should be stored
+into the database.
+
+```{r}
+cdb <- insertSpectra(cdb, spectra = sps,
+                     columns = c("compound_id", "msLevel",
+                                 "precursorMz", "instrument"))
+cdb
+```
+
+We have thus now a `CompDb` database with compound annotations and 3 MS2
+spectra. We could for example also retrieve the MS2 spectra for the compound
+with the name *A* from the database with:
+
+```{r}
+Spectra(cdb, filter = ~ name == "A")
+```
+
+
+
+## `CompDb` from MoNA data
+
+MoNa (Massbank of North America) provides a large SDF file with all spectra
+which can be used to create a `CompDb` object with compound information and
+MS/MS spectra. Note however that MoNa is organized by spectra and the annotation
+of the compounds is not consistent and normalized. Spectra from the same
+compound can have their own compound identified and data that e.g. can differ in
+their chemical formula, precision of their exact mass or other fields.
+
+Similar to the example above, compound annotations can be imported with the
+`compound_tbl_sdf()` function while spectrum data can be imported with
+`msms_spectra_mona()`. In the example below we use however the
+`import_mona_sdf()` that wraps both functions to reads both compound and
+spectrum data from a SDF file without having to import the file twice. As an
+example we use a small subset from a MoNa SDF file that contains only 7 spectra.
+
+```{r mona-import, message = FALSE}
+mona_sub <- system.file("sdf/MoNa_export-All_Spectra_sub.sdf.gz",
+                        package = "CompoundDb")
+mona_data <- import_mona_sdf(mona_sub)
+```
+
+As a result we get a `list` with a data.frame each for compound and spectrum
+information. These can be passed along to the `createCompDb()` function to
+create the database (see below).
+
+```{r mona-metadata}
+metad <- make_metadata(source = "MoNa",
+                       url = "http://mona.fiehnlab.ucdavis.edu/",
+                       source_version = "2018.11", source_date = "2018-11",
+                       organism = "Unspecified")
+mona_db_file <- createCompDb(mona_data$compound, metadata = metad,
+                             msms_spectra = mona_data$msms_spectrum,
+                             path = tempdir())
+```
+
+We can now load and use this database, e.g. by extracting all compounds as shown
+below.
+
+```{r mona-compounds}
+mona <- CompDb(mona_db_file)
+compounds(mona)
+```
+
+As stated in the introduction of this section the `compound` information
+contains redundant information and the table has essentially one row per
+spectrum. Feedback on how to reduce the redundancy in the ms_compound table is
+highly appreciated.
+
+
+## `CompDb` by sequentially filling with data {#sec:fill}
+
+As an alternative to creating a full database from an existing resource it is
+also possible to create an empty `CompDb` database and *sequentially* filling it
+with data. This could for example be used to create a laboratory specific
+annotation library with compound, ion and fragment spectra of pure standards
+measured on a certain LC-MS setup. Below we create an empty `CompDb` database
+providing the file name of the database. In the example we store the database to
+a temporary file but in a real use case a meaningful file name and file path
+should be used instead.
+
+```{r}
+dbfile <- tempfile()
+mydb <- emptyCompDb(dbfile)
+mydb
+```
+
+We next define some first compound annotation we want to add to the
+database. For compound annotations, fields `"compound_id"` (an arbitrary ID of
+the compound), `"name"` (the compound name), `"inchi"`, `"inchikey"`,
+`"formula"` (the chemical formula) and `"exactmass"` (the monoisotopic mass) are
+expected, but, except of `"compound_id"`, they can also contain missing values
+or be completely omitted. Below we define a `data.frame` with annotations for
+some compounds and add this annotation to the database using the
+`insertCompound()` function.
+
+```{r}
+cmp <- data.frame(compound_id = c("1", "2"),
+                  name = c("Caffeine", "Glucose"),
+                  formula = c("C8H10N4O2", "C6H12O6"),
+                  exactmass = c(194.080375584, 180.063388116))
+mydb <- insertCompound(mydb, cmp)
+mydb
+```
+
+We next add fragment spectra for the compounds. These could for example
+represent MS2 spectra measured for the pure standard of the compound and could
+be extracted for example from `r Biocpkg("xcms")` result objects or other
+sources. Below we load some fragment spectra for caffeine from an MGF file
+distributed with this package. We use the `r BiocStyle::Biocpkg("MsBackendMgf")`
+package to import that data into a `Spectra` object.
+
+```{r, message = FALSE}
+library(MsBackendMgf)
+caf_ms2 <- Spectra(system.file("mgf", "caffeine.mgf", package = "CompoundDb"),
+                   source = MsBackendMgf())
+caf_ms2
+```
+
+We can evaluate what spectra variables are available in the imported data.
+
+```{r}
+spectraVariables(caf_ms2)
+caf_ms2$rtime
+```
+
+There are many variables available, but most of them, like for example the
+retention time, or not defined as this information was not provided in the MGF
+file. In order to associate these fragment spectra to the caffeine compound we
+just added to the database, we need to assign them the ID of the compound (in
+our case `"1"`).
+
+```{r}
+caf_ms2$compound_id <- "1"
+```
+
+We can then add the spectra to the database using the `insertSpectra()`
+function. With parameter `columns` we specify which of the spectra variables we
+actually want to store in the database.
+
+```{r}
+mydb <- insertSpectra(mydb, caf_ms2,
+                      columns = c("compound_id", "msLevel", "splash",
+                                  "precursorMz", "collisionEnergy"))
+mydb
+```
+
+We thus have now 2 compounds in the database and 2 fragment spectra:
+
+```{r}
+compounds(mydb)
+sps <- Spectra(mydb)
+sps$name
+```
+
+With `insertCommpound()` and `insertSpectra()` further compounds and fragment
+spectra could be added to the database. Note that both functions support also to
+add additional columns (*fields* or *variables*) to the database. As an example
+we define below a compound with an arbitrary additional column and add this to
+the database using parameter `addColumns = TRUE`.
+
+```{r}
+cmps <- data.frame(compound_id = "3", name = "X003",
+                   formula = "C5H2P3O", extra_field = "artificial compound")
+mydb <- insertCompound(mydb, cmps, addColumns = TRUE)
+compounds(mydb)
+```
+
+The additional column is now available in the database. Existing entries in a
+`CompDb` can also be deleted using the `deleteCompound()` or `deleteSpectra()`
+functions. Both require as additional input the IDs of the compound(s) (or
+spectra) to delete. Below we extract the IDs and names of the compounds from our
+database.
+
+```{r}
+compounds(mydb, columns = c("compound_id", "name"))
+```
+
+We can now delete the compound `"X003"` with `deleteCompound()` and the ID of
+this compound.
+
+```{r}
+mydb <- deleteCompound(mydb, ids = "3")
+compounds(mydb)
+```
+
+Note that deleting a compound with associated spectra (or ions) will result in
+an error, thus it would not be possible to delete caffeine from the database,
+because it contains also MS2 spectra for that compound. Using parameter
+`recursive = TRUE` in the `deleteCompound()` call would however allow to delete
+the compound **and all** associated spectra (and/or ions) along with it. Below
+we delete thus caffeine and the associated MS2 spectra which leaves us a
+`CompDb` with a single compound and no more MS2 spectra.
+
+```{r}
+mydb <- deleteCompound(mydb, ids = "1", recursive = TRUE)
+compounds(mydb)
+Spectra(mydb)
+```
+
+Note that these functions can also be used to add or remove annotations to/from
+any `CompDb` database, as long as the database is *writeable* (i.e. the database
+is loaded by specifying `flags = RSQLite::SQLITE_RW` as additional parameter to
+the `CompDb` call to load the database).
+
+
+# Extending `CompDb` databases
+
+The `CompDb` database layout is very flexible supporting extension with new
+database tables. The content of such additional database tables can be
+automatically integrated into the information returned by the `compounds()` or
+`spectraData()` functions if the relationships between the new and existing
+database tables is defined. Elements of the new tables need to be linked
+(related) to entries in at least one of the *core* `CompDb` database tables. The
+respective relationship information can then be added to a `CompDb` object using
+the `addJoinDefinition()` function.
+
+As an example we add a new database table *experiment* to a `CompDb`
+database. This new database table could contain information on the individual
+experiments in which certain compounds stored in the `CompDb`'s *ms_compound*
+table were measured.
+
+We add this new table to the test database of the *CompoundDb*. Below we first
+copy this database to a temporary file and connect through it using the
+*RSQLite* R package.
+
+```{r}
+#' Copy the test database to a temporary file
+tf <- tempfile()
+file.copy(system.file("sql/CompDb.MassBank.sql", package = "CompoundDb"), tf)
+
+#' Connect to this new database
+library(RSQLite)
+con <- dbConnect(SQLite(), tf)
+```
+
+The tables in this database are:
+
+```{r}
+dbListTables(con)
+```
+
+As detailed above, we want to add a new database table *experiment* with some
+additional (experiment-related) information on the experiments/measurement runs
+in which certain compounds were measured. Such a table could for example be
+defined as follows:
+
+```{r}
+exp <- data.frame(
+    experiment_id = 1:4,
+    experiment_name = c("exp_a", "exp_b", "exp_c", "exp_d"),
+    experiment_date = c("2022-11-24", "2023-06-12", "2023-09-21", "2024-12-07"),
+    experiment_operator = c("AA", "VV", "AA", "AA"))
+```
+
+We next need to *link* entries in this table with rows in the *ms_compound*
+database table. We thus load the content of this table from the database and add
+a column `"experiment_id"` to link it's entries to the new *experiment* table
+defined above.
+
+```{r}
+cmp <- dbGetQuery(con, "select * from ms_compound")
+nrow(cmp)
+```
+
+We add the new column and fill it with values. Each row should contain one of
+the values of the `"experiment_id"` column of `exp`. In our example we fill the
+column randomly with values between 1 and 4 (the primary keys of the elements in
+the `exp` data frame). In a real use case this reference should of course
+represent a real relationship between elements in the two tables.
+
+```{r}
+cmp$experiment_id <- sample(1:4, nrow(cmp), replace = TRUE)
+```
+
+We next write both tables to the database, replacing the existing *ms_compound*
+table and adding a new *experiment* table.
+
+```{r}
+dbWriteTable(con, name = "ms_compound", cmp, overwrite = TRUE)
+dbWriteTable(con, name = "experiment", exp)
+dbListTables(con)
+dbDisconnect(con)
+```
+
+We can now load this database as a `CompDb` object.
+
+```{r}
+cdb <- CompDb(tf)
+```
+
+The message indicates that a database table was found which is not related to
+any other database table. We could use the `cdb` variable as any other `CompDb`
+object, the content of the new *experiment* would however not (yet) be included
+in the results returned from this database. The full list of available database
+tables (including their columns) is:
+
+```{r}
+tables(cdb)
+```
+
+In order to allow extraction of content of the new database table, we need to
+add the relationship information between the new table *experiment* and the
+other existing database tables in the `CompDb` object. We can add this
+information using the `addJoinDefinition()` function. With parameters `table_a`
+and `table_b` we provide the names of the database tables that are related to
+each other and with `column_a` and `column_b` we specify the names of the
+columns in the two tables that define the relationship (i.e. contain the primary
+and foreign keys of the relationship).
+
+```{r}
+cdb <- addJoinDefinition(
+    cdb, table_a = "ms_compound", table_b = "experiment",
+    column_a = "experiment_id", column_b = "experiment_id")
+```
+
+We can now also request information from the *experiment* database table. Below
+we show the first 6 rows returned by joining the *ms_compound* and *experiment*
+tables.
+
+```{r}
+#' Show the first 6 rows
+compounds(cdb, columns = c("compound_id", "formula", "experiment_name",
+                           "experiment_date")) |>
+    head()
+```
+
+Information on the *experiment* table is also available through the `Spectra`
+interface. Below we return the full content from the database through the
+`spectraData()` function.
+
+```{r}
+s <- Spectra(cdb)
+spectraData(s)
+```
+
+This `DataFrame` includes thus also the columns `"experiment_id"`,
+`"experiment_name"`, `"experiment_date"` and `"experiment_operator"` from the
+new *experiment* table. Similarly, columns from this table can also be extracted
+using `$`, thus returning the values from the respective columns associated to
+the individual spectra.
+
+```{r}
+s$experiment_name
+```
+
+
+```{r}
+file.remove(tf)
+```
+
+# Session information
+
+```{r sessioninfo, echo=FALSE}
+sessionInfo()
+```

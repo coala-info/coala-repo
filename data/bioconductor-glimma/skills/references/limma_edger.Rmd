@@ -1,0 +1,218 @@
+---
+title: "Introduction using limma or edgeR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction using limma or edgeR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+## pre-load to avoid load messages in report
+library(Glimma)
+library(limma)
+library(edgeR)
+```
+
+## Introduction
+
+In this vignette we present the basic features of Glimma. 
+Glimma is an interactive R widget for creating plots for differential expression analysis, created using the Vega and htmlwidgets frameworks. The created plots can be embedded in R Markdown, or exported as standalone HTML documents.
+The data presented here is slightly modified from the [RNAseq123](https://bioconductor.org/packages/release/workflows/html/RNAseq123.html) workflow and only a single contrast has been performed for simplicity. We can use either limma or edgeR to fit the models and they both share upstream steps in common.
+
+To begin, the DGEList object from the workflow has been included with the package as internal data.
+
+```{r}
+library(Glimma)
+library(limma)
+library(edgeR)
+
+dge <- readRDS(system.file("RNAseq123/dge.rds", package = "Glimma"))
+```
+
+## MDS Plot
+
+The multidimensional scaling (MDS) plot is frequently used to explore differences in samples. When data has been MDS transformed, the first two dimensions explain the greatest variance between samples, and the amount of variance decreases monotonically with increasing dimension.
+
+The Glimma MDS plot contains two main components:
+
+1. a plot showing two MDS dimensions, and
+2. a plot of the eigenvalues of each dimension
+
+The Glimma MDS allows different dimensions to be plotted against each other, and for the colours of the points to be changed based on predefined factors. The grouping variables are taken from the `samples` component of `DGEList` objects used in `limma` and `edgeR`.
+
+```{r}
+glimmaMDS(dge)
+```
+
+### Interactions with the plot
+In the plot above, try:
+
++ Scaling the points by library size (lib_size) using the `scale_by` field.
++ Changing the colour of points by group using the `colour_by` field.
++ Altering the shape of points by sample sequencing lane using the `shape_by` field.
++ Changing to a different colour scheme using the `colourscheme` field.
++ Changing the dimensions plotted on the x-axis to dim2 and y-axis to dim3 using the `x_axis` and `y_axis` fields.
++ Saving the plots in either PNG or SVG formats using the "Save Plot" button.
+
+### Modifications to the plot
+
+***Adjusting plot size***
+
+*Usage:* `glimmaMDS(dge, width=1200, height=1200)`
+
+Users can specify the width and height of the MDS plot widget in pixels. The default width and height are 900 and 500 respectively.
+
+***Continuous colour schemes***
+
+*Usage:* `glimmaMDS(dge, continuous.color=TRUE)`
+
+This argument specifies that continuous colour schemes should be used, which can be useful for colouring samples by their expression for a particular gene.
+
+***Custom experimental groups***
+
+*Usage:* `glimmaMDS(dge, groups=[vector or data frame])`
+
+This allows the user to change the associated sample information such as experimental groups. This information is displayed in mouseover tooltips and can be used to adjust the plot using `scale_by`, `colour_by` and `shape_by` fields.
+
+<!-- Not sure what differential selections refer to - comment by Charity - continuous colour bit-->
+
+## MA Plot
+
+The MA plot is a visualisation that plots the log-fold-change between experimental groups (M) against the average expression across all the samples (A) for each gene.
+
+The Glimma MA plot contains two main components:
+
+1. a plot of summary statistics across all genes that have been tested, and
+2. a plot of gene expression from individual samples for a given gene
+
+The second plot shows gene expression from the last selected sample, which can be selected from the table or directly from the summary plot.
+
+To create this plot we need to run differential expression (DE) analysis for our data using either the `limma` package or the `edgeR` package (both are shown below). First, we load in design and contrast matrices generated from the RNAseq123 workflow.
+
+```{r}
+design <- readRDS(
+  system.file("RNAseq123/design.rds", package = "Glimma"))
+contr.matrix <- readRDS(
+  system.file("RNAseq123/contr.matrix.rds", package = "Glimma"))
+```
+
+### Using limma
+
+We fit our DE analysis using `limma` to give us an object that contains test statistics for each gene.
+
+```{r}
+v <- voom(dge, design)
+vfit <- lmFit(v, design)
+vfit <- contrasts.fit(vfit, contrasts = contr.matrix)
+efit <- eBayes(vfit)
+```
+
+### Using edgeR
+
+Alternatively, we can fit our DE analysis using `edgeR`. 
+
+```{r}
+dge <- estimateDisp(dge, design)
+gfit <- glmFit(dge, design)
+glrt <- glmLRT(gfit, design, contrast = contr.matrix)
+```
+
+The MA plot can then be created using the fitted object containing the statistics about the genes  (either `efit` or `glrt`), and the `dge` object containing raw counts and information about the samples. We use results from `limma` in the following example:
+
+```{r}
+glimmaMA(efit, dge = dge) # glimmaMA(glrt, dge = dge) to use edgeR results
+```
+
+### Interactions with the plot
+In the plot above, try:
+
++ Clicking points in the summary plot to plot the gene expression of the last selected gene.
+    + The selected genes will be listed in the bar below the plots, as well as in the table. 
+    + Select "Clear" button to clear all selected genes.
++ Clicking rows in the table to plot the gene expression of the last selected gene.
+    + Clicking a row in the table after it has been selected will it from the list of selected genes.
+    + Select "Clear" button to clear all selected genes. 
++ Using the "Search" bar to reduce the number of genes shown in the table, e.g. search for "Tnf" or "Ifn".
+    + If genes are currently selected, the search box will not function.
++ Setting a maximum value for the y-axis of the expression plot using the `max_y_axis` field. 
+    + This allows for comparison of gene expression between genes on a comparable scale.
++ Saving the all selected genes using the "Save Data" dropdown button. 
+    + From here, you can also choose to save the entire table.
++ Saving the summary plot or expression plot in either PNG or SVG formats, using the "Save Data" dropdown button.
+
+### Modifications to the plot
+
+***Adjusting plot size***
+
+*Usage:* `glimmaMA(efit, dge=dge, width=1200, height=1200)`
+
+Users can specify the width and height of the MA plot widget in pixels. The default width and height are both 920px.
+
+***Changing DE status colouring***
+
+*Usage:* `glimmaMA(efit, dge=dge, status.cols=c("blue", "grey", "red")`
+
+Users can customise the colours associated with the differential expression status of a gene using the `status.cols` argument. A vector of length three should be passed in, where each element must be a valid CSS colour string. 
+
+***Changing sample colours in expression plot***
+
+*Usage:* `glimmaMA(efit, dge=dge, sample.cols=c("yellow", "yellow", "yellow", "red", "red", "red", "purple", "purple", "purple")`
+
+Users can provide a vector of valid CSS colour strings of length `ncol(dge$counts)` or `ncol(counts)` which correspond to sample colours. The colours used in the example here reflect the sequencing lane.  
+
+***Overriding counts and groups***
+
+*Usage:* `glimmaMA(efit, counts=counts, groups=groups)`
+
+Glimma extracts counts and experimental data from the `dge` argument for limma
+and edgeR data types. However, users can optionally supply their own counts and
+experimental groups using the `counts` and `groups` arguments.
+
+***Transforming counts values***
+
+*Usage:* `glimmaMA(efit, dge=dge, transform.counts="rpkm")`
+
+The `transform.counts` argument allows users to choose between strategies for
+transforming counts data displayed on the expression plot. 
+The default argument is `"logcpm"` which log-transforms counts using
+`edgeR::cpm(counts, log=TRUE)`. Other options are "`rpkm"` for
+`edgeR::rpkm(counts)`, `cpm` for `edgeR::cpm(counts)` and `none` for no
+transformation.
+
+***Changing displayed columns in gene annotation***
+The gene annotations are pulled from the `DGEList` object by default. This can be overwritten by providing a different
+table of annotations via the `anno` argument, the substitute annotations must have the same number of rows as the
+counts matrix and the genes must be in the same order as in the counts.
+
+Some annotations may contain too many columsn to be sensibly displayed. The `display.columns` argument can be used to
+control the columns displayed in the plot. A vector of column names are to be provided for selecting the columns that
+will be displayed in the interactive plot.
+
+## Volcano Plot
+
+A popular alternative to the MA plot for plotting the output of differential expression analysis the the volcano plot. This can be produced using the `glimmaVolcano` function and the same arguments as the `glimmaMA`.
+
+```{r}
+glimmaVolcano(efit, dge = dge)
+```
+
+## Saving widgets
+
+The plots created are automatically embedded into Rmarkdown reports, but having many interactive plots can significantly slow down the page. It is instead recommended to save the plots and link to them via markdown hyperlinks. Plots can be saved either by providing the `html` argument a filename, or by using `htmlwidgets::saveWidget`, which also provides further customisation options. Let us now create a html file named "ma-plot.html" in our working directory.
+
+```{r, eval = FALSE}
+htmlwidgets::saveWidget(glimmaMA(efit, dge = dge), "ma-plot.html")
+# you can link to it in Rmarkdown using [MA-plot](ma-plot.html)
+```
+
+## Session Info
+
+```{r}
+sessionInfo()
+```

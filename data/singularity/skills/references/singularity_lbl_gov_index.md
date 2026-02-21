@@ -1,0 +1,1 @@
+This page is obsolete. Click here for an archive of the old page or see the new documentation at https://apptainer.org/docs

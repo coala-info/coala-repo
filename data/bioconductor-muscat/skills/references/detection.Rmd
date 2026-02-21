@@ -1,0 +1,262 @@
+---
+title: "Differential detection analysis"
+author:
+- name: Jeroen Gilis
+  affiliation: 
+  - &one Applied Mathematics, Computer science and Statistics, Ghent University, Ghent, Belgium
+  - &two Bioinformatics Institute, Ghent University, Ghent, Belgium
+  - Data Mining and Modeling for Biomedicine, VIB Flemish Institute for Biotechnology, Ghent, Belgium
+- name: Helena L Crowell
+  affiliation: 
+  - National Center for Genomic Analysis (CNAG), Barcelona, Spain 
+- name: Davide Risso
+  affiliation: 
+  - Department of Statistical Sciences, University of Padova, Padova, Italy
+  - Padua Center for Network Medicine, University of Padova, Padova, Italy
+- name: Lieven Clement
+  affiliation: 
+  - *one
+  - *two
+package: "`r BiocStyle::pkg_ver('muscat')`"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output: 
+  BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{"3. Differential detection"}
+  %\VignettePackage{muscat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: "`r file.path(system.file('extdata', package='muscat'), 'refs.bib')`"
+abstract: > 
+  <p> In this vignette, we display how `muscat` can be used to perform differrential detection (DD) analyses in multi-sample, multi-group, multi-(cell-)subpopulation scRNA-seq data. Furthermore, we show how DD and differential state (DS) analysis results on the same data can be effectively combined. This vignette thus introduces a workflow that allows users to jointly assess two biological hypotheses that often contain orthogonal information, which thus can be expected to improve their understanding of complex biological phenomena, at no extra cost.
+---
+
+<style type="text/css">
+.smaller {
+  font-size: 10px
+}
+</style>
+
+```{r cache, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(BiocStyle)
+```
+
+*** 
+
+Based on @Gilis2023
+
+> Gilis J, Perin L, Malfait M, Van den Berge K,  
+Assefa AT, Verbist B, Risso D, and Clement L:  
+Differential detection workflows for  
+multi-sample single-cell RNA-seq data.  
+*bioRxiv* (2023). [DOI: 10.1101/2023.12.17.572043](https://doi.org/10.1101/2023.12.17.572043)
+
+# Load packages {-}
+
+```{r load-libs, message=FALSE,  warning=FALSE}
+library(dplyr)
+library(purrr)
+library(tidyr)
+library(scater)
+library(muscat)
+library(ggplot2)
+library(patchwork)
+```
+
+# Introduction
+
+Single-cell RNA-sequencing (scRNA-seq) has improved our understanding of complex biological processes by elucidating cell-level heterogeneity in gene expression. One of the key tasks in the downstream analysis of scRNA-seq data is studying differential gene expression (DE). Most DE analysis methods aim to identify genes for which the *average* expression differs between biological groups of interest, e.g., between cell types or between diseased and healthy cells. As such, most methods allow for assessing only one aspect of the gene expression distribution: the mean. However, in scRNA-seq data, differences in other characteristics between count distributions can commonly be observed.
+
+One such characteristic is gene detection, i.e., the number of cells in which a gene is (detectably) expressed. Analogous to a DE analysis, a differential detection (DD) analysis aims to identify genes for which the *average fraction of cells in which the gene is detected* changes between groups. In @Gilis2023, we show how DD analysis contain information that is biologically relevant, and that is largely orthogonal to the information obtained from DE analysis on the same data.
+
+In this vignette, we display how `muscat` can be used to perform DD analyses in multi-sample, multi-group, multi-(cell-)subpopulation scRNA-seq data. Furthermore, we show how DD and DS analysis results on the same data can be effectively combined using a two-stage testing approach. This workflow thus allows users to jointly assess two biological hypotheses containing orthogonal information, which thus can be expected to improve their understanding of complex biological phenomena, at no extra cost.
+
+# Setup
+
+We will use the same data as in the differential state (DS) analyses described in `r Biocpkg("muscat", vignette = "analysis.html")`, namely, scRNA-seq data acquired on PBMCs from 8 patients before and after IFN-$\beta$ treatment. For a more detailed description of these data and subsequent preprocessing, we refer to `r Biocpkg("muscat", vignette = "analysis.html")`.
+
+```{r load-data, message=FALSE}
+library(ExperimentHub)
+eh <- ExperimentHub()
+query(eh, "Kang")
+(sce <- eh[["EH2259"]])
+```
+
+We further apply some minimal filtering to remove low-quality genes and cells, and use `prepSCE()` to standardize cell metadata such that slots specifying cluster (`cell`), sample (`stim`+`ind`), and group (`stim`) identifiers conform with the `muscat` framework:
+
+```{r prep-data}
+sce <- sce[rowSums(counts(sce) > 0) > 0, ]
+qc <- perCellQCMetrics(sce)
+sce <- sce[, !isOutlier(qc$detected, nmads=2, log=TRUE)]
+sce <- sce[rowSums(counts(sce) > 1) >= 10, ]
+sce$id <- paste0(sce$stim, sce$ind)
+sce <- prepSCE(sce, "cell", "id", "stim")
+table(sce$cluster_id, sce$group_id)
+table(sce$sample_id)
+```
+
+## Aggregation 
+
+In general, `aggregateData()` will aggregate the data by the `colData` variables specified with argument `by`, and return a `SingleCellExperiment` containing pseudobulk data.
+
+To perform a pseudobulk-level analysis, measurements must be aggregated at the cluster-sample level (default `by = c("cluster_id", "sample_id"`). In this case, the returned `SingleCellExperiment` will contain one assay per cluster, where rows = genes and columns = samples. Arguments `assay` and `fun` specify the input data and summary statistic, respectively, to use for aggregation.
+
+In a differential detection (DD) analysis, the default choice of the summary statistic used for aggregation is `fun = "num.detected"`. This strategy can be thought of as first binarizing the gene expression values (1: expressed, 0: not expressed), and subsequently performing a simple summation of the binarized gene expression counts for cells belonging to the same cluster-sample level. Hence, the resulting pseudobulk-level expression count reflects the total number of cells in a particular cluster-sample level with a non-zero gene expression value.
+
+In a differential state (DS) analysis, the default choice for aggregation is `fun = "sum"`, which amounts to the simple summation of the raw gene expression counts of cells belonging to the same cluster-sample level.
+
+```{r pbs-det}
+pb_sum <- aggregateData(sce,
+    assay="counts", fun="sum",
+    by=c("cluster_id", "sample_id"))
+pb_det <- aggregateData(sce,
+    assay="counts", fun="num.detected",
+    by=c("cluster_id", "sample_id"))
+t(head(assay(pb_det)))
+```
+
+@Qiu2020 demonstrated that binarizing scRNA-seq counts generates expression profiles that still accurately reflect biological variation.
+This finding was confirmed by @Bouland2021, who showed that the frequencies of zero counts capture biological variability, and further claimed that a binarized representation of the single-cell expression data allows for a more robust description of the relative abundance of transcripts than counts.
+
+```{r pbs-mds, fig.width=8, fig.height=4, fig.cap="Pseudobulk-level multidimensional scaling (MDS) plot based on (A) sum of counts and (B) sum of binarized counts (i.e., counting the number of detected features) in each cluster-sample."}
+pbMDS(pb_sum) + ggtitle("Σ counts") +
+pbMDS(pb_det) + ggtitle("# detected") +
+plot_layout(guides="collect") +
+plot_annotation(tag_levels="A") &
+theme(legend.key.size=unit(0.5, "lines"))
+```
+
+## Analysis
+
+Once we have assembled the pseudobulk data, we can test for DD using `pbDD()`. By default, a $\sim$`group_id` model is fit, and the last coefficient of the linear model is tested to be equal to zero.
+
+```{r pbDD}
+res_DD <- pbDD(pb_det, min_cells=0, filter="none", verbose=FALSE)
+```
+
+## Handling and visualizing results
+
+Inspection, manipulation, and visualization of DD analysis results follows the same principles as for a DS analysis. For a detailed description, we refer to the DS analysis vignette`r Biocpkg("muscat", vignette = "analysis.html")`. Below, some basic functionalities are being displayed.
+
+```{r}
+tbl <- res_DD$table[[1]]
+# one data.frame per cluster
+names(tbl)
+```
+
+```{r}
+# view results for 1st cluster
+k1 <- tbl[[1]]
+head(format(k1[, -ncol(k1)], digits = 2))
+```
+
+```{r}
+# filter FDR < 5%, |logFC| > 1 & sort by adj. p-value
+tbl_fil <- lapply(tbl, \(u)
+    filter(u, 
+        p_adj.loc < 0.05, 
+        abs(logFC) > 1) |>
+        arrange(p_adj.loc))
+
+# nb. of DS genes & % of total by cluster
+n_de <- vapply(tbl_fil, nrow, numeric(1))
+p_de <- format(n_de / nrow(sce) * 100, digits = 3)
+data.frame("#DD" = n_de, "%DD" = p_de, check.names = FALSE)
+```
+
+```{r}
+library(UpSetR)
+de_gs_by_k <- map(tbl_fil, "gene")
+upset(fromList(de_gs_by_k))
+```
+
+# Stagewise anaysis
+
+While DD analysis results may contain biologically relevant information in their own right, we show in @Gilis2023 that combing DD and DS analysis results on the same data can further improve our understanding of complex biological phenomena. In the remainder of this vignette, we show how DD and DS analysis results on the same data can be effectively combined.
+
+For this, we build on the two-stage testing paradigm proposed by @Vandenberge2017. In the first stage of this testing procedure, we identify differential genes by using an omnibus test for differential detection and differential expression (DE). The null hypothesis for this test is that the gene is neither differentially detected, nor differentially expressed.
+
+In the second stage, we perform post-hoc tests on the differential genes from stage one to unravel whether they are DD, DE or both. Compared to the individual DD and DS analysis results, the two-stage approach increases statistical power and provides better type 1 error control.
+
+```{r pbDS}
+res_DS <- pbDS(pb_sum, min_cells=0, filter="none", verbose=FALSE)
+```
+
+```{r}
+res <- stagewise_DS_DD(res_DS, res_DD, verbose=FALSE)
+head(res[[1]][[1]]) # results for 1st cluster
+```
+
+## Comparison
+
+```{r}
+# for each approach, get adjusted p-values across clusters
+ps <- map_depth(res, 2, \(df) {
+    data.frame(
+        df[, c("gene", "cluster_id")],
+        p_adj.stagewise=df$p_adj,
+        p_adj.DS=df$res_DS$p_adj.loc,
+        p_adj.DD=df$res_DD$p_adj.loc)
+}) |> 
+    lapply(do.call, what=rbind) |>
+    do.call(what=rbind) |>
+    data.frame(row.names=NULL)
+head(ps)
+```
+
+To get an overview of how different approaches compare, we can count the number of genes found differential in each cluster for a given FDR threshold:
+
+```{r fig.width=12, fig.height=4}
+# for each approach & cluster, count number 
+# of genes falling below 5% FDR threshold
+ns <- lapply(seq(0, 0.2, 0.005), \(th) {
+    ps |>
+        mutate(th=th) |>
+        group_by(cluster_id, th) |>
+        summarise(
+            .groups="drop",
+            across(starts_with("p_"), 
+            \(.) sum(. < th, na.rm=TRUE)))
+}) |> 
+    do.call(what=rbind) |>
+    pivot_longer(starts_with("p_"))
+ggplot(ns, aes(th, value, col=name)) + 
+    geom_line(linewidth=0.8, key_glyph="point") +
+    geom_vline(xintercept=0.05, lty=2, linewidth=0.4) +
+    guides(col=guide_legend(NULL, override.aes=list(size=3))) +
+    labs(x="FDR threshold", y="number of significantly\ndifferential genes") +
+    facet_wrap(~cluster_id, scales="free_y", nrow=2) + 
+    theme_bw() + theme(
+        panel.grid.minor=element_blank(),
+        legend.key.size=unit(0.5, "lines"))
+```
+
+We can further identify which hits are shared between or unique to a given approach.
+In the example below, for instance, the vast majority of hits is common to all approaches, many hits are shared between DD and stagewise testing, and only few genes are specific to any one approach:
+
+```{r upset, fig.width = 5, fig.height = 3, fig.cap = "Upset plot of differential findings (FDR < 0.05) across DS, DD, and stagewise analysis for an exemplary cluster; shown are the 50 most frequent interactions."}
+# subset adjuster p-values for cluster of interest
+qs <- ps[grep("CD4", ps$cluster_id), grep("p_", names(ps))]
+# for each approach, extract genes at 5% FDR threshold
+gs <- apply(qs, 2, \(.) ps$gene[. < 0.05])
+# visualize set intersections between approaches
+UpSetR::upset(UpSetR::fromList(gs), order.by="freq")
+```
+
+```{r}
+# extract genes unique to stagewise testing
+sw <- grep("stagewise", names(gs))
+setdiff(gs[[sw]], unlist(gs[-sw]))
+```
+
+# Session info {- .smaller}
+
+```{r session-info}
+sessionInfo()
+```
+
+# References

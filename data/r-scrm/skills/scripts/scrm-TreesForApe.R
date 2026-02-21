@@ -1,0 +1,18 @@
+# Code example from 'scrm-TreesForApe' vignette. See references/ for full tutorial.
+
+## ----echo=FALSE---------------------------------------------------------------
+set.seed(40)
+
+## -----------------------------------------------------------------------------
+library(scrm)
+sum_stats <- scrm('5 1 -r 1.5 100 -T')
+sum_stats$trees[[1]]
+
+## -----------------------------------------------------------------------------
+library(ape)
+trees <- read.tree(text = paste0(sum_stats$trees[[1]]))
+trees
+
+## ---- fig.align='center'------------------------------------------------------
+plot(trees, no.margin = TRUE)
+

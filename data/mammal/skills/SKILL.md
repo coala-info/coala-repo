@@ -1,0 +1,52 @@
+---
+name: mammal
+description: The `mammal` (Multinomial Approximate Mixture Maximum Likelihood) tool accelerates the estimation of frequency classes in site-heterogeneous models.
+homepage: https://www.mathstat.dal.ca/~tsusko/doc/mammal.pdf
+---
+
+# mammal
+
+## Overview
+The `mammal` (Multinomial Approximate Mixture Maximum Likelihood) tool accelerates the estimation of frequency classes in site-heterogeneous models. It bridges the gap between simple empirical models and complex profile mixtures by calculating optimized frequency vectors and weights based on a specific sequence alignment and a guide tree. This is essential for improving phylogenetic accuracy in protein datasets where different sites evolve under different biochemical constraints.
+
+## Command Line Usage
+
+The basic syntax for running `mammal` is:
+
+```bash
+mammal -s <seqfile> -t <treefile> -c <number_of_classes> [OPTIONS]
+```
+
+### Required Arguments
+- `-s`: Input sequence file. Must be in **PHYLIP** format (10-character taxon names, padded with blanks).
+- `-t`: Input tree file. Must be in **Newick** format.
+- `-c`: The desired number of frequency classes (e.g., 10, 20, 60).
+
+### Key Options
+- `-h`: Use hierarchical clustering for starting frequencies. By default, the tool uses C-series frequencies if `-c` is a multiple of 10 (between 10 and 60).
+- `-q <quantile>`: Sets the threshold for high-rate sites used in estimation (default: 0.75).
+- `-C <penalty>`: Adjusts the penalty parameter η (default: 5).
+- `-l`: Disables likelihood weighting.
+
+## Output Files
+The tool generates three primary outputs in the working directory:
+1. `estimated-frequencies`: A text file where each row contains the 20 amino acid frequencies (alphabetical by three-letter code) for a class.
+2. `estimated-weights`: The estimated weights for each frequency class.
+3. `esmodel.nex`: A Nexus file formatted specifically for integration with IQ-TREE.
+
+## Integration with IQ-TREE
+To use the generated classes in a phylogenetic search, use the `-mdef` and `-m` flags in IQ-TREE:
+
+```bash
+iqtree -s seqfile -m LG+ESmodel+G -mdef esmodel.nex
+```
+*Note: `ESmodel` is a reserved keyword in the Nexus file that IQ-TREE recognizes.*
+
+## Expert Tips
+- **File Formatting**: Ensure your PHYLIP file follows the strict format where taxon names are exactly 10 characters. If names are shorter, pad them with spaces.
+- **Temporary Files**: `mammal` creates files prefixed with `tmp.*` during execution. Ensure your working directory does not contain important files with this prefix, as they may be overwritten or deleted.
+- **Zero Weights**: If `estimated-weights` contains many zeros, it suggests the number of classes (`-c`) may be too high for the information content in your alignment. Try reducing the class count.
+- **Amino Acid Order**: Frequencies are output in the standard alphabetical order: A, R, N, D, C, Q, E, G, H, I, L, K, M, F, P, S, T, W, Y, V.
+
+## Reference documentation
+- [MAMMaL User Manual](./references/www_mathstat_dal_ca__tsusko_doc_mammal.pdf.md)

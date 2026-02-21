@@ -1,0 +1,87 @@
+---
+name: iptkl
+description: The Immunopeptidomic Toolkit (iptkl) is a specialized Python library designed for the deep analysis of HLA-peptidomes.
+homepage: https://github.com/ikmb/iptoolkit
+---
+
+# iptkl
+
+## Overview
+
+The Immunopeptidomic Toolkit (iptkl) is a specialized Python library designed for the deep analysis of HLA-peptidomes. It bridges the gap between raw peptide identifications and biological insight by integrating transcriptomic data and protein structural information. This skill enables the management of complex immunopeptidomics experiments, allowing for the comparison of different runs, the mapping of HLA types to identified peptides, and the generation of publication-quality visualizations.
+
+## Installation and Setup
+
+The library can be installed via pip or conda. For macOS and Linux users, ensure build tools (Xcode or build-essential) are present.
+
+```bash
+# Using pip
+pip install iptkl --user
+
+# Using Bioconda
+conda install -c bioconda iptkl
+```
+
+## Core Python API Usage
+
+The library is designed around the `Experiment` and `HLASet` classes. The `Experiment` class acts as the central hub linking peptides, HLA alleles, and transcriptomic data.
+
+### Initializing an Experiment
+To start an analysis, you typically define the HLA context and then create an experiment object.
+
+1. **Define HLA Alleles**: Use the `HLASet` class to store the HLA molecules relevant to your sample (e.g., HLA-A*02:01).
+2. **Link Data**: Initialize the `Experiment` class with your identification files (idXML, mzid) and the corresponding FASTA database.
+3. **Compute Coverage**: Use the `AnalysisFunction` module to perform calculations.
+
+```python
+# Example conceptual workflow
+from iptk.library import Experiment, HLASet
+from iptk.library.AnalysisFunction import compute_protein_coverage
+
+# Define the HLA alleles for the sample
+hla_info = HLASet(['HLA-A*01:01', 'HLA-B*08:01'])
+
+# The Experiment class links identifications to the HLA context
+# (Specific initialization parameters depend on the data format)
+```
+
+### Working with Large Datasets
+For studies involving multiple runs or conditions:
+- Use `ExperimentSet` to group and compare different experiments.
+- Use `MzMLExperimentSet` when working directly with mass spectrometry raw data files to track progress via built-in `tqdm` progress bars.
+- Utilize the `Wrappers` module to automate the construction phase of large-scale analyses.
+
+## Interactive Dashboard
+
+iptkl includes a Dash-based UI for users who prefer a graphical interface for experiment construction and initial data exploration.
+
+1. **Install UI dependencies**:
+   ```bash
+   pip install dash dash_bootstrap_components dash-uploader
+   ```
+2. **Launch the app**:
+   ```bash
+   chmod +x Apps/ExperimentUI.py
+   ./ExperimentUI.py
+   ```
+3. **Access**: Navigate to `http://127.0.0.1:8050/` in a web browser.
+4. **Input**: Drag and drop your identification file (e.g., `.idXML`) and your FASTA database to create the experiment.
+
+## Visualization Best Practices
+
+The library supports Matplotlib, Seaborn, and Plotly for data visualization.
+
+- **Jupyter Notebooks**: Use `%matplotlib notebook` for interactive plots or `chart_studio.plotly.iplot` for Plotly figures.
+- **Saving Figures**:
+  - For Matplotlib/Seaborn: `fig.savefig('output.png', dpi=600)`
+  - For Plotly: `fig.write_image('output.pdf')` or use the browser-based save tool after `fig.show()`.
+
+## Expert Tips
+
+- **Stable vs. Experimental**: Always prefer code within the `library` directory for production workflows. The `lib_exp_acc` directory contains experimental features that may change significantly between versions.
+- **Protein Mapping**: When mapping HLA types, remember that iptkl assumes all peptides in a single `Experiment` instance originate from the same pool of HLA molecules defined in your `HLASet`.
+- **Performance**: For long-running functions in `ExperimentSet` or database operations, iptkl utilizes `tqdm` to provide visual feedback on progress.
+
+## Reference documentation
+- [iptkl GitHub Repository](./references/github_com_ikmb_iptoolkit.md)
+- [Bioconda iptkl Overview](./references/anaconda_org_channels_bioconda_packages_iptkl_overview.md)

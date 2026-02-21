@@ -1,0 +1,1 @@
+Redirecting to Latest Trinotate Wiki Documentation .

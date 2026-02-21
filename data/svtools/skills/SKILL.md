@@ -1,0 +1,52 @@
+---
+name: svtools
+description: svtools is a specialized suite of utilities for bioinformaticians to manage structural variation data at scale.
+homepage: https://github.com/hall-lab/svtools
+---
+
+# svtools
+
+## Overview
+svtools is a specialized suite of utilities for bioinformaticians to manage structural variation data at scale. It excels at taking raw SV calls from multiple individuals and consolidating them into a unified, genotyped cohort-level dataset. Use this skill to perform precise manipulations of SV files, such as reclassifying variants based on read depth, calculating allele frequencies, or preparing data for visualization in browsers like IGV.
+
+## Core CLI Patterns
+
+### Cohort Merging Workflow
+The primary use case for svtools is merging individual VCFs into a single cohort file.
+
+1.  **Sort individual VCFs**:
+    `svtools lsort -f file_list.txt > sorted.vcf`
+    *Note: `file_list.txt` should contain paths to the VCF files to be merged.*
+
+2.  **Merge calls**:
+    `svtools lmerge -i sorted.vcf > merged.vcf`
+    *This collapses overlapping calls into a single representative variant.*
+
+3.  **Genotype the cohort**:
+    `svtools genotype -i merged.vcf -b sample.bam > genotyped.vcf`
+    *Run this for each sample against the merged site list to ensure consistent "0/0" or "./." calls.*
+
+### Format Conversion
+svtools provides robust conversion between VCF and BEDPE formats, which is essential for many downstream analysis tools.
+
+*   **VCF to BEDPE**: `svtools vcftobedpe -i input.vcf > output.bedpe`
+*   **BEDPE to VCF**: `svtools bedpetovcf -i input.bedpe > output.vcf`
+*   **BEDPE to BED12**: `svtools bedpetobed12 -i input.bedpe > output.bed` (Optimized for IGV/UCSC browser tracks).
+
+### Annotation and Classification
+Enhance SV calls with biological and statistical metadata.
+
+*   **Allele Frequency**: `svtools afreq -i input.vcf > annotated.vcf`
+*   **Copy Number**: `svtools copynumber -i input.vcf -s sample_name -c cnvnator_output.txt > cn_annotated.vcf`
+*   **Reclassification**: `svtools classify -i input.vcf -g gender_file.txt > classified.vcf`
+    *Use this to refine DEL (deletion) and DUP (duplication) calls using read depth information.*
+
+## Expert Tips and Best Practices
+*   **Memory Management**: When using `lsort` on thousands of files, ensure your system's open file limit (`ulimit -n`) is set high enough, or use the `-f` flag to pass a file list rather than expanding arguments in the shell.
+*   **Sorting Consistency**: Always use `svtools vcfsort` or `svtools bedpesort` before merging or pruning. Standard Linux `sort` may not handle the specific header requirements of SV formats correctly.
+*   **Pruning**: Use `svtools prune` on BEDPE files to remove redundant calls in high-density regions, which significantly speeds up downstream genotyping.
+*   **Dependency Note**: Ensure `cnvnator-multi` and `SVTyper` are in your PATH, as subcommands like `copynumber` and `genotype` rely on these external engines.
+
+## Reference documentation
+- [svtools GitHub README](./references/github_com_hall-lab_svtools.md)
+- [Bioconda svtools Overview](./references/anaconda_org_channels_bioconda_packages_svtools_overview.md)

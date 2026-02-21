@@ -1,0 +1,242 @@
+---
+title: "VCFArray: DelayedArray objects with on-disk/remote VCF backend"
+author:
+- name: Qian Liu
+  affiliation: Roswell Park Comprehensive Cancer Center, Buffalo, NY
+- name: Martin Morgan
+  affiliation: Roswell Park Comprehensive Cancer Center, Buffalo, NY
+date: "last edit: 08/23/2018"
+output:
+    BiocStyle::html_document:
+        toc: true
+        toc_float: true
+package: VCFArray
+vignette: >
+  %\VignetteIndexEntry{VCFArray: DelayedArray objects with on-disk/remote VCF backend}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r options, eval=TRUE, echo=FALSE}
+options(showHeadLines=3)
+options(showTailLines=3)
+```
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction 
+[VCFArray][] is a _Bioconductor_ package that represents VCF files as
+objects derived from the [DelayedArray][] package and `DelayedArray`
+class. It converts data entries from VCF file into a
+`DelayedArray`-derived data structure. The backend VCF file could
+either be saved on-disk locally or remote as online resources. Data
+entries that could be extracted include the fixed data fields (REF,
+ALT, QUAL, FILTER), information field (e.g., AA, AF...), and the
+individual format field (e.g., GT, DP...). The array data generated
+from fixed/information fields are one-dimensional `VCFArray`, with the
+dimension being the length of the variants. The array data generated
+from individual `FORMAT` field are always returned with the first
+dimension being `variants` and the second dimension being
+`samples`. This feature is consistent with the assay data saved in
+`SummarizedExperiment`, and makes the `VCFArray` package interoperable
+with other established _Bioconductor_ data infrastructure.
+
+[VCFArray]: https://bioconductor.org/packages/VCFArray
+[DelayedArray]: https://bioconductor.org/packages/DelayedArray
+
+# Installation
+
+1. Download the package. 
+
+```{r getPackage, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("VCFArray")
+```
+The development version is also available to download from Github. 
+```{r getDevel, eval=FALSE}
+BiocManager::install("Bioconductor/VCFArray")
+```
+
+2. Load the package into R session.
+```{r Load, message=FALSE}
+library(VCFArray)
+```
+
+# VCFArray
+
+## VCFArray constructor
+
+To construct a `VCFArray` object, 3 arguments are needed: `file`,
+`vindex` and `name`. The `file` argument could take either a character
+string (VCF file name), or `VcfFile` object, or a `RangedVcfStack`
+object. `name` argument must be specified to indicate which data entry
+we want to extract from the input file. It's case-sensitive, and must
+be consistent with the names from VCF header file.  `vindex` argument
+will only be used to indicate the file path of the index file if it
+does not exist.
+
+The `vcfFields()` method takes the VCF file path, `VcfFile` object or
+`RangedVcfStack` object as input, and returns a CharacterList with all
+available VCF fields within specific categories. Users should consult
+the `fixed`, `info` and `geno` category for available data entries
+that could be converted into `VCFArray` instances. The data entry
+names can be used as input for the `name` argument in `VCFArray`
+constructor.
+
+```{r avail, message=FALSE}
+args(VCFArray)
+fl <- system.file("extdata", "chr22.vcf.gz", package = "VariantAnnotation")
+library(VariantAnnotation)
+vcfFields(fl)
+```
+
+Since the index file for our vcf file already exists, the `vindex`
+argument would not be needed (which is the most common case for
+on-disk VCF files). So we can construct the `VCFArray` object for the
+`GT` data entry in the provided VCF file with arguments of `file` and
+`name` only.
+
+```{r constructor}
+VCFArray(file = fl, name = "GT")
+```
+
+We can also construct a `VCFArray` object with the `file` argument
+being a `VcfFile` object.
+
+```{r constructor2}
+vcf <- VariantAnnotation::VcfFile(fl)
+VCFArray(file = vcf, name = "DS")
+```
+
+The `file` argument could also take `RangedVcfStack` object. Note that
+an ordinary `VcfStack` object without `Range` information could not
+be used to construct a `VCFArray`.
+
+```{r rgstack}
+rgstackFile <- system.file("extdata", "rgstack.rds", package = "VCFArray")
+rgstack <- readRDS(rgstackFile)
+```
+
+Here we choose the `name = SB`, which returns a 3-dimensional
+`VCFArray` object, with the first 2 dimensions correspond to variants
+and samples respectively.
+
+```{r constructor3}
+vcfFields(rgstack)$geno
+VCFArray(rgstack, name = "SB")
+```
+
+As the vignette title suggest, the backend VCF file could also be
+remote files. Here we included an example of representing VCF file of
+chromosome 22 from the 1000 Genomes Project (Phase 3). **NOTE that for
+a remote VCF file, the `vindex` argument must be specified.** Since
+this VCF files is relatively big, and it takes longer time, we only
+show the code here without evaluation.
+
+```{r remote, eval=FALSE}
+chr22url <- "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr22.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz"
+chr22url.tbi <- paste0(chr22url, ".tbi")
+va <- VCFArray(chr22url, vindex =chr22url.tbi, name = "GT")
+```
+
+## VCFArray methods
+
+`VCFArray` represents VCF files as `DelayedArray` instances. It has
+methods like `dim`, `dimnames` defined, and it inherits array-like
+operations and methods from `DelayedArray`, e.g., the subsetting
+method of `[`.     
+**NOTE** that for 1-dimensional `VCFArray` objects that are generated
+from the fixed / information data field of VCF file, `drop = FALSE`
+should always be used with `[` subsetting to ensure `VCFArray` object
+as returned value.
+
+### slot accessors 
+`seed` returns the `VCFArraySeed` of the `VCFArray` object, which
+  includes information about the backend VCF file, e.g., the vcf file
+  path, index file path, name of the data entry (with a prefix of
+  category), dimension and etc.
+  
+```{r, seedAccessor}
+va <- VCFArray(fl, name = "GT")
+seed(va)
+```
+
+`vcffile` returns the `VcfFile` object corresponding to the backend
+  VCF file.
+```{r, vcffileAccessor}
+vcffile(va)
+```
+
+### `dim()` and `dimnames()`
+
+The `dimnames(VCFArray)` returns an unnamed list, with the length of
+each element being the same as return from `dim(VCFArray)`.
+
+```{r, dims}
+va <- VCFArray(fl, name = "GT")
+dim(va)
+class(dimnames(va))
+lengths(dimnames(va))
+```
+
+### `[` subsetting
+
+`VCFArray` instances can be subsetted, following the usual _R_
+conventions, with numeric or logical vectors; logical vectors are
+recycled to the appropriate length.
+
+```{r, subsetting}
+va[1:3, 1:3]
+va[c(TRUE, FALSE), ]
+```
+
+### Some numeric calculation
+
+Numeric calculations could be evaluated on `VCFArray` objects.
+
+```{r, numeric}
+ds <- VCFArray(fl, name = "DS")
+log(ds+5)
+```
+
+# Internals: VCFArraySeed 
+
+The `VCFArraySeed` class represents the 'seed' for the `VCFArray`
+object. It is not exported from the [VCFArray][] package. Seed objects
+should contain the VCF file path, and are expected to satisfy the
+“seed contract” of [DelayedArray][], i.e. to support `dim()` and
+`dimnames()`.
+
+```{r, VCFArraySeed}
+seed <- VCFArray:::VCFArraySeed(fl, name = "GT")
+seed
+path(vcffile(seed))
+```
+
+The seed can be used to construct a `VCFArray` instance.
+
+```{r, VCFArray-from-VCFArraySeed}
+(va <- VCFArray(seed))
+```
+
+The `DelayedArray()` constructor with `VCFArraySeed` object as inputs
+will return the same content as the `VCFArray()` constructor over the
+same `VCFArraySeed`.
+
+```{r, da}
+da <- DelayedArray(seed)
+class(da)
+all.equal(da, va)
+```
+
+
+# sessionInfo()
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,235 @@
+---
+title: "AW Fisher tutorial"
+author: "Zhiguang Huo (Department of Biostatistics, University of Florida)"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+vignette: >
+  %\VignetteIndexEntry{AWFisher}
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteEncoding{UTF-8}{inputenc}
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+options(stringsAsFactors = FALSE)
+```
+
+
+# Introduction
+
+## Background
+
+Meta-analysis aims to combine summary statistics (e.g., effect sizes, p-values) from multiple clinical or 
+genomic studies in order to enhance statistical power.
+Another appealing feature of meta-analysis is that batch effect 
+(non-biological differences between studies because of sample platforms and experimental protocols)
+can be avoided, because the summary statistics are usually considered as standardized.
+The adaptively weighted Fisher's method (AW-Fisher) is an effective approach 
+to combine $p$-values from $K$ independent studies and 
+to provide better biological interpretability by characterizing which studies contribute to the meta-analysis. 
+
+## Statistical method
+
+Denote $\theta_k$ is the effect size of study $k$, $1\le k \le K$).
+The AW-Fisher's method targets on biomarkers differentially expressed in one or more studies.
+The null hypothesis $H_0$ and the alternative hypothesis are listed below.
+$$H_0: \vec{\boldsymbol{\theta}}\in \bigcap \{ \theta_k=0 \}$$  
+$$H_A: \vec{\boldsymbol{\theta}}\in \bigcup \{ \theta_k \ne 0 \},$$
+
+Define $T(\vec{\textbf{P}}; \vec{\textbf{w}} ) = -2 \sum_{k=1}^K w_k \log P_k$,
+where $\vec{\textbf{w}} = (w_1, \ldots, w_K) \in {\{ 0,1 \} }^K$ is the AW weight associated with $K$ studies
+and $\vec{\textbf{P}} = (P_1, \ldots, P_K) \in {(0,1)}^K$ is the random variable of input $p$-value vector for $K$ studies.
+The AW-Fisher's method will find the optimal weight $\vec{\textbf{w}}^*$, 
+and calculate the test statistics and AW-Fisher p-value based on $\vec{\textbf{w}}^*$.
+
+Collectively, 
+the AW-Fisher's method will provide knowledge about which study contributes to the meta-analysis result 
+via $\vec{\textbf{w}}^*$,
+and also generate p-value for rejecting the null hypothesis $H_0$.
+
+
+## About this tutorial
+
+This is a tutorial for the usage of the AWFisher package.
+A real data example of the multiple-tissue mouse metabolism data is used.
+The major contents of this tutorial includes:
+
+- How to prepare the input for AWFisher.
+- Transcriptomic meta analysis.
+- Meta-analysis differential expression pattern (meta-pattern) detection.
+
+# About the package
+
+## How to install the package
+
+To install this package, start R (version "3.6") and enter:
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("AWFisher")
+```
+
+## How to cite the package
+
+
+* Huo, Z., Tang, S., Park, Y. and Tseng, G., 2020. P-value evaluation, variability index and biomarker categorization for adaptively weighted Fisher’s meta-analysis method in omics applications. *Bioinformatics*, 36(2), pp.524-532.
+
+* The manuscript can be found here: https://www.ncbi.nlm.nih.gov/pubmed/31359040
+
+## Maintainer
+
+Zhiguang Huo (zhuo@ufl.edu)
+
+## Description about the example data -- multi-tissue mouse metabolism transcriptomic data
+
+The purpose of the multi-tissue mouse metabolism transcriptomic data is to study how the gene expression changes with respect to the energy deficiency using mouse models. 
+Very long-chain acyl-CoA dehydrogenase (VLCAD) deficiency was found to be associated with
+energy metabolism disorder in children.
+Two genotypes of the mouse model - wild type (VLCAD +/+) and VLCAD-deficient (VLCAD -/-) -
+were studied for three types of tissues (brown fat, liver, heart) with 3 to 4 mice in each genotype group.
+The sample size information is available in the table below.
+A total of 6,883 genes are available in this example dataset.
+
+Tissue        | Wild Type   | VLCAD-deficent
+------------- | ------------| ------------
+Brown Fat     | 4           | 4
+Heart         | 3           | 4
+Skeleton      | 4           | 4  
+
+
+## Read in the example data
+
+```{r}
+library(AWFisher) # Include the AWFisher package
+
+# load the data
+data(data_mouseMetabolism)
+
+# Verify gene names match across three tissues
+all(rownames(data_mouseMetabolism$brown) == rownames(data_mouseMetabolism$heart))
+all(rownames(data_mouseMetabolism$brown) == rownames(data_mouseMetabolism$liver))
+
+dataExp <- data_mouseMetabolism
+
+# Check the dimension of the three studies
+sapply(dataExp, dim)
+
+# Check the head of the three studies
+sapply(dataExp, function(x) head(x,n=2))
+
+# Before performing differential expression analysis for each of these three tissues.
+# Create an empty matrix to store p-value. 
+# Each row represents a gene and each column represent a study/tissue. 
+
+pmatrix <- matrix(0,nrow=nrow(dataExp[[1]]),ncol=length(dataExp)) 
+rownames(pmatrix) <- rownames(dataExp[[1]])
+colnames(pmatrix) <- names(dataExp)
+```
+
+## Prepare the input p-value matrix -- perform differential expression analysis in each study
+```{r}
+library(limma) # Include the limma package to perform differential expression analyses for the microarray data
+
+for(s in 1:length(dataExp)){
+  adata <- dataExp[[s]]
+  ControlLabel = grep('wt',colnames(adata))
+  caseLabel = grep('LCAD',colnames(adata))
+  label <- rep(NA, ncol(adata))
+  label[ControlLabel] = 0
+  label[caseLabel] = 1
+
+  design = model.matrix(~label)  # design matrix
+  fit <- lmFit(adata,design)  # fit limma model
+  fit <- eBayes(fit)
+
+  pmatrix[,s] <- fit$p.value[,2]
+}
+
+head(pmatrix, n=2) ## look at the head of the p-value matrix
+```
+
+
+
+# Perform AW Fisher meta analysis using the multi-tissue mouse metabolism transcriptomic data
+
+```{r}
+res <- AWFisher_pvalue(pmatrix) ## Perform AW Fisehr meta analysis
+qvalue <- p.adjust(res$pvalue, "BH") ## Perform BH correction to control for multiple comparison.
+sum(qvalue < 0.05) ## Differentially expressed genes with FDR 5%
+head(res$weights) ## Show the AW weight of the first few genes
+```
+
+# Differential expression pattern (meta-pattern) detection.
+
+## Calculate dissimilarity matrix
+
+```{r}
+## prepare the data to feed function biomarkerCategorization
+studies <- NULL
+for(s in 1:length(dataExp)){
+  adata <- dataExp[[s]]
+  ControlLabel = grep('wt',colnames(adata))
+  caseLabel = grep('LCAD',colnames(adata))
+  label <- rep(NA, ncol(adata))
+  label[ControlLabel] = 0
+  label[caseLabel] = 1
+
+  studies[[s]] <- list(data=adata, label=label)
+}
+
+## See help file about about how to use function biomarkerCategorization.
+## Set B = 1,000 (at least) for real data application
+## You may need to wrap up a function (i.e., function_limma) 
+## to perform differential expression analysis for each study.
+
+set.seed(15213)
+result <- biomarkerCategorization(studies,function_limma,B=100,DEindex=NULL)
+sum(result$DEindex) ## print out DE index at FDR 5%
+head(result$varibility, n=2) ## print out the head of variability index
+print(result$dissimilarity[1:4,1:4]) ## print out the dissimilarity matrix
+```
+
+## Apply the tight clustering algorithm to get gene modules with unique meta-pattern
+
+```{r}
+library(tightClust) ## load tightClust package
+
+tightClustResult <- tight.clust(result$dissimilarity, target=4, k.min=15, random.seed=15213)
+clusterMembership <- tightClustResult$cluster
+```
+
+
+## Visualize the heatmap of the first meta-pattern module for all three tissues.
+```{r, fig.show='hold'}
+
+for(s in 1:length(dataExp)){
+  adata <- dataExp[[s]]
+  aname <- names(dataExp)[s]
+  bdata <- adata[qvalue<0.05, ][tightClustResult$cluster == 1 ,]
+  cdata <- as.matrix(bdata)
+  ddata <- t(scale(t(cdata))) # standardize the data such that for each gene, the mean is 0 and sd is 1.
+
+  ColSideColors <- rep("black", ncol(adata))
+  ColSideColors[grep('LCAD',colnames(adata))] <- "red"
+
+  B <- 16
+  redGreenColor <- rgb(c(rep(0, B), (0:B)/B), c((B:0)/16, rep(0, B)), rep(0, 2*B+1))
+  heatmap(ddata,Rowv=NA,ColSideColors=ColSideColors,col= redGreenColor ,scale='none',Colv=NA, main=aname)
+}
+```
+
+
+```{r}
+sessionInfo()
+```

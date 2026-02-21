@@ -1,0 +1,55 @@
+---
+name: genera
+description: GenEra (Genomic Evolutionary Rate Analysis) is a bioinformatics tool designed to identify gene-family founder events.
+homepage: https://github.com/josuebarrera/GenEra
+---
+
+# genera
+
+## Overview
+GenEra (Genomic Evolutionary Rate Analysis) is a bioinformatics tool designed to identify gene-family founder events. It automates the process of searching for homologs across the NCBI NR database and mapping those results to the NCBI Taxonomy to determine when a gene family first appeared in a lineage. It is particularly useful for distinguishing between truly novel genes and those that appear novel due to rapid evolution (using abSENSE) or for refining gene ages using structural alignments (via Foldseek).
+
+## Core CLI Usage
+
+The GenEra suite consists of several specialized commands. The primary entry point is the `genEra` script.
+
+### Primary Workflow
+1. **Database Preparation**: Before running the analysis, ensure you have a local copy of the NCBI Taxonomy and the DIAMOND-indexed NR database.
+2. **Basic Execution**: Run the main pipeline to assign phylostrata to your query species.
+   ```bash
+   genEra -q query_proteins.fasta -d nr.dmnd -t taxonomy_dir -o output_prefix
+   ```
+
+### Advanced Search Modes
+* **Structural Alignment**: Use Foldseek to search against the AlphaFold DB for higher sensitivity in detecting distant homologs.
+  ```bash
+  genEra -q query_proteins.fasta -s alphafold_db ...
+  ```
+* **HMM Reassessment**: Use JackHMMER (via the `-j` flag) to perform a more sensitive but significantly slower reassessment of gene ages after the initial DIAMOND search.
+* **Nucleotide Search**: If working with orphan genes that might be hidden in unannotated genomic data, use the MMseqs2 integration to search against nucleotide assemblies.
+
+### Specialized Tools in the Suite
+* `hmmEra`: Specifically for HMM-based homology detection.
+* `Erassignment`: The module responsible for the final age assignment logic based on search results.
+* `tree2ncbitax`: Utility for mapping custom phylogenetic trees to NCBI Taxonomy IDs.
+* `FASTSTEP3R`: Implementation for specific evolutionary transition analysis.
+
+## Best Practices and Expert Tips
+
+### Performance Optimization
+* **DIAMOND Sensitivity**: GenEra relies on DIAMOND. For standard runs, the default sensitivity is usually sufficient, but for "orphan" gene analysis, consider increasing DIAMOND sensitivity settings if the tool allows pass-through arguments.
+* **Offline Mode**: As of v1.2.0, GenEra can run completely offline. Ensure all taxonomy dumps and databases are paths to local directories to avoid execution hangs caused by attempted network calls.
+
+### Accuracy and Validation
+* **Taxonomic Representativeness**: Always check the "taxonomic representativeness score" in the output. This score helps assess if a gene's assigned age is reliable or if it suffers from poor sampling in specific clades.
+* **Handling Fast-Evolving Genes**: Use the `abSENSE` integration to calculate homology detection failure probabilities. This is critical for distinguishing "orphan" genes (which may just be fast-evolving) from true "founder" genes.
+* **Infraspecies Analysis**: For strains or varieties without official NCBI Taxonomy IDs, use the infraspecies-level analysis features (requires `Phytools` and `OrthoFinder`).
+
+### Common Pitfalls
+* **Database Mismatches**: Ensure the NCBI Taxonomy dump version matches the version used to create the DIAMOND NR database to avoid "TaxID not found" errors.
+* **Memory Management**: Running JackHMMER (`-j`) or Foldseek (`-s`) significantly increases the computational footprint. Ensure your environment has sufficient RAM and CPU cores allocated for these steps.
+
+## Reference documentation
+- [GenEra GitHub Repository](./references/github_com_josuebarrera_GenEra.md)
+- [GenEra Wiki](./references/github_com_josuebarrera_GenEra_wiki.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_genera_overview.md)

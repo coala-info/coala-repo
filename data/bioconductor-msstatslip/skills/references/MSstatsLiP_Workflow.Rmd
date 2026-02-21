@@ -1,0 +1,320 @@
+---
+title: "MSstatsLiP Workflow: An example workflow and analysis of the MSstatsLiP package"
+author: "Devon Kohler (<kohler.d@northeastern.edu>)"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MSstatsLiP Workflow: An example workflow and analysis of the MSstatsLiP package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=8, 
+  fig.height=8
+)
+```
+
+## MSstatsLiP Workflow Vignette
+
+This Vignette provides an example workflow for how to use the package 
+MSstatsLiP.
+
+**NOTE** This vignette uses a small portion of a bigger dataset, which may cause some plots to look different than they would with the full data.
+
+## Installation
+
+To install this package, start R (version "4.1") and enter:
+
+``` {r, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("MSstatsLiP")
+```
+
+```{r,include=TRUE,results="hide",message=FALSE,warning=FALSE}
+library(MSstatsLiP)
+library(tidyverse)
+library(data.table)
+```
+
+## Workflow
+
+### 1. Preprocessing
+
+### 1.1 Raw Data Format
+
+The first step is to load in the raw dataset for both the PTM and Protein 
+datasets. This data can then be converted into MSstatsLiP format with one of the
+built in converters, or manually converted. In this case we use the converter 
+for Spectronaut.
+
+``` {r}
+## Read in raw data files
+head(LiPRawData)
+head(TrPRawData)
+```
+
+### 1.2 Converter
+
+``` {r}
+## Run converter
+MSstatsLiP_data <- SpectronauttoMSstatsLiPFormat(LiPRawData, 
+                                      "../inst/extdata/ExampleFastaFile.fasta", 
+                                      TrPRawData, use_log_file = FALSE, 
+                                      append = FALSE)
+
+head(MSstatsLiP_data[["LiP"]])
+head(MSstatsLiP_data[["TrP"]])
+
+## Make conditions match
+MSstatsLiP_data[["LiP"]][MSstatsLiP_data[["LiP"]]$Condition == "Control", 
+                         "Condition"] = "Ctrl"
+MSstatsLiP_data[["TrP"]]$Condition = substr(MSstatsLiP_data[["TrP"]]$Condition, 
+  1, nchar(MSstatsLiP_data[["TrP"]]$Condition)-1)
+
+```
+
+In the case above the SpectronauttoMSstatsLiPFormat was ran to convert the data 
+into the format required for MSstatsLiP. Note that the condition names 
+did not match between the LiP and TrP datasets. Here we edit the conditions in 
+each dataset to match.
+
+Additionally, it is important that the column "FULL_PEPTIDE" in the LiP dataset 
+contains both the Protein and Peptide information, seperated by an underscore. 
+This allows us to summarize up to the peptide level, while keeping important 
+information about which protein the peptide corresponds to.
+
+
+### 2. Summarization
+
+The next step in the MSstatsLiP workflow is to summarize feature intensities per
+run into one value using the dataSummarizationLiP function. This function takes 
+as input the formatted data from the converter.
+ 
+#### 2.1 Summarization Function
+
+``` {r}
+MSstatsLiP_Summarized <- dataSummarizationLiP(MSstatsLiP_data,
+                                              MBimpute = FALSE, 
+                                              use_log_file = FALSE, 
+                                              append = FALSE)
+names(MSstatsLiP_Summarized[["LiP"]])
+
+lip_protein_data <- MSstatsLiP_Summarized[["LiP"]]$ProteinLevelData
+trp_protein_data <- MSstatsLiP_Summarized[["TrP"]]$ProteinLevelData
+
+head(lip_protein_data)
+head(trp_protein_data)
+
+```
+
+Again the summarization function returns a list of two dataframes one each for 
+LiP and TrP. Each LiP and TrP is also a list with additional summary 
+information. This summarized data can be used as input into some of the
+plotting functions included in the package.
+
+#### 2.2 Tryptic barplot
+
+MSstatsLiP has a wide variety of plotting functionality to analysis and assess 
+the results of experiments. Here we plot the number of half vs fully tryptic 
+peptides per replicate.
+
+``` {r}
+trypticHistogramLiP(MSstatsLiP_Summarized, 
+                    "../inst/extdata/ExampleFastaFile.fasta",
+                    color_scale = "bright",
+                    address = FALSE)
+```
+
+#### 2.3 Run Correlation Plot
+
+MSstatsLiP also provides a function to plot run correlation.
+
+``` {r}
+correlationPlotLiP(MSstatsLiP_Summarized, address = FALSE)
+```
+
+#### 2.4 Coefficient of Variation
+
+Here we provide a simple script to examine the coefficient of variance between 
+conditions
+
+``` {r}
+MSstatsLiP_Summarized[["LiP"]]$FeatureLevelData %>% 
+  group_by(FEATURE, GROUP) %>% 
+  summarize(cv = sd(INTENSITY) / mean(INTENSITY)) %>% 
+  ggplot() + geom_violin(aes(x = GROUP, y = cv, fill = GROUP)) + 
+  labs(title = "Coefficient of Variation between Condtions", 
+       y = "Coefficient of Variation", x = "Conditon")
+```
+
+#### 2.5 QCPlot
+
+The following plots are used to view the summarized data and check for 
+potential systemic issues.
+
+``` {r}
+## Quality Control Plot
+dataProcessPlotsLiP(MSstatsLiP_Summarized,
+                    type = 'QCPLOT',
+                    which.Peptide = "allonly",
+                    address = FALSE)
+```
+
+#### 2.6 Profile Plot
+
+``` {r}
+
+dataProcessPlotsLiP(MSstatsLiP_Summarized,
+                    type = 'ProfilePlot',
+                    which.Peptide = c("P14164_ILQNDLK"),
+                    address = FALSE)
+```
+
+#### 2.7 PCA Plot
+
+In addition, Priciple Component Analysis can also be done on the summarized 
+dataset. Three different PCA plots can be created one each for: Percent of 
+explained variance per component, PC1 vs PC2 for peptides, and PC1 vs PC2 for 
+conditions.
+
+``` {r}
+
+PCAPlotLiP(MSstatsLiP_Summarized,
+           bar.plot = FALSE,
+           protein.pca = FALSE,
+           comparison.pca = TRUE,
+           which.comparison = c("Ctrl", "Osmo"),
+           address=FALSE)
+
+PCAPlotLiP(MSstatsLiP_Summarized,
+           bar.plot = FALSE,
+           protein.pca = TRUE,
+           comparison.pca = FALSE,
+           which.pep = c("P14164_ILQNDLK", "P17891_ALQLINQDDADIIGGRDR"),
+           address=FALSE)
+
+```
+
+#### 2.8 Calculate Trypticity
+
+Finally, the trypticity of a peptide can also be calculated and added to any 
+dataframe with the ProteinName and PeptideSequence column.
+
+``` {r}
+
+feature_data <- data.table::copy(MSstatsLiP_Summarized$LiP$FeatureLevelData)
+data.table::setnames(feature_data, c("PEPTIDE", "PROTEIN"), 
+                     c("PeptideSequence", "ProteinName"))
+feature_data$PeptideSequence <- substr(feature_data$PeptideSequence, 1, 
+                                       nchar(as.character(
+                                         feature_data$PeptideSequence)) - 2)
+
+calculateTrypticity(feature_data, "../inst/extdata/ExampleFastaFile.fasta")
+
+
+MSstatsLiP_Summarized$LiP$FeatureLevelData%>%
+  rename(PeptideSequence=PEPTIDE, ProteinName=PROTEIN)%>%
+  mutate(PeptideSequence=substr(PeptideSequence, 1, 
+                                nchar(as.character(PeptideSequence))-2)
+         ) %>% calculateTrypticity("../inst/extdata/ExampleFastaFile.fasta")
+
+  
+```
+
+### 3. Modeling
+
+The modeling function groupComparisonLiP takes as input the output of the 
+summarization function dataSummarizationLiP.
+
+#### 3.1 Function
+
+```{r}
+
+MSstatsLiP_model <- groupComparisonLiP(MSstatsLiP_Summarized,
+                               fasta = "../inst/extdata/ExampleFastaFile.fasta",
+                               use_log_file = FALSE, 
+                               append = FALSE)
+
+lip_model <- MSstatsLiP_model[["LiP.Model"]]
+trp_model <- MSstatsLiP_model[["TrP.Model"]]
+adj_lip_model <- MSstatsLiP_model[["Adjusted.LiP.Model"]]
+
+head(lip_model)
+head(trp_model)
+head(adj_lip_model)
+
+## Number of significant adjusted lip peptides
+adj_lip_model %>% filter(adj.pvalue < .05) %>% nrow()
+
+```
+
+The groupComparisonLiP function outputs a list with three separate models. These
+models are as follows: LiP model, TrP model, and adjusted LiP model.
+
+#### 3.2 Volcano Plot
+
+``` {r}
+groupComparisonPlotsLiP(MSstatsLiP_model, 
+                        type = "VolcanoPlot", 
+                        address = FALSE)
+```
+
+#### 3.3 Heatmap
+
+``` {r}
+groupComparisonPlotsLiP(MSstatsLiP_model,
+                        type = "HEATMAP",
+                        numProtein=50,
+                        address = FALSE)
+```
+
+#### 3.4 Barcode
+
+Here we show a barcode plot, showing the coverage of
+LiP and TrP peptides. This function requires the data in MSstatsLiP format and 
+the path to a fasta file.
+
+```{r}
+StructuralBarcodePlotLiP(MSstatsLiP_model, 
+                         "../inst/extdata/ExampleFastaFile.fasta", 
+                         model_type = "Adjusted", which.prot = c("P53858"),
+                         address = FALSE)
+
+```
+
+#### 3.5 Calculate proteolytic resistance ratios
+
+Proteolytic resistance ratios are calculated as the ratio of the intensity of fully tryptic peptides in the LiP condition to the TrP condition. In general, a low protease resistance value is indicative of high extent of cleavage, while high protease resistance values indicate low cleavage extent.
+
+```{r calculate accessibility, message=FALSE, warning=FALSE, echo=TRUE,include=TRUE}
+
+Accessibility = calculateProteolyticResistance(MSstatsLiP_Summarized, 
+                                               "../inst/extdata/ExampleFastaFile.fasta", 
+                                               differential_analysis = TRUE)
+
+Accessibility$RunLevelData
+
+```
+
+```{r Barplot of protease resistance of aSynuclein (monomer - M and fibril - F), message=FALSE, warning=FALSE, fig.height=2, fig.width=10,echo=TRUE,include=TRUE}
+
+ResistanceBarcodePlotLiP(Accessibility,
+                         "../inst/extdata/ExampleFastaFile.fasta",
+                         which.prot = "P14164",
+                         which.condition = "Osmo",
+                         address = FALSE)
+
+ResistanceBarcodePlotLiP(Accessibility,
+                         "../inst/extdata/ExampleFastaFile.fasta",
+                         differential_analysis = TRUE,
+                         which.prot = "P53858",
+                         which.condition = "Osmo",
+                         address = FALSE)
+
+```

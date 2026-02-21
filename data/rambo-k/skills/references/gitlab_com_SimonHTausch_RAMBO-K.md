@@ -1,0 +1,1 @@
+Simon H. Tausch / RAMBO-K · GitLab R RAMBO-K Project information RAMBO-K is a reference-based tool for rapid and sensitive extraction of one organism´s reads from a mixed NGS dataset. Read more 10 Commits 3 Branches 1 Tag 1 Release README LICENSE Created on November 18, 2016 Loading

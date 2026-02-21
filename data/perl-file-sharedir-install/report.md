@@ -1,0 +1,110 @@
+# perl-file-sharedir-install CWL Generation Report
+
+## perl-file-sharedir-install
+
+### Tool Description
+FAIL to generate CWL: perl-file-sharedir-install not found in Singularity image. The image may not provide this executable.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/perl-file-sharedir-install:0.14--pl5321hdfd78af_0
+- **Homepage**: https://github.com/Perl-Toolchain-Gang/File-ShareDir-Install
+- **Package**: https://anaconda.org/channels/bioconda/packages/perl-file-sharedir-install/overview
+- **Validation**: FAIL (generation failed)
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-sharedir-install/overview
+- **Total Downloads**: 72.9K
+- **Last updated**: 2025-06-13
+- **GitHub**: https://github.com/Perl-Toolchain-Gang/File-ShareDir-Install
+- **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: perl-file-sharedir-install not found in Singularity image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: perl-file-sharedir-install not found in Singularity image. The image may not provide this executable.
+
+
+
+### Original Help Text
+```text
+
+```
+
+
+## Metadata
+- **Skill**: generated
+
+## perl-file-sharedir-install_prove
+
+### Tool Description
+Run tests through a TAP harness.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/perl-file-sharedir-install:0.14--pl5321hdfd78af_0
+- **Homepage**: https://github.com/Perl-Toolchain-Gang/File-ShareDir-Install
+- **Package**: https://anaconda.org/channels/bioconda/packages/perl-file-sharedir-install/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+Usage:
+     prove [options] [files or directories]
+
+Options:
+    Boolean options:
+
+     -v,  --verbose         Print all test lines.
+     -l,  --lib             Add 'lib' to the path for your tests (-Ilib).
+     -b,  --blib            Add 'blib/lib' and 'blib/arch' to the path for
+                            your tests
+     -s,  --shuffle         Run the tests in random order.
+     -c,  --color           Colored test output (default).
+          --nocolor         Do not color test output.
+          --count           Show the X/Y test count when not verbose
+                            (default)
+          --nocount         Disable the X/Y test count.
+     -D   --dry             Dry run. Show test that would have run.
+     -f,  --failures        Show failed tests.
+     -o,  --comments        Show comments.
+          --ignore-exit     Ignore exit status from test scripts.
+     -m,  --merge           Merge test scripts' STDERR with their STDOUT.
+     -r,  --recurse         Recursively descend into directories.
+          --reverse         Run the tests in reverse order.
+     -q,  --quiet           Suppress some test output while running tests.
+     -Q,  --QUIET           Only print summary results.
+     -p,  --parse           Show full list of TAP parse errors, if any.
+          --directives      Only show results with TODO or SKIP directives.
+          --timer           Print elapsed time after each test.
+          --trap            Trap Ctrl-C and print summary on interrupt.
+          --normalize       Normalize TAP output in verbose output
+     -T                     Enable tainting checks.
+     -t                     Enable tainting warnings.
+     -W                     Enable fatal warnings.
+     -w                     Enable warnings.
+     -h,  --help            Display this help
+     -?,                    Display this help
+     -V,  --version         Display the version
+     -H,  --man             Longer manpage for prove
+          --norc            Don't process default .proverc
+
+    Options that take arguments:
+
+     -I                     Library paths to include.
+     -P                     Load plugin (searches App::Prove::Plugin::*.)
+     -M                     Load a module.
+     -e,  --exec            Interpreter to run the tests ('' for compiled
+                            tests.)
+          --ext             Set the extension for tests (default '.t')
+          --harness         Define test harness to use.  See TAP::Harness.
+          --formatter       Result formatter to use. See FORMATTERS.
+          --source          Load and/or configure a SourceHandler. See
+                            SOURCE HANDLERS.
+     -a,  --archive out.tgz Store the resulting TAP in an archive file.
+     -j,  --jobs N          Run N test jobs in parallel (try 9.)
+          --state=opts      Control prove's persistent state.
+          --statefile=file  Use `file` instead of `.prove` for state
+          --rc=rcfile       Process options from rcfile
+          --rules           Rules for parallel vs sequential processing.
+```
+

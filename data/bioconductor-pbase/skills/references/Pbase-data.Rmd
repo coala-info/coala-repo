@@ -1,0 +1,127 @@
+---
+title: "`Pbase` example data"
+output:
+  BiocStyle::html_document:
+    toc: true
+---
+
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Pbase data}
+%\VignettePackage{Pbase}
+-->
+
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
+```
+
+**Package:** [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html)<br />
+**Authors:** [Laurent Gatto](http://cpu.sysbiol.cam.ac.uk/) and
+[Sebastian Gibb](http://sebastiangibb.de/research.html)<br />
+**Last compiled:** `r date()`<br />
+**Last modified:** `r file.info("Pbase-data.Rmd")$mtime`
+
+
+```{r env, echo=FALSE, message=FALSE, warning=FALSE}
+library("Pbase")
+```
+
+## Introduction
+
+This vignette briefly introduces the central data object of the
+`Pbase` package, namely `Proteins` instances, as depicted below. They
+contain a set of protein sequences (10 in the figure below), composed
+of the protein sequences (grey boxes) and annotation data (table on
+the left). Each protein links to a set of ranges of interest, such as
+protein domains of experimentally observed peptides (also in grey)
+that are also decorated with their own annotation data. The figure
+also show the accessors for the different data slots, that are
+detailed in `?Proteins`.
+
+```{r pplot, echo=FALSE, fig.width=8.5, fig.height=8.5}
+Pbase:::pplot()
+```
+
+`Proteins` objects are populated by protein sequences stemming from a
+fasta file and the peptides typically originate from an LC-MSMS
+experiment.
+
+The original data used below is a 10 fmol
+[Peptide Retention Time Calibration Mixture](http://www.piercenet.com/product/peptide-retention-time-calibration-mixture)
+spiked into 50 ng HeLa background acquired on a Thermo Orbitrap Q
+Exactive instrument. A restricted set of high scoring human proteins
+from the UniProt release `2015_02` were searched using the `MSGF+`
+search engine.
+
+## The fasta database
+
+```{r fa, cache=TRUE}
+library("Biostrings")
+fafile <- system.file("extdata/HUMAN_2015_02_selected.fasta",
+                      package = "Pbase")
+fa <- readAAStringSet(fafile)
+fa
+```
+
+## The PSM data
+
+```{r psm, cache=TRUE}
+library("mzID")
+idfile <- system.file("extdata/Thermo_Hela_PRTC_selected.mzid",
+                      package = "Pbase")
+id <- flatten(mzID(idfile))
+dim(id)
+head(id)
+```
+
+## The Proteins object
+
+```{r p, cache=TRUE}
+library("Pbase")
+p <- Proteins(fafile)
+p <- addIdentificationData(p, idfile)
+p
+```
+
+A `Proteins` object is composed of a set of protein sequences
+accessible with the `aa` accessor as well as an optional set of
+peptides features that are mapped as coordinates along the proteins,
+available with `pranges`. The actual peptide sequences can be extraced
+with `pfeatures`. The names of the protein sequences can be extraced
+with `seqnames`.
+
+```{r paccess}
+aa(p)
+seqnames(p)
+pranges(p)
+pfeatures(p)
+```
+
+A Proteins instance is further described by general `metadata`
+list. Protein sequence and peptide features annotations can be
+accessed with `acols` and `pcols` respectively, which return
+`DataFrame` instances.
+
+```{r metadata}
+metadata(p)
+acols(p)
+pcols(p)
+```
+
+Specific proteins can be extracted by index of name using
+`[` and proteins and their peptide features can be plotted
+with the default plot method.
+
+```{r plot, fig.align='center', cache=TRUE}
+seqnames(p)
+plot(p[c(1,9)])
+```
+
+More details can be found in `?Proteins`. The object generated above
+is also directly available as `data(p)`.
+
+## Session information
+
+```{r si}
+sessionInfo()
+```

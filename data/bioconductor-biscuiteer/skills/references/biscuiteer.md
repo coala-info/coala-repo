@@ -1,0 +1,518 @@
+# Biscuiteer User Guide
+
+#### 29 October 2025
+
+#### Package
+
+biscuiteer 1.24.0
+
+knitr::opts\_chunk$set(
+warning=FALSE,
+message=FALSE
+)
+
+# 1 Biscuiteer
+
+`biscuiteer` is package to process output from
+[biscuit](https://github.com/huishenlab/biscuit) into
+[bsseq](https://bioconductor.org/packages/bsseq) objects. It includes a number
+of features, such as VCF header parsing, shrunken M-value calculations (which
+can be used for compartment inference), and age inference. However, the task of
+locus- and region-level differential methylation inference is delegated to
+other packages (such as `dmrseq`).
+
+# 2 Quick Start
+
+## 2.1 Installing
+
+From Bioconductor,
+
+```
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("biscuiteer")
+```
+
+A development version is available on GitHub and can be installed via:
+
+```
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("trichelab/biscuiteerData")
+BiocManager::install("trichelab/biscuiteer")
+```
+
+## 2.2 Loading Methylation Data
+
+`biscuiteer` can load either headered or header-free BED files produced from
+`biscuit vcf2bed` or `biscuit mergecg`. In either case, a VCF file is needed
+when loading `biscuit` output. For practical purposes, only the VCF header is
+for `biscuiteer`. However, it is encouraged that the user keep the entire VCF,
+as `biscuit` can be used to call SNVs and allows for structural variant
+detection in a similar manner to typical whole-genome sequencing tools.
+Furthermore, `biscuit` records the version of the software and the calling
+arguments used during processing the output VCF, which allows for better
+reproducibility.
+
+NOTE: Both the input BED and VCF files must be tabix’ed before being input to
+`biscuiteer`. This can be done by running `bgzip biscuit_output.xxx` followed by
+`tabix -p xxx biscuit_output.xxx.gz`, where `xxx` is either `bed` or `vcf`.
+
+Data can be loaded using the `readBiscuit` function in `biscuiteer`:
+
+```
+library(biscuiteer)
+```
+
+```
+## Loading required package: biscuiteerData
+```
+
+```
+## Loading required package: ExperimentHub
+```
+
+```
+## Loading required package: BiocGenerics
+```
+
+```
+## Loading required package: generics
+```
+
+```
+##
+## Attaching package: 'generics'
+```
+
+```
+## The following objects are masked from 'package:base':
+##
+##     as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+##     setequal, union
+```
+
+```
+##
+## Attaching package: 'BiocGenerics'
+```
+
+```
+## The following objects are masked from 'package:stats':
+##
+##     IQR, mad, sd, var, xtabs
+```
+
+```
+## The following objects are masked from 'package:base':
+##
+##     Filter, Find, Map, Position, Reduce, anyDuplicated, aperm, append,
+##     as.data.frame, basename, cbind, colnames, dirname, do.call,
+##     duplicated, eval, evalq, get, grep, grepl, is.unsorted, lapply,
+##     mapply, match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+##     rank, rbind, rownames, sapply, saveRDS, table, tapply, unique,
+##     unsplit, which.max, which.min
+```
+
+```
+## Loading required package: AnnotationHub
+```
+
+```
+## Loading required package: BiocFileCache
+```
+
+```
+## Loading required package: dbplyr
+```
+
+```
+## Loading biscuiteerData.
+```
+
+```
+## Loading required package: bsseq
+```
+
+```
+## Loading required package: GenomicRanges
+```
+
+```
+## Loading required package: stats4
+```
+
+```
+## Loading required package: S4Vectors
+```
+
+```
+##
+## Attaching package: 'S4Vectors'
+```
+
+```
+## The following object is masked from 'package:utils':
+##
+##     findMatches
+```
+
+```
+## The following objects are masked from 'package:base':
+##
+##     I, expand.grid, unname
+```
+
+```
+## Loading required package: IRanges
+```
+
+```
+## Loading required package: Seqinfo
+```
+
+```
+## Loading required package: SummarizedExperiment
+```
+
+```
+## Loading required package: MatrixGenerics
+```
+
+```
+## Loading required package: matrixStats
+```
+
+```
+##
+## Attaching package: 'MatrixGenerics'
+```
+
+```
+## The following objects are masked from 'package:matrixStats':
+##
+##     colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+##     colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+##     colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+##     colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+##     colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+##     colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+##     colWeightedMeans, colWeightedMedians, colWeightedSds,
+##     colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+##     rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+##     rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+##     rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+##     rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+##     rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+##     rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+##     rowWeightedSds, rowWeightedVars
+```
+
+```
+## Loading required package: Biobase
+```
+
+```
+## Welcome to Bioconductor
+##
+##     Vignettes contain introductory material; view with
+##     'browseVignettes()'. To cite Bioconductor, see
+##     'citation("Biobase")', and for packages 'citation("pkgname")'.
+```
+
+```
+##
+## Attaching package: 'Biobase'
+```
+
+```
+## The following object is masked from 'package:MatrixGenerics':
+##
+##     rowMedians
+```
+
+```
+## The following objects are masked from 'package:matrixStats':
+##
+##     anyMissing, rowMedians
+```
+
+```
+## The following object is masked from 'package:ExperimentHub':
+##
+##     cache
+```
+
+```
+## The following object is masked from 'package:AnnotationHub':
+##
+##     cache
+```
+
+```
+##
+```
+
+```
+##
+```
+
+```
+##
+```
+
+```
+## Warning: replacing previous import 'BiocParallel::bpstart' by
+## 'QDNAseq::bpstart' when loading 'biscuiteer'
+```
+
+```
+orig_bed <- system.file("extdata", "MCF7_Cunha_chr11p15.bed.gz",
+                        package="biscuiteer")
+orig_vcf <- system.file("extdata", "MCF7_Cunha_header_only.vcf.gz",
+                        package="biscuiteer")
+bisc <- readBiscuit(BEDfile = orig_bed, VCFfile = orig_vcf,
+                    merged = FALSE)
+```
+
+```
+## Checking /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15.bed.gz for import...
+```
+
+```
+## Extracting sample names from /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_header_only.vcf.gz...
+```
+
+```
+## /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15.bed.gz does not have a header. Using VCF file header information to help set column names.
+```
+
+```
+## Assuming unmerged data. Checking now... ...The file might be alright. Double check if you're worried.
+## /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15.bed.gz has 254147 indexed loci.
+## /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15.bed.gz looks valid for import.
+## Reading unmerged input from /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15.bed.gz...
+## Excluding CpG sites with uniformly zero coverage...
+## Loaded /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15.bed.gz. Creating bsseq object......Done!
+```
+
+Metadata from the `biscuit` output can be viewed via:
+
+```
+biscuitMetadata(bisc)
+```
+
+```
+## CharacterList of length 3
+## [["Reference genome"]] hg19.fa
+## [["Biscuit version"]] 0.1.3.20160324
+## [["Invocation"]] biscuit pileup -r /primary/vari/genomicdata/genomes/hg19/hg1...
+```
+
+## 2.3 Combining Methylation Results
+
+In the instance where you have two separate BED files that you would like to
+analyze in a single bsseq object, you can combine the files using `unionize`,
+which is a wrapper around the BiocGenerics function, `combine`.
+
+```
+shuf_bed <- system.file("extdata", "MCF7_Cunha_chr11p15_shuffled.bed.gz",
+                        package="biscuiteer")
+shuf_vcf <- system.file("extdata",
+                        "MCF7_Cunha_shuffled_header_only.vcf.gz",
+                        package="biscuiteer")
+bisc2 <- readBiscuit(BEDfile = shuf_bed, VCFfile = shuf_vcf,
+                     merged = FALSE)
+```
+
+```
+## Checking /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15_shuffled.bed.gz for import...
+```
+
+```
+## Extracting sample names from /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_shuffled_header_only.vcf.gz...
+```
+
+```
+## /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15_shuffled.bed.gz does not have a header. Using VCF file header information to help set column names.
+```
+
+```
+## Assuming unmerged data. Checking now... ...The file might be alright. Double check if you're worried.
+## /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15_shuffled.bed.gz has 254147 indexed loci.
+## /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15_shuffled.bed.gz looks valid for import.
+## Reading unmerged input from /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15_shuffled.bed.gz...
+## Excluding CpG sites with uniformly zero coverage...
+## Loaded /tmp/RtmpCOcii5/Rinst371853895099b/biscuiteer/extdata/MCF7_Cunha_chr11p15_shuffled.bed.gz. Creating bsseq object......Done!
+```
+
+```
+comb <- unionize(bisc, bisc2)
+```
+
+## 2.4 Loading epiBED files
+
+The epiBED file format provides an easy way to analyze read- or fragment-level
+methylation and genetic information at the same time. `readEpibed` provides
+functionality for parsing the RLE strings found in the epiBED file into a
+GRanges object for analysis in R.
+
+NOTE: The input file must be bgzip’ed and tabix’ed.
+
+```
+epibed.nome <- system.file("extdata", "hct116.nome.epibed.gz", package="biscuiteer")
+epibed.bsseq <- system.file("extdata", "hct116.bsseq.epibed.gz", package="biscuiteer")
+epibed.nome.gr <- readEpibed(epibed = epibed.nome, genome = "hg19", chr = "chr1")
+```
+
+```
+## Decoding RLE and converting to GRanges
+```
+
+```
+## Collapsing to fragment level
+```
+
+```
+## This will take some time if a large region is being analyzed
+```
+
+```
+epibed.bsseq.gr <- readEpibed(epibed = epibed.bsseq, genome = "hg19", chr = "chr1")
+```
+
+```
+## Decoding RLE and converting to GRanges
+```
+
+```
+## Collapsing to fragment level
+```
+
+```
+## This will take some time if a large region is being analyzed
+```
+
+# 3 Analysis Functionality
+
+A handful of analysis paths are available in `biscuiteer`, including A/B
+compartment inference, age estimation from WGBS data, hypermethylation of
+Polycomb Repressor Complex (PRC) binding sites, and hypomethylation of
+CpG-poor “partially methylated domains” (PMDs).
+
+## 3.1 Inputs for A/B Compartment Inference
+
+When performing A/B compartment inference, the goal is to have something that
+has roughly gaussian error. `getLogitFracMeth` uses Dirichlet smoothing to turn
+raw measurements into lightly moderated, logit-transformed methylated-fraction
+estimates, which can the be used as inputs to
+[compartmap](https://bioconductor.org/packages/release/bioc/html/compartmap.html)
+
+```
+reg <- GRanges(seqnames = rep("chr11",5),
+               strand = rep("*",5),
+               ranges = IRanges(start = c(0,2.8e6,1.17e7,1.38e7,1.69e7),
+                                end= c(2.8e6,1.17e7,1.38e7,1.69e7,2.2e7))
+              )
+
+frac <- getLogitFracMeth(bisc, minSamp = 1, r = reg)
+frac
+```
+
+```
+## GRanges object with 5 ranges and 1 metadata column:
+##       seqnames            ranges strand | MCF7_Cunha
+##          <Rle>         <IRanges>  <Rle> |  <numeric>
+##   [1]    chr11         0-2800000      * |   1.340682
+##   [2]    chr11  2800000-11700000      * |   0.575875
+##   [3]    chr11 11700000-13800000      * |   1.162989
+##   [4]    chr11 13800000-16900000      * |   0.581874
+##   [5]    chr11 16900000-22000000      * |   0.442985
+##   -------
+##   seqinfo: 1 sequence from an unspecified genome; no seqlengths
+```
+
+## 3.2 Age Estimation
+
+`biscuiteer` has the functionality to guess the age of the sample(s) provided
+using the Horvath-style “clock” models (see
+[Horvath, 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-10-r115)
+for more information).
+
+NOTE: The prediction accuracy of this function is entirely dependent on the
+parameters set by the user. As such, the defaults (as shown in the example
+below) should only be used as a starting point for exploration by the user.
+
+NOTE: Please cite the appropriate papers for the epigenetic “clock” chosen:
+
+* For `horvath` or `horvathshrunk`
+  + Horvath, Genome Biology, 2013
+* For `hannum`
+  + Hannum et al., Molecular Cell, 2013
+* For `skinandblood`
+  + Horvath et al., Aging, 2018
+
+```
+ages <- WGBSage(comb, "horvath")
+```
+
+```
+## Assessing coverage across age-associated regions...
+```
+
+```
+## You have NAs. Change `padding` (15), `minCovg` (5), `useHMMI`, and/or `useENSR`. You have 702 positions in coverage matrix (regions x samples) with less than 5 minCovg. This represents 99.43 % missing data
+```
+
+```
+ages
+```
+
+```
+## $call
+## WGBSage(comb, "horvath")
+##
+## $droppedSamples
+## NULL
+##
+## $droppedRegions
+## NULL
+##
+## $intercept
+## [1] 0.6955073
+##
+## $methcoefs
+## GRanges object with 353 ranges and 3 metadata columns:
+##                           seqnames            ranges strand | MCF7_Cunha
+##                              <Rle>         <IRanges>  <Rle> |  <numeric>
+##      chr1:1168022-1168051     chr1   1168022-1168051      * |         NA
+##    chr1:19746550-19746579     chr1 19746550-19746579      * |         NA
+##    chr1:23858021-23858050     chr1 23858021-23858050      * |         NA
+##    chr1:32084950-32084979     chr1 32084950-32084979      * |         NA
+##    chr1:32687553-32687582     chr1 32687553-32687582      * |         NA
+##                       ...      ...               ...    ... .        ...
+##   chr22:42322132-42322161    chr22 42322132-42322161      * |         NA
+##   chr22:43506007-43506036    chr22 43506007-43506036      * |         NA
+##   chr22:46449447-46449476    chr22 46449447-46449476      * |         NA
+##   chr22:46450093-46450122    chr22 46450093-46450122      * |         NA
+##   chr22:50968329-50968358    chr22 50968329-50968358      * |         NA
+##                           MCF7_Cunha_shuffled      coefs
+##                                     <numeric>  <numeric>
+##      chr1:1168022-1168051                  NA  0.6285003
+##    chr1:19746550-19746579                  NA  0.0138482
+##    chr1:23858021-23858050                  NA -0.1663978
+##    chr1:32084950-32084979                  NA  0.0989124
+##    chr1:32687553-32687582                  NA  0.0358242
+##                       ...                 ...        ...
+##   chr22:42322132-42322161                  NA  0.7000011
+##   chr22:43506007-43506036                  NA  0.1270524
+##   chr22:46449447-46449476                  NA -0.1662689
+##   chr22:46450093-46450122                  NA -0.0912389
+##   chr22:50968329-50968358                  NA  0.1373155
+##   -------
+##   seqinfo: 22 sequences from hg19 genome
+##
+## $age
+##          MCF7_Cunha MCF7_Cunha_shuffled
+##            33.18896            34.88742
+```

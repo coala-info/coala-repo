@@ -1,0 +1,146 @@
+---
+title: "EnMCB"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+author: "Xin Yu"
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+## Introduction
+
+This package is designed to help you to create the methylation correlated blocks using methylation profiles. A stacked ensemble of machine learning models, which combined the Cox regression, support vector regression and elastic-net regression model, can be constructed using this package^[Xin Yu et al. 2019 Predicting disease progression in lung adenocarcinoma patients based on methylation correlated blocks using ensemble machine learning classifiers (under review)]. You also can choose one of them to build DNA methylation signatures associated with disease progression.
+
+Note: This package is still under developing. Some of the functions may change.
+
+Followings are brief insturctions for using this package:
+
+You can install and test our package by downloading source package.
+
+## Installation
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+#if(!requireNamespace("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
+#BiocManager::install("EnMCB")
+```
+
+## Useage
+
+First, you need a methylation data set, currently only most common platform 'Illumina Infinium Human Methylation 450K' is supported.
+
+You can use your own datasets,or use our demo data.
+
+You can automatically run following:
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+
+suppressPackageStartupMessages(library(EnMCB))
+
+methylation_dataset<-create_demo()
+
+res<-IdentifyMCB(methylation_dataset)
+
+```
+
+IdentfyMCB() function will calculated Pearson correlation coefficients between the any two CpGs. A value of Pearson correlation coefficients which under the threshold was used to identify boundaries between any two adjacent markers indicating uncorrelated methylation. Markers not separated by a boundary were combined into the MCB. You can extract the MCB information with,
+
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+
+MCB<-res$MCBinformation
+
+```
+
+
+and select some of MCBs for further modeling.
+
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+
+MCB<-MCB[MCB[,"CpGs_num"]>=5,]
+
+```
+
+In order to get differentially methylated blocks, one may run following:
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+#simulation for the group data
+groups = c(rep("control",200),rep("dis",255))
+
+DiffMCB_resutls<-DiffMCB(methylation_dataset,
+                         groups,
+                         MCB)$tab
+
+```
+
+
+In order to build survival models, one may run following:
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+# sample the dataset into training set and testing set
+trainingset<-colnames(methylation_dataset) %in% sample(colnames(methylation_dataset),0.6*length(colnames(methylation_dataset)))
+
+testingset<-!trainingset
+
+#build the models
+library(survival)
+data(demo_survival_data)
+
+models<-metricMCB(MCB,
+                    training_set = methylation_dataset[,trainingset],
+                    Surv = demo_survival_data[trainingset],
+                    Method = "cox",ci = TRUE)
+
+#select the best
+onemodel<-models$best_cox_model$cox_model
+
+```                    
+
+Then, you can predict the risk by the model you build:
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+newcgdata<-data.frame(t(methylation_dataset[,testingset]))
+           
+prediction_results<-predict(onemodel, newcgdata)
+```
+
+In order to build ensemble model, one may run following:
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+# You can choose one of MCBs:
+select_single_one=1
+
+em<-ensemble_model(t(MCB[select_single_one,]),
+                    training_set=methylation_dataset[,trainingset],
+                    Surv_training=demo_survival_data[trainingset])
+                    
+```
+
+Note that this function only can be used for single MCB only, otherwise the precessing time could be very long.
+
+Then, you can predict the risk by the model you build:
+
+```{r echo=TRUE,warning=FALSE,results='hide'}
+em_prediction_results<-ensemble_prediction(ensemble_model = em,
+                    prediction_data = methylation_dataset[,testingset])
+```
+
+This function will return the single vector with risk scores predicted by ensemble model.
+
+For detailed information, you can find at our references.
+
+## Session Info
+
+```{r echo=TRUE}
+sessionInfo()
+```
+
+## References
+
+

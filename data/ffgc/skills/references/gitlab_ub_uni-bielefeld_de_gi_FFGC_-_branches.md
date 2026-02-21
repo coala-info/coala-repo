@@ -1,0 +1,1 @@
+Branches · AGGI Projects / FFGC · GitLab Branches Overview Active Stale All Stale branches master default f5562da7 &middot; Fix BiopythonDeprecationWarning: Please use .location.strand rather than .strand &middot; Feb 22, 2025 prior-orthology ccc53226 &middot; Fix in scripts/create_fasta_families.sh &middot; Apr 22, 2025

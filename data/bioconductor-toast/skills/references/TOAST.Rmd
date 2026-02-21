@@ -1,0 +1,1026 @@
+---
+title: "**Analyses of high-throughput data from heterogeneous samples with TOAST**"
+shorttitle: "TOAST guide"
+author:
+- name: Ziyi Li
+  email: zli16@mdanderson.org
+- name: Hao Wu
+  email: hao.wu@emory.edu
+package: TOAST
+abstract: >
+  This vignette introduces the usage of the 
+  R package TOAST (TOols for the Analysis of 
+  heterogeneouS Tissues). It is designed for 
+  the analyses of high-throughput data from 
+  heterogeneous tissues
+  that are mixtures of different cell types.  
+  TOAST offers functions for detecting cell-type 
+  specific differential expression (csDE) or 
+  differential methylation (csDM),
+  as well as improving reference-free deconvolution 
+  based on cross-cell type differential analysis. 
+  TOAST is based on rigorous staitstical framework, 
+  and provides great flexibility and superior computationl performance. 
+
+vignette: >
+  %\VignetteIndexEntry{The TOAST User's Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    toc_float: FALSE
+---
+
+\tableofContents
+
+
+# Introduction
+
+High-throughput technologies have revolutionized 
+the genomics research.  The early
+applications of the technologies were largely on 
+cell lines. However, there is an increasing number 
+of larger-scale, population level clinical studies 
+in recent years, hoping to identify diagnostic 
+biomarkers and therapeutic targets.  The samples 
+collected in these studies, such as blood, tumor, 
+or brain tissue, are mixtures of a number of different
+cell types.  The sample mixing complicates data analysis
+because the experimental data from the high-throughput 
+experiments are weighted averages of signals from multiple
+cell types. For these data, traditional analysis methods that ignores
+the cell mixture 
+will lead to results with low resolution,  biased, or
+even errorneous results. 
+For example, it has been discovered that in epigenome-wide 
+association studies (EWAS), the mixing proportions 
+can be confounded with the experimental factor of 
+interest (such as age). Ignoring the cell mixing 
+will lead to  false positives. 
+On the other hand, cell type specific changes 
+under different conditions could be associated
+with disease pathogenesis and progressions, which are of
+great interests to researchers.
+
+For heterogeneous samples, it is possible to profile the
+pure cell types through experimental techniques.
+They are, however, laborious and expensive that cannot
+be applied to large scale studies.
+Computational tools for analzying the mixed data have been developed 
+for proportion estimation and cell type 
+specific signal detection. 
+<!-- deconvolution of signals and detection of signals.  -->
+<!-- Without the experimental tools,  -->
+There are two fundamental questions in this type of analyses: 
+<!-- that are  for conducting in-silico 
+deconvolution of signals and detection of signals.  -->
+
+1. How to estimate mixing proportions?  
+
+There are a number of existing methods 
+devoted to solve this question. These methods mainly can be categorized 
+to two groups: **reference-based** (require
+pure cell type profiles) and **reference-free**
+(does not require pure cell type profiles).
+It has been found that reference-based 
+deconvolution is more accurate and reliable
+than reference-free deconvolution. 
+However, the reference panels required 
+for reference-based deconvolution can be 
+difficult to obtain, thus reference-free method has wider application. 
+
+<!-- * As subsequence of the first question, we ask,
+how to construct reference panels from available 
+single-cell studies if reference-based deconvolution
+is used?   -->
+
+2. with available mixing proportions, 
+how to detect cell-type specific DE/DM?
+
+TOAST is a package designed to answer these 
+questions and serve the research communities 
+with tools for the analysis of heterogenuous 
+tissues.  Currently TOAST provides functions 
+to detect cell-type specific DE/DM, as well 
+as differences across different cell types. 
+TOAST also has functions to improve the 
+accuracy of reference-free deconvolutions through better feature selection.
+If cell type-specific markers (or prior knowledge of cell compositions)
+are available, TOAST provides partial reference-free
+deconvolution function, which is more accuracte than RF methods
+and works well even for very small sample size (e.g.<10).
+
+<!-- In future works, we plan to add more 
+components and expand our answers to the above questions.   -->
+
+
+# Installation and quick start
+
+## Install TOAST
+To install this package, start R (version "3.6") and enter:
+
+```{r install, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("TOAST") 
+```
+
+## How to get help for TOAST
+
+Any TOAST questions should be posted
+to the GitHub Issue section of TOAST 
+homepage at https://github.com/ziyili20/TOAST/issues.
+
+## Quick start on detecting cell type-specific differential signals
+
+Here we show the key steps for a cell 
+type-specific different analysis. This 
+code chunk assumes you have an expression
+or DNA methylation matrix called `Y_raw`,
+a data frame of sample information called
+`design`, and a table of cellular composition
+(i.e. mixing proportions) 
+called `prop`. Instead of a data matrix, 
+`Y_raw` could also be a `SummarizedExperiment` object. 
+If the cellular composition
+is not available, the following sections 
+will discuss about how to obtain mixing 
+proportions using reference-free deconvolution 
+or reference-based deconvolution.
+
+```{r quick_start, eval = FALSE}
+Design_out <- makeDesign(design, Prop)
+fitted_model <- fitModel(Design_out, Y_raw)
+fitted_model$all_coefs # list all phenotype names
+fitted_model$all_cell_types # list all cell type names
+# coef should be one of above listed phenotypes
+# cell_type should be one of above listed cell types
+res_table <- csTest(fitted_model, coef = "age", 
+                    cell_type = "Neuron", contrast_matrix = NULL)
+head(res_table)
+```
+
+
+
+# Example dataset
+
+TOAST provides two sample dataset.
+
+The first example dataset is 450K 
+DNA methylation data. We obtain and process 
+this dataset based 
+on the raw data provided by GSE42861. This
+is a DNA methylation 450K data for Rheumatoid
+Arthiritis patients and controls. 
+The original dataset has 485577 features
+and 689 samples. We have reduced the dataset
+to 3000 CpGs for randomly selected 50 RA patients
+and 50 controls. 
+```{r loadData}
+library(TOAST)
+data("RA_100samples")
+Y_raw <- RA_100samples$Y_raw
+Pheno <- RA_100samples$Pheno
+Blood_ref <- RA_100samples$Blood_ref
+```
+
+Check matrix including beta values for 
+3000 CpG by 100 samples.
+```{r checkData}
+dim(Y_raw) 
+Y_raw[1:4,1:4]
+```
+
+Check phenotype of these 100 samples.
+```{r checkPheno}
+dim(Pheno)
+head(Pheno, 3)
+```
+
+Our example dataset also contain blood 
+reference matrix for the matched 3000 
+CpGs (obtained from bioconductor 
+package `r Biocpkg("FlowSorted.Blood.450k")`.
+```{r checkRef}
+dim(Blood_ref)
+head(Blood_ref, 3)
+```
+
+The second example dataset is microarray gene
+expression data. We obtain and process 
+this dataset based 
+on the raw data provided by GSE65133. This
+microarary data is from 20 PBMC samples.
+The original dataset has 47323 probes. We mapped 
+the probes into 21626 genes and then further 
+reduced the dataset to 511 genes by
+selecting the genes that have matches 
+in reference panel.
+```{r loadDataCBS}
+data("CBS_PBMC_array")
+CBS_mix <- CBS_PBMC_array$mixed_all
+LM_5 <- CBS_PBMC_array$LM_5
+CBS_trueProp <- CBS_PBMC_array$trueProp
+prior_alpha <- CBS_PBMC_array$prior_alpha
+prior_sigma <- CBS_PBMC_array$prior_sigma
+```
+
+Check the PBMC microarray gene expression
+data and true proportions
+```{r checkDataCBS}
+dim(CBS_mix) 
+CBS_mix[1:4,1:4]
+head(CBS_trueProp, 3)
+```
+
+Check reference matrix for 5 immune cell types
+```{r checkLM5}
+head(LM_5, 3)
+```
+
+Check prior knowledge for the 5 cell types
+```{r checkPrior}
+prior_alpha
+prior_sigma
+```
+
+The third example dataset is a list containing two matrices, one of 
+which is methylation 450K array data of 3000 CpG sites on 50 samples, the other is
+methylation 450K array data of 3000 matched CpG sites on three immune cell types.
+The first dataset is generated by simulation. It originally has 459226 features and 50 samples.We reduce it to 3000 CpGs by random selection.
+
+```{r loadDatabeta}
+data("beta_emp")
+Ybeta = beta_emp$Y.raw
+ref_m = beta_emp$ref.m
+```
+
+Check matrix including beta values for 
+3000 CpG by 50 samples.
+```{r checkDatabeta}
+dim(Ybeta) 
+Ybeta[1:4,1:4]
+```
+
+Check reference matrix for 3000 CpGs by three immune cell types
+```{r checkDataRef}
+head(ref_m, 3)
+```
+# Estimate mixing proportions
+
+If you have mixing proportions available, 
+you can directly go to Section \@ref(section:csDE).
+
+In many situations, mixing proportions 
+are not readily available. There are a number of deconvolution methods
+available to solve this problem. To name a few:
+
+* For DNA methylation: The R package RefFreeEWAS
+(Houseman et al. 2016) is reference-free,  
+and `r Biocpkg("EpiDISH")` (Teschendorff et al. 2017)
+is reference-based.  The package RefFreeEWAS was a CRAN package
+but removed from the archive recently due to lack of maintenance. 
+To facilitate the usage, we copied their function in our current package.
+
+* For gene expression: qprog (Gong et al. 2011), 
+deconf (Repsilber et al. 2010),  
+lsfit (Abbas et al. 2009) 
+and `r CRANpkg("DSA")` (Zhong et al. 2013).
+
+In addition, [CellMix](https://github.com/rforge/cellmix)
+package has summarized a number of deconvolution
+methods and is a good resource to look up.  
+
+Here we demonstrate two ways to estimate 
+mixing proportions, one using 
+RefFreeEWAS (Houseman et al. 2016), representing the
+class of reference-free methods, and the other
+using `r Biocpkg("EpiDISH")` (Teschendorff et al. 2017) as a 
+representation of reference-based methods. 
+
+We also provide function to improve reference-free
+deconvolution performance in Section \@ref(section:ImpRF), which
+works for both gene expression data and DNA methylation data.
+The example in Section \@ref(section:ImpRF) demonstrates
+the usage of this. Note that we have only 
+3000 features in the Y_raw from RA_100samples dataset, 
+thus the proportion estimation 
+is not very accurate. Real 450K dataset should 
+have around 485,000 features. More features generally
+lead to better estimation, because there 
+are more information in the data. 
+
+In Secion \@ref(section:PRF), we demonstrate the usage of partial
+reference-free (PRF) deconvolution. Compared to RB methods,
+PRF does not require reference panel thus can be more
+wdiely applied. Compared to RF methods, PRF uses additional
+biological information, which improves the estimation accuracy
+and automatically assign cell type labels. 
+
+## Reference-based deconvolution using least square method {#section:RB}
+
+1. Select the top 1000 most variant 
+features by `findRefinx()`. 
+To select the top features with 
+largest coefficients of variations, 
+one can use `findRefinx(..., sortBy = "cv")`.
+Default `sortBy` argument is `"var"`. Here, instead of 
+a data matrix, `Y_raw` could 
+also be a `SummarizedExperiment` object. 
+```{r SelFeature}
+refinx <- findRefinx(Y_raw, nmarker = 1000)
+```
+
+2. Subset data and reference panel.
+
+```{r Subset}
+Y <- Y_raw[refinx,]
+Ref <- as.matrix(Blood_ref[refinx,])
+```
+
+3. Use EpiDISH to solve cellular 
+proportions and use post-hoc constraint.
+```{r DB2}
+library(EpiDISH)
+outT <- epidish(beta.m = Y, ref.m = Ref, method = "RPC")
+estProp_RB <- outT$estF
+```
+
+_**A word about Step 1**_ 
+
+For step 1, one can also use `findRefinx(..., sortBy = "cv")` 
+to select features based on coefficient of variantion. 
+The choice of `sortby = "cv"` and `sortBy = "var"`
+depends on whether the feature variances of your data
+correlates with the means. 
+For RNA-seq counts, the variance-mean correlation is strong, 
+thus `sortBy = "cv"` is recommended.
+For log-counts, the variance-mean correlation 
+largely disappears, so both `sortBy = "cv"` and `sortBy = "var"`
+would work similarly. In DNA methylation data, this correlation is not 
+strong, either `sortBy = "cv"` or `sortBy = "var"`
+can be used. In this case, we recommend `sortBy = "var"` because we find it
+has better feature selection for DNA methylation 
+data than `sortBy = "cv"` (unpublished results).
+```{r, DB3}
+refinx = findRefinx(Y_raw, nmarker=1000, sortBy = "var")
+```
+
+
+## Reference-free deconvolution using RefFreeEWAS
+
+1. Similar to Reference-based deconvolution 
+we also select the top 1000 most variant 
+features by `findRefinx()`. And then subset data.
+```{r DF2}
+refinx <- findRefinx(Y_raw, nmarker = 1000)
+Y <- Y_raw[refinx,]
+```
+
+2. Do reference-free deconvolution on the RA dataset.
+
+```{r, DF3, results='hide', message=FALSE, warning=FALSE}
+K <- 6
+outT <- myRefFreeCellMix(Y, mu0=myRefFreeCellMixInitialize(Y, K = K))
+estProp_RF <- outT$Omega
+```
+
+4. Comparing the reference-free method versus 
+reference-base method
+
+```{r compareRFRB}
+# first we align the cell types from RF 
+# and RB estimations using pearson's correlation
+estProp_RF <- assignCellType(input=estProp_RF,
+                             reference=estProp_RB) 
+mean(diag(cor(estProp_RF, estProp_RB)))
+```
+
+## Improve reference-free deconvolution with cross-cell type differential analysis {#section:ImpRF}
+
+Feature selection is an important step 
+before RF deconvolution and is directly
+related with the estimation quality of 
+cell composition.  `findRefinx()` and
+`findRefinx(..., sortBy = "var")` simply select the markers
+with largest CV or largest variance, 
+which may not always result in a good 
+selection of markers.  Here, we propose
+to improve RF deconvolution marker 
+selection through cross-cell type 
+differential analysis.  We implement
+two versions of such improvement, 
+one is for DNA methylation microarray 
+data using `myRefFreeCellMix` originally from R package [RefFreeEWAS](https://cran.r-project.org/web/packages/RefFreeEWAS/index.html), 
+the other one is for gene 
+expression microarray data using `deconf`
+from [CellMix](https://github.com/rforge/cellmix) package. 
+To implement this, [CellMix](https://github.com/rforge/cellmix) 
+need to be installed first.
+
+### Improved-RF with myRefFreeCellMix {#section:RFimp}
+
+1. Load TOAST package.
+
+```{r IRB-RFCM1, message=FALSE, warning=FALSE}
+library(TOAST)
+```
+
+2. Do reference-free deconvolution using 
+improved-RF implemented with RefFreeCellMix. 
+The default deconvolution function implemented
+in `csDeconv()` is `RefFreeCellMix_wrapper()`.
+Here, instead of 
+a data matrix, `Y_raw` could 
+also be a `SummarizedExperiment` object.
+
+```{r IRB-RFCM2, results='hide', message=FALSE, warning=FALSE}
+K=6
+set.seed(1234)
+outRF1 <- csDeconv(Y_raw, K, TotalIter = 30, bound_negative = TRUE) 
+```
+
+3. Comparing udpated RF estimations versus RB results.
+
+```{r IRB-RFCM3, message=FALSE, warning=FALSE}
+## check the accuracy of deconvolution
+estProp_RF_improved <- assignCellType(input=outRF1$estProp,
+                                      reference=estProp_RB) 
+mean(diag(cor(estProp_RF_improved, estProp_RB)))
+```
+
+
+__***A word about Step 2***__
+
+For step 2, initial features (instead of automatic
+selection by largest variation) can be provided to
+function `RefFreeCellMixT()`. For example
+
+```{r initFeature, eval = FALSE}
+refinx <- findRefinx(Y_raw, nmarker = 1000, sortBy = "cv")
+InitNames <- rownames(Y_raw)[refinx]
+csDeconv(Y_raw, K = 6, nMarker = 1000, 
+         InitMarker = InitNames, TotalIter = 30)
+```
+
+__***A word about bounding the negative estimators***__
+
+Since all the parameters represent the mean observation levels for
+each cell type, it may not be reasonable to have negative estimators.
+As such, we provide options to bound negative estimated parameters to zero
+through the `bound_negative` argument in `csDeconv()` function. Although
+we find bounding negative estimators has minimum impact on the performance,
+the users could choose to bound or not bound the negative values in the function.
+The default value for `bound_negative` is FALSE.
+
+### Improved-RF with use-defined RF function
+
+In order to use other RF functions, users can 
+wrap the RF function a bit first to make it 
+accept Y (raw data) and K (number of cell types)
+as input, and return a N (number of cell types) 
+by K proportion matrix. We take `myRefFreeCellMix()`
+as an example. Other deconvolution methods can be
+used similarly.
+
+```{r, eval = FALSE}
+mydeconv <- function(Y, K){
+     if (is(Y, "SummarizedExperiment")) {
+          se <- Y
+          Y <- assays(se)$counts
+     } else if (!is(Y, "matrix")) {
+          stop("Y should be a matrix
+               or a SummarizedExperiment object!")
+     }
+     
+     if (K<0 | K>ncol(Y)) {
+         stop("K should be between 0 and N (samples)!")
+     }
+     outY = myRefFreeCellMix(Y, 
+               mu0=myRefFreeCellMixInitialize(Y, 
+               K = K))
+     Prop0 = outY$Omega
+     return(Prop0)
+}
+set.seed(1234)
+outT <- csDeconv(Y_raw, K, FUN = mydeconv, bound_negative = TRUE)
+```
+
+## Partial reference-free deconvolution (TOAST/-P and TOAST/+P) {#section:PRF}
+
+Similar to DSA, our PRF method requires 
+the knowledge of **cell type-specific markers**.
+Such markers can be selected from pure 
+cell type gene expression
+profiles from same or different platforms (through
+function `ChooseMarker()`). They can also 
+be manually specified 
+(see function manual `?MDeconv` for more explanation).
+The **prior knowledge of cell compositions**
+are optional, but
+highly recommended. We find prior 
+knowledge of cell compositions (`alpha` and `sigma`)
+help calibrate the scales of the estimations, 
+and reduce estimation bias. Such information 
+can be estimated from previous cell sorting 
+experiments or single cell study.
+We currently provide prior knowledge for five 
+tissue types: "human pbmc","human
+liver", "human brain", "human pancreas", "human skin",
+which can be directly specified in `MDeconv()` function.
+
+### Choose cell type-specific markers
+
+We provide functions to choose cell type-specific markers
+from pure cell type profiles or single cell RNA-seq data.
+Here we demonstrate how to select markers from 
+PBMC pure cell type gene expression profile.
+```{r chooseMarker}
+## create cell type list:
+CellType <- list(Bcells = 1,
+                 CD8T = 2,
+                 CD4T = 3,
+                 NK = 4,
+                 Monocytes = 5)
+## choose (up to 20) significant markers 
+## per cell type
+myMarker <- ChooseMarker(LM_5, 
+                         CellType, 
+                         nMarkCT = 20,
+                         chooseSig = TRUE,
+                         verbose = FALSE)
+lapply(myMarker, head, 3)
+```
+
+### PRF deconvolution without prior (TOAST/-P)
+
+```{r PRFwithoutPrior}
+resCBS0 <- MDeconv(CBS_mix, myMarker,
+                epsilon = 1e-3, verbose = FALSE)
+diag(cor(CBS_trueProp, t(resCBS0$H)))
+mean(abs(as.matrix(CBS_trueProp) - t(resCBS0$H)))
+```
+
+### PRF deconvolution with prior (TOAST/+P)
+We allow manually input the prior knowledge of all cell types,
+or select from currently supported tissues ("human pbmc","human
+liver", "human brain", "human pancreas", "human skin"). Note
+that order of cell types in prior knowledge here should
+match the order in marker list. 
+
+Here is an example of manually specifying alpha and sigma:
+```{r manualalpha}
+prior_alpha <- c(0.09475, 0.23471, 0.33232, 0.0969, 0.24132)
+prior_sigma <- c(0.09963, 0.14418, 0.16024, 0.10064, 0.14556)
+names(prior_alpha) <- c("B cells", "CD8T", "CD4T",
+                        "NK cells", "Monocytes")
+names(prior_sigma) <- names(prior_alpha) 
+```
+
+Here is to see alpha and sigma for supported tisuses using 
+`GetPrior()`:
+```{r getprior}
+thisprior <- GetPrior("human pbmc")
+thisprior
+```
+
+Deconvolution using manually input alpha and sigma:
+```{r PRFwithPrior}
+resCBS1 <- MDeconv(CBS_mix, myMarker,
+                alpha = prior_alpha,
+                sigma = prior_sigma,
+                epsilon = 1e-3, verbose = FALSE)
+diag(cor(CBS_trueProp, t(resCBS1$H)))
+mean(abs(as.matrix(CBS_trueProp) - t(resCBS1$H)))
+```
+
+For supported tissues, you can directly specify tissue type
+as alpha input:
+```{r PRFwithPrior2}
+resCBS2 <- MDeconv(CBS_mix, myMarker,
+                   alpha = "human pbmc",
+                   epsilon = 1e-3, verbose = FALSE)
+diag(cor(CBS_trueProp, t(resCBS2$H)))
+mean(abs(as.matrix(CBS_trueProp) - t(resCBS2$H)))
+```
+
+## Complete deconvolution using a geometric approach {#section:Tsisal}
+
+Tsisal is a complete deconvolution method
+which estimates cell compositions from DNA methylation data without
+prior knowledge of cell types and their proportions. 
+Tsisal is a full pipeline to estimate number of cell types, 
+cell compositions, find cell-type-specific CpG sites, 
+and assign cell type labels when (full or part of) reference panel is available.
+
+Here is an example of manually specifying K and reference panel:
+```{r expKRef,results='hide',message=FALSE, warning=FALSE}
+out = Tsisal(Ybeta,K = 4, knowRef = ref_m)
+out$estProp[1:3,1:4]
+head(out$selMarker)
+```
+
+Here is an example where both K and reference panel are unknown:
+```{r expAllNULL,results='hide',message=FALSE, warning=FALSE}
+out = Tsisal(Ybeta,K = NULL, knowRef = NULL, possibleCellNumber = 2:5)
+out$estProp[1:3,1:out$K]
+head(out$selMarker)
+out$K
+```
+
+Here is an example where K is unknown and reference panel is known:
+```{r expKNULL,results='hide',message=FALSE, warning=FALSE}
+out = Tsisal(Ybeta, K = NULL, knowRef = ref_m, possibleCellNumber = 2:5)
+out$estProp[1:3,1:out$K]
+head(out$selMarker)
+out$K
+```
+
+
+
+# Detect cell type-specific and cross-cell type differential signals {#section:csDE}
+
+The csDE/csDM detection function requires 
+a table of microarray or RNA-seq measurements
+from all samples, a table of mixing proportions, 
+and a design vector representing the status of 
+subjects.  
+
+We demonstrate the usage of TOAST in three common settings.
+
+## Detect cell type-specific differential signals under two-group comparison {#section:csDEbasic}
+
+1. Assuming you have TOAST library and dataset loaded, 
+the first step is to generate the study design based on the 
+phenotype matrix. Note that all the binary 
+(e.g. disease = 0, 1) or categorical
+variable (e.g. gender = 1, 2) should be transformed
+to factor class. Here we use the proportions 
+estimated from step \@ref(section:RFimp) as
+input proportion.
+
+```{r csDE2}
+head(Pheno, 3)
+design <- data.frame(disease = as.factor(Pheno$disease))
+
+Prop <- estProp_RF_improved
+colnames(Prop) <- colnames(Ref) 
+## columns of proportion matrix should have names
+
+```
+
+2. Make model design using the design (phenotype)
+data frame and proportion matrix. 
+```{r csDE3}
+Design_out <- makeDesign(design, Prop)
+```
+
+3. Fit linear models for raw data and the 
+design generated from `Design_out()`. `Y_raw` 
+here is a data matrix with dimension P (features) 
+by N (samples). Instead of 
+a data matrix, `Y_raw` could 
+also be a `SummarizedExperiment` object. 
+```{r csDE4}
+fitted_model <- fitModel(Design_out, Y_raw)
+# print all the cell type names
+fitted_model$all_cell_types
+# print all phenotypes
+fitted_model$all_coefs
+```
+
+TOAST allows a number of hypotheses to be 
+tested using `csTest()` in two group setting.
+
+### Testing one parameter (e.g. disease) in one cell type.
+
+For example, testing disease (patient versus controls) 
+effect in Gran.
+
+```{r}
+res_table <- csTest(fitted_model, 
+                    coef = "disease", 
+                    cell_type = "Gran")
+head(res_table, 3)
+Disease_Gran_res <- res_table
+```
+
+### Testing one parameter in all cell types.
+
+For example, testing the joint effect of age in all cell types:
+
+```{r, eval = FALSE}
+res_table <- csTest(fitted_model, 
+                    coef = "disease", 
+                    cell_type = "joint")
+head(res_table, 3)
+```
+
+Specifying cell_type as NULL or not specifying 
+cell_type will test the effect in each cell type
+and the joint effect in all cell types.
+```{r joint, eval = FALSE}
+res_table <- csTest(fitted_model, 
+                    coef = "disease", 
+                    cell_type = NULL)
+lapply(res_table, head, 3)
+
+## this is exactly the same as
+res_table <- csTest(fitted_model, coef = "disease")
+```
+
+### Testing one parameter in all cell types by incorporating DE/DM state correlation among cell types
+Some cell types may show DE/DM state correlation. We can check the existence of such correlation by 
+plotting the -log10 transformed p-value from TOAST result.
+```{r, eval = T, fig.align='default', fig.height=9,fig.width=11}
+res_table <- csTest(fitted_model, coef = "disease",verbose = F)
+pval.all <- matrix(NA, ncol= 6, nrow= nrow(Y_raw))
+feature.name <- rownames(Y_raw)
+rownames(pval.all) = feature.name
+colnames(pval.all) = names(res_table)[1:6]
+for(cell.ix in 1:6){
+  pval.all[,cell.ix] <- res_table[[cell.ix]][feature.name,'p_value']
+}
+plotCorr(pval = pval.all, pval.thres = 0.05)
+```
+Due to we only randomly included 3,000 features as example, the correlation 
+between cell types may not represent truth. In above figure, we can see the 
+Pearson correlation (Corr) between transformed p-values are statistically significant 
+between CD8T and CD4T, between Bcell and Mono, and between Gran and Mono. In
+addition odds ratio (OR) of DM state between cell types confirm the result 
+(e.g., OR = 2.9 for CD8T and CD4T).
+
+In this way we could incorporate such correlation into csDE/csDM detection to 
+improve the power, especially in cell types with low abundance. 
+```{r}
+res_cedar <- cedar(Y_raw = Y_raw, prop = Prop, design.1 = design,
+                   factor.to.test = 'disease',cutoff.tree = c('pval',0.01),
+                   cutoff.prior.prob = c('pval',0.01))
+```
+We can have posterior probability of DE for each feature in each cell type:
+```{r}
+head(res_cedar$tree_res$full$pp)
+```
+
+The correlation between cell types was captured by a hierarchical tree estimated
+from p-values of TOAST result:
+```{r}
+res_cedar$tree_res$full$tree_structure
+```
+As can be seen from above result, CD8T and CD4T are clustered together, while 
+Bcell and Mono are clustered together. Cell types with smaller distance means they 
+are stronger correlated. Different tree structures could be customized. Another 
+simpler tree structure is also used for inference:
+```{r}
+res_cedar$tree_res$single$tree_structure
+```
+The above tree structure simply assumes that correlation between cell types is 
+captured by the root node. When sample size is small or technical noise is large,
+this tree structure is recommended. In default, the function outputs the results 
+from both tree structures.
+
+Function cedar() also allows adjusting covariates, using custom similarity calculation
+function for tree estimation, and using custom tree structure as input. Please check
+the example in cedar() function manual.
+
+## Detect cell type-specific differential signals from a general experimental design
+
+1. Assuming you have TOAST library and dataset loaded,
+generate the study design based on the phenotype
+matrix. Note that all the binary variable 
+(e.g. disease = 0, 1) or categorical variable 
+(e.g. gender = 1, 2) should be transformed 
+to factor class. 
+
+```{r general2}
+design <- data.frame(age = Pheno$age,
+                     gender = as.factor(Pheno$gender),
+                     disease = as.factor(Pheno$disease))
+
+Prop <- estProp_RF_improved
+colnames(Prop) <- colnames(Ref)  
+## columns of proportion matrix should have names
+```
+
+2. Make model design using the design (phenotype)
+data frame and proportion matrix. 
+```{r general3}
+Design_out <- makeDesign(design, Prop)
+```
+
+3. Fit linear models for raw data and the 
+design generated from `Design_out()`.
+```{r general4}
+fitted_model <- fitModel(Design_out, Y_raw)
+# print all the cell type names
+fitted_model$all_cell_types
+# print all phenotypes
+fitted_model$all_coefs
+```
+
+TOAST allows a number of hypotheses to be 
+tested using `csTest()` in two group setting.
+
+### Testing one parameter in one cell type
+
+For example, testing age effect in Gran.
+
+```{r general5}
+res_table <- csTest(fitted_model, 
+                    coef = "age", 
+                    cell_type = "Gran")
+head(res_table, 3)
+```
+
+We can test disease effect in Bcell.
+
+```{r general6}
+res_table <- csTest(fitted_model, 
+                    coef = "disease", 
+                    cell_type = "Bcell")
+head(res_table, 3)
+```
+
+Instead of using the names of single coefficient, 
+you can specify contrast levels, i.e. the comparing
+levels in this coefficient. For example, using male
+(gender = 1) as reference, testing female (gender = 2)
+effect in CD4T:
+```{r}
+res_table <- csTest(fitted_model, 
+                    coef = c("gender", 2, 1), 
+                    cell_type = "CD4T")
+head(res_table, 3)
+```
+
+### Testing the joint effect of single parameter in all cell types.
+
+For example, testing the joint effect of age in all cell types:
+
+```{r, eval = FALSE}
+res_table <- csTest(fitted_model, 
+                    coef = "age", 
+                    cell_type = "joint")
+head(res_table, 3)
+```
+
+Specifying cell_type as NULL or not specifying
+cell_type will test the effect in each cell type
+and the joint effect in all cell types.
+```{r, eval = FALSE}
+res_table <- csTest(fitted_model, 
+                    coef = "age", 
+                    cell_type = NULL)
+lapply(res_table, head, 3)
+
+## this is exactly the same as
+res_table <- csTest(fitted_model, 
+                    coef = "age")
+```
+
+
+## Detect cross-cell type differential signals
+
+1. Assuming you have TOAST library and dataset loaded,
+first step is to generate the study design based on the 
+phenotype matrix. We allow general design
+matrix such as the following:
+```{r crossCellType2}
+design <- data.frame(age = Pheno$age,
+                     gender = as.factor(Pheno$gender),
+                     disease = as.factor(Pheno$disease))
+
+Prop <- estProp_RF_improved
+colnames(Prop) <- colnames(Ref)  ## columns of proportion matrix should have names
+```
+
+Note that if all subjects belong to one group, 
+we also allow detecting cross-cell type differences.
+In this case, the design matrix can be specified as:
+```{r crossCellType3, eval = FALSE}
+design <- data.frame(disease = as.factor(rep(0,100)))
+```
+
+2. Make model design using the design (phenotype) 
+data frame and proportion matrix. 
+```{r crossCellType4}
+Design_out <- makeDesign(design, Prop)
+```
+
+3. Fit linear models for raw data and the 
+design generated from `Design_out()`.
+```{r crossCellType5}
+fitted_model <- fitModel(Design_out, Y_raw)
+# print all the cell type names
+fitted_model$all_cell_types
+# print all phenotypes
+fitted_model$all_coefs
+```
+
+For cross-cell type differential signal detection, 
+TOAST also allows multiple ways for testing. 
+For example
+
+### Testing cross-cell type differential signals in cases (or in controls).
+
+For example, testing the differences between 
+CD8T and B cells in case group
+```{r}
+test <- csTest(fitted_model, 
+               coef = c("disease", 1), 
+               cell_type = c("CD8T", "Bcell"), 
+               contrast_matrix = NULL)
+head(test, 3)
+```
+
+Or testing the differences between 
+CD8T and B cells in control group
+```{r}
+test <- csTest(fitted_model, 
+               coef = c("disease", 0), 
+               cell_type = c("CD8T", "Bcell"), 
+               contrast_matrix = NULL)
+head(test, 3)
+```
+
+### Testing the overall cross-cell type differences in all samples.
+
+For example, testing the overall differences 
+between Gran and CD4T in all samples, 
+regardless of phenotypes.
+
+```{r}
+test <- csTest(fitted_model, 
+               coef = "joint", 
+               cell_type = c("Gran", "CD4T"), 
+               contrast_matrix = NULL)
+head(test, 3)
+```
+
+If you do not specify `coef` but only 
+the two cell types to be compared, TOAST 
+will test the differences of these 
+two cell types in each coef parameter 
+and the overall effect.
+
+```{r}
+test <- csTest(fitted_model, 
+               coef = NULL, 
+               cell_type = c("Gran", "CD4T"), 
+               contrast_matrix = NULL)
+lapply(test, head, 3)
+```
+
+
+### Testing the differences of two cell types over different values of one phenotype (higher-order test).
+
+For example, testing the differences 
+between Gran and CD4T in disease patients 
+versus in controls.
+```{r}
+test <- csTest(fitted_model, 
+               coef = "disease", 
+               cell_type = c("Gran", "CD4T"), 
+               contrast_matrix = NULL)
+head(test, 3)
+```
+
+For another example, testing the differences 
+between Gran and CD4T in males versus females.
+
+```{r}
+test <- csTest(fitted_model, 
+               coef = "gender", 
+               cell_type = c("Gran", "CD4T"), 
+               contrast_matrix = NULL)
+head(test, 3)
+```
+
+## A few words about variance bound and Type I error.
+
+### Variance bound
+There is an argument in `csTest()` called 
+`var_shrinkage`. `var_shrinkage` is whether
+to apply shrinkage on estimated mean squared
+errors (MSEs) from the regression. 
+Based on our experience, extremely 
+small variance estimates sometimes cause
+unstable test statistics. In our implementation,
+use the 10% quantile value to bound the smallest MSEs.
+We recommend to use the default opinion 
+`var_shrinkage = TRUE`. 
+
+### Type I error
+For all the above tests, we implement them 
+using F-test. In our own experiments, we 
+observe inflated type I errors from using 
+F-test. As a result, we recommend to perform
+a permutation test to validate the significant
+signals identified are "real". 
+
+# Session info {.unnumbered}
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```

@@ -1,0 +1,30 @@
+ParsInsert Version 1.04 Sep 23 2018 20:58:01
+Command Line:[/usr/bin/parsinsert -h]
+ERROR - missing files to process
+ tree file: PI_Tree.tree
+ tree sequence file: PI_Tree.fasta
+Process Completed: 0 sec
+ParsInsert Version 1.04 Sep 23 2018 20:58:01
+Command Line:[/usr/bin/parsinsert --help]
+ERROR - missing files to process
+ tree file: PI_Tree.tree
+ tree sequence file: PI_Tree.fasta
+Process Completed: 1 sec
+ParsInsert Version 1.04 Sep 23 2018 20:58:01
+Command Line:[/usr/bin/parsinsert --h]
+ERROR - missing files to process
+ tree file: PI_Tree.tree
+ tree sequence file: PI_Tree.fasta
+Process Completed: 0 sec
+ParsInsert Version 1.04 Sep 23 2018 20:58:01
+Command Line:[/usr/bin/parsinsert -help]
+ERROR - missing files to process
+ tree file: PI_Tree.tree
+ tree sequence file: PI_Tree.fasta
+Process Completed: 0 sec
+ParsInsert Version 1.04 Sep 23 2018 20:58:01
+Command Line:[/usr/bin/parsinsert]
+ERROR - missing files to process
+ tree file: PI_Tree.tree
+ tree sequence file: PI_Tree.fasta
+Process Completed: 0 sec

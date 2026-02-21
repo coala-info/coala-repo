@@ -1,0 +1,65 @@
+---
+title: "scviR: an R package interfacing Bioconductor and scvi-tools"
+author: "Vince Carey stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{scviR: an R package interfacing Bioconductor and scvi-tools}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+# Overview
+
+[scvi-tools](https://scvi-tools.org/) is
+an element of the [scverse](https://scverse.org/) toolchest for
+single-cell omics data analysis.
+
+The scviR package is a very elementary approach to interfacing
+between R, Bioconductor and scvi-tools.  The long-term plan is to
+illustrate several aspects of variational inference (VI) applied to single
+cell genomics in a way
+that is convenient for Bioconductor users.
+
+The package makes use of SingleCellExperiment and anndata
+representations of single-cell genomic assays.
+
+Several points should be kept in mind when using this package:
+
+- scvi-tools components develop rapidly; we are
+using [basilisk](https://bioconductor.org/packages/basilisk)
+to manage R/python interoperation, and as of current
+writing we work with version 1.3.0 of scvi-tools.  Specific
+versions of python components are enumerated in the file R/basilisk.R.
+- Code presented in the cite-seq tutorial
+vignette follows [the colab notebook
+for scvi-tools 0.18.0](https://colab.research.google.com/github/scverse/scvi-tutorials/blob/0.18.0/totalVI.ipynb).  *We will check for modifications in the scvi-tools 0.20.0 notebook*.
+- Additional work on this package will facilitate comparisons between
+outcomes of Bioconductor, scVI, and other VI-oriented analytic toolkits in the
+single-cell domain.
+
+# Installation and use
+
+As of May 2025, use BiocManager to install scviR in R 4.5.0 or above:
+```
+BiocManager::install("vjcitn/scviR")
+```
+Be sure the `remotes` package has been installed.  If you are working at a slow
+internet connection, it may be useful to set `options(timeout=3600)` when running 
+functions 
+
+- `getCh12AllSce()` (74 MB will be retrieved and cached)
+- `getCh12Sce()` (58 MB will be retrieved and cached)
+- `getTotalVINormalized5k10k()` (191 MB will be retrieved and cached)
+
+
+# Session information
+
+```{r lksess}
+sessionInfo()
+```

@@ -1,0 +1,1 @@
+/* Provided by Sphinx's 'basic' theme, and included in the final set of assets */ @import "../basic.css";

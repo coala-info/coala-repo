@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mini3di/overview
-- **Total Downloads**: 296
+- **Total Downloads**: 297
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/althonos/mini3di
 - **Stars**: N/A

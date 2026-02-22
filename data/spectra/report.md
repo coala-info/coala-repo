@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/spectra/overview
-- **Total Downloads**: 533.8K
+- **Total Downloads**: 534.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/stoplightio/spectral
 - **Stars**: N/A

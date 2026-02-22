@@ -15,7 +15,7 @@ Python wrapper for the Wavefront Alignment (WFA) algorithm. (Note: The provided 
 - **Total Downloads**: 11.8K
 - **Last updated**: 2025-09-23
 - **GitHub**: https://github.com/kcleal/pywfa
-- **Stars**: N/A
+- **Stars**: 38
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

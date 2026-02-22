@@ -5,7 +5,7 @@ Core methods and classes used by higher-level 'aroma.*' packages
         part of the Aroma Project, e.g. 'aroma.affymetrix' and 'aroma.cn'.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-aroma.core
+- **Conda**: https://anaconda.org/channels/r/packages/r-aroma.core/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/aroma.core/index.html
 - **Home (project)**: https://www.aroma-project.org/
 - **Package**: aroma.core
@@ -13,4 +13,8 @@ Core methods and classes used by higher-level 'aroma.*' packages
 - **Author**: Henrik Bengtsson [aut, cre, cph], Mark Robinson [ctb], Ken Simpson [ctb]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

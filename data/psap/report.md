@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool 'psap'. It cont
 - **Total Downloads**: 5.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/vanheeringen-lab/psap
-- **Stars**: N/A
+- **Stars**: 4
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

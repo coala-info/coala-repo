@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-lwp-mediatypes/overview
-- **Total Downloads**: 498.4K
+- **Total Downloads**: 498.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

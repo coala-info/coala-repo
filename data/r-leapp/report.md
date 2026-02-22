@@ -10,7 +10,7 @@ These functions take a gene expression value matrix, a
         tool for high throughput data s...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-leapp
+- **Conda**: https://anaconda.org/channels/r/packages/r-leapp/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/leapp/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=leapp
 - **Package**: leapp
@@ -18,4 +18,8 @@ These functions take a gene expression value matrix, a
 - **Author**: Yunting Sun , Nancy R.Zhang, Art B.Owen
 - **Maintainer**: Yunting Sun <yunting.sun at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A tool for demultiplexing. (Note: The provided text is a container execution err
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/demultiplexer2/overview
-- **Total Downloads**: 386
+- **Total Downloads**: 389
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/DominikBuchner/demultiplexer2
 - **Stars**: N/A

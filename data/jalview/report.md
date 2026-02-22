@@ -12,7 +12,7 @@ Jalview is a tool for multiple sequence alignment editing, visualization, and an
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jalview/overview
-- **Total Downloads**: 120.4K
+- **Total Downloads**: 120.5K
 - **Last updated**: 2025-12-14
 - **GitHub**: N/A
 - **Stars**: N/A

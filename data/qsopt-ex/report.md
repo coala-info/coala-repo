@@ -15,7 +15,7 @@ The provided text does not contain help information or a description for the too
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/jonls/python-qsoptex
-- **Stars**: N/A
+- **Stars**: 9
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

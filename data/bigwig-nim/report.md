@@ -12,7 +12,7 @@ A tool for processing BigWig files (Note: The provided input text contains syste
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bigwig-nim/overview
-- **Total Downloads**: 244
+- **Total Downloads**: 246
 - **Last updated**: 2025-07-22
 - **GitHub**: https://github.com/brentp/bigwig-nim
 - **Stars**: N/A

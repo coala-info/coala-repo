@@ -15,7 +15,7 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 22.8K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/PyTables/PyTables
-- **Stars**: N/A
+- **Stars**: 1361
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

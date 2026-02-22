@@ -12,7 +12,7 @@ Newick toolkit for processing phylogenetic trees. (Note: The provided help text 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nwkit/overview
-- **Total Downloads**: 481
+- **Total Downloads**: 490
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/kfuku52/nwkit
 - **Stars**: N/A

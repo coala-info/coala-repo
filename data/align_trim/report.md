@@ -12,10 +12,10 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/align_trim/overview
-- **Total Downloads**: 637
+- **Total Downloads**: 640
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/artic-network/align_trim
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

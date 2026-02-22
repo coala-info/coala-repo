@@ -12,7 +12,7 @@ The provided text does not contain help information for goatools. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/goatools/overview
-- **Total Downloads**: 97.1K
+- **Total Downloads**: 97.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tanghaibao/goatools
 - **Stars**: N/A

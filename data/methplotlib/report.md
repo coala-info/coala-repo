@@ -12,7 +12,7 @@ A tool for plotting modified nucleotides (methylation) from nanopore sequencing 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/methplotlib/overview
-- **Total Downloads**: 40.7K
+- **Total Downloads**: 40.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/methplotlib
 - **Stars**: N/A

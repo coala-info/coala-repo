@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions for th
 - **Total Downloads**: 9.6K
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/PNNL-Comp-Mass-Spec/Proteowizard-Wrapper
-- **Stars**: N/A
+- **Stars**: 3
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

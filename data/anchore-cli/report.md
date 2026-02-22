@@ -15,7 +15,7 @@ Account management operations for Anchore CLI, including adding, deleting, and m
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/anchore/anchore-cli
-- **Stars**: N/A
+- **Stars**: 113
 ### Original Help Text
 ```text
 Usage: anchore-cli account [OPTIONS] COMMAND [ARGS]...

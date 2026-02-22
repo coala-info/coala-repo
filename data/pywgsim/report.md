@@ -15,7 +15,7 @@ A tool for simulating whole genome sequencing reads. (Note: The provided text co
 - **Total Downloads**: 6.6K
 - **Last updated**: 2025-06-12
 - **GitHub**: https://github.com/ialbert/pywgsim
-- **Stars**: N/A
+- **Stars**: 4
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

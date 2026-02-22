@@ -13,4 +13,8 @@ The package outputs p-values and q-values for genes in each cell type, and CTSV 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jingeyu/CTSV
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ctsv/overview
+- **Total Downloads**: 5.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

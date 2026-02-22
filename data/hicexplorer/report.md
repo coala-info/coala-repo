@@ -12,7 +12,7 @@ HiCExplorer is a set of tools for the analysis of Hi-C data. (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hicexplorer/overview
-- **Total Downloads**: 209.8K
+- **Total Downloads**: 209.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/deeptools/HiCExplorer
 - **Stars**: N/A

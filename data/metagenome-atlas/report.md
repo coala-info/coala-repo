@@ -12,7 +12,7 @@ Metagenome-atlas is a tool for metagenome analysis. (Note: The provided text con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metagenome-atlas/overview
-- **Total Downloads**: 126.9K
+- **Total Downloads**: 127.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/metagenome-atlas/atlas
 - **Stars**: N/A

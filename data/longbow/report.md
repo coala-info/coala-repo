@@ -12,7 +12,7 @@ A tool for analyzing and processing long-read sequencing data (description not a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/longbow/overview
-- **Total Downloads**: 589
+- **Total Downloads**: 593
 - **Last updated**: 2025-05-20
 - **GitHub**: https://github.com/JMencius/longbow
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Bakta is a tool for the rapid & standardized annotation of bacterial genomes and
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bakta/overview
-- **Total Downloads**: 104.5K
+- **Total Downloads**: 104.6K
 - **Last updated**: 2026-01-29
 - **GitHub**: https://github.com/oschwengers/bakta
 - **Stars**: N/A

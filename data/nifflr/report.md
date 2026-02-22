@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nifflr/overview
-- **Total Downloads**: 645
+- **Total Downloads**: 649
 - **Last updated**: 2025-10-07
 - **GitHub**: https://github.com/alguoo314/NIFFLR
 - **Stars**: N/A

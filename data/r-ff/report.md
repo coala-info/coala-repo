@@ -11,7 +11,7 @@ The ff package provides data structures that are stored on
 	unsigned), short (2 byte signed ...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ff
+- **Conda**: https://anaconda.org/channels/r/packages/r-ff/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/ff/index.html
 - **Home (project)**: http://ff.r-forge.r-project.org/
 - **Package**: ff
@@ -19,4 +19,8 @@ The ff package provides data structures that are stored on
 - **Author**: Daniel Adler [aut], Christian Gläser [ctb], Oleg Nenadic [ctb], Jens Oehlschlägel [aut, cre], Martijn Schuemie [ctb], Walter Zucchini [ctb]
 - **Maintainer**: Jens Oehlschlägel <Jens.Oehlschlaegel at truecluster.com>
 - **Skill**: generated
+- **Total Downloads**: 783
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

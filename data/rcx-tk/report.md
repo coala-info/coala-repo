@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rcx-tk/overview
-- **Total Downloads**: 608
+- **Total Downloads**: 609
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RECETOX/rcx-tk
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for drug-target analysis in single-cell data. (Note: The provided text is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/drug2cell/overview
-- **Total Downloads**: 723
+- **Total Downloads**: 725
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/teichlab/drug2cell
 - **Stars**: N/A

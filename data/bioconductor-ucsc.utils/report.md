@@ -13,4 +13,8 @@ the package access the data via the UCSC REST API but some of them query the UCS
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/UCSC.utils
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ucsc.utils/overview
+- **Total Downloads**: 89.3K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

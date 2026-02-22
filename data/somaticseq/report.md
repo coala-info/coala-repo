@@ -12,7 +12,7 @@ SomaticSeq is an ensemble method to identify somatic mutations from NGS data. (N
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/somaticseq/overview
-- **Total Downloads**: 44.2K
+- **Total Downloads**: 44.3K
 - **Last updated**: 2025-06-09
 - **GitHub**: https://github.com/bioinform/somaticseq
 - **Stars**: N/A

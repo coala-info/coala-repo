@@ -11,6 +11,10 @@ The package allows the representation of targeted experiment in R. This is based
 - **Version**: N/A
 - **Author**: Gabriela A. Merino, Cristobal Fresno, Yanina Murua, Andrea S. Llera and Elmer A. Fernandez
 - **Maintainer**: Gabriela Merino &#x3c;&#x67;&#x6d;&#x65;&#x72;&#x69;&#x6e;&#x6f;&#x20;&#x61;&#x74;&#x20;&#x62;&#x64;&#x6d;&#x67;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;&#x61;&#x72;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tarseqqc/overview
+- **Total Downloads**: 43.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

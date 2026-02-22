@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ope/overview
-- **Total Downloads**: 6.0K
+- **Total Downloads**: 6.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/camillescott/ope
 - **Stars**: N/A

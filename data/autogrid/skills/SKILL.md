@@ -1,0 +1,36 @@
+---
+name: autogrid
+description: AutoGrid is a pre-processing tool essential for AutoDock-based molecular docking.
+homepage: http://autodock.scripps.edu/
+---
+
+# autogrid
+
+## Overview
+AutoGrid is a pre-processing tool essential for AutoDock-based molecular docking. It calculates the interaction energy between a probe atom and a macromolecule across a 3D grid. These pre-calculated "grid maps" allow the docking engine to rapidly evaluate energy potentials during a simulation without re-calculating pairwise atomic interactions at every step.
+
+## Grid Parameter File (GPF) Setup
+To run AutoGrid, you must define a `.gpf` file. Ensure the following components are correctly specified:
+
+- **Macromolecule**: Define the target protein using the `receptor` keyword (e.g., `receptor protein.pdbqt`).
+- **Grid Center**: Use `gridcenter` followed by X, Y, and Z coordinates. This should typically be the center of the known binding site.
+- **Grid Points**: Define the number of points in each dimension using `npts`. These must be even integers (e.g., `60 60 60`). The actual number of points created is `npts + 1`.
+- **Spacing**: Set the distance between grid points with `spacing` (default is usually `0.375` Å).
+- **Atom Types**: List every atom type present in your ligand using `ligand_types` (e.g., `ligand_types C OA N HD`).
+
+## Common CLI Patterns
+Execute AutoGrid using the `-p` flag to specify the parameter file and the `-l` flag for logging:
+
+```bash
+# Standard execution
+autogrid4 -p protein.gpf -l protein.glg
+```
+
+## Expert Tips
+- **Map Consistency**: Ensure the atom types defined in your GPF exactly match the atom types in your ligand's PDBQT file. If a ligand contains an atom type not mapped by AutoGrid, the docking simulation will fail.
+- **Box Size**: If the ligand is large or its binding orientation is unknown, increase `npts` rather than `spacing` to maintain resolution, but be mindful of the memory overhead.
+- **Electrostatics**: AutoGrid calculates electrostatic maps based on the partial charges in the receptor PDBQT. Ensure your receptor has been properly prepared with Kollman or Gasteiger charges.
+- **File Naming**: By default, AutoGrid appends the atom type to the map filename (e.g., `protein.C.map`). Keep your file prefixes consistent to simplify the subsequent AutoDock configuration.
+
+## Reference documentation
+- [AutoGrid Overview](./references/anaconda_org_channels_bioconda_packages_autogrid_overview.md)

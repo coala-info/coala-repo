@@ -15,7 +15,7 @@ Index bgzip compressed VCF/BCF files for random access.
 - **Total Downloads**: 3.9M
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/samtools/bcftools
-- **Stars**: N/A
+- **Stars**: 846
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

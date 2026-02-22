@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime and does not contain 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hippunfold/overview
-- **Total Downloads**: 240
+- **Total Downloads**: 241
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/khanlab/hippunfold
 - **Stars**: N/A

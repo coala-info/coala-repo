@@ -12,7 +12,7 @@ CRISPRme: A tool for comprehensive personalized CRISPR off-target assessment (No
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/crisprme/overview
-- **Total Downloads**: 459.1K
+- **Total Downloads**: 459.2K
 - **Last updated**: 2026-01-17
 - **GitHub**: https://github.com/samuelecancellieri/CRISPRme
 - **Stars**: N/A

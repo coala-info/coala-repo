@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'fastan'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastan/overview
-- **Total Downloads**: 652
+- **Total Downloads**: 657
 - **Last updated**: 2025-11-29
 - **GitHub**: https://github.com/thegenemyers/FASTAN
 - **Stars**: N/A

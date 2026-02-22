@@ -13,4 +13,8 @@ the package can be used to get an insight into the strand library protocol used 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/functionalgenomics/gDNAx
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gdnax/overview
+- **Total Downloads**: 1.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

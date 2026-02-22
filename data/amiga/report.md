@@ -15,7 +15,7 @@ A tool for analyzing growth curves, including fitting, summarizing, and comparin
 - **Total Downloads**: 1.8K
 - **Last updated**: 2025-09-25
 - **GitHub**: https://github.com/firasmidani/amiga
-- **Stars**: N/A
+- **Stars**: 16
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

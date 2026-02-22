@@ -13,4 +13,8 @@ The package also will calculate the splicing burden in each tumor and characteri
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/GuoLabUCSD/OutSplice
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-outsplice/overview
+- **Total Downloads**: 3.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

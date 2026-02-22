@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/moabs/overview
-- **Total Downloads**: 93.1K
+- **Total Downloads**: 93.2K
 - **Last updated**: 2025-06-05
 - **GitHub**: https://github.com/sunnyisgalaxy/moabs
 - **Stars**: N/A

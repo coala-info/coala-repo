@@ -15,7 +15,7 @@ The provided text does not contain help information for rnasamba; it is a log of
 - **Total Downloads**: 43.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/apcamargo/RNAsamba
-- **Stars**: N/A
+- **Stars**: 57
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

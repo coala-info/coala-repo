@@ -12,7 +12,7 @@ The Ensembl Variant Effect Predictor (VEP) determines the effect of your variant
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ensembl-vep/overview
-- **Total Downloads**: 392.9K
+- **Total Downloads**: 393.1K
 - **Last updated**: 2025-09-26
 - **GitHub**: https://github.com/Ensembl/ensembl-vep
 - **Stars**: N/A

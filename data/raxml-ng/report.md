@@ -12,7 +12,7 @@ RAxML-NG is a phylogenetic tree inference tool which uses maximum-likelihood (ML
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/raxml-ng/overview
-- **Total Downloads**: 91.0K
+- **Total Downloads**: 91.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/amkozlov/raxml-ng
 - **Stars**: N/A

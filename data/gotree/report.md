@@ -12,7 +12,7 @@ The provided text is an error log indicating a failure to pull or build the cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gotree/overview
-- **Total Downloads**: 29.3K
+- **Total Downloads**: 29.4K
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/fredericlemoine/gotree
 - **Stars**: N/A

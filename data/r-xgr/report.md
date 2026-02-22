@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-xgr
+- **Conda**: https://anaconda.org/channels/r/packages/r-xgr/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/xgr/index.html
 - **Home (project)**: http://XGR.r-forge.r-project.org, http://galahad.well.ox.ac.uk/XGR
 - **Package**: xgr
@@ -11,4 +11,8 @@ N/A
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: not generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

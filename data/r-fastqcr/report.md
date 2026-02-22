@@ -8,7 +8,7 @@
     'FastQC' reports for large numbers of samples. It provides a convenie...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fastqcr
+- **Conda**: https://anaconda.org/channels/r/packages/r-fastqcr/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/fastqcr/index.html
 - **Home (project)**: http://www.sthda.com/english/rpkgs/fastqcr/
 - **Package**: fastqcr
@@ -16,4 +16,8 @@
 - **Author**: Alboukadel Kassambara [aut, cre]
 - **Maintainer**: Alboukadel Kassambara <alboukadel.kassambara at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

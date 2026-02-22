@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-share/overview
-- **Total Downloads**: 27.7K
+- **Total Downloads**: 28.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ingydotnet/file-share-pm
 - **Stars**: N/A

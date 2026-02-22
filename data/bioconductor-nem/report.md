@@ -11,6 +11,10 @@ The package 'nem' allows to reconstruct features of pathways from the nested str
 - **Version**: N/A
 - **Author**: Holger Froehlich, Florian Markowetz, Achim Tresch, Theresa Niederberger, Christian Bender, Matthias Maneck, Claudio Lottaz, Tim Beissbarth
 - **Maintainer**: Holger Froehlich &#x3c;&#x66;&#x72;&#x6f;&#x68;&#x6c;&#x69;&#x63;&#x68;&#x20;&#x61;&#x74;&#x20;&#x62;&#x69;&#x74;&#x2e;&#x75;&#x6e;&#x69;&#x2d;&#x62;&#x6f;&#x6e;&#x6e;&#x2e;&#x64;&#x65;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-nem/overview
+- **Total Downloads**: 29.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/itolparser/overview
-- **Total Downloads**: 5.7K
+- **Total Downloads**: 5.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/boasvdp/itolparser
 - **Stars**: N/A

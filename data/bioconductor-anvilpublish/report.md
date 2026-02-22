@@ -11,6 +11,10 @@ the package (e.g., select information from the package DESCRIPTION file and from
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-anvilpublish/overview
+- **Total Downloads**: 13.3K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

@@ -15,7 +15,7 @@ The provided text does not contain help information for pyrpipe; it contains err
 - **Total Downloads**: 6.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/urmi-21/pyrpipe
-- **Stars**: N/A
+- **Stars**: 84
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

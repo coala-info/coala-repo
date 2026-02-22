@@ -12,7 +12,7 @@ Matchms is a Python library for processing, filtering, and comparing mass spectr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/matchms/overview
-- **Total Downloads**: 100.5K
+- **Total Downloads**: 100.6K
 - **Last updated**: 2025-10-07
 - **GitHub**: https://github.com/matchms/matchms
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for circular RNA detection (Note: The provided text is a container execut
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/circminer/overview
-- **Total Downloads**: 6.4K
+- **Total Downloads**: 6.5K
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/vpc-ccg/circminer
 - **Stars**: N/A

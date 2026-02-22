@@ -12,7 +12,7 @@ Create a PanCake Object from sequences and alignments
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pancake/overview
-- **Total Downloads**: 7.9K
+- **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pancakeswap/pancake-frontend
 - **Stars**: N/A

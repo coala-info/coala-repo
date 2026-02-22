@@ -12,7 +12,7 @@ DeepVariant is a deep learning-based variant caller. (Note: The provided help te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deepvariant/overview
-- **Total Downloads**: 81.8K
+- **Total Downloads**: 81.9K
 - **Last updated**: 2025-05-24
 - **GitHub**: https://github.com/google/deepvariant
 - **Stars**: N/A

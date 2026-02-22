@@ -9,7 +9,7 @@ This is a two-in-one package which provides interfaces to
         benefit of a much faster implementation. Moreover, the...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fastcluster
+- **Conda**: https://anaconda.org/channels/r/packages/r-fastcluster/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fastcluster/index.html
 - **Home (project)**: http://danifold.net/fastcluster.html
 - **Package**: fastcluster
@@ -17,4 +17,8 @@ This is a two-in-one package which provides interfaces to
 - **Author**: Daniel Müllner [aut, cph, cre], Google Inc. [cph]
 - **Maintainer**: Daniel Müllner <daniel at danifold.net>
 - **Skill**: generated
+- **Total Downloads**: 1.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A pure-python FIGlet implementation that renders text into ASCII art banners.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/pyfiglet/overview
-- **Total Downloads**: 299.4K
+- **Total Downloads**: 299.7K
 - **Last updated**: 2025-08-18
 - **GitHub**: https://github.com/pwaller/pyfiglet
 - **Stars**: N/A

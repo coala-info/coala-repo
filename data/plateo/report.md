@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'plateo'. It is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/plateo/overview
-- **Total Downloads**: 278
+- **Total Downloads**: 280
 - **Last updated**: 2025-07-16
 - **GitHub**: https://github.com/Edinburgh-Genome-Foundry/Plateo
 - **Stars**: N/A

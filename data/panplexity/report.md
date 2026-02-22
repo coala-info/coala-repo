@@ -12,7 +12,7 @@ A tool for calculating complexity measures (linguistic or entropy) on GFA files 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/panplexity/overview
-- **Total Downloads**: 826
+- **Total Downloads**: 834
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/AndreaGuarracino/panplexity
 - **Stars**: N/A

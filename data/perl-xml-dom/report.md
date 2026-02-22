@@ -12,7 +12,7 @@ A Perl module for building and manipulating XML DOM trees. (Note: The provided t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-dom/overview
-- **Total Downloads**: 311.0K
+- **Total Downloads**: 311.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

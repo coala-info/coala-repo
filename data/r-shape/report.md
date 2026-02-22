@@ -4,7 +4,7 @@ Functions for plotting graphical shapes
   such as ellipses, circles, cylinders, arrows, ...</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-shape
+- **Conda**: https://anaconda.org/channels/r/packages/r-shape/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/shape/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=shape
 - **Package**: shape
@@ -12,4 +12,8 @@ Functions for plotting graphical shapes
 - **Author**: Karline Soetaert
 - **Maintainer**: Karline Soetaert <karline.soetaert at nioz.nl>
 - **Skill**: generated
+- **Total Downloads**: 16.8K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

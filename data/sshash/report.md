@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sshash/overview
-- **Total Downloads**: 697
+- **Total Downloads**: 702
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/jermp/sshash
 - **Stars**: N/A

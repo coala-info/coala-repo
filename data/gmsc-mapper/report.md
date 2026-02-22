@@ -12,7 +12,7 @@ Global Microbial Sparse Coding mapper (Note: The provided text contained only sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gmsc-mapper/overview
-- **Total Downloads**: 612
+- **Total Downloads**: 613
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/BigDataBiology/GMSC-mapper
 - **Stars**: N/A

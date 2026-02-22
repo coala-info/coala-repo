@@ -12,7 +12,7 @@ A Snakemake executor plugin for SLURM jobsteps.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-executor-plugin-slurm-jobstep/overview
-- **Total Downloads**: 34.6K
+- **Total Downloads**: 34.7K
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/snakemake/snakemake-executor-plugin-slurm-jobstep
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or documentation for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pylipid/overview
-- **Total Downloads**: 432
+- **Total Downloads**: 434
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wlsong/PyLipID
 - **Stars**: N/A

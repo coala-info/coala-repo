@@ -12,7 +12,7 @@ The provided text appears to be a container execution error log rather than help
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakedeploy/overview
-- **Total Downloads**: 59.5K
+- **Total Downloads**: 59.6K
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/snakemake/snakedeploy
 - **Stars**: N/A

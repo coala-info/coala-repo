@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It consists of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sambamba/overview
-- **Total Downloads**: 471.2K
+- **Total Downloads**: 471.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/biod/sambamba
 - **Stars**: N/A

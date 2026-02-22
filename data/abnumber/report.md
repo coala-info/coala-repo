@@ -3,7 +3,7 @@
 ## abnumber
 
 ### Tool Description
-Could not get help from Singularity for: abnumber
+FAIL to generate CWL: abnumber not found in Singularity image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/abnumber:0.4.4--pyhdfd78af_0
@@ -12,18 +12,18 @@ Could not get help from Singularity for: abnumber
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/abnumber/overview
-- **Total Downloads**: 137.4K
+- **Total Downloads**: 137.5K
 - **Last updated**: 2025-05-21
 - **GitHub**: https://github.com/prihoda/AbNumber
-- **Stars**: N/A
+- **Stars**: 116
 ### Generation Failed
 
-Could not get help from Singularity for: abnumber
+FAIL to generate CWL: abnumber not found in Singularity image. The image may not provide this executable.
 
 
 ### Validation Errors
 
-- Could not get help from Singularity for: abnumber
+- FAIL to generate CWL: abnumber not found in Singularity image. The image may not provide this executable.
 
 
 
@@ -32,6 +32,3 @@ Could not get help from Singularity for: abnumber
 
 ```
 
-
-## Metadata
-- **Skill**: generated

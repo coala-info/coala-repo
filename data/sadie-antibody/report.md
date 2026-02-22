@@ -12,7 +12,7 @@ SADIE (Somatic Antibody Divergence Inference and Estimation) antibody analysis t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sadie-antibody/overview
-- **Total Downloads**: 103
+- **Total Downloads**: 104
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/jwillis0720/sadie
 - **Stars**: N/A

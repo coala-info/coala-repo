@@ -7,7 +7,7 @@ Deciding what resolution to use can be a difficult question when
     clusterings as resolution increases.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-clustree
+- **Conda**: https://anaconda.org/channels/r/packages/r-clustree/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/clustree/index.html
 - **Home (project)**: https://github.com/lazappi/clustree
 - **Package**: clustree
@@ -15,4 +15,8 @@ Deciding what resolution to use can be a difficult question when
 - **Author**: Luke Zappia [aut, cre], Alicia Oshlack [aut], Andrea Rau [ctb], Paul Hoffman [ctb]
 - **Maintainer**: Luke Zappia <luke at lazappi.id.au>
 - **Skill**: generated
+- **Total Downloads**: 77
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/lazappi/clustree
+- **Stars**: N/A
 

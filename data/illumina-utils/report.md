@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/illumina-utils/overview
-- **Total Downloads**: 31.4K
+- **Total Downloads**: 31.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/meren/illumina-utils
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A Snakemake logger plugin (Note: The provided text is a container build log and 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-logger-plugin-snkmt/overview
-- **Total Downloads**: 156
+- **Total Downloads**: 158
 - **Last updated**: 2026-01-10
 - **GitHub**: https://github.com/cademirch/snakemake-logger-plugin-snkmt
 - **Stars**: N/A

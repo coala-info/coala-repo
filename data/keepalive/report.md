@@ -12,7 +12,7 @@ A tool to keep connections or processes alive (Note: The provided text contains 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/keepalive/overview
-- **Total Downloads**: 282.6K
+- **Total Downloads**: 282.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/acassen/keepalived
 - **Stars**: N/A

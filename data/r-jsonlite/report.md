@@ -9,7 +9,7 @@ A reasonably fast JSON parser and generator, optimized for statistical
     with...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-jsonlite
+- **Conda**: https://anaconda.org/channels/r/packages/r-jsonlite/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/jsonlite/index.html
 - **Home (project)**: https://jeroen.r-universe.dev/jsonlite https://arxiv.org/abs/1403.2805
 - **Package**: jsonlite
@@ -17,4 +17,8 @@ A reasonably fast JSON parser and generator, optimized for statistical
 - **Author**: Jeroen Ooms [aut, cre], Duncan Temple Lang [ctb], Lloyd Hilaiel [cph] (author of bundled libyajl)
 - **Maintainer**: Jeroen Ooms <jeroenooms at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 845.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

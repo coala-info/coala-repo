@@ -15,7 +15,7 @@ A tool for calculating quality metrics (Note: The provided text appears to be a 
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/SteinmetzLab/qualityMetrics
-- **Stars**: N/A
+- **Stars**: 4
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

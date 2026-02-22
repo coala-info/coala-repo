@@ -12,7 +12,7 @@ The provided text appears to be a system log or error message from a container b
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rs3/overview
-- **Total Downloads**: 77
+- **Total Downloads**: 79
 - **Last updated**: 2026-01-04
 - **GitHub**: https://github.com/gpp-rnd/rs3
 - **Stars**: N/A

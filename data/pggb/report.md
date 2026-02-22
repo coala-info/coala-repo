@@ -12,7 +12,7 @@ The PanGenome Graph Builder (pggb) renders a collection of sequences into a pang
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pggb/overview
-- **Total Downloads**: 29.2K
+- **Total Downloads**: 29.3K
 - **Last updated**: 2025-04-23
 - **GitHub**: https://github.com/pangenome/pggb
 - **Stars**: N/A

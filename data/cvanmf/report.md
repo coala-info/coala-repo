@@ -12,7 +12,7 @@ The provided text appears to be a log from a failed container build process (App
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cvanmf/overview
-- **Total Downloads**: 355
+- **Total Downloads**: 358
 - **Last updated**: 2025-09-15
 - **GitHub**: https://github.com/apduncan/cvanmf
 - **Stars**: N/A

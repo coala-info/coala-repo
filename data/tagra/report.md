@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'tagra'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tagra/overview
-- **Total Downloads**: 61
+- **Total Downloads**: 62
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/davidetorre92/TaGra
 - **Stars**: N/A

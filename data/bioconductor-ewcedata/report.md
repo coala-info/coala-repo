@@ -13,4 +13,8 @@ The package provides tools for testing enrichments within simple gene lists (suc
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/neurogenomics/ewceData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ewcedata/overview
+- **Total Downloads**: 11.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

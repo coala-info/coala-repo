@@ -12,10 +12,10 @@ Python interface to Pathway Tools (BioCyc). Note: The provided text is a contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pythoncyc/overview
-- **Total Downloads**: 602
+- **Total Downloads**: 603
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/networkbiolab/PythonCyc
-- **Stars**: N/A
+- **Stars**: 2
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

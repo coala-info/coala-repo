@@ -15,7 +15,7 @@ The provided text appears to be a container build log rather than CLI help text.
 - **Total Downloads**: 10.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/TvoroG/pytest-lazy-fixture
-- **Stars**: N/A
+- **Stars**: 395
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

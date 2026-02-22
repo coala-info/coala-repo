@@ -12,7 +12,7 @@ Haplotype-aware assembly of polyploid genomes (Note: The provided text is a cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hackgap/overview
-- **Total Downloads**: 782
+- **Total Downloads**: 784
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'mutamr'. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mutamr/overview
-- **Total Downloads**: 841
+- **Total Downloads**: 844
 - **Last updated**: 2025-09-15
 - **GitHub**: https://github.com/MDU-PHL/mutamr
 - **Stars**: N/A

@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool 'afterqc'. It i
 - **Total Downloads**: 13.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/OpenGene/AfterQC
-- **Stars**: N/A
+- **Stars**: 213
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

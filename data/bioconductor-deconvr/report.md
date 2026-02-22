@@ -13,4 +13,8 @@ The package includes the cell-type-specific methylation atlas and, Illumina Epic
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BIMSBbioinfo/deconvR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-deconvr/overview
+- **Total Downloads**: 7.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

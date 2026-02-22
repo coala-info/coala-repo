@@ -8,7 +8,7 @@ Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (
              or can be specified by the user. </p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-writexls
+- **Conda**: https://anaconda.org/channels/r/packages/r-writexls/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/WriteXLS/index.html
 - **Home (project)**: https://github.com/marcschwartz/WriteXLS
 - **Package**: WriteXLS
@@ -16,4 +16,8 @@ Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (
 - **Author**: Marc Schwartz [aut, cre], Various authors for Perl modules listed in each .pm file. [aut]
 - **Maintainer**: Marc Schwartz <marc_schwartz at me.com>
 - **Skill**: generated
+- **Total Downloads**: 853
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/marcschwartz/WriteXLS
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A plugin for the Vizgen Post-processing Tool (VPT) that utilizes Cellpose 2.0 fo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vpt-plugin-cellpose2/overview
-- **Total Downloads**: 168
+- **Total Downloads**: 169
 - **Last updated**: 2025-06-27
 - **GitHub**: https://github.com/Vizgen/vpt-plugin-cellpose2
 - **Stars**: N/A

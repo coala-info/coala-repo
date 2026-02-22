@@ -12,7 +12,7 @@ Structural variant classification tool (Note: The provided text appears to be a 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/strvctvre/overview
-- **Total Downloads**: 87
+- **Total Downloads**: 88
 - **Last updated**: 2025-09-17
 - **GitHub**: https://github.com/andrewSharo/StrVCTVRE
 - **Stars**: N/A

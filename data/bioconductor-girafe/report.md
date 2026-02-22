@@ -11,6 +11,10 @@ The package 'girafe' deals with the genome-level representation of aligned reads
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-girafe/overview
+- **Total Downloads**: 43.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

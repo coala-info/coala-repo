@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/chunked-scatter/overview
-- **Total Downloads**: 8.5K
+- **Total Downloads**: 8.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/biowdl/chunked-scatter
 - **Stars**: N/A

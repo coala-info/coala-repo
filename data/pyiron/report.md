@@ -12,7 +12,7 @@ The provided text appears to be a container build log rather than CLI help text.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/pyiron/overview
-- **Total Downloads**: 243.0K
+- **Total Downloads**: 243.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pyiron/pyiron
 - **Stars**: N/A

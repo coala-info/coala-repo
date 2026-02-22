@@ -12,7 +12,7 @@ The provided text does not contain a description of the tool, as it consists of 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/samestr/overview
-- **Total Downloads**: 3.8K
+- **Total Downloads**: 3.9K
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/danielpodlesny/samestr
 - **Stars**: N/A

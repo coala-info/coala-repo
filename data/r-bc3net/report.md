@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bc3net
+- **Conda**: https://anaconda.org/channels/r/packages/r-bc3net/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/bc3net/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=bc3net
 - **Package**: bc3net
@@ -11,4 +11,8 @@ N/A
 - **Author**: Ricardo de Matos Simoes [aut, cre], Frank Emmert-Streib [aut]
 - **Maintainer**: Ricardo de Matos Simoes <ricardo_dematossimoes at dfci.harvard.edu>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

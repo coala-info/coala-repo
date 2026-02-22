@@ -12,7 +12,7 @@ The provided text is a container runtime error log and does not contain help doc
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/varlociraptor/overview
-- **Total Downloads**: 323.2K
+- **Total Downloads**: 323.3K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/varlociraptor/varlociraptor
 - **Stars**: N/A

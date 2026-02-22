@@ -12,10 +12,10 @@ The provided text does not contain help information for promotercalculator; it i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/promotercalculator/overview
-- **Total Downloads**: 407
+- **Total Downloads**: 408
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/barricklab/promoter-calculator
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

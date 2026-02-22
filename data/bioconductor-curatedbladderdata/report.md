@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lima1/curatedBladderData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-curatedbladderdata/overview
+- **Total Downloads**: 22.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

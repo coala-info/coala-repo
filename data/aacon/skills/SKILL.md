@@ -1,6 +1,6 @@
 ---
 name: aacon
-description: "Could not get help from Singularity for: aacon"
+description: AACon (Amino Acid Conservation) is a high-performance toolset designed to identify functional sites in proteins by measuring evolutionary conservation.
 homepage: https://www.compbio.dundee.ac.uk/aacon/
 ---
 

@@ -6,7 +6,7 @@ The 'tidyverse' is a set of packages that work in harmony
     'tidyverse' packages in a single step.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-tidyverse
+- **Conda**: https://anaconda.org/channels/r/packages/r-tidyverse/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/tidyverse/index.html
 - **Home (project)**: https://tidyverse.tidyverse.org, https://github.com/tidyverse/tidyverse
 - **Package**: tidyverse
@@ -14,4 +14,8 @@ The 'tidyverse' is a set of packages that work in harmony
 - **Author**: Hadley Wickham [aut, cre], RStudio [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at rstudio.com>
 - **Skill**: generated
+- **Total Downloads**: 299.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tidyverse/tidyverse
+- **Stars**: N/A
 

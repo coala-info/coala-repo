@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime and does not contain 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/muspinsim/overview
-- **Total Downloads**: 112.2K
+- **Total Downloads**: 112.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/muon-spectroscopy-computational-project/muspinsim
 - **Stars**: N/A

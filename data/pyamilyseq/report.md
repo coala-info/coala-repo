@@ -12,7 +12,7 @@ A tool for protein family sequence analysis. (Note: The provided text contains c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyamilyseq/overview
-- **Total Downloads**: 64
+- **Total Downloads**: 66
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/NickJD/PyamilySeq
 - **Stars**: N/A

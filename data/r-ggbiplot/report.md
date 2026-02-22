@@ -9,7 +9,7 @@ A 'ggplot2' based implementation of biplots, giving a representation of a datase
     FactoMineR::PCA(),...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ggbiplot
+- **Conda**: https://anaconda.org/channels/r/packages/r-ggbiplot/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/ggbiplot/index.html
 - **Home (project)**: http://github.com/vqv/ggbiplot
 - **Package**: ggbiplot
@@ -17,4 +17,8 @@ A 'ggplot2' based implementation of biplots, giving a representation of a datase
 - **Author**: Vincent Q. Vu [aut], Michael Friendly [aut, cre], Aghasi Tavadyan [ctb]
 - **Maintainer**: Michael Friendly <friendly at yorku.ca>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/vqv/ggbiplot
+- **Stars**: N/A
 

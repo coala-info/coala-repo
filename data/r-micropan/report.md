@@ -3,7 +3,7 @@
 A collection of functions for computations and visualizations of microbial pan-genomes.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-micropan
+- **Conda**: https://anaconda.org/channels/r/packages/r-micropan/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/micropan/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=micropan
 - **Package**: micropan
@@ -11,4 +11,8 @@ A collection of functions for computations and visualizations of microbial pan-g
 - **Author**: Lars Snipen and Kristian Hovde Liland
 - **Maintainer**: Lars Snipen <lars.snipen at nmbu.no>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ converts BAM to a number of other formats.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bamtools/overview
-- **Total Downloads**: 573.5K
+- **Total Downloads**: 574.2K
 - **Last updated**: 2025-05-18
 - **GitHub**: https://github.com/pezmaster31/bamtools
 - **Stars**: N/A

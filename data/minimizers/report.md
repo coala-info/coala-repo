@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/minimizers/overview
-- **Total Downloads**: 434
+- **Total Downloads**: 435
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cumbof/minimizers
 - **Stars**: N/A

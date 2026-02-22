@@ -12,7 +12,7 @@ A tool for detecting stripes in Hi-C data (Note: The provided help text contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/stripepy-hic/overview
-- **Total Downloads**: 649
+- **Total Downloads**: 657
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/paulsengroup/StripePy
 - **Stars**: N/A

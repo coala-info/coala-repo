@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/f5c/overview
-- **Total Downloads**: 261.2K
+- **Total Downloads**: 261.3K
 - **Last updated**: 2025-10-06
 - **GitHub**: https://github.com/hasindu2008/f5c
 - **Stars**: N/A

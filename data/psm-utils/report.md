@@ -12,10 +12,10 @@ The provided text is a container build log and does not contain CLI help informa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/psm-utils/overview
-- **Total Downloads**: 21.8K
+- **Total Downloads**: 21.9K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/compomics/psm_utils
-- **Stars**: N/A
+- **Stars**: 30
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

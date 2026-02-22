@@ -11,6 +11,10 @@ The package provides functions for calculation of linear-quadratic cell survival
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cfassay/overview
+- **Total Downloads**: 42.5K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

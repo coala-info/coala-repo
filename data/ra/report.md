@@ -12,7 +12,7 @@ A de novo DNA assembler for long reads.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ra/overview
-- **Total Downloads**: 56.6K
+- **Total Downloads**: 56.7K
 - **Last updated**: 2025-09-23
 - **GitHub**: https://github.com/2dust/v2rayN
 - **Stars**: N/A

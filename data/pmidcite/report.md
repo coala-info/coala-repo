@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pmidcite/overview
-- **Total Downloads**: 845
+- **Total Downloads**: 853
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/dvklopfenstein/pmidcite
 - **Stars**: N/A

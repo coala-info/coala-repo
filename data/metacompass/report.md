@@ -12,7 +12,7 @@ MetaCompass is a software package for comparative assembly of metagenomic reads.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metacompass/overview
-- **Total Downloads**: 340
+- **Total Downloads**: 341
 - **Last updated**: 2025-05-27
 - **GitHub**: https://github.com/marbl/MetaCompass
 - **Stars**: N/A

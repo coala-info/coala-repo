@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/FertigLab/dominoSignal
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dominosignal/overview
+- **Total Downloads**: 398
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

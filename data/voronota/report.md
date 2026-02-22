@@ -12,7 +12,7 @@ Voronota is a tool for the analysis of macromolecular structures. (Note: The pro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/voronota/overview
-- **Total Downloads**: 4.0K
+- **Total Downloads**: 4.1K
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/kliment-olechnovic/voronota
 - **Stars**: N/A

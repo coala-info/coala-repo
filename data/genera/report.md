@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genera/overview
-- **Total Downloads**: 295
+- **Total Downloads**: 296
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/josuebarrera/GenEra
 - **Stars**: N/A

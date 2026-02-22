@@ -12,7 +12,7 @@ The provided text appears to be a container execution error log rather than help
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/quick-variants/overview
-- **Total Downloads**: 65
+- **Total Downloads**: 66
 - **Last updated**: 2025-09-15
 - **GitHub**: https://github.com/caozhichongchong/QuickVariants
 - **Stars**: N/A

@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cgen/overview
+- **Total Downloads**: 29.3K
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

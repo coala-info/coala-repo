@@ -12,7 +12,7 @@ Whole Genome Duplication (wgd) analysis tool. Note: The provided text is a conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/wgd/overview
-- **Total Downloads**: 24.5K
+- **Total Downloads**: 24.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/heche-psb/wgd
 - **Stars**: N/A

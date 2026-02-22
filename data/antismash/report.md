@@ -15,7 +15,7 @@ The provided text does not contain help information for antiSMASH; it is a log o
 - **Total Downloads**: 62.5K
 - **Last updated**: 2025-09-09
 - **GitHub**: https://github.com/antismash/antismash
-- **Stars**: N/A
+- **Stars**: 243
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

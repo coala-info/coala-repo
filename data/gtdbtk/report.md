@@ -12,7 +12,7 @@ GTDB-Tk is a software toolkit for assigning objective taxonomic classifications 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gtdbtk/overview
-- **Total Downloads**: 192.7K
+- **Total Downloads**: 193.0K
 - **Last updated**: 2026-01-13
 - **GitHub**: https://github.com/Ecogenomics/GTDBTk
 - **Stars**: N/A

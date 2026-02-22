@@ -12,7 +12,7 @@ Universal Protein Resource (UniProt) Id Mapping API tool. (Note: The provided te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/upimapi/overview
-- **Total Downloads**: 112.0K
+- **Total Downloads**: 112.1K
 - **Last updated**: 2025-09-23
 - **GitHub**: https://github.com/iquasere/UPIMAPI
 - **Stars**: N/A

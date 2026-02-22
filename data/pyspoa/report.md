@@ -15,7 +15,7 @@ The provided text contains error logs from a container runtime (Singularity/Appt
 - **Total Downloads**: 109.7K
 - **Last updated**: 2025-12-26
 - **GitHub**: https://github.com/nanoporetech/pyspoa
-- **Stars**: N/A
+- **Stars**: 22
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

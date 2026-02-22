@@ -15,7 +15,7 @@ De Bruijn graph construction tool for genomic data
 - **Total Downloads**: 28.2K
 - **Last updated**: 2025-06-06
 - **GitHub**: https://github.com/GATB/bcalm
-- **Stars**: N/A
+- **Stars**: 100
 ### Original Help Text
 ```text
 ERROR: Unknown parameter '--help'

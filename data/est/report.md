@@ -11,6 +11,11 @@ FAIL to generate CWL: est not found in Singularity image. The image may not prov
 - **Package**: Not found
 - **Validation**: FAIL (generation failed)
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/est/overview
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/yanirs/established-remote
+- **Stars**: N/A
 ### Generation Failed
 
 FAIL to generate CWL: est not found in Singularity image. The image may not provide this executable.

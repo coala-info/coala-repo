@@ -15,7 +15,7 @@ Aletsch is a tool for transcript assembly (Note: The provided text is an error l
 - **Total Downloads**: 18.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Shao-Group/aletsch
-- **Stars**: N/A
+- **Stars**: 8
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

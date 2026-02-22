@@ -15,7 +15,7 @@ Estimate evolutionary distances between closely related genomes.
 - **Total Downloads**: 22.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/evolbioinf/andi
-- **Stars**: N/A
+- **Stars**: 47
 ### Original Help Text
 ```text
 Usage: andi [OPTIONS...] FILES...

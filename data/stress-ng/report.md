@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for st
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/stress-ng/overview
-- **Total Downloads**: 95.3K
+- **Total Downloads**: 95.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ColinIanKing/stress-ng
 - **Stars**: N/A

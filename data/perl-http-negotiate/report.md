@@ -12,7 +12,7 @@ Perl implementation of HTTP content negotiation
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-http-negotiate/overview
-- **Total Downloads**: 470.7K
+- **Total Downloads**: 471.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-HTTP-Negotiate
 - **Stars**: N/A

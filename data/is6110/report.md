@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/is6110/overview
-- **Total Downloads**: 126
+- **Total Downloads**: 130
 - **Last updated**: 2026-01-20
 - **GitHub**: https://github.com/jodyphelan/is6110
 - **Stars**: N/A

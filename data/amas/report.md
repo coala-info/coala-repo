@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Total Downloads**: 8.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/marekborowiec/AMAS
-- **Stars**: N/A
+- **Stars**: 91
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

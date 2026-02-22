@@ -12,7 +12,7 @@ Probabilistic Consistency-based Multiple Alignment of RNA Sequences
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/probconsrna/overview
-- **Total Downloads**: 71.3K
+- **Total Downloads**: 71.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

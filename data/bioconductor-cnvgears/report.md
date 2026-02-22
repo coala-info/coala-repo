@@ -13,4 +13,8 @@ The package is best suited for studies in human family-based cohorts.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/SinomeM/CNVgears
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cnvgears/overview
+- **Total Downloads**: 9.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information for pplacer; it is a fatal e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pplacer/overview
-- **Total Downloads**: 101.1K
+- **Total Downloads**: 101.3K
 - **Last updated**: 2026-01-30
 - **GitHub**: https://github.com/matsen/pplacer
 - **Stars**: N/A

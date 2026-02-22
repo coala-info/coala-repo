@@ -12,7 +12,7 @@ Base class for SAX drivers and filters. (Note: The provided text is an execution
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-sax-base/overview
-- **Total Downloads**: 505.9K
+- **Total Downloads**: 506.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for bio-assembly refinement (Note: The provided text is a system error lo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bio_assembly_refinement/overview
-- **Total Downloads**: 24.3K
+- **Total Downloads**: 24.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nds/bio_assembly_refinement
 - **Stars**: N/A

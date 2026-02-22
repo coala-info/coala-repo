@@ -15,7 +15,7 @@ A tool for protein-related processing (description unavailable from provided log
 - **Total Downloads**: 17.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/usadellab/prot-scriber
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

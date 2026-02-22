@@ -12,7 +12,7 @@ GenMap is a tool for computing the mappability of genomes.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genmap/overview
-- **Total Downloads**: 34.8K
+- **Total Downloads**: 34.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cpockrandt/genmap
 - **Stars**: N/A

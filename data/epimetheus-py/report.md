@@ -12,7 +12,7 @@ A tool for processing or analyzing data (description not available in provided t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/epimetheus-py/overview
-- **Total Downloads**: 19.2K
+- **Total Downloads**: 19.3K
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/SebastianDall/epimetheus
 - **Stars**: N/A

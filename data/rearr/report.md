@@ -12,7 +12,7 @@ A tool for rearrangement analysis (Note: The provided text contains execution lo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rearr/overview
-- **Total Downloads**: 1.5K
+- **Total Downloads**: 1.6K
 - **Last updated**: 2026-01-04
 - **GitHub**: https://github.com/ljw20180420/sx_lcy
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ArtifactDB/gypsum-worker
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gypsum/overview
+- **Total Downloads**: 1.7K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

@@ -15,7 +15,7 @@ bcbio-variation is a toolkit for analyzing genomic variation data. (Note: The pr
 - **Total Downloads**: 19.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/chapmanb/bcbio.variation
-- **Stars**: N/A
+- **Stars**: 66
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

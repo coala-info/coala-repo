@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rabies/overview
-- **Total Downloads**: 1.6K
+- **Total Downloads**: 1.7K
 - **Last updated**: 2025-12-26
 - **GitHub**: https://github.com/CoBrALab/RABIES
 - **Stars**: N/A

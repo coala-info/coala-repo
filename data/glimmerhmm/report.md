@@ -12,7 +12,7 @@ GlimmerHMM is a gene finding system based on a Generalized Hidden Markov Model (
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/glimmerhmm/overview
-- **Total Downloads**: 214.6K
+- **Total Downloads**: 214.7K
 - **Last updated**: 2025-09-22
 - **GitHub**: https://github.com/kblin/glimmerhmm
 - **Stars**: N/A

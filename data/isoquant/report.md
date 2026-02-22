@@ -12,7 +12,7 @@ IsoQuant is a tool for the genome-independent analysis of long-read transcriptom
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isoquant/overview
-- **Total Downloads**: 58.6K
+- **Total Downloads**: 58.7K
 - **Last updated**: 2025-10-25
 - **GitHub**: https://github.com/ablab/IsoQuant
 - **Stars**: N/A

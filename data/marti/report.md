@@ -12,7 +12,7 @@ MARTi (Metagenomics Analysis in Real-Time)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/marti/overview
-- **Total Downloads**: 5.5K
+- **Total Downloads**: 5.6K
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/richardmleggett/MARTi
 - **Stars**: N/A

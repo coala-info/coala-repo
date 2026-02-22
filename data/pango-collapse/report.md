@@ -12,7 +12,7 @@ Collapse Pango sublineages up to user defined parent lineages.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pango-collapse/overview
-- **Total Downloads**: 547
+- **Total Downloads**: 548
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/MDU-PHL/pango-collapse
 - **Stars**: N/A

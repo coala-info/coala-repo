@@ -12,8 +12,8 @@ A tool for plotting centromeric regions (Note: The provided help text contains o
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cenplot/overview
-- **Total Downloads**: 596
-- **Last updated**: 2025-12-12
+- **Total Downloads**: 615
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/logsdon-lab/CenPlot
 - **Stars**: N/A
 ### Original Help Text

@@ -12,7 +12,7 @@ No description available from the provided error log.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gfatools/overview
-- **Total Downloads**: 22.9K
+- **Total Downloads**: 23.0K
 - **Last updated**: 2025-06-06
 - **GitHub**: https://github.com/lh3/gfatools
 - **Stars**: N/A

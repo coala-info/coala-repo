@@ -11,6 +11,10 @@ the package vignette. The citation for the experiment is: Himes BE, Jiang X, Wag
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-airway/overview
+- **Total Downloads**: 27.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

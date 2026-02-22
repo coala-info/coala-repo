@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/needletail/overview
-- **Total Downloads**: 8.4K
+- **Total Downloads**: 8.5K
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/onecodex/needletail
 - **Stars**: N/A

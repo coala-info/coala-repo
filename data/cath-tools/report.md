@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions. It 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cath-tools/overview
-- **Total Downloads**: 11.3K
+- **Total Downloads**: 11.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/UCLOrengoGroup/cath-tools
 - **Stars**: N/A

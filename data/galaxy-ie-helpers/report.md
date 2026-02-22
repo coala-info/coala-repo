@@ -12,7 +12,7 @@ A set of helper utilities for Galaxy Interactive Environments. Note: The provide
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-ie-helpers/overview
-- **Total Downloads**: 19.2K
+- **Total Downloads**: 19.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bgruening/galaxy_ie_helpers
 - **Stars**: N/A

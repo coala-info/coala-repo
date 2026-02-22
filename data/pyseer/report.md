@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions for py
 - **Total Downloads**: 63.4K
 - **Last updated**: 2025-05-22
 - **GitHub**: https://github.com/mgalardini/pyseer
-- **Stars**: N/A
+- **Stars**: 131
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

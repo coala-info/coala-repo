@@ -3,35 +3,24 @@
 ## fastcluster
 
 ### Tool Description
-[Errno 2] No such file or directory: 'fastcluster'; fallback failed: [Errno 2] No such file or directory: 'fastcluster'
+The provided text is a system error log from a Singularity/Apptainer container build process and does not contain CLI help information or usage instructions for the tool 'fastcluster'.
 
 ### Metadata
-- **Docker Image**: Not found
+- **Docker Image**: biocontainers/fastcluster:v1.1.22-1-deb-py2_cv1
 - **Homepage**: https://github.com/fastcluster/fastcluster
 - **Package**: Not found
-- **Validation**: FAIL (generation failed)
+- **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/main/packages/fastcluster/overview
-- **Total Downloads**: 2.0K
-- **Last updated**: 2025-11-03
+- **Conda**: https://anaconda.org/channels/bioconda/packages/fastcluster/overview
+- **Total Downloads**: N/A
+- **Last updated**: N/A
 - **GitHub**: https://github.com/fastcluster/fastcluster
 - **Stars**: N/A
-### Generation Failed
-
-[Errno 2] No such file or directory: 'fastcluster'; fallback failed: [Errno 2] No such file or directory: 'fastcluster'
-
-
-### Validation Errors
-
-- [Errno 2] No such file or directory: 'fastcluster'; fallback failed: [Errno 2] No such file or directory: 'fastcluster'
-
-
-
 ### Original Help Text
 ```text
-
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+FATAL:   Unable to handle docker://biocontainers/fastcluster:v1.1.22-1-deb-py2_cv1 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/9eff3cc37a65179dc39bf7723a940ca318ab3d21c360f40d2fd47100547d5e193160187370: no space left on device
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biobb_io/overview
-- **Total Downloads**: 58.1K
+- **Total Downloads**: 58.2K
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/bioexcel/biobb_io
 - **Stars**: N/A

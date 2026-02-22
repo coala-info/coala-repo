@@ -6,7 +6,7 @@ Computes various confidence intervals for the Kaplan-Meier
         simultaneous confidence bands by Nair and Hall and Wellner.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-km.ci
+- **Conda**: https://anaconda.org/channels/r/packages/r-km.ci/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/km.ci/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=km.ci
 - **Package**: km.ci
@@ -14,4 +14,8 @@ Computes various confidence intervals for the Kaplan-Meier
 - **Author**: Ralf Strobl
 - **Maintainer**: Tobias Verbeke <tobias.verbeke at openanalytics.eu>
 - **Skill**: generated
+- **Total Downloads**: 796
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

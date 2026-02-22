@@ -12,10 +12,10 @@ FAIL to generate CWL: ampliconsplitter not found in Singularity image. The image
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ampliconsplitter/overview
-- **Total Downloads**: 353
+- **Total Downloads**: 354
 - **Last updated**: 2025-07-30
 - **GitHub**: https://github.com/RolandFaure/AmpliconSplitter
-- **Stars**: N/A
+- **Stars**: 0
 ### Generation Failed
 
 FAIL to generate CWL: ampliconsplitter not found in Singularity image. The image may not provide this executable.

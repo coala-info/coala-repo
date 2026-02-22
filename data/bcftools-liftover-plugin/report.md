@@ -15,7 +15,7 @@ Liftover VCF/BCF files using a chain file.
 - **Total Downloads**: 600
 - **Last updated**: 2025-06-03
 - **GitHub**: https://github.com/freeseek/score
-- **Stars**: N/A
+- **Stars**: 130
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tagbam/overview
-- **Total Downloads**: 516
+- **Total Downloads**: 517
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/fellen31/tagbam
 - **Stars**: N/A

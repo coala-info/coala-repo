@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/grequests/overview
-- **Total Downloads**: 188.7K
+- **Total Downloads**: 189.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/spyoungtech/grequests
 - **Stars**: N/A

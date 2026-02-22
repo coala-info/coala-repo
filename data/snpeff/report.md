@@ -12,7 +12,7 @@ SnpEff is a genetic variant annotation and functional effect prediction toolbox.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snpeff/overview
-- **Total Downloads**: 561.9K
+- **Total Downloads**: 562.3K
 - **Last updated**: 2025-11-28
 - **GitHub**: N/A
 - **Stars**: N/A

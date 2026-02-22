@@ -12,7 +12,7 @@ A tool for rhinovirus typing (Note: The provided text appears to be a container 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rhinotype/overview
-- **Total Downloads**: 38
+- **Total Downloads**: 39
 - **Last updated**: 2026-01-03
 - **GitHub**: https://github.com/omicscodeathon/rhinotype
 - **Stars**: N/A

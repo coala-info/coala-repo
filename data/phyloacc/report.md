@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phyloacc/overview
-- **Total Downloads**: 36.4K
+- **Total Downloads**: 36.5K
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/phyloacc/PhyloAcc
 - **Stars**: N/A

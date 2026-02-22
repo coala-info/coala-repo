@@ -12,7 +12,7 @@ A fast, accurate and memory-efficient tool for aligning and preprocessing chroma
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/chromap/overview
-- **Total Downloads**: 41.9K
+- **Total Downloads**: 42.0K
 - **Last updated**: 2025-08-31
 - **GitHub**: https://github.com/haowenz/chromap
 - **Stars**: N/A

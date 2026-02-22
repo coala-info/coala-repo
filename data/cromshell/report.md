@@ -12,7 +12,7 @@ Cromshell is a command-line tool for submitting and managing workflows on a Crom
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cromshell/overview
-- **Total Downloads**: 52.4K
+- **Total Downloads**: 52.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/broadinstitute/cromshell
 - **Stars**: N/A

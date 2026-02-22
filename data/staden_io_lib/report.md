@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/staden_io_lib/overview
-- **Total Downloads**: 43.2K
+- **Total Downloads**: 43.3K
 - **Last updated**: 2025-07-16
 - **GitHub**: https://github.com/jkbonfield/io_lib
 - **Stars**: N/A

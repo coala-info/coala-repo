@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gmm-demux/overview
-- **Total Downloads**: 711
+- **Total Downloads**: 713
 - **Last updated**: 2026-01-12
 - **GitHub**: https://github.com/CHPGenetics/GMM-demux
 - **Stars**: N/A

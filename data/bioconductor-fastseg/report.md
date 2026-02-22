@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/alexg9010/fastseg
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fastseg/overview
+- **Total Downloads**: 71.2K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

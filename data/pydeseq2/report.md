@@ -12,7 +12,7 @@ A python implementation of the DESeq2 method for differential expression analysi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pydeseq2/overview
-- **Total Downloads**: 39.6K
+- **Total Downloads**: 39.7K
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/owkin/PyDESeq2
 - **Stars**: N/A

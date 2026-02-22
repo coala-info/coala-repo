@@ -15,7 +15,7 @@ Adds a read-group to a BAM file and writes the result to stdout.
 - **Total Downloads**: 22.6K
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/weex/addrgen
-- **Stars**: N/A
+- **Stars**: 109
 ### Original Help Text
 ```text
 Usage: /usr/local/bin/addrg file.bam rg-name [sm-name=rg-name] [platform=ILLUMINA]

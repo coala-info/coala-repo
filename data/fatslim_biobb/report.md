@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fatslim_biobb/overview
-- **Total Downloads**: 3.8K
+- **Total Downloads**: 3.9K
 - **Last updated**: 2025-12-18
 - **GitHub**: https://github.com/FATSLiM/fatslim
 - **Stars**: N/A

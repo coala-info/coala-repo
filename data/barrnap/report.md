@@ -12,7 +12,7 @@ The provided text does not contain help information for barrnap; it is an error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/barrnap/overview
-- **Total Downloads**: 177.0K
+- **Total Downloads**: 177.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tseemann/barrnap
 - **Stars**: N/A

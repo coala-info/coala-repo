@@ -12,10 +12,10 @@ Could not get help from Singularity for: amalgkit
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/amalgkit/overview
-- **Total Downloads**: 735
-- **Last updated**: 2025-11-12
+- **Total Downloads**: 742
+- **Last updated**: 2026-02-22
 - **GitHub**: https://github.com/kfuku52/amalgkit
-- **Stars**: N/A
+- **Stars**: 12
 ### Generation Failed
 
 Could not get help from Singularity for: amalgkit
@@ -32,6 +32,3 @@ Could not get help from Singularity for: amalgkit
 
 ```
 
-
-## Metadata
-- **Skill**: generated

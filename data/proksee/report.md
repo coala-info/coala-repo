@@ -12,10 +12,10 @@ Proksee is a tool for genome assembly, annotation, and visualization.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/proksee/overview
-- **Total Downloads**: 13.5K
+- **Total Downloads**: 13.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/proksee-project/proksee-cmd
-- **Stars**: N/A
+- **Stars**: 26
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

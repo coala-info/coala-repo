@@ -7,7 +7,7 @@ Allows users to calculate pairwise Nei's Genetic Distances (Nei 1972), pairwise 
  utili...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-stampp
+- **Conda**: https://anaconda.org/channels/r/packages/r-stampp/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/StAMPP/index.html
 - **Home (project)**: https://github.com/lpembleton/StAMPP
 - **Package**: StAMPP
@@ -15,4 +15,8 @@ Allows users to calculate pairwise Nei's Genetic Distances (Nei 1972), pairwise 
 - **Author**: LW Pembleton
 - **Maintainer**: LW Pembleton <lwpembleton at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 41
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/lpembleton/StAMPP
+- **Stars**: N/A
 

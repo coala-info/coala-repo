@@ -12,7 +12,7 @@ Create homology pre-table. This command aligns genomic regions back to the genom
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/parascopy/overview
-- **Total Downloads**: 83.5K
+- **Total Downloads**: 83.6K
 - **Last updated**: 2026-01-27
 - **GitHub**: https://github.com/tprodanov/parascopy
 - **Stars**: N/A

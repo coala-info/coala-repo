@@ -12,7 +12,7 @@ Download genome data from NCBI
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-genome-download/overview
-- **Total Downloads**: 118.0K
+- **Total Downloads**: 118.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kblin/ncbi-genome-download
 - **Stars**: N/A

@@ -12,7 +12,7 @@ TIRank (Tumor-Infiltrating lymphocyte Ranker)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tirank/overview
-- **Total Downloads**: 126
+- **Total Downloads**: 130
 - **Last updated**: 2026-01-23
 - **GitHub**: https://github.com/LenisLin/TiRank
 - **Stars**: N/A

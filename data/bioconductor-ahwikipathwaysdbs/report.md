@@ -13,4 +13,8 @@ The package provides a comprehensive mapping table of metabolites linked to Wiki
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kozo2/AHWikipathwaysDbs
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ahwikipathwaysdbs/overview
+- **Total Downloads**: 4.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

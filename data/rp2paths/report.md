@@ -12,7 +12,7 @@ A tool for processing RetroPath2.0 metabolic pathways.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/rp2paths/overview
-- **Total Downloads**: 10.7K
+- **Total Downloads**: 10.8K
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/brsynth/rp2paths
 - **Stars**: N/A

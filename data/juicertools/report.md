@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/juicertools/overview
-- **Total Downloads**: 898
+- **Total Downloads**: 902
 - **Last updated**: 2025-05-21
 - **GitHub**: https://github.com/aidenlab/Juicebox
 - **Stars**: N/A

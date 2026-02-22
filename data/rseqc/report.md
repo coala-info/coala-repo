@@ -12,7 +12,7 @@ The provided text is a container runtime error log and does not contain help inf
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rseqc/overview
-- **Total Downloads**: 152.1K
+- **Total Downloads**: 152.2K
 - **Last updated**: 2025-09-04
 - **GitHub**: N/A
 - **Stars**: N/A

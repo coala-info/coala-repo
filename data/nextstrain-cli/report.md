@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions. It 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nextstrain-cli/overview
-- **Total Downloads**: 101.0K
+- **Total Downloads**: 101.1K
 - **Last updated**: 2026-01-10
 - **GitHub**: https://github.com/nextstrain/cli
 - **Stars**: N/A

@@ -12,7 +12,7 @@ MIDSV is a tool for converting SAM/BAM files into MIDSV format (a concise format
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/midsv/overview
-- **Total Downloads**: 32.3K
+- **Total Downloads**: 32.4K
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/akikuno/mids
 - **Stars**: N/A

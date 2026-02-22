@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/arborist/overview
-- **Total Downloads**: 53
+- **Total Downloads**: 54
 - **Last updated**: 2025-12-04
 - **GitHub**: https://github.com/VanLoo-lab/Arborist
 - **Stars**: N/A

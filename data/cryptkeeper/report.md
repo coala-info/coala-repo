@@ -12,7 +12,7 @@ The provided text is a log of a failed container build/execution and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cryptkeeper/overview
-- **Total Downloads**: 265
+- **Total Downloads**: 266
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/barricklab/cryptkeeper
 - **Stars**: N/A

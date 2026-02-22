@@ -11,6 +11,10 @@ The package includes a graphical user interface (GUI) and functions to perform t
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fgnet/overview
+- **Total Downloads**: 27.8K
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

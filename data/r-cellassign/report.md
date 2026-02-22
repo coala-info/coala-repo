@@ -3,7 +3,7 @@
 R package cellassign (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-cellassign
+- **Conda**: https://anaconda.org/channels/r/packages/r-cellassign/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/cellassign/index.html
 - **Home (project)**: https://github.com/Irrationone/cellassign
 - **Package**: cellassign
@@ -11,4 +11,8 @@ R package cellassign (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/Irrationone/cellassign
+- **Stars**: N/A
 

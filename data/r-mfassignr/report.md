@@ -3,7 +3,7 @@
 R package mfassignr (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-mfassignr
+- **Conda**: https://anaconda.org/channels/r/packages/r-mfassignr/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/mfassignr/index.html
 - **Home (project)**: https://github.com/RECETOX/MFAssignR
 - **Package**: mfassignr
@@ -11,4 +11,8 @@ R package mfassignr (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/RECETOX/MFAssignR
+- **Stars**: N/A
 

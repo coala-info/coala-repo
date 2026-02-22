@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for tr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/translatorx/overview
-- **Total Downloads**: 6.6K
+- **Total Downloads**: 6.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

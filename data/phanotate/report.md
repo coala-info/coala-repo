@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for ph
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phanotate/overview
-- **Total Downloads**: 32.7K
+- **Total Downloads**: 32.8K
 - **Last updated**: 2026-02-18
 - **GitHub**: https://github.com/deprekate/PHANOTATE
 - **Stars**: N/A

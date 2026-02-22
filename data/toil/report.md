@@ -12,7 +12,7 @@ Toil is a scalable, efficient, and cross-platform pipeline management system, wr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/toil/overview
-- **Total Downloads**: 145.7K
+- **Total Downloads**: 145.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/DataBiosphere/toil
 - **Stars**: N/A

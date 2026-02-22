@@ -12,7 +12,7 @@ A tool for strain-level assembly and variant calling from metagenomes (Note: The
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lorikeet-genome/overview
-- **Total Downloads**: 38.7K
+- **Total Downloads**: 38.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/rhysnewell/Lorikeet
 - **Stars**: N/A

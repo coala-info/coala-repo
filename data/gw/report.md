@@ -12,7 +12,7 @@ A tool for genomic visualization (Note: The provided text contains system error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gw/overview
-- **Total Downloads**: 54.0K
+- **Total Downloads**: 54.1K
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/kcleal/gw
 - **Stars**: N/A

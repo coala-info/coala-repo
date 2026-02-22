@@ -13,4 +13,8 @@ The package is equipped to help users generate principal components associated w
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/LieberInstitute/qsvaR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-qsvar/overview
+- **Total Downloads**: 5.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

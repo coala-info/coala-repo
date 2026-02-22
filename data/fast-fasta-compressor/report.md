@@ -12,7 +12,7 @@ A tool for fast FASTA compression (Note: The provided help text contains only co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fast-fasta-compressor/overview
-- **Total Downloads**: 785
+- **Total Downloads**: 794
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/kowallus/ffc
 - **Stars**: N/A

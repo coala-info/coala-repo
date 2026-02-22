@@ -15,7 +15,7 @@ A tool or script for building a SIF (Singularity Image Format) container for afp
 - **Total Downloads**: 8.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sndrtj/afplot
-- **Stars**: N/A
+- **Stars**: 11
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

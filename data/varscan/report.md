@@ -12,7 +12,7 @@ The provided text does not contain help information or documentation for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/varscan/overview
-- **Total Downloads**: 118.1K
+- **Total Downloads**: 118.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

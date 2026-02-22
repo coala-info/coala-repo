@@ -7,7 +7,7 @@ Contains general data structures and
   and dynamical covariance.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-longitudinal
+- **Conda**: https://anaconda.org/channels/r/packages/r-longitudinal/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/longitudinal/index.html
 - **Home (project)**: http://strimmerlab.org/software/longitudinal/
 - **Package**: longitudinal
@@ -15,4 +15,8 @@ Contains general data structures and
 - **Author**: Rainer Opgen-Rhein and Korbinian Strimmer.
 - **Maintainer**: Korbinian Strimmer <strimmerlab at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 278
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

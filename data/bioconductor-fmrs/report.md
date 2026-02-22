@@ -13,4 +13,8 @@ The package obtains parameter estimation, i.e., maximum likelihood estimators (M
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/shokoohi/fmrs
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fmrs/overview
+- **Total Downloads**: 16.4K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

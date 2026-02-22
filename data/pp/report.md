@@ -12,7 +12,7 @@ The provided text is a container build log and does not contain help information
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pp/overview
-- **Total Downloads**: 34.1K
+- **Total Downloads**: 34.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/hrydgard/ppsspp
 - **Stars**: N/A

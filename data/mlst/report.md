@@ -12,7 +12,7 @@ Scan contig files against PubMLST schemes for multi-locus sequence typing
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mlst/overview
-- **Total Downloads**: 223.9K
+- **Total Downloads**: 224.3K
 - **Last updated**: 2026-01-02
 - **GitHub**: https://github.com/tseemann/mlst
 - **Stars**: N/A

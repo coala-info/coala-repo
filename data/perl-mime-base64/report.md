@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-mime-base64 not found in Singularity image. The image
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-mime-base64/overview
-- **Total Downloads**: 470.9K
+- **Total Downloads**: 471.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

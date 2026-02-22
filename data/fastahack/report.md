@@ -12,7 +12,7 @@ No description available in the provided text.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastahack/overview
-- **Total Downloads**: 22.6K
+- **Total Downloads**: 22.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ekg/fastahack
 - **Stars**: N/A

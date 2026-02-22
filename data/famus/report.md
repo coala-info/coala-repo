@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/famus/overview
-- **Total Downloads**: 128
+- **Total Downloads**: 132
 - **Last updated**: 2026-02-03
 - **GitHub**: https://github.com/burstein-lab/famus
 - **Stars**: N/A

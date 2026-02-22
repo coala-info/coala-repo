@@ -12,7 +12,7 @@ A tool to retrieve dependency information for Python packages.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/depinfo/overview
-- **Total Downloads**: 52.2K
+- **Total Downloads**: 52.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/departement-info-cem/depinfo-gabarit
 - **Stars**: N/A

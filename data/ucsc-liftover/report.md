@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-liftover/overview
-- **Total Downloads**: 199.3K
+- **Total Downloads**: 199.4K
 - **Last updated**: 2025-06-22
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

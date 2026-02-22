@@ -13,4 +13,8 @@ The package also provides functions to calculate and visualise MS2 fragment ions
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/PSM
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-psmatch/overview
+- **Total Downloads**: 6.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

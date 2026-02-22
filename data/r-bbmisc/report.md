@@ -4,7 +4,7 @@ Miscellaneous helper functions for and from B. Bischl and
     some other guys, mainly for package development.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bbmisc
+- **Conda**: https://anaconda.org/channels/r/packages/r-bbmisc/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/BBmisc/index.html
 - **Home (project)**: https://github.com/berndbischl/BBmisc
 - **Package**: BBmisc
@@ -12,4 +12,8 @@ Miscellaneous helper functions for and from B. Bischl and
 - **Author**: Bernd Bischl [aut, cre], Michel Lang [aut], Jakob Bossek [aut], Daniel Horn [aut], Jakob Richter [aut], Dirk Surmann [aut]
 - **Maintainer**: Bernd Bischl <bernd_bischl at gmx.net>
 - **Skill**: generated
+- **Total Downloads**: 673
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/berndbischl/BBmisc
+- **Stars**: N/A
 

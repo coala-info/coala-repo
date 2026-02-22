@@ -12,7 +12,7 @@ A command-line tool for interacting with the Cromwell workflow engine.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cromwell-tools/overview
-- **Total Downloads**: 22.0K
+- **Total Downloads**: 22.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/broadinstitute/cromwell-tools
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'fc'. It is an 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fc/overview
-- **Total Downloads**: 834
+- **Total Downloads**: 836
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/qdu-bioinfo/fc-virus
 - **Stars**: N/A

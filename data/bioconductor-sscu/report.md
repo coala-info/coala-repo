@@ -11,6 +11,10 @@ The package calculates the indexes for selective stength in codon usage in bacte
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-sscu/overview
+- **Total Downloads**: 40.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

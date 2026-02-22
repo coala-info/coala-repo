@@ -12,7 +12,7 @@ The blobology module of metaWRAP, used for visualizing the GC content and abunda
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-blobology/overview
-- **Total Downloads**: 43
+- **Total Downloads**: 44
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A

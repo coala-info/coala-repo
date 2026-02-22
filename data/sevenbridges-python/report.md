@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sevenbridges-python/overview
-- **Total Downloads**: 216.1K
+- **Total Downloads**: 216.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sbg/sevenbridges-python
 - **Stars**: N/A

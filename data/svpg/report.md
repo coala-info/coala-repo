@@ -12,7 +12,7 @@ Structural Variant Phenotype Graph (SVPG) - Tool for prioritizing structural var
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/svpg/overview
-- **Total Downloads**: 284
+- **Total Downloads**: 288
 - **Last updated**: 2026-01-20
 - **GitHub**: https://github.com/coopsor/SVPG
 - **Stars**: N/A

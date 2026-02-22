@@ -15,7 +15,7 @@ Ansible is an IT automation tool that can configure systems, deploy software, an
 - **Total Downloads**: 9.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ansible/ansible
-- **Stars**: N/A
+- **Stars**: 68124
 ### Original Help Text
 ```text
 Usage: ansible <host-pattern> [options]

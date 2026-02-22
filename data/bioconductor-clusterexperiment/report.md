@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/epurdom/clusterExperiment
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-clusterexperiment/overview
+- **Total Downloads**: 38.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

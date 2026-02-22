@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/thermorawfileparser/overview
-- **Total Downloads**: 88.1K
+- **Total Downloads**: 88.2K
 - **Last updated**: 2026-02-20
 - **GitHub**: https://github.com/compomics/ThermoRawFileParser
 - **Stars**: N/A

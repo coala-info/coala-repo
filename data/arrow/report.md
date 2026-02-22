@@ -15,7 +15,7 @@ The provided text does not contain help information or a description for the too
 - **Total Downloads**: 17.3K
 - **Last updated**: 2025-11-03
 - **GitHub**: https://github.com/apache/arrow
-- **Stars**: N/A
+- **Stars**: 16529
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

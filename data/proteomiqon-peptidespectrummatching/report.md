@@ -15,7 +15,7 @@ A tool for peptide spectrum matching. (Note: The provided text is a container bu
 - **Total Downloads**: 14.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CSBiology/ProteomIQon
-- **Stars**: N/A
+- **Stars**: 14
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

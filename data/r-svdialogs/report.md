@@ -7,7 +7,7 @@ Quickly construct standard dialog boxes for your GUI, including
   interactive elements is also provided as fallback solution.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-svdialogs
+- **Conda**: https://anaconda.org/channels/r/packages/r-svdialogs/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/svDialogs/index.html
 - **Home (project)**: https://github.com/SciViews/svDialogs, https://www.sciviews.org/svDialogs/
 - **Package**: svDialogs
@@ -15,4 +15,8 @@ Quickly construct standard dialog boxes for your GUI, including
 - **Author**: Philippe Grosjean [aut, cre], Paul Hibbins [ctb]
 - **Maintainer**: Philippe Grosjean <phgrosjean at sciviews.org>
 - **Skill**: generated
+- **Total Downloads**: 35
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/SciViews/svDialogs
+- **Stars**: N/A
 

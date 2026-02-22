@@ -12,7 +12,7 @@ Interactive assembly and analysis of RAD-seq data (Note: The provided text is a 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ipyrad/overview
-- **Total Downloads**: 195.8K
+- **Total Downloads**: 196.0K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/dereneaton/ipyrad
 - **Stars**: N/A

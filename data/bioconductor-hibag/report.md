@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/zhengxwen/HIBAG
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hibag/overview
+- **Total Downloads**: 51.5K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

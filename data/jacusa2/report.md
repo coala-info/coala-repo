@@ -12,7 +12,7 @@ JACUSA2 (Joint Analysis of Cleavage and Under-Sequencing Analysis). Note: The pr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jacusa2/overview
-- **Total Downloads**: 476
+- **Total Downloads**: 480
 - **Last updated**: 2025-11-29
 - **GitHub**: https://github.com/dieterich-lab/JACUSA2
 - **Stars**: N/A

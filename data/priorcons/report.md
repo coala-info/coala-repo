@@ -12,7 +12,7 @@ Prioritizing conserved elements (Note: The provided text is a container build er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/priorcons/overview
-- **Total Downloads**: 50
+- **Total Downloads**: 51
 - **Last updated**: 2025-10-27
 - **GitHub**: https://github.com/GERMAN00VP/priorcons
 - **Stars**: N/A

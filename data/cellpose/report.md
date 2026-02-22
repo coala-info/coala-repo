@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/cellpose/overview
-- **Total Downloads**: 39.2K
+- **Total Downloads**: 39.3K
 - **Last updated**: 2026-01-09
 - **GitHub**: https://github.com/MouseLand/cellpose
 - **Stars**: N/A

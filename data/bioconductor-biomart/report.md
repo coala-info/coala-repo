@@ -13,4 +13,8 @@ The package enables retrieval of large amounts of data in a uniform way without 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Huber-group-EMBL/biomaRt
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-biomart/overview
+- **Total Downloads**: 350.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A tool for classifying metagenomic bins. (Note: The provided text was an error l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-classify-bins/overview
-- **Total Downloads**: 46
+- **Total Downloads**: 47
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A

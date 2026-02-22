@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-file-sharedir-install not found in Singularity image.
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-sharedir-install/overview
-- **Total Downloads**: 72.9K
+- **Total Downloads**: 73.2K
 - **Last updated**: 2025-06-13
 - **GitHub**: https://github.com/Perl-Toolchain-Gang/File-ShareDir-Install
 - **Stars**: N/A

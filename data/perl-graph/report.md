@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-graph not found in Singularity image. The image may n
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-graph/overview
-- **Total Downloads**: 211.3K
+- **Total Downloads**: 211.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

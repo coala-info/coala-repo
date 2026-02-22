@@ -12,7 +12,7 @@ A tool for nanopore sequencing simulation. (Note: The provided help text contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanopore_simulation/overview
-- **Total Downloads**: 7.3K
+- **Total Downloads**: 7.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/crohrandt/nanopore_simulation
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for single-cell RNA simulation (Note: The provided text contains system e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/scrnasim-toolz/overview
-- **Total Downloads**: 2.6K
+- **Total Downloads**: 2.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zavolanlab/scRNAsim-toolz
 - **Stars**: N/A

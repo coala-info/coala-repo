@@ -12,7 +12,7 @@ BioPerl procedural interface. (Note: The provided text is a system error log reg
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-procedural/overview
-- **Total Downloads**: 14.3K
+- **Total Downloads**: 14.4K
 - **Last updated**: 2025-08-20
 - **GitHub**: N/A
 - **Stars**: N/A

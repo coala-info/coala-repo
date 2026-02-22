@@ -12,7 +12,7 @@ Fetch a file using multiple connections in parallel.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-parafetch/overview
-- **Total Downloads**: 34.5K
+- **Total Downloads**: 34.6K
 - **Last updated**: 2025-06-28
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

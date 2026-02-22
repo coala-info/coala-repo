@@ -12,10 +12,10 @@ Validated, scalable, community-developed variant calling, RNA-seq and small RNA 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bcbio-nextgen/overview
-- **Total Downloads**: 409.5K
+- **Total Downloads**: 409.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bcbio/bcbio-nextgen
-- **Stars**: N/A
+- **Stars**: 1026
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

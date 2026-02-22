@@ -3,7 +3,7 @@
 Using simple input, this package creates plots of gene models. Users can create plots of alternatively spliced gene variants and the positions of mutations and other gene features.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-genemodel
+- **Conda**: https://anaconda.org/channels/r/packages/r-genemodel/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/genemodel/index.html
 - **Home (project)**: https://github.com/greymonroe/genemodel
 - **Package**: genemodel
@@ -11,4 +11,8 @@ Using simple input, this package creates plots of gene models. Users can create 
 - **Author**: J Grey Monroe [aut, cre]
 - **Maintainer**: J Grey Monroe <greymonroe at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 285
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/greymonroe/genemodel
+- **Stars**: N/A
 

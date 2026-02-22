@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions. It 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-encode-locale/overview
-- **Total Downloads**: 517.8K
+- **Total Downloads**: 518.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zszszszsz/.config
 - **Stars**: N/A

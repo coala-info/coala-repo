@@ -12,7 +12,7 @@ Portello is a tool for processing and analyzing genomic data (description based 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/portello/overview
-- **Total Downloads**: 305
+- **Total Downloads**: 310
 - **Last updated**: 2026-01-02
 - **GitHub**: https://github.com/PacificBiosciences/portello
 - **Stars**: N/A

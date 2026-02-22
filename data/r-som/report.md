@@ -3,7 +3,7 @@
 Self-Organizing Map (with application in gene clustering).</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-som
+- **Conda**: https://anaconda.org/channels/r/packages/r-som/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/som/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=som
 - **Package**: som
@@ -11,4 +11,8 @@ Self-Organizing Map (with application in gene clustering).</p>
 - **Author**: Jun Yan [aut, cre]
 - **Maintainer**: Jun Yan <jyan at stat.uconn.edu>
 - **Skill**: generated
+- **Total Downloads**: 395
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

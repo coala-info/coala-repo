@@ -12,7 +12,7 @@ pm4ngs is a tool for managing Next-Generation Sequencing (NGS) projects. (Note: 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pm4ngs/overview
-- **Total Downloads**: 50.7K
+- **Total Downloads**: 50.8K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/ncbi/pm4ngs
 - **Stars**: N/A

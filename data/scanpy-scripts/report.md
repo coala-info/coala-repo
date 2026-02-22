@@ -12,7 +12,7 @@ A collection of scripts for Scanpy, a scalable toolkit for analyzing single-cell
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/scanpy-scripts/overview
-- **Total Downloads**: 232.0K
+- **Total Downloads**: 232.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ebi-gene-expression-group/scanpy-scripts
 - **Stars**: N/A

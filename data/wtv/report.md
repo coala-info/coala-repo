@@ -12,7 +12,7 @@ A tool for visualizing or processing data (description not available in provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/wtv/overview
-- **Total Downloads**: 501
+- **Total Downloads**: 505
 - **Last updated**: 2025-07-07
 - **GitHub**: N/A
 - **Stars**: N/A

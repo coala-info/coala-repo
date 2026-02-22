@@ -12,7 +12,7 @@ The provided text does not contain help information for the 'bart' tool; it is a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bart/overview
-- **Total Downloads**: 2.1K
+- **Total Downloads**: 2.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tomdstanton/bart
 - **Stars**: N/A

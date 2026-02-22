@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ddprimer/overview
-- **Total Downloads**: 78
+- **Total Downloads**: 79
 - **Last updated**: 2025-08-12
 - **GitHub**: https://github.com/globuzzz2000/ddPrimer
 - **Stars**: N/A

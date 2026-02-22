@@ -3,7 +3,7 @@
 R package imputelcmd (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-imputelcmd
+- **Conda**: https://anaconda.org/channels/r/packages/r-imputelcmd/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/imputelcmd/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=imputeLCMD
 - **Package**: imputelcmd
@@ -11,4 +11,8 @@ R package imputelcmd (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

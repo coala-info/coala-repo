@@ -15,7 +15,7 @@ Pseudo-it: A tool for generating pseudo-reference genomes.
 - **Total Downloads**: 5.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/goodest-goodlab/pseudo-it
-- **Stars**: N/A
+- **Stars**: 9
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

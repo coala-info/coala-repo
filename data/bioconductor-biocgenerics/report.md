@@ -13,4 +13,8 @@ The package defines many S4 generic functions used in Bioconductor.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/BiocGenerics
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-biocgenerics/overview
+- **Total Downloads**: 1.8M
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

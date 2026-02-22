@@ -15,7 +15,7 @@ Rapid identification of Staphylococcus aureus agr type and agr locus variants fr
 - **Total Downloads**: 9.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/VishnuRaghuram94/AgrVATE
-- **Stars**: N/A
+- **Stars**: 10
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

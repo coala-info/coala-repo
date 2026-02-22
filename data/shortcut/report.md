@@ -12,7 +12,7 @@ The provided text appears to be a system log or error message from a container b
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/shortcut/overview
-- **Total Downloads**: 258
+- **Total Downloads**: 260
 - **Last updated**: 2025-06-25
 - **GitHub**: https://github.com/Aez35/ShortCut
 - **Stars**: N/A

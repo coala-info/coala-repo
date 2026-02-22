@@ -12,7 +12,7 @@ Multiple sequence alignment software (Note: The provided help text contains only
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/muscle/overview
-- **Total Downloads**: 526.5K
+- **Total Downloads**: 527.1K
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/rcedgar/muscle
 - **Stars**: N/A

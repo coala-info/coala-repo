@@ -12,7 +12,7 @@ The provided text does not contain help information for scanpy-cli; it is an err
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/scanpy-cli/overview
-- **Total Downloads**: 852
+- **Total Downloads**: 858
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nictru/scanpy-cli
 - **Stars**: N/A

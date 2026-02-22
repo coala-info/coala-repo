@@ -12,7 +12,7 @@ The Synapse Client provides an interface to Synapse, a collaborative platform fo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/synapseclient/overview
-- **Total Downloads**: 93.1K
+- **Total Downloads**: 93.2K
 - **Last updated**: 2026-01-14
 - **GitHub**: https://github.com/Sage-Bionetworks/synapsePythonClient
 - **Stars**: N/A

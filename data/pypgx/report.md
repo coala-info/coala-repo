@@ -12,10 +12,10 @@ A Python package for pharmacogenomics (PGx) research.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pypgx/overview
-- **Total Downloads**: 52.0K
+- **Total Downloads**: 52.1K
 - **Last updated**: 2026-01-04
 - **GitHub**: https://github.com/sbslee/pypgx
-- **Stars**: N/A
+- **Stars**: 84
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

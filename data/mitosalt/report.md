@@ -12,7 +12,7 @@ MitoSALT (Mitochondrial DNA Sequence Analysis and Long-read Toolkit) is a tool f
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mitosalt/overview
-- **Total Downloads**: 588
+- **Total Downloads**: 593
 - **Last updated**: 2026-02-04
 - **GitHub**: N/A
 - **Stars**: N/A

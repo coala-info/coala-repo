@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/campygstyper/overview
-- **Total Downloads**: 600
+- **Total Downloads**: 601
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/LanLab/campygstyper
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Sequence Generator - simulates the evolution of nucleotide or amino acid sequenc
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seq-gen/overview
-- **Total Downloads**: 12.2K
+- **Total Downloads**: 12.3K
 - **Last updated**: 2026-01-13
 - **GitHub**: https://github.com/rambaut/Seq-Gen
 - **Stars**: N/A

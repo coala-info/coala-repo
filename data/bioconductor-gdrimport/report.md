@@ -13,4 +13,8 @@ The package is a part of the gDR suite. It helps to prepare raw drug response da
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/gdrplatform/gDRimport
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gdrimport/overview
+- **Total Downloads**: 1.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/carveme/overview
-- **Total Downloads**: 3.4K
+- **Total Downloads**: 3.5K
 - **Last updated**: 2025-11-18
 - **GitHub**: https://github.com/cdanielmachado/carveme
 - **Stars**: N/A

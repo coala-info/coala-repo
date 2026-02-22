@@ -12,7 +12,7 @@ The provided text is a container engine log and does not contain the help docume
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyrle/overview
-- **Total Downloads**: 159.7K
+- **Total Downloads**: 159.8K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/endrebak/pyrle
 - **Stars**: N/A

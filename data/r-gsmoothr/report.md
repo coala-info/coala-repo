@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gsmoothr
+- **Conda**: https://anaconda.org/channels/r/packages/r-gsmoothr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gsmoothr/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=gsmoothr
 - **Package**: gsmoothr
@@ -11,4 +11,8 @@ N/A
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: not generated
+- **Total Downloads**: 118
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

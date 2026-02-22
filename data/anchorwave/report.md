@@ -15,7 +15,7 @@ Extract the longest CDS or exon sequences for each gene from a GFF/GTF file and 
 - **Total Downloads**: 17.1K
 - **Last updated**: 2025-05-07
 - **GitHub**: https://github.com/baoxingsong/AnchorWave
-- **Stars**: N/A
+- **Stars**: 185
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

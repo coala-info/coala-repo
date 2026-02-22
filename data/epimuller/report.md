@@ -12,7 +12,7 @@ epimuller
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/epimuller/overview
-- **Total Downloads**: 8.2K
+- **Total Downloads**: 8.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jennifer-bio/epimuller
 - **Stars**: N/A

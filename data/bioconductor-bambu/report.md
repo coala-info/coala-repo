@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/GoekeLab/bambu
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-bambu/overview
+- **Total Downloads**: 35.9K
+- **Last updated**: 2026-01-24
+- **Stars**: N/A
 

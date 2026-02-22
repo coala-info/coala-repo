@@ -15,7 +15,7 @@ The provided text does not contain help information or argument definitions for 
 - **Total Downloads**: 10.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dereneaton/pyrad
-- **Stars**: N/A
+- **Stars**: 27
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

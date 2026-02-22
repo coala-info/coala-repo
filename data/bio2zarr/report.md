@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bio2zarr/overview
-- **Total Downloads**: 468
+- **Total Downloads**: 472
 - **Last updated**: 2026-02-03
 - **GitHub**: https://github.com/sgkit-dev/bio2zarr
 - **Stars**: N/A

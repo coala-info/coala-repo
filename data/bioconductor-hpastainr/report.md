@@ -13,4 +13,8 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/tnieuwe/HPAstainR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hpastainr/overview
+- **Total Downloads**: 13.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for vp
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vpt-core/overview
-- **Total Downloads**: 543
+- **Total Downloads**: 546
 - **Last updated**: 2025-06-26
 - **GitHub**: https://github.com/Vizgen/vpt-core
 - **Stars**: N/A

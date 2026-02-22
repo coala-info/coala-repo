@@ -5,7 +5,7 @@ Cross-platform command-line argument parser written purely in R
     front-end and facilitates turning an R script into an executable script.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-argparser
+- **Conda**: https://anaconda.org/channels/r/packages/r-argparser/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/argparser/index.html
 - **Home (project)**: https://bitbucket.org/djhshih/argparser
 - **Package**: argparser
@@ -13,4 +13,8 @@ Cross-platform command-line argument parser written purely in R
 - **Author**: David J. H. Shih
 - **Maintainer**: David J. H. Shih <djh.shih at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 1.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

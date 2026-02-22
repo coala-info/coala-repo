@@ -12,7 +12,7 @@ A tool for visualizing genomic data (Note: The provided text contains container 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/soda-gallery/overview
-- **Total Downloads**: 14.1K
+- **Total Downloads**: 14.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/alexpreynolds/soda
 - **Stars**: N/A

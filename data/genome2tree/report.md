@@ -12,7 +12,7 @@ A tool for generating phylogenetic trees from genome sequences.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genome2tree/overview
-- **Total Downloads**: 181
+- **Total Downloads**: 183
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/RicoLeiser/Genome2Tree
 - **Stars**: N/A

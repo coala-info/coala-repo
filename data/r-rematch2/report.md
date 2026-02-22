@@ -4,7 +4,7 @@ Wrappers on 'regexpr' and 'gregexpr' to return the match
     results in tidy data frames.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rematch2
+- **Conda**: https://anaconda.org/channels/r/packages/r-rematch2/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/rematch2/index.html
 - **Home (project)**: https://github.com/r-lib/rematch2#readme
 - **Package**: rematch2
@@ -12,4 +12,8 @@ Wrappers on 'regexpr' and 'gregexpr' to return the match
 - **Author**: Gábor Csárdi [aut, cre], Matthew Lincoln [ctb]
 - **Maintainer**: Gábor Csárdi <csardi.gabor at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 23.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

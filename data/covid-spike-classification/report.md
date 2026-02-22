@@ -12,7 +12,7 @@ A tool for COVID spike protein classification (Note: The provided text is a cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/covid-spike-classification/overview
-- **Total Downloads**: 33.2K
+- **Total Downloads**: 33.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kblin/covid-spike-classification
 - **Stars**: N/A

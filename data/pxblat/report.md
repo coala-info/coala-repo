@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'pxblat'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pxblat/overview
-- **Total Downloads**: 29.1K
+- **Total Downloads**: 29.2K
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/cauliyang/pxblat
 - **Stars**: N/A

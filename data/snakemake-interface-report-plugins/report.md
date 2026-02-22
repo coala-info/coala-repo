@@ -12,7 +12,7 @@ Snakemake interface for report plugins
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-interface-report-plugins/overview
-- **Total Downloads**: 263.7K
+- **Total Downloads**: 264.0K
 - **Last updated**: 2025-11-03
 - **GitHub**: https://github.com/snakemake/snakemake-interface-report-plugins
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Categorizing and Analyzing Transcriptome Splicing (Note: The provided text is a 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cats-rb/overview
-- **Total Downloads**: 614
+- **Total Downloads**: 621
 - **Last updated**: 2025-09-27
 - **GitHub**: https://github.com/bodulic/CATS-rb
 - **Stars**: N/A

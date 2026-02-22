@@ -8,7 +8,7 @@ Provides a mechanism for chaining commands with a new
     "Ceci n'est pas un pipe."</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-magrittr
+- **Conda**: https://anaconda.org/channels/r/packages/r-magrittr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/magrittr/index.html
 - **Home (project)**: https://magrittr.tidyverse.org, https://github.com/tidyverse/magrittr
 - **Package**: magrittr
@@ -16,4 +16,8 @@ Provides a mechanism for chaining commands with a new
 - **Author**: Stefan Milton Bache [aut, cph] (Original author and creator of magrittr), Hadley Wickham [aut], Lionel Henry [cre], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Lionel Henry <lionel at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 799.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tidyverse/magrittr
+- **Stars**: N/A
 

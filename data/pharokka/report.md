@@ -12,7 +12,7 @@ A tool for rapid phage genome annotation and visualization. (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pharokka/overview
-- **Total Downloads**: 48.3K
+- **Total Downloads**: 48.4K
 - **Last updated**: 2026-02-18
 - **GitHub**: https://github.com/gbouras13/pharokka
 - **Stars**: N/A

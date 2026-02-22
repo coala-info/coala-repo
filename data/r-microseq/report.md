@@ -3,7 +3,7 @@
 Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-microseq
+- **Conda**: https://anaconda.org/channels/r/packages/r-microseq/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/microseq/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=microseq
 - **Package**: microseq
@@ -11,4 +11,8 @@ Basic functions for microbial sequence data analysis. The idea is to use generic
 - **Author**: Lars Snipen [aut, cre], Kristian Hovde Liland [aut]
 - **Maintainer**: Lars Snipen <lars.snipen at nmbu.no>
 - **Skill**: generated
+- **Total Downloads**: 357
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-locuszoomr
+- **Conda**: https://anaconda.org/channels/r/packages/r-locuszoomr/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/locuszoomr/index.html
 - **Home (project)**: https://github.com/myles-lewis/locuszoomr
 - **Package**: locuszoomr
@@ -11,4 +11,8 @@ N/A
 - **Author**: Myles Lewis [aut, cre]
 - **Maintainer**: Myles Lewis <myles.lewis at qmul.ac.uk>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/myles-lewis/locuszoomr
+- **Stars**: N/A
 

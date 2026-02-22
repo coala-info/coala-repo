@@ -17,6 +17,11 @@ Print or check MD5 (128-bit) checksums.
 - **Homepage**: https://www.gnu.org/software/coreutils/
 - **Validation**: PASS
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/md5sum/overview
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 ### Original Help Text
 ```text
 Usage: /usr/bin/md5sum [OPTION]... [FILE]...

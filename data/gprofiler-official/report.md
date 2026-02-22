@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool, but rather sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gprofiler-official/overview
-- **Total Downloads**: 31.0K
+- **Total Downloads**: 31.1K
 - **Last updated**: 2025-05-07
 - **GitHub**: N/A
 - **Stars**: N/A

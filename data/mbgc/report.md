@@ -12,8 +12,8 @@ The provided text does not contain help information for the tool 'mbgc'. It cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mbgc/overview
-- **Total Downloads**: 8.8K
-- **Last updated**: 2025-12-07
+- **Total Downloads**: 8.9K
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/kowallus/mbgc
 - **Stars**: N/A
 ### Original Help Text

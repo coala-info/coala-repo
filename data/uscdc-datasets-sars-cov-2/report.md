@@ -12,7 +12,7 @@ A tool for handling US CDC SARS-CoV-2 datasets. Note: The provided text contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/uscdc-datasets-sars-cov-2/overview
-- **Total Downloads**: 17.1K
+- **Total Downloads**: 17.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CDCgov/datasets-sars-cov-2
 - **Stars**: N/A

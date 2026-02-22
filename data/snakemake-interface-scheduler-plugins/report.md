@@ -12,7 +12,7 @@ Interface for Snakemake scheduler plugins. (Note: The provided text appears to b
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-interface-scheduler-plugins/overview
-- **Total Downloads**: 63.8K
+- **Total Downloads**: 64.0K
 - **Last updated**: 2025-10-23
 - **GitHub**: https://github.com/snakemake/snakemake-interface-scheduler-plugins
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for sequence alignment (Note: The provided input text contains system err
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/maxalign-rs/overview
-- **Total Downloads**: 416
+- **Total Downloads**: 420
 - **Last updated**: 2026-01-03
 - **GitHub**: https://github.com/apcamargo/maxalign-rs
 - **Stars**: N/A

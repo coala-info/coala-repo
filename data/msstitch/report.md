@@ -12,7 +12,7 @@ msstitch: a proteomics tool for MS proteomics data processing.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/msstitch/overview
-- **Total Downloads**: 124.7K
+- **Total Downloads**: 124.8K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/lehtiolab/msstitch
 - **Stars**: N/A

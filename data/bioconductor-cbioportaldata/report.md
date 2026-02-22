@@ -13,4 +13,8 @@ The package can provide data in either tabular format or with MultiAssayExperime
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/cBioPortalData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cbioportaldata/overview
+- **Total Downloads**: 20.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ ResFinder identifies acquired antimicrobial resistance genes in total or partial
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/resfinder/overview
-- **Total Downloads**: 10.2K
+- **Total Downloads**: 10.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

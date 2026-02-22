@@ -13,4 +13,8 @@ The package contains methods to visualise the expression profile of genes from a
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kevinrue/GOexpress
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-goexpress/overview
+- **Total Downloads**: 25.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

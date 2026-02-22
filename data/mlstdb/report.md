@@ -12,7 +12,7 @@ The provided text does not contain help information; it is an error log indicati
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mlstdb/overview
-- **Total Downloads**: 847
+- **Total Downloads**: 856
 - **Last updated**: 2026-01-06
 - **GitHub**: https://github.com/himal2007/mlstdb
 - **Stars**: N/A

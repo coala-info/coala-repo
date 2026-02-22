@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/girke-lab/eiR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-eir/overview
+- **Total Downloads**: 27.3K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

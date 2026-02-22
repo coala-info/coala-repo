@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/AnVILBase
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-anvilbase/overview
+- **Total Downloads**: 376
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

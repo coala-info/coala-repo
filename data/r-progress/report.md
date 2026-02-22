@@ -7,7 +7,7 @@ Configurable Progress bars, they may include percentage,
     with or without 'Rcpp'.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-progress
+- **Conda**: https://anaconda.org/channels/r/packages/r-progress/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/progress/index.html
 - **Home (project)**: https://github.com/r-lib/progress#readme
 - **Package**: progress
@@ -15,4 +15,8 @@ Configurable Progress bars, they may include percentage,
 - **Author**: Gábor Csárdi [aut, cre], Rich FitzJohn [aut], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Gábor Csárdi <csardi.gabor at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 97.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

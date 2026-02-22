@@ -12,7 +12,7 @@ A tool for working with Workflow Description Language (WDL) files, including syn
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/womtool/overview
-- **Total Downloads**: 203.8K
+- **Total Downloads**: 203.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -6,7 +6,7 @@ Several utility functions for the book entitled
 	data and some demographic analysis related functions.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fmsb
+- **Conda**: https://anaconda.org/channels/r/packages/r-fmsb/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fmsb/index.html
 - **Home (project)**: http://minato.sip21c.org/msb/
 - **Package**: fmsb
@@ -14,4 +14,8 @@ Several utility functions for the book entitled
 - **Author**: Minato Nakazawa
 - **Maintainer**: Minato Nakazawa <minatonakazawa at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 328
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

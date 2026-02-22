@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'curves'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/curves/overview
-- **Total Downloads**: 14.8K
+- **Total Downloads**: 14.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

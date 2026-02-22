@@ -12,7 +12,7 @@ The provided text does not contain help documentation for the tool. It contains 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fast2q/overview
-- **Total Downloads**: 915
+- **Total Downloads**: 921
 - **Last updated**: 2025-05-07
 - **GitHub**: https://github.com/afombravo/2FAST2Q
 - **Stars**: N/A

@@ -3,7 +3,7 @@
 Trimmed k-means clustering. The method is described in Cuesta-Albertos et al.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-trimcluster
+- **Conda**: https://anaconda.org/channels/r/packages/r-trimcluster/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/trimcluster/index.html
 - **Home (project)**: http://www.homepages.ucl.ac.uk/~ucakche/
 - **Package**: trimcluster
@@ -11,4 +11,8 @@ Trimmed k-means clustering. The method is described in Cuesta-Albertos et al.
 - **Author**: Christian Hennig [aut], Valentin Todorov [cre]
 - **Maintainer**: Valentin Todorov <valentin at todorov.at>
 - **Skill**: generated
+- **Total Downloads**: 292
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

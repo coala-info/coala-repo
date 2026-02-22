@@ -12,7 +12,7 @@ FAIL to generate CWL: blast-legacy not found in Singularity image. The image may
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/blast-legacy/overview
-- **Total Downloads**: 175.1K
+- **Total Downloads**: 175.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

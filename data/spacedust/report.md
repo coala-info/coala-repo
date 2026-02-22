@@ -12,7 +12,7 @@ Space-efficient k-mer counting and sequence analysis tool.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spacedust/overview
-- **Total Downloads**: 613
+- **Total Downloads**: 615
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/soedinglab/spacedust
 - **Stars**: N/A

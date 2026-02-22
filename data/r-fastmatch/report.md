@@ -7,7 +7,7 @@ Package providing a fast match() replacement for cases
 	table in memory.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fastmatch
+- **Conda**: https://anaconda.org/channels/r/packages/r-fastmatch/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fastmatch/index.html
 - **Home (project)**: http://www.rforge.net/fastmatch
 - **Package**: fastmatch
@@ -15,4 +15,8 @@ Package providing a fast match() replacement for cases
 - **Author**: Simon Urbanek [aut, cre, cph] (https://urbanek.nz)
 - **Maintainer**: Simon Urbanek <Simon.Urbanek at r-project.org>
 - **Skill**: generated
+- **Total Downloads**: 3.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for gq
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gqlib/overview
-- **Total Downloads**: 416
+- **Total Downloads**: 418
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cschu/gqlib
 - **Stars**: N/A

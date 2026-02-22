@@ -12,7 +12,7 @@ Convert protein PSL alignments to RNA coordinates.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-pslprottornacoords/overview
-- **Total Downloads**: 380
+- **Total Downloads**: 381
 - **Last updated**: 2025-06-26
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

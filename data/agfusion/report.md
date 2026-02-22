@@ -15,7 +15,7 @@ AGFusion is a tool for visualizing and annotating gene fusions. (Note: The provi
 - **Total Downloads**: 28.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/murphycj/AGFusion
-- **Stars**: N/A
+- **Stars**: 65
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

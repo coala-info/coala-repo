@@ -12,7 +12,7 @@ The provided text is a log of a failed container build process (Singularity/Appt
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pycistopic/overview
-- **Total Downloads**: 55
+- **Total Downloads**: 57
 - **Last updated**: 2025-12-17
 - **GitHub**: https://github.com/aertslab/pycistopic
 - **Stars**: N/A

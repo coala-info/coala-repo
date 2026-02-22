@@ -8,7 +8,7 @@ Usability wrapper around snow for easier development of
         tool sfCluster, but can also used without it.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-snowfall
+- **Conda**: https://anaconda.org/channels/r/packages/r-snowfall/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/snowfall/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=snowfall
 - **Package**: snowfall
@@ -16,4 +16,8 @@ Usability wrapper around snow for easier development of
 - **Author**: Jochen Knaus
 - **Maintainer**: Jochen Knaus <jo at imbi.uni-freiburg.de>
 - **Skill**: generated
+- **Total Downloads**: 52
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

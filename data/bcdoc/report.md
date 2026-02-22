@@ -12,10 +12,10 @@ A tool for generating documentation for BioContainers.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/bcdoc/overview
-- **Total Downloads**: 80.4K
+- **Total Downloads**: 80.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/boto/bcdoc
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

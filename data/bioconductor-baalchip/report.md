@@ -11,6 +11,10 @@ The package offers functions to process multiple ChIP-seq BAM files and detect a
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-baalchip/overview
+- **Total Downloads**: 37.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

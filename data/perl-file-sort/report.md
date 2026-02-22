@@ -12,7 +12,7 @@ The provided text does not contain help information as the executable was not fo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-sort/overview
-- **Total Downloads**: 296.6K
+- **Total Downloads**: 296.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

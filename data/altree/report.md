@@ -15,7 +15,7 @@ Perform association tests and localization of susceptibility loci using phylogen
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/ALTree/bigfloat
-- **Stars**: N/A
+- **Stars**: 26
 ### Original Help Text
 ```text
 Usage:

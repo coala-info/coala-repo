@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Total Downloads**: 541
 - **Last updated**: 2025-08-10
 - **GitHub**: https://github.com/psipred/psipred
-- **Stars**: N/A
+- **Stars**: 58
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

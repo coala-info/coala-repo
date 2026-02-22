@@ -7,7 +7,7 @@ Solve a system of nonlinear equations using a Broyden or a Newton method
              a singular or ill-conditioned Jacobian.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-nleqslv
+- **Conda**: https://anaconda.org/channels/r/packages/r-nleqslv/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/nleqslv/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=nleqslv
 - **Package**: nleqslv
@@ -15,4 +15,8 @@ Solve a system of nonlinear equations using a Broyden or a Newton method
 - **Author**: Berend Hasselman
 - **Maintainer**: Berend Hasselman <bhh at xs4all.nl>
 - **Skill**: generated
+- **Total Downloads**: 1.1K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

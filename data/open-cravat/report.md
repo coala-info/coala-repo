@@ -12,7 +12,7 @@ The provided text does not contain help information; it is a system error log in
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/open-cravat/overview
-- **Total Downloads**: 30.9K
+- **Total Downloads**: 31.0K
 - **Last updated**: 2025-09-13
 - **GitHub**: https://github.com/KarchinLab/open-cravat
 - **Stars**: N/A

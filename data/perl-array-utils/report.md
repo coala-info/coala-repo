@@ -12,7 +12,7 @@ The provided text is an error log indicating that the executable 'perl-array-uti
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-array-utils/overview
-- **Total Downloads**: 34.8K
+- **Total Downloads**: 34.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/patch-orphan/operator-util-pm5
 - **Stars**: N/A

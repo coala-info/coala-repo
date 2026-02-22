@@ -12,7 +12,7 @@ BiG-SCAPE (Biosynthetic Gene Cluster Similarity Clustering and Alignment Engine)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bigscape/overview
-- **Total Downloads**: 11.9K
+- **Total Downloads**: 12.0K
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/medema-group/BiG-SCAPE
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text appears to be a container build error log rather than CLI help
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/wgdi/overview
-- **Total Downloads**: 46.7K
+- **Total Downloads**: 46.8K
 - **Last updated**: 2025-11-07
 - **GitHub**: https://github.com/SunPengChuan/wgdi
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package focuses on the preprocessing and quality control part. The framework
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/UCLouvain-CBIO/CytoPipeline
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cytopipeline/overview
+- **Total Downloads**: 3.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -13,4 +13,8 @@ The package provides the ability to create a skeleton of a Hub style package tha
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/HubPub
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hubpub/overview
+- **Total Downloads**: 8.9K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

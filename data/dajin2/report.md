@@ -12,7 +12,7 @@ DAJIN2: A tool for Nanopore sequencing analysis of genome editing (Note: The pro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dajin2/overview
-- **Total Downloads**: 21.7K
+- **Total Downloads**: 21.8K
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/akikuno/DAJIN2
 - **Stars**: N/A

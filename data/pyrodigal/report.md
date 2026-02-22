@@ -12,10 +12,10 @@ The provided text does not contain help information for the tool 'pyrodigal'. It
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyrodigal/overview
-- **Total Downloads**: 195.9K
+- **Total Downloads**: 196.0K
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/althonos/pyrodigal
-- **Stars**: N/A
+- **Stars**: 178
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ A tool for extracting spacers from CRISPR arrays (Note: The provided text contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spacerextractor/overview
-- **Total Downloads**: 348
+- **Total Downloads**: 352
 - **Last updated**: 2025-12-30
 - **GitHub**: N/A
 - **Stars**: N/A

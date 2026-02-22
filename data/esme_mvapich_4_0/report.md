@@ -12,7 +12,7 @@ ESME (Energy Exascale Earth System Model) component with NetCDF-Fortran and MVAP
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/esme_mvapich_4_0/overview
-- **Total Downloads**: 587
+- **Total Downloads**: 589
 - **Last updated**: 2025-08-05
 - **GitHub**: https://github.com/j34ni/bioconda-recipes
 - **Stars**: N/A

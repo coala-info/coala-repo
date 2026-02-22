@@ -12,7 +12,7 @@ The provided text does not contain help information; it is an error log indicati
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-module-load-conditional/overview
-- **Total Downloads**: 149.5K
+- **Total Downloads**: 149.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ RDFExtras is a collection of packages providing extra features for RDFLib, such 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rdfextras/overview
-- **Total Downloads**: 6.6K
+- **Total Downloads**: 6.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RDFLib/rdfextras
 - **Stars**: N/A

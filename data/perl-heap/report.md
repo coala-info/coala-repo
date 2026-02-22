@@ -12,7 +12,7 @@ The tool 'perl-heap' could not be executed as it was not found in the system pat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-heap/overview
-- **Total Downloads**: 23.5K
+- **Total Downloads**: 23.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

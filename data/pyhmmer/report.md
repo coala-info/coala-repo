@@ -12,7 +12,7 @@ The provided text does not contain help information for pyhmmer; it is an error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyhmmer/overview
-- **Total Downloads**: 265.4K
+- **Total Downloads**: 265.6K
 - **Last updated**: 2026-01-23
 - **GitHub**: https://github.com/althonos/pyhmmer
 - **Stars**: N/A

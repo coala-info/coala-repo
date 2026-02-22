@@ -12,7 +12,7 @@ The provided text does not contain help information for epa-ng; it is an error l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/epa-ng/overview
-- **Total Downloads**: 72.0K
+- **Total Downloads**: 72.1K
 - **Last updated**: 2025-12-04
 - **GitHub**: https://github.com/Pbdas/epa-ng
 - **Stars**: N/A

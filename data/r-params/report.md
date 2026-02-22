@@ -5,7 +5,7 @@ An interface to simplify organizing parameters used in a package,
     alternative to options().</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-params
+- **Conda**: https://anaconda.org/channels/r/packages/r-params/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/params/index.html
 - **Home (project)**: https://github.com/sahilseth/params
 - **Package**: params
@@ -13,4 +13,8 @@ An interface to simplify organizing parameters used in a package,
 - **Author**: Sahil Seth [aut, cre], Yihui Xie [ctb] (kable from knitr R/table.R)
 - **Maintainer**: Sahil Seth <me at sahilseth.com>
 - **Skill**: generated
+- **Total Downloads**: 282
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/sahilseth/params
+- **Stars**: N/A
 

@@ -13,4 +13,8 @@ the package provides some diagnostic tools for both checking the quality of the 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/UCLouvain-CBIO/CytoMDS
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cytomds/overview
+- **Total Downloads**: 448
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

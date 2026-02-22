@@ -12,7 +12,7 @@ FAIL to generate CWL: pass not found in Singularity image. The image may not pro
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pass/overview
-- **Total Downloads**: 956
+- **Total Downloads**: 957
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bcgsc/PASS
 - **Stars**: N/A

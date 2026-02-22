@@ -12,7 +12,7 @@ FAIL to generate CWL: pangbank-api not found in Singularity image. The image may
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pangbank-api/overview
-- **Total Downloads**: 43
+- **Total Downloads**: 44
 - **Last updated**: 2025-11-21
 - **GitHub**: https://github.com/labgem/pangbank-api
 - **Stars**: N/A

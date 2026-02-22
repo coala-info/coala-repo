@@ -12,7 +12,7 @@ Convert a GTF file to a genePred file.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-gtftogenepred/overview
-- **Total Downloads**: 128.2K
+- **Total Downloads**: 128.3K
 - **Last updated**: 2025-06-23
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

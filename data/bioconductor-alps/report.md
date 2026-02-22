@@ -13,4 +13,8 @@ The package provides analysis and publication quality visualization routines for
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/itsvenu/ALPS
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-alps/overview
+- **Total Downloads**: 11.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

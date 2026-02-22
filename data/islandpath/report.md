@@ -12,7 +12,7 @@ IslandPath-DIMOB is a tool for predicting genomic islands in bacterial and archa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/islandpath/overview
-- **Total Downloads**: 16.8K
+- **Total Downloads**: 16.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -15,7 +15,7 @@ The provided text does not contain help information for the 'qhull' command. It 
 - **Total Downloads**: 2.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/qhull/qhull
-- **Stars**: N/A
+- **Stars**: 808
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

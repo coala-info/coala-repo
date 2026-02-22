@@ -12,7 +12,7 @@ Eagle2 is a software tool for high-accuracy genetic haplotype phasing. (Note: Th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/eagle2/overview
-- **Total Downloads**: 657
+- **Total Downloads**: 659
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/poruloh/Eagle
 - **Stars**: N/A

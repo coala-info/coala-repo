@@ -3,7 +3,7 @@
 R package floral (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-floral
+- **Conda**: https://anaconda.org/channels/r/packages/r-floral/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/floral/index.html
 - **Home (project)**: https://vdblab.github.io/FLORAL/
 - **Package**: floral
@@ -11,4 +11,8 @@ R package floral (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

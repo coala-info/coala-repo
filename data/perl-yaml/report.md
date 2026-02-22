@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-yaml not found in Singularity image. The image may no
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-yaml/overview
-- **Total Downloads**: 464.8K
+- **Total Downloads**: 465.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ingydotnet/yaml-pm
 - **Stars**: N/A

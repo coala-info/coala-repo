@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nextclade/overview
-- **Total Downloads**: 193.4K
+- **Total Downloads**: 193.5K
 - **Last updated**: 2025-12-03
 - **GitHub**: https://github.com/nextstrain/nextclade
 - **Stars**: N/A

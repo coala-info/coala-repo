@@ -10,7 +10,7 @@ Includes HTML function and methods to write in an HTML
         allows to parse H...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-r2html
+- **Conda**: https://anaconda.org/channels/r/packages/r-r2html/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/R2HTML/index.html
 - **Home (project)**: https://github.com/nalimilan/R2HTML
 - **Package**: R2HTML
@@ -18,4 +18,8 @@ Includes HTML function and methods to write in an HTML
 - **Author**: Eric Lecoutre [aut], Milan Bouchet-Valat [cre, ctb], Thomas Friedrichsmeier [ctb]
 - **Maintainer**: Milan Bouchet-Valat <nalimilan at club.fr>
 - **Skill**: generated
+- **Total Downloads**: 399
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/nalimilan/R2HTML
+- **Stars**: N/A
 

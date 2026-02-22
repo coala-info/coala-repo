@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/targetdb/overview
-- **Total Downloads**: 6.3K
+- **Total Downloads**: 6.4K
 - **Last updated**: 2025-05-30
 - **GitHub**: https://github.com/sdecesco/targetDB
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Junction-centric Alternative Splicing Tool (Note: The provided text contains sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jcast/overview
-- **Total Downloads**: 21.4K
+- **Total Downloads**: 21.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ed-lau/jcast
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for cascade registration (Note: The provided help text contains only syst
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cascade-reg/overview
-- **Total Downloads**: 71
+- **Total Downloads**: 72
 - **Last updated**: 2025-09-05
 - **GitHub**: https://github.com/gao-lab/CASCADE
 - **Stars**: N/A

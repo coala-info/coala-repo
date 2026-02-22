@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/delve-bio/overview
-- **Total Downloads**: 887
+- **Total Downloads**: 888
 - **Last updated**: 2025-09-13
 - **GitHub**: https://github.com/berndbohmeier/delve
 - **Stars**: N/A

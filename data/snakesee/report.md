@@ -12,7 +12,7 @@ A tool for visualizing Snakemake workflows (Note: The provided text contains con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakesee/overview
-- **Total Downloads**: 140
+- **Total Downloads**: 147
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/nh13/snakesee
 - **Stars**: N/A

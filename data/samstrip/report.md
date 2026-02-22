@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/samstrip/overview
-- **Total Downloads**: 644
+- **Total Downloads**: 645
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jakobnissen/samstrip
 - **Stars**: N/A

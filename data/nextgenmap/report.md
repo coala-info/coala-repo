@@ -12,7 +12,7 @@ The provided text does not contain help information for nextgenmap; it contains 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nextgenmap/overview
-- **Total Downloads**: 43.0K
+- **Total Downloads**: 43.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/philres/NextGenMap
 - **Stars**: N/A

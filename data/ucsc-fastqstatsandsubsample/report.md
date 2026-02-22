@@ -12,7 +12,7 @@ A tool for calculating statistics and subsampling FASTQ files. (Note: The provid
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-fastqstatsandsubsample/overview
-- **Total Downloads**: 18.4K
+- **Total Downloads**: 18.5K
 - **Last updated**: 2025-06-29
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

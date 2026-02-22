@@ -12,7 +12,7 @@ The provided text is an error log from a container execution environment (Singul
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/treekin/overview
-- **Total Downloads**: 35.4K
+- **Total Downloads**: 35.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

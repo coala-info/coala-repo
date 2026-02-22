@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bedops/overview
-- **Total Downloads**: 229.1K
+- **Total Downloads**: 229.2K
 - **Last updated**: 2025-08-05
 - **GitHub**: N/A
 - **Stars**: N/A

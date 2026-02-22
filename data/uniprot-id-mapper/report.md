@@ -12,7 +12,7 @@ A tool for mapping UniProt identifiers. (Note: The provided text contains system
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/uniprot-id-mapper/overview
-- **Total Downloads**: 288
+- **Total Downloads**: 290
 - **Last updated**: 2025-06-02
 - **GitHub**: https://github.com/David-Araripe/UniProtMapper
 - **Stars**: N/A

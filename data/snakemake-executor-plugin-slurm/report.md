@@ -12,7 +12,7 @@ Snakemake executor plugin for SLURM. Note: The provided text appears to be a con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-executor-plugin-slurm/overview
-- **Total Downloads**: 55.6K
+- **Total Downloads**: 55.8K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/snakemake/snakemake-executor-plugin-slurm
 - **Stars**: N/A

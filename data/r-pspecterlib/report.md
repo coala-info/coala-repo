@@ -3,7 +3,7 @@
 R package pspecterlib (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-pspecterlib
+- **Conda**: https://anaconda.org/channels/r/packages/r-pspecterlib/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/pspecterlib/index.html
 - **Home (project)**: https://github.com/EMSL-Computing/pspecterlib
 - **Package**: pspecterlib
@@ -11,4 +11,8 @@ R package pspecterlib (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/EMSL-Computing/pspecterlib
+- **Stars**: N/A
 

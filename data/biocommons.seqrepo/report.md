@@ -12,7 +12,7 @@ FAIL to generate CWL: biocommons.seqrepo not found in Singularity image. The ima
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biocommons.seqrepo/overview
-- **Total Downloads**: 13.9K
+- **Total Downloads**: 14.0K
 - **Last updated**: 2025-07-15
 - **GitHub**: https://github.com/biocommons/biocommons.seqrepo
 - **Stars**: N/A

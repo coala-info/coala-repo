@@ -11,6 +11,10 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-snplocs.hsapiens.dbsnp151.grch38/overview
+- **Total Downloads**: 4.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

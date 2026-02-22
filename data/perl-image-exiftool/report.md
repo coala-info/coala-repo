@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-image-exiftool not found in Singularity image. The im
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-image-exiftool/overview
-- **Total Downloads**: 32.6K
+- **Total Downloads**: 32.7K
 - **Last updated**: 2026-02-11
 - **GitHub**: N/A
 - **Stars**: N/A

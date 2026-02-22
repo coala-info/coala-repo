@@ -12,7 +12,7 @@ The provided text does not contain help information for perl-capture-tiny; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-capture-tiny/overview
-- **Total Downloads**: 288.2K
+- **Total Downloads**: 288.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dagolden/Capture-Tiny
 - **Stars**: N/A

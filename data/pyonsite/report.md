@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for py
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyonsite/overview
-- **Total Downloads**: 78
+- **Total Downloads**: 80
 - **Last updated**: 2025-12-26
 - **GitHub**: N/A
 - **Stars**: N/A

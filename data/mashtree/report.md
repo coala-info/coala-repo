@@ -12,7 +12,7 @@ The provided text does not contain help information for mashtree, but rather an 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mashtree/overview
-- **Total Downloads**: 97.5K
+- **Total Downloads**: 97.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/lskatz/mashtree
 - **Stars**: N/A

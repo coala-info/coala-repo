@@ -13,4 +13,8 @@ The package implements an algorithm for fast gene set enrichment analysis. Using
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ctlab/fgsea
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fgsea/overview
+- **Total Downloads**: 131.1K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

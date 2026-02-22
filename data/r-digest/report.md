@@ -9,7 +9,7 @@ Implementation of a function 'digest()' for the creation of hash
  comprehensive (an...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-digest
+- **Conda**: https://anaconda.org/channels/r/packages/r-digest/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/digest/index.html
 - **Home (project)**: https://github.com/eddelbuettel/digest, https://dirk.eddelbuettel.com/code/digest.html
 - **Package**: digest
@@ -17,4 +17,8 @@ Implementation of a function 'digest()' for the creation of hash
 - **Author**: Dirk Eddelbuettel [aut, cre], Antoine Lucas [ctb], Jarek Tuszynski [ctb], Henrik Bengtsson [ctb], Simon Urbanek [ctb], Mario Frasca [ctb], Bryan Lewis [ctb], Murray Stokely [ctb], Hannes Muehleisen [ctb], Duncan Murdoch [ctb], Jim Hester [ctb], Wush Wu [ctb], Qiang Kou [ctb], Thierry Onkelinx [ctb], Michel Lang [ctb], Viliam Simko [ctb], Kurt Hornik [ctb], Radford Neal [ctb], Kendon Bell [ctb], Matthew de Queljoe [ctb], Dmitry Selivanov [ctb], Ion Suruceanu [ctb], Bill Denney [ctb], Dirk Schumacher [ctb], András Svraka [ctb], Sergey Fedorov [ctb], Will Landau [ctb], Floris Vanderhaeghe [ctb], Kevin Tappe [ctb], Harris McGehee [ctb], Tim Mastny [ctb], Aaron Peikert [ctb], Mark van der Loo [ctb], Chris Muir [ctb], Moritz Beller [ctb], Sebastian Campbell [ctb], Winston Chang [ctb], Dean Attali [ctb], Michael Chirico [ctb], Kevin Ushey [ctb], Carl Pearson [ctb]
 - **Maintainer**: Dirk Eddelbuettel <edd at debian.org>
 - **Skill**: generated
+- **Total Downloads**: 925.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/eddelbuettel/digest
+- **Stars**: N/A
 

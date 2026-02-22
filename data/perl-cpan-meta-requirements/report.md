@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-cpan-meta-requirements not found in Singularity image
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-cpan-meta-requirements/overview
-- **Total Downloads**: 142.0K
+- **Total Downloads**: 142.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Perl-Toolchain-Gang/CPAN-Meta-Requirements
 - **Stars**: N/A

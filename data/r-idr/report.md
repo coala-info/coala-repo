@@ -3,7 +3,7 @@
 This is a package for estimating the copula mixture model and plotting correspondence curves. Details are in "Measuring reproducibility of high-throughput experiments" (2011), Annals of Applied Statistics, Vol. 5, No. 3, 1752-1779, by Li, Brown, Huang, and Bickel. </p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-idr
+- **Conda**: https://anaconda.org/channels/r/packages/r-idr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/idr/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=idr
 - **Package**: idr
@@ -11,4 +11,8 @@ This is a package for estimating the copula mixture model and plotting correspon
 - **Author**: Qunhua Li
 - **Maintainer**: Qunhua Li <qunhua.li at psu.edu>
 - **Skill**: generated
+- **Total Downloads**: 319
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

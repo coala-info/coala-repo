@@ -11,6 +11,10 @@ The package provides statistical tools for detecting differentially abundant pro
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-msstatstmt/overview
+- **Total Downloads**: 31.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -4,7 +4,7 @@ Visualizing Intersecting Sets
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-upsetr
+- **Conda**: https://anaconda.org/channels/r/packages/r-upsetr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/UpSetR/index.html
 - **Home (project)**: http://github.com/hms-dbmi/UpSetR
 - **Package**: UpSetR
@@ -12,4 +12,8 @@ N/A
 - **Author**: Jake Conway [cre], Nils Gehlenborg [aut]
 - **Maintainer**: Jake Conway <jake_conway at hms.harvard.edu>
 - **Skill**: generated
+- **Total Downloads**: 318
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/hms-dbmi/UpSetR
+- **Stars**: N/A
 

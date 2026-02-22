@@ -15,7 +15,7 @@ A library for parsing ISO 8601 strings.
 - **Total Downloads**: 840
 - **Last updated**: 2025-10-15
 - **GitHub**: https://github.com/sloanlance/aniso8601
-- **Stars**: N/A
+- **Stars**: 3
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

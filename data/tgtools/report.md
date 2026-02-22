@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for tg
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tgtools/overview
-- **Total Downloads**: 99
+- **Total Downloads**: 100
 - **Last updated**: 2025-06-24
 - **GitHub**: https://github.com/jodyphelan/tgtools
 - **Stars**: N/A

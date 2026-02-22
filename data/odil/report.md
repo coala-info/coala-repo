@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'odil'. It appe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/odil/overview
-- **Total Downloads**: 373.7K
+- **Total Downloads**: 374.1K
 - **Last updated**: 2025-08-30
 - **GitHub**: https://github.com/odilia-app/odilia
 - **Stars**: N/A

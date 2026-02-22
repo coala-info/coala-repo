@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'equirep'. It c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/equirep/overview
-- **Total Downloads**: 695
+- **Total Downloads**: 696
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Shao-Group/EquiRep
 - **Stars**: N/A

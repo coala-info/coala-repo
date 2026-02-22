@@ -13,4 +13,8 @@ The package contains wrapper functions to create a genome index and to perform t
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fmicompbio/Rhisat2
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rhisat2/overview
+- **Total Downloads**: 26.4K
+- **Last updated**: 2025-10-01
+- **Stars**: N/A
 

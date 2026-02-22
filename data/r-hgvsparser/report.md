@@ -3,7 +3,7 @@
 R package hgvsparser (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-hgvsparser
+- **Conda**: https://anaconda.org/channels/r/packages/r-hgvsparser/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/hgvsparser/index.html
 - **Home (project)**: https://github.com/VariantEffect/hgvsParseR
 - **Package**: hgvsparser
@@ -11,4 +11,8 @@ R package hgvsparser (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/VariantEffect/hgvsParseR
+- **Stars**: N/A
 

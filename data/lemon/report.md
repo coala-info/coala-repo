@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/lemon/overview
-- **Total Downloads**: 194.7K
+- **Total Downloads**: 194.8K
 - **Last updated**: 2025-06-14
 - **GitHub**: https://github.com/nayafia/lemonade-stand
 - **Stars**: N/A

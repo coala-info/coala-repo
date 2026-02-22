@@ -12,7 +12,7 @@ Convert a PDB file to a FASTA sequence format. Output is printed to stdout.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pdb2fasta/overview
-- **Total Downloads**: 706
+- **Total Downloads**: 707
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kad-ecoli/pdb2fasta
 - **Stars**: N/A

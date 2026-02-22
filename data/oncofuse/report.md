@@ -12,7 +12,7 @@ Oncofuse is a tool designed to predict the oncogenic potential of gene fusions f
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/oncofuse/overview
-- **Total Downloads**: 24.3K
+- **Total Downloads**: 24.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mikessh/oncofuse
 - **Stars**: N/A

@@ -15,7 +15,7 @@ A tool for building or fetching alignment container images (Note: The provided t
 - **Total Downloads**: 3.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/eseraygun/python-alignment
-- **Stars**: N/A
+- **Stars**: 57
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

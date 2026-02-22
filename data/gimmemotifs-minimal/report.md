@@ -12,7 +12,7 @@ GimmeMotifs is a suite of tools for motif analysis. (Note: The provided text is 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gimmemotifs-minimal/overview
-- **Total Downloads**: 19.7K
+- **Total Downloads**: 19.8K
 - **Last updated**: 2025-10-02
 - **GitHub**: https://github.com/vanheeringen-lab/gimmemotifs
 - **Stars**: N/A

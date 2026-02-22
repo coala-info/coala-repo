@@ -15,7 +15,7 @@ A tool to convert XYZ molecular files to PDB format.
 - **Total Downloads**: 3.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/thepineapplepirate/qiskit-xyz2pdb
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

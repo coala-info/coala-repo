@@ -12,7 +12,7 @@ The provided text does not contain help information for filtlong; it contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/filtlong/overview
-- **Total Downloads**: 48.7K
+- **Total Downloads**: 48.8K
 - **Last updated**: 2025-09-18
 - **GitHub**: https://github.com/rrwick/Filtlong
 - **Stars**: N/A

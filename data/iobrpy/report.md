@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/iobrpy/overview
-- **Total Downloads**: 192
+- **Total Downloads**: 196
 - **Last updated**: 2025-12-26
 - **GitHub**: https://github.com/IOBR/IOBRpy
 - **Stars**: N/A

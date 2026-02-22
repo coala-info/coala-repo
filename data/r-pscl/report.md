@@ -7,7 +7,7 @@ Bayesian analysis of item-response theory (IRT) models,
   data sets used in writing	and teaching; seats-votes curves.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-pscl
+- **Conda**: https://anaconda.org/channels/r/packages/r-pscl/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/pscl/index.html
 - **Home (project)**: http://github.com/atahk/pscl
 - **Package**: pscl
@@ -15,4 +15,8 @@ Bayesian analysis of item-response theory (IRT) models,
 - **Author**: Simon Jackman [aut, cre], Alex Tahk [ctb], Achim Zeileis [ctb], Christina Maimone [ctb], James Fearon [ctb], Zoe Meers [ctb]
 - **Maintainer**: Simon Jackman <simon.jackman at sydney.edu.au>
 - **Skill**: generated
+- **Total Downloads**: 915
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/atahk/pscl
+- **Stars**: N/A
 

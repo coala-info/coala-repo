@@ -12,7 +12,7 @@ The provided text does not contain CLI help information. It appears to be a log 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/umi_tools/overview
-- **Total Downloads**: 243.0K
+- **Total Downloads**: 243.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CGATOxford/UMI-tools
 - **Stars**: N/A

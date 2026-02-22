@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sbg/sevenbridges-r
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-sevenbridges/overview
+- **Total Downloads**: 30.0K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

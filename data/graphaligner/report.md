@@ -12,7 +12,7 @@ The provided text does not contain help information for GraphAligner; it contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/graphaligner/overview
-- **Total Downloads**: 82.3K
+- **Total Downloads**: 82.4K
 - **Last updated**: 2025-07-27
 - **GitHub**: https://github.com/maickrau/GraphAligner
 - **Stars**: N/A

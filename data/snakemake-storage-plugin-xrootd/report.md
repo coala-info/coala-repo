@@ -12,7 +12,7 @@ Snakemake storage plugin for XRootD (Note: The provided text appears to be a con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-storage-plugin-xrootd/overview
-- **Total Downloads**: 706
+- **Total Downloads**: 709
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/snakemake/snakemake-storage-plugin-xrootd
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'disco'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/disco/overview
-- **Total Downloads**: 56.3K
+- **Total Downloads**: 56.5K
 - **Last updated**: 2025-08-21
 - **GitHub**: N/A
 - **Stars**: N/A

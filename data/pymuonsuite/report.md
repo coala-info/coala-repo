@@ -12,7 +12,7 @@ A suite of tools for muon spectroscopy data analysis.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/pymuonsuite/overview
-- **Total Downloads**: 11.2K
+- **Total Downloads**: 11.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/conda-forge/pymuonsuite-feedstock
 - **Stars**: N/A

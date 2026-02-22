@@ -12,7 +12,7 @@ STAR-Fusion is a tool for detecting fusion genes from RNA-seq data.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/star-fusion/overview
-- **Total Downloads**: 390.4K
+- **Total Downloads**: 391.3K
 - **Last updated**: 2025-07-16
 - **GitHub**: https://github.com/STAR-Fusion/STAR-Fusion
 - **Stars**: N/A

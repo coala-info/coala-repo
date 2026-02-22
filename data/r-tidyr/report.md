@@ -9,7 +9,7 @@ Tools to help to create tidy data, where each column is a
     working with missing values (both implicit and explicit).</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-tidyr
+- **Conda**: https://anaconda.org/channels/r/packages/r-tidyr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/tidyr/index.html
 - **Home (project)**: https://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr
 - **Package**: tidyr
@@ -17,4 +17,8 @@ Tools to help to create tidy data, where each column is a
 - **Author**: Hadley Wickham [aut, cre], Davis Vaughan [aut], Maximilian Girlich [aut], Kevin Ushey [ctb], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 464.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tidyverse/tidyr
+- **Stars**: N/A
 

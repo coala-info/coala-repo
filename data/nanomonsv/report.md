@@ -12,7 +12,7 @@ The provided text does not contain help information for nanomonsv; it contains c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanomonsv/overview
-- **Total Downloads**: 5.0K
+- **Total Downloads**: 5.1K
 - **Last updated**: 2026-01-06
 - **GitHub**: https://github.com/friend1ws/nanomonsv
 - **Stars**: N/A

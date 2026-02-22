@@ -9,7 +9,7 @@ Functions for creating plots and image files in a unified way
     errors or user interrupts...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-r.devices
+- **Conda**: https://anaconda.org/channels/r/packages/r-r.devices/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/R.devices/index.html
 - **Home (project)**: https://github.com/HenrikBengtsson/R.devices
 - **Package**: R.devices
@@ -17,4 +17,8 @@ Functions for creating plots and image files in a unified way
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
 - **Skill**: generated
+- **Total Downloads**: 320
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/HenrikBengtsson/R.devices
+- **Stars**: N/A
 

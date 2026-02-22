@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nextflow/overview
-- **Total Downloads**: 532.4K
+- **Total Downloads**: 532.7K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/nextflow-io/nextflow
 - **Stars**: N/A

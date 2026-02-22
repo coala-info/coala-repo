@@ -12,7 +12,7 @@ The provided text is an error message regarding a container execution failure an
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mokapot/overview
-- **Total Downloads**: 41.3K
+- **Total Downloads**: 41.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wfondrie/mokapot
 - **Stars**: N/A

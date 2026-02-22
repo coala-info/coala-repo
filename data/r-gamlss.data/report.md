@@ -5,7 +5,7 @@ Data used as examples in the books on Generalized Additive Models for Location S
   Stasinopoulos, Rigby, Heller, Voudouris, De Bastiani (2017).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gamlss.data
+- **Conda**: https://anaconda.org/channels/r/packages/r-gamlss.data/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gamlss.data/index.html
 - **Home (project)**: http://www.gamlss.org/
 - **Package**: gamlss.data
@@ -13,4 +13,8 @@ Data used as examples in the books on Generalized Additive Models for Location S
 - **Author**: Mikis Stasinopoulos [aut, cre], Robert Rigby [aut], Fernanda De Bastiani [ctb]
 - **Maintainer**: Mikis Stasinopoulos <d.stasinopoulos at gre.ac.uk>
 - **Skill**: generated
+- **Total Downloads**: 318
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

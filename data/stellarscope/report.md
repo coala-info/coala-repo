@@ -12,7 +12,7 @@ Stellarscope is a tool for the quantification of transposable elements (TEs) at 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/stellarscope/overview
-- **Total Downloads**: 5.3K
+- **Total Downloads**: 5.4K
 - **Last updated**: 2025-11-28
 - **GitHub**: https://github.com/nixonlab/stellarscope
 - **Stars**: N/A

@@ -12,10 +12,10 @@ The provided text does not contain help information for the tool 'psosp'. It app
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/psosp/overview
-- **Total Downloads**: 867
+- **Total Downloads**: 875
 - **Last updated**: 2025-07-07
 - **GitHub**: https://github.com/mujiezhang/PSOSP
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

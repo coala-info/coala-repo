@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/infernal/overview
-- **Total Downloads**: 304.1K
+- **Total Downloads**: 304.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/EddyRivasLab/infernal
 - **Stars**: N/A

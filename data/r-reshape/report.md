@@ -4,7 +4,7 @@ Flexibly restructure and aggregate data using
   just two functions: melt and cast.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-reshape
+- **Conda**: https://anaconda.org/channels/r/packages/r-reshape/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/reshape/index.html
 - **Home (project)**: http://had.co.nz/reshape
 - **Package**: reshape
@@ -12,4 +12,8 @@ Flexibly restructure and aggregate data using
 - **Author**: Hadley Wickham [aut, cre]
 - **Maintainer**: Hadley Wickham <hadley at rstudio.com>
 - **Skill**: generated
+- **Total Downloads**: 39.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

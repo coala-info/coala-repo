@@ -15,7 +15,7 @@ AMIDE: (Amide's a Medical Imaging Data Examiner) - a tool for viewing, analyzing
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/fkie-cad/amides
-- **Stars**: N/A
+- **Stars**: 46
 ### Original Help Text
 ```text
 Usage:

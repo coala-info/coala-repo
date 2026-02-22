@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/neptune-signature/overview
-- **Total Downloads**: 545
+- **Total Downloads**: 547
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/phac-nml/neptune
 - **Stars**: N/A

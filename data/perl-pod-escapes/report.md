@@ -12,7 +12,7 @@ The provided text does not contain help documentation. It is an error log indica
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-pod-escapes/overview
-- **Total Downloads**: 173.3K
+- **Total Downloads**: 173.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-Pod-Escapes
 - **Stars**: N/A

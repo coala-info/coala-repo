@@ -12,7 +12,7 @@ MetaEuk is a modular software for high-throughput, sensitive eukaryotic gene dis
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metaeuk/overview
-- **Total Downloads**: 99.5K
+- **Total Downloads**: 99.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/soedinglab/metaeuk
 - **Stars**: N/A

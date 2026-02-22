@@ -12,7 +12,7 @@ A tool for clustering Metagenome-Assembled Genomes (MAGs). Note: The provided he
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/magcluster/overview
-- **Total Downloads**: 12.5K
+- **Total Downloads**: 12.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/runjiaji/magcluster
 - **Stars**: N/A

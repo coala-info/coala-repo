@@ -8,7 +8,7 @@ Generates Rd files from R source code with comments.
  It is also easy to define a new syntax.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-inlinedocs
+- **Conda**: https://anaconda.org/channels/r/packages/r-inlinedocs/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/inlinedocs/index.html
 - **Home (project)**: https://github.com/tdhock/inlinedocs
 - **Package**: inlinedocs
@@ -16,4 +16,8 @@ Generates Rd files from R source code with comments.
 - **Author**: Toby Dylan Hocking [aut, cre], Keith Ponting [aut], Thomas Wutzler [aut], Philippe Grosjean [aut], Markus Müller [aut], R Core Team [ctb, cph]
 - **Maintainer**: Toby Dylan Hocking <toby.hocking at r-project.org>
 - **Skill**: generated
+- **Total Downloads**: 35
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tdhock/inlinedocs
+- **Stars**: N/A
 

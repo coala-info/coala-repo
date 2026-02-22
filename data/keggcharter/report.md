@@ -12,7 +12,7 @@ A tool for representation of metabolic potential and gene expression on KEGG met
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/keggcharter/overview
-- **Total Downloads**: 55.1K
+- **Total Downloads**: 55.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/iquasere/KEGGCharter
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A toolkit for manipulating FASTQ files. Note: The provided help text contains on
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fasten/overview
-- **Total Downloads**: 26.7K
+- **Total Downloads**: 26.8K
 - **Last updated**: 2025-10-26
 - **GitHub**: https://github.com/lskatz/fasten
 - **Stars**: N/A

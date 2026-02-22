@@ -12,7 +12,7 @@ RadiantKit is a tool for image analysis and radial distribution. (Note: The prov
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/radiantkit/overview
-- **Total Downloads**: 322
+- **Total Downloads**: 324
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bicrolab/radiantkit
 - **Stars**: N/A

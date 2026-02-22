@@ -12,7 +12,7 @@ FAMSA is a tool for fast and accurate multiple sequence alignment of large sets 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/famsa/overview
-- **Total Downloads**: 109.5K
+- **Total Downloads**: 109.6K
 - **Last updated**: 2025-07-15
 - **GitHub**: https://github.com/refresh-bio/FAMSA
 - **Stars**: N/A

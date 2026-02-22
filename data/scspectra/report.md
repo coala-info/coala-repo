@@ -12,7 +12,7 @@ scspectra (Note: The provided text is a container build error log and does not c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/scspectra/overview
-- **Total Downloads**: 873
+- **Total Downloads**: 875
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dpeerlab/spectra
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Note: The provided text is a container build error log and does not contain help
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/py_nucflag/overview
-- **Total Downloads**: 4.0K
+- **Total Downloads**: 4.1K
 - **Last updated**: 2026-02-20
 - **GitHub**: https://github.com/logsdon-lab/rs-nucflag
 - **Stars**: N/A

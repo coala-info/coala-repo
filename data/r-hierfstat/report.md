@@ -8,7 +8,7 @@ Estimates hierarchical F-statistics from haploid or
     (Goudet et al.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-hierfstat
+- **Conda**: https://anaconda.org/channels/r/packages/r-hierfstat/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/hierfstat/index.html
 - **Home (project)**: https://www.r-project.org, https://github.com/jgx65/hierfstat
 - **Package**: hierfstat
@@ -16,4 +16,8 @@ Estimates hierarchical F-statistics from haploid or
 - **Author**: Jerome Goudet [aut, cre], Thibaut Jombart [aut], Zhian N. Kamvar [ctb], Eric Archer [ctb], Olivier Hardy [ctb]
 - **Maintainer**: Jerome Goudet <jerome.goudet at unil.ch>
 - **Skill**: generated
+- **Total Downloads**: 45
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jgx65/hierfstat
+- **Stars**: N/A
 

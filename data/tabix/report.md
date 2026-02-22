@@ -12,7 +12,7 @@ Generic indexer for TAB-delimited genome position files. (Note: The provided tex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tabix/overview
-- **Total Downloads**: 372.4K
+- **Total Downloads**: 372.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

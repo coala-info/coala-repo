@@ -12,7 +12,7 @@ Digestiflow Demux is a tool for demultiplexing Illumina sequencing runs.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/digestiflow-demux/overview
-- **Total Downloads**: 30.4K
+- **Total Downloads**: 30.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bihealth/digestiflow-demux
 - **Stars**: N/A

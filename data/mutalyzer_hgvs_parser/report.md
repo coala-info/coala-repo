@@ -12,7 +12,7 @@ A tool for parsing HGVS (Human Genome Variation Society) variant descriptions. (
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mutalyzer_hgvs_parser/overview
-- **Total Downloads**: 800
+- **Total Downloads**: 803
 - **Last updated**: 2025-09-29
 - **GitHub**: https://github.com/mutalyzer/hgvs-parser
 - **Stars**: N/A

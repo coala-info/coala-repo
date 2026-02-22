@@ -12,7 +12,7 @@ The provided text does not contain help information as it reflects a container e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deeptoolsintervals/overview
-- **Total Downloads**: 149.1K
+- **Total Downloads**: 149.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/deeptools/deeptools_intervals
 - **Stars**: N/A

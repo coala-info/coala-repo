@@ -12,10 +12,10 @@ The provided text is an error log from a container build process and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/quatradis/overview
-- **Total Downloads**: 49.6K
+- **Total Downloads**: 49.7K
 - **Last updated**: 2025-09-21
 - **GitHub**: https://github.com/quadram-institute-bioscience/QuaTradis
-- **Stars**: N/A
+- **Stars**: 3
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

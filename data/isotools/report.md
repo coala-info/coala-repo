@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isotools/overview
-- **Total Downloads**: 571
+- **Total Downloads**: 575
 - **Last updated**: 2025-05-12
 - **GitHub**: https://github.com/MatthiasLienhard/isotools
 - **Stars**: N/A

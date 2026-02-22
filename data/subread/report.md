@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/subread/overview
-- **Total Downloads**: 350.5K
+- **Total Downloads**: 350.7K
 - **Last updated**: 2025-05-03
 - **GitHub**: N/A
 - **Stars**: N/A

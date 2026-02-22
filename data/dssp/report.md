@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/dssp/overview
-- **Total Downloads**: 83.9K
+- **Total Downloads**: 84.6K
 - **Last updated**: 2026-02-18
 - **GitHub**: https://github.com/PDB-REDO/dssp
 - **Stars**: N/A

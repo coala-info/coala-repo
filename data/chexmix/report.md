@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/chexmix/overview
-- **Total Downloads**: 13.5K
+- **Total Downloads**: 13.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

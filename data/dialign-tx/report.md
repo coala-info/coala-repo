@@ -12,7 +12,7 @@ DIALIGN-TX is a tool for multiple sequence alignment. (Note: The provided input 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dialign-tx/overview
-- **Total Downloads**: 72.6K
+- **Total Downloads**: 72.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

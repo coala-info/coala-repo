@@ -12,7 +12,7 @@ NanoPlot is a tool for creating various plots and statistics from long-read sequ
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanoplot/overview
-- **Total Downloads**: 218.7K
+- **Total Downloads**: 219.1K
 - **Last updated**: 2025-12-04
 - **GitHub**: https://github.com/wdecoster/NanoPlot
 - **Stars**: N/A

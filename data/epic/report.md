@@ -12,7 +12,7 @@ Diffuse domain caller for ChIP-seq data (Note: The provided text contains only c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/epic/overview
-- **Total Downloads**: 118.9K
+- **Total Downloads**: 119.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/endrebak/epic
 - **Stars**: N/A

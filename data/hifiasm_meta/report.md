@@ -12,7 +12,7 @@ The provided text does not contain help information for hifiasm_meta. It contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hifiasm_meta/overview
-- **Total Downloads**: 19.2K
+- **Total Downloads**: 19.3K
 - **Last updated**: 2025-11-24
 - **GitHub**: https://github.com/xfengnefx/hifiasm-meta
 - **Stars**: N/A

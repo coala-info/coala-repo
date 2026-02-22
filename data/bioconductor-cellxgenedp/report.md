@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mtmorgan/cellxgenedp
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cellxgenedp/overview
+- **Total Downloads**: 5.3K
+- **Last updated**: 2026-02-04
+- **Stars**: N/A
 

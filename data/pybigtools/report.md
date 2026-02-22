@@ -12,7 +12,7 @@ A tool for manipulating bigWig and bigBed files (Note: The provided text contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pybigtools/overview
-- **Total Downloads**: 19.1K
+- **Total Downloads**: 19.2K
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/jackh726/bigtools
 - **Stars**: N/A

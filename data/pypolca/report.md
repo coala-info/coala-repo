@@ -15,7 +15,7 @@ A Python implementation of the POLCA (POLishing CleAn) tool for genomic assembly
 - **Total Downloads**: 7.4K
 - **Last updated**: 2025-08-19
 - **GitHub**: https://github.com/gbouras13/pypolca
-- **Stars**: N/A
+- **Stars**: 44
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

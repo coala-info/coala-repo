@@ -15,7 +15,7 @@ Performs principal component analysis on a vcf/bcf
 - **Total Downloads**: 20.0K
 - **Last updated**: 2025-10-08
 - **GitHub**: https://github.com/Illumina/akt
-- **Stars**: N/A
+- **Stars**: 70
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

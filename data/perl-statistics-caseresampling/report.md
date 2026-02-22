@@ -3,35 +3,24 @@
 ## perl-statistics-caseresampling
 
 ### Tool Description
-FAIL to generate CWL: perl-statistics-caseresampling not found in Singularity image. The image may not provide this executable.
+Statistics::CaseResampling - Resampling and jackknifing statistics. (Note: The provided text contains system error messages regarding container image retrieval and does not include the tool's help documentation or usage instructions.)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-statistics-caseresampling:0.15--pl5321h7b50bb2_5
 - **Homepage**: http://metacpan.org/pod/Statistics::CaseResampling
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-statistics-caseresampling/overview
-- **Validation**: FAIL (generation failed)
+- **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-statistics-caseresampling/overview
 - **Total Downloads**: 5.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: perl-statistics-caseresampling not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: perl-statistics-caseresampling not found in Singularity image. The image may not provide this executable.
-
-
-
 ### Original Help Text
 ```text
-
+WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/e8a82fda188f54d94f982403b2b2667f09fab6498519ba08d7c6fdfe1edb3f2c: no space left on device
+WARNING: Falling back to direct digest.
+INFO:    Converting OCI blobs to SIF format
+FATAL:   Unable to handle docker://quay.io/biocontainers/perl-statistics-caseresampling:0.15--pl5321h7b50bb2_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1478171122: no space left on device
 ```
 
-
-## Metadata
-- **Skill**: generated

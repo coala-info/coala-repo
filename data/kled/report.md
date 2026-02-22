@@ -12,7 +12,7 @@ K-mer based Long-read Error Detection (Note: The provided text contains containe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kled/overview
-- **Total Downloads**: 607
+- **Total Downloads**: 609
 - **Last updated**: 2025-08-08
 - **GitHub**: https://github.com/CoREse/kled
 - **Stars**: N/A

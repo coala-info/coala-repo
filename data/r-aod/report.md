@@ -9,7 +9,7 @@ Provides a set of functions to analyse
         models (GLMM).</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-aod
+- **Conda**: https://anaconda.org/channels/r/packages/r-aod/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/aod/index.html
 - **Home (project)**: https://cran.r-project.org/package=aod
 - **Package**: aod
@@ -17,4 +17,8 @@ Provides a set of functions to analyse
 - **Author**: Matthieu Lesnoff and Renaud Lancelot
 - **Maintainer**: Renaud Lancelot <renaud.lancelot at cirad.fr>
 - **Skill**: generated
+- **Total Downloads**: 482
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

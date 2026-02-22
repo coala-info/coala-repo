@@ -12,7 +12,7 @@ A tool to generate the geometric setup for various electronic structure codes fr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/cif2cell/overview
-- **Total Downloads**: 12.8K
+- **Total Downloads**: 12.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/torbjornbjorkman/cif2cell
 - **Stars**: N/A

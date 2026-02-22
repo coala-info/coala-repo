@@ -13,4 +13,8 @@ the package has potential to incorparate any ceRNA (circRNA, lincRNA, etc.) into
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/selcenari/ceRNAnetsim
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cernanetsim/overview
+- **Total Downloads**: 18.1K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

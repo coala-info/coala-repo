@@ -4,7 +4,7 @@ Easy-to-use and versatile functions to output R objects in
         HTML format.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-hwriter
+- **Conda**: https://anaconda.org/channels/r/packages/r-hwriter/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/hwriter/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=hwriter
 - **Package**: hwriter
@@ -12,4 +12,8 @@ Easy-to-use and versatile functions to output R objects in
 - **Author**: Gregoire Pau
 - **Maintainer**: Gregoire Pau <gregoire.pau at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 1.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

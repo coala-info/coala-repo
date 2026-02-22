@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for x-
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/x-mapper/overview
-- **Total Downloads**: 128
+- **Total Downloads**: 129
 - **Last updated**: 2025-09-14
 - **GitHub**: https://github.com/mathjeff/mapper
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text contains container runtime logs and a fatal error message rath
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spacerplacer/overview
-- **Total Downloads**: 118
+- **Total Downloads**: 119
 - **Last updated**: 2025-04-24
 - **GitHub**: https://github.com/fbaumdicker/SpacerPlacer
 - **Stars**: N/A

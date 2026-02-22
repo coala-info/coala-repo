@@ -12,7 +12,7 @@ Common Python utilities for the European Variation Archive (EVA). Note: The prov
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ebi-eva-common-pyutils/overview
-- **Total Downloads**: 9.8K
+- **Total Downloads**: 9.9K
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/EBIVariation/eva-common-pyutils
 - **Stars**: N/A

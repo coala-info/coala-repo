@@ -12,7 +12,7 @@ Gene Set Enrichment Analysis in Python
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gseapy/overview
-- **Total Downloads**: 251.1K
+- **Total Downloads**: 251.3K
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/zqfang/gseapy
 - **Stars**: N/A

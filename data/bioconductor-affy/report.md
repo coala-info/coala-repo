@@ -13,4 +13,8 @@ The package contains functions for exploratory oligonucleotide array analysis. T
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/rafalab/affy
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-affy/overview
+- **Total Downloads**: 115.5K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

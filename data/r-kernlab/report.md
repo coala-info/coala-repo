@@ -7,7 +7,7 @@ Kernel-based machine learning methods for classification,
         PCA, Gaussian Processes and a QP solver.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-kernlab
+- **Conda**: https://anaconda.org/channels/r/packages/r-kernlab/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/kernlab/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=kernlab
 - **Package**: kernlab
@@ -15,4 +15,8 @@ Kernel-based machine learning methods for classification,
 - **Author**: Alexandros Karatzoglou [aut, cre], Alex Smola [aut], Kurt Hornik [aut], National ICT Australia (NICTA) [cph], Michael A. Maniscalco [ctb, cph], Choon Hui Teo [ctb]
 - **Maintainer**: Alexandros Karatzoglou <alexandros.karatzoglou at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 140.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

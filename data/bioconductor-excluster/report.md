@@ -11,6 +11,10 @@ the package Rsubread. Library sizes are normalized across all biological replica
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-excluster/overview
+- **Total Downloads**: 25.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

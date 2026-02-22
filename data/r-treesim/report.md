@@ -3,7 +3,7 @@
 R package treesim (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-treesim
+- **Conda**: https://anaconda.org/channels/r/packages/r-treesim/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/treesim/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=TreeSim
 - **Package**: treesim
@@ -11,4 +11,8 @@ R package treesim (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: 42
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

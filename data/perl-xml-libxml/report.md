@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-libxml/overview
-- **Total Downloads**: 530.5K
+- **Total Downloads**: 531.0K
 - **Last updated**: 2025-06-18
 - **GitHub**: N/A
 - **Stars**: N/A

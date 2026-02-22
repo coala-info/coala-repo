@@ -12,7 +12,7 @@ Maximum-likelihood phylodynamic analysis
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/treetime/overview
-- **Total Downloads**: 186.5K
+- **Total Downloads**: 186.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/neherlab/treetime
 - **Stars**: N/A

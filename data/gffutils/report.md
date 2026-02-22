@@ -12,7 +12,7 @@ The provided text does not contain help information for gffutils. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gffutils/overview
-- **Total Downloads**: 233.5K
+- **Total Downloads**: 233.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/daler/gffutils
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spestimator/overview
-- **Total Downloads**: 57
+- **Total Downloads**: 59
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/erinyoung/Spestimator
 - **Stars**: N/A

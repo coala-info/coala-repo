@@ -15,7 +15,7 @@ A tool for processing .names, .lrn, and fasta files into an output directory.
 - **Total Downloads**: 10.0K
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/CK7/abawaca
-- **Stars**: N/A
+- **Stars**: 13
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

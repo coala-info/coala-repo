@@ -13,4 +13,8 @@ The package offers statistical tests based on the 2-Wasserstein distance for det
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/goncalves-lab/waddR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-waddr/overview
+- **Total Downloads**: 23.8K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

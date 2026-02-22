@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/censtats/overview
-- **Total Downloads**: 699
+- **Total Downloads**: 703
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/logsdon-lab/CenStats
 - **Stars**: N/A

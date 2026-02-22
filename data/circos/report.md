@@ -12,7 +12,7 @@ Circos is a software package for visualizing data and information in a circular 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/circos/overview
-- **Total Downloads**: 246.7K
+- **Total Downloads**: 246.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

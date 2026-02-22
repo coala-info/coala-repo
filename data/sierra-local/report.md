@@ -12,7 +12,7 @@ A tool for local execution of the Sierra HIV drug resistance database (Note: The
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sierra-local/overview
-- **Total Downloads**: 168
+- **Total Downloads**: 170
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/PoonLab/sierra-local
 - **Stars**: N/A

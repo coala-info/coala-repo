@@ -12,7 +12,7 @@ No description available: The provided text contains container build errors rath
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/gdcm/overview
-- **Total Downloads**: 417.0K
+- **Total Downloads**: 417.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/malaterre/GDCM
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Build an index for a FASTA file using various BWT construction algorithms, inclu
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bwa-meme/overview
-- **Total Downloads**: 15.9K
+- **Total Downloads**: 16.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kaist-ina/BWA-MEME
 - **Stars**: N/A

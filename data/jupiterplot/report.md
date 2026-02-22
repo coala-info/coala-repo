@@ -12,7 +12,7 @@ JupiterPlot is a tool for visualizing synteny between genomes. (Note: The provid
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jupiterplot/overview
-- **Total Downloads**: 917
+- **Total Downloads**: 919
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/JustinChu/JupiterPlot
 - **Stars**: N/A

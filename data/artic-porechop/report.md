@@ -15,7 +15,7 @@ The provided text does not contain help information for artic-porechop. It conta
 - **Total Downloads**: 24.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/artic-network/Porechop
-- **Stars**: N/A
+- **Stars**: 7
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

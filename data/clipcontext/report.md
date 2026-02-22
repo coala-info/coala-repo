@@ -12,7 +12,7 @@ A tool for CLIP-seq data analysis. (Note: The provided input text is a system er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/clipcontext/overview
-- **Total Downloads**: 12.5K
+- **Total Downloads**: 12.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/BackofenLab/CLIPcontext
 - **Stars**: N/A

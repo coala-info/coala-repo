@@ -12,10 +12,10 @@ A tool for filtering sequencing reads based on quality scores (Note: The provide
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/qualifilter/overview
-- **Total Downloads**: 41
+- **Total Downloads**: 42
 - **Last updated**: 2025-11-26
 - **GitHub**: https://github.com/buhlentozini/QualiFilter
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

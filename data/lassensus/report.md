@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lassensus/overview
-- **Total Downloads**: 522
+- **Total Downloads**: 526
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/DaanJansen94/lassensus
 - **Stars**: N/A

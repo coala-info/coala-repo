@@ -12,7 +12,7 @@ DeepDetails tool (Note: The provided text contains container runtime error logs 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deepdetails/overview
-- **Total Downloads**: 552
+- **Total Downloads**: 557
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/liyao001/DeepDETAILS
 - **Stars**: N/A

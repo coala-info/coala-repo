@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vgp-processcuration/overview
-- **Total Downloads**: 62
+- **Total Downloads**: 64
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/vgl-hub/vgl-curation
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It consists of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyabpoa/overview
-- **Total Downloads**: 48.2K
+- **Total Downloads**: 48.3K
 - **Last updated**: 2025-10-12
 - **GitHub**: https://github.com/yangao07/abPOA
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for searching telomeres in long-read sequencing data (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/telosearchlr/overview
-- **Total Downloads**: 651
+- **Total Downloads**: 653
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gchchung/TeloSearchLR
 - **Stars**: N/A

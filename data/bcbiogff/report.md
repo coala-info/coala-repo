@@ -15,7 +15,7 @@ A tool for working with GFF files (Note: The provided text is an error log and d
 - **Total Downloads**: 44.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/chapmanb/bcbb
-- **Stars**: N/A
+- **Stars**: 645
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

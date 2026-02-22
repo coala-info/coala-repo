@@ -12,7 +12,7 @@ Extract a subset of species from a MAF file.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-mafspeciessubset/overview
-- **Total Downloads**: 24.2K
+- **Total Downloads**: 24.3K
 - **Last updated**: 2025-06-29
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

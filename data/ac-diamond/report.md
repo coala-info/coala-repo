@@ -15,7 +15,7 @@ The provided text does not contain help information for ac-diamond; it is a log 
 - **Total Downloads**: 7.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Maihj/AC-DIAMOND
-- **Stars**: N/A
+- **Stars**: 16
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

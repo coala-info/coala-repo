@@ -15,7 +15,7 @@ Identify and classify allelic contigs from a PAF file to be used for 'allhic pru
 - **Total Downloads**: 1.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tanghaibao/allhic
-- **Stars**: N/A
+- **Stars**: 60
 ### Original Help Text
 ```text
 Alleles function:

@@ -11,6 +11,10 @@ The package imports real-time cell electrical impedance data into R. As an alter
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rtca/overview
+- **Total Downloads**: 44.6K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

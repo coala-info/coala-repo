@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metaspace2020/overview
-- **Total Downloads**: 142
+- **Total Downloads**: 143
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/metaspace2020/metaspace
 - **Stars**: N/A

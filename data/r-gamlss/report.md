@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gamlss
+- **Conda**: https://anaconda.org/channels/r/packages/r-gamlss/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gamlss/index.html
 - **Home (project)**: https://www.gamlss.com/
 - **Package**: gamlss
@@ -11,4 +11,8 @@ N/A
 - **Author**: Mikis Stasinopoulos [aut, cre, cph], Robert Rigby [aut], Vlasios Voudouris [ctb], Calliope Akantziliotou [ctb], Marco Enea [ctb], Daniil Kiose [ctb], Achim Zeileis [ctb]
 - **Maintainer**: Mikis Stasinopoulos <d.stasinopoulos at gre.ac.uk>
 - **Skill**: generated
+- **Total Downloads**: 107
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

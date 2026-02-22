@@ -12,10 +12,10 @@ Create APOBEC3 and non-APOBEC3 partitions from sequence alignments
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/a3partitioner/overview
-- **Total Downloads**: 545
+- **Total Downloads**: 546
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/DaanJansen94/a3partitioner
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 usage: A3Partitioner [-h] [-partition {apobec,non-apobec,both}] -i INPUT

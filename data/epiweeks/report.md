@@ -12,7 +12,7 @@ A tool for calculating epidemiological weeks. (Note: The provided input text con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/epiweeks/overview
-- **Total Downloads**: 68.0K
+- **Total Downloads**: 68.1K
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/dralshehri/epiweeks
 - **Stars**: N/A

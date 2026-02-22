@@ -12,7 +12,7 @@ The provided text contains error logs from a container runtime (Apptainer/Singul
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lca/overview
-- **Total Downloads**: 18.4K
+- **Total Downloads**: 18.5K
 - **Last updated**: 2025-09-26
 - **GitHub**: https://github.com/hildebra/LCA
 - **Stars**: N/A

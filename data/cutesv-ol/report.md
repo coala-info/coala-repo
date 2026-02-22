@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cutesv-ol/overview
-- **Total Downloads**: 759
+- **Total Downloads**: 762
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/120L022331/cuteSV-OL
 - **Stars**: N/A

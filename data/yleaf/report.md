@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/yleaf/overview
-- **Total Downloads**: 222
+- **Total Downloads**: 224
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/genid/Yleaf
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for fetching gene-related data. (Note: The provided text contains system 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gene-fetch/overview
-- **Total Downloads**: 871
+- **Total Downloads**: 882
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/bge-barcoding/gene_fetch
 - **Stars**: N/A

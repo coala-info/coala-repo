@@ -12,7 +12,7 @@ Could not get help from Singularity for: seqscreen
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seqscreen/overview
-- **Total Downloads**: 109.1K
+- **Total Downloads**: 109.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

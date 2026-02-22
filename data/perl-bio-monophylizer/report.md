@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It is a log of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-monophylizer/overview
-- **Total Downloads**: 71
+- **Total Downloads**: 72
 - **Last updated**: 2025-12-14
 - **GitHub**: N/A
 - **Stars**: N/A

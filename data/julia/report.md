@@ -12,7 +12,7 @@ The Julia programming language
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/julia/overview
-- **Total Downloads**: 1.1K
+- **Total Downloads**: 1.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/JuliaLang/julia
 - **Stars**: N/A

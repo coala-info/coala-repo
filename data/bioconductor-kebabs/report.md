@@ -13,4 +13,8 @@ The package provides functionality for kernel-based analysis of DNA, RNA, and am
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/UBod/kebabs
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-kebabs/overview
+- **Total Downloads**: 47.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/netmd/overview
-- **Total Downloads**: 281
+- **Total Downloads**: 285
 - **Last updated**: 2025-10-12
 - **GitHub**: https://github.com/mazzalab/NetMD
 - **Stars**: N/A

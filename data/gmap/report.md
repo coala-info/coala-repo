@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gmap/overview
-- **Total Downloads**: 438.1K
+- **Total Downloads**: 438.8K
 - **Last updated**: 2025-09-15
 - **GitHub**: N/A
 - **Stars**: N/A

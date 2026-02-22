@@ -11,6 +11,10 @@ The package generally provides methods for gene set enrichment analysis of high-
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-seqgsea/overview
+- **Total Downloads**: 37.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

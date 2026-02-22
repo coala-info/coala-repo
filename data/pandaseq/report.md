@@ -12,7 +12,7 @@ PAired-eND Assembler for DNA sequences (Note: The provided help text contains a 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pandaseq/overview
-- **Total Downloads**: 153.3K
+- **Total Downloads**: 153.7K
 - **Last updated**: 2025-04-29
 - **GitHub**: https://github.com/neufeld/pandaseq
 - **Stars**: N/A

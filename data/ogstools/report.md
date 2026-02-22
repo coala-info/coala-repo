@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It consists of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/ogstools/overview
-- **Total Downloads**: 5.9K
+- **Total Downloads**: 6.0K
 - **Last updated**: 2025-09-24
 - **GitHub**: https://github.com/ufz/ogstools
 - **Stars**: N/A

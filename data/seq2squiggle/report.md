@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seq2squiggle/overview
-- **Total Downloads**: 1.2K
+- **Total Downloads**: 1.3K
 - **Last updated**: 2025-11-02
 - **GitHub**: https://github.com/ZKI-PH-ImageAnalysis/seq2squiggle
 - **Stars**: N/A

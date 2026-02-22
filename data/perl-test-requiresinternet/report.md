@@ -12,7 +12,7 @@ A tool to test for internet connectivity, typically used in Perl testing environ
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-test-requiresinternet/overview
-- **Total Downloads**: 343.6K
+- **Total Downloads**: 344.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

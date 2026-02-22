@@ -15,7 +15,7 @@ A pytest plugin for measuring coverage. Note: The provided text appears to be a 
 - **Total Downloads**: 32.2K
 - **Last updated**: 2025-11-03
 - **GitHub**: https://github.com/pytest-dev/pytest-cov
-- **Stars**: N/A
+- **Stars**: 2007
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

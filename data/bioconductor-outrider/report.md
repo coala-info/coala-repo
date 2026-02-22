@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/gagneurlab/OUTRIDER
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-outrider/overview
+- **Total Downloads**: 42.4K
+- **Last updated**: 2025-10-31
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Singularity/Apptaine
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cdna_cupcake/overview
-- **Total Downloads**: 97.3K
+- **Total Downloads**: 97.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Magdoll/cDNA_Cupcake
 - **Stars**: N/A

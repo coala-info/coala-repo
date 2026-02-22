@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/omamer/overview
-- **Total Downloads**: 6.7K
+- **Total Downloads**: 6.8K
 - **Last updated**: 2025-10-19
 - **GitHub**: https://github.com/DessimozLab/omamer
 - **Stars**: N/A

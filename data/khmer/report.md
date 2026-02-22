@@ -12,7 +12,7 @@ The provided text contains system error messages regarding a container runtime f
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/khmer/overview
-- **Total Downloads**: 101.3K
+- **Total Downloads**: 101.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dib-lab/khmer
 - **Stars**: N/A

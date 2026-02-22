@@ -13,4 +13,8 @@ the package is to provide coordinates of genes on the BioCarta pathway images an
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jokergoo/BioCartaImage
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-biocartaimage/overview
+- **Total Downloads**: 767
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

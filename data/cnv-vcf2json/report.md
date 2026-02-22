@@ -12,7 +12,7 @@ A tool to convert CNV (Copy Number Variation) VCF files to JSON format.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/cnv-vcf2json/overview
-- **Total Downloads**: 4.8K
+- **Total Downloads**: 4.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/conda-forge/cnv-vcf2json-feedstock
 - **Stars**: N/A

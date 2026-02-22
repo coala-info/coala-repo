@@ -12,7 +12,7 @@ Snakemake executor plugin for TES (Task Execution Service)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-executor-plugin-tes/overview
-- **Total Downloads**: 928
+- **Total Downloads**: 930
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/snakemake/snakemake-executor-plugin-tes
 - **Stars**: N/A

@@ -7,7 +7,7 @@ A simple interface to lat/long projection and datum
 	     and/or datum to another.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-proj4
+- **Conda**: https://anaconda.org/channels/r/packages/r-proj4/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/proj4/index.html
 - **Home (project)**: http://www.rforge.net/proj4/
 - **Package**: proj4
@@ -15,4 +15,8 @@ A simple interface to lat/long projection and datum
 - **Author**: Simon Urbanek [aut, cre, cph] (https://urbanek.org)
 - **Maintainer**: Simon Urbanek <simon.urbanek at r-project.org>
 - **Skill**: generated
+- **Total Downloads**: 293
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

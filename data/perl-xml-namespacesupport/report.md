@@ -12,7 +12,7 @@ The provided text does not contain help documentation as the executable was not 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-namespacesupport/overview
-- **Total Downloads**: 507.2K
+- **Total Downloads**: 507.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/perigrin/xml-namespacesupport
 - **Stars**: N/A

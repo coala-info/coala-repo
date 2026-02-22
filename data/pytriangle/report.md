@@ -15,7 +15,7 @@ A tool for triangle mesh generation (Note: The provided text contains container 
 - **Total Downloads**: 25.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pletzer/pytriangle
-- **Stars**: N/A
+- **Stars**: 11
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ Snakemake executor plugin for Azure Batch
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-executor-plugin-azure-batch/overview
-- **Total Downloads**: 946
+- **Total Downloads**: 947
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/snakemake/snakemake-executor-plugin-azure-batch
 - **Stars**: N/A

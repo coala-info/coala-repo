@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'proda'. It app
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/proda/overview
-- **Total Downloads**: 34.7K
+- **Total Downloads**: 34.8K
 - **Last updated**: 2025-08-10
 - **GitHub**: N/A
 - **Stars**: N/A

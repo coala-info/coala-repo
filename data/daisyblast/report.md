@@ -12,7 +12,7 @@ A tool for protein sequence alignment and analysis (Note: The provided text cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/daisyblast/overview
-- **Total Downloads**: 40
+- **Total Downloads**: 41
 - **Last updated**: 2025-11-21
 - **GitHub**: https://github.com/erinyoung/daisyblast
 - **Stars**: N/A

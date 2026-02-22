@@ -12,7 +12,7 @@ Gaftools is a tool for GAF (Graph Alignment Format) manipulation and analysis.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gaftools/overview
-- **Total Downloads**: 593
+- **Total Downloads**: 601
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/marschall-lab/gaftools
 - **Stars**: N/A

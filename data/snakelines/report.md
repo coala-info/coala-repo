@@ -12,7 +12,7 @@ A Snakemake-based pipeline tool (Note: The provided text is an error log and doe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakelines/overview
-- **Total Downloads**: 14.0K
+- **Total Downloads**: 14.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

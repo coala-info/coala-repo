@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Total Downloads**: 1.7K
 - **Last updated**: 2025-09-13
 - **GitHub**: https://github.com/bjmt/quaqc
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

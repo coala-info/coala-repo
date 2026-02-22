@@ -11,6 +11,10 @@ The package contains 8 BAM files, 1 per sequencing run. Each BAM file was obtain
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rnaseqdata.hnrnpc.bam.chr14/overview
+- **Total Downloads**: 24.7K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

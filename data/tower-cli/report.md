@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for to
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tower-cli/overview
-- **Total Downloads**: 9.1K
+- **Total Downloads**: 9.2K
 - **Last updated**: 2026-01-30
 - **GitHub**: https://github.com/seqeralabs/tower-cli
 - **Stars**: N/A

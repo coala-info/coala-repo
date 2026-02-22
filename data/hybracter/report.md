@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hybracter/overview
-- **Total Downloads**: 18.8K
+- **Total Downloads**: 18.9K
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/gbouras13/hybracter
 - **Stars**: N/A

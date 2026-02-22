@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nonpareil/overview
-- **Total Downloads**: 55.8K
+- **Total Downloads**: 55.9K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/lmrodriguezr/nonpareil
 - **Stars**: N/A

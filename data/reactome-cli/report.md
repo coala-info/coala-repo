@@ -12,7 +12,7 @@ Reactome Command Line Interface (Note: The provided text is a container executio
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/reactome-cli/overview
-- **Total Downloads**: 502
+- **Total Downloads**: 507
 - **Last updated**: 2025-06-28
 - **GitHub**: https://github.com/reactome/reactome_galaxy
 - **Stars**: N/A

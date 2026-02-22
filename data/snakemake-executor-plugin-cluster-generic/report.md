@@ -12,7 +12,7 @@ Snakemake executor plugin for generic clusters (Note: The provided text contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-executor-plugin-cluster-generic/overview
-- **Total Downloads**: 31.8K
+- **Total Downloads**: 32.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/snakemake/snakemake-executor-plugin-cluster-generic
 - **Stars**: N/A

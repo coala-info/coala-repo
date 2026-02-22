@@ -12,7 +12,7 @@ The provided text is a container build log and does not contain help information
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vitessce-python/overview
-- **Total Downloads**: 159
+- **Total Downloads**: 162
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/vitessce/vitessce-python
 - **Stars**: N/A

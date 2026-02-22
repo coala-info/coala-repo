@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/dcanr
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dcanr/overview
+- **Total Downloads**: 22.4K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

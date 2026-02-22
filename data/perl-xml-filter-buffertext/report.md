@@ -12,7 +12,7 @@ A Perl XML filter that ensures all characters() events are bundled into a single
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-filter-buffertext/overview
-- **Total Downloads**: 178.2K
+- **Total Downloads**: 178.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gooselinux/perl-XML-Filter-BufferText
 - **Stars**: N/A

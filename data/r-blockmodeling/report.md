@@ -3,7 +3,7 @@
 This is primarily meant as an implementation of generalized blockmodeling for valued networks.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-blockmodeling
+- **Conda**: https://anaconda.org/channels/r/packages/r-blockmodeling/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/blockmodeling/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=blockmodeling
 - **Package**: blockmodeling
@@ -11,4 +11,8 @@ This is primarily meant as an implementation of generalized blockmodeling for va
 - **Author**: Aleš Žiberna [aut, cre], Marjan Cugmas [ctb]
 - **Maintainer**: Aleš Žiberna <ales.ziberna at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 1.1K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

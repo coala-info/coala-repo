@@ -12,7 +12,7 @@ A tool for Japanese character set conversion in Perl. (Note: The provided text i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-jcode/overview
-- **Total Downloads**: 178.9K
+- **Total Downloads**: 179.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-Jcode
 - **Stars**: N/A

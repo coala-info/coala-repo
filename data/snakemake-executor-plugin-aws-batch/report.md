@@ -12,7 +12,7 @@ AWS Batch executor plugin for Snakemake
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-executor-plugin-aws-batch/overview
-- **Total Downloads**: 648
+- **Total Downloads**: 650
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/snakemake/snakemake-executor-plugin-aws-batch
 - **Stars**: N/A

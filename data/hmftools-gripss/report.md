@@ -12,7 +12,7 @@ The provided text is a system error message (disk space exhaustion during contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hmftools-gripss/overview
-- **Total Downloads**: 42.7K
+- **Total Downloads**: 42.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/hartwigmedical/hmftools
 - **Stars**: N/A

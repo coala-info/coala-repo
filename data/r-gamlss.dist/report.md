@@ -4,7 +4,7 @@ and Shape
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gamlss.dist
+- **Conda**: https://anaconda.org/channels/r/packages/r-gamlss.dist/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gamlss.dist/index.html
 - **Home (project)**: http://www.gamlss.org/
 - **Package**: gamlss.dist
@@ -12,4 +12,8 @@ N/A
 - **Author**: Mikis Stasinopoulos [aut, cre, cph], Robert Rigby [aut], Calliope Akantziliotou [ctb], Vlasios Voudouris [ctb], Gillian Heller [ctb], Fernanda De Bastiani [ctb], Raydonal Ospina [ctb], Nicoletta Motpan [ctb], Fiona McElduff [ctb], Majid Djennad [ctb], Marco Enea [ctb], Alexios Ghalanos [ctb], Christos Argyropoulos [ctb], Almond Stöcker [ctb], Jens Lichter [ctb], Stanislaus Stadlmann [ctb], Achim Zeileis [ctb]
 - **Maintainer**: Mikis Stasinopoulos <d.stasinopoulos at gre.ac.uk>
 - **Skill**: generated
+- **Total Downloads**: 451
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

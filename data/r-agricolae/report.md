@@ -3,7 +3,7 @@
 Original idea was presented in the thesis "A statistical analysis tool for agricultural research" to obtain the degree of Master on science, National Engineering University (UNI), Lima-Peru. Some experimental data for the examples come from the CIP and others research. Agricolae offers extensive functionality on experimental design especially for agricultural and plant breeding experiments, which can also be useful for other purposes. It supports planning of lattice, Alpha, Cyclic, Complete Bloc...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-agricolae
+- **Conda**: https://anaconda.org/channels/r/packages/r-agricolae/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/agricolae/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=agricolae
 - **Package**: agricolae
@@ -11,4 +11,8 @@ Original idea was presented in the thesis "A statistical analysis tool for agric
 - **Author**: Felipe de Mendiburu
 - **Maintainer**: Felipe de Mendiburu <fmendiburu at lamolina.edu.pe>
 - **Skill**: generated
+- **Total Downloads**: 114
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

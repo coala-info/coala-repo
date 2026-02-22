@@ -10,7 +10,7 @@ An R to C/C++ interface that runs the Leiden community
     package.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-leidenbase
+- **Conda**: https://anaconda.org/channels/r/packages/r-leidenbase/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/leidenbase/index.html
 - **Home (project)**: https://github.com/cole-trapnell-lab/leidenbase
 - **Package**: leidenbase
@@ -18,4 +18,8 @@ An R to C/C++ interface that runs the Leiden community
 - **Author**: Brent Ewing [aut, cre], Vincent Traag [ctb], Gábor Csárdi [ctb], Tamás Nepusz [ctb], Szabolcs Horvat [ctb], Fabio Zanini [ctb]
 - **Maintainer**: Brent Ewing <bge at uw.edu>
 - **Skill**: generated
+- **Total Downloads**: 610
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/cole-trapnell-lab/leidenbase
+- **Stars**: N/A
 

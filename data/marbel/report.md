@@ -12,7 +12,7 @@ Metagenomic Assembly-based Binning and Evaluation Pipeline (Note: The provided t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/marbel/overview
-- **Total Downloads**: 499
+- **Total Downloads**: 502
 - **Last updated**: 2025-06-06
 - **GitHub**: https://github.com/jlab/marbel
 - **Stars**: N/A

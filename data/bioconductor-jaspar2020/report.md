@@ -11,6 +11,10 @@ the package TFBSTools (>= 1.23.1).
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-jaspar2020/overview
+- **Total Downloads**: 7.0K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

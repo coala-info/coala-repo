@@ -12,7 +12,7 @@ The provided text does not contain help information for ngsfetch; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ngsfetch/overview
-- **Total Downloads**: 136
+- **Total Downloads**: 137
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/NaotoKubota/ngsfetch
 - **Stars**: N/A

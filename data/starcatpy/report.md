@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/starcatpy/overview
-- **Total Downloads**: 654
+- **Total Downloads**: 656
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/immunogenomics/starCAT
 - **Stars**: N/A

@@ -11,7 +11,7 @@ Fitting possibly high dimensional penalized
         parameters.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-penalized
+- **Conda**: https://anaconda.org/channels/r/packages/r-penalized/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/penalized/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=penalized
 - **Package**: penalized
@@ -19,4 +19,8 @@ Fitting possibly high dimensional penalized
 - **Author**: Jelle Goeman [aut, cre], Rosa Meijer [aut], Nimisha Chaturvedi [aut], Matthew Lueder [aut]
 - **Maintainer**: Jelle Goeman <j.j.goeman at lumc.nl>
 - **Skill**: generated
+- **Total Downloads**: 444
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

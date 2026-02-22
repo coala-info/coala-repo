@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'ddrage'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ddrage/overview
-- **Total Downloads**: 58.1K
+- **Total Downloads**: 58.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

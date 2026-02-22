@@ -1,55 +1,63 @@
 ---
 name: 3seq
-description: "Could not get help from Singularity for: 3seq"
+description: 3seq is a specialized bioinformatics tool used to identify recombination events within a set of aligned nucleotide sequences.
 homepage: https://mol.ax/software/3seq/
 ---
 
 # 3seq
 
 ## Overview
+3seq is a specialized bioinformatics tool used to identify recombination events within a set of aligned nucleotide sequences. It works by exhaustively (or via sampling) testing triplets of sequences to determine if one sequence (the "child") is a mosaic of the other two ("parents"). This is particularly useful for viral evolution studies, mitochondrial DNA analysis, and identifying horizontal gene transfer. The tool relies on a pre-computed p-value table for statistical significance, which must be generated or associated before a full analysis can be performed.
 
-3seq is a specialized bioinformatics tool used to identify mosaic recombination signals within sequence alignments. By analyzing every possible triplet in a dataset, it determines if one sequence (the child) is a recombinant of the other two (the parents). This tool is particularly useful for viral and bacterial evolutionary studies where horizontal gene transfer or recombination events are suspected. It relies on pre-computed or self-generated p-value tables to provide statistical significance for detected mosaicism.
+## Setup and P-Value Table Management
+Before running recombination analyses, you must establish a p-value table.
 
-## Usage Instructions
+- **Generate a table**: Use `-g <filename> <size>`. The size should match or exceed the number of polymorphic sites in your alignment.
+  `3seq -g myTable700 700`
+- **Associate/Check a table**: Use `-c <filename>` to link a table to the executable.
+  `3seq -c myTable700`
+- **Verify association**: Run `3seq` without arguments to see which table is currently active.
 
-### 1. Initial Setup and Verification
-Before running a full analysis, verify your alignment file and the 3seq installation.
-- **Check alignment:** Use the `-i` flag to get basic information about your sequences.
-  ```bash
-  3seq -i input_alignment.fasta
-  ```
+## Common CLI Patterns
 
-### 2. Managing P-Value Tables
-3seq requires a p-value table to perform statistical tests. You must either download a pre-computed table or generate one for your specific dataset size.
-- **Generate a table:** If your dataset has up to 500 sequences, generate a 500x500x500 table.
-  ```bash
-  3seq -g myPvalueTable500 500
-  ```
-- **Note:** Keep the p-value table on the same filesystem type (e.g., ext4, NTFS) as the executable to prevent read errors.
+### Full Recombination Analysis
+The standard "full run" mode tests all possible triplets.
+- **Basic run**: `3seq -f input.aln`
+- **Recommended production run**: Use `-d` to remove duplicate sequences (improves speed/accuracy) and `-id` to prefix output files.
+  `3seq -f input.aln -d -id project_alpha`
 
-### 3. Running Recombination Analysis
-To perform the actual recombination test, provide the alignment, the p-value table, and a run identifier.
-- **Standard Run:**
-  ```bash
-  3seq -f input_alignment.aln -ptable myPvalueTable500 -id myAnalysisRun
-  ```
-- **Subsampling Mode:** Newer versions (v1.7+) support a mode where the alignment can be repeatedly subsampled and tested.
+### Data Filtering and Subsetting
+- **Remove duplicates**: `3seq -w input.aln unique.aln -a -d`
+- **Extract specific range**: Use `-f` (first) and `-l` (last) for nucleotide positions.
+  `3seq -w input.aln subset.aln -a -f400 -l600`
+- **Filter by sequence name**: Use a text file containing names.
+  `3seq -f input.aln -subset names.txt`
 
-### 4. Interpreting Results
-3seq generates several output files prefixed with your `-id` string:
-- **.3s.log:** Contains the screen output and summary statistics. Look for the rejection of "clonal evolution" to confirm recombination.
-- **.3s.rec:** A tab-delimited file containing the core results:
-  - **Columns 1 & 2:** Potential parent sequences.
-  - **Column 3:** The identified recombinant (child) sequence.
-  - **Columns 7-11:** Various p-value formats.
-  - **Final Columns:** Estimated breakpoint ranges.
+### Advanced Analysis Options
+- **Minimum segment length**: Use `-L <int>` to ignore recombination events that result in very short segments (useful for phylogenetic validation).
+  `3seq -f input.aln -L 500`
+- **Significance threshold**: Adjust the Dunn-Šidák corrected p-value threshold (default is 0.05).
+  `3seq -f input.aln -t 0.01`
+- **Random sampling**: For large datasets where $N > 500$, use `-rand` and `-n` to perform subsampling.
+  `3seq -f input.aln -rand 50 -n 100`
 
-## Best Practices and Tips
-- **Input Formats:** 3seq accepts both Phylip and aligned FASTA formats. Ensure your sequences are properly aligned before processing.
-- **Performance:** For large datasets, building the p-value table is a one-time cost. Once generated, 3seq will remember the table association, and you may omit the `-ptable` flag in subsequent runs within the same environment.
-- **System Compatibility:** If using the pre-computed binary tables, ensure you are on a 64-bit system.
-- **Citation:** When publishing results, cite Lam et al. (2018) for the algorithmic complexity improvements and Boni et al. (2007) for the core statistical method.
+## Input and Output Reference
+
+### Supported Formats
+- **PHYLIP**: Type 1 (interleaved/sequential) and Type 2 (newline after name). Names must not contain spaces.
+- **FASTA**: Standard format. Spaces are allowed in names.
+- **Validation**: Check format compatibility with `3seq -i <file>`.
+
+### Primary Output Files
+- **.3s.rec**: The main results file. Columns include Parent P, Parent Q, Child C, uncorrected p-value, corrected p-value, and breakpoint locations.
+- **.3s.log**: A copy of the terminal output and run statistics.
+- **.3s.pvalhist**: A histogram of p-values to check for distribution uniformity.
+
+## Expert Tips
+- **Memory Awareness**: 3seq is memory-intensive. For alignments with >1400 polymorphic sites, a table requiring ~3.5GB of RAM is ideal, though smaller tables can be used with Hogan-Siegmund approximations (enabled by default).
+- **Parallelization**: If running on a cluster, use `-b` (begin) and `-e` (end) to split the sequence range across different jobs. Ensure `-#` is used if you want the multiple-comparison correction to apply only to the subset being tested.
+- **Visualizing Triplets**: Use `-triplet <file> <P> <Q> <C>` to generate an EPS file showing informative sites for a specific result of interest.
 
 ## Reference documentation
-- [3SEQ Recombination Detection Algorithm](./references/mol_ax_software_3seq.md)
-- [3seq Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_3seq_overview.md)
+- [3SEQ Manual](./references/mol_ax_content_media_2018_02_3seq_manual.20180209.pdf.md)
+- [3SEQ Software Overview](./references/mol_ax_software_3seq.md)

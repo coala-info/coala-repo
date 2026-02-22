@@ -12,7 +12,7 @@ The provided text does not contain help information for kcftools; it contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kcftools/overview
-- **Total Downloads**: 422
+- **Total Downloads**: 427
 - **Last updated**: 2025-09-24
 - **GitHub**: https://github.com/sivasubramanics/kcftools
 - **Stars**: N/A

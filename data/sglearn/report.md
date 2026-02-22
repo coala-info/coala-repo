@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sglearn/overview
-- **Total Downloads**: 54
+- **Total Downloads**: 55
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/gpp-rnd/sglearn
 - **Stars**: N/A

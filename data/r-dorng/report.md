@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-dorng
+- **Conda**: https://anaconda.org/channels/r/packages/r-dorng/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/doRNG/index.html
 - **Home (project)**: https://renozao.github.io/doRNG
 - **Package**: doRNG
@@ -11,4 +11,8 @@ N/A
 - **Author**: Renaud Gaujoux [aut], Emilio L. Sáenz Guillén [cre]
 - **Maintainer**: Emilio L. Sáenz Guillén <Emilio.Saenz-Guillen at citystgeorges.ac.uk>
 - **Skill**: generated
+- **Total Downloads**: 1.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

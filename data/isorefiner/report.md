@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isorefiner/overview
-- **Total Downloads**: 502
+- **Total Downloads**: 505
 - **Last updated**: 2025-07-17
 - **GitHub**: https://github.com/rkajitani/IsoRefiner
 - **Stars**: N/A

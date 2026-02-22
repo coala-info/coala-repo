@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BiodataAnalysisGroup/tripr
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tripr/overview
+- **Total Downloads**: 8.0K
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

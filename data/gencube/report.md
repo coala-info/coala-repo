@@ -12,7 +12,7 @@ GenCube is a command-line tool for genomic data management. (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gencube/overview
-- **Total Downloads**: 565
+- **Total Downloads**: 570
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/snu-cdrc/gencube
 - **Stars**: N/A

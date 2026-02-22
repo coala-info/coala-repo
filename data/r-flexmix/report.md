@@ -8,7 +8,7 @@ A general framework for finite mixtures of regression
   model-based clustering.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-flexmix
+- **Conda**: https://anaconda.org/channels/r/packages/r-flexmix/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/flexmix/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=flexmix
 - **Package**: flexmix
@@ -16,4 +16,8 @@ A general framework for finite mixtures of regression
 - **Author**: Bettina Gruen [aut, cre], Friedrich Leisch [aut], Deepayan Sarkar [ctb], Frederic Mortier [ctb], Nicolas Picard [ctb]
 - **Maintainer**: Bettina Gruen <Bettina.Gruen at R-project.org>
 - **Skill**: generated
+- **Total Downloads**: 530
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

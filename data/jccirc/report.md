@@ -12,7 +12,7 @@ The provided text contains container runtime error messages (Singularity/Apptain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jccirc/overview
-- **Total Downloads**: 914
+- **Total Downloads**: 917
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/cbbzhang/JCcirc
 - **Stars**: N/A

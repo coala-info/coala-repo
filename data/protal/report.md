@@ -12,10 +12,10 @@ The provided text contains error logs from a container runtime (Apptainer/Singul
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/protal/overview
-- **Total Downloads**: 614
+- **Total Downloads**: 620
 - **Last updated**: 2025-11-05
 - **GitHub**: https://github.com/4less/protal
-- **Stars**: N/A
+- **Stars**: 3
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

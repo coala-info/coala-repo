@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ge11232002/TFBSTools
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tfbstools/overview
+- **Total Downloads**: 81.7K
+- **Last updated**: 2025-08-22
+- **Stars**: N/A
 

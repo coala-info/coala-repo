@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/zol/overview
-- **Total Downloads**: 76.1K
+- **Total Downloads**: 76.3K
 - **Last updated**: 2026-01-17
 - **GitHub**: https://github.com/Kalan-Lab/zol
 - **Stars**: N/A

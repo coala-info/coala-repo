@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/smgogarten/GWASTools
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gwastools/overview
+- **Total Downloads**: 27.3K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

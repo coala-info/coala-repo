@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for va
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/varda2-client/overview
-- **Total Downloads**: 17.1K
+- **Total Downloads**: 17.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/varda/varda2-client
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for sp
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spydrpick/overview
-- **Total Downloads**: 18.5K
+- **Total Downloads**: 18.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/santeripuranen/SpydrPick
 - **Stars**: N/A

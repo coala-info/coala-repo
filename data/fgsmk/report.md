@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'fgsmk'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fgsmk/overview
-- **Total Downloads**: 364
+- **Total Downloads**: 367
 - **Last updated**: 2025-11-27
 - **GitHub**: https://github.com/fulcrumgenomics/fgsmk
 - **Stars**: N/A

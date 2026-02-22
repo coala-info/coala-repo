@@ -11,6 +11,10 @@ The package provides tools to model and test the association between multiple ge
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-asgsca/overview
+- **Total Downloads**: 42.7K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

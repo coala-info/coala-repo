@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cmappy/overview
-- **Total Downloads**: 112.9K
+- **Total Downloads**: 113.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cmap/cmapPy
 - **Stars**: N/A

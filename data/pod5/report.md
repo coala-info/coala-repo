@@ -12,7 +12,7 @@ The provided text is a container execution log and does not contain help informa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pod5/overview
-- **Total Downloads**: 2.5K
+- **Total Downloads**: 2.6K
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/nanoporetech/pod5-file-format
 - **Stars**: N/A

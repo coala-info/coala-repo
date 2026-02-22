@@ -12,7 +12,7 @@ A tool for viral profiling. (Note: The provided text contains container runtime 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/virprof/overview
-- **Total Downloads**: 38
+- **Total Downloads**: 39
 - **Last updated**: 2025-11-25
 - **GitHub**: https://github.com/seiboldlab/virprof
 - **Stars**: N/A

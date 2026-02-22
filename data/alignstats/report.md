@@ -15,7 +15,7 @@ AlignStats reports various metrics for SAM, BAM, or CRAM files, including alignm
 - **Total Downloads**: 37.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jfarek/alignstats
-- **Stars**: N/A
+- **Stars**: 20
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

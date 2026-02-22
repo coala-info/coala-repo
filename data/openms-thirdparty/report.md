@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/openms-thirdparty/overview
-- **Total Downloads**: 42.7K
+- **Total Downloads**: 42.8K
 - **Last updated**: 2025-12-14
 - **GitHub**: https://github.com/OpenMS/OpenMS
 - **Stars**: N/A

@@ -15,7 +15,7 @@ Aevol is a digital genetics platform for simulating the evolution of populations
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/otouat/micro-aevol2-hypervitesse
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -3,7 +3,7 @@
 R package dimsum (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-dimsum
+- **Conda**: https://anaconda.org/channels/r/packages/r-dimsum/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/dimsum/index.html
 - **Home (project)**: https://github.com/lehner-lab/DiMSum
 - **Package**: dimsum
@@ -11,4 +11,8 @@ R package dimsum (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/lehner-lab/DiMSum
+- **Stars**: N/A
 

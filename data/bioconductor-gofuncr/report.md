@@ -11,6 +11,10 @@ the package and updated regularly (01-May-2021). GOfuncR provides the standard c
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gofuncr/overview
+- **Total Downloads**: 34.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for su
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/suvtk/overview
-- **Total Downloads**: 513
+- **Total Downloads**: 517
 - **Last updated**: 2025-09-13
 - **GitHub**: https://github.com/LanderDC/suvtk
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The Munkres module provides an implementation of the Munkres algorithm (also kno
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/munkres/overview
-- **Total Downloads**: 411.9K
+- **Total Downloads**: 412.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bmc/munkres
 - **Stars**: N/A

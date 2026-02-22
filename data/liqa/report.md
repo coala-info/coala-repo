@@ -12,7 +12,7 @@ Long-read Isoform Quantification and Analysis (Note: The provided text is a syst
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/liqa/overview
-- **Total Downloads**: 874
+- **Total Downloads**: 875
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/WGLab/LIQA
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text is a log of a failed container build process and does not cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-temp/overview
-- **Total Downloads**: 378.4K
+- **Total Downloads**: 378.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Taoviqinvicible/Tools-termux
 - **Stars**: N/A

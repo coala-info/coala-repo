@@ -11,6 +11,10 @@ The package provides a pipeline to detect specific interactions between DNA elem
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fourcseq/overview
+- **Total Downloads**: 42.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

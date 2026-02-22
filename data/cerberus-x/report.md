@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cerberus-x/overview
-- **Total Downloads**: 236
+- **Total Downloads**: 238
 - **Last updated**: 2025-07-09
 - **GitHub**: https://github.com/raw-lab/cerberus
 - **Stars**: N/A

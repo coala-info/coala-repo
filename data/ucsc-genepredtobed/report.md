@@ -12,7 +12,7 @@ Convert genePred files to BED format.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-genepredtobed/overview
-- **Total Downloads**: 96.8K
+- **Total Downloads**: 96.9K
 - **Last updated**: 2025-06-22
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

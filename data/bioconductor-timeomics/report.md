@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/abodein/timeOmics
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-timeomics/overview
+- **Total Downloads**: 16.8K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

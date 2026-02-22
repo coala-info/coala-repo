@@ -12,8 +12,8 @@ A post sequencing QC tool for Oxford Nanopore sequencing data (Note: The provide
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/toulligqc/overview
-- **Total Downloads**: 57.7K
-- **Last updated**: 2026-02-05
+- **Total Downloads**: 57.8K
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/GenomicParisCentre/toulligQC
 - **Stars**: N/A
 ### Original Help Text

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vpt-cellpose2/overview
-- **Total Downloads**: 285
+- **Total Downloads**: 287
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/Vizgen/vpt-plugin-cellpose2
 - **Stars**: N/A

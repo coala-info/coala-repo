@@ -12,7 +12,7 @@ The provided text does not contain help information for libpdb-redo; it is an er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/libpdb-redo/overview
-- **Total Downloads**: 827
+- **Total Downloads**: 833
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/PDB-REDO/libpdb-redo
 - **Stars**: N/A

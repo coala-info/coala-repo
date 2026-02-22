@@ -15,7 +15,7 @@ Scan SAM/BAM file MAPPING for signatures of structural variations.
 - **Total Downloads**: 15.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/seqan/anise_basil
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 basil - BASe-resolution Insert Locator

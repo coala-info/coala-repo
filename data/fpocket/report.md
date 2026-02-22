@@ -12,7 +12,7 @@ The provided text does not contain help information for fpocket; it is an error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/fpocket/overview
-- **Total Downloads**: 95.4K
+- **Total Downloads**: 95.5K
 - **Last updated**: 2025-09-15
 - **GitHub**: https://github.com/Discngine/fpocket
 - **Stars**: N/A

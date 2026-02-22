@@ -12,7 +12,7 @@ A tool for structural variation discovery (Note: The provided text contains cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kestrel/overview
-- **Total Downloads**: 224
+- **Total Downloads**: 225
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/paudano/kestrel
 - **Stars**: N/A

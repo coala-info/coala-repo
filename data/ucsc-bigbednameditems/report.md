@@ -12,7 +12,7 @@ Extract items from bigBed that match a list of names.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-bigbednameditems/overview
-- **Total Downloads**: 31.6K
+- **Total Downloads**: 31.7K
 - **Last updated**: 2025-06-28
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

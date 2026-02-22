@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/StoreyLab/gcatest
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gcatest/overview
+- **Total Downloads**: 44.6K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

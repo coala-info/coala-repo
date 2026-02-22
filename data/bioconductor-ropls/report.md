@@ -11,6 +11,10 @@ the package provides metrics and graphics to determine the optimal number of com
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ropls/overview
+- **Total Downloads**: 78.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

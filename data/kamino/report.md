@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime and does not contain 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kamino/overview
-- **Total Downloads**: 3.1K
+- **Total Downloads**: 3.2K
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/rderelle/kamino
 - **Stars**: N/A

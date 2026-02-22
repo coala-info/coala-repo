@@ -12,10 +12,10 @@ The provided text is an error log from a container build process and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bcbio-gff/overview
-- **Total Downloads**: 264.5K
+- **Total Downloads**: 264.6K
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/chapmanb/bcbb
-- **Stars**: N/A
+- **Stars**: 645
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

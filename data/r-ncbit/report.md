@@ -4,7 +4,7 @@ Makes NCBI taxonomic data locally available and
         searchable as an R object.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ncbit
+- **Conda**: https://anaconda.org/channels/r/packages/r-ncbit/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/ncbit/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=ncbit
 - **Package**: ncbit
@@ -12,4 +12,8 @@ Makes NCBI taxonomic data locally available and
 - **Author**: Jon Eastman
 - **Maintainer**: Jon Eastman <jonathan.eastman at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 338
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

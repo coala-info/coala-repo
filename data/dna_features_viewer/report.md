@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dna_features_viewer/overview
-- **Total Downloads**: 35.9K
+- **Total Downloads**: 36.0K
 - **Last updated**: 2025-05-09
 - **GitHub**: https://github.com/Edinburgh-Genome-Foundry/DnaFeaturesViewer
 - **Stars**: N/A

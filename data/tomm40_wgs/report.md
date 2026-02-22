@@ -12,7 +12,7 @@ A tool for TOMM40 WGS (Whole Genome Sequencing) analysis. Note: The provided hel
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tomm40_wgs/overview
-- **Total Downloads**: 572
+- **Total Downloads**: 577
 - **Last updated**: 2025-09-29
 - **GitHub**: https://github.com/RushAlz/TOMM40_WGS
 - **Stars**: N/A

@@ -12,7 +12,7 @@ NextPolish is a tool for fast and read-depth independent genome polishing. (Note
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nextpolish/overview
-- **Total Downloads**: 8.5K
+- **Total Downloads**: 8.6K
 - **Last updated**: 2025-07-22
 - **GitHub**: https://github.com/Nextomics/NextPolish
 - **Stars**: N/A

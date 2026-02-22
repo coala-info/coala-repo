@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcf2pandas/overview
-- **Total Downloads**: 292
+- **Total Downloads**: 294
 - **Last updated**: 2025-06-17
 - **GitHub**: https://github.com/trentzz/vcf2pandas
 - **Stars**: N/A

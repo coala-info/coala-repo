@@ -13,4 +13,8 @@ The package document the data collection, pre-processing and processing of the d
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/MahShaaban/curatedAdipoChIP
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-curatedadipochip/overview
+- **Total Downloads**: 19.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

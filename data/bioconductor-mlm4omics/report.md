@@ -11,6 +11,10 @@ The package has two main functions to handle not-missing-at-random missing respo
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mlm4omics/overview
+- **Total Downloads**: 4.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

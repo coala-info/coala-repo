@@ -9,7 +9,7 @@ A collection of measures for measuring ecological diversity.
   outside the R ecosystem, such as 'scipy', 'Mothur', and...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-abdiv
+- **Conda**: https://anaconda.org/channels/r/packages/r-abdiv/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/abdiv/index.html
 - **Home (project)**: https://github.com/kylebittinger/abdiv
 - **Package**: abdiv
@@ -17,4 +17,8 @@ A collection of measures for measuring ecological diversity.
 - **Author**: Kyle Bittinger [aut, cre]
 - **Maintainer**: Kyle Bittinger <kylebittinger at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/kylebittinger/abdiv
+- **Stars**: N/A
 

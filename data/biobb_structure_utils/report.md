@@ -12,7 +12,7 @@ BioExcel Building Blocks (BioBB) structure utilities for manipulating and checki
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biobb_structure_utils/overview
-- **Total Downloads**: 53.0K
+- **Total Downloads**: 53.1K
 - **Last updated**: 2026-01-23
 - **GitHub**: https://github.com/bioexcel/biobb_structure_utils
 - **Stars**: N/A

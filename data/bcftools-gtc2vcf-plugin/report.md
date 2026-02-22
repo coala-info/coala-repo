@@ -15,7 +15,7 @@ The provided text is a log of a failed container build process (Singularity/Appt
 - **Total Downloads**: 10.0K
 - **Last updated**: 2025-06-06
 - **GitHub**: https://github.com/freeseek/gtc2vcf
-- **Stars**: N/A
+- **Stars**: 163
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ A tool for analyzing codon usage bias. Note: The provided help text contains onl
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/codon-bias/overview
-- **Total Downloads**: 144
+- **Total Downloads**: 145
 - **Last updated**: 2025-11-10
 - **GitHub**: https://github.com/alondmnt/codon-bias
 - **Stars**: N/A

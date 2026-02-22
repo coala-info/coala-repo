@@ -13,4 +13,8 @@ the package contains 49 studies. The curatedTBData package allows users to acces
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/compbiomed/curatedTBData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-curatedtbdata/overview
+- **Total Downloads**: 8.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

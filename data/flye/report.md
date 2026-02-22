@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/flye/overview
-- **Total Downloads**: 226.6K
+- **Total Downloads**: 226.7K
 - **Last updated**: 2025-05-07
 - **GitHub**: https://github.com/fenderglass/Flye
 - **Stars**: N/A

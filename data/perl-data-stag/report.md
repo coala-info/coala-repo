@@ -12,7 +12,7 @@ The provided text does not contain help documentation for the tool; it consists 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-data-stag/overview
-- **Total Downloads**: 181.9K
+- **Total Downloads**: 182.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/OpenMandrivaAssociation/perl-Data-Stag
 - **Stars**: N/A

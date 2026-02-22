@@ -5,7 +5,7 @@ A collection of functions to implement a class for univariate
   polynomial manipulations.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-polynom
+- **Conda**: https://anaconda.org/channels/r/packages/r-polynom/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/polynom/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=polynom
 - **Package**: polynom
@@ -13,4 +13,8 @@ A collection of functions to implement a class for univariate
 - **Author**: Bill Venables [aut, cre] (S original), Kurt Hornik [aut] (R port), Martin Maechler [aut] (R port)
 - **Maintainer**: Bill Venables <Bill.Venables at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 3.5K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

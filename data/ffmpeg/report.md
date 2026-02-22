@@ -12,7 +12,7 @@ A complete, cross-platform solution to record, convert and stream audio and vide
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/ffmpeg/overview
-- **Total Downloads**: 52.3K
+- **Total Downloads**: 52.4K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/FFmpeg/FFmpeg
 - **Stars**: N/A

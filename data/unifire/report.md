@@ -12,7 +12,7 @@ The provided text does not contain a description of the tool; it appears to be a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unifire/overview
-- **Total Downloads**: 142
+- **Total Downloads**: 143
 - **Last updated**: 2025-08-11
 - **GitHub**: https://github.com/cmatKhan/unifire
 - **Stars**: N/A

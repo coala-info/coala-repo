@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'goleft'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/goleft/overview
-- **Total Downloads**: 115.7K
+- **Total Downloads**: 115.8K
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/brentp/goleft
 - **Stars**: N/A

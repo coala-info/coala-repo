@@ -12,10 +12,10 @@ The provided text appears to be a container execution log rather than CLI help t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pypints/overview
-- **Total Downloads**: 18.9K
+- **Total Downloads**: 19.0K
 - **Last updated**: 2025-05-14
 - **GitHub**: https://github.com/hyulab/PINTS
-- **Stars**: N/A
+- **Stars**: 15
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

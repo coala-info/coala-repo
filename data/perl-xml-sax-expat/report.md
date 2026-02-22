@@ -12,7 +12,7 @@ The provided text does not contain help information as the executable was not fo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-sax-expat/overview
-- **Total Downloads**: 356.5K
+- **Total Downloads**: 356.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-XML-SAX-ExpatNB
 - **Stars**: N/A

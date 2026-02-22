@@ -12,7 +12,7 @@ MultiQC aggregates results from bioinformatics analyses across many samples into
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/multiqc/overview
-- **Total Downloads**: 741.9K
+- **Total Downloads**: 742.2K
 - **Last updated**: 2025-12-09
 - **GitHub**: https://github.com/MultiQC/MultiQC
 - **Stars**: N/A

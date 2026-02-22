@@ -11,6 +11,10 @@ The package has two functions: ccrepe: Calculates similarity measures, p-values 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ccrepe/overview
+- **Total Downloads**: 22.5K
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text is an error log indicating that the executable 'perl-libxml-pe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-libxml-perl/overview
-- **Total Downloads**: 310.0K
+- **Total Downloads**: 310.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/grantm/perl-libxml-by-example
 - **Stars**: N/A

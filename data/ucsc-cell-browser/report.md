@@ -12,7 +12,7 @@ UCSC Cell Browser
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-cell-browser/overview
-- **Total Downloads**: 206.6K
+- **Total Downloads**: 206.7K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/maximilianh/cellBrowser
 - **Stars**: N/A

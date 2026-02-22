@@ -12,7 +12,7 @@ The provided text is a container runtime error log (Singularity/Apptainer) and d
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tigmint/overview
-- **Total Downloads**: 54.9K
+- **Total Downloads**: 55.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bcgsc/tigmint
 - **Stars**: N/A

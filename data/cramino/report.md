@@ -12,7 +12,7 @@ Tool to extract QC metrics from cram or bam
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cramino/overview
-- **Total Downloads**: 15.5K
+- **Total Downloads**: 15.6K
 - **Last updated**: 2025-12-27
 - **GitHub**: https://github.com/wdecoster/cramino
 - **Stars**: N/A

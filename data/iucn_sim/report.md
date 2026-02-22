@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/iucn_sim/overview
-- **Total Downloads**: 26.8K
+- **Total Downloads**: 26.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tobiashofmann88/iucn_extinction_simulator
 - **Stars**: N/A

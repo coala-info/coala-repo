@@ -12,7 +12,7 @@ A tool for downloading and extracting sequence data and metadata from public rep
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kingfisher/overview
-- **Total Downloads**: 14.6K
+- **Total Downloads**: 14.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wwood/kingfisher-download
 - **Stars**: N/A

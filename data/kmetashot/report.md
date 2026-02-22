@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kmetashot/overview
-- **Total Downloads**: 302
+- **Total Downloads**: 305
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/gdefazio/kMetaShot
 - **Stars**: N/A

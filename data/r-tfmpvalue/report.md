@@ -12,7 +12,7 @@ In putative Transcription Factor Binding Sites (TFBSs)
      ...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-tfmpvalue
+- **Conda**: https://anaconda.org/channels/r/packages/r-tfmpvalue/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/TFMPvalue/index.html
 - **Home (project)**: https://github.com/ge11232002/TFMPvalue
 - **Package**: TFMPvalue
@@ -20,4 +20,8 @@ In putative Transcription Factor Binding Sites (TFBSs)
 - **Author**: Ge Tan [aut, cre]
 - **Maintainer**: Ge Tan <ge_tan at live.com>
 - **Skill**: generated
+- **Total Downloads**: 486
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ge11232002/TFMPvalue
+- **Stars**: N/A
 

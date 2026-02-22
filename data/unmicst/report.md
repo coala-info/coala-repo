@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unmicst/overview
-- **Total Downloads**: 105
+- **Total Downloads**: 106
 - **Last updated**: 2025-05-28
 - **GitHub**: https://github.com/labsyspharm/UnMicst
 - **Stars**: N/A

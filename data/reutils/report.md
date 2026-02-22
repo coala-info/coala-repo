@@ -11,6 +11,11 @@ Could not get help from Singularity for: reutils
 - **Package**: Not found
 - **Validation**: FAIL (generation failed)
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/reutils/overview
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/Ayrx/reutils
+- **Stars**: N/A
 ### Generation Failed
 
 Could not get help from Singularity for: reutils

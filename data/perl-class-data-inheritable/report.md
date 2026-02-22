@@ -12,7 +12,7 @@ Class::Data::Inheritable is a Perl module that allows you to create accessor met
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-class-data-inheritable/overview
-- **Total Downloads**: 248.0K
+- **Total Downloads**: 248.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

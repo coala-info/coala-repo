@@ -12,7 +12,7 @@ FastOMA is a tool for orthology inference. (Note: The provided text contains con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastoma/overview
-- **Total Downloads**: 941
+- **Total Downloads**: 948
 - **Last updated**: 2025-12-20
 - **GitHub**: https://github.com/DessimozLab/FastOMA
 - **Stars**: N/A

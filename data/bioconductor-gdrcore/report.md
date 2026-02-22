@@ -13,4 +13,8 @@ The package provides tools for normalizing, averaging, and calculation of gDR me
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/gdrplatform/gDRcore
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gdrcore/overview
+- **Total Downloads**: 1.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

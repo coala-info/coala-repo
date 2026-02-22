@@ -12,10 +12,10 @@ A tool for binning metagenomic sequences based on abundance and k-mer compositio
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/abundancebin/overview
-- **Total Downloads**: 184.7K
+- **Total Downloads**: 184.8K
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/movingpictures83/AbundanceBin
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 Please supply input FASTA file.

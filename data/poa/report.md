@@ -12,7 +12,7 @@ Partial Order Alignment (Note: The provided text contains container build errors
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/poa/overview
-- **Total Downloads**: 120.7K
+- **Total Downloads**: 120.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jakecreps/poastal
 - **Stars**: N/A

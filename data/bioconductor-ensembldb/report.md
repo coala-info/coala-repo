@@ -13,4 +13,8 @@ The package provides functions to create and use transcript centric annotation d
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jorainer/ensembldb
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ensembldb/overview
+- **Total Downloads**: 152.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

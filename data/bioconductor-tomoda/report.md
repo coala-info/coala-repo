@@ -13,4 +13,8 @@ the package is to find zones with similar transcriptional profiles and spatially
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/liuwd15/tomoda
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tomoda/overview
+- **Total Downloads**: 13.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

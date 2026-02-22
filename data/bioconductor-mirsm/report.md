@@ -13,4 +13,8 @@ The package aims to identify miRNA sponge or ceRNA modules in heterogeneous data
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/zhangjunpeng411/miRSM
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mirsm/overview
+- **Total Downloads**: 25.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

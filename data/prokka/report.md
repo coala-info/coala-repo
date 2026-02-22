@@ -15,7 +15,7 @@ Rapid prokaryotic genome annotation
 - **Total Downloads**: 232.4K
 - **Last updated**: 2025-12-14
 - **GitHub**: https://github.com/tseemann/prokka
-- **Stars**: N/A
+- **Stars**: 957
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

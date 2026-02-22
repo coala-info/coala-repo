@@ -12,7 +12,7 @@ The provided text does not contain help information or documentation for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-spec/overview
-- **Total Downloads**: 256.9K
+- **Total Downloads**: 257.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/davorg-cpan/parse-rpm-spec
 - **Stars**: N/A

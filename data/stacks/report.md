@@ -12,7 +12,7 @@ The provided text is a container build log and does not contain help information
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/stacks/overview
-- **Total Downloads**: 312.8K
+- **Total Downloads**: 313.2K
 - **Last updated**: 2025-09-30
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information; it contains system error me
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy_sequence_utils/overview
-- **Total Downloads**: 88.5K
+- **Total Downloads**: 88.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/galaxyproject/sequence_utils
 - **Stars**: N/A

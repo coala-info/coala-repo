@@ -12,7 +12,7 @@ segemehl is a software to map short sequencer reads to reference genomes. Unlike
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/segemehl/overview
-- **Total Downloads**: 184.1K
+- **Total Downloads**: 184.3K
 - **Last updated**: 2025-09-30
 - **GitHub**: N/A
 - **Stars**: N/A

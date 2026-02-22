@@ -13,4 +13,8 @@ the package provides functionality for visualization and conversion to other for
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/brianSroberts/DegCre
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-degcre/overview
+- **Total Downloads**: 432
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

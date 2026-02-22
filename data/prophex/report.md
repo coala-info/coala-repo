@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool 'prophex'. It a
 - **Total Downloads**: 13.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/prophyle/prophex
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

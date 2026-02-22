@@ -15,7 +15,7 @@ The provided text does not contain help information for qtltools; it is a log of
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/qtltools/qtltools
-- **Stars**: N/A
+- **Stars**: 60
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ A tool for genotyping (description not available in provided text due to executi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genotypy/overview
-- **Total Downloads**: 535
+- **Total Downloads**: 538
 - **Last updated**: 2025-05-14
 - **GitHub**: N/A
 - **Stars**: N/A

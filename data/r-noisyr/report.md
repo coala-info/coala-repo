@@ -7,7 +7,7 @@ Quantifies and removes technical noise from high-throughput
         as tools to quality check and assess the stability of output.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-noisyr
+- **Conda**: https://anaconda.org/channels/r/packages/r-noisyr/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/noisyr/index.html
 - **Home (project)**: https://github.com/Core-Bioinformatics/noisyR
 - **Package**: noisyr
@@ -15,4 +15,8 @@ Quantifies and removes technical noise from high-throughput
 - **Author**: Ilias Moutsopoulos [aut, cre], Irina Mohorianu [aut, ctb], Hajk-Georg Drost [ctb], Elze Lauzikaite [ctb]
 - **Maintainer**: Ilias Moutsopoulos <im383 at cam.ac.uk>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/Core-Bioinformatics/noisyR
+- **Stars**: N/A
 

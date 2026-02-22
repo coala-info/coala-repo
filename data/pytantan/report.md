@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions for th
 - **Total Downloads**: 2.0K
 - **Last updated**: 2025-07-16
 - **GitHub**: https://github.com/althonos/pytantan
-- **Stars**: N/A
+- **Stars**: 2
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

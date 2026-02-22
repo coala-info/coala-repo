@@ -12,10 +12,10 @@ AccuSNV is a tool for calling single nucleotide variants (SNVs) from sequencing 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/accusnv/overview
-- **Total Downloads**: 508
+- **Total Downloads**: 509
 - **Last updated**: 2025-08-18
 - **GitHub**: https://github.com/liaoherui/AccuSNV
-- **Stars**: N/A
+- **Stars**: 7
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

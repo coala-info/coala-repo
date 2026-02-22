@@ -15,7 +15,7 @@ A pytest plugin that provides a mocker fixture which is a thin-wrapper around th
 - **Total Downloads**: 14.8K
 - **Last updated**: 2025-12-04
 - **GitHub**: https://github.com/pytest-dev/pytest-mock
-- **Stars**: N/A
+- **Stars**: 2015
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

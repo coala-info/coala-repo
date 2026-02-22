@@ -11,6 +11,10 @@ The package is unified implementation of MeSH.db, MeSH.AOR.db, and MeSH.PCR.db a
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-meshdbi/overview
+- **Total Downloads**: 42.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

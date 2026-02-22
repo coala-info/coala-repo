@@ -10,7 +10,7 @@ Pretty, human readable formatting of quantities.
     Quantities: '1239437' -&gt; '1.24 M'.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-prettyunits
+- **Conda**: https://anaconda.org/channels/r/packages/r-prettyunits/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/prettyunits/index.html
 - **Home (project)**: https://github.com/gaborcsardi/prettyunits
 - **Package**: prettyunits
@@ -18,4 +18,8 @@ Pretty, human readable formatting of quantities.
 - **Author**: Gabor Csardi [aut, cre], Bill Denney [ctb], Christophe Regouby [ctb]
 - **Maintainer**: Gabor Csardi <csardi.gabor at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 173.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/gaborcsardi/prettyunits
+- **Stars**: N/A
 

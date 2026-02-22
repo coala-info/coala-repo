@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sideretro/overview
-- **Total Downloads**: 322
+- **Total Downloads**: 323
 - **Last updated**: 2025-05-19
 - **GitHub**: https://github.com/galantelab/sideRETRO
 - **Stars**: N/A

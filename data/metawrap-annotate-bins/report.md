@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-annotate-bins/overview
-- **Total Downloads**: 44
+- **Total Downloads**: 45
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A

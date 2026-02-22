@@ -12,7 +12,7 @@ Genome Analysis Toolkit (GATK)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gatk/overview
-- **Total Downloads**: 186.0K
+- **Total Downloads**: 186.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

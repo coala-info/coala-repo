@@ -12,7 +12,7 @@ Rho-independent terminator prediction tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rhotermpredict/overview
-- **Total Downloads**: 812
+- **Total Downloads**: 814
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/barricklab/RhoTermPredict
 - **Stars**: N/A

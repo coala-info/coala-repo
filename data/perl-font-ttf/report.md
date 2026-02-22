@@ -12,7 +12,7 @@ The provided text is an error log indicating that the executable 'perl-font-ttf'
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-font-ttf/overview
-- **Total Downloads**: 338.3K
+- **Total Downloads**: 338.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

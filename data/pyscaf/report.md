@@ -15,7 +15,7 @@ A tool for scaffolding genomic assemblies using various types of long-range info
 - **Total Downloads**: 6.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pyscaffold/pyscaffold
-- **Stars**: N/A
+- **Stars**: 2251
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

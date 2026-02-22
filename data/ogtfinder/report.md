@@ -12,7 +12,7 @@ A tool for predicting the optimal growth temperature (OGT) of prokaryotes. Note:
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ogtfinder/overview
-- **Total Downloads**: 539
+- **Total Downloads**: 543
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/SC-Git1/OGTFinder
 - **Stars**: N/A

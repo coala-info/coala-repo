@@ -15,7 +15,7 @@ Allo is a software that allocates multi-mapped reads in gene regulatory data.
 - **Total Downloads**: 4.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/seqcode/allo
-- **Stars**: N/A
+- **Stars**: 24
 ### Original Help Text
 ```text
 usage: allo [-h] [-v] -seq {pe,se} [-o OUTFILE] [--mixed] [--dnase] [--atac]

@@ -3,7 +3,7 @@
 R package bcbiornaseq (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bcbiornaseq
+- **Conda**: https://anaconda.org/channels/r/packages/r-bcbiornaseq/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/bcbiornaseq/index.html
 - **Home (project)**: https://github.com/hbc/bcbioRNASeq
 - **Package**: bcbiornaseq
@@ -11,4 +11,8 @@ R package bcbiornaseq (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/hbc/bcbioRNASeq
+- **Stars**: N/A
 

@@ -3,7 +3,7 @@
 List environments are environments that have list-like properties.  For instance, the elements of a list environment are ordered and can be accessed and iterated over using index subsetting, e.g. 'x &lt;- listenv(a = 1, b = 2); for (i in seq_along(x)) x[[i]] &lt;- x[[i]] ^ 2; y &lt;- as.list(x)'.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-listenv
+- **Conda**: https://anaconda.org/channels/r/packages/r-listenv/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/listenv/index.html
 - **Home (project)**: https://github.com/HenrikBengtsson/listenv
 - **Package**: listenv
@@ -11,4 +11,8 @@ List environments are environments that have list-like properties.  For instance
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
 - **Skill**: generated
+- **Total Downloads**: 13.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/HenrikBengtsson/listenv
+- **Stars**: N/A
 

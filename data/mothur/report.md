@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It consists of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mothur/overview
-- **Total Downloads**: 166.0K
+- **Total Downloads**: 166.2K
 - **Last updated**: 2026-01-17
 - **GitHub**: https://github.com/mothur/mothur
 - **Stars**: N/A

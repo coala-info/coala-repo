@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-harmony
+- **Conda**: https://anaconda.org/channels/r/packages/r-harmony/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/harmony/index.html
 - **Home (project)**: software.broadinstitute.org/harmony
 - **Package**: harmony
@@ -11,4 +11,8 @@ N/A
 - **Author**: Ilya Korsunsky [cre, aut], Martin Hemberg [aut], Nikolaos Patikas [aut, ctb], Hongcheng Yao [aut, ctb], Nghia Millard [aut], Jean Fan [aut, ctb], Kamil Slowikowski [aut, ctb], Miles Smith [ctb], Soumya Raychaudhuri [aut]
 - **Maintainer**: Ilya Korsunsky <ilya.korsunsky at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 233
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

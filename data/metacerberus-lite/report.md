@@ -12,7 +12,7 @@ The provided text contains system error logs and does not include help documenta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metacerberus-lite/overview
-- **Total Downloads**: 2.3K
+- **Total Downloads**: 2.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/raw-lab/metacerberus
 - **Stars**: N/A

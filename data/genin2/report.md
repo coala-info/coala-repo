@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions. It 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genin2/overview
-- **Total Downloads**: 969
+- **Total Downloads**: 976
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/izsvenezie-virology/genin2
 - **Stars**: N/A

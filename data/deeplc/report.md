@@ -12,7 +12,7 @@ DeepLC: Retention time prediction for proteomics
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deeplc/overview
-- **Total Downloads**: 105.1K
+- **Total Downloads**: 105.2K
 - **Last updated**: 2025-09-02
 - **GitHub**: https://github.com/compomics/DeepLC
 - **Stars**: N/A

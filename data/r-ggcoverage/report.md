@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ggcoverage
+- **Conda**: https://anaconda.org/channels/r/packages/r-ggcoverage/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/ggcoverage/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=ggcoverage
 - **Package**: ggcoverage
@@ -11,4 +11,8 @@ N/A
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: not generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

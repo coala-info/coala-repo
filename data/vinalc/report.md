@@ -12,7 +12,7 @@ VinaLC is a parallelized version of AutoDock Vina for virtual screening. (Note: 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vinalc/overview
-- **Total Downloads**: 688
+- **Total Downloads**: 692
 - **Last updated**: 2025-10-01
 - **GitHub**: https://github.com/XiaohuaZhangLLNL/VinaLC
 - **Stars**: N/A

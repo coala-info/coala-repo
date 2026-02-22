@@ -12,10 +12,10 @@ The provided text does not contain help information for pyprophet; it is a log o
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyprophet/overview
-- **Total Downloads**: 74.1K
+- **Total Downloads**: 74.3K
 - **Last updated**: 2025-11-27
 - **GitHub**: https://github.com/PyProphet/pyprophet
-- **Stars**: N/A
+- **Stars**: 30
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

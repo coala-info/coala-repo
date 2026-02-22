@@ -12,7 +12,7 @@ PRANK is a probabilistic multiple alignment program for DNA, codon and amino-aci
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/prank/overview
-- **Total Downloads**: 159.2K
+- **Total Downloads**: 159.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/n0xa/m5stick-nemo
 - **Stars**: N/A

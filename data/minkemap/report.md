@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/minkemap/overview
-- **Total Downloads**: 37
+- **Total Downloads**: 38
 - **Last updated**: 2025-12-14
 - **GitHub**: https://github.com/erinyoung/MinkeMap
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for ligand validation. (Note: The provided text is a system error log and
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ligand-validation/overview
-- **Total Downloads**: 192
+- **Total Downloads**: 194
 - **Last updated**: 2025-08-12
 - **GitHub**: N/A
 - **Stars**: N/A

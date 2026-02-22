@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/wvictor14/GSE159526
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gse159526/overview
+- **Total Downloads**: 8.1K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

@@ -8,7 +8,7 @@ Tools for reading and writing biological sequences in multiple
     functions to download nucleotide records from NCBI by accession.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-seqmagick
+- **Conda**: https://anaconda.org/channels/r/packages/r-seqmagick/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/seqmagick/index.html
 - **Home (project)**: https://github.com/YuLab-SMU/seqmagick
 - **Package**: seqmagick
@@ -16,4 +16,8 @@ Tools for reading and writing biological sequences in multiple
 - **Author**: Guangchuang Yu [aut, cre]
 - **Maintainer**: Guangchuang Yu <guangchuangyu at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/YuLab-SMU/seqmagick
+- **Stars**: N/A
 

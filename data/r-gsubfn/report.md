@@ -9,7 +9,7 @@ The gsubfn function is like gsub but can take a replacement
    to functions and allowing such formulas in function calls inste...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gsubfn
+- **Conda**: https://anaconda.org/channels/r/packages/r-gsubfn/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gsubfn/index.html
 - **Home (project)**: https://github.com/ggrothendieck/gsubfn
 - **Package**: gsubfn
@@ -17,4 +17,8 @@ The gsubfn function is like gsub but can take a replacement
 - **Author**: G. Grothendieck
 - **Maintainer**: G. Grothendieck <ggrothendieck at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 651
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ggrothendieck/gsubfn
+- **Stars**: N/A
 

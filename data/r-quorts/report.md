@@ -3,7 +3,7 @@
 R package quorts (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-quorts
+- **Conda**: https://anaconda.org/channels/r/packages/r-quorts/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/quorts/index.html
 - **Home (project)**: https://github.com/hartleys/QoRTs
 - **Package**: quorts
@@ -11,4 +11,8 @@ R package quorts (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/hartleys/QoRTs
+- **Stars**: N/A
 

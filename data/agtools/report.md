@@ -12,10 +12,10 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/agtools/overview
-- **Total Downloads**: 673
+- **Total Downloads**: 674
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/Vini2/agtools
-- **Stars**: N/A
+- **Stars**: 16
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

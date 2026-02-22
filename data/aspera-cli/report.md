@@ -15,7 +15,7 @@ FAIL to generate CWL: aspera-cli not found in Singularity image. The image may n
 - **Total Downloads**: 7.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/IBM/aspera-cli
-- **Stars**: N/A
+- **Stars**: 91
 ### Generation Failed
 
 FAIL to generate CWL: aspera-cli not found in Singularity image. The image may not provide this executable.

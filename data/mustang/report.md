@@ -12,7 +12,7 @@ MUltiple STructural AligNment AlGorithm (MUSTANG) is a tool for the alignment of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mustang/overview
-- **Total Downloads**: 73.0K
+- **Total Downloads**: 73.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

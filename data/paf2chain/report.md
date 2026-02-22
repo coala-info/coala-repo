@@ -12,7 +12,7 @@ Convert PAF format alignments to CHAIN format
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/paf2chain/overview
-- **Total Downloads**: 844
+- **Total Downloads**: 845
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/AndreaGuarracino/paf2chain
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/strdust/overview
-- **Total Downloads**: 3.9K
+- **Total Downloads**: 4.0K
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/wdecoster/STRdust
 - **Stars**: N/A

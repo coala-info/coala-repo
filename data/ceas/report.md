@@ -12,7 +12,7 @@ Cis-regulatory Element Annotation System (CEAS) is a tool for characterizing gen
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ceas/overview
-- **Total Downloads**: 6.9K
+- **Total Downloads**: 7.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jhardy/compass-ceaser-easing
 - **Stars**: N/A

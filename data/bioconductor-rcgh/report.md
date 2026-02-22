@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fredcommo/rCGH
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rcgh/overview
+- **Total Downloads**: 31.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ Convert DNA from fasta to 2bit format.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-fatotwobit/overview
-- **Total Downloads**: 561.8K
+- **Total Downloads**: 562.2K
 - **Last updated**: 2025-06-19
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

@@ -12,7 +12,7 @@ MUSICC (Marker Genes-based Unsupervised Single-copy Core genes) is a tool for no
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/musicc/overview
-- **Total Downloads**: 21.8K
+- **Total Downloads**: 21.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

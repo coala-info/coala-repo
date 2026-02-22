@@ -12,7 +12,7 @@ A tool from the BioPerl suite for coordinate transformations. (Note: The provide
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-coordinate/overview
-- **Total Downloads**: 269.3K
+- **Total Downloads**: 269.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

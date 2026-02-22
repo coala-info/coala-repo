@@ -3,7 +3,7 @@
 ## 2pg_cartesian
 
 ### Tool Description
-Could not get help from Singularity for: 2pg_cartesian
+FAIL to generate CWL: 2pg_cartesian not found in Singularity image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/2pg_cartesian:1.0.1--h503566f_8
@@ -15,15 +15,15 @@ Could not get help from Singularity for: 2pg_cartesian
 - **Total Downloads**: 10.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/rodrigofaccioli/2pg_cartesian
-- **Stars**: N/A
+- **Stars**: 5
 ### Generation Failed
 
-Could not get help from Singularity for: 2pg_cartesian
+FAIL to generate CWL: 2pg_cartesian not found in Singularity image. The image may not provide this executable.
 
 
 ### Validation Errors
 
-- Could not get help from Singularity for: 2pg_cartesian
+- FAIL to generate CWL: 2pg_cartesian not found in Singularity image. The image may not provide this executable.
 
 
 
@@ -32,6 +32,3 @@ Could not get help from Singularity for: 2pg_cartesian
 
 ```
 
-
-## Metadata
-- **Skill**: not generated

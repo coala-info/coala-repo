@@ -12,7 +12,7 @@ A tool for gene trajectory analysis (Note: The provided help text contains only 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gene-trajectory-python/overview
-- **Total Downloads**: 598
+- **Total Downloads**: 600
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/KlugerLab/GeneTrajectory-python
 - **Stars**: N/A

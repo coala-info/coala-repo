@@ -12,7 +12,7 @@ Kleborate is a tool to screen Klebsiella pneumoniae genome assemblies for MLST, 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kleborate/overview
-- **Total Downloads**: 39.2K
+- **Total Downloads**: 39.3K
 - **Last updated**: 2025-07-15
 - **GitHub**: https://github.com/katholt/Kleborate
 - **Stars**: N/A

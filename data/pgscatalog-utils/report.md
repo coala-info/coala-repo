@@ -12,7 +12,7 @@ The provided text appears to be a system log or error message from a container b
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pgscatalog-utils/overview
-- **Total Downloads**: 5.4K
+- **Total Downloads**: 5.5K
 - **Last updated**: 2025-08-25
 - **GitHub**: https://github.com/PGScatalog/pygscatalog
 - **Stars**: N/A

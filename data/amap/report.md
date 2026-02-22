@@ -15,7 +15,7 @@ Align multiple protein sequences and print to standard output using sequence ann
 - **Total Downloads**: 5.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mes5k/amap-align
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

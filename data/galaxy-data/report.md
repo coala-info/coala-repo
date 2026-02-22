@@ -12,7 +12,7 @@ Galaxy data management tool (Note: The provided text contains error logs rather 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-data/overview
-- **Total Downloads**: 9.2K
+- **Total Downloads**: 9.3K
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/galaxyproject/galaxy
 - **Stars**: N/A

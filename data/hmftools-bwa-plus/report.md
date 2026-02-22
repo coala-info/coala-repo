@@ -12,7 +12,7 @@ HMFtools BWA Plus (Note: The provided text contains system error messages and do
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hmftools-bwa-plus/overview
-- **Total Downloads**: 332
+- **Total Downloads**: 333
 - **Last updated**: 2025-06-06
 - **GitHub**: https://github.com/hartwigmedical/bwa-plus
 - **Stars**: N/A

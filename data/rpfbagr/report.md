@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rpfbagr/overview
-- **Total Downloads**: 8.4K
+- **Total Downloads**: 8.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/brsynth/rpfbagr
 - **Stars**: N/A

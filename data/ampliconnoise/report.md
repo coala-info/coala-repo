@@ -15,7 +15,7 @@ FAIL to generate CWL: ampliconnoise not found in Singularity image. The image ma
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/fhcrc/ampliconnoise
-- **Stars**: N/A
+- **Stars**: 5
 ### Generation Failed
 
 FAIL to generate CWL: ampliconnoise not found in Singularity image. The image may not provide this executable.
@@ -32,6 +32,3 @@ FAIL to generate CWL: ampliconnoise not found in Singularity image. The image ma
 
 ```
 
-
-## Metadata
-- **Skill**: generated

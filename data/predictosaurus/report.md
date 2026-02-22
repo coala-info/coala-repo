@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for pr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/predictosaurus/overview
-- **Total Downloads**: 14.4K
+- **Total Downloads**: 14.5K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/fxwiegand/predictosaurus
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for sample grouping. (Note: The provided text appears to be a container e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sample_grouping/overview
-- **Total Downloads**: 43
+- **Total Downloads**: 44
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/SantaMcCloud/Sample_grouping
 - **Stars**: N/A

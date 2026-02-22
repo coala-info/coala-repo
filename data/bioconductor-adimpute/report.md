@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/anacarolinaleote/ADImpute
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-adimpute/overview
+- **Total Downloads**: 13.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

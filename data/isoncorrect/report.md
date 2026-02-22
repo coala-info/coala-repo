@@ -12,7 +12,7 @@ A tool for error correction of long reads. (Note: The provided input text contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isoncorrect/overview
-- **Total Downloads**: 15.5K
+- **Total Downloads**: 15.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ksahlin/isONcorrect
 - **Stars**: N/A

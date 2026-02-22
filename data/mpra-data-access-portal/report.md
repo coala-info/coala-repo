@@ -12,7 +12,7 @@ A tool for accessing MPRA (Massively Parallel Reporter Assay) data.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mpra-data-access-portal/overview
-- **Total Downloads**: 7.8K
+- **Total Downloads**: 7.9K
 - **Last updated**: 2026-02-05
 - **GitHub**: N/A
 - **Stars**: N/A

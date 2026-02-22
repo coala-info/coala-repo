@@ -15,7 +15,7 @@ A Python library that provides a high-level interface to SFTP. (Note: The provid
 - **Total Downloads**: 133.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/unbit/pysftpserver
-- **Stars**: N/A
+- **Stars**: 39
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

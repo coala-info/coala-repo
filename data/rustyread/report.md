@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rustyread/overview
-- **Total Downloads**: 16.3K
+- **Total Downloads**: 16.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/natir/rustyread
 - **Stars**: N/A

@@ -15,7 +15,7 @@ This is a script to assemble draft assemblies (represented in input by draft fas
 - **Total Downloads**: 3.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/aidenlab/3d-dna
-- **Stars**: N/A
+- **Stars**: 222
 ### Original Help Text
 ```text
 /usr/local/share/3d-dna/run-asm-pipeline.sh --help

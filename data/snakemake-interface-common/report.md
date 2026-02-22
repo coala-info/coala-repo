@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-interface-common/overview
-- **Total Downloads**: 309.0K
+- **Total Downloads**: 309.4K
 - **Last updated**: 2025-10-01
 - **GitHub**: https://github.com/snakemake/snakemake-interface-common
 - **Stars**: N/A

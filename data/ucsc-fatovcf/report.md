@@ -12,7 +12,7 @@ Convert a FASTA file to a VCF file. Note: The provided input text contained a co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-fatovcf/overview
-- **Total Downloads**: 90.3K
+- **Total Downloads**: 90.4K
 - **Last updated**: 2025-06-21
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

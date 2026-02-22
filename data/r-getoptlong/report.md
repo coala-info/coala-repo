@@ -5,7 +5,7 @@ This is a command-line argument parser which wraps the
 	in R. It also provides a simple way for variable interpolation in R.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-getoptlong
+- **Conda**: https://anaconda.org/channels/r/packages/r-getoptlong/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/GetoptLong/index.html
 - **Home (project)**: https://github.com/jokergoo/GetoptLong
 - **Package**: GetoptLong
@@ -13,4 +13,8 @@ This is a command-line argument parser which wraps the
 - **Author**: Zuguang Gu [aut, cre]
 - **Maintainer**: Zuguang Gu <z.gu at dkfz.de>
 - **Skill**: generated
+- **Total Downloads**: 340
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jokergoo/GetoptLong
+- **Stars**: N/A
 

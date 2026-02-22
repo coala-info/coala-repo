@@ -12,7 +12,7 @@ The provided text does not contain help information, but rather a system error l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/eggnog-mapper/overview
-- **Total Downloads**: 107.2K
+- **Total Downloads**: 107.3K
 - **Last updated**: 2025-09-13
 - **GitHub**: https://github.com/jhcepas/eggnog-mapper
 - **Stars**: N/A

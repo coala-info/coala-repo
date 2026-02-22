@@ -12,7 +12,7 @@ The provided text is an error message indicating a failure to pull or build the 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/libgtextutils/overview
-- **Total Downloads**: 65.8K
+- **Total Downloads**: 65.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/agordon/libgtextutils
 - **Stars**: N/A

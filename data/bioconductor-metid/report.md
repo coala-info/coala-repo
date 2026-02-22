@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ressomlab/MetID
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-metid/overview
+- **Total Downloads**: 25.0K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

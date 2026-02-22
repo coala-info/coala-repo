@@ -12,7 +12,7 @@ A Python library to help developers (no specific help text provided in the input
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/easydev/overview
-- **Total Downloads**: 283.2K
+- **Total Downloads**: 284.0K
 - **Last updated**: 2025-07-25
 - **GitHub**: https://github.com/nisrulz/easydeviceinfo
 - **Stars**: N/A

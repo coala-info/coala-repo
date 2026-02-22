@@ -5,7 +5,7 @@ Compatibility wrapper to replace the orphaned package. New
     'base64enc'.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-base64
+- **Conda**: https://anaconda.org/channels/r/packages/r-base64/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/base64/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=base64
 - **Package**: base64
@@ -13,4 +13,8 @@ Compatibility wrapper to replace the orphaned package. New
 - **Author**: Jeroen Ooms [aut, cre]
 - **Maintainer**: Jeroen Ooms <jeroenooms at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 448
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

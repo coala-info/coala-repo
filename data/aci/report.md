@@ -15,7 +15,7 @@ The provided text appears to be a system log or error message from a container r
 - **Total Downloads**: 2.5K
 - **Last updated**: 2025-11-27
 - **GitHub**: https://github.com/erinyoung/ACI
-- **Stars**: N/A
+- **Stars**: 3
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

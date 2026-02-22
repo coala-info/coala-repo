@@ -12,10 +12,10 @@ a program to simulate amplicon sequences from a reference genome
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/amplisim/overview
-- **Total Downloads**: 2.0K
+- **Total Downloads**: 2.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/rki-mf1/amplisim
-- **Stars**: N/A
+- **Stars**: 2
 ### Original Help Text
 ```text
 Usage: amplisim [OPTION...] REFERENCE PRIMERS

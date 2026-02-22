@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Singularity/Apptaine
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/orthofinder/overview
-- **Total Downloads**: 130.4K
+- **Total Downloads**: 130.5K
 - **Last updated**: 2026-02-17
 - **GitHub**: https://github.com/OrthoFinder/OrthoFinder
 - **Stars**: N/A

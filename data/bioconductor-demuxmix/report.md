@@ -13,4 +13,8 @@ The package implements methods to fit regression mixture models for a probabilis
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/huklein/demuxmix
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-demuxmix/overview
+- **Total Downloads**: 5.1K
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

@@ -15,7 +15,7 @@ The provided text does not contain help information as the executable was not fo
 - **Total Downloads**: 5.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RobertKleinkauf/antarna
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -9,7 +9,7 @@ Finds the k nearest neighbours for every point in a
     for the same functionality using the L1 (Manhattan, taxicab) metric.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rann
+- **Conda**: https://anaconda.org/channels/r/packages/r-rann/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/RANN/index.html
 - **Home (project)**: https://github.com/jefferis/RANN
 - **Package**: RANN
@@ -17,4 +17,8 @@ Finds the k nearest neighbours for every point in a
 - **Author**: Gregory Jefferis [aut, cre], Samuel E. Kemp [aut], Kirill Müller [ctb], Sunil Arya [aut, cph], David Mount [aut, cph], University of Maryland [cph] (ANN library is copyright University of Maryland and Sunil Arya and David Mount. See file COPYRIGHT for details)
 - **Maintainer**: Gregory Jefferis <jefferis at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 2.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jefferis/RANN
+- **Stars**: N/A
 

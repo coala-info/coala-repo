@@ -12,7 +12,7 @@ The provided text does not contain help information for bgen-cpp; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bgen-cpp/overview
-- **Total Downloads**: 852
+- **Total Downloads**: 856
 - **Last updated**: 2025-09-25
 - **GitHub**: N/A
 - **Stars**: N/A

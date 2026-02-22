@@ -12,7 +12,7 @@ Phylogenetic Utility (Note: The provided text is a container build log and does 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phu/overview
-- **Total Downloads**: 392
+- **Total Downloads**: 398
 - **Last updated**: 2025-09-24
 - **GitHub**: https://github.com/camilogarciabotero/phu
 - **Stars**: N/A

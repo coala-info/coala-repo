@@ -12,7 +12,7 @@ RetroPath2.0 is an automated pathway design tool that builds a reaction network 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/retropath2_wrapper/overview
-- **Total Downloads**: 47.8K
+- **Total Downloads**: 47.9K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/brsynth/retropath2-wrapper
 - **Stars**: N/A

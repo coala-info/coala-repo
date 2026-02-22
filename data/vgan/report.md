@@ -12,7 +12,7 @@ Viral Genome Assembly and Net (vgan) - A tool for viral genome analysis. Note: T
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vgan/overview
-- **Total Downloads**: 12.9K
+- **Total Downloads**: 13.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/grenaud/vgan
 - **Stars**: N/A

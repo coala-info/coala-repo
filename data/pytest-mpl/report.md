@@ -12,10 +12,10 @@ A pytest plugin to help with testing figures output from Matplotlib. Note: The p
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/pytest-mpl/overview
-- **Total Downloads**: 694.0K
+- **Total Downloads**: 695.3K
 - **Last updated**: 2025-11-17
 - **GitHub**: https://github.com/matplotlib/pytest-mpl
-- **Stars**: N/A
+- **Stars**: 267
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

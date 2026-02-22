@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/matthewcarlucci/DiscoRhythm
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-discorhythm/overview
+- **Total Downloads**: 16.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

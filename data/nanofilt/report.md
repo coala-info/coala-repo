@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime and does not contain 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanofilt/overview
-- **Total Downloads**: 88.4K
+- **Total Downloads**: 88.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/nanofilt
 - **Stars**: N/A

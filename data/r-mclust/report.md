@@ -7,7 +7,7 @@ Gaussian finite mixture models fitted via EM algorithm for
   visualisation, and resampling-based inference.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-mclust
+- **Conda**: https://anaconda.org/channels/r/packages/r-mclust/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/mclust/index.html
 - **Home (project)**: https://mclust-org.github.io/mclust/
 - **Package**: mclust
@@ -15,4 +15,8 @@ Gaussian finite mixture models fitted via EM algorithm for
 - **Author**: Chris Fraley [aut], Adrian E. Raftery [aut], Luca Scrucca [aut, cre], Thomas Brendan Murphy [ctb], Michael Fop [ctb]
 - **Maintainer**: Luca Scrucca <luca.scrucca at unibo.it>
 - **Skill**: generated
+- **Total Downloads**: 2.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

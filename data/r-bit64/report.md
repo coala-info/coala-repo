@@ -9,7 +9,7 @@ Package 'bit64' provides serializable S3 atomic 64bit (signed) integers.
   Methods are available for coercion from and to log...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bit64
+- **Conda**: https://anaconda.org/channels/r/packages/r-bit64/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/bit64/index.html
 - **Home (project)**: https://github.com/truecluster/bit64
 - **Package**: bit64
@@ -17,4 +17,8 @@ Package 'bit64' provides serializable S3 atomic 64bit (signed) integers.
 - **Author**: Michael Chirico [aut, cre], Jens Oehlschlägel [aut], Leonardo Silvestri [ctb], Ofek Shilon [ctb]
 - **Maintainer**: Michael Chirico <michaelchirico4 at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 141.1K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/truecluster/bit64
+- **Stars**: N/A
 

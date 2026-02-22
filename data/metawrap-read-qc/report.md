@@ -12,7 +12,7 @@ A tool for read quality control (QC) as part of the metaWRAP pipeline.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-read-qc/overview
-- **Total Downloads**: 45
+- **Total Downloads**: 46
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A

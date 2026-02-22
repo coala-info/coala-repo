@@ -13,4 +13,8 @@ The package comprises a set of pretrained machine learning models to predict bas
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/grisslab/scAnnotatR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scannotatr/overview
+- **Total Downloads**: 7.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

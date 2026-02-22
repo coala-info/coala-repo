@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/umitools/overview
-- **Total Downloads**: 12.0K
+- **Total Downloads**: 12.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/weng-lab/umitools
 - **Stars**: N/A

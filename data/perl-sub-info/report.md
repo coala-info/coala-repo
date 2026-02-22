@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-sub-info/overview
-- **Total Downloads**: 99.7K
+- **Total Downloads**: 99.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

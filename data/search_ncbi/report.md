@@ -12,7 +12,7 @@ A tool for searching NCBI databases. (Note: The provided help text contains syst
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/search_ncbi/overview
-- **Total Downloads**: 511
+- **Total Downloads**: 513
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cyanheads/pubmed-mcp-server
 - **Stars**: N/A

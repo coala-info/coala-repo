@@ -12,7 +12,7 @@ A tool for viral host prediction (Note: The provided input text appears to be a 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/viral-host-hunter/overview
-- **Total Downloads**: 126
+- **Total Downloads**: 128
 - **Last updated**: 2026-01-06
 - **GitHub**: https://github.com/YuehuaOu/Viral-Host-Hunter
 - **Stars**: N/A

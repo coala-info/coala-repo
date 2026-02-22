@@ -15,7 +15,7 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 16.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/qbic-pipelines/querynator
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

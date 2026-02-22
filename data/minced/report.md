@@ -12,7 +12,7 @@ MinCED is a program to find Clustered Regularly Interspaced Short Palindromic Re
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/minced/overview
-- **Total Downloads**: 173.7K
+- **Total Downloads**: 173.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ctSkennerton/minced
 - **Stars**: N/A

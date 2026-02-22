@@ -11,6 +11,10 @@ The package Fletcher2013a contains time-course gene expression data from MCF-7 c
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fletcher2013a/overview
+- **Total Downloads**: 27.4K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

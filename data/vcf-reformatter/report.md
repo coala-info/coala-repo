@@ -12,7 +12,7 @@ A tool for reformatting VCF (Variant Call Format) files. Note: The provided text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcf-reformatter/overview
-- **Total Downloads**: 600
+- **Total Downloads**: 601
 - **Last updated**: 2025-08-15
 - **GitHub**: https://github.com/flalom/vcf-reformatter
 - **Stars**: N/A

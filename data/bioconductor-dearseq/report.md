@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/borishejblum/dearseq
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dearseq/overview
+- **Total Downloads**: 14.2K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

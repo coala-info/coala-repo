@@ -15,7 +15,7 @@ A tool for standardizing allele codes (Note: The provided help text contains onl
 - **Total Downloads**: 92
 - **Last updated**: 2025-08-27
 - **GitHub**: https://github.com/ncezid-biome/AlleleCodes
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

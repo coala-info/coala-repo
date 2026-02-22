@@ -15,7 +15,7 @@ Translation-guided alignment of protein-coding DNA sequences
 - **Total Downloads**: 1.1K
 - **Last updated**: 2025-11-25
 - **GitHub**: https://github.com/monagrland/pytransaln
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

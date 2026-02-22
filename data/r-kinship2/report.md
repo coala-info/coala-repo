@@ -9,7 +9,7 @@ Routines to handle family data with a pedigree object. The initial purpose
 	     with ...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-kinship2
+- **Conda**: https://anaconda.org/channels/r/packages/r-kinship2/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/kinship2/index.html
 - **Home (project)**: https://cran.r-project.org/package=kinship2
 - **Package**: kinship2
@@ -17,4 +17,8 @@ Routines to handle family data with a pedigree object. The initial purpose
 - **Author**: Jason Sinnwell [aut, cre], Terry Therneau [aut], Daniel Schaid [ctb], Elizabeth Atkinson [ctb], Carly Mester [ctb]
 - **Maintainer**: Jason Sinnwell <sinnwell.jason at mayo.edu>
 - **Skill**: generated
+- **Total Downloads**: 320
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

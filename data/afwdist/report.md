@@ -12,10 +12,10 @@ allele frequency-weighted distances
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/afwdist/overview
-- **Total Downloads**: 560
+- **Total Downloads**: 561
 - **Last updated**: 2025-08-09
 - **GitHub**: https://github.com/PathoGenOmics-Lab/afwdist
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 afwdist (allele frequency-weighted distances)

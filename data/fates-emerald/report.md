@@ -12,7 +12,7 @@ FATES-EMERALD (Note: The provided text contains system error messages regarding 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/fates-emerald/overview
-- **Total Downloads**: 208.5K
+- **Total Downloads**: 208.6K
 - **Last updated**: 2026-01-26
 - **GitHub**: https://github.com/conda-forge/fates-emerald-feedstock
 - **Stars**: N/A

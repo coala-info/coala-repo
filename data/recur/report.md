@@ -12,7 +12,7 @@ A tool for repetitive element curation (Note: The provided text contains build l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/recur/overview
-- **Total Downloads**: 277
+- **Total Downloads**: 279
 - **Last updated**: 2025-05-02
 - **GitHub**: https://github.com/OrthoFinder/RECUR
 - **Stars**: N/A

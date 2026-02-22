@@ -12,7 +12,7 @@ A tool for switching transcription factor isoforms (SwitchTFI).
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/switchtfi/overview
-- **Total Downloads**: 48
+- **Total Downloads**: 49
 - **Last updated**: 2025-09-23
 - **GitHub**: https://github.com/bionetslab/SwitchTFI
 - **Stars**: N/A

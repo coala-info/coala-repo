@@ -12,7 +12,7 @@ SEACells is an algorithm for computing metacells from single-cell data. (Note: T
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seacells/overview
-- **Total Downloads**: 915
+- **Total Downloads**: 917
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dpeerlab/SEACells
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text indicates a fatal error where the executable 'perl-statistics-
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-statistics-basic/overview
-- **Total Downloads**: 201.5K
+- **Total Downloads**: 201.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zszszszsz/.config
 - **Stars**: N/A

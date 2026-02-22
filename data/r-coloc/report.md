@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-coloc
+- **Conda**: https://anaconda.org/channels/r/packages/r-coloc/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/coloc/index.html
 - **Home (project)**: https://github.com/chr1swallace/coloc
 - **Package**: coloc
@@ -11,4 +11,8 @@ N/A
 - **Author**: Chris Wallace [aut, cre], Claudia Giambartolomei [aut], Vincent Plagnol [ctb]
 - **Maintainer**: Chris Wallace <cew54 at cam.ac.uk>
 - **Skill**: generated
+- **Total Downloads**: 53
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/chr1swallace/coloc
+- **Stars**: N/A
 

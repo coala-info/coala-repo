@@ -12,7 +12,7 @@ Generate the autocompletion script for the specified shell
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/architeuthis/overview
-- **Total Downloads**: 3.7K
+- **Total Downloads**: 3.8K
 - **Last updated**: 2026-01-30
 - **GitHub**: https://github.com/cdiener/architeuthis
 - **Stars**: N/A

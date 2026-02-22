@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for re
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/referenceseeker/overview
-- **Total Downloads**: 34.1K
+- **Total Downloads**: 34.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/oschwengers/referenceseeker
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/madre/overview
-- **Total Downloads**: 300
+- **Total Downloads**: 303
 - **Last updated**: 2025-10-29
 - **GitHub**: https://github.com/lbcb-sci/MADRe
 - **Stars**: N/A

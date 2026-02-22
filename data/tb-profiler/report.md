@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tb-profiler/overview
-- **Total Downloads**: 130.6K
+- **Total Downloads**: 130.7K
 - **Last updated**: 2025-12-02
 - **GitHub**: https://github.com/jodyphelan/TBProfiler
 - **Stars**: N/A

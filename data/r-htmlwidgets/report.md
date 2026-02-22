@@ -5,7 +5,7 @@ A framework for creating HTML widgets that render in various
     web applications.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-htmlwidgets
+- **Conda**: https://anaconda.org/channels/r/packages/r-htmlwidgets/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/htmlwidgets/index.html
 - **Home (project)**: https://github.com/ramnathv/htmlwidgets
 - **Package**: htmlwidgets
@@ -13,4 +13,8 @@ A framework for creating HTML widgets that render in various
 - **Author**: Ramnath Vaidyanathan [aut, cph], Yihui Xie [aut], JJ Allaire [aut], Joe Cheng [aut], Carson Sievert [aut, cre], Kenton Russell [aut, cph], Ellis Hughes [ctb], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Carson Sievert <carson at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 426.9K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ramnathv/htmlwidgets
+- **Stars**: N/A
 

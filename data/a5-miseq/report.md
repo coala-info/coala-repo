@@ -3,7 +3,7 @@
 ## a5-miseq
 
 ### Tool Description
-Could not get help from Singularity for: a5-miseq
+FAIL to generate CWL: a5-miseq not found in Singularity image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/a5-miseq:20160825--pl5.22.0_0
@@ -11,19 +11,19 @@ Could not get help from Singularity for: a5-miseq
 - **Package**: https://anaconda.org/channels/bioconda/packages/a5-miseq/overview
 - **Validation**: FAIL (generation failed)
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/a5-miseq/overview
+- **Conda**: https://anaconda.org/channels/bioconda/packages/a5-miseq//overview
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Generation Failed
 
-Could not get help from Singularity for: a5-miseq
+FAIL to generate CWL: a5-miseq not found in Singularity image. The image may not provide this executable.
 
 
 ### Validation Errors
 
-- Could not get help from Singularity for: a5-miseq
+- FAIL to generate CWL: a5-miseq not found in Singularity image. The image may not provide this executable.
 
 
 
@@ -32,6 +32,3 @@ Could not get help from Singularity for: a5-miseq
 
 ```
 
-
-## Metadata
-- **Skill**: not generated

@@ -12,7 +12,7 @@ The provided text is a container engine log (Singularity/Apptainer) indicating a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vsnp3/overview
-- **Total Downloads**: 41.2K
+- **Total Downloads**: 41.3K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/USDA-VS/vsnp3
 - **Stars**: N/A

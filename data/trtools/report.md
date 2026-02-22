@@ -12,7 +12,7 @@ No description available: The provided text is a container build error log, not 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trtools/overview
-- **Total Downloads**: 31.6K
+- **Total Downloads**: 31.7K
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/gymreklab/TRTools
 - **Stars**: N/A

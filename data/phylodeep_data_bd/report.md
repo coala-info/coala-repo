@@ -12,7 +12,7 @@ PhyloDeep data BD (Birth-Death) processing tool. (Note: The provided text contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phylodeep_data_bd/overview
-- **Total Downloads**: 614
+- **Total Downloads**: 615
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/evolbioinfo/phylodeep_data_bd
 - **Stars**: N/A

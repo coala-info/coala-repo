@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/esme_openmpi_5_0_6/overview
-- **Total Downloads**: 400
+- **Total Downloads**: 401
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/j34ni/bioconda-recipes
 - **Stars**: N/A

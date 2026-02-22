@@ -13,4 +13,8 @@ the package implements six pseudometrics specialized in pattern similarity detec
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/adeschen/similaRpeak
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-similarpeak/overview
+- **Total Downloads**: 40.0K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool 'qfilt'. It app
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/NathanGodey/qfilters
-- **Stars**: N/A
+- **Stars**: 35
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

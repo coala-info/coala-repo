@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-threaded not found in Singularity image. The image ma
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-threaded/overview
-- **Total Downloads**: 547.3K
+- **Total Downloads**: 547.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

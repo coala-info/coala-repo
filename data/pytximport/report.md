@@ -12,10 +12,10 @@ The provided text does not contain help information or usage instructions for py
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pytximport/overview
-- **Total Downloads**: 4.5K
+- **Total Downloads**: 4.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/complextissue/pytximport
-- **Stars**: N/A
+- **Stars**: 43
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

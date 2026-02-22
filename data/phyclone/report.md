@@ -12,7 +12,7 @@ PhyClone is a tool for phylogenetic clustering of subclonal populations.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phyclone/overview
-- **Total Downloads**: 668
+- **Total Downloads**: 673
 - **Last updated**: 2026-01-23
 - **GitHub**: https://github.com/Roth-Lab/PhyClone
 - **Stars**: N/A

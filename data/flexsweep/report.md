@@ -12,7 +12,7 @@ A tool for detecting selective sweeps. (Note: The provided text is a container e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/flexsweep/overview
-- **Total Downloads**: 206
+- **Total Downloads**: 208
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/jmurga/flexsweep
 - **Stars**: N/A

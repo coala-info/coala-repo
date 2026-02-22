@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/suke18/iPath
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ipath/overview
+- **Total Downloads**: 7.3K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

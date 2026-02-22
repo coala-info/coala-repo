@@ -12,7 +12,7 @@ A Snakemake storage plugin that allows for using S3 as a storage backend.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-storage-plugin-s3/overview
-- **Total Downloads**: 26.2K
+- **Total Downloads**: 26.3K
 - **Last updated**: 2025-09-14
 - **GitHub**: https://github.com/snakemake/snakemake-storage-plugin-s3
 - **Stars**: N/A

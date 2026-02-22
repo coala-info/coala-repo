@@ -3,7 +3,7 @@
 R package r4cker (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-r4cker
+- **Conda**: https://anaconda.org/channels/r/packages/r-r4cker/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/r4cker/index.html
 - **Home (project)**: https://github.com/rr1859/R.4Cker
 - **Package**: r4cker
@@ -11,4 +11,8 @@ R package r4cker (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/rr1859/R.4Cker
+- **Stars**: N/A
 

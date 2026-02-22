@@ -12,7 +12,7 @@ The provided text is an error message indicating a failure to build or run the c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dendropy/overview
-- **Total Downloads**: 808.0K
+- **Total Downloads**: 808.5K
 - **Last updated**: 2025-06-25
 - **GitHub**: https://github.com/jeetsukumaran/DendroPy
 - **Stars**: N/A

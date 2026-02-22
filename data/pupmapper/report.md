@@ -12,7 +12,7 @@ A tool for mapping (Note: The provided text is a container build log and does no
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pupmapper/overview
-- **Total Downloads**: 378
+- **Total Downloads**: 382
 - **Last updated**: 2026-02-09
 - **GitHub**: https://github.com/maxgmarin/pupmapper
 - **Stars**: N/A

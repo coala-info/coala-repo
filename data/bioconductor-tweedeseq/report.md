@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/isglobal-brge/tweeDEseq
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tweedeseq/overview
+- **Total Downloads**: 57.2K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

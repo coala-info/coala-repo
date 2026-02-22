@@ -12,7 +12,7 @@ TCR/BCR repertoire extraction and assembly from RNA-seq data
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trust4/overview
-- **Total Downloads**: 38.0K
+- **Total Downloads**: 38.1K
 - **Last updated**: 2026-01-12
 - **GitHub**: https://github.com/liulab-dfci/TRUST4
 - **Stars**: N/A

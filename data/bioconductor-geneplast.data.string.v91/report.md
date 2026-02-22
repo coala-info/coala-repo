@@ -11,6 +11,10 @@ The package geneplast.data.string.v91 contains input data used in the analysis p
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-geneplast.data.string.v91/overview
+- **Total Downloads**: 5.1K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

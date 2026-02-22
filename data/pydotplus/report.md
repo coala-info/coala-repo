@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/pydotplus/overview
-- **Total Downloads**: 27.4K
+- **Total Downloads**: 27.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/carlos-jenkins/pydotplus
 - **Stars**: N/A

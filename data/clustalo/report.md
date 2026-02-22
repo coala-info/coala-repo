@@ -12,7 +12,7 @@ Clustal Omega is a multiple sequence alignment program for proteins and nucleoti
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/clustalo/overview
-- **Total Downloads**: 245.6K
+- **Total Downloads**: 245.8K
 - **Last updated**: 2025-09-26
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/epic2/overview
-- **Total Downloads**: 95.2K
+- **Total Downloads**: 95.3K
 - **Last updated**: 2025-12-01
 - **GitHub**: https://github.com/endrebak/epic2
 - **Stars**: N/A

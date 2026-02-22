@@ -12,10 +12,10 @@ ASCIIGenome is a command line genome browser for the console terminal.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/asciigenome/overview
-- **Total Downloads**: 67.4K
+- **Total Downloads**: 67.5K
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/dariober/ASCIIGenome
-- **Stars**: N/A
+- **Stars**: 232
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

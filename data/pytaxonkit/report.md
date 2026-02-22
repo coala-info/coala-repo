@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions; it co
 - **Total Downloads**: 19.1K
 - **Last updated**: 2026-01-14
 - **GitHub**: https://github.com/bioforensics/pytaxonkit
-- **Stars**: N/A
+- **Stars**: 43
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

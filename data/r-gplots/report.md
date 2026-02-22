@@ -12,7 +12,7 @@ Various R programming tools for plotting data, including:
   - enhanced regression diagnostic plots ('lmplot2...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gplots
+- **Conda**: https://anaconda.org/channels/r/packages/r-gplots/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gplots/index.html
 - **Home (project)**: https://github.com/talgalili/gplots
 - **Package**: gplots
@@ -20,4 +20,8 @@ Various R programming tools for plotting data, including:
 - **Author**: Gregory R. Warnes [aut], Ben Bolker [aut], Lodewijk Bonebakker [aut], Robert Gentleman [aut], Wolfgang Huber [aut], Andy Liaw [aut], Thomas Lumley [aut], Martin Maechler [aut], Arni Magnusson [aut], Steffen Moeller [aut], Marc Schwartz [aut], Bill Venables [aut], Tal Galili [aut, cre]
 - **Maintainer**: Tal Galili <tal.galili at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 134.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/talgalili/gplots
+- **Stars**: N/A
 

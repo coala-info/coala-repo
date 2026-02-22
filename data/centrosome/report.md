@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/centrosome/overview
-- **Total Downloads**: 40.2K
+- **Total Downloads**: 40.3K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/CellProfiler/centrosome
 - **Stars**: N/A

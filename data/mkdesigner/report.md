@@ -12,7 +12,7 @@ The provided text is a container execution error log and does not contain help d
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mkdesigner/overview
-- **Total Downloads**: 11.2K
+- **Total Downloads**: 11.3K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/KChigira/mkdesigner
 - **Stars**: N/A

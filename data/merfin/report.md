@@ -12,7 +12,7 @@ K-mer based variant filtering, polishing and evaluation tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/merfin/overview
-- **Total Downloads**: 3.8K
+- **Total Downloads**: 3.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/arangrhie/merfin
 - **Stars**: N/A

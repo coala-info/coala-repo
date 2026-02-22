@@ -3,7 +3,7 @@
 R package mspbwt (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-mspbwt
+- **Conda**: https://anaconda.org/channels/r/packages/r-mspbwt/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/mspbwt/index.html
 - **Home (project)**: https://github.com/rwdavies/mspbwt
 - **Package**: mspbwt
@@ -11,4 +11,8 @@ R package mspbwt (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/rwdavies/mspbwt
+- **Stars**: N/A
 

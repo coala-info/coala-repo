@@ -10,7 +10,7 @@ A complete analysis pipeline for matrix-assisted laser
         alignment using warping functions,...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-maldiquant
+- **Conda**: https://anaconda.org/channels/r/packages/r-maldiquant/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/MALDIquant/index.html
 - **Home (project)**: https://strimmerlab.github.io/software/maldiquant/ https://github.com/sgibb/MALDIquant/
 - **Package**: MALDIquant
@@ -18,4 +18,8 @@ A complete analysis pipeline for matrix-assisted laser
 - **Author**: Sebastian Gibb [aut, cre], Korbinian Strimmer [ths], Sigurdur Smarason [ctb], Laurent Gatto [ctb], Paolo Inglese [ctb]
 - **Maintainer**: Sebastian Gibb <mail at sebastiangibb.de>
 - **Skill**: generated
+- **Total Downloads**: 222
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/sgibb/MALDIquant
+- **Stars**: N/A
 

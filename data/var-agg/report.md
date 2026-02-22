@@ -12,7 +12,7 @@ Variant Aggregator (Note: The provided text appears to be a container build log 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/var-agg/overview
-- **Total Downloads**: 10.4K
+- **Total Downloads**: 10.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bihealth/var-agg
 - **Stars**: N/A

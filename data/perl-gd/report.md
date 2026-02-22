@@ -12,7 +12,7 @@ The provided text is a system error log regarding a failed container build (no s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-gd/overview
-- **Total Downloads**: 465.6K
+- **Total Downloads**: 465.8K
 - **Last updated**: 2026-01-06
 - **GitHub**: N/A
 - **Stars**: N/A

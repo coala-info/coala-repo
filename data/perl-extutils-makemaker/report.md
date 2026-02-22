@@ -12,7 +12,7 @@ The perl-extutils-makemaker tool was not found in the environment, and no help t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-extutils-makemaker/overview
-- **Total Downloads**: 828.5K
+- **Total Downloads**: 828.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

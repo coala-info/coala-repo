@@ -15,7 +15,7 @@ A tool for monitoring bcbio-nextgen runs.
 - **Total Downloads**: 13.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/guillermo-carrasco/bcbio-nextgen-monitor
-- **Stars**: N/A
+- **Stars**: 4
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

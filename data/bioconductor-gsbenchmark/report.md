@@ -11,6 +11,10 @@ The package contains a list of pathways and gene expression data sets used in "I
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gsbenchmark/overview
+- **Total Downloads**: 25.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

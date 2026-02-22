@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'pypore'. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pypore/overview
-- **Total Downloads**: 21.4K
+- **Total Downloads**: 21.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

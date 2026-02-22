@@ -12,7 +12,7 @@ A high-performance tool for preparing .sam/.bam/.cram files for variant calling.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/elprep/overview
-- **Total Downloads**: 64.0K
+- **Total Downloads**: 64.1K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/ExaScience/elprep
 - **Stars**: N/A

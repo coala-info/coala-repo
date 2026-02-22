@@ -9,7 +9,7 @@ Provides functions to generate response-surface designs,
     ISBN 978-0-471-69946-0.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rsm
+- **Conda**: https://anaconda.org/channels/r/packages/r-rsm/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/rsm/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=rsm
 - **Package**: rsm
@@ -17,4 +17,8 @@ Provides functions to generate response-surface designs,
 - **Author**: Russell Lenth [aut, cre]
 - **Maintainer**: Russell Lenth <russell-lenth at uiowa.edu>
 - **Skill**: generated
+- **Total Downloads**: 302
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

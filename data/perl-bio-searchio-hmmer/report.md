@@ -12,7 +12,7 @@ A BioPerl-based tool for parsing HMMER search results. Note: The provided text c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-searchio-hmmer/overview
-- **Total Downloads**: 125.8K
+- **Total Downloads**: 125.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

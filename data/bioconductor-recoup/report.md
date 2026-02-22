@@ -13,4 +13,8 @@ The package uses ggplot2 and ComplexHeatmap graphics facilities for curve and he
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/pmoulos/recoup
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-recoup/overview
+- **Total Downloads**: 39.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

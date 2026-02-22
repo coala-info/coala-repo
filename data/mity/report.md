@@ -12,7 +12,7 @@ A tool for mitochondrial variant calling. (Note: The provided text is a system e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mity/overview
-- **Total Downloads**: 546
+- **Total Downloads**: 551
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/KCCG/mity
 - **Stars**: N/A

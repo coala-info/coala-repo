@@ -12,7 +12,7 @@ Earth System Model Evaluation/Framework tool (Note: The provided help text conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/esme_esmf_mvapich_4_0_ucx/overview
-- **Total Downloads**: 290
+- **Total Downloads**: 291
 - **Last updated**: 2025-08-13
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fgpyo/overview
-- **Total Downloads**: 20.4K
+- **Total Downloads**: 20.5K
 - **Last updated**: 2026-02-20
 - **GitHub**: https://github.com/fulcrumgenomics/fgpyo
 - **Stars**: N/A

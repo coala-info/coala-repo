@@ -12,7 +12,7 @@ A Snakemake storage plugin for SharePoint. Note: The provided text appears to be
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-storage-plugin-sharepoint/overview
-- **Total Downloads**: 271
+- **Total Downloads**: 272
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Hugovdberg/snakemake-storage-plugin-sharepoint
 - **Stars**: N/A

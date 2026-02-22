@@ -12,7 +12,7 @@ ProMod3 is a protein homology modeling framework.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/promod3/overview
-- **Total Downloads**: 2.7K
+- **Total Downloads**: 2.8K
 - **Last updated**: 2025-08-11
 - **GitHub**: N/A
 - **Stars**: N/A

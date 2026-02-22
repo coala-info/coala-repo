@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/splash/overview
-- **Total Downloads**: 821
+- **Total Downloads**: 822
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/refresh-bio/splash
 - **Stars**: N/A

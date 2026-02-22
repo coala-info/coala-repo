@@ -12,7 +12,7 @@ The provided text does not contain help information. It contains error messages 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/irescue/overview
-- **Total Downloads**: 8.7K
+- **Total Downloads**: 8.8K
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/bodegalab/irescue
 - **Stars**: N/A

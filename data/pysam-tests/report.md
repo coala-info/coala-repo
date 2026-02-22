@@ -15,7 +15,7 @@ A suite of tests for the pysam library. Note: The provided text appears to be a 
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/pysam-developers/pysam
-- **Stars**: N/A
+- **Stars**: 880
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

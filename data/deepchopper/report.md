@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deepchopper/overview
-- **Total Downloads**: 6.3K
+- **Total Downloads**: 6.4K
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/ylab-hi/DeepChopper
 - **Stars**: N/A

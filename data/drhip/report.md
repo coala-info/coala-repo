@@ -12,7 +12,7 @@ A tool for detecting and reporting highly informative positions (Note: Help text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/drhip/overview
-- **Total Downloads**: 330
+- **Total Downloads**: 334
 - **Last updated**: 2025-12-03
 - **GitHub**: https://github.com/veg/drhip
 - **Stars**: N/A

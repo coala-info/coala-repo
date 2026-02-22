@@ -12,7 +12,7 @@ The provided text does not contain help information for libcifpp; it contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/libcifpp/overview
-- **Total Downloads**: 162.9K
+- **Total Downloads**: 164.1K
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/PDB-REDO/libcifpp
 - **Stars**: N/A

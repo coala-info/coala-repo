@@ -13,4 +13,8 @@ The package provides a flexible algorithm to screen features of two distinct gro
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/cihga39871/iteremoval
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-iteremoval/overview
+- **Total Downloads**: 18.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

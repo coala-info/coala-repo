@@ -1,0 +1,34 @@
+---
+name: crypto_typer
+description: The `crypto_typer` tool is a specialized bioinformatic pipeline designed to automate the identification and subtyping of *Cryptosporidium* species.
+homepage: https://github.com/christineyanta/crypto_typer
+---
+
+# crypto_typer
+
+## Overview
+The `crypto_typer` tool is a specialized bioinformatic pipeline designed to automate the identification and subtyping of *Cryptosporidium* species. It focuses on two primary loci: the 18S small subunit ribosomal RNA (for species identification) and the gp60 glycoprotein (for subtyping/branching within species). This tool is essential for researchers and public health officials tracking outbreaks or studying the genetic diversity of this parasite.
+
+## Usage Guidelines
+
+### Core Workflow
+The tool typically processes raw or assembled sequence data to match against a curated database of *Cryptosporidium* sequences.
+
+- **Species Identification**: Uses the 18S marker to distinguish between species such as *C. hominis*, *C. parvum*, and *C. meleagridis*.
+- **Subtyping**: Uses the gp60 marker to identify subtype families (e.g., IIa, IId) and specific subtypes based on microsatellite repeats.
+
+### Command Line Patterns
+While specific flags may vary by version, the standard execution follows this pattern:
+
+```bash
+# Basic subtyping command
+crypto_typer --input <sequences.fasta> --output <results_directory>
+```
+
+### Best Practices
+- **Input Quality**: Ensure that input FASTA files contain high-quality reads or contigs covering the 18S and gp60 regions. Partial sequences may result in "undetermined" or broad-level classifications.
+- **Database Updates**: Since *Cryptosporidium* nomenclature and known subtypes evolve, ensure the tool is pointing to the most recent internal reference database provided by the package.
+- **Marker Selection**: If you only have data for one marker, the tool can still provide partial information (e.g., species-only from 18S), but both markers are required for a complete subtyping profile.
+
+## Reference documentation
+- [crypto_typer Overview](./references/anaconda_org_channels_bioconda_packages_crypto_typer_overview.md)

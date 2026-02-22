@@ -12,10 +12,10 @@ The provided text contains container execution and build errors rather than the 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pseqsid/overview
-- **Total Downloads**: 742
+- **Total Downloads**: 750
 - **Last updated**: 2026-02-17
 - **GitHub**: https://github.com/amaurypm/pseqsid
-- **Stars**: N/A
+- **Stars**: 18
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

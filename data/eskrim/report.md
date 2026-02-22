@@ -12,7 +12,7 @@ A tool for processing genomic data (description not provided in help text)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/eskrim/overview
-- **Total Downloads**: 868
+- **Total Downloads**: 870
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

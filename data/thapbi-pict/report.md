@@ -12,7 +12,7 @@ The provided text contains container build logs and error messages rather than t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/thapbi-pict/overview
-- **Total Downloads**: 289.1K
+- **Total Downloads**: 289.3K
 - **Last updated**: 2026-01-05
 - **GitHub**: https://github.com/peterjc/thapbi-pict
 - **Stars**: N/A

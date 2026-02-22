@@ -4,7 +4,7 @@ Provides a base S4 class for comparative methods, incorporating
     one or more trees and trait data.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-phylobase
+- **Conda**: https://anaconda.org/channels/r/packages/r-phylobase/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/phylobase/index.html
 - **Home (project)**: https://github.com/fmichonneau/phylobase
 - **Package**: phylobase
@@ -12,4 +12,8 @@ Provides a base S4 class for comparative methods, incorporating
 - **Author**: R Hackathon et al. (alphabetically: Ben Bolker, Marguerite Butler, Peter Cowan, Damien de Vienne, Dirk Eddelbuettel, Mark Holder, Thibaut Jombart, Steve Kembel, Francois Michonneau, David Orme, Brian O'Meara, Emmanuel Paradis, Jim Regetz, Derrick Zwickl)
 - **Maintainer**: Francois Michonneau <francois.michonneau at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 66
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/fmichonneau/phylobase
+- **Stars**: N/A
 

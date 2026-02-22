@@ -3,7 +3,7 @@
 Various R programming tools for model fitting.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gmodels
+- **Conda**: https://anaconda.org/channels/r/packages/r-gmodels/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gmodels/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=gmodels
 - **Package**: gmodels
@@ -11,4 +11,8 @@ Various R programming tools for model fitting.</p>
 - **Author**: Gregory R. Warnes [aut, cre], Ben Bolker [aut], Thomas Lumley [aut], Randall C. Johnson [aut] (Contributions from Randall C. Johnson are Copyright (2005) SAIC-Frederick, Inc. Funded by the Intramural Research Program, of the NIH, National Cancer Institute, Center for Cancer Research under NCI Contract NO1-CO-12400), Airel Muldoon [ctb], Nitin Jain [aut], Dirk Enzmann [ctb], Søren Højsgaards [ctb], Ulrich Halekoh [ctb], Mark Schwartz [aut], Jim Rogers [aut]
 - **Maintainer**: Gregory R. Warnes <greg at warnes.net>
 - **Skill**: generated
+- **Total Downloads**: 663
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -13,4 +13,8 @@ The package supports both single-cell and single-molecule data, and a common int
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/rhondabacher/methylscaper
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-methylscaper/overview
+- **Total Downloads**: 10.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

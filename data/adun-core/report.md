@@ -15,7 +15,7 @@ FAIL to generate CWL: adun-core not found in Docker image. The image may not pro
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/ngtnraoaeacrhrp/adunit-core-id-4159386720
-- **Stars**: N/A
+- **Stars**: 0
 ### Generation Failed
 
 FAIL to generate CWL: adun-core not found in Docker image. The image may not provide this executable.

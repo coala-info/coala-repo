@@ -12,7 +12,7 @@ A tool for designing oligonucleotides (Note: The provided text contains system e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/oligon-design/overview
-- **Total Downloads**: 156
+- **Total Downloads**: 158
 - **Last updated**: 2025-11-05
 - **GitHub**: https://github.com/MiguelMSandin/oligoN-design
 - **Stars**: N/A

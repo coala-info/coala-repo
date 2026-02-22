@@ -12,7 +12,7 @@ Scanpy is a scalable toolkit for analyzing single-cell gene expression data. (No
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/scanpy/overview
-- **Total Downloads**: 142.2K
+- **Total Downloads**: 142.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/theislab/scanpy
 - **Stars**: N/A

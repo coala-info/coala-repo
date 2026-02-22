@@ -12,7 +12,7 @@ Data-Driven Quality Control. (Note: The provided text contains system error mess
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ddqc/overview
-- **Total Downloads**: 156
+- **Total Downloads**: 157
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ayshwaryas/ddqc
 - **Stars**: N/A

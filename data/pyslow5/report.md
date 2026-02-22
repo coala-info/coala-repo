@@ -15,7 +15,7 @@ A Python library for reading and writing SLOW5 files. (Note: The provided text c
 - **Total Downloads**: 44.2K
 - **Last updated**: 2026-01-29
 - **GitHub**: https://github.com/hasindu2008/slow5lib
-- **Stars**: N/A
+- **Stars**: 47
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

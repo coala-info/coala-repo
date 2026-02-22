@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for ba
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/barcodeforge/overview
-- **Total Downloads**: 867
+- **Total Downloads**: 870
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/andersen-lab/BarcodeForge
 - **Stars**: N/A

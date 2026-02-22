@@ -13,4 +13,8 @@ The package proposes several sparse multivariate models we have developed to ide
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mixOmicsTeam/mixOmics
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mixomics/overview
+- **Total Downloads**: 28.8K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

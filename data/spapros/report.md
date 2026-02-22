@@ -12,7 +12,7 @@ Selection of optimal gene sets for spatial transcriptomics. (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spapros/overview
-- **Total Downloads**: 590
+- **Total Downloads**: 592
 - **Last updated**: 2025-11-24
 - **GitHub**: https://github.com/theislab/spapros
 - **Stars**: N/A

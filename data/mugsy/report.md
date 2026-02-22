@@ -12,7 +12,7 @@ Mugsy is a system for multiple whole-genome alignment. (Note: The provided help 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mugsy/overview
-- **Total Downloads**: 50.4K
+- **Total Downloads**: 50.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/margyle/MugsyDev
 - **Stars**: N/A

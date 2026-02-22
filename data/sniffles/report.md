@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sniffles/overview
-- **Total Downloads**: 79.8K
+- **Total Downloads**: 79.9K
 - **Last updated**: 2025-12-18
 - **GitHub**: https://github.com/fritzsedlazeck/Sniffles
 - **Stars**: N/A

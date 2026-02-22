@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pymzml/overview
-- **Total Downloads**: 101.6K
+- **Total Downloads**: 101.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pymzml/pymzML
 - **Stars**: N/A

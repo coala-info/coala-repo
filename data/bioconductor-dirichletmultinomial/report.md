@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mtmorgan/DirichletMultinomial
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dirichletmultinomial/overview
+- **Total Downloads**: 249.7K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

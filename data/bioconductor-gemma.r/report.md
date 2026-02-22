@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/PavlidisLab/gemma.R
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gemma.r/overview
+- **Total Downloads**: 4.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain a description of the tool or its usage; it ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gnparser/overview
-- **Total Downloads**: 19.3K
+- **Total Downloads**: 19.4K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/gnames/gnparser
 - **Stars**: N/A

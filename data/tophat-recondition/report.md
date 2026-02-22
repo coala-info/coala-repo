@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it is a log of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tophat-recondition/overview
-- **Total Downloads**: 47.9K
+- **Total Downloads**: 48.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cbrueffer/tophat-recondition
 - **Stars**: N/A

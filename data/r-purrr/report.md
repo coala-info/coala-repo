@@ -4,7 +4,7 @@ A complete and consistent functional programming toolkit for
     R.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-purrr
+- **Conda**: https://anaconda.org/channels/r/packages/r-purrr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/purrr/index.html
 - **Home (project)**: https://purrr.tidyverse.org/, https://github.com/tidyverse/purrr
 - **Package**: purrr
@@ -12,4 +12,8 @@ A complete and consistent functional programming toolkit for
 - **Author**: Hadley Wickham [aut, cre], Lionel Henry [aut], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 444.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tidyverse/purrr
+- **Stars**: N/A
 

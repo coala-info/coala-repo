@@ -12,7 +12,7 @@ BinSanity is a tool for refining and clustering metagenomic bins. (Note: The pro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/binsanity/overview
-- **Total Downloads**: 57.0K
+- **Total Downloads**: 57.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/edgraham/BinSanity
 - **Stars**: N/A

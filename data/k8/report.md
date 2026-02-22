@@ -12,7 +12,7 @@ A Javascript runtime (V8 wrapper) often used in bioinformatics. Note: The provid
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/k8/overview
-- **Total Downloads**: 945.7K
+- **Total Downloads**: 946.0K
 - **Last updated**: 2025-06-03
 - **GitHub**: https://github.com/attractivechaos/k8
 - **Stars**: N/A

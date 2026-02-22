@@ -12,7 +12,7 @@ FAIL to generate CWL: consan not found in Singularity image. The image may not p
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/consan/overview
-- **Total Downloads**: 71.5K
+- **Total Downloads**: 71.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

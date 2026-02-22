@@ -12,7 +12,7 @@ The provided text does not contain help information for trnascan-se; it is an er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trnascan-se/overview
-- **Total Downloads**: 280.6K
+- **Total Downloads**: 280.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

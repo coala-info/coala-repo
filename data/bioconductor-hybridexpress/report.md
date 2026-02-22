@@ -13,4 +13,8 @@ The package features functions to perform exploratory analyses of sample groupin
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/almeidasilvaf/HybridExpress
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hybridexpress/overview
+- **Total Downloads**: 459
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

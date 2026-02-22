@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/yasma/overview
-- **Total Downloads**: 80
+- **Total Downloads**: 82
 - **Last updated**: 2025-12-20
 - **GitHub**: https://github.com/NateyJay/YASMA
 - **Stars**: N/A

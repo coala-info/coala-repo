@@ -12,7 +12,7 @@ A graph processing framework (Note: The provided text contains only system error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/graphlite/overview
-- **Total Downloads**: 10.3K
+- **Total Downloads**: 10.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/eugene-eeo/graphlite
 - **Stars**: N/A

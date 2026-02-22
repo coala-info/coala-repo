@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-tools-run-alignment-tcoffee/overview
-- **Total Downloads**: 264.8K
+- **Total Downloads**: 265.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

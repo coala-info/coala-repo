@@ -15,7 +15,7 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 9.1K
 - **Last updated**: 2025-09-26
 - **GitHub**: https://github.com/splicebox/PsiCLASS
-- **Stars**: N/A
+- **Stars**: 18
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

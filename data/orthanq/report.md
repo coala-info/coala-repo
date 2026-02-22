@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/orthanq/overview
-- **Total Downloads**: 39.8K
+- **Total Downloads**: 40.0K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/orthanq/orthanq
 - **Stars**: N/A

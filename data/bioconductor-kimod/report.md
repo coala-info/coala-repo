@@ -11,6 +11,10 @@ the package is to use these techniques to omic data analysis, it includes an exa
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-kimod/overview
+- **Total Downloads**: 22.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

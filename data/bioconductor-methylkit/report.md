@@ -13,4 +13,8 @@ The package is designed to deal with sequencing data from RRBS and its variants,
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/al2na/methylKit
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-methylkit/overview
+- **Total Downloads**: 75.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

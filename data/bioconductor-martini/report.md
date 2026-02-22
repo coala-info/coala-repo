@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/hclimente/martini
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-martini/overview
+- **Total Downloads**: 33.0K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

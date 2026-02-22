@@ -15,7 +15,7 @@ A tool for genomic language modeling and microbiome analysis (Note: The provided
 - **Total Downloads**: 2.9K
 - **Last updated**: 2025-05-30
 - **GitHub**: https://github.com/nbrg-ppcu/prokbert
-- **Stars**: N/A
+- **Stars**: 20
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

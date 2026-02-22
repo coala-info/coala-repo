@@ -12,7 +12,7 @@ Mehari is a tool for variant effect prediction. (Note: The provided text contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mehari/overview
-- **Total Downloads**: 59.1K
+- **Total Downloads**: 59.2K
 - **Last updated**: 2026-01-13
 - **GitHub**: https://github.com/bihealth/mehari
 - **Stars**: N/A

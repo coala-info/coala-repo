@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/chamois/overview
-- **Total Downloads**: 335
+- **Total Downloads**: 341
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/zellerlab/CHAMOIS
 - **Stars**: N/A

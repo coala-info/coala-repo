@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snkmt/overview
-- **Total Downloads**: 164
+- **Total Downloads**: 166
 - **Last updated**: 2025-12-20
 - **GitHub**: https://github.com/cademirch/snkmt
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Montreal Forced Aligner (MFA) is a command-line utility for performing forced al
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/montreal-forced-aligner/overview
-- **Total Downloads**: 492.6K
+- **Total Downloads**: 493.1K
 - **Last updated**: 2026-02-10
 - **GitHub**: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
 - **Stars**: N/A

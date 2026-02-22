@@ -12,7 +12,7 @@ The provided text contains container build logs rather than tool help documentat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unifeb/overview
-- **Total Downloads**: 466
+- **Total Downloads**: 467
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jianshu93/unifeb
 - **Stars**: N/A

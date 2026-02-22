@@ -12,7 +12,7 @@ A tool for benchmarking RNA-binding protein (RBP) binding site predictions. (Not
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rbpbench/overview
-- **Total Downloads**: 14.8K
+- **Total Downloads**: 14.9K
 - **Last updated**: 2026-01-26
 - **GitHub**: https://github.com/michauhl/RBPBench
 - **Stars**: N/A

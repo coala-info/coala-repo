@@ -12,7 +12,7 @@ A library and tool for parsing and manipulating GFF (General Feature Format) fil
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/libgff/overview
-- **Total Downloads**: 21.1K
+- **Total Downloads**: 21.2K
 - **Last updated**: 2025-08-04
 - **GitHub**: https://github.com/COMBINE-lab/libgff
 - **Stars**: N/A

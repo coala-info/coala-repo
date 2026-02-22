@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanocount/overview
-- **Total Downloads**: 776
+- **Total Downloads**: 782
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/a-slide/NanoCount
 - **Stars**: N/A

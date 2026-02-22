@@ -10,7 +10,7 @@ Various methods for clustering and cluster validation.
   comparison between many clustering methods and numbers...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fpc
+- **Conda**: https://anaconda.org/channels/r/packages/r-fpc/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fpc/index.html
 - **Home (project)**: https://www.unibo.it/sitoweb/christian.hennig/en/
 - **Package**: fpc
@@ -18,4 +18,8 @@ Various methods for clustering and cluster validation.
 - **Author**: Christian Hennig [aut, cre]
 - **Maintainer**: Christian Hennig <christian.hennig at unibo.it>
 - **Skill**: generated
+- **Total Downloads**: 253
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jclusterfunk/overview
-- **Total Downloads**: 1.3K
+- **Total Downloads**: 1.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/snake-flu/jclusterfunk
 - **Stars**: N/A

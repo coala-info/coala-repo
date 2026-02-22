@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-data-dumper not found in Singularity image. The image
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-data-dumper/overview
-- **Total Downloads**: 572.1K
+- **Total Downloads**: 572.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

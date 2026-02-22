@@ -12,7 +12,7 @@ The provided text does not contain help documentation for trim-galore; it is a s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trim-galore/overview
-- **Total Downloads**: 335.1K
+- **Total Downloads**: 335.3K
 - **Last updated**: 2025-12-12
 - **GitHub**: https://github.com/FelixKrueger/TrimGalore
 - **Stars**: N/A

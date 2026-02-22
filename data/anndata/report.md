@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'anndata'. It a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/anndata/overview
-- **Total Downloads**: 78.5K
+- **Total Downloads**: 78.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/theislab/anndata
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/drop/overview
-- **Total Downloads**: 59.6K
+- **Total Downloads**: 59.7K
 - **Last updated**: 2025-11-01
 - **GitHub**: https://github.com/gagneurlab/drop
 - **Stars**: N/A

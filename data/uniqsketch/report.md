@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/uniqsketch/overview
-- **Total Downloads**: 412
+- **Total Downloads**: 413
 - **Last updated**: 2025-06-08
 - **GitHub**: https://github.com/amazon-science/uniqsketch
 - **Stars**: N/A

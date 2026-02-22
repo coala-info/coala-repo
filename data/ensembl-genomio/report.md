@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ensembl-genomio/overview
-- **Total Downloads**: 295
+- **Total Downloads**: 297
 - **Last updated**: 2025-09-28
 - **GitHub**: https://github.com/Ensembl/ensembl-genomio
 - **Stars**: N/A

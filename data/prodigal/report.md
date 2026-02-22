@@ -12,7 +12,7 @@ The provided text is a container engine error log and does not contain the help 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/prodigal/overview
-- **Total Downloads**: 439.1K
+- **Total Downloads**: 439.6K
 - **Last updated**: 2025-07-17
 - **GitHub**: https://github.com/hyattpd/Prodigal
 - **Stars**: N/A

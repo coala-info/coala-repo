@@ -12,7 +12,7 @@ The provided text is a log of a failed container build (Apptainer/Singularity) a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/solvebio/overview
-- **Total Downloads**: 87.8K
+- **Total Downloads**: 87.9K
 - **Last updated**: 2025-12-17
 - **GitHub**: https://github.com/solvebio/solvebio-python
 - **Stars**: N/A

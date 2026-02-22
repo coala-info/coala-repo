@@ -12,7 +12,7 @@ The provided text is a container build error log and does not contain help docum
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/qglmm/overview
-- **Total Downloads**: 130
+- **Total Downloads**: 132
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/mokar2001/qglmm
 - **Stars**: N/A

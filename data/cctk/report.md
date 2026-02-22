@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cctk/overview
-- **Total Downloads**: 9.4K
+- **Total Downloads**: 9.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Alan-Collins/CRISPR_comparison_toolkit
 - **Stars**: N/A

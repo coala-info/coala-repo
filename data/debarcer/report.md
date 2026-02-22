@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/debarcer/overview
-- **Total Downloads**: 8.7K
+- **Total Downloads**: 8.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/oicr-gsi/debarcer
 - **Stars**: N/A

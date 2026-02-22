@@ -12,10 +12,10 @@ A tool for RNA analysis (Note: The provided text appears to be a container build
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rnalyze/overview
-- **Total Downloads**: 805
+- **Total Downloads**: 810
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/MohamedElsisii/rnalyze
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

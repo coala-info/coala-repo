@@ -12,7 +12,7 @@ A tool for checking isoforms (Note: The provided help text contains only system 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isoformcheck/overview
-- **Total Downloads**: 54
+- **Total Downloads**: 55
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/maickrau/IsoformCheck
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dxpy/overview
-- **Total Downloads**: 849.7K
+- **Total Downloads**: 850.1K
 - **Last updated**: 2025-11-06
 - **GitHub**: https://github.com/dnanexus/dx-toolkit
 - **Stars**: N/A

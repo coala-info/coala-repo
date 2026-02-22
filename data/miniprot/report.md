@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/miniprot/overview
-- **Total Downloads**: 77.4K
+- **Total Downloads**: 77.7K
 - **Last updated**: 2025-07-13
 - **GitHub**: https://github.com/lh3/miniprot
 - **Stars**: N/A

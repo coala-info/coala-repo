@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-metstat
+- **Conda**: https://anaconda.org/channels/r/packages/r-metstat/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/metstat/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=MetStaT
 - **Package**: metstat
@@ -11,4 +11,8 @@ N/A
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: not generated
+- **Total Downloads**: 185
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

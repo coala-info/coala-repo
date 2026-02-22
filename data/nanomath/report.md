@@ -12,7 +12,7 @@ The provided text contains container runtime error messages rather than tool hel
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanomath/overview
-- **Total Downloads**: 121.4K
+- **Total Downloads**: 121.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/nanomath
 - **Stars**: N/A

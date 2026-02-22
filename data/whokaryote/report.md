@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/whokaryote/overview
-- **Total Downloads**: 7.8K
+- **Total Downloads**: 7.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/LottePronk/whokaryote
 - **Stars**: N/A

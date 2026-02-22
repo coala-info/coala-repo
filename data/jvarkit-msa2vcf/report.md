@@ -12,7 +12,7 @@ Multiple Sequence Alignment to VCF
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jvarkit-msa2vcf/overview
-- **Total Downloads**: 3.7K
+- **Total Downloads**: 3.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

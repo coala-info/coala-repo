@@ -12,7 +12,7 @@ SortMeRNA is a local sequence alignment tool for filtering, mapping and clusteri
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sortmerna/overview
-- **Total Downloads**: 585.6K
+- **Total Downloads**: 585.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sortmerna/sortmerna
 - **Stars**: N/A

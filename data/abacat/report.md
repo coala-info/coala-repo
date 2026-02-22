@@ -3,7 +3,7 @@
 ## abacat
 
 ### Tool Description
-Could not get help from Singularity for: abacat
+FAIL to generate CWL: abacat not found in Singularity image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/abacat:0.0.4a--py_0
@@ -15,15 +15,15 @@ Could not get help from Singularity for: abacat
 - **Total Downloads**: 3.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/vinisalazar/abacat
-- **Stars**: N/A
+- **Stars**: 5
 ### Generation Failed
 
-Could not get help from Singularity for: abacat
+FAIL to generate CWL: abacat not found in Singularity image. The image may not provide this executable.
 
 
 ### Validation Errors
 
-- Could not get help from Singularity for: abacat
+- FAIL to generate CWL: abacat not found in Singularity image. The image may not provide this executable.
 
 
 
@@ -32,6 +32,3 @@ Could not get help from Singularity for: abacat
 
 ```
 
-
-## Metadata
-- **Skill**: not generated

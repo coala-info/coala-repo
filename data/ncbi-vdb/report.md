@@ -12,7 +12,7 @@ No description available: The provided text is an error log regarding container 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-vdb/overview
-- **Total Downloads**: 756.3K
+- **Total Downloads**: 757.5K
 - **Last updated**: 2025-12-03
 - **GitHub**: https://github.com/ncbi/ncbi-vdb
 - **Stars**: N/A

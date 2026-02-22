@@ -3,7 +3,7 @@
 Provides a visual exploratory tool on correlation matrix that supports automatic variable reordering to help detect hidden patterns among variables.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-corrplot
+- **Conda**: https://anaconda.org/channels/r/packages/r-corrplot/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/corrplot/index.html
 - **Home (project)**: https://github.com/taiyun/corrplot
 - **Package**: corrplot
@@ -11,4 +11,8 @@ Provides a visual exploratory tool on correlation matrix that supports automatic
 - **Author**: Taiyun Wei [cre, aut], Viliam Simko [aut], Michael Levy [ctb], Yihui Xie [ctb], Yan Jin [ctb], Jeff Zemla [ctb], Moritz Freidank [ctb], Jun Cai [ctb], Tomas Protivinsky [ctb]
 - **Maintainer**: Taiyun Wei <weitaiyun at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 4.5K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/taiyun/corrplot
+- **Stars**: N/A
 

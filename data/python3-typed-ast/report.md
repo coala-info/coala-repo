@@ -15,7 +15,7 @@ A Python package that provides a typed Abstract Syntax Tree (AST). Note: The pro
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/pexip/os-python3-typed-ast
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

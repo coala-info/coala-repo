@@ -12,7 +12,7 @@ Convert bigWig to bedGraph format.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-bigwigtobedgraph/overview
-- **Total Downloads**: 69.9K
+- **Total Downloads**: 70.1K
 - **Last updated**: 2025-06-26
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

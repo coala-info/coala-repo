@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lmyint/rsemmed
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rsemmed/overview
+- **Total Downloads**: 13.9K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

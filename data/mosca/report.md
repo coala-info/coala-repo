@@ -12,7 +12,7 @@ MOSCA (Metagenomics and Oxygen-Sensing Cluster Analysis) - Note: The provided te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mosca/overview
-- **Total Downloads**: 35.0K
+- **Total Downloads**: 35.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/iquasere/MOSCA
 - **Stars**: N/A

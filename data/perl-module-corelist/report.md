@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-module-corelist not found in Singularity image. The i
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-module-corelist/overview
-- **Total Downloads**: 194.8K
+- **Total Downloads**: 195.0K
 - **Last updated**: 2026-02-21
 - **GitHub**: N/A
 - **Stars**: N/A

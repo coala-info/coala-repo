@@ -12,7 +12,7 @@ Pilon is a tool for genome assembly improvement and variant calling using read a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pilon/overview
-- **Total Downloads**: 130.0K
+- **Total Downloads**: 130.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/broadinstitute/pilon
 - **Stars**: N/A

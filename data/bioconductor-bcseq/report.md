@@ -13,4 +13,8 @@ The package supports provision of user-defined probability models for evaluating
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jl354/bcSeq
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-bcseq/overview
+- **Total Downloads**: 34.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A tool for performing Smith-Waterman local sequence alignment.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/smithwaterman/overview
-- **Total Downloads**: 399
+- **Total Downloads**: 400
 - **Last updated**: 2025-05-21
 - **GitHub**: https://github.com/ekg/smithwaterman
 - **Stars**: N/A

@@ -32,6 +32,3 @@ FAIL to generate CWL: amap-align not found in Singularity image. The image may n
 
 ```
 
-
-## Metadata
-- **Skill**: not generated

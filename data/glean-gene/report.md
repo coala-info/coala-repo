@@ -12,7 +12,7 @@ GLEAN (Gene Lattice Error-correcting Analysis Network) is a tool used to integra
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/glean-gene/overview
-- **Total Downloads**: 141
+- **Total Downloads**: 142
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

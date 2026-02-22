@@ -12,7 +12,7 @@ Phylogenomics workflow for generating trees from HMM sets (Note: The provided te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gtotree/overview
-- **Total Downloads**: 23.3K
+- **Total Downloads**: 23.4K
 - **Last updated**: 2025-10-20
 - **GitHub**: https://github.com/AstrobioMike/GToTree
 - **Stars**: N/A

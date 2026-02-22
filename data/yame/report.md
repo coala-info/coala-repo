@@ -12,8 +12,8 @@ YAME (Yet Another Metagenomics Encoder) - A tool for processing metagenomics dat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/yame/overview
-- **Total Downloads**: 595
-- **Last updated**: 2025-07-09
+- **Total Downloads**: 649
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/zhou-lab/YAME
 - **Stars**: N/A
 ### Original Help Text

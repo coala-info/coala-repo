@@ -15,7 +15,7 @@ Align Next-generation sequencing reads to a reference genome using a probabilist
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/anforaProject/anfora
-- **Stars**: N/A
+- **Stars**: 229
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

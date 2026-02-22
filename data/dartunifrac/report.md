@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dartunifrac/overview
-- **Total Downloads**: 4.2K
+- **Total Downloads**: 4.3K
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/jianshu93/DartUniFrac
 - **Stars**: N/A

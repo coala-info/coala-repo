@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Rich Savage, Emma Cooke, Robert Darkins, Yang Xu
 - **Maintainer**: Rich Savage &#x3c;&#x72;&#x2e;&#x73;&#x2e;&#x73;&#x61;&#x76;&#x61;&#x67;&#x65;&#x20;&#x61;&#x74;&#x20;&#x77;&#x61;&#x72;&#x77;&#x69;&#x63;&#x6b;&#x2e;&#x61;&#x63;&#x2e;&#x75;&#x6b;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-bhc/overview
+- **Total Downloads**: 49.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

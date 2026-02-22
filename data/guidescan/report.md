@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/guidescan/overview
-- **Total Downloads**: 27.9K
+- **Total Downloads**: 28.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pritykinlab/guidescan-cli
 - **Stars**: N/A

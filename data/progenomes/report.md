@@ -12,10 +12,10 @@ The provided text is a container build log and does not contain CLI help informa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/progenomes/overview
-- **Total Downloads**: 98
+- **Total Downloads**: 101
 - **Last updated**: 2025-12-01
 - **GitHub**: https://github.com/BigDataBiology/progenomes-cli
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

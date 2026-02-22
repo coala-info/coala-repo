@@ -12,7 +12,7 @@ Packing optimization for the automated generation of starting configurations for
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/packmol/overview
-- **Total Downloads**: 912.4K
+- **Total Downloads**: 912.7K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/m3g/packmol
 - **Stars**: N/A

@@ -13,4 +13,8 @@ The package is composed by three functions: DRrefit (the main function), Compute
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/andrea-poletti-unibo/BOBaFIT
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-bobafit/overview
+- **Total Downloads**: 4.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

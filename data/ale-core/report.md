@@ -15,7 +15,7 @@ ALE (Assembly Likelihood Evaluation) is a tool for evaluating genome assemblies.
 - **Total Downloads**: 3.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sc932/ALE
-- **Stars**: N/A
+- **Stars**: 35
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It consists of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tbl2asn/overview
-- **Total Downloads**: 109.3K
+- **Total Downloads**: 109.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

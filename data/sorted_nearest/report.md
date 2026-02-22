@@ -12,7 +12,7 @@ A tool for finding the nearest intervals in sorted genomic files (Note: The prov
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sorted_nearest/overview
-- **Total Downloads**: 195.6K
+- **Total Downloads**: 195.7K
 - **Last updated**: 2025-10-09
 - **GitHub**: https://github.com/endrebak/sorted_nearest
 - **Stars**: N/A

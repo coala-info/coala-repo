@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool; it is a log of
 - **Total Downloads**: 3.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cbg-ethz/QuasiRecomb
-- **Stars**: N/A
+- **Stars**: 20
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

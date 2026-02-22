@@ -12,7 +12,7 @@ RNAstructure is a software package for RNA secondary structure prediction and an
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rnastructure/overview
-- **Total Downloads**: 102.7K
+- **Total Downloads**: 102.9K
 - **Last updated**: 2026-02-12
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -9,7 +9,7 @@ Several functions are available for calculating the most
     computed. This package uses recommended formulas as descr...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-compute.es
+- **Conda**: https://anaconda.org/channels/r/packages/r-compute.es/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/compute.es/index.html
 - **Home (project)**: http://acdelre.weebly.com
 - **Package**: compute.es
@@ -17,4 +17,8 @@ Several functions are available for calculating the most
 - **Author**: AC Del Re [aut, cre]
 - **Maintainer**: AC Del Re <stats at acdelre.com>
 - **Skill**: not generated
+- **Total Downloads**: 305
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions for 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seqforge/overview
-- **Total Downloads**: 306
+- **Total Downloads**: 310
 - **Last updated**: 2025-10-01
 - **GitHub**: https://github.com/ERBringHorvath/SeqForge
 - **Stars**: N/A

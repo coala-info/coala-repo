@@ -12,7 +12,7 @@ The provided text does not contain help information for nucflag. It appears to b
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nucflag/overview
-- **Total Downloads**: 420
+- **Total Downloads**: 421
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/logsdon-lab/NucFlag
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Clean Unwanted Reads from Environmental Datasets (CURED). A tool for removing co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cured/overview
-- **Total Downloads**: 894
+- **Total Downloads**: 896
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/microbialARC/CURED
 - **Stars**: N/A

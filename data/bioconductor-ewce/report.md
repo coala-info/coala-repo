@@ -13,4 +13,8 @@ The package provides tools for testing enrichments within simple gene lists (suc
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/NathanSkene/EWCE
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ewce/overview
+- **Total Downloads**: 10.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

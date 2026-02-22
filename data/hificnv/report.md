@@ -12,7 +12,7 @@ HiFiCNV: Copy number variant calling for HiFi reads. (Note: The provided text co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hificnv/overview
-- **Total Downloads**: 5.3K
+- **Total Downloads**: 5.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/PacificBiosciences/HiFiCNV
 - **Stars**: N/A

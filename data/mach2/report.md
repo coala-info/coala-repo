@@ -12,7 +12,7 @@ A tool for genotype imputation and haplotype reconstruction (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mach2/overview
-- **Total Downloads**: 343
+- **Total Downloads**: 346
 - **Last updated**: 2025-08-30
 - **GitHub**: https://github.com/elkebir-group/mach2
 - **Stars**: N/A

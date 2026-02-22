@@ -11,6 +11,10 @@ The package comprises a set of pretrained machine learning models to predict bas
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scclassifr/overview
+- **Total Downloads**: 4.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

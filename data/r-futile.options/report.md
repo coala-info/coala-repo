@@ -3,7 +3,7 @@
 A scoped options management framework. Used in other packages.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-futile.options
+- **Conda**: https://anaconda.org/channels/r/packages/r-futile.options/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/futile.options/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=futile.options
 - **Package**: futile.options
@@ -11,4 +11,8 @@ A scoped options management framework. Used in other packages.</p>
 - **Author**: Brian Lee Yung Rowe
 - **Maintainer**: Brian Lee Yung Rowe <r at zatonovo.com>
 - **Skill**: generated
+- **Total Downloads**: 8.3K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

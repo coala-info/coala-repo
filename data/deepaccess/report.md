@@ -12,7 +12,7 @@ DeepAccess is a tool for predicting cell-type specific epigenetic accessibility 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deepaccess/overview
-- **Total Downloads**: 11.1K
+- **Total Downloads**: 11.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gifford-lab/deepaccess-package
 - **Stars**: N/A

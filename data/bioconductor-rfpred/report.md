@@ -11,6 +11,10 @@ the package gives rfPred scores to missense variants identified by the chromosom
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rfpred/overview
+- **Total Downloads**: 52.4K
+- **Last updated**: 2025-04-30
+- **Stars**: N/A
 

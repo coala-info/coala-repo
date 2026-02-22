@@ -12,7 +12,7 @@ The provided text does not contain help information. It is a log of a failed exe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-time-local/overview
-- **Total Downloads**: 461.5K
+- **Total Downloads**: 461.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zszszszsz/.config
 - **Stars**: N/A

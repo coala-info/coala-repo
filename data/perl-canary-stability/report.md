@@ -12,7 +12,7 @@ A tool for checking Perl canary stability. (Note: The provided text contains exe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-canary-stability/overview
-- **Total Downloads**: 20.1K
+- **Total Downloads**: 20.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

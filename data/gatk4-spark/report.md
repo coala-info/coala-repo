@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gatk4-spark/overview
-- **Total Downloads**: 332.3K
+- **Total Downloads**: 332.4K
 - **Last updated**: 2025-09-29
 - **GitHub**: https://github.com/broadinstitute/gatk
 - **Stars**: N/A

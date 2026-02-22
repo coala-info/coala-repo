@@ -5,7 +5,7 @@ Data structures and basic operations for ordinary sets,
              fuzzy multisets, customizable sets, and intervals.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-sets
+- **Conda**: https://anaconda.org/channels/r/packages/r-sets/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/sets/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=sets
 - **Package**: sets
@@ -13,4 +13,8 @@ Data structures and basic operations for ordinary sets,
 - **Author**: David Meyer [aut, cre], Kurt Hornik [aut], Christian Buchta [ctb]
 - **Maintainer**: David Meyer <David.Meyer at R-project.org>
 - **Skill**: generated
+- **Total Downloads**: 372
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

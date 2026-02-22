@@ -12,7 +12,7 @@ A Perl module/tool for session data I/O. (Note: The provided text is an executio
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-io-sessiondata/overview
-- **Total Downloads**: 184.8K
+- **Total Downloads**: 184.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-IO-SessionData
 - **Stars**: N/A

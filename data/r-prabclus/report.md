@@ -10,7 +10,7 @@ Distance-based parametric bootstrap tests for clustering with
   are equal. Try package?prabclus for on overview. </p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-prabclus
+- **Conda**: https://anaconda.org/channels/r/packages/r-prabclus/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/prabclus/index.html
 - **Home (project)**: https://www.unibo.it/sitoweb/christian.hennig/en/
 - **Package**: prabclus
@@ -18,4 +18,8 @@ Distance-based parametric bootstrap tests for clustering with
 - **Author**: Christian Hennig [aut, cre], Bernhard Hausdorf [aut]
 - **Maintainer**: Christian Hennig <christian.hennig at unibo.it>
 - **Skill**: generated
+- **Total Downloads**: 244
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -10,7 +10,7 @@ The sqldf() function is typically passed a single argument which
 	into R eve...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-sqldf
+- **Conda**: https://anaconda.org/channels/r/packages/r-sqldf/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/sqldf/index.html
 - **Home (project)**: https://github.com/ggrothendieck/sqldf, https://groups.google.com/group/sqldf
 - **Package**: sqldf
@@ -18,4 +18,8 @@ The sqldf() function is typically passed a single argument which
 - **Author**: G. Grothendieck [aut, cre]
 - **Maintainer**: G. Grothendieck <ggrothendieck at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 73
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ggrothendieck/sqldf
+- **Stars**: N/A
 

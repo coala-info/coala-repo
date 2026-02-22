@@ -12,7 +12,7 @@ GOTTCHA2 is a taxonomic profiling tool. (Note: The provided help text contains o
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gottcha2/overview
-- **Total Downloads**: 3.5K
+- **Total Downloads**: 3.6K
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/poeli/gottcha2
 - **Stars**: N/A

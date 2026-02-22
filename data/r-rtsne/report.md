@@ -4,7 +4,7 @@ Implementation
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rtsne
+- **Conda**: https://anaconda.org/channels/r/packages/r-rtsne/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/Rtsne/index.html
 - **Home (project)**: https://github.com/jkrijthe/Rtsne
 - **Package**: Rtsne
@@ -12,4 +12,8 @@ N/A
 - **Author**: Jesse Krijthe [aut, cre], Laurens van der Maaten [cph] (Author of original C++ code)
 - **Maintainer**: Jesse Krijthe <jkrijthe at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 2.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jkrijthe/Rtsne
+- **Stars**: N/A
 

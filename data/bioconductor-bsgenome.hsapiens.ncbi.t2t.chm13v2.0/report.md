@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-bsgenome.hsapiens.ncbi.t2t.chm13v2.0/overview
+- **Total Downloads**: 2.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

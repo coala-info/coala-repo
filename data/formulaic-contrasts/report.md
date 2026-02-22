@@ -12,7 +12,7 @@ A tool for generating contrast matrices from formulas (Note: The provided help t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/formulaic-contrasts/overview
-- **Total Downloads**: 11.9K
+- **Total Downloads**: 12.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/scverse/formulaic-contrasts
 - **Stars**: N/A

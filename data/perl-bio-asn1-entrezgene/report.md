@@ -12,7 +12,7 @@ Regular expression-based Perl Parser for NCBI Entrez Gene ASN.1 definition. (Not
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-asn1-entrezgene/overview
-- **Total Downloads**: 314.6K
+- **Total Downloads**: 314.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

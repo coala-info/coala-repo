@@ -12,7 +12,7 @@ A tool for testing Perl warnings (Note: The provided text contains execution log
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-test-warn/overview
-- **Total Downloads**: 211.2K
+- **Total Downloads**: 211.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for rnasketch; it is a log o
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rnasketch/overview
-- **Total Downloads**: 10.7K
+- **Total Downloads**: 10.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ViennaRNA/RNAsketch
 - **Stars**: N/A

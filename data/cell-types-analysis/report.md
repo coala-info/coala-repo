@@ -12,7 +12,7 @@ The provided text is an error log from a container build process and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cell-types-analysis/overview
-- **Total Downloads**: 38.7K
+- **Total Downloads**: 38.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ebi-gene-expression-group/cell-types-analysis
 - **Stars**: N/A

@@ -15,7 +15,7 @@ A Python library containing common code for BD2K projects. (Note: The provided t
 - **Total Downloads**: 57.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/BD2KGenomics/bd2k-python-lib
-- **Stars**: N/A
+- **Stars**: 4
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

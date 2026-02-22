@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lcolladotor/derfinder
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-derfinder/overview
+- **Total Downloads**: 42.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

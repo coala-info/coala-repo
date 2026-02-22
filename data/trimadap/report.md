@@ -12,7 +12,7 @@ A tool for trimming adapter sequences from NGS reads (Note: The provided help te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trimadap/overview
-- **Total Downloads**: 139.6K
+- **Total Downloads**: 140.0K
 - **Last updated**: 2025-09-09
 - **GitHub**: https://github.com/lh3/trimadap
 - **Stars**: N/A

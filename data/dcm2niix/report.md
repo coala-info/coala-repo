@@ -12,7 +12,7 @@ The provided text does not contain help information for dcm2niix; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/dcm2niix/overview
-- **Total Downloads**: 314.8K
+- **Total Downloads**: 314.9K
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/rordenlab/dcm2niix
 - **Stars**: N/A

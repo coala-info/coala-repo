@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'bamdam'. It is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bamdam/overview
-- **Total Downloads**: 461
+- **Total Downloads**: 462
 - **Last updated**: 2026-01-12
 - **GitHub**: https://github.com/bdesanctis/bamdam
 - **Stars**: N/A

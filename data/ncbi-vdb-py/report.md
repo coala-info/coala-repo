@@ -12,7 +12,7 @@ NCBI VDB Python API (Note: The provided text is an error log from a container ru
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-vdb-py/overview
-- **Total Downloads**: 17.3K
+- **Total Downloads**: 17.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ncbi/ncbi-vdb
 - **Stars**: N/A

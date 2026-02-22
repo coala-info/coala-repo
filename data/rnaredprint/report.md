@@ -12,10 +12,10 @@ A tool for RNA design (RedPrint). Note: The provided input text contains contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rnaredprint/overview
-- **Total Downloads**: 7.7K
+- **Total Downloads**: 7.8K
 - **Last updated**: 2025-10-02
 - **GitHub**: https://github.com/yannponty/RNARedPrint
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ The provided text is a system error log from a container runtime (Singularity/Ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/htseq/overview
-- **Total Downloads**: 788.0K
+- **Total Downloads**: 789.4K
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/htseq/htseq
 - **Stars**: N/A

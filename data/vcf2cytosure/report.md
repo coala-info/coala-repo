@@ -12,7 +12,7 @@ Convert VCF files to CytoSure format for CGH array analysis.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcf2cytosure/overview
-- **Total Downloads**: 1.5K
+- **Total Downloads**: 1.6K
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/NBISweden/vcf2cytosure
 - **Stars**: N/A

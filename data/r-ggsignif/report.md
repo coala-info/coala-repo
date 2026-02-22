@@ -10,7 +10,7 @@ Enrich your 'ggplots' with group-wise comparisons.
     annotation to the pl...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ggsignif
+- **Conda**: https://anaconda.org/channels/r/packages/r-ggsignif/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/ggsignif/index.html
 - **Home (project)**: https://const-ae.github.io/ggsignif/, https://github.com/const-ae/ggsignif
 - **Package**: ggsignif
@@ -18,4 +18,8 @@ Enrich your 'ggplots' with group-wise comparisons.
 - **Author**: Constantin Ahlmann-Eltze [aut, cre, ctb] (Twitter: @const_ae), Indrajeet Patil [aut, ctb] (Twitter: @patilindrajeets)
 - **Maintainer**: Constantin Ahlmann-Eltze <artjom31415 at googlemail.com>
 - **Skill**: generated
+- **Total Downloads**: 2.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/const-ae/ggsignif
+- **Stars**: N/A
 

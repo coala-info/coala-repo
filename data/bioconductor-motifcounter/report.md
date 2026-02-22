@@ -11,6 +11,10 @@ the package relies on a compound Poisson distribution or alternatively a combina
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-motifcounter/overview
+- **Total Downloads**: 44.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

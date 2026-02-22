@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ciri-full/overview
-- **Total Downloads**: 972
+- **Total Downloads**: 976
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/bioinfo-biols/CIRI-full
 - **Stars**: N/A

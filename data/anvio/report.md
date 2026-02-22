@@ -15,7 +15,7 @@ Could not get help from Singularity for: anvio
 - **Total Downloads**: 81.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/merenlab/anvio
-- **Stars**: N/A
+- **Stars**: 504
 ### Generation Failed
 
 Could not get help from Singularity for: anvio

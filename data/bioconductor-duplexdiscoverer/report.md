@@ -13,4 +13,8 @@ the package predicts RNA duplex formation and their hybridization energies. Addi
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Egors01/DuplexDiscovereR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-duplexdiscoverer/overview
+- **Total Downloads**: 478
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

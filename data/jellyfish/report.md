@@ -12,7 +12,7 @@ The provided text is an error message from a container runtime (Apptainer/Singul
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jellyfish/overview
-- **Total Downloads**: 171.6K
+- **Total Downloads**: 171.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gmarcais/Jellyfish
 - **Stars**: N/A

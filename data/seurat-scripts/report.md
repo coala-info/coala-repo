@@ -12,7 +12,7 @@ A collection of R scripts for single-cell RNA-seq analysis using the Seurat pack
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seurat-scripts/overview
-- **Total Downloads**: 20.9K
+- **Total Downloads**: 21.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ebi-gene-expression-group/r-seurat-scripts
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'hdmi'. It is a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hdmi/overview
-- **Total Downloads**: 49
+- **Total Downloads**: 50
 - **Last updated**: 2025-11-20
 - **GitHub**: https://github.com/HaoranPeng21/HDMI
 - **Stars**: N/A

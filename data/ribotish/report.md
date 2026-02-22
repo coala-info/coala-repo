@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ribotish/overview
-- **Total Downloads**: 26.0K
+- **Total Downloads**: 26.1K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/zhpn1024/ribotish
 - **Stars**: N/A

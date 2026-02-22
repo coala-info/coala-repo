@@ -12,7 +12,7 @@ Build or convert OCI images to SIF format
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cuna/overview
-- **Total Downloads**: 580
+- **Total Downloads**: 585
 - **Last updated**: 2025-08-13
 - **GitHub**: https://github.com/iris1901/CUNA
 - **Stars**: N/A

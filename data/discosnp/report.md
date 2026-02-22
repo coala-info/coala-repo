@@ -12,7 +12,7 @@ DiscoSnp is a tool for discovering SNPs and indels from raw NGS reads. (Note: Th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/discosnp/overview
-- **Total Downloads**: 38.5K
+- **Total Downloads**: 38.6K
 - **Last updated**: 2025-09-23
 - **GitHub**: N/A
 - **Stars**: N/A

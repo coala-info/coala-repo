@@ -12,7 +12,7 @@ No description available (the provided text was an error log rather than help te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hyperloglog/overview
-- **Total Downloads**: 440
+- **Total Downloads**: 444
 - **Last updated**: 2025-08-15
 - **GitHub**: https://github.com/svpcom/hyperloglog
 - **Stars**: N/A

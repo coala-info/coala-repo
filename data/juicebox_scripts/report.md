@@ -12,7 +12,7 @@ The provided text is an error log indicating a failure to initialize the contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/juicebox_scripts/overview
-- **Total Downloads**: 355
+- **Total Downloads**: 357
 - **Last updated**: 2025-05-16
 - **GitHub**: https://github.com/phasegenomics/juicebox_scripts
 - **Stars**: N/A

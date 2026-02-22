@@ -12,7 +12,7 @@ The provided text does not contain help information for pyhmmsearch. It contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyhmmsearch/overview
-- **Total Downloads**: 992
+- **Total Downloads**: 1.0K
 - **Last updated**: 2025-11-12
 - **GitHub**: https://github.com/new-atlantis-labs/pyhmmsearch-stable
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mappy/overview
-- **Total Downloads**: 263.2K
+- **Total Downloads**: 263.3K
 - **Last updated**: 2025-06-16
 - **GitHub**: https://github.com/lh3/minimap2
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/martasevilla/UPDhmm
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-updhmm/overview
+- **Total Downloads**: 48
+- **Last updated**: 2025-10-31
+- **Stars**: N/A
 

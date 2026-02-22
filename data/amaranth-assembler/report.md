@@ -12,10 +12,10 @@ FAIL to generate CWL: amaranth-assembler not found in Singularity image. The ima
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/amaranth-assembler/overview
-- **Total Downloads**: 665
+- **Total Downloads**: 672
 - **Last updated**: 2025-12-03
 - **GitHub**: https://github.com/Shao-Group/amaranth
-- **Stars**: N/A
+- **Stars**: 0
 ### Generation Failed
 
 FAIL to generate CWL: amaranth-assembler not found in Singularity image. The image may not provide this executable.

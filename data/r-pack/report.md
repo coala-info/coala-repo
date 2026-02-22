@@ -3,7 +3,7 @@
 Functions to easily convert data to binary formats other programs/machines can understand.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-pack
+- **Conda**: https://anaconda.org/channels/r/packages/r-pack/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/pack/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=pack
 - **Package**: pack
@@ -11,4 +11,8 @@ Functions to easily convert data to binary formats other programs/machines can u
 - **Author**: Joshua M. Ulrich [cre, aut], Ken Williams [aut, cph]
 - **Maintainer**: Joshua M. Ulrich <josh.m.ulrich at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 279
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

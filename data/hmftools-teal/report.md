@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hmftools-teal/overview
-- **Total Downloads**: 872
+- **Total Downloads**: 879
 - **Last updated**: 2025-11-21
 - **GitHub**: https://github.com/hartwigmedical/hmftools
 - **Stars**: N/A

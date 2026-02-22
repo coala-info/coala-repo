@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/phettegger/randRotation
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-randrotation/overview
+- **Total Downloads**: 19.3K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

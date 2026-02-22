@@ -12,7 +12,7 @@ A tool for degenotating sequences (Note: The provided help text contains only sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/degenotate/overview
-- **Total Downloads**: 18.5K
+- **Total Downloads**: 18.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/harvardinformatics/degenotate
 - **Stars**: N/A

@@ -8,7 +8,7 @@ Tools to using fonts other than the standard PostScript fonts.
     symbols.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-extrafont
+- **Conda**: https://anaconda.org/channels/r/packages/r-extrafont/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/extrafont/index.html
 - **Home (project)**: https://github.com/wch/extrafont
 - **Package**: extrafont
@@ -16,4 +16,8 @@ Tools to using fonts other than the standard PostScript fonts.
 - **Author**: Winston Chang [aut], Frederic Bertrand [cre]
 - **Maintainer**: Frederic Bertrand <frederic.bertrand at lecnam.net>
 - **Skill**: generated
+- **Total Downloads**: 200
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/wch/extrafont
+- **Stars**: N/A
 

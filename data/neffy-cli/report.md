@@ -12,7 +12,7 @@ The provided text does not contain help information for neffy-cli; it is an erro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/neffy-cli/overview
-- **Total Downloads**: 568
+- **Total Downloads**: 569
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Maryam-Haghani/NEFFy
 - **Stars**: N/A

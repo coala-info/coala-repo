@@ -12,7 +12,7 @@ Cromwell Assisted Pipeline ExecutoR (Note: The provided text appears to be an er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/caper/overview
-- **Total Downloads**: 54.0K
+- **Total Downloads**: 54.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ENCODE-DCC/caper
 - **Stars**: N/A

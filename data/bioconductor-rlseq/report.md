@@ -13,4 +13,8 @@ The package is intended to provide a simple pipeline, called with the `RLSeq()` 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bishop-Laboratory/RLSeq
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rlseq/overview
+- **Total Downloads**: 4.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

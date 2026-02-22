@@ -3,7 +3,7 @@
 R package gchromvar (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gchromvar
+- **Conda**: https://anaconda.org/channels/r/packages/r-gchromvar/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/gchromvar/index.html
 - **Home (project)**: https://caleblareau.github.io/gchromVAR/
 - **Package**: gchromvar
@@ -11,4 +11,8 @@ R package gchromvar (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

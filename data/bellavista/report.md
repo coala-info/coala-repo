@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions for 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bellavista/overview
-- **Total Downloads**: 406
+- **Total Downloads**: 407
 - **Last updated**: 2025-04-24
 - **GitHub**: https://github.com/pkosurilab/BellaVista
 - **Stars**: N/A

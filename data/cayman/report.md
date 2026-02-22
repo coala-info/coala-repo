@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cayman/overview
-- **Total Downloads**: 330
+- **Total Downloads**: 332
 - **Last updated**: 2025-12-05
 - **GitHub**: https://github.com/zellerlab/cayman
 - **Stars**: N/A

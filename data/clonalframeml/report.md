@@ -12,7 +12,7 @@ Efficient inference of recombination in whole bacterial genomes using a maximum-
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/clonalframeml/overview
-- **Total Downloads**: 71.7K
+- **Total Downloads**: 72.0K
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/xavierdidelot/ClonalFrameML
 - **Stars**: N/A

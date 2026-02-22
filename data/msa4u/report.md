@@ -12,7 +12,7 @@ A tool for Multiple Sequence Alignment (Note: The provided text is a container e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/msa4u/overview
-- **Total Downloads**: 426
+- **Total Downloads**: 427
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/GCA-VH-lab/msa4u
 - **Stars**: N/A

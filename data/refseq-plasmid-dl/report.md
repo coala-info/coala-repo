@@ -12,7 +12,7 @@ A tool for downloading RefSeq plasmid sequences. (Note: The provided text contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/refseq-plasmid-dl/overview
-- **Total Downloads**: 45
+- **Total Downloads**: 46
 - **Last updated**: 2025-12-04
 - **GitHub**: https://github.com/erinyoung/refseq-plasmid-dl
 - **Stars**: N/A

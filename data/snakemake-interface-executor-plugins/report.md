@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-interface-executor-plugins/overview
-- **Total Downloads**: 311.1K
+- **Total Downloads**: 311.4K
 - **Last updated**: 2025-07-29
 - **GitHub**: https://github.com/snakemake/snakemake-interface-executor-plugins
 - **Stars**: N/A

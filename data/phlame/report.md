@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phlame/overview
-- **Total Downloads**: 180
+- **Total Downloads**: 182
 - **Last updated**: 2025-07-17
 - **GitHub**: https://github.com/quevan/phlame
 - **Stars**: N/A

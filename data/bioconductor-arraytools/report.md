@@ -11,6 +11,10 @@ The package generates comprehensive analysis reports in HTML format. Hyperlinks 
 - **Version**: N/A
 - **Author**: Xiwei Wu, Arthur Li
 - **Maintainer**: Arthur Li &#x3c;&#x78;&#x75;&#x65;&#x6c;&#x69;&#x20;&#x61;&#x74;&#x20;&#x63;&#x6f;&#x68;&#x2e;&#x6f;&#x72;&#x67;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-arraytools/overview
+- **Total Downloads**: 31.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

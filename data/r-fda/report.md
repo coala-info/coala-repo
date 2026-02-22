@@ -9,7 +9,7 @@ These functions were developed to support functional data
  including all but one of the 76 figures in this latter book.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fda
+- **Conda**: https://anaconda.org/channels/r/packages/r-fda/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fda/index.html
 - **Home (project)**: http://www.functionaldata.org
 - **Package**: fda
@@ -17,4 +17,8 @@ These functions were developed to support functional data
 - **Author**: James Ramsay [aut, cre], Giles Hooker [ctb], Spencer Graves [ctb]
 - **Maintainer**: James Ramsay <ramsay at psych.mcgill.ca>
 - **Skill**: generated
+- **Total Downloads**: 1.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

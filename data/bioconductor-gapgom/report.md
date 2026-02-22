@@ -13,4 +13,8 @@ The package contains two main algorithms; lncRNA2GOA and TopoICSim. lncRNA2GOA t
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Berghopper/GAPGOM
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gapgom/overview
+- **Total Downloads**: 16.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

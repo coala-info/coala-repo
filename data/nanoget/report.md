@@ -12,7 +12,7 @@ The provided text does not contain help information as it is an error log indica
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanoget/overview
-- **Total Downloads**: 180.1K
+- **Total Downloads**: 180.3K
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/wdecoster/nanoget
 - **Stars**: N/A

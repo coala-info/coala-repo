@@ -11,6 +11,10 @@ The package implements a method for normalising microarray intensities from sing
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-vsn/overview
+- **Total Downloads**: 97.4K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

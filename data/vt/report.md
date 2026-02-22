@@ -12,7 +12,7 @@ A tool for variant manipulation (Note: The provided text is a container runtime 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vt/overview
-- **Total Downloads**: 155.1K
+- **Total Downloads**: 155.3K
 - **Last updated**: 2025-09-21
 - **GitHub**: https://github.com/Aikoyori/ProgrammingVTuberLogos
 - **Stars**: N/A

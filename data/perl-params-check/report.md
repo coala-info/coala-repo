@@ -12,7 +12,7 @@ The provided text does not contain help information as the executable was not fo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-params-check/overview
-- **Total Downloads**: 145.7K
+- **Total Downloads**: 145.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-Params-Check
 - **Stars**: N/A

@@ -12,7 +12,7 @@ OakVar is a genomic variant analysis platform. (Note: The provided text contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/oakvar/overview
-- **Total Downloads**: 91.9K
+- **Total Downloads**: 92.0K
 - **Last updated**: 2026-02-13
 - **GitHub**: N/A
 - **Stars**: N/A

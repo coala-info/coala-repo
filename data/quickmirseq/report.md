@@ -12,7 +12,7 @@ QuickMIRSeq is a tool for the analysis of microRNA-seq data. (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/quickmirseq/overview
-- **Total Downloads**: 217
+- **Total Downloads**: 221
 - **Last updated**: 2025-10-09
 - **GitHub**: N/A
 - **Stars**: N/A

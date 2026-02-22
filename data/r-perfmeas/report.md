@@ -3,7 +3,7 @@
 R package perfmeas (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-perfmeas
+- **Conda**: https://anaconda.org/channels/r/packages/r-perfmeas/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/perfmeas/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=PerfMeas
 - **Package**: perfmeas
@@ -11,4 +11,8 @@ R package perfmeas (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

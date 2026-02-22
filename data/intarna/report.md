@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/intarna/overview
-- **Total Downloads**: 208.9K
+- **Total Downloads**: 209.1K
 - **Last updated**: 2025-08-16
 - **GitHub**: https://github.com/BackofenLab/IntaRNA
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Process BAM/SAM file.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/flexiformatter/overview
-- **Total Downloads**: 951
+- **Total Downloads**: 958
 - **Last updated**: 2026-01-02
 - **GitHub**: https://github.com/ljwharbers/flexiformatter
 - **Stars**: N/A

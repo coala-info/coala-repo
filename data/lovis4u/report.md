@@ -12,7 +12,7 @@ Loci Visualisation for you (lovis4u) - A tool for the visualization of genomic l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lovis4u/overview
-- **Total Downloads**: 780
+- **Total Downloads**: 787
 - **Last updated**: 2026-01-26
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for my
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mylotools/overview
-- **Total Downloads**: 86
+- **Total Downloads**: 87
 - **Last updated**: 2025-12-04
 - **GitHub**: https://github.com/bluenote-1577/mylotools
 - **Stars**: N/A

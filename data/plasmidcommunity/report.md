@@ -12,7 +12,7 @@ The provided text is an error log from a container build process (Apptainer/Sing
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/plasmidcommunity/overview
-- **Total Downloads**: 337
+- **Total Downloads**: 340
 - **Last updated**: 2025-04-29
 - **GitHub**: https://github.com/wuxinmiao5/PlasmidCommunity
 - **Stars**: N/A

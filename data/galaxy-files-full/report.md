@@ -12,7 +12,7 @@ A tool for managing Galaxy files (Note: The provided help text contains only sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-files-full/overview
-- **Total Downloads**: 876
+- **Total Downloads**: 884
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/galaxyproject/galaxy
 - **Stars**: N/A

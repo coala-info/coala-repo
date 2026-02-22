@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-extutils-cbuilder/overview
-- **Total Downloads**: 118.4K
+- **Total Downloads**: 118.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

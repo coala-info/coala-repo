@@ -11,6 +11,10 @@ The package includes various statistical models and visualization schemes for di
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-enrichdo/overview
+- **Total Downloads**: 371
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

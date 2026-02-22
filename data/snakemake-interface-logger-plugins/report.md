@@ -12,7 +12,7 @@ Snakemake interface for logger plugins
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-interface-logger-plugins/overview
-- **Total Downloads**: 127.8K
+- **Total Downloads**: 128.2K
 - **Last updated**: 2025-09-29
 - **GitHub**: https://github.com/snakemake/snakemake-interface-logger-plugins
 - **Stars**: N/A

@@ -15,7 +15,7 @@ An accurate and efficient tool to remove primers from NGS reads in reference-bas
 - **Total Downloads**: 14.5K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/RIVM-bioinformatics/AmpliGone
-- **Stars**: N/A
+- **Stars**: 20
 ### Original Help Text
 ```text
 usage: AmpliGone [required options] [optional arguments]

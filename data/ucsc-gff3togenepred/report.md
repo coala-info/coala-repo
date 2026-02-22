@@ -12,7 +12,7 @@ Convert a GFF3 file to a genePred file.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-gff3togenepred/overview
-- **Total Downloads**: 62.5K
+- **Total Downloads**: 62.6K
 - **Last updated**: 2025-06-26
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

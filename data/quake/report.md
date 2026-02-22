@@ -15,7 +15,7 @@ A tool for correcting substitution errors in next-generation sequencing data (No
 - **Total Downloads**: 7.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/id-Software/Quake-III-Arena
-- **Stars**: N/A
+- **Stars**: 7899
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

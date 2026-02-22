@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seqkit/overview
-- **Total Downloads**: 681.4K
+- **Total Downloads**: 682.3K
 - **Last updated**: 2025-12-20
 - **GitHub**: https://github.com/shenwei356/seqkit
 - **Stars**: N/A

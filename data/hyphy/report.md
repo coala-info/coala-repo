@@ -12,7 +12,7 @@ HyPhy (Hypothesis Testing using Phylogenies) is a software package for the analy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hyphy/overview
-- **Total Downloads**: 860.9K
+- **Total Downloads**: 862.5K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/veg/hyphy
 - **Stars**: N/A

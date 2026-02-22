@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/AnnotationForge
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-annotationforge/overview
+- **Total Downloads**: 71.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

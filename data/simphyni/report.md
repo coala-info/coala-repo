@@ -12,7 +12,7 @@ Simphyni tool (Note: The provided text contains build logs and error messages ra
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/simphyni/overview
-- **Total Downloads**: 111
+- **Total Downloads**: 115
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/jpeyemi/SimPhyNI
 - **Stars**: N/A

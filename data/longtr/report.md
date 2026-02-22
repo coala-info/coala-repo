@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/longtr/overview
-- **Total Downloads**: 1.8K
+- **Total Downloads**: 1.9K
 - **Last updated**: 2025-09-23
 - **GitHub**: https://github.com/gymrek-lab/LongTR
 - **Stars**: N/A

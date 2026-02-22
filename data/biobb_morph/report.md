@@ -12,7 +12,7 @@ BioExcel Building Blocks morphing tool (Note: The provided text is a container e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biobb_morph/overview
-- **Total Downloads**: 832
+- **Total Downloads**: 834
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bioexcel/biobb_morph
 - **Stars**: N/A

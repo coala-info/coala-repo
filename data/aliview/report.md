@@ -15,7 +15,7 @@ AliView is a graphical alignment viewer and editor. (Note: The provided text con
 - **Total Downloads**: 1.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/AliView/AliView
-- **Stars**: N/A
+- **Stars**: 150
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ HLA-LA (HLA-Locus Assembly) is a tool for HLA typing from NGS data. Note: The pr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hla-la/overview
-- **Total Downloads**: 26.0K
+- **Total Downloads**: 26.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/DiltheyLab/HLA-LA
 - **Stars**: N/A

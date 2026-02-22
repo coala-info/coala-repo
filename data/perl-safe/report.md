@@ -12,7 +12,7 @@ A tool for the safe execution of Perl code in restricted compartments.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-safe/overview
-- **Total Downloads**: 25.2K
+- **Total Downloads**: 25.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/google/re2
 - **Stars**: N/A

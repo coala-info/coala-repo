@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/taoshengxu/miRBaseConverter
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mirbaseconverter/overview
+- **Total Downloads**: 23.5K
+- **Last updated**: 2026-02-04
+- **Stars**: N/A
 

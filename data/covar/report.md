@@ -12,7 +12,7 @@ Calls physically-linked mutation clusters from wastewater amplicon sequencing da
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/covar/overview
-- **Total Downloads**: 2.1K
+- **Total Downloads**: 2.2K
 - **Last updated**: 2026-01-23
 - **GitHub**: https://github.com/andersen-lab/covar
 - **Stars**: N/A

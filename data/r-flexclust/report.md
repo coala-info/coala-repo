@@ -9,7 +9,7 @@ The main function kcca implements a general framework for
   bootstrap methods for the analysis of cluster stability.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-flexclust
+- **Conda**: https://anaconda.org/channels/r/packages/r-flexclust/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/flexclust/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=flexclust
 - **Package**: flexclust
@@ -17,4 +17,8 @@ The main function kcca implements a general framework for
 - **Author**: Friedrich Leisch [aut] (maintainer up to 2024), Evgenia Dimitriadou [ctb], Lena Ortega Menjivar [ctb], Dominik Ernst [ctb], Bettina Grün [ctb, cre]
 - **Maintainer**: Bettina Grün <Bettina.Gruen at R-project.org>
 - **Skill**: generated
+- **Total Downloads**: 485
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

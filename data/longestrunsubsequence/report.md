@@ -12,7 +12,7 @@ A tool for finding the longest run subsequence. (Note: The provided help text co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/longestrunsubsequence/overview
-- **Total Downloads**: 9.1K
+- **Total Downloads**: 9.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/AlBi-HHU/longest-run-subsequence
 - **Stars**: N/A

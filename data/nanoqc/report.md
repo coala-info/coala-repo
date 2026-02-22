@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for na
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanoqc/overview
-- **Total Downloads**: 48.1K
+- **Total Downloads**: 48.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/nanoQC
 - **Stars**: N/A

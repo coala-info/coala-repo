@@ -15,7 +15,7 @@ Beacon v2 Reference Implementation Tools (Note: The provided text is a container
 - **Total Downloads**: 1.6K
 - **Last updated**: 2025-09-26
 - **GitHub**: https://github.com/EGA-archive/beacon2-ri-tools
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

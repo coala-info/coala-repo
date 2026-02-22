@@ -12,7 +12,7 @@ A Perl-based tool for generating SVG graphs. (Note: The provided help text conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-svg-graph/overview
-- **Total Downloads**: 181.9K
+- **Total Downloads**: 182.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/clbustos/svg-graph
 - **Stars**: N/A

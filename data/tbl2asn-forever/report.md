@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tbl2asn-forever/overview
-- **Total Downloads**: 96.8K
+- **Total Downloads**: 96.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

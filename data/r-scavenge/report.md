@@ -3,7 +3,7 @@
 R package scavenge (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-scavenge
+- **Conda**: https://anaconda.org/channels/r/packages/r-scavenge/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/scavenge/index.html
 - **Home (project)**: https://github.com/sankaranlab/SCAVENGE
 - **Package**: scavenge
@@ -11,4 +11,8 @@ R package scavenge (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/sankaranlab/SCAVENGE
+- **Stars**: N/A
 

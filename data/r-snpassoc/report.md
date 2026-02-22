@@ -9,7 +9,7 @@ Functions to perform most of the common analysis in genome
     and related tests (sum statistic and truncated product) a...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-snpassoc
+- **Conda**: https://anaconda.org/channels/r/packages/r-snpassoc/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/SNPassoc/index.html
 - **Home (project)**: https://github.com/isglobal-brge/SNPassoc
 - **Package**: SNPassoc
@@ -17,4 +17,8 @@ Functions to perform most of the common analysis in genome
 - **Author**: Victor Moreno [aut], Juan R Gonzalez [aut], Dolors Pelegri [aut, cre]
 - **Maintainer**: Dolors Pelegri <dolors.pelegri at isglobal.org>
 - **Skill**: generated
+- **Total Downloads**: 41
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/isglobal-brge/SNPassoc
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ ClustalW is a general purpose multiple sequence alignment program for DNA or pro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/clustalw/overview
-- **Total Downloads**: 394.8K
+- **Total Downloads**: 395.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/coldfunction/CUDA-clustalW
 - **Stars**: N/A

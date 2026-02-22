@@ -5,7 +5,7 @@ Various tools for creating iterators, many patterned after
         after functions in the 'snow' package.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-itertools
+- **Conda**: https://anaconda.org/channels/r/packages/r-itertools/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/itertools/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=itertools
 - **Package**: itertools
@@ -13,4 +13,8 @@ Various tools for creating iterators, many patterned after
 - **Author**: Steve Weston, Hadley Wickham
 - **Maintainer**: Steve Weston <stephen.b.weston at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 414
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

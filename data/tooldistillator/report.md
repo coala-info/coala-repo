@@ -12,7 +12,7 @@ ToolDistillator is a tool for distilling and processing bioinformatics tool meta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tooldistillator/overview
-- **Total Downloads**: 5.0K
+- **Total Downloads**: 5.1K
 - **Last updated**: 2026-02-06
 - **GitHub**: N/A
 - **Stars**: N/A

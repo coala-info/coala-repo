@@ -3,7 +3,7 @@
 R package easylift (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-easylift
+- **Conda**: https://anaconda.org/channels/r/packages/r-easylift/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/easylift/index.html
 - **Home (project)**: https://github.com/caleblareau/easyLift
 - **Package**: easylift
@@ -11,4 +11,8 @@ R package easylift (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/caleblareau/easyLift
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ Metagenomic Identification of MIcrobes (Note: The provided text contains contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mimi/overview
-- **Total Downloads**: 352
+- **Total Downloads**: 355
 - **Last updated**: 2025-10-20
 - **GitHub**: https://github.com/NYUAD-Core-Bioinformatics/MIMI
 - **Stars**: N/A

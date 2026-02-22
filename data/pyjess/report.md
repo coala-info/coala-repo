@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyjess/overview
-- **Total Downloads**: 21.7K
+- **Total Downloads**: 21.8K
 - **Last updated**: 2025-12-25
 - **GitHub**: https://github.com/althonos/pyjess
 - **Stars**: N/A

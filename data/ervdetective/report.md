@@ -12,7 +12,7 @@ A tool for detecting Endogenous Retroviruses (ERVs). Note: The provided text con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ervdetective/overview
-- **Total Downloads**: 1.1K
+- **Total Downloads**: 1.2K
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/ZhijianZhou01/ervdetective
 - **Stars**: N/A

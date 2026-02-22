@@ -12,7 +12,7 @@ Extract splice junctions from PSL files.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-pslsplicejunctions/overview
-- **Total Downloads**: 381
+- **Total Downloads**: 382
 - **Last updated**: 2025-06-26
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

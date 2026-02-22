@@ -13,4 +13,8 @@ The package defines the SparseArray virtual class and two concrete subclasses: C
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/SparseArray
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-sparsearray/overview
+- **Total Downloads**: 246.2K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

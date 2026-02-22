@@ -15,7 +15,7 @@ A tool for antimicrobial resistance gene detection (Note: The provided text is a
 - **Total Downloads**: 32.8K
 - **Last updated**: 2025-11-12
 - **GitHub**: https://github.com/MDU-PHL/abritamr
-- **Stars**: N/A
+- **Stars**: 91
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

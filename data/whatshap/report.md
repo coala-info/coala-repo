@@ -12,7 +12,7 @@ Phasing genomic variants using DNA sequencing reads
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/whatshap/overview
-- **Total Downloads**: 222.7K
+- **Total Downloads**: 222.8K
 - **Last updated**: 2025-06-09
 - **GitHub**: https://github.com/whatshap/whatshap
 - **Stars**: N/A

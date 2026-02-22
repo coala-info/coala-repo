@@ -12,7 +12,7 @@ A program package designed for working with VCF files, such as those generated b
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcftools/overview
-- **Total Downloads**: 498.4K
+- **Total Downloads**: 499.0K
 - **Last updated**: 2025-05-15
 - **GitHub**: https://github.com/vcftools/vcftools
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rpsbproc/overview
-- **Total Downloads**: 249.4K
+- **Total Downloads**: 249.7K
 - **Last updated**: 2026-01-30
 - **GitHub**: N/A
 - **Stars**: N/A

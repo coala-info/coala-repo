@@ -6,7 +6,7 @@ Infers the V genotype of an individual from immunoglobulin (Ig)
     allele calls from among the sample sequences.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-tigger
+- **Conda**: https://anaconda.org/channels/r/packages/r-tigger/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/tigger/index.html
 - **Home (project)**: http://tigger.readthedocs.io
 - **Package**: tigger
@@ -14,4 +14,8 @@ Infers the V genotype of an individual from immunoglobulin (Ig)
 - **Author**: Daniel Gadala-Maria [aut], Susanna Marquez [aut, cre], Moriah Cohen [aut], Jason Vander Heiden [aut], Gur Yaari [aut], Steven Kleinstein [aut, cph]
 - **Maintainer**: Susanna Marquez <susanna.marquez at yale.edu>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

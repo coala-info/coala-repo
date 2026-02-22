@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/circle-map-cpp/overview
-- **Total Downloads**: 2.8K
+- **Total Downloads**: 2.9K
 - **Last updated**: 2025-11-26
 - **GitHub**: https://github.com/BGI-Qingdao/Circle-Map-cpp
 - **Stars**: N/A

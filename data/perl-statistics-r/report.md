@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-statistics-r/overview
-- **Total Downloads**: 25.0K
+- **Total Downloads**: 25.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/PDLPorters/PDL-Stats
 - **Stars**: N/A

@@ -3,7 +3,7 @@
 R package catools (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-catools
+- **Conda**: https://anaconda.org/channels/r/packages/r-catools/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/catools/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=caTools
 - **Package**: catools
@@ -11,4 +11,8 @@ R package catools (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: 327.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

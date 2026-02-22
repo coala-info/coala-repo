@@ -12,7 +12,7 @@ The provided text is a container engine error log and does not contain help docu
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snap-aligner/overview
-- **Total Downloads**: 104.8K
+- **Total Downloads**: 105.0K
 - **Last updated**: 2025-09-17
 - **GitHub**: https://github.com/amplab/snap
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for plotting Oxford Nanopore data (Note: The provided input text contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanoplotter/overview
-- **Total Downloads**: 93.4K
+- **Total Downloads**: 93.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/nanoplotter
 - **Stars**: N/A

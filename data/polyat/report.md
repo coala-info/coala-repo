@@ -12,7 +12,7 @@ The provided text contains container build logs and error messages rather than C
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/polyat/overview
-- **Total Downloads**: 47
+- **Total Downloads**: 48
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/DaanJansen94/polyat
 - **Stars**: N/A

@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/machinezone/cobra
-- **Stars**: N/A
+- **Stars**: 33
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

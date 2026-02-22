@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cactus/overview
-- **Total Downloads**: 23.1K
+- **Total Downloads**: 23.2K
 - **Last updated**: 2025-10-19
 - **GitHub**: https://github.com/ComparativeGenomicsToolkit/cactus
 - **Stars**: N/A

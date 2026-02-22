@@ -15,7 +15,7 @@ rnaQUAST: Quality Assessment Tool for RNA-seq Assemblies
 - **Total Downloads**: 28.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ablab/rnaquast
-- **Stars**: N/A
+- **Stars**: 26
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

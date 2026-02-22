@@ -12,7 +12,7 @@ Check a BAM file for corruption
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bamrescue/overview
-- **Total Downloads**: 506
+- **Total Downloads**: 508
 - **Last updated**: 2025-09-15
 - **GitHub**: https://github.com/Arkanosis/bamrescue
 - **Stars**: N/A

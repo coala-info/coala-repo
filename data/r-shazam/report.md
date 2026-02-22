@@ -7,7 +7,7 @@ Provides a computational framework for analyzing mutations in
     Also includes empirically derived models of SHM for both mice and humans.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-shazam
+- **Conda**: https://anaconda.org/channels/r/packages/r-shazam/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/shazam/index.html
 - **Home (project)**: http
 - **Package**: shazam
@@ -15,4 +15,8 @@ Provides a computational framework for analyzing mutations in
 - **Author**: Mohamed Uduman [aut], Namita Gupta [aut], Susanna Marquez [aut, cre], Julian Zhou [aut], Nima Nouri [aut], Noah Yann Lee [aut], Ang Cui [ctb], Jason Vander Heiden [aut], Gur Yaari [aut], Steven Kleinstein [aut, cph]
 - **Maintainer**: Susanna Marquez <susanna.marquez at yale.edu>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

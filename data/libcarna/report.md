@@ -12,7 +12,7 @@ The provided text is a system error message regarding a container build failure 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/libcarna/overview
-- **Total Downloads**: 890
+- **Total Downloads**: 892
 - **Last updated**: 2025-05-12
 - **GitHub**: https://github.com/kostrykin/Carna
 - **Stars**: N/A

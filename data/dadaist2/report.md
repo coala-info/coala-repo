@@ -12,7 +12,7 @@ DADAist2 is a wrapper for the DADA2 pipeline for analyzing ribosomal amplicons.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dadaist2/overview
-- **Total Downloads**: 49.8K
+- **Total Downloads**: 49.9K
 - **Last updated**: 2026-01-17
 - **GitHub**: https://github.com/quadram-institute-bioscience/dadaist2
 - **Stars**: N/A

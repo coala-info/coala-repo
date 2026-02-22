@@ -12,7 +12,7 @@ FAIL to generate CWL: pasta not found in Singularity image. The image may not pr
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pasta/overview
-- **Total Downloads**: 167.6K
+- **Total Downloads**: 168.2K
 - **Last updated**: 2025-06-05
 - **GitHub**: https://github.com/smirarab/pasta
 - **Stars**: N/A

@@ -11,6 +11,10 @@ The package provides utility functions related to package development. These inc
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-biocbaseutils/overview
+- **Total Downloads**: 176.9K
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

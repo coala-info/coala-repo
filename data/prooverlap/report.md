@@ -12,10 +12,10 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/prooverlap/overview
-- **Total Downloads**: 197
+- **Total Downloads**: 198
 - **Last updated**: 2025-04-23
 - **GitHub**: https://github.com/ngualand/ProOvErlap
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

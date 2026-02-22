@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool, but rather an 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biobb_godmd/overview
-- **Total Downloads**: 11.5K
+- **Total Downloads**: 11.6K
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/bioexcel/biobb_godmd
 - **Stars**: N/A

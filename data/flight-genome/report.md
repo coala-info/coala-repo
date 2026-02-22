@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/flight-genome/overview
-- **Total Downloads**: 46.5K
+- **Total Downloads**: 46.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/rhysnewell/flight
 - **Stars**: N/A

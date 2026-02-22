@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: Vince Buffalo &#x3c;&#x76;&#x73;&#x62;&#x75;&#x66;&#x66;&#x61;&#x6c;&#x6f;&#x20;&#x61;&#x74;&#x20;&#x75;&#x63;&#x64;&#x61;&#x76;&#x69;&#x73;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **GitHub**: https://github.com/vsbuffalo/qrqc
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-qrqc/overview
+- **Total Downloads**: 48.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

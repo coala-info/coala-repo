@@ -15,7 +15,7 @@ A tool for fragmenting molecules (description not available in provided text)
 - **Total Downloads**: 661
 - **Last updated**: 2025-09-29
 - **GitHub**: https://github.com/sverwimp/AFragmenter
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

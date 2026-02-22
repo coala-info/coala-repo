@@ -12,7 +12,7 @@ The provided text does not contain help information; it is an error log indicati
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/eva-sub-cli/overview
-- **Total Downloads**: 139.1K
+- **Total Downloads**: 139.5K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/EBIvariation/eva-sub-cli
 - **Stars**: N/A

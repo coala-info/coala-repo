@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/BiocStyle
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-biocstyle/overview
+- **Total Downloads**: 87.1K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

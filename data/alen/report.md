@@ -15,7 +15,7 @@ A command-line program to view DNA, RNA or protein alignments in FASTA format.
 - **Total Downloads**: 1.8K
 - **Last updated**: 2026-01-23
 - **GitHub**: https://github.com/jakobnissen/alen
-- **Stars**: N/A
+- **Stars**: 87
 ### Original Help Text
 ```text
 A command-line program to view DNA, RNA or protein alignments in FASTA format.

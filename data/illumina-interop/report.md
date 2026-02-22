@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool, but rather a s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/illumina-interop/overview
-- **Total Downloads**: 148.8K
+- **Total Downloads**: 148.9K
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/Illumina/interop
 - **Stars**: N/A

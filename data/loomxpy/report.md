@@ -12,7 +12,7 @@ A Python package for creating and manipulating .loom files.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/loomxpy/overview
-- **Total Downloads**: 70
+- **Total Downloads**: 72
 - **Last updated**: 2025-11-05
 - **GitHub**: https://github.com/aertslab/loomxpy
 - **Stars**: N/A

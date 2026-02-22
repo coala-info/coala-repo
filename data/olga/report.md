@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/olga/overview
-- **Total Downloads**: 878
+- **Total Downloads**: 880
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/zsethna/OLGA
 - **Stars**: N/A

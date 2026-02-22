@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metav/overview
-- **Total Downloads**: 1.8K
+- **Total Downloads**: 1.9K
 - **Last updated**: 2025-12-14
 - **GitHub**: https://github.com/ZhijianZhou01/metav
 - **Stars**: N/A

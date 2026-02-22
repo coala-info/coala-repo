@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/wenjie1991/scMitoMut
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scmitomut/overview
+- **Total Downloads**: 643
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

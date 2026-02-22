@@ -12,7 +12,7 @@ The perl-www-robotrules package (WWW::RobotRules) provides a database of robots.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-www-robotrules/overview
-- **Total Downloads**: 470.5K
+- **Total Downloads**: 471.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ngerakines/perl-www-robotrules-cache
 - **Stars**: N/A

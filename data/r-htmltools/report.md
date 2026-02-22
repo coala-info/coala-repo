@@ -3,7 +3,7 @@
 Tools for HTML generation and output.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-htmltools
+- **Conda**: https://anaconda.org/channels/r/packages/r-htmltools/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/htmltools/index.html
 - **Home (project)**: https://github.com/rstudio/htmltools, https://rstudio.github.io/htmltools/
 - **Package**: htmltools
@@ -11,4 +11,8 @@ Tools for HTML generation and output.</p>
 - **Author**: Joe Cheng [aut], Carson Sievert [aut, cre], Barret Schloerke [aut], Winston Chang [aut], Yihui Xie [aut], Jeff Allen [aut], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Carson Sievert <carson at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 689.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/rstudio/htmltools
+- **Stars**: N/A
 

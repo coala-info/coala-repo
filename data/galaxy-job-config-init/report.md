@@ -12,7 +12,7 @@ A tool for initializing Galaxy job configurations. (Note: The provided text cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-job-config-init/overview
-- **Total Downloads**: 274
+- **Total Downloads**: 279
 - **Last updated**: 2025-06-24
 - **GitHub**: https://github.com/galaxyproject/galaxy-job-config-init
 - **Stars**: N/A

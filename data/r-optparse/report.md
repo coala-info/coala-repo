@@ -5,7 +5,7 @@ A command line parser inspired by Python's 'optparse' library to
     long flag/options.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-optparse
+- **Conda**: https://anaconda.org/channels/r/packages/r-optparse/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/optparse/index.html
 - **Home (project)**: https://github.com/trevorld/r-optparse
 - **Package**: optparse
@@ -13,4 +13,8 @@ A command line parser inspired by Python's 'optparse' library to
 - **Author**: Trevor L. Davis [aut, cre], Allen Day [ctb] (Some documentation and examples ported from the getopt package.), Python Software Foundation [ctb] (Some documentation from the optparse Python module.), Steve Lianoglou [ctb], Jim Nikelski [ctb], Kirill Müller [ctb], Peter Humburg [ctb], Rich FitzJohn [ctb], Gyu Jin Choi [ctb]
 - **Maintainer**: Trevor L. Davis <trevor.l.davis at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 5.9K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/trevorld/r-optparse
+- **Stars**: N/A
 

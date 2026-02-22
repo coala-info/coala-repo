@@ -12,7 +12,7 @@ CRISPR-Cas Typer (cctyper) is a tool for automated detection and typing of CRISP
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cctyper/overview
-- **Total Downloads**: 817
+- **Total Downloads**: 821
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Russel88/CRISPRCasTyper
 - **Stars**: N/A

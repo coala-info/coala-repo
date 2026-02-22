@@ -12,7 +12,7 @@ FAIL to generate CWL: paml not found in Singularity image. The image may not pro
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/paml/overview
-- **Total Downloads**: 312.3K
+- **Total Downloads**: 312.5K
 - **Last updated**: 2026-01-30
 - **GitHub**: https://github.com/abacus-gene/paml
 - **Stars**: N/A

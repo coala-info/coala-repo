@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mmseqs2/overview
-- **Total Downloads**: 469.1K
+- **Total Downloads**: 469.3K
 - **Last updated**: 2025-07-27
 - **GitHub**: https://github.com/soedinglab/mmseqs2
 - **Stars**: N/A

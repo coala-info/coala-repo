@@ -12,7 +12,7 @@ TandemTwister is a tool for analyzing tandem repeats. (Note: The provided text i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tandemtwister/overview
-- **Total Downloads**: 307
+- **Total Downloads**: 313
 - **Last updated**: 2026-01-02
 - **GitHub**: https://github.com/Lionward/tandemtwister
 - **Stars**: N/A

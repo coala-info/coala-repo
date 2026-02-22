@@ -12,7 +12,7 @@ A tool for executing Galaxy jobs (Note: The provided text appears to be a contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-job-execution/overview
-- **Total Downloads**: 606
+- **Total Downloads**: 612
 - **Last updated**: 2025-11-18
 - **GitHub**: https://github.com/galaxyproject/galaxy
 - **Stars**: N/A

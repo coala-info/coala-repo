@@ -12,7 +12,7 @@ LZ-based compression utility (Note: The provided help text contains only contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/lzstring/overview
-- **Total Downloads**: 415.8K
+- **Total Downloads**: 416.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/diogoduailibe/lzstring4j
 - **Stars**: N/A

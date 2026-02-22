@@ -9,7 +9,7 @@ Aho-Corasick is an optimal algorithm for finding many
     function call. If you wa...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ahocorasicktrie
+- **Conda**: https://anaconda.org/channels/r/packages/r-ahocorasicktrie/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/AhoCorasickTrie/index.html
 - **Home (project)**: https://github.com/chambm/AhoCorasickTrie
 - **Package**: AhoCorasickTrie
@@ -17,4 +17,8 @@ Aho-Corasick is an optimal algorithm for finding many
 - **Author**: Matt Chambers [aut, cre], Tomas Petricek [aut, cph], Vanderbilt University [cph]
 - **Maintainer**: Matt Chambers <matt.chambers42 at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 372
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/chambm/AhoCorasickTrie
+- **Stars**: N/A
 

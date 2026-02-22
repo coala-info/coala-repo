@@ -13,4 +13,8 @@ The package contains functions to infer and visualize cell cycle process using S
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/hansenlab/tricycle
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tricycle/overview
+- **Total Downloads**: 11.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

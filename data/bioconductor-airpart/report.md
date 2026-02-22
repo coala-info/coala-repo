@@ -13,4 +13,8 @@ The package includes a number of visualizations and quality control functions fo
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Wancen/airpart
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-airpart/overview
+- **Total Downloads**: 10.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

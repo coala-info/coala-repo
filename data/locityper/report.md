@@ -12,7 +12,7 @@ A tool for genotyping complex loci (Note: The provided help text contains only s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/locityper/overview
-- **Total Downloads**: 19.4K
+- **Total Downloads**: 19.5K
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/tprodanov/locityper
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'mash'. It cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mash/overview
-- **Total Downloads**: 247.8K
+- **Total Downloads**: 247.9K
 - **Last updated**: 2025-08-05
 - **GitHub**: https://github.com/marbl/Mash
 - **Stars**: N/A

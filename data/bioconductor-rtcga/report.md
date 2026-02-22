@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RTCGA/RTCGA
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rtcga/overview
+- **Total Downloads**: 37.1K
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

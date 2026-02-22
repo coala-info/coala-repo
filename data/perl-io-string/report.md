@@ -12,7 +12,7 @@ The perl-io-string tool (Note: The provided text is an error log indicating the 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-io-string/overview
-- **Total Downloads**: 447.2K
+- **Total Downloads**: 447.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gooselinux/perl-IO-String
 - **Stars**: N/A

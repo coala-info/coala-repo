@@ -15,7 +15,7 @@ A tool for protein graph construction and analysis (Note: The provided text was 
 - **Total Downloads**: 23.4K
 - **Last updated**: 2026-01-17
 - **GitHub**: https://github.com/mpc-bioinformatics/ProtGraph
-- **Stars**: N/A
+- **Stars**: 13
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

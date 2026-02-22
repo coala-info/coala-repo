@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dcplib/overview
-- **Total Downloads**: 37.5K
+- **Total Downloads**: 37.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/HumanCellAtlas/dcplib
 - **Stars**: N/A

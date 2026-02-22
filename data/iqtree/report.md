@@ -12,7 +12,7 @@ The provided text does not contain help information for iqtree; it contains syst
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/iqtree/overview
-- **Total Downloads**: 995.7K
+- **Total Downloads**: 996.0K
 - **Last updated**: 2025-07-09
 - **GitHub**: https://github.com/iqtree/iqtree3
 - **Stars**: N/A

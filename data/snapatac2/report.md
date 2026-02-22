@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snapatac2/overview
-- **Total Downloads**: 13.0K
+- **Total Downloads**: 13.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kaizhang/SnapATAC2
 - **Stars**: N/A

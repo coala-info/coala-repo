@@ -12,7 +12,7 @@ The provided text does not contain help information for dpcstruct; it contains s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dpcstruct/overview
-- **Total Downloads**: 495
+- **Total Downloads**: 497
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/RitAreaSciencePark/DPCstruct
 - **Stars**: N/A

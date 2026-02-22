@@ -12,7 +12,7 @@ A python extension for accessing BigWig files
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pybigwig/overview
-- **Total Downloads**: 650.6K
+- **Total Downloads**: 651.6K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/deeptools/pyBigWig
 - **Stars**: N/A

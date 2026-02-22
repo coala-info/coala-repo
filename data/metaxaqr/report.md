@@ -12,7 +12,7 @@ MetaxaQR (Metaxa2 Query Router) - No description available from the provided tex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metaxaqr/overview
-- **Total Downloads**: 112
+- **Total Downloads**: 116
 - **Last updated**: 2025-11-21
 - **GitHub**: N/A
 - **Stars**: N/A

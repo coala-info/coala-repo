@@ -12,7 +12,7 @@ The Water Erosion Prediction Project (WEPP) model is a process-based, distribute
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/wepp/overview
-- **Total Downloads**: 2.0K
+- **Total Downloads**: 2.1K
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/TurakhiaLab/WEPP
 - **Stars**: N/A

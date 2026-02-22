@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for ta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tadlib/overview
-- **Total Downloads**: 781
+- **Total Downloads**: 783
 - **Last updated**: 2025-06-11
 - **GitHub**: https://github.com/XiaoTaoWang/TADLib
 - **Stars**: N/A

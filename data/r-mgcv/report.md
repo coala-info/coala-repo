@@ -8,11 +8,15 @@ Generalized additive (mixed) models, some of their extensions and
 	     approximation for fully Bayesian inference.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-mgcv
+- **Conda**: https://anaconda.org/channels/r/packages/r-mgcv/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/mgcv/index.html
 - **Package**: mgcv
 - **Version**: 1.9-4
 - **Author**: Simon Wood [aut, cre]
 - **Maintainer**: Simon Wood <simon.wood at r-project.org>
 - **Skill**: generated
+- **Total Downloads**: 1.1M
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

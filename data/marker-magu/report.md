@@ -12,7 +12,7 @@ A tool for marker-based metagenomic analysis (Note: The provided help text conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/marker-magu/overview
-- **Total Downloads**: 961
+- **Total Downloads**: 963
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/cmmr/Marker-MAGu
 - **Stars**: N/A

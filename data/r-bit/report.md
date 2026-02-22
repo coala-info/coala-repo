@@ -6,7 +6,7 @@ Provided are classes for boolean and skewed boolean vectors,
     foundations for ff (range index, compression, chunked processing).</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bit
+- **Conda**: https://anaconda.org/channels/r/packages/r-bit/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/bit/index.html
 - **Home (project)**: https://github.com/truecluster/bit
 - **Package**: bit
@@ -14,4 +14,8 @@ Provided are classes for boolean and skewed boolean vectors,
 - **Author**: Michael Chirico [aut, cre], Jens Oehlschlägel [aut], Brian Ripley [ctb]
 - **Maintainer**: Michael Chirico <MichaelChirico4 at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 139.3K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/truecluster/bit
+- **Stars**: N/A
 

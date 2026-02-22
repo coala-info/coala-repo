@@ -12,7 +12,7 @@ A tool for calculating N50 and other assembly statistics. (Note: The provided he
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/n50/overview
-- **Total Downloads**: 108.1K
+- **Total Downloads**: 108.2K
 - **Last updated**: 2025-07-08
 - **GitHub**: https://github.com/quadram-institute-bioscience/n50
 - **Stars**: N/A

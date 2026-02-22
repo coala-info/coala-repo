@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jonocarroll/DFplyr
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dfplyr/overview
+- **Total Downloads**: 505
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

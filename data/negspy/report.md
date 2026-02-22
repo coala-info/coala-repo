@@ -12,7 +12,7 @@ A python package for handling genomic coordinates and chromosome sizes.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/negspy/overview
-- **Total Downloads**: 88
+- **Total Downloads**: 89
 - **Last updated**: 2025-12-01
 - **GitHub**: https://github.com/pkerpedjiev/negspy
 - **Stars**: N/A

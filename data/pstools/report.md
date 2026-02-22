@@ -15,7 +15,7 @@ The provided text does not contain help information or a description for the too
 - **Total Downloads**: 3.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/shilpagarg/pstools
-- **Stars**: N/A
+- **Stars**: 37
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

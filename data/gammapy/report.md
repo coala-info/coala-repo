@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/gammapy/overview
-- **Total Downloads**: 683.6K
+- **Total Downloads**: 684.4K
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/gammapy/gammapy
 - **Stars**: N/A

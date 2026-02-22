@@ -3,7 +3,7 @@
 R package cobrar (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-cobrar
+- **Conda**: https://anaconda.org/channels/r/packages/r-cobrar/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/cobrar/index.html
 - **Home (project)**: https://github.com/Waschina/cobrar
 - **Package**: cobrar
@@ -11,4 +11,8 @@ R package cobrar (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/Waschina/cobrar
+- **Stars**: N/A
 

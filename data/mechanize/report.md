@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'mechanize'. It
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/mechanize/overview
-- **Total Downloads**: 174.1K
+- **Total Downloads**: 174.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sparklemotion/mechanize
 - **Stars**: N/A

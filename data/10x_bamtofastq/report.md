@@ -15,7 +15,7 @@
 - **Total Downloads**: 6.3K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/10XGenomics/bamtofastq
-- **Stars**: N/A
+- **Stars**: 66
 ### Original Help Text
 ```text
 bamtofastq v1.4.1

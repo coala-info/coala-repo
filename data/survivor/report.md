@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/survivor/overview
-- **Total Downloads**: 41.8K
+- **Total Downloads**: 41.9K
 - **Last updated**: 2025-09-21
 - **GitHub**: https://github.com/fritzsedlazeck/SURVIVOR
 - **Stars**: N/A

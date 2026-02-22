@@ -3,11 +3,15 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ipo-meta
+- **Conda**: https://anaconda.org/channels/r/packages/r-ipo-meta/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/ipo-meta/index.html
 - **Package**: ipo-meta
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: not generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

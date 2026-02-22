@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for py
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pycistarget/overview
-- **Total Downloads**: 105
+- **Total Downloads**: 106
 - **Last updated**: 2025-11-06
 - **GitHub**: https://github.com/aertslab/pycistarget
 - **Stars**: N/A

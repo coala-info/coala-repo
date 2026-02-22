@@ -12,7 +12,7 @@ vcfanno: annotate a VCF with other VCFs/BEDs/tabix files
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcfanno/overview
-- **Total Downloads**: 111.0K
+- **Total Downloads**: 111.1K
 - **Last updated**: 2025-09-01
 - **GitHub**: https://github.com/brentp/vcfanno
 - **Stars**: N/A

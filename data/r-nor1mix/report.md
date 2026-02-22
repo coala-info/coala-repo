@@ -7,7 +7,7 @@ Onedimensional Normal (i.e. Gaussian) Mixture Models (S3) Classes,
    Likelihood) or traditional EM estimation.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-nor1mix
+- **Conda**: https://anaconda.org/channels/r/packages/r-nor1mix/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/nor1mix/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=nor1mix
 - **Package**: nor1mix
@@ -15,4 +15,8 @@ Onedimensional Normal (i.e. Gaussian) Mixture Models (S3) Classes,
 - **Author**: Martin Maechler [aut, cre], Friedrich Leisch [ctb] (norMixEM()), Erik Jørgensen [ctb] (pnorMix(), qnorMix())
 - **Maintainer**: Martin Maechler <maechler at stat.math.ethz.ch>
 - **Skill**: generated
+- **Total Downloads**: 362
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

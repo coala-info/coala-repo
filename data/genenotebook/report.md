@@ -12,7 +12,7 @@ GeneNotebook is a tool for genome browsing and annotation. (Note: The provided t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genenotebook/overview
-- **Total Downloads**: 622.0K
+- **Total Downloads**: 623.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

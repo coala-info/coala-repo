@@ -13,4 +13,8 @@ The package aims to support diagnostics in the field of rare diseases where RNA-
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/gagneurlab/FRASER
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fraser/overview
+- **Total Downloads**: 36.3K
+- **Last updated**: 2025-10-31
+- **Stars**: N/A
 

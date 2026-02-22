@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mirmachine/overview
-- **Total Downloads**: 22.1K
+- **Total Downloads**: 22.2K
 - **Last updated**: 2025-10-23
 - **GitHub**: https://github.com/sinanugur/MirMachine
 - **Stars**: N/A

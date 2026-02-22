@@ -12,7 +12,7 @@ Generate self-contained HTML reports for viewing genomic data in IGV.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/igv-reports/overview
-- **Total Downloads**: 186.2K
+- **Total Downloads**: 186.3K
 - **Last updated**: 2025-09-24
 - **GitHub**: https://github.com/igvteam/igv-reports
 - **Stars**: N/A

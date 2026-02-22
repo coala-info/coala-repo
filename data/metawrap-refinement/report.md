@@ -12,7 +12,7 @@ The provided text is a system error message indicating a failure to build or run
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-refinement/overview
-- **Total Downloads**: 50
+- **Total Downloads**: 51
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A

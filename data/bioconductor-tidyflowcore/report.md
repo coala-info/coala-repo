@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/keyes-timothy/tidyFlowCore
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tidyflowcore/overview
+- **Total Downloads**: 369
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

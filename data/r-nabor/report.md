@@ -10,7 +10,7 @@ An R wrapper for 'libnabo', an exact or approximate k nearest
     queries of the same set of target points.</p...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-nabor
+- **Conda**: https://anaconda.org/channels/r/packages/r-nabor/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/nabor/index.html
 - **Home (project)**: https://github.com/jefferis/nabor https://github.com/ethz-asl/libnabo
 - **Package**: nabor
@@ -18,4 +18,8 @@ An R wrapper for 'libnabo', an exact or approximate k nearest
 - **Author**: Stephane Mangenat (for 'libnabo'), Gregory Jefferis
 - **Maintainer**: Gregory Jefferis <jefferis at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 493
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jefferis/nabor
+- **Stars**: N/A
 

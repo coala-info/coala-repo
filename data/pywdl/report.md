@@ -15,7 +15,7 @@ The provided text contains execution logs and error messages rather than help do
 - **Total Downloads**: 8.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/broadinstitute/pywdl
-- **Stars**: N/A
+- **Stars**: 10
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

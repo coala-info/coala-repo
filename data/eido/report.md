@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/eido/overview
-- **Total Downloads**: 379.7K
+- **Total Downloads**: 380.0K
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/mayneyao/eidos
 - **Stars**: N/A

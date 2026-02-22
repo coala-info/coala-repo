@@ -12,7 +12,7 @@ The provided text does not contain a description of the tool as it appears to be
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/rpbasicdesign/overview
-- **Total Downloads**: 24.0K
+- **Total Downloads**: 24.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/conda-forge/rpbasicdesign-feedstock
 - **Stars**: N/A

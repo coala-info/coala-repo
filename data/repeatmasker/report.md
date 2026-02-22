@@ -12,7 +12,7 @@ The provided text does not contain help information for RepeatMasker; it contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/repeatmasker/overview
-- **Total Downloads**: 124.8K
+- **Total Downloads**: 124.9K
 - **Last updated**: 2025-11-25
 - **GitHub**: https://github.com/Dfam-consortium/RepeatMasker
 - **Stars**: N/A

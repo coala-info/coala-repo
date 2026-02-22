@@ -7,7 +7,7 @@ Combine multidimensional arrays into a single array.
   manipulating, extracting and replacing data in arrays.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-abind
+- **Conda**: https://anaconda.org/channels/r/packages/r-abind/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/abind/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=abind
 - **Package**: abind
@@ -15,4 +15,8 @@ Combine multidimensional arrays into a single array.
 - **Author**: Tony Plate [aut, cre], Richard Heiberger [aut]
 - **Maintainer**: Tony Plate <tplate at acm.org>
 - **Skill**: generated
+- **Total Downloads**: 84.1K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/chira/overview
-- **Total Downloads**: 56.4K
+- **Total Downloads**: 56.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pavanvidem/chira
 - **Stars**: N/A

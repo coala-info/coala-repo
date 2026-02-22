@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ntsynt/overview
-- **Total Downloads**: 15.3K
+- **Total Downloads**: 15.4K
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/bcgsc/ntsynt
 - **Stars**: N/A

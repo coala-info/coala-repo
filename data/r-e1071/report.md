@@ -7,11 +7,15 @@ Functions for latent class analysis, short time Fourier
 	     classifier, generalized k-nearest neighbour ...</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-e1071
+- **Conda**: https://anaconda.org/channels/r/packages/r-e1071/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/e1071/index.html
 - **Package**: e1071
 - **Version**: 1.7-17
 - **Author**: David Meyer [aut, cre], Evgenia Dimitriadou [aut, cph], Kurt Hornik [aut], Andreas Weingessel [aut], Friedrich Leisch [aut], Chih-Chung Chang [ctb, cph] (libsvm C++-code), Chih-Chen Lin [ctb, cph] (libsvm C++-code)
 - **Maintainer**: David Meyer <David.Meyer at R-project.org>
 - **Skill**: generated
+- **Total Downloads**: 56.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

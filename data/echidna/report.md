@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'echidna'; it c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/echidna/overview
-- **Total Downloads**: 298
+- **Total Downloads**: 300
 - **Last updated**: 2025-07-24
 - **GitHub**: https://github.com/azizilab/echidna
 - **Stars**: N/A

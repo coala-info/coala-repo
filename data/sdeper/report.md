@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sdeper/overview
-- **Total Downloads**: 10.1K
+- **Total Downloads**: 10.2K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/az7jh2/SDePER
 - **Stars**: N/A

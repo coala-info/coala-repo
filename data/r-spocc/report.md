@@ -8,7 +8,7 @@ A programmatic interface to many species occurrence data sources,
     species occurrence data, and combining those data.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-spocc
+- **Conda**: https://anaconda.org/channels/r/packages/r-spocc/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/spocc/index.html
 - **Home (project)**: https://github.com/ropensci/spocc (devel), https://docs.ropensci.org/spocc/ (user manual)
 - **Package**: spocc
@@ -16,4 +16,8 @@ A programmatic interface to many species occurrence data sources,
 - **Author**: Hannah Owens [aut, cre], Vijay Barve [aut], Scott Chamberlain [aut], Karthik Ram [ctb], Ted Hart [ctb], rOpenSci [fnd]
 - **Maintainer**: Hannah Owens <hannah.owens at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 38
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ropensci/spocc
+- **Stars**: N/A
 

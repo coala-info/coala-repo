@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HCBravoLab/antiProfiles
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-antiprofiles/overview
+- **Total Downloads**: 42.2K
+- **Last updated**: 2026-02-04
+- **Stars**: N/A
 

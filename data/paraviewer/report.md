@@ -12,7 +12,7 @@ A tool for visualizing paraphase and PureTarget Carrier Panel results.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/paraviewer/overview
-- **Total Downloads**: 68
+- **Total Downloads**: 69
 - **Last updated**: 2025-09-25
 - **GitHub**: https://github.com/PacificBiosciences/Paraviewer
 - **Stars**: N/A

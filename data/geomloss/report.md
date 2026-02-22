@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/geomloss/overview
-- **Total Downloads**: 305
+- **Total Downloads**: 306
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jeanfeydy/geomloss
 - **Stars**: N/A

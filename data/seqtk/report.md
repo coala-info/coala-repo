@@ -12,7 +12,7 @@ Common transformation of FASTA/FASTQ sequences, including masking, partitioning,
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seqtk/overview
-- **Total Downloads**: 702.3K
+- **Total Downloads**: 702.5K
 - **Last updated**: 2025-07-09
 - **GitHub**: https://github.com/lh3/seqtk
 - **Stars**: N/A

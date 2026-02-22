@@ -12,7 +12,7 @@ A tool for genomic rearrangement analysis. (Note: The provided text contains con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dnarrange/overview
-- **Total Downloads**: 15.4K
+- **Total Downloads**: 15.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mcfrith/dnarrange
 - **Stars**: N/A

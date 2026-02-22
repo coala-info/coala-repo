@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'mason'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mason/overview
-- **Total Downloads**: 28.1K
+- **Total Downloads**: 28.2K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/seqan/seqan
 - **Stars**: N/A

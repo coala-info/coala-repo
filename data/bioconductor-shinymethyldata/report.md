@@ -11,6 +11,10 @@ the package shinyMethyl. Original samples are from 450k methylation arrays, and 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-shinymethyldata/overview
+- **Total Downloads**: 26.4K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

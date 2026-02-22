@@ -3,7 +3,7 @@
 R package azimuth (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-azimuth
+- **Conda**: https://anaconda.org/channels/r/packages/r-azimuth/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/azimuth/index.html
 - **Home (project)**: https://github.com/satijalab/azimuth
 - **Package**: azimuth
@@ -11,4 +11,8 @@ R package azimuth (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/satijalab/azimuth
+- **Stars**: N/A
 

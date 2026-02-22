@@ -15,7 +15,7 @@ Identify acquired AMR genes from bacterial long read sequences.
 - **Total Downloads**: 1.1K
 - **Last updated**: 2025-08-04
 - **GitHub**: https://github.com/Danderson123/Amira
-- **Stars**: N/A
+- **Stars**: 20
 ### Original Help Text
 ```text
 usage: amira [-h] [--reads READS] [--assembly ASSEMBLY] --species

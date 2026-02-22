@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tmscoring/overview
-- **Total Downloads**: 424
+- **Total Downloads**: 426
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Dapid/tmscoring
 - **Stars**: N/A

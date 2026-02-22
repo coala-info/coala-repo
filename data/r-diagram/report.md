@@ -11,7 +11,7 @@ Visualises simple graphs (networks) based on a transition matrix, utilities to p
      Includes demo(flowchart), demo(plotmat),...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-diagram
+- **Conda**: https://anaconda.org/channels/r/packages/r-diagram/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/diagram/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=diagram
 - **Package**: diagram
@@ -19,4 +19,8 @@ Visualises simple graphs (networks) based on a transition matrix, utilities to p
 - **Author**: Karline Soetaert
 - **Maintainer**: Karline Soetaert <karline.soetaert at nioz.nl>
 - **Skill**: generated
+- **Total Downloads**: 6.3K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

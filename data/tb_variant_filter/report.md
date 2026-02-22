@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime and does not contain 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tb_variant_filter/overview
-- **Total Downloads**: 22.0K
+- **Total Downloads**: 22.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pvanheus/tb_variant_filter
 - **Stars**: N/A

@@ -15,7 +15,7 @@ A tool for short read correction using de Bruijn graphs. (Note: The provided tex
 - **Total Downloads**: 6.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Malfoy/BCOOL
-- **Stars**: N/A
+- **Stars**: 11
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

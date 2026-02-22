@@ -15,7 +15,7 @@ The provided text is an error log from a container build process and does not co
 - **Total Downloads**: 59.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/qir-alliance/pyqir
-- **Stars**: N/A
+- **Stars**: 72
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

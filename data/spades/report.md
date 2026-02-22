@@ -12,7 +12,7 @@ SPAdes genome assembler (Note: The provided text contains container runtime logs
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spades/overview
-- **Total Downloads**: 789.6K
+- **Total Downloads**: 789.8K
 - **Last updated**: 2025-09-27
 - **GitHub**: https://github.com/ablab/spades
 - **Stars**: N/A

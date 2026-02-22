@@ -11,6 +11,10 @@ The package contains functionality for building up a parameter set both in code 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-msgfplus/overview
+- **Total Downloads**: 12.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

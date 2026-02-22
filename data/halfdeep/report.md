@@ -12,7 +12,7 @@ A tool for deep learning-based genomic analysis (Note: The provided help text co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/halfdeep/overview
-- **Total Downloads**: 667
+- **Total Downloads**: 670
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/richard-burhans/HalfDeep
 - **Stars**: N/A

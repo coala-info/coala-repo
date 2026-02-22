@@ -12,7 +12,7 @@ Design of Experiments for Python (pyDOE)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/pydoe/overview
-- **Total Downloads**: 197.1K
+- **Total Downloads**: 197.5K
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/pydoe/pydoe
 - **Stars**: N/A

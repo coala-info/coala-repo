@@ -12,7 +12,7 @@ Small RNA-seq High-throughput Interactive Browser and Analyzer (Note: The provid
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/shiba/overview
-- **Total Downloads**: 876
+- **Total Downloads**: 889
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/Sika-Zheng-Lab/Shiba
 - **Stars**: N/A

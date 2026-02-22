@@ -13,4 +13,8 @@ The package supports visualizing KEGG information using ggplot2 and ggraph throu
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/noriakis/ggkegg
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ggkegg/overview
+- **Total Downloads**: 1.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

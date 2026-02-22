@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kallisto/overview
-- **Total Downloads**: 239.4K
+- **Total Downloads**: 239.5K
 - **Last updated**: 2025-08-10
 - **GitHub**: https://github.com/pachterlab/kallisto
 - **Stars**: N/A

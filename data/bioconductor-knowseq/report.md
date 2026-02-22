@@ -11,6 +11,10 @@ the package allows analyzing all the data manually, the main strenght of KnowSeq
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-knowseq/overview
+- **Total Downloads**: 20.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ Perl XML SAX parser (Note: The provided text contains no help information as the
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-sax/overview
-- **Total Downloads**: 512.0K
+- **Total Downloads**: 512.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/soi/overview
-- **Total Downloads**: 443
+- **Total Downloads**: 445
 - **Last updated**: 2025-05-18
 - **GitHub**: https://github.com/zhangrengang/SOI
 - **Stars**: N/A

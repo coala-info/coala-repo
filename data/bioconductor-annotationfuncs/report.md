@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Stefan McKinnon Edwards &#x3c;&#x73;&#x74;&#x65;&#x66;&#x61;&#x6e;&#x2e;&#x68;&#x6f;&#x6a;&#x2d;&#x65;&#x64;&#x77;&#x61;&#x72;&#x64;&#x73;&#x20;&#x61;&#x74;&#x20;&#x61;&#x67;&#x72;&#x73;&#x63;&#x69;&#x2e;&#x64;&#x6b;&#x3e;
 - **Maintainer**: Stefan McKinnon Edwards &#x3c;&#x73;&#x74;&#x65;&#x66;&#x61;&#x6e;&#x2e;&#x68;&#x6f;&#x6a;&#x2d;&#x65;&#x64;&#x77;&#x61;&#x72;&#x64;&#x73;&#x20;&#x61;&#x74;&#x20;&#x61;&#x67;&#x72;&#x73;&#x63;&#x69;&#x2e;&#x64;&#x6b;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-annotationfuncs/overview
+- **Total Downloads**: 33.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

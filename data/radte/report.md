@@ -12,7 +12,7 @@ RAD-seq Tool for Ecology (Note: The provided text contains build logs and error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/radte/overview
-- **Total Downloads**: 111
+- **Total Downloads**: 112
 - **Last updated**: 2025-05-21
 - **GitHub**: https://github.com/kfuku52/radte
 - **Stars**: N/A

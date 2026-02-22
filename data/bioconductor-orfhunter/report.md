@@ -13,4 +13,8 @@ the package was confirmed by the examples of the analysis of RNA molecules from 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/rfctbio-bsu/ORFhunteR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-orfhunter/overview
+- **Total Downloads**: 12.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

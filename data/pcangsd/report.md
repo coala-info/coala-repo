@@ -12,7 +12,7 @@ PCAngsd is a tool for analyzing low-depth next-generation sequencing data using 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pcangsd/overview
-- **Total Downloads**: 897
+- **Total Downloads**: 901
 - **Last updated**: 2025-07-16
 - **GitHub**: https://github.com/Rosemeis/pcangsd
 - **Stars**: N/A

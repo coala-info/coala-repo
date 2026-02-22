@@ -12,7 +12,7 @@ Automated hippocampal unfolding and processing. (Note: The provided help text co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hippunfold-dev/overview
-- **Total Downloads**: 324
+- **Total Downloads**: 326
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/khanlab/hippunfold
 - **Stars**: N/A

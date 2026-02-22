@@ -12,7 +12,7 @@ Fermi2 is a de novo assembler for short reads (Note: The provided help text cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fermi2/overview
-- **Total Downloads**: 103.3K
+- **Total Downloads**: 103.7K
 - **Last updated**: 2025-09-09
 - **GitHub**: https://github.com/lh3/fermi2
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Seabreeze Genomics tool (Note: The provided text appears to be a container build
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seabreeze-genomics/overview
-- **Total Downloads**: 187
+- **Total Downloads**: 189
 - **Last updated**: 2025-07-16
 - **GitHub**: https://github.com/barricklab/seabreeze
 - **Stars**: N/A

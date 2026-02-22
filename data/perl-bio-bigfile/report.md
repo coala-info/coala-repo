@@ -12,7 +12,7 @@ Could not get help from Singularity for: perl-bio-bigfile
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-bigfile/overview
-- **Total Downloads**: 23.8K
+- **Total Downloads**: 23.9K
 - **Last updated**: 2025-08-20
 - **GitHub**: N/A
 - **Stars**: N/A

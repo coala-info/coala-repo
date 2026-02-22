@@ -12,7 +12,7 @@ A BioPerl wrapper for running ClustalW alignments. Note: The provided text conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-tools-run-alignment-clustalw/overview
-- **Total Downloads**: 268.1K
+- **Total Downloads**: 268.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

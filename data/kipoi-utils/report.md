@@ -12,7 +12,7 @@ Utilities for Kipoi (Note: The provided text contains system error messages and 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kipoi-utils/overview
-- **Total Downloads**: 35.7K
+- **Total Downloads**: 35.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kipoi/kipoi-utils
 - **Stars**: N/A

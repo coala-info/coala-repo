@@ -12,7 +12,7 @@ The provided text is a container execution log and does not contain help informa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/slow5tools/overview
-- **Total Downloads**: 373.1K
+- **Total Downloads**: 373.2K
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/hasindu2008/slow5tools
 - **Stars**: N/A

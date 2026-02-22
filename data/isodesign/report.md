@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isodesign/overview
-- **Total Downloads**: 561
+- **Total Downloads**: 566
 - **Last updated**: 2025-09-12
 - **GitHub**: https://github.com/MetaboHUB-MetaToul-FluxoMet/IsoDesign
 - **Stars**: N/A

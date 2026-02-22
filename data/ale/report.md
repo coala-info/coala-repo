@@ -15,7 +15,7 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 11.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sc932/ALE
-- **Stars**: N/A
+- **Stars**: 35
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/christinehou11/HuBMAPR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hubmapr/overview
+- **Total Downloads**: 156
+- **Last updated**: 2026-02-06
+- **Stars**: N/A
 

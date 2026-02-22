@@ -12,7 +12,7 @@ Pangenome analysis tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ppanggolin/overview
-- **Total Downloads**: 99.8K
+- **Total Downloads**: 99.9K
 - **Last updated**: 2025-11-21
 - **GitHub**: https://github.com/labgem/PPanGGOLiN
 - **Stars**: N/A

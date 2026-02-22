@@ -13,4 +13,8 @@ The package allows for predicting whether a coiled coil sequence (amino acid seq
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/UBod/procoil
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-procoil/overview
+- **Total Downloads**: 34.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

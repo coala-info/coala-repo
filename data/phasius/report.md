@@ -12,7 +12,7 @@ Tool to draw a map of phaseblocks across crams/bams
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phasius/overview
-- **Total Downloads**: 4.3K
+- **Total Downloads**: 4.4K
 - **Last updated**: 2026-01-18
 - **GitHub**: https://github.com/wdecoster/phasius
 - **Stars**: N/A

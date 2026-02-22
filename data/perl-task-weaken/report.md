@@ -12,7 +12,7 @@ Task::Weaken - ensure that Scalar::Util's weaken is available
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-task-weaken/overview
-- **Total Downloads**: 190.2K
+- **Total Downloads**: 190.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

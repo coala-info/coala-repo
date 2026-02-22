@@ -12,7 +12,7 @@ DeepChopper is a tool for chopping long reads into short reads. (Note: The provi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deepchopper-cli/overview
-- **Total Downloads**: 5.8K
+- **Total Downloads**: 5.9K
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/ylab-hi/DeepChopper
 - **Stars**: N/A

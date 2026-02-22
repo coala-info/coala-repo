@@ -12,7 +12,7 @@ Calculate statistics of Oxford Nanopore sequencing data.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanostat/overview
-- **Total Downloads**: 58.5K
+- **Total Downloads**: 59.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/nanostat
 - **Stars**: N/A

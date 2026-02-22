@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hifi_trimmer/overview
-- **Total Downloads**: 418
+- **Total Downloads**: 422
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/sanger-tol/hifi-trimmer
 - **Stars**: N/A

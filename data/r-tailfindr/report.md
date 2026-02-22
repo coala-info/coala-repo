@@ -3,7 +3,7 @@
 R package tailfindr (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-tailfindr
+- **Conda**: https://anaconda.org/channels/r/packages/r-tailfindr/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/tailfindr/index.html
 - **Home (project)**: https://github.com/adnaniazi/tailfindr
 - **Package**: tailfindr
@@ -11,4 +11,8 @@ R package tailfindr (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/adnaniazi/tailfindr
+- **Stars**: N/A
 

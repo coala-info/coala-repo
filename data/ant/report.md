@@ -15,7 +15,7 @@ Apache Ant is a Java-based build tool. (Note: The provided help text contains on
 - **Total Downloads**: 15.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ant-design/ant-design
-- **Stars**: N/A
+- **Stars**: 97635
 ### Original Help Text
 ```text
 Error: JAVA_HOME is not defined correctly.

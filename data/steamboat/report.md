@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/steamboat/overview
-- **Total Downloads**: 268
+- **Total Downloads**: 270
 - **Last updated**: 2025-08-11
 - **GitHub**: https://github.com/rpetit3/steamboat-py
 - **Stars**: N/A

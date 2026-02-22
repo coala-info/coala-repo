@@ -15,7 +15,7 @@ The provided text does not contain a description of the tool; it is a log of a f
 - **Total Downloads**: 41.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bigbio/py-pgatk
-- **Stars**: N/A
+- **Stars**: 14
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

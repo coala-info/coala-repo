@@ -12,7 +12,7 @@ A tool for designing environmental DNA (eDNA) amplicons.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/enviroampdesigner/overview
-- **Total Downloads**: 611
+- **Total Downloads**: 615
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/AntonS-bio/EnviroAmpDesigner
 - **Stars**: N/A

@@ -13,4 +13,8 @@ The package provides a method to infer the set of proteins that are more probabl
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sirusb/R3CPET
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-r3cpet/overview
+- **Total Downloads**: 34.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

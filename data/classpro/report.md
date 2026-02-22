@@ -12,7 +12,7 @@ A tool for protein classification (Note: The provided text contains system error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/classpro/overview
-- **Total Downloads**: 838
+- **Total Downloads**: 840
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/yoshihikosuzuki/ClassPro
 - **Stars**: N/A

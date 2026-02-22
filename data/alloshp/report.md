@@ -12,10 +12,10 @@ A tool for allosteric site prediction (Note: The provided help text contains con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/alloshp/overview
-- **Total Downloads**: 990
+- **Total Downloads**: 995
 - **Last updated**: 2025-10-06
 - **GitHub**: https://github.com/eead-csic-compbio/AlloSHP
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

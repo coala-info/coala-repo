@@ -12,7 +12,7 @@ Sereal is an efficient, compact-binary data serialization format. The encoder pa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-sereal-encoder/overview
-- **Total Downloads**: 133.5K
+- **Total Downloads**: 133.6K
 - **Last updated**: 2025-08-15
 - **GitHub**: N/A
 - **Stars**: N/A

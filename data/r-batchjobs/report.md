@@ -6,7 +6,7 @@ Provides Map, Reduce and Filter variants to generate jobs on
     details see the project web page.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-batchjobs
+- **Conda**: https://anaconda.org/channels/r/packages/r-batchjobs/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/BatchJobs/index.html
 - **Home (project)**: https://github.com/tudo-r/BatchJobs
 - **Package**: BatchJobs
@@ -14,4 +14,8 @@ Provides Map, Reduce and Filter variants to generate jobs on
 - **Author**: Bernd Bischl [aut, cre], Michel Lang [aut], Henrik Bengtsson [aut]
 - **Maintainer**: Bernd Bischl <bernd_bischl at gmx.net>
 - **Skill**: generated
+- **Total Downloads**: 40
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tudo-r/BatchJobs
+- **Stars**: N/A
 

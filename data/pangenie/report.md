@@ -12,7 +12,7 @@ FAIL to generate CWL: pangenie not found in Singularity image. The image may not
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pangenie/overview
-- **Total Downloads**: 357
+- **Total Downloads**: 358
 - **Last updated**: 2025-10-20
 - **GitHub**: https://github.com/eblerjana/pangenie
 - **Stars**: N/A

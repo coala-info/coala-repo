@@ -12,8 +12,8 @@ fast BAM/CRAM depth calculation for WGS, exome, or targeted sequencing
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mosdepth/overview
-- **Total Downloads**: 238.7K
-- **Last updated**: 2025-11-09
+- **Total Downloads**: 238.9K
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/brentp/mosdepth
 - **Stars**: N/A
 ### Original Help Text

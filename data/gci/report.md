@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'gci'. It appea
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gci/overview
-- **Total Downloads**: 373
+- **Total Downloads**: 375
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/yeeus/GCI
 - **Stars**: N/A

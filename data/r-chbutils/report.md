@@ -3,11 +3,15 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-chbutils
+- **Conda**: https://anaconda.org/channels/r/packages/r-chbutils/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/chbutils/index.html
 - **Package**: chbutils
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: not generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

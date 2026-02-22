@@ -5,7 +5,7 @@ Accurate calculations and visualization of precision-recall and ROC (Receiver Op
     curves.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-precrec
+- **Conda**: https://anaconda.org/channels/r/packages/r-precrec/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/precrec/index.html
 - **Home (project)**: https://github.com/evalclass/precrec
 - **Package**: precrec
@@ -13,4 +13,8 @@ Accurate calculations and visualization of precision-recall and ROC (Receiver Op
 - **Author**: Takaya Saito [aut, cre], Marc Rehmsmeier [aut]
 - **Maintainer**: Takaya Saito <takaya.saito at outlook.com>
 - **Skill**: generated
+- **Total Downloads**: 50
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/evalclass/precrec
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'magneto'. It c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/magneto/overview
-- **Total Downloads**: 1.1K
+- **Total Downloads**: 1.2K
 - **Last updated**: 2026-01-05
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Total Downloads**: 17.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/fls-bioinformatics-core/RnaChipIntegrator
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

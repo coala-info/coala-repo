@@ -12,7 +12,7 @@ The provided text is a system error log regarding a container build failure and 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bandwagon/overview
-- **Total Downloads**: 288
+- **Total Downloads**: 289
 - **Last updated**: 2025-07-24
 - **GitHub**: https://github.com/Edinburgh-Genome-Foundry/bandwagon
 - **Stars**: N/A

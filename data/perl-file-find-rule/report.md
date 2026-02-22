@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-file-find-rule not found in Singularity image. The im
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-find-rule/overview
-- **Total Downloads**: 45.6K
+- **Total Downloads**: 45.7K
 - **Last updated**: 2025-06-05
 - **GitHub**: N/A
 - **Stars**: N/A

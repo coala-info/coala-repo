@@ -7,7 +7,7 @@ Functions for reading (tab, csv, Bruker fid, Ciphergen
         objects.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-maldiquantforeign
+- **Conda**: https://anaconda.org/channels/r/packages/r-maldiquantforeign/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/MALDIquantForeign/index.html
 - **Home (project)**: https://strimmerlab.github.io/software/maldiquant/ https://github.com/sgibb/MALDIquantForeign/
 - **Package**: MALDIquantForeign
@@ -15,4 +15,8 @@ Functions for reading (tab, csv, Bruker fid, Ciphergen
 - **Author**: Sebastian Gibb [aut, cre], Pietro Franceschi [ctb]
 - **Maintainer**: Sebastian Gibb <mail at sebastiangibb.de>
 - **Skill**: generated
+- **Total Downloads**: 34
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/sgibb/MALDIquantForeign
+- **Stars**: N/A
 

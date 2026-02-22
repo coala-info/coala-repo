@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phyloaln/overview
-- **Total Downloads**: 660
+- **Total Downloads**: 662
 - **Last updated**: 2025-06-08
 - **GitHub**: https://github.com/huangyh45/PhyloAln
 - **Stars**: N/A

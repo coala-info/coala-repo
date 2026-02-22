@@ -13,7 +13,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kalamari/overview
 - **Total Downloads**: 9.7K
-- **Last updated**: 2026-02-09
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/lskatz/kalamari
 - **Stars**: N/A
 ### Original Help Text

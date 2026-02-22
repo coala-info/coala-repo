@@ -15,7 +15,7 @@ A Python-based framework for formulating and solving optimization problems.
 - **Total Downloads**: 5.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/boyac/pyOptionPricing
-- **Stars**: N/A
+- **Stars**: 316
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

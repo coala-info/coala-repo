@@ -15,7 +15,7 @@ adVNTR is a tool for genotyping Variable Number Tandem Repeats (VNTRs) from sequ
 - **Total Downloads**: 68.2K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/mehrdadbakhtiari/adVNTR
-- **Stars**: N/A
+- **Stars**: 47
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

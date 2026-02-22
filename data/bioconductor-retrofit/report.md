@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/qunhualilab/retrofit
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-retrofit/overview
+- **Total Downloads**: 3.1K
+- **Last updated**: 2026-02-04
+- **Stars**: N/A
 

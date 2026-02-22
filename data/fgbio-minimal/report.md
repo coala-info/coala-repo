@@ -12,7 +12,7 @@ A tool for analysis of genomic data (Note: The provided help text contains only 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fgbio-minimal/overview
-- **Total Downloads**: 58.8K
+- **Total Downloads**: 58.9K
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/fulcrumgenomics/fgbio
 - **Stars**: N/A

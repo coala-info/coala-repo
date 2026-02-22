@@ -6,7 +6,7 @@ Provides access to phyloinformatic data in 'NeXML' format.  The
     with 'ape' objects.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rnexml
+- **Conda**: https://anaconda.org/channels/r/packages/r-rnexml/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/RNeXML/index.html
 - **Home (project)**: https://docs.ropensci.org/RNeXML/, https://github.com/ropensci/RNeXML
 - **Package**: RNeXML
@@ -14,4 +14,8 @@ Provides access to phyloinformatic data in 'NeXML' format.  The
 - **Author**: Carl Boettiger [cre, aut], Scott Chamberlain [aut], Hilmar Lapp [aut], Kseniia Shumelchyk [aut], Rutger Vos [aut]
 - **Maintainer**: Carl Boettiger <cboettig at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 61
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ropensci/RNeXML
+- **Stars**: N/A
 

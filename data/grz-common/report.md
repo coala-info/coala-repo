@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/grz-common/overview
-- **Total Downloads**: 2.0K
+- **Total Downloads**: 2.1K
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/BfArM-MVH/grz-tools
 - **Stars**: N/A

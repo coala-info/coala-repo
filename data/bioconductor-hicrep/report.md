@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Tao Yang [aut, cre]
 - **Maintainer**: Tao Yang &#x3c;&#x78;&#x61;&#x64;&#x6d;&#x79;&#x61;&#x6e;&#x67;&#x74;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hicrep/overview
+- **Total Downloads**: 28.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

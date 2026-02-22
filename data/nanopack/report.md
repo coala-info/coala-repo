@@ -12,7 +12,7 @@ NanoPack is a suite of tools for visualizing and processing long-read sequencing
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanopack/overview
-- **Total Downloads**: 802
+- **Total Downloads**: 813
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/nanopack
 - **Stars**: N/A

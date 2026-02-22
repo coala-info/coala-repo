@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Singularity/Apptaine
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nf-core/overview
-- **Total Downloads**: 136.1K
+- **Total Downloads**: 136.3K
 - **Last updated**: 2026-02-02
 - **GitHub**: https://github.com/nf-core/tools
 - **Stars**: N/A

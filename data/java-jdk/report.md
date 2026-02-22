@@ -12,7 +12,7 @@ The Java Development Kit (JDK) is a software development environment used for de
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/java-jdk/overview
-- **Total Downloads**: 362.6K
+- **Total Downloads**: 362.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/coderbruis/JavaSourceCodeLearning
 - **Stars**: N/A

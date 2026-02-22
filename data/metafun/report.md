@@ -12,7 +12,7 @@ A tool for metagenomic functional analysis (Note: The provided text contains onl
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metafun/overview
-- **Total Downloads**: 968
+- **Total Downloads**: 975
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/aababc1/metaFun
 - **Stars**: N/A

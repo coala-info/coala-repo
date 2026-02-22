@@ -12,7 +12,7 @@ FlowCraft is a tool for building and managing NGS pipelines. (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/flowcraft/overview
-- **Total Downloads**: 43.3K
+- **Total Downloads**: 43.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/assemblerflow/flowcraft
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for cd-hit; it is a fatal er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cd-hit/overview
-- **Total Downloads**: 203.3K
+- **Total Downloads**: 203.4K
 - **Last updated**: 2025-04-24
 - **GitHub**: https://github.com/weizhongli/cdhit
 - **Stars**: N/A

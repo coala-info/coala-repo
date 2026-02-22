@@ -13,4 +13,8 @@ The package immunotation provides tools for consistent annotation of HLA genes i
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/imkeller/immunotation
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-immunotation/overview
+- **Total Downloads**: 9.7K
+- **Last updated**: 2026-02-04
+- **Stars**: N/A
 

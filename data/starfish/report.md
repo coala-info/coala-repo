@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/starfish/overview
-- **Total Downloads**: 85.4K
+- **Total Downloads**: 85.5K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/spacetx/starfish
 - **Stars**: N/A

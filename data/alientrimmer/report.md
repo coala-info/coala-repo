@@ -12,7 +12,7 @@ AlienTrimmer is a tool for trimming biological sequences (Note: The provided hel
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/alientrimmer/overview
-- **Total Downloads**: 346
+- **Total Downloads**: 347
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

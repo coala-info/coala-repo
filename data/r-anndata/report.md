@@ -5,7 +5,7 @@ A 'reticulate' wrapper for the Python package 'anndata'.
     annotations.  Used to read from and write to the h5ad file format.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-anndata
+- **Conda**: https://anaconda.org/channels/r/packages/r-anndata/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/anndata/index.html
 - **Home (project)**: https://anndata.dynverse.org, https://github.com/dynverse/anndata
 - **Package**: anndata
@@ -13,4 +13,8 @@ A 'reticulate' wrapper for the Python package 'anndata'.
 - **Author**: Philipp Angerer [ccp], Alex Wolf [ccp], Isaac Virshup [ccp], Sergei Rybakov [ccp], Robrecht Cannoodt [aut, cre, cph]
 - **Maintainer**: Robrecht Cannoodt <rcannood at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 215
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/dynverse/anndata
+- **Stars**: N/A
 

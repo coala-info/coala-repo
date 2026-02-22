@@ -12,7 +12,7 @@ Extract sequence from a .nib file. The .nib file is a binary format used by UCSC
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-nibfrag/overview
-- **Total Downloads**: 125.3K
+- **Total Downloads**: 125.4K
 - **Last updated**: 2025-06-25
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

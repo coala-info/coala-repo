@@ -12,7 +12,7 @@ A tool for visualizing GFA (Graphical Fragment Assembly) files. (Note: The provi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gfviewer/overview
-- **Total Downloads**: 190
+- **Total Downloads**: 191
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sakshar/GFViewer
 - **Stars**: N/A

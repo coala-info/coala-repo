@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it is a contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spp-dcj/overview
-- **Total Downloads**: 294
+- **Total Downloads**: 295
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/codialab/spp-dcj
 - **Stars**: N/A

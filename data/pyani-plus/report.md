@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyani-plus/overview
-- **Total Downloads**: 706
+- **Total Downloads**: 709
 - **Last updated**: 2025-08-26
 - **GitHub**: https://github.com/pyani-plus/pyani-plus
 - **Stars**: N/A

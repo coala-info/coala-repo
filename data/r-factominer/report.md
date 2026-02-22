@@ -3,7 +3,7 @@
 R package factominer (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-factominer
+- **Conda**: https://anaconda.org/channels/r/packages/r-factominer/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/factominer/index.html
 - **Home (project)**: http://factominer.free.fr
 - **Package**: factominer
@@ -11,4 +11,8 @@ R package factominer (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: 281
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

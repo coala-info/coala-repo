@@ -12,7 +12,7 @@ Philosopher: a complete toolkit for proteomics data analysis
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/philosopher/overview
-- **Total Downloads**: 474
+- **Total Downloads**: 477
 - **Last updated**: 2025-12-12
 - **GitHub**: https://github.com/Nesvilab/philosopher
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text is a system error message indicating a failure to pull or buil
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isoplot/overview
-- **Total Downloads**: 21.2K
+- **Total Downloads**: 21.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/LoloPopoPy/Isoplot
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Long-read Isoform Reconstruction and rMATS-based differential splicing analysis.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lirtmats/overview
-- **Total Downloads**: 34
+- **Total Downloads**: 35
 - **Last updated**: 2025-12-14
 - **GitHub**: https://github.com/wanchanglin/lirtmats
 - **Stars**: N/A

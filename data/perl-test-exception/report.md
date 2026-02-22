@@ -12,7 +12,7 @@ The provided text does not contain help information as the executable was not fo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-test-exception/overview
-- **Total Downloads**: 210.4K
+- **Total Downloads**: 210.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Test-More/test-exception
 - **Stars**: N/A

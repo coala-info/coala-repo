@@ -12,7 +12,7 @@ A tool for finding or managing databases (Note: The provided help text contains 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mydbfinder/overview
-- **Total Downloads**: 1.7K
+- **Total Downloads**: 1.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

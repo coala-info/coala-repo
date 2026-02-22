@@ -13,4 +13,8 @@ The package analyzes the Curve ROC, identificates it among different types of Cu
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/juanpegarcia/ROCpAI
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rocpai/overview
+- **Total Downloads**: 16.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

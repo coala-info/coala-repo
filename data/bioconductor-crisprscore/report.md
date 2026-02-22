@@ -13,4 +13,8 @@ The package also provides a Lindel-derived score to predict the probability of a
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/crisprVerse/crisprScore
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-crisprscore/overview
+- **Total Downloads**: 5.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

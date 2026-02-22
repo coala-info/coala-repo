@@ -12,7 +12,7 @@ A tool for calculating sequence complexity (Note: The provided text is a contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seqcomplexity/overview
-- **Total Downloads**: 8.2K
+- **Total Downloads**: 8.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/stevenweaver/seqcomplexity
 - **Stars**: N/A

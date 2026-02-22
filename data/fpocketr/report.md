@@ -12,7 +12,7 @@ The provided text does not contain help information for fpocketr; it contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fpocketr/overview
-- **Total Downloads**: 121
+- **Total Downloads**: 122
 - **Last updated**: 2025-07-24
 - **GitHub**: https://github.com/Weeks-UNC/fpocketR
 - **Stars**: N/A

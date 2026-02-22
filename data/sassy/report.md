@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sassy/overview
-- **Total Downloads**: 700
+- **Total Downloads**: 707
 - **Last updated**: 2025-11-21
 - **GitHub**: https://github.com/ragnargrootkoerkamp/sassy
 - **Stars**: N/A

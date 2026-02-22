@@ -12,7 +12,7 @@ Universal structural alignment of proteins and nucleic acids. Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/usalign/overview
-- **Total Downloads**: 8.7K
+- **Total Downloads**: 8.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pylelab/USalign
 - **Stars**: N/A

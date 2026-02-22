@@ -3,7 +3,7 @@
 R package ldweaver (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ldweaver
+- **Conda**: https://anaconda.org/channels/r/packages/r-ldweaver/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/ldweaver/index.html
 - **Home (project)**: https://github.com/Sudaraka88/LDWeaver
 - **Package**: ldweaver
@@ -11,4 +11,8 @@ R package ldweaver (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/Sudaraka88/LDWeaver
+- **Stars**: N/A
 

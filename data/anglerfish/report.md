@@ -15,7 +15,7 @@ This is an advanced samplesheet-free version of anglerfish.
 - **Total Downloads**: 10.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/remiolsen/anglerfish
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 Usage: anglerfish explore [OPTIONS]                                            

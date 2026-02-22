@@ -15,7 +15,7 @@ A pytest plugin to abort tests after a certain timeout. (Note: The provided text
 - **Total Downloads**: 22.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pytest-dev/pytest-timeout
-- **Stars**: N/A
+- **Stars**: 246
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

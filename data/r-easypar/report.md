@@ -3,7 +3,7 @@
 R package easypar (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-easypar
+- **Conda**: https://anaconda.org/channels/r/packages/r-easypar/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/easypar/index.html
 - **Home (project)**: https://caravagnalab.github.io/easypar/
 - **Package**: easypar
@@ -11,4 +11,8 @@ R package easypar (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

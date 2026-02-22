@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/alignoth/overview
-- **Total Downloads**: 62.7K
+- **Total Downloads**: 62.9K
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/koesterlab/alignoth
 - **Stars**: N/A

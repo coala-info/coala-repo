@@ -12,7 +12,7 @@ A tool for Flask basic access authentication (Note: The provided text contains e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/flask-basicauth/overview
-- **Total Downloads**: 149.8K
+- **Total Downloads**: 150.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jpvanhal/flask-basicauth
 - **Stars**: N/A

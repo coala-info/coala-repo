@@ -12,7 +12,7 @@ OpenGeoSys (OGS) is a scientific open-source project for the development of nume
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/ogs/overview
-- **Total Downloads**: 101.4K
+- **Total Downloads**: 101.5K
 - **Last updated**: 2026-02-03
 - **GitHub**: https://github.com/OGSR/OGSR-Engine
 - **Stars**: N/A

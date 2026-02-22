@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kegalign-full/overview
-- **Total Downloads**: 899
+- **Total Downloads**: 902
 - **Last updated**: 2025-10-06
 - **GitHub**: https://github.com/galaxyproject/KegAlign
 - **Stars**: N/A

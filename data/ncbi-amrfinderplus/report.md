@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-amrfinderplus/overview
-- **Total Downloads**: 176.1K
+- **Total Downloads**: 176.2K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/ncbi/amr
 - **Stars**: N/A

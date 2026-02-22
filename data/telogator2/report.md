@@ -12,7 +12,7 @@ The provided text is a container execution error log and does not contain help d
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/telogator2/overview
-- **Total Downloads**: 152
+- **Total Downloads**: 153
 - **Last updated**: 2025-12-02
 - **GitHub**: https://github.com/zstephens/telogator2
 - **Stars**: N/A

@@ -11,7 +11,7 @@ This is a set of tools for dendrograms and
     (from 'cluster') diagram...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ggdendro
+- **Conda**: https://anaconda.org/channels/r/packages/r-ggdendro/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/ggdendro/index.html
 - **Home (project)**: https://github.com/andrie/ggdendro
 - **Package**: ggdendro
@@ -19,4 +19,8 @@ This is a set of tools for dendrograms and
 - **Author**: Andrie de Vries [aut, cre], Brian D. Ripley [aut] (author of package tree)
 - **Maintainer**: Andrie de Vries <apdevries at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 118
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/andrie/ggdendro
+- **Stars**: N/A
 

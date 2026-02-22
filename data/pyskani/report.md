@@ -15,7 +15,7 @@ The provided text does not contain help information for pyskani; it is an error 
 - **Total Downloads**: 2.4K
 - **Last updated**: 2025-08-21
 - **GitHub**: https://github.com/althonos/pyskani
-- **Stars**: N/A
+- **Stars**: 29
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

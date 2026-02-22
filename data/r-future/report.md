@@ -10,7 +10,7 @@ The purpose of this package is to provide a lightweight and
     on a ...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-future
+- **Conda**: https://anaconda.org/channels/r/packages/r-future/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/future/index.html
 - **Home (project)**: https://future.futureverse.org, https://github.com/HenrikBengtsson/future
 - **Package**: future
@@ -18,4 +18,8 @@ The purpose of this package is to provide a lightweight and
 - **Author**: Henrik Bengtsson [aut, cre, cph]
 - **Maintainer**: Henrik Bengtsson <henrikb at braju.com>
 - **Skill**: generated
+- **Total Downloads**: 13.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/HenrikBengtsson/future
+- **Stars**: N/A
 

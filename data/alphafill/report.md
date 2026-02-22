@@ -12,10 +12,10 @@ AlphaFill is a tool to process AlphaFold structures by filling in missing compou
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/alphafill/overview
-- **Total Downloads**: 352
+- **Total Downloads**: 353
 - **Last updated**: 2025-07-27
 - **GitHub**: https://github.com/PDB-REDO/alphafill
-- **Stars**: N/A
+- **Stars**: 110
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -5,7 +5,7 @@ Package for Bayesian model averaging and variable selection for linear models,
         regression).</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bma
+- **Conda**: https://anaconda.org/channels/r/packages/r-bma/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/BMA/index.html
 - **Home (project)**: http://stats.research.att.com/volinsky/bma.html, https://github.com/hanase/BMA
 - **Package**: BMA
@@ -13,4 +13,8 @@ Package for Bayesian model averaging and variable selection for linear models,
 - **Author**: Adrian Raftery [aut], Jennifer Hoeting [aut], Chris Volinsky [aut], Ian Painter [aut], Ka Yee Yeung [aut], Hana Sevcikova [cre]
 - **Maintainer**: Hana Sevcikova <hanas at uw.edu>
 - **Skill**: generated
+- **Total Downloads**: 46
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/hanase/BMA
+- **Stars**: N/A
 

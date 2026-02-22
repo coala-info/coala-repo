@@ -12,7 +12,7 @@ A tool for metagenomic functional analysis (Note: The provided text contains con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metafx/overview
-- **Total Downloads**: 383
+- **Total Downloads**: 385
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ctlab/metafx
 - **Stars**: N/A

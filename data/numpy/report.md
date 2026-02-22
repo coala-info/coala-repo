@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/numpy/overview
-- **Total Downloads**: 280.9K
+- **Total Downloads**: 281.0K
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/numpy/numpy
 - **Stars**: N/A

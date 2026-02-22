@@ -10,7 +10,7 @@ Routines for PLS-based genomic analyses,
         compression in logistic regression context: logit-SPLS; an...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-plsgenomics
+- **Conda**: https://anaconda.org/channels/r/packages/r-plsgenomics/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/plsgenomics/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=plsgenomics
 - **Package**: plsgenomics
@@ -18,4 +18,8 @@ Routines for PLS-based genomic analyses,
 - **Author**: Anne-Laure Boulesteix, Ghislain Durif, Sophie Lambert-Lacroix, Julie Peyre, and Korbinian Strimmer.
 - **Maintainer**: Ghislain Durif <gd.dev at libertymail.net>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

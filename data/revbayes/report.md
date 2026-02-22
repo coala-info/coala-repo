@@ -12,7 +12,7 @@ RevBayes is a software for Bayesian phylogenetic inference. (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/revbayes/overview
-- **Total Downloads**: 10.3K
+- **Total Downloads**: 10.4K
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/revbayes/revbayes
 - **Stars**: N/A

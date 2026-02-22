@@ -12,7 +12,7 @@ The provided text is an error log indicating a failure to pull or build the cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hmftools-wisp/overview
-- **Total Downloads**: 250
+- **Total Downloads**: 252
 - **Last updated**: 2025-07-24
 - **GitHub**: https://github.com/hartwigmedical/hmftools
 - **Stars**: N/A

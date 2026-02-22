@@ -12,7 +12,7 @@ The provided text contains container build logs and error messages rather than t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vpt-segmentation-packing/overview
-- **Total Downloads**: 255
+- **Total Downloads**: 256
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Vizgen/vpt-segmentation-packing
 - **Stars**: N/A

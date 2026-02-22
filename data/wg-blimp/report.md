@@ -12,7 +12,7 @@ Whole genome bisulfite sequencing analysis pipeline (Note: The provided text is 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/wg-blimp/overview
-- **Total Downloads**: 34.8K
+- **Total Downloads**: 34.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/MarWoes/wg-blimp
 - **Stars**: N/A

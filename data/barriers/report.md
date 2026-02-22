@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/barriers/overview
-- **Total Downloads**: 16.2K
+- **Total Downloads**: 16.3K
 - **Last updated**: 2025-10-14
 - **GitHub**: N/A
 - **Stars**: N/A

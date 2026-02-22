@@ -12,7 +12,7 @@ Structural variant annotation and prioritization tool. (Note: The provided input
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/svarp/overview
-- **Total Downloads**: 395
+- **Total Downloads**: 398
 - **Last updated**: 2025-12-12
 - **GitHub**: https://github.com/asylvz/SVarp
 - **Stars**: N/A

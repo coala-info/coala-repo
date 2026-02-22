@@ -12,7 +12,7 @@ A tool for identifying viral signatures in genomic sequences (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/viralrecall/overview
-- **Total Downloads**: 105
+- **Total Downloads**: 107
 - **Last updated**: 2025-12-20
 - **GitHub**: https://github.com/abdealijivaji/ViralRecall_3.0
 - **Stars**: N/A

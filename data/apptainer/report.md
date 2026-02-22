@@ -12,7 +12,7 @@ Build an Apptainer image
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/apptainer/overview
-- **Total Downloads**: 127.4K
+- **Total Downloads**: 127.6K
 - **Last updated**: 2025-12-03
 - **GitHub**: https://github.com/apptainer/apptainer
 - **Stars**: N/A

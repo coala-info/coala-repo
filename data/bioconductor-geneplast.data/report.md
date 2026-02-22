@@ -11,6 +11,10 @@ The package geneplast.data provides datasets from different sources via Annotati
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-geneplast.data/overview
+- **Total Downloads**: 10.4K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

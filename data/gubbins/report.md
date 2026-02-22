@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gubbins/overview
-- **Total Downloads**: 98.1K
+- **Total Downloads**: 98.2K
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/nickjcroucher/gubbins
 - **Stars**: N/A

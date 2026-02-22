@@ -11,6 +11,10 @@ The package uses a Bayesian hierarchical model for the robust estimation. Outlie
 - **Version**: N/A
 - **Author**: Raphael Gottardo
 - **Maintainer**: Raphael Gottardo &#x3c;&#x72;&#x61;&#x70;&#x68;&#x20;&#x61;&#x74;&#x20;&#x73;&#x74;&#x61;&#x74;&#x2e;&#x75;&#x62;&#x63;&#x2e;&#x63;&#x61;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rama/overview
+- **Total Downloads**: 47.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

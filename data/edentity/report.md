@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'edentity'. It 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/edentity/overview
-- **Total Downloads**: 727
+- **Total Downloads**: 740
 - **Last updated**: 2026-02-20
 - **GitHub**: N/A
 - **Stars**: N/A

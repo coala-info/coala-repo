@@ -12,7 +12,7 @@ A tool for converting OCI blobs to SIF format and building container images.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seshat/overview
-- **Total Downloads**: 480
+- **Total Downloads**: 482
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/clintval/tp53
 - **Stars**: N/A

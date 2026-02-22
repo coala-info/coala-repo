@@ -12,7 +12,7 @@ MyGene.info Python client/CLI tool (Note: The provided help text contains only s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mygene/overview
-- **Total Downloads**: 88.0K
+- **Total Downloads**: 88.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/suLab/mygene.py
 - **Stars**: N/A

@@ -12,7 +12,7 @@ InstaNovo: De novo peptide sequencing with transformer models.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/instanovo/overview
-- **Total Downloads**: 800
+- **Total Downloads**: 807
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/instadeepai/instanovo
 - **Stars**: N/A

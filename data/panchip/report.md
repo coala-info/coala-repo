@@ -12,7 +12,7 @@ Initialization of the PanChIP library
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/panchip/overview
-- **Total Downloads**: 32
+- **Total Downloads**: 33
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/hanjunlee21/PanChIP
 - **Stars**: N/A

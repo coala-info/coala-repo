@@ -15,7 +15,7 @@ Alignment Viewer (alv) - a tool for viewing and analyzing sequence alignments in
 - **Total Downloads**: 13.1K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/arvestad/alv
-- **Stars**: N/A
+- **Stars**: 118
 ### Original Help Text
 ```text
 usage: alv [-h] [--version] [-ai ALIGNMENT_INDEX]

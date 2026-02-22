@@ -7,7 +7,7 @@ Provides a set of tools to perform quantitative
     Broman et al.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-qtl2
+- **Conda**: https://anaconda.org/channels/r/packages/r-qtl2/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/qtl2/index.html
 - **Home (project)**: https://kbroman.org/qtl2, https://github.com/rqtl/qtl2
 - **Package**: qtl2
@@ -15,4 +15,8 @@ Provides a set of tools to perform quantitative
 - **Author**: Karl W Broman [aut, cre], R Core Team [ctb]
 - **Maintainer**: Karl W Broman <broman at wisc.edu>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/rqtl/qtl2
+- **Stars**: N/A
 

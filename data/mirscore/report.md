@@ -12,7 +12,7 @@ A tool for scoring miRNA (Note: The provided help text contains only system erro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mirscore/overview
-- **Total Downloads**: 1.6K
+- **Total Downloads**: 1.7K
 - **Last updated**: 2025-09-15
 - **GitHub**: https://github.com/Aez35/miRScore
 - **Stars**: N/A

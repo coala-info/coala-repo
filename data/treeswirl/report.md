@@ -12,7 +12,7 @@ The provided text is a system error log regarding a failed container build/execu
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/treeswirl/overview
-- **Total Downloads**: 400
+- **Total Downloads**: 401
 - **Last updated**: 2025-05-21
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it is a log of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pymethylation_utils/overview
-- **Total Downloads**: 534
+- **Total Downloads**: 536
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/SebastianDall/pymethylation_utils
 - **Stars**: N/A

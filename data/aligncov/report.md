@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Total Downloads**: 1.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pcrxn/aligncov
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

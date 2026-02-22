@@ -5,7 +5,7 @@ Functions to handle basic input output, these functions
     files and provide more explicit control over line endings.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-brio
+- **Conda**: https://anaconda.org/channels/r/packages/r-brio/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/brio/index.html
 - **Home (project)**: https://brio.r-lib.org, https://github.com/r-lib/brio
 - **Package**: brio
@@ -13,4 +13,8 @@ Functions to handle basic input output, these functions
 - **Author**: Jim Hester [aut], Gábor Csárdi [aut, cre], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Gábor Csárdi <csardi.gabor at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 15.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/r-lib/brio
+- **Stars**: N/A
 

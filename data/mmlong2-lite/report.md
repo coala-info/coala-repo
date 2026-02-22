@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mmlong2-lite/overview
-- **Total Downloads**: 920
+- **Total Downloads**: 922
 - **Last updated**: 2025-10-26
 - **GitHub**: https://github.com/Serka-M/mmlong2-lite
 - **Stars**: N/A

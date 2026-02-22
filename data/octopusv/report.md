@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/octopusv/overview
-- **Total Downloads**: 805
+- **Total Downloads**: 814
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/ylab-hi/octopusV
 - **Stars**: N/A

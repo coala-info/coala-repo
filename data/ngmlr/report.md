@@ -12,7 +12,7 @@ The provided text does not contain help information for ngmlr; it contains error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ngmlr/overview
-- **Total Downloads**: 156.4K
+- **Total Downloads**: 156.7K
 - **Last updated**: 2025-07-08
 - **GitHub**: https://github.com/philres/ngmlr
 - **Stars**: N/A

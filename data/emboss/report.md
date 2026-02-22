@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/emboss/overview
-- **Total Downloads**: 237.0K
+- **Total Downloads**: 237.1K
 - **Last updated**: 2025-09-26
 - **GitHub**: N/A
 - **Stars**: N/A

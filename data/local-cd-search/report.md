@@ -12,7 +12,7 @@ A tool for local search against the Conserved Domain Database (CDD). Note: The p
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/local-cd-search/overview
-- **Total Downloads**: 264
+- **Total Downloads**: 267
 - **Last updated**: 2026-01-16
 - **GitHub**: https://github.com/apcamargo/local-cd-search
 - **Stars**: N/A

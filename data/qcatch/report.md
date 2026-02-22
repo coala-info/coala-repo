@@ -15,7 +15,7 @@ A tool for quality control and analysis (description not provided in help text).
 - **Total Downloads**: 1.4K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/COMBINE-lab/QCatch
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

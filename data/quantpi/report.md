@@ -15,7 +15,7 @@ The provided text appears to be a container build log rather than command-line h
 - **Total Downloads**: 2.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ohmeta/quantpi
-- **Stars**: N/A
+- **Stars**: 15
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

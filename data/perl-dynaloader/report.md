@@ -12,7 +12,7 @@ The tool 'perl-dynaloader' could not be executed as the executable was not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-dynaloader/overview
-- **Total Downloads**: 222.1K
+- **Total Downloads**: 222.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/openela-main/perl-DynaLoader-Functions
 - **Stars**: N/A

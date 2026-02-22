@@ -9,7 +9,7 @@ Circular layout is an efficient way for the visualization of huge
     connection between the powerful comput...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-circlize
+- **Conda**: https://anaconda.org/channels/r/packages/r-circlize/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/circlize/index.html
 - **Home (project)**: https://github.com/jokergoo/circlize, https://jokergoo.github.io/circlize_book/book/
 - **Package**: circlize
@@ -17,4 +17,8 @@ Circular layout is an efficient way for the visualization of huge
 - **Author**: Zuguang Gu [aut, cre]
 - **Maintainer**: Zuguang Gu <z.gu at dkfz.de>
 - **Skill**: generated
+- **Total Downloads**: 923
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jokergoo/circlize
+- **Stars**: N/A
 

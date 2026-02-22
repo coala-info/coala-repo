@@ -8,7 +8,7 @@ An improved implementation (based on k-nearest neighbors) of
     Xiaojie Qiu to handle large datasets with kNNs.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-densityclust
+- **Conda**: https://anaconda.org/channels/r/packages/r-densityclust/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/densityClust/index.html
 - **Home (project)**: https://github.com/thomasp85/densityClust
 - **Package**: densityClust
@@ -16,4 +16,8 @@ An improved implementation (based on k-nearest neighbors) of
 - **Author**: Thomas Lin Pedersen [aut, cre], Sean Hughes [aut], Xiaojie Qiu [aut]
 - **Maintainer**: Thomas Lin Pedersen <thomasp85 at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 43
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/thomasp85/densityClust
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A client for the GA4GH Workflow Execution Service (WES) API.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/wes-service-client/overview
-- **Total Downloads**: 6.4K
+- **Total Downloads**: 6.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/common-workflow-language/workflow-service
 - **Stars**: N/A

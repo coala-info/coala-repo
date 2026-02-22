@@ -12,7 +12,7 @@ MALT (MEGAN Alignment Tool) is a tool for the sequence alignment of large datase
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/malt/overview
-- **Total Downloads**: 25.3K
+- **Total Downloads**: 25.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

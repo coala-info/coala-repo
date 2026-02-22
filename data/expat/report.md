@@ -12,7 +12,7 @@ The provided text does not contain help information for the expat tool; it conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/expat/overview
-- **Total Downloads**: 863.7K
+- **Total Downloads**: 866.2K
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/xmppo/node-expat
 - **Stars**: N/A

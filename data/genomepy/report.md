@@ -12,7 +12,7 @@ A tool for downloading and managing genomes. (Note: The provided help text conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genomepy/overview
-- **Total Downloads**: 124.3K
+- **Total Downloads**: 124.4K
 - **Last updated**: 2025-09-30
 - **GitHub**: https://github.com/vanheeringen-lab/genomepy
 - **Stars**: N/A

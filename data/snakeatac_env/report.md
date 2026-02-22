@@ -12,7 +12,7 @@ SnakeATAC environment container (biocontainer)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakeatac_env/overview
-- **Total Downloads**: 351
+- **Total Downloads**: 352
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sebastian-gregoricchio/snakeATAC
 - **Stars**: N/A

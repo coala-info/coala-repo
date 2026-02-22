@@ -3,7 +3,7 @@
 R package epic (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-epic
+- **Conda**: https://anaconda.org/channels/r/packages/r-epic/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/epic/index.html
 - **Home (project)**: https://github.com/GfellerLab/EPIC
 - **Package**: epic
@@ -11,4 +11,8 @@ R package epic (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/GfellerLab/EPIC
+- **Stars**: N/A
 

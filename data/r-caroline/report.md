@@ -11,7 +11,7 @@ The caroline R library contains dozens of functions useful
  file I/O (write.delim), bat...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-caroline
+- **Conda**: https://anaconda.org/channels/r/packages/r-caroline/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/caroline/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=caroline
 - **Package**: caroline
@@ -19,4 +19,8 @@ The caroline R library contains dozens of functions useful
 - **Author**: David Schruth [aut, cre]
 - **Maintainer**: David Schruth <code at anthropoidea.org>
 - **Skill**: generated
+- **Total Downloads**: 296
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ Perl module runtime (Note: The provided text is an error log indicating the exec
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-module-runtime/overview
-- **Total Downloads**: 397.4K
+- **Total Downloads**: 397.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

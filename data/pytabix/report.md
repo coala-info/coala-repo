@@ -15,7 +15,7 @@ A Python module that allows for querying Tabix-indexed files. Note: The provided
 - **Total Downloads**: 112.4K
 - **Last updated**: 2025-08-14
 - **GitHub**: https://github.com/slowkow/pytabix
-- **Stars**: N/A
+- **Stars**: 82
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

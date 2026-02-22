@@ -12,7 +12,7 @@ The provided text is a container build log and does not contain help information
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/panorama/overview
-- **Total Downloads**: 149
+- **Total Downloads**: 151
 - **Last updated**: 2026-01-21
 - **GitHub**: https://github.com/labgem/panorama
 - **Stars**: N/A

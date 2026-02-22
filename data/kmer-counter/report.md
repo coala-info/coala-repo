@@ -12,7 +12,7 @@ A tool for counting k-mers (Note: The provided help text contains only container
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kmer-counter/overview
-- **Total Downloads**: 761
+- **Total Downloads**: 766
 - **Last updated**: 2025-11-15
 - **GitHub**: https://github.com/CobiontID/kmer-counter
 - **Stars**: N/A

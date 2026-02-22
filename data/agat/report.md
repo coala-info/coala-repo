@@ -12,10 +12,10 @@ The provided text does not contain help information for the tool. It is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/agat/overview
-- **Total Downloads**: 84.6K
+- **Total Downloads**: 84.9K
 - **Last updated**: 2026-01-26
 - **GitHub**: https://github.com/NBISweden/AGAT
-- **Stars**: N/A
+- **Stars**: 560
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

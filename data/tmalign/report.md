@@ -12,7 +12,7 @@ TM-align is an algorithm for protein structure alignment. (Note: The provided he
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tmalign/overview
-- **Total Downloads**: 113.6K
+- **Total Downloads**: 113.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

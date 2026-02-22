@@ -7,7 +7,7 @@ Color maps designed to improve graph readability for readers with
     'ggplot2' bindings for discrete and continuous color and fill scales.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-viridis
+- **Conda**: https://anaconda.org/channels/r/packages/r-viridis/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/viridis/index.html
 - **Home (project)**: https://sjmgarnier.github.io/viridis/, https://github.com/sjmgarnier/viridis/
 - **Package**: viridis
@@ -15,4 +15,8 @@ Color maps designed to improve graph readability for readers with
 - **Author**: Simon Garnier [aut, cre], Noam Ross [ctb, cph], Bob Rudis [ctb, cph], Marco Sciaini [ctb, cph], Antônio Pedro Camargo [ctb, cph], Cédric Scherer [ctb, cph]
 - **Maintainer**: Simon Garnier <garnier at njit.edu>
 - **Skill**: generated
+- **Total Downloads**: 25.8K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/sjmgarnier/viridis
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-exporter/overview
-- **Total Downloads**: 942.6K
+- **Total Downloads**: 942.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zszszszsz/.config
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text is an error message regarding a container build failure and do
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lamps/overview
-- **Total Downloads**: 336
+- **Total Downloads**: 338
 - **Last updated**: 2025-10-21
 - **GitHub**: https://github.com/wanchanglin/lamp
 - **Stars**: N/A

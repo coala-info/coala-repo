@@ -13,4 +13,8 @@ The package is especially tuned for cyanobacteria, but will work fine for phytop
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fomotis/cyanoFilter
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cyanofilter/overview
+- **Total Downloads**: 9.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

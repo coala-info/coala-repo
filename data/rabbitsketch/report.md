@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rabbitsketch/overview
-- **Total Downloads**: 364
+- **Total Downloads**: 365
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RabbitBio/RabbitSketch
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mshasan/OPWeight
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-opweight/overview
+- **Total Downloads**: 28.7K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

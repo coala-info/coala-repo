@@ -12,7 +12,7 @@ A tool for filtering human sequences from sequencing data. (Note: The provided t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/humanfilt/overview
-- **Total Downloads**: 109
+- **Total Downloads**: 111
 - **Last updated**: 2025-10-08
 - **GitHub**: https://github.com/jprehn-lab/humanfilt
 - **Stars**: N/A

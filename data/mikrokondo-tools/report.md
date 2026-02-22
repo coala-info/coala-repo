@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mikrokondo-tools/overview
-- **Total Downloads**: 580
+- **Total Downloads**: 582
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/DOED-DAAD/mikrokondo-tools
 - **Stars**: N/A

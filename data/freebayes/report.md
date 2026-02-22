@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/freebayes/overview
-- **Total Downloads**: 713.4K
+- **Total Downloads**: 714.4K
 - **Last updated**: 2025-06-02
 - **GitHub**: https://github.com/freebayes/freebayes
 - **Stars**: N/A

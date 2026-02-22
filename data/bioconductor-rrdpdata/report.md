@@ -13,4 +13,8 @@ The package provides the data for the RDP Classifier 2.14 released in August 202
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mhahsler/rRDP
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rrdpdata/overview
+- **Total Downloads**: 25.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

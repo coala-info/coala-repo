@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/optilcms/overview
-- **Total Downloads**: 492
+- **Total Downloads**: 494
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/xia-lab/OptiLCMS
 - **Stars**: N/A

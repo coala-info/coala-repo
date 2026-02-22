@@ -11,6 +11,10 @@ The package Ringo facilitates the primary analysis of ChIP-chip data. The main f
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ringo/overview
+- **Total Downloads**: 57.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

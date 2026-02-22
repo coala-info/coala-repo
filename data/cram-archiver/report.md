@@ -12,7 +12,7 @@ Archive BAM files to CRAM format recursively, with options for reference checkin
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cram-archiver/overview
-- **Total Downloads**: 320
+- **Total Downloads**: 322
 - **Last updated**: 2025-07-07
 - **GitHub**: https://github.com/lumc/cram-archiver
 - **Stars**: N/A

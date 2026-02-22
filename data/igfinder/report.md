@@ -12,7 +12,7 @@ The provided text does not contain help documentation for igfinder; it is an err
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/igfinder/overview
-- **Total Downloads**: 969
+- **Total Downloads**: 971
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

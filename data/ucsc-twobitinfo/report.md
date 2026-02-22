@@ -12,7 +12,7 @@ Get information about a .2bit file. (Note: The provided help text contains only 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-twobitinfo/overview
-- **Total Downloads**: 184.3K
+- **Total Downloads**: 184.7K
 - **Last updated**: 2025-06-19
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

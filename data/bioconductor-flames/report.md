@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mritchielab/FLAMES
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-flames/overview
+- **Total Downloads**: 10.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/methurator/overview
-- **Total Downloads**: 235
+- **Total Downloads**: 242
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/VIBTOBIlab/methurator
 - **Stars**: N/A

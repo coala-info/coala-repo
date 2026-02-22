@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/samsum/overview
-- **Total Downloads**: 26.8K
+- **Total Downloads**: 26.9K
 - **Last updated**: 2025-09-09
 - **GitHub**: https://github.com/hallamlab/samsum
 - **Stars**: N/A

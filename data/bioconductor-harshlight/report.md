@@ -11,6 +11,10 @@ The package is used to detect extended, diffuse and compact blemishes on microar
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-harshlight/overview
+- **Total Downloads**: 42.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

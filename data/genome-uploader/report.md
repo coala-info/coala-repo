@@ -12,7 +12,7 @@ A tool for uploading genome data. (Note: The provided text appears to be a conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genome-uploader/overview
-- **Total Downloads**: 275
+- **Total Downloads**: 280
 - **Last updated**: 2025-12-02
 - **GitHub**: https://github.com/EBI-Metagenomics/genome_uploader
 - **Stars**: N/A

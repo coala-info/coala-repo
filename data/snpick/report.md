@@ -12,7 +12,7 @@ The provided text does not contain a description of the tool; it is a log of a f
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snpick/overview
-- **Total Downloads**: 762
+- **Total Downloads**: 763
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/PathoGenOmics-Lab/snpick
 - **Stars**: N/A

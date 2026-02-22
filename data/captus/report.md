@@ -12,8 +12,8 @@ Captus is a tool for assembly and analysis of phylogenomic data (Note: The provi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/captus/overview
-- **Total Downloads**: 37.5K
-- **Last updated**: 2025-11-11
+- **Total Downloads**: 37.7K
+- **Last updated**: 2026-02-22
 - **GitHub**: https://github.com/edgardomortiz/Captus
 - **Stars**: N/A
 ### Original Help Text

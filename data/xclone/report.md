@@ -12,7 +12,7 @@ The provided text is a container build error log and does not contain the help d
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/xclone/overview
-- **Total Downloads**: 751
+- **Total Downloads**: 754
 - **Last updated**: 2025-10-09
 - **GitHub**: https://github.com/single-cell-genetics/XClone
 - **Stars**: N/A

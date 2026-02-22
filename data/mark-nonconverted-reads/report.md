@@ -12,7 +12,7 @@ A tool to mark non-converted reads (Note: The provided text contains container r
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mark-nonconverted-reads/overview
-- **Total Downloads**: 7.9K
+- **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nebiolabs/mark-nonconverted-reads
 - **Stars**: N/A

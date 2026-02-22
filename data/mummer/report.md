@@ -12,7 +12,7 @@ MUMmer is a system for rapidly aligning entire genomes. (Note: The provided help
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mummer/overview
-- **Total Downloads**: 145.0K
+- **Total Downloads**: 145.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mummer4/mummer
 - **Stars**: N/A

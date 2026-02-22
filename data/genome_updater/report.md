@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genome_updater/overview
-- **Total Downloads**: 40.2K
+- **Total Downloads**: 40.3K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/pirovc/genome_updater
 - **Stars**: N/A

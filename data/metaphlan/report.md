@@ -12,7 +12,7 @@ MetaPhlAn is a computational tool for profiling the composition of microbial com
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metaphlan/overview
-- **Total Downloads**: 378.8K
+- **Total Downloads**: 379.0K
 - **Last updated**: 2025-10-21
 - **GitHub**: https://github.com/biobakery/metaphlan
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BiodataAnalysisGroup/lineagespot
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-lineagespot/overview
+- **Total Downloads**: 5.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

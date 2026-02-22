@@ -12,7 +12,7 @@ Climate Data Operators
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/cdo/overview
-- **Total Downloads**: 601.1K
+- **Total Downloads**: 601.4K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/cxong/cdogs-sdl
 - **Stars**: N/A

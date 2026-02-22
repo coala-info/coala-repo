@@ -12,7 +12,7 @@ The provided text contains system log messages and a fatal error regarding a con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastdup/overview
-- **Total Downloads**: 629
+- **Total Downloads**: 630
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/zzhofict/FastDup
 - **Stars**: N/A

@@ -15,7 +15,7 @@ Phylogenetic Tree Generation and Ancestral Unit Linkage
 - **Total Downloads**: 4.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Bean061/ptgaul
-- **Stars**: N/A
+- **Stars**: 14
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

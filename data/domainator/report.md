@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It consists of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/domainator/overview
-- **Total Downloads**: 63
+- **Total Downloads**: 65
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/nebiolabs/domainator
 - **Stars**: N/A

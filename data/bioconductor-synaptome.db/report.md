@@ -13,4 +13,8 @@ The package contains local copy of the Synaptic proteome database. On top of thi
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lptolik/synaptome.db
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-synaptome.db/overview
+- **Total Downloads**: 6.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

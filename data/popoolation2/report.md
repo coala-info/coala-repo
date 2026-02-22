@@ -12,7 +12,7 @@ PoPoolation2 allows to compare allele frequencies for SNPs between two or more p
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/popoolation2/overview
-- **Total Downloads**: 835
+- **Total Downloads**: 837
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

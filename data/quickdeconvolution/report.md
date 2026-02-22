@@ -15,7 +15,7 @@ Quick deconvolution tool (Note: The provided text is a container build log and d
 - **Total Downloads**: 3.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RolandFaure/QuickDeconvolution
-- **Stars**: N/A
+- **Stars**: 2
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

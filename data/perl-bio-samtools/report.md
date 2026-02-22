@@ -12,7 +12,7 @@ The provided text is a log of a failed container build process and does not cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-samtools/overview
-- **Total Downloads**: 308.9K
+- **Total Downloads**: 309.0K
 - **Last updated**: 2025-08-01
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for calculating UniFrac distances using GPU acceleration. (Note: The prov
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dartunifrac-gpu/overview
-- **Total Downloads**: 558
+- **Total Downloads**: 568
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/jianshu93/DartUniFrac
 - **Stars**: N/A

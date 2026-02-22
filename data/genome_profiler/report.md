@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genome_profiler/overview
-- **Total Downloads**: 244
+- **Total Downloads**: 246
 - **Last updated**: 2025-07-03
 - **GitHub**: https://github.com/Syrinx55/GenomeProfiler
 - **Stars**: N/A

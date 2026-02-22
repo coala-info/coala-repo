@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/influx_si/overview
-- **Total Downloads**: 41.7K
+- **Total Downloads**: 41.8K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/sgsokol/influx
 - **Stars**: N/A

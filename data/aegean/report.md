@@ -15,7 +15,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Total Downloads**: 5.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/BrendelGroup/AEGeAn
-- **Stars**: N/A
+- **Stars**: 25
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

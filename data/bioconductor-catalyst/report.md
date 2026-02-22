@@ -13,4 +13,8 @@ the package provides a number of convenient functions for data processing (e.g.,
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HelenaLC/CATALYST
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-catalyst/overview
+- **Total Downloads**: 24.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

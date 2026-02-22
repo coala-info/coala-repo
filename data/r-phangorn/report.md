@@ -7,7 +7,7 @@ Allows for estimation of phylogenetic trees and networks
     Schliep et al. (2017).</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-phangorn
+- **Conda**: https://anaconda.org/channels/r/packages/r-phangorn/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/phangorn/index.html
 - **Home (project)**: https://github.com/KlausVigo/phangorn, https://klausvigo.github.io/phangorn/
 - **Package**: phangorn
@@ -15,4 +15,8 @@ Allows for estimation of phylogenetic trees and networks
 - **Author**: Klaus Schliep [aut, cre], Emmanuel Paradis [aut], Leonardo de Oliveira Martins [aut], Alastair Potts [aut], Iris Bardel-Kahr [aut], Tim W. White [ctb], Cyrill Stachniss [ctb], Michelle Kendall [ctb], Keren Halabi [ctb], Richel Bilderbeek [ctb], Kristin Winchell [ctb], Liam Revell [ctb], Mike Gilchrist [ctb], Jeremy Beaulieu [ctb], Brian O'Meara [ctb], Long Qu [ctb], Joseph Brown [ctb], Santiago Claramunt [ctb]
 - **Maintainer**: Klaus Schliep <klaus.schliep at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 637
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/KlausVigo/phangorn
+- **Stars**: N/A
 

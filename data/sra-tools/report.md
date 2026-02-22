@@ -12,7 +12,7 @@ The provided text is a container build log/error message and does not contain he
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sra-tools/overview
-- **Total Downloads**: 565.2K
+- **Total Downloads**: 565.7K
 - **Last updated**: 2025-06-18
 - **GitHub**: https://github.com/ncbi/sra-tools
 - **Stars**: N/A

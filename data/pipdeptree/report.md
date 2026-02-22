@@ -12,7 +12,7 @@ Dependency tree of the installed python packages
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/pipdeptree/overview
-- **Total Downloads**: 102.1K
+- **Total Downloads**: 102.2K
 - **Last updated**: 2026-02-20
 - **GitHub**: https://github.com/tox-dev/pipdeptree
 - **Stars**: N/A

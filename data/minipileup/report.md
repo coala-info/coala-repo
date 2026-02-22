@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/minipileup/overview
-- **Total Downloads**: 378
+- **Total Downloads**: 379
 - **Last updated**: 2025-04-25
 - **GitHub**: https://github.com/lh3/minipileup
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Kalign is a fast and accurate multiple sequence alignment algorithm. (Note: The 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kalign2/overview
-- **Total Downloads**: 321.5K
+- **Total Downloads**: 321.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

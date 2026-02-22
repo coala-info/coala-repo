@@ -7,7 +7,7 @@ Genomic data for the plant pathogen "Phytophthora infestans." It
     work with genomic data.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-pinfsc50
+- **Conda**: https://anaconda.org/channels/r/packages/r-pinfsc50/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/pinfsc50/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=pinfsc50
 - **Package**: pinfsc50
@@ -15,4 +15,8 @@ Genomic data for the plant pathogen "Phytophthora infestans." It
 - **Author**: Brian J. Knaus [cre, aut], Niklaus J. Grunwald [aut]
 - **Maintainer**: Brian J. Knaus <briank.lists at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 461
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

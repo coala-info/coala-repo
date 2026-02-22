@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sistem/overview
-- **Total Downloads**: 321
+- **Total Downloads**: 324
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/samsonweiner/sistem
 - **Stars**: N/A

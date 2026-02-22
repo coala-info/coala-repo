@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rust-bio-tools/overview
-- **Total Downloads**: 312.2K
+- **Total Downloads**: 312.3K
 - **Last updated**: 2025-09-18
 - **GitHub**: https://github.com/rust-bio/rust-bio-tools
 - **Stars**: N/A

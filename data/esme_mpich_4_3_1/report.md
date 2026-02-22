@@ -12,7 +12,7 @@ ESME (Energy Exascale Earth System Model) component with NetCDF-Fortran and MPIC
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/esme_mpich_4_3_1/overview
-- **Total Downloads**: 282
+- **Total Downloads**: 283
 - **Last updated**: 2025-08-04
 - **GitHub**: https://github.com/j34ni/bioconda-recipes
 - **Stars**: N/A

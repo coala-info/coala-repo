@@ -12,7 +12,7 @@ A tool for evolutionary fitness and growth rate estimation (Note: The provided h
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/evofr/overview
-- **Total Downloads**: 54.2K
+- **Total Downloads**: 54.3K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/blab/evofr
 - **Stars**: N/A

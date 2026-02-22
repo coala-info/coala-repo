@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/pmb59/fCCAC
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-fccac/overview
+- **Total Downloads**: 36.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

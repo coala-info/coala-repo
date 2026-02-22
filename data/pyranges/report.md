@@ -12,7 +12,7 @@ The provided text is a system error log from a container build process and does 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyranges/overview
-- **Total Downloads**: 318.4K
+- **Total Downloads**: 318.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/endrebak/pyranges
 - **Stars**: N/A

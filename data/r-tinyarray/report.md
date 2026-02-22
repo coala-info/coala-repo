@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-tinyarray
+- **Conda**: https://anaconda.org/channels/r/packages/r-tinyarray/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/tinyarray/index.html
 - **Home (project)**: https://github.com/xjsun1221/tinyarray
 - **Package**: tinyarray
@@ -11,4 +11,8 @@ N/A
 - **Author**: Xiaojie Sun [aut, cre]
 - **Maintainer**: Xiaojie Sun <18763899370 at 163.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/xjsun1221/tinyarray
+- **Stars**: N/A
 

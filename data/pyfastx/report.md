@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyfastx/overview
-- **Total Downloads**: 202.9K
+- **Total Downloads**: 203.0K
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/lmdu/pyfastx
 - **Stars**: N/A

@@ -3,33 +3,25 @@
 ## batman
 
 ### Tool Description
-[Errno 2] No such file or directory: 'batman'; fallback failed: [Errno 2] No such file or directory: 'batman'
+Bayesian AuTomated Metabolite ANalyser (BATMAN) for deconvolving resonance peaks from NMR spectra.
 
 ### Metadata
-- **Docker Image**: Not found
+- **Docker Image**: biocontainers/batman:phenomenal-v1.2.12.0_cv1.1.72
 - **Homepage**: https://github.com/mixandjam/Batman-Arkham-Combat
 - **Package**: Not found
-- **Validation**: FAIL (generation failed)
+- **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/conda-forge/packages/batman/overview
-- **Total Downloads**: 362.2K
-- **Last updated**: 2025-04-22
+- **Conda**: https://anaconda.org/channels/bioconda/packages/batman/overview
+- **Total Downloads**: N/A
+- **Last updated**: N/A
 - **GitHub**: https://github.com/mixandjam/Batman-Arkham-Combat
 - **Stars**: N/A
-### Generation Failed
-
-[Errno 2] No such file or directory: 'batman'; fallback failed: [Errno 2] No such file or directory: 'batman'
-
-
-### Validation Errors
-
-- [Errno 2] No such file or directory: 'batman'; fallback failed: [Errno 2] No such file or directory: 'batman'
-
-
-
 ### Original Help Text
 ```text
-
+WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/b23d1c286653f3cec4de4a0932c2d70f89d8431c87c2359c382af5fff504ca39: no space left on device
+WARNING: Falling back to direct digest.
+INFO:    Converting OCI blobs to SIF format
+FATAL:   Unable to handle docker://biocontainers/batman:phenomenal-v1.2.12.0_cv1.1.72 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-383111324: no space left on device
 ```
 
 

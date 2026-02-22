@@ -12,7 +12,7 @@ PopIns2 is a tool for discovering and characterizing non-reference insertions in
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/popins2/overview
-- **Total Downloads**: 585
+- **Total Downloads**: 586
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kehrlab/PopIns2
 - **Stars**: N/A

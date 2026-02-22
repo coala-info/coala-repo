@@ -12,7 +12,7 @@ Vembrane is a tool for filtering and manipulating VCF files using Python express
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vembrane/overview
-- **Total Downloads**: 68.2K
+- **Total Downloads**: 68.3K
 - **Last updated**: 2025-09-27
 - **GitHub**: https://github.com/vembrane/vembrane
 - **Stars**: N/A

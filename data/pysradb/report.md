@@ -12,10 +12,10 @@ A Python tool to query SRA metadata and download data from SRA/ENA.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pysradb/overview
-- **Total Downloads**: 92.5K
+- **Total Downloads**: 92.6K
 - **Last updated**: 2025-10-20
 - **GitHub**: https://github.com/saketkc/pysradb
-- **Stars**: N/A
+- **Stars**: 350
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

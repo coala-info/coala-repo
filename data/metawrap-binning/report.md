@@ -12,7 +12,7 @@ The provided text contains error messages related to a container runtime failure
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-binning/overview
-- **Total Downloads**: 102
+- **Total Downloads**: 103
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A

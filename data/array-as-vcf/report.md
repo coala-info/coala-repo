@@ -15,7 +15,7 @@ Convert an array file to VCF format
 - **Total Downloads**: 8.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/LUMC/array-as-vcf
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 usage: array-as-vcf [-h] --path PATH [--build {GRCh37,GRCh38}] --sample-name

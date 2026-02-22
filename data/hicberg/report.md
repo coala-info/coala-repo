@@ -12,7 +12,7 @@ A tool for Hi-C data analysis (Note: The provided help text contains only system
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hicberg/overview
-- **Total Downloads**: 220
+- **Total Downloads**: 222
 - **Last updated**: 2025-06-05
 - **GitHub**: https://github.com/sebgra/hicberg
 - **Stars**: N/A

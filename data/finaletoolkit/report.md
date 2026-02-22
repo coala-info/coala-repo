@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/finaletoolkit/overview
-- **Total Downloads**: 356
+- **Total Downloads**: 359
 - **Last updated**: 2025-09-08
 - **GitHub**: https://github.com/epifluidlab/FinaleToolkit
 - **Stars**: N/A

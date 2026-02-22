@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lima/overview
-- **Total Downloads**: 98.0K
+- **Total Downloads**: 98.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/PacificBiosciences/barcoding
 - **Stars**: N/A

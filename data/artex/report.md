@@ -15,7 +15,7 @@ Could not get help from Singularity for: artex
 - **Total Downloads**: 355
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/JMencius/Artex
-- **Stars**: N/A
+- **Stars**: 0
 ### Generation Failed
 
 Could not get help from Singularity for: artex

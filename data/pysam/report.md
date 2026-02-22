@@ -15,7 +15,7 @@ The provided text does not contain help information or a description for the too
 - **Total Downloads**: 8.5M
 - **Last updated**: 2026-02-09
 - **GitHub**: https://github.com/pysam-developers/pysam
-- **Stars**: N/A
+- **Stars**: 880
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

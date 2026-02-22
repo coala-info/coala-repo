@@ -12,7 +12,7 @@ A tool for Transposable Element (TE) detection and analysis.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/telr/overview
-- **Total Downloads**: 4.0K
+- **Total Downloads**: 4.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bergmanlab/telr
 - **Stars**: N/A

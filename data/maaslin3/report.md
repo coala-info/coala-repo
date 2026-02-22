@@ -12,7 +12,7 @@ MaAsLin3 (Microbiome Multivariable Association with Linear Models) is a tool for
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/maaslin3/overview
-- **Total Downloads**: 261
+- **Total Downloads**: 263
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/biobakery/maaslin3
 - **Stars**: N/A

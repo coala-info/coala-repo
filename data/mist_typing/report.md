@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mist_typing/overview
-- **Total Downloads**: 432
+- **Total Downloads**: 441
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/BioinformaticsPlatformWIV-ISP/MiST
 - **Stars**: N/A

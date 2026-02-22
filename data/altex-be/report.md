@@ -12,10 +12,10 @@ Altex BE: A CLI tool for processing refFlat files and extracting target exons.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/altex-be/overview
-- **Total Downloads**: 244
+- **Total Downloads**: 245
 - **Last updated**: 2026-01-06
 - **GitHub**: https://github.com/kinari-labwork/AltEx-BE
-- **Stars**: N/A
+- **Stars**: 2
 ### Original Help Text
 ```text
 usage: altex-be [-h] [-v] [-r REFFLAT_PATH | -g GTF_PATH] -f FASTA_PATH -o

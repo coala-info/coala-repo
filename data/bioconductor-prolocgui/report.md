@@ -13,4 +13,8 @@ The package pRolocGUI comprises functions to interactively visualise spatial pro
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lgatto/pRolocGUI
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-prolocgui/overview
+- **Total Downloads**: 27.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

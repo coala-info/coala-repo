@@ -13,4 +13,8 @@ The package provides ready to use epigenomes (obtained from TWGBS) and transcrip
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/cimbusch/tissueTreg
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tissuetreg/overview
+- **Total Downloads**: 27.2K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

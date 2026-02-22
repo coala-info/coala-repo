@@ -15,7 +15,7 @@ The provided text is a container execution error log and does not contain help i
 - **Total Downloads**: 11.5K
 - **Last updated**: 2025-08-06
 - **GitHub**: https://github.com/zhengchangsulab/ProSampler
-- **Stars**: N/A
+- **Stars**: 4
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

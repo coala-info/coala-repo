@@ -12,7 +12,7 @@ The provided text is a system error log (Apptainer/Singularity build failure) an
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pkiss/overview
-- **Total Downloads**: 14.1K
+- **Total Downloads**: 14.2K
 - **Last updated**: 2025-10-02
 - **GitHub**: N/A
 - **Stars**: N/A

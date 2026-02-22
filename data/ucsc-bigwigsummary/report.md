@@ -12,7 +12,7 @@ Extract summary information from a bigWig file.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-bigwigsummary/overview
-- **Total Downloads**: 94.8K
+- **Total Downloads**: 94.9K
 - **Last updated**: 2025-06-25
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

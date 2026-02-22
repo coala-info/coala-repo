@@ -12,7 +12,7 @@ A tool for validating bioinformatics files.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biovalid/overview
-- **Total Downloads**: 153
+- **Total Downloads**: 157
 - **Last updated**: 2026-01-02
 - **GitHub**: https://github.com/RIVM-bioinformatics/biovalid
 - **Stars**: N/A

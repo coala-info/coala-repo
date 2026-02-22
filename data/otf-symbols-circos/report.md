@@ -3,33 +3,25 @@
 ## otf-symbols-circos
 
 ### Tool Description
-[Errno 2] No such file or directory: 'otf-symbols-circos'; fallback failed: [Errno 2] No such file or directory: 'otf-symbols-circos'
+The provided text contains system error messages related to a container runtime failure and does not include the actual help documentation or usage instructions for the tool. As a result, no arguments could be extracted.
 
 ### Metadata
-- **Docker Image**: Not found
+- **Docker Image**: biocontainers/otf-symbols-circos:v0.69.4dfsg-1-deb_cv1
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: FAIL (generation failed)
+- **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/otf-symbols-circos/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
-### Generation Failed
-
-[Errno 2] No such file or directory: 'otf-symbols-circos'; fallback failed: [Errno 2] No such file or directory: 'otf-symbols-circos'
-
-
-### Validation Errors
-
-- [Errno 2] No such file or directory: 'otf-symbols-circos'; fallback failed: [Errno 2] No such file or directory: 'otf-symbols-circos'
-
-
-
 ### Original Help Text
 ```text
-
+WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/36282955001e688b87642f6680db8d8744a90e0e629727596a3ea10b48109239: no space left on device
+WARNING: Falling back to direct digest.
+INFO:    Converting OCI blobs to SIF format
+FATAL:   Unable to handle docker://biocontainers/otf-symbols-circos:v0.69.4dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4024628849: no space left on device
 ```
 
 

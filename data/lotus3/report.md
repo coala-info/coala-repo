@@ -12,7 +12,7 @@ The provided text is an error log regarding a container build failure and does n
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lotus3/overview
-- **Total Downloads**: 332
+- **Total Downloads**: 334
 - **Last updated**: 2025-06-18
 - **GitHub**: https://github.com/hildebra/LotuS3
 - **Stars**: N/A

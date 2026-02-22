@@ -12,7 +12,7 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-phylo/overview
-- **Total Downloads**: 187.1K
+- **Total Downloads**: 187.2K
 - **Last updated**: 2025-12-12
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for generating kernel density plots. (Note: The provided text is a contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kernel_density_plots/overview
-- **Total Downloads**: 261
+- **Total Downloads**: 263
 - **Last updated**: 2025-05-02
 - **GitHub**: https://github.com/kapurlab/kernel_density_plots
 - **Stars**: N/A

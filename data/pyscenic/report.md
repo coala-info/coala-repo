@@ -15,7 +15,7 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 2.4K
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/aertslab/pySCENIC
-- **Stars**: N/A
+- **Stars**: 576
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

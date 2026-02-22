@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-bedgraphtobigwig/overview
-- **Total Downloads**: 532.5K
+- **Total Downloads**: 532.7K
 - **Last updated**: 2025-06-21
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

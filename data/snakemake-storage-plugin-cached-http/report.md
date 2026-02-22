@@ -12,7 +12,7 @@ A Snakemake storage plugin for cached HTTP resources. Note: The provided text ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-storage-plugin-cached-http/overview
-- **Total Downloads**: 6.1K
+- **Total Downloads**: 6.2K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/PyPSA/snakemake-storage-plugin-cached-http
 - **Stars**: N/A

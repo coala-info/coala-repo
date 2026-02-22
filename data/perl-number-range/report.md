@@ -12,7 +12,7 @@ The provided text is an error log indicating that the executable 'perl-number-ra
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-number-range/overview
-- **Total Downloads**: 6.6K
+- **Total Downloads**: 6.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

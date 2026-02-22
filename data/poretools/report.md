@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for po
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/poretools/overview
-- **Total Downloads**: 43.3K
+- **Total Downloads**: 43.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/arq5x/poretools
 - **Stars**: N/A

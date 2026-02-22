@@ -12,7 +12,7 @@ A Bayesian genotyper for structural variants
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/svtyper-python3/overview
-- **Total Downloads**: 57
+- **Total Downloads**: 58
 - **Last updated**: 2025-10-15
 - **GitHub**: https://github.com/hall-lab/svtyper
 - **Stars**: N/A

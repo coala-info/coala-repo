@@ -13,4 +13,8 @@ The package CellBarcode performs Cellular DNA Barcode analysis. It can handle al
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/wenjie1991/CellBarcode
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cellbarcode/overview
+- **Total Downloads**: 8.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

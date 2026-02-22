@@ -12,7 +12,7 @@ A tree-based orthology inference program with additional functionality for reduc
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phylopypruner/overview
-- **Total Downloads**: 280
+- **Total Downloads**: 282
 - **Last updated**: 2025-05-29
 - **GitHub**: https://github.com/fethalen/phylopypruner
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text is a system error log related to a container build failure (no
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cdbtools/overview
-- **Total Downloads**: 135.9K
+- **Total Downloads**: 136.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/philpennock/cdbtools
 - **Stars**: N/A

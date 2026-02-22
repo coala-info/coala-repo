@@ -12,7 +12,7 @@ Garnett is a tool for cell type classification. (Note: The provided help text co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/garnett-cli/overview
-- **Total Downloads**: 18.2K
+- **Total Downloads**: 18.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ebi-gene-expression-group/garnett-cli
 - **Stars**: N/A

@@ -12,7 +12,7 @@ SigProfilerExtractor is a tool for extraction and analysis of mutational signatu
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sigprofilerextractor/overview
-- **Total Downloads**: 653
+- **Total Downloads**: 659
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/AlexandrovLab/SigProfilerExtractor
 - **Stars**: N/A

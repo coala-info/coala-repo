@@ -12,7 +12,7 @@ Logomaker is a Python package for generating publication-quality sequence logos.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/logomaker/overview
-- **Total Downloads**: 57.4K
+- **Total Downloads**: 57.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

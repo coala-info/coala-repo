@@ -12,7 +12,7 @@ BioPerl is a toolkit of Perl modules useful in building bioinformatics solutions
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bioperl/overview
-- **Total Downloads**: 406.8K
+- **Total Downloads**: 407.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

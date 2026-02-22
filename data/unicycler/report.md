@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unicycler/overview
-- **Total Downloads**: 620.0K
+- **Total Downloads**: 620.1K
 - **Last updated**: 2025-08-04
 - **GitHub**: https://github.com/rrwick/Unicycler
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'medaka'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/medaka/overview
-- **Total Downloads**: 313.5K
+- **Total Downloads**: 313.6K
 - **Last updated**: 2026-02-01
 - **GitHub**: https://github.com/nanoporetech/medaka
 - **Stars**: N/A

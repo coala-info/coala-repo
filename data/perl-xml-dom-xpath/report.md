@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-dom-xpath/overview
-- **Total Downloads**: 305.1K
+- **Total Downloads**: 305.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gooselinux/perl-XML-DOM-XPath
 - **Stars**: N/A

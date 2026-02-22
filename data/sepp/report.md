@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'sepp'. It is a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sepp/overview
-- **Total Downloads**: 938.3K
+- **Total Downloads**: 939.9K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/seppukudevelopment/seppuku
 - **Stars**: N/A

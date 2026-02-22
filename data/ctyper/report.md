@@ -12,7 +12,7 @@ A tool for genotyping and estimating NGS read depth using a matrix database.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ctyper/overview
-- **Total Downloads**: 875
+- **Total Downloads**: 876
 - **Last updated**: 2025-11-18
 - **GitHub**: https://github.com/ChaissonLab/Ctyper
 - **Stars**: N/A

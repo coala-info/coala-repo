@@ -12,7 +12,7 @@ A tool for automated alignment trimming in large-scale phylogenetic analyses.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trimal/overview
-- **Total Downloads**: 127.1K
+- **Total Downloads**: 127.2K
 - **Last updated**: 2025-11-25
 - **GitHub**: https://github.com/inab/trimal
 - **Stars**: N/A

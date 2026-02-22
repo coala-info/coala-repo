@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'plannotate'. I
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/plannotate/overview
-- **Total Downloads**: 109.4K
+- **Total Downloads**: 109.5K
 - **Last updated**: 2025-06-12
 - **GitHub**: https://github.com/barricklab/pLannotate
 - **Stars**: N/A

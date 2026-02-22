@@ -12,7 +12,7 @@ The provided text is a container build error log and does not contain help docum
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/rrparser/overview
-- **Total Downloads**: 14.7K
+- **Total Downloads**: 14.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/brsynth/RRParser
 - **Stars**: N/A

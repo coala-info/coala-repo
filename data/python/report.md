@@ -15,7 +15,7 @@ Python is an interpreted, interactive, object-oriented programming language.
 - **Total Downloads**: 1.4M
 - **Last updated**: 2025-12-19
 - **GitHub**: https://github.com/vinta/awesome-python
-- **Stars**: N/A
+- **Stars**: 284066
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

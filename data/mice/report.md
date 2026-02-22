@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'mice'. It cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mice/overview
-- **Total Downloads**: 383
+- **Total Downloads**: 385
 - **Last updated**: 2025-12-01
 - **GitHub**: https://github.com/gi-bielefeld/mice
 - **Stars**: N/A

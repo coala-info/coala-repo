@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool 'propy3'; it is
 - **Total Downloads**: 6.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/MartinThoma/propy3
-- **Stars**: N/A
+- **Stars**: 49
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-encode not found in Singularity image. The image may 
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-encode/overview
-- **Total Downloads**: 898.3K
+- **Total Downloads**: 898.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

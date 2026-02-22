@@ -1,6 +1,6 @@
 ---
 name: abra2
-description: "Could not get help from Singularity for: abra2"
+description: ABRA2 is a localized assembly-based realigner that improves the accuracy of sequence alignments, particularly around insertions and deletions (indels).
 homepage: https://github.com/mozack/abra2
 ---
 
@@ -8,20 +8,19 @@ homepage: https://github.com/mozack/abra2
 
 ## Overview
 
-ABRA2 is a localized assembly-based realigner for next-generation sequencing data. It functions by identifying regions potentially containing structural variation or indels, performing a de novo assembly of reads in those regions, and then realigning the original reads to the resulting contigs. This process significantly improves the accuracy of indel detection compared to standard mapping alone. It supports both DNA and RNA-seq data, scaling effectively from targeted panels to whole human genomes.
+ABRA2 is a localized assembly-based realigner that improves the accuracy of sequence alignments, particularly around insertions and deletions (indels). It functions by re-assembling reads in specific genomic regions to find the most parsimonious alignment, which often corrects errors made by general-purpose aligners like BWA or STAR. This skill provides the necessary command-line patterns and operational requirements to execute ABRA2 for DNA and RNA workflows.
 
-## Installation and Requirements
+## Operational Requirements
 
-Install ABRA2 via Bioconda:
-```bash
-conda install bioconda::abra2
-```
-Running ABRA2 requires Java 8. Ensure the Java heap size is appropriately configured using the `-Xmx` flag based on the size of your dataset.
+*   **Java Version**: Requires Java 8.
+*   **Input Format**: Input BAM files must be coordinate-sorted and indexed.
+*   **Memory**: High memory allocation is recommended (e.g., `-Xmx16G` or higher for human genomes).
+*   **Temporary Space**: The `--tmpdir` must have sufficient space, typically at least equal to the size of the input BAM files.
 
-## Core Workflows
+## Common CLI Patterns
 
-### DNA Realignment
-Use ABRA2 to realign DNA reads, typically from BWA-aligned BAM files. For somatic analysis, provide both normal and tumor BAMs simultaneously to ensure consistent realignment across samples.
+### DNA Realignment (Tumor/Normal Pair)
+For DNA, ABRA2 can process multiple BAMs simultaneously, which is ideal for maintaining consistency across tumor and normal samples.
 
 ```bash
 java -Xmx16G -jar abra2.jar \
@@ -30,11 +29,11 @@ java -Xmx16G -jar abra2.jar \
   --ref reference.fa \
   --threads 8 \
   --targets targets.bed \
-  --tmpdir ./temp
+  --tmpdir /path/to/large/tmp
 ```
 
 ### RNA Realignment
-For RNA-seq, ABRA2 utilizes junction information to assist in assembly. It is optimized for output from the STAR aligner.
+ABRA2 utilizes junction information to assist in assembly. It is optimized for STAR output.
 
 ```bash
 java -Xmx16G -jar abra2.jar \
@@ -42,30 +41,23 @@ java -Xmx16G -jar abra2.jar \
   --out star.abra.bam \
   --ref reference.fa \
   --junctions bam \
-  --gtf annotation.gtf \
+  --gtf annotations.gtf \
   --threads 8 \
   --dist 500000 \
   --sua \
-  --tmpdir ./temp
+  --tmpdir /path/to/large/tmp
 ```
 
-## Critical Parameters and Best Practices
+## Expert Tips and Best Practices
 
-### Input Preparation
-- **Sorting**: Input BAM files must be coordinate-sorted.
-- **Indexing**: Input BAM files must be indexed (`.bai` files present).
-- **Reference**: The reference FASTA must match the one used for initial alignment.
-
-### Resource Management
-- **Temporary Storage**: The `--tmpdir` directory requires significant disk space, often equal to or greater than the size of the input BAM files. Ensure the path points to a high-capacity volume.
-- **Memory**: Allocate sufficient RAM via Java's `-Xmx` parameter. 16GB is a standard starting point for human samples, but whole-genome runs may require more.
-
-### Optimization Tips
-- **Targeted Regions**: Use the `--targets` argument with a BED file to restrict realignment to specific regions (e.g., exome targets). If omitted, the entire genome is processed, which significantly increases runtime.
-- **Known Indels**: Provide known indels via `--in-vcf` to guide the realigner. This is particularly useful when you have high-confidence indels from DNA that you want to verify or use in RNA realignment.
-- **Splice Junctions**: In RNA mode, use `--junctions bam` to identify junctions on the fly, or provide a specific junction file (like STAR's `SJ.out.tab`). Combining this with `--gtf` provides the best results for transcriptomic data.
-- **Soft Clipping**: The `--sua` (Soft-clip Unmapped Anchor) flag is recommended for RNA-seq to help anchor reads that might otherwise remain unmapped near junctions.
+*   **Targeted Realignment**: While the `--targets` argument is optional, providing a BED file of specific regions (e.g., exome targets or known problematic loci) significantly improves processing speed.
+*   **Splice Junction Handling**: In RNA mode, using `--junctions bam` allows ABRA2 to identify junctions on the fly. For higher precision, you can provide a specific junction file (like STAR's `SJ.out.tab`).
+*   **Known Indels**: Use `--in-vcf` to provide known indels to the realigner. However, do **not** use large, non-specific datasets like dbSNP, as this can degrade performance and accuracy. Use sample-specific or high-confidence indel sets.
+*   **BWA Recommendation**: While ABRA2 is aligner-agnostic for DNA, using BWA for the initial alignment is the recommended upstream workflow.
+*   **Output Sorting**: ABRA2 produces coordinate-sorted BAM files by default, so additional sorting steps are usually unnecessary before downstream variant calling.
+*   **Single-end Unmapped Anchor (SUA)**: When processing RNA, the `--sua` flag is often beneficial for utilizing unmapped reads that may anchor to a localized assembly.
 
 ## Reference documentation
+
 - [ABRA2 GitHub Repository](./references/github_com_mozack_abra2.md)
-- [Bioconda ABRA2 Package](./references/anaconda_org_channels_bioconda_packages_abra2_overview.md)
+- [ABRA2 Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_abra2_overview.md)

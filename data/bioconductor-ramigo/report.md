@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Markus Schroeder, Daniel Gusenleitner, John Quackenbush, Aedin Culhane, Benjamin Haibe-Kains
 - **Maintainer**: Markus Schroeder &#x3c;&#x6d;&#x61;&#x72;&#x6b;&#x75;&#x73;&#x2e;&#x73;&#x63;&#x68;&#x72;&#x6f;&#x65;&#x64;&#x65;&#x72;&#x20;&#x61;&#x74;&#x20;&#x75;&#x63;&#x64;&#x63;&#x6f;&#x6e;&#x6e;&#x65;&#x63;&#x74;&#x2e;&#x69;&#x65;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ramigo/overview
+- **Total Downloads**: 17.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

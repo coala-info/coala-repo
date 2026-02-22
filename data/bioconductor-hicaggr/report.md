@@ -13,4 +13,8 @@ The package allows to import 1D genomics data, such as peaks from ATACSeq, ChIPS
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/CuvierLab/HicAggR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hicaggr/overview
+- **Total Downloads**: 374
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

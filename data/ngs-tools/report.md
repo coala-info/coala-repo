@@ -12,7 +12,7 @@ A collection of tools for Next-Generation Sequencing (NGS) data analysis. Note: 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ngs-tools/overview
-- **Total Downloads**: 121.9K
+- **Total Downloads**: 122.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Lioscro/ngs-tools
 - **Stars**: N/A

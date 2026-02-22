@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/intervene/overview
-- **Total Downloads**: 40.2K
+- **Total Downloads**: 40.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/asntech/intervene
 - **Stars**: N/A

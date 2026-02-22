@@ -12,7 +12,7 @@ Discrete Molecular Dynamics (DMD) simulation tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/godmd/overview
-- **Total Downloads**: 11.0K
+- **Total Downloads**: 11.1K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/mmb-irb/godmd
 - **Stars**: N/A

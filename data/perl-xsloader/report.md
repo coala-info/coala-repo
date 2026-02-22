@@ -12,7 +12,7 @@ The provided text does not contain help information for perl-xsloader. It is an 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xsloader/overview
-- **Total Downloads**: 614.8K
+- **Total Downloads**: 615.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

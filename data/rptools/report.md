@@ -12,7 +12,7 @@ The provided text does not contain help information for rptools; it appears to b
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/rptools/overview
-- **Total Downloads**: 68.5K
+- **Total Downloads**: 68.6K
 - **Last updated**: 2026-01-05
 - **GitHub**: https://github.com/RPTools/maptool
 - **Stars**: N/A

@@ -12,10 +12,10 @@ FAIL to generate CWL: art not found in Singularity image. The image may not prov
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/art/overview
-- **Total Downloads**: 108.3K
+- **Total Downloads**: 108.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jlevy/the-art-of-command-line
-- **Stars**: N/A
+- **Stars**: 159986
 ### Generation Failed
 
 FAIL to generate CWL: art not found in Singularity image. The image may not provide this executable.

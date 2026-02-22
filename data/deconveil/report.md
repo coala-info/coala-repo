@@ -12,7 +12,7 @@ Deconveil is a tool designed for detecting and removing contamination in viral g
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deconveil/overview
-- **Total Downloads**: 76
+- **Total Downloads**: 78
 - **Last updated**: 2026-02-09
 - **GitHub**: https://github.com/caravagnalab/DeConveil
 - **Stars**: N/A

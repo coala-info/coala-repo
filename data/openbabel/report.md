@@ -12,7 +12,7 @@ The provided text does not contain help information for openbabel; it contains e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/openbabel/overview
-- **Total Downloads**: 30.0K
+- **Total Downloads**: 30.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/openbabel/openbabel
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for parsing and normalizing MHC nomenclature.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mhcgnomes/overview
-- **Total Downloads**: 10.5K
+- **Total Downloads**: 10.6K
 - **Last updated**: 2026-02-16
 - **GitHub**: https://github.com/til-unc/mhcgnomes
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rastair/overview
-- **Total Downloads**: 1.0K
+- **Total Downloads**: 1.1K
 - **Last updated**: 2026-02-16
 - **GitHub**: N/A
 - **Stars**: N/A

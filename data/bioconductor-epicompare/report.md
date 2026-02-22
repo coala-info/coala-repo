@@ -13,4 +13,8 @@ The package outputs an HTML report consisting of three sections: (1. General met
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/neurogenomics/EpiCompare
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-epicompare/overview
+- **Total Downloads**: 4.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

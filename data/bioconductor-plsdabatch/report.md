@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/EvaYiwenWang/PLSDAbatch
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-plsdabatch/overview
+- **Total Downloads**: 352
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

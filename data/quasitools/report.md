@@ -12,10 +12,10 @@ A collection of tools for analyzing viral quasispecies. (Note: The provided text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/quasitools/overview
-- **Total Downloads**: 82.0K
+- **Total Downloads**: 82.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/phac-nml/quasitools
-- **Stars**: N/A
+- **Stars**: 27
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

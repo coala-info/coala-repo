@@ -15,7 +15,7 @@ A pytest plugin for distributed testing and loop-on-failing modes.
 - **Total Downloads**: 52.9K
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/pytest-dev/pytest-xdist
-- **Stars**: N/A
+- **Stars**: 1801
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

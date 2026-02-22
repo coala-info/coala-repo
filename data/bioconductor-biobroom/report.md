@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/StoreyLab/biobroom
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-biobroom/overview
+- **Total Downloads**: 22.1K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool, but rather sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/get_pangenes/overview
-- **Total Downloads**: 289
+- **Total Downloads**: 292
 - **Last updated**: 2025-10-07
 - **GitHub**: https://github.com/Ensembl/plant-scripts
 - **Stars**: N/A

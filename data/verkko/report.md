@@ -12,7 +12,7 @@ Verkko is a hybrid genome assembler designed for telomere-to-telomere assembly o
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/verkko/overview
-- **Total Downloads**: 21.8K
+- **Total Downloads**: 21.9K
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/marbl/verkko
 - **Stars**: N/A

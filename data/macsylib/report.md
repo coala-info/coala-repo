@@ -12,7 +12,7 @@ Macsylib (Note: The provided text contains only environment logs and error messa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/macsylib/overview
-- **Total Downloads**: 833
+- **Total Downloads**: 842
 - **Last updated**: 2025-12-17
 - **GitHub**: https://github.com/gem-pasteur/macsylib
 - **Stars**: N/A

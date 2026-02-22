@@ -12,7 +12,7 @@ Finds SNP sites from a multi-fasta alignment file.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snp-sites/overview
-- **Total Downloads**: 66.2K
+- **Total Downloads**: 66.3K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/sanger-pathogens/snp-sites
 - **Stars**: N/A

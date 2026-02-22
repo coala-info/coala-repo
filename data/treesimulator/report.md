@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/treesimulator/overview
-- **Total Downloads**: 3.6K
+- **Total Downloads**: 3.7K
 - **Last updated**: 2025-12-25
 - **GitHub**: https://github.com/evolbioinfo/treesimulator
 - **Stars**: N/A

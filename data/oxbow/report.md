@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/oxbow/overview
-- **Total Downloads**: 10.4K
+- **Total Downloads**: 10.5K
 - **Last updated**: 2025-12-10
 - **GitHub**: https://github.com/abdenlab/oxbow
 - **Stars**: N/A

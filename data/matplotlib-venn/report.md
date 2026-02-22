@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/matplotlib-venn/overview
-- **Total Downloads**: 295.4K
+- **Total Downloads**: 295.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/konstantint/matplotlib-venn
 - **Stars**: N/A

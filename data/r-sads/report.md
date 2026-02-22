@@ -4,7 +4,7 @@ Maximum likelihood tools to fit and compare models of species
     abundance distributions and of species rank-abundance distributions.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-sads
+- **Conda**: https://anaconda.org/channels/r/packages/r-sads/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/sads/index.html
 - **Home (project)**: http://piLaboratory.github.io/sads, https://github.com/piklprado/sads
 - **Package**: sads
@@ -12,4 +12,8 @@ Maximum likelihood tools to fit and compare models of species
 - **Author**: Paulo I. Prado [aut, cre], Murilo Dantas Miranda [aut], Andre Chalom [aut]
 - **Maintainer**: Paulo I. Prado <prado at ib.usp.br>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/piklprado/sads
+- **Stars**: N/A
 

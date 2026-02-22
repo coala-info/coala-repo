@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'probeit'. It c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/probeit/overview
-- **Total Downloads**: 15.7K
+- **Total Downloads**: 15.8K
 - **Last updated**: 2025-09-02
 - **GitHub**: https://github.com/steineggerlab/probeit
 - **Stars**: N/A

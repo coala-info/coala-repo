@@ -12,7 +12,7 @@ The provided text is a system error log indicating a failed container build (no 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trinity/overview
-- **Total Downloads**: 340.0K
+- **Total Downloads**: 340.1K
 - **Last updated**: 2025-09-18
 - **GitHub**: https://github.com/TrinityCore/TrinityCore
 - **Stars**: N/A

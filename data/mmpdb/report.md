@@ -12,7 +12,7 @@ Matched Molecular Pair Database (mmpdb). Note: The provided text contains system
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mmpdb/overview
-- **Total Downloads**: 331
+- **Total Downloads**: 334
 - **Last updated**: 2026-01-26
 - **GitHub**: https://github.com/rdkit/mmpdb
 - **Stars**: N/A

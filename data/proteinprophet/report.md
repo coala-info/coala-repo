@@ -15,7 +15,7 @@ ProteinProphet is a tool for protein inference, typically part of the Trans-Prot
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/lazychach/ProteinProphet
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

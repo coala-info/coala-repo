@@ -1,6 +1,6 @@
 ---
 name: abricate
-description: "Could not get help from Singularity for: abricate"
+description: ABRicate is a command-line tool designed for the rapid identification of acquired antibiotic resistance and virulence genes within DNA contigs.
 homepage: https://github.com/tseemann/abricate
 ---
 
@@ -8,44 +8,39 @@ homepage: https://github.com/tseemann/abricate
 
 ## Overview
 
-`abricate` is a specialized tool for the mass screening of DNA contigs to identify antimicrobial resistance and virulence factors. It works by performing nucleotide BLAST searches against curated databases. It is designed for speed and ease of use, allowing researchers to process multiple assemblies simultaneously and generate comparative summary matrices. Note that it only detects acquired genes and does not identify point mutations or chromosomal resistance markers.
+ABRicate is a command-line tool designed for the rapid identification of acquired antibiotic resistance and virulence genes within DNA contigs. It functions by screening assembly files (FASTA, Genbank, or EMBL) against a variety of integrated databases. This skill provides the necessary procedural knowledge to execute screenings, manage databases, and aggregate results into presence/absence matrices. Note that ABRicate detects acquired genes via DNA-to-DNA search and is not intended for detecting point mutations or analyzing raw FASTQ reads.
 
-## CLI Usage and Best Practices
+## Usage and CLI Patterns
 
-### Initial Setup and Verification
-Before running an analysis, verify that the environment and databases are correctly configured.
+### Database Management
+Before running an analysis, verify available databases and their synchronization status.
+- **List databases**: `abricate --list` (Shows sequences, type, and last update date).
+- **Check dependencies**: `abricate --check` (Ensures BLAST+ and any2fasta are functional).
+- **Update/Download**: `abricate-get_db --db [dbname] --force` (Forces a fresh download of the specified database).
 
-*   **Check dependencies**: Run `abricate --check` to ensure BLAST+ and required Perl modules are installed.
-*   **List available databases**: Use `abricate --list` to see which databases are installed, their sequence counts, and last update dates.
-*   **Update databases**: Use `abricate-get_db --db [dbname] --force` to download the latest versions of specific databases.
-
-### Running Screenings
-`abricate` accepts FASTA, Genbank, and EMBL files, including those compressed with gzip or bzip2.
-
-*   **Basic screening**: Run `abricate assembly.fasta` (defaults to the NCBI database).
-*   **Select a specific database**: Use the `--db` flag to target a specific resource (e.g., `abricate --db card assembly.fna`).
-*   **Process multiple files**: Use wildcards to screen an entire directory: `abricate *.fna > results.tab`.
-*   **Use a File of File Names (FOFN)**: For very large datasets, provide a text file containing paths to your assemblies: `abricate --fofn list_of_files.txt`.
+### Screening Contigs
+ABRicate accepts single files, multiple files, or a "File of File Names" (FOFN).
+- **Basic screening**: `abricate assembly.fasta > results.tab`
+- **Specify a database**: `abricate --db card assembly.fasta` (Default is `ncbi`).
+- **Batch processing**: `abricate *.fna > combined_results.tab`
+- **Using a FOFN**: `abricate --fofn list_of_files.txt`
 
 ### Generating Summaries
-One of the most powerful features is the ability to create a presence/absence matrix across multiple samples.
+To compare gene presence across multiple samples, use the summary mode.
+- **Create matrix**: `abricate --summary results.tab > summary.tab`
+- **Identity-based matrix**: `abricate --summary --identity results.tab` (Uses %IDENTITY instead of %COVERAGE in the matrix).
 
-*   **Create a summary matrix**: After running screenings on multiple files and saving to a single TSV, run `abricate --summary results.tab > summary.tab`.
-*   **Switch summary metrics**: By default, the summary shows `%COVERAGE`. Use the `--identity` flag to show `%IDENTITY` instead.
+## Expert Tips and Best Practices
 
-### Output Interpretation
-The output is a tab-separated file. Key columns to evaluate include:
-*   **%COVERAGE**: The proportion of the reference gene covered by your contig.
-*   **%IDENTITY**: The proportion of exact nucleotide matches.
-*   **GAPS**: Indicates potential pseudogenes or fragmented assemblies if gaps are present.
-*   **RESISTANCE**: The predicted antibiotic resistance phenotype.
-
-## Expert Tips
-*   **Contigs only**: Do not attempt to use raw FASTQ reads; `abricate` requires assembled contigs.
-*   **Acquired vs. Mutational**: Always remember that `abricate` will not find resistance caused by SNPs (e.g., gyrA mutations). Use tools like AMRFinderPlus or RGI if point mutations are required.
-*   **Database Selection**: Use `vfdb` or `ecoli_vf` for virulence factors, and `plasmidfinder` for identifying plasmid replicon types.
-*   **Quiet Mode**: Use `--quiet` to suppress status messages when piping output to other tools.
+- **Input Formats**: ABRicate uses `any2fasta` internally. You can provide gzipped (`.gz`) or bzipped (`.bz2`) files directly without manual decompression.
+- **Filtering Thresholds**: The default thresholds are 80% identity and 80% coverage. Adjust these for stricter or more relaxed searching:
+  - `abricate --minid 95 --mincov 95 assembly.fasta`
+- **Output Interpretation**:
+  - **GAPS**: If the GAPS column shows values (e.g., 1/4), the hit might be a pseudogene or contain a frameshift.
+  - **COVERAGE_MAP**: Use this visual representation in the TSV output to quickly identify if a gene is fragmented across contig boundaries.
+- **Performance**: Use the `--threads [N]` flag to speed up BLAST+ searches on multi-core systems.
+- **Suppression**: Use `--quiet` to suppress status messages to stderr, which is useful when piping output to other tools.
 
 ## Reference documentation
-- [ABRicate Main Documentation](./references/github_com_tseemann_abricate.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_abricate_overview.md)
+- [ABRicate GitHub Repository](./references/github_com_tseemann_abricate.md)
+- [Bioconda ABRicate Package](./references/anaconda_org_channels_bioconda_packages_abricate_overview.md)

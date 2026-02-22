@@ -12,7 +12,7 @@ Expectation-Maximization for Mixture Models. (Note: The provided help text conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mixem/overview
-- **Total Downloads**: 2.8K
+- **Total Downloads**: 2.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sseemayer/mixem
 - **Stars**: N/A

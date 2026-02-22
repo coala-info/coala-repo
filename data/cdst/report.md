@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cdst/overview
-- **Total Downloads**: 63
+- **Total Downloads**: 64
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/l1-mh/CDST
 - **Stars**: N/A

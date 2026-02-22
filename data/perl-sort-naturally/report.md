@@ -12,7 +12,7 @@ A utility to sort strings naturally (lexically, but with numeric parts sorted nu
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-sort-naturally/overview
-- **Total Downloads**: 196.3K
+- **Total Downloads**: 196.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

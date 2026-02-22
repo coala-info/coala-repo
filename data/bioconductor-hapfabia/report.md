@@ -11,6 +11,10 @@ The package supports VCF formats, is based on sparse matrix operations, and prov
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hapfabia/overview
+- **Total Downloads**: 44.2K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

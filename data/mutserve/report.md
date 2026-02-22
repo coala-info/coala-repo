@@ -12,7 +12,7 @@ A variant caller for mitochondrial DNA (Note: The provided text contains error l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mutserve/overview
-- **Total Downloads**: 319
+- **Total Downloads**: 321
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/seppinho/mutserve
 - **Stars**: N/A

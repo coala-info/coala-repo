@@ -12,7 +12,7 @@ Kraken 2 is a taxonomic classification system that assigns taxonomic labels to s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kraken2/overview
-- **Total Downloads**: 174.0K
+- **Total Downloads**: 174.2K
 - **Last updated**: 2025-11-25
 - **GitHub**: https://github.com/DerrickWood/kraken2
 - **Stars**: N/A

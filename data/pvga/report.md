@@ -12,7 +12,7 @@ Pangenome Variation Graph Analyzer (Note: The provided text is a container build
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pvga/overview
-- **Total Downloads**: 579
+- **Total Downloads**: 581
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/SoSongzhi/PVGA
 - **Stars**: N/A

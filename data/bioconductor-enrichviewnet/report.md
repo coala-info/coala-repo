@@ -13,4 +13,8 @@ the package enables the visualization of enrichment results, in a format corresp
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/adeschen/enrichViewNet
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-enrichviewnet/overview
+- **Total Downloads**: 1.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

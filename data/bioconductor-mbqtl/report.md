@@ -13,4 +13,8 @@ The package is compatible with dataframe, MRexperiment and text formats.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Mercedeh66/mbQTL
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mbqtl/overview
+- **Total Downloads**: 2.5K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

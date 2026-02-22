@@ -6,7 +6,7 @@ Color maps designed to improve graph readability for readers with
     converted to black-and-white for printing.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-viridislite
+- **Conda**: https://anaconda.org/channels/r/packages/r-viridislite/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/viridisLite/index.html
 - **Home (project)**: https://sjmgarnier.github.io/viridisLite/, https://github.com/sjmgarnier/viridisLite/
 - **Package**: viridisLite
@@ -14,4 +14,8 @@ Color maps designed to improve graph readability for readers with
 - **Author**: Simon Garnier [aut, cre], Noam Ross [ctb, cph], Bob Rudis [ctb, cph], Marco Sciaini [ctb, cph], Antônio Pedro Camargo [ctb, cph], Cédric Scherer [ctb, cph]
 - **Maintainer**: Simon Garnier <garnier at njit.edu>
 - **Skill**: generated
+- **Total Downloads**: 422.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/sjmgarnier/viridisLite
+- **Stars**: N/A
 

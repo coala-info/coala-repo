@@ -15,7 +15,7 @@ The provided text is a system error log (out of disk space during a container bu
 - **Total Downloads**: 15.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/broadinstitute/adapt
-- **Stars**: N/A
+- **Stars**: 35
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

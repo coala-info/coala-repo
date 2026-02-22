@@ -12,7 +12,7 @@ The provided text is a system error message from a container runtime (Apptainer/
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/gap/overview
-- **Total Downloads**: 319.6K
+- **Total Downloads**: 320.1K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/MacGapProject/MacGap1
 - **Stars**: N/A

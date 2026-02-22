@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime and does not contain 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/enzymm/overview
-- **Total Downloads**: 67
+- **Total Downloads**: 69
 - **Last updated**: 2026-01-23
 - **GitHub**: https://github.com/RayHackett/enzymm
 - **Stars**: N/A

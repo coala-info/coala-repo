@@ -12,7 +12,7 @@ A tool for processing FASTQ files (Note: Provided help text contains only contai
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ezfastq/overview
-- **Total Downloads**: 564
+- **Total Downloads**: 570
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/bioforensics/ezfastq
 - **Stars**: N/A

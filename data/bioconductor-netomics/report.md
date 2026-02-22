@@ -13,4 +13,8 @@ The package can be combined with timeOmics to incorporate time-course expression
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/abodein/netOmics
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-netomics/overview
+- **Total Downloads**: 7.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

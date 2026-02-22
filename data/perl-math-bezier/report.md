@@ -12,7 +12,7 @@ A Perl module for the solution of Bezier curves. Note: The provided help text in
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-math-bezier/overview
-- **Total Downloads**: 193.8K
+- **Total Downloads**: 193.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-Math-Bezier
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'maverick'. It 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/maverick/overview
-- **Total Downloads**: 389
+- **Total Downloads**: 390
 - **Last updated**: 2025-06-18
 - **GitHub**: https://github.com/bobverity/MavericK
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'clumppling'. I
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/clumppling/overview
-- **Total Downloads**: 873
+- **Total Downloads**: 888
 - **Last updated**: 2025-12-04
 - **GitHub**: https://github.com/PopGenClustering/Clumppling
 - **Stars**: N/A

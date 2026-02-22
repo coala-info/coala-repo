@@ -3,7 +3,7 @@
 R package acidgsea (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-acidgsea
+- **Conda**: https://anaconda.org/channels/r/packages/r-acidgsea/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/acidgsea/index.html
 - **Home (project)**: https://r.acidgenomics.com/packages/acidgsea/
 - **Package**: acidgsea
@@ -11,4 +11,8 @@ R package acidgsea (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

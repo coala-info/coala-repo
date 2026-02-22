@@ -13,4 +13,8 @@ The package can be used for inferring unobserved transcription factor (TF) prote
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ahonkela/tigre
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tigre/overview
+- **Total Downloads**: 48.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

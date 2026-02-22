@@ -12,7 +12,7 @@ Ultrafast consensus module for raw de novo DNA assembly of long uncorrected read
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/racon/overview
-- **Total Downloads**: 245.5K
+- **Total Downloads**: 245.6K
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/lbcb-sci/racon
 - **Stars**: N/A

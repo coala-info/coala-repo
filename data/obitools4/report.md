@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/obitools4/overview
-- **Total Downloads**: 565
+- **Total Downloads**: 571
 - **Last updated**: 2025-11-17
 - **GitHub**: N/A
 - **Stars**: N/A

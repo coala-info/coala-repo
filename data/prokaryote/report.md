@@ -15,7 +15,7 @@ Prokaryotic genome analysis tool (Note: The provided text is a container build l
 - **Total Downloads**: 10.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CellProfiler/prokaryote
-- **Stars**: N/A
+- **Stars**: 3
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

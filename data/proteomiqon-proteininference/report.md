@@ -15,7 +15,7 @@ A tool for protein inference, part of the ProteomIQon proteomics toolbox. Note: 
 - **Total Downloads**: 11.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CSBiology/ProteomIQon
-- **Stars**: N/A
+- **Stars**: 14
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

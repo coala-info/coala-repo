@@ -4,7 +4,7 @@ More comfortable interface to work with R data or source files
     in a key-value fashion.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fail
+- **Conda**: https://anaconda.org/channels/r/packages/r-fail/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fail/index.html
 - **Home (project)**: https://github.com/mllg/fail
 - **Package**: fail
@@ -12,4 +12,8 @@ More comfortable interface to work with R data or source files
 - **Author**: Michel Lang
 - **Maintainer**: Michel Lang <michellang at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 282
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/mllg/fail
+- **Stars**: N/A
 

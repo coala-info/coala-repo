@@ -12,7 +12,7 @@ Tinker molecular modeling software suite. (Note: The provided text appears to be
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tinker/overview
-- **Total Downloads**: 769
+- **Total Downloads**: 770
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/TinkerTools/tinker
 - **Stars**: N/A

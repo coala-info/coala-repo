@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/excludonfinder/overview
-- **Total Downloads**: 2.1K
+- **Total Downloads**: 2.2K
 - **Last updated**: 2025-11-03
 - **GitHub**: https://github.com/Alvarosmb/ExcludonFinder
 - **Stars**: N/A

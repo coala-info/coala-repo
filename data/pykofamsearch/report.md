@@ -12,7 +12,7 @@ A tool for searching KOfam (KEGG Ortholog clusters) using HMMER.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pykofamsearch/overview
-- **Total Downloads**: 844
+- **Total Downloads**: 850
 - **Last updated**: 2025-09-08
 - **GitHub**: https://github.com/jolespin/pykofamsearch
 - **Stars**: N/A

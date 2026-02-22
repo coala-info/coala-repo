@@ -12,7 +12,7 @@ G-MoVe (Gene Modeling using Various Evidence) is a tool for gene prediction and 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gmove/overview
-- **Total Downloads**: 684
+- **Total Downloads**: 690
 - **Last updated**: 2025-11-24
 - **GitHub**: https://github.com/institut-de-genomique/Gmove
 - **Stars**: N/A

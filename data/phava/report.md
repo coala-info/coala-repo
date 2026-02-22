@@ -12,7 +12,7 @@ Phage Annotation and Verification Assistant (Note: The provided text contained c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phava/overview
-- **Total Downloads**: 788
+- **Total Downloads**: 789
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/patrickwest/PhaVa
 - **Stars**: N/A

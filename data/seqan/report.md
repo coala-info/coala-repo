@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions for 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seqan/overview
-- **Total Downloads**: 35.5K
+- **Total Downloads**: 35.6K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/seqan/seqan
 - **Stars**: N/A

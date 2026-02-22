@@ -12,7 +12,7 @@ eXpress is a software tool for quantifying the abundance of sets of sequences (e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/express/overview
-- **Total Downloads**: 44.2K
+- **Total Downloads**: 44.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/expressjs/express
 - **Stars**: N/A

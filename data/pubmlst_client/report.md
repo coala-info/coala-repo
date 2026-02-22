@@ -15,7 +15,7 @@ A client for interacting with the PubMLST database. (Note: The provided help tex
 - **Total Downloads**: 5.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Public-Health-Bioinformatics/pubmlst_client
-- **Stars**: N/A
+- **Stars**: 10
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

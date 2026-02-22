@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/resistify/overview
-- **Total Downloads**: 69.4K
+- **Total Downloads**: 69.5K
 - **Last updated**: 2025-06-27
 - **GitHub**: https://github.com/swiftseal/resistify
 - **Stars**: N/A

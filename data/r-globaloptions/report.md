@@ -4,7 +4,7 @@ It provides more configurations on the option values such as validation
     and filtering on the values, making options invisible or private.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-globaloptions
+- **Conda**: https://anaconda.org/channels/r/packages/r-globaloptions/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/GlobalOptions/index.html
 - **Home (project)**: https://github.com/jokergoo/GlobalOptions
 - **Package**: GlobalOptions
@@ -12,4 +12,8 @@ It provides more configurations on the option values such as validation
 - **Author**: Zuguang Gu [aut, cre]
 - **Maintainer**: Zuguang Gu <z.gu at dkfz.de>
 - **Skill**: generated
+- **Total Downloads**: 2.1K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jokergoo/GlobalOptions
+- **Stars**: N/A
 

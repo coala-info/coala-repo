@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It consists of
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-constant/overview
-- **Total Downloads**: 555.3K
+- **Total Downloads**: 555.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zszszszsz/.config
 - **Stars**: N/A

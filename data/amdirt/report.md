@@ -15,7 +15,7 @@ Autofills library and/or sample table(s) using ENA API and accession numbers
 - **Total Downloads**: 11.9K
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/SPAAM-community/AMDirT
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 Usage: amdirt autofill [OPTIONS] [ACCESSION]...

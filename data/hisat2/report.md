@@ -12,7 +12,7 @@ HISAT2 is a fast and sensitive alignment program for mapping next-generation seq
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hisat2/overview
-- **Total Downloads**: 371.1K
+- **Total Downloads**: 371.3K
 - **Last updated**: 2026-01-27
 - **GitHub**: https://github.com/DaehwanKimLab/hisat2
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for trimmomatic; it is a sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trimmomatic/overview
-- **Total Downloads**: 371.5K
+- **Total Downloads**: 371.8K
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/usadellab/Trimmomatic
 - **Stars**: N/A

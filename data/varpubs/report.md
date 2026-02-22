@@ -12,7 +12,7 @@ A tool for variant publication and reporting (Note: The provided text contains c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/varpubs/overview
-- **Total Downloads**: 545
+- **Total Downloads**: 555
 - **Last updated**: 2026-01-20
 - **GitHub**: https://github.com/koesterlab/varpubs
 - **Stars**: N/A

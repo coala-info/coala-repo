@@ -12,7 +12,7 @@ Genepop is a population genetics software package. (Note: The provided help text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genepop/overview
-- **Total Downloads**: 64.5K
+- **Total Downloads**: 64.7K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/cran/genepop
 - **Stars**: N/A

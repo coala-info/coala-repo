@@ -3,7 +3,7 @@
 Transformer is a Deep Neural Network Architecture based i.a. on the Attention mechanism (Vaswani et al.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-transformer
+- **Conda**: https://anaconda.org/channels/r/packages/r-transformer/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/transformer/index.html
 - **Home (project)**: https://github.com/steinbaugh/transformer
 - **Package**: transformer
@@ -11,4 +11,8 @@ Transformer is a Deep Neural Network Architecture based i.a. on the Attention me
 - **Author**: Bastiaan Quast [aut, cre]
 - **Maintainer**: Bastiaan Quast <bquast at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/steinbaugh/transformer
+- **Stars**: N/A
 

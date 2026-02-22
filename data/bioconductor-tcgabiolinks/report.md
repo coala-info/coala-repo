@@ -13,4 +13,8 @@ the package provides multiple methods for analysis (e.g., differential expressio
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BioinformaticsFMRP/TCGAbiolinks
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tcgabiolinks/overview
+- **Total Downloads**: 41.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

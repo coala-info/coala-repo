@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/yleaf-pipelines/overview
-- **Total Downloads**: 157
+- **Total Downloads**: 158
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/trianglegrrl/Yleaf-pipelines
 - **Stars**: N/A

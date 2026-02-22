@@ -12,10 +12,10 @@ A de novo, parallel, paired-end sequence assembler
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/abyss/overview
-- **Total Downloads**: 665.7K
+- **Total Downloads**: 665.8K
 - **Last updated**: 2025-09-18
 - **GitHub**: https://github.com/bcgsc/abyss
-- **Stars**: N/A
+- **Stars**: 327
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

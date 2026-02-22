@@ -12,7 +12,7 @@ Could not get help from Singularity for: pgap2
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pgap2/overview
-- **Total Downloads**: 755
+- **Total Downloads**: 761
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/bucongfan/PGAP2
 - **Stars**: N/A

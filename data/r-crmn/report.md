@@ -5,7 +5,7 @@ Implements the Cross-contribution Compensating Multiple
     al.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-crmn
+- **Conda**: https://anaconda.org/channels/r/packages/r-crmn/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/crmn/index.html
 - **Home (project)**: https://github.com/hredestig/crmn
 - **Package**: crmn
@@ -13,4 +13,8 @@ Implements the Cross-contribution Compensating Multiple
 - **Author**: Henning Redestig
 - **Maintainer**: Henning Redestig <henning.red at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/hredestig/crmn
+- **Stars**: N/A
 

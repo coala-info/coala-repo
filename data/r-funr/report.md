@@ -4,7 +4,7 @@ A small utility which wraps Rscript and provides access to all R
     functions from the shell.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-funr
+- **Conda**: https://anaconda.org/channels/r/packages/r-funr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/funr/index.html
 - **Home (project)**: https://github.com/sahilseth/funr
 - **Package**: funr
@@ -12,4 +12,8 @@ A small utility which wraps Rscript and provides access to all R
 - **Author**: Sahil Seth [aut, cre]
 - **Maintainer**: Sahil Seth <me at sahilseth.com>
 - **Skill**: generated
+- **Total Downloads**: 374
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/sahilseth/funr
+- **Stars**: N/A
 

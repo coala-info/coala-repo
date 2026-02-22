@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Total Downloads**: 105.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/alimanfoo/pysamstats
-- **Stars**: N/A
+- **Stars**: 195
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

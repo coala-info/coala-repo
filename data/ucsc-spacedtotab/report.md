@@ -12,7 +12,7 @@ A tool to convert space-separated files to tab-separated format.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-spacedtotab/overview
-- **Total Downloads**: 34.1K
+- **Total Downloads**: 34.2K
 - **Last updated**: 2025-06-29
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

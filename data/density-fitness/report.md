@@ -12,7 +12,7 @@ The provided text does not contain help documentation for the tool. It contains 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/density-fitness/overview
-- **Total Downloads**: 512
+- **Total Downloads**: 518
 - **Last updated**: 2025-12-21
 - **GitHub**: https://github.com/PDB-REDO/density-fitness
 - **Stars**: N/A

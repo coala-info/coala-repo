@@ -12,7 +12,7 @@ The provided text is a container execution error log and does not contain help i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tcdemux/overview
-- **Total Downloads**: 10.6K
+- **Total Downloads**: 10.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/TomHarrop/tcdemux
 - **Stars**: N/A

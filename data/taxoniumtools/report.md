@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions. It 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/taxoniumtools/overview
-- **Total Downloads**: 135
+- **Total Downloads**: 136
 - **Last updated**: 2025-11-21
 - **GitHub**: https://github.com/theosanderson/taxonium
 - **Stars**: N/A

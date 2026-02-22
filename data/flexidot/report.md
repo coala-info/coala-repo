@@ -12,7 +12,7 @@ FlexiDot: Flexible dotplot generation tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/flexidot/overview
-- **Total Downloads**: 210
+- **Total Downloads**: 213
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/flexidot-bio/flexidot
 - **Stars**: N/A

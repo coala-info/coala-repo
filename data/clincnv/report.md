@@ -12,7 +12,7 @@ The provided text contains system error logs related to a container build failur
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/clincnv/overview
-- **Total Downloads**: 335
+- **Total Downloads**: 338
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/imgag/ClinCNV
 - **Stars**: N/A

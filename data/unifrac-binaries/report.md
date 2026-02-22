@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unifrac-binaries/overview
-- **Total Downloads**: 299.6K
+- **Total Downloads**: 299.7K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/biocore/unifrac-binaries
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bigmag/overview
-- **Total Downloads**: 40
+- **Total Downloads**: 41
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/jeffe107/BIgMAG
 - **Stars**: N/A

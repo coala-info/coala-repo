@@ -12,7 +12,7 @@ The provided text does not contain help information for foldseek. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/foldseek/overview
-- **Total Downloads**: 375.8K
+- **Total Downloads**: 376.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/steineggerlab/foldseek
 - **Stars**: N/A

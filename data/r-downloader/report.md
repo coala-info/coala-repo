@@ -8,7 +8,7 @@ Provides a wrapper for the download.file function,
     it is much easier to install.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-downloader
+- **Conda**: https://anaconda.org/channels/r/packages/r-downloader/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/downloader/index.html
 - **Home (project)**: https://github.com/wch/downloader
 - **Package**: downloader
@@ -16,4 +16,8 @@ Provides a wrapper for the download.file function,
 - **Author**: Winston Chang [aut, cre]
 - **Maintainer**: Winston Chang <winston at stdout.org>
 - **Skill**: generated
+- **Total Downloads**: 7.2K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/wch/downloader
+- **Stars**: N/A
 

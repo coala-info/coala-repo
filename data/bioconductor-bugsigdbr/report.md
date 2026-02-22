@@ -13,4 +13,8 @@ the package is to facilitate import of BugSigDB data into R/Bioconductor, provid
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/bugsigdbr
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-bugsigdbr/overview
+- **Total Downloads**: 7.6K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ NCBI Foreign Contamination Screen (FCS) - Genome Cross-species (GX)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-fcs-gx/overview
-- **Total Downloads**: 18.1K
+- **Total Downloads**: 18.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ncbi/fcs
 - **Stars**: N/A

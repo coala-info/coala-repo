@@ -12,7 +12,7 @@ The provided text is a container runtime error log and does not contain the help
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snippy/overview
-- **Total Downloads**: 137.7K
+- **Total Downloads**: 137.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tseemann/snippy
 - **Stars**: N/A

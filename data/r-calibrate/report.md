@@ -5,7 +5,7 @@ Package for drawing calibrated scales with tick marks on (non-orthogonal)
 	     for multivariate analysis such as principal coordinate analysis.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-calibrate
+- **Conda**: https://anaconda.org/channels/r/packages/r-calibrate/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/calibrate/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=calibrate
 - **Package**: calibrate
@@ -13,4 +13,8 @@ Package for drawing calibrated scales with tick marks on (non-orthogonal)
 - **Author**: Jan Graffelman
 - **Maintainer**: Jan Graffelman <jan.graffelman at upc.edu>
 - **Skill**: generated
+- **Total Downloads**: 682
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

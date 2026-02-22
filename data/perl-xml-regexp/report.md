@@ -12,7 +12,7 @@ A Perl module/tool providing regular expressions for XML tokens. (Note: The prov
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-regexp/overview
-- **Total Downloads**: 305.2K
+- **Total Downloads**: 305.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zszszszsz/.config
 - **Stars**: N/A

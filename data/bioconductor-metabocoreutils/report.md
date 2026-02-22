@@ -13,4 +13,8 @@ The package provides also a set of adduct definitions and information on some co
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/MetaboCoreUtils
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-metabocoreutils/overview
+- **Total Downloads**: 12.3K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

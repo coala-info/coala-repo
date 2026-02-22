@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it contains co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-pslcheck/overview
-- **Total Downloads**: 35.2K
+- **Total Downloads**: 35.3K
 - **Last updated**: 2025-06-25
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

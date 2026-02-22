@@ -12,7 +12,7 @@ GFF/GTF utility providing format conversions, filtering, FASTA sequence extracti
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gffread/overview
-- **Total Downloads**: 157.8K
+- **Total Downloads**: 158.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gpertea/gffread
 - **Stars**: N/A

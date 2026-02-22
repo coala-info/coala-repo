@@ -13,4 +13,8 @@ The package DAPAR is a Bioconductor distributed R package which provides all the
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/edyp-lab/DAPAR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dapar/overview
+- **Total Downloads**: 24.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

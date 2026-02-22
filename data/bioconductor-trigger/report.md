@@ -11,6 +11,10 @@ The package includes functions to: (1) construct global linkage maps between gen
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-trigger/overview
+- **Total Downloads**: 45.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

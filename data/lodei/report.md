@@ -12,8 +12,8 @@ LODEI (LOng-read DE novo Isoform discovery) is a tool for identifying isoforms f
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lodei/overview
-- **Total Downloads**: 606
-- **Last updated**: 2025-12-13
+- **Total Downloads**: 622
+- **Last updated**: 2026-02-22
 - **GitHub**: https://github.com/rna-editing1/lodei
 - **Stars**: N/A
 ### Original Help Text

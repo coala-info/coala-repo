@@ -12,7 +12,7 @@
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/annonars/overview
-- **Total Downloads**: 78.2K
+- **Total Downloads**: 78.3K
 - **Last updated**: 2025-10-28
 - **GitHub**: https://github.com/bihealth/annona-rs
 - **Stars**: N/A

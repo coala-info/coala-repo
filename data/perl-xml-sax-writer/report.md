@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-xml-sax-writer/overview
-- **Total Downloads**: 183.7K
+- **Total Downloads**: 183.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/perigrin/xml-sax-writer
 - **Stars**: N/A

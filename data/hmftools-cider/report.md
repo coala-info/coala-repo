@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hmftools-cider/overview
-- **Total Downloads**: 291
+- **Total Downloads**: 294
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/hartwigmedical/hmftools
 - **Stars**: N/A

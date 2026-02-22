@@ -12,8 +12,8 @@ EasyPQP is a tool for library generation and peak group scoring in mass spectrom
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/easypqp/overview
-- **Total Downloads**: 77.4K
-- **Last updated**: 2026-01-27
+- **Total Downloads**: 77.5K
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/grosenberger/easypqp
 - **Stars**: N/A
 ### Original Help Text

@@ -12,7 +12,7 @@ Snakemake executor plugin for LSF. (Note: The provided text is a container execu
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-executor-plugin-lsf/overview
-- **Total Downloads**: 6.1K
+- **Total Downloads**: 6.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/befh/snakemake-executor-plugin-lsf
 - **Stars**: N/A

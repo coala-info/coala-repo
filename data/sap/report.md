@@ -12,7 +12,7 @@ Statistical Assignment Package (SAP) for phylogenetic assignment of DNA sequence
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sap/overview
-- **Total Downloads**: 71.3K
+- **Total Downloads**: 71.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mathbio-nimr-mrc-ac-uk/SAP
 - **Stars**: N/A

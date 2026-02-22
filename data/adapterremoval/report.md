@@ -15,7 +15,7 @@ AdapterRemoval searches for and removes remnant adapter sequences from High-Thro
 - **Total Downloads**: 190.2K
 - **Last updated**: 2025-09-08
 - **GitHub**: https://github.com/MikkelSchubert/adapterremoval
-- **Stars**: N/A
+- **Stars**: 114
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

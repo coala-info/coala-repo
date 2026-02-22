@@ -12,10 +12,10 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/psauron/overview
-- **Total Downloads**: 914
+- **Total Downloads**: 918
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/salzberg-lab/PSAURON
-- **Stars**: N/A
+- **Stars**: 54
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

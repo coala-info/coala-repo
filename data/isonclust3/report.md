@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isonclust3/overview
-- **Total Downloads**: 390
+- **Total Downloads**: 394
 - **Last updated**: 2025-12-15
 - **GitHub**: https://github.com/aljpetri/isONclust3
 - **Stars**: N/A

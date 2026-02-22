@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime and does not contain 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/olivar/overview
-- **Total Downloads**: 17.4K
+- **Total Downloads**: 17.5K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/treangenlab/Olivar
 - **Stars**: N/A

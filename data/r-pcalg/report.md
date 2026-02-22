@@ -10,7 +10,7 @@ Functions for causal structure
   variables). For causal inference the IDA algorithm, the Gen...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-pcalg
+- **Conda**: https://anaconda.org/channels/r/packages/r-pcalg/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/pcalg/index.html
 - **Home (project)**: http://pcalg.r-forge.r-project.org/
 - **Package**: pcalg
@@ -18,4 +18,8 @@ Functions for causal structure
 - **Author**: Markus Kalisch [aut, cre], Alain Hauser [aut], Martin Maechler [aut], Diego Colombo [ctb], Doris Entner [ctb], Patrik Hoyer [ctb], Antti Hyttinen [ctb], Jonas Peters [ctb], Nicoletta Andri [ctb], Emilija Perkovic [ctb], Preetam Nandy [ctb], Philipp Ruetimann [ctb], Daniel Stekhoven [ctb], Manuel Schuerch [ctb], Marco Eigenmann [ctb], Leonard Henckel [ctb], Joris Mooij [ctb]
 - **Maintainer**: Markus Kalisch <kalisch at stat.math.ethz.ch>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

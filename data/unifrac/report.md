@@ -12,7 +12,7 @@ The provided text does not contain help information for the 'unifrac' tool; it i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unifrac/overview
-- **Total Downloads**: 587.4K
+- **Total Downloads**: 587.5K
 - **Last updated**: 2025-10-12
 - **GitHub**: https://github.com/biocore/unifrac
 - **Stars**: N/A

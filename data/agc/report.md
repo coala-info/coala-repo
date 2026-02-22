@@ -15,7 +15,7 @@ AGC (Assembled Genomes Compressor) - Create a compressed archive from assembled 
 - **Total Downloads**: 14.5K
 - **Last updated**: 2025-07-30
 - **GitHub**: https://github.com/refresh-bio/agc
-- **Stars**: N/A
+- **Stars**: 178
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

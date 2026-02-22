@@ -12,7 +12,7 @@ A Python library for parsing OBO (Open Biomedical Ontologies) files into Network
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/obonet/overview
-- **Total Downloads**: 14.7K
+- **Total Downloads**: 14.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dhimmel/obonet
 - **Stars**: N/A

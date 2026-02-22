@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for bi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bio-unicorn/overview
-- **Total Downloads**: 454
+- **Total Downloads**: 459
 - **Last updated**: 2025-07-21
 - **GitHub**: https://github.com/GeoGenetics/unicorn
 - **Stars**: N/A

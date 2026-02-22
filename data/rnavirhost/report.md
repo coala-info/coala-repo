@@ -12,7 +12,7 @@ RNA-VirHost (Note: The provided text contains container build logs and error mes
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rnavirhost/overview
-- **Total Downloads**: 324
+- **Total Downloads**: 325
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/GreyGuoweiChen/VirHost
 - **Stars**: N/A

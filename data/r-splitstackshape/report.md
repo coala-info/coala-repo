@@ -9,7 +9,7 @@ Online data collection tools like Google Forms often export
     reshape2 do not easily handle.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-splitstackshape
+- **Conda**: https://anaconda.org/channels/r/packages/r-splitstackshape/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/splitstackshape/index.html
 - **Home (project)**: http://github.com/mrdwab/splitstackshape
 - **Package**: splitstackshape
@@ -17,4 +17,8 @@ Online data collection tools like Google Forms often export
 - **Author**: Ananda Mahto
 - **Maintainer**: Ananda Mahto <mrdwab at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 493
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/mrdwab/splitstackshape
+- **Stars**: N/A
 

@@ -15,7 +15,7 @@ A tool for alignment-based quantification in proteomics. Note: The provided help
 - **Total Downloads**: 1.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CSBiology/ProteomIQon
-- **Stars**: N/A
+- **Stars**: 14
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

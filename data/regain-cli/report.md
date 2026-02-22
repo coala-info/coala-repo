@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/regain-cli/overview
-- **Total Downloads**: 170
+- **Total Downloads**: 172
 - **Last updated**: 2025-10-08
 - **GitHub**: https://github.com/ERBringHorvath/regain_CLI
 - **Stars**: N/A

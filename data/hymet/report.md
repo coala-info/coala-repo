@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'hymet'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hymet/overview
-- **Total Downloads**: 224
+- **Total Downloads**: 229
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/inesbmartins02/HYMET
 - **Stars**: N/A

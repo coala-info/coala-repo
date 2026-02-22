@@ -12,10 +12,10 @@ Altamisa is a Python library and command-line tool for parsing, validating, and 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/altamisa/overview
-- **Total Downloads**: 55.3K
+- **Total Downloads**: 55.4K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/bihealth/altamisa
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

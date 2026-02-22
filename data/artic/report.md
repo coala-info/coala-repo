@@ -15,7 +15,7 @@ Could not get help from Singularity for: artic
 - **Total Downloads**: 40.6K
 - **Last updated**: 2025-10-17
 - **GitHub**: https://github.com/artic-network/fieldbioinformatics
-- **Stars**: N/A
+- **Stars**: 129
 ### Generation Failed
 
 Could not get help from Singularity for: artic

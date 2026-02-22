@@ -11,6 +11,10 @@ The package ORCME is based on delta-clustering method (Cheng and Church, 2000) a
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-isogenegui/overview
+- **Total Downloads**: 23.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

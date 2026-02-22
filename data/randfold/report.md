@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/randfold/overview
-- **Total Downloads**: 17.4K
+- **Total Downloads**: 17.5K
 - **Last updated**: 2025-09-26
 - **GitHub**: https://github.com/erbon7/randfold
 - **Stars**: N/A

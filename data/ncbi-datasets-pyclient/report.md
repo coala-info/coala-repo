@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Singularity/Apptaine
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-datasets-pyclient/overview
-- **Total Downloads**: 10.9K
+- **Total Downloads**: 11.0K
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/ncbi/datasets
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package includes Analysis of Compositions of Microbiomes with Bias Correctio
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/FrederickHuangLin/ANCOMBC
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ancombc/overview
+- **Total Downloads**: 178.7K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

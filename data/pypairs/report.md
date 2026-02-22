@@ -15,7 +15,7 @@ A python implementation of the Scialdone et al. (2015) pairs algorithm for singl
 - **Total Downloads**: 24.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/rfechtner/pypairs
-- **Stars**: N/A
+- **Stars**: 3
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

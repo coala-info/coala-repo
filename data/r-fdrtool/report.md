@@ -9,7 +9,7 @@ Estimates both tail area-based false
    for monotone regression (isotonic regression and antitonic regres...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fdrtool
+- **Conda**: https://anaconda.org/channels/r/packages/r-fdrtool/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fdrtool/index.html
 - **Home (project)**: http://strimmerlab.org/software/fdrtool/
 - **Package**: fdrtool
@@ -17,4 +17,8 @@ Estimates both tail area-based false
 - **Author**: Bernd Klaus [aut], Korbinian Strimmer [aut, cre]
 - **Maintainer**: Korbinian Strimmer <strimmerlab at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 969
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

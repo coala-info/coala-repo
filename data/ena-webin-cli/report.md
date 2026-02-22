@@ -12,7 +12,7 @@ The ENA Webin CLI is used to validate and submit data to the European Nucleotide
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ena-webin-cli/overview
-- **Total Downloads**: 146.1K
+- **Total Downloads**: 146.2K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/enasequence/webin-cli
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dnoise/overview
-- **Total Downloads**: 2.6K
+- **Total Downloads**: 2.7K
 - **Last updated**: 2025-10-21
 - **GitHub**: https://github.com/adriantich/DnoisE
 - **Stars**: N/A

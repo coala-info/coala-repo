@@ -12,7 +12,7 @@ Metabolishmm is a tool for searching and summarizing metabolic genes in genomes 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metabolishmm/overview
-- **Total Downloads**: 229
+- **Total Downloads**: 231
 - **Last updated**: 2025-08-01
 - **GitHub**: https://github.com/elizabethmcd/metabolisHMM
 - **Stars**: N/A

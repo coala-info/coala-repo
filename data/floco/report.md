@@ -12,7 +12,7 @@ The provided text contains system error logs related to container execution rath
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/floco/overview
-- **Total Downloads**: 51
+- **Total Downloads**: 55
 - **Last updated**: 2026-02-20
 - **GitHub**: https://github.com/hugocarmaga/floco
 - **Stars**: N/A

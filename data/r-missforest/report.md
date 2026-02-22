@@ -10,7 +10,7 @@ The function 'missForest' in this package is used to
     or elaborate...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-missforest
+- **Conda**: https://anaconda.org/channels/r/packages/r-missforest/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/missForest/index.html
 - **Home (project)**: https://www.r-project.org, https://github.com/stekhoven/missForest
 - **Package**: missForest
@@ -18,4 +18,8 @@ The function 'missForest' in this package is used to
 - **Author**: Daniel J. Stekhoven [aut, cre]
 - **Maintainer**: Daniel J. Stekhoven <stekhoven at nexus.ethz.ch>
 - **Skill**: generated
+- **Total Downloads**: 42
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/stekhoven/missForest
+- **Stars**: N/A
 

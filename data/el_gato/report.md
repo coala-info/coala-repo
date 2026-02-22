@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions; it 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/el_gato/overview
-- **Total Downloads**: 7.4K
+- **Total Downloads**: 7.5K
 - **Last updated**: 2025-06-16
 - **GitHub**: https://github.com/appliedbinf/el_gato
 - **Stars**: N/A

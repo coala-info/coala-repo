@@ -12,10 +12,10 @@ A tool for demultiplexing Oxford Nanopore reads (Note: The provided text contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/qcat/overview
-- **Total Downloads**: 15.9K
+- **Total Downloads**: 16.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nanoporetech/qcat
-- **Stars**: N/A
+- **Stars**: 80
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

@@ -15,7 +15,7 @@ FAIL to generate CWL: aniclustermap not found in Singularity image. The image ma
 - **Total Downloads**: 10.2K
 - **Last updated**: 2025-05-02
 - **GitHub**: https://github.com/moshi4/ANIclustermap
-- **Stars**: N/A
+- **Stars**: 91
 ### Generation Failed
 
 FAIL to generate CWL: aniclustermap not found in Singularity image. The image may not provide this executable.

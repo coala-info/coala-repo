@@ -12,7 +12,7 @@ EnzBERT: A tool for enzyme-related tasks using BERT models (Note: The provided t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/enzbert/overview
-- **Total Downloads**: 43
+- **Total Downloads**: 44
 - **Last updated**: 2025-10-29
 - **GitHub**: N/A
 - **Stars**: N/A

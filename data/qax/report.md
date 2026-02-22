@@ -15,7 +15,7 @@ The provided text appears to be a log of a failed container build/execution rath
 - **Total Downloads**: 21.8K
 - **Last updated**: 2026-01-21
 - **GitHub**: https://github.com/telatin/qax
-- **Stars**: N/A
+- **Stars**: 6
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

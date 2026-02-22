@@ -12,7 +12,7 @@ Functional Filtering of HMM-based Local Alignments (Note: The provided help text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fufihla/overview
-- **Total Downloads**: 179
+- **Total Downloads**: 190
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/jingqing-hu/FuFiHLA
 - **Stars**: N/A

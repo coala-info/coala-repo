@@ -12,7 +12,7 @@ The provided text does not contain help documentation for fastp; it contains sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastp/overview
-- **Total Downloads**: 610.4K
+- **Total Downloads**: 610.6K
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/OpenGene/fastp
 - **Stars**: N/A

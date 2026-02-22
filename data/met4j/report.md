@@ -12,7 +12,7 @@ Metabolic network analysis tool (Note: The provided text contains system error m
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/met4j/overview
-- **Total Downloads**: 99.9K
+- **Total Downloads**: 100.0K
 - **Last updated**: 2026-01-31
 - **GitHub**: N/A
 - **Stars**: N/A

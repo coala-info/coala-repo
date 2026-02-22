@@ -12,7 +12,7 @@ COBALT (COunt B-ALlele Target) is a tool used to determine read ratios and B-all
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hmftools-cobalt/overview
-- **Total Downloads**: 30.0K
+- **Total Downloads**: 30.1K
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/hartwigmedical/hmftools
 - **Stars**: N/A

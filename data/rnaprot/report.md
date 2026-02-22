@@ -15,7 +15,7 @@ RNAprot: Protein-RNA binding site prediction
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/BackofenLab/RNAProt
-- **Stars**: N/A
+- **Stars**: 11
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

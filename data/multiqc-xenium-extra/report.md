@@ -12,7 +12,7 @@ A tool for aggregating bioinformatics results, specifically with extras for Xeni
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/multiqc-xenium-extra/overview
-- **Total Downloads**: 85
+- **Total Downloads**: 87
 - **Last updated**: 2025-12-12
 - **GitHub**: https://github.com/MultiQC/xenium-extra
 - **Stars**: N/A

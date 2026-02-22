@@ -12,7 +12,7 @@ The provided text does not contain help information for mzmine; it contains erro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mzmine/overview
-- **Total Downloads**: 18.5K
+- **Total Downloads**: 18.6K
 - **Last updated**: 2025-08-18
 - **GitHub**: https://github.com/mzmine/mzmine
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/taranys/overview
-- **Total Downloads**: 447
+- **Total Downloads**: 449
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/BU-ISCIII/taranys
 - **Stars**: N/A

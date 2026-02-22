@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mmcif/overview
-- **Total Downloads**: 7.8K
+- **Total Downloads**: 7.9K
 - **Last updated**: 2025-12-03
 - **GitHub**: https://github.com/rcsb/py-mmcif
 - **Stars**: N/A

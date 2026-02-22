@@ -12,7 +12,7 @@ The provided text contains container runtime error messages rather than tool hel
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/enhancedsppider/overview
-- **Total Downloads**: 68
+- **Total Downloads**: 70
 - **Last updated**: 2025-12-11
 - **GitHub**: https://github.com/JohnnyChen1113/EnhancedSppIDer
 - **Stars**: N/A

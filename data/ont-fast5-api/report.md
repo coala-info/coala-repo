@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ont-fast5-api/overview
-- **Total Downloads**: 173.4K
+- **Total Downloads**: 173.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nanoporetech/ont_fast5_api
 - **Stars**: N/A

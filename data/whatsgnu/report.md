@@ -12,7 +12,7 @@ A tool for identifying orthologous genes using a BLAST-based approach against a 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/whatsgnu/overview
-- **Total Downloads**: 15.0K
+- **Total Downloads**: 15.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ahmedmagds/WhatsGNU
 - **Stars**: N/A

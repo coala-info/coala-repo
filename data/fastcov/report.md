@@ -12,7 +12,7 @@ A parallelized gcov wrapper for generating intermediate coverage formats (Note: 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastcov/overview
-- **Total Downloads**: 192
+- **Total Downloads**: 193
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RaverJay/fastcov
 - **Stars**: N/A

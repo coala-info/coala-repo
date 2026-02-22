@@ -11,6 +11,10 @@ The package offers a function to create DNA barcode sets capable of correcting i
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dnabarcodes/overview
+- **Total Downloads**: 47.5K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

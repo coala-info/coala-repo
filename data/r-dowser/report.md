@@ -9,7 +9,7 @@ Provides a set of functions for inferring, visualizing, and analyzing B cell phy
     Workflow examples available at documentation site (see URL).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-dowser
+- **Conda**: https://anaconda.org/channels/r/packages/r-dowser/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/dowser/index.html
 - **Home (project)**: https://dowser.readthedocs.io
 - **Package**: dowser
@@ -17,4 +17,8 @@ Provides a set of functions for inferring, visualizing, and analyzing B cell phy
 - **Author**: Kenneth Hoehn [aut, cre], Cole Jensen [aut], Jessie Fielding [aut], Hunter Melton [aut], Susanna Marquez [ctb], Jason Vander Heiden [ctb], Steven Kleinstein [aut, cph]
 - **Maintainer**: Kenneth Hoehn <kenneth.b.hoehn at dartmouth.edu>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

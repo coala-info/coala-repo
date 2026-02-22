@@ -12,7 +12,7 @@ The provided text does not contain help documentation or usage instructions; it 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/samplot/overview
-- **Total Downloads**: 67.5K
+- **Total Downloads**: 67.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ryanlayer/samplot
 - **Stars**: N/A

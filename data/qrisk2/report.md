@@ -15,7 +15,7 @@ The QRISK2 algorithm calculates the risk of developing cardiovascular disease (C
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/BlackPearSw/qrisk2-2014
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

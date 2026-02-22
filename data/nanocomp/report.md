@@ -12,7 +12,7 @@ The provided text is a system error log and does not contain help information or
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanocomp/overview
-- **Total Downloads**: 140.4K
+- **Total Downloads**: 140.5K
 - **Last updated**: 2025-12-02
 - **GitHub**: https://github.com/wdecoster/NanoComp
 - **Stars**: N/A

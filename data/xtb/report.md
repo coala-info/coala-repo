@@ -12,7 +12,7 @@ The provided text is a container engine (Apptainer/Singularity) error log and do
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/xtb/overview
-- **Total Downloads**: 282.2K
+- **Total Downloads**: 282.6K
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/grimme-lab/xtb
 - **Stars**: N/A

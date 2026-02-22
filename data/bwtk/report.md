@@ -12,7 +12,7 @@ A command-line toolkit that uses subcommands for processing. (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bwtk/overview
-- **Total Downloads**: 764
+- **Total Downloads**: 771
 - **Last updated**: 2025-11-16
 - **GitHub**: https://github.com/bjmt/bwtk
 - **Stars**: N/A

@@ -15,7 +15,7 @@ The provided text contains system logs and error messages related to a container
 - **Total Downloads**: 3.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ponnhide/pyCircos
-- **Stars**: N/A
+- **Stars**: 372
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

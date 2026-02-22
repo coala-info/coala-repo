@@ -3,7 +3,7 @@
 R package psminer (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-psminer
+- **Conda**: https://anaconda.org/channels/r/packages/r-psminer/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/psminer/index.html
 - **Home (project)**: https://github.com/grunwaldlab/psminer
 - **Package**: psminer
@@ -11,4 +11,8 @@ R package psminer (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/grunwaldlab/psminer
+- **Stars**: N/A
 

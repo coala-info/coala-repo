@@ -12,7 +12,7 @@ BioPerl is a community effort to produce Perl modules which are useful in biolog
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bioperl-core/overview
-- **Total Downloads**: 377.2K
+- **Total Downloads**: 377.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

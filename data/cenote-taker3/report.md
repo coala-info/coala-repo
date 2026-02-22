@@ -12,7 +12,7 @@ Cenote-Taker3: A tool for virus discovery and annotation (Note: The provided tex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cenote-taker3/overview
-- **Total Downloads**: 5.8K
+- **Total Downloads**: 5.9K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/mtisza1/Cenote-Taker3
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool, but appears to
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
-- **Total Downloads**: 286
+- **Total Downloads**: 287
 - **Last updated**: 2025-07-21
 - **GitHub**: https://github.com/IBCHgenomic/ensemlcov
 - **Stars**: N/A

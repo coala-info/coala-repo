@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/wilhelm-lab/koina
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-koinar/overview
+- **Total Downloads**: 509
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

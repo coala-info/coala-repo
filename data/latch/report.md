@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/latch/overview
-- **Total Downloads**: 6.3K
+- **Total Downloads**: 6.4K
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/latchbio/latch
 - **Stars**: N/A

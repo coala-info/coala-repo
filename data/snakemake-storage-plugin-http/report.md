@@ -12,7 +12,7 @@ A Snakemake storage plugin that allows for interacting with files over HTTP.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-storage-plugin-http/overview
-- **Total Downloads**: 45.0K
+- **Total Downloads**: 45.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/snakemake/snakemake-storage-plugin-http
 - **Stars**: N/A

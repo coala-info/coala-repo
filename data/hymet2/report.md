@@ -12,7 +12,7 @@ The provided text contains system error logs and does not include the tool's hel
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hymet2/overview
-- **Total Downloads**: 152
+- **Total Downloads**: 153
 - **Last updated**: 2025-06-19
 - **GitHub**: https://github.com/inesbmartins02/HYMET2
 - **Stars**: N/A

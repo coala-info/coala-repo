@@ -6,7 +6,7 @@ The goal of 'readr' is to provide a fast and friendly way to
     cleanly failing when data unexpectedly changes.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-readr
+- **Conda**: https://anaconda.org/channels/r/packages/r-readr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/readr/index.html
 - **Home (project)**: https://readr.tidyverse.org, https://github.com/tidyverse/readr
 - **Package**: readr
@@ -14,4 +14,8 @@ The goal of 'readr' is to provide a fast and friendly way to
 - **Author**: Hadley Wickham [aut], Jim Hester [aut], Romain Francois [ctb], Jennifer Bryan [aut, cre], Shelby Bearrows [ctb], Posit Software, PBC [cph, fnd], https://github.com/mandreyel/ [cph] (mio library), Jukka Jylänki [ctb, cph] (grisu3 implementation), Mikkel Jørgensen [ctb, cph] (grisu3 implementation)
 - **Maintainer**: Jennifer Bryan <jenny at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 380.0K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tidyverse/readr
+- **Stars**: N/A
 

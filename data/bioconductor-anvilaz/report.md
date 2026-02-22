@@ -13,4 +13,8 @@ The package provides a programmatic interface to AnVIL resources, including work
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/AnVILAz
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-anvilaz/overview
+- **Total Downloads**: 504
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

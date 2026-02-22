@@ -12,7 +12,7 @@ A tool for alternative promoter analysis (Note: The provided help text contains 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakealtpromoter/overview
-- **Total Downloads**: 52
+- **Total Downloads**: 53
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/YidanSunResearchLab/SnakeAltPromoter
 - **Stars**: N/A

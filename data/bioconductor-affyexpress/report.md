@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Xiwei Wu &#x3c;&#x78;&#x77;&#x75;&#x20;&#x61;&#x74;&#x20;&#x63;&#x6f;&#x68;&#x2e;&#x6f;&#x72;&#x67;&#x3e;, Xuejun Arthur Li &#x3c;&#x78;&#x75;&#x65;&#x6c;&#x69;&#x20;&#x61;&#x74;&#x20;&#x63;&#x6f;&#x68;&#x2e;&#x6f;&#x72;&#x67;&#x3e;
 - **Maintainer**: Xuejun Arthur Li &#x3c;&#x78;&#x75;&#x65;&#x6c;&#x69;&#x20;&#x61;&#x74;&#x20;&#x63;&#x6f;&#x68;&#x2e;&#x6f;&#x72;&#x67;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-affyexpress/overview
+- **Total Downloads**: 31.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

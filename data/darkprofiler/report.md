@@ -12,7 +12,7 @@ The provided text does not contain a description of the tool's functionality, as
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/darkprofiler/overview
-- **Total Downloads**: 58
+- **Total Downloads**: 60
 - **Last updated**: 2026-02-06
 - **GitHub**: N/A
 - **Stars**: N/A

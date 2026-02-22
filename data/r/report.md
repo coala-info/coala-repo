@@ -12,7 +12,7 @@ The provided text appears to be an execution log or error message from a contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/r/overview
-- **Total Downloads**: 551.6K
+- **Total Downloads**: 551.8K
 - **Last updated**: 2025-09-11
 - **GitHub**: https://github.com/alexdobin/STAR
 - **Stars**: N/A

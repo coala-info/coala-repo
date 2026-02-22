@@ -12,7 +12,7 @@ The provided text does not contain a description of the tool as it is an error l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyega3/overview
-- **Total Downloads**: 48.8K
+- **Total Downloads**: 48.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/EGA-archive/ega-download-client
 - **Stars**: N/A

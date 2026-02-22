@@ -12,7 +12,7 @@ T-Coffee is a multiple sequence alignment package. (Note: The provided help text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/t-coffee/overview
-- **Total Downloads**: 159.9K
+- **Total Downloads**: 160.1K
 - **Last updated**: 2025-10-02
 - **GitHub**: https://github.com/cbcrg/tcoffee
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Salmon is a tool for quantifying the expression of transcripts from RNA-seq data
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/salmon/overview
-- **Total Downloads**: 528.2K
+- **Total Downloads**: 528.3K
 - **Last updated**: 2025-05-28
 - **GitHub**: https://github.com/COMBINE-lab/salmon
 - **Stars**: N/A

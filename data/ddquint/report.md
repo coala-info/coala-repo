@@ -12,7 +12,7 @@ ddquint tool (Help text unavailable in provided input)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ddquint/overview
-- **Total Downloads**: 72
+- **Total Downloads**: 73
 - **Last updated**: 2025-08-12
 - **GitHub**: https://github.com/globuzzz2000/ddQuint
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Phylogenomic data processing tool (Note: The provided text is a container build 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phyling/overview
-- **Total Downloads**: 212
+- **Total Downloads**: 214
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/stajichlab/Phyling
 - **Stars**: N/A

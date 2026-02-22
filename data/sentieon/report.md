@@ -12,7 +12,7 @@ Sentieon genomics tools (Note: The provided text is a container runtime error lo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sentieon/overview
-- **Total Downloads**: 261.7K
+- **Total Downloads**: 261.8K
 - **Last updated**: 2026-01-16
 - **GitHub**: https://github.com/Sentieon/sentieon-scripts
 - **Stars**: N/A

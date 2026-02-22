@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/slow5curl/overview
-- **Total Downloads**: 1.2K
+- **Total Downloads**: 1.3K
 - **Last updated**: 2026-01-30
 - **GitHub**: https://github.com/BonsonW/slow5curl
 - **Stars**: N/A

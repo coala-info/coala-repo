@@ -12,7 +12,7 @@ Orthologous Group Mapper (Note: The provided text is a system error log regardin
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ogmapper/overview
-- **Total Downloads**: 782
+- **Total Downloads**: 790
 - **Last updated**: 2025-11-11
 - **GitHub**: https://github.com/vtrevino/ogmapper
 - **Stars**: N/A

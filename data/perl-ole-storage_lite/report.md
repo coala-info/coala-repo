@@ -3,35 +3,24 @@
 ## perl-ole-storage_lite
 
 ### Tool Description
-FAIL to generate CWL: perl-ole-storage_lite not found in Singularity image. The image may not provide this executable.
+The provided text does not contain help information for the tool; it contains system error messages related to a Singularity/Docker container build failure due to lack of disk space.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl:5.32
 - **Homepage**: http://metacpan.org/pod/OLE-Storage_Lite
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-ole-storage_lite/overview
-- **Validation**: FAIL (generation failed)
+- **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-ole-storage_lite/overview
 - **Total Downloads**: 183.7K
 - **Last updated**: 2025-11-23
 - **GitHub**: N/A
 - **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: perl-ole-storage_lite not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: perl-ole-storage_lite not found in Singularity image. The image may not provide this executable.
-
-
-
 ### Original Help Text
 ```text
-
+WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/1889c73a71acbe17b2857a0ff437fd919a5bc69f1d8299be85d40316b91a4e01: no space left on device
+WARNING: Falling back to direct digest.
+INFO:    Converting OCI blobs to SIF format
+FATAL:   Unable to handle docker://quay.io/biocontainers/perl:5.32 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-707852955: no space left on device
 ```
 
-
-## Metadata
-- **Skill**: generated

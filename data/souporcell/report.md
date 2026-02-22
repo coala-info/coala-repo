@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/souporcell/overview
-- **Total Downloads**: 564
+- **Total Downloads**: 565
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wheaton5/souporcell
 - **Stars**: N/A

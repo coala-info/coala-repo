@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ComputationalRegulatoryGenomicsICL/CNEr
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cner/overview
+- **Total Downloads**: 76.8K
+- **Last updated**: 2025-08-22
+- **Stars**: N/A
 

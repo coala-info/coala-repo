@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/py2neo/overview
-- **Total Downloads**: 152.3K
+- **Total Downloads**: 152.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/MazzaWill/neo4j-python-pandas-py2neo-v3
 - **Stars**: N/A

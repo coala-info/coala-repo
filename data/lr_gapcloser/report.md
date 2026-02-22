@@ -12,7 +12,7 @@ A tool for closing gaps in genome assemblies using long reads.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lr_gapcloser/overview
-- **Total Downloads**: 60
+- **Total Downloads**: 61
 - **Last updated**: 2025-11-24
 - **GitHub**: https://github.com/CAFS-bioinformatics/LR_Gapcloser
 - **Stars**: N/A

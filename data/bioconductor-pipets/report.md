@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/qfurumo/PIPETS
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-pipets/overview
+- **Total Downloads**: 483
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

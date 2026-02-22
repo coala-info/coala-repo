@@ -5,7 +5,7 @@ A coalescent simulator that allows the rapid simulation of
     Staab et al.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-scrm
+- **Conda**: https://anaconda.org/channels/r/packages/r-scrm/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/scrm/index.html
 - **Home (project)**: https://github.com/scrm/scrm-r
 - **Package**: scrm
@@ -13,4 +13,8 @@ A coalescent simulator that allows the rapid simulation of
 - **Author**: Paul Staab [aut, cph], Zhu Sha [aut, cph], Dirk Metzler [aut, cre, cph, ths], Gerton Lunter [aut, cph, ths]
 - **Maintainer**: Dirk Metzler <metzler at bio.lmu.de>
 - **Skill**: generated
+- **Total Downloads**: 106
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/scrm/scrm-r
+- **Stars**: N/A
 

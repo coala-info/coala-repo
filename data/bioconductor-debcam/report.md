@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Lululuella/debCAM
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-debcam/overview
+- **Total Downloads**: 16.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

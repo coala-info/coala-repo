@@ -12,7 +12,7 @@ GRIDSS is a module software suite for the detection of genomic rearrangements.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gridss/overview
-- **Total Downloads**: 169.6K
+- **Total Downloads**: 169.7K
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/PapenfussLab/gridss
 - **Stars**: N/A

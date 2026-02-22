@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanomotif/overview
-- **Total Downloads**: 20.3K
+- **Total Downloads**: 20.4K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/MicrobialDarkMatter/nanomotif
 - **Stars**: N/A

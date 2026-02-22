@@ -15,7 +15,7 @@ Build HNSW graph
 - **Total Downloads**: 11.1K
 - **Last updated**: 2025-10-06
 - **GitHub**: https://github.com/jean-pierreBoth/gsearch
-- **Stars**: N/A
+- **Stars**: 57
 ### Original Help Text
 ```text
 Build HNSW graph

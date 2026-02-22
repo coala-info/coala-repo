@@ -12,7 +12,7 @@ A tool for metagenome assembly using de Bruijn graphs. (Note: The provided input
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metamdbg/overview
-- **Total Downloads**: 95.7K
+- **Total Downloads**: 95.9K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/GaetanBenoitDev/metaMDBG
 - **Stars**: N/A

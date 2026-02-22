@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for sv
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/svseq2/overview
-- **Total Downloads**: 668
+- **Total Downloads**: 669
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

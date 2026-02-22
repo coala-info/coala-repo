@@ -12,7 +12,7 @@ A tool for genetic design and assembly (Note: The provided help text contains on
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genedom/overview
-- **Total Downloads**: 345
+- **Total Downloads**: 347
 - **Last updated**: 2025-05-12
 - **GitHub**: https://github.com/Edinburgh-Genome-Foundry/genedom
 - **Stars**: N/A

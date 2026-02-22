@@ -7,7 +7,7 @@ Extend the 'bigmemory' package with various analytics.
     for advanced shared-memory usage, see 'synchronicity'.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-biganalytics
+- **Conda**: https://anaconda.org/channels/r/packages/r-biganalytics/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/biganalytics/index.html
 - **Home (project)**: http://www.bigmemory.org
 - **Package**: biganalytics
@@ -15,4 +15,8 @@ Extend the 'bigmemory' package with various analytics.
 - **Author**: John W. Emerson [aut], Michael J. Kane [cre, aut], Saksham Chandra [ctb]
 - **Maintainer**: Michael J. Kane <bigmemoryauthors at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 369
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

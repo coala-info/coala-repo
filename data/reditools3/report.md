@@ -12,7 +12,7 @@ The provided text contains container engine logs and error messages rather than 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/reditools3/overview
-- **Total Downloads**: 193
+- **Total Downloads**: 196
 - **Last updated**: 2026-02-09
 - **GitHub**: https://github.com/BioinfoUNIBA/REDItools3
 - **Stars**: N/A

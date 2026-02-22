@@ -12,7 +12,7 @@ A tool for k-mer analysis (Note: The provided help text contains only system err
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kmertools/overview
-- **Total Downloads**: 12.4K
+- **Total Downloads**: 12.5K
 - **Last updated**: 2025-09-24
 - **GitHub**: https://github.com/anuradhawick/kmertools
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package is to provide MERFISH data for benchmarking and analysis.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ccb-hms/MerfishData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-merfishdata/overview
+- **Total Downloads**: 4.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

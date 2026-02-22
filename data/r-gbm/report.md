@@ -9,7 +9,7 @@ An implementation of extensions to Freund and Schapire's AdaBoost
   Newer version available at github.com/gbm-d...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-gbm
+- **Conda**: https://anaconda.org/channels/r/packages/r-gbm/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/gbm/index.html
 - **Home (project)**: https://github.com/gbm-developers/gbm
 - **Package**: gbm
@@ -17,4 +17,8 @@ An implementation of extensions to Freund and Schapire's AdaBoost
 - **Author**: Greg Ridgeway [aut, cre], Daniel Edwards [ctb], Brian Kriegler [ctb], Stefan Schroedl [ctb], Harry Southworth [ctb], Brandon Greenwell [ctb], Bradley Boehmke [ctb], Jay Cunningham [ctb], GBM Developers [aut] (https://github.com/gbm-developers)
 - **Maintainer**: Greg Ridgeway <gridge at upenn.edu>
 - **Skill**: generated
+- **Total Downloads**: 14.9K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/gbm-developers/gbm
+- **Stars**: N/A
 

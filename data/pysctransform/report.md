@@ -12,10 +12,10 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pysctransform/overview
-- **Total Downloads**: 309
+- **Total Downloads**: 311
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/saketkc/pySCTransform
-- **Stars**: N/A
+- **Stars**: 26
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

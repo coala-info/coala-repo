@@ -13,4 +13,8 @@ the package as downloaded from the HMP Data Analysis and Coordination Center. Pr
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/HMP16SData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hmp16sdata/overview
+- **Total Downloads**: 24.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/PDiracDelta/CONSTANd
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-constand/overview
+- **Total Downloads**: 10.2K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

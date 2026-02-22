@@ -12,7 +12,7 @@ MQuad (Note: The provided text is a system error message regarding container ima
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mquad/overview
-- **Total Downloads**: 432
+- **Total Downloads**: 433
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/aaronkwc/MQuad
 - **Stars**: N/A

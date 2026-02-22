@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it is a system
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-sereal-decoder/overview
-- **Total Downloads**: 133.8K
+- **Total Downloads**: 133.9K
 - **Last updated**: 2025-08-15
 - **GitHub**: N/A
 - **Stars**: N/A

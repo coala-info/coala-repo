@@ -12,7 +12,7 @@ Porechop_abi is a tool for finding and removing adapters from Oxford Nanopore re
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/porechop_abi/overview
-- **Total Downloads**: 15.8K
+- **Total Downloads**: 15.9K
 - **Last updated**: 2025-09-10
 - **GitHub**: https://github.com/bonsai-team/Porechop_ABI
 - **Stars**: N/A

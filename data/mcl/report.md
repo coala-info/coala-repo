@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains a 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mcl/overview
-- **Total Downloads**: 137.2K
+- **Total Downloads**: 137.3K
 - **Last updated**: 2025-05-28
 - **GitHub**: https://github.com/micans/mcl
 - **Stars**: N/A

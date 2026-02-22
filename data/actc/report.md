@@ -15,7 +15,7 @@ Align clr to ccs reads.
 - **Total Downloads**: 6.2K
 - **Last updated**: 2025-06-12
 - **GitHub**: https://github.com/PacificBiosciences/actc
-- **Stars**: N/A
+- **Stars**: 14
 ### Original Help Text
 ```text
 actc - Align clr to ccs reads.

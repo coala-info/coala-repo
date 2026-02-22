@@ -13,4 +13,8 @@ the package can be used on DNAm data of blood-tissue of any age, from birth to o
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sjczheng/EpiDISH
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-epidish/overview
+- **Total Downloads**: 26.8K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

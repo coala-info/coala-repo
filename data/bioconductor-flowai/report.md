@@ -11,6 +11,10 @@ The package is able to perform an automatic or interactive quality control on FC
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-flowai/overview
+- **Total Downloads**: 65.8K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

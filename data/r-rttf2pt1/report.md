@@ -5,7 +5,7 @@ Contains the program 'ttf2pt1', for use with the
     Project and its contributors.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rttf2pt1
+- **Conda**: https://anaconda.org/channels/r/packages/r-rttf2pt1/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/Rttf2pt1/index.html
 - **Home (project)**: https://github.com/wch/Rttf2pt1
 - **Package**: Rttf2pt1
@@ -13,4 +13,8 @@ Contains the program 'ttf2pt1', for use with the
 - **Author**: Winston Chang [aut], Andrew Weeks [aut], Frank M. Siegert [aut], Mark Heath [aut], Thomas Henlick [aut], Sergey Babkin [aut], Turgut Uyar [aut], Rihardas Hepas [aut], Szalay Tamas [aut], Johan Vromans [aut], Petr Titera [aut], Lei Wang [aut], Chen Xiangyang [aut], Zvezdan Petkovic [aut], Rigel [aut], I. Lee Hetherington [aut], Frederic Bertrand [cre]
 - **Maintainer**: Frederic Bertrand <frederic.bertrand at lecnam.net>
 - **Skill**: generated
+- **Total Downloads**: 561
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/wch/Rttf2pt1
+- **Stars**: N/A
 

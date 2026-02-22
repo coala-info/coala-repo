@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Ong-Research/HERON
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-heron/overview
+- **Total Downloads**: 819
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

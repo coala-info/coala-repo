@@ -3,7 +3,7 @@
 R package raceid (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-raceid
+- **Conda**: https://anaconda.org/channels/r/packages/r-raceid/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/raceid/index.html
 - **Home (project)**: https://github.com/dgrun/RaceID3_StemID2_package
 - **Package**: raceid
@@ -11,4 +11,8 @@ R package raceid (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/dgrun/RaceID3_StemID2_package
+- **Stars**: N/A
 

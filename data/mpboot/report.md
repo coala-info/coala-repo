@@ -12,7 +12,7 @@ A tool for maximum parsimony bootstrapping. Note: The provided help text contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mpboot/overview
-- **Total Downloads**: 372
+- **Total Downloads**: 373
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/diepthihoang/mpboot
 - **Stars**: N/A

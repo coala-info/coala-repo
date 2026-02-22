@@ -12,7 +12,7 @@ Probabilistic Consistency-based Multiple Sequence Alignment
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/probcons/overview
-- **Total Downloads**: 70.0K
+- **Total Downloads**: 70.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

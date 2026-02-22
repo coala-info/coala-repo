@@ -13,4 +13,8 @@ The package name has been chosen both as it will deal with spectral cytometry an
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jtheorell/flowSpecs
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-flowspecs/overview
+- **Total Downloads**: 19.5K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

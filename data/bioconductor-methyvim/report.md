@@ -13,4 +13,8 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/nhejazi/methyvim
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-methyvim/overview
+- **Total Downloads**: 14.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

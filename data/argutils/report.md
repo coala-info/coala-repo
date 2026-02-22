@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool; it consists of
 - **Total Downloads**: 10.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/eclarke/argutils
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

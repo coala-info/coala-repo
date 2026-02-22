@@ -12,7 +12,7 @@ A tool for processing genomic data (description not provided in help text)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/djinn/overview
-- **Total Downloads**: 262
+- **Total Downloads**: 276
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/pdimens/djinn
 - **Stars**: N/A

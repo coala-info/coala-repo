@@ -12,7 +12,7 @@ MNE: Magnetoencephalography (MEG) and Electroencephalography (EEG) data analysis
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/mne/overview
-- **Total Downloads**: 692.8K
+- **Total Downloads**: 693.8K
 - **Last updated**: 2026-02-02
 - **GitHub**: https://github.com/mne-tools/mne-python
 - **Stars**: N/A

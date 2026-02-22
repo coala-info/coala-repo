@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'sharg'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sharg/overview
-- **Total Downloads**: 1.6K
+- **Total Downloads**: 1.7K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/seqan/sharg-parser
 - **Stars**: N/A

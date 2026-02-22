@@ -9,7 +9,7 @@ Extends the fitdistr() function (of the MASS package) with several functions
   estimation (MGE) and maximum spacing estimation (MSE) methods...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-fitdistrplus
+- **Conda**: https://anaconda.org/channels/r/packages/r-fitdistrplus/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/fitdistrplus/index.html
 - **Home (project)**: https://lbbe.univ-lyon1.fr/fr/fitdistrplus, https://github.com/aursiber/fitdistrplus
 - **Package**: fitdistrplus
@@ -17,4 +17,8 @@ Extends the fitdistr() function (of the MASS package) with several functions
 - **Author**: Marie-Laure Delignette-Muller [aut], Christophe Dutang [aut], Regis Pouillot [ctb], Jean-Baptiste Denis [ctb], Aurélie Siberchicot [aut, cre]
 - **Maintainer**: Aurélie Siberchicot <aurelie.siberchicot at univ-lyon1.fr>
 - **Skill**: generated
+- **Total Downloads**: 831
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/aursiber/fitdistrplus
+- **Stars**: N/A
 

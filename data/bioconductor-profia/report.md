@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Alexis Delabriere and Etienne Thevenot.
 - **Maintainer**: Alexis Delabriere &#x3c;&#x61;&#x6c;&#x65;&#x78;&#x69;&#x73;&#x2e;&#x64;&#x65;&#x6c;&#x61;&#x62;&#x72;&#x69;&#x65;&#x72;&#x65;&#x20;&#x61;&#x74;&#x20;&#x63;&#x65;&#x61;&#x2e;&#x66;&#x72;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-profia/overview
+- **Total Downloads**: 50.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

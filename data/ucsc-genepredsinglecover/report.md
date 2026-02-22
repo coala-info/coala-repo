@@ -12,7 +12,7 @@ The provided text is a container build error log and does not contain help infor
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-genepredsinglecover/overview
-- **Total Downloads**: 29.0K
+- **Total Downloads**: 29.1K
 - **Last updated**: 2025-06-29
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

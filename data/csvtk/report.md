@@ -12,7 +12,7 @@ calculate Pearson correlation between two columns
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/csvtk/overview
-- **Total Downloads**: 218.6K
+- **Total Downloads**: 218.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/shenwei356/csvtk
 - **Stars**: N/A

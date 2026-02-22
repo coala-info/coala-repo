@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/repeatmodeler/overview
-- **Total Downloads**: 53.9K
+- **Total Downloads**: 54.0K
 - **Last updated**: 2025-07-03
 - **GitHub**: https://github.com/Dfam-consortium/RepeatModeler
 - **Stars**: N/A

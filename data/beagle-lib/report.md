@@ -15,7 +15,7 @@ The provided text is a system error log regarding a container build failure (no 
 - **Total Downloads**: 58.5K
 - **Last updated**: 2025-05-29
 - **GitHub**: https://github.com/beagle-dev/beagle-lib
-- **Stars**: N/A
+- **Stars**: 143
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

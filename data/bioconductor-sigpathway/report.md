@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Weil Lai (optimized R and C code), Lu Tian and Peter Park (algorithm development and initial R code)
 - **Maintainer**: Weil Lai &#x3c;&#x77;&#x6c;&#x61;&#x69;&#x20;&#x61;&#x74;&#x20;&#x61;&#x6c;&#x75;&#x6d;&#x2e;&#x6d;&#x69;&#x74;&#x2e;&#x65;&#x64;&#x75;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-sigpathway/overview
+- **Total Downloads**: 47.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

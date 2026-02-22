@@ -13,4 +13,8 @@ the package omXplore.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/edyp-lab/omXplore
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-omxplore/overview
+- **Total Downloads**: 193
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

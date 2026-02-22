@@ -12,7 +12,7 @@ GraphMap is a novel mapper for long and error-prone reads.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/graphmap/overview
-- **Total Downloads**: 47.6K
+- **Total Downloads**: 47.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/lbcb-sci/graphmap2
 - **Stars**: N/A

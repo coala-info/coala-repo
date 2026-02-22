@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/alexvpickering/GEOfastq
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-geofastq/overview
+- **Total Downloads**: 9.3K
+- **Last updated**: 2026-02-04
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A tool for cleavage of RNA sequences (description not available in provided text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cleaverna/overview
-- **Total Downloads**: 39
+- **Total Downloads**: 40
 - **Last updated**: 2025-12-05
 - **GitHub**: https://github.com/reyhaneh-tavakoli/CleaveRNA
 - **Stars**: N/A

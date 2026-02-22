@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/protmapper/overview
-- **Total Downloads**: 22.5K
+- **Total Downloads**: 22.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/indralab/protmapper
 - **Stars**: N/A

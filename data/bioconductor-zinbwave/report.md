@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/drisso/zinbwave
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-zinbwave/overview
+- **Total Downloads**: 39.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

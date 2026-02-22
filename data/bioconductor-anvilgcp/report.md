@@ -13,4 +13,8 @@ The package provides a set of functions to interact with the Google Cloud Platfo
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/AnVILGCP
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-anvilgcp/overview
+- **Total Downloads**: 542
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

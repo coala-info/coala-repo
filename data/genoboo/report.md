@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genoboo/overview
-- **Total Downloads**: 467.6K
+- **Total Downloads**: 468.7K
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/gogepp/genoboo
 - **Stars**: N/A

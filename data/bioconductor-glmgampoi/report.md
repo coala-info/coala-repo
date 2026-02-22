@@ -13,4 +13,8 @@ The package can estimate the overdispersion and fit repeated models for matrix i
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/const-ae/glmGamPoi
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-glmgampoi/overview
+- **Total Downloads**: 262.4K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

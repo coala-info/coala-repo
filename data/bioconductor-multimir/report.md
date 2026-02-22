@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/KechrisLab/multiMiR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-multimir/overview
+- **Total Downloads**: 24.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

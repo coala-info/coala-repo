@@ -12,7 +12,7 @@ SoftSV is a tool designed for the detection of structural variants (SVs) using s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/softsv/overview
-- **Total Downloads**: 646
+- **Total Downloads**: 647
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

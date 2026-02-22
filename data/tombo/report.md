@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'tombo'. It app
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tombo/overview
-- **Total Downloads**: 106
+- **Total Downloads**: 108
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nanoporetech/tombo
 - **Stars**: N/A

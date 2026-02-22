@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biobb_mem/overview
-- **Total Downloads**: 9.6K
+- **Total Downloads**: 9.7K
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/bioexcel/biobb_mem
 - **Stars**: N/A

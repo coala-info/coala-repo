@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kfilt/overview
-- **Total Downloads**: 461
+- **Total Downloads**: 465
 - **Last updated**: 2025-12-28
 - **GitHub**: https://github.com/davidebolo1993/kfilt
 - **Stars**: N/A

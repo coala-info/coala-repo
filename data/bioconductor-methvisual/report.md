@@ -11,6 +11,10 @@ The package 'methVisual' allows the visualization of DNA methylation data after 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-methvisual/overview
+- **Total Downloads**: 12.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

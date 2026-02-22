@@ -12,7 +12,7 @@ UCHIME is an algorithm for detecting chimeric sequences, usable in de novo or re
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/uchime/overview
-- **Total Downloads**: 417
+- **Total Downloads**: 418
 - **Last updated**: 2025-06-06
 - **GitHub**: N/A
 - **Stars**: N/A

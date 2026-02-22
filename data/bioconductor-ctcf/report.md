@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/dozmorovlab/CTCF
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ctcf/overview
+- **Total Downloads**: 6.3K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

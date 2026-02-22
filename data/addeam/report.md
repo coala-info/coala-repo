@@ -12,10 +12,10 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/addeam/overview
-- **Total Downloads**: 257
+- **Total Downloads**: 258
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/LouisPwr/AdDeam
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

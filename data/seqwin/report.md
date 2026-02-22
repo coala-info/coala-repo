@@ -12,7 +12,7 @@ Build a sequence window index or database. (Note: The provided text contains exe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seqwin/overview
-- **Total Downloads**: 323
+- **Total Downloads**: 331
 - **Last updated**: 2026-02-16
 - **GitHub**: https://github.com/treangenlab/seqwin
 - **Stars**: N/A

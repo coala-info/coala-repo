@@ -3,7 +3,7 @@
 routines for combinatorics</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-combinat
+- **Conda**: https://anaconda.org/channels/r/packages/r-combinat/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/combinat/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=combinat
 - **Package**: combinat
@@ -11,4 +11,8 @@ routines for combinatorics</p>
 - **Author**: Scott Chasalow
 - **Maintainer**: Vince Carey <stvjc at channing.harvard.edu>
 - **Skill**: generated
+- **Total Downloads**: 833
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

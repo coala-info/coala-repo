@@ -15,7 +15,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Total Downloads**: 17.8K
 - **Last updated**: 2025-12-01
 - **GitHub**: https://github.com/lmdu/pytrf
-- **Stars**: N/A
+- **Stars**: 29
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

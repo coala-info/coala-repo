@@ -12,7 +12,7 @@ The provided text does not contain help information for the 'segway' tool; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/segway/overview
-- **Total Downloads**: 51.7K
+- **Total Downloads**: 51.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ Variant Quality Binning and Grouping (Note: The provided text is an error log fr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vqbg/overview
-- **Total Downloads**: 720
+- **Total Downloads**: 723
 - **Last updated**: 2025-11-26
 - **GitHub**: https://github.com/qdu-bioinfo/VQBG
 - **Stars**: N/A

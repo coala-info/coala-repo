@@ -15,7 +15,7 @@ Could not get help from Singularity for: antismash-lite
 - **Total Downloads**: 10.4K
 - **Last updated**: 2025-05-28
 - **GitHub**: https://github.com/antismash/antismash
-- **Stars**: N/A
+- **Stars**: 243
 ### Generation Failed
 
 Could not get help from Singularity for: antismash-lite

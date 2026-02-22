@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/revtag/overview
-- **Total Downloads**: 944
+- **Total Downloads**: 949
 - **Last updated**: 2025-11-10
 - **GitHub**: https://github.com/clintval/revtag
 - **Stars**: N/A

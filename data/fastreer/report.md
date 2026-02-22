@@ -12,7 +12,7 @@ FastReer (Note: The provided input text contains container runtime error message
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastreer/overview
-- **Total Downloads**: 862
+- **Total Downloads**: 870
 - **Last updated**: 2026-02-06
 - **GitHub**: https://github.com/gkanogiannis/fastreeR
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kompot/overview
-- **Total Downloads**: 150
+- **Total Downloads**: 155
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/settylab/kompot
 - **Stars**: N/A

@@ -15,7 +15,7 @@ A command-line interface tool for askocli.
 - **Total Downloads**: 42.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/askomics/askocli
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

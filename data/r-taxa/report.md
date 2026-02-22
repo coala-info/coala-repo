@@ -8,7 +8,7 @@ Provides classes for storing and manipulating taxonomic data.
  user-defined data associated with them.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-taxa
+- **Conda**: https://anaconda.org/channels/r/packages/r-taxa/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/taxa/index.html
 - **Home (project)**: https://docs.ropensci.org/taxa/, https://github.com/ropensci/taxa
 - **Package**: taxa
@@ -16,4 +16,8 @@ Provides classes for storing and manipulating taxonomic data.
 - **Author**: Scott Chamberlain [aut], Zachary Foster [aut, cre]
 - **Maintainer**: Zachary Foster <zacharyfoster1989 at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 39
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/ropensci/taxa
+- **Stars**: N/A
 

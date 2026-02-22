@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/GenomicFiles
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-genomicfiles/overview
+- **Total Downloads**: 41.4K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

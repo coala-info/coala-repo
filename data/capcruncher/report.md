@@ -12,7 +12,7 @@ Capture-C and Tri-C analysis pipeline
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/capcruncher/overview
-- **Total Downloads**: 17.8K
+- **Total Downloads**: 17.9K
 - **Last updated**: 2025-05-03
 - **GitHub**: https://github.com/sims-lab/CapCruncher
 - **Stars**: N/A

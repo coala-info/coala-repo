@@ -12,7 +12,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vpt/overview
-- **Total Downloads**: 469
+- **Total Downloads**: 471
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Vizgen/vizgen-postprocessing
 - **Stars**: N/A

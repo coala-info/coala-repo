@@ -12,7 +12,7 @@ The provided text does not contain help information for dnp-mapping; it contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dnp-mapping/overview
-- **Total Downloads**: 4.0K
+- **Total Downloads**: 4.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/erinijapranckeviciene/mapping_CC
 - **Stars**: N/A

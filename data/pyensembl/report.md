@@ -12,7 +12,7 @@ Python interface to Ensembl reference genome metadata (Note: The provided text c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyensembl/overview
-- **Total Downloads**: 68.1K
+- **Total Downloads**: 68.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/openvax/pyensembl
 - **Stars**: N/A

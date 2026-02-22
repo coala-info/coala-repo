@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tagdust2/overview
-- **Total Downloads**: 451
+- **Total Downloads**: 455
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/aradar46/tagdust
 - **Stars**: N/A

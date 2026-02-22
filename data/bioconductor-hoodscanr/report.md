@@ -13,4 +13,8 @@ the package are built based on the SpatialExperiment object, allowing integratio
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/hoodscanR
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hoodscanr/overview
+- **Total Downloads**: 1.9K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

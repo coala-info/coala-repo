@@ -13,4 +13,8 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/chakri9/GenRank
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-genrank/overview
+- **Total Downloads**: 23.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

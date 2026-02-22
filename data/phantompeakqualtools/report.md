@@ -12,7 +12,7 @@ Computes strand cross-correlation, NSC, RSC and estimates fragment length for Ch
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phantompeakqualtools/overview
-- **Total Downloads**: 18.4K
+- **Total Downloads**: 18.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kundajelab/phantompeakqualtools
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A lean C++ code for the computation of Vietoris–Rips persistence barcodes.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bio-ripser/overview
-- **Total Downloads**: 375
+- **Total Downloads**: 376
 - **Last updated**: 2025-06-24
 - **GitHub**: https://github.com/Ripser/ripser
 - **Stars**: N/A

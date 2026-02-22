@@ -13,4 +13,8 @@ The package includes unconstrained as well as constrained analysis. In addition,
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/CenterForStatistics-UGent/RCM
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rcm/overview
+- **Total Downloads**: 21.8K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

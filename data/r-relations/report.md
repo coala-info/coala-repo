@@ -5,7 +5,7 @@ Data structures and algorithms for k-ary relations with
   and fitters for consensus relations.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-relations
+- **Conda**: https://anaconda.org/channels/r/packages/r-relations/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/relations/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=relations
 - **Package**: relations
@@ -13,4 +13,8 @@ Data structures and algorithms for k-ary relations with
 - **Author**: David Meyer [aut], Kurt Hornik [aut, cre], Christian Buchta [ctb]
 - **Maintainer**: Kurt Hornik <Kurt.Hornik at R-project.org>
 - **Skill**: generated
+- **Total Downloads**: 35
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

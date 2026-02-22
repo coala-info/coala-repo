@@ -12,7 +12,7 @@ QUAST: Quality Assessment Tool for Genome Assemblies
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/quast/overview
-- **Total Downloads**: 362.9K
+- **Total Downloads**: 363.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

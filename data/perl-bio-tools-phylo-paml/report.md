@@ -12,7 +12,7 @@ BioPerl tools for PAML (Phylogenetic Analysis by Maximum Likelihood). Note: The 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-tools-phylo-paml/overview
-- **Total Downloads**: 270.7K
+- **Total Downloads**: 270.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

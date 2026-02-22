@@ -15,7 +15,7 @@ RNAcode predicts protein coding regions in multiple sequence alignments. It uses
 - **Total Downloads**: 9.5K
 - **Last updated**: 2025-09-30
 - **GitHub**: https://github.com/ViennaRNA/RNAcode
-- **Stars**: N/A
+- **Stars**: 25
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

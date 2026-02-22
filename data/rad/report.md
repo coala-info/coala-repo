@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rad/overview
-- **Total Downloads**: 407
+- **Total Downloads**: 408
 - **Last updated**: 2025-05-13
 - **GitHub**: https://github.com/indianewok/rad
 - **Stars**: N/A

@@ -15,7 +15,7 @@ A tool for bacterial phylogenomic tree construction based on core genes. (Note: 
 - **Total Downloads**: 563
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/molbiodiv/bcgtree
-- **Stars**: N/A
+- **Stars**: 20
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

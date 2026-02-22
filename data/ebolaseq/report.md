@@ -12,7 +12,7 @@ The provided text contains system error logs and does not include help documenta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ebolaseq/overview
-- **Total Downloads**: 1.0K
+- **Total Downloads**: 1.1K
 - **Last updated**: 2025-07-15
 - **GitHub**: https://github.com/DaanJansen94/ebolaseq
 - **Stars**: N/A

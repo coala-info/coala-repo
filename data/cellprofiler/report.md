@@ -12,7 +12,7 @@ CellProfiler is a free open-source software for measuring and analyzing cell ima
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cellprofiler/overview
-- **Total Downloads**: 16.2K
+- **Total Downloads**: 16.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CellProfiler/CellProfiler
 - **Stars**: N/A

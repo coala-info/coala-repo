@@ -12,7 +12,7 @@ The provided text is a container build error log and does not contain CLI help i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sourmash/overview
-- **Total Downloads**: 278.4K
+- **Total Downloads**: 278.5K
 - **Last updated**: 2025-08-07
 - **GitHub**: https://github.com/sourmash-bio/sourmash
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pb-assembly/overview
-- **Total Downloads**: 49.7K
+- **Total Downloads**: 49.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/PacificBiosciences/pbbioconda
 - **Stars**: N/A

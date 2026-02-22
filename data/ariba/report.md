@@ -15,7 +15,7 @@ Antibiotic Resistance Identification by Assembly
 - **Total Downloads**: 112.2K
 - **Last updated**: 2025-09-23
 - **GitHub**: https://github.com/sanger-pathogens/ariba
-- **Stars**: N/A
+- **Stars**: 184
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

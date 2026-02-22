@@ -11,6 +11,10 @@ The package contains a modular pipeline for analysis of HELP microarray data, an
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-help/overview
+- **Total Downloads**: 35.2K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

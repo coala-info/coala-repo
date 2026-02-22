@@ -6,7 +6,7 @@ Software testing is important, but, in part because it is
     your existing 'workflow'.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-testthat
+- **Conda**: https://anaconda.org/channels/r/packages/r-testthat/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/testthat/index.html
 - **Home (project)**: https://testthat.r-lib.org, https://github.com/r-lib/testthat
 - **Package**: testthat
@@ -14,4 +14,8 @@ Software testing is important, but, in part because it is
 - **Author**: Hadley Wickham [aut, cre], Posit Software, PBC [cph, fnd], R Core team [ctb] (Implementation of utils::recover())
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 118.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/r-lib/testthat
+- **Stars**: N/A
 

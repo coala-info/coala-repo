@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sbcblab/geva
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-geva/overview
+- **Total Downloads**: 10.9K
+- **Last updated**: 2026-02-04
+- **Stars**: N/A
 

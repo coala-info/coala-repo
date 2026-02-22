@@ -12,7 +12,7 @@ The provided text is a container execution error log and does not contain the he
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/plassembler/overview
-- **Total Downloads**: 24.3K
+- **Total Downloads**: 24.4K
 - **Last updated**: 2026-01-05
 - **GitHub**: https://github.com/gbouras13/plassembler
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for merging groups of FASTQ files (Note: The provided help text contains 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastq-groupmerge/overview
-- **Total Downloads**: 90
+- **Total Downloads**: 93
 - **Last updated**: 2025-11-12
 - **GitHub**: https://github.com/SantaMcCloud/fastq-groupmerge
 - **Stars**: N/A

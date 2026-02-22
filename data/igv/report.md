@@ -12,7 +12,7 @@ Integrative Genomics Viewer (IGV) is a high-performance visualization tool for i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/igv/overview
-- **Total Downloads**: 186.0K
+- **Total Downloads**: 186.1K
 - **Last updated**: 2025-10-29
 - **GitHub**: https://github.com/igvteam/igv
 - **Stars**: N/A

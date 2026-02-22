@@ -12,7 +12,7 @@ A tool for single-cell cross-matching (Note: The provided text is an error log f
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/scxmatch/overview
-- **Total Downloads**: 791
+- **Total Downloads**: 798
 - **Last updated**: 2026-01-30
 - **GitHub**: https://github.com/bionetslab/scxmatch
 - **Stars**: N/A

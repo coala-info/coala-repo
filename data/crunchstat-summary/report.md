@@ -12,7 +12,7 @@ Summarize Arvados crunchstat logs
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/crunchstat-summary/overview
-- **Total Downloads**: 107
+- **Total Downloads**: 109
 - **Last updated**: 2025-11-24
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for k-mer based analysis of large collections of sequencing data (Note: T
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kmtricks/overview
-- **Total Downloads**: 2.9K
+- **Total Downloads**: 3.0K
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/tlemane/kmtricks
 - **Stars**: N/A

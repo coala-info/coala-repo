@@ -12,7 +12,7 @@ A tool for parsing GTF (Gene Transfer Format) files into Pandas DataFrames or ot
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gtfparse/overview
-- **Total Downloads**: 41.9K
+- **Total Downloads**: 42.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/openvax/gtfparse
 - **Stars**: N/A

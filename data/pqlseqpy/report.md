@@ -12,7 +12,7 @@ PQLseq (Parallelized Mixed Model Association Test) for Python. Note: The provide
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pqlseqpy/overview
-- **Total Downloads**: 71
+- **Total Downloads**: 72
 - **Last updated**: 2025-09-05
 - **GitHub**: https://github.com/mokar2001/PQLseqPy
 - **Stars**: N/A

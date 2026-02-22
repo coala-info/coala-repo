@@ -12,7 +12,7 @@ A tool for tRNA sequencing analysis (Note: The provided text is an error log and
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mimseq/overview
-- **Total Downloads**: 90.1K
+- **Total Downloads**: 90.2K
 - **Last updated**: 2026-02-12
 - **GitHub**: https://github.com/nedialkova-lab/mim-tRNAseq
 - **Stars**: N/A

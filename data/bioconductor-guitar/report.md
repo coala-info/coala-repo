@@ -11,6 +11,10 @@ The package is designed for visualization of RNA-related genomic features with r
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-guitar/overview
+- **Total Downloads**: 28.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

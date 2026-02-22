@@ -13,4 +13,8 @@ The package includes data for two versions of the genome of humans and mice.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/MahShaaban/chromhmmData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-chromhmmdata/overview
+- **Total Downloads**: 3.6K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

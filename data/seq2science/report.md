@@ -12,7 +12,7 @@ A workflow tool for sequencing data. (Note: The provided text is a system error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seq2science/overview
-- **Total Downloads**: 114.9K
+- **Total Downloads**: 115.0K
 - **Last updated**: 2025-05-14
 - **GitHub**: https://github.com/vanheeringen-lab/seq2science
 - **Stars**: N/A

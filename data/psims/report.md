@@ -15,7 +15,7 @@ The provided text is a log of a failed container build process and does not cont
 - **Total Downloads**: 33.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mobiusklein/psims
-- **Stars**: N/A
+- **Stars**: 22
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

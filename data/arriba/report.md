@@ -15,7 +15,7 @@ Could not get help from Singularity for: arriba
 - **Total Downloads**: 133.5K
 - **Last updated**: 2025-08-21
 - **GitHub**: https://github.com/suhrig/arriba
-- **Stars**: N/A
+- **Stars**: 262
 ### Generation Failed
 
 Could not get help from Singularity for: arriba

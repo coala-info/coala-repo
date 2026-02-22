@@ -13,4 +13,8 @@ The package allows users to readily import spatial data obtained from either the
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/VisiumIO
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-visiumio/overview
+- **Total Downloads**: 482
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

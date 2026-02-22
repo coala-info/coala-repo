@@ -15,7 +15,7 @@ adaptive banded Partial Order Alignment
 - **Total Downloads**: 69.8K
 - **Last updated**: 2025-10-12
 - **GitHub**: https://github.com/yangao07/abPOA
-- **Stars**: N/A
+- **Stars**: 135
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

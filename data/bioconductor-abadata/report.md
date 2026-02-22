@@ -11,6 +11,10 @@ the package 'ABAEnrichment'. The package includes three datasets which are deriv
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-abadata/overview
+- **Total Downloads**: 29.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

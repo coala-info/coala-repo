@@ -12,7 +12,7 @@ HaploGrep3 is a tool for mtDNA haplogroup classification.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/haplogrep3/overview
-- **Total Downloads**: 562
+- **Total Downloads**: 566
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/genepi/haplogrep3
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for the 'changeo' tool. It a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/changeo/overview
-- **Total Downloads**: 34.3K
+- **Total Downloads**: 34.4K
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/immcantation/changeo
 - **Stars**: N/A

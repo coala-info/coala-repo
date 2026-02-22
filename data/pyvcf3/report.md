@@ -12,10 +12,10 @@ The provided text is a container engine error log and does not contain help info
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyvcf3/overview
-- **Total Downloads**: 349.9K
+- **Total Downloads**: 350.1K
 - **Last updated**: 2025-06-09
 - **GitHub**: https://github.com/dridk/PyVCF3
-- **Stars**: N/A
+- **Stars**: 59
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

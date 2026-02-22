@@ -12,7 +12,7 @@ The perl-carp executable was not found in the environment, and no help text was 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-carp/overview
-- **Total Downloads**: 942.8K
+- **Total Downloads**: 943.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/alabamenhu/Carp
 - **Stars**: N/A

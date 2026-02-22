@@ -12,7 +12,7 @@ The provided text does not contain help information as it is an error log indica
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-app-cpanminus/overview
-- **Total Downloads**: 472.9K
+- **Total Downloads**: 473.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/miyagawa/cpanminus
 - **Stars**: N/A

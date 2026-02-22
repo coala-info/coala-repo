@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/zamp/overview
-- **Total Downloads**: 332
+- **Total Downloads**: 334
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/metagenlab/zAMP
 - **Stars**: N/A

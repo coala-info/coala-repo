@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'deblur'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deblur/overview
-- **Total Downloads**: 531.7K
+- **Total Downloads**: 531.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/biocore/deblur
 - **Stars**: N/A

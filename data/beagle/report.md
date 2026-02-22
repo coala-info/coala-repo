@@ -15,7 +15,7 @@ The provided text is a log of a failed container build process (Apptainer/Singul
 - **Total Downloads**: 41.8K
 - **Last updated**: 2025-09-18
 - **GitHub**: https://github.com/yampelo/beagle
-- **Stars**: N/A
+- **Stars**: 1339
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

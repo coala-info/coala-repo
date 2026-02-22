@@ -12,7 +12,7 @@ The provided text does not contain help information for treeswift; it is an erro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/treeswift/overview
-- **Total Downloads**: 65.2K
+- **Total Downloads**: 65.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/niemasd/TreeSwift
 - **Stars**: N/A

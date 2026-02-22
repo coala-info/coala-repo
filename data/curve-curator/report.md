@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/curve-curator/overview
-- **Total Downloads**: 46
+- **Total Downloads**: 47
 - **Last updated**: 2025-11-26
 - **GitHub**: https://github.com/kusterlab/curve_curator
 - **Stars**: N/A

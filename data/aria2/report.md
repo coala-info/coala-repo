@@ -12,10 +12,10 @@ FAIL to generate CWL: aria2 not found in Singularity image. The image may not pr
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/aria2/overview
-- **Total Downloads**: 382.2K
+- **Total Downloads**: 382.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/aria2/aria2
-- **Stars**: N/A
+- **Stars**: 40085
 ### Generation Failed
 
 FAIL to generate CWL: aria2 not found in Singularity image. The image may not provide this executable.

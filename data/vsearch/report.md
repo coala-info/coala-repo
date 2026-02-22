@@ -12,7 +12,7 @@ The provided text does not contain help information for vsearch; it is an error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vsearch/overview
-- **Total Downloads**: 888.7K
+- **Total Downloads**: 888.9K
 - **Last updated**: 2026-01-19
 - **GitHub**: https://github.com/torognes/vsearch
 - **Stars**: N/A

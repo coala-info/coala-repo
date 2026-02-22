@@ -12,7 +12,7 @@ Regulatory Genomics Toolbox (Note: The provided text is a container build error 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rgt/overview
-- **Total Downloads**: 22.3K
+- **Total Downloads**: 22.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CostaLab/reg-gen
 - **Stars**: N/A

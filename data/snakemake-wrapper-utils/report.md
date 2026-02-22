@@ -12,7 +12,7 @@ The provided text appears to be a container runtime log (Apptainer/Singularity) 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-wrapper-utils/overview
-- **Total Downloads**: 128.2K
+- **Total Downloads**: 128.3K
 - **Last updated**: 2025-09-14
 - **GitHub**: https://github.com/snakemake/snakemake-wrapper-utils
 - **Stars**: N/A

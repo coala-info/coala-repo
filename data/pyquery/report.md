@@ -12,10 +12,10 @@ The provided text does not contain help information for the tool 'pyquery'. It a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyquery/overview
-- **Total Downloads**: 7.4K
+- **Total Downloads**: 7.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gawel/pyquery
-- **Stars**: N/A
+- **Stars**: 2377
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

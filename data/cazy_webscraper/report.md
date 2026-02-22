@@ -12,7 +12,7 @@ The provided text does not contain help documentation. It is a log of a failed S
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cazy_webscraper/overview
-- **Total Downloads**: 19.9K
+- **Total Downloads**: 20.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/HobnobMancer/cazy_webscraper
 - **Stars**: N/A

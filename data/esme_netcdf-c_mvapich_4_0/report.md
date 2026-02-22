@@ -12,7 +12,7 @@ NetCDF-C library with MVAPICH support (Note: The provided text contains system e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/esme_netcdf-c_mvapich_4_0/overview
-- **Total Downloads**: 586
+- **Total Downloads**: 588
 - **Last updated**: 2025-08-05
 - **GitHub**: N/A
 - **Stars**: N/A

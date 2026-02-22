@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snp-dists/overview
-- **Total Downloads**: 75.3K
+- **Total Downloads**: 75.4K
 - **Last updated**: 2025-12-31
 - **GitHub**: https://github.com/tseemann/snp-dists
 - **Stars**: N/A

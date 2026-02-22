@@ -12,7 +12,7 @@ Raster3D is a set of programs for photorealistic rendering of molecular models. 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/raster3d/overview
-- **Total Downloads**: 189
+- **Total Downloads**: 203
 - **Last updated**: 2026-02-17
 - **GitHub**: https://github.com/Sundance636/Raster3D
 - **Stars**: N/A

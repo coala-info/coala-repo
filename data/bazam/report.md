@@ -15,7 +15,7 @@ Bazam is a tool to extract paired reads from a coordinate-sorted BAM file and ou
 - **Total Downloads**: 6.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ssadedin/bazam
-- **Stars**: N/A
+- **Stars**: 105
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

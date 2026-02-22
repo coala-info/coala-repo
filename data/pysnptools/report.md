@@ -12,7 +12,7 @@ The provided text is a system error log from a container runtime (Apptainer/Sing
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pysnptools/overview
-- **Total Downloads**: 12.7K
+- **Total Downloads**: 12.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

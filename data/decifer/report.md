@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/decifer/overview
-- **Total Downloads**: 59.7K
+- **Total Downloads**: 59.8K
 - **Last updated**: 2025-09-21
 - **GitHub**: https://github.com/raphael-group/decifer
 - **Stars**: N/A

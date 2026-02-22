@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-file-listing not found in Singularity image. The imag
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-file-listing/overview
-- **Total Downloads**: 478.8K
+- **Total Downloads**: 479.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

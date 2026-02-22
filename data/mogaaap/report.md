@@ -12,7 +12,7 @@ Multi-Omics Genome-Agnostic Annotation and Analysis Pipeline (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mogaaap/overview
-- **Total Downloads**: 570
+- **Total Downloads**: 575
 - **Last updated**: 2025-12-05
 - **GitHub**: https://github.com/dirkjanvw/MoGAAAP
 - **Stars**: N/A

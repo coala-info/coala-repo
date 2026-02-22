@@ -12,7 +12,7 @@ A tool for quantitative metaproteomics data analysis. Note: The provided help te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metaquantome/overview
-- **Total Downloads**: 29.8K
+- **Total Downloads**: 29.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/galaxyproteomics/metaquant
 - **Stars**: N/A

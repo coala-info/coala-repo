@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/dongjunchung/GPA
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gpa/overview
+- **Total Downloads**: 20.6K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

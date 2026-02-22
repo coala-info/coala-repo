@@ -12,7 +12,7 @@ Bacterial Report CLI tool for generating reports from assembly FASTA files.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bakrep-cli/overview
-- **Total Downloads**: 524
+- **Total Downloads**: 527
 - **Last updated**: 2025-06-11
 - **GitHub**: https://github.com/oschwengers/bakrep-cli
 - **Stars**: N/A

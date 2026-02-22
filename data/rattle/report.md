@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rattle/overview
-- **Total Downloads**: 682
+- **Total Downloads**: 689
 - **Last updated**: 2025-11-27
 - **GitHub**: https://github.com/comprna/RATTLE
 - **Stars**: N/A

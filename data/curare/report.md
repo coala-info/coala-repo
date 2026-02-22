@@ -12,7 +12,7 @@ The provided text is an error log from a container build process and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/curare/overview
-- **Total Downloads**: 11.0K
+- **Total Downloads**: 11.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pblumenkamp/Curare
 - **Stars**: N/A

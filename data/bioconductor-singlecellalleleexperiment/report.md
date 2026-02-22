@@ -13,4 +13,8 @@ The package is part of a workflow named single-cell ImmunoGenomic Diversity (scI
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/AGImkeller/SingleCellAlleleExperiment
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-singlecellalleleexperiment/overview
+- **Total Downloads**: 296
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

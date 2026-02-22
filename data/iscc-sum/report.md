@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/iscc-sum/overview
-- **Total Downloads**: 535
+- **Total Downloads**: 539
 - **Last updated**: 2025-11-05
 - **GitHub**: https://github.com/bio-codes/iscc-sum
 - **Stars**: N/A

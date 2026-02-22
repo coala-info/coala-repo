@@ -12,7 +12,7 @@ Snakemake storage plugin for SFTP. (Note: The provided text is a container build
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-storage-plugin-sftp/overview
-- **Total Downloads**: 1.7K
+- **Total Downloads**: 1.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/snakemake/snakemake-storage-plugin-sftp
 - **Stars**: N/A

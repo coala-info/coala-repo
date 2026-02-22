@@ -12,7 +12,7 @@ The provided text appears to be a system log or error message from a container r
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/recognizer/overview
-- **Total Downloads**: 110.7K
+- **Total Downloads**: 110.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/iquasere/reCOGnizer
 - **Stars**: N/A

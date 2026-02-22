@@ -12,7 +12,7 @@ Note: The provided text is an error log from a container runtime (Apptainer/Sing
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/derip2/overview
-- **Total Downloads**: 317
+- **Total Downloads**: 320
 - **Last updated**: 2025-11-12
 - **GitHub**: https://github.com/Adamtaranto/deRIP2
 - **Stars**: N/A

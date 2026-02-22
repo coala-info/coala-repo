@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gecode/overview
-- **Total Downloads**: 140.6K
+- **Total Downloads**: 140.9K
 - **Last updated**: 2025-11-19
 - **GitHub**: N/A
 - **Stars**: N/A

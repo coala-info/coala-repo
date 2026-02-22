@@ -12,7 +12,7 @@ A whole-genome association analysis toolset, designed to handle large datasets a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/plink2/overview
-- **Total Downloads**: 75.9K
+- **Total Downloads**: 76.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

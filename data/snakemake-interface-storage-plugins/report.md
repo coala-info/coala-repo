@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-interface-storage-plugins/overview
-- **Total Downloads**: 288.9K
+- **Total Downloads**: 289.3K
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/snakemake/snakemake-interface-storage-plugins
 - **Stars**: N/A

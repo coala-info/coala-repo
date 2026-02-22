@@ -13,4 +13,8 @@ the package allow the user to learn supervised mutational signatures from their 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/TomasettiLab/supersigs
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-supersigs/overview
+- **Total Downloads**: 10.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

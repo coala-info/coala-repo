@@ -15,7 +15,7 @@ Core function for measuring a query VCF relative to a truth VCF
 - **Total Downloads**: 4.7K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/PacificBiosciences/aardvark
-- **Stars**: N/A
+- **Stars**: 38
 ### Original Help Text
 ```text
 Core function for measuring a query VCF relative to a truth VCF

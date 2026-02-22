@@ -12,7 +12,7 @@ Flask-Script is an extension that provides support for writing external scripts 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/flask-script/overview
-- **Total Downloads**: 145.0K
+- **Total Downloads**: 145.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/smurfix/flask-script
 - **Stars**: N/A

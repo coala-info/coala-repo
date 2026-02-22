@@ -12,7 +12,7 @@ A tool for evaluation (detailed description and arguments not available in the p
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/drevalpy/overview
-- **Total Downloads**: 72
+- **Total Downloads**: 74
 - **Last updated**: 2026-01-14
 - **GitHub**: https://github.com/daisybio/drevalpy
 - **Stars**: N/A

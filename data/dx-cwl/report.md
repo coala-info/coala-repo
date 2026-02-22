@@ -12,7 +12,7 @@ A tool for running Common Workflow Language (CWL) workflows on the DNAnexus plat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dx-cwl/overview
-- **Total Downloads**: 66.6K
+- **Total Downloads**: 66.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dnanexus/dx-cwl
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for 'perl-parent'. It is an 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-parent/overview
-- **Total Downloads**: 652.7K
+- **Total Downloads**: 652.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/toddr/Razor2-Client-Agent
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/novoloci/overview
-- **Total Downloads**: 179
+- **Total Downloads**: 181
 - **Last updated**: 2025-11-24
 - **GitHub**: https://github.com/ndierckx/NOVOLoci
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for fastq-tools. It contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
-- **Total Downloads**: 21.2K
+- **Total Downloads**: 21.3K
 - **Last updated**: 2025-08-19
 - **GitHub**: N/A
 - **Stars**: N/A

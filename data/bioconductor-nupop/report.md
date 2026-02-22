@@ -11,6 +11,10 @@ the package was written in Fotran. In addition to the R package, a stand-alone F
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: https://github.com/jiping/NuPoP_doc.
+- **GitHub**: https://github.com/jiping/NuPoP_doc
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-nupop/overview
+- **Total Downloads**: 34.1K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

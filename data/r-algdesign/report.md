@@ -8,7 +8,7 @@ Algorithmic experimental designs. Calculates exact and
         done when whole and within plot factors interact.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-algdesign
+- **Conda**: https://anaconda.org/channels/r/packages/r-algdesign/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/AlgDesign/index.html
 - **Home (project)**: https://github.com/jvbraun/AlgDesign
 - **Package**: AlgDesign
@@ -16,4 +16,8 @@ Algorithmic experimental designs. Calculates exact and
 - **Author**: Bob Wheeler [aut], Jerome Braun [cre]
 - **Maintainer**: Jerome Braun <jvbraun.statistics at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 490
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jvbraun/AlgDesign
+- **Stars**: N/A
 

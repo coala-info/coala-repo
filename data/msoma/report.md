@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/msoma/overview
-- **Total Downloads**: 918
+- **Total Downloads**: 924
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/AkeyLab/mSOMA
 - **Stars**: N/A

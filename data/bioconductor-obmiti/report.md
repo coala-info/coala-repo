@@ -13,4 +13,8 @@ The package provide RNA-seq count for 2 strains of mus musclus; Wild type and Ob
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/OmarElAshkar/ObMiTi
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-obmiti/overview
+- **Total Downloads**: 10.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

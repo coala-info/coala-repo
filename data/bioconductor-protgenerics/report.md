@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/ProtGenerics
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-protgenerics/overview
+- **Total Downloads**: 162.5K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pygrgl/overview
-- **Total Downloads**: 2.6K
+- **Total Downloads**: 2.7K
 - **Last updated**: 2026-02-09
 - **GitHub**: https://github.com/aprilweilab/grgl
 - **Stars**: N/A

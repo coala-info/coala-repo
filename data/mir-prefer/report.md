@@ -12,7 +12,7 @@ mir-prefer: A tool for miRNA prediction (Note: The provided text contains only s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mir-prefer/overview
-- **Total Downloads**: 10.3K
+- **Total Downloads**: 10.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/hangelwen/miR-PREFeR
 - **Stars**: N/A

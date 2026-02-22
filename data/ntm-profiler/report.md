@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ntm-profiler/overview
-- **Total Downloads**: 22.1K
+- **Total Downloads**: 22.2K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/jodyphelan/NTM-Profiler
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text does not contain help information for fwdpy11; it contains sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fwdpy11/overview
-- **Total Downloads**: 266.2K
+- **Total Downloads**: 266.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/molpopgen/fwdpy11
 - **Stars**: N/A

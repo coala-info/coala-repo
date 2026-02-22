@@ -3,7 +3,7 @@
 Understanding the drivers of microbial diversity is an important frontier of microbial ecology, and investigating the diversity of samples from microbial ecosystems is a common step in any microbiome analysis. 'breakaway' is the premier package for statistical analysis of microbial diversity.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-breakaway
+- **Conda**: https://anaconda.org/channels/r/packages/r-breakaway/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/breakaway/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=breakaway
 - **Package**: breakaway
@@ -11,4 +11,8 @@ Understanding the drivers of microbial diversity is an important frontier of mic
 - **Author**: Amy D Willis [aut, cre], Bryan D Martin [aut], Pauline Trinh [aut], Sarah Teichman [aut], David Clausen [aut], Kathryn Barger [aut], John Bunge [aut]
 - **Maintainer**: Amy D Willis <adwillis at uw.edu>
 - **Skill**: generated
+- **Total Downloads**: 230
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

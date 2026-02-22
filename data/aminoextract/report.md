@@ -15,7 +15,7 @@ A quick tool to extract amino acid sequences from a FASTA file.
 - **Total Downloads**: 5.3K
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/RIVM-bioinformatics/AminoExtract
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 usage: AminoExtract [required options] [optional options]

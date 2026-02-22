@@ -15,7 +15,7 @@ ingests a single sample gvcf into a variant-only .bcf and tempory depth interval
 - **Total Downloads**: 13.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Illumina/agg
-- **Stars**: N/A
+- **Stars**: 12
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

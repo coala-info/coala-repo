@@ -12,7 +12,7 @@ No description available: The provided text contains container runtime error mes
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/isonform/overview
-- **Total Downloads**: 839
+- **Total Downloads**: 840
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/aljpetri/isONform
 - **Stars**: N/A

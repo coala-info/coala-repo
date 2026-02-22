@@ -11,6 +11,10 @@ The package allows to predict, visualize and encode DNA shape features for stati
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dnashaper/overview
+- **Total Downloads**: 49.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

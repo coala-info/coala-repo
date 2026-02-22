@@ -12,7 +12,7 @@ A tool for metabolomics data analysis. (Note: The provided text contains system 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metabolabpy/overview
-- **Total Downloads**: 31.0K
+- **Total Downloads**: 31.1K
 - **Last updated**: 2026-02-13
 - **GitHub**: https://github.com/ludwigc/metabolabpy
 - **Stars**: N/A

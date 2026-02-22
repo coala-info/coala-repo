@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'sphae'. It app
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sphae/overview
-- **Total Downloads**: 10.5K
+- **Total Downloads**: 10.6K
 - **Last updated**: 2025-12-12
 - **GitHub**: https://github.com/linsalrob/sphae
 - **Stars**: N/A

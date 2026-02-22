@@ -12,7 +12,7 @@ The provided text does not contain help information for samblaster; it is a cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/samblaster/overview
-- **Total Downloads**: 223.1K
+- **Total Downloads**: 223.2K
 - **Last updated**: 2025-08-19
 - **GitHub**: https://github.com/GregoryFaust/samblaster
 - **Stars**: N/A

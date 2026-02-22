@@ -15,7 +15,7 @@ A tool for converting QIIME output data into a format compatible with MaAsLin.
 - **Total Downloads**: 5.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/biobakery/qiimetomaaslin
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

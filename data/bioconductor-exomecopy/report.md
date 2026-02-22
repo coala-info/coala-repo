@@ -11,6 +11,10 @@ The package implements a hidden Markov model which uses positional covariates, s
 - **Version**: N/A
 - **Author**: Michael Love
 - **Maintainer**: Michael Love &#x3c;&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x69;&#x73;&#x61;&#x69;&#x61;&#x68;&#x6c;&#x6f;&#x76;&#x65;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-exomecopy/overview
+- **Total Downloads**: 60.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

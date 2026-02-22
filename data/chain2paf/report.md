@@ -12,7 +12,7 @@ Convert UCSC chain files to PAF (Pairwise Mapping Format)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/chain2paf/overview
-- **Total Downloads**: 720
+- **Total Downloads**: 721
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/AndreaGuarracino/chain2paf
 - **Stars**: N/A

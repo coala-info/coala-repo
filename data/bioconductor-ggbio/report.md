@@ -13,4 +13,8 @@ The package supports detailed views of particular genomic regions, as well as ge
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lawremi/ggbio
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ggbio/overview
+- **Total Downloads**: 77.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

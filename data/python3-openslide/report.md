@@ -15,7 +15,7 @@ Python 3 bindings for the OpenSlide library. Note: The provided text appears to 
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/fperdigon/openslide_python3.7
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

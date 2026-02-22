@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-test-harness not found in Singularity image. The imag
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-test-harness/overview
-- **Total Downloads**: 259.2K
+- **Total Downloads**: 259.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

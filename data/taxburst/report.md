@@ -12,7 +12,7 @@ TaxBurst (Note: The provided text contains system error logs regarding a contain
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/taxburst/overview
-- **Total Downloads**: 396
+- **Total Downloads**: 400
 - **Last updated**: 2025-08-19
 - **GitHub**: https://github.com/taxburst/taxburst
 - **Stars**: N/A

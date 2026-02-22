@@ -12,7 +12,7 @@ A tool for filtering adapter sequences from PacBio HiFi reads. (Note: Help text 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hifiadapterfilt/overview
-- **Total Downloads**: 812
+- **Total Downloads**: 814
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sheinasim/HiFiAdapterFilt
 - **Stars**: N/A

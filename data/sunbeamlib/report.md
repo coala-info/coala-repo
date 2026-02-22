@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sunbeamlib/overview
-- **Total Downloads**: 907
+- **Total Downloads**: 914
 - **Last updated**: 2025-08-18
 - **GitHub**: https://github.com/sunbeam-labs/sunbeam
 - **Stars**: N/A

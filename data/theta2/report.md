@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'theta2'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/theta2/overview
-- **Total Downloads**: 14.5K
+- **Total Downloads**: 14.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/raphael-group/THetA
 - **Stars**: N/A

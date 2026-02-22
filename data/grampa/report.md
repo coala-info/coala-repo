@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/grampa/overview
-- **Total Downloads**: 6.0K
+- **Total Downloads**: 6.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gwct/grampa
 - **Stars**: N/A

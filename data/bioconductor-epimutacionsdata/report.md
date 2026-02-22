@@ -13,4 +13,8 @@ The package contains 2 datasets: (1) Control ( GEO: GSE104812), (GEO: GSE97362) 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/LeireAbarrategui/epimutacionsData
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-epimutacionsdata/overview
+- **Total Downloads**: 6.9K
+- **Last updated**: 2026-02-09
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A tool for detecting off-target effects in coding regions. (Note: The provided t
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/codoff/overview
-- **Total Downloads**: 4.8K
+- **Total Downloads**: 4.9K
 - **Last updated**: 2025-11-12
 - **GitHub**: https://github.com/Kalan-Lab/codoff
 - **Stars**: N/A

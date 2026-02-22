@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool; it contains lo
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/votuderep/overview
-- **Total Downloads**: 230
+- **Total Downloads**: 235
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/quadram-institute-bioscience/votuderep
 - **Stars**: N/A

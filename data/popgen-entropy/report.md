@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/popgen-entropy/overview
-- **Total Downloads**: 8.2K
+- **Total Downloads**: 8.3K
 - **Last updated**: 2025-11-07
 - **GitHub**: N/A
 - **Stars**: N/A

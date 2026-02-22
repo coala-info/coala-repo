@@ -3,35 +3,24 @@
 ## assemblycomparator2
 
 ### Tool Description
-Could not get help from Singularity for: assemblycomparator2
+A tool for comparing genome assemblies. (Note: The provided text appears to be a container build error log rather than help text, so no arguments could be extracted.)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/assemblycomparator2:2.7.1--hdfd78af_2
 - **Homepage**: https://github.com/cmkobel/assemblycomparator2
 - **Package**: https://anaconda.org/channels/bioconda/packages/assemblycomparator2/overview
-- **Validation**: FAIL (generation failed)
+- **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/assemblycomparator2/overview
-- **Total Downloads**: 14.3K
+- **Total Downloads**: 14.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cmkobel/assemblycomparator2
 - **Stars**: N/A
-### Generation Failed
-
-Could not get help from Singularity for: assemblycomparator2
-
-
-### Validation Errors
-
-- Could not get help from Singularity for: assemblycomparator2
-
-
-
 ### Original Help Text
 ```text
-
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+FATAL:   Unable to handle docker://quay.io/biocontainers/assemblycomparator2:2.7.1--hdfd78af_2 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/5d2b7f82559b3d4edd2a5f2de690135bbd501f6f4f6e8ca39101ab64bf4ca1412550410713: no space left on device
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'hops'. It cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hops/overview
-- **Total Downloads**: 19.2K
+- **Total Downloads**: 19.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/rhuebler/HOPS
 - **Stars**: N/A

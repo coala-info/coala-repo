@@ -12,7 +12,7 @@ The provided text does not contain help information for sicer2; it contains cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sicer2/overview
-- **Total Downloads**: 19.0K
+- **Total Downloads**: 19.1K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/zanglab/SICER2
 - **Stars**: N/A

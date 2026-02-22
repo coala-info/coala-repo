@@ -12,10 +12,10 @@ RNAmining is a tool for RNA coding potential prediction. (Note: The provided tex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rnamining/overview
-- **Total Downloads**: 965
+- **Total Downloads**: 967
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/lfreitasl/RNAmining
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

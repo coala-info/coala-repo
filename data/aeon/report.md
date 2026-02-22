@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool 'aeon'. It appe
 - **Total Downloads**: 4.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sybila/biodivine-aeon-py
-- **Stars**: N/A
+- **Stars**: 7
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

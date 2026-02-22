@@ -12,10 +12,10 @@ A tool for detecting gene absence in genome assemblies using a reference-based a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/absense/overview
-- **Total Downloads**: 661
+- **Total Downloads**: 662
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/caraweisman/abSENSE
-- **Stars**: N/A
+- **Stars**: 18
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

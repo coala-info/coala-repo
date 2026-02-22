@@ -12,7 +12,7 @@ DEACON (DEconvolution of Amplicons with CONsensus) - A tool for processing ampli
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/deacon/overview
-- **Total Downloads**: 9.5K
+- **Total Downloads**: 9.6K
 - **Last updated**: 2025-11-21
 - **GitHub**: https://github.com/bede/deacon
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for converting mzML files to ISA-Tab format. (Note: The provided help tex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mzml2isa/overview
-- **Total Downloads**: 39.3K
+- **Total Downloads**: 39.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/ISA-tools/mzml2isa
 - **Stars**: N/A

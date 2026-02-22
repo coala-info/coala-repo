@@ -15,7 +15,7 @@ FAIL to generate CWL: amplicon_coverage_plot not found in Singularity image. The
 - **Total Downloads**: 13.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/chienchi/amplicon_coverage_plot
-- **Stars**: N/A
+- **Stars**: 13
 ### Generation Failed
 
 FAIL to generate CWL: amplicon_coverage_plot not found in Singularity image. The image may not provide this executable.

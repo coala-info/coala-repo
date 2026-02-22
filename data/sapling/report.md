@@ -12,7 +12,7 @@ A tool for genomic data analysis (Note: The provided text is an error log and do
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sapling/overview
-- **Total Downloads**: 35
+- **Total Downloads**: 36
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/elkebir-group/Sapling
 - **Stars**: N/A

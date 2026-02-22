@@ -12,7 +12,7 @@ BioPerl module for reading and writing sequence features in various formats (e.g
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-featureio/overview
-- **Total Downloads**: 298.9K
+- **Total Downloads**: 299.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

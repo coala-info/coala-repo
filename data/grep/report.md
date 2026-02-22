@@ -12,7 +12,7 @@ Search for PATTERN in each FILE
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/grep/overview
-- **Total Downloads**: 59.8K
+- **Total Downloads**: 59.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

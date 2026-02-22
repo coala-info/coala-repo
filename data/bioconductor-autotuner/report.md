@@ -13,4 +13,8 @@ the package performs statistical inference on raw data to come up with the best 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/crmclean/Autotuner
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-autotuner/overview
+- **Total Downloads**: 14.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

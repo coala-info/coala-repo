@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/iow/overview
-- **Total Downloads**: 283.3K
+- **Total Downloads**: 283.4K
 - **Last updated**: 2025-05-13
 - **GitHub**: https://github.com/biocore/improved-octo-waddle
 - **Stars**: N/A

@@ -3,7 +3,7 @@
 R package transphylo (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-transphylo
+- **Conda**: https://anaconda.org/channels/r/packages/r-transphylo/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/transphylo/index.html
 - **Home (project)**: https://xavierdidelot.github.io/TransPhylo
 - **Package**: transphylo
@@ -11,4 +11,8 @@ R package transphylo (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

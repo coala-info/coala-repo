@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bamread/overview
-- **Total Downloads**: 85.3K
+- **Total Downloads**: 85.4K
 - **Last updated**: 2025-09-09
 - **GitHub**: https://github.com/endrebak/bamread
 - **Stars**: N/A

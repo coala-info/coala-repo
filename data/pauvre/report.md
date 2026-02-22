@@ -12,7 +12,7 @@ A tool for plotting genomic tracks and reference sequences.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pauvre/overview
-- **Total Downloads**: 41.7K
+- **Total Downloads**: 41.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/conchoecia/gloTK
 - **Stars**: N/A

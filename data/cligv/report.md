@@ -12,7 +12,7 @@ Command-line tool cligv (Help text provided contains only system error logs and 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cligv/overview
-- **Total Downloads**: 101
+- **Total Downloads**: 102
 - **Last updated**: 2025-04-23
 - **GitHub**: https://github.com/jonasfreudig/cligv
 - **Stars**: N/A

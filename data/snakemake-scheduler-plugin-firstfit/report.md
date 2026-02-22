@@ -12,7 +12,7 @@ A Snakemake scheduler plugin that implements a first-fit strategy for job schedu
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snakemake-scheduler-plugin-firstfit/overview
-- **Total Downloads**: 116
+- **Total Downloads**: 128
 - **Last updated**: 2025-11-19
 - **GitHub**: https://github.com/snakemake/snakemake-scheduler-plugin-firstfit
 - **Stars**: N/A

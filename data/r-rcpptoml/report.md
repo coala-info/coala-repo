@@ -3,7 +3,7 @@
 R package rcpptoml (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rcpptoml
+- **Conda**: https://anaconda.org/channels/r/packages/r-rcpptoml/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/rcpptoml/index.html
 - **Home (project)**: http://dirk.eddelbuettel.com/code/rcpp.toml.html
 - **Package**: rcpptoml
@@ -11,4 +11,8 @@ R package rcpptoml (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: 4.6K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

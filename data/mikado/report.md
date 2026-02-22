@@ -12,7 +12,7 @@ Mikado is a lightweight Python3 pipeline whose purpose is to facilitate the iden
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mikado/overview
-- **Total Downloads**: 114.6K
+- **Total Downloads**: 114.7K
 - **Last updated**: 2025-10-03
 - **GitHub**: https://github.com/lucventurini/mikado
 - **Stars**: N/A

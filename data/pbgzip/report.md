@@ -12,7 +12,7 @@ Parallel block gzip compression and decompression tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pbgzip/overview
-- **Total Downloads**: 92.3K
+- **Total Downloads**: 92.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nh13/pbgzip
 - **Stars**: N/A

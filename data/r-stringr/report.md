@@ -7,7 +7,7 @@ A consistent, simple and easy to use set of wrappers around
     easy to feed into the input of another.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-stringr
+- **Conda**: https://anaconda.org/channels/r/packages/r-stringr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/stringr/index.html
 - **Home (project)**: https://stringr.tidyverse.org, https://github.com/tidyverse/stringr
 - **Package**: stringr
@@ -15,4 +15,8 @@ A consistent, simple and easy to use set of wrappers around
 - **Author**: Hadley Wickham [aut, cre, cph], Posit Software, PBC [cph, fnd]
 - **Maintainer**: Hadley Wickham <hadley at posit.co>
 - **Skill**: generated
+- **Total Downloads**: 644.3K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/tidyverse/stringr
+- **Stars**: N/A
 

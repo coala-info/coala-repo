@@ -12,7 +12,7 @@ VCF to PostgreSQL loader (Note: The provided text contains container engine logs
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcf-pg-loader/overview
-- **Total Downloads**: 162
+- **Total Downloads**: 165
 - **Last updated**: 2025-12-26
 - **GitHub**: https://github.com/Zacharyr41/vcf-pg-loader
 - **Stars**: N/A

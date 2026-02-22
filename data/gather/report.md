@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gather/overview
-- **Total Downloads**: 157
+- **Total Downloads**: 161
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/Neuroimmunology-UiO/gather
 - **Stars**: N/A

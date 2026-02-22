@@ -1,62 +1,65 @@
 ---
 name: abnumber
-description: "Could not get help from Singularity for: abnumber"
+description: The `abnumber` skill provides a streamlined interface for antibody sequence analysis, acting as a high-level Python API for the ANARCI numbering tool.
 homepage: https://github.com/prihoda/AbNumber
 ---
 
 # abnumber
 
 ## Overview
-abnumber provides a streamlined Python API for antibody sequence analysis, acting as a high-level wrapper for ANARCI. It allows you to treat antibody sequences as objects that can be indexed by their numbering, sliced by regions, and aligned to germlines. Use this skill to automate the identification of Complementarity Determining Regions (CDRs) and to facilitate antibody engineering workflows.
+The `abnumber` skill provides a streamlined interface for antibody sequence analysis, acting as a high-level Python API for the ANARCI numbering tool. You should use this skill to automate the identification of structural regions (CDRs and Frameworks), perform sequence alignments, and map sequences to human germlines. It transforms raw protein sequences into structured `Chain` objects that support intuitive indexing, slicing, and grafting, which are essential for antibody engineering and therapeutic development.
 
-## Installation
-Install the package via Bioconda:
-```bash
-conda install -c bioconda abnumber
-```
-Note: This tool is supported on UNIX and MacOS due to its HMMER dependency.
-
-## Core Workflows
+## Core Usage Patterns
 
 ### Initializing a Chain
-Create a `Chain` object by providing a protein sequence and a numbering scheme (e.g., 'imgt', 'kabat', 'chothia').
+To analyze a sequence, create a `Chain` object. You must specify the numbering scheme (e.g., 'imgt', 'kabat', 'chothia', 'martin', 'bentley').
+
 ```python
 from abnumber import Chain
+
 seq = 'QVQLQQSGAELARPGASVKMSCKASGYTFTRYTMHWVKQRPGQGLEWIGYINPSRGYTNYNQKFKDKATLTTDKSSSTAYMQLSSLTSEDSAVYYCARYYDDHYCLDYWGQGTTLTVSS'
 chain = Chain(seq, scheme='imgt')
 ```
 
-### Extracting CDRs and Regions
-Access specific regions directly as attributes or via the `regions` property.
-- Get CDR3 sequence: `chain.cdr3_seq`
-- Get all regions: `chain.regions`
-- Get framework regions: `chain.fr1_seq`, `chain.fr2_seq`, etc.
+### Extracting Regions
+Access specific antibody regions directly through object attributes:
+- `chain.cdr1_seq`, `chain.cdr2_seq`, `chain.cdr3_seq`: Get CDR sequences.
+- `chain.fr1_seq`, `chain.fr2_seq`, `chain.fr3_seq`, `chain.fr4_seq`: Get Framework sequences.
+- `chain.regions`: Returns a dictionary of all identified regions.
 
-### Numbering-Based Indexing and Slicing
-Access residues using their standardized numbering rather than zero-based array indices.
-- Access a specific position: `chain['5']`
-- Slice a range of positions: `chain['H2':'H5']`
-- Iterate through positions: `for pos, aa in chain: print(pos, aa)`
+### Indexing and Slicing
+`abnumber` allows indexing based on the numbering scheme rather than zero-based array positions.
+- **Single Position**: `chain['5']` returns the amino acid at position 5.
+- **Slicing**: `chain['H2':'H5']` returns a sub-chain or iterator for the specified range.
+- **Iteration**: `for pos, aa in chain: print(pos, aa)` iterates through positions using the scheme's labels.
 
 ### Sequence Alignment
-Perform pairwise or multiple sequence alignments within the context of the chosen numbering scheme.
-- Align to another chain: `chain.align(another_chain)`
-- Find the nearest human germline: `chain.find_merged_human_germline()`
-- Align to the nearest human germline: `chain.align(chain.find_merged_human_germline())`
+Align a chain to another sequence or a germline:
+- **Pairwise**: `chain.align(another_chain)`
+- **Human Germline**: `chain.find_merged_human_germline()` finds the closest human V and J genes.
+- **Identity**: Use `chain.align(germline)` to calculate sequence identity against reference genes.
 
-### Antibody Humanization
-Perform CDR grafting by transferring CDRs from a source chain onto a human germline framework.
+### Humanization (CDR Grafting)
+Perform CDR grafting by moving CDRs from a source chain onto a human germline framework:
 ```python
-humanized_chain = chain.graft_cdrs_onto_human_germline()
+human_germline = chain.find_merged_human_germline()
+humanized_chain = chain.graft_cdrs_onto_human_germline(human_germline)
+```
+
+### Batch Processing
+For high-throughput tasks, use `Chain.batch` to process multiple sequences efficiently. This is significantly faster than initializing individual `Chain` objects in a loop.
+```python
+sequences = {'id1': 'SEQ1...', 'id2': 'SEQ2...'}
+chains = Chain.batch(sequences, scheme='imgt')
 ```
 
 ## Expert Tips and Best Practices
-- **Batch Processing**: For large datasets, use `Chain.batch()` to parse multiple sequences at once, which is more efficient than individual object creation.
-- **Scheme Consistency**: Always specify the `scheme` explicitly when creating a `Chain` to ensure that slicing and CDR definitions remain consistent across your analysis.
-- **Handling Multiple Domains**: If a sequence contains multiple antibody domains, use `Chain.multiple_domains` to identify and process them separately.
-- **Vernier Zone Check**: Use `chain.is_in_vernier(position)` to check if a specific residue belongs to the Vernier zone, which is critical for maintaining CDR conformation during humanization.
-- **Error Handling**: Wrap chain creation in try-except blocks to catch `ChainParseError`, which occurs when a sequence cannot be successfully numbered by ANARCI (e.g., if it is not an antibody or is too truncated).
+- **Scheme Consistency**: Always explicitly define your `scheme`. Mixing 'imgt' and 'kabat' indices will lead to incorrect region boundaries.
+- **Error Handling**: Wrap chain initialization in a `try-except` block for `ChainParseError`. This occurs if a sequence is not an antibody, contains multiple domains (unless `multiple_domains=True` is set), or is otherwise unparseable by ANARCI.
+- **Platform Limitation**: Remember that `abnumber` requires `HMMER` and is only supported on UNIX and MacOS. It will not function natively on Windows.
+- **Insertion Codes**: When indexing, be aware of insertion codes (e.g., '82A' in Kabat). `abnumber` supports multi-letter insertion codes in recent versions.
+- **Vernier Zones**: Use `chain.is_in_vernier(position)` to check if a specific residue belongs to the vernier zone, which is critical for maintaining CDR conformation during grafting.
 
 ## Reference documentation
+- [AbNumber Overview](./references/anaconda_org_channels_bioconda_packages_abnumber_overview.md)
 - [AbNumber GitHub Repository](./references/github_com_prihoda_AbNumber.md)
-- [AbNumber Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_abnumber_overview.md)

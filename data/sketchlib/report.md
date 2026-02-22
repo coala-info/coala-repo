@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions; it co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sketchlib/overview
-- **Total Downloads**: 567
+- **Total Downloads**: 571
 - **Last updated**: 2025-12-02
 - **GitHub**: https://github.com/bacpop/sketchlib.rust
 - **Stars**: N/A

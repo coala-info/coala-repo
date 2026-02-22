@@ -10,7 +10,7 @@ Basic wavelet routines for time series (1D), image (2D) and array
   and R code available at the book we...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-waveslim
+- **Conda**: https://anaconda.org/channels/r/packages/r-waveslim/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/waveslim/index.html
 - **Home (project)**: http://waveslim.blogspot.com, http://www2.imperial.ac.uk/~bwhitche/book
 - **Package**: waveslim
@@ -18,4 +18,8 @@ Basic wavelet routines for time series (1D), image (2D) and array
 - **Author**: Brandon Whitcher
 - **Maintainer**: Brandon Whitcher <bwhitcher at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 428
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

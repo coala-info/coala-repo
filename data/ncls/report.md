@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncls/overview
-- **Total Downloads**: 273.6K
+- **Total Downloads**: 273.7K
 - **Last updated**: 2025-07-07
 - **GitHub**: https://github.com/hunt-genes/ncls
 - **Stars**: N/A

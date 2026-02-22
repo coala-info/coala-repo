@@ -12,7 +12,7 @@ A tool for single-cell analysis (Note: The provided text contains container buil
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sc-musketeers/overview
-- **Total Downloads**: 1.2K
+- **Total Downloads**: 1.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -12,7 +12,7 @@ The provided text is an error log from a container build process and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/plasmar/overview
-- **Total Downloads**: 126
+- **Total Downloads**: 128
 - **Last updated**: 2025-09-28
 - **GitHub**: https://github.com/rastanton/PLASMAR
 - **Stars**: N/A

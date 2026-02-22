@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for kf
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kf2vec/overview
-- **Total Downloads**: 137
+- **Total Downloads**: 139
 - **Last updated**: 2025-09-15
 - **GitHub**: https://github.com/noraracht/kf2vec
 - **Stars**: N/A

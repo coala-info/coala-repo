@@ -6,7 +6,7 @@ Genomic regions processing using open-source command line tools such as 'BEDTool
   bedr API enhances access to these tools as well as offers additional utilities for genomic regions processing.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bedr
+- **Conda**: https://anaconda.org/channels/r/packages/r-bedr/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/bedr/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=bedr
 - **Package**: bedr
@@ -14,4 +14,8 @@ Genomic regions processing using open-source command line tools such as 'BEDTool
 - **Author**: Syed Haider [aut], Daryl Waggott [aut], Emilie Lalonde [ctb], Clement Fung [ctb], Helena Winata [ctb], Dan Knight [ctb], Michael Chirico [ctb], Melinda Luo [ctb], Paul C. Boutros [aut, cre, cph]
 - **Maintainer**: Paul C. Boutros <pboutros at sbpdiscovery.org>
 - **Skill**: generated
+- **Total Downloads**: 39
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

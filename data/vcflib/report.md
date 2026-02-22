@@ -12,7 +12,7 @@ The provided text is an error log from a container build process and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcflib/overview
-- **Total Downloads**: 248.8K
+- **Total Downloads**: 249.0K
 - **Last updated**: 2025-05-19
 - **GitHub**: https://github.com/vcflib/vcflib
 - **Stars**: N/A

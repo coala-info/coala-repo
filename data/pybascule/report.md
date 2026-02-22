@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for py
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pybascule/overview
-- **Total Downloads**: 248
+- **Total Downloads**: 250
 - **Last updated**: 2025-06-25
 - **GitHub**: https://github.com/caravagnalab/pybascule
 - **Stars**: N/A

@@ -5,7 +5,7 @@ Functionality to dynamically define R functions and S4 methods
  conventions.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-inline
+- **Conda**: https://anaconda.org/channels/r/packages/r-inline/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/inline/index.html
 - **Home (project)**: https://github.com/eddelbuettel/inline, https://dirk.eddelbuettel.com/code/inline.html
 - **Package**: inline
@@ -13,4 +13,8 @@ Functionality to dynamically define R functions and S4 methods
 - **Author**: Oleg Sklyar [aut], Dirk Eddelbuettel [aut, cre], Romain Francois [aut], Mike Smith [ctb], Duncan Murdoch [ctb], Karline Soetaert [ctb], Johannes Ranke [ctb]
 - **Maintainer**: Dirk Eddelbuettel <edd at debian.org>
 - **Skill**: generated
+- **Total Downloads**: 18.7K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/eddelbuettel/inline
+- **Stars**: N/A
 

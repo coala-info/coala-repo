@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'kyber'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kyber/overview
-- **Total Downloads**: 663
+- **Total Downloads**: 664
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/kyber
 - **Stars**: N/A

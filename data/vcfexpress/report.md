@@ -12,7 +12,7 @@ A tool for processing VCF files (Note: The provided text is a system error log a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcfexpress/overview
-- **Total Downloads**: 477
+- **Total Downloads**: 478
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/brentp/vcfexpress
 - **Stars**: N/A

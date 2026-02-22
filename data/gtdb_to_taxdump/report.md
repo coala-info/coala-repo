@@ -12,7 +12,7 @@ A tool to convert GTDB (Genome Taxonomy Database) data to NCBI-style taxdump for
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gtdb_to_taxdump/overview
-- **Total Downloads**: 817
+- **Total Downloads**: 819
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nick-youngblut/gtdb_to_taxdump
 - **Stars**: N/A

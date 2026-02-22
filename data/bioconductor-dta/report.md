@@ -11,6 +11,10 @@ The package implements the underlying kinetic modeling approach capable of the p
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dta/overview
+- **Total Downloads**: 36.6K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

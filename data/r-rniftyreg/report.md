@@ -3,7 +3,7 @@
 N/A
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-rniftyreg
+- **Conda**: https://anaconda.org/channels/r/packages/r-rniftyreg/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/RNiftyReg/index.html
 - **Home (project)**: https://github.com/jonclayden/RNiftyReg
 - **Package**: RNiftyReg
@@ -11,4 +11,8 @@ N/A
 - **Author**: Jon Clayden [cre, aut], Marc Modat [aut], Benoit Presles [aut], Thanasis Anthopoulos [aut], Pankaj Daga [aut]
 - **Maintainer**: Jon Clayden <code at clayden.org>
 - **Skill**: generated
+- **Total Downloads**: 43
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/jonclayden/RNiftyReg
+- **Stars**: N/A
 

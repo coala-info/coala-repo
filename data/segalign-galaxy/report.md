@@ -12,7 +12,7 @@ A tool for sequence alignment (Note: The provided text is a container build erro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/segalign-galaxy/overview
-- **Total Downloads**: 636
+- **Total Downloads**: 639
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gsneha26/SegAlign
 - **Stars**: N/A

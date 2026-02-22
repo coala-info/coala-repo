@@ -15,7 +15,7 @@ The provided text does not contain help information for the tool, but appears to
 - **Total Downloads**: 28.3K
 - **Last updated**: 2025-11-25
 - **GitHub**: https://github.com/althonos/pytrimal
-- **Stars**: N/A
+- **Stars**: 27
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

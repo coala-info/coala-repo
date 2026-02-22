@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/stringtie/overview
-- **Total Downloads**: 631.7K
+- **Total Downloads**: 632.8K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/gpertea/stringtie
 - **Stars**: N/A

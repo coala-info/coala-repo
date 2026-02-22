@@ -12,7 +12,7 @@ A suite of tools for processing multiplexed sequencing data (Je: Just Eight). No
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/je-suite/overview
-- **Total Downloads**: 14.4K
+- **Total Downloads**: 14.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

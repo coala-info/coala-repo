@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cassiopee/overview
-- **Total Downloads**: 11.8K
+- **Total Downloads**: 11.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/osallou/cassiopee-c
 - **Stars**: N/A

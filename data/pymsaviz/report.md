@@ -12,7 +12,7 @@ A tool for Multiple Sequence Alignment (MSA) visualization. (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pymsaviz/overview
-- **Total Downloads**: 14.4K
+- **Total Downloads**: 14.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/moshi4/pyMSAviz
 - **Stars**: N/A

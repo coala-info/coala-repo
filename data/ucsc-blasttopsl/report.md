@@ -12,7 +12,7 @@ Convert BLAST output to PSL format.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-blasttopsl/overview
-- **Total Downloads**: 29.9K
+- **Total Downloads**: 30.0K
 - **Last updated**: 2025-06-30
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

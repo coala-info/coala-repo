@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyngost/overview
-- **Total Downloads**: 235
+- **Total Downloads**: 237
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/leosanbu/pyngoST
 - **Stars**: N/A

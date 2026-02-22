@@ -12,10 +12,10 @@ Quantification of Isoforms from Methylation-aware Bisulfite-seq Alignment (Note:
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/qimba/overview
-- **Total Downloads**: 403
+- **Total Downloads**: 405
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/quadram-institute-bioscience/qimba
-- **Stars**: N/A
+- **Stars**: 1
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

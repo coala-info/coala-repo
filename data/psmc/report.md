@@ -15,7 +15,7 @@ The provided text is a container build log and does not contain the help documen
 - **Total Downloads**: 4.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/lh3/psmc
-- **Stars**: N/A
+- **Stars**: 185
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

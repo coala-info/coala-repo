@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ccp4srs/overview
-- **Total Downloads**: 445
+- **Total Downloads**: 446
 - **Last updated**: 2025-07-18
 - **GitHub**: N/A
 - **Stars**: N/A

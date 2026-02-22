@@ -12,7 +12,7 @@ The executable 'perl-math-vecstat' was not found in the system PATH. No help tex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-math-vecstat/overview
-- **Total Downloads**: 193.1K
+- **Total Downloads**: 193.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pld-linux/perl-Math-VecStat
 - **Stars**: N/A

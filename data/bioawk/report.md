@@ -12,7 +12,7 @@ An extension of standard awk with added support for several common biological da
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bioawk/overview
-- **Total Downloads**: 149.8K
+- **Total Downloads**: 149.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

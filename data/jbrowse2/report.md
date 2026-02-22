@@ -12,7 +12,7 @@ The provided text does not contain help information for jbrowse2; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jbrowse2/overview
-- **Total Downloads**: 153.1K
+- **Total Downloads**: 153.8K
 - **Last updated**: 2026-01-27
 - **GitHub**: N/A
 - **Stars**: N/A

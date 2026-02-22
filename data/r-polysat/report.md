@@ -9,7 +9,7 @@ A collection of tools to handle microsatellite data of
  infinite alleles model, with or without taking ploidies...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-polysat
+- **Conda**: https://anaconda.org/channels/r/packages/r-polysat/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/polysat/index.html
 - **Home (project)**: https://github.com/lvclark/polysat/wiki
 - **Package**: polysat
@@ -17,4 +17,8 @@ A collection of tools to handle microsatellite data of
 - **Author**: Lindsay V. Clark [aut, cre], Alistair J. Hall [ctb], Handunnethi Nihal de Silva [ctb], Tyler William Smith [ctb]
 - **Maintainer**: Lindsay V. Clark <Lindsay.Clark at seattlechildrens.org>
 - **Skill**: generated
+- **Total Downloads**: 377
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

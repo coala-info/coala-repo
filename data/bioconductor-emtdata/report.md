@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/emtdata
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-emtdata/overview
+- **Total Downloads**: 11.1K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

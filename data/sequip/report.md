@@ -12,7 +12,7 @@ A tool for sequence processing (Note: The provided text is an error log from a c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sequip/overview
-- **Total Downloads**: 6.8K
+- **Total Downloads**: 6.9K
 - **Last updated**: 2025-09-02
 - **GitHub**: https://github.com/nawrockie/sequip
 - **Stars**: N/A

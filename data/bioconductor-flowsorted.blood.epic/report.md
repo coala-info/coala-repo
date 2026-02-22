@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/immunomethylomics/FlowSorted.Blood.EPIC
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-flowsorted.blood.epic/overview
+- **Total Downloads**: 25.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

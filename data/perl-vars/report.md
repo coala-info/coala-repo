@@ -12,7 +12,7 @@ The tool 'perl-vars' could not be executed, and no help text was provided in the
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-vars/overview
-- **Total Downloads**: 18.1K
+- **Total Downloads**: 18.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/zszszszsz/.config
 - **Stars**: N/A

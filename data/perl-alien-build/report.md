@@ -12,7 +12,7 @@ FAIL to generate CWL: perl-alien-build not found in Singularity image. The image
 - **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-alien-build/overview
-- **Total Downloads**: 255.4K
+- **Total Downloads**: 255.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

@@ -15,7 +15,7 @@ A tool for merging genome assemblies. (Note: The provided text is a system error
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mahulchak/quickmerge
-- **Stars**: N/A
+- **Stars**: 207
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

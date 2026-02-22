@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for hh
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hhsuite/overview
-- **Total Downloads**: 427.2K
+- **Total Downloads**: 427.3K
 - **Last updated**: 2025-05-28
 - **GitHub**: https://github.com/soedinglab/hh-suite
 - **Stars**: N/A

@@ -13,4 +13,8 @@ the package make querying metadata very flexible and powerful.  fastq and sra fi
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/zhujack/SRAdb
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-sradb/overview
+- **Total Downloads**: 55.4K
+- **Last updated**: 2026-02-08
+- **Stars**: N/A
 

@@ -13,4 +13,8 @@ The package generates plots specifically crafted to eliminate the deceptive visu
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jianhong/hicVennDiagram
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hicvenndiagram/overview
+- **Total Downloads**: 1.6K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

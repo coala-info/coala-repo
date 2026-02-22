@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: John R. Stevens and Dennis S. Mecham
 - **Maintainer**: John R. Stevens &#x3c;&#x6a;&#x6f;&#x68;&#x6e;&#x2e;&#x72;&#x2e;&#x73;&#x74;&#x65;&#x76;&#x65;&#x6e;&#x73;&#x20;&#x61;&#x74;&#x20;&#x75;&#x73;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e;
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mvgst/overview
+- **Total Downloads**: 11.9K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

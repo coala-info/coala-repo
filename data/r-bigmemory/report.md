@@ -7,7 +7,7 @@ Create, store, access, and manipulate massive matrices.
     'bigalgebra' provide advanced functionality.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-bigmemory
+- **Conda**: https://anaconda.org/channels/r/packages/r-bigmemory/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/bigmemory/index.html
 - **Home (project)**: https://github.com/kaneplusplus/bigmemory
 - **Package**: bigmemory
@@ -15,4 +15,8 @@ Create, store, access, and manipulate massive matrices.
 - **Author**: Michael J. Kane [aut, cre], John W. Emerson [aut], Peter Haverty [aut], Charles Determan [aut]
 - **Maintainer**: Michael J. Kane <bigmemoryauthors at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 536
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/kaneplusplus/bigmemory
+- **Stars**: N/A
 

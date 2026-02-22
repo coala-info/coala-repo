@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mitos/overview
-- **Total Downloads**: 134.0K
+- **Total Downloads**: 134.1K
 - **Last updated**: 2025-12-09
 - **GitHub**: N/A
 - **Stars**: N/A

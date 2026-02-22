@@ -12,7 +12,7 @@ A tool related to the Perl Sub::Name module, used for renaming subroutines. (Not
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-sub-name/overview
-- **Total Downloads**: 237.6K
+- **Total Downloads**: 237.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gfx/Perl-Sub-Name
 - **Stars**: N/A

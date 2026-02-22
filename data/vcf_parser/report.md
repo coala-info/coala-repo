@@ -12,7 +12,7 @@ A tool for parsing VCF (Variant Call Format) files. (Note: The provided text is 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcf_parser/overview
-- **Total Downloads**: 433
+- **Total Downloads**: 435
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/moonso/vcf_parser
 - **Stars**: N/A

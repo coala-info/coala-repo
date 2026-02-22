@@ -12,7 +12,7 @@ MTG-Link is a tool for linking genome assemblies using long reads. (Note: The pr
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mtglink/overview
-- **Total Downloads**: 36.2K
+- **Total Downloads**: 36.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/anne-gcd/MTG-Link
 - **Stars**: N/A

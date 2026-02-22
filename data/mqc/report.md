@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool 'mqc'. It conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mqc/overview
-- **Total Downloads**: 53.8K
+- **Total Downloads**: 53.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Biobix/mQC
 - **Stars**: N/A

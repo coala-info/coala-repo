@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It contains co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ensembl-py/overview
-- **Total Downloads**: 384
+- **Total Downloads**: 387
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/Ensembl/ensembl-py
 - **Stars**: N/A

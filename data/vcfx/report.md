@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vcfx/overview
-- **Total Downloads**: 5.0K
+- **Total Downloads**: 5.1K
 - **Last updated**: 2025-12-20
 - **GitHub**: https://github.com/ieeta-pt/VCFX
 - **Stars**: N/A

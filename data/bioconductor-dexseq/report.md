@@ -11,6 +11,10 @@ The package is focused on finding differential exon usage using RNA-seq exon cou
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dexseq/overview
+- **Total Downloads**: 109.7K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -13,4 +13,8 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ZW-xjtlu/exomePeak2
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-exomepeak2/overview
+- **Total Downloads**: 14.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

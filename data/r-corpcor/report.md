@@ -4,7 +4,7 @@ Implements a James-Stein-type shrinkage estimator for
   the covariance matrix, with separate shrinkage for variances and correlations.
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-corpcor
+- **Conda**: https://anaconda.org/channels/r/packages/r-corpcor/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/corpcor/index.html
 - **Home (project)**: http://strimmerlab.org/software/corpcor/
 - **Package**: corpcor
@@ -12,4 +12,8 @@ Implements a James-Stein-type shrinkage estimator for
 - **Author**: Juliane Schafer, Rainer Opgen-Rhein, Verena Zuber, Miika Ahdesmaki, A. Pedro Duarte Silva, and Korbinian Strimmer.
 - **Maintainer**: Korbinian Strimmer <strimmerlab at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 676
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ A tool for protein secondary structure prediction (Note: The provided text appea
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/s4pred/overview
-- **Total Downloads**: 874
+- **Total Downloads**: 881
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/psipred/s4pred
 - **Stars**: N/A

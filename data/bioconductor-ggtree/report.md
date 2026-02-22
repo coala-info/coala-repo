@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/YuLab-SMU/ggtree
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ggtree/overview
+- **Total Downloads**: 141.0K
+- **Last updated**: 2026-02-07
+- **Stars**: N/A
 

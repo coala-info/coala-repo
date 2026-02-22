@@ -11,6 +11,10 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-alabaster.spatial/overview
+- **Total Downloads**: 2.9K
+- **Last updated**: 2025-10-15
+- **Stars**: N/A
 

@@ -13,4 +13,8 @@ The package can use any tabular genomic feature data as long as it has minimal i
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BIMSBbioinfo/genomation
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-genomation/overview
+- **Total Downloads**: 72.5K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

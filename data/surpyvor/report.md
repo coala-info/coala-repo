@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/surpyvor/overview
-- **Total Downloads**: 20.4K
+- **Total Downloads**: 20.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/surpyvor
 - **Stars**: N/A

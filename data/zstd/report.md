@@ -12,7 +12,7 @@ The provided text does not contain help information for the zstd command-line to
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/zstd/overview
-- **Total Downloads**: 696.7K
+- **Total Downloads**: 699.0K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/facebook/zstd
 - **Stars**: N/A

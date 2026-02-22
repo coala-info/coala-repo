@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mpralib/overview
-- **Total Downloads**: 1.7K
+- **Total Downloads**: 1.8K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/kircherlab/MPRAlib
 - **Stars**: N/A

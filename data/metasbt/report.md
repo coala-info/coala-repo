@@ -12,7 +12,7 @@ MetaSBT: a scalable framework for the taxonomical profiling of metagenomes (Note
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metasbt/overview
-- **Total Downloads**: 538
+- **Total Downloads**: 542
 - **Last updated**: 2025-07-07
 - **GitHub**: https://github.com/cumbof/MetaSBT
 - **Stars**: N/A

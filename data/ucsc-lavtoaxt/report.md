@@ -12,7 +12,7 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-lavtoaxt/overview
-- **Total Downloads**: 18.2K
+- **Total Downloads**: 18.3K
 - **Last updated**: 2025-06-28
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

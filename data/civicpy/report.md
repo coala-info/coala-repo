@@ -13,7 +13,7 @@ The provided text does not contain help information or usage instructions for ci
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/civicpy/overview
 - **Total Downloads**: 4.7K
-- **Last updated**: 2026-01-06
+- **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/griffithlab/civicpy
 - **Stars**: N/A
 ### Original Help Text

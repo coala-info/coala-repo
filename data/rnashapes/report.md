@@ -12,7 +12,7 @@ RNA secondary structure analysis tool (Note: The provided text contains containe
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rnashapes/overview
-- **Total Downloads**: 85.6K
+- **Total Downloads**: 85.7K
 - **Last updated**: 2025-07-24
 - **GitHub**: N/A
 - **Stars**: N/A

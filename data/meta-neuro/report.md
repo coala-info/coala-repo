@@ -12,7 +12,7 @@ A tool for neuroimaging meta-analysis (Note: The provided help text contains onl
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/meta-neuro/overview
-- **Total Downloads**: 6.5K
+- **Total Downloads**: 6.6K
 - **Last updated**: 2025-11-07
 - **GitHub**: https://github.com/bagari/meta
 - **Stars**: N/A

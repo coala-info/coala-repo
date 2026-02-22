@@ -7,7 +7,7 @@ The canonical way to perform meta-analysis involves using effect sizes.
    and routines for graphical display.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-metap
+- **Conda**: https://anaconda.org/channels/r/packages/r-metap/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/metap/index.html
 - **Home (project)**: http://www.dewey.myzen.co.uk/meta/meta.html
 - **Package**: metap
@@ -15,4 +15,8 @@ The canonical way to perform meta-analysis involves using effect sizes.
 - **Author**: Michael Dewey [aut, cre]
 - **Maintainer**: Michael Dewey <lists at dewey.myzen.co.uk>
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 

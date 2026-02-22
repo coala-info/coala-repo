@@ -12,7 +12,7 @@ The provided text does not contain help information for cyvcf2; it is an error l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cyvcf2/overview
-- **Total Downloads**: 892.6K
+- **Total Downloads**: 893.9K
 - **Last updated**: 2025-12-17
 - **GitHub**: https://github.com/brentp/cyvcf2
 - **Stars**: N/A

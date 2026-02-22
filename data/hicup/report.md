@@ -12,7 +12,7 @@ Hi-C User Pipeline (HiCUP) for processing Hi-C data. (Note: The provided text is
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hicup/overview
-- **Total Downloads**: 35.6K
+- **Total Downloads**: 35.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

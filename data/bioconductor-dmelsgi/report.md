@@ -11,6 +11,10 @@ The package contains the experimental data and documented source code of the man
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: Not found
+- **GitHub**: N/A
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-dmelsgi/overview
+- **Total Downloads**: 30.2K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

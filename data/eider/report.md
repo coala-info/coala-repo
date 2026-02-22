@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/eider/overview
-- **Total Downloads**: 301
+- **Total Downloads**: 304
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/heuermh/eider
 - **Stars**: N/A

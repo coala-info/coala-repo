@@ -12,7 +12,7 @@ The GenomeTools genome analysis system is a free collection of bioinformatics to
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/genometools-genometools/overview
-- **Total Downloads**: 411.5K
+- **Total Downloads**: 412.4K
 - **Last updated**: 2025-10-06
 - **GitHub**: https://github.com/genometools/genometools
 - **Stars**: N/A

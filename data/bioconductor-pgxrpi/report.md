@@ -13,4 +13,8 @@ The package is an R wrapper for Progenetix REST API built upon the Beacon v2 pro
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/progenetix/pgxRpi
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-pgxrpi/overview
+- **Total Downloads**: 516
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

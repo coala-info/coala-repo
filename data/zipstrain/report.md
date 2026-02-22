@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/zipstrain/overview
-- **Total Downloads**: 341
+- **Total Downloads**: 351
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/OlmLab/ZipStrain
 - **Stars**: N/A

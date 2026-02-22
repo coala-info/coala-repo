@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sequenticon/overview
-- **Total Downloads**: 989
+- **Total Downloads**: 995
 - **Last updated**: 2025-05-10
 - **GitHub**: https://github.com/Edinburgh-Genome-Foundry/sequenticon
 - **Stars**: N/A

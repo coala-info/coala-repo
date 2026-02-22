@@ -15,7 +15,7 @@ A tool to fix prefixes in AdapterRemoval output. (Note: The provided text is a c
 - **Total Downloads**: 15.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/apeltzer/AdapterRemovalFixPrefix
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

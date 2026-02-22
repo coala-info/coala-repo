@@ -10,7 +10,7 @@ Parametric Time Warping aligns patterns, i.e., it aims to
         reference. Two optimizat...
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-ptw
+- **Conda**: https://anaconda.org/channels/r/packages/r-ptw/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/ptw/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=ptw
 - **Package**: ptw
@@ -18,4 +18,8 @@ Parametric Time Warping aligns patterns, i.e., it aims to
 - **Author**: Jan Gerretzen [ctb], Paul Eilers [aut], Hans Wouters [ctb], Tom Bloemberg [aut], Ron Wehrens [aut, cre]
 - **Maintainer**: Ron Wehrens <ron.wehrens at gmail.com>
 - **Skill**: generated
+- **Total Downloads**: 369
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

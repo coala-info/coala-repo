@@ -12,7 +12,7 @@ The provided text is a container build error log and does not contain the help d
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/py2bit/overview
-- **Total Downloads**: 193.7K
+- **Total Downloads**: 193.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/deeptools/py2bit
 - **Stars**: N/A

@@ -12,7 +12,7 @@ A tool for parallel rsync, typically used for downloading data from UCSC genome 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-parasync/overview
-- **Total Downloads**: 34.8K
+- **Total Downloads**: 34.9K
 - **Last updated**: 2025-06-29
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A

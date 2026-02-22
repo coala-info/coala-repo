@@ -12,7 +12,7 @@ tsumugi is a tool for time-series unsupervised mutation grouping and identificat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tsumugi/overview
-- **Total Downloads**: 121
+- **Total Downloads**: 124
 - **Last updated**: 2026-02-05
 - **GitHub**: https://github.com/akikuno/TSUMUGI-dev
 - **Stars**: N/A

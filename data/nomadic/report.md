@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nomadic/overview
-- **Total Downloads**: 424
+- **Total Downloads**: 430
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/JasonAHendry/nomadic
 - **Stars**: N/A

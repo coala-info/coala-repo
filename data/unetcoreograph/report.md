@@ -12,7 +12,7 @@ A tool for processing or analyzing images, likely related to UNet architectures 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unetcoreograph/overview
-- **Total Downloads**: 789
+- **Total Downloads**: 796
 - **Last updated**: 2025-09-07
 - **GitHub**: https://github.com/HMS-IDAC/UNetCoreograph
 - **Stars**: N/A

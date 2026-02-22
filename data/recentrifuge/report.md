@@ -12,7 +12,7 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/recentrifuge/overview
-- **Total Downloads**: 91.4K
+- **Total Downloads**: 91.5K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/khyox/recentrifuge
 - **Stars**: N/A

@@ -12,7 +12,7 @@ BWA-mem2 is the next version of the bwa-mem algorithm in bwa. It is highly optim
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bwa-mem2/overview
-- **Total Downloads**: 88.9K
+- **Total Downloads**: 89.0K
 - **Last updated**: 2025-07-02
 - **GitHub**: https://github.com/bwa-mem2/bwa-mem2
 - **Stars**: N/A

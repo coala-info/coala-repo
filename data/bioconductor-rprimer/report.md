@@ -13,4 +13,8 @@ the package vignette.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sofpn/rprimer
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rprimer/overview
+- **Total Downloads**: 5.0K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

@@ -12,7 +12,7 @@ An interactive explorer for single-cell transcriptomics data. Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cellxgene/overview
-- **Total Downloads**: 30.6K
+- **Total Downloads**: 30.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A

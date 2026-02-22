@@ -12,7 +12,7 @@ Compress or expand files using Lempel-Ziv coding (LZ77)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/gzip/overview
-- **Total Downloads**: 212.7K
+- **Total Downloads**: 212.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bazingagin/npc_gzip
 - **Stars**: N/A

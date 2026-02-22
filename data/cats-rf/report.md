@@ -12,7 +12,7 @@ The provided text does not contain help information or usage instructions for ca
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cats-rf/overview
-- **Total Downloads**: 677
+- **Total Downloads**: 685
 - **Last updated**: 2025-09-27
 - **GitHub**: https://github.com/bodulic/CATS-rf
 - **Stars**: N/A

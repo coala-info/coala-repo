@@ -12,7 +12,7 @@ A tool for detecting structural variants from long-read sequencing data.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/variantbreak/overview
-- **Total Downloads**: 5.6K
+- **Total Downloads**: 5.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cytham/variantbreak
 - **Stars**: N/A

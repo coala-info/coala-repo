@@ -15,7 +15,7 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Total Downloads**: 335
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/urineri/bbmapy
-- **Stars**: N/A
+- **Stars**: 0
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

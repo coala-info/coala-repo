@@ -12,7 +12,7 @@ The provided text does not contain help information for pyfaidx; it is a log of 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyfaidx/overview
-- **Total Downloads**: 776.5K
+- **Total Downloads**: 777.0K
 - **Last updated**: 2025-09-03
 - **GitHub**: https://github.com/mdshw5/pyfaidx
 - **Stars**: N/A

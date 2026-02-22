@@ -11,6 +11,11 @@ The provided text does not contain help information or a description for the too
 - **Package**: Not found
 - **Validation**: PASS
 
+- **Conda**: https://anaconda.org/channels/bioconda/packages/cegroomer/overview
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: N/A
+- **Stars**: N/A
 ### Original Help Text
 ```text
 INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred

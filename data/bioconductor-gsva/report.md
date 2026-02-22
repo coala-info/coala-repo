@@ -13,4 +13,8 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/rcastelo/GSVA
 - **Skill**: generated
+- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gsva/overview
+- **Total Downloads**: 79.3K
+- **Last updated**: 2025-04-22
+- **Stars**: N/A
 

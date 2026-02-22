@@ -12,7 +12,7 @@ A tool for sequence analysis (Oligo-Word-Lattice), typically used in bioinformat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/owl/overview
-- **Total Downloads**: 263
+- **Total Downloads**: 269
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/PacificBiosciences/owl
 - **Stars**: N/A

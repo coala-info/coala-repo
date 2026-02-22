@@ -12,7 +12,7 @@ CHOPIN2 (CHOPping INformation) is a tool for feature selection and data dimensio
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/chopin2/overview
-- **Total Downloads**: 327.9K
+- **Total Downloads**: 328.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cumbof/chopin2
 - **Stars**: N/A

@@ -3,7 +3,7 @@
 R package mixedcca (documentation from project home).
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-mixedcca
+- **Conda**: https://anaconda.org/channels/r/packages/r-mixedcca/overview
 - **R-project (CRAN)**: https://cran.r-project.org/web/packages/mixedcca/index.html
 - **Home (project)**: https://github.com/irinagain/mixedCCA
 - **Package**: mixedcca
@@ -11,4 +11,8 @@ R package mixedcca (documentation from project home).
 - **Author**: N/A
 - **Maintainer**: N/A
 - **Skill**: generated
+- **Total Downloads**: N/A
+- **Last updated**: N/A
+- **GitHub**: https://github.com/irinagain/mixedCCA
+- **Stars**: N/A
 

@@ -15,7 +15,7 @@ Trim alignments from an amplicon scheme
 - **Total Downloads**: 52.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/will-rowe/artic-tools
-- **Stars**: N/A
+- **Stars**: 5
 ### Original Help Text
 ```text
 Trim alignments from an amplicon scheme

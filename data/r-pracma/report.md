@@ -6,7 +6,7 @@ Provides a large number of functions from numerical analysis and
     Uses 'MATLAB' function names where appropriate to simplify porting.</p>
 
 ### Metadata
-- **Conda (r channel)**: https://anaconda.org/r/r-pracma
+- **Conda**: https://anaconda.org/channels/r/packages/r-pracma/overview
 - **R-project (CRAN)**: https://cloud.r-project.org/web/packages/pracma/index.html
 - **Home (project)**: https://CRAN.R-project.org/package=pracma
 - **Package**: pracma
@@ -14,4 +14,8 @@ Provides a large number of functions from numerical analysis and
 - **Author**: Hans W. Borchers [aut, cre]
 - **Maintainer**: Hans W. Borchers <hwborchers at googlemail.com>
 - **Skill**: generated
+- **Total Downloads**: 7.1K
+- **Last updated**: 2025-04-22
+- **GitHub**: N/A
+- **Stars**: N/A
 

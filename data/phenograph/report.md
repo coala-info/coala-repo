@@ -12,7 +12,7 @@ PhenoGraph is a method for clustering high-dimensional single-cell data. (Note: 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phenograph/overview
-- **Total Downloads**: 908
+- **Total Downloads**: 910
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/dpeerlab/PhenoGraph
 - **Stars**: N/A

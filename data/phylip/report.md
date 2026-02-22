@@ -12,7 +12,7 @@ PHYLIP (the PHYLogeny Inference Package) is a package of programs for inferring 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phylip/overview
-- **Total Downloads**: 93.8K
+- **Total Downloads**: 93.9K
 - **Last updated**: 2025-08-12
 - **GitHub**: N/A
 - **Stars**: N/A

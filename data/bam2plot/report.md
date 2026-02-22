@@ -12,7 +12,7 @@ The provided text does not contain help information for bam2plot; it contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bam2plot/overview
-- **Total Downloads**: 832
+- **Total Downloads**: 833
 - **Last updated**: 2026-02-20
 - **GitHub**: https://github.com/willros/bam2plot
 - **Stars**: N/A

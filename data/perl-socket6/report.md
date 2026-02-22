@@ -3,35 +3,24 @@
 ## perl-socket6
 
 ### Tool Description
-FAIL to generate CWL: perl-socket6 not found in Singularity image. The image may not provide this executable.
+The provided text is a system error log regarding a failed Singularity/Docker image pull and does not contain CLI help information or argument definitions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-socket6:0.29--pl5321h7b50bb2_6
 - **Homepage**: http://metacpan.org/pod/Socket6
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-socket6/overview
-- **Validation**: FAIL (generation failed)
+- **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-socket6/overview
 - **Total Downloads**: 13.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
-### Generation Failed
-
-FAIL to generate CWL: perl-socket6 not found in Singularity image. The image may not provide this executable.
-
-
-### Validation Errors
-
-- FAIL to generate CWL: perl-socket6 not found in Singularity image. The image may not provide this executable.
-
-
-
 ### Original Help Text
 ```text
-
+WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/21dae2847739d685e29fdf59bbcfa15e621f0c9e1f4c161c8e02aeb7281e5874: no space left on device
+WARNING: Falling back to direct digest.
+INFO:    Converting OCI blobs to SIF format
+FATAL:   Unable to handle docker://quay.io/biocontainers/perl-socket6:0.29--pl5321h7b50bb2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1962602242: no space left on device
 ```
 
-
-## Metadata
-- **Skill**: generated

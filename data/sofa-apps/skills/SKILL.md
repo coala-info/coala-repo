@@ -1,8 +1,9 @@
 ---
 name: sofa-apps
-description: The sofa-apps skill provides procedural knowledge for working with the CouchCommerce application framework.
+description: This tool provides procedural knowledge for developing, building, and deploying applications within the CouchCommerce framework. Use when user asks to set up the development environment, manage dependencies with Bower, execute Grunt build tasks, or follow the release and deployment workflow.
 homepage: https://github.com/sofa/app
 ---
+
 
 # sofa-apps
 

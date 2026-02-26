@@ -1,8 +1,9 @@
 ---
 name: pout2mzid
-description: The `pout2mzid` tool is a specialized utility designed to merge Percolator output (`.pout`) with existing mzIdentML files.
+description: The pout2mzid tool merges Percolator output files with mzIdentML files using a memory-efficient stream parser. Use when user asks to merge Percolator results with mzIdentML files, process large proteomics datasets without exceeding RAM, or integrate statistical metrics into identification results.
 homepage: https://github.com/percolator/pout2mzid
 ---
+
 
 # pout2mzid
 

@@ -1,8 +1,9 @@
 ---
 name: perl-prefork
-description: The `prefork` pragma provides a unified way to handle module loading across different execution profiles.
+description: The perl-prefork tool provides a unified way to handle module loading by delaying it for procedural scripts or pre-loading it for forking environments to optimize memory sharing. Use when user asks to optimize Perl module loading, manage memory sharing via copy-on-write in forking environments, or implement the prefork pragma in modules and scripts.
 homepage: https://github.com/karenetheridge/prefork
 ---
+
 
 # perl-prefork
 

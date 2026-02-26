@@ -1,8 +1,9 @@
 ---
 name: ptrimmer
-description: pTrimmer is a high-performance utility designed to clean amplicon sequencing data by identifying and stripping primer sequences.
+description: pTrimmer is a high-performance utility designed to clean amplicon sequencing data by identifying and stripping primer sequences. Use when user asks to trim primers from sequencing reads, process single-end or paired-end amplicon data, or filter reads based on quality and primer matches.
 homepage: https://github.com/DMU-lilab/pTrimmer
 ---
+
 
 # ptrimmer
 

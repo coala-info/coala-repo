@@ -1,8 +1,9 @@
 ---
 name: bioconductor-icobra
-description: The package also contains a shiny application for interactive exploration of results.
+description: iCOBRA is an R package used to evaluate and visualize the performance of ranking and assignment methods by comparing results against a ground truth. Use when user asks to benchmark differential expression tools, calculate performance metrics like ROC and FDR, or generate comparative plots for feature rankings.
 homepage: https://bioconductor.org/packages/release/bioc/html/iCOBRA.html
 ---
+
 
 # bioconductor-icobra
 

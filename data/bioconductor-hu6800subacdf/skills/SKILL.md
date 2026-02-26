@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu6800subacdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Hu6800subA Affymetrix microarray to map probe intensities to probe sets. Use when user asks to convert between chip coordinates and indices, access the Hu6800subA CDF environment, or process Affymetrix microarray data using the affy package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800subacdf.html
 ---
+
 
 # bioconductor-hu6800subacdf
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human550v3bcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides platform-specific constants and SNP mapping data for processing Illumina Human550-v3b BeadChips using the CRLMM algorithm. Use when user asks to perform genotype calling, process Illumina 550k v3b array data, or resolve missing annotation errors in the crlmm package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human550v3bCrlmm.html
 ---
+
 
 # bioconductor-human550v3bcrlmm
 

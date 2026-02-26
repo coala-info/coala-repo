@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lrcell
-description: the package is available on all platforms; click for details.
+description: LRcell identifies specific cell types that drive differential gene expression in bulk RNA-sequencing data by leveraging single-cell transcriptomic references. Use when user asks to identify cell types underlying bulk expression changes, perform cell-type enrichment analysis, or integrate single-cell data with bulk RNA-seq results.
 homepage: https://bioconductor.org/packages/release/bioc/html/LRcell.html
 ---
+
 
 # bioconductor-lrcell
 

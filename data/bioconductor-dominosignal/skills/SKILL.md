@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dominosignal
-description: the package is available on all platforms; click for details.
+description: This tool analyzes intra- and intercellular signaling in single-cell RNA sequencing data by linking transcription factor activation to receptor-ligand interactions. Use when user asks to build domino objects, establish transcription factor-receptor-ligand linkages, or visualize communication networks between cell clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/dominoSignal.html
 ---
+
 
 # bioconductor-dominosignal
 

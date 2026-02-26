@@ -1,8 +1,9 @@
 ---
 name: pifcosm
-description: PifCoSm (Pipeline for Construction of Supermatrices) is a bioinformatics tool designed to automate the creation of supermatrix phylogenetic trees using data sourced from GenBank.
+description: PifCoSm automates the construction of supermatrix phylogenetic trees by integrating sequence processing, alignment, and maximum likelihood inference using GenBank data. Use when user asks to build multi-locus phylogenies from GenBank records, automate sequence alignment and tree construction, or perform maximum likelihood searches with RAxML.
 homepage: https://github.com/RybergGroup/PifCoSm
 ---
+
 
 # pifcosm
 

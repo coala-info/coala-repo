@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ivas
-description: the package is available on all platforms; click for details.
+description: This tool identifies genetic variants affecting alternative splicing by integrating RNA-seq transcript expression and genotype data. Use when user asks to identify splicing quantitative trait loci, detect alternative splicing patterns, calculate transcript expression ratios, or map SNPs to splicing events.
 homepage: https://bioconductor.org/packages/release/bioc/html/IVAS.html
 ---
+
 
 # bioconductor-ivas
 

@@ -1,8 +1,9 @@
 ---
 name: wgatools
-description: wgatools is an ultrafast, Rust-based toolkit designed for the comprehensive manipulation and analysis of whole genome alignment files.
+description: wgatools is a toolkit for manipulating and analyzing whole genome alignment files. Use when user asks to convert alignment formats, index or extract genomic regions, chunk or filter alignments, call variants, generate statistics, create dotplots, or inspect alignments.
 homepage: https://github.com/wjwei-handsome/wgatools
 ---
+
 
 # wgatools
 

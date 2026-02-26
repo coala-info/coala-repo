@@ -1,8 +1,9 @@
 ---
 name: etoki
-description: EToKi (Enterobase Tool Kit) is a modular suite of tools designed to handle the end-to-end processing of microbial genomic data.
+description: EToKi is a modular suite of tools designed for the end-to-end processing, assembly, and comparative analysis of microbial genomic data. Use when user asks to preprocess raw reads, assemble genomes, perform MLST genotyping, conduct in silico serotyping, or generate multiple genome alignments and phylogenetic trees.
 homepage: https://github.com/zheminzhou/EToKi
 ---
+
 
 # etoki
 

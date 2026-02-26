@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedcoverage
-description: The `bedCoverage` utility is part of the UCSC Genome Browser "kent" toolset.
+description: The ucsc-bedcoverage tool calculates genomic coverage from BED files. Use when user asks to determine total bases covered, calculate percentage of coverage, assess sequencing breadth, identify assembly gaps, or calculate genomic annotation footprints.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedcoverage
 

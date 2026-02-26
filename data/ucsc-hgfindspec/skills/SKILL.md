@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgfindspec
-description: The `hgFindSpec` utility is a core component of the UCSC Genome Browser "kent" suite.
+description: This tool translates search specifications into a database table for the UCSC Genome Browser's search functionality. Use when user asks to generate search specifications for the UCSC Genome Browser, create the hgFindSpec table, or validate search configurations.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgfindspec
 

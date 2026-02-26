@@ -1,8 +1,9 @@
 ---
 name: pgdspider
-description: pgdspider is a Java-based utility designed to bridge the gap between various population genetics and genomics software programs.
+description: pgdspider is a universal data converter for various population genetics and genomics file formats. Use when user asks to convert genomic data files, transform NGS data between different formats, or prepare input files for population genetics programs like Arlequin and STRUCTURE.
 homepage: http://www.cmpg.unibe.ch/software/PGDSpider/
 ---
+
 
 # pgdspider
 

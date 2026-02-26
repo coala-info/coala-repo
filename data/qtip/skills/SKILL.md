@@ -1,8 +1,9 @@
 ---
 name: qtip
-description: Qtip (Quality Tool for Ion-torrent and Illumina Predictions) is an aligner-agnostic tool designed to fix the often-unreliable mapping quality (MAPQ) scores reported by standard read aligners.
+description: Qtip uses machine learning to recalibrate and improve the accuracy of mapping quality scores for genomic read alignments. Use when user asks to fix unreliable MAPQ scores, generate precise mapping quality predictions, or train a model to improve variant calling accuracy.
 homepage: https://github.com/BenLangmead/qtip
 ---
+
 
 # qtip
 

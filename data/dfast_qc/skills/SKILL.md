@@ -1,8 +1,9 @@
 ---
 name: dfast_qc
-description: The dfast_qc skill provides a streamlined workflow for evaluating the quality of prokaryotic genome sequences.
+description: dfast_qc evaluates the quality of prokaryotic genome assemblies by integrating taxonomic identification, assembly statistics, and completeness checks. Use when user asks to assess genome quality, identify taxonomic relatives, or estimate assembly completeness and contamination.
 homepage: https://dfast.nig.ac.jp
 ---
+
 
 # dfast_qc
 

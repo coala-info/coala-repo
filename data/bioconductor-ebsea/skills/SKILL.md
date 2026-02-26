@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ebsea
-description: the package is available on all platforms; click for details.
+description: EBSEA identifies differentially expressed genes by performing statistical testing at the exon level and aggregating results using an empirical Brown’s method. Use when user asks to perform exon-based expression analysis, identify differentially expressed genes from exon counts, or visualize exon-level fold changes and expression patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/EBSEA.html
 ---
+
 
 # bioconductor-ebsea
 

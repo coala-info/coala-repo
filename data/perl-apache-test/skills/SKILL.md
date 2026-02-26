@@ -1,8 +1,9 @@
 ---
 name: perl-apache-test
-description: `perl-apache-test` (centered around the `Apache::Test` module) is a robust testing framework that wraps the standard Perl `Test.pm` module to provide Apache-specific functionality.
+description: perl-apache-test provides a framework for writing and running unit tests that interact with a live Apache web server. Use when user asks to run Apache-specific Perl tests, automate server configuration for testing, or conditionally skip tests based on available Apache modules and versions.
 homepage: http://metacpan.org/pod/Apache::Test
 ---
+
 
 # perl-apache-test
 

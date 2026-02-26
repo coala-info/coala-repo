@@ -1,8 +1,9 @@
 ---
 name: pywfa
-description: pywfa is a Python wrapper for the WFA2-lib, providing an efficient implementation of the Wavefront Alignment algorithm.
+description: pywfa is a Python wrapper for the WFA2-lib that provides an efficient implementation of the Wavefront Alignment algorithm for rapid sequence comparison. Use when user asks to perform pairwise sequence alignment, calculate alignment scores using affine gap penalties, or generate CIGAR strings for genomic data.
 homepage: https://github.com/kcleal/pywfa
 ---
+
 
 # pywfa
 

@@ -1,8 +1,9 @@
 ---
 name: goleft
-description: goleft is a high-performance bioinformatics suite written in Go that provides a collection of tools for genomic data processing.
+description: Goleft is a high-performance bioinformatics suite for rapid genomic data processing and quality control. Use when user asks to estimate coverage from index files, calculate insert-size statistics, parallelize depth calculations, or split genomic regions for balanced workloads.
 homepage: https://github.com/brentp/goleft
 ---
+
 
 # goleft
 

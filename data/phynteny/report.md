@@ -3,7 +3,7 @@
 ## phynteny
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error messages related to a failed Singularity/Docker container execution due to insufficient disk space.
+Phynteny predicts biosynthetic gene clusters in genomic sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/phynteny:0.1.13--pyh7cba7a3_0
@@ -12,15 +12,18 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phynteny/overview
-- **Total Downloads**: 2.5K
+- **Total Downloads**: 2.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/susiegriggo/Phynteny
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/580a94679f29877cef2563b4a1efa906c015d00c57f42fef0a14be04b20c7550: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/phynteny:0.1.13--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1152848087: no space left on device
+/usr/local/bin/phynteny:12: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+2026-02-26 18:14:53.685117: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Usage: phynteny [OPTIONS] INFILE
+Try 'phynteny --help' for help.
+
+Error: No such option: --h Did you mean --help?
 ```
 

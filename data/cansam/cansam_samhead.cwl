@@ -1,14 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - cansam
-  - samhead
+baseCommand: samhead
 label: cansam_samhead
-doc: "The provided text does not contain help information for the tool. It consists
-  of system logs and a fatal error indicating a failure to build a container image
-  due to lack of disk space. No arguments or descriptions could be extracted from
-  the input.\n\nTool homepage: https://github.com/jmarshall/cansam"
-inputs: []
+doc: "\nTool homepage: https://github.com/jmarshall/cansam"
+inputs:
+  - id: files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

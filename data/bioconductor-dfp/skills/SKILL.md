@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dfp
-description: the package is available on all platforms; click for details.
+description: This tool performs gene selection and data reduction on microarray data using the Discriminant Fuzzy Pattern algorithm. Use when user asks to identify differentially expressed genes, discretize expression values into linguistic labels, or extract genes that discriminate between experimental classes.
 homepage: https://bioconductor.org/packages/release/bioc/html/DFP.html
 ---
+
 
 # bioconductor-dfp
 

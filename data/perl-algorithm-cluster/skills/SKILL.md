@@ -1,8 +1,9 @@
 ---
 name: perl-algorithm-cluster
-description: The `perl-algorithm-cluster` skill provides a high-performance Perl wrapper for the C Clustering Library.
+description: This tool provides a high-performance Perl interface for the C Clustering Library to perform efficient data grouping and pattern recognition. Use when user asks to perform k-means or k-medians clustering, generate hierarchical dendrograms, or create self-organizing maps for numerical data analysis.
 homepage: http://metacpan.org/pod/Algorithm::Cluster
 ---
+
 
 # perl-algorithm-cluster
 

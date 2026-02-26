@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genebreak
-description: the package is available on all platforms; click for details.
+description: This tool identifies genes recurrently affected by copy number aberration-associated breakpoints in genomic data. Use when user asks to detect DNA breaks within gene boundaries, map breakpoints to gene annotations, or perform statistical testing to identify recurrently broken genes across a cohort.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneBreak.html
 ---
+
 
 # bioconductor-genebreak
 

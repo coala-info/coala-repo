@@ -1,8 +1,9 @@
 ---
 name: bioconductor-airpart
-description: The package includes a number of visualizations and quality control functions for examining single cell allelic imbalance datasets.
+description: This tool analyzes single-cell allelic imbalance and differential allelic imbalance using generalized fused lasso or nonparametric methods. Use when user asks to partition cell types by allelic ratio, cluster genes with similar imbalance profiles, perform quality control on allelic counts, or estimate posterior mean allelic ratios.
 homepage: https://bioconductor.org/packages/release/bioc/html/airpart.html
 ---
+
 
 # bioconductor-airpart
 

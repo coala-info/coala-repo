@@ -1,8 +1,9 @@
 ---
 name: diamond
-description: Build a DIAMOND database from a FASTA file
+description: DIAMOND is a high-performance sequence aligner that performs fast protein and translated DNA searches against large reference databases. Use when user asks to align protein or DNA sequences to a reference, perform blastp or blastx searches, or cluster large protein datasets.
 homepage: https://github.com/bbuchfink/diamond
 ---
+
 
 # diamond
 

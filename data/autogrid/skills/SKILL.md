@@ -1,8 +1,9 @@
 ---
 name: autogrid
-description: AutoGrid is a pre-processing tool essential for AutoDock-based molecular docking.
+description: AutoGrid pre-calculates interaction energy grid maps between a macromolecule and various probe atoms to facilitate rapid molecular docking simulations. Use when user asks to generate grid maps, define grid box parameters, or prepare a receptor for AutoDock simulations.
 homepage: http://autodock.scripps.edu/
 ---
+
 
 # autogrid
 

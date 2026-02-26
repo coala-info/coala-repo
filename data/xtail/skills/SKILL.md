@@ -1,8 +1,9 @@
 ---
 name: xtail
-description: xtail is a statistical framework designed to identify genes exhibiting differential translation.
+description: xtail identifies genes with differential translation by analyzing RNA-seq and Ribo-seq data. Use when user asks to identify genes with differential translation, analyze RNA-seq and Ribo-seq data, distinguish transcriptional from translational regulation, or plot fold changes.
 homepage: https://github.com/xryanglab/xtail
 ---
+
 
 # xtail
 

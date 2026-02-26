@@ -1,8 +1,9 @@
 ---
 name: psytrans
-description: The `psytrans` tool is designed for researchers working with holobiont transcriptomes or infected tissues where the resulting assembly is a mixture of multiple organisms.
+description: The psytrans tool separates mixed transcriptomes into host and symbiont sequences using a combination of BLASTX homology and SVM classification. Use when user asks to partition holobiont assemblies, separate host and symbiont reads, or classify ambiguous sequences in mixed transcriptomic data.
 homepage: https://github.com/rivera10/psytrans
 ---
+
 
 # psytrans
 

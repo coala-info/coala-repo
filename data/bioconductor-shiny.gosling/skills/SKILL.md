@@ -1,8 +1,9 @@
 ---
 name: bioconductor-shiny.gosling
-description: the package is available on all platforms; click for details.
+description: This package provides an R interface to the Gosling.js library for building interactive genomics visualizations in Shiny applications. Use when user asks to create interactive genomic visualizations, integrate Gosling.js into Shiny apps, or develop scalable web-based genomic charts.
 homepage: https://bioconductor.org/packages/release/bioc/html/shiny.gosling.html
 ---
+
 
 # bioconductor-shiny.gosling
 

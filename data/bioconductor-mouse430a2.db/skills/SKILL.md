@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mouse430a2.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Mouse Genome 430A 2.0 Array. Use when user asks to map Affymetrix probe identifiers to gene symbols, Entrez Gene IDs, or other genomic metadata for mouse samples.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse430a2.db.html
 ---
+
 
 # bioconductor-mouse430a2.db
 

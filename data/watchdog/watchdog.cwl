@@ -2,10 +2,39 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: watchdog
 label: watchdog
-doc: "The provided text does not contain help information or a description of the
-  tool; it contains container runtime log messages indicating a failure to fetch the
-  OCI image.\n\nTool homepage: https://github.com/gorakhargosh/watchdog"
-inputs: []
+doc: "Periodically write to watchdog device DEV\n\nTool homepage: https://github.com/gorakhargosh/watchdog"
+inputs:
+  - id: device
+    type: string
+    doc: watchdog device
+    inputBinding:
+      position: 1
+  - id: foreground
+    type:
+      - 'null'
+      - boolean
+    doc: Run in foreground
+    inputBinding:
+      position: 102
+      prefix: -F
+  - id: reboot_timeout
+    type:
+      - 'null'
+      - string
+    doc: Reboot after N seconds if not reset
+    default: 60s
+    inputBinding:
+      position: 102
+      prefix: -T
+  - id: reset_interval
+    type:
+      - 'null'
+      - string
+    doc: Reset every N seconds
+    default: 30s
+    inputBinding:
+      position: 102
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

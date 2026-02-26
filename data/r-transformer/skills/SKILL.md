@@ -1,8 +1,9 @@
 ---
 name: r-transformer
-description: Transformer is a Deep Neural Network Architecture based i.a. on the Attention mechanism (Vaswani et al.
+description: This tool provides a native R implementation of the Transformer deep neural network architecture and its core components. Use when user asks to build Transformer layers, implement multi-headed attention, apply layer normalization, or configure feed-forward networks in R.
 homepage: https://cran.r-project.org/web/packages/transformer/index.html
 ---
+
 
 # r-transformer
 

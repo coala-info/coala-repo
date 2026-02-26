@@ -1,8 +1,9 @@
 ---
 name: bioconductor-moonlightr
-description: the package is available on all platforms; click for details.
+description: MoonlightR identifies oncogenes and tumor suppressor genes by integrating gene expression data with clinical information. Use when user asks to identify driver genes, perform upstream regulator analysis, or characterize the dual roles of genes in cancer.
 homepage: https://bioconductor.org/packages/release/bioc/html/MoonlightR.html
 ---
+
 
 # bioconductor-moonlightr
 

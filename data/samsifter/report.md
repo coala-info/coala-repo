@@ -3,7 +3,7 @@
 ## samsifter
 
 ### Tool Description
-A tool for sifting SAM/BAM files (Note: The provided text contains system error logs rather than help documentation; no arguments could be extracted).
+samsifter: error: argument -h/--help: ignored explicit argument 'elp'
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samsifter:1.0.0--py35h3978dc7_3
@@ -18,13 +18,14 @@ A tool for sifting SAM/BAM files (Note: The provided text contains system error 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/samsifter:1.0.0--py35h3978dc7_3 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+/usr/local/lib/python3.5/site-packages/matplotlib/font_manager.py:279: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')
+/usr/local/lib/python3.5/site-packages/matplotlib/font_manager.py:279: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')
+usage: samsifter [-h] [-v] [-d]
+samsifter: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

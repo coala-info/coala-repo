@@ -1,8 +1,9 @@
 ---
 name: raster3d
-description: Raster3D is a custom-built 3D rendering engine that leverages CUDA for GPU acceleration.
+description: Raster3D is a CUDA-accelerated 3D rendering engine that implements core graphics pipeline features like perspective projection and flat shading. Use when user asks to set up the development environment, compile the engine using the Makefile, or navigate the live render view using interactive controls.
 homepage: https://github.com/Sundance636/Raster3D
 ---
+
 
 # raster3d
 

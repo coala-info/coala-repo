@@ -1,8 +1,9 @@
 ---
 name: bioconductor-easyqpcr
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool analyzes low-throughput real-time quantitative PCR data to calculate amplification efficiency and normalized relative quantities. Use when user asks to calculate amplification efficiency, identify technical replicate outliers, normalize qPCR data using reference genes, calculate inter-run calibration factors, or aggregate biological replicates.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/EasyqpcR.html
 ---
+
 
 # bioconductor-easyqpcr
 

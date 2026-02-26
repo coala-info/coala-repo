@@ -3,7 +3,7 @@
 ## skewer
 
 ### Tool Description
-A tool for processing next-generation sequencing (NGS) paired-end reads (Note: The provided text contains error logs rather than help documentation, so arguments could not be extracted).
+A fast and sensitive adapter trimmer for next-generation sequencing (NGS) paired-end reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/skewer:0.2.2--h2d50403_2
@@ -18,13 +18,20 @@ A tool for processing next-generation sequencing (NGS) paired-end reads (Note: T
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/skewer:0.2.2--h2d50403_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/skewer:0.2.2--h2d50403_2' locally
+0.2.2--h2d50403_2: Pulling from biocontainers/skewer
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+497752a8e953: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1463680818: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

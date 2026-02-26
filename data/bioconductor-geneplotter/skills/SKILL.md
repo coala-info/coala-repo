@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneplotter
-description: the package is available on all platforms; click for details.
+description: This tool visualizes genomic data and microarray expression levels in relation to their physical chromosomal locations. Use when user asks to create whole-genome plots, color-code genes by expression levels, or visualize expression trends along specific chromosomes.
 homepage: https://bioconductor.org/packages/release/bioc/html/geneplotter.html
 ---
+
 
 # bioconductor-geneplotter
 

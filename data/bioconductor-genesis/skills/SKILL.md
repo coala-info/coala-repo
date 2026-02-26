@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genesis
-description: the package is available on all platforms; click for details.
+description: The GENESIS package performs genetic association testing and population structure inference in samples with complex ancestry and relatedness. Use when user asks to infer population structure using PC-AiR, estimate kinship with PC-Relate, fit linear mixed models, or perform variant association tests for quantitative and binary traits.
 homepage: https://bioconductor.org/packages/release/bioc/html/GENESIS.html
 ---
+
 
 # bioconductor-genesis
 

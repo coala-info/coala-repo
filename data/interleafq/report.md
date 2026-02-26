@@ -3,7 +3,7 @@
 ## interleafq
 
 ### Tool Description
-Interleave paired-end FASTQ files. (Note: The provided help text contains only system error messages regarding container execution and does not list specific tool arguments.)
+Interleaves FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/interleafq:1.1.0--pl5321hdfd78af_2
@@ -18,9 +18,17 @@ Interleave paired-end FASTQ files. (Note: The provided help text contains only s
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/interleafq:1.1.0--pl5321hdfd78af_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2236492796: no space left on device
+Unable to find image 'quay.io/biocontainers/interleafq:1.1.0--pl5321hdfd78af_2' locally
+1.1.0--pl5321hdfd78af_2: Pulling from biocontainers/interleafq
+c1a16a04cedd: Pulling fs layer
+4ca545ee6d5d: Pulling fs layer
+898a25068a7f: Pulling fs layer
+4ca545ee6d5d: Waiting
+898a25068a7f: Waiting
+c1a16a04cedd: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob96923442: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

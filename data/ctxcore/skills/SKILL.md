@@ -1,8 +1,9 @@
 ---
 name: ctxcore
-description: The `ctxcore` package provides the foundational computational logic for the SCENIC (Single-Cell rEgulatory Network Inference and Clustering) suite.
+description: ctxcore provides the core computational logic for motif enrichment and transcription factor mapping within the SCENIC suite. Use when user asks to perform motif enrichment analysis, map transcription factors to target genes, or prune co-expression modules into regulons.
 homepage: https://scenic.aertslab.org
 ---
+
 
 # ctxcore
 

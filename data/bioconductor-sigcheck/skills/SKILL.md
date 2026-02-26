@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sigcheck
-description: the package is available on all platforms; click for details.
+description: SigCheck assesses the statistical significance of molecular signatures by comparing their performance against random or known gene sets. Use when user asks to check the significance of a gene signature, compare a signature against random gene sets, or validate the predictive power of a molecular signature.
 homepage: https://bioconductor.org/packages/release/bioc/html/SigCheck.html
 ---
+
 
 # bioconductor-sigcheck
 

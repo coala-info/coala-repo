@@ -1,8 +1,9 @@
 ---
 name: bioconductor-harmonizedtcgadata
-description: the package is available on all platforms; click for details.
+description: This package provides harmonized multi-omic affinity matrices and survival data from the Cancer Genome Atlas for patient clustering and disease subtype analysis. Use when user asks to access precomputed TCGA affinity matrices, perform multi-omic data fusion with ANF, or evaluate cancer patient clustering results using survival data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HarmonizedTCGAData.html
 ---
+
 
 # bioconductor-harmonizedtcgadata
 

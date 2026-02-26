@@ -1,8 +1,9 @@
 ---
 name: raxml
-description: RAxML is a high-performance tool designed for phylogenetic tree inference under the Maximum Likelihood (ML) criterion.
+description: RAxML performs phylogenetic tree inference using the Maximum Likelihood criterion for large DNA or protein datasets. Use when user asks to infer phylogenetic trees, perform rapid bootstrapping, conduct partitioned multi-gene analyses, or estimate memory requirements for large alignments.
 homepage: http://sco.h-its.org/exelixis/web/software/raxml/index.html
 ---
+
 
 # raxml
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dasper
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: "bioconductor-dasper detects aberrant splicing events from RNA-sequencing data by integrating junction counts and coverage information. Use when user asks to process RNA-seq junction data, annotate junctions with reference genomes, normalize counts, integrate coverage data from BigWig files, or perform outlier detection to identify pathogenic splicing."
 homepage: https://bioconductor.org/packages/3.12/bioc/html/dasper.html
 ---
+
 
 # bioconductor-dasper
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sbgnview
-description: the package is available on all platforms; click for details.
+description: SBGNview visualizes and analyzes biological pathways using the Systems Biology Graphical Notation standard. Use when user asks to visualize SBGN pathways, map omics data onto pathway maps, or render SBGN-ML files.
 homepage: https://bioconductor.org/packages/release/bioc/html/SBGNview.html
 ---
+
 
 # bioconductor-sbgnview
 

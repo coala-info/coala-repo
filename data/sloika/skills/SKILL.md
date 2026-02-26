@@ -1,8 +1,9 @@
 ---
 name: sloika
-description: Sloika is a specialized research tool developed by Oxford Nanopore Technologies (ONT) for training neural network models used in basecalling.
+description: Sloika is a research tool for training and refining recurrent neural network models used in Nanopore basecalling. Use when user asks to train legacy basecalling models, reproduce older research results, or configure Theano-based deep learning pipelines for sequencing data.
 homepage: https://github.com/nanoporetech/sloika
 ---
+
 
 # sloika
 

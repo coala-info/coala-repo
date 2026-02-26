@@ -1,8 +1,9 @@
 ---
 name: bioconductor-minfidata
-description: the package is available on all platforms; click for details.
+description: This package provides example data for the minfi package, including Illumina Infinium DNA methylation array datasets. Use when user asks to load example methylation data, test minfi workflows, or access 450k array sample datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/minfiData.html
 ---
+
 
 # bioconductor-minfidata
 

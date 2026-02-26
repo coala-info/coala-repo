@@ -1,8 +1,9 @@
 ---
 name: r-loomr
-description: R package loomr (documentation from project home).
+description: The loomR package provides an R interface for memory-efficient storage and manipulation of large-scale single-cell genomics data using the loom file format. Use when user asks to connect to or create loom files, access HDF5-based genomic datasets, or perform memory-efficient subsetting and data manipulation in R.
 homepage: https://cran.r-project.org/web/packages/loomr/index.html
 ---
+
 
 # r-loomr
 

@@ -3,7 +3,7 @@
 ## tidyp
 
 ### Tool Description
-tidyp is a utility to clean up and pretty print HTML, XHTML or XML. (Note: The provided text was a container execution error log and did not contain help documentation; arguments could not be extracted from the source text.)
+Utility to clean up and pretty print HTML/XHTML/XML
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tidyp:1.04--h7b50bb2_9
@@ -12,19 +12,83 @@ tidyp is a utility to clean up and pretty print HTML, XHTML or XML. (Note: The p
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tidyp/overview
-- **Total Downloads**: 190.7K
+- **Total Downloads**: 190.9K
 - **Last updated**: 2025-04-27
 - **GitHub**: https://github.com/jbengler/tidyplots
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tidyp:1.04--h7b50bb2_9 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+tidyp [option...] [file...] [option...] [file...]
+Utility to clean up and pretty print HTML/XHTML/XML
+See http://tidy.sourceforge.net/
+
+Options for tidyp for Linux v1.04:
+
+File manipulation
+-----------------
+ -output <file>, -o  write output to the specified <file>                      
+ <file>                                                                        
+ -config <file>      set configuration options from the specified <file>       
+ -file <file>, -f    write errors and warnings to the specified <file>         
+ <file>                                                                        
+ -modify, -m         modify the original input files                           
+
+Processing directives
+---------------------
+ -indent, -i         indent element content                                    
+ -wrap <column>, -w  wrap text at the specified <column>. 0 is assumed if      
+ <column>            <column> is missing. When this option is omitted, the     
+                     default of the configuration option "wrap" applies.       
+ -upper, -u          force tags to upper case                                  
+ -clean, -c          replace FONT, NOBR and CENTER tags by CSS                 
+ -bare, -b           strip out smart quotes and em dashes, etc.                
+ -numeric, -n        output numeric rather than named entities                 
+ -errors, -e         show only errors and warnings                             
+ -quiet, -q          suppress nonessential output                              
+ -omit               omit optional end tags                                    
+ -xml                specify the input is well formed XML                      
+ -asxml, -asxhtml    convert HTML to well formed XHTML                         
+ -ashtml             force XHTML to well formed HTML                           
+ -access <level>     do additional accessibility checks (<level> = 0, 1, 2, 3).
+                     0 is assumed if <level> is missing.                       
+
+Character encodings
+-------------------
+ -raw                output values above 127 without conversion to entities    
+ -ascii              use ISO-8859-1 for input, US-ASCII for output             
+ -latin0             use ISO-8859-15 for input, US-ASCII for output            
+ -latin1             use ISO-8859-1 for both input and output                  
+ -iso2022            use ISO-2022 for both input and output                    
+ -utf8               use UTF-8 for both input and output                       
+ -mac                use MacRoman for input, US-ASCII for output               
+ -win1252            use Windows-1252 for input, US-ASCII for output           
+ -ibm858             use IBM-858 (CP850+Euro) for input, US-ASCII for output   
+ -utf16le            use UTF-16LE for both input and output                    
+ -utf16be            use UTF-16BE for both input and output                    
+ -utf16              use UTF-16 for both input and output                      
+ -big5               use Big5 for both input and output                        
+ -shiftjis           use Shift_JIS for both input and output                   
+ -language <lang>    set the two-letter language code <lang> (for future use)  
+
+Miscellaneous
+-------------
+ -version, -v        show the version of Tidy                                  
+ -help, -h, -?       list the command line options                             
+ -xml-help           list the command line options in XML format               
+ -help-config        list all configuration options                            
+ -xml-config         list all configuration options in XML format              
+ -show-config        list the current configuration settings                   
+
+Use --optionX valueX for any configuration option "optionX" with argument
+"valueX". For a list of the configuration options, use "-help-config" or refer
+to the man page.
+
+Input/Output default to stdin/stdout respectively.
+Single letter options apart from -f may be combined
+as in:  tidy -f errs.txt -imu foo.html
+For further info on HTML see http://www.w3.org/MarkUp
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

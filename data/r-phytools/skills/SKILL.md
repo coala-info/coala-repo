@@ -1,8 +1,9 @@
 ---
 name: r-phytools
-description: A wide range of methods for phylogenetic analysis - concentrated in phylogenetic comparative biology, but also including numerous techniques for visualizing, analyzing, manipulating, reading or writing, and even inferring phylogenetic trees. Included among the functions in phylogenetic comparative biology are various for ancestral state reconstruction, model-fitting, and simulation of phylogenies and trait data. A broad range of plotting methods for phylogenies and comparative data include (but are not restricted to) methods for mapping trait evolution on trees, for projecting trees into phenotype space or a onto a geographic map, and for visualizing correlated speciation between trees. Lastly, numerous functions are designed for reading, writing, analyzing, inferring, simulating, and manipulating phylogenetic trees and comparative data. For instance, there are functions for computing consensus phylogenies from a set, for simulating phylogenetic trees and data under a range of models, for randomly or non-randomly attaching species or clades to a tree, as well as for a wide range of other manipulations and analyses that phylogenetic biologists might find useful in their research.</p>
+description: This tool performs specialized phylogenetic analysis and comparative biology tasks using the R package phytools. Use when user asks to reconstruct ancestral states, map trait evolution, fit models of character evolution, simulate phylogenetic trees, or create complex visualizations like cophylo plots and phenograms.
 homepage: https://cloud.r-project.org/web/packages/phytools/index.html
 ---
+
 
 # r-phytools
 

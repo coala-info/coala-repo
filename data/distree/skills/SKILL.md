@@ -1,8 +1,9 @@
 ---
 name: distree
-description: The `distree` tool is a high-performance Rust-based utility designed to process large phylogenetic trees.
+description: The distree tool is a high-performance utility for calculating distance matrices from large phylogenetic trees using a memory-efficient streaming approach. Use when user asks to compute patristic distances, extract topological distances, generate variance-covariance matrices for comparative methods, or process massive trees that exceed system memory.
 homepage: https://github.com/PathoGenOmics-Lab/distree
 ---
+
 
 # distree
 

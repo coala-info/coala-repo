@@ -1,8 +1,9 @@
 ---
 name: tmscoring
-description: The `tmscoring` package provides a robust Python-based alternative to the original Fortran TM-score program.
+description: The `tmscoring` package compares protein structures to determine their structural similarity. Use when user asks to 'compare protein structures', 'calculate TM-score', 'calculate RMSD', 'align protein structures', 'get local residue-specific scores', or 'generate aligned PDB files'.
 homepage: https://github.com/Dapid/tmscoring
 ---
+
 
 # tmscoring
 

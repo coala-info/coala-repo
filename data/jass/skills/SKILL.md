@@ -1,8 +1,9 @@
 ---
 name: jass
-description: JASS is a specialized tool designed for the joint analysis of GWAS summary statistics.
+description: JASS performs joint analysis of GWAS summary statistics to identify genetic variants associated with multiple traits simultaneously. Use when user asks to compute multi-trait GWAS, handle trait correlations in overlapping samples, or format summary statistics into HDF5 data structures for joint testing.
 homepage: http://statistical-genetics.pages.pasteur.fr/jass/
 ---
+
 
 # jass
 

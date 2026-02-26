@@ -1,8 +1,9 @@
 ---
 name: deepgoplus
-description: DeepGOPlus is a specialized bioinformatics tool that automates the prediction of protein functions by assigning Gene Ontology (GO) terms to amino acid sequences.
+description: DeepGOPlus predicts protein functions by assigning Gene Ontology terms to amino acid sequences using a deep convolutional neural network and sequence similarity. Use when user asks to predict protein functions, assign GO terms to sequences, or determine biological roles from FASTA files.
 homepage: https://github.com/bio-ontology-research-group/deepgoplus
 ---
+
 
 # deepgoplus
 

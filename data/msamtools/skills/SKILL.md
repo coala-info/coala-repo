@@ -1,8 +1,9 @@
 ---
 name: msamtools
-description: msamtools is a specialized extension of samtools designed for microbiome research.
+description: msamtools is a specialized extension of samtools designed for metagenomic data processing, including alignment filtering and abundance profiling. Use when user asks to filter alignments by identity or length, remove host reads from metagenomic samples, or generate taxonomic and functional abundance profiles.
 homepage: https://github.com/arumugamlab/msamtools
 ---
+
 
 # msamtools
 

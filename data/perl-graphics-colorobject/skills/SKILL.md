@@ -1,8 +1,9 @@
 ---
 name: perl-graphics-colorobject
-description: This skill provides procedural knowledge for using the `Graphics::ColorObject` Perl library to perform accurate color conversions.
+description: This tool performs accurate color space conversions and manipulations using the Graphics::ColorObject Perl library. Use when user asks to convert between color models, adjust white points, calculate color differences, or handle gamut clipping.
 homepage: http://metacpan.org/pod/Graphics::ColorObject
 ---
+
 
 # perl-graphics-colorobject
 

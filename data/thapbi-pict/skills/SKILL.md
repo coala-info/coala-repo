@@ -1,8 +1,9 @@
 ---
 name: thapbi-pict
-description: The THAPBI Phytophthora ITS1 Classifier Tool (PICT) is a specialized bioinformatics pipeline designed for the identification of plant pathogens from environmental samples.
+description: thapbi-pict is a bioinformatics pipeline for identifying plant pathogens and other taxa from environmental samples using marker gene sequences. Use when user asks to process raw FASTQ files into ASV counts, classify sequences against a taxonomic database, or assess diagnostic performance against known samples.
 homepage: https://github.com/peterjc/thapbi-pict
 ---
+
 
 # thapbi-pict
 

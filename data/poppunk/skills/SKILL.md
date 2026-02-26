@@ -1,8 +1,9 @@
 ---
 name: poppunk
-description: PopPUNK (POPulation Partitioning Using Nucleotide Kmers) is a high-performance tool designed for bacterial population genetics.
+description: PopPUNK performs rapid bacterial population clustering and genomic divergence estimation using k-mer based distances. Use when user asks to assign new samples to existing species databases, create new genomic models for uncharacterized species, or visualize population structures.
 homepage: https://github.com/johnlees/PopPUNK
 ---
+
 
 # poppunk
 

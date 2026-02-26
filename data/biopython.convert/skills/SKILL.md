@@ -1,8 +1,9 @@
 ---
 name: biopython.convert
-description: The `biopython.convert` tool is a command-line utility that leverages BioPython's `SeqIO` capabilities to transform biological data between formats.
+description: This tool converts biological data between various file formats while allowing for data filtering and transformation using JMESPath queries. Use when user asks to convert sequence files, filter records based on metadata, extract specific features, or split multi-record files into separate outputs.
 homepage: https://github.com/brinkmanlab/BioPython-Convert
 ---
+
 
 # biopython.convert
 

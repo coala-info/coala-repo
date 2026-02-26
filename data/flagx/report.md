@@ -3,24 +3,45 @@
 ## flagx
 
 ### Tool Description
-A tool for expanding SAM flags into a more readable format (Note: The provided text is a container build log and does not contain help documentation. Arguments could not be extracted from the input.)
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/flagx:0.2.0--pyhdfd78af_0
 - **Homepage**: https://github.com/bionetslab/FLAG-X
 - **Package**: https://anaconda.org/channels/bioconda/packages/flagx/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/flagx/overview
 - **Total Downloads**: 82
 - **Last updated**: 2025-12-12
 - **GitHub**: https://github.com/bionetslab/FLAG-X
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/flagx:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/b963c4c7a1299b26993608cda67ab176573ace59e588ed3be362a1d57a7004a94136175600: no space left on device
+/usr/local/lib/python3.12/site-packages/flagx/io/flowdatamanager.py:29: UserWarning: PyTorch is required for FlowDataManager.get_data_loader() but is not installed. The function is not available.
+Install according to your system's requirements (see: https://pytorch.org/get-started/locally/).
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/flagx/io/__init__.py:17: UserWarning: PyTorch is not installed. FlowDataset, FlowDataLoaders, and FlowDataManager.get_data_loader() are unavailable.
+All other IO functionality remains fully functional.
+To enable dataloaders, install PyTorch: https://pytorch.org/get-started/locally/
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/flagx/gating/__init__.py:12: UserWarning: PyTorch not installed — MLPClassifier and underlying FCNNModel are unavailable.
+Install according to your system's requirements (see: https://pytorch.org/get-started/locally/).
+  warnings.warn(
+Usage: flagx [OPTIONS] COMMAND [ARGS]...
+Try 'flagx --help' for help.
+
+Error: No such option: --h Did you mean --help?
 ```
 

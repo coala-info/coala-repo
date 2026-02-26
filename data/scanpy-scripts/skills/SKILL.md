@@ -1,8 +1,9 @@
 ---
 name: scanpy-scripts
-description: The `scanpy-scripts` tool provides a comprehensive command-line interface (CLI) for the Scanpy Python library.
+description: Scanpy-scripts provides a command-line interface for executing single-cell RNA sequencing analysis workflows using the Scanpy library. Use when user asks to ingest 10x Genomics data, filter cells, normalize expression levels, perform dimensionality reduction, cluster cell populations, or identify marker genes.
 homepage: https://github.com/ebi-gene-expression-group/scanpy-scripts
 ---
+
 
 # scanpy-scripts
 

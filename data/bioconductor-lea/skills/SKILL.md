@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lea
-description: The package includes statistical methods for estimating ancestry coefficients from large genotypic matrices and for evaluating the number of ancestral populations (snmf). It performs statistical tests using latent factor mixed models for identifying genetic polymorphisms that exhibit association with environmental gradients or phenotypic traits (lfmm2). In addition, LEA computes values of genetic offset statistics based on new or predicted environments (genetic.gap, genetic.offset). LEA is mainly based on optimized programs that can scale with the dimensions of large data sets.
+description: The LEA package provides optimized algorithms for landscape genomics and ecological association studies to identify population structure and genetic markers associated with environmental gradients. Use when user asks to estimate ancestry coefficients, perform genotype-environment association testing, impute missing genomic data, or calculate genetic gaps for predictive ecological genomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/LEA.html
 ---
+
 
 # bioconductor-lea
 

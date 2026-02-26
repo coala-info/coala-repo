@@ -1,8 +1,9 @@
 ---
 name: irida-sistr-results
-description: The `irida-sistr-results` tool is a command-line utility designed to bridge the gap between IRIDA's internal database and external reporting requirements.
+description: This tool automates the retrieval and export of Salmonella serovar predictions and metadata from the IRIDA SISTR pipeline into Excel or TSV reports. Use when user asks to export SISTR results from IRIDA projects, filter samples by date or workflow version, or generate summary reports of Salmonella serovar status.
 homepage: http://github.com/phac-nml/irida-sistr-results
 ---
+
 
 # irida-sistr-results
 

@@ -1,8 +1,9 @@
 ---
 name: rastair
-description: rastair is a high-performance tool written in Rust designed specifically for methylation calling from TAPS sequencing data.
+description: rastair is a high-performance tool designed for methylation calling from TAPS sequencing data by identifying C-to-T transitions. Use when user asks to call methylation from TAPS-aligned reads, identify C-to-T transitions in sequencing data, or generate methylation frequencies from BAM files.
 homepage: https://bitbucket.org/bsblabludwig/rastair/src/v0.8.2/
 ---
+
 
 # rastair
 

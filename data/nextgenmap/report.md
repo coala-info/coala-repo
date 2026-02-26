@@ -3,26 +3,32 @@
 ## nextgenmap
 
 ### Tool Description
-The provided text does not contain help information for nextgenmap; it contains system error messages regarding a container runtime failure (no space left on device).
+FAIL to generate CWL: nextgenmap not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nextgenmap:0.5.5--h2d50403_2
 - **Homepage**: https://github.com/philres/NextGenMap
 - **Package**: https://anaconda.org/channels/bioconda/packages/nextgenmap/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nextgenmap/overview
-- **Total Downloads**: 43.1K
+- **Total Downloads**: 43.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/philres/NextGenMap
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: nextgenmap not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: nextgenmap not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nextgenmap:0.5.5--h2d50403_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4035627145: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

@@ -1,8 +1,9 @@
 ---
 name: rhotermpredict
-description: The `rhotermpredict` tool (Barrick Lab fork) is a specialized bioinformatics utility designed to locate Rho-dependent transcription terminators.
+description: This tool predicts the locations of Rho-dependent transcription terminators in bacterial genomic sequences. Use when user asks to identify Rho-dependent terminators, locate RUT sites, or find transcription termination coordinates in bacterial genomes.
 homepage: https://github.com/barricklab/RhoTermPredict
 ---
+
 
 # rhotermpredict
 

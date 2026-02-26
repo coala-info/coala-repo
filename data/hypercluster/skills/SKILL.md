@@ -1,8 +1,9 @@
 ---
 name: hypercluster
-description: The `hypercluster` skill enables the automated search for optimal clustering parameters across various algorithms.
+description: Hypercluster automates the search for optimal clustering parameters by benchmarking multiple algorithms and evaluation metrics. Use when user asks to optimize clustering parameters, compare different clustering algorithms, or evaluate clustering performance with visualizations.
 homepage: https://github.com/liliblu/hypercluster
 ---
+
 
 # hypercluster
 

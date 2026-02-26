@@ -1,8 +1,9 @@
 ---
 name: pytaxonkit
-description: The `pytaxonkit` skill provides a Pythonic interface to the TaxonKit library, a high-performance tool for manipulating NCBI taxonomy data.
+description: pytaxonkit provides a Python interface to the TaxonKit library for querying and manipulating NCBI taxonomy data using pandas DataFrames. Use when user asks to convert scientific names to TaxIDs, retrieve taxonomic lineages, find the lowest common ancestor, filter taxa by rank, or list subtaxa.
 homepage: https://github.com/bioforensics/pytaxonkit/
 ---
+
 
 # pytaxonkit
 

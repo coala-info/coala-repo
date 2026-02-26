@@ -1,8 +1,9 @@
 ---
 name: pdb2fasta
-description: `pdb2fasta` is a specialized tool for extracting primary protein sequences from structural coordinate files.
+description: "pdb2fasta extracts protein sequences from PDB structural coordinate files and converts them into FASTA format. Use when user asks to convert PDB files to FASTA, extract sequences from protein structures, or perform batch conversion of structural data to sequence format."
 homepage: https://github.com/kad-ecoli/pdb2fasta
 ---
+
 
 # pdb2fasta
 

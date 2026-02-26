@@ -1,9 +1,9 @@
 # structureharvester CWL Generation Report
 
-## structureharvester
+## structureharvester_structureHarvester.py
 
 ### Tool Description
-A program to harvest and archive the results of STRUCTURE output files and implement the Evanno method.
+Takes a STRUCTURE results directory (--dir) and an output directory (--out will be created if it does not exist) and then depending on the other options selected harvests data from the results directory and performs the selected analyses
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/structureharvester:0.6.94--py27_0
@@ -18,33 +18,22 @@ A program to harvest and archive the results of STRUCTURE output files and imple
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/structureharvester:0.6.94--py27_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: usage: structureHarvester.py --dir=path/to/dir/ --out=path/to/dir/ [options]
 
+structureHarvester.py takes a STRUCTURE results directory (--dir) and an
+output directory (--out will be created if it does not exist) and then
+depending on the other options selected harvests data from the results
+directory and performs the selected analyses
 
-## Metadata
-- **Skill**: generated
-
-## structureharvester_struct_harvest.pl
-
-### Tool Description
-A tool for harvesting results from STRUCTURE output files (Note: The provided text contains system logs/errors rather than help documentation; no arguments could be extracted from the input).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/structureharvester:0.6.94--py27_0
-- **Homepage**: http://alumni.soe.ucsc.edu/~dearl/software/structureHarvester/
-- **Package**: https://anaconda.org/channels/bioconda/packages/structureharvester/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/structureharvester:0.6.94--py27_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help        show this help message and exit
+  -v, --version     show program's version number and exit
+  --dir RESULTSDIR  The structure Results/ directory.
+  --out OUTDIR      The out directory. If it does not exist, it will be
+                    created. Output written to summary.txt
+  --evanno          If possible, performs the Evanno 2005 method. Written to
+                    evanno.txt. default=False
+  --clumpp          Generates one K*.indfile for each value of K run, for use
+                    with CLUMPP. default=False
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: umi_tools
-description: The `umi_tools` suite provides a robust framework for handling UMIs and cell barcodes, which are critical for accurate molecule quantification in NGS experiments.
+description: umi_tools processes Unique Molecular Identifiers (UMIs) and cell barcodes to accurately quantify molecules and remove PCR duplicates in NGS data. Use when user asks to extract UMIs, whitelist single cells, deduplicate reads, or count gene expression.
 homepage: https://github.com/CGATOxford/UMI-tools
 ---
+
 
 # umi_tools
 

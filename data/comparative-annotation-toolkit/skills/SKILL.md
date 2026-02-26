@@ -1,8 +1,9 @@
 ---
 name: comparative-annotation-toolkit
-description: The Comparative Annotation Toolkit (CAT) is a comprehensive pipeline for transferring gene annotations between genomes.
+description: The Comparative Annotation Toolkit is a pipeline for transferring gene annotations between genomes using HAL-format alignments and the Augustus gene prediction framework. Use when user asks to transfer gene annotations between genomes, project reference GFF3 files onto target genomes, or perform comparative gene prediction across multiple species.
 homepage: https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit
 ---
+
 
 # comparative-annotation-toolkit
 

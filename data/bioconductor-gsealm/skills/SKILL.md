@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsealm
-description: the package is available on all platforms; click for details.
+description: This tool performs linear-model-based Gene Set Enrichment Analysis to identify significant gene sets and analyze model diagnostics. Use when user asks to fit gene-wise linear models, calculate gene-set level statistics, perform permutation-based inference, or identify influential samples using Cook's Distance.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSEAlm.html
 ---
+
 
 # bioconductor-gsealm
 

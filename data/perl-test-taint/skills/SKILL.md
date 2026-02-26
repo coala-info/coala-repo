@@ -1,8 +1,9 @@
 ---
 name: perl-test-taint
-description: The `perl-test-taint` skill provides a framework for verifying Perl's taint-checking mechanism within unit tests.
+description: perl-test-taint provides a framework for verifying Perl's taint-checking mechanism and data security state within unit tests. Use when user asks to verify if data is tainted, assert that variables have been properly sanitized, or simulate untrusted input in Perl scripts.
 homepage: https://metacpan.org/pod/Test::Taint
 ---
+
 
 # perl-test-taint
 

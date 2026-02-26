@@ -1,8 +1,9 @@
 ---
 name: bioconductor-assessorfdata
-description: the package is available on all platforms; click for details.
+description: This package provides mapping and results objects for the AssessORF package, including genome sequences and gene prediction data for 20 bacterial strains. Use when user asks to retrieve proteomics and conservation mappings, access gene prediction results from sources like Prodigal or GenBank, or export strain genomes in FASTA format.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AssessORFData.html
 ---
+
 
 # bioconductor-assessorfdata
 

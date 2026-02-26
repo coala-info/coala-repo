@@ -1,8 +1,9 @@
 ---
 name: tyto
-description: Tyto (Take Your Terms from Ontologies) is a lightweight Python library designed to make the semantic web more accessible for scientific computing.
+description: Tyto is a Python library that provides a programmatic interface to access ontology terms and perform semantic reasoning. Use when user asks to retrieve ontology term URIs, check semantic relationships between terms, or configure custom ontologies.
 homepage: https://github.com/SynBioDex/tyto
 ---
+
 
 # tyto
 

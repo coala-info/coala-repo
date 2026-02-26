@@ -1,8 +1,9 @@
 ---
 name: itolparser
-description: `itolparser` is a specialized utility designed to bridge the gap between raw tabular metadata and the Interactive Tree Of Life (iTOL) visualization platform.
+description: itolparser converts tabular metadata into colorstrip annotation files for the Interactive Tree Of Life (iTOL) visualization platform. Use when user asks to generate iTOL annotation files, convert CSV or Excel data to colorstrips, map continuous data to color gradients, or filter high-cardinality metadata for phylogenetic trees.
 homepage: https://github.com/boasvdp/itolparser
 ---
+
 
 # itolparser
 

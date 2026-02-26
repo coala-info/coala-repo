@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beer
-description: the package is available on all platforms; click for details.
+description: This tool analyzes Phage immuno-precipitation sequencing (PhIP-seq) data to identify enriched antibody responses. Use when user asks to identify enriched peptides using edgeR or Bayesian models, perform beads-only analysis for false positive estimation, calculate Bayes factors, or visualize PhIP-seq enrichment results.
 homepage: https://bioconductor.org/packages/release/bioc/html/beer.html
 ---
+
 
 # bioconductor-beer
 

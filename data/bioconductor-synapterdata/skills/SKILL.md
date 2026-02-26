@@ -1,8 +1,9 @@
 ---
 name: bioconductor-synapterdata
-description: the package is available on all platforms; click for details.
+description: This package provides example data for the synapter proteomics package. Use when user asks to access example datasets for synapter, run package vignettes, or test proteomics data re-analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/synapterdata.html
 ---
+
 
 # bioconductor-synapterdata
 

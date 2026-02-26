@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene21stprobeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Affymetrix Human Gene 2.1 ST probe sets to biological identifiers and genomic metadata. Use when user asks to map probe IDs to gene symbols, retrieve Entrez Gene identifiers, find chromosomal locations, or associate probe sets with GO terms and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene21stprobeset.db.html
 ---
+
 
 # bioconductor-hugene21stprobeset.db
 

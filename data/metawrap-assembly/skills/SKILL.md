@@ -1,8 +1,9 @@
 ---
 name: metawrap-assembly
-description: The `metawrap assembly` module is a streamlined wrapper designed to handle the complex task of metagenomic assembly.
+description: The metawrap-assembly module provides a unified interface for performing metagenomic assembly using either metaSPAdes or MegaHit. Use when user asks to assemble metagenomic reads into contigs, run metaSPAdes or MegaHit through MetaWRAP, or generate a final assembly fasta file for downstream binning.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-assembly
 

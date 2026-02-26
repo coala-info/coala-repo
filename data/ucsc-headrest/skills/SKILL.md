@@ -1,8 +1,9 @@
 ---
 name: ucsc-headrest
-description: The `headRest` utility is a specialized tool from the UCSC Genome Browser "kent" source tree.
+description: The ucsc-headrest tool removes a specified number of header lines from a file. Use when user asks to remove header lines from a file, skip initial lines of a file, or prepare data for downstream analysis.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-headrest
 

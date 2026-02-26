@@ -1,8 +1,9 @@
 ---
 name: fibertools-rs
-description: "This skill enables the processing and analysis of Fiber-seq data using the `fibertools-rs` (command: `ft`) toolkit."
+description: "fibertools-rs processes Fiber-seq data to predict epigenetic features like m6A sites and nucleosome positions. Use when user asks to predict m6A sites, identify nucleosome positions, extract Fiber-seq features into text formats, or center reads for visualization."
 homepage: https://github.com/mrvollger/fibertools-rs
 ---
+
 
 # fibertools-rs
 

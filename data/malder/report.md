@@ -3,7 +3,7 @@
 ## malder
 
 ### Tool Description
-MALDER (Multiple ALDER) is a tool for dating multiple admixture events using linkage disequilibrium.
+ALDER computes weighted LD decay curves, performs curve-fitting to infer admixture dates, and uses the results to test for admixture.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/malder:1.0.1e83d4e--he3c7034_8
@@ -18,11 +18,23 @@ MALDER (Multiple ALDER) is a tool for dating multiple admixture events using lin
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/malder:1.0.1e83d4e--he3c7034_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1290967548: no space left on device
+|                          
+        |      [M]ALDER,   v1.0
+     \..|./                        
+    \ \  /       Admixture         
+     \ |/ /      Linkage           
+      \| /       Disequilibrium for
+       |/        Evolutionary      
+       |         Relationships     
+       |                           
+
+  +--------------------------------------------------------------------------+
+  |  ALDER computes weighted LD decay curves, performs curve-fitting to      |
+  |  infer admixture dates, and uses the results to test for admixture.      |
+  |  For full details about options and parameters, please see the README    |
+  |  file included with this software.                                       |
+  +--------------------------------------------------------------------------+
+
+Usage: malder -p <parameter file>
 ```
 
-
-## Metadata
-- **Skill**: generated

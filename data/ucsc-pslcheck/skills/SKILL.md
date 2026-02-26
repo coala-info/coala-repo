@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslcheck
-description: The `pslCheck` utility is a specialized tool from the UCSC Genome Browser "kent" source suite designed to ensure that PSL files are correctly formatted and internally consistent.
+description: The `pslCheck` utility verifies the format and internal consistency of PSL alignment files. Use when user asks to check PSL file integrity, verify custom alignments, debug genomic pipelines, or sanitize data for UCSC Genome Browser upload.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslcheck
 

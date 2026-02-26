@@ -1,9 +1,9 @@
 # autometa CWL Generation Report
 
-## autometa
+## autometa_autometa-bedtools-genomecov
 
 ### Tool Description
-Automated extraction of microbial genomes from metagenomes
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
@@ -18,9 +18,515 @@ Automated extraction of microbial genomes from metagenomes
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/b175c87779dd1d4a1164863ad8ea635bd8979a8176af4cf7b6ba136a76ce5d3f: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-523184307: no space left on device
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-benchmark
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-binning
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-binning-ldm
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-binning-ldm-loginfo
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-binning-summary
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-cami-format
+
+### Tool Description
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-config
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-coverage
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-download-dataset
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-hmmsearch-filter
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-kmers
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-length-filter
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-markers
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-orfs
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-setup-gtdb
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-taxonomy
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-taxonomy-lca
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-taxonomy-majority-vote
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-unclustered-recruitment
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
+```
+
+
+## autometa_autometa-update-databases
+
+### Tool Description
+Describe Autometa citation & version. No arguments will list the available autometa commands, docs and code information
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/autometa:2.2.3--pyh7e72e81_0
+- **Homepage**: https://github.com/KwanLab/Autometa
+- **Package**: https://anaconda.org/channels/bioconda/packages/autometa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: autometa [-h] [-V] [-C]
+
+Describe Autometa citation & version.No arguments will list the available
+autometa commands, docs and code information
+
+options:
+  -h, --help      show this help message and exit
+  -V, --version   Print autometa version
+  -C, --citation  Print autometa citation (APA and BibTex)
 ```
 

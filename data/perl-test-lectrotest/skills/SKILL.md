@@ -1,8 +1,9 @@
 ---
 name: perl-test-lectrotest
-description: This skill enables the use of `Test::LectroTest`, a Perl framework inspired by Haskell's QuickCheck.
+description: This tool provides a property-based testing framework for Perl that automatically generates random test cases to verify logical assertions. Use when user asks to define properties for code behavior, generate random test data for stress-testing, or find edge cases using automated trial runs.
 homepage: http://metacpan.org/pod/Test::LectroTest
 ---
+
 
 # perl-test-lectrotest
 

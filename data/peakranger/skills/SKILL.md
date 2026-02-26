@@ -1,8 +1,9 @@
 ---
 name: peakranger
-description: PeakRanger is a high-performance software suite designed for the analysis of Next-Generation Sequencing (NGS) data, with a primary focus on ChIP-Seq.
+description: PeakRanger is a high-performance software suite for analyzing ChIP-Seq data to identify narrow and broad enriched regions. Use when user asks to call narrow or broad peaks, estimate signal-to-noise ratios, calculate library complexity, or generate wiggle files for visualization.
 homepage: https://github.com/drestion/peakranger
 ---
+
 
 # peakranger
 

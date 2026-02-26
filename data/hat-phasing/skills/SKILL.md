@@ -1,8 +1,9 @@
 ---
 name: hat-phasing
-description: HAT (Haplotype Assembly Tool) is a specialized bioinformatic tool designed to reconstruct haplotypes by leveraging the complementary strengths of Next-Generation Sequencing (NGS) and Third-Generation Sequencing (TGS).
+description: HAT reconstructs haplotypes by integrating short-read and long-read sequencing data using a reference genome backbone. Use when user asks to phase SNPs, identify ploidy blocks, or perform haplotype assembly using NGS and TGS data.
 homepage: https://github.com/AbeelLab/hat/
 ---
+
 
 # hat-phasing
 

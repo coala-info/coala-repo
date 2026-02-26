@@ -1,8 +1,9 @@
 ---
 name: phantasm
-description: PHANTASM (PHylogenomic ANalyses for the TAxonomy and Systematics of Microbes) is a specialized tool designed to automate the complex workflows required for modern microbial taxonomy.
+description: PHANTASM automates microbial phylogenomic workflows including core gene identification, phylogenomic tree construction, and the calculation of overall genome-related indices. Use when user asks to verify the taxonomic placement of a microbial strain, identify phylogenetic markers, or perform comparative genomics for systematic purposes.
 homepage: https://github.com/dr-joe-wirth/phantasm
 ---
+
 
 # phantasm
 

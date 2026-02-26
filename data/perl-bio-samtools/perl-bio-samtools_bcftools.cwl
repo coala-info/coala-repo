@@ -2,10 +2,21 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bcftools
 label: perl-bio-samtools_bcftools
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It appears to be an error log from an Apptainer/Singularity image build
-  process that failed due to insufficient disk space.\n\nTool homepage: https://www.htslib.org/"
-inputs: []
+doc: "Tools for data in the VCF/BCF formats\n\nTool homepage: https://www.htslib.org/"
+inputs:
+  - id: command
+    type: string
+    doc: The subcommand to execute (view, index, cat, ld, ldpair)
+    inputBinding:
+      position: 1
+  - id: arguments
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

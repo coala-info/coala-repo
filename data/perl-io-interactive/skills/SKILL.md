@@ -1,8 +1,9 @@
 ---
 name: perl-io-interactive
-description: The `perl-io-interactive` skill provides guidance on using the `IO::Interactive` Perl module to manage terminal-aware I/O.
+description: This tool provides functions to detect and manage interactive terminal sessions within Perl scripts. Use when user asks to check if a script is running in a terminal, suppress output in non-interactive environments, or manage terminal-aware I/O.
 homepage: https://github.com/briandfoy/io-interactive
 ---
+
 
 # perl-io-interactive
 

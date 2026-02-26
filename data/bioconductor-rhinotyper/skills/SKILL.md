@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rhinotyper
-description: the package is available on all platforms; click for details.
+description: This R package automates the identification and typing of Human Rhinovirus species and types from genomic sequences. Use when user asks to identify rhinovirus species, assign rhinovirus types, or classify HRV sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/rhinotypeR.html
 ---
+
 
 # bioconductor-rhinotyper
 

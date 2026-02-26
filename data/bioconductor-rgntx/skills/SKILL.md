@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgntx
-description: the package is available on all platforms; click for details.
+description: RgnTX evaluates the spatial association between transcriptome regions and genomic features using permutation tests. Use when user asks to test for enrichment of features in transcript regions, perform transcriptome-wide permutation analysis, or evaluate the overlap between genomic annotations and RNA features.
 homepage: https://bioconductor.org/packages/release/bioc/html/RgnTX.html
 ---
+
 
 # bioconductor-rgntx
 

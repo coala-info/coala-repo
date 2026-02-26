@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iasva
-description: the package is available on all platforms; click for details.
+description: IA-SVA identifies hidden heterogeneity and surrogate variables in high-dimensional data like single-cell RNA-Seq by iteratively accounting for known factors. Use when user asks to detect hidden factors, identify rare cell populations, find marker genes associated with surrogate variables, or perform sensitivity analysis for R-squared thresholds.
 homepage: https://bioconductor.org/packages/release/bioc/html/iasva.html
 ---
+
 
 # bioconductor-iasva
 

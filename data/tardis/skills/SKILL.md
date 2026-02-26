@@ -1,8 +1,9 @@
 ---
 name: tardis
-description: Tardis is a command-line pre-processor that simplifies the "split-apply-combine" workflow common in bioinformatics.
+description: Tardis is a command-line pre-processor that automates the split-apply-combine workflow to distribute bioinformatics tasks across high-performance computing clusters. Use when user asks to parallelize shell commands, split FASTA or FASTQ files for cluster execution, manage job submission and error monitoring, or merge distributed output files.
 homepage: https://github.com/AgResearch/tardis
 ---
+
 
 # tardis
 

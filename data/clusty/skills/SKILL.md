@@ -1,8 +1,9 @@
 ---
 name: clusty
-description: Clusty is a high-performance clustering engine designed to handle massive datasets by utilizing sparse distance matrices.
+description: Clusty is a high-performance clustering engine that transforms large-scale pairwise distance or similarity data into discrete groups or cluster representatives. Use when user asks to cluster massive datasets, perform graph-based community detection using the Leiden algorithm, or apply clustering heuristics like CD-HIT and UCLUST.
 homepage: https://github.com/refresh-bio/clusty
 ---
+
 
 # clusty
 

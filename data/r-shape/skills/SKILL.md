@@ -1,8 +1,9 @@
 ---
 name: r-shape
-description: "Functions for plotting graphical shapes   such as ellipses, circles, cylinders, arrows, ...</p>"
+description: The r-shape tool provides specialized functions for plotting shaded graphical shapes and advanced color transitions in R. Use when user asks to draw 3D-like geometric shapes, create shaded diagrams or flowcharts, generate custom color gradients, or add sophisticated arrows to plots.
 homepage: https://cloud.r-project.org/web/packages/shape/index.html
 ---
+
 
 # r-shape
 

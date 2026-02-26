@@ -1,8 +1,9 @@
 ---
 name: mirfix
-description: MIRfix is an automated curation pipeline designed to refine microRNA (miRNA) datasets.
+description: MIRfix is an automated curation pipeline that refines microRNA datasets by improving precursor structural alignments and standardizing mature sequence annotations. Use when user asks to refine miRNA datasets, improve structural alignments of miRNA precursors, or standardize mature and star sequence annotations across families.
 homepage: https://github.com/Bierinformatik/MIRfix
 ---
+
 
 # mirfix
 

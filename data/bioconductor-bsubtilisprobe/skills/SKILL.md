@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsubtilisprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix Bacillus subtilis microarray. Use when user asks to access probe sequences, filter data by probe set name, or analyze probe-level properties for B. subtilis genomic studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bsubtilisprobe.html
 ---
+
 
 # bioconductor-bsubtilisprobe
 

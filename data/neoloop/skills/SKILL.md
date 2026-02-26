@@ -1,8 +1,9 @@
 ---
 name: neoloop
-description: NeoLoopFinder is a specialized computational framework for detecting 3D genomic disruptions in rearranged genomes.
+description: NeoLoopFinder is a computational framework for detecting 3D genomic disruptions and novel chromatin interactions induced by structural variations in rearranged genomes. Use when user asks to calculate CNV profiles from Hi-C data, assemble complex structural variations, or call neo-loops and neo-TADs across breakpoints.
 homepage: https://github.com/XiaoTaoWang/NeoLoopFinder
 ---
+
 
 # neoloop
 

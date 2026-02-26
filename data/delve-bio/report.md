@@ -1,9 +1,9 @@
 # delve-bio CWL Generation Report
 
-## delve-bio
+## delve-bio_delve
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull the delve-bio image due to insufficient disk space.
+Delve is a variant caller for DNA sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/delve-bio:0.2.0--h4349ce8_0
@@ -12,17 +12,20 @@ The provided text does not contain help information for the tool. It contains sy
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/delve-bio/overview
-- **Total Downloads**: 888
+- **Total Downloads**: 893
 - **Last updated**: 2025-09-13
 - **GitHub**: https://github.com/berndbohmeier/delve
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/delve-bio:0.2.0--h4349ce8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4294053831: no space left on device
+Usage: delve <COMMAND>
+
+Commands:
+  call  Call variants from a BAM file
+  help  Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help     Print help
+  -V, --version  Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

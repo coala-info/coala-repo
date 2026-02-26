@@ -1,8 +1,9 @@
 ---
 name: adas
-description: "FAIL to generate CWL: adas not found in Singularity image. The image may not provide this executable."
+description: ADAS is a high-performance sequence search engine that uses graph-based indexing to enable fast nearest neighbor retrieval and alignment for long biological sequences. Use when user asks to build a searchable database index, search sequences against a database, update an existing index, perform long read alignment, or extract k-nearest neighbors.
 homepage: https://github.com/jianshu93/adas
 ---
+
 
 # adas
 

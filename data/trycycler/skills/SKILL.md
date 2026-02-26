@@ -1,8 +1,9 @@
 ---
 name: trycycler
-description: Trycycler is a "meta-assembler" designed to produce a single, highly reliable consensus sequence from a collection of independent long-read assemblies.
+description: Trycycler generates a highly reliable consensus sequence from multiple long-read assemblies, especially for circular bacterial replicons. Use when user asks to cluster contigs, reconcile contigs, align sequences, partition reads, or generate a consensus sequence.
 homepage: https://github.com/rrwick/Trycycler
 ---
+
 
 # trycycler
 

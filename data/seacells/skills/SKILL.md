@@ -1,8 +1,9 @@
 ---
 name: seacells
-description: SEACells (Single-cell E-cell Aggregation) is an algorithm designed to identify metacells—small groups of highly similar cells that represent distinct, granular cellular states.
+description: SEACells identifies metacells by aggregating highly similar single cells into granular groups to overcome data sparsity while preserving biological heterogeneity. Use when user asks to identify metacells, aggregate single-cell data into dense cellular states, or perform high-resolution trajectory and regulatory analysis.
 homepage: https://github.com/dpeerlab/SEACells
 ---
+
 
 # seacells
 

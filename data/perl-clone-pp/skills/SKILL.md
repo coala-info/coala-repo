@@ -1,8 +1,9 @@
 ---
 name: perl-clone-pp
-description: The `perl-clone-pp` skill provides a Pure Perl implementation for recursively copying data types.
+description: This tool provides a Pure Perl implementation for recursively deep cloning complex nested data structures and objects. Use when user asks to deep copy Perl data types, perform shallow copies with depth limits, or implement custom cloning logic for objects.
 homepage: http://metacpan.org/pod/Clone::PP
 ---
+
 
 # perl-clone-pp
 

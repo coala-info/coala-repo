@@ -2,10 +2,24 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: vsnp_vsnp_path_adder.py
 label: vsnp_vsnp_path_adder.py
-doc: "A tool associated with the vSNP pipeline. Note: The provided text is a container
-  build error log and does not contain the actual help documentation or usage instructions
-  for the tool.\n\nTool homepage: https://github.com/USDA-VS/vSNP"
-inputs: []
+doc: "Using no arguments or -s option show the same output.\n\nTool homepage: https://github.com/USDA-VS/vSNP"
+inputs:
+  - id: cwd
+    type:
+      - 'null'
+      - Directory
+    doc: Absolute directory path to be added to find reference option files.
+    inputBinding:
+      position: 101
+      prefix: --cwd
+  - id: show
+    type:
+      - 'null'
+      - boolean
+    doc: Show available directories.
+    inputBinding:
+      position: 101
+      prefix: --show
 outputs:
   - id: stdout
     type: stdout

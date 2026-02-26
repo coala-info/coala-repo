@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomeintervals
-description: The package provides the basic infrastructure for and is enhanced by the package 'girafe'.
+description: The genomeIntervals package provides S4 classes and methods for managing genomic intervals with support for strand specificity and inter-base coordinates. Use when user asks to represent genomic features as intervals, perform interval set operations like union or intersection, calculate distances between genomic elements, or parse GFF3 files.
 homepage: https://bioconductor.org/packages/release/bioc/html/genomeIntervals.html
 ---
+
 
 # bioconductor-genomeintervals
 

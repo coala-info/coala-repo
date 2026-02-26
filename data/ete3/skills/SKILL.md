@@ -1,8 +1,9 @@
 ---
 name: ete3
-description: The ETE (Evolutionary Tree Explorer) Toolkit provides a comprehensive environment for handling hierarchical tree data.
+description: ETE3 is a toolkit for the manipulation, analysis, and visualization of phylogenetic trees and hierarchical data. Use when user asks to load or prune trees, visualize alignments with tree structures, query NCBI taxonomy, or perform phylogenomic analyses like calculating Robinson-Foulds distances.
 homepage: http://etetoolkit.org/
 ---
+
 
 # ete3
 

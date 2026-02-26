@@ -1,8 +1,9 @@
 ---
 name: ngscheckmate
-description: NGSCheckMate is a specialized quality control tool designed to confirm sample identity across various high-throughput sequencing datasets.
+description: NGSCheckMate confirms sample identity and detects potential swaps across various sequencing datasets by analyzing variant allele fraction correlations at known SNP positions. Use when user asks to verify if sequencing files belong to the same donor, perform sample matching across different data types like RNA-seq and WGS, or identify sample contamination and mislabeling.
 homepage: https://github.com/parklab/NGSCheckMate
 ---
+
 
 # ngscheckmate
 

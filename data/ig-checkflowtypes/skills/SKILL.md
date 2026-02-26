@@ -1,8 +1,9 @@
 ---
 name: ig-checkflowtypes
-description: The `ig-checkflowtypes` utility provides a set of R-based validation scripts used to confirm the identity and integrity of flow cytometry data.
+description: This utility validates the identity and integrity of flow cytometry data files and Bioconductor objects. Use when user asks to validate FCS files, check flowFrame objects, verify flowSet objects, or validate FlowSOM objects.
 homepage: https://github.com/ImmPortDB/ig-checkflowtypes
 ---
+
 
 # ig-checkflowtypes
 

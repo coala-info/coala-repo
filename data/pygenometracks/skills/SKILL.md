@@ -1,8 +1,9 @@
 ---
 name: pygenometracks
-description: pyGenomeTracks is a specialized tool for rendering highly customizable genomic visualizations.
+description: pyGenomeTracks creates highly customizable, publication-quality genomic visualizations by stacking multiple data types into a single image. Use when user asks to generate genomic track plots, create configuration files for visualization, or render signal tracks and gene models for specific coordinates.
 homepage: //github.com/maxplanck-ie/pyGenomeTracks
 ---
+
 
 # pygenometracks
 

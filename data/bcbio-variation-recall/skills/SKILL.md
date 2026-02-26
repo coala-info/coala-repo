@@ -1,8 +1,9 @@
 ---
 name: bcbio-variation-recall
-description: bcbio-variation-recall is a specialized framework for combining and refining genomic variant calls.
+description: "bcbio-variation-recall is a framework for merging, refining, and squaring off genomic variant calls across multi-sample cohorts. Use when user asks to merge VCF files, square off calls to resolve missing data, or create ensemble consensus callsets from multiple variant callers."
 homepage: https://github.com/chapmanb/bcbio.variation.recall
 ---
+
 
 # bcbio-variation-recall
 

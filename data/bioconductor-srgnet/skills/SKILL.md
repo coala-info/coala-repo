@@ -1,8 +1,9 @@
 ---
 name: bioconductor-srgnet
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: SRGnet identifies synergistic response genes and constructs gene networks from transcriptomic data involving multiple treatments. Use when user asks to identify synergistic response genes, analyze gene regulatory networks for treatment combinations, or find genes with non-additive expression patterns.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/SRGnet.html
 ---
+
 
 # bioconductor-srgnet
 

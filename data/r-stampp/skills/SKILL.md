@@ -1,8 +1,9 @@
 ---
 name: r-stampp
-description: "Allows users to calculate pairwise Nei's Genetic Distances (Nei 1972), pairwise Fixation  Indexes (Fst) (Weir &amp; Cockerham 1984) and also Genomic Relationship matrixes following Yang et al. (2010) in mixed and single  ploidy populations. Bootstrapping across loci is implemented during Fst calculation to generate confidence intervals and p-values  around pairwise Fst values. StAMPP utilises SNP genotype data of any ploidy level (with the ability to handle missing data) and is coded to    utilise multithreading where available to allow efficient analysis of large datasets. StAMPP is able to handle genotype data from genlight objects   allowing integration with other packages such adegenet.  Please refer to LW Pembleton, NOI Cogan &amp; JW Forster, 2013, Molecular Ecology Resources, 13(5), 946-952."
+description: This tool performs statistical analysis of mixed ploidy populations using SNP data to calculate genetic distances and population differentiation. Use when user asks to calculate pairwise Nei's genetic distances, compute pairwise Fixation Indexes with bootstrapping, generate genomic relationship matrices, or perform AMOVA.
 homepage: https://cloud.r-project.org/web/packages/StAMPP/index.html
 ---
+
 
 # r-stampp
 

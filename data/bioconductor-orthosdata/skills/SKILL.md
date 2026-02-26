@@ -1,8 +1,9 @@
 ---
 name: bioconductor-orthosdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and genomic resources for the orthos Bioconductor package. Use when user asks to access sample data for orthologous gene analysis, load reference datasets for the orthos package, or run package vignettes.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/orthosData.html
 ---
+
 
 # bioconductor-orthosdata
 

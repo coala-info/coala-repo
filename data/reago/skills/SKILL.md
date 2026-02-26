@@ -1,8 +1,9 @@
 ---
 name: reago
-description: REAGO (REconstructing 16S ribosomal RNA Genes from metagenomic reads) is a specialized assembly tool designed to recover 16S rRNA sequences from metagenomic datasets.
+description: REAGO reconstructs 16S ribosomal RNA genes from metagenomic datasets by filtering reads with covariance models and performing targeted assembly. Use when user asks to recover 16S rRNA sequences, filter metagenomic reads for ribosomal profiles, or assemble 16S genes from paired-end FASTA data.
 homepage: https://github.com/chengyuan/reago-1.1
 ---
+
 
 # reago
 

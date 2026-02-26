@@ -1,8 +1,9 @@
 ---
 name: bio_assembly_refinement
-description: The `bio_assembly_refinement` tool is a specialized pipeline designed to transform draft bacterial assemblies into finished, high-quality genomes.
+description: This tool automates the refinement of draft bacterial assemblies by filtering contigs, trimming overlaps, and circularizing sequences. Use when user asks to remove redundant contigs, trim artificial overlaps, circularize genomes, or re-orient sequences based on marker genes.
 homepage: https://github.com/nds/bio_assembly_refinement
 ---
+
 
 # bio_assembly_refinement
 

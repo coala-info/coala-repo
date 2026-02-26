@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodbnci
-description: the package is available on all platforms; click for details.
+description: This tool provides an interface to the National Cancer Institute databases to retrieve chemical identifiers, molecular structures, and NCI-60 cytotoxic activity data. Use when user asks to query the CACTUS Chemical Identifier Resolver, convert chemical formats like SMILES or SDF, or access growth inhibition data from the NCI-60 cancer cell line panel.
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbNci.html
 ---
+
 
 # bioconductor-biodbnci
 

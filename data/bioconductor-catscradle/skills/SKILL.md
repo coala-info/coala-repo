@@ -1,8 +1,9 @@
 ---
 name: bioconductor-catscradle
-description: the package is available on all platforms; click for details.
+description: CatsCradle performs gene-centric clustering and spatial transcriptomics analysis by transposing expression matrices and evaluating spatial cell relationships. Use when user asks to transpose Seurat objects for gene-based UMAPs, calculate the statistical significance of gene set clustering, analyze spatial neighborhoods via Delaunay triangulation, or perform ligand-receptor interaction mapping.
 homepage: https://bioconductor.org/packages/release/bioc/html/CatsCradle.html
 ---
+
 
 # bioconductor-catscradle
 

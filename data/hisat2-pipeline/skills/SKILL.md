@@ -1,8 +1,9 @@
 ---
 name: hisat2-pipeline
-description: The `hisat2-pipeline` is a streamlined wrapper designed to automate the standard RNA-seq bioinformatics workflow.
+description: The hisat2-pipeline automates RNA-seq workflows by integrating HISAT2 alignment and StringTie quantification into a single execution path. Use when user asks to align RNA-seq reads to a reference genome, quantify transcript expression, or generate merged abundance matrices.
 homepage: https://github.com/mcamagna/HISAT2-pipeline
 ---
+
 
 # hisat2-pipeline
 

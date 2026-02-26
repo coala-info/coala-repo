@@ -1,8 +1,9 @@
 ---
 name: deacon
-description: Deacon is a high-performance bioinformatics tool designed for the rapid classification of DNA sequences without the need for full alignment.
+description: Deacon is a high-performance bioinformatics tool for the rapid classification, extraction, or depletion of DNA sequences using SIMD-accelerated minimizer comparisons. Use when user asks to classify DNA sequences without alignment, remove host contamination from metagenomic datasets, or search for specific target sequences within large genomic catalogs.
 homepage: https://github.com/bede/deacon
 ---
+
 
 # deacon
 

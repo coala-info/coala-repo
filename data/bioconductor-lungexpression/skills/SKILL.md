@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lungexpression
-description: the package is available on all platforms; click for details.
+description: This R package provides gene expression datasets from several lung cancer studies for analysis in Bioconductor. Use when user asks to access lung cancer expression data, perform cross-study analysis of lung cancer, or load the lungExpression package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/lungExpression.html
 ---
+
 
 # bioconductor-lungexpression
 

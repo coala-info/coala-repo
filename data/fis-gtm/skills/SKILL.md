@@ -1,8 +1,9 @@
 ---
 name: fis-gtm
-description: FIS GT.M is a high-performance, hierarchical database engine optimized for transaction processing.
+description: FIS GT.M is a high-performance, hierarchical database engine optimized for transaction processing. Use when user asks to compile the engine from source, configure the build environment, or create a distributable package.
 homepage: https://github.com/luisibanez/fis-gtm
 ---
+
 
 # fis-gtm
 

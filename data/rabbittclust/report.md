@@ -1,9 +1,9 @@
 # rabbittclust CWL Generation Report
 
-## rabbittclust
+## rabbittclust_clust-mst
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it contains error logs from a failed container build/fetch process.
+minimum-spanning-tree-based module for RabbitTClust
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0
@@ -12,77 +12,72 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rabbittclust/overview
-- **Total Downloads**: 937
+- **Total Downloads**: 940
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RabbitBio/RabbitTClust
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+clust-mst v.2.2.1, minimum-spanning-tree-based module for RabbitTClust
+Usage: clust-mst [OPTIONS]
+
+Options:
+  -h,--help                   Print this help message and exit
+  -t,--threads INT            set the thread number, default all CPUs of the platform
+  -m,--min-length UINT        set the filter minimum length (minLen), genome length less than minLen will be ignore, default 10,000
+  -c,--containment INT        use AAF distance with containment coefficient, set the containCompress, the sketch size is in proportion with 1/containCompress
+  -k,--kmer-size INT          set the kmer size
+  -s,--sketch-size INT        set the sketch size for Jaccard Index and Mash distance, default 1000
+  -l,--list                   input is genome list, one genome per line
+  -e,--no-save                not save the intermediate files, such as sketches or MST
+  -d,--threshold FLOAT        set the distance threshold for clustering
+  -F,--function TEXT          set the sketch function, such as MinHash, KSSD, default MinHash
+  -o,--output TEXT REQUIRED   set the output name of cluster result
+  -i,--input TEXT Excludes: --append
+                              set the input file, single FASTA genome file (without -l option) or genome list file (with -l option)
+  --presketched TEXT          clustering by the pre-generated sketch files rather than genomes
+  --premsted TEXT             clustering by the pre-generated mst files rather than genomes for clust-mst
+  --newick-tree               output the newick tree format file for clust-mst
+  --fast                      use the kssd algorithm for sketching and distance computing for clust-mst
+  --drlevel INT               set the dimention reduction level for Kssd sketches, default 3 with a dimention reduction of 1/4096
+  --no-dense                  not calculate the density and ANI datas
+  --append TEXT Excludes: --input
+                              append genome file or file list with the pre-generated sketch or MST files
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## rabbittclust_clust-mst
-
-### Tool Description
-Clustering tool (Note: The provided help text contains only container runtime errors and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0
-- **Homepage**: https://github.com/RabbitBio/RabbitTClust
-- **Package**: https://anaconda.org/channels/bioconda/packages/rabbittclust/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## rabbittclust_clust-greedy
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the container image.
+greedy incremental clustering module for RabbitTClust
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0
 - **Homepage**: https://github.com/RabbitBio/RabbitTClust
 - **Package**: https://anaconda.org/channels/bioconda/packages/rabbittclust/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+clust-greedy v.2.2.1, greedy incremental clustering module for RabbitTClust
+Usage: clust-greedy [OPTIONS]
 
-## rabbittclust_clust-leiden
-
-### Tool Description
-RabbitTClust clustering using the Leiden algorithm. (Note: The provided text is a container execution error log and does not contain help information or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0
-- **Homepage**: https://github.com/RabbitBio/RabbitTClust
-- **Package**: https://anaconda.org/channels/bioconda/packages/rabbittclust/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rabbittclust:2.3.0--h43eeafb_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options:
+  -h,--help                   Print this help message and exit
+  -t,--threads INT            set the thread number, default all CPUs of the platform
+  -m,--min-length UINT        set the filter minimum length (minLen), genome length less than minLen will be ignore, default 10,000
+  -c,--containment INT        use AAF distance with containment coefficient, set the containCompress, the sketch size is in proportion with 1/containCompress
+  -k,--kmer-size INT          set the kmer size
+  -s,--sketch-size INT        set the sketch size for Jaccard Index and Mash distance, default 1000
+  -l,--list                   input is genome list, one genome per line
+  -e,--no-save                not save the intermediate files, such as sketches or MST
+  -d,--threshold FLOAT        set the distance threshold for clustering
+  -F,--function TEXT          set the sketch function, such as MinHash, KSSD, default MinHash
+  -o,--output TEXT REQUIRED   set the output name of cluster result
+  -i,--input TEXT Excludes: --append
+                              set the input file, single FASTA genome file (without -l option) or genome list file (with -l option)
+  --presketched TEXT          clustering by the pre-generated sketch files rather than genomes
+  --append TEXT Excludes: --input
+                              append genome file or file list with the pre-generated sketch or MST files
 ```
 

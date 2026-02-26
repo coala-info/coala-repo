@@ -1,8 +1,9 @@
 ---
 name: omark
-description: OMArk is a specialized tool for assessing the quality of proteome annotations.
+description: OMArk assesses the quality of proteome annotations by analyzing protein placement into gene families to determine completeness and detect contamination. Use when user asks to assess proteome quality, identify species contamination, or generate proteome completeness reports from OMAmer search results.
 homepage: https://github.com/DessimozLab/omark
 ---
+
 
 # omark
 

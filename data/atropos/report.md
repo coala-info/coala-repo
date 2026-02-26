@@ -3,7 +3,7 @@
 ## atropos
 
 ### Tool Description
-A tool for trimming sequencing reads. (Note: The provided input text contains system error messages regarding container execution and does not contain actual help documentation or argument definitions.)
+Trim adapters from high-throughput sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/atropos:1.1.32--py312h0fa9677_4
@@ -18,9 +18,13 @@ A tool for trimming sequencing reads. (Note: The provided input text contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/78715dfa34695ec329146d6067506e809ae35cf09c3e1d72d87e980187dfb5e1: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/atropos:1.1.32--py312h0fa9677_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-959989313: no space left on device
+Unable to find image 'quay.io/biocontainers/atropos:1.1.32--py312h0fa9677_4' locally
+1.1.32--py312h0fa9677_4: Pulling from biocontainers/atropos
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+4863f72ebd24: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3832105216: no space left on device
+
+Run 'docker run --help' for more information
 ```
 

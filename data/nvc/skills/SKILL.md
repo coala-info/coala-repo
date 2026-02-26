@@ -1,8 +1,9 @@
 ---
 name: nvc
-description: The Naive Variant Caller (nvc) is a specialized tool for identifying genomic variants by processing aligned sequencing reads in BAM format.
+description: The Naive Variant Caller identifies genomic variants by processing aligned sequencing reads using simple nucleotide ratios and per-position counts. Use when user asks to call variants from BAM files, generate VCFs with granular nucleotide counts, or analyze strand-specific coverage.
 homepage: https://github.com/blankenberg/nvc
 ---
+
 
 # nvc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicdistributionsdata
-description: the package is available on all platforms; click for details.
+description: This package provides reference datasets for human and mouse genomes to support genomic distribution analyses. Use when user asks to access chromosome sizes, transcription start sites, gene models, or open chromatin signal matrices for hg19, hg38, mm9, or mm10 assemblies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GenomicDistributionsData.html
 ---
+
 
 # bioconductor-genomicdistributionsdata
 

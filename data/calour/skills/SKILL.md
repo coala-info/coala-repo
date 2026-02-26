@@ -1,8 +1,9 @@
 ---
 name: calour
-description: Calour is a Python-based toolset designed for the interactive exploration and statistical analysis of microbiome and metabolome data.
+description: Calour is a Python toolset for the interactive exploration, statistical analysis, and visualization of microbiome and metabolome data. Use when user asks to load biological data matrices, perform differential abundance testing with dsFDR, filter or cluster features, and generate interactive heatmaps integrated with biological databases.
 homepage: https://biocore.github.io/calour/
 ---
+
 
 # calour
 

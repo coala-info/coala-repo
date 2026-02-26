@@ -1,8 +1,9 @@
 ---
 name: metawrap-read-qc
-description: The `metawrap-read-qc` skill manages the first critical step in the MetaWRAP pipeline.
+description: This tool performs quality control, adapter trimming, and host DNA removal on raw metagenomic sequencing reads. Use when user asks to clean raw reads, remove host contamination, or prepare sequencing data for metagenomic assembly.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-read-qc
 

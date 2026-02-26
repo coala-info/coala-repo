@@ -3,7 +3,7 @@
 ## demultiplexer
 
 ### Tool Description
-A tool for demultiplexing (Note: The provided help text contains only system error messages and no usage information).
+Demultiplexes sequencing data based on barcodes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/demultiplexer:1.2.1--pyhdfd78af_0
@@ -18,11 +18,18 @@ A tool for demultiplexing (Note: The provided help text contains only system err
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/demultiplexer:1.2.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3753767201: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/demultiplexer", line 6, in <module>
+    from demultiplexer.__main__ import main
+  File "/usr/local/lib/python3.11/site-packages/demultiplexer/__main__.py", line 2, in <module>
+    import PySimpleGUI as sg
+  File "/usr/local/lib/python3.11/site-packages/PySimpleGUI/__init__.py", line 2, in <module>
+    from .PySimpleGUI import *
+  File "/usr/local/lib/python3.11/site-packages/PySimpleGUI/PySimpleGUI.py", line 140, in <module>
+    import tkinter as tk
+  File "/usr/local/lib/python3.11/tkinter/__init__.py", line 38, in <module>
+    import _tkinter # If this fails your Python may not be configured for Tk
+    ^^^^^^^^^^^^^^^
+ImportError: libX11.so.6: cannot open shared object file: No such file or directory
 ```
 
-
-## Metadata
-- **Skill**: generated

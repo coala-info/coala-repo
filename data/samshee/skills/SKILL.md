@@ -1,8 +1,9 @@
 ---
 name: samshee
-description: Samshee is a schema-agnostic parser and writer designed specifically for Illumina Sample Sheet v2 and similar sectioned documents.
+description: Samshee is a schema-agnostic parser and writer for Illumina Sample Sheet v2 and similar sectioned CSV documents. Use when user asks to validate sample sheet formatting, programmatically update run metadata, or check barcode index distances.
 homepage: https://github.com/lit-regensburg/samshee
 ---
+
 
 # samshee
 

@@ -1,8 +1,9 @@
 ---
 name: fast5seek
-description: fast5seek is a specialized bioinformatics tool that maps sequence-level data back to its raw signal source.
+description: fast5seek identifies and locates raw fast5 signal files that correspond to read IDs provided in fastq, BAM, or SAM reference files. Use when user asks to find raw signal data for specific reads, subset fast5 files based on mapping results, or extract original signal files for a filtered set of sequences.
 homepage: https://github.com/mbhall88/fast5seek
 ---
+
 
 # fast5seek
 

@@ -1,8 +1,9 @@
 ---
 name: goblin
-description: GOBLIN (Generate trusted prOteins to supplement BacteriaL annotatIoN) is a command-line tool that automates the creation of species-specific protein databases.
+description: GOBLIN automates the creation of species-specific protein databases by downloading, extracting, and clustering sequences from NCBI. Use when user asks to generate trusted protein sets for bacterial annotation, download GenBank files by organism or taxonomy ID, or create non-redundant protein databases using CD-HIT.
 homepage: https://github.com/rpetit3/goblin
 ---
+
 
 # goblin
 

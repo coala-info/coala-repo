@@ -1,12 +1,12 @@
 # phenix CWL Generation Report
 
-## phenix
+## phenix_phenix.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container build process.
+A tool for various VCF and reference manipulation tasks.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/phenix:1.4.1a--py27h3dcb392_1
+- **Docker Image**: quay.io/biocontainers/phenix:1.4.1a--py27h24bf2e0_0
 - **Homepage**: https://github.com/phe-bioinformatics/PHEnix
 - **Package**: https://anaconda.org/channels/bioconda/packages/phenix/overview
 - **Validation**: PASS
@@ -18,33 +18,80 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phenix:1.4.1a--py27h3dcb392_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: phenix.py [-h] [--debug] [--version]
+                 {run_snp_pipeline,filter_vcf,prepare_reference,vcf2fasta,vcf2distancematrix,vcf2json}
+                 ...
+
+positional arguments:
+  {run_snp_pipeline,filter_vcf,prepare_reference,vcf2fasta,vcf2distancematrix,vcf2json}
+    run_snp_pipeline    Run SNP pipeline.
+    filter_vcf          Filter a VCF.
+    prepare_reference   Create aux files for reference.
+    vcf2fasta           Convert VCFs to FASTA.
+    vcf2distancematrix  Convert VCFs to a distance matrix.
+    vcf2json            Convert VCFs to a JSON file containing variants and
+                        ignored positions as arrays of positions relative to
+                        reference chromosomes.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --debug               More verbose logging (default: turned off).
+  --version             show program's version number and exit
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## phenix_phenix.py
+## phenix_prepare_reference.py
 
 ### Tool Description
-Phenix: Python-based Hierarchical ENvironment for Integrated X-ray crystallography. (Note: The provided text appears to be a container execution log rather than help documentation; no arguments could be extracted from the input.)
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/phenix:1.4.1a--py27h3dcb392_1
+- **Docker Image**: quay.io/biocontainers/phenix:1.4.1a--py27h24bf2e0_0
 - **Homepage**: https://github.com/phe-bioinformatics/PHEnix
 - **Package**: https://anaconda.org/channels/bioconda/packages/phenix/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phenix:1.4.1a--py27h3dcb392_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+exec /usr/local/bin/prepare_reference.py: exec format error
+```
+
+
+## phenix_run_snp_pipeline.py
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/phenix:1.4.1a--py27h24bf2e0_0
+- **Homepage**: https://github.com/phe-bioinformatics/PHEnix
+- **Package**: https://anaconda.org/channels/bioconda/packages/phenix/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+exec /usr/local/bin/run_snp_pipeline.py: exec format error
 ```
 

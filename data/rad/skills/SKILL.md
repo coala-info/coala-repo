@@ -1,8 +1,9 @@
 ---
 name: rad
-description: The `rad` (Read-structure Agnostic Demultiplexer) utility provides a robust solution for processing single-cell long-read sequencing data.
+description: The rad utility demultiplexes single-cell long-read sequencing data using an alignment-based approach to identify and correct barcodes. Use when user asks to demultiplex single-cell long-reads, perform barcode error correction against a whitelist, or process sequencing data with inconsistent read structures.
 homepage: https://github.com/indianewok/rad
 ---
+
 
 # rad
 

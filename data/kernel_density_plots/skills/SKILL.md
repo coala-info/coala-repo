@@ -1,8 +1,9 @@
 ---
 name: kernel_density_plots
-description: The `kernel_density_plots` tool is a specialized Python utility for genomic epidemiology and population genetics.
+description: This tool generates kernel density estimates and closest-neighbor histograms from aligned SNP sequences to visualize genetic distances and population structure. Use when user asks to visualize genetic diversity, identify population stratification, detect outbreak clusters, or analyze transmission patterns using SNP distance distributions.
 homepage: https://github.com/kapurlab/kernel_density_plots
 ---
+
 
 # kernel_density_plots
 

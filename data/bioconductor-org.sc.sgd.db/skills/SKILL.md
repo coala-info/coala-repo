@@ -1,8 +1,9 @@
 ---
 name: bioconductor-org.sc.sgd.db
-description: the package is available on all platforms; click for details.
+description: This package provides genome-wide annotation data for Saccharomyces cerevisiae based on the Saccharomyces Genome Database. Use when user asks to map yeast gene identifiers, retrieve functional annotations for Saccharomyces cerevisiae, or perform gene-centric data lookups.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Sc.sgd.db.html
 ---
+
 
 # bioconductor-org.sc.sgd.db
 

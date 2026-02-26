@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plotgardener
-description: the package is available on all platforms; click for details.
+description: Plotgardener is a coordinate-based genomic visualization package for creating publication-quality multi-panel figures in R. Use when user asks to visualize genomic data, create multi-panel genomic plots, or arrange genomic tracks in a coordinate-based layout.
 homepage: https://bioconductor.org/packages/release/bioc/html/plotgardener.html
 ---
+
 
 # bioconductor-plotgardener
 

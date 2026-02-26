@@ -1,8 +1,9 @@
 ---
 name: perl-uri
-description: The `perl-uri` skill provides a programmatic interface for handling URI references as defined by RFC 2396 and RFC 2732.
+description: This tool provides a programmatic interface for creating, parsing, and manipulating URI references as objects. Use when user asks to parse URLs, resolve relative paths to absolute URIs, normalize URI strings, or convert between file system paths and URI formats.
 homepage: https://github.com/libwww-perl/URI
 ---
+
 
 # perl-uri
 

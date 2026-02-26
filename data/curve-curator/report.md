@@ -1,9 +1,9 @@
 # curve-curator CWL Generation Report
 
-## curve-curator
+## curve-curator_CurveCurator
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to extract the image due to lack of disk space.
+Complete analysis pipeline for dose-response curves including fitting, filtering, and visualization. FPB-2024
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/curve-curator:0.6.0--pyhdfd78af_0
@@ -18,35 +18,27 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/curve-curator:0.6.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-2841463928/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
+usage: CurveCurator [-h] [-b] [-f] [-m] [-r [RANDOM]] <PATH>
 
+CurveCurator (v0.6.0)
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  <PATH>                Relative path to the config.toml or batch.txt file to
+                        run the pipeline.
 
-## curve-curator_CurveCurator
+options:
+  -h, --help            show this help message and exit
+  -b, --batch           Run a batch process with a file containing all the
+                        parameter file paths.
+  -f, --fdr             Estimate FDR based on target decoy approach.
+                        Estimating the FDR will double the run time.
+  -m, --mad             Perform the medium absolute deviation (MAD) analysis
+                        to detect outliers
+  -r, --random [RANDOM]
+                        Run the pipeline with <N> random values for H0
+                        simulation.
 
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log regarding a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/curve-curator:0.6.0--pyhdfd78af_0
-- **Homepage**: https://github.com/kusterlab/curve_curator
-- **Package**: https://anaconda.org/channels/bioconda/packages/curve-curator/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/curve-curator:0.6.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-3015427182/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+Complete analysis pipeline for dose-response curves including fitting,
+filtering, and visualization. FPB-2024
 ```
 

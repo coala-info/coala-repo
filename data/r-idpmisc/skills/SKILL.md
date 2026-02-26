@@ -1,8 +1,9 @@
 ---
 name: r-idpmisc
-description: R package idpmisc (documentation from project home).
+description: The r-idpmisc tool provides R utilities for density-based visualization of large datasets, signal processing, and environmental data conversions. Use when user asks to create image-scatter plots to handle overplotting, detect peaks in spectra, fit robust baselines, plot circular data, or perform humidity calculations.
 homepage: https://cran.r-project.org/web/packages/idpmisc/index.html
 ---
+
 
 # r-idpmisc
 

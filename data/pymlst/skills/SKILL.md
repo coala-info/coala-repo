@@ -1,8 +1,9 @@
 ---
 name: pymlst
-description: The `pymlst` tool is a Python-based suite designed for high-resolution bacterial clonality assessment.
+description: Pymlst is a Python-based suite for high-resolution bacterial clonality assessment using core and whole-genome MLST. Use when user asks to perform MLST typing from draft genomes or raw reads, conduct species-specific typing like fimH or spa, and manage iterative strain collections in a local database.
 homepage: https://github.com/bvalot/pyMLST.git
 ---
+
 
 # pymlst
 

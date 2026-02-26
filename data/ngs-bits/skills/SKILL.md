@@ -1,8 +1,9 @@
 ---
 name: ngs-bits
-description: The `ngs-bits` suite is a collection of high-performance C++ tools specifically engineered for NGS-based diagnostics.
+description: The ngs-bits suite provides a collection of high-performance C++ tools for NGS data processing, quality control, and clinical diagnostics. Use when user asks to perform adapter trimming, calculate standardized QC metrics, detect CNVs or ROH, verify sample identity and gender, or manipulate BED and VCF files for secondary analysis.
 homepage: https://github.com/imgag/ngs-bits
 ---
+
 
 # ngs-bits
 

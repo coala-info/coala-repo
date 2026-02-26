@@ -1,8 +1,9 @@
 ---
 name: is6110
-description: The `is6110` tool is a lightweight bioinformatics utility designed to detect the presence and location of insertion sequences—specifically IS6110—within *Mycobacterium tuberculosis* genomes.
+description: is6110 detects the presence and location of insertion sequences within Mycobacterium tuberculosis genomes using BAM alignment files. Use when user asks to detect IS6110 insertions, identify gene disruptions caused by mobile genetic elements, or scan specific genomic regions for insertion sequences.
 homepage: https://github.com/jodyphelan/is6110
 ---
+
 
 # is6110
 

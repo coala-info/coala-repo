@@ -1,8 +1,9 @@
 ---
 name: bioconductor-charm
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The charm package analyzes DNA methylation data from the CHARM platform to estimate methylation percentages and identify differentially methylated regions. Use when user asks to process raw Nimblegen files, perform quality control on methylation arrays, normalize DNA methylation data, or find differentially methylated regions between experimental groups.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/charm.html
 ---
+
 
 # bioconductor-charm
 

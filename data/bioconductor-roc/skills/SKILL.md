@@ -1,8 +1,9 @@
 ---
 name: bioconductor-roc
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for receiver operating characteristic analysis and visualization. Use when user asks to perform ROC analysis, calculate the area under the curve, or evaluate classifier performance.
 homepage: https://bioconductor.org/packages/release/bioc/html/ROC.html
 ---
+
 
 # bioconductor-roc
 

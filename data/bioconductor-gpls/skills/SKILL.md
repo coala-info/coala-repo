@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gpls
-description: the package is available on all platforms; click for details.
+description: The gpls package performs classification using Generalized Partial Least Squares with support for Firth’s bias reduction to handle high-dimensional data and nonconvergence. Use when user asks to perform binary or multi-group classification, fit multinomial models using MIRWPLS, or estimate classification error using cross-validation.
 homepage: https://bioconductor.org/packages/release/bioc/html/gpls.html
 ---
+
 
 # bioconductor-gpls
 

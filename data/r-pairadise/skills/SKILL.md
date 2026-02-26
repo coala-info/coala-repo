@@ -1,8 +1,9 @@
 ---
 name: r-pairadise
-description: R package pairadise (documentation from project home).
+description: r-pairadise performs statistical analysis of allele-specific alternative splicing by aggregating signals across paired replicates from RNA-seq data. Use when user asks to detect allele-specific alternative splicing, identify differential splicing between alleles, or aggregate allelic signals across multiple individuals.
 homepage: https://cran.r-project.org/web/packages/pairadise/index.html
 ---
+
 
 # r-pairadise
 

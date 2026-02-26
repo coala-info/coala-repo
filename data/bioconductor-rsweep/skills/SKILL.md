@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rsweep
-description: the package is available on all platforms; click for details.
+description: rSWeeP provides an alignment-free method for representing biological sequences as fixed-length vectors to facilitate large-scale comparative analysis. Use when user asks to represent biological sequences as vectors, perform alignment-free sequence comparison, or conduct large-scale genomic data analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/rSWeeP.html
 ---
+
 
 # bioconductor-rsweep
 

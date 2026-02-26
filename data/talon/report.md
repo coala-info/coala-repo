@@ -3,7 +3,7 @@
 ## talon
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the 'talon' tool. It contains system logs and a fatal error message regarding a container image build failure.
+TALON takes transcripts from one or more long read datasets (SAM format) and assigns them transcript and gene identifiers based on a database-bound annotation. Novel events are assigned new identifiers.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0
@@ -18,109 +18,42 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: talon [-h] [--f CONFIG_FILE] [--cb] [--db FILE,] [--build STRING,]
+             [--threads THREADS] [--cov MIN_COVERAGE]
+             [--identity MIN_IDENTITY] [--nsg] [--tmpDir TMP_DIR]
+             [--verbosity VERBOSITY] [--o OUTPREFIX]
 
+TALON takes transcripts from one or more long read datasets (SAM format) and
+assigns them transcript and gene identifiers based on a database-bound
+annotation. Novel events are assigned new identifiers.
 
-## Metadata
-- **Skill**: generated
-
-## talon_talon_label_reads
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/mortazavilab/TALON
-- **Package**: https://anaconda.org/channels/bioconda/packages/talon/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## talon_talon_initialize_database
-
-### Tool Description
-Initialize a TALON database (Note: The provided text contains system error logs rather than help documentation; no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/mortazavilab/TALON
-- **Package**: https://anaconda.org/channels/bioconda/packages/talon/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## talon_talon_filter_transcripts
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container execution error log.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/mortazavilab/TALON
-- **Package**: https://anaconda.org/channels/bioconda/packages/talon/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## talon_talon_abundance
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) while attempting to fetch the TALON image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/mortazavilab/TALON
-- **Package**: https://anaconda.org/channels/bioconda/packages/talon/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## talon_talon_create_GTF
-
-### Tool Description
-The provided text does not contain help information for the tool; it is a log of a failed container build process. Under normal circumstances, this tool is used to create a GTF file from a TALON database.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/mortazavilab/TALON
-- **Package**: https://anaconda.org/channels/bioconda/packages/talon/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/talon:6.0.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help            show this help message and exit
+  --f CONFIG_FILE       Dataset config file: dataset name, sample description,
+                        platform, sam file (comma-delimited)
+  --cb                  Use CB tag in input SAM file instead of including a
+                        dataset name in your config file
+  --db FILE,            TALON database. Created using
+                        talon_initialize_database
+  --build STRING,       Genome build (i.e. hg38) to use. Must be in the
+                        database.
+  --threads THREADS, -t THREADS
+                        Number of threads to run program with.
+  --cov MIN_COVERAGE, -c MIN_COVERAGE
+                        Minimum alignment coverage in order to use a SAM
+                        entry. Default = 0.9
+  --identity MIN_IDENTITY, -i MIN_IDENTITY
+                        Minimum alignment identity in order to use a SAM
+                        entry. Default = 0.8
+  --nsg, --create_novel_spliced_genes
+                        Make novel genes with the intergenic novelty label for
+                        transcripts that don't share splice junctions with any
+                        other models
+  --tmpDir TMP_DIR      Path to directory for tmp files. Default =
+                        `talon_tmp/`
+  --verbosity VERBOSITY, -v VERBOSITY
+                        Verbosity of TALON output. Higher numbers = more
+                        verbose.
+  --o OUTPREFIX         Prefix for output files
 ```
 

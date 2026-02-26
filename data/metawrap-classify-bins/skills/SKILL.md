@@ -1,8 +1,9 @@
 ---
 name: metawrap-classify-bins
-description: The `metawrap-classify-bins` module is a specialized component of the MetaWRAP suite that provides high-confidence taxonomic assignments for metagenomic bins.
+description: This tool provides conservative taxonomic assignments for metagenomic bins using Kraken databases. Use when user asks to classify bins, assign taxonomy to draft genomes, or identify organisms in a refined bin set.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-classify-bins
 

@@ -1,8 +1,9 @@
 ---
 name: steamboat
-description: Steamboat is a specialized collection of Python-based tools and scripts tailored for microbial bioinformatics.
+description: Steamboat is a collection of Python tools designed to automate the preparation and submission of microbial genomic data to public health databases. Use when user asks to submit viral data to GISAID, process wastewater surveillance data for NWSS, or handle batch submissions for genomic reporting.
 homepage: https://github.com/rpetit3/steamboat-py
 ---
+
 
 # steamboat
 

@@ -1,8 +1,9 @@
 ---
 name: perl-time-hires
-description: `perl-time-hires` provides the `Time::HiRes` module, which implements high-resolution versions of standard Perl time functions.
+description: This tool provides high-resolution versions of Perl time functions for microsecond or nanosecond precision. Use when user asks to measure execution time, implement sub-second delays, or set fractional timeouts in Perl scripts.
 homepage: http://metacpan.org/pod/Time::HiRes
 ---
+
 
 # perl-time-hires
 

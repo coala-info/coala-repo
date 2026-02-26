@@ -1,8 +1,9 @@
 ---
 name: mist_typing
-description: MiST is a high-performance bioinformatics tool designed for the rapid identification of alleles in bacterial assemblies.
+description: MiST is a bioinformatics tool designed for rapid allele identification and multilocus sequence typing in bacterial assemblies. Use when user asks to index MLST schemes, call alleles from genome assemblies, or assign sequence types to bacterial isolates.
 homepage: https://github.com/BioinformaticsPlatformWIV-ISP/MiST
 ---
+
 
 # mist_typing
 

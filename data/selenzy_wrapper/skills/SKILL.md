@@ -1,8 +1,9 @@
 ---
 name: selenzy_wrapper
-description: The `selenzy_wrapper` is a specialized Python tool that wraps the Selenzy enzyme selection engine to work seamlessly with the rpSBML format.
+description: This tool wraps the Selenzy enzyme selection engine to identify and rank enzyme sequences for metabolic pathways in rpSBML format. Use when user asks to select enzymes for a pathway, rank enzyme sequences based on taxonomic distance, or annotate SBML files with catalytic relevance scores.
 homepage: https://github.com/brsynth/selenzy-wrapper
 ---
+
 
 # selenzy_wrapper
 

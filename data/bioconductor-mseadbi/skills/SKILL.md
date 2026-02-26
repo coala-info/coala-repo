@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mseadbi
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: MSEADbi provides an interface to metabolite set enrichment analysis databases for biological data analysis. Use when user asks to perform metabolite set enrichment analysis, access metabolic pathway databases, or retrieve metabolite set information.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/MSEADbi.html
 ---
+
 
 # bioconductor-mseadbi
 

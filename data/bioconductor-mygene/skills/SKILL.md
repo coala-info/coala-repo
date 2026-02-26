@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mygene
-description: the package is available on all platforms; click for details.
+description: This package provides an R interface to the MyGene.info web services for accessing comprehensive gene annotation data. Use when user asks to query gene information, map gene identifiers, or retrieve metadata for specific genes.
 homepage: https://bioconductor.org/packages/release/bioc/html/mygene.html
 ---
+
 
 # bioconductor-mygene
 

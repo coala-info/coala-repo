@@ -1,8 +1,9 @@
 ---
 name: r-rphylip
-description: Skill for using the CRAN R package r-rphylip.
+description: The Rphylip package provides an R interface for executing PHYLIP programs to perform phylogenetic analyses directly from the R console. Use when user asks to perform DNA or protein parsimony, calculate maximum likelihood, compute distance matrices, or build trees using neighbor-joining and other phylogenetic methods.
 homepage: https://cloud.r-project.org/web/packages/Rphylip/index.html
 ---
+
 
 # r-rphylip
 

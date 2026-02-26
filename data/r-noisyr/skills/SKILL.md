@@ -1,8 +1,9 @@
 ---
 name: r-noisyr
-description: "Quantifies and removes technical noise from high-throughput          sequencing data. Two approaches are used, one based on the count         matrix, and one using the alignment BAM files directly.         Contains several options for every step of the process, as well         as tools to quality check and assess the stability of output.</p>"
+description: The noisyr package provides an end-to-end pipeline for quantifying and removing technical noise from high-throughput sequencing datasets. Use when user asks to calculate expression similarity across replicates, determine signal-to-noise thresholds, or remove low-abundance noisy features from count matrices and BAM files.
 homepage: https://cran.r-project.org/web/packages/noisyr/index.html
 ---
+
 
 # r-noisyr
 

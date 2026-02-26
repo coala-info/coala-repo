@@ -1,8 +1,9 @@
 ---
 name: irida-staramr-results
-description: The `irida-staramr-results` tool is a command-line utility designed to automate the retrieval of StarAMR analysis outputs from the IRIDA (Integrated Rapid Infectious Disease Analysis) platform.
+description: This tool automates the retrieval and consolidation of StarAMR analysis results from the IRIDA platform into structured spreadsheets. Use when user asks to download AMR data from IRIDA projects, extract StarAMR outputs via the command line, or filter and export antimicrobial resistance results by date.
 homepage: https://github.com/phac-nml/irida-staramr-results
 ---
+
 
 # irida-staramr-results
 

@@ -1,9 +1,9 @@
 # allelecodes CWL Generation Report
 
-## allelecodes
+## allelecodes_assignAlleleCodes_py3.6.py
 
 ### Tool Description
-A tool for standardizing allele codes (Note: The provided help text contains only system error logs and no usage information).
+Calculates nearest neighbor in hierarchical, single-linkage framework to assign that neighbor's code up to the corresponding distance threshold, or a new code if no matches found
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/allelecodes:2.1--py313hdfd78af_0
@@ -15,38 +15,43 @@ A tool for standardizing allele codes (Note: The provided help text contains onl
 - **Total Downloads**: 92
 - **Last updated**: 2025-08-27
 - **GitHub**: https://github.com/ncezid-biome/AlleleCodes
-- **Stars**: 5
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/allelecodes:2.1--py313hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libc.so.6: unpack to regular file: short write: write /tmp/build-temp-1891226001/rootfs/usr/lib/x86_64-linux-gnu/libc.so.6: no space left on device
-```
+usage: assignAlleleCodes_py3.6.py -a ALLELES -c CONFIG -d DATADIR
+                                  -p {CAMP,EC,LMO,SALM} [-h] [--nosave]
+                                  [--verbose] [-o OUTPUT]
 
+Calculates nearest neighbor in hierarchical, single-linkage framework to assign that neighbor's code up to the corresponding distance threshold, or a new code if no matches found
 
-## Metadata
-- **Skill**: generated
+required arugments:
+  -a, --alleles ALLELES
+                        csv or tsv file. Unique Keys/IDs in first column with
+                        PulseNet locus names as fields afterward, preceded
+                        with acceptable prefixes CAMP, EC, LMO, or SALM (e.g.
+                        EC_1, EC_2, EC_3, etc.
+  -c, --config CONFIG   text file containing names of core loci to match
+                        against --alleles file to denote which loci should be
+                        used for assignment
+  -d, --dataDir DATADIR
+                        directory where logs and data files will be written if
+                        --nosave is not entered as input flag
+  -p, --prefix {CAMP,EC,LMO,SALM}
+                        organism-specific prefix to be added to front of
+                        Allele Code
 
-## allelecodes_assignallelecodes_py3.6.py
+optional arugments:
+  -h, --help            show this help message and exit
+  --nosave              whether results of run will overwrite historical
+                        allele profiles and nomenclature tree; default = False
+                        if not provided
+  --verbose             output what's written to log file if provided; default
+                        = False
+  -o, --output OUTPUT   output file (tsv or csv) into which results will be
+                        written (delimiter determined by input extension)
 
-### Tool Description
-A tool for assigning allele codes. (Note: The provided input text contains system error messages regarding a container build failure and does not include the actual help documentation for the tool.)
+Example usage:  python assignAlleleCodes_v3.6.py -a profiles.tsv -c locusNames.txt -d $(pwd) -p CAMP --nosave
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/allelecodes:2.1--py313hdfd78af_0
-- **Homepage**: https://github.com/ncezid-biome/AlleleCodes
-- **Package**: https://anaconda.org/channels/bioconda/packages/allelecodes/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/allelecodes:2.1--py313hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libc.so.6: unpack to regular file: short write: write /tmp/build-temp-3055092096/rootfs/usr/lib/x86_64-linux-gnu/libc.so.6: no space left on device
+*Note:  locus order is determined by input config file and not saved to data directory.  The same file should be used in consecutive runs to ensure consistent locus-to-locus comparisons.
 ```
 

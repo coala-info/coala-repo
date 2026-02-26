@@ -1,8 +1,9 @@
 ---
 name: rilseq
-description: RIL-seq is a specialized computational protocol designed to process RNA-RNA interaction data in prokaryotes.
+description: "RIL-seq processes RNA-RNA interaction data to identify and statistically validate chimeric fragments in prokaryotic sequencing experiments. Use when user asks to map genomic fragments, identify chimeric RNA reads, or perform statistical enrichment analysis of RNA-RNA interactions."
 homepage: http://github.com/asafpr/RILseq
 ---
+
 
 # rilseq
 

@@ -1,8 +1,9 @@
 ---
 name: esme_pnetcdf_psmpi_5_10_0
-description: PnetCDF (Parallel netCDF) is a high-performance I/O library designed for MPI-based applications to access netCDF files in a truly parallel fashion.
+description: PnetCDF is a high-performance parallel I/O library designed for MPI-based applications to access and manage multi-dimensional netCDF datasets. Use when user asks to perform parallel I/O on netCDF files, validate file formats, compare large datasets using ncmpidiff, or optimize data alignment and collective buffering on parallel file systems.
 homepage: https://parallel-netcdf.github.io/
 ---
+
 
 # esme_pnetcdf_psmpi_5_10_0
 

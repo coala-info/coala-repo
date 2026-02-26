@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsri
-description: the package is available on all platforms; click for details.
+description: This tool estimates the number and fraction of significantly regulated genes in gene sets using the Gene Set Regulation Index. Use when user asks to estimate the regulated fraction of genes, rank gene sets by regulatory effect, or visualize p-value distributions for gene set enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSRI.html
 ---
+
 
 # bioconductor-gsri
 

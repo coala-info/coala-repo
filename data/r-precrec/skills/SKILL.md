@@ -1,8 +1,9 @@
 ---
 name: r-precrec
-description: "Accurate calculations and visualization of precision-recall and ROC (Receiver Operator Characteristics)     curves."
+description: The r-precrec package calculates and visualizes Receiver Operator Characteristics and Precision-Recall curves for evaluating machine learning models. Use when user asks to calculate ROC and PRC curves, compute AUC values with confidence intervals, or visualize model performance across multiple cross-validation folds.
 homepage: https://cloud.r-project.org/web/packages/precrec/index.html
 ---
+
 
 # r-precrec
 

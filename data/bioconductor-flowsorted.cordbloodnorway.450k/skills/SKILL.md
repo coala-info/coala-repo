@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowsorted.cordbloodnorway.450k
-description: the package is available on all platforms; click for details.
+description: This package provides raw DNA methylation data from flow-sorted umbilical cord blood samples for use as a reference in cell type estimation. Use when user asks to access cord blood methylation reference data, estimate cell type proportions in newborn blood samples, or perform Houseman deconvolution on Illumina 450k data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBloodNorway.450k.html
 ---
+
 
 # bioconductor-flowsorted.cordbloodnorway.450k
 

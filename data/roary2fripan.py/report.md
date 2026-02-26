@@ -3,7 +3,7 @@
 ## roary2fripan.py
 
 ### Tool Description
-A script to convert Roary output to Fripan format. (Note: The provided text contains container execution errors rather than command-line help documentation; therefore, specific arguments could not be extracted from the input.)
+Script to format Roary output for FriPan
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/roary2fripan.py:0.1--py27_0
@@ -18,13 +18,20 @@ A script to convert Roary output to Fripan format. (Note: The provided text cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/roary2fripan.py:0.1--py27_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: 
+  roary2fripan.py [OPTIONS] <OUTPUT-PREFIX>
+
+Script to format Roary output for FriPan
+
+positional arguments:
+  PREFIX        Specify output prefix
+
+optional arguments:
+  -h, --help    show this help message and exit
+  --input FILE  Specify Roary output (default = "gene_presence_absence.csv")
+  --version     show program's version number and exit
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

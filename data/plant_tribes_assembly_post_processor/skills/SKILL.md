@@ -1,8 +1,9 @@
 ---
 name: plant_tribes_assembly_post_processor
-description: The `AssemblyPostProcessor` is a specialized pipeline within the PlantTribes toolkit designed for comparative plant genomics.
+description: This tool processes de novo assembly transcripts to identify open reading frames and predict coding sequences for comparative plant genomics. Use when user asks to post-process transcript assemblies, predict coding regions using ESTScan or TransDecoder, or generate protein and nucleotide sequences for evolutionary studies.
 homepage: https://github.com/dePamphilis/PlantTribes
 ---
+
 
 # plant_tribes_assembly_post_processor
 

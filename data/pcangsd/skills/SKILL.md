@@ -1,8 +1,9 @@
 ---
 name: pcangsd
-description: PCAngsd is a specialized framework designed to handle the uncertainty inherent in low-coverage sequencing data.
+description: PCAngsd is a framework that estimates population structure and relatedness from low-coverage sequencing data using genotype likelihoods. Use when user asks to estimate covariance matrices, perform admixture analysis, conduct selection scans, or calculate inbreeding coefficients from genomic data.
 homepage: https://github.com/Rosemeis/pcangsd
 ---
+
 
 # pcangsd
 

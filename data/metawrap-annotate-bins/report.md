@@ -3,26 +3,32 @@
 ## metawrap-annotate-bins
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system log messages and a fatal error regarding a container build failure (no space left on device).
+FAIL to generate CWL: metawrap-annotate-bins not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metawrap-annotate-bins:1.3.0--hdfd78af_3
 - **Homepage**: https://github.com/bxlab/metaWRAP
 - **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-annotate-bins/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-annotate-bins/overview
 - **Total Downloads**: 45
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: metawrap-annotate-bins not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: metawrap-annotate-bins not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-annotate-bins:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2671994706: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

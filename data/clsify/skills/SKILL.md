@@ -1,8 +1,9 @@
 ---
 name: clsify
-description: The `clsify` tool (also known as Haplotype-LSO) provides a specialized workflow for the molecular identification of the plant pathogen *C.
+description: The clsify tool identifies and classifies the plant pathogen Candidatus Liberibacter solanacearum by comparing Sanger sequences against reference data. Use when user asks to identify species, classify haplotypes from FASTA or FASTQ files, or generate diagnostic reports for plant pathogens.
 homepage: https://github.com/holtgrewe/clsify
 ---
+
 
 # clsify
 

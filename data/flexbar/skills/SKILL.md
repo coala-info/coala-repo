@@ -1,8 +1,9 @@
 ---
 name: flexbar
-description: Flexbar (flexible barcode and adapter removal) is a high-performance utility for the preprocessing of high-throughput sequencing data.
+description: Flexbar preprocesses high-throughput sequencing data by removing adapters, barcodes, and low-quality sequences to improve mapping and assembly. Use when user asks to remove adapter sequences, demultiplex barcoded runs, trim homopolymers, or extract unique molecular identifiers.
 homepage: https://github.com/seqan/flexbar
 ---
+
 
 # flexbar
 

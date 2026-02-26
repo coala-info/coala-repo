@@ -1,8 +1,9 @@
 ---
 name: nextalign
-description: The `nextalign` tool is a specialized sequence aligner designed for viral genomes.
+description: Nextalign performs codon-aware sequence alignment and translation for viral genomes. Use when user asks to align viral sequences to a reference, translate genes into protein sequences, or extract insertions relative to a reference genome.
 homepage: https://github.com/nextstrain/nextclade/tree/master/packages/nextalign_cli
 ---
+
 
 # nextalign
 

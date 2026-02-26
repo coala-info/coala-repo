@@ -1,8 +1,9 @@
 ---
 name: melon
-description: Melon is a bioinformatic tool designed for high-resolution taxonomic profiling of long-read metagenomic datasets.
+description: Melon is a bioinformatic tool designed for high-resolution taxonomic profiling and genome size estimation of long-read metagenomic datasets using marker genes. Use when user asks to perform taxonomic profiling, quantify genome copies, estimate relative abundances, or calculate mean genome size from long reads.
 homepage: https://github.com/xinehc/melon
 ---
+
 
 # melon
 

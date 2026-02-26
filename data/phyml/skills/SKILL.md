@@ -1,8 +1,9 @@
 ---
 name: phyml
-description: PhyML is a specialized tool for estimating phylogenies using the Maximum Likelihood (ML) principle.
+description: PhyML estimates phylogenetic trees from sequence alignments using the Maximum Likelihood principle. Use when user asks to build a phylogeny, optimize tree topologies using NNI or SPR moves, or calculate branch support through bootstrapping or aLRT.
 homepage: http://www.atgc-montpellier.fr/phyml/
 ---
+
 
 # phyml
 

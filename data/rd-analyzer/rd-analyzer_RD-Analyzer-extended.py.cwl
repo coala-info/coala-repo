@@ -2,10 +2,51 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: RD-Analyzer-extended.py
 label: rd-analyzer_RD-Analyzer-extended.py
-doc: "RD-Analyzer is a tool for detecting Rare Diseases (RD) or analyzing genomic
-  data, however, the provided text contains only system logs and error messages rather
-  than help documentation.\n\nTool homepage: https://github.com/xiaeryu/RD-Analyzer"
-inputs: []
+doc: "RD-Analyzer-extended.py\n\nTool homepage: https://github.com/xiaeryu/RD-Analyzer"
+inputs:
+  - id: ref_fasta
+    type: File
+    doc: Reference FASTA file
+    inputBinding:
+      position: 1
+  - id: fastq_1
+    type: File
+    doc: FASTQ file 1
+    inputBinding:
+      position: 2
+  - id: fastq_2
+    type:
+      - 'null'
+      - File
+    doc: FASTQ file 2 (optional)
+    inputBinding:
+      position: 3
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: enable debug mode, keeping all intermediate files
+    inputBinding:
+      position: 104
+      prefix: --debug
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    default: running directory
+    inputBinding:
+      position: 104
+      prefix: --outdir
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: basename of output files
+    default: RD-Analyzer
+    inputBinding:
+      position: 104
+      prefix: --output
 outputs:
   - id: stdout
     type: stdout

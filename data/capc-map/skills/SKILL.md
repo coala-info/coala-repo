@@ -1,8 +1,9 @@
 ---
 name: capc-map
-description: Capture-C is a specialized chromosome conformation capture (3C) variant used to study high-resolution interactions for specific target genomic loci.
+description: capc-map processes Capture-C data to map high-resolution genomic interactions from raw reads to normalized profiles. Use when user asks to generate restriction fragment maps, align Capture-C reads, or create binned and normalized interaction pile-ups.
 homepage: https://capc-map.readthedocs.io/
 ---
+
 
 # capc-map
 

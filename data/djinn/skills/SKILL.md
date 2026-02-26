@@ -1,8 +1,9 @@
 ---
 name: djinn
-description: Djinn is a specialized utility for handling the discrepancies between various linked-read sequencing formats.
+description: "Djinn standardizes and converts between various linked-read sequencing formats and barcode styles. Use when user asks to convert linked-read FASTQs to BAM for NCBI submission, translate between platform-specific formats, or extract and sort records by barcode."
 homepage: https://github.com/pdimens/djinn
 ---
+
 
 # djinn
 

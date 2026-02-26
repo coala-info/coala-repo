@@ -1,8 +1,9 @@
 ---
 name: meta-apo
-description: Meta-Apo (Metagenomic Apochromat) is a machine-learning tool designed to bridge the gap between 16S-amplicon functional predictions and shotgun metagenomic (WGS) profiles.
+description: Meta-Apo is a machine-learning tool that calibrates 16S-amplicon functional predictions to align with shotgun metagenomic profiles. Use when user asks to train a calibration model using paired samples or apply a model to adjust KO abundance tables for consistency with WGS data.
 homepage: https://github.com/qibebt-bioinfo/meta-apo
 ---
+
 
 # meta-apo
 

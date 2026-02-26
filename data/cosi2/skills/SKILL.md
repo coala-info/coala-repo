@@ -1,8 +1,9 @@
 ---
 name: cosi2
-description: The `cosi2` tool is a high-performance coalescent simulator developed by the Broad Institute.
+description: cosi2 is a high-performance coalescent simulator that models the ancestral history of genetic samples under complex evolutionary scenarios. Use when user asks to simulate genetic data, model natural selection, incorporate recombination maps, or define demographic events like population splits and migration.
 homepage: https://www.broadinstitute.org/mpg/cosi2/
 ---
+
 
 # cosi2
 

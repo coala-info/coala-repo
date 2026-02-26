@@ -1,8 +1,9 @@
 ---
 name: r-fastbaps
-description: R package fastbaps (documentation from project home).
+description: The r-fastbaps package performs fast hierarchical Bayesian analysis of population structure to cluster large genomic datasets. Use when user asks to cluster genetic sequences, perform population structure analysis, partition phylogenetic trees, or optimize Dirichlet prior hyperparameters for genomic data.
 homepage: https://cran.r-project.org/web/packages/fastbaps/index.html
 ---
+
 
 # r-fastbaps
 

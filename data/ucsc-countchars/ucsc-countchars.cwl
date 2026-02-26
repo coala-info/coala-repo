@@ -1,16 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: countChars
+baseCommand: ucsc-countchars
 label: ucsc-countchars
-doc: "A tool to count characters in a file. (Note: The provided help text contains
-  only container runtime error messages and does not list specific arguments.)\n\n
-  Tool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Counts characters in a FASTA or FASTQ file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input FASTA or FASTQ file
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output file to write counts to
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-countchars:482--h0b57e2e_0
-stdout: ucsc-countchars.out

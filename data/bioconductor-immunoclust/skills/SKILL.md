@@ -1,8 +1,9 @@
 ---
 name: bioconductor-immunoclust
-description: the package is available on all platforms; click for details.
+description: immunoClust provides an automated pipeline for clustering and meta-clustering high-dimensional flow and mass cytometry data. Use when user asks to cluster cell events within individual samples, perform meta-clustering across multiple samples, or create hierarchical annotations of cell populations.
 homepage: https://bioconductor.org/packages/release/bioc/html/immunoClust.html
 ---
+
 
 # bioconductor-immunoclust
 

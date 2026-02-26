@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arrayexpress
-description: the package is available on all platforms; click for details.
+description: This tool accesses and imports transcriptomics data from the ArrayExpress database into R. Use when user asks to query experiments by keywords or species, download raw or processed MAGE-TAB files, and convert datasets into Bioconductor objects for downstream analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/ArrayExpress.html
 ---
+
 
 # bioconductor-arrayexpress
 

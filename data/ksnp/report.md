@@ -3,7 +3,7 @@
 ## ksnp
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is an error message indicating a failure to build a container image due to insufficient disk space.
+ksnp
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ksnp:1.0.3--h077b44d_2
@@ -18,11 +18,13 @@ The provided text does not contain help information for the tool. It is an error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ksnp:1.0.3--h077b44d_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3908961664: no space left on device
+Usage: ksnp -b <BAM> -r <FASTA> -v <VCF> -o <Output>
+  -b aligned reads in BAM format (indexed required)
+  -r reference sequence for allele realignment in FASTA format (indexed required)
+  -v heterozygous variants to phase in VCF format
+  -o output file that phased results are written to (stdout)
+  -k k-mer size to construct DBG, currently supporting 2,3,4,5 (2)
+  -c specify a chromosome to phase
+Version: 1.0.3
 ```
 
-
-## Metadata
-- **Skill**: generated

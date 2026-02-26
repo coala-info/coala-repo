@@ -1,9 +1,9 @@
 # ale CWL Generation Report
 
-## ale
+## ale_ALE
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a system error log regarding a failed container build (no space left on device).
+Assembly Likelihood Estimator for evaluating genome assemblies using read alignments.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ale:20180904--py27ha92aebf_0
@@ -15,61 +15,52 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 11.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sc932/ALE
-- **Stars**: 35
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 13:35:51  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/ale:20180904--py27ha92aebf_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a426cbcc4d42de9213c4efd583690194f9cee5cee29caa70887bdd1b3aaf193d: unpack entry: usr/local/lib/libQtDesignerComponents.so.4.8.7: unpack to regular file: short write: write /tmp/build-temp-2109851123/rootfs/usr/local/lib/libQtDesignerComponents.so.4.8.7: no space left on device
+Welcome to the Assembly Likelihood Estimator!
+(C) 2010 Scott Clark
+
+Usage: ALE [-options] alignments.[s|b]am assembly.fasta[.gz] ALEoutput.txt
+
+Options: <i>nt <f>loat <s>tring [default]
+-h or --help    : print out this help
+--kmer <f>      : Kmer depth for kmer stats [4]
+--qOff <i>      : Quality ascii offset (illumina) [33] or 64 (or 0)
+--pl <s>        : placementOutputBAM
+--pm <s>        : library parameter file (auto outputs .param)
+--nout          : only output meta information (no per base) [off]
+--minLL         : the minimum log Likelihood (-120)
+--metagenome    : Evaluate each contig independently for depth & kmer metrics
+--realign[=matchScore,misMatchPenalty,gapOpenPenalty,gapExtPenalty,minimumSoftClip (default: 1,3,11,4,8) ]
+                   Realign reads with Striped-Smith-Waterman honoring ambiguous reference bases
+                   and stacking homo-polymer indels
+                   for PacBio, try --realign=1,5,2,1,20 (similar to BWA-SW recommendations)
+--SNPreport <s> : Creates a new text file reporting all SNP phasing 
+                   observed by a read against ambiguous bases in the reference
+--minQual <i>   : Minimum quality score to use in Z-normalization (default 3).
+                   Illumina quality scores can be unreliable below this threshold
 ```
 
-
-## Metadata
-- **Skill**: generated
 
 ## ale_ale2wiggle.py
 
 ### Tool Description
-A tool to convert ALE (Assembly Likelihood Evaluation) output to Wiggle format. Note: The provided help text contains only system error logs and does not list specific arguments.
+Converts ALE (Assembly Likelihood Evaluation) output files to Wiggle format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ale:20180904--py27ha92aebf_0
 - **Homepage**: https://github.com/sc932/ALE
 - **Package**: https://anaconda.org/channels/bioconda/packages/ale/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 13:37:19  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/ale:20180904--py27ha92aebf_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a426cbcc4d42de9213c4efd583690194f9cee5cee29caa70887bdd1b3aaf193d: unpack entry: usr/local/lib/libQtDesignerComponents.so.4.8.7: unpack to regular file: short write: write /tmp/build-temp-4227322597/rootfs/usr/local/lib/libQtDesignerComponents.so.4.8.7: no space left on device
-```
-
-## ale_plotter4.py
-
-### Tool Description
-ALE plotter tool (Note: The provided text is a system error log and does not contain help or usage information for the tool).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ale:20180904--py27ha92aebf_0
-- **Homepage**: https://github.com/sc932/ALE
-- **Package**: https://anaconda.org/channels/bioconda/packages/ale/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 13:37:51  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/ale:20180904--py27ha92aebf_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a426cbcc4d42de9213c4efd583690194f9cee5cee29caa70887bdd1b3aaf193d: unpack entry: usr/local/lib/libQtDesignerComponents.so.4.8.7: unpack to regular file: short write: write /tmp/build-temp-4092310375/rootfs/usr/local/lib/libQtDesignerComponents.so.4.8.7: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/ale2wiggle.py", line 85, in <module>
+    sys.exit(main(sys.argv))
+  File "/usr/local/bin/ale2wiggle.py", line 80, in main
+    convertToWiggle(argv[1])
+IndexError: list index out of range
 ```
 

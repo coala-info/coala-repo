@@ -1,8 +1,9 @@
 ---
 name: phylommand
-description: Phylommand is a lightweight, modular toolkit designed for phylogenetic workflows.
+description: Phylommand is a modular toolkit for phylogenetic tree manipulation, construction, and statistical analysis. Use when user asks to edit tree topologies, build trees from alignments, compare different tree structures, or calculate sequence distances.
 homepage: https://github.com/mr-y/phylommand
 ---
+
 
 # phylommand
 

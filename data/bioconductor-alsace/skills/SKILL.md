@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alsace
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool analyzes HPLC-DAD data using Multivariate Curve Resolution and Alternating Least Squares to decompose complex chemical mixtures into pure components. Use when user asks to perform baseline correction, smooth spectral data, align peaks across samples, or generate peak tables for metabolomics.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/alsace.html
 ---
+
 
 # bioconductor-alsace
 

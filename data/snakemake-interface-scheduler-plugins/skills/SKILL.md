@@ -1,8 +1,9 @@
 ---
 name: snakemake-interface-scheduler-plugins
-description: This skill provides the technical framework for extending Snakemake's scheduling capabilities.
+description: This tool provides a stable Python interface for developing and integrating custom job scheduling logic into Snakemake. Use when user asks to create a scheduler plugin, implement custom job selection logic, or extend Snakemake's scheduling capabilities with specialized heuristics.
 homepage: https://github.com/snakemake/snakemake-interface-scheduler-plugins
 ---
+
 
 # snakemake-interface-scheduler-plugins
 

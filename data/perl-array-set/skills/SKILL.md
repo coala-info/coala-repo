@@ -1,8 +1,9 @@
 ---
 name: perl-array-set
-description: The `perl-array-set` tool provides a robust way to handle mathematical set operations on data collections.
+description: This tool performs mathematical set operations on data collections like lists of identifiers or sequences. Use when user asks to find the intersection of two files, identify unique elements in a list, or perform union and difference operations on datasets.
 homepage: https://metacpan.org/release/Array-Set
 ---
+
 
 # perl-array-set
 

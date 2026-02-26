@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigwigmerge
-description: `bigWigMerge` is a specialized utility from the UCSC Genome Browser "kent" toolset designed to aggregate signal values from multiple BigWig files.
+description: ucsc-bigwigmerge merges signal data from multiple BigWig files into a single BedGraph file. Use when user asks to merge BigWig files, aggregate BigWig signals, create consensus tracks from BigWig replicates, or combine signal data from different BigWig experiments.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigwigmerge
 

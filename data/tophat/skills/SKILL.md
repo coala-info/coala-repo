@@ -1,8 +1,9 @@
 ---
 name: tophat
-description: TopHat is a specialized bioinformatics tool that maps RNA-Seq reads to a reference genome.
+description: TopHat maps RNA-Seq reads to a reference genome, specifically designed to handle reads spanning splice junctions. Use when user asks to map RNA-Seq reads, align RNA-Seq reads, map paired-end RNA-Seq reads, map strand-specific RNA-Seq reads, or align RNA-Seq reads with known annotations.
 homepage: http://ccb.jhu.edu/software/tophat
 ---
+
 
 # tophat
 

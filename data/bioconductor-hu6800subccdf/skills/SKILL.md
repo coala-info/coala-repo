@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu6800subccdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment and coordinate mapping for the Affymetrix Hu6800 GeneChip. Use when user asks to map probe set identifiers to physical microarray locations, convert between chip coordinates and indices, or process Hu6800 microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800subccdf.html
 ---
+
 
 # bioconductor-hu6800subccdf
 

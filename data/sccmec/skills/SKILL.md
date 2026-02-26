@@ -1,8 +1,9 @@
 ---
 name: sccmec
-description: sccmec is a specialized bioinformatics tool designed to automate the typing of SCCmec cassettes in bacterial assemblies.
+description: sccmec automates the typing and subtyping of SCCmec cassettes in bacterial genome assemblies using BLAST-based searches against a curated database. Use when user asks to type SCCmec cassettes, characterize MRSA genomic assemblies, or identify SCCmec regions and targets in bacterial sequences.
 homepage: https://github.com/rpetit3/sccmec
 ---
+
 
 # sccmec
 

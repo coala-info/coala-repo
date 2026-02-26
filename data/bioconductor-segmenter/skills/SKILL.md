@@ -1,8 +1,9 @@
 ---
 name: bioconductor-segmenter
-description: the package is available on all platforms; click for details.
+description: This R package performs chromatin segmentation analysis to identify functional genomic states from epigenetic data. Use when user asks to perform chromatin segmentation, identify functional genomic states, or analyze multiple epigenetic tracks.
 homepage: https://bioconductor.org/packages/release/bioc/html/segmenter.html
 ---
+
 
 # bioconductor-segmenter
 

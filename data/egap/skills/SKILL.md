@@ -1,8 +1,9 @@
 ---
 name: egap
-description: EGAP (Entheome Genome Assembly Pipeline) is a comprehensive bioinformatics workflow designed to generate high-quality genome assemblies.
+description: EGAP is a comprehensive bioinformatics workflow that automates the process of generating, polishing, and assessing high-quality genome assemblies from raw sequencing reads. Use when user asks to generate genome assemblies, perform hybrid assembly with ONT and Illumina data, or evaluate assembly quality using BUSCO and QUAST.
 homepage: https://github.com/iPsychonaut/EGAP
 ---
+
 
 # egap
 

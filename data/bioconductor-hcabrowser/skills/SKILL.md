@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hcabrowser
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides an R interface to search, filter, and retrieve single-cell genomic data from the Human Cell Atlas Data Coordination Platform. Use when user asks to query HCA metadata, filter data bundles by organ or species, or download single-cell datasets for analysis.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/HCABrowser.html
 ---
+
 
 # bioconductor-hcabrowser
 

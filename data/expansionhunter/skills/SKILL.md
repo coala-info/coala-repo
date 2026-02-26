@@ -1,8 +1,9 @@
 ---
 name: expansionhunter
-description: ExpansionHunter is a sequence-graph based tool designed to genotype short tandem repeats (STRs).
+description: ExpansionHunter genotypes short tandem repeats by analyzing sequence graphs to identify expansions that exceed the sequencing read length. Use when user asks to genotype STRs, identify repeat expansions, or estimate the size of repetitive genomic regions from BAM or CRAM files.
 homepage: https://github.com/Illumina/ExpansionHunter
 ---
+
 
 # expansionhunter
 

@@ -1,8 +1,9 @@
 ---
 name: xtermcolor
-description: xtermcolor is a Python library and command-line utility designed to simplify the process of styling terminal text.
+description: xtermcolor is a Python library and command-line utility for styling terminal text with colors. Use when user asks to list terminal colors, convert hex colors to ANSI codes, colorize terminal text with foreground or background colors, or specify terminal compatibility for color output.
 homepage: https://github.com/broadinstitute/xtermcolor
 ---
+
 
 # xtermcolor
 

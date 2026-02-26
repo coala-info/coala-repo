@@ -1,8 +1,9 @@
 ---
 name: smeg
-description: SMEG (Strain-level Metagenomic Estimation of Growth rate) is a specialized bioinformatics tool for measuring the replication rates of specific microbial strains within complex environmental or clinical samples.
+description: SMEG measures the replication rates of specific microbial strains within metagenomic samples by identifying cluster-specific unique SNPs. Use when user asks to build a strain-level species database, estimate microbial growth rates from metagenomic reads, or differentiate between closely related strains in environmental or clinical samples.
 homepage: https://github.com/ohlab/SMEG
 ---
+
 
 # smeg
 

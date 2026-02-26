@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pvca
-description: the package is available on all platforms; click for details.
+description: Bioconductor-pvca performs Principal Variance Component Analysis to quantify the sources of variation in high-dimensional biological data. Use when user asks to assess batch effects, estimate variance components, or analyze sources of variation in genomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/pvca.html
 ---
+
 
 # bioconductor-pvca
 

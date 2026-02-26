@@ -1,8 +1,9 @@
 ---
 name: r-canopy
-description: R package canopy (documentation from project home).
+description: r-canopy is an R package that uses a Bayesian framework to infer tumor phylogeny and intra-tumor heterogeneity from somatic SNAs and CNAs. Use when user asks to identify sub-populations, determine mutation profiles, and reconstruct clonal evolutionary history from multi-sample NGS data.
 homepage: https://cran.r-project.org/web/packages/canopy/index.html
 ---
+
 
 # r-canopy
 

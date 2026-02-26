@@ -1,8 +1,9 @@
 ---
 name: gencube
-description: The `gencube` tool provides a unified command-line interface for retrieving multi-omics resources.
+description: Gencube provides a unified command-line interface for searching and retrieving multi-omics resources from NCBI, Ensembl, and UCSC. Use when user asks to find genome assemblies, download gene sets or sequences, retrieve comparative genomics data, or fetch sequencing metadata.
 homepage: https://github.com/snu-cdrc/gencube
 ---
+
 
 # gencube
 

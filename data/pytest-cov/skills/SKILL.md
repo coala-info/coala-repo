@@ -1,8 +1,9 @@
 ---
 name: pytest-cov
-description: `pytest-cov` is a specialized plugin that integrates the `coverage` library into the `pytest` workflow.
+description: pytest-cov is a pytest plugin that measures code coverage by tracking which lines of code are executed during test runs. Use when user asks to measure test coverage, generate coverage reports in various formats, or enforce coverage thresholds in Python projects.
 homepage: https://github.com/pytest-dev/pytest-cov
 ---
+
 
 # pytest-cov
 

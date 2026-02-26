@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bionetstat
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: BioNetStat performs statistical analysis and comparison of biological networks using graph spectra, entropy, and centrality measures. Use when user asks to perform differential network analysis, compare structural properties across multiple biological states, or identify key variables using network centrality tests.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BioNetStat.html
 ---
+
 
 # bioconductor-bionetstat
 

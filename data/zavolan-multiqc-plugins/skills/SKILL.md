@@ -1,8 +1,9 @@
 ---
 name: zavolan-multiqc-plugins
-description: The `zavolan-multiqc-plugins` package is a collection of extensions for the MultiQC tool, developed by the Zavolan Lab at the University of Basel.
+description: The zavolan-multiqc-plugins extend MultiQC to parse and visualize specific bioinformatics outputs. Use when user asks to visualize genomic feature distribution, assess RNA-seq quality, or visualize sample clustering.
 homepage: https://github.com/zavolanlab/multiqc-plugins
 ---
+
 
 # zavolan-multiqc-plugins
 

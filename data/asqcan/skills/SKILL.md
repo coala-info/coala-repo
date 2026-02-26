@@ -1,8 +1,9 @@
 ---
 name: asqcan
-description: asqcan is a specialized pipeline designed to automate the transition from raw bacterial sequencing reads to fully annotated genomes.
+description: asqcan is an automated pipeline that performs quality control, de novo assembly, contamination analysis, and functional annotation for bacterial sequencing reads. Use when user asks to assemble bacterial genomes, perform quality control on raw reads, check for assembly contamination, or annotate genomic sequences.
 homepage: https://github.com/bogemad/asqcan
 ---
+
 
 # asqcan
 

@@ -1,8 +1,9 @@
 ---
 name: seqmagick
-description: seqmagick is a powerful command-line interface that acts as a frontend for Biopython's SeqIO module.
+description: seqmagick is a command-line interface for Biopython that simplifies sequence manipulation and format conversion tasks. Use when user asks to convert file formats, modify sequences in-place, remove gaps, generate reverse complements, filter by ID, or deduplicate datasets.
 homepage: http://github.com/fhcrc/seqmagick
 ---
+
 
 # seqmagick
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseetree
-description: the package is available on all platforms; click for details.
+description: bioconductor-iseetree provides an interactive interface for visualizing and exploring hierarchical microbiome and phylogenetic data stored in TreeSummarizedExperiment objects. Use when user asks to launch interactive dashboards for compositional analysis, visualize phylogenetic trees, perform ordination exploration, or analyze community structure through specialized iSEE panels.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEtree.html
 ---
+
 
 # bioconductor-iseetree
 

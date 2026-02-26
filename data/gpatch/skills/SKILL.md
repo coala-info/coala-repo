@@ -1,8 +1,9 @@
 ---
 name: gpatch
-description: GPatch is a specialized tool designed to upgrade draft contig assemblies into chromosome-scale pseudoassemblies.
+description: GPatch upgrades draft contig assemblies into chromosome-scale pseudoassemblies by filling gaps with sequences from a reference genome. Use when user asks to upgrade draft assemblies, fill gaps between contigs using a reference, or create reference-guided scaffolds.
 homepage: https://github.com/adadiehl/GPatch.git
 ---
+
 
 # gpatch
 

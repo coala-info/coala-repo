@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fdb.infiniummethylation.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides genomic annotations and coordinate data for Illumina Infinium DNA methylation probes on the hg19 genome build. Use when user asks to retrieve probe locations, annotate methylation sites with genomic features like TSS or CpG islands, and lift over legacy HM27 data from hg18 to hg19.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.InfiniumMethylation.hg19.html
 ---
+
 
 # bioconductor-fdb.infiniummethylation.hg19
 

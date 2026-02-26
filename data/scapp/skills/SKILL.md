@@ -1,8 +1,9 @@
 ---
 name: scapp
-description: SCAPP is a specialized pipeline designed to recover plasmid sequences from complex metagenomic samples.
+description: SCAPP is a specialized pipeline that recovers plasmid sequences from metagenomic assembly graphs by identifying circular paths with plasmid-like characteristics. Use when user asks to identify plasmids in metagenomic samples, configure SCAPP runs, optimize assembly thresholds, or manage the alignment of reads to assembly graphs.
 homepage: https://github.com/Shamir-Lab/SCAPP
 ---
+
 
 # scapp
 

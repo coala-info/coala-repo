@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fithic
-description: the package is available on all platforms; click for details.
+description: FitHiC identifies statistically significant chromatin interactions from Hi-C data by modeling the relationship between genomic distance and contact probability. Use when user asks to detect significant chromatin loops, estimate contact probabilities from Hi-C contact maps, or identify interactions that occur more frequently than expected by chance.
 homepage: https://bioconductor.org/packages/release/bioc/html/FitHiC.html
 ---
+
 
 # bioconductor-fithic
 

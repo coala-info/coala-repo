@@ -1,8 +1,9 @@
 ---
 name: snippy
-description: Snippy is a high-speed tool designed for finding variants between a haploid reference genome and raw sequencing reads.
+description: "Snippy identifies genetic variants between a haploid reference genome and raw sequencing reads or assembled contigs. Use when user asks to find SNPs and indels, annotate variant effects, or generate a core genome alignment for phylogenomic analysis."
 homepage: https://github.com/tseemann/snippy
 ---
+
 
 # snippy
 

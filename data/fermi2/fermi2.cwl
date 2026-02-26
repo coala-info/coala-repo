@@ -2,10 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fermi2
 label: fermi2
-doc: "Fermi2 is a de novo assembler for short reads (Note: The provided help text
-  contains only system error messages and no usage information).\n\nTool homepage:
-  https://github.com/lh3/fermi2"
-inputs: []
+doc: "fermi2 is a tool for sequence assembly and analysis.\n\nTool homepage: https://github.com/lh3/fermi2"
+inputs:
+  - id: command
+    type: string
+    doc: The command to execute (e.g., diff, occflt, sub, unpack, correct, 
+      count, interleave, assemble, simplify, sa, match)
+    inputBinding:
+      position: 1
+  - id: arguments
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

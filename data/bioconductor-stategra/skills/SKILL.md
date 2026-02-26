@@ -1,8 +1,9 @@
 ---
 name: bioconductor-stategra
-description: the package is available on all platforms; click for details.
+description: STATegRa provides methods for the integrative analysis and visualization of multi-omics datasets. Use when user asks to integrate multiple omics data types, perform multi-view component analysis, or apply O2PLS for data fusion.
 homepage: https://bioconductor.org/packages/release/bioc/html/STATegRa.html
 ---
+
 
 # bioconductor-stategra
 

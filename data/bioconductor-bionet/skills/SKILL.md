@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bionet
-description: the package is available on all platforms; click for details.
+description: BioNet identifies functional modules in biological networks by integrating omics data and p-values with protein-protein interaction networks. Use when user asks to identify high-scoring subnetworks, fit a Beta-uniform mixture model to p-values, or find functional modules in biological networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioNet.html
 ---
+
 
 # bioconductor-bionet
 

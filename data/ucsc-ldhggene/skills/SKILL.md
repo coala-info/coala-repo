@@ -1,8 +1,9 @@
 ---
 name: ucsc-ldhggene
-description: The `ldHgGene` utility is a specialized tool from the UCSC Genome Browser "kent" source suite.
+description: The ucsc-ldhggene tool loads gene prediction data from GFF files into a MySQL database. Use when user asks to 'load gene prediction data', 'ingest GFF data', 'set up a UCSC Genome Browser mirror', or 'manage custom genomic databases'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-ldhggene
 

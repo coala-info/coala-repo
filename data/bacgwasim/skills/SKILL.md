@@ -1,8 +1,9 @@
 ---
 name: bacgwasim
-description: BacGWASim is a specialized simulation framework for generating synthetic bacterial populations.
+description: BacGWASim is a simulation framework for generating synthetic bacterial populations with defined causal variants and phenotypes for association testing. Use when user asks to simulate bacterial genome evolution, generate synthetic GWAS datasets, or evaluate the performance of association mapping methods.
 homepage: https://github.com/Morteza-M-Saber/BacGWASim
 ---
+
 
 # bacgwasim
 

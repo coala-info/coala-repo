@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bumphunter
-description: the package is available on all platforms; click for details.
+description: This tool identifies contiguous genomic regions where a covariate shows a significant effect in high-throughput data. Use when user asks to find differentially methylated regions, identify genomic bumps, or detect clusters of significant effect sizes in sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/bumphunter.html
 ---
+
 
 # bioconductor-bumphunter
 

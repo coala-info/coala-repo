@@ -1,8 +1,9 @@
 ---
 name: suvtk
-description: The Submission of Uncultivated Viral genomes toolkit (`suvtk`) is a specialized command-line utility designed to streamline the transition from viral genomic assemblies to formal GenBank submissions.
+description: The suvtk toolkit streamlines the process of preparing and formatting uncultivated viral genomes for GenBank submission. Use when user asks to submit viral genomic assemblies to GenBank, predict genes in viral sequences using Pyrodigal-rv, or format metadata for uncultivated viral samples.
 homepage: https://github.com/LanderDC/suvtk
 ---
+
 
 # suvtk
 

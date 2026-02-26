@@ -1,8 +1,9 @@
 ---
 name: bioconductor-wgsmapp
-description: the package is available on all platforms; click for details.
+description: WGSmapp provides tools for mappability and GC content correction in whole-genome sequencing data analysis. Use when user asks to correct for sequencing biases, perform GC content normalization, or estimate copy numbers from WGS data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/WGSmapp.html
 ---
+
 
 # bioconductor-wgsmapp
 

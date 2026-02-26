@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffutr
-description: the package is available on all platforms; click for details.
+description: bioconductor-diffutr provides a framework for analyzing differential exon and 3' UTR usage by integrating alternative poly-adenylation site databases with established splicing analysis methods. Use when user asks to prepare annotation bins, count features for differential expression, perform differential 3' UTR usage analysis, or visualize gene-level splicing profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/diffUTR.html
 ---
+
 
 # bioconductor-diffutr
 

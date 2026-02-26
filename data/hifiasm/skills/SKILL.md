@@ -1,8 +1,9 @@
 ---
 name: hifiasm
-description: Hifiasm is a high-performance assembler designed to produce phased, haplotype-resolved genome assemblies from PacBio HiFi reads.
+description: Hifiasm is a high-performance assembler that generates phased, haplotype-resolved genome assemblies from PacBio HiFi reads. Use when user asks to assemble a genome, resolve maternal and paternal haplotypes, perform trio binning, or integrate Hi-C and ONT reads for telomere-to-telomere assembly.
 homepage: https://github.com/chhylp123/hifiasm
 ---
+
 
 # hifiasm
 

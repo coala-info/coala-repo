@@ -1,8 +1,9 @@
 ---
 name: perl-test-fork
-description: The `perl-test-fork` skill facilitates testing asynchronous or multi-process Perl code.
+description: This tool manages test numbering and process coordination for testing multi-process Perl code. Use when user asks to test code that forks, manage test sub-plans for child processes, or ensure valid TAP output for asynchronous Perl scripts.
 homepage: http://metacpan.org/pod/Test::Fork
 ---
+
 
 # perl-test-fork
 

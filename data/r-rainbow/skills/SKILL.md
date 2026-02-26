@@ -1,8 +1,9 @@
 ---
 name: r-rainbow
-description: Visualizing functional data and identifying functional outliers.</p>
+description: The rainbow package provides tools for functional data analysis, focusing on visualization and outlier detection through functional boxplots, bagplots, and rainbow plots. Use when user asks to visualize functional data sets, identify functional outliers, or create depth-based plots for time-indexed curves.
 homepage: https://cloud.r-project.org/web/packages/rainbow/index.html
 ---
+
 
 # r-rainbow
 

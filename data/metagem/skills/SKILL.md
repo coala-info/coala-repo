@@ -1,8 +1,9 @@
 ---
 name: metagem
-description: metaGEM is an integrated Snakemake-based workflow that automates the transition from raw metagenomic reads to functional metabolic simulations.
+description: metaGEM is an integrated workflow that automates the process of converting raw metagenomic reads into functional metabolic models and community-scale simulations. Use when user asks to process metagenomic reads, assemble and bin genomes, refine metagenome-assembled genomes, reconstruct metabolic models, or predict metabolic interactions and cross-feeding.
 homepage: https://github.com/franciscozorrilla/metaGEM
 ---
+
 
 # metagem
 

@@ -1,8 +1,9 @@
 ---
 name: telometer
-description: Telometer is a bioinformatics tool that utilizes regular expressions to identify and measure telomeric repeat sequences in long-read sequencing data.
+description: Telometer identifies and measures telomeric repeat sequences in long-read sequencing data to provide high-resolution, read-level length measurements. Use when user asks to identify telomeric repeats, measure telomere length from long-read BAM files, or analyze chromosome-specific telomere data.
 homepage: https://github.com/santiago-es/Telometer
 ---
+
 
 # telometer
 

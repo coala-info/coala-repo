@@ -1,8 +1,9 @@
 ---
 name: bcbio-prioritize
-description: bcbio-prioritize is a specialized tool for biological variant prioritization.
+description: bcbio-prioritize ranks and filters biological variants by cross-referencing callsets with known disease-relevant genes and pathways. Use when user asks to prioritize variant calls, identify missing sequencing coverage in critical regions, or create binned BED files from biological evidence sources like ClinVar and CIViC.
 homepage: https://github.com/chapmanb/bcbio.prioritize
 ---
+
 
 # bcbio-prioritize
 

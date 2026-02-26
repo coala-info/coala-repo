@@ -1,8 +1,9 @@
 ---
 name: r-flexclust
-description: "The main function kcca implements a general framework for   k-centroids cluster analysis supporting arbitrary distance measures   and centroid computation. Further cluster methods include hard   competitive learning, neural gas, and QT clustering. There are   numerous visualization methods for cluster results (neighborhood   graphs, convex cluster hulls, barcharts of centroids, ...), and   bootstrap methods for the analysis of cluster stability.</p>"
+description: The r-flexclust package provides a flexible framework for k-centroids clustering using arbitrary distance measures and centroid functions. Use when user asks to perform k-centroids clustering, assess cluster stability through bootstrapping, visualize cluster structures, or assign new data points to existing clusters.
 homepage: https://cloud.r-project.org/web/packages/flexclust/index.html
 ---
+
 
 # r-flexclust
 

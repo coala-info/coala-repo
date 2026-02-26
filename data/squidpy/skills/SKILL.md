@@ -1,8 +1,9 @@
 ---
 name: squidpy
-description: Squidpy is a Python-based framework designed for the analysis and visualization of spatial single-cell data.
+description: Squidpy is a Python-based framework for analyzing and visualizing spatial single-cell data by extending the anndata and scanpy ecosystem. Use when user asks to build spatial neighbor graphs, calculate spatial statistics like Moran's I, identify neighborhood enrichment, or extract features from tissue images.
 homepage: https://github.com/scverse/squidpy
 ---
+
 
 # squidpy
 

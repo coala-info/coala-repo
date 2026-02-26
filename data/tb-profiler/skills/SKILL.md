@@ -1,8 +1,9 @@
 ---
 name: tb-profiler
-description: tb-profiler is a command-line tool designed specifically for Mycobacterium tuberculosis genomics.
+description: tb-profiler automates read alignment and variant calling to identify strain types and drug resistance in Mycobacterium tuberculosis samples. Use when user asks to profile drug resistance, determine strain types, or perform whole-genome variant calling for tuberculosis genomics.
 homepage: https://github.com/jodyphelan/TBProfiler
 ---
+
 
 # tb-profiler
 

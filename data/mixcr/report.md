@@ -3,25 +3,32 @@
 ## mixcr
 
 ### Tool Description
-MiXCR is a universal framework for processing big immunogenetic data (Note: The provided help text contains a container runtime error and does not list specific arguments).
+[Errno 2] No such file or directory: 'mixcr'; fallback failed: [Errno 2] No such file or directory: 'mixcr'
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mixcr:3.0.12--0
+- **Docker Image**: Not found
 - **Homepage**: https://github.com/milaboratory/mixcr
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mixcr/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/milaboratory/mixcr
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'mixcr'; fallback failed: [Errno 2] No such file or directory: 'mixcr'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'mixcr'; fallback failed: [Errno 2] No such file or directory: 'mixcr'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-FATAL:   Unable to handle docker://quay.io/biocontainers/mixcr:3.0.12--0 uri: failed to get checksum for docker://quay.io/biocontainers/mixcr:3.0.12--0: reading manifest 3.0.12--0 in quay.io/biocontainers/mixcr: unauthorized: access to the requested resource is not authorized
+
 ```
 
-
-## Metadata
-- **Skill**: generated

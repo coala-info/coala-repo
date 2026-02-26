@@ -1,8 +1,9 @@
 ---
 name: plasmidcommunity
-description: PlasmidCommunity is a specialized bioinformatics suite designed for the classification and risk assessment of *Klebsiella pneumoniae* plasmids.
+description: PlasmidCommunity is a bioinformatics suite designed for the classification, community assignment, and transmission risk assessment of Klebsiella pneumoniae plasmids. Use when user asks to categorize plasmids into communities, assign new sequences to existing clusters, evaluate clustering quality, or predict plasmid transmission risk using pre-trained models.
 homepage: https://github.com/wuxinmiao5/PlasmidCommunity
 ---
+
 
 # plasmidcommunity
 

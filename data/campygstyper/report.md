@@ -3,7 +3,7 @@
 ## campygstyper
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+CampyGStyper: a tool for rapid and accurate genome-wide SNP calling and cgMLST typing of Campylobacter jejuni.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/campygstyper:0.1.1--pyhdfd78af_0
@@ -18,14 +18,17 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/campygstyper:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a07fc2c3558a7e28d5e9ed95a52b4ab9c853b9fe500b4c277236c1191eb6ac55: unpack entry: usr/local/bin/python3.12: unpack to regular file: short write: write /tmp/build-temp-1192867554/rootfs/usr/local/bin/python3.12: no space left on device
+usage: campygstyper [-h] -i QUERY -r REFERENCE -o OUTPUT [-t THREAD]
+
+options:
+  -h, --help            show this help message and exit
+  -i QUERY, --query QUERY
+                        folder for the query genomes (default: None)
+  -r REFERENCE, --reference REFERENCE
+                        folder for the 60 medoid genomes (default: None)
+  -o OUTPUT, --output OUTPUT
+                        CampyGStyper output csv file (default: None)
+  -t THREAD, --thread THREAD
+                        number of thread to run fastANI (default: 4)
 ```
 
-
-## Metadata
-- **Skill**: generated

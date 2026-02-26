@@ -1,8 +1,9 @@
 ---
 name: biox
-description: BioX is a specialized utility designed to handle the high-redundancy nature of biological data.
+description: BioX is a utility for high-efficiency genomic data compression and alignment-free sequence analysis. Use when user asks to compress or decompress biological sequences, calculate sequence distances, construct phylogenetic trees, or perform taxonomic classification.
 homepage: https://github.com/TianMayCry9/BioX
 ---
+
 
 # biox
 

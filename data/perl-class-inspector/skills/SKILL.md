@@ -1,8 +1,9 @@
 ---
 name: perl-class-inspector
-description: This skill provides a programmatic interface for inspecting Perl classes.
+description: This tool provides a programmatic interface for inspecting Perl classes and retrieving metadata about their methods, functions, and inheritance. Use when user asks to check if a class is loaded, find the file path of a module, list class methods, find subclasses, or verify if a Perl module is installed.
 homepage: http://metacpan.org/pod/Class-Inspector
 ---
+
 
 # perl-class-inspector
 

@@ -1,8 +1,9 @@
 ---
 name: covsonar
-description: covsonar is a database-driven framework designed for the large-scale handling and screening of SARS-CoV-2 genomic sequences.
+description: covsonar is a database-driven framework for the large-scale alignment, storage, and screening of SARS-CoV-2 genomic sequences. Use when user asks to import viral genomes into a searchable database, update metadata with Pangolin lineages, or match specific amino acid and nucleotide mutations.
 homepage: https://github.com/rki-mf1/covsonar
 ---
+
 
 # covsonar
 

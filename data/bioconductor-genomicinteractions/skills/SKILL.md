@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicinteractions
-description: the package is available on all platforms; click for details.
+description: This tool provides a framework for the analysis, annotation, and visualization of genome-wide chromatin interaction data such as Hi-C and ChIA-PET. Use when user asks to load interaction data from HOMER or ChIA-PET files, annotate anchors with genomic features, categorize interaction types, or visualize interactions using Gviz.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicInteractions.html
 ---
+
 
 # bioconductor-genomicinteractions
 

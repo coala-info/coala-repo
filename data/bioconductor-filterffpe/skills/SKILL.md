@@ -1,8 +1,9 @@
 ---
 name: bioconductor-filterffpe
-description: the package is available on all platforms; click for details.
+description: This tool filters artifact chimeric reads from Formalin-Fixed Paraffin-Embedded (FFPE) NGS data to reduce false positive structural variation calls. Use when user asks to identify technical artifacts in FFPE samples, remove chimeric reads from BAM files, or clean NGS data for structural variation analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/FilterFFPE.html
 ---
+
 
 # bioconductor-filterffpe
 

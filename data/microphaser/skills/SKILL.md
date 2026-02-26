@@ -1,8 +1,9 @@
 ---
 name: microphaser
-description: Microphaser is a specialized bioinformatics tool designed for tumor neoantigen discovery.
+description: "Microphaser phases somatic and germline variants from tumor BAM files to generate and filter mutated peptide sequences for neoantigen discovery. Use when user asks to phase somatic mutations, generate neopeptide sequences, build a healthy peptidome reference, or filter candidate neoantigens against a normal background."
 homepage: https://github.com/koesterlab/microphaser
 ---
+
 
 # microphaser
 

@@ -1,8 +1,9 @@
 ---
 name: pybmtools
-description: The `pybmtools` (also referred to as `pydmtools`) skill enables efficient programmatic access to BigMethyl (BM) and DM files.
+description: pybmtools provides programmatic access to BigMethyl and DM files for analyzing methylation data and generating summary statistics. Use when user asks to read or write DM files, calculate methylation statistics across genomic intervals, or retrieve raw values and metadata from BigMethyl files.
 homepage: https://github.com/ZhouQiangwei/pybmtools
 ---
+
 
 # pybmtools
 

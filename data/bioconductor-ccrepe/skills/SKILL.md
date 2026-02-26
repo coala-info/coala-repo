@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ccrepe
-description: "The package has two functions: ccrepe: Calculates similarity measures, p-values and q-values for relative abundances of bugs in one or two body sites using bootstrap and permutation matrices of the data. nc.score: Calculates species-level co-variation and co-exclusion patterns based on an extension of the checkerboard score to ordinal data."
+description: This tool calculates compositionality-corrected p-values and similarity measures for associations between features in sparse microbial community sequencing data. Use when user asks to calculate significance of correlations in compositional data, handle spurious correlations in relative abundance datasets, or compute N-dimensional checkerboard scores for ecological data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ccrepe.html
 ---
+
 
 # bioconductor-ccrepe
 

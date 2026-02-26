@@ -1,8 +1,9 @@
 ---
 name: bioconductor-planttfhunter
-description: the package is available on all platforms; click for details.
+description: PlantTFHunter identifies and classifies plant transcription factors from protein sequences. Use when user asks to identify plant transcription factors, classify transcription factor families, or search for specific DNA-binding domains in plant proteins.
 homepage: https://bioconductor.org/packages/release/bioc/html/planttfhunter.html
 ---
+
 
 # bioconductor-planttfhunter
 

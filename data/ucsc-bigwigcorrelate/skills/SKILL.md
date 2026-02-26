@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigwigcorrelate
-description: `bigWigCorrelate` is a high-performance utility from the UCSC Genome Browser toolset used to determine how closely the signal levels in multiple bigWig files follow one another.
+description: ucsc-bigwigcorrelate computes the Pearson correlation coefficient between signal levels in multiple bigWig files. Use when user asks to calculate the correlation between bigWig files, compare signal levels across multiple bigWig files, perform quality control of replicates, analyze epigenetic marks, generate a correlation matrix, or calculate correlation within specific genomic regions.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigwigcorrelate
 

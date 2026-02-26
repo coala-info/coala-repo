@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clariomsrathttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides Bioconductor annotation data for mapping Clariom S Rat HT transcript cluster identifiers to genomic and functional metadata. Use when user asks to map manufacturer probe IDs to Entrez Gene IDs, Gene Symbols, GO terms, KEGG pathways, or chromosomal locations for Rattus norvegicus.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomsrathttranscriptcluster.db.html
 ---
+
 
 # bioconductor-clariomsrathttranscriptcluster.db
 

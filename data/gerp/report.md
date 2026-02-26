@@ -1,12 +1,12 @@
 # gerp CWL Generation Report
 
-## gerp
+## gerp_gerpcol
 
 ### Tool Description
-Genomic Evolutionary Rate Profiling (GERP) is a method for identifying evolutionarily constrained elements in multiple alignments by comparing observed substitutions to the number of substitutions expected under neutrality.
+gpp-gerpcol options:
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/gerp:2.1--hfc679d8_0
+- **Docker Image**: quay.io/biocontainers/gerp:2.1--h1b792b2_2
 - **Homepage**: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html
 - **Package**: https://anaconda.org/channels/bioconda/packages/gerp/overview
 - **Validation**: PASS
@@ -18,46 +18,80 @@ Genomic Evolutionary Rate Profiling (GERP) is a method for identifying evolution
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gerp:2.1--hfc679d8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2005783965: no space left on device
+gpp-gerpcol options:
+
+ -h 	 print help menu
+ -v 	 verbose mode
+ -t <tree filename>
+    	 evolutionary tree
+ -f <filename>
+    	 alignment filename
+ -a 	 alignment in mfa format [default = false]
+ -e <reference seq>
+    	 name of reference sequence
+ -j 	 project out reference sequence
+ -r <ratio>
+    	 Tr/Tv ratio [default = 2.0]
+ -p <precision>
+    	 tolerance for rate estimation [default = 0.001]
+ -z force start at position 0 [default = false]
+ -n <rate>
+    	 tree neutral rate [default = compute from tree]
+ -s <factor>
+    	 tree scaling factor [default = 1.0]
+ -x <suffix>
+    	 suffix for naming output files [default = ".rates"]
+
+Please see README.txt for more information.
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## gerp_gerpcol
-
-### Tool Description
-GERP++ (Genomic Evolutionary Rate Profiling) tool for calculating site-specific conservation scores. Note: The provided help text contains a fatal system error (no space left on device) and does not list command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gerp:2.1--hfc679d8_0
-- **Homepage**: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/gerp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gerp:2.1--hfc679d8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2257180188: no space left on device
-```
 
 ## gerp_gerpelem
 
 ### Tool Description
-GERP (Genomic Evolutionary Rate Profiling) tool for identifying constrained elements in multiple alignments. (Note: The provided help text contains system error messages regarding container execution and does not list specific command-line arguments).
+gpp-gerpelem options:
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/gerp:2.1--hfc679d8_0
+- **Docker Image**: quay.io/biocontainers/gerp:2.1--h1b792b2_2
 - **Homepage**: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html
 - **Package**: https://anaconda.org/channels/bioconda/packages/gerp/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gerp:2.1--hfc679d8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3908219757: no space left on device
+gpp-gerpelem options:
+
+ -h 	 print help menu
+ -v 	 verbose mode
+ -f <filename>
+    	 column scores filename
+ -c <chromosome> [default = none]
+ -s <start offset> [default = 0]
+ -x <suffix>
+    	 suffix for naming output files [default = ".elems"]
+ -w <suffix>
+    	 suffix for naming exclusion region file [default = no output]
+ -l <length>
+    	 minimum element length [default = 4]
+ -L <length>
+    	 maximum element length [default = 2000]
+ -t <inverse tolerance>
+    	 inverse of the rounding tolerance [default = 10]
+ -d <threshold>
+    	 depth threshold for shallow columns, in substitutions per site [default = 0.5]
+ -p <penalty>
+    	 penalty coefficient for shallow columns, as fraction of the median neutral rate [default = 0.5]
+ -b <number>
+    	 number of border nucleotides for shallow regions [default = 2]
+ -a <number>
+    	 total number of allowed non-border shallow nucleotides per element [default = 10]
+ -e <ratio>
+    	 acceptable false positive rate [default = 0.05]
+ -q <value>
+    	 denominator for minimum candidate element score formula [default = 10.0]
+ -r <value>
+    	 exponent for minimum candidate element score formula [default = 1.15]
+
+Please see README.txt for more information
 ```
 

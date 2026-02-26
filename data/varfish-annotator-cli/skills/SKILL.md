@@ -1,8 +1,9 @@
 ---
 name: varfish-annotator-cli
-description: The `varfish-annotator-cli` is a Java-based command-line tool designed to bridge the gap between standard variant callers and the VarFish analysis platform.
+description: The varfish-annotator-cli prepares genomic databases and annotates VCF files for the VarFish analysis platform. Use when user asks to initialize a local database, annotate small variants, annotate structural variants, or transform VCF files for VarFish.
 homepage: https://github.com/bihealth/varfish-annotator
 ---
+
 
 # varfish-annotator-cli
 

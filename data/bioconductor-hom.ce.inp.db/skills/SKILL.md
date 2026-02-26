@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.ce.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides orthology and paralogy mappings for Caenorhabditis elegans based on the Inparanoid algorithm. Use when user asks to retrieve predicted orthologs between C. elegans and other species, perform cross-species gene ID conversions, or map Ensembl protein IDs across organisms.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Ce.inp.db.html
 ---
+
 
 # bioconductor-hom.ce.inp.db
 

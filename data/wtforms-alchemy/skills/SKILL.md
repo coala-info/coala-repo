@@ -1,8 +1,9 @@
 ---
 name: wtforms-alchemy
-description: wtforms-alchemy is a specialized extension for WTForms that provides a seamless bridge to SQLAlchemy.
+description: wtforms-alchemy automatically generates WTForms form fields and validators directly from SQLAlchemy models. Use when user asks to 'generate web forms from SQLAlchemy models', 'automatically create form fields and validators based on model definitions', 'handle unique constraints and relationships in forms', or 'customize form field generation'.
 homepage: https://github.com/kvesteri/wtforms-alchemy
 ---
+
 
 # wtforms-alchemy
 

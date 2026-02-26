@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clariomshumantranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation data for mapping Clariom S Human transcript cluster identifiers to genomic, functional, and bibliographic information. Use when user asks to map transcript cluster IDs to gene symbols, retrieve Gene Ontology terms, find KEGG pathways, or identify chromosomal locations for Clariom S Human data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomshumantranscriptcluster.db.html
 ---
+
 
 # bioconductor-clariomshumantranscriptcluster.db
 

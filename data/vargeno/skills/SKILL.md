@@ -1,8 +1,9 @@
 ---
 name: vargeno
-description: vargeno is a high-performance bioinformatics tool designed for the targeted genotyping of known Single Nucleotide Polymorphisms (SNPs) from raw sequencing reads.
+description: vargeno performs targeted genotyping of known Single Nucleotide Polymorphisms (SNPs) from raw sequencing reads. Use when user asks to genotype known SNPs or index a reference and SNP list for genotyping.
 homepage: https://github.com/medvedevgroup/vargeno
 ---
+
 
 # vargeno
 

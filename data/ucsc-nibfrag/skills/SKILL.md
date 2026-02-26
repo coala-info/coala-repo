@@ -1,8 +1,9 @@
 ---
 name: ucsc-nibfrag
-description: The `nibFrag` utility is a specialized tool from the UCSC Genome Browser "kent" source suite designed to handle .nib files.
+description: This tool extracts specific genomic sequence fragments from .nib files and converts them to FASTA format. Use when user asks to extract genomic sequence fragments, obtain reverse complements, or convert .nib files to FASTA.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-nibfrag
 

@@ -3,7 +3,7 @@
 ## gmgc-mapper
 
 ### Tool Description
-The provided text does not contain help documentation or usage instructions. It contains system error logs related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+GMGC-mapper
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gmgc-mapper:0.2.0--pyh864c0ab_1
@@ -18,11 +18,23 @@ The provided text does not contain help documentation or usage instructions. It 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gmgc-mapper:0.2.0--pyh864c0ab_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2330156539: no space left on device
+usage: gmgc-mapper [-h] [-i GENOME_FASTA] -o OUTPUT [--nt-genes NT_INPUT]
+                   [--aa-genes AA_INPUT]
+
+GMGC-mapper
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i GENOME_FASTA, --input GENOME_FASTA
+                        Path to the input genome FASTA file. (default: None)
+  -o OUTPUT, --output OUTPUT
+                        Output directory (will be created if non-existent)
+                        (default: None)
+  --nt-genes NT_INPUT, --nt_genes NT_INPUT
+                        Path to the input DNA gene file (FASTA format)
+                        (default: None)
+  --aa-genes AA_INPUT, --aa_genes AA_INPUT
+                        Path to the input amino acid gene file (FASTA format)
+                        (default: None)
 ```
 
-
-## Metadata
-- **Skill**: generated

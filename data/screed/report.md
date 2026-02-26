@@ -1,9 +1,9 @@
 # screed CWL Generation Report
 
-## screed
+## screed_db
 
 ### Tool Description
-A tool for reading and manipulating biological sequence files (FASTA/FASTQ). Note: The provided text is a container runtime error log (Apptainer/Singularity) indicating a 'no space left on device' failure during image extraction, and does not contain CLI help text or argument definitions.
+A shell interface to the screed database writing function
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/screed:1.0.4--py_0
@@ -18,15 +18,99 @@ A tool for reading and manipulating biological sequence files (FASTA/FASTQ). Not
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 03:12:24  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/screed:1.0.4--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:4cd328ad086ff980e4111970800fd757cf3fc084486f2fb37771f574de77f408: unpack entry: usr/local/lib/libpython3.8.a: unpack to regular file: short write: write /tmp/build-temp-3105704154/rootfs/usr/local/lib/libpython3.8.a: no space left on device
+usage: screed [-h] filename
+
+A shell interface to the screed database writing function
+
+positional arguments:
+  filename
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+
+## screed_dump_fasta
+
+### Tool Description
+Convert a screed database to a FASTA file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/screed:1.0.4--py_0
+- **Homepage**: http://github.com/dib-lab/screed/
+- **Package**: https://anaconda.org/channels/bioconda/packages/screed/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: screed [-h] dbfile [outputfile]
+
+Convert a screed database to a FASTA file
+
+positional arguments:
+  dbfile
+  outputfile
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+
+## screed_dump_fastq
+
+### Tool Description
+Convert a screed database to a FASTA file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/screed:1.0.4--py_0
+- **Homepage**: http://github.com/dib-lab/screed/
+- **Package**: https://anaconda.org/channels/bioconda/packages/screed/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: screed [-h] dbfile [outputfile]
+
+Convert a screed database to a FASTA file
+
+positional arguments:
+  dbfile
+  outputfile
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+
+## screed_command
+
+### Tool Description
+Available commands: db, dump_fasta, dump_fastq
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/screed:1.0.4--py_0
+- **Homepage**: http://github.com/dib-lab/screed/
+- **Package**: https://anaconda.org/channels/bioconda/packages/screed/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Unrecognized command
+usage: screed <command> [<args>]
+
+Available:
+
+    db <filename>               Creates a screed database.
+    dump_fasta <db> <output>    Convert a screed database to a FASTA file
+    dump_fastq <db> <output>    Convert a screed database to a FASTQ file
+
+positional arguments:
+  command
+
+optional arguments:
+  -h, --help  show this help message and exit
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

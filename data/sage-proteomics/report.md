@@ -1,9 +1,9 @@
 # sage-proteomics CWL Generation Report
 
-## sage-proteomics
+## sage-proteomics_sage
 
 ### Tool Description
-Sage is a search engine for shotgun proteomics, capable of searching MS2 spectra against a protein database.
+Sage - Proteomics searching so fast it feels like magic!
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sage-proteomics:0.14.7--hc1c3326_2
@@ -12,19 +12,41 @@ Sage is a search engine for shotgun proteomics, capable of searching MS2 spectra
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sage-proteomics/overview
-- **Total Downloads**: 37.8K
+- **Total Downloads**: 37.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/lazear/sage
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sage-proteomics:0.14.7--hc1c3326_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: sage [OPTIONS] <parameters> [mzml_paths]...
+
+🔮 Sage 🧙 - Proteomics searching so fast it feels like magic!
+
+Written by Michael Lazear <michaellazear92@gmail.com>
+Version 0.14.6
+
+Arguments:
+  <parameters>     Path to configuration parameters (JSON file)
+  [mzml_paths]...  Paths to mzML files to process. Overrides mzML files listed in the configuration file.
+
+Options:
+  -f, --fasta <fasta>
+          Path to FASTA database. Overrides the FASTA file specified in the configuration file.
+  -o, --output_directory <output_directory>
+          Path where search and quant results will be written. Overrides the directory specified in the configuration file.
+      --batch-size <batch-size>
+          Number of files to load and search in parallel (default = # of CPUs/2)
+      --parquet
+          Write search output in parquet format instead of tsv
+      --annotate-matches
+          Write matched fragments output file.
+      --write-pin
+          Write percolator-compatible `.pin` output files
+      --disable-telemetry-i-dont-want-to-improve-sage
+          Disable sending telemetry data
+  -h, --help
+          Print help
+  -V, --version
+          Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

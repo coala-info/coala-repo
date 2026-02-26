@@ -1,8 +1,9 @@
 ---
 name: htsqualc
-description: HTSQualC is a specialized tool for cleaning raw sequencing data.
+description: HTSQualC filters and trims raw sequencing data to remove adapters and low-quality segments while generating visual quality reports. Use when user asks to clean raw sequencing reads, perform quality filtering, remove adapter sequences, or generate PHRED distribution and GC content reports.
 homepage: https://reneshbedre.github.io/blog/htseqqc.html
 ---
+
 
 # htsqualc
 

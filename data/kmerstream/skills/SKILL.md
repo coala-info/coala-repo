@@ -1,8 +1,9 @@
 ---
 name: kmerstream
-description: KmerStream is a specialized tool for calculating k-mer frequency distributions without the massive memory requirements of traditional k-mer counters.
+description: "KmerStream estimates k-mer frequency distributions and genomic parameters using a memory-efficient streaming approach. Use when user asks to estimate genome size, determine sequencing depth, assess library error rates, or calculate k-mer statistics from FASTQ or BAM files."
 homepage: https://github.com/pmelsted/KmerStream
 ---
+
 
 # kmerstream
 

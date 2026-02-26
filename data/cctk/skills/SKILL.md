@@ -1,8 +1,9 @@
 ---
 name: cctk
-description: The CRISPR Comparison ToolKit (CCTK) is a specialized suite of Python tools designed to analyze the differences and similarities between CRISPR arrays that share spacers.
+description: The CRISPR Comparison ToolKit (CCTK) analyzes the comparative evolution and relationships between CRISPR arrays by tracking shared spacers. Use when user asks to identify CRISPR arrays, generate spacer-based networks, visualize array alignments, build phylogenetic trees from spacer content, or perform PAM-aware spacer BLAST searches.
 homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit
 ---
+
 
 # cctk
 

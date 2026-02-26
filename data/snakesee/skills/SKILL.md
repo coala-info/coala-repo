@@ -1,8 +1,9 @@
 ---
 name: snakesee
-description: `snakesee` is a passive monitoring tool that provides a rich dashboard for Snakemake workflows.
+description: snakesee is a passive monitoring tool that provides a real-time dashboard and time estimation for Snakemake workflows. Use when user asks to monitor workflow progress, check job status, estimate completion time, or manage timing profiles.
 homepage: https://github.com/nh13/snakesee
 ---
+
 
 # snakesee
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgug4100a.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Agilent Human Genome G4100A microarray platform. Use when user asks to map manufacturer probe identifiers to biological identifiers, retrieve gene symbols, or access functional annotations like GO and KEGG for this specific platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4100a.db.html
 ---
+
 
 # bioconductor-hgug4100a.db
 

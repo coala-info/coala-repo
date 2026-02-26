@@ -1,8 +1,9 @@
 ---
 name: ibridges
-description: The `ibridges` tool is a high-level wrapper for the `python-irodsclient`, designed to simplify data management for scientific researchers.
+description: The ibridges tool provides a high-level interface for managing data transfers and metadata between local storage and iRODS servers. Use when user asks to upload or download files, synchronize local and remote directories, list iRODS collections, or manage data transfers using the iRODS protocol.
 homepage: https://github.com/iBridges-for-iRODS/iBridges
 ---
+
 
 # ibridges
 

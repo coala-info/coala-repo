@@ -1,8 +1,9 @@
 ---
 name: bioconductor-depmap
-description: the package is available on all platforms; click for details.
+description: The bioconductor-depmap package provides a framework for accessing and analyzing cancer dependency data from the Broad Institute in a tidy format. Use when user asks to access CRISPR, RNAi, or drug sensitivity datasets, retrieve cancer cell line metadata, or integrate genomic data for dependency analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/depmap.html
 ---
+
 
 # bioconductor-depmap
 

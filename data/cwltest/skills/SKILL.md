@@ -1,8 +1,9 @@
 ---
 name: cwltest
-description: `cwltest` is the standard framework for validating the output of tools and workflows described in the Common Workflow Language.
+description: cwltest is a framework for validating the output of tools and workflows described in the Common Workflow Language. Use when user asks to run CWL conformance tests, validate CWL-compliant software, generate status badges for CI/CD pipelines, or list available test cases.
 homepage: https://github.com/common-workflow-language/cwltest
 ---
+
 
 # cwltest
 

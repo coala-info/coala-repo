@@ -1,8 +1,9 @@
 ---
 name: pdivas
-description: PDIVAS (Pathogenicity predictor of Deep-Intronic Variants causing Aberrant Splicing) is a machine-learning tool based on a random forest algorithm.
+description: PDIVAS predicts the pathogenicity of deep-intronic variants that may cause aberrant splicing using a random forest machine-learning algorithm. Use when user asks to predict the impact of deep-intronic variants, identify pathogenic pseudoexons, or score variants for potential splicing defects.
 homepage: https://github.com/shiro-kur/PDIVAS
 ---
+
 
 # pdivas
 

@@ -1,8 +1,9 @@
 ---
 name: svdss
-description: SVDSS (Structural Variant Discovery from Sample-specific Strings) is a specialized tool designed to identify structural variants in high-accuracy long reads.
+description: SVDSS identifies structural variants in high-accuracy long reads by analyzing sample-specific strings and performing local assembly. Use when user asks to index a reference genome, smooth reads to remove noise, extract sample-specific strings, or call structural variants from long-read sequencing data.
 homepage: https://github.com/Parsoa/SVDSS
 ---
+
 
 # svdss
 

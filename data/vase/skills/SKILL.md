@@ -1,8 +1,9 @@
 ---
 name: vase
-description: VASE is a specialized tool designed for the analysis of rare-disease cohorts and family trios.
+description: VASE filters genetic variants in rare-disease cohorts and family trios to identify disease-causing candidates. Use when user asks to filter genetic variants by frequency, functional impact, or quality; identify de novo or recessive variants; or perform burden analysis.
 homepage: https://github.com/david-a-parry/vase
 ---
+
 
 # vase
 

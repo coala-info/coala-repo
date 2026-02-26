@@ -1,8 +1,9 @@
 ---
 name: treeswift
-description: TreeSwift is a lightweight, pure-Python library engineered for speed and memory efficiency when working with phylogenetic trees.
+description: TreeSwift is a pure-Python library for efficient manipulation, traversal, and analysis of phylogenetic trees, including ultra-large ones. Use when user asks to 'load or save phylogenetic trees', 'traverse trees', 'extract subtrees', 'suppress unifurcations', 'find specific nodes', 'calculate distances between nodes', or 'identify cherries'.
 homepage: https://github.com/niemasd/TreeSwift
 ---
+
 
 # treeswift
 

@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-fortran_mpich_4_2_3
-description: This skill provides guidance for utilizing the `esme_netcdf-fortran_mpich_4_2_3` package, which provides the necessary Fortran bindings to the NetCDF library.
+description: This tool provides Fortran bindings for the NetCDF library optimized for parallel data access with MPICH. Use when user asks to compile Fortran programs with NetCDF, link against parallel NetCDF libraries, or manage array-oriented scientific datasets using MPI.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-fortran_mpich_4_2_3
 

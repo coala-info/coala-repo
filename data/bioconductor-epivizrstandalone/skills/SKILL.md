@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epivizrstandalone
-description: the package is available on all platforms; click for details.
+description: This tool runs the Epiviz interactive genomic visualization application locally within an R session. Use when user asks to launch a standalone genome browser, visualize functional genomics data tracks, or create interactive plots from Bioconductor objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrStandalone.html
 ---
+
 
 # bioconductor-epivizrstandalone
 

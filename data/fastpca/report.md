@@ -3,7 +3,9 @@
 ## fastpca
 
 ### Tool Description
-The provided text contains error messages from a container runtime (Apptainer/Singularity) and does not include the help documentation or usage instructions for the fastpca tool.
+Calculate principle components from large data files.
+Input data should be given as textfiles
+with whitespace separated columns or, alternatively as GROMACS .xtc-files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastpca:0.9.1
@@ -18,11 +20,48 @@ The provided text contains error messages from a container runtime (Apptainer/Si
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastpca:0.9.1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1312863177: no space left on device
+unrecognised option '%canonical_option%'
+fastpca
+
+Calculate principle components from large data files.
+Input data should be given as textfiles
+with whitespace separated columns or, alternatively as GROMACS .xtc-files.
+
+options:
+  -h [ --help ]              show this help
+  -f [ --file ] arg          input (required): either whitespace-separated 
+                             ASCII or GROMACS xtc-file.
+  -C [ --cov-in ] arg        input (optional): file with already calculated 
+                             covariance matrix
+  -V [ --vec-in ] arg        input (optional): file with already computed 
+                             eigenvectors
+  -S [ --stats-in ] arg      input (optional): mean values, sigmas and boundary
+                             shifts (shifts only for periodic). Provide this, 
+                             if you want to project new data onto a previously 
+                             computed principal space. If you do not define the
+                             stats of the previous run, means, sigmas and 
+                             shifts will be re-computed and the resulting 
+                             projections will not be comparable to the previous
+                             ones.
+  -p [ --proj ] arg          output (optional): file for projected data
+  -c [ --cov ] arg           output (optional): file for covariance matrix
+  -v [ --vec ] arg           output (optional): file for eigenvectors
+  -s [ --stats ] arg         output (optional): mean values, sigmas and 
+                             boundary shifts (shifts only for periodic)
+  -l [ --val ] arg           output (optional): file for eigenvalues
+  -N [ --norm ]              if set, use correlation instead of covariance by 
+                             normalizing input (default: false)
+  -b [ --buf ] arg (=2)      max. allocatable RAM [Gb] (default: 2)
+  -P [ --periodic ]          compute covariance and PCA on a torus (i.e. for 
+                             periodic data like dihedral angles)
+  -D [ --dynamic-shift ]     use dynamic shifting for periodic projection 
+                             correction. (default: fale, i.e. simply shift to 
+                             region of lowest density)
+  --verbose                  verbose mode (default: not set)
+  -n [ --nthreads ] arg (=0) number of OpenMP threads to use. if set to zero, 
+                             will use value of OMP_NUM_THREADS (default: 0)
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

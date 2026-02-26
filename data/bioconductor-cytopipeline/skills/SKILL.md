@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytopipeline
-description: the package focuses on the preprocessing and quality control part. The framework is based on two main S4 classes, i.e. CytoPipeline and CytoProcessingStep. The pipeline steps are linked to corresponding R functions - that are either provided in the CytoPipeline package itself, or exported from a third party package, or coded by the user her/himself. The processing steps need to be specified centrally and explicitly using either a json input file or through step by step creation of a CytoPipeline object with dedicated methods. After having run the pipeline, obtained results at all steps can be retrieved and visualized thanks to file caching (the running facility uses a BiocFileCache implementation). The package provides also specific visualization tools like pipeline workflow summary display, and 1D/2D comparison plots of obtained flowFrames at various steps of the pipeline.
+description: Bioconductor-cytopipeline automates and visualizes flow cytometry data preprocessing and quality control workflows using a structured S4 class system. Use when user asks to define sequential processing queues, execute multi-step flow cytometry pipelines with disk-based caching, or compare different quality control methods and transformations.
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoPipeline.html
 ---
+
 
 # bioconductor-cytopipeline
 

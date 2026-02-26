@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lydata
-description: the package is available on all platforms; click for details.
+description: This package provides example longitudinal datasets for the ly Bioconductor package. Use when user asks to access sample longitudinal data, perform longitudinal data analysis, or run tutorials for the ly package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/lydata.html
 ---
+
 
 # bioconductor-lydata
 

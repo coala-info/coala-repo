@@ -1,8 +1,9 @@
 ---
 name: perl-bio-bpwrapper
-description: The `perl-bio-bpwrapper` package provides a set of powerful command-line utilities that expose BioPerl's functionality through a consistent, Unix-style interface.
+description: Perl-bio-bpwrapper provides command-line utilities that expose BioPerl functionality for rapid biological data processing and file manipulation. Use when user asks to convert sequence formats, extract genomic features, manipulate multiple sequence alignments, prune phylogenetic trees, or parse search results from BLAST and HMMER.
 homepage: http://metacpan.org/pod/Bio::BPWrapper
 ---
+
 
 # perl-bio-bpwrapper
 

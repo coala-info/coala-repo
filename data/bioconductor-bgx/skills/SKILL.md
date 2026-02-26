@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bgx
-description: the package is available on all platforms; click for details.
+description: This tool performs Bayesian hierarchical modeling for Affymetrix GeneChip data to estimate gene expression at the probe level. Use when user asks to estimate gene expression levels, perform Bayesian analysis on Affymetrix data, or quantify uncertainty in expression estimates using MCMC.
 homepage: https://bioconductor.org/packages/release/bioc/html/bgx.html
 ---
+
 
 # bioconductor-bgx
 

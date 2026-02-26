@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocfhir
-description: the package is available on all platforms; click for details.
+description: "BiocFHIR converts complex FHIR R4 JSON data into tabular data frames or network graphs for clinical informatics analysis. Use when user asks to ingest FHIR bundles, transform clinical resources into structured tables, or visualize patient-condition relationships as graphs."
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocFHIR.html
 ---
+
 
 # bioconductor-biocfhir
 

@@ -1,8 +1,9 @@
 ---
 name: flash2
-description: FLASH2 (Fast Length Adjustment of SHort reads) is a high-speed tool designed to merge overlapping paired-end reads into single, longer sequences.
+description: FLASH2 merges overlapping paired-end reads into single, longer consensus sequences. Use when user asks to merge paired-end reads, handle outie or engulfed overlaps, or combine forward and reverse FASTQ files.
 homepage: https://github.com/dstreett/FLASH2
 ---
+
 
 # flash2
 

@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: snpgenie_fasta2revcom.pl
 label: snpgenie_fasta2revcom.pl
-doc: "A script from the SNPGenie suite to convert FASTA sequences to their reverse
-  complement. (Note: The provided help text contained only system error messages;
-  no specific arguments could be parsed from the input.)\n\nTool homepage: https://github.com/chasewnelson/SNPGenie"
-inputs: []
+doc: "Converts a '+' strand FASTA file to its reverse complement.\n\nTool homepage:
+  https://github.com/chasewnelson/SNPGenie"
+inputs:
+  - id: fasta_file
+    type: File
+    doc: A '+' strand FASTA file
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

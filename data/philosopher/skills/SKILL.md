@@ -1,8 +1,9 @@
 ---
 name: philosopher
-description: Philosopher is a high-performance toolkit designed for the downstream analysis of shotgun proteomics data.
+description: Philosopher is a high-performance toolkit for the downstream analysis, validation, and reporting of shotgun proteomics data. Use when user asks to initialize workspaces, manage UniProt databases, validate peptide-spectrum matches, perform protein inference, apply FDR filtering, or generate quantification reports.
 homepage: https://github.com/Nesvilab/philosopher
 ---
+
 
 # philosopher
 

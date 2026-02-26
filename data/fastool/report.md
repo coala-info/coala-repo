@@ -3,10 +3,10 @@
 ## fastool
 
 ### Tool Description
-A tool for fasta/fastq manipulation (Note: The provided help text contains only container runtime error messages and no usage information).
+Convert FASTQ to FASTA and perform other operations.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fastool:0.1.4--h7132678_6
+- **Docker Image**: quay.io/biocontainers/fastool:0.1.4--h577a1d6_10
 - **Homepage**: https://github.com/tobe-fe-dalao/fastool
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,11 +18,9 @@ A tool for fasta/fastq manipulation (Note: The provided help text contains only 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastool:0.1.4--h7132678_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2998876605: no space left on device
+Usage: fastool (--rev) (--append [string_to_append_to_header]) (--to-fasta) (--illumina-trinity) sequences_1.fastq/a sequences_2.fastq/a ...
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

@@ -3,10 +3,10 @@
 ## bfc
 
 ### Tool Description
-The provided text does not contain help information for the tool 'bfc'. It contains system logs and error messages related to a failed container image build (Apptainer/Singularity) due to insufficient disk space.
+Corrects sequencing errors in FASTQ files using a Bloom filter and k-mer counting.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bfc:r181--he4a0461_10
+- **Docker Image**: quay.io/biocontainers/bfc:r181--h577a1d6_12
 - **Homepage**: https://github.com/Wilfred/bfc
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,17 +18,22 @@ The provided text does not contain help information for the tool 'bfc'. It conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bfc:r181--he4a0461_10 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+Usage: bfc [options] <to-count.fq> [to-correct.fq]
+Options:
+  -s FLOAT     approx genome size (k/m/g allowed; change -k and -b) [unset]
+  -k INT       k-mer length [33]
+  -t INT       number of threads [1]
+  -b INT       set Bloom filter size to pow(2,INT) bits [33]
+  -H INT       use INT hash functions for Bloom filter [4]
+  -d FILE      dump hash table to FILE [null]
+  -E           skip error correction
+  -R           refine bfc-corrected reads
+  -r FILE      restore hash table from FILE [null]
+  -w INT       no more than 5 ec or 2 highQ ec in INT-bp window [10]
+  -c INT       min k-mer coverage [3]
+  -Q           force FASTA output
+  -1           drop reads containing unique k-mers
+  -v           show version number
+  -h           show command line help
 ```
 
-
-## Metadata
-- **Skill**: generated

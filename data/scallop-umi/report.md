@@ -3,7 +3,7 @@
 ## scallop-umi
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information, usage instructions, or argument definitions for the scallop-umi tool.
+Scallop-UMI v1.1.0 (c) 2021 Qimin Zhang and Mingfu Shao, The Pennsylvania State University
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scallop-umi:1.1.0--hbce0939_0
@@ -18,52 +18,25 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/scallop-umi:1.1.0--hbce0939_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Scallop-UMI v1.1.0 (c) 2021 Qimin Zhang and Mingfu Shao, The Pennsylvania State University
 
+Usage: scallop-umi -i <bam-file> -o <gtf-file> [options]
 
-## Metadata
-- **Skill**: generated
-
-## scallop-umi_scallop2
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container runtime error log indicating a failure to fetch or build the OCI image for scallop-umi.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/scallop-umi:1.1.0--hbce0939_0
-- **Homepage**: https://github.com/Shao-Group/scallop-umi
-- **Package**: https://anaconda.org/channels/bioconda/packages/scallop-umi/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/scallop-umi:1.1.0--hbce0939_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## scallop-umi_samtools
-
-### Tool Description
-The provided text contains container runtime logs and a fatal error message rather than tool help text. No arguments or descriptions could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/scallop-umi:1.1.0--hbce0939_0
-- **Homepage**: https://github.com/Shao-Group/scallop-umi
-- **Package**: https://anaconda.org/channels/bioconda/packages/scallop-umi/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/scallop-umi:1.1.0--hbce0939_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options:
+ --help                                      print usage of Scallop and exit
+ --version                                   print current version of Scallop and exit
+ --preview                                   determine fragment-length-range and library-type and exit
+ --verbose <0, 1, 2>                         0: quiet; 1: one line for each graph; 2: with details, default: 1
+ --library_type <first, second, unstranded>  library type of the sample, default: unstranded
+ --min_transcript_coverage <float>           minimum coverage required for a multi-exon transcript, default: 0.5
+ --min_single_exon_coverage <float>          minimum coverage required for a single-exon transcript, default: 20
+ --min_transcript_length_increase <integer>  default: 50
+ --min_transcript_length_base <integer>      default: 150, minimum length of a transcript would be
+                                             --min_transcript_length_base + --min_transcript_length_increase * num-of-exons
+ --min_mapping_quality <integer>             ignore reads with mapping quality less than this value, default: 1
+ --max_num_cigar <integer>                   ignore reads with CIGAR size larger than this value, default: 1000
+ --min_bundle_gap <integer>                  minimum distances required to start a new bundle, default: 100
+ --min_num_hits_in_bundle <integer>          minimum number of reads required in a bundle, default: 10
+ --min_flank_length <integer>                minimum match length in each side for a spliced read, default: 3
 ```
 

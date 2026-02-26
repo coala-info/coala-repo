@@ -1,8 +1,9 @@
 ---
 name: knock-knock
-description: The knock-knock toolkit provides a specialized pipeline for characterizing the complex results of genome editing.
+description: The knock-knock toolkit characterizes complex genome editing outcomes by categorizing sequencing reads through local alignment analysis. Use when user asks to initialize a genome editing analysis project, build reference indices, define editing targets, or identify large-scale rearrangements and donor integrations in sequencing data.
 homepage: https://github.com/jeffhussmann/knock-knock
 ---
+
 
 # knock-knock
 

@@ -1,8 +1,9 @@
 ---
 name: astral-tree
-description: ASTRAL (Accurate Species TRee ALgorithm) is a leading phylogenomic tool for species tree reconstruction.
+description: astral-tree reconstructs species trees from a set of gene trees by maximizing quartet tree consistency under the multi-species coalescent model. Use when user asks to infer a species tree from gene trees, handle incomplete lineage sorting, or calculate local posterior probabilities for phylogenomic branches.
 homepage: https://github.com/smirarab/ASTRAL
 ---
+
 
 # astral-tree
 

@@ -1,8 +1,9 @@
 ---
 name: rustyread
-description: `rustyread` is a high-performance, multi-threaded long-read simulator designed as a drop-in replacement for `badread simulate`.
+description: "rustyread is a high-performance, multi-threaded tool that generates realistic synthetic long reads from a reference sequence. Use when user asks to simulate long-read sequencing data, generate FASTQ files with specific error models, or create synthetic reads with controlled length and identity distributions."
 homepage: https://github.com/natir/rustyread
 ---
+
 
 # rustyread
 

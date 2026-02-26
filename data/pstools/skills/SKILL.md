@@ -1,8 +1,9 @@
 ---
 name: pstools
-description: pstools is a specialized bioinformatics suite designed for diploid genome assembly.
+description: pstools is a bioinformatics suite that reconstructs diploid genome haplotypes by integrating HiFi assembly graphs with Hi-C proximity data. Use when user asks to map Hi-C reads to node sequences, resolve haplotypes from assembly graphs, or perform diploid genome assembly.
 homepage: https://github.com/shilpagarg/pstools
 ---
+
 
 # pstools
 

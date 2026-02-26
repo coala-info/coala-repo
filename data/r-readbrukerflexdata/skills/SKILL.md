@@ -1,8 +1,9 @@
 ---
 name: r-readbrukerflexdata
-description: "Reads data files acquired by Bruker Daltonics' matrix-assisted     laser desorption/ionization-time-of-flight mass spectrometer of the *flex     series.</p>"
+description: This tool reads raw mass spectrometry data from Bruker Daltonics *flex series MALDI-TOF instruments into R. Use when user asks to import .fid files, read entire directories of mass spectra, or extract metadata and m/z ratios for analysis.
 homepage: https://cloud.r-project.org/web/packages/readBrukerFlexData/index.html
 ---
+
 
 # r-readbrukerflexdata
 

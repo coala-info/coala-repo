@@ -1,8 +1,9 @@
 ---
 name: rnanorm
-description: The `rnanorm` tool provides a robust, Python-native implementation of common RNA-seq normalization techniques.
+description: rnanorm provides Python-native implementations of RNA-seq normalization methods to convert raw sequencing counts into units like CPM, TPM, and TMM. Use when user asks to normalize RNA-seq data, calculate transcripts per million, or perform TMM and CPM scaling.
 homepage: https://github.com/genialis/RNAnorm
 ---
+
 
 # rnanorm
 

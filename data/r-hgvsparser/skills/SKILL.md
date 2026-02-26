@@ -1,8 +1,9 @@
 ---
 name: r-hgvsparser
-description: R package hgvsparser (documentation from project home).
+description: This tool parses, validates, and builds variant descriptor strings compliant with the Human Genome Variation Society standard in R. Use when user asks to parse HGVS strings into structured data, build HGVS-formatted strings from variant components, or validate genomic, transcript, and protein variant nomenclature.
 homepage: https://cran.r-project.org/web/packages/hgvsparser/index.html
 ---
+
 
 # r-hgvsparser
 

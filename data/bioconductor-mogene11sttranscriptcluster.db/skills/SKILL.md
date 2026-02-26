@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mogene11sttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation maps for the Affymetrix Mouse Gene 1.1 ST transcript cluster identifiers. Use when user asks to map mouse transcript cluster IDs to gene symbols, retrieve Entrez Gene identifiers, or perform functional annotation for the Mouse Gene 1.1 ST array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene11sttranscriptcluster.db.html
 ---
+
 
 # bioconductor-mogene11sttranscriptcluster.db
 

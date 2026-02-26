@@ -3,7 +3,7 @@
 ## generax
 
 ### Tool Description
-GeneRax is a tool for species tree-aware maximum likelihood gene tree inference and reconciliation.
+GeneRax 2.1.3
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/generax:2.1.3--hf316886_3
@@ -18,11 +18,28 @@ GeneRax is a tool for species tree-aware maximum likelihood gene tree inference 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/generax:2.1.3--hf316886_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3885667918: no space left on device
+[00:00:00] GeneRax 2.1.3
+-h, --help
+-f, --families <FAMILIES_INFORMATION>
+-s, --species-tree <SPECIES TREE>
+--geneSearchStrategy <STRATEGY>  {EVAL, SPR}
+-r --rec-model <reconciliationModel>  {UndatedDL, UndatedDTL, Auto}
+-p, --prefix <OUTPUT PREFIX>
+--unrooted-gene-tree
+--support-threshold <threshold>
+--per-family-rates
+--per-species-rates
+--dup-rate <duplication rate>
+--loss-rate <loss rate>
+--transfer-rate <transfer rate>
+--max-spr-radius <max SPR radius>
+--rec-weight <reconciliation likelihood weight>
+--do-not-reconcile
+--reconciliation-samples <number of samples>
+--seed <seed>
+Please find more information on the GeneRax github wiki
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

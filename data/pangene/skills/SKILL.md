@@ -1,8 +1,9 @@
 ---
 name: pangene
-description: Pangene is a command-line utility designed to build pangenome gene graphs where nodes represent marker genes and edges represent genomic adjacency.
+description: "Pangene builds pangenome gene graphs from protein-to-genome alignments to represent gene order and structural variations across multiple genomes. Use when user asks to construct a gene-level pangenome graph, identify orthologous groups, call gene-level bubbles, or generate a gene presence/absence matrix."
 homepage: https://github.com/lh3/pangene
 ---
+
 
 # pangene
 

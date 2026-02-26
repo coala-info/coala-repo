@@ -1,8 +1,9 @@
 ---
 name: pybedlite
-description: pybedlite provides a streamlined, object-oriented approach to handling genomic intervals.
+description: "pybedlite provides a lightweight, object-oriented interface for reading, writing, and manipulating genomic intervals in BED format. Use when user asks to parse BED files, iterate over genomic regions, filter records by score or chromosome, or modify interval coordinates programmatically."
 homepage: https://pypi.org/project/pybedlite/
 ---
+
 
 # pybedlite
 

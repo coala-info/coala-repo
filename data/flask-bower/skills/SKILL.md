@@ -1,8 +1,9 @@
 ---
 name: flask-bower
-description: The `flask-bower` extension simplifies the integration of Bower-managed packages into a Flask project.
+description: The flask-bower extension integrates Bower-managed frontend packages into Flask applications by providing a dedicated blueprint for serving assets. Use when user asks to manage frontend dependencies with Bower, configure asset minification, or implement cache-busting for static libraries in a Flask project.
 homepage: http://github.com/lobeck/flask-bower
 ---
+
 
 # flask-bower
 

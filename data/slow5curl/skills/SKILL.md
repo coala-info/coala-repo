@@ -1,8 +1,9 @@
 ---
 name: slow5curl
-description: slow5curl is a specialized tool designed for efficient, random access to remote BLOW5 files.
+description: "slow5curl enables efficient random access and streaming of specific nanopore signal records from remote BLOW5 files. Use when user asks to fetch specific reads from cloud storage, stream nanopore data from a URL, or inspect headers of remote BLOW5 files."
 homepage: https://github.com/BonsonW/slow5curl
 ---
+
 
 # slow5curl
 

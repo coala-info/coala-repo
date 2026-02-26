@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.zebgene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix ZebGene 1.0 ST microarray. Use when user asks to process ZebGene 1.0 ST microarray data, access platform design files, or analyze zebrafish gene expression.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.zebgene.1.0.st.html
 ---
+
 
 # bioconductor-pd.zebgene.1.0.st
 

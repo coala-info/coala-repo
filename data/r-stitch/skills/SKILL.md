@@ -1,8 +1,9 @@
 ---
 name: r-stitch
-description: R package stitch (documentation from project home).
+description: This tool performs reference panel-free, read-aware genotype imputation from low-coverage sequencing data by modeling samples as a mosaic of ancestral haplotypes. Use when user asks to perform genotype imputation without a reference panel, impute genotypes from low-coverage BAM files, or initialize ancestral haplotypes from existing reference data for low-depth sequencing projects.
 homepage: https://cran.r-project.org/web/packages/stitch/index.html
 ---
+
 
 # r-stitch
 

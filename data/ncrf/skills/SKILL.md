@@ -1,8 +1,9 @@
 ---
 name: ncrf
-description: The Noise-Cancelling Repeat Finder (NCRF) is a specialized tool designed to uncover tandem repeats in error-prone genomic data.
+description: NCRF identifies tandem repeats in error-prone long-read genomic data by aligning sequences to specific motifs using a noise-tolerant algorithm. Use when user asks to find tandem repeats in PacBio or Nanopore reads, search for specific motifs in genomic data, or filter and convert repeat alignments to BED format.
 homepage: https://github.com/makovalab-psu/NoiseCancellingRepeatFinder
 ---
+
 
 # ncrf
 

@@ -3,7 +3,7 @@
 ## roary
 
 ### Tool Description
-The provided text contains error logs from a container runtime (Singularity/Apptainer) and does not contain the help text for the tool 'roary'. As a result, no arguments could be extracted.
+Roary: Rapid large-scale prokaryote pan genome analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/roary:3.13.0--pl526h516909a_0
@@ -12,19 +12,49 @@ The provided text contains error logs from a container runtime (Singularity/Appt
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/roary/overview
-- **Total Downloads**: 62.9K
+- **Total Downloads**: 63.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sanger-pathogens/Roary
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/roary:3.13.0--pl526h516909a_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Please cite Roary if you use any of the results it produces:
+    Andrew J. Page, Carla A. Cummins, Martin Hunt, Vanessa K. Wong, Sandra Reuter, Matthew T. G. Holden, Maria Fookes, Daniel Falush, Jacqueline A. Keane, Julian Parkhill,
+	"Roary: Rapid large-scale prokaryote pan genome analysis", Bioinformatics, 2015 Nov 15;31(22):3691-3693
+    doi: http://doi.org/10.1093/bioinformatics/btv421
+	Pubmed: 26198102
+
+Usage:   roary [options] *.gff
+
+Options: -p INT    number of threads [1]
+         -o STR    clusters output filename [clustered_proteins]
+         -f STR    output directory [.]
+         -e        create a multiFASTA alignment of core genes using PRANK
+         -n        fast core gene alignment with MAFFT, use with -e
+         -i        minimum percentage identity for blastp [95]
+         -cd FLOAT percentage of isolates a gene must be in to be core [99]
+         -qc       generate QC report with Kraken
+         -k STR    path to Kraken database for QC, use with -qc
+         -a        check dependancies and print versions
+         -b STR    blastp executable [blastp]
+         -c STR    mcl executable [mcl]
+         -d STR    mcxdeblast executable [mcxdeblast]
+         -g INT    maximum number of clusters [50000]
+         -m STR    makeblastdb executable [makeblastdb]
+         -r        create R plots, requires R and ggplot2
+         -s        dont split paralogs
+         -t INT    translation table [11]
+         -ap       allow paralogs in core alignment
+         -z        dont delete intermediate files
+         -v        verbose output to STDOUT
+         -w        print version and exit
+         -y        add gene inference information to spreadsheet, doesnt work with -e
+         -iv STR   Change the MCL inflation value [1.5]
+         -h        this help message
+
+Example: Quickly generate a core gene alignment using 8 threads
+         roary -e --mafft -p 8 *.gff
+
+For further info see: http://sanger-pathogens.github.io/Roary/
 ```
 
-
-## Metadata
-- **Skill**: generated

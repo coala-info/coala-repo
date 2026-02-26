@@ -1,8 +1,9 @@
 ---
 name: r-dwls
-description: R package dwls (documentation from project home).
+description: The r-dwls package deconvolves bulk RNA-expression data to estimate cell type proportions using a dampened weighted least squares approach. Use when user asks to estimate cell type abundance, build a signature matrix from single-cell RNA-seq data, or perform transcriptomic deconvolution.
 homepage: https://cran.r-project.org/web/packages/dwls/index.html
 ---
+
 
 # r-dwls
 

@@ -1,8 +1,9 @@
 ---
 name: biobb_gromacs
-description: `biobb_gromacs` is a Python-based wrapper collection that transforms standard GROMACS utilities into modular "building blocks." This approach allows for the creation of complex, reproducible molecular dynamics pipelines that can easily transition between local workstations, HPC clusters, and containerized environments.
+description: "biobb_gromacs provides Python-based wrappers for GROMACS utilities to create modular and reproducible molecular dynamics pipelines. Use when user asks to perform system setup, configure simulations with grompp, run molecular dynamics with mdrun, or manage restraints and selections."
 homepage: https://github.com/bioexcel/biobb_gromacs
 ---
+
 
 # biobb_gromacs
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-comet
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: coMET visualizes regional epigenome-wide association scan results and genomic data within the R environment. Use when user asks to visualize DNA methylation patterns, create regional EWAS plots, or display correlation structures between genomic features.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/coMET.html
 ---
+
 
 # bioconductor-comet
 

@@ -3,7 +3,7 @@
 ## unitig-counter
 
 ### Tool Description
-A tool for counting unitigs (Note: The provided help text contains only container execution errors and no usage information).
+Count unitigs in sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/unitig-counter:1.1.0--h5ca1c30_2
@@ -18,33 +18,17 @@ A tool for counting unitigs (Note: The provided help text contains only containe
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unitig-counter:1.1.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+ERROR: Unknown parameter '--help'
+ERROR: Option '-strains' is mandatory
 
-
-## Metadata
-- **Skill**: generated
-
-## unitig-counter_cdbg-ops
-
-### Tool Description
-A tool for counting unitigs (likely in the context of compressed de Bruijn graphs), though the provided text contains only container build logs and no specific help documentation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/unitig-counter:1.1.0--h5ca1c30_2
-- **Homepage**: https://github.com/johnlees/unitig-counter
-- **Package**: https://anaconda.org/channels/bioconda/packages/unitig-counter/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unitig-counter:1.1.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+[unitig-counter options]
+       -gzip     (0 arg) :    Compress unitig output using gzip.
+       -strains  (1 arg) :    A text file describing the strains containing 2 columns: 1) ID of the strain; 2) Path to a multi-fasta file containing the sequences of the strain. This file needs a header.
+       -k        (1 arg) :    K-mer size.  [default '31']
+       -output   (1 arg) :    Path to the folder where the final and temporary files will be stored.  [default 'output']
+       -nb-cores (1 arg) :    number of cores  [default '0']
+       -verbose  (1 arg) :    verbosity level  [default '1']
+       -version  (0 arg) :    version
+       -help     (0 arg) :    help
 ```
 

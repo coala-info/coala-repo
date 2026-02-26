@@ -1,8 +1,9 @@
 ---
 name: bioconductor-uniprot.ws
-description: The package makes use of UniProt's modernized REST API and allows mapping of identifiers accross different databases.
+description: This Bioconductor package provides an interface to the UniProt REST API for retrieving protein data and mapping identifiers across various biological databases. Use when user asks to retrieve protein information from UniProt, map identifiers between different databases, or query UniProt data using R.
 homepage: https://bioconductor.org/packages/release/bioc/html/UniProt.ws.html
 ---
+
 
 # bioconductor-uniprot.ws
 

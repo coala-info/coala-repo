@@ -1,8 +1,9 @@
 ---
 name: bioconductor-singlecellexperiment
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides a standardized S4 class container for storing and managing single-cell sequencing data. Use when user asks to create a single-cell data object, store assay results, or organize metadata and dimensionality reduction coordinates.
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
 ---
+
 
 # bioconductor-singlecellexperiment
 

@@ -1,8 +1,9 @@
 ---
 name: cesm
-description: The Community Earth System Model (CESM) is a sophisticated, coupled climate model used to simulate Earth's climate system.
+description: The Community Earth System Model (CESM) simulates Earth's climate system through a coupled modular architecture. Use when user asks to set up a CESM sandbox, manage model components, or initialize the CIME infrastructure.
 homepage: https://github.com/ESCOMP/cesm
 ---
+
 
 # cesm
 

@@ -1,8 +1,9 @@
 ---
 name: perl-sub-quote
-description: The `perl-sub-quote` (Sub::Quote) tool provides a mechanism for generating Perl subroutines from strings.
+description: "The perl-sub-quote tool generates efficient Perl subroutines from strings that can be inlined and optimized by the compiler. Use when user asks to generate coderefs from strings, inline code for meta-programming, or create deferred subroutines for runtime optimization."
 homepage: http://metacpan.org/pod/Sub::Quote
 ---
+
 
 # perl-sub-quote
 

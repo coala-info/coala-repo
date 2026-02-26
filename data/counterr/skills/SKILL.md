@@ -1,8 +1,9 @@
 ---
 name: counterr
-description: The `counterr` tool is a lightweight command-line utility designed for bioinformatics workflows that require detailed error profiling of sequencing data.
+description: The counterr tool calculates context-independent and context-dependent error rates by mapping sequencing reads against a reference genome to profile systematic biases. Use when user asks to profile sequencing errors, calculate error rates from BAM or CRAM files, or generate error distribution reports for specific sequencing technologies.
 homepage: https://github.com/dayzerodx/counterr
 ---
+
 
 # counterr
 

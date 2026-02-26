@@ -1,8 +1,9 @@
 ---
 name: plant_tribes_kaks_analysis
-description: The `KaKsAnalysis` pipeline is a specialized component of the PlantTribes suite designed for comparative plant genomics.
+description: This tool calculates pairwise substitution rates and Ka/Ks ratios between gene sequences to analyze selective constraints and identify whole-genome duplication signatures. Use when user asks to estimate substitution rates for paralogs or orthologs, generate codon-aware alignments, or perform mixture model analysis of Ks distributions.
 homepage: https://github.com/dePamphilis/PlantTribes
 ---
+
 
 # plant_tribes_kaks_analysis
 

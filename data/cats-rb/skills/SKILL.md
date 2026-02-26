@@ -1,8 +1,9 @@
 ---
 name: cats-rb
-description: CATS-rb (Comprehensive Assessment of Transcript Sequences - reference-based) is a specialized tool for benchmarking transcriptome assemblies.
+description: CATS-rb benchmarks transcriptome assemblies by mapping transcripts to a reference genome to assess biological completeness. Use when user asks to index a reference genome, map transcriptome assemblies, compare relative completeness between multiple assemblies, or evaluate assembly quality against a reference annotation.
 homepage: https://github.com/bodulic/CATS-rb
 ---
+
 
 # cats-rb
 

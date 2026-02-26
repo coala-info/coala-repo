@@ -1,8 +1,9 @@
 ---
 name: fsa
-description: FSA is a distance-based alignment algorithm that uses sequence annealing and machine learning to estimate parameters on the fly.
+description: FSA is a distance-based alignment tool that uses sequence annealing and machine learning to perform multiple sequence alignments with high accuracy. Use when user asks to align sequences in FASTA or Stockholm format, perform large-scale or genomic alignments, or visualize alignment reliability using posterior probabilities.
 homepage: http://fsa.sourceforge.net/
 ---
+
 
 # fsa
 

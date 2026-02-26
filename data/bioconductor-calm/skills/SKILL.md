@@ -1,8 +1,9 @@
 ---
 name: bioconductor-calm
-description: the package is available on all platforms; click for details.
+description: The calm package estimates the conditional local False Discovery Rate by incorporating auxiliary covariate information into multiple testing procedures. Use when user asks to improve statistical power in genomic experiments, estimate conditional local FDR, or calculate global FDR using contextual information.
 homepage: https://bioconductor.org/packages/release/bioc/html/calm.html
 ---
+
 
 # bioconductor-calm
 

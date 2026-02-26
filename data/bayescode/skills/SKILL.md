@@ -1,8 +1,9 @@
 ---
 name: bayescode
-description: BayesCode is a specialized toolset for researchers working with phylogenetic codon models.
+description: BayesCode implements mutation-selection phylogenetic codon models to disentangle mutation bias from selective pressure. Use when user asks to estimate site-specific evolutionary rates, infer changes in effective population size along branches, detect variations in the omega ratio, or test for diversifying selection in quantitative traits.
 homepage: https://github.com/ThibaultLatrille/bayescode
 ---
+
 
 # bayescode
 

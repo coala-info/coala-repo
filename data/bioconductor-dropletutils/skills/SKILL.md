@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dropletutils
-description: the package is available on all platforms; click for details.
+description: This tool provides utilities for processing and analyzing droplet-based single-cell RNA-seq data. Use when user asks to load 10X Genomics data, distinguish cells from empty droplets, demultiplex hashed libraries, or remove barcode swapping effects.
 homepage: https://bioconductor.org/packages/release/bioc/html/DropletUtils.html
 ---
+
 
 # bioconductor-dropletutils
 

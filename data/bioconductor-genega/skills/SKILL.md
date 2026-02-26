@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genega
-description: the package is available on all platforms; click for details.
+description: This tool optimizes gene expression by balancing codon bias and mRNA secondary structure using genetic algorithms. Use when user asks to perform codon optimization for heterologous expression, calculate Codon Adaptation Index, or minimize mRNA folding energy for specific gene sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneGA.html
 ---
+
 
 # bioconductor-genega
 

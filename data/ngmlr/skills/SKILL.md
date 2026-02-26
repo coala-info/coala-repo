@@ -1,8 +1,9 @@
 ---
 name: ngmlr
-description: ngmlr (NextGenMap-LR) is a specialized long-read mapper designed to handle the high error rates and unique characteristics of third-generation sequencing technologies.
+description: ngmlr is a long-read mapper designed to align high-error sequencing data to a reference genome while accurately identifying structural variations. Use when user asks to align PacBio or Oxford Nanopore reads, map long reads for structural variant calling, or perform SV-aware genomic alignment.
 homepage: https://github.com/philres/ngmlr
 ---
+
 
 # ngmlr
 

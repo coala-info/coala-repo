@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneoverlap
-description: the package is available on all platforms; click for details.
+description: The GeneOverlap package tests the statistical significance of the overlap between gene lists using Fisher's exact test. Use when user asks to test for gene set enrichment, calculate the significance of shared genes between two lists, or generate a heatmap of overlaps between multiple gene sets.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneOverlap.html
 ---
+
 
 # bioconductor-geneoverlap
 

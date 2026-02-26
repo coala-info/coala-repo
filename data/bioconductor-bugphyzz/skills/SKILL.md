@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bugphyzz
-description: the package is available on all platforms; click for details.
+description: This tool imports harmonized microbial trait data and creates signatures for Bug Set Enrichment Analysis. Use when user asks to import microbial annotations, create microbial signatures based on physiological traits, or perform Bug Set Enrichment Analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bugphyzz.html
 ---
+
 
 # bioconductor-bugphyzz
 

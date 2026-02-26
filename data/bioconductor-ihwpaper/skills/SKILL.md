@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ihwpaper
-description: the package is available on all platforms; click for details.
+description: This package provides data, scripts, and workflows to reproduce the simulations and benchmarks from the Independent Hypothesis Weighting (IHW) publication. Use when user asks to reproduce IHW paper figures, benchmark multiple testing methods, perform IHW-Bonferroni FWER control, or conduct hQTL analysis with Benjamini-Yekutieli adjustments.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/IHWpaper.html
 ---
+
 
 # bioconductor-ihwpaper
 

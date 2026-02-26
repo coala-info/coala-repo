@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.xenopus.laevis
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Xenopus laevis genome array. Use when user asks to analyze Affymetrix Xenopus laevis microarray data, access platform design information, or process Xenopus laevis expression arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.xenopus.laevis.html
 ---
+
 
 # bioconductor-pd.xenopus.laevis
 

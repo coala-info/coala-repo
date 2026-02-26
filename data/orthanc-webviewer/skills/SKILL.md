@@ -1,8 +1,9 @@
 ---
 name: orthanc-webviewer
-description: The Orthanc Web Viewer is a specialized plugin for the Orthanc DICOM server that enables high-performance medical image visualization directly within a web browser.
+description: The Orthanc Web Viewer provides high-performance medical image visualization and 2D manipulation tools directly within a web browser. Use when user asks to deploy the viewer via Docker, configure DICOM image viewing settings, or perform clinical tasks like windowing, measurements, and multiframe analysis.
 homepage: https://github.com/orthanc-team/osimis-webviewer-deprecated
 ---
+
 
 # orthanc-webviewer
 

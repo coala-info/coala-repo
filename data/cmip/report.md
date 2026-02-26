@@ -3,7 +3,7 @@
 ## cmip
 
 ### Tool Description
-Classical Molecular Interaction Potentials
+Classical Molecular Interaction Potentials (CMIP). Code for ASA (Accessible Surface Area) calculation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmip:2.7.0--h8c3ec31_0
@@ -18,46 +18,18 @@ Classical Molecular Interaction Potentials
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmip:2.7.0--h8c3ec31_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3115236601: no space left on device
-```
+=================================================
+ =                                               =
+ =                C M I P  (2.7.0)               =
+ =          J. Ll. Gelpi, A. Morreale,           =
+ =            F. J. Luque, M.Orozco              =
+ =      Dept. Biochemistry. Univ. Barcelona      =
+ =                  1999-2021                    =
+ =================================================
 
+  Code for ASA calculation by Juan F. Recio       
 
-## Metadata
-- **Skill**: generated
-
-## cmip_watden
-
-### Tool Description
-A tool for water density calculation (Note: The provided help text contains system error messages regarding container execution and does not list command-line arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cmip:2.7.0--h8c3ec31_0
-- **Homepage**: http://mmb.irbbarcelona.org/gitlab/gelpi/CMIP
-- **Package**: https://anaconda.org/channels/bioconda/packages/cmip/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmip:2.7.0--h8c3ec31_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1833423131: no space left on device
-```
-
-## cmip_watden90
-
-### Tool Description
-A tool from the CMIP (Classical Molecular Interaction Potentials) suite. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cmip:2.7.0--h8c3ec31_0
-- **Homepage**: http://mmb.irbbarcelona.org/gitlab/gelpi/CMIP
-- **Package**: https://anaconda.org/channels/bioconda/packages/cmip/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmip:2.7.0--h8c3ec31_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2189952080: no space left on device
+#T Run started at   16: 5:28 h on 24- 2-2026
+ ERROR: File not found: param
 ```
 

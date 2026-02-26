@@ -1,8 +1,9 @@
 ---
 name: bioconductor-browserviz
-description: the package is available on all platforms; click for details.
+description: BrowserViz provides a base class for message passing between R and a web browser to control interactive Javascript-based visualizations. Use when user asks to initialize a websocket connection to a browser, send JSON messages to a web application, or manage browser-based data visualizations from R.
 homepage: https://bioconductor.org/packages/release/bioc/html/BrowserViz.html
 ---
+
 
 # bioconductor-browserviz
 

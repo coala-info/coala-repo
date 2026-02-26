@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95aprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and physical array coordinates for the Affymetrix Human Genome U95A microarray. Use when user asks to retrieve 25-mer oligonucleotide sequences, map probe identifiers to chip coordinates, or identify interrogation positions for the HGU95A platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95aprobe.html
 ---
+
 
 # bioconductor-hgu95aprobe
 

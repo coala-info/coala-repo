@@ -1,8 +1,9 @@
 ---
 name: arcs
-description: ARCS (Assembly Roundup by Linked-Read Scaffolding) and its alignment-free variant, ARKS, are tools designed to organize genomic contigs into larger scaffolds.
+description: "ARCS organizes genomic contigs into larger scaffolds using long-range information from linked-read barcodes or long reads. Use when user asks to scaffold genomic assemblies, organize contigs into scaffolds using linked reads, or perform alignment-free k-mer mapping for genome scaffolding."
 homepage: https://github.com/bcgsc/arcs
 ---
+
 
 # arcs
 

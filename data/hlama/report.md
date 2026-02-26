@@ -3,7 +3,7 @@
 ## hlama
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information or command-line arguments for the tool 'hlama'.
+HLA-typing based HTS sample matching
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hlama:3.0.1--py35_0
@@ -18,11 +18,29 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hlama:3.0.1--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1033992983: no space left on device
+usage: hlama [-h] (--tumor-normal TUMOR_NORMAL | --pedigree PEDIGREE)
+             [--config CONFIG] [--work-dir WORK_DIR]
+             [--reads-base-dir READS_BASE_DIRS] [--dont-run-snakemake]
+             [--disable-checks] [--num-threads NUM_THREADS]
+
+HLA-typing based HTS sample matching
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --tumor-normal TUMOR_NORMAL
+                        Path to tumor/normal TSV file, starts tumor/normal
+                        mode
+  --pedigree PEDIGREE   Path to pedigree file, starts pedigree mode
+  --config CONFIG       Optional explicit path to configuration file, by
+                        default ~/.hlama.cfg is searched for
+  --work-dir WORK_DIR   Directory to create the Snakefile in
+  --reads-base-dir READS_BASE_DIRS
+                        Base directory for reads, give multiple times for
+                        multiple places to search
+  --dont-run-snakemake  Only create Snakefile but do not run Snakemake yet
+  --disable-checks      Disable input checks
+  --num-threads NUM_THREADS
+                        Number of threads to use for read mapping, defaults to
+                        1
 ```
 
-
-## Metadata
-- **Skill**: generated

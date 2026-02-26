@@ -1,8 +1,9 @@
 ---
 name: tracer
-description: Tracer is the standard diagnostic tool for assessing the quality of Bayesian phylogenetic inferences.
+description: Tracer analyzes MCMC sample logs to assess the quality of Bayesian phylogenetic inferences. Use when user asks to determine if a chain has reached stationarity, decide if a run needs to be extended, compare multiple independent runs for convergence, or visualize MCMC parameters.
 homepage: http://beast.community/tracer
 ---
+
 
 # tracer
 

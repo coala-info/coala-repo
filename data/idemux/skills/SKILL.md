@@ -1,8 +1,9 @@
 ---
 name: idemux
-description: The `idemux` tool is a specialized utility for sorting paired-end sequencing reads into individual sample files based on index sequences.
+description: "idemux sorts paired-end sequencing reads into individual sample files based on index sequences and provides automated error correction for Lexogen indices. Use when user asks to demultiplex FASTQ files, sort reads by barcode, or process Lexogen unique dual indices."
 homepage: https://github.com/lexogen-tools/idemux
 ---
+
 
 # idemux
 

@@ -1,8 +1,9 @@
 ---
 name: igua
-description: IGUA (Iterative Gene clUster Analysis) is a high-throughput, content-agnostic method for grouping gene clusters into families.
+description: IGUA groups gene clusters into families using iterative unsupervised clustering of protein sequences. Use when user asks to assign gene clusters to families, identify gene cluster families from GenBank files, or perform content-agnostic clustering of biosynthetic gene clusters.
 homepage: https://github.com/zellerlab/IGUA
 ---
+
 
 # igua
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-manta
-description: the package is available on all platforms; click for details.
+description: This R package performs multivariate analysis and visualization of transcriptomic data through manta plots. Use when user asks to compare gene expression across different conditions, analyze metabolic networks, or visualize multivariate transcriptomic data.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/manta.html
 ---
+
 
 # bioconductor-manta
 

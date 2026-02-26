@@ -1,9 +1,9 @@
 # relion-bin-plusgui CWL Generation Report
 
-## relion-bin-plusgui
+## relion-bin-plusgui_relion_preprocess
 
 ### Tool Description
-RELION (REgularised LIkelihood Optimisation) is a software package for cryo-electron microscopy. Note: The provided text contains container runtime error logs rather than command-line help documentation.
+Provide either --o or --operate_on
 
 ### Metadata
 - **Docker Image**: biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1
@@ -18,71 +18,93 @@ RELION (REgularised LIkelihood Optimisation) is a software package for cryo-elec
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Provide either --o or --operate_on
+File: src/preprocessing.cpp line: 65
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## relion-bin-plusgui_relion
+## relion-bin-plusgui_relion_reconstruct
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a system log or error message from a container runtime (Apptainer/Singularity) failing to fetch or build a container image.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1
 - **Homepage**: https://github.com/3dem/relion
 - **Package**: https://anaconda.org/channels/bioconda/packages/relion/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+MetaDataTable::read: File  does not exists
+File: src/metadata_table.cpp line: 708
 ```
 
-## relion-bin-plusgui_ml_optimiser
+
+## relion-bin-plusgui_relion_refine
 
 ### Tool Description
-Maximum Likelihood (ML) optimiser from the RELION (REgularised LIkelihood OptimizatioN) package.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1
 - **Homepage**: https://github.com/3dem/relion
 - **Package**: https://anaconda.org/channels/bioconda/packages/relion/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Running in double precision.
 ```
 
-## relion-bin-plusgui_particle_reposition
+
+## relion-bin-plusgui_relion_postprocess
 
 ### Tool Description
-A tool from the RELION package for repositioning particles. (Note: The provided help text contains only container runtime error messages and no usage information.)
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1
 - **Homepage**: https://github.com/3dem/relion
 - **Package**: https://anaconda.org/channels/bioconda/packages/relion/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/relion-bin-plusgui:v1.4dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Errors encountered on the command line (see above), exiting...
+File: src/postprocessing.cpp line: 58
 ```
 

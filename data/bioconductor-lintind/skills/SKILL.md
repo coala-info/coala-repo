@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lintind
-description: the package is available on all platforms; click for details.
+description: LinTInd processes and analyzes data from CRISPR/Cas9-based synthetic lineage tracing systems to reconstruct cellular relationships. Use when user asks to extract indels from sequences, calculate cell-to-cell similarity based on shared mutations, reconstruct phylogenetic trees, or visualize indel distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/LinTInd.html
 ---
+
 
 # bioconductor-lintind
 

@@ -3,44 +3,32 @@
 ## gapcloser
 
 ### Tool Description
-The provided text does not contain a description of the tool; it appears to be a system error log regarding a container execution failure.
+FAIL to generate CWL: gapcloser not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/gapcloser:v1.12-r6_cv3
 - **Homepage**: https://github.com/BGI-Qingdao/TGS-GapCloser
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gapcloser/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/BGI-Qingdao/TGS-GapCloser
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: gapcloser not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: gapcloser not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/gapcloser:v1.12-r6_cv3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2634319358: no space left on device
-```
 
-
-## Metadata
-- **Skill**: generated
-
-## gapcloser_tgsgapcloser
-
-### Tool Description
-A tool for closing gaps in genome assemblies (Note: The provided text contains container runtime error messages rather than help documentation).
-
-### Metadata
-- **Docker Image**: biocontainers/gapcloser:v1.12-r6_cv3
-- **Homepage**: https://github.com/BGI-Qingdao/TGS-GapCloser
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/gapcloser:v1.12-r6_cv3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1417469067: no space left on device
 ```
 

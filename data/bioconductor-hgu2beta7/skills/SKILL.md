@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu2beta7
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and mappings for the Affymetrix hgu2beta7 microarray. Use when user asks to map probe identifiers to gene symbols, retrieve functional annotations like GO terms and KEGG pathways, or find genomic locations for this specific array.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu2beta7.html
 ---
+
 
 # bioconductor-hgu2beta7
 

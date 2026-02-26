@@ -1,8 +1,9 @@
 ---
 name: perl-math-matrix
-description: The `perl-math-matrix` skill enables efficient handling of 2D numerical arrays as mathematical objects.
+description: This tool provides a suite of methods for performing matrix algebra and handling 2D numerical arrays as mathematical objects in Perl. Use when user asks to initialize matrices, perform operations like multiplication and inversion, or solve systems of linear equations.
 homepage: https://metacpan.org/pod/Math::Matrix
 ---
+
 
 # perl-math-matrix
 

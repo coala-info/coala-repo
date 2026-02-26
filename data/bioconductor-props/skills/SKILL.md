@@ -1,8 +1,9 @@
 ---
 name: bioconductor-props
-description: the package is available on all platforms; click for details.
+description: PROPS calculates probabilistic pathway scores from gene expression data to identify pathway-level features. Use when user asks to calculate pathway scores, transform gene expression data into pathway features, or perform pathway-based classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/PROPS.html
 ---
+
 
 # bioconductor-props
 

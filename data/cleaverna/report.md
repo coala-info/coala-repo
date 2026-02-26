@@ -3,7 +3,7 @@
 ## cleaverna
 
 ### Tool Description
-A tool for cleavage of RNA sequences (description not available in provided text)
+Advanced machine learning-based computational tool for scoring candidate DNAzyme cleavage sites in substrate RNA sequences using structural and thermodynamic features.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0
@@ -12,61 +12,126 @@ A tool for cleavage of RNA sequences (description not available in provided text
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cleaverna/overview
-- **Total Downloads**: 40
+- **Total Downloads**: 41
 - **Last updated**: 2025-12-05
 - **GitHub**: https://github.com/reyhaneh-tavakoli/CleaveRNA
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3723336658/rootfs/usr/bin/bash: no space left on device
-```
+============================================================
+🧬 CleaveRNA Analysis Tool 🧬
+============================================================
+usage: CleaveRNA [-h] --model_name NAME
+                 [--target_files_prediction FASTA [FASTA ...]]
+                 [--target_files_training FASTA [FASTA ...]] [--params CSV]
+                 [--training_file CSV] [--training_scores CSV]
+                 [--specific_query_input CSV] [--prediction_mode MODE]
+                 [--output_dir DIR]
 
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        🧬 CleaveRNA Analysis Tool 🧬                        │
+│                                                                             │
+│  Advanced machine learning-based computational tool for scoring candidate   │
+│  DNAzyme cleavage sites in substrate RNA sequences using structural and     │
+│  thermodynamic features.                                                    │
+│                                                                             │
+│  Features:                                                                  │
+│  • Machine Learning Prediction Models                                       │
+│  • RNA Secondary Structure Analysis                                         │
+│  • Thermodynamic Feature Extraction                                         │
+│  • Multiple Prediction Modes                                                │
+│  • Cross-validation and Performance Metrics                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+            
 
-## Metadata
-- **Skill**: generated
+options:
+  -h, --help            Show this help message and exit
 
-## cleaverna_CleaveRNA.py
+🔴 REQUIRED ARGUMENTS:
+  --model_name NAME     Model identifier and output file prefix (e.g.,
+                        "my_experiment")
 
-### Tool Description
-CleaveRNA tool (Note: The provided help text contains only system error messages regarding a container build failure and does not list usage instructions or arguments).
+📁 INPUT FILES:
+  --target_files_prediction FASTA [FASTA ...]
+                        Target RNA sequence files in FASTA format (required
+                        for prediction mode)
+  --target_files_training FASTA [FASTA ...]
+                        Training RNA sequence files in FASTA format (required
+                        for training mode)
+  --params CSV          Parameters file with columns: LA, RA, CS, Tem, CA
+  --training_file CSV   Training data feature matrix (mutually exclusive with
+                        --target_files_training)
+  --training_scores CSV
+                        Training target labels/scores (required with
+                        --training_file)
+  --specific_query_input CSV
+                        Custom query parameters for specific_query mode
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/reyhaneh-tavakoli/CleaveRNA
-- **Package**: https://anaconda.org/channels/bioconda/packages/cleaverna/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-2058849250/rootfs/usr/bin/bash: no space left on device
-```
+🔬 ANALYSIS OPTIONS:
+  --prediction_mode MODE
+                        Analysis mode selection: • default : Standard cleavage
+                        site prediction • target_screen : Screen custom
+                        cleavage sites • target_check : Validate sites in
+                        specific regions • specific_query : Analyze custom
+                        DNAzyme sequences
 
-## cleaverna_run.sh
+📤 OUTPUT OPTIONS:
+  --output_dir DIR      Output directory for results (default: current
+                        directory)
 
-### Tool Description
-CleaveRNA tool (Note: The provided text is a container build error log and does not contain usage information or argument definitions).
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              📋 USAGE EXAMPLES                              │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0
-- **Homepage**: https://github.com/reyhaneh-tavakoli/CleaveRNA
-- **Package**: https://anaconda.org/channels/bioconda/packages/cleaverna/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cleaverna:1.0.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-1056486506/rootfs/usr/bin/bash: no space left on device
+🎯 TRAINING MODE - Generate features for model training:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ cleaverna --target_files_training train1.fasta train2.fasta \              │
+│           --params parameters.csv --prediction_mode default \              │
+│           --model_name my_model --output_dir results/                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+🔮 PREDICTION MODE - Standard cleavage site prediction:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ cleaverna --target_files_prediction seq1.fasta seq2.fasta \                │
+│           --params parameters.csv --prediction_mode default \              │
+│           --training_file training_data.csv \                              │
+│           --training_scores labels.csv \                                   │
+│           --model_name prediction_model --output_dir results/               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+🎯 TARGET SCREENING - Screen specific cleavage sites:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ cleaverna --target_files_prediction target.fasta \                         │
+│           --params screen_params.csv --prediction_mode target_screen \     │
+│           --training_file training_data.csv \                              │
+│           --training_scores labels.csv \                                   │
+│           --model_name screen_model --output_dir screening_results/         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+🔍 TARGET CHECK - Validate cleavage sites in specific regions:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ cleaverna --target_files_prediction target.fasta \                         │
+│           --params check_params.csv --prediction_mode target_check \       │
+│           --training_file training_data.csv \                              │
+│           --training_scores labels.csv \                                   │
+│           --model_name check_model --output_dir check_results/              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+⚡ SPECIFIC QUERY - Custom DNAzyme sequence analysis:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ cleaverna --target_files_prediction target.fasta \                         │
+│           --params query_params.csv --prediction_mode specific_query \     │
+│           --specific_query_input custom_queries.csv \                      │
+│           --training_file training_data.csv \                              │
+│           --training_scores labels.csv \                                   │
+│           --model_name query_model --output_dir query_results/              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            🔗 MORE INFORMATION                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+📚 Documentation: https://github.com/reyhaneh-tavakoli/CleaveRNA
+💡 Issues & Support: https://github.com/reyhaneh-tavakoli/CleaveRNA/issues
 ```
 

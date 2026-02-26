@@ -1,8 +1,9 @@
 ---
 name: perl-padwalker
-description: The perl-padwalker skill enables deep introspection of Perl's lexical pads.
+description: Perl-padwalker provides tools for inspecting and manipulating lexical variables within Perl's scopes and closures. Use when user asks to peek into private variables of calling subroutines, identify variables captured by closures, or find the lexical name of a variable reference.
 homepage: http://metacpan.org/pod/PadWalker
 ---
+
 
 # perl-padwalker
 

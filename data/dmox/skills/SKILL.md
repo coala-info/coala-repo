@@ -1,8 +1,9 @@
 ---
 name: dmox
-description: `dmox` is a specialized, Rust-based utility designed for the efficient demultiplexing of linked-read data generated via haplotagging.
+description: dmox is a Rust-based utility designed for the efficient demultiplexing of linked-read data generated via haplotagging. Use when user asks to demultiplex sequencing reads, assign reads to samples based on barcode schemas, or replace the demultiplexing component of the Harpy pipeline.
 homepage: https://gitlab.mbb.cnrs.fr/ibonnici/dmox
 ---
+
 
 # dmox
 

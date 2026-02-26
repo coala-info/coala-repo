@@ -1,8 +1,9 @@
 ---
 name: bioepic
-description: The bioepic skill provides a specialized interface for researchers to standardize ecological data and extract metadata from scientific repositories.
+description: Bioepic standardizes ecological data by mapping research terms to formal ontologies and extracting metadata from scientific repositories like ESS-DIVE, TRY, and FRED. Use when user asks to ground research terms to ontologies, search for environmental variables, fetch metadata from ESS-DIVE, or discover plant traits from specialized databases.
 homepage: https://github.com/bioepic-data/bioepic_skills
 ---
+
 
 # bioepic
 

@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: json2isatab
 label: json2isatab
-doc: "A tool to convert JSON files to ISA-Tab format. (Note: The provided help text
-  contains only system error messages and no usage information; arguments could not
-  be extracted from the source text).\n\nTool homepage: https://github.com/bio-agents/json2isatab_docker"
-inputs: []
+doc: "File path to ISA-JSON file\n\nTool homepage: https://github.com/phnmnl/container-json2isatab"
+inputs:
+  - id: json_file
+    type: File
+    doc: Path to ISA-JSON file
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

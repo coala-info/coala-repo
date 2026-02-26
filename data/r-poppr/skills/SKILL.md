@@ -1,8 +1,9 @@
 ---
 name: r-poppr
-description: "Population genetic analyses for hierarchical analysis of partially     clonal populations built upon the architecture of the 'adegenet' package."
+description: The R package poppr provides specialized tools for the genetic analysis of populations exhibiting mixed sexual and asexual reproduction. Use when user asks to perform clonal analysis, calculate the Index of Association, compute genetic distances like Bruvo's distance, perform AMOVA, or assess genotypic diversity.
 homepage: https://cloud.r-project.org/web/packages/poppr/index.html
 ---
+
 
 # r-poppr
 

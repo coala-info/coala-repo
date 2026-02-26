@@ -1,8 +1,9 @@
 ---
 name: sparcc
-description: SparCC (Sparse Correlations for Compositional data) is a specialized tool designed to estimate correlation coefficients between components in a system where only relative abundances are known.
+description: SparCC estimates correlation coefficients between components in compositional datasets where only relative abundances are available. Use when user asks to calculate correlation matrices from microbial count tables, generate bootstrap replicates for significance testing, or compute pseudo-p-values for taxonomic interactions.
 homepage: https://bitbucket.org/yonatanf/sparcc
 ---
+
 
 # sparcc
 

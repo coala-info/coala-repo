@@ -1,8 +1,9 @@
 ---
 name: r-futile.options
-description: A scoped options management framework. Used in other packages.</p>
+description: The r-futile.options package provides a scoped options management framework for R to create self-contained namespaces for package-specific configurations. Use when user asks to initialize an options manager, set or retrieve package-specific options, or reset configuration values to their defaults.
 homepage: https://cloud.r-project.org/web/packages/futile.options/index.html
 ---
+
 
 # r-futile.options
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fieldeffectcrc
-description: the package is available on all platforms; click for details.
+description: This tool provides access to harmonized colorectal cancer transcriptome datasets and workflows for differential expression analysis. Use when user asks to retrieve CRC RNA-seq data from ExperimentHub, prepare tximport-compatible objects, or perform surrogate variable analysis to account for batch effects in colorectal tissue studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FieldEffectCrc.html
 ---
+
 
 # bioconductor-fieldeffectcrc
 

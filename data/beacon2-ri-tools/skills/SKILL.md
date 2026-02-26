@@ -1,8 +1,9 @@
 ---
 name: beacon2-ri-tools
-description: The `beacon2-ri-tools` suite is the reference implementation for Beacon v2 data ingestion.
+description: The beacon2-ri-tools suite transforms genomic VCF data into Beacon v2 compliant JSON structures and manages their ingestion into MongoDB. Use when user asks to convert VCF files to Beacon Friendly Format, load genomic data into a database, or run the full Beacon v2 data transformation pipeline.
 homepage: https://github.com/EGA-archive/beacon2-ri-tools/tree/main
 ---
+
 
 # beacon2-ri-tools
 

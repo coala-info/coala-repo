@@ -1,8 +1,9 @@
 ---
 name: perl-mojo-sqlite
-description: Mojo::SQLite is a minimal yet powerful wrapper around DBD::SQLite designed for the Mojolicious ecosystem.
+description: Mojo::SQLite is a minimal wrapper around DBD::SQLite that provides a streamlined interface for SQL execution and schema migrations within the Mojolicious ecosystem. Use when user asks to manage SQLite databases, perform CRUD operations using Perl data structures, or handle database migrations and connection pooling.
 homepage: https://github.com/Grinnz/Mojo-SQLite
 ---
+
 
 # perl-mojo-sqlite
 

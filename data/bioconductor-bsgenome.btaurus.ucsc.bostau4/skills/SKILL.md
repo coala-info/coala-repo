@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.btaurus.ucsc.bostau4
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Bos taurus based on the UCSC bosTau4 assembly for use within the Bioconductor BSgenome framework. Use when user asks to extract cow genomic sequences, search for DNA motifs in the bosTau4 assembly, or perform coordinate-based lookups for bovine genomic analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Btaurus.UCSC.bosTau4.html
 ---
+
 
 # bioconductor-bsgenome.btaurus.ucsc.bostau4
 

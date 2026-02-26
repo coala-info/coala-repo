@@ -1,8 +1,9 @@
 ---
 name: shapeit4
-description: SHAPEIT4 is a high-performance tool designed for phasing large-scale genomic datasets.
+description: SHAPEIT4 is a high-performance tool used for phasing large-scale genomic datasets to estimate haplotypes from unphased genotypes. Use when user asks to phase genomic data, estimate haplotypes from SNP arrays or sequencing data, or perform fast chromosome-scale phasing using multi-threading.
 homepage: https://odelaneau.github.io/shapeit4/
 ---
+
 
 # shapeit4
 

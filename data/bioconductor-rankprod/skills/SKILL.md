@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rankprod
-description: the package is available on all platforms; click for details.
+description: RankProd implements non-parametric methods to identify differentially expressed genes in high-throughput biological datasets. Use when user asks to identify differentially expressed features, perform meta-analysis across multiple datasets, or analyze experiments with small sample sizes.
 homepage: https://bioconductor.org/packages/release/bioc/html/RankProd.html
 ---
+
 
 # bioconductor-rankprod
 

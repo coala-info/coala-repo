@@ -1,8 +1,9 @@
 ---
 name: primers
-description: The `primers` tool is a streamlined CLI and Python library specifically engineered for DNA assembly.
+description: The primers tool designs and scores DNA primers optimized for assembly workflows by evaluating melting temperatures, GC content, and secondary structures. Use when user asks to design primers for DNA assembly, add 5' overhangs for Golden Gate or Gibson assembly, check for off-target binding, or score existing primer pairs.
 homepage: https://github.com/Lattice-Automation/primers
 ---
+
 
 # primers
 

@@ -1,131 +1,128 @@
 # jaffa CWL Generation Report
 
-## jaffa
+## jaffa_jaffa-direct
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jaffa:2.3--hdfd78af_0
 - **Homepage**: https://github.com/Oshlack/JAFFA
 - **Package**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
 - **Total Downloads**: 22.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Oshlack/JAFFA
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaffa:2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2767336806: no space left on device
+=========================================== Bpipe Error ============================================
+
+An error occurred executing your pipeline:
+
+                            Cannot invoke method getAt() on null object                             
+
+
+Please see the details below for more information.
+
+========================================== Error Details ===========================================
+
+java.lang.NullPointerException: Cannot invoke method getAt() on null object
+	at JAFFA_direct.groovy.run(JAFFA_direct.groovy:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+====================================================================================================
+
+More details about why this error occurred may be available in the full log file .bpipe/bpipe.log
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## jaffa_jaffa-direct
-
-### Tool Description
-JAFFA is a pipeline for identifying fusion genes from RNA-seq data. (Note: The provided help text contains only system error messages regarding container image creation and does not list specific command-line arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/jaffa:2.3--hdfd78af_0
-- **Homepage**: https://github.com/Oshlack/JAFFA
-- **Package**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaffa:2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-412164608: no space left on device
-```
 
 ## jaffa_jaffa-assembly
 
 ### Tool Description
-JAFFA (Just Another Fusion Finder) is a pipeline for identifying fusion genes from RNA-seq data. The assembly mode is designed for high sensitivity and to identify novel fusions.
+JAFFA is a tool for detecting gene fusions from RNA-Seq data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jaffa:2.3--hdfd78af_0
 - **Homepage**: https://github.com/Oshlack/JAFFA
 - **Package**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaffa:2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4089816096: no space left on device
+╒══════════════════════════════════════════════════════════════════════════════════════════════════╕
+|                              Starting Pipeline at 2026-02-25 04:15                               |
+╘══════════════════════════════════════════════════════════════════════════════════════════════════╛
+
+========================================= Stage run_check ==========================================
+Running JAFFA version 2.3
+Checking for required data files...
+CAN'T FIND null/hg38_genCode22.fa...
+PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW
+ERROR: stage run_check failed: Command in stage run_check failed with exit status = 1 : 
+
+echo "Running JAFFA version 2.3" ;             echo "Checking for required data files..." ;             for i in null/hg38_genCode22.fa null/hg38_genCode22.tab /tmp/tmp.VvSPq6kiKE/known_fusions.txt null/hg38.fa null/Masked_hg38.1.bt2 null/hg38_genCode22.1.bt2 ;                   do ls $i 2>/dev/null || { echo "CAN'T FIND $i..." ;              echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;             echo "All looking good" ;             echo "running JAFFA version 2.3.. checks passed" > checks 
+
+
+========================================= Pipeline Failed ==========================================
+
+In stage run_check: Command in stage run_check failed with exit status = 1 : 
+
+echo "Running JAFFA version 2.3" ;             echo "Checking for required data files..." ;             for i in null/hg38_genCode22.fa null/hg38_genCode22.tab /tmp/tmp.VvSPq6kiKE/known_fusions.txt null/hg38.fa null/Masked_hg38.1.bt2 null/hg38_genCode22.1.bt2 ;                   do ls $i 2>/dev/null || { echo "CAN'T FIND $i..." ;              echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;             echo "All looking good" ;             echo "running JAFFA version 2.3.. checks passed" > checks
+
+Use 'bpipe errors' to see output from failed commands.
 ```
+
 
 ## jaffa_jaffa-hybrid
 
 ### Tool Description
-JAFFA (Joining Assemblies For Fusion Analysis) hybrid pipeline. (Note: The provided text is a container runtime error log and does not contain usage instructions or argument definitions.)
+JAFFA is a tool for detecting fusion sequences in next-generation sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jaffa:2.3--hdfd78af_0
 - **Homepage**: https://github.com/Oshlack/JAFFA
 - **Package**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaffa:2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2065475440: no space left on device
-```
+╒══════════════════════════════════════════════════════════════════════════════════════════════════╕
+|                              Starting Pipeline at 2026-02-25 04:16                               |
+╘══════════════════════════════════════════════════════════════════════════════════════════════════╛
 
-## jaffa_JAFFAL
+========================================= Stage run_check ==========================================
+Running JAFFA version 2.3
+Checking for required data files...
+CAN'T FIND null/hg38_genCode22.fa...
+PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW
+ERROR: stage run_check failed: Command in stage run_check failed with exit status = 1 : 
 
-### Tool Description
-JAFFA is a bioinformatic pipeline for finding transcript fusions. The JAFFAL version is specifically designed for long-read transcriptomics data or assembled contigs.
+echo "Running JAFFA version 2.3" ;             echo "Checking for required data files..." ;             for i in null/hg38_genCode22.fa null/hg38_genCode22.tab /tmp/tmp.M0LOvV2mfD/known_fusions.txt null/hg38.fa null/Masked_hg38.1.bt2 null/hg38_genCode22.1.bt2 ;                   do ls $i 2>/dev/null || { echo "CAN'T FIND $i..." ;              echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;             echo "All looking good" ;             echo "running JAFFA version 2.3.. checks passed" > checks 
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/jaffa:2.3--hdfd78af_0
-- **Homepage**: https://github.com/Oshlack/JAFFA
-- **Package**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaffa:2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2993450029: no space left on device
-```
 
-## jaffa_bpipe
+========================================= Pipeline Failed ==========================================
 
-### Tool Description
-JAFFA is a pipeline for identifying fusion genes from RNA-seq data.
+In stage run_check: Command in stage run_check failed with exit status = 1 : 
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/jaffa:2.3--hdfd78af_0
-- **Homepage**: https://github.com/Oshlack/JAFFA
-- **Package**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaffa:2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2423534426: no space left on device
-```
+echo "Running JAFFA version 2.3" ;             echo "Checking for required data files..." ;             for i in null/hg38_genCode22.fa null/hg38_genCode22.tab /tmp/tmp.M0LOvV2mfD/known_fusions.txt null/hg38.fa null/Masked_hg38.1.bt2 null/hg38_genCode22.1.bt2 ;                   do ls $i 2>/dev/null || { echo "CAN'T FIND $i..." ;              echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;             echo "All looking good" ;             echo "running JAFFA version 2.3.. checks passed" > checks
 
-## jaffa_prepare_reference.sh
-
-### Tool Description
-Prepare reference files for JAFFA
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/jaffa:2.3--hdfd78af_0
-- **Homepage**: https://github.com/Oshlack/JAFFA
-- **Package**: https://anaconda.org/channels/bioconda/packages/jaffa/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaffa:2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1400649682: no space left on device
+Use 'bpipe errors' to see output from failed commands.
 ```
 

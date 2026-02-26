@@ -1,8 +1,9 @@
 ---
 name: reditools3
-description: REDItools3 is a high-performance Python 3 implementation designed for profiling RNA editing events in large-scale transcriptomic datasets.
+description: REDItools3 profiles RNA editing events in large-scale transcriptomic datasets by identifying base substitutions in RNA-seq alignments. Use when user asks to detect RNA editing sites, filter genomic polymorphisms using matched DNA-seq data, or calculate RNA editing indices.
 homepage: https://github.com/BioinfoUNIBA/REDItools3
 ---
+
 
 # reditools3
 

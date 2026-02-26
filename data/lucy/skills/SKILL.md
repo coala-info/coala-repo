@@ -1,8 +1,9 @@
 ---
 name: lucy
-description: Lucy Edit is a specialized video-to-video editing framework designed for precise, text-driven modifications.
+description: Lucy is a video-to-video editing framework that performs precise, text-driven modifications while maintaining original motion and structure. Use when user asks to change clothing, add objects, replace subjects, or transform the overall style of a video.
 homepage: https://github.com/DecartAI/Lucy-Edit-ComfyUI
 ---
+
 
 # lucy
 

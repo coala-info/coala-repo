@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ebcoexpress
-description: the package is available on all platforms; click for details.
+description: This tool implements an empirical Bayesian framework to identify differentially co-expressed gene pairs in high-throughput genomic data. Use when user asks to identify gene pairs with varying correlation structures across biological conditions, calculate posterior probabilities for differential co-expression, or rank hub genes based on co-expression changes.
 homepage: https://bioconductor.org/packages/release/bioc/html/EBcoexpress.html
 ---
+
 
 # bioconductor-ebcoexpress
 

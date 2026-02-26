@@ -1,8 +1,9 @@
 ---
 name: genedom
-description: Genedom is a synthetic biology tool designed to standardize genetic parts for DNA assembly.
+description: Genedom standardizes and domesticates genetic parts for DNA assembly by optimizing sequences and adding necessary flanking overhangs. Use when user asks to domesticate DNA sequences, generate assembly-compatible barcodes, or perform batch sequence optimization and reporting for synthetic biology projects.
 homepage: https://github.com/Edinburgh-Genome-Foundry/genedom#
 ---
+
 
 # genedom
 

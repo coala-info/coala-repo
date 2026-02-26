@@ -1,13 +1,36 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - machina
-  - visualizeclonetree
+baseCommand: visualizeclonetree
 label: machina_visualizeclonetree
-doc: "A tool within the MACHINA suite for visualizing clone trees. (Note: The provided
-  help text contains only system error messages and no usage information.)\n\nTool
-  homepage: https://github.com/raphael-group/machina"
-inputs: []
+doc: "Visualize a clone tree with optional leaf and vertex labeling, and custom color
+  maps.\n\nTool homepage: https://github.com/raphael-group/machina"
+inputs:
+  - id: clone_tree
+    type: string
+    doc: Clone tree
+    inputBinding:
+      position: 1
+  - id: leaf_labeling
+    type: string
+    doc: Leaf labeling
+    inputBinding:
+      position: 2
+  - id: color_map_file
+    type:
+      - 'null'
+      - string
+    doc: Color map file
+    inputBinding:
+      position: 103
+      prefix: --color_map_file
+  - id: vertex_labeling
+    type:
+      - 'null'
+      - string
+    doc: Vertex labeling
+    inputBinding:
+      position: 103
+      prefix: --vertex_labeling
 outputs:
   - id: stdout
     type: stdout

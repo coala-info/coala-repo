@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hireadsprocessor
-description: the package is available on all platforms; click for details.
+description: This package processes LM-PCR reads from next-generation sequencing to identify and analyze genomic integration sites. Use when user asks to trim technical sequences like primers and linkers, process genomic alignments, or identify and cluster integration sites from high-throughput sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/hiReadsProcessor.html
 ---
+
 
 # bioconductor-hireadsprocessor
 

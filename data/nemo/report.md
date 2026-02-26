@@ -3,44 +3,39 @@
 ## nemo
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system log messages and a fatal error regarding container image conversion.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/nemo:2.3.51--h869255c_0
+- **Docker Image**: quay.io/biocontainers/nemo:2.3.51--h1c77041_2
 - **Homepage**: http://nemo2.sourceforge.net
 - **Package**: https://anaconda.org/channels/bioconda/packages/nemo/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nemo/overview
 - **Total Downloads**: 5.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nemo:2.3.51--h869255c_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2140452604: no space left on device
-```
+N E M O 2.3.51 [28 Sept 2018]
 
-
-## Metadata
-- **Skill**: generated
-
-## nemo_nemosub
-
-### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it contains system error logs related to a container runtime failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nemo:2.3.51--h869255c_0
-- **Homepage**: http://nemo2.sourceforge.net
-- **Package**: https://anaconda.org/channels/bioconda/packages/nemo/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nemo:2.3.51--h869255c_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1457254608: no space left on device
+  Copyright (C) 2006-2018 Frederic Guillaume
+  This is free software; see the source for copying
+  conditions. There is NO warranty; not even for 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  http://nemo2.sourceforge.net
+------------------------------------------------
 ```
 

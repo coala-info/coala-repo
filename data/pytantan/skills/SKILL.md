@@ -1,8 +1,9 @@
 ---
 name: pytantan
-description: The `pytantan` skill provides a high-performance Pythonic interface to Tantan, a specialized tool for detecting low-complexity regions and simple repeats in biological sequences.
+description: This tool identifies and masks low-complexity regions and simple repeats in biological sequences. Use when user asks to mask repeats, detect low-complexity regions, or preprocess sequences before alignment.
 homepage: https://github.com/althonos/pytantan
 ---
+
 
 # pytantan
 

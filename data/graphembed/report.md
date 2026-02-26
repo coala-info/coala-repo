@@ -1,9 +1,9 @@
 # graphembed CWL Generation Report
 
-## graphembed
+## graphembed_embedding
 
 ### Tool Description
-A tool for graph embedding (Note: The provided help text contains only system error messages and no usage information).
+Graph/Network Embedding
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/graphembed:0.1.8--h2e3eeea_0
@@ -18,29 +18,51 @@ A tool for graph embedding (Note: The provided help text contains only system er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/graphembed:0.1.8--h2e3eeea_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3252994108: no space left on device
+************** initializing logger *****************
+
+Graph/Network Embedding
+
+Usage: graphembed --csv <csvfile> --symetric <symetry> embedding [OPTIONS] <COMMAND>
+
+Commands:
+  hope       Asymmetric Transitivity Preserving Graph Embedding
+  sketching  Highly-Efficient Graph/Network Embeddings via Recursive Sketching
+  help       Print this message or the help of the given subcommand(s)
+
+Options:
+  -o, --output <output>  -o fname for a dump in fname.bson
+  -h, --help             Print help
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## graphembed_embed
+## graphembed_validation
 
 ### Tool Description
-A tool for graph embedding (Note: The provided help text contains only system error messages and no usage information).
+Graph/Network Embedding with Accuracy Benchmark
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/graphembed:0.1.8--h2e3eeea_0
 - **Homepage**: https://github.com/jean-pierreBoth/graphembed
 - **Package**: https://anaconda.org/channels/bioconda/packages/graphembed/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/graphembed:0.1.8--h2e3eeea_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3981777640: no space left on device
+************** initializing logger *****************
+
+Graph/Network Embedding with Accuracy Benchmark
+
+Usage: graphembed --csv <csvfile> --symetric <symetry> validation [OPTIONS] --nbpass <nbpass> --skip <skip> <COMMAND>
+
+Commands:
+  hope       Asymmetric Transitivity Preserving Graph Embedding
+  sketching  Highly-Efficient Graph/Network Embeddings via Recursive Sketching
+  help       Print this message or the help of the given subcommand(s)
+
+Options:
+      --nbpass <nbpass>  number  of passes of validation
+      --skip <skip>      fraction of edges to skip in training set
+      --centric          --centric To ask for a centric validation pass after standard one, require no value
+  -h, --help             Print help
 ```
 

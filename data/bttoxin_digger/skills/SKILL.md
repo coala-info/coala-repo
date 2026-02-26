@@ -1,8 +1,9 @@
 ---
 name: bttoxin_digger
-description: bttoxin_digger is a specialized pipeline designed for the automated discovery of toxin genes in *Bacillus thuringiensis*.
+description: bttoxin_digger is a specialized pipeline for the automated discovery and annotation of toxin genes in *Bacillus thuringiensis* genomes. Use when user asks to identify toxin profiles, mine virulence factors from raw reads or protein sequences, or generate a distribution matrix of toxins across multiple bacterial strains.
 homepage: https://github.com/liaochenlanruo/BtToxin_Digger/blob/master/README.md
 ---
+
 
 # bttoxin_digger
 

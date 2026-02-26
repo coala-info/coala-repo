@@ -1,8 +1,9 @@
 ---
 name: strobealign
-description: Strobealign is a high-performance short-read mapper that utilizes strobemers and dynamic seed sizes to achieve significantly higher speeds than traditional aligners like BWA-MEM.
+description: Strobealign is a high-performance short-read mapper that uses strobemers to align sequencing reads to a reference genome with high speed and efficiency. Use when user asks to align paired-end or single-end reads, generate PAF mapping coordinates, estimate metagenomic abundance, or create persistent genomic indices.
 homepage: https://github.com/ksahlin/StrobeAlign
 ---
+
 
 # strobealign
 

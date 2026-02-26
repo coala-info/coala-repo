@@ -1,8 +1,9 @@
 ---
 name: bioconductor-intramirexplorer
-description: the package is available on all platforms; click for details.
+description: This tool predicts targets for Drosophila melanogaster intragenic miRNAs by integrating expression data and biophysical interactions. Use when user asks to predict miRNA targets, identify miRNAs targeting a specific gene, extract host gene relationships, or perform functional enrichment and network visualization for Drosophila.
 homepage: https://bioconductor.org/packages/release/bioc/html/IntramiRExploreR.html
 ---
+
 
 # bioconductor-intramirexplorer
 

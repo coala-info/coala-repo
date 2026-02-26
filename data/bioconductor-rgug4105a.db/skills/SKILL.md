@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgug4105a.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Agilent Rat Genome G4105A microarray. Use when user asks to map Agilent Rat Genome G4105A probe identifiers to gene symbols, Entrez IDs, or other genomic metadata.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rgug4105a.db.html
 ---
+
 
 # bioconductor-rgug4105a.db
 

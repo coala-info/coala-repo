@@ -1,12 +1,12 @@
 # metawrap-refinement CWL Generation Report
 
-## metawrap-refinement
+## metawrap-refinement_metawrap
 
 ### Tool Description
-The provided text is a system error message indicating a failure to build or run the container (no space left on device) and does not contain help documentation or argument definitions.
+MetaWRAP: A flexible pipeline for genome-resolved metagenomic data analysis. Please select a proper module.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/metawrap-refinement:1.3.0--hdfd78af_3
+- **Docker Image**: quay.io/biocontainers/metawrap:1.2--0
 - **Homepage**: https://github.com/bxlab/metaWRAP
 - **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-refinement/overview
 - **Validation**: PASS
@@ -18,46 +18,57 @@ The provided text is a system error message indicating a failure to build or run
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-refinement:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2238410942: no space left on device
+------------------------------------------------------------------------------------------------------------------------
+-----                                  Please select a proper module of metaWRAP.                                  -----
+------------------------------------------------------------------------------------------------------------------------
+
+
+MetaWRAP v=1.2
+Usage: metaWRAP [module]
+
+	Modules:
+	read_qc		Raw read QC module (read trimming and contamination removal)
+	assembly	Assembly module (metagenomic assembly)
+	kraken		KRAKEN module (taxonomy annotation of reads and assemblies)
+	blobology	Blobology module (GC vs Abund plots of contigs and bins)
+
+	binning		Binning module (metabat, maxbin, or concoct)
+	bin_refinement	Refinement of bins from binning module
+	reassemble_bins Reassemble bins using metagenomic reads
+	quant_bins	Quantify the abundance of each bin across samples
+	classify_bins	Assign taxonomy to genomic bins
+	annotate_bins	Functional annotation of draft genomes
+
+	--help | -h		show this help message
+	--version | -v	show metaWRAP version
+	--show-config	show where the metawrap configuration files are stored
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## metawrap-refinement_metawrap
+## metawrap-refinement_config-metawrap
 
 ### Tool Description
-The provided text is an error log from a container runtime (Singularity/Apptainer) and does not contain the help documentation or argument definitions for the tool. It indicates a 'no space left on device' failure during image conversion.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/metawrap-refinement:1.3.0--hdfd78af_3
+- **Docker Image**: quay.io/biocontainers/metawrap:1.2--0
 - **Homepage**: https://github.com/bxlab/metaWRAP
 - **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-refinement/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-refinement:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1581517287: no space left on device
-```
-
-## metawrap-refinement_bin_refinement.sh
-
-### Tool Description
-A tool for bin refinement within the metaWRAP pipeline. Note: The provided help text contains only system error messages and no usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metawrap-refinement:1.3.0--hdfd78af_3
-- **Homepage**: https://github.com/bxlab/metaWRAP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-refinement/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-refinement:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3170745087: no space left on device
+exec /usr/local/bin/config-metawrap: exec format error
 ```
 

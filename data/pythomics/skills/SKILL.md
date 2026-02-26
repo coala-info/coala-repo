@@ -1,8 +1,9 @@
 ---
 name: pythomics
-description: Pythomics is a specialized Python library designed to unify computational approaches across different "-omic" disciplines.
+description: Pythomics is a Python library for unifying computational approaches across genomics and proteomics through multi-omic data integration and analysis. Use when user asks to perform protein inference, calculate iBAQ quantification, simulate in silico digestion, or integrate VCF and GFF data into variant-aware protein databases.
 homepage: https://github.com/pandeylab/pythomics
 ---
+
 
 # pythomics
 

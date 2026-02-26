@@ -1,8 +1,9 @@
 ---
 name: viralrecall
-description: ViralRecall is a specialized bioinformatic tool designed to detect giant viruses (and Mirusviruses) integrated into eukaryotic host genomes.
+description: ViralRecall detects giant viruses and Mirusviruses integrated into eukaryotic host genomes. Use when user asks to 'set up the HMM database', 'scan genomes for viral signatures', 'adjust detection sensitivity or stringency', or 'filter small contigs'.
 homepage: https://github.com/abdealijivaji/ViralRecall_3.0
 ---
+
 
 # viralrecall
 

@@ -1,8 +1,9 @@
 ---
 name: r-erah
-description: Automated compound deconvolution, alignment across samples, and identification of metabolites by spectral library matching in Gas Chromatography - Mass spectrometry (GC-MS) untargeted metabolomics. Outputs a table with compound names, matching scores and the integrated area of the compound for each sample. Package implementation is described in Domingo-Almenara et al.
+description: r-erah performs automated compound deconvolution, alignment, and identification for GC/MS-based untargeted metabolomics. Use when user asks to deconvolve metabolite signals, align compounds across samples, recover missing peaks, or identify metabolites using spectral libraries.
 homepage: https://cran.r-project.org/web/packages/erah/index.html
 ---
+
 
 # r-erah
 

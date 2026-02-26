@@ -1,8 +1,9 @@
 ---
 name: perl-error
-description: The `perl-error` skill enables the implementation of structured, object-oriented exception handling in Perl.
+description: The perl-error tool enables structured, object-oriented exception handling in Perl using the Error module. Use when user asks to implement try-catch blocks, throw custom error objects, or manage error cleanup with finally blocks.
 homepage: http://metacpan.org/pod/Error
 ---
+
 
 # perl-error
 

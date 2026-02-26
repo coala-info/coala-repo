@@ -1,8 +1,9 @@
 ---
 name: svseq2
-description: svseq2 is a specialized bioinformatics tool designed for the accurate and efficient detection of structural variations (SVs) in low-coverage sequencing datasets.
+description: svseq2 detects structural variations such as deletions and insertions in low-coverage sequencing datasets using soft-clipped read signatures. Use when user asks to detect deletions, identify insertions, or call structural variations from BAM files.
 homepage: https://sourceforge.net/projects/svseq2/
 ---
+
 
 # svseq2
 

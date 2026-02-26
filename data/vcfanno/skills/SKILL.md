@@ -1,8 +1,9 @@
 ---
 name: vcfanno
-description: vcfanno is a fast, flexible tool written in Go for annotating VCF files.
+description: vcfanno is a fast and flexible tool for annotating VCF files by integrating data from multiple sources into the INFO field. Use when user asks to annotate VCF files, integrate data from multiple source files, perform custom calculations on VCF fields, handle overlapping annotations, or annotate structural variants.
 homepage: https://github.com/brentp/vcfanno
 ---
+
 
 # vcfanno
 

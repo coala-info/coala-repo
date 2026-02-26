@@ -1,8 +1,9 @@
 ---
 name: viralverify
-description: viralverify is a specialized tool for the classification of genomic contigs.
+description: viralverify classifies genomic contigs to identify viral sequences, particularly in metagenomic data. Use when user asks to classify genomic contigs, identify viruses, distinguish viral fragments from host contamination, detect plasmids, or verify results with BLAST.
 homepage: https://github.com/ablab/viralVerify
 ---
+
 
 # viralverify
 

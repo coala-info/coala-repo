@@ -1,8 +1,9 @@
 ---
 name: isodyn
-description: Isodyn is a specialized kinetic modeling tool designed for 13C metabolic flux analysis (MFA).
+description: Isodyn is a kinetic modeling tool designed for 13C metabolic flux analysis that simulates isotope propagation through metabolic pathways. Use when user asks to estimate metabolic fluxes, fit kinetic models to mass spectrometry data, or perform statistical analysis on reaction parameters.
 homepage: https://github.com/seliv55/isodyn
 ---
+
 
 # isodyn
 

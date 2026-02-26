@@ -1,8 +1,9 @@
 ---
 name: flowcraft
-description: FlowCraft is a specialized tool for genomics that automates the assembly of Nextflow pipelines.
+description: FlowCraft automates the assembly of Nextflow genomics pipelines by chaining together pre-defined bioinformatics modules. Use when user asks to build a Nextflow pipeline, chain bioinformatics components, or inspect the status of a running pipeline.
 homepage: https://github.com/assemblerflow/flowcraft
 ---
+
 
 # flowcraft
 

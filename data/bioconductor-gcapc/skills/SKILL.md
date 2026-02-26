@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcapc
-description: the package is available on all platforms; click for details.
+description: This tool performs GC-content bias correction for ChIP-seq data using generalized linear mixture models. Use when user asks to call peaks with GC bias correction, refine existing peak sets, or correct read count tables for GC effects.
 homepage: https://bioconductor.org/packages/release/bioc/html/gcapc.html
 ---
+
 
 # bioconductor-gcapc
 

@@ -1,8 +1,9 @@
 ---
 name: csubst
-description: `csubst` (Combinatorial SUBSTitutions) is a molecular evolution tool used to identify and statistically validate convergent amino acid substitutions within a phylogenetic framework.
+description: csubst identifies and statistically validates convergent amino acid substitutions across multiple lineages within a phylogenetic framework. Use when user asks to analyze molecular convergence, identify site-specific substitutions, or simulate sequence evolution under convergent scenarios.
 homepage: https://github.com/kfuku52/csubst
 ---
+
 
 # csubst
 

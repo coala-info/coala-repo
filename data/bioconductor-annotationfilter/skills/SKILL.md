@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotationfilter
-description: the package is available on all platforms; click for details.
+description: The AnnotationFilter package provides a standardized framework for creating formal filter objects to query Bioconductor annotation resources. Use when user asks to create individual filters for genomic features, combine multiple query criteria using logical operators, or define spatial filters using genomic coordinates.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationFilter.html
 ---
+
 
 # bioconductor-annotationfilter
 

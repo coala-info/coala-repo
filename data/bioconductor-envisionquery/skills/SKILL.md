@@ -1,8 +1,9 @@
 ---
 name: bioconductor-envisionquery
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool retrieves biological data and performs ID mapping through the Enfin-Encore annotation portal. Use when user asks to map protein identifiers to microarray probe-sets, find protein-protein interactions, map protein IDs across databases, or find biological pathways.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ENVISIONQuery.html
 ---
+
 
 # bioconductor-envisionquery
 

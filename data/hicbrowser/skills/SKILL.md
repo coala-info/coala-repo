@@ -1,8 +1,9 @@
 ---
 name: hicbrowser
-description: HiCBrowser is a lightweight web-based visualization tool designed specifically for Hi-C data and associated genomic tracks.
+description: HiCBrowser is a lightweight web-based visualization tool for interactively browsing Hi-C data, TADs, and associated genomic tracks. Use when user asks to visualize chromosome interactions, browse multi-omic data tracks, or launch an interactive web interface for HiCExplorer plots.
 homepage: https://github.com/maxplanck-ie/HiCBrowser
 ---
+
 
 # hicbrowser
 

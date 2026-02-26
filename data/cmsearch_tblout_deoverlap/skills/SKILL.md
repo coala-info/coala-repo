@@ -1,8 +1,9 @@
 ---
 name: cmsearch_tblout_deoverlap
-description: The `cmsearch_tblout_deoverlap` tool provides a specialized Perl script, `cmsearch-deoverlap.pl`, designed to resolve hit redundancies in Infernal (v1.1x) tabular output.
+description: This tool resolves hit redundancies in Infernal tabular output by retaining only the highest-scoring hit among overlapping genomic coordinates. Use when user asks to de-overlap Infernal search results, remove redundant RNA hits, or reconcile overlapping hits from different models within the same clan.
 homepage: https://github.com/nawrockie/cmsearch_tblout_deoverlap
 ---
+
 
 # cmsearch_tblout_deoverlap
 

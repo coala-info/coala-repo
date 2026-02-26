@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tspair
-description: the package is available on all platforms; click for details.
+description: The bioconductor-tspair package implements the Top Scoring Pair algorithm for binary classification based on relative gene expression levels. Use when user asks to perform top scoring pair analysis, identify gene pairs for classification, or build rank-based classifiers.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/tspair.html
 ---
+
 
 # bioconductor-tspair
 

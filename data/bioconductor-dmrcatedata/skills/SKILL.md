@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmrcatedata
-description: the package is available on all platforms; click for details.
+description: This package provides probe filtering resources and genomic annotation objects for Illumina methylation arrays to support differential methylation analysis. Use when user asks to filter cross-hybridizing probes, identify SNP-confounded probes, or annotate differentially methylated regions for hg19, hg38, or mm10 genome builds.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DMRcatedata.html
 ---
+
 
 # bioconductor-dmrcatedata
 

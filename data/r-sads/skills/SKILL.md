@@ -1,8 +1,9 @@
 ---
 name: r-sads
-description: "Maximum likelihood tools to fit and compare models of species     abundance distributions and of species rank-abundance distributions.</p>"
+description: The r-sads tool provides maximum likelihood methods to fit, compare, and simulate species abundance and rank-abundance distributions. Use when user asks to fit probability distributions to ecological community data, generate Preston octaves, create Whitaker plots, or compare species abundance models using AIC.
 homepage: https://cran.r-project.org/web/packages/sads/index.html
 ---
+
 
 # r-sads
 

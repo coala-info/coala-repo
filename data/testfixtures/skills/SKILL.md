@@ -1,8 +1,9 @@
 ---
 name: testfixtures
-description: testfixtures is a Go library designed to simplify functional testing by managing database state through YAML files.
+description: testfixtures is a Go library that manages database state for functional testing by wiping tables and populating them with data from YAML files. Use when user asks to manage database fixtures, populate test data from YAML files, or reset database state between Go tests.
 homepage: https://github.com/go-testfixtures/testfixtures
 ---
+
 
 # testfixtures
 

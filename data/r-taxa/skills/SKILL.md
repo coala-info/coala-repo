@@ -1,8 +1,9 @@
 ---
 name: r-taxa
-description: "Provides classes for storing and manipulating taxonomic data.   Most of the classes can be treated like base R vectors (e.g. can be used   in tables as columns and can be named). Vectorized classes can store taxon names  and authorities, taxon IDs from databases, taxon ranks, and other types of  information. More complex classes are provided to store taxonomic trees and  user-defined data associated with them.</p>"
+description: The r-taxa tool provides a framework for storing, manipulating, and analyzing taxonomic data in R using specialized classes for names, ranks, and hierarchies. Use when user asks to store taxonomic entities as vectors, manage database identifiers, build taxonomic trees, or filter data by taxonomic rank.
 homepage: https://cloud.r-project.org/web/packages/taxa/index.html
 ---
+
 
 # r-taxa
 

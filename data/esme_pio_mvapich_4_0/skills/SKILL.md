@@ -1,8 +1,9 @@
 ---
 name: esme_pio_mvapich_4_0
-description: The ParallelIO (PIO) library provides a high-level interface for C and Fortran applications to perform scalable parallel I/O.
+description: The esme_pio_mvapich_4_0 library provides a high-level interface for C and Fortran applications to perform scalable parallel I/O using MVAPICH. Use when user asks to install the PIO library, configure asynchronous I/O modes, or manage parallel data writes with NetCDF and PnetCDF backends.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_mvapich_4_0
 

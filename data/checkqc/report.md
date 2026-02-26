@@ -3,7 +3,7 @@
 ## checkqc
 
 ### Tool Description
-A tool for checking the quality of sequencing data (Note: The provided help text contains only system error logs and no usage information).
+checkQC is a command line utility designed to quickly gather and assess quality control metrics from an Illumina sequencing run. It is highly customizable and which quality controls modules should be run for a particular run type should be specified in the provided configuration file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/checkqc:4.0.7--pyhdfd78af_0
@@ -18,14 +18,21 @@ A tool for checking the quality of sequencing data (Note: The provided help text
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/checkqc:4.0.7--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3505604529/rootfs/usr/bin/bash: no space left on device
+Usage: checkqc [OPTIONS] RUNFOLDER
+
+  checkQC is a command line utility designed to quickly gather and assess
+  quality control metrics from an Illumina sequencing run. It is highly
+  customizable and which quality controls modules should be run for a
+  particular run type should be specified in the provided configuration file.
+
+Options:
+  --config PATH              Path to the checkQC configuration file
+  --json                     Print the results of the run as json to stdout
+  --downgrade-errors TEXT    Downgrade errors to warnings for a specific
+                             handler, can be used multiple times
+  --use-closest-read-length  Use the closest read length if the read length
+                             used isn't specified in the config
+  --version                  Show the version and exit.
+  --help                     Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

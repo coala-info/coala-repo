@@ -1,8 +1,9 @@
 ---
 name: perl-importer
-description: The `Importer` module provides a robust alternative to the default Perl `import` mechanism.
+description: The perl-importer module provides an alternative interface for importing symbols that gives the consumer control over how functions are brought into their scope. Use when user asks to import symbols lexically, rename imported functions to avoid naming conflicts, or get function references without installing them into a symbol table.
 homepage: http://metacpan.org/pod/Importer
 ---
+
 
 # perl-importer
 

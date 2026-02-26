@@ -1,8 +1,9 @@
 ---
 name: p7zip
-description: p7zip is a powerful command-line utility for file compression and archiving, derived from the 7-Zip project.
+description: p7zip is a command-line utility for file compression and archiving that supports advanced codecs like Zstandard and LZ4. Use when user asks to compress files, extract archives, list archive contents, create encrypted backups, or split large data into volumes.
 homepage: https://github.com/p7zip-project/p7zip
 ---
+
 
 # p7zip
 

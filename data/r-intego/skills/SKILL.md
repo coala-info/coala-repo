@@ -1,8 +1,9 @@
 ---
 name: r-intego
-description: R package intego (documentation from project home).
+description: The r-intego tool integrates multiple Gene Ontology semantic similarity measures into a single robust functional similarity score. Use when user asks to integrate GO similarity matrices, combine semantic similarity measures, or calculate integrated gene functional similarities using the InteGO or InteGO2 algorithms.
 homepage: https://cran.r-project.org/web/packages/intego/index.html
 ---
+
 
 # r-intego
 

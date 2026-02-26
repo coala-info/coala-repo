@@ -1,8 +1,9 @@
 ---
 name: bioconductor-golubesets
-description: the package is available on all platforms; click for details.
+description: This package provides access to the landmark Golub et al. (1999) leukemia gene expression dataset in ExpressionSet format. Use when user asks to load the Golub ALL/AML dataset, access leukemia gene expression samples for machine learning, or perform differential expression analysis on classic cancer datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/golubEsets.html
 ---
+
 
 # bioconductor-golubesets
 

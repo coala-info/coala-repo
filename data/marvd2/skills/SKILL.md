@@ -1,8 +1,9 @@
 ---
 name: marvd2
-description: The Metagenomic Archaeal Virus Detector 2 (marvd2) is a specialized bioinformatics tool for the identification of archaeal viruses within metagenomic datasets.
+description: marvd2 identifies archaeal viruses within metagenomic datasets by analyzing genomic scaffolds for specific viral signatures. Use when user asks to identify archaeal viruses in metagenomes, classify viral sequences into families, or extract viral contigs from assembled scaffolds.
 homepage: https://bitbucket.org/MAVERICLab/marvd2
 ---
+
 
 # marvd2
 

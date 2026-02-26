@@ -2,11 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: perl-test-file-contents
 label: perl-test-file-contents
-doc: "A tool for testing the contents of files, typically associated with the Perl
-  Test::File::Contents module. (Note: The provided input text contains execution logs
-  and an error message rather than the standard help documentation.)\n\nTool homepage:
-  http://search.cpan.org/dist/Test-File-Contents/"
-inputs: []
+doc: "Tests if a file contains specific content.\n\nTool homepage: http://search.cpan.org/dist/Test-File-Contents/"
+inputs:
+  - id: file
+    type: File
+    doc: The file to test.
+    inputBinding:
+      position: 1
+  - id: content
+    type: string
+    doc: The content to search for in the file.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

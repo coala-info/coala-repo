@@ -1,8 +1,9 @@
 ---
 name: r-longitudinal
-description: "Contains general data structures and   functions for longitudinal data with multiple variables,    repeated measurements, and irregularly spaced time points.   Also implements a shrinkage estimator of dynamical correlation   and dynamical covariance.</p>"
+description: The r-longitudinal package provides data structures and functions for analyzing multiple time course data with irregular sampling and repeated measurements. Use when user asks to manage longitudinal data structures, estimate dynamical correlation or covariance using shrinkage methods, handle time-series data with unequal temporal spacing, or summarize and plot multiple time course variables.
 homepage: https://cloud.r-project.org/web/packages/longitudinal/index.html
 ---
+
 
 # r-longitudinal
 

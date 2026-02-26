@@ -1,8 +1,9 @@
 ---
 name: perl-pegex
-description: Pegex is a powerful parsing framework that combines the clean syntax of Parsing Expression Grammars (PEG) with the flexibility of a "Receiver" architecture.
+description: Pegex is a parsing framework that combines Parsing Expression Grammars with a receiver architecture to process structured data into abstract syntax trees. Use when user asks to define a grammar in a .pgx file, parse strings into data structures, create custom receivers for data transformation, or precompile grammars for performance.
 homepage: https://metacpan.org/dist/Pegex/view/lib/Pegex.pod
 ---
+
 
 # perl-pegex
 

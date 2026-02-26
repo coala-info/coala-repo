@@ -1,8 +1,9 @@
 ---
 name: ucsc-getrna
-description: The `ucsc-getrna` utility (commonly executed as the binary `getRna`) is a specialized tool within the UCSC Kent command-line suite.
+description: The `ucsc-getrna` tool retrieves mRNA sequences for GenBank or RefSeq entries from genomic databases. Use when user asks to retrieve mRNA sequences, extract transcript sequences, or get RNA sequences.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-getrna
 

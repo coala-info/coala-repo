@@ -1,8 +1,9 @@
 ---
 name: chanjo
-description: Chanjo is a specialized tool designed for clinical genomics to manage and analyze sequence coverage data.
+description: "Chanjo manages and analyzes clinical genomics sequence coverage data by storing annotated metrics in a SQL database. Use when user asks to initialize a coverage database, link genomic region definitions, load processed coverage data, or calculate mean coverage and completeness metrics."
 homepage: https://github.com/Clinical-Genomics/chanjo
 ---
+
 
 # chanjo
 

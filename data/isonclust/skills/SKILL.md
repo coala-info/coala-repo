@@ -1,8 +1,9 @@
 ---
 name: isonclust
-description: isONclust is a tool designed for the de novo clustering of long transcript reads.
+description: isONclust performs de novo clustering of long transcript reads from Oxford Nanopore or PacBio technologies to group them by gene family. Use when user asks to cluster long reads, group transcripts by gene of origin, or generate cluster-specific FASTQ files from ONT or Iso-Seq data.
 homepage: https://github.com/ksahlin/isONclust
 ---
+
 
 # isonclust
 

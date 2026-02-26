@@ -1,9 +1,9 @@
 # perl-pcap CWL Generation Report
 
-## perl-pcap
+## perl-pcap_bwa_mem.pl
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for perl-pcap; it is an error log from a container build process indicating a 'no space left on device' failure.
+BWA MEM alignment wrapper for processing BAM, CRAM, or FASTQ files, including support for duplicate marking and CRAM conversion.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0
@@ -18,79 +18,105 @@ The provided text does not contain help information or usage instructions for pe
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 16:26:05  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:88bf96098fd72cf1d429367fa6b2ad245de5b78b4808b8d933e7639551a2d4c8: unpack entry: usr/local/lib/5.26.2/pod/perlglossary.pod: unpack to regular file: short write: write /tmp/build-temp-1116691895/rootfs/usr/local/lib/5.26.2/pod/perlglossary.pod: no space left on device
+Usage:
+    bwa_mem.pl [options] [file(s)...]
+
+      Required parameters:
+        -outdir      -o   Folder to output result to.
+        -reference   -r   Path to reference genome file *.fa[.gz]
+        -sample      -s   Sample name to be applied to output file.
+        -threads     -t   Number of threads to use. [1]
+
+      Optional parameters:
+        -fragment    -f   Split input into fragements of X million repairs [10]
+        -nomarkdup   -n   Don't mark duplicates
+        -cram        -c   Output cram, see '-sc'
+        -scramble    -sc  Single quoted string of parameters to pass to Scramble when '-c' used
+                          - '-I,-O' are used internally and should not be provided
+        -bwa         -b     Single quoted string of additional parameters to pass to BWA
+                             - '-t,-p,-R' are used internally and should not be provided
+        -map_threads -mt  Number of cores applied to each parallel BWA job when '-t' exceeds this value and '-i' is not in use[6]
+
+      Targeted processing:
+        -process     -p   Only process this step then exit, optionally set -index
+                            bwamem - only applicable if input is bam
+                              mark - Run duplicate marking (-index N/A)
+                             stats - Generates the *.bas file for the final BAM.
+
+        -index       -i   Optionally restrict '-p' to single job
+                            bwamem - 1..<lane_count>
+
+      Performance variables
+        -bwa_pl      -l   BWA runs ~8% quicker when using the tcmalloc library from
+                          https://github.com/gperftools/ (assuming number of cores not exceeded)
+                          If available specify the path to 'gperftools/lib/libtcmalloc_minimal.so'.
+
+      Other:
+        -jobs        -j   For a parallel step report the number of jobs required
+        -help        -h   Brief help message.
+        -man         -m   Full documentation.
+
+    File list can be full file names or wildcard, e.g.
+
+    mutiple BAM inputs
+         bwa_mem.pl -t 16 -r some/genome.fa.gz -o myout -s sample input/*.bam
+
+    multiple paired fastq inputs
+         bwa_mem.pl -t 16 -r some/genome.fa.gz -o myout -s sample input/*_[12].fq[.gz]
+
+    multiple interleaved paired fastq inputs
+         bwa_mem.pl -t 16 -r some/genome.fa.gz -o myout -s sample input/*.fq[.gz]
+
+    mixture of BAM and CRAM
+         bwa_mem.pl -t 16 -r some/genome.fa.gz -o myout -s sample input/*.bam input/*.cram
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## perl-pcap_bwa_mem.pl
-
-### Tool Description
-No description available: The provided text contains system error logs regarding a container build failure ('no space left on device') rather than the help documentation for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0
-- **Homepage**: https://github.com/ICGC-TCGA-PanCancer/PCAP-core
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-pcap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 16:27:48  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:88bf96098fd72cf1d429367fa6b2ad245de5b78b4808b8d933e7639551a2d4c8: unpack entry: usr/local/lib/5.26.2/pod/perlglossary.pod: unpack to regular file: short write: write /tmp/build-temp-2737373132/rootfs/usr/local/lib/5.26.2/pod/perlglossary.pod: no space left on device
-```
-
-## perl-pcap_diff_bams
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0
-- **Homepage**: https://github.com/ICGC-TCGA-PanCancer/PCAP-core
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-pcap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 16:28:35  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:88bf96098fd72cf1d429367fa6b2ad245de5b78b4808b8d933e7639551a2d4c8: unpack entry: usr/local/lib/5.26.2/pod/perlglossary.pod: unpack to regular file: short write: write /tmp/build-temp-2039207305/rootfs/usr/local/lib/5.26.2/pod/perlglossary.pod: no space left on device
-```
 
 ## perl-pcap_gnos_pull.pl
 
 ### Tool Description
-A tool for pulling data from GNOS (Global Network of Biomedical Data Storage), typically used in genomic data analysis workflows.
+PCAP GNOS pull tool for retrieving ALIGNMENTS or CALLS metadata and data from GNOS repositories.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0
 - **Homepage**: https://github.com/ICGC-TCGA-PanCancer/PCAP-core
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-pcap/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 16:29:10  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-pcap:3.5.2--pl526h14c3975_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:88bf96098fd72cf1d429367fa6b2ad245de5b78b4808b8d933e7639551a2d4c8: unpack entry: usr/local/lib/5.26.2/pod/perlglossary.pod: unpack to regular file: short write: write /tmp/build-temp-2984494482/rootfs/usr/local/lib/5.26.2/pod/perlglossary.pod: no space left on device
+#################
+# PCAP version 3.5.2, Copyright (C) 2014-2017 ICGC/TCGA Pan-Cancer Analysis Project
+# PCAP comes with ABSOLUTELY NO WARRANTY
+# See LICENSE for full details.
+#################
+Usage:
+    ./gnos_pull.pl [-h] -u http://pancancer.info/gnos_metadata/latest/ -c
+    gnos_pull.ini -o local_mirror/
+
+      Required input:
+
+        --analysis  (-a)  ALIGNMENTS or CALLS
+
+        --outdir    (-o)  Where to save jsonl and resulting GNOS downloads
+
+        --config    (-c)  Mapping of GNOS repos to permissions keys
+
+      Other options:
+
+        --symlinks  (-s)  Rebuild symlinks only.
+
+        --threads   (-t)  Number of parallel GNOS retrievals.
+
+        --url       (-u)  The base URL to retrieve jsonl file from
+                            [http://pancancer.info/gnos_metadata/latest/]
+
+        --info      (-i)  Just prints how many donor's will be included in pull and some stats.
+
+        --debug     (-d)  prints extra debug information
+
+        --help      (-h)  Brief documentation
+
+        --man       (-m)  More verbose usage info
 ```
 

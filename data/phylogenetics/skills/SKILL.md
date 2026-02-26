@@ -1,8 +1,9 @@
 ---
 name: phylogenetics
-description: The `phylogenetics` skill provides a high-level Python API to orchestrate phylogenetic analysis.
+description: This tool provides a Python API to orchestrate phylogenetic workflows by wrapping PhyML for tree building and PAML for ancestral reconstruction. Use when user asks to build phylogenetic trees, reconstruct ancestral sequences, or programmatically manage phylogenetic project data.
 homepage: https://github.com/Zsailer/phylogenetics
 ---
+
 
 # phylogenetics
 

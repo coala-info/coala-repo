@@ -1,8 +1,9 @@
 ---
 name: perl-statistics-descriptive
-description: This skill provides guidance on using the `Statistics::Descriptive` Perl module to process numerical datasets.
+description: This tool provides basic descriptive statistical functions for numerical datasets using the Perl Statistics::Descriptive module. Use when user asks to calculate statistical summaries, generate frequency distributions, or perform memory-efficient data analysis in Perl.
 homepage: http://web-cpan.shlomifish.org/modules/Statistics-Descriptive/
 ---
+
 
 # perl-statistics-descriptive
 

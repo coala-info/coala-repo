@@ -1,8 +1,9 @@
 ---
 name: andi
-description: `andi` (ANchor DIstances) is an alignment-free tool optimized for calculating the evolutionary distance between closely related genomic sequences.
+description: andi calculates evolutionary distances between closely related genomic sequences using an alignment-free approach based on long exact matches. Use when user asks to estimate genomic distances, generate a distance matrix for phylogeny reconstruction, or compare thousands of closely related genomes efficiently.
 homepage: https://github.com/evolbioinf/andi/
 ---
+
 
 # andi
 

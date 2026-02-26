@@ -1,8 +1,9 @@
 ---
 name: kobas
-description: KOBAS is a specialized bioinformatics tool designed for automated annotation and pathway identification.
+description: KOBAS performs functional annotation and pathway enrichment analysis by mapping gene lists or sequences to known biological pathways. Use when user asks to assign KEGG Orthology terms to sequences, map gene IDs to orthologs, or identify significantly enriched metabolic pathways and functional categories.
 homepage: http://kobas.cbi.pku.edu.cn
 ---
+
 
 # kobas
 

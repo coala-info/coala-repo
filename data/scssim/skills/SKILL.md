@@ -1,8 +1,9 @@
 ---
 name: scssim
-description: `scssim` (Single-Cell Genome Sequencing Simulator) is a bioinformatics tool designed to emulate the complexities of single-cell genomic data.
+description: scssim simulates single-cell genomic data by injecting variations into a reference genome and mimicking the amplification and sequencing process. Use when user asks to simulate genomic variations, learn sequencing profiles from real-world data, or generate synthetic single-cell reads.
 homepage: https://github.com/qasimyu/scssim
 ---
+
 
 # scssim
 

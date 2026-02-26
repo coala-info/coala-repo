@@ -3,7 +3,7 @@
 ## ncbitk
 
 ### Tool Description
-NCBI ToolKit (No description available from the provided error log)
+Sync your collection with the latest assembly versions or download the latest assembly summary and taxonomy dump.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbitk:1.0a17--py_0
@@ -18,11 +18,17 @@ NCBI ToolKit (No description available from the provided error log)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ncbitk:1.0a17--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4087907572: no space left on device
+Usage: ncbitk [OPTIONS] GENBANK [SPECIES]...
+
+Options:
+  --update / --no-update          Sync your collection with the latest
+                                  assembly versions
+  --update-assembly / --local-assembly
+                                  Download the latest assembly summary and
+                                  taxonomy dumpOr use your local copies.
+  --from-file FILENAME
+  --status                        Show the current status of your genome
+                                  collection
+  --help                          Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

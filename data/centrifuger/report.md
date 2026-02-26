@@ -3,70 +3,45 @@
 ## centrifuger
 
 ### Tool Description
-A classifier for metagenomic sequences. (Note: The provided text contains system error logs regarding a failed container build and does not include the tool's help documentation; therefore, no arguments could be extracted.)
+Perform taxonomic classification of sequencing reads.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/centrifuger:1.0.12--h077b44d_0
+- **Docker Image**: quay.io/biocontainers/centrifuger:1.1.0--hf426362_0
 - **Homepage**: https://github.com/mourisl/centrifuger
 - **Package**: https://anaconda.org/channels/bioconda/packages/centrifuger/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/centrifuger/overview
-- **Total Downloads**: 12.0K
+- **Total Downloads**: 12.1K
 - **Last updated**: 2026-02-20
 - **GitHub**: https://github.com/mourisl/centrifuger
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/centrifuger:1.0.12--h077b44d_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/getconf: unpack to regular file: short write: write /tmp/build-temp-3930569136/rootfs/usr/bin/getconf: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## centrifuger_centrifuger-build
-
-### Tool Description
-The provided text does not contain help information for centrifuger-build, but appears to be an error log from a container build process (Apptainer/Singularity) indicating a 'no space left on device' failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/centrifuger:1.0.12--h077b44d_0
-- **Homepage**: https://github.com/mourisl/centrifuger
-- **Package**: https://anaconda.org/channels/bioconda/packages/centrifuger/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/centrifuger:1.0.12--h077b44d_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/getconf: unpack to regular file: short write: write /tmp/build-temp-1903709252/rootfs/usr/bin/getconf: no space left on device
-```
-
-## centrifuger_centrifuger-quant
-
-### Tool Description
-The provided text contains system error logs related to a container build failure ('no space left on device') and does not contain the help documentation for centrifuger-quant. As a result, no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/centrifuger:1.0.12--h077b44d_0
-- **Homepage**: https://github.com/mourisl/centrifuger
-- **Package**: https://anaconda.org/channels/bioconda/packages/centrifuger/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/centrifuger:1.0.12--h077b44d_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/getconf: unpack to regular file: short write: write /tmp/build-temp-3566192912/rootfs/usr/bin/getconf: no space left on device
+./centrifuger [OPTIONS] > output.tsv:
+Required:
+	-x FILE: index prefix
+	-1 FILE -2 FILE: paired-end read
+		or
+	-u FILE: single-end read
+		or
+	-i FILE: interleaved read file
+		or
+	--sample-sheet FILE: list of sample files, each row: "read1 read2 barcode UMI output". Use dot(.) to represent no such file
+Optional:
+	-t INT: number of threads [1]
+	-k INT: report upto <int> distinct, primary assignments for each read pair [1]
+	--un STR: output unclassified reads to files with the prefix of <str>
+	--cl STR: output classified reads to files with the prefix of <str>
+	--barcode STR: path to the barcode file
+	--UMI STR: path to the UMI file
+	--read-format STR: format for read, barcode and UMI files, e.g. r1:0:-1,r2:0:-1,bc:0:15,um:16:-1 for paired-end files with barcode and UMI
+	--min-hitlen INT: minimum length of partial hits [auto]
+	--hitk-factor INT: resolve at most <int>*k entries for each hit [40; use 0 for no restriction]
+	--merge-readpair: merge overlapped paired-end reads and trim adapters [no merge]
+	--expand-taxid: output the tax IDs that are promoted to the final report tax ID [no]
+	--barcode-whitelist STR: path to the barcode whitelist file.
+	--barcode-translate STR: path to the barcode translation file.
+	-v: print the version information and quit
 ```
 

@@ -2,10 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mashpit
 label: mashpit
-doc: "The provided text does not contain help information or usage instructions; it
-  contains system log messages and a fatal error regarding a container build failure
-  (no space left on device).\n\nTool homepage: https://github.com/tongzhouxu/mashpit"
-inputs: []
+doc: "mashpit: error: argument -h/--help: ignored explicit argument 'elp'\n\nTool
+  homepage: https://github.com/tongzhouxu/mashpit"
+inputs:
+  - id: command
+    type: string
+    doc: The command to run
+    inputBinding:
+      position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Enable verbose output
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

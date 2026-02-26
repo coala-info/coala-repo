@@ -3,10 +3,14 @@
 ## piler
 
 ### Tool Description
-The provided text contains system error messages regarding disk space and container image conversion rather than the tool's help documentation. No arguments or descriptions could be extracted.
+PILER v1.0
+http://www.drive5.com/piler
+Written by Robert C. Edgar
+This software is donated to the public domain.
+Please visit web site for requested citation.
 
 ### Metadata
-- **Docker Image**: biocontainers/piler:v020140707-2-deb_cv1
+- **Docker Image**: quay.io/biocontainers/piler:0.1--0
 - **Homepage**: https://github.com/alvarotrigo/pagePiling.js
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,9 +22,31 @@ The provided text contains system error messages regarding disk space and contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/67687ec1e9e2d309b6ad7e2accfebf06c2d8f10ae9f8018f65ebdc13d7ea1d68: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/piler:v020140707-2-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1033398533: no space left on device
+PILER v1.0
+http://www.drive5.com/piler
+Written by Robert C. Edgar
+This software is donated to the public domain.
+Please visit web site for requested citation.
+
+Usage:
+  piler -trs <hitfile> -out <trsfile> [options]
+  piler -trs2fasta <trsfile> -seq <fastafile> [-path <path>] [-maxfam <maxfam>]
+  piler -cons <alnfile> -out <fastafile> -label <label>
+  piler -annot <gff> -rep <repfile> -out <annotfile>
+  piler -help
+  piler -version
+
+Use -quiet to suppress progress messages
+
+-trs options:
+  -mincover <n>
+  -maxlengthdiffpct <n>
+  -piles <pilefile>
+  -images <imagefile>
+  -multihit
+
+For further information, please see the User Guide.
+
+** Command line error** Invalid command line option "-help"
 ```
 

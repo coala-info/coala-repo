@@ -1,8 +1,9 @@
 ---
 name: py2bit
-description: The `py2bit` skill enables efficient, random access to genomic data stored in the 2bit format.
+description: "py2bit provides efficient random access to genomic sequences and metadata stored in the 2bit file format. Use when user asks to extract genomic sequences, retrieve chromosome lengths, calculate base composition, or identify masked regions from 2bit files."
 homepage: https://github.com/deeptools/py2bit
 ---
+
 
 # py2bit
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ipo
-description: the package is available on all platforms; click for details.
+description: This tool automates the optimization of XCMS peak picking, retention time correction, and grouping parameters using Design of Experiments. Use when user asks to find optimal metabolomics processing parameters, tune centWave or matchedFilter settings, or optimize retention time alignment and grouping.
 homepage: https://bioconductor.org/packages/release/bioc/html/IPO.html
 ---
+
 
 # bioconductor-ipo
 

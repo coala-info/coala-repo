@@ -1,11 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: halfdeep_bam_depth.sh
+baseCommand: ./bam_depth
 label: halfdeep_bam_depth.sh
-doc: "A tool for calculating BAM depth using halfdeep. (Note: The provided help text
-  contains only system error messages and no usage information.)\n\nTool homepage:
-  https://github.com/richard-burhans/HalfDeep"
-inputs: []
+doc: "Assumes we have <ref> and input.fofn in the current dir\n\nTool homepage: https://github.com/richard-burhans/HalfDeep"
+inputs:
+  - id: ref
+    type: string
+    doc: Reference file
+    inputBinding:
+      position: 1
+  - id: number
+    type:
+      - 'null'
+      - int
+    doc: Line number in input.fofn of the file to process. If not given, 
+      SLURM_ARRAY_TASK_ID is used.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

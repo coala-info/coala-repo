@@ -1,8 +1,9 @@
 ---
 name: plmc
-description: The `plmc` tool implements a maximum a posteriori (MAP) estimation approach to infer the parameters of a Potts model (or Ising model for binary data) from biological sequence data.
+description: plmc infers evolutionary couplings from multiple sequence alignments by estimating the parameters of a Potts model. Use when user asks to calculate coupling scores, infer protein or RNA models, or identify direct residue interactions in biological sequences.
 homepage: https://github.com/debbiemarkslab/plmc
 ---
+
 
 # plmc
 

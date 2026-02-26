@@ -1,8 +1,9 @@
 ---
 name: cobra
-description: COBRApy is the industry-standard Python library for Constraint-Based Reconstruction and Analysis (COBRA).
+description: COBRApy is a Python library for constraint-based reconstruction and analysis of metabolic models. Use when user asks to simulate metabolic behavior, perform flux balance analysis, manipulate model constraints, or predict the effects of genetic and environmental perturbations.
 homepage: https://opencobra.github.io/cobrapy
 ---
+
 
 # cobra
 

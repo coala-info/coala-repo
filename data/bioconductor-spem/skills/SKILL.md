@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spem
-description: the package is available on all platforms; click for details.
+description: This package reconstructs gene regulatory networks from time-series data using the S-system model. Use when user asks to estimate S-system parameters, reconstruct gene regulatory networks, or analyze time-course gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SPEM.html
 ---
+
 
 # bioconductor-spem
 

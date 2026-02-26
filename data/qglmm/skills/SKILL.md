@@ -1,8 +1,9 @@
 ---
 name: qglmm
-description: The `qglmm` package (also referred to as `PQLseqPy`) provides a high-performance Python implementation of Penalized Quasi-Likelihood (PQL) for binomial data.
+description: The qglmm package provides a high-performance implementation of Penalized Quasi-Likelihood for fitting generalized linear mixed models to binomial genomic data. Use when user asks to fit GLMMs for allele counts, account for population structure or kinship in genomic studies, and estimate heritability or fixed-effect coefficients using PQL.
 homepage: https://github.com/mokar2001/qglmm
 ---
+
 
 # qglmm
 

@@ -1,8 +1,9 @@
 ---
 name: prince
-description: PRINCE (PythonPRINCE) is a specialized bioinformatics tool that approximates the copy number of tandem repeats directly from FastQ files.
+description: PRINCE approximates the copy number of tandem repeats directly from FastQ files using a k-mer based recruitment strategy. Use when user asks to estimate VNTR copy numbers, query samples against existing models, or train new boosting models for specific organisms.
 homepage: https://github.com/WGS-TB/PythonPrince
 ---
+
 
 # prince
 

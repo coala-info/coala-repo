@@ -1,8 +1,9 @@
 ---
 name: pypolca
-description: pypolca is a standalone Python re-implementation of the POLCA (POLishing by Calling Alternatives) polisher originally from the MaSuRCA toolkit.
+description: pypolca is a Python tool that corrects errors in genome assemblies by mapping high-accuracy short reads to a draft assembly. Use when user asks to polish a bacterial genome assembly, correct small insertions or deletions using short reads, or evaluate assembly quality by identifying potential errors.
 homepage: https://github.com/gbouras13/pypolca
 ---
+
 
 # pypolca
 

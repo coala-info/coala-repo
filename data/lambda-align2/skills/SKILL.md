@@ -1,8 +1,9 @@
 ---
 name: lambda-align2
-description: Lambda is a high-performance local aligner designed for protein-space searches (BLASTP, BLASTX).
+description: Lambda is a high-performance local aligner designed for rapid protein-space searches and taxonomic analysis of massive biological datasets. Use when user asks to index a reference database, perform BLASTP or BLASTX searches, or conduct taxonomic binning using the lowest common ancestor algorithm.
 homepage: http://seqan.github.io/lambda/
 ---
+
 
 # lambda-align2
 

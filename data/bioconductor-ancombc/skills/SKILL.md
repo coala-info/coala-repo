@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ancombc
-description: "the package includes Analysis of Compositions of Microbiomes with Bias Correction 2 (ANCOM-BC2), Analysis of Compositions of Microbiomes with Bias Correction (ANCOM-BC), and Analysis of Composition of Microbiomes (ANCOM) for DA analysis, and Sparse Estimation of Correlations among Microbiomes (SECOM) for correlation analysis. Microbiome data are typically subject to two sources of biases: unequal sampling fractions (sample-specific biases) and differential sequencing efficiencies (taxon-specific biases). Methodologies included in the ANCOMBC package are designed to correct these biases and construct statistically consistent estimators."
+description: This package performs differential abundance analysis and correlation estimation for microbiome data while correcting for compositional biases. Use when user asks to perform differential abundance analysis, account for sampling fractions, identify structural zeros, or estimate sparse correlations between taxa.
 homepage: https://bioconductor.org/packages/release/bioc/html/ANCOMBC.html
 ---
+
 
 # bioconductor-ancombc
 

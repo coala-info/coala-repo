@@ -1,8 +1,9 @@
 ---
 name: perl-math-bigrat
-description: Math::BigRat is a Perl module designed for handling arbitrary big rational numbers.
+description: This Perl module enables the handling and calculation of arbitrary-precision rational numbers as exact fractions. Use when user asks to perform exact arithmetic with large fractions, represent numbers without rounding errors, or manipulate numerators and denominators of big rational values.
 homepage: http://metacpan.org/pod/Math::BigRat
 ---
+
 
 # perl-math-bigrat
 

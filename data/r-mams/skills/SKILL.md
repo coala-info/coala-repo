@@ -1,8 +1,9 @@
 ---
 name: r-mams
-description: R package mams (documentation from project home).
+description: This tool designs and evaluates multi-arm multi-stage clinical trial designs with normal endpoints. Use when user asks to calculate sample sizes, determine group sequential boundaries, or simulate operating characteristics for adaptive trials with multiple treatment arms.
 homepage: https://cran.r-project.org/web/packages/mams/index.html
 ---
+
 
 # r-mams
 

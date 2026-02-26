@@ -1,8 +1,9 @@
 ---
 name: cif2cell
-description: cif2cell is a specialized tool that automates the translation of experimental crystallographic data into the specific input formats required by various density functional theory (DFT) and electronic structure simulation packages.
+description: cif2cell converts crystallographic data from CIF files into input formats for various electronic structure and density functional theory simulation packages. Use when user asks to convert CIF files to program-specific inputs, generate atomic positions from symmetry operations, or create input files for codes like VASP, Quantum Espresso, and ABINIT.
 homepage: https://github.com/torbjornbjorkman/cif2cell
 ---
+
 
 # cif2cell
 

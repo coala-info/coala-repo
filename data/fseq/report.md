@@ -3,7 +3,7 @@
 ## fseq
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a system error log regarding a container build failure (no space left on device).
+F-Seq Version 1.84
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fseq:1.84--py35pl5.22.0_0
@@ -18,29 +18,25 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fseq:1.84--py35pl5.22.0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1820096806: no space left on device
-```
+F-Seq Version 1.84
+usage: fseq [options]... [file(s)]...
+ -b <background dir>     background directory (default=none)
+ -c <arg>                genomic count of sequence reads (defualt =
+                         calculated)
+ -d <input dir>          input directory (default=current directory)
+ -f <arg>                fragment size (default=estimated from data)
+ -h                      print usage
+ -l <arg>                feature length (default=600)
+ -o <output dir>         output directory (default=current directory)
+ -of <wig | bed | npf>   output format (default wig)
+ -p <ploidy dir>         ploidy/input directory (default=none)
+ -s <arg>                wiggle track step (default=1)
+ -t <arg>                threshold (standard deviations) (default=4.0)
+ -v                      verbose output
+ -wg <arg>               wg threshold set (defualt = calculated)
 
-
-## Metadata
-- **Skill**: generated
-
-## fseq_mapviewToBed.pl
-
-### Tool Description
-A script to convert MapView format files to BED format. (Note: The provided text contains only system error messages and no usage information; therefore, no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fseq:1.84--py35pl5.22.0_0
-- **Homepage**: http://fureylab.web.unc.edu/software/fseq/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fseq/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fseq:1.84--py35pl5.22.0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3124500351: no space left on device
+You can also specify JVM parameters such as -D, -XX, or -Xm.
+If you get an "OutOfMemory" error, simply increase the heap size by adding -Xmx parameter.
+E.g. fseq -Xmx12g input.bed
 ```
 

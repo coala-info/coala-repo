@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gseamining
-description: the package is available on all platforms; click for details.
+description: GSEAmining visualizes and clusters Gene Set Enrichment Analysis results based on leading-edge gene overlap to identify biological themes. Use when user asks to cluster gene sets, visualize enriched terms in word clouds, identify core genes driving enrichment, or reduce redundancy in GSEA outputs.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSEAmining.html
 ---
+
 
 # bioconductor-gseamining
 

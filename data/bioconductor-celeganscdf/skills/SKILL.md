@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celeganscdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping for the Affymetrix C. elegans GeneChip. Use when user asks to map probe coordinates to indices, access chip dimensions, or process low-level C. elegans microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/celeganscdf.html
 ---
+
 
 # bioconductor-celeganscdf
 

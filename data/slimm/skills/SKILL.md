@@ -1,8 +1,9 @@
 ---
 name: slimm
-description: SLIMM (Species Level Identification of Microbes from Metagenomes) is a taxonomic profiling tool that identifies microorganisms present in metagenomic samples.
+description: SLIMM is a taxonomic profiling tool that identifies microorganisms in metagenomic samples using alignment files. Use when user asks to perform species-level identification, generate taxonomic profiles from BAM or SAM files, or build custom taxonomic databases.
 homepage: https://github.com/seqan/slimm/blob/master/README.md
 ---
+
 
 # slimm
 

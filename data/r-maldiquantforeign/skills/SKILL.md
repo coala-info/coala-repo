@@ -1,8 +1,9 @@
 ---
 name: r-maldiquantforeign
-description: "Functions for reading (tab, csv, Bruker fid, Ciphergen         XML, mzXML, mzML, imzML, Analyze 7.5, CDF, mMass MSD) and         writing (tab, csv, mMass MSD, mzML, imzML) different file         formats of mass spectrometry data into/from 'MALDIquant'         objects.</p>"
+description: This tool provides import and export routines for mass spectrometry data in R using the MALDIquantForeign package. Use when user asks to read or write various mass spectrometry file formats, import spectra or peak lists into MALDIquant objects, or export processed results to formats like mzML, imzML, and CSV.
 homepage: https://cloud.r-project.org/web/packages/MALDIquantForeign/index.html
 ---
+
 
 # r-maldiquantforeign
 

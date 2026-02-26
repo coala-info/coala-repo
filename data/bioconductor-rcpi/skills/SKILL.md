@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcpi
-description: the package is available on all platforms; click for details.
+description: Rcpi provides a comprehensive toolkit for calculating molecular descriptors and protein features to facilitate compound-protein interaction modeling. Use when user asks to calculate molecular descriptors, extract protein sequence features, or predict compound-protein interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rcpi.html
 ---
+
 
 # bioconductor-rcpi
 

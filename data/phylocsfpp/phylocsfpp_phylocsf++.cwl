@@ -2,10 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: phylocsf++
 label: phylocsfpp_phylocsf++
-doc: "PhyloCSF++ is a tool for identifying protein-coding regions using comparative
-  genomics. (Note: The provided text contains container build errors rather than help
-  documentation; no arguments could be extracted.)\n\nTool homepage: https://github.com/cpockrandt/PhyloCSFpp"
-inputs: []
+doc: "A fast and easy-to-use tool to compute PhyloCSF scores and tracks and annotate
+  GFF/GTF.\n\nTool homepage: https://github.com/cpockrandt/PhyloCSFpp"
+inputs:
+  - id: tool
+    type: string
+    doc: 'The tool to use. Available tools: build-tracks, score-msa, annotate-with-tracks,
+      annotate-with-mmseqs, find-cds.'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

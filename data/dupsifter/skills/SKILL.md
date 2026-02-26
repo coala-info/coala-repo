@@ -1,8 +1,9 @@
 ---
 name: dupsifter
-description: `dupsifter` is a specialized command-line tool for identifying and marking PCR duplicates in sequencing libraries.
+description: Dupsifter identifies and marks PCR duplicates in sequencing libraries, with specific optimizations for whole-genome bisulfite sequencing data. Use when user asks to mark PCR duplicates, process WGBS data, or perform UMI-aware deduplication.
 homepage: https://github.com/huishenlab/dupsifter
 ---
+
 
 # dupsifter
 

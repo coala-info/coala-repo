@@ -1,8 +1,9 @@
 ---
 name: bioconductor-timescape
-description: the package is available on all platforms; click for details.
+description: Bioconductor-timescape visualizes clonal evolution and population dynamics over time using stacked area plots. Use when user asks to visualize clonal evolution, plot changes in clonal prevalence over time, or create timescape plots for genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/timescape.html
 ---
+
 
 # bioconductor-timescape
 

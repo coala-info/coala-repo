@@ -1,8 +1,9 @@
 ---
 name: rabbitsketch
-description: RabbitSketch is a highly optimized sketching library designed to exploit modern multi-core CPU architectures for bioinformatics tasks.
+description: RabbitSketch is a highly optimized sketching library used to generate genomic sketches and calculate distances between large-scale DNA sequences. Use when user asks to compare DNA sequences, generate sketches using algorithms like MinHash or Kssd, and calculate Jaccard distances between genomic datasets.
 homepage: https://github.com/RabbitBio/RabbitSketch
 ---
+
 
 # rabbitsketch
 

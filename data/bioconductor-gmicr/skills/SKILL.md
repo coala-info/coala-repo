@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gmicr
-description: the package is available on all platforms; click for details.
+description: This tool builds Gene Module-Immune Cell networks by integrating gene expression data and immune cell signatures using WGCNA and Bayesian Network learning. Use when user asks to build GMIC networks, perform integrative analysis of gene expression and immune cell signatures, or infer causal relationships between gene modules and cell types.
 homepage: https://bioconductor.org/packages/release/bioc/html/GmicR.html
 ---
+
 
 # bioconductor-gmicr
 

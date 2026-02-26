@@ -1,8 +1,9 @@
 ---
 name: bioconductor-transmogr
-description: the package is available on all platforms; click for details.
+description: This tool simulates transcriptomes with genomic variations to help benchmark bioinformatics pipelines. Use when user asks to simulate transcriptomes, generate synthetic RNA-seq data with variants, or test the accuracy of transcriptomic analysis tools.
 homepage: https://bioconductor.org/packages/release/bioc/html/transmogR.html
 ---
+
 
 # bioconductor-transmogr
 

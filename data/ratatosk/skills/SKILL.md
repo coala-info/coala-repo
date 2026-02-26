@@ -1,8 +1,9 @@
 ---
 name: ratatosk
-description: Ratatosk is a specialized tool for hybrid error correction that significantly reduces the raw error rate of long reads (such as ONT R9.4 or R10).
+description: Ratatosk performs hybrid error correction of long reads by mapping them to a de Bruijn graph constructed from accurate short reads. Use when user asks to correct errors in long reads, reduce raw error rates for ONT data, or perform hybrid error correction using short reads.
 homepage: https://github.com/DecodeGenetics/Ratatosk
 ---
+
 
 # ratatosk
 

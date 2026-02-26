@@ -1,8 +1,9 @@
 ---
 name: cialign
-description: CIAlign is a command-line toolkit that automates the post-alignment processing of biological sequences.
+description: CIAlign is a command-line toolkit for cleaning, visualizing, and interpreting multiple sequence alignments. Use when user asks to clean multiple sequence alignments, remove divergent sequences or insertions, crop alignment ends, generate sequence logos, or create position weight matrices.
 homepage: https://github.com/KatyBrown/CIAlign
 ---
+
 
 # cialign
 

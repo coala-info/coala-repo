@@ -1,8 +1,9 @@
 ---
 name: accusnv
-description: "AccuSNV is a tool for calling single nucleotide variants (SNVs) from sequencing data. (Note: The provided text contains container build logs and error messages rather than help documentation; therefore, no arguments could be extracted.)"
+description: AccuSNV identifies and classifies high-precision single nucleotide variants in bacterial genomes using a combination of sequence alignment and deep learning. Use when user asks to align reads to a reference, identify candidate SNVs, or perform downstream evolutionary analysis on bacterial isolates.
 homepage: https://github.com/liaoherui/AccuSNV
 ---
+
 
 # accusnv
 

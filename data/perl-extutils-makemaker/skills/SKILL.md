@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-makemaker
-description: ExtUtils::MakeMaker (EUMM) is the standard framework for creating Makefiles used to build and install Perl modules.
+description: "ExtUtils::MakeMaker creates Makefiles to build, test, and install Perl modules from a Makefile.PL script. Use when user asks to create build scripts for Perl modules, generate Makefiles, manage Perl dependencies, or package Perl software for distribution."
 homepage: https://metacpan.org/release/ExtUtils-MakeMaker
 ---
+
 
 # perl-extutils-makemaker
 

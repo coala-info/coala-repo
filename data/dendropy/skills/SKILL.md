@@ -1,8 +1,9 @@
 ---
 name: dendropy
-description: DendroPy is a sophisticated Python library designed for phylogenetic scripting and data manipulation.
+description: "DendroPy is a Python library for phylogenetic scripting, data manipulation, and tree analysis. Use when user asks to read or write phylogenetic trees, convert between data formats, manipulate tree topologies, or summarize tree distributions using SumTrees."
 homepage: https://github.com/jeetsukumaran/DendroPy
 ---
+
 
 # dendropy
 

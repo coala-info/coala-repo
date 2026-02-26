@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msstatsbiodata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: MSstatsBioData provides example datasets for the MSstats suite of packages used in quantitative proteomics. Use when user asks to load sample mass spectrometry data, access example proteomics datasets, or test MSstats analysis workflows.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/MSstatsBioData.html
 ---
+
 
 # bioconductor-msstatsbiodata
 

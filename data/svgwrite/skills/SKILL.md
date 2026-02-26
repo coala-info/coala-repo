@@ -1,8 +1,9 @@
 ---
 name: svgwrite
-description: `svgwrite` is a lightweight, pure-Python library designed for the creation of SVG documents.
+description: "svgwrite is a pure-Python library for creating SVG documents through an object-oriented interface. Use when user asks to generate vector graphics, create SVG files programmatically, or draw shapes and text using Python."
 homepage: https://github.com/mozman/svgwrite
 ---
+
 
 # svgwrite
 

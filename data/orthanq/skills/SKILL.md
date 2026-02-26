@@ -1,8 +1,9 @@
 ---
 name: orthanq
-description: Orthanq is a specialized Bayesian framework designed for the quantification of haplotypes from NGS data.
+description: Orthanq is a Bayesian framework for the quantification of haplotypes from NGS data, specifically for HLA typing and viral lineage estimation. Use when user asks to perform high-resolution HLA typing, estimate viral lineage proportions, or quantify haplotypes using a probabilistic model.
 homepage: https://github.com/orthanq/orthanq
 ---
+
 
 # orthanq
 

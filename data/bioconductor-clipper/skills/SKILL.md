@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clipper
-description: the package is available on all platforms; click for details.
+description: Bioconductor-clipper performs topological analysis of biological pathways to identify significant paths between different experimental conditions. Use when user asks to analyze pathway topology, identify differentially expressed paths in biological networks, or perform gene set analysis using network structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/clipper.html
 ---
+
 
 # bioconductor-clipper
 

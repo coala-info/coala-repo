@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.rn.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides orthology and paralogy mappings for Rattus norvegicus based on the Inparanoid algorithm. Use when user asks to translate gene or protein identifiers between Rat and other organisms, find orthologs using Inparanoid data, or map Ensembl protein IDs across species.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Rn.inp.db.html
 ---
+
 
 # bioconductor-hom.rn.inp.db
 

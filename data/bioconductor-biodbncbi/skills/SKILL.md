@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodbncbi
-description: the package is available on all platforms; click for details.
+description: The biodbNcbi package provides specialized connectors to integrate NCBI databases like Gene, CCDS, and PubChem into R workflows using the biodb framework. Use when user asks to search for NCBI entries, retrieve genomic or chemical data by ID, or access Entrez web services like efetch and esearch.
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbNcbi.html
 ---
+
 
 # bioconductor-biodbncbi
 

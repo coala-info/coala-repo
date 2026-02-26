@@ -1,8 +1,9 @@
 ---
 name: pangwes
-description: The `pangwes` suite enables researchers to perform epistasis and co-selection analysis at the pangenome level.
+description: Pangwes performs epistasis and co-selection analysis at the pangenome level by identifying significant associations between genomic segments in a compacted de Bruijn graph. Use when user asks to build a pangenome graph, calculate mutual information scores for unitig pairs, determine graph-based distances between genomic segments, or visualize genome-wide epistasis results.
 homepage: https://github.com/jurikuronen/PANGWES
 ---
+
 
 # pangwes
 

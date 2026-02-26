@@ -1,8 +1,9 @@
 ---
 name: fairy
-description: fairy is an alignment-free tool designed to provide approximate contig coverage for metagenome-assembled genomes (MAGs).
+description: fairy is an alignment-free tool that provides approximate contig coverage for metagenome-assembled genomes using a sketching-based approach. Use when user asks to sketch sequencing reads, calculate coverage matrices for binning, or generate abundance profiles for MetaBAT2, SemiBin2, and MaxBin2.
 homepage: https://github.com/bluenote-1577/fairy
 ---
+
 
 # fairy
 

@@ -1,8 +1,9 @@
 ---
 name: footprint
-description: The `footprint` skill provides a specialized workflow for analyzing chromatin accessibility data to pinpoint where transcription factors are bound.
+description: The footprint tool analyzes chromatin accessibility data using a mixture model to identify transcription factor binding sites. Use when user asks to find footprints, quantify binding evidence with log-odds scores, or visualize signal profiles of transcription factors.
 homepage: https://ohlerlab.mdc-berlin.de/software/Reproducible_footprinting_139/
 ---
+
 
 # footprint
 

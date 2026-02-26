@@ -1,8 +1,9 @@
 ---
 name: tecount
-description: tecount is a specialized bioinformatics tool designed to aggregate RNA-seq read alignments across transposable element hierarchies.
+description: tecount aggregates RNA-seq read alignments across transposable element hierarchies to generate count tables for subfamilies, families, and classes. Use when user asks to quantify transposable elements, generate TE count tables from BAM files, or analyze TE expression levels across different hierarchical classifications.
 homepage: https://github.com/bodegalab/tecount
 ---
+
 
 # tecount
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-egsea
-description: the package is available on all platforms; click for details.
+description: This tool performs Ensemble of Gene Set Enrichment Analysis by integrating results from multiple base algorithms to identify significant biological pathways in RNA-seq or microarray data. Use when user asks to perform ensemble gene set enrichment analysis, identify significant pathways across multiple experimental contrasts, or integrate results from multiple GSE algorithms like camera, safe, and gage.
 homepage: https://bioconductor.org/packages/release/bioc/html/EGSEA.html
 ---
+
 
 # bioconductor-egsea
 

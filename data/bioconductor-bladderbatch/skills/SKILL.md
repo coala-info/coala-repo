@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bladderbatch
-description: the package is available on all platforms; click for details.
+description: This package provides a curated gene expression dataset from a bladder cancer study specifically designed for demonstrating and testing batch effect removal methods. Use when user asks to access the bladderEset dataset, benchmark batch correction algorithms like ComBat or sva, or perform differential expression analysis on bladder cancer microarray data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bladderbatch.html
 ---
+
 
 # bioconductor-bladderbatch
 

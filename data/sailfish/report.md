@@ -3,7 +3,7 @@
 ## sailfish
 
 ### Tool Description
-Sailfish is a tool for estimating the abundance of isoforms from RNA-seq data. (Note: The provided text is a container build error log and does not contain help documentation or argument definitions.)
+Sailfish is a tool for quantifying transcript abundance in RNA-Seq data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sailfish:0.10.1--1
@@ -18,13 +18,10 @@ Sailfish is a tool for estimating the abundance of isoforms from RNA-seq data. (
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sailfish:0.10.1--1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Allowed Options:
+  -v [ --version ]      print version string
+  --no-version-check    don't check with the server to see if this is the 
+                        latest version
+  -h [ --help ]         produce help message
 ```
 
-
-## Metadata
-- **Skill**: generated

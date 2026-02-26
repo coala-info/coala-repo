@@ -1,8 +1,9 @@
 ---
 name: kegalign-full
-description: KegAlign is a high-performance genomic alignment system that leverages NVIDIA GPUs to accelerate the seed-filter-extend paradigm originally established by LASTZ.
+description: KegAlign-full is a GPU-accelerated genomic alignment system designed for high-performance whole-genome comparisons using the seed-filter-extend paradigm. Use when user asks to perform whole-genome alignments, accelerate LASTZ workflows with NVIDIA GPUs, or manage complex genomic partitioning and load balancing.
 homepage: https://github.com/galaxyproject/KegAlign
 ---
+
 
 # kegalign-full
 

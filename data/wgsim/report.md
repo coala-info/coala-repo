@@ -3,7 +3,7 @@
 ## wgsim
 
 ### Tool Description
-The provided text does not contain help or usage information for the tool; it contains Apptainer/Singularity container build logs and a fatal error message.
+short read simulator
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/wgsim:1.0--h577a1d6_10
@@ -18,33 +18,23 @@ The provided text does not contain help or usage information for the tool; it co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/wgsim:1.0--h577a1d6_10 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Program: wgsim (short read simulator)
+Version: 0.3.1-r13
+Contact: Heng Li <lh3@sanger.ac.uk>
 
+Usage:   wgsim [options] <in.ref.fa> <out.read1.fq> <out.read2.fq>
 
-## Metadata
-- **Skill**: generated
-
-## wgsim_wgsim_eval.pl
-
-### Tool Description
-Evaluation script for wgsim. (Note: The provided text contains container runtime error messages and does not include usage instructions or argument descriptions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/wgsim:1.0--h577a1d6_10
-- **Homepage**: https://github.com/lh3/wgsim
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/wgsim:1.0--h577a1d6_10 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options: -e FLOAT      base error rate [0.020]
+         -d INT        outer distance between the two ends [500]
+         -s INT        standard deviation [50]
+         -N INT        number of read pairs [1000000]
+         -1 INT        length of the first read [70]
+         -2 INT        length of the second read [70]
+         -r FLOAT      rate of mutations [0.0010]
+         -R FLOAT      fraction of indels [0.15]
+         -X FLOAT      probability an indel is extended [0.30]
+         -S INT        seed for random generator [-1]
+         -A FLOAT      disgard if the fraction of ambiguous bases higher than FLOAT [0.05]
+         -h            haplotype mode
 ```
 

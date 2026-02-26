@@ -1,16 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-chopfalines
+baseCommand: chopFaLines
 label: ucsc-chopfalines
-doc: "The provided text contains error messages related to the container environment
-  and image fetching rather than the tool's help documentation. As a result, no usage
-  information or arguments could be extracted.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Chops up lines in a fasta file to a specific length.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: in_fa
+    type: File
+    doc: Input fasta file
+    inputBinding:
+      position: 1
+  - id: line_size
+    type: int
+    doc: Maximum line length
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_fa
+    type: File
+    doc: Output fasta file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chopfalines:482--h0b57e2e_0
-stdout: ucsc-chopfalines.out

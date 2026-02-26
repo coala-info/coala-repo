@@ -1,8 +1,9 @@
 ---
 name: r-geiger
-description: Skill for using the CRAN R package r-geiger.
+description: The geiger package provides tools for macroevolutionary analysis by fitting models of trait evolution and diversification to phylogenetic trees. Use when user asks to fit continuous or discrete trait models, synchronize tree and trait data, identify diversification rate shifts, or rescale phylogenetic branch lengths.
 homepage: https://cloud.r-project.org/web/packages/geiger/index.html
 ---
+
 
 # r-geiger
 

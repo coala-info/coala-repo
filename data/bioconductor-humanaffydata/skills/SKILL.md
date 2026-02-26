@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humanaffydata
-description: the package is available on all platforms; click for details.
+description: This package provides integrated and normalized human gene expression datasets from Affymetrix HG_U133PlusV2 and HG_U133A platforms as ExpressionSet objects. Use when user asks to retrieve large-scale human gene expression compendia, access RMA-normalized expression matrices, or analyze curated phenotypic metadata for tissue-specific profiling and cross-condition comparisons.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HumanAffyData.html
 ---
+
 
 # bioconductor-humanaffydata
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mariner
-description: the package is available on all platforms; click for details.
+description: Mariner is a Bioconductor package for the analysis and manipulation of high-resolution chromatin interaction data. Use when user asks to call chromatin loops, cluster interactions, or perform aggregate peak analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/mariner.html
 ---
+
 
 # bioconductor-mariner
 

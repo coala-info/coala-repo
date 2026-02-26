@@ -1,8 +1,9 @@
 ---
 name: relion-bin
-description: RELION (REgularised LIkelihood OptimisatioN) is a specialized suite for processing cryo-electron microscopy data using a Maximum A Posteriori (MAP) refinement approach.
+description: RELION processes cryo-electron microscopy data to generate high-resolution 3D reconstructions of macromolecular complexes using a Maximum A Posteriori refinement approach. Use when user asks to install the RELION binary suite, optimize GPU acceleration for structural biology jobs, perform 3D auto-refinement, or troubleshoot command-line execution errors.
 homepage: https://github.com/3dem/relion
 ---
+
 
 # relion-bin
 

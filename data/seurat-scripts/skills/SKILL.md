@@ -1,8 +1,9 @@
 ---
 name: seurat-scripts
-description: The `seurat-scripts` package provides a suite of R-based command-line wrappers for the Seurat single-cell analysis ecosystem.
+description: Seurat-scripts provides a suite of command-line wrappers for executing modular single-cell RNA-seq analysis workflows using the Seurat ecosystem. Use when user asks to read 10X Genomics data, filter cells, normalize counts, identify variable features, perform dimensionality reduction, cluster cells, or convert Seurat objects to other formats.
 homepage: https://github.com/ebi-gene-expression-group/r-seurat-scripts
 ---
+
 
 # seurat-scripts
 

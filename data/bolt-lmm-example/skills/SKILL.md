@@ -1,8 +1,9 @@
 ---
 name: bolt-lmm-example
-description: The bolt tool is a high-performance structural variant caller optimized for short-read genomic data.
+description: Bolt is a high-performance structural variant caller designed to detect genomic variants from short-read alignment files. Use when user asks to call structural variants, analyze BAM files for SVs, or run the bolt call command.
 homepage: https://github.com/sakkayaphab/bolt
 ---
+
 
 # bolt-lmm-example
 

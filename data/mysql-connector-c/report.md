@@ -3,26 +3,32 @@
 ## mysql-connector-c
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information or command-line arguments for the tool.
+FAIL to generate CWL: mysql-connector-c not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mysql-connector-c:6.1.6--2
 - **Homepage**: https://github.com/mysql-net/MySqlConnector
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mysql-connector-c/overview
-- **Total Downloads**: 162.5K
+- **Total Downloads**: 162.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mysql-net/MySqlConnector
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: mysql-connector-c not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: mysql-connector-c not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mysql-connector-c:6.1.6--2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1823104148: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

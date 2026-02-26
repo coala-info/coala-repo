@@ -1,8 +1,9 @@
 ---
 name: r-harmony
-description: Skill for using the CRAN R package r-harmony.
+description: This tool integrates single-cell RNA-seq data by performing batch correction on PCA embeddings or Seurat objects using the Harmony algorithm. Use when user asks to integrate single-cell datasets, perform batch correction, merge Seurat objects from different conditions, or harmonize PCA embeddings.
 homepage: https://cloud.r-project.org/web/packages/harmony/index.html
 ---
+
 
 # r-harmony
 

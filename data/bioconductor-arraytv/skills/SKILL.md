@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arraytv
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: "ArrayTV corrects GC content bias and wave artifacts in microarray signal intensity data. Use when user asks to remove GC-related waves from genomic data, perform GC correction on microarray intensities, or calculate total variance scores for optimal window selection."
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ArrayTV.html
 ---
+
 
 # bioconductor-arraytv
 

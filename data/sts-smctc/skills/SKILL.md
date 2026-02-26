@@ -1,8 +1,9 @@
 ---
 name: sts-smctc
-description: The `sts-smctc` library is a high-performance C++ template class framework designed for Sequential Monte Carlo (SMC) algorithms.
+description: The sts-smctc library provides a high-performance C++ template framework for implementing Sequential Monte Carlo algorithms with support for parallelization and advanced resampling. Use when user asks to install the library, compile SMC models with OpenMP, or configure resampling strategies and MCMC moves for statistical modeling.
 homepage: https://github.com/matsengrp/smctc
 ---
+
 
 # sts-smctc
 

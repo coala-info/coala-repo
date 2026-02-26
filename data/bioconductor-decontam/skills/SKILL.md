@@ -1,8 +1,9 @@
 ---
 name: bioconductor-decontam
-description: the package is available on all platforms; click for details.
+description: The bioconductor-decontam package provides statistical methods to identify and visualize contaminating DNA features in marker-gene and metagenomics sequencing data based on frequency and prevalence signatures. Use when user asks to identify contaminants in sequencing data, filter taxa based on DNA concentration, or compare feature prevalence between biological samples and negative controls.
 homepage: https://bioconductor.org/packages/release/bioc/html/decontam.html
 ---
+
 
 # bioconductor-decontam
 

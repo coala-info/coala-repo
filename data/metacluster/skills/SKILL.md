@@ -1,8 +1,9 @@
 ---
 name: metacluster
-description: The `metacluster` library is a comprehensive Python framework for solving clustering problems through metaheuristic optimization.
+description: "Metacluster is a Python framework for solving clustering problems using metaheuristic optimization algorithms and performance metrics. Use when user asks to perform metaheuristic clustering, optimize cluster configurations, evaluate clustering performance with nature-inspired algorithms, or automate the comparison of multiple optimization models."
 homepage: https://github.com/thieu1995/MetaCluster
 ---
+
 
 # metacluster
 

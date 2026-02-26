@@ -1,8 +1,9 @@
 ---
 name: esme_mpich_4_3_1
-description: The Earth System Modelling Environment (ESME) is a specialized metapackage designed to provide a consistent and stable foundation for climate modeling.
+description: ESME provides a consistent foundation of high-performance computing libraries, including NetCDF, HDF5, and ParallelIO, compiled against MPICH 4.3.1 for climate modeling. Use when user asks to compile climate models, run MPI-based simulations, or verify parallel I/O performance using OSU Micro Benchmarks.
 homepage: https://github.com/j34ni/bioconda-recipes
 ---
+
 
 # esme_mpich_4_3_1
 

@@ -2,10 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: snpgenie_gtf2revcom.pl
 label: snpgenie_gtf2revcom.pl
-doc: "The provided text does not contain help information for the tool; it contains
-  container runtime (Apptainer/Singularity) log messages and a fatal error regarding
-  image fetching.\n\nTool homepage: https://github.com/chasewnelson/SNPGenie"
-inputs: []
+doc: "Converts a '+' strand GTF file to its reverse complement representation.\n\n\
+  Tool homepage: https://github.com/chasewnelson/SNPGenie"
+inputs:
+  - id: gtf_file
+    type: File
+    doc: A '+' strand GTF file containing both '+' and '–' strand products from 
+      the '+' strand point of view.
+    inputBinding:
+      position: 1
+  - id: sequence_length
+    type: int
+    doc: The total sequence length.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

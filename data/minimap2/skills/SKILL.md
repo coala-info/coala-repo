@@ -1,8 +1,9 @@
 ---
 name: minimap2
-description: Minimap2 is a high-performance sequence alignment tool designed to handle a wide range of genomic data types.
+description: Minimap2 is a high-performance sequence alignment tool used to map genomic reads or assemblies to a reference. Use when user asks to map long reads, perform spliced RNA-seq alignment, find overlaps for assembly, or align assemblies to one another.
 homepage: https://github.com/lh3/minimap2
 ---
+
 
 # minimap2
 

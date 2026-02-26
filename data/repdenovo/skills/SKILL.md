@@ -1,8 +1,9 @@
 ---
 name: repdenovo
-description: REPdenovo is a specialized assembly pipeline that reconstructs repetitive elements from short-read sequencing data using a frequent k-mer approach.
+description: REPdenovo reconstructs repetitive elements and estimates their copy numbers from short-read sequencing data using a frequent k-mer assembly approach. Use when user asks to assemble repeat sequences de novo, characterize an organism's repeatome, or calculate repeat coverage and copy number.
 homepage: https://github.com/Reedwarbler/REPdenovo
 ---
+
 
 # repdenovo
 

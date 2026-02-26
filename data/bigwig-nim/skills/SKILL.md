@@ -1,8 +1,9 @@
 ---
 name: bigwig-nim
-description: The `bigwig-nim` tool is a specialized utility designed for efficient manipulation of bigWig and bigBed files.
+description: This tool efficiently manipulates bigWig and bigBed files to convert genomic signal data and calculate summary statistics. Use when user asks to convert BED files to bigWig format, calculate summary statistics over genomic regions, or inspect file metadata.
 homepage: https://github.com/brentp/bigwig-nim
 ---
+
 
 # bigwig-nim
 

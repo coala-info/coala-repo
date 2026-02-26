@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rbiopaxparser
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package parses, modifies, and visualizes biological pathway data represented in the BioPAX format. Use when user asks to parse BioPAX files, manipulate biological pathway models, or visualize pathway data in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/rBiopaxParser.html
 ---
+
 
 # bioconductor-rbiopaxparser
 

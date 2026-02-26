@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genogam
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: GenoGAM performs statistical analysis of genome-wide data like ChIP-Seq using Generalized Additive Models to represent protein occupancy. Use when user asks to model protein occupancy, perform differential binding analysis, call peaks with confidence bands, or normalize and fit genomic data using GAMs.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GenoGAM.html
 ---
+
 
 # bioconductor-genogam
 

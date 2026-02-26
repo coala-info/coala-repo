@@ -1,9 +1,9 @@
 # vgorient CWL Generation Report
 
-## vgorient
+## vgorient_jaccard_dit_wrapper.py
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is a log of a container build failure.
+Run kmer_jaccard.py and VG_diterative.py
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0
@@ -18,90 +18,133 @@ The provided text does not contain help information for the tool; it is a log of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: jaccard_dit_wrapper.py [-h] [--output OUTPUT]
+                              [--vg_output_dir VG_OUTPUT_DIR]
+                              [--kmer_size KMER_SIZE] [--orientation]
+                              [--vg_orient] [--band_width BAND_WIDTH]
+                              [--min_match_length MIN_MATCH_LENGTH]
+                              [--append_wm] [--log LOG] [--min_jaccard_init]
+                              input_files [input_files ...]
+
+Run kmer_jaccard.py and VG_diterative.py
+
+positional arguments:
+  input_files           Input file paths for kmer_jaccard.py
+
+options:
+  -h, --help            show this help message and exit
+  --output OUTPUT, -o OUTPUT
+                        Output file name for kmer_jaccard.py
+  --vg_output_dir VG_OUTPUT_DIR
+                        Output directory for VG_diterative.py
+  --kmer_size KMER_SIZE, -k KMER_SIZE
+                        kmer size for computing jaccard similarity
+  --orientation         Reorient inputs in kmer_jaccard.py
+  --vg_orient, -vo      use vg to orient nodes
+  --band_width BAND_WIDTH, -w BAND_WIDTH
+                        Band width for VG mapping.
+  --min_match_length MIN_MATCH_LENGTH, -m MIN_MATCH_LENGTH
+                        Minimum match length for VG mapping.
+  --append_wm           Append w and m values to the output directory name.
+  --log LOG             Log file name for recording execution details and
+                        timings.
+  --min_jaccard_init, -mcj
+                        Order sequences by lowest sum of j-dist
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## vgorient_jaccard_dit_wrapper.py
-
-### Tool Description
-A wrapper script for vgorient. (Note: The provided help text contains only container runtime error messages and does not list specific tool arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0
-- **Homepage**: https://github.com/whelixw/vgOrient
-- **Package**: https://anaconda.org/channels/bioconda/packages/vgorient/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## vgorient_kmer_rotation_multiprocessing.py
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to fetch or build the OCI image.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0
 - **Homepage**: https://github.com/whelixw/vgOrient
 - **Package**: https://anaconda.org/channels/bioconda/packages/vgorient/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 1: import: command not found
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 2: from: command not found
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 3: from: command not found
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 4: from: command not found
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 5: from: command not found
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 6: from: command not found
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 7: import: command not found
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 9: syntax error near unexpected token `('
+/usr/local/bin/kmer_rotation_multiprocessing.py: line 9: `def generate_kmer_deque(seq, k):'
 ```
+
 
 ## vgorient_cut_and_rot_rebuild.py
 
 ### Tool Description
-vgorient_cut_and_rot_rebuild.py (Note: The provided text contains container build logs and error messages rather than command-line help documentation; therefore, no arguments could be extracted.)
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0
 - **Homepage**: https://github.com/whelixw/vgOrient
 - **Package**: https://anaconda.org/channels/bioconda/packages/vgorient/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+/usr/local/bin/cut_and_rot_rebuild.py: line 1: import: command not found
+/usr/local/bin/cut_and_rot_rebuild.py: line 2: from: command not found
+/usr/local/bin/cut_and_rot_rebuild.py: line 3: from: command not found
+/usr/local/bin/cut_and_rot_rebuild.py: line 4: from: command not found
+/usr/local/bin/cut_and_rot_rebuild.py: line 5: import: command not found
+/usr/local/bin/cut_and_rot_rebuild.py: line 6: import: command not found
+/usr/local/bin/cut_and_rot_rebuild.py: line 7: import: command not found
+/usr/local/bin/cut_and_rot_rebuild.py: line 9: syntax error near unexpected token `('
+/usr/local/bin/cut_and_rot_rebuild.py: line 9: `def parse_vg_gfa(gfa_file):'
 ```
+
 
 ## vgorient_noisify.py
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) while attempting to fetch a Docker image.
+Adds random transformations to FASTA files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0
 - **Homepage**: https://github.com/whelixw/vgOrient
 - **Package**: https://anaconda.org/channels/bioconda/packages/vgorient/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vgorient:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+/usr/local/bin/noisify.py: line 1: import: command not found
+/usr/local/bin/noisify.py: line 2: import: command not found
+/usr/local/bin/noisify.py: line 3: import: command not found
+/usr/local/bin/noisify.py: line 4: from: command not found
+/usr/local/bin/noisify.py: line 5: from: command not found
+/usr/local/bin/noisify.py: line 6: from: command not found
+/usr/local/bin/noisify.py: line 8: syntax error near unexpected token `('
+/usr/local/bin/noisify.py: line 8: `def random_transform_fasta(input_file, output_dir, reverse, transformation_log):'
 ```
 

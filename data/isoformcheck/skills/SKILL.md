@@ -1,8 +1,9 @@
 ---
 name: isoformcheck
-description: IsoformCheck is a comparative genomics tool that bridges the gap between genome assembly and functional protein analysis.
+description: IsoformCheck automates the liftover of reference annotations to new assemblies to detect and quantify protein isoform variants across populations. Use when user asks to lift over annotations, detect novel protein isoforms, analyze copy number variation, or perform statistical comparisons of protein alleles between groups.
 homepage: https://github.com/maickrau/IsoformCheck
 ---
+
 
 # isoformcheck
 

@@ -1,8 +1,9 @@
 ---
 name: transdecoder
-description: TransDecoder is a specialized tool for finding Open Reading Frames (ORFs) within transcript sequences.
+description: TransDecoder identifies Open Reading Frames (ORFs) within transcript sequences and predicts protein sequences. Use when user asks to 'find Open Reading Frames', 'predict coding regions', or 'convert transcript sequences to protein sequences'.
 homepage: https://transdecoder.github.io/
 ---
+
 
 # transdecoder
 

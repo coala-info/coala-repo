@@ -1,8 +1,9 @@
 ---
 name: swalign
-description: The `swalign` skill provides a Python-based implementation of the Smith-Waterman algorithm for local sequence alignment.
+description: "swalign performs local sequence alignment using the Smith-Waterman algorithm with support for custom scoring and gap penalties. Use when user asks to perform local sequence alignment, align nucleotide or protein sequences, or calculate optimal alignments with affine gap penalties and gap decay."
 homepage: https://github.com/mbreese/swalign/
 ---
+
 
 # swalign
 

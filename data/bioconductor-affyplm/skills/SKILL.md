@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyplm
-description: the package is available on all platforms; click for details.
+description: This tool fits probe-level models to Affymetrix GeneChip data for expression summarization and model-based quality assessment. Use when user asks to fit probe-level models, perform quality control diagnostics using RLE or NUSE plots, visualize spatial artifacts with pseudo-images, or generate advanced MA-plots for AffyBatch and ExpressionSet objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/affyPLM.html
 ---
+
 
 # bioconductor-affyplm
 

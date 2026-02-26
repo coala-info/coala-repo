@@ -1,8 +1,9 @@
 ---
 name: vartrix
-description: VarTrix is a high-performance genotyping tool designed to quantify the presence of specific alleles at the single-cell level.
+description: VarTrix quantifies the presence of predefined alleles at the single-cell level. Use when user asks to genotype single cells, quantify allele presence per cell, or generate a sparse matrix of variant counts for single-cell data.
 homepage: https://github.com/10XGenomics/vartrix
 ---
+
 
 # vartrix
 

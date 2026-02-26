@@ -1,8 +1,9 @@
 ---
 name: taxmyphage
-description: taxmyphage is a specialized bioinformatics tool that automates the classification of bacteriophages according to the International Committee on Taxonomy of Viruses (ICTV) standards.
+description: taxmyphage automates the taxonomic classification of bacteriophage genomes according to ICTV standards using intergenomic distance calculations. Use when user asks to classify bacteriophages, determine phage taxonomy, or calculate intergenomic similarity against ICTV reference databases.
 homepage: https://github.com/amillard/tax_myPHAGE
 ---
+
 
 # taxmyphage
 

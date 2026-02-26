@@ -1,9 +1,9 @@
 # midas CWL Generation Report
 
-## midas
+## midas_run_midas.py
 
 ### Tool Description
-Metagenomic Intra-Species Diversity Analysis System (Note: The provided help text contains only system error messages regarding container execution and does not list specific tool arguments).
+Estimate species abundance and intra-species genomic variation from an individual metagenome
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
@@ -18,46 +18,41 @@ Metagenomic Intra-Species Diversity Analysis System (Note: The provided help tex
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/midas:1.3.2--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3578769086: no space left on device
+Description: Estimate species abundance and intra-species genomic variation from an individual metagenome
+
+Usage: run_midas.py <command> [options]
+
+Commands:
+	species	 estimate the abundance of 5,952 bacterial species
+	genes	 quantify gene copy number variation in abundant species
+	snps	 quantify single nucleotide variation in abundant species
+
+Note: use run_midas.py <command> -h to view usage for a specific command
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## midas_run_midas.py
-
-### Tool Description
-Metagenomic Intra-Species Diversity Analysis System (Note: The provided text is an error log and does not contain help information or argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
-- **Homepage**: https://github.com/snayfach/MIDAS
-- **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/midas:1.3.2--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3843977704: no space left on device
-```
 
 ## midas_merge_midas.py
 
 ### Tool Description
-Merge MIDAS results across multiple samples. (Note: The provided text contains system error messages regarding container execution and does not include the actual help documentation for the tool.)
+merge MIDAS results across metagenomic samples
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/midas:1.3.2--py35_0
 - **Homepage**: https://github.com/snayfach/MIDAS
 - **Package**: https://anaconda.org/channels/bioconda/packages/midas/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/midas:1.3.2--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2132051433: no space left on device
+Description: merge MIDAS results across metagenomic samples
+
+Usage: merge_midas.py <command> [options]
+
+Commands:
+	species	 build species abundance matrix
+	genes	 build pangenome matrix for each species
+	snps	 perform multi-sample SNP calling and build SNP matrix for each species
+
+Note: use merge_midas.py <command> -h to view usage for a specific command
 ```
 

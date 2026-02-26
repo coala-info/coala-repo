@@ -1,8 +1,9 @@
 ---
 name: nf-test
-description: nf-test provides a Domain Specific Language (DSL) to validate Nextflow components in isolation or as full pipelines.
+description: nf-test provides a domain-specific language to validate Nextflow processes, workflows, and functions through automated testing and assertions. Use when user asks to initialize a test environment, generate test templates for components, write assertions for pipeline outputs, or perform snapshot testing.
 homepage: https://code.askimed.com/nf-test/
 ---
+
 
 # nf-test
 

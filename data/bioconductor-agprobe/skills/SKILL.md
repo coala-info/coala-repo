@@ -1,8 +1,9 @@
 ---
 name: bioconductor-agprobe
-description: the package is available on all platforms; click for details.
+description: The bioconductor-agprobe package provides probe sequence information and spatial coordinates for Affymetrix AG-type microarrays. Use when user asks to retrieve probe sequences, find physical coordinates on the array, or analyze probe set characteristics for AG arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/agprobe.html
 ---
+
 
 # bioconductor-agprobe
 

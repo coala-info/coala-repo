@@ -1,8 +1,9 @@
 ---
 name: vgorient
-description: The `vgorient` toolset (also known as MitoGraphs) is a specialized collection of scripts designed to solve the "starting point" and "strand orientation" problems inherent in circular mitochondrial DNA.
+description: vgorient standardizes circular mitochondrial DNA sequences by rotating and flipping them into a canonical orientation. Use when user asks to rotate mitochondrial sequences, flip mitochondrial sequences, standardize mitochondrial DNA, orient mitochondrial genomes, or simulate mitochondrial sequence variations.
 homepage: https://github.com/whelixw/vgOrient
 ---
+
 
 # vgorient
 

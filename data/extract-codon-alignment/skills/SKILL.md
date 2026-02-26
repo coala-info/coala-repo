@@ -1,8 +1,9 @@
 ---
 name: extract-codon-alignment
-description: The `extract-codon-alignment` tool is a specialized utility for subsetting nucleotide alignments based on their position within a codon.
+description: This tool subsets nucleotide alignments based on their position within a codon to isolate specific evolutionary signals. Use when user asks to extract specific codon positions from a multiple sequence alignment, isolate the third codon position, or subset 1st and 2nd positions to focus on non-synonymous changes.
 homepage: https://github.com/linzhi2013/extract_codon_alignment
 ---
+
 
 # extract-codon-alignment
 

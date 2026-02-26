@@ -1,8 +1,9 @@
 ---
 name: tbl2asn
-description: The `tbl2asn` utility is a command-line tool designed by NCBI to streamline the transition from raw sequence data and annotation tables to a formatted submission package.
+description: The tbl2asn utility converts sequence data and annotation tables into formatted submission packages for GenBank. Use when user asks to prepare Sequin files for NCBI submission, validate sequence annotations, or process bulk genomic data into submission-ready formats.
 homepage: https://www.ncbi.nlm.nih.gov/genbank/tbl2asn2
 ---
+
 
 # tbl2asn
 

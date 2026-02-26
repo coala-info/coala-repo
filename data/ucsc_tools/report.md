@@ -3,28 +3,28 @@
 ## ucsc_tools
 
 ### Tool Description
-A tool from the UCSC Genome Browser utilities (identified from container URI). Note: The provided text contains build logs and error messages rather than help text, so specific arguments could not be extracted.
+Restrict BED features to specific positions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-bedrestricttopositions:482--h0b57e2e_0
-- **Homepage**: https://github.com/ropensci/UCSCXenaTools
+- **Homepage**: Not found
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc_tools/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/ropensci/UCSCXenaTools
+- **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-bedrestricttopositions:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-bedrestricttopositions:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedrestricttopositions
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+92e548c3c287: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1551847271: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

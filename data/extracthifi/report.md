@@ -3,10 +3,10 @@
 ## extracthifi
 
 ### Tool Description
-Extract HiFi reads from PacBio data
+extract HiFi reads (>= Q20) from full CCS reads.bam output
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/extracthifi:1.0.0--0
+- **Docker Image**: quay.io/biocontainers/extracthifi:1.0.0--h9ee0642_1
 - **Homepage**: https://github.com/PacificBiosciences/extracthifi
 - **Package**: https://anaconda.org/channels/bioconda/packages/extracthifi/overview
 - **Validation**: PASS
@@ -18,9 +18,22 @@ Extract HiFi reads from PacBio data
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/extracthifi:1.0.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3443054333: no space left on device
+extracthifi - extract HiFi reads (>= Q20) from full CCS reads.bam output
+
+Usage:
+  extracthifi [options] <input.bam> <output.bam>
+
+  input.bam         STR  Input CCS BAM.
+  output.bam        STR  Ouput HiFi BAM.
+
+Options:
+  -h,--help              Show this help and exit.
+  --version              Show application version and exit.
+  -j,--num-threads  INT  Number of threads to use, 0 means autodetection. [0]
+
+Copyright (C) 2004-2023     Pacific Biosciences of California, Inc.
+This program comes with ABSOLUTELY NO WARRANTY; it is intended for
+Research Use Only and not for use in diagnostic procedures.
 ```
 
 

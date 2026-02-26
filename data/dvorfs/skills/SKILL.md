@@ -1,8 +1,9 @@
 ---
 name: dvorfs
-description: dvorfs (Disrupted Viral ORF Search) is a specialized bioinformatics pipeline designed to detect and reconstruct highly degraded viral sequences within host genomes.
+description: dvorfs detects and reconstructs highly degraded or pseudogenized viral sequences within host genomes by incorporating frameshift mutations and stop codons into its search model. Use when user asks to search for endogenous viral elements, reconstruct non-pseudogenized amino acid sequences from degraded DNA, or identify viral open reading frames using protein profiles.
 homepage: https://github.com/ilevantis/dvorfs
 ---
+
 
 # dvorfs
 

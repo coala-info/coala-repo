@@ -1,8 +1,9 @@
 ---
 name: genericrepeatfinder
-description: Generic Repeat Finder (GRF) is a specialized C++ toolset for the high-throughput identification of structural repeats within genomic sequences.
+description: Generic Repeat Finder identifies structural repeats like terminal inverted repeats, terminal direct repeats, and MITE candidates within genomic sequences. Use when user asks to find transposable element candidates, detect terminal inverted repeats, or identify terminal direct repeats in a genome.
 homepage: https://github.com/bioinfolabmu/GenericRepeatFinder
 ---
+
 
 # genericrepeatfinder
 

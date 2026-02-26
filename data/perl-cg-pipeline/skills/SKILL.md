@@ -1,8 +1,9 @@
 ---
 name: perl-cg-pipeline
-description: The perl-cg-pipeline (CG-Pipeline) is a specialized computational genomics suite for bacterial genome sequencing projects.
+description: The perl-cg-pipeline is a computational genomics suite that manages the assembly, prediction, and annotation of bacterial genomes. Use when user asks to assemble raw sequencing reads, predict genomic features, or perform functional annotation on bacterial genome projects.
 homepage: https://github.com/lskatz/CG-Pipeline
 ---
+
 
 # perl-cg-pipeline
 

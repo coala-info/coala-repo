@@ -1,8 +1,9 @@
 ---
 name: perl-www-mechanize
-description: WWW::Mechanize (often called "Mech") is a powerful Perl module designed for automated web browsing.
+description: WWW::Mechanize is a Perl module used for automated web browsing, form submission, and stateful interaction with websites. Use when user asks to automate web navigation, scrape data from websites, fill out and submit web forms, or perform automated testing of web applications.
 homepage: https://metacpan.org/pod/WWW::Mechanize
 ---
+
 
 # perl-www-mechanize
 

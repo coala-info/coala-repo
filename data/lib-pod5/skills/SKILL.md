@@ -1,8 +1,9 @@
 ---
 name: lib-pod5
-description: `lib-pod5` is the core library providing Python bindings for the POD5 file format, a high-performance container for nanopore sequencing reads based on Apache Arrow.
+description: "lib-pod5 provides tools and Python bindings for managing and manipulating high-performance POD5 nanopore sequencing data. Use when user asks to inspect file metadata, subset reads by ID, merge multiple files, or convert data to tabular formats."
 homepage: https://github.com/nanoporetech/pod5-file-format
 ---
+
 
 # lib-pod5
 

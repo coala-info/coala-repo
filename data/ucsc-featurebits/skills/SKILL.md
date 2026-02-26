@@ -1,8 +1,9 @@
 ---
 name: ucsc-featurebits
-description: The `featureBits` utility is a high-performance tool from the UCSC Genome Browser "kent" suite designed to analyze genomic overlaps using bitmap projections.
+description: The `ucsc-featurebits` tool analyzes genomic overlaps and calculates the total non-overlapping bases covered by genomic features. Use when user asks to calculate coverage of genomic features, report feature density, perform set operations (intersection, union, subtraction) on genomic features, find overlaps, or calculate enrichment.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-featurebits
 

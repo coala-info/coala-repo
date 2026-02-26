@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bumhmm
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical modeling of RNA structure probing data using a Beta-Uniform Mixture hidden Markov model to identify modified nucleotides. Use when user asks to process per-nucleotide coverage and drop-off counts, stabilize variance in log-drop-off rate ratios, or compute posterior probabilities of RNA modification.
 homepage: https://bioconductor.org/packages/release/bioc/html/BUMHMM.html
 ---
+
 
 # bioconductor-bumhmm
 

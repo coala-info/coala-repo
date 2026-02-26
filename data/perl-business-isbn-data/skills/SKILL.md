@@ -1,8 +1,9 @@
 ---
 name: perl-business-isbn-data
-description: This skill manages the data backbone for ISBN processing in Perl.
+description: This tool provides the publisher prefix and range data required for parsing and validating ISBNs in Perl. Use when user asks to install ISBN data packs, update ISBN range messages, or synchronize dependencies for ISBN processing.
 homepage: https://github.com/briandfoy/business-isbn-data
 ---
+
 
 # perl-business-isbn-data
 

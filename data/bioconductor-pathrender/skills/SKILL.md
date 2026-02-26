@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pathrender
-description: the package is available on all platforms; click for details.
+description: This package renders biological pathway diagrams and visualizes pathway graphs in R. Use when user asks to visualize biological pathways, render pathway graphs, or map experimental data onto pathway diagrams.
 homepage: https://bioconductor.org/packages/release/bioc/html/pathRender.html
 ---
+
 
 # bioconductor-pathrender
 

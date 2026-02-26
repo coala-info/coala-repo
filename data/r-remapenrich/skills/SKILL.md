@@ -1,8 +1,9 @@
 ---
 name: r-remapenrich
-description: R package remapenrich (documentation from project home).
+description: This tool performs statistical enrichment analysis of genomic regions using ReMap catalogues or custom peak sets to identify transcription factor binding sites. Use when user asks to identify transcription factor enrichment, perform overlap analysis between genomic intervals, or visualize enrichment results from ReMap data.
 homepage: https://cran.r-project.org/web/packages/remapenrich/index.html
 ---
+
 
 # r-remapenrich
 

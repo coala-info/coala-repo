@@ -1,8 +1,9 @@
 ---
 name: strainy
-description: Strainy is a specialized tool for reconstructing individual bacterial strains from complex metagenomic samples using long-read data.
+description: Strainy reconstructs individual bacterial strains from complex metagenomic samples by phasing variants in long-read assembly graphs. Use when user asks to reconstruct strain-level haplotypes, phase variants in metagenomic data, or distinguish between closely related bacterial strains using long reads.
 homepage: https://github.com/katerinakazantseva/strainy
 ---
+
 
 # strainy
 

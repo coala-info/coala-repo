@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epimutacionsdata
-description: "The package contains 2 datasets: (1) Control ( GEO: GSE104812), (GEO: GSE97362) case samples; and (2) reference panel (GEO: GSE127824). It also contains candidate regions to be epimutations in 450k methylation arrays."
+description: This package provides example DNA methylation datasets and candidate regions for testing and running epimutation analysis workflows. Use when user asks to retrieve reference panels, access case-control methylation data, or load raw IDAT files for epimutation detection.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/epimutacionsData.html
 ---
+
 
 # bioconductor-epimutacionsdata
 

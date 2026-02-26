@@ -1,8 +1,9 @@
 ---
 name: asgal
-description: ASGAL (Alternative Splicing Graph ALigner) is a specialized bioinformatics tool that maps RNA-Seq reads directly against a splicing graph rather than a linear reference genome.
+description: ASGAL aligns RNA-Seq reads to a splicing graph to identify novel and known alternative splicing events. Use when user asks to map reads against a splicing graph, detect alternative splicing events such as exon skipping or intron retention, and perform genome-wide splicing analysis.
 homepage: https://asgal.algolab.eu/
 ---
+
 
 # asgal
 

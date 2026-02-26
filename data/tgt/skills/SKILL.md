@@ -1,8 +1,9 @@
 ---
 name: tgt
-description: TextGridTools (tgt) is a Python-based toolkit that provides a robust API for handling linguistic annotations.
+description: tgt is a Python toolkit for the programmatic manipulation and automation of Praat TextGrid and ELAN annotation files. Use when user asks to automate linguistic annotation tasks, shift time boundaries, concatenate multiple TextGrids, or convert between TextGrid and ELAN formats.
 homepage: https://github.com/hbuschme/TextGridTools/
 ---
+
 
 # tgt
 

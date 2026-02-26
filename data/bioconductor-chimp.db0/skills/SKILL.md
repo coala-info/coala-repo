@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chimp.db0
-description: the package is available on all platforms; click for details.
+description: This package provides base annotation data and database schemas for Chimpanzee (*Pan troglodytes*) to support the construction of specialized annotation packages. Use when user asks to build chimpanzee-specific organism packages, create platform-specific chip packages, or use sqlForge to generate annotation databases.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chimp.db0.html
 ---
+
 
 # bioconductor-chimp.db0
 

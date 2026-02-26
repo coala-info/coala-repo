@@ -1,8 +1,9 @@
 ---
 name: fastqc-rs
-description: fastqc-rs (invoked via the `fqc` command) is a high-performance quality control tool for FASTQ files, designed as a fast, Rust-based alternative to the original FastQC.
+description: fastqc-rs is a high-performance tool that generates quality control reports and visualizations for FASTQ sequencing data. Use when user asks to perform quality control on sequencing reads, generate HTML quality reports, or analyze base quality and GC content.
 homepage: https://github.com/fxwiegand/fastqc-rs
 ---
+
 
 # fastqc-rs
 

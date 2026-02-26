@@ -1,12 +1,40 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - CATS_rb_index
+baseCommand: cats_rb_index
 label: cats-rb_CATS_rb_index
-doc: "Index tool for CATS-rb (Note: The provided help text contains system error messages
-  regarding container extraction and does not list specific command-line arguments).\n
-  \nTool homepage: https://github.com/bodulic/CATS-rb"
-inputs: []
+doc: "genome index generation script\n\nTool homepage: https://github.com/bodulic/CATS-rb"
+inputs:
+  - id: genome
+    type: File
+    doc: Genome file
+    inputBinding:
+      position: 1
+  - id: max_gene_length
+    type:
+      - 'null'
+      - int
+    doc: Maximum gene length (in bp)
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: overwrite_index
+    type:
+      - 'null'
+      - boolean
+    doc: Overwrite the genome index directory
+    default: false
+    inputBinding:
+      position: 102
+      prefix: -O
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of CPU threads
+    default: 10
+    inputBinding:
+      position: 102
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

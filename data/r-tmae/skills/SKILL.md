@@ -1,8 +1,9 @@
 ---
 name: r-tmae
-description: R package tmae (documentation from project home).
+description: The r-tmae package identifies allelic imbalance in allele-specific expression data by applying negative binomial statistical tests to allele counts. Use when user asks to test for allelic imbalance, annotate variants with gnomAD population frequencies, or visualize allelic fold changes and counts.
 homepage: https://cran.r-project.org/web/packages/tmae/index.html
 ---
+
 
 # r-tmae
 

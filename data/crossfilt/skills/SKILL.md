@@ -1,8 +1,9 @@
 ---
 name: crossfilt
-description: CrossFilt addresses the challenge of "reference bias" in comparative genomics.
+description: CrossFilt addresses reference bias in comparative genomics by filtering for reciprocal alignments between species. Use when user asks to lift alignments between species, split large BAM files for processing, or filter for reciprocal reads with unambiguous orthology.
 homepage: https://github.com/kennethabarr/CrossFilt
 ---
+
 
 # crossfilt
 

@@ -1,8 +1,9 @@
 ---
 name: severus
-description: Severus is a specialized bioinformatics tool designed to identify somatic structural variations from long-read sequencing alignments.
+description: Severus identifies somatic structural variations from long-read sequencing alignments using breakpoint graphs and haplotype-specific information. Use when user asks to detect somatic structural variants, analyze tumor-normal pairs, or identify complex genomic rearrangements in long-read data.
 homepage: https://github.com/KolmogorovLab/Severus
 ---
+
 
 # severus
 

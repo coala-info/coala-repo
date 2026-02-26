@@ -1,8 +1,9 @@
 ---
 name: plinder
-description: PLINDER is a specialized resource designed to overcome limitations in protein-ligand interaction datasets by providing a massive, high-quality collection of curated systems.
+description: PLINDER provides a curated dataset and evaluation framework for protein-ligand interaction modeling and benchmarking. Use when user asks to retrieve protein-ligand systems, perform similarity searches on interaction fingerprints or pockets, filter structures by quality or state, or benchmark docking and binding affinity models using standardized splits and evaluation harnesses.
 homepage: https://www.plinder.sh
 ---
+
 
 # plinder
 

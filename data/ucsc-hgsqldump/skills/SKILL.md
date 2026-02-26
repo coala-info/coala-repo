@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgsqldump
-description: ucsc-hgsqldump is a specialized wrapper for the standard `mysqldump` utility, designed specifically for the UCSC Genome Browser database environment.
+description: ucsc-hgsqldump extracts data from UCSC Genome Browser databases. Use when user asks to dump a specific table, dump multiple tables, or dump an entire database from a UCSC Genome Browser.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgsqldump
 

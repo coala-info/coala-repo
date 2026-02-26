@@ -2,15 +2,61 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: BedAnnotateGC
 label: ngs-bits_BedAnnotateGC
-doc: "The provided text is a system error message (out of disk space during container
-  image extraction) and does not contain the help documentation for the tool. As a
-  result, no arguments could be extracted.\n\nTool homepage: https://github.com/imgag/ngs-bits"
-inputs: []
+doc: "Annotates GC content fraction to regions in a BED file.\n\nTool homepage: https://github.com/imgag/ngs-bits"
+inputs:
+  - id: clear
+    type:
+      - 'null'
+      - boolean
+    doc: Clear all annotations present in the input file.
+    default: 'false'
+    inputBinding:
+      position: 101
+      prefix: -clear
+  - id: extend
+    type:
+      - 'null'
+      - int
+    doc: Bases to extend around the input region for calculating the GC content.
+    default: '0'
+    inputBinding:
+      position: 101
+      prefix: -extend
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: Input BED file. If unset, reads from STDIN.
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -in
+  - id: reference_genome
+    type:
+      - 'null'
+      - File
+    doc: Reference genome FASTA file. If unset, 'reference_genome' from the 
+      'settings.ini' file is used.
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -ref
+  - id: settings_override_file
+    type:
+      - 'null'
+      - File
+    doc: Settings override file (no other settings files are used).
+    inputBinding:
+      position: 101
+      prefix: --settings
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output BED file. If unset, writes to STDOUT.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/ngs-bits:2025_09--py313h572c47f_0
-stdout: ngs-bits_BedAnnotateGC.out
+    dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

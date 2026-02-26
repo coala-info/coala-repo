@@ -1,8 +1,9 @@
 ---
 name: abyss
-description: A de novo, parallel, paired-end sequence assembler
+description: ABySS is a genomic sequence assembler designed to reconstruct long sequences from short-read data using a distributed de Bruijn graph or Bloom filters. Use when user asks to assemble large genomes, configure k-mer sizes for assembly, perform scaffolding, or close gaps in scaffolds.
 homepage: https://www.bcgsc.ca/platform/bioinfo/software/abyss
 ---
+
 
 # abyss
 

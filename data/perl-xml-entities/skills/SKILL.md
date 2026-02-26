@@ -1,8 +1,9 @@
 ---
 name: perl-xml-entities
-description: This skill provides a streamlined way to handle XML entity mapping.
+description: This tool decodes and encodes XML entities to convert special characters between XML-compliant formats and standard Unicode. Use when user asks to decode XML entities into readable text, encode special characters for XML safety, or sanitize strings for data processing pipelines.
 homepage: http://metacpan.org/pod/XML::Entities
 ---
+
 
 # perl-xml-entities
 

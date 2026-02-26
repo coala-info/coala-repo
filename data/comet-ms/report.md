@@ -1,9 +1,9 @@
 # comet-ms CWL Generation Report
 
-## comet-ms
+## comet-ms_comet
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains system error messages related to a container runtime failure (no space left on device).
+Comet search engine for mass spectrometry data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/comet-ms:2024011--hb319eff_0
@@ -12,37 +12,31 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/comet-ms/overview
-- **Total Downloads**: 277.1K
+- **Total Downloads**: 277.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/02c1cd897f4f48627dd7c8c35a20bd040a7cedc1e746d8023567d3e3aa3d96bd: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/comet-ms:2024011--hb319eff_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2071012583: no space left on device
-```
+Comet version "2024.01 rev. 1"
+ (c) University of Washington
 
+ Comet usage:  comet [options] <input_files>
 
-## Metadata
-- **Skill**: generated
+ Supported input formats include mzXML, mzML, Thermo raw, mgf, and ms2 variants (cms2, bms2, ms2)
 
-## comet-ms_comet
+       options:  -p         to print out a comet.params.new file
+                 -q         to print out a comet.params.new file with more parameter entries
+                 -P<params> to specify an alternate parameters file (default comet.params)
+                 -N<name>   to specify an alternate output base name; valid only with one input file
+                 -D<dbase>  to specify a sequence database, overriding entry in parameters file
+                 -F<num>    to specify the first/start scan to search, overriding entry in parameters file
+                 -L<num>    to specify the last/end scan to search, overriding entry in parameters file
+                            (-L option is required if -F option is used)
+                 -i         create peptide index file only (specify .idx file as database for index search)
 
-### Tool Description
-Comet is an open source tandem mass spectrometry (MS/MS) sequence database search tool. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/comet-ms:2024011--hb319eff_0
-- **Homepage**: http://comet-ms.sourceforge.net/
-- **Package**: https://anaconda.org/channels/bioconda/packages/comet-ms/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/02c1cd897f4f48627dd7c8c35a20bd040a7cedc1e746d8023567d3e3aa3d96bd: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/comet-ms:2024011--hb319eff_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1566667823: no space left on device
+       example:  comet file1.mzXML file2.mzXML
+            or   comet -F1000 -L1500 file1.mzXML    <- to search scans 1000 through 1500
+            or   comet -PParams.txt *.mzXML         <- use parameters in the file 'Params.txt'
 ```
 

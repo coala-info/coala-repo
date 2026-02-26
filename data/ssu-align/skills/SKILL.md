@@ -1,8 +1,9 @@
 ---
 name: ssu-align
-description: The `ssu-align` package is a specialized toolset for structural alignment of SSU rRNA sequences.
+description: The ssu-align package performs structural alignment of small subunit ribosomal RNA sequences using covariance models that incorporate secondary structure information. Use when user asks to identify sequence domains, generate structurally informed SSU rRNA alignments, mask unreliable alignment positions, or merge alignments for phylogenetic analysis.
 homepage: http://eddylab.org/software/ssu-align/
 ---
+
 
 # ssu-align
 

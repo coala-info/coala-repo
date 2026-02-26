@@ -1,8 +1,9 @@
 ---
 name: metaxa
-description: Metaxa2 is a specialized bioinformatics pipeline designed to identify ribosomal RNA sequences within large genomic datasets.
+description: Metaxa identifies and taxonomically classifies ribosomal RNA sequences and other genetic markers within genomic datasets. Use when user asks to identify rRNA fragments, classify sequences to taxonomic groups, process paired-end metagenomic data, or build custom marker databases.
 homepage: http://microbiology.se/software/metaxa2/
 ---
+
 
 # metaxa
 

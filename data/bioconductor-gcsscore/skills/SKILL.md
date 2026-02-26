@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcsscore
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool calculates differential gene expression significance scores from Affymetrix GeneChip microarray probe-level data using the GCS-score algorithm. Use when user asks to calculate S-scores from CEL files, perform pairwise microarray comparisons, or analyze differential expression for Whole Transcriptome and 3' IVT arrays.
 homepage: https://bioconductor.org/packages/3.10/bioc/html/GCSscore.html
 ---
+
 
 # bioconductor-gcsscore
 

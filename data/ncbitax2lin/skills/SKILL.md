@@ -1,8 +1,9 @@
 ---
 name: ncbitax2lin
-description: ncbitax2lin is a high-performance utility that transforms the hierarchical NCBI taxonomy database into a flattened CSV format.
+description: ncbitax2lin converts the hierarchical NCBI taxonomy database into a flattened CSV file containing full taxonomic lineages. Use when user asks to convert NCBI taxdump files to a table, generate taxonomic lineages for TaxIDs, or flatten the NCBI taxonomy tree.
 homepage: https://github.com/zyxue/ncbitax2lin
 ---
+
 
 # ncbitax2lin
 

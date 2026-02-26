@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brainstars
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool accesses the BrainStars database to retrieve and analyze genome-wide expression profiles across 51 regions of the adult mouse brain. Use when user asks to retrieve gene expression data, find marker genes, search for gene families, identify multi-state expression patterns, or download brain map figures.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/BrainStars.html
 ---
+
 
 # bioconductor-brainstars
 

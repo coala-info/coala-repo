@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arrayqualitymetrics
-description: the package is available on all platforms; click for details.
+description: This tool provides automated quality control and comprehensive reporting for microarray data. Use when user asks to generate QC reports, perform outlier detection, or visualize data quality for Bioconductor microarray objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/arrayQualityMetrics.html
 ---
+
 
 # bioconductor-arrayqualitymetrics
 

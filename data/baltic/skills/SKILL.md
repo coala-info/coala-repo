@@ -1,8 +1,9 @@
 ---
 name: baltic
-description: The `baltic` (Backronymed Adaptable Lightweight Tree Import Code) skill provides a specialized workflow for handling phylogenetic data.
+description: The baltic tool transforms phylogenetic tree data into navigable Python objects for evolutionary analysis and manipulation. Use when user asks to load Newick or Nexus files, filter branches by traits, extract subtrees, find common ancestors, or visualize phylogenies.
 homepage: https://github.com/evogytis/baltic
 ---
+
 
 # baltic
 

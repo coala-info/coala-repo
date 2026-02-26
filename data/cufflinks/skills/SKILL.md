@@ -1,8 +1,9 @@
 ---
 name: cufflinks
-description: Cufflinks is a productivity tool that bridges the gap between the data manipulation power of Pandas and the interactive visualization capabilities of Plotly.
+description: Cufflinks connects Pandas DataFrames to Plotly to create interactive web-ready visualizations with minimal code. Use when user asks to generate interactive plots from DataFrames, create financial charts with technical analysis, or use the iplot method for rapid data exploration.
 homepage: https://github.com/santosjorge/cufflinks
 ---
+
 
 # cufflinks
 

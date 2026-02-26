@@ -1,8 +1,9 @@
 ---
 name: perl-unicode-normalize
-description: The `perl-unicode-normalize` skill implements the Unicode Normalization Forms (UAX #15).
+description: This tool transforms Unicode text into standardized normalization forms to ensure consistent character representation. Use when user asks to normalize text, convert characters to NFC or NFD forms, or prepare datasets for accurate searching and deduplication.
 homepage: http://metacpan.org/pod/Unicode::Normalize
 ---
+
 
 # perl-unicode-normalize
 

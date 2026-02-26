@@ -1,8 +1,9 @@
 ---
 name: ucsc-splitfilebycolumn
-description: The `splitFileByColumn` utility is a high-performance tool from the UCSC Genome Browser "Kent" source tree designed for data partitioning.
+description: The ucsc-splitfilebycolumn tool partitions a tab-separated input file into multiple output files based on unique values in a specified column. Use when user asks to split a file by column, partition data by chromosome, or separate multiplexed data by sample identifiers.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-splitfilebycolumn
 

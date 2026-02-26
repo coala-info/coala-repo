@@ -1,8 +1,9 @@
 ---
 name: gretl
-description: gretl (Graph Evaluation Toolkit) is a high-performance tool designed for the statistical analysis of variation graphs.
+description: "gretl is a high-performance toolkit for the statistical analysis and evaluation of variation graphs in GFA format. Use when user asks to calculate graph statistics, perform core pangenome analysis, quantify path similarity, or generate node-level metrics."
 homepage: https://github.com/moinsebi/gretl
 ---
+
 
 # gretl
 

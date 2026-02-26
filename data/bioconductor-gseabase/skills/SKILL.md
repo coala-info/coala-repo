@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gseabase
-description: the package is available on all platforms; click for details.
+description: The GSEABase package provides a standardized framework for managing, mapping, and performing set operations on gene sets and their associated metadata in R. Use when user asks to create GeneSet objects from various sources, map gene identifiers between different types, or manage collections of gene sets for pathway analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSEABase.html
 ---
+
 
 # bioconductor-gseabase
 

@@ -3,7 +3,7 @@
 ## virdig
 
 ### Tool Description
-A tool for viral discovery/genomics (Note: The provided text contains container build logs rather than CLI help documentation, so no arguments could be extracted).
+virdig is a tool for viral genome assembly.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/virdig:1.0.0--h5ca1c30_0
@@ -18,13 +18,21 @@ A tool for viral discovery/genomics (Note: The provided text contains container 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/virdig:1.0.0--h5ca1c30_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+===============================================================================
+Usage 
+===============================================================================
+ ** Options: **
+  -k <int>: length of kmer, default 31. 
+  -o <string>: output directory. 
+  -h : help information. 
+  Pair end reads: 
+  -l <string>: left reads file name (.fasta). 
+  -r <string>: right reads file name (.fasta). 
+  -d <int>: pair-end reads directions can be defined, 1: opposite directions  2: same direction. default: 1. 
+  -t <int>: number of threads, default 6. 
+  --ref_genome_len <int>: approximate length of the viral reference genome, default 30000. 
+  --non_canonical <int>: whether to generate non-standard transcripts, 1 : true, 0 : false, default 0. 
+  --map_weight <float>: paired-end reads are assigned paired node weights, recommended to be in the range of 0 to 1, default 0.6. 
+===============================================================================
 ```
 
-
-## Metadata
-- **Skill**: generated

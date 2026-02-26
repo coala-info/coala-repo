@@ -1,8 +1,9 @@
 ---
 name: bioconductor-padma
-description: the package is available on all platforms; click for details.
+description: This tool performs multi-omic pathway deviation analysis to quantify individual-level departures from a reference population. Use when user asks to calculate pathway deviation scores, integrate multi-omic data at the pathway level, or identify individual-specific pathway alterations.
 homepage: https://bioconductor.org/packages/release/bioc/html/padma.html
 ---
+
 
 # bioconductor-padma
 

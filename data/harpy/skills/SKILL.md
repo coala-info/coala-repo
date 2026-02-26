@@ -1,8 +1,9 @@
 ---
 name: harpy
-description: Align sequences to a reference genome. Provide an additional subcommand bwa or strobe to get more information on using those aligners. Both have comparable performance, but strobe is typically faster. The aligners are not linked-read aware, but the workflows ensure linked-read information is carried over to the alignment records.
+description: Harpy is a bioinformatics pipeline that automates the conversion of raw sequencing reads into phased haplotypes for linked-read technologies. Use when user asks to process linked-read data, perform quality control on sequencing reads, or simulate genomic variants and synthetic datasets.
 homepage: https://github.com/pdimens/harpy/
 ---
+
 
 # harpy
 

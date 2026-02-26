@@ -1,8 +1,9 @@
 ---
 name: vulcan
-description: "Vulcan is a long-read mapping pipeline that melds two popular aligners: minimap2 and NGMLR."
+description: Vulcan is a long-read mapping pipeline that combines minimap2 and NGMLR for improved alignment accuracy. Use when user asks to 'map long reads', 'align long reads to a reference', or 'process long-read data'.
 homepage: https://gitlab.com/treangenlab/vulcan
 ---
+
 
 # vulcan
 

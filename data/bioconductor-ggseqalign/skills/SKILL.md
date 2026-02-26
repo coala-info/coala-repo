@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggseqalign
-description: the package is available on all platforms; click for details.
+description: The ggseqalign package visualizes pairwise sequence alignments by mapping structural differences like mismatches and gaps onto a coordinate system using ggplot2. Use when user asks to visualize pairwise alignments, plot genomic or proteomic structural differences, or create customizable alignment plots in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggseqalign.html
 ---
+
 
 # bioconductor-ggseqalign
 

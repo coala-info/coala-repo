@@ -3,24 +3,32 @@
 ## schpl
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log regarding a failed Singularity/Docker container pull due to insufficient disk space.
+FAIL to generate CWL: schpl not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/schpl:1.0.5--pyhdfd78af_0
 - **Homepage**: https://github.com/lcmmichielsen/scHPL
 - **Package**: https://anaconda.org/channels/bioconda/packages/schpl/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/schpl/overview
-- **Total Downloads**: 780
+- **Total Downloads**: 784
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/lcmmichielsen/scHPL
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: schpl not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: schpl not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/699ebddaf96ab45040cfb781ef935857beb5a8a0bd0f4e53dda6e0e8b38b375a: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/schpl:1.0.5--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3421230179: no space left on device
+
 ```
 

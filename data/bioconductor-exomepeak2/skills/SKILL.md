@@ -1,8 +1,9 @@
 ---
 name: bioconductor-exomepeak2
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The exomePeak2 package performs peak calling and differential modification analysis for MeRIP-Seq data while correcting for GC content bias. Use when user asks to detect RNA modification peaks, perform differential modification analysis between conditions, or quantify modification levels at single-base resolution.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/exomePeak2.html
 ---
+
 
 # bioconductor-exomepeak2
 

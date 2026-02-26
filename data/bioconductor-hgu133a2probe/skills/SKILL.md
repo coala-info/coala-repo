@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133a2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix Human Genome U133A 2.0 microarray. Use when user asks to access probe sequences, map probes to coordinates, or perform sequence-level analysis for hgu133a2 arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133a2probe.html
 ---
+
 
 # bioconductor-hgu133a2probe
 

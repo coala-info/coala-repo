@@ -1,8 +1,9 @@
 ---
 name: simbac
-description: SimBac is a coalescent-based simulator designed specifically for bacterial genomes.
+description: SimBac is a coalescent-based simulator that generates bacterial genome sequences while modeling internal and external recombination events. Use when user asks to simulate bacterial populations, generate genomic data with recombination, or export ancestral recombination graphs.
 homepage: https://github.com/tbrown91/SimBac
 ---
+
 
 # simbac
 

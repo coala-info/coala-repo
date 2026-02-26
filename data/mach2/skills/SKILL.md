@@ -1,8 +1,9 @@
 ---
 name: mach2
-description: The `mach2` skill enables the reconstruction of cancer cell movement between anatomical sites.
+description: Mach2 reconstructs cancer cell migration histories by applying parsimony criteria to clonal trees and anatomical locations. Use when user asks to reconstruct migration paths between anatomical sites, resolve evolutionary polytomies, or generate optimal migration histories for cancer clones.
 homepage: https://github.com/elkebir-group/mach2
 ---
+
 
 # mach2
 

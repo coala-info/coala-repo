@@ -1,8 +1,9 @@
 ---
 name: ifcnv
-description: ifCNV (Isolation Forest based Copy Number Variation detection) is a machine learning tool designed to identify genomic amplifications and deletions based on read-depth distribution.
+description: ifCNV identifies genomic amplifications and deletions in targeted sequencing data using an Isolation Forest machine learning algorithm. Use when user asks to detect copy number variations, identify genomic outliers, or analyze read-depth distribution in capture and amplicon-based panels.
 homepage: https://github.com/SimCab-CHU/ifCNV
 ---
+
 
 # ifcnv
 

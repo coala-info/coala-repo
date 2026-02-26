@@ -1,8 +1,9 @@
 ---
 name: cafe
-description: CAFE (Computational Analysis of gene Family Evolution) is a statistical tool designed to analyze changes in gene family size across a phylogenetic tree.
+description: CAFE analyzes changes in gene family size across a phylogenetic tree using a birth-death model to estimate rates of gene gain and loss. Use when user asks to estimate birth-death rates, identify gene family expansions or contractions, or model gene family evolution across species.
 homepage: https://hahnlab.github.io/CAFE/
 ---
+
 
 # cafe
 

@@ -1,8 +1,9 @@
 ---
 name: leptonica
-description: Leptonica is a powerful C library designed for efficient image processing and analysis, particularly optimized for document images.
+description: Leptonica is a high-performance image processing and analysis library optimized for document images and OCR preprocessing. Use when user asks to deskew scanned pages, binarize images, perform morphological operations, or extract connected components and metadata from raster images.
 homepage: https://github.com/DanBloomberg/leptonica
 ---
+
 
 # leptonica
 

@@ -1,8 +1,9 @@
 ---
 name: mypy
-description: Mypy acts as a static analysis layer for Python, validating that variables and functions are used according to their declared types.
+description: "Mypy performs static type checking for Python code to identify errors before runtime. Use when user asks to check types, perform static analysis, catch type-related bugs, or run mypy in strict mode."
 homepage: https://github.com/python/mypy
 ---
+
 
 # mypy
 

@@ -2,16 +2,105 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: connor
 label: connor
-doc: "A tool for deduplicating BAM files using Unique Molecular Identifiers (UMIs).
-  (Note: The provided text contains system error messages regarding disk space and
-  container conversion rather than the tool's help documentation; therefore, no arguments
-  could be extracted.)\n\nTool homepage: https://github.com/umich-brcf-bioinf/Connor"
-inputs: []
+doc: "Deduplicates BAM file based on custom inline DNA barcodes. Emits a new BAM file
+  reduced to a single consensus read for each family of original reads.\n\nTool homepage:
+  https://github.com/umich-brcf-bioinf/Connor"
+inputs:
+  - id: input_bam
+    type: File
+    doc: path to input BAM
+    inputBinding:
+      position: 1
+  - id: consensus_freq_threshold
+    type:
+      - 'null'
+      - float
+    doc: Ambiguous base calls at a specific position in a family are transformed
+      to either majority base call, or N if the majority percentage is below 
+      this threshold. (Higher threshold results in more Ns in consensus.)
+    default: 0.6
+    inputBinding:
+      position: 102
+      prefix: --consensus_freq_threshold
+  - id: filter_order
+    type:
+      - 'null'
+      - string
+    doc: determines how filters will be ordered in the log results
+    default: count
+    inputBinding:
+      position: 102
+      prefix: --filter_order
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Override validation warnings
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --force
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Path to verbose log file
+    default: '{output_filename}.log'
+    inputBinding:
+      position: 102
+      prefix: --log_file
+  - id: min_family_size_threshold
+    type:
+      - 'null'
+      - int
+    doc: families with count of original reads < threshold are excluded from the
+      deduplicated output. (Higher threshold is more stringent.)
+    default: 3
+    inputBinding:
+      position: 102
+      prefix: --min_family_size_threshold
+  - id: umt_distance_threshold
+    type:
+      - 'null'
+      - int
+    doc: UMTs equal to or closer than this Hamming distance will be combined 
+      into a single family. Lower threshold make more families with more 
+      consistent UMTs; 0 implies UMI must match exactly.
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: --umt_distance_threshold
+  - id: umt_length
+    type:
+      - 'null'
+      - int
+    doc: length of UMT
+    default: 6
+    inputBinding:
+      position: 102
+      prefix: --umt_length
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: print all log messages to console
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_bam
+    type: File
+    doc: path to deduplicated output BAM
+    outputBinding:
+      glob: '*.out'
+  - id: annotated_output_bam
+    type:
+      - 'null'
+      - File
+    doc: path to output BAM containing all original aligns annotated with BAM 
+      tags
+    outputBinding:
+      glob: $(inputs.annotated_output_bam)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/connor:0.6.1--py_0
-stdout: connor.out

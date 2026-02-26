@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plier
-description: the package is available on all platforms; click for details.
+description: The bioconductor-plier package implements the PLIER algorithm to estimate gene expression levels from Affymetrix microarray probe-level data. Use when user asks to calculate expression values, normalize microarray data, or process probe-level intensities using the PLIER method.
 homepage: https://bioconductor.org/packages/release/bioc/html/plier.html
 ---
+
 
 # bioconductor-plier
 

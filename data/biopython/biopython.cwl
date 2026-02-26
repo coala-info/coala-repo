@@ -1,11 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: biopython
+baseCommand: docker run
 label: biopython
-doc: "The provided text is an error log from a container runtime (Singularity/Apptainer)
-  and does not contain CLI help information or argument definitions.\n\nTool homepage:
-  http://www.biopython.org/"
-inputs: []
+doc: "Run a Docker container for Biopython.\n\nTool homepage: http://www.biopython.org/"
+inputs:
+  - id: image
+    type: string
+    doc: The Docker image to run (e.g., 'quay.io/biocontainers/biopython:1.84')
+    inputBinding:
+      position: 1
+  - id: command_and_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: The command and arguments to run inside the container
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

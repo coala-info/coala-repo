@@ -1,8 +1,9 @@
 ---
 name: bioconductor-catalyst
-description: the package provides a number of convenient functions for data processing (e.g., clustering, dimension reduction), as well as a suite of visualizations for exploratory data analysis and exploration of results from differential abundance (DA) and state (DS) analysis in order to identify differences in composition and expression profiles at the subpopulation-level, respectively.
+description: "CATALYST is a Bioconductor package for preprocessing, clustering, and visualizing high-dimensional cytometry data. Use when user asks to convert FCS files to SingleCellExperiment objects, perform FlowSOM clustering, run dimensionality reduction like UMAP or t-SNE, and conduct differential abundance or differential state analysis."
 homepage: https://bioconductor.org/packages/release/bioc/html/CATALYST.html
 ---
+
 
 # bioconductor-catalyst
 

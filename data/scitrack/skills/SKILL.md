@@ -1,8 +1,9 @@
 ---
 name: scitrack
-description: scitrack is a specialized logging library designed to solve the "provenance" problem in scientific computing.
+description: scitrack is a logging library that captures scientific provenance by recording system metadata, software versions, and file checksums. Use when user asks to track computation state, log library versions, or record MD5 signatures for input and output files.
 homepage: https://github.com/HuttleyLab/scitrack
 ---
+
 
 # scitrack
 

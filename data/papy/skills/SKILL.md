@@ -1,8 +1,9 @@
 ---
 name: papy
-description: Papyros Shell is a desktop compositor for Wayland built using QtQuick and the Green Island framework, following Google's Material Design guidelines.
+description: Papyros Shell is a desktop compositor for Wayland that provides a Material Design environment built with QtQuick and Green Island. Use when user asks to build the shell from source, resolve dependencies, configure the SDDM theme, or run the compositor in windowed or standalone mode.
 homepage: https://github.com/papyros/papyros-shell
 ---
+
 
 # papy
 

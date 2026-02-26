@@ -1,8 +1,9 @@
 ---
 name: perl-test-notabs
-description: `Test::NoTabs` is a Perl testing utility designed to scan files for hard tabs.
+description: This tool scans Perl source code files to ensure they do not contain hard tabs. Use when user asks to check files for tab characters, enforce no-tabs policies in Perl projects, or integrate tab testing into a Test::More suite.
 homepage: http://metacpan.org/pod/Test-NoTabs
 ---
+
 
 # perl-test-notabs
 

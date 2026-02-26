@@ -1,8 +1,9 @@
 ---
 name: perl-bio-monophylizer
-description: The `perl-bio-monophylizer` tool provides a systematic way to verify taxonomic consistency in phylogenetic reconstructions.
+description: This tool assesses taxonomic consistency in phylogenetic trees by verifying the monophyly of defined groups. Use when user asks to verify monophyly, check taxonomic consistency in a tree, or identify potential misidentifications in phylogenetic reconstructions.
 homepage: https://metacpan.org/pod/Bio::Monophylizer
 ---
+
 
 # perl-bio-monophylizer
 

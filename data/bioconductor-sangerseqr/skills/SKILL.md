@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sangerseqr
-description: the package is available on all platforms; click for details.
+description: sangerseqR is an R package for reading, visualizing, and analyzing Sanger sequencing chromatogram data. Use when user asks to read ABIF or SCF files, perform base calling, or identify heterozygous bases in Sanger sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/sangerseqR.html
 ---
+
 
 # bioconductor-sangerseqr
 

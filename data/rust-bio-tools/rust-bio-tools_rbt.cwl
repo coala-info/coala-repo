@@ -2,10 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rbt
 label: rust-bio-tools_rbt
-doc: "A collection of command-line utilities for bioinformatics (Note: The provided
-  text contained build logs rather than help documentation, so no arguments could
-  be extracted).\n\nTool homepage: https://github.com/rust-bio/rust-bio-tools"
-inputs: []
+doc: "A set of ultra-fast command line utilities for bioinformatics tasks based on
+  Rust-Bio.\n\nTool homepage: https://github.com/rust-bio/rust-bio-tools"
+inputs:
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose output.
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

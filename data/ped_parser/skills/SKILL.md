@@ -1,8 +1,9 @@
 ---
 name: ped_parser
-description: The `ped_parser` tool is a Python-based utility designed to handle pedigree data structures.
+description: ped_parser parses, validates, and converts pedigree files into structured formats like JSON or Madeline2. Use when user asks to validate pedigree consistency, convert PED files to JSON or Madeline2 format, or identify family relationships like trios.
 homepage: https://github.com/moonso/ped_parser
 ---
+
 
 # ped_parser
 

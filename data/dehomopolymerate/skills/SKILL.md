@@ -1,8 +1,9 @@
 ---
 name: dehomopolymerate
-description: `dehomopolymerate` is a high-performance C utility designed to transform biological sequences by collapsing homopolymer runs (e.g., `AAAAA`) into a single representative nucleotide (`A`).
+description: This tool collapses homopolymer runs in biological sequences into single representative nucleotides. Use when user asks to collapse homopolymer runs, perform homopolymer-blind analysis, convert FASTQ to FASTA, or filter sequences by length after collapsing.
 homepage: https://github.com/tseemann/dehomopolymerate
 ---
+
 
 # dehomopolymerate
 

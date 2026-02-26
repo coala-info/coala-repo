@@ -1,8 +1,9 @@
 ---
 name: drep
-description: dRep is a specialized tool for the de-replication of microbial genomes.
+description: "dRep performs de-replication and comparison of microbial genomes by clustering similar sequences and selecting the highest-quality representative for each group. Use when user asks to de-replicate a genome set, cluster genomes based on average nucleotide identity, compare genomic similarity, or select representative genomes based on assembly quality metrics."
 homepage: https://github.com/MrOlm/drep
 ---
+
 
 # drep
 

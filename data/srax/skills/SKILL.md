@@ -1,8 +1,9 @@
 ---
 name: srax
-description: sraX is a comprehensive tool for one-step resistome profiling of assembled sequence data.
+description: sraX is a tool for one-step resistome profiling that identifies antimicrobial resistance genes in assembled sequence data. Use when user asks to profile the resistome of assembled genomes, identify antibiotic resistance genes, or detect SNPs in resistance determinants.
 homepage: https://github.com/lgpdevtools/sraX
 ---
+
 
 # srax
 

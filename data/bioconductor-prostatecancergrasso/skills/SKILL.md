@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prostatecancergrasso
-description: the package is available on all platforms; click for details.
+description: This package provides the Grasso et al. prostate cancer gene expression dataset for analysis in R. Use when user asks to access prostate cancer expression data, analyze the Grasso et al. dataset, or perform genomic studies on prostate cancer.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerGrasso.html
 ---
+
 
 # bioconductor-prostatecancergrasso
 

@@ -1,8 +1,9 @@
 ---
 name: xclone
-description: XClone is a specialized algorithm designed to infer allele- and haplotype-specific copy numbers in individual cells.
+description: XClone infers allele- and haplotype-specific copy numbers and identifies subclonal CNAs in single cells. Use when user asks to infer allele- and haplotype-specific copy numbers, identify subclonal CNAs, process raw sequencing files, infer CNAs using read depth ratio or B-allele frequency, or combine RDR and BAF signals for clonal architecture inference.
 homepage: https://github.com/single-cell-genetics/XClone
 ---
+
 
 # xclone
 

@@ -1,8 +1,9 @@
 ---
 name: cuttlefish
-description: Cuttlefish is a specialized bioinformatics tool that efficiently builds compacted de Bruijn graphs, a fundamental structure in modern genomics.
+description: "Cuttlefish efficiently builds compacted de Bruijn graphs from genomic sequences by identifying maximal unitigs. Use when user asks to build a compacted de Bruijn graph, identify maximal unitigs, or process large genomic datasets into GFA or FASTA formats."
 homepage: https://github.com/COMBINE-lab/cuttlefish
 ---
+
 
 # cuttlefish
 

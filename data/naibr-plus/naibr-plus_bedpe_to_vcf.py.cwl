@@ -1,16 +1,45 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: naibr-plus_bedpe_to_vcf.py
+baseCommand: bedpe_to_vcf.py
 label: naibr-plus_bedpe_to_vcf.py
-doc: "A script to convert BEDPE files to VCF format (Note: The provided help text
-  contains only system error messages and no argument definitions).\n\nTool homepage:
-  https://github.com/pontushojer/NAIBR"
-inputs: []
+doc: "Convert NAIBR BEDPE files to VCF\n\nTool homepage: https://github.com/pontushojer/NAIBR"
+inputs:
+  - id: bedpe
+    type: File
+    doc: NAIBR-style BEDPE.
+    inputBinding:
+      position: 1
+  - id: add_chr
+    type:
+      - 'null'
+      - boolean
+    doc: Prepend 'chr' to chromsome names
+    inputBinding:
+      position: 102
+      prefix: --add-chr
+  - id: ref
+    type: string
+    doc: List of chromosome lengths e.g. `*.fai`
+    inputBinding:
+      position: 102
+      prefix: --ref
+  - id: sample_name
+    type:
+      - 'null'
+      - string
+    doc: 'Sample name. Default: SAMPLE'
+    default: SAMPLE
+    inputBinding:
+      position: 102
+      prefix: --sample-name
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_vcf
+    type:
+      - 'null'
+      - File
+    doc: 'Output VCF. Default: write to stdout'
+    outputBinding:
+      glob: $(inputs.output_vcf)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/naibr-plus:0.5.3--pyhdfd78af_0
-stdout: naibr-plus_bedpe_to_vcf.py.out

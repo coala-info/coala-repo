@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clusterprofiler
-description: the package is available on all platforms; click for details.
+description: This tool performs functional enrichment analysis and biological theme comparison to interpret gene lists. Use when user asks to perform over-representation analysis, conduct gene set enrichment analysis, convert gene identifiers, or compare functional profiles across multiple gene clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html
 ---
+
 
 # bioconductor-clusterprofiler
 

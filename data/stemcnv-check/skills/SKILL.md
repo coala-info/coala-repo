@@ -1,8 +1,9 @@
 ---
 name: stemcnv-check
-description: StemCNV-check is a specialized bioinformatics pipeline designed for the genomic integrity monitoring of stem cell lines.
+description: StemCNV-check is a bioinformatics pipeline for monitoring the genomic integrity of stem cell lines by detecting de-novo aberrations from SNP array data. Use when user asks to detect copy number variations in stem cells, monitor genomic integrity during cell culture, or generate QC reports from idat files.
 homepage: https://github.com/bihealth/StemCNV-check
 ---
+
 
 # stemcnv-check
 

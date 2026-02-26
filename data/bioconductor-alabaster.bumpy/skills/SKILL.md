@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.bumpy
-description: the package is available on all platforms; click for details.
+description: This package implements the alabaster framework for the serialization and de-serialization of BumpyMatrix objects. Use when user asks to save a BumpyMatrix to disk, load a BumpyMatrix from a directory, or ensure cross-session portability for ragged data structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.bumpy.html
 ---
+
 
 # bioconductor-alabaster.bumpy
 

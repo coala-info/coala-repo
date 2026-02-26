@@ -1,8 +1,9 @@
 ---
 name: fastv
-description: fastv is a high-performance tool designed for the rapid detection and identification of microorganisms, specifically viruses like SARS-CoV-2, from raw sequencing data.
+description: fastv is a high-performance tool for the rapid detection and identification of microorganisms from raw sequencing data using k-mer based scanning and genome mapping. Use when user asks to detect SARS-CoV-2, identify custom pathogens, screen for viruses in sequencing data, or perform quality control on reads while searching for target microbes.
 homepage: https://github.com/OpenGene/fastv
 ---
+
 
 # fastv
 

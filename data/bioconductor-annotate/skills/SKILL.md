@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotate
-description: the package is available on all platforms; click for details.
+description: This package provides interface and utility functions for retrieving and managing biological annotations from Bioconductor metadata packages. Use when user asks to retrieve biological annotations from probe IDs, work with Gene Ontology data, model chromosomal locations, generate hyperlinked HTML reports for gene lists, or query web services for gene-specific information.
 homepage: https://bioconductor.org/packages/release/bioc/html/annotate.html
 ---
+
 
 # bioconductor-annotate
 

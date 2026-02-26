@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-installpaths
-description: This skill facilitates the resolution of installation paths for Perl distributions.
+description: This tool resolves installation paths for Perl distributions by mapping file types to their target system directories. Use when user asks to determine Perl module installation locations, configure custom install prefixes, or generate path maps for ExtUtils::Install.
 homepage: http://metacpan.org/pod/ExtUtils::InstallPaths
 ---
+
 
 # perl-extutils-installpaths
 

@@ -1,8 +1,9 @@
 ---
 name: dnadotplot
-description: `dnadotplot` is a high-performance tool written in Rust that generates dot plot alignments to visualize the relationship between DNA sequences.
+description: dnadotplot generates dot plot alignments to visualize relationships and structural variations between DNA sequences. Use when user asks to visualize sequence alignments, identify structural variations like inversions or repeats, or generate dot plot images from FASTA files.
 homepage: https://github.com/quadram-institute-bioscience/dnadotplot
 ---
+
 
 # dnadotplot
 

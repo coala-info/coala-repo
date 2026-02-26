@@ -1,8 +1,9 @@
 ---
 name: genomicassertions
-description: genomicassertions is a Python-based testing framework that extends the standard `unittest` library with specialized assertions for genomic data.
+description: genomicassertions is a Python testing framework that provides specialized unittest assertions for validating genomic data in VCF and BAM files. Use when user asks to verify variants at specific coordinates, check sample genotypes, validate BAM header metadata, or confirm read coverage levels.
 homepage: https://github.com/ClinSeq/genomicassertions
 ---
+
 
 # genomicassertions
 

@@ -1,8 +1,9 @@
 ---
 name: souporcell
-description: souporcell is a robust pipeline for the genetic demultiplexing of pooled scRNA-seq samples.
+description: souporcell is a genetic demultiplexing pipeline that assigns single-cell RNA-seq data from pooled samples to their donors of origin using natural genetic variation. Use when user asks to demultiplex pooled scRNA-seq samples, assign cells to donors, or detect doublets in pooled transcriptomic data.
 homepage: https://github.com/wheaton5/souporcell
 ---
+
 
 # souporcell
 

@@ -1,8 +1,9 @@
 ---
 name: fgap
-description: FGAP (Functional Gap-filler) is a tool designed to improve the continuity of genome assemblies by replacing gap regions with actual sequences.
+description: "FGAP improves genome assembly continuity by filling or closing gaps using sequences from provided datasets. Use when user asks to fill gaps in a draft assembly, close overlaps between contigs, or improve genome sequence continuity using BLAST+."
 homepage: https://github.com/pirovc/fgap
 ---
+
 
 # fgap
 

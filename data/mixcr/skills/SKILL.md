@@ -1,8 +1,9 @@
 ---
 name: mixcr
-description: MiXCR is a comprehensive bioinformatics platform designed for the fast and accurate processing of raw adaptive immune receptor repertoire sequencing (Rep-Seq) data.
+description: MiXCR processes raw adaptive immune receptor repertoire sequencing data into quantified clonotypes through alignment, assembly, and error correction. Use when user asks to align Rep-Seq reads to germline segments, assemble clones from VDJ data, or export TCR and BCR clonotypes from bulk or single-cell sequencing.
 homepage: https://github.com/milaboratory/mixcr
 ---
+
 
 # mixcr
 

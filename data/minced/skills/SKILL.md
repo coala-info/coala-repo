@@ -1,8 +1,9 @@
 ---
 name: minced
-description: MinCED (Mining CRISPRs in Environmental Datasets) is a specialized tool for the automated detection of CRISPR arrays.
+description: "MinCED identifies CRISPR arrays within genomic or metagenomic sequences by detecting direct repeats and spacer sequences. Use when user asks to detect CRISPR loci, find repeats and spacers in environmental contigs, or generate GFF annotations for CRISPR arrays."
 homepage: https://github.com/ctSkennerton/minced
 ---
+
 
 # minced
 

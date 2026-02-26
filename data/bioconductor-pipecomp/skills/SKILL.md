@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pipecomp
-description: the package is available on all platforms; click for details.
+description: pipeComp is a framework for evaluating and benchmarking bioinformatics pipelines. Use when user asks to benchmark single-cell RNA-seq workflows, evaluate the performance of different pipeline steps, or compare computational methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/pipeComp.html
 ---
+
 
 # bioconductor-pipecomp
 

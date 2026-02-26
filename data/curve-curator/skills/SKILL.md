@@ -1,8 +1,9 @@
 ---
 name: curve-curator
-description: CurveCurator is a high-throughput analysis platform for dose-response data.
+description: CurveCurator is a high-throughput analysis platform that automates dose-response curve fitting and statistical significance testing for proteomics and viability data. Use when user asks to fit 4-parameter logistic equations, determine effect potency, perform 2D-thresholding for hit discovery, or process mass spectrometry data from MaxQuant, DIANN, Proteome Discoverer, and MSFragger.
 homepage: https://github.com/kusterlab/curve_curator
 ---
+
 
 # curve-curator
 

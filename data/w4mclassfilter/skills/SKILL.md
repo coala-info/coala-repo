@@ -1,8 +1,9 @@
 ---
 name: w4mclassfilter
-description: The `w4mclassfilter` tool is designed to maintain the integrity of metabolomics datasets when subsetting by sample groups.
+description: The w4mclassfilter tool processes metabolomics datasets by filtering samples and features, and performing data cleaning and imputation. Use when user asks to filter metabolomics data by sample class, remove zero-variance features, impute missing values, or calculate representative samples for a class.
 homepage: https://github.com/HegemanLab/w4mclassfilter
 ---
+
 
 # w4mclassfilter
 

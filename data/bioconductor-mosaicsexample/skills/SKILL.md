@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mosaicsexample
-description: the package is available on all platforms; click for details.
+description: This package provides example data sets for the MOSAiCS model-based analysis of ChIP-seq data. Use when user asks to access example ChIP-seq data, run MOSAiCS vignettes, or test model-based analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mosaicsExample.html
 ---
+
 
 # bioconductor-mosaicsexample
 

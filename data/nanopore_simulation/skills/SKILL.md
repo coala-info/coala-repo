@@ -1,8 +1,9 @@
 ---
 name: nanopore_simulation
-description: Nanopore SimulatION is a specialized tool designed to mimic the output of an ONT MinION device.
+description: Nanopore SimulatION generates raw ONT MinION signal data in Fast5 format by applying a pore model to a reference genome. Use when user asks to simulate nanopore sequencing data, generate raw Fast5 signals, or test basecalling and mapping pipelines.
 homepage: https://github.com/crohrandt/nanopore_simulation
 ---
+
 
 # nanopore_simulation
 

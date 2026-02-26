@@ -1,9 +1,9 @@
 # haplotaglr CWL Generation Report
 
-## haplotaglr
+## haplotaglr_HaplotagLR
 
 ### Tool Description
-A tool for haplotagging long reads (Note: The provided help text contains only system error messages and no usage information).
+A tool for haplotagging individual long reads using pre-phased haplotypes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/haplotaglr:1.1.13--pyhdfd78af_0
@@ -18,11 +18,17 @@ A tool for haplotagging long reads (Note: The provided help text contains only s
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/haplotaglr:1.1.13--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1559159859: no space left on device
+usage: HaplotagLR [-h] [--version] {haplotag} ...
+
+A tool for haplotagging individual long reads using pre-phased haplotypes.
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+
+[HaplotagLR modes]:
+  Choose which mode to run:
+
+  {haplotag}  mode must be added as first argument (ex: HaplotagLR haplotag )
 ```
 
-
-## Metadata
-- **Skill**: generated

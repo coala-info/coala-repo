@@ -1,8 +1,9 @@
 ---
 name: jamm
-description: JAMM (Joint Analysis of NGS Replicates) is a peak-calling algorithm designed to process biological replicates together to improve the accuracy of peak detection and boundary definition.
+description: JAMM is a peak-calling algorithm that integrates biological replicates to improve the accuracy of peak detection and boundary definition. Use when user asks to call peaks from multiple replicates, identify enriched genomic regions, or process NGS data for narrow and broad signals.
 homepage: https://github.com/mahmoudibrahim/JAMM
 ---
+
 
 # jamm
 

@@ -1,8 +1,9 @@
 ---
 name: gfapy
-description: gfapy is a flexible Python library specifically designed for handling Graphical Fragment Assembly (GFA) data.
+description: gfapy is a Python library for parsing, manipulating, and analyzing Graphical Fragment Assembly data in GFA1 and GFA2 formats. Use when user asks to load or save GFA files, traverse assembly graph topology, merge linear paths, or convert between GFA specifications.
 homepage: https://github.com/ggonnella/gfapy
 ---
+
 
 # gfapy
 

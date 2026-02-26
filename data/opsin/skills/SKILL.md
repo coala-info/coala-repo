@@ -1,8 +1,9 @@
 ---
 name: opsin
-description: The Open Parser for Systematic IUPAC Nomenclature (OPSIN) is a specialized Java-based library designed to interpret organic chemical names and generate their corresponding chemical structures.
+description: OPSIN parses systematic IUPAC chemical names to generate corresponding chemical structures in formats such as SMILES or InChI. Use when user asks to convert chemical names to SMILES, generate InChI keys from IUPAC nomenclature, or translate systematic names into structural representations.
 homepage: https://bitbucket.org/dan2097/opsin/
 ---
+
 
 # opsin
 

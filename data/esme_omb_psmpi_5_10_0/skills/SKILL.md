@@ -1,8 +1,9 @@
 ---
 name: esme_omb_psmpi_5_10_0
-description: The esme_omb_psmpi_5_10_0 skill provides procedural knowledge for the OSU Micro Benchmarks (OMB) suite within MVAPICH2-based environments.
+description: This tool measures point-to-point, collective, and one-sided communication performance using the OSU Micro Benchmarks suite in MVAPICH2 environments. Use when user asks to measure network latency, evaluate aggregate bandwidth, benchmark MPI collective operations, or tune process affinity for cluster interconnects.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_psmpi_5_10_0
 

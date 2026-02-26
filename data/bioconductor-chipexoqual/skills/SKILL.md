@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipexoqual
-description: the package is available on all platforms; click for details.
+description: This tool provides a statistical quality control pipeline for ChIP-exo and ChIP-nexus data. Use when user asks to analyze aligned reads, identify read islands, calculate enrichment statistics, or generate diagnostic plots to assess library complexity and strand imbalance.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPexoQual.html
 ---
+
 
 # bioconductor-chipexoqual
 

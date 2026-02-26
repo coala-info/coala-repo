@@ -1,8 +1,9 @@
 ---
 name: stringmeup
-description: stringmeup is a post-processing utility that allows for the rapid reclassification of Kraken 2 results.
+description: stringmeup reclassifies Kraken 2 results by adjusting taxonomic assignments based on a user-defined confidence threshold. Use when user asks to reclassify metagenomic reads, adjust Kraken 2 confidence scores, or tune classification sensitivity and specificity.
 homepage: https://github.com/danisven/StringMeUp
 ---
+
 
 # stringmeup
 

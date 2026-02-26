@@ -3,7 +3,7 @@
 ## humid
 
 ### Tool Description
-A tool for deduplicating UMI-tagged reads (Note: The provided text is a container execution error log and does not contain usage information or argument definitions).
+Deduplicate a dataset.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/humid:1.0.4--heae3180_2
@@ -18,11 +18,21 @@ A tool for deduplicating UMI-tagged reads (Note: The provided text is a containe
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/humid:1.0.4--heae3180_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2745630406: no space left on device
+Required parameter missing.
+humid: Deduplicate a dataset.
+
+positional arguments:
+  files		FastQ files (type vector<string>)
+
+optional arguments:
+  -n		word length (type unsigned long int, default: 24)
+  -m		allowed mismatches (type unsigned long int, default: 1)
+  -l		log file name (type string, default: /dev/stderr)
+  -d		output directory (type string, default: .)
+  -s		calculate statistics (type flag, default: disabled)
+  -q		write deduplicated FastQ files (type flag, default: enabled)
+  -a		write annotated FastQ files (type flag, default: disabled)
+  -e		use edit distance (type flag, default: disabled)
+  -x		use maximum clustering method (type flag, default: disabled)
 ```
 
-
-## Metadata
-- **Skill**: generated

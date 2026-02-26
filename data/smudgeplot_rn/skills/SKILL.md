@@ -1,8 +1,9 @@
 ---
 name: smudgeplot_rn
-description: `smudgeplot_rn` is a bioinformatic tool designed to disentangle genome structure by analyzing heterozygous kmer pairs.
+description: smudgeplot_rn analyzes heterozygous kmer pairs to visualize genome structure and estimate ploidy levels. Use when user asks to disentangle genome structure, identify ploidy levels, detect genome duplications, or generate a smudgeplot from kmer counts.
 homepage: https://github.com/RNieuwenhuis/smudgeplot
 ---
+
 
 # smudgeplot_rn
 

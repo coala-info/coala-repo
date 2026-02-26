@@ -1,11 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: midas_run_midas.py
+baseCommand: run_midas.py
 label: midas_run_midas.py
-doc: "Metagenomic Intra-Species Diversity Analysis System (Note: The provided text
-  is an error log and does not contain help information or argument definitions).\n
-  \nTool homepage: https://github.com/snayfach/MIDAS"
-inputs: []
+doc: "Estimate species abundance and intra-species genomic variation from an individual
+  metagenome\n\nTool homepage: https://github.com/snayfach/MIDAS"
+inputs:
+  - id: command
+    type: string
+    doc: Command to run (species, genes, snps)
+    inputBinding:
+      position: 1
+  - id: options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Options for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

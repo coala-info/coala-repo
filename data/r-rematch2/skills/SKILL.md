@@ -1,8 +1,9 @@
 ---
 name: r-rematch2
-description: "Wrappers on 'regexpr' and 'gregexpr' to return the match     results in tidy data frames.</p>"
+description: "rematch2 transforms R regular expression results into tidy tibbles with support for named capture groups. Use when user asks to extract regex matches into data frames, handle named capture groups in R, or find match positions and offsets."
 homepage: https://cloud.r-project.org/web/packages/rematch2/index.html
 ---
+
 
 # r-rematch2
 

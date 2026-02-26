@@ -1,8 +1,9 @@
 ---
 name: bioconductor-peacoqc
-description: the package is available on all platforms; click for details.
+description: PeacoQC performs automated quality control on flow cytometry data to identify and remove technical noise. Use when user asks to perform quality control on flow cytometry data, remove anomalies from FCS files, or preprocess flow cytometry experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/PeacoQC.html
 ---
+
 
 # bioconductor-peacoqc
 

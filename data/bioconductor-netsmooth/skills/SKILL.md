@@ -1,8 +1,9 @@
 ---
 name: bioconductor-netsmooth
-description: the package is available on all platforms; click for details.
+description: netSmooth performs network-based smoothing of single-cell RNA-seq data to improve downstream analysis and reduce technical noise. Use when user asks to smooth gene expression values, denoise scRNA-seq data, or incorporate protein-protein interaction networks into transcriptomic analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/netSmooth.html
 ---
+
 
 # bioconductor-netsmooth
 

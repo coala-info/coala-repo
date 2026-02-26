@@ -3,7 +3,7 @@
 ## superstr
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains container build logs and a fatal error message regarding an OCI image fetch failure.
+Rapid STR characterisation in NGS data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/superstr:1.0.1--h86fab0c_5
@@ -18,52 +18,16 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/superstr:1.0.1--h86fab0c_5 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## superstr_superstr-screen.py
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a log of a failed container build or image retrieval process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/superstr:1.0.1--h86fab0c_5
-- **Homepage**: https://github.com/bahlolab/superSTR
-- **Package**: https://anaconda.org/channels/bioconda/packages/superstr/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/superstr:1.0.1--h86fab0c_5 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## superstr_outliers.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains container execution error logs.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/superstr:1.0.1--h86fab0c_5
-- **Homepage**: https://github.com/bahlolab/superSTR
-- **Package**: https://anaconda.org/channels/bioconda/packages/superstr/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/superstr:1.0.1--h86fab0c_5 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: superstr
+ [-s] [--help] [--version] [--mode=<fastq|bam>] [-o myfile] [<file>]... [-t float] [-r <int>]
+Rapid STR characterisation in NGS data.
+  --help                    display this help and exit
+  --version                 display version info and exit
+  --mode=<fastq|bam>        type of input data
+  -s, --stream              run on named streams, not files (see manual for instructions)
+  -o myfile                 output directory
+  <file>                    input files (or names of pipes in stream mode)
+  -t, --threshold=float     compression threshold for processing strings
+  -r, --retain=<int>        write retained reads
 ```
 

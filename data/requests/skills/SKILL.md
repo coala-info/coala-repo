@@ -1,8 +1,9 @@
 ---
 name: requests
-description: The `requests` library is the industry standard for making HTTP/1.1 requests in Python.
+description: The requests library provides a human-friendly interface for making HTTP/1.1 requests in Python. Use when user asks to make GET or POST requests, handle JSON data from APIs, manage persistent sessions, or implement robust error handling for web communication.
 homepage: https://github.com/psf/requests
 ---
+
 
 # requests
 

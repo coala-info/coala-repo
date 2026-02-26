@@ -1,8 +1,9 @@
 ---
 name: clinker-py
-description: clinker-py is a specialized bioinformatics pipeline designed to automate the comparison of gene clusters.
+description: clinker-py automates the comparison and interactive visualization of gene clusters by performing global protein alignments and calculating cluster similarity. Use when user asks to compare gene clusters, generate interactive clustermaps from GenBank or GFF3 files, or visualize homology between genomic regions.
 homepage: https://github.com/gamcil/clinker
 ---
+
 
 # clinker-py
 

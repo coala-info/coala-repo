@@ -1,8 +1,9 @@
 ---
 name: ucsc-expmatrixtobarchartbed
-description: The `expMatrixToBarchartBed` utility is a specialized tool from the UCSC Kent toolkit used to bridge the gap between raw expression data and genomic visualization.
+description: The ucsc-expmatrixtobarchartbed tool converts expression data, metadata, and genomic coordinates into a BED file for UCSC Genome Browser bar chart visualization. Use when user asks to visualize gene expression data as bar charts on the UCSC Genome Browser, or prepare expression data for genomic visualization.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-expmatrixtobarchartbed
 

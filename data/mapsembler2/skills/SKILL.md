@@ -1,8 +1,9 @@
 ---
 name: mapsembler2
-description: Mapsembler2 is a specialized tool for targeted sequence assembly.
+description: Mapsembler2 is a targeted sequence assembly tool that extends user-provided starter sequences into their local genomic neighborhood using NGS read sets. Use when user asks to perform targeted assembly, extend sequence starters, validate assembly gaps, or identify structural variants and SNPs within a specific sequence context.
 homepage: https://colibread.inria.fr/software/mapsembler2/
 ---
+
 
 # mapsembler2
 

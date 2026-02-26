@@ -1,8 +1,9 @@
 ---
 name: panman
-description: PanMAN (Pangenome Mutation-Annotated Network) is a specialized data representation designed for massive pangenome datasets.
+description: PanMAN is a specialized data representation and toolset for efficiently storing and analyzing massive pangenome datasets using mutation-annotated networks. Use when user asks to construct pangenome mutation-annotated networks, extract variants in VCF format, or convert pangenome data into MSA and GFA formats.
 homepage: https://github.com/TurakhiaLab/panman
 ---
+
 
 # panman
 

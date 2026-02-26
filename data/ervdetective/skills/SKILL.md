@@ -1,8 +1,9 @@
 ---
 name: ervdetective
-description: `ervdetective` is a Python-based command-line pipeline designed for the high-throughput discovery and characterization of Endogenous Retroviruses (ERVs).
+description: ervdetective is a command-line pipeline for the high-throughput discovery and characterization of Endogenous Retroviruses in genomic sequences. Use when user asks to detect retroviral elements, identify LTR structures, or annotate viral protein domains in a host genome.
 homepage: https://github.com/ZhijianZhou01/ervdetective
 ---
+
 
 # ervdetective
 

@@ -1,8 +1,9 @@
 ---
 name: diann
-description: DIA-NN is a specialized software suite designed for the automated processing of DIA proteomics datasets.
+description: DIA-NN is a specialized software suite for the high-speed automated processing and quantification of DIA proteomics datasets. Use when user asks to create predicted spectral libraries from protein sequences, identify and quantify proteins in raw mass spectrometry files, or process large-scale proteomics experiments.
 homepage: https://github.com/vdemichev/DiaNN
 ---
+
 
 # diann
 

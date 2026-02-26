@@ -3,26 +3,32 @@
 ## mobyle-tutorials
 
 ### Tool Description
-The provided text contains error logs from a container runtime (Apptainer/Singularity) rather than CLI help documentation. As a result, no functional description or arguments could be extracted.
+[Errno 2] No such file or directory: 'mobyle-tutorials'; fallback failed: [Errno 2] No such file or directory: 'mobyle-tutorials'
 
 ### Metadata
-- **Docker Image**: biocontainers/mobyle-tutorials:v1.5.0-4-deb_cv1
+- **Docker Image**: Not found
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mobyle-tutorials/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'mobyle-tutorials'; fallback failed: [Errno 2] No such file or directory: 'mobyle-tutorials'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'mobyle-tutorials'; fallback failed: [Errno 2] No such file or directory: 'mobyle-tutorials'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/mobyle-tutorials:v1.5.0-4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2398074871: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

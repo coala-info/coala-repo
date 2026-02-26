@@ -1,8 +1,9 @@
 ---
 name: scanpy
-description: Scanpy is a scalable toolkit designed for analyzing single-cell gene expression data.
+description: Scanpy is a scalable toolkit for analyzing single-cell gene expression data. Use when user asks to perform quality control, normalize data, reduce dimensionality, cluster cells, or identify marker genes.
 homepage: https://scanpy.readthedocs.io/en/latest/
 ---
+
 
 # scanpy
 

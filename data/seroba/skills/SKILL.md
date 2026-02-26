@@ -1,8 +1,9 @@
 ---
 name: seroba
-description: SeroBA (Serotype By Ariba) is a high-throughput k-mer based pipeline designed to identify serotypes directly from raw Illumina paired-end sequencing data.
+description: SeroBA is a k-mer based pipeline that identifies Streptococcus pneumoniae serotypes directly from raw Illumina paired-end sequencing data. Use when user asks to identify capsular types, run serotyping on pneumococcal reads, or summarize serotype predictions from multiple samples.
 homepage: https://github.com/sanger-pathogens/seroba
 ---
+
 
 # seroba
 

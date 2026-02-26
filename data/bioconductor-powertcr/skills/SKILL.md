@@ -1,8 +1,9 @@
 ---
 name: bioconductor-powertcr
-description: the package is available on all platforms; click for details.
+description: The powerTCR package provides a framework for the comparative analysis of T-cell receptor repertoires using statistical power and distance-based metrics. Use when user asks to compare T-cell receptor repertoires, perform power analysis on TCR sequencing data, or evaluate the similarity between immune repertoires.
 homepage: https://bioconductor.org/packages/release/bioc/html/powerTCR.html
 ---
+
 
 # bioconductor-powertcr
 

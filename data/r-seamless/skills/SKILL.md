@@ -1,8 +1,9 @@
 ---
 name: r-seamless
-description: R package seamless (documentation from project home).
+description: This tool deconvolutes bulk Acute Myeloid Leukemia RNA-seq samples using a healthy single-cell reference atlas to estimate cell-type proportions. Use when user asks to estimate cell-type proportions in AML samples, predict Venetoclax resistance, or visualize AML composition using ternary plots.
 homepage: https://cran.r-project.org/web/packages/seamless/index.html
 ---
+
 
 # r-seamless
 

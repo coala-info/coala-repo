@@ -1,8 +1,9 @@
 ---
 name: panacota
-description: PanACoTA (PANgenome with Annotations, COre identification, Tree and corresponding Alignments) is a modular suite designed for high-throughput microbial genomics.
+description: PanACoTA is a modular suite for high-throughput microbial genomics that automates the workflow from raw genomic data to phylogenetic tree construction. Use when user asks to download and quality control genomes, annotate bacterial sequences, cluster pangenomes, identify persistent gene families, or infer phylogenetic trees for large datasets.
 homepage: https://github.com/gem-pasteur/PanACoTA
 ---
+
 
 # panacota
 

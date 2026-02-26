@@ -1,8 +1,9 @@
 ---
 name: strucvis
-description: strucvis is a specialized tool for small RNA (sRNA) research that integrates sequence alignment data with structural predictions.
+description: strucvis integrates small RNA alignment data with structural predictions to visualize read coverage on predicted RNA secondary structures. Use when user asks to visualize sRNA mapping on hairpins, predict RNA secondary structures with coverage color-coding, or generate dot-bracket alignment views from BAM files.
 homepage: https://github.com/MikeAxtell/strucVis
 ---
+
 
 # strucvis
 

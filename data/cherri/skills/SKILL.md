@@ -1,8 +1,9 @@
 ---
 name: cherri
-description: CheRRI (Computational Help Evaluating RNA-RNA interactions) is a specialized tool designed to identify functional RNA-RNA interaction sites by assessing their likelihood of occurring in nature.
+description: CheRRI identifies and evaluates functional RNA-RNA interaction sites by scoring their biological relevance using machine learning models. Use when user asks to train custom models from interactome data, filter candidate interaction sites, or score the likelihood of RNA-RNA interactions.
 homepage: https://github.com/BackofenLab/Cherri
 ---
+
 
 # cherri
 

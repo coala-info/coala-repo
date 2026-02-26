@@ -1,8 +1,9 @@
 ---
 name: workspace
-description: AppFlowy is a privacy-centric, open-source collaborative workspace designed as an alternative to Notion.
+description: This tool manages the development lifecycle for the AppFlowy collaborative workspace. Use when user asks to set up the development environment, configure Rust, run Rust build scripts, run or build Flutter applications, manage translations, navigate repository directories, configure data sovereignty, or lint commit messages.
 homepage: https://github.com/AppFlowy-IO/AppFlowy
 ---
+
 
 # workspace
 

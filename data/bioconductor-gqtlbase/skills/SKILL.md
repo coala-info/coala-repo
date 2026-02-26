@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gqtlbase
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides infrastructure for managing and querying large-scale genomic QTL association results using sharded archives. Use when user asks to manage ciseStore objects, extract QTL results by probe ID or genomic range, or perform parallel processing on massive genomic association datasets.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gQTLBase.html
 ---
+
 
 # bioconductor-gqtlbase
 

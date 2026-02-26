@@ -1,8 +1,9 @@
 ---
 name: gs-tama
-description: gs-tama (Gene-Switch Transcriptome Annotation by Modular Algorithms) is a specialized toolkit for handling the complexities of long-read transcriptome data.
+description: gs-tama is a toolkit for processing long-read transcriptome data to refine gene models and merge disparate datasets into high-confidence annotations. Use when user asks to collapse redundant transcripts, merge multiple annotation sets, filter transcript fragments, or convert GTF files to BED12 format.
 homepage: https://github.com/sguizard/gs-tama
 ---
+
 
 # gs-tama
 

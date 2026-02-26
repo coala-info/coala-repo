@@ -1,8 +1,9 @@
 ---
 name: r-cellosaurus
-description: R package cellosaurus (documentation from project home).
+description: The r-cellosaurus package provides an R interface to the Cellosaurus database for importing cell line metadata and standardizing identifiers. Use when user asks to import the Cellosaurus database, map cell line names to RRIDs or CVCL accessions, and filter out contaminated or problematic cell lines.
 homepage: https://cran.r-project.org/web/packages/cellosaurus/index.html
 ---
+
 
 # r-cellosaurus
 

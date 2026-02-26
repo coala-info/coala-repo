@@ -1,8 +1,9 @@
 ---
 name: spliced_bam2gff
-description: `spliced_bam2gff` is a specialized utility designed to transform BAM alignment files into GFF2 (General Feature Format version 2).
+description: This tool converts BAM alignment files into GFF2 format while correctly interpreting spliced alignments to define exon and intron boundaries. Use when user asks to convert BAM to GFF2, process spliced RNA-seq alignments, or partition genomic alignments into loci for parallel processing.
 homepage: https://github.com/nanoporetech/spliced_bam2gff
 ---
+
 
 # spliced_bam2gff
 

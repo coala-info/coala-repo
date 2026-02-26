@@ -1,8 +1,9 @@
 ---
 name: perl-file-listing
-description: The `perl-file-listing` skill enables the transformation of unstructured text representing directory contents into structured arrays.
+description: This tool parses directory listing text into structured data such as file names, sizes, and modification times. Use when user asks to parse directory listings, extract file metadata from text, or convert unstructured file lists into structured arrays.
 homepage: http://metacpan.org/pod/File-Listing
 ---
+
 
 # perl-file-listing
 

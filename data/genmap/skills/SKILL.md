@@ -1,8 +1,9 @@
 ---
 name: genmap
-description: GenMap is a high-performance tool designed to quantify the uniqueness of genomic sequences.
+description: GenMap computes the mappability and uniqueness of genomic sequences by calculating how often k-mers appear in a genome with a specified number of mismatches. Use when user asks to quantify sequence uniqueness, build a genome index for mappability analysis, or identify repetitive and unique regions in a FASTA file.
 homepage: https://github.com/cpockrandt/genmap
 ---
+
 
 # genmap
 

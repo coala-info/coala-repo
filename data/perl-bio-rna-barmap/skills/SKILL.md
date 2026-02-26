@@ -1,8 +1,9 @@
 ---
 name: perl-bio-rna-barmap
-description: This skill enables the processing of BarMap output files, which represent the coarse-grained energy landscape of RNA molecules.
+description: This tool processes BarMap output files to analyze the coarse-grained energy landscape of RNA molecules. Use when user asks to parse BarMap files, map RNA secondary structures to basins, or analyze energy barriers and saddle points between macrostates.
 homepage: https://metacpan.org/pod/Bio::RNA::BarMap
 ---
+
 
 # perl-bio-rna-barmap
 

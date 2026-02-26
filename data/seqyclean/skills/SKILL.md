@@ -1,8 +1,9 @@
 ---
 name: seqyclean
-description: seqyclean is a high-throughput pre-processing tool used to prepare raw genomic reads for downstream analysis.
+description: seqyclean is a high-throughput pre-processing tool that removes sequencing adapters, primers, vectors, and biological contaminants from genomic reads. Use when user asks to clean raw sequencing data, perform quality trimming, filter biological contaminants, or merge overlapping paired-end reads.
 homepage: https://github.com/ibest/seqyclean
 ---
+
 
 # seqyclean
 

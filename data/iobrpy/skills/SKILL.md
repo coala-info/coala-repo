@@ -1,8 +1,9 @@
 ---
 name: iobrpy
-description: `iobrpy` is a comprehensive command-line toolkit designed to transform raw sequencing data into deep insights regarding the tumor microenvironment.
+description: iobrpy is a command-line toolkit for processing raw sequencing data and performing tumor microenvironment profiling through automated pipelines and cellular deconvolution. Use when user asks to execute end-to-end sequencing workflows, perform immune deconvolution, calculate signature scores, or convert gene expression matrices between species and formats.
 homepage: https://github.com/IOBR/IOBRpy
 ---
+
 
 # iobrpy
 

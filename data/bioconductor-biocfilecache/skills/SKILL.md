@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocfilecache
-description: the package is available on all platforms; click for details.
+description: BiocFileCache manages local and remote resource files by providing a centralized, persistent location to track and cache data via a SQLite database. Use when user asks to cache remote resources, track experimental results with metadata, manage local file versions, or retrieve persistent file paths for R objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocFileCache.html
 ---
+
 
 # bioconductor-biocfilecache
 

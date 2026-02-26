@@ -1,8 +1,9 @@
 ---
 name: netifaces
-description: The `netifaces` skill provides a portable method for accessing the network configuration of the local machine.
+description: The netifaces tool provides a portable way to access network interface information and routing gateways on a local machine. Use when user asks to list network interfaces, retrieve IP or MAC addresses for a specific interface, or identify system default gateways.
 homepage: https://github.com/al45tair/netifaces
 ---
+
 
 # netifaces
 

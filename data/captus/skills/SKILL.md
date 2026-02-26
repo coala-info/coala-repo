@@ -1,8 +1,9 @@
 ---
 name: captus
-description: Captus is a modular bioinformatics pipeline designed to streamline the creation of phylogenomic datasets from raw sequencing data.
+description: Captus is a modular bioinformatics pipeline that automates the creation of phylogenomic datasets from raw sequencing data. Use when user asks to clean reads, perform de novo assembly, extract markers from assemblies, or align and filter genomic sequences.
 homepage: https://github.com/edgardomortiz/Captus
 ---
+
 
 # captus
 

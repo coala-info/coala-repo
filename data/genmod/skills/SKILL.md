@@ -1,8 +1,9 @@
 ---
 name: genmod
-description: `genmod` is a specialized bioinformatics suite for the functional annotation and inheritance modeling of genomic variants.
+description: "genmod is a bioinformatics suite for the functional annotation and inheritance modeling of genomic variants. Use when user asks to annotate gene regions, identify inheritance models from pedigree files, or score and rank variants based on their predicted impact."
 homepage: http://github.com/moonso/genmod
 ---
+
 
 # genmod
 

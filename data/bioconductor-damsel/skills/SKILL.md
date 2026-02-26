@@ -1,8 +1,9 @@
 ---
 name: bioconductor-damsel
-description: the package is available on all platforms; click for details.
+description: bioconductor-damsel provides an end-to-end workflow for the analysis of DamID sequencing data. Use when user asks to process BAM files into GATC-specific counts, identify differentially methylated regions, call peaks, associate peaks with target genes, or perform bias-corrected gene ontology analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/Damsel.html
 ---
+
 
 # bioconductor-damsel
 

@@ -1,8 +1,9 @@
 ---
 name: r-yaml
-description: Implements the 'libyaml' 'YAML' 1.
+description: The r-yaml package provides a high-performance interface for converting between R data structures and YAML format. Use when user asks to read or write YAML files, parse YAML strings into R objects, or convert R lists and data frames into YAML configuration.
 homepage: https://cloud.r-project.org/web/packages/yaml/index.html
 ---
+
 
 # r-yaml
 

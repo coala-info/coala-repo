@@ -1,8 +1,9 @@
 ---
 name: r-multitaper
-description: Implements multitaper spectral analysis using discrete prolate spheroidal sequences (Slepians) and sine tapers. It includes an adaptive weighted multitaper spectral estimate, a coherence estimate, Thomson's Harmonic F-test, and complex demodulation. The Slepians sequences are generated efficiently using a tridiagonal matrix solution, and jackknifed confidence intervals are available for most estimates. This package is an implementation of the method described in D.J.
+description: This tool performs multitaper spectral analysis in R to estimate power spectral density with reduced leakage. Use when user asks to estimate power spectral density, conduct Thomson's Harmonic F-test for periodic signals, calculate coherence between time series, or perform complex demodulation.
 homepage: https://cloud.r-project.org/web/packages/multitaper/index.html
 ---
+
 
 # r-multitaper
 

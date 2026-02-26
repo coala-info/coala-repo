@@ -1,8 +1,9 @@
 ---
 name: ucsc-liftup
-description: The `liftUp` utility is a specialized tool from the UCSC Genome Browser suite designed for bulk coordinate remapping.
+description: ucsc-liftup remaps genomic coordinates within a single genome assembly using a simple mapping file. Use when user asks to transform coordinates from contigs to scaffolds, remap coordinates in PSL, GFF, GTF, AGP, or alignment files, or update feature positions within an assembly.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-liftup
 

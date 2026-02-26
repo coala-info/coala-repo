@@ -1,8 +1,9 @@
 ---
 name: ucsc-matrixclustercolumns
-description: The `matrixClusterColumns` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed for matrix dimensionality reduction.
+description: This tool reduces the dimensionality of a numerical matrix by clustering columns and averaging their values. Use when user asks to cluster columns in a matrix, reduce matrix dimensionality, or aggregate matrix columns by their mean.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-matrixclustercolumns
 

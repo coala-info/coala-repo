@@ -1,8 +1,9 @@
 ---
 name: connor
-description: connor is a specialized command-line tool for the deduplication of paired-end BAM files containing custom, inline barcodes.
+description: connor deduplicates paired-end BAM files by using inline Universal Molecular Tags to group reads into consensus alignments. Use when user asks to deduplicate BAM files using UMTs, generate consensus sequences from read families, or reduce technical noise in deep-sequencing data.
 homepage: https://github.com/umich-brcf-bioinf/Connor
 ---
+
 
 # connor
 

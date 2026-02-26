@@ -1,8 +1,9 @@
 ---
 name: perl-b-hooks-endofscope
-description: B::Hooks::EndOfScope provides a reliable way to execute code at the moment the Perl compiler finishes processing the surrounding lexical scope.
+description: This tool executes specific code blocks immediately after the Perl compiler finishes processing a lexical scope. Use when user asks to execute code at the end of a scope, clean up temporary compilation states, or finalize lexical effects in Perl.
 homepage: https://github.com/karenetheridge/B-Hooks-EndOfScope
 ---
+
 
 # perl-b-hooks-endofscope
 

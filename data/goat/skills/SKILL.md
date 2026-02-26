@@ -1,8 +1,9 @@
 ---
 name: goat
-description: The `goat` CLI (Genomes on a Tree) provides a streamlined interface for the GoaT API, allowing users to access a massive collection of genomic metadata without writing complex API calls.
+description: The goat CLI provides a command-line interface to search and retrieve genomic metadata and phylogenetic trees from the Genomes on a Tree database. Use when user asks to search for biological metadata, count genomic records, lookup taxon summaries, or generate phylogenetic trees in Newick format.
 homepage: https://github.com/genomehubs/goat-cli
 ---
+
 
 # goat
 

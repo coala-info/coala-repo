@@ -1,8 +1,9 @@
 ---
 name: ngsep
-description: NGSEP (Next Generation Sequencing Experience Platform) is a comprehensive Java-based framework for analyzing high-throughput sequencing data from both short and long-read platforms.
+description: NGSEP is a comprehensive Java-based framework for analyzing high-throughput sequencing data and performing reference-guided variant discovery. Use when user asks to demultiplex reads, filter FASTQ files, extract k-mers, detect genomic variants, or process and annotate VCF files.
 homepage: https://github.com/NGSEP/NGSEPcore
 ---
+
 
 # ngsep
 

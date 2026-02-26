@@ -1,8 +1,9 @@
 ---
 name: r-sigqc
-description: R package sigqc (documentation from project home).
+description: This tool performs quality control and evaluation of gene expression signatures across different datasets using the sigQC R package. Use when user asks to evaluate signature coherence, check for platform bias, or generate quality control metrics and plots for gene sets.
 homepage: https://cran.r-project.org/web/packages/sigqc/index.html
 ---
+
 
 # r-sigqc
 

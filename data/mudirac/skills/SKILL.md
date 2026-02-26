@@ -1,8 +1,9 @@
 ---
 name: mudirac
-description: The `mudirac` tool is a specialized solver for the Dirac equation in the context of muonic atoms.
+description: Mudirac is a specialized solver for the Dirac equation that models muonic atoms and their interactions with the nucleus. Use when user asks to run muonic atom simulations, configure input files with physical keywords, or optimize nuclear parameters such as radius and skin thickness.
 homepage: https://github.com/muon-spectroscopy-computational-project/mudirac
 ---
+
 
 # mudirac
 

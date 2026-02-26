@@ -1,8 +1,9 @@
 ---
 name: bioconductor-duplexdiscoverer
-description: the package predicts RNA duplex formation and their hybridization energies. Additional metrics, such as p-values for random ligation hypothesis or mean DG alignment scores, can be calculated to rank final set of RNA duplexes. Data from multiple experiments or replicates can be processed separately and further compared to check the reproducibility of the experimental method.
+description: This package provides a workflow for analyzing chimeric reads from RNA proximity ligation experiments to identify and characterize RNA duplex groups. Use when user asks to process raw split-read alignments, filter splice junction contamination, cluster reads into duplex groups, predict hybridization energies, or compare RNA-RNA interactions across samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/DuplexDiscovereR.html
 ---
+
 
 # bioconductor-duplexdiscoverer
 

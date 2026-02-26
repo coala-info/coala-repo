@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methimpute
-description: the package is available on all platforms; click for details.
+description: This R package implements Hidden Markov Models to impute DNA methylation levels and call methylation states from bisulfite sequencing data. Use when user asks to impute missing methylation values, call methylation states, or analyze DNA methylation patterns using statistical modeling.
 homepage: https://bioconductor.org/packages/release/bioc/html/methimpute.html
 ---
+
 
 # bioconductor-methimpute
 

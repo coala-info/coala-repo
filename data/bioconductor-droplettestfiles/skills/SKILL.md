@@ -1,8 +1,9 @@
 ---
 name: bioconductor-droplettestfiles
-description: the package is available on all platforms; click for details.
+description: The DropletTestFiles package provides raw, non-analysis-ready datasets from droplet-based technologies for testing and benchmarking purposes. Use when user asks to list available droplet datasets, download raw 10X Genomics test files, or retrieve cached data for benchmarking utilities.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DropletTestFiles.html
 ---
+
 
 # bioconductor-droplettestfiles
 

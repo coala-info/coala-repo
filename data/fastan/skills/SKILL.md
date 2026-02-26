@@ -1,8 +1,9 @@
 ---
 name: fastan
-description: FasTAN (Fast Tandem Repeat Finder) is a high-performance utility developed by Gene Myers for the rapid identification of tandem repeats within DNA sequences.
+description: FasTAN is a high-performance utility for the rapid identification of tandem repeats within DNA sequences. Use when user asks to find tandem repeats, detect repetitive structures in genomic data, or generate 1aln alignment files for satellite DNA analysis.
 homepage: https://github.com/thegenemyers/FASTAN
 ---
+
 
 # fastan
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dnabarcodes
-description: The package offers a function to create DNA barcode sets capable of correcting insertion, deletion, and substitution errors. Existing barcodes can be analysed regarding their minimal, maximal and average distances between barcodes. Finally, reads that start with a (possibly mutated) barcode can be demultiplexed, i.e., assigned to their original reference barcode.
+description: This tool creates, analyzes, and demultiplexes DNA barcodes with error correction for substitutions, insertions, and deletions. Use when user asks to generate robust barcode sets for sequencing, evaluate the error-correction properties of existing barcodes, or assign reads to samples based on barcode sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/DNABarcodes.html
 ---
+
 
 # bioconductor-dnabarcodes
 

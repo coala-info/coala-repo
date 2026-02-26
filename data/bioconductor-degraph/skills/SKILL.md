@@ -1,8 +1,9 @@
 ---
 name: bioconductor-degraph
-description: the package is available on all platforms; click for details.
+description: DEGraph performs differential expression testing on gene networks by incorporating graph topology and multivariate statistics. Use when user asks to perform pathway analysis that accounts for network structure, test if a gene network is differentially expressed between two conditions, or visualize expression statistics on gene network graphs.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEGraph.html
 ---
+
 
 # bioconductor-degraph
 

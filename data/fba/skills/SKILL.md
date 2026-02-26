@@ -1,8 +1,9 @@
 ---
 name: fba
-description: The `fba` (Feature Barcoding Analysis) toolbox is a specialized suite of command-line utilities designed to process raw sequencing reads from single-cell experiments that utilize feature barcoding.
+description: The fba toolbox processes raw sequencing reads from feature barcoding experiments to generate cell-by-feature UMI count matrices. Use when user asks to extract barcodes, map targeted transcripts, quantify UMI counts, or demultiplex single-cell feature data.
 homepage: https://github.com/jlduan/fba
 ---
+
 
 # fba
 

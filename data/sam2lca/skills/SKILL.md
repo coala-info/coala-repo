@@ -1,8 +1,9 @@
 ---
 name: sam2lca
-description: The `sam2lca` tool is designed to resolve taxonomic ambiguity in metagenomic and environmental DNA (eDNA) datasets.
+description: sam2lca resolves taxonomic ambiguity in metagenomic datasets by calculating the Lowest Common Ancestor for sequencing reads that align to multiple reference sequences. Use when user asks to resolve taxonomic assignments, calculate the Lowest Common Ancestor for alignments, or update the local NCBI taxonomy database.
 homepage: https://github.com/maxibor/sam2lca
 ---
+
 
 # sam2lca
 

@@ -1,8 +1,9 @@
 ---
 name: biopet-seattleseqkit
-description: The biopet-seattleseqkit is a specialized toolset designed to process and manipulate SeattleSeq output files.
+description: Biopet-seattleseqkit processes and manipulates SeattleSeq output files to filter variants and aggregate data into gene-level matrices. Use when user asks to filter SeattleSeq files by genomic regions or field criteria, or merge variant annotations into a combined gene matrix.
 homepage: https://github.com/biopet/seattleseqkit
 ---
+
 
 # biopet-seattleseqkit
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-gff3togenepred
-description: `gff3ToGenePred` is a specialized utility from the UCSC Genome Browser "kent" toolset designed to bridge the gap between the complex, attribute-rich GFF3 format and the simplified genePred format.
+description: The tool converts gene annotations from GFF3 format to genePred format. Use when user asks to convert GFF3 files to genePred, prepare custom annotation tracks, or convert Ensembl/NCBI annotations for UCSC-compatible pipelines.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-gff3togenepred
 

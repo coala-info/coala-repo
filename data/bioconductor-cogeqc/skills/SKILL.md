@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cogeqc
-description: the package is available on all platforms; click for details.
+description: Cogeqc provides tools for quality control and systematic evaluation of comparative genomics results, including orthogroups and genome assemblies. Use when user asks to assess orthogroup quality, evaluate genome assembly completeness, or visualize comparative genomics metrics.
 homepage: https://bioconductor.org/packages/release/bioc/html/cogeqc.html
 ---
+
 
 # bioconductor-cogeqc
 

@@ -1,11 +1,49 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastga
+baseCommand: GIXrm
 label: fastga_GIXrm
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It contains system log messages and a fatal error regarding container
-  image building (no space left on device).\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
-inputs: []
+doc: "Deletes GIX index files and optionally associated GDB files.\n\nTool homepage:
+  https://github.com/thegenemyers/FASTGA"
+inputs:
+  - id: source_paths
+    type:
+      type: array
+      items: File
+    doc: Source GIX index files (e.g., .1gdb or .gix)
+    inputBinding:
+      position: 1
+  - id: delete_gdb
+    type:
+      - 'null'
+      - boolean
+    doc: Also delete the associated GDB.
+    inputBinding:
+      position: 102
+      prefix: -g
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Force operation quietly
+    inputBinding:
+      position: 102
+      prefix: -f
+  - id: prompt
+    type:
+      - 'null'
+      - boolean
+    doc: Prompt for each (stub) deletion
+    inputBinding:
+      position: 102
+      prefix: -i
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose mode, list what is being deleted.
+    inputBinding:
+      position: 102
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

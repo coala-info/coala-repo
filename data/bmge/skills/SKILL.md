@@ -1,8 +1,9 @@
 ---
 name: bmge
-description: BMGE is a specialized tool designed to refine multiple sequence alignments before they are used for phylogenetic tree reconstruction.
+description: BMGE identifies and extracts phylogenetically informative regions from multiple sequence alignments while removing noisy or gap-rich sites. Use when user asks to trim sequence alignments, filter noisy regions for phylogenetics, or remove gaps and high-entropy sites from DNA or protein data.
 homepage: https://bioweb.pasteur.fr/packages/pack@BMGE@1.12
 ---
+
 
 # bmge
 

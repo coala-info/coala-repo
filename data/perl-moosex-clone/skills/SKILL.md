@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-clone
-description: MooseX::Clone provides a flexible mechanism for duplicating Moose-based objects.
+description: This tool provides a flexible mechanism for duplicating Moose-based objects with fine-grained control over attribute behavior. Use when user asks to clone Moose objects, perform deep copies of object graphs, or exclude specific attributes from being copied.
 homepage: https://github.com/moose/MooseX-Clone
 ---
+
 
 # perl-moosex-clone
 

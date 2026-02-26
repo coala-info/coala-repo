@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ppcseq
-description: the package is available on all platforms; click for details.
+description: Bioconductor-ppcseq performs posterior predictive checks to identify outlier transcripts in differential expression analysis of sequencing data. Use when user asks to identify outliers in RNA-seq data, perform posterior predictive checks, or validate the fit of differential expression models.
 homepage: https://bioconductor.org/packages/release/bioc/html/ppcseq.html
 ---
+
 
 # bioconductor-ppcseq
 

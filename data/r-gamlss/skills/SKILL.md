@@ -1,8 +1,9 @@
 ---
 name: r-gamlss
-description: Skill for using the CRAN R package r-gamlss.
+description: This tool fits Generalized Additive Models for Location, Scale and Shape to perform distributional regression analysis. Use when user asks to fit regression models for all distribution parameters, model non-linear relationships with smoothers, or create centile growth charts.
 homepage: https://cloud.r-project.org/web/packages/gamlss/index.html
 ---
+
 
 # r-gamlss
 

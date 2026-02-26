@@ -1,8 +1,9 @@
 ---
 name: doubletd
-description: doubletD is a specialized tool for detecting doublets in single-cell DNA sequencing (scDNA-seq) data.
+description: doubletd detects doublets in single-cell DNA sequencing data by analyzing variant allele frequencies through a probabilistic framework. Use when user asks to identify droplets containing multiple cells, distinguish singlets from doublets in scDNA-seq, or account for allelic dropout and amplification imbalance in cell capture data.
 homepage: https://github.com/elkebir-group/doubletD
 ---
+
 
 # doubletd
 

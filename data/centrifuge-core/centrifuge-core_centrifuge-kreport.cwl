@@ -2,10 +2,64 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: centrifuge-kreport
 label: centrifuge-core_centrifuge-kreport
-doc: "The provided text is an error log indicating a failure to build or run the container
-  (no space left on device) and does not contain help information or argument definitions.\n
+doc: "centrifuge-kreport creates Kraken-style reports from centrifuge out files.\n\
   \nTool homepage: https://github.com/infphilo/centrifuge"
-inputs: []
+inputs:
+  - id: output_files
+    type:
+      type: array
+      items: File
+    doc: Centrifuge output file(s)
+    inputBinding:
+      position: 1
+  - id: index_name
+    type: string
+    doc: Centrifuge index
+    inputBinding:
+      position: 102
+      prefix: -x
+  - id: is_count_table
+    type:
+      - 'null'
+      - boolean
+    doc: The format of the file is 'taxID<tab>COUNT' instead of the standard 
+      Centrifuge output format
+    inputBinding:
+      position: 102
+      prefix: --is-count-table
+  - id: min_length
+    type:
+      - 'null'
+      - string
+    doc: Require a minimum alignment length to the read
+    inputBinding:
+      position: 102
+      prefix: --min-length
+  - id: min_score
+    type:
+      - 'null'
+      - string
+    doc: Require a minimum score for reads to be counted
+    inputBinding:
+      position: 102
+      prefix: --min-score
+  - id: no_lca
+    type:
+      - 'null'
+      - boolean
+    doc: Do not report the LCA of multiple assignments, but report count 
+      fractions at the taxa.
+    inputBinding:
+      position: 102
+      prefix: --no-lca
+  - id: show_zeros
+    type:
+      - 'null'
+      - boolean
+    doc: Show clades that have zero reads, too
+    inputBinding:
+      position: 102
+      prefix: --show-zeros
 outputs:
   - id: stdout
     type: stdout

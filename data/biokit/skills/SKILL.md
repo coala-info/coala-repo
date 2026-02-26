@@ -1,8 +1,9 @@
 ---
 name: biokit
-description: The `biokit` skill provides a specialized toolkit for computational biology, focusing on data visualization and statistical analysis.
+description: Biokit provides a toolkit for computational biology focusing on data visualization, statistical analysis, and R-based bioinformatics integration within Python. Use when user asks to visualize correlation matrices, perform mixture model analysis, manipulate biological identifiers, or execute R packages from Python.
 homepage: http://pypi.python.org/pypi/biokit
 ---
+
 
 # biokit
 

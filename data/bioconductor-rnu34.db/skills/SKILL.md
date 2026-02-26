@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnu34.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Rat Genome U34 Array. Use when user asks to map probe identifiers to gene symbols, retrieve genomic coordinates, or perform functional annotation for the Rat Genome U34 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rnu34.db.html
 ---
+
 
 # bioconductor-rnu34.db
 

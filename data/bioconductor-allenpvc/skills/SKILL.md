@@ -1,8 +1,9 @@
 ---
 name: bioconductor-allenpvc
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides access to the Tasic et al. (2016) single-cell RNA-sequencing dataset from the mouse primary visual cortex as a SingleCellExperiment object. Use when user asks to load the allenpvc dataset, access expression matrices for counts, RPKM, or TPM, and retrieve cell-type metadata for adult mouse cortical cells.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/allenpvc.html
 ---
+
 
 # bioconductor-allenpvc
 

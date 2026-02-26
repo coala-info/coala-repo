@@ -1,8 +1,9 @@
 ---
 name: corona_lineage_dynamics
-description: The `corona_lineage_dynamics` tool is designed for genomic surveillance of SARS-CoV-2.
+description: This tool processes SARS-CoV-2 metadata to calculate lineage frequencies and generate interactive trajectory visualizations. Use when user asks to analyze Pangolin lineage dynamics, visualize genomic surveillance data, or identify predominant lineages based on frequency thresholds.
 homepage: https://github.com/hzi-bifo/corona_lineage_dynamics
 ---
+
 
 # corona_lineage_dynamics
 

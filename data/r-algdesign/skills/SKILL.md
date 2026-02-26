@@ -1,8 +1,9 @@
 ---
 name: r-algdesign
-description: "Algorithmic experimental designs. Calculates exact and         approximate theory experimental designs for D,A, and I         criteria. Very large designs may be created. Experimental         designs may be blocked or blocked designs created from a         candidate list, using several criteria.  The blocking can be         done when whole and within plot factors interact.</p>"
+description: The r-algdesign package calculates optimal experimental designs by selecting subsets of candidate points that maximize information or minimize variance. Use when user asks to generate D-optimal or I-optimal designs, create factorial candidate sets, block experimental trials, or augment existing designs with additional runs.
 homepage: https://cloud.r-project.org/web/packages/AlgDesign/index.html
 ---
+
 
 # r-algdesign
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mbqtl
-description: The package is compatible with dataframe, MRexperiment and text formats.
+description: The mbQTL package identifies associations between host genetic variants and microbiome composition using quantitative trait loci analysis. Use when user asks to perform microbiome QTL analysis, identify genetic drivers of microbial abundance, or map associations between SNPs and microbiome data.
 homepage: https://bioconductor.org/packages/release/bioc/html/mbQTL.html
 ---
+
 
 # bioconductor-mbqtl
 

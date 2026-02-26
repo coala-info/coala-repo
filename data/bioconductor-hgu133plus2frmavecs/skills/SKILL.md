@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133plus2frmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides frozen parameter vectors for the fRMA algorithm and gene expression barcode calculations for the Affymetrix Human Genome U133 Plus 2.0 Array. Use when user asks to normalize microarray data using fRMA, calculate gene expression barcodes, or perform single-array preprocessing for the hgu133plus2 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133plus2frmavecs.html
 ---
+
 
 # bioconductor-hgu133plus2frmavecs
 

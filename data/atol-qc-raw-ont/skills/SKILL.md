@@ -1,8 +1,9 @@
 ---
 name: atol-qc-raw-ont
-description: The `atol-qc-raw-ont` tool is designed for the initial processing of raw Nanopore reads.
+description: This tool trims sequencing adapters and filters raw Nanopore reads by length to produce a consolidated, high-quality output file. Use when user asks to trim adapters from ONT reads, filter reads by minimum length, or process raw Nanopore data from multiple files or tar archives.
 homepage: https://github.com/TomHarrop/atol-qc-raw-ont
 ---
+
 
 # atol-qc-raw-ont
 

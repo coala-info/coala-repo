@@ -1,8 +1,9 @@
 ---
 name: ucsc-genepredtomafframes
-description: The `genePredToMafFrames` utility is a specialized tool within the UCSC Kent toolkit designed to bridge gene models and multiple sequence alignments.
+description: This tool calculates the reading frame for each exon in a gene prediction relative to a MAF alignment. Use when user asks to calculate reading frames for gene exons, verify if alignments preserve open reading frames, or generate mafFrames tables.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-genepredtomafframes
 

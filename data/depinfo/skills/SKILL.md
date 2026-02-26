@@ -1,8 +1,9 @@
 ---
 name: depinfo
-description: The depinfo skill provides a standardized workflow for generating and managing educational websites.
+description: The depinfo tool manages the creation and deployment of standardized educational websites using a specialized Docusaurus template. Use when user asks to initialize a course repository, configure GitHub Pages deployment, set up a local development environment, or manage Markdown content with custom departmental components.
 homepage: https://github.com/departement-info-cem/depinfo-gabarit
 ---
+
 
 # depinfo
 

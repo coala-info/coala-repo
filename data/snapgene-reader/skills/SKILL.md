@@ -1,8 +1,9 @@
 ---
 name: snapgene-reader
-description: The `snapgene-reader` skill enables the extraction of biological data from SnapGene's binary `.dna` format.
+description: The snapgene-reader tool extracts biological data and metadata from SnapGene .dna files into Python dictionaries or Biopython SeqRecord objects. Use when user asks to parse SnapGene files, convert .dna files to Biopython records, or extract plasmid metadata for bioinformatics pipelines.
 homepage: https://pypi.org/project/snapgene-reader/
 ---
+
 
 # snapgene-reader
 

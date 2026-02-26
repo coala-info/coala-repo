@@ -1,8 +1,9 @@
 ---
 name: ucsc-maforder
-description: The `mafOrder` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed to manipulate the internal structure of MAF files.
+description: `mafOrder` rearranges the order of sequences within alignment blocks of a MAF file according to a specified list. Use when user asks to reorder sequences in MAF blocks, arrange species in a consistent order across MAF files, or place a reference genome first in MAF blocks.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-maforder
 

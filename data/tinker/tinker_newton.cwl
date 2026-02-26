@@ -1,12 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: newton
+baseCommand: tinker_newton
 label: tinker_newton
-doc: "The Newton program performs a molecular energy minimization using a truncated
-  Newton method. The provided text appears to be a container build error log rather
-  than help text, so no arguments could be extracted from the source.\n\nTool homepage:
-  https://dasher.wustl.edu/tinker/"
-inputs: []
+doc: "Software Tools for Molecular Design\n\nTool homepage: https://dasher.wustl.edu/tinker/"
+inputs:
+  - id: coordinate_file
+    type: File
+    doc: Enter Cartesian Coordinate File Name
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

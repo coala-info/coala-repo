@@ -1,8 +1,9 @@
 ---
 name: qualimap
-description: Qualimap is a Java-based tool designed to evaluate the quality of high-throughput sequencing alignment data.
+description: Qualimap evaluates the quality of high-throughput sequencing alignment data by analyzing SAM, BAM, and GFF files to detect sequencing or mapping biases. Use when user asks to perform BAM quality control, evaluate RNA-seq transcriptomic saturation, compare multiple alignment samples, or analyze feature count distributions.
 homepage: http://qualimap.bioinfo.cipf.es/
 ---
+
 
 # qualimap
 

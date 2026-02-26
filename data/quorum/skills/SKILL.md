@@ -1,8 +1,9 @@
 ---
 name: quorum
-description: GoQuorum is a permissioned implementation of the Ethereum protocol designed for enterprise use cases.
+description: GoQuorum is a permissioned implementation of the Ethereum protocol that provides data privacy and alternative consensus mechanisms for enterprise use cases. Use when user asks to initialize a node, configure QBFT or Raft consensus, enable private transactions via a Private Transaction Manager, or implement node-level permissioning.
 homepage: https://github.com/Consensys/quorum
 ---
+
 
 # quorum
 

@@ -1,8 +1,9 @@
 ---
 name: pyvcf
-description: The `pyvcf` library provides a Pythonic interface for reading VCF v4.0 files, designed to mimic the simplicity of the standard `csv` module.
+description: The pyvcf library provides a Pythonic interface for reading and parsing VCF v4.0 files into structured objects. Use when user asks to parse genomic variant files, extract INFO field metadata, or inspect sample-level genotypes.
 homepage: https://github.com/jdoughertyii/PyVCF
 ---
+
 
 # pyvcf
 

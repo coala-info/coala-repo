@@ -1,8 +1,9 @@
 ---
 name: medusa
-description: Medusa is a specialized tool designed to organize and orient contigs from a draft genome assembly into larger scaffolds.
+description: "Medusa organizes and orients contigs from a draft genome assembly into scaffolds using multiple reference genomes. Use when user asks to scaffold a draft genome, orient contigs using reference genomes, estimate inter-contig distances, or calculate assembly N50 statistics."
 homepage: https://github.com/combogenomics/medusa
 ---
+
 
 # medusa
 

@@ -1,8 +1,9 @@
 ---
 name: r-pinfsc50
-description: "Genomic data for the plant pathogen \"Phytophthora infestans.\" It     includes a variant file ('VCF'), a sequence file ('FASTA') and an annotation file     ('GFF'). This package is intended to be used as example data for packages that     work with genomic data.</p>"
+description: The r-pinfsc50 package provides a subset of genomic data from Phytophthora infestans to serve as an example dataset for bioinformatics R packages. Use when user asks to access sample VCF, FASTA, or GFF files for demonstration purposes or to test workflows with the vcfR package.
 homepage: https://cloud.r-project.org/web/packages/pinfsc50/index.html
 ---
+
 
 # r-pinfsc50
 

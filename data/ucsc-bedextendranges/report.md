@@ -3,7 +3,7 @@
 ## ucsc-bedextendranges
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is an error log indicating a failure to build or run the container image due to insufficient disk space ('no space left on device').
+Extend BED ranges by a specified number of bases using the chromosome sizes from the specified database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-bedextendranges:482--h0b57e2e_0
@@ -18,14 +18,13 @@ The provided text does not contain help information for the tool. It is an error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-bedextendranges:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:bbe3cd2c14a475dba9bbd22b8a4d99be23246d3212f2d92b7796bd22c8ce7c5e: unpack entry: usr/local/lib/libmysqlclient.so.18.4.0: unpack to regular file: short write: write /tmp/build-temp-2231423073/rootfs/usr/local/lib/libmysqlclient.so.18.4.0: no space left on device
+Unable to find image 'quay.io/biocontainers/ucsc-bedextendranges:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedextendranges
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+bbe3cd2c14a4: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3694911777: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: mmquant
-description: mmquant is a specialized read counting tool that addresses the "multi-mapping" problem in transcriptomics.
+description: mmquant is a read counting tool that resolves multi-mapping ambiguities by grouping overlapping genomic features into meta-features. Use when user asks to count transcriptomic reads, handle multi-mapping or ambiguous reads, and quantify gene expression.
 homepage: https://bitbucket.org/mzytnicki/multi-mapping-counter/
 ---
+
 
 # mmquant
 

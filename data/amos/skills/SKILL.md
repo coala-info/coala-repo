@@ -1,8 +1,9 @@
 ---
 name: amos
-description: AMOS (Automatic Mapping for Spatial accelerators) is a specialized mapper designed to translate tensor computations into efficient hardware-specific intrinsics.
+description: AMOS maps tensor computations to hardware-specific intrinsics by automatically configuring and transforming compute loops. Use when user asks to translate tensor expressions into hardware instructions, perform ISA-aware mapping, or automate the tensorization of computations for spatial accelerators.
 homepage: https://github.com/pku-liang/AMOS
 ---
+
 
 # amos
 

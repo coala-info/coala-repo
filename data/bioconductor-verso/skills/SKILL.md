@@ -1,8 +1,9 @@
 ---
 name: bioconductor-verso
-description: the package is available on all platforms; click for details.
+description: VERSO is an R package designed to reconstruct the clonal evolution of viral populations from genomic sequencing data. Use when user asks to reconstruct viral phylogenies, characterize viral clonal evolution, or analyze genomic variants from viral samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/VERSO.html
 ---
+
 
 # bioconductor-verso
 

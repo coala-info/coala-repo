@@ -1,8 +1,9 @@
 ---
 name: pgcgap
-description: The Prokaryotic Genomics and Comparative Genomics Analysis Pipeline (pgcgap) is designed to streamline complex bioinformatics workflows into a unified execution.
+description: The Prokaryotic Genomics and Comparative Genomics Analysis Pipeline automates assembly, annotation, and comparative genomics for prokaryotic sequencing data. Use when user asks to assemble genomes, perform pan-genome analysis, calculate ANI, construct phylogenetic trees, or identify antimicrobial resistance genes.
 homepage: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
 ---
+
 
 # pgcgap
 

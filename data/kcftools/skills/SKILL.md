@@ -1,8 +1,9 @@
 ---
 name: kcftools
-description: kcftools is a Java-based suite designed for rapid genomic variation analysis without the need for traditional sequence alignment.
+description: kcftools is a Java-based suite for rapid genomic variation analysis that identifies gaps and hits by comparing k-mer counts against a reference genome without traditional alignment. Use when user asks to detect genomic variations, perform introgression screening, identify identity-by-state regions, or generate genotype tables from k-mer databases.
 homepage: https://github.com/sivasubramanics/kcftools
 ---
+
 
 # kcftools
 

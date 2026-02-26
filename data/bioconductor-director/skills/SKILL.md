@@ -1,8 +1,9 @@
 ---
 name: bioconductor-director
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool generates interactive Sankey diagrams to visualize multi-level biological regulatory networks and molecular flows. Use when user asks to visualize miRNA-mRNA-gene interactions, create web-based Sankey diagrams for biological data, or map expression values to directional network paths.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/Director.html
 ---
+
 
 # bioconductor-director
 

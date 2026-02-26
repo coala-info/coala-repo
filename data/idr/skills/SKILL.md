@@ -1,8 +1,9 @@
 ---
 name: idr
-description: The IDR (Irreproducible Discovery Rate) framework is a statistical tool used to quantify the consistency of findings between biological replicates.
+description: The IDR framework quantifies the consistency of genomic features between biological replicates by fitting a bivariate model to distinguish signal from noise. Use when user asks to assess replicate reproducibility, calculate irreproducible discovery rates, or filter genomic peaks based on rank consistency.
 homepage: https://github.com/kundajelab/idr
 ---
+
 
 # idr
 

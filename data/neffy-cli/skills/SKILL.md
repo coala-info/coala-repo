@@ -1,8 +1,9 @@
 ---
 name: neffy-cli
-description: The `neffy-cli` tool is a high-performance utility designed for bioinformatics researchers to quantify sequence diversity within Multiple Sequence Alignments (MSAs).
+description: neffy-cli quantifies sequence diversity in multiple sequence alignments by calculating the NEFF metric and performs format conversions between common bioinformatics file types. Use when user asks to calculate sequence diversity, compute NEFF values for protein or nucleotide alignments, convert MSA formats like A3M or Stockholm, or process multimer alignments.
 homepage: https://maryam-haghani.github.io/NEFFy
 ---
+
 
 # neffy-cli
 

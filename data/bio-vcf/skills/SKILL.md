@@ -1,8 +1,9 @@
 ---
 name: bio-vcf
-description: The `bio-vcf` tool provides a Domain Specific Language (DSL) designed for efficient VCF manipulation.
+description: bio-vcf is a high-performance tool that uses a domain-specific language for filtering, transforming, and evaluating VCF files. Use when user asks to filter variants based on record or sample metadata, convert VCF data to JSON or BED formats, or perform multi-threaded processing of large genomic datasets.
 homepage: https://github.com/vcflib/bio-vcf
 ---
+
 
 # bio-vcf
 

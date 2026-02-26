@@ -1,8 +1,9 @@
 ---
 name: bioconductor-glad
-description: the package is available on all platforms; click for details.
+description: bioconductor-glad analyzes array Comparative Genomic Hybridization data to detect genomic breakpoints and assign biological statuses such as gains or losses. Use when user asks to segment aCGH data, identify DNA copy number alterations, or visualize genomic profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/GLAD.html
 ---
+
 
 # bioconductor-glad
 

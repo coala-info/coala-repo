@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mu6500subbcdf
-description: the package is available on all platforms; click for details.
+description: "This package provides the Chip Description File (CDF) mapping for the Affymetrix Mu6500SubB microarray. Use when user asks to access probe set information, map probes to locations, or analyze Mu6500SubB microarray data."
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu6500subbcdf.html
 ---
+
 
 # bioconductor-mu6500subbcdf
 

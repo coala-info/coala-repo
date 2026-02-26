@@ -1,8 +1,9 @@
 ---
 name: phynteny
-description: Phynteny is a specialized tool designed to address the high proportion of "hypothetical" genes found in bacteriophage genomes.
+description: Phynteny predicts the function of unknown bacteriophage proteins by applying a Long Short-Term Memory model to gene synteny. Use when user asks to annotate hypothetical phage genes, map proteins to PHROG categories, or predict gene functions based on conserved gene order.
 homepage: https://github.com/susiegriggo/Phynteny
 ---
+
 
 # phynteny
 

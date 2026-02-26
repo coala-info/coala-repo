@@ -1,8 +1,9 @@
 ---
 name: fastani
-description: FastANI is a high-throughput tool designed for microbial genomics to calculate the Average Nucleotide Identity (ANI) between genome pairs without the computational overhead of traditional alignment methods like BLAST.
+description: FastANI calculates the Average Nucleotide Identity between genome pairs using a high-throughput MinHash-based sequence mapping engine. Use when user asks to calculate ANI between microbial genomes, perform pairwise or batch genome comparisons, generate a similarity matrix for phylogenomic analysis, or visualize conserved regions between two genomes.
 homepage: https://github.com/ParBLiSS/FastANI
 ---
+
 
 # fastani
 

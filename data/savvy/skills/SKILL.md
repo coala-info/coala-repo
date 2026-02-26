@@ -1,8 +1,9 @@
 ---
 name: savvy
-description: The `savvy` toolset provides a high-performance C++ library and command-line interface (CLI) for interacting with genomic variant data.
+description: Savvy is a high-performance toolset for converting, subsetting, and managing genomic variant data using the optimized SAV file format. Use when user asks to convert VCF or BCF files to SAV, filter variants by genomic region or sample ID, perform slice queries by record offset, concatenate files, or modify header metadata.
 homepage: https://github.com/statgen/savvy
 ---
+
 
 # savvy
 

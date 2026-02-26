@@ -1,8 +1,9 @@
 ---
 name: r-millefy
-description: R package millefy (documentation from project home).
+description: millefy is an R package for visualizing single-cell RNA-seq read coverage at specific genomic loci using locus-specific pseudotime to reorder cells. Use when user asks to visualize scRNA-seq read distribution, display individual cell coverage tracks, or reorder cells by transcriptional similarity at a specific gene locus.
 homepage: https://cran.r-project.org/web/packages/millefy/index.html
 ---
+
 
 # r-millefy
 

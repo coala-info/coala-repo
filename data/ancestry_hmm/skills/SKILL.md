@@ -1,8 +1,9 @@
 ---
 name: ancestry_hmm
-description: ancestry_hmm is a specialized Hidden Markov Model (HMM) tool used in bioinformatics to identify the ancestral origins of chromosomal segments in admixed individuals.
+description: ancestry_hmm uses a Hidden Markov Model to identify ancestral origins of chromosomal segments in admixed individuals using read counts or genotypes. Use when user asks to infer local ancestry, estimate the timing of admixture events, or identify ancestry tracts in low-coverage sequencing data.
 homepage: https://github.com/russcd/Ancestry_HMM
 ---
+
 
 # ancestry_hmm
 

@@ -1,8 +1,9 @@
 ---
 name: dashing
-description: Dashing is a high-performance tool designed for the rapid estimation of similarities between genomic datasets.
+description: Dashing rapidly estimates similarities between genomic datasets using the HyperLogLog algorithm to create compact probabilistic sketches. Use when user asks to calculate pairwise distances, estimate Jaccard similarity or containment indices, pre-compute genomic sketches, or build distance matrices for large-scale metagenomic analysis.
 homepage: https://github.com/dnbaker/dashing
 ---
+
 
 # dashing
 

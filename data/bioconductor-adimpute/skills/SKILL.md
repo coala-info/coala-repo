@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adimpute
-description: the package is available on all platforms; click for details.
+description: ADImpute performs imputation of dropout values in single-cell RNA-sequencing data using multiple methods and ensemble approaches. Use when user asks to impute missing gene expression values, evaluate the performance of different imputation methods, or distinguish between biological and technical zeros in scRNA-seq datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ADImpute.html
 ---
+
 
 # bioconductor-adimpute
 

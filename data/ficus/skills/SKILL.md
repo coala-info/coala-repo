@@ -1,8 +1,9 @@
 ---
 name: ficus
-description: The `ficus` library provides a streamlined way to handle matplotlib figures by wrapping the standard boilerplate into a context manager.
+description: Ficus is a matplotlib wrapper that uses a context manager to automate figure creation, saving, and memory cleanup. Use when user asks to manage plot lifecycles, save figures to files, or streamline matplotlib boilerplate in Jupyter notebooks.
 homepage: https://github.com/camillescott/ficus
 ---
+
 
 # ficus
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affycomp
-description: The package contains functions that can be used to compare expression measures for Affymetrix Oligonucleotide Arrays.
+description: The affycomp package benchmarks Affymetrix GeneChip expression measures by calculating performance metrics for precision, accuracy, and sensitivity using spike-in and dilution datasets. Use when user asks to assess expression measure quality, compare preprocessing methods like RMA or MAS 5.0, generate ROC curves for differential expression, or create MA plots for Affymetrix benchmark data.
 homepage: https://bioconductor.org/packages/release/bioc/html/affycomp.html
 ---
+
 
 # bioconductor-affycomp
 

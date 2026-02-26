@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcyjs
-description: the package is available on all platforms; click for details.
+description: RCyjs provides an R interface to Cytoscape.js for interactive network visualization and graph manipulation. Use when user asks to visualize biological networks, interactively explore graphs in R, or integrate Cytoscape.js displays into Shiny applications.
 homepage: https://bioconductor.org/packages/release/bioc/html/RCyjs.html
 ---
+
 
 # bioconductor-rcyjs
 

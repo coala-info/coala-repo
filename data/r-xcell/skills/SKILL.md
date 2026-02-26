@@ -1,8 +1,9 @@
 ---
 name: r-xcell
-description: R package xcell (documentation from project home).
+description: This tool performs cell type enrichment analysis to estimate the abundance of immune and stromal cells from bulk gene expression data. Use when user asks to estimate cell type proportions, perform signature-based enrichment analysis, or analyze tissue cellular heterogeneity in transcriptomic datasets.
 homepage: https://cran.r-project.org/web/packages/xcell/index.html
 ---
+
 
 # r-xcell
 

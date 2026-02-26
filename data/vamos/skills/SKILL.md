@@ -1,8 +1,9 @@
 ---
 name: vamos
-description: vamos (Variable-number tandem repeats Annotation tool using efficient MOtif Sets) is a specialized genomic tool designed to characterize the internal structure of tandem repeats.
+description: vamos characterizes the internal structure of tandem repeats by decomposing repeat sequences into specific motifs. Use when user asks to characterize tandem repeat structure, decompose repeat sequences into specific motifs, annotate haplotype-resolved assemblies, annotate aligned reads, or call variants for each haplotype.
 homepage: https://github.com/ChaissonLab/vamos
 ---
+
 
 # vamos
 

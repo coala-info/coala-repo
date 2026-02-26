@@ -1,8 +1,9 @@
 ---
 name: garnett-cli
-description: The `garnett-cli` tool provides a suite of R-based wrapper scripts for the Garnett scRNA-seq classification framework.
+description: The garnett-cli tool provides a suite of R-based wrapper scripts for classifying and annotating cell types in single-cell RNA-seq data. Use when user asks to convert 10x Genomics data to CDS format, validate marker gene quality, train custom classifiers, or classify cells based on expression profiles.
 homepage: https://github.com/ebi-gene-expression-group/garnett-cli
 ---
+
 
 # garnett-cli
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgfakeagp
-description: The `ucsc-hgfakeagp` tool (binary name `hgFakeAgp`) is a specialized utility from the UCSC Genome Browser "kent" source tree.
+description: ucsc-hgfakeagp creates a synthetic AGP file by scanning a FASTA file for sequences of 'N's. Use when user asks to create an AGP file from a FASTA file, generate an AGP file, or identify gaps in a FASTA.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgfakeagp
 

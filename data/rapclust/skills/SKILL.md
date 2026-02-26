@@ -1,8 +1,9 @@
 ---
 name: rapclust
-description: RapClust is a specialized tool designed to cluster de novo transcriptome contigs into gene-level groups.
+description: RapClust clusters de novo transcriptome contigs into gene-level groups using fragment equivalence classes from RNA-seq quantification. Use when user asks to cluster transcripts into genes, generate a transcript-to-gene mapping for tximport, or group de novo assembly contigs based on mapping ambiguity.
 homepage: https://github.com/COMBINE-lab/RapClust
 ---
+
 
 # rapclust
 

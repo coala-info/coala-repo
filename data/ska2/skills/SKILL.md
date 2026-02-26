@@ -1,8 +1,9 @@
 ---
 name: ska2
-description: `ska2` (Split K-mer Analysis version 2) is a high-performance Rust implementation designed to align closely related genomic sequences by matching split k-mers—pairs of k-mers separated by a single central base.
+description: "ska2 aligns closely related genomic sequences by matching split k-mers to identify variants and generate alignments without a reference. Use when user asks to build split k-mer files, create FASTA alignments, map sequences to a reference for VCF output, or perform local assembly for diverged samples."
 homepage: https://github.com/bacpop/ska.rust
 ---
+
 
 # ska2
 

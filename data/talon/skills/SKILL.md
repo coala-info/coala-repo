@@ -1,8 +1,9 @@
 ---
 name: talon
-description: TALON is a technology-agnostic pipeline for the identification and quantification of transcripts in long-read datasets.
+description: "TALON identifies and quantifies transcripts in long-read sequencing datasets by categorizing alignments into known or novel isoforms. Use when user asks to label internal priming artifacts, initialize a transcript database from a GTF, run the TALON annotator, or filter and quantify isoforms from long-read SAM files."
 homepage: https://github.com/mortazavilab/TALON
 ---
+
 
 # talon
 

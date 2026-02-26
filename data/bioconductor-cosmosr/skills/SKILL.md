@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cosmosr
-description: the package is available on all platforms; click for details.
+description: cosmosR integrates multi-omics data to identify causal links between signaling pathways and metabolic activities. Use when user asks to integrate transcriptomic, proteomic, and metabolomic data, perform causal network analysis, or link signaling networks to metabolism.
 homepage: https://bioconductor.org/packages/release/bioc/html/cosmosR.html
 ---
+
 
 # bioconductor-cosmosr
 

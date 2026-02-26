@@ -1,8 +1,9 @@
 ---
 name: perl-env
-description: The `perl-env` skill facilitates the use of the `Env` module, which automates the binding of environment variables to Perl global variables.
+description: The perl-env tool automates the binding of environment variables to Perl global scalars or arrays for easier access and manipulation. Use when user asks to map environment variables to Perl variables, simplify access to the %ENV hash, or dynamically update system paths within a script.
 homepage: http://search.cpan.org/dist/Env
 ---
+
 
 # perl-env
 

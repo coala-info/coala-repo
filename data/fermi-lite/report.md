@@ -1,9 +1,9 @@
 # fermi-lite CWL Generation Report
 
-## fermi-lite
+## fermi-lite_fml-asm
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help documentation for fermi-lite. Fermi-lite (fml-asm) is typically used for assembling Illumina short reads into unitigs.
+Assembly of short reads using the Fermi-lite algorithm.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fermi-lite:0.1--h577a1d6_8
@@ -18,11 +18,13 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fermi-lite:0.1--h577a1d6_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3942695032: no space left on device
+Usage: fml-asm [options] <in.fq>
+Options:
+  -e INT          k-mer length for error correction (0 for auto; -1 to disable) [0]
+  -c INT1[,INT2]  range of k-mer & read count thresholds for ec and graph cleaning [4,8]
+  -l INT          min overlap length during initial assembly [33]
+  -r FLOAT        drop an overlap if its length is below maxOvlpLen*FLOAT [0.7]
+  -t INT          number of threads (don't use multi-threading for small data sets) [1]
+  -A              discard heterozygotes (apply this to assemble bacterial genomes)
 ```
 
-
-## Metadata
-- **Skill**: generated

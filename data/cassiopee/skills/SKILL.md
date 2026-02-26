@@ -1,8 +1,9 @@
 ---
 name: cassiopee
-description: Cassiopee is a specialized tool for indexing and scanning genomic sequences.
+description: Cassiopee indexes and scans genomic sequences to find specific motifs or patterns using compressed suffix trees. Use when user asks to search for patterns in DNA or protein sequences, index large genomes, or find motifs with biological variations like mutations.
 homepage: https://github.com/osallou/cassiopee-c
 ---
+
 
 # cassiopee
 

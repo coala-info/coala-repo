@@ -1,8 +1,9 @@
 ---
 name: lrzip
-description: lrzip (Long Range ZIP) is a compression utility specifically optimized for large files.
+description: lrzip is a compression utility optimized for identifying redundancies across very large files using long-range redundancy reduction. Use when user asks to compress large files, decompress .lrz archives, archive directories with lrztar, or optimize compression for high RAM availability.
 homepage: https://github.com/ckolivas/lrzip
 ---
+
 
 # lrzip
 

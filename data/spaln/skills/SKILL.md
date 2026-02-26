@@ -1,8 +1,9 @@
 ---
 name: spaln
-description: The `spaln` skill provides specialized procedures for performing high-efficiency spliced alignments.
+description: spaln performs high-efficiency spliced alignments of cDNA, EST, or protein sequences to a reference genome. Use when user asks to map transcriptomic data to a genome, align protein sequences to genomic DNA, or identify exon-intron structures for genome annotation.
 homepage: http://www.genome.ist.i.kyoto-u.ac.jp/~aln_user/spaln/
 ---
+
 
 # spaln
 

@@ -1,8 +1,9 @@
 ---
 name: perl-socket
-description: The `perl-socket` module provides a low-level interface to the system's socket-related constants and functions.
+description: The perl-socket module provides a low-level interface for system socket constants and functions to facilitate network programming in Perl. Use when user asks to resolve hostnames, convert IP addresses between string and binary formats, or pack and unpack socket address structures for network communication.
 homepage: http://metacpan.org/pod/Socket
 ---
+
 
 # perl-socket
 

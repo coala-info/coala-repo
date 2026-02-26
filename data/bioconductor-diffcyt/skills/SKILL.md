@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffcyt
-description: the package is available on all platforms; click for details.
+description: Bioconductor-diffcyt provides statistical methods for differential discovery in high-dimensional cytometry data such as flow cytometry and CyTOF. Use when user asks to perform differential abundance analysis, conduct differential state analysis, or identify changes in cell population proportions and functional marker expression.
 homepage: https://bioconductor.org/packages/release/bioc/html/diffcyt.html
 ---
+
 
 # bioconductor-diffcyt
 

@@ -3,7 +3,7 @@
 ## collect-columns
 
 ### Tool Description
-The provided text contains system error messages related to a container runtime failure (no space left on device) and does not contain the help documentation for the tool. As a result, no arguments could be extracted.
+Collects specific columns from input files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/collect-columns:1.0.0--py_0
@@ -18,9 +18,20 @@ The provided text contains system error messages related to a container runtime 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/0aa82857e5b2aa05af2e486b02d216180e14d7fcede15d9defeff6bea6dad716: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/collect-columns:1.0.0--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1568938509: no space left on device
+Unable to find image 'quay.io/biocontainers/collect-columns:1.0.0--py_0' locally
+1.0.0--py_0: Pulling from biocontainers/collect-columns
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+4d69f833b9d8: Already exists
+e7c454e5167d: Already exists
+e38092b005c0: Already exists
+a3ed95caeb02: Already exists
+f879b42dfe2b: Already exists
+93d2c548dd56: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2933599913: no space left on device
+
+Run 'docker run --help' for more information
 ```
 

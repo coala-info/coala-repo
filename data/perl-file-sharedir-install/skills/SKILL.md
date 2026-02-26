@@ -1,8 +1,9 @@
 ---
 name: perl-file-sharedir-install
-description: File::ShareDir::Install is a specialized Perl utility designed for module authors to manage the installation of "shared" files.
+description: This tool manages the installation of shared data files for Perl modules so they can be located at runtime. Use when user asks to install shared directories, manage non-module assets in a Perl distribution, or integrate shared file handling into a build process.
 homepage: https://github.com/Perl-Toolchain-Gang/File-ShareDir-Install
 ---
+
 
 # perl-file-sharedir-install
 

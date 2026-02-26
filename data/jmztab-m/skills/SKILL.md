@@ -1,8 +1,9 @@
 ---
 name: jmztab-m
-description: The `jmztab-m` tool is the reference implementation for the mzTab-M 2.0 reporting standard.
+description: jmztab-m reads, writes, and validates metabolomics data files according to the mzTab-M 2.0 reporting standard. Use when user asks to validate mzTab-M files, convert between TSV and JSON formats, or ensure metabolomics datasets are compliant with community standards.
 homepage: https://github.com/lifs-tools/jmztab-m
 ---
+
 
 # jmztab-m
 

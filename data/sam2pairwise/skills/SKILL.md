@@ -1,8 +1,9 @@
 ---
 name: sam2pairwise
-description: sam2pairwise is a specialized bioinformatics utility that transforms the compact alignment information stored in SAM files (specifically the CIGAR string and MD tag) into an explicit, four-line pairwise alignment format.
+description: "sam2pairwise converts SAM alignment records into a human-readable, four-line pairwise alignment format using CIGAR strings and MD tags. Use when user asks to visualize read alignments, convert SAM or BAM files to pairwise format, or reconstruct reference sequences from alignment data."
 homepage: https://github.com/mlafave/sam2pairwise
 ---
+
 
 # sam2pairwise
 

@@ -1,8 +1,9 @@
 ---
 name: tgv
-description: The Terminal Genome Viewer (tgv) is a lightweight, high-performance tool designed for genomic data exploration within a terminal interface.
+description: The Terminal Genome Viewer (tgv) is a lightweight, high-performance tool for exploring genomic data and alignments within a terminal interface. Use when user asks to browse local or remote alignment files, visualize variants and intervals, or jump to specific genes and genomic coordinates using Vim-inspired navigation.
 homepage: https://github.com/zeqianli/tgv
 ---
+
 
 # tgv
 

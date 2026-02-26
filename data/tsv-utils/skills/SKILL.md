@@ -1,8 +1,9 @@
 ---
 name: tsv-utils
-description: The `tsv-utils` toolkit is a suite of high-performance, header-aware command-line tools designed for manipulating large tabular datasets.
+description: tsv-utils provides high-performance command-line tools for manipulating large tabular datasets. Use when user asks to filter data, select or reorder columns, calculate summary statistics, join files, or sample and randomize data.
 homepage: https://github.com/eBay/tsv-utils
 ---
+
 
 # tsv-utils
 

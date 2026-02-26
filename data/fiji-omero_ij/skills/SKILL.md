@@ -1,8 +1,9 @@
 ---
 name: fiji-omero_ij
-description: The fiji-omero_ij tool provides a critical link between the Fiji/ImageJ image analysis environment and OMERO server instances.
+description: This tool integrates Fiji/ImageJ with OMERO servers to enable the visualization, manipulation, and import of multidimensional image data and metadata. Use when user asks to launch the OMERO.insight client, import image data into an OMERO server, or configure the OMERO metadata extension.
 homepage: https://github.com/ome/omero-insight
 ---
+
 
 # fiji-omero_ij
 

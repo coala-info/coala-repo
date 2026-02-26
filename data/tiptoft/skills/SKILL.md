@@ -1,8 +1,10 @@
 ---
 name: tiptoft
-description: TipToft is a specialized tool designed to predict plasmid content without the need for prior genome assembly.
+description: TipToft predicts plasmid content from raw sequencing reads using k-mer matching against the PlasmidFinder database. Use when user asks to predict plasmid content, identify plasmid replicons or incompatibility groups, save plasmid prediction results, extract plasmid-matching reads, download the PlasmidFinder database, use a custom plasmid database, adjust plasmid detection sensitivity, or handle high error rates in plasmid detection.
 homepage: https://github.com/andrewjpage/tiptoft
 ---
+
+
 
 # tiptoft
 

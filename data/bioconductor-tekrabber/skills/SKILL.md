@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tekrabber
-description: the package is available on all platforms; click for details.
+description: TEKRABber provides an R pipeline for comparing the expression of transposable elements and genes between species using orthology information. Use when user asks to compare transposable element expression across species, analyze orthologous gene and TE expression, or perform cross-species transcriptomic analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/TEKRABber.html
 ---
+
 
 # bioconductor-tekrabber
 

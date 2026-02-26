@@ -1,8 +1,9 @@
 ---
 name: bioconductor-yamss
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for preprocessing high-resolution mass spectrometry data. Use when user asks to detect peaks, quantify features, or process liquid chromatography-mass spectrometry data.
 homepage: https://bioconductor.org/packages/release/bioc/html/yamss.html
 ---
+
 
 # bioconductor-yamss
 

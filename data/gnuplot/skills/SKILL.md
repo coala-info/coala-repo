@@ -1,8 +1,9 @@
 ---
 name: gnuplot
-description: This skill focuses on using `feedgnuplot`, a flexible command-line interface that pipes data into gnuplot.
+description: Gnuplot creates professional charts and visualizations from command-line data or files using the feedgnuplot interface. Use when user asks to plot streaming data, visualize columns from a file, generate histograms, or create real-time line charts from system metrics.
 homepage: https://github.com/dkogan/feedgnuplot
 ---
+
 
 # gnuplot
 

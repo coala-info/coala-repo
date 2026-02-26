@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adductdata
-description: the package is available on all platforms; click for details.
+description: This package provides mass spectrometry data and pre-computed models for adductomics analysis. Use when user asks to retrieve raw mzXML files, access retention time deviation models, or obtain quantification results for testing adductomics workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/adductData.html
 ---
+
 
 # bioconductor-adductdata
 

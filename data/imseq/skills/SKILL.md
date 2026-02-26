@@ -1,8 +1,9 @@
 ---
 name: imseq
-description: The `imseq` skill enables the processing of immunogenetic sequencing data to derive repertoire distributions.
+description: imseq processes immunogenetic sequencing data to derive quantified repertoire distributions by aligning reads to V and J segment references. Use when user asks to process single-end or paired-end NGS reads, perform clonotyping, apply quality-based clustering, or handle barcode-corrected immunological analysis.
 homepage: http://www.imtools.org/
 ---
+
 
 # imseq
 

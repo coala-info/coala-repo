@@ -1,8 +1,9 @@
 ---
 name: trimmomatic
-description: Trimmomatic is a specialized Java-based utility designed to clean raw Illumina sequencing data.
+description: Trimmomatic is a specialized Java-based utility designed to clean raw Illumina sequencing data. Use when user asks to clean raw Illumina sequencing data, remove adapter contamination, filter reads by quality, crop reads, or filter reads by length.
 homepage: https://www.plabipd.de/trimmomatic_main.html
 ---
+
 
 # trimmomatic
 

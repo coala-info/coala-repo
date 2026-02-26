@@ -1,8 +1,9 @@
 ---
 name: gfmix
-description: The `gfmix` tool implements site-and-branch-heterogeneous phylogenetic models to provide more accurate evolutionary estimations than standard site-homogeneous models.
+description: gfmix implements site-and-branch-heterogeneous phylogenetic models to provide accurate evolutionary estimations by accounting for complex amino acid frequency distributions. Use when user asks to refine phylogenetic likelihoods using the GFmix model, fit site-and-branch-heterogeneous models, or account for complex amino acid frequency distributions across a phylogenetic tree.
 homepage: https://www.mathstat.dal.ca/~tsusko/doc/gfmix.pdf
 ---
+
 
 # gfmix
 

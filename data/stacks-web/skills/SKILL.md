@@ -1,8 +1,9 @@
 ---
 name: stacks-web
-description: The Stacks pipeline is a modular suite of tools designed to transform raw restriction-enzyme-based sequence data (like RAD-seq or GBS) into genotyped loci.
+description: Stacks-web executes the Stacks pipeline to transform raw restriction-enzyme-based sequence data into genotyped loci for evolutionary and genetic analysis. Use when user asks to demultiplex RAD-seq data, run de novo or reference-aligned assembly workflows, or perform population genomics analysis.
 homepage: https://catchenlab.life.illinois.edu/stacks/
 ---
+
 
 # stacks-web
 

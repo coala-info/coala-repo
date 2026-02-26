@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fcbf
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs feature selection in high-dimensional biological data using the Fast Correlation-Based Filter algorithm to identify relevant, non-redundant features. Use when user asks to select features using Symmetrical Uncertainty, reduce dimensionality in single-cell RNA-Seq data, or filter genes for machine learning models.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FCBF.html
 ---
+
 
 # bioconductor-fcbf
 

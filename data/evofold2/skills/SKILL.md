@@ -1,8 +1,9 @@
 ---
 name: evofold2
-description: The `evofold2` tool is a comparative method for predicting RNA secondary structures by combining Stochastic Context-Free Grammars (SCFGs) with phylogenetic models.
+description: Evofold2 predicts RNA secondary structures by analyzing multiple sequence alignments for evolutionary conservation and compensatory mutations. Use when user asks to predict RNA structures, evaluate alignments using SCFG models, or train models for RNA structure identification.
 homepage: https://github.com/jakob-skou-pedersen/phy
 ---
+
 
 # evofold2
 

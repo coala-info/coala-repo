@@ -1,11 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dynamic
+baseCommand: tinker_dynamic
 label: tinker_dynamic
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a system error log from a container runtime (Apptainer/Singularity) failing
-  to fetch the Tinker container image.\n\nTool homepage: https://dasher.wustl.edu/tinker/"
-inputs: []
+doc: "Software Tools for Molecular Design\n\nTool homepage: https://dasher.wustl.edu/tinker/"
+inputs:
+  - id: cartesian_coordinate_file
+    type: File
+    doc: Enter Cartesian Coordinate File Name
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

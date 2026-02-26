@@ -1,8 +1,9 @@
 ---
 name: suds-jurko
-description: Suds is a lightweight, dynamic SOAP client for Python that simplifies the process of consuming web services.
+description: suds-jurko is a lightweight SOAP client for Python that dynamically consumes web services by inspecting WSDL files at runtime. Use when user asks to consume SOAP web services, call remote methods as local Python functions, or interact with complex XML structures as native objects.
 homepage: https://github.com/suds-community/suds
 ---
+
 
 # suds-jurko
 

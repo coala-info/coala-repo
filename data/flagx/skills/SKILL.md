@@ -1,8 +1,9 @@
 ---
 name: flagx
-description: FLAG-X (FLow cytometry Automated Gating toolboX) is a specialized Python toolbox designed to automate the end-to-end processing of cytometry data.
+description: FLAG-X is a Python toolbox that automates the end-to-end processing, machine learning-based gating, and visualization of flow cytometry data. Use when user asks to train classification models, perform automated gating on new samples, align channels, or generate dimensionality reduction visualizations like UMAP and t-SNE.
 homepage: https://github.com/bionetslab/FLAG-X
 ---
+
 
 # flagx
 

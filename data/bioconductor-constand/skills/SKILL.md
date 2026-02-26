@@ -1,8 +1,9 @@
 ---
 name: bioconductor-constand
-description: the package is available on all platforms; click for details.
+description: CONSTANd performs normalization of high-dimensional data, such as LC-MS proteomics, using a constrained proportional fitting approach. Use when user asks to normalize proteomics data, apply constrained proportional fitting, or reduce systematic bias in mass spectrometry datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/CONSTANd.html
 ---
+
 
 # bioconductor-constand
 

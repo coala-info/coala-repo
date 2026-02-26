@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hdxmsqc
-description: The package builds on the QFeatures and Spectra packages to integrate with other mass-spectrometry data.
+description: "bioconductor-hdxmsqc provides quality control assessment and outlier detection for hydrogen-deuterium exchange mass-spectrometry data. Use when user asks to identify outliers in retention time or ion mobility, evaluate mass errors and spectral similarity, check for monotonicity in deuterium uptake, or assess charge state correlation in HDX-MS datasets."
 homepage: https://bioconductor.org/packages/release/bioc/html/hdxmsqc.html
 ---
+
 
 # bioconductor-hdxmsqc
 

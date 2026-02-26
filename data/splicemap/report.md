@@ -1,30 +1,34 @@
 # splicemap CWL Generation Report
 
-## splicemap
+## splicemap_SpliceMap
 
 ### Tool Description
-SpliceMap is a tool for detecting splice junctions from RNA-seq data.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/splicemap:3.3.5.2--h9948957_7
 - **Homepage**: http://www.stanford.edu/group/wonglab/SpliceMap/
 - **Package**: https://anaconda.org/channels/bioconda/packages/splicemap/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/splicemap/overview
 - **Total Downloads**: 7.2K
 - **Last updated**: 2025-09-10
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/splicemap:3.3.5.2--h9948957_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+WARNING: This program is for internal use only, I suggest you use "runSpliceMap" instead.
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipcomp
-description: the package is available on all platforms; click for details.
+description: ChIPComp performs quantitative comparison of multiple ChIP-seq datasets using a linear model framework that incorporates control sequencing data. Use when user asks to perform differential binding site analysis, integrate control or input data into ChIP-seq comparisons, or identify differential transcription factor binding and histone modifications between conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPComp.html
 ---
+
 
 # bioconductor-chipcomp
 

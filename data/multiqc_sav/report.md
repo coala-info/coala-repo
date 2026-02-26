@@ -1,12 +1,12 @@
 # multiqc_sav CWL Generation Report
 
-## multiqc_sav
+## multiqc_sav_multiqc
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Singularity/Apptainer) indicating a failure to build the image due to insufficient disk space.
+MultiQC aggregates results from bioinformatics analyses across many samples into a single report. It searches a given directory for analysis logs and compiles an HTML report. It's a general use tool, perfect for summarising the output from numerous bioinformatics tools. To run, supply with one or more directory to scan for analysis results. For example, to run in the current working directory, use 'multiqc .'
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/multiqc:1.33--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/multiqc_sav:0.2.0--pyh7e72e81_0
 - **Homepage**: http://multiqc.info
 - **Package**: https://anaconda.org/channels/bioconda/packages/multiqc_sav/overview
 - **Validation**: PASS
@@ -18,29 +18,124 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/multiqc:1.33--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2915753692: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## multiqc_sav_multiqc
-
-### Tool Description
-MultiQC aggregates results from bioinformatics analyses across many samples into a single report. (Note: The provided text appears to be a container execution error log rather than help text, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/multiqc:1.33--pyhdfd78af_0
-- **Homepage**: http://multiqc.info
-- **Package**: https://anaconda.org/channels/bioconda/packages/multiqc_sav/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/multiqc:1.33--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2180909358: no space left on device
+/// MultiQC 🔍 v1.33                                                           
+                                                                                
+ Usage: multiqc [OPTIONS] [ANALYSIS DIRECTORY]                                  
+                                                                                
+ MultiQC aggregates results from bioinformatics analyses across many samples    
+ into a single report.                                                          
+ It searches a given directory for analysis logs and compiles an HTML report.   
+ It's a general use tool, perfect for summarising the output from numerous      
+ bioinformatics tools.                                                          
+ To run, supply with one or more directory to scan for analysis results. For    
+ example, to run in the current working directory, use 'multiqc .'              
+                                                                                
+╭─ Main options ───────────────────────────────────────────────────────────────╮
+│ --force            -f  Overwrite any existing reports                        │
+│ --config           -c  Specific config file to load, after those in MultiQC  │
+│                        dir / home dir / working dir. (PATH)                  │
+│ --cl-config            Specify MultiQC config YAML on the command line       │
+│                        (TEXT)                                                │
+│ --filename         -n  Report filename. Use 'stdout' to print to standard    │
+│                        out. (TEXT)                                           │
+│ --outdir           -o  Create report in the specified output directory.      │
+│                        (TEXT)                                                │
+│ --ignore           -x  Ignore analysis files (GLOB EXPRESSION)               │
+│ --ignore-samples       Ignore sample names (GLOB EXPRESSION)                 │
+│ --ignore-symlinks      Ignore symlinked directories and files                │
+│ --file-list        -l  Supply a file containing a list of file paths to be   │
+│                        searched, one per row                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Choosing modules to run ────────────────────────────────────────────────────╮
+│ --module        -m  Use only this module. Can specify multiple times.        │
+│                     (MODULE NAME)                                            │
+│ --exclude       -e  Do not use this module. Can specify multiple times.      │
+│                     (MODULE NAME)                                            │
+│ --require-logs      Require all explicitly requested modules to have log     │
+│                     files. If not, MultiQC will exit with an error.          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Sample handling ────────────────────────────────────────────────────────────╮
+│ --dirs           -d   Prepend directory to sample names                      │
+│ --dirs-depth     -dd  Prepend n directories to sample names. Negative number │
+│                       to take from start of path. (INTEGER)                  │
+│ --fullnames      -s   Do not clean the sample names (leave as full file      │
+│                       name)                                                  │
+│ --fn_as_s_name        Use the log filename as the sample name                │
+│ --replace-names       TSV file to rename sample names during report          │
+│                       generation (PATH)                                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Report customisation ───────────────────────────────────────────────────────╮
+│ --title            -i  Report title. Printed as page header, used for        │
+│                        filename if not otherwise specified. (TEXT)           │
+│ --comment          -b  Custom comment, will be printed at the top of the     │
+│                        report. (TEXT)                                        │
+│ --template         -t  Report template to use.                               │
+│                        (default|disco|gathered|geo|original|sections|simple) │
+│ --sample-names         TSV file containing alternative sample names for      │
+│                        renaming buttons in the report (PATH)                 │
+│ --sample-filters       TSV file containing show/hide patterns for the report │
+│                        (PATH)                                                │
+│ --custom-css-file      Custom CSS file to add to the final report (PATH)     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Output files ───────────────────────────────────────────────────────────────╮
+│ --flat                    -fp  Use only flat plots (static images)           │
+│ --interactive             -ip  Use only interactive plots (in-browser        │
+│                                Javascript)                                   │
+│ --export                  -p   Export plots as static images in addition to  │
+│                                the report                                    │
+│ --data-dir/--no-data-dir       Force the parsed data directory to be         │
+│                                created.                                      │
+│ --data-format             -k   Output parsed data in a different format.     │
+│                                (tsv|csv|json|yaml)                           │
+│ --zip-data-dir            -z   Compress the data directory.                  │
+│ --no-report                    Do not generate a report, only export data    │
+│                                and plots                                     │
+│ --clean-up/--no-clean-up       Remove the temporary directory and log file   │
+│                                after finishing                               │
+│ --pdf                          Creates PDF report with the 'simple'          │
+│                                template. Requires Pandoc to be installed.    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ MultiQC behaviour ──────────────────────────────────────────────────────────╮
+│ --verbose            -v  Increase output verbosity. (INTEGER RANGE)          │
+│ --quiet              -q  Only show log warnings                              │
+│ --no-version-check       Disable checking the latest MultiQC version on the  │
+│                          server                                              │
+│ --strict                 Don't catch exceptions, run additional code checks  │
+│                          to help development.                                │
+│ --development,--dev      Development mode. Do not inline JS and CSS, export  │
+│                          uncompressed plot data                              │
+│ --profile-runtime        Add analysis of how long MultiQC takes to run to    │
+│                          the report                                          │
+│ --profile-memory         Add analysis of how much memory each module uses.   │
+│                          Note that tracking memory will increase the         │
+│                          runtime, so the runtime metrics could scale up a    │
+│                          few times                                           │
+│ --no-megaqc-upload       Don't upload generated report to MegaQC, even if    │
+│                          MegaQC options are found                            │
+│ --no-ansi                Disable coloured log output                         │
+│ --version                Show the version and exit.                          │
+│ --help               -h  Show this message and exit.                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ AI Features ────────────────────────────────────────────────────────────────╮
+│ --ai,--ai-summary  Generate an AI summary of the report                      │
+│ --ai-summary-full  Generate a detailed AI summary of the report              │
+│ --ai-provider      Select AI provider for report summarization. (Default:    │
+│                    seqera) (seqera|openai|anthropic|aws_bedrock|custom)      │
+│ --no-ai            Disable AI toolbox and buttons in the report              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Check Config ───────────────────────────────────────────────────────────────╮
+│ --check-config  Check a MultiQC configuration file for errors and exit.      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --only-samples              Only include sample names matching the given     │
+│                             glob expression (GLOB EXPRESSION)                │
+│ --ai-model                  Select AI model to use for report summarization  │
+│                             (TEXT)                                           │
+│ --ai-custom-endpoint        Custom AI endpoint to use with OpenAI API (TEXT) │
+│ --ai-custom-context-window  Custom context window to use with OpenAI API     │
+│                             (default: 128000) (INTEGER)                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                                                                                
+ See http://multiqc.info for more details.
 ```
 

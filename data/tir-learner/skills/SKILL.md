@@ -1,8 +1,10 @@
 ---
 name: tir-learner
-description: The `tir-learner` tool is an ensemble pipeline designed for the automated annotation of Terminal Inverted Repeat (TIR) transposable elements.
+description: The tir-learner tool is an ensemble pipeline designed for the automated annotation of Terminal Inverted Repeat (TIR) transposable elements. Use when user asks to 'annotate Terminal Inverted Repeat (TIR) transposable elements', 'analyze TIRs in a genome', 'identify TIR superfamilies', or 'configure the TIR annotation pipeline'.
 homepage: https://github.com/lutianyu2001/TIR-Learner
 ---
+
+
 
 # tir-learner
 

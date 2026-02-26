@@ -1,8 +1,9 @@
 ---
 name: mlpy
-description: mlpy is a specialized Python library designed for high-performance machine learning, bridging the gap between NumPy/SciPy and the GNU Scientific Libraries (GSL).
+description: mlpy is a high-performance Python library for machine learning that provides efficient implementations of classification, regression, and dimensionality reduction algorithms. Use when user asks to implement predictive models, perform feature selection, analyze time-series data with Dynamic Time Warping, or apply wavelet transforms for signal processing.
 homepage: http://mlpy.sourceforge.net/index.html
 ---
+
 
 # mlpy
 

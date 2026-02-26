@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tofsimsdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for Time-of-Flight Secondary Ion Mass Spectrometry (TOF-SIMS) analysis. Use when user asks to access sample TOF-SIMS data, load example mass spectrometry datasets, or run vignettes for the tofsims package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tofsimsData.html
 ---
+
 
 # bioconductor-tofsimsdata
 

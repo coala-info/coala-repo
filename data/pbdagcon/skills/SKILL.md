@@ -1,8 +1,9 @@
 ---
 name: pbdagcon
-description: pbdagcon (Directed Acyclic Graph Consensus) is a specialized tool for sequence consensus that utilizes directed acyclic graphs to encode multiple sequence alignments.
+description: pbdagcon generates high-quality consensus sequences by applying directed acyclic graphs to multiple sequence alignments. Use when user asks to generate a consensus sequence from alignments, perform HGAP-style read correction, or refine sequence quality using PacBio data.
 homepage: https://github.com/jgurtowski/pbdagcon_python
 ---
+
 
 # pbdagcon
 

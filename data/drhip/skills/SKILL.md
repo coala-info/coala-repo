@@ -1,8 +1,9 @@
 ---
 name: drhip
-description: drhip (Data Reduction for HyPhy with Inference Processing) is a specialized toolkit for molecular evolution researchers.
+description: drhip parses and aggregates complex JSON output files from HyPhy molecular evolution tests into structured CSV summaries. Use when user asks to process HyPhy selection test results, synthesize data from the CAPHEINE workflow, or identify patterns of selection across multiple genes.
 homepage: https://github.com/veg/drhip
 ---
+
 
 # drhip
 

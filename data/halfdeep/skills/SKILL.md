@@ -1,8 +1,9 @@
 ---
 name: halfdeep
-description: HalfDeep is a specialized bioinformatics suite used to detect genomic intervals covered at half the expected depth by sequenced reads.
+description: HalfDeep detects genomic intervals covered at half the expected depth to identify correctly separated or uncollapsed haplotypes in genome assemblies. Use when user asks to identify half-depth regions, detect assembly artifacts, or perform quality control on genome assemblies using read mapping or k-mer analysis.
 homepage: https://github.com/richard-burhans/HalfDeep
 ---
+
 
 # halfdeep
 

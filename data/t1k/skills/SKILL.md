@@ -1,8 +1,9 @@
 ---
 name: t1k
-description: T1K is a specialized computational tool designed to accurately identify alleles for complex, polymorphic gene families like HLA and KIR.
+description: T1K identifies alleles for complex, polymorphic gene families like HLA and KIR from bulk or single-cell sequencing data. Use when user asks to identify HLA or KIR alleles, perform genotyping on polymorphic gene families, or build reference indices for immunological gene clusters.
 homepage: https://github.com/mourisl/T1K
 ---
+
 
 # t1k
 

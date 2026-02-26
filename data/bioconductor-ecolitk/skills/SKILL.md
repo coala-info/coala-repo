@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecolitk
-description: the package is available on all platforms; click for details.
+description: The ecolitk package provides specialized data structures and visualization tools for analyzing the Escherichia coli genome and other circular DNA sequences. Use when user asks to map E. coli gene symbols to genomic coordinates, create circular genome plots, calculate GC content across genomic windows, or analyze operon structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/ecolitk.html
 ---
+
 
 # bioconductor-ecolitk
 

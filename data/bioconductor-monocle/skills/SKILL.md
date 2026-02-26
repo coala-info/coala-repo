@@ -1,8 +1,9 @@
 ---
 name: bioconductor-monocle
-description: the package is available on all platforms; click for details.
+description: Monocle performs single-cell RNA-seq analysis to discover cell trajectories and calculate pseudotime. Use when user asks to infer cell trajectories, perform pseudotime analysis, or identify differentially expressed genes across cell lineages.
 homepage: https://bioconductor.org/packages/release/bioc/html/monocle.html
 ---
+
 
 # bioconductor-monocle
 

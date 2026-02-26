@@ -1,8 +1,9 @@
 ---
 name: nextdenovo
-description: NextDenovo is a specialized assembler designed to handle the high error rates of long-read sequencing data through a "correct-then-assemble" strategy.
+description: NextDenovo is a specialized assembler designed to perform de novo assembly of long-read sequencing data using a correct-then-assemble strategy. Use when user asks to assemble long-read sequences, perform de novo genome assembly, or generate high-quality contigs from PacBio and Oxford Nanopore data.
 homepage: https://github.com/Nextomics/NextDenovo
 ---
+
 
 # nextdenovo
 

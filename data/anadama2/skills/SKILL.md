@@ -1,8 +1,9 @@
 ---
 name: anadama2
-description: AnADAMA2 is a workflow management framework designed to handle complex data analysis tasks with a focus on reproducibility and efficiency.
+description: AnADAMA2 is a workflow management framework that orchestrates complex data analysis tasks across local and high-performance computing environments. Use when user asks to run workflow scripts, dispatch tasks to HPC grids, perform dry runs to verify dependencies, or manage computational resources for data analysis.
 homepage: http://huttenhower.sph.harvard.edu/anadama2
 ---
+
 
 # anadama2
 

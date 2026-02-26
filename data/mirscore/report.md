@@ -1,9 +1,9 @@
 # mirscore CWL Generation Report
 
-## mirscore
+## mirscore_miRScore
 
 ### Tool Description
-A tool for scoring miRNA (Note: The provided help text contains only system error messages and no usage information).
+miRScore is a tool for scoring miRNA potential.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mirscore:0.3.4--hdfd78af_0
@@ -18,11 +18,33 @@ A tool for scoring miRNA (Note: The provided help text contains only system erro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mirscore:0.3.4--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4117837301: no space left on device
+Checking required modules...
+Requires package bowtie : /usr/local/bin/bowtie
+Requires package samtools : /usr/local/bin/samtools
+Requires package RNAfold : /usr/local/bin/RNAfold
+Requires package cutadapt : /usr/local/bin/cutadapt
+usage: miRScore [-h] -fastq [FASTQ ...] -mature MATURE -hairpin HAIRPIN
+                [-mm [MM]] [-n N] [-nostrucvis [NOSTRUCVIS]]
+                [-threads THREADS] -kingdom {plant,animal} [-out OUT]
+                [-autotrim [AUTOTRIM]] [-trimkey TRIMKEY] [-rescue [RESCUE]]
+
+options:
+  -h, --help            show this help message and exit
+  -fastq [FASTQ ...]    One or more fastq alignment files
+  -mature MATURE        fasta file of mature miRNA sequence
+  -hairpin HAIRPIN      fasta file of hairpin precursor sequence
+  -mm [MM]              Allow up to 1 mismatch in miRNA reads
+  -n N                  Results file name
+  -nostrucvis [NOSTRUCVIS]
+                        Do not include StrucVis output
+  -threads THREADS      Specify number of threads for samtools
+  -kingdom {plant,animal}
+                        Specify animal or plant
+  -out OUT              output directory
+  -autotrim [AUTOTRIM]  Trim untrimmed fastq files
+  -trimkey TRIMKEY      Abundant miRNA used to find adapters for trimming with
+                        option -autotrim
+  -rescue [RESCUE]      Reevaluate failed miRNAs and reannotate loci with
+                        alternative miRNA duplex that meets all criteria
 ```
 
-
-## Metadata
-- **Skill**: generated

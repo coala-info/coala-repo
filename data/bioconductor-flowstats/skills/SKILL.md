@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowstats
-description: the package is available on all platforms; click for details.
+description: This tool provides algorithms for automated gating, normalization, and statistical comparison of flow cytometry data. Use when user asks to identify cell populations automatically, align fluorescence intensities across samples, or perform probability binning to compare multivariate distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowStats.html
 ---
+
 
 # bioconductor-flowstats
 

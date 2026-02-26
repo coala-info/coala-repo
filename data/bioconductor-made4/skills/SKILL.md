@@ -1,8 +1,9 @@
 ---
 name: bioconductor-made4
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for multivariate analysis and visualization of large-scale biological data using ordination methods. Use when user asks to perform correspondence analysis, conduct between-group analysis, or integrate multiple datasets using coinertia analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/made4.html
 ---
+
 
 # bioconductor-made4
 

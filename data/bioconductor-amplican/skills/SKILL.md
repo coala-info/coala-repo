@@ -1,8 +1,9 @@
 ---
 name: bioconductor-amplican
-description: the package is available on all platforms; click for details.
+description: The amplican package automates the analysis of CRISPR experiments by processing raw FASTQ files into comprehensive alignment reports and editing visualizations. Use when user asks to analyze CRISPR sequencing data, align reads to amplicons, normalize editing rates against controls, or generate HTML reports for genome editing experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/amplican.html
 ---
+
 
 # bioconductor-amplican
 

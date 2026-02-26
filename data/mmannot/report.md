@@ -3,10 +3,12 @@
 ## mmannot
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) indicating a failure to pull or build the container image due to insufficient disk space.
+Compulsory options:
+	-a file: annotation file in GTF format
+	-r file1 [file2 ...]: reads in BAM/SAM format
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mmannot:1.1--h077b44d_3
+- **Docker Image**: quay.io/biocontainers/mmannot:1.1--hd03093a_0
 - **Homepage**: https://github.com/mzytnicki/mmannot
 - **Package**: https://anaconda.org/channels/bioconda/packages/mmannot/overview
 - **Validation**: PASS
@@ -18,46 +20,28 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mmannot:1.1--h077b44d_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3992601635: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## mmannot_createConfigFile
-
-### Tool Description
-Create a configuration file for mmannot. (Note: The provided help text contains only container runtime error messages and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mmannot:1.1--h077b44d_3
-- **Homepage**: https://github.com/mzytnicki/mmannot
-- **Package**: https://anaconda.org/channels/bioconda/packages/mmannot/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mmannot:1.1--h077b44d_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2335064629: no space left on device
-```
-
-## mmannot_addNH
-
-### Tool Description
-A tool for adding NH tags to SAM/BAM files (Note: The provided text contains only system error messages and no help documentation).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mmannot:1.1--h077b44d_3
-- **Homepage**: https://github.com/mzytnicki/mmannot
-- **Package**: https://anaconda.org/channels/bioconda/packages/mmannot/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mmannot:1.1--h077b44d_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1171838920: no space left on device
+Error: wrong parameter '--help'.
+Exiting.
+Usage: mmannot [options]
+	Compulsory options:
+		-a file: annotation file in GTF format
+		-r file1 [file2 ...]: reads in BAM/SAM format
+	Main options:
+		-o output: output file (default: stdout)
+		-c config_file: configuration file (default: config.txt)
+		-n name1 name2...: short name for each of the reads files
+		-s strand: string (U, F, R, FR, RF, FF, defaut: F) (use several strand types if the library strategies differ)
+		-f format (SAM or BAM): format of the read files (default: guess from file extension)
+		-l integer: overlap type (<0: read is included, <1: % overlap, otherwise: # nt, default: -1)
+		-d integer: upstream region size (default: 1000)
+		-D integer: downstream region size (default: 1000)
+		-y string: quantification strategy, valid values are: default, unique, random, ratio (default: default)
+		-e integer: attribute a read to a feature if at least N% of the hits map to the feature (default: 100%)
+	Output options:
+		-p: print progress
+		-m file: print mapping statistics for each read (slow, only work with 1 input file)
+		-M file: print mapping statistics for each interval (slow, only work with 1 input file)
+		-t integer: # threads (default: 1)
+		-h: this help
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: simscsntree
-description: SimSCSnTree is a specialized simulation framework designed to produce realistic single-cell DNA sequencing datasets.
+description: SimSCSnTree is a simulation framework that generates realistic single-cell DNA sequencing datasets with known phylogenetic trees and genomic variations. Use when user asks to simulate single-cell DNA sequencing data, generate phylogenetic trees with CNAs and SNVs, or benchmark variant callers and reconstruction algorithms.
 homepage: https://github.com/compbiofan/SimSCSnTree
 ---
+
 
 # simscsntree
 

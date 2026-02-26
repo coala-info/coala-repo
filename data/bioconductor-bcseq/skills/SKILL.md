@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bcseq
-description: The package supports provision of user-defined probability models for evaluating matching qualities. The package also supports multi-threading.
+description: bioconductor-bcseq performs fast sequence alignment for high-throughput shRNA and CRISPR screens using a Trie data structure. Use when user asks to align barcode reads to a library, perform Hamming or Edit distance matching, or generate read count tables for CRISPR screens.
 homepage: https://bioconductor.org/packages/release/bioc/html/bcSeq.html
 ---
+
 
 # bioconductor-bcseq
 

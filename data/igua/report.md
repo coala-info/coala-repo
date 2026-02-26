@@ -3,7 +3,7 @@
 ## igua
 
 ### Tool Description
-The provided text contains fatal error messages related to a container execution environment (Singularity/Apptainer) rather than the help documentation for the 'igua' tool itself. As a result, no arguments or tool-specific descriptions could be extracted.
+Run a Docker container for the igua tool.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/igua:0.1.0--py39h5b94c0b_0
@@ -18,11 +18,14 @@ The provided text contains fatal error messages related to a container execution
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/igua:0.1.0--py39h5b94c0b_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2185564650: no space left on device
+Unable to find image 'quay.io/biocontainers/igua:0.1.0--py39h5b94c0b_0' locally
+0.1.0--py39h5b94c0b_0: Pulling from biocontainers/igua
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+8d1582e74440: Pulling fs layer
+8d1582e74440: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob3594145165: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

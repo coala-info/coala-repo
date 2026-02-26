@@ -2,8 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: scaffold_builder_scaffold_builder.py
 label: scaffold_builder_scaffold_builder.py
-doc: "A tool for scaffolding contigs using a reference genome.\n\nTool homepage: http://edwards.sdsu.edu/scaffold_builder"
-inputs: []
+doc: "\nTool homepage: http://edwards.sdsu.edu/scaffold_builder"
+inputs:
+  - id: query_file
+    type: File
+    doc: query file
+    inputBinding:
+      position: 101
+      prefix: -q
+  - id: reference_file
+    type: File
+    doc: reference file
+    inputBinding:
+      position: 101
+      prefix: -r
 outputs:
   - id: stdout
     type: stdout

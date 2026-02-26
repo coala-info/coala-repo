@@ -1,8 +1,9 @@
 ---
 name: pyopt
-description: The pyopt skill provides a specialized workflow for quantitative finance tasks using the pyOptionPricing toolkit.
+description: The pyopt tool provides a specialized workflow for quantitative finance tasks including option pricing, volatility estimation, and derivative simulations. Use when user asks to price European options, calculate historical or Garman-Klass volatility, or simulate exotic derivatives like Shout options.
 homepage: https://github.com/boyac/pyOptionPricing
 ---
+
 
 # pyopt
 

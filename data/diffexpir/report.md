@@ -1,9 +1,9 @@
 # diffexpir CWL Generation Report
 
-## diffexpir
+## diffexpir_diffexpIR
 
 ### Tool Description
-Differential expression analysis tool (Note: The provided text contains system error messages rather than tool help documentation).
+Performs differential expression analysis.
 
 ### Metadata
 - **Docker Image**: biocontainers/diffexpir:v0.0.1_cv5
@@ -18,11 +18,33 @@ Differential expression analysis tool (Note: The provided text contains system e
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/diffexpir:v0.0.1_cv5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2531452699: no space left on device
+Unsupported option: --help
+
+********************************************************************************
+
+Usage: diffexpIR
+
+diffexpIR options:
+
+-h    Display this usage information.
+-g    GTF file
+-o    Output file name
+-d    Directory with the TPM output files
+-k    Gene key to use from GTF file. Default: gene_id
+-t    Transcript key to use from GTF file. Default: transcript_id
+-c    Smaller size allowed for an intron created for genes. Default: 16. We recommend to use the reads length
+-p    Prefix for grouping samples. (sample_1,sample_2)
+-s    Stat method: ttest (default), wilcox
+-f    Minimum fold change to filter out (default value: 2.0)
+-v    Minimum P-Value to filter out (default value: 1.0E-6)
+-r    Minimum fold change between intron and neighboring exons (default value: -1.0)
+-fdr    FRD Correction on the P-Values
+
+********************************************************************************
+
+                        Roberto Vera Alvarez, PhD
+            Emails: veraalva@ncbi.nlm.nih.gov, r78v10a07@gmail.com
+
+********************************************************************************
 ```
 
-
-## Metadata
-- **Skill**: generated

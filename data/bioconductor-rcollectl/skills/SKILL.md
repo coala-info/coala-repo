@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcollectl
-description: the package is available on all platforms; click for details.
+description: "Rcollectl monitors system resource usage such as CPU, memory, and network performance within the R environment. Use when user asks to monitor system performance, track resource consumption during R sessions, or profile hardware metrics."
 homepage: https://bioconductor.org/packages/release/bioc/html/Rcollectl.html
 ---
+
 
 # bioconductor-rcollectl
 

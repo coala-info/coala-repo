@@ -1,8 +1,9 @@
 ---
 name: transposonpsi
-description: TransposonPSI is a specialized homology search tool that leverages PSI-BLAST profiles to detect mobile genetic elements.
+description: TransposonPSI is a specialized homology search tool that leverages PSI-BLAST profiles to detect mobile genetic elements, particularly highly degenerate ones, at the protein level. Use when user asks to identify transposon regions in genomic sequences, check predicted proteins for transposon-derived domains, find hidden or ancient transposon remnants, or mask genomes before gene prediction.
 homepage: http://transposonpsi.sourceforge.net/
 ---
+
 
 # transposonpsi
 

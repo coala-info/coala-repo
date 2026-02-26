@@ -1,8 +1,9 @@
 ---
 name: metastudent
-description: Metastudent is a command-line tool designed to predict protein function by inferring Gene Ontology (GO) terms from previously annotated proteins.
+description: Metastudent predicts protein function by inferring Gene Ontology terms from annotated sequences using homology-based inference. Use when user asks to predict Molecular Function or Biological Process ontologies, assign functional annotations to protein sequences, or infer GO terms from FASTA files.
 homepage: https://github.com/Rostlab/MetaStudent
 ---
+
 
 # metastudent
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metabosignal
-description: the package is available on all platforms; click for details.
+description: MetaboSignal is an R package for building and analyzing integrated metabolic and signaling networks. Use when user asks to map gene-metabolite associations, build metabolic-signaling networks, or integrate metabolomic and transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/MetaboSignal.html
 ---
+
 
 # bioconductor-metabosignal
 

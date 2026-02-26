@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iterativebma
-description: the package is available on all platforms; click for details.
+description: This tool performs gene selection and binary classification of high-dimensional microarray data using an iterative Bayesian Model Averaging approach. Use when user asks to identify predictive gene sets, perform classification on transcriptomic data with small sample sizes, or account for model uncertainty in gene expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/iterativeBMA.html
 ---
+
 
 # bioconductor-iterativebma
 

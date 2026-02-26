@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gatom
-description: The package further provides functions for module post-processing, annotation and visualization.
+description: The bioconductor-gatom package identifies active metabolic modules by integrating transcriptomic and metabolomic data into a metabolic reaction network. Use when user asks to identify highly regulated metabolic subnetworks, integrate gene expression and metabolite abundance data, solve the maximum weight connected subgraph problem, or visualize active metabolic modules.
 homepage: https://bioconductor.org/packages/release/bioc/html/gatom.html
 ---
+
 
 # bioconductor-gatom
 

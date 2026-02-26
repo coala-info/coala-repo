@@ -1,8 +1,9 @@
 ---
 name: carna
-description: Carna (based on the Carnac project) is a keyboard logging and presentation utility designed to provide visual insight into keyboard usage.
+description: Carna is a keyboard logging and presentation utility that overlays active keystrokes on the screen for visual insight. Use when user asks to install the utility via Chocolatey, toggle silent mode during presentations, or build the application from source.
 homepage: https://github.com/Code52/carnac
 ---
+
 
 # carna
 

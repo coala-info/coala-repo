@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gosim
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool calculates functional similarities between Gene Ontology terms and gene products using various information-theoretic measures and diffusion kernels. Use when user asks to compute semantic similarities between GO terms, evaluate functional similarity between genes, perform GO enrichment analysis, or cluster genes based on biological functional distance.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GOSim.html
 ---
+
 
 # bioconductor-gosim
 

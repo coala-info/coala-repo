@@ -3,28 +3,32 @@
 ## purge_haplotigs
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains container build logs and a fatal error message.
+FAIL to generate CWL: purge_haplotigs not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/purge-dups-runner:2019.12.20--pyhdfd78af_0
 - **Homepage**: https://bitbucket.org/mroachawri/purge_haplotigs/
 - **Package**: https://anaconda.org/channels/bioconda/packages/purge_haplotigs/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/purge_haplotigs/overview
 - **Total Downloads**: 28.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: purge_haplotigs not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: purge_haplotigs not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/purge-dups-runner:2019.12.20--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
-
-## Metadata
-- **Skill**: generated

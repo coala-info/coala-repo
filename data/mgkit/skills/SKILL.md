@@ -1,8 +1,9 @@
 ---
 name: mgkit
-description: MGKit (Metagenomics Framework) is a collection of modular tools designed to simplify the construction of bioinformatics pipelines.
+description: MGKit is a modular bioinformatics framework designed for processing functional annotations, sequence data, and count tables. Use when user asks to extract sequence statistics, manipulate count tables, transform mapping files, or analyze SNP and variant data.
 homepage: https://github.com/frubino/mgkit
 ---
+
 
 # mgkit
 

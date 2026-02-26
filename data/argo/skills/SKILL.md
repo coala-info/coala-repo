@@ -1,8 +1,9 @@
 ---
 name: argo
-description: Argo is a specialized bioinformatics profiler that provides species-level resolution for antibiotic resistance genes (ARGs) within complex metagenomes.
+description: Argo is a bioinformatics profiler that provides species-level resolution for antibiotic resistance genes within metagenomes by linking them to microbial hosts using long-read alignment. Use when user asks to profile antibiotic resistance genes, link resistance genes to specific microbial hosts, or calculate gene abundance in copies per genome.
 homepage: https://github.com/xinehc/argo
 ---
+
 
 # argo
 

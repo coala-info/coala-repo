@@ -1,12 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: novoloci
+baseCommand: perl NOVOLoci0.5.pl
 label: novoloci
-doc: "The provided text does not contain help information or usage instructions for
-  the tool 'novoloci'. It appears to be an error log from a container runtime (Apptainer/Singularity)
-  indicating a failure to build the image due to lack of disk space.\n\nTool homepage:
-  https://github.com/ndierckx/NOVOLoci"
-inputs: []
+doc: "NOVOLoci tool for processing genomic data.\n\nTool homepage: https://github.com/ndierckx/NOVOLoci"
+inputs:
+  - id: config_file
+    type: File
+    doc: Configuration file
+    inputBinding:
+      position: 101
+      prefix: -c
 outputs:
   - id: stdout
     type: stdout

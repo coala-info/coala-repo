@@ -3,26 +3,32 @@
 ## galaxy-job-execution
 
 ### Tool Description
-A tool for executing Galaxy jobs (Note: The provided text appears to be a container execution error log rather than help text, so no arguments could be extracted).
+FAIL to generate CWL: galaxy-job-execution not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/galaxy-job-execution:25.0.4--pyhdfd78af_0
 - **Homepage**: https://galaxyproject.org
 - **Package**: https://anaconda.org/channels/bioconda/packages/galaxy-job-execution/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-job-execution/overview
-- **Total Downloads**: 612
+- **Total Downloads**: 613
 - **Last updated**: 2025-11-18
 - **GitHub**: https://github.com/galaxyproject/galaxy
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: galaxy-job-execution not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: galaxy-job-execution not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-job-execution:25.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2507794725: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

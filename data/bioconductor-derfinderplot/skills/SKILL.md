@@ -1,8 +1,9 @@
 ---
 name: bioconductor-derfinderplot
-description: the package is available on all platforms; click for details.
+description: This tool visualizes differentially expressed regions and coverage data from RNA-seq analysis performed with the derfinder package. Use when user asks to plot genomic overviews of regions, visualize base-pair resolution coverage for specific regions, create cluster-based visualizations with gene annotations, or generate Venn diagrams of genomic state overlaps.
 homepage: https://bioconductor.org/packages/release/bioc/html/derfinderPlot.html
 ---
+
 
 # bioconductor-derfinderplot
 

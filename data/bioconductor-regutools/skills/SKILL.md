@@ -1,8 +1,9 @@
 ---
 name: bioconductor-regutools
-description: the package is available on all platforms; click for details.
+description: regutools provides an R interface for querying and analyzing transcriptional regulatory data from the RegulonDB database. Use when user asks to retrieve transcription factor information, identify regulatory binding sites, or analyze gene regulation networks in E. coli.
 homepage: https://bioconductor.org/packages/release/bioc/html/regutools.html
 ---
+
 
 # bioconductor-regutools
 

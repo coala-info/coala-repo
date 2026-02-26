@@ -1,8 +1,9 @@
 ---
 name: biosyntax
-description: bioSyntax is a suite of syntax highlighting definitions designed specifically for computational biology.
+description: bioSyntax provides syntax highlighting for computational biology file formats to improve the manual inspection of genomic data. Use when user asks to view highlighted biological files in the terminal, inspect SAM or VCF records with color-coding, or pipe bioinformatics tool outputs into a formatted viewer.
 homepage: https://github.com/bioSyntax/bioSyntax
 ---
+
 
 # biosyntax
 

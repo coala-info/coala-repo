@@ -1,8 +1,9 @@
 ---
 name: perl-parse-recdescent
-description: This skill facilitates the creation of powerful, readable, and maintainable parsers using the `Parse::RecDescent` module.
+description: This tool creates recursive-descent parsers in Perl using top-down grammar rules to process complex or nested text structures. Use when user asks to define context-free grammars, parse mathematical expressions, or build custom configuration language parsers.
 homepage: http://metacpan.org/pod/Parse-RecDescent
 ---
+
 
 # perl-parse-recdescent
 

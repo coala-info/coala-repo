@@ -1,8 +1,9 @@
 ---
 name: fuma
-description: FuMa (Fusion Matcher) is a specialized tool for harmonizing fusion gene detection results.
+description: FuMa harmonizes and matches fusion gene detection results from multiple tools using gene annotations. Use when user asks to merge multi-tool fusion outputs, identify recurrent fusions across cohorts, or compare fusion predictions using different matching strategies.
 homepage: https://github.com/yhoogstrate/fuma/
 ---
+
 
 # fuma
 

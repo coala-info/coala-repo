@@ -1,8 +1,9 @@
 ---
 name: svjedi
-description: SVJedi is a structural variation genotyper designed specifically for long-read data.
+description: SVJedi genotypes known structural variations using long-read sequencing data. Use when user asks to genotype structural variations, determine variant zygosity, or analyze long-read alignments for deletions, insertions, inversions, and translocations.
 homepage: https://github.com/llecompte/SVJedi
 ---
+
 
 # svjedi
 

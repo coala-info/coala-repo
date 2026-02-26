@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytomem
-description: the package is available on all platforms; click for details.
+description: The bioconductor-cytomem package implements Marker Enrichment Modeling to quantify and label cell populations based on feature enrichment in single-cell cytometry data. Use when user asks to calculate MEM scores, generate human-readable population labels, create enrichment heatmaps, or compare cluster similarity using RMSD.
 homepage: https://bioconductor.org/packages/release/bioc/html/cytoMEM.html
 ---
+
 
 # bioconductor-cytomem
 

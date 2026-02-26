@@ -1,8 +1,9 @@
 ---
 name: r-qtl
-description: "Analysis of experimental crosses to identify genes   (called quantitative trait loci, QTLs) contributing to variation in   quantitative traits.   Broman et al."
+description: R/qtl provides an interactive environment for mapping quantitative trait loci in experimental populations. Use when user asks to estimate genetic maps, perform interval mapping, identify genomic regions contributing to quantitative traits, or analyze genetic data from experimental crosses.
 homepage: https://cloud.r-project.org/web/packages/qtl/index.html
 ---
+
 
 # r-qtl
 

@@ -1,8 +1,9 @@
 ---
 name: fast-edit-distance
-description: The `fast-edit-distance` tool is a high-performance C and Cython implementation of the edit distance algorithm.
+description: This tool calculates the edit distance between strings using a high-performance implementation optimized for speed with early termination. Use when user asks to calculate Levenshtein distance, find the edit distance between sequences, or perform fast similarity searches with a maximum distance threshold.
 homepage: https://github.com/youyupei/fast_edit_distance
 ---
+
 
 # fast-edit-distance
 

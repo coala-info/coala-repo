@@ -1,8 +1,9 @@
 ---
 name: corekaburra
-description: Corekaburra is a downstream bioinformatics tool designed to add spatial context to pan-genome analyses.
+description: Corekaburra adds spatial context to pan-genome analyses by identifying and characterizing genomic regions flanked by core genes. Use when user asks to analyze synteny between core genes, identify genomic islands, or characterize the accessory gene content within core regions.
 homepage: https://github.com/milnus/Corekaburra
 ---
+
 
 # corekaburra
 

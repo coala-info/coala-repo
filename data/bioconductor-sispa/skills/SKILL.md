@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sispa
-description: the package is available on all platforms; click for details.
+description: SISPA performs sample integrated gene set analysis to define sample groups with similar gene set profiles across multiple data types. Use when user asks to define sample groups based on gene set profiles, integrate multi-omics data, or identify subgroups with similar molecular profiles.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SISPA.html
 ---
+
 
 # bioconductor-sispa
 

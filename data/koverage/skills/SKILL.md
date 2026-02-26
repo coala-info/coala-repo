@@ -1,8 +1,9 @@
 ---
 name: koverage
-description: Koverage is a high-performance pipeline designed to generate coverage metrics across multiple samples while maintaining a small computational footprint.
+description: Koverage is a high-performance pipeline designed to calculate coverage metrics across multiple samples using mapping-based or k-mer-based methods. Use when user asks to calculate contig coverage, estimate k-mer depth, process read directories for mapping, or execute coverage workflows on HPC clusters.
 homepage: https://github.com/beardymcjohnface/Koverage
 ---
+
 
 # koverage
 

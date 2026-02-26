@@ -3,7 +3,7 @@
 ## bracken
 
 ### Tool Description
-The provided text contains system error messages regarding a failed container execution and does not contain help text or usage information for the tool.
+Estimates the abundance of organisms in a metagenomic sample using Kraken and Bracken.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bracken:3.1--h9948957_0
@@ -12,15 +12,20 @@ The provided text contains system error messages regarding a failed container ex
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bracken/overview
-- **Total Downloads**: 105.5K
+- **Total Downloads**: 105.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jenniferlu717/Bracken
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/a951fb8ecb7aa9301513a96b87981aecb878aa798d0c3f0af476b3cbedd2f856: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bracken:3.1--h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3621766825: no space left on device
+Usage: bracken -v -d MY_DB -i INPUT -o OUTPUT -w OUTREPORT -r READ_LEN -l LEVEL -t THRESHOLD
+  -v             Echoes the current software version and exits
+  MY_DB          location of Kraken database
+  INPUT          Kraken REPORT file to use for abundance estimation
+  OUTPUT         file name for Bracken default output
+  OUTREPORT      New Kraken REPORT output file with Bracken read estimates
+  READ_LEN       read length to get all classifications for (default: 100)
+  LEVEL          level to estimate abundance at [options: D,P,C,O,F,G,S,S1,etc] (default: S)
+  THRESHOLD      number of reads required PRIOR to abundance estimation to perform reestimation (default: 0)
 ```
 

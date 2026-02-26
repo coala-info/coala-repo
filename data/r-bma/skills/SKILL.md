@@ -1,8 +1,9 @@
 ---
 name: r-bma
-description: "Package for Bayesian model averaging and variable selection for linear models,         generalized linear models and survival models (cox         regression).</p>"
+description: This tool performs Bayesian Model Averaging to account for model uncertainty and select variables in linear, generalized linear, and survival models. Use when user asks to perform model averaging, identify important predictors via posterior probabilities, handle high-dimensional data with iterated BMA, or generate robust predictions across multiple models.
 homepage: https://cloud.r-project.org/web/packages/BMA/index.html
 ---
+
 
 # r-bma
 

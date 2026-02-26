@@ -1,8 +1,9 @@
 ---
 name: tadbit
-description: TADbit provides a unified framework for the entire Hi-C data processing pipeline.
+description: TADbit is a Python-based framework for processing Hi-C data, from raw sequencing reads to normalized interaction matrices and three-dimensional chromatin models. Use when user asks to map Hi-C reads, normalize interaction matrices, identify Topologically Associating Domains, or generate 3D models of genomic regions.
 homepage: http://sgt.cnag.cat/3dg/tadbit/
 ---
+
 
 # tadbit
 

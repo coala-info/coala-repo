@@ -1,8 +1,9 @@
 ---
 name: r-base
-description: R package base (documentation from project home).
+description: The r-base package provides the fundamental functions, data structures, and control flow mechanisms essential for the R statistical computing environment. Use when user asks to create data structures, perform basic arithmetic, manipulate data frames, apply statistical functions, or manage files and system utilities.
 homepage: https://cran.r-project.org/web/packages/base/index.html
 ---
+
 
 # r-base
 

@@ -1,8 +1,9 @@
 ---
 name: qhull
-description: Qhull is a robust suite of tools for computing geometric structures based on the Quickhull algorithm.
+description: Qhull computes geometric structures such as convex hulls, Delaunay triangulations, Voronoi diagrams, and halfspace intersections from sets of input points. Use when user asks to compute a convex hull, generate a Delaunay triangulation, create a Voronoi diagram, calculate halfspace intersections, or generate geometric point sets.
 homepage: https://github.com/qhull/qhull
 ---
+
 
 # qhull
 

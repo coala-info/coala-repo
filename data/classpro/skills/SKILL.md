@@ -1,8 +1,9 @@
 ---
 name: classpro
-description: "ClassPro is a specialized bioinformatics tool designed to categorize every k-mer within a HiFi read into one of four functional types: Erroneous (E), Haploid (H), Diploid (D), or Repeat (R)."
+description: ClassPro categorizes k-mers within HiFi reads into erroneous, haploid, diploid, or repeat functional types using FASTK profiles. Use when user asks to classify k-mers in HiFi reads, identify repetitive or erroneous genomic regions, or generate k-mer classification files for diploid genome analysis.
 homepage: https://github.com/yoshihikosuzuki/ClassPro/
 ---
+
 
 # classpro
 

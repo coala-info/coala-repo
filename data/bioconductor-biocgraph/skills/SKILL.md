@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocgraph
-description: the package is available on all platforms; click for details.
+description: This tool provides high-level interfaces for the visualization and layout of biological graphs and pathways using Graphviz. Use when user asks to render graphNEL objects, customize node and edge attributes, create subgraphs or clusters, and visualize biological pathways with expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/biocGraph.html
 ---
+
 
 # bioconductor-biocgraph
 

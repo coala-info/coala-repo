@@ -1,11 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: longqc_longQC.py
+baseCommand: longQC.py
 label: longqc_longQC.py
-doc: "LongQC is a tool for quality control of long-read sequencing data. (Note: The
-  provided help text contains only system error messages and no usage information;
-  therefore, no arguments could be extracted.)\n\nTool homepage: https://github.com/yfukasawa/LongQC"
-inputs: []
+doc: "longQC.py: A tool for quality control of long sequencing reads.\n\nTool homepage:
+  https://github.com/yfukasawa/LongQC"
+inputs:
+  - id: options
+    type:
+      - 'null'
+      - string
+    doc: Additional options for longQC.py
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

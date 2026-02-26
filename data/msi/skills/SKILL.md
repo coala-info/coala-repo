@@ -1,8 +1,9 @@
 ---
 name: msi
-description: MSI (Metabarcoding Sequences Identification) is a specialized bioinformatics pipeline designed to transform raw sequencing reads into polished taxa tables.
+description: MSI is a bioinformatics pipeline that transforms raw sequencing reads into polished taxa tables through clustering, consensus generation, and taxonomic assignment. Use when user asks to process Nanopore or Illumina metabarcoding data, generate polished consensus sequences, remove primers and adapters, or perform taxonomic binning via BLAST.
 homepage: http://github.com/nunofonseca/msi/
 ---
+
 
 # msi
 

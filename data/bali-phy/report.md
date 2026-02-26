@@ -1,9 +1,9 @@
 # bali-phy CWL Generation Report
 
-## bali-phy
+## bali-phy_help
 
 ### Tool Description
-BAli-Phy is a software for simultaneous Bayesian estimation of alignment and phylogeny.
+Bayesian Inference of Alignment and Phylogeny
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bali-phy:4.1--py314hedd121d_0
@@ -18,14 +18,50 @@ BAli-Phy is a software for simultaneous Bayesian estimation of alignment and phy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bali-phy:4.1--py314hedd121d_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:64e9597d9381c343d2d5a811131fd7bfab94327504cda32529b65f98f7550dde: unpack entry: usr/local/bin/pandoc: unpack to regular file: short write: write /scratch/21813747/build-temp-2357750359/rootfs/usr/local/bin/pandoc: no space left on device
+Bayesian Inference of Alignment and Phylogeny
+Usage: bali-phy <sequence-file1> [<sequence-file2> ...] [OPTIONS]
+[1mBasic[0m options:
+
+General options:
+  -h [ --help ] [=arg(=basic)]   Print usage information.
+  -v [ --version ]               Print version information.
+  -t [ --test ]                  Analyze the initial values and exit.
+  -c [ --config ] arg            Command file to read.
+
+MCMC options:
+  -i [ --iterations ] arg        The number of iterations to run.
+  -n [ --name ] arg              Name for the output directory to create.
+
+Parameter options:
+  --align arg                    Sequence file & initial alignment.
+  -T [ --tree ] arg              Tree prior: ~uniform_tree(taxa), 
+                                 ~uniform_rooted_tree(taxa), ~yule(taxa), etc.
+
+Model options:
+  -A [ --alphabet ] arg          The alphabet.
+  -S [ --smodel ] arg            Substitution model.
+  -I [ --imodel ] arg            Insertion-deletion model.
+  -R [ --scale ] arg             Prior on the scale.
+  -F [ --fix ] arg               Fix topology,tree,alignment
+  --variables arg                Variable definitions
+  -L [ --link ] arg              Link partitions.
+  --subst-rates arg (=constant)  Subst rates: *constant, relaxed, or an 
+                                 expression.
+  --indel-rates arg (=relaxed)   Indel rates: constant, *relaxed, or an 
+                                 expression.
+
+Showing [1mbasic[0m command line options.  Not all options are shown!
+  * See `bali-phy help [1madvanced[0m` to see more options.
+
+See `bali-phy help [4moption[24m` for help on [4moption[24m.  For example,
+  * `bali-phy help [1malphabet[0m` shows help on the [1m--alphabet[0m command.
+  * `bali-phy help [1mnormal[0m` shows help on the normal distribution.
+  * `bali-phy help [1mtn93[0m` shows help on the TN93 model.
+  * `bali-phy help [1mlog[0m` shows help on the log function.
+
+To see help on one of the following topics, run `bali-phy help [4mtopic[24m`
+
+   alphabets/    commands/   distributions/   functions/   models/
+   parameters/
 ```
 
-
-## Metadata
-- **Skill**: generated

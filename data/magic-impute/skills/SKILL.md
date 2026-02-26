@@ -1,8 +1,9 @@
 ---
 name: magic-impute
-description: MAGIC (Markov Affinity-based Graph Imputation of Cells) is a computational tool designed to recover the underlying structure of large-scale biological datasets.
+description: MAGIC imputes missing gene expression values in single-cell datasets by diffusing information across a cell-cell affinity graph to recover biological signals. Use when user asks to recover dropout events, smooth gene expression data, or restore gene-gene correlations in single-cell genomics.
 homepage: https://github.com/KrishnaswamyLab/MAGIC
 ---
+
 
 # magic-impute
 

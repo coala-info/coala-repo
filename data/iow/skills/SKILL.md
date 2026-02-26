@@ -1,8 +1,9 @@
 ---
 name: iow
-description: The `iow` (Improved Octo Waddle) library provides a Python implementation of the balanced parentheses (BP) succinct data structure for representing trees.
+description: The iow library provides a memory-efficient balanced parentheses succinct data structure for representing and manipulating large tree structures. Use when user asks to perform phylogenetic fragment placement, integrate sequences into a tree using jplace files, or convert placement data into Newick format.
 homepage: https://github.com/biocore/improved-octo-waddle
 ---
+
 
 # iow
 

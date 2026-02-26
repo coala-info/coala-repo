@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.string
-description: the package is available on all platforms; click for details.
+description: This tool saves and loads Biostrings XStringSet objects to and from file artifacts using the alabaster framework. Use when user asks to save DNA, RNA, or amino acid sequences to disk, load biological sequence artifacts into R, or persist QualityScaledXStringSet objects with their metadata.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.string.html
 ---
+
 
 # bioconductor-alabaster.string
 

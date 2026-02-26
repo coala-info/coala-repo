@@ -1,8 +1,9 @@
 ---
 name: r-checkmate
-description: "Tests and assertions to perform frequent argument checks. A     substantial part of the package was written in C to minimize any worries     about execution time overhead.</p>"
+description: The r-checkmate package provides high-performance functions to validate R objects and replace verbose conditional error-handling blocks. Use when user asks to validate function arguments, perform unit testing with custom expectations, or verify R object types and attributes using concise assertions.
 homepage: https://cloud.r-project.org/web/packages/checkmate/index.html
 ---
+
 
 # r-checkmate
 

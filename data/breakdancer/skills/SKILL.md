@@ -1,8 +1,9 @@
 ---
 name: breakdancer
-description: BreakDancer is a specialized tool for genome-wide discovery of structural variants.
+description: BreakDancer discovers genome-wide structural variants by identifying read pairs with unexpected separation distances or orientations. Use when user asks to generate library configuration files from BAM files, detect structural variants like deletions or translocations, or filter variants by mapping quality and read support.
 homepage: https://github.com/genome/breakdancer
 ---
+
 
 # breakdancer
 

@@ -1,8 +1,9 @@
 ---
 name: prank
-description: NEMO is a specialized firmware suite designed for the M5Stack ecosystem that enables portable digital self-defense and security-oriented pranks.
+description: NEMO is a specialized firmware suite for the M5Stack ecosystem that enables portable digital self-defense, wireless auditing, and security-oriented pranks. Use when user asks to deploy WiFi captive portals, perform Bluetooth notification spamming, trigger universal IR power-off codes, or detect suspicious BadUSB devices.
 homepage: https://github.com/n0xa/m5stick-nemo
 ---
+
 
 # prank
 

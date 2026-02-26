@@ -1,9 +1,9 @@
 # karect CWL Generation Report
 
-## karect
+## karect_correct
 
 ### Tool Description
-The provided text does not contain help information for the tool 'karect'. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to insufficient disk space.
+A suite of tools for correcting assembly reads, aligning reads, evaluating corrections, and merging files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/karect:1.0--h9948957_9
@@ -18,11 +18,85 @@ The provided text does not contain help information for the tool 'karect'. It co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/karect:1.0--h9948957_9 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4017289367: no space left on device
+Unknown tool [correct].
+-Please specify the tool you want to run: (correct-align-eval-merge).
+-Run "karect -[correct|align|eval|merge]" to find information about how to run a specific tool.
+  1) correct: a tool to correct assembly reads from fasta/fastq files.
+  2) align:   a tool to align original assembly reads as pre-processing for evaluation.
+  3) eval:    a tool to evaluate assembly reads correction.
+  4) merge:   a tool to concatenate fasta/fastq files.
+-Example: "./karect -correct"
 ```
 
 
-## Metadata
-- **Skill**: generated
+## karect_align
+
+### Tool Description
+A suite of tools for assembly read correction, alignment, evaluation, and merging.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/karect:1.0--h9948957_9
+- **Homepage**: https://github.com/aminallam/karect
+- **Package**: https://anaconda.org/channels/bioconda/packages/karect/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Unknown tool [align].
+-Please specify the tool you want to run: (correct-align-eval-merge).
+-Run "karect -[correct|align|eval|merge]" to find information about how to run a specific tool.
+  1) correct: a tool to correct assembly reads from fasta/fastq files.
+  2) align:   a tool to align original assembly reads as pre-processing for evaluation.
+  3) eval:    a tool to evaluate assembly reads correction.
+  4) merge:   a tool to concatenate fasta/fastq files.
+-Example: "./karect -correct"
+```
+
+
+## karect_eval
+
+### Tool Description
+A suite of tools for assembly read correction, alignment, evaluation, and merging.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/karect:1.0--h9948957_9
+- **Homepage**: https://github.com/aminallam/karect
+- **Package**: https://anaconda.org/channels/bioconda/packages/karect/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Unknown tool [eval].
+-Please specify the tool you want to run: (correct-align-eval-merge).
+-Run "karect -[correct|align|eval|merge]" to find information about how to run a specific tool.
+  1) correct: a tool to correct assembly reads from fasta/fastq files.
+  2) align:   a tool to align original assembly reads as pre-processing for evaluation.
+  3) eval:    a tool to evaluate assembly reads correction.
+  4) merge:   a tool to concatenate fasta/fastq files.
+-Example: "./karect -correct"
+```
+
+
+## karect_merge
+
+### Tool Description
+A suite of tools for assembly evaluation and correction.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/karect:1.0--h9948957_9
+- **Homepage**: https://github.com/aminallam/karect
+- **Package**: https://anaconda.org/channels/bioconda/packages/karect/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Unknown tool [merge].
+-Please specify the tool you want to run: (correct-align-eval-merge).
+-Run "karect -[correct|align|eval|merge]" to find information about how to run a specific tool.
+  1) correct: a tool to correct assembly reads from fasta/fastq files.
+  2) align:   a tool to align original assembly reads as pre-processing for evaluation.
+  3) eval:    a tool to evaluate assembly reads correction.
+  4) merge:   a tool to concatenate fasta/fastq files.
+-Example: "./karect -correct"
+```
+

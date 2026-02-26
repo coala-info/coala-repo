@@ -1,11 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: trimadap-mt
+baseCommand: fermitool
 label: fermikit_trimadap-mt
-doc: "Trim adapters from sequencing reads (Note: The provided help text contains a
-  container execution error and does not list available arguments).\n\nTool homepage:
-  https://github.com/lh3/fermikit"
-inputs: []
+doc: "A tool for adapter trimming.\n\nTool homepage: https://github.com/lh3/fermikit"
+inputs:
+  - id: adapters
+    type:
+      type: array
+      items: File
+    doc: Adapter sequences to trim.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

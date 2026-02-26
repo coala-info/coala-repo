@@ -2,10 +2,35 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: postmaster
 label: postmaster
-doc: "The provided text does not contain help information for the tool 'postmaster'.
-  It appears to be a log of a failed container build/fetch process (Apptainer/Singularity).\n
-  \nTool homepage: https://github.com/COMBINE-lab/postmaster"
-inputs: []
+doc: "\nTool homepage: https://github.com/COMBINE-lab/postmaster"
+inputs:
+  - id: alignments
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 101
+      prefix: --alignments
+  - id: num_threads
+    type:
+      - 'null'
+      - int
+    default: 2
+    inputBinding:
+      position: 101
+      prefix: --num-threads
+  - id: output
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 101
+      prefix: --output
+  - id: quant
+    type: string
+    inputBinding:
+      position: 101
+      prefix: --quant
 outputs:
   - id: stdout
     type: stdout

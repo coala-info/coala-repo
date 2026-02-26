@@ -1,8 +1,9 @@
 ---
 name: cansam
-description: Cansam is a C++ binding and utility suite designed for efficient manipulation of SAM and BAM files, which are standard formats for storing nucleotide sequence alignments.
+description: Cansam is a C++ library and utility suite for manipulating SAM and BAM alignment files. Use when user asks to convert between SAM and BAM formats, view alignment headers, sort or merge records, partition files, or develop C++ applications for processing sequence alignments.
 homepage: https://github.com/jmarshall/cansam
 ---
+
 
 # cansam
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylation450kprobe
-description: the package is available on all platforms; click for details.
+description: This tool provides probe sequences and genomic reannotation data for the Illumina HumanMethylation450 microarray. Use when user asks to retrieve probe-level metadata, access genomic coordinates, perform sequence analysis, or identify SNPs at CpG sites for 450k methylation data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation450kprobe.html
 ---
+
 
 # bioconductor-illuminahumanmethylation450kprobe
 

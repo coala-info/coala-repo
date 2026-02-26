@@ -3,7 +3,8 @@
 ## ffq
 
 ### Tool Description
-The provided text does not contain help information for the tool 'ffq'. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull a Docker image due to lack of disk space.
+A command line tool to find sequencing data from SRA / GEO / ENCODE
+/ ENA / EBI-EMBL / DDBJ / Biosample.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ffq:0.3.1--pyhdfd78af_0
@@ -18,11 +19,28 @@ The provided text does not contain help information for the tool 'ffq'. It conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ffq:0.3.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2037287156: no space left on device
+usage: ffq [-h] [-o OUT] [-l LEVEL] [--ftp] [--aws] [--gcp] [--ncbi] [--split]
+           [--verbose] [--version]
+           IDs [IDs ...]
+
+ffq 0.3.1: A command line tool to find sequencing data from SRA / GEO / ENCODE
+/ ENA / EBI-EMBL / DDBJ / Biosample.
+
+positional arguments:
+  IDs         One or multiple SRA / GEO / ENCODE / ENA / EBI-EMBL / DDBJ /
+              Biosample accessions, DOIs, or paper titles
+
+options:
+  -h, --help  Show this help message and exit
+  -o OUT      Path to write metadata (default: standard out)
+  -l LEVEL    Max depth to fetch data within accession tree
+  --ftp       Return FTP links
+  --aws       Return AWS links
+  --gcp       Return GCP links
+  --ncbi      Return NCBI links
+  --split     Split output into separate files by accession (`-o` is a
+              directory)
+  --verbose   Print debugging information
+  --version   show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

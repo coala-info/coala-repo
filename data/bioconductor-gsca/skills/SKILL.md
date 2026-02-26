@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsca
-description: the package is available on all platforms; click for details.
+description: Bioconductor-gsca identifies biological contexts where specific gene sets or transcription factors exhibit distinct activity patterns. Use when user asks to predict biological contexts for gene sets, integrate ChIP-seq data with expression compendia, or perform exploratory data analysis on gene expression samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSCA.html
 ---
+
 
 # bioconductor-gsca
 

@@ -1,8 +1,9 @@
 ---
 name: argparse2tool
-description: This skill facilitates the automatic conversion of Python command-line interfaces into Galaxy Tool XML.
+description: This tool converts Python command-line interfaces into Galaxy Tool XML by acting as a drop-in replacement for the standard argparse module. Use when user asks to generate Galaxy tool wrappers, convert Python scripts to XML, or synchronize tool parameters with Galaxy.
 homepage: https://github.com/erasche/argparse2tool
 ---
+
 
 # argparse2tool
 

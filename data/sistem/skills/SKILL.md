@@ -1,8 +1,9 @@
 ---
 name: sistem
-description: SISTEM (SImulation of Single-cell Tumor Evolution and Metastasis) is a specialized bioinformatics tool used to model the life cycle of a tumor.
+description: SISTEM is an agent-based bioinformatics tool that simulates tumor evolution and metastasis to generate ground truth genomic datasets and cell lineages. Use when user asks to install the software via Bioconda, run end-to-end tumor growth simulations, generate clonal lineage trees, or produce simulated sequencing data for single-cell and bulk DNA-seq.
 homepage: https://github.com/samsonweiner/sistem
 ---
+
 
 # sistem
 

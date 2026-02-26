@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beadarrayexampledata
-description: the package is available on all platforms; click for details.
+description: This package provides example bead-level and summarized Illumina BeadArray datasets for testing and demonstrating Bioconductor workflows. Use when user asks to access sample BeadArray data, perform spatial quality control analysis, or demonstrate expression summarization techniques in R.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/beadarrayExampleData.html
 ---
+
 
 # bioconductor-beadarrayexampledata
 

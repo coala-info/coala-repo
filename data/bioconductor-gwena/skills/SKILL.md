@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gwena
-description: the package is available on all platforms; click for details.
+description: GWENA performs gene co-expression network analysis to identify modules of genes and their biological significance from transcriptomic data. Use when user asks to build co-expression networks, detect gene modules, perform functional enrichment, or associate gene clusters with phenotypic traits.
 homepage: https://bioconductor.org/packages/release/bioc/html/GWENA.html
 ---
+
 
 # bioconductor-gwena
 

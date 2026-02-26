@@ -1,8 +1,9 @@
 ---
 name: memopair
-description: memopair is a specialized command-line utility designed to identify methylated motif pairs within genomic data.
+description: memopair identifies methylated motif pairs within genomic data using a reference genome and methylation pileup files. Use when user asks to identify methylated motif pairs, analyze motif-specific methylation density, or determine modification states at precise genomic positions.
 homepage: https://github.com/SorenHeidelbach/memopair
 ---
+
 
 # memopair
 

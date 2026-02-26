@@ -1,8 +1,9 @@
 ---
 name: bioconductor-classifyr
-description: the package is available on all platforms; click for details.
+description: ClassifyR provides a framework for cross-validated classification and performance evaluation of high-dimensional biological data. Use when user asks to perform cross-validated classification, evaluate model performance, or select features from multi-omics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ClassifyR.html
 ---
+
 
 # bioconductor-classifyr
 

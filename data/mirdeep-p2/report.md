@@ -3,26 +3,32 @@
 ## mirdeep-p2
 
 ### Tool Description
-miRDeep-P2 is a tool for plant miRNA identification. (Note: The provided text contains system error messages regarding container image conversion and disk space, rather than the tool's help documentation.)
+FAIL to generate CWL: mirdeep-p2 not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mirdeep-p2:1.1.4--hdfd78af_0
 - **Homepage**: https://sourceforge.net/projects/mirdp2/
 - **Package**: https://anaconda.org/channels/bioconda/packages/mirdeep-p2/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mirdeep-p2/overview
 - **Total Downloads**: 2.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: mirdeep-p2 not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: mirdeep-p2 not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mirdeep-p2:1.1.4--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1106981737: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

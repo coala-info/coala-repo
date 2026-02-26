@@ -1,8 +1,9 @@
 ---
 name: multivcfanalyzer
-description: MultiVCFAnalyzer is a Java-based tool designed to aggregate and filter SNP calls from multiple VCF files.
+description: "MultiVCFAnalyzer aggregates and filters SNP calls from multiple VCF files to produce alignments and tables for phylogenetic and population genetic analyses. Use when user asks to aggregate SNP calls from multiple VCFs, filter variants for ancient DNA workflows, or generate SNP alignments for phylogenetic reconstruction."
 homepage: https://github.com/alexherbig/MultiVCFAnalyzer
 ---
+
 
 # multivcfanalyzer
 

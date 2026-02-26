@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celldex
-description: the package is available on all platforms; click for details.
+description: The celldex package provides a standardized interface for retrieving curated reference datasets of pure cell types for single-cell transcriptomics. Use when user asks to find available reference datasets, download curated expression matrices, or search for cell type labels for automated annotation.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/celldex.html
 ---
+
 
 # bioconductor-celldex
 

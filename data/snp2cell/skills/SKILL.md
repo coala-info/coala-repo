@@ -1,8 +1,9 @@
 ---
 name: snp2cell
-description: snp2cell is a specialized bioinformatics tool designed to bridge the gap between genetic association studies (GWAS) and functional single-cell biology.
+description: snp2cell identifies trait-linked gene regulatory programs by integrating GWAS scores with single-cell data and regulatory networks. Use when user asks to map GWAS scores to gene regulatory networks, identify trait-cell type associations, or visualize trait-associated regulation.
 homepage: https://github.com/Teichlab/snp2cell
 ---
+
 
 # snp2cell
 

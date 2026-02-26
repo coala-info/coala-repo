@@ -1,8 +1,9 @@
 ---
 name: pin_hic
-description: pin_hic is a scaffolding tool that leverages Hi-C data to orient and order contigs into larger scaffolds.
+description: pin_hic is a scaffolding tool that uses Hi-C data to orient and order contigs into larger scaffolds. Use when user asks to scaffold a draft assembly, improve genome assemblies using Hi-C reads, or generate scaffolding paths in SAT format.
 homepage: https://github.com/dfguan/pin_hic/
 ---
+
 
 # pin_hic
 

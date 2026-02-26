@@ -2,15 +2,97 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: itolparser
 label: itolparser
-doc: "The provided text does not contain help information or usage instructions. It
-  contains system log messages and a fatal error regarding disk space during a container
-  image pull.\n\nTool homepage: https://github.com/boasvdp/itolparser"
-inputs: []
+doc: "Generate iTOL files from tables\n\nTool homepage: https://github.com/boasvdp/itolparser"
+inputs:
+  - id: continuous
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Comma-separated list of columns to parse as continuous
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --continuous
+  - id: csv
+    type:
+      - 'null'
+      - boolean
+    doc: Force input parsing as .csv file
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --csv
+  - id: ignore
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: List of columns to ignore
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --ignore
+  - id: input
+    type: File
+    doc: Input table with categorical metadata in .tsv format unless otherwise 
+      specified
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: margin
+    type:
+      - 'null'
+      - int
+    doc: Size of margin specified in iTOL file
+    default: 5
+    inputBinding:
+      position: 101
+      prefix: --margin
+  - id: maxcategories
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of categories to not get assigned to "other"
+    default: 18
+    inputBinding:
+      position: 101
+      prefix: --maxcategories
+  - id: palette
+    type:
+      - 'null'
+      - string
+    doc: Color palette to use for continuous columns
+    default: GnBu
+    inputBinding:
+      position: 101
+      prefix: --palette
+  - id: stripwidth
+    type:
+      - 'null'
+      - int
+    doc: Strip width specified in iTOL file
+    default: 50
+    inputBinding:
+      position: 101
+      prefix: --stripwidth
+  - id: tsv
+    type:
+      - 'null'
+      - boolean
+    doc: Force input parsing as .tsv file
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --tsv
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory to write files to
+    outputBinding:
+      glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/itolparser:0.2.1--pyh7cba7a3_0
-stdout: itolparser.out

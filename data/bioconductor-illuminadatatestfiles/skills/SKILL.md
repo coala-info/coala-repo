@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminadatatestfiles
-description: the package is available on all platforms; click for details.
+description: This package provides example Illumina microarray output files in IDAT format for testing and development purposes. Use when user asks to access sample IDAT files, test IDAT parsers, or verify software compatibility with encrypted and unencrypted Illumina data formats.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/IlluminaDataTestFiles.html
 ---
+
 
 # bioconductor-illuminadatatestfiles
 

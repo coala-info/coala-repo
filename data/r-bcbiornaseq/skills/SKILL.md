@@ -1,8 +1,9 @@
 ---
 name: r-bcbiornaseq
-description: R package bcbiornaseq (documentation from project home).
+description: The bcbioRNASeq package provides a streamlined workflow for analyzing and visualizing RNA-seq data processed with the bcbio-nextgen pipeline. Use when user asks to import bcbio pipeline results into R, perform automated quality control, or prepare data for differential expression analysis using DESeq2 or edgeR.
 homepage: https://cran.r-project.org/web/packages/bcbiornaseq/index.html
 ---
+
 
 # r-bcbiornaseq
 

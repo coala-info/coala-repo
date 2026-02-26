@@ -1,8 +1,9 @@
 ---
 name: menetools
-description: MeneTools is a suite of Python utilities designed to explore the producibility potential of metabolic networks.
+description: MeneTools is a suite of Python utilities that uses network expansion algorithms to explore the producibility potential of metabolic networks. Use when user asks to calculate reachable metabolites, verify target producibility, identify dead-end metabolites, find production pathways, or suggest missing cofactors to unblock pathways.
 homepage: https://github.com/cfrioux/MeneTools
 ---
+
 
 # menetools
 

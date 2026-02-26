@@ -1,8 +1,9 @@
 ---
 name: r-intlim
-description: R package intlim (documentation from project home).
+description: This tool integrates metabolomics with other omics data using linear modeling to identify phenotype-specific associations between analytes. Use when user asks to integrate multi-omics data, run interaction models to find phenotype-dependent correlations, filter high-throughput datasets, or visualize gene-metabolite relationships.
 homepage: https://cran.r-project.org/web/packages/intlim/index.html
 ---
+
 
 # r-intlim
 

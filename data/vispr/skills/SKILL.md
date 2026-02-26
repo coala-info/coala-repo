@@ -1,8 +1,9 @@
 ---
 name: vispr
-description: VISPR (VIsualization of CRISPR screens) provides a specialized framework for the interactive exploration of CRISPR/Cas9 screening data.
+description: VISPR provides an interactive framework for visualizing and exploring CRISPR/Cas9 screening data, generating quality control reports and gene-level visualizations. Use when user asks to visualize CRISPR/Cas9 screening data, explore CRISPR screen results, generate quality control reports, assess library representation, evaluate sample clustering, or identify top-ranked hits.
 homepage: https://bitbucket.org/liulab/vispr
 ---
+
 
 # vispr
 

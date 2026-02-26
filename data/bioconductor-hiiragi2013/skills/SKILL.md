@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hiiragi2013
-description: the package is available on all platforms; click for details.
+description: This package provides experimental data and analysis workflows for studying single-cell gene expression during early mouse embryonic development. Use when user asks to analyze lineage segregation in mouse embryos, perform cluster stability analysis, identify differential expression markers, or measure transcriptomic heterogeneity using Jensen-Shannon Divergence.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Hiiragi2013.html
 ---
+
 
 # bioconductor-hiiragi2013
 

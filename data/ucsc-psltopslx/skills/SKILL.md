@@ -1,8 +1,9 @@
 ---
 name: ucsc-psltopslx
-description: The `pslToPslx` utility is a specialized tool from the UCSC Genome Browser "kent" source suite.
+description: The ucsc-psltopslx tool converts a PSL alignment file into a PSLX file by adding the corresponding nucleotide or amino acid sequences from specified source files. Use when user asks to convert PSL files to PSLX, add sequences to PSL alignments, or prepare alignments for pretty-printing or sequence-level analysis.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-psltopslx
 

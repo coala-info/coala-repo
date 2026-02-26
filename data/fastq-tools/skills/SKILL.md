@@ -1,8 +1,9 @@
 ---
 name: fastq-tools
-description: The `fastq-tools` suite provides a collection of C-based utilities designed for high-speed processing of Next-Generation Sequencing (NGS) data.
+description: fastq-tools is a collection of high-speed utilities for processing, filtering, and summarizing Next-Generation Sequencing data in FASTQ format. Use when user asks to generate read statistics, filter by quality, trim sequences, convert to FASTA, sample reads, or sort datasets.
 homepage: http://homes.cs.washington.edu/~dcjones/fastq-tools/
 ---
+
 
 # fastq-tools
 

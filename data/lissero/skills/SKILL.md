@@ -1,8 +1,9 @@
 ---
 name: lissero
-description: The `lissero` skill enables the rapid identification of *Listeria monocytogenes* serogroups from FASTA files.
+description: Lissero identifies *Listeria monocytogenes* serogroups from FASTA files by searching for specific genetic markers. Use when user asks to predict serotypes, identify serogroups from genomic assemblies, or screen *Listeria* isolates for molecular markers.
 homepage: https://github.com/MDU-PHL/lissero
 ---
+
 
 # lissero
 

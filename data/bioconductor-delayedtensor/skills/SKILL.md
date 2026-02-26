@@ -1,8 +1,9 @@
 ---
 name: bioconductor-delayedtensor
-description: the package is available on all platforms; click for details.
+description: DelayedTensor provides a framework for performing out-of-core tensor operations and decompositions on large-scale biological data using DelayedArray backends. Use when user asks to reshape tensors, perform tensor arithmetic like Hadamard or Kronecker products, or execute tensor decompositions such as CP, Tucker, and HOSVD.
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedTensor.html
 ---
+
 
 # bioconductor-delayedtensor
 

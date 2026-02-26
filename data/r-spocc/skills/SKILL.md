@@ -1,8 +1,9 @@
 ---
 name: r-spocc
-description: "A programmatic interface to many species occurrence data sources,     including Global Biodiversity Information Facility ('GBIF'), 'iNaturalist',     'eBird', Integrated Digitized 'Biocollections' ('iDigBio'), 'VertNet',      Ocean 'Biogeographic' Information System ('OBIS'), and      Atlas of Living Australia ('ALA'). Includes functionality for retrieving     species occurrence data, and combining those data.</p>"
+description: The r-spocc tool provides a unified R interface to retrieve and standardize species occurrence data from multiple biodiversity repositories like GBIF and iNaturalist. Use when user asks to search for species records across multiple databases, retrieve biodiversity occurrence data with standardized parameters, or convert multi-source search results into a unified data frame.
 homepage: https://cloud.r-project.org/web/packages/spocc/index.html
 ---
+
 
 # r-spocc
 

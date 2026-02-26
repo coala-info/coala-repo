@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslrc
-description: The `ucsc-pslrc` skill provides guidance for using the UCSC `pslRc` utility, a specialized tool within the Kent Utilities suite.
+description: The `ucsc-pslrc` tool transforms PSL alignment files by reverse-complementing the query sequences. Use when user asks to 'reverse-complement query sequences in PSL files', 'recalculate coordinates in PSL files', or 'recalculate strand information in PSL files'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-pslrc
 

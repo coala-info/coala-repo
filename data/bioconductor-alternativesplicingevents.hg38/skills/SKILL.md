@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alternativesplicingevents.hg38
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive alternative splicing event annotations for the human genome assembly hg38. Use when user asks to retrieve splicing event coordinates, map splicing events to genes, or access consolidated annotations from MISO, VAST-TOOLS, SUPPA, or rMATS.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/alternativeSplicingEvents.hg38.html
 ---
+
 
 # bioconductor-alternativesplicingevents.hg38
 

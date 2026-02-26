@@ -3,7 +3,7 @@
 ## gfainject
 
 ### Tool Description
-The provided text is a system error log (Apptainer/Singularity) and does not contain the help documentation for gfainject. As a result, no arguments could be extracted.
+Injects sequence information from BAM/PAF/GBAM files into a GFA graph.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gfainject:0.2.0--h3ab6199_0
@@ -18,11 +18,16 @@ The provided text is a system error log (Apptainer/Singularity) and does not con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfainject:0.2.0--h3ab6199_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2183531410: no space left on device
+Usage: gfainject [OPTIONS] --gfa <GFA> <--bam <BAM>|--paf <PAF>|--gbam <GBAM>|--range <RANGE>>
+
+Options:
+      --gfa <GFA>            Path to input GFA file
+  -b, --bam <BAM>            Path to input BAM file
+  -p, --paf <PAF>            Path to input PAF file
+  -g, --gbam <GBAM>          Path to input GBAM file
+  -r, --range <RANGE>        Range query in format "path_name:start-end"
+      --alt-hits <ALT_HITS>  Emit up to ALT_HITS alternative alignments (from XA tag, only for BAM/GBAM input)
+  -h, --help                 Print help
+  -V, --version              Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

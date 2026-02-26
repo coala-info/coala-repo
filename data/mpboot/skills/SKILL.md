@@ -1,8 +1,9 @@
 ---
 name: mpboot
-description: mpboot is a high-performance tool for phylogenetic tree inference based on the Maximum Parsimony (MP) criterion.
+description: mpboot performs fast phylogenetic tree inference and bootstrap approximation using the maximum parsimony criterion. Use when user asks to infer phylogenetic trees from sequence alignments, perform fast bootstrap analysis, or handle large-scale genomic datasets using parsimony-based methods.
 homepage: https://github.com/diepthihoang/mpboot
 ---
+
 
 # mpboot
 

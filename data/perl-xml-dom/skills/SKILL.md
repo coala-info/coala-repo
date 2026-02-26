@@ -1,8 +1,9 @@
 ---
 name: perl-xml-dom
-description: The `XML::DOM` module extends `XML::Parser` to build a complete Document Object Model (DOM) in memory.
+description: The perl-xml-dom tool extends XML::Parser to build and manipulate a complete Document Object Model in memory. Use when user asks to parse XML files into a tree structure, navigate document hierarchies, perform CRUD operations on XML nodes, or serialize DOM trees back to files.
 homepage: http://metacpan.org/pod/XML-DOM
 ---
+
 
 # perl-xml-dom
 

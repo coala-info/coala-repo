@@ -1,8 +1,9 @@
 ---
 name: metaeuk
-description: MetaEuk is a modular toolkit designed specifically for identifying protein-coding genes in eukaryotic metagenomic data.
+description: MetaEuk is a modular toolkit designed to identify protein-coding genes in eukaryotic metagenomic data by reconstructing exon-intron structures through protein homology. Use when user asks to predict eukaryotic genes, call exons from environmental contigs, reduce gene redundancy, or perform taxonomic assignment on metagenomic sequences.
 homepage: https://github.com/soedinglab/metaeuk
 ---
+
 
 # metaeuk
 

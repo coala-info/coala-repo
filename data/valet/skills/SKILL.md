@@ -1,8 +1,9 @@
 ---
 name: valet
-description: VALET (metagenomic assembly VALidation Tool) is a diagnostic pipeline designed to identify structural errors in metagenomic assemblies.
+description: VALET identifies structural errors in metagenomic assemblies by analyzing read alignments. Use when user asks to validate metagenomic assemblies, identify structural errors in metagenomic assemblies, or compare multiple metagenomic assemblies.
 homepage: https://github.com/marbl/VALET
 ---
+
 
 # valet
 

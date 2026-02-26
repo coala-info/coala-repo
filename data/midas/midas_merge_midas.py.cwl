@@ -1,11 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: midas_merge_midas.py
+baseCommand: merge_midas.py
 label: midas_merge_midas.py
-doc: "Merge MIDAS results across multiple samples. (Note: The provided text contains
-  system error messages regarding container execution and does not include the actual
-  help documentation for the tool.)\n\nTool homepage: https://github.com/snayfach/MIDAS"
-inputs: []
+doc: "merge MIDAS results across metagenomic samples\n\nTool homepage: https://github.com/snayfach/MIDAS"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (species, genes, snps)
+    inputBinding:
+      position: 1
+  - id: options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Options for the specific command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

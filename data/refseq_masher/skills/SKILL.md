@@ -1,8 +1,9 @@
 ---
 name: refseq_masher
-description: `refseq_masher` is a bioinformatics tool that leverages Mash MinHash to rapidly search nucleotide sequences against a curated database of over 50,000 NCBI RefSeq genomes.
+description: refseq_masher searches nucleotide sequences against the NCBI RefSeq database using Mash MinHash to provide taxonomic classifications. Use when user asks to find the closest matching reference genomes for an isolate, detect the presence of specific genomes in metagenomic samples, or screen sequences for contamination.
 homepage: https://github.com/phac-nml/refseq_masher
 ---
+
 
 # refseq_masher
 

@@ -1,8 +1,9 @@
 ---
 name: pp
-description: The `pp` skill provides procedural knowledge for working with the PPSSPP (PSP emulator) codebase and its associated command-line utilities.
+description: The pp skill provides procedural knowledge for building, testing, and debugging the PPSSPP emulator codebase. Use when user asks to build the headless target, run automated test suites, or perform graphics analysis using display list dumps.
 homepage: https://github.com/hrydgard/ppsspp
 ---
+
 
 # pp
 

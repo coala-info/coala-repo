@@ -1,8 +1,9 @@
 ---
 name: sizemeup
-description: sizemeup is a specialized utility that provides the genome size of organisms by querying a curated database.
+description: sizemeup retrieves the genome size of organisms from a curated database using species names or NCBI TaxIDs. Use when user asks to find the genome size of an organism, query genome sizes by TaxID, or update the genome size database.
 homepage: https://github.com/rpetit3/sizemeup
 ---
+
 
 # sizemeup
 

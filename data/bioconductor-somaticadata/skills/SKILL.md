@@ -1,8 +1,9 @@
 ---
 name: bioconductor-somaticadata
-description: the package is available on all platforms; click for details.
+description: SomatiCAData provides a sample dataset for the SomatiCA package to support somatic copy number alteration identification and tumor purity estimation. Use when user asks to access example somatic copy number data, run SomatiCA package tutorials, or load the breast cancer sequencing dataset.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SomatiCAData.html
 ---
+
 
 # bioconductor-somaticadata
 

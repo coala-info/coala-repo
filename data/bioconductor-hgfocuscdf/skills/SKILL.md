@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgfocuscdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment and coordinate mapping functions for the Affymetrix HG-Focus target array. Use when user asks to map probe coordinates to indices, access HG-Focus chip dimensions, or process transcriptomics data from HG-Focus CEL files in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgfocuscdf.html
 ---
+
 
 # bioconductor-hgfocuscdf
 

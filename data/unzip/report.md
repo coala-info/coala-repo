@@ -27,4 +27,4 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/unzip:6.0--2 uri: while
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

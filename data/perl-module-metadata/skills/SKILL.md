@@ -1,8 +1,9 @@
 ---
 name: perl-module-metadata
-description: The `perl-module-metadata` skill (based on the `Module::Metadata` Perl library) allows for the programmatic inspection of Perl files.
+description: This tool performs static analysis of Perl files to extract package declarations, version numbers, and documentation structure. Use when user asks to extract module versions, list packages within a file, find a module's path by name, or generate CPAN provides metadata.
 homepage: https://github.com/Perl-Toolchain-Gang/Module-Metadata
 ---
+
 
 # perl-module-metadata
 

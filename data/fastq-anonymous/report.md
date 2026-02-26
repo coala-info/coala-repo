@@ -3,7 +3,7 @@
 ## fastq-anonymous
 
 ### Tool Description
-A tool for anonymizing FASTQ files by removing or replacing identifying information in the headers.
+Change the sequence of a fastq file to enable sharing of confidential information, for troubleshooting of tools.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastq-anonymous:1.0.1--py36_0
@@ -18,11 +18,14 @@ A tool for anonymizing FASTQ files by removing or replacing identifying informat
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-anonymous:1.0.1--py36_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1742590951: no space left on device
+usage: fastq-anonymous [-h] [-v] [-m]
+
+Change the sequence of a fastq file to enable sharing of confidential
+information, for troubleshooting of tools.
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --version  Print version and exit.
+  -m, --mask     Mask all nucleotides using N
 ```
 
-
-## Metadata
-- **Skill**: generated

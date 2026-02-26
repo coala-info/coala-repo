@@ -1,8 +1,9 @@
 ---
 name: bioconductor-islet
-description: the package is available on all platforms; click for details.
+description: ISLET performs individual-specific and cell-type-specific deconvolution and differential expression analysis on bulk genomic data. Use when user asks to estimate subject-specific reference panels, perform cell-type-specific differential expression analysis for baseline or longitudinal changes, or improve cell deconvolution accuracy using personalized profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/ISLET.html
 ---
+
 
 # bioconductor-islet
 

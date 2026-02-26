@@ -1,8 +1,9 @@
 ---
 name: peewee
-description: Peewee is a minimalist Object-Relational Mapper (ORM) for Python that prioritizes simplicity and expressiveness.
+description: Peewee is a minimalist Python Object-Relational Mapper that allows developers to interact with databases using expressive classes and method chaining. Use when user asks to define database models, execute SQL queries using Pythonic operators, manage database connections, or generate model code from existing databases.
 homepage: https://github.com/coleifer/peewee
 ---
+
 
 # peewee
 

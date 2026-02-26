@@ -1,8 +1,9 @@
 ---
 name: tatajuba
-description: Tatajuba is a specialized bioinformatics tool designed to explore the heterogeneity of homopolymeric tracts within sequencing data.
+description: "Tatajuba explores the heterogeneity and length distribution of homopolymeric tracts within sequencing data. Use when user asks to identify homopolymeric tracts, analyze phase variation in microbial populations, or distinguish biological variation from sequencing artifacts."
 homepage: https://github.com/quadram-institute-bioscience/tatajuba
 ---
+
 
 # tatajuba
 

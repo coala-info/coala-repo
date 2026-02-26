@@ -1,8 +1,9 @@
 ---
 name: bwread
-description: The `bwread` library is a high-performance utility designed to bridge the gap between BigWig files (a standard format for genomic signal data) and the PyRanges/pandas ecosystem.
+description: The bwread library loads BigWig genomic signal data into PyRanges or pandas objects for high-performance analysis. Use when user asks to read BigWig files, convert genomic signal data to PyRanges objects, or load BigWig data for overlap analysis and signal averaging.
 homepage: http://github.com/endrebak/bwread
 ---
+
 
 # bwread
 

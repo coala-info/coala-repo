@@ -1,9 +1,9 @@
 # seaview CWL Generation Report
 
-## seaview
+## seaview_convert
 
 ### Tool Description
-SeaView is a multiplatform, graphical user interface for multiple sequence alignment and molecular phylogeny. (Note: The provided text is an error log and does not contain usage information or arguments).
+seaview [options] [alignment-or-tree-file]
 
 ### Metadata
 - **Docker Image**: biocontainers/seaview:v1-4.7-1-deb_cv1
@@ -18,115 +18,338 @@ SeaView is a multiplatform, graphical user interface for multiple sequence align
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/seaview:v1-4.7-1-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AI.pl: unpack to regular file: short write: write /tmp/build-temp-1874054184/rootfs/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AI.pl: no space left on device
+Usage:
+seaview [options] [alignment-or-tree-file]
+where alignment-or-tree-file is an optional sequence alignment or tree file to be read (always the last argument) and options are:
+-h            display all program options and exit
+-fontsize n   font size used for the tree plot or alignment windows
+-fast         sequences will be displayed faster but less smoothly
+     Options for non-interactive usage driven by command-line arguments
+(Use exactly one for a non-interactive seaview run. Add any sub-option described below)
+-convert      convert an input alignment to another format (no window creation)
+-concatenate  concatenate alignment(s) to the end of an input alignment (no window creation)
+-align        align an input sequence file (no window creation)
+-build_tree   compute a phylogenetic tree from an input alignment file (no window creation)
+
+           Sub-options for -convert
+           Use '-' as last argument to read alignment from standard input
+-output_format fmt    format of the converted alignment file (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the converted alignment (default is built from input filename)
+-o -          write the output alignment to standard output
+-translate    translate input sequences to protein before outputting them (don't use -sites)
+-no_terminal_stop   translate terminal stop codons as a gap (with -translate option)
+-del_gap_only_sites  remove all gap-only sites from alignment (don't use the -sites option)
+-def_species_group group_name,group_member_ranks   create a species group of given name and members
+                  (species group members are expressed with their ranks as in this example: 3-8,12,19)
+-def_site_selection name,endpoints   create a selection of sites of given name and endpoints
+                  (site selection endpoints are expressed as in this example: 10-200,305,310-342)
+-gblocks      create under the name 'Gblocks' a set of blocks of conserved sites with the Gblocks program
+                  (requires the nexus or mase output formats)
+      -gblocks-specific options:
+              -b4 allow smaller final blocks
+              -b5 allow gaps within final blocks 
+              -b2 less strict flanking positions 
+              -b3 don't allow many contiguous nonconserved positions
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
+-bootstrap n    writes n bootstrap replicates of the input alignment to the output file 
+
+           Sub-options for -concatenate 
+           Use '-' as last argument to read alignment from standard input
+-concatenate align1,...    name(s) of alignment files to add at the end of the input alignment
+-by_rank      identify sequences by their rank in alignments (rather than by their name)
+-record_partition record the locations of the concatenated pieces in the final concatenate
+-output_format fmt    format of the concatenated alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the concatenated alignment (default is built from input filename)
+-o -          write the concatenated alignment to standard output
+
+           Sub-options for -align 
+           Use '-' as last argument to read sequence file from standard input
+-align_algo n  rank (in seaview from 0) of alignment algorithm, otherwise use seaview's default alignment algorithm
+-align_extra_opts "option1 ..."  additional options to use when running the alignment algorithm
+-align_at_protein_level  translate and align input sequences and reproduce alignment at DNA level.
+-output_format fmt    format of the output alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the output alignment (default is built from input filename)
+-o -          write the output alignment to standard output
+
+           Sub-options for -build_tree (either -distance or -parsimony is required)
+           Use '-' as last argument to read alignment from standard input
+-o fname      use fname as name of the output tree
+-o -          write the output tree to standard output
+-distance dist_name   computes the tree with a distance method using dist_name (observed, JC, K2P, logdet, Ka, Ks, Poisson or Kimura)
+-distance_matrix fname  don't compute the tree, but write to fname the matrix of pairwise distances
+-NJ           compute the distance tree by the Neighbor-Joining method (default is BioNJ)
+-parsimony    compute the tree by the parsimony method 
+-search more|less|one  controls how much rearrangement is done to find better trees (DNA parsimony only)
+-nogaps       remove all gap-containing sites before computations
+-replicates n use n bootstrap replicates to compute tree branch support
+-jumbles n    jumble sequence order n times (parsimony only)
+-gaps_as_unknown  encode gaps as unknown character state (parsimony only)
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
+
+See http://doua.prabi.fr/software/seaview_data/seaview#Program%20arguments for more details
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## seaview_conda
+## seaview_concatenate
 
 ### Tool Description
-SeaView is a multiplatform, graphical user interface for multiple sequence alignment and molecular phylogeny. (Note: The provided text appears to be a container build error log rather than help text, so no arguments could be extracted.)
+seaview [options] [alignment-or-tree-file]
 
 ### Metadata
 - **Docker Image**: biocontainers/seaview:v1-4.7-1-deb_cv1
 - **Homepage**: https://github.com/berry-ding/ShiYu_SeaView_GRDDC2022
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/seaview:v1-4.7-1-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AI.pl: unpack to regular file: short write: write /tmp/build-temp-3754529523/rootfs/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AI.pl: no space left on device
+Usage:
+seaview [options] [alignment-or-tree-file]
+where alignment-or-tree-file is an optional sequence alignment or tree file to be read (always the last argument) and options are:
+-h            display all program options and exit
+-fontsize n   font size used for the tree plot or alignment windows
+-fast         sequences will be displayed faster but less smoothly
+     Options for non-interactive usage driven by command-line arguments
+(Use exactly one for a non-interactive seaview run. Add any sub-option described below)
+-convert      convert an input alignment to another format (no window creation)
+-concatenate  concatenate alignment(s) to the end of an input alignment (no window creation)
+-align        align an input sequence file (no window creation)
+-build_tree   compute a phylogenetic tree from an input alignment file (no window creation)
+
+           Sub-options for -convert
+           Use '-' as last argument to read alignment from standard input
+-output_format fmt    format of the converted alignment file (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the converted alignment (default is built from input filename)
+-o -          write the output alignment to standard output
+-translate    translate input sequences to protein before outputting them (don't use -sites)
+-no_terminal_stop   translate terminal stop codons as a gap (with -translate option)
+-del_gap_only_sites  remove all gap-only sites from alignment (don't use the -sites option)
+-def_species_group group_name,group_member_ranks   create a species group of given name and members
+                  (species group members are expressed with their ranks as in this example: 3-8,12,19)
+-def_site_selection name,endpoints   create a selection of sites of given name and endpoints
+                  (site selection endpoints are expressed as in this example: 10-200,305,310-342)
+-gblocks      create under the name 'Gblocks' a set of blocks of conserved sites with the Gblocks program
+                  (requires the nexus or mase output formats)
+      -gblocks-specific options:
+              -b4 allow smaller final blocks
+              -b5 allow gaps within final blocks 
+              -b2 less strict flanking positions 
+              -b3 don't allow many contiguous nonconserved positions
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
+-bootstrap n    writes n bootstrap replicates of the input alignment to the output file 
+
+           Sub-options for -concatenate 
+           Use '-' as last argument to read alignment from standard input
+-concatenate align1,...    name(s) of alignment files to add at the end of the input alignment
+-by_rank      identify sequences by their rank in alignments (rather than by their name)
+-record_partition record the locations of the concatenated pieces in the final concatenate
+-output_format fmt    format of the concatenated alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the concatenated alignment (default is built from input filename)
+-o -          write the concatenated alignment to standard output
+
+           Sub-options for -align 
+           Use '-' as last argument to read sequence file from standard input
+-align_algo n  rank (in seaview from 0) of alignment algorithm, otherwise use seaview's default alignment algorithm
+-align_extra_opts "option1 ..."  additional options to use when running the alignment algorithm
+-align_at_protein_level  translate and align input sequences and reproduce alignment at DNA level.
+-output_format fmt    format of the output alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the output alignment (default is built from input filename)
+-o -          write the output alignment to standard output
+
+           Sub-options for -build_tree (either -distance or -parsimony is required)
+           Use '-' as last argument to read alignment from standard input
+-o fname      use fname as name of the output tree
+-o -          write the output tree to standard output
+-distance dist_name   computes the tree with a distance method using dist_name (observed, JC, K2P, logdet, Ka, Ks, Poisson or Kimura)
+-distance_matrix fname  don't compute the tree, but write to fname the matrix of pairwise distances
+-NJ           compute the distance tree by the Neighbor-Joining method (default is BioNJ)
+-parsimony    compute the tree by the parsimony method 
+-search more|less|one  controls how much rearrangement is done to find better trees (DNA parsimony only)
+-nogaps       remove all gap-containing sites before computations
+-replicates n use n bootstrap replicates to compute tree branch support
+-jumbles n    jumble sequence order n times (parsimony only)
+-gaps_as_unknown  encode gaps as unknown character state (parsimony only)
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
+
+See http://doua.prabi.fr/software/seaview_data/seaview#Program%20arguments for more details
 ```
 
-## seaview_pip3
+
+## seaview_align
 
 ### Tool Description
-The provided text is a system error log regarding a failed container build (no space left on device) and does not contain help documentation or command-line argument definitions for the tool.
+seaview [options] [alignment-or-tree-file]
+where alignment-or-tree-file is an optional sequence alignment or tree file to be read (always the last argument) and options are:
 
 ### Metadata
 - **Docker Image**: biocontainers/seaview:v1-4.7-1-deb_cv1
 - **Homepage**: https://github.com/berry-ding/ShiYu_SeaView_GRDDC2022
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/seaview:v1-4.7-1-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AI.pl: unpack to regular file: short write: write /tmp/build-temp-3381900971/rootfs/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AI.pl: no space left on device
+Usage:
+seaview [options] [alignment-or-tree-file]
+where alignment-or-tree-file is an optional sequence alignment or tree file to be read (always the last argument) and options are:
+-h            display all program options and exit
+-fontsize n   font size used for the tree plot or alignment windows
+-fast         sequences will be displayed faster but less smoothly
+     Options for non-interactive usage driven by command-line arguments
+(Use exactly one for a non-interactive seaview run. Add any sub-option described below)
+-convert      convert an input alignment to another format (no window creation)
+-concatenate  concatenate alignment(s) to the end of an input alignment (no window creation)
+-align        align an input sequence file (no window creation)
+-build_tree   compute a phylogenetic tree from an input alignment file (no window creation)
+
+           Sub-options for -convert
+           Use '-' as last argument to read alignment from standard input
+-output_format fmt    format of the converted alignment file (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the converted alignment (default is built from input filename)
+-o -          write the output alignment to standard output
+-translate    translate input sequences to protein before outputting them (don't use -sites)
+-no_terminal_stop   translate terminal stop codons as a gap (with -translate option)
+-del_gap_only_sites  remove all gap-only sites from alignment (don't use the -sites option)
+-def_species_group group_name,group_member_ranks   create a species group of given name and members
+                  (species group members are expressed with their ranks as in this example: 3-8,12,19)
+-def_site_selection name,endpoints   create a selection of sites of given name and endpoints
+                  (site selection endpoints are expressed as in this example: 10-200,305,310-342)
+-gblocks      create under the name 'Gblocks' a set of blocks of conserved sites with the Gblocks program
+                  (requires the nexus or mase output formats)
+      -gblocks-specific options:
+              -b4 allow smaller final blocks
+              -b5 allow gaps within final blocks 
+              -b2 less strict flanking positions 
+              -b3 don't allow many contiguous nonconserved positions
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
+-bootstrap n    writes n bootstrap replicates of the input alignment to the output file 
+
+           Sub-options for -concatenate 
+           Use '-' as last argument to read alignment from standard input
+-concatenate align1,...    name(s) of alignment files to add at the end of the input alignment
+-by_rank      identify sequences by their rank in alignments (rather than by their name)
+-record_partition record the locations of the concatenated pieces in the final concatenate
+-output_format fmt    format of the concatenated alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the concatenated alignment (default is built from input filename)
+-o -          write the concatenated alignment to standard output
+
+           Sub-options for -align 
+           Use '-' as last argument to read sequence file from standard input
+-align_algo n  rank (in seaview from 0) of alignment algorithm, otherwise use seaview's default alignment algorithm
+-align_extra_opts "option1 ..."  additional options to use when running the alignment algorithm
+-align_at_protein_level  translate and align input sequences and reproduce alignment at DNA level.
+-output_format fmt    format of the output alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the output alignment (default is built from input filename)
+-o -          write the output alignment to standard output
+
+           Sub-options for -build_tree (either -distance or -parsimony is required)
+           Use '-' as last argument to read alignment from standard input
+-o fname      use fname as name of the output tree
+-o -          write the output tree to standard output
+-distance dist_name   computes the tree with a distance method using dist_name (observed, JC, K2P, logdet, Ka, Ks, Poisson or Kimura)
+-distance_matrix fname  don't compute the tree, but write to fname the matrix of pairwise distances
+-NJ           compute the distance tree by the Neighbor-Joining method (default is BioNJ)
+-parsimony    compute the tree by the parsimony method 
+-search more|less|one  controls how much rearrangement is done to find better trees (DNA parsimony only)
+-nogaps       remove all gap-containing sites before computations
+-replicates n use n bootstrap replicates to compute tree branch support
+-jumbles n    jumble sequence order n times (parsimony only)
+-gaps_as_unknown  encode gaps as unknown character state (parsimony only)
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
+
+See http://doua.prabi.fr/software/seaview_data/seaview#Program%20arguments for more details
 ```
 
-## seaview_pip
+
+## seaview_build_tree
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It consists of system log messages indicating a failure to build a Singularity/Apptainer container image due to insufficient disk space.
+seaview [options] [alignment-or-tree-file]
 
 ### Metadata
 - **Docker Image**: biocontainers/seaview:v1-4.7-1-deb_cv1
 - **Homepage**: https://github.com/berry-ding/ShiYu_SeaView_GRDDC2022
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/seaview:v1-4.7-1-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/U.pl: unpack to regular file: short write: write /tmp/build-temp-3894272294/rootfs/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/U.pl: no space left on device
-```
+Usage:
+seaview [options] [alignment-or-tree-file]
+where alignment-or-tree-file is an optional sequence alignment or tree file to be read (always the last argument) and options are:
+-h            display all program options and exit
+-fontsize n   font size used for the tree plot or alignment windows
+-fast         sequences will be displayed faster but less smoothly
+     Options for non-interactive usage driven by command-line arguments
+(Use exactly one for a non-interactive seaview run. Add any sub-option described below)
+-convert      convert an input alignment to another format (no window creation)
+-concatenate  concatenate alignment(s) to the end of an input alignment (no window creation)
+-align        align an input sequence file (no window creation)
+-build_tree   compute a phylogenetic tree from an input alignment file (no window creation)
 
-## seaview_mim
+           Sub-options for -convert
+           Use '-' as last argument to read alignment from standard input
+-output_format fmt    format of the converted alignment file (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the converted alignment (default is built from input filename)
+-o -          write the output alignment to standard output
+-translate    translate input sequences to protein before outputting them (don't use -sites)
+-no_terminal_stop   translate terminal stop codons as a gap (with -translate option)
+-del_gap_only_sites  remove all gap-only sites from alignment (don't use the -sites option)
+-def_species_group group_name,group_member_ranks   create a species group of given name and members
+                  (species group members are expressed with their ranks as in this example: 3-8,12,19)
+-def_site_selection name,endpoints   create a selection of sites of given name and endpoints
+                  (site selection endpoints are expressed as in this example: 10-200,305,310-342)
+-gblocks      create under the name 'Gblocks' a set of blocks of conserved sites with the Gblocks program
+                  (requires the nexus or mase output formats)
+      -gblocks-specific options:
+              -b4 allow smaller final blocks
+              -b5 allow gaps within final blocks 
+              -b2 less strict flanking positions 
+              -b3 don't allow many contiguous nonconserved positions
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
+-bootstrap n    writes n bootstrap replicates of the input alignment to the output file 
 
-### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information or usage instructions for the tool.
+           Sub-options for -concatenate 
+           Use '-' as last argument to read alignment from standard input
+-concatenate align1,...    name(s) of alignment files to add at the end of the input alignment
+-by_rank      identify sequences by their rank in alignments (rather than by their name)
+-record_partition record the locations of the concatenated pieces in the final concatenate
+-output_format fmt    format of the concatenated alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the concatenated alignment (default is built from input filename)
+-o -          write the concatenated alignment to standard output
 
-### Metadata
-- **Docker Image**: biocontainers/seaview:v1-4.7-1-deb_cv1
-- **Homepage**: https://github.com/berry-ding/ShiYu_SeaView_GRDDC2022
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/seaview:v1-4.7-1-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/U.pl: unpack to regular file: short write: write /tmp/build-temp-3306328471/rootfs/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/U.pl: no space left on device
-```
+           Sub-options for -align 
+           Use '-' as last argument to read sequence file from standard input
+-align_algo n  rank (in seaview from 0) of alignment algorithm, otherwise use seaview's default alignment algorithm
+-align_extra_opts "option1 ..."  additional options to use when running the alignment algorithm
+-align_at_protein_level  translate and align input sequences and reproduce alignment at DNA level.
+-output_format fmt    format of the output alignment (mase, phylip, clustal, msf, fasta, or nexus)
+-o fname      use fname as name of the output alignment (default is built from input filename)
+-o -          write the output alignment to standard output
 
-## seaview_python
+           Sub-options for -build_tree (either -distance or -parsimony is required)
+           Use '-' as last argument to read alignment from standard input
+-o fname      use fname as name of the output tree
+-o -          write the output tree to standard output
+-distance dist_name   computes the tree with a distance method using dist_name (observed, JC, K2P, logdet, Ka, Ks, Poisson or Kimura)
+-distance_matrix fname  don't compute the tree, but write to fname the matrix of pairwise distances
+-NJ           compute the distance tree by the Neighbor-Joining method (default is BioNJ)
+-parsimony    compute the tree by the parsimony method 
+-search more|less|one  controls how much rearrangement is done to find better trees (DNA parsimony only)
+-nogaps       remove all gap-containing sites before computations
+-replicates n use n bootstrap replicates to compute tree branch support
+-jumbles n    jumble sequence order n times (parsimony only)
+-gaps_as_unknown  encode gaps as unknown character state (parsimony only)
+-sites selection_name    use the named selection of sites from the input alignment 
+-species species_group_name    use the named group of species from the input alignment 
 
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: biocontainers/seaview:v1-4.7-1-deb_cv1
-- **Homepage**: https://github.com/berry-ding/ShiYu_SeaView_GRDDC2022
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/seaview:v1-4.7-1-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/U.pl: unpack to regular file: short write: write /tmp/build-temp-3070956437/rootfs/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/U.pl: no space left on device
+See http://doua.prabi.fr/software/seaview_data/seaview#Program%20arguments for more details
 ```
 

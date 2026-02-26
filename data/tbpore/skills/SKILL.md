@@ -1,8 +1,9 @@
 ---
 name: tbpore
-description: `tbpore` is a specialized bioinformatics pipeline designed to simplify the genomic analysis of *Mycobacterium tuberculosis* (TB) from Nanopore sequencing data.
+description: tbpore is a bioinformatics pipeline for analyzing Mycobacterium tuberculosis Nanopore sequencing data through read decontamination, variant calling, and drug susceptibility prediction. Use when user asks to process raw TB reads, predict drug resistance, or perform genomic clustering for epidemiological investigations.
 homepage: https://github.com/mbhall88/tbpore/
 ---
+
 
 # tbpore
 

@@ -1,8 +1,9 @@
 ---
 name: ac
-description: The `ac` tool is a specialized lossless compressor specifically engineered for amino acid (protein) sequences.
+description: The ac tool is a specialized lossless compressor designed for amino acid sequences that utilizes multiple context models to achieve high compression ratios. Use when user asks to compress protein sequences, decompress proteomic data, or calculate the information content of specific sequences.
 homepage: https://github.com/cobilab/ac
 ---
+
 
 # ac
 

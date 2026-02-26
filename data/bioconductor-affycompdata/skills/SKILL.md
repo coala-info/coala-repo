@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affycompdata
-description: the package is available on all platforms; click for details.
+description: This package provides pre-calculated assessment data for benchmarking and comparing Affymetrix expression measures. Use when user asks to access benchmark datasets for microarray normalization methods, compare RMA or MAS 5.0 performance, or load spike-in and dilution assessment results.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/affycompData.html
 ---
+
 
 # bioconductor-affycompdata
 

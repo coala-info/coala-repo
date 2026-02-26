@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hiccompare
-description: the package is available on all platforms; click for details.
+description: This tool performs joint normalization and differential chromatin interaction detection for Hi-C datasets. Use when user asks to compare Hi-C contact matrices, normalize Hi-C data using LOESS, or identify statistically significant differences in chromatin interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCcompare.html
 ---
+
 
 # bioconductor-hiccompare
 

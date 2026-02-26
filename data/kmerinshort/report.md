@@ -1,9 +1,9 @@
 # kmerinshort CWL Generation Report
 
-## kmerinshort
+## kmerinshort_KmerInShort
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error messages related to a container runtime failure (no space left on device).
+KmerInShort tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kmerinshort:1.0.1--0
@@ -18,11 +18,21 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmerinshort:1.0.1--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3112440547: no space left on device
+ERROR: Unknown parameter '--help'
+ERROR: Option '-file' is mandatory
+ERROR: Option '-kmer-size' is mandatory
+
+[kis options]
+       -nb-cores     (1 arg) :    number of cores  [default '0']
+       -verbose      (1 arg) :    verbosity level  [default '1']
+       -file         (1 arg) :    input file 
+       -kmer-size    (1 arg) :    ksize
+       -out          (1 arg) :    output file  [default '']
+       -offset       (1 arg) :    starting offset  [default '0']
+       -step         (1 arg) :    step  [default '1']
+       -kval         (1 arg) :    file with kmer values   [default '']
+       -dont-reverse (0 arg) :    do not reverse kmers, count forward and reverse complement separately
+       -freq         (0 arg) :    output frequency
+       -perSeq       (0 arg) :    one output file and count per fasta sequence
 ```
 
-
-## Metadata
-- **Skill**: generated

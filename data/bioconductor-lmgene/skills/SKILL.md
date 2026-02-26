@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lmgene
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: "bioconductor-lmgene provides tools for analyzing microarray data using g-log transformations and linear models to identify differentially expressed genes. Use when user asks to estimate transformation parameters, stabilize variance in expression data, normalize microarray datasets, or perform linear model analysis to find significant genes."
 homepage: https://bioconductor.org/packages/3.6/bioc/html/LMGene.html
 ---
+
 
 # bioconductor-lmgene
 

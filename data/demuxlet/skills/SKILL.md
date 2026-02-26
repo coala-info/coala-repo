@@ -1,8 +1,9 @@
 ---
 name: demuxlet
-description: demuxlet is a specialized tool for deconvoluting sample identities in barcoded single-cell RNA-seq experiments where multiple donors have been pooled.
+description: "demuxlet deconvolutes sample identities and identifies doublets in pooled single-cell RNA-seq data using genetic variation. Use when user asks to assign cells to donors, identify cross-genotype doublets, or demultiplex pooled single-cell experiments using SNP genotypes."
 homepage: https://github.com/statgen/demuxlet
 ---
+
 
 # demuxlet
 

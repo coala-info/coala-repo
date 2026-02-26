@@ -1,8 +1,9 @@
 ---
 name: crussmap
-description: crussmap is a performance-optimized bioinformatics tool written in Rust, designed to "liftover" genomic coordinates from one reference assembly to another (e.g., hg19 to hg38).
+description: Crussmap lifts over genomic coordinates between reference assemblies using chain files. Use when user asks to liftover genomic coordinates, convert BED files between reference assemblies, or inspect the contents of chain files.
 homepage: https://github.com/wjwei-handsome/crussmap
 ---
+
 
 # crussmap
 

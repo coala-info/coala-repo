@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omicspca
-description: the package is available on all platforms; click for details.
+description: OMICsPCA performs integrative analysis and visualization of multi-omics datasets using principal component analysis. Use when user asks to integrate multiple omics datasets, perform multi-omics PCA, or visualize high-dimensional biological data across different platforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/OMICsPCA.html
 ---
+
 
 # bioconductor-omicspca
 

@@ -3,7 +3,7 @@
 ## sarscov2formatter
 
 ### Tool Description
-A tool for formatting SARS-CoV-2 data. (Note: The provided text appears to be a container runtime error log rather than help text; no arguments could be extracted.)
+Metadata extractor for SARS-CoV-2 selection analysis pipeline in Galaxy
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sarscov2formatter:1.0--pyhdfd78af_0
@@ -18,13 +18,23 @@ A tool for formatting SARS-CoV-2 data. (Note: The provided text appears to be a 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sarscov2formatter:1.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: sarscov2formatter [-h] -a ALIGNMENT [-n NCBIMETADATA] [-m METADATA]
+
+Metadata extractor for SARS-CoV-2 selection analysis pipeline in Galaxy
+
+options:
+  -h, --help            show this help message and exit
+  -a ALIGNMENT, --alignment ALIGNMENT
+                        Mulitple sequence alignment file
+  -n NCBIMETADATA, --ncbimetadata NCBIMETADATA
+                        yaml metadata from NCBI. if neither -n nor -m is given
+                        it will be downloaded from
+                        https://www.ncbi.nlm.nih.gov/projects/genome/sars-
+                        cov-2-seqs/ncov-sequences.yaml
+  -m METADATA, --metadata METADATA
+                        tabular metadata
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

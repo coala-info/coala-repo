@@ -1,8 +1,9 @@
 ---
 name: survindel2
-description: SurVIndel2 is a specialized bioinformatics tool designed to detect copy number variations (CNVs), specifically deletions and tandem duplications, from Next-Generation Sequencing (NGS) data.
+description: SurVIndel2 detects copy number variations, specifically deletions and tandem duplications, from Next-Generation Sequencing data using paired-end and split-read information. Use when user asks to detect deletions, identify tandem duplications, or call copy number variations from BAM or CRAM files.
 homepage: https://github.com/kensung-lab/SurVIndel2
 ---
+
 
 # survindel2
 

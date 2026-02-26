@@ -1,8 +1,9 @@
 ---
 name: smhasher
-description: SMHasher is a comprehensive test suite designed to rigorously analyze non-cryptographic hash functions.
+description: SMHasher is a comprehensive test suite designed to analyze the quality and performance of non-cryptographic hash functions. Use when user asks to verify hash correctness, benchmark hash algorithm performance, or test for bit distribution flaws and collisions.
 homepage: https://github.com/aappleby/smhasher
 ---
+
 
 # smhasher
 

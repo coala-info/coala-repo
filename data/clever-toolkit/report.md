@@ -1,9 +1,9 @@
 # clever-toolkit CWL Generation Report
 
-## clever-toolkit
+## clever-toolkit_clever
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it is a log of a failed container build process.
+This tool runs the whole workflow necessary to use CLEVER.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14
@@ -18,95 +18,49 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3863424738/rootfs/usr/bin/bash: no space left on device
-```
+Usage: clever [options] <bam-file> <ref.fasta(.gz)> <result-directory>
 
+This tool runs the whole workflow necessary to use CLEVER.
 
-## Metadata
-- **Skill**: generated
+<bam-file>         Input BAM file. All alignments for the same read (pair) must be in
+                   subsequent lines. It is highly recommended to allows multiple 
+                   alignments per read to avoid spurious predictions. 
+<ref.fasta(.gz)>   The reference genome in (gzipped) FASTA format. This is needed to
+                   recompute alignment scores (AS tags). If your BAM file does have AS tags
+                   such that 10^(AS/-10.0) can be interpreted as the probability of this
+                   alignment being correct, use option -a to omit this step.
+<result-directory> Directory to be created to store results in. If it already exists, abort
+                   unless option -f is given.
 
-## clever-toolkit_clever
-
-### Tool Description
-The provided text is a container runtime error log (Singularity/Apptainer) indicating a failure to build or extract the OCI image due to insufficient disk space. It does not contain CLI help information or argument definitions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14
-- **Homepage**: https://bitbucket.org/tobiasmarschall/clever-toolkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/clever-toolkit/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-4156767707/rootfs/usr/bin/bash: no space left on device
-```
-
-## clever-toolkit_clever-core
-
-### Tool Description
-The provided text is an error log from a failed container build/execution and does not contain help text or usage information for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14
-- **Homepage**: https://bitbucket.org/tobiasmarschall/clever-toolkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/clever-toolkit/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3969447896/rootfs/usr/bin/bash: no space left on device
-```
-
-## clever-toolkit_clever-genotype
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime error logs indicating a failure to extract the image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14
-- **Homepage**: https://bitbucket.org/tobiasmarschall/clever-toolkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/clever-toolkit/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-2090879220/rootfs/usr/bin/bash: no space left on device
-```
-
-## clever-toolkit_insert-size-dist
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system logs and a fatal error message regarding a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14
-- **Homepage**: https://bitbucket.org/tobiasmarschall/clever-toolkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/clever-toolkit/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clever-toolkit:2.4--h077b44d_14 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3262338971/rootfs/usr/bin/bash: no space left on device
+Options:
+  -h, --help            show this help message and exit
+  --sorted              Input BAM file is sorted by position. Note that this
+                        requires alternative alignments to be given as XA tags
+                        (like produced by BWA, stampy, etc.).
+  --use_xa              Interprete XA tags in input BAM file. This option
+                        SHOULD be given for mappers writing XA tags like BWA
+                        and stampy.
+  --use_mapq            Use MAPQ value instead re-computing posteriors.
+  -T THREADS            Number of threads to use (default=1).
+  -f                    Delete old result and working directory first (if
+                        present).
+  -w WORK_DIR           Working directory (default: <result-directory>/work).
+  -a                    Do not (re-)compute AS tags. If given, the argument
+                        <ref.fasta(.gz)> is ignored.
+  -k                    Keep working directory (default: delete directory when
+                        finished).
+  -r                    Take read groups into account (multi sample mode).
+  -C ADD_CLEVER_PARAMS  Additional parameters to be passed to the CLEVER core
+                        algorithm. Call "clever-core" without parameters for a
+                        list of options.
+  -P ADD_POST_PARAMS    Additional parameters for postprocessing results. Call
+                        "postprocess-predictions" without parameters for a
+                        list of options.
+  -I                    Create a plot of internal segment size distribution
+                        (=fragment size - 2x read length). Also displays the
+                        estimated normal distribution (requires NumPy and
+                        matplotlib).
+  --chromosome=CHROMOSOME
+                        Only process given chromosome (default: all).
 ```
 

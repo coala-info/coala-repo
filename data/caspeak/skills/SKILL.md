@@ -1,8 +1,9 @@
 ---
 name: caspeak
-description: CasPeak is a specialized bioinformatics pipeline for detecting mobile element insertions (MEIs) that are not present in the reference genome.
+description: CasPeak is a bioinformatics pipeline for detecting and validating mobile element insertions using outer-Cas9 targeted Nanopore sequencing data. Use when user asks to identify non-reference insertions, align long reads to mobile element consensus sequences, detect coverage peaks, or generate validated VCF and BED files for genomic variants.
 homepage: https://github.com/Rye-lxy/CasPeak
 ---
+
 
 # caspeak
 

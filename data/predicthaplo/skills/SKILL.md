@@ -1,8 +1,9 @@
 ---
 name: predicthaplo
-description: PredictHaplo is a specialized bioinformatics tool designed to resolve the genetic diversity within a viral population.
+description: PredictHaplo reconstructs the genetic diversity and individual haplotype sequences within a viral population using a Dirichlet process mixture model. Use when user asks to infer viral strains from aligned reads, reconstruct haplotypes, or estimate the frequency of genetic variants in a sample.
 homepage: https://github.com/cbg-ethz/PredictHaplo
 ---
+
 
 # predicthaplo
 

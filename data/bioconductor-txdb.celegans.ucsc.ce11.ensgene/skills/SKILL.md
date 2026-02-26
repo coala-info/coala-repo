@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.celegans.ucsc.ce11.ensgene
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides transcript-level annotations for Caenorhabditis elegans based on the UCSC ce11 genome assembly and Ensembl gene models. Use when user asks to retrieve genomic coordinates for transcripts, extract exon or CDS locations, or perform genomic range operations on C. elegans gene models.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Celegans.UCSC.ce11.ensGene.html
 ---
+
 
 # bioconductor-txdb.celegans.ucsc.ce11.ensgene
 

@@ -1,8 +1,9 @@
 ---
 name: pbtk
-description: The PacBio BAM toolkit (`pbtk`) is a collection of C++ utilities for handling PacBio-specific BAM files.
+description: The pbtk toolkit provides a collection of C++ utilities for processing, converting, and managing PacBio-specific BAM files. Use when user asks to convert BAM files to FASTA or FASTQ formats, merge multiple PacBio datasets, generate PBI index files, extract HiFi reads, or filter data by ZMW metadata.
 homepage: https://github.com/PacificBiosciences/pbbioconda
 ---
+
 
 # pbtk
 

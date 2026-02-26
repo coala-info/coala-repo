@@ -1,8 +1,9 @@
 ---
 name: deap
-description: DEAP (Distributed Evolutionary Algorithms in Python) is a flexible framework designed for rapid prototyping of evolutionary computation ideas.
+description: "DEAP is a flexible Python framework for rapid prototyping and implementation of evolutionary computation algorithms. Use when user asks to implement genetic algorithms, perform multi-objective optimization, develop genetic programming solutions, or use particle swarm optimization."
 homepage: https://github.com/DEAP/deap
 ---
+
 
 # deap
 

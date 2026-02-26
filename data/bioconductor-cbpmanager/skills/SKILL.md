@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cbpmanager
-description: the package is available on all platforms; click for details.
+description: The cbpManager package provides an interactive R Shiny interface to manage cancer genomics studies and generate data files compatible with cBioPortal. Use when user asks to initialize cancer studies, manage clinical patient or sample data, upload and merge mutation files, create timeline tracks, or validate study data for cBioPortal.
 homepage: https://bioconductor.org/packages/release/bioc/html/cbpManager.html
 ---
+
 
 # bioconductor-cbpmanager
 

@@ -1,8 +1,9 @@
 ---
 name: seq-to-first-iso
-description: The `seq-to-first-iso` tool is a specialized proteomics utility used to predict the isotopic distribution of peptides under specific metabolic labeling conditions.
+description: This tool predicts the isotopic distribution and theoretical mass of peptides under natural abundance and 12C-enriched metabolic labeling conditions. Use when user asks to predict M0 and M1 isotopologue intensities, calculate peptide masses for SLIM-labeling experiments, or account for auxotrophic amino acids in isotopic simulations.
 homepage: https://github.com/pierrepo/seq-to-first-iso
 ---
+
 
 # seq-to-first-iso
 

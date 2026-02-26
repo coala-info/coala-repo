@@ -3,7 +3,7 @@
 ## qualifilter
 
 ### Tool Description
-A tool for filtering sequencing reads based on quality scores (Note: The provided text is an error log and does not contain usage information).
+QualiFilter: A tool that generates a QC report summarizing key quality metrics and sample pass/fail status according to user-defined thresholds
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/qualifilter:1.0.0--pyh7e72e81_0
@@ -15,16 +15,29 @@ A tool for filtering sequencing reads based on quality scores (Note: The provide
 - **Total Downloads**: 42
 - **Last updated**: 2025-11-26
 - **GitHub**: https://github.com/buhlentozini/QualiFilter
-- **Stars**: 0
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/qualifilter:1.0.0--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: qualifilter [-h] --input INPUT [--attributes ATTRIBUTES]
+                   [--thresholds THRESHOLDS] [--round ROUND] [--derive_reads]
+                   [--outdir OUTDIR] [--list] [--config CONFIG]
+
+QualiFilter: A tool that generates a QC report summarizing key quality metrics
+and sample pass/fail status according to user-defined thresholds
+
+options:
+  -h, --help            show this help message and exit
+  --input, -i INPUT     MultiQC tabular stats file (TSV)
+  --attributes, -a ATTRIBUTES
+                        Comma-separated list of columns/metrics to extract
+  --thresholds, -t THRESHOLDS
+                        JSON string with QC thresholds, e.g. {"Total_reads":10
+                        00000,"Coverage_gte_10x_pct":90,"Contam_pct":5}
+  --round, -r ROUND     Number of decimals for numeric rounding
+  --derive_reads        Calculate derived read metrics from Kraken percentages
+  --outdir, -o OUTDIR   Output directory
+  --list                List all available columns in the input file and exit
+  --config, -c CONFIG   Path to YAML or JSON configuration file (optional).
+                        Overrides default allowed columns and rename map.
 ```
 
-
-## Metadata
-- **Skill**: generated

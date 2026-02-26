@@ -1,8 +1,9 @@
 ---
 name: mogaaap
-description: MoGAAAP (Modular Genome Assembly, Annotation and Assessment Pipeline) is a Snakemake-powered tool designed for eukaryotic genomics.
+description: MoGAAAP is a modular Snakemake pipeline for eukaryotic genome assembly, annotation, and quality assessment. Use when user asks to assemble genomes from HiFi or ONT reads, perform quality assessment on existing scaffolds, or annotate genomes using a modular workflow.
 homepage: https://github.com/dirkjanvw/MoGAAAP
 ---
+
 
 # mogaaap
 

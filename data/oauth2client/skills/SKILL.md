@@ -1,8 +1,9 @@
 ---
 name: oauth2client
-description: The oauth2client skill provides procedural knowledge for implementing the NXOAuth2Client library in Cocoa and Cocoa Touch environments.
+description: The oauth2client library manages OAuth2 authentication, token storage, and credential refreshing for Cocoa and Cocoa Touch applications. Use when user asks to configure OAuth2 service endpoints, implement authorization flows like resource owner credentials or external browser redirects, and manage secure token storage in the Keychain.
 homepage: https://github.com/nxtbgthng/OAuth2Client
 ---
+
 
 # oauth2client
 

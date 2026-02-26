@@ -1,9 +1,9 @@
 # mark-nonconverted-reads CWL Generation Report
 
-## mark-nonconverted-reads
+## mark-nonconverted-reads_mark-nonconverted-reads.py
 
 ### Tool Description
-A tool to mark non-converted reads (Note: The provided text contains container runtime error messages and does not include the actual help documentation or argument list).
+Mark nonconverted reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mark-nonconverted-reads:1.2--pyhdfd78af_0
@@ -18,29 +18,19 @@ A tool to mark non-converted reads (Note: The provided text contains container r
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mark-nonconverted-reads:1.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3508710493: no space left on device
-```
+usage: mark-nonconverted-reads.py [-h] [--reference REFERENCE] [--bam BAM]
+                                  [--out OUT] [--c_count C_COUNT]
+                                  [--flag_reads]
 
-
-## Metadata
-- **Skill**: generated
-
-## mark-nonconverted-reads_mark-nonconverted-reads.py
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log related to a container environment (Singularity/Apptainer) failing due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mark-nonconverted-reads:1.2--pyhdfd78af_0
-- **Homepage**: https://github.com/nebiolabs/mark-nonconverted-reads
-- **Package**: https://anaconda.org/channels/bioconda/packages/mark-nonconverted-reads/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mark-nonconverted-reads:1.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3991124350: no space left on device
+options:
+  -h, --help            show this help message and exit
+  --reference REFERENCE
+                        Reference fasta file
+  --bam BAM             Input bam or sam file (must end in .bam or .sam)
+                        [default = stdin]
+  --out OUT             Name for output sam file [default = stdout]
+  --c_count C_COUNT     Minimum number of nonconverted Cs on a read to
+                        consider it nonconverted [default = 3]
+  --flag_reads          Set the 'Failing platform / vendor quality check flag
 ```
 

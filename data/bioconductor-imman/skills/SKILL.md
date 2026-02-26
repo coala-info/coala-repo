@@ -1,8 +1,9 @@
 ---
 name: bioconductor-imman
-description: the package is available on all platforms; click for details.
+description: The IMMAN package reconstructs consensus protein interaction networks shared across different species by mapping orthologous protein sets and conserved interactions. Use when user asks to reconstruct interolog protein networks, perform cross-species protein interaction mapping, or identify conserved protein interaction modules using STRING database data.
 homepage: https://bioconductor.org/packages/release/bioc/html/IMMAN.html
 ---
+
 
 # bioconductor-imman
 

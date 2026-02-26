@@ -1,8 +1,9 @@
 ---
 name: fargene
-description: fARGene (Fragmented Antibiotic Resistance Gene iENntifiEr) is a bioinformatics tool used to detect and reconstruct complete antibiotic resistance genes from various types of sequencing data.
+description: fARGene identifies and reconstructs full-length antibiotic resistance genes from fragmented metagenomic reads, contigs, or protein sequences. Use when user asks to detect antibiotic resistance genes, perform targeted assembly of resistance fragments, or analyze metagenomic data for specific resistance categories like beta-lactamases.
 homepage: https://github.com/fannyhb/fargene
 ---
+
 
 # fargene
 

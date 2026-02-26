@@ -1,8 +1,9 @@
 ---
 name: sickle
-description: Sickle is a lightweight Python library designed to make OAI-PMH harvesting "human-friendly." It abstracts the complexities of the OAI-PMH protocol—such as handling HTTP requests, managing resumption tokens for pagination, and parsing XML responses—into a clean, Pythonic API.
+description: Sickle is a Python library that simplifies harvesting metadata from OAI-PMH compliant repositories by automating protocol complexities like resumption tokens and XML parsing. Use when user asks to harvest metadata, list records or identifiers from an OAI-compliant repository, or interact with OAI-PMH verbs using a Pythonic API.
 homepage: http://github.com/mloesch/sickle
 ---
+
 
 # sickle
 

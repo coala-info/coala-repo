@@ -1,8 +1,9 @@
 ---
 name: pymummer
-description: The `pymummer` skill provides a streamlined Python 3 interface for the MUMmer alignment package.
+description: "pymummer provides a Python 3 interface for the MUMmer alignment package to automate genomic sequence alignment and parse output files into structured objects. Use when user asks to run nucmer alignments, parse coordinate or SNP files, filter genomic hits, or calculate identity between sequences."
 homepage: https://github.com/sanger-pathogens/pymummer
 ---
+
 
 # pymummer
 

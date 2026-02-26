@@ -1,8 +1,9 @@
 ---
 name: nasm
-description: NASM (Netwide Assembler) is a highly portable and flexible x86 assembler that uses Intel-like syntax.
+description: NASM is an x86 assembler that translates assembly source code into various executable and object file formats using Intel-like syntax. Use when user asks to assemble source files, generate debug information, preprocess macros, or disassemble raw binary files.
 homepage: https://github.com/netwide-assembler/nasm
 ---
+
 
 # nasm
 

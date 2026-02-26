@@ -1,8 +1,9 @@
 ---
 name: ucsc-nibsize
-description: The `nibSize` utility is a specialized tool from the UCSC Genome Browser "kent" source suite.
+description: The ucsc-nibsize tool reports the size and nucleotide composition of UCSC .nib files. Use when user asks to 'get the size of a nib file', 'count nucleotides in a nib file', or 'create chromosome size files from nib files'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-nibsize
 

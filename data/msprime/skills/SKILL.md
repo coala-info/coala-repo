@@ -1,8 +1,9 @@
 ---
 name: msprime
-description: msprime is a high-performance population genetics simulator based on the tskit library.
+description: "msprime is a high-performance population genetics simulator that generates ancestral histories and genomic sequence data using the succinct tree sequence data structure. Use when user asks to simulate random genealogies, model complex population demographies, generate genomic mutations, or perform coalescent simulations as an alternative to the Hudson ms program."
 homepage: https://github.com/tskit-dev/msprime
 ---
+
 
 # msprime
 

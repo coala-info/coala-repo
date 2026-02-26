@@ -1,8 +1,9 @@
 ---
 name: juicertools
-description: JuicerTools is a specialized command-line toolkit for the analysis of Hi-C (High-throughput Chromosome Conformation Capture) data.
+description: JuicerTools is a command-line toolkit for processing Hi-C data into the .hic format and identifying genomic structural features like TADs and chromatin loops. Use when user asks to create .hic files, calculate normalization vectors, identify chromatin loops with HiCCUPS, or call contact domains with Arrowhead.
 homepage: https://github.com/aidenlab/Juicebox
 ---
+
 
 # juicertools
 

@@ -1,8 +1,9 @@
 ---
 name: ismrmrd-tools
-description: The ismrmrd-tools skill provides a specialized workflow for handling MRI raw data using the Python implementation of the International Standard for Magnetic Resonance Resonance Data (ISMRMRD).
+description: This tool processes MRI raw data using the ISMRMRD standard for reconstruction and coil sensitivity estimation. Use when user asks to generate synthetic phantom datasets, reconstruct k-space data, estimate coil sensitivity maps, or perform parallel imaging reconstructions like GRAPPA.
 homepage: https://github.com/ismrmrd/ismrmrd-python-tools
 ---
+
 
 # ismrmrd-tools
 

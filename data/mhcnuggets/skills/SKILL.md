@@ -1,8 +1,9 @@
 ---
 name: mhcnuggets
-description: MHCnuggets is a deep learning-based tool designed to predict the binding affinity of peptides to Major Histocompatibility Complex (MHC) molecules.
+description: MHCnuggets is a deep learning tool that predicts the binding affinity of peptides to MHC Class I and Class II molecules. Use when user asks to predict peptide-MHC binding affinity, perform MHC Class I or Class II allele predictions, or process batch peptide lists for binding scores.
 homepage: http://karchinlab.org/apps/mhcnuggets.html
 ---
+
 
 # mhcnuggets
 

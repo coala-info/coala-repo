@@ -3,7 +3,7 @@
 ## plasmidtron
 
 ### Tool Description
-The provided text does not contain help information for plasmidtron; it is an error log indicating a failure to build or run the container image due to insufficient disk space ('no space left on device'). As a result, no arguments could be extracted from the input.
+Plasmidtron: identify plasmids from whole genome sequencing data using k-mer analysis.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/plasmidtron:0.4.1--py36_1
@@ -18,15 +18,20 @@ The provided text does not contain help information for plasmidtron; it is an er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 22:21:57  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/plasmidtron:0.4.1--py36_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:7f439b17f50579450ae5ad1ab54b416851b869c8a281c2d64e2230adab297226: unpack entry: usr/local/include/qt/QtGui/qopengltexture.h: unpack to regular file: short write: write /tmp/build-temp-3847989330/rootfs/usr/local/include/qt/QtGui/qopengltexture.h: no space left on device
+Unable to find image 'quay.io/biocontainers/plasmidtron:0.4.1--py36_1' locally
+0.4.1--py36_1: Pulling from biocontainers/plasmidtron
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+7f439b17f505: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1459459677: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

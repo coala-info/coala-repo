@@ -1,8 +1,9 @@
 ---
 name: hafez
-description: hafeZ is a specialized bioinformatics tool designed to move beyond static prophage prediction by identifying prophages that are actively replicating or induced.
+description: hafeZ identifies actively replicating or induced prophages by mapping sequencing reads to a host assembly and calculating Z-scores for read depth. Use when user asks to identify active prophages, detect induced viral elements in bacterial genomes, or analyze read coverage peaks for prophage validation.
 homepage: https://github.com/Chrisjrt/hafeZ
 ---
+
 
 # hafez
 

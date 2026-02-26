@@ -1,8 +1,9 @@
 ---
 name: protgraph
-description: ProtGraph is a specialized tool designed to bridge the gap between static protein sequences and the complex reality of biological variation.
+description: ProtGraph builds directed acyclic graphs from UniProtKB SP-EMBL entries to represent protein sequences along with their isoforms, variants, and post-translational modifications. Use when user asks to generate protein graphs from SP-EMBL files, incorporate biological variants into protein representations, or calculate the theoretical peptide search space for mass spectrometry.
 homepage: https://github.com/mpc-bioinformatics/ProtGraph
 ---
+
 
 # protgraph
 

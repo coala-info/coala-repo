@@ -1,8 +1,9 @@
 ---
 name: htseq
-description: HTSeq is a specialized Python-based suite designed for the functional analysis of high-throughput sequencing data.
+description: HTSeq is a Python-based suite used to quantify gene expression by overlapping aligned sequencing reads with genomic features. Use when user asks to count reads per gene, perform quality assessment of sequencing data, or process single-cell barcoded alignments.
 homepage: https://github.com/htseq/htseq
 ---
+
 
 # htseq
 

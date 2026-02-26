@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdr
-description: the package is available on all platforms; click for details.
+description: This tool processes drug response screening data to generate normalized metrics and dose-response curve fits. Use when user asks to import raw drug screening data, normalize results against controls, or calculate metrics like IC50 and GR50.
 homepage: https://bioconductor.org/packages/release/bioc/html/gDR.html
 ---
+
 
 # bioconductor-gdr
 

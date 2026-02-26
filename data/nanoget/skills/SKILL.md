@@ -1,8 +1,9 @@
 ---
 name: nanoget
-description: The `nanoget` skill provides a streamlined workflow for retrieving read-level information from Oxford Nanopore Technologies (ONT) outputs.
+description: "Nanoget extracts and standardizes read-level information from Oxford Nanopore sequencing data into pandas DataFrames. Use when user asks to process BAM alignments, extract metrics from FASTQ files, or parse sequencing summary text files."
 homepage: https://github.com/wdecoster/nanoget
 ---
+
 
 # nanoget
 

@@ -1,8 +1,9 @@
 ---
 name: json_collect_data_source
-description: The `json_collect_data_source` tool serves as an advanced data provider that extends the capabilities of standard JSON data sources.
+description: This tool automates the retrieval, extraction, and organization of multiple data files from JSON-specified sources into a single collection. Use when user asks to collect multiple data files, unpack archives into a collection, or stage datasets for high-throughput processing.
 homepage: https://github.com/fabio-cumbo/galaxy-json-collect-data-source
 ---
+
 
 # json_collect_data_source
 

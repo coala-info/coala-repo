@@ -1,8 +1,9 @@
 ---
 name: biothings_client
-description: The `biothings_client` is a unified Python wrapper designed to interact with various BioThings.api-based backends.
+description: The biothings_client is a Python wrapper that provides a unified interface to interact with various BioThings.api-based backends for biological data retrieval. Use when user asks to fetch information about genes, variants, chemicals, diseases, or taxa from BioThings services.
 homepage: https://github.com/biothings/biothings_client.py
 ---
+
 
 # biothings_client
 

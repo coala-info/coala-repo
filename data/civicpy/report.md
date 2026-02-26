@@ -3,29 +3,39 @@
 ## civicpy
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for civicpy; it is a system error log indicating a failure to build or extract a container image due to insufficient disk space.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/civicpy:5.1.1--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/civicpy:5.2.0--pyhdfd78af_0
 - **Homepage**: http://civicpy.org
 - **Package**: https://anaconda.org/channels/bioconda/packages/civicpy/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/civicpy/overview
 - **Total Downloads**: 4.7K
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/griffithlab/civicpy
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/civicpy:5.1.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-2426141116/rootfs/usr/bin/bash: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/civicpy", line 6, in <module>
+    from civicpy.cli import cli
+  File "/usr/local/lib/python3.13/site-packages/civicpy/cli.py", line 4, in <module>
+    from civicpy import LOCAL_CACHE_PATH, civic
+  File "/usr/local/lib/python3.13/site-packages/civicpy/civic.py", line 11, in <module>
+    from backports.datetime_fromisoformat import MonkeyPatch
+ModuleNotFoundError: No module named 'backports.datetime_fromisoformat'
 ```
 
-
-## Metadata
-- **Skill**: generated

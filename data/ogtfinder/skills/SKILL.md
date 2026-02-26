@@ -1,8 +1,9 @@
 ---
 name: ogtfinder
-description: OGTFinder is a machine learning tool that predicts the optimal growth temperature (OGT) for prokaryotes based on mean amino acid descriptors derived from their proteomes.
+description: OGTFinder predicts the optimal growth temperature and thermophilicity class of prokaryotes using proteome-wide amino acid descriptors. Use when user asks to estimate growth temperatures for bacteria or archaea, classify organisms by thermophilicity, or analyze proteome sequences to determine environmental temperature adaptations.
 homepage: https://github.com/SC-Git1/OGTFinder
 ---
+
 
 # ogtfinder
 

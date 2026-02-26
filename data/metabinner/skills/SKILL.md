@@ -1,8 +1,9 @@
 ---
 name: metabinner
-description: MetaBinner is a high-performance ensemble binning tool designed to recover individual genomes from metagenomic assemblies.
+description: MetaBinner is an ensemble binning tool that recovers individual genomes from metagenomic assemblies by integrating diverse binning results. Use when user asks to recover metagenome-assembled genomes, generate coverage and k-mer profiles, or perform ensemble binning on contigs.
 homepage: https://github.com/ziyewang/MetaBinner
 ---
+
 
 # metabinner
 

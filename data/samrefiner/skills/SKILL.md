@@ -1,8 +1,9 @@
 ---
 name: samrefiner
-description: The `samrefiner` tool is a Python-based utility designed to extract and refine variant information from SAM (Sequence Alignment/Map) files.
+description: samrefiner extracts and refines variant information from SAM files while filtering chimeric sequences and reporting nucleotide or amino acid changes. Use when user asks to refine post-alignment data, identify variants, handle multi-nucleotide polymorphisms, or deconvolve covariant data in sequencing projects.
 homepage: https://github.com/degregory/SAM_Refiner
 ---
+
 
 # samrefiner
 

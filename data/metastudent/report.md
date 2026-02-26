@@ -3,7 +3,7 @@
 ## metastudent
 
 ### Tool Description
-Metastudent is a tool for predicting Gene Ontology (GO) terms from protein sequences.
+!!! Make sure your input fasta file contains at most 500 sequences !!!
 
 ### Metadata
 - **Docker Image**: biocontainers/metastudent:v2.0.1-6-deb_cv1
@@ -18,11 +18,7 @@ Metastudent is a tool for predicting Gene Ontology (GO) terms from protein seque
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/metastudent:v2.0.1-6-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2268802153: no space left on device
+metastudent -i <FASTA_FILE> -o <RESULT_FILE_PREFIX> [--silent] [--debug] [--keep-temp] [--output-blast] [--blast-only] [--all-predictions] [--no-names] [--with-images] [--ontologies=<MFO or BPO or CCO or MFO,BPO or ...>] [--blast-kickstart-databases=<BLAST_RESULT_FILE(S)>] [--temp-dir=<DIR>] [--config=<CONFIG_FILE>]
+!!! Make sure your input fasta file contains at most 500 sequences !!!
 ```
 
-
-## Metadata
-- **Skill**: generated

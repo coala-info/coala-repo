@@ -1,8 +1,9 @@
 ---
 name: taxator-tk
-description: The taxator toolkit (taxator-tk) is a specialized suite of algorithms designed for the taxonomic analysis of genetic sequences.
+description: Taxator-tk is a suite of algorithms that performs taxonomic analysis of genetic sequences using sensitive local alignments and phylogenetic inference. Use when user asks to assign sequences to taxa, perform taxonomic binning of assembled contigs, or generate high-precision consensus assignments for novel sequences.
 homepage: https://github.com/fungs/taxator-tk
 ---
+
 
 # taxator-tk
 

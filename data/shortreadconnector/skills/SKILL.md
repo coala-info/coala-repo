@@ -1,8 +1,9 @@
 ---
 name: shortreadconnector
-description: Short Read Connector (SRC) is a resource-frugal tool designed for the comparison of two high-throughput sequencing read sets, typically referred to as the "Bank" (B) and the "Query" (Q).
+description: Short Read Connector compares two high-throughput sequencing read sets to identify shared k-mers or link similar reads using a resource-frugal indexing approach. Use when user asks to count k-mer occurrences between datasets, link similar reads across sequencing files, or perform fast k-mer-based similarity assessments with low memory usage.
 homepage: https://github.com/GATB/short_read_connector
 ---
+
 
 # shortreadconnector
 

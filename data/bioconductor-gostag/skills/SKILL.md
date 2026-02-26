@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gostag
-description: the package is available on all platforms; click for details.
+description: bioconductor-gostag performs functional enrichment analysis and visualizes Gene Ontology subtrees to identify and label biological themes across multiple samples. Use when user asks to perform over-representation analysis, cluster enriched GO terms, annotate clusters using a subtree-based tagging approach, or generate enrichment score heatmaps.
 homepage: https://bioconductor.org/packages/release/bioc/html/goSTAG.html
 ---
+
 
 # bioconductor-gostag
 

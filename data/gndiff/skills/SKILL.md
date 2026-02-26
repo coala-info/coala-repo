@@ -1,8 +1,9 @@
 ---
 name: gndiff
-description: gndiff is a specialized command-line utility designed for biological nomenclature.
+description: "gndiff is an offline command-line utility used to compare biological scientific names between a query file and a reference file. Use when user asks to find matching scientific names, resolve taxonomic discrepancies between datasets, or disambiguate homonyms using local checklists."
 homepage: https://github.com/gnames/gndiff
 ---
+
 
 # gndiff
 

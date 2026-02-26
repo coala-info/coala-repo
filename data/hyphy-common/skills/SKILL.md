@@ -1,8 +1,9 @@
 ---
 name: hyphy-common
-description: HyPhy is a comprehensive software suite designed for the analysis of genetic sequences using stochastic evolutionary models.
+description: HyPhy is a software suite for analyzing genetic sequences using stochastic evolutionary models to detect signatures of natural selection. Use when user asks to perform gene-wide selection tests, identify branch-specific episodic selection, detect site-specific selection, or compare selection pressure between lineages.
 homepage: http://hyphy.org/
 ---
+
 
 # hyphy-common
 

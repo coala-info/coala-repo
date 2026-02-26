@@ -1,8 +1,9 @@
 ---
 name: bioconductor-idmappingretrieval
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool facilitates biological identifier mapping and annotation retrieval from online services like Ensembl, NetAffx, and EnVision using a two-tier caching system. Use when user asks to retrieve ID maps, manage one-to-many identifier mappings, or fetch annotation data frames for microarray platforms.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/IdMappingRetrieval.html
 ---
+
 
 # bioconductor-idmappingretrieval
 

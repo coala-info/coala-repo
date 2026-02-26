@@ -1,8 +1,9 @@
 ---
 name: hybkit
-description: `hybkit` is a specialized bioinformatic suite designed for the processing and analysis of RNA proximity-ligation data.
+description: hybkit is a bioinformatic suite for processing, filtering, and analyzing chimeric RNA proximity-ligation data. Use when user asks to validate hyb files, annotate chimeric fragments, filter hybrid populations, or perform statistical analysis and visualization of RNA-RNA interactions.
 homepage: https://github.com/RenneLab/hybkit
 ---
+
 
 # hybkit
 

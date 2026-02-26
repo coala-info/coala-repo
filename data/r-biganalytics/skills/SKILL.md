@@ -1,8 +1,9 @@
 ---
 name: r-biganalytics
-description: "Extend the 'bigmemory' package with various analytics.     Functions 'bigkmeans' and 'binit' may also be used with native R objects.     For 'tapply'-like functions, the bigtabulate package may also be helpful.     For linear algebra support, see 'bigalgebra'.  For mutex (locking) support     for advanced shared-memory usage, see 'synchronicity'.</p>"
+description: This tool performs analytics and statistical modeling on massive datasets using big.matrix objects from the bigmemory ecosystem. Use when user asks to run k-means clustering, fit linear or generalized linear models, calculate column statistics, or perform data binning on large-scale data.
 homepage: https://cloud.r-project.org/web/packages/biganalytics/index.html
 ---
+
 
 # r-biganalytics
 

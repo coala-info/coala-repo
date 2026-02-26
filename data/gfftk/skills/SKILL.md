@@ -1,8 +1,9 @@
 ---
 name: gfftk
-description: gfftk is a specialized toolkit designed for the management and transformation of genomic annotation data.
+description: gfftk is a toolkit for managing, transforming, and filtering genomic annotation data. Use when user asks to convert between GFF3 and GTF formats, extract protein or transcript sequences, filter annotations by attributes, or sanitize genomic files.
 homepage: https://github.com/nextgenusfs/gfftk
 ---
+
 
 # gfftk
 

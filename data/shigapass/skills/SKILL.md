@@ -1,8 +1,9 @@
 ---
 name: shigapass
-description: ShigaPass is an *in silico* command-line tool designed for the high-resolution taxonomic classification of *Shigella* strains.
+description: ShigaPass performs high-resolution taxonomic classification and serotype prediction for Shigella strains using assembled genomes. Use when user asks to classify Shigella species, distinguish Shigella from enteroinvasive E. coli, or predict Shigella serotypes from genomic data.
 homepage: https://github.com/imanyass/ShigaPass/
 ---
+
 
 # shigapass
 

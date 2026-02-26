@@ -1,13 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - machina
-  - generatemigrationtrees
+baseCommand: generatemigrationtrees
 label: machina_generatemigrationtrees
-doc: "A tool within the MACHINA suite for generating migration trees. (Note: The provided
-  help text contained only system error messages and no usage information; therefore,
-  no arguments could be extracted.)\n\nTool homepage: https://github.com/raphael-group/machina"
-inputs: []
+doc: "Generates migration trees for anatomical sites.\n\nTool homepage: https://github.com/raphael-group/machina"
+inputs:
+  - id: anatomical_sites
+    type: string
+    doc: Anatomical sites for which to generate migration trees.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

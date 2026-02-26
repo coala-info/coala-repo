@@ -1,8 +1,9 @@
 ---
 name: glob2
-description: The `glob2` skill provides an enhanced version of Python's built-in `glob` module.
+description: The glob2 tool provides enhanced file pattern matching with support for recursive globstar patterns and the ability to capture specific wildcard matches. Use when user asks to perform recursive file searches, capture metadata from file paths using wildcards, or implement custom globbing for non-standard filesystems.
 homepage: https://github.com/miracle2k/python-glob2
 ---
+
 
 # glob2
 

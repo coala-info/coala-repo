@@ -1,8 +1,9 @@
 ---
 name: mashpit
-description: Mashpit is a lightweight genomic epidemiology platform that utilizes Mash signatures (min-hash sketches) to facilitate fast and efficient comparison of genomic assemblies.
+description: Mashpit is a genomic epidemiology platform that uses min-hash sketches to perform fast comparisons and surveillance of genomic assemblies. Use when user asks to build a genomic database from NCBI taxa or accessions, query local assemblies against a reference database, or visualize phylogenetic relationships between samples.
 homepage: https://github.com/tongzhouxu/mashpit
 ---
+
 
 # mashpit
 

@@ -3,7 +3,21 @@
 ## cyntenator
 
 ### Tool Description
-A tool for synteny alignment (Note: The provided text contains container build errors and no help documentation; therefore, no arguments could be extracted).
+guide-tree: -t "((rat.txt mouse.txt ) human.txt)"
+Homology: -h id -h blast [file] -h orthologs [file] -h phylo [file] [weighted_tree]
+Alignment Parameters:
+	-thr	threshold (4)
+	-gap	gap (-2)
+	-mis	mismatch (-3)
+
+Filter options:
+	-filter [int] best alignments or only unique assignments n=0 (100)
+	-coverage [int] each gene may occur only c times in alignments (2)
+	-length [int] minimum alignment length treshold (1)
+	-last prints only the alignments at the last step
+
+Output:
+	-o output file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cyntenator:0.0.r2326--h9948957_4
@@ -18,14 +32,27 @@ A tool for synteny alignment (Note: The provided text contains container build e
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cyntenator:0.0.r2326--h9948957_4 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-1011356897/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+program -t guide-tree -h homology_type ... 
+guide-tree:
+	-t "((rat.txt mouse.txt ) human.txt)"
+Homology:
+	-h id
+	-h blast [file]
+	-h orthologs [file]
+	-h phylo [file] [weighted_tree]
+
+Alignment Parameters:
+	-thr	threshold (4)
+	-gap	gap (-2)
+	-mis	mismatch (-3)
+
+Filter options:
+	-filter [int] best alignments or only unique assignments n=0 (100)
+	-coverage [int] each gene may occur only c times in alignments (2)
+	-length [int] minimum alignment length treshold (1)
+	-last prints only the alignments at the last step
+
+Output:
+	-o output file
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneselectmmd
-description: the package is available on all platforms; click for details.
+description: This package implements a marginal mixture model to identify differentially expressed genes between two tissue types while estimating error rates like FDR and FNR. Use when user asks to select differentially expressed genes, estimate false discovery rates from gene expression data, or fit a three-component multivariate normal mixture model to genomic profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneSelectMMD.html
 ---
+
 
 # bioconductor-geneselectmmd
 

@@ -1,8 +1,9 @@
 ---
 name: ddipy
-description: The `ddipy` skill provides a specialized interface for interacting with the Omics Discovery Index (OmicsDI).
+description: The ddipy tool provides an interface to search, retrieve metadata, and download datasets from the Omics Discovery Index across various biological repositories. Use when user asks to search for omics datasets, retrieve dataset metadata by accession, list available data links, or download files from repositories like PRIDE and BioModels.
 homepage: https://github.com/OmicsDI/ddipy
 ---
+
 
 # ddipy
 

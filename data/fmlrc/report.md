@@ -3,7 +3,7 @@
 ## fmlrc
 
 ### Tool Description
-FMLRC (FM-index Long Read Corrector) is a tool for correcting long read sequencing data using a BWT/FM-index of short read data.
+FMLRC (FM-index Long Read Corrector) is a tool for correcting long reads (like Oxford Nanopore or Pacific Biosciences) using a BWT of short read sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fmlrc:1.0.0--h9948957_6
@@ -18,11 +18,13 @@ FMLRC (FM-index Long Read Corrector) is a tool for correcting long read sequenci
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fmlrc:1.0.0--h9948957_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1641686829: no space left on device
+Unable to find image 'quay.io/biocontainers/fmlrc:1.0.0--h9948957_6' locally
+1.0.0--h9948957_6: Pulling from biocontainers/fmlrc
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+e1a290abb57e: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3586772576: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: riassigner
-description: The riassigner tool is a Python-based utility designed to standardize Gas Chromatography-Mass Spectrometry (GC-MS) data by converting experimental retention times into retention indices.
+description: The riassigner tool converts experimental gas chromatography-mass spectrometry retention times into standardized retention indices using reference datasets. Use when user asks to convert retention times to retention indices, standardize GC-MS data across different instruments, or compute RI values using Kovats or CubicSpline interpolation methods.
 homepage: https://github.com/RECETOX/RIAssigner
 ---
+
 
 # riassigner
 

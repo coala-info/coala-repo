@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cyp450cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environments and coordinate mapping for the cyp450 Affymetrix microarray platform. Use when user asks to load cyp450 chip definitions, map probe coordinates to indices, or process raw Affymetrix data for the cyp450 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cyp450cdf.html
 ---
+
 
 # bioconductor-cyp450cdf
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu6800subbcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Hu6800subB array to map probe coordinates and structural information. Use when user asks to map probe coordinates to indices, access CDF environment data, or determine chip dimensions for the Hu6800subB array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800subbcdf.html
 ---
+
 
 # bioconductor-hu6800subbcdf
 

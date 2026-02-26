@@ -1,7 +1,8 @@
 ---
 name: adam
-description: Distributed genomics analysis platform built on Apache Spark, Avro, and Parquet. Use this skill when you need to perform scalable genomic data processing, convert legacy formats (SAM, BAM, CRAM, VCF, BED, GFF3, GTF) into columnar Parquet format, or execute parallelized genomic transformations across a cluster.
+description: ADAM is a distributed genomics analysis platform that parallelizes bioinformatics workflows using Apache Spark and schema-aligned Parquet data. Use when user asks to convert legacy genomic files to Parquet, mark duplicates, recalibrate base quality scores, sort reads, or perform large-scale genomic transformations.
 ---
+
 
 # ADAM: Distributed Genomics Analysis
 

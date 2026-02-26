@@ -1,8 +1,9 @@
 ---
 name: ucsc-ticktodate
-description: The `ucsc-ticktodate` utility is a specialized command-line tool from the UCSC Genome Browser "kent" source tree.
+description: This tool converts Unix epoch timestamps into standard calendar dates and clock times. Use when user asks to convert Unix epoch timestamps to dates, transform ticks to dates, interpret time-based metadata, or audit file timestamps.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-ticktodate
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotationforge
-description: the package is available on all platforms; click for details.
+description: AnnotationForge provides tools for building Bioconductor annotation resources, including organism-level, chip-specific, and probe sequence packages. Use when user asks to create custom OrgDb packages from NCBI or data frames, build chip-specific annotation databases, or generate probe sequence packages.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationForge.html
 ---
+
 
 # bioconductor-annotationforge
 

@@ -1,8 +1,9 @@
 ---
 name: nopilesum
-description: nopilesum is a specialized tool written in D that performs allele counting to produce results similar to GATK4's GetPileupSummaries.
+description: nopilesum performs allele counting on genomic alignments against known variant sites to produce summaries similar to GATK4's GetPileupSummaries. Use when user asks to summarize genomic alignments, count alleles at known variant sites, or perform lightweight pileup summaries with low memory usage.
 homepage: https://github.com/blachlylab/nopilesum
 ---
+
 
 # nopilesum
 

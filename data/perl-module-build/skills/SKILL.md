@@ -1,8 +1,9 @@
 ---
 name: perl-module-build
-description: This skill provides guidance for managing Perl software distributions using the `Module::Build` system.
+description: This tool manages the lifecycle of Perl software distributions using the Module::Build system. Use when user asks to configure, build, test, or install Perl modules, manage dependencies, or specify custom installation directories.
 homepage: http://metacpan.org/pod/Module-Build
 ---
+
 
 # perl-module-build
 

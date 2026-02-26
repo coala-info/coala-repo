@@ -3,110 +3,38 @@
 ## searchgui
 
 ### Tool Description
-The provided text is an error log regarding a container build failure (no space left on device) and does not contain help text or command-line argument definitions.
+SearchGUI is a graphical user interface for the PeptideShaker software suite, designed to facilitate the analysis of mass spectrometry data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0
-- **Homepage**: https://github.com/CompOmics/searchgui
-- **Package**: Not found
+- **Homepage**: https://github.com/compomics/searchgui
+- **Package**: https://anaconda.org/channels/bioconda/packages/searchgui/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/searchgui/overview
 - **Total Downloads**: 751.5K
 - **Last updated**: 2025-07-16
-- **GitHub**: https://github.com/CompOmics/searchgui
+- **GitHub**: https://github.com/compomics/searchgui
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5a1fde3461164e427186ea3f2931ea52f75c5d1e0473a4c0080a8bb1c4a3a6eb: unpack entry: usr/local/bin/mono-sgen: unpack to regular file: short write: write /tmp/build-temp-3442120247/rootfs/usr/local/bin/mono-sgen: no space left on device
-```
+Command line: 
+/usr/local/lib/jvm/bin/java -splash:resources/conf/searchgui-splash.png -Xms128M -Xmx4096M -cp /usr/local/share/searchgui-4.3.15-0/SearchGUI-4.3.15.jar eu.isas.searchgui.gui.SearchGUI --help 
 
+Exception in thread "main" java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it,
 
-## Metadata
-- **Skill**: generated
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:164)
+	at java.desktop/java.awt.Window.<init>(Window.java:553)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at eu.isas.searchgui.gui.SearchGUI.<init>(SearchGUI.java:268)
+	at eu.isas.searchgui.gui.SearchGUI.main(SearchGUI.java:7691)
+Process exitValue: 1
 
-## searchgui_IdentificationParametersCLI
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It is a system error log indicating a failure to build a Singularity/Apptainer container image due to insufficient disk space ('no space left on device').
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0
-- **Homepage**: https://github.com/CompOmics/searchgui
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5a1fde3461164e427186ea3f2931ea52f75c5d1e0473a4c0080a8bb1c4a3a6eb: unpack entry: usr/local/bin/mono-sgen: unpack to regular file: short write: write /tmp/build-temp-2216597225/rootfs/usr/local/bin/mono-sgen: no space left on device
-```
-
-## searchgui_SearchCLI
-
-### Tool Description
-SearchGUI is a tool for protein identification. (Note: The provided text is a system error log and does not contain CLI help information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0
-- **Homepage**: https://github.com/CompOmics/searchgui
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5a1fde3461164e427186ea3f2931ea52f75c5d1e0473a4c0080a8bb1c4a3a6eb: unpack entry: usr/local/bin/mono-sgen: unpack to regular file: short write: write /tmp/build-temp-1737289560/rootfs/usr/local/bin/mono-sgen: no space left on device
-```
-
-## searchgui_FastaCLI
-
-### Tool Description
-Note: The provided text does not contain help information or usage instructions. It contains system error logs regarding a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0
-- **Homepage**: https://github.com/CompOmics/searchgui
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5a1fde3461164e427186ea3f2931ea52f75c5d1e0473a4c0080a8bb1c4a3a6eb: unpack entry: usr/local/bin/mono-sgen: unpack to regular file: short write: write /tmp/build-temp-2126100755/rootfs/usr/local/bin/mono-sgen: no space left on device
-```
-
-## searchgui_PathSettingsCLI
-
-### Tool Description
-The provided text contains system log information and error messages regarding a container build failure ('no space left on device') rather than the help text for the tool. Consequently, no arguments could be extracted from the provided input.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0
-- **Homepage**: https://github.com/CompOmics/searchgui
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/searchgui:4.3.15--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5a1fde3461164e427186ea3f2931ea52f75c5d1e0473a4c0080a8bb1c4a3a6eb: unpack entry: usr/local/bin/mono-sgen: unpack to regular file: short write: write /tmp/build-temp-4184383095/rootfs/usr/local/bin/mono-sgen: no space left on device
+Unknown error: exception in thread "main" java.awt.headlessexception: no x11 display variable was set,or no headful library support was found,but this program performed an operation which requires it,	at java.desktop/java.awt.graphicsenvironment.checkheadless(graphicsenvironment.java:164)	at java.desktop/java.awt.window.<init>(window.java:553)	at java.desktop/java.awt.frame.<init>(frame.java:428)	at java.desktop/java.awt.frame.<init>(frame.java:393)	at java.desktop/javax.swing.jframe.<init>(jframe.java:180)	at eu.isas.searchgui.gui.searchgui.<init>(searchgui.java:268)	at eu.isas.searchgui.gui.searchgui.main(searchgui.java:7691)
 ```
 

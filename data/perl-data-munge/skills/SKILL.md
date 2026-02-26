@@ -1,8 +1,9 @@
 ---
 name: perl-data-munge
-description: The `perl-data-munge` skill provides access to the `Data::Munge` Perl module, a collection of utility functions designed to simplify common data processing tasks.
+description: This tool provides a collection of Perl utility functions for functional-style data transformation, string manipulation, and efficient file handling. Use when user asks to perform non-destructive substitutions, generate optimized regular expressions from lists, trim whitespace, slurp filehandles, or check for element membership in arrays.
 homepage: http://metacpan.org/pod/Data::Munge
 ---
+
 
 # perl-data-munge
 

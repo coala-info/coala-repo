@@ -1,8 +1,9 @@
 ---
 name: bioconductor-herper
-description: the package is available on all platforms; click for details.
+description: Herper provides an interface to install and manage Conda-based software and system requirements directly within the R environment. Use when user asks to install Conda tools from R, manage external dependencies for R packages, or automate Miniconda setup for bioinformatics workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/Herper.html
 ---
+
 
 # bioconductor-herper
 

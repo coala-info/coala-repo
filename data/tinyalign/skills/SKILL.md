@@ -1,8 +1,10 @@
 ---
 name: tinyalign
-description: tinyalign is a high-performance Python module, partially implemented in Cython, designed for fast string distance calculations.
+description: tinyalign calculates string distances, including edit and Hamming distance, with a focus on performance for short sequences. Use when user asks to calculate string distance, calculate edit distance, calculate Hamming distance, compare short sequences, or check if string distance is below a certain threshold.
 homepage: https://github.com/marcelm/tinyalign/
 ---
+
+
 
 # tinyalign
 

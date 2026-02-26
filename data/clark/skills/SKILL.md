@@ -1,8 +1,9 @@
 ---
 name: clark
-description: CLARK (CLAssifier based on Reduced K-mers) is a high-performance sequence classification system designed for genomics and metagenomics.
+description: CLARK is a high-performance sequence classification system that assigns taxonomic labels to DNA reads using discriminative k-mers. Use when user asks to classify metagenomic reads, define taxonomic targets, build reference databases, or estimate the abundance of microbial communities.
 homepage: https://github.com/rouni001/CLARK
 ---
+
 
 # clark
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-profia
-description: the package is available on all platforms; click for details.
+description: The proFIA package processes Flow Injection Analysis coupled to High-Resolution Mass Spectrometry (FIA-HRMS) data. Use when user asks to preprocess FIA-HRMS data, perform peak detection, or quantify metabolites in mass spectrometry datasets.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/proFIA.html
 ---
+
 
 # bioconductor-profia
 

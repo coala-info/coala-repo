@@ -1,8 +1,9 @@
 ---
 name: perl-test-simple
-description: This skill facilitates the creation of robust Perl test suites.
+description: "This tool facilitates the creation and execution of Perl test suites using the Test::Simple and Test::More frameworks. Use when user asks to write Perl test scripts, compare data structures with is_deeply, manage test plans, or run tests using the prove harness."
 homepage: http://metacpan.org/pod/Test-Simple
 ---
+
 
 # perl-test-simple
 

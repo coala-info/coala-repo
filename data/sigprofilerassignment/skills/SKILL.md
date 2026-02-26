@@ -1,8 +1,9 @@
 ---
 name: sigprofilerassignment
-description: SigProfilerAssignment is a computational tool designed to map established mutational signatures to genomic data.
+description: SigProfilerAssignment maps established mutational signatures to genomic data to determine signature activity and calculate specific mutation counts. Use when user asks to assign mutational signatures to samples, perform signature refitting, or calculate the contribution of mutational processes from VCF, MAF, or matrix files.
 homepage: https://github.com/AlexandrovLab/SigProfilerAssignment.git
 ---
+
 
 # sigprofilerassignment
 

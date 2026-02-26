@@ -1,8 +1,9 @@
 ---
 name: mapgl
-description: The `mapgl` tool performs phylogenetic mapping to label genomic regions as orthologous, gained in a query species, or lost in a target species.
+description: The mapgl tool performs phylogenetic mapping to label genomic regions as orthologous, gained, or lost across species using a maximum-parsimony algorithm. Use when user asks to label genomic regions by evolutionary history, predict feature presence in a common ancestor, or track the gain and loss of regulatory elements across a phylogenetic tree.
 homepage: https://github.com/adadiehl/mapGL
 ---
+
 
 # mapgl
 

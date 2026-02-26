@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ensdb.rnorvegicus.v79
-description: the package is available on all platforms; click for details.
+description: This package provides Ensembl-based genome annotations for Rattus norvegicus based on Ensembl version 79. Use when user asks to retrieve gene, transcript, or exon information, map genomic coordinates, or filter rat genomic features by attributes like biotype or chromosome.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Rnorvegicus.v79.html
 ---
+
 
 # bioconductor-ensdb.rnorvegicus.v79
 

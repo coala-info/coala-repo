@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromheatmap
-description: the package is available on all platforms; click for details.
+description: The ChromHeatMap package visualizes genomic expression data as heatmaps plotted along specific chromosomal coordinates and cytogenetic bands. Use when user asks to plot expression data by chromosome, visualize genomic data with ideograms, or interactively identify genes from chromosomal heatmaps.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChromHeatMap.html
 ---
+
 
 # bioconductor-chromheatmap
 

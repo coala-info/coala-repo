@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mafh5.gnomad.v3.1.1.grch38
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides minor allele frequency data from gnomAD version 3.1.1 for the GRCh38 human genome assembly in HDF5 format. Use when user asks to retrieve minor allele frequencies, annotate genomic variants with gnomAD data, or query population frequency information for the GRCh38 reference genome.
 homepage: https://bioconductor.org/packages/3.13/data/annotation/html/MafH5.gnomAD.v3.1.1.GRCh38.html
 ---
+
 
 # bioconductor-mafh5.gnomad.v3.1.1.grch38
 

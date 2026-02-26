@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cemitool
-description: the package is available on all platforms; click for details.
+description: CEMiTool performs automated gene co-expression network analysis, module identification, and functional enrichment. Use when user asks to identify gene modules from expression data, perform GSEA or ORA, visualize gene interactions, or find hub genes within co-expression networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/CEMiTool.html
 ---
+
 
 # bioconductor-cemitool
 

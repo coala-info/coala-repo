@@ -1,8 +1,9 @@
 ---
 name: psmc
-description: The PSMC skill enables the reconstruction of a population's demographic history by analyzing the density of heterozygous sites across a diploid genome.
+description: PSMC reconstructs historical population size fluctuations by analyzing the density of heterozygous sites in a diploid genome. Use when user asks to estimate effective population size history, model demographic changes from a single genome, or perform Markovian coalescent inference.
 homepage: https://github.com/lh3/psmc
 ---
+
 
 # psmc
 

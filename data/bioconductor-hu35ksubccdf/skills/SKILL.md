@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksubccdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Hu35KsubC microarray. Use when user asks to map probe coordinates to indices, access CDF environment metadata, or process Affymetrix Human Genome Hu35K sub-chip C data in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubccdf.html
 ---
+
 
 # bioconductor-hu35ksubccdf
 

@@ -1,11 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igblast-parser
+baseCommand: python
 label: igblast-parser
-doc: "A tool for parsing IgBLAST output. (Note: The provided text contains system
-  error messages regarding container execution and does not include the tool's help
-  documentation or argument list.)\n\nTool homepage: https://github.com/aerijman/igblast-parser"
-inputs: []
+doc: "Parses IGBLAST output.\n\nTool homepage: https://github.com/aerijman/igblast-parser"
+inputs:
+  - id: in_igblast_output
+    type: File
+    doc: IGBLAST output file
+    inputBinding:
+      position: 101
+      prefix: --in
+  - id: out_filename_prefix
+    type: string
+    doc: Output filename prefix
+    inputBinding:
+      position: 101
+      prefix: --out
 outputs:
   - id: stdout
     type: stdout

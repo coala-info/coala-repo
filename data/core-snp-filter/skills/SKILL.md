@@ -1,8 +1,9 @@
 ---
 name: core-snp-filter
-description: `core-snp-filter` is a high-performance utility for refining DNA pseudo-alignments.
+description: core-snp-filter refines DNA pseudo-alignments by filtering out invariant sites and sites with excessive gaps or ambiguous bases. Use when user asks to extract variant sites, create strict or relaxed core SNP alignments, or calculate constant site counts for IQ-TREE.
 homepage: https://github.com/rrwick/Core-SNP-filter
 ---
+
 
 # core-snp-filter
 

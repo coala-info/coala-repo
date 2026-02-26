@@ -1,8 +1,9 @@
 ---
 name: itsxpress
-description: itsxpress is a specialized tool designed for the rapid extraction of ITS sequences from raw FASTQ data.
+description: itsxpress extracts Internal Transcribed Spacer (ITS) sequences from fungal, plant, or other eukaryotic FASTQ data using Hidden Markov Models. Use when user asks to trim ITS regions from raw reads, extract ITS1 or ITS2 sequences for ASV workflows, or process paired-end and single-end marker gene datasets.
 homepage: http://github.com/usda-ars-gbru/itsxpress
 ---
+
 
 # itsxpress
 

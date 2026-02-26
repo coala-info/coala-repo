@@ -1,8 +1,9 @@
 ---
 name: r-cp4p
-description: Functions to check whether a vector of p-values respects the assumptions of FDR (false discovery rate) control procedures and to compute adjusted p-values.</p>
+description: This tool validates p-value distributions and performs False Discovery Rate correction for proteomics data analysis. Use when user asks to generate calibration plots, estimate the proportion of true null hypotheses, or calculate adjusted p-values.
 homepage: https://cran.r-project.org/web/packages/cp4p/index.html
 ---
+
 
 # r-cp4p
 

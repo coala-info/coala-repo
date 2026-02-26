@@ -1,8 +1,9 @@
 ---
 name: dodge
-description: DODGE (Dynamic Outbreak Detection for Genomic Epidemiology) is a specialized tool for public health microbiology that identifies bacterial outbreak clusters from large-scale genomic datasets.
+description: DODGE identifies bacterial outbreak clusters from genomic datasets by integrating genetic differences with temporal metadata for continuous surveillance. Use when user asks to identify investigation clusters, perform longitudinal outbreak detection, analyze cgMLST or SNP-based genomic data, or establish background population clusters.
 homepage: https://github.com/LanLab/dodge
 ---
+
 
 # dodge
 

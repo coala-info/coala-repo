@@ -3,7 +3,7 @@
 ## linearfold
 
 ### Tool Description
-Linear-time RNA secondary structure prediction
+Predict RNA secondary structure using the LinearFold algorithm.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/linearfold:1.0.1.dev20220829--h9948957_2
@@ -18,29 +18,36 @@ Linear-time RNA secondary structure prediction
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/linearfold:1.0.1.dev20220829--h9948957_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2094937080: no space left on device
-```
+USAGE: echo SEQUENCE | /usr/local/bin/linearfold [flags]
+       or
+       echo FASTA_FILE | /usr/local/bin/linearfold [flags]
 
-
-## Metadata
-- **Skill**: generated
-
-## linearfold_draw_circular_plot
-
-### Tool Description
-A tool for drawing circular plots for LinearFold RNA secondary structure predictions. (Note: The provided text contains system error messages regarding container execution and does not include usage instructions or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/linearfold:1.0.1.dev20220829--h9948957_2
-- **Homepage**: https://github.com/LinearFold/LinearFold
-- **Package**: https://anaconda.org/channels/bioconda/packages/linearfold/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/linearfold:1.0.1.dev20220829--h9948957_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4103805596: no space left on device
+flags:
+  -V,--[no]Vienna: use vienna parameters
+    (default: 'false')
+  -b,--beamsize: set beam size
+    (default: '100')	    (an integer)
+  --[no]constraints: print out energy of a given structure
+    (default: 'false')
+  -d,--dangles: the way to treat `dangling end' energies for bases adjacent to
+    helices in free ends and multi-loops (only supporting `0' or `2',
+    default=`2')
+    (default: '2')	    (an integer)
+  --delta: compute Zuker suboptimal structures with scores or energies(-V,
+    kcal/mol) in a centain range of the optimum
+    (default: '5.0')	    (a number)
+  --[no]eval: print out energy of a given structure
+    (default: 'false')
+  --[no]fasta: input is in fasta format
+    (default: 'false')
+  --shape: specify a file name that contains SHAPE reactivity data (DEFAULT: not
+    use SHAPE data)
+    (default: '')
+  --[no]sharpturn: enable sharp turn in prediction
+    (default: 'false')
+  -v,--[no]verbose: print out energy of each loop in the structure
+    (default: 'false')
+  --[no]zuker: output Zuker suboptimal structures
+    (default: 'false')
 ```
 

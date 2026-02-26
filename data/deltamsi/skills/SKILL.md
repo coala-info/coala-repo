@@ -1,8 +1,9 @@
 ---
 name: deltamsi
-description: DeltaMSI is a specialized bioinformatics tool that leverages machine learning—specifically Logistic Regression and Support Vector Machines (SVM)—to automate the screening of microsatellite instability in solid tumors.
+description: DeltaMSI uses machine learning to automate the screening of microsatellite instability in solid tumors from next-generation sequencing data. Use when user asks to train a new MSI detection model, predict MSI status for unknown samples, or evaluate microsatellite length profiles.
 homepage: https://github.com/RADar-AZDelta/DeltaMSI
 ---
+
 
 # deltamsi
 

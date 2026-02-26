@@ -1,8 +1,9 @@
 ---
 name: chromeister
-description: Chromeister is a high-performance tool designed for coarse-grained genomic analysis.
+description: Chromeister performs coarse-grained genomic comparisons to identify conserved signals and structural variations between large sequences or full genomes. Use when user asks to generate dotplots, identify synteny blocks, detect large-scale genome rearrangements, or perform all-vs-all genomic comparisons.
 homepage: https://github.com/estebanpw/chromeister
 ---
+
 
 # chromeister
 

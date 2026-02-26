@@ -1,8 +1,9 @@
 ---
 name: elph
-description: The elph skill facilitates the use of the Elpher client, a specialized browser for Emacs designed to access Gopher and Gemini "small web" spaces.
+description: The elph skill enables the use of the Elpher client within Emacs to browse Gopher, Gemini, and Finger protocols. Use when user asks to access non-HTTP small web content, navigate Gopher or Gemini spaces, or view text-heavy protocols directly in Emacs.
 homepage: https://github.com/emacsmirror/elpher
 ---
+
 
 # elph
 

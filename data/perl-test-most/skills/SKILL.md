@@ -1,8 +1,9 @@
 ---
 name: perl-test-most
-description: This skill facilitates the use of `Test::Most`, a "greatest hits" collection of Perl testing modules.
+description: This tool provides a unified interface for common Perl testing modules to reduce boilerplate and manage test failure behavior. Use when user asks to streamline unit testing, perform deep data structure comparisons, handle exceptions in tests, or stop test execution upon the first failure.
 homepage: http://metacpan.org/pod/Test-Most
 ---
+
 
 # perl-test-most
 

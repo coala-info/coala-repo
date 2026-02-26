@@ -1,8 +1,9 @@
 ---
 name: plotsr
-description: plotsr is a specialized visualization tool designed to generate high-quality comparative genomics plots.
+description: plotsr generates high-quality comparative genomics plots to visualize structural variations and syntenic blocks across multiple genomes. Use when user asks to visualize structural rearrangements, plot synteny between multiple genomes, or create comparative genomic diagrams from SyRI or BEDPE files.
 homepage: https://github.com/schneebergerlab/plotsr
 ---
+
 
 # plotsr
 

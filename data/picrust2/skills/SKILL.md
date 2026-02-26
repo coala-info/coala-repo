@@ -1,8 +1,9 @@
 ---
 name: picrust2
-description: PICRUSt2 (Phylogenetic Investigation of Communities by Reconstruction of Unobserved States) is a bioinformatics framework that predicts the functional content of a microbial community based on marker gene data.
+description: PICRUSt2 predicts the functional potential of microbial communities by reconstructing unobserved states from marker gene data. Use when user asks to predict metabolic functions from amplicon sequences, infer KEGG or MetaCyc pathway abundances, or perform hidden-state prediction for microbial samples.
 homepage: https://github.com/picrust/picrust2
 ---
+
 
 # picrust2
 

@@ -1,8 +1,9 @@
 ---
 name: rmats2sashimiplot
-description: rmats2sashimiplot is a specialized visualization tool that produces sashimi plots—diagrams that combine RNA-seq read depth histograms with arcs representing splice junctions.
+description: rmats2sashimiplot creates sashimi plots that visualize RNA-seq read depth and splice junctions from rMATS results or genomic coordinates. Use when user asks to visualize differential splicing events, generate sashimi plots from BAM files, or compare transcript isoforms across different experimental conditions.
 homepage: https://github.com/Xinglab/rmats2sashimiplot
 ---
+
 
 # rmats2sashimiplot
 

@@ -1,8 +1,9 @@
 ---
 name: veryfasttree
-description: VeryFastTree is a highly-tuned implementation of the FastTree-2 algorithm designed for modern multi-core processors.
+description: VeryFastTree infers phylogenetic trees from sequence alignments using a highly optimized FastTree-2 algorithm. Use when user asks to infer phylogenetic trees, optimize performance, handle large datasets, ensure deterministic results, or use specific evolutionary models.
 homepage: https://github.com/citiususc/veryfasttree
 ---
+
 
 # veryfasttree
 

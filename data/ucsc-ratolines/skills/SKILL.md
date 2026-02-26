@@ -1,8 +1,9 @@
 ---
 name: ucsc-ratolines
-description: The `ucsc-ratolines` tool (internally known as `raToLines`) is a specialized utility from the UCSC Kent toolset designed to transform the structure of `.ra` files.
+description: The ucsc-ratolines tool converts multi-line .ra file stanzas into single pipe-separated lines. Use when user asks to filter records in .ra files, extract specific fields from .ra files, or flatten .ra file stanzas.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-ratolines
 

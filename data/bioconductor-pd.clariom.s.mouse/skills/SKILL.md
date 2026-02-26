@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.clariom.s.mouse
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Clariom S mouse microarray. Use when user asks to process Clariom S mouse microarray data, annotate probe sets for the mouse Clariom S array, or perform low-level analysis of mouse Clariom S genomic data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.mouse.html
 ---
+
 
 # bioconductor-pd.clariom.s.mouse
 

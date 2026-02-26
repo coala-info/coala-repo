@@ -1,8 +1,9 @@
 ---
 name: binsanity
-description: BinSanity is a suite of scripts designed to transform metagenomic assemblies into high-quality bins.
+description: BinSanity clusters metagenomic contigs into high-quality bins using affinity propagation based on coverage depth and sequence composition. Use when user asks to bin metagenomic assemblies, generate coverage profiles from BAM files, or refine existing bins to improve completeness and reduce contamination.
 homepage: https://github.com/edgraham/BinSanity
 ---
+
 
 # binsanity
 

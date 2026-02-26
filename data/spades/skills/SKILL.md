@@ -1,8 +1,9 @@
 ---
 name: spades
-description: SPAdes (St.
+description: SPAdes is a genome assembly toolkit designed to reconstruct sequences from various sequencing technologies, particularly for small genomes like bacteria and viruses. Use when user asks to assemble genomes from Illumina or long-read data, perform metagenomic or single-cell assembly, or identify plasmids and transcriptomes.
 homepage: https://github.com/ablab/spades
 ---
+
 
 # spades
 

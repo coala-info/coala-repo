@@ -1,8 +1,9 @@
 ---
 name: arvados-cwl-runner
-description: The `arvados-cwl-runner` is the primary interface for orchestrating distributed computations within the Arvados ecosystem.
+description: arvados-cwl-runner orchestrates the execution of CWL workflows on the Arvados distributed computing platform. Use when user asks to submit workflows to a remote cluster, manage petabyte-scale data storage, or track provenance for bioinformatics pipelines.
 homepage: https://arvados.org
 ---
+
 
 # arvados-cwl-runner
 

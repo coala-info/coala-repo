@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bprmeth
-description: the package is available on all platforms; click for details.
+description: BPRMeth models, reconstructs, and clusters DNA methylation profiles using Basis Profile Regression to capture the functional shape of methylation landscapes. Use when user asks to represent methylation data as continuous functions, extract features for gene expression prediction, or cluster methylation patterns across genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/BPRMeth.html
 ---
+
 
 # bioconductor-bprmeth
 

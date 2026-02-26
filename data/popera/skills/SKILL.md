@@ -1,8 +1,9 @@
 ---
 name: popera
-description: Popera is a specialized bioinformatics tool designed for the identification of DNase I hypersensitive sites (DHS).
+description: Popera identifies DNase I hypersensitive sites by applying kernel smoothing to genomic signal data from sorted BAM files. Use when user asks to call DHS peaks, adjust peak-calling sensitivity through bandwidth and threshold parameters, or generate BigWig tracks for genome visualization.
 homepage: https://github.com/forrestzhang/Popera
 ---
+
 
 # popera
 

@@ -1,8 +1,9 @@
 ---
 name: campygstyper
-description: The `campygstyper` tool is a Python-based utility designed for the high-resolution taxonomic classification of *Campylobacter* species.
+description: The campygstyper tool performs high-resolution taxonomic classification of Campylobacter species by comparing query assemblies against a curated database of centroid genomes using fastANI. Use when user asks to classify Campylobacter isolates, determine genomic species identity, or identify potentially novel Campylobacter lineages.
 homepage: https://github.com/LanLab/campygstyper
 ---
+
 
 # campygstyper
 

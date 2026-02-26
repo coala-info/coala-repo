@@ -3,7 +3,7 @@
 ## fineradstructure
 
 ### Tool Description
-fineRADstructure: population structure inference from RADseq data. (Note: The provided text contains system error messages regarding container image conversion and does not include usage instructions or argument definitions.)
+Inference of population structure from RADseq data using fineRADstructure.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7
@@ -18,46 +18,14 @@ fineRADstructure: population structure inference from RADseq data. (Note: The pr
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1002317324: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7' locally
+0.3.2r109--h76b9af2_7: Pulling from biocontainers/fineradstructure
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+ca525407972c: Pulling fs layer
+ca525407972c: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob4046755064: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## fineradstructure_RADpainter
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container environment (Apptainer/Singularity) failing to build an image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7
-- **Homepage**: http://cichlid.gurdon.cam.ac.uk/fineRADstructure.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/fineradstructure/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3119289323: no space left on device
-```
-
-## fineradstructure_finestructure
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7
-- **Homepage**: http://cichlid.gurdon.cam.ac.uk/fineRADstructure.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/fineradstructure/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fineradstructure:0.3.2r109--h76b9af2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2367016959: no space left on device
+Run 'docker run --help' for more information
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: perl-graph-readwrite
-description: The `perl-graph-readwrite` skill provides a specialized interface for managing directed graph data structures.
+description: This tool provides a persistence layer for reading and writing Perl Graph objects across various file formats like XML, Dot, and HTK. Use when user asks to read or write graph data structures, convert between graph file formats, or export graphs for visualization in Graphviz.
 homepage: https://github.com/neilb/Graph-ReadWrite
 ---
+
 
 # perl-graph-readwrite
 

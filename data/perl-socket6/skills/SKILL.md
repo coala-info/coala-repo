@@ -1,8 +1,9 @@
 ---
 name: perl-socket6
-description: This skill provides guidance on using the `Socket6` Perl module to bridge the gap between traditional IPv4 networking and IPv6.
+description: This Perl module provides IPv6 networking support and protocol-independent address resolution. Use when user asks to handle IPv6 socket structures, perform protocol-independent name resolution with getaddrinfo, or convert between human-readable and binary IPv6 addresses.
 homepage: http://metacpan.org/pod/Socket6
 ---
+
 
 # perl-socket6
 

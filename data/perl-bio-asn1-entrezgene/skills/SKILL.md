@@ -1,8 +1,9 @@
 ---
 name: perl-bio-asn1-entrezgene
-description: This skill provides guidance on using the `Bio::ASN1::EntrezGene` parser to process NCBI Entrez Gene data.
+description: This tool parses NCBI Entrez Gene ASN.1 records into Perl data structures using a high-performance regular expression-based approach. Use when user asks to parse Entrez Gene data, extract gene symbols or genomic locations from ASN.1 files, or convert Entrez Gene records into other formats.
 homepage: http://search.cpan.org/dist/Bio-ASN1-EntrezGene
 ---
+
 
 # perl-bio-asn1-entrezgene
 

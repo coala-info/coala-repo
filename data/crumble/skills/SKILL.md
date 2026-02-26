@@ -1,8 +1,9 @@
 ---
 name: crumble
-description: Crumble is a specialized tool for the controlled lossy compression of genomic alignment data.
+description: Crumble performs controlled lossy compression of genomic alignment data by simplifying base quality scores while preserving essential variant information. Use when user asks to compress BAM or CRAM files, reduce quality score entropy, or preserve quality values in specific genomic regions.
 homepage: https://github.com/jkbonfield/crumble
 ---
+
 
 # crumble
 

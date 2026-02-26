@@ -1,8 +1,9 @@
 ---
 name: bioconductor-circrnaprofiler
-description: the package is available on all platforms; click for details.
+description: This package provides a computational framework for the downstream analysis, differential expression, and functional characterization of circular RNAs. Use when user asks to initialize a circRNA project, merge results from multiple detection tools, perform differential expression analysis, or extract sequences for motif and structural annotation.
 homepage: https://bioconductor.org/packages/release/bioc/html/circRNAprofiler.html
 ---
+
 
 # bioconductor-circrnaprofiler
 

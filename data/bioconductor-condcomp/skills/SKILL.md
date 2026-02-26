@@ -1,8 +1,9 @@
 ---
 name: bioconductor-condcomp
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs statistical comparisons of mixture model parameters across different experimental conditions. Use when user asks to compare mixture models, analyze condition-dependent components, or test for differences in distribution parameters between groups.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/condcomp.html
 ---
+
 
 # bioconductor-condcomp
 

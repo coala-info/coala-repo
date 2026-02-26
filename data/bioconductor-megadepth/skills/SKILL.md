@@ -1,8 +1,9 @@
 ---
 name: bioconductor-megadepth
-description: the package is available on all platforms; click for details.
+description: This R package provides a fast interface for quantifying genomic coverage and processing BigWig or BAM files. Use when user asks to calculate coverage, extract data from BigWig files, or summarize genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/megadepth.html
 ---
+
 
 # bioconductor-megadepth
 

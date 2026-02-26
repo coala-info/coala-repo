@@ -1,8 +1,9 @@
 ---
 name: bindash
-description: BinDash is a high-performance command-line utility designed for the comparison of massive genomic datasets, including pangenomes and metagenomes.
+description: BinDash estimates genomic distances and Average Nucleotide Identity between large datasets using a densified MinHash scheme. Use when user asks to sketch genomic sequences, calculate Jaccard Index, or perform fast all-vs-all distance estimations between genomes.
 homepage: https://github.com/zhaoxiaofei/bindash
 ---
+
 
 # bindash
 

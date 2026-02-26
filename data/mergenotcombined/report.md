@@ -1,9 +1,9 @@
 # mergenotcombined CWL Generation Report
 
-## mergenotcombined
+## mergenotcombined_mergeNotCombined
 
 ### Tool Description
-The provided text is a container runtime error log and does not contain the tool's help information or usage instructions.
+Merge Forward and reverse reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mergenotcombined:1.0--h503566f_4
@@ -18,11 +18,12 @@ The provided text is a container runtime error log and does not contain the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mergenotcombined:1.0--h503566f_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3839075262: no space left on device
+Merge Forward and reverse  reads
+version 1.0 December 2019
+Authors:
+Benavides A, Alzate JF and Cabarcas F
+
+Use:
+mergeNotCombined F1.fastq R1.fastq joinString
 ```
 
-
-## Metadata
-- **Skill**: generated

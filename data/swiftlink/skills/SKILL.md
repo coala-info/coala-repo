@@ -1,8 +1,9 @@
 ---
 name: swiftlink
-description: SwiftLink is a specialized genetic analysis tool designed to overcome the computational limitations of traditional linkage analysis software when dealing with large, complex pedigrees.
+description: SwiftLink is a genetic analysis tool that performs parametric linkage analysis on large, complex pedigrees using Markov Chain Monte Carlo algorithms. Use when user asks to calculate LOD scores, perform power analysis via expected LOD, or identify disease loci in high-density SNP data.
 homepage: https://github.com/ajm/swiftlink
 ---
+
 
 # swiftlink
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksubacdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment for the Affymetrix Hu35KsubA platform to map probe-level data to probesets. Use when user asks to map probes to probesets, convert between chip coordinates and indices, or process Affymetrix Hu35KsubA microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubacdf.html
 ---
+
 
 # bioconductor-hu35ksubacdf
 

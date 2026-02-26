@@ -1,8 +1,9 @@
 ---
 name: medcon
-description: The `medcon` skill facilitates the benchmarking of AI models against the MedConceptsQA dataset, an open-source framework designed to test medical concept knowledge.
+description: The medcon tool benchmarks AI models against the MedConceptsQA dataset to evaluate medical concept knowledge. Use when user asks to perform standardized medical QA evaluations, compare model performance on medical leaderboards, or run zero-shot and few-shot tests on HuggingFace or OpenAI models.
 homepage: https://github.com/nadavlab/MedConceptsQA
 ---
+
 
 # medcon
 

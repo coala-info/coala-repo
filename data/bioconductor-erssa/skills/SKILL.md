@@ -1,8 +1,9 @@
 ---
 name: bioconductor-erssa
-description: the package is available on all platforms; click for details.
+description: This tool performs empirical RNA-seq sample size analysis to determine if a dataset has sufficient biological replicates for differential expression discovery. Use when user asks to evaluate sample size sufficiency, estimate the marginal gain in differentially expressed gene discovery, or plan for additional sequencing replicates.
 homepage: https://bioconductor.org/packages/release/bioc/html/ERSSA.html
 ---
+
 
 # bioconductor-erssa
 

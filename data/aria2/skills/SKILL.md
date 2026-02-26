@@ -1,8 +1,9 @@
 ---
 name: aria2
-description: aria2 is a lightweight, high-performance download utility that excels at maximizing bandwidth by downloading files from multiple sources or through multiple connections simultaneously.
+description: aria2 is a lightweight, multi-protocol download utility that supports high-performance file transfers from multiple sources and connections. Use when user asks to download files via HTTP, FTP, BitTorrent, or Metalink, resume interrupted transfers, or manage downloads through a remote RPC interface.
 homepage: https://aria2.github.io/
 ---
+
 
 # aria2
 

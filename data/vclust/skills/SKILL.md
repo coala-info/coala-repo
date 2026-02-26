@@ -1,8 +1,9 @@
 ---
 name: vclust
-description: vclust is a high-performance, alignment-based tool designed for the comparative analysis of viral genomes.
+description: vclust is a high-performance tool for comparative analysis and clustering of viral genomes. Use when user asks to prefilter genome pairs, calculate ANI measures, cluster viral sequences, deduplicate genomes, assign vOTUs, or classify viral species and genus.
 homepage: https://github.com/refresh-bio/vclust
 ---
+
 
 # vclust
 

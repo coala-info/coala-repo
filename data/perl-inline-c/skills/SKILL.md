@@ -1,8 +1,9 @@
 ---
 name: perl-inline-c
-description: `Inline::C` is a powerful Perl module that allows you to write C code directly inside your Perl source files.
+description: perl-inline-c allows you to write and execute C code directly within Perl scripts to improve performance or interface with C libraries. Use when user asks to embed C functions in Perl, optimize performance-critical code sections, or link external C libraries without writing complex XS files.
 homepage: https://github.com/ingydotnet/inline-c-pm
 ---
+
 
 # perl-inline-c
 

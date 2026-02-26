@@ -1,8 +1,9 @@
 ---
 name: rebaler
-description: Rebaler is a specialized tool designed for bacterial genome assembly that leverages a reference sequence to guide the large-scale structure of long-read data.
+description: Rebaler performs reference-guided bacterial genome assembly by using long reads to generate a high-quality consensus sequence. Use when user asks to assemble bacterial genomes using a reference structure, create unpolished assemblies from long-read fragments, or rotate circular contigs for junction polishing.
 homepage: https://github.com/rrwick/Rebaler
 ---
+
 
 # rebaler
 

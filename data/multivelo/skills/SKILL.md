@@ -1,8 +1,9 @@
 ---
 name: multivelo
-description: MultiVelo is a mechanistic model that extends the standard RNA velocity framework by incorporating chromatin accessibility data.
+description: MultiVelo is a mechanistic model that predicts cell state dynamics by integrating chromatin accessibility with RNA velocity. Use when user asks to aggregate peaks into gene-linked accessibility scores, smooth chromatin data, or recover gene expression dynamics from multi-omic data.
 homepage: https://github.com/welch-lab/MultiVelo
 ---
+
 
 # multivelo
 

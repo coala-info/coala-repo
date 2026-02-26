@@ -1,8 +1,9 @@
 ---
 name: tb_variant_filter
-description: The `tb_variant_filter` tool is a specialized utility designed to refine variant calls for *M.
+description: This tool filters and refines variant calls for *M. tuberculosis* by masking problematic genomic regions and applying quality thresholds. Use when user asks to filter VCF files for TB-specific regions like PE/PPE genes, apply depth or allele frequency thresholds, or remove SNVs near indels.
 homepage: http://github.com/pvanheus/tb_variant_filter
 ---
+
 
 # tb_variant_filter
 

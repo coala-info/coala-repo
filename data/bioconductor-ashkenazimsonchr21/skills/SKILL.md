@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ashkenazimsonchr21
-description: the package is available on all platforms; click for details.
+description: This tool provides access to the AshkenazimSonChr21 dataset containing annotated variants from human chromosome 21 for the HG002 sample. Use when user asks to load GIAB Ashkenazim Trio son variants, perform rare variant analysis testing, or provide example data for the RareVariantVis package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AshkenazimSonChr21.html
 ---
+
 
 # bioconductor-ashkenazimsonchr21
 

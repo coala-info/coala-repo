@@ -1,8 +1,9 @@
 ---
 name: r-dgeclustering
-description: R package dgeclustering (documentation from project home).
+description: The r-dgeclustering package automates diagnostic plotting for RNA-seq datasets and performs multidimensional gene clustering integrated with Gene Ontology terms. Use when user asks to generate diagnostic plots from DGE files, cluster genes using expression and biological knowledge, or perform GO enrichment on gene clusters.
 homepage: https://cran.r-project.org/web/packages/dgeclustering/index.html
 ---
+
 
 # r-dgeclustering
 

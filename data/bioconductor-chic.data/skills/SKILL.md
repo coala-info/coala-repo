@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chic.data
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides reference datasets, metagene profiles, and pre-trained classification models for ChIP-seq quality control analysis. Use when user asks to load reference compendia, access pre-trained Random Forest models for experiment classification, or retrieve genomic annotation data for ChIP-seq quality assessment.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ChIC.data.html
 ---
+
 
 # bioconductor-chic.data
 

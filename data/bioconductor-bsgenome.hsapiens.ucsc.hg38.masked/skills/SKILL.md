@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the full masked genomic sequences for Homo sapiens based on the UCSC hg38/GRCh38.p14 assembly. Use when user asks to access masked human genome sequences, perform sequence analysis accounting for assembly gaps or repeats, and search for motifs in non-masked genomic regions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.masked.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg38.masked
 

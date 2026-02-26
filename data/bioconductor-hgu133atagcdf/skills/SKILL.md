@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133atagcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping for the Affymetrix HG-U133A Tag microarray. Use when user asks to map probe coordinates to indices, access CDF environment data, or determine chip dimensions for the HG-U133A Tag platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133atagcdf.html
 ---
+
 
 # bioconductor-hgu133atagcdf
 

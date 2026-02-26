@@ -1,8 +1,9 @@
 ---
 name: perl-digest-md5
-description: The `perl-digest-md5` skill provides the procedural knowledge required to interface with the MD5 algorithm using Perl.
+description: This tool provides an interface to the MD5 message-digest algorithm for calculating 128-bit fingerprints of data in Perl. Use when user asks to calculate MD5 checksums, generate hex or base64 digests for strings, or perform incremental hashing of large files.
 homepage: http://metacpan.org/pod/Digest-MD5
 ---
+
 
 # perl-digest-md5
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellid
-description: The package can also be used to explore functional pathways enrichment in single cell data.
+description: Bioconductor-cellid extracts per-cell gene signatures and performs cell identity recognition using Multiple Correspondence Analysis. Use when user asks to perform clustering-free cell type prediction, match cells across datasets, or conduct functional enrichment analysis on single-cell RNA-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/CelliD.html
 ---
+
 
 # bioconductor-cellid
 

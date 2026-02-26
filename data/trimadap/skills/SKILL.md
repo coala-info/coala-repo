@@ -1,8 +1,9 @@
 ---
 name: trimadap
-description: `trimadap` is a specialized C-based utility designed by Heng Li for the rapid removal of adapter sequences from Illumina sequencing data.
+description: `trimadap` rapidly removes adapter sequences from Illumina sequencing data using SSE2-accelerated Smith-Waterman alignment. Use when user asks to remove adapter sequences, clean Illumina sequencing data, trim 3'-end adapter sequences, adjust adapter trimming sensitivity, or use custom adapter sequences.
 homepage: https://github.com/lh3/trimadap
 ---
+
 
 # trimadap
 

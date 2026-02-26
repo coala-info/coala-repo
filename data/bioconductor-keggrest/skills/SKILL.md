@@ -1,8 +1,9 @@
 ---
 name: bioconductor-keggrest
-description: the package is available on all platforms; click for details.
+description: This tool provides a client interface to the KEGG REST API for retrieving and searching biological pathways, genes, compounds, and organisms. Use when user asks to retrieve KEGG database entries, convert identifiers between KEGG and external databases, search for chemical compounds by mass or formula, or link genes to metabolic pathways.
 homepage: https://bioconductor.org/packages/release/bioc/html/KEGGREST.html
 ---
+
 
 # bioconductor-keggrest
 

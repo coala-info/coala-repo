@@ -1,8 +1,9 @@
 ---
 name: bcftools-snvphyl-plugin
-description: The `bcftools-snvphyl-plugin` is a high-performance C plugin for `bcftools` specifically engineered for the SNVPhyl (Single Nucleotide Variant PHYLogenomics) pipeline.
+description: This tool identifies and processes single nucleotide variants across microbial genomes as a high-performance plugin for bcftools. Use when user asks to configure environment variables for SNVPhyl, install the bcftools-snvphyl-plugin, or format VCF fields for downstream phylogenomic analysis.
 homepage: https://github.com/phac-nml/snvphyl-tools
 ---
+
 
 # bcftools-snvphyl-plugin
 

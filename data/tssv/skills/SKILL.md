@@ -1,8 +1,9 @@
 ---
 name: tssv
-description: The `tssv` tool is designed for the targeted analysis of short structural variations.
+description: `tssv` performs targeted analysis of short structural variations, microsatellites, and short tandem repeats. Use when user asks to characterize a sequencing library, identify specific alleles, quantify allele frequencies, identify stutter patterns, or detect insertions or deletions.
 homepage: The package home page
 ---
+
 
 # tssv
 

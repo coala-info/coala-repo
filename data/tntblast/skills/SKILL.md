@@ -1,8 +1,9 @@
 ---
 name: tntblast
-description: tntblast (ThermonucleotideBLAST) is a specialized bioinformatics tool designed to simulate biochemical assays against large nucleic acid databases.
+description: tntblast simulates biochemical assays against nucleic acid databases using free energy and melting temperature calculations. Use when user asks to 'predict PCR amplification results', 'validate TaqMan assays', 'identify hybridization sites for probes', 'search for PCR assays', 'search for TaqMan PCR assays', 'search for simple hybridization probes', or 'search for padlock probes'.
 homepage: https://github.com/jgans/thermonucleotideBLAST
 ---
+
 
 # tntblast
 

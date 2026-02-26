@@ -1,8 +1,9 @@
 ---
 name: libcarna
-description: LibCarna is a specialized C++ library based on OpenGL 3.3 and Eigen 3, designed for high-performance 3D visualization of medical datasets.
+description: LibCarna is a C++ library for high-performance 3D visualization and volumetric rendering of medical datasets using OpenGL and Eigen. Use when user asks to install the library via Bioconda, build the project with EGL support for headless rendering, or integrate the tool into a C++ project using CMake.
 homepage: https://github.com/kostrykin/Carna
 ---
+
 
 # libcarna
 

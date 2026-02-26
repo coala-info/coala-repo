@@ -1,8 +1,9 @@
 ---
 name: seqsero2s
-description: SeqSero2S is a specialized bioinformatics pipeline designed for the rapid and accurate prediction of Salmonella serotypes.
+description: "SeqSero2S is a bioinformatics pipeline for predicting Salmonella serotypes from raw genomic reads or finished assemblies. Use when user asks to predict Salmonella serotypes, perform allele micro-assembly of serotype determinants, or identify inter-serotype contamination in genomic data."
 homepage: https://github.com/LSTUGA/SeqSero2S
 ---
+
 
 # seqsero2s
 

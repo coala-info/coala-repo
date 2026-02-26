@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gse103322
-description: the package is available on all platforms; click for details.
+description: This package provides access to single-cell RNA-seq data from human head and neck squamous cell carcinoma patients via ExperimentHub. Use when user asks to retrieve the GSE103322 dataset, extract TPM expression matrices, or analyze cell-type metadata for HNSC samples.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSE103322.html
 ---
+
 
 # bioconductor-gse103322
 

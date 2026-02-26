@@ -1,9 +1,9 @@
 # asqcan CWL Generation Report
 
-## asqcan_build
+## asqcan
 
 ### Tool Description
-A tool to build or fetch the asqcan OCI image and convert it to SIF format. Note: The provided text appears to be a log of a failed Singularity/Apptainer build process rather than standard help text.
+A combined pipeline for bacterial genome ASsembly, Quality Control, and ANnotation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/asqcan:0.4--pyh7cba7a3_0
@@ -15,12 +15,46 @@ A tool to build or fetch the asqcan OCI image and convert it to SIF format. Note
 - **Total Downloads**: 11.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bogemad/asqcan
-- **Stars**: 3
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/asqcan:0.4--pyh7cba7a3_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/e6d166631e2bc40eab721507713af71418116b127bc9f5db252f0a2980cdc29f2752473293: no space left on device
+usage: asqcan [-h] -q READS_DIR -o OUTDIR [-s {blastn,diamond}] [-b DB] [-i]
+              [-t THREADS] [-m MEM] [-f] [--version] [-v]
+
+asqcan - A combined pipeline for bacterial genome ASsembly, Quality Control,
+and ANnotation.
+
+required arguments:
+  -q READS_DIR, --fastq-dir READS_DIR
+                        Path to a directory with your interleaved fastq files.
+  -o OUTDIR, --output-directory OUTDIR
+                        Path to the output directory. A directory will be
+                        created if one does not exist.
+
+options:
+  -h, --help            show this help message and exit
+  -s {blastn,diamond}, --searcher {blastn,diamond}
+                        Search algorithm to use. Options [blastn, diamond]
+  -b DB, --search_database DB
+                        Path to the local search database. This pipeline does
+                        not require you to have a local copy of a search
+                        database but without it you will not be able to use
+                        similarity data for blobtools. Similarity data adds
+                        significantly to the blobplot and blobtools table
+                        outputs of this pipeline. See https://blast.ncbi.nlm.n
+                        ih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=
+                        Download to install a local database.
+  -i, --ion-torrent     Reads are sourced from the Ion Torrent platform. Don't
+                        include this if your reads are Illumina-sourced.
+  -t THREADS, --threads THREADS
+                        Number of threads to use for multiprocessing.
+  -m MEM, --max_memory MEM
+                        Maximum amount of RAM to assign to the pipeline in GB
+                        (Just the number).
+  -f, --force           Overwrite files in the output directories.
+  --version             show program's version number and exit
+  -v, --verbose         Increase verbosity on command line output (n.b.
+                        verbose output is always saved to asqcan.log in the
+                        output directory).
 ```
 

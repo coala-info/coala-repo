@@ -1,8 +1,9 @@
 ---
 name: prequal
-description: PREQUAL is a specialized quality control tool designed to be used on raw, unaligned homologous sequences.
+description: PREQUAL identifies and masks non-homologous regions in unaligned sequence sets to improve alignment accuracy. Use when user asks to filter raw sequences before alignment, mask regions lacking evidence of homology, or perform quality control on homologous sequence datasets.
 homepage: https://github.com/simonwhelan/prequal
 ---
+
 
 # prequal
 

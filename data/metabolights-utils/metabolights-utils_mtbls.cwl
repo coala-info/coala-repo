@@ -1,13 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - metabolights-utils
-  - mtbls
+baseCommand: mtbls
 label: metabolights-utils_mtbls
-doc: "MetaboLights utility tool. (Note: The provided text contains container runtime
-  error messages and does not include help documentation or argument definitions.)\n
-  \nTool homepage: https://github.com/EBI-Metabolights/metabolights-utils"
-inputs: []
+doc: "Metabolights utilities\n\nTool homepage: https://github.com/EBI-Metabolights/metabolights-utils"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute
+    inputBinding:
+      position: 1
+  - id: args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

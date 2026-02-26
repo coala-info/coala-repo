@@ -3,7 +3,7 @@
 ## transrate
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain the tool's help text. Based on the tool name 'transrate', it is a software for de novo transcriptome assembly evaluation.
+Transrate is a tool for assessing the quality of RNA-Seq assemblies.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/transrate:1.0.3--h516909a_0
@@ -18,13 +18,22 @@ The provided text is an error log from a container build process and does not co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 06:03:32  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/transrate:1.0.3--h516909a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:6033e8140b48a4e8357fd60eba409bae42a3bf9ca8e4446fb486acd1c07b15a2: unpack entry: usr/local/compiler_compat/ld: unpack to regular file: short write: write /tmp/build-temp-3484080496/rootfs/usr/local/compiler_compat/ld: no space left on device
+Unable to find image 'quay.io/biocontainers/transrate:1.0.3--h516909a_0' locally
+1.0.3--h516909a_0: Pulling from biocontainers/transrate
+4f4fb700ef54: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+4f4fb700ef54: Already exists
+10c3bb32200b: Already exists
+6033e8140b48: Pulling fs layer
+6033e8140b48: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob3488636361: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

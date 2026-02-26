@@ -1,8 +1,9 @@
 ---
 name: r-outliers
-description: "A collection of some tests commonly used for identifying         outliers.</p>"
+description: The r-outliers package provides a collection of statistical tests and functions for identifying, testing, and handling outliers in data. Use when user asks to find extreme values, perform Grubbs or Dixon tests, calculate outlier scores, or remove and replace outliers in a dataset.
 homepage: https://cloud.r-project.org/web/packages/outliers/index.html
 ---
+
 
 # r-outliers
 

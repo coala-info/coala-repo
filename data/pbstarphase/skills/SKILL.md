@@ -1,8 +1,9 @@
 ---
 name: pbstarphase
-description: The `pbstarphase` tool is a specialized diplotyper that leverages the long-read advantages of PacBio HiFi data to resolve complex pharmacogenomic regions.
+description: pbstarphase is a specialized diplotyper that uses PacBio HiFi data to resolve complex pharmacogenomic regions and call genotypes. Use when user asks to call PGx diplotypes, perform HLA typing, or analyze structural variants in the CYP2D6 locus.
 homepage: https://github.com/PacificBiosciences/pb-StarPhase
 ---
+
 
 # pbstarphase
 

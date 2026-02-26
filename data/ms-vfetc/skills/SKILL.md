@@ -1,8 +1,9 @@
 ---
 name: ms-vfetc
-description: The `ms-vfetc` (Mass Spectrometry Vendor Feature Export Tool Converter) is a utility designed to standardize the output from various proprietary mass spectrometry software packages.
+description: The ms-vfetc tool standardizes and converts proprietary mass spectrometry feature export files into a unified format for downstream analysis. Use when user asks to convert vendor-specific mass spectrometry data, merge multiple experimental batches, or normalize sample naming conventions across different software platforms.
 homepage: https://github.com/leidenuniv-lacdr-abs/ms-vfetc
 ---
+
 
 # ms-vfetc
 

@@ -1,8 +1,9 @@
 ---
 name: memote
-description: Memote is the community-standard test suite for genome-scale metabolic models.
+description: Memote is a community-standard test suite for benchmarking and quality-testing genome-scale metabolic models. Use when user asks to generate quality reports for SBML models, compare different model versions, initialize version-controlled reconstruction repositories, or validate models against experimental data.
 homepage: https://memote.readthedocs.io/
 ---
+
 
 # memote
 

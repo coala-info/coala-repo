@@ -1,9 +1,9 @@
 # kmerstream CWL Generation Report
 
-## kmerstream
+## kmerstream_KmerStream
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log indicating a failure to pull or build a container image due to insufficient disk space.
+Estimates occurrences of k-mers in fastq or fasta files and saves results
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kmerstream:1.1--h077b44d_6
@@ -18,46 +18,48 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmerstream:1.1--h077b44d_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1481600556: no space left on device
+KmerStream 1.1
+
+Estimates occurrences of k-mers in fastq or fasta files and saves results
+
+Usage: KmerStream [options] ... FASTQ files
+
+-k, --kmer-size=INT      Size of k-mers, either a single value or comma separated list
+-q, --quality-cutoff=INT Comma separated list, keep k-mers with bases above quality threshold in PHRED (default 0)
+-o, --output=STRING      Filename for output
+-e, --error-rate=FLOAT   Error rate guaranteed (default value 0.01)
+-t, --threads=INT        SNumber of threads to use (default value 1)
+-s, --seed=INT           Seed value for the randomness (default value 0, use time based randomness)
+-b, --bam                Input is in BAM format (default false)
+    --binary             Output is written in binary format (default false)
+    --tsv                Output is written in TSV format (default false)
+    --verbose            Print lots of messages during run
+    --online             Prints out estimates every 100K reads
+    --q64                set if PHRED+64 scores are used (@...h) default used PHRED+33
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## kmerstream_KmerStreamEstimate.py
-
-### Tool Description
-KmerStream estimate tool (Note: The provided text contains system error messages and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmerstream:1.1--h077b44d_6
-- **Homepage**: https://github.com/pmelsted/KmerStream
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmerstream/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmerstream:1.1--h077b44d_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1558854861: no space left on device
-```
 
 ## kmerstream_KmerStreamJoin
 
 ### Tool Description
-The provided text does not contain help information for the tool; it contains system error messages related to a container runtime (Apptainer/Singularity) failure due to lack of disk space.
+Creates union of many stream estimates
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kmerstream:1.1--h077b44d_6
 - **Homepage**: https://github.com/pmelsted/KmerStream
 - **Package**: https://anaconda.org/channels/bioconda/packages/kmerstream/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmerstream:1.1--h077b44d_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3655013443: no space left on device
+KmerStreamJoin 1.1
+
+Creates union of many stream estimates
+
+Usage: KmerStreamJoin -o output files ...
+       KmerStreamJoin merged-file
+
+-o, --output=STRING      Filename for output
+    --verbose            Print output at the end
 ```
 

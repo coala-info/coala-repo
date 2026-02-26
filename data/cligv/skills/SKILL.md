@@ -1,8 +1,9 @@
 ---
 name: cligv
-description: cligv (command line Interactive Genome Viewer) is a lightweight, fast alternative to traditional GUI genome browsers.
+description: "cligv is a terminal-based interactive genome viewer for visualizing genomic regions, read alignments, and variants. Use when user asks to browse genomic regions, inspect read coverage, verify variants, or visualize BAM and VCF files in the command line."
 homepage: https://github.com/jonasfreudig/cligv
 ---
+
 
 # cligv
 

@@ -1,8 +1,9 @@
 ---
 name: seqforge
-description: SeqForge is a modular bioinformatics toolkit designed to scale genomic analysis from raw sequence data to refined biological insights.
+description: SeqForge is a modular bioinformatics toolkit for large-scale BLAST operations, motif mining, and genomic sequence extraction. Use when user asks to sanitize sequence files, create BLAST databases, perform batch queries, conduct motif mining, extract genomic sequences, or calculate assembly metrics.
 homepage: https://github.com/ERBringHorvath/SeqForge
 ---
+
 
 # seqforge
 

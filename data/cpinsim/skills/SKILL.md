@@ -1,8 +1,9 @@
 ---
 name: cpinsim
-description: cpinsim is a specialized simulation framework designed to model how protein complexes form in a cellular environment based on constrained interaction networks.
+description: "cpinsim simulates the formation of protein complexes based on constrained interaction networks and domain-specific dependencies. Use when user asks to simulate protein complex formation, model protein knockouts or overexpression, and analyze the impact of concentration perturbations on protein assemblies."
 homepage: https://github.com/BiancaStoecker/cpinsim
 ---
+
 
 # cpinsim
 

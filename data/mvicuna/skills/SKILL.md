@@ -1,8 +1,9 @@
 ---
 name: mvicuna
-description: mvicuna is a specialized tool designed for the de novo assembly of viral populations characterized by high mutation rates.
+description: "mvicuna performs preprocessing and de novo assembly of viral sequencing data from populations with high mutation rates and contamination. Use when user asks to remove duplicate reads, trim quality or vector sequences, merge overlapping paired-end reads, or estimate sequence frequency for viral datasets."
 homepage: https://github.com/broadinstitute/mvicuna
 ---
+
 
 # mvicuna
 

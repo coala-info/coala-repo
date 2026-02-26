@@ -1,8 +1,9 @@
 ---
 name: bioconductor-esetvis
-description: the package is available on all platforms; click for details.
+description: This package visualizes Bioconductor containers using Spectral Mapping, t-SNE, and LDA dimensionality reduction techniques. Use when user asks to visualize ExpressionSet or SummarizedExperiment data, perform Spectral Mapping, run t-SNE or LDA, create biplots, or label top genes and samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/esetVis.html
 ---
+
 
 # bioconductor-esetvis
 

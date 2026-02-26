@@ -1,8 +1,9 @@
 ---
 name: pepr
-description: PePr (Peak-calling and Prioritization) is a specialized pipeline designed to handle biological replicates in ChIP-Seq experiments.
+description: PePr is a ChIP-Seq peak-calling pipeline that uses a negative binomial distribution to model biological replicates and identify consistent signals. Use when user asks to call sharp or broad peaks from ChIP-Seq data with replicates, perform differential binding analysis between two groups, or prioritize regions with low variability across samples.
 homepage: https://github.com/shawnzhangyx/PePr/
 ---
+
 
 # pepr
 

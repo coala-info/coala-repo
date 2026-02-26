@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msstats
-description: the package is available on all platforms; click for details.
+description: MSstats performs statistical analysis and protein significance testing for quantitative mass spectrometry-based proteomics data. Use when user asks to analyze differential protein expression, calculate required sample sizes, or process data from DDA, SRM, or DIA experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstats.html
 ---
+
 
 # bioconductor-msstats
 

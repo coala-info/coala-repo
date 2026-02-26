@@ -3,7 +3,7 @@
 ## igfinder
 
 ### Tool Description
-The provided text does not contain help documentation for igfinder; it is an error log indicating a failure to build a Singularity/Apptainer container due to insufficient disk space.
+ver 1.0 filtering fasta file for Ig analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/igfinder:1.0--pyhdfd78af_0
@@ -12,17 +12,21 @@ The provided text does not contain help documentation for igfinder; it is an err
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/igfinder/overview
-- **Total Downloads**: 971
+- **Total Downloads**: 973
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/igfinder:1.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1717385291: no space left on device
+usage: igfinder.py [-h] -i I [-o O] [-c C] -r R
+
+igfinder ver 1.0 filtering fasta file for Ig analysis
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -i I        input_filename(fasta_format)
+  -o O        output_dir
+  -c C        Analysis frame: default=starts from M
+  -r R        sequence_reference csv file
 ```
 
-
-## Metadata
-- **Skill**: generated

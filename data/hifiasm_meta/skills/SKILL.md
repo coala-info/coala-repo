@@ -1,8 +1,9 @@
 ---
 name: hifiasm_meta
-description: hifiasm_meta is a specialized fork of the hifiasm assembler tailored for metagenomic data.
+description: hifiasm_meta is a specialized assembler designed to produce high-quality de novo assemblies from metagenomic HiFi reads. Use when user asks to assemble metagenomic datasets, generate contig graphs from environmental samples, or handle high redundancy in microbial communities.
 homepage: https://github.com/xfengnefx/hifiasm-meta
 ---
+
 
 # hifiasm_meta
 

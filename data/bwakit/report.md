@@ -1,9 +1,9 @@
 # bwakit CWL Generation Report
 
-## bwakit
+## bwakit_bwa
 
 ### Tool Description
-The provided text does not contain help information or documentation for bwakit; it contains system error messages related to disk space and container image conversion.
+alignment via Burrows-Wheeler transformation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bwakit:0.7.18.dev1--hdfd78af_0
@@ -14,13 +14,35 @@ The provided text does not contain help information or documentation for bwakit;
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bwakit/overview
 - **Total Downloads**: 33.7K
 - **Last updated**: 2025-04-22
-- **GitHub**: N/A
+- **GitHub**: https://github.com/lh3/bwa
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/44405647a7c54404e45a6b3ab63b1307fd1890a40d2077bbbcb340ecd4c8745e: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bwakit:0.7.18.dev1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4258902807: no space left on device
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.18-r1243-dirty
+Contact: Heng Li <hli@ds.dfci.harvard.edu>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries (DEPRECATED)
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
 ```
 

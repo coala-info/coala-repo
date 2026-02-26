@@ -1,8 +1,9 @@
 ---
 name: famseq
-description: The `famseq` tool enhances variant calling by leveraging the shared genetic information within a pedigree.
+description: FamSeq improves variant calling accuracy by incorporating pedigree information and shared genetic data from family members. Use when user asks to refine VCF files using family relationships, calculate posterior probabilities for rare germline mutations, or perform likelihood-based variant calling for pedigrees.
 homepage: http://bioinformatics.mdanderson.org/main/FamSeq
 ---
+
 
 # famseq
 

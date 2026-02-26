@@ -1,8 +1,9 @@
 ---
 name: bioconductor-listeretalbsseq
-description: the package is available on all platforms; click for details.
+description: This package provides base-resolution bisulfite sequencing data for the H1 and IMR90 human cell lines aligned to the hg18 genome. Use when user asks to access Lister et al. (2009) DNA methylome datasets, load methylation data into methylPipe BSdata objects, or retrieve specific BS-seq data for embryonic stem cells and fetal lung fibroblasts.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ListerEtAlBSseq.html
 ---
+
 
 # bioconductor-listeretalbsseq
 

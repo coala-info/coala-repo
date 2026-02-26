@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fenr
-description: the package is available on all platforms; click for details.
+description: This tool performs rapid functional enrichment analysis using Fisher's exact test for gene or protein sets. Use when user asks to perform overrepresentation analysis, fetch functional terms from databases like GO or KEGG, or run interactive enrichment explorations.
 homepage: https://bioconductor.org/packages/release/bioc/html/fenr.html
 ---
+
 
 # bioconductor-fenr
 

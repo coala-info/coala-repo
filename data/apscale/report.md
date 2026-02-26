@@ -3,7 +3,7 @@
 ## apscale
 
 ### Tool Description
-Advanced Pipeline for SCalable mAnuAL Evaluation (Note: The provided text contains container build logs and error messages rather than tool help text, so specific arguments could not be extracted).
+Advanced Pipeline for Simple yet Comprehensive AnaLysEs of DNA metabarcoding data, see https://github.com/DominikBuchner/apscale for detailed help.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/apscale:4.3.0--pyhdfd78af_0
@@ -18,14 +18,40 @@ Advanced Pipeline for SCalable mAnuAL Evaluation (Note: The provided text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/apscale:4.3.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f7f3c13befec4a1962047c11a84107f60bacf00e4a1c9e679da8a22d5986d247: unpack entry: usr/local/lib/python3.12/site-packages/Bio/Restriction/__pycache__/Restriction_Dictionary.cpython-312.pyc: unpack to regular file: short write: write /tmp/build-temp-1752061038/rootfs/usr/local/lib/python3.12/site-packages/Bio/Restriction/__pycache__/Restriction_Dictionary.cpython-312.pyc: no space left on device
+usage: apscale [-h] [--create_project NAME] [--run_apscale [PATH]]
+               [--pe_merging [PATH]] [--primer_trimming [PATH]]
+               [--quality_filtering [PATH]] [--dereplication [PATH]]
+               [--denoising [PATH]] [--swarm_clustering [PATH]]
+               [--replicate_merging [PATH]] [--nc_removal [PATH]]
+               [--generate_read_table [PATH]] [--analyze [PATH]]
+
+Advanced Pipeline for Simple yet Comprehensive AnaLysEs of DNA metabarcoding
+data, see https://github.com/DominikBuchner/apscale for detailed help.
+
+options:
+  -h, --help                    show this help message and exit
+
+Creating a project:
+  Creates a new apscale project in the current working directory
+
+  --create_project NAME         Creates a new apscale project with the name
+                                provided
+
+Running a module:
+  Run the apscale pipeline or any specified module. Providing a PATH is
+  optional. If no path is provided apscale will run in the current working
+  directory.
+
+  --run_apscale [PATH]          Run the entire pipeline.
+  --pe_merging [PATH]           Run the pe_merging module.
+  --primer_trimming [PATH]      Run the primer_trimimng module.
+  --quality_filtering [PATH]    Run the quality_filtering module.
+  --dereplication [PATH]        Run the dereplication_pooling module.
+  --denoising [PATH]            Run the denoising module.
+  --swarm_clustering [PATH]     Run the swarm clustering module.
+  --replicate_merging [PATH]    Run the replicate merging module.
+  --nc_removal [PATH]           Run the negative control removal module.
+  --generate_read_table [PATH]  Run the read table generation module.
+  --analyze [PATH]              Run the analysis module
 ```
 
-
-## Metadata
-- **Skill**: generated

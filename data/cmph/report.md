@@ -3,7 +3,7 @@
 ## cmph
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help documentation or usage instructions for the cmph tool.
+Minimum perfect hashing tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmph:2.0--h7b50bb2_7
@@ -18,9 +18,53 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmph:2.0--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1143325883: no space left on device
+usage: cmph [-v] [-h] [-V] [-k nkeys] [-f hash_function] [-g [-c algorithm_dependent_value][-s seed] ] [-a algorithm] [-M memory_in_MB] [-b algorithm_dependent_value] [-t keys_per_bin] [-d tmp_dir] [-m file.mph] keysfile
+Minimum perfect hashing tool
+
+  -h	 print this help message
+  -c	 c value determines:
+    	  * the number of vertices in the graph for the algorithms BMZ and CHM
+    	  * the number of bits per key required in the FCH algorithm
+    	  * the load factor in the CHD_PH algorithm
+  -a	 algorithm - valid values are
+    	  * bmz
+    	  * bmz8
+    	  * chm
+    	  * brz
+    	  * fch
+    	  * bdz
+    	  * bdz_ph
+    	  * chd_ph
+    	  * chd
+  -f	 hash function (may be used multiple times) - valid values are
+    	  * jenkins
+  -V	 print version number and exit
+  -v	 increase verbosity (may be used multiple times)
+  -k	 number of keys
+  -g	 generation mode
+  -s	 random seed
+  -m	 minimum perfect hash function file 
+  -M	 main memory availability (in MB) used in BRZ algorithm 
+  -d	 temporary directory used in BRZ algorithm 
+  -b	 the meaning of this parameter depends on the algorithm selected in the -a option:
+    	  * For BRZ it is used to make the maximal number of keys in a bucket lower than 256.
+    	    In this case its value should be an integer in the range [64,175]. Default is 128.
+
+    	  * For BDZ it is used to determine the size of some precomputed rank
+    	    information and its value should be an integer in the range [3,10]. Default
+    	    is 7. The larger is this value, the more compact are the resulting functions
+    	    and the slower are them at evaluation time.
+
+    	  * For CHD and CHD_PH it is used to set the average number of keys per bucket
+    	    and its value should be an integer in the range [1,32]. Default is 4. The
+    	    larger is this value, the slower is the construction of the functions.
+    	    This parameter has no effect for other algorithms.
+
+  -t	 set the number of keys per bin for a t-perfect hashing function. A t-perfect
+    	 hash function allows at most t collisions in a given bin. This parameter applies
+    	 only to the CHD and CHD_PH algorithms. Its value should be an integer in the
+    	 range [1,128]. Defaul is 1
+  keysfile	 line separated file with keys
 ```
 
 

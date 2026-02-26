@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowmerge
-description: the package is available on all platforms; click for details.
+description: This tool performs automated gating and cluster merging for flow cytometry data to identify distinct cell populations. Use when user asks to refine flowClust results, merge mixture components based on entropy or Mahalanobis distance, or find a parsimonious model for cell sub-populations.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowMerge.html
 ---
+
 
 # bioconductor-flowmerge
 

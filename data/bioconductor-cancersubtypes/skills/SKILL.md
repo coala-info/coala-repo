@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cancersubtypes
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides a unified framework for identifying and validating cancer subtypes using multi-omics genomic data. Use when user asks to identify cancer subtypes, integrate multi-omics data, perform feature selection for survival analysis, or validate clustering results with silhouette plots and Kaplan-Meier curves.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CancerSubtypes.html
 ---
+
 
 # bioconductor-cancersubtypes
 

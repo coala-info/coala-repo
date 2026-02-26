@@ -1,8 +1,9 @@
 ---
 name: perl-archive-tar
-description: The `perl-archive-tar` package provides a robust Perl-centric approach to managing TAR files.
+description: This tool provides a Perl-based interface for creating, extracting, and manipulating TAR archives with fine-grained control over file metadata and contents. Use when user asks to create or extract archives, search for patterns within compressed files, compare archives to directories, or perform in-memory modifications like renaming and filtering files.
 homepage: https://metacpan.org/pod/Archive::Tar
 ---
+
 
 # perl-archive-tar
 

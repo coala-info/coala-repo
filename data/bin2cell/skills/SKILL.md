@@ -1,8 +1,9 @@
 ---
 name: bin2cell
-description: bin2cell is a specialized tool for the analysis of high-resolution Visium HD spatial transcriptomics data.
+description: bin2cell reconstructs individual cells from high-resolution Visium HD spatial transcriptomics data by mapping 2um bins to segmentation masks. Use when user asks to perform nuclear segmentation on morphology images, map transcriptomic bins to cells, or correct technical striping effects in spatial data.
 homepage: https://github.com/Teichlab/bin2cell
 ---
+
 
 # bin2cell
 

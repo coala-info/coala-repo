@@ -3,7 +3,7 @@
 ## virstrain
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be an error log from a container build process (Apptainer/Singularity).
+An RNA virus strain-level identification tool for short reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1
@@ -18,71 +18,32 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: VirStrain.py [-h] -i INPUT_READS [-p INPUT_READS2] -d DB_DIR
+                    [-o OUT_DIR] [-c SF_CUTOFF] [-s RK_SITE] [-f CLOSE_FIG]
+                    [-m [HM_VIRUS]]
 
+VirStrain - An RNA virus strain-level identification tool for short reads.
 
-## Metadata
-- **Skill**: generated
-
-## virstrain_virstrain_contig
-
-### Tool Description
-Viral strain identification from contig data. (Note: The provided text contains container runtime logs and error messages rather than the tool's help documentation; therefore, no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1
-- **Homepage**: https://github.com/liaoherui/VirStrain
-- **Package**: https://anaconda.org/channels/bioconda/packages/virstrain/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## virstrain_virstrain_build
-
-### Tool Description
-The provided text does not contain help information for the tool; it appears to be a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1
-- **Homepage**: https://github.com/liaoherui/VirStrain
-- **Package**: https://anaconda.org/channels/bioconda/packages/virstrain/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## virstrain_virstrain_merge
-
-### Tool Description
-Merge results from VirStrain (Note: The provided help text contains only container runtime logs and error messages, no argument definitions were found).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1
-- **Homepage**: https://github.com/liaoherui/VirStrain
-- **Package**: https://anaconda.org/channels/bioconda/packages/virstrain/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/virstrain:1.17--pyhdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT_READS, --input_reads INPUT_READS
+                        Input fastq data --- Required
+  -p INPUT_READS2, --input_reads2 INPUT_READS2
+                        Input fastq data for PE reads.
+  -d DB_DIR, --database_dir DB_DIR
+                        Database dir --- Required
+  -o OUT_DIR, --output_dir OUT_DIR
+                        Output dir (default: current dir/VirStrain_Out)
+  -c SF_CUTOFF, --site_filter_cutoff SF_CUTOFF
+                        The cutoff of filtering one site (default: 0.05)
+  -s RK_SITE, --rank_by_sites RK_SITE
+                        If set to 1, then VirStrain will sort the most
+                        possible strain by matches to the sites. (default: 0)
+  -f CLOSE_FIG, --turn_off_figures CLOSE_FIG
+                        If set to 1, then VirStrain will not generate figures.
+                        (default: 0)
+  -m [HM_VIRUS], --high_mutation_virus [HM_VIRUS]
+                        If the virus has high mutation rate, use this option.
+                        (default: Not use)
 ```
 

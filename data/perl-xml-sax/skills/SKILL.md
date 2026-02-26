@@ -1,8 +1,9 @@
 ---
 name: perl-xml-sax
-description: This skill facilitates the use of the `XML::SAX` framework in Perl, which provides a standardized interface for event-based XML parsing.
+description: This tool provides a standardized interface for event-based XML parsing in Perl using the XML::SAX framework. Use when user asks to parse large XML datasets, manage SAX parser registries, or develop custom event handlers for XML processing.
 homepage: http://metacpan.org/pod/XML::SAX
 ---
+
 
 # perl-xml-sax
 

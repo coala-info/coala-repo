@@ -1,8 +1,9 @@
 ---
 name: arcsv
-description: ArcSV is a specialized bioinformatics pipeline designed specifically for the challenges of archaic human genomics.
+description: ArcSV is a bioinformatics pipeline designed to detect structural variants in archaic human genomes by accounting for the unique properties of ancient DNA. Use when user asks to install ArcSV via Conda, prepare reference genomes, or execute the pipeline for structural variant discovery in high-quality archaic samples.
 homepage: https://github.com/xuxif/ArcSV
 ---
+
 
 # arcsv
 

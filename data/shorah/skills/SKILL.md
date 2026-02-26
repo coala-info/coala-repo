@@ -1,8 +1,9 @@
 ---
 name: shorah
-description: ShoRAH (Short Reads Assembly into Haplotypes) is a specialized bioinformatics suite designed to characterize the genetic diversity within a sample, such as a viral population.
+description: ShoRAH is a bioinformatics suite used to characterize genetic diversity by reconstructing local haplotypes and estimating their frequencies from next-generation sequencing data. Use when user asks to identify individual haplotypes, perform error correction via Dirichlet process mixture models, or detect single nucleotide variants in viral populations.
 homepage: https://github.com/cbg-ethz/shorah
 ---
+
 
 # shorah
 

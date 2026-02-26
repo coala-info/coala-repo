@@ -1,9 +1,9 @@
 # open-cravat CWL Generation Report
 
-## open-cravat
+## open-cravat_oc
 
 ### Tool Description
-The provided text does not contain help information; it is a system error log indicating a failure to build a Singularity/Apptainer image due to insufficient disk space ('no space left on device').
+Open-CRAVAT genomic variant interpreter. https://github.com/KarchinLab/open-cravat
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/open-cravat:2.16.0--pyhdfd78af_0
@@ -18,29 +18,27 @@ The provided text does not contain help information; it is a system error log in
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/open-cravat:2.16.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3973080416: no space left on device
-```
+usage: oc [-h]
+          {run,report,gui,module,config,new,store,util,version,feedback,vcfanno} ...
 
+Open-CRAVAT genomic variant interpreter. https://github.com/KarchinLab/open-
+cravat
 
-## Metadata
-- **Skill**: generated
+options:
+  -h, --help            show this help message and exit
 
-## open-cravat_oc
-
-### Tool Description
-The provided text does not contain help information or usage instructions; it is a system error log indicating a failure to build a Singularity/Apptainer container due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/open-cravat:2.16.0--pyhdfd78af_0
-- **Homepage**: http://www.opencravat.org
-- **Package**: https://anaconda.org/channels/bioconda/packages/open-cravat/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/open-cravat:2.16.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2075406254: no space left on device
+Commands:
+  {run,report,gui,module,config,new,store,util,version,feedback,vcfanno}
+    run                 Run a job
+    report              Generate a report from a job
+    gui                 Start the GUI
+    module              Change installed modules
+    config              View and change configuration settings
+    new                 Create new modules
+    store               Publish modules to the store
+    util                Utilities
+    version             Show version
+    feedback            Send feedback to the developers
+    vcfanno             annotate a vcf
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: fasta_windows
-description: `fasta_windows` is a high-performance tool implemented in Rust designed to compute sequence statistics across sliding windows for every record in a FASTA file.
+description: fasta_windows computes sequence statistics and k-mer frequencies across sliding windows for every record in a FASTA file. Use when user asks to calculate GC content and skew, profile sequence composition, or generate dinucleotide, trinucleotide, and tetranucleotide frequency data.
 homepage: https://github.com/tolkit/fasta_windows
 ---
+
 
 # fasta_windows
 

@@ -1,8 +1,9 @@
 ---
 name: cpstools
-description: CPStools is a bioinformatics suite designed specifically for the comparative analysis and quality control of chloroplast genomes.
+description: CPStools is a bioinformatics suite for the comparative analysis, quality control, and structural standardization of chloroplast genomes. Use when user asks to validate GenBank annotations, identify inverted repeat regions, calculate nucleotide diversity, analyze codon usage bias, or extract shared sequences for phylogenetic analysis.
 homepage: https://github.com/Xwb7533/CPStools
 ---
+
 
 # cpstools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowmeans
-description: the package is available on all platforms; click for details.
+description: This tool performs non-parametric clustering for automated gating of cell populations in multidimensional flow cytometry data. Use when user asks to identify cell populations, perform automated gating, or cluster flow cytometry data using the flowMeans algorithm.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowMeans.html
 ---
+
 
 # bioconductor-flowmeans
 

@@ -1,8 +1,9 @@
 ---
 name: perl-libwww-perl
-description: The `perl-libwww-perl` suite (commonly known as LWP) is the standard toolkit for web programming in Perl.
+description: The perl-libwww-perl suite provides a consistent object-oriented interface for making web requests and managing web state in Perl. Use when user asks to make HTTP requests, handle web responses, or manage session cookies using LWP and HTTP::CookieJar.
 homepage: https://metacpan.org/pod/HTTP::CookieJar
 ---
+
 
 # perl-libwww-perl
 

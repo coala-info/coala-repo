@@ -3,7 +3,7 @@
 ## dnp-mapping
 
 ### Tool Description
-The provided text does not contain help information for dnp-mapping; it contains container runtime error messages regarding a failure to build a SIF image due to insufficient disk space.
+Mapping DNA sequence by pattern matrix CC
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dnp-mapping:1.0--h9948957_4
@@ -18,11 +18,20 @@ The provided text does not contain help information for dnp-mapping; it contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dnp-mapping:1.0--h9948957_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2555975514: no space left on device
+------------------------------------------------------------
+ Mapping DNA sequence by pattern matrix CC                  
+------------------------------------------------------------
+input parameters:                                           
+-m - input pattern                                          
+-s - input sequence                                         
+-------------------------                                   
+ no mandatory parameters:                                   
+-o - output file                                            
+-w - window of gaussian smoothing (recomend odd 3 - 11)     
+-e - sigma (recomend 1 - 5, 0 average)                      
+BMI, Medical school, University of Ottawa, S.Hosid 7.07.2011
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tree-puzzle
 label: tree-puzzle
-doc: "Maximum likelihood analysis of phylogenies (Note: The provided text is a system
-  error log and does not contain help documentation. No arguments could be extracted
-  from the input.)\n\nTool homepage: https://github.com/jieyilong/tree-of-thought-puzzle-solver"
-inputs: []
+doc: "Tree-Puzzle is a program for phylogenetic inference.\n\nTool homepage: https://github.com/jieyilong/tree-of-thought-puzzle-solver"
+inputs:
+  - id: sequence_file
+    type: File
+    doc: File name for the sequence data
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

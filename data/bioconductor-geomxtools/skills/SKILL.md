@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geomxtools
-description: the package is available on all platforms; click for details.
+description: GeomxTools provides specialized tools for the analysis, quality control, and normalization of NanoString GeoMx Digital Spatial Profiling data. Use when user asks to load DCC and PKC files, perform segment or probe-level quality control, normalize spatial RNA or protein data, or convert GeoMx objects to Seurat and SpatialExperiment formats.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeomxTools.html
 ---
+
 
 # bioconductor-geomxtools
 

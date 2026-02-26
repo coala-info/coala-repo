@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anvilaz
-description: The package provides a programmatic interface to AnVIL resources, including workspaces, notebooks, tables, and workflows. The package also provides utilities for managing resources, including copying files to and from Azure Blob Storage, and creating shared access signatures (SAS) for secure access to Azure resources.
+description: This package provides an R interface for managing AnVIL resources and data on Microsoft Azure. Use when user asks to manage Azure-based workspaces, transfer files to Azure Blob Storage, manipulate data tables, or monitor workflow jobs.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILAz.html
 ---
+
 
 # bioconductor-anvilaz
 

@@ -1,8 +1,9 @@
 ---
 name: r-locfit
-description: Local regression, likelihood and density estimation methods as described in the 1999 book by Loader.</p>
+description: This tool performs local regression, likelihood, and density estimation using non-parametric smoothing and local polynomial methods. Use when user asks to perform local polynomial regression, estimate probability densities, or apply non-parametric smoothing to complex datasets.
 homepage: https://cloud.r-project.org/web/packages/locfit/index.html
 ---
+
 
 # r-locfit
 

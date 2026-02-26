@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggmsa
-description: the package is available on all platforms; click for details.
+description: The ggmsa package provides a ggplot2-based framework for visualizing and annotating multiple sequence alignments. Use when user asks to visualize multiple sequence alignments, add sequence logos or conservation bars to alignments, and plot specific regions of FASTA or Biostrings data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggmsa.html
 ---
+
 
 # bioconductor-ggmsa
 

@@ -1,9 +1,9 @@
 # transannot CWL Generation Report
 
-## transannot
+## transannot_easytransannot
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or extract the container image due to insufficient disk space.
+By Mariia Zelenskaia mariia.zelenskaia@mpinat.mpg.de & Yazhini A. yazhini@mpinat.mpg.de
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/transannot:4.0.0--pl5321hd6d6fdc_2
@@ -18,14 +18,22 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/transannot:4.0.0--pl5321hd6d6fdc_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:7a0dad4f4a9eed2fd441105ac5dcde2fdf8b02de91cb5f3c089adcae7b55d6a0: unpack entry: usr/local/lib/libstdc++.so.6.0.33: unpack to regular file: short write: write /tmp/build-temp-2814958728/rootfs/usr/local/lib/libstdc++.so.6.0.33: no space left on device
+usage: transannot easytransannot <i:fast(a|q)File[.gz|bz]> | <i:fastqFile1_1[.gz]> ... <i:fastqFileN_1[.gz]> <i:targetDB> <i:targetDB> <i:targetDB> <o:outFile> <tmpDir> [options]
+ By Mariia Zelenskaia mariia.zelenskaia@mpinat.mpg.de & Yazhini A. yazhini@mpinat.mpg.de 
+
+options: prefilter:              
+ -s FLOAT                 Sensitivity: 1.0 faster; 4.0 fast; 7.5 sensitive [4.000]
+align:                  
+ -c FLOAT                 List matches above this fraction of aligned (covered) residues (see --cov-mode) [0.000]
+ --min-seq-id FLOAT       List matches above this sequence identity (for clustering) (range 0.0-1.0) [0.300]
+misc:                   
+ --createdb-mode INT      Createdb mode 0: copy data, 1: soft link data and write new index (works only with single line fasta/q) [1]
+common:                 
+ --compressed INT         Write compressed output [0]
+ --remove-tmp-files BOOL  Delete temporary files [0]
+ --threads INT            Number of CPU-cores used (all by default) [20]
+ -v INT                   Verbosity level: 0: quiet, 1: +errors, 2: +warnings, 3: +info [3]
+ --simple-output BOOL     Provide only query, target IDs and information from UniProt in the output file. No information about alignment (eg. sequence identity and bit score) [0]
+ --no-run-clust BOOL      Per default there is linclust of mmseqs performed for the redundancy reduction. If you don't want it, provide this tag [0]
 ```
 
-
-## Metadata
-- **Skill**: generated

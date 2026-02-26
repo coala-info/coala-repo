@@ -1,9 +1,9 @@
 # dropkick CWL Generation Report
 
-## dropkick
+## dropkick_run
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to insufficient disk space.
+Run dropkick to identify ambient RNA in single-cell data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dropkick:1.2.8--py310h7eb0018_0
@@ -18,11 +18,88 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dropkick:1.2.8--py310h7eb0018_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3869926094: no space left on device
+usage: dropkick run [-h] [-o [OUTPUT_DIR]] [--min-genes MIN_GENES]
+                    [--n-ambient N_AMBIENT] [-m METRICS [METRICS ...]]
+                    [--thresh-methods THRESH_METHODS [THRESH_METHODS ...]]
+                    [--directions DIRECTIONS [DIRECTIONS ...]]
+                    [--n-hvgs N_HVGS] [-a [ALPHAS ...]] [-i N_ITER]
+                    [-j N_JOBS] [--seed SEED] [--csv] [-q]
+                    counts
+
+positional arguments:
+  counts                Input (cell x gene) counts matrix as .h5ad or tab
+                        delimited text file
+
+options:
+  -h, --help            show this help message and exit
+  -o [OUTPUT_DIR], --output-dir [OUTPUT_DIR]
+                        Output directory. Output will be placed in [output-
+                        dir]/[name]_dropkick.h5ad. Default './'.
+  --min-genes MIN_GENES
+                        Minimum number of genes detected to keep cell. Default
+                        50.
+  --n-ambient N_AMBIENT
+                        Number of top genes by dropout rate to use for ambient
+                        profile. Default 10.
+  -m METRICS [METRICS ...], --metrics METRICS [METRICS ...]
+                        Heuristics for thresholding to build training set for
+                        model.
+  --thresh-methods THRESH_METHODS [THRESH_METHODS ...]
+                        Method used for automatic thresholding on each
+                        heuristic in '--metrics'.
+  --directions DIRECTIONS [DIRECTIONS ...]
+                        Direction of thresholding for each heuristic in '--
+                        metrics'.
+  --n-hvgs N_HVGS       Number of highly variable genes for training model.
+                        Default 2000.
+  -a [ALPHAS ...], --alphas [ALPHAS ...]
+                        Ratio(s) between l1 and l2 regularization for
+                        regression model. Default 0.1.
+  -i N_ITER, --n-iter N_ITER
+                        Maximum number of iterations for optimization. Default
+                        2000.
+  -j N_JOBS, --n-jobs N_JOBS
+                        Maximum number of threads for cross validation.
+                        Default 2.
+  --seed SEED           Random state for cross validation.
+  --csv                 Save dropkick scores and labels for each barcode to a
+                        flat .csv file.
+  -q, --quietly         Run without printing processing updates to console.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## dropkick_qc
+
+### Tool Description
+Quality control for single-cell RNA-seq data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dropkick:1.2.8--py310h7eb0018_0
+- **Homepage**: https://github.com/KenLauLab/dropkick
+- **Package**: https://anaconda.org/channels/bioconda/packages/dropkick/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: dropkick qc [-h] [-o [OUTPUT_DIR]] [--min-genes MIN_GENES]
+                   [--n-ambient N_AMBIENT] [-q]
+                   counts
+
+positional arguments:
+  counts                Input (cell x gene) counts matrix as .h5ad or tab
+                        delimited text file
+
+options:
+  -h, --help            show this help message and exit
+  -o [OUTPUT_DIR], --output-dir [OUTPUT_DIR]
+                        Output directory. Output will be placed in [output-
+                        dir]/[name]_dropkick.h5ad. Default './'.
+  --min-genes MIN_GENES
+                        Minimum number of genes detected to keep cell. Default
+                        50.
+  --n-ambient N_AMBIENT
+                        Number of top genes by dropout rate to use for ambient
+                        profile. Default 10.
+  -q, --quietly         Run without printing processing updates to console.
+```
+

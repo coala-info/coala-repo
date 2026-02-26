@@ -1,9 +1,9 @@
 # ratatosk CWL Generation Report
 
-## ratatosk
+## ratatosk_Ratatosk
 
 ### Tool Description
-Ratatosk is a hybrid error correction tool for long reads using colored de Bruijn graphs.
+Hybrid error correction of long reads using colored de Bruijn graphs
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ratatosk:0.9.0--h077b44d_2
@@ -18,13 +18,20 @@ Ratatosk is a hybrid error correction tool for long reads using colored de Bruij
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ratatosk:0.9.0--h077b44d_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Ratatosk 0.9.0
+
+Hybrid error correction of long reads using colored de Bruijn graphs
+
+Usage: Ratatosk [COMMAND] [PARAMETERS]
+Usage: Ratatosk --help
+Usage: Ratatosk --version
+Usage: Ratatosk --cite
+
+[COMMAND]:
+
+   correct                         Correct long reads with short reads
+   index                           Prepare a Ratatosk index (advanced)
+
+Use "Ratatosk [COMMAND] --help" to get a specific command help
 ```
 
-
-## Metadata
-- **Skill**: generated

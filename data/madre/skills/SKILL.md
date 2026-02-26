@@ -1,8 +1,9 @@
 ---
 name: madre
-description: MADRe (Metagenomic Assembly-Driven Database Reduction) is a specialized tool for taxonomic classification that bridges the gap between fast but less precise k-mer methods and accurate but resource-intensive mapping methods.
+description: MADRe performs taxonomic classification of long reads by using preliminary assembly to reduce the reference database search space. Use when user asks to classify metagenomic long reads, perform strain-level taxonomic profiling, or reduce resource usage during read mapping.
 homepage: https://github.com/lbcb-sci/MADRe
 ---
+
 
 # madre
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.ht.mg.430a
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix HT Mouse Genome 430A array. Use when user asks to process Affymetrix HT MG-430A microarray data, access platform design information for mouse genome arrays, or analyze high-throughput mouse gene expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ht.mg.430a.html
 ---
+
 
 # bioconductor-pd.ht.mg.430a
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-guideseq
-description: The package implements GUIDE-seq and PEtag-seq analysis workflow including functions for filtering UMI and reads with low coverage, obtaining unique insertion sites (proxy of cleavage sites), estimating the locations of the insertion sites, aka, peaks, merging estimated insertion sites from plus and minus strand, and performing off target search of the extended regions around insertion sites with mismatches and indels.
+description: This package analyzes GUIDE-seq and PEtag-seq data to identify CRISPR-Cas9 off-target cleavage sites. Use when user asks to identify off-target sites, process UMI-tagged sequencing data, call peaks from double-stranded oligonucleotide integration assays, or map sequence homology to a guide RNA.
 homepage: https://bioconductor.org/packages/release/bioc/html/GUIDEseq.html
 ---
+
 
 # bioconductor-guideseq
 

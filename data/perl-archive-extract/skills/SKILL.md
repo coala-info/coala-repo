@@ -1,8 +1,9 @@
 ---
 name: perl-archive-extract
-description: The `perl-archive-extract` skill provides a wrapper-independent way to decompress and unpack files.
+description: This tool provides a generic interface to decompress and unpack various archive formats by automatically detecting the file type. Use when user asks to extract files from archives like tar, zip, or gz, unpack compressed data to a specific directory, or list the contents of an archive.
 homepage: http://metacpan.org/pod/Archive::Extract
 ---
+
 
 # perl-archive-extract
 

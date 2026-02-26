@@ -1,8 +1,9 @@
 ---
 name: circexplorer
-description: CIRCexplorer2 is a specialized toolset designed for the comprehensive analysis of circular RNAs.
+description: CIRCexplorer2 identifies, annotates, and characterizes circular RNAs from RNA-seq data by parsing fusion junction reads. Use when user asks to parse aligner outputs for circular RNAs, annotate back-splice junctions, or perform de novo assembly of circular transcripts.
 homepage: https://github.com/YangLab/CIRCexplorer2
 ---
+
 
 # circexplorer
 

@@ -1,8 +1,9 @@
 ---
 name: neodisambiguate
-description: `neodisambiguate` is a high-performance tool designed to resolve the origin of sequencing reads that align to multiple reference genomes.
+description: neodisambiguate resolves the origin of sequencing reads that align to multiple reference genomes by comparing alignment metrics. Use when user asks to disambiguate reads from multiple species, separate host and graft reads in PDX models, or assign alignments to the most likely reference source.
 homepage: https://github.com/clintval/neodisambiguate
 ---
+
 
 # neodisambiguate
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mu19ksubccdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) for the Affymetrix Mu19Ksub microarray. Use when user asks to access probe mapping information for the Mu19Ksub array or process Affymetrix Mu19Ksub microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu19ksubccdf.html
 ---
+
 
 # bioconductor-mu19ksubccdf
 

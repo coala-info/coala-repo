@@ -1,8 +1,9 @@
 ---
 name: mmseqs2
-description: MMseqs2 (Many-against-Many sequence searching) is a highly optimized software suite designed for the analysis of massive sequence datasets.
+description: MMseqs2 is a high-performance software suite designed for rapid protein and nucleotide sequence searching, clustering, and taxonomic assignment. Use when user asks to search sequences against databases, cluster large datasets into representative groups, or assign taxonomy to metagenomic sequences.
 homepage: https://github.com/soedinglab/mmseqs2
 ---
+
 
 # mmseqs2
 

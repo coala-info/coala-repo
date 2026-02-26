@@ -1,8 +1,9 @@
 ---
 name: recycler
-description: Recycler is a computational tool designed to identify circular genomic elements by analyzing the topology of an assembly graph alongside read coverage and paired-end alignment information.
+description: Recycler identifies circular genomic elements by analyzing assembly graph topology, read coverage, and paired-end alignment data. Use when user asks to extract circular sequences from assembly graphs, identify plasmids in metagenomes, or recover circular paths from short-read assemblies.
 homepage: https://github.com/Shamir-Lab/Recycler
 ---
+
 
 # recycler
 

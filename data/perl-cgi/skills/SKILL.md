@@ -1,8 +1,9 @@
 ---
 name: perl-cgi
-description: The `perl-cgi` skill provides guidance for utilizing the `CGI.pm` library, the legacy standard for creating interactive web applications in Perl.
+description: This tool facilitates the interface between web servers and Perl scripts to process user input and generate dynamic web content using the CGI.pm library. Use when user asks to create interactive web applications in Perl, handle web form parameters, manage cookies, or maintain legacy CGI systems.
 homepage: https://metacpan.org/pod/distribution/CGI/lib/CGI.pod
 ---
+
 
 # perl-cgi
 

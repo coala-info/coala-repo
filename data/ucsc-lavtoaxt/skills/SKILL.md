@@ -1,8 +1,9 @@
 ---
 name: ucsc-lavtoaxt
-description: The `lavToAxt` utility is part of the UCSC Genome Browser "Kent" toolset.
+description: This tool converts sequence alignments from LAV format to AXT format, adding nucleotide sequences. Use when user asks to convert LAV or PSL sequence alignments to AXT format, or to generate AXT files with nucleotide sequences.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-lavtoaxt
 

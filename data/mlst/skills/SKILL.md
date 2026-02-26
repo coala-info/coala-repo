@@ -1,8 +1,9 @@
 ---
 name: mlst
-description: The `mlst` tool provides a rapid method for Multi-Locus Sequence Typing (MLST) by scanning contig files against traditional PubMLST schemes.
+description: The mlst tool performs Multi-Locus Sequence Typing by scanning genomic contigs against PubMLST schemes to identify sequence types. Use when user asks to perform MLST analysis, identify bacterial sequence types from assembly files, or list supported typing schemes.
 homepage: https://github.com/tseemann/mlst
 ---
+
 
 # mlst
 

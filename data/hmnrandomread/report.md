@@ -1,9 +1,9 @@
 # hmnrandomread CWL Generation Report
 
-## hmnrandomread
+## hmnrandomread_HmnRandomRead
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It is a system error log indicating a failure to build a container image due to insufficient disk space.
+Generate random reads from reference sequences with specified insert sizes and error profiles.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hmnrandomread:0.10.0--h9948957_4
@@ -18,11 +18,26 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hmnrandomread:0.10.0--h9948957_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1524312334: no space left on device
+Error:   Unrecognized argument: -help
+
+Use:   HmnRandomRead [options] 
+
+Options:
+    Name    Type    Default    Description
+    -h/--help    None    None    Show this help and exit (optional)
+        -v/--version    None    None    Show the version and exit (optional)
+
+        -r/--reference    [string,double]    None    Reference(s) path with number sequence (required)
+        -lengthReads/--length-reads    [int]    150    Reads Size (optional)
+        -meanInsert/--mean-insert-size    [int]    500    Mean Insert Size (optional)
+        -stdInsert/--std-insert-size    [int]    50    Standard Deviation Insert Size (optional)
+
+        -r1/--read-forward    [string]        Name Read Forward output (required)
+        -r2/--read-reverse    [string]        Name Read Reverse output (required)
+
+    -profileDiversity/--profile-diversity    [string]    ""    Name file with profile diversity (optional)
+    -profileError/--profile-error    [string]    ""    Name file with profile error (optional)
+    -profileErrorId/--profile-error-id    [string]    ""    Id error profile to apply (optional, required if -profileError)
+        -s/--seed    [int]    0    Seed number (optional)
 ```
 
-
-## Metadata
-- **Skill**: generated

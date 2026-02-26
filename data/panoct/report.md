@@ -1,12 +1,12 @@
 # panoct CWL Generation Report
 
-## panoct
+## panoct_panoct.pl
 
 ### Tool Description
-FAIL to generate CWL: panoct not found in Singularity image. The image may not provide this executable.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/panoct:3.23--pl5321hdfd78af_2
+- **Docker Image**: quay.io/biocontainers/panoct:3.23--pl5.22.0_0
 - **Homepage**: https://panoct.sourceforge.io/
 - **Package**: https://anaconda.org/channels/bioconda/packages/panoct/overview
 - **Validation**: FAIL (generation failed)
@@ -18,34 +18,15 @@ FAIL to generate CWL: panoct not found in Singularity image. The image may not p
 - **Stars**: N/A
 ### Generation Failed
 
-FAIL to generate CWL: panoct not found in Singularity image. The image may not provide this executable.
+No inputs — do not generate CWL.
 
 
 ### Validation Errors
 
-- FAIL to generate CWL: panoct not found in Singularity image. The image may not provide this executable.
+- No inputs — do not generate CWL.
 
 
 
-### Original Help Text
-```text
-
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## panoct_panoct.pl
-
-### Tool Description
-PanOCT (Pangenome Ortholog Clustering Tool) - A tool for pangenome analysis and ortholog clustering.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/panoct:3.23--pl5321hdfd78af_2
-- **Homepage**: https://panoct.sourceforge.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/panoct/overview
-- **Validation**: PASS
 ### Original Help Text
 ```text
 [H[J

@@ -1,9 +1,9 @@
 # ucsc-autodtd CWL Generation Report
 
-## ucsc-autodtd
+## ucsc-autodtd_autoDtd
 
 ### Tool Description
-The provided text is an error log indicating a failure to build or extract the container image ('no space left on device') and does not contain the help text for the tool. Based on the tool name, it is a UCSC Genome Browser utility used to automatically create a DTD from XML files.
+Give this a XML document to look at and it will come up with a DTD to describe it.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-autodtd:482--h0b57e2e_0
@@ -18,14 +18,12 @@ The provided text is an error log indicating a failure to build or extract the c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-autodtd:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:aaad627d37386a966a870ede488633184ce9e3676c66161aa247aa038d109cad: unpack entry: usr/local/lib/libquadmath.so.0.0.0: unpack to regular file: short write: write /tmp/build-temp-2436431124/rootfs/usr/local/lib/libquadmath.so.0.0.0: no space left on device
+autoDtd - Give this a XML document to look at and it will come up with a DTD
+to describe it.
+usage:
+   autoDtd in.xml out.dtd out.stats
+options:
+   -tree=out.tree - Output tag tree.
+   -atree=out.atree - Output attributed tag tree.
 ```
 
-
-## Metadata
-- **Skill**: generated

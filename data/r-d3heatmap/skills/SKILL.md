@@ -1,8 +1,9 @@
 ---
 name: r-d3heatmap
-description: Skill for using the CRAN R package r-d3heatmap.
+description: This tool creates interactive d3.js heatmaps in R for visualizing matrix data with features like zooming and dendrogram-based clustering. Use when user asks to create interactive heatmaps, visualize matrix data with zoom and hover effects, or generate hierarchical clustering dendrograms in R.
 homepage: https://cran.r-project.org/web/packages/d3heatmap/index.html
 ---
+
 
 # r-d3heatmap
 

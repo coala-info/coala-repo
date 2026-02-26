@@ -1,8 +1,9 @@
 ---
 name: starfish
-description: Starfish is a specialized Python library designed to standardize the analysis of image-based transcriptomics.
+description: Starfish is a Python library designed to standardize the analysis of image-based transcriptomics by transforming high-dimensional microscopy images into quantified gene expression data. Use when user asks to process raw spatial transcriptomics images, perform image registration, apply filters like WhiteTophat, detect RNA spots, or decode transcripts using a codebook.
 homepage: https://github.com/spacetx/starfish
 ---
+
 
 # starfish
 

@@ -1,8 +1,9 @@
 ---
 name: meryl
-description: Meryl is a high-performance k-mer counter and sequence utility designed for large-scale genomic data.
+description: Meryl is a high-performance k-mer counter and sequence utility used to build and manipulate genomic k-mer frequency databases. Use when user asks to count k-mers, merge k-mer databases, filter k-mers by frequency, or generate k-mer histograms for genome analysis.
 homepage: https://github.com/marbl/meryl
 ---
+
 
 # meryl
 

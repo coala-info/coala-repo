@@ -1,8 +1,9 @@
 ---
 name: teloclip
-description: Teloclip is a bioinformatics utility designed to bridge the gap between draft genome assemblies and complete, telomere-to-telomere representations.
+description: Teloclip is a bioinformatics utility that identifies telomeric motifs in soft-clipped read alignments to extend draft genome assemblies. Use when user asks to filter alignments for telomeric overhangs, extract telomeric sequences, or automatically extend contigs to achieve telomere-to-telomere representations.
 homepage: https://github.com/Adamtaranto/teloclip
 ---
+
 
 # teloclip
 

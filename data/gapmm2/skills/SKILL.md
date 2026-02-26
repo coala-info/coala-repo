@@ -1,8 +1,9 @@
 ---
 name: gapmm2
-description: gapmm2 is a specialized wrapper for minimap2 designed to solve the problem of "missing" terminal exons in spliced alignments.
+description: "gapmm2 is a wrapper for minimap2 that improves the detection of short terminal exons in spliced alignments using sensitive local alignment. Use when user asks to align transcripts to a reference genome, recover missing terminal exons, or generate refined PAF and GFF3 files."
 homepage: https://github.com/nextgenusfs/gapmm2
 ---
+
 
 # gapmm2
 

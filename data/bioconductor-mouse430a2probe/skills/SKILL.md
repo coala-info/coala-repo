@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mouse430a2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Mouse Genome 430A 2.0 microarray chip. Use when user asks to retrieve probe sequences for the mouse430a2 platform or perform sequence-specific analysis on Affymetrix Mouse Genome 430A 2.0 array data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse430a2probe.html
 ---
+
 
 # bioconductor-mouse430a2probe
 

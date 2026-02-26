@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ratchrloc
-description: the package is available on all platforms; click for details.
+description: This package provides chromosomal location data for rat genes. Use when user asks to retrieve chromosomal coordinates for rat genes, map rat gene identifiers to their genomic locations, or access rat genome annotation data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ratCHRLOC.html
 ---
+
 
 # bioconductor-ratchrloc
 

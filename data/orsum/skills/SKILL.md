@@ -1,8 +1,9 @@
 ---
 name: orsum
-description: `orsum` (over-representation summary) is a specialized tool designed to manage the complexity of enrichment analysis results.
+description: orsum summarizes and filters redundant enrichment analysis results by applying a hierarchical principle to identify representative biological terms. Use when user asks to simplify enrichment results, remove redundant pathway terms, or compare enrichment analysis results across multiple experimental conditions.
 homepage: https://github.com/ozanozisik/orsum
 ---
+
 
 # orsum
 

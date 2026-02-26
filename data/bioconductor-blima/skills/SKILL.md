@@ -1,8 +1,9 @@
 ---
 name: bioconductor-blima
-description: the package is available on all platforms; click for details.
+description: This tool performs preprocessing and analysis of Illumina microarray data at the bead level. Use when user asks to perform background correction, variance stabilization, quantile normalization of unequal vectors, or differential expression testing on bead and probe level data.
 homepage: https://bioconductor.org/packages/release/bioc/html/blima.html
 ---
+
 
 # bioconductor-blima
 

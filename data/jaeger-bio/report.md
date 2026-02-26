@@ -1,9 +1,9 @@
 # jaeger-bio CWL Generation Report
 
-## jaeger-bio
+## jaeger-bio_jaeger
 
 ### Tool Description
-Jaeger is a deep learning-based tool for identifying prophages in genomic sequences.
+Deep-learning based bacteriophage discovery
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jaeger-bio:1.1.30--pyhdfd78af_0
@@ -18,11 +18,33 @@ Jaeger is a deep learning-based tool for identifying prophages in genomic sequen
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jaeger-bio:1.1.30--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3439038157: no space left on device
+.
+               ,'/ \`.
+              |\/___\/|
+              '\   /`/          ██╗ █████╗ ███████╗ ██████╗ ███████╗██████╗
+               `.\ /,'           ██║██╔══██╗██╔════╝██╔════╝ ██╔════╝██╔══██╗
+                  |              ██║███████║█████╗  ██║  ███╗█████╗  ██████╔╝
+                  |         ██   ██║██╔══██║██╔══╝  ██║   ██║██╔══╝  ██╔══██╗
+                 |=|        ╚█████╔╝██║  ██║███████╗╚██████╔╝███████╗██║  ██║
+            /\  ,|=|.  /\    ╚════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+        ,'`.  \/ |=| \/  ,'`. 
+      ,'    `.|\ `-' /|,'    `. 
+    ,'   .-._ \ `---' / _,-.   `.
+       ,'    `-`-._,-'-'   `.
+      '
+    
+
+## Jaeger 1.1.30 (yet AnothEr phaGe idEntifier) Deep-learning based
+bacteriophage discovery https://github.com/Yasas1994/Jaeger.git
+
+positional arguments:
+  {test,run,tune}
+    test           run tests to check installation
+    run            run jaeger
+    tune           fine-tune existing models on custom databases
+
+options:
+  -h, --help       show this help message and exit
+  --version        show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

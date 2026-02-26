@@ -1,8 +1,9 @@
 ---
 name: r-gganatogram
-description: R package gganatogram (documentation from project home).
+description: This tool creates modular anatomical diagrams and tissue visualizations for various organisms using ggplot2. Use when user asks to generate anatograms, visualize organ-specific data, or create anatomical heatmaps for humans, mice, cells, and other species.
 homepage: https://cran.r-project.org/web/packages/gganatogram/index.html
 ---
+
 
 # r-gganatogram
 

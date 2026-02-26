@@ -1,8 +1,9 @@
 ---
 name: r-gdtools
-description: "Compute text metrics (width, ascent, descent) using 'Cairo'     and 'FreeType', independently of the active graphic device. Font     lookup is delegated to 'systemfonts'. Additional utilities let users     register 'Google Fonts' or bundled 'Liberation' fonts, check font     availability, and assemble 'htmlDependency' objects so that fonts are     correctly embedded in 'Shiny' applications, 'R Markdown' documents,     and 'htmlwidgets' outputs such as 'ggiraph'.</p>"
+description: gdtools provides utilities for computing font metrics and managing fonts within the R environment. Use when user asks to calculate text string dimensions, register Google or Liberation fonts, check font availability, or manage font dependencies for R graphics and HTML outputs.
 homepage: https://cloud.r-project.org/web/packages/gdtools/index.html
 ---
+
 
 # r-gdtools
 

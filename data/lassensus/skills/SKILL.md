@@ -1,8 +1,9 @@
 ---
 name: lassensus
-description: Lassensus is a specialized bioinformatics tool designed to automate the workflow for Lassa virus consensus sequence generation, specifically optimized for long-read sequencing data.
+description: Lassensus automates the generation of Lassa virus consensus sequences from long-read sequencing data by identifying the closest reference and performing mapping, consensus calling, and polishing. Use when user asks to generate Lassa virus consensus sequences, identify the best GenBank reference for LASV samples, or process long-read sequencing data for Lassa virus assembly.
 homepage: https://github.com/DaanJansen94/lassensus
 ---
+
 
 # lassensus
 

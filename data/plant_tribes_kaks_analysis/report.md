@@ -1,12 +1,12 @@
 # plant_tribes_kaks_analysis CWL Generation Report
 
-## plant_tribes_kaks_analysis
+## plant_tribes_kaks_analysis_KaKsAnalysis
 
 ### Tool Description
-The provided text does not contain help information for the tool. It consists of system logs and a fatal error message indicating a failure to build a container image due to insufficient disk space.
+DETERMINE PAIRWISE SEQUENCE SYNONYMOUS SUBSTITUTIONS (Ks) AND SIGNIFICANT DUPLICATION COMPONENTS
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0
+- **Docker Image**: quay.io/biocontainers/plant_tribes_kaks_analysis:1.0.4--0
 - **Homepage**: https://github.com/dePamphilis/PlantTribes
 - **Package**: https://anaconda.org/channels/bioconda/packages/plant_tribes_kaks_analysis/overview
 - **Validation**: PASS
@@ -18,43 +18,76 @@ The provided text does not contain help information for the tool. It consists of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:43:25  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
+Unknown option: help
 
 
-## Metadata
-- **Skill**: generated
-
-## plant_tribes_kaks_analysis_KaKsAnalysis
-
-### Tool Description
-A tool for Ka/Ks analysis within the PlantTribes pipeline. Note: The provided help text contains only system error logs regarding a failed container build and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0
-- **Homepage**: https://github.com/dePamphilis/PlantTribes
-- **Package**: https://anaconda.org/channels/bioconda/packages/plant_tribes_kaks_analysis/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:44:41  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+#                                DETERMINE PAIRWISE SEQUENCE SYNONYMOUS SUBSTITUTIONS (Ks) AND SIGNIFICANT DUPLICATION COMPONENTS
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Required Options:
+#
+#  --coding_sequences_species_1 <string>   : Coding sequences (CDS) fasta file for the first species (species1.fna)
+#
+#  
+#  --proteins_species_1 <string>           : Amino acids (proteins) sequences fasta file for the first species (species1.faa) 
+#
+#
+#  --comparison <string>                   : pairwise sequence comparison to determine homolgous pairs
+#                                            If self species comparison: paralogs
+#                                            If cross species comparison: orthologs (requires second species data)
+#
+# # # # # # # # # # # # # # # # # # 
+#  Others Options:
+#
+#  --coding_sequences_species_2 <string>   : Coding sequences (CDS) fasta file for the first species (species2.fna)
+#                                            requires "--comparison" to be set to "orthologs" 
+#
+#
+#  --proteins_species_2 <string>           : Amino acids (proteins) sequences fasta file for the first species (species2.faa)
+#                                            requires "--comparison" to be set to "orthologs"
+#
+#  --crb_blast <string>                    : Use conditional reciprocal best BLAST to determine for cross-species orthologs
+#                                            instead of the default reciprocal best BLAST
+#                                            requires "--comparison" to be set to "orthologs" 
+#
+#  --min_coverage <float>                  : Minimum sequence pairwise coverage length between homologous pairs
+#                                            Default: 0.5 (50% coverage) - [0.3 to 1.0]
+#
+#  --recalibration_rate <float>            : Recalibrate synonymous substitution (ks) rates of a species using a predetermined evolutionary rate that
+#                                            can be determined from a species tree inferred from a collection single copy genes from taxa of interest
+#                                            (Cui et al., 2006) - mainly applies only paralogous ks analysis
+#
+#  --codeml_ctl_file <string>              : PAML's codeml control file to carry out ML analysis of protein-coding DNA sequences using codon 
+#                                            substitution models. The defaults in the "codeml.ctl.args" template in the config directory of
+#                                            the installation will be used if not provided. NOTE: input (seqfile, treefile) and output (outfile)
+#                                            parameters of codeml are not included in the template.
+#
+#
+#  --fit_components                        : Fit a mixture model of multivariate normal components to synonymous (ks) distribution to identify
+#                                            significant duplication event(s) in a genome
+# 
+#
+#  --num_of_components <int>               : Number components to fit to synonymous substitutions (ks) distribution - required if "--fit_components"
+#
+#
+#  --min_ks <float>                        : Lower limit of synonymous substitutions (ks) - necessary if fitting components to the distribution to
+#                                            reduce background noise from young paralogous pairs due to normal gene births and deaths in a genome.  
+#
+#
+#  --max_ks <float>                        : Upper limit of synonymous substitutions (ks) - necessary if fitting components to the distribution to
+#                                            exclude likey ancient paralogous pairs.
+#
+#  --num_threads <int>                     : number of threads (CPUs) 
+#                                            Default: 1
+#
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Example Usage:
+#
+#  KaKsAnalysis --coding_sequences_species_1 species1.fna --proteins_species_1 species1.faa --comparison paralogs --num_threads 4
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ```
 

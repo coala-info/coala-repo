@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cliprofiler
-description: the package is available on all platforms; click for details.
+description: cliProfiler performs comparative analysis and visualization of CLIP-seq data across various genomic features. Use when user asks to profile CLIP-seq peaks, visualize binding sites around genomic landmarks, or analyze cross-linking data relative to gene models.
 homepage: https://bioconductor.org/packages/release/bioc/html/cliProfiler.html
 ---
+
 
 # bioconductor-cliprofiler
 

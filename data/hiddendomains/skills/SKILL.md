@@ -1,8 +1,9 @@
 ---
 name: hiddendomains
-description: The `hiddendomains` suite is designed for detecting broad epigenetic domains rather than narrow transcription factor peaks.
+description: "hiddendomains uses a Hidden Markov Model to detect broad epigenetic domains from ChIP-seq data. Use when user asks to identify large-scale genomic domains, bin reads from BAM files, or convert domain calling results into BED format for visualization and analysis."
 homepage: http://hiddendomains.sourceforge.net/
 ---
+
 
 # hiddendomains
 

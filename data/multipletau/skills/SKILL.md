@@ -1,8 +1,9 @@
 ---
 name: multipletau
-description: `multipletau` is a specialized Python library that implements the multiple-tau correlation algorithm.
+description: multipletau computes the autocorrelation or cross-correlation of signals on a logarithmic scale using the multiple-tau algorithm. Use when user asks to calculate correlation functions for signals spanning multiple timescales, perform fluorescence correlation spectroscopy analysis, or efficiently compute lags for large datasets.
 homepage: https://github.com/FCS-analysis/multipletau
 ---
+
 
 # multipletau
 

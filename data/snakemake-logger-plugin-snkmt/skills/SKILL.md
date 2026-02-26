@@ -1,8 +1,9 @@
 ---
 name: snakemake-logger-plugin-snkmt
-description: The snakemake-logger-plugin-snkmt is a specialized logging extension for the Snakemake workflow management system.
+description: This plugin captures Snakemake workflow events and stores execution metadata in a SQLite database for monitoring and auditing. Use when user asks to log workflow events to a database, track job execution history, or provide data for the snkmt dashboard.
 homepage: https://github.com/cademirch/snakemake-logger-plugin-snkmt
 ---
+
 
 # snakemake-logger-plugin-snkmt
 

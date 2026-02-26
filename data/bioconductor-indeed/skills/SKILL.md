@@ -1,8 +1,9 @@
 ---
 name: bioconductor-indeed
-description: the package is available on all platforms; click for details.
+description: The bioconductor-indeed package identifies biomarkers by integrating differential expression and differential network analysis to calculate molecule activity scores. Use when user asks to identify biomarkers using integrated correlation analysis, perform non-partial or partial correlation network analysis, or visualize differential networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/INDEED.html
 ---
+
 
 # bioconductor-indeed
 

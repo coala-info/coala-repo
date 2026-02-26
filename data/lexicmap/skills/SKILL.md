@@ -1,8 +1,9 @@
 ---
 name: lexicmap
-description: LexicMap is a high-performance alignment tool specifically engineered to handle the scale of modern genomic databases.
+description: LexicMap is a high-performance genomic alignment tool that provides base-level alignment and positional information for large-scale database searches. Use when user asks to index genomic databases, search for sequences with full base-level alignment, or identify matches for circular queries like plasmids and mitochondrial DNA.
 homepage: https://github.com/shenwei356/LexicMap
 ---
+
 
 # lexicmap
 

@@ -3,7 +3,7 @@
 ## feature_merge
 
 ### Tool Description
-A tool for merging features (Note: The provided text is an error log and does not contain usage instructions or argument definitions).
+Accepts GFF or GTF format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/feature_merge:1.3.0--pyh3252c3a_0
@@ -18,11 +18,21 @@ A tool for merging features (Note: The provided text is an error log and does no
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/feature_merge:1.3.0--pyh3252c3a_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2179585142: no space left on device
+Argument error( help ):  option --help not recognized
+Usage: feature_merge [-i] [-e] [-s] [-x] [-v] [-t <number>]  [-m merge|append|error|skip|replace] [-f type[,type..]].. <input1> [<input_n>..]
+Accepts GFF or GTF format.
+-v Print version and exit
+-f Comma seperated types of features to merge. Must be terms or accessions from the SOFA sequence ontology, "ALL", or "NONE". (Can be provided more than once to specify multiple merge groups)
+-i Ignore strand, merge feature regardless of strand
+-s Ignore sequence id, merge feature regardless of sequence id
+-x Only merge features with identical coordinates
+-t Threshold distance between features to merge 
+-e Exclude component features from output
+-m Merge strategy used to deal with id collisions between input files.
+    merge: attributes of all features with the same primary key will be merged
+    append: entry will have a unique, autoincremented primary key assigned to it (default)
+    error: exception will be raised. This means you will have to edit the file yourself to fix the duplicated IDs
+    skip: ignore duplicates, emitting a warning
+    replace: keep last duplicate
 ```
 
-
-## Metadata
-- **Skill**: generated

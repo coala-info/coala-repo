@@ -1,8 +1,9 @@
 ---
 name: nanoqc
-description: `nanoqc` is a specialized quality control tool for long-read sequencing data, particularly from Oxford Nanopore Technologies (ONT).
+description: nanoqc generates interactive quality control visualizations for long-read sequencing data to evaluate base call quality distributions. Use when user asks to perform quality control on Oxford Nanopore reads, generate interactive QC plots, or analyze base quality at the start and end of long reads.
 homepage: https://github.com/wdecoster/nanoQC
 ---
+
 
 # nanoqc
 

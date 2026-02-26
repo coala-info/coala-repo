@@ -1,8 +1,9 @@
 ---
 name: dms
-description: Dynamic Meta-Storms (DMS) is a bioinformatics tool used to quantify the differences between metagenomic communities.
+description: Dynamic Meta-Storms quantifies differences between metagenomic communities by incorporating phylogenetic relationships into species-level abundance comparisons. Use when user asks to calculate distance matrices for metagenomic samples, compare species-level profiles, or generate phylogenetic-based community distances.
 homepage: https://github.com/qibebt-bioinfo/dynamic-meta-storms
 ---
+
 
 # dms
 

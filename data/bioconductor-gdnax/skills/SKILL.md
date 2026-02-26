@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdnax
-description: the package can be used to get an insight into the strand library protocol used and, in case of strand-specific libraries, the strandedness of the data. Furthermore, it provides functionality to filter out reads of potential gDNA origin.
+description: The bioconductor-gdnax package diagnoses and filters genomic DNA contamination in RNA-seq data. Use when user asks to estimate library strandedness, quantify intergenic or intronic read distributions, and generate filtered BAM files to remove gDNA contamination.
 homepage: https://bioconductor.org/packages/release/bioc/html/gDNAx.html
 ---
+
 
 # bioconductor-gdnax
 

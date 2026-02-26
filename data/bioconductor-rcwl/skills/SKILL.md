@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcwl
-description: the package is available on all platforms; click for details.
+description: Rcwl provides an R interface to the Common Workflow Language for managing and executing bioinformatics pipelines. Use when user asks to wrap command-line tools, build CWL pipelines, or manage bioinformatics workflows in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rcwl.html
 ---
+
 
 # bioconductor-rcwl
 

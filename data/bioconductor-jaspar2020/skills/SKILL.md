@@ -1,8 +1,9 @@
 ---
 name: bioconductor-jaspar2020
-description: the package TFBSTools (>= 1.23.1).
+description: This package provides access to transcription factor binding profiles from the JASPAR 2020 database. Use when user asks to retrieve position frequency matrices by ID or name, filter motifs by species or taxonomic group, and fetch data for sequence logo generation.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JASPAR2020.html
 ---
+
 
 # bioconductor-jaspar2020
 

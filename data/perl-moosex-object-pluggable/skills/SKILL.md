@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-object-pluggable
-description: `MooseX::Object::Pluggable` is a Perl module designed to add a flexible plugin system to Moose-based classes.
+description: This Perl module provides a flexible system for dynamically loading and applying Moose roles as plugins to specific class instances at runtime. Use when user asks to add a plugin system to Moose classes, load roles dynamically on instances, or extend application functionality based on runtime configuration.
 homepage: https://github.com/moose/MooseX-Object-Pluggable
 ---
+
 
 # perl-moosex-object-pluggable
 

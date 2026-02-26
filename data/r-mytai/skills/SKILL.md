@@ -1,8 +1,9 @@
 ---
 name: r-mytai
-description: R package mytai (documentation from project home).
+description: This tool performs evolutionary transcriptomics analysis by integrating gene age information with gene expression data. Use when user asks to quantify transcriptome conservation, calculate Transcriptome Age Index or Transcriptome Divergence Index, and perform statistical tests for evolutionary patterns like the hourglass model.
 homepage: https://cran.r-project.org/web/packages/mytai/index.html
 ---
+
 
 # r-mytai
 

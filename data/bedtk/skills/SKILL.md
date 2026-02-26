@@ -1,8 +1,9 @@
 ---
 name: bedtk
-description: bedtk is a lightweight, high-performance toolkit designed for interval manipulation.
+description: bedtk is a high-performance toolkit designed for fast and memory-efficient genomic interval manipulation across BED, VCF, and PAF files. Use when user asks to filter intervals, find intersections, sort records, merge overlapping regions, or calculate breadth of coverage.
 homepage: https://github.com/lh3/bedtk
 ---
+
 
 # bedtk
 

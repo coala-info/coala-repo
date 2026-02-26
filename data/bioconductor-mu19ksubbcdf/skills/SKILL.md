@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mu19ksubbcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Mu19KsubB microarray. Use when user asks to process Mu19KsubB microarray data, map probe identifiers to their physical locations, or analyze gene expression from this specific platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu19ksubbcdf.html
 ---
+
 
 # bioconductor-mu19ksubbcdf
 

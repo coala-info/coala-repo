@@ -3,7 +3,7 @@
 ## ega2
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime failure (no space left on device).
+EGA client for uploading and downloading data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ega2:2.2.2--0
@@ -18,11 +18,33 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ega2:2.2.2--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2163838113: no space left on device
+Type 'java -jar EgaDemoClient.jar' for interactive shell.
+Type 'java -jar EgaDemoClient.jar -p {username} {password} [-help]' for command line shell.
+    Use '-pf {filepath}' to read username/password from a file.
+    Use '-pfs {filepath}' to read username/password, plus all commands from a file.
+Exit
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## ega2
+
+### Tool Description
+EGA client for uploading and downloading data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ega2:2.2.2--0
+- **Homepage**: https://ega-archive.org/download/downloader-quickguide-v2
+- **Package**: https://anaconda.org/channels/bioconda/packages/ega2/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+Type 'java -jar EgaDemoClient.jar' for interactive shell.
+Type 'java -jar EgaDemoClient.jar -p {username} {password} [-help]' for command line shell.
+    Use '-pf {filepath}' to read username/password from a file.
+    Use '-pfs {filepath}' to read username/password, plus all commands from a file.
+Exit
+```
+

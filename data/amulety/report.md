@@ -3,7 +3,7 @@
 ## amulety
 
 ### Tool Description
-Atac-seq MULtiplet Estimation Tool (AMULET). Note: The provided text appears to be a container build/fetch error log rather than command-line help text, so no arguments could be extracted.
+AMULETY: Adaptive imMUne receptor Language model Embedding tool for TCR and antibodY
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/amulety:2.1.2--pyh6d73907_0
@@ -15,12 +15,46 @@ Atac-seq MULtiplet Estimation Tool (AMULET). Note: The provided text appears to 
 - **Total Downloads**: 1.6K
 - **Last updated**: 2026-01-26
 - **GitHub**: https://github.com/immcantation/amulety
-- **Stars**: 8
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/amulety:2.1.2--pyh6d73907_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/31a6c5ea733b197a7edc32495ef5ab1d88bb19baca1967b463e75d1d0166abf12756194584: no space left on device
+█████  ███    ███ ██    ██ ██      ███████ ████████     ██    ██
+██   ██ ████  ████ ██    ██ ██      ██         ██         ██  ██
+███████ ██ ████ ██ ██    ██ ██      █████      ██          ████
+██   ██ ██  ██  ██ ██    ██ ██      ██         ██           ██
+██   ██ ██      ██  ██████  ███████ ███████    ██           ██
+
+AMULETY: Adaptive imMUne receptor Language model Embedding tool for TCR and antibodY
+ version 2.1.2
+
+                                                                                
+ Usage: amulety [OPTIONS] COMMAND [ARGS]...                                     
+                                                                                
+ AMULETY: Adaptive imMUne receptor Language model Embedding tool for TCR and    
+ antibodY                                                                       
+                                                                                
+ Global logging options can be specified before any command.                    
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --log-file                    TEXT  Path to log file. If not provided, logs  │
+│                                     will be printed to stdout.               │
+│ --verbose             -v            Enable verbose logging (DEBUG level).    │
+│ --install-completion                Install completion for the current       │
+│                                     shell.                                   │
+│ --show-completion                   Show completion for the current shell,   │
+│                                     to copy it or customize the              │
+│                                     installation.                            │
+│ --help                              Show this message and exit.              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ translate-igblast   Translates nucleotide sequences to amino acid sequences  │
+│                     using IgBlast.                                           │
+│ embed               Embeds sequences from an AIRR rearrangement file using   │
+│                     the specified model. It returns the                      │
+│                     embeddings in the specified output format along with the │
+│                     filtered input AIRR data.                                │
+│ check-deps          Check if optional embedding dependencies and tools are   │
+│                     installed.                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 

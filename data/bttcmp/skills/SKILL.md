@@ -1,8 +1,9 @@
 ---
 name: bttcmp
-description: The `bttcmp` tool is a comprehensive pipeline designed to identify and annotate toxin genes specifically within *Bacillus thuringiensis* (Bt) datasets.
+description: The bttcmp tool identifies and annotates toxin genes in Bacillus thuringiensis datasets by integrating assembly, gene prediction, and multi-method detection. Use when user asks to identify insecticidal proteins, process raw sequencing reads for toxin mining, or annotate toxin genes from assembled genomes and protein sequences.
 homepage: https://github.com/liaochenlanruo/BTTCMP/blob/master/README.md
 ---
+
 
 # bttcmp
 

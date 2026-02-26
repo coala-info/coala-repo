@@ -1,8 +1,9 @@
 ---
 name: bioconductor-atena
-description: the package is available on all platforms; click for details.
+description: The atena package quantifies transposable element expression from sequencing data using specialized alignment and filtering methods. Use when user asks to quantify transposable element expression, fetch and parse RepeatMasker annotations, reconstruct fragmented TE insertions, or apply ERVmap, Telescope, and TEtranscripts quantification methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/atena.html
 ---
+
 
 # bioconductor-atena
 

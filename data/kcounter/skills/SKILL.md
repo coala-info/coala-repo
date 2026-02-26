@@ -1,8 +1,9 @@
 ---
 name: kcounter
-description: kcounter provides a streamlined interface for DNA k-mer counting, leveraging Rust's performance for the heavy computational lifting while maintaining a simple Python-friendly environment.
+description: kcounter performs high-performance DNA k-mer counting from genomic datasets using a Rust-based backend. Use when user asks to count k-mers in FASTA or FASTQ files, analyze k-mer distributions, or evaluate genome assemblies.
 homepage: http://apcamargo.github.io/kcounter/
 ---
+
 
 # kcounter
 

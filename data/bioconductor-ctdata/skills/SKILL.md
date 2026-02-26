@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ctdata
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides access to curated Cancer-Testis (CT) gene expression data and associated metadata. Use when user asks to retrieve Cancer-Testis gene expression datasets, access CT gene metadata, or download cancer-specific transcriptomic data for analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/CTdata.html
 ---
+
 
 # bioconductor-ctdata
 

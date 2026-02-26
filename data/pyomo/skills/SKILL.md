@@ -1,8 +1,9 @@
 ---
 name: pyomo
-description: Pyomo is a powerful Python-based ecosystem for mathematical optimization that allows you to define models algebraically.
+description: Pyomo is a Python-based ecosystem for modeling and solving mathematical optimization problems by interfacing with various solvers. Use when user asks to define algebraic models, set up variables and constraints, solve linear or nonlinear programs, or perform mathematical optimization.
 homepage: https://github.com/Pyomo/pyomo
 ---
+
 
 # pyomo
 

@@ -1,8 +1,9 @@
 ---
 name: perl-bio-samtools
-description: This skill provides procedural knowledge for the Samtools, BCFtools, and HTSlib ecosystem.
+description: This tool provides procedural knowledge for managing high-throughput sequencing data using the Samtools, BCFtools, and HTSlib ecosystem. Use when user asks to convert between BAM and CRAM formats, mark PCR duplicates, sort genomic coordinates, or perform variant calling.
 homepage: https://www.htslib.org/
 ---
+
 
 # perl-bio-samtools
 

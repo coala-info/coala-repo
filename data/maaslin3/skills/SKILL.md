@@ -1,8 +1,9 @@
 ---
 name: maaslin3
-description: MaAsLin 3 (Microbiome Multivariable Associations with Linear Models) is a statistical framework designed for meta-omic association discovery.
+description: MaAsLin 3 is a statistical framework for microbiome association discovery that simultaneously tests for feature abundance and prevalence while accounting for compositional data. Use when user asks to perform multivariable association testing, model random effects for repeated measures, or identify microbial biomarkers associated with specific metadata.
 homepage: https://github.com/biobakery/maaslin3
 ---
+
 
 # maaslin3
 

@@ -1,8 +1,9 @@
 ---
 name: probamconvert
-description: The `probamconvert` tool is a specialized utility designed to bridge the gap between proteomics and genomics.
+description: The probamconvert tool transforms proteomics identification files into proBAM or proBED formats to enable genomic visualization and integration. Use when user asks to convert mzIdentML, pepXML, or mzTAB files to proBAM, map peptides to genomic coordinates, or visualize proteomics data in genome browsers.
 homepage: https://github.com/Biobix/proBAMconvert
 ---
+
 
 # probamconvert
 

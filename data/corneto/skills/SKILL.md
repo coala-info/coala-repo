@@ -1,8 +1,9 @@
 ---
 name: corneto
-description: CORNETO (COmbinatorial Reconstruction of NETworks from Omics) is a specialized Python framework designed to solve network inference problems by framing them as mathematical optimization tasks.
+description: Corneto is a Python framework that reconstructs biological signaling pathways and metabolic models by solving network inference problems through mathematical optimization. Use when user asks to infer causal networks from omics data, integrate prior biological knowledge into network models, or solve combinatorial optimization problems like Steiner Tree inference.
 homepage: https://github.com/saezlab/corneto/
 ---
+
 
 # corneto
 

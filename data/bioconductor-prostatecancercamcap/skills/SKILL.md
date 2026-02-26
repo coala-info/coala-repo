@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prostatecancercamcap
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides gene expression and clinical data from the Cambridge Cancer Genomics Program prostate cancer study. Use when user asks to access prostate cancer datasets, analyze CamCaP study data, or retrieve clinical and genomic information for prostate cancer research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerCamcap.html
 ---
+
 
 # bioconductor-prostatecancercamcap
 

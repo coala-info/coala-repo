@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ibh
-description: the package is available on all platforms; click for details.
+description: This tool calculates Interaction Based Homogeneity to evaluate the fitness of gene lists or clustering results against biological interaction networks. Use when user asks to assess gene list quality using BioGRID data, evaluate the homogeneity of clustering outputs, or compare genomic algorithms based on network connectivity.
 homepage: https://bioconductor.org/packages/release/bioc/html/ibh.html
 ---
+
 
 # bioconductor-ibh
 

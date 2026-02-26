@@ -1,8 +1,9 @@
 ---
 name: r-coenocliner
-description: "Simulate species occurrence and abundances (counts) along     gradients.</p>"
+description: This tool simulates species occurrence and abundance data along environmental gradients using various response and error models. Use when user asks to generate synthetic ecological community data, model species response curves, or simulate species distributions along environmental gradients.
 homepage: https://cloud.r-project.org/web/packages/coenocliner/index.html
 ---
+
 
 # r-coenocliner
 

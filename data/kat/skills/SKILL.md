@@ -1,8 +1,9 @@
 ---
 name: kat
-description: The K-mer Analysis Toolkit (KAT) is a suite of tools designed to characterize and compare genomic datasets through k-mer frequencies.
+description: The K-mer Analysis Toolkit analyzes k-mer frequencies to characterize genomic datasets and validate de novo assemblies. Use when user asks to generate k-mer histograms, compare sequencing reads to assemblies, estimate genome size, or filter sequences based on k-mer properties.
 homepage: https://github.com/TGAC/KAT
 ---
+
 
 # kat
 

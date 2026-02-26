@@ -1,8 +1,9 @@
 ---
 name: r-epic
-description: R package epic (documentation from project home).
+description: r-epic estimates the proportions of immune, stromal, endothelial, and cancer cells from bulk gene expression data using the EPIC method. Use when user asks to perform cell type deconvolution on TPM or RPKM data, estimate the fraction of malignant cells without a reference profile, or account for varying mRNA content across cell types.
 homepage: https://cran.r-project.org/web/packages/epic/index.html
 ---
+
 
 # r-epic
 

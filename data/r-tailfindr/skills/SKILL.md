@@ -1,8 +1,9 @@
 ---
 name: r-tailfindr
-description: R package tailfindr (documentation from project home).
+description: tailfindr is an R package for alignment-free estimation of poly(A)-tail lengths from Oxford Nanopore RNA and DNA sequencing data. Use when user asks to estimate tail lengths from FAST5 files, process direct RNA or cDNA reads, or visualize tail boundaries in raw squiggle data.
 homepage: https://cran.r-project.org/web/packages/tailfindr/index.html
 ---
+
 
 # r-tailfindr
 

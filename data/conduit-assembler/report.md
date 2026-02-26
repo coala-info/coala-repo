@@ -1,9 +1,9 @@
 # conduit-assembler CWL Generation Report
 
-## conduit-assembler
+## conduit-assembler_conduit
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it consists of system error messages related to a Singularity/Docker container execution failure (no space left on device).
+CONsensus Decomposition Utility In Transcriptome-assembly
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1
@@ -18,9 +18,14 @@ The provided text does not contain help information or usage instructions; it co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/b98582dad27b3e5d6460babd00e13135a3165699bc714d83c4be4940128bac30: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/conduit-assembler:0.1.2--h14cfee4_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2972670233: no space left on device
+ERROR - first argument must specify correction mode, "nano" or "hybrid"
+CONDUIT - CONsensus Decomposition Utility In Transcriptome-assembly:
+CONDUIT Version 0.1.2 by Nathan Roach ( nroach2@jhu.edu, https://github.com/NatPRoach/conduit/ )
+Usage:
+  ./conduit <nano | hybrid>
+NOTE: nano mode not yet implemented... coming soon
+      to run the equivalent of nano mode, run hybrid mode with -i:0 and --no-final-polish
+      this will still require 'illumina' files to be passed, but will not check that they actually exist
+      so including -U this_file_does_not_exist.fq should run.
 ```
 

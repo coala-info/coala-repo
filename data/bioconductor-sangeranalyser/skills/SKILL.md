@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sangeranalyser
-description: the package can outputs detailed HTML reports, including chromatograms.
+description: This R package processes Sanger sequencing data and generates detailed HTML reports including chromatograms. Use when user asks to analyze Sanger sequencing reads, generate quality reports, or visualize chromatograms.
 homepage: https://bioconductor.org/packages/release/bioc/html/sangeranalyseR.html
 ---
+
 
 # bioconductor-sangeranalyser
 

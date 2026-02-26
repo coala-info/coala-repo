@@ -1,8 +1,9 @@
 ---
 name: yapc
-description: The `yapc` (Yet Another Peak Caller) tool is designed to identify consistent genomic peaks across multiple experimental conditions.
+description: yapc identifies consistent genomic peaks across multiple experimental conditions. Use when user asks to call genomic peaks or assess reproducibility between replicates.
 homepage: https://github.com/jurgjn/yapc
 ---
+
 
 # yapc
 

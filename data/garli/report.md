@@ -3,7 +3,7 @@
 ## garli
 
 ### Tool Description
-Genetic Algorithm for Rapid Likelihood Inference (GARLI) for phylogenetic analysis.
+GARLI (Genetic Algorithm for Rapid Likelihood Inference) is a program for phylogenetic inference using maximum likelihood.
 
 ### Metadata
 - **Docker Image**: biocontainers/garli:v2.1-3-deb_cv1
@@ -18,29 +18,20 @@ Genetic Algorithm for Rapid Likelihood Inference (GARLI) for phylogenetic analys
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/garli:v2.1-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2851751202: no space left on device
-```
+Usage: garli [OPTION] [config filename]
+Options:
+  -i, --interactive	interactive mode (allow and/or expect user feedback)
+  -b, --batch		batch mode (do not expect user input)
+                    (batch is the default for the version you are running)
+  -v, --version		print version information and exit
+  -h, --help		print this help and exit
+  -t			run internal tests (requires dataset and config file)
+  -V			validate: load config file and data, validate config file, data, starting trees
+				and constraint files, print required memory and selected model, then exit
+NOTE: If no config filename is passed on the command line the program
+   will look in the current directory for a file named "garli.conf"
 
 
-## Metadata
-- **Skill**: generated
-
-## garli_build.sh
-
-### Tool Description
-A script for building or managing GARLI (Genetic Algorithm for Rapid Likelihood Inference) container images.
-
-### Metadata
-- **Docker Image**: biocontainers/garli:v2.1-3-deb_cv1
-- **Homepage**: https://github.com/guillaumepotier/Garlic.js
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/garli:v2.1-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2211954124: no space left on device
+ERROR: could not open file "garli.conf".
 ```
 

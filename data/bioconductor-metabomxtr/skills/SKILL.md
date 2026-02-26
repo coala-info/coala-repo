@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metabomxtr
-description: the package is available on all platforms; click for details.
+description: This package implements mixture model-based methods for analyzing metabolomics data with non-random missing values. Use when user asks to perform differential abundance analysis on metabolomics data, handle non-detects in metabolite profiles, or fit mixture models to datasets with missing values.
 homepage: https://bioconductor.org/packages/release/bioc/html/metabomxtr.html
 ---
+
 
 # bioconductor-metabomxtr
 

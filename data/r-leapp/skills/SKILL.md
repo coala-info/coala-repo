@@ -1,8 +1,9 @@
 ---
 name: r-leapp
-description: "These functions take a gene expression value matrix, a         primary covariate vector, an additional known covariates         matrix.  A two stage analysis is applied to counter the effects         of latent variables on the rankings of hypotheses.  The         estimation and adjustment of latent effects are proposed by         Sun, Zhang and Owen (2011).  \"leapp\" is developed in the         context of microarray experiments, but may be used as a general         tool for high throughput data sets where dependence may be         involved.</p>"
+description: The r-leapp tool adjusts for latent variables and unobserved confounders in high-throughput genomic data using a two-stage projection approach. Use when user asks to perform differential expression analysis, adjust for batch effects, estimate latent effects, or rank hypotheses in microarray and RNA-seq datasets.
 homepage: https://cran.r-project.org/web/packages/leapp/index.html
 ---
+
 
 # r-leapp
 

@@ -1,8 +1,9 @@
 ---
 name: speaq
-description: SpeaQ is a specialized implementation for Scene Graph Generation (SGG) that enhances Transformer-based detectors.
+description: SpeaQ performs Scene Graph Generation by enhancing Transformer-based detectors through groupwise query specialization for visual relationship detection. Use when user asks to train scene graph generation models, enable groupwise query specialization, or evaluate visual relationship detection performance.
 homepage: https://github.com/mlvlab/SpeaQ
 ---
+
 
 # speaq
 

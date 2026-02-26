@@ -1,8 +1,9 @@
 ---
 name: stream
-description: STREAM (Single-cell Trajectories Reconstruction, Exploration And Mapping) is an analytical pipeline designed to disentangle complex branching structures in single-cell omics data.
+description: STREAM is an analytical pipeline designed to reconstruct and visualize complex branching trajectories in single-cell omics data. Use when user asks to perform trajectory inference, visualize developmental pathways, or map query cells onto a known developmental backbone.
 homepage: https://github.com/pinellolab/stream
 ---
+
 
 # stream
 

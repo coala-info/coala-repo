@@ -1,8 +1,9 @@
 ---
 name: nanoq
-description: Nanoq is a high-performance Rust-based utility designed for the "minimal but speedy" processing of nanopore reads.
+description: Nanoq is a high-performance utility for filtering, trimming, and generating summary statistics for nanopore sequencing reads. Use when user asks to filter reads by length or quality, generate sequencing run reports, trim read ends, or output read statistics in JSON format.
 homepage: https://github.com/esteinig/nanoq
 ---
+
 
 # nanoq
 

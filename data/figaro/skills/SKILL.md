@@ -1,8 +1,9 @@
 ---
 name: figaro
-description: Figaro is a specialized utility that automates the selection of optimal trimming parameters for microbiome sequencing data.
+description: Figaro automates the selection of optimal trimming parameters for microbiome sequencing data by analyzing quality scores to maximize read retention and overlap. Use when user asks to determine truncation positions for FASTQ files, optimize DADA2 trimming parameters, or calculate read filtering thresholds based on amplicon length.
 homepage: https://github.com/Zymo-Research/figaro
 ---
+
 
 # figaro
 

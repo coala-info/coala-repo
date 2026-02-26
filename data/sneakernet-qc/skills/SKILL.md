@@ -1,8 +1,9 @@
 ---
 name: sneakernet-qc
-description: SneakerNet is a modular Perl-based pipeline designed to automate the QC process for primary genomic and metagenomic read data.
+description: SneakerNet is a modular pipeline that automates quality control, assembly, and genomic analysis for primary sequencing data. Use when user asks to initialize a project directory from raw reads, run QC plugins, detect contamination, or perform AMR genotyping.
 homepage: https://github.com/lskatz/sneakernet
 ---
+
 
 # sneakernet-qc
 

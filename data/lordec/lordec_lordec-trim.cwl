@@ -2,15 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: lordec-trim
 label: lordec_lordec-trim
-doc: "The provided text does not contain help information for the tool. It contains
-  system error messages related to a container runtime (Apptainer/Singularity) failing
-  to pull or build the image due to lack of disk space.\n\nTool homepage: http://www.atgc-montpellier.fr/lordec/"
-inputs: []
+doc: "LoRDEC v0.9\n\nTool homepage: http://www.atgc-montpellier.fr/lordec/"
+inputs:
+  - id: input_file
+    type: File
+    doc: FASTA-file
+    inputBinding:
+      position: 101
+      prefix: -i
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: output-file
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/lordec:0.9--ha87ae23_0
-stdout: lordec_lordec-trim.out
+    dockerPull: quay.io/biocontainers/lordec:0.9--h77376b9_3

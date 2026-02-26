@@ -1,8 +1,9 @@
 ---
 name: ananse
-description: ANANSE (ANalysis Algorithm for Networks Specified by Enhancers) is a computational framework designed to map the regulatory landscape of cell fate changes.
+description: ANANSE is a computational framework that integrates enhancer activity and gene expression data to map gene regulatory networks and identify master regulators of cell fate changes. Use when user asks to predict transcription factor binding, infer gene regulatory networks, calculate transcription factor influence between cell states, or inspect ANANSE HDF5 files.
 homepage: https://github.com/vanheeringen-lab/ANANSE
 ---
+
 
 # ananse
 

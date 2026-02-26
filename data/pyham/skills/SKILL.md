@@ -1,8 +1,9 @@
 ---
 name: pyham
-description: pyham is a specialized Python library and toolset designed to facilitate the functional and evolutionary analysis of Hierarchical Orthologous Groups (HOGs).
+description: "pyham is a Python library for the functional and evolutionary analysis of Hierarchical Orthologous Groups. Use when user asks to map orthoXML files to species trees, identify gene evolutionary events like gains and losses, generate taxonomic profiles, or visualize gene lineage histories."
 homepage: https://github.com/DessimozLab/pyham
 ---
+
 
 # pyham
 

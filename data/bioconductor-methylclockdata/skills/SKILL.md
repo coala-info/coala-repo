@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylclockdata
-description: the package is available on all platforms; click for details.
+description: This package provides reference data and metadata required for estimating epigenetic age using DNA methylation clocks. Use when user asks to access datasets for epigenetic clock analysis, estimate chronological age from DNA methylation, or load reference sets for the methylclock package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/methylclockData.html
 ---
+
 
 # bioconductor-methylclockdata
 

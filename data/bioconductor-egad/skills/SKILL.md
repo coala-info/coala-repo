@@ -1,8 +1,9 @@
 ---
 name: bioconductor-egad
-description: The package implements a series of highly efficient tools to calculate functional properties of networks based on guilt by association methods.
+description: Bioconductor-egad evaluates gene networks and predicts gene function using guilt-by-association methods while controlling for multifunctionality bias. Use when user asks to evaluate network performance, predict gene functions, calculate multifunctionality scores, or analyze gene network topology.
 homepage: https://bioconductor.org/packages/release/bioc/html/EGAD.html
 ---
+
 
 # bioconductor-egad
 

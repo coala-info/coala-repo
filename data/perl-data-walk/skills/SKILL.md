@@ -1,8 +1,9 @@
 ---
 name: perl-data-walk
-description: The `perl-data-walk` skill leverages the `Data::Leaf::Walker` module to provide a path-based interface for nested Perl data.
+description: This tool provides a path-based interface for traversing, retrieving, and modifying values within nested Perl data structures. Use when user asks to iterate through data leaves, access values via key paths, or flatten complex nested structures.
 homepage: https://github.com/danboo/perl-data-leaf-walker
 ---
+
 
 # perl-data-walk
 

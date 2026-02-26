@@ -1,8 +1,9 @@
 ---
 name: kmerinshort
-description: KmerInShort is a high-performance utility for counting k-mers with a length strictly less than 15.
+description: KmerInShort is a high-performance utility for counting k-mers with a length strictly less than 15 and calculating sequence complexity. Use when user asks to count short k-mers, calculate Normalized Shannon Entropy, generate k-mer profiles, or analyze sequence composition in genomic data.
 homepage: https://github.com/rizkg/KmerInShort
 ---
+
 
 # kmerinshort
 

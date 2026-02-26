@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mm24kresogen.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Mouse 24k Resogen microarray platform. Use when user asks to map probe identifiers to gene symbols, retrieve genomic annotations for the Mouse 24k Resogen array, or link microarray data to biological databases.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mm24kresogen.db.html
 ---
+
 
 # bioconductor-mm24kresogen.db
 

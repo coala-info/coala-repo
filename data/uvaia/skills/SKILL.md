@@ -1,8 +1,9 @@
 ---
 name: uvaia
-description: Uvaia is a specialized bioinformatics suite designed for efficient pairwise alignment and sequence similarity searching.
+description: Uvaia performs efficient pairwise sequence alignment and similarity searching for large genomic datasets. Use when user asks to 'align sequences to a reference' or 'search for similar sequences in a database'.
 homepage: https://github.com/quadram-institute-bioscience/uvaia
 ---
+
 
 # uvaia
 

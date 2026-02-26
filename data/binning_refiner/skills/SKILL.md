@@ -1,8 +1,9 @@
 ---
 name: binning_refiner
-description: `binning_refiner` is a bioinformatics tool designed to optimize metagenomic binning results.
+description: "binning_refiner optimizes metagenomic binning results by identifying the intersection of contigs across multiple binning outputs to increase bin purity. Use when user asks to refine metagenomic bins, consolidate multiple binning program outputs, or improve the precision of Metagenome-Assembled Genomes."
 homepage: https://github.com/songweizhi/Binning_refiner
 ---
+
 
 # binning_refiner
 

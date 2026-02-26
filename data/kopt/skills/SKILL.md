@@ -1,8 +1,9 @@
 ---
 name: kopt
-description: The `kopt` library provides a high-level wrapper around `hyperopt` specifically designed for Keras.
+description: kopt is a high-level wrapper for hyperopt that automates hyperparameter optimization and model checkpointing for Keras. Use when user asks to optimize Keras hyperparameters, define search spaces for neural networks, or perform distributed optimization using MongoDB.
 homepage: https://github.com/avsecz/keras-hyperopt
 ---
+
 
 # kopt
 

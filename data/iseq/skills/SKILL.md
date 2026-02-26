@@ -1,8 +1,9 @@
 ---
 name: iseq
-description: iSeq is a specialized utility designed to streamline the retrieval of genomic data from international sequence databases.
+description: iseq is a utility designed to retrieve and download genomic data from international sequence databases like SRA, ENA, and DDBJ. Use when user asks to download sequencing data, retrieve metadata from genomic repositories, or automate batch downloads of FASTQ files.
 homepage: https://github.com/BioOmics/iSeq
 ---
+
 
 # iseq
 

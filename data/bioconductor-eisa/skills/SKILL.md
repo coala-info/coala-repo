@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eisa
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package implements the Iterative Signature Algorithm to identify biclusters or transcription modules of co-expressed genes across subsets of samples. Use when user asks to find overlapping gene modules, perform biclustering on expression data, or conduct Gene Ontology enrichment on identified transcription modules.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/eisa.html
 ---
+
 
 # bioconductor-eisa
 

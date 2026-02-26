@@ -1,8 +1,9 @@
 ---
 name: sdeper
-description: SDePER (Spatial Deconvolution method with Platform Effect Removal) is a specialized tool for mapping cell types onto spatial transcriptomics maps.
+description: SDePER is a spatial deconvolution tool that maps cell types onto spatial transcriptomics data while removing platform-specific biases. Use when user asks to deconvolve spatial transcriptomics data, map cell types using scRNA-seq references, or remove platform effects from spatial maps.
 homepage: https://az7jh2.github.io/SDePER/
 ---
+
 
 # sdeper
 

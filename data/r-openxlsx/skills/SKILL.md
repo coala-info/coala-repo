@@ -1,8 +1,9 @@
 ---
 name: r-openxlsx
-description: "Simplifies the creation of Excel .xlsx files by providing a     high level interface to writing, styling and editing worksheets.     Through the use of 'Rcpp', read/write times are comparable to the     'xlsx' and 'XLConnect' packages with the added benefit of removing the     dependency on Java.</p>"
+description: The openxlsx package provides a high-level interface for creating, styling, and manipulating Excel .xlsx files in R without requiring Java. Use when user asks to write data frames to Excel files, create multi-sheet workbooks, apply conditional formatting, or insert plots and styles into spreadsheets.
 homepage: https://cloud.r-project.org/web/packages/openxlsx/index.html
 ---
+
 
 # r-openxlsx
 

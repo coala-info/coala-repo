@@ -1,8 +1,9 @@
 ---
 name: plant_tribes_gene_family_aligner
-description: The `plant_tribes_gene_family_aligner` is a specialized tool within the PlantTribes suite used to generate high-quality multiple sequence alignments for gene families.
+description: This tool generates multiple sequence alignments for gene families using algorithms like MAFFT or PASTA to prepare sequences for evolutionary analysis. Use when user asks to align gene family sequences, perform multiple sequence alignment on orthogroups, or prepare sequences for phylogenetic tree construction.
 homepage: https://github.com/dePamphilis/PlantTribes
 ---
+
 
 # plant_tribes_gene_family_aligner
 

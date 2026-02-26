@@ -1,8 +1,9 @@
 ---
 name: vsearch
-description: VSEARCH is a high-performance, vectorized tool designed for processing large-scale metagenomic and microbiome data.
+description: VSEARCH is a high-performance tool for processing large-scale metagenomic and microbiome data, performing tasks like sequence alignment, filtering, dereplication, chimera removal, and clustering. Use when user asks to search sequences, align sequences, dereplicate sequences, detect chimeras, remove chimeras, cluster sequences, filter sequences by quality, or merge paired-end reads.
 homepage: https://github.com/torognes/vsearch
 ---
+
 
 # vsearch
 

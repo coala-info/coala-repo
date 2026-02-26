@@ -1,8 +1,9 @@
 ---
 name: perl-alien-build-plugin-download-gitlab
-description: This skill provides guidance on configuring the `Alien::Build::Plugin::Download::GitLab` plugin within an `alienfile`.
+description: This tool configures the Alien::Build system to download software assets or source code from GitLab repositories using the GitLab API. Use when user asks to download files from GitLab in an alienfile, configure GitLab asset filtering, or map GitLab tags to software versions.
 homepage: https://metacpan.org/pod/Alien::Build::Plugin::Download::GitLab
 ---
+
 
 # perl-alien-build-plugin-download-gitlab
 

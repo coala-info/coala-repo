@@ -1,8 +1,9 @@
 ---
 name: r-ccqtl
-description: R package ccqtl (documentation from project home).
+description: The r-ccqtl tool analyzes Quantitative Trait Loci (QTL) in Collaborative Cross mouse populations. Use when user asks to perform genetic mapping, calculate genotype probabilities, or visualize QTL scans and founder effects for Collaborative Cross strains.
 homepage: https://cran.r-project.org/web/packages/ccqtl/index.html
 ---
+
 
 # r-ccqtl
 

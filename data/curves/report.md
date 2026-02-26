@@ -1,72 +1,52 @@
 # curves CWL Generation Report
 
-## curves
+## curves_Cur+
 
 ### Tool Description
-The provided text does not contain help information for the tool 'curves'. It contains system error logs related to a failed container build (no space left on device).
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/curves:3.0.3--h70c14e6_1
 - **Homepage**: https://bisi.ibcp.fr/tools/curves_plus/index.html
 - **Package**: https://anaconda.org/channels/bioconda/packages/curves/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/curves/overview
 - **Total Downloads**: 14.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/curves:3.0.3--h70c14e6_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-3568339214/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
+At line 30 of file nml.f (unit = 5, file = 'stdin')
+Fortran runtime error: End of file
 
-
-## Metadata
-- **Skill**: generated
-
-## curves_Cur+
-
-### Tool Description
-The provided text contains a system error log related to a container build failure ('no space left on device') and does not contain the help text or usage information for the tool 'curves_Cur+'. As a result, no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/curves:3.0.3--h70c14e6_1
-- **Homepage**: https://bisi.ibcp.fr/tools/curves_plus/index.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/curves/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/curves:3.0.3--h70c14e6_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-3141084274/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
-
-## curves_Canal
-
-### Tool Description
-The provided text does not contain help information or usage instructions for curves_Canal. It appears to be a system error log indicating a failure to build or extract a container image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/curves:3.0.3--h70c14e6_1
-- **Homepage**: https://bisi.ibcp.fr/tools/curves_plus/index.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/curves/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/curves:3.0.3--h70c14e6_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-2402205825/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+Error termination. Backtrace:
+#0  0x706bf94832f5 in read_sf_internal
+	at ../../../libgfortran/io/transfer.c:325
+#1  0x706bf9480f42 in read_default_char1
+	at ../../../libgfortran/io/read.c:468
+#2  0x706bf94842e2 in formatted_transfer_scalar_read
+	at ../../../libgfortran/io/transfer.c:1827
+#3  0x706bf9484f9f in formatted_transfer
+	at ../../../libgfortran/io/transfer.c:2548
+#4  0x58224df53a36 in ???
+#5  0x58224df4584e in ???
+#6  0x58224df4553e in ???
+#7  0x706bf9040249 in ???
+#8  0x706bf9040304 in ???
+#9  0x58224df4556e in ???
+#10  0xffffffffffffffff in ???
 ```
 

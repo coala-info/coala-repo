@@ -1,8 +1,9 @@
 ---
 name: translatorx
-description: TranslatorX is a specialized tool for aligning nucleotide sequences that encode proteins.
+description: TranslatorX aligns protein-coding nucleotide sequences while preserving their open reading frames. Use when user asks to align protein-coding DNA sequences, perform codon alignment, or align nucleotide sequences based on their protein translation.
 homepage: http://pc16141.mncn.csic.es/
 ---
+
 
 # translatorx
 

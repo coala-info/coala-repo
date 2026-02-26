@@ -1,8 +1,9 @@
 ---
 name: xmlbuilder
-description: xmlbuilder is a specialized Node.js library for constructing XML trees through a fluent, chainable API.
+description: xmlbuilder is a Node.js library for constructing XML trees using a fluent, chainable API. Use when user asks to generate configuration files, RSS feeds, data interchange formats, build XML trees, or convert JavaScript objects to XML.
 homepage: https://github.com/oozcitak/xmlbuilder-js
 ---
+
 
 # xmlbuilder
 

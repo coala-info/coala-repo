@@ -1,8 +1,9 @@
 ---
 name: apollo
-description: The `apollo` skill enables programmatic interaction with the Apollo genome annotation platform.
+description: The apollo tool provides a Python library and CLI for programmatically managing genome annotations and administrative tasks on the Apollo platform. Use when user asks to automate organism setup, manage user permissions, perform bulk user operations, or integrate Apollo into data processing pipelines.
 homepage: https://github.com/galaxy-genome-annotation/python-apollo
 ---
+
 
 # apollo
 

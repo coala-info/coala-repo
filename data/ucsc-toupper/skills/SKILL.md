@@ -1,8 +1,9 @@
 ---
 name: ucsc-toupper
-description: `ucsc-toupper` is a high-performance utility from the UCSC Genome Browser "Kent" toolset.
+description: The `ucsc-toupper` tool converts lowercase text to uppercase while preserving other characters. Use when user asks to 'convert soft-masked genomic sequences to uppercase', 'standardize FASTA sequences', or 'convert lowercase identifiers or descriptions to uppercase'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-toupper
 

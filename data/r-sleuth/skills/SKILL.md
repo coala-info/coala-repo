@@ -1,8 +1,9 @@
 ---
 name: r-sleuth
-description: R package sleuth (documentation from project home).
+description: This tool performs statistical analysis of RNA-Seq data to identify differentially expressed transcripts using bootstrap estimates from quantification tools like kallisto. Use when user asks to perform differential expression analysis, fit linear models to transcript-level abundances, or conduct likelihood ratio and Wald tests on RNA-Seq experiments.
 homepage: https://cran.r-project.org/web/packages/sleuth/index.html
 ---
+
 
 # r-sleuth
 

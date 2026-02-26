@@ -1,8 +1,9 @@
 ---
 name: bioconductor-compounddb
-description: The package provides also a backend for Bioconductor's Spectra package and allows thus to match experimetal MS/MS spectra against MS/MS spectra in the database. Databases can be stored in SQLite format and are thus portable.
+description: CompoundDb creates and manages compound databases for matching experimental MS/MS spectra. Use when user asks to create compound databases, manage compound databases, or match experimental MS/MS spectra against database records.
 homepage: https://bioconductor.org/packages/release/bioc/html/CompoundDb.html
 ---
+
 
 # bioconductor-compounddb
 

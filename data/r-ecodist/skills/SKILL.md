@@ -1,8 +1,9 @@
 ---
 name: r-ecodist
-description: Dissimilarity-based analysis functions including ordination and Mantel test functions, intended for use with spatial and community ecological data.
+description: The r-ecodist tool performs dissimilarity-based ecological analysis including Mantel tests, distance-based regression, and ordination. Use when user asks to calculate Bray-Curtis dissimilarity, perform Mantel or partial Mantel tests, generate Mantel correlograms, run Multiple Regression on Distance Matrices, or conduct NMDS and PCoA ordinations.
 homepage: https://cloud.r-project.org/web/packages/ecodist/index.html
 ---
+
 
 # r-ecodist
 

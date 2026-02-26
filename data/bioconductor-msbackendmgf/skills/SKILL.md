@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msbackendmgf
-description: the package is available on all platforms; click for details.
+description: This R package provides a backend for the Spectra framework to handle mass spectrometry data in Mascot Generic Format. Use when user asks to import MGF files, read mass spectrometry data from Mascot Generic Format, or manage MGF data within the Spectra package.
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendMgf.html
 ---
+
 
 # bioconductor-msbackendmgf
 

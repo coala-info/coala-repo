@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gothic
-description: the package is available on all platforms; click for details.
+description: This tool identifies significant chromatin interactions in Hi-C data using a cumulative binomial test to model spurious ligations. Use when user asks to detect genomic interactions, process Hi-C sequencing data, filter artifacts, or calculate p-values for chromatin contacts at specific resolutions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GOTHiC.html
 ---
+
 
 # bioconductor-gothic
 

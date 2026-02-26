@@ -1,8 +1,9 @@
 ---
 name: elasticluster
-description: ElastiCluster is a command-line tool designed to transform raw cloud infrastructure into functional, application-ready compute clusters.
+description: ElastiCluster automates the provisioning and configuration of compute clusters on cloud infrastructure. Use when user asks to start or stop clusters, list cluster templates, scale nodes, or configure software stacks like Slurm and Spark.
 homepage: https://github.com/elasticluster/elasticluster
 ---
+
 
 # elasticluster
 

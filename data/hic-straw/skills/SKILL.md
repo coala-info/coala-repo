@@ -1,8 +1,9 @@
 ---
 name: hic-straw
-description: hic-straw is a specialized library and command-line utility designed for high-speed data extraction from Juicebox-formatted .hic files.
+description: "hic-straw extracts contact matrix data from Juicebox-formatted .hic files at specific resolutions and normalization levels. Use when user asks to stream genomic interaction data, extract contact records from .hic files, or retrieve Hi-C matrices for specific chromosomal regions."
 homepage: https://github.com/aidenlab/straw
 ---
+
 
 # hic-straw
 

@@ -3,7 +3,7 @@
 ## pmmrcalculator
 
 ### Tool Description
-The provided text is a container execution error log and does not contain help documentation or usage instructions for the tool.
+Calculate the pairwise mismatch rate of genotyped between all individuals in the input eigenstrat dataset.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pmmrcalculator:1.1.0--hdfd78af_0
@@ -18,33 +18,28 @@ The provided text is a container execution error log and does not contain help d
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pmmrcalculator:1.1.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: pmmrcalculator [-h] [-i <INPUT FILES PREFIX>] [-o <OUTPUT FILE>]
+                      [-s <INPUT FILES SUFFIX>] [-v] [-j]
 
+Calculate the pairwise mismatch rate of genotyped between all individuals in
+the input eigenstrat dataset.
 
-## Metadata
-- **Skill**: generated
-
-## pmmrcalculator_pMMRCalculator.py
-
-### Tool Description
-A tool for pMMR (proficient Mismatch Repair) calculation. Note: The provided text contains container runtime error logs rather than command-line help documentation, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pmmrcalculator:1.1.0--hdfd78af_0
-- **Homepage**: https://github.com/TCLamnidis/pMMRCalculator
-- **Package**: https://anaconda.org/channels/bioconda/packages/pmmrcalculator/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pmmrcalculator:1.1.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Available options:
+  -h, --help            show this help message and exit
+  -i <INPUT FILES PREFIX>, --Input <INPUT FILES PREFIX>
+                        The desired input file prefix. Input files are assumed
+                        to be <INPUT PREFIX>.geno, <INPUT PREFIX>.snp and
+                        <INPUT PREFIX>.ind .
+  -o <OUTPUT FILE>, --Output <OUTPUT FILE>
+                        The desired output file name. Omit to print to stdout.
+  -s <INPUT FILES SUFFIX>, --Suffix <INPUT FILES SUFFIX>
+                        The desired input file suffix. Input files are assumed
+                        to be <INPUT PREFIX>.geno<INPUT SUFFIX>, <INPUT
+                        PREFIX>.snp<INPUT SUFFIX> and <INPUT PREFIX>.ind<INPUT
+                        SUFFIX> .
+  -v, --version         Print the version of the script and exit.
+  -j, --json            Create additional json formatted output file named
+                        <OUTPUT FILE>.json . [Default:
+                        'pmmrcalculator_output.json']
 ```
 

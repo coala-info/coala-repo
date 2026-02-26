@@ -1,8 +1,9 @@
 ---
 name: sepp
-description: Seppuku is a lightweight, dependency-free Minecraft 1.12.2 Forge mod designed for anarchy server environments.
+description: Seppuku is a Minecraft 1.12.2 Forge mod that provides an internal command system for managing modules, keybinds, and automation tools in anarchy environments. Use when user asks to configure module keybinds, play MIDI files with NoteBot, build the client from source, or troubleshoot coremod loading issues.
 homepage: https://github.com/seppukudevelopment/seppuku
 ---
+
 
 # sepp
 

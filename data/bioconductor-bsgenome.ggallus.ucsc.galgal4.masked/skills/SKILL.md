@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ggallus.ucsc.galgal4.masked
-description: the package is available on all platforms; click for details.
+description: This package provides a masked version of the Gallus gallus (chicken) galGal4 genome assembly for use in Bioconductor. Use when user asks to access chicken genome sequences with assembly gaps, ambiguities, or repeats masked for downstream analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ggallus.UCSC.galGal4.masked.html
 ---
+
 
 # bioconductor-bsgenome.ggallus.ucsc.galgal4.masked
 

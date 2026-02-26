@@ -1,8 +1,9 @@
 ---
 name: perl-http-message
-description: The `perl-http-message` library provides a robust base class for representing messages passed in HTTP-style communication.
+description: This library provides a base class for representing, parsing, and manipulating HTTP-style messages and their headers. Use when user asks to parse raw HTTP text, handle compressed payloads, manage multipart messages, or programmatically construct HTTP requests and responses.
 homepage: https://github.com/libwww-perl/HTTP-Message
 ---
+
 
 # perl-http-message
 

@@ -1,8 +1,9 @@
 ---
 name: ngsngs
-description: The `ngsngs` tool is a versatile simulator designed to produce high-throughput sequencing data that mimics real-world experimental outputs.
+description: ngsngs is a high-throughput sequencing simulator that generates synthetic reads with customizable error profiles, fragment lengths, and genomic features. Use when user asks to simulate sequencing data, model ancient DNA deamination, generate reads from specific VCF variants, or create coverage-based datasets in BAM or FASTQ formats.
 homepage: https://github.com/rahenriksen/ngsngs
 ---
+
 
 # ngsngs
 

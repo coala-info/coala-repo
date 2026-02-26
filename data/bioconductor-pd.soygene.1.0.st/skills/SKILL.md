@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.soygene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix SoyGene 1.0 ST expression microarray. Use when user asks to analyze Affymetrix SoyGene 1.0 ST array data, access platform design information, or process soybean gene expression microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.soygene.1.0.st.html
 ---
+
 
 # bioconductor-pd.soygene.1.0.st
 

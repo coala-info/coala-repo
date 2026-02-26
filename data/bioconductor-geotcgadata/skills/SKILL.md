@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geotcgadata
-description: the package is available on all platforms; click for details.
+description: This package provides utilities for preprocessing, normalizing, and performing differential analysis on GEO and TCGA multi-omics data. Use when user asks to identify differentially expressed genes, analyze differential methylation or copy number variations, convert TCGA IDs, normalize counts to FPKM or TPM, and handle multi-probe mapping in GEO chip data.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeoTcgaData.html
 ---
+
 
 # bioconductor-geotcgadata
 

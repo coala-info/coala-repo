@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ttgsea
-description: the package is available on all platforms; click for details.
+description: This R package performs topology-based tissue-specific gene set enrichment analysis. Use when user asks to perform tissue-specific gene set enrichment analysis, incorporate network topology into enrichment calculations, or identify enriched pathways in specific tissues.
 homepage: https://bioconductor.org/packages/release/bioc/html/ttgsea.html
 ---
+
 
 # bioconductor-ttgsea
 

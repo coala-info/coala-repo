@@ -1,8 +1,9 @@
 ---
 name: shapeshifter-cli
-description: The `shapeshifter-cli` (primarily accessed via the `expressionable` or `ea` command) is designed to bridge the gap between diverse functional-genomics file formats and analysis tools like R, Python, or Excel.
+description: "shapeshifter-cli converts, queries, and subsets diverse functional-genomics file formats into formats compatible with analysis tools like R, Python, or Excel. Use when user asks to convert gene-expression matrices between formats, filter rows using logical expressions, select specific columns, or transpose tabular data."
 homepage: https://github.com/srp33/ShapeShifter-CLI
 ---
+
 
 # shapeshifter-cli
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clariomdhumanprobeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation maps for the Clariom D Human Probeset array to link manufacturer identifiers with biological database identifiers. Use when user asks to map Clariom D Human probe IDs to gene symbols, Entrez IDs, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomdhumanprobeset.db.html
 ---
+
 
 # bioconductor-clariomdhumanprobeset.db
 

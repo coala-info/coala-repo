@@ -1,8 +1,9 @@
 ---
 name: r-densityclust
-description: "An improved implementation (based on k-nearest neighbors) of     the density peak clustering algorithm, originally described by Alex     Rodriguez and Alessandro Laio (Science, 2014 vol. 344). It can handle large      datasets (&gt; 100,000 samples) very efficiently. It was initially implemented      by Thomas Lin Pedersen, with inputs from Sean Hughes and later improved by      Xiaojie Qiu to handle large datasets with kNNs.</p>"
+description: This tool implements the density peaks clustering algorithm to identify clusters of arbitrary shapes and detect cluster centers. Use when user asks to calculate local density and distance thresholds, identify cluster centers via decision plots, or perform non-parametric clustering on distance matrices.
 homepage: https://cloud.r-project.org/web/packages/densityClust/index.html
 ---
+
 
 # r-densityclust
 

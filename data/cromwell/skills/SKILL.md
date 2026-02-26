@@ -1,8 +1,9 @@
 ---
 name: cromwell
-description: Cromwell is a specialized execution engine designed to handle the complexity of scientific data processing.
+description: Cromwell is an execution engine that orchestrates scientific data processing workflows by translating WDL scripts into tasks across local and cloud environments. Use when user asks to run WDL workflows, validate WDL syntax, generate input JSON templates, or manage workflow execution via a REST API server.
 homepage: https://github.com/broadinstitute/cromwell
 ---
+
 
 # cromwell
 

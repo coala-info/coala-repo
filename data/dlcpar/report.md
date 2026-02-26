@@ -3,7 +3,7 @@
 ## dlcpar
 
 ### Tool Description
-A tool for reconciling gene trees with species trees (Note: The provided help text contains only system error messages and no usage information).
+dlcpar is a phylogenetic program for finding the most parsimonious gene tree-species tree reconciliation by inferring speciation, duplication, loss, and deep coalescence events. See http://compbio.mit.edu/dlcpar for details.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dlcpar:1.0--py27_0
@@ -18,46 +18,67 @@ A tool for reconciling gene trees with species trees (Note: The provided help te
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dlcpar:1.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3256967727: no space left on device
-```
+Usage: dlcpar [options] <gene tree> ...
 
+dlcpar is a phylogenetic program for finding the most parsimonious gene tree-
+species tree reconciliation by inferring speciation, duplication, loss, and
+deep coalescence events. See http://compbio.mit.edu/dlcpar for details.
 
-## Metadata
-- **Skill**: generated
+Options:
+  Input/Output:
+    -s <species tree>, --stree=<species tree>
+                        species tree file in newick format
+    -S <species map>, --smap=<species map>
+                        gene to species map
+    --lmap=<locus map>  gene to locus map (species-specific)
+    -n <number of reconciliations>, --nsamples=<number of reconciliations>
+                        number of uniform samples (default: 1)
 
-## dlcpar_dlcilp
+  File Extensions:
+    -I <input file extension>, --inputext=<input file extension>
+                        input file extension (default: "")
+    -O <output file extension>, --outputext=<output file extension>
+                        output file extension (default: ".dlcpar")
 
-### Tool Description
-A tool for Duplication-Loss-Coalescence Parsimony (DLCpar). Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+  Costs:
+    -D <dup cost>, --dupcost=<dup cost>
+                        duplication cost (default: 1.0)
+    -L <loss cost>, --losscost=<loss cost>
+                        loss cost (default: 1.0)
+    -C <coal cost>, --coalcost=<coal cost>
+                        deep coalescence cost (default: 0.5)
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dlcpar:1.0--py27_0
-- **Homepage**: https://github.com/wutron/dlcpar
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dlcpar:1.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4043546661: no space left on device
-```
+  Heuristics:
+    --no_prescreen      set to disable prescreen of locus maps
+    --prescreen_min=<prescreen min>
+                        prescreen locus maps if min (forward) cost exceeds
+                        this value (default: 50)
+    --prescreen_factor=<prescreen factor>
+                        prescreen locus maps if (forward) cost exceeds this
+                        factor * min (forward) cost (default: 10)
+    --max_loci=<max # of loci>
+                        maximum # of co-existing loci (in each ancestral
+                        species), set to -1 for no limit (default: -1)
+    --max_dups=<max # of dups>
+                        maximum # of duplications (in each ancestral species),
+                        set to -1 for no limit (default: 4)
+    --max_losses=<max # of losses>
+                        maximum # of losses (in each ancestral species), set
+                        to -1 for no limit (default: 4)
+    --allow_both        set to allow duplications on both children
 
-## dlcpar_dlcpar_search
+  Miscellaneous:
+    -x <random seed>, --seed=<random seed>
+                        random number seed
+    --output_format=[dlcpar|dlcoal]
+                        specify output format (default: dlcpar)
 
-### Tool Description
-The provided text does not contain help information for the tool. It contains error logs related to a container runtime (Apptainer/Singularity) failing to pull a Docker image due to insufficient disk space.
+  Information:
+    --version           show program's version number and exit
+    -h, --help          show this help message and exit
+    -l, --log           if given, output debugging log
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dlcpar:1.0--py27_0
-- **Homepage**: https://github.com/wutron/dlcpar
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dlcpar:1.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3545490167: no space left on device
+Written by Yi-Chieh Wu (yjw@mit.edu), Massachusetts Institute of Technology.
+(c) 2012. Released under the terms of the GNU General Public License.
 ```
 

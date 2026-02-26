@@ -1,8 +1,9 @@
 ---
 name: haddock_biobb
-description: HADDOCK3 (High Ambiguity Driven protein-protein DOCKing) is a modular platform designed for the integrative modeling of biomolecular complexes.
+description: HADDOCK3 is a modular platform for the integrative modeling and docking of biomolecular complexes using custom workflows. Use when user asks to perform protein-protein docking, run biomolecular simulations, or manage HADDOCK3 workflows using TOML configuration files.
 homepage: https://github.com/haddocking/haddock3
 ---
+
 
 # haddock_biobb
 

@@ -2,15 +2,108 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: corsid
 label: corsid
-doc: "The provided text does not contain help information or a description of the
-  tool's functionality; it is an error log from a container build process.\n\nTool
-  homepage: http://github.com/elkebir-group/CORSID"
-inputs: []
+doc: "Identify and classify ORFs in a FASTA genome file.\n\nTool homepage: http://github.com/elkebir-group/CORSID"
+inputs:
+  - id: fasta
+    type: File
+    doc: FASTA genome file
+    inputBinding:
+      position: 101
+      prefix: --fasta
+  - id: gff
+    type:
+      - 'null'
+      - File
+    doc: GFF annotation file
+    inputBinding:
+      position: 101
+      prefix: --gff
+  - id: mismatch
+    type:
+      - 'null'
+      - int
+    doc: mismatch score
+    default: -2
+    inputBinding:
+      position: 101
+      prefix: --mismatch
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: sample name
+    inputBinding:
+      position: 101
+      prefix: --name
+  - id: no_missing_classifier
+    type:
+      - 'null'
+      - boolean
+    doc: set flag to disable missing TRS-L classifier
+    inputBinding:
+      position: 101
+      prefix: --no-missing-classifier
+  - id: shrink
+    type:
+      - 'null'
+      - float
+    doc: "fraction of positions that may overlap between\n                       \
+      \ consecutive genes"
+    default: 0.05
+    inputBinding:
+      position: 101
+      prefix: --shrink
+  - id: tau_max
+    type:
+      - 'null'
+      - int
+    doc: maximum matching score threshold
+    default: 7
+    inputBinding:
+      position: 101
+      prefix: --tau_max
+  - id: tau_min
+    type:
+      - 'null'
+      - int
+    doc: minimum matching score threshold
+    default: 2
+    inputBinding:
+      position: 101
+      prefix: --tau_min
+  - id: window
+    type:
+      - 'null'
+      - int
+    doc: length of sliding window
+    default: 7
+    inputBinding:
+      position: 101
+      prefix: --window
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type:
+      - 'null'
+      - File
+    doc: output json file name
+    outputBinding:
+      glob: $(inputs.output)
+  - id: output_orf
+    type:
+      - 'null'
+      - File
+    doc: "output identified ORFs (FASTA), only contains the\n                    \
+      \    first solution"
+    outputBinding:
+      glob: $(inputs.output_orf)
+  - id: output_gff3
+    type:
+      - 'null'
+      - File
+    doc: "output identified ORFs (FASTA), only contains the\n                    \
+      \    first solution"
+    outputBinding:
+      glob: $(inputs.output_gff3)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/corsid:0.1.3--pyh5e36f6f_0
-stdout: corsid.out

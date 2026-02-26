@@ -1,8 +1,9 @@
 ---
 name: quicktree
-description: QuickTree is a high-performance tool designed for the rapid inference of phylogenies from large datasets.
+description: QuickTree rapidly infers phylogenetic trees from large alignments or distance matrices using Neighbor-Joining or UPGMA methods. Use when user asks to construct a phylogeny, generate a Newick tree from a Stockholm alignment, perform bootstrap analysis, or build a tree from a PHYLIP distance matrix.
 homepage: https://github.com/khowe/quicktree
 ---
+
 
 # quicktree
 

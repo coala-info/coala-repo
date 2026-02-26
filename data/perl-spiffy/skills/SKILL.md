@@ -1,8 +1,9 @@
 ---
 name: perl-spiffy
-description: Spiffy (Spiffy Perl Interface Framework For You) is a modular foundation class designed to modernize Perl's Object-Oriented (OO) programming.
+description: perl-spiffy is a modular foundation class that streamlines Perl object-oriented programming by consolidating exportation, inheritance, and method handling into a single interface. Use when user asks to modernize Perl OO classes, eliminate boilerplate code, define selfless methods, create mixins, or use simplified super calls and debugging utilities.
 homepage: https://github.com/ingydotnet/spiffy-pm
 ---
+
 
 # perl-spiffy
 

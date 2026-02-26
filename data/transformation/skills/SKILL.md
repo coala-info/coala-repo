@@ -1,8 +1,9 @@
 ---
 name: transformation
-description: The transformation skill enables the integration of the `glide-transformations` library into Android projects.
+description: This tool applies complex visual effects and transformations to images in Android projects. Use when user asks to blur an image, crop an image, apply rounded corners, convert an image to grayscale, apply a color filter, mask an image, or use GPU-based artistic effects.
 homepage: https://github.com/wasabeef/glide-transformations
 ---
+
 
 # transformation
 

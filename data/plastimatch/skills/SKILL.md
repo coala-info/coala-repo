@@ -1,8 +1,9 @@
 ---
 name: plastimatch
-description: Plastimatch is a specialized toolset built on the Insight Toolkit (ITK) designed for high-performance medical image manipulation.
+description: Plastimatch is a medical image processing toolset for format conversion and quantitative evaluation of volumetric data. Use when user asks to convert DICOM directories to volumetric formats, calculate Dice coefficients or Hausdorff distances, or compare medical images.
 homepage: https://github.com/ImagingDataCommons/pyplastimatch
 ---
+
 
 # plastimatch
 

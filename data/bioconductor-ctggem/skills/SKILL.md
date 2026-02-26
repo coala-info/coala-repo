@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ctggem
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This R package builds cell-type-guided gene expression models to analyze transcriptomic data while accounting for cell-type proportions. Use when user asks to model gene expression based on cell types, perform cell-type-specific expression analysis, or account for cellular heterogeneity in bulk RNA-seq data.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/ctgGEM.html
 ---
+
 
 # bioconductor-ctggem
 

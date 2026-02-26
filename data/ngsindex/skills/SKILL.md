@@ -1,8 +1,9 @@
 ---
 name: ngsindex
-description: ngsindex is a Python-based utility designed to standardize the handling of various NGS index formats.
+description: ngsindex is a Python utility that standardizes the resolution and parsing of various Next-Generation Sequencing index formats into programmatic objects. Use when user asks to find index files, parse BAI, TBI, CSI, or SBI structures, or verify index integrity within a Python pipeline.
 homepage: https://github.com/jdidion/ngsindex
 ---
+
 
 # ngsindex
 

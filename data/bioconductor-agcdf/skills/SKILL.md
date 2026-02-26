@@ -1,8 +1,9 @@
 ---
 name: bioconductor-agcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Agilent Affymetrix microarray platform. Use when user asks to map probe coordinates to indices, convert indices to spatial coordinates, or access CDF metadata for the ag platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/agcdf.html
 ---
+
 
 # bioconductor-agcdf
 

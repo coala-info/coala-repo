@@ -1,8 +1,9 @@
 ---
 name: kmercamel
-description: KmerCamel is a specialized tool designed to reduce the storage footprint of k-mer sets by representing them as masked superstrings.
+description: KmerCamel represents k-mer sets as masked superstrings to reduce their storage footprint and optimize genomic data compression. Use when user asks to compute masked superstrings from FASTA files, optimize masks for indexing, or convert between masked superstring and simplitig formats.
 homepage: https://github.com/OndrejSladky/kmercamel/
 ---
+
 
 # kmercamel
 

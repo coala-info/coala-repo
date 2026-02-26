@@ -1,8 +1,9 @@
 ---
 name: metametamerge
-description: MetaMetaMerge is a specialized tool for integrating disparate outputs from various metagenomic taxonomic classifiers.
+description: MetaMetaMerge integrates and normalizes taxonomic profiling and binning outputs from multiple metagenomic classifiers into a consensus result. Use when user asks to merge disparate metagenomic classification results, calculate consensus abundances across different tools, or resolve taxonomic conflicts between profiling and binning data.
 homepage: https://github.com/pirovc/metametamerge/
 ---
+
 
 # metametamerge
 

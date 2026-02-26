@@ -2,10 +2,68 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: smartdenovo.pl
 label: smartdenovo_smartdenovo.pl
-doc: "The provided text contains system error logs related to a container build failure
-  and does not contain help documentation for the tool. No arguments could be extracted.\n
-  \nTool homepage: https://github.com/ruanjue/smartdenovo"
-inputs: []
+doc: "Smartdenovo is a de novo assembler for long reads.\n\nTool homepage: https://github.com/ruanjue/smartdenovo"
+inputs:
+  - id: reads_fa
+    type: File
+    doc: Input FASTA file of reads
+    inputBinding:
+      position: 1
+  - id: engine
+    type:
+      - 'null'
+      - string
+    doc: engine of overlaper, compressed kmer overlapper(zmo), dot matrix 
+      overlapper(dmo)
+    default: dmo
+    inputBinding:
+      position: 102
+      prefix: -e
+  - id: generate_consensus
+    type:
+      - 'null'
+      - int
+    doc: generate consensus
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: -c
+  - id: kmer_length
+    type:
+      - 'null'
+      - int
+    doc: k-mer length for overlapping
+    default: 16
+    inputBinding:
+      position: 102
+      prefix: -k
+  - id: min_read_length
+    type:
+      - 'null'
+      - int
+    doc: min read length
+    default: 5000
+    inputBinding:
+      position: 102
+      prefix: -J
+  - id: output_prefix
+    type:
+      - 'null'
+      - string
+    doc: output prefix
+    default: wtasm
+    inputBinding:
+      position: 102
+      prefix: -p
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads
+    default: 8
+    inputBinding:
+      position: 102
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: dbcan
-description: The dbcan skill facilitates the automated annotation of CAZymes from sequence data.
+description: dbcan automates the annotation of Carbohydrate-Active enZymes (CAZymes) from protein, genomic, or metagenomic sequence data. Use when user asks to annotate CAZymes, identify carbohydrate metabolism genes, or classify sequences into CAZyme subfamilies.
 homepage: http://bcb.unl.edu/dbCAN2/
 ---
+
 
 # dbcan
 

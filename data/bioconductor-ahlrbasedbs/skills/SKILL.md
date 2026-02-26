@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahlrbasedbs
-description: the package is available on all platforms; click for details.
+description: This tool retrieves and manages species-specific ligand-receptor interaction databases from AnnotationHub for use in cell-cell communication analysis. Use when user asks to find, download, or prepare LRBaseDb SQLite databases for ligand-receptor analysis with packages like scTensor or LRBaseDbi.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHLRBaseDbs.html
 ---
+
 
 # bioconductor-ahlrbasedbs
 

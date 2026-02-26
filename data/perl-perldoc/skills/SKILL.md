@@ -1,8 +1,9 @@
 ---
 name: perl-perldoc
-description: The `perl-perldoc` skill provides a streamlined interface for interacting with Perl's extensive documentation system.
+description: This tool retrieves and displays documentation for the Perl language, core modules, and installed packages. Use when user asks to look up Perl module documentation, search for built-in function details, query the Perl FAQ, view module source code, or find the file path of a specific module.
 homepage: http://metacpan.org/pod/Perldoc
 ---
+
 
 # perl-perldoc
 

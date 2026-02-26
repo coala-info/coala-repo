@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fletcher2013a
-description: The package Fletcher2013a contains time-course gene expression data from MCF-7 cells treated under different experimental systems in order to perturb FGFR2 signalling. The data comes from Fletcher et al. (Nature Comms 4:2464, 2013) where further details about the background and the experimental design of the study can be found.
+description: This package provides gene expression datasets and analysis pipelines for studying FGFR2 signaling in breast cancer cells. Use when user asks to access MCF-7 time-course data, reproduce differential expression analyses, perform PCA on experimental systems, or retrieve specific gene signatures from the Fletcher et al. (2013) study.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Fletcher2013a.html
 ---
+
 
 # bioconductor-fletcher2013a
 

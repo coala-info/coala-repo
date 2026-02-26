@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epidecoder
-description: the package is available on all platforms; click for details.
+description: epidecodeR integrates epigenomic or epitranscriptomic event data with differential expression data to test how chemical modifications impact gene expression distributions. Use when user asks to analyze the impact of histone marks or m6A peaks on log2 fold-change, group genes by modification density, or generate cumulative distribution function plots for differential expression.
 homepage: https://bioconductor.org/packages/release/bioc/html/epidecodeR.html
 ---
+
 
 # bioconductor-epidecoder
 

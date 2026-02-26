@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mogamun
-description: the package is available on all platforms; click for details.
+description: MOGAMUN identifies active modules in multiplex biological networks by integrating multi-omics data using a multi-objective genetic algorithm. Use when user asks to identify active subnetworks, integrate multiple types of omics data, or analyze multiplex biological networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/MOGAMUN.html
 ---
+
 
 # bioconductor-mogamun
 

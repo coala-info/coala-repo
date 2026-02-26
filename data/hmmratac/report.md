@@ -1,9 +1,9 @@
 # hmmratac CWL Generation Report
 
-## hmmratac
+## hmmratac_java
 
 ### Tool Description
-HMM-based Analysis of ATAC-seq data (Note: The provided text contains only system error messages and no CLI usage information).
+Java application launcher
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hmmratac:1.2.10--hdfd78af_1
@@ -12,35 +12,129 @@ HMM-based Analysis of ATAC-seq data (Note: The provided text contains only syste
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hmmratac/overview
-- **Total Downloads**: 23.7K
+- **Total Downloads**: 23.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/LiuLabUB/HMMRATAC
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hmmratac:1.2.10--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1170996847: no space left on device
+Usage: java [options] <mainclass> [args...]
+           (to execute a class)
+   or  java [options] -jar <jarfile> [args...]
+           (to execute a jar file)
+   or  java [options] -m <module>[/<mainclass>] [args...]
+       java [options] --module <module>[/<mainclass>] [args...]
+           (to execute the main class in a module)
+   or  java [options] <sourcefile> [args]
+           (to execute a single source-file program)
+
+ Arguments following the main class, source file, -jar <jarfile>,
+ -m or --module <module>/<mainclass> are passed as the arguments to
+ main class.
+
+ where options include:
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+    --class-path <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -p <module path>
+    --module-path <module path>...
+                  A : separated list of directories, each directory
+                  is a directory of modules.
+    --upgrade-module-path <module path>...
+                  A : separated list of directories, each directory
+                  is a directory of modules that replace upgradeable
+                  modules in the runtime image
+    --add-modules <module name>[,<module name>...]
+                  root modules to resolve in addition to the initial module.
+                  <module name> can also be ALL-DEFAULT, ALL-SYSTEM,
+                  ALL-MODULE-PATH.
+    --list-modules
+                  list observable modules and exit
+    -d <module name>
+    --describe-module <module name>
+                  describe a module and exit
+    --dry-run     create VM and load main class but do not execute main method.
+                  The --dry-run option may be useful for validating the
+                  command-line options such as the module system configuration.
+    --validate-modules
+                  validate all modules and exit
+                  The --validate-modules option may be useful for finding
+                  conflicts and other errors with modules on the module path.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|module|gc|jni]
+                  enable verbose output
+    -version      print product version to the error stream and exit
+    --version     print product version to the output stream and exit
+    -showversion  print product version to the error stream and continue
+    --show-version
+                  print product version to the output stream and continue
+    --show-module-resolution
+                  show module resolution output during startup
+    -? -h -help
+                  print this help message to the error stream
+    --help        print this help message to the output stream
+    -X            print help on extra options to the error stream
+    --help-extra  print help on extra options to the output stream
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:jdwp
+                  see also -agentlib:jdwp=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+                  HiDPI scaled images are automatically supported and used
+                  if available. The unscaled image filename, e.g. image.ext,
+                  should always be passed as the argument to the -splash option.
+                  The most appropriate scaled image provided will be picked up
+                  automatically.
+                  See the SplashScreen API documentation for more information
+    @argument files
+                  one or more argument files containing options
+    -disable-@files
+                  prevent further argument file expansion
+    --enable-preview
+                  allow classes to depend on preview features of this release
+To specify an argument for a long option, you can use --<name>=<value> or
+--<name> <value>.
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## hmmratac_HMMRATAC_V1.2.10_exe.jar
+## hmmratac_awk
 
 ### Tool Description
-HMMRATAC is a dedicated software package for identifying and characterizing open chromatin regions from ATAC-seq data.
+Pattern scanning and processing language
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hmmratac:1.2.10--hdfd78af_1
 - **Homepage**: https://github.com/LiuLabUB/HMMRATAC
 - **Package**: https://anaconda.org/channels/bioconda/packages/hmmratac/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hmmratac:1.2.10--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4170122845: no space left on device
+BusyBox v1.32.1 (2021-03-22 16:41:38 UTC) multi-call binary.
+
+Usage: awk [OPTIONS] [AWK_PROGRAM] [FILE]...
+
+	-v VAR=VAL	Set variable
+	-F SEP		Use SEP as field separator
+	-f FILE		Read program from FILE
+	-e AWK_PROGRAM
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ccfindr
-description: The package includes utilities for downstream analyses, including meta-gene identification, visualization, and construction of rank-based trees for clusters.
+description: bioconductor-ccfindr performs single-cell RNA-seq data analysis using Non-negative Matrix Factorization to identify cell clusters and gene signatures. Use when user asks to decompose count matrices, determine the optimal number of clusters using Variational Bayesian inference, or visualize cell-gene relationships through heatmaps and trees.
 homepage: https://bioconductor.org/packages/release/bioc/html/ccfindR.html
 ---
+
 
 # bioconductor-ccfindr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hspeccdf
-description: the package is available on all platforms; click for details.
+description: This package provides the environment mapping and coordinate conversion functions for the hspec Affymetrix chip. Use when user asks to map (x,y)-coordinates to indices, access CDF environment data, or determine chip dimensions for the hspec microarray.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hspeccdf.html
 ---
+
 
 # bioconductor-hspeccdf
 

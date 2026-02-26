@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.dmelanogaster.ucsc.dm6
-description: the package is available on all platforms; click for details.
+description: This package provides the complete genome sequence for Drosophila melanogaster based on the UCSC dm6 assembly for efficient sequence manipulation and analysis. Use when user asks to load the fly genome, extract upstream sequences, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dmelanogaster.UCSC.dm6.html
 ---
+
 
 # bioconductor-bsgenome.dmelanogaster.ucsc.dm6
 

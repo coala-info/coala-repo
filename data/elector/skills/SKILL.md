@@ -1,8 +1,9 @@
 ---
 name: elector
-description: ELECTOR (EvaLuator of Error Correction Tools for lOng Reads) is a benchmarking framework designed to assess the quality of error correction in long-read sequencing data.
+description: ELECTOR is a benchmarking framework that evaluates the quality of error correction tools for long-read sequencing data by generating standardized performance metrics. Use when user asks to assess error correction quality, benchmark long-read correction tools, or calculate recall and precision for corrected sequencing reads.
 homepage: https://github.com/kamimrcht/ELECTOR
 ---
+
 
 # elector
 

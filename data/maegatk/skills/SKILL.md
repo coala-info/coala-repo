@@ -1,8 +1,9 @@
 ---
 name: maegatk
-description: maegatk (Mitochondrial Alteration Enrichment and Genome Analysis Toolkit) is a specialized command-line interface for analyzing mitochondrial DNA (mtDNA) variants.
+description: maegatk analyzes mitochondrial DNA variants from single-cell sequencing data by performing consensus base inference and genotype calling. Use when user asks to call mitochondrial variants, process MAESTER data, or generate single-cell mtDNA sparse matrices.
 homepage: https://github.com/caleblareau/maegatk
 ---
+
 
 # maegatk
 

@@ -1,8 +1,9 @@
 ---
 name: autodock-vina
-description: AutoDock Vina is a specialized tool for computational docking that predicts the preferred orientation of a ligand when bound to a receptor.
+description: AutoDock Vina predicts the preferred binding orientation and affinity of ligands to receptors using computational docking. Use when user asks to perform molecular docking, conduct virtual screening of ligand libraries, or calculate binding scores for protein-ligand complexes.
 homepage: https://github.com/ccsb-scripps/AutoDock-Vina
 ---
+
 
 # autodock-vina
 

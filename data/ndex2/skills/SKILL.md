@@ -1,8 +1,9 @@
 ---
 name: ndex2
-description: The `ndex2` Python client is the official library for interacting with the NDEx (Network Data Exchange) platform.
+description: The ndex2 Python client provides a high-level interface for interacting with the Network Data Exchange platform to manage, download, and upload biological networks in CX and CX2 formats. Use when user asks to download or upload networks from NDEx, convert networks between CX format and Pandas or NetworkX, or manipulate network data in Python.
 homepage: https://github.com/ndexbio/ndex2-client
 ---
+
 
 # ndex2
 

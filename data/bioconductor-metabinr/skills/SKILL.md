@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metabinr
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for the statistical analysis and quality assessment of metagenomic binning results. Use when user asks to assess the quality of metagenomic bins, compare different binning algorithms, or visualize binning performance.
 homepage: https://bioconductor.org/packages/release/bioc/html/metabinR.html
 ---
+
 
 # bioconductor-metabinr
 

@@ -1,8 +1,9 @@
 ---
 name: checkatlas
-description: The `checkatlas` skill provides a streamlined workflow for assessing the quality of single-cell datasets.
+description: Checkatlas performs automated quality control and benchmarking of single-cell datasets by calculating metrics for clustering, annotation, and dimensionality reduction. Use when user asks to assess the quality of single-cell atlases, compare multiple datasets, or generate a MultiQC report for .h5ad and .rds files.
 homepage: https://checkatlas.readthedocs.io/
 ---
+
 
 # checkatlas
 

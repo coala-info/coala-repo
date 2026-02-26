@@ -1,8 +1,9 @@
 ---
 name: r-tidyr
-description: "Tools to help to create tidy data, where each column is a     variable, each row is an observation, and each cell contains a single     value. 'tidyr' contains tools for changing the shape (pivoting) and     hierarchy (nesting and 'unnesting') of a dataset, turning deeply     nested lists into rectangular data frames ('rectangling'), and     extracting values out of string columns. It also includes tools for     working with missing values (both implicit and explicit).</p>"
+description: The r-tidyr package provides tools for reshaping and tidying R data frames into a consistent structure where each variable is a column and each observation is a row. Use when user asks to pivot data between long and wide formats, rectangle nested list-columns, split or combine character columns, or manage missing values.
 homepage: https://cloud.r-project.org/web/packages/tidyr/index.html
 ---
+
 
 # r-tidyr
 

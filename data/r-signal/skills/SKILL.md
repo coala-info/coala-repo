@@ -1,8 +1,9 @@
 ---
 name: r-signal
-description: "A set of signal processing functions originally written for 'Matlab' and 'Octave'.   Includes filter generation utilities, filtering functions,   resampling routines, and visualization of filter models. It also   includes interpolation functions.</p>"
+description: The r-signal package provides a comprehensive suite of signal processing functions in R for filter design, digital filtering, and spectral analysis. Use when user asks to design digital filters, apply zero-phase filtering, perform Savitzky-Golay smoothing, resample signals, or analyze frequency responses.
 homepage: https://cloud.r-project.org/web/packages/signal/index.html
 ---
+
 
 # r-signal
 

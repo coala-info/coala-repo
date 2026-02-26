@@ -1,8 +1,9 @@
 ---
 name: bioconductor-les
-description: The package provides a universal framework suitable for identifying differential effects in tiling microarray data sets, and is independent of the underlying statistics at the level of single probes.
+description: This tool identifies differential effects in tiling microarray data by integrating probe-level p-values into spatially coherent scores. Use when user asks to identify loci of enhanced significance, analyze genomic tiling data, or detect regulated regions in ChIP-chip and DNA modification experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/les.html
 ---
+
 
 # bioconductor-les
 

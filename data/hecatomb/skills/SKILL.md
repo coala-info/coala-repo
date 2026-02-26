@@ -1,8 +1,9 @@
 ---
 name: hecatomb
-description: Hecatomb is an end-to-end bioinformatic platform specifically engineered for viral metagenomics.
+description: Hecatomb is an end-to-end bioinformatic platform designed to extract and classify viral signals from complex metagenomic datasets. Use when user asks to identify viral contigs, perform viral taxonomic classification, or run a viral metagenomics pipeline on short-read or long-read data.
 homepage: https://github.com/shandley/hecatomb
 ---
+
 
 # hecatomb
 

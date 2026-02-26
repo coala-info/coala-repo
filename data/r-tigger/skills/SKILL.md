@@ -1,8 +1,9 @@
 ---
 name: r-tigger
-description: "Infers the V genotype of an individual from immunoglobulin (Ig)     repertoire sequencing data (AIRR-Seq, Rep-Seq). Includes detection of      any novel alleles. This information is then used to correct existing V      allele calls from among the sample sequences."
+description: The tigger package identifies novel V gene alleles and infers personalized immunoglobulin genotypes from AIRR-seq data. Use when user asks to detect novel polymorphisms, infer individual genotypes, create personalized germline databases, or reassign V gene calls.
 homepage: https://cran.r-project.org/web/packages/tigger/index.html
 ---
+
 
 # r-tigger
 

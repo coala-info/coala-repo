@@ -1,8 +1,9 @@
 ---
 name: ema
-description: The `ema` (EMA) tool is a specialized aligner for barcoded sequencing data.
+description: EMA is a specialized aligner that leverages barcode information to accurately map barcoded sequencing data to a reference genome. Use when user asks to align barcoded reads, preprocess FASTQ files by barcode, or resolve mapping ambiguities using barcode clouds.
 homepage: http://ema.csail.mit.edu/
 ---
+
 
 # ema
 

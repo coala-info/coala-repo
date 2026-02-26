@@ -1,8 +1,9 @@
 ---
 name: kgwasflow
-description: kGWASflow is a modular and reproducible Snakemake workflow designed for k-mer-based GWAS.
+description: kGWASflow is a modular Snakemake workflow that performs k-mer-based genome-wide association studies to identify genetic variants underlying phenotypic variation. Use when user asks to initialize a GWAS project, run k-mer counting and association testing, or generate reports for k-mer-based GWAS results.
 homepage: https://github.com/akcorut/kGWASflow
 ---
+
 
 # kgwasflow
 

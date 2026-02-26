@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.mmusculus.ucsc.mm10.knowngene
-description: the package is available on all platforms; click for details.
+description: This package provides transcript-level annotations for the mouse genome based on the UCSC mm10 assembly. Use when user asks to retrieve gene models, access transcript coordinates, or map genomic features for mouse mm10 data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmusculus.UCSC.mm10.knownGene.html
 ---
+
 
 # bioconductor-txdb.mmusculus.ucsc.mm10.knowngene
 

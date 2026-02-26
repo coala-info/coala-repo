@@ -1,8 +1,9 @@
 ---
 name: treesimulator
-description: The `treesimulator` tool generates phylogenetic trees that represent the transmission history of a pathogen within a population.
+description: The treesimulator tool generates phylogenetic trees representing pathogen transmission history within a population. Use when user asks to 'model pathogen outbreaks', 'simulate standard, exposed-infectious, or superspreading scenarios', 'incorporate contact tracing', 'simulate time-varying transmission parameters', 'test phylodynamic inference methods', or 'predict public health intervention impacts'.
 homepage: https://github.com/evolbioinfo/treesimulator
 ---
+
 
 # treesimulator
 

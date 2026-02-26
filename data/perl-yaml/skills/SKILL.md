@@ -1,8 +1,9 @@
 ---
 name: perl-yaml
-description: The perl-yaml skill provides procedural knowledge for utilizing the `YAML.pm` module (and its variants) via the command line.
+description: This tool provides command-line patterns and procedural knowledge for serializing and deserializing data using the Perl YAML module. Use when user asks to validate YAML files, extract specific elements from YAML data, or process multiple YAML documents using Perl one-liners.
 homepage: https://github.com/ingydotnet/yaml-pm
 ---
+
 
 # perl-yaml
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-netdx.examples
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides example datasets and vignettes for the netDx patient classification framework. Use when user asks to access sample data for netDx, run example classification workflows, or explore multi-omic integration tutorials.
 homepage: https://bioconductor.org/packages/3.11/data/experiment/html/netDx.examples.html
 ---
+
 
 # bioconductor-netdx.examples
 

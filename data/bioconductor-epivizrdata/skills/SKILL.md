@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epivizrdata
-description: the package is available on all platforms; click for details.
+description: This tool manages and serves genomic data from Bioconductor objects to the Epiviz interactive visualization application. Use when user asks to create data managers, register genomic datasets like GRanges or SummarizedExperiment, and prepare data for WebSocket-based visualization sessions.
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrData.html
 ---
+
 
 # bioconductor-epivizrdata
 

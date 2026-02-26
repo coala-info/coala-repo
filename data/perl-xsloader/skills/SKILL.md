@@ -1,8 +1,9 @@
 ---
 name: perl-xsloader
-description: XSLoader is the standard Perl core module used to pull compiled C or C++ code (XS) into a Perl namespace.
+description: "XSLoader pulls compiled C or C++ code into a Perl namespace to enable the use of XS extensions. Use when user asks to load shared libraries into Perl modules, implement bootstrap calls for XS-based distributions, or use a lightweight alternative to DynaLoader."
 homepage: https://metacpan.org/module/XSLoader
 ---
+
 
 # perl-xsloader
 

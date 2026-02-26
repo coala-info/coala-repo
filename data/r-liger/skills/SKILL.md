@@ -1,8 +1,9 @@
 ---
 name: r-liger
-description: Skill for using the CRAN R package r-liger.
+description: r-liger is a lightweight R package for performing Gene Set Enrichment Analysis to identify statistically significant biological signals in gene expression data. Use when user asks to perform gene set enrichment analysis, test specific gene sets for enrichment, or identify biological trends across different states.
 homepage: https://cloud.r-project.org/web/packages/liger/index.html
 ---
+
 
 # r-liger
 

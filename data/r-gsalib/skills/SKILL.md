@@ -1,8 +1,9 @@
 ---
 name: r-gsalib
-description: Provides utility functions used by the Genome Analysis Toolkit ('GATK') to load tables and plot data. The 'GATK' is a toolkit for variant discovery in high-throughput sequencing data.</p>
+description: The r-gsalib package provides utility functions to read and parse Genome Analysis Toolkit (GATK) report files into R data frames. Use when user asks to load GATK reports, process multi-table GATK output files, or analyze BaseRecalibrator and VariantEval data in R.
 homepage: https://cloud.r-project.org/web/packages/gsalib/index.html
 ---
+
 
 # r-gsalib
 

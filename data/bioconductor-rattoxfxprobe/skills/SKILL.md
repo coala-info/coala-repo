@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rattoxfxprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Rat ToxFX microarray. Use when user asks to retrieve probe sequences for the Rat ToxFX array or perform sequence-specific analysis on rat toxicology microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rattoxfxprobe.html
 ---
+
 
 # bioconductor-rattoxfxprobe
 

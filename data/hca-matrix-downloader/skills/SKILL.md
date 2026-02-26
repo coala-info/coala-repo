@@ -1,8 +1,9 @@
 ---
 name: hca-matrix-downloader
-description: The `hca-matrix-downloader` is a specialized CLI tool for bioinformaticians and researchers working with Human Cell Atlas data.
+description: This tool automates the retrieval and conversion of processed expression matrices from the Human Cell Atlas FTP service. Use when user asks to download HCA expression matrices, retrieve single-cell data by project UUID or title, or convert HCA-formatted matrices into 10X Genomics-compatible structures.
 homepage: https://github.com/ebi-gene-expression-group/hca-matrix-downloader
 ---
+
 
 # hca-matrix-downloader
 

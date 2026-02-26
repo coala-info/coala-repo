@@ -1,8 +1,9 @@
 ---
 name: bioconductor-moe430bprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Mouse Expression 430B microarray. Use when user asks to retrieve probe sequences for the moe430b array, perform probe-level analysis, or map microarray probes to genomic locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moe430bprobe.html
 ---
+
 
 # bioconductor-moe430bprobe
 

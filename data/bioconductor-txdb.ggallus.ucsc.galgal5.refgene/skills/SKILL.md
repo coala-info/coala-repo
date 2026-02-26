@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.ggallus.ucsc.galgal5.refgene
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides a transcript database for the Gallus gallus genome based on UCSC galGal5 refGene annotations. Use when user asks to retrieve chicken transcript locations, access galGal5 gene models, or perform genomic coordinate mapping for Gallus gallus.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ggallus.UCSC.galGal5.refGene.html
 ---
+
 
 # bioconductor-txdb.ggallus.ucsc.galgal5.refgene
 

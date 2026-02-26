@@ -1,8 +1,9 @@
 ---
 name: dupre
-description: The `dupre` tool provides a robust mathematical framework for estimating the duplication rate of sequencing libraries.
+description: Dupre estimates the duplication rate and complexity of sequencing libraries to predict the yield of unique fragments. Use when user asks to estimate library complexity, predict sequencing saturation, or calculate the total number of unique molecules from a fragment count distribution.
 homepage: https://bitbucket.org/genomeinformatics/dupre/
 ---
+
 
 # dupre
 

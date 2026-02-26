@@ -1,8 +1,9 @@
 ---
 name: ldblockshow
-description: ldblockshow is a high-performance tool designed to generate LD heatmaps and identify haplotype blocks directly from Variant Call Format (VCF) files.
+description: ldblockshow generates linkage disequilibrium heatmaps and identifies haplotype blocks from VCF files while integrating functional annotations and statistical signals. Use when user asks to visualize LD patterns, identify haplotype blocks, overlay GWAS signals on LD plots, or generate publication-quality genomic heatmaps.
 homepage: https://github.com/BGI-shenzhen/LDBlockShow
 ---
+
 
 # ldblockshow
 

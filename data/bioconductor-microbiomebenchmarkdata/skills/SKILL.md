@@ -1,8 +1,9 @@
 ---
 name: bioconductor-microbiomebenchmarkdata
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of curated microbiome datasets for benchmarking and evaluating computational methods. Use when user asks to access curated microbiome datasets, benchmark microbiome analysis methods, or evaluate the performance of taxonomic profiling tools.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MicrobiomeBenchmarkData.html
 ---
+
 
 # bioconductor-microbiomebenchmarkdata
 

@@ -1,8 +1,9 @@
 ---
 name: proteomiqon-proteininference
-description: Protein inference is the process of aggregating peptide-level identifications into protein-level results.
+description: This tool aggregates peptide-level identifications into protein groups to resolve sequence redundancies and calculate protein-level statistics. Use when user asks to perform protein inference, group peptides into protein identifications, or assign peptide evidence for quantification.
 homepage: https://csbiology.github.io/ProteomIQon/
 ---
+
 
 # proteomiqon-proteininference
 

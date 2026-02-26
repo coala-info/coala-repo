@@ -1,8 +1,9 @@
 ---
 name: leviosam2
-description: LevioSAM2 is a specialized toolkit for migrating genomic data across reference assemblies using chain files.
+description: LevioSAM2 migrates genomic alignments across reference assemblies while updating read flags and CIGAR strings using chain files. Use when user asks to lift over alignments between assemblies, migrate BAM or CRAM files to a new reference, or perform selective re-mapping of genomic data.
 homepage: https://github.com/milkschen/leviosam2
 ---
+
 
 # leviosam2
 

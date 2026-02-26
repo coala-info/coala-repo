@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bayespeak
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: BayesPeak performs Bayesian analysis of ChIP-seq data to identify genomic sites of protein-DNA interactions using a Hidden Markov Model and Markov Chain Monte Carlo sampling. Use when user asks to call peaks, identify transcription factor binding sites, detect histone modifications, or estimate the posterior probability of enrichment in sequencing data.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/BayesPeak.html
 ---
+
 
 # bioconductor-bayespeak
 

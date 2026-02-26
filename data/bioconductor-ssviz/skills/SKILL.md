@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ssviz
-description: the package is available on all platforms; click for details.
+description: Bioconductor-ssviz provides tools for the visualization and quality control of small RNA sequencing data. Use when user asks to visualize small RNA-seq datasets, analyze read length distributions, or assess nucleotide frequency patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/ssviz.html
 ---
+
 
 # bioconductor-ssviz
 

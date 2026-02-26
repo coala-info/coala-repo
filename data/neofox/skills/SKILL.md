@@ -1,8 +1,9 @@
 ---
 name: neofox
-description: Neofox (NEOantigen Feature tOolboX) is a specialized tool designed to characterize neoantigen candidates by calculating a comprehensive suite of published and novel descriptors.
+description: Neofox characterizes neoantigen candidates by calculating a comprehensive suite of descriptors and integrating multiple external prediction tools into a unified workflow. Use when user asks to annotate neoantigen candidates, calculate immunogenicity features, or extract descriptors for mutated peptide sequences.
 homepage: https://github.com/tron-bioinformatics/neofox
 ---
+
 
 # neofox
 

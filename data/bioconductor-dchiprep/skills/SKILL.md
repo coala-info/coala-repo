@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dchiprep
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: DChIPRep performs differential analysis of chromatin modification ChIP-Seq data at base-pair resolution using a DESeq2-based framework. Use when user asks to import ChIP-Seq count data, perform position-wise statistical testing for histone modifications, or visualize genomic enrichment profiles.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DChIPRep.html
 ---
+
 
 # bioconductor-dchiprep
 

@@ -1,8 +1,9 @@
 ---
 name: brass
-description: Brass Mono is a retro-industrial monospaced font designed for coding and technical work.
+description: This tool manages the build pipeline and development lifecycle for the Brass Mono monospaced font. Use when user asks to initialize the development environment, build or rebuild fonts from SVG sources, lint fonts for compliance, install fonts locally, or manage versioning and releases.
 homepage: https://github.com/fonsecapeter/brass_mono
 ---
+
 
 # brass
 

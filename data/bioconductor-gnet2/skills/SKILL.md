@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gnet2
-description: the package is available on all platforms; click for details.
+description: GNET2 constructs gene regulatory networks by clustering genes into functional modules using an iterative Expectation-Maximization process. Use when user asks to build gene regulatory networks, identify transcription factor targets, or visualize regulatory tree logic from transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/GNET2.html
 ---
+
 
 # bioconductor-gnet2
 

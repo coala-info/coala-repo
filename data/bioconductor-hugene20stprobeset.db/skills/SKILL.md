@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene20stprobeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Human Gene 2.0 ST Probeset platform. Use when user asks to map probe identifiers to gene symbols, retrieve Entrez Gene IDs, or access genomic metadata like GO terms and KEGG pathways for this specific microarray.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene20stprobeset.db.html
 ---
+
 
 # bioconductor-hugene20stprobeset.db
 

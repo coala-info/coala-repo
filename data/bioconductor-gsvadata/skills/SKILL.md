@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsvadata
-description: the package is available on all platforms; click for details.
+description: The GSVAdata package provides curated gene expression datasets, gene set collections, and genomic annotations for demonstrating and testing Gene Set Variation Analysis workflows. Use when user asks to load example expression matrices, access MSigDB gene sets, or perform benchmarking and demonstrations of enrichment methods.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSVAdata.html
 ---
+
 
 # bioconductor-gsvadata
 

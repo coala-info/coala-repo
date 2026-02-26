@@ -1,8 +1,9 @@
 ---
 name: koeken
-description: Koeken acts as a specialized wrapper for LEfSe and QIIME, streamlining the identification of microbial biomarkers in complex datasets.
+description: Koeken is a wrapper for LEfSe and QIIME that identifies microbial biomarkers by automating taxonomic summarization and statistical testing across split variables. Use when user asks to identify microbial biomarkers, perform longitudinal LEfSe analysis, generate cladograms, or find functional biomarkers in PICRUSt datasets.
 homepage: https://github.com/twbattaglia/koeken
 ---
+
 
 # koeken
 

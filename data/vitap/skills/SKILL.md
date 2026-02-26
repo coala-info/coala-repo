@@ -1,8 +1,9 @@
 ---
 name: vitap
-description: VITAP (Viral Taxonomic Assignment Pipeline) is a high-precision tool for classifying viral genetic fragments.
+description: VITAP classifies viral genetic fragments and assigns taxonomic lineages using alignment and graph algorithms. Use when user asks to classify viral sequences, assign viral taxonomy, or update viral databases.
 homepage: https://github.com/DrKaiyangZheng/VITAP/
 ---
+
 
 # vitap
 

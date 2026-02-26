@@ -1,8 +1,9 @@
 ---
 name: perl-acme-damn
-description: This skill facilitates the use of the `Acme::Damn` Perl module, a specialized tool for object manipulation.
+description: This tool unblesses Perl objects to recover their original underlying references. Use when user asks to unbless an object, convert a blessed reference back to a plain reference, or remove a class association from a data structure.
 homepage: http://metacpan.org/pod/Acme::Damn
 ---
+
 
 # perl-acme-damn
 

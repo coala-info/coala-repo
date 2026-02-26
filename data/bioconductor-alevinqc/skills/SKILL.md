@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alevinqc
-description: the package is available on all platforms; click for details.
+description: alevinQC provides quality control tools and diagnostic reports for single-cell RNA-seq data processed with Salmon/alevin. Use when user asks to generate QC reports, launch interactive Shiny applications for data exploration, or create diagnostic plots for alevin output.
 homepage: https://bioconductor.org/packages/release/bioc/html/alevinQC.html
 ---
+
 
 # bioconductor-alevinqc
 

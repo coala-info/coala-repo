@@ -1,8 +1,9 @@
 ---
 name: bioconductor-intact
-description: the package is available on all platforms; click for details.
+description: The INTACT package integrates transcriptome-wide association study z-scores with gene-level colocalization probabilities to identify biologically relevant genes for complex traits. Use when user asks to integrate TWAS and colocalization data, perform gene set enrichment analysis with INTACT-GSE, or jointly analyze multiple molecular gene products using Multi-INTACT.
 homepage: https://bioconductor.org/packages/release/bioc/html/INTACT.html
 ---
+
 
 # bioconductor-intact
 

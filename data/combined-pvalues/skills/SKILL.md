@@ -1,8 +1,9 @@
 ---
 name: combined-pvalues
-description: The `combined-pvalues` library (invoked via the `comb-p` command) provides a specialized workflow for handling p-values that are not independent but spatially correlated.
+description: This tool identifies statistically significant genomic regions by accounting for spatial autocorrelation among p-values. Use when user asks to calculate autocorrelation, apply Stouffer-Liptak correction, identify differentially methylated regions, or perform FDR correction on spatially correlated genomic data.
 homepage: https://github.com/brentp/combined-pvalues
 ---
+
 
 # combined-pvalues
 

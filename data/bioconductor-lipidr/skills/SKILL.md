@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lipidr
-description: the package is available on all platforms; click for details.
+description: bioconductor-lipidr provides a comprehensive framework for the inspection, analysis, and visualization of targeted lipidomics data within the Bioconductor ecosystem. Use when user asks to import Skyline CSV files, perform data normalization, conduct multivariate analysis like PCA or OPLS-DA, identify differential lipid expression, or perform lipid set enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/lipidr.html
 ---
+
 
 # bioconductor-lipidr
 

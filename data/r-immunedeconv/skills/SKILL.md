@@ -1,8 +1,9 @@
 ---
 name: r-immunedeconv
-description: R package immunedeconv (documentation from project home).
+description: The r-immunedeconv package provides a unified interface to multiple algorithms for estimating immune cell fractions from gene expression data. Use when user asks to estimate immune cell infiltration, perform deconvolution on human or mouse transcriptomic data, or calculate tumor purity scores.
 homepage: https://cran.r-project.org/web/packages/immunedeconv/index.html
 ---
+
 
 # r-immunedeconv
 

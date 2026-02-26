@@ -1,16 +1,42 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hpsuissero_HpsuisSero.sh
+baseCommand: HpsuisSero.sh
 label: hpsuissero_HpsuisSero.sh
-doc: "A tool for serotyping Haemophilus parasuis. (Note: The provided help text contains
-  only system error messages regarding container execution and does not list command-line
-  arguments).\n\nTool homepage: https://github.com/jimmyliu1326/HpsuisSero"
-inputs: []
+doc: "Serotyping tool for Haemophilus parasuis\n\nTool homepage: https://github.com/jimmyliu1326/HpsuisSero"
+inputs:
+  - id: input_file
+    type: File
+    doc: input file
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: input_type
+    type: string
+    doc: input type [fasta or fastq]
+    inputBinding:
+      position: 101
+      prefix: -x
+  - id: sample_name
+    type: string
+    doc: sample name
+    inputBinding:
+      position: 101
+      prefix: -s
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_directory
+    type: Directory
+    doc: path to output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hpsuissero:1.0.1--hdfd78af_0
-stdout: hpsuissero_HpsuisSero.sh.out

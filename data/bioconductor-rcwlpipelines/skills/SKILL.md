@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcwlpipelines
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of standardized bioinformatics pipelines and tools implemented in the Common Workflow Language for R. Use when user asks to search for CWL pipelines, install bioinformatics workflows, or execute standardized data analysis pipelines within the R environment.
 homepage: https://bioconductor.org/packages/release/bioc/html/RcwlPipelines.html
 ---
+
 
 # bioconductor-rcwlpipelines
 

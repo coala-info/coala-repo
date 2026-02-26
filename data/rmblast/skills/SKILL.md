@@ -1,8 +1,9 @@
 ---
 name: rmblast
-description: RMBlast is a specialized version of the NCBI BLAST+ suite, primarily used as a search engine for RepeatMasker and RepeatModeler.
+description: RMBlast is a specialized version of the NCBI BLAST+ suite designed for repeat identification and genomic annotation. Use when user asks to install RMBlast, configure it for RepeatMasker or RepeatModeler, and run rmblastn for repeat-specific sequence searches.
 homepage: https://www.repeatmasker.org/rmblast/
 ---
+
 
 # rmblast
 

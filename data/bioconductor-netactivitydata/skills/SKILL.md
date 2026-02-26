@@ -1,8 +1,9 @@
 ---
 name: bioconductor-netactivitydata
-description: the package is available on all platforms; click for details.
+description: This package provides pre-trained models and data for computing gene set scores with the NetActivity framework. Use when user asks to access pre-trained network models, retrieve data for gene set activity analysis, or load resources for the NetActivity package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/NetActivityData.html
 ---
+
 
 # bioconductor-netactivitydata
 

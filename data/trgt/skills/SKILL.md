@@ -1,8 +1,9 @@
 ---
 name: trgt
-description: TRGT (Tandem Repeat Genotyping Tool) is a specialized suite designed to characterize tandem repeats using the high accuracy of PacBio HiFi reads.
+description: TRGT characterizes tandem repeats, profiling their internal sequence composition, mosaicism, and CpG methylation using PacBio HiFi reads. Use when user asks to genotype tandem repeats, merge multi-sample VCFs, visualize repeat structures, or validate repeat definitions.
 homepage: https://github.com/PacificBiosciences/trgt
 ---
+
 
 # trgt
 

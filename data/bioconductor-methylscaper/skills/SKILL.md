@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylscaper
-description: The package supports both single-cell and single-molecule data, and a common interface for jointly visualizing both data types through the generation of ordered representational methylation-state matrices. The Shiny app allows for an interactive seriation process of refinement and re-weighting that optimally orders the cells or DNA molecules to discover methylation patterns and nucleosome positioning.
+description: Methylscaper visualizes single-cell and single-molecule methylation data using ordered representational matrices. Use when user asks to visualize methylation patterns, perform interactive seriation, or identify nucleosome positioning.
 homepage: https://bioconductor.org/packages/release/bioc/html/methylscaper.html
 ---
+
 
 # bioconductor-methylscaper
 

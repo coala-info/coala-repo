@@ -1,8 +1,9 @@
 ---
 name: xmltramp2
-description: xmltramp2 is a modern Python 3 refactoring of the original xmltramp library, designed to make XML parsing as simple as navigating a Python object.
+description: xmltramp2 simplifies XML parsing by mapping XML structures to Python objects, allowing navigation via dot notation and function calls. Use when user asks to parse an XML string, navigate XML elements, get or set XML attributes, work with namespaced XML elements, modify XML element content, or access multiple XML elements of the same name.
 homepage: https://github.com/tBaxter/xmltramp2
 ---
+
 
 # xmltramp2
 

@@ -1,8 +1,9 @@
 ---
 name: r-guilds
-description: R package guilds (documentation from project home).
+description: This R package implements neutral theory models to analyze biodiversity and species abundance distributions across different dispersal guilds. Use when user asks to estimate biodiversity parameters, generate species abundance distributions, apply the Etienne Sampling Formula, or analyze communities with multiple dispersal syndromes.
 homepage: https://cran.r-project.org/web/packages/guilds/index.html
 ---
+
 
 # r-guilds
 

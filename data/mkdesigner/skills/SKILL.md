@@ -1,8 +1,9 @@
 ---
 name: mkdesigner
-description: MKDesigner is a specialized bioinformatics tool designed to automate the transition from raw Next-Generation Sequencing (NGS) data to laboratory-ready PCR primers.
+description: MKDesigner automates the design of laboratory-ready PCR primers from NGS data by integrating variant calling, primer design, and specificity checking. Use when user asks to identify genetic markers between lines, design SNP or INDEL primers, or generate physical maps for fine mapping.
 homepage: https://github.com/KChigira/mkdesigner/
 ---
+
 
 # mkdesigner
 

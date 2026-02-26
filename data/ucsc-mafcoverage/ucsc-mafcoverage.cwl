@@ -2,10 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mafCoverage
 label: ucsc-mafcoverage
-doc: "The provided text does not contain help information as it is a container runtime
-  error log. mafCoverage is a UCSC tool used to calculate coverage from a MAF (Multiple
-  Alignment Format) file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Extract coverage information from a MAF file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: database
+    type: string
+    doc: The database name (e.g., hg19).
+    inputBinding:
+      position: 1
+  - id: maf_file
+    type: File
+    doc: The input MAF file to process.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

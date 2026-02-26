@@ -1,8 +1,9 @@
 ---
 name: esme_pio_mvapich_4_0_ofi
-description: The ParallelIO (PIO) library is a high-level interface designed to simplify and optimize I/O operations for scientific applications running on large numbers of processors.
+description: The ParallelIO library provides a high-level interface to optimize and distribute I/O operations across multiple processors in large-scale scientific simulations. Use when user asks to simplify parallel I/O tasks, mitigate I/O bottlenecks, or perform asynchronous data writes using MVAPICH and the OFI network layer.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_mvapich_4_0_ofi
 

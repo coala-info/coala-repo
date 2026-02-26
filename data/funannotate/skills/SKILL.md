@@ -1,8 +1,9 @@
 ---
 name: funannotate
-description: `funannotate` is a specialized pipeline designed to automate the structural and functional annotation of eukaryotic genomes.
+description: funannotate is a pipeline for the automated structural and functional annotation of eukaryotic genomes. Use when user asks to predict gene models, assign functional annotations, or prepare genome assemblies for NCBI submission.
 homepage: https://github.com/nextgenusfs/funannotate
 ---
+
 
 # funannotate
 

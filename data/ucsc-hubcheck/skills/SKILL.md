@@ -1,8 +1,9 @@
 ---
 name: ucsc-hubcheck
-description: The `hubCheck` utility is a diagnostic tool used to ensure that a Track Data Hub is correctly formatted and that all referenced data files (BigWig, BigBed, VCF, etc.) are accessible.
+description: ucsc-hubcheck validates the format and accessibility of files within a UCSC Track Data Hub. Use when user asks to 'validate a Track Data Hub', 'check Track Data Hub format', 'verify Track Data Hub file accessibility', or 'identify broken links or syntax errors'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hubcheck
 

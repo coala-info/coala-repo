@@ -1,8 +1,9 @@
 ---
 name: konezumiaid
-description: konezumiaid is a command-line utility designed to facilitate multiplex knockout mouse generation using Target-AID base editing technology.
+description: konezumiaid is a command-line utility that identifies C-to-T base editing targets for generating knockout mouse models using Target-AID technology. Use when user asks to design gRNAs for gene disruption, search for base editing targets by gene symbol or transcript ID, or perform batch processing for multiplex knockout generation.
 homepage: https://github.com/aki2274/KOnezumi-AID
 ---
+
 
 # konezumiaid
 

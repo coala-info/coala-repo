@@ -1,8 +1,9 @@
 ---
 name: abritamr
-description: "A tool for antimicrobial resistance gene detection (Note: The provided text is a container build error log and does not contain the tool's help documentation)."
+description: abritamr is a bioinformatics pipeline that screens bacterial isolates for antimicrobial resistance mechanisms by binning AMRFinderPlus results into drug classes. Use when user asks to screen assemblies for resistance genes, detect species-specific point mutations, or generate standardized reports for clinical accreditation.
 homepage: https://github.com/MDU-PHL/abritamr
 ---
+
 
 # abritamr
 

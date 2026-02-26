@@ -1,8 +1,9 @@
 ---
 name: r-pscl
-description: "Bayesian analysis of item-response theory (IRT) models,   roll call analysis; computing highest density regions;    maximum likelihood estimation of zero-inflated and hurdle models for count data;   goodness-of-fit measures for GLMs;   data sets used in writing	and teaching; seats-votes curves.</p>"
+description: The r-pscl package provides tools for Bayesian item-response theory models, roll call analysis, and specialized regression models for count data. Use when user asks to fit zero-inflated or hurdle models, analyze legislative voting patterns, estimate ideal points, or perform the Vuong non-nested test.
 homepage: https://cloud.r-project.org/web/packages/pscl/index.html
 ---
+
 
 # r-pscl
 

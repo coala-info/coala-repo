@@ -1,8 +1,9 @@
 ---
 name: cirtap
-description: cirtap is a specialized CLI utility designed to handle the large-scale acquisition and organization of PATRIC genomic data.
+description: cirtap automates the large-scale acquisition, indexing, and organization of PATRIC genomic data into a local mirror. Use when user asks to mirror the PATRIC FTP repository, index local genomic files, collect specific sequence types like proteins or 16S SSU, filter for high-quality genomes, or archive specific genome sets.
 homepage: https://github.com/MGXlab/cirtap/
 ---
+
 
 # cirtap
 

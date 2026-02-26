@@ -3,7 +3,7 @@
 ## graphbin
 
 ### Tool Description
-GraphBin is a tool for refining metagenomic bins using assembly graphs. (Note: The provided help text contains only system error messages and no usage information; therefore, no arguments could be extracted.)
+Refined Binning of Metagenomic Contigs using Assembly Graphs
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/graphbin:1.7.4--pyhdfd78af_0
@@ -18,11 +18,33 @@ GraphBin is a tool for refining metagenomic bins using assembly graphs. (Note: T
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/graphbin:1.7.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2252762099: no space left on device
+Usage: graphbin [OPTIONS]
+
+  GraphBin: Refined Binning of Metagenomic Contigs using Assembly Graphs
+
+Options:
+  --assembler [spades|sga|megahit|flye|canu|miniasm]
+                                  name of the assembler used (SPAdes, SGA or
+                                  MEGAHIT). GraphBin supports Flye, Canu and
+                                  Miniasm long-read assemblies as well.
+                                  [required]
+  --graph PATH                    path to the assembly graph file  [required]
+  --contigs PATH                  path to the contigs file  [required]
+  --paths PATH                    path to the contigs.paths (metaSPAdes) or
+                                  assembly.info (metaFlye) file
+  --binned PATH                   path to the .csv file with the initial
+                                  binning output from an existing tool
+                                  [required]
+  --output PATH                   path to the output folder  [required]
+  --prefix TEXT                   prefix for the output file
+  --max_iteration INTEGER         maximum number of iterations for label
+                                  propagation algorithm  [default: 100]
+  --diff_threshold FLOAT RANGE    difference threshold for label propagation
+                                  algorithm  [default: 0.1; 0<=x<=1]
+  --delimiter [,|;|$'\t'|" "]     delimiter for input/output results. Supports
+                                  a comma (,), a semicolon (;), a tab ($'\t'),
+                                  a space (" ") and a pipe (|)  [default: ,]
+  -v, --version                   Show the version and exit.
+  --help                          Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

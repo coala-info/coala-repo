@@ -1,8 +1,9 @@
 ---
 name: plasmidseeker
-description: PlasmidSeeker is a k-mer based tool designed to identify known plasmids within raw sequencing reads without the need for de novo assembly.
+description: PlasmidSeeker identifies known plasmids and estimates their copy number in raw sequencing reads using k-mer frequency analysis. Use when user asks to detect plasmids in whole-genome sequencing data, estimate plasmid copy number, or screen isolates for plasmids without performing de novo assembly.
 homepage: https://github.com/bioinfo-ut/PlasmidSeeker
 ---
+
 
 # plasmidseeker
 

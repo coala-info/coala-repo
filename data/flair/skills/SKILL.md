@@ -1,8 +1,9 @@
 ---
 name: flair
-description: FLAIR (Full-Length Alternative Isoform analysis of RNA) is a specialized bioinformatics suite designed to handle the unique challenges of noisy long-read sequencing data.
+description: FLAIR is a bioinformatics suite designed to identify, correct, and quantify high-confidence transcripts from noisy long-read sequencing data. Use when user asks to align long reads, correct splice sites, collapse reads into isoforms, quantify transcript abundance, or perform differential splicing analysis.
 homepage: https://github.com/BrooksLabUCSC/flair
 ---
+
 
 # flair
 

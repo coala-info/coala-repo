@@ -1,8 +1,9 @@
 ---
 name: replidec
-description: Replidec (Replication Cycle Decipher for Phages) is a specialized bioinformatics tool designed to predict the lifestyle of bacteriophages.
+description: Replidec predicts the replication cycle of bacteriophages by classifying them as virulent, temperate, or chronic using a Bayesian classifier and homology searches. Use when user asks to determine phage lifestyles, analyze metagenomic viral contigs, or identify temperate and chronic viruses from genomic or protein sequences.
 homepage: https://github.com/deng-lab/Replidec
 ---
+
 
 # replidec
 

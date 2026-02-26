@@ -1,8 +1,9 @@
 ---
 name: bioconductor-compcoder
-description: the package is available on all platforms; click for details.
+description: This R package provides a framework for benchmarking differential expression analysis methods and simulating RNA-seq data. Use when user asks to simulate RNA-seq datasets, compare differential expression methods, or evaluate the performance of bioinformatics pipelines.
 homepage: https://bioconductor.org/packages/release/bioc/html/compcodeR.html
 ---
+
 
 # bioconductor-compcoder
 

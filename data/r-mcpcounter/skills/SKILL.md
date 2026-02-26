@@ -1,8 +1,9 @@
 ---
 name: r-mcpcounter
-description: R package mcpcounter (documentation from project home).
+description: The r-mcpcounter package quantifies the absolute abundance of immune and stromal cell populations from transcriptomic data. Use when user asks to estimate cell type proportions, quantify immune cell infiltration, or run the MCP-counter algorithm on gene expression matrices.
 homepage: https://cran.r-project.org/web/packages/mcpcounter/index.html
 ---
+
 
 # r-mcpcounter
 

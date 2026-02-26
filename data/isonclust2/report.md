@@ -3,7 +3,7 @@
 ## isonclust2
 
 ### Tool Description
-The provided text does not contain help information for isonclust2; it contains system error messages regarding a failed container build due to insufficient disk space.
+isONclust2 is a tool for clustering long reads (ONT/PacBio) into groups representing the same transcript/gene.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/isonclust2:2.3--hc9558a2_0
@@ -18,11 +18,20 @@ The provided text does not contain help information for isonclust2; it contains 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/isonclust2:2.3--hc9558a2_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2240220259: no space left on device
+Unable to find image 'quay.io/biocontainers/isonclust2:2.3--hc9558a2_0' locally
+2.3--hc9558a2_0: Pulling from biocontainers/isonclust2
+1dbcab28ce46: Already exists
+cfb1ba34637d: Already exists
+ace2d8a63dd5: Already exists
+75c080ef15eb: Already exists
+316957f8baaf: Already exists
+dbd31e1d863d: Already exists
+2f8531d5a6ec: Already exists
+1dbcab28ce46: Already exists
+2e178fd72baf: Already exists
+5eb28d2fac87: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3501554859: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

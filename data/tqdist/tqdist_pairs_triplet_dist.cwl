@@ -1,17 +1,40 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tqdist_pairs_triplet_dist
+baseCommand: pairs_triplet_dist
 label: tqdist_pairs_triplet_dist
-doc: "The provided text does not contain help information for the tool. It contains
-  system logs and a fatal error message regarding a container build failure (Apptainer/Singularity)
-  while attempting to fetch the tqdist image from a Docker registry.\n\nTool homepage:
-  http://users-cs.au.dk/cstorm/software/tqdist/"
-inputs: []
+doc: "Calculates the triplet distance between pairs of trees in two files. The files
+  must contain the same number of trees in Newick format, and trees on the same line
+  must have the same set of leaf labels.\n\nTool homepage: http://users-cs.au.dk/cstorm/software/tqdist/"
+inputs:
+  - id: filename1
+    type: File
+    doc: First file containing trees in Newick format.
+    inputBinding:
+      position: 1
+  - id: filename2
+    type: File
+    doc: Second file containing trees in Newick format.
+    inputBinding:
+      position: 2
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: If used, reports detailed statistics for each pair of trees including 
+      number of leaves, number of triplets, triplet distance, normalized triplet
+      distance, and resolved/unresolved triplet counts.
+    inputBinding:
+      position: 103
+      prefix: -v
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_filename
+    type:
+      - 'null'
+      - File
+    doc: File to write the output to. If not specified, output is written to 
+      stdout.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
-stdout: tqdist_pairs_triplet_dist.out

@@ -1,8 +1,9 @@
 ---
 name: hmmcopy
-description: The `hmmcopy` suite consists of C++ based command-line utilities designed to process large genomic datasets for copy number analysis.
+description: The hmmcopy suite extracts binned read counts, GC content, and mappability data from genomic files for copy number analysis. Use when user asks to extract read counts from BAM files, calculate GC content from FASTA files, or generate mappability scores for genomic bins.
 homepage: http://compbio.bccrc.ca/software/hmmcopy/
 ---
+
 
 # hmmcopy
 

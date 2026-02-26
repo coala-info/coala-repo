@@ -1,8 +1,9 @@
 ---
 name: clust
-description: `clust` is a specialized tool for bioinformatics that identifies groups of genes with consistent co-expression profiles across multiple datasets.
+description: clust identifies groups of genes with consistent co-expression profiles across multiple heterogeneous datasets. Use when user asks to cluster gene expression data, identify co-expressed gene groups, or perform automated normalization and clustering across different sequencing technologies.
 homepage: https://github.com/baselabujamous/clust
 ---
+
 
 # clust
 

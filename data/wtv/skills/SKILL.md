@@ -1,8 +1,9 @@
 ---
 name: wtv
-description: The `wtv` tool provides a specialized workflow for ion selection within mass spectrometry datasets.
+description: The wtv tool performs ion selection and filtering on mass spectrometry datasets. Use when user asks to select ions, filter mass spectrometry data, extract representative ions, adjust ion selection parameters, read MSP files, or write MSP files.
 homepage: https://recetox.github.io/wtv/
 ---
+
 
 # wtv
 

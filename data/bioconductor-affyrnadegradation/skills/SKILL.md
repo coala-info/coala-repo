@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyrnadegradation
-description: The package helps with the assessment and correction of RNA degradation effects in Affymetrix 3' expression arrays. The parameter d gives a robust and accurate measure of RNA integrity. The correction removes the probe positional bias, and thus improves comparability of samples that are affected by RNA degradation.
+description: This tool assesses and corrects RNA degradation effects in Affymetrix 3' expression arrays by calculating integrity parameters and adjusting probe intensities. Use when user asks to calculate the RNA integrity parameter d, visualize probe positional bias via tongs or degradation plots, or generate corrected AffyBatch objects for microarray analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/AffyRNADegradation.html
 ---
+
 
 # bioconductor-affyrnadegradation
 

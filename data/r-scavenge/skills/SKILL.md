@@ -1,8 +1,9 @@
 ---
 name: r-scavenge
-description: R package scavenge (documentation from project home).
+description: r-scavenge optimizes the inference of functional and genetic associations to specific cells by propagating GWAS enrichment scores across single-cell epigenomic networks. Use when user asks to analyze GWAS enrichment in scATAC-seq data, identify phenotypically-enriched cell states, or perform network propagation to overcome data sparsity.
 homepage: https://cran.r-project.org/web/packages/scavenge/index.html
 ---
+
 
 # r-scavenge
 

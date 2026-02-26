@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocworkflowtools
-description: the package is available on all platforms; click for details.
+description: BiocWorkflowTools provides utilities for authoring Bioconductor workflows and converting R Markdown documents into F1000Research-compliant LaTeX and PDF formats. Use when user asks to create a new workflow article, use the F1000Research template, convert Rmd to LaTeX or PDF for journal submission, or upload a workflow project to Overleaf.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocWorkflowTools.html
 ---
+
 
 # bioconductor-biocworkflowtools
 

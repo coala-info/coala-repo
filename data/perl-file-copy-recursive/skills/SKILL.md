@@ -1,8 +1,9 @@
 ---
 name: perl-file-copy-recursive
-description: The `perl-file-copy-recursive` skill provides a robust interface for managing recursive file system operations.
+description: This tool performs recursive copying and moving of files and directories while automatically creating missing destination paths. Use when user asks to recursively copy files or directories, move directory trees, or perform pattern-based copying with globbing.
 homepage: https://metacpan.org/pod/File::Copy::Recursive
 ---
+
 
 # perl-file-copy-recursive
 

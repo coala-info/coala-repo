@@ -1,8 +1,9 @@
 ---
 name: artic-porechop
-description: artic-porechop is a specialized fork of the original Porechop tool, optimized for Oxford Nanopore Technologies (ONT) reads.
+description: "artic-porechop identifies and trims adapters from Oxford Nanopore reads while detecting and splitting chimeric sequences. Use when user asks to trim adapters, demultiplex barcoded reads, or process genomic data using the ARTIC protocol."
 homepage: https://github.com/artic-network/Porechop
 ---
+
 
 # artic-porechop
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.athaliana.tair.tair9
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Arabidopsis thaliana based on the TAIR9 release as Biostrings objects. Use when user asks to load Arabidopsis thaliana genome sequences, retrieve specific chromosome sub-sequences, or perform genome-wide motif searching and sequence analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Athaliana.TAIR.TAIR9.html
 ---
+
 
 # bioconductor-bsgenome.athaliana.tair.tair9
 

@@ -1,9 +1,9 @@
 # ucsc-lavtopsl CWL Generation Report
 
-## ucsc-lavtopsl
+## ucsc-lavtopsl_lavToPsl
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container execution error log. Based on the tool name hint, this tool is typically used to convert LAV alignment files to PSL format.
+Convert blastz lav to psl format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-lavtopsl:482--h0b57e2e_0
@@ -18,13 +18,13 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-lavtopsl:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+lavToPsl - Convert blastz lav to psl format
+usage:
+   lavToPsl in.lav out.psl
+options:
+   -target-strand=c set the target strand to c (default is no strand)
+   -bed output bed instead of psl
+   -scoreFile=filename  output lav scores to side file, such that
+                        each psl line in out.psl is matched by a score line.
 ```
 
-
-## Metadata
-- **Skill**: generated

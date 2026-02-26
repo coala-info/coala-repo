@@ -1,8 +1,9 @@
 ---
 name: hapsolo
-description: HapSolo is a tool designed to streamline diploid genome assemblies by identifying and removing redundant alternative haplotypes.
+description: HapSolo identifies and removes redundant alternative haplotypes from diploid genome assemblies using a hill-climbing optimization algorithm to maximize completeness. Use when user asks to remove secondary haplotigs, streamline diploid assemblies, or optimize assembly completeness based on BUSCO scores.
 homepage: https://github.com/esolares/HapSolo
 ---
+
 
 # hapsolo
 

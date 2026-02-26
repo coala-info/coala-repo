@@ -3,24 +3,32 @@
 ## fastcluster
 
 ### Tool Description
-The provided text is a system error log from a Singularity/Apptainer container build process and does not contain CLI help information or usage instructions for the tool 'fastcluster'.
+FAIL to generate CWL: fastcluster not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/fastcluster:v1.1.22-1-deb-py2_cv1
 - **Homepage**: https://github.com/fastcluster/fastcluster
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/fastcluster/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
+- **Conda**: https://anaconda.org/channels/main/packages/fastcluster/overview
+- **Total Downloads**: 2.0K
+- **Last updated**: 2025-11-03
 - **GitHub**: https://github.com/fastcluster/fastcluster
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: fastcluster not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: fastcluster not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/fastcluster:v1.1.22-1-deb-py2_cv1 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/9eff3cc37a65179dc39bf7723a940ca318ab3d21c360f40d2fd47100547d5e193160187370: no space left on device
+
 ```
 

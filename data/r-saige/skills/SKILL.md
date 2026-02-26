@@ -1,8 +1,9 @@
 ---
 name: r-saige
-description: R package saige (documentation from project home).
+description: SAIGE is an R package for performing scalable large-scale genetic association studies using generalized mixed models to account for sample relatedness and case-control imbalance. Use when user asks to fit null models for genetic data, perform single-variant association tests, or conduct gene-based association tests using SAIGE-GENE.
 homepage: https://cran.r-project.org/web/packages/saige/index.html
 ---
+
 
 # r-saige
 

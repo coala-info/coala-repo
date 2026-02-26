@@ -1,8 +1,9 @@
 ---
 name: cmaple
-description: The `cmaple` skill enables the use of a high-performance C++ implementation of the MAPLE algorithm.
+description: Cmaple provides a high-performance implementation of the MAPLE algorithm for inferring phylogenetic trees from massive genomic alignments. Use when user asks to infer phylogenetic trees, optimize branch lengths, or perform subtree pruning and regrafting searches on large-scale sequence data with low divergence.
 homepage: https://github.com/iqtree/cmaple
 ---
+
 
 # cmaple
 

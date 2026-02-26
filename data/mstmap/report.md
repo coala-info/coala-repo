@@ -3,7 +3,7 @@
 ## mstmap
 
 ### Tool Description
-The provided text does not contain help information for mstmap; it contains system error messages related to a container runtime (Singularity/Apptainer) failure due to insufficient disk space.
+Map reads to a reference genome.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mstmap:1--h4ac6f70_3
@@ -18,11 +18,12 @@ The provided text does not contain help information for mstmap; it contains syst
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mstmap:1--h4ac6f70_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2487371728: no space left on device
+mstmap v1.0 (2008, University of California, Riverside)
+	 Usage: ./mstmap.exe input_file output_file
+	 See example.txt for an example input file
+	 Questions: email Stefano Lonardi <stelo@cs.ucr.edu>
+	 Citation: Y.Wu, P.Bhat, T.J.Close, S.Lonardi
+		   PLoS Genetics, 4(10):e1000212, 2008.
+		   doi:10.1371/journal.pgen.1000212
 ```
 
-
-## Metadata
-- **Skill**: generated

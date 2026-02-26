@@ -1,8 +1,9 @@
 ---
 name: gap2seq
-description: Gap2Seq is a specialized bioinformatic tool designed to close gaps in genomic scaffolds by modeling the gap-filling task as an exact path length problem within a de Bruijn graph (DBG).
+description: Gap2Seq closes gaps in genomic scaffolds by finding paths through a de Bruijn graph that match estimated gap lengths using short-read data. Use when user asks to fill gaps in an assembly, close scaffold gaps using short reads, or refine genomic sequences by modeling exact path lengths.
 homepage: https://www.cs.helsinki.fi/u/lmsalmel/Gap2Seq/
 ---
+
 
 # gap2seq
 

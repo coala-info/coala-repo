@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hummingbird
-description: the package is available on all platforms; click for details.
+description: The hummingbird package identifies differentially methylated regions between case and control groups using a Bayesian Hidden Markov Model. Use when user asks to identify differentially methylated regions, infer methylation states across genomic bins, or refine and visualize detected regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/hummingbird.html
 ---
+
 
 # bioconductor-hummingbird
 

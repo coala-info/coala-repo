@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genetonic
-description: the package is available on all platforms; click for details.
+description: GeneTonic integrates RNA-seq differential expression results with functional enrichment analysis for comprehensive data interpretation. Use when user asks to launch an interactive Shiny dashboard, create enrichment maps, generate bipartite graphs, or visualize gene set expression patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneTonic.html
 ---
+
 
 # bioconductor-genetonic
 

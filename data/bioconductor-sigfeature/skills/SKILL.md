@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sigfeature
-description: the package is available on all platforms; click for details.
+description: sigFeature identifies significant features in high-dimensional biological data using a combination of SVM-RFE and t-statistics. Use when user asks to perform feature selection, identify biomarkers, or rank genes for classification tasks.
 homepage: https://bioconductor.org/packages/release/bioc/html/sigFeature.html
 ---
+
 
 # bioconductor-sigfeature
 

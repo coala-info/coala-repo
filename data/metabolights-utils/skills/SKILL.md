@@ -1,8 +1,9 @@
 ---
 name: metabolights-utils
-description: The `metabolights-utils` skill provides a specialized workflow for managing metabolomics data within the MetaboLights ecosystem.
+description: The metabolights-utils tool provides a command-line interface for searching, downloading, and managing metabolomics data from the MetaboLights repository. Use when user asks to search for public studies, download metadata or raw data files, inspect study schemas, or validate ISA-Tab files for submission.
 homepage: https://github.com/EBI-Metabolights/metabolights-utils
 ---
+
 
 # metabolights-utils
 

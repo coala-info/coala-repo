@@ -1,8 +1,9 @@
 ---
 name: ionquant
-description: IonQuant is a high-performance Java-based tool for mass spectrometry quantification.
+description: IonQuant is a high-performance tool for mass spectrometry quantification that supports label-free and labeling-based experiments. Use when user asks to perform MS1 peak tracing, quantify precursors using Match-Between-Runs, or process isobaric labeling data like TMT and iTRAQ.
 homepage: https://github.com/Nesvilab/IonQuant
 ---
+
 
 # ionquant
 

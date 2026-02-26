@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmrcaller
-description: the package is available on all platforms; click for details.
+description: DMRcaller identifies differentially methylated regions (DMRs) from bisulfite sequencing or Oxford Nanopore data. Use when user asks to call DMRs between conditions, analyze methylation profiles across different sequence contexts, or extract methylation counts from BAM files.
 homepage: https://bioconductor.org/packages/release/bioc/html/DMRcaller.html
 ---
+
 
 # bioconductor-dmrcaller
 

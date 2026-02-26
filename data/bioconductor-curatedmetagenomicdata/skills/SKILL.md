@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedmetagenomicdata
-description: the package is available on all platforms; click for details.
+description: This tool provides access to standardized human microbiome data including taxonomic and functional profiles from thousands of curated shotgun metagenomic samples. Use when user asks to retrieve species-level taxonomic profiles, access gene family or metabolic pathway abundances, or perform mega-analyses across multiple microbiome studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedMetagenomicData.html
 ---
+
 
 # bioconductor-curatedmetagenomicdata
 

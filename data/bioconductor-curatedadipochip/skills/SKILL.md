@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedadipochip
-description: The package document the data collection, pre-processing and processing of the data. In addition to the documentation, the package contains the scripts that was used to generated the data.
+description: This package provides curated ChIP-seq data and processing scripts for adipocyte research. Use when user asks to access curated adipocyte ChIP-seq datasets, review data pre-processing workflows, or run scripts used for data generation.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedAdipoChIP.html
 ---
+
 
 # bioconductor-curatedadipochip
 

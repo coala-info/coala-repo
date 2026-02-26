@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tissueenrich
-description: the package is available on all platforms; click for details.
+description: TissueEnrich performs tissue enrichment analysis to identify tissues where a specific set of genes is significantly expressed. Use when user asks to perform tissue enrichment analysis, identify tissue-specific gene expression, or find tissues enriched for a gene set.
 homepage: https://bioconductor.org/packages/release/bioc/html/TissueEnrich.html
 ---
+
 
 # bioconductor-tissueenrich
 

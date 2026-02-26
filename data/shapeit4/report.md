@@ -3,7 +3,7 @@
 ## shapeit4
 
 ### Tool Description
-The provided text is an error log from a container build process (Singularity/Apptainer) and does not contain the help text or argument definitions for the shapeit4 tool.
+SHAPEIT4 is a fast and accurate method for estimation of haplotypes (phasing) from genotype data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/shapeit4:4.2.2--h6959450_5
@@ -18,14 +18,13 @@ The provided text is an error log from a container build process (Singularity/Ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shapeit4:4.2.2--h6959450_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:fcb29500226b06180aede617b2d276661d6c6bcd22d02e21ca1acb94a8c63b69: unpack entry: usr/local/conda-meta/libboost-headers-1.85.0-ha770c72_2.json: unpack to regular file: short write: write /tmp/build-temp-2343873686/rootfs/usr/local/conda-meta/libboost-headers-1.85.0-ha770c72_2.json: no space left on device
+Unable to find image 'quay.io/biocontainers/shapeit4:4.2.2--h6959450_5' locally
+4.2.2--h6959450_5: Pulling from biocontainers/shapeit4
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+fcb29500226b: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1239741657: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

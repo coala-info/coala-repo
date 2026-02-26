@@ -3,7 +3,7 @@
 ## raremetalworker
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a container execution error log.
+A Forerunner of RareMetal
 
 ### Metadata
 - **Docker Image**: biocontainers/raremetalworker:v4.13.7_cv3
@@ -18,13 +18,40 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/raremetalworker:v4.13.7_cv3 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+RAREMETALWORKER 4.13.7 -- A Forerunner of RareMetal
+          (c) 2012-2014 Shuang Feng, Dajiang Liu, Goncalo Abecasis
+
+
+If you feel the software is useful, please cite:
+  RAREMETAL: fast and powerful meta-analysis for rare variants; Shuang Feng, Dajiang Liu, Xiaowei Zhan, Mary Kate Wing, Goncalo R. Abecasis; Bioinformatics 2014
+
+Please go to "http://genome.sph.umich.edu/wiki/RAREMETAL_DOWNLOAD_%26_BUILD#Where_to_Download" for the latest version.
+
+WARNING - 
+Problems encountered parsing command line:
+
+Command line parameter --help is undefined
+
+Analysis started at: Wed Feb 25 07:35:34 2026
+
+Loading PED/DAT files ...
+  Loading DAT files ...
+FATAL ERROR - 
+The datafile  cannot be opened
+
+Common causes for this problem are:
+  * You might not have used the correct options to specify input file names,
+    please check the program documentation for information on how to do this
+
+  * The file doesn't exist or the filename might have been misspelt
+
+  * The file exists but it is being used by another program which you will need
+    to close before continuing
+
+  * The file is larger than 2GB and you haven't compiled this application with
+    large file support.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

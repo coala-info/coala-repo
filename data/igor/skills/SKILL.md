@@ -1,8 +1,9 @@
 ---
 name: igor
-description: The `igor` skill (utilizing the `scriptisto` tool) enables a "scripting" experience for compiled languages.
+description: Igor is a language-agnostic shebang interpreter that automatically compiles and executes single-file programs written in compiled languages. Use when user asks to create scripts from templates, run compiled languages like Rust or C++ as single-file scripts, manage script caches, or automate build instructions within source files.
 homepage: https://github.com/igor-petruk/scriptisto
 ---
+
 
 # igor
 

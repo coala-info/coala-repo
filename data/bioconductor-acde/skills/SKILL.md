@@ -1,8 +1,9 @@
 ---
 name: bioconductor-acde
-description: the package is available on all platforms; click for details.
+description: This tool performs multivariate identification of differentially expressed genes in microarray or RNA-Seq data using artificial components and False Discovery Rate estimation. Use when user asks to identify up-regulated and down-regulated genes, perform single time point analysis, or conduct time course differential expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/acde.html
 ---
+
 
 # bioconductor-acde
 

@@ -1,12 +1,5 @@
 # curl CWL Generation Report
 
-## Runtime validation summary
-
-| Tool | Runtime | Data used | Reason (if fail) |
-|------|---------|-----------|------------------|
-| curl | PASS | — | — |
-
-
 ## curl
 
 ### Tool Description
@@ -15,13 +8,9 @@ Transfer data from or to a server
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/curl:7.80.0
 - **Homepage**: https://github.com/curl/curl
+- **Package**: Not found
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/main/packages/curl/overview
-- **Total Downloads**: 95.0K
-- **Last updated**: 2026-01-28
-- **GitHub**: https://github.com/curl/curl
-- **Stars**: N/A
 ### Original Help Text
 ```text
 Usage: curl [options...] <url>
@@ -44,11 +33,5 @@ For all options use the manual or "--help all".
 ```
 
 
-### Runtime validation
-- **Runtime**: PASS
-- **Data used**: none
-- **Fix rounds**: 4 (CWL modified by LLM)
-- **Example job**: `curl_job.json`
-
 ## Metadata
-- **Validation-run**: PASS
+- **Skill**: generated

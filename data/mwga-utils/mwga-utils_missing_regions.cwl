@@ -1,13 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - mwga-utils
-  - missing_regions
+baseCommand: missing_regions
 label: mwga-utils_missing_regions
-doc: "A tool from the mwga-utils suite (Multiple Whole Genome Alignment utilities).
-  No description or usage information was provided in the help text.\n\nTool homepage:
-  https://github.com/RomainFeron/mgwa_utils"
-inputs: []
+doc: "Add regions from the reference genome that are missing from a MAF file.\n\n\
+  Tool homepage: https://github.com/RomainFeron/mgwa_utils"
+inputs:
+  - id: maf_file
+    type: File
+    doc: Path to a MAF file.
+    inputBinding:
+      position: 1
+  - id: reference
+    type: File
+    doc: Path to a FASTA file for the reference assembly.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

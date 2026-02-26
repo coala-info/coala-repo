@@ -1,8 +1,9 @@
 ---
 name: markermag
-description: MarkerMAG is a specialized bioinformatics tool used to bridge the gap between fragmented metagenomic assemblies and taxonomic identification.
+description: MarkerMAG links 16S rRNA genes to metagenome-assembled genomes using paired-end read information and assembly graphs. Use when user asks to link 16S rRNA sequences to MAGs, identify the taxonomic origin of metagenomic bins, or associate marker genes with fragmented assemblies.
 homepage: https://pypi.org/project/MarkerMAG/
 ---
+
 
 # markermag
 

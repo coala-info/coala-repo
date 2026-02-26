@@ -1,8 +1,9 @@
 ---
 name: naibr-plus
-description: naibr-plus (Novel Adjacency Identification with Barcoded Reads) is a specialized tool designed to detect structural variants by leveraging the spatial information provided by barcoded linked-reads.
+description: naibr-plus detects structural variants by analyzing spatial information and barcode overlaps from linked-read sequencing data. Use when user asks to identify novel adjacencies, call structural variants from 10X Genomics data, or score candidate genomic rearrangements.
 homepage: https://github.com/pontushojer/NAIBR
 ---
+
 
 # naibr-plus
 

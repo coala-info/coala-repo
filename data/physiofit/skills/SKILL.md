@@ -1,8 +1,9 @@
 ---
 name: physiofit
-description: PhysioFit is a scientific computing tool designed for fluxomics and systems biology.
+description: PhysioFit calculates kinetic parameters and metabolic flux estimates from time-course measurements of cell concentrations and extracellular substrates. Use when user asks to estimate growth rates, calculate exchange fluxes, perform Monte-Carlo sensitivity analysis, or compare metabolic models using AIC.
 homepage: https://github.com/MetaSys-LISBP/PhysioFit
 ---
+
 
 # physiofit
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brew3r.r
-description: the package is available on all platforms; click for details.
+description: BREW3R.r improves transcriptomic annotations by extending the 3' ends of genes using a template annotation while preventing overlaps with neighboring genes. Use when user asks to extend gene annotations, improve 3' UTR coverage, or prevent gene collisions in transcriptomic references.
 homepage: https://bioconductor.org/packages/release/bioc/html/BREW3R.r.html
 ---
+
 
 # bioconductor-brew3r.r
 

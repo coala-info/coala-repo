@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ga4ghclient
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface to access and analyze genomic data from GA4GH-compliant servers. Use when user asks to search for datasets, query variants by genomic coordinates, or retrieve genotype data from public genomic APIs.
 homepage: https://bioconductor.org/packages/release/bioc/html/GA4GHclient.html
 ---
+
 
 # bioconductor-ga4ghclient
 

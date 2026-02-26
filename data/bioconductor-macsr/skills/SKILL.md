@@ -1,8 +1,9 @@
 ---
 name: bioconductor-macsr
-description: the package is available on all platforms; click for details.
+description: MACSr provides an R interface to the MACS algorithm for identifying enriched genomic regions from ChIP-seq data. Use when user asks to call peaks, identify transcription factor binding sites, or analyze histone modification regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/MACSr.html
 ---
+
 
 # bioconductor-macsr
 

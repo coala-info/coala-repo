@@ -1,8 +1,9 @@
 ---
 name: r-segmented
-description: Fitting regression models where, in addition to possible linear terms, one or more covariates have segmented (i.e., broken-line or piece-wise linear) or stepmented (i.e. piece-wise constant) effects. Multiple breakpoints for the same variable are allowed.
+description: The r-segmented package fits regression models with segmented or piece-wise constant relationships to estimate unknown break-points and their corresponding slopes. Use when user asks to fit broken-line regressions, estimate threshold locations in linear models, or test for the existence of break-points in data.
 homepage: https://cloud.r-project.org/web/packages/segmented/index.html
 ---
+
 
 # r-segmented
 

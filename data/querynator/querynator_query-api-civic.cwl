@@ -1,13 +1,54 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - querynator
-  - query-api-civic
+baseCommand: querynator query-api-civic
 label: querynator_query-api-civic
-doc: "Query the CIViC API using querynator (Note: The provided text is a container
-  execution error log and does not contain help documentation or argument definitions).\n
-  \nTool homepage: https://github.com/qbic-pipelines/querynator"
-inputs: []
+doc: "Query the Civic API for variants in a VCF file.\n\nTool homepage: https://github.com/qbic-pipelines/querynator"
+inputs:
+  - id: cancer
+    type:
+      - 'null'
+      - string
+    doc: the cancer DOID (id or name) to be searched.
+    inputBinding:
+      position: 101
+      prefix: --cancer
+  - id: filter_evidence
+    type:
+      - 'null'
+      - string
+    doc: "Key-Value pairs to filter the evidence items. Example: 'type=Predictive'"
+    inputBinding:
+      position: 101
+      prefix: --filter_evidence
+  - id: filter_vep
+    type:
+      - 'null'
+      - boolean
+    doc: if set, filters out synoymous and low impact variants based on VEP 
+      annotation
+    inputBinding:
+      position: 101
+      prefix: --filter_vep
+  - id: genome
+    type: string
+    doc: Please enter the reference genome version
+    default: '[GRCh37|GRCh38|NCBI36]'
+    inputBinding:
+      position: 101
+      prefix: --genome
+  - id: outdir
+    type: Directory
+    doc: i.e. sample name. Directory in which results will be stored.
+    inputBinding:
+      position: 101
+      prefix: --outdir
+  - id: vcf_file
+    type: File
+    doc: Please provide the path to a Variant Call Format (VCF) file (Version 
+      4.2)
+    inputBinding:
+      position: 101
+      prefix: --vcf
 outputs:
   - id: stdout
     type: stdout

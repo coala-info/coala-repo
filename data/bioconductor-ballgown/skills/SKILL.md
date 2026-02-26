@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ballgown
-description: the package is available on all platforms; click for details.
+description: The ballgown package performs statistical analysis and visualization of transcript-level expression data from transcriptome assemblies. Use when user asks to load expression data from Tablemaker, perform differential expression testing for transcripts or exons, adjust for confounding variables in linear models, or visualize genomic structures and transcript clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/ballgown.html
 ---
+
 
 # bioconductor-ballgown
 

@@ -1,8 +1,9 @@
 ---
 name: isoquant
-description: IsoQuant is a bioinformatics pipeline specifically engineered for the genome-based analysis of long RNA reads.
+description: IsoQuant is a bioinformatics pipeline for the genome-based reconstruction and quantification of long-read transcriptomic data. Use when user asks to reconstruct transcript models, quantify isoform abundance, or perform de novo transcript discovery from long RNA reads.
 homepage: https://github.com/ablab/IsoQuant
 ---
+
 
 # isoquant
 

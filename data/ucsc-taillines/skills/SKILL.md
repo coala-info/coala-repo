@@ -1,8 +1,9 @@
 ---
 name: ucsc-taillines
-description: The `ucsc-taillines` utility is a high-performance command-line tool from the UCSC Genome Browser "kent" source tree.
+description: The ucsc-taillines tool extracts the last N lines from large text files, optimized for genomics data. Use when user asks to 'extract the last N lines from a file', 'sample data from the end of a file', or 'remove leading metadata from a file'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-taillines
 

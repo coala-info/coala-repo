@@ -1,8 +1,9 @@
 ---
 name: r-circlize
-description: "Circular layout is an efficient way for the visualization of huge      amounts of information. Here this package provides an implementation      of circular layout generation in R as well as an enhancement of available      software. The flexibility of the package is based on the usage of low-level      graphics functions such that self-defined high-level graphics can be easily      implemented by users for specific purposes. Together with the seamless      connection between the powerful computational and visual environment in R,      it gives users more convenience and freedom to design figures for      better understanding complex patterns behind multiple dimensional data.      The package is described in Gu et al."
+description: This tool creates complex circular visualizations and chord diagrams in R using a track-and-sector framework. Use when user asks to create chord diagrams, visualize genomic data with ideograms, or generate multi-layered circular layouts for directional relationships.
 homepage: https://cloud.r-project.org/web/packages/circlize/index.html
 ---
+
 
 # r-circlize
 

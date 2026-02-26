@@ -1,8 +1,9 @@
 ---
 name: openslide-python
-description: The `openslide-python` skill provides the procedural knowledge required to handle massive digital pathology images that exceed standard RAM capacities.
+description: OpenSlide-python provides an interface for reading and manipulating high-resolution digital pathology images through efficient random access. Use when user asks to open whole-slide images, extract specific regions at different zoom levels, access slide metadata, or generate Deep Zoom tiles for analysis.
 homepage: http://openslide.org/
 ---
+
 
 # openslide-python
 

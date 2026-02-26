@@ -1,8 +1,9 @@
 ---
 name: cassiopeia
-description: Cassiopeia is an end-to-end computational pipeline designed for single-cell lineage tracing.
+description: Cassiopeia is a computational pipeline for processing single-cell lineage tracing data and reconstructing cellular phylogenies. Use when user asks to align sequences, generate molecule tables, reconstruct phylogenetic trees using various solvers, or simulate Cas9 mutation processes.
 homepage: https://github.com/YosefLab/Cassiopeia
 ---
+
 
 # cassiopeia
 

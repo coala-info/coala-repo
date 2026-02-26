@@ -1,8 +1,9 @@
 ---
 name: bioconductor-copynumberplots
-description: the package is available on all platforms; click for details.
+description: CopyNumberPlots provides functions to create customizable visualizations of copy number variation data across the genome. Use when user asks to visualize copy number variations, create genome-wide CNV plots, or display structural variants.
 homepage: https://bioconductor.org/packages/release/bioc/html/CopyNumberPlots.html
 ---
+
 
 # bioconductor-copynumberplots
 

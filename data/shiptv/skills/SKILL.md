@@ -1,8 +1,9 @@
 ---
 name: shiptv
-description: shiptv (Standalone HTML Interactive Phylogenetic Tree Viz) transforms static phylogenetic data into dynamic web-based visualizations powered by Phylocanvas.
+description: "shiptv creates interactive HTML visualizations of phylogenetic trees with integrated metadata. Use when user asks to convert Newick files to interactive web-based visualizations, map metadata from TSV or GenBank files onto tree leaves, collapse low support branches, or prune trees for exploration."
 homepage: https://github.com/peterk87/shiptv
 ---
+
 
 # shiptv
 

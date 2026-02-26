@@ -1,8 +1,9 @@
 ---
 name: upimapi
-description: upimapi (UniProt Id Mapping through API) is a specialized bioinformatics tool that automates the retrieval of functional information from the UniProt database.
+description: upimapi is a bioinformatics tool that automates the high-throughput retrieval of functional annotations and ID mapping from the UniProt database, integrating with DIAMOND for sequence-based annotation. Use when user asks to annotate protein sequences, map UniProt IDs from existing alignment results, retrieve information for a list of UniProt IDs, customize output fields, fetch taxonomic lineage, or build taxon-specific DIAMOND databases.
 homepage: https://github.com/iquasere/UPIMAPI
 ---
+
 
 # upimapi
 

@@ -1,8 +1,9 @@
 ---
 name: perl-xml-sax-base
-description: This skill provides guidance on utilizing `XML::SAX::Base` to build robust XML processing components in Perl.
+description: This tool provides a base class for creating XML SAX drivers and filters in Perl. Use when user asks to build SAX-based XML parsers, implement XML event filters, or manage SAX2 method delegations and state transitions.
 homepage: http://metacpan.org/pod/XML-SAX-Base
 ---
+
 
 # perl-xml-sax-base
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirmine
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: miRmine provides access to a comprehensive database of human miRNA expression profiles from multiple public sources. Use when user asks to retrieve miRNA expression data, analyze human miRNA profiles, or compare miRNA expression across different tissues and studies.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/miRmine.html
 ---
+
 
 # bioconductor-mirmine
 

@@ -1,8 +1,9 @@
 ---
 name: winnowmap
-description: Winnowmap is a specialized alignment tool designed to overcome the limitations of standard minimizer sampling in repetitive genomic regions.
+description: Winnowmap is an alignment tool designed for accurate mapping of sequences in repetitive genomic regions. Use when user asks to 'map ONT reads', 'map PacBio HiFi reads', or 'perform genome-to-genome alignment'.
 homepage: https://github.com/marbl/Winnowmap
 ---
+
 
 # winnowmap
 

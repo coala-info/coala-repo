@@ -1,8 +1,9 @@
 ---
 name: minisplice
-description: minisplice is a specialized tool designed to improve the accuracy of spliced alignments by scoring canonical donor (GT) and acceptor (AG) splice sites.
+description: "minisplice scores canonical splice sites using a convolutional neural network to improve the accuracy of spliced alignments. Use when user asks to predict splice site scores, train custom splice site models, or refine alignments for miniprot and minimap2."
 homepage: https://github.com/lh3/minisplice
 ---
+
 
 # minisplice
 

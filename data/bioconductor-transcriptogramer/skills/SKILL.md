@@ -1,8 +1,9 @@
 ---
 name: bioconductor-transcriptogramer
-description: the package is available on all platforms; click for details.
+description: Transcriptogramer analyzes and visualizes gene expression data by projecting it onto protein-protein interaction networks to identify functional alterations. Use when user asks to generate transcriptograms, analyze differential expression across functional modules, or visualize gene expression profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/transcriptogramer.html
 ---
+
 
 # bioconductor-transcriptogramer
 

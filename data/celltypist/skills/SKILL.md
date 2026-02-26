@@ -1,8 +1,9 @@
 ---
 name: celltypist
-description: CellTypist is a tool designed for the semi-automatic classification of cell types in scRNA-seq datasets.
+description: CellTypist classifies cell types in single-cell RNA sequencing datasets using pre-trained or custom logistic regression models. Use when user asks to annotate scRNA-seq data, assign cell type labels to query cells, or train custom cell type classifiers.
 homepage: https://github.com/Teichlab/celltypist
 ---
+
 
 # celltypist
 

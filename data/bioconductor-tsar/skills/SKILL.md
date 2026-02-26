@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tsar
-description: the package is available on all platforms; click for details.
+description: TSAR is a Bioconductor package designed for the analysis and visualization of thermal shift assay data to evaluate protein stability. Use when user asks to analyze protein melting curves, calculate melting temperatures, or perform thermal shift analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/TSAR.html
 ---
+
 
 # bioconductor-tsar
 

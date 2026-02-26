@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scmultisim
-description: the package is available on all platforms; click for details.
+description: scMultiSim simulates single-cell multi-omics data including gene expression, chromatin accessibility, and spatial information. Use when user asks to simulate single-cell multi-omics datasets, generate synthetic data with gene regulatory networks, or model cell trajectories and spatial locations.
 homepage: https://bioconductor.org/packages/release/bioc/html/scMultiSim.html
 ---
+
 
 # bioconductor-scmultisim
 

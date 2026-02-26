@@ -1,8 +1,9 @@
 ---
 name: samplot
-description: Samplot is a command-line utility that transforms complex genomic alignment data into intuitive visual representations of structural variants.
+description: Samplot creates visual representations of genomic alignment data to highlight evidence for structural variants across multiple sequencing technologies. Use when user asks to plot structural variants, visualize genomic evidence from BAM or CRAM files, compare variants across multiple samples, or overlay gene annotations on alignment plots.
 homepage: https://github.com/ryanlayer/samplot
 ---
+
 
 # samplot
 

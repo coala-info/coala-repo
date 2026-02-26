@@ -1,8 +1,9 @@
 ---
 name: seabreeze-genomics
-description: seabreeze-genomics is a specialized bioinformatics pipeline for the comprehensive analysis of genetic variation among bacterial genomes.
+description: Seabreeze-genomics is a bioinformatics pipeline for analyzing structural mutations and genetic variation in bacterial genomes. Use when user asks to identify structural mutations, predict insertion sequences, visualize genomic synteny, or analyze bacterial replichores.
 homepage: https://github.com/barricklab/seabreeze
 ---
+
 
 # seabreeze-genomics
 

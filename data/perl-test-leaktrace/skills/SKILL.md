@@ -1,8 +1,9 @@
 ---
 name: perl-test-leaktrace
-description: This skill facilitates the identification of memory leaks within Perl applications and modules.
+description: This tool identifies memory leaks in Perl applications by monitoring scalar value reference counts. Use when user asks to detect circular references, assert that code blocks do not leak memory, or inspect leaked scalar values.
 homepage: http://metacpan.org/pod/Test-LeakTrace
 ---
+
 
 # perl-test-leaktrace
 

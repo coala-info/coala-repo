@@ -1,8 +1,9 @@
 ---
 name: kleborate
-description: Kleborate is a specialized genomic screening tool designed for the *Klebsiella pneumoniae* species complex.
+description: "Kleborate performs genomic screening of *Klebsiella pneumoniae* assemblies to identify species, sequence types, virulence factors, and antimicrobial resistance genes. Use when user asks to characterize Klebsiella genomic data, perform MLST typing, identify resistance and virulence determinants, or predict K and O antigen types."
 homepage: https://github.com/katholt/Kleborate
 ---
+
 
 # kleborate
 

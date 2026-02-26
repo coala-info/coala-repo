@@ -1,8 +1,9 @@
 ---
 name: snkmt
-description: snkmt (Snakemate) is a terminal-based monitoring tool designed specifically for Snakemake workflows.
+description: snkmt is a terminal-based monitoring tool for tracking Snakemake workflow progress and inspecting errors through an interactive dashboard. Use when user asks to monitor Snakemake workflows, launch the interactive terminal dashboard, track job progress, or manage the execution database.
 homepage: https://github.com/cademirch/snkmt
 ---
+
 
 # snkmt
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylcc
-description: the package is available on all platforms; click for details.
+description: This tool estimates cell type composition from DNA methylation data. Use when user asks to estimate cell type proportions, perform cell type deconvolution, or account for cellular heterogeneity in methylation samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/methylCC.html
 ---
+
 
 # bioconductor-methylcc
 

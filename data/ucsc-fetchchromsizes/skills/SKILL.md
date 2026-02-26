@@ -1,8 +1,9 @@
 ---
 name: ucsc-fetchchromsizes
-description: The `fetchChromSizes` utility is a specialized script from the UCSC Genome Browser "kent" tool suite.
+description: This tool retrieves chromosome length information for a specified genome assembly from UCSC. Use when user asks to fetch chromosome sizes, get chromosome lengths, or retrieve genome assembly sizes.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fetchchromsizes
 

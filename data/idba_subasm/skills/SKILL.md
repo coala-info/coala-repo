@@ -1,8 +1,9 @@
 ---
 name: idba_subasm
-description: idba_subasm is a specialized fork of the Iterative De Bruijn Graph Assembler (IDBA) designed specifically for the subassembly phase of metagenomic read cloud assembly.
+description: idba_subasm is a specialized assembler designed for the local reconstruction of genomic regions during the subassembly phase of metagenomic read cloud analysis. Use when user asks to perform subassembly of linked-read data, reconstruct local genomic regions from seed contigs, or assemble interleaved FASTA reads into connected components.
 homepage: https://github.com/abishara/idba
 ---
+
 
 # idba_subasm
 

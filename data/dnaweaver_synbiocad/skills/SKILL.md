@@ -1,8 +1,9 @@
 ---
 name: dnaweaver_synbiocad
-description: `dnaweaver_synbiocad` is a specialized command-line tool that automates the planning of DNA assembly strategies for complex genetic constructs.
+description: dnaweaver_synbiocad automates the planning of DNA assembly strategies by analyzing SBOL sequences to determine the most efficient assembly route and resource usage. Use when user asks to plan DNA assembly strategies, determine assembly methods like Golden Gate or Gibson, or optimize primer and fragment reuse for genetic constructs.
 homepage: https://github.com/brsynth/DNAWeaver_SynBioCAD/
 ---
+
 
 # dnaweaver_synbiocad
 

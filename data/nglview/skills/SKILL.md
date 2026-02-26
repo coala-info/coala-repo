@@ -1,8 +1,9 @@
 ---
 name: nglview
-description: The `nglview` skill enables the rendering of 3D molecular data directly inside computational notebooks.
+description: nglview renders 3D molecular structures and trajectories interactively within computational notebooks. Use when user asks to visualize protein structures, display molecular dynamics trajectories, apply molecular representations, or inspect docking results.
 homepage: https://github.com/arose/nglview
 ---
+
 
 # nglview
 

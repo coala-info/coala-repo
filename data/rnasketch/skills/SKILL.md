@@ -1,8 +1,9 @@
 ---
 name: rnasketch
-description: `rnasketch` is a specialized toolkit for RNA sequence design that acts as a "glue" between sequence sampling engines (like RNAblueprint and RNARedPrint) and energy evaluation tools (like ViennaRNA, Nupack, and pKiss).
+description: rnasketch is a toolkit for RNA sequence design that facilitates the inverse folding problem by connecting sequence sampling engines with energy evaluation tools. Use when user asks to design multistate RNA molecules, create temperature-dependent thermoswitches, develop ligand-triggered riboswitches, or engineer sRNA-mediated cofolding interactions.
 homepage: https://github.com/ViennaRNA/RNAsketch
 ---
+
 
 # rnasketch
 

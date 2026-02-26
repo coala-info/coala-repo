@@ -1,8 +1,9 @@
 ---
 name: livekraken
-description: LiveKraken is a specialized metagenomic classifier optimized for the Illumina sequencing ecosystem.
+description: LiveKraken performs real-time metagenomic taxonomic classification by monitoring Illumina sequencer output directories. Use when user asks to classify reads during a sequencing run, monitor taxonomic composition in real-time, or generate Sankey diagrams of classification results.
 homepage: https://gitlab.com/SimonHTausch/LiveKraken
 ---
+
 
 # livekraken
 

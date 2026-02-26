@@ -1,8 +1,9 @@
 ---
 name: ccsmeth
-description: The `ccsmeth` tool is a deep learning-based pipeline designed to identify epigenetic modifications in PacBio HiFi data.
+description: ccsmeth is a deep learning pipeline designed to detect epigenetic modifications in PacBio HiFi reads using kinetic information. Use when user asks to call DNA methylation from HiFi data, generate modification-aware BAM files, or calculate genomic methylation frequencies.
 homepage: https://github.com/PengNi/ccsmeth
 ---
+
 
 # ccsmeth
 

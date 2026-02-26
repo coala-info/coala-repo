@@ -1,8 +1,9 @@
 ---
 name: bx-tools
-description: The bx-tools (elf-bf-tools) suite is a specialized collection of utilities designed to exploit the "weird machine" capabilities of the GCC runtime loader.
+description: The bx-tools suite leverages ELF relocation entries to perform complex computations and inject logic via the dynamic linker. Use when user asks to compile Brainfuck into relocation-based ELF binaries, debug the dynamic loading process, or create backdoors using ELF metadata.
 homepage: https://github.com/bx/elf-bf-tools
 ---
+
 
 # bx-tools
 

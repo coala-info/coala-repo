@@ -1,8 +1,9 @@
 ---
 name: krakentools
-description: KrakenTools is a suite of specialized Python scripts designed to process the output of the Kraken software family.
+description: KrakenTools is a suite of Python scripts designed to process, manipulate, and visualize taxonomic classification data from the Kraken software family. Use when user asks to extract specific sequences by taxonomy ID, merge multiple metagenomic reports, convert classification data into MPA or Krona formats, or calculate alpha and beta diversity metrics.
 homepage: https://github.com/jenniferlu717/KrakenTools
 ---
+
 
 # krakentools
 

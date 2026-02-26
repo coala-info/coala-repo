@@ -1,9 +1,9 @@
 # tower-cli CWL Generation Report
 
-## tower-cli
+## tower-cli_tw
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for tower-cli; it appears to be a log of a failed container build process.
+Seqera Platform CLI
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tower-cli:0.21.0--hdfd78af_0
@@ -13,38 +13,43 @@ The provided text does not contain help information or usage instructions for to
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tower-cli/overview
 - **Total Downloads**: 9.2K
-- **Last updated**: 2026-01-30
+- **Last updated**: 2026-02-23
 - **GitHub**: https://github.com/seqeralabs/tower-cli
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tower-cli:0.21.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: tw [OPTIONS] [COMMAND]
 
+Seqera Platform CLI
 
-## Metadata
-- **Skill**: generated
+Options:
+  -t, --access-token=<token>   Seqera Platform personal access token (TOWER_ACCESS_TOKEN)
+  -u, --url=<url>              Seqera Platform API endpoint URL (TOWER_API_ENDPOINT) [default: 'api.cloud.seqera.io']
+  -o, --output=<output>        Show output in defined format (currently supports 'json')
+  -v, --verbose                Show HTTP request/response logs at stderr.
+      --insecure               Explicitly allow to connect to a non-SSL secured Seqera Platform server (not recommended)
+  -h, --help                   Show this help message and exit.
+  -V, --version                Print version information and exit.
 
-## tower-cli_tw
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tower-cli:0.21.0--hdfd78af_0
-- **Homepage**: https://github.com/seqeralabs/tower-cli
-- **Package**: https://anaconda.org/channels/bioconda/packages/tower-cli/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tower-cli:0.21.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Commands:
+  actions              Manage pipeline actions
+  collaborators        Manage organization collaborators
+  compute-envs         Manage compute environments.
+  credentials          Manage workspace credentials
+  data-links           Manage data links
+  studios              Manage studios
+  datasets             Manage datasets
+  generate-completion  Generate bash/zsh completion script for tw.
+  info                 Show system info and health status
+  labels               Manage workspace labels
+  launch               Launch a pipeline
+  members              Manage organization members
+  organizations        Manage organizations
+  participants         Manage workspace participants
+  pipelines            Manage pipelines
+  runs                 Manage pipeline runs
+  teams                Manage teams
+  workspaces           Manage workspaces
+  secrets              Manage secrets
 ```
 

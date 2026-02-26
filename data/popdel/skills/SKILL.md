@@ -1,8 +1,9 @@
 ---
 name: popdel
-description: The `popdel` tool is a lightweight, high-performance suite designed to identify and genotype deletions (typically 100bp and larger) across massive genomic datasets.
+description: popdel identifies and genotypes deletions in large-scale genomic datasets using a likelihood-based joint-calling approach. Use when user asks to create sample profiles from BAM or CRAM files, perform joint deletion calling across a cohort, or inspect and convert profile files.
 homepage: https://github.com/kehrlab/PopDel
 ---
+
 
 # popdel
 

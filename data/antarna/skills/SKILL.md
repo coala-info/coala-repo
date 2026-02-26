@@ -1,8 +1,9 @@
 ---
 name: antarna
-description: antaRNA (ant assembled RNA) is a computational tool designed for the inverse folding of mono- and bistable RNA macromolecules.
+description: antaRNA performs inverse folding of mono- and bistable RNA macromolecules using ant-colony optimization to find sequences that meet specific structural requirements. Use when user asks to design RNA sequences for target secondary structures, model bistable molecules like riboswitches, or perform multi-objective inverse folding of pseudoknot RNA.
 homepage: https://github.com/RobertKleinkauf/antarna
 ---
+
 
 # antarna
 

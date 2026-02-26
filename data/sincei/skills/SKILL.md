@@ -1,8 +1,9 @@
 ---
 name: sincei
-description: sincei is a specialized command-line toolkit designed to handle the unique challenges of single-cell epigenomic data.
+description: "sincei is a command-line toolkit for processing and analyzing single-cell epigenomic data from BAM files. Use when user asks to generate signal tracks, filter barcodes, perform quality control on count matrices, or conduct dimensionality reduction for single-cell chromatin accessibility and histone marks."
 homepage: https://github.com/bhardwaj-lab/sincei
 ---
+
 
 # sincei
 

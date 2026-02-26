@@ -1,8 +1,9 @@
 ---
 name: perl-net-ssleay
-description: Net::SSLeay is a high-performance Perl extension that provides a comprehensive interface to the OpenSSL library.
+description: Net::SSLeay is a Perl extension that provides high-level convenience functions and low-level bindings for the OpenSSL library to facilitate secure network communications. Use when user asks to perform secure HTTPS requests, interface with OpenSSL functions in Perl, or manage SSL/TLS certificates and connections.
 homepage: http://metacpan.org/pod/Net::SSLeay
 ---
+
 
 # perl-net-ssleay
 

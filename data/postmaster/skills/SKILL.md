@@ -1,8 +1,9 @@
 ---
 name: postmaster
-description: Postmaster is a specialized bioinformatics tool designed to bridge the gap between Salmon's high-speed transcript quantification and alignment-based downstream tools.
+description: Postmaster annotates Salmon-generated alignment files with posterior probabilities based on transcript abundance estimates. Use when user asks to assign posterior probabilities to alignments, add ZW tags to BAM files, or process Salmon mappings for use in alignment-based downstream pipelines.
 homepage: https://github.com/COMBINE-lab/postmaster
 ---
+
 
 # postmaster
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowgate
-description: the package is available on all platforms; click for details.
+description: This tool provides a Shiny-based interactive interface for manual gating of flow cytometry data within the R environment. Use when user asks to perform GUI-based gating, create GatingSets from FCS files, apply biexponential transformations, or execute multi-step gating strategies on cytometry data.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowGate.html
 ---
+
 
 # bioconductor-flowgate
 

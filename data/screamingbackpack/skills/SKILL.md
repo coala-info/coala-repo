@@ -1,8 +1,9 @@
 ---
 name: screamingbackpack
-description: ScreamingBackpack is a specialized utility for synchronizing data resources between local environments and remote sources.
+description: ScreamingBackpack synchronizes data resources between local and remote environments by generating and comparing manifest files. Use when user asks to create a data manifest, compare local datasets against remote sources, or update local data to match a remote repository.
 homepage: https://github.com/minillinim/ScreamingBackpack
 ---
+
 
 # screamingbackpack
 

@@ -3,7 +3,7 @@
 ## mdust
 
 ### Tool Description
-The provided text does not contain help information for the tool 'mdust'. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to lack of disk space.
+Masks low-complexity DNA sequences in FASTA format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mdust:2006.10.17--h7b50bb2_7
@@ -18,11 +18,17 @@ The provided text does not contain help information for the tool 'mdust'. It con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mdust:2006.10.17--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3049626929: no space left on device
+Usage: mdust [<fasta-file>] [-w <wsize>] [-v <cut-off>] [-m N|X|L] [-c] 
+   if no <fasta-file> is given, a multi-fasta stream is expected at stdin
+   -v default <cut-off> value is 28 (lower values might mask more, 
+      but possibly still useful sequence; > 64 will rarely mask poly-triplets)
+   -w set maximum word size to <wsize> (default 3)
+   -m if fasta output is not disabled by -c, set the masking letter type:
+        N ('N', default), X ('X'), L (make lowercase)
+   -c output masking coordinates only: 
+        seq_name, seqlength, mask_start, mask_end  (tab delimited)
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

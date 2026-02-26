@@ -1,8 +1,9 @@
 ---
 name: biobambam
-description: Biobambam2 is a specialized suite of tools designed for the efficient processing of biological alignment files, primarily in BAM and SAM formats.
+description: Biobambam is a suite of tools designed for the efficient processing, sorting, and duplicate marking of biological alignment files in BAM and SAM formats. Use when user asks to mark or remove duplicates, sort alignment files by coordinate or tag, convert between BAM and FASTQ formats, or validate the integrity of BAM files.
 homepage: https://gitlab.com/german.tischler/biobambam2
 ---
+
 
 # biobambam
 

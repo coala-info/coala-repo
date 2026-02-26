@@ -1,8 +1,9 @@
 ---
 name: caper
-description: Caper (Cromwell Assisted Pipeline ExecutoR) is a Python-based wrapper for the Cromwell engine.
+description: Caper is a Python-based wrapper for the Cromwell engine that automates the execution and management of WDL workflows across various storage providers and computing backends. Use when user asks to initialize pipeline configurations, run or submit WDL workflows to local or cloud environments, manage HPC leader jobs, or resume failed workflows using call caching.
 homepage: https://github.com/ENCODE-DCC/caper
 ---
+
 
 # caper
 

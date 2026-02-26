@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beadarraysnp
-description: the package is available on all platforms; click for details.
+description: This package analyzes Illumina BeadArray genotyping data, specifically from GoldenGate assays. Use when user asks to import Illumina data files, perform quality control on SNP arrays, normalize data for copy number analysis, or visualize genomic alterations and loss of heterozygosity.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/beadarraySNP.html
 ---
+
 
 # bioconductor-beadarraysnp
 

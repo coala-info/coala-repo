@@ -1,8 +1,9 @@
 ---
 name: r-restfulr
-description: Models a RESTful service as if it were a nested R list.</p>
+description: This tool interfaces with RESTful web services by modeling API endpoints as nested R lists and S4 objects. Use when user asks to navigate API hierarchies using R-native syntax, perform CRUD operations like GET or POST, or convert between R data structures and JSON/XML/YAML.
 homepage: https://cran.r-project.org/web/packages/restfulr/index.html
 ---
+
 
 # r-restfulr
 

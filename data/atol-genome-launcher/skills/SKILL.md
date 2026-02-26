@@ -1,8 +1,9 @@
 ---
 name: atol-genome-launcher
-description: The `atol-genome-launcher` is a utility suite designed to bridge the gap between metadata management and bioinformatic execution.
+description: The atol-genome-launcher automates the retrieval of sequencing data from Bioplatforms Australia and organizes it for genome assembly and annotation. Use when user asks to generate RNA-Seq manifests, batch download sequencing reads, or retrieve specific assets using Bioplatforms URLs.
 homepage: https://github.com/TomHarrop/atol-genome-launcher
 ---
+
 
 # atol-genome-launcher
 

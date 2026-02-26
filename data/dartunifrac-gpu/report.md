@@ -1,52 +1,113 @@
 # dartunifrac-gpu CWL Generation Report
 
-## dartunifrac-gpu
+## dartunifrac-gpu_dartunifrac-cuda
 
 ### Tool Description
-A tool for calculating UniFrac distances using GPU acceleration. (Note: The provided text contains container build error logs rather than the tool's help documentation, so specific arguments could not be extracted.)
+Approximate UniFrac via Weighted MinHash 🎯🎯🎯
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dartunifrac-gpu:0.2.9--hd7384ae_0
+- **Docker Image**: quay.io/biocontainers/dartunifrac-gpu:0.3.0--hd7384ae_0
 - **Homepage**: https://github.com/jianshu93/DartUniFrac
 - **Package**: https://anaconda.org/channels/bioconda/packages/dartunifrac-gpu/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dartunifrac-gpu/overview
-- **Total Downloads**: 568
+- **Total Downloads**: 597
 - **Last updated**: 2026-02-04
 - **GitHub**: https://github.com/jianshu93/DartUniFrac
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/dartunifrac-gpu:0.2.9--hd7384ae_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-2306544275/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
+************** initializing logger *****************
+
+DartUniFrac: Approximate UniFrac via Weighted MinHash 🎯🎯🎯
+
+Usage: dartunifrac-cuda [OPTIONS] --tree <tree> <--input <input>|--biom <biom>>
+
+Options:
+  -t, --tree <tree>
+          Input tree in Newick format
+
+  -i, --input <input>
+          OTU/Feature table in TSV format
+
+  -b, --biom <biom>
+          OTU/Feature table in BIOM (HDF5) format
+
+  -o, --output <output>
+          Output distance matrix in TSV format
+          
+          [default: unifrac.tsv]
+
+      --weighted
+          Weighted UniFrac (normalized)
+
+      --succ
+          Use succparen balanced-parentheses tree representation
+
+  -s, --sketch <sketch-size>
+          Sketch size for Weighted MinHash (DartMinHash or ERS)
+          
+          [default: 2048]
+
+  -m, --method <method>
+          Sketching method: dmh (DartMinHash) or ers (Efficient Rejection Sampling)
+          
+          [default: dmh]
+          [possible values: dmh, ers]
+
+      --bbits <bbits>
+          Extract lower bits from hashes. Supported: 16 (default), 32, 64.
+          
+          [default: 16]
+
+  -l, --length <seq-length>
+          Per-hash independent random sequence length for ERS, must be >= 512
+          
+          [default: 2048]
+
+  -T, --threads <threads>
+          Number of threads, default all logical cores
+
+      --seed <seed>
+          Random seed for reproducibility
+          
+          [default: 1337]
+
+      --compress
+          Compress output with zstd, .zst suffix will be added to the output file name
+
+      --pcoa
+          Fast Principal Coordinate Analysis based on Randomized SVD (subspace iteration), output saved to pcoa.txt/ordination.txt
+
+      --streaming
+          Streaming the distance matrix while computing (zstd-compressed)
+
+      --block <block>
+          Number of rows per chunk, streaming mode only
+
+      --gpu-streaming
+          Streaming the distance matrix to disk block by block (multi-GPU support); available only with the 'cuda' feature
+
+      --tile-cols <tile-cols>
+          Number of columns per GPU tile in gpu-streaming mode
+          
+          [default: 1024]
+
+      --tile-rows <tile-rows>
+          Number of rows per GPU tile in gpu-streaming mode
+          
+          [default: 1024]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
 
 
-## Metadata
-- **Skill**: generated
-
-## dartunifrac-gpu_dartunifrac-cuda
-
-### Tool Description
-GPU-accelerated UniFrac distance calculation. (Note: The provided text is an error log regarding a failed container build and does not contain usage instructions or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dartunifrac-gpu:0.2.9--hd7384ae_0
-- **Homepage**: https://github.com/jianshu93/DartUniFrac
-- **Package**: https://anaconda.org/channels/bioconda/packages/dartunifrac-gpu/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/dartunifrac-gpu:0.2.9--hd7384ae_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-2824099729/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+Citations:
+  For DartUniFrac, please see:
+  Zhao J. et.al., 2025, DOI:
 ```
 

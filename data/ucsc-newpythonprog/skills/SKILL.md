@@ -1,8 +1,9 @@
 ---
 name: ucsc-newpythonprog
-description: The `ucsc-newpythonprog` tool is a utility from the UCSC Genome Browser "kent" suite that automates the creation of new Python scripts.
+description: This tool generates new Python script templates. Use when user asks to generate a new Python script template or create a new Python script skeleton.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-newpythonprog
 

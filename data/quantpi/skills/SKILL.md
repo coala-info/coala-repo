@@ -1,8 +1,9 @@
 ---
 name: quantpi
-description: Quantpi is a robust microbiome profiling system that orchestrates complex metagenomic workflows.
+description: Quantpi is a microbiome profiling system that orchestrates metagenomic workflows to transform raw sequencing data into taxonomic and functional abundance tables. Use when user asks to initialize microbiome projects, generate sample sheets, or execute profiling pipelines using tools like Kraken2, MetaPhlAn, and HUMAnN3.
 homepage: https://github.com/ohmeta/quantpi
 ---
+
 
 # quantpi
 

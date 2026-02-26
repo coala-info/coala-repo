@@ -3,7 +3,7 @@
 ## trim_isoseq_polya
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it is a system log indicating a failure to build or pull a container image due to insufficient disk space.
+Trim polyA tails from Iso-Seq reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/trim_isoseq_polya:0.0.3--h7c8eefc_0
@@ -18,18 +18,20 @@ The provided text does not contain help information or usage instructions; it is
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 06:50:50  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/trim_isoseq_polya:0.0.3--h7c8eefc_0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+Unable to find image 'quay.io/biocontainers/trim_isoseq_polya:0.0.3--h7c8eefc_0' locally
+0.0.3--h7c8eefc_0: Pulling from biocontainers/trim_isoseq_polya
+1dbcab28ce46: Already exists
+cfb1ba34637d: Already exists
+ace2d8a63dd5: Already exists
+75c080ef15eb: Already exists
+316957f8baaf: Already exists
+dbd31e1d863d: Already exists
+2f8531d5a6ec: Already exists
+1dbcab28ce46: Already exists
+2e178fd72baf: Already exists
+f2c8c09b1af7: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2861467501: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

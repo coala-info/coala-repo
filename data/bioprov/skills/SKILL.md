@@ -1,8 +1,9 @@
 ---
 name: bioprov
-description: BioProv is a specialized tool designed to automate the capture of provenance in bioinformatics.
+description: BioProv automates the capture of provenance in bioinformatics by transforming command-line executions and Python workflows into structured records. Use when user asks to track data lineage, manage bioinformatics projects, run preset workflows like genome annotation or BLAST, and export provenance records to JSON or visual graphs.
 homepage: https://github.com/vinisalazar/BioProv
 ---
+
 
 # bioprov
 

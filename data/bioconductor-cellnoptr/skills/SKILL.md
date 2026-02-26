@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellnoptr
-description: the package is available on all platforms; click for details.
+description: This tool creates logic-based models of signal transduction networks by training prior knowledge networks against experimental perturbation data. Use when user asks to train prior knowledge networks, create functional boolean models, preprocess signaling networks, or optimize models using genetic algorithms or integer linear programming.
 homepage: https://bioconductor.org/packages/release/bioc/html/CellNOptR.html
 ---
+
 
 # bioconductor-cellnoptr
 

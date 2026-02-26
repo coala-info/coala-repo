@@ -1,8 +1,9 @@
 ---
 name: dcc
-description: DCC (Detect circRNA) is a specialized bioinformatic tool designed to identify and quantify circular RNA candidates from next-generation sequencing data.
+description: DCC identifies and quantifies circular RNA candidates from next-generation sequencing data by analyzing chimeric junction files. Use when user asks to detect circRNAs, quantify host gene expression, or filter back-splice junctions using repeat masking and replicate integration.
 homepage: https://github.com/dieterich-lab/DCC
 ---
+
 
 # dcc
 

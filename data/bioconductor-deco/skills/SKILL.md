@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deco
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The deco package decomposes heterogeneity in large omic datasets to identify sample subclasses and feature outliers using recurrent-sampling differential analysis and non-symmetrical correspondence analysis. Use when user asks to identify sample subclasses, find features marking specific categories, perform recurrent-sampling differential analysis, or calculate h-statistics to rank features in omic data.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/deco.html
 ---
+
 
 # bioconductor-deco
 

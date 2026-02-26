@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biostrings
-description: the package is available on all platforms; click for details.
+description: Biostrings provides memory-efficient infrastructure for representing and manipulating large biological sequences like DNA, RNA, and proteins in R. Use when user asks to manipulate biological strings, perform pattern matching, calculate k-mer frequencies, or manage multiple sequence alignments.
 homepage: https://bioconductor.org/packages/release/bioc/html/Biostrings.html
 ---
+
 
 # bioconductor-biostrings
 

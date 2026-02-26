@@ -1,8 +1,9 @@
 ---
 name: spatyper
-description: spatyper is a specialized bioinformatics tool used to identify the *spa* type of *Staphylococcus aureus* strains.
+description: spatyper identifies the *spa* type of *Staphylococcus aureus* strains by analyzing repeat sequences within the *spa* gene. Use when user asks to identify *spa* types from FASTA files, perform genomic surveillance of *S. aureus*, or process PCR products for strain typing.
 homepage: https://github.com/HCGB-IGTP/spaTyper
 ---
+
 
 # spatyper
 

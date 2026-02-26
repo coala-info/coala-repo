@@ -2,9 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: hlso
 label: haplotype-lso_hlso
-doc: "Haplotype-LSO (Local Search Optimization) tool for haplotype assembly.\n\nTool
-  homepage: https://github.com/holtgrewe/haplotype-lso"
-inputs: []
+doc: "Classify Lso Sanger reads.\n\nTool homepage: https://github.com/holtgrewe/haplotype-lso"
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'Subcommand to run. Available options: convert, cli, web, paste, ref_download,
+      ref_blast, ref_consensus'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

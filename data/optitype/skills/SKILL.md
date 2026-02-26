@@ -1,8 +1,9 @@
 ---
 name: optitype
-description: OptiType is a specialized HLA genotyping algorithm that produces accurate 4-digit predictions by simultaneously selecting major and minor HLA Class I alleles.
+description: OptiType is an HLA genotyping algorithm that performs 4-digit HLA Class I allele prediction using integer linear programming. Use when user asks to perform HLA genotyping, predict HLA Class I alleles from DNA or RNA-Seq data, or analyze HLA coverage plots.
 homepage: https://github.com/FRED-2/OptiType
 ---
+
 
 # optitype
 

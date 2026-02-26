@@ -1,8 +1,9 @@
 ---
 name: perl-moo
-description: Moo (Minimalist Object Orientation) is a highly efficient, "Moose-lite" framework for Perl.
+description: Perl-moo provides a minimalist, efficient framework for object-oriented programming in Perl that offers essential features like attributes, inheritance, and roles with a small footprint. Use when user asks to define Perl classes, implement object attributes, use roles for code reuse, or create lightweight object-oriented systems compatible with Moose.
 homepage: http://metacpan.org/pod/Moo
 ---
+
 
 # perl-moo
 

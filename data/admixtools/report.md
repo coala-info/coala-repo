@@ -1,9 +1,9 @@
 # admixtools CWL Generation Report
 
-## admixtools
+## admixtools_convertf
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space ('no space left on device').
+A tool from the AdmixTools suite used to convert between different genetic data formats (e.g., EIGENSTRAT, PACKEDANCESTRYMAP, PED, etc.) using a parameter file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
@@ -15,178 +15,154 @@ The provided text does not contain help information for the tool. It is an error
 - **Total Downloads**: 29.0K
 - **Last updated**: 2025-07-09
 - **GitHub**: https://github.com/DReichLab/AdmixTools
-- **Stars**: 220
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-4263145515/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
+Usage: bad params....
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## admixtools_convertf
+## admixtools_qp3Pop
 
 ### Tool Description
-A tool from the AdmixTools package used to convert between different genetic data formats (e.g., PACKEDANCESTRYMAP, ANCESTRYMAP, EIGENSTRAT, PED). Note: The provided input text appears to be a system error log regarding a container build failure and does not contain the actual help text or argument definitions.
+Compute the f3-statistic, also known as the 3-population test, to test for admixture or shared genetic history.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
 - **Homepage**: https://github.com/DReichLab/AdmixTools
 - **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-2874795748/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
+Usage: qp3Pop [options] <file>
+   -h          ... Print this message and exit.
+   -f <nam>    ... use <nam> as snp details name.
+   -p <file>   ... use parameters from <file> .
+   -L <index>  ... locount -n popfilename.
+   -H <index>  ... hicount -n popfilename.
+   -v          ... print version and exit.
+   -V          ... toggle verbose mode ON.
 ```
 
-## admixtools_qp3pop
+
+## admixtools_qpDstat
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a system error log indicating a failure to build or extract the container image due to insufficient disk space.
+Compute D-statistics for population genetics analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
 - **Homepage**: https://github.com/DReichLab/AdmixTools
 - **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-3747387424/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
+Usage: qpDstat [options] <file>
+   -h          ... Print this message and exit.
+   -L <val>    ... use <val> as low value.
+   -H <val>    ... use <val> as high value.
+   -p <file>   ... use parameters from <file> .
+   -v          ... print version and exit.
+   -V          ... toggle verbose mode ON.
 ```
 
-## admixtools_qpdstat
+
+## admixtools_qpAdm
 
 ### Tool Description
-The provided text contains error messages related to a container runtime failure (no space left on device) rather than the help documentation for qpDstat. No arguments could be extracted.
+qpAdm is used to estimate the proportions of ancestry from a set of source populations for a target population.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
 - **Homepage**: https://github.com/DReichLab/AdmixTools
 - **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-1541300555/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
+Usage: qpAdm [options] <file>
+   -h          ... Print this message and exit.
+   -p <file>   ... use parameters from <file> .
+   -v          ... print version and exit.
+   -V          ... toggle verbose mode ON.
+   -V          ... toggle details mode ON.
 ```
 
-## admixtools_qpf4ratio
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains a fatal error message regarding a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
-- **Homepage**: https://github.com/DReichLab/AdmixTools
-- **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-3619819657/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
-```
-
-## admixtools_qpwave
-
-### Tool Description
-The provided text does not contain help information for the tool. It is a system error log indicating a failure to build or extract a Singularity/Apptainer container image due to insufficient disk space ('no space left on device').
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
-- **Homepage**: https://github.com/DReichLab/AdmixTools
-- **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-1811944019/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
-```
-
-## admixtools_qpadm
-
-### Tool Description
-The provided text is a system error log indicating a container build failure (no space left on device) and does not contain CLI help information or argument definitions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
-- **Homepage**: https://github.com/DReichLab/AdmixTools
-- **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-1358417681/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
-```
-
-## admixtools_qpgraph
-
-### Tool Description
-The provided text does not contain help information for the tool; it contains system log messages and a fatal error regarding disk space during a container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
-- **Homepage**: https://github.com/DReichLab/AdmixTools
-- **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-2723114262/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
-```
 
 ## admixtools_qpfstats
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log indicating a failure to build or extract a Singularity/Apptainer container image due to insufficient disk space ('no space left on device').
+Compute f-statistics for AdmixTools
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
 - **Homepage**: https://github.com/DReichLab/AdmixTools
 - **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ee4b7eae9225d1308cf75ccdfe6a84f9a1a428f47e272b3342394bae81ec96b1: unpack entry: usr/local/lib/libopenblasp-r0.3.30.a: unpack to regular file: short write: write /tmp/build-temp-1926871979/rootfs/usr/local/lib/libopenblasp-r0.3.30.a: no space left on device
+Usage: qpfstats [options] <file>
+   -h          ... Print this message and exit.
+   -b <val>    ... use <va> as base value.
+   -p <file>   ... use parameters from <file> .
+   -g <>   ... .
+   -s <val>   ... use <val> as seed.
+   -o <>   ... .
+   -l <val>    ... use <val> as lambda scale.
+   -v          ... print version and exit.
+   -V          ... toggle verbose mode ON.
+   -x          ... toggle doAnalysis ON.
+```
+
+
+## admixtools_qpWave
+
+### Tool Description
+qpWave is a tool for testing whether a set of 'left' populations is consistent with being descended from a specified number of waves of admixture relative to a set of 'right' populations.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
+- **Homepage**: https://github.com/DReichLab/AdmixTools
+- **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: qpWave [options] <file>
+   -h          ... Print this message and exit.
+   -p <file>   ... use parameters from <file> .
+   -v          ... print version and exit.
+   -V          ... toggle verbose mode ON.
+```
+
+
+## admixtools_qpGraph
+
+### Tool Description
+qpGraph is a tool for fitting population graphs to f-statistics.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/admixtools:8.0.2--h75d7a4a_0
+- **Homepage**: https://github.com/DReichLab/AdmixTools
+- **Package**: https://anaconda.org/channels/bioconda/packages/admixtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: qpGraph [options] <file>
+   -h          ... Print this message and exit.
+   -z <val>    ... use <val> as Z threshold.
+   -s <val>    ... use <val> seed.
+   -p <file>   ... use parameters from <file> .
+   -g <nam>    ... use <nam> as graph name.
+   -o <nam>    ... use <nam> as out graph.
+   -d <nam>    ... use <nam> for graph dot name.
+   -x <nam>    ... use <nam> as oulier name.
+   -l <val>    ... use <val> as lambda scale value.
+   -v          ... print version and exit.
+   -V          ... toggle verbose mode ON.
 ```
 

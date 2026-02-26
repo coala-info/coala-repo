@@ -1,8 +1,9 @@
 ---
 name: chemfp
-description: The `chemfp` suite provides a high-performance framework for handling dense cheminformatics fingerprints.
+description: "chemfp provides a high-performance framework for generating, searching, and managing cheminformatics fingerprints. Use when user asks to generate fingerprints, perform similarity searches, convert between FPS and FPB formats, or conduct clustering and diversity analysis."
 homepage: https://chemfp.com
 ---
+
 
 # chemfp
 

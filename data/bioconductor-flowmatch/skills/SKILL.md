@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowmatch
-description: the package is available on all platforms; click for details.
+description: This tool performs cell population matching and template construction across multiple flow cytometry samples. Use when user asks to match cell populations, perform meta-clustering, construct templates, or register corresponding populations across samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowMatch.html
 ---
+
 
 # bioconductor-flowmatch
 

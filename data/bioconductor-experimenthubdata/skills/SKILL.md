@@ -1,8 +1,9 @@
 ---
 name: bioconductor-experimenthubdata
-description: the package is available on all platforms; click for details.
+description: This tool provides infrastructure for adding, formatting, and validating metadata for Bioconductor ExperimentHub resources. Use when user asks to prepare R objects for ExperimentHub submission, create ExperimentHub-enabled packages, or validate metadata.csv files using makeExperimentHubMetadata.
 homepage: https://bioconductor.org/packages/release/bioc/html/ExperimentHubData.html
 ---
+
 
 # bioconductor-experimenthubdata
 

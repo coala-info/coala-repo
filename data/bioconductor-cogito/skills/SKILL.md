@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cogito
-description: the package is available on all platforms; click for details.
+description: Cogito compares and visualizes genomic interval sets to identify overlaps and calculate similarity scores between high-throughput sequencing datasets. Use when user asks to compare genomic intervals, visualize overlaps between datasets, or calculate similarity scores for sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/Cogito.html
 ---
+
 
 # bioconductor-cogito
 

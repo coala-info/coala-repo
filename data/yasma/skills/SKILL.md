@@ -1,8 +1,9 @@
 ---
 name: yasma
-description: YASMA is a modular suite designed for the comprehensive analysis of small RNA populations.
+description: YASMA comprehensively analyzes and de novo annotates small RNA populations across all sRNA classes. Use when user asks to 'download, detect adapters, or trim reads', 'align reads', 'annotate small RNA', 'count reads', 'evaluate hairpin structures', 'visualize data', or 'generate size profiles'.
 homepage: https://github.com/NateyJay/YASMA
 ---
+
 
 # yasma
 

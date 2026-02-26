@@ -1,8 +1,9 @@
 ---
 name: biocamlib
-description: BiOCamLib is a high-performance OCaml-based toolkit designed for core bioinformatics tasks.
+description: BiOCamLib is a high-performance OCaml-based toolkit designed for sequence manipulation, string clustering, and parallelized bioinformatics data processing. Use when user asks to compute reverse complements, perform transitive closure for string clustering, manipulate FASTA or FASTQ files, and process large datasets in parallel.
 homepage: https://github.com/PaoloRibeca/BiOCamLib
 ---
+
 
 # biocamlib
 

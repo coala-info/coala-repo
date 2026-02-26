@@ -1,8 +1,9 @@
 ---
 name: funnel
-description: Funnel is a toolkit for distributed task execution that implements the GA4GH Task Execution Schema (TES).
+description: Funnel is a toolkit for distributed task execution that runs sequences of Docker containers and manages remote file transfers. Use when user asks to create or list tasks, manage a local server, monitor task status, or construct JSON task definitions.
 homepage: https://ohsu-comp-bio.github.io/funnel/
 ---
+
 
 # funnel
 

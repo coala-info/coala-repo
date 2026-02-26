@@ -2,10 +2,36 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: immune-ml
 label: immuneml_immune-ml
-doc: "The provided text contains system error logs and does not include help documentation
-  or usage instructions for the tool. As a result, no arguments could be extracted.\n
-  \nTool homepage: https://github.com/uio-bmi/immuneML"
-inputs: []
+doc: "immuneML command line tool\n\nTool homepage: https://github.com/uio-bmi/immuneML"
+inputs:
+  - id: specification_path
+    type: File
+    doc: Path to specification YAML file. Always used to define the analysis.
+    inputBinding:
+      position: 1
+  - id: result_path
+    type: Directory
+    doc: Output directory path.
+    inputBinding:
+      position: 2
+  - id: logging
+    type:
+      - 'null'
+      - string
+    doc: Logging level to use
+    inputBinding:
+      position: 103
+      prefix: --logging
+  - id: tool
+    type:
+      - 'null'
+      - string
+    doc: Name of the tool which calls immuneML. This name will be used to invoke
+      appropriate API call, which will then do additional work in tool-dependent
+      way before running standard immuneML.
+    inputBinding:
+      position: 103
+      prefix: --tool
 outputs:
   - id: stdout
     type: stdout

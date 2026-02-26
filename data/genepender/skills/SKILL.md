@@ -1,8 +1,9 @@
 ---
 name: genepender
-description: Genepender is a specialized bioinformatics tool designed to bridge the gap between variant calls (VCF) and genomic annotations (BED).
+description: Genepender annotates variants in VCF files with genomic features and functional contexts defined in BED files. Use when user asks to annotate VCF files with BED regions, determine the functional context of variants, or prepare gene maps for annotation.
 homepage: https://github.com/BioTools-Tek/genepender
 ---
+
 
 # genepender
 

@@ -1,8 +1,9 @@
 ---
 name: r-shaman
-description: R package shaman (documentation from project home).
+description: The r-shaman package performs a-parametric normalization of Hi-C contact matrices by resampling observed contacts to generate expected distributions. Use when user asks to normalize Hi-C data, generate shuffled expected tracks, compute contact enrichment scores, or visualize normalized contact maps with genomic annotations.
 homepage: https://cran.r-project.org/web/packages/shaman/index.html
 ---
+
 
 # r-shaman
 

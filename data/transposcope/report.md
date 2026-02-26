@@ -3,7 +3,7 @@
 ## transposcope
 
 ### Tool Description
-A tool for the analysis and visualization of transposable element integrations (Note: Help text provided was an error log and did not contain argument details).
+A tool for visualizing transposon insertions. Note: The provided help text contains a Docker error and does not list arguments. The following is based on standard transposcope usage.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/transposcope:2.0.1--py_0
@@ -18,13 +18,21 @@ A tool for the analysis and visualization of transposable element integrations (
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 05:59:54  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/transposcope:2.0.1--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:78118969fa11076d27701c19d4ff784ff8f1898d6dfe5b36f9c281af4be05372: unpack entry: usr/local/bin/python3.7: unpack to regular file: short write: write /tmp/build-temp-3958581597/rootfs/usr/local/bin/python3.7: no space left on device
+Unable to find image 'quay.io/biocontainers/transposcope:2.0.1--py_0' locally
+2.0.1--py_0: Pulling from biocontainers/transposcope
+1dbcab28ce46: Already exists
+cfb1ba34637d: Already exists
+ace2d8a63dd5: Already exists
+75c080ef15eb: Already exists
+316957f8baaf: Already exists
+dbd31e1d863d: Already exists
+2f8531d5a6ec: Already exists
+1dbcab28ce46: Already exists
+2e178fd72baf: Already exists
+78118969fa11: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1930911266: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

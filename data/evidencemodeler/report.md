@@ -1,9 +1,9 @@
 # evidencemodeler CWL Generation Report
 
-## evidencemodeler
+## evidencemodeler_EVidenceModeler
 
 ### Tool Description
-EvidenceModeler (EVM) automated eukaryotic gene structure annotation tool.
+EvidenceModeler (EVM) automates the process of combining gene predictions and protein/transcript alignments into a single set of high-quality gene models.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5
@@ -18,80 +18,58 @@ EvidenceModeler (EVM) automated eukaryotic gene structure annotation tool.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4089383514: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## evidencemodeler_gff3_gene_prediction_file_validator.pl
-
-### Tool Description
-A tool to validate GFF3 gene prediction files for EvidenceModeler.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5
-- **Homepage**: https://github.com/EVidenceModeler/EVidenceModeler
-- **Package**: https://anaconda.org/channels/bioconda/packages/evidencemodeler/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1746456078: no space left on device
-```
-
-## evidencemodeler_partition_EVM_inputs.pl
-
-### Tool Description
-A tool to partition EvidenceModeler (EVM) inputs into smaller chunks for parallel processing. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5
-- **Homepage**: https://github.com/EVidenceModeler/EVidenceModeler
-- **Package**: https://anaconda.org/channels/bioconda/packages/evidencemodeler/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1107562212: no space left on device
-```
-
-## evidencemodeler_write_EVM_commands.pl
-
-### Tool Description
-A script to generate EvidenceModeler (EVM) command lines. Note: The provided help text contains only system error messages and no usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5
-- **Homepage**: https://github.com/EVidenceModeler/EVidenceModeler
-- **Package**: https://anaconda.org/channels/bioconda/packages/evidencemodeler/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2598726746: no space left on device
-```
-
-## evidencemodeler_recombine_EVM_outputs_recursive.pl
-
-### Tool Description
-A script to recombine EvidenceModeler (EVM) outputs recursively. Note: The provided help text contains a system error and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5
-- **Homepage**: https://github.com/EVidenceModeler/EVidenceModeler
-- **Package**: https://anaconda.org/channels/bioconda/packages/evidencemodeler/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/evidencemodeler:2.1.0--h9948957_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3057958999: no space left on device
+################# Evidence Modeler ##############################
+#
+#  parameters:
+#
+#  Required:
+# 
+#  --sample_id <str>           sample_id (for naming outputs)
+#  --genome <str>              genome sequence in fasta format
+#  --weights <str>             weights for evidence types file. See documentation for formatting.
+#  --gene_predictions <str>    gene predictions gff3 file
+#
+#  # partitioning info (required too) 
+#  --segmentSize <str>          * :length of a single sequence for running EVM
+#  --overlapSize  <str>         * :length of sequence overlap between segmented sequences
+#
+#
+#  Optional but recommended:
+#  --protein_alignments <str>         protein alignments gff3 file
+#  --transcript_alignments <str>      transcript alignments gff3 file
+#
+#  Optional and miscellaneous
+#
+#  --repeats <str>              gff3 file with repeats masked from genome file
+#
+#  
+#  --terminalExons <str>        supplementary file of additional terminal exons to consider (from PASA long-orfs)
+#
+#  --stop_codons <str>            list of stop codons (default: TAA,TGA,TAG)
+#                                 *for Tetrahymena, set --stop_codons TGA
+#
+#  --min_intron_length <int>      minimum length for an intron (default 20 bp)
+#  --exec_dir <str>               directory that EVM cd's to before running.
+#
+#  --CPU <int>                   number of parallel computes (default: 4)
+#
+#  --search_long_introns  <int>  when set, reexamines long introns (can find nested genes, but also can result in FPs) (default: 0 (off))
+#
+#
+#  --re_search_intergenic <int>  when set, reexamines intergenic regions of minimum length (can add FPs) (default: 0  (off))
+#  --terminal_intergenic_re_search <int>   reexamines genomic regions outside of the span of all predicted genes (default: 10000)
+#
+# flags:
+#
+#  --forwardStrandOnly   runs only on the forward strand
+#  --reverseStrandOnly   runs only on the reverse strand
+#
+#  -S                    verbose flag
+#  --debug               debug mode, writes lots of extra files.
+#  --report_ELM          report the eliminated EVM preds too.
+#
+#  --version             report version (EVidenceModeler-v2.1.0) and exit.
+#
+#################################################################################################################################
 ```
 

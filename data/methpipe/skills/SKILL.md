@@ -1,8 +1,9 @@
 ---
 name: methpipe
-description: MethPipe is a specialized computational suite for processing bisulfite sequencing data.
+description: MethPipe is a computational suite for processing bisulfite sequencing data to identify complex DNA methylation patterns and genomic features. Use when user asks to estimate cytosine-level methylation, identify hypo-methylated regions, detect partially methylated domains, find allele-specific methylated regions, or perform differential methylation analysis.
 homepage: https://github.com/smithlabcode/methpipe
 ---
+
 
 # methpipe
 

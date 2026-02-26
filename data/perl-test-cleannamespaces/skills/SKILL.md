@@ -1,8 +1,9 @@
 ---
 name: perl-test-cleannamespaces
-description: Test::CleanNamespaces is a specialized Perl testing utility designed to identify "namespace pollution." In Perl, when a module imports functions from another package, those functions often remain visible in the importing package's symbol table.
+description: This Perl testing utility identifies namespace pollution by checking that imported functions are properly scrubbed from a package's symbol table. Use when user asks to verify clean namespaces in Perl modules, detect uncleaned imports in object-oriented classes, or automate API cleanliness testing.
 homepage: https://github.com/karenetheridge/Test-CleanNamespaces
 ---
+
 
 # perl-test-cleannamespaces
 

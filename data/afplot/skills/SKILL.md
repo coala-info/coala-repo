@@ -1,8 +1,9 @@
 ---
 name: afplot
-description: A tool or script for building a SIF (Singularity Image Format) container for afplot from an OCI/Docker image.
+description: afplot extracts and plots allele frequencies from VCF files to visualize variant data through histograms, scatter plots, and distance-to-theoretical-frequency plots. Use when user asks to plot allele frequencies, visualize VCF data for specific genomic regions, or generate whole-genome allele frequency distributions.
 homepage: https://github.com/sndrtj/afplot
 ---
+
 
 # afplot
 

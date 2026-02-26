@@ -1,8 +1,9 @@
 ---
 name: treecluster
-description: TreeCluster partitions the leaves of a phylogenetic tree (in Newick format) into the minimum number of clusters that satisfy specific distance and support constraints.
+description: TreeCluster partitions phylogenetic tree leaves into clusters based on distance and support constraints. Use when user asks to partition phylogenetic tree leaves, identify transmission clusters, group sequences by genetic similarity, or cluster a phylogenetic tree.
 homepage: https://github.com/niemasd/TreeCluster
 ---
+
 
 # treecluster
 

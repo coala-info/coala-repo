@@ -1,8 +1,9 @@
 ---
 name: pcne
-description: PCNE (Plasmid Copy Number Estimator) is a bioinformatics tool designed to determine how many copies of a plasmid are present in a cell relative to the chromosome.
+description: PCNE estimates the number of plasmid copies in a cell relative to the chromosome by calculating the ratio of median sequencing depths. Use when user asks to estimate plasmid copy number, calculate plasmid-to-chromosome ratios, or normalize sequencing depth with GC-content bias correction.
 homepage: https://github.com/riccabolla/PCNE
 ---
+
 
 # pcne
 

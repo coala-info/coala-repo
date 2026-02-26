@@ -1,8 +1,9 @@
 ---
 name: ucsc-rmfadups
-description: The `rmFaDups` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed to deduplicate FASTA files.
+description: ucsc-rmfadups deduplicates FASTA files by identifying and removing redundant records to produce a cleaned version with unique entries. Use when user asks to deduplicate FASTA files, remove duplicate sequences from a FASTA file, or get unique entries from a FASTA file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-rmfadups
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-synmut
-description: the package is available on all platforms; click for details.
+description: This tool designs synonymous mutations and optimizes codon usage in DNA sequences. Use when user asks to design synonymous mutations, optimize codon usage, or perform codon de-optimization.
 homepage: https://bioconductor.org/packages/release/bioc/html/SynMut.html
 ---
+
 
 # bioconductor-synmut
 

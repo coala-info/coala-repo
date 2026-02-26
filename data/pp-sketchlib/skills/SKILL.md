@@ -1,8 +1,9 @@
 ---
 name: pp-sketchlib
-description: `pp-sketchlib` is a high-performance library designed for the rapid comparison of large genomic datasets.
+description: pp-sketchlib is a high-performance library for rapidly comparing large genomic datasets using MinHash-based sketching. Use when user asks to create sketch databases from genomic sequences, calculate core and accessory distances between samples, or generate sparse distance matrices for population genomics.
 homepage: https://github.com/johnlees/pp-sketchlib
 ---
+
 
 # pp-sketchlib
 

@@ -1,8 +1,9 @@
 ---
 name: fmsi
-description: FMSI (From Masked Superstring to Index) is a specialized bioinformatics tool designed for the space-efficient representation of k-mer sets.
+description: FMSI is a bioinformatics tool that creates space-efficient indexes from masked superstrings for fast k-mer membership and lookup queries. Use when user asks to index k-mer sets, query k-mer presence or unique identifiers, or perform set operations like union and intersection on genomic data.
 homepage: https://github.com/OndrejSladky/fmsi
 ---
+
 
 # fmsi
 

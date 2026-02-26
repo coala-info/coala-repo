@@ -1,16 +1,109 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: miraligner
+baseCommand:
+  - java
+  - -jar
+  - miraligner.jar
 label: seqbuster_miraligner
-doc: "The provided text does not contain help information for the tool. It contains
-  container build logs and a fatal error indicating 'no space left on device' during
-  the extraction of the seqbuster OCI image.\n\nTool homepage: https://github.com/lpantano/seqbuster"
-inputs: []
+doc: "miraligner is a tool for microRNA alignment and isomiR identification.\n\nTool
+  homepage: https://github.com/lpantano/seqbuster"
+inputs:
+  - id: addition_nts
+    type:
+      - 'null'
+      - int
+    doc: nt allowed for addition processes
+    default: 3
+    inputBinding:
+      position: 101
+      prefix: -add
+  - id: database
+    type: Directory
+    doc: database folder containing miRBase files
+    inputBinding:
+      position: 101
+      prefix: -db
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: add verbosity
+    default: false
+    inputBinding:
+      position: 101
+      prefix: -debug
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: format input
+    default: none
+    inputBinding:
+      position: 101
+      prefix: -format
+  - id: freq
+    type:
+      - 'null'
+      - boolean
+    doc: add freq information
+    default: true
+    inputBinding:
+      position: 101
+      prefix: -freq
+  - id: input
+    type: File
+    doc: input read sequence file
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: min_length
+    type:
+      - 'null'
+      - int
+    doc: minimum size
+    default: 16
+    inputBinding:
+      position: 101
+      prefix: -minl
+  - id: precursor
+    type:
+      - 'null'
+      - boolean
+    doc: add reads mapping to precursor
+    default: false
+    inputBinding:
+      position: 101
+      prefix: -pre
+  - id: species
+    type: string
+    doc: three letter code for species (e.g., hsa)
+    inputBinding:
+      position: 101
+      prefix: -s
+  - id: substitution_nts
+    type:
+      - 'null'
+      - int
+    doc: nt allowed for substitution processes
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -sub
+  - id: trimming_nts
+    type:
+      - 'null'
+      - int
+    doc: nt allowed for trimming processes
+    default: 3
+    inputBinding:
+      position: 101
+      prefix: -trim
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type: File
+    doc: output file
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/seqbuster:3.5--0
-stdout: seqbuster_miraligner.out

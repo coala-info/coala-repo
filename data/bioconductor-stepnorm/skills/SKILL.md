@@ -1,8 +1,9 @@
 ---
 name: bioconductor-stepnorm
-description: the package is available on all platforms; click for details.
+description: This R package provides functions for the stepwise normalization of cDNA microarray data. Use when user asks to normalize microarray data, perform location and scale normalization, or apply stepwise normalization procedures.
 homepage: https://bioconductor.org/packages/release/bioc/html/stepNorm.html
 ---
+
 
 # bioconductor-stepnorm
 

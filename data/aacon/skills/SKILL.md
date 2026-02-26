@@ -1,8 +1,9 @@
 ---
 name: aacon
-description: AACon (Amino Acid Conservation) is a high-performance toolset designed to identify functional sites in proteins by measuring evolutionary conservation.
+description: AACon identifies functional sites in proteins by calculating evolutionary conservation scores across multiple metrics. Use when user asks to calculate amino acid conservation, identify functional protein sites, or run conservation analysis algorithms like SMERFS and Valdar on protein alignments.
 homepage: https://www.compbio.dundee.ac.uk/aacon/
 ---
+
 
 # aacon
 

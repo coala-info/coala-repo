@@ -3,7 +3,7 @@
 ## mfold
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information or usage instructions for the mfold tool. Consequently, no arguments could be parsed.
+Predicts RNA or DNA secondary structure using thermodynamic methods
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mfold:3.6--h8537716_3
@@ -18,11 +18,22 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mfold:3.6--h8537716_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2720174071: no space left on device
+Usage is
+mfold SEQ='file_name' with optional parameters:
+    [ AUX='auxfile_name' ] [ RUN_TYPE=text (default) or html ]
+    [ NA=RNA (default) or DNA ] [ LC=sequence type (default = linear) ]
+    [ T=temperature (default = 37 deg C) ] [ P=percent (default = 5) ]
+    [ NA_CONC=Na+ molar concentration (default = 1.0) ]
+    [ MG_CONC=Mg++ molar concentration (default = 0.0) ]
+    [ W=window parameter (default - set by sequence length) ]
+    [ MAXBP=max base pair distance (default - no limit) ]
+    [ MAX=maximum number of foldings to be computed (default 100) ]
+    [ MAX_LP=maximum bulge/interior loop size (default 30) ]
+    [ MAX_AS=maximum asymmetry of a bulge/interior loop (default 30) ]
+    [ ANN=structure annotation type: none (default), p-num or ss-count ]
+    [ MODE=structure display mode: auto (default), bases or lines ]
+    [ LAB_FR=base numbering frequency ] [ ROT_ANG=structure rotation angle ]
+    [ START=5' base # (default = 1)] [ STOP=3' base # (default = end) ]
+    [ REUSE=NO/YES (default=NO) reuse existing .sav file ]
 ```
 
-
-## Metadata
-- **Skill**: generated

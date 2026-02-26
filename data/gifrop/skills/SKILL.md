@@ -1,8 +1,9 @@
 ---
 name: gifrop
-description: The `gifrop` tool (Genomic Islands From Roary Pangenomes) is designed to extract and characterize clusters of accessory genes that form genomic islands.
+description: Gifrop extracts and characterizes clusters of accessory genes that form genomic islands from Roary pangenome outputs. Use when user asks to identify genomic islands, cluster accessory genes, or run an end-to-end pangenome pipeline from raw nucleotide sequences.
 homepage: https://github.com/jtrachsel/gifrop
 ---
+
 
 # gifrop
 

@@ -2,10 +2,599 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: hifiasm
 label: hifiasm
-doc: "The provided text does not contain help information for hifiasm; it contains
-  system error messages regarding a container runtime failure (no space left on device).\n
-  \nTool homepage: https://github.com/chhylp123/hifiasm"
-inputs: []
+doc: "HIFIASM is a de novo assembler for long reads.\n\nTool homepage: https://github.com/chhylp123/hifiasm"
+inputs:
+  - id: input_reads_1
+    type: File
+    doc: First input FASTQ file (e.g., R1)
+    inputBinding:
+      position: 1
+  - id: input_reads_2
+    type: File
+    doc: Second input FASTQ file (e.g., R2)
+    inputBinding:
+      position: 2
+  - id: input_reads_other
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Additional input FASTQ files
+    inputBinding:
+      position: 3
+  - id: adapter_length_to_remove
+    type:
+      - 'null'
+      - int
+    doc: Length of adapters that should be removed
+    default: 0
+    inputBinding:
+      position: 104
+      prefix: -z
+  - id: assembly_cleaning_rounds
+    type:
+      - 'null'
+      - int
+    doc: Round of assembly cleaning
+    default: 4
+    inputBinding:
+      position: 104
+      prefix: -a
+  - id: binned_kmer_frequency_lower_bound
+    type:
+      - 'null'
+      - int
+    doc: Lower bound of the binned k-mer's frequency
+    default: 2
+    inputBinding:
+      position: 104
+      prefix: -c
+  - id: binned_kmer_frequency_upper_bound
+    type:
+      - 'null'
+      - int
+    doc: Upper bound of the binned k-mer's frequency
+    default: 5
+    inputBinding:
+      position: 104
+      prefix: -d
+  - id: bloom_filter_bits
+    type:
+      - 'null'
+      - int
+    doc: Number of bits for bloom filter; 0 to disable
+    default: 37
+    inputBinding:
+      position: 104
+      prefix: -f
+  - id: break_contigs_high_coverage
+    type:
+      - 'null'
+      - int
+    doc: Break contigs at positions with >INT-fold coverage; work with 
+      '--m-rate'; -1 to disable
+    default: -1
+    inputBinding:
+      position: 104
+      prefix: --h-cov
+  - id: break_contigs_low_coverage
+    type:
+      - 'null'
+      - int
+    doc: Break contigs at positions with <INT-fold coverage; work with 
+      '--m-rate'; 0 to disable
+    default: 0
+    inputBinding:
+      position: 104
+      prefix: --b-cov
+  - id: break_contigs_overlap_rate
+    type:
+      - 'null'
+      - float
+    doc: Break contigs at positions with <=FLOAT*coverage exact overlaps; only 
+      work with '--b-cov' or '--h-cov'
+    default: 0.75
+    inputBinding:
+      position: 104
+      prefix: --m-rate
+  - id: chimeric_read_detection_flanking_regions
+    type:
+      - 'null'
+      - int
+    doc: Length of flanking regions for chimeric read detection
+    default: 256
+    inputBinding:
+      position: 104
+      prefix: --chem-f
+  - id: chimeric_reads_detection_support
+    type:
+      - 'null'
+      - int
+    doc: Detect chimeric reads with <=INT other reads support
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: --chem-c
+  - id: correction_rounds
+    type:
+      - 'null'
+      - int
+    doc: Round of correction
+    default: 3
+    inputBinding:
+      position: 104
+      prefix: -r
+  - id: detect_misjoined_unitigs_size
+    type:
+      - 'null'
+      - int
+    doc: Detect misjoined unitigs of >=INT in size; 0 to disable
+    default: 500000
+    inputBinding:
+      position: 104
+      prefix: --l-msjoin
+  - id: enable_post_join_step
+    type:
+      - 'null'
+      - boolean
+    doc: Post-join step for contigs which may improve N50; 0 to disable; 1 to 
+      enable
+    default: true
+    inputBinding:
+      position: 104
+      prefix: -u
+  - id: estimated_haploid_genome_size
+    type:
+      - 'null'
+      - string
+    doc: Estimated haploid genome size used for inferring read coverage
+    default: auto
+    inputBinding:
+      position: 104
+      prefix: --hg-size
+  - id: filter_ont_simplex_reads_mean_base_quality
+    type:
+      - 'null'
+      - int
+    doc: Filter out ONT simplex reads with a mean base quality score below <INT>
+    default: 10
+    inputBinding:
+      position: 104
+      prefix: --sc-cut
+  - id: filter_ont_simplex_reads_shorter_than
+    type:
+      - 'null'
+      - int
+    doc: Filter out ONT simplex reads shorter than <INT> for assembly
+    default: 1000
+    inputBinding:
+      position: 104
+      prefix: --rl-cut
+  - id: filter_ultra_long_reads_threshold
+    type:
+      - 'null'
+      - int
+    doc: Filter out <INT UL reads during the UL assembly
+    default: 0
+    inputBinding:
+      position: 104
+      prefix: --ul-cut
+  - id: forced_remove_unitigs_unexpected_haplotype_reads
+    type:
+      - 'null'
+      - int
+    doc: Forcedly remove unitigs with >INT unexpected haplotype-specific reads; 
+      ignore graph topology
+    default: 60
+    inputBinding:
+      position: 104
+      prefix: --t-occ
+  - id: hap1_kmer_dump
+    type:
+      - 'null'
+      - File
+    doc: Hap1/paternal k-mer dump generated by 'yak count'
+    inputBinding:
+      position: 104
+      prefix: '-1'
+  - id: hap1_read_names
+    type:
+      - 'null'
+      - File
+    doc: List of hap1/paternal read names
+    inputBinding:
+      position: 104
+      prefix: '-3'
+  - id: hap2_kmer_dump
+    type:
+      - 'null'
+      - File
+    doc: Hap2/maternal k-mer dump generated by 'yak count'
+    inputBinding:
+      position: 104
+      prefix: '-2'
+  - id: hap2_read_names
+    type:
+      - 'null'
+      - File
+    doc: List of hap2/maternal read names
+    inputBinding:
+      position: 104
+      prefix: '-4'
+  - id: hic_link_reweighting_rounds
+    type:
+      - 'null'
+      - int
+    doc: Rounds of reweighting Hi-C links
+    default: 3
+    inputBinding:
+      position: 104
+      prefix: --n-weight
+  - id: hic_perturbation_fraction_to_flip
+    type:
+      - 'null'
+      - float
+    doc: Fraction to flip for perturbation
+    default: 0.1
+    inputBinding:
+      position: 104
+      prefix: --f-perturb
+  - id: hic_perturbation_rounds
+    type:
+      - 'null'
+      - int
+    doc: Rounds of perturbation
+    default: 10000
+    inputBinding:
+      position: 104
+      prefix: --n-perturb
+  - id: hic_r1_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: File names of Hi-C R1
+    inputBinding:
+      position: 104
+      prefix: --h1
+  - id: hic_r2_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: File names of Hi-C R2
+    inputBinding:
+      position: 104
+      prefix: --h2
+  - id: hic_similarity_threshold_base_level
+    type:
+      - 'null'
+      - float
+    doc: Similarity threshold for homology detection in base-level; -1 to 
+      disable
+    default: 0.5
+    inputBinding:
+      position: 104
+      prefix: --s-base
+  - id: homozygous_read_coverage
+    type:
+      - 'null'
+      - string
+    doc: Homozygous read coverage
+    default: auto
+    inputBinding:
+      position: 104
+      prefix: --hom-cov
+  - id: ignore_saved_correction_and_overlaps
+    type:
+      - 'null'
+      - boolean
+    doc: Ignore saved read correction and overlaps
+    inputBinding:
+      position: 104
+      prefix: -i
+  - id: kmer_length
+    type:
+      - 'null'
+      - int
+    doc: k-mer length (must be <64)
+    inputBinding:
+      position: 104
+      prefix: -k
+  - id: low_quality_inconsistency_threshold
+    type:
+      - 'null'
+      - int
+    doc: Output contig regions with >=INT% inconsistency in BED format; 0 to 
+      disable
+    default: 70
+    inputBinding:
+      position: 104
+      prefix: --lowQ
+  - id: max_kmer_occurrence_ratio
+    type:
+      - 'null'
+      - float
+    doc: Drop k-mers occurring >FLOAT*coverage times
+    default: 5.0
+    inputBinding:
+      position: 104
+      prefix: -D
+  - id: max_overlap_drop_ratio
+    type:
+      - 'null'
+      - float
+    doc: Max overlap drop ratio
+    default: 0.8
+    inputBinding:
+      position: 104
+      prefix: -x
+  - id: max_overlaps_per_read
+    type:
+      - 'null'
+      - int
+    doc: Consider up to max(-D*coverage,-N) overlaps for each oriented read
+    default: 100
+    inputBinding:
+      position: 104
+      prefix: -N
+  - id: max_path_drop_ratio
+    type:
+      - 'null'
+      - float
+    doc: Max path drop ratio; higher number may make the assembly cleaner but 
+      may lead to more misassemblies
+    default: 0.6
+    inputBinding:
+      position: 104
+      prefix: --path-max
+  - id: max_tip_unitig_reads
+    type:
+      - 'null'
+      - int
+    doc: Remove tip unitigs composed of <=INT reads
+    default: 3
+    inputBinding:
+      position: 104
+      prefix: -n
+  - id: min_overlap_drop_ratio
+    type:
+      - 'null'
+      - float
+    doc: Min overlap drop ratio
+    default: 0.2
+    inputBinding:
+      position: 104
+      prefix: -y
+  - id: min_overlapped_reads_duplicate_haplotigs
+    type:
+      - 'null'
+      - int
+    doc: Min number of overlapped reads for duplicate haplotigs
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: -O
+  - id: min_path_drop_ratio
+    type:
+      - 'null'
+      - float
+    doc: Min path drop ratio; higher number may make the assembly cleaner but 
+      may lead to more misassemblies
+    default: 0.2
+    inputBinding:
+      position: 104
+      prefix: --path-min
+  - id: minimizer_window_size
+    type:
+      - 'null'
+      - int
+    doc: Minimizer window size
+    default: 51
+    inputBinding:
+      position: 104
+      prefix: -w
+  - id: non_telomeric_penalty
+    type:
+      - 'null'
+      - int
+    doc: Non-telomeric penalty
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: --telo-p
+  - id: number_of_haplotypes
+    type:
+      - 'null'
+      - int
+    doc: Number of haplotypes
+    default: 2
+    inputBinding:
+      position: 104
+      prefix: --n-hap
+  - id: ont_reads
+    type:
+      - 'null'
+      - boolean
+    doc: Assemble Oxford Nanopore reads
+    inputBinding:
+      position: 104
+      prefix: --ont
+  - id: output_prefix
+    type:
+      - 'null'
+      - string
+    doc: Prefix of output files
+    default: hifiasm.asm
+    inputBinding:
+      position: 104
+      prefix: -o
+  - id: output_primary_and_alternate_assembly
+    type:
+      - 'null'
+      - boolean
+    doc: Output a primary assembly and an alternate assembly
+    inputBinding:
+      position: 104
+      prefix: --primary
+  - id: output_scaffolding
+    type:
+      - 'null'
+      - boolean
+    doc: Output scaffolding
+    inputBinding:
+      position: 104
+      prefix: --dual-scaf
+  - id: pop_bubble_contig_size
+    type:
+      - 'null'
+      - int
+    doc: Pop bubbles of <INT in size in contig graphs
+    default: 10000000
+    inputBinding:
+      position: 104
+      prefix: -m
+  - id: pop_bubble_unitig_size
+    type:
+      - 'null'
+      - int
+    doc: Pop bubbles of <INT in size in unitig graphs
+    default: 0
+    inputBinding:
+      position: 104
+      prefix: -p
+  - id: purge_dups_coverage_upper_bound
+    type:
+      - 'null'
+      - string
+    doc: Coverage upper bound of Purge-dups
+    default: auto
+    inputBinding:
+      position: 104
+      prefix: --purge-max
+  - id: purge_level
+    type:
+      - 'null'
+      - int
+    doc: 'Purge level. 0: no purging; 1: light; 2/3: aggressive'
+    default: 0
+    inputBinding:
+      position: 104
+      prefix: -l
+  - id: remove_tip_contigs_reads
+    type:
+      - 'null'
+      - int
+    doc: Remove tip contigs composed of <=INT reads
+    default: 3
+    inputBinding:
+      position: 104
+      prefix: --ctg-n
+  - id: remove_tip_unitigs_ul_assembly
+    type:
+      - 'null'
+      - int
+    doc: Remove tip unitigs composed of <=INT reads for the UL assembly
+    default: 6
+    inputBinding:
+      position: 104
+      prefix: --ul-tip
+  - id: rescue_repetitive_kmer_occurrence
+    type:
+      - 'null'
+      - int
+    doc: Employ k-mers occurring <INT times to rescue repetitive overlaps
+    default: 2000
+    inputBinding:
+      position: 104
+      prefix: --max-kocc
+  - id: rng_seed
+    type:
+      - 'null'
+      - int
+    doc: RNG seed
+    default: 11
+    inputBinding:
+      position: 104
+      prefix: --seed
+  - id: scaffolding_max_gap_size
+    type:
+      - 'null'
+      - int
+    doc: Max gap size for scaffolding
+    default: 3000000
+    inputBinding:
+      position: 104
+      prefix: --scaf-gap
+  - id: similarity_threshold_duplicate_haplotigs
+    type:
+      - 'null'
+      - float
+    doc: Similarity threshold for duplicate haplotigs in read-level
+    inputBinding:
+      position: 104
+      prefix: -s
+  - id: telomere_max_drop
+    type:
+      - 'null'
+      - int
+    doc: Max drop
+    default: 2000
+    inputBinding:
+      position: 104
+      prefix: --telo-d
+  - id: telomere_min_score_reads
+    type:
+      - 'null'
+      - int
+    doc: Min score for telomere reads
+    default: 500
+    inputBinding:
+      position: 104
+      prefix: --telo-s
+  - id: telomere_motif_5_prime
+    type:
+      - 'null'
+      - string
+    doc: Telomere motif at 5'-end; CCCTAA for human
+    inputBinding:
+      position: 104
+      prefix: --telo-m
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: -t
+  - id: ultra_long_read_error_rate
+    type:
+      - 'null'
+      - float
+    doc: Error rate of Ultra-Long reads
+    default: 0.2
+    inputBinding:
+      position: 104
+      prefix: --ul-rate
+  - id: ultra_long_read_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: File names of Ultra-Long reads
+    inputBinding:
+      position: 104
+      prefix: --ul
+  - id: utilize_homology_for_trio_phasing_errors
+    type:
+      - 'null'
+      - boolean
+    doc: Utilize homology information to correct trio phasing errors
+    inputBinding:
+      position: 104
+      prefix: --trio-dual
 outputs:
   - id: stdout
     type: stdout

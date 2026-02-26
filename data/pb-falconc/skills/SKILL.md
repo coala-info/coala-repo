@@ -1,8 +1,9 @@
 ---
 name: pb-falconc
-description: The `pb-falconc` skill provides procedural knowledge for working with the C-optimized utilities used in Pacific Biosciences (PacBio) genome assembly.
+description: This tool provides C-optimized utilities for Pacific Biosciences genome assembly pipelines like FALCON and FALCON-Unzip. Use when user asks to install, update, or execute the underlying C binaries for PacBio secondary analysis and genome assembly.
 homepage: https://github.com/PacificBiosciences/pbbioconda
 ---
+
 
 # pb-falconc
 

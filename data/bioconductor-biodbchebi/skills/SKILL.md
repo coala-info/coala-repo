@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodbchebi
-description: the package is available on all platforms; click for details.
+description: The biodbChebi package provides a programmatic interface to the ChEBI database for retrieving chemical metadata and performing compound searches. Use when user asks to retrieve chemical entries by accession number, search for compounds by name or mass, or convert CAS and InChI identifiers to ChEBI IDs.
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbChebi.html
 ---
+
 
 # bioconductor-biodbchebi
 

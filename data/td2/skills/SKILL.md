@@ -1,8 +1,9 @@
 ---
 name: td2
-description: TD2 is a de novo open reading frame (ORF) finder designed to identify likely protein-coding regions in transcriptomic data.
+description: TD2 is a de novo open reading frame finder that identifies protein-coding regions in transcriptomic data using a pre-trained protein model and extreme value analysis. Use when user asks to identify coding sequences, extract long ORFs, predict peptides from transcripts, or integrate homology search results into ORF predictions.
 homepage: https://github.com/Markusjsommer/TD2
 ---
+
 
 # td2
 

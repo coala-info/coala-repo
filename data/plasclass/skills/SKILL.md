@@ -1,8 +1,9 @@
 ---
 name: plasclass
-description: PlasClass is a classification tool that distinguishes between plasmid and chromosomal sequences.
+description: PlasClass classifies DNA sequences as either plasmid or chromosomal based on k-mer frequencies across multiple length scales. Use when user asks to distinguish between plasmid and chromosomal sequences, classify metagenomic fragments, or calculate plasmid probability scores for FASTA files.
 homepage: https://github.com/Shamir-Lab/PlasClass
 ---
+
 
 # plasclass
 

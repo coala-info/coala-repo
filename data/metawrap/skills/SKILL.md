@@ -1,8 +1,9 @@
 ---
 name: metawrap
-description: MetaWRAP is a modular wrapper suite designed to streamline the complex workflow of genome-resolved metagenomics.
+description: MetaWRAP is a modular pipeline designed to streamline genome-resolved metagenomics by assembling, binning, and refining environmental genomes. Use when user asks to assemble metagenomic reads, run multiple binning tools, refine genomic bins for higher completion, or perform downstream functional annotation and taxonomic classification.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omicspcadata
-description: the package is available on all platforms; click for details.
+description: This package provides example multi-omics datasets for integrative analysis using the OMICsPCA framework. Use when user asks to load sample multi-omics data, access datasets for OMICsPCA tutorials, or retrieve example data for integrative principal component analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/OMICsPCAdata.html
 ---
+
 
 # bioconductor-omicspcadata
 

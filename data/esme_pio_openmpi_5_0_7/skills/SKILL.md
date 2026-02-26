@@ -1,8 +1,9 @@
 ---
 name: esme_pio_openmpi_5_0_7
-description: The `esme_pio_openmpi_5_0_7` package provides the ParallelIO (PIO) library, a high-level interface designed to simplify the complexities of parallel I/O in scientific simulations.
+description: This package provides a high-level interface for managing parallel I/O in scientific simulations using OpenMPI 5.0.7. Use when user asks to simplify parallel data distribution, perform I/O through a netCDF-like API, or optimize I/O performance for structured grid models.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_openmpi_5_0_7
 

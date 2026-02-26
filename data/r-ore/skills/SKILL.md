@@ -1,8 +1,9 @@
 ---
 name: r-ore
-description: "Provides an alternative to R's built-in functionality for handling     regular expressions, based on the Onigmo library. Offers first-class     compiled regex objects, partial matching and function-based substitutions,     amongst other features.</p>"
+description: The r-ore package provides an interface to the Onigmo regular expression library for high-performance string manipulation in R. Use when user asks to perform regex matching with compiled objects, use Ruby-style syntax, execute function-based substitutions, or handle complex character encodings.
 homepage: https://cloud.r-project.org/web/packages/ore/index.html
 ---
+
 
 # r-ore
 

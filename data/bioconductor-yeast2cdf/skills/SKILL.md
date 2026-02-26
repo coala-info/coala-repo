@@ -1,8 +1,9 @@
 ---
 name: bioconductor-yeast2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Yeast Genome 2.0 Array. Use when user asks to analyze Affymetrix Yeast 2.0 microarray data, map probe sets to genomic locations, or load the yeast2 CDF environment.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/yeast2cdf.html
 ---
+
 
 # bioconductor-yeast2cdf
 

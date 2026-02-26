@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgloadchain
-description: The `hgLoadChain` utility is part of the UCSC Genome Browser "kent" toolset.
+description: `hgLoadChain` parses generic chain files and imports them into a structured SQL table. Use when user asks to import chain files into a database, load chain files for genome assembly hubs, prepare chain files for comparative genomics, or visualize synteny and cross-species mappings.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-hgloadchain
 

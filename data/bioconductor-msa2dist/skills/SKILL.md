@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msa2dist
-description: the package is available on all platforms; click for details.
+description: MSA2dist calculates pairwise distances and sequence divergence metrics from multiple sequence alignments. Use when user asks to calculate pairwise distances, compute dN/dS ratios, or convert multiple sequence alignments into distance matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/MSA2dist.html
 ---
+
 
 # bioconductor-msa2dist
 

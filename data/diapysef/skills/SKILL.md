@@ -1,8 +1,9 @@
 ---
 name: diapysef
-description: The `diapysef` toolset is a specialized Python library and collection of scripts designed for the analysis, conversion, and visualization of diaPASEF (Data-Independent Acquisition Parallel Accumulation Serial Fragmentation) data produced by Bruker TIMS-TOF mass spectrometers.
+description: diapysef is a Python toolset for analyzing, converting, and visualizing diaPASEF mass spectrometry data from Bruker TIMS-TOF instruments. Use when user asks to convert proprietary Bruker data to mzML or sqMass formats, extract specific ion mobility frames, or generate quality control histograms for diaPASEF swaths.
 homepage: https://github.com/Roestlab/dia-pasef
 ---
+
 
 # diapysef
 

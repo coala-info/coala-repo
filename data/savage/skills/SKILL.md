@@ -1,8 +1,9 @@
 ---
 name: savage
-description: SAVAGE (Strain Aware VirAl GEnome assembly) is a specialized bioinformatics tool designed to resolve the genetic diversity within viral populations.
+description: SAVAGE is a bioinformatics tool designed to reconstruct individual viral haplotypes and resolve genetic diversity within viral populations from high-coverage sequencing data. Use when user asks to perform strain-aware viral genome assembly, distinguish between closely related viral strains, or reconstruct viral quasispecies.
 homepage: https://github.com/HaploConduct/HaploConduct/tree/master/savage
 ---
+
 
 # savage
 

@@ -3,7 +3,7 @@
 ## paidiverpy
 
 ### Tool Description
-A tool for analyzing pathogen diversity (Note: The provided help text contains only system error messages regarding disk space and container conversion, so specific arguments could not be extracted).
+Paidiverpy image preprocessing
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/paidiverpy:0.2.1--pyhdfd78af_0
@@ -12,15 +12,31 @@ A tool for analyzing pathogen diversity (Note: The provided help text contains o
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/paidiverpy/overview
-- **Total Downloads**: 265
+- **Total Downloads**: 266
 - **Last updated**: 2025-09-24
 - **GitHub**: https://github.com/paidiver/paidiverpy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/1e0a94d4f48474651586fd972de021f4595b38341305529068f84048a6c4a01c: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/paidiverpy:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-387432675: no space left on device
+usage: paidiverpy [-h] [-c CONFIGURATION_FILE] [-bt BENCHMARK_TEST] [-v]
+                  [-gui [GUI ...]]
+
+Paidiverpy image preprocessing
+
+options:
+  -h, --help            show this help message and exit
+  -c CONFIGURATION_FILE, --configuration_file CONFIGURATION_FILE
+                        Path to the configuration file 'config.yml'
+  -bt BENCHMARK_TEST, --benchmark_test BENCHMARK_TEST
+                        OPTIONAL: ONLY FOR BENCHMARK TESTING. Information for
+                        benchmark tests as a JSON string. E.g.,
+                        '{"cluster_type": "slurm", "cores": [1,2,4,8,16,32],
+                        "processes": [1,2,4,8,16,32], "memory":
+                        [1,2,4,8,16,32,64], "scale": [1,2,4,8] }'
+  -v, --validate        OPTIONAL: ONLY FOR CONFIGURATION FILE CHECKING. Check
+                        the configuration file.
+  -gui [GUI ...], --gui [GUI ...]
+                        OPTIONAL: ONLY FOR RUNNING THE GRAPHICAL USER
+                        INTERFACE (GUI) OF PAIDIVERPY.
 ```
 

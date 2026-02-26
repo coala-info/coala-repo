@@ -1,8 +1,9 @@
 ---
 name: count_constant_sites
-description: The `count_constant_sites` tool processes a nucleotide Multiple Sequence Alignment (MSA) in FASTA format to identify columns that are entirely constant (containing only one type of nucleotide across all sequences).
+description: This tool counts the number of constant nucleotide sites in a FASTA-formatted multiple sequence alignment. Use when user asks to count constant A, C, G, and T sites or provide constant site counts for phylogenetic tree reconstruction tools like IQ-TREE.
 homepage: https://github.com/pvanheus/count_constant_sites
 ---
+
 
 # count_constant_sites
 

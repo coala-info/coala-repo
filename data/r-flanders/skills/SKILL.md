@@ -1,8 +1,9 @@
 ---
 name: r-flanders
-description: R package flanders (documentation from project home).
+description: This R package converts finemapping results into AnnData objects and performs pairwise colocalization analysis. Use when user asks to convert finemapping RDS files to AnnData format, aggregate credible set metadata, or run colocalization tests on genetic association data.
 homepage: https://cran.r-project.org/web/packages/flanders/index.html
 ---
+
 
 # r-flanders
 

@@ -1,8 +1,9 @@
 ---
 name: leaff
-description: Leaff is a specialized diffing utility designed for the Lean theorem prover environment.
+description: Leaff is a specialized diffing utility that analyzes compiled Lean modules to provide a high-level summary of logical changes between project versions. Use when user asks to compare Lean library versions, identify added or removed theorems, detect renamed lemmas, or verify that a refactor preserved the intended logic.
 homepage: https://github.com/alexjbest/leaff
 ---
+
 
 # leaff
 

@@ -1,8 +1,9 @@
 ---
 name: biofluff
-description: Biofluff (also known as `fluff`) is a specialized suite of Python scripts tailored for the visual exploration of Next-Generation Sequencing (NGS) experiments.
+description: Biofluff is a suite of Python scripts designed for the visual exploration and clustering of Next-Generation Sequencing data. Use when user asks to generate clustered heatmaps of epigenetic marks, visualize signal profiles across genomic features, or create bandplots to summarize signal variance.
 homepage: https://github.com/simonvh/fluff
 ---
+
 
 # biofluff
 

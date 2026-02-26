@@ -1,8 +1,9 @@
 ---
 name: gimmemotifs-minimal
-description: GimmeMotifs is a specialized suite of tools designed to identify and analyze transcription factor motifs within genomic regions.
+description: GimmeMotifs is a suite of tools designed to identify, scan, and analyze transcription factor motifs within genomic sequences. Use when user asks to perform de novo motif discovery, scan sequences for known motifs, identify differentially enriched motifs, or compare motifs against established databases.
 homepage: https://github.com/vanheeringen-lab/gimmemotifs
 ---
+
 
 # gimmemotifs-minimal
 

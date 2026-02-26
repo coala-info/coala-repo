@@ -1,8 +1,9 @@
 ---
 name: r-codedepends
-description: R package codedepends (documentation from project home).
+description: This tool performs static analysis of R code to identify variable dependencies, inputs, and outputs across scripts. Use when user asks to analyze R script workflows, track variable relationships, identify minimal code for specific results, or visualize dependency graphs.
 homepage: https://cran.r-project.org/web/packages/codedepends/index.html
 ---
+
 
 # r-codedepends
 

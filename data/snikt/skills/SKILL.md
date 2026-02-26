@@ -1,8 +1,9 @@
 ---
 name: snikt
-description: snikt (Slice Nucleotides Into Klassifiable Tequences) is a specialized utility for detecting and removing systemic contamination in DNA/RNA sequencing reads.
+description: snikt detects and removes systemic contamination in DNA or RNA sequencing reads by identifying biases in nucleotide composition and quality scores. Use when user asks to identify contamination in sequencing reads, trim adapters from long-read data, or generate quality control reports for FASTQ files.
 homepage: https://github.com/piyuranjan/SNIKT
 ---
+
 
 # snikt
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-greylistchip
-description: the package is available on all platforms; click for details.
+description: This tool identifies and generates sample-specific grey lists of anomalous signal regions from ChIP-seq input libraries to filter out artifacts. Use when user asks to identify problematic genomic regions in control samples, generate a grey list for ChIP-seq analysis, or mask high-signal artifacts to improve peak calling accuracy.
 homepage: https://bioconductor.org/packages/release/bioc/html/GreyListChIP.html
 ---
+
 
 # bioconductor-greylistchip
 

@@ -1,8 +1,9 @@
 ---
 name: jms-metabolite-services
-description: `jms-metabolite-services` (JMS) is a specialized Python library designed for the metabolomics community.
+description: jms-metabolite-services maps identifiers across metabolic models and links LC-MS peaks to chemical entities through mass and empirical compound searches. Use when user asks to annotate feature tables, map metabolite identifiers, or link mass spectrometry peaks to compound databases.
 homepage: https://github.com/shuzhao-li/JMS
 ---
+
 
 # jms-metabolite-services
 

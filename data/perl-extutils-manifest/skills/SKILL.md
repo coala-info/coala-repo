@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-manifest
-description: This skill provides procedural knowledge for managing the `MANIFEST` and `MANIFEST.SKIP` files within Perl projects.
+description: This tool manages MANIFEST and MANIFEST.SKIP files to ensure Perl project distributions contain the correct source files while excluding unnecessary artifacts. Use when user asks to create or update a manifest, verify manifest integrity, check for skipped files, or manage file exclusions in a Perl package.
 homepage: https://metacpan.org/release/ExtUtils-Manifest
 ---
+
 
 # perl-extutils-manifest
 

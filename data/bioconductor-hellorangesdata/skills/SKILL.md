@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hellorangesdata
-description: the package is available on all platforms; click for details.
+description: This package provides experimental DnaseI hypersensitivity data and UCSC genome annotation tracks for the HelloRanges tutorial. Use when user asks to locate example BED files, access CpG islands or Refseq exons, or load GWAS SNP data for genomic interval analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HelloRangesData.html
 ---
+
 
 # bioconductor-hellorangesdata
 

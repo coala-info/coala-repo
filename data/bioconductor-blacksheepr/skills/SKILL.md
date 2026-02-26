@@ -1,8 +1,9 @@
 ---
 name: bioconductor-blacksheepr
-description: the package is available on all platforms; click for details.
+description: This tool performs Differential Extreme Value Analysis (DEVA) to identify features with significant shifts in outlier proportions between biological groups. Use when user asks to perform outlier analysis on proteomics or RNAseq data, identify features with extreme values, or run the DEVA workflow.
 homepage: https://bioconductor.org/packages/release/bioc/html/blacksheepr.html
 ---
+
 
 # bioconductor-blacksheepr
 

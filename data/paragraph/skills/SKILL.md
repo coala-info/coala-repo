@@ -1,8 +1,9 @@
 ---
 name: paragraph
-description: Paragraph is a specialized genotyping suite that addresses the limitations of linear reference mapping for structural variants (SVs).
+description: Paragraph genotypes structural variants by realigning short-read data to directed acyclic graphs representing genomic variations. Use when user asks to genotype structural variants from a VCF, perform graph-based read realignment, or prepare sample manifests for population-scale genomic analysis.
 homepage: https://github.com/Illumina/paragraph
 ---
+
 
 # paragraph
 

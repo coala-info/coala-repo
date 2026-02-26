@@ -1,12 +1,12 @@
 # longgf CWL Generation Report
 
-## longgf
+## longgf_LongGF
 
 ### Tool Description
-A tool for detecting genomic fusions from long-read sequencing data (Note: The provided help text contains only container execution errors and no usage information).
+LongGF tool for processing BAM and GTF files.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/longgf:0.1.2--h9948957_9
+- **Docker Image**: quay.io/biocontainers/longgf:0.1.2--h84372a0_6
 - **Homepage**: https://github.com/WGLab/LongGF
 - **Package**: https://anaconda.org/channels/bioconda/packages/longgf/overview
 - **Validation**: PASS
@@ -18,11 +18,6 @@ A tool for detecting genomic fusions from long-read sequencing data (Note: The p
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/longgf:0.1.2--h9948957_9 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2176587156: no space left on device
+Usage: LongGF <input_bam> <input_gtf> <min-overlap-len> <bin_size> <min-map-len> [pseudogene:0(default)/1/other(no filter)] [Secondary_alignment:0(default)] [min_sup_read:2(default)] [output_flag:0]
 ```
 
-
-## Metadata
-- **Skill**: generated

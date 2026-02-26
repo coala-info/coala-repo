@@ -1,8 +1,9 @@
 ---
 name: bioconductor-katdetectr
-description: the package is available on all platforms; click for details.
+description: bioconductor-katdetectr detects, characterizes, and visualizes localized hypermutated regions known as kataegis in genomic data using changepoint detection. Use when user asks to identify clusters of high mutation density, analyze intermutation distances from VCF or MAF files, or generate rainfall plots for somatic mutations.
 homepage: https://bioconductor.org/packages/release/bioc/html/katdetectr.html
 ---
+
 
 # bioconductor-katdetectr
 

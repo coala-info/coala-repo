@@ -2,10 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bedItemOverlapCount
 label: ucsc-beditemoverlapcount
-doc: "The provided help text does not contain usage information due to a system error
-  (no space left on device). This tool is part of the UCSC Genome Browser utilities
-  and is typically used to count overlaps between BED items.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Count how many items in a BED file overlap each other. Note: The provided help
+  text was a system error message; parameters are based on standard tool documentation.\n\
+  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: database_or_file
+    type: string
+    doc: The database name or the path to a BED file.
+    inputBinding:
+      position: 1
+  - id: table
+    type:
+      - 'null'
+      - string
+    doc: The table name (if a database was provided as the first argument).
+    inputBinding:
+      position: 2
+  - id: chrom_size
+    type:
+      - 'null'
+      - File
+    doc: Use chromosome sizes from the specified file.
+    inputBinding:
+      position: 103
+      prefix: -chromSize
 outputs:
   - id: stdout
     type: stdout

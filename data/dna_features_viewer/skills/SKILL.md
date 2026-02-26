@@ -1,8 +1,9 @@
 ---
 name: dna_features_viewer
-description: The `dna_features_viewer` skill enables the programmatic generation of clear and readable DNA sequence maps.
+description: DNA Features Viewer generates clear, readable, and customizable DNA sequence maps from genomic data. Use when user asks to visualize DNA features, create circular plasmid maps, parse GenBank or GFF files for plotting, or generate multi-line sequence diagrams.
 homepage: https://github.com/Edinburgh-Genome-Foundry/DnaFeaturesViewer
 ---
+
 
 # dna_features_viewer
 

@@ -1,8 +1,9 @@
 ---
 name: peglit
-description: peglit (pegRNA Linker Identification Tool) is a computational utility designed to optimize the design of engineered pegRNAs (epegRNAs).
+description: peglit identifies optimal linker sequences for engineered pegRNAs to prevent internal base-pairing interference using simulated annealing. Use when user asks to identify linkers for epegRNAs, score existing epegRNA designs, or perform batch processing of pegRNA sequences.
 homepage: https://github.com/sshen8/peglit/
 ---
+
 
 # peglit
 

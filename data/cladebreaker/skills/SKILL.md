@@ -1,8 +1,9 @@
 ---
 name: cladebreaker
-description: Cladebreaker is a Nextflow-based bioinformatics pipeline designed to streamline the comparative genomics of bacterial isolates.
+description: Cladebreaker is a Nextflow-based pipeline that identifies closely related bacterial genomes using the WhatsGNU database and performs pangenome or reference-based comparative analysis. Use when user asks to identify related genomes, perform pangenome analysis with Roary, or execute reference-based alignments for bacterial isolates.
 homepage: https://github.com/andriesfeder/cladebreaker
 ---
+
 
 # cladebreaker
 

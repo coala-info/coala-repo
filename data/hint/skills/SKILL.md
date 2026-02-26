@@ -1,8 +1,9 @@
 ---
 name: hint
-description: HiNT (Hi-C for copy Number variation and Translocation detection) is a specialized computational framework for extracting genomic structural variants from Hi-C data.
+description: HiNT extracts genomic structural variants, including copy number variations and translocations, from Hi-C interaction data. Use when user asks to detect copy number variations, identify chromosomal translocations, or predict genomic breakpoints from Hi-C matrices.
 homepage: https://github.com/suwangbio/HiNT_py3
 ---
+
 
 # hint
 

@@ -1,8 +1,9 @@
 ---
 name: zga
-description: ZGA is a streamlined pipeline designed for bacterial and archaeal genomics.
+description: ZGA automates the entire process of bacterial and archaeal genome assembly and annotation from raw sequencing reads. Use when user asks to perform end-to-end genome assembly and annotation, perform hybrid or long-read only assembly, annotate an existing genome, preprocess sequencing reads, manage memory usage, merge paired-end reads, perform fast read correction, or specify the genomic domain.
 homepage: https://github.com/laxeye/zga
 ---
+
 
 # zga
 

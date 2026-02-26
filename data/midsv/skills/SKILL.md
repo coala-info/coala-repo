@@ -1,8 +1,9 @@
 ---
 name: midsv
-description: The `midsv` skill enables the transformation of sequence alignments into a specialized comma-separated format called MIDSV (Match, Insertion, Deletion, Substitution, and inVersion).
+description: midsv transforms sequence alignments into a reference-length-consistent format that represents matches, insertions, deletions, substitutions, and inversions. Use when user asks to transform SAM files into MIDSV format, extract Phred quality scores from alignments, or generate VCF files for variant analysis.
 homepage: https://github.com/akikuno/mids
 ---
+
 
 # midsv
 

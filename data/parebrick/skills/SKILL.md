@@ -1,8 +1,9 @@
 ---
 name: parebrick
-description: PaReBrick (PArallel REarrangements and BReakpoints Identification Toolkit) is a bioinformatics tool designed to detect and rank parallel genomic rearrangement events in bacterial populations.
+description: PaReBrick identifies and ranks parallel genomic rearrangement events, such as inversions and deletions, within bacterial populations using a phylogenetic tree. Use when user asks to detect parallel rearrangements, identify genomic breakpoints, or analyze phyletic pattern consistency across phylogenetically distant strains.
 homepage: https://github.com/ctlab/parallel-rearrangements
 ---
+
 
 # parebrick
 

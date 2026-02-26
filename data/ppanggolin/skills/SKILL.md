@@ -1,8 +1,9 @@
 ---
 name: ppanggolin
-description: PPanGGOLiN (Partitioned PanGenome Graph of Linked Neighbors) is a suite of tools designed to model microbial species diversity.
+description: PPanGGOLiN is a suite of tools that uses a statistical approach and genomic context to model and partition microbial pangenomes. Use when user asks to build a partitioned pangenome graph, predict regions of genomic plasticity, identify conserved modules, or analyze large-scale datasets including metagenomic assembled genomes.
 homepage: https://github.com/labgem/PPanGGOLiN
 ---
+
 
 # ppanggolin
 

@@ -1,9 +1,9 @@
 # imfusion CWL Generation Report
 
-## imfusion
+## imfusion_insertions
 
 ### Tool Description
-A tool for identifying insertional mutagenesis in fusion genes (Note: The provided text was a container runtime error log and did not contain help information).
+imfusion
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1
@@ -18,11 +18,105 @@ A tool for identifying insertional mutagenesis in fusion genes (Note: The provid
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3877958698: no space left on device
+usage: imfusion [-h] [--version] {ctg,insertions,expression,build,merge}
+
+positional arguments:
+  {ctg,insertions,expression,build,merge}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+```
+
+
+## imfusion_expression
+
+### Tool Description
+imfusion-expression: error: the following arguments are required: --sample_dir, --reference
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1
+- **Homepage**: https://github.com/iamsh4shank/Imfusion
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: imfusion-expression [-h] [--version] --sample_dir SAMPLE_DIR
+                           --reference REFERENCE [--output OUTPUT] [--paired]
+                           [--stranded {stranded,reverse,unstranded}]
+imfusion-expression: error: the following arguments are required: --sample_dir, --reference
+```
+
+
+## imfusion_build
+
+### Tool Description
+imfusion
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1
+- **Homepage**: https://github.com/iamsh4shank/Imfusion
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: imfusion [-h] [--version] {expression,merge,insertions,ctg,build}
+
+positional arguments:
+  {expression,merge,insertions,ctg,build}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+```
+
+
+## imfusion_ctg
+
+### Tool Description
+imfusion-ctg: error: the following arguments are required: --insertions, --reference, --output
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1
+- **Homepage**: https://github.com/iamsh4shank/Imfusion
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: imfusion-ctg [-h] [--version] --insertions INSERTIONS --reference
+                    REFERENCE [--gene_ids GENE_IDS [GENE_IDS ...]] --output
+                    OUTPUT [--threshold THRESHOLD] [--pattern PATTERN]
+                    [--window WINDOW WINDOW]
+                    [--chromosomes CHROMOSOMES [CHROMOSOMES ...]]
+                    [--min_depth MIN_DEPTH] [--expression EXPRESSION]
+                    [--de_threshold DE_THRESHOLD]
+imfusion-ctg: error: the following arguments are required: --insertions, --reference, --output
+```
+
+
+## imfusion_merge
+
+### Tool Description
+Merges multiple samples into a single imfusion object.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/imfusion:0.3.2--pyhdfd78af_1
+- **Homepage**: https://github.com/iamsh4shank/Imfusion
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: imfusion-merge [-h] [--version] --sample_dirs SAMPLE_DIRS
+                      [SAMPLE_DIRS ...] --output OUTPUT
+                      [--names NAMES [NAMES ...]]
+                      [--output_expression OUTPUT_EXPRESSION]
+imfusion-merge: error: the following arguments are required: --sample_dirs, --output
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

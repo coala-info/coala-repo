@@ -1,8 +1,9 @@
 ---
 name: netcdf-metadata-info
-description: The `netcdf-metadata-info` tool (often invoked as `nc_info`) is a specialized utility designed to inspect the contents of NetCDF files.
+description: The netcdf-metadata-info tool extracts variable names and dimension information from NetCDF files into a concise tabular format. Use when user asks to inspect NetCDF metadata, extract variable names and dimension sizes, or summarize the structure of scientific datasets.
 homepage: https://github.com/Alanamosse/Netcdf-Metadata-Info/
 ---
+
 
 # netcdf-metadata-info
 

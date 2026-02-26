@@ -1,8 +1,9 @@
 ---
 name: genoflu
-description: GenoFLU is a specialized bioinformatics pipeline developed by the USDA for the classification of highly pathogenic avian influenza (HPAI) H5N1.
+description: GenoFLU is a bioinformatics pipeline that classifies highly pathogenic avian influenza H5N1 genotypes by comparing viral gene segments against a curated reference database. Use when user asks to classify H5N1 influenza genotypes, identify viral reassortment events, or analyze avian influenza genome segments using BLAST.
 homepage: https://github.com/USDA-VS/GenoFLU
 ---
+
 
 # genoflu
 

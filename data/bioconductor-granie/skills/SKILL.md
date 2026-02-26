@@ -1,8 +1,9 @@
 ---
 name: bioconductor-granie
-description: the package is available on all platforms; click for details.
+description: The GRaNIE package reconstructs enhancer-mediated gene regulatory networks by integrating ATAC-seq and RNA-seq data to link transcription factors, regulatory elements, and target genes. Use when user asks to infer tripartite gene regulatory networks, identify TF-peak or peak-gene connections, integrate multi-modal genomic data, or visualize enhancer-mediated networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/GRaNIE.html
 ---
+
 
 # bioconductor-granie
 

@@ -1,8 +1,9 @@
 ---
 name: octopusv
-description: OctopuSV is a specialized toolkit designed to address the lack of standardization in structural variant (SV) calling.
+description: "OctopuSV standardizes, merges, and analyzes structural variant calls from multiple tools into a unified format. Use when user asks to standardize VCF files, merge structural variants across callers or samples, extract somatic variants, or generate structural variant statistics and reports."
 homepage: https://github.com/ylab-hi/octopusV
 ---
+
 
 # octopusv
 

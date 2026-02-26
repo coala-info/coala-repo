@@ -2,15 +2,49 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tracecomp
 label: phylobayes-mpi_tracecomp
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a container runtime error log. Phylobayes tracecomp is typically used to compare
-  several independent MCMC chains and assess convergence.\n\nTool homepage: https://github.com/bayesiancook/pbmpi"
-inputs: []
+doc: "measure the effective sizes and overlap between 95% CI of several independent
+  chains\n\nTool homepage: https://github.com/bayesiancook/pbmpi"
+inputs:
+  - id: chain_names
+    type:
+      type: array
+      items: string
+    doc: Names of the chains to compare
+    inputBinding:
+      position: 1
+  - id: burnin
+    type:
+      - 'null'
+      - int
+    doc: burnin period
+    default: 20% of the chain
+    inputBinding:
+      position: 102
+      prefix: -x
+  - id: every
+    type:
+      - 'null'
+      - int
+    doc: sample every Nth state after burnin
+    inputBinding:
+      position: 102
+      prefix: -x
+  - id: until
+    type:
+      - 'null'
+      - int
+    doc: stop sampling at state N
+    inputBinding:
+      position: 102
+      prefix: -x
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: detailed output into file
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylobayes-mpi:1.9--h5c6ebe3_0
-stdout: phylobayes-mpi_tracecomp.out

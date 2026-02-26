@@ -1,8 +1,9 @@
 ---
 name: conduit-assembler
-description: CONDUIT (CONsensus Decomposition Utility In Transcriptome-assembly) is a tool for building transcriptomes independent of a reference genome.
+description: CONDUIT is a tool for de novo transcriptome assembly that decomposes gene-level clusters into distinct isoforms using long-read or hybrid sequencing data. Use when user asks to build a transcriptome without a reference genome, perform hybrid assembly with Illumina and ONT reads, or identify isoforms from pre-clustered RNA-seq data.
 homepage: https://github.com/NatPRoach/conduit
 ---
+
 
 # conduit-assembler
 

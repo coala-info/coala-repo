@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mta10transcriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Mouse Transcriptome Array 1.0 at the transcript cluster level. Use when user asks to map mouse transcript cluster identifiers to gene symbols, retrieve genomic coordinates for MTA 1.0 probes, or perform functional annotation for this specific microarray platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mta10transcriptcluster.db.html
 ---
+
 
 # bioconductor-mta10transcriptcluster.db
 

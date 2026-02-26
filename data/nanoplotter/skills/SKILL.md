@@ -1,8 +1,9 @@
 ---
 name: nanoplotter
-description: nanoplotter is a specialized Python library designed for the visualization of Oxford Nanopore Technologies (ONT) sequencing data.
+description: Nanoplotter is a Python library used to create high-quality visualizations and statistical plots for Oxford Nanopore sequencing data. Use when user asks to visualize read length distributions, create bivariate scatter plots of sequencing metrics, generate temporal throughput plots, or produce spatial heatmaps of flowcell activity.
 homepage: https://github.com/wdecoster/nanoplotter
 ---
+
 
 # nanoplotter
 

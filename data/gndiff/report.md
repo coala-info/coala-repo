@@ -3,7 +3,14 @@
 ## gndiff
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for gndiff. It contains system log messages and a fatal error regarding a container build failure (no space left on device).
+Extracts scientific names, their IDs and families from the query and reference
+files, prints out a match of a query data to the reference data.
+
+The files can be in comma-separated (CSV), tab-separated (TSV) formats, or
+just contain name-strings only (one per line).
+
+TSV/CSV files must contain 'ScientificName' field, 'Family' and 'TaxonID'
+fields are also ingested.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gndiff:0.3.0--he881be0_1
@@ -18,11 +25,25 @@ The provided text does not contain help information or usage instructions for gn
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gndiff:0.3.0--he881be0_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1560556798: no space left on device
+Extracts scientific names, their IDs and families from the query and reference
+files, prints out a match of a query data to the reference data.
+
+The files can be in comma-separated (CSV), tab-separated (TSV) formats, or
+just contain name-strings only (one per line).
+
+TSV/CSV files must contain 'ScientificName' field, 'Family' and 'TaxonID'
+fields are also ingested.
+
+Usage:
+  gndiff query_file reference_file [flags]
+
+Flags:
+  -f, --format string   Sets output format. Can be one of:
+                        'csv', 'tsv', 'compact', 'pretty'
+                        default is 'csv'.
+  -h, --help            help for gndiff
+  -p, --port int        Port to run web GUI.
+  -q, --quiet           Do not output info and warning logs.
+  -V, --version         shows build version and date, ignores other flags.
 ```
 
-
-## Metadata
-- **Skill**: generated

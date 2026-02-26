@@ -3,7 +3,7 @@
 ## corgi
 
 ### Tool Description
-The provided text is an error log from a container build process (Singularity/Apptainer) rather than a command-line help menu. Consequently, no specific arguments, flags, or options could be extracted from this text.
+Classify DNA sequences using a pretrained model.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/corgi:0.4.3--pyhdfd78af_0
@@ -18,9 +18,32 @@ The provided text is an error log from a container build process (Singularity/Ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/corgi:0.4.3--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/9a4edb9320a1be9b52d2ae29f5bc1bc43fabb58692aadf4dbce3b3e2f8a1493f3926244701: no space left on device
+Usage: corgi [OPTIONS]
+
+Options:
+  --gpu / --no-gpu                Whether or not to use a GPU for processing
+                                  if available.  \[default: gpu]
+  --pretrained TEXT               The location (URL or filepath) of a
+                                  pretrained model.
+  --reload / --no-reload          Should the pretrained model be downloaded
+                                  again if it is online and already present
+                                  locally.  \[default: no-reload]
+  --file PATH                     A fasta file with sequences to be
+                                  classified.
+  --max-seqs INTEGER
+  --batch-size INTEGER            \[default: 1]
+  --max-length INTEGER            \[default: 5000]
+  --min-length INTEGER            \[default: 128]
+  --output-dir PATH               A path to output the results as a CSV.
+  --csv PATH                      A path to output the results as a CSV. If
+                                  not given then a default name is chosen
+                                  inside the output directory.
+  --save-filtered / --no-save-filtered
+                                  Whether or not to save the filtered
+                                  sequences.  \[default: save-filtered]
+  --threshold FLOAT               The threshold to use for filtering. If not
+                                  given, then only the most likely category
+                                  used for filtering.
+  --help                          Show this message and exit.
 ```
 

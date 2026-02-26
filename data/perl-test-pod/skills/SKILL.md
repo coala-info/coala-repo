@@ -1,8 +1,9 @@
 ---
 name: perl-test-pod
-description: This skill provides guidance on using `Test::Pod` to verify the integrity of Perl documentation.
+description: This tool verifies the syntax and integrity of Perl Plain Old Documentation (POD) files. Use when user asks to check POD files for errors, validate documentation syntax, or integrate POD testing into a Perl test suite.
 homepage: http://search.cpan.org/dist/Test-Pod/
 ---
+
 
 # perl-test-pod
 

@@ -1,8 +1,9 @@
 ---
 name: phcue-ck
-description: The `phcue-ck` skill provides a streamlined interface for querying the ENA API to find raw data locations.
+description: The phcue-ck tool queries the ENA API to retrieve raw data locations and generate download manifests for sequencing accessions. Use when user asks to find FTP links for sequencing accessions, resolve accessions into download manifests, or generate structured output for raw data downloads.
 homepage: https://lgi-onehealth.github.io/phcue-ck/
 ---
+
 
 # phcue-ck
 

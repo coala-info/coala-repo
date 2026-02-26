@@ -1,8 +1,10 @@
 ---
 name: tinker
-description: Tinker is a comprehensive suite of programs designed for molecular design and simulation.
+description: Tinker is a comprehensive suite of programs for molecular design and simulation. Use when user asks to minimize energy, run molecular dynamics simulations, analyze energy, convert file formats, or perform vibrational analysis.
 homepage: https://dasher.wustl.edu/tinker/
 ---
+
+
 
 # tinker
 

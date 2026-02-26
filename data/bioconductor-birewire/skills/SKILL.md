@@ -1,8 +1,9 @@
 ---
 name: bioconductor-birewire
-description: the package is available on all platforms; click for details.
+description: BiRewire randomizes bipartite, undirected, or directed signed networks while preserving the degree distribution of nodes using an efficient switching algorithm. Use when user asks to randomize biological networks, create null models from binary event matrices, estimate the number of steps for network randomization, or calculate similarity between original and rewired graphs.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiRewire.html
 ---
+
 
 # bioconductor-birewire
 

@@ -1,8 +1,9 @@
 ---
 name: helixer-docker
-description: Helixer-docker provides a pre-configured environment for running the Helixer gene prediction pipeline.
+description: Helixer-docker provides a containerized environment for running the Helixer deep learning gene prediction pipeline with GPU acceleration. Use when user asks to run gene annotations, predict genes in genomic sequences, or execute Helixer using Docker or Apptainer.
 homepage: https://github.com/gglyptodon/helixer-docker
 ---
+
 
 # helixer-docker
 

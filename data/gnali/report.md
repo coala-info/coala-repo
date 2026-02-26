@@ -3,7 +3,7 @@
 ## gnali
 
 ### Tool Description
-GNALI (Gene Name Likelihood) - A tool for identifying potentially loss-of-function variants.
+Given a list of genes to test, gNALI finds all potential loss of function variants of those genes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gnali:1.1.0--pyhdfd78af_0
@@ -18,29 +18,46 @@ GNALI (Gene Name Likelihood) - A tool for identifying potentially loss-of-functi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gnali:1.1.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3669675290: no space left on device
-```
+usage: gNALI [-h] [-i INPUT_FILE] [-o OUTPUT_DIR] [-f] [-d DATABASE] [--vcf]
+             [-v] [-p [PREDEFINED_FILTERS [PREDEFINED_FILTERS ...]]]
+             [-a [ADDITIONAL_FILTERS [ADDITIONAL_FILTERS ...]]] [-V] [-P]
+             [-c CONFIG] [--config_template_grch37] [--config_template_grch38]
 
+Given a list of genes to test, gNALI finds all potential loss of function
+variants of those genes.
 
-## Metadata
-- **Skill**: generated
-
-## gnali_gnali_get_data
-
-### Tool Description
-The provided text does not contain help information for the tool; it contains container runtime error messages. No arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gnali:1.1.0--pyhdfd78af_0
-- **Homepage**: https://github.com/phac-nml/gnali
-- **Package**: https://anaconda.org/channels/bioconda/packages/gnali/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gnali:1.1.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2910757004: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT_FILE, --input_file INPUT_FILE
+                        File of genes to test. Accepted formats: csv, txt
+  -o OUTPUT_DIR, --output_dir OUTPUT_DIR
+                        Name of output directory. Default: results-ID/
+  -f, --force           Force existing output folder to be overwritten
+  -d DATABASE, --database DATABASE
+                        Database to query. Default: gnomadv2.1.1 Options:
+                        ['gnomadv2.1.1', 'gnomadv3.1.1']
+  --vcf                 Generate vcf file for filtered variants
+  -v, --verbose         increase verbosity
+  -p [PREDEFINED_FILTERS [PREDEFINED_FILTERS ...]], --predefined_filters [PREDEFINED_FILTERS [PREDEFINED_FILTERS ...]]
+                        Predefined filters. To use multiple, separate them by
+                        spaces. Options: {'gnomadv2.1.1': {'homozygous-
+                        controls': 'controls_nhomalt>0', 'heterozygous-
+                        controls': 'controls_nhomalt=0', 'homozygous':
+                        'nhomalt>0'}, 'gnomadv3.1.1': {'homozygous':
+                        'nhomalt>0'}}
+  -a [ADDITIONAL_FILTERS [ADDITIONAL_FILTERS ...]], --additional_filters [ADDITIONAL_FILTERS [ADDITIONAL_FILTERS ...]]
+                        Additional filters. To use multiple, separate them by
+                        spaces. Please enclose each in quotes (ex. "AC>3")
+  -V, --version         show program's version number and exit
+  -P, --pop_freqs       Get population frequencies (in detailed output file)
+  -c CONFIG, --config CONFIG
+                        Use a custom config file. To get started, check out
+                        the --config_template commands
+  --config_template_grch37
+                        Create a fillable template for a config for a database
+                        using the GRCh37 assembly
+  --config_template_grch38
+                        Create a fillable template for a config for a database
+                        using the GRCh38 assembly
 ```
 

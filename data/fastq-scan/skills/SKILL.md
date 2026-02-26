@@ -1,8 +1,9 @@
 ---
 name: fastq-scan
-description: The `fastq-scan` tool is a lightweight C++ utility designed to parse FASTQ files and produce comprehensive quality control metrics.
+description: fastq-scan parses FASTQ files to generate quality control metrics in a structured JSON format. Use when user asks to assess sequencing run quality, calculate estimated genome coverage, or generate FASTQ statistics for automated pipelines.
 homepage: https://github.com/rpetit3/fastq-scan
 ---
+
 
 # fastq-scan
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mfa
-description: the package is available on all platforms; click for details.
+description: This R package implements a Bayesian hierarchical mixture of factor analyzers to reconstruct bifurcating trajectories from single-cell transcriptomic data. Use when user asks to perform single-cell trajectory inference, model branching developmental paths, or identify bifurcation points in gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/mfa.html
 ---
+
 
 # bioconductor-mfa
 

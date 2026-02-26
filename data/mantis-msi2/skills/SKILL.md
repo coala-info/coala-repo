@@ -1,8 +1,9 @@
 ---
 name: mantis-msi2
-description: MANTIS2 (Microsatellite Analysis for Normal-Tumor InStability) is a bioinformatics tool designed to identify MSI by comparing a tumor BAM file against a matched normal BAM file.
+description: MANTIS2 identifies microsatellite instability by comparing repeat lengths between matched tumor and normal BAM files. Use when user asks to identify MSI, calculate instability scores, or detect microsatellite loci differences between paired samples.
 homepage: https://github.com/nh13/MANTIS2/
 ---
+
 
 # mantis-msi2
 

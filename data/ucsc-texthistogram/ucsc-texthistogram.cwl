@@ -2,10 +2,80 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: textHistogram
 label: ucsc-texthistogram
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a container runtime error log (Apptainer/Singularity) indicating a failure
-  to fetch or build the OCI image.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Produce a histogram in text format from a file of numbers.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input file containing numbers to histogram.
+    inputBinding:
+      position: 1
+  - id: bin_count
+    type:
+      - 'null'
+      - int
+    doc: Number of bins.
+    default: 10
+    inputBinding:
+      position: 102
+      prefix: -binCount
+  - id: bin_size
+    type:
+      - 'null'
+      - float
+    doc: Size of bin.
+    inputBinding:
+      position: 102
+      prefix: -binSize
+  - id: column
+    type:
+      - 'null'
+      - int
+    doc: Which column to use (1-based).
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: -col
+  - id: log
+    type:
+      - 'null'
+      - boolean
+    doc: Use log scale.
+    inputBinding:
+      position: 102
+      prefix: -log
+  - id: max_val
+    type:
+      - 'null'
+      - float
+    doc: Maximum value to include.
+    inputBinding:
+      position: 102
+      prefix: -maxVal
+  - id: min_val
+    type:
+      - 'null'
+      - float
+    doc: Minimum value to include.
+    inputBinding:
+      position: 102
+      prefix: -minVal
+  - id: no_gap
+    type:
+      - 'null'
+      - boolean
+    doc: Don't include gaps in histogram.
+    inputBinding:
+      position: 102
+      prefix: -noGap
+  - id: real
+    type:
+      - 'null'
+      - boolean
+    doc: Values are real numbers (default is integer).
+    inputBinding:
+      position: 102
+      prefix: -real
 outputs:
   - id: stdout
     type: stdout

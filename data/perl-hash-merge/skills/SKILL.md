@@ -1,8 +1,9 @@
 ---
 name: perl-hash-merge
-description: This skill provides guidance on using the `Hash::Merge` Perl module to combine two arbitrarily deep hashes into one.
+description: This tool merges two arbitrarily deep Perl hashes into a single hash while handling nested structures and conflicting keys. Use when user asks to combine nested hashes, define precedence for overlapping hash keys, or specify custom merging behaviors for different data types.
 homepage: http://metacpan.org/pod/Hash::Merge
 ---
+
 
 # perl-hash-merge
 

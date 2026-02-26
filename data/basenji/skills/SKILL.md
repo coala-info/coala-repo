@@ -1,8 +1,9 @@
 ---
 name: basenji
-description: Basenji is a deep learning framework designed to model the relationship between DNA sequences and their regulatory activity across long, chromosome-scale distances.
+description: "Basenji is a deep learning framework that predicts regulatory activity and 3D genome architecture from DNA sequences. Use when user asks to predict gene expression from sequence, train regulatory models, perform in silico mutagenesis, or calculate variant effect scores."
 homepage: https://github.com/calico/basenji
 ---
+
 
 # basenji
 

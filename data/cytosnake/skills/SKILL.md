@@ -1,8 +1,9 @@
 ---
 name: cytosnake
-description: CytoSnake is a specialized command-line interface (CLI) tool designed to streamline the processing of high-dimensional cell morphology data.
+description: CytoSnake is a command-line tool that orchestrates reproducible Snakemake workflows for processing high-dimensional cell morphology data. Use when user asks to initialize morphology projects, link plate-based metadata, or execute standardized workflows like feature annotation and aggregation.
 homepage: https://github.com/WayScience/CytoSnake
 ---
+
 
 # cytosnake
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dexma
-description: the package is available on all platforms; click for details.
+description: The DExMA package performs gene expression meta-analysis by integrating multiple datasets while addressing the missing gene problem through imputation or filtering. Use when user asks to perform effect size or p-value combination meta-analysis, handle missing genes across different expression platforms, or test for study heterogeneity.
 homepage: https://bioconductor.org/packages/release/bioc/html/DExMA.html
 ---
+
 
 # bioconductor-dexma
 

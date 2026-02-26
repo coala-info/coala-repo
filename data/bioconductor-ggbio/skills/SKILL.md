@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggbio
-description: The package supports detailed views of particular genomic regions, as well as genome-wide overviews. Supported overviews include ideograms and grand linear views. High-level plots include sequence fragment length, edge-linked interval to data view, mismatch pileup, and several splicing summaries.
+description: The ggbio package extends the grammar of graphics to visualize genomic data and Bioconductor objects. Use when user asks to create ideograms, plot gene models, generate circular Circos-style plots, produce Manhattan plots, or build multi-track genomic visualizations.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggbio.html
 ---
+
 
 # bioconductor-ggbio
 

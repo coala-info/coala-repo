@@ -3,10 +3,10 @@
 ## genotyphi
 
 ### Tool Description
-A tool for genotyping Salmonella Typhi data.
+VCF to Typhi genotypes
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_1
+- **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_0
 - **Homepage**: https://github.com/katholt/genotyphi
 - **Package**: https://anaconda.org/channels/bioconda/packages/genotyphi/overview
 - **Validation**: PASS
@@ -18,29 +18,40 @@ A tool for genotyping Salmonella Typhi data.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genotyphi:2.0--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1083247185: no space left on device
-```
+usage: genotyphi [-h] [--version] [--mode MODE] [--vcf VCF [VCF ...]]
+                 [--bam BAM [BAM ...]] [--ref_id REF_ID] [--phred PHRED]
+                 [--min_prop MIN_PROP] [--ref REF] [--output OUTPUT]
+                 [--samtools_location SAMTOOLS_LOCATION]
+                 [--bcftools_location BCFTOOLS_LOCATION]
 
+VCF to Typhi genotypes
 
-## Metadata
-- **Skill**: generated
-
-## genotyphi_parse_typhi_mykrobe.py
-
-### Tool Description
-A tool to parse Mykrobe results for Genotyphi (Note: The provided text contains container runtime errors rather than help documentation, so arguments could not be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genotyphi:2.0--hdfd78af_1
-- **Homepage**: https://github.com/katholt/genotyphi
-- **Package**: https://anaconda.org/channels/bioconda/packages/genotyphi/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genotyphi:2.0--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2563298569: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             Show GenoTyphi version number and exit
+  --mode MODE           Mode to run in based on input files (vcf, bam, or
+                        vcf_parsnp)
+  --vcf VCF [VCF ...]   VCF file(s) to genotype (Mapping MUST have been done
+                        using CT18 as a reference sequence)
+  --bam BAM [BAM ...]   BAM file(s) to genotype (Mapping MUST have been done
+                        using CT18 as a reference sequence)
+  --ref_id REF_ID       Name of the reference in the VCF file (#CHROM column)
+                        or fasta file. Note that CT18 has genotype 3.2.1. If
+                        all your strains return this genotype, it is likely
+                        you have specified the name of the refrence sequence
+                        incorrectly; please check your VCFs.
+  --phred PHRED         Minimum phred quality to count a variant call vs CT18
+                        as a true SNP (default 20)
+  --min_prop MIN_PROP   Minimum proportion of reads required to call a SNP
+                        (default 0.1)
+  --ref REF             Reference sequence in fasta format. Required if bam
+                        files provided.
+  --output OUTPUT       Location and name for output file.
+  --samtools_location SAMTOOLS_LOCATION
+                        Location of folder containing samtools installation if
+                        not standard/in path.
+  --bcftools_location BCFTOOLS_LOCATION
+                        Location of folder containing bcftools installation if
+                        not standard/in path.
 ```
 

@@ -2,15 +2,29 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: genePredToMafFrames
 label: ucsc-genepredtomafframes
-doc: "The provided text does not contain help information for the tool, as it is a
-  container runtime error log. Based on the tool name, it is a UCSC Genome Browser
-  utility used to convert genePred files to MAF frames.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Convert genePred alignments to MAF frames.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: db
+    type: string
+    doc: Database name (e.g., hg19)
+    inputBinding:
+      position: 1
+  - id: gene_pred
+    type: File
+    doc: Input genePred file
+    inputBinding:
+      position: 2
+  - id: maf
+    type: File
+    doc: Input MAF file
+    inputBinding:
+      position: 3
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type: File
+    doc: Output MAF frames file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-genepredtomafframes:482--h0b57e2e_0
-stdout: ucsc-genepredtomafframes.out

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htseqtools
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides tools for quality control, pre-processing, and enrichment analysis of high-throughput sequencing data, specifically for ChIP-Seq experiments. Use when user asks to perform multi-dimensional scaling for sample comparison, assess coverage uniformity, filter PCR duplicates, align peaks to correct strand bias, or identify enriched genomic regions.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/htSeqTools.html
 ---
+
 
 # bioconductor-htseqtools
 

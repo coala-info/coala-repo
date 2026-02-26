@@ -3,7 +3,7 @@
 ## cgmlst-dists
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container build failure (no space left on device).
+Pairwise CG-MLST distance matrix from allele call tables
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cgmlst-dists:0.4.0--h7b50bb2_5
@@ -18,14 +18,18 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cgmlst-dists:0.4.0--h7b50bb2_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-2639132833/rootfs/usr/bin/bash: no space left on device
+SYNOPSIS
+  Pairwise CG-MLST distance matrix from allele call tables
+USAGE
+  cgmlst-dists [options] chewbbaca.tab > distances.tsv
+OPTIONS
+  -h	Show this help
+  -v	Print version and exit
+  -q	Quiet mode; do not print progress information
+  -c	Use comma instead of tab in output
+  -m N	Output: 1=lower-tri 2=upper-tri 3=full [3]
+  -x N	Stop calculating beyond this distance [9999]
+URL
+  https://github.com/tseemann/cgmlst-dists
 ```
 
-
-## Metadata
-- **Skill**: generated

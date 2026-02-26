@@ -1,8 +1,9 @@
 ---
 name: coreutils
-description: The `coreutils` skill provides access to a comprehensive reimplementation of the GNU coreutils in Rust.
+description: This tool provides a cross-platform reimplementation of GNU coreutils for performing fundamental filesystem operations, text processing, and system queries. Use when user asks to list files, copy or move directories, modify file permissions, filter and sort text data, or check disk usage and system status.
 homepage: https://github.com/uutils/coreutils
 ---
+
 
 # coreutils
 

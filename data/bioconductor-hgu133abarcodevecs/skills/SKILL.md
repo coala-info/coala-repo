@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133abarcodevecs
-description: the package is available on all platforms; click for details.
+description: This package provides pre-computed parameter estimates for converting Affymetrix hgu133a microarray intensities into binary expression states. Use when user asks to convert absolute gene expression intensities to binary states, access mu and tau vectors for the barcode method, or process GPL96 platform data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu133abarcodevecs.html
 ---
+
 
 # bioconductor-hgu133abarcodevecs
 

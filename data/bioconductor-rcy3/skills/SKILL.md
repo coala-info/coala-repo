@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcy3
-description: the package is available on all platforms; click for details.
+description: RCy3 provides an interface to control Cytoscape from within the R environment for network visualization and analysis. Use when user asks to create networks in Cytoscape, automate network styling, or perform integrated network analysis between R and Cytoscape.
 homepage: https://bioconductor.org/packages/release/bioc/html/RCy3.html
 ---
+
 
 # bioconductor-rcy3
 

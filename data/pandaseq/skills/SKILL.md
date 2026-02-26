@@ -1,8 +1,9 @@
 ---
 name: pandaseq
-description: PANDAseq (PAired-eND Assembler) is a specialized tool for merging paired-end Illumina reads into a single consensus sequence.
+description: PANDAseq merges paired-end Illumina reads into a single consensus sequence by resolving overlaps using probabilistic models. Use when user asks to assemble paired-end reads, merge overlapping sequences, strip PCR primers, or filter assembled sequences by length.
 homepage: https://github.com/neufeld/pandaseq
 ---
+
 
 # pandaseq
 

@@ -1,8 +1,9 @@
 ---
 name: csvtk
-description: csvtk is a high-performance, multi-functional toolkit written in Go, designed to handle tabular data manipulation with ease.
+description: csvtk is a high-performance, header-aware toolkit for processing and manipulating tabular data in CSV and TSV formats. Use when user asks to inspect headers, filter rows, join files, reshape data between wide and long formats, or convert between CSV and other formats like JSON and XLSX.
 homepage: https://github.com/shenwei356/csvtk
 ---
+
 
 # csvtk
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-organism.dplyr
-description: the package is available on all platforms; click for details.
+description: Organism.dplyr provides a streamlined interface to query integrated genomic annotation databases using dplyr-compatible verbs. Use when user asks to query gene annotations, retrieve genomic coordinates, or extract information from multiple Bioconductor annotation resources simultaneously.
 homepage: https://bioconductor.org/packages/release/bioc/html/Organism.dplyr.html
 ---
+
 
 # bioconductor-organism.dplyr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cummerbund
-description: the package is available on all platforms; click for details.
+description: "cummeRbund analyzes, explores, and visualizes output data from the Cufflinks and Cuffdiff RNA-Seq suite. Use when user asks to process Cuffdiff output files, perform differential expression analysis, create expression plots like heatmaps or volcano plots, or manage RNA-Seq data using a SQLite backend in R."
 homepage: https://bioconductor.org/packages/release/bioc/html/cummeRbund.html
 ---
+
 
 # bioconductor-cummerbund
 

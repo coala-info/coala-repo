@@ -1,8 +1,9 @@
 ---
 name: eviann
-description: EviAnn (Evidence Annotation) is a high-performance pipeline designed for the rapid annotation of eukaryotic genomes.
+description: EviAnn is a high-performance pipeline for the rapid annotation of eukaryotic genomes using empirical evidence like RNA-seq and protein alignments. Use when user asks to annotate protein-coding genes, identify long non-coding RNAs, or generate NCBI-compliant GFF3 files from genomic evidence.
 homepage: https://github.com/alekseyzimin/EviAnn_release
 ---
+
 
 # eviann
 

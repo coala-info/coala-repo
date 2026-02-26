@@ -1,8 +1,9 @@
 ---
 name: r-speedglm
-description: "Fitting linear models and generalized linear models to large data sets by updating algorithms, according to the method described in Enea (2009, ISBN: 9788861294257).</p>"
+description: This tool fits linear and generalized linear models to large datasets efficiently using high-performance updating algorithms. Use when user asks to fit linear models, perform logistic or poisson regression on large datasets, or process data in chunks to save memory.
 homepage: https://cloud.r-project.org/web/packages/speedglm/index.html
 ---
+
 
 # r-speedglm
 

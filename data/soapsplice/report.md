@@ -3,7 +3,7 @@
 ## soapsplice
 
 ### Tool Description
-The provided text does not contain help information for soapsplice; it is a log of a failed container build process.
+SOAPsplice is a tool for genome-wide ab initio detection of splice junctions from RNA-Seq data, supporting both fastq and fasta formats.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/soapsplice:1.10--2
@@ -18,11 +18,21 @@ The provided text does not contain help information for soapsplice; it is a log 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/soapsplice:1.10--2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/soapsplice:1.10--2' locally
+1.10--2: Pulling from biocontainers/soapsplice
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+8f86115fee6d: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob4270919604: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

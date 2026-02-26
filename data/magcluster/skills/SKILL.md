@@ -1,8 +1,9 @@
 ---
 name: magcluster
-description: MagCluster is a specialized bioinformatics pipeline designed to streamline the discovery and analysis of magnetosome gene clusters.
+description: MagCluster is a bioinformatics pipeline designed to identify, annotate, and visualize magnetosome gene clusters within genomic data. Use when user asks to annotate genomes for magnetosome proteins, screen GenBank files for putative gene clusters, or generate interactive comparative alignments of identified clusters.
 homepage: https://github.com/runjiaji/magcluster
 ---
+
 
 # magcluster
 

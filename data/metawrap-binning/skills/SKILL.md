@@ -1,8 +1,9 @@
 ---
 name: metawrap-binning
-description: MetaWRAP is a modular suite designed to handle the entire metagenomic analysis pipeline, but its core strength lies in the "binning" and "bin processing" stages.
+description: MetaWRAP-binning generates, refines, and reassembles metagenomic bins to produce high-quality Metagenome-Assembled Genomes. Use when user asks to run multiple binning algorithms, refine bin sets, reassemble bins to improve quality, or estimate bin abundance.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-binning
 

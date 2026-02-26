@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmrcate
-description: the package is available on all platforms; click for details.
+description: DMRcate identifies differentially methylated regions from Illumina BeadChip or bisulfite sequencing data using a kernel-smoothing approach. Use when user asks to identify differentially methylated regions, annotate CpG sites with statistics, or visualize genomic methylation patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/DMRcate.html
 ---
+
 
 # bioconductor-dmrcate
 

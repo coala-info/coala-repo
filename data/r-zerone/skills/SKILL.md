@@ -1,8 +1,9 @@
 ---
 name: r-zerone
-description: R package zerone (documentation from project home).
+description: The r-zerone package discretizes ChIP-seq data by classifying genomic windows into background or enriched states using multiple replicates. Use when user asks to discretize ChIP-seq data, resolve conflicts between replicates, or perform quality control on genomic enrichment profiles.
 homepage: https://cran.r-project.org/web/packages/zerone/index.html
 ---
+
 
 # r-zerone
 

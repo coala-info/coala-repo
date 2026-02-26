@@ -1,8 +1,9 @@
 ---
 name: r-r.huge
-description: "DEPRECATED. Do not start building new projects based on this package. Cross-platform alternatives are the following packages: bigmemory (CRAN), ff (CRAN), BufferedMatrix (Bioconductor).  The main usage of it was inside the aroma.affymetrix package. (The package currently provides a class representing a matrix where the actual data is stored in a binary format on the local file system.  This way the size limit of the data is set by the file system and not the memory.)</p>"
+description: The R.huge package provides methods for managing and accessing large matrices stored in binary format on the local file system to bypass RAM limitations. Use when user asks to work with file-backed matrices, manage datasets too large for memory using the FileMatrix class, or maintain legacy codebases like aroma.affymetrix.
 homepage: https://cloud.r-project.org/web/packages/R.huge/index.html
 ---
+
 
 # r-r.huge
 

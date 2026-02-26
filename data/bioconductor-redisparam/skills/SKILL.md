@@ -1,8 +1,9 @@
 ---
 name: bioconductor-redisparam
-description: the package is available on all platforms; click for details.
+description: RedisParam provides a Redis-based back-end for parallel evaluation within the Bioconductor BiocParallel framework. Use when user asks to perform distributed parallel computing, manage parallel tasks via a Redis server, or scale R computations across multiple nodes.
 homepage: https://bioconductor.org/packages/release/bioc/html/RedisParam.html
 ---
+
 
 # bioconductor-redisparam
 

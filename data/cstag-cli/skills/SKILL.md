@@ -1,8 +1,9 @@
 ---
 name: cstag-cli
-description: `cstag-cli` is a specialized command-line utility designed to generate and append "cs" tags to genomic alignment data.
+description: "cstag-cli generates and appends compact string (cs) tags to genomic alignment data in SAM or BAM files. Use when user asks to append cs tags to alignments, convert between short and long cs tag formats, or process genomic data requiring mismatch and indel descriptions."
 homepage: https://github.com/akikuno/cstag-cli
 ---
+
 
 # cstag-cli
 

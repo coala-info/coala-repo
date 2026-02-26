@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sspa
-description: the package is available on all platforms; click for details.
+description: This package provides tools for sample size and power analysis in high-dimensional genomic studies. Use when user asks to estimate required sample sizes, perform power calculations for pilot data, or analyze the distribution of effect sizes.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SSPA.html
 ---
+
 
 # bioconductor-sspa
 

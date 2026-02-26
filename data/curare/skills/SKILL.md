@@ -1,8 +1,9 @@
 ---
 name: curare
-description: Curare is a Python-based framework designed to streamline RNA-Seq data processing by wrapping popular bioinformatics tools into a modular workflow.
+description: Curare is a modular Python framework that automates RNA-Seq data processing from raw sequencing reads to differential expression results. Use when user asks to process RNA-Seq data, generate pipeline configuration templates, perform differential expression analysis, or create comprehensive HTML reports for sequencing statistics.
 homepage: https://github.com/pblumenkamp/Curare
 ---
+
 
 # curare
 

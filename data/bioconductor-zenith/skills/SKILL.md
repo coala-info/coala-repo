@@ -1,8 +1,9 @@
 ---
 name: bioconductor-zenith
-description: the package is available on all platforms; click for details.
+description: Zenith performs gene set enrichment analysis on differential expression results from linear mixed models. Use when user asks to perform gene set analysis, evaluate enrichment in complex study designs, or analyze results from the variancePartition package.
 homepage: https://bioconductor.org/packages/release/bioc/html/zenith.html
 ---
+
 
 # bioconductor-zenith
 

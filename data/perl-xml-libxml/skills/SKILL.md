@@ -1,8 +1,9 @@
 ---
 name: perl-xml-libxml
-description: The `XML::LibXML` module provides a Perl-level interface to the C-based `libxml2` library.
+description: This tool provides a Perl interface to the libxml2 library for high-performance XML and HTML parsing and manipulation. Use when user asks to parse XML files, navigate documents using XPath, manipulate DOM structures, or validate XML against schemas in Perl.
 homepage: https://bitbucket.org/shlomif/perl-xml-libxml
 ---
+
 
 # perl-xml-libxml
 

@@ -1,8 +1,9 @@
 ---
 name: tree-puzzle
-description: The tree-puzzle tool implements the Tree of Thoughts (ToT) framework to solve complex puzzles that typically challenge standard auto-regressive language models.
+description: The tree-puzzle tool implements the Tree of Thoughts framework to solve complex puzzles and benchmark reasoning strategies. Use when user asks to solve a Sudoku puzzle, run experiments comparing reasoning strategies, or benchmark puzzle-solving methods.
 homepage: https://github.com/jieyilong/tree-of-thought-puzzle-solver
 ---
+
 
 # tree-puzzle
 

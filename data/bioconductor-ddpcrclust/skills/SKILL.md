@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ddpcrclust
-description: the package is available on all platforms; click for details.
+description: This tool automates the analysis, clustering, and visualization of multiplexed droplet digital PCR data. Use when user asks to analyze ddPCR experiments, perform automated droplet clustering, or calculate copies per droplet.
 homepage: https://bioconductor.org/packages/release/bioc/html/ddPCRclust.html
 ---
+
 
 # bioconductor-ddpcrclust
 

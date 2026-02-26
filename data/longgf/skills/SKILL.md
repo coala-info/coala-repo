@@ -1,8 +1,9 @@
 ---
 name: longgf
-description: LongGF is a high-performance tool designed to detect gene fusions from long-read transcriptome sequencing data, including both cDNA and direct mRNA sequencing.
+description: LongGF detects gene fusions from long-read transcriptome sequencing data by analyzing overlaps between alignment records and gene definitions. Use when user asks to identify gene fusions in long-read cDNA or direct mRNA sequencing data, detect fusions from name-sorted BAM files, or find reads spanning multiple gene loci.
 homepage: https://github.com/WGLab/LongGF
 ---
+
 
 # longgf
 

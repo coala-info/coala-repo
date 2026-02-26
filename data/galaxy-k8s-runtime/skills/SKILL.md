@@ -1,8 +1,9 @@
 ---
 name: galaxy-k8s-runtime
-description: The galaxy-k8s-runtime is a specialized version of the Galaxy platform (version 18.01-pheno) designed to run as a containerized service within a Kubernetes (K8s) cluster.
+description: This tool provides a specialized Galaxy platform for running containerized phenomics and metabolomics workflows within a Kubernetes cluster. Use when user asks to deploy Galaxy on Kubernetes via Helm, run PhenoMeNal workflows, manage ISA-tab or ISA-json datatypes, or perform container health checks.
 homepage: https://github.com/phnmnl/container-galaxy-k8s-runtime
 ---
+
 
 # galaxy-k8s-runtime
 

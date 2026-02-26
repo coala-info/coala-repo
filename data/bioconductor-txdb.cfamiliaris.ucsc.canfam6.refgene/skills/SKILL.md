@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.cfamiliaris.ucsc.canfam6.refgene
-description: the package is available on all platforms; click for details.
+description: This package provides transcript-centric annotations for the dog genome based on the UCSC canFam6 refGene track. Use when user asks to retrieve dog gene models, access transcript-level annotations for the canFam6 assembly, or map genomic coordinates to refGene features.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Cfamiliaris.UCSC.canFam6.refGene.html
 ---
+
 
 # bioconductor-txdb.cfamiliaris.ucsc.canfam6.refgene
 

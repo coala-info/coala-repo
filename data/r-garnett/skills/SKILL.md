@@ -1,8 +1,9 @@
 ---
 name: r-garnett
-description: R package garnett (documentation from project home).
+description: Garnett is an R package for automated cell type classification of single-cell RNA-seq data using hierarchical marker gene files. Use when user asks to train cell type classifiers, classify cells in a dataset, or validate marker gene files for single-cell analysis.
 homepage: https://cran.r-project.org/web/packages/garnett/index.html
 ---
+
 
 # r-garnett
 

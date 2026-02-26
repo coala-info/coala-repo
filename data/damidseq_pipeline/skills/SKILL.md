@@ -1,8 +1,9 @@
 ---
 name: damidseq_pipeline
-description: The `damidseq_pipeline` is a comprehensive tool designed to handle the specialized requirements of DNA Adenine Methyltransferase Identification (DamID) sequencing.
+description: The damidseq_pipeline automates the processing of DamID sequencing data from raw reads to normalized log2 ratio signal tracks. Use when user asks to align DamID reads, generate GATC-binned counts, normalize signal against a Dam-only control, or process CATaDa datasets.
 homepage: https://github.com/owenjm/damidseq_pipeline
 ---
+
 
 # damidseq_pipeline
 

@@ -1,8 +1,9 @@
 ---
 name: auriclass
-description: AuriClass is a specialized bioinformatics tool designed for the rapid identification of *Candida auris* clades.
+description: AuriClass identifies *Candida auris* clades from genomic data using Mash distances against a reference database. Use when user asks to classify *Candida auris* samples into clades, identify outgroups, or analyze FastQ and FastA files for species identification.
 homepage: https://rivm-bioinformatics.github.io/auriclass/
 ---
+
 
 # auriclass
 

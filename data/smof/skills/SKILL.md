@@ -1,8 +1,9 @@
 ---
 name: smof
-description: The `smof` (Simple Manipulation Of FASTA) toolset provides a collection of UNIX-style utilities specifically designed for biological sequences.
+description: The smof toolset provides UNIX-style utilities for manipulating FASTA files by treating each entry as a single logical unit. Use when user asks to summarize sequence statistics, filter entries by header or motif, extract subsequences, sort by length, or perform sequence transformations like translation and reverse complementation.
 homepage: https://github.com/incertae-sedis/smof
 ---
+
 
 # smof
 

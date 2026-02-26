@@ -3,7 +3,7 @@
 ## muscle
 
 ### Tool Description
-Multiple sequence alignment software (Note: The provided help text contains only system error messages regarding container execution and does not list specific tool arguments).
+Align FASTA input, write aligned FASTA (AFA) output
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/muscle:5.3--h9948957_3
@@ -12,35 +12,86 @@ Multiple sequence alignment software (Note: The provided help text contains only
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/muscle/overview
-- **Total Downloads**: 527.1K
+- **Total Downloads**: 530.1K
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/rcedgar/muscle
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/muscle:5.3--h9948957_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1681134669: no space left on device
-```
+muscle 5.3.linux64 []  65.5Gb RAM, 20 cores
+Built Jul 30 2025 21:13:04
+(C) Copyright 2004-2021 Robert C. Edgar.
+https://drive5.com
 
+Align FASTA input, write aligned FASTA (AFA) output:
+    muscle -align input.fa -output aln.afa
 
-## Metadata
-- **Skill**: generated
+Align large input using Super5 algorithm if -align is too expensive,
+typically needed with more than a few hundred sequences:
+    muscle -super5 input.fa -output aln.afa
 
-## muscle_reseek
+Single replicate alignment:
+    muscle -align input.fa -perm PERM -perturb SEED -output aln.afa
+    muscle -super5 input.fa -perm PERM -perturb SEED -output aln.afa
+        PERM is guide tree permutation none, abc, acb, bca (default none).
+        SEED is perturbation seed 0, 1, 2... (default 0 = don't perturb).
 
-### Tool Description
-The provided text does not contain help documentation; it contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to insufficient disk space.
+Ensemble of replicate alignments, output in Ensemble FASTA (EFA) format,
+EFA has one aligned FASTA for each replicate with header line "<PERM.SEED":
+Note -super5 does not support .efa output, to get an ensemble you can
+  (1) run several times with different -perm and -perturb options, or
+  (2) use -perm all, then four output files will be generated, one for
+        each guide tree permutation (use @ in the output filename).
+    muscle -align input.fa -stratified -output stratified_ensemble.efa
+    muscle -align input.fa -diversified -output diversified_ensemble.afa
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/muscle:5.3--h9948957_3
-- **Homepage**: https://github.com/rcedgar/muscle
-- **Package**: https://anaconda.org/channels/bioconda/packages/muscle/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/muscle:5.3--h9948957_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4031997883: no space left on device
+    -replicates N
+        Number of replicates, defaults 4, 100, 100 for stratified,
+          diversified, resampled. With -stratified there is one
+          replicate per guide tree permutation, total is 4 x N.
+
+Generate resampled ensemble from existing ensemble by sampling columns
+with replacement:
+    muscle -resample ensemble.efa -output resampled.efa
+
+    -maxgapfract F
+       Maximum fraction of gaps in a column (F=0..1, default 0.5).
+
+    -minconf CC
+       Minimum column confidence (CC=0..1, default 0.5).
+
+If ensemble output filename has @, then one FASTA file is generated
+for each replicate where @ is replaced by perm.s, otherwise all replicates
+are written to one EFA file.
+
+Calculate disperson of an ensemble:
+    muscle -disperse ensemble.efa
+
+Extract replicate with highest total CC (diversified input recommended):
+    muscle -maxcc ensemble.efa -output maxcc.afa
+
+Extract aligned FASTA files from EFA file:
+    muscle -efa_explode ensemble.efa
+
+Convert FASTA to EFA, input has one filename per line:
+    muscle -fa2efa filenames.txt -output ensemble.efa
+
+Update ensemble by adding two sequences of digits to each replicate, digits
+are column confidence (CC) values, e.g. "73" means CC=0.73, "++" is CC=1.0:
+    muscle -addconfseq ensemble.efa -output ensemble_cc.efa
+
+Calculate letter confidence (LC) values, -ref specifies the alignment to
+compare against the ensemble (e.g. from -maxcc), output is in aligned
+FASTA format with LC values 0, 1 ... 9 instead of letters:
+    muscle -letterconf ensemble.efa -ref aln.afa -output letterconf.afa
+
+    -html aln.html
+        Alignment colored by LC in HTML format.
+
+    -jalview aln.features
+        Jalview feature file with LC values and colors.
+
+More documentation at:
+    https://drive5.com/muscle
 ```
 

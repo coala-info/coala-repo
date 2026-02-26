@@ -1,8 +1,9 @@
 ---
 name: fastspar
-description: FastSpar provides a scalable and efficient way to infer correlations in compositional datasets, overcoming the limitations of traditional correlation measures like Pearson or Spearman which can produce spurious results on relative abundance data.
+description: FastSpar infers correlations in compositional datasets by implementing a scalable and efficient version of the SparCC algorithm. Use when user asks to estimate median correlation and covariance from OTU tables, generate bootstrap samples for significance testing, or calculate p-values for compositional data.
 homepage: https://github.com/scwatts/fastspar
 ---
+
 
 # fastspar
 

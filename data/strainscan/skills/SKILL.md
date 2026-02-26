@@ -1,8 +1,9 @@
 ---
 name: strainscan
-description: StrainScan is a specialized bioinformatics tool designed for the accurate identification and quantification of bacterial strains within complex microbiome samples.
+description: "StrainScan identifies and quantifies bacterial strains within complex microbiome samples using a k-mer based approach. Use when user asks to identify strains in sequencing data, build a custom strain database, or analyze the micro-diversity of microbial communities."
 homepage: https://github.com/liaoherui/StrainScan
 ---
+
 
 # strainscan
 

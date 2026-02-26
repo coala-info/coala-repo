@@ -1,8 +1,9 @@
 ---
 name: ashleys-qc
-description: ASHLEYS (Automated Selection of High quality Libraries for the Extensive analYsis of Strandseq data) is a machine learning framework designed to automate the identification of high-quality libraries in Strand-seq experiments.
+description: ASHLEYS-QC is a machine learning framework that automates the identification of high-quality libraries in Strand-seq experiments. Use when user asks to generate genomic features from BAM files, predict library quality using pretrained models, train custom classifiers, or visualize prediction probability distributions.
 homepage: https://github.com/friendsofstrandseq/ashleys-qc
 ---
+
 
 # ashleys-qc
 

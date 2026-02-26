@@ -1,8 +1,9 @@
 ---
 name: test-ci
-description: The `test-ci` skill utilizes the `seqtk` toolkit to perform high-performance, lightweight processing of biological sequences.
+description: The test-ci tool performs high-performance processing and transformation of biological sequences using the seqtk toolkit. Use when user asks to convert FASTQ to FASTA, trim low-quality sequences, subsample reads, or extract sequences by name or region.
 homepage: https://github.com/lh3/seqtk
 ---
+
 
 # test-ci
 

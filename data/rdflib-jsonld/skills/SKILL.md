@@ -1,8 +1,9 @@
 ---
 name: rdflib-jsonld
-description: The `rdflib-jsonld` skill provides the procedural knowledge required to handle JSON-LD data within the RDFLib ecosystem.
+description: This tool enables the parsing and serialization of JSON-LD data within the RDFLib ecosystem for legacy Python and RDFLib environments. Use when user asks to parse JSON-LD documents into an RDF graph, serialize existing graphs to JSON-LD format, or convert between JSON-LD and other RDF formats using rdfpipe.
 homepage: https://github.com/RDFLib/rdflib-jsonld
 ---
+
 
 # rdflib-jsonld
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gloscope
-description: the package is available on all platforms; click for details.
+description: GloScope calculates statistical distances between scRNA-Seq samples by treating each sample as a distribution of cells in a low-dimensional embedding space. Use when user asks to compare scRNA-Seq samples, calculate a divergence matrix between patient samples, or visualize sample-level differences using MDS and heatmaps.
 homepage: https://bioconductor.org/packages/release/bioc/html/GloScope.html
 ---
+
 
 # bioconductor-gloscope
 

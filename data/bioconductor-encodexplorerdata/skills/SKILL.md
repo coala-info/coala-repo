@@ -1,8 +1,9 @@
 ---
 name: bioconductor-encodexplorerdata
-description: the package is available on all platforms; click for details.
+description: This package provides a structured, offline compilation of ENCODE metadata for fast local searching and filtering of functional genomic elements. Use when user asks to access ENCODE metadata, filter for specific genomic experiments, or find file accessions for assays like ChIP-seq.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ENCODExplorerData.html
 ---
+
 
 # bioconductor-encodexplorerdata
 

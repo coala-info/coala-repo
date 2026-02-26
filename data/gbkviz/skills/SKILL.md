@@ -1,8 +1,9 @@
 ---
 name: gbkviz
-description: gbkviz is a specialized bioinformatics tool built on the Streamlit framework that facilitates the visualization and comparison of genomes stored in Genbank format.
+description: gbkviz is a bioinformatics tool for visualizing and comparing Genbank genomes through a web-based dashboard. Use when user asks to visualize Genbank files, perform genomic sequence alignments, or generate publication-ready genomic diagrams.
 homepage: https://github.com/moshi4/GBKviz/
 ---
+
 
 # gbkviz
 

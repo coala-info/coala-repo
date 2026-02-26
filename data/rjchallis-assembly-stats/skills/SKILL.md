@@ -1,8 +1,9 @@
 ---
 name: rjchallis-assembly-stats
-description: The `rjchallis-assembly-stats` tool provides a specialized workflow for assessing the quality of genome assemblies.
+description: This tool generates assembly statistics and JSON files from FASTA sequences for visualization in circular snail plots. Use when user asks to assess genome assembly quality, calculate N50 and GC content metrics, or generate data for assembly-stats visualizations.
 homepage: https://github.com/rjchallis/assembly-stats
 ---
+
 
 # rjchallis-assembly-stats
 

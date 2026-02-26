@@ -1,8 +1,9 @@
 ---
 name: varda2-client
-description: The `varda2-client` is a Python-based command-line interface designed to communicate with Varda2 servers.
+description: The varda2-client is a command-line interface for interacting with Varda2 servers to manage and query genomic data. Use when user asks to annotate files, submit data, monitor job progress, query SNVs, query MNVs, query sequences, perform stab queries, query sample metadata, query task metadata, or save tables.
 homepage: https://github.com/varda/varda2-client
 ---
+
 
 # varda2-client
 

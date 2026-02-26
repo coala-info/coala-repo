@@ -2,10 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: transposonPSI.pl
 label: transposonpsi
-doc: "TransposonPSI is a tool used to identify transposable elements in genomic sequences
-  (nucleotide) or protein sequences by searching against a database of transposon-specific
-  profiles.\n\nTool homepage: http://transposonpsi.sourceforge.net/"
-inputs: []
+doc: "TransposonPSI is used to identify transposon-derived ORFs in DNA or protein
+  sequences by searching against a database of transposon-specific profiles.\n\nTool
+  homepage: http://transposonpsi.sourceforge.net/"
+inputs:
+  - id: fasta_file
+    type: File
+    doc: Target FASTA file to search (DNA or protein)
+    inputBinding:
+      position: 1
+  - id: mode
+    type: string
+    doc: "Type of sequence: 'nuc' for nucleotide or 'prot' for protein"
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

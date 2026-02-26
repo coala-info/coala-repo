@@ -1,9 +1,9 @@
 # rust CWL Generation Report
 
-## rust
+## rust_cargo
 
 ### Tool Description
-The provided text does not contain help information for the 'rust' command; it appears to be a log from a container build process (Singularity/Apptainer) that encountered a fatal error while fetching an OCI image.
+Rust's package manager
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rust:1.14.0--0
@@ -13,133 +13,42 @@ The provided text does not contain help information for the 'rust' command; it a
 
 - **Conda**: https://anaconda.org/channels/main/packages/rust/overview
 - **Total Downloads**: 9.5K
-- **Last updated**: 2026-02-19
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/rust-lang/rust
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust:1.14.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Rust's package manager
 
+Usage:
+    cargo <command> [<args>...]
+    cargo [options]
 
-## Metadata
-- **Skill**: generated
+Options:
+    -h, --help          Display this message
+    -V, --version       Print version info and exit
+    --list              List installed commands
+    --explain CODE      Run `rustc --explain CODE`
+    -v, --verbose ...   Use verbose output
+    -q, --quiet         No output printed to stdout
+    --color WHEN        Coloring: auto, always, never
+    --frozen            Require Cargo.lock and cache are up to date
+    --locked            Require Cargo.lock is up to date
 
-## rust_cargo
+Some common cargo commands are (see all commands with --list):
+    build       Compile the current project
+    clean       Remove the target directory
+    doc         Build this project's and its dependencies' documentation
+    new         Create a new cargo project
+    init        Create a new cargo project in an existing directory
+    run         Build and execute src/main.rs
+    test        Run the tests
+    bench       Run the benchmarks
+    update      Update dependencies listed in Cargo.lock
+    search      Search registry for crates
+    publish     Package and upload this project to the registry
+    install     Install a Rust binary
 
-### Tool Description
-The Rust package manager and build tool (Note: The provided text appears to be an execution log or error message rather than help text, so no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust:1.14.0--0
-- **Homepage**: https://github.com/rust-lang/rust
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust:1.14.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## rust_clippy
-
-### Tool Description
-A collection of lints to catch common mistakes and improve your Rust code. Note: The provided text appears to be a container engine error log rather than CLI help text, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust:1.14.0--0
-- **Homepage**: https://github.com/rust-lang/rust
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust:1.14.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## rust_rustfmt
-
-### Tool Description
-The provided text does not contain help information for rustfmt; it is an error log from a container runtime (Apptainer/Singularity) failing to fetch or build the container image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust:1.14.0--0
-- **Homepage**: https://github.com/rust-lang/rust
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust:1.14.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## rust_x.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it appears to be an error log from a container build process (Apptainer/Singularity).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust:1.14.0--0
-- **Homepage**: https://github.com/rust-lang/rust
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust:1.14.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## rust_x.ps1
-
-### Tool Description
-A script or tool involved in building or fetching OCI images (specifically Rust) and converting them to SIF format using Apptainer/Singularity.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust:1.14.0--0
-- **Homepage**: https://github.com/rust-lang/rust
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust:1.14.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## rust_rustup
-
-### Tool Description
-The provided text does not contain help information or usage instructions; it appears to be an error log from a container build process (Singularity/Apptainer). No arguments or tool descriptions could be extracted from the input.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust:1.14.0--0
-- **Homepage**: https://github.com/rust-lang/rust
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust:1.14.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+See 'cargo help <command>' for more information on a specific command.
 ```
 

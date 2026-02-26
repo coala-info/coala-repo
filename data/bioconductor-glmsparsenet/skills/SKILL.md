@@ -1,8 +1,9 @@
 ---
 name: bioconductor-glmsparsenet
-description: the package is available on all platforms; click for details.
+description: This R package fits sparse generalized linear models by incorporating biological network information to penalize genes based on their connectivity. Use when user asks to perform network-based regularization, identify biomarkers in survival or classification tasks, or penalize hub and orphan genes in transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/glmSparseNet.html
 ---
+
 
 # bioconductor-glmsparsenet
 

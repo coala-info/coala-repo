@@ -1,8 +1,9 @@
 ---
 name: ropebwt3
-description: ropebwt3 is a high-performance bioinformatics tool designed for the construction and searching of the Burrows-Wheeler Transform (BWT) and FM-index.
+description: "ropebwt3 constructs and searches Burrows-Wheeler Transform indices for large-scale, redundant genomic datasets. Use when user asks to build BWT indices, find maximal exact matches, or perform local and end-to-end sequence alignments."
 homepage: https://github.com/lh3/ropebwt3
 ---
+
 
 # ropebwt3
 

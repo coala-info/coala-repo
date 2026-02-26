@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.vcf
-description: the package is available on all platforms; click for details.
+description: This package saves and loads Bioconductor VCF objects as structured artifacts to preserve complex metadata and enable efficient storage. Use when user asks to stage VCF objects to disk, load staged VCF data back into R, or convert VariantAnnotation objects into the alabaster file format.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.vcf.html
 ---
+
 
 # bioconductor-alabaster.vcf
 

@@ -1,8 +1,9 @@
 ---
 name: bio-ripser
-description: The `bio-ripser` tool is a high-performance implementation of the Ripser algorithm designed for Topological Data Analysis (TDA).
+description: The bio-ripser tool computes Vietoris–Rips persistence barcodes to analyze the topological features of data across different spatial scales. Use when user asks to compute persistence barcodes, perform topological data analysis, or calculate homology for point clouds and distance matrices.
 homepage: https://ripser.org
 ---
+
 
 # bio-ripser
 

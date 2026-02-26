@@ -1,8 +1,9 @@
 ---
 name: neptune
-description: Neptune is a lightweight and stable Android plugin framework designed to support dynamic loading of APKs.
+description: Neptune is an Android plugin framework that enables the dynamic loading and independent execution of APKs within a host application. Use when user asks to implement a modular architecture, load plugins dynamically, or share resources between a host app and independent business units.
 homepage: https://github.com/iqiyi/Neptune
 ---
+
 
 # neptune
 

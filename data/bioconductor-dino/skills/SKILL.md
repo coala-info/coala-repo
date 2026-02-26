@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dino
-description: the package is available on all platforms; click for details.
+description: Dino normalizes high-throughput single-cell RNA-seq data by modeling gene expression as a mixture of distributions to account for technical variability and sparsity. Use when user asks to normalize UMI-based scRNA-seq counts, reconstruct gene expression distributions, or create Seurat and SingleCellExperiment objects from normalized data.
 homepage: https://bioconductor.org/packages/release/bioc/html/Dino.html
 ---
+
 
 # bioconductor-dino
 

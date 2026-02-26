@@ -1,8 +1,9 @@
 ---
 name: rabies
-description: RABIES is a specialized framework designed to standardize the processing of rodent fMRI data.
+description: RABIES is an automated framework for standardizing the processing and analysis of rodent fMRI data. Use when user asks to preprocess rodent fMRI scans, perform confound correction, conduct functional connectivity analysis, or run group-level statistics.
 homepage: https://github.com/CoBrALab/RABIES
 ---
+
 
 # rabies
 

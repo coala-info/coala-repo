@@ -1,8 +1,9 @@
 ---
 name: kid
-description: "Kids Is Data Stream" (kids) is a high-performance log aggregation system designed for real-time message distribution.
+description: Kids is a high-performance log aggregation system that uses a pub/sub pattern to collect and distribute real-time message streams. Use when user asks to start the kids daemon, subscribe to log topics, publish messages to a stream, or monitor system performance using the Redis protocol.
 homepage: https://github.com/zhihu/kids
 ---
+
 
 # kid
 

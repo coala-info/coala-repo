@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msstatsqc
-description: the package is available on all platforms; click for details.
+description: MSstatsQC provides tools for longitudinal quality control and monitoring of mass spectrometry-based proteomics experiments. Use when user asks to monitor instrument performance, perform longitudinal quality control, or visualize system suitability metrics.
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsQC.html
 ---
+
 
 # bioconductor-msstatsqc
 

@@ -1,8 +1,9 @@
 ---
 name: r-lncpipereporter
-description: R package lncpipereporter (documentation from project home).
+description: The lncpipereporter package compiles lncRNA sequencing analysis results into interactive HTML reports and publication-quality figures. Use when user asks to generate a comprehensive lncRNA report, visualize differential expression results, or summarize alignment and expression statistics.
 homepage: https://cran.r-project.org/web/packages/lncpipereporter/index.html
 ---
+
 
 # r-lncpipereporter
 

@@ -1,8 +1,9 @@
 ---
 name: neffy
-description: The `neffy` tool provides a high-performance C++ engine (with a Python interface) designed to analyze sequence diversity within Multiple Sequence Alignments.
+description: neffy calculates the effective number of sequences in multiple sequence alignments and performs format conversions between common biological sequence files. Use when user asks to calculate the NEFF metric, analyze sequence diversity, or convert between MSA formats like FASTA, A2M, and Stockholm.
 homepage: https://github.com/Maryam-Haghani/NEFFy
 ---
+
 
 # neffy
 

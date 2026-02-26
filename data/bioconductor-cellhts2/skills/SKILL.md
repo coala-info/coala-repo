@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellhts2
-description: the package to RNAi screens on fly and human cells, and for screens of yeast libraries. See ?cellHTS2 for a brief introduction.
+description: This tool provides an end-to-end pipeline for analyzing high-throughput screening data from microtiter plates. Use when user asks to import raw intensity data, configure plate layouts, perform normalization, score replicates, or generate HTML quality reports for RNAi and small molecule screens.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/cellHTS2.html
 ---
+
 
 # bioconductor-cellhts2
 

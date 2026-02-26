@@ -2,10 +2,63 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: duphold
 label: duphold
-doc: "The provided text does not contain help information or a description of the
-  tool; it is an error log from a container runtime (Apptainer/Singularity) indicating
-  a failure to pull the image due to lack of disk space.\n\nTool homepage: https://github.com/brentp/duphold"
-inputs: []
+doc: "duphold is a tool for calling structural variants (SVs) from long-read sequencing
+  data.\n\nTool homepage: https://github.com/brentp/duphold"
+inputs:
+  - id: bam
+    type: File
+    doc: path to indexed BAM/CRAM
+    inputBinding:
+      position: 101
+      prefix: --bam
+  - id: drop
+    type:
+      - 'null'
+      - boolean
+    doc: drop all samples from a multi-sample --vcf *except* the sample in 
+      --bam. useful for parallelization by sample followed by merge.
+    inputBinding:
+      position: 101
+      prefix: --drop
+  - id: fasta
+    type: File
+    doc: indexed fasta reference.
+    inputBinding:
+      position: 101
+      prefix: --fasta
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: output VCF/BCF (default is VCF to stdout)
+    default: '-'
+    inputBinding:
+      position: 101
+      prefix: --output
+  - id: snp
+    type:
+      - 'null'
+      - File
+    doc: optional path to snp/indel VCF/BCF with which to annotate SVs. BCF is 
+      highly recommended as it's much faster to parse.
+    inputBinding:
+      position: 101
+      prefix: --snp
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of decompression threads.
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --threads
+  - id: vcf
+    type: File
+    doc: path to sorted SV VCF/BCF
+    inputBinding:
+      position: 101
+      prefix: --vcf
 outputs:
   - id: stdout
     type: stdout

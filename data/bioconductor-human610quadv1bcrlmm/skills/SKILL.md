@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human610quadv1bcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides metadata and annotation support for performing genotype calling and copy number analysis on Illumina 610k Quad (v1b) arrays using the crlmm algorithm. Use when user asks to perform genotype calling, estimate copy number, or process Illumina 610k Quad platform data with the crlmm package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human610quadv1bCrlmm.html
 ---
+
 
 # bioconductor-human610quadv1bcrlmm
 

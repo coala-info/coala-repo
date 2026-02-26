@@ -1,8 +1,9 @@
 ---
 name: deepnog
-description: DeepNOG is a specialized bioinformatics tool for the rapid assignment of proteins to orthologous groups (such as eggNOG 5.0 or COG 2020) using deep neural networks.
+description: DeepNOG assigns proteins to orthologous groups using deep neural networks for rapid genomic and metagenomic analysis. Use when user asks to assign proteins to orthologous groups, perform protein group inference, or train custom models for specific taxonomic levels.
 homepage: https://github.com/univieCUBE/deepnog
 ---
+
 
 # deepnog
 

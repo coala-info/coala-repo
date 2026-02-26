@@ -1,8 +1,9 @@
 ---
 name: corsid
-description: CORSID (Core Sequence Identifier) is a specialized bioinformatics tool designed for the coronavirus research domain.
+description: "CORSID identifies transcription regulatory sequences and gene boundaries in coronavirus genomes. Use when user asks to identify TRS sites, predict viral gene architecture, or validate existing annotations in unannotated or annotated coronavirus FASTA sequences."
 homepage: http://github.com/elkebir-group/CORSID
 ---
+
 
 # corsid
 

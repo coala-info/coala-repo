@@ -1,8 +1,9 @@
 ---
 name: cosg
-description: COSG (Cosine Similarity-based marker Gene identification) is a specialized method for discovering highly specific marker genes across different single-cell data modalities.
+description: COSG identifies highly specific marker genes across single-cell data modalities using an ultrafast cosine similarity-based method. Use when user asks to identify marker genes, find cell type-specific markers, or visualize marker gene specificity using dot plots and dendrograms.
 homepage: https://github.com/genecell/COSG
 ---
+
 
 # cosg
 

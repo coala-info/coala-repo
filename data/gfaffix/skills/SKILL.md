@@ -1,8 +1,9 @@
 ---
 name: gfaffix
-description: gfaffix is a specialized tool for pangenomics designed to simplify variation graphs.
+description: "gfaffix simplifies pangenome variation graphs by collapsing shared sequence affixes while preserving the original genomic walks. Use when user asks to reduce graph complexity, collapse redundant nodes in a GFA file, or refine a pangenome graph while maintaining path consistency."
 homepage: https://github.com/marschall-lab/GFAffix
 ---
+
 
 # gfaffix
 

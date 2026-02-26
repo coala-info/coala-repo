@@ -1,8 +1,9 @@
 ---
 name: haploflow
-description: Haploflow is a strain-aware viral genome assembler designed for Illumina short-read sequence data.
+description: Haploflow is a strain-aware viral genome assembler that uses a flow algorithm on deBruijn graphs to resolve closely related haplotypes from short-read sequence data. Use when user asks to assemble viral genomes, resolve viral strains from mixed samples, or perform haplotype-aware assembly of Illumina reads.
 homepage: https://github.com/hzi-bifo/Haploflow
 ---
+
 
 # haploflow
 

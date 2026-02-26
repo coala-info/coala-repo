@@ -1,8 +1,9 @@
 ---
 name: slamem
-description: The `slamem` tool is a high-performance sequence analysis utility designed to identify long exact matches between genomic datasets.
+description: slamem identifies long exact matches between genomic datasets using a memory-efficient FM-Index and specialized search structures. Use when user asks to find maximal exact matches, identify maximal almost matches, or generate visual maps of genomic similarities between sequences.
 homepage: https://github.com/sguizard/slaMEM
 ---
+
 
 # slamem
 

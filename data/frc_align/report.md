@@ -3,7 +3,7 @@
 ## frc_align
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it consists of system log messages and a fatal error regarding container image retrieval and disk space.
+Feature Response Curve (FRC) tool for assembly evaluation, used to compute and visualize assembly quality features from alignment data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/frc:5b3f53e--boost1.64_0
@@ -18,29 +18,20 @@ The provided text does not contain help information or usage instructions; it co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/frc:5b3f53e--boost1.64_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2395160608: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/frc:5b3f53e--boost1.64_0' locally
+5b3f53e--boost1.64_0: Pulling from biocontainers/frc
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+14c05e7b0144: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2036210244: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## frc_align_FRCbam
-
-### Tool Description
-The provided text contains system error messages related to a container environment (Singularity/Apptainer) and does not include the actual help documentation for the tool. As a result, no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/frc:5b3f53e--boost1.64_0
-- **Homepage**: https://github.com/vezzi/FRC_align
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/frc:5b3f53e--boost1.64_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3519995992: no space left on device
+Run 'docker run --help' for more information
 ```
 

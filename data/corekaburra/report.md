@@ -1,9 +1,9 @@
 # corekaburra CWL Generation Report
 
-## corekaburra
+## corekaburra_Corekaburra
 
 ### Tool Description
-Corekaburra is a tool for analyzing pangenomes, but the provided text contains only system error logs and no usage information.
+An extension to pan-genome analyses that summarise genomic regions between core genes and segments of neighbouring core genes using gene synteny from a set of input genomes and a pan-genome folder.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/corekaburra:0.0.5--pyhdfd78af_0
@@ -18,9 +18,44 @@ Corekaburra is a tool for analyzing pangenomes, but the provided text contains o
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/corekaburra:0.0.5--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/1cc04ef036a6a3d3d9cb78152f20ba17e66ca169eb4375d47b90c7f904d63e481588415983: no space left on device
+usage: Corekaburra -ig file.gff [file.gff ...] -ip path/to/pan_genome
+                   [-cg complete_genomes.txt] [-cc 1.0] [-lc 0.05]
+                   [-o path/to/output] [-p OUTPUT_PREFIX] [-c int] [-l | -q]
+                   [-h] [-v]
+
+Welcome to Corekaburra! An extension to pan-genome analyses that summarise
+genomic regions between core genes and segments of neighbouring core genes
+using gene synteny from a set of input genomes and a pan-genome folder.
+
+Required arguments:
+  -ig file.gff [file.gff ...], --input_gffs file.gff [file.gff ...]
+                        Path to gff files used for pan-genome
+  -ip path/to/pan_genome, --input_pangenome path/to/pan_genome
+                        Path to the folder produced by Panaroo or Roary
+
+Analysis modifiers:
+  -cg complete_genomes.txt, --complete_genomes complete_genomes.txt
+                        text file containing names of genomes that are to be
+                        handled as complete genomes
+  -cc 1.0, --core_cutoff 1.0
+                        Percentage of isolates in which a core gene must be
+                        present [default: 1.0]
+  -lc 0.05, --low_cutoff 0.05
+                        Percentage of isolates where genes found in less than
+                        these are seen as low-frequency genes [default: 0.05]
+
+Output control:
+  -o path/to/output, --output path/to/output
+                        Path to where output files will be placed [default:
+                        current folder]
+  -p OUTPUT_PREFIX, --prefix OUTPUT_PREFIX
+                        Prefix for output files, if any is desired
+
+Other arguments:
+  -c int, --cpu int     Give max number of CPUs [default: 1]
+  -l, --log             Record program progress in for debugging purpose
+  -q, --quiet           Only print warnings
+  -h, --help            Show help function
+  -v, --version         show program's version number and exit
 ```
 

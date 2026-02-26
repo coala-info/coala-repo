@@ -1,8 +1,9 @@
 ---
 name: bed2gtf
-description: `bed2gtf` is a specialized Rust-based utility designed to bridge the gap between BED files and GTF annotations.
+description: "bed2gtf converts BED files into GTF annotations while preserving gene-level metadata and attribute fields. Use when user asks to convert BED to GTF, map genes to transcripts, or generate GTF files for downstream tools like STAR."
 homepage: https://github.com/alejandrogzi/bed2gtf
 ---
+
 
 # bed2gtf
 

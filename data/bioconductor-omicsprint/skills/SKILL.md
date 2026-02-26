@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omicsprint
-description: the package is available on all platforms; click for details.
+description: omicsPrint detects sample swaps and verifies sample identity across different omics data types using genetic fingerprints. Use when user asks to verify sample identity, detect sample swaps, or link samples across multiple omics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/omicsPrint.html
 ---
+
 
 # bioconductor-omicsprint
 

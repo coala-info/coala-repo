@@ -1,8 +1,9 @@
 ---
 name: sem
-description: SEM is a specialized bioinformatics tool designed to deconvolve MNase-seq fragment length profiles to characterize nucleosome types genome-wide.
+description: SEM deconvolves MNase-seq fragment length profiles to characterize and distinguish between different nucleosome subtypes genome-wide. Use when user asks to identify nucleosome types, characterize nucleosome occupancy and fuzziness, or perform automated discovery of nucleosome subtypes using mixture models.
 homepage: https://github.com/YenLab/SEM
 ---
+
 
 # sem
 

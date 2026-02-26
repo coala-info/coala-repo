@@ -1,8 +1,9 @@
 ---
 name: vkmz
-description: vkmz is a specialized visualization and annotation tool for metabolomics research.
+description: vkmz visualizes and annotates metabolomics LC-MS data using van Krevelen Diagrams. Use when user asks to visualize metabolomics data, generate van Krevelen Diagrams, predict molecular formulas, process LC-MS feature lists, or visualize data that already has molecular formulas.
 homepage: https://github.com/HegemanLab/VKMZ
 ---
+
 
 # vkmz
 

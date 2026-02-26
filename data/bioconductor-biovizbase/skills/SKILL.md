@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biovizbase
-description: the package is available on all platforms; click for details.
+description: biovizBase provides foundational utilities and standardized color schemes for genomic data visualization in R. Use when user asks to access biological color palettes, calculate disjoint levels for genomic tracks, shrink genomic gaps, compute GC content, or fetch ideogram data from UCSC.
 homepage: https://bioconductor.org/packages/release/bioc/html/biovizBase.html
 ---
+
 
 # bioconductor-biovizbase
 

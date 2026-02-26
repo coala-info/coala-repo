@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epigenomix
-description: The package provides methods for data preprocessing and matching as well as methods for fitting bayesian mixture models in order to detect genes with differences in both data types.
+description: Bioconductor-epigenomix integrates gene transcription and histone modification data to identify genes with significant regulatory differences across conditions. Use when user asks to map ChIP-seq reads to promoters, normalize expression and epigenetic data, calculate integration scores, or fit mixture models to classify gene regulatory patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/epigenomix.html
 ---
+
 
 # bioconductor-epigenomix
 

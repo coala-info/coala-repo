@@ -1,8 +1,9 @@
 ---
 name: pytrimal
-description: pytrimal is a high-performance Python interface to trimAl, a tool widely used for automated alignment trimming in phylogenetics and comparative genomics.
+description: "pytrimal is a high-performance Python interface for automated alignment trimming in phylogenetics and comparative genomics. Use when user asks to trim alignments using heuristics like gappyout or strict, remove columns based on gap and similarity thresholds, or select representative sequences to reduce redundancy."
 homepage: https://github.com/althonos/pytrimal
 ---
+
 
 # pytrimal
 

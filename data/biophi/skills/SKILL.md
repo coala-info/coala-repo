@@ -1,8 +1,9 @@
 ---
 name: biophi
-description: BioPhi is an open-source platform tailored for antibody design and engineering.
+description: BioPhi is an open-source platform for antibody design and engineering that performs automated humanization and humanness evaluation. Use when user asks to humanize antibody sequences, calculate OASis humanness scores, or generate residue-level probability matrices for antibody frameworks.
 homepage: https://github.com/Merck/BioPhi
 ---
+
 
 # biophi
 

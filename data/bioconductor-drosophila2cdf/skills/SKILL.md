@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drosophila2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Drosophila Genome 2.0 Array. Use when user asks to map probe identifiers to physical chip coordinates, convert between 1D indices and 2D coordinates, or manage CDF environments for Drosophila 2.0 AffyBatch objects.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosophila2cdf.html
 ---
+
 
 # bioconductor-drosophila2cdf
 

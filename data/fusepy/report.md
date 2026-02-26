@@ -1,9 +1,9 @@
 # fusepy CWL Generation Report
 
-## fusepy
+## fusepy_umount
 
 ### Tool Description
-fusepy is a Python module that provides a simple interface to FUSE and MacFUSE. (Note: The provided text contains system error messages and does not list command-line arguments.)
+Unmount file systems
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fusepy:2.0.4--py36_0
@@ -18,11 +18,16 @@ fusepy is a Python module that provides a simple interface to FUSE and MacFUSE. 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fusepy:2.0.4--py36_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1502073207: no space left on device
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: umount [OPTIONS] FILESYSTEM|DIRECTORY
+
+Unmount file systems
+
+	-a	Unmount all file systems
+	-r	Try to remount devices as read-only if mount is busy
+	-l	Lazy umount (detach filesystem)
+	-f	Force umount (i.e., unreachable NFS server)
+	-D	Don't free loop device even if it has been used
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -3,7 +3,7 @@
 ## muset
 
 ### Tool Description
-A tool for MuSEt (Multi-Sample Somatic Mutation Calling). Note: The provided help text contains only system error messages regarding container image creation and does not list specific command-line arguments.
+a pipeline for building an abundance unitig matrix from a list of FASTA/FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/muset:0.5.1--h22625ea_0
@@ -18,46 +18,43 @@ A tool for MuSEt (Multi-Sample Somatic Mutation Calling). Note: The provided hel
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/muset:0.5.1--h22625ea_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2947444148: no space left on device
-```
+muset v0.5.1
 
+DESCRIPTION
+  a pipeline for building an abundance unitig matrix from a list of FASTA/FASTQ files.
 
-## Metadata
-- **Skill**: generated
+USAGE
+  muset [--file <FILE>] [-i/--in-matrix <FILE>] [-o/--out-dir <DIR>] [-k/--kmer-size <INT>] 
+        [-m/--mini-size <INT>] [-a/--min-abundance <INT>] [-l/--min-unitig-length <INT>] 
+        [-r/--min-utg-frac <FLOAT>] [-f/--min-frac-absent <FLOAT>] 
+        [-F/--min-frac-present <FLOAT>] [-n/--min-nb-absent <FLOAT>] 
+        [-N/--min-nb-present <FLOAT>] [-t/--threads <INT>] [-s/--write-seq] [--out-frac] 
+        [-u/--logan] [--keep-temp] [-h/--help] [-v/--version] 
 
-## muset_muset_pa
+OPTIONS
+  [main options]
+       --file              - kmtricks-like input file, see README.md. 
+    -i --in-matrix         - input matrix (text file or kmtricks directory). 
+    -o --out-dir           - output directory. {output}
+    -k --kmer-size         - k-mer size. [8, 63]. {31}
+    -m --mini-size         - minimizer size. [4, 15]. {15}
+    -a --min-abundance     - minimum abundance to keep a k-mer. {2}
+    -l --min-unitig-length - minimum unitig length. {2k-1}
+    -r --min-utg-frac      - minimum k-mer fraction to set unitig average abundance [0,1]. {0.0}
+    -s --write-seq         - write the unitig sequence instead of the identifier in the output matrix [⚑]
+       --out-frac          - output an additional matrix containing k-mer fractions. [⚑]
+    -u --logan             - input samples consist of Logan unitigs (i.e., with abundance). [⚑]
 
-### Tool Description
-MuSET (Mutation Somatic Evaluation Tool)
+  [filtering options]
+    -f --min-frac-absent  - fraction of samples from which a k-mer should be absent. [0.0, 1.0] {0.1}
+    -F --min-frac-present - fraction of samples in which a k-mer should be present. [0.0, 1.0] {0.1}
+    -n --min-nb-absent    - minimum number of samples from which a k-mer should be absent (overrides -f). {0}
+    -N --min-nb-present   - minimum number of samples in which a k-mer should be present (overrides -F). {0}
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/muset:0.5.1--h22625ea_0
-- **Homepage**: https://github.com/CamilaDuitama/muset
-- **Package**: https://anaconda.org/channels/bioconda/packages/muset/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/muset:0.5.1--h22625ea_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2709746551: no space left on device
-```
-
-## muset_kmat_tools
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It contains system logs and a fatal error message related to a container runtime (Apptainer/Singularity) failing to build a SIF image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/muset:0.5.1--h22625ea_0
-- **Homepage**: https://github.com/CamilaDuitama/muset
-- **Package**: https://anaconda.org/channels/bioconda/packages/muset/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/muset:0.5.1--h22625ea_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1141971492: no space left on device
+  [other options]
+       --keep-temp - keep temporary files. [⚑]
+    -t --threads   - number of threads. {4}
+    -h --help      - show this message and exit. [⚑]
+    -v --version   - show version and exit. [⚑]
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-turbonorm
-description: the package is available on all platforms; click for details.
+description: TurboNorm performs fast scatterplot smoothing for the normalization of dual-color microarray data using B-splines. Use when user asks to normalize dual-color microarrays, apply B-spline normalization, or perform fast scatterplot smoothing on genomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/TurboNorm.html
 ---
+
 
 # bioconductor-turbonorm
 

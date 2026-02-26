@@ -1,8 +1,9 @@
 ---
 name: bioconductor-optimalflow
-description: the package is available on all platforms; click for details.
+description: This R package performs automated flow cytometry gating and alignment using optimal transport. Use when user asks to automate flow cytometry gating, align cell populations across different samples, or match clusters in flow cytometry data.
 homepage: https://bioconductor.org/packages/release/bioc/html/optimalFlow.html
 ---
+
 
 # bioconductor-optimalflow
 

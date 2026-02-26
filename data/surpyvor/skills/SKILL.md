@@ -1,8 +1,9 @@
 ---
 name: surpyvor
-description: surpyvor is a Python wrapper for SURVIVOR designed to simplify the evaluation, merging, and plotting of structural variant (SV) VCF files.
+description: "surpyvor is a Python wrapper for SURVIVOR used to merge, evaluate, and visualize structural variant VCF files. Use when user asks to merge structural variant callsets, benchmark variants against a truth set, calculate precision and recall, or create UpSet and Venn diagrams for VCF overlaps."
 homepage: https://github.com/wdecoster/surpyvor
 ---
+
 
 # surpyvor
 

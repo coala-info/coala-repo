@@ -1,8 +1,9 @@
 ---
 name: galru
-description: Galru is a specialized bioinformatics tool designed for the rapid identification and strain typing of *Mycobacterium tuberculosis* (Mtb).
+description: Galru performs rapid identification and strain typing of Mycobacterium tuberculosis by conducting spoligotyping directly on uncorrected long reads. Use when user asks to identify Mtb strains, perform spoligotyping on Nanopore or PacBio reads, or analyze tuberculosis sequencing data without assembly.
 homepage: https://github.com/quadram-institute-bioscience/galru
 ---
+
 
 # galru
 

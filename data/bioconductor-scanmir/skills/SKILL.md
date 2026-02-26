@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scanmir
-description: the package is available on all platforms; click for details.
+description: scanMiR predicts miRNA binding sites and targets in genomic sequences using biochemical models. Use when user asks to scan sequences for miRNA binding sites, predict miRNA targets, or model miRNA-target interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/scanMiR.html
 ---
+
 
 # bioconductor-scanmir
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multibac
-description: the package is available on all platforms; click for details.
+description: MultiBaC is an R package designed for the batch effect correction and integration of multi-batch multi-omics datasets. Use when user asks to correct batch effects in multi-omics data, integrate datasets from different platforms, or perform joint normalization across multiple experimental batches.
 homepage: https://bioconductor.org/packages/release/bioc/html/MultiBaC.html
 ---
+
 
 # bioconductor-multibac
 

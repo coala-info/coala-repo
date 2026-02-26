@@ -1,8 +1,9 @@
 ---
 name: treeswirl
-description: TreeSwirl is a specialized population genetics tool designed to model how different populations contribute to the genetic makeup of a target group at specific genomic loci.
+description: TreeSwirl models how different populations contribute to the genetic makeup of a target group at specific genomic loci. Use when user asks to model population contributions, detect gene flow, characterize hybrid genomes, estimate mixture proportions, or smooth local ancestry estimates.
 homepage: https://bitbucket.org/wegmannlab/treeswirl
 ---
+
 
 # treeswirl
 

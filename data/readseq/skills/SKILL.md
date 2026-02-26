@@ -1,8 +1,9 @@
 ---
 name: readseq
-description: readseq is a specialized Java-based command-line utility for the high-fidelity conversion of biosequence data.
+description: "readseq converts biosequence data between various file formats while maintaining sequence integrity and metadata. Use when user asks to convert sequence files, translate between biosequence formats, or extract information from sequence data files."
 homepage: http://iubio.bio.indiana.edu/soft/molbio/readseq/java/
 ---
+
 
 # readseq
 

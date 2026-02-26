@@ -1,8 +1,9 @@
 ---
 name: ntstat
-description: ntStat is a specialized toolkit for the statistical analysis of k-mer frequency and depth.
+description: ntStat is a toolkit for the statistical analysis of k-mer frequency and depth using Bloom filters to model genome characteristics. Use when user asks to estimate genome size, infer heterozygosity, filter sequencing errors, or fit mixture models to k-mer histograms.
 homepage: https://github.com/bcgsc/ntStat
 ---
+
 
 # ntstat
 

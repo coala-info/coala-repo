@@ -1,8 +1,9 @@
 ---
 name: protmapper
-description: The `protmapper` tool is designed to resolve inconsistencies in protein site numbering often found in proteomic datasets and literature.
+description: Protmapper resolves inconsistencies in protein modification site numbering by validating and mapping sites to a standard human reference sequence. Use when user asks to validate modification sites, map sites from different isoforms or species to a reference, or clean up proteomic datasets.
 homepage: https://github.com/indralab/protmapper
 ---
+
 
 # protmapper
 

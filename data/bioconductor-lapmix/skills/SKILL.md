@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lapmix
-description: the package is available on all platforms; click for details.
+description: This tool performs differential gene expression analysis using Laplace mixture models to provide robustness against outliers and heavy-tailed data in microarrays. Use when user asks to identify differentially expressed genes, fit Laplace mixture models to expression data, or calculate posterior probabilities for gene significance.
 homepage: https://bioconductor.org/packages/release/bioc/html/lapmix.html
 ---
+
 
 # bioconductor-lapmix
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.cpo.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Medical Subject Headings and Entrez Gene identifiers for Cavia porcellus. Use when user asks to map guinea pig genes to MeSH terms, perform MeSH enrichment analysis, or retrieve MeSH annotations for Entrez Gene IDs.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Cpo.eg.db.html
 ---
+
 
 # bioconductor-mesh.cpo.eg.db
 

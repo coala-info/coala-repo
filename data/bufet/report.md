@@ -1,9 +1,9 @@
 # bufet CWL Generation Report
 
-## bufet
+## bufet_bufet.py
 
 ### Tool Description
-The provided text does not contain help information for the tool 'bufet'. It consists of system error messages related to container execution and disk space issues.
+Run BUFET analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bufet:1.0--py35h470a237_0
@@ -18,9 +18,31 @@ The provided text does not contain help information for the tool 'bufet'. It con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/7b178a662488980d32de35e030869a732f956ed77c561e8e4d0896a8c267445e: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bufet:1.0--py35h470a237_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1932349343: no space left on device
+Usage:
+		python bufet.py [options]
+
+Mandatory arguments:
+
+	-miRNA <filePath>: path to the miRNA group file
+	-interactions filePath>: path to the interactions file
+	-ontology <filePath>: path to the ontology file
+	-synonyms <filePath>: path to the synonyms file
+
+Additional options:
+
+	-iterations: number of random permutations
+	-output <filePath>: path to the output file (overwritten if it exists)
+	-processors: number of threads to use for calculations
+	-species: "human" or "mouse"
+	-miFree: miRanda free energy (valid only if the --miRanda flag is invoked)
+	-miScore: miRanda free energy (valid only if the --miRanda flag is invoked)
+
+	--miRanda: use interactions file from miRanda run
+	--ensGO: use ontology file downloaded from Ensembl
+	--disable-file-check: (quicker but not recommended) disable all file validations.
+	--disable-interactions-check: (quicker but not recommended) disable existence and file format validation for the interactions file.
+	--disable-ontology-check: (quicker but not recommended) disable existence and file format validation for the ontology file.
+	--disable-synonyms-check: (quicker but not recommended) disable existence and file format validation for the synonyms file.
+	--help: print this message and exit
 ```
 

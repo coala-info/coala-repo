@@ -1,8 +1,9 @@
 ---
 name: bioconductor-findmyfriends
-description: the package is assisting in the creation of pangenome matrices where genes from related organisms are grouped by similarity, as well as the analysis of these data. FindMyFriends provides many novel approaches to doing pangenome analysis and supports a gene grouping algorithm that scales linearly, thus making the creation of huge pangenomes feasible.
+description: FindMyFriends performs microbial pangenome analysis by grouping genes into homology clusters using high-performance, linear-scaling algorithms. Use when user asks to create pangenome matrices, group genes by similarity using K-mer decomposition, perform neighborhood-based refinement, or visualize pangenome evolution and chromosomal organization.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/FindMyFriends.html
 ---
+
 
 # bioconductor-findmyfriends
 

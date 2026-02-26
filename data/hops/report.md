@@ -3,7 +3,7 @@
 ## hops
 
 ### Tool Description
-The provided text does not contain help information for the tool 'hops'. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull the tool's image due to insufficient disk space.
+HOPS (Heuristic Operations for Pathogen Screening) is a tool for screening and analyzing ancient DNA data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hops:0.35--hdfd78af_2
@@ -18,29 +18,14 @@ The provided text does not contain help information for the tool 'hops'. It cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hops:0.35--hdfd78af_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3171575724: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## hops_malt-build
-
-### Tool Description
-A tool from the HOPS (Heuristic Operations for Post-processing of DNA Snps) package, likely used for building MALT (Megan Alignment Tool) indices.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hops:0.35--hdfd78af_2
-- **Homepage**: https://github.com/rhuebler/HOPS/
-- **Package**: https://anaconda.org/channels/bioconda/packages/hops/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hops:0.35--hdfd78af_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3613656524: no space left on device
+usage: HOPS [-c <String>] [-h] [-i <String>] [-m <String>] [-o <String>] [-v]
+HOPS version0.33
+ -c,--configFile <String>   Path to Config File
+ -h,--help                  Print Help
+ -i,--input <String>        Specify input directory or files valid option depend on mode
+ -m,--mode <String>         HOPS Mode to run accpeted full, malt, maltex, post
+ -o,--output <String>       Specify out directory
+ -v,--version               Print Version
+In case you encounter an error drop an email with an useful description to huebler@shh.mpg.de
 ```
 

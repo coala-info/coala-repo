@@ -1,8 +1,9 @@
 ---
 name: bioconductor-riceprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Rice Genome Array. Use when user asks to retrieve probe sequences for rice microarrays, analyze Affymetrix rice genome data, or map probes to genomic locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/riceprobe.html
 ---
+
 
 # bioconductor-riceprobe
 

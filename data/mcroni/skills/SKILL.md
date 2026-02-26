@@ -1,8 +1,9 @@
 ---
 name: mcroni
-description: `mcroni` is a specialized bioinformatics tool designed to automate the characterization of the *mcr-1* gene's local environment.
+description: mcroni automates the characterization of the mcr-1 gene's local genomic environment and identifies associated insertion sequences and plasmid replicons. Use when user asks to characterize mcr-1 genetic contexts, identify ISApl1 insertion sequences, or analyze colistin resistance transposition.
 homepage: https://github.com/liampshaw/mcroni
 ---
+
 
 # mcroni
 

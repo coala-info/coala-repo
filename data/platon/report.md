@@ -3,7 +3,7 @@
 ## platon
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain help information or argument definitions for the tool 'platon'.
+Identification and characterization of bacterial plasmid contigs from short-read draft assemblies.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/platon:1.7--pyhdfd78af_0
@@ -18,14 +18,44 @@ The provided text is an error log from a container build process and does not co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/platon:1.7--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:97644f6c9704345679fe12e04554a35e2a4ed0b8970f6123b3f07e068eaa4612: unpack entry: usr/local/bin/rchive.Linux: unpack to regular file: short write: write /tmp/build-temp-1245064115/rootfs/usr/local/bin/rchive.Linux: no space left on device
+usage: platon [--db DB] [--prefix PREFIX] [--output OUTPUT]
+              [--mode {sensitivity,accuracy,specificity}] [--characterize]
+              [--meta] [--help] [--verbose] [--threads THREADS] [--version]
+              <genome>
+
+Identification and characterization of bacterial plasmid contigs from short-read draft assemblies.
+
+Input / Output:
+  <genome>              draft genome in fasta format
+  --db DB, -d DB        database path (default = <platon_path>/db)
+  --prefix PREFIX, -p PREFIX
+                        Prefix for output files
+  --output OUTPUT, -o OUTPUT
+                        Output directory (default = current working directory)
+
+Workflow:
+  --mode {sensitivity,accuracy,specificity}, -m {sensitivity,accuracy,specificity}
+                        applied filter mode: sensitivity: RDS only (>= 95%
+                        sensitivity); specificity: RDS only (>=99.9%
+                        specificity); accuracy: RDS & characterization
+                        heuristics (highest accuracy) (default = accuracy)
+  --characterize, -c    deactivate filters; characterize all contigs
+  --meta                use metagenome gene prediction mode
+
+General:
+  --help, -h            Show this help message and exit
+  --verbose, -v         Print verbose information
+  --threads THREADS, -t THREADS
+                        Number of threads to use (default = number of
+                        available CPUs)
+  --version             show program's version number and exit
+
+Citation:
+Schwengers O., Barth P., Falgenhauer L., Hain T., Chakraborty T., & Goesmann A. (2020).
+Platon: identification and characterization of bacterial plasmid contigs in short-read draft assemblies exploiting protein sequence-based replicon distribution scores.
+Microbial Genomics, 95, 295. https://doi.org/10.1099/mgen.0.000398
+
+GitHub:
+https://github.com/oschwengers/platon
 ```
 
-
-## Metadata
-- **Skill**: generated

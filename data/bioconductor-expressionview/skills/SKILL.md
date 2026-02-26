@@ -1,8 +1,9 @@
 ---
 name: bioconductor-expressionview
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: ExpressionView visualizes and optimizes the arrangement of overlapping biclusters in gene expression data. Use when user asks to rearrange rows and columns to maximize bicluster contiguity, export biclustering results to EVF format, or interactively explore gene expression modules.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ExpressionView.html
 ---
+
 
 # bioconductor-expressionview
 

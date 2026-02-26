@@ -1,8 +1,9 @@
 ---
 name: bioconductor-intansv
-description: the package is available on all platforms; click for details.
+description: This R package integrates, annotates, and visualizes structural variation predictions from multiple NGS-based programs. Use when user asks to read predictions from various SV callers, merge results into a consensus set, annotate SV effects on genomic features, or visualize SV distributions across the genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/intansv.html
 ---
+
 
 # bioconductor-intansv
 

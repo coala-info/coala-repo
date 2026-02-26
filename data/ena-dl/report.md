@@ -3,10 +3,10 @@
 ## ena-dl
 
 ### Tool Description
-A tool for downloading data from the European Nucleotide Archive (ENA). Note: The provided help text contains only system error messages and does not list specific command-line arguments.
+Download FASTQs from ENA
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/ena-dl:1.0.0--0
+- **Docker Image**: quay.io/biocontainers/ena-dl:1.0.0--1
 - **Homepage**: https://github.com/rpetit3/ena-dl
 - **Package**: https://anaconda.org/channels/bioconda/packages/ena-dl/overview
 - **Validation**: PASS
@@ -18,11 +18,46 @@ A tool for downloading data from the European Nucleotide Archive (ENA). Note: Th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ena-dl:1.0.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3818954866: no space left on device
+usage: ena-dl [-h] [--aspera STRING] [--aspera_key STRING]
+              [--aspera_speed STRING] [--is_study] [--is_experiment]
+              [--is_run] [--group_by_experiment] [--group_by_sample]
+              [--outdir OUTPUT_DIR] [--max_retry INT] [--ftp_only] [--silent]
+              [--debug] [--version]
+              ACCESSION
+
+ena-dl (v1.0.0) - Download FASTQs from ENA
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Required Options:
+
+  ACCESSION             ENA accession to query. (Study, Experiment, or Run
+                        accession)
+
+Aspera Connect Options:
+  --aspera STRING       Path to the Aspera Connect tool "ascp" (Default:
+                        "which ascp")
+  --aspera_key STRING   Path to Aspera Connect private key, if not given,
+                        guess based on ascp path
+  --aspera_speed STRING
+                        Speed at which Aspera Connect will download. (Default:
+                        100M)
+
+Query Related Options:
+  --is_study            Query is a Study.
+  --is_experiment       Query is an Experiment.
+  --is_run              Query is a Run.
+  --group_by_experiment
+                        Group Runs by experiment accession.
+  --group_by_sample     Group Runs by sample accession.
+
+Helpful Options:
+  --outdir OUTPUT_DIR   Directory to output downloads to. (Default: ./)
+  --max_retry INT       Maximum times to retry downloads (Default: 10)
+  --ftp_only            FTP only downloads.
+  --silent              Only critical errors will be printed.
+  --debug               Skip downloads, print what will be downloaded.
+  --version             show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

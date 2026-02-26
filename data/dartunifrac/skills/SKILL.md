@@ -1,8 +1,9 @@
 ---
 name: dartunifrac
-description: DartUniFrac is a high-performance bioinformatics tool designed to calculate UniFrac distances at a scale that traditional algorithms cannot reach.
+description: DartUniFrac calculates UniFrac distances for massive microbiome datasets using high-performance sketching and tree representation algorithms. Use when user asks to calculate weighted or unweighted UniFrac distances, process millions of samples efficiently, or use GPU acceleration for phylogenetic distance calculations.
 homepage: https://github.com/jianshu93/DartUniFrac
 ---
+
 
 # dartunifrac
 

@@ -1,8 +1,9 @@
 ---
 name: perl-html-tableextract
-description: This skill provides guidance on using the `HTML::TableExtract` Perl module to programmatically parse and retrieve content from HTML tables.
+description: This tool programmatically parses and extracts data from HTML tables while preserving structural integrity like nested tables and cell spans. Use when user asks to extract data from HTML tables by headers, target tables based on depth or attributes, or handle complex table layouts in Perl.
 homepage: https://metacpan.org/pod/HTML::TableExtract
 ---
+
 
 # perl-html-tableextract
 

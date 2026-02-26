@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mnem
-description: the package is available on all platforms; click for details.
+description: This package implements mixture nested effects models to infer signaling pathways from single-cell perturbation data. Use when user asks to infer signaling networks, analyze single-cell perturbation data, or identify cell sub-populations with distinct pathway topologies.
 homepage: https://bioconductor.org/packages/release/bioc/html/mnem.html
 ---
+
 
 # bioconductor-mnem
 

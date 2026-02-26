@@ -1,8 +1,9 @@
 ---
 name: bioconductor-egseadata
-description: the package is available on all platforms; click for details.
+description: This package provides gene set collections and example datasets for the Ensemble of Gene Set Enrichment Analyses (EGSEA) workflow. Use when user asks to access MSigDB, GeneSetDB, or KEGG pathway collections for human, mouse, or rat, or load example RNA-seq datasets for testing EGSEA.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/EGSEAdata.html
 ---
+
 
 # bioconductor-egseadata
 

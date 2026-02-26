@@ -1,8 +1,9 @@
 ---
 name: ucsc-maskoutfa
-description: The `ucsc-maskoutfa` tool (commonly executed as `maskOutFa`) is a high-performance utility from the UCSC Genome Browser "kent" source tree.
+description: The ucsc-maskoutfa tool applies masking to genomic sequences. Use when user asks to mask genomic sequences, soft-mask repetitive elements, hard-mask repetitive elements, or mask regions specified by BED files or RepeatMasker output.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-maskoutfa
 

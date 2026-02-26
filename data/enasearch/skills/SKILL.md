@@ -1,8 +1,9 @@
 ---
 name: enasearch
-description: The `enasearch` skill enables efficient interaction with the ENA database without manually constructing complex REST URLs.
+description: Enasearch provides a high-level interface for searching and retrieving metadata and sequence data from the European Nucleotide Archive. Use when user asks to search ENA data domains, retrieve run or analysis reports, download raw sequence data, or identify available search fields.
 homepage: http://bebatut.fr/enasearch/
 ---
+
 
 # enasearch
 

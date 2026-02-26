@@ -1,9 +1,9 @@
 # perl-log-log4perl CWL Generation Report
 
-## perl-log-log4perl
+## perl-log-log4perl_perl
 
 ### Tool Description
-Log::Log4perl is a Perl port of the log4j logging library. Note: The provided text appears to be a system error log regarding a container build failure and does not contain command-line usage information or arguments.
+Perl interpreter
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-log-log4perl:1.55--pl5321hdfd78af_0
@@ -12,15 +12,42 @@ Log::Log4perl is a Perl port of the log4j logging library. Note: The provided te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-log-log4perl/overview
-- **Total Downloads**: 76.3K
+- **Total Downloads**: 76.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/925c31a9c40574dc7d02ecf424e959606006757c44792d46da34f9292f403150: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-log-log4perl:1.55--pl5321hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-897212643: no space left on device
+Usage: perl [switches] [--] [programfile] [arguments]
+  -0[octal]         specify record separator (\0, if no argument)
+  -a                autosplit mode with -n or -p (splits $_ into @F)
+  -C[number/list]   enables the listed Unicode features
+  -c                check syntax only (runs BEGIN and CHECK blocks)
+  -d[:debugger]     run program under debugger
+  -D[number/list]   set debugging flags (argument is a bit mask or alphabets)
+  -e program        one line of program (several -e's allowed, omit programfile)
+  -E program        like -e, but enables all optional features
+  -f                don't do $sitelib/sitecustomize.pl at startup
+  -F/pattern/       split() pattern for -a switch (//'s are optional)
+  -i[extension]     edit <> files in place (makes backup if extension supplied)
+  -Idirectory       specify @INC/#include directory (several -I's allowed)
+  -l[octal]         enable line ending processing, specifies line terminator
+  -[mM][-]module    execute "use/no module..." before executing program
+  -n                assume "while (<>) { ... }" loop around program
+  -p                assume loop like -n but print line also, like sed
+  -s                enable rudimentary parsing for switches after programfile
+  -S                look for programfile using PATH environment variable
+  -t                enable tainting warnings
+  -T                enable tainting checks
+  -u                dump core after parsing program
+  -U                allow unsafe operations
+  -v                print version, patchlevel and license
+  -V[:variable]     print configuration summary (or a single Config.pm variable)
+  -w                enable many useful warnings
+  -W                enable all warnings
+  -x[directory]     ignore text before #!perl line (optionally cd to directory)
+  -X                disable all warnings
+  
+Run 'perldoc perl' for more help with Perl.
 ```
 

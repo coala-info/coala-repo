@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spqn
-description: the package is available on all platforms; click for details.
+description: The bioconductor-spqn package implements spatial quantile normalization to remove systematic biases from large-scale correlation matrices. Use when user asks to normalize gene co-expression networks, remove distance-dependent bias in correlation data, or apply spatial quantile normalization.
 homepage: https://bioconductor.org/packages/release/bioc/html/spqn.html
 ---
+
 
 # bioconductor-spqn
 

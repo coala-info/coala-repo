@@ -1,8 +1,9 @@
 ---
 name: stringdecomposer
-description: StringDecomposer is a specialized bioinformatic tool designed to solve the "string decomposition problem" in the context of centromeric sequences.
+description: StringDecomposer partitions long DNA sequences into constituent monomers based on a provided library to identify the organization of centromeric repeats. Use when user asks to decompose sequences into monomers, identify alpha satellites in long reads, or translate DNA sequences into a monomeric alphabet.
 homepage: https://github.com/ablab/stringdecomposer
 ---
+
 
 # stringdecomposer
 

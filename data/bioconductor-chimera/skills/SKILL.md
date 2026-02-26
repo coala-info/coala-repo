@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chimera
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool processes and analyzes fusion gene data from various detection tools within the R/Bioconductor framework. Use when user asks to import fusion discovery results, filter chimeric candidates, generate fusion sequences, visualize read coverage, or predict oncogenic potential.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/chimera.html
 ---
+
 
 # bioconductor-chimera
 

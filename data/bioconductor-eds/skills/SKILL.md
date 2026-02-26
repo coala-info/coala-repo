@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eds
-description: the package is predominantly for simplifying package dependency graph for other Bioconductor packages.
+description: The bioconductor-eds package reads Alevin's Efficient single cell binary Data Storage format into R as memory-efficient sparse matrices. Use when user asks to read EDS files, load Alevin count matrices, or import single-cell feature-count data into R.
 homepage: https://bioconductor.org/packages/release/bioc/html/eds.html
 ---
+
 
 # bioconductor-eds
 

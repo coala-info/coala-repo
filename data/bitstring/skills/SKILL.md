@@ -1,8 +1,9 @@
 ---
 name: bitstring
-description: The bitstring skill enables precise control over binary data at the bit level, moving beyond the byte-oriented limitations of standard Python types.
+description: The bitstring tool provides classes and utilities for the creation, manipulation, and parsing of binary data at the bit level. Use when user asks to handle non-byte-aligned data, parse network packets, pack or unpack binary structures, and perform bitwise slicing or searching.
 homepage: https://github.com/scott-griffiths/bitstring
 ---
+
 
 # bitstring
 

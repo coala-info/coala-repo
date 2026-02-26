@@ -1,8 +1,9 @@
 ---
 name: flask-potion
-description: Flask-Potion is a resource-oriented framework designed to streamline the creation of robust RESTful APIs.
+description: Flask-Potion is a resource-oriented framework for building RESTful APIs with Flask that automates CRUD operations and schema generation. Use when user asks to build RESTful APIs, link resources to database models, implement filtering and sorting, or manage API permissions and JSON Hyper-Schemas.
 homepage: https://github.com/biosustain/potion
 ---
+
 
 # flask-potion
 

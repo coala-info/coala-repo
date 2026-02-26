@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genelendatabase
-description: the package is available on all platforms; click for details.
+description: This package provides mRNA transcript lengths for various genomes and gene identifier formats sourced from the UCSC table browser. Use when user asks to retrieve gene or transcript length data, normalize RNA-seq data for selection bias, or map gene identifiers to sequence lengths for functional enrichment analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/geneLenDataBase.html
 ---
+
 
 # bioconductor-genelendatabase
 

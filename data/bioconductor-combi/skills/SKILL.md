@@ -1,8 +1,9 @@
 ---
 name: bioconductor-combi
-description: the package is available on all platforms; click for details.
+description: This R package performs model-based integration of multiple compositional omics datasets. Use when user asks to integrate multi-omics data, perform compositional data analysis, or visualize combined datasets using latent variable models.
 homepage: https://bioconductor.org/packages/release/bioc/html/combi.html
 ---
+
 
 # bioconductor-combi
 

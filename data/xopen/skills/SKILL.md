@@ -1,8 +1,9 @@
 ---
 name: xopen
-description: The `xopen` skill provides a streamlined way to handle file I/O in Python without manually managing different compression libraries.
+description: xopen provides a unified interface for reading and writing compressed and uncompressed files, automatically detecting compression formats and optimizing performance. Use when user asks to read compressed files, write compressed files, read from or write to standard streams, or optimize file I/O performance.
 homepage: https://github.com/marcelm/xopen
 ---
+
 
 # xopen
 

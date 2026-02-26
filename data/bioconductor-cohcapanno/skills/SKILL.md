@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cohcapanno
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for Illumina 27k and 450k methylation arrays formatted for the City of Hope CpG Island Analysis Pipeline. Use when user asks to load COHCAP-compatible site and island mappings, perform differential methylation analysis on Illumina array data, or integrate methylation results with gene expression.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/COHCAPanno.html
 ---
+
 
 # bioconductor-cohcapanno
 

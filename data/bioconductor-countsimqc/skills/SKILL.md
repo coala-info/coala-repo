@@ -1,8 +1,9 @@
 ---
 name: bioconductor-countsimqc
-description: the package is available on all platforms; click for details.
+description: This package compares characteristic features across multiple count data sets and generates comprehensive quality control reports. Use when user asks to compare synthetic data to a gold standard, perform exploratory data analysis of count matrices, or generate reports on gene expression distributions and mean-variance relationships.
 homepage: https://bioconductor.org/packages/release/bioc/html/countsimQC.html
 ---
+
 
 # bioconductor-countsimqc
 

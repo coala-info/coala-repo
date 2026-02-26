@@ -1,8 +1,9 @@
 ---
 name: perl-dbd-pg
-description: The `DBD::Pg` driver is the essential bridge between Perl's Database Interface (DBI) and PostgreSQL servers.
+description: This tool provides the Perl DBI driver for connecting to and interacting with PostgreSQL databases. Use when user asks to connect to a Postgres database from Perl, execute SQL statements, or perform high-performance bulk data loading using the COPY command.
 homepage: http://search.cpan.org/dist/DBD-Pg/
 ---
+
 
 # perl-dbd-pg
 

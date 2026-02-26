@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicstate
-description: the package is available on all platforms; click for details.
+description: This tool builds and accesses GenomicState objects from Gencode sources for use with derfinder and bumphunter analysis tools. Use when user asks to create or load TxDb, AnnotatedGenes, or GenomicState objects, query AnnotationHub for Gencode annotations, or annotate genomic regions for differential expression analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GenomicState.html
 ---
+
 
 # bioconductor-genomicstate
 

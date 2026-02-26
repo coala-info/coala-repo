@@ -1,8 +1,9 @@
 ---
 name: semeta
-description: SeMeta is a C++ based bioinformatics tool optimized for the taxonomic classification of metagenomic datasets.
+description: SeMeta is a bioinformatics tool designed for the taxonomic classification and assignment of metagenomic sequencing reads. Use when user asks to install SeMeta via Bioconda, classify single-end or paired-end reads, or map sequencing data to taxonomic lineages.
 homepage: http://it.hcmute.edu.vn/bioinfo/metapro/SeMeta.html
 ---
+
 
 # semeta
 

@@ -1,8 +1,9 @@
 ---
 name: spacerplacer
-description: SpacerPlacer is a specialized bioinformatics tool designed to model the evolutionary history of CRISPR spacer arrays.
+description: SpacerPlacer models the evolutionary history of CRISPR spacer arrays by reconstructing ancestral states and estimating spacer deletion rates. Use when user asks to reconstruct CRISPR spacer evolution, determine the transcription orientation of CRISPR arrays, or identify complex genomic events like block deletions.
 homepage: https://github.com/fbaumdicker/SpacerPlacer
 ---
+
 
 # spacerplacer
 

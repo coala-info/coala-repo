@@ -1,8 +1,9 @@
 ---
 name: burrito
-description: Burritos is a specialized Swift library that provides a robust set of property wrappers designed to reduce boilerplate code.
+description: Burritos is a Swift library that provides property wrappers to reduce boilerplate for common data handling tasks like thread safety, validation, and persistence. Use when user asks to implement atomic writes, clamp numeric values, manage undo/redo history, or persist data via UserDefaults.
 homepage: https://github.com/guillermomuntaner/Burritos
 ---
+
 
 # burrito
 

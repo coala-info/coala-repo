@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metagxpancreas
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of curated pancreatic cancer transcriptome datasets for meta-analysis. Use when user asks to access pancreatic cancer genomic data, perform meta-analysis on pancreatic datasets, or load curated transcriptomic profiles.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MetaGxPancreas.html
 ---
+
 
 # bioconductor-metagxpancreas
 

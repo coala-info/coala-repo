@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clusterstab
-description: the package is available on all platforms; click for details.
+description: This tool assesses the stability of clusters in high-throughput data using a resampling-based approach. Use when user asks to evaluate cluster stability, validate clustering results, or determine the optimal number of clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/clusterStab.html
 ---
+
 
 # bioconductor-clusterstab
 

@@ -1,8 +1,9 @@
 ---
 name: smudgeplot
-description: Smudgeplot is a bioinformatic tool designed for reference-free genome profiling.
+description: Smudgeplot is a bioinformatic tool for reference-free genome profiling that visualizes haplotype structures and infers ploidy levels from sequencing reads. Use when user asks to extract heterozygous k-mer pairs, infer genome ploidy, or generate 2D histograms to disentangle complex genome structures.
 homepage: https://github.com/KamilSJaron/smudgeplot
 ---
+
 
 # smudgeplot
 

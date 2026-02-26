@@ -1,8 +1,9 @@
 ---
 name: bioconductor-recoup
-description: The package uses ggplot2 and ComplexHeatmap graphics facilities for curve and heatmap coverage profiles respectively.
+description: Bioconductor-recoup creates curve and heatmap coverage profiles for genomic data using ggplot2 and ComplexHeatmap. Use when user asks to visualize genomic signal distribution, generate coverage heatmaps, or plot signal profiles across genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/recoup.html
 ---
+
 
 # bioconductor-recoup
 

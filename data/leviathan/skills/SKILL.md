@@ -1,8 +1,9 @@
 ---
 name: leviathan
-description: LEVIATHAN is a structural variant caller optimized for Linked-Reads data.
+description: "Leviathan is a structural variant caller optimized for identifying genomic rearrangements in Linked-Reads data. Use when user asks to call structural variants from Linked-Reads, index barcodes in a BAM file, or identify SV candidates using shared barcode frequencies."
 homepage: https://github.com/morispi/LEVIATHAN
 ---
+
 
 # leviathan
 

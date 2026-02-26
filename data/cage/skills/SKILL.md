@@ -1,8 +1,9 @@
 ---
 name: cage
-description: The `cage` tool (internally referred to as `cagent`) is a declarative framework for creating and deploying intelligent AI agents.
+description: The cage tool is a declarative framework and CLI for creating, deploying, and running intelligent AI agents. Use when user asks to initialize new agent configurations, run agents from a catalog, expose agents via a REST API, or manage Model Context Protocol integrations.
 homepage: https://github.com/docker/cagent
 ---
+
 
 # cage
 

@@ -1,8 +1,9 @@
 ---
 name: perl-test-class-moose
-description: Test::Class::Moose is a powerful xUnit-style testing framework for Perl that leverages the Moose object system.
+description: Perl-test-class-moose provides an xUnit-style testing framework for Perl that utilizes the Moose object system to organize tests into classes and roles. Use when user asks to create object-oriented test suites, manage test lifecycles with startup or teardown methods, share testing logic via roles, or filter and run tests using a class-based runner.
 homepage: https://metacpan.org/release/Test-Class-Moose
 ---
+
 
 # perl-test-class-moose
 

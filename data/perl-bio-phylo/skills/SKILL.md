@@ -1,8 +1,9 @@
 ---
 name: perl-bio-phylo
-description: Bio::Phylo is a robust, object-oriented Perl framework designed for the representation and analysis of phylogenetic data.
+description: Bio::Phylo is a Perl framework for representing and analyzing phylogenetic data, including trees, taxa, and character matrices. Use when user asks to represent phylogenetic relationships, configure global logging for bioinformatic pipelines, or assign unique identifiers to biological data objects.
 homepage: https://metacpan.org/pod/Bio::Phylo
 ---
+
 
 # perl-bio-phylo
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-famagg
-description: the package is available on all platforms; click for details.
+description: The FamAgg package provides a framework for analyzing the familial aggregation of traits and identifying non-random clustering of cases within large pedigrees. Use when user asks to analyze pedigree data, calculate kinship between individuals, visualize family trees, or perform statistical tests like the Genealogical Index of Familiality and Kinship Sum Test to identify genetic clustering.
 homepage: https://bioconductor.org/packages/release/bioc/html/FamAgg.html
 ---
+
 
 # bioconductor-famagg
 

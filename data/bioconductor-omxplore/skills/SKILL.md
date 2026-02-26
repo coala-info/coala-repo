@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omxplore
-description: the package omXplore.
+description: omXplore provides interactive visualization and exploration tools for omics data within the Bioconductor ecosystem. Use when user asks to interactively explore omics datasets, visualize data quality, or perform exploratory data analysis on proteomics results.
 homepage: https://bioconductor.org/packages/release/bioc/html/omXplore.html
 ---
+
 
 # bioconductor-omxplore
 

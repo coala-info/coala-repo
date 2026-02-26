@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arabidopsis.db0
-description: the package is available on all platforms; click for details.
+description: This package provides base annotation data for Arabidopsis thaliana to support the creation of custom annotation packages. Use when user asks to build custom Arabidopsis chip-specific annotation databases, use sqlForge for annotation package generation, or access raw SQLite data for Arabidopsis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/arabidopsis.db0.html
 ---
+
 
 # bioconductor-arabidopsis.db0
 

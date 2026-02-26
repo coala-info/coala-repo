@@ -1,8 +1,9 @@
 ---
 name: mercat2
-description: MerCat2 is a versatile k-mer counter and diversity estimator designed for multi-omic analysis.
+description: MerCat2 is a k-mer counter and diversity estimator that performs database-independent property analysis for multi-omic datasets. Use when user asks to count k-mers, estimate sequence diversity, calculate physicochemical properties of proteins, or perform PCA on metagenomic and proteomic data.
 homepage: https://github.com/raw-lab/mercat2
 ---
+
 
 # mercat2
 

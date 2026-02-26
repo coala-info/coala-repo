@@ -1,8 +1,9 @@
 ---
 name: callerpp
-description: `callerpp` is a specialized consensus caller that utilizes the `spoa` (Simd Partial Order Alignment) library to perform partial order alignment.
+description: callerpp is a consensus caller that utilizes partial order alignment to generate accurate sequence summaries. Use when user asks to call consensus sequences, perform partial order alignment, or resolve sequences with high indel rates.
 homepage: https://github.com/nh13/callerpp
 ---
+
 
 # callerpp
 

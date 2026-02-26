@@ -3,10 +3,10 @@
 ## phirbo
 
 ### Tool Description
-The provided text does not contain help information or argument definitions. It appears to be an error log from a container runtime (Singularity/Apptainer) failing to fetch the tool's image.
+Phirbo (v1.0) predicts hosts from phage (meta)genomic data
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/phirbo:1.0--0
+- **Docker Image**: quay.io/biocontainers/phirbo:1.0--hdfd78af_1
 - **Homepage**: https://github.com/aziele/phirbo
 - **Package**: https://anaconda.org/channels/bioconda/packages/phirbo/overview
 - **Validation**: PASS
@@ -18,33 +18,25 @@ The provided text does not contain help information or argument definitions. It 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phirbo:1.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: phirbo [-h] [--p P] [--k K] [--t NUM_THREADS] [--version]
+              virus_dir host_dir output_file
 
+Phirbo (v1.0) predicts hosts from phage (meta)genomic data
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  virus_dir        Input directory w/ ranked lists for viruses
+  host_dir         Input directory w/ ranked lists for hosts
+  output_file      Output file name
 
-## phirbo_phirbo.py
-
-### Tool Description
-PHage-host Interaction Research By Orthology (Note: The provided text is a container build log and does not contain help information or argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phirbo:1.0--0
-- **Homepage**: https://github.com/aziele/phirbo
-- **Package**: https://anaconda.org/channels/bioconda/packages/phirbo/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phirbo:1.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help       show this help message and exit
+  --p P            RBO parameter in range (0, 1) determines the degree of top-
+                   weightedness of RBO measure. High p implies strong emphasis
+                   on top ranked items [default = 0.75]
+  --k K            Truncate all ranked lists to the first `k` rankings to
+                   calculate RBO. To disable the truncation use --k 0 [default
+                   = 30]
+  --t NUM_THREADS  Number of threads (CPUs) [default = 20]
+  --version        Show tool's version number and exit
 ```
 

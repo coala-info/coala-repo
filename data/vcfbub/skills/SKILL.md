@@ -1,8 +1,9 @@
 ---
 name: vcfbub
-description: `vcfbub` is a specialized utility for pangenomics designed to clean up complex VCF outputs from the Variation Graph (vg) toolkit.
+description: vcfbub cleans and simplifies complex, nested VCF outputs from pangenome graph deconstruction. Use when user asks to filter VCFs by variant nesting level, remove large structural variants while retaining nested variants, or prepare pangenome VCFs for downstream analysis.
 homepage: https://github.com/pangenome/vcfbub
 ---
+
 
 # vcfbub
 

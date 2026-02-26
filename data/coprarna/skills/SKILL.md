@@ -1,8 +1,9 @@
 ---
 name: coprarna
-description: CopraRNA (Comparative Prediction of sRNA Targets) is a specialized bioinformatics tool that identifies potential regulatory targets of bacterial small RNAs.
+description: CopraRNA predicts regulatory targets of bacterial small RNAs by integrating comparative genomic data from multiple homologous sequences. Use when user asks to predict sRNA targets, identify bacterial small RNA interactions, or perform comparative target prediction across multiple organisms.
 homepage: https://github.com/PatrickRWright/CopraRNA
 ---
+
 
 # coprarna
 

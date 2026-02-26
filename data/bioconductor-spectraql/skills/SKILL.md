@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spectraql
-description: the package is available on all platforms; click for details.
+description: SpectraQL provides a SQL-like query language for mass spectrometry data stored in Spectra objects. Use when user asks to query mass spectrometry data, filter spectra using SQL-like syntax, or select specific peaks and metadata from Spectra objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpectraQL.html
 ---
+
 
 # bioconductor-spectraql
 

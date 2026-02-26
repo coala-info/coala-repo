@@ -1,8 +1,9 @@
 ---
 name: buscolite
-description: Buscolite is a lightweight alternative to the standard BUSCO (Benchmarking Universal Single-Copy Orthologs) tool.
+description: Buscolite is a lightweight tool for assessing genome and proteome completeness using universal single-copy orthologs. Use when user asks to evaluate assembly completeness, analyze protein sets for orthologs, or generate summary plots from BUSCO-style results.
 homepage: https://github.com/nextgenusfs/buscolite
 ---
+
 
 # buscolite
 

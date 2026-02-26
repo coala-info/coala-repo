@@ -1,8 +1,9 @@
 ---
 name: cd-hit
-description: CD-HIT (Cluster Database at High Identity with Tolerance) is a high-performance sequence clustering suite.
+description: CD-HIT is a high-performance suite used to cluster biological sequences and remove redundancy based on user-defined similarity thresholds. Use when user asks to cluster protein or nucleotide sequences, collapse redundant datasets, compare two sequence databases, or identify duplicates in sequencing reads.
 homepage: https://github.com/weizhongli/cdhit
 ---
+
 
 # cd-hit
 

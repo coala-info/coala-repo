@@ -1,8 +1,9 @@
 ---
 name: perl-number-misc
-description: The `perl-number-misc` skill provides a suite of handy utilities for handling numbers within Perl environments.
+description: This tool provides a collection of utilities for formatting, validating, and manipulating numeric data in Perl scripts. Use when user asks to format numbers with commas, round values to specific decimal places, validate numeric types, or check if a number falls within a range.
 homepage: http://metacpan.org/pod/Number::Misc
 ---
+
 
 # perl-number-misc
 

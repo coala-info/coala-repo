@@ -2,10 +2,27 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: plasmidhawk
 label: plasmidhawk
-doc: "A tool for plasmid identification and analysis. (Note: The provided input text
-  contains container build error logs and does not list command-line arguments.)\n
-  \nTool homepage: https://gitlab.com/treangenlab/plasmidhawk"
-inputs: []
+doc: "PlasmidHawk: A tool for plasmid analysis\n\nTool homepage: https://gitlab.com/treangenlab/plasmidhawk"
+inputs:
+  - id: sub_command
+    type: string
+    doc: sub-command help
+    inputBinding:
+      position: 1
+  - id: annotate
+    type:
+      - 'null'
+      - boolean
+    doc: Create annotation file which maps labs to fragments
+    inputBinding:
+      position: 102
+  - id: predict
+    type:
+      - 'null'
+      - boolean
+    doc: Predict lab of origin of input sequences
+    inputBinding:
+      position: 102
 outputs:
   - id: stdout
     type: stdout

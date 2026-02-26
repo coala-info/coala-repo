@@ -1,8 +1,9 @@
 ---
 name: samclip
-description: samclip is a specialized tool designed to clean up sequence alignments by filtering out reads with "clipped" ends.
+description: "samclip filters sequence alignments by removing reads with excessive soft or hard clipping while preserving those at contig edges. Use when user asks to clean SAM files, filter clipped reads, or remove alignment noise before variant calling."
 homepage: https://github.com/tseemann/samclip
 ---
+
 
 # samclip
 

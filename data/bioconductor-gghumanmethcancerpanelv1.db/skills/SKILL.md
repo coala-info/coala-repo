@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gghumanmethcancerpanelv1.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation mappings for the Illumina GoldenGate Human Methylation Cancer Panel v1. Use when user asks to map probe identifiers to gene symbols, retrieve CpG island metadata, find genomic coordinates, or perform functional annotation using GO and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GGHumanMethCancerPanelv1.db.html
 ---
+
 
 # bioconductor-gghumanmethcancerpanelv1.db
 

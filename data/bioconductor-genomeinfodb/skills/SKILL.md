@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomeinfodb
-description: the package is available on all platforms; click for details.
+description: GenomeInfoDb provides a standardized interface for mapping, converting, and manipulating sequence name styles and genomic metadata across different organisms. Use when user asks to convert chromosome naming conventions, filter for standard chromosomes, or manage sequence metadata in Bioconductor objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomeInfoDb.html
 ---
+
 
 # bioconductor-genomeinfodb
 

@@ -1,8 +1,9 @@
 ---
 name: perl-graph
-description: The `perl-graph` skill enables the management of abstract graph data structures.
+description: The perl-graph tool manages abstract graph data structures and executes graph theory algorithms within a Perl environment. Use when user asks to model complex relationships, create directed or undirected graphs, check for directed acyclic graphs, find connected components, or calculate shortest paths.
 homepage: http://metacpan.org/pod/Graph
 ---
+
 
 # perl-graph
 

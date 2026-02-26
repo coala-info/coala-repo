@@ -1,8 +1,9 @@
 ---
 name: clinvar-tsv
-description: `clinvar-tsv` is a Snakemake-powered utility designed to streamline the acquisition and processing of ClinVar data.
+description: "clinvar-tsv automates the download and conversion of ClinVar XML data into flattened TSV files for easier analysis. Use when user asks to download ClinVar releases, convert ClinVar XML to TSV, or generate summary reports of clinical assertions."
 homepage: https://github.com/bihealth/clinvar-tsv
 ---
+
 
 # clinvar-tsv
 

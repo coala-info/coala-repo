@@ -1,8 +1,9 @@
 ---
 name: wg-blimp
-description: `wg-blimp` is a comprehensive bioinformatics pipeline designed to streamline the processing of Whole Genome Bisulfite Sequencing (WGBS) data.
+description: `wg-blimp` processes Whole Genome Bisulfite Sequencing (WGBS) data to produce annotated methylation profiles. Use when user asks to process WGBS data, run the analysis pipeline, create or execute from a configuration, run on a cluster, or visualize results.
 homepage: https://github.com/MarWoes/wg-blimp
 ---
+
 
 # wg-blimp
 

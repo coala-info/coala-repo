@@ -1,8 +1,9 @@
 ---
 name: r-multicool
-description: A set of tools to permute multisets without loops or hash tables and to generate integer partitions. The permutation functions are based on C code from Aaron Williams. Cool-lex order is similar to colexicographical order. The algorithm is described in Williams, A. Loopless Generation of Multiset Permutations by Prefix Shifts. SODA 2009, Symposium on Discrete Algorithms, New York, United States. The permutation code is distributed without restrictions. The code for stable and efficient computation of multinomial coefficients comes from Dave Barber.
+description: The r-multicool package provides efficient tools for generating multiset permutations, calculating multinomial coefficients, and producing integer partitions. Use when user asks to generate permutations of a multiset, calculate the number of ways to arrange items, or find all partitions of an integer.
 homepage: https://cloud.r-project.org/web/packages/multicool/index.html
 ---
+
 
 # r-multicool
 

@@ -1,8 +1,9 @@
 ---
 name: pgscatalog.calc
-description: The `pgscatalog.calc` package provides specialized tools for the final stages of polygenic score application.
+description: This tool calculates polygenic scores and performs statistical adjustments based on genetic ancestry. Use when user asks to calculate polygenic scores, convert genomic data to Zarr format, aggregate results from multiple files, or adjust scores for genetic ancestry.
 homepage: https://github.com/PGScatalog/pygscatalog/
 ---
+
 
 # pgscatalog.calc
 

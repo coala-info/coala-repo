@@ -1,8 +1,9 @@
 ---
 name: masurca
-description: MaSuRCA is a powerful genome assembly toolkit that uses the "super-read" and "mega-read" algorithms to combine the high accuracy of Illumina data with the long-range information of third-generation sequencing.
+description: MaSuRCA is a genome assembly toolkit that combines short-read and long-read sequencing data using super-read and mega-read algorithms. Use when user asks to perform hybrid genome assembly, scaffold assemblies with SAMBA, or fill gaps in existing scaffolds.
 homepage: http://masurca.blogspot.co.uk/
 ---
+
 
 # masurca
 

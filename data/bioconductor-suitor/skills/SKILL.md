@@ -1,8 +1,9 @@
 ---
 name: bioconductor-suitor
-description: the package is available on all platforms; click for details.
+description: SUITOR is a cross-validation method for selecting the optimal number of mutational signatures in cancer genomics. Use when user asks to select the number of mutational signatures, evaluate signature extraction models, or identify mutational processes in genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SUITOR.html
 ---
+
 
 # bioconductor-suitor
 

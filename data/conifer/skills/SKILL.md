@@ -1,8 +1,9 @@
 ---
 name: conifer
-description: Conifer is a high-performance tool designed to add statistical depth to Kraken2 metagenomic classifications.
+description: Conifer adds statistical depth to Kraken2 metagenomic classifications by evaluating the confidence of taxonomic assignments based on k-mer distributions. Use when user asks to calculate confidence scores for Kraken2 results, generate per-taxon summary reports, or analyze root-to-leaf scores for taxonomic lineages.
 homepage: https://github.com/Ivarz/Conifer/
 ---
+
 
 # conifer
 

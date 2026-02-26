@@ -3,7 +3,7 @@
 ## ppanini
 
 ### Tool Description
-The provided text does not contain help information for the tool 'ppanini'. It appears to be a log of a failed container build/fetch process using Apptainer/Singularity.
+ppanini
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ppanini:0.7.4--py_0
@@ -18,13 +18,33 @@ The provided text does not contain help information for the tool 'ppanini'. It a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ppanini:0.7.4--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: ppanini [-h] -i INPUT_TABLE [-o OUTPUT_FOLDER] [--basename BASENAME]
+               [--uniref2go UNIREF2GO] [--log-level LOG_LEVEL]
+               [--abundance-detection-level ABUNDANCE_DETECTION_LEVEL]
+               [--tshld-abund TSHLD_ABUND] [--tshld-prev TSHLD_PREV]
+               [--beta BETA] [--version]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT_TABLE, --input_table INPUT_TABLE
+                        REQUIRED: Gene abundance table with metadata
+  -o OUTPUT_FOLDER, --output-folder OUTPUT_FOLDER
+                        Folder containing results
+  --basename BASENAME   BASENAME for all the output files
+  --uniref2go UNIREF2GO
+                        uniref to GO term mapping file
+  --log-level LOG_LEVEL
+                        Choices: [DEBUG, INFO, WARNING, ERROR, CRITICAL]
+  --abundance-detection-level ABUNDANCE_DETECTION_LEVEL
+                        Detection level of normalized relative abundance
+  --tshld-abund TSHLD_ABUND
+                        [X] Percentile Cutoff for Abundance; Default=75th
+  --tshld-prev TSHLD_PREV
+                        Percentile cutoff for Prevalence
+  --beta BETA           Beta parameter for weights on percentiles
+  --version             prints the version
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

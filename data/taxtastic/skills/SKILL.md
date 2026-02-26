@@ -1,8 +1,9 @@
 ---
 name: taxtastic
-description: Taxtastic is a specialized suite of tools designed to bridge the gap between raw phylogenetic data and standardized reference packages.
+description: Taxtastic is a suite of tools designed to build, validate, and manage taxonomic reference packages for phylogenetic analysis. Use when user asks to create or validate reference packages, update NCBI TaxIDs, perform taxonomic lookups, or generate lineage tables from biological sequences.
 homepage: https://github.com/fhcrc/taxtastic
 ---
+
 
 # taxtastic
 

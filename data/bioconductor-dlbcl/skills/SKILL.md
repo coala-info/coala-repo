@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dlbcl
-description: the package is available on all platforms; click for details.
+description: This package provides diffuse large B-cell lymphoma expression data and a human protein-protein interaction network for biological network analysis. Use when user asks to access example lymphoma datasets, load the HPRD interactome, or provide sample data for the BioNet package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DLBCL.html
 ---
+
 
 # bioconductor-dlbcl
 

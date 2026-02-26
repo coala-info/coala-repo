@@ -1,8 +1,9 @@
 ---
 name: trnanalysis
-description: The `trnanalysis` tool is a specialized bioinformatics pipeline designed to accurately map and qualitatively analyze tRNA reads from small RNA sequencing data.
+description: The trnanalysis tool maps and analyzes tRNA reads from small RNA sequencing data. Use when user asks to map tRNA reads, analyze tRNA reads, perform differential expression analysis, or generate reports.
 homepage: https://trnanalysis.readthedocs.io/en/latest/
 ---
+
 
 # trnanalysis
 

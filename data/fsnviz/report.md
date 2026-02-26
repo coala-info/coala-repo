@@ -1,9 +1,9 @@
 # fsnviz CWL Generation Report
 
-## fsnviz
+## fsnviz_fusioncatcher
 
 ### Tool Description
-Visualization of gene fusions (Note: The provided text is a container runtime error log and does not contain usage instructions or argument definitions).
+Plots output of FusionCatcher.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fsnviz:0.3.0--py35_1
@@ -18,11 +18,33 @@ Visualization of gene fusions (Note: The provided text is a container runtime er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fsnviz:0.3.0--py35_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3358222597: no space left on device
+Usage: fsnviz fusioncatcher [OPTIONS] INPUT
+
+  Plots output of FusionCatcher.
+
+Options:
+  --help  Show this message and exit.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## fsnviz_star-fusion
+
+### Tool Description
+Plots output of STAR-Fusion.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/fsnviz:0.3.0--py35_1
+- **Homepage**: https://github.com/bow/fsnviz
+- **Package**: https://anaconda.org/channels/bioconda/packages/fsnviz/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: fsnviz star-fusion [OPTIONS] INPUT
+
+  Plots output of STAR-Fusion.
+
+Options:
+  --help  Show this message and exit.
+```
+

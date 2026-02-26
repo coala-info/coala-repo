@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg.u133b
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Human Genome U133B microarray. Use when user asks to process raw data from HG-U133B microarrays, analyze CEL files using the oligo package, or access platform-specific annotation data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u133b.html
 ---
+
 
 # bioconductor-pd.hg.u133b
 

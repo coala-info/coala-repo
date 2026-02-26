@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affxparser
-description: the package is available on all platforms; click for details.
+description: This tool parses Affymetrix microarray files including CEL, CDF, and CHP formats using the Fusion SDK. Use when user asks to read probe-level intensities, extract data by probeset units, manage chip definition files, or convert between Affymetrix file formats.
 homepage: https://bioconductor.org/packages/release/bioc/html/affxparser.html
 ---
+
 
 # bioconductor-affxparser
 

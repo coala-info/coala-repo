@@ -1,8 +1,9 @@
 ---
 name: scelestial
-description: Scelestial is a specialized tool for reconstructing phylogenetic trees from single-cell data.
+description: Scelestial reconstructs phylogenetic trees from single-cell sequencing data by approximating Steiner Trees. Use when user asks to infer cell lineages, reconstruct phylogenetic trees from single-cell data, or impute missing genotypes.
 homepage: https://github.com/hzi-bifo/scelestial-paper-materials-devel
 ---
+
 
 # scelestial
 

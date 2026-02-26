@@ -1,8 +1,9 @@
 ---
 name: nudup
-description: The `nudup` tool is specifically designed for high-throughput sequencing data prepared with NuGEN kits.
+description: nudup identifies and removes PCR duplicates from sequencing data by incorporating Molecular Tag (UMI) information. Use when user asks to remove PCR duplicates using UMIs, process NuGEN sequencing data, or distinguish biological duplicates from PCR artifacts.
 homepage: http://nugentechnologies.github.io/nudup/
 ---
+
 
 # nudup
 

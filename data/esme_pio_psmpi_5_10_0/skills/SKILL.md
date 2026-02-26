@@ -1,8 +1,9 @@
 ---
 name: esme_pio_psmpi_5_10_0
-description: The `esme_pio_psmpi_5_10_0` skill provides guidance for utilizing the ParallelIO (PIO) library, a high-level C and Fortran interface designed for scalable I/O on high-performance computing systems.
+description: This tool provides a high-level interface for scalable parallel I/O on high-performance computing systems using the ParallelIO library. Use when user asks to optimize data throughput, configure asynchronous I/O modes, or build applications with NetCDF and PnetCDF support using PSMPI.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_psmpi_5_10_0
 

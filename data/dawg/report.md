@@ -3,7 +3,7 @@
 ## dawg
 
 ### Tool Description
-The provided text is a system error log from a container runtime (Apptainer/Singularity) and does not contain the help documentation or usage instructions for the 'dawg' tool. As a result, no arguments could be extracted.
+Copyright (C) 2004-2013  Reed A. Cartwright, PhD <cartwright@asu.edu>
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dawg:2.0.beta1--h81a73ca_1
@@ -18,15 +18,23 @@ The provided text is a system error log from a container runtime (Apptainer/Sing
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 17:52:21  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/dawg:2.0.beta1--h81a73ca_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:d6cdd7431b6b0cc494516c63f25ecac6b7202ffce343832f53d046f51824c7c3: unpack entry: usr/local/bin/bzip2: unpack to regular file: short write: write /tmp/build-temp-2896836649/rootfs/usr/local/bin/bzip2: no space left on device
+dawg 2-current-rUnknown
+    Copyright (C) 2004-2013  Reed A. Cartwright, PhD <cartwright@asu.edu>
+
+
+Usage:
+  dawg [options] trick-1.dawg trick-2.dawg ...
+
+Allowed Options:
+  --version                    display version information
+  --help-trick                 display description of common control variables
+  --help                       display help message
+  -o [ --output ] arg          output to this file
+  --seed arg (=0)              PRNG seed
+  --reps arg (=0)              the number of alignments to generate
+  --split [=arg(=on)] (=null)  split output into separate files
+  --append [=arg(=on)] (=null) append output to file
+  --label [=arg(=on)] (=null)  label each simulation with a unique id
+  --arg-file arg               read arguments from file
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: srst2
-description: SRST2 (Short Read Sequence Typing for Bacterial Pathogens) is a specialized tool for identifying the genetic profile of bacteria using raw Illumina sequence data.
+description: SRST2 identifies genetic profiles, sequence types, and resistance markers by mapping raw Illumina reads directly against known allele and gene databases. Use when user asks to perform multi-locus sequence typing, detect antimicrobial resistance or virulence genes, and screen bacterial pathogens for specific genetic markers.
 homepage: https://github.com/katholt/srst2
 ---
+
 
 # srst2
 

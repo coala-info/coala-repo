@@ -1,8 +1,9 @@
 ---
 name: humid
-description: HUMID (High-performance UMI Deduplicator) is a tool for the rapid removal of duplicate reads from FastQ files.
+description: HUMID is a reference-free tool for the rapid removal of duplicate reads from FastQ files using UMI-based clustering. Use when user asks to remove duplicate reads from sequencing data, perform reference-free deduplication, or collapse PCR duplicates in FastQ files.
 homepage: https://github.com/jfjlaros/HUMID
 ---
+
 
 # humid
 

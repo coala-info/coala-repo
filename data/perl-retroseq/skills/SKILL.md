@@ -1,8 +1,9 @@
 ---
 name: perl-retroseq
-description: RetroSeq is a specialized tool for the discovery and genotyping of transposable element variants (TEVs) from next-generation sequencing reads.
+description: RetroSeq discovers and genotypes transposable element insertions by analyzing discordant read pairs and soft-clipped alignments from next-generation sequencing data. Use when user asks to identify non-reference transposable element variants, discover mobile element insertions, or call and genotype retrotransposon breakpoints from BAM files.
 homepage: https://github.com/tk2/RetroSeq
 ---
+
 
 # perl-retroseq
 

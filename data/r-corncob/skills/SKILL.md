@@ -1,8 +1,9 @@
 ---
 name: r-corncob
-description: Statistical modeling for correlated count data using the beta-binomial distribution, described in Martin et al.
+description: The corncob package models relative abundance and variability in microbiome count data using beta-binomial regression. Use when user asks to perform differential abundance testing, model taxon variability, or analyze overdispersed count data from phyloseq objects.
 homepage: https://cran.r-project.org/web/packages/corncob/index.html
 ---
+
 
 # r-corncob
 

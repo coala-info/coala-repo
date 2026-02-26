@@ -1,8 +1,9 @@
 ---
 name: bioconductor-probamr
-description: The package builds SAM file from shotgun proteomics data The package also provides function to prepare annotation from GTF file.
+description: This package generates SAM files from shotgun proteomics data and prepares genome annotations from GTF files. Use when user asks to build SAM files from proteomics data or prepare annotations from GTF files.
 homepage: https://bioconductor.org/packages/release/bioc/html/proBAMr.html
 ---
+
 
 # bioconductor-probamr
 

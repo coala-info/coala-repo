@@ -1,8 +1,9 @@
 ---
 name: pilon
-description: Pilon is a powerful automated tool designed to polish draft genome assemblies and identify genomic variations.
+description: Pilon polishes draft genome assemblies and identifies genomic variations by analyzing inconsistencies between a reference genome and aligned sequencing reads. Use when user asks to polish a genome assembly, correct small-scale errors like SNPs and indels, fill gaps, or resolve local misassemblies.
 homepage: https://github.com/broadinstitute/pilon/
 ---
+
 
 # pilon
 

@@ -1,8 +1,9 @@
 ---
 name: quaqc
-description: The `quaqc` tool is a high-performance C-based utility designed for the rapid processing of ATAC-seq data.
+description: quaqc is a high-performance utility for processing ATAC-seq data to generate quality control metrics, filter reads, and prepare data for downstream analysis. Use when user asks to generate QC reports, create Tn5-adjusted BED or bedGraph files, quantify reads in peaks, or filter single-cell BAM files by barcode.
 homepage: https://github.com/bjmt/quaqc
 ---
+
 
 # quaqc
 

@@ -1,8 +1,9 @@
 ---
 name: dnaweaver
-description: DNA Weaver is a specialized optimization engine for synthetic biology that functions like a "route planner" for genetic engineering.
+description: DNA Weaver is an optimization engine that finds the most efficient strategy to construct or domesticate DNA sequences using a network of assembly methods and commercial providers. Use when user asks to find optimal DNA assembly strategies, minimize synthesis costs across multiple vendors, or automate the domestication of genetic sequences.
 homepage: https://github.com/Edinburgh-Genome-Foundry/DnaWeaver/
 ---
+
 
 # dnaweaver
 

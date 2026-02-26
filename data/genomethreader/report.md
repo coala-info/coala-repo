@@ -1,12 +1,12 @@
 # genomethreader CWL Generation Report
 
-## genomethreader
+## genomethreader_gth
 
 ### Tool Description
-GenomeThreader is a software tool to compute gene structure predictions. (Note: The provided help text contains only system error messages regarding container execution and does not list specific tool arguments.)
+Compute similarity-based gene structure predictions (spliced alignments) using cDNA/EST and/or protein sequences and assemble the resulting spliced alignments to consensus spliced alignments.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/genomethreader:1.7.1--h503566f_7
+- **Docker Image**: quay.io/biocontainers/genomethreader:1.7.1--h87f3376_4
 - **Homepage**: http://genomethreader.org/
 - **Package**: https://anaconda.org/channels/bioconda/packages/genomethreader/overview
 - **Validation**: PASS
@@ -18,46 +18,116 @@ GenomeThreader is a software tool to compute gene structure predictions. (Note: 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genomethreader:1.7.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2613140935: no space left on device
-```
+Usage: gth [option ...] -genomic file [...] -cdna file [...] -protein file [...]
+Compute similarity-based gene structure predictions (spliced alignments)
+using cDNA/EST and/or protein sequences and assemble the resulting spliced
+alignments to consensus spliced alignments.
 
+-genomic          specify input files containing genomic sequences
+                  mandatory option
+-cdna             specify input files containing cDNA/EST sequences
+-protein          specify input files containing protein sequences
+-species          specify species to select splice site model which is most
+                  appropriate; possible species:
+                  "human"
+                  "mouse"
+                  "rat"
+                  "chicken"
+                  "drosophila"
+                  "nematode"
+                  "fission_yeast"
+                  "aspergillus"
+                  "arabidopsis"
+                  "maize"
+                  "rice"
+                  "medicago"
+                  default: undefined
+-bssm             read bssm parameter from file in the path given by the
+                  environment variable BSSMDIR
+                  default: undefined
+-scorematrix      read amino acid substitution scoring matrix from file in the
+                  path given by the environment variable GTHDATADIR
+                  default: BLOSUM62
+-translationtable set the codon translation table used for codon translation in
+                  matching, DP, and output
+                  default: 1
+-f                analyze only forward strand of genomic sequences
+                  default: no
+-r                analyze only reverse strand of genomic sequences
+                  default: no
+-cdnaforward      align only forward strand of cDNAs
+                  default: no
+-frompos          analyze genomic sequence from this position
+                  requires -topos or -width; counting from 1 on
+                  default: 0
+-topos            analyze genomic sequence to this position
+                  requires -frompos; counting from 1 on
+                  default: 0
+-width            analyze only this width of genomic sequence
+                  requires -frompos
+                  default: 0
+-v                be verbose
+                  default: no
+-xmlout           show output in XML format
+                  default: no
+-gff3out          show output in GFF3 format
+                  default: no
+-md5ids           show MD5 fingerprints as sequence IDs
+                  default: no
+-o                redirect output to specified file
+                  default: undefined
+-gzip             write gzip compressed output file
+                  default: no
+-bzip2            write bzip2 compressed output file
+                  default: no
+-force            force writing to output file
+                  default: no
+-gs2out           output in old GeneSeqer2 format
+                  default: no
+-minmatchlen      specify minimum match length (cDNA matching)
+                  default: 20
+-seedlength       specify the seed length (cDNA matching)
+                  default: 18
+-exdrop           specify the Xdrop value for edit distance extension (cDNA
+                  matching)
+                  default: 2
+-prminmatchlen    specify minimum match length (protein matches)
+                  default: 24
+-prseedlength     specify seed length (protein matching)
+                  default: 10
+-prhdist          specify Hamming distance (protein matching)
+                  default: 4
+-gcmaxgapwidth    set the maximum gap width for global chains
+                  defines approximately the maximum intron length
+                  set to 0 to allow for unlimited length
+                  in order to avoid false-positive exons (lonely exons) at the
+                  sequence ends, it is very important to set this parameter
+                  appropriately!
+                  default: 1000000
+-gcmincoverage    set the minimum coverage of global chains regarding to the
+                  reference sequence
+                  default: 50
+-paralogs         compute paralogous genes (different chaining procedure)
+                  default: no
+-introncutout     enable the intron cutout technique
+                  default: no
+-fastdp           use jump table to increase speed of DP calculation
+                  default: no
+-autointroncutout set the automatic intron cutout matrix size in megabytes and
+                  enable the automatic intron cutout technique
+                  default: 0
+-intermediate     stop after calculation of spliced alignments and output
+                  results in reusable XML format. Do not process this output
+                  yourself, use the ``normal'' XML output instead!
+                  default: no
+-first            set the maximum number of spliced alignments per genomic DNA
+                  input. Set to 0 for unlimited number.
+                  default: 0
+-help             display help for basic options and exit
+-help+            display help for all options and exit
+-version          display version information and exit
 
-## Metadata
-- **Skill**: generated
-
-## genomethreader_gth
-
-### Tool Description
-GenomeThreader is a software tool to compute gene structure predictions. Note: The provided help text contains only container runtime error messages and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genomethreader:1.7.1--h503566f_7
-- **Homepage**: http://genomethreader.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/genomethreader/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genomethreader:1.7.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2170181158: no space left on device
-```
-
-## genomethreader_XML2GFF.py
-
-### Tool Description
-Converts GenomeThreader XML output to GFF format. (Note: The provided text contains system error messages regarding container execution and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genomethreader:1.7.1--h503566f_7
-- **Homepage**: http://genomethreader.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/genomethreader/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genomethreader:1.7.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1543167819: no space left on device
+For detailed information, please refer to the manual of GenomeThreader.
+Report bugs to <gordon@gremme.org>.
 ```
 

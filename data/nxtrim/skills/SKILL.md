@@ -1,8 +1,9 @@
 ---
 name: nxtrim
-description: `nxtrim` optimizes the utility of Nextera Mate Pair libraries by accurately identifying the circularization junction adapter.
+description: NxTrim processes Nextera Mate Pair libraries by identifying junction adapters and categorizing reads into mate-pair, paired-end, and single-end virtual libraries. Use when user asks to trim Nextera Mate Pair adapters, separate mate pairs from paired-end contaminants, or prepare libraries for scaffolding and assembly.
 homepage: https://github.com/sequencing/NxTrim
 ---
+
 
 # nxtrim
 

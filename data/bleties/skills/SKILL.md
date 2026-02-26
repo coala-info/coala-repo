@@ -1,8 +1,9 @@
 ---
 name: bleties
-description: BleTIES (Basic Long-read Enabled Toolkit for Interspersed DNA Elimination Studies) is a specialized bioinformatics suite designed for ciliate genomics.
+description: BleTIES is a bioinformatics toolkit for discovering and assembling Internal Eliminated Sequences in ciliate genomes using long-read alignments. Use when user asks to predict and assemble non-scrambled IESs, identify chromosome breakpoints, or create MIC-like assemblies from MAC references.
 homepage: https://github.com/Swart-lab/bleties
 ---
+
 
 # bleties
 

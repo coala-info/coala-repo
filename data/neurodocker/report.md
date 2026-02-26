@@ -1,9 +1,9 @@
 # neurodocker CWL Generation Report
 
-## neurodocker
+## neurodocker_valid
 
 ### Tool Description
-A tool to generate custom Dockerfiles and Singularity recipes for neuroimaging software.
+neurodocker: error: argument subparser_name: invalid choice: 'valid' (choose from 'generate', 'reprozip')
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/neurodocker:0.5.0--py_0
@@ -18,11 +18,87 @@ A tool to generate custom Dockerfiles and Singularity recipes for neuroimaging s
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/neurodocker:0.5.0--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2304795627: no space left on device
+usage: neurodocker [-h] [-v {debug,info,warning,error,critical}] [-V]
+                   {generate,reprozip} ...
+neurodocker: error: argument subparser_name: invalid choice: 'valid' (choose from 'generate', 'reprozip')
+```
+
+
+## neurodocker_generate
+
+### Tool Description
+Neurodocker is a command-line interface to generate custom Dockerfiles and Singularity recipes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/neurodocker:0.5.0--py_0
+- **Homepage**: https://github.com/kaczmarj/neurodocker
+- **Package**: https://anaconda.org/channels/bioconda/packages/neurodocker/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: neurodocker [-h] [-v {debug,info,warning,error,critical}] [-V]
+                   {generate,reprozip} ...
+
+Neurodocker is a command-line interface to generate custom Dockerfiles and
+Singularity recipes.
+
+For help generating Dockerfiles and Singularity recipes, run
+
+$ neurodocker generate docker --help
+$ neurodocker generate singularity --help
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v {debug,info,warning,error,critical}, --verbosity {debug,info,warning,error,critical}
+  -V, --version         show program's version number and exit
+
+subcommands:
+  valid subcommands
+
+  {generate,reprozip}
+    generate            generate recipes
+    reprozip
+```
+
+
+## neurodocker_reprozip
+
+### Tool Description
+Neurodocker is a command-line interface to generate custom Dockerfiles and Singularity recipes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/neurodocker:0.5.0--py_0
+- **Homepage**: https://github.com/kaczmarj/neurodocker
+- **Package**: https://anaconda.org/channels/bioconda/packages/neurodocker/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: neurodocker [-h] [-v {debug,info,warning,error,critical}] [-V]
+                   {generate,reprozip} ...
+
+Neurodocker is a command-line interface to generate custom Dockerfiles and
+Singularity recipes.
+
+For help generating Dockerfiles and Singularity recipes, run
+
+$ neurodocker generate docker --help
+$ neurodocker generate singularity --help
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v {debug,info,warning,error,critical}, --verbosity {debug,info,warning,error,critical}
+  -V, --version         show program's version number and exit
+
+subcommands:
+  valid subcommands
+
+  {generate,reprozip}
+    generate            generate recipes
+    reprozip
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: vcfdist
-description: vcfdist is a specialized benchmarking tool designed to provide accurate precision-recall metrics for genomic variants.
+description: vcfdist is a benchmarking tool for evaluating the accuracy of genomic variant calls. Use when user asks to evaluate genomic variant calls, benchmark variant callers, assess variant call accuracy, or identify phasing errors.
 homepage: https://github.com/TimD1/vcfdist
 ---
+
 
 # vcfdist
 

@@ -1,8 +1,9 @@
 ---
 name: pgscatalog.match
-description: The `pgscatalog.match` toolset provides a robust framework for the "variant matching" problem in polygenic score application.
+description: This tool automates the alignment and matching of polygenic score files with target genomic variant data across different coordinate systems and orientations. Use when user asks to match scoring files against target genomes, merge match results from multiple chromosomes, or find the intersection of variants between two datasets.
 homepage: https://github.com/PGScatalog/pygscatalog
 ---
+
 
 # pgscatalog.match
 

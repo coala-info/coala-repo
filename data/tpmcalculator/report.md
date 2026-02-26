@@ -1,9 +1,9 @@
 # tpmcalculator CWL Generation Report
 
-## tpmcalculator
+## tpmcalculator_TPMCalculator
 
 ### Tool Description
-TPMCalculator is a tool to calculate TPM (Transcripts Per Million) values for genes, exons, and introns from RNA-Seq alignments.
+TPMCalculator calculates TPM values for genes and transcripts from BAM files and a GTF annotation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tpmcalculator:0.0.6--h2bd4fab_0
@@ -18,13 +18,34 @@ TPMCalculator is a tool to calculate TPM (Transcripts Per Million) values for ge
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tpmcalculator:0.0.6--h2bd4fab_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unsupported option: --help
+
+********************************************************************************
+
+Usage: TPMCalculator
+
+TPMCalculator options:
+
+-v    Print info
+-version    Print version
+-h    Display this usage information.
+-g    GTF file
+-d    Directory with the BAM files
+-b    BAM file
+-k    Gene key to use from GTF file. Default: gene_id
+-t    Transcript key to use from GTF file. Default: transcript_id
+-c    Smaller size allowed for an intron created for genes. Default: 16. We recommend to use the reads length
+-p    Use only properly paired reads. Default: No. Recommended for paired-end reads.
+-q    Minimum MAPQ value to filter out reads. Default: 0. This value depends on the aligner MAPQ value.
+-o    Minimum overlap between a reads and a feature. Default: 8.
+-e    Extended output. This will include transcript level TPM values. Default: No.
+-a    Print out all features with read counts equal to zero. Default: No.
+
+********************************************************************************
+
+                        Roberto Vera Alvarez, PhD
+                      Emails: veraalva@ncbi.nlm.nih.gov
+
+********************************************************************************
 ```
 
-
-## Metadata
-- **Skill**: generated

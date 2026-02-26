@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmelsgi
-description: The package contains the experimental data and documented source code of the manuscript "Fischer et al., A Map of Directional Genetic Interactions in a Metazoan Cell, eLife, 2015, in Press.". The vignette code generates all figures in the paper.
+description: This package provides experimental data and analysis tools for studying directional genetic interactions and multi-phenotype epistatic relationships in Drosophila melanogaster. Use when user asks to access pi-scores from the Fischer et al. (2015) study, analyze phenotypic features from genetic screens, or infer directional pathways between genes.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/DmelSGI.html
 ---
+
 
 # bioconductor-dmelsgi
 

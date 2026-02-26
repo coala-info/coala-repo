@@ -1,8 +1,9 @@
 ---
 name: repeatmasker-recon
-description: RepeatMasker is the standard tool for genomic repeat annotation.
+description: RepeatMasker screens DNA sequences against libraries of transposable elements to annotate and mask genomic repeats. Use when user asks to mask a genome, identify transposable elements, or search for repeats using species-specific or custom libraries.
 homepage: https://www.repeatmasker.org/RepeatMasker
 ---
+
 
 # repeatmasker-recon
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mu11ksuba.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Murine 11K Subarray A chip. Use when user asks to map probe identifiers to gene symbols, retrieve genomic annotations, or perform functional enrichment for the mu11ksuba platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksuba.db.html
 ---
+
 
 # bioconductor-mu11ksuba.db
 

@@ -3,7 +3,7 @@
 ## kart
 
 ### Tool Description
-A divide-and-conquer algorithm for NGS read mapping
+kart v2.5.6 (Hsin-Nan Lin & Wen-Lian Hsu)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kart:2.5.6--h13024bc_6
@@ -18,11 +18,20 @@ A divide-and-conquer algorithm for NGS read mapping
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kart:2.5.6--h13024bc_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2519240891: no space left on device
+Error! Unknown parameter: --help
+kart v2.5.6 (Hsin-Nan Lin & Wen-Lian Hsu)
+
+Usage: kart -i Index_Prefix -f <ReadFile_A1 ReadFile_B1 ...> [-f2 <ReadFile_A2 ReadFile_B2 ...>] -o Output
+
+Options: -t INT        number of threads [4]
+         -f            files with #1 mates reads (format:fa, fq, fq.gz)
+         -f2           files with #2 mates reads (format:fa, fq, fq.gz)
+         -o            alignment filename in SAM format [output.sam]
+         -bo           alignment filename in BAM format
+         -m            output multiple alignments
+         -g INT        max gaps (indels) [5]
+         -p            paired-end reads are interlaced in the same file
+         -pacbio       pacbio data
+         -v            version
 ```
 
-
-## Metadata
-- **Skill**: generated

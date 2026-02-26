@@ -1,8 +1,9 @@
 ---
 name: r-fda
-description: "These functions were developed to support functional data  analysis as described in Ramsay, J. O. and Silverman, B. W.  (2005) Functional Data Analysis. New York: Springer and in   Ramsay, J. O., Hooker, Giles, and Graves, Spencer (2009).   Functional Data Analysis with R and Matlab (Springer).   The package includes data sets and script files working many examples   including all but one of the 76 figures in this latter book."
+description: This tool provides expert assistance for Functional Data Analysis in R using the fda package to represent and analyze data as continuous functions. Use when user asks to create basis systems, convert raw data into functional objects, smooth noisy data, perform functional registration, or implement monotone smoothing.
 homepage: https://cloud.r-project.org/web/packages/fda/index.html
 ---
+
 
 # r-fda
 

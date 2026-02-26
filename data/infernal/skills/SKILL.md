@@ -1,8 +1,9 @@
 ---
 name: infernal
-description: Infernal (INFERence of RNA ALignment) is a specialized suite of tools for RNA homology search and alignment.
+description: Infernal is a suite of tools for searching and aligning RNA sequences using covariance models that capture both sequence and secondary structure consensus. Use when user asks to build or calibrate covariance models, search RNA models against sequence databases, scan sequences against the Rfam database, or create structure-informed multiple sequence alignments.
 homepage: http://eddylab.org/infernal
 ---
+
 
 # infernal
 

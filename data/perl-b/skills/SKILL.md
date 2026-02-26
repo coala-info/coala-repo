@@ -1,8 +1,9 @@
 ---
 name: perl-b
-description: The perl-b skill provides a specialized workflow for the "Modern Perl" book build system.
+description: The perl-b skill manages the specialized build system for the Modern Perl book by weaving documentation fragments into chapters and rendering them into various formats. Use when user asks to weave chapters, generate HTML, ePub, or PDF outputs, or troubleshoot build dependencies for the book.
 homepage: https://github.com/chromatic/modern_perl_book
 ---
+
 
 # perl-b
 

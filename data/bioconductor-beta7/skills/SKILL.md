@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beta7
-description: the package is available on all platforms; click for details.
+description: This package provides access to microarray data from a study on differential gene expression in memory T helper cells. Use when user asks to access the beta7 experiment data, analyze microarray results from the Rodriguez et al. study, or perform differential expression analysis on T helper cell populations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/beta7.html
 ---
+
 
 # bioconductor-beta7
 

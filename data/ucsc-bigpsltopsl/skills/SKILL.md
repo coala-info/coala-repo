@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigpsltopsl
-description: The `bigPslToPsl` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed to transform alignment data.
+description: This tool converts bigPsl binary alignment files into the psl text format. Use when user asks to convert bigPsl to psl, transform bigPsl alignment data, or revert binary alignment tracks to text format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigpsltopsl
 

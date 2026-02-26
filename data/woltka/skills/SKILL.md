@@ -1,8 +1,9 @@
 ---
 name: woltka
-description: Woltka is a versatile meta-omic data classifier that transforms sequence alignment results into feature tables (profiles).
+description: Woltka classifies meta-omic sequence alignment results into feature tables. Use when user asks to generate OGU tables, perform taxonomic profiling, perform functional profiling, create stratified profiles, or collapse, normalize, filter, or merge tables.
 homepage: https://github.com/qiyunzhu/woltka
 ---
+
 
 # woltka
 

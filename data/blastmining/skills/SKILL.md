@@ -1,8 +1,9 @@
 ---
 name: blastmining
-description: The `blastmining` tool automates the extraction of taxonomic information from BLAST results.
+description: The blastmining tool automates the extraction of taxonomic information from BLAST results using consensus algorithms like majority voting or Lowest Common Ancestor. Use when user asks to assign taxonomy to sequences, perform majority voting on BLAST hits, find the lowest common ancestor for alignments, or run a full pipeline from FASTA input to taxonomic tables.
 homepage: https://github.com/NuruddinKhoiry/blastMining
 ---
+
 
 # blastmining
 

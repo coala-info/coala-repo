@@ -1,8 +1,9 @@
 ---
 name: perl-params-validationcompiler
-description: This skill facilitates the creation of highly efficient parameter validation routines in Perl.
+description: This tool generates optimized Perl subroutines for fast parameter validation by compiling checks into specialized code references. Use when user asks to create efficient parameter validators, validate named or positional arguments in Perl, or integrate type checks from Type::Tiny and Specio.
 homepage: http://metacpan.org/release/Params-ValidationCompiler
 ---
+
 
 # perl-params-validationcompiler
 

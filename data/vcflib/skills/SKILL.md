@@ -1,8 +1,9 @@
 ---
 name: vcflib
-description: The `vcflib` suite provides a robust collection of command-line utilities designed for the high-performance processing of Variant Call Format (VCF) files.
+description: vcflib is a suite of command-line utilities for high-performance, modular processing and analysis of VCF files. Use when user asks to filter VCF files, remove duplicate variants, normalize indels, realign complex alleles, intersect or compare VCF files, validate VCF files, calculate variant statistics, or identify variants in low-complexity regions.
 homepage: https://github.com/vcflib/vcflib
 ---
+
 
 # vcflib
 

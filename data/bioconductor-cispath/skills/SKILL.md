@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cispath
-description: the package is available on all platforms; click for details.
+description: This tool identifies and visualizes the shortest functional pathways between proteins using large-scale protein-protein interaction data. Use when user asks to identify shortest paths between proteins, visualize molecular interaction networks, or format protein-protein interaction data from databases like STRING, GeneMANIA, and PINA.
 homepage: https://bioconductor.org/packages/release/bioc/html/cisPath.html
 ---
+
 
 # bioconductor-cispath
 

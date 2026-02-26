@@ -1,8 +1,9 @@
 ---
 name: last
-description: LAST (Local Alignment Search Tool) is a versatile suite for biological sequence comparison.
+description: LAST is a suite of tools designed for sensitive local alignment and comparison of biological sequences, including genome-to-genome and DNA-to-protein searches. Use when user asks to index a reference database, train alignment parameters for specific data profiles, perform sequence alignments, or convert alignment formats.
 homepage: https://gitlab.com/mcfrith/last
 ---
+
 
 # last
 

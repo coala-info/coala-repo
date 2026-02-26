@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hypergraph
-description: the package is available on all platforms; click for details.
+description: This tool provides S4 classes and methods for representing and manipulating hypergraph data structures in R. Use when user asks to create hyperedges, construct hypergraphs, generate incidence matrices, perform k-core decomposition, or find vertex cover approximations for complex networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/hypergraph.html
 ---
+
 
 # bioconductor-hypergraph
 

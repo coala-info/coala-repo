@@ -1,8 +1,9 @@
 ---
 name: goetia
-description: Goetia is a specialized bioinformatics toolset designed for the on-line analysis of genomic sequences.
+description: Goetia is a bioinformatics toolset for the on-line analysis of genomic sequences using streaming de Bruijn graph algorithms. Use when user asks to perform streaming graph compaction, calculate sketching distances, or build compacted de Bruijn graphs from real-time data.
 homepage: https://github.com/camillescott/goetia
 ---
+
 
 # goetia
 

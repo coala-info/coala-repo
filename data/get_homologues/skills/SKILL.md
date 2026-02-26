@@ -1,8 +1,9 @@
 ---
 name: get_homologues
-description: The `get_homologues` suite is a versatile toolkit designed for comparative genomics.
+description: The get_homologues suite clusters protein or nucleotide sequences into homologous groups to define core and pan-genomes. Use when user asks to cluster sequences into homologous groups, identify core and pan-genomes, or generate pangenome presence-absence matrices.
 homepage: https://github.com/eead-csic-compbio/get_homologues
 ---
+
 
 # get_homologues
 

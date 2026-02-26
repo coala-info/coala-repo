@@ -1,8 +1,9 @@
 ---
 name: decenttree
-description: DecentTree is a high-performance phylogenetic inference tool optimized for the genomic era.
+description: DecentTree is a high-performance phylogenetic inference tool that builds trees from sequence alignments or distance matrices using optimized distance-based algorithms. Use when user asks to build a phylogenetic tree, perform Neighbor-Joining or BIONJ inference, or process massive genomic datasets for tree construction.
 homepage: https://github.com/iqtree/decenttree
 ---
+
 
 # decenttree
 

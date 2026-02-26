@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ceu1kgv
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides integrated 1000 Genomes genotype calls and expression data for CEU HapMap lines in a unified container. Use when user asks to access the ceu1kgv dataset, perform expression quantitative trait loci (eQTL) analysis, or conduct integrative genomic studies using CEU population data.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ceu1kgv.html
 ---
+
 
 # bioconductor-ceu1kgv
 

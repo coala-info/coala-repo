@@ -3,7 +3,7 @@
 ## zerone
 
 ### Tool Description
-The provided text is a container build error log and does not contain help information or usage instructions for the tool 'zerone'.
+zerone
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/zerone:1.0--h577a1d6_9
@@ -18,13 +18,26 @@ The provided text is a container build error log and does not contain help infor
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/zerone:1.0--h577a1d6_9 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+USAGE:  zerone [options] <input file 1> ... <input file n>
+
+  Input options
+    -0 --mock: given file is a mock control
+    -1 --chip: given file is a ChIP-seq experiment
+    -w --window: window size in bp (default 300)
+    -q --quality: minimum mapping quality (default 20)
+
+  Output options
+    -l --list-output: output list of targets (default table)
+    -c --confidence: print targets only with higher confidence
+                     restricts intervals accordingly in list output
+
+  Other options
+    -h --help: display this message and exit
+    -v --version: display version and exit
+
+EXAMPLES:
+ zerone --mock file1.bam,file2.bam --chip file3.bam,file4.bam
+ zerone -l -0 file1.map -1 file2.map -1 file4.map
+ zerone -l -c.99 -w200 -0 file1.sam -1 file2.sam,file4.sam
 ```
 
-
-## Metadata
-- **Skill**: generated

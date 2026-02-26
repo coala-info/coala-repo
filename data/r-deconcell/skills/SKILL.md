@@ -1,8 +1,9 @@
 ---
 name: r-deconcell
-description: R package deconcell (documentation from project home).
+description: This tool estimates cell subpopulation proportions from bulk molecular profiling data using the DeconCell statistical framework. Use when user asks to perform cell type deconvolution, estimate cell counts from expression or methylation data, or adjust for cell-type composition in heterogeneous samples.
 homepage: https://cran.r-project.org/web/packages/deconcell/index.html
 ---
+
 
 # r-deconcell
 

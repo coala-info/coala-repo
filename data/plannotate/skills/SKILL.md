@@ -1,8 +1,9 @@
 ---
 name: plannotate
-description: pLannotate is a specialized tool designed to streamline the annotation of engineered plasmids.
+description: pLannotate is a specialized tool designed to annotate features and components within engineered plasmid sequences. Use when user asks to annotate synthetic DNA constructs, generate plasmid maps, or identify genetic parts in circular and linear sequences.
 homepage: https://github.com/barricklab/pLannotate
 ---
+
 
 # plannotate
 

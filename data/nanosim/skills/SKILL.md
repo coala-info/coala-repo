@@ -1,8 +1,9 @@
 ---
 name: nanosim
-description: NanoSim is a high-performance read simulator designed to replicate the specific characteristics of Oxford Nanopore sequencing.
+description: NanoSim is a high-performance read simulator designed to replicate the specific error profiles and characteristics of Oxford Nanopore sequencing data. Use when user asks to simulate ONT genomic reads, characterize error profiles from training datasets, or generate synthetic transcriptome and metagenome sequences.
 homepage: https://github.com/bcgsc/NanoSim
 ---
+
 
 # nanosim
 

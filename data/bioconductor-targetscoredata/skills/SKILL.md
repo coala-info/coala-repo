@@ -1,8 +1,9 @@
 ---
 name: bioconductor-targetscoredata
-description: the package is available on all platforms; click for details.
+description: This package provides precomputed data and scores for microRNA target prediction. Use when user asks to access precomputed TargetScore data, retrieve microRNA target prediction scores, or load validated miRNA-mRNA interaction datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TargetScoreData.html
 ---
+
 
 # bioconductor-targetscoredata
 

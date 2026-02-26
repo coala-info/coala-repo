@@ -3,7 +3,7 @@
 ## jronn
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'jronn'. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build a SIF image due to insufficient disk space.
+JRONN is a Java implementation of RONN. JRONN is based on RONN and uses the same model data, therefore gives the same predictions. Main motivation behind JRONN development was providing an implementation of RONN more suitable to use by the automated analysis pipelines and web services.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jronn:7.1.0--hdfd78af_1
@@ -18,11 +18,77 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jronn:7.1.0--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3401313211: no space left on device
+WARNING: Runtime environment or build system does not support multi-release JARs. This will impact location-based features.
+05:10:56 [main] ERROR org.biojava.nbio.ronn.ORonn - Input is not defined! 
+05:10:56 [main] ERROR org.biojava.nbio.ronn.ORonn -  
+JRONN version 3.1b usage 1 August 2011:
+java -jar JRONN_JAR_NAME -i=inputfile <OPTIONS>
+
+Where -i=input file 
+	Input file can contain one or more FASTA formatted sequences.
+
+All OPTIONS are optional
+Supported OPTIONS are: 
+	-o=output file
+	-d=disorder value
+	-f=V or H 
+	-s=statistics file
+	-n=number of threads to use
+OPTION DETAILED DESCRIPTION:
+	-o full path to the output file, if not specified 
+	standard out is used
+
+	-d the value of disorder, defaults to 0.5
+
+	-f output format, V for vertical, where the letters 
+	of the sequence and corresponding disorder values are 
+	output in two column layout. H for horizontal, where the
+	disorder values are provided under the letters of the 
+	sequence. Letters and values separated by tabulation in
+	this case. Defaults to V.
+
+	-s the file name to write execution statistics to.
+
+	-n the number of threads to use. Defaults to the number of 
+	cores available on the computer. n=1 mean sequential 
+	processing. Valid values are 1 < n < (2 x num_of_cores)
+	Default value will give the best performance.
+	
+EXAMPLES: 
+
+	Predict disorder values for sequences from input file /home/input.fasta
+	output the results to the standard out. Use default disorder value
+	and utilise all cpus available on the computer.
+
+	java -jar JRONN.JAR -i=/home/input.fasta
+	
+	Predict disorder values for sequences from input file /home/input.fasta
+	output the results in horizontal layout to the /home/jronn.out, collect 
+	execution statistics to /home/jronn.stat.txt file and limit the number 
+	of threads to two. 
+	
+	java -jar JRONN.JAR -i=/home/input.fasta -o=/home/jronn.out -d=0.6 -n=2 -f=H
+	 
+	The arguments can be provided in any order.
+
+ABOUT THE PROGRAM: 	
+	
+	JRONN is a Java implementation of RONN. JRONN is based on RONN and uses the 
+	same model data, therefore gives the same predictions. Main motivation 
+	behind JRONN development was providing an implementation of RONN more 
+	suitable to use by the automated analysis pipelines and web services.  
+	
+	Original version of RONN is described in Yang,Z.R., Thomson,R., 
+	McMeil,P. and Esnouf,R.M. (2005) RONN: the bio-basis function neural network
+	technique applied to the detection of natively disordered regions in proteins  
+	Bioinformatics 21: 3369-3376
+	See also http://www.strubi.ox.ac.uk/RONN
+	
+	Author: Peter Troshin 
+	email: to.petr AT gmail DOT com
+	
+	This is a free software which comes with no guarantees.
+	JRONN is distributed under Apache Licence version 2. The full version of 
+	licence	can be obtained from http://www.apache.org/licenses/LICENSE-2.0
 ```
 
-
-## Metadata
-- **Skill**: generated

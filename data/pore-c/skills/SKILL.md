@@ -1,8 +1,9 @@
 ---
 name: pore-c
-description: The `pore-c` toolkit is a specialized suite designed to handle the unique requirements of multi-contact Pore-C reads, often referred to as "C-walks." Unlike standard Hi-C tools that focus on pairs, `pore-c` is optimized for long-read concatemers.
+description: The pore-c toolkit processes multi-contact long-read sequencing data to analyze higher-order chromatin structure. Use when user asks to generate virtual digests, filter BAM alignments, identify ligation junctions, or convert Pore-C data into pairs and Cooler formats.
 homepage: https://github.com/nanoporetech/pore-c
 ---
+
 
 # pore-c
 

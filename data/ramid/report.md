@@ -3,28 +3,35 @@
 ## ramid
 
 ### Tool Description
-Retention time Alignment for Mass spectrometry Ion Data (Note: The provided text is a container build log and does not contain help documentation or argument definitions).
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: biocontainers/ramid:phenomenal-v1.0_cv1.0.18
 - **Homepage**: https://github.com/eboigne/PyRAMID-CT
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ramid/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/eboigne/PyRAMID-CT
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/ramid:phenomenal-v1.0_cv1.0.18 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Error in parse_args(parser, positional_arguments = FALSE) : 
+  Error in getopt(spec = spec, opt = args) : 
+  "ramid" is not a valid option, or does not support an argument
+Execution halted
 ```
 
-
-## Metadata
-- **Skill**: generated

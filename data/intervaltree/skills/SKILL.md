@@ -1,8 +1,9 @@
 ---
 name: intervaltree
-description: The `intervaltree` library provides a mutable, self-balancing interval tree data structure.
+description: The intervaltree library provides a mutable, self-balancing data structure for storing and performing high-performance queries on overlapping ranges. Use when user asks to store intervals, find overlaps at specific points or ranges, merge overlapping intervals, or perform range-based restructuring like chopping and slicing.
 homepage: https://github.com/chaimleib/intervaltree
 ---
+
 
 # intervaltree
 

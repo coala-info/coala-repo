@@ -1,8 +1,9 @@
 ---
 name: modle
-description: MoDLE (Molecular DNA Loop Extrusion) is a high-performance tool designed to model the stochastic formation of DNA loops.
+description: MoDLE models the stochastic formation of DNA loops to simulate Hi-C-like contact matrices based on the loop extrusion model. Use when user asks to simulate DNA loop extrusion, generate contact matrices in Cooler format, or run MoDLE simulations using Docker or Singularity containers.
 homepage: https://github.com/paulsengroup/MoDLE
 ---
+
 
 # modle
 

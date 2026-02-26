@@ -1,8 +1,9 @@
 ---
 name: r-micropan
-description: A collection of functions for computations and visualizations of microbial pan-genomes.</p>
+description: The r-micropan tool provides a comprehensive set of R functions for microbial pan-genome analysis, including gene family clustering and statistical modeling. Use when user asks to perform comparative genomics, calculate pan-genome sizes, cluster gene families, or conduct diversity analyses like Heaps' law and rarefaction.
 homepage: https://cran.r-project.org/web/packages/micropan/index.html
 ---
+
 
 # r-micropan
 

@@ -1,8 +1,9 @@
 ---
 name: mgcod
-description: `mgcod` (Multiple Genetic CODes) is a specialized bioinformatics tool designed to recognize genetic codes and annotate protein-coding regions in prokaryotic DNA.
+description: mgcod recognizes genetic codes and annotates protein-coding regions in prokaryotic and phage DNA. Use when user asks to annotate genes, detect genetic code switches, identify stop codon reassignments, or generate gene isoforms in viral genomes.
 homepage: https://github.com/gatech-genemark/Mgcod
 ---
+
 
 # mgcod
 

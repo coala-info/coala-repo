@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msstatsshiny
-description: the package is available on all platforms; click for details.
+description: MSstatsShiny provides a graphical user interface for the statistical analysis of quantitative proteomics data. Use when user asks to perform differential abundance analysis, visualize mass spectrometry results, or process DDA, DIA, and SRM experiments through a web-based application.
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsShiny.html
 ---
+
 
 # bioconductor-msstatsshiny
 

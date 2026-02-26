@@ -1,8 +1,9 @@
 ---
 name: perl-io-null
-description: The `perl-io-null` skill facilitates the use of the `IO::Null` Perl module.
+description: This tool provides a portable null filehandle for Perl that discards all written data and returns an empty result on reads. Use when user asks to create a bit-bucket filehandle, silence verbose output, or mock filehandles for testing.
 homepage: http://metacpan.org/pod/IO::Null
 ---
+
 
 # perl-io-null
 

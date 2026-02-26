@@ -1,8 +1,9 @@
 ---
 name: wisestork
-description: Wisestork is a Python-based re-implementation of the Wisecondor algorithm designed for detecting CNVs.
+description: Wisestork detects Copy Number Variations (CNVs) by normalizing genomic data against a reference dictionary. Use when user asks to detect CNVs, generate read counts, correct GC bias, create a reference dictionary, or calculate Z-scores.
 homepage: https://github.com/sndrtj/wisestork
 ---
+
 
 # wisestork
 

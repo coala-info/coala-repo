@@ -1,8 +1,9 @@
 ---
 name: r-phewas
-description: R package phewas (documentation from project home).
+description: The r-phewas package provides a pipeline for conducting Phenome-Wide Association Studies by mapping ICD codes to phecodes and performing statistical association tests. Use when user asks to convert ICD-9 or ICD-10 codes into phecodes, run phenome-wide regression analyses, or generate PheWAS Manhattan plots.
 homepage: https://cran.r-project.org/web/packages/phewas/index.html
 ---
+
 
 # r-phewas
 

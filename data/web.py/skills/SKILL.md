@@ -1,8 +1,9 @@
 ---
 name: web.py
-description: web.py (utilizing the Bottle framework) is a minimalist WSGI micro-web-framework designed for speed and simplicity.
+description: web.py is a minimalist micro-web-framework for creating web services and mapping URLs to Python functions. Use when user asks to create web services, define URL routes, handle HTTP requests, serve static content, use templates, deploy web applications, or access request parameters.
 homepage: https://github.com/bottlepy/bottle
 ---
+
 
 # web.py
 

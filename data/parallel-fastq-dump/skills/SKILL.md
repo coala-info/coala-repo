@@ -1,8 +1,9 @@
 ---
 name: parallel-fastq-dump
-description: `parallel-fastq-dump` is a performance-oriented wrapper for the NCBI SRA Toolkit.
+description: parallel-fastq-dump is a performance-oriented wrapper that speeds up the extraction of FASTQ files from SRA data by processing read ranges concurrently across multiple threads. Use when user asks to download SRA data, convert SRA files to FASTQ format, or parallelize the fastq-dump process for faster data extraction.
 homepage: https://github.com/rvalieris/parallel-fastq-dump
 ---
+
 
 # parallel-fastq-dump
 

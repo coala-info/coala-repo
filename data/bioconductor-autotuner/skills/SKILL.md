@@ -1,8 +1,9 @@
 ---
 name: bioconductor-autotuner
-description: the package performs statistical inference on raw data to come up with the best set of parameters to process the raw data.
+description: Autotuner automates the selection of optimal parameters for metabolomics preprocessing by analyzing regions of interest in raw mass spectrometry data. Use when user asks to identify regions of interest in the total ion current, extract peak-picking parameters from extracted ion chromatograms, or estimate settings for XCMS.
 homepage: https://bioconductor.org/packages/3.10/bioc/html/Autotuner.html
 ---
+
 
 # bioconductor-autotuner
 

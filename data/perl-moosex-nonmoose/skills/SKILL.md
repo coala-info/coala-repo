@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-nonmoose
-description: MooseX::NonMoose is a Perl module designed to bridge the gap between modern Moose-based object orientation and legacy Perl classes.
+description: This Perl module allows Moose-based classes to inherit from legacy non-Moose classes by automating the foreign inheritance process. Use when user asks to extend a non-Moose class with Moose, handle foreign constructor arguments, or integrate legacy Perl objects into a Moose system.
 homepage: https://github.com/moose/MooseX-NonMoose
 ---
+
 
 # perl-moosex-nonmoose
 

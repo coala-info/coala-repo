@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg.u95av2
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Human Genome U95 version 2 microarray. Use when user asks to process raw Affymetrix HG-U95Av2 microarray data, map probes to genomic locations, or perform low-level analysis on this specific platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u95av2.html
 ---
+
 
 # bioconductor-pd.hg.u95av2
 

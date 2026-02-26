@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowspecs
-description: The package name has been chosen both as it will deal with spectral cytometry and as it will hopefully give the user a nice pair of spectacles through which to view their data.
+description: The flowSpecs package provides tools for processing, unmixing, and correcting raw spectral cytometry data. Use when user asks to calculate spectral unmixing matrices, perform spectral unmixing, correct unmixing artifacts, or convert flow data into long-format dataframes.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowSpecs.html
 ---
+
 
 # bioconductor-flowspecs
 

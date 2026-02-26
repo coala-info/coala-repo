@@ -1,8 +1,9 @@
 ---
 name: hla-la
-description: HLA-LA (formerly HLA*PRG:LA) is a computational tool designed for the high-accuracy inference of HLA types from whole-genome sequencing data.
+description: HLA-LA is a computational tool designed for high-accuracy inference of HLA types from whole-genome sequencing data using a population reference graph. Use when user asks to infer HLA alleles from WGS BAM or CRAM files, perform graph-based HLA typing, or extract HLA types using GRCh38 or T2T reference genomes.
 homepage: https://github.com/DiltheyLab/HLA-LA
 ---
+
 
 # hla-la
 

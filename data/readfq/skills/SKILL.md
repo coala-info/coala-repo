@@ -1,8 +1,9 @@
 ---
 name: readfq
-description: The `readfq` tool is a specialized, high-performance utility designed for the rapid summarization of sequencing data.
+description: The readfq tool provides rapid summarization of sequencing data by calculating the total number of reads and bases in FASTQ files. Use when user asks to count sequences, calculate total nucleotides, or summarize genomic datasets.
 homepage: https://github.com/billzt/readfq
 ---
+
 
 # readfq
 

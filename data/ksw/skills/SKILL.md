@@ -1,8 +1,9 @@
 ---
 name: ksw
-description: ksw is a high-performance, lightweight sequence alignment utility that wraps the `parasail` and `ksw2` libraries.
+description: ksw is a high-performance sequence alignment utility that performs interactive local, global, glocal, or extension alignments using the parasail and ksw2 libraries. Use when user asks to align sequence pairs via standard input, perform high-throughput alignments within scripts, or execute alignments with custom scoring matrices and gap penalties.
 homepage: https://github.com/nh13/ksw
 ---
+
 
 # ksw
 

@@ -1,8 +1,9 @@
 ---
 name: vcftools
-description: VCFtools is a specialized suite designed for the analysis and manipulation of VCF and BCF files, commonly used in large-scale genomic projects like the 1000 Genomes Project.
+description: VCFtools is a specialized suite for the analysis and manipulation of VCF and BCF files. Use when user asks to filter variant call data, calculate population genetics statistics, merge VCF files, validate VCF files, compare VCF files, generate VCF statistics, or subset VCF data by individuals.
 homepage: https://github.com/vcftools/vcftools
 ---
+
 
 # vcftools
 

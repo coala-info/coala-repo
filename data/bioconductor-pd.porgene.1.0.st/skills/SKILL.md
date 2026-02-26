@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.porgene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Porcine Gene 1.0 ST expression microarray. Use when user asks to analyze porcine gene expression data, annotate Affymetrix Porcine Gene 1.0 ST arrays, or map probe identifiers to genomic features.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.porgene.1.0.st.html
 ---
+
 
 # bioconductor-pd.porgene.1.0.st
 

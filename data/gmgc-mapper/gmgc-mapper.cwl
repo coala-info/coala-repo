@@ -2,15 +2,41 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gmgc-mapper
 label: gmgc-mapper
-doc: "The provided text does not contain help documentation or usage instructions.
-  It contains system error logs related to a container runtime (Apptainer/Singularity)
-  failure due to insufficient disk space.\n\nTool homepage: https://github.com/BigDataBiology/GMGC-mapper"
-inputs: []
+doc: "GMGC-mapper\n\nTool homepage: https://github.com/BigDataBiology/GMGC-mapper"
+inputs:
+  - id: aa_input
+    type:
+      - 'null'
+      - File
+    doc: Path to the input amino acid gene file (FASTA format)
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --aa-genes
+  - id: genome_fasta
+    type:
+      - 'null'
+      - File
+    doc: Path to the input genome FASTA file.
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: nt_input
+    type:
+      - 'null'
+      - File
+    doc: Path to the input DNA gene file (FASTA format)
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --nt-genes
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type: Directory
+    doc: Output directory (will be created if non-existent)
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/gmgc-mapper:0.2.0--pyh864c0ab_1
-stdout: gmgc-mapper.out

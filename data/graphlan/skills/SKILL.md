@@ -1,8 +1,9 @@
 ---
 name: graphlan
-description: GraPhlAn (Graphical Phylogenetic Analysis) is a visualization tool that transforms tree-like data into publication-ready circular figures.
+description: GraPhlAn visualizes tree-like data by transforming phylogenetic trees into annotated, publication-ready circular figures. Use when user asks to annotate phylogenetic trees with metadata, generate circular tree visualizations, or render tree-based data into image formats like PNG or SVG.
 homepage: https://bitbucket.org/nsegata/graphlan/wiki/Home
 ---
+
 
 # graphlan
 

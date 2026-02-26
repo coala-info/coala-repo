@@ -1,8 +1,9 @@
 ---
 name: rcsbsearch
-description: The rcsbsearch skill provides a Pythonic interface to the RCSB Search API, allowing for sophisticated filtering of the Protein Data Bank.
+description: The rcsbsearch tool provides a Python interface to the RCSB Search API for filtering and retrieving Protein Data Bank entries based on structural or experimental properties. Use when user asks to search the PDB, retrieve PDB IDs using specific metadata filters, or query structural bioinformatics data using operator or fluent syntax.
 homepage: https://github.com/sbliven/rcsbsearch
 ---
+
 
 # rcsbsearch
 

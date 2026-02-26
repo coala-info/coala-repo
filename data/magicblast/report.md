@@ -3,7 +3,7 @@
 ## magicblast
 
 ### Tool Description
-Magic-BLAST is a tool for mapping next-generation RNA or DNA sequencing runs against a genome or transcriptome. (Note: The provided help text contains only system error messages and no argument definitions).
+Short read mapper
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/magicblast:1.7.0--hf1761c0_0
@@ -18,29 +18,229 @@ Magic-BLAST is a tool for mapping next-generation RNA or DNA sequencing runs aga
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/magicblast:1.7.0--hf1761c0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3789033798: no space left on device
-```
+USAGE
+  magicblast [-h] [-help] [-db database_name] [-gilist filename]
+    [-seqidlist filename] [-negative_gilist filename]
+    [-negative_seqidlist filename] [-taxids taxids] [-negative_taxids taxids]
+    [-taxidlist filename] [-negative_taxidlist filename]
+    [-db_soft_mask filtering_algorithm] [-db_hard_mask filtering_algorithm]
+    [-subject subject_input_file] [-subject_loc range] [-query input_file]
+    [-out output_file] [-gzo] [-out_unaligned output_file]
+    [-word_size int_value] [-gapopen open_penalty] [-gapextend extend_penalty]
+    [-perc_identity float_value] [-fr] [-rf] [-penalty penalty]
+    [-lcase_masking] [-validate_seqs TF] [-infmt format] [-paired]
+    [-query_mate infile] [-sra accession] [-sra_batch file]
+    [-parse_deflines TF] [-sra_cache] [-outfmt format] [-unaligned_fmt format]
+    [-md_tag] [-no_query_id_trim] [-no_unaligned] [-no_discordant] [-tag tag]
+    [-num_threads int_value] [-max_intron_length length] [-score num]
+    [-max_edit_dist num] [-splice TF] [-reftype type] [-limit_lookup TF]
+    [-max_db_word_count num] [-lookup_stride num] [-version]
 
+DESCRIPTION
+   Short read mapper
 
-## Metadata
-- **Skill**: generated
+OPTIONAL ARGUMENTS
+ -h
+   Print USAGE and DESCRIPTION;  ignore all other parameters
+ -help
+   Print USAGE, DESCRIPTION and ARGUMENTS; ignore all other parameters
+ -version
+   Print version number;  ignore other arguments
 
-## magicblast_makeblastdb
+ *** Input query options
+ -query <File_In>
+   Input file name
+   Default = `-'
+    * Incompatible with:  sra, sra_batch
+ -infmt <String, `asn1', `asn1b', `fasta', `fastc', `fastq'>
+   Input format for sequences
+   Default = `fasta'
+    * Incompatible with:  sra, sra_batch
+ -paired
+   Input query sequences are paired
+ -query_mate <File_In>
+   FASTA file with mates for query sequences (if given in another file)
+    * Requires:  query
+ -sra <String>
+   Comma-separated SRA accessions
+    * Incompatible with:  query, infmt, sra_batch
+ -sra_batch <File_In>
+   File with a list of SRA accessions, one per line
+    * Incompatible with:  sra, query, infmt
 
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+ *** General search options
+ -db <String>
+   BLAST database name
+    * Incompatible with:  subject, subject_loc
+ -out <File_Out, file name length < 256>
+   Output file name
+   Default = `-'
+ -gzo
+   Output will be compressed
+ -out_unaligned <File_Out>
+   Report unaligned reads to this file
+    * Incompatible with:  no_unaligned
+ -word_size <Integer, >=12>
+   Minimum number of consecutive bases matching exactly
+   Default = `18'
+ -gapopen <Integer>
+   Cost to open a gap
+   Default = `0'
+ -gapextend <Integer>
+   Cost to extend a gap
+   Default = `4'
+ -penalty <Integer, <=0>
+   Penalty for a nucleotide mismatch
+   Default = `-4'
+ -max_intron_length <Integer, >=0>
+   Maximum allowed intron length
+   Default = `500000'
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/magicblast:1.7.0--hf1761c0_0
-- **Homepage**: https://ncbi.github.io/magicblast/
-- **Package**: https://anaconda.org/channels/bioconda/packages/magicblast/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/magicblast:1.7.0--hf1761c0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3444353515: no space left on device
+ *** BLAST-2-Sequences options
+ -subject <File_In>
+   Subject sequence(s) to search
+    * Incompatible with:  db, gilist, seqidlist, negative_gilist,
+   negative_seqidlist, taxids, taxidlist, negative_taxids, negative_taxidlist,
+   db_soft_mask, db_hard_mask
+ -subject_loc <String>
+   Location on the subject sequence in 1-based offsets (Format: start-stop)
+    * Incompatible with:  db, gilist, seqidlist, negative_gilist,
+   negative_seqidlist, taxids, taxidlist, negative_taxids, negative_taxidlist,
+   db_soft_mask, db_hard_mask, remote
+
+ *** Formatting options
+ -outfmt <String, Permissible values: 'asn' 'sam' 'tabular' >
+   alignment view options:
+   sam = SAM format,
+   tabular = Tabular format,
+   asn = text ASN.1
+   Default = `sam'
+ -unaligned_fmt <String, Permissible values: 'fasta' 'sam' 'tabular' >
+   format for reporting unaligned reads:
+   sam = SAM format,
+   tabular = Tabular format,
+   fasta = sequences in FASTA format
+   Default = same as outfmt
+    * Requires:  out_unaligned
+ -md_tag
+   Include MD tag in SAM report
+ -no_query_id_trim
+   Do not trim '.1', '/1', '.2', or '/2' at the end of read ids for SAM format
+   andpaired runs
+ -no_unaligned
+   Do not report unaligned reads
+    * Incompatible with:  out_unaligned
+ -no_discordant
+   Suppress discordant alignments for paired reads
+ -tag <String>
+   A user tag to add to each alignment
+
+ *** Query filtering options
+ -lcase_masking
+   Use lower case filtering in subject sequence(s)?
+ -validate_seqs <Boolean>
+   Reject low quality sequences 
+   Default = `true'
+ -limit_lookup <Boolean>
+   Remove word seeds with high frequency in the searched database
+   Default = `true'
+ -max_db_word_count <Integer, (>=2 and =<255)>
+   Words that appear more than this number of times in the database will be
+   masked in the lookup table
+   Default = `30'
+ -lookup_stride <Integer>
+   Number of words to skip after collecting one while creating a lookup table
+   Default = `0'
+
+ *** Restrict search or results
+ -gilist <String>
+   Restrict search of database to list of GIs
+    * Incompatible with:  seqidlist, taxids, taxidlist, negative_gilist,
+   negative_seqidlist, negative_taxids, negative_taxidlist, remote, subject,
+   subject_loc
+ -seqidlist <String>
+   Restrict search of database to list of SeqIDs
+    * Incompatible with:  gilist, taxids, taxidlist, negative_gilist,
+   negative_seqidlist, negative_taxids, negative_taxidlist, remote, subject,
+   subject_loc
+ -negative_gilist <String>
+   Restrict search of database to everything except the specified GIs
+    * Incompatible with:  gilist, seqidlist, taxids, taxidlist,
+   negative_seqidlist, negative_taxids, negative_taxidlist, remote, subject,
+   subject_loc
+ -negative_seqidlist <String>
+   Restrict search of database to everything except the specified SeqIDs
+    * Incompatible with:  gilist, seqidlist, taxids, taxidlist,
+   negative_gilist, negative_taxids, negative_taxidlist, remote, subject,
+   subject_loc
+ -taxids <String>
+   Restrict search of database to include only the specified taxonomy IDs
+   (multiple IDs delimited by ',')
+    * Incompatible with:  gilist, seqidlist, taxidlist, negative_gilist,
+   negative_seqidlist, negative_taxids, negative_taxidlist, remote, subject,
+   subject_loc
+ -negative_taxids <String>
+   Restrict search of database to everything except the specified taxonomy IDs
+   (multiple IDs delimited by ',')
+    * Incompatible with:  gilist, seqidlist, taxids, taxidlist,
+   negative_gilist, negative_seqidlist, negative_taxidlist, remote, subject,
+   subject_loc
+ -taxidlist <String>
+   Restrict search of database to include only the specified taxonomy IDs
+    * Incompatible with:  gilist, seqidlist, taxids, negative_gilist,
+   negative_seqidlist, negative_taxids, negative_taxidlist, remote, subject,
+   subject_loc
+ -negative_taxidlist <String>
+   Restrict search of database to everything except the specified taxonomy IDs
+    * Incompatible with:  gilist, seqidlist, taxids, taxidlist,
+   negative_gilist, negative_seqidlist, negative_taxids, remote, subject,
+   subject_loc
+ -db_soft_mask <String>
+   Filtering algorithm ID to apply to the BLAST database as soft masking
+    * Incompatible with:  db_hard_mask, subject, subject_loc
+ -db_hard_mask <String>
+   Filtering algorithm ID to apply to the BLAST database as hard masking
+    * Incompatible with:  db_soft_mask, subject, subject_loc
+ -perc_identity <Real, 0..100>
+   Percent identity cutoff for alignments
+   Default = `0.0'
+ -fr
+   Strand specific reads forward/reverse
+    * Incompatible with:  rf
+ -rf
+   Strand specific reads reverse/forward
+    * Incompatible with:  fr
+
+ *** Miscellaneous options
+ -parse_deflines <Boolean>
+   Should the query and subject defline(s) be parsed?
+   Default = `true'
+ -sra_cache
+   Enable SRA caching in local files
+    * Requires:  sra
+ -num_threads <Integer, >=1>
+   Number of threads (CPUs) to use in the BLAST search
+   Default = `1'
+    * Incompatible with:  remote
+
+ *** Mapping options
+ -score <String>
+   Cutoff score for accepting alignments. Can be expressed as a number or a
+   function of read length: L,b,a for a * length + b.
+   Zero means that the cutoff score will be equal to:
+   read length,      if read length <= 20,
+   20,               if read length <= 30,
+   read length - 10, if read length <= 50,
+   40,               otherwise.
+   Default = `0'
+ -max_edit_dist <Integer>
+   Cutoff edit distance for accepting an alignment
+   Default = unlimited
+ -splice <Boolean>
+   Search for spliced alignments
+   Default = `true'
+ -reftype <String, `genome', `transcriptome'>
+   Type of the reference: genome or transcriptome
+   Default = `genome'
 ```
 

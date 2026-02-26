@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dada2
-description: the package is available on all platforms; click for details.
+description: This tool performs high-resolution sample inference from amplicon sequencing data to identify exact amplicon sequence variants. Use when user asks to filter and trim reads, learn sequencing error rates, infer amplicon sequence variants, merge paired-end reads, or remove chimeric sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/dada2.html
 ---
+
 
 # bioconductor-dada2
 

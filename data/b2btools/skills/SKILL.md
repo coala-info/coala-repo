@@ -1,8 +1,9 @@
 ---
 name: b2btools
-description: The b2btools suite is a collection of predictors developed by the Bio2Byte group to bridge the gap between protein sequence and biophysical behavior.
+description: b2btools predicts protein biophysical properties and disorder from sequence data using a suite of specialized predictors. Use when user asks to predict protein dynamics, identify disordered regions, estimate aggregation propensity, or detect early folding events.
 homepage: https://bio2byte.be/
 ---
+
 
 # b2btools
 

@@ -1,8 +1,9 @@
 ---
 name: cenote-taker3
-description: Cenote-Taker 3 (CT3) is a specialized bioinformatics pipeline designed for the high-throughput discovery and functional annotation of the virome.
+description: Cenote-Taker 3 is a bioinformatics pipeline for the high-throughput discovery and functional annotation of viral sequences in metagenomic data. Use when user asks to discover novel viruses, annotate viromes, find prophages in microbial genomes, or generate GenBank-ready files and genome maps.
 homepage: https://github.com/mtisza1/Cenote-Taker3
 ---
+
 
 # cenote-taker3
 

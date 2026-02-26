@@ -1,8 +1,9 @@
 ---
 name: chip-r
-description: ChIP-R (ChIP-seq Reproducibility) is a specialized tool designed to identify consistent genomic signals across multiple biological replicates.
+description: ChIP-R identifies consistent genomic signals across multiple biological replicates using rank product statistics and peak fragmentation. Use when user asks to identify reproducible peaks, generate a consensus peak set from replicates, or filter noise from ChIP-seq data.
 homepage: https://github.com/rhysnewell/ChIP-R
 ---
+
 
 # chip-r
 

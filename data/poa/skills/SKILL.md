@@ -1,8 +1,9 @@
 ---
 name: poa
-description: Poastal (poa) is an automated email reconnaissance framework designed to pivot from a single email address to a broader digital footprint.
+description: Poastal is an automated email reconnaissance framework that identifies the digital footprint and account registrations associated with a specific email address. Use when user asks to verify an email address, identify the owner of an unknown email, or check for registered accounts across various social media and service platforms.
 homepage: https://github.com/jakecreps/poastal
 ---
+
 
 # poa
 

@@ -1,8 +1,9 @@
 ---
 name: garli
-description: Garlic.js is a client-side persistence library that automatically saves the state of HTML form fields (text inputs and select boxes) to the browser's local storage.
+description: Garlic.js is a client-side library that automatically persists HTML form field values to the browser's local storage to prevent data loss. Use when user asks to save form states automatically, prevent data loss from browser crashes, or configure persistent input fields using data attributes.
 homepage: https://github.com/guillaumepotier/Garlic.js
 ---
+
 
 # garli
 

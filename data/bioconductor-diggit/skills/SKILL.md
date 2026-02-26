@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diggit
-description: the package is available on all platforms; click for details.
+description: This tool identifies genetic variants that drive cellular phenotypes by analyzing regulatory networks upstream of Master Regulators. Use when user asks to infer functional copy number variants, perform Master Regulator Analysis, map activity Quantitative Trait Loci, or conduct conditional association analysis to find causal disease determinants.
 homepage: https://bioconductor.org/packages/release/bioc/html/diggit.html
 ---
+
 
 # bioconductor-diggit
 

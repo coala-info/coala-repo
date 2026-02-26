@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyqcreport
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool generates comprehensive multi-page PDF quality control reports for Affymetrix GeneChip microarray data. Use when user asks to assess data quality, generate QC reports for AffyBatch objects, analyze signal distributions, or evaluate RNA degradation and array correlation.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/affyQCReport.html
 ---
+
 
 # bioconductor-affyqcreport
 

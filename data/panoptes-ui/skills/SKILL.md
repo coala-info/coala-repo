@@ -1,8 +1,9 @@
 ---
 name: panoptes-ui
-description: Panoptes is a real-time monitoring tool designed to provide visibility into complex computational pipelines, particularly those used in bioinformatics and data science.
+description: Panoptes-ui is a real-time monitoring tool that provides visibility into the status and execution of computational pipelines through a web interface and REST API. Use when user asks to monitor workflow execution, track job status, manage pipeline databases, or query workflow metadata via an API.
 homepage: https://github.com/panoptes-organization/panoptes
 ---
+
 
 # panoptes-ui
 

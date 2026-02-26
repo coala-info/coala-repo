@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humanomniexpress12v1bcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides metadata and annotation data for the Illumina HumanOmniExpress-12v1-B chip required by the crlmm algorithm. Use when user asks to perform genotype calling, estimate copy number, or process IDAT files for this specific Illumina array platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanomniexpress12v1bCrlmm.html
 ---
+
 
 # bioconductor-humanomniexpress12v1bcrlmm
 

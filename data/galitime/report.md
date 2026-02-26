@@ -3,7 +3,7 @@
 ## galitime
 
 ### Tool Description
-The provided help text contains only system error messages related to container image building and does not include usage information or a description of the tool's functionality.
+benchmarking of computational experiments using GNU time
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/galitime:0.2.0--pyhdfd78af_0
@@ -18,11 +18,20 @@ The provided help text contains only system error messages related to container 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galitime:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1969982295: no space left on device
+Program: galitime (benchmarking of computational experiments using GNU time)
+Version: 0.2.0
+Contact: Karel Brinda <karel.brinda@inria.fr>
+
+usage: galitime [-g] [-l FILE] [-n STR] command
+
+positional arguments:
+  command              the command to be benchmarked
+
+options:
+  -h                   show this help message and exit
+  -v                   show program's version number and exit
+  -g, --gtime          call gtime instead of time
+  -l FILE, --log FILE  output (filename/stderr/stdout) [stderr]
+  -n STR, --name STR   name of the experiment
 ```
 
-
-## Metadata
-- **Skill**: generated

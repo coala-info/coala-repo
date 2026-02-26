@@ -1,8 +1,9 @@
 ---
 name: phip-stat
-description: The `phip-stat` toolset is a specialized suite for processing PhIP-seq experimental data.
+description: phip-stat processes PhIP-seq experimental data through a pipeline of alignment, sample merging, and statistical modeling to identify enriched clones. Use when user asks to align PhIP-seq reads, merge sample counts into a matrix, normalize data using Gamma-Poisson models, or call hits using matrix factorization.
 homepage: https://github.com/lasersonlab/phip-stat
 ---
+
 
 # phip-stat
 

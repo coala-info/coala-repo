@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cardinalio
-description: the package is available on all platforms; click for details.
+description: CardinalIO provides fast and efficient parsing and writing of imzML files for mass spectrometry imaging experiments. Use when user asks to read or write imzML files, access experimental metadata, or manage binary spectral data including m/z and intensity arrays.
 homepage: https://bioconductor.org/packages/release/bioc/html/CardinalIO.html
 ---
+
 
 # bioconductor-cardinalio
 

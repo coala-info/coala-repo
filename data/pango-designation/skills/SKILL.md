@@ -1,8 +1,9 @@
 ---
 name: pango-designation
-description: The pango-designation skill provides a framework for working with the community-led SARS-CoV-2 lineage nomenclature system.
+description: pango-designation manages the community-led SARS-CoV-2 lineage nomenclature system and its associated sequence designation data. Use when user asks to manage the sequence designation list, validate lineage descriptions, identify duplicate sequence entries, or access lineage alias keys and constellations.
 homepage: https://github.com/cov-lineages/pango-designation
 ---
+
 
 # pango-designation
 

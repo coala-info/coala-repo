@@ -3,7 +3,7 @@
 ## camitk-config
 
 ### Tool Description
-CamiTK configuration tool
+Build using CamiTK 4.1.2
 
 ### Metadata
 - **Docker Image**: biocontainers/camitk-config:v4.1.2-3-deb_cv1
@@ -18,14 +18,30 @@ CamiTK configuration tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/camitk-config:v4.1.2-3-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/bin/localedef: unpack to regular file: short write: write /tmp/build-temp-3624598390/rootfs/usr/bin/localedef: no space left on device
+camitk-config
+
+Usage: camitk-config [options]
+Build using CamiTK 4.1.2
+
+Options:
+--help|-h                         Print usage information and exit.
+--version|-v                      Print CamiTK version message
+--config|-c                       Print all information for a complete CamiTK
+                                  diagnosis and exit
+--print-paths|-p                  Print CamiTK paths on the standard output and
+                                  exit
+--camitk-dir|-d|--camitkDir       Print CAMITK_DIR (the installation directory)
+                                  and exit
+--short-version|-s|--shortVersion Print CamiTK short version string
+--complete-version|-vv            Print CamiTK complete version number
+                                  (including patch number)
+--time-stamp|-t                   Generate a time stamp in format
+                                  YYYY-MM-DDTHH:mm:ss from current system date
+                                  and time
+--bug-report-info|-b              Generate a report bug template with the CamiTK
+                                  diagnosis in it
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

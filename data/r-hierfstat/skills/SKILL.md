@@ -1,8 +1,9 @@
 ---
 name: r-hierfstat
-description: "Estimates hierarchical F-statistics from haploid or     diploid genetic data with any numbers of levels in the hierarchy, following the     algorithm of Yang (Evolution(1998), 52:950).     Tests via randomisations the significance     of each F and variance components, using the likelihood-ratio statistics G     (Goudet et al."
+description: The hierfstat package estimates hierarchical F-statistics and genetic diversity measures from haploid or diploid genetic data. Use when user asks to calculate F-statistics, estimate genetic distances, perform hierarchical variance analysis, or assess population-specific differentiation and sex-biased dispersal.
 homepage: https://cloud.r-project.org/web/packages/hierfstat/index.html
 ---
+
 
 # r-hierfstat
 

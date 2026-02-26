@@ -1,8 +1,9 @@
 ---
 name: gromacswrapper
-description: GromacsWrapper transforms GROMACS command-line tools into Python classes, allowing for robust, modular, and reproducible molecular dynamics pipelines.
+description: GromacsWrapper provides a Python interface for GROMACS command-line tools to enable the creation of automated molecular dynamics workflows. Use when user asks to run GROMACS commands from Python, automate simulation setup, or build reproducible molecular dynamics pipelines.
 homepage: https://github.com/Becksteinlab/GromacsWrapper
 ---
+
 
 # gromacswrapper
 

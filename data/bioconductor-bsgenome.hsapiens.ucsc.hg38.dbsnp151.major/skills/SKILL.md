@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.major
-description: the package is available on all platforms; click for details.
+description: This package provides the human genome sequence (hg38) with major alleles from dbSNP151 injected at known SNV positions. Use when user asks to access major allele reference sequences, extract genomic sequences with common variants, or perform bioinformatics analyses in R using a modified BSgenome object.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.major
 

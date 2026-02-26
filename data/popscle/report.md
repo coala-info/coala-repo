@@ -1,9 +1,9 @@
 # popscle CWL Generation Report
 
-## popscle
+## popscle_demuxlet
 
 ### Tool Description
-A suite of algorithms for population-scale single-cell genomics analysis, including demultiplexing and doublet detection.
+Deconvolute sample identify of droplet-based sc-RNAseq
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
@@ -18,71 +18,427 @@ A suite of algorithms for population-scale single-cell genomics analysis, includ
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/popscle:0.1--ha0d7e29_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+[cramore demuxlet] -- Deconvolute sample identify of droplet-based sc-RNAseq
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Options for input SAM/BAM/CRAM ==
+   --sam               [STR: ]             : Input SAM/BAM/CRAM file. Must be sorted by coordinates and indexed
+   --tag-group         [STR: CB]           : Tag representing readgroup or cell barcodes, in the case to partition the BAM file into multiple groups. For 10x genomics, use CB
+   --tag-UMI           [STR: UB]           : Tag representing UMIs. For 10x genomiucs, use UB
+
+== Options for input Pileup format ==
+   --plp               [STR: ]             : Input pileup format
+
+== Options for input VCF/BCF ==
+   --vcf               [STR: ]             : Input VCF/BCF file, containing the individual genotypes (GT), posterior probability (GP), or genotype likelihood (PL)
+   --field             [STR: GP]           : FORMAT field to extract the genotype, likelihood, or posterior from
+   --geno-error-offset [FLT: 0.10]         : Offset of genotype error rate. [error] = [offset] + [1-offset]*[coeff]*[1-r2]
+   --geno-error-coeff  [FLT: 0.00]         : Slope of genotype error rate. [error] = [offset] + [1-offset]*[coeff]*[1-r2]
+   --r2-info           [STR: R2]           : INFO field name representing R2 value. Used for representing imputation quality
+   --min-mac           [INT: 1]            : Minimum minor allele frequency
+   --min-callrate      [FLT: 0.50]         : Minimum call rate
+   --sm                [V_STR: ]           : List of sample IDs to compare to (default: use all)
+   --sm-list           [STR: ]             : File containing the list of sample IDs to compare
+
+== Output Options ==
+   --out               [STR: ]             : Output file prefix
+   --alpha             [V_FLT: ]           : Grid of alpha to search for (default is 0.1, 0.2, 0.3, 0.4, 0.5)
+   --doublet-prior     [FLT: 0.50]         : Prior of doublet
+   --sam-verbose       [INT: 1000000]      : Verbose message frequency for SAM/BAM/CRAM
+   --vcf-verbose       [INT: 10000]        : Verbose message frequency for VCF/BCF
+
+== Read filtering Options ==
+   --cap-BQ            [INT: 20]           : Maximum base quality (higher BQ will be capped)
+   --min-BQ            [INT: 13]           : Minimum base quality to consider (lower BQ will be skipped)
+   --min-MQ            [INT: 20]           : Minimum mapping quality to consider (lower MQ will be ignored)
+   --min-TD            [INT: 0]            : Minimum distance to the tail (lower will be ignored)
+   --excl-flag         [INT: 3844]         : SAM/BAM FLAGs to be excluded
+
+== Cell/droplet filtering options ==
+   --group-list        [STR: ]             : List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run
+   --min-total         [INT: 0]            : Minimum number of total reads for a droplet/cell to be considered
+   --min-umi           [INT: 0]            : Minimum number of UMIs for a droplet/cell to be considered
+   --min-snp           [INT: 0]            : Minimum number of SNPs with coverage for a droplet/cell to be considered
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## popscle_dsc-pileup
+## popscle_freemuxlet-old
 
 ### Tool Description
-The provided text contains container execution logs and a fatal error rather than the tool's help documentation. No arguments could be extracted.
+Genotype-free deconvolution of sc-RNAseq (deprecated)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
 - **Homepage**: https://github.com/statgen/popscle
 - **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/popscle:0.1--ha0d7e29_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+[cramore freemuxlet-old] -- Genotype-free deconvolution of sc-RNAseq (deprecated)
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Options for input pileup ==
+   --plp               [STR: ]             : Prefix of input files generated by dsc-pileup
+   --init-cluster      [STR: ]             : Input file containing the initial cluster information
+
+== Output Options ==
+   --out               [STR: ]             : Output file prefix
+   --nsample           [INT: 0]            : Number of samples multiplexed together
+   --aux-files         [FLG: OFF]          : Turn on writing auxilary output files
+   --verbose           [INT: 100]          : Turn on verbose mode with specific verbosity threshold. 0: fully verbose, 100 : no verbose messages
+
+== Options for statistical inference ==
+   --doublet-prior     [FLT: 0.50]         : Prior of doublet
+   --geno-error        [FLT: 0.00]         : Genotype error parameter per cluster
+   --bf-thres          [FLT: 5.41]         : Bayes Factor Threshold used in the initial clustering
+   --frac-init-clust   [FLT: 1.00]         : Fraction of droplets to be clustered in the very first round of initial clustering procedure
+   --iter-init         [INT: 10]           : Iteration for initial cluster assignment (set to zero to skip the iterations)
+   --keep-init-missing [FLG: OFF]          : Keep missing cluster assignment as missing in the initial iteration
+
+== Read filtering Options ==
+   --cap-BQ            [INT: 40]           : Maximum base quality (higher BQ will be capped)
+   --min-BQ            [INT: 13]           : Minimum base quality to consider (lower BQ will be skipped)
+
+== Cell/droplet filtering options ==
+   --group-list        [STR: ]             : List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run
+   --min-total         [INT: 0]            : Minimum number of total reads for a droplet/cell to be considered
+   --min-uniq          [INT: 0]            : Minimum number of unique reads (determined by UMI/SNP pair) for a droplet/cell to be considered
+   --min-snp           [INT: 0]            : Minimum number of SNPs with coverage for a droplet/cell to be considered
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
 ```
 
-## popscle_demuxlet
-
-### Tool Description
-The provided text contains container runtime error logs and does not include the help documentation for popscle demuxlet. Below is the structured representation based on the tool's standard CLI definition.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
-- **Homepage**: https://github.com/statgen/popscle
-- **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/popscle:0.1--ha0d7e29_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## popscle_freemuxlet
 
 ### Tool Description
-The provided text does not contain help information for the tool. It consists of error logs from a container runtime (Singularity/Apptainer) indicating a failure to fetch or build the OCI image.
+Genotype-free deconvolution of sc-RNAseq
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
 - **Homepage**: https://github.com/statgen/popscle
 - **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/popscle:0.1--ha0d7e29_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+[cramore freemuxlet] -- Genotype-free deconvolution of sc-RNAseq
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Options for input pileup ==
+   --plp                     [STR: ]             : Prefix of input files generated by dsc-pileup
+   --init-cluster            [STR: ]             : Input file containing the initial cluster information
+
+== Output Options ==
+   --out                     [STR: ]             : Output file prefix
+   --nsample                 [INT: 0]            : Number of samples multiplexed together
+   --aux-files               [FLG: OFF]          : Turn on writing auxilary output files
+   --verbose                 [INT: 100]          : Turn on verbose mode with specific verbosity threshold. 0: fully verbose, 100 : no verbose messages
+
+== Options for statistical inference ==
+   --doublet-prior           [FLT: 0.50]         : Prior of doublet
+   --geno-error              [FLT: 0.10]         : Genotype error parameter per cluster
+   --bf-thres                [FLT: 5.41]         : Bayes Factor Threshold used in the initial clustering
+   --frac-init-clust         [FLT: 1.00]         : Fraction of droplets to be clustered in the very first round of initial clustering procedure
+   --iter-init               [INT: 10]           : Iteration for initial cluster assignment (set to zero to skip the iterations)
+   --keep-init-missing       [FLG: OFF]          : Keep missing cluster assignment as missing in the initial iteration
+   --randomize-singlet-score [FLG: OFF]          : Randomize the singlet scores to test its effect
+   --seed                    [INT: 0]            : Seed for random number (use clocks if not set)
+
+== Read filtering Options ==
+   --cap-BQ                  [INT: 20]           : Maximum base quality (higher BQ will be capped)
+   --min-BQ                  [INT: 13]           : Minimum base quality to consider (lower BQ will be skipped)
+
+== Cell/droplet filtering options ==
+   --group-list              [STR: ]             : List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run
+   --min-total               [INT: 0]            : Minimum number of total reads for a droplet/cell to be considered
+   --min-umi                 [INT: 0]            : Minimum number of UMIs for a droplet/cell to be considered
+   --min-snp                 [INT: 0]            : Minimum number of SNPs with coverage for a droplet/cell to be considered
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
+```
+
+
+## popscle_digital-pileup
+
+### Tool Description
+Produce pileup of dsc-RNAseq (old version of dsc-pileup)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
+- **Homepage**: https://github.com/statgen/popscle
+- **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[cramore digital-pileup] -- Produce pileup of dsc-RNAseq (old version of dsc-pileup)
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Options for input SAM/BAM/CRAM ==
+   --sam         [STR: ]             : Input SAM/BAM/CRAM file. Must be sorted by coordinates and indexed
+   --tag-group   [STR: CB]           : Tag representing readgroup or cell barcodes, in the case to partition the BAM file into multiple groups. For 10x genomics, use CB
+   --tag-UMI     [STR: UB]           : Tag representing UMIs. For 10x genomiucs, use UB
+
+== Options for input VCF/BCF ==
+   --vcf         [STR: ]             : Input VCF/BCF file, containing the AC and AN field
+   --sm          [V_STR: ]           : List of sample IDs to compare to (default: use all)
+   --sm-list     [STR: ]             : File containing the list of sample IDs to compare
+
+== Output Options ==
+   --out         [STR: ]             : Output file prefix
+   --sam-verbose [INT: 1000000]      : Verbose message frequency for SAM/BAM/CRAM
+   --vcf-verbose [INT: 10000]        : Verbose message frequency for VCF/BCF
+   --skip-umi    [FLG: OFF]          : Do not generate [prefix].umi.gz file, which stores the regions covered by each barcode/UMI pair
+
+== SNP-overlapping Read filtering Options ==
+   --cap-BQ      [INT: 40]           : Maximum base quality (higher BQ will be capped)
+   --min-BQ      [INT: 13]           : Minimum base quality to consider (lower BQ will be skipped)
+   --min-MQ      [INT: 20]           : Minimum mapping quality to consider (lower MQ will be ignored)
+   --min-TD      [INT: 0]            : Minimum distance to the tail (lower will be ignored)
+   --excl-flag   [INT: 3844]         : SAM/BAM FLAGs to be excluded
+
+== Cell/droplet filtering options ==
+   --group-list  [STR: ]             : List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run
+   --min-total   [INT: 0]            : Minimum number of total reads for a droplet/cell to be considered
+   --min-uniq    [INT: 0]            : Minimum number of unique reads (determined by UMI/SNP pair) for a droplet/cell to be considered
+   --min-snp     [INT: 0]            : Minimum number of SNPs with coverage for a droplet/cell to be considered
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
+```
+
+
+## popscle_dsc-pileup
+
+### Tool Description
+Produce pileup of dsc-RNAseq
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
+- **Homepage**: https://github.com/statgen/popscle
+- **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[cramore dsc-pileup] -- Produce pileup of dsc-RNAseq
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Options for input SAM/BAM/CRAM ==
+   --sam          [STR: ]             : Input SAM/BAM/CRAM file. Must be sorted by coordinates and indexed
+   --tag-group    [STR: CB]           : Tag representing readgroup or cell barcodes, in the case to partition the BAM file into multiple groups. For 10x genomics, use CB
+   --tag-UMI      [STR: UB]           : Tag representing UMIs. For 10x genomiucs, use UB
+   --exclude-flag [INT: 1796]         : SAM/BAM flag to exclude
+
+== Options for input VCF/BCF ==
+   --vcf          [STR: ]             : Input VCF/BCF file, containing the AC and AN field
+   --sm           [V_STR: ]           : List of sample IDs to compare to (default: use all)
+   --sm-list      [STR: ]             : File containing the list of sample IDs to compare
+
+== Output Options ==
+   --out          [STR: ]             : Output file prefix
+   --sam-verbose  [INT: 1000000]      : Verbose message frequency for SAM/BAM/CRAM
+   --vcf-verbose  [INT: 10000]        : Verbose message frequency for VCF/BCF
+   --skip-umi     [FLG: OFF]          : Do not generate [prefix].umi.gz file, which stores the regions covered by each barcode/UMI pair
+
+== SNP-overlapping Read filtering Options ==
+   --cap-BQ       [INT: 40]           : Maximum base quality (higher BQ will be capped)
+   --min-BQ       [INT: 13]           : Minimum base quality to consider (lower BQ will be skipped)
+   --min-MQ       [INT: 20]           : Minimum mapping quality to consider (lower MQ will be ignored)
+   --min-TD       [INT: 0]            : Minimum distance to the tail (lower will be ignored)
+   --excl-flag    [INT: 3844]         : SAM/BAM FLAGs to be excluded
+
+== Cell/droplet filtering options ==
+   --group-list   [STR: ]             : List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run
+   --min-total    [INT: 0]            : Minimum number of total reads for a droplet/cell to be considered
+   --min-uniq     [INT: 0]            : Minimum number of unique reads (determined by UMI/SNP pair) for a droplet/cell to be considered
+   --min-snp      [INT: 0]            : Minimum number of SNPs with coverage for a droplet/cell to be considered
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
+```
+
+
+## popscle_dsc-dump
+
+### Tool Description
+Produce a file dump of dsc-RNAseq
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
+- **Homepage**: https://github.com/statgen/popscle
+- **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[cramore dsc-dump] -- Produce a file dump of dsc-RNAseq
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Options for input SAM/BAM/CRAM ==
+   --sam              [STR: ]             : Input SAM/BAM/CRAM file. Must be sorted by coordinates and indexed
+   --region           [STR: ]             : Region to be focused on
+   --tag-group        [STR: CB]           : Tag representing readgroup or cell barcodes, in the case to partition the BAM file into multiple groups. For 10x genomics, use CB
+   --tag-UMI          [STR: UB]           : Tag representing UMIs. For 10x genomiucs, use UB
+   --excl-flag        [INT: 3844]         : SAM/BAM FLAGs to be excluded
+
+== Options for input VCF/BCF ==
+   --vcf              [STR: ]             : Input VCF/BCF file, containing the AC and AN field
+   --sm               [V_STR: ]           : List of sample IDs to compare to (default: use all)
+   --sm-list          [STR: ]             : File containing the list of sample IDs to compare
+
+== Output Options ==
+   --out              [STR: ]             : Output file prefix
+   --sam-verbose      [INT: 1000000]      : Verbose message frequency for SAM/BAM/CRAM
+   --vcf-verbose      [INT: 10000]        : Verbose message frequency for VCF/BCF
+   --skip-umi         [FLG: OFF]          : Do not generate [prefix].umi.gz file, which stores the regions covered by each barcode/UMI pair
+   --skip-empty-group [FLG: OFF]          : Skip read that does not have group (e.g. cell barcode) information. By default it assigns barcode '.'
+   --skip-empty-umi   [FLG: OFF]          : Skip read that does not have UMI (e.g. cell barcode) information. By default it assigns all reads as a single UMI. To consider them all independent reads, you need to set --tag-UMI '' (empty)
+   --chunks           [INT: 100]          : Number of chunks to store barcodes randomly
+   --seed             [INT: -2128831035]  : Seed for random number generator
+
+== SNP-overlapping Read filtering Options ==
+   --cap-BQ           [INT: 40]           : Maximum base quality (higher BQ will be capped)
+   --min-BQ           [INT: 13]           : Minimum base quality to consider (lower BQ will be skipped)
+   --min-MQ           [INT: 20]           : Minimum mapping quality to consider (lower MQ will be ignored)
+   --min-TD           [INT: 0]            : Minimum distance to the tail (lower will be ignored)
+
+== Cell/droplet filtering options ==
+   --group-list       [STR: ]             : List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
+```
+
+
+## popscle_dsc-dump2plp
+
+### Tool Description
+Produce a pileup from a dump of dsc-RNAseq
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
+- **Homepage**: https://github.com/statgen/popscle
+- **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[cramore dsc-dump2plp] -- Produce a pileup from a dump of dsc-RNAseq
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Required pptions for input/output files ==
+   --in       [STR: ]             : Input prefix from cramore/popscle dsc-dump
+   --out      [STR: ]             : Output prefix compatible with cramore/popscle dsc-pileup
+
+== Additional options for input files ==
+   --chunk-id [INT: -1]           : Chunk ID to focus on. By default, it runs across all chunks
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
+```
+
+
+## popscle_plp-make-dge-matrix
+
+### Tool Description
+Make Digital Expression Matrix from Digital Pileups
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/popscle:0.1--ha0d7e29_1
+- **Homepage**: https://github.com/statgen/popscle
+- **Package**: https://anaconda.org/channels/bioconda/packages/popscle/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[cramore plp-make-dge-matrix] -- Make Digital Expression Matrix from Digital Pileups
+
+ Copyright (c) 2009-2017 by Hyun Min Kang and Adrian Tan
+ Licensed under the Apache License v2.0 http://www.apache.org/licenses/
+
+Detailed instructions of parameters are available. Ones with "[]" are in effect:
+
+Available Options:
+
+== Input options ==
+   --plp                    [STR: ]             : Prefix of input files generated by dsc-pileup
+   --gtf                    [STR: ]             : GTF-formatted file for gene/transcript annotation
+   --gtf-remove-chr         [FLG: OFF]          : Remove 'chr' prefix from input GTF file
+   --gtf-add-chr            [FLG: OFF]          : Add 'chr' prefix from input GTF file
+   --gene-type              [V_STR: ]           : Gene types to include to produce DGE matrix (e.g. protein-coding)
+   --common-gene-types      [FLG: OFF]          : Load only common gene types, searching for specific gene types - protein_coding, lincRNA, antisense, IG_ and TR_ genes
+   --create-gene-transcript [FLG: OFF]          : Create genes and transcripts if not exist in GTF
+
+== Output Options ==
+   --out                    [STR: ]             : Output file prefix
+   --uniq-bin               [INT: 1000000000]   : Bin size to uniquely count a UMI into a single gene
+   --verbose                [INT: 100]          : Turn on verbose mode with specific verbosity threshold. 0: fully verbose, 100 : no verbose messages
+
+== Cell/droplet filtering options ==
+   --group-list             [STR: ]             : List of tag readgroup/cell barcode to consider in this run. All other barcodes will be ignored. This is useful for parallelized run
+   --min-total              [INT: 0]            : Minimum number of total reads for a droplet/cell to be considered
+   --min-uniq               [INT: 0]            : Minimum number of unique reads (determined by UMI/SNP pair) for a droplet/cell to be considered
+   --min-snp                [INT: 0]            : Minimum number of SNPs with coverage for a droplet/cell to be considered
+
+
+NOTES:
+When --help was included in the argument. The program prints the help message but do not actually run
 ```
 

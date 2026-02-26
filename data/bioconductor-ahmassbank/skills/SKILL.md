@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahmassbank
-description: the package is available on all platforms; click for details.
+description: This package provides metadata to link MassBank database releases with the Bioconductor AnnotationHub infrastructure for easy retrieval as CompDb objects. Use when user asks to retrieve MassBank data from AnnotationHub, convert local MassBank MySQL dumps to SQLite format, or access small chemical compound metadata for mass spectrometry annotation workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/AHMassBank.html
 ---
+
 
 # bioconductor-ahmassbank
 

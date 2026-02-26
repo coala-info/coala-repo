@@ -1,8 +1,9 @@
 ---
 name: lsc
-description: lsc (Lazy Script) is a menu-driven automation framework for Kali Linux designed to streamline complex penetration testing workflows.
+description: lsc is a menu-driven automation framework for Kali Linux that streamlines penetration testing workflows and tool management. Use when user asks to automate WiFi auditing, spoof MAC addresses, generate Metasploit payloads, or install and launch various security tools.
 homepage: https://github.com/arismelachroinos/lscript
 ---
+
 
 # lsc
 

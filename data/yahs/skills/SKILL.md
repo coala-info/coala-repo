@@ -1,8 +1,9 @@
 ---
 name: yahs
-description: YaHS (Yet another Hi-C scaffolding tool) is a high-performance command-line tool designed to construct chromosome-scale scaffolds from genomic contigs.
+description: YaHS constructs chromosome-scale scaffolds from genomic contigs using Hi-C data. Use when user asks to construct chromosome-scale scaffolds, scaffold genomic contigs, order and orient contigs, or improve genome assembly with Hi-C.
 homepage: https://github.com/c-zhou/yahs
 ---
+
 
 # yahs
 

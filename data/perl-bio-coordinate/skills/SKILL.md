@@ -1,8 +1,9 @@
 ---
 name: perl-bio-coordinate
-description: The `perl-bio-coordinate` skill provides a framework for managing and transforming coordinates across different biological scales.
+description: This tool manages and transforms coordinates between different biological scales such as genomic DNA, mRNA, and protein sequences. Use when user asks to map coordinates between different biological systems, handle DNA to protein translation mapping, or manage complex coordinate transformations across multiple exons.
 homepage: https://metacpan.org/release/Bio-Coordinate
 ---
+
 
 # perl-bio-coordinate
 

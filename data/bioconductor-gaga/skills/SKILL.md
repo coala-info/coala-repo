@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gaga
-description: the package is available on all platforms; click for details.
+description: This tool performs high-throughput gene expression analysis using GaGa and MiGaGa hierarchical models. Use when user asks to perform differential expression analysis, predict sample classes, or calculate required sample sizes for genomic experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/gaga.html
 ---
+
 
 # bioconductor-gaga
 

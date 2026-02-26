@@ -1,8 +1,9 @@
 ---
 name: bioconductor-smap
-description: the package is available on all platforms; click for details.
+description: This package implements a Hidden Markov Model for segmenting genomic copy number data. Use when user asks to perform copy number profiling, segment genomic data, or identify copy number states.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SMAP.html
 ---
+
 
 # bioconductor-smap
 

@@ -1,8 +1,9 @@
 ---
 name: r-grimport
-description: R package grimport (documentation from project home).
+description: This tool imports and manipulates external vector graphics in R by converting PostScript files into scalable picture objects. Use when user asks to import PostScript files, convert vector graphics to R objects, or render external diagrams within the grid graphics system.
 homepage: https://cran.r-project.org/web/packages/grimport/index.html
 ---
+
 
 # r-grimport
 

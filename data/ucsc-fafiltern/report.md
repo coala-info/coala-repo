@@ -3,7 +3,7 @@
 ## ucsc-fafiltern
 
 ### Tool Description
-Filter DNA sequences in a FASTA file. Note: The provided help text contains a container execution error and does not list specific arguments.
+Filter a fasta file based on various criteria such as name, size, or N content.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-fafiltern:482--h0b57e2e_0
@@ -18,13 +18,46 @@ Filter DNA sequences in a FASTA file. Note: The provided help text contains a co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-fafiltern:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-fafiltern:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-fafiltern
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+5711283052b4: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1330182067: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## ucsc-fafiltern_faFilterN
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ucsc-fafiltern:482--h0b57e2e_0
+- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
+- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-fafiltern/overview
+- **Validation**: FAIL (generation failed)
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+### Validation Errors
+- No inputs — do not generate CWL.
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/ucsc-fafiltern:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-fafiltern
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+5711283052b4: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2373425662: no space left on device
+
+Run 'docker run --help' for more information
+```
+

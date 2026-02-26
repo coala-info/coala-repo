@@ -1,8 +1,9 @@
 ---
 name: machina
-description: MACHINA is a specialized suite of tools designed to reconstruct the metastatic history of tumors using DNA sequencing data.
+description: Machina reconstructs the metastatic history of tumors by modeling the migration of cancer cell clones between primary and metastatic sites. Use when user asks to infer migration patterns, solve the parsimonious migration history problem, or simultaneously infer clone trees and migration events from DNA sequencing data.
 homepage: https://github.com/raphael-group/machina
 ---
+
 
 # machina
 

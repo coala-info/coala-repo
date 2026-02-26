@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipseqspike
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The bioconductor-chipseqspike package normalizes ChIP-seq data using exogenous spike-in controls to account for global signal shifts between samples. Use when user asks to normalize ChIP-seq datasets with spike-in DNA, estimate scaling factors from endogenous and exogenous reads, or generate normalized binding profiles and heatmaps.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ChIPSeqSpike.html
 ---
+
 
 # bioconductor-chipseqspike
 

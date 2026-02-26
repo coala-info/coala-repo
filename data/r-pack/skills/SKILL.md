@@ -1,8 +1,9 @@
 ---
 name: r-pack
-description: Functions to easily convert data to binary formats other programs/machines can understand.</p>
+description: This tool converts R values to and from raw binary vectors using Perl-style format strings. Use when user asks to pack data into binary formats, unpack raw byte vectors, handle endianness in data structures, or implement network protocols.
 homepage: https://cloud.r-project.org/web/packages/pack/index.html
 ---
+
 
 # r-pack
 

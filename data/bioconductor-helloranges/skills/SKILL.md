@@ -1,8 +1,9 @@
 ---
 name: bioconductor-helloranges
-description: the package is available on all platforms; click for details.
+description: This tool translates bedtools commands into executable Bioconductor R code for genomic range operations. Use when user asks to convert bedtools recipes to R, perform genomic intersections or merges using GRanges, or generate idiomatic Bioconductor code from command-line arguments.
 homepage: https://bioconductor.org/packages/release/bioc/html/HelloRanges.html
 ---
+
 
 # bioconductor-helloranges
 

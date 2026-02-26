@@ -2,10 +2,194 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: run_isoncorrect
 label: isoncorrect_run_isoncorrect
-doc: "The provided text is a system error log from a container runtime (Apptainer/Singularity)
-  and does not contain the help documentation or argument definitions for the tool.
-  As a result, no arguments could be extracted.\n\nTool homepage: https://github.com/ksahlin/isONcorrect"
-inputs: []
+doc: "De novo clustering of long-read transcriptome reads\n\nTool homepage: https://github.com/ksahlin/isONcorrect"
+inputs:
+  - id: exact_instance_limit
+    type:
+      - 'null'
+      - int
+    doc: Do exact correction for clusters under this threshold
+    default: 50
+    inputBinding:
+      position: 101
+      prefix: --exact_instance_limit
+  - id: fastq_folder
+    type:
+      - 'null'
+      - Directory
+    doc: Path to input fastq folder with reads in clusters
+    default: 'False'
+    inputBinding:
+      position: 101
+      prefix: --fastq_folder
+  - id: k
+    type:
+      - 'null'
+      - int
+    doc: Kmer size
+    default: 9
+    inputBinding:
+      position: 101
+      prefix: --k
+  - id: keep_old
+    type:
+      - 'null'
+      - boolean
+    doc: Do not recompute previous results if corrected_reads.fq is found and 
+      has the smae number of reads as input file (i.e., is complete).
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --keep_old
+  - id: layers
+    type:
+      - 'null'
+      - int
+    doc: 'EXPERIMENTAL PARAMETER: Active when --randstrobes specified. How many "layers"
+      with randstrobes we want per sequence to sample. More layers gives more accureate
+      results but is more memory consuming and slower. It is not reccomended to specify
+      more than 5.'
+    inputBinding:
+      position: 101
+      prefix: --layers
+  - id: max_seqs
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of seqs to correct at a time (in case of large 
+      clusters).
+    default: 2000
+    inputBinding:
+      position: 101
+      prefix: --max_seqs
+  - id: nr_cores
+    type:
+      - 'null'
+      - int
+    doc: Number of cores allocated for clustering
+    default: 8
+    inputBinding:
+      position: 101
+      prefix: --t
+  - id: outfolder
+    type:
+      - 'null'
+      - Directory
+    doc: Outfolder with all corrected reads.
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --outfolder
+  - id: randstrobes
+    type:
+      - 'null'
+      - boolean
+    doc: 'EXPERIMENTAL PARAMETER: IsONcorrect uses paired minimizers (described in
+      isONcorrect paper). This experimental option uses randstrobes instead of paired
+      minimizers to find shared regions. Randstrobes reduces memory footprint substantially
+      (and runtime) with only slight increase in post correction quality.'
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --randstrobes
+  - id: residual
+    type:
+      - 'null'
+      - int
+    doc: Run isONcorrect on cluster ids with residual (default 0) of cluster_id 
+      divided by --split_mod.
+    default: 0
+    inputBinding:
+      position: 101
+      prefix: --residual
+  - id: set_layers_manually
+    type:
+      - 'null'
+      - boolean
+    doc: 'EXPERIMENTAL PARAMETER: By default isONcorrect sets layers = 1 if nr seqs
+      in batch to be corrected is >= 1000, else layers = 2. This command will manually
+      pick the number of layers specified with the --layers parameter.'
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --set_layers_manually
+  - id: set_w_dynamically
+    type:
+      - 'null'
+      - boolean
+    doc: Set w = k + max(2*k, floor(cluster_size/1000)).
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --set_w_dynamically
+  - id: split_mod
+    type:
+      - 'null'
+      - int
+    doc: Splits cluster ids in n (default=1) partitions by computing residual of
+      cluster_id divided by n. this parameter needs to be combined with 
+      --residual to take effect.
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --split_mod
+  - id: split_wrt_batches
+    type:
+      - 'null'
+      - boolean
+    doc: Process reads per batch (of max_seqs sequences) instead of per cluster.
+      Significantly decrease runtime when few very large clusters are less than 
+      the number of cores used.
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --split_wrt_batches
+  - id: t_min_fraction
+    type:
+      - 'null'
+      - float
+    doc: Minimum fraction keeping substitution
+    default: 0.1
+    inputBinding:
+      position: 101
+      prefix: --T
+  - id: use_racon
+    type:
+      - 'null'
+      - boolean
+    doc: Use racon to polish consensus after spoa (more time consuming but 
+      higher accuracy).
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --use_racon
+  - id: w
+    type:
+      - 'null'
+      - int
+    doc: Window size
+    default: 20
+    inputBinding:
+      position: 101
+      prefix: --w
+  - id: xmax
+    type:
+      - 'null'
+      - int
+    doc: Upper interval length
+    default: 80
+    inputBinding:
+      position: 101
+      prefix: --xmax
+  - id: xmin
+    type:
+      - 'null'
+      - int
+    doc: Lower interval length
+    default: 18
+    inputBinding:
+      position: 101
+      prefix: --xmin
 outputs:
   - id: stdout
     type: stdout

@@ -3,26 +3,32 @@
 ## njplot
 
 ### Tool Description
-A phylogenetic tree drawing program. (Note: The provided text contains container runtime error messages rather than tool help documentation, so no arguments could be extracted.)
+[Errno 2] No such file or directory: 'njplot'; fallback failed: [Errno 2] No such file or directory: 'njplot'
 
 ### Metadata
-- **Docker Image**: biocontainers/njplot:v2.4-8-deb_cv1
+- **Docker Image**: Not found
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/njplot/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'njplot'; fallback failed: [Errno 2] No such file or directory: 'njplot'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'njplot'; fallback failed: [Errno 2] No such file or directory: 'njplot'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/njplot:v2.4-8-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3539656794: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

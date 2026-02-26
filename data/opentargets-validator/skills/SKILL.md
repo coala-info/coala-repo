@@ -1,8 +1,9 @@
 ---
 name: opentargets-validator
-description: The `opentargets-validator` is a specialized utility used to verify that data files intended for the Open Targets Platform conform to official structural requirements.
+description: The opentargets-validator verifies that data files conform to the official structural requirements and schemas of the Open Targets Platform. Use when user asks to validate evidence strings, check JSONL files against Open Targets schemas, or verify data formatting before platform ingestion.
 homepage: https://github.com/opentargets/validator
 ---
+
 
 # opentargets-validator
 

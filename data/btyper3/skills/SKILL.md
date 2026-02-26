@@ -1,8 +1,9 @@
 ---
 name: btyper3
-description: BTyper3 is a specialized command-line tool designed for the high-resolution taxonomic classification of the *Bacillus cereus* group.
+description: BTyper3 performs high-resolution taxonomic classification and genomic nomenclature assignment for the Bacillus cereus group using assembled genomes. Use when user asks to classify Bacillus cereus group isolates, perform type strain comparisons using ANI, or assign genomic species and genomospecies definitions.
 homepage: https://github.com/lmc297/BTyper3
 ---
+
 
 # btyper3
 

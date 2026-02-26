@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.dya.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Medical Subject Headings and Entrez Gene identifiers for Drosophila yakuba. Use when user asks to map MeSH terms to Entrez Gene IDs, perform MeSH enrichment analysis, or retrieve functional annotations for Drosophila yakuba genes.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Dya.eg.db.html
 ---
+
 
 # bioconductor-mesh.dya.eg.db
 

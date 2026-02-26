@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rfarm
-description: the package is available on all platforms; click for details.
+description: The rfaRm package provides an R interface to access and query the Rfam database for information on non-coding RNA families. Use when user asks to search the Rfam database, retrieve RNA family data, or access non-coding RNA sequences and alignments.
 homepage: https://bioconductor.org/packages/release/bioc/html/rfaRm.html
 ---
+
 
 # bioconductor-rfarm
 

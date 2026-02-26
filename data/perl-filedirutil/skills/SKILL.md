@@ -1,8 +1,9 @@
 ---
 name: perl-filedirutil
-description: The `perl-filedirutil` skill provides guidance on integrating the `FileDirUtil` Moose role into Perl projects.
+description: This tool provides a Moose role for simplifying and standardizing filesystem operations in Perl applications. Use when user asks to integrate FileDirUtil into a Perl class, manage directories and files, or handle path resolution using Moose.
 homepage: http://metacpan.org/pod/FileDirUtil
 ---
+
 
 # perl-filedirutil
 

@@ -1,8 +1,9 @@
 ---
 name: r-brio
-description: "Functions to handle basic input output, these functions     always read and write UTF-8 (8-bit Unicode Transformation Format)     files and provide more explicit control over line endings.</p>"
+description: The r-brio package provides high-performance functions for reading and writing UTF-8 encoded text files with explicit control over line endings. Use when user asks to read or write files using UTF-8 encoding, handle large files as single strings, manage Unix or Windows line endings, or detect file line endings.
 homepage: https://cloud.r-project.org/web/packages/brio/index.html
 ---
+
 
 # r-brio
 

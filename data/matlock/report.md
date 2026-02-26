@@ -1,9 +1,9 @@
 # matlock CWL Generation Report
 
-## matlock
+## matlock_The
 
 ### Tool Description
-A tool for processing and manipulating proximity ligation data (e.g., Hi-C, Capture-C).
+matlock <command> [options]
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/matlock:20181227--h665f8ca_8
@@ -18,11 +18,24 @@ A tool for processing and manipulating proximity ligation data (e.g., Hi-C, Capt
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/matlock:20181227--h665f8ca_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4097376808: no space left on device
+FATAL unknown command --help
+
+usage: matlock <command> [options] 
+
+
+commands:
+ - bam2 - converts alignments to several useful hi-c formats.
+   + usage: matlock bam2 [binmat|lachesis|juicer|counts] input output
+   + details: 
+      The input file format is automatically determined [cram|bam|sam].
+      The output is written to the fineame provided, no extention.
+
+        
+ - bamfilt - filter a hi-c bam.
+   + usage: matlock bamfilt input.[cram|bam|sam] output.bam
+
+        
+ - cutsites - count cutsites per seqid.
+   + usage: matlock cutsites input.fasta ATGC TGCA ...
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-interest
-description: the package is available on all platforms; click for details.
+description: The IntEREst package estimates and compares splicing efficiency across RNA-seq samples by quantifying intron retention and exon-exon junction levels. Use when user asks to quantify intron retention, identify U12-type minor introns, or perform differential splicing analysis between experimental groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/IntEREst.html
 ---
+
 
 # bioconductor-interest
 

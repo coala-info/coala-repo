@@ -1,8 +1,9 @@
 ---
 name: tabview
-description: `tabview` is a lightweight, curses-based terminal spreadsheet viewer designed for rapid data inspection.
+description: tabview is a terminal-based spreadsheet viewer for interactively exploring and inspecting tabular data. Use when user asks to view CSV or TSV files in the terminal, navigate large datasets with Vim-like keybindings, or visualize Python data structures in a grid.
 homepage: https://github.com/firecat53/tabview
 ---
+
 
 # tabview
 

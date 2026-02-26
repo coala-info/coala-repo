@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metaphor
-description: the package is available on all platforms; click for details.
+description: MetaPhOR performs metabolic pathway analysis and visualization using RNA-seq data. Use when user asks to calculate metabolic scores, visualize metabolic profiles, or analyze metabolic pathways from transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/MetaPhOR.html
 ---
+
 
 # bioconductor-metaphor
 

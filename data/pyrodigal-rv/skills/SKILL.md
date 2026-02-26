@@ -1,8 +1,9 @@
 ---
 name: pyrodigal-rv
-description: pyrodigal-rv is a specialized extension of the Pyrodigal library designed specifically for gene prediction in RNA viruses.
+description: pyrodigal-rv is a specialized gene prediction tool designed to identify coding sequences in RNA virus genomes using metagenomic models. Use when user asks to predict genes in RNA viruses, find open reading frames in Riboviria sequences, or run viral-specific gene discovery.
 homepage: https://github.com/LanderDC/pyrodigal-rv
 ---
+
 
 # pyrodigal-rv
 

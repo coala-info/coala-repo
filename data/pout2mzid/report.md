@@ -3,7 +3,7 @@
 ## pout2mzid
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be an error log from a container runtime (Apptainer/Singularity) attempting to pull the pout2mzid image.
+Converts Percolator output XML to MzIdentML format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pout2mzid:0.3.03--boost1.62_2
@@ -18,13 +18,34 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pout2mzid:0.3.03--boost1.62_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+pout2mzid V0.3.3
+Options:
+  -h [ --help ]                   Displays available commands
+                                  
+  -p [ --percolatorfile ] [Value] Percolator Out XML result file
+                                  
+  -m [ --mzidfile ] [Value]       MzIdentML input file
+                                  
+  -i [ --inputdir ] [Value]       Sets the mzIdentML input directory. All 
+                                  mzIdentML inputfiles must be in that 
+                                  directory
+                                  
+  -c [ --changeoutput ] [Value]   Change the outputfile to original 
+                                  filename+[Value]+.mzid.
+                                  DEFAULT: output to stdout
+                                  
+  -o [ --outputdir ] [Value]      Sets the output directory if none exist, it 
+                                  will be created.
+                                  
+  -f [ --filesmzid ] [Value]      File containing a list of mzIdentML filenames
+                                  
+  -d [ --decoy ]                  Only adds results to entries with decoy set 
+                                  to true. DEFAULT: false
+                                  
+  -v [ --validate ]               Sets that validation of XML schema should not
+                                  be performed. Faster parsing.
+                                  
+  -w [ --warning ]                Sets that upon warning the software should 
+                                  terminate.
 ```
 
-
-## Metadata
-- **Skill**: generated

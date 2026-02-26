@@ -1,8 +1,9 @@
 ---
 name: autocycler
-description: Autocycler is a bioinformatics tool that automates the process of creating a "consensus" assembly for bacterial genomes.
+description: Autocycler automates the creation of a consensus bacterial genome assembly by reconciling multiple candidate assemblies using a compacted De Bruijn graph approach. Use when user asks to generate a consensus assembly, subsample long reads, cluster similar contigs, or resolve structural ambiguities in genomic sequences.
 homepage: https://github.com/rrwick/Autocycler
 ---
+
 
 # autocycler
 

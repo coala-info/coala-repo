@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigwigtowig
-description: The `ucsc-bigwigtowig` utility is part of the UCSC Genome Browser "kent" toolset.
+description: This tool converts binary bigWig files into the text-based wiggle (wig) format. Use when user asks to convert bigWig to wig, extract specific genomic regions from a bigWig file, or maintain specific wiggle format structures.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigwigtowig
 

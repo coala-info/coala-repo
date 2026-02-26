@@ -1,8 +1,9 @@
 ---
 name: cdna_cupcake
-description: cDNA_Cupcake is a suite of Python and R scripts designed to refine long-read transcriptomic data.
+description: cdna_cupcake is a suite of scripts used to process and refine long-read transcriptomic data by collapsing redundant isoforms and generating abundance statistics. Use when user asks to collapse redundant transcripts, filter 5' degraded isoforms, calculate transcript abundance, perform rarefaction analysis, or manipulate FASTA/FASTQ sequences.
 homepage: https://github.com/Magdoll/cDNA_Cupcake
 ---
+
 
 # cdna_cupcake
 

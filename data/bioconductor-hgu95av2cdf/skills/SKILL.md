@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95av2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides mapping and environment data for the Affymetrix HGU95Av2 microarray chip. Use when user asks to handle CDF environments, convert between (x,y) coordinates and indices for CEL files, or retrieve chip dimensions for the hgu95av2 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95av2cdf.html
 ---
+
 
 # bioconductor-hgu95av2cdf
 

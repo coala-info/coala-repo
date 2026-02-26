@@ -1,8 +1,9 @@
 ---
 name: subread-data
-description: The `subread-data` suite is a high-performance toolkit designed for the efficient processing of next-generation sequencing (NGS) data.
+description: The subread-data suite provides high-performance tools for indexing reference genomes, aligning sequencing reads, quantifying gene expression, and calling variants. Use when user asks to build a genome index, align DNA or RNA reads, count reads mapped to genomic features using featureCounts, or identify SNPs.
 homepage: https://subread.sourceforge.net
 ---
+
 
 # subread-data
 

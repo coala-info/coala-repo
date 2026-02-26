@@ -1,8 +1,9 @@
 ---
 name: bioconductor-regionereloaded
-description: the package is available on all platforms; click for details.
+description: This R package performs statistical association analysis and clustering of multiple sets of genomic regions using permutation tests. Use when user asks to analyze associations between genomic region sets, perform permutation tests on genomic overlaps, or cluster genomic regions based on their spatial similarity.
 homepage: https://bioconductor.org/packages/release/bioc/html/regioneReloaded.html
 ---
+
 
 # bioconductor-regionereloaded
 

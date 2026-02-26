@@ -1,9 +1,9 @@
 # transcov CWL Generation Report
 
-## transcov
+## transcov_collapse
 
 ### Tool Description
-A tool for transcriptome coverage analysis (Note: The provided text is a system error log and does not contain help documentation or argument definitions).
+N/A
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
@@ -18,15 +18,201 @@ A tool for transcriptome coverage analysis (Note: The provided text is a system 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 05:40:40  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/transcov:1.1.3--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:adc59896e121c1c4dfaa0d44093576ef210137722977c8907c5672b5bb60a861: unpack entry: usr/local/lib/libbz2.a: unpack to regular file: short write: write /tmp/build-temp-4027267157/rootfs/usr/local/lib/libbz2.a: no space left on device
+Usage: transcov collapse [OPTIONS] [MATRICES]...
+
+Options:
+  -o, --output-file TEXT
+  --uint32
+  --help                  Show this message and exit.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## transcov_cut-tails
+
+### Tool Description
+Cut tails of coverage profiles.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov cut-tails [OPTIONS] INPUT_MATRIX INDEX_FILE
+
+Options:
+  -o, --output-file TEXT
+  -c, --cut FLOAT RANGE
+  -m, --mode [both|left|right]
+  --help                        Show this message and exit.
+```
+
+
+## transcov_generate-coverage
+
+### Tool Description
+Generate coverage tracks from BAM files based on BED regions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov generate-coverage [OPTIONS] BAM_FILE BED_FILE
+Try 'transcov generate-coverage --help' for help.
+
+Error: no such option: --h  Did you mean --help?
+```
+
+
+## transcov_generate-end-length
+
+### Tool Description
+Generate end-length distributions from BAM and BED files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov generate-end-length [OPTIONS] BAM_FILE BED_FILE
+
+Options:
+  -o, --output-file TEXT
+  -m, --max-length INTEGER RANGE
+  --help                          Show this message and exit.
+```
+
+
+## transcov_generate-length
+
+### Tool Description
+Generate transcript lengths from BAM and BED files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov generate-length [OPTIONS] BAM_FILE BED_FILE
+
+Options:
+  -o, --output-file TEXT
+  -m, --max-length INTEGER RANGE
+  --help                          Show this message and exit.
+```
+
+
+## transcov_generate-read-ends
+
+### Tool Description
+Generate read ends from BAM and BED files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov generate-read-ends [OPTIONS] BAM_FILE BED_FILE
+Try 'transcov generate-read-ends --help' for help.
+
+Error: no such option: --h  Did you mean --help?
+```
+
+
+## transcov_pick-subset
+
+### Tool Description
+Picks a subset of samples from a transcov index.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov pick-subset [OPTIONS] INPUT_SAMPLE INDEX_FILE IDS_FILE
+Try 'transcov pick-subset --help' for help.
+
+Error: no such option: --h  Did you mean --help?
+```
+
+
+## transcov_plot-coverage-dist
+
+### Tool Description
+Plot coverage distribution from a coverage matrix.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov plot-coverage-dist [OPTIONS] INPUT_MATRIX
+Try 'transcov plot-coverage-dist --help' for help.
+
+Error: no such option: --h  Did you mean --help?
+```
+
+
+## transcov_plot-tensor-dist
+
+### Tool Description
+Plot distance distribution for tensors.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov plot-tensor-dist [OPTIONS] INPUT_TENSOR
+Try 'transcov plot-tensor-dist --help' for help.
+
+Error: no such option: --h  Did you mean --help?
+```
+
+
+## transcov_preprocess
+
+### Tool Description
+Preprocess annotation file for TransCov
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/transcov:1.1.3--py_0
+- **Homepage**: https://github.com/hogfeldt/transcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/transcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: transcov preprocess [OPTIONS] ANNOTATION_FILE
+
+Options:
+  -k, --region-size INTEGER RANGE
+  --bed-file TEXT
+  --tss-file TEXT
+  --help                          Show this message and exit.
+```
+

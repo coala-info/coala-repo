@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggspavis
-description: the package is available on all platforms; click for details.
+description: The ggspavis package provides visualization functions for spatial transcriptomics data using ggplot2 and the SpatialExperiment class. Use when user asks to plot spatial coordinates, overlay spots on histology images, visualize quality control metrics, or generate reduced dimension plots for spatial datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggspavis.html
 ---
+
 
 # bioconductor-ggspavis
 

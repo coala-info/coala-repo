@@ -1,8 +1,9 @@
 ---
 name: ncbi-acc-download
-description: `ncbi-acc-download` is a specialized command-line utility designed to retrieve sequence data directly from the NCBI Entrez API using unique accession identifiers.
+description: ncbi-acc-download retrieves sequence data from the NCBI Entrez API using unique accession identifiers. Use when user asks to download nucleotide or protein records by accession, fetch specific genomic ranges, or perform recursive WGS downloads.
 homepage: https://github.com/kblin/ncbi-acc-download/
 ---
+
 
 # ncbi-acc-download
 

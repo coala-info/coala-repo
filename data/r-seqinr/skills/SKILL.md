@@ -1,8 +1,9 @@
 ---
 name: r-seqinr
-description: "Exploratory data analysis and data visualization   for biological sequence (DNA and protein) data. Seqinr includes   utilities for sequence data management under the ACNUC system   described in Gouy, M. et al. (1984) Nucleic Acids Res."
+description: The r-seqinr tool provides functions for the retrieval and analysis of DNA and protein sequences within the R environment. Use when user asks to read or write FASTA files, calculate GC content, perform codon usage analysis, translate sequences, or interface with ACNUC databases.
 homepage: https://cloud.r-project.org/web/packages/seqinr/index.html
 ---
+
 
 # r-seqinr
 

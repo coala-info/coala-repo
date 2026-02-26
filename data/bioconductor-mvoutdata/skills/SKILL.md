@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mvoutdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for multivariate outlier detection in genomic data. Use when user asks to access sample data for multivariate outlier detection, load example datasets for outlier analysis, or demonstrate outlier detection workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mvoutData.html
 ---
+
 
 # bioconductor-mvoutdata
 

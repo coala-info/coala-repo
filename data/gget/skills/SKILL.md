@@ -1,8 +1,9 @@
 ---
 name: gget
-description: gget is a modular command-line tool and Python package designed to streamline genomic data retrieval.
+description: gget is a modular tool for programmatically retrieving genomic data, performing sequence alignments, and predicting protein structures from databases like Ensembl, UniProt, and NCBI. Use when user asks to fetch reference annotations, search for genes by description, retrieve sequences, perform BLAST or MUSCLE alignments, conduct enrichment analysis, or predict protein structures with AlphaFold.
 homepage: https://github.com/pachterlab/gget
 ---
+
 
 # gget
 

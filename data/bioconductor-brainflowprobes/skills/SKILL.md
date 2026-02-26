@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brainflowprobes
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package designs and validates target probe sequences for the BrainFlow method to study RNA in human postmortem brain nuclei. Use when user asks to annotate candidate genomic regions, visualize expression coverage, or assess RNA stability and cell-type specificity for probe design.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/brainflowprobes.html
 ---
+
 
 # bioconductor-brainflowprobes
 

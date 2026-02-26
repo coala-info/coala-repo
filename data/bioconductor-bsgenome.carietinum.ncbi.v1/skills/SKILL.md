@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.carietinum.ncbi.v1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Cicer arietinum (Chickpea) based on the NCBI ASM33114v1 assembly for use in the Bioconductor environment. Use when user asks to perform genomic analysis, extract sequences, search for motifs, or calculate oligonucleotide frequencies specifically for the Chickpea genome.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Carietinum.NCBI.v1.html
 ---
+
 
 # bioconductor-bsgenome.carietinum.ncbi.v1
 

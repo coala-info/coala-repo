@@ -1,8 +1,9 @@
 ---
 name: r-scoper
-description: "Provides a computational framework for identification of B cell clones from              Adaptive Immune Receptor Repertoire sequencing (AIRR-Seq) data. Three main              functions are included (identicalClones, hierarchicalClones, and spectralClones)              that perform clustering among sequences of BCRs/IGs (B cell receptors/immunoglobulins)              which share the same V gene, J gene and junction length."
+description: The scoper package provides computational methods for B cell clonal identification by grouping sequences based on V and J gene usage and junction length. Use when user asks to identify B cell clones, perform hierarchical or spectral clustering on AIRR-Seq data, or group sequences by identical junction regions.
 homepage: https://cran.r-project.org/web/packages/scoper/index.html
 ---
+
 
 # r-scoper
 

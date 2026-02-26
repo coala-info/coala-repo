@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beachmat
-description: the package is available on all platforms; click for details.
+description: The beachmat package provides a C++ interface for R matrix objects to enable high-performance data access across diverse matrix types using the tatami library. Use when user asks to interface R matrices with C++ code, handle sparse or delayed arrays in Rcpp, or implement memory-efficient matrix processing in Bioconductor packages.
 homepage: https://bioconductor.org/packages/release/bioc/html/beachmat.html
 ---
+
 
 # bioconductor-beachmat
 

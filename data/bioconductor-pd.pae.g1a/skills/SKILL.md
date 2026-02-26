@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.pae.g1a
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Pseudomonas aeruginosa PAO1 Genome Array. Use when user asks to process Affymetrix PAO1 genome array data, access annotation information for Pseudomonas aeruginosa microarrays, or use the pd.pae.g1a package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.pae.g1a.html
 ---
+
 
 # bioconductor-pd.pae.g1a
 

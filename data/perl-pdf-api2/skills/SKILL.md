@@ -1,8 +1,9 @@
 ---
 name: perl-pdf-api2
-description: The `perl-pdf-api2` skill provides a specialized interface for handling PDF documents through the PDF::API2 Perl module.
+description: The perl-pdf-api2 tool provides a programmatic interface for creating, modifying, and performing low-level manipulation of PDF documents using Perl. Use when user asks to generate reports or invoices, add text and images to PDFs, draw vector graphics, or merge and import pages between documents.
 homepage: http://metacpan.org/pod/PDF::API2
 ---
+
 
 # perl-pdf-api2
 

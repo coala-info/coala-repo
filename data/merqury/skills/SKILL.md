@@ -1,8 +1,9 @@
 ---
 name: merqury
-description: Merqury is a k-mer based toolset designed to evaluate genome assemblies without requiring a high-quality reference genome.
+description: Merqury evaluates genome assembly quality, completeness, and phasing accuracy using k-mer spectrum analysis of raw sequencing reads. Use when user asks to calculate consensus quality (QV) scores, estimate assembly completeness, generate spectra-cn plots, or assess haplotype phasing and switch errors.
 homepage: https://github.com/marbl/merqury
 ---
+
 
 # merqury
 

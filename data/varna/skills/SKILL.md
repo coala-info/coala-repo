@@ -1,8 +1,9 @@
 ---
 name: varna
-description: The varna skill (utilizing the `python-varname` library) enables Python developers to peek into the call stack and AST to extract variable names at runtime.
+description: The varna tool allows Python functions to dynamically discover their assignment targets, argument sources, and chained attribute access at runtime. Use when user asks to get the name of a variable a function's return value is assigned to, retrieve argument names, detect chained attribute access, or create dictionaries from local variables.
 homepage: https://github.com/pwwang/python-varname
 ---
+
 
 # varna
 

@@ -1,8 +1,9 @@
 ---
 name: garnet
-description: GarNet is a specialized bioinformatics tool designed to link transcription factors to gene expression changes by analyzing their binding motifs within open chromatin regions.
+description: GarNet maps transcription factor binding motifs within open chromatin regions to genes to identify regulatory drivers of gene expression. Use when user asks to build genomic reference files, map epigenetic peaks to genes, or perform transcription factor regression analysis.
 homepage: https://github.com/fraenkel-lab/GarNet
 ---
+
 
 # garnet
 

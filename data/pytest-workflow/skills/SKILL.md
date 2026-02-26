@@ -1,8 +1,9 @@
 ---
 name: pytest-workflow
-description: pytest-workflow is a pytest plugin that enables language-agnostic testing of workflow systems.
+description: pytest-workflow is a pytest plugin for language-agnostic testing and verification of workflow pipelines. Use when user asks to execute workflow test cases, filter tests by tags, debug pipeline execution, or optimize test performance with symlinking and git-aware file copying.
 homepage: https://github.com/LUMC/pytest-workflow
 ---
+
 
 # pytest-workflow
 

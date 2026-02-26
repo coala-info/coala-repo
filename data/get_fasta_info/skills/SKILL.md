@@ -1,8 +1,9 @@
 ---
 name: get_fasta_info
-description: The `get_fasta_info` suite consists of high-performance C programs and flexible Perl scripts designed for rapid assessment of sequence data.
+description: This tool extracts structural statistics, metadata, and missing data proportions from FASTA and FASTQ files. Use when user asks to summarize sequence lengths, quantify gaps, validate file integrity, or list per-sequence details.
 homepage: https://github.com/nylander/get_fasta_info
 ---
+
 
 # get_fasta_info
 

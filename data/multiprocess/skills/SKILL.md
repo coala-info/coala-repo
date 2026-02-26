@@ -1,8 +1,9 @@
 ---
 name: multiprocess
-description: The multiprocess messaging tool (Nchan) is a scalable pub/sub server integrated directly into Nginx.
+description: The multiprocess messaging tool transforms Nginx into a scalable pub/sub server for distributing live data between publishers and subscribers. Use when user asks to build chat applications, implement live notifications, configure real-time dashboards, or scale message brokering with Redis.
 homepage: https://github.com/slact/nchan
 ---
+
 
 # multiprocess
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-elmer.data
-description: the package is available on all platforms; click for details.
+description: ELMER.data provides essential metadata, motif occurrence matrices, and transcription factor classifications required for the ELMER R package. Use when user asks to access DNA methylation probe manifests, retrieve motif enrichment data for enhancer regions, or identify transcription factor family classifications.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ELMER.data.html
 ---
+
 
 # bioconductor-elmer.data
 

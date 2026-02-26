@@ -1,8 +1,9 @@
 ---
 name: perl-git-wrapper
-description: This skill provides guidance on using the `Git::Wrapper` Perl library to execute Git commands programmatically.
+description: This tool provides a Perl interface to execute Git commands programmatically by wrapping the git binary. Use when user asks to interact with Git repositories using Perl, execute Git commands as method calls, or capture Git output and errors in a structured Perl environment.
 homepage: http://genehack.github.com/Git-Wrapper/
 ---
+
 
 # perl-git-wrapper
 

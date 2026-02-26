@@ -1,8 +1,9 @@
 ---
 name: riblast
-description: RIblast is a high-performance bioinformatics tool that utilizes a seed-and-extension algorithm to predict interactions between RNA molecules.
+description: RIblast predicts RNA-RNA interactions by calculating hybridization and accessibility energy using a seed-and-extension algorithm. Use when user asks to index RNA target sequences, search for RNA interactions, or calculate interaction energy between RNA molecules.
 homepage: https://github.com/fukunagatsu/RIblast
 ---
+
 
 # riblast
 

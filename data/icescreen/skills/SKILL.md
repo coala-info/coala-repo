@@ -1,8 +1,9 @@
 ---
 name: icescreen
-description: ICEscreen is a specialized bioinformatic pipeline designed to automate the discovery of ICEs and IMEs within the genomes of Bacillota.
+description: ICEscreen is a bioinformatic pipeline that automates the discovery and annotation of Integrative and Conjugative Elements (ICEs) and Integrative and Mobilizable Elements (IMEs) in bacterial genomes. Use when user asks to detect ICEs or IMEs, identify signature proteins associated with conjugation and mobilization, or define the boundaries of mobile genetic elements.
 homepage: https://forgemia.inra.fr/ices_imes_analysis/icescreen
 ---
+
 
 # icescreen
 

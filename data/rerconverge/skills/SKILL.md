@@ -1,8 +1,9 @@
 ---
 name: rerconverge
-description: RERconverge is a specialized R-based framework for comparative genomics.
+description: RERconverge identifies genes whose evolutionary rates correlate with the convergent evolution of specific traits across a phylogeny. Use when user asks to calculate relative evolutionary rates, associate genomic changes with binary or continuous phenotypes, or identify the molecular basis of convergent evolution.
 homepage: https://github.com/nclark-lab/RERconverge
 ---
+
 
 # rerconverge
 

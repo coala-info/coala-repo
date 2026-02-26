@@ -1,8 +1,9 @@
 ---
 name: bioconductor-packfinder
-description: the package is available on all platforms; click for details.
+description: bioconductor-packfinder identifies Pack-TYPE transposable elements in genomic sequences using terminal inverted repeats and target site duplications. Use when user asks to find Pack-TYPE transposons, detect terminal inverted repeats, or search for DNA transposons in a genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/packFinder.html
 ---
+
 
 # bioconductor-packfinder
 

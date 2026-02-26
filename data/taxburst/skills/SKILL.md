@@ -1,8 +1,9 @@
 ---
 name: taxburst
-description: taxburst is a specialized tool designed to create interactive sunburst plots for taxonomic data.
+description: taxburst generates interactive sunburst plots to visualize taxonomic data and metagenomic community composition. Use when user asks to create interactive taxonomic visualizations, plot Sourmash or SingleM results, or generate web-based sunburst charts from lineage annotations.
 homepage: https://github.com/taxburst/taxburst
 ---
+
 
 # taxburst
 

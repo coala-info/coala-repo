@@ -1,9 +1,9 @@
 # hera CWL Generation Report
 
-## hera
+## hera_quant
 
 ### Tool Description
-Hera is a tool for fast and accurate RNA-seq quantification (Note: The provided help text contains only system error messages and no usage information).
+Hera is a program developed by BioTuring for RNA-Seq analysis.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hera:1.1--h8121788_3
@@ -18,29 +18,18 @@ Hera is a tool for fast and accurate RNA-seq quantification (Note: The provided 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hera:1.1--h8121788_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1905087003: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## hera_hera_build
-
-### Tool Description
-Hera is a tool for rapid and accurate RNA-seq analysis. The build command is used to create the necessary index files for alignment.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hera:1.1--h8121788_3
-- **Homepage**: https://github.com/bioturing/hera
-- **Package**: https://anaconda.org/channels/bioconda/packages/hera/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hera:1.1--h8121788_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2349474272: no space left on device
+Hera is a program developed by BioTuring for RNA-Seq analysis.
+Please contact info@bioturing.com if you need further support
+VERSION:
+	hera-v1.1
+QUANTILITY:
+	 ./hera quant -i path/to/index_directory [options] <R1.fq> <R2.fq>
+		-o:	 Output directory (default: ./)
+		-t:	 Number of threads (default: 1)
+		-z:	 Compress level (1 - 9) (default: -1)
+		-b:	 Number of bootstraps (default: 0)
+		-w:	 Output bam file 0:true, 1: false (default: 0)
+		-f:	 Genome fasta file (if not define, genome mapping will be ignore
+		-p:	 Output prefix (default: '')
 ```
 

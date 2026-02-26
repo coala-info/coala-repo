@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qualifier
-description: the package is available on all platforms; click for details.
+description: Bioconductor-qualifier provides quality control and assessment tools for flow cytometry data. Use when user asks to perform quality control on flow cytometry experiments, monitor longitudinal gating results, or visualize automated gating performance.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/QUALIFIER.html
 ---
+
 
 # bioconductor-qualifier
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-normalyzerde
-description: the package is available on all platforms; click for details.
+description: NormalyzerDE evaluates normalization methods and performs differential expression analysis for proteomics data. Use when user asks to evaluate normalization techniques, perform differential expression analysis, or generate performance reports for LC-MS datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/NormalyzerDE.html
 ---
+
 
 # bioconductor-normalyzerde
 

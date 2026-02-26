@@ -1,8 +1,9 @@
 ---
 name: damasker
-description: Damasker is a specialized suite designed to identify and soft-mask repetitive genomic sequences.
+description: "Damasker identifies and soft-masks repetitive genomic sequences within Dazzler databases to prevent assembly errors. Use when user asks to identify interspersed repeats, mask tandem repeats, or generate HPC scripts for parallel repeat masking."
 homepage: https://github.com/thegenemyers/DAMASKER
 ---
+
 
 # damasker
 

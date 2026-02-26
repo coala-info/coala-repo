@@ -1,8 +1,9 @@
 ---
 name: bactopia-assembler
-description: The `bactopia-assembler` is the core engine responsible for transforming raw sequencing reads into assembled contigs within the Bactopia framework.
+description: The bactopia-assembler transforms raw sequencing reads into assembled bacterial contigs within the Bactopia framework. Use when user asks to assemble draft genomes from short-read data, specify assembly engines like SKESA or SPAdes, or filter contigs by length and coverage.
 homepage: https://bactopia.github.io/
 ---
+
 
 # bactopia-assembler
 

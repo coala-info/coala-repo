@@ -1,9 +1,9 @@
 # ucsc-hgspeciesrna CWL Generation Report
 
-## ucsc-hgspeciesrna
+## ucsc-hgspeciesrna_hgSpeciesRna
 
 ### Tool Description
-A UCSC Genome Browser utility. Note: The provided input text contains container build logs and a fatal error message rather than the tool's help documentation, so no arguments could be extracted.
+Create fasta file with RNA from one species
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-hgspeciesrna:482--h0b57e2e_1
@@ -18,13 +18,11 @@ A UCSC Genome Browser utility. Note: The provided input text contains container 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hgspeciesrna:482--h0b57e2e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+hgSpeciesRna - Create fasta file with RNA from one species
+usage:
+   hgSpeciesRna database Genus species output.fa
+options:
+   -est         - If set will get ESTs rather than mRNAs
+   -filter=file - only read accessions listed in file
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: seqwish
-description: seqwish is a high-performance tool designed to "squish" sequences and their alignments into a unified variation graph.
+description: "seqwish converts sequences and their pairwise alignments into a variation graph in GFA format. Use when user asks to build a pangenome graph, induce a variation graph from alignments, or convert PAF and FASTA files into GFA format."
 homepage: https://github.com/ekg/seqwish
 ---
+
 
 # seqwish
 

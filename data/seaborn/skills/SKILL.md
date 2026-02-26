@@ -1,8 +1,9 @@
 ---
 name: seaborn
-description: Seaborn is a high-level Python visualization library built on top of matplotlib that is designed for creating attractive and informative statistical graphics.
+description: Seaborn is a Python library for creating attractive and informative statistical data visualizations built on top of matplotlib. Use when user asks to create statistical graphics, visualize complex datasets using pandas, or generate plots like scatterplots, histograms, and boxplots.
 homepage: https://github.com/mwaskom/seaborn
 ---
+
 
 # seaborn
 

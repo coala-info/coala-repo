@@ -1,8 +1,9 @@
 ---
 name: tesorter
-description: TEsorter is a specialized bioinformatics tool designed to classify transposable elements at the lineage level.
+description: TEsorter classifies transposable elements at the lineage level by identifying conserved protein domains. Use when user asks to classify repeat libraries, annotate transposable element domains in GFF3 format, or prepare sequences for phylogenetic analysis.
 homepage: https://github.com/NBISweden/TEsorter
 ---
+
 
 # tesorter
 

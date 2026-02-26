@@ -1,8 +1,9 @@
 ---
 name: consensusfixer
-description: ConsensusFixer is a specialized tool for computing consensus sequences from ultra-deep next-generation sequencing (NGS) alignments.
+description: ConsensusFixer computes consensus sequences from deep next-generation sequencing alignments while handling ambiguous bases and in-frame insertions. Use when user asks to generate a consensus sequence from a BAM file, call IUPAC ambiguity codes, or preserve reading frames during consensus generation.
 homepage: https://github.com/cbg-ethz/ConsensusFixer
 ---
+
 
 # consensusfixer
 

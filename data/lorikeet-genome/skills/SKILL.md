@@ -1,8 +1,9 @@
 ---
 name: lorikeet-genome
-description: Lorikeet is a specialized pipeline for within-species variant analysis in metagenomic communities.
+description: Lorikeet is a metagenomic pipeline that performs local re-assembly to identify within-species variants and strain-level diversity. Use when user asks to call SNPs and indels in metagenomes, calculate dN/dS values for evolutionary analysis, or generate consensus genomes from read mappings.
 homepage: https://github.com/rhysnewell/Lorikeet
 ---
+
 
 # lorikeet-genome
 

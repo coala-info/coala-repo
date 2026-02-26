@@ -1,8 +1,9 @@
 ---
 name: trackplot
-description: `trackplot` is a versatile command-line utility designed for the high-resolution visualization of genomic datasets.
+description: trackplot visualizes genomic datasets from raw sequencing data into high-resolution figures. Use when user asks to plot specific genomic regions, visualize genomic datasets, display coverage tracks, show splice junction counts, demultiplex single-cell data, or customize plot aesthetics.
 homepage: https://github.com/ygidtu/trackplot
 ---
+
 
 # trackplot
 

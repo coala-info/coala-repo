@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cancermutationanalysis
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical analysis of somatic mutations to distinguish driver genes from passenger mutations in cancer genomes. Use when user asks to calculate gene-level scores like CaMP or logLRT, estimate passenger probabilities via empirical Bayes FDR, or perform patient-oriented gene-set analysis.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/CancerMutationAnalysis.html
 ---
+
 
 # bioconductor-cancermutationanalysis
 

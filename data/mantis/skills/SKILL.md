@@ -1,8 +1,9 @@
 ---
 name: mantis
-description: Mantis is a specialized tool for indexing and searching massive collections of sequencing data.
+description: Mantis indexes and searches massive collections of sequencing data using a colored de Bruijn graph. Use when user asks to build indices from Squeakr files, compress indices with MST, or query sequences against large datasets.
 homepage: https://github.com/splatlab/mantis
 ---
+
 
 # mantis
 

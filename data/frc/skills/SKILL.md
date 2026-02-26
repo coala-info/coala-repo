@@ -1,8 +1,9 @@
 ---
 name: frc
-description: The `frc` skill provides a specialized workflow for managing object detection tasks using a Keras implementation of Faster R-CNN.
+description: The frc tool manages object detection tasks using a Keras implementation of Faster R-CNN for training, inference, and performance evaluation. Use when user asks to train a Faster R-CNN model, run object detection on images, calculate mean average precision, or extract feature maps.
 homepage: https://github.com/lucasjinreal/keras_frcnn
 ---
+
 
 # frc
 

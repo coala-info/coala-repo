@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.amellifera.ncbi.amelhav3.1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the honey bee (Apis mellifera) based on the NCBI Amel_HAv3.1 assembly for use in the BSgenome infrastructure. Use when user asks to extract honey bee genomic sequences, search for motifs in the Apis mellifera genome, or calculate nucleotide frequencies for this specific assembly in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.NCBI.AmelHAv3.1.html
 ---
+
 
 # bioconductor-bsgenome.amellifera.ncbi.amelhav3.1
 

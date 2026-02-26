@@ -1,8 +1,9 @@
 ---
 name: pizzly
-description: Pizzly is a specialized tool designed for the rapid identification of gene fusions in cancer RNA-Seq samples.
+description: Pizzly is a specialized tool for the rapid identification of gene fusions in cancer RNA-Seq samples by processing kallisto pseudo-alignments. Use when user asks to identify chimeric transcripts, call gene fusions, or process kallisto fusion output files.
 homepage: https://github.com/pmelsted/pizzly
 ---
+
 
 # pizzly
 

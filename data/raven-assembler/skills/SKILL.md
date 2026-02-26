@@ -1,8 +1,9 @@
 ---
 name: raven-assembler
-description: Raven is a fast and memory-efficient de novo assembler designed specifically for third-generation sequencing data.
+description: Raven is a fast and memory-efficient de novo assembler designed for third-generation sequencing data. Use when user asks to perform de novo assembly of long reads, generate assembly graphs in GFA format, or polish genomic sequences using GPU acceleration.
 homepage: https://github.com/lbcb-sci/raven
 ---
+
 
 # raven-assembler
 

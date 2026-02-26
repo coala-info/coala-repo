@@ -1,8 +1,9 @@
 ---
 name: perl-ensembl-compara
-description: The `perl-ensembl-compara` skill enables programmatic access to the Ensembl Comparative Genomics database.
+description: This tool provides programmatic access to the Ensembl Comparative Genomics database via a Perl API to retrieve evolutionary data. Use when user asks to fetch orthologs or paralogs, access gene trees, or retrieve whole-genome alignments between species.
 homepage: https://www.ensembl.org/info/docs/api/index.html
 ---
+
 
 # perl-ensembl-compara
 

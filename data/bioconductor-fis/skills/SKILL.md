@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fis
-description: the package is available on all platforms; click for details.
+description: This package provides human functional interaction datasets derived from the Reactome and BioGRID databases for network biology analysis in R. Use when user asks to load human protein-protein interaction networks, access Reactome or BioGRID functional interactions, or prepare interaction data for the splineTimeR package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FIs.html
 ---
+
 
 # bioconductor-fis
 

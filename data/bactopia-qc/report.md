@@ -3,7 +3,7 @@
 ## bactopia-qc
 
 ### Tool Description
-A tool for quality control of sequencing reads (Note: The provided text contains system error messages regarding disk space and container execution rather than help documentation; therefore, specific arguments could not be extracted from this input).
+Splits paired-end reads into separate files for read 1, read 2, and unpaired reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bactopia-qc:1.0.3--hdfd78af_0
@@ -18,31 +18,16 @@ A tool for quality control of sequencing reads (Note: The provided text contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/944eec16225591cf99e55891c8b7eb1a235ecff17da589707bbc42ff2cbb319a: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bactopia-qc:1.0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2551898333: no space left on device
-```
+java -ea -Xmx34970m -cp /usr/local/opt/bbmap-39.08-0/current/ jgi.SplitPairsAndSingles rp in= in2= out=repair-r1.fq out2=repair-r2.fq outs=repair-singles.fq ain=!{params.ain}
+Executing jgi.SplitPairsAndSingles [rp, in=, in2=, out=repair-r1.fq, out2=repair-r2.fq, outs=repair-singles.fq, ain=!{params.ain}]
 
-
-## Metadata
-- **Skill**: generated
-
-## bactopia-qc_bactopia
-
-### Tool Description
-A tool for quality control within the Bactopia pipeline. (Note: The provided text consists of system error messages regarding container execution and disk space, and does not contain usage instructions or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bactopia-qc:1.0.3--hdfd78af_0
-- **Homepage**: https://bactopia.github.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/bactopia-qc/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/944eec16225591cf99e55891c8b7eb1a235ecff17da589707bbc42ff2cbb319a: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bactopia-qc:1.0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3084109602: no space left on device
+Exception in thread "main" java.lang.RuntimeException: Error - at least one input file is required.
+	at jgi.SplitPairsAndSingles.<init>(SplitPairsAndSingles.java:149)
+	at jgi.SplitPairsAndSingles.main(SplitPairsAndSingles.java:37)
+cp: missing destination file operand after 'results/--help_R1.error-fastq.gz'
+Try 'cp --help' for more information.
+cp: missing destination file operand after 'results/--help_R2.error-fastq.gz'
+Try 'cp --help' for more information.
+pigz: skipping: repair-singles.fq does not exist
 ```
 

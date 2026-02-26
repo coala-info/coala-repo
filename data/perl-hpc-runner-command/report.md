@@ -1,9 +1,9 @@
 # perl-hpc-runner-command CWL Generation Report
 
-## perl-hpc-runner-command
+## perl-hpc-runner-command_hpcrunner.pl
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a system error log related to a container image build failure (no space left on device).
+HPC::Runner::Command is a set of libraries for scaffolding data analysis projects, submitting and executing jobs on an HPC cluster or workstation, and obsessively logging results.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-hpc-runner-command:3.2.13--pl5.22.0_0
@@ -18,37 +18,58 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 12:44:03  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-hpc-runner-command:3.2.13--pl5.22.0_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ade8e1b8123c9fb5fff7f5fd282a464b3bb3db410102381f5a5072757bc8036d: unpack entry: usr/local/lib/perl5/5.22.0/x86_64-linux-thread-multi/auto/Encode/TW/TW.so: unpack to regular file: short write: write /tmp/build-temp-1875460073/rootfs/usr/local/lib/perl5/5.22.0/x86_64-linux-thread-multi/auto/Encode/TW/TW.so: no space left on device
-```
+Missing command
+usage:
+    To create a new project
+    
+        hpcrunner.pl new MyNewProject
+    
+    To submit jobs to a cluster
+    
+        hpcrunner.pl submit_jobs --infile my_submission.sh
+    
+    To run jobs on an interactive queue or workstation
+    
+        hpcrunner.pl single_node --infile my_submission.sh
 
+description:
+    HPC::Runner::Command is a set of libraries for scaffolding data analysis
+    projects, submitting and executing jobs on an HPC cluster or workstation,
+    and obsessively logging results.
+    
+    Get help by heading on over to github and raising an issue. GitHub | https
+    ://github.com/biosails/HPC-Runner-Command/issues.
+    
+    Please see the complete documentation at HPC::Runner::Command GitBooks |
+    https://biosails.gitbooks.io/hpc-runner-command-docs/content/.
 
-## Metadata
-- **Skill**: generated
+global options:
+    --plugins_opts        Options for application plugins [Key-Value]
+    --plugins             Load aplication plugins [Multiple; Split by ","]
+    --config              Override the search paths and supply your own
+                          config.
+    --no_configs          --no_configs tells HPC::Runner not to load any
+                          configs [Flag]
+    --search              Search for config files in ~/.config.(ext) and in
+                          your current working directory. [Flag]
+    --search_path         Enable a search path for configs. Default is the
+                          home dir and your cwd. [Multiple]
+    --config_base         Basename of config files [Default:".hpcrunner"]
+    --project --pr        Give your jobnames an additional project name. #HPC
+                          jobname=gzip will be submitted as 001_project_gzip
+    --no_log_json         Opt out of writing the tar archive of JSON stats.
+                          This may be desirable for especially large
+                          workflows. [Flag]
+    --help -h --usage -?  Prints this usage information. [Flag]
 
-## perl-hpc-runner-command_hpcrunner.pl
-
-### Tool Description
-HPC::Runner::Command - Task runner for HPC systems. (Note: The provided text appears to be a container build error log rather than help text; no arguments could be extracted from the input.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-hpc-runner-command:3.2.13--pl5.22.0_0
-- **Homepage**: https://github.com/biosails/HPC-Runner-Command
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-hpc-runner-command/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 12:45:33  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-hpc-runner-command:3.2.13--pl5.22.0_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ade8e1b8123c9fb5fff7f5fd282a464b3bb3db410102381f5a5072757bc8036d: unpack entry: usr/local/lib/perl5/5.22.0/x86_64-linux-thread-multi/auto/Encode/TW/TW.so: unpack to regular file: short write: write /tmp/build-temp-1727620339/rootfs/usr/local/lib/perl5/5.22.0/x86_64-linux-thread-multi/auto/Encode/TW/TW.so: no space left on device
+available commands:
+    archive        Create an archive of results.
+    execute_array  Execute commands
+    execute_job    Execute commands
+    new            Create a new project
+    single_node    Execute commands
+    stats          Query submissions by project, or jobname
+    submit_jobs    Submit jobs to the HPC system
+    help           Prints this usage information
 ```
 

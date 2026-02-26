@@ -1,8 +1,9 @@
 ---
 name: fqzcomp
-description: fqzcomp is a specialized command-line utility designed for the high-performance compression of FASTQ files.
+description: fqzcomp is a high-performance command-line utility designed for the efficient compression and decompression of FASTQ files using specialized models for sequence, quality, and metadata. Use when user asks to compress genomic datasets, decompress fqz files, or perform lossy quality score reduction.
 homepage: https://sourceforge.net/projects/fqzcomp/
 ---
+
 
 # fqzcomp
 

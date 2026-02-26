@@ -1,8 +1,9 @@
 ---
 name: bioconductor-degcre
-description: the package provides functionality for visualization and conversion to other formats.
+description: This tool provides a probabilistic framework to associate differentially expressed genes with cis-regulatory elements using a non-parametric approach. Use when user asks to link gene expression changes with regulatory signal data, identify functional gene-enhancer relationships, or optimize significance thresholds for gene-regulatory associations.
 homepage: https://bioconductor.org/packages/release/bioc/html/DegCre.html
 ---
+
 
 # bioconductor-degcre
 

@@ -1,8 +1,9 @@
 ---
 name: sqlite
-description: The `sqlite` skill leverages the DB Browser for SQLite (DB4S) ecosystem to provide a high-level interface for database administration.
+description: This tool provides a high-level interface for database administration, schema design, and data manipulation using the DB Browser for SQLite ecosystem. Use when user asks to create tables, import or export data, modify database schemas, perform integrity checks, or visualize data through plots and filters.
 homepage: https://github.com/sqlitebrowser/sqlitebrowser
 ---
+
 
 # sqlite
 

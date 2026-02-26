@@ -1,8 +1,9 @@
 ---
 name: pathogist
-description: PathOGiST (Pathogen Optimal Grouping in Space and Time) is a genomic analysis pipeline designed for public health microbiology.
+description: PathOGiST is a genomic analysis pipeline that clusters bacterial isolates by integrating SNP, MLST, and CNV genotyping signals. Use when user asks to create distance matrices, perform correlation clustering, or execute a consensus clustering pipeline for pathogen typing.
 homepage: https://github.com/WGS-TB/PathOGiST
 ---
+
 
 # pathogist
 

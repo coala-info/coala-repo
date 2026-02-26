@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ibmq
-description: the package is available on all platforms; click for details.
+description: This package implements a hierarchical Bayesian model for large-scale eQTL mapping in datasets with many genes and SNPs but few individuals. Use when user asks to perform eQTL mapping, calculate posterior probabilities of association, identify significant eQTLs, classify associations as cis or trans, and detect eQTL hotspots.
 homepage: https://bioconductor.org/packages/release/bioc/html/iBMQ.html
 ---
+
 
 # bioconductor-ibmq
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowgraph
-description: the package is available on all platforms; click for details.
+description: The flowGraph package identifies independent biomarker cell populations in flow cytometry data by accounting for dependencies between parent and child populations using the SpecEnr statistic. Use when user asks to identify driver cell populations, calculate specific enrichment statistics, or visualize significant phenotypes within a cell hierarchy.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowGraph.html
 ---
+
 
 # bioconductor-flowgraph
 

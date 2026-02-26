@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioconcotk
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: BiocOncoTK provides a unified interface for cancer genomics analysis by bridging Bioconductor objects with remote data sources like the TCGA PanCancer Atlas and CCLE. Use when user asks to query BigQuery-backed genomic resources, explore Oncotree ontologies, construct MultiAssayExperiments for integrative cancer research, or access curated single-cell RNA-seq datasets.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BiocOncoTK.html
 ---
+
 
 # bioconductor-bioconcotk
 

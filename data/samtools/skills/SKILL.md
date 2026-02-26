@@ -1,8 +1,9 @@
 ---
 name: samtools
-description: Create a sequence dictionary file from a fasta file
+description: Samtools is a suite of programs for manipulating, filtering, and converting high-throughput sequencing data in SAM, BAM, and CRAM formats. Use when user asks to convert file formats, sort and index alignments, calculate coverage statistics, or filter reads by mapping quality and flags.
 homepage: https://github.com/samtools/samtools
 ---
+
 
 # samtools
 

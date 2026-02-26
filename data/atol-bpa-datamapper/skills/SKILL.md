@@ -1,8 +1,9 @@
 ---
 name: atol-bpa-datamapper
-description: The `atol-bpa-datamapper` is a specialized utility designed to normalize and transform metadata exported from the BPA data portal into a format compatible with AToL's Genome Engine.
+description: This tool normalizes and transforms metadata from the BPA data portal into a standardized format for the AToL Genome Engine. Use when user asks to filter raw data packages, map metadata fields using NCBI taxonomy, or extract unique biological entities like samples and organisms.
 homepage: https://github.com/TomHarrop/atol-bpa-datamapper
 ---
+
 
 # atol-bpa-datamapper
 

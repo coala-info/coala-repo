@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.pae.pao1.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides MeSH annotation data for mapping Entrez Gene identifiers to Medical Subject Headings for Pseudomonas aeruginosa PAO1. Use when user asks to retrieve MeSH terms, map gene IDs to medical subject headings, or perform MeSH-based enrichment analysis for the PAO1 strain.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Pae.PAO1.eg.db.html
 ---
+
 
 # bioconductor-mesh.pae.pao1.eg.db
 

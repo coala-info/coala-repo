@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hpip
-description: the package is available on all platforms; click for details.
+description: bioconductor-hpip predicts host-pathogen protein-protein interactions using structural and physicochemical descriptors derived from protein sequences. Use when user asks to construct PPI datasets, retrieve protein sequences from UniProt, compute sequence-based numerical descriptors, perform feature selection, train ensemble machine learning models for interaction prediction, or analyze predicted interaction networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/HPiP.html
 ---
+
 
 # bioconductor-hpip
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-frmatools
-description: the package is available on all platforms; click for details.
+description: This package provides advanced tools for the Frozen Robust Multiarray Analysis (fRMA) algorithm, including custom vector creation and platform conversion. Use when user asks to create custom frozen vectors for microarray preprocessing or convert AffyBatch objects between compatible platforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/frmaTools.html
 ---
+
 
 # bioconductor-frmatools
 

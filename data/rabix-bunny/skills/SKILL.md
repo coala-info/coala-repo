@@ -1,8 +1,9 @@
 ---
 name: rabix-bunny
-description: Rabix Bunny is a lightweight, Java-based command-line engine used to execute computational workflows.
+description: Rabix Bunny is a lightweight command-line engine used to execute and test Common Workflow Language workflows on a single node. Use when user asks to execute CWL 1.0 or draft-2 workflows, run tools in Docker containers, or override workflow input parameters via the command line.
 homepage: https://github.com/rabix/bunny
 ---
+
 
 # rabix-bunny
 

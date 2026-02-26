@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isolde
-description: the package is available on all platforms; click for details.
+description: This tool identifies genes with allelic bias or genomic imprinting from RNA-seq data using robust variability estimation and bootstrap resampling. Use when user asks to identify imprinted genes, detect parental or strain-specific expression imbalance, or analyze allele-specific read counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/ISoLDE.html
 ---
+
 
 # bioconductor-isolde
 

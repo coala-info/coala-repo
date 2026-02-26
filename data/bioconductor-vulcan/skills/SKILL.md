@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vulcan
-description: the package is available on all platforms; click for details.
+description: Vulcan performs virtual ChIP-seq analysis by integrating gene regulatory networks with ChIP-seq data to infer transcription factor activity. Use when user asks to analyze ChIP-seq data using regulatory networks, infer transcription factor activity, or perform virtual ChIP-seq analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/vulcan.html
 ---
+
 
 # bioconductor-vulcan
 

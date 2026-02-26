@@ -1,8 +1,9 @@
 ---
 name: bioconductor-decoupler
-description: the package is available on all platforms; click for details.
+description: This tool performs biological activity inference from omics data by integrating gene expression matrices with prior knowledge networks. Use when user asks to infer transcription factor or pathway activities, access curated regulatory networks via OmniPath, run consensus enrichment analysis, or visualize activity scores.
 homepage: https://bioconductor.org/packages/release/bioc/html/decoupleR.html
 ---
+
 
 # bioconductor-decoupler
 

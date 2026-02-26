@@ -1,8 +1,9 @@
 ---
 name: r-conos
-description: Wires together large collections of single-cell RNA-seq datasets, which allows for both the identification of recurrent cell clusters and the propagation of information between datasets in multi-sample or atlas-scale collections. 'Conos' focuses on the uniform mapping of homologous cell types across heterogeneous sample collections. For instance, users could investigate a collection of dozens of peripheral blood samples from cancer patients combined with dozens of controls, which perhaps includes samples of a related tissue such as lymph nodes. This package interacts with data available through the 'conosPanel' package, which is available in a 'drat' repository.
+description: r-conos integrates large collections of single-cell RNA-seq datasets by constructing a joint graph to identify homologous cell types across heterogeneous samples. Use when user asks to integrate multiple single-cell datasets, build a joint graph across samples, identify clusters in a multi-sample panel, or propagate cell labels across datasets.
 homepage: https://cran.r-project.org/web/packages/conos/index.html
 ---
+
 
 # r-conos
 

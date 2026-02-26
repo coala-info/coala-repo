@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecoli2probe
-description: the package is available on all platforms; click for details.
+description: "This package provides probe sequence data and spatial coordinates for the Affymetrix ecoli2 microarray. Use when user asks to access probe sequences, filter probes by set name, or analyze nucleotide data for the E. coli 2.0 genome array."
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoli2probe.html
 ---
+
 
 # bioconductor-ecoli2probe
 

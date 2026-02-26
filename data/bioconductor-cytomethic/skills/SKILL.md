@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytomethic
-description: The package links to our models on ExperimentHub. The package currently supports HM450, EPIC, EPICv2, MSA, and MM285.
+description: CytoMethIC performs DNA methylome-based classification and phenotyping using machine learning models. Use when user asks to predict cancer types, classify subtypes, determine cell of origin, predict race, or estimate tissue composition from DNA methylation data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CytoMethIC.html
 ---
+
 
 # bioconductor-cytomethic
 

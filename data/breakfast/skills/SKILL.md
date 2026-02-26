@@ -1,8 +1,9 @@
 ---
 name: breakfast
-description: `breakfast` is a specialized tool designed for rapid genomic epidemiology.
+description: Breakfast identifies genomic outbreak clusters and infection chains by processing tabular mutation data. Use when user asks to cluster sequences based on SNP distance, identify transmission chains from mutation profiles, or process Nextclade outputs for genomic surveillance.
 homepage: https://github.com/rki-mf1/breakfast
 ---
+
 
 # breakfast
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bifet
-description: the package is available on all platforms; click for details.
+description: BiFET identifies transcription factors whose footprints are over-represented in target genomic regions while correcting for GC content and read depth biases. Use when user asks to identify enriched transcription factor footprints, perform bias-corrected enrichment tests, or compare target versus background peak sets in ATAC-seq or DNase-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiFET.html
 ---
+
 
 # bioconductor-bifet
 

@@ -1,8 +1,9 @@
 ---
 name: emu-pca
-description: EMU (Expectation-Maximization for Ultra-low coverage) is a specialized tool designed to infer population structure from genetic data that suffers from significant missingness.
+description: emu-pca infers population structure from genetic data with high levels of missingness using an expectation-maximization approach. Use when user asks to perform PCA on low-coverage or ancient DNA, model population structure from PLINK files, or handle missing genetic data using truncated SVD.
 homepage: https://github.com/Rosemeis/emu
 ---
+
 
 # emu-pca
 

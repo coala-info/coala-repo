@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mscoreutils
-description: the package is available on all platforms; click for details.
+description: MsCoreUtils provides fundamental utility functions for mass spectrometry data processing and analysis. Use when user asks to normalize mass spectrometry data, smooth spectra, estimate noise, or perform common data transformations.
 homepage: https://bioconductor.org/packages/release/bioc/html/MsCoreUtils.html
 ---
+
 
 # bioconductor-mscoreutils
 

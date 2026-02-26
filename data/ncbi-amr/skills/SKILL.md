@@ -1,8 +1,9 @@
 ---
 name: ncbi-amr
-description: AMRFinderPlus (the `amrfinder` tool) is the NCBI-standardized method for identifying acquired antimicrobial resistance (AMR) genes in bacterial protein or nucleotide sequences.
+description: ncbi-amr identifies antimicrobial resistance genes, virulence factors, and stress-response genes in bacterial protein or nucleotide sequences. Use when user asks to identify AMR genes, screen for virulence factors, detect point mutations in specific organisms, or update the AMRFinderPlus database.
 homepage: https://github.com/ncbi/amr/wiki
 ---
+
 
 # ncbi-amr
 

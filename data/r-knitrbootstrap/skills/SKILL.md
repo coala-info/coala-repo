@@ -1,8 +1,9 @@
 ---
 name: r-knitrbootstrap
-description: R package knitrbootstrap (documentation from project home).
+description: The knitrbootstrap package creates responsive, Bootstrap-styled HTML reports from R Markdown with features like dynamic theme switching and lightboxed images. Use when user asks to create Bootstrap-styled reports, render R Markdown documents with interactive style choosers, or add visibility toggles for code and output in HTML files.
 homepage: https://cran.r-project.org/web/packages/knitrbootstrap/index.html
 ---
+
 
 # r-knitrbootstrap
 

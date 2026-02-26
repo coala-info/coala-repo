@@ -1,8 +1,9 @@
 ---
 name: newmap
-description: Newmap is a high-performance tool for determining the uniqueness of genomic sequences.
+description: Newmap determines the uniqueness of genomic sequences by identifying the shortest read length required for a sequence at any position to be unique within a genome. Use when user asks to index a reference genome, search for unique k-mer lengths, or generate mappability tracks in BED or BigWig formats.
 homepage: https://github.com/hoffmangroup/newmap
 ---
+
 
 # newmap
 

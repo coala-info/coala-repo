@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomes
-description: the package is available on all platforms; click for details.
+description: This tool retrieves and analyzes genome and assembly metadata from NCBI reports using the R package genomes. Use when user asks to download genome reports, list assembly summaries, or filter organism metadata from NCBI FTP servers.
 homepage: https://bioconductor.org/packages/release/bioc/html/genomes.html
 ---
+
 
 # bioconductor-genomes
 

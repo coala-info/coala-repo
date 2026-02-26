@@ -1,9 +1,9 @@
 # ucsc-mafsplit CWL Generation Report
 
-## ucsc-mafsplit
+## ucsc-mafsplit_mafSplit
 
 ### Tool Description
-A tool to split MAF (Multiple Alignment Format) files. Note: The provided text contains container runtime errors and does not include the actual help documentation for the tool.
+Split multiple alignment files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-mafsplit:482--h0b57e2e_0
@@ -18,33 +18,36 @@ A tool to split MAF (Multiple Alignment Format) files. Note: The provided text c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-mafsplit:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-mafsplit_mafSplitPos
-
-### Tool Description
-A tool from the UCSC Genome Browser suite to split MAF files by position. Note: The provided help text contains a fatal container execution error and does not list specific arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-mafsplit:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-mafsplit/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-mafsplit:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+mafSplit - Split multiple alignment files
+usage:
+   mafSplit splits.bed outRoot file(s).maf
+options:
+   -byTarget       Make one file per target sequence.  (splits.bed input
+                   is ignored).
+   -outDirDepth=N  For use only with -byTarget.
+                   Create N levels of output directory under current dir.
+                   This helps prevent NFS problems with a large number of
+                   file in a directory.  Using -outDirDepth=3 would
+                   produce ./1/2/3/outRoot123.maf.
+   -useSequenceName  For use only with -byTarget.
+                     Instead of auto-incrementing an integer to determine
+                     output filename, expect each target sequence name to
+                     end with a unique number and use that number as the
+                     integer to tack onto outRoot.
+   -useFullSequenceName  For use only with -byTarget.
+                     Instead of auto-incrementing an integer to determine
+                     output filename, use the target sequence name
+                     to tack onto outRoot.
+   -useHashedName=N  For use only with -byTarget.
+                     Instead of auto-incrementing an integer or requiring
+                     a unique number in the sequence name, use a hash
+                     function on the sequence name to compute an N-bit
+                     number.  This limits the max #filenames to 2^N and
+                     ensures that even if different subsets of sequences
+                     appear in different pairwise mafs, the split file
+                     names will be consistent (due to hash function).
+                     This option is useful when a "scaffold-based"
+                     assembly has more than one sequence name pattern,
+                     e.g. both chroms and scaffolds.
 ```
 

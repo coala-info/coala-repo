@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cghregions
-description: the package is available on all platforms; click for details.
+description: This tool performs dimension reduction for array Comparative Genomic Hybridization data by identifying common genomic regions across multiple samples. Use when user asks to reduce the complexity of segmented aCGH data, identify consistent genomic regions across samples, or process output from the CGHcall package.
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHregions.html
 ---
+
 
 # bioconductor-cghregions
 

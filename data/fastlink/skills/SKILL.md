@@ -1,8 +1,9 @@
 ---
 name: fastlink
-description: The `fastlink` skill enables the merging of disparate dataframes by calculating the probability that two records refer to the same entity.
+description: The fastlink tool performs probabilistic record linkage to merge disparate datasets while accounting for typographical errors and missing values. Use when user asks to merge dataframes using probabilistic matching, link records with string similarity, or perform deduplication on large administrative datasets.
 homepage: https://github.com/kosukeimai/fastLink
 ---
+
 
 # fastlink
 

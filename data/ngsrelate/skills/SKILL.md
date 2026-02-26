@@ -1,8 +1,9 @@
 ---
 name: ngsrelate
-description: ngsrelate is a specialized bioinformatics tool for inferring kinship and inbreeding from NGS data.
+description: ngsrelate infers kinship and inbreeding coefficients from next-generation sequencing data using genotype likelihoods. Use when user asks to estimate relatedness statistics, calculate Jacquard coefficients, or infer kinship from low-coverage VCF or GLF files.
 homepage: https://github.com/ANGSD/NgsRelate
 ---
+
 
 # ngsrelate
 

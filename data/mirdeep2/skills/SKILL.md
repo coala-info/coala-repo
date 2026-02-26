@@ -1,8 +1,9 @@
 ---
 name: mirdeep2
-description: The miRDeep2 pipeline is a specialized suite of tools designed to identify microRNA genes from high-throughput sequencing data.
+description: miRDeep2 identifies and quantifies known and novel microRNA genes from high-throughput small RNA sequencing data by analyzing genomic alignments and RNA secondary structures. Use when user asks to identify novel miRNAs, quantify miRNA expression, map small RNA reads to a reference genome, or process deep sequencing data for miRNA discovery.
 homepage: https://www.mdc-berlin.de/8551903/en/research/research_teams/systems_biology_of_gene_regulatory_elements/projects/miRDeep
 ---
+
 
 # mirdeep2
 

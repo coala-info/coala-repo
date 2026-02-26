@@ -1,8 +1,9 @@
 ---
 name: parmed
-description: ParmEd is a specialized tool designed to facilitate the creation and manipulation of molecular systems described by classical force fields (Amber, CHARMM, AMOEBA, GROMOS, etc.).
+description: "ParmEd facilitates the creation, manipulation, and conversion of molecular topologies and coordinate files across various force field formats. Use when user asks to convert between molecular file formats, modify force field parameters, or programmatically edit chemical systems for simulations."
 homepage: https://github.com/ParmEd/ParmEd
 ---
+
 
 # parmed
 

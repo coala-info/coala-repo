@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133a2.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Human Genome U133A 2.0 Array. Use when user asks to map probe identifiers to gene symbols, Entrez IDs, GO terms, or other genomic metadata.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133a2.db.html
 ---
+
 
 # bioconductor-hgu133a2.db
 

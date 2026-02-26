@@ -1,11 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ngsplotdb-ngsplotdb-hg19_ngsplotdb.py
+baseCommand: ngsplotdb.py
 label: ngsplotdb-ngsplotdb-hg19_ngsplotdb.py
-doc: "A tool for managing or accessing the ngsplot database for the hg19 genome. Note:
-  The provided text contains system error logs rather than help documentation.\n\n
-  Tool homepage: https://github.com/shenlab-sinai/ngsplot"
-inputs: []
+doc: "Manipulate ngs.plot's annotation database\n\nTool homepage: https://github.com/shenlab-sinai/ngsplot"
+inputs:
+  - id: command
+    type: string
+    doc: Subcommand to execute
+    inputBinding:
+      position: 1
+  - id: command_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the subcommand
+    inputBinding:
+      position: 2
+  - id: yes
+    type:
+      - 'null'
+      - boolean
+    doc: Say yes to all prompted questions
+    inputBinding:
+      position: 103
+      prefix: --yes
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breakpointrdata
-description: the package is available on all platforms; click for details.
+description: This package provides example BAM files and pre-computed results for the breakpointR Bioconductor package. Use when user asks to access standardized datasets for testing, demonstrate breakpoint detection workflows, or visualize pre-computed strand-state inheritance results.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breakpointRdata.html
 ---
+
 
 # bioconductor-breakpointrdata
 

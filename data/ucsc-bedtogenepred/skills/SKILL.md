@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedtogenepred
-description: `ucsc-bedtogenepred` is a specialized utility from the UCSC Kent toolkit that transforms BED-formatted genomic features into the genePred format.
+description: ucsc-bedtogenepred converts BED-formatted genomic features into the genePred format. Use when user asks to convert BED to genePred, convert BED12 to genePred, or create refFlat files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedtogenepred
 

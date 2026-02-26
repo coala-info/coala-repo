@@ -1,8 +1,9 @@
 ---
 name: gvcf2bed
-description: The `gvcf2bed` tool is a specialized utility for transforming gVCF files—which provide information for every genomic position—into BED files that represent high-quality intervals.
+description: This tool converts gVCF files into BED files representing high-quality genomic intervals by applying specific quality filters to variant and non-variant records. Use when user asks to convert gVCF to BED, filter genomic regions by genotype quality, or define a callable genome from sequencing data.
 homepage: https://github.com/sndrtj/gvcf2bed
 ---
+
 
 # gvcf2bed
 

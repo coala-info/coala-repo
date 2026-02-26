@@ -1,8 +1,9 @@
 ---
 name: bioconductor-factdesign
-description: the package is available on all platforms; click for details.
+description: This tool analyzes factorial designed microarray experiments using linear models to identify genes affected by experimental factors and their interactions. Use when user asks to detect outliers in small factorial designs, fit linear models to microarray data, identify interaction effects between factors, or perform contrast tests for complex experimental conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/factDesign.html
 ---
+
 
 # bioconductor-factdesign
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-divergence
-description: the package is available on all platforms; click for details.
+description: This package transforms high-dimensional omics data into a digital format by measuring the divergence of samples from a defined normal baseline. Use when user asks to digitize continuous omics data into ternary or binary forms, identify features deviating from a reference profile, or perform differential divergence analysis between phenotypes.
 homepage: https://bioconductor.org/packages/release/bioc/html/divergence.html
 ---
+
 
 # bioconductor-divergence
 

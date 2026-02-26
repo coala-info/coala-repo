@@ -1,8 +1,9 @@
 ---
 name: bioconductor-recount
-description: the package is available on all platforms; click for details.
+description: The recount package provides access to processed RNA-seq expression data from large-scale studies including SRA, GTEx, and TCGA. Use when user asks to download preprocessed gene expression counts, access RNA-seq data from the Recount project, or perform cross-study expression analyses.
 homepage: https://bioconductor.org/packages/release/bioc/html/recount.html
 ---
+
 
 # bioconductor-recount
 

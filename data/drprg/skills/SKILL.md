@@ -1,8 +1,9 @@
 ---
 name: drprg
-description: drprg (Drug Resistance Prediction with Reference Graphs) is a specialized bioinformatics tool that identifies drug resistance markers by leveraging the power of genome graphs.
+description: drprg identifies drug resistance markers in genomic sequencing data by leveraging reference graphs. Use when user asks to predict drug resistance, download pre-built species indices, or build custom reference graph indices from VCF files and reference genomes.
 homepage: https://github.com/mbhall88/drprg
 ---
+
 
 # drprg
 

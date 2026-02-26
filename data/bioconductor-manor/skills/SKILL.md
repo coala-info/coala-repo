@@ -1,8 +1,9 @@
 ---
 name: bioconductor-manor
-description: the package is available on all platforms; click for details.
+description: MANOR performs normalization and quality control for array Comparative Genomic Hybridization (aCGH) data. Use when user asks to normalize aCGH data, perform spatial normalization on microarrays, or identify low-quality spots in genomic experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/MANOR.html
 ---
+
 
 # bioconductor-manor
 

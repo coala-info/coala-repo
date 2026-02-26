@@ -1,9 +1,11 @@
 # milonga CWL Generation Report
 
-## milonga
+## milonga_milonga_setup.sh
 
 ### Tool Description
-A tool for long-read assembly of viral genomes (Note: The provided help text contains only system error logs and no usage information).
+This script completes the installation of the MiLongA pipeline. The openssl library is required for hashing the downloaded files.
+for MiLongA installations from Gitlab use the option set [--mamba --databases].
+For more information, please visit https://gitlab.com/bfr_bioinformatics/milonga
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/milonga:1.0.3--hdfd78af_0
@@ -18,29 +20,23 @@ A tool for long-read assembly of viral genomes (Note: The provided help text con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/milonga:1.0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3133761620: no space left on device
-```
+Basic usage:
+bash /usr/local/opt/milonga/scripts/milonga_setup.sh [OPTIONS]
 
+Description:
+This script completes the installation of the MiLongA pipeline. The openssl library is required for hashing the downloaded files.
+for MiLongA installations from Gitlab use the option set [--mamba --databases].
+For more information, please visit https://gitlab.com/bfr_bioinformatics/milonga
 
-## Metadata
-- **Skill**: generated
-
-## milonga_milonga_setup.sh
-
-### Tool Description
-Setup script for milonga. (Note: The provided text is an error log and does not contain usage information or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/milonga:1.0.3--hdfd78af_0
-- **Homepage**: https://gitlab.com/bfr_bioinformatics/milonga
-- **Package**: https://anaconda.org/channels/bioconda/packages/milonga/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/milonga:1.0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3112136306: no space left on device
+Options:
+  -m, --mamba                Install the latest version of 'mamba' to the Conda base environment and
+                             create the MiLongA environment from the git repository recipe
+  -d, --databases            Download databases to <MiLongA>/download and extract them in <MiLongA>/databases
+  -t, --test_data            Download test data to <MiLongA>/download and extract them in <MiLongA>/test_data
+  -s, --status               Show installation status
+  -f, --force                Force overwrite for downloads in <MiLongA>/download
+  -k, --keep_downloads       Do not remove downloads after extraction
+  -v, --verbose              Print script debug info
+  -h, --help                 Show this help
 ```
 

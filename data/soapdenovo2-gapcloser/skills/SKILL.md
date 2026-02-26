@@ -1,8 +1,9 @@
 ---
 name: soapdenovo2-gapcloser
-description: GapCloser is a post-processing utility specifically designed to reduce the number of unknown bases (Ns) in genomic scaffolds.
+description: GapCloser reduces the number of unknown bases in genomic scaffolds by mapping short reads to fill gaps with nucleotide sequences. Use when user asks to close gaps in scaffolds, replace Ns in a genome assembly, or perform post-processing on genomic sequences.
 homepage: 
 ---
+
 
 # soapdenovo2-gapcloser
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rfpred
-description: the package gives rfPred scores to missense variants identified by the chromosome, the position (hg19 version), the referent and alternative nucleotids and the uniprot identifier of the protein. Note that for using the package, the user has to download the TabixFile and index (approximately 3.3 Go).
+description: The rfPred package assigns functional prediction scores to missense variants based on genomic coordinates and UniProt identifiers. Use when user asks to calculate rfPred scores, predict the functional impact of missense variants, or annotate variants using hg19 coordinates.
 homepage: https://bioconductor.org/packages/release/bioc/html/rfPred.html
 ---
+
 
 # bioconductor-rfpred
 

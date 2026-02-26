@@ -1,8 +1,9 @@
 ---
 name: nanocall
-description: NanoCaller is a computational tool that utilizes deep convolutional neural networks to detect variants in long-read sequencing data.
+description: NanoCaller uses deep convolutional neural networks to detect SNPs and indels in long-read sequencing data from ONT and PacBio platforms. Use when user asks to call variants, perform local realignment for indels, or generate phased VCF and BAM files from long-read alignments.
 homepage: https://github.com/WGLab/NanoCaller
 ---
+
 
 # nanocall
 

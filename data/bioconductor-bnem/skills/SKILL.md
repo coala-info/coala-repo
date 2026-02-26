@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bnem
-description: the package is available on all platforms; click for details.
+description: This tool infers Boolean signaling networks from high-dimensional downstream data like gene expression using Boolean Nested Effects Models. Use when user asks to reconstruct Boolean logic gates in signaling pathways, infer network structures from perturbation experiments, or determine synergistic and redundant interactions between signaling components.
 homepage: https://bioconductor.org/packages/release/bioc/html/bnem.html
 ---
+
 
 # bioconductor-bnem
 

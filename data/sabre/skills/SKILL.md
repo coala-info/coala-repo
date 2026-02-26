@@ -1,8 +1,9 @@
 ---
 name: sabre
-description: `sabre` is a high-performance tool designed to partition multiplexed FastQ files into individual samples based on a list of known barcodes.
+description: "sabre demultiplexes barcoded FastQ files into separate sample files while removing barcode sequences. Use when user asks to demultiplex single-end or paired-end reads, partition multiplexed FastQ files based on barcodes, or strip barcode sequences from sequencing data."
 homepage: https://github.com/najoshi/sabre/
 ---
+
 
 # sabre
 

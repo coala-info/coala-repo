@@ -1,8 +1,9 @@
 ---
 name: snk
-description: The `snk` tool transforms Snakemake workflows into fully-functional command-line interfaces.
+description: The snk tool transforms Snakemake workflows into standardized command-line interfaces to simplify pipeline deployment and execution. Use when user asks to install a Snakemake workflow as a local executable, run a workflow via its generated CLI, list installed workflows, or manage workflow configurations.
 homepage: https://snk.wytamma.com
 ---
+
 
 # snk
 

@@ -1,8 +1,9 @@
 ---
 name: mcscanx
-description: MCScanX (Multiple Collinearity Scan toolkit X version) is a specialized suite for detecting and evolutionary analyzing collinear blocks in genomes.
+description: MCScanX is a software suite designed to detect and analyze collinear blocks and syntenic regions within or between genomes. Use when user asks to identify syntenic blocks, classify duplicate genes, or visualize genomic alignments using BLAST and GFF data.
 homepage: https://github.com/wyp1125/MCScanX
 ---
+
 
 # mcscanx
 

@@ -1,8 +1,9 @@
 ---
 name: stoatydive
-description: StoatyDive is a diagnostic and classification tool for sequencing peak data.
+description: StoatyDive evaluates and classifies the shape of sequencing peak distributions to distinguish between specific and unspecific protein binding events. Use when user asks to evaluate peak quality, classify binding profiles, calculate normalized CV scores, or filter out unspecific background binding sites.
 homepage: https://github.com/heylf/StoatyDive
 ---
+
 
 # stoatydive
 

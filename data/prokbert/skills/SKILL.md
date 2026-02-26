@@ -1,8 +1,9 @@
 ---
 name: prokbert
-description: ProkBERT is a specialized genomic language model architecture based on BERT, specifically optimized for microbiome applications.
+description: ProkBERT is a genomic language model architecture designed to process and analyze microbiome sequences using local context-aware tokenization. Use when user asks to process raw FASTA sequences into genomic representations, identify bacterial promoters, or detect phage sequences within complex datasets.
 homepage: https://github.com/nbrg-ppcu/prokbert
 ---
+
 
 # prokbert
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-mafsplit
-description: The `mafSplit` utility is part of the UCSC Genome Browser "kent" toolset.
+description: ucsc-mafsplit breaks down large Multiple Alignment Format (MAF) files into smaller subsets. Use when user asks to split MAF files by count, split MAF files by genomic position, or prepare MAF files for parallel processing.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-mafsplit
 

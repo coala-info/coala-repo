@@ -2,9 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pgv-gui
 label: pygenomeviz_pgv-gui
-doc: "Launch the pyGenomeViz Graphical User Interface (GUI) for genome visualization.\n
-  \nTool homepage: https://github.com/moshi4/pyGenomeViz/"
-inputs: []
+doc: "Launch pyGenomeViz WebApp\n\nTool homepage: https://github.com/moshi4/pyGenomeViz/"
+inputs:
+  - id: port
+    type:
+      - 'null'
+      - int
+    doc: Port number to open web browser
+    default: 8501
+    inputBinding:
+      position: 101
+      prefix: --port
 outputs:
   - id: stdout
     type: stdout

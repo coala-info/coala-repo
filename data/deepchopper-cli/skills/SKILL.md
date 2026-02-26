@@ -1,8 +1,9 @@
 ---
 name: deepchopper-cli
-description: DeepChopper is a genomic language model specifically designed to mitigate chimera artifacts in Nanopore direct RNA sequencing.
+description: DeepChopper is a genomic language model tool designed to detect and remove chimera artifacts from Nanopore direct RNA sequencing data. Use when user asks to predict chimeric regions in FASTQ files, chop or trim artificial sequences, or clean Nanopore reads.
 homepage: https://github.com/ylab-hi/DeepChopper
 ---
+
 
 # deepchopper-cli
 

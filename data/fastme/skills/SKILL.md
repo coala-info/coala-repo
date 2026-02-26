@@ -1,8 +1,9 @@
 ---
 name: fastme
-description: FastME is a specialized tool for reconstructing phylogenetic trees from distance matrices.
+description: FastME reconstructs phylogenetic trees from distance matrices or sequences using Balanced Minimum Evolution principles. Use when user asks to infer phylogenetic trees, perform topological searches with NNI or SPR, or conduct bootstrap analysis for branch support.
 homepage: http://www.atgc-montpellier.fr/fastme/binaries.php
 ---
+
 
 # fastme
 

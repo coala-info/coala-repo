@@ -1,8 +1,9 @@
 ---
 name: pyteomics
-description: Pyteomics is a comprehensive Python framework designed to streamline the handling of proteomics data.
+description: Pyteomics is a Python framework for parsing proteomics data and calculating physico-chemical properties of polypeptides. Use when user asks to parse mass spectrometry files, calculate peptide masses or isoelectric points, simulate protein digestion, or manage FASTA databases.
 homepage: https://github.com/levitsky/pyteomics
 ---
+
 
 # pyteomics
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocbook
-description: the package is available on all platforms; click for details.
+description: This tool facilitates the creation, containerization, and publishing of versioned online books using Quarto and Bioconductor. Use when user asks to initialize a new book project, manage chapters and preambles, preview the book locally, or publish and version the book via GitHub.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocBook.html
 ---
+
 
 # bioconductor-biocbook
 

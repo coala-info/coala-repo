@@ -1,8 +1,9 @@
 ---
 name: hybran
-description: The `hybran` skill enables the automated annotation of prokaryotic genomes by combining the strengths of synteny-based transfer and de novo prediction.
+description: Hybran automates prokaryotic genome annotation by combining synteny-based transfer from references with de novo prediction to ensure naming consistency across samples. Use when user asks to annotate genomes, maintain consistent gene naming across multiple isolates, identify gene fusions or pseudogenes, or standardize and compare existing annotations.
 homepage: https://lpcdrp.gitlab.io/hybran
 ---
+
 
 # hybran
 

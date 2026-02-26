@@ -3,7 +3,7 @@
 ## bioconda-backup
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it consists of system error messages related to a failed container execution (no space left on device).
+Backup and restore conda environments.
 
 ### Metadata
 - **Docker Image**: biocontainers/bioconda-backup:latest
@@ -18,12 +18,91 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/77f4ea85426dfa436a358dfdb7a9ce0c2c77a576d19cbddefa038a25ac77ef33: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/bioconda-backup:latest uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1765101453: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+  File "/usr/local/lib/python3.7/dist-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.7/http/client.py", line 1244, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1290, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1239, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/usr/local/lib/python3.7/dist-packages/docker/transport/unixconn.py", line 43, in connect
+    sock.connect(self.unix_socket)
+FileNotFoundError: [Errno 2] No such file or directory
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.7/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/local/lib/python3.7/dist-packages/urllib3/util/retry.py", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/lib/python3.7/dist-packages/urllib3/packages/six.py", line 734, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.7/dist-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+  File "/usr/local/lib/python3.7/dist-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.7/http/client.py", line 1244, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1290, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1239, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/usr/local/lib/python3.7/dist-packages/docker/transport/unixconn.py", line 43, in connect
+    sock.connect(self.unix_socket)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/docker/api/client.py", line 214, in _retrieve_server_version
+    return self.version(api_version=False)["ApiVersion"]
+  File "/usr/local/lib/python3.7/dist-packages/docker/api/daemon.py", line 181, in version
+    return self._result(self._get(url), json=True)
+  File "/usr/local/lib/python3.7/dist-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/docker/api/client.py", line 237, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+  File "/usr/local/lib/python3.7/dist-packages/requests/sessions.py", line 555, in get
+    return self.request('GET', url, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/requests/adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/backup.py", line 22, in <module>
+    docker_client = docker.from_env()
+  File "/usr/local/lib/python3.7/dist-packages/docker/client.py", line 101, in from_env
+    **kwargs_from_env(**kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/docker/client.py", line 45, in __init__
+    self.api = APIClient(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/docker/api/client.py", line 197, in __init__
+    self._version = self._retrieve_server_version()
+  File "/usr/local/lib/python3.7/dist-packages/docker/api/client.py", line 222, in _retrieve_server_version
+    'Error while fetching server API version: {0}'.format(e)
+docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

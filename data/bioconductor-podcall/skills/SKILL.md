@@ -1,8 +1,9 @@
 ---
 name: bioconductor-podcall
-description: The package includes a shiny application which provides an interactive and user-friendly interface to the full functionality of PoDCall.
+description: PoDCall is an R package and Shiny application for calling positive droplets and estimating concentrations in droplet digital PCR data. Use when user asks to call positive droplets, estimate DNA concentrations, or analyze ddPCR data.
 homepage: https://bioconductor.org/packages/release/bioc/html/PoDCall.html
 ---
+
 
 # bioconductor-podcall
 

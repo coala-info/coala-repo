@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hivcdnavantwout03
-description: the package is available on all platforms; click for details.
+description: This package provides access to and processes HIV-1 infection microarray data from the van't Wout et al. (2003) study. Use when user asks to load raw Cy3 and Cy5 absorption intensities from CD4+ T cell line experiments, transform encoded 16-bit TIFF values into intensity measurements, or analyze microarray data from HIV-1 infected cellular RNA transcripts.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HIVcDNAvantWout03.html
 ---
+
 
 # bioconductor-hivcdnavantwout03
 

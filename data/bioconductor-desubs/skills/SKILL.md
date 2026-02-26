@@ -1,8 +1,9 @@
 ---
 name: bioconductor-desubs
-description: the package is available on all platforms; click for details.
+description: DEsubs extracts and analyzes disease-perturbed subpathways from RNA-seq expression profiles using KEGG signaling pathway networks. Use when user asks to identify functional modules, extract subpathway components or communities, and perform enrichment analysis or visualization of gene networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEsubs.html
 ---
+
 
 # bioconductor-desubs
 

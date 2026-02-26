@@ -1,9 +1,9 @@
 # discasm CWL Generation Report
 
-## discasm
+## discasm_DISCASM
 
 ### Tool Description
-A tool for discovery of sequences from assembly. (Note: The provided help text contains container runtime error messages and does not list specific command-line arguments.)
+Performs de novo transcriptome assembly on discordant and unmapped reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/discasm:0.1.3--py27pl5.22.0_0
@@ -18,11 +18,35 @@ A tool for discovery of sequences from assembly. (Note: The provided help text c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/discasm:0.1.3--py27pl5.22.0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1452127717: no space left on device
+TRINITY_HOME has been set to: /usr/local/bin/../opt/trinity-2.5.1.
+usage: DISCASM [-h] --chimeric_junctions CHIMERIC_JUNCTIONS
+               [--aligned_bam ALIGNED_BAM_FILENAME] --left_fq LEFT_FQ_FILENAME
+               --right_fq RIGHT_FQ_FILENAME --out_dir STR_OUT_DIR
+               --denovo_assembler DENOVO_ASSEMBLER
+               [--add_trinity_params ADD_TRINITY_PARAMS] [--normalize_reads]
+
+Performs de novo transcriptome assembly on discordant and unmapped reads
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --chimeric_junctions CHIMERIC_JUNCTIONS
+                        STAR Chimeric.out.junction file
+  --aligned_bam ALIGNED_BAM_FILENAME
+                        aligned bam file from your favorite rna-seq alignment
+                        tool
+  --left_fq LEFT_FQ_FILENAME
+                        left fastq file
+  --right_fq RIGHT_FQ_FILENAME
+                        right fastq file
+  --out_dir STR_OUT_DIR
+                        output directory
+  --denovo_assembler DENOVO_ASSEMBLER
+                        de novo assembly method: Trinity|Oases|OasesMultiK
+  --add_trinity_params ADD_TRINITY_PARAMS
+                        any additional parameters to pass on to Trinity if
+                        Trinity is the chosen assembler.
+  --normalize_reads     perform in silico normalization prior to de novo
+                        assembly (not needed if using Trinity, since Trinity
+                        performs normalization internally
 ```
 
-
-## Metadata
-- **Skill**: generated

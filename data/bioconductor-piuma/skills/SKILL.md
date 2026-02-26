@@ -1,8 +1,9 @@
 ---
 name: bioconductor-piuma
-description: the package is available on all platforms; click for details.
+description: "PIUMA implements a protein-interaction-network-based under-sampling method to address class imbalance in biological data analysis. Use when user asks to handle imbalanced data in protein-protein interaction networks, perform network-based under-sampling, or improve the prediction of protein interactions."
 homepage: https://bioconductor.org/packages/release/bioc/html/PIUMA.html
 ---
+
 
 # bioconductor-piuma
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-varianttoolsdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and data files for the VariantTools Bioconductor package. Use when user asks to access sample data for variant calling, run package vignettes, or explore genomic data examples.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/VariantToolsData.html
 ---
+
 
 # bioconductor-varianttoolsdata
 

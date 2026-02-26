@@ -1,8 +1,9 @@
 ---
 name: carpedeam
-description: CarpeDeam is a specialized de novo metagenome assembler designed to handle the unique challenges of ancient DNA (aDNA).
+description: Carpedeam is a de novo metagenome assembler designed to reconstruct contigs from ancient DNA datasets by incorporating damage-aware correction for post-mortem chemical degradation. Use when user asks to assemble ancient metagenomes, perform damage-aware de novo assembly, or reconstruct contigs from heavily damaged aDNA reads.
 homepage: https://github.com/LouisPwr/CarpeDeam
 ---
+
 
 # carpedeam
 

@@ -1,8 +1,9 @@
 ---
 name: kegg-pathways-completeness
-description: The `kegg-pathways-completeness` tool provides a programmatic way to estimate how "complete" a KEGG metabolic module is based on the presence or absence of specific KOs in your dataset.
+description: This tool estimates the completeness of KEGG metabolic modules by evaluating the presence of specific KEGG Orthology identifiers against complex logical definitions. Use when user asks to calculate metabolic pathway completeness, analyze functional annotations from genomes or metagenomes, or visualize KEGG module graphs with highlighted enzymes.
 homepage: https://github.com/EBI-Metagenomics/kegg-pathways-completeness-tool
 ---
+
 
 # kegg-pathways-completeness
 

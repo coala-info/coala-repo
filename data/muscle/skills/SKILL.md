@@ -1,8 +1,9 @@
 ---
 name: muscle
-description: Muscle (Multiple Sequence Comparison by Log-Expectation) is a high-performance tool for biological sequence alignment.
+description: Muscle performs high-performance multiple sequence alignment for biological sequences and protein structures. Use when user asks to align sequences, generate alignment ensembles to assess reliability, or perform large-scale protein structure alignment.
 homepage: https://github.com/rcedgar/muscle
 ---
+
 
 # muscle
 

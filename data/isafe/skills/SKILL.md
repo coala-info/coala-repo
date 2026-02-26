@@ -1,8 +1,9 @@
 ---
 name: isafe
-description: iSAFE (integrated Selection of Allele Favored by Evolution) is a specialized tool designed for the fine-mapping of selective sweeps.
+description: iSAFE is a genomic tool designed to fine-map selective sweeps by identifying the specific causal mutation within a genomic region. Use when user asks to pinpoint favored variants in selective sweeps, calculate iSAFE scores from phased VCF or HAP files, or identify candidate mutations in ongoing or fixed sweeps.
 homepage: https://github.com/alek0991/iSAFE
 ---
+
 
 # isafe
 

@@ -1,8 +1,9 @@
 ---
 name: sneep
-description: SNEEP (SNp Exploration and Analysis using EPigenomics data) is a specialized bioinformatics tool designed to prioritize non-coding variants by their regulatory potential.
+description: SNEEP prioritizes non-coding variants by analyzing their impact on transcription factor binding sites using epigenetic data. Use when user asks to prioritize non-coding variants, detect disruptions in transcription factor binding sites, or perform functional annotation of disease-associated SNPs.
 homepage: https://github.com/SchulzLab/SNEEP
 ---
+
 
 # sneep
 

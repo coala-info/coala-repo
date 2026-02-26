@@ -1,8 +1,9 @@
 ---
 name: plncpro
-description: PlncPRO (Plant Long Non-Coding RNA Prediction by Random Forests) is a machine learning tool designed to distinguish between coding (mRNA) and long non-coding (lncRNA) transcripts.
+description: PlncPRO is a machine learning tool designed to distinguish between coding and long non-coding transcripts using Random Forest classifiers. Use when user asks to predict lncRNAs, build custom prediction models, or extract high-confidence sequences from prediction results.
 homepage: https://github.com/urmi-21/PLncPRO
 ---
+
 
 # plncpro
 

@@ -1,8 +1,9 @@
 ---
 name: r-bedr
-description: "Genomic regions processing using open-source command line tools such as 'BEDTools', 'BEDOPS' and 'Tabix'.   These tools offer scalable and efficient utilities to perform genome arithmetic e.g indexing, formatting and merging.   bedr API enhances access to these tools as well as offers additional utilities for genomic regions processing.</p>"
+description: This tool performs genomic interval arithmetic and region processing in R by wrapping BEDTools, BEDOPS, and Tabix. Use when user asks to merge, intersect, subtract, or join genomic regions, validate and sort intervals, or calculate statistical similarity between region sets.
 homepage: https://cloud.r-project.org/web/packages/bedr/index.html
 ---
+
 
 # r-bedr
 

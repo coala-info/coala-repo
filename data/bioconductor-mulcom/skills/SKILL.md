@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mulcom
-description: the package is available on all platforms; click for details.
+description: Mulcom provides a statistical test for differential expression analysis in experiments involving multiple groups or time points. Use when user asks to calculate Mulcom scores, identify differentially expressed genes across multiple conditions, or perform multi-comparison analysis on high-throughput data.
 homepage: https://bioconductor.org/packages/release/bioc/html/Mulcom.html
 ---
+
 
 # bioconductor-mulcom
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ncigraph
-description: the package is available on all platforms; click for details.
+description: NCIgraph converts pathways from the NCI Pathway Interaction Database into standard R graph objects for network analysis. Use when user asks to load NCI pathways, convert PID data to graph objects, or analyze cancer signaling networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/NCIgraph.html
 ---
+
 
 # bioconductor-ncigraph
 

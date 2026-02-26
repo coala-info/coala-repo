@@ -1,8 +1,9 @@
 ---
 name: genoboo
-description: Genoboo is a collaborative notebook environment specifically designed for comparative genomics.
+description: Genoboo is a collaborative web-based notebook environment for visualizing, annotating, and sharing comparative genomics data. Use when user asks to start a genomic notebook server, add a genome sequence to the database, or import GFF3 annotations.
 homepage: https://github.com/gogepp/genoboo
 ---
+
 
 # genoboo
 

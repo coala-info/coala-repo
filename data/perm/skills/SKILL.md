@@ -1,8 +1,9 @@
 ---
 name: perm
-description: The `perm` skill facilitates the management of authorization layers in Laravel applications.
+description: The perm tool manages roles and permissions in Laravel applications using the Spatie Laravel-Permission package. Use when user asks to assign roles to users, create new permissions, check user authorization, or manage access control lists.
 homepage: https://github.com/spatie/laravel-permission
 ---
+
 
 # perm
 

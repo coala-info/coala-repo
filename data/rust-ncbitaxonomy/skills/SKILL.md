@@ -1,8 +1,9 @@
 ---
 name: rust-ncbitaxonomy
-description: The `rust-ncbitaxonomy` suite provides high-performance utilities for working with the NCBI Taxonomy database via a local SQLite backend.
+description: This tool provides high-performance utilities for managing and querying the NCBI Taxonomy database via a local SQLite backend. Use when user asks to convert taxdump files to SQLite, retrieve taxonomic metadata, filter RefSeq FASTA files by ancestor, or subset classified FASTQ reads.
 homepage: https://github.com/pvanheus/ncbitaxonomy
 ---
+
 
 # rust-ncbitaxonomy
 

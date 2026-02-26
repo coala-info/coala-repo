@@ -1,8 +1,9 @@
 ---
 name: biopet-extractadaptersfastqc
-description: `biopet-extractadaptersfastqc` is a utility designed to bridge the gap between quality control and data cleaning.
+description: This tool extracts adapter sequences from FastQC data files for use in downstream trimming applications. Use when user asks to extract adapter sequences from FastQC reports, convert FastQC adapter findings to FASTA format, or identify sequences for adapter trimming.
 homepage: https://github.com/biopet/extractadaptersfastqc
 ---
+
 
 # biopet-extractadaptersfastqc
 

@@ -1,8 +1,9 @@
 ---
 name: perl-module-loaded
-description: The `Module::Loaded` utility provides a clean interface for manipulating Perl's module tracking mechanism.
+description: This tool manages Perl's internal module tracking to mark packages as loaded or unloaded without modifying the filesystem. Use when user asks to fake the presence of a module, check if a package is registered, or force Perl to forget a loaded module for reloading.
 homepage: http://metacpan.org/pod/Module::Loaded
 ---
+
 
 # perl-module-loaded
 

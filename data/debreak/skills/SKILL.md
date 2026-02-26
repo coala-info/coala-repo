@@ -1,8 +1,9 @@
 ---
 name: debreak
-description: DeBreak is a structural variant caller optimized for the unique characteristics of long-read sequencing data.
+description: DeBreak is a structural variant caller designed to detect and refine complex genomic rearrangements in long-read sequencing data using local assembly and partial order alignment. Use when user asks to call structural variants, perform high-accuracy breakpoint refinement, or identify large insertions and duplications in germline or cancer samples.
 homepage: https://github.com/ChongLab/DeBreak
 ---
+
 
 # debreak
 

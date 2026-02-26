@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qubicdata
-description: the package is available on all platforms; click for details.
+description: This package provides example and benchmarking datasets for the QUBIC biclustering R package. Use when user asks to access sample data for biclustering analysis, load benchmarking datasets for QUBIC, or explore example gene expression matrices.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/QUBICdata.html
 ---
+
 
 # bioconductor-qubicdata
 

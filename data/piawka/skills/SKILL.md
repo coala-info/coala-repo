@@ -1,8 +1,9 @@
 ---
 name: piawka
-description: `piawka` is a high-performance AWK-based tool for calculating within- and between-population nucleotide diversity statistics.
+description: "piawka is a high-performance tool for calculating within- and between-population nucleotide diversity statistics from VCF files. Use when user asks to calculate Fst, Tajima's D, heterozygosity, Dxy, or Watterson's theta for diploid or polyploid data."
 homepage: https://github.com/novikovalab/piawka
 ---
+
 
 # piawka
 

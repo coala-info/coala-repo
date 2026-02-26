@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.rg.u34c
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Rat Genome U34C microarray. Use when user asks to analyze Affymetrix Rat Genome U34C microarray data, access platform design metadata, or preprocess rg.u34c array files using the oligo package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rg.u34c.html
 ---
+
 
 # bioconductor-pd.rg.u34c
 

@@ -1,13 +1,58 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fasten
-  - shuffle
+baseCommand: fasten_shuffle
 label: fasten_fasten_shuffle
-doc: "The provided text does not contain help information for the tool. It contains
-  error messages related to a container runtime (Apptainer/Singularity) failure due
-  to insufficient disk space.\n\nTool homepage: https://github.com/lskatz/fasten"
-inputs: []
+doc: "Interleaves reads from either stdin or file parameters\n\nTool homepage: https://github.com/lskatz/fasten"
+inputs:
+  - id: deshuffle
+    type:
+      - 'null'
+      - boolean
+    doc: Deshuffle reads from stdin
+    inputBinding:
+      position: 101
+      prefix: --deshuffle
+  - id: forward_reads_file
+    type:
+      - 'null'
+      - File
+    doc: Forward reads. If deshuffling, reads are written to this file.
+    inputBinding:
+      position: 101
+      prefix: '-1'
+  - id: numcpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --numcpus
+  - id: paired_end
+    type:
+      - 'null'
+      - boolean
+    doc: The input reads are interleaved paired-end
+    inputBinding:
+      position: 101
+      prefix: --paired-end
+  - id: reverse_reads_file
+    type:
+      - 'null'
+      - File
+    doc: Forward reads. If deshuffling, reads are written to this file.
+    inputBinding:
+      position: 101
+      prefix: '-2'
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print more status messages
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

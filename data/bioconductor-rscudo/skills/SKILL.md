@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rscudo
-description: the package is available on all platforms; click for details.
+description: rScudo implements the SCUDO method for rank-based signature identification and classification of gene expression profiles. Use when user asks to identify molecular signatures, perform rank-based sample classification, or cluster gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/rScudo.html
 ---
+
 
 # bioconductor-rscudo
 

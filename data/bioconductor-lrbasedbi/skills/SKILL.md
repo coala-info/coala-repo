@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lrbasedbi
-description: the package is available on all platforms; click for details.
+description: LRBaseDbi provides the infrastructure and classes required to create and manage Ligand-Receptor interaction database objects. Use when user asks to build custom LRBase annotation packages, store ligand-receptor pair information, or manage databases for cell-cell communication analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/LRBaseDbi.html
 ---
+
 
 # bioconductor-lrbasedbi
 

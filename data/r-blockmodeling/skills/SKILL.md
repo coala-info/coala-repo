@@ -1,8 +1,9 @@
 ---
 name: r-blockmodeling
-description: This is primarily meant as an implementation of generalized blockmodeling for valued networks.
+description: The r-blockmodeling package performs generalized blockmodeling and partitioning of valued networks into clusters based on various equivalence types. Use when user asks to partition nodes into blocks, evaluate network equivalence, find optimal partitions for valued matrices, or visualize partitioned adjacency matrices.
 homepage: https://cloud.r-project.org/web/packages/blockmodeling/index.html
 ---
+
 
 # r-blockmodeling
 

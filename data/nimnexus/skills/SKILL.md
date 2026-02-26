@@ -1,8 +1,9 @@
 ---
 name: nimnexus
-description: The `nimnexus` toolset is designed for the initial processing stages of ChIP-nexus data.
+description: The nimnexus toolset processes raw ChIP-nexus data by trimming barcodes from FASTQ files and de-duplicating aligned reads in BAM files. Use when user asks to trim experimental barcodes, manage random barcodes, or remove PCR duplicates from sorted BAM files.
 homepage: https://github.com/avsecz/nimnexus
 ---
+
 
 # nimnexus
 

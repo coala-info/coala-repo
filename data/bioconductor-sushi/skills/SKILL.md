@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sushi
-description: the package is available on all platforms; click for details.
+description: Sushi is a Bioconductor package used for the flexible and publication-quality visualization of genomic data. Use when user asks to plot genomic tracks, visualize sequencing data, or create multi-panel genomic figures.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Sushi.html
 ---
+
 
 # bioconductor-sushi
 

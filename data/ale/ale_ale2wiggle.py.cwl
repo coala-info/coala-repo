@@ -1,11 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ale_ale2wiggle.py
+baseCommand: ale2wiggle.py
 label: ale_ale2wiggle.py
-doc: "A tool to convert ALE (Assembly Likelihood Evaluation) output to Wiggle format.
-  Note: The provided help text contains only system error logs and does not list specific
-  arguments.\n\nTool homepage: https://github.com/sc932/ALE"
-inputs: []
+doc: "Converts ALE (Assembly Likelihood Evaluation) output files to Wiggle format.\n\
+  \nTool homepage: https://github.com/sc932/ALE"
+inputs:
+  - id: input_ale
+    type: File
+    doc: The input ALE file to be converted to Wiggle format.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

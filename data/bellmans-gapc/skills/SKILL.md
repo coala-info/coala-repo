@@ -1,8 +1,9 @@
 ---
 name: bellmans-gapc
-description: Bellman's GAP (GAPc) provides a high-level declarative language to describe dynamic programming algorithms by separating the search space (grammar) from the scoring schemes (algebras).
+description: Bellman's GAP compiles high-level declarative descriptions of dynamic programming algorithms into optimized C++ code. Use when user asks to define grammars and algebras for sequence analysis, compile .gap files, or generate efficient dynamic programming implementations.
 homepage: https://bibiserv.cebitec.uni-bielefeld.de/gapc
 ---
+
 
 # bellmans-gapc
 

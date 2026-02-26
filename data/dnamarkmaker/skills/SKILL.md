@@ -1,8 +1,9 @@
 ---
 name: dnamarkmaker
-description: DNAMarkMaker is a specialized bioinformatics pipeline designed to bridge the gap between Next-Generation Sequencing (NGS) data and laboratory-ready molecular markers.
+description: "DNAMarkMaker identifies SNPs from NGS alignment files and designs primers for ARMS and CAPS molecular markers. Use when user asks to identify polymorphisms between samples, design ARMS or CAPS primers, or develop molecular markers for various ploidy levels."
 homepage: https://github.com/SegawaTenta/DNAMarkMaker-CUI
 ---
+
 
 # dnamarkmaker
 

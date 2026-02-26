@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dupchecker
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-dupchecker identifies and manages duplicated high-throughput genomic samples in meta-analyses by generating and comparing MD5 fingerprints of raw data files. Use when user asks to download raw data from GEO or ArrayExpress, build a file registry for genomic datasets, or identify redundant samples to prevent data contamination.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DupChecker.html
 ---
+
 
 # bioconductor-dupchecker
 

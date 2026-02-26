@@ -2,16 +2,54 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: spliceai
 label: spliceai
-doc: "SpliceAI is a deep learning-based tool to predict splicing from pre-mRNA sequence.
-  (Note: The provided text appears to be a container execution error log rather than
-  help text; therefore, no arguments could be extracted from the input.)\n\nTool homepage:
+doc: "SpliceAI predicts the impact of variants on RNA splicing.\n\nTool homepage:
   https://github.com/Illumina/SpliceAI"
-inputs: []
+inputs:
+  - id: annotation
+    type: File
+    doc: GTF/GFF3 annotation file
+    inputBinding:
+      position: 101
+      prefix: --annotation
+  - id: distance
+    type:
+      - 'null'
+      - int
+    doc: Maximum distance from splice sites to consider
+    default: 500
+    inputBinding:
+      position: 101
+      prefix: --distance
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: Input VCF file
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: mask
+    type:
+      - 'null'
+      - File
+    doc: Mask regions (BED file)
+    inputBinding:
+      position: 101
+      prefix: --mask
+  - id: reference
+    type: File
+    doc: Reference genome FASTA file
+    inputBinding:
+      position: 101
+      prefix: --reference
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type:
+      - 'null'
+      - File
+    doc: Output VCF file
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/spliceai:1.3.1--pyh864c0ab_1
-stdout: spliceai.out

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vcfarray
-description: the package is available on all platforms; click for details.
+description: VCFArray represents Variant Call Format (VCF) files as DelayedArray objects for efficient data manipulation in R. Use when user asks to represent VCF files as DelayedArray objects, access large genomic variant data on-disk, or perform memory-efficient analysis of VCF data.
 homepage: https://bioconductor.org/packages/release/bioc/html/VCFArray.html
 ---
+
 
 # bioconductor-vcfarray
 

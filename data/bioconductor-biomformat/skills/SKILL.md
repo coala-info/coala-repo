@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biomformat
-description: the package is available on all platforms; click for details.
+description: "This tool provides an R interface for reading, writing, and manipulating Biological Observation Matrix (BIOM) files. Use when user asks to read or write BIOM files, access sample and observation metadata, or convert BIOM data into R matrices for microbiome analysis."
 homepage: https://bioconductor.org/packages/release/bioc/html/biomformat.html
 ---
+
 
 # bioconductor-biomformat
 

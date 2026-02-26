@@ -1,9 +1,9 @@
 # equirep CWL Generation Report
 
-## equirep
+## equirep_EquiRep
 
 ### Tool Description
-The provided text does not contain help information for the tool 'equirep'. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull a Docker image due to insufficient disk space.
+This program processes an input FASTA file and generates an output file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/equirep:1.0.0--h9948957_0
@@ -12,17 +12,19 @@ The provided text does not contain help information for the tool 'equirep'. It c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/equirep/overview
-- **Total Downloads**: 696
+- **Total Downloads**: 699
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Shao-Group/EquiRep
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/equirep:1.0.0--h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2367644231: no space left on device
+Usage: ./EquiRep <input_file> <output_file_prefix>
+Description:
+  This program processes an input FASTA file and generates an output file.
+Arguments:
+  <input_file>         Path to the input FASTA file.
+  <output_file_prefix> Prefix for the output FASTA file.
+Example:
+  ./EquiRep input.fasta output
 ```
 
-
-## Metadata
-- **Skill**: generated

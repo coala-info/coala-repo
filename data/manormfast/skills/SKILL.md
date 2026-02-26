@@ -1,8 +1,9 @@
 ---
 name: manormfast
-description: MAnormFast is a robust tool for the quantitative comparison of ChIP-Seq experiments.
+description: MAnormFast performs quantitative comparison and normalization of ChIP-Seq experiments to identify differential binding events between samples. Use when user asks to compare ChIP-Seq signal intensities, normalize binding levels between cell types, or identify cell-specific binding sites.
 homepage: https://github.com/semal/MAnormFast
 ---
+
 
 # manormfast
 

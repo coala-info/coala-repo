@@ -1,8 +1,9 @@
 ---
 name: r-seurat-disk
-description: R package seurat-disk (documentation from project home).
+description: This tool provides a high-performance HDF5-based file format for storing Seurat objects and converting data between R and Python single-cell ecosystems. Use when user asks to save or load h5Seurat files, convert between Seurat and AnnData formats, or perform memory-efficient partial loading of single-cell datasets.
 homepage: https://cran.r-project.org/web/packages/seurat-disk/index.html
 ---
+
 
 # r-seurat-disk
 

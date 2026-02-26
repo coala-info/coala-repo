@@ -1,8 +1,9 @@
 ---
 name: r-deldir
-description: "Calculates the Delaunay triangulation and the Dirichlet 	or Voronoi tessellation (with respect to the entire plane) of 	a planar point set. Plots triangulations and tessellations in 	various ways.  Clips tessellations to sub-windows. Calculates 	perimeters of tessellations.  Summarises information about 	the tiles of the tessellation.	Calculates the centroidal 	Voronoi (Dirichlet) tessellation using Lloyd's algorithm.</p>"
+description: The r-deldir package computes Delaunay triangulations and Dirichlet (Voronoi) tessellations for spatial data analysis in R. Use when user asks to calculate tile areas, perform Lloyd's algorithm for centroidal Voronoi tessellations, or visualize planar partitions from a set of points.
 homepage: https://cloud.r-project.org/web/packages/deldir/index.html
 ---
+
 
 # r-deldir
 

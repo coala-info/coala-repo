@@ -1,16 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igda-script_est_depth
+baseCommand: est_depth
 label: igda-script_est_depth
-doc: "Estimation of depth (Note: The provided text contains container runtime error
-  messages and does not include the actual help documentation for the tool.)\n\nTool
-  homepage: https://github.com/zhixingfeng/shell"
-inputs: []
+doc: "only work for single chromosome data\n\nTool homepage: https://github.com/zhixingfeng/shell"
+inputs:
+  - id: bamfile
+    type: File
+    doc: Input BAM or SAM file
+    inputBinding:
+      position: 1
+  - id: genome_size
+    type: int
+    doc: Genome size
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outfile
+    type: File
+    doc: Output file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/igda-script:1.0.1--hdfd78af_0
-stdout: igda-script_est_depth.out

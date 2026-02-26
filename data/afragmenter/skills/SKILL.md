@@ -1,8 +1,9 @@
 ---
 name: afragmenter
-description: A tool for fragmenting molecules (description not available in provided text)
+description: AFragmenter is a schema-free segmentation tool that uses AlphaFold PAE values and Leiden clustering to partition protein structures into structural domains. Use when user asks to segment proteins into domains, identify structural clusters from PAE data, or chop protein sequences based on positional confidence.
 homepage: https://github.com/sverwimp/AFragmenter
 ---
+
 
 # afragmenter
 

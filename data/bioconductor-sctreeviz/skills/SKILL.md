@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sctreeviz
-description: the package is available on all platforms; click for details.
+description: scTreeViz provides interactive visualizations for exploring hierarchical clustering and differential expression in single-cell RNA-sequencing data. Use when user asks to visualize single-cell clusters as a tree, perform hierarchical differential expression analysis, or interactively explore cell-type hierarchies.
 homepage: https://bioconductor.org/packages/release/bioc/html/scTreeViz.html
 ---
+
 
 # bioconductor-sctreeviz
 

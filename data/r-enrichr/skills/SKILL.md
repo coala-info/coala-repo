@@ -1,8 +1,9 @@
 ---
 name: r-enrichr
-description: R package enrichr (documentation from project home).
+description: The r-enrichr tool provides an R interface to the Enrichr database for performing gene set enrichment analysis across various organisms and libraries. Use when user asks to perform enrichment analysis, query gene-set libraries, or visualize enriched biological pathways and terms.
 homepage: https://cran.r-project.org/web/packages/enrichr/index.html
 ---
+
 
 # r-enrichr
 

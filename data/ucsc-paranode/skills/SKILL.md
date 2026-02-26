@@ -1,8 +1,9 @@
 ---
 name: ucsc-paranode
-description: The `ucsc-paranode` suite provides the necessary binaries to manage worker nodes in a Parasol cluster, a job-scheduling system specifically designed by the UCSC Genome Bioinformatics group for high-throughput genomic analysis.
+description: The ucsc-paranode suite manages worker nodes in a Parasol cluster for high-throughput genomic analysis. Use when user asks to start a node, stop a node, check node status, test job execution, fetch data, or sync node files.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-paranode
 

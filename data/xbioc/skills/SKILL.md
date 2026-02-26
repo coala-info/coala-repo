@@ -1,8 +1,9 @@
 ---
 name: xbioc
-description: The `xbioc` package provides a collection of "extra base functions" designed to simplify repetitive tasks in Bioconductor-based workflows.
+description: xbioc simplifies repetitive tasks in Bioconductor workflows by providing extra base functions for data manipulation, annotation, and validation. Use when user asks to merge ExpressionSet objects, tidy ExpressionSet data, validate data scale, map gene identifiers, determine Bioconductor annotation package names, append data frames, or generate object hashes.
 homepage: https://github.com/renozao/xbioc
 ---
+
 
 # xbioc
 

@@ -3,7 +3,7 @@
 ## ngshmmalign
 
 ### Tool Description
-The provided text does not contain help documentation for ngshmmalign; it contains error logs related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+ngshmmalign
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ngshmmalign:0.1.1--0
@@ -18,11 +18,61 @@ The provided text does not contain help documentation for ngshmmalign; it contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ngshmmalign:0.1.1--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2918565145: no space left on device
+Allowed options:
+
+Generic options:
+  -h [ --help ]                    Print this help
+
+Configuration:
+  -r arg                           File containing the profile/MSA of the 
+                                   reference
+  -R arg                           File containing the profile/MSA of the 
+                                   reference. Will perform a comprehensive 
+                                   parameter estimation using MAFFT. Mutually 
+                                   exclusive with -r option
+  -o arg (=aln.sam)                Filename where alignment will be written to
+  -w [ --wrong ] arg (=/dev/null)  Filename where alignment will be written 
+                                   that are filtered (too short, unpaired)
+  -t arg (=20)                     Number of threads to use for alignment. 
+                                   Defaults to number of logical cores found
+  -l                               Do not clean up MAFFT temporary MSA files
+  -E                               Use full-exhaustive search, avoiding indexed
+                                   lookup
+  -X                               Replace general aligned state 'M' with '=' 
+                                   (match) and 'X' (mismatch) in CIGAR
+  -N arg (=CONSENSUS)              Name of consensus reference contig that will
+                                   be created
+  -U                               Loci with ambiguous bases get their emission
+                                   probabilities according to their allele 
+                                   frequencies. In practice this is 
+                                   undesirable, as it leads to systematic 
+                                   accumulation of gaps in homopolymeric 
+                                   regions with SNVs
+  -s [ --seed ] arg (=42)          Value of seed for deterministic run. A value
+                                   of 0 will pick a random seed from some 
+                                   non-deterministic entropy source
+  --hard                           Hard-clip reads. Clipped bases will NOT be 
+                                   in the sequence in the alignment
+  --HARD                           Extreme Hard-clip reads. Do not write 
+                                   hard-clip in CIGAR, as if the hard-clipped 
+                                   bases never existed. Mutually exclusive with
+                                   previous option
+  -v                               Show progress indicator while aligning
+  -M arg (=L * 0.8)                Minimum mapped length of read
+  -a arg (=0.05)                   Minimum frequency for calling ambiguous base
+  --error arg (=0.005)             Global substitution probability
+  --go arg (=1e-4)                 Gap open probability
+  --ge arg (=0.30)                 Gap extend probability
+  --io arg (=5e-5)                 Insert open probability
+  --ie arg (=0.50)                 Insert extend probability
+  --ep arg (=1/L)                  Jump to end probability; usually 1/L, where 
+                                   L is the average length of the reads
+  --lco arg (=0.10)                Left clip open probability
+  --lce arg (=0.90)                Left clip extend probability
+  --rco arg (=lco/L)               Right clip open probability
+  --rce arg (=0.90)                Right clip extend probability
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

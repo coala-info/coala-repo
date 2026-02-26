@@ -1,8 +1,9 @@
 ---
 name: pepnovo
-description: PepNovo+ is a de novo sequencing algorithm that reconstructs peptide sequences directly from fragment ion patterns in MS/MS spectra.
+description: PepNovo+ performs de novo peptide sequencing to reconstruct amino acid sequences directly from MS/MS spectra without requiring a reference database. Use when user asks to perform de novo sequencing, generate high-confidence peptide tags, handle post-translational modifications, or optimize precursor mass accuracy for mass spectrometry data.
 homepage: https://github.com/jmchilton/pepnovo
 ---
+
 
 # pepnovo
 

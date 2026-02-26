@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gpa
-description: the package is available on all platforms; click for details.
+description: GPA implements a statistical framework for the joint analysis of multiple GWAS datasets and the integration of functional annotations. Use when user asks to analyze pleiotropy between traits, perform association mapping with FDR control, or test for enrichment of genomic annotations in GWAS signals.
 homepage: https://bioconductor.org/packages/release/bioc/html/GPA.html
 ---
+
 
 # bioconductor-gpa
 

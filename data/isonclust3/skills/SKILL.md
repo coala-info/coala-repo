@@ -1,8 +1,9 @@
 ---
 name: isonclust3
-description: isONclust3 is a high-performance Rust implementation for clustering long transcript reads.
+description: isONclust3 clusters long transcript reads into gene-family groups without requiring a reference genome. Use when user asks to cluster Oxford Nanopore or PacBio reads, group transcript sequences by gene family, or partition large transcriptomic datasets into gene-specific subsets.
 homepage: https://github.com/aljpetri/isONclust3
 ---
+
 
 # isonclust3
 

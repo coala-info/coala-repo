@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgug4845a.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation mappings for the Agilent hgug4845a platform. Use when user asks to map manufacturer probe identifiers to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4845a.db.html
 ---
+
 
 # bioconductor-hgug4845a.db
 

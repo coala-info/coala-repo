@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdrtestdata
-description: the package is available on all platforms; click for details.
+description: The bioconductor-gdrtestdata package generates synthetic drug response datasets and provides pre-processed example data for testing pharmacological analysis workflows. Use when user asks to generate synthetic cell lines or drugs, create mock single-agent or combination response data, and access pre-computed test datasets for the gDR suite.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gDRtestData.html
 ---
+
 
 # bioconductor-gdrtestdata
 

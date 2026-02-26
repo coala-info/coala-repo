@@ -1,8 +1,9 @@
 ---
 name: phylogenize
-description: Phylogenize is a specialized bioinformatics tool designed to identify associations between microbial genes and their environments.
+description: Phylogenize identifies associations between microbial genes and their environments while accounting for evolutionary relationships. Use when user asks to perform phylogenetic regression, identify gene-environment associations, or use the POMS method to analyze microbial pangenome data.
 homepage: https://github.com/pbradleylab/phylogenize
 ---
+
 
 # phylogenize
 

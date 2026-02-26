@@ -1,8 +1,9 @@
 ---
 name: clonalframeml
-description: ClonalFrameML is a maximum likelihood tool designed to identify recombination in bacterial populations.
+description: ClonalFrameML is a maximum likelihood tool that identifies recombination events and accounts for horizontal gene transfer in bacterial phylogenies. Use when user asks to detect recombination in bacterial populations, distinguish between mutation and recombination events, or estimate evolutionary parameters across a phylogeny.
 homepage: https://github.com/xavierdidelot/ClonalFrameML
 ---
+
 
 # clonalframeml
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-escape
-description: the package is available on all platforms; click for details.
+description: This tool performs gene-set enrichment analysis on single-cell RNA-seq data using various scoring methods like ssGSEA, GSVA, AUCell, and UCell. Use when user asks to calculate per-cell enrichment scores, normalize scores for drop-out bias, visualize pathway distributions, or perform differential enrichment analysis on Seurat or SingleCellExperiment objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/escape.html
 ---
+
 
 # bioconductor-escape
 

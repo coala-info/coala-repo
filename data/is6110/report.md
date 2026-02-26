@@ -3,7 +3,7 @@
 ## is6110
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information or usage instructions for the is6110 tool.
+Find IS elements in a BAM file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/is6110:0.5.0--pyh7e72e81_0
@@ -18,11 +18,35 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/is6110:0.5.0--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2630256804: no space left on device
+usage: is6110 [-h] -b BAM -o OUT -r REF [-g GFF] [--is-sequences IS_SEQUENCES]
+              [-t TARGET | -T TARGETS_FILE] [-d MIN_DEPTH]
+              [--clipping-gap CLIPPING_GAP] [--min-seed MIN_SEED]
+              [--min-score MIN_SCORE] [-@ THREADS] [--debug] [--version]
+
+Find IS elements in a BAM file.
+
+options:
+  -h, --help            show this help message and exit
+  -b, --bam BAM         Input BAM file.
+  -o, --out OUT         Output file for IS counts.
+  -r, --ref REF         Reference genome file.
+  -g, --gff GFF         Reference genome file.
+  --is-sequences IS_SEQUENCES
+                        Custom FASTA file containing IS sequences. If not
+                        provided, uses the default IS.fasta.
+  -t, --target TARGET   Region to search in the format 'chr:start-end'.
+  -T, --targets-file TARGETS_FILE
+                        Bed file with regions to search.
+  -d, --min-depth MIN_DEPTH
+                        Minimum depth for positions to be considered.
+  --clipping-gap CLIPPING_GAP
+                        Maximum gap between left and right clipped reads.
+  --min-seed MIN_SEED   Minimum seed length for BWA MEM (-k).
+  --min-score MIN_SCORE
+                        Minimum alignment score for BWA MEM (-T).
+  -@, --threads THREADS
+                        Number of CPUs to use.
+  --debug               Enable verbose logging.
+  --version             show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

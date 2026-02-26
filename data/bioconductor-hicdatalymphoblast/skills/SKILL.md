@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicdatalymphoblast
-description: the package is available on all platforms; click for details.
+description: This package provides processed Hi-C sequencing data from human lymphoblastoid cells for genomic interaction studies. Use when user asks to load the Lieberman-Aiden Hi-C dataset, access chromosome 20 sequencing reads, or perform chromatin interaction analysis with the GOTHiC package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HiCDataLymphoblast.html
 ---
+
 
 # bioconductor-hicdatalymphoblast
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deseq2
-description: the package is available on all platforms; click for details.
+description: DESeq2 performs differential expression analysis of RNA-seq and other count-based data using the negative binomial distribution. Use when user asks to perform statistical inference on gene expression changes, normalize count data, estimate dispersions, or apply log fold change shrinkage.
 homepage: https://bioconductor.org/packages/release/bioc/html/DESeq2.html
 ---
+
 
 # bioconductor-deseq2
 

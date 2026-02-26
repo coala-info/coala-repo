@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowsorted.blood.450k
-description: the package is available on all platforms; click for details.
+description: This package provides a reference dataset of flow-sorted blood cell types for Illumina 450k methylation arrays. Use when user asks to estimate cellular composition in whole blood samples, access flow-sorted methylation data, or identify cell-specific DNA methylation markers.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.Blood.450k.html
 ---
+
 
 # bioconductor-flowsorted.blood.450k
 

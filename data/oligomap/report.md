@@ -3,10 +3,10 @@
 ## oligomap
 
 ### Tool Description
-A tool for mapping oligonucleotides to a genome. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+Finds matches of query sequences in a target sequence database.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/oligomap:1.0.1--h077b44d_2
+- **Docker Image**: quay.io/biocontainers/oligomap:1.0.1--h077b44d_1
 - **Homepage**: https://github.com/zavolanlab/oligomap
 - **Package**: https://anaconda.org/channels/bioconda/packages/oligomap/overview
 - **Validation**: PASS
@@ -18,11 +18,12 @@ A tool for mapping oligonucleotides to a genome. Note: The provided help text co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/oligomap:1.0.1--h077b44d_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2941264627: no space left on device
+Usage:
+oligomap target.fa query.fa [-s] [-d] [-r filename] [-m maxhits]
+
+  -s             scan only plus strand of the target
+  -d             scan all .fa target files in a directory (target must be a directory)
+  -r filename    create a match report at the end
+  -m maxhits     maximum hits for one query to print
 ```
 
-
-## Metadata
-- **Skill**: generated

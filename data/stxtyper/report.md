@@ -3,7 +3,7 @@
 ## stxtyper
 
 ### Tool Description
-The provided text does not contain help information or argument definitions; it is an error log from a container runtime (Singularity/Apptainer) failing to fetch the stxtyper image.
+Determine stx type(s) of a genome, print .tsv-file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/stxtyper:1.0.25--hdcf5f25_0
@@ -18,13 +18,34 @@ The provided text does not contain help information or argument definitions; it 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/stxtyper:1.0.25--hdcf5f25_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Determine stx type(s) of a genome, print .tsv-file
+
+USAGE:   stxtyper [--nucleotide NUC_FASTA] [--name NAME] [--output OUTPUT_FILE] [--blast_bin BLAST_DIR] [--amrfinder] [--print_node] [--nucleotide_output NUC_FASTA_OUT] [--debug] [--log LOG] [--quiet]
+HELP:    stxtyper --help or stxtyper -h
+VERSION: stxtyper --version or stxtyper -v
+
+NAMED PARAMETERS
+-n NUC_FASTA, --nucleotide NUC_FASTA
+    Input nucleotide FASTA file (can be gzipped)
+--name NAME
+    Text to be added as the first column "name" to all rows of the report, for example it can be an assembly name
+-o OUTPUT_FILE, --output OUTPUT_FILE
+    Write output to OUTPUT_FILE instead of STDOUT
+--blast_bin BLAST_DIR
+    Directory for BLAST. Deafult: $BLAST_BIN
+--amrfinder
+    Print output in the nucleotide AMRFinderPlus format
+--print_node
+    Print AMRFinderPlus hierarchy node
+--nucleotide_output NUC_FASTA_OUT
+    Output nucleotide FASTA file of reported nucleotide sequences
+--debug
+    Integrity checks
+--log LOG
+    Error log file, appended, opened on application start
+-q, --quiet
+    Suppress messages to STDERR
+
+Temporary directory used is $TMPDIR or "/tmp"
 ```
 
-
-## Metadata
-- **Skill**: generated

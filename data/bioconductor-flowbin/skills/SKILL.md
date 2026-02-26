@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowbin
-description: the package is available on all platforms; click for details.
+description: This tool combines multi-tube flow cytometry data into a unified expression matrix using common binning markers. Use when user asks to integrate data from multiple flow cytometry aliquots, normalize common population markers across tubes, or create a combined expression set for multi-panel experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowBin.html
 ---
+
 
 # bioconductor-flowbin
 

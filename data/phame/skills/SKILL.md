@@ -1,8 +1,9 @@
 ---
 name: phame
-description: PhaME (Phylogenetic and Molecular Evolution) is a specialized bioinformatics pipeline designed to automate the extraction of Single Nucleotide Polymorphisms (SNPs) from various genomic data types.
+description: PhaME is a bioinformatics pipeline that automates SNP extraction and phylogenetic tree reconstruction from genomic data. Use when user asks to identify SNPs, build high-resolution phylogenetic trees, or detect signatures of positive selection in coding sequences.
 homepage: https://github.com/LANL-Bioinformatics/PhaME
 ---
+
 
 # phame
 

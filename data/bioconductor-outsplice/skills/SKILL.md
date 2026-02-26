@@ -1,8 +1,9 @@
 ---
 name: bioconductor-outsplice
-description: The package also will calculate the splicing burden in each tumor and characterize the types of splicing events that occur.
+description: OutSplice calculates splicing burden and characterizes the types of splicing events in tumor samples. Use when user asks to calculate splicing burden, characterize splicing events, or analyze tumor-specific splicing patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/OutSplice.html
 ---
+
 
 # bioconductor-outsplice
 

@@ -1,8 +1,9 @@
 ---
 name: gather
-description: GATHeR (Graph-based Accurate Tool for Immunoglobulin HEavy- and Light-chain Reconstruction) is a specialized toolkit designed to assemble paired BCR heavy and light chains from sequence data.
+description: GATHeR is a toolkit designed to assemble paired BCR heavy and light chains from single-cell sequence data using de Bruijn graphs. Use when user asks to assemble full-length BCR sequences, process 10x Genomics Chromium 5' GEX data, or perform V(D)J gene assignment and clonality analysis.
 homepage: https://github.com/Neuroimmunology-UiO/gather
 ---
+
 
 # gather
 

@@ -1,8 +1,9 @@
 ---
 name: flextaxd
-description: Flextaxd (Flexible Taxonomy Databases) is a modular Python utility that simplifies the management of taxonomic information.
+description: Flextaxd is a modular utility for managing and merging taxonomic information into optimized SQLite databases. Use when user asks to create a custom taxonomy database, merge disparate taxonomy sources, purge inactive nodes, or export taxonomic data to standard formats.
 homepage: https://github.com/FOI-Bioinformatics/flextaxd
 ---
+
 
 # flextaxd
 

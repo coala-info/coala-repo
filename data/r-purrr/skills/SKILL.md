@@ -1,8 +1,9 @@
 ---
 name: r-purrr
-description: "A complete and consistent functional programming toolkit for     R.</p>"
+description: This tool provides functional programming tools in R for consistent and type-stable iteration over vectors and lists. Use when user asks to apply functions to data structures, replace base R loops with map functions, manipulate complex lists, or handle errors during iteration.
 homepage: https://cloud.r-project.org/web/packages/purrr/index.html
 ---
+
 
 # r-purrr
 

@@ -1,8 +1,9 @@
 ---
 name: pyloh
-description: PyLOH is a specialized bioinformatics tool designed to solve the "identifiability problem" in cancer genomics, where different combinations of tumor purity and ploidy can explain sequencing data equally well.
+description: PyLOH estimates tumor purity and allele-specific copy numbers by integrating somatic copy number alterations and loss of heterozygosity data. Use when user asks to extract allelic counts from heterozygous loci, estimate tumor purity and ploidy, or generate B-Allele Frequency heat maps.
 homepage: https://github.com/uci-cbcl/PyLOH
 ---
+
 
 # pyloh
 

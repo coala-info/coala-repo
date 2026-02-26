@@ -1,8 +1,9 @@
 ---
 name: r-car
-description: "Functions to Accompany J. Fox and S. Weisberg,    An R Companion to Applied Regression, Third Edition, Sage, 2019.</p>"
+description: This tool provides expert guidance for performing applied regression analysis, diagnostics, and hypothesis testing using the R package car. Use when user asks to perform Type-II or Type-III ANOVA, calculate variance inflation factors, conduct linear hypothesis tests, or apply power transformations to data.
 homepage: https://cloud.r-project.org/web/packages/car/index.html
 ---
+
 
 # r-car
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alphamissense.v2023.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides access to AlphaMissense pathogenicity scores for missense variants in the hg19 human genome assembly. Use when user asks to retrieve pathogenicity predictions for genomic variants, query AlphaMissense scores using GenomicScores, or create a local annotation package for offline variant scoring.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AlphaMissense.v2023.hg19.html
 ---
+
 
 # bioconductor-alphamissense.v2023.hg19
 

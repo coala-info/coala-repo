@@ -1,8 +1,9 @@
 ---
 name: radsex
-description: radsex is a specialized computational tool designed to identify sex-determination signals from RAD-Sequencing data.
+description: "radsex identifies sex-determination signals and genomic markers associated with binary traits from RAD-Sequencing data. Use when user asks to generate marker depth tables, analyze marker distribution between groups, or identify significant sex-linked markers."
 homepage: https://github.com/RomainFeron/RadSex
 ---
+
 
 # radsex
 

@@ -1,8 +1,9 @@
 ---
 name: cactus-gfa-tools
-description: This skill provides specialized procedures for using the `cactus-gfa-tools` suite.
+description: This tool provides utilities for converting, filtering, and processing graph-based alignments between GAF and PAF formats. Use when user asks to convert GAF to PAF, filter overlapping alignments, project graph coordinates to stable reference space, or split query contigs by reference coverage.
 homepage: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools
 ---
+
 
 # cactus-gfa-tools
 

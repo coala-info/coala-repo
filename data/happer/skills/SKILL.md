@@ -1,8 +1,9 @@
 ---
 name: happer
-description: happer is a lightweight bioinformatics tool designed to bridge the gap between a standard reference genome and individual-specific haplotype sequences.
+description: "happer generates haplotype-specific sequences by applying phased alleles from a BED file to a reference genome. Use when user asks to create personalized reference genomes, simulate variants, or transform a reference sequence into individual-specific haplotypes."
 homepage: https://github.com/bioforensics/happer/
 ---
+
 
 # happer
 

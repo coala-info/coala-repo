@@ -1,8 +1,9 @@
 ---
 name: magmax
-description: MAGmax is a specialized tool designed to maximize the recovery of genomes from metagenomic data.
+description: MAGmax maximizes the recovery of high-quality genomes from metagenomic data by grouping, merging, and reassembling related bins. Use when user asks to perform full dereplication with reassembly, select representative bins based on quality scores, or identify dominant strains using connectivity-based clustering.
 homepage: https://github.com/soedinglab/MAGmax
 ---
+
 
 # magmax
 

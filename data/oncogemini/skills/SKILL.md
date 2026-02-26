@@ -1,8 +1,9 @@
 ---
 name: oncogemini
-description: OncoGEMINI is a specialized adaptation of the GEMINI framework designed for cancer genomics.
+description: OncoGEMINI is a specialized framework for exploring and filtering tumor variants by integrating genomic annotations with allele frequency signatures across longitudinal samples. Use when user asks to identify variants driving tumor evolution, detect clonal bottlenecks, find loss of heterozygosity, or query cancer genomics databases.
 homepage: https://github.com/fakedrtom/oncogemini
 ---
+
 
 # oncogemini
 

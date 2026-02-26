@@ -1,8 +1,9 @@
 ---
 name: n50
-description: The `n50` tool is a specialized command-line utility for bioinformaticians to assess the quality and continuity of sequence assemblies.
+description: The n50 tool calculates N50 values and other contiguity metrics to assess the quality of genomic sequence assemblies. Use when user asks to calculate N50 or auN metrics, assess assembly quality, or generate statistics for FASTA and FASTQ files.
 homepage: http://metacpan.org/pod/Proch::N50
 ---
+
 
 # n50
 

@@ -1,10 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dms_MS-make-ref
+baseCommand: MS-make-ref
 label: dms_MS-make-ref
-doc: "A tool for creating reference files, likely part of the Deep Mutational Scanning
-  (DMS) suite.\n\nTool homepage: https://github.com/qibebt-bioinfo/dynamic-meta-storms"
-inputs: []
+doc: "Make customized reference for dynamic-meta-storms\n\nTool homepage: https://github.com/qibebt-bioinfo/dynamic-meta-storms"
+inputs:
+  - id: input_taxonomy_annotation_file
+    type: File
+    doc: Input taxonomy annotation file (tabular format)
+    inputBinding:
+      position: 101
+      prefix: -r
+  - id: input_tree_file
+    type: File
+    doc: Input tree file (newick format)
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: output_reference_name
+    type:
+      - 'null'
+      - string
+    doc: Output reference name
+    default: tree.dms
+    inputBinding:
+      position: 101
+      prefix: -o
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: variabel
-description: Variabel is a specialized variant caller optimized for the high error rates of Oxford Nanopore Technology (ONT) data.
+description: Variabel is a specialized variant caller for detecting intrahost mutations in Oxford Nanopore Technology (ONT) data. Use when user asks to call variants, compare VCF files, plot variant distributions, or plot time-series variant distributions.
 homepage: https://gitlab.com/treangenlab/variabel
 ---
+
 
 # variabel
 

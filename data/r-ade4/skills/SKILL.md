@@ -1,8 +1,9 @@
 ---
 name: r-ade4
-description: Tools for multivariate data analysis. Several methods are provided for the analysis (i.e., ordination) of one-table (e.g., principal component analysis, correspondence analysis), two-table (e.g., coinertia analysis, redundancy analysis), three-table (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple coinertia analysis).
+description: This tool provides expert guidance for multivariate data analysis in ecology and environmental sciences using the ade4 R package. Use when user asks to perform ordination techniques like PCA or Correspondence Analysis, analyze mixed data types with Hill and Smith, or conduct multi-table methods such as Coinertia, RLQ, and STATIS.
 homepage: https://cloud.r-project.org/web/packages/ade4/index.html
 ---
+
 
 # r-ade4
 

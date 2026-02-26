@@ -1,8 +1,9 @@
 ---
 name: pytriangle
-description: The `pytriangle` skill provides a procedural workflow for generating 2D meshes from point sets and Planar Straight Line Graphs (PSLG).
+description: pytriangle generates 2D meshes and Constrained Delaunay Triangulations from point sets and Planar Straight Line Graphs. Use when user asks to create 2D meshes, define boundaries and holes, refine mesh density, or interpolate point attributes.
 homepage: https://github.com/pletzer/pytriangle
 ---
+
 
 # pytriangle
 

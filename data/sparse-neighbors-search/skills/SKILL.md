@@ -1,8 +1,9 @@
 ---
 name: sparse-neighbors-search
-description: The `sparse-neighbors-search` tool provides a high-performance Python/C++ implementation for finding approximate nearest neighbors in sparse data structures.
+description: This tool performs high-performance approximate nearest neighbor searches in high-dimensional sparse datasets using Locality Sensitive Hashing. Use when user asks to find similar items in sparse matrices, perform MinHash or WTA-Hash searches, or identify neighbors in datasets with massive feature spaces.
 homepage: https://github.com/joachimwolff/sparse-neighbors-search
 ---
+
 
 # sparse-neighbors-search
 

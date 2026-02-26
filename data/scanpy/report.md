@@ -1,9 +1,9 @@
 # scanpy CWL Generation Report
 
-## scanpy
+## scanpy_settings
 
 ### Tool Description
-Scanpy is a scalable toolkit for analyzing single-cell gene expression data. (Note: The provided text appears to be a container build log rather than help text; no arguments could be extracted.)
+Scanpy configuration settings.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scanpy:1.7.2--pyhdfd78af_0
@@ -18,13 +18,23 @@ Scanpy is a scalable toolkit for analyzing single-cell gene expression data. (No
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/scanpy:1.7.2--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+N_PCS = 50
+autosave = False
+autoshow = True
+cache_compression = 'lzf'
+cachedir = PosixPath('cache')
+categories_to_ignore = ['N/A', 'dontknow', 'no_gate', '?']
+datasetdir = PosixPath('/data')
+figdir = PosixPath('figures')
+file_format_data = 'h5ad'
+file_format_figs = 'pdf'
+logfile = <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
+logpath = None
+max_memory = 15
+n_jobs = 1
+plot_suffix = ''
+set_figure_params = <bound method ScanpyConfig.set_figure_params of <scanpy._settings.ScanpyConfig object at 0x73467cdb1850>>
+verbosity = <Verbosity.warn: 1>
+writedir = PosixPath('write')
 ```
 
-
-## Metadata
-- **Skill**: generated

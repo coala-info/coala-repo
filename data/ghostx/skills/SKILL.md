@@ -1,8 +1,9 @@
 ---
 name: ghostx
-description: GHOSTX is a specialized bioinformatics tool designed for rapid sequence homology searches.
+description: GHOSTX is a bioinformatics tool designed for rapid sequence homology searches using suffix arrays to achieve high throughput. Use when user asks to build a sequence database, perform protein or DNA alignments, or search for remote homologues.
 homepage: http://www.bi.cs.titech.ac.jp/ghostx/
 ---
+
 
 # ghostx
 

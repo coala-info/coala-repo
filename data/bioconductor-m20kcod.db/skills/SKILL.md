@@ -1,8 +1,9 @@
 ---
 name: bioconductor-m20kcod.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Mouse 20k Codon array. Use when user asks to map probe identifiers to gene symbols, retrieve Entrez Gene IDs, or access biological annotations for the Mouse 20k Codon platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/m20kcod.db.html
 ---
+
 
 # bioconductor-m20kcod.db
 

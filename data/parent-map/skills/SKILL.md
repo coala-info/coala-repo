@@ -1,8 +1,9 @@
 ---
 name: parent-map
-description: The `parent-map` tool is a specialized bioinformatics utility used to determine the lineage of synthetic or evolved biological sequences.
+description: The parent-map tool identifies the lineage of synthetic or evolved biological sequences by mapping variant sequences back to their parental templates. Use when user asks to determine parental inheritance, identify crossover points, or verify recombination patterns in engineered sequences.
 homepage: https://github.com/damienmarsic/parent-map
 ---
+
 
 # parent-map
 

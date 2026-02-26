@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicinstability
-description: the package is available on all platforms; click for details.
+description: This tool infers genomic instability and copy number variation from single-cell RNA-Seq data by calculating Genomic Instability Scores. Use when user asks to identify malignant cells, estimate copy number variations, or calculate genomic instability scores from gene expression matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/genomicInstability.html
 ---
+
 
 # bioconductor-genomicinstability
 

@@ -1,8 +1,9 @@
 ---
 name: roguenarok
-description: RogueNaRok is a specialized tool for improving the resolution of phylogenetic trees.
+description: RogueNaRok identifies and removes rogue taxa from a set of phylogenetic trees to improve consensus tree resolution and bootstrap support. Use when user asks to identify rogue taxa, optimize phylogenetic tree resolution, or prune taxa based on RBIC or MAST criteria.
 homepage: https://github.com/aberer/RogueNaRok
 ---
+
 
 # roguenarok
 

@@ -1,8 +1,9 @@
 ---
 name: r-funr
-description: "A small utility which wraps Rscript and provides access to all R     functions from the shell.</p>"
+description: This tool executes R functions directly from the terminal by wrapping Rscript and handling parameter type conversion. Use when user asks to run R functions from the command line, access R help pages in the shell, or create R-based shell scripts.
 homepage: https://cloud.r-project.org/web/packages/funr/index.html
 ---
+
 
 # r-funr
 

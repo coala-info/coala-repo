@@ -1,8 +1,9 @@
 ---
 name: mypmfs_py
-description: The `mypmfs_py` package provides tools to generate statistical potentials from user-defined lists of protein structures.
+description: The mypmfs_py package generates and applies statistical potentials to evaluate the structural quality and pseudo-energy of protein models. Use when user asks to train custom energy functions from protein structures, score a protein structure, or calculate Z-scores for structural quality assessment.
 homepage: https://github.com/bibip-impmc/mypmfs
 ---
+
 
 # mypmfs_py
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ngsreports
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package manages and visualizes quality control reports from various next-generation sequencing tools. Use when user asks to parse FastQC reports, visualize sequencing quality control data, or aggregate multiple NGS report files.
 homepage: https://bioconductor.org/packages/release/bioc/html/ngsReports.html
 ---
+
 
 # bioconductor-ngsreports
 

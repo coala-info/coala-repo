@@ -3,7 +3,7 @@
 ## idr-py
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system log messages and a fatal error regarding a container runtime (Singularity/Apptainer) failing to build a SIF format image due to insufficient disk space.
+The IDR (Irreproducible Discovery Rate) framework is a unified approach to measure the reproducibility of findings identified from replicate experiments and provide a confident set of predictions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/idr-py:0.4.2--py_0
@@ -18,9 +18,21 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/idr-py:0.4.2--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1388310904: no space left on device
+Unable to find image 'quay.io/biocontainers/idr-py:0.4.2--py_0' locally
+0.4.2--py_0: Pulling from biocontainers/idr-py
+1dbcab28ce46: Already exists
+cfb1ba34637d: Already exists
+ace2d8a63dd5: Already exists
+75c080ef15eb: Already exists
+316957f8baaf: Already exists
+dbd31e1d863d: Already exists
+2f8531d5a6ec: Already exists
+1dbcab28ce46: Already exists
+2e178fd72baf: Already exists
+d70e4dd6d527: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2709355691: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

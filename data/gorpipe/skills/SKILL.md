@@ -1,8 +1,9 @@
 ---
 name: gorpipe
-description: GORpipe is a high-performance parallel execution engine designed for genomic data based on a Genomic Ordered Relations (GOR) architecture.
+description: GORpipe is a parallel execution engine that queries and analyzes genomic data using a Genomic Ordered Relations architecture and pipe-based syntax. Use when user asks to execute genomic range queries, perform complex joins between variants and segments, or run SQL-like analysis on ordered genomic datasets.
 homepage: https://github.com/gorpipe/gor
 ---
+
 
 # gorpipe
 

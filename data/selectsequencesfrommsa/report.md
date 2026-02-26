@@ -3,7 +3,7 @@
 ## selectsequencesfrommsa
 
 ### Tool Description
-The provided text is an error log indicating a failure to build or run the container (no space left on device) and does not contain the help text or usage information for the tool.
+Selects sequences from a multiple sequence alignment based on a list of sequence identifiers.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/selectsequencesfrommsa:1.0.5--pl526h9ebf644_0
@@ -18,13 +18,22 @@ The provided text is an error log indicating a failure to build or run the conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 04:48:43  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/selectsequencesfrommsa:1.0.5--pl526h9ebf644_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:3e5b604566324125044b6a2fd57aa0d90ae80b2024ed7fce4a349a910185bf38: unpack entry: usr/local/lib/5.26.2/x86_64-linux-thread-multi/auto/Encode/KR/KR.so: unpack to regular file: short write: write /tmp/build-temp-2760891165/rootfs/usr/local/lib/5.26.2/x86_64-linux-thread-multi/auto/Encode/KR/KR.so: no space left on device
+Unable to find image 'quay.io/biocontainers/selectsequencesfrommsa:1.0.5--pl526h9ebf644_0' locally
+1.0.5--pl526h9ebf644_0: Pulling from biocontainers/selectsequencesfrommsa
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+3e5b60456632: Pulling fs layer
+3e5b60456632: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob3112955654: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

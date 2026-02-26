@@ -1,8 +1,9 @@
 ---
 name: mark-nonconverted-reads
-description: The `mark-nonconverted-reads` tool is a specialized filter for epigenetic sequencing workflows.
+description: This tool identifies and marks sequencing reads with high levels of unconverted cytosines in non-CpG contexts to filter out chemical conversion failures. Use when user asks to filter bisulfite-treated reads, mark nonconverted cytosines, or flag reads for exclusion from methylation calling.
 homepage: https://github.com/nebiolabs/mark-nonconverted-reads
 ---
+
 
 # mark-nonconverted-reads
 

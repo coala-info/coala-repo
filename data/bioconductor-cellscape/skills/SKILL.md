@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellscape
-description: the package is available on all platforms; click for details.
+description: Bioconductor-cellscape creates interactive visualizations that integrate single-cell phylogeny with genomic data to explore clonal evolution and tumor heterogeneity. Use when user asks to visualize single-cell genomic profiles on phylogenetic trees, create interactive CellScape or TimeScape plots, or analyze clonal progression using CNV and mutation data.
 homepage: https://bioconductor.org/packages/release/bioc/html/cellscape.html
 ---
+
 
 # bioconductor-cellscape
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genefilter
-description: the package is available on all platforms; click for details.
+description: This tool filters genes from high-throughput expression data based on statistical or biological criteria. Use when user asks to reduce data dimensionality, perform independent filtering to increase statistical power, find genes with similar expression profiles, or apply custom filtering functions to ExpressionSet objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/genefilter.html
 ---
+
 
 # bioconductor-genefilter
 

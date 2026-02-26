@@ -3,7 +3,7 @@
 ## comparem
 
 ### Tool Description
-A tool for comparative genomics (Note: The provided text is a system error log and does not contain the help documentation or argument definitions).
+Compare sequences in multiple FASTA files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/comparem:0.1.2--py_0
@@ -18,10 +18,21 @@ A tool for comparative genomics (Note: The provided text is a system error log a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/1e894198e459ba02389858dad08918e052a97887082ccbdf0c2a4d703595e46c: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/comparem:0.1.2--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2116377724: no space left on device
+Unable to find image 'quay.io/biocontainers/comparem:0.1.2--py_0' locally
+0.1.2--py_0: Pulling from biocontainers/comparem
+1dbcab28ce46: Already exists
+cfb1ba34637d: Already exists
+ace2d8a63dd5: Already exists
+75c080ef15eb: Already exists
+316957f8baaf: Already exists
+dbd31e1d863d: Already exists
+2f8531d5a6ec: Already exists
+1dbcab28ce46: Already exists
+2e178fd72baf: Already exists
+0baf3453dd17: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3627246444: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

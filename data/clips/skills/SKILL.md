@@ -1,8 +1,9 @@
 ---
 name: clips
-description: CLIP (Contrastive Language-Image Pretraining) is a multimodal neural network that connects images and text.
+description: "CLIP connects images and text using a multimodal neural network to perform zero-shot classification and feature extraction. Use when user asks to perform zero-shot image classification, encode images or text into embeddings, calculate similarity between visual and textual data, or load pre-trained CLIP models."
 homepage: https://github.com/openai/CLIP
 ---
+
 
 # clips
 

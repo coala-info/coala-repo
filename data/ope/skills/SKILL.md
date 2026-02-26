@@ -1,8 +1,9 @@
 ---
 name: ope
-description: ope (Open Parallel Execution) is a specialized utility designed to wrap gnu-parallel for bioinformatics workflows.
+description: Ope wraps gnu-parallel to simplify running bioinformatics sequence analysis tools in parallel across multiple processor cores. Use when user asks to run sequence analysis tools in parallel, process large FASTA files across multiple cores, or execute bioinformatics workflows using gnu-parallel.
 homepage: https://github.com/camillescott/ope
 ---
+
 
 # ope
 

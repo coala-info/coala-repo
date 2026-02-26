@@ -1,8 +1,9 @@
 ---
 name: ea-utils
-description: The `ea-utils` suite provides high-performance C-based utilities for the initial stages of genomic data analysis.
+description: ea-utils provides a suite of high-performance command-line tools for processing, filtering, and demultiplexing FASTQ data. Use when user asks to trim adapters, demultiplex reads by barcode, join overlapping paired-end sequences, calculate sequence statistics, or detect Phred quality offsets.
 homepage: https://expressionanalysis.github.io/ea-utils/
 ---
+
 
 # ea-utils
 

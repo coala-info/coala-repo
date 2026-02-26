@@ -1,8 +1,9 @@
 ---
 name: r-linxreport
-description: R package linxreport (documentation from project home).
+description: This R package generates HTML reports and parses data tables from the LINX structural variant tool. Use when user asks to visualize LINX structural variant outputs, create summary reports for genomic samples, or programmatically access LINX data tables in R.
 homepage: https://cran.r-project.org/web/packages/linxreport/index.html
 ---
+
 
 # r-linxreport
 

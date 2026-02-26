@@ -2,11 +2,81 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gapmm2
 label: gapmm2
-doc: "The provided text does not contain help information or usage instructions. It
-  contains error messages related to a container environment (Apptainer/Singularity)
-  failing to pull or build the image due to insufficient disk space.\n\nTool homepage:
-  https://github.com/nextgenusfs/gapmm2"
-inputs: []
+doc: "gapped alignment with minimap2. Performs minimap2/mappy alignment with splice
+  options and refines terminal alignments with edlib.\n\nTool homepage: https://github.com/nextgenusfs/gapmm2"
+inputs:
+  - id: reference
+    type: File
+    doc: reference genome (FASTA)
+    inputBinding:
+      position: 1
+  - id: query
+    type: string
+    doc: transcipts in FASTA or FASTQ
+    inputBinding:
+      position: 2
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: write some debug info to stderr
+    default: false
+    inputBinding:
+      position: 103
+      prefix: --debug
+  - id: max_intron
+    type:
+      - 'null'
+      - int
+    doc: max intron length, controls terminal search space
+    default: 500
+    inputBinding:
+      position: 103
+      prefix: --max-intron
+  - id: min_mapq
+    type:
+      - 'null'
+      - int
+    doc: minimum map quality value
+    default: 1
+    inputBinding:
+      position: 103
+      prefix: --min-mapq
+  - id: no_refine
+    type:
+      - 'null'
+      - boolean
+    doc: do not refine mappy alignment with edlib
+    default: true
+    inputBinding:
+      position: 103
+      prefix: --no-refine
+  - id: out_format
+    type:
+      - 'null'
+      - string
+    doc: output format [paf,gff3]
+    default: paf
+    inputBinding:
+      position: 103
+      prefix: --out-format
+  - id: out_paf
+    type:
+      - 'null'
+      - boolean
+    doc: output in PAF format
+    inputBinding:
+      position: 103
+      prefix: --out
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads to use with minimap2
+    default: 3
+    inputBinding:
+      position: 103
+      prefix: --threads
 outputs:
   - id: stdout
     type: stdout

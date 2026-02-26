@@ -1,8 +1,9 @@
 ---
 name: perl-test-exec
-description: The `perl-test-exec` skill provides guidance on using the `Test::Exec` module to validate process-replacement logic.
+description: This tool intercepts Perl's exec calls to allow for testing process-replacement logic without terminating the test runner. Use when user asks to validate that a script calls exec, verify arguments passed to a system execution, or prevent a test script from exiting during an exec call.
 homepage: https://metacpan.org/pod/Test::Exec
 ---
+
 
 # perl-test-exec
 

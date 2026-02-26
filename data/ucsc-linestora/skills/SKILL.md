@@ -1,8 +1,9 @@
 ---
 name: ucsc-linestora
-description: The `linesToRa` utility is a specialized tool within the UCSC Kent utilities suite designed to transform flat, pipe-delimited text into the stanza-based Resource Archive (.ra) format.
+description: The `ucsc-linestora` tool converts pipe-delimited text files into the UCSC Resource Archive (.ra) format. Use when user asks to convert pipe-delimited text to .ra format, prepare files for UCSC Track Hubs, or define track display settings for the UCSC Genome Browser.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-linestora
 

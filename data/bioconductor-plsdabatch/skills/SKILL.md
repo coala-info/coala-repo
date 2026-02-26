@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plsdabatch
-description: the package is available on all platforms; click for details.
+description: PLSDAbatch corrects batch effects in high-dimensional biological data using PLS-DA methods. Use when user asks to correct batch effects, integrate datasets, or perform multivariate analysis on microbiome data.
 homepage: https://bioconductor.org/packages/release/bioc/html/PLSDAbatch.html
 ---
+
 
 # bioconductor-plsdabatch
 

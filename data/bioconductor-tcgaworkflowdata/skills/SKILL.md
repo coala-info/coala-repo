@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tcgaworkflowdata
-description: the package is available on all platforms; click for details.
+description: This package provides data subsets from The Cancer Genome Atlas for use in bioinformatics analysis workflows. Use when user asks to access TCGA example datasets, perform cancer genomic data analysis, or follow TCGA workflow tutorials.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TCGAWorkflowData.html
 ---
+
 
 # bioconductor-tcgaworkflowdata
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hierinf
-description: the package is available on all platforms; click for details.
+description: This tool performs hierarchical inference for genome-wide association studies to identify significant associations between SNP clusters and phenotypes while controlling the familywise error rate. Use when user asks to test for associations between groups of SNPs and a response variable, cluster variables by similarity or genomic position, or perform meta-analysis across multiple datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/hierinf.html
 ---
+
 
 # bioconductor-hierinf
 

@@ -1,8 +1,9 @@
 ---
 name: r-mutsigextractor
-description: R package mutsigextractor (documentation from project home).
+description: The mutSigExtractor R package extracts mutation contexts and fits mutational signatures from VCF files for SNVs, DBSs, indels, and structural variants. Use when user asks to extract mutation contexts, fit mutation signatures using COSMIC or PCAWG profiles, or decompose mutation counts into signature contributions.
 homepage: https://cran.r-project.org/web/packages/mutsigextractor/index.html
 ---
+
 
 # r-mutsigextractor
 

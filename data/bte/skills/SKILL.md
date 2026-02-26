@@ -1,8 +1,9 @@
 ---
 name: bte
-description: The Big Tree Explorer (bte) is a Cython-based Python API that wraps the Mutation Annotated Tree (MAT) library.
+description: The Big Tree Explorer is a Python API designed for the efficient programmatic analysis and manipulation of massive mutation-annotated phylogenetic trees. Use when user asks to load protobuf tree files, find the last common ancestor of samples, query mutations, or modify tree structures.
 homepage: https://github.com/jmcbroome/BTE
 ---
+
 
 # bte
 

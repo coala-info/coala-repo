@@ -3,7 +3,7 @@
 ## cellqc
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help documentation or usage instructions for the cellqc tool. As a result, no arguments could be extracted.
+CellQC is a Snakemake pipeline for quality control of single-cell RNA sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cellqc:0.1.0--pyh7e72e81_0
@@ -18,14 +18,39 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cellqc:0.1.0--pyh7e72e81_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/localedef: unpack to regular file: short write: write /tmp/build-temp-2952566681/rootfs/usr/bin/localedef: no space left on device
+Start running: snakemake --snakefile /usr/local/lib/python3.10/site-packages/cellqc/Snakefile --directory / --cores 4 --jobs 4 --config samplefile='None' outdir='/' configfile='None' nowtimestr='260225_205103' --printshellcmds --debug-dag --skip-script-cleanup --verbose --use-conda
+Full Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/snakemake/__init__.py", line 671, in snakemake
+    workflow.include(
+  File "/usr/local/lib/python3.10/site-packages/snakemake/workflow.py", line 1389, in include
+    exec(compile(code, snakefile.get_path_or_uri(), "exec"), self.globals)
+  File "/usr/local/lib/python3.10/site-packages/cellqc/Snakefile", line 4, in <module>
+    include: "rules/config.smk"
+  File "/usr/local/lib/python3.10/site-packages/snakemake/workflow.py", line 1389, in include
+    exec(compile(code, snakefile.get_path_or_uri(), "exec"), self.globals)
+  File "/usr/local/lib/python3.10/site-packages/cellqc/rules/config.smk", line 65, in <module>
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1405, in read_table
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'None'
+
+FileNotFoundError in file /usr/local/lib/python3.10/site-packages/cellqc/rules/config.smk, line 63:
+[Errno 2] No such file or directory: 'None'
+  File "/usr/local/lib/python3.10/site-packages/cellqc/Snakefile", line 4, in <module>
+  File "/usr/local/lib/python3.10/site-packages/cellqc/rules/config.smk", line 63, in <module>
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1405, in read_table
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+  File "/usr/local/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+Finish running: snakemake --snakefile /usr/local/lib/python3.10/site-packages/cellqc/Snakefile --directory / --cores 4 --jobs 4 --config samplefile='None' outdir='/' configfile='None' nowtimestr='260225_205103' --printshellcmds --debug-dag --skip-script-cleanup --verbose --use-conda
+Error: snakemake --snakefile /usr/local/lib/python3.10/site-packages/cellqc/Snakefile --directory / --cores 4 --jobs 4 --config samplefile='None' outdir='/' configfile='None' nowtimestr='260225_205103' --printshellcmds --debug-dag --skip-script-cleanup --verbose --use-conda failed. Exit code: 1
 ```
 
-
-## Metadata
-- **Skill**: generated

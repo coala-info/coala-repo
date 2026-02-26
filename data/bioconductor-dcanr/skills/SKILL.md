@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dcanr
-description: the package is available on all platforms; click for details.
+description: This tool performs differential co-expression analysis to identify gene-gene associations that change across binary conditions. Use when user asks to perform differential co-expression analysis, benchmark DCA methods using simulated datasets, or generate gene association networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/dcanr.html
 ---
+
 
 # bioconductor-dcanr
 

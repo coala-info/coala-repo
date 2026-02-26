@@ -1,8 +1,9 @@
 ---
 name: ucsc-clustergenes
-description: The `clusterGenes` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed to aggregate transcript-level annotations into gene-level clusters.
+description: ucsc-clustergenes aggregates transcript-level annotations into gene-level clusters based on genomic overlaps. Use when user asks to 'cluster transcripts into genes', 'create non-redundant gene sets', 'cluster transcripts by CDS only', 'cluster transcripts ignoring strand', 'cluster all overlapping transcripts'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-clustergenes
 

@@ -1,8 +1,9 @@
 ---
 name: plasmidfinder
-description: PlasmidFinder is a bioinformatic tool designed to identify plasmid replicons in bacterial sequences.
+description: "PlasmidFinder identifies plasmid replicons in bacterial genomic sequences by comparing them against a curated database of known replication genes. Use when user asks to identify plasmid composition, detect plasmid replicons in bacterial isolates, or determine if antibiotic resistance genes are plasmid-mediated."
 homepage: https://bitbucket.org/genomicepidemiology/plasmidfinder
 ---
+
 
 # plasmidfinder
 

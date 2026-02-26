@@ -1,8 +1,9 @@
 ---
 name: hicstuff
-description: hicstuff is a lightweight and modular toolkit designed for the end-to-end processing of Hi-C data.
+description: hicstuff is a lightweight and modular toolkit designed for the end-to-end processing of Hi-C data into contact maps. Use when user asks to generate contact matrices from raw reads, digest genomes into fragments, perform iterative alignment, or rebin and convert Hi-C matrix formats.
 homepage: https://github.com/koszullab/hicstuff
 ---
+
 
 # hicstuff
 

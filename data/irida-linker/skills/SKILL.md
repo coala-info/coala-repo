@@ -1,8 +1,9 @@
 ---
 name: irida-linker
-description: The `irida-linker` (NGS Archive Linker) is a specialized tool for bioinformaticians and genomic researchers who need to bridge the gap between the IRIDA web platform and command-line analysis environments.
+description: The irida-linker tool automates the retrieval and organization of genomic data from the IRIDA platform into a structured local directory. Use when user asks to link or download IRIDA project data, retrieve specific samples or assemblies, and synchronize local folders with the IRIDA archive.
 homepage: https://github.com/phac-nml/irida-linker
 ---
+
 
 # irida-linker
 

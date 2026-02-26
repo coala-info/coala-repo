@@ -1,8 +1,9 @@
 ---
 name: bioconductor-decomptumor2sig
-description: the package is available on all platforms; click for details.
+description: This tool decomposes tumor genomes into mutational signatures using quadratic programming to estimate signature contributions. Use when user asks to decompose somatic mutation profiles, perform signature refitting, or determine the exposure of Alexandrov and Shiraishi-type signatures in tumor samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/decompTumor2Sig.html
 ---
+
 
 # bioconductor-decomptumor2sig
 

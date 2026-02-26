@@ -1,8 +1,9 @@
 ---
 name: bali-phy
-description: BAli-Phy is a specialized tool for joint Bayesian inference of alignment and phylogeny.
+description: BAli-Phy performs joint Bayesian inference of sequence alignment and phylogeny using Markov Chain Monte Carlo. Use when user asks to estimate a phylogenetic tree while accounting for alignment uncertainty, perform joint estimation of alignment and phylogeny, or reconstruct ancestral sequences.
 homepage: http://www.bali-phy.org
 ---
+
 
 # bali-phy
 

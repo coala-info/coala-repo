@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gmrp
-description: the package is available on all platforms; click for details.
+description: This tool performs GWAS-based Mendelian Randomization and path analysis to identify and visualize causal risk factors for diseases. Use when user asks to merge GWAS summary statistics, select independent SNPs as instrumental variables, estimate causal effects through MR regression, or generate path diagrams to disentangle direct and indirect effects.
 homepage: https://bioconductor.org/packages/release/bioc/html/GMRP.html
 ---
+
 
 # bioconductor-gmrp
 

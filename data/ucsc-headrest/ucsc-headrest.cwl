@@ -1,11 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-headrest
+baseCommand: headrest
 label: ucsc-headrest
-doc: "The provided text is a container runtime error log and does not contain help
-  documentation for the tool. It indicates a failure to fetch or build the SIF image
-  from the OCI registry.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
-inputs: []
+doc: "Copy all but the first N lines of a file.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
+inputs:
+  - id: num_lines
+    type: int
+    doc: Number of lines to skip from the beginning of the file
+    inputBinding:
+      position: 1
+  - id: files
+    type:
+      type: array
+      items: File
+    doc: Input file(s) to process
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

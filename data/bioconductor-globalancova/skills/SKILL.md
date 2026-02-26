@@ -1,8 +1,9 @@
 ---
 name: bioconductor-globalancova
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical testing of differential gene expression in groups of genes using a linear model framework. Use when user asks to perform global tests for association between gene expression profiles and clinical phenotypes, adjust for covariates, test specific pathways or GO terms, and generate diagnostic gene or subject plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/GlobalAncova.html
 ---
+
 
 # bioconductor-globalancova
 

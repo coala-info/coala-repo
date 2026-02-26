@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cosnet
-description: the package is available on all platforms; click for details.
+description: COSNet implements a cost-sensitive neural network algorithm for predicting node labels in large unbalanced biological networks. Use when user asks to predict gene functions, classify nodes in a network, or perform cost-sensitive learning on biological graphs.
 homepage: https://bioconductor.org/packages/release/bioc/html/COSNet.html
 ---
+
 
 # bioconductor-cosnet
 

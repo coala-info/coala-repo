@@ -2,15 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: toupper
 label: ucsc-toupper
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It appears to be a log of a failed container build/fetch process.\n\n
-  Tool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Converts all characters in a file to uppercase.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input file to be converted to uppercase
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Output file with uppercase text
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-toupper:482--h0b57e2e_0
-stdout: ucsc-toupper.out

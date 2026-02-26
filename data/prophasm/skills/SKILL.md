@@ -1,8 +1,9 @@
 ---
 name: prophasm
-description: ProPhasm (ProPhyle Assembler) is a specialized tool for k-mer set compression.
+description: ProPhasm is a tool for k-mer set compression and set operations that transforms k-mer sets into simplitigs. Use when user asks to assemble k-mers into simplitigs, calculate k-mer set intersections, identify unique k-mers through set differences, or generate k-mer statistics.
 homepage: https://github.com/prophyle/prophasm
 ---
+
 
 # prophasm
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hilda
-description: The package also provides inference and visualization.
+description: HiLDA performs statistical testing for changes in mutational signature burdens between two groups using a Bayesian framework. Use when user asks to test for differences in mutation exposure, perform global or local tests on mutational signatures, or visualize signature differences between experimental groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiLDA.html
 ---
+
 
 # bioconductor-hilda
 

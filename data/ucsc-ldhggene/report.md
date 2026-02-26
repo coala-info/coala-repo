@@ -1,9 +1,9 @@
 # ucsc-ldhggene CWL Generation Report
 
-## ucsc-ldhggene
+## ucsc-ldhggene_ldHgGene
 
 ### Tool Description
-The provided text contains container engine error logs and does not include the help documentation or usage instructions for the tool 'ucsc-ldhggene'.
+load database with gene predictions from a gff file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-ldhggene:482--h0b57e2e_0
@@ -18,13 +18,22 @@ The provided text contains container engine error logs and does not include the 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-ldhggene:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+ldHgGene - load database with gene predictions from a gff file.
+usage:
+     ldHgGene database table file(s).gff
+options:
+     -bin         Add bin column (now the default)
+     -nobin       don't add binning (you probably don't want this)
+     -exon=type   Sets type field for exons to specific value
+     -oldTable    Don't overwrite what's already in table
+     -noncoding   Forces whole prediction to be UTR
+     -gtf         input is GTF, stop codon is not in CDS
+     -predTab     input is already in genePredTab format
+     -requireCDS  discard genes that don't have CDS annotation
+     -out=gpfile  write output, in genePred format, instead of loading
+                  table. Database is ignored.
+     -genePredExt create a extended genePred, including frame
+                  information and gene name
+     -impliedStopAfterCds - implied stop codon in GFF/GTF after CDS
 ```
 
-
-## Metadata
-- **Skill**: generated

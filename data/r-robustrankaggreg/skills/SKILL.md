@@ -1,8 +1,9 @@
 ---
 name: r-robustrankaggreg
-description: R package robustrankaggreg (documentation from project home).
+description: This tool aggregates multiple prioritized lists into a single consensus ranking using robust rank aggregation or simple summary statistics. Use when user asks to combine ranked gene lists, perform meta-analysis of ranked data, or calculate significance scores for aggregated elements.
 homepage: https://cran.r-project.org/web/packages/robustrankaggreg/index.html
 ---
+
 
 # r-robustrankaggreg
 

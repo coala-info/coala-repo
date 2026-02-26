@@ -1,8 +1,9 @@
 ---
 name: gnomic
-description: Gnomic provides a standardized, unambiguous grammar for microbial genetics, bridging the gap between traditional human-readable nomenclature and the precision required for genome engineering.
+description: Gnomic provides a standardized grammar and Python tool for parsing, tracking, and formatting microbial genotypes and genetic modifications. Use when user asks to parse genotype strings, track genetic changes across generations, or generate standardized genetic descriptions.
 homepage: https://github.com/biosustain/gnomic
 ---
+
 
 # gnomic
 

@@ -1,8 +1,9 @@
 ---
 name: sr2silo
-description: `sr2silo` is a specialized utility for the bioinformatics domain that bridges the gap between raw short-read alignments and the SILO data format.
+description: "sr2silo converts short-read alignments into compressed SILO-formatted NDJSON files for viral surveillance and database submission. Use when user asks to translate nucleotide reads into amino acids, process BAM files for LAPIS-SILO, or submit sequencing data to Loculus."
 homepage: https://github.com/cbg-ethz/sr2silo
 ---
+
 
 # sr2silo
 

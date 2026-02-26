@@ -1,8 +1,9 @@
 ---
 name: cwl2wdl
-description: The `cwl2wdl` tool is a Python-based utility that facilitates the migration of workflows between the two most prominent workflow description standards in bioinformatics.
+description: "cwl2wdl converts Common Workflow Language (CWL) files into Workflow Description Language (WDL) equivalents. Use when user asks to migrate workflows between standards, convert CWL to WDL, or generate WDL code from existing CWL files."
 homepage: https://github.com/adamstruck/cwl2wdl
 ---
+
 
 # cwl2wdl
 

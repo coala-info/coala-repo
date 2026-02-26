@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgspeciesrna
-description: The `hgSpeciesRna` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed to generate FASTA files of RNA sequences for a single species.
+description: This tool generates FASTA files of RNA sequences for a single species from UCSC databases. Use when user asks to isolate transcript data, generate RNA-seq reference, or prepare data for BLAST searches or mapping.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgspeciesrna
 

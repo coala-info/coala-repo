@@ -1,9 +1,9 @@
 # spapros CWL Generation Report
 
-## spapros
+## spapros_evaluation
 
 ### Tool Description
-Selection of optimal gene sets for spatial transcriptomics. (Note: The provided text appears to be a container build error log rather than help text, so no arguments could be extracted.)
+Create a selection of probesets for an h5ad file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/spapros:0.1.6--pyhdfd78af_0
@@ -12,19 +12,68 @@ Selection of optimal gene sets for spatial transcriptomics. (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/spapros/overview
-- **Total Downloads**: 592
+- **Total Downloads**: 593
 - **Last updated**: 2025-11-24
 - **GitHub**: https://github.com/theislab/spapros
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/spapros:0.1.6--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+███████ ██████   █████  ██████  ██████   ██████  ███████ 
+██      ██   ██ ██   ██ ██   ██ ██   ██ ██    ██ ██      
+███████ ██████  ███████ ██████  ██████  ██    ██ ███████ 
+     ██ ██      ██   ██ ██      ██   ██ ██    ██      ██ 
+███████ ██      ██   ██ ██      ██   ██  ██████  ███████ 
+                                                         
+
+Run spapros --help for an overview of all commands
+
+Usage: spapros evaluation [OPTIONS] DATA PROBESET MARKER_FILE
+                          [PROBESET_IDS]...
+
+  Create a selection of probesets for an h5ad file.
+
+  Args:     data: Path to the h5ad dataset file     probeset: Path to the
+  probeset file     marker_file: Path to the marker file     probeset_ids:
+  Several probeset ids     parameters: Path to a yaml file containing
+  parameters     output: Output path
+
+Options:
+  --parameters PATH
+  -o, --output TEXT
+  --help             Show this message and exit.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## spapros_selection
+
+### Tool Description
+Create a selection of probesets for an h5ad file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/spapros:0.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/theislab/spapros
+- **Package**: https://anaconda.org/channels/bioconda/packages/spapros/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+███████ ██████   █████  ██████  ██████   ██████  ███████ 
+██      ██   ██ ██   ██ ██   ██ ██   ██ ██    ██ ██      
+███████ ██████  ███████ ██████  ██████  ██    ██ ███████ 
+     ██ ██      ██   ██ ██      ██   ██ ██    ██      ██ 
+███████ ██      ██   ██ ██      ██   ██  ██████  ███████ 
+                                                         
+
+Run spapros --help for an overview of all commands
+
+Usage: spapros selection [OPTIONS] DATA
+
+  Create a selection of probesets for an h5ad file.
+
+  Args:     data: Path to the h5ad file     output: Output path
+
+Options:
+  -o, --output TEXT
+  --help             Show this message and exit.
+```
+

@@ -1,8 +1,9 @@
 ---
 name: genomescope2
-description: GenomeScope 2.0 is a mathematical modeling tool that infers global genome properties by analyzing k-mer frequencies derived from raw sequencing reads.
+description: GenomeScope 2.0 uses a polyploid-aware mixture model to infer global genome properties from k-mer frequency histograms. Use when user asks to estimate genome size, determine ploidy levels, or analyze genomic heterozygosity and repeat content.
 homepage: https://github.com/tbenavi1/genomescope2.0
 ---
+
 
 # genomescope2
 

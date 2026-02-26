@@ -1,8 +1,9 @@
 ---
 name: r-ampliconduo
-description: R package ampliconduo (documentation from project home).
+description: AmpliconDuo analyzes and filters amplicon sequencing data by comparing read frequencies between technical replicates using Fisher's exact test. Use when user asks to identify experimental artifacts, compare taxon frequencies between replicates, visualize replicate discordance, or filter OTUs based on statistical significance between duplicate samples.
 homepage: https://cran.r-project.org/web/packages/ampliconduo/index.html
 ---
+
 
 # r-ampliconduo
 

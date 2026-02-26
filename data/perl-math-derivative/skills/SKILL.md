@@ -1,8 +1,9 @@
 ---
 name: perl-math-derivative
-description: The `Math::Derivative` Perl module provides functions to calculate the first and second order derivatives of a set of numerical data.
+description: This Perl module calculates the first and second order numerical derivatives of a set of data points. Use when user asks to estimate rates of change, calculate slopes, or find second derivatives from discrete numerical data.
 homepage: http://metacpan.org/pod/Math-Derivative
 ---
+
 
 # perl-math-derivative
 

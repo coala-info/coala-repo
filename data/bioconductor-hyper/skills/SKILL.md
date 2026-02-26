@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hyper
-description: the package is available on all platforms; click for details.
+description: The hypeR package performs geneset enrichment analysis, visualization, and reporting using multiple statistical tests like hypergeometric, Kolmogorov-Smirnov, and GSEA. Use when user asks to perform enrichment analysis, visualize geneset results with dot plots or enrichment maps, and export analysis reports to Excel or RMarkdown.
 homepage: https://bioconductor.org/packages/release/bioc/html/hypeR.html
 ---
+
 
 # bioconductor-hyper
 

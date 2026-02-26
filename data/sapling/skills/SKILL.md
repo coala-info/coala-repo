@@ -1,8 +1,9 @@
 ---
 name: sapling
-description: Sapling is a Python-based computational tool designed to navigate the complex space of tumor evolution.
+description: Sapling identifies backbone trees and full phylogenies to model tumor evolution from bulk sequencing data. Use when user asks to infer evolutionary structures, generate backbone trees, or expand existing phylogenies from mutation frequency data.
 homepage: https://github.com/elkebir-group/Sapling
 ---
+
 
 # sapling
 

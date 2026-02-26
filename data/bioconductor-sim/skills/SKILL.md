@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sim
-description: the package is available on all platforms; click for details.
+description: This R package performs integrated analysis of DNA copy number and gene expression data to identify genomic associations. Use when user asks to integrate transcriptomic and genomic data, find associations between copy number and expression, or perform integrated microarray analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/SIM.html
 ---
+
 
 # bioconductor-sim
 

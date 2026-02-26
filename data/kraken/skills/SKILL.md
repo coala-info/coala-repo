@@ -1,8 +1,9 @@
 ---
 name: kraken
-description: Kraken is a high-speed taxonomic classifier that uses exact k-mer matches against a genomic database to identify the origin of DNA sequences.
+description: Kraken is a high-speed taxonomic classifier that assigns DNA sequences to taxonomic labels using exact k-mer matches against a genomic database. Use when user asks to classify metagenomic reads, build custom taxonomic databases, or generate reports on the taxonomic distribution of sequencing data.
 homepage: http://ccb.jhu.edu/software/kraken/
 ---
+
 
 # kraken
 

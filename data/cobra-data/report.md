@@ -3,26 +3,32 @@
 ## cobra-data
 
 ### Tool Description
-The provided text does not contain help information for the tool, but rather log messages from a container runtime (Apptainer/Singularity) indicating a failure to build or run the container due to lack of disk space.
+FAIL to generate CWL: cobra-data not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/cobra-data:v0.14.1-1-deb-py2_cv1
 - **Homepage**: https://opencobra.github.io/cobrapy
 - **Package**: https://anaconda.org/channels/bioconda/packages/cobra/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cobra-data/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: cobra-data not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: cobra-data not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/cobra-data:v0.14.1-1-deb-py2_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1813140834: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -3,7 +3,7 @@
 ## genclust
 
 ### Tool Description
-A tool for genetic clustering (Note: The provided help text contains only container runtime error messages and does not list specific command-line arguments).
+Performs gene clustering.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/genclust:1.0--h470a237_0
@@ -18,11 +18,10 @@ A tool for genetic clustering (Note: The provided help text contains only contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genclust:1.0--h470a237_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2079530952: no space left on device
+Error: not enough program arguments (<=3) 
+Usage : genclust <file_input> <ncluster> <ngenerations> <fileoutput> <random_init> <output_type>
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

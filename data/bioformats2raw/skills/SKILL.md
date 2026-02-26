@@ -1,8 +1,9 @@
 ---
 name: bioformats2raw
-description: bioformats2raw is a Java-based command-line utility that leverages the Bio-Formats library to read a wide array of proprietary microscopy formats and write them into a chunked, compressed, and multi-scale Zarr structure.
+description: bioformats2raw converts proprietary microscopy image formats into chunked, multi-scale OME-Zarr structures. Use when user asks to convert microscopy files to Zarr, create pyramidal image representations, or generate OME-NGFF compliant datasets.
 homepage: https://github.com/glencoesoftware/bioformats2raw
 ---
+
 
 # bioformats2raw
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bayesspace
-description: the package is available on all platforms; click for details.
+description: BayesSpace is a Bayesian statistical method for clustering and enhancing the resolution of spatial gene expression data. Use when user asks to perform spatial clustering, enhance data resolution to sub-spot levels, or impute gene expression at higher resolution.
 homepage: https://bioconductor.org/packages/release/bioc/html/BayesSpace.html
 ---
+
 
 # bioconductor-bayesspace
 

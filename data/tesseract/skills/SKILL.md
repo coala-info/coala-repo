@@ -1,8 +1,9 @@
 ---
 name: tesseract
-description: Tesseract is a versatile open-source OCR engine capable of recognizing text in over 100 languages and supporting various image formats including PNG, JPEG, and TIFF.
+description: "Tesseract is an open-source OCR engine that extracts text from images in over 100 languages. Use when user asks to extract text from images, create searchable PDFs, generate hOCR or TSV files, or perform OCR using specific page segmentation modes."
 homepage: https://github.com/tesseract-ocr/tesseract
 ---
+
 
 # tesseract
 

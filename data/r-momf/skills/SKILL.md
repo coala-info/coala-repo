@@ -1,8 +1,9 @@
 ---
 name: r-momf
-description: R package momf (documentation from project home).
+description: The momf package deconvolutes bulk RNA-seq data using a multi-omics matrix factorization framework to estimate cell type proportions. Use when user asks to deconvolute bulk RNA-seq data, estimate cell type proportions, or integrate single-cell and bulk expression data.
 homepage: https://cran.r-project.org/web/packages/momf/index.html
 ---
+
 
 # r-momf
 

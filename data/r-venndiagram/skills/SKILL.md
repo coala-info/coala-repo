@@ -1,8 +1,9 @@
 ---
 name: r-venndiagram
-description: R package venndiagram (documentation from project home).
+description: The r-venndiagram package generates high-resolution, customizable Venn and Euler diagrams for up to five sets in R. Use when user asks to create Venn diagrams, generate area-proportional Euler plots, or visualize set intersections.
 homepage: https://cran.r-project.org/web/packages/venndiagram/index.html
 ---
+
 
 # r-venndiagram
 

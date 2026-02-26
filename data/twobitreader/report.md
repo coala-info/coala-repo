@@ -3,7 +3,7 @@
 ## twobitreader
 
 ### Tool Description
-A Python module and command-line tool for reading .2bit files, commonly used for genome sequences.
+Reads and writes 2bit files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/twobitreader:3.1.7--py_0
@@ -18,15 +18,21 @@ A Python module and command-line tool for reading .2bit files, commonly used for
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 07:48:50  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/twobitreader:3.1.7--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ac85e1652f427dcc5d4a0bf391ec6f06f8f0bc35b211166471c3c20b225570bc: unpack entry: usr/local/lib/libgcc_s.so.1: unpack to regular file: short write: write /tmp/build-temp-1630100518/rootfs/usr/local/lib/libgcc_s.so.1: no space left on device
+Unable to find image 'quay.io/biocontainers/twobitreader:3.1.7--py_0' locally
+3.1.7--py_0: Pulling from biocontainers/twobitreader
+a3ed95caeb02: Already exists
+77c6c00e8b61: Already exists
+3aaade50789a: Already exists
+00cf8b9f3d2a: Already exists
+7ff999a2256f: Already exists
+d2ba336f2e44: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+ac85e1652f42: Pulling fs layer
+ac85e1652f42: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob2219227958: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

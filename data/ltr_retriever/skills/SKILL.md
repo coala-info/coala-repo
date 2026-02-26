@@ -1,8 +1,9 @@
 ---
 name: ltr_retriever
-description: `ltr_retriever` is a specialized bioinformatics pipeline designed to process raw LTR retrotransposon (LTR-RT) candidates into high-quality, non-redundant annotations.
+description: LTR_retriever is a bioinformatics pipeline that filters raw LTR retrotransposon candidates to produce high-quality annotations and genome assembly quality metrics. Use when user asks to identify intact LTR retrotransposons, generate a non-redundant LTR library, or calculate the LTR Assembly Index to assess genome assembly quality.
 homepage: https://github.com/oushujun/LTR_retriever
 ---
+
 
 # ltr_retriever
 

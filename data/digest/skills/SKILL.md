@@ -1,8 +1,9 @@
 ---
 name: digest
-description: The `digest` library is a high-performance toolset designed for the efficient sub-sampling of k-mers within DNA sequences.
+description: The digest library performs efficient sub-sampling of k-mers from DNA sequences using various minimizer schemes and rolling hash functions. Use when user asks to sub-sample genomic data, extract windowed minimizers, implement syncmer or modimizer schemes, or handle non-ACTG characters in sequence analysis.
 homepage: https://github.com/VeryAmazed/digest
 ---
+
 
 # digest
 

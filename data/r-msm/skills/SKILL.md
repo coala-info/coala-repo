@@ -1,8 +1,9 @@
 ---
 name: r-msm
-description: "Functions for fitting continuous-time Markov and hidden     Markov multi-state models to longitudinal data.  Designed for     processes observed at arbitrary times in continuous time (panel data)     but some other observation schemes are supported. Both Markov     transition rates and the hidden Markov output process can be modelled     in terms of covariates, which may be constant or piecewise-constant     in time.</p>"
+description: This tool fits and analyzes continuous-time multi-state Markov and hidden Markov models for longitudinal panel data. Use when user asks to estimate transition intensities, model transition rates with covariates, fit hidden Markov models for states observed with error, or calculate state occupancy statistics like total length of stay and mean sojourn times.
 homepage: https://cloud.r-project.org/web/packages/msm/index.html
 ---
+
 
 # r-msm
 

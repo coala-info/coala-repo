@@ -1,8 +1,9 @@
 ---
 name: r-goalie
-description: R package goalie (documentation from project home).
+description: "r-goalie provides assertive check functions for defensive R programming and S4 class validation. Use when user asks to implement robust input validation, perform S4 class validity checks, or handle custom errors in R scripts and packages."
 homepage: https://cran.r-project.org/web/packages/goalie/index.html
 ---
+
 
 # r-goalie
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clusterexperiment
-description: the package is available on all platforms; click for details.
+description: clusterExperiment provides a framework for running and comparing multiple clustering algorithms to identify robust clusters in high-throughput biological data. Use when user asks to compare clustering results, perform consensus clustering, or evaluate cluster stability in single-cell RNA-seq datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/clusterExperiment.html
 ---
+
 
 # bioconductor-clusterexperiment
 

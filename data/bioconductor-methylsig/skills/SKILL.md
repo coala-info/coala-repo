@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylsig
-description: the package is available on all platforms; click for details.
+description: methylSig identifies differentially methylated regions and sites in bisulfite sequencing data. Use when user asks to perform differential methylation analysis, identify differentially methylated regions, or detect differentially methylated sites.
 homepage: https://bioconductor.org/packages/release/bioc/html/methylSig.html
 ---
+
 
 # bioconductor-methylsig
 

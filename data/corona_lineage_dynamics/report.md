@@ -3,7 +3,7 @@
 ## corona_lineage_dynamics
 
 ### Tool Description
-A tool for analyzing corona lineage dynamics. Note: The provided help text appears to be a system error log regarding a container build failure and does not contain usage information or argument definitions.
+Generates plots for lineage dynamics based on GISAID and monthly data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/corona_lineage_dynamics:0.1.7--r44h6a1216f_0
@@ -18,9 +18,6 @@ A tool for analyzing corona lineage dynamics. Note: The provided help text appea
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/corona_lineage_dynamics:0.1.7--r44h6a1216f_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/b952f010c236a39f469c6943cfc9099bc681db3866becb8c911a3619138a9aa12291837251: no space left on device
+Usage: /usr/local/share/corona_lineage_dynamics/SDPlots_lineages_local.sh <gisaid_file> <months_file> <output_folder> <threshold>
 ```
 

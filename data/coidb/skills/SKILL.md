@@ -1,8 +1,9 @@
 ---
 name: coidb
-description: The `coidb` tool is a specialized pipeline designed to bridge the gap between public sequence repositories and metabarcoding bioinformatics workflows.
+description: The coidb tool automates the retrieval, taxonomic reconciliation, and formatting of BOLD sequence data for metabarcoding workflows. Use when user asks to generate reference databases, retrieve COI sequences from GBIF, or format FASTA files for SINTAX and DADA2.
 homepage: https://github.com/johnne/coidb
 ---
+
 
 # coidb
 

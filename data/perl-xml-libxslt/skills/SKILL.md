@@ -1,8 +1,9 @@
 ---
 name: perl-xml-libxslt
-description: The `perl-xml-libxslt` skill provides a procedural interface to the GNOME libxslt engine, known for being highly compliant and significantly faster than many alternative XSLT processors.
+description: This tool provides a Perl interface to the GNOME libxslt engine for performing fast and standards-compliant XSLT transformations. Use when user asks to transform XML documents, apply XSLT stylesheets, or register custom Perl functions for use within XSLT logic.
 homepage: https://metacpan.org/pod/XML::LibXSLT
 ---
+
 
 # perl-xml-libxslt
 

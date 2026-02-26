@@ -1,11 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: suppa_suppa.py
+baseCommand: SUPPA
 label: suppa_suppa.py
-doc: "The provided text does not contain help information or usage instructions; it
-  is a log of a fatal error during a container build/fetch process.\n\nTool homepage:
-  https://github.com/comprna/SUPPA"
-inputs: []
+doc: "SUPPA allows you to generate all the possible Alternative Splicing events from
+  an annotation file, calculate the PSI values per event, calculate differential splicing
+  across multiple conditions with replicates, and cluster events across conditions\n\
+  \nTool homepage: https://github.com/comprna/SUPPA"
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'Subcommand to run. Available subcommands: generateEvents, psiPerEvent, psiPerIsoform,
+      diffSplice, clusterEvents, joinFiles'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

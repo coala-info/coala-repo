@@ -1,8 +1,9 @@
 ---
 name: perl-tie-toobject
-description: The `Tie::ToObject` module provides a mechanism to associate a Perl variable with an object that has already been constructed.
+description: This tool associates a Perl variable with an existing object to delegate variable operations to that object's methods. Use when user asks to tie a scalar, hash, or array to a pre-constructed object, delegate variable access to an existing reference, or maintain object state across multiple tied variables.
 homepage: http://metacpan.org/pod/Tie::ToObject
 ---
+
 
 # perl-tie-toobject
 

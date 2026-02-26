@@ -1,8 +1,9 @@
 ---
 name: harmonypy
-description: harmonypy is the Python implementation of the Harmony algorithm, a robust method for integrating single-cell data.
+description: harmonypy integrates single-cell data by projecting cells into a shared low-dimensional space and iteratively correcting for batch effects. Use when user asks to integrate single-cell datasets, perform batch correction on PCA embeddings, or merge overlapping cell populations from different batches.
 homepage: https://github.com/slowkow/harmonypy
 ---
+
 
 # harmonypy
 

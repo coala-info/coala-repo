@@ -1,8 +1,9 @@
 ---
 name: tower-cli
-description: The `tower-cli` (invoked as `tw`) is the primary interface for managing Seqera Platform resources from the terminal.
+description: `tower-cli` is the command-line interface for managing Seqera Platform resources and Nextflow pipelines. Use when user asks to launch a pipeline, manage compute environments, administer workspaces, or configure the CLI.
 homepage: https://github.com/seqeralabs/tower-cli
 ---
+
 
 # tower-cli
 

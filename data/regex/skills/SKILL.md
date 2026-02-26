@@ -1,8 +1,9 @@
 ---
 name: regex
-description: Regular expressions (regex) are a specialized syntax used to identify specific patterns within text.
+description: This tool identifies and manipulates specific patterns within text using a specialized syntax. Use when user asks to build or interpret patterns, clean data, validate structural formats like emails, or perform automated text editing.
 homepage: https://github.com/ziishaned/learn-regex
 ---
+
 
 # regex
 

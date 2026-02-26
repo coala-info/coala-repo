@@ -1,8 +1,9 @@
 ---
 name: art_modern-openmpi
-description: art_modern is a high-performance re-implementation of the widely used ART read simulator.
+description: art_modern-openmpi is a high-performance read simulator that uses MPI support to generate synthetic sequencing data across distributed computing environments. Use when user asks to simulate Illumina sequencing reads, perform large-scale whole genome or transcriptome simulations, or generate synthetic FASTQ files using specific error profiles.
 homepage: https://github.com/YU-Zhejian/art_modern
 ---
+
 
 # art_modern-openmpi
 

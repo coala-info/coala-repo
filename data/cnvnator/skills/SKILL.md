@@ -1,8 +1,9 @@
 ---
 name: cnvnator
-description: CNVnator is a powerful tool for identifying structural variants by analyzing the depth of coverage (read depth) across the genome.
+description: CNVnator identifies structural variants by analyzing read depth across the genome using a mean-shift approach. Use when user asks to extract read mapping, generate histograms, calculate statistics, partition signals, or call copy number variants.
 homepage: https://github.com/abyzovlab/CNVnator
 ---
+
 
 # cnvnator
 

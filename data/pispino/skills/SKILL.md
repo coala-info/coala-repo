@@ -1,8 +1,9 @@
 ---
 name: pispino
-description: PISPINO (PIpits SPIN-Off tools) is a specialized bioinformatics toolkit designed to streamline the initial handling of demultiplexed Illumina FASTQ files.
+description: PISPINO automates the mapping, quality filtering, and merging of demultiplexed Illumina FASTQ files for downstream bioinformatics analysis. Use when user asks to create sample-to-file mappings, perform quality control, or join paired-end reads.
 homepage: https://github.com/hsgweon/pispino
 ---
+
 
 # pispino
 

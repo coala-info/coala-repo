@@ -1,8 +1,9 @@
 ---
 name: r-png
-description: This package provides an easy and simple way to read, write and display bitmap images stored in the PNG format. It can read and write both files and in-memory raw vectors.</p>
+description: The r-png package provides a streamlined interface for reading and writing PNG images in R by converting between files and numeric arrays. Use when user asks to read PNG files into R arrays, write matrices or arrays to PNG format, extract image metadata, or handle transparency and alpha channels in image data.
 homepage: https://cloud.r-project.org/web/packages/png/index.html
 ---
+
 
 # r-png
 

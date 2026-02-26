@@ -1,12 +1,12 @@
 # fibertools-rs CWL Generation Report
 
-## fibertools-rs
+## fibertools-rs_ft
 
 ### Tool Description
-A tool for analyzing fiber-seq data (Note: The provided help text contains only container runtime error messages and no CLI usage information).
+Fiber-seq toolkit in rust
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fibertools-rs:0.8.1--h3b373d1_0
+- **Docker Image**: quay.io/biocontainers/fibertools-rs:0.8.2--h3b373d1_0
 - **Homepage**: https://github.com/mrvollger/fibertools-rs
 - **Package**: https://anaconda.org/channels/bioconda/packages/fibertools-rs/overview
 - **Validation**: PASS
@@ -18,29 +18,44 @@ A tool for analyzing fiber-seq data (Note: The provided help text contains only 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fibertools-rs:0.8.1--h3b373d1_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1516772633: no space left on device
-```
+Fiber-seq toolkit in rust
 
+Usage: ft [OPTIONS] <COMMAND>
 
-## Metadata
-- **Skill**: generated
+Commands:
+  predict-m6a       Predict m6A positions using HiFi kinetics data and encode the results in the MM
+                    and ML bam tags. Also adds nucleosome (nl, ns) and MTase sensitive patches (al,
+                    as) [aliases: m6A, m6a]
+  add-nucleosomes   Add nucleosomes to a bam file with m6a predictions
+  fire              Add FIREs (Fiber-seq Inferred Regulatory Elements) to a bam file with m6a
+                    predictions
+  extract           Extract fiberseq data into plain text files [aliases: ex, e]
+  center            This command centers fiberseq data around given reference positions. This is
+                    useful for making aggregate m6A and CpG observations, as well as visualization
+                    of SVs [aliases: c, ct]
+  footprint         Infer footprints from fiberseq data
+  qc                Collect QC metrics from a fiberseq bam file
+  track-decorators  Make decorated bed files for fiberseq data
+  pileup            Make a pileup track of Fiber-seq features from a FIRE bam
+  clear-kinetics    Remove HiFi kinetics tags from the input bam file
+  strip-basemods    Strip out select base modifications
+  ddda-to-m6a       Convert a DddA BAM file to pseudo m6A BAM file
+  fiber-hmm         Apply FiberHMM to a bam file
+  validate          Validate a Fiber-seq BAM file for m6A, nucleosome, and optionally FIRE calls
+  pg-inject         Create a mock BAM file from a reference FASTA with perfectly aligned sequences
+  pg-lift           Lift annotations through a pangenome graph from source to target coordinates
+  pg-pansn          Add or strip panSN-spec prefixes from BAM contig names
+  help              Print this message or the help of the given subcommand(s)
 
-## fibertools-rs_ft
+Options:
+  -h, --help     Print help
+  -V, --version  Print version
 
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a system error log related to a container runtime (Singularity/Apptainer) failure due to insufficient disk space.
+Global-Options:
+  -t, --threads <THREADS>  Threads [default: 8]
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fibertools-rs:0.8.1--h3b373d1_0
-- **Homepage**: https://github.com/mrvollger/fibertools-rs
-- **Package**: https://anaconda.org/channels/bioconda/packages/fibertools-rs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fibertools-rs:0.8.1--h3b373d1_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1279335781: no space left on device
+Debug-Options:
+  -v, --verbose...  Logging level [-v: Info, -vv: Debug, -vvv: Trace]
+      --quiet       Turn off all logging
 ```
 

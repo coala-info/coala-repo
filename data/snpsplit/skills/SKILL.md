@@ -1,8 +1,9 @@
 ---
 name: snpsplit
-description: SNPsplit is a specialized tool for allele-specific bioinformatics pipelines.
+description: "SNPsplit sorts aligned reads into allele-specific categories based on known SNP positions. Use when user asks to categorize reads into genome-specific groups, perform allele-specific sorting, or prepare N-masked reference genomes for bioinformatics pipelines."
 homepage: https://www.bioinformatics.babraham.ac.uk/projects/SNPsplit/
 ---
+
 
 # snpsplit
 

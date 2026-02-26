@@ -1,8 +1,9 @@
 ---
 name: bioconda-utils
-description: This skill provides procedural knowledge for using `bioconda-utils`, the core toolkit used by the Bioconda project to maintain its massive repository of bioinformatics packages.
+description: Bioconda-utils is a toolkit for linting, building, and managing bioinformatics package recipes within the Bioconda ecosystem. Use when user asks to lint recipes for errors, build packages locally, update dependency pinnings, or check for new upstream software versions.
 homepage: http://bioconda.github.io/build-system.html
 ---
+
 
 # bioconda-utils
 

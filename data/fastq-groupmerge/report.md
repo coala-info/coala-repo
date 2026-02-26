@@ -3,26 +3,32 @@
 ## fastq-groupmerge
 
 ### Tool Description
-A tool for merging groups of FASTQ files (Note: The provided help text contains only system error messages and no usage information).
+FAIL to generate CWL: fastq-groupmerge not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastq-groupmerge:1.0.2--pyhdfd78af_0
 - **Homepage**: https://github.com/SantaMcCloud/fastq-groupmerge
 - **Package**: https://anaconda.org/channels/bioconda/packages/fastq-groupmerge/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastq-groupmerge/overview
 - **Total Downloads**: 93
 - **Last updated**: 2025-11-12
 - **GitHub**: https://github.com/SantaMcCloud/fastq-groupmerge
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: fastq-groupmerge not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: fastq-groupmerge not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-groupmerge:1.0.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3741534579: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

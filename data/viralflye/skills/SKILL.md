@@ -1,8 +1,9 @@
 ---
 name: viralflye
-description: viralFlye is a specialized bioinformatics pipeline designed to extract and polish viral sequences from complex metagenomic assemblies.
+description: viralFlye extracts, polishes, and categorizes viral sequences from complex metagenomic assemblies and can match them to microbial hosts. Use when user asks to 'recover viral genomes', 'identify circular or linear viruses', or 'predict viral hosts'.
 homepage: https://github.com/Dmitry-Antipov/viralFlye/
 ---
+
 
 # viralflye
 

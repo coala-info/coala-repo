@@ -1,8 +1,9 @@
 ---
 name: contigtax
-description: contigtax is a bioinformatics tool designed to assign taxonomic labels to metagenomic contigs.
+description: contigtax assigns taxonomic labels to metagenomic contigs by querying sequences against a protein database using rank-specific thresholds. Use when user asks to assign taxonomy to metagenomic sequences, search contigs against protein databases, or identify the taxonomic origin of metatranscriptomic data.
 homepage: https://github.com/NBISweden/contigtax
 ---
+
 
 # contigtax
 

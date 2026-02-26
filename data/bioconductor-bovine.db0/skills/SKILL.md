@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bovine.db0
-description: the package is available on all platforms; click for details.
+description: This package provides the base SQLite databases for Bos taurus annotation data. Use when user asks to build custom bovine annotation packages, create chip-specific annotation objects, or provide raw genomic mappings for sqlForge.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bovine.db0.html
 ---
+
 
 # bioconductor-bovine.db0
 

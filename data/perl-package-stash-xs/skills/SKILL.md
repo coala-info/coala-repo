@@ -1,8 +1,9 @@
 ---
 name: perl-package-stash-xs
-description: This skill provides guidance on using the XS (C-based) implementation of the Package::Stash API.
+description: This tool provides a high-performance C-based interface for manipulating Perl package symbol tables. Use when user asks to manage package variables, add or remove subroutines dynamically, or perform meta-programming tasks within a specific namespace.
 homepage: http://metacpan.org/release/Package-Stash-XS
 ---
+
 
 # perl-package-stash-xs
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowsorted.cordbloodcombined.450k
-description: the package is available on all platforms; click for details.
+description: This package provides a reference dataset for estimating cell type proportions in umbilical cord blood DNA methylation studies using 450K or EPIC technologies. Use when user asks to estimate cord blood cell type proportions, access IDOL optimized CpG probes, or load reference methylation data for cord blood deconvolution.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBloodCombined.450k.html
 ---
+
 
 # bioconductor-flowsorted.cordbloodcombined.450k
 

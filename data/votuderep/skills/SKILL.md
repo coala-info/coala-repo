@@ -1,8 +1,9 @@
 ---
 name: votuderep
-description: `votuderep` is a specialized toolkit designed for the management and refinement of viral Operational Taxonomic Units (vOTUs).
+description: votuderep manages and refines viral Operational Taxonomic Units by dereplicating sequences and filtering them based on quality. Use when user asks to dereplicate viral sequences, filter viral contigs by quality, prepare sample sheets for Nextflow, or split CoverM tables.
 homepage: https://github.com/quadram-institute-bioscience/votuderep
 ---
+
 
 # votuderep
 

@@ -1,8 +1,9 @@
 ---
 name: dxua
-description: The `dxua` (DNAnexus Upload Agent) is a dedicated command-line utility designed for robust data ingestion into the DNAnexus ecosystem.
+description: The dxua tool is a command-line utility designed for robust, multi-threaded data ingestion and directory synchronization into the DNAnexus platform. Use when user asks to upload files or directories, resume interrupted transfers, assign metadata to uploads, or configure parallelized data streaming.
 homepage: https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch/upload-agent
 ---
+
 
 # dxua
 

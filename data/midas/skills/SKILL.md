@@ -1,8 +1,9 @@
 ---
 name: midas
-description: MIDAS (Metagenomic Intra-Species Diversity Analysis System) is a specialized pipeline for high-resolution metagenomics.
+description: MIDAS is a pipeline for quantifying bacterial species abundance and strain-level variation from metagenomic sequencing data. Use when user asks to estimate species abundance, predict pan-genome gene content, or call single nucleotide polymorphisms across metagenomic samples.
 homepage: https://github.com/snayfach/MIDAS
 ---
+
 
 # midas
 

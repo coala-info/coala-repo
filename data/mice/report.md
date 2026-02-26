@@ -3,7 +3,7 @@
 ## mice
 
 ### Tool Description
-The provided text does not contain help information for the tool 'mice'. It contains error messages from a container runtime (Apptainer/Singularity) indicating a failure to pull or build the container image due to insufficient disk space.
+Parse paths from a GFF/GFA file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mice:0.1.2--h4349ce8_0
@@ -12,17 +12,45 @@ The provided text does not contain help information for the tool 'mice'. It cont
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mice/overview
-- **Total Downloads**: 385
+- **Total Downloads**: 395
 - **Last updated**: 2025-12-01
 - **GitHub**: https://github.com/gi-bielefeld/mice
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mice:0.1.2--h4349ce8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4088048149: no space left on device
+Parse paths from a GFF/GFA file
+
+Usage: mice [OPTIONS] <GRAPH_INPUT>
+
+Arguments:
+  <GRAPH_INPUT>
+          Input graph file
+
+Options:
+  -o, --out-dir <OUT_DIR>
+          Output directory
+          
+          [default: mice_output]
+
+  -r, --remove-dup <REMOVE_DUPLICATES>
+          Remove an element if it occurs more than x times in any genome. Use 0 to disable removal
+          
+          [default: 0]
+
+  -m, --min-size <MIN_SIZE>
+          Minimum element length (in bp) to keep elements that were not merged after the first compression.
+          
+          Compression is first performed. Elements that remain unmerged and are shorter than this length are then removed, and compression is performed again.
+          
+          [default: 0]
+
+  -s, --no-group-by
+          If set every path is treated as its own genome
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

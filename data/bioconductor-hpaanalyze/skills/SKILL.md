@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hpaanalyze
-description: the package is available on all platforms; click for details.
+description: The bioconductor-hpaanalyze package retrieves and analyzes proteomics and transcriptomics data from the Human Protein Atlas. Use when user asks to download HPA datasets, subset expression data by gene or tissue, visualize protein expression in tissues and cancers, or retrieve detailed XML metadata and histological images.
 homepage: https://bioconductor.org/packages/release/bioc/html/HPAanalyze.html
 ---
+
 
 # bioconductor-hpaanalyze
 

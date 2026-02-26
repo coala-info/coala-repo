@@ -1,8 +1,9 @@
 ---
 name: saffrontree
-description: SaffronTree is a specialized bioinformatics tool for constructing pseudo-phylogenomic trees directly from raw sequencing data or assembled sequences.
+description: SaffronTree constructs pseudo-phylogenomic trees from raw sequencing data or assemblies using k-mer analysis and neighbor-joining algorithms. Use when user asks to build a phylogenetic tree without a reference genome, perform rapid outbreak tracking from raw reads, or generate a Newick format tree from k-mer distances.
 homepage: https://github.com/sanger-pathogens/saffrontree
 ---
+
 
 # saffrontree
 

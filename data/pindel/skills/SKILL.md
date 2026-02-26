@@ -1,8 +1,9 @@
 ---
 name: pindel
-description: Pindel is a specialized bioinformatic tool for the high-resolution detection of structural variants.
+description: Pindel detects structural variants and precisely pinpoints breakpoints in genomic data using a pattern growth algorithm. Use when user asks to detect deletions, identify small insertions, or characterize structural variants from paired-end reads.
 homepage: http://gmt.genome.wustl.edu/packages/pindel/index.html
 ---
+
 
 # pindel
 

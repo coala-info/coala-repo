@@ -2,9 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: malder
 label: malder
-doc: "MALDER (Multiple ALDER) is a tool for dating multiple admixture events using
-  linkage disequilibrium.\n\nTool homepage: https://github.com/joepickrell/malder"
-inputs: []
+doc: "ALDER computes weighted LD decay curves, performs curve-fitting to infer admixture
+  dates, and uses the results to test for admixture.\n\nTool homepage: https://github.com/joepickrell/malder"
+inputs:
+  - id: parameter_file
+    type: File
+    doc: parameter file
+    inputBinding:
+      position: 101
+      prefix: -p
 outputs:
   - id: stdout
     type: stdout

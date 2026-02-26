@@ -1,8 +1,11 @@
 ---
 name: tiddit
-description: TIDDIT is a structural variant caller designed to identify large-scale genomic alterations by analyzing discordant read pairs and supplementary (split-read) alignments.
+description: TIDDIT is a structural variant caller that also calculates genomic coverage. Use when user asks to detect structural variants, identify chromosomal rearrangements, calculate genomic coverage, or identify copy number variations.
 homepage: https://github.com/SciLifeLab/TIDDIT
 ---
+
+
+
 
 # tiddit
 

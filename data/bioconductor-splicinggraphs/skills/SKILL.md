@@ -1,8 +1,9 @@
 ---
 name: bioconductor-splicinggraphs
-description: the package is available on all platforms; click for details.
+description: SplicingGraphs creates and manipulates splicing graphs from gene models and RNA-seq data to analyze alternative splicing. Use when user asks to construct splicing graphs, identify alternative splicing patterns, or visualize transcript structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/SplicingGraphs.html
 ---
+
 
 # bioconductor-splicinggraphs
 

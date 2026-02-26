@@ -1,8 +1,9 @@
 ---
 name: r-archr
-description: R package archr (documentation from project home).
+description: "ArchR is a high-performance R package for the comprehensive analysis of single-cell ATAC-seq data. Use when user asks to create Arrow files, perform doublet inference, conduct dimensionality reduction using Iterative LSI, or visualize single-cell chromatin accessibility data."
 homepage: https://cran.r-project.org/web/packages/archr/index.html
 ---
+
 
 # r-archr
 

@@ -1,8 +1,9 @@
 ---
 name: plinkio
-description: plinkio is a lightweight library focused on the I/O operations of PLINK genotype datasets.
+description: plinkio is a lightweight library for high-performance reading and writing of PLINK binary genotype datasets. Use when user asks to parse BED files, extract genotype metadata, iterate through SNP rows, or generate new PLINK-formatted datasets.
 homepage: https://github.com/mfranberg/libplinkio
 ---
+
 
 # plinkio
 

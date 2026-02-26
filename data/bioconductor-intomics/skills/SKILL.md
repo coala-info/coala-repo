@@ -1,8 +1,9 @@
 ---
 name: bioconductor-intomics
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: bioconductor-intomics infers regulatory networks by integrating multi-omics data and biological prior knowledge using Bayesian networks and MCMC. Use when user asks to integrate gene expression, DNA methylation, and copy number variation data, infer regulatory relationships, or estimate empirical biological knowledge.
 homepage: https://bioconductor.org/packages/3.17/bioc/html/IntOMICS.html
 ---
+
 
 # bioconductor-intomics
 

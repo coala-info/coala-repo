@@ -1,8 +1,9 @@
 ---
 name: query_phenomizer
-description: The `query_phenomizer` tool is a specialized command-line interface for interacting with the Phenomizer service.
+description: The query_phenomizer tool identifies and ranks syndromes or diseases associated with a provided set of Human Phenotype Ontology (HPO) terms. Use when user asks to search for diseases based on phenotypes, validate HPO identifiers, or perform clinical diagnostic queries.
 homepage: https://www.github.com/moonso/query_phenomizer
 ---
+
 
 # query_phenomizer
 

@@ -1,8 +1,9 @@
 ---
 name: viennarna
-description: The ViennaRNA Package is the standard suite for computational RNA secondary structure analysis.
+description: The ViennaRNA Package predicts RNA secondary structures using thermodynamic models. Use when user asks to 'predict RNA secondary structures', 'generate suboptimal structures', 'predict consensus structures for alignments', 'predict RNA-RNA interactions', or 'design RNA sequences'.
 homepage: http://www.tbi.univie.ac.at/RNA/
 ---
+
 
 # viennarna
 

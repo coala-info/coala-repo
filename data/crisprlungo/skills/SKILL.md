@@ -1,8 +1,9 @@
 ---
 name: crisprlungo
-description: CRISPRlungo is a specialized bioinformatics pipeline for processing single-anchor amplicon sequencing data to quantify genome editing efficiency.
+description: CRISPRlungo is a bioinformatics pipeline for quantifying genome editing efficiency from single-anchor amplicon sequencing data, particularly long-read data. Use when user asks to quantify genome editing efficiency, process Nanopore amplicon reads, perform background error filtering with a control sample, or analyze UMI-tagged CRISPR sequencing data.
 homepage: https://github.com/pinellolab/CRISPRlungo
 ---
+
 
 # crisprlungo
 

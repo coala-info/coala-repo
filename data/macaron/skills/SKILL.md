@@ -1,8 +1,9 @@
 ---
 name: macaron
-description: MACARON (Multi-bAse Codon-Associated variant Re-annotatiON) is a specialized genomic framework designed to solve the "phased variant" problem in functional annotation.
+description: "MACARON identifies and re-annotates phased variants within the same codon to provide accurate protein-level effect predictions. Use when user asks to re-annotate phased variants, correct amino acid change predictions for adjacent SNVs, or integrate GATK and SnpEff for functional genomic annotation."
 homepage: https://github.com/waqasuddinkhan/MACARON-GenMed-LabEx
 ---
+
 
 # macaron
 

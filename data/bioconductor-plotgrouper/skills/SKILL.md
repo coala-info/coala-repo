@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plotgrouper
-description: the package is available on all platforms; click for details.
+description: plotGrouper is a Bioconductor package used to group data, calculate summary statistics, and create graphical representations. Use when user asks to organize data into groups, calculate cross-replicate statistics, or generate plots from tidy data.
 homepage: https://bioconductor.org/packages/release/bioc/html/plotGrouper.html
 ---
+
 
 # bioconductor-plotgrouper
 

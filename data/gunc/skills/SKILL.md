@@ -1,8 +1,9 @@
 ---
 name: gunc
-description: GUNC (Genome Unclutterer) is a specialized tool for quality control of prokaryotic genomes.
+description: GUNC performs quality control of prokaryotic genomes by evaluating taxonomic consistency to detect chimeras and contamination. Use when user asks to assess genome quality, calculate GUNC scores, or identify taxonomic entropy in metagenome-assembled genomes.
 homepage: https://github.com/grp-bork/gunc
 ---
+
 
 # gunc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vitisviniferacdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File for the Vitis vinifera microarray. Use when user asks to analyze grapevine microarray data, map probes to genes for Vitis vinifera, or process Affymetrix grapevine chip data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/vitisviniferacdf.html
 ---
+
 
 # bioconductor-vitisviniferacdf
 

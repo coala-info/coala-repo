@@ -1,8 +1,9 @@
 ---
 name: bioconductor-attract
-description: the package is available on all platforms; click for details.
+description: This tool identifies gene expression modules and attractor states that drive cellular phenotypes by analyzing differential expression and pathway-level synexpression groups. Use when user asks to identify core pathway modules that discriminate between cell types, find synexpression groups within pathways, or discover correlated gene partners across the genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/attract.html
 ---
+
 
 # bioconductor-attract
 

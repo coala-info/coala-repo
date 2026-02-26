@@ -1,8 +1,9 @@
 ---
 name: smafa
-description: smafa (Small Aligner for Aligned sequences) is a specialized tool written in Rust that provides efficient mechanisms for handling biological sequences that have already been aligned.
+description: "smafa is a tool for efficiently indexing, querying, and clustering biological sequences of identical length. Use when user asks to create a searchable sequence database, query sequences against a reference, or cluster sequences into representative centroids."
 homepage: https://github.com/wwood/smafa
 ---
+
 
 # smafa
 

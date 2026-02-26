@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mdgsa
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package performs multidimensional gene set analysis to identify enriched functional categories across multiple genomic contrasts. Use when user asks to perform multidimensional gene set enrichment analysis, analyze functional enrichment across multiple experiments, or identify common biological themes in multi-contrast data.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/mdgsa.html
 ---
+
 
 # bioconductor-mdgsa
 

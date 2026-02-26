@@ -1,8 +1,9 @@
 ---
 name: im2deep
-description: im2deep is a specialized deep learning framework for predicting the Collisional Cross-Section (CCS) of peptides.
+description: im2deep is a deep learning framework for predicting the collisional cross-section of peptides, including modified and multiconformational ions. Use when user asks to predict peptide CCS values, perform calibrated CCS predictions, or generate multi-output predictions for multiconformational peptide ions.
 homepage: https://github.com/compomics/im2deep
 ---
+
 
 # im2deep
 

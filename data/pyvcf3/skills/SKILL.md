@@ -1,8 +1,9 @@
 ---
 name: pyvcf3
-description: pyvcf3 is a Python 3 library designed to handle VCF v4.0 and v4.1 files.
+description: "pyvcf3 is a Python library for reading, parsing, and writing VCF v4.0 and v4.1 files. Use when user asks to parse genomic variant records, extract sample genotypes, filter variants by type, or perform region-based queries on indexed VCF files."
 homepage: https://github.com/dridk/PyVCF3
 ---
+
 
 # pyvcf3
 

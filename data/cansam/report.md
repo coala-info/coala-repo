@@ -1,9 +1,9 @@
 # cansam CWL Generation Report
 
-## cansam
+## cansam_samcat
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'cansam'. It is a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space.
+Concatenate SAM/BAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cansam:21d64bb--h4ef8376_2
@@ -18,121 +18,116 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 11:47:13  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cansam:21d64bb--h4ef8376_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:acf28bd51ae16fca0d12feb82427d9c7b30ed4167156ed730e41c3799244d718: unpack entry: usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: unpack to regular file: short write: write /tmp/build-temp-3996916993/rootfs/usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: no space left on device
+Usage: samcat [-bnv] [-f FLAGS] [-o FILE] [-O FORMAT] [FILE]...
+Options:
+  -b         Write output in BAM format (equivalent to -Obam)
+  -f FLAGS   Display only alignment records matching FLAGS
+  -n         Suppress '@' headers in the output
+  -o FILE    Write to FILE rather than standard output
+  -O FORMAT  Write output in the specified FORMAT
+  -v         Display file information and statistics
+Output formats:
+  bam        Compressed binary BAM format
+  hex        SAM format, with flags displayed in hexadecimal
+  text       SAM format, with flags displayed as readable strings
+  ubam       Uncompressed binary BAM format
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## cansam_samcat
-
-### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or extract the container image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cansam:21d64bb--h4ef8376_2
-- **Homepage**: https://github.com/jmarshall/cansam
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 11:48:20  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cansam:21d64bb--h4ef8376_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:acf28bd51ae16fca0d12feb82427d9c7b30ed4167156ed730e41c3799244d718: unpack entry: usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: unpack to regular file: short write: write /tmp/build-temp-3153383169/rootfs/usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: no space left on device
-```
 
 ## cansam_samhead
 
 ### Tool Description
-The provided text does not contain help information for the tool. It consists of system logs and a fatal error indicating a failure to build a container image due to lack of disk space. No arguments or descriptions could be extracted from the input.
+N/A
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cansam:21d64bb--h4ef8376_2
 - **Homepage**: https://github.com/jmarshall/cansam
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 11:48:41  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cansam:21d64bb--h4ef8376_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:acf28bd51ae16fca0d12feb82427d9c7b30ed4167156ed730e41c3799244d718: unpack entry: usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: unpack to regular file: short write: write /tmp/build-temp-1406439390/rootfs/usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: no space left on device
+Usage: samhead [FILE]...
 ```
+
 
 ## cansam_samsort
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a system error log indicating a failure to build or extract a container image due to insufficient disk space.
+Sort SAM/BAM/CRAM files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cansam:21d64bb--h4ef8376_2
 - **Homepage**: https://github.com/jmarshall/cansam
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 11:49:00  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cansam:21d64bb--h4ef8376_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:acf28bd51ae16fca0d12feb82427d9c7b30ed4167156ed730e41c3799244d718: unpack entry: usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: unpack to regular file: short write: write /tmp/build-temp-4036629491/rootfs/usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: no space left on device
+Usage: samsort [-bcm] [-f CMP] [-o FILE] [-S SIZE] [-T DIR] [-z NUM] [FILE]...
+Options:
+  -b         Write output in BAM format
+  -c         Check whether input is already sorted
+  -f CMP     Compare records according to comparison function CMP [location]
+  -m         Merge already-sorted files
+  -o FILE    Write output to FILE rather than standard output
+  -S SIZE    Use SIZE amount of in-memory working space
+  -T DIR     Write temporary files to DIR [$TMPDIR or /tmp]
+  -z NUMBER  Compress output at level NUMBER [SAM: no compression; BAM: 6]
+Comparison functions:
+  location   Order by chromosome then position (and then read name)
+  qname      Order by read (query) name then first/second ordering flags
 ```
+
 
 ## cansam_samgroupbyname
 
 ### Tool Description
-The provided text does not contain help information for the tool. It consists of system logs indicating a failure to build or extract a container image due to insufficient disk space.
+Group SAM/BAM records by read name.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cansam:21d64bb--h4ef8376_2
 - **Homepage**: https://github.com/jmarshall/cansam
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 11:49:17  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cansam:21d64bb--h4ef8376_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:acf28bd51ae16fca0d12feb82427d9c7b30ed4167156ed730e41c3799244d718: unpack entry: usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: unpack to regular file: short write: write /tmp/build-temp-1886539830/rootfs/usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: no space left on device
+Usage: samgroupbyname [-bpv] [-o FILE] [FILE]
+Options:
+  -b       Write output in BAM format
+  -o FILE  Write to FILE rather than standard output
+  -p       Emit pairs only, discarding any leftover singleton reads
+  -v       Display file information and statistics
 ```
+
 
 ## cansam_samsplit
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space.
+Split a SAM/BAM file into multiple files based on read group information.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cansam:21d64bb--h4ef8376_2
 - **Homepage**: https://github.com/jmarshall/cansam
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 11:49:33  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cansam:21d64bb--h4ef8376_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:acf28bd51ae16fca0d12feb82427d9c7b30ed4167156ed730e41c3799244d718: unpack entry: usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: unpack to regular file: short write: write /tmp/build-temp-3152286631/rootfs/usr/local/include/boost/atomic/detail/extra_ops_msvc_x86.hpp: no space left on device
+Usage: samsplit [OPTION]... FILE [TEMPLATE]
+Options:
+  -b        Write output files in BAM format
+  -f FLAGS  Emit only alignment records matching FLAGS
+  -o FILE   Write all selected records to FILE, in addition to splitting
+  -q NUM    Discard reads with mapping quality less than NUM
+  -z NUM    Compress output files at level NUM (default for BAM; none for SAM)
+Template and output file expansions:
+  %XY       Read group header's XY field
+  %#        Index of the read group (within the @RG headers, from 1)
+  %*        Input FILE basename, without directory part or extension
+  %.        "sam" or "bam", as appropriate for the chosen output format
+  %%        A single "%" character
+The output TEMPLATE defaults to "%*-%ID.%."
 ```
 

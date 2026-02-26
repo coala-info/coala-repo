@@ -1,8 +1,9 @@
 ---
 name: bioconductor-panomir
-description: the package is available on all platforms; click for details.
+description: PanomiR identifies microRNAs that regulate biological pathways by integrating transcriptomic data with miRNA-mRNA interaction networks. Use when user asks to identify miRNAs targeting specific pathways, analyze miRNA-mRNA interaction networks, or detect key miRNA regulators of gene sets.
 homepage: https://bioconductor.org/packages/release/bioc/html/PanomiR.html
 ---
+
 
 # bioconductor-panomir
 

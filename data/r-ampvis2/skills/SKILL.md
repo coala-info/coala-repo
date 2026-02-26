@@ -1,8 +1,9 @@
 ---
 name: r-ampvis2
-description: R package ampvis2 (documentation from project home).
+description: ampvis2 is an R package for the visualization and analysis of microbial community amplicon data. Use when user asks to load microbiome datasets, generate taxonomic heatmaps, perform ordination analysis, or calculate alpha diversity.
 homepage: https://cran.r-project.org/web/packages/ampvis2/index.html
 ---
+
 
 # r-ampvis2
 

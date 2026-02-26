@@ -1,8 +1,9 @@
 ---
 name: perl-devel-checkos
-description: The `perl-devel-checkos` tool provides a standardized way to determine the operating system environment.
+description: This tool provides a standardized way to identify and verify the operating system environment using a hierarchical platform naming system. Use when user asks to verify OS requirements, check for POSIX compatibility, or list supported platform identifiers.
 homepage: http://metacpan.org/pod/Devel::CheckOS
 ---
+
 
 # perl-devel-checkos
 

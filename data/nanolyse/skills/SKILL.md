@@ -1,8 +1,9 @@
 ---
 name: nanolyse
-description: NanoLyse is a tool designed to decontaminate Nanopore sequencing datasets by removing reads that align to the lambda phage genome, a common internal control.
+description: NanoLyse removes contaminant reads from Nanopore sequencing datasets by aligning them against a reference genome such as lambda phage. Use when user asks to decontaminate FASTQ data, remove lambda phage control reads, or filter reads against a custom contaminant reference.
 homepage: https://github.com/wdecoster/NanoLyse
 ---
+
 
 # nanolyse
 

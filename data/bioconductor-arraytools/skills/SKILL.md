@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arraytools
-description: The package generates comprehensive analysis reports in HTML format. Hyperlinks on the report page will lead to a series of QC plots, processed data, and differentially expressed gene lists. Differentially expressed genes are reported in tabular format with annotations hyperlinked to online biological databases.
+description: This tool performs comprehensive analysis of Affymetrix GeneChip data including quality assessment, preprocessing, and differential expression analysis. Use when user asks to analyze Affymetrix 3' or Gene 1.0-ST arrays, perform gene filtering, run linear modeling for differential expression, or generate automated HTML reports.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/ArrayTools.html
 ---
+
 
 # bioconductor-arraytools
 

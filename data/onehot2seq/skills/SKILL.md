@@ -1,8 +1,9 @@
 ---
 name: onehot2seq
-description: onehot2seq is a specialized command-line utility designed to decode 3D numpy arrays into biological sequences.
+description: "onehot2seq decodes 3D numpy arrays into DNA, RNA, or protein sequences in text or FASTA format. Use when user asks to convert one-hot encoded numpy arrays to biological sequences, decode tensors into FASTA files, or translate numeric arrays into DNA, RNA, or protein strings."
 homepage: https://github.com/akikuno/onehot2seq
 ---
+
 
 # onehot2seq
 

@@ -3,7 +3,7 @@
 ## nmrml2isa
 
 ### Tool Description
-A tool for converting nmrML files to ISA-Tab format. (Note: The provided help text contains only system error messages and no argument definitions.)
+Extract meta information from nmrML files and create ISA-tab structure
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nmrml2isa:0.3.3--pyhdfd78af_0
@@ -18,11 +18,24 @@ A tool for converting nmrML files to ISA-Tab format. (Note: The provided help te
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nmrml2isa:0.3.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3324623609: no space left on device
+usage: nmrml2isa -i IN_PATH -o OUT_PATH -s STUDY_ID [options]
+
+Extract meta information from nmrML files and create ISA-tab structure
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i IN_PATH            input folder or archive containing nmrML files
+  -o OUT_PATH           out folder (a new directory will be created here)
+  -s STUDY_ID           study identifier (e.g. MTBLSxxx)
+  -m USERMETA           additional user provided metadata (JSON or XLSX
+                        format)
+  -j JOBS               launch different processes for parsing
+  -W {ignore,always,error,default,module,once}
+                        warning control (with python default behaviour)
+  -t TEMPLATE_DIR       directory containing default template files
+  --version             show program's version number and exit
+  -v                    show more output (default if progressbar2 is not
+                        installed)
+  -q                    do not show any output
 ```
 
-
-## Metadata
-- **Skill**: generated

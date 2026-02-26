@@ -1,8 +1,9 @@
 ---
 name: transrate-tools
-description: transrate-tools is a collection of high-performance C++ utilities designed to support the Transrate transcriptome assembly evaluation suite.
+description: transrate-tools parses BAM files to aggregate read mapping information by contig for transcriptome assembly evaluation. Use when user asks to evaluate transcriptome assembly quality, get read mapping metrics per contig, or calculate scores like mean MAPQ and proper pair counts.
 homepage: https://github.com/blahah/transrate-tools
 ---
+
 
 # transrate-tools
 

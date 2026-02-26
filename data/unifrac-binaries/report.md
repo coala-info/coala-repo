@@ -1,9 +1,9 @@
 # unifrac-binaries CWL Generation Report
 
-## unifrac-binaries
+## unifrac-binaries_ssu
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) attempting to fetch a Docker image.
+Computes UniFrac distances between samples based on a phylogeny and a BIOM table.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0
@@ -12,58 +12,110 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unifrac-binaries/overview
-- **Total Downloads**: 299.7K
+- **Total Downloads**: 299.9K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/biocore/unifrac-binaries
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: ssu -i <biom> -o <out.dm> -m [METHOD] -t <newick> [-a alpha] [-f]  [--vaw]
+    [--mode MODE] [--start starting-stripe] [--stop stopping-stripe] [--partial-pattern <glob>]
+    [--n-partials number_of_partitions] [--report-bare] [--format|-r out-mode]
+    [--normalize-sample-counts true|false] [--n-substeps n] [--pcoa dims] [--diskbuf path]
+
+    -i		The input BIOM table.
+    -t		The input phylogeny in newick.
+    -m		The method, [unweighted | weighted_normalized | weighted_unnormalized | unweighted_unnormalized | generalized |
+                       unweighted_fp64 | weighted_normalized_fp64 | weighted_unnormalized_fp64 |
+                       unweighted_unnormalized_fp64 | generalized_fp64 |
+                       unweighted_fp32 | weighted_normalized_fp32 | weighted_unnormalized_fp32 |
+                       unweighted_unnormalized_fp32 | generalized_fp32].
+    -o		The output distance matrix.
+    -g		[OPTIONAL] The input grouping in TSV.
+    -c		[OPTIONAL] The columns(s) to use for grouping, multiple values comma separated.
+    -a		[OPTIONAL] Generalized UniFrac alpha, default is 1.
+    -f		[OPTIONAL] Bypass tips, reduces compute by about 50%.
+    --vaw	[OPTIONAL] Variance adjusted, default is to not adjust for variance.
+    --mode	[OPTIONAL] Mode of operation:
+    		    one-off : [DEFAULT] compute UniFrac.
+    		    partial : Compute UniFrac over a subset of stripes.
+    		    partial-report : Start and stop suggestions for partial compute.
+    		    merge-partial : Merge partial UniFrac results.
+    		    check-partial : Check partial UniFrac results.
+    		    multi : compute UniFrac multiple times.
+    --start	[OPTIONAL] If mode==partial, the starting stripe.
+    --stop	[OPTIONAL] If mode==partial, the stopping stripe.
+    --partial-pattern	[OPTIONAL] If mode==merge-partial or check-partial, a glob pattern for partial outputs to merge.
+    --n-partials	[OPTIONAL] If mode==partial-report, the number of partitions to compute.
+    --report-bare	[OPTIONAL] If mode==partial-report, produce barebones output.
+    --n-substeps	[OPTIONAL] Internally split the problem in n substeps for reduced memory footprint, default is 1.
+    --normalize-sample-counts	[OPTIONAL] Should it normalize sample counts?:
+    		    true  : [DEFAULT] Do normalize, i.e. standard unifrac.
+    		    false : Do not normalize, i.e. absolute quant mode.
+    --format|-r	[OPTIONAL]  Output format:
+    		    ascii : Original ASCII format. (default if mode==one-off)
+    		    hdf5 : HFD5 format.  May be fp32 or fp64, depending on method.
+    		    hdf5_fp32 : HFD5 format, using fp32 precision.
+    		    hdf5_fp64 : HFD5 format, using fp64 precision.
+    		    hdf5_nodist : HFD5 format, no distance matrix. (default if mode==multi)
+    --subsample-depth	Depth of subsampling of the input BIOM before computing unifrac (required for mode==multi, optional for one-off)
+    --subsample-replacement	[OPTIONAL] Subsample with or without replacement (default is with)
+    --n-subsamples	[OPTIONAL] if mode==multi, number of subsampled UniFracs to compute (default: 100)
+    --permanova	[OPTIONAL] Number of PERMANOVA permutations to compute (default: 999 with -g, do not compute if 0)
+    --pcoa	[OPTIONAL] Number of PCoA dimensions to compute (default: 10, do not compute if 0)
+    --seed	[OPTIONAL] Seed to use for initializing the random gnerator
+    --diskbuf	[OPTIONAL] Use a disk buffer to reduce memory footprint. Provide path to a fast partition (ideally NVMe).
+    -n		[OPTIONAL] DEPRECATED, no-op.
+
+Environment variables: 
+    CPU parallelism is controlled by OMP_NUM_THREADS. If not defined, all detected core will be used.
+    GPU offload can be disabled with UNIFRAC_USE_GPU=N. By default, if a NVIDIA GPU is detected, it will be used.
+    A specific GPU can be selected with ACC_DEVICE_NUM. If not defined, the first GPU will be used.
+
+Citations: 
+    For UniFrac, please see:
+        Sfiligoi et al. mSystems 2022; DOI: 10.1128/msystems.00028-22
+        McDonald et al. Nature Methods 2018; DOI: 10.1038/s41592-018-0187-8
+        Lozupone and Knight Appl Environ Microbiol 2005; DOI: 10.1128/AEM.71.12.8228-8235.2005
+        Lozupone et al. Appl Environ Microbiol 2007; DOI: 10.1128/AEM.01996-06
+        Hamady et al. ISME 2010; DOI: 10.1038/ismej.2009.97
+        Lozupone et al. ISME 2011; DOI: 10.1038/ismej.2010.133
+    For Generalized UniFrac, please see: 
+        Chen et al. Bioinformatics 2012; DOI: 10.1093/bioinformatics/bts342
+    For Variance Adjusted UniFrac, please see: 
+        Chang et al. BMC Bioinformatics 2011; DOI: 10.1186/1471-2105-12-118
+
+Runtime progress can be obtained by issuing a SIGUSR1 signal. If running with 
+multiple threads, this signal will only be honored if issued to the master PID. 
+The report will yield the following information: 
+
+tid:<thread ID> start:<starting stripe> stop:<stopping stripe> k:<postorder node index> total:<number of nodes>
+
+The proportion of the tree that has been evaluated can be determined from (k / total).
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## unifrac-binaries_ssu
-
-### Tool Description
-A tool for computing UniFrac distances, typically used in microbial ecology for comparing biological communities.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0
-- **Homepage**: https://github.com/biocore/unifrac-binaries
-- **Package**: https://anaconda.org/channels/bioconda/packages/unifrac-binaries/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## unifrac-binaries_faithpd
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to fetch or build the OCI image.
+Calculates Faith's Phylogenetic Diversity for each sample in a BIOM table using a provided phylogeny.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0
 - **Homepage**: https://github.com/biocore/unifrac-binaries
 - **Package**: https://anaconda.org/channels/bioconda/packages/unifrac-binaries/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: faithpd -i <biom> -t <newick> -o <out.txt>
+
+    -i		The input BIOM table.
+    -t		The input phylogeny in newick.
+    -o		The output series.
+
+Citations: 
+    For Faith's PD, please see:
+        Faith Biological Conservation 1992; DOI: 10.1016/0006-3207(92)91201-3
 ```
 

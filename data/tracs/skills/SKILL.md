@@ -1,8 +1,9 @@
 ---
 name: tracs
-description: `tracs` (Transmission Analysis from Complex Samples) is a specialized tool for estimating the genetic distance between microbial samples to determine how closely they are related in a transmission chain.
+description: tracs estimates genetic distances between microbial samples to infer transmission chains from noisy or metagenomic data. Use when user asks to estimate genetic distance, infer transmission chains, build a reference database, align reads, calculate SNP distances, cluster samples, or visualize transmission networks.
 homepage: https://github.com/gtonkinhill/tracs
 ---
+
 
 # tracs
 

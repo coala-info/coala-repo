@@ -1,9 +1,9 @@
 # codan CWL Generation Report
 
-## codan
+## codan_codan.py
 
 ### Tool Description
-The provided text does not contain help information for the tool 'codan'. It contains error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to insufficient disk space.
+CodAn: Coding Regions Annotator for transcripts using deep learning and BLAST.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/codan:1.2--hdfd78af_1
@@ -12,35 +12,57 @@ The provided text does not contain help information for the tool 'codan'. It con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/codan/overview
-- **Total Downloads**: 6.2K
+- **Total Downloads**: 6.3K
 - **Last updated**: 2025-11-07
 - **GitHub**: https://github.com/pedronachtigall/CodAn
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/codan:1.2--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1751464728: no space left on device
+Usage: codan.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -t file, --transcripts=file
+                        Mandatory - input transcripts file (FASTA format),
+                        /path/to/transcripts.fa
+  -m model, --model=model
+                        Mandatory - path to model, /path/to/model
+  -s string, --strand=string
+                        Optional - strand of sequence to predict genes (plus,
+                        minus or both) [default=plus]
+  -c int, --cpu=int     Optional - number of threads to be used [default=1]
+  -o folder, --output=folder
+                        Optional - path to output folder,
+                        /path/to/output/folder/ if not declared, it will be
+                        created at the transcripts input folder
+                        [default="CodAn_output"]
+  -b proteinDB, --blastdb=proteinDB
+                        Optional - path to blastDB of known protein sequences,
+                        /path/to/blast/DB/DB_name
+  -H int, --HSP=int     Optional - used in the "-qcov_hsp_perc" option of
+                        blastx [default=80]
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## codan_codan.py
+## codan_tops-viterbi_decoding
 
 ### Tool Description
-CODAN (COding sequence Detection and ANnotation) is a tool for identifying and annotating coding sequences. Note: The provided help text contains only system error messages and does not list specific arguments.
+ToPS Viterbi decoding tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/codan:1.2--hdfd78af_1
 - **Homepage**: https://github.com/pedronachtigall/CodAn
 - **Package**: https://anaconda.org/channels/bioconda/packages/codan/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/codan:1.2--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3558145246: no space left on device
+tops-viterbi_decoding: ToPS version "master 00f9ed6"
+
+error: unrecognised option '-help'
+Allowed options:
+  -h [ --help ]         produce help message
+  -m [ --model ] arg    a decodable model
+  -F [ --fasta ]        use fasta format
 ```
 

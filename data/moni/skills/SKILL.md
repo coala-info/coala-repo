@@ -1,8 +1,9 @@
 ---
 name: moni
-description: MONI (Multi) is a high-performance pangenomics indexer designed to find Maximal Exact Matches (MEMs) and compute matching statistics.
+description: MONI is a pangenomics indexer that finds maximal exact matches and computes matching statistics across multiple reference genomes. Use when user asks to build a pangenome index, find maximal exact matches, compute matching statistics, or perform sequence extensions.
 homepage: https://github.com/maxrossi91/moni
 ---
+
 
 # moni
 

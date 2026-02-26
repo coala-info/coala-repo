@@ -1,8 +1,9 @@
 ---
 name: mpa-portable
-description: The `mpa-portable` skill enables the automated identification and analysis of proteins within complex microbial communities.
+description: mpa-portable identifies and analyzes proteins within complex microbial communities by searching mass spectrometry data against FASTA databases. Use when user asks to identify proteins in metaproteomics data, calculate false discovery rates, or group redundant hits into meta-proteins.
 homepage: https://github.com/compomics/meta-proteome-analyzer
 ---
+
 
 # mpa-portable
 

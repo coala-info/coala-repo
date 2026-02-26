@@ -1,8 +1,9 @@
 ---
 name: mtglink
-description: MTG-Link (MindTheGap-Link) is a specialized tool for the local assembly of genomic regions using the barcode information inherent in linked-read sequencing.
+description: MTG-Link performs local assembly of genomic regions by leveraging barcode information from linked-read sequencing data. Use when user asks to assemble specific genomic gaps, resolve complex structural variants, or perform targeted assembly of dark regions using linked reads.
 homepage: https://github.com/anne-gcd/MTG-Link
 ---
+
 
 # mtglink
 

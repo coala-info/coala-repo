@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nucleosim
-description: the package is available on all platforms; click for details.
+description: This R package generates synthetic nucleosome maps to benchmark nucleosome positioning algorithms. Use when user asks to simulate nucleosome positioning data, generate synthetic maps, or create benchmark datasets for nucleosome detection tools.
 homepage: https://bioconductor.org/packages/release/bioc/html/nucleoSim.html
 ---
+
 
 # bioconductor-nucleosim
 

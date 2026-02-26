@@ -1,8 +1,9 @@
 ---
 name: perl-moose
-description: This skill facilitates the use of Moose, the standard for modern Object-Oriented programming in Perl.
+description: Perl-moose provides a modern, declarative object-oriented framework for Perl that replaces traditional manual class construction. Use when user asks to define classes with attributes, enforce type constraints, implement roles for code reuse, or apply method modifiers.
 homepage: http://moose.perl.org/
 ---
+
 
 # perl-moose
 

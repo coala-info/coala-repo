@@ -1,8 +1,9 @@
 ---
 name: kineticstools
-description: `kineticstools` is a specialized bioinformatic suite designed to process Pacific Biosciences (PacBio) SMRT sequencing data to identify epigenetic modifications.
+description: kineticstools identifies epigenetic modifications in PacBio SMRT sequencing data by analyzing inter-pulse duration deviations. Use when user asks to identify methylated bases, perform bacterial methylome profiling, or estimate methylated fractions from subread BAM files.
 homepage: https://github.com/PacificBiosciences/kineticsTools
 ---
+
 
 # kineticstools
 

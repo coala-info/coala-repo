@@ -1,8 +1,9 @@
 ---
 name: jbrowse
-description: This skill provides guidance for deploying JBrowse, a high-performance genome browser suite.
+description: JBrowse is a high-performance genome browser suite used for visualizing genomic data through linear, circular, and dotplot views. Use when user asks to deploy a genome browser, visualize sequencing tracks, or analyze comparative genomics and synteny.
 homepage: https://jbrowse.org/
 ---
+
 
 # jbrowse
 

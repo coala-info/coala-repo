@@ -1,8 +1,9 @@
 ---
 name: saint
-description: sAINT is a Java-based spyware generator designed to create payloads for Windows systems.
+description: sAINT is a Java-based spyware generator used to create custom Windows payloads for keystroke logging, screenshot capture, and webcam monitoring. Use when user asks to generate spyware payloads, create Windows keyloggers, or configure persistent monitoring tools.
 homepage: https://github.com/tiagorlampert/sAINT
 ---
+
 
 # saint
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-fastqtofa
-description: The `fastqToFa` utility is a specialized command-line tool designed for the rapid transformation of FASTQ files into FASTA format.
+description: The `ucsc-fastqtofa` tool converts FASTQ files to FASTA format. Use when user asks to 'convert FASTQ to FASTA' or 'transform FASTQ to FASTA'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fastqtofa
 

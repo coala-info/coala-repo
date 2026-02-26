@@ -1,8 +1,9 @@
 ---
 name: bax2bam
-description: The `bax2bam` tool is a specialized utility designed to bridge the gap between legacy PacBio data formats and modern genomic analysis workflows.
+description: The bax2bam tool converts legacy PacBio HDF5-formatted basecall files into consolidated BAM files that follow the PacBio BAM specification. Use when user asks to convert bax.h5 files to BAM format, process legacy PacBio data for modern workflows, or generate subreads and scraps from HDF5 movie files.
 homepage: https://github.com/PacificBiosciences/bax2bam
 ---
+
 
 # bax2bam
 

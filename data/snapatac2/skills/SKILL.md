@@ -1,8 +1,9 @@
 ---
 name: snapatac2
-description: SnapATAC2 is a high-performance Python/Rust framework designed for the analysis of single-cell omics data, capable of scaling to over 10 million cells.
+description: SnapATAC2 is a high-performance framework for analyzing large-scale single-cell omics data with a focus on memory efficiency and speed. Use when user asks to convert BAM files to fragments, generate count matrices, perform matrix-free dimension reduction, or integrate multi-omics datasets.
 homepage: https://github.com/kaizhang/SnapATAC2
 ---
+
 
 # snapatac2
 

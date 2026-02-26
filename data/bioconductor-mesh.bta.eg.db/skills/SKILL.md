@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.bta.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Medical Subject Headings (MeSH) and Entrez Gene IDs for Bos taurus. Use when user asks to map cow genes to MeSH terms, perform MeSH enrichment analysis for bovine data, or retrieve functional annotations for Bos taurus genes.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Bta.eg.db.html
 ---
+
 
 # bioconductor-mesh.bta.eg.db
 

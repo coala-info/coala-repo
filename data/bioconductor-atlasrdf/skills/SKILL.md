@@ -1,8 +1,9 @@
 ---
 name: bioconductor-atlasrdf
-description: the package is available on all platforms; click for details.
+description: This tool queries the Expression Atlas RDF store to retrieve gene expression data linked to experimental factors and biological conditions. Use when user asks to find differentially expressed genes for specific diseases, map ontology terms to EFO URIs, retrieve Reactome pathways, or perform gene set enrichment analysis.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/AtlasRDF.html
 ---
+
 
 # bioconductor-atlasrdf
 

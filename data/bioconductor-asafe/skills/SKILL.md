@@ -1,8 +1,9 @@
 ---
 name: bioconductor-asafe
-description: the package is available on all platforms; click for details.
+description: This tool estimates ancestry-specific allele frequencies from genotypes and local ancestry data in admixed populations using an EM algorithm. Use when user asks to estimate allele frequencies for specific ancestries, handle unphased genotypes in admixed individuals, or perform ancestry-specific frequency estimation for bi-allelic markers.
 homepage: https://bioconductor.org/packages/release/bioc/html/ASAFE.html
 ---
+
 
 # bioconductor-asafe
 

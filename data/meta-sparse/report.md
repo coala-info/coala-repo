@@ -1,9 +1,9 @@
 # meta-sparse CWL Generation Report
 
-## meta-sparse
+## meta-sparse_sparse
 
 ### Tool Description
-The provided text contains container runtime logs and error messages rather than the tool's help documentation. As a result, no arguments or functional descriptions could be extracted.
+Strain Prediction and Analysis with Representative SEquences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/meta-sparse:0.1.12--py27h24bf2e0_0
@@ -18,29 +18,21 @@ The provided text contains container runtime logs and error messages rather than
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/meta-sparse:0.1.12--py27h24bf2e0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3078423233: no space left on device
-```
+Program: SPARSE (Strain Prediction and Analysis with Representative SEquences)
 
+Usage:   SPARSE.py <command> [options]
 
-## Metadata
-- **Skill**: generated
+Commands:
+  init          Create empty folder structures for a new SPARSE database
+  index         Load in a list of assemblies (in RefSeq format) and index them into a SPARSE database
+  query         Query metadata info in a SPARSE database
+  update        Update metadata info in a SPARSE database
+  mapDB         Create bowtie2 or MALT sub-databases for metagenomic reads
+  predict       Align reads onto MapDB and do taxonomic predictions, and save all outputs in a specified workspaces
+  mash          Compare an assembly with all genomes in a SPARSE database using MASH
+  extract       Extract species-specific reads from a SPARSE read-mapping result
+  report        Reformat and merge multiple SPARSE workspaces into a flat table. It also predicts human pathogens. 
 
-## meta-sparse_sparse
-
-### Tool Description
-The provided text does not contain help information for the tool; it is an error log indicating a failure to build a container image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/meta-sparse:0.1.12--py27h24bf2e0_0
-- **Homepage**: https://github.com/zheminzhou/SPARSE/
-- **Package**: https://anaconda.org/channels/bioconda/packages/meta-sparse/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/meta-sparse:0.1.12--py27h24bf2e0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1524350050: no space left on device
+Use SPARSE.py <command> -h to get help for each command.
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-autoxml
-description: The `ucsc-autoxml` tool (often invoked as `autoXml`) is a specialized code generator from the UCSC Kent utility suite.
+description: The `ucsc-autoxml` tool generates C header and source files containing data structures and parser logic from a simplified Document Type Definition (DTD) input. Use when user asks to 'generate C code from a DTD', 'create C header and source files for XML parsing', or 'keep C code synchronized with an XML schema'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-autoxml
 

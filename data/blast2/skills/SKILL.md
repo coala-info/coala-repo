@@ -1,8 +1,9 @@
 ---
 name: blast2
-description: Blast2Bam is a specialized utility designed to bridge the gap between BLAST sequence alignments and standard mapping formats.
+description: Blast2Bam converts BLASTn XML output into SAM format by cross-referencing original sequence files and a reference genome. Use when user asks to convert BLAST results to SAM or BAM format, process paired-end BLAST alignments, or integrate BLAST outputs into standard mapping workflows.
 homepage: https://github.com/guyduche/Blast2Bam
 ---
+
 
 # blast2
 

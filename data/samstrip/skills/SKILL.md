@@ -1,8 +1,9 @@
 ---
 name: samstrip
-description: samstrip is a high-performance utility designed to "slim down" genomic alignment files.
+description: samstrip is a high-performance utility that slims down genomic alignment files by removing read sequences, quality scores, and optional auxiliary tags. Use when user asks to reduce BAM file size for storage, strip auxiliary tags from alignments, or create lightweight versions of SAM files for coordinate-based analysis.
 homepage: https://github.com/jakobnissen/samstrip
 ---
+
 
 # samstrip
 

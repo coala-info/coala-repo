@@ -1,8 +1,9 @@
 ---
 name: haplocheck
-description: haplocheck is a phylogeny-based tool designed to identify contamination in sequencing studies by analyzing mitochondrial content.
+description: Haplocheck is a phylogeny-based tool that identifies contamination in sequencing studies by analyzing mitochondrial DNA content. Use when user asks to detect sample contamination, estimate mitochondrial purity, or identify multiple haplogroups in VCF or BAM files.
 homepage: https://github.com/genepi/haplocheck
 ---
+
 
 # haplocheck
 

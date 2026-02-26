@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hdcytodata
-description: the package is available on all platforms; click for details.
+description: This package provides programmatic access to high-dimensional cytometry benchmark datasets formatted as SummarizedExperiment or flowSet objects. Use when user asks to load standardized flow or mass cytometry data, benchmark clustering or differential analysis algorithms, or access ground-truth cell population labels for single-cell proteomics.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HDCytoData.html
 ---
+
 
 # bioconductor-hdcytodata
 

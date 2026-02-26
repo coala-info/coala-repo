@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rexposome
-description: the package is available on all platforms; click for details.
+description: The bioconductor-rexposome package provides tools for preprocessing, characterizing, and analyzing exposome data. Use when user asks to perform exposome-wide association studies, conduct exploratory data analysis on environmental exposures, or assess the impact of multiple exposures on health outcomes.
 homepage: https://bioconductor.org/packages/release/bioc/html/rexposome.html
 ---
+
 
 # bioconductor-rexposome
 

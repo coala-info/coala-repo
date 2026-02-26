@@ -1,8 +1,9 @@
 ---
 name: r-rebird
-description: Skill for using the CRAN R package r-rebird.
+description: The rebird package provides a programmatic interface to the eBird database for accessing global bird observation data and biodiversity information. Use when user asks to search for bird sightings, find notable observations, retrieve historical birding data, or explore birding hotspots and taxonomy.
 homepage: https://cloud.r-project.org/web/packages/rebird/index.html
 ---
+
 
 # r-rebird
 

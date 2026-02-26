@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-depends
-description: `ExtUtils::Depends` is a specialized build utility for the Perl ecosystem, primarily used when one C-based Perl extension (XS) needs to link against or use the API of another.
+description: ExtUtils::Depends automates the discovery and sharing of compiler flags, linker flags, and typemaps between C-based Perl extensions. Use when user asks to manage dependencies between XS modules, share C headers across Perl distributions, or configure build variables for modular Perl libraries.
 homepage: http://gtk2-perl.sourceforge.net
 ---
+
 
 # perl-extutils-depends
 

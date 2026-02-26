@@ -3,7 +3,7 @@
 ## itolparser
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It contains system log messages and a fatal error regarding disk space during a container image pull.
+Generate iTOL files from tables
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/itolparser:0.2.1--pyh7cba7a3_0
@@ -18,11 +18,40 @@ The provided text does not contain help information or usage instructions. It co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/itolparser:0.2.1--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1195704468: no space left on device
+usage: itolparser [-h] -i INPUT [-o OUTDIR] [--tsv] [--csv] [-v]
+                  [--margin INT] [--stripwidth INT] [--maxcategories INT]
+                  [--ignore IGNORE [IGNORE ...]]
+                  [--continuous CONTINUOUS [CONTINUOUS ...]]
+                  [--palette {YlGn,YlGnBu,GnBu,BuGn,PuBuGn,PuBu,BuPu,RdPu,PuRd,OrRd,YlOrRd,YlOrBr,Purples,Blues,Greens,Oranges,Reds,Greys}]
+
+Generate iTOL files from tables
+
+options:
+  -h, --help            show this help message and exit
+
+Main arguments:
+  -i INPUT, --input INPUT
+                        Input table with categorical metadata in .tsv format
+                        unless otherwise specified (default: None)
+  -o OUTDIR, --outdir OUTDIR
+                        Output directory to write files to (default:
+                        itolparser_output)
+  --tsv                 Force input parsing as .tsv file (default: False)
+  --csv                 Force input parsing as .csv file (default: False)
+  -v, --version         prints program version and exits
+
+Formatting arguments:
+  --margin INT          Size of margin specified in iTOL file (default: 5)
+  --stripwidth INT      Strip width specified in iTOL file (default: 50)
+  --maxcategories INT   Maximum number of categories to not get assigned to
+                        "other" (default: 18)
+  --ignore IGNORE [IGNORE ...]
+                        List of columns to ignore (default: None)
+  --continuous CONTINUOUS [CONTINUOUS ...]
+                        Comma-separated list of columns to parse as continuous
+                        (default: None)
+  --palette {YlGn,YlGnBu,GnBu,BuGn,PuBuGn,PuBu,BuPu,RdPu,PuRd,OrRd,YlOrRd,YlOrBr,Purples,Blues,Greens,Oranges,Reds,Greys}
+                        Color palette to use for continuous columns (default:
+                        GnBu)
 ```
 
-
-## Metadata
-- **Skill**: generated

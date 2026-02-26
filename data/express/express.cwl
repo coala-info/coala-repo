@@ -2,15 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: express
 label: express
-doc: "eXpress is a software tool for quantifying the abundance of sets of sequences
-  (e.g. transcripts or alleles) from sampled subsequences (e.g. RNA-seq reads).\n\n
-  Tool homepage: https://github.com/expressjs/express"
-inputs: []
+doc: "Streaming quantification for high-throughput sequencing\n\nTool homepage: https://github.com/expressjs/express"
+inputs:
+  - id: target_fasta
+    type: File
+    doc: Target sequence fasta file
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/express:1.5.1--h7d875b9_3
+    dockerPull: quay.io/biocontainers/express:1.5.1--h2d50403_1
 stdout: express.out

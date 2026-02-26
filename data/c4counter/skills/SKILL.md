@@ -1,8 +1,9 @@
 ---
 name: c4counter
-description: c4counter is a specialized bioinformatics tool designed to characterize the complex human C4 locus.
+description: c4counter identifies and characterizes human C4 gene copies and structural variations from sequence data. Use when user asks to count C4A and C4B genes, detect HERV-K(C4) insertions, or visualize the C4 locus structure.
 homepage: https://github.com/irunonayran/c4counter.git
 ---
+
 
 # c4counter
 

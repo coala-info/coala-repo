@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipexoqualexample
-description: the package is available on all platforms; click for details.
+description: ChIPexoQualExample provides subsetted ChIP-exo data for demonstrating the functionality of the ChIPexoQual quality control package. Use when user asks to access example ChIP-exo BAM files, test quality control pipelines, or run demonstrations for the ChIPexoQual package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChIPexoQualExample.html
 ---
+
 
 # bioconductor-chipexoqualexample
 

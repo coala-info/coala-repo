@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deds
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool integrates multiple differential expression statistics into a single ranking to identify robustly differentially expressed genes in microarray data. Use when user asks to integrate multiple statistical measures, rank genes by differential expression, or perform distance synthesis for microarray analysis.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DEDS.html
 ---
+
 
 # bioconductor-deds
 

@@ -1,8 +1,9 @@
 ---
 name: hapflk
-description: The hapflk toolset is designed to identify genomic regions under selection by analyzing haplotype differentiation across multiple populations.
+description: The hapflk toolset identifies genomic regions under selection by analyzing haplotype differentiation and population structure. Use when user asks to detect selection in multiple populations, compute FLK statistics from allele frequencies, analyze Pool-seq data, or construct population trees.
 homepage: https://github.com/BertrandServin/hapflk
 ---
+
 
 # hapflk
 

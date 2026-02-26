@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bcellviper
-description: the package is available on all platforms; click for details.
+description: This package provides a human B-cell expression dataset and a transcriptional regulatory network for protein activity analysis. Use when user asks to access B-cell expression data, utilize the human B-cell interactome, or perform VIPER analysis using example datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bcellViper.html
 ---
+
 
 # bioconductor-bcellviper
 

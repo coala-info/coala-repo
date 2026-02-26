@@ -1,8 +1,9 @@
 ---
 name: topas
-description: TOPAS (TOolkit for Processing and Annotating Sequence data) is a Java-based suite of modules designed for the efficient manipulation of genomic data.
+description: TOPAS is a suite of modules designed for the efficient manipulation of genomic data across FASTA, FASTQ, GFF, and VCF file types. Use when user asks to validate, sort, filter, index, extract, tabulate, annotate, or analyze genomic data, or generate consensus sequences including ancient DNA support.
 homepage: https://github.com/subwaystation/TOPAS
 ---
+
 
 # topas
 

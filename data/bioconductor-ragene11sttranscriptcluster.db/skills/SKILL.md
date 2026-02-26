@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ragene11sttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides comprehensive annotation maps for the Affymetrix Rat Gene 1.1 ST Transcript Cluster array. Use when user asks to map transcript cluster identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for rat microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene11sttranscriptcluster.db.html
 ---
+
 
 # bioconductor-ragene11sttranscriptcluster.db
 

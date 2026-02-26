@@ -3,7 +3,7 @@
 ## tb-ml
 
 ### Tool Description
-A tool for machine learning analysis of Tuberculosis genomic data (Note: The provided text contains container build logs rather than CLI help documentation, so no arguments could be extracted).
+TB-ML: A framework for comparing AMR prediction in M. tuberculosis. Provide Docker image names and arguments like so: --container CONTR_NAME_1 "ARG_1 ARG_2" --container CONTR_NAME_2 "ARG_3" --container CONTR_NAME_3 "ARG_4 ARG_5" ...
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tb-ml:0.1.1--pyh7cba7a3_0
@@ -18,13 +18,16 @@ A tool for machine learning analysis of Tuberculosis genomic data (Note: The pro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tb-ml:0.1.1--pyh7cba7a3_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: tb-ml [-h] --container STR STR
+
+TB-ML: A framework for comparing AMR prediction in M. tuberculosis. Provide
+Docker image names and arguments like so: --container CONTR_NAME_1 "ARG_1
+ARG_2" --container CONTR_NAME_2 "ARG_3" --container CONTR_NAME_3 "ARG_4 ARG_5"
+...
+
+options:
+  -h, --help           show this help message and exit
+  --container STR STR  Name of Docker image and corresponding extra arguments
+                       [required]
 ```
 
-
-## Metadata
-- **Skill**: generated

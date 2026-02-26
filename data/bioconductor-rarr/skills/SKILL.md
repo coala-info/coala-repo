@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rarr
-description: the package is available on all platforms; click for details.
+description: The bioconductor-rarr package provides an implementation for reading Zarr format data files within the R environment. Use when user asks to read Zarr files, access chunked compressed binary arrays, or import Zarr data into R.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rarr.html
 ---
+
 
 # bioconductor-rarr
 

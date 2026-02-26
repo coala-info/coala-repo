@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.felgene.1.1.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Felis catus Gene 1.1 ST expression array. Use when user asks to analyze Affymetrix cat gene expression data, map probes to genomic features for the Felis catus 1.1 ST platform, or perform feline transcriptomic analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.felgene.1.1.st.html
 ---
+
 
 # bioconductor-pd.felgene.1.1.st
 

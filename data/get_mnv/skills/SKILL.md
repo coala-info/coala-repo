@@ -1,8 +1,9 @@
 ---
 name: get_mnv
-description: The `get_mnv` tool is designed to improve the accuracy of genomic variant annotation by detecting MNVs—instances where two or more SNVs fall within the same codon.
+description: The get_mnv tool detects and reclassifies multiple single nucleotide variants within the same codon to accurately predict their combined effect on protein sequences. Use when user asks to identify multi-nucleotide variants, verify if variants co-occur on the same reads, or improve the accuracy of genomic variant annotation.
 homepage: https://github.com/PathoGenOmics-Lab/get_mnv
 ---
+
 
 # get_mnv
 

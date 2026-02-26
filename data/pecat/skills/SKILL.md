@@ -1,8 +1,9 @@
 ---
 name: pecat
-description: PECAT is a specialized bioinformatics pipeline designed for the assembly of diploid genomes using long-read sequencing technologies.
+description: PECAT is a bioinformatics pipeline designed for the error correction and diploid assembly of long-read sequencing data. Use when user asks to assemble diploid genomes, perform haplotype-aware error correction, or generate primary and alternate contigs from long reads.
 homepage: https://github.com/lemene/PECAT
 ---
+
 
 # pecat
 

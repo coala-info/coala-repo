@@ -1,8 +1,9 @@
 ---
 name: indelfixer
-description: InDelFixer is a Java-based tool designed for highly sensitive alignment of Next-Generation Sequencing (NGS) data.
+description: InDelFixer is a Java-based tool designed for the sensitive alignment and refinement of NGS data, particularly for viral or highly variable populations. Use when user asks to align reads to a reference, perform iterative refinement against a consensus sequence, or correct frame-shift mutations and deletions.
 homepage: https://github.com/cbg-ethz/InDelFixer
 ---
+
 
 # indelfixer
 

@@ -1,8 +1,9 @@
 ---
 name: crimson
-description: Crimson is a specialized utility designed to bridge the gap between legacy bioinformatics text reports and modern data pipelines.
+description: Crimson converts text reports from common bioinformatics tools into machine-readable JSON or YAML formats. Use when user asks to parse bioinformatics tool outputs, convert genomic reports to JSON, or transform text-based metrics into structured data.
 homepage: https://github.com/bow/crimson
 ---
+
 
 # crimson
 

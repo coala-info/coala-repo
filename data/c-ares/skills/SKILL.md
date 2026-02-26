@@ -1,8 +1,9 @@
 ---
 name: c-ares
-description: Project Ares is a specialized security tool designed for stealthy PE (Portable Executable) injection into remote processes.
+description: c-ares is a security tool designed for stealthy PE injection into remote processes using the Transacted Hollowing technique. Use when user asks to encrypt x64 payloads, configure the Ares framework, or perform stealthy process injection with evasion features.
 homepage: https://github.com/Cerbersec/Ares
 ---
+
 
 # c-ares
 

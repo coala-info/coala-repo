@@ -1,8 +1,9 @@
 ---
 name: pathogentrack
-description: PathogenTrack is an unsupervised computational pipeline that identifies pathogenic microorganisms by analyzing the reads in scRNA-seq data that do not map to the host genome.
+description: PathogenTrack is an unsupervised computational pipeline that identifies and quantifies pathogenic microorganisms from unmapped scRNA-seq reads. Use when user asks to identify pathogens in single-cell data, quantify microbial expression across individual cells, or process unmapped reads to detect intracellular infections.
 homepage: https://github.com/ncrna/PathogenTrack
 ---
+
 
 # pathogentrack
 

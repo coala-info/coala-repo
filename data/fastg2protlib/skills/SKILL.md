@@ -1,8 +1,9 @@
 ---
 name: fastg2protlib
-description: The `fastg2protlib` tool facilitates the creation of custom protein databases from genomic assembly graphs (FASTG format).
+description: This tool creates custom protein databases from genomic assembly graphs by performing a depth-first search to capture sequences across assembly edges. Use when user asks to generate a peptide library from FASTG files, refine protein databases with MSMS-verified peptides, or calculate protein coverage scores from assembly graphs.
 homepage: https://github.com/galaxyproteomics/fastg2protlib
 ---
+
 
 # fastg2protlib
 

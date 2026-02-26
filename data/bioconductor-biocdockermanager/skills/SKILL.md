@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocdockermanager
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: BiocDockerManager provides an R interface to manage and interact with Bioconductor-provided Docker images. Use when user asks to find available Bioconductor images, install or update local Docker images, check image validity against Dockerhub, or generate Dockerfile templates for Bioconductor contributions.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/BiocDockerManager.html
 ---
+
 
 # bioconductor-biocdockermanager
 

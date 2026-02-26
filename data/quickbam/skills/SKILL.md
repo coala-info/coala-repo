@@ -1,8 +1,9 @@
 ---
 name: quickbam
-description: Quickbam is a high-performance utility designed for rapid access and manipulation of BAM (Binary Alignment Map) files.
+description: Quickbam is a high-performance utility designed for rapid access, manipulation, and coverage calculation of BAM files using parallel processing. Use when user asks to calculate depth of coverage, extract specific genomic regions, or perform fast manipulation of large-scale genomic datasets.
 homepage: https://gitlab.com/yiq/quickbam/-/tree/master/
 ---
+
 
 # quickbam
 

@@ -1,8 +1,9 @@
 ---
 name: samstats
-description: `samstats` is a specialized tool for calculating mapping statistics from SAM (Sequence Alignment/Map) files.
+description: samstats calculates read-level mapping statistics from SAM files to provide an accurate view of sequencing library quality. Use when user asks to calculate mapping statistics, perform quality control on SAM files, or determine the percentage of uniquely mapped reads.
 homepage: https://github.com/kundajelab/SAMstats
 ---
+
 
 # samstats
 

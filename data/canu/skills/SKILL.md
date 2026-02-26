@@ -1,8 +1,9 @@
 ---
 name: canu
-description: Canu is a hierarchical assembly pipeline optimized for long-read technology.
+description: Canu is a hierarchical assembly pipeline that transforms noisy long-read sequences into high-quality contigs. Use when user asks to assemble long-read sequencing data, perform trio binning for haplotype-resolved assemblies, or generate a corrected sequence consensus from PacBio or Nanopore reads.
 homepage: https://github.com/marbl/canu
 ---
+
 
 # canu
 

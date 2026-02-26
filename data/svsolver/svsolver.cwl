@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: svsolver
 label: svsolver
-doc: "Structural variant solver (Note: The provided text contains container build
-  logs and error messages rather than CLI help documentation; therefore, no arguments
-  could be extracted).\n\nTool homepage: https://simtk.org/projects/simvascular/"
-inputs: []
+doc: "Solver Input Files listed as below:\n\nTool homepage: https://simtk.org/projects/simvascular/"
+inputs:
+  - id: local_config
+    type: File
+    doc: 'Local Config: solver.inp'
+    inputBinding:
+      position: 101
 outputs:
   - id: stdout
     type: stdout

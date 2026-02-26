@@ -1,8 +1,9 @@
 ---
 name: jaeger-bio
-description: Jaeger is a homology-free machine learning tool designed for the rapid and accurate identification of phage genomes hidden in metagenomes.
+description: Jaeger is a homology-free deep learning tool designed to identify phage genomes and integrated prophages within metagenomic assemblies. Use when user asks to identify viral signals in metagenomes, detect prophages in sequence assemblies, or classify sequences as phage or host without relying on homology.
 homepage: https://github.com/Yasas1994/Jaeger
 ---
+
 
 # jaeger-bio
 

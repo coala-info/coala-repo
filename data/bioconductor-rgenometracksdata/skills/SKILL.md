@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgenometracksdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and genomic track data for the rGenomeTracks visualization tool. Use when user asks to access example genomic datasets, load sample tracks for visualization, or provide data for the rGenomeTracks package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rGenomeTracksData.html
 ---
+
 
 # bioconductor-rgenometracksdata
 

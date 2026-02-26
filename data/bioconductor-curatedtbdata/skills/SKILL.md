@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedtbdata
-description: the package contains 49 studies. The curatedTBData package allows users to access tuberculosis trancriptomic efficiently and to make efficient comparison for different TB gene signatures across multiple datasets.
+description: This tool provides access to a standardized collection of curated tuberculosis transcriptomic studies and clinical metadata from the Bioconductor curatedTBData package. Use when user asks to browse available TB datasets, download gene expression profiles, subset data by clinical annotations, or integrate multiple studies with batch correction and gene symbol updates.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedTBData.html
 ---
+
 
 # bioconductor-curatedtbdata
 

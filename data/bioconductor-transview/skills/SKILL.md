@@ -1,8 +1,9 @@
 ---
 name: bioconductor-transview
-description: the package is available on all platforms; click for details.
+description: TransView provides tools for the efficient visualization and analysis of high-throughput sequencing density maps. Use when user asks to visualize sequencing coverage, analyze density maps, or generate read density profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/TransView.html
 ---
+
 
 # bioconductor-transview
 

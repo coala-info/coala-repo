@@ -1,8 +1,9 @@
 ---
 name: perl-http-server-simple
-description: The `perl-http-server-simple` tool (specifically the `HTTP::Server::Simple` Perl module) provides a minimal, pure-Perl HTTP server implementation.
+description: This tool provides a minimal, pure-Perl HTTP server implementation designed to be embedded directly into applications. Use when user asks to create a standalone web server, embed a lightweight HTTP service in a Perl script, or run a background server for integration testing.
 homepage: https://metacpan.org/pod/HTTP::Server::Simple
 ---
+
 
 # perl-http-server-simple
 

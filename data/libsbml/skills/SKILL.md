@@ -1,8 +1,9 @@
 ---
 name: libsbml
-description: libSBML is the standard open-source library for interacting with SBML, the XML-based format for representing models of biological processes.
+description: libSBML is an open-source library for programmatically reading, writing, manipulating, and validating biochemical network models in SBML format. Use when user asks to validate SBML syntax, extract model components like species and reactions, convert between SBML levels, or programmatically modify biological model parameters.
 homepage: http://sbml.org/Software/libSBML
 ---
+
 
 # libsbml
 

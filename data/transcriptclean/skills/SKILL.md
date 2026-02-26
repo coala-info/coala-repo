@@ -1,8 +1,9 @@
 ---
 name: transcriptclean
-description: TranscriptClean is a specialized tool for post-alignment processing of long-read RNA-seq data.
+description: TranscriptClean corrects errors in long-read RNA-seq data by comparing mapped reads to a reference genome. Use when user asks to clean long-read RNA-seq data, correct sequencing errors, refine splice junctions, preserve known variants, analyze indels, or filter transcripts.
 homepage: https://github.com/mortazavilab/TranscriptClean
 ---
+
 
 # transcriptclean
 

@@ -1,46 +1,174 @@
 # eternafold CWL Generation Report
 
-## eternafold
+## eternafold_predict
 
 ### Tool Description
-A tool for RNA secondary structure prediction. (Note: The provided help text contains system error messages regarding container execution and does not list specific command-line arguments.)
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_1
+- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_2
 - **Homepage**: https://github.com/eternagame/EternaFold
 - **Package**: https://anaconda.org/channels/bioconda/packages/eternafold/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/eternafold/overview
 - **Total Downloads**: 7.1K
 - **Last updated**: 2025-10-02
 - **GitHub**: https://github.com/eternagame/EternaFold
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/eternafold:1.3.1--h9948957_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3735595017: no space left on device
+ERROR: Unknown option "--help" specified.  Run program without any arguments to see command-line options.
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## eternafold_contrafold
+## eternafold_predict-foldchange
 
 ### Tool Description
-RNA secondary structure prediction tool. (Note: The provided text is a system error log regarding container image conversion and does not contain usage instructions or argument definitions.)
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_1
+- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_2
 - **Homepage**: https://github.com/eternagame/EternaFold
 - **Package**: https://anaconda.org/channels/bioconda/packages/eternafold/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/eternafold:1.3.1--h9948957_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2696691622: no space left on device
+ERROR: Unknown option "--help" specified.  Run program without any arguments to see command-line options.
+```
+
+
+## eternafold_sample
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_2
+- **Homepage**: https://github.com/eternagame/EternaFold
+- **Package**: https://anaconda.org/channels/bioconda/packages/eternafold/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unknown option "--help" specified.  Run program without any arguments to see command-line options.
+```
+
+
+## eternafold_revi
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_2
+- **Homepage**: https://github.com/eternagame/EternaFold
+- **Package**: https://anaconda.org/channels/bioconda/packages/eternafold/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unknown option "--help" specified.  Run program without any arguments to see command-line options.
+```
+
+
+## eternafold_train
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_2
+- **Homepage**: https://github.com/eternagame/EternaFold
+- **Package**: https://anaconda.org/channels/bioconda/packages/eternafold/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unknown option "--help" specified.  Run program without any arguments to see command-line options.
+```
+
+
+## eternafold_em-train
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/eternafold:1.3.1--h9948957_2
+- **Homepage**: https://github.com/eternagame/EternaFold
+- **Package**: https://anaconda.org/channels/bioconda/packages/eternafold/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unknown option "--help" specified.  Run program without any arguments to see command-line options.
 ```
 

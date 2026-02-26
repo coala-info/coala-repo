@@ -1,8 +1,9 @@
 ---
 name: qsopt-ex
-description: The `qsopt-ex` skill enables the use of the QSopt_ex exact linear programming solver through its Python bindings.
+description: The qsopt-ex tool solves linear programming problems using exact rational arithmetic to ensure numerical precision. Use when user asks to solve linear programs exactly, perform optimization without rounding errors, or read and solve LP and MPS files using exact arithmetic.
 homepage: https://github.com/jonls/python-qsoptex
 ---
+
 
 # qsopt-ex
 

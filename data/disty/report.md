@@ -3,7 +3,7 @@
 ## disty
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container runtime environment failure (no space left on device).
+compute a distance matrix from a core genome alignment file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/disty:0.1.0--1
@@ -18,11 +18,24 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/disty:0.1.0--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2546356577: no space left on device
+Program: Disty McMatrixface - compute a distance matrix from a core genome alignment file
+Version: 0.1.0
+Contact: Karel Brinda <kbrinda@hsph.harvard.edu>
+
+Usage:   disty <alignment.fa>
+
+Options:
+  -n  FLOAT  skip columns having frequency of N > FLOAT [1.00]
+  -i  INT    input format [0]
+                 0: ACGT
+                 1: 01
+  -s  INT    strategy to deal with N's [0]
+                 0: ignore pairwisely
+                 1: ignore pairwisely and normalize
+                 2: ignore globally
+                 3: replace by the major allele
+                 4: replace by the closest individual (not implemented yet)
+  -h         print help message and exit
+  -v         print version and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

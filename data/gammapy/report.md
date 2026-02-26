@@ -3,26 +3,39 @@
 ## gammapy
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains system log messages and a fatal error regarding container image acquisition (no space left on device).
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gammapy:1.0
 - **Homepage**: https://github.com/gammapy/gammapy
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/gammapy/overview
-- **Total Downloads**: 684.4K
+- **Total Downloads**: 686.1K
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/gammapy/gammapy
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gammapy:1.0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3594642286: no space left on device
+Unable to find image 'quay.io/biocontainers/gammapy:1.0' locally
+1.0: Pulling from biocontainers/gammapy
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+e04d102c9b77: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1212602088: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: not generated

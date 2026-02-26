@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.mapping250k.nsp
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Mapping 250K Nsp SNP array. Use when user asks to analyze Affymetrix Mapping 250K Nsp array data, map probes to genomic locations, or access platform design information for this chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mapping250k.nsp.html
 ---
+
 
 # bioconductor-pd.mapping250k.nsp
 

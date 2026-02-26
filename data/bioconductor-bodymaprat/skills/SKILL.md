@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bodymaprat
-description: the package is available on all platforms; click for details.
+description: This package provides a transcriptomic dataset of raw RNA-Seq counts across 11 organs and 4 developmental stages from a rat BodyMap study. Use when user asks to access rat gene expression data, retrieve SummarizedExperiment objects for rat tissues, or analyze transcriptomic profiles across different rat developmental stages and organs.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bodymapRat.html
 ---
+
 
 # bioconductor-bodymaprat
 

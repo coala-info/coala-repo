@@ -1,8 +1,9 @@
 ---
 name: bioconductor-degseq
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially expressed genes from RNA-seq data using MA-plot-based methods or likelihood ratio tests. Use when user asks to perform differential expression analysis, identify DEGs from gene expression count matrices, or count mapped reads using a refFlat annotation.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEGseq.html
 ---
+
 
 # bioconductor-degseq
 

@@ -1,8 +1,9 @@
 ---
 name: goenrichment
-description: The goenrichment tool is designed to statistically evaluate sets of genes to find significantly enriched GO terms.
+description: The goenrichment tool performs statistical analysis to identify significantly enriched Gene Ontology terms within a set of genes. Use when user asks to perform GO enrichment analysis, find overrepresented biological functions, or generate visual graphs of enriched ontology terms.
 homepage: https://github.com/DanFaria/GOEnrichment
 ---
+
 
 # goenrichment
 

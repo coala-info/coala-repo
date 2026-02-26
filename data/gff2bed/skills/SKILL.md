@@ -1,8 +1,9 @@
 ---
 name: gff2bed
-description: The `gff2bed` utility is a specialized tool designed to convert genomic annotations from the GFF3 (General Feature Format version 3) format into the BED (Browser Extensible Data) format.
+description: The gff2bed utility converts genomic annotations from GFF3 format into BED format while automatically handling coordinate system shifts. Use when user asks to convert GFF3 files to BED, transform genomic intervals for track visualization, or process malformed GFF3 data into BED format.
 homepage: https://gitlab.com/salk-tm/gff2bed
 ---
+
 
 # gff2bed
 

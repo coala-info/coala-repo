@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adverscarial
-description: The package is versatile and provides a format for integrating any type of classifier. It offers functions for studying and generating two types of attacks, single gene attack and max change attack. The single-gene attack involves making a small modification to the input to alter the classification. The max-change attack involves making a large modification to the input without changing its classification. The CGD attack is based on an estimated gradient descent. against adversarial attacks. The package provides a comprehensive solution for evaluating the robustness of scRNA-seq classifiers against adversarial attacks.
+description: This tool evaluates the robustness of scRNA-seq cell-type classifiers by generating and testing adversarial perturbations. Use when user asks to perform single-gene attacks, execute max-change modifications, or run cluster gradient descent to assess classifier vulnerability.
 homepage: https://bioconductor.org/packages/release/bioc/html/adverSCarial.html
 ---
+
 
 # bioconductor-adverscarial
 

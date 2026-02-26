@@ -1,8 +1,9 @@
 ---
 name: r-km.ci
-description: "Computes various confidence intervals for the Kaplan-Meier         estimator, namely: Peto's CI, Rothman CI, CI's based on         Greenwood's variance, Thomas and Grunkemeier CI and the         simultaneous confidence bands by Nair and Hall and Wellner.</p>"
+description: This tool computes various confidence intervals and simultaneous confidence bands for Kaplan-Meier survival estimators in R. Use when user asks to calculate advanced confidence intervals for survival curves, compute simultaneous confidence bands, or apply specific methods like Peto or Hall-Wellner to a survfit object.
 homepage: https://cloud.r-project.org/web/packages/km.ci/index.html
 ---
+
 
 # r-km.ci
 

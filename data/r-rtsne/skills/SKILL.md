@@ -1,8 +1,9 @@
 ---
 name: r-rtsne
-description: Skill for using the CRAN R package r-rtsne.
+description: The Rtsne package provides an R wrapper for the Barnes-Hut implementation of t-SNE to perform fast dimensionality reduction on large datasets. Use when user asks to visualize high-dimensional data, perform t-SNE analysis, or create low-dimensional embeddings for biological and numerical datasets.
 homepage: https://cloud.r-project.org/web/packages/Rtsne/index.html
 ---
+
 
 # r-rtsne
 

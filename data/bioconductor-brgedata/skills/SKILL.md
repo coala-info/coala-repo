@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brgedata
-description: the package is available on all platforms; click for details.
+description: This package provides multi-omic and exposome datasets from a Spanish cohort for testing integration methods. Use when user asks to load example data for exposomics, transcriptomics, methylomics, or proteomics, or perform multi-omic data integration.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/brgedata.html
 ---
+
 
 # bioconductor-brgedata
 

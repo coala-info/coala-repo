@@ -1,10 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: esviritu_summarize_esv_runs
+baseCommand: summarize_esv_runs
 label: esviritu_summarize_esv_runs
-doc: "Summarize ESV runs (Note: The provided help text contains only system error
-  messages and no usage information).\n\nTool homepage: https://github.com/cmmr/EsViritu"
-inputs: []
+doc: "Summarize EsViritu run outputs across a directory.\n\nTool homepage: https://github.com/cmmr/EsViritu"
+inputs:
+  - id: directory
+    type: Directory
+    doc: Directory containing EsViritu .tsv outputs
+    inputBinding:
+      position: 1
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory to save output files
+    default: current working directory
+    inputBinding:
+      position: 102
+      prefix: --outdir
 outputs:
   - id: stdout
     type: stdout

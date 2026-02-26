@@ -1,8 +1,9 @@
 ---
 name: strcount
-description: strcount is a bioinformatics tool specifically designed to count repeat motifs within tandem repeat expansions using long-read data.
+description: strcount counts repeat motifs within tandem repeat expansions using long-read data aligned to a reference graph. Use when user asks to count short tandem repeats, analyze long-read expansion data, or quantify motifs in specific genomic loci.
 homepage: https://github.com/sabiqali/strcount
 ---
+
 
 # strcount
 

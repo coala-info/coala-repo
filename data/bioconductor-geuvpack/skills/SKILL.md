@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geuvpack
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides access to processed GEUVADIS RNA-seq expression data and tools for integrating it with genotype information. Use when user asks to load GEUVADIS FPKM data, perform surrogate variable analysis on transcriptomic datasets, or retrieve 1000 Genomes VCF paths for eQTL mapping.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/geuvPack.html
 ---
+
 
 # bioconductor-geuvpack
 

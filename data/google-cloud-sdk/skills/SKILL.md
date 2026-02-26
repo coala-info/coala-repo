@@ -1,8 +1,9 @@
 ---
 name: google-cloud-sdk
-description: The `google-cloud-sdk` skill provides the necessary procedural knowledge to manage Google Cloud resources directly from the command line.
+description: The google-cloud-sdk provides a command-line interface for managing Google Cloud Platform resources and services. Use when user asks to authenticate accounts, configure project settings, manage compute instances, interact with cloud storage, or run local service emulators.
 homepage: https://cloud.google.com/sdk/
 ---
+
 
 # google-cloud-sdk
 

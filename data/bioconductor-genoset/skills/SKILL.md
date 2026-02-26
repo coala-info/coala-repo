@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genoset
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides the GenoSet class for managing and analyzing genomic data integrated with location metadata. Use when user asks to create GenoSet objects, perform copy number analysis, run Circular Binary Segmentation, or subset genomic data by position.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/genoset.html
 ---
+
 
 # bioconductor-genoset
 

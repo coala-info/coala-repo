@@ -2,10 +2,41 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fasten_quality_filter
 label: fasten_fasten_quality_filter
-doc: "A tool from the fasten suite to filter FASTQ reads based on quality scores.
-  (Note: The provided help text contains system error messages and does not list specific
-  arguments.)\n\nTool homepage: https://github.com/lskatz/fasten"
-inputs: []
+doc: "Transforms any low-quality base to 'N'.\n\nTool homepage: https://github.com/lskatz/fasten"
+inputs:
+  - id: max_quality
+    type:
+      - 'null'
+      - int
+    doc: The maximum quality at which a base will be transformed to 'N'
+    inputBinding:
+      position: 101
+      prefix: --max-quality
+  - id: numcpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --numcpus
+  - id: paired_end
+    type:
+      - 'null'
+      - boolean
+    doc: The input reads are interleaved paired-end
+    inputBinding:
+      position: 101
+      prefix: --paired-end
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print more status messages
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

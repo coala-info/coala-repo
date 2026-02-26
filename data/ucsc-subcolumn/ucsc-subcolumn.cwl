@@ -2,15 +2,24 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: subColumn
 label: ucsc-subcolumn
-doc: "The provided text does not contain help information as it is an error log reporting
-  a failure to build or fetch the container image. No arguments could be parsed.\n
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Extract a column from a file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: column_num
+    type: int
+    doc: The 1-based index of the column to extract.
+    inputBinding:
+      position: 1
+  - id: in_file
+    type: File
+    doc: The input file to process.
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_file
+    type: File
+    doc: The output file where the column will be written.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-subcolumn:482--h0b57e2e_0
-stdout: ucsc-subcolumn.out

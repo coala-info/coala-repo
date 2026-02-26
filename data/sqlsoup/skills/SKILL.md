@@ -1,8 +1,9 @@
 ---
 name: sqlsoup
-description: SQLSoup is a minimalist database abstraction layer built on top of the SQLAlchemy ORM.
+description: SQLSoup is a minimalist database abstraction layer that automatically maps Python objects to relational tables at runtime without requiring explicit class definitions. Use when user asks to interact with databases without boilerplate code, explore legacy schemas, or perform quick data manipulations using SQLAlchemy's query interface.
 homepage: https://github.com/kenwilcox/sqlsoup
 ---
+
 
 # sqlsoup
 

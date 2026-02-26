@@ -1,8 +1,9 @@
 ---
 name: salmid
-description: SalmID is a specialized k-mer based tool designed for the rapid taxonomic identification of Salmonella isolates.
+description: SalmID is a k-mer based tool for the rapid taxonomic identification and contamination screening of Salmonella isolates from sequencing data. Use when user asks to identify Salmonella species or subspecies, verify isolate purity, or detect common contaminants like Escherichia and Listeria in genomic samples.
 homepage: https://github.com/hcdenbakker/SalmID
 ---
+
 
 # salmid
 

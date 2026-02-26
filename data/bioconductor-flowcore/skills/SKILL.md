@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowcore
-description: the package is available on all platforms; click for details.
+description: This tool provides infrastructure for managing, manipulating, and analyzing flow cytometry data within the Bioconductor framework. Use when user asks to read or write FCS files, work with flowFrame or flowSet objects, perform compensation and transformation, apply gating and filtering operations, or subset and split flow cytometry datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCore.html
 ---
+
 
 # bioconductor-flowcore
 

@@ -1,8 +1,9 @@
 ---
 name: emboss-lib
-description: EMBOSS (European Molecular Biology Open Software Suite) is a comprehensive, open-source toolkit designed for the bioinformatics community.
+description: EMBOSS is a comprehensive bioinformatics toolkit that integrates over 200 applications for sequence analysis and data management under a unified interface. Use when user asks to execute bioinformatics workflows, manage sequence data using Uniform Sequence Addresses, handle diverse biological data formats, or perform high-throughput sequence analysis.
 homepage: http://emboss.open-bio.org/
 ---
+
 
 # emboss-lib
 

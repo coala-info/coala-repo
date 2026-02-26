@@ -1,8 +1,10 @@
 ---
 name: tirank
-description: TiRank is a computational framework that leverages deep learning and statistical modeling to bridge the gap between bulk transcriptomic datasets and single-cell or spatial resolutions.
+description: TiRank identifies gene-pair signatures from bulk transcriptomic data and projects them onto single-cell or spatial data to rank cell populations by clinical outcomes. Use when user asks to analyze transcriptomic datasets, predict immunotherapy response, identify spatial niches linked to prognosis, or rank cell populations by clinical outcomes.
 homepage: https://github.com/LenisLin/TiRank
 ---
+
+
 
 # tirank
 

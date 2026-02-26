@@ -1,8 +1,9 @@
 ---
 name: gnparser
-description: The `gnparser` skill provides a specialized workflow for handling biological scientific names.
+description: The gnparser tool transforms unstructured biological scientific names into structured data by identifying components like genus, specific epithet, and authority information. Use when user asks to parse taxonomic names, clean taxonomic lists, or convert scientific names into JSON, CSV, or TSV formats.
 homepage: https://parser.globalnames.org/
 ---
+
 
 # gnparser
 

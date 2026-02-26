@@ -1,8 +1,9 @@
 ---
 name: r-bio3d
-description: "Utilities to process, organize and explore protein structure,     sequence and dynamics data. Features include the ability to read and write     structure, sequence and dynamic trajectory data, perform sequence and structure     database searches, data summaries, atom selection, alignment, superposition,     rigid core identification, clustering, torsion analysis, distance matrix     analysis, structure and sequence conservation analysis, normal mode analysis,     principal component analysis of heterogeneous structure data, and correlation     network analysis from normal mode and molecular dynamics data. In addition,     various utility functions are provided to enable the statistical and graphical     power of the R environment to work with biological sequence and structural data.     Please refer to the URLs below for more information.</p>"
+description: The r-bio3d tool provides utilities for processing, organizing, and exploring biological structure, sequence, and dynamics data in R. Use when user asks to manipulate PDB files, perform sequence or structure alignment, conduct Normal Mode Analysis, execute Principal Component Analysis on structural ensembles, or analyze molecular dynamics trajectories.
 homepage: https://cloud.r-project.org/web/packages/bio3d/index.html
 ---
+
 
 # r-bio3d
 

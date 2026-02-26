@@ -1,8 +1,9 @@
 ---
 name: biom-format
-description: The `biom-format` tool is essential for managing large-scale biological observation data, such as OTU tables or functional genomic counts.
+description: The biom-format tool manages large-scale biological observation data by storing and manipulating sparse matrices of species or genomic counts. Use when user asks to convert between TSV and BIOM formats, add sample or observation metadata to tables, or summarize and validate biological observation matrices.
 homepage: http://www.biom-format.org
 ---
+
 
 # biom-format
 

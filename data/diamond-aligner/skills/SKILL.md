@@ -1,8 +1,9 @@
 ---
 name: diamond-aligner
-description: DIAMOND is a high-throughput sequence aligner designed for protein and translated DNA searches.
+description: DIAMOND is a high-throughput sequence aligner for protein and translated DNA searches that serves as a fast alternative to BLAST. Use when user asks to index protein databases, perform blastp or blastx alignments, or cluster large-scale protein datasets.
 homepage: https://github.com/bbuchfink/diamond
 ---
+
 
 # diamond-aligner
 

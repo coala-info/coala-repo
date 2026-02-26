@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bags
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially expressed gene sets across phenotypes or time points using a Bayesian Gibbs sampler. Use when user asks to identify differentially expressed gene sets, perform Bayesian gene set enrichment analysis, or analyze gene expression across multiple phenotypes or time points.
 homepage: https://bioconductor.org/packages/release/bioc/html/BAGS.html
 ---
+
 
 # bioconductor-bags
 

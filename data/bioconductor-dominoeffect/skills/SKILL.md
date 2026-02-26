@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dominoeffect
-description: the package is available on all platforms; click for details.
+description: This tool identifies and annotates protein mutation hotspots in cancer datasets by detecting amino acid residues with high mutation loads. Use when user asks to identify mutation hotspots, calculate the statistical significance of mutation clusters, or map residues to functional protein regions and UniProt annotations.
 homepage: https://bioconductor.org/packages/release/bioc/html/DominoEffect.html
 ---
+
 
 # bioconductor-dominoeffect
 

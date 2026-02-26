@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deformats
-description: the package is available on all platforms; click for details.
+description: The DEFormats package provides a unified interface for converting data structures between the DESeq2 and edgeR Bioconductor packages. Use when user asks to convert a DGEList to a DESeqDataSet, convert a DESeqDataSet to a DGEList, or create an edgeR object from a SummarizedExperiment.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEFormats.html
 ---
+
 
 # bioconductor-deformats
 

@@ -1,8 +1,9 @@
 ---
 name: clame
-description: CLAME (Clasificador Metagenomico) is a binning software designed for metagenomic reads.
+description: CLAME is a metagenomic binning tool that classifies nucleotide sequences into distinct genomic groups using sequence alignment and DNA composition analysis. Use when user asks to bin metagenomic reads, classify sequences into genomic groups, or perform sequence alignment for binning.
 homepage: https://github.com/andvides/CLAME
 ---
+
 
 # clame
 

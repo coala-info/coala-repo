@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rvs
-description: the package is available on all platforms; click for details.
+description: RVS performs rare variant sharing analysis for genetic studies of human families. Use when user asks to calculate the probability of sharing rare variants among affected relatives, perform family-based genetic association tests, or analyze pedigree-based sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/RVS.html
 ---
+
 
 # bioconductor-rvs
 

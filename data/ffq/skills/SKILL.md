@@ -1,8 +1,9 @@
 ---
 name: ffq
-description: The `ffq` tool is a specialized CLI utility designed to simplify the discovery of sequencing data and its associated metadata.
+description: The ffq tool retrieves sequencing metadata and file download links from biological accessions or DOIs. Use when user asks to retrieve sequencing metadata, find file download links for biological accessions, or discover data associated with a DOI.
 homepage: https://github.com/pachterlab/ffq
 ---
+
 
 # ffq
 

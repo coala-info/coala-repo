@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tfhaz
-description: the package is available on all platforms; click for details.
+description: This tool identifies transcription factor high abundance zones within genomic regions. Use when user asks to find transcription factor high abundance zones, analyze TF density in ChIP-seq data, or identify genomic regions with high concentrations of transcription factors.
 homepage: https://bioconductor.org/packages/release/bioc/html/TFHAZ.html
 ---
+
 
 # bioconductor-tfhaz
 

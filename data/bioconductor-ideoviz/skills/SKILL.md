@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ideoviz
-description: the package is available on all platforms; click for details.
+description: bioconductor-ideoviz visualizes continuous or discrete genomic data along chromosomal ideograms. Use when user asks to plot binned genomic metrics against chromosome structures, visualize spatial distributions of data across the genome, or generate multi-series trendlines and barplots on cytobands.
 homepage: https://bioconductor.org/packages/release/bioc/html/IdeoViz.html
 ---
+
 
 # bioconductor-ideoviz
 

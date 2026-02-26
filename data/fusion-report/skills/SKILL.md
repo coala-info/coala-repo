@@ -1,8 +1,9 @@
 ---
 name: fusion-report
-description: The `fusion-report` tool is a specialized utility for clinical genomics and bioinformatics workflows that simplifies the interpretation of gene fusion data.
+description: Fusion-report unifies and annotates gene fusion detection results from multiple bioinformatics tools into a single comprehensive report. Use when user asks to generate fusion reports, download or sync fusion databases, and cross-reference detection results against known databases.
 homepage: https://github.com/matq007/fusion-report
 ---
+
 
 # fusion-report
 

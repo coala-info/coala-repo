@@ -1,8 +1,9 @@
 ---
 name: vuegen
-description: VueGen is a reporting automation tool designed to bridge the gap between bioinformatics data generation and result communication.
+description: VueGen automates the compilation of bioinformatics data components into unified reports based on directory structure. Use when user asks to generate HTML reports, create Streamlit dashboards, generate presentations, documents, notebooks, or PDF reports.
 homepage: https://github.com/Multiomics-Analytics-Group/vuegen
 ---
+
 
 # vuegen
 

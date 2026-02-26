@@ -1,8 +1,9 @@
 ---
 name: r-robustbase
-description: "\"Essential\" Robust Statistics.  Tools allowing to analyze data with robust methods.  This includes  regression methodology including model selections and multivariate  statistics where we strive to cover the book \"Robust Statistics,  Theory and Methods\" by 'Maronna, Martin and Yohai'; Wiley 2006.</p>"
+description: The robustbase package provides reliable and efficient tools for performing robust statistical methods such as regression and multivariate estimation. Use when user asks to perform robust linear regression, estimate robust multivariate location and scatter, or fit robust generalized linear models.
 homepage: https://cloud.r-project.org/web/packages/robustbase/index.html
 ---
+
 
 # r-robustbase
 

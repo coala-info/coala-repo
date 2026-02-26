@@ -1,8 +1,9 @@
 ---
 name: pythonpy
-description: pythonpy acts as a bridge between the shell and Python, allowing you to execute Python expressions and apply them to streams of data.
+description: pythonpy executes Python expressions directly from the command line to transform and process data streams. Use when user asks to evaluate Python code in the shell, manipulate piped input line-by-line, or perform list operations on command output.
 homepage: https://github.com/Russell91/pythonpy
 ---
+
 
 # pythonpy
 

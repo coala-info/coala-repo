@@ -3,7 +3,7 @@
 ## fqgrep
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container due to insufficient disk space.
+A tool for searching for DNA sequences in FASTQ files, supporting mismatches and reverse complement searches.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fqgrep:1.1.1--ha6fb395_0
@@ -18,11 +18,13 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fqgrep:1.1.1--ha6fb395_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3755433500: no space left on device
+Unable to find image 'quay.io/biocontainers/fqgrep:1.1.1--ha6fb395_0' locally
+1.1.1--ha6fb395_0: Pulling from biocontainers/fqgrep
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+8ce5155a5f66: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2327870196: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

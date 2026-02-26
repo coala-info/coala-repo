@@ -1,8 +1,9 @@
 ---
 name: enhancedsppider
-description: EnhancedSppIDer is a bioinformatics suite designed to resolve the taxonomic composition of sequencing libraries.
+description: EnhancedSppIDer resolves the taxonomic composition of sequencing libraries by mapping reads against a combined reference genome to identify hybrids and quantify genomic contributions. Use when user asks to identify species in a sequencing library, analyze hybrid genomes, map long-read or short-read data to multiple species, or extract reads belonging to specific taxa.
 homepage: https://github.com/JohnnyChen1113/EnhancedSppIDer
 ---
+
 
 # enhancedsppider
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hapmap370k
-description: the package is available on all platforms; click for details.
+description: This package provides example HapMap dataset files from the Illumina 370k platform for demonstration and testing purposes. Use when user asks to access raw Illumina IDAT files, demonstrate genotyping workflows, or benchmark copy number analysis tools like crlmm.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hapmap370k.html
 ---
+
 
 # bioconductor-hapmap370k
 

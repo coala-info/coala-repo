@@ -1,8 +1,9 @@
 ---
 name: r-extrafont
-description: "Tools to using fonts other than the standard PostScript fonts.     This package makes it easy to use system TrueType fonts and with PDF or     PostScript output files, and with bitmap output files in Windows. extrafont     can also be used with fonts packaged specifically to be used with, such as     the fontcm package, which has Computer Modern PostScript fonts with math     symbols.</p>"
+description: The extrafont package enables the use of system TrueType fonts in R graphics and ensures they are correctly embedded in PDF or PostScript files. Use when user asks to import system fonts, register fonts for R graphics devices, or embed font glyphs into PDF outputs for portability.
 homepage: https://cloud.r-project.org/web/packages/extrafont/index.html
 ---
+
 
 # r-extrafont
 

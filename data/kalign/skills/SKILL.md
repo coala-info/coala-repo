@@ -1,8 +1,9 @@
 ---
 name: kalign
-description: Kalign is a specialized tool for aligning multiple biological sequences with a focus on speed and efficiency.
+description: Kalign performs fast and efficient multiple sequence alignment for biological sequences using SIMD optimizations and multi-threading. Use when user asks to align multiple protein or nucleotide sequences, convert sequence alignment formats, or perform large-scale sequence alignments via command line or Python.
 homepage: https://github.com/TimoLassmann/kalign
 ---
+
 
 # kalign
 

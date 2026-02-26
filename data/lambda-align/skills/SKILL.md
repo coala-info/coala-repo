@@ -1,8 +1,9 @@
 ---
 name: lambda-align
-description: The `lambda-align` skill provides procedural knowledge for using the Local Aligner for Massive Biological DatA.
+description: Lambda-align performs high-throughput local alignment of protein sequences against large databases with optimized speed and memory efficiency. Use when user asks to index protein databases, perform sequence searches, or conduct taxonomic LCA binning and annotation.
 homepage: http://seqan.github.io/lambda/
 ---
+
 
 # lambda-align
 

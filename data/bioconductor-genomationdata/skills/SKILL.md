@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomationdata
-description: the package is available on all platforms; click for details.
+description: This package provides sample ChIP-seq and Bisulfite-seq data from human H1 embryonic stem cells for testing and demonstrating genomic analysis workflows. Use when user asks to load example genomic data, access sample BAM or peak files, or provide test datasets for the genomation package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/genomationData.html
 ---
+
 
 # bioconductor-genomationdata
 

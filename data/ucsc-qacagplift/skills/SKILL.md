@@ -1,8 +1,9 @@
 ---
 name: ucsc-qacagplift
-description: The `ucsc-qacagplift` utility (specifically the `qacAgpLift` binary) is a specialized tool from the UCSC Genome Browser "Kent" suite.
+description: The `ucsc-qacagplift` tool re-coordinates quality scores from scaffold-level QAC files to chromosome-level QAC files using AGP assembly information. Use when user asks to 're-coordinate quality scores', 'lift quality scores to a new assembly', or 'map quality scores from scaffolds to chromosomes'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-qacagplift
 

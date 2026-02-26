@@ -1,8 +1,9 @@
 ---
 name: repic
-description: REPIC (REliable PIcking by Consensus) is an ensemble learning methodology designed to harmonize results from various cryo-EM particle picking tools.
+description: REPIC is an ensemble learning tool that identifies consensus cryo-EM particles from multiple picking algorithms using graph theory and integer linear programming. Use when user asks to harmonize results from different particle pickers, identify consensus particles, or reduce false positives in a particle stack.
 homepage: https://github.com/ccameron/REPIC
 ---
+
 
 # repic
 

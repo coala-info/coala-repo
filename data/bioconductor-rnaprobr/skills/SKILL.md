@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnaprobr
-description: the package is available on all platforms; click for details.
+description: RNAprobR processes and analyzes high-throughput RNA chemical probing data to generate nucleotide-level reactivity profiles. Use when user asks to process RNA chemical probing data, calculate nucleotide reactivities, or analyze SHAPE-seq and DMS-seq experiments.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/RNAprobR.html
 ---
+
 
 # bioconductor-rnaprobr
 

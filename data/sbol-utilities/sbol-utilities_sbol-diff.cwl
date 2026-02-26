@@ -1,12 +1,36 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - sbol-diff
+baseCommand: sbol-diff
 label: sbol-utilities_sbol-diff
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a log of a failed container build or execution process.\n\nTool homepage:
-  https://github.com/SynBioDex/SBOL-utilities"
-inputs: []
+doc: "Compares two SBOL files and reports differences.\n\nTool homepage: https://github.com/SynBioDex/SBOL-utilities"
+inputs:
+  - id: file1
+    type: File
+    doc: First Input File
+    inputBinding:
+      position: 1
+  - id: file2
+    type: File
+    doc: Second Input File
+    inputBinding:
+      position: 2
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Enable debug logging
+    default: false
+    inputBinding:
+      position: 103
+      prefix: --debug
+  - id: silent
+    type:
+      - 'null'
+      - boolean
+    doc: Generate no output, only status
+    inputBinding:
+      position: 103
+      prefix: --silent
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-trajectoryutils
-description: the package is available on all platforms; click for details.
+description: TrajectoryUtils provides a collection of utility functions for analyzing and manipulating single-cell trajectory data. Use when user asks to smooth trajectories, find paths between clusters, or calculate pseudotime values.
 homepage: https://bioconductor.org/packages/release/bioc/html/TrajectoryUtils.html
 ---
+
 
 # bioconductor-trajectoryutils
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cghcall
-description: the package is available on all platforms; click for details.
+description: This tool performs preprocessing, segmentation, and statistical calling of copy number aberrations from aCGH data using a mixture model approach. Use when user asks to preprocess aCGH log2 ratios, segment genomic data, call copy number states, or perform cellularity correction for tumor samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHcall.html
 ---
+
 
 # bioconductor-cghcall
 

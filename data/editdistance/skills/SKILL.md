@@ -1,8 +1,9 @@
 ---
 name: editdistance
-description: The `editdistance` skill provides a fast, C++ and Cython-based implementation of the Levenshtein distance algorithm.
+description: This tool calculates the Levenshtein distance between two sequences of hashable objects using a fast, bit-parallel implementation. Use when user asks to compute the edit distance between strings, compare lists of tokens, or perform sequence similarity analysis.
 homepage: https://github.com/roy-ht/editdistance
 ---
+
 
 # editdistance
 

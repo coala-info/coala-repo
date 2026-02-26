@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ncrnatools
-description: The package also provides tools to read, write and interconvert the file formats most commonly used for representing such secondary structures.
+description: ncRNAtools provides functions to read, write, and interconvert file formats for non-coding RNA secondary structures. Use when user asks to read, write, or interconvert file formats for ncRNA secondary structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/ncRNAtools.html
 ---
+
 
 # bioconductor-ncrnatools
 

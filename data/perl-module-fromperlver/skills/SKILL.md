@@ -1,8 +1,9 @@
 ---
 name: perl-module-fromperlver
-description: The `perl-module-fromperlver` tool (and its underlying `Module::FromPerlVer` logic) provides a mechanism to install Perl modules that match the capabilities and versioning of the active Perl interpreter.
+description: This tool installs Perl modules that match the version and capabilities of the active Perl interpreter. Use when user asks to install compatible Perl modules, verify module compatibility, or generate version-specific dependency lists.
 homepage: http://metacpan.org/pod/Module::FromPerlVer
 ---
+
 
 # perl-module-fromperlver
 

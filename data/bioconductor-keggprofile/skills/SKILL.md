@@ -1,8 +1,9 @@
 ---
 name: bioconductor-keggprofile
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: KEGGprofile integrates multi-omics data with KEGG pathway maps to visualize expression profiles and trends directly within pathway diagrams. Use when user asks to perform pathway enrichment analysis, convert gene identifiers to Entrez IDs, or visualize multi-group expression data as background colors or line plots on KEGG pathways.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/KEGGprofile.html
 ---
+
 
 # bioconductor-keggprofile
 

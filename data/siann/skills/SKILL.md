@@ -1,8 +1,9 @@
 ---
 name: siann
-description: SIANN (Strain-level Identification and Analysis of Nucleic acids) is a specialized bioinformatics tool designed for high-resolution taxonomic classification.
+description: SIANN performs high-resolution taxonomic classification to achieve strain-level differentiation of bacterial or viral genomes. Use when user asks to build a custom strain-level database, perform strain-level identification, or analyze sequencing reads for specific microbial lineages.
 homepage: https://github.com/signaturescience/siann/wiki
 ---
+
 
 # siann
 

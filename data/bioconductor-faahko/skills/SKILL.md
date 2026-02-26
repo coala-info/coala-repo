@@ -1,8 +1,9 @@
 ---
 name: bioconductor-faahko
-description: the package is available on all platforms; click for details.
+description: This data package provides LC/MS metabolomics data from FAAH knockout and wild-type mice for testing and demonstration purposes. Use when user asks to access sample NetCDF files, load pre-processed xcmsSet or XCMSnExp objects, or practice metabolomics data analysis workflows using the xcms package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/faahKO.html
 ---
+
 
 # bioconductor-faahko
 

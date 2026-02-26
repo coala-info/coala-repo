@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowclust
-description: the package is available on all platforms; click for details.
+description: The flowClust package performs robust clustering of flow cytometry data using multivariate t mixture models and Box-Cox transformations. Use when user asks to cluster flow cytometry data, identify outliers in cell populations, or perform automated gating using mixture models.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowClust.html
 ---
+
 
 # bioconductor-flowclust
 

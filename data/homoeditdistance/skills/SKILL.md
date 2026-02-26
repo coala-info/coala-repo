@@ -1,8 +1,9 @@
 ---
 name: homoeditdistance
-description: The `homoeditdistance` skill provides a specialized method for string comparison that differs from standard Levenshtein distance.
+description: This tool calculates the edit distance between strings by treating contiguous blocks of identical characters as single units for insertion or deletion operations. Use when user asks to calculate the homo-edit distance between sequences, perform string comparisons that ignore homopolymer length variations, or trace the specific block-based transformations needed to turn one string into another.
 homepage: https://github.com/AlBi-HHU/homo-edit-distance
 ---
+
 
 # homoeditdistance
 

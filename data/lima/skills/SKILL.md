@@ -1,8 +1,9 @@
 ---
 name: lima
-description: Lima is the specialized demultiplexer for Pacific Biosciences (PacBio) data.
+description: Lima demultiplexes Pacific Biosciences sequencing data by identifying barcode sequences and sorting reads into per-sample files. Use when user asks to demultiplex PacBio reads, remove primers for IsoSeq workflows, or sort HiFi data by barcode.
 homepage: https://github.com/PacificBiosciences/barcoding
 ---
+
 
 # lima
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gmapr
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface for genomic mapping, alignment, and variant tallying using the GMAP/GSNAP suite. Use when user asks to create genome indices, align sequencing reads with GSNAP, or generate nucleotide-level variant tallies from BAM files.
 homepage: https://bioconductor.org/packages/release/bioc/html/gmapR.html
 ---
+
 
 # bioconductor-gmapr
 

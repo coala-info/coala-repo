@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isee
-description: the package is available on all platforms; click for details.
+description: The iSEE package provides an interactive Shiny interface for exploring and visualizing high-dimensional biological data stored in SummarizedExperiment objects. Use when user asks to launch an interactive explorer for single-cell data, visualize dimensionality reduction results, link plots for data filtering, or create interactive heatmaps and metadata tables.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEE.html
 ---
+
 
 # bioconductor-isee
 

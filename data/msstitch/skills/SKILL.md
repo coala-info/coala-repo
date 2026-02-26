@@ -1,8 +1,9 @@
 ---
 name: msstitch
-description: msstitch is a specialized toolkit for proteomics bioinformatics that streamlines the transition from raw search engine outputs to analysis-ready result files.
+description: msstitch is a proteomics bioinformatics toolkit that processes search engine outputs into analysis-ready files using an SQLite-based lookup system. Use when user asks to build SQLite lookups, generate decoy databases, integrate Percolator FDR filtering, annotate PSM tables, or aggregate and normalize peptide-level quantification.
 homepage: https://github.com/lehtiolab/msstitch
 ---
+
 
 # msstitch
 

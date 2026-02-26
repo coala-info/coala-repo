@@ -3,7 +3,7 @@
 ## livekraken
 
 ### Tool Description
-LiveKraken is a tool for real-time taxonomic classification of sequencing data. (Note: The provided text contains container runtime error messages rather than command-line help documentation.)
+Need to specify input filenames!
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/livekraken:1.0--pl5321h9948957_12
@@ -18,29 +18,47 @@ LiveKraken is a tool for real-time taxonomic classification of sequencing data. 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/livekraken:1.0--pl5321h9948957_12 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2452963159: no space left on device
-```
+Need to specify input filenames!
+Usage: livekraken [options] <filename(s)>
 
+Options:
+  --db NAME               Name for Kraken DB
+                          (default: none)
+  --threads NUM           Number of threads (default: 1)
+  --fasta-input           Input is FASTA format
+  --fastq-input           Input is FASTQ format
+  --bcl-input             Input is BCL format
+  --bcl-length NUM        Number of sequencing cycles
+  --bcl-start NUM         First analysis cycle (>31)
+  --bcl-spacing NUM       Spacing between classification
+  --bcl-lanes NUM NUM ..  The lanes to analyse (e.g. 1 3 4)
+                          Default: Analyse all lanes found.
+  --bcl-tiles NUM NUM ..  The tiles to analyse (e.g. 1101 2115 2304)
+                          Default: 96 tiles (2 sides -> 3 swaths -> 16 tiles).
+  --bcl-max-tile NUM      Maximum tile to analyse, in XYZZ tile format.
+                          Default: Up to tile 2316 (for 96 tiles.)
+                          If this option is used, --bcl-tiles is ignored.
+  --gzip-compressed       Input is gzip compressed
+  --bzip2-compressed      Input is bzip2 compressed
+  --quick                 Quick operation (use first hit or hits)
+  --min-hits NUM          In quick op., number of hits req'd for classification
+                          NOTE: this is ignored if --quick is not specified
+  --unclassified-out FILENAME
+                          Print unclassified sequences to filename
+  --classified-out FILENAME
+                          Print classified sequences to filename
+  --output FILENAME       Print output to filename (default: stdout); "-" will
+                          suppress normal output
+  --only-classified-output
+                          Print no Kraken output for unclassified sequences
+  --preload               Loads DB into memory before classification
+  --paired                The two filenames provided are paired-end reads
+  --check-names           Ensure each pair of reads have names that agree
+                          with each other; ignored if --paired is not specified
+  --help                  Print this message
+  --version               Print version information
 
-## Metadata
-- **Skill**: generated
-
-## livekraken_livekraken-build
-
-### Tool Description
-The provided text does not contain help information or usage instructions for livekraken-build; it contains system error logs related to a container execution failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/livekraken:1.0--pl5321h9948957_12
-- **Homepage**: https://gitlab.com/SimonHTausch/LiveKraken
-- **Package**: https://anaconda.org/channels/bioconda/packages/livekraken/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/livekraken:1.0--pl5321h9948957_12 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1146513198: no space left on device
+If none of the *-input or *-compressed flags are specified, and the 
+file is a regular file, automatic format detection is attempted.
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.mu11ksuba
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Mu11KsubA microarray. Use when user asks to analyze Affymetrix Mu11KsubA microarray data, map probes to genomic features, or access platform-specific annotation data in Bioconductor.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mu11ksuba.html
 ---
+
 
 # bioconductor-pd.mu11ksuba
 

@@ -1,8 +1,9 @@
 ---
 name: longreadsum
-description: LongReadSum is a high-performance QC utility designed specifically for the unique characteristics of long-read sequencing.
+description: LongReadSum is a high-performance quality control utility designed to analyze long-read sequencing data across various formats including BAM, FASTQ, and raw signal files. Use when user asks to perform quality control on long-read data, analyze base modifications, calculate transcript integrity numbers for RNA-seq, or summarize ONT sequencing reports.
 homepage: https://github.com/WGLab/LongReadSum
 ---
+
 
 # longreadsum
 

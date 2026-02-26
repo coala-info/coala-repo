@@ -1,8 +1,9 @@
 ---
 name: orna
-description: ORNA (Optimized Read Normalization Algorithm) is a specialized tool for reducing the size of Next-Generation Sequencing (NGS) datasets through in silico normalization.
+description: ORNA reduces the size of Next-Generation Sequencing datasets through in silico normalization while preserving all k-mers for downstream assembly. Use when user asks to normalize sequencing reads, reduce dataset size for de novo assembly, or perform quality-based or abundance-based read sorting.
 homepage: https://github.com/SchulzLab/ORNA
 ---
+
 
 # orna
 

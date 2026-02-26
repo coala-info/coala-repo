@@ -1,8 +1,9 @@
 ---
 name: bioconductor-coveb
-description: the package is available on all platforms; click for details.
+description: This tool implements an empirical Bayes framework for estimating block-diagonal covariance matrices. Use when user asks to estimate covariance matrices, apply empirical Bayes methods to high-dimensional data, or model block-diagonal structures in genomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/covEB.html
 ---
+
 
 # bioconductor-coveb
 

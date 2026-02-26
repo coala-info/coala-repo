@@ -1,8 +1,9 @@
 ---
 name: spectra-cluster-cli
-description: The spectra-cluster-cli is a Java-based standalone implementation of the PRIDE Cluster algorithm.
+description: "spectra-cluster-cli clusters similar mass spectra from proteomics experiments to identify consistent patterns using the PRIDE Cluster algorithm. Use when user asks to cluster mass spectrometry data, group similar spectra, perform incremental clustering, or filter peaks for improved accuracy."
 homepage: https://github.com/spectra-cluster/spectra-cluster-cli
 ---
+
 
 # spectra-cluster-cli
 

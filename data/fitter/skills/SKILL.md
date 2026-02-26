@@ -1,8 +1,9 @@
 ---
 name: fitter
-description: The `fitter` tool automates the process of testing a dataset against over 80 probability distributions available in Scipy.
+description: The fitter tool identifies the best-fitting probability distribution for a dataset by testing it against multiple statistical models. Use when user asks to fit data to probability distributions, find the best statistical model for a sample, or rank distributions based on goodness-of-fit metrics.
 homepage: https://github.com/cokelaer/fitter
 ---
+
 
 # fitter
 

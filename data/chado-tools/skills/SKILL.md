@@ -1,8 +1,9 @@
 ---
 name: chado-tools
-description: chado-tools is a specialized command-line suite designed for managing and accessing biological data stored in CHADO databases (GMOD schema).
+description: chado-tools is a command-line suite for managing and accessing biological data stored in CHADO databases. Use when user asks to initialize a GMOD schema, run SQL queries, extract organism metadata, or perform bulk data imports and exports.
 homepage: https://github.com/sanger-pathogens/chado-tools/
 ---
+
 
 # chado-tools
 

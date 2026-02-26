@@ -1,8 +1,9 @@
 ---
 name: concoct
-description: CONCOCT (Clustering cONtigs with COverage and ComposiTion) is a bioinformatics tool designed to group metagenomic sequences into "bins" that represent individual microbial genomes.
+description: CONCOCT groups metagenomic sequences into bins representing individual microbial genomes by combining sequence composition and differential coverage across samples. Use when user asks to fragment contigs, generate coverage tables, run the CONCOCT clustering algorithm, merge subcontig clusters, or extract bins into individual FASTA files.
 homepage: https://github.com/BinPro/CONCOCT
 ---
+
 
 # concoct
 

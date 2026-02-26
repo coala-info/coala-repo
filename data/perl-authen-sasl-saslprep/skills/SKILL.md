@@ -1,8 +1,9 @@
 ---
 name: perl-authen-sasl-saslprep
-description: This skill provides guidance on using the `Authen::SASL::SASLprep` Perl module to normalize strings used in authentication.
+description: This tool normalizes Unicode strings for authentication using the SASLprep profile. Use when user asks to normalize usernames or passwords, handle Unicode characters in credentials, or implement RFC 4013 string preparation in Perl.
 homepage: http://metacpan.org/pod/Authen-SASL-SASLprep
 ---
+
 
 # perl-authen-sasl-saslprep
 

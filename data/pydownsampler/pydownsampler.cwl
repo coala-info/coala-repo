@@ -2,15 +2,50 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pydownsampler
 label: pydownsampler
-doc: "A tool for downsampling (Note: The provided text contains container build logs
-  and error messages rather than the tool's help documentation. No arguments could
-  be extracted.)\n\nTool homepage: https://github.com/LindoNkambule/pydownsampler"
-inputs: []
+doc: "Downsample BAM files to a specified coverage.\n\nTool homepage: https://github.com/LindoNkambule/pydownsampler"
+inputs:
+  - id: input_bam
+    type: File
+    doc: Input BAM file
+    inputBinding:
+      position: 1
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: Random seed for reproducibility
+    inputBinding:
+      position: 102
+      prefix: --seed
+  - id: target_coverage
+    type: int
+    doc: Target coverage
+    inputBinding:
+      position: 102
+      prefix: --target
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: --threads
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Enable verbose output
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_bam
+    type: File
+    doc: Output BAM file
+    outputBinding:
+      glob: $(inputs.output_bam)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pydownsampler:1.0--py_0
-stdout: pydownsampler.out

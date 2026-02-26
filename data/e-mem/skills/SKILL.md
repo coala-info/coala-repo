@@ -1,8 +1,9 @@
 ---
 name: e-mem
-description: EverMemOS (e-mem) is a specialized memory operating system designed to give AI agents a persistent, evolving understanding of users and past interactions.
+description: e-mem is a memory operating system that transforms conversation logs into structured episodic and profile-based long-term memory for AI agents. Use when user asks to start memory services, store structured message data, or retrieve relevant past context using hybrid search.
 homepage: https://github.com/EverMind-AI/EverMemOS
 ---
+
 
 # e-mem
 

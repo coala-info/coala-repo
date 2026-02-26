@@ -1,8 +1,9 @@
 ---
 name: pangwas
-description: panGWAS is a comprehensive bioinformatics toolset designed to bridge the gap between raw genomic assemblies and association results.
+description: panGWAS is a bioinformatics toolset that reconstructs pangenomes and performs genome-wide association studies to identify variants linked to specific traits. Use when user asks to perform bacterial GWAS, reconstruct a pangenome, identify genomic variants, or model associations between genotypes and phenotypes.
 homepage: https://github.com/phac-nml/pangwas
 ---
+
 
 # pangwas
 

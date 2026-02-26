@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmchmm
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially methylated CpG sites in bisulfite sequencing data using Hidden Markov Models. Use when user asks to import Bismark files, simulate methylation data, predict methylation levels using EM or MCMC algorithms, or perform statistical testing for differentially methylated sites.
 homepage: https://bioconductor.org/packages/release/bioc/html/DMCHMM.html
 ---
+
 
 # bioconductor-dmchmm
 

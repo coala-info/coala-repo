@@ -1,8 +1,9 @@
 ---
 name: plasmar
-description: PLASMAR is a specialized bioinformatics tool used to bridge the gap between raw genomic assemblies and the identification of mobile genetic elements carrying resistance markers.
+description: PLASMAR identifies plasmid-like contigs in genomic assemblies and cross-references them with antimicrobial resistance markers. Use when user asks to identify plasmids, filter assembly contigs for mobile genetic elements, or find resistance sequences within plasmid-like structures.
 homepage: https://https://github.com/rastanton/PLASMAR
 ---
+
 
 # plasmar
 

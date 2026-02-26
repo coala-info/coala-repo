@@ -1,8 +1,9 @@
 ---
 name: scte
-description: scTE (single-cell Transposable Element) is a computational pipeline designed to quantify the expression of transposable elements and genes simultaneously from single-cell sequencing data.
+description: "scTE quantifies the expression of transposable elements and genes simultaneously from single-cell sequencing data. Use when user asks to build genome indices for transposable elements, quantify TE and gene expression from BAM or SAM files, or process single-cell outputs from CellRanger and STARsolo."
 homepage: https://github.com/JiekaiLab/scTE
 ---
+
 
 # scte
 

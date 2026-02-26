@@ -1,8 +1,9 @@
 ---
 name: ensembl-vep
-description: The Ensembl Variant Effect Predictor (VEP) is a high-performance suite for genomic variant annotation.
+description: Ensembl VEP annotates genomic variants and predicts their functional impact on biological features. Use when user asks to annotate VCF files, predict variant consequences, or extract biological insights from sequencing datasets.
 homepage: https://www.ensembl.org/info/docs/tools/vep/index.html
 ---
+
 
 # ensembl-vep
 

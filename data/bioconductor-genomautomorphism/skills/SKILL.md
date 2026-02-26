@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomautomorphism
-description: the package is available on all platforms; click for details.
+description: This tool analyzes DNA mutational events and evolutionary processes using algebraic representations and automorphisms on finite Abelian groups. Use when user asks to compute automorphism coefficients between aligned DNA sequences, represent codons in algebraic groups like Z64 or Z5^3, identify conserved genomic regions, or classify mutations based on genetic-code cubes.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomAutomorphism.html
 ---
+
 
 # bioconductor-genomautomorphism
 

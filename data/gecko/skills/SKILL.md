@@ -1,8 +1,9 @@
 ---
 name: gecko
-description: GECKO (GEnome Comparison with K-mers Out-of-core) is a high-performance tool designed for rapid pairwise sequence alignment.
+description: GECKO is a high-performance tool designed for rapid pairwise sequence alignment and the identification of high-scoring segment pairs. Use when user asks to perform genome comparisons, execute the GECKO workflow, or convert binary fragment files into readable alignments.
 homepage: https://github.com/otorreno/gecko
 ---
+
 
 # gecko
 

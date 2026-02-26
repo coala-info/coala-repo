@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geuvadistranscriptexpr
-description: the package is available on all platforms; click for details.
+description: This package provides preprocessed GEUVADIS project transcript expression and genotype data for chromosome 19 to support splicing QTL analysis. Use when user asks to load example GEUVADIS datasets, preprocess transcript counts and gene annotations, or encode VCF-based genotypes for sQTL studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GeuvadisTranscriptExpr.html
 ---
+
 
 # bioconductor-geuvadistranscriptexpr
 

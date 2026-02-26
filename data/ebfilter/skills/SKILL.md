@@ -1,8 +1,9 @@
 ---
 name: ebfilter
-description: EBFilter (Empirical Bayesian Mutation Filtering) is a specialized tool designed to reduce the high rate of false positives often found in somatic mutation calling.
+description: EBFilter reduces false positive somatic mutation calls by analyzing sequencing noise across a panel of non-matched normal control samples using an empirical Bayesian model. Use when user asks to filter somatic mutations, reduce false positives in VCF files, or estimate sequencing error rates using a panel of normals.
 homepage: https://github.com/Genomon-Project/EBFilter
 ---
+
 
 # ebfilter
 

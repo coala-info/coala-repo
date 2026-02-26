@@ -3,7 +3,7 @@
 ## msweep
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the tool's help information or usage instructions. msweep is typically used for fast and accurate abundance estimation of bacterial lineages from sequencing data.
+mSWEEP is a tool for estimating abundances of bacterial lineages from metagenomic sequencing data. (Note: The provided help text was a system error message; arguments listed here are based on standard tool documentation).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/msweep:2.2.1--h503566f_1
@@ -18,11 +18,13 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/msweep:2.2.1--h503566f_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2310658894: no space left on device
+Unable to find image 'quay.io/biocontainers/msweep:2.2.1--h503566f_1' locally
+2.2.1--h503566f_1: Pulling from biocontainers/msweep
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+b93f2fdf7479: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1726642158: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

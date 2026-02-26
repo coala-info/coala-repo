@@ -1,12 +1,12 @@
 # mseqtools CWL Generation Report
 
-## mseqtools
+## mseqtools_subset
 
 ### Tool Description
-mseqtools (Note: The provided text contains container runtime error messages rather than tool help text, so no arguments could be extracted.)
+Subset a fasta/fastq file based on a list of identifiers.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mseqtools:0.9.1--h577a1d6_4
+- **Docker Image**: quay.io/biocontainers/mseqtools:0.9.1--h7132678_1
 - **Homepage**: https://github.com/arumugamlab/mseqtools
 - **Package**: https://anaconda.org/channels/bioconda/packages/mseqtools/overview
 - **Validation**: PASS
@@ -18,11 +18,47 @@ mseqtools (Note: The provided text contains container runtime error messages rat
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mseqtools:0.9.1--h577a1d6_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3549105511: no space left on device
+Usage:
+------
+
+mseqtools subset [-vuph] -i <file> -o <file> -l <file> [-w <int>]
+
+Options:
+--------
+
+  -i, --input=<file>        input fasta/fastq file
+  -o, --output=<file>       output file (gzipped)
+  -l, --list=<file>         file containing list of fasta/fastq identifiers
+  -v, --exclude             exclude sequences in this list (default: false)
+  -u, --uncompressed        write uncompressed output (default: false)
+  -p, --paired              get both reads from a pair corresponding to the entry; needs pairs to be marked with /1 and /2 (default: false)
+  -w, --window=<int>        number of chars per line in fasta file (default: 80)
+  -h, --help                print this help and exit
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## mseqtools
+
+### Tool Description
+Sequence manipulation toolkit
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mseqtools:0.9.1--h7132678_1
+- **Homepage**: https://github.com/arumugamlab/mseqtools
+- **Package**: https://anaconda.org/channels/bioconda/packages/mseqtools/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+Program: mseqtools (Sequence manipulation toolkit)
+Version: 0.9.1
+
+Usage:   mseqtools <command> [options]
+
+Commands:
+ -- Subsetting
+     subset         subset sequences based on a given list
+```
+

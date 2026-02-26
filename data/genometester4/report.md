@@ -1,12 +1,12 @@
 # genometester4 CWL Generation Report
 
-## genometester4
+## genometester4_gmer_counter
 
 ### Tool Description
-The provided text does not contain help information for genometester4; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+Nothing to do!
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/genometester4:4.0--h7b50bb2_7
+- **Docker Image**: quay.io/biocontainers/genometester4:4.0--hec16e2b_4
 - **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
 - **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
 - **Validation**: PASS
@@ -18,97 +18,121 @@ The provided text does not contain help information for genometester4; it is an 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genometester4:4.0--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2004136190: no space left on device
+Nothing to do!
+Usage:
+  gmer_counter ARGUMENTS SEQUENCES...
+Arguments:
+    -db DATABASE     - SNP/KMER database file
+    -dbb DBBINARY    - binary database file
+    -w FILENAME      - write binary database to file
+    -32              - use 32-bit integeres for counts (default 16-bit)
+    --max_kmers NUM  - maximum number of kmers per node
+    --silent         - do not output kmer counts (useful if only compiling db or index is needed
+    --header         - print header row
+    --total          - print the total number of kmers per node
+    --unique         - print the number of nonzero kmers per node
+    --kmers          - print individual kmer counts (default if no other output)
+    --compile_index FILENAME - Add read index to database and write it to file
+    --distribution NUM  - print kmer distribution (up to given number)
+    --num_threads    - number of worker threads (default 24)
+    --prefetch       - prefetch memory mapped files (faster on high-memory systems)
+    -D               - increase debug level
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## genometester4_gmer_counter
-
-### Tool Description
-The provided text does not contain help documentation for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genometester4:4.0--h7b50bb2_7
-- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
-- **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genometester4:4.0--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3122611579: no space left on device
-```
 
 ## genometester4_glistcompare
 
 ### Tool Description
-A tool from the GenomeTester4 package, however, the provided help text contains only system error messages regarding container execution and does not list usage or arguments.
+Compares lists of k-mers.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/genometester4:4.0--h7b50bb2_7
+- **Docker Image**: quay.io/biocontainers/genometester4:4.0--hec16e2b_4
 - **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
 - **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genometester4:4.0--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2618103609: no space left on device
+Usage: glistcompare INPUTLIST1 [INPUTLIST2...] METHOD [OPTIONS]
+Options:
+    -v, --version            - print version information and exit
+    -h, --help               - print this usage screen and exit
+    -u, --union              - union of input lists
+    -i, --intersection       - intersection of input lists
+    -d, --difference         - difference of input lists
+    -dd, --double_difference - double difference of input lists
+    -du, --diff_union        - subtract first list from the second and finds difference
+    -mm, --mismatch   NUMBER - specify number of mismatches (default 0, can be used with -diff and -ddiff)
+    -c, --cutoff NUMBER      - specify frequency cut-off (default 1)
+    -o, --outputname STRING  - specify output name (default "out")
+    -r, --rule STRING        - specify rule how final frequencies are calculated (default, add, subtract, min, max, first, second, 1, 2)
+                               NOTE: rules min, subtract, first and second can only be used with finding the intersection.
+    -ss, --subset METHOD SIZE - make subset with given method (rand, rand_unique)
+    --count_only             - output count of k-mers instead of k-mers themself
+    --disable_scouts         - disable list read-ahead in background thread
+    -D                       - increase debug level
 ```
+
 
 ## genometester4_glistquery
 
 ### Tool Description
-A tool from the GenomeTester4 suite for querying k-mer lists. (Note: The provided help text contains only system error messages and no usage information; therefore, no arguments could be extracted.)
+Query a list file generated by glistmaker.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/genometester4:4.0--h7b50bb2_7
+- **Docker Image**: quay.io/biocontainers/genometester4:4.0--hec16e2b_4
 - **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
 - **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genometester4:4.0--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4027211122: no space left on device
+Error: No list file specified!
+Usage: glistquery <INPUTLIST> [OPTIONS]
+Options:
+    -v, --version             - print version information and exit
+    -h, --help                - print this usage screen and exit
+    -stat                     - print statistics of the list file and exit
+    -median                   - print min/max/median/average and exit
+    -distribution MAX         - print distribution up to MAX
+    -gc                       - print average GC content of all words
+    -q, --query               - single query word
+    -f, --queryfile           - list of query words in a file
+    -s, --seqfile             - FastA/FastQ file
+    -l, --listfile            - list file made by glistmaker
+    -mm, --mismatch NUMBER    - specify number of mismatches (default 0)
+    -p, --perfectmatch NUMBER - specify number of 3' perfect matches (default 0)
+    -min, --minfreq NUMBER    - minimum frequency of the printed words (default 0)
+    -max, --maxfreq NUMBER    - maximum frequency of the printed words (default MAX_UINT)
+    -all                      - in case of mismatches prints all found words
+    -D                        - increase debug level
 ```
+
 
 ## genometester4_gmer_caller
 
 ### Tool Description
-A tool from the GenomeTester4 package (Note: The provided help text contains only system error messages regarding container execution and does not list command-line arguments).
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/genometester4:4.0--h7b50bb2_7
+- **Docker Image**: quay.io/biocontainers/genometester4:4.0--hec16e2b_4
 - **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
 - **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genometester4:4.0--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2803798657: no space left on device
-```
-
-## genometester4_gassembler
-
-### Tool Description
-A tool from the GenomeTester4 package (Note: The provided help text contains only container runtime error messages and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genometester4:4.0--h7b50bb2_7
-- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
-- **Package**: https://anaconda.org/channels/bioconda/packages/genometester4/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genometester4:4.0--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1423465178: no space left on device
+Cannot read --help
 ```
 

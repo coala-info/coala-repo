@@ -1,8 +1,9 @@
 ---
 name: piranha-polio
-description: Piranha (piranha-polio) is a specialized bioinformatics suite designed to standardize the processing of Nanopore sequencing data for poliovirus surveillance.
+description: Piranha-polio is a bioinformatics suite that processes Nanopore sequencing data for poliovirus surveillance, performing haplotype analysis and generating consensus sequences. Use when user asks to process Nanopore reads for poliovirus, perform VP1 sequencing analysis, identify vaccine-derived polioviruses, or detect laboratory contamination.
 homepage: https://github.com/polio-nanopore/piranha
 ---
+
 
 # piranha-polio
 

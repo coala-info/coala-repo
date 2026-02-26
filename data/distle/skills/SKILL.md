@@ -1,8 +1,9 @@
 ---
 name: distle
-description: `distle` is a high-performance utility written in Rust designed for the rapid generation of distance matrices.
+description: distle is a high-performance utility for rapidly generating distance matrices from large-scale genomic datasets. Use when user asks to calculate genetic distances, generate distance matrices from nucleotide alignments or cgMLST data, and create PHYLIP-compatible matrices for phylogenetic analysis.
 homepage: https://github.com/KHajji/distle
 ---
+
 
 # distle
 

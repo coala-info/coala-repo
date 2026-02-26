@@ -1,8 +1,9 @@
 ---
 name: graphaligner
-description: GraphAligner is a specialized tool designed to map long genomic reads to graph-based reference structures.
+description: "GraphAligner maps long genomic reads to graph-based reference structures such as GFA or VG formats. Use when user asks to align long reads to a genome graph, map sequences to a variation or de Bruijn graph, or generate alignments in GAF or GAM formats."
 homepage: https://github.com/maickrau/GraphAligner
 ---
+
 
 # graphaligner
 

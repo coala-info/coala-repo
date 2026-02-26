@@ -1,8 +1,9 @@
 ---
 name: flask-bootstrap
-description: This skill facilitates the rapid development of production-ready Flask applications using the cookiecutter-flask boilerplate.
+description: This tool scaffolds production-ready Flask applications using the cookiecutter-flask boilerplate with integrated Bootstrap 5, database management, and authentication. Use when user asks to create a new Flask project, initialize a database migration, manage frontend assets with webpack, or run tests using pytest.
 homepage: https://github.com/cookiecutter-flask/cookiecutter-flask
 ---
+
 
 # flask-bootstrap
 

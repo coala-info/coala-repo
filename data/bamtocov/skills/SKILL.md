@@ -1,8 +1,9 @@
 ---
 name: bamtocov
-description: bamtocov is a high-performance bioinformatics toolkit designed for efficient sequence coverage extraction.
+description: bamtocov is a high-performance bioinformatics toolkit used to extract sequence coverage from BAM or CRAM alignment files. Use when user asks to calculate physical or stranded coverage, convert alignments to bedGraph or WIG formats, determine coverage for specific target regions, or count reads per reference sequence.
 homepage: https://github.com/telatin/bamtocov
 ---
+
 
 # bamtocov
 

@@ -1,8 +1,9 @@
 ---
 name: uscdc-datasets-sars-cov-2
-description: The `uscdc-datasets-sars-cov-2` tool provides a standardized way to retrieve and organize genomic benchmark datasets developed by the CDC's Technical Outreach and Assistance for States Team (TOAST).
+description: The uscdc-datasets-sars-cov-2 tool downloads and organizes SARS-CoV-2 genomic benchmark datasets from NCBI. Use when user asks to retrieve SARS-CoV-2 genomic datasets, organize downloaded data, validate lineages, test QC thresholds, compare sequencing platforms, benchmark metagenomic approaches, or generate a Makefile for data download.
 homepage: https://github.com/CDCgov/datasets-sars-cov-2
 ---
+
 
 # uscdc-datasets-sars-cov-2
 

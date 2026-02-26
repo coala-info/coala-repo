@@ -1,8 +1,9 @@
 ---
 name: nifflr
-description: NIFFLR (Novel IsoForm Finder using Long RNASeq reads) is a bioinformatics tool designed to reconstruct and quantify the transcriptome using the structural evidence provided by long-read sequencing.
+description: "NIFFLR reconstructs and quantifies the transcriptome by aligning reference exons to long-read sequencing data to identify known and novel isoforms. Use when user asks to reconstruct the transcriptome, quantify transcript expression, identify novel isoforms, or detect high-confidence splicing events from long-read sequencing data."
 homepage: https://github.com/alguoo314/NIFFLR
 ---
+
 
 # nifflr
 

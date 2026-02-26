@@ -1,8 +1,9 @@
 ---
 name: perl-xml-semanticdiff
-description: This skill provides guidance on using `XML::SemanticDiff`, a Perl-based tool designed to compare XML documents semantically.
+description: This tool compares XML documents semantically by parsing their data structures rather than comparing text line-by-line. Use when user asks to compare XML files while ignoring whitespace or attribute order, identify structural differences in XML datasets, or perform regression testing on XML configuration files.
 homepage: http://metacpan.org/pod/XML-SemanticDiff
 ---
+
 
 # perl-xml-semanticdiff
 

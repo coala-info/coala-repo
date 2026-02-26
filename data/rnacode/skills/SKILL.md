@@ -1,8 +1,9 @@
 ---
 name: rnacode
-description: RNAcode is a specialized tool for identifying protein-coding genes within multiple sequence alignments.
+description: RNAcode identifies protein-coding regions within multiple sequence alignments by detecting evolutionary signatures and coding potential. Use when user asks to identify protein-coding genes, predict open reading frames from alignments, or generate GTF annotations for coding regions.
 homepage: https://github.com/ViennaRNA/RNAcode
 ---
+
 
 # rnacode
 

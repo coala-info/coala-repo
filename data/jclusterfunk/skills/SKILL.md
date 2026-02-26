@@ -1,8 +1,9 @@
 ---
 name: jclusterfunk
-description: jclusterfunk is a specialized tool for processing and transforming phylogenetic trees, commonly used in genomic epidemiology.
+description: jclusterfunk processes and transforms phylogenetic trees by integrating tabular metadata and modifying tree structures. Use when user asks to annotate trees with metadata, reroot or reorder nodes, prune specific taxa, collapse branches, or scale branch lengths.
 homepage: https://github.com/snake-flu/jclusterfunk
 ---
+
 
 # jclusterfunk
 

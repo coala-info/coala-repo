@@ -1,8 +1,9 @@
 ---
 name: falco
-description: Falco is a high-performance C++ implementation of the popular FastQC tool, designed to assess the quality of large sequencing datasets.
+description: Falco is a high-performance C++ implementation of FastQC used to assess the quality of sequencing datasets. Use when user asks to perform quality control on sequencing data, identify adapter contamination, or generate FastQC-compatible reports for FASTQ or BAM files.
 homepage: https://github.com/smithlabcode/falco
 ---
+
 
 # falco
 

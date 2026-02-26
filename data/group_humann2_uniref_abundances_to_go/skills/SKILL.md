@@ -1,8 +1,9 @@
 ---
 name: group_humann2_uniref_abundances_to_go
-description: The `group_humann2_uniref_abundances_to_go` tool is a specialized utility designed to transform granular UniRef50 gene family abundances into broader, more interpretable Gene Ontology (GO) slim terms.
+description: This tool transforms UniRef50 gene family abundances into Gene Ontology slim terms to provide a functional summary of metagenomic data. Use when user asks to regroup HUMAnN2 abundances, map UniRef50 IDs to GO terms, or generate functional summaries for molecular functions, biological processes, and cellular components.
 homepage: https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO
 ---
+
 
 # group_humann2_uniref_abundances_to_go
 

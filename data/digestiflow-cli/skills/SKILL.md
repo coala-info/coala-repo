@@ -1,8 +1,9 @@
 ---
 name: digestiflow-cli
-description: The `digestiflow-cli` is a Rust-based tool designed to automate the interaction between Illumina sequencing hardware and the Digestiflow management system.
+description: The digestiflow-cli tool automates the registration and synchronization of Illumina sequencing flow cells with the Digestiflow management system. Use when user asks to ingest flow cell directories, update sequencing run metadata, or generate adapter index histograms for quality control.
 homepage: https://github.com/bihealth/digestiflow-cli
 ---
+
 
 # digestiflow-cli
 

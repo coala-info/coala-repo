@@ -1,8 +1,9 @@
 ---
 name: wgsim
-description: wgsim is a lightweight command-line utility designed to generate synthetic paired-end or single-end sequencing reads from a FASTA reference.
+description: wgsim generates synthetic paired-end or single-end sequencing reads from a FASTA reference. Use when user asks to generate synthetic reads, simulate diploid genomes, introduce polymorphisms and errors, or evaluate read mappers.
 homepage: https://github.com/lh3/wgsim
 ---
+
 
 # wgsim
 

@@ -1,8 +1,9 @@
 ---
 name: unitem
-description: UniteM is a specialized toolkit designed to improve the quality of metagenomic bins by leveraging ensemble strategies.
+description: UniteM improves metagenomic bin quality by combining outputs from multiple binning methods. Use when user asks to combine multiple bin sets, run ensemble binning strategies, estimate genome quality, or profile bins.
 homepage: https://github.com/dparks1134/UniteM
 ---
+
 
 # unitem
 

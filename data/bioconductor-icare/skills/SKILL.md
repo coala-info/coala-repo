@@ -1,8 +1,9 @@
 ---
 name: bioconductor-icare
-description: the package is available on all platforms; click for details.
+description: The iCARE package estimates the absolute risk of disease by integrating genetic information and classical risk factors with population-level incidence rates. Use when user asks to compute absolute risk, integrate SNPs and covariates into risk models, or validate risk model performance using independent study data.
 homepage: https://bioconductor.org/packages/release/bioc/html/iCARE.html
 ---
+
 
 # bioconductor-icare
 

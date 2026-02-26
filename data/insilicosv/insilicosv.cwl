@@ -2,10 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: insilicosv
 label: insilicosv
-doc: "A tool for simulating structural variations (Note: The provided text contains
-  system error messages regarding container image conversion and disk space, rather
-  than the tool's help documentation).\n\nTool homepage: https://github.com/PopicLab/insilicoSV"
-inputs: []
+doc: "insilicoSV is a software to design and simulate complex structural variants,
+  both novel and known.\n\nTool homepage: https://github.com/PopicLab/insilicoSV"
+inputs:
+  - id: config
+    type: File
+    doc: YAML config file
+    inputBinding:
+      position: 1
+  - id: random_seed
+    type:
+      - 'null'
+      - int
+    doc: if non-zero, random seed for random number generation
+    inputBinding:
+      position: 102
+      prefix: --random_seed
+  - id: root_directory
+    type:
+      - 'null'
+      - Directory
+    doc: root directory for all files given
+    inputBinding:
+      position: 102
+      prefix: --root
 outputs:
   - id: stdout
     type: stdout

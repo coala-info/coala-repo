@@ -1,8 +1,9 @@
 ---
 name: mrtrix3
-description: MRtrix3 is a specialized suite of tools designed for the analysis of diffusion-weighted magnetic resonance imaging (DWI) data.
+description: MRtrix3 is a specialized suite of tools for the analysis and processing of diffusion-weighted magnetic resonance imaging data. Use when user asks to process diffusion MRI data, estimate fiber orientation distributions, perform anatomically constrained tractography, or conduct fixel-based analysis.
 homepage: https://www.mrtrix.org
 ---
+
 
 # mrtrix3
 

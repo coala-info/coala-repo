@@ -1,9 +1,9 @@
 # bgen-cpp CWL Generation Report
 
-## bgen-cpp
+## bgen-cpp_bgenix
 
 ### Tool Description
-The provided text does not contain help information for bgen-cpp; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or extract the OCI image due to insufficient disk space.
+OPTIONS:
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0
@@ -12,101 +12,110 @@ The provided text does not contain help information for bgen-cpp; it is an error
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bgen-cpp/overview
-- **Total Downloads**: 856
+- **Total Downloads**: 867
 - **Last updated**: 2025-09-25
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0e59d770ef487389bffbbf443ca365f20dfc3f956fe72e6c42113969a420f8b2: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-1394240422/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
+Usage: bgenix <options>
+
+OPTIONS:
+Input / output file options:
+                  -g <a>: Path of bgen file to operate on.  (An optional form where "-g" is omitted and the filename is 
+                          specified as the first argument, i.e. bgenix <filename>, can also be used).
+                  -i <a>: Path of index file to use. If not specified, bgenix will look for an index file of the form '<f-
+                          ilename>.bgen.bgi'  where '<filename>.bgen' is the bgen file name specified by the -g option.
+              -table <a>: Specify the table (or view) that bgenix should read the file index from. This only affects rea-
+                          ding the index file.  The named table or view should have the same schema as the Variant table
+                          written by bgenix on index creation.  Defaults to "Variant".
+
+Indexing options:
+                -clobber: Specify that bgenix should overwrite existing index file if it exists.
+                  -index: Specify that bgenix should build an index for the BGEN file specified by the -g option.
+             -with-rowid: Create an index file that does not use the 'WITHOUT ROWID' feature. These are suitable for use
+                          with sqlite versions < 3.8.2, but may be less efficient.
+
+Variant selection options:
+  -excl-range <a> <b>...: Exclude variants in the specified genomic interval from the output. See the description of -in-
+                          cl-range for details.If this is specified multiple times, variants in any of the specified ran-
+                          ges will be excluded.
+  -excl-rsids <a> <b>...: Exclude variants with the specified rsid(s) from the output. See the description of -incl-rang-
+                          e for details.If this is specified multiple times, variants with any of the specified ids will
+                          be excluded.
+  -incl-range <a> <b>...: Include variants in the specified genomic interval in the output. (If the argument is the name
+                          of a valid readable file, the file will be opened and whitespace-separated rsids read from it 
+                          instead.) Each interval must be of the form <chr>:<pos1>-<pos2> where <chr> is a chromosome id-
+                          entifier  and pos1 and pos2 are positions with pos2 >= pos1.  One of pos1 and pos2 can also be
+                          omitted, in which case the range extends to the start or end of the chromosome as appropriate.
+                          Position ranges are treated as closed (i.e. <pos1> and <pos2> are included in the range).If th-
+                          is is specified multiple times, variants in any of the specified ranges will be included.
+  -incl-rsids <a> <b>...: Include variants with the specified rsid(s) in the output. If the argument is the name of a va-
+                          lid readable file, the file will be opened and whitespace-separated rsids read from it instead.I-
+                          f this is specified multiple times, variants with any of the specified ids will be included.
+
+Output options:
+  -compression-level <a>: Zlib compression level to use when transcoding to BGEN v1.1 format.  Defaults to "9".
+                   -list: Suppress BGEN output; instead output a list of variants.
+                    -v11: Transcode to BGEN v1.1 format.  (Currently, this is only supported if the input is in BGEN v1.2
+                          format with 8 bits per probability, all samples are diploid, and all variants biallelic).
+                    -vcf: Transcode to VCF format.  VCFs will have GP field (or 'HP' field for phased data), and a GT fi-
+                          eld inferred from the probabilities by threshholding.
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## bgen-cpp_bgenix
-
-### Tool Description
-The provided text is an error log from a container runtime (Singularity/Apptainer) indicating a failure to build or extract the image due to 'no space left on device'. It does not contain the actual help text or usage instructions for the bgenix tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0
-- **Homepage**: https://enkre.net/cgi-bin/code/bgen/
-- **Package**: https://anaconda.org/channels/bioconda/packages/bgen-cpp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0e59d770ef487389bffbbf443ca365f20dfc3f956fe72e6c42113969a420f8b2: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-2110788126/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
-```
 
 ## bgen-cpp_cat-bgen
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is a log of a container build failure due to insufficient disk space. cat-bgen is typically used to concatenate BGEN files.
+Concatenate bgen files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0
 - **Homepage**: https://enkre.net/cgi-bin/code/bgen/
 - **Package**: https://anaconda.org/channels/bioconda/packages/bgen-cpp/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0e59d770ef487389bffbbf443ca365f20dfc3f956fe72e6c42113969a420f8b2: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-2700874164/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
+Usage: cat-bgen <options>
+
+OPTIONS:
+Input / output file options:
+                       -clobber: Specify that cat-bgen should overwrite existing output file if it exists.
+                  -g <a> <b>...: Path of bgen file(s) to concatenate. These must all be bgen files containing the same s-
+                                 et of samples (in the same order). They must all be the same bgen version and be stored
+                                 with the same flags.
+                        -og <a>: Path of bgen file to output.
+  -omit-sample-identifier-block: Specify that cat-bgen should omit the sample identifier block in the output, even if on-
+                                 e is present in the first file specified to -og.
+             -set-free-data <a>: Specify that cat-bgen should set free data in the resulting file to the given string va-
+                                 lue.
 ```
+
 
 ## bgen-cpp_edit-bgen
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It is a log of a failed container build/execution due to insufficient disk space.
+Edit bgen files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0
 - **Homepage**: https://enkre.net/cgi-bin/code/bgen/
 - **Package**: https://anaconda.org/channels/bioconda/packages/bgen-cpp/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0e59d770ef487389bffbbf443ca365f20dfc3f956fe72e6c42113969a420f8b2: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-4002734349/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
-```
+Usage: edit-bgen <options>
 
-## bgen-cpp_bgen_to_vcf
+OPTIONS:
+Input / output file options:
+               -g <a> <b>...: Path of bgen file(s) to edit. 
 
-### Tool Description
-A tool to convert BGEN files to VCF format. (Note: The provided help text contains only system error messages regarding a failed container build and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0
-- **Homepage**: https://enkre.net/cgi-bin/code/bgen/
-- **Package**: https://anaconda.org/channels/bioconda/packages/bgen-cpp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bgen-cpp:1.1.7--h5ca1c30_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0e59d770ef487389bffbbf443ca365f20dfc3f956fe72e6c42113969a420f8b2: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-1873230073/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
+Actions:
+                     -really: Really make changes (without this option a dry run is performed with no changes to files.)
+  -remove-sample-identifiers: Remove sample identifiers from the file.  This zeroes out the sample ID block, if present.
+          -set-free-data <a>: Set new 'free data' field. The argument must be a string with length exactly equal to the 
+                              length of the existing free data field in each edited file.
 ```
 

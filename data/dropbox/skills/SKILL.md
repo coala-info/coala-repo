@@ -1,8 +1,9 @@
 ---
 name: dropbox
-description: This skill enables efficient management of Dropbox resources using a lightweight, BASH-based CLI tool.
+description: This tool manages Dropbox resources through a command-line interface for file operations like uploading, downloading, and sharing. Use when user asks to upload or download files, list directory contents, share files via public URLs, or save files directly from a URL to Dropbox.
 homepage: https://github.com/andreafabrizi/Dropbox-Uploader
 ---
+
 
 # dropbox
 

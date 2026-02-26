@@ -1,8 +1,9 @@
 ---
 name: pneumo-typer
-description: Pneumo-Typer is a specialized bioinformatics pipeline designed for the comprehensive characterization of *Streptococcus pneumoniae*.
+description: Pneumo-Typer is a bioinformatics pipeline for identifying serotypes, sequence types, and visualizing capsule gene clusters in Streptococcus pneumoniae genomes. Use when user asks to determine pneumococcal serotypes, perform MLST or cgMLST analysis, and generate visualizations of capsule polysaccharide gene clusters.
 homepage: https://www.microbialgenomic.cn/Pneumo-Typer.html
 ---
+
 
 # pneumo-typer
 

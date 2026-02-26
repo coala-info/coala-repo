@@ -1,8 +1,9 @@
 ---
 name: bioconductor-antiprofiles
-description: the package is available on all platforms; click for details.
+description: This package develops cancer genomic signatures by identifying genes that exhibit increased expression variability in tumors compared to normal tissues. Use when user asks to identify hyper-variable genes, build anti-profile signatures, or score samples based on deviation from normal expression ranges.
 homepage: https://bioconductor.org/packages/release/bioc/html/antiProfiles.html
 ---
+
 
 # bioconductor-antiprofiles
 

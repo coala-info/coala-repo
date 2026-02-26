@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcsl
-description: the package is available on all platforms; click for details.
+description: "RCSL provides a rank constrained similarity learning method for clustering and identifying cell types in single-cell RNA sequencing data. Use when user asks to cluster scRNA-seq data, identify cell populations, or estimate the number of clusters in a single-cell dataset."
 homepage: https://bioconductor.org/packages/release/bioc/html/RCSL.html
 ---
+
 
 # bioconductor-rcsl
 

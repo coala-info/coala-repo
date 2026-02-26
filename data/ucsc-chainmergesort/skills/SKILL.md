@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainmergesort
-description: The `chainMergeSort` utility is a specialized tool from the UCSC Kent Utilities designed to merge multiple pairwise alignment files in the `.chain` format.
+description: The `ucsc-chainmergesort` tool merges multiple sorted pairwise alignment files in `.chain` format. Use when user asks to merge chain files, combine alignment chains, or sort and merge chain files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chainmergesort
 

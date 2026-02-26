@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fccac
-description: the package is available on all platforms; click for details.
+description: This tool assesses covariance and reproducibility between nucleic acid sequencing datasets using functional Canonical Correlation Analysis. Use when user asks to compare biological or technical replicates, identify correlations between different genomic datasets, or calculate F-values from BigWig and peak files.
 homepage: https://bioconductor.org/packages/release/bioc/html/fCCAC.html
 ---
+
 
 # bioconductor-fccac
 

@@ -1,8 +1,9 @@
 ---
 name: grenedalf
-description: grenedalf is a high-performance C++ toolkit designed for the statistical analysis of pooled sequencing data.
+description: grenedalf is a high-performance C++ toolkit for the statistical analysis of pooled sequencing data. Use when user asks to calculate diversity metrics, estimate population differentiation, convert files to sync format, or generate allele frequency tables.
 homepage: https://github.com/lczech/grenedalf
 ---
+
 
 # grenedalf
 

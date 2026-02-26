@@ -1,8 +1,9 @@
 ---
 name: mothur
-description: mothur is a comprehensive, open-source bioinformatics platform designed specifically for the microbial ecology community.
+description: mothur is a bioinformatics platform used to process microbial ecology DNA sequencing data into community analysis outputs like OTU tables and diversity metrics. Use when user asks to process raw sequencing data, implement the standard operating procedure, generate OTU tables, or perform microbial community analysis.
 homepage: https://www.mothur.org
 ---
+
 
 # mothur
 

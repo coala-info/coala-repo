@@ -1,8 +1,9 @@
 ---
 name: graphprot
-description: GraphProt is a computational tool designed to model the binding preferences of RNA-binding proteins.
+description: GraphProt models RNA-binding protein preferences by incorporating sequence and secondary structure information through a graph-based approach. Use when user asks to optimize model parameters, train classification or regression models, predict binding sites or nucleotide-wise profiles, and generate sequence or structure motifs.
 homepage: https://github.com/dmaticzka/graphprot
 ---
+
 
 # graphprot
 

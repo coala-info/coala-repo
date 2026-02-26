@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isomirs
-description: the package is available on all platforms; click for details.
+description: The isomiRs package analyzes microRNA variants by transforming alignment data into specialized objects for normalization, visualization, and differential expression analysis. Use when user asks to load miraligner or mirTOP data, annotate isomiR types, visualize variant distributions, or perform differential expression analysis on miRNA isoforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/isomiRs.html
 ---
+
 
 # bioconductor-isomirs
 

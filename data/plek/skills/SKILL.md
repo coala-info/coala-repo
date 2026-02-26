@@ -1,8 +1,9 @@
 ---
 name: plek
-description: PLEK (Predictor of Long non-coding RNAs and mRNAs based on k-mer scheme) is a specialized tool for distinguishing between lncRNAs and mRNAs.
+description: PLEK distinguishes between long non-coding RNAs and mRNAs by analyzing k-mer frequencies using a Support Vector Machine. Use when user asks to predict lncRNAs, classify transcripts as coding or non-coding, or train a custom classification model for specific organisms.
 homepage: https://sourceforge.net/projects/plek
 ---
+
 
 # plek
 

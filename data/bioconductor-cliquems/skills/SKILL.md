@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cliquems
-description: the package is available on all platforms; click for details.
+description: This tool annotates LC/MS metabolomics data by grouping features into cliques and identifying isotopes, adducts, and fragments to determine neutral masses. Use when user asks to group features into cliques, identify isotopes and adducts, or annotate untargeted metabolomics data processed with xcms.
 homepage: https://bioconductor.org/packages/release/bioc/html/cliqueMS.html
 ---
+
 
 # bioconductor-cliquems
 

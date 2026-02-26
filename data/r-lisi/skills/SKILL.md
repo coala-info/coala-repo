@@ -1,8 +1,9 @@
 ---
 name: r-lisi
-description: R package lisi (documentation from project home).
+description: The r-lisi package computes the Local Inverse Simpson's Index to quantify the mixing of categorical labels in high-dimensional biological data. Use when user asks to evaluate data integration success, calculate neighborhood mixing scores, or assess batch effect correction in single-cell datasets.
 homepage: https://cran.r-project.org/web/packages/lisi/index.html
 ---
+
 
 # r-lisi
 

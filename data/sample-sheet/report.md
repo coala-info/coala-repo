@@ -1,9 +1,9 @@
 # sample-sheet CWL Generation Report
 
-## sample-sheet
+## sample-sheet_tojson
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It is a log of a failed container image build/fetch process.
+Convert a sample sheet to JSON format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sample-sheet:0.13.0--pyhdfd78af_0
@@ -18,13 +18,31 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sample-sheet:0.13.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: sample-sheet tojson [OPTIONS] PATH
+Try 'sample-sheet tojson -h' for help.
+
+Error: No such option: --h Did you mean --help?
 ```
 
 
-## Metadata
-- **Skill**: generated
+## sample-sheet_totable
+
+### Tool Description
+Pretty print a sample sheet to terminal
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sample-sheet:0.13.0--pyhdfd78af_0
+- **Homepage**: https://github.com/clintval/sample-sheet
+- **Package**: https://anaconda.org/channels/bioconda/packages/sample-sheet/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: sample-sheet totable [OPTIONS] PATH
+
+  Pretty print a sample sheet to terminal
+
+Options:
+  -h, --help  Show this message and exit.
+```
+

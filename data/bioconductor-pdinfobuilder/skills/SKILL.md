@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pdinfobuilder
-description: the package is available on all platforms; click for details.
+description: The pdInfoBuilder package builds platform design annotation packages for Affymetrix and NimbleGen microarrays. Use when user asks to create annotation packages, build platform design objects, or process microarray design files.
 homepage: https://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html
 ---
+
 
 # bioconductor-pdinfobuilder
 

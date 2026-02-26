@@ -1,8 +1,9 @@
 ---
 name: test
-description: The `test` tool (built on the `seqtk` engine) is a high-performance, lightweight utility designed for the fast processing of high-throughput sequencing data.
+description: The test tool processes high-throughput sequencing data to perform format conversion, sequence manipulation, and quality-based trimming. Use when user asks to convert sequence formats, subsample reads, mask or trim sequences, and extract specific genomic regions.
 homepage: https://github.com/lh3/seqtk
 ---
+
 
 # test
 

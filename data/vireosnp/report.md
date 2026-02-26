@@ -1,9 +1,9 @@
 # vireosnp CWL Generation Report
 
-## vireosnp
+## vireosnp_vireo
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the image.
+vireo
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vireosnp:0.5.9--pyh7e72e81_0
@@ -18,33 +18,55 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vireosnp:0.5.9--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: vireo [options]
 
+Options:
+  -h, --help            show this help message and exit
+  -c CELL_DATA, --cellData=CELL_DATA
+                        The cell genotype file in VCF format or cellSNP folder
+                        with sparse matrices.
+  -N N_DONOR, --nDonor=N_DONOR
+                        Number of donors to demultiplex; can be larger than
+                        provided in donor_file
+  -o OUT_DIR, --outDir=OUT_DIR
+                        Dirtectory for output files [default:
+                        $cellFilePath/vireo]
 
-## Metadata
-- **Skill**: generated
+  Optional input files:
+    --vartrixData=VARTRIX_DATA
+                        The cell genotype files in vartrix outputs (three/four
+                        files, comma separated):
+                        alt.mtx,ref.mtx,barcodes.tsv,SNPs.vcf.gz. This will
+                        suppress cellData argument.
+    -d DONOR_FILE, --donorFile=DONOR_FILE
+                        The donor genotype file in VCF format. Please filter
+                        the sample and region with bcftools -s and -R first!
+    -t GENO_TAG, --genoTag=GENO_TAG
+                        The tag for donor genotype: GT, GP, PL [default: PL]
 
-## vireosnp_vireo
-
-### Tool Description
-Vireo: SNP-based deconvolution of multi-sample scRNA-seq data. (Note: The provided input text appears to be a container execution error log rather than help text; therefore, no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vireosnp:0.5.9--pyh7e72e81_0
-- **Homepage**: https://github.com/huangyh09/vireoSNP
-- **Package**: https://anaconda.org/channels/bioconda/packages/vireosnp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vireosnp:0.5.9--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+  Optional arguments:
+    --noDoublet         If use, not checking doublets.
+    -M N_INIT, --nInit=N_INIT
+                        Number of random initializations, when GT needs to
+                        learn [default: 50]
+    --extraDonor=N_EXTRA_DONOR
+                        Number of extra donor in pre-cluster, when GT needs to
+                        learn [default: 0]
+    --extraDonorMode=EXTRA_DONOR_MODE
+                        Method for searching from extra donors. size: n_cell
+                        per donor; distance: GT distance between donors
+                        [default: distance]
+    --forceLearnGT      If use, treat donor GT as prior only.
+    --ASEmode           If use, turn on SNP specific allelic ratio.
+    --noPlot            If use, turn off plotting GT distance.
+    --randSeed=RAND_SEED
+                        Seed for random initialization [default: none]
+    --cellRange=CELL_RANGE
+                        Range of cells to process, eg. 0-10000 [default: all]
+    --callAmbientRNAs   If use, detect ambient RNAs in each cell (under
+                        development)
+    -p NPROC, --nproc=NPROC
+                        Number of subprocesses for computing - this sacrifices
+                        memory for speedups [default: 1]
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: ngsplotdb-ngsplotdb-hg19
-description: This skill facilitates the use of the hg19 genome database within the NGSplot framework.
+description: This tool provides the hg19 genome database and annotations for visualizing next-generation sequencing data within the NGSplot framework. Use when user asks to generate profile plots, create heatmaps for human genomic data, or visualize enrichment at functional regions like gene bodies and transcription start sites using the hg19 assembly.
 homepage: https://github.com/shenlab-sinai/ngsplot
 ---
+
 
 # ngsplotdb-ngsplotdb-hg19
 

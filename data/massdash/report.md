@@ -1,9 +1,9 @@
 # massdash CWL Generation Report
 
-## massdash
+## massdash_gui
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains error logs related to a container runtime (Singularity/Apptainer) failure due to insufficient disk space.
+GUI for MassDash.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/massdash:0.1.1--pyhdfd78af_0
@@ -18,11 +18,19 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/massdash:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3808472520: no space left on device
+Usage: massdash gui [OPTIONS]
+
+  GUI for MassDash.
+
+Options:
+  -v, --verbose              Enables verbose mode.
+  -t, --perf                 Enables measuring and tracking of performance.
+  -o, --perf_output TEXT     Name of the performance report file to writeout
+                             to.
+  -p, --server_port INTEGER  Port to run the MassDash GUI on.
+  -c, --cloud                Set to True to emulate running on streamlit
+                             cloud, if False detect if running on streamlit
+                             cloud.
+  --help                     Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

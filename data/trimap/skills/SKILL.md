@@ -1,8 +1,9 @@
 ---
 name: trimap
-description: TriMap is a dimensionality reduction method that utilizes triplet constraints to create low-dimensional embeddings.
+description: TriMap is a dimensionality reduction method that creates low-dimensional embeddings by utilizing triplet constraints. Use when user asks to create low-dimensional embeddings, visualize complex data structure, preserve global data layout, evaluate embedding quality, tune embedding parameters, or process large datasets.
 homepage: http://github.com/eamid/trimap
 ---
+
 
 # trimap
 

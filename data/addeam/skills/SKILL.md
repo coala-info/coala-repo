@@ -1,8 +1,9 @@
 ---
 name: addeam
-description: The provided text does not contain help information or usage instructions for the tool 'addeam'. It is a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space ('no space left on device').
+description: AdDeam characterizes nucleotide misincorporation patterns in ancient DNA and clusters sequences based on their degradation profiles. Use when user asks to estimate ancient DNA damage, generate damage profiles from BAM files, or cluster metagenomic sequences by degradation levels.
 homepage: https://github.com/LouisPwr/AdDeam
 ---
+
 
 # addeam
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genefu
-description: the package is available on all platforms; click for details.
+description: The genefu package provides standardized implementations of molecular subtyping algorithms and prognostic gene signatures for breast cancer research. Use when user asks to classify breast cancer samples into molecular subtypes, compute clinical risk scores like PAM50 or OncotypeDX, and evaluate the prognostic value of gene signatures.
 homepage: https://bioconductor.org/packages/release/bioc/html/genefu.html
 ---
+
 
 # bioconductor-genefu
 

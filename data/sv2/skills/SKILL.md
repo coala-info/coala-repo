@@ -1,8 +1,9 @@
 ---
 name: sv2
-description: SV2 (Support Vector Structural Variation Genotyper) is a machine learning framework that improves the accuracy of structural variant calling by integrating multiple features from sequencing data.
+description: SV2 is a machine learning framework that genotypes and filters structural variants using support vector machines. Use when user asks to genotype deletions and duplications, filter false positive structural variants, or extract features for variant classification.
 homepage: https://github.com/dantaki/SV2
 ---
+
 
 # sv2
 

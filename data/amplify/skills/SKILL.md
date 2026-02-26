@@ -1,8 +1,9 @@
 ---
 name: amplify
-description: AMPlify is an attentive deep learning model designed to identify antimicrobial peptides (AMPs) with high precision.
+description: AMPlify is an attentive deep learning model used to identify and predict antimicrobial peptides from genomic and transcriptomic sequences. Use when user asks to predict antimicrobial peptide probability, scan large sequence databases for novel peptides, or train custom models using specific datasets.
 homepage: https://github.com/bcgsc/AMPlify
 ---
+
 
 # amplify
 

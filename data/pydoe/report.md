@@ -3,28 +3,32 @@
 ## pydoe
 
 ### Tool Description
-Design of Experiments for Python (pyDOE)
+FAIL to generate CWL: pydoe not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pydoe:0.3.8--py35_0
 - **Homepage**: https://github.com/pydoe/pydoe
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/pydoe/overview
-- **Total Downloads**: 197.5K
+- **Total Downloads**: 198.4K
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/pydoe/pydoe
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: pydoe not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: pydoe not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pydoe:0.3.8--py35_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
-
-## Metadata
-- **Skill**: generated

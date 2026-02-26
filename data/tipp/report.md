@@ -1,9 +1,9 @@
 # tipp CWL Generation Report
 
-## tipp
+## tipp_TIPPo.v2.3.pl
 
 ### Tool Description
-Taxon Identification and Phylogenetic Profiling (TIPP)
+TIPPo.v2.3.pl is a tool for analyzing HiFi reads, potentially for chloroplast or organelle genomes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0
@@ -18,71 +18,20 @@ Taxon Identification and Phylogenetic Profiling (TIPP)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## tipp_TIPPo.v2.3.pl
-
-### Tool Description
-Taxon Identification and Phylogenetic Profiling (TIPP) tool. Note: The provided text appears to be a container execution error log rather than help documentation, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0
-- **Homepage**: https://github.com/Wenfei-Xian/TIPP
-- **Package**: https://anaconda.org/channels/bioconda/packages/tipp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## tipp_TIPP_telomere
-
-### Tool Description
-The provided text is an error log from a container build process and does not contain CLI help information or argument definitions for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0
-- **Homepage**: https://github.com/Wenfei-Xian/TIPP
-- **Package**: https://anaconda.org/channels/bioconda/packages/tipp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## tipp_TIPP_plastid
-
-### Tool Description
-Taxon Identification and Phylogenetic Profiling. (Note: The provided text contains system error messages regarding a container build failure and does not include usage instructions or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0
-- **Homepage**: https://github.com/Wenfei-Xian/TIPP
-- **Package**: https://anaconda.org/channels/bioconda/packages/tipp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tipp:1.3.0--py38pl5321h077b44d_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: /usr/local/bin/TIPPo.v2.3.pl [options]
+  -h: Show this help message.
+  -f: HiFi reads (required).
+  -g: chloroplast or organelle (default: organelle).
+  -t: Threads for tiara, flye, KMC3 and readskmercount.
+  -n: Number of reads in each downsample for chloroplast.
+  -r: Number of random downsamplings (default: 5).
+  -i: Assume the presence of the inverted repeats (default: 1).
+  -l: lower kmer count - lkc (default: 0.3).
+  -c: high kmer count - hkc (default: 5).
+  -y: parameter for flye (default: --pacbio-hifi).
+  -a: parameter for minimap2 (default: map-hifi).
+  -m: minimum overlap in repeat graph construction (default:800)
+  -b: reference sequence (default: No).
+  -v: version.
 ```
 

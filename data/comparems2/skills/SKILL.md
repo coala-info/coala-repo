@@ -1,8 +1,9 @@
 ---
 name: comparems2
-description: comparems2 is a lightweight tool for the global comparison of tandem mass spectrometry (MS/MS) data.
+description: comparems2 performs global comparisons of tandem mass spectrometry datasets by calculating the similarity between raw MS/MS spectra. Use when user asks to compare MS/MS datasets without peptide identification, differentiate samples based on spectral similarity, or perform phylogenetic studies using mass spectrometry data.
 homepage: http://www.ms-utils.org/compareMS2.html
 ---
+
 
 # comparems2
 

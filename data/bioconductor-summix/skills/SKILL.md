@@ -1,8 +1,9 @@
 ---
 name: bioconductor-summix
-description: the package is available on all platforms; click for details.
+description: Summix estimates ancestry proportions from genetic data using allele frequencies. Use when user asks to estimate ancestry proportions, perform population admixture analysis, or adjust for population structure.
 homepage: https://bioconductor.org/packages/release/bioc/html/Summix.html
 ---
+
 
 # bioconductor-summix
 

@@ -1,8 +1,9 @@
 ---
 name: perl-file-find-rule
-description: File::Find::Rule simplifies the process of traversing directory trees in Perl.
+description: This tool provides a simplified interface for traversing directory trees and filtering files in Perl using chained criteria. Use when user asks to find files by name or size, filter files by content, or recursively search directories using specific rules.
 homepage: https://metacpan.org/pod/File::Find::Rule
 ---
+
 
 # perl-file-find-rule
 

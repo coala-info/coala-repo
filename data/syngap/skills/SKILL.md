@@ -1,8 +1,9 @@
 ---
 name: syngap
-description: SynGAP (Synteny-based Gene structure Annotation Polisher) is a specialized toolkit designed to refine gene models by leveraging evolutionary conservation between related organisms.
+description: SynGAP refines gene models and analyzes evolutionary transcriptomics by leveraging synteny and conservation between related species. Use when user asks to polish genome annotations, identify homologous gene pairs, or calculate expression variation across species.
 homepage: https://github.com/yanyew/SynGAP
 ---
+
 
 # syngap
 

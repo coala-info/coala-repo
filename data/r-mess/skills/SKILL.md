@@ -1,8 +1,9 @@
 ---
 name: r-mess
-description: "A mixed collection of useful and semi-useful diverse     statistical functions, some of which may even be referenced in     The R Primer book. See Ekstrøm, C. T. (2016). The R Primer. 2nd edition. Chapman &amp; Hall.</p>"
+description: The MESS package provides a collection of miscellaneous statistical functions for GEE model selection, power calculations, and efficient matrix manipulations. Use when user asks to compute QIC for GEE models, perform power calculations for unequal group sizes, calculate area under the curve, or create residual diagnostic plots.
 homepage: https://cloud.r-project.org/web/packages/MESS/index.html
 ---
+
 
 # r-mess
 

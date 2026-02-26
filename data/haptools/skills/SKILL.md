@@ -1,8 +1,9 @@
 ---
 name: haptools
-description: The `haptools` skill provides a specialized workflow for simulating and analyzing complex traits within the context of ancestry and haplotypes.
+description: "haptools simulates and analyzes complex traits by accounting for local ancestry and specific haplotype effects in admixed populations. Use when user asks to simulate admixed genotypes, generate phenotypes from haplotype effects, transform genotypes into haplotype variants, or visualize chromosomal ancestry tracks."
 homepage: https://github.com/cast-genomics/haptools
 ---
+
 
 # haptools
 

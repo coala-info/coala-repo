@@ -1,9 +1,9 @@
 # bifidoannotator CWL Generation Report
 
-## bifidoannotator
+## bifidoannotator_bifidoAnnotator
 
 ### Tool Description
-BifidoAnnotator is a tool for the functional annotation of Bifidobacterium genomes.
+Complete GH Annotation & Visualization Pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bifidoannotator:1.0.2--pyhdfd78af_0
@@ -18,14 +18,66 @@ BifidoAnnotator is a tool for the functional annotation of Bifidobacterium genom
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bifidoannotator:1.0.2--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ae3c296a06d4533ff5c1e6882942ad08655b26379a8d06cbca813e4e842bfdce: unpack entry: usr/local/bin/mmseqs: unpack to regular file: short write: write /scratch/21813747/build-temp-3369118041/rootfs/usr/local/bin/mmseqs: no space left on device
+================================================================================
+Combined bifidoAnnotator: Complete GH Annotation & Visualization Pipeline
+================================================================================
+usage: bifidoAnnotator [-h] (-i INPUT_FILE | -d GENOME_DIRECTORY)
+                       [-s SAMPLE_FILE] [-o OUTPUT_DIR] [--bifdb BIFDB]
+                       [--mapping_file MAPPING_FILE]
+                       [--annotations_file ANNOTATIONS_FILE]
+                       [--threads THREADS] [--sensitivity SENSITIVITY]
+                       [--gh-figsize GH_FIGSIZE GH_FIGSIZE]
+                       [--cluster-figsize CLUSTER_FIGSIZE CLUSTER_FIGSIZE]
+                       [--enzyme-figsize ENZYME_FIGSIZE ENZYME_FIGSIZE]
+                       [-hc {red,blue}]
+
+Combined bifidoAnnotator: Complete GH annotation and visualization pipeline with adaptive sizing
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input_file INPUT_FILE
+                        Path to single input FASTA file
+  -d, --genome_directory GENOME_DIRECTORY
+                        Path to directory containing input FASTA files
+  -s, --sample_file SAMPLE_FILE
+                        Text file listing genome names for processing
+                        (required with -d)
+  -o, --output_dir OUTPUT_DIR
+                        Output directory (default: bifidoAnnotator_output)
+  --bifdb BIFDB         Path to MMseqs2 database (default: auto-download from
+                        Zenodo on first run)
+  --mapping_file MAPPING_FILE
+                        Path to mapping file (default: packaged or downloaded
+                        with database)
+  --annotations_file ANNOTATIONS_FILE
+                        TSV file with genome annotations for heatmap legends
+  --threads THREADS     Number of threads for MMseqs2 (default: 4)
+  --sensitivity SENSITIVITY
+                        MMseqs2 sensitivity (default: 7.5)
+  --gh-figsize GH_FIGSIZE GH_FIGSIZE
+                        GH heatmap figure size (width height)
+  --cluster-figsize CLUSTER_FIGSIZE CLUSTER_FIGSIZE
+                        Cluster heatmap figure size (width height)
+  --enzyme-figsize ENZYME_FIGSIZE ENZYME_FIGSIZE
+                        Enzyme heatmap figure size (width height)
+  -hc, --heatmap_col {red,blue}
+                        Color scheme for heatmap and annotations (default:
+                        blue)
+
+Examples:
+  # Single genome (database auto-downloaded on first run)
+  bifidoAnnotator -i genome.fasta -o results
+
+  # Batch processing
+  bifidoAnnotator -d genomes_dir -s sample_list.txt -o results
+  
+  # With annotations
+  bifidoAnnotator -i genome.fasta --annotations_file metadata.tsv -o results
+  
+  # Using custom database
+  bifidoAnnotator -i genome.fasta --bifdb /custom/db --mapping_file /custom/mapping.tsv -o results
+
+Note: On first run, the reference database (~350 MB) will be automatically 
+downloaded from Zenodo. This only happens once.
 ```
 
-
-## Metadata
-- **Skill**: generated

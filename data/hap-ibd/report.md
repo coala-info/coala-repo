@@ -3,7 +3,7 @@
 ## hap-ibd
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to lack of disk space.
+Finds segments of identity-by-descent (IBD) between individuals in a VCF file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hap-ibd:1.0.rev20May22.818--hdfd78af_0
@@ -18,29 +18,23 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hap-ibd:1.0.rev20May22.818--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1911390386: no space left on device
-```
+hap-ibd.jar  [ version 1.0, 20May22.818 ]
 
+Syntax: java -jar hap-ibd.jar [arguments in format: parameter=value]
 
-## Metadata
-- **Skill**: generated
+Data Parameters: 
+  gt=<VCF file with GT field>                         (required)
+  map=<PLINK map file with cM units>                  (required)
+  out=<output file prefix>                            (required)
+  excludesamples=<excluded samples file>              (optional)
 
-## hap-ibd_hap-ibd.jar
-
-### Tool Description
-The provided text contains a fatal error message from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space. It does not contain the help text or usage information for the hap-ibd tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hap-ibd:1.0.rev20May22.818--hdfd78af_0
-- **Homepage**: https://github.com/browning-lab/hap-ibd
-- **Package**: https://anaconda.org/channels/bioconda/packages/hap-ibd/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hap-ibd:1.0.rev20May22.818--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2029959042: no space left on device
+Algorithm Parameters: 
+  min-seed=<min cM length of seed segment>            (default: 2.0)
+  max-gap=<max base pairs in non-IBS gap>             (default: 1000)
+  min-extend=<min cM length of extension segment>     (default: min(1.0, min-seed))
+  min-output=<min cM length of output segment>        (default: 2.0)
+  min-markers=<min markers in seed segment>           (default: 100)
+  min-mac=<minimum minor allele count filter>         (default: 2)
+  nthreads=<number of computational threads>          (default: all CPU cores)
 ```
 

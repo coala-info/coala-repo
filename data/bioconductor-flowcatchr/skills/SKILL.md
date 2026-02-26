@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowcatchr
-description: the package is available on all platforms; click for details.
+description: bioconductor-flowcatchr tracks and analyzes flowing blood cells in time-lapse microscopy images. Use when user asks to segment cells, track particles across frames, or calculate kinematic features like velocity and trajectory linearity.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowcatchR.html
 ---
+
 
 # bioconductor-flowcatchr
 

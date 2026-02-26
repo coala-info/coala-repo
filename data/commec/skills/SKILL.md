@@ -1,8 +1,9 @@
 ---
 name: commec
-description: The `commec` tool is a specialized biosecurity utility designed to screen DNA sequences for potential risks.
+description: The commec tool screens DNA sequences for biosecurity risks by identifying matches to regulated pathogens and pathogenicity factors. Use when user asks to screen sequences for biorisk, identify matches to regulated pathogens, or generate summary reports of flagged DNA sequences.
 homepage: https://github.com/ibbis-screening/common-mechanism
 ---
+
 
 # commec
 

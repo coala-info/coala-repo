@@ -3,7 +3,7 @@
 ## profbval
 
 ### Tool Description
-Predicts flexible and rigid residues in proteins (Note: The provided text contains container build logs and error messages rather than the tool's help documentation).
+Predicts flexible and rigid residues from sequence (B-value predictor).
 
 ### Metadata
 - **Docker Image**: biocontainers/profbval:v1.0.22-6-deb_cv1
@@ -18,11 +18,18 @@ Predicts flexible and rigid residues in proteins (Note: The provided text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/profbval:v1.0.22-6-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'biocontainers/profbval:v1.0.22-6-deb_cv1' locally
+v1.0.22-6-deb_cv1: Pulling from biocontainers/profbval
+478cd0aa93c0: Already exists
+94d6a239eb0e: Already exists
+e8e87313e9cb: Already exists
+1badce2e48be: Already exists
+732b6ad56c57: Already exists
+f464fdba1cc8: Already exists
+f7e1b5d8648b: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2763853467: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

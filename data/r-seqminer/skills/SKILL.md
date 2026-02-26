@@ -1,8 +1,9 @@
 ---
 name: r-seqminer
-description: Skill for using the CRAN R package r-seqminer.
+description: The r-seqminer package efficiently retrieves, annotates, and manipulates genetic variant data from VCF, BCF, and BGEN files. Use when user asks to extract genotypes by genomic range or gene name, perform rare variant analysis, or annotate variants within R workflows.
 homepage: https://cloud.r-project.org/web/packages/seqminer/index.html
 ---
+
 
 # r-seqminer
 

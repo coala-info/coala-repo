@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ensemblvep
-description: "the package README and Ensembl installation instructions: http://www.ensembl.org/info/docs/tools/vep/script/vep_download."
+description: The ensemblVEP package provides an R interface to the Ensembl Variant Effect Predictor for annotating genomic variants and predicting their functional consequences. Use when user asks to perform variant annotation, predict variant consequences, or parse VEP results into Bioconductor objects like GRanges and VCF.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ensemblVEP.html
 ---
+
 
 # bioconductor-ensemblvep
 

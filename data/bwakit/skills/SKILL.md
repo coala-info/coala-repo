@@ -1,8 +1,9 @@
 ---
 name: bwakit
-description: The `bwakit` skill provides a streamlined interface for the Burrows-Wheeler Aligner (BWA) ecosystem.
+description: "Bwakit provides a streamlined interface for the Burrows-Wheeler Aligner ecosystem to transform raw sequencing data into mapped alignments. Use when user asks to index a reference genome, align short or long reads to a reference, or handle genomic features like ALT contigs."
 homepage: https://github.com/lh3/bwa/tree/master/bwakit
 ---
+
 
 # bwakit
 

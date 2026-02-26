@@ -1,8 +1,9 @@
 ---
 name: vcf-annotator
-description: The `vcf-annotator` tool is a specialized utility for microbial genomics that transforms raw variant data into biologically meaningful information.
+description: The vcf-annotator tool annotates VCF files with biological information by cross-referencing variant data with a GenBank reference. Use when user asks to annotate VCF files, determine mutation effects on protein sequences, identify genic or intergenic mutations, or extract gene product descriptions.
 homepage: https://github.com/rpetit3/vcf-annotator
 ---
+
 
 # vcf-annotator
 

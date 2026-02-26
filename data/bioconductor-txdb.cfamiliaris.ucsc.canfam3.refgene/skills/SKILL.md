@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.cfamiliaris.ucsc.canfam3.refgene
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides transcript-level annotations for the Canis familiaris genome based on the UCSC canFam3 refGene track. Use when user asks to retrieve dog gene models, access transcript coordinates for the canFam3 assembly, or perform genomic analysis using canine refGene data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Cfamiliaris.UCSC.canFam3.refGene.html
 ---
+
 
 # bioconductor-txdb.cfamiliaris.ucsc.canfam3.refgene
 

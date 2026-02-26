@@ -1,8 +1,9 @@
 ---
 name: bioconductor-quantsmooth
-description: the package is available on all platforms; click for details.
+description: The bioconductor-quantsmooth package applies quantile regression to smooth chromosomal copy number data for the identification of genomic aberrations. Use when user asks to smooth DNA copy number profiles, identify regions of genomic gain or loss, or perform quantile regression on genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/quantsmooth.html
 ---
+
 
 # bioconductor-quantsmooth
 

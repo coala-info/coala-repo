@@ -1,8 +1,9 @@
 ---
 name: sra-toolkit
-description: The SRA Metadata Toolkit skill enables efficient access to NCBI/DDBJ/EBI Sequence Read Archive metadata without manually navigating web portals.
+description: The SRA Metadata Toolkit provides programmatic access to Sequence Read Archive metadata and quality control summaries via a REST API. Use when user asks to convert SRA identifiers, retrieve specific metadata attributes like lab names or submission dates, and access FastQC quality metrics for sequence runs.
 homepage: https://github.com/inutano/sra_metadata_toolkit
 ---
+
 
 # sra-toolkit
 

@@ -1,8 +1,9 @@
 ---
 name: cayman
-description: Cayman (Carbohydrate active enzymes profiling of metagenomes) is a specialized bioinformatics tool designed to quantify CAZyme families within metagenomic samples.
+description: Cayman quantifies carbohydrate-active enzyme families in metagenomic samples by mapping shotgun reads to annotated gene catalogs. Use when user asks to quantify CAZyme abundances, profile carbohydrate-degrading potential in microbial communities, or calculate RPKM values for metagenomic gene catalogs.
 homepage: https://github.com/zellerlab/cayman
 ---
+
 
 # cayman
 

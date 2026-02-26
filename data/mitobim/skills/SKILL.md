@@ -1,8 +1,9 @@
 ---
 name: mitobim
-description: MITObim (Mitochondrial Baiting and Iterative Mapping) is a specialized bioinformatics pipeline for reconstructing mitochondrial genomes directly from NGS data.
+description: MITObim is a bioinformatics pipeline for reconstructing mitochondrial genomes from next-generation sequencing data using iterative baiting and mapping. Use when user asks to reconstruct mitochondrial genomes from genomic read pools, assemble mitogenomes using a related species reference, or extend short barcode seeds into full sequences.
 homepage: https://github.com/chrishah/MITObim
 ---
+
 
 # mitobim
 

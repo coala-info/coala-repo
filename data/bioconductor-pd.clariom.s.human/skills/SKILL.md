@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.clariom.s.human
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and platform design information for the Affymetrix Clariom S human microarray. Use when user asks to analyze Clariom S human microarray data, annotate probe sets for human Clariom S chips, or perform low-level processing of Clariom S human arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.human.html
 ---
+
 
 # bioconductor-pd.clariom.s.human
 

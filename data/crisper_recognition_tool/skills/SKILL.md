@@ -1,8 +1,9 @@
 ---
 name: crisper_recognition_tool
-description: The CRISPR Recognition Tool (CRT) is a specialized utility designed for the rapid and automated identification of CRISPR arrays within nucleotide sequences.
+description: The CRISPR Recognition Tool automatically identifies CRISPR arrays within nucleotide sequences by locating clusters of short repeats and unique spacers. Use when user asks to find CRISPR arrays in FASTA files, annotate genomic sequences, or detect prokaryotic immune system components.
 homepage: http://www.room220.com/crt/
 ---
+
 
 # crisper_recognition_tool
 

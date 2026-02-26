@@ -1,8 +1,9 @@
 ---
 name: pvga
-description: PVGA (Precise Viral Genome Assembler) is a specialized tool designed for the assembly and polishing of viral sequences.
+description: PVGA performs precise assembly and polishing of viral sequences using an iterative alignment graph approach. Use when user asks to assemble viral genomes, polish viral sequences, or perform iterative refinement of a consensus sequence using a backbone.
 homepage: https://github.com/SoSongzhi/PVGA
 ---
+
 
 # pvga
 

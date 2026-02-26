@@ -1,8 +1,9 @@
 ---
 name: absense
-description: A tool for detecting gene absence in genome assemblies using a reference-based approach.
+description: abSENSE calculates the probability that a gene is undetected in a species due to technical limitations rather than biological loss. Use when user asks to calculate detection failure probabilities, predict expected bitscores across evolutionary distances, or distinguish between gene loss and search sensitivity limitations.
 homepage: https://github.com/caraweisman/abSENSE
 ---
+
 
 # absense
 

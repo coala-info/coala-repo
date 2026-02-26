@@ -1,8 +1,9 @@
 ---
 name: dragonflye
-description: Dragonflye is a comprehensive microbial assembly pipeline specifically optimized for Oxford Nanopore Technologies (ONT) data.
+description: Dragonflye is a microbial assembly pipeline optimized for Oxford Nanopore data that automates read filtering, assembly, and polishing to produce high-quality bacterial genomes. Use when user asks to assemble bacterial genomes from ONT reads, perform hybrid polishing with Illumina data, or downsample long reads for efficient assembly.
 homepage: https://github.com/rpetit3/dragonflye
 ---
+
 
 # dragonflye
 

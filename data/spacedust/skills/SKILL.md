@@ -1,8 +1,9 @@
 ---
 name: spacedust
-description: Spacedust is a modular toolkit for the de novo discovery of conserved gene clusters.
+description: Spacedust is a modular toolkit for the de novo discovery of conserved gene clusters across different genomes using sequence or structural homology. Use when user asks to identify conserved gene neighborhoods, perform structure-based gene cluster searches, or find homologous gene groups across multiple genomes.
 homepage: https://github.com/soedinglab/spacedust
 ---
+
 
 # spacedust
 

@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: trinculo
 label: trinculo
-doc: "The provided text does not contain help information or usage instructions for
-  the tool; it is a log of a failed container image build (Apptainer/Singularity)
-  due to insufficient disk space.\n\nTool homepage: https://github.com/Trinculo54/trinculo54.github.io"
-inputs: []
+doc: "Trinculo is a tool for analyzing RNA sequencing data.\n\nTool homepage: https://github.com/Trinculo54/trinculo54.github.io"
+inputs:
+  - id: mode
+    type: string
+    doc: The mode of operation for trinculo (e.g., multinom).
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

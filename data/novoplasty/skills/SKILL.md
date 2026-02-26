@@ -1,8 +1,9 @@
 ---
 name: novoplasty
-description: NOVOPlasty is a specialized assembler designed to extract and assemble organelle genomes directly from total genomic DNA.
+description: NOVOPlasty is a specialized assembler that extracts and reconstructs organelle genomes from total genomic DNA using a seed-and-extend algorithm. Use when user asks to assemble mitochondrial or chloroplast genomes, perform de novo organelle assembly from whole genome sequencing data, or circularize organelle sequences using a seed.
 homepage: https://github.com/ndierckx/NOVOPlasty
 ---
+
 
 # novoplasty
 

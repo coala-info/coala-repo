@@ -1,8 +1,9 @@
 ---
 name: bats
-description: Bats (Bash Automated Testing System) is a testing framework that provides a simple way to verify that UNIX programs behave as expected.
+description: Bats is a testing framework for Bash that provides a simple way to verify the behavior of UNIX programs and shell scripts. Use when user asks to write automated tests for CLI applications, verify command exit statuses, or run test suites for system integrations.
 homepage: https://github.com/sstephenson/bats
 ---
+
 
 # bats
 

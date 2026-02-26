@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ffpeexampledata
-description: the package is available on all platforms; click for details.
+description: This package provides Illumina DASL microarray data from FFPE tissue samples for benchmarking and methodology development. Use when user asks to load the GSE17565 dataset, access LumiBatch objects for Burkitt's Lymphoma and Breast Adenocarcinoma, or test normalization algorithms for FFPE data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ffpeExampleData.html
 ---
+
 
 # bioconductor-ffpeexampledata
 

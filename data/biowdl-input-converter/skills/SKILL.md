@@ -1,8 +1,9 @@
 ---
 name: biowdl-input-converter
-description: The `biowdl-input-converter` is a utility designed to streamline the preparation of input data for BioWDL-based genomic pipelines.
+description: "biowdl-input-converter converts sample lists into JSON structs for BioWDL pipelines while validating file presence and integrity. Use when user asks to convert a samplesheet to JSON, validate sequencing file paths, or check MD5 checksums before running a BioWDL workflow."
 homepage: https://github.com/biowdl/biowdl-input-converter
 ---
+
 
 # biowdl-input-converter
 

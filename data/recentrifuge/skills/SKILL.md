@@ -1,8 +1,9 @@
 ---
 name: recentrifuge
-description: Recentrifuge is a robust computational framework designed for the comparative analysis of metagenomic datasets.
+description: Recentrifuge is a computational framework for the comparative analysis and contamination removal of metagenomic datasets using classification confidence scores. Use when user asks to perform comparative metagenomics, remove contaminants using negative controls, or extract specific reads based on taxonomic assignment.
 homepage: https://github.com/khyox/recentrifuge
 ---
+
 
 # recentrifuge
 

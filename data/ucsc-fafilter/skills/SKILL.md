@@ -1,8 +1,9 @@
 ---
 name: ucsc-fafilter
-description: The `faFilter` utility is a high-performance tool from the UCSC Genome Browser "kent" source suite designed for the rapid processing of FASTA files.
+description: This tool filters FASTA files by extracting or excluding sequence records based on user-defined criteria. Use when user asks to filter sequences by length, filter sequences by name pattern, exclude sequences by name, or filter sequences by N-content.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fafilter
 

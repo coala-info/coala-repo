@@ -1,8 +1,9 @@
 ---
 name: isatab-create
-description: The `isatab-create` tool is a containerized implementation of the `isatools.create.models` module from the ISA-API.
+description: The isatab-create tool automates the generation of ISA-Tab datasets from experimental design specifications to standardize life sciences metadata. Use when user asks to create ISA-Tab metadata bundles, generate experimental design files, or prepare metabolomics data for repository deposition.
 homepage: https://github.com/phnmnl/container-isatab-create
 ---
+
 
 # isatab-create
 

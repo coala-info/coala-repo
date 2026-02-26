@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromstar
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The chromstaR package performs joint analysis of multiple ChIP-seq samples using Hidden Markov Models to identify chromatin states and peak regions. Use when user asks to perform peak calling, integrate ChIP-seq replicates, identify combinatorial chromatin states, or detect differentially modified regions.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/chromstaR.html
 ---
+
 
 # bioconductor-chromstar
 

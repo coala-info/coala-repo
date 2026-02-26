@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deconrnaseq
-description: the package is available on all platforms; click for details.
+description: DeconRNASeq performs mRNA deconvolution to estimate the relative proportions of different cell types within heterogeneous bulk RNA-seq samples. Use when user asks to estimate cell type fractions, perform tissue deconvolution, or use non-negative least squares to analyze bulk gene expression data against a reference signature.
 homepage: https://bioconductor.org/packages/release/bioc/html/DeconRNASeq.html
 ---
+
 
 # bioconductor-deconrnaseq
 

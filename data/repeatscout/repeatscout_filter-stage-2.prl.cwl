@@ -1,11 +1,26 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: repeatscout_filter-stage-2.prl
+baseCommand: filter-stage-2.prl
 label: repeatscout_filter-stage-2.prl
-doc: "A filtering script for RepeatScout. Note: The provided help text contains container
-  runtime error messages and does not list specific command-line arguments.\n\nTool
-  homepage: https://github.com/Dfam-consortium/RepeatScout"
-inputs: []
+doc: "Filter a repeat library by number of occurrences\n\nTool homepage: https://github.com/Dfam-consortium/RepeatScout"
+inputs:
+  - id: repeatmasker_output
+    type:
+      - 'null'
+      - File
+    doc: The RepeatMasker output file. It can either be a .cat file or a .out 
+      file, but a .out file is preferred.
+    inputBinding:
+      position: 101
+      prefix: --cat
+  - id: threshold
+    type:
+      - 'null'
+      - int
+    doc: The number of times a sequence must appear for it to be reported.
+    inputBinding:
+      position: 101
+      prefix: --thresh
 outputs:
   - id: stdout
     type: stdout

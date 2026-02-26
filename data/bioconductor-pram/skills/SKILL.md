@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pram
-description: the package is available on all platforms; click for details.
+description: Bioconductor-pram performs transcript assembly and discovery by pooling multiple RNA-seq datasets. Use when user asks to assemble transcripts, discover novel transcripts, or pool RNA-seq data for transcript reconstruction.
 homepage: https://bioconductor.org/packages/release/bioc/html/pram.html
 ---
+
 
 # bioconductor-pram
 

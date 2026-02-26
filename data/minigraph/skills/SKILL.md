@@ -1,8 +1,9 @@
 ---
 name: minigraph
-description: Minigraph is a specialized tool for constructing and interacting with sequence graphs.
+description: "Minigraph constructs pangenome graphs and maps sequences to these graph structures. Use when user asks to build a pangenome graph from multiple assemblies, map long reads or assemblies to a graph, or call structural variations."
 homepage: https://github.com/lh3/minigraph
 ---
+
 
 # minigraph
 

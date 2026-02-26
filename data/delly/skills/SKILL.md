@@ -1,8 +1,9 @@
 ---
 name: delly
-description: Delly is an integrated structural variant prediction method that achieves single-nucleotide resolution by combining paired-end mapping, split-read analysis, and read-depth information.
+description: Delly is an integrated structural variant prediction method that identifies deletions, duplications, inversions, and translocations at single-nucleotide resolution. Use when user asks to call structural variants, identify somatic or germline mutations, genotype SVs across multiple samples, or detect copy-number variants using short-read or long-read sequencing data.
 homepage: https://github.com/dellytools/delly
 ---
+
 
 # delly
 

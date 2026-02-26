@@ -1,9 +1,9 @@
 # ddipy CWL Generation Report
 
-## ddipy
+## ddipy_omicsdi
 
 ### Tool Description
-A Python client for the OmicsDI API (Note: The provided text contains error logs from a container runtime and does not include the tool's help documentation. No arguments could be extracted.)
+Command Line Interface to fetch data from OmicsDi.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ddipy:0.0.5--py_0
@@ -18,46 +18,18 @@ A Python client for the OmicsDI API (Note: The provided text contains error logs
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddipy:0.0.5--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1111469108: no space left on device
-```
+Usage: omicsdi [OPTIONS] ACC_NUMBER
 
+  Command Line Interface to fetch data from OmicsDi.
 
-## Metadata
-- **Skill**: generated
+Options:
+  --version          Show the version and exit.
+  -d, --download     Use this flag to download the files in the current
+                     directory or a specified output directory
 
-## ddipy_omicsdi
-
-### Tool Description
-A Python tool for interacting with the Omics Discovery Index (OmicsDI). Note: The provided help text contains only system error messages regarding container image building and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ddipy:0.0.5--py_0
-- **Homepage**: https://github.com/OmicsDI/ddipy
-- **Package**: https://anaconda.org/channels/bioconda/packages/ddipy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddipy:0.0.5--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3114039987: no space left on device
-```
-
-## ddipy_omicsdi_fetcher
-
-### Tool Description
-A tool for fetching data from OmicsDI using the ddipy library. (Note: The provided help text contains system error messages regarding container execution and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ddipy:0.0.5--py_0
-- **Homepage**: https://github.com/OmicsDI/ddipy
-- **Package**: https://anaconda.org/channels/bioconda/packages/ddipy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddipy:0.0.5--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3658785998: no space left on device
+  -v, --verbose      Use this flag to display th extensions
+  -o, --output PATH  Output directory when downloading files (default: CWD)
+  -i, --input TEXT   Output directory when downloading files (default: CWD)
+  -h, --help         Show this message and exit.
 ```
 

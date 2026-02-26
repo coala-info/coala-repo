@@ -1,8 +1,9 @@
 ---
 name: perl-test2-suite
-description: The `Test2::Suite` package is the modern standard for Perl testing, providing a modular and extensible alternative to the legacy `Test::More` ecosystem.
+description: The perl-test2-suite package provides a modern, modular framework for writing and executing comprehensive unit tests in Perl. Use when user asks to write Perl test scripts, perform deep data structure validation, mock subroutines, or migrate from Test::More to the Test2 ecosystem.
 homepage: http://metacpan.org/pod/Test2-Suite
 ---
+
 
 # perl-test2-suite
 

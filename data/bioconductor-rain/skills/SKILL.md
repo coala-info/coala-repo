@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rain
-description: the package is available on all platforms; click for details.
+description: This R package provides non-parametric methods for detecting rhythmic patterns in biological time-series data. Use when user asks to detect circadian rhythms, identify periodic oscillations, or perform rhythmicity analysis on high-throughput data.
 homepage: https://bioconductor.org/packages/release/bioc/html/rain.html
 ---
+
 
 # bioconductor-rain
 

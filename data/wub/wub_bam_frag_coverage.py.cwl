@@ -1,11 +1,127 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: wub_bam_frag_coverage.py
+baseCommand: bam_frag_coverage.py
 label: wub_bam_frag_coverage.py
-doc: "A tool for calculating fragment coverage from BAM files. (Note: The provided
-  help text contains only container runtime error messages and no usage information.)\n
-  \nTool homepage: https://github.com/nanoporetech/wub"
-inputs: []
+doc: "Produce aggregated and individual plots of fragment coverage.\n\nTool homepage:
+  https://github.com/nanoporetech/wub"
+inputs:
+  - id: bam
+    type: File
+    doc: Input BAM file.
+    inputBinding:
+      position: 1
+  - id: bam_tag
+    type:
+      - 'null'
+      - string
+    doc: Dataset tag (BAM basename).
+    default: BAM basename
+    inputBinding:
+      position: 102
+      prefix: -t
+  - id: bins
+    type:
+      - 'null'
+      - string
+    doc: Number of bins
+    default: None = auto
+    inputBinding:
+      position: 102
+      prefix: -b
+  - id: cov80_tsv
+    type:
+      - 'null'
+      - File
+    doc: Tab separated file with per-chromosome cov80 scores. Requires the -x 
+      option to be specified.
+    default: None
+    inputBinding:
+      position: 102
+      prefix: -l
+  - id: glob_cov80_tsv
+    type:
+      - 'null'
+      - File
+    doc: Tab separated file with global cov80 score
+    default: None
+    inputBinding:
+      position: 102
+      prefix: -g
+  - id: intervals
+    type:
+      - 'null'
+      - string
+    doc: Length intervals
+    default: ()
+    inputBinding:
+      position: 102
+      prefix: -i
+  - id: min_alignment_quality
+    type:
+      - 'null'
+      - int
+    doc: Minimum alignment quality
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: -q
+  - id: no_log_coverage
+    type:
+      - 'null'
+      - boolean
+    doc: Do not take log of coverage.
+    inputBinding:
+      position: 102
+      prefix: -o
+  - id: plot_per_reference
+    type:
+      - 'null'
+      - boolean
+    doc: Plot per-reference information.
+    inputBinding:
+      position: 102
+      prefix: -x
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Be quiet and do not show progress bars.
+    inputBinding:
+      position: 102
+      prefix: -Q
+  - id: reference
+    type: File
+    doc: Reference fasta.
+    inputBinding:
+      position: 102
+      prefix: -f
+  - id: region
+    type:
+      - 'null'
+      - string
+    doc: BAM region
+    default: None
+    inputBinding:
+      position: 102
+      prefix: -c
+  - id: report_pdf
+    type:
+      - 'null'
+      - File
+    doc: Report PDF
+    default: bam_frag_coverage.pdf
+    inputBinding:
+      position: 102
+      prefix: -r
+  - id: results_pickle
+    type:
+      - 'null'
+      - File
+    doc: Save pickled results in this file
+    default: None
+    inputBinding:
+      position: 102
+      prefix: -p
 outputs:
   - id: stdout
     type: stdout

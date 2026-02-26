@@ -1,8 +1,9 @@
 ---
 name: strdust
-description: STRdust is a specialized bioinformatics tool designed to genotype tandem repeats using long-read sequencing data (such as Oxford Nanopore or PacBio).
+description: "STRdust genotypes tandem repeats and predicts consensus sequences from long-read sequencing data. Use when user asks to genotype specific repeat regions, screen for pathogenic expansions, or resolve complex repeat structures using long reads."
 homepage: https://github.com/wdecoster/STRdust
 ---
+
 
 # strdust
 

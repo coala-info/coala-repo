@@ -1,8 +1,9 @@
 ---
 name: unitas
-description: unitas is a specialized tool for the comprehensive annotation of small RNA sequencing data.
+description: unitas annotates small RNA sequencing data to identify known and novel small non-coding RNAs. Use when user asks to annotate small RNA sequences, identify novel small non-coding RNAs, configure annotation for specific species or custom references, or interpret small RNA classification results.
 homepage: http://www.smallrnagroup.uni-mainz.de/software.html
 ---
+
 
 # unitas
 

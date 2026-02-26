@@ -1,8 +1,9 @@
 ---
 name: bior_annotate
-description: The `bior_annotate_lite` tool is a streamlined, interactive implementation of the BioR (Biological Resources) toolkit.
+description: The bior_annotate tool enriches VCF files with metadata from external genomic catalogs using a configuration file to specify field extraction. Use when user asks to annotate variants, enrich VCF files with genomic metadata, or extract information from BioR catalogs based on genomic overlap.
 homepage: https://github.com/michaelmeiners/biorAnnotateLite
 ---
+
 
 # bior_annotate
 

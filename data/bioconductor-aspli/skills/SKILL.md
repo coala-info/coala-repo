@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aspli
-description: the package is available on all platforms; click for details.
+description: ASpli analyzes alternative splicing in RNA-seq data by integrating subgenic bin signals with junction inclusion indices. Use when user asks to parse genome annotations into bins, count read overlaps, calculate inclusion indices like PSI or PIR, and perform differential splicing analysis using a GLM framework.
 homepage: https://bioconductor.org/packages/release/bioc/html/ASpli.html
 ---
+
 
 # bioconductor-aspli
 

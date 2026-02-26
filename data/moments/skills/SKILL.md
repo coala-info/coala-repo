@@ -1,8 +1,9 @@
 ---
 name: moments
-description: The `moments` library is a powerful tool for population geneticists to infer demographic histories and patterns of natural selection.
+description: The moments library infers demographic histories and patterns of natural selection by analyzing allele frequency distributions and linkage disequilibrium statistics. Use when user asks to model population demographic events, calculate site frequency spectra, or perform likelihood-based optimization of genetic parameters.
 homepage: https://bitbucket.org/simon-gravel/moments
 ---
+
 
 # moments
 

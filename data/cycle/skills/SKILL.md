@@ -1,8 +1,9 @@
 ---
 name: cycle
-description: The `cycle` skill provides a specialized workflow for the PyTorch implementation of CycleGAN and pix2pix.
+description: The cycle tool provides a specialized workflow for image-to-image translation using PyTorch implementations of CycleGAN and pix2pix. Use when user asks to train models on paired or unpaired image datasets, perform inference with pre-trained models, or set up multi-GPU training environments for image translation tasks.
 homepage: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 ---
+
 
 # cycle
 

@@ -1,8 +1,9 @@
 ---
 name: how_are_we_stranded_here
-description: "This tool solves a common bioinformatics headache: processing RNA-Seq data without knowing the specific library orientation used during sequencing."
+description: This tool determines the library strandedness of RNA-Seq data by sampling reads and comparing them against a reference transcriptome. Use when user asks to check sequencing orientation, identify library type, or infer strandedness for downstream analysis.
 homepage: https://github.com/betsig/how_are_we_stranded_here
 ---
+
 
 # how_are_we_stranded_here
 

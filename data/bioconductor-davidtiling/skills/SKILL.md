@@ -1,8 +1,9 @@
 ---
 name: bioconductor-davidtiling
-description: the package is available on all platforms; click for details.
+description: This package provides data and tools for analyzing high-resolution yeast tiling array experiments from the David et al. (2006) study. Use when user asks to access raw CEL intensities, map probes to the S. cerevisiae genome, parse GFF attributes, perform GO enrichment analysis, or score genomic segments against annotations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/davidTiling.html
 ---
+
 
 # bioconductor-davidtiling
 

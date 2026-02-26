@@ -1,8 +1,9 @@
 ---
 name: perl-bio-db-refseq
-description: The `perl-bio-db-refseq` skill provides a standardized object interface for querying and retrieving genomic, transcript, and protein data from the NCBI RefSeq database.
+description: This tool provides an interface for querying and retrieving genomic, transcript, and protein sequences from the NCBI RefSeq database. Use when user asks to fetch sequences by accession number, retrieve curated RefSeq records, or perform batch downloads of biological sequences into BioPerl objects.
 homepage: https://metacpan.org/release/Bio-DB-RefSeq
 ---
+
 
 # perl-bio-db-refseq
 

@@ -1,8 +1,9 @@
 ---
 name: sharg
-description: Sharg is a C++20 header-only library designed to simplify the creation of robust command-line interfaces (CLIs).
+description: Sharg is a C++20 header-only library that simplifies the creation of command-line interfaces by mapping inputs directly to variables. Use when user asks to parse command-line arguments, define options and flags, or generate help menus and documentation for C++ applications.
 homepage: https://github.com/seqan/sharg-parser
 ---
+
 
 # sharg
 

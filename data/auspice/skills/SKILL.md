@@ -1,8 +1,9 @@
 ---
 name: auspice
-description: Auspice is the visualization engine for the Nextstrain project, designed to render large-scale phylogenetic trees, geographic maps, and genomic entropy panels.
+description: Auspice is a visualization engine used to render large-scale phylogenetic trees, geographic maps, and genomic entropy panels. Use when user asks to view genomic datasets locally, customize the web interface, convert data formats, or manipulate URL parameters for sharing specific data views.
 homepage: https://docs.nextstrain.org/projects/auspice/
 ---
+
 
 # auspice
 

@@ -1,8 +1,9 @@
 ---
 name: r-survey
-description: Summary statistics, two-sample tests, rank tests, generalised linear models, cumulative link models, Cox models, loglinear models, and general maximum pseudolikelihood estimation for multistage stratified, cluster-sampled, unequally weighted survey samples. Variances by Taylor series linearisation or replicate weights. Post-stratification, calibration, and raking. Two-phase subsampling designs. Graphics. PPS sampling without replacement. Small-area estimation.</p>
+description: This tool provides expert guidance for using the R 'survey' package to analyze data from complex sampling designs. Use when user asks to define survey designs, calculate summary statistics for weighted data, perform domain analysis on subpopulations, or fit design-based regression models.
 homepage: https://cloud.r-project.org/web/packages/survey/index.html
 ---
+
 
 # r-survey
 

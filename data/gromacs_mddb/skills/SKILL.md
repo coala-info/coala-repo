@@ -1,8 +1,9 @@
 ---
 name: gromacs_mddb
-description: The `gromacs_mddb` package is a specialized development version of the GROMACS molecular dynamics suite.
+description: gromacs_mddb is a molecular dynamics suite that simulates biochemical systems and exports binary topology files into a structured JSON format. Use when user asks to perform molecular dynamics simulations, convert TPR files to JSON, or preprocess and analyze biochemical system trajectories.
 homepage: https://www.gromacs.org/
 ---
+
 
 # gromacs_mddb
 

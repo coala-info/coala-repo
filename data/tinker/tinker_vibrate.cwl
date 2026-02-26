@@ -1,10 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vibrate
+baseCommand: tinker_vibrate
 label: tinker_vibrate
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a log of a failed container build process.\n\nTool homepage: https://dasher.wustl.edu/tinker/"
-inputs: []
+doc: "Software Tools for Molecular Design\n\nTool homepage: https://dasher.wustl.edu/tinker/"
+inputs:
+  - id: input_file
+    type: File
+    doc: Cartesian Coordinate File Name
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

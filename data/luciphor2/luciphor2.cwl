@@ -1,10 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: luciphor2
+baseCommand: java -jar luciphor2.jar
 label: luciphor2
-doc: "Luciphor2 is a tool for site localization of post-translational modifications
-  (PTMs) from tandem mass spectrometry data.\n\nTool homepage: http://luciphor2.sourceforge.net/"
-inputs: []
+doc: "JAVA-based version of Luciphor\n\nTool homepage: http://luciphor2.sourceforge.net/"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input file for luciphor2
+    inputBinding:
+      position: 1
+  - id: generate_input
+    type:
+      - 'null'
+      - boolean
+    doc: Generate a luciphor2 input file
+    inputBinding:
+      position: 102
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

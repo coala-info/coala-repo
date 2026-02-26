@@ -1,9 +1,9 @@
 # metaplex CWL Generation Report
 
-## metaplex
+## metaplex_Metaplex-remultiplex
 
 ### Tool Description
-Metaplex tool (Help text unavailable due to system error)
+Remultiplexes a BAM file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metaplex:1.1.0--pyh5e36f6f_0
@@ -12,52 +12,50 @@ Metaplex tool (Help text unavailable due to system error)
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metaplex/overview
-- **Total Downloads**: 8.5K
+- **Total Downloads**: 8.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/NGabry/MetaPlex
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaplex:1.1.0--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2223943455: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/Metaplex-remultiplex", line 10, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.9/site-packages/metaplex/remultiplexing.py", line 101, in main
+    remultiplex(sys.argv[1], sys.argv[2])
+IndexError: list index out of range
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## metaplex_Metaplex-remultiplex
-
-### Tool Description
-Metaplex remultiplex tool (Note: The provided help text contains only container runtime error messages and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metaplex:1.1.0--pyh5e36f6f_0
-- **Homepage**: https://github.com/NGabry/MetaPlex
-- **Package**: https://anaconda.org/channels/bioconda/packages/metaplex/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaplex:1.1.0--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2621192065: no space left on device
-```
 
 ## metaplex_Metaplex-calculate-IJR
 
 ### Tool Description
-Calculate IJR using Metaplex
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metaplex:1.1.0--pyh5e36f6f_0
 - **Homepage**: https://github.com/NGabry/MetaPlex
 - **Package**: https://anaconda.org/channels/bioconda/packages/metaplex/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaplex:1.1.0--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2327972228: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/Metaplex-calculate-IJR", line 6, in <module>
+    from metaplex.index_jump import main
+  File "/usr/local/lib/python3.9/site-packages/metaplex/index_jump.py", line 8, in <module>
+    from qiime2 import Artifact
+ModuleNotFoundError: No module named 'qiime2'
 ```
 

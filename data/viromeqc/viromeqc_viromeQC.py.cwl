@@ -1,16 +1,164 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: viromeqc_viromeQC.py
+baseCommand: viromeQC.py
 label: viromeqc_viromeQC.py
-doc: "Virome Quality Control tool (Note: The provided text is a container execution
-  error log and does not contain help information or argument definitions).\n\nTool
-  homepage: https://github.com/SegataLab/viromeqc"
-inputs: []
+doc: "Checks a virome FASTQ file for enrichment efficiency\n\nTool homepage: https://github.com/SegataLab/viromeqc"
+inputs:
+  - id: bowtie2_path
+    type:
+      - 'null'
+      - string
+    doc: Full path to the bowtie2 command to use, deafult assumes that 'bowtie2 
+      is present in the system path
+    default: bowtie2
+    inputBinding:
+      position: 101
+      prefix: --bowtie2_path
+  - id: bowtie2_threads
+    type:
+      - 'null'
+      - int
+    doc: Number of Threads to use with Bowtie2
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --bowtie2_threads
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Prints error messages in case of debug
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: diamond_path
+    type:
+      - 'null'
+      - string
+    doc: Full path to the diamond command to use, deafult assumes that 'diamond 
+      is present in the system path
+    default: diamond
+    inputBinding:
+      position: 101
+      prefix: --diamond_path
+  - id: diamond_threads
+    type:
+      - 'null'
+      - int
+    doc: Number of Threads to use with Diamond
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --diamond_threads
+  - id: enrichment_preset
+    type:
+      - 'null'
+      - string
+    doc: 'Calculate the enrichment basing on human or environmental metagenomes. Defualt:
+      human-microbiome'
+    default: human
+    inputBinding:
+      position: 101
+      prefix: --enrichment_preset
+  - id: input
+    type:
+      type: array
+      items: File
+    doc: Raw Reads in FASTQ format. Supports multiple inputs (plain, gz o bz2)
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: install
+    type:
+      - 'null'
+      - boolean
+    doc: Downloads database files
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --install
+  - id: medians
+    type:
+      - 'null'
+      - File
+    doc: File containing reference medians to calculate the enrichment. Default 
+      is medians.csv in the script directory. You can specify a different file 
+      with this parameter.
+    default: /usr/local/bin/medians.csv
+    inputBinding:
+      position: 101
+      prefix: --medians
+  - id: minlen
+    type:
+      - 'null'
+      - int
+    doc: Minimum Read Length allowed
+    default: 75
+    inputBinding:
+      position: 101
+      prefix: --minlen
+  - id: minlen_lsu
+    type:
+      - 'null'
+      - int
+    doc: Minimum alignment length when considering LSU rRNA gene
+    default: 50
+    inputBinding:
+      position: 101
+      prefix: --minlen_LSU
+  - id: minlen_ssu
+    type:
+      - 'null'
+      - int
+    doc: Minimum alignment length when considering SSU rRNA gene
+    default: 50
+    inputBinding:
+      position: 101
+      prefix: --minlen_SSU
+  - id: minqual
+    type:
+      - 'null'
+      - int
+    doc: Minimum Read Average Phred quality
+    default: 20
+    inputBinding:
+      position: 101
+      prefix: --minqual
+  - id: sample_name
+    type:
+      - 'null'
+      - string
+    doc: Optional label for the sample to be included in the output file
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --sample_name
+  - id: tempdir
+    type:
+      - 'null'
+      - Directory
+    doc: Temporary Directory override (default is the system temp directory)
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --tempdir
+  - id: zenodo
+    type:
+      - 'null'
+      - boolean
+    doc: Use Zenodo instead of Dropbox to download the DB
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --zenodo
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type: File
+    doc: output file
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viromeqc:1.0.2--py310h7cba7a3_0
-stdout: viromeqc_viromeQC.py.out

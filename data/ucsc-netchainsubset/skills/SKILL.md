@@ -1,8 +1,9 @@
 ---
 name: ucsc-netchainsubset
-description: The `netChainSubset` utility is a specialized tool within the UCSC Genome Browser "kent" suite used during the final stages of whole-genome alignment pipelines (like Lastz/Chain/Net).
+description: The ucsc-netchainsubset tool extracts chain records that correspond to a net file. Use when user asks to clean chain files to match nets, subset chain files, or get chains corresponding to filtered nets.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-netchainsubset
 

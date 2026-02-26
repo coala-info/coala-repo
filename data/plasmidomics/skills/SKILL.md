@@ -1,8 +1,9 @@
 ---
 name: plasmidomics
-description: The plasmidomics skill provides a structured workflow for analyzing plasmid sequences to uncover their functional characteristics and evolutionary relationships.
+description: The plasmidomics tool analyzes plasmid sequences to identify functional characteristics and evolutionary relationships through integrated bioinformatics workflows. Use when user asks to annotate plasmid databases, perform MobMess network analysis, generate Mashtree dendrograms, or conduct functional enrichment studies.
 homepage: https://github.com/braddmg/Plasmidome-analysis
 ---
+
 
 # plasmidomics
 

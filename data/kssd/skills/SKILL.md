@@ -1,8 +1,9 @@
 ---
 name: kssd
-description: kssd (K-mer Substring Space Decomposition) is a specialized tool for genomic distance estimation and sequence resemblance analysis.
+description: kssd performs rapid genomic distance estimation and sequence resemblance analysis by reducing the dimensionality of k-mer substring spaces. Use when user asks to estimate genomic distances, sketch sequences for comparison, calculate Jaccard coefficients, or perform set operations on sequence sketches.
 homepage: https://github.com/yhg926/public_kssd
 ---
+
 
 # kssd
 

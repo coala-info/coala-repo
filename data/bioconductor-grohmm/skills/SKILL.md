@@ -1,8 +1,9 @@
 ---
 name: bioconductor-grohmm
-description: the package is available on all platforms; click for details.
+description: This tool analyzes GRO-seq data using Hidden Markov Models to identify transcribed regions and characterize nascent RNA. Use when user asks to perform de novo transcript calling, generate wiggle files for visualization, evaluate transcript predictions against annotations, or conduct differential expression analysis on nascent RNA-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/groHMM.html
 ---
+
 
 # bioconductor-grohmm
 

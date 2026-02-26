@@ -1,8 +1,9 @@
 ---
 name: metaprob
-description: Metaprob is an embedded probabilistic programming language (PPL) designed for both modeling and meta-programming.
+description: Metaprob is an embedded probabilistic programming language designed for generative modeling and meta-programming custom inference algorithms. Use when user asks to define generative models with execution traces, write custom inference procedures using reflective constructs, or perform complex causal reasoning.
 homepage: https://github.com/probcomp/metaprob
 ---
+
 
 # metaprob
 

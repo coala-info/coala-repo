@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowsom
-description: the package is available on all platforms; click for details.
+description: FlowSOM performs unsupervised clustering and visualization of high-dimensional cytometry data using Self-Organizing Maps and Minimal Spanning Trees. Use when user asks to cluster flow or mass cytometry data, generate star plots or marker plots, and perform metaclustering to identify cell populations.
 homepage: https://bioconductor.org/packages/release/bioc/html/FlowSOM.html
 ---
+
 
 # bioconductor-flowsom
 

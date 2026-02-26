@@ -1,8 +1,9 @@
 ---
 name: pydna
-description: pydna is a specialized library for in silico DNA manipulation that extends Biopython to support double-stranded DNA (dsDNA) logic.
+description: pydna is a library for in silico DNA manipulation that simulates laboratory procedures like PCR, restriction digestion, and assembly methods using double-stranded DNA logic. Use when user asks to simulate cloning strategies, design primers, perform virtual PCR, or automate the assembly of recombinant DNA constructs.
 homepage: https://github.com/BjornFJohansson/pydna
 ---
+
 
 # pydna
 

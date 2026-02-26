@@ -1,8 +1,9 @@
 ---
 name: sparqlwrapper
-description: The `sparqlwrapper` skill enables AI agents to bridge the gap between Python environments and remote Triple Stores.
+description: The sparqlwrapper tool facilitates executing SPARQL queries and updates against remote triple stores from Python environments. Use when user asks to query Linked Data sources like DBpedia or Wikidata, convert RDF results into Python objects, or programmatically modify remote RDF graphs.
 homepage: https://github.com/RDFLib/sparqlwrapper
 ---
+
 
 # sparqlwrapper
 

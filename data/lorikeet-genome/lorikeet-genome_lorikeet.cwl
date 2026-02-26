@@ -2,10 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: lorikeet
 label: lorikeet-genome_lorikeet
-doc: "The provided text does not contain help information or a description of the
-  tool. It contains system log messages and a fatal error regarding disk space during
-  a container build.\n\nTool homepage: https://github.com/rhysnewell/Lorikeet"
-inputs: []
+doc: "Variant calling and strain genotyping analysis for metagenomics\n\nTool homepage:
+  https://github.com/rhysnewell/Lorikeet"
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'The subcommand to run. Available subcommands: call, consensus, summarise,
+      shell-completion, genotype'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

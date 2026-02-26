@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowsorted.cordblood.450k
-description: the package is available on all platforms; click for details.
+description: This package provides DNA methylation reference data for sorted cell types from umbilical cord blood using the Illumina HumanMethylation450 array. Use when user asks to estimate cell type proportions in cord blood samples, perform cell-type deconvolution using minfi, or access methylation profiles for specific cord blood cell populations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBlood.450k.html
 ---
+
 
 # bioconductor-flowsorted.cordblood.450k
 

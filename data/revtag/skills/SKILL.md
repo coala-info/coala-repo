@@ -1,8 +1,9 @@
 ---
 name: revtag
-description: `revtag` is a specialized bioinformatics utility designed to correct the orientation of custom SAM tags.
+description: revtag corrects the orientation of custom SAM tags in BAM files to ensure they match the genomic orientation for negative-strand alignments. Use when user asks to reverse or reverse-complement custom SAM tags, correct tag orientation for single-cell or long-read data, or process per-base metrics in alignment files.
 homepage: https://github.com/clintval/revtag
 ---
+
 
 # revtag
 

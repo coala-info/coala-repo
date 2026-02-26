@@ -1,8 +1,9 @@
 ---
 name: elprep
-description: elPrep is a high-performance tool designed for the rapid processing of sequence alignment files (.sam, .bam, and .vcf.gz).
+description: elPrep is a high-performance tool for rapid, single-pass processing of sequence alignment files including sorting, marking duplicates, and variant calling. Use when user asks to process SAM or BAM files, mark duplicates, perform base quality score recalibration, or run variant calling pipelines.
 homepage: https://github.com/ExaScience/elprep
 ---
+
 
 # elprep
 

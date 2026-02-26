@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodist
-description: the package is available on all platforms; click for details.
+description: This package calculates specialized biological distance measures such as Mutual Information, Kullback-Leibler Divergence, and correlation-based distances for genomic data. Use when user asks to calculate biological distances, perform proximity analysis on ExpressionSet objects, compute Mutual Information between genes, or find nearest neighbors in high-dimensional matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/bioDist.html
 ---
+
 
 # bioconductor-biodist
 

@@ -1,8 +1,9 @@
 ---
 name: genodsp
-description: `genodsp` is a specialized workbench for processing genomic signals.
+description: genodsp is a specialized workbench for processing and transforming genomic signals using a pipeline of operators. Use when user asks to calculate coverage depth, smooth genomic signals, perform statistical thresholding, or identify significant genomic features.
 homepage: https://github.com/rsharris/genodsp
 ---
+
 
 # genodsp
 

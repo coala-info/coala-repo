@@ -1,8 +1,9 @@
 ---
 name: perl-dbi
-description: The Perl DBI (Database Interface) acts as an abstraction layer between Perl code and underlying database management systems.
+description: Perl DBI provides a database-independent interface for connecting Perl applications to various database management systems. Use when user asks to connect to a database, execute SQL queries, fetch result sets, or manage database transactions in Perl.
 homepage: http://dbi.perl.org/
 ---
+
 
 # perl-dbi
 

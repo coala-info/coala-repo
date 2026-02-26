@@ -1,8 +1,9 @@
 ---
 name: rnaz
-description: The `rnaz` skill provides a specialized workflow for detecting functional RNA structures within evolutionary conserved sequences.
+description: RNAz detects functional RNA structures in conserved sequences by calculating secondary structure conservation and thermodynamic stability. Use when user asks to predict non-coding RNA candidates, analyze multiple sequence alignments for structural conservation, or perform genome-wide screens for RNA elements.
 homepage: https://www.tbi.univie.ac.at/~wash/RNAz/
 ---
+
 
 # rnaz
 

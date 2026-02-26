@@ -1,8 +1,9 @@
 ---
 name: hmftools-lilac
-description: LILAC is a specialized tool developed by the Hartwig Medical Foundation for high-resolution HLA Class I typing.
+description: hmftools-lilac performs high-resolution HLA Class I typing and detects somatic mutations or Loss of Heterozygosity within the HLA region using whole genome sequencing data. Use when user asks to determine 4-digit HLA genotypes, detect HLA Loss of Heterozygosity, or analyze tumor-immune interactions in genomic data.
 homepage: https://github.com/hartwigmedical/hmftools/blob/master/lilac/README.md
 ---
+
 
 # hmftools-lilac
 

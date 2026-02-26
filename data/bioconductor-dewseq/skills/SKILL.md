@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dewseq
-description: the package is available on all platforms; click for details.
+description: DEWSeq is a Bioconductor package that identifies RBP binding sites from iCLIP and eCLIP data using a sliding window approach and DESeq2-based significance testing. Use when user asks to identify enriched crosslink regions, analyze CLIP-seq data with sliding windows, or extract RBP binding sites from IP and SMI control samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEWSeq.html
 ---
+
 
 # bioconductor-dewseq
 

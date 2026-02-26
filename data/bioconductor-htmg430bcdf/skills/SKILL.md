@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430bcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment and coordinate mapping functions for the Affymetrix HT Mouse Genome 430B array. Use when user asks to map probe intensities to probe sets, convert between (x,y) chip coordinates and single-number indices, or access chip dimensions for the HT_MG-430B platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430bcdf.html
 ---
+
 
 # bioconductor-htmg430bcdf
 

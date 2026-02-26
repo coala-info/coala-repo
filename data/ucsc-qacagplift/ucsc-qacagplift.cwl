@@ -2,15 +2,24 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: qaCagpLift
 label: ucsc-qacagplift
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a container runtime error log (Apptainer/Singularity) indicating a failure
-  to fetch or build the image.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Check that an AGP file and a lift file are consistent.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: agp_file
+    type: File
+    doc: The AGP file to check.
+    inputBinding:
+      position: 1
+  - id: lift_file
+    type: File
+    doc: The lift file to check.
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: qa_file
+    type: File
+    doc: The output QA file.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-qacagplift:482--h0b57e2e_0
-stdout: ucsc-qacagplift.out

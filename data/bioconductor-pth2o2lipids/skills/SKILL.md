@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pth2o2lipids
-description: the package is available on all platforms; click for details.
+description: This package provides LC-MS lipidomics data from the diatom Phaeodactylum tricornutum under oxidative stress. Use when user asks to access lipidomics datasets, analyze diatom mass spectrometry data, or study oxidative stress responses in Phaeodactylum tricornutum.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PtH2O2lipids.html
 ---
+
 
 # bioconductor-pth2o2lipids
 

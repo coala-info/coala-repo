@@ -3,7 +3,7 @@
 ## rdp_classifier
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for rdp_classifier; it contains container runtime logs and a fatal error message.
+Note this is the legacy command for one sample classification
 
 ### Metadata
 - **Docker Image**: biocontainers/rdp-classifier:v2.10.2-4-deb_cv1
@@ -18,13 +18,25 @@ The provided text does not contain help information or usage instructions for rd
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/rdp-classifier:v2.10.2-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Command Error: outputFile must be specified
+usage: ClassifierCmd [options] <samplefile>
+Note this is the legacy command for one sample classification
+ -f,--format <arg>           tab-delimited output format: [allrank|fixrank|biom|filterbyconf|db]. Default is allRank.
+                             allrank: outputs the results for all ranks applied for each sequence: seqname, orientation,
+                             taxon name, rank, conf, ...
+                             fixrank: only outputs the results for fixed ranks in order: domain, phylum, class, order,
+                             family, genus
+                             biom: outputs rich dense biom format if OTU or metadata provided
+                             filterbyconf: only outputs the results for major ranks as in fixrank, results below the
+                             confidence cutoff were bin to a higher rank unclassified_node
+                             db: outputs the seqname, trainset_no, tax_id, conf.
+ -g,--gene <arg>             16srrna, fungallsu, fungalits_warcup, fungalits_unite. Default is 16srrna. This option can
+                             be overwritten by -t option
+ -o,--outputFile <arg>       tab-delimited text output file for classification assignment.
+ -q,--queryFile              legacy option, no longer needed
+ -t,--train_propfile <arg>   property file containing the mapping of the training files if not using the default. Note:
+                             the training files and the property file should be in the same directory.
+ -w,--minWords <arg>         minimum number of words for each bootstrap trial. Default(maximum) is 1/8 of the words of
+                             each sequence. Minimum is 5
 ```
 
-
-## Metadata
-- **Skill**: generated

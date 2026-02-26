@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95dcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Description File environment for the Affymetrix Human Genome U95d array to map probe coordinates to indices. Use when user asks to access CDF environments for the HGU95d array, convert between (x,y) coordinates and probe indices, or retrieve chip dimensions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95dcdf.html
 ---
+
 
 # bioconductor-hgu95dcdf
 

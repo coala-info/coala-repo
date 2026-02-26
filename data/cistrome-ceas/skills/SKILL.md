@@ -1,8 +1,9 @@
 ---
 name: cistrome-ceas
-description: The `cistrome-ceas` skill enables the automated annotation of ChIP-seq or ChIP-chip peaks.
+description: The cistrome-ceas tool provides automated annotation and statistical summaries of ChIP-seq or ChIP-chip peaks relative to genomic features and gene structures. Use when user asks to annotate peaks, determine the distribution of binding events across genomic regions, or generate average profiling plots of signal intensity across gene bodies.
 homepage: https://bitbucket.org/cistrome/cistrome-applications-harvard/overview
 ---
+
 
 # cistrome-ceas
 

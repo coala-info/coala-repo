@@ -1,8 +1,9 @@
 ---
 name: clustergrammer
-description: Clustergrammer is a Python module designed to bridge the gap between raw matrix data and interactive web-based visualizations.
+description: Clustergrammer processes matrix data to generate interactive, web-based hierarchical clustering visualizations and heat maps. Use when user asks to perform hierarchical clustering on numerical matrices, filter large datasets for visualization, or export data to a JSON format for interactive heat map exploration.
 homepage: https://github.com/MaayanLab/clustergrammer-py
 ---
+
 
 # clustergrammer
 

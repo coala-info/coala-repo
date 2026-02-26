@@ -1,8 +1,9 @@
 ---
 name: perl-try-tiny
-description: Try::Tiny provides a minimal, dependency-free syntax for exception handling in Perl.
+description: Try::Tiny provides a minimal, dependency-free syntax for exception handling in Perl using try, catch, and finally blocks. Use when user asks to handle exceptions, catch errors without clobbering global variables, or ensure cleanup code runs after a block of code.
 homepage: https://github.com/karenetheridge/Try-Tiny
 ---
+
 
 # perl-try-tiny
 

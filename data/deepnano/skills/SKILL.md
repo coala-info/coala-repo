@@ -1,8 +1,9 @@
 ---
 name: deepnano
-description: DeepNano-blitz is a high-performance basecaller designed to process Nanopore signal data at speeds exceeding the physical output of a MinION sequencer.
+description: DeepNano is a high-performance basecaller that converts raw Nanopore fast5 signal data into fasta or fastq sequences using recurrent neural networks. Use when user asks to basecall Nanopore reads, convert fast5 files to fastq, or perform real-time basecalling on a CPU.
 homepage: https://github.com/fmfi-compbio/deepnano-blitz
 ---
+
 
 # deepnano
 

@@ -1,8 +1,9 @@
 ---
 name: itolapi
-description: The `itolapi` skill enables automated interaction with the Interactive Tree of Life (iTOL) web service.
+description: The itolapi tool provides a programmatic interface for uploading phylogenetic trees to the Interactive Tree of Life (iTOL) and exporting them in various graphical or data formats. Use when user asks to upload phylogenetic trees to iTOL, export trees into publication-ready formats, or automate tree visualization workflows.
 homepage: https://github.com/albertyw/itolapi
 ---
+
 
 # itolapi
 

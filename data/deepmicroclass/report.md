@@ -1,9 +1,9 @@
 # deepmicroclass CWL Generation Report
 
-## deepmicroclass
+## deepmicroclass_DeepMicroClass
 
 ### Tool Description
-DeepMicroClass is a tool for classifying eukaryotic and prokaryotic viral and microbial sequences.
+A deep learning framework for classifying metagenomic sequences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/deepmicroclass:1.0.3--pyhdfd78af_1
@@ -18,11 +18,23 @@ DeepMicroClass is a tool for classifying eukaryotic and prokaryotic viral and mi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/deepmicroclass:1.0.3--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3376067935: no space left on device
+usage: DeepMicroClass [-h] {test,train,predict} ...
+
+DeepMicroClass: A deep learning framework for classifying metagenomic
+sequences
+
+positional arguments:
+  {test,train,predict}
+    test                Test the prediction function. It will use default
+                        settings to test DeepMicroClass. And output the test
+                        result in the current working directory. The expected
+                        result is in /usr/local/lib/python3.12/site-
+                        packages/DeepMicroClass/demo/test.fa_pred_one-
+                        hot_hybrid.tsv
+    train               Train the model
+    predict             Predict the class of a sequence
+
+options:
+  -h, --help            show this help message and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

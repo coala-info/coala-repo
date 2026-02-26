@@ -1,8 +1,9 @@
 ---
 name: mupbwt
-description: mupbwt (mu-PBWT) is a high-performance tool for genomic haplotype matching.
+description: mupbwt is a high-performance tool for genomic haplotype matching that uses the Positional Burrows-Wheeler Transform to index genotype panels. Use when user asks to build a PBWT index, identify shared genetic segments, or find matches between query haplotypes and a reference panel.
 homepage: https://github.com/dlcgold/muPBWT
 ---
+
 
 # mupbwt
 

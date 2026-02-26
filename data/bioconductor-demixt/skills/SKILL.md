@@ -1,8 +1,9 @@
 ---
 name: bioconductor-demixt
-description: the package is available on all platforms; click for details.
+description: DeMixT performs transcriptomic deconvolution to estimate component proportions and individual expression profiles from heterogeneous tumor samples. Use when user asks to estimate tumor purity, deconvolve mixed transcriptomic data, or reconstitute component-specific expression profiles for two or three components.
 homepage: https://bioconductor.org/packages/release/bioc/html/DeMixT.html
 ---
+
 
 # bioconductor-demixt
 

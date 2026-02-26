@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seventygenedata
-description: the package is available on all platforms; click for details.
+description: This package provides the 70-gene expression data from breast cancer studies for use in R. Use when user asks to access the van 't Veer breast cancer dataset, load the 70-gene expression profile, or analyze MammaPrint validation data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/seventyGeneData.html
 ---
+
 
 # bioconductor-seventygenedata
 

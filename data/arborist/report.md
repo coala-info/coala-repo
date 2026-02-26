@@ -3,7 +3,7 @@
 ## arborist
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'arborist'. It contains error logs related to a container runtime (Apptainer/Singularity) failure during image extraction.
+Arborist: a method to rank SNV clonal trees using scDNA-seq data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/arborist:1.0.0--pyhdfd78af_0
@@ -18,14 +18,48 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/arborist:1.0.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:6d4380e3db7844383183ae35780539fa03d9cd837528c5703ae7951899edd9bb: unpack entry: usr/local/lib/python3.13/site-packages/numba/experimental/jitclass/__pycache__/overloads.cpython-313.pyc: unpack to regular file: short write: write /tmp/build-temp-2504871948/rootfs/usr/local/lib/python3.13/site-packages/numba/experimental/jitclass/__pycache__/overloads.cpython-313.pyc: no space left on device
+usage: arborist [-h] -R READ_COUNTS -Y SNV_CLUSTERS -T TREES
+                [--edge-delim EDGE_DELIM] [--add-normal] [--alpha ALPHA]
+                [--max-iter MAX_ITER] [--prior PRIOR] [--pickle PICKLE]
+                [-d DRAW] [-t TREE] [--ranking RANKING]
+                [--cell-assign CELL_ASSIGN] [--snv-assign SNV_ASSIGN]
+                [--q_y Q_Y] [--q_z Q_Z] [-j THREADS] [-v]
+
+Arborist: a method to rank SNV clonal trees using scDNA-seq data.
+
+options:
+  -h, --help            show this help message and exit
+  -R, --read_counts READ_COUNTS
+                        Path to read counts CSV file with columns 'snv',
+                        'cell', 'total', 'alt'
+  -Y, --snv-clusters SNV_CLUSTERS
+                        Path to SNV clusters CSV file with unlabeled columns
+                        'snv', 'cluster'. The order of columns matters
+  -T, --trees TREES     Path to file containing all candidate trees to be
+                        ranked.
+  --edge-delim EDGE_DELIM
+                        edge delimiter in candidate tree file.
+  --add-normal          flag to add a normal clone if input trees do not
+                        already contain them
+  --alpha ALPHA         Per base sequencing error
+  --max-iter MAX_ITER   max number of iterations
+  --prior PRIOR         prior (gamma) on input SNV cluster assignment
+  --pickle PICKLE       path to where all pickled tree fits should be saved.
+  -d, --draw DRAW       Path to where the tree visualization should be saved
+  -t, --tree TREE       Path to save the top ranked tree as a txt file.
+  --ranking RANKING     Path to where tree ranking output should be saved
+  --cell-assign CELL_ASSIGN
+                        Path to where the MAP cell-to-clone labels should be
+                        saved
+  --snv-assign SNV_ASSIGN
+                        Path to where the MAP SNV-to-cluster labels should be
+                        saved.
+  --q_y Q_Y             Path to where the approximate SNV posterior should be
+                        saved
+  --q_z Q_Z             Path to where the approximate cell posterior should be
+                        saved
+  -j, --threads THREADS
+                        Number of threads to use
+  -v, --verbose         Print verbose output
 ```
 
-
-## Metadata
-- **Skill**: generated

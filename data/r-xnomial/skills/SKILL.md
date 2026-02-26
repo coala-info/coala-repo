@@ -1,8 +1,9 @@
 ---
 name: r-xnomial
-description: R package xnomial (documentation from project home).
+description: This tool performs exact goodness-of-fit tests for multinomial data to determine if observed counts deviate from expected ratios. Use when user asks to perform exact multinomial tests, run Monte Carlo simulations for categorical data, or test genetic ratios like 9:3:3:1.
 homepage: https://cran.r-project.org/web/packages/xnomial/index.html
 ---
+
 
 # r-xnomial
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-paeg1aprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix paeg1a genome array. Use when user asks to retrieve probe sequences for the Pseudomonas aeruginosa PAO1 genome array or perform sequence-specific analysis for this platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/paeg1aprobe.html
 ---
+
 
 # bioconductor-paeg1aprobe
 

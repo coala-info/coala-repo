@@ -1,8 +1,9 @@
 ---
 name: bioconductor-matrixgenerics
-description: the package is available on all platforms; click for details.
+description: This package provides a unified interface of generic functions for summarizing matrix-like objects in R. Use when user asks to calculate row or column statistics, summarize matrix data, or apply generic functions to various matrix-like objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/MatrixGenerics.html
 ---
+
 
 # bioconductor-matrixgenerics
 

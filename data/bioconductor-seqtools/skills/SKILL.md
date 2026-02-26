@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seqtools
-description: the package is available on all platforms; click for details.
+description: seqTools provides functions for quality control and analysis of high-throughput sequencing data from FASTQ files. Use when user asks to analyze FASTQ files, calculate nucleotide frequencies, assess base quality scores, or perform k-mer analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/seqTools.html
 ---
+
 
 # bioconductor-seqtools
 

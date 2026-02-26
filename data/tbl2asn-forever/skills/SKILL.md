@@ -1,8 +1,9 @@
 ---
 name: tbl2asn-forever
-description: The `tbl2asn-forever` package provides a stable, long-term version of the NCBI `tbl2asn` utility.
+description: This tool converts sequence data and annotation tables into the ASN.1 format required for GenBank submissions. Use when user asks to generate .sqn files, convert FASTA and feature tables for NCBI, or run the tbl2asn utility for genomic data validation.
 homepage: https://www.ncbi.nlm.nih.gov/genbank/tbl2asn2
 ---
+
 
 # tbl2asn-forever
 

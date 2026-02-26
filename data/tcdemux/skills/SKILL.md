@@ -1,8 +1,9 @@
 ---
 name: tcdemux
-description: tcdemux is a bioinformatics utility that streamlines the preprocessing of raw sequencing data for target capture pipelines.
+description: tcdemux is a bioinformatics utility that automates the demultiplexing, trimming, and preprocessing of raw sequencing data for target capture pipelines. Use when user asks to demultiplex internal barcodes, trim adaptors, verify read pairing, or mask low-complexity sequences in sequencing reads.
 homepage: https://github.com/TomHarrop/tcdemux
 ---
+
 
 # tcdemux
 

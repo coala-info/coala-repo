@@ -1,8 +1,9 @@
 ---
 name: isescan
-description: ISEScan is a Python-based computational pipeline designed to automate the identification of Insertion Sequence (IS) elements within DNA sequences.
+description: "ISEScan is a computational pipeline that automates the identification and annotation of Insertion Sequence elements in prokaryotic genomes and metagenomes. Use when user asks to identify insertion sequences, find terminal inverted repeats, or annotate transposable elements in DNA sequences."
 homepage: https://github.com/xiezhq/ISEScan
 ---
+
 
 # isescan
 

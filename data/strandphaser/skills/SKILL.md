@@ -1,8 +1,9 @@
 ---
 name: strandphaser
-description: StrandPhaseR is an R package specifically designed for the phasing of single-cell Strand-seq data.
+description: StrandPhaseR is an R package designed to reconstruct whole-chromosome haplotypes from single-cell Strand-seq data. Use when user asks to phase single-cell genomic data, reconstruct haplotypes using strand-inheritance patterns, or map genomic features to specific parental homologs.
 homepage: https://github.com/daewoooo/StrandPhaseR/
 ---
+
 
 # strandphaser
 

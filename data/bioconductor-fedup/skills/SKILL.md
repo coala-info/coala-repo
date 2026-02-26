@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fedup
-description: the package is available on all platforms; click for details.
+description: This tool performs pathway enrichment and depletion analysis using Fisher's Exact Test on gene sets against a genomic background. Use when user asks to identify enriched pathways, perform enrichment analysis on CRISPR or genetic interaction data, or visualize results via dot plots and Cytoscape enrichment maps.
 homepage: https://bioconductor.org/packages/release/bioc/html/fedup.html
 ---
+
 
 # bioconductor-fedup
 

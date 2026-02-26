@@ -1,8 +1,9 @@
 ---
 name: gcnvkernel
-description: The `gcnvkernel` package is the computational engine behind the GATK (Genome Analysis Toolkit) germline CNV calling pipeline.
+description: The gcnvkernel package provides the computational engine for denoising read-count data and inferring copy-number states within the GATK germline CNV calling pipeline. Use when user asks to determine contig ploidy, train germline CNV models on a cohort, or perform copy-number variant inference on individual samples.
 homepage: https://www.broadinstitute.org/gatk/
 ---
+
 
 # gcnvkernel
 

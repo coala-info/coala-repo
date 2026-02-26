@@ -1,8 +1,9 @@
 ---
 name: ucsc-maftopsl
-description: The `mafToPsl` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed to transform MAF alignment blocks into PSL records.
+description: ucsc-maftopsl transforms MAF alignment blocks into PSL records. Use when user asks to convert MAF to PSL, process comparative genomics data, or prepare alignments for Genome Browser visualization.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-maftopsl
 

@@ -3,7 +3,7 @@
 ## trnascan-se
 
 ### Tool Description
-The provided text does not contain help information for trnascan-se; it is an error log indicating a failure to build or extract the container image due to lack of disk space.
+Scan sequences for tRNA genes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/trnascan-se:2.0.12--pl5321h7b50bb2_2
@@ -12,18 +12,20 @@ The provided text does not contain help information for trnascan-se; it is an er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/trnascan-se/overview
-- **Total Downloads**: 280.7K
+- **Total Downloads**: 281.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/trnascan-se:2.0.12--pl5321h7b50bb2_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:53bbd53daae402afe16ec0e06818ca21633f5a86012891b77737db6ee523412b: unpack entry: usr/local/lib/perl5/core_perl/B/Deparse.pm: unpack to regular file: short write: write /tmp/build-temp-1516541840/rootfs/usr/local/lib/perl5/core_perl/B/Deparse.pm: no space left on device
+Unable to find image 'quay.io/biocontainers/trnascan-se:2.0.12--pl5321h7b50bb2_2' locally
+2.0.12--pl5321h7b50bb2_2: Pulling from biocontainers/trnascan-se
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+53bbd53daae4: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3997994318: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

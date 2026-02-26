@@ -1,8 +1,9 @@
 ---
 name: bioconductor-canine.db
-description: the package is available on all platforms; click for details.
+description: This tool provides comprehensive annotation data for mapping between various biological identifiers for the canine genome. Use when user asks to map canine-specific probe IDs to gene symbols, retrieve Entrez or Ensembl IDs, find chromosomal locations, or perform functional annotation using Gene Ontology terms.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine.db.html
 ---
+
 
 # bioconductor-canine.db
 

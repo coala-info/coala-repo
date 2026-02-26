@@ -1,8 +1,9 @@
 ---
 name: perl-proc-fork
-description: The `perl-proc-fork` skill facilitates the use of the `Proc::Fork` Perl module, which provides an intuitive, block-based interface to the system `fork()` call.
+description: "This tool provides a block-based interface for the Perl Proc::Fork module to simplify process forking and parallel execution. Use when user asks to fork processes in Perl, manage parent and child process behaviors, or implement retry logic for system forks."
 homepage: http://github.com/ap/Proc-Fork
 ---
+
 
 # perl-proc-fork
 

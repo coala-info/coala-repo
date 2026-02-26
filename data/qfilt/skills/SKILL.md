@@ -1,8 +1,9 @@
 ---
 name: qfilt
-description: Q-Filters is a training-free KV cache compression method that leverages the geometric relationship between Query (Q) and Key (K) vectors to identify and retain only the most critical information for generation.
+description: qfilt compresses the KV cache using a training-free geometric projection to improve efficiency during long-context text generation and retrieval. Use when user asks to compress KV caches, reduce memory usage during inference, or pre-compute filters for efficient attention approximation.
 homepage: https://github.com/NathanGodey/qfilters
 ---
+
 
 # qfilt
 

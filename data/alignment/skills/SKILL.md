@@ -1,8 +1,9 @@
 ---
 name: alignment
-description: "A tool for building or fetching alignment container images (Note: The provided text is an execution log indicating a failed SIF build from an OCI/Docker source rather than standard help documentation)."
+description: The alignment library performs global and local pairwise sequence alignment for arbitrary data types using a vocabulary-based encoding system. Use when user asks to align sequences, perform pattern matching in non-standard datasets, or calculate similarity scores between tokenized strings.
 homepage: https://github.com/eseraygun/python-alignment
 ---
+
 
 # alignment
 

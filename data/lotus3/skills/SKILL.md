@@ -1,8 +1,9 @@
 ---
 name: lotus3
-description: LotuS3 (Less OTU Scripts 3) is a streamlined, highly efficient pipeline designed for the analysis of amplicon sequencing data.
+description: LotuS3 is a high-performance pipeline for processing raw amplicon sequencing data into taxonomic tables. Use when user asks to analyze amplicon reads, generate OTU or ASV tables, or perform taxonomic annotation of sequencing data.
 homepage: https://lotus3.earlham.ac.uk/
 ---
+
 
 # lotus3
 

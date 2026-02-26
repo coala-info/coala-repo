@@ -1,8 +1,9 @@
 ---
 name: ucsc-dbtrash
-description: `ucsc-dbtrash` is a specialized database maintenance utility from the UCSC Genome Browser "kent" toolset.
+description: ucsc-dbtrash removes tables from a MySQL database that are older than a specified age threshold. Use when user asks to 'clean up old database tables', 'delete temporary data structures', 'perform routine database maintenance', or 'prevent database storage bloat'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-dbtrash
 

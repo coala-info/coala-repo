@@ -1,8 +1,9 @@
 ---
 name: umi-transfer
-description: `umi-transfer` is a high-performance Rust-based tool designed to solve the "separate UMI file" problem in genomics.
+description: umi-transfer merges UMI sequences from a separate FastQ file into the read headers or sequences of paired-end R1 and R2 files. Use when user asks to merge UMI sequences into paired-end reads, place UMIs in read headers or inline, standardize read numbering, or control output file naming and compression.
 homepage: https://github.com/SciLifeLab/umi-transfer
 ---
+
 
 # umi-transfer
 

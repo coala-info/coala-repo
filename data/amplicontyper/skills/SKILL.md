@@ -1,8 +1,9 @@
 ---
 name: amplicontyper
-description: AmpliconTyper is a specialized bioinformatics tool designed for environmental surveillance using Nanopore sequencing.
+description: AmpliconTyper uses machine learning to classify Nanopore sequencing reads and identify specific strains or genotypes within environmental samples. Use when user asks to train a classification model, classify ONT sequencing reads, or identify specific strains and genotypes in multiplexed PCR data.
 homepage: https://github.com/AntonS-bio/AmpliconTyper
 ---
+
 
 # amplicontyper
 

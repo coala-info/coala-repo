@@ -1,8 +1,9 @@
 ---
 name: bioconductor-panp
-description: the package is available on all platforms; click for details.
+description: This tool provides presence-absence calls for gene expression data from Affymetrix microarrays. Use when user asks to determine gene expression status, identify present or absent genes, or perform PANP analysis on microarray data.
 homepage: https://bioconductor.org/packages/release/bioc/html/panp.html
 ---
+
 
 # bioconductor-panp
 

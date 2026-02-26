@@ -1,8 +1,9 @@
 ---
 name: guide-counter
-description: The `guide-counter` tool is a high-performance utility designed to quantify guide RNAs (sgRNAs) in CRISPR screen sequencing data.
+description: The guide-counter tool quantifies guide RNAs in CRISPR screen sequencing data to generate count matrices and quality control statistics. Use when user asks to quantify sgRNAs, process CRISPR sequencing FASTQ files, generate count matrices for mageck, or perform quality control on CRISPR screens.
 homepage: https://github.com/fulcrumgenomics/guide-counter
 ---
+
 
 # guide-counter
 

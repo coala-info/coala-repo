@@ -1,8 +1,9 @@
 ---
 name: perl-local-lib
-description: The `perl-local-lib` tool allows for the creation and management of a private Perl module repository, typically located in a user's home directory (e.g., `~/perl5`).
+description: perl-local-lib creates and manages a private Perl module repository to allow installing and loading modules without system-level permissions. Use when user asks to create a local Perl library, install Perl modules to a home directory, or manage environment variables for private Perl dependencies.
 homepage: http://metacpan.org/pod/local::lib
 ---
+
 
 # perl-local-lib
 

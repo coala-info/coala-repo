@@ -1,8 +1,9 @@
 ---
 name: wade
-description: WADE (WGS Analysis and Detection of Molecular Markers) is a specialized bioinformatics framework designed to streamline the interrogation of assembled genomes.
+description: WADE is a bioinformatics tool that uses BLAST+ to extract gene sequences and identify molecular markers from assembled genomes, particularly for antimicrobial resistance and virulence factors. Use when user asks to interrogate assembled genomes, extract gene sequences, identify molecular markers, identify antimicrobial resistance genes, identify virulence factors, profile mutations, serotype pneumococcus, serotype Group B Streptococcus, or predict MIC values for pneumococci.
 homepage: https://github.com/phac-nml/wade
 ---
+
 
 # wade
 

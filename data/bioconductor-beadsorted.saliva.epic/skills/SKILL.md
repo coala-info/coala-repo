@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beadsorted.saliva.epic
-description: the package is available on all platforms; click for details.
+description: This package provides Illumina EPIC DNA methylation reference data for sorted saliva epithelial and immune cell types. Use when user asks to load saliva cell-type reference panels, perform cell-type deconvolution for saliva samples, or access methylation comparison tables between epithelial and immune cells.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/BeadSorted.Saliva.EPIC.html
 ---
+
 
 # bioconductor-beadsorted.saliva.epic
 

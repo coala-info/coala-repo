@@ -1,8 +1,9 @@
 ---
 name: phynteny_transformer
-description: Phynteny is a specialized tool for the functional annotation of bacteriophage genomes.
+description: Phynteny transformer performs functional annotation of bacteriophage genes by leveraging gene synteny and transformer-based deep learning. Use when user asks to annotate phage genomes, predict functions for dark matter genes, or incorporate gene order into functional predictions.
 homepage: https://github.com/susiegriggo/Phynteny_transformer
 ---
+
 
 # phynteny_transformer
 

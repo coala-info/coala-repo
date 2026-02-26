@@ -1,8 +1,9 @@
 ---
 name: bioconductor-milor
-description: the package is available on all platforms; click for details.
+description: miloR performs differential abundance analysis on single-cell datasets using k-nearest neighbor graphs. Use when user asks to identify differentially abundant cell states, perform graph-based differential abundance testing, or analyze single-cell data without relying on pre-defined clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/miloR.html
 ---
+
 
 # bioconductor-milor
 

@@ -1,8 +1,9 @@
 ---
 name: rust-proseg
-description: `rust-proseg` is a high-performance tool designed to improve the accuracy of cell segmentation in spatial transcriptomics.
+description: rust-proseg performs probabilistic cell segmentation in spatial transcriptomics by using transcript distributions to refine cell boundaries. Use when user asks to segment cells in spatial transcriptomics data, assign transcripts to cells, or process Xenium, CosMx, MERSCOPE, and Visium HD datasets.
 homepage: https://github.com/dcjones/proseg
 ---
+
 
 # rust-proseg
 

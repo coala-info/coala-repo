@@ -1,12 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: igua
+baseCommand: docker run
 label: igua
-doc: "The provided text contains fatal error messages related to a container execution
-  environment (Singularity/Apptainer) rather than the help documentation for the 'igua'
-  tool itself. As a result, no arguments or tool-specific descriptions could be extracted.\n
-  \nTool homepage: https://github.com/zellerlab/IGUA"
-inputs: []
+doc: "Run a Docker container for the igua tool.\n\nTool homepage: https://github.com/zellerlab/IGUA"
+inputs:
+  - id: image
+    type: string
+    doc: The Docker image to run (e.g., 
+      quay.io/biocontainers/igua:0.1.0--py39h5b94c0b_0)
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

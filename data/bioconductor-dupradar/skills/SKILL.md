@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dupradar
-description: the package is available on all platforms; click for details.
+description: bioconductor-dupradar provides quality control for RNA-Seq data by analyzing the relationship between gene expression levels and duplication rates. Use when user asks to mark duplicates, calculate duplication matrices, generate diagnostic plots, or assess PCR artifacts in sequencing experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/dupRadar.html
 ---
+
 
 # bioconductor-dupradar
 

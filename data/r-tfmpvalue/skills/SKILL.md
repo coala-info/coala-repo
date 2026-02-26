@@ -1,8 +1,9 @@
 ---
 name: r-tfmpvalue
-description: "In putative Transcription Factor Binding Sites (TFBSs)               identification from sequence/alignments,              we are interested in the significance of certain match score.              TFMPvalue provides the accurate calculation of P-value with               score threshold for Position Weight Matrices,               or the score with given P-value.               It is an interface to code originally made available by               Helene Touzet and Jean-Stephane Varre, 2007,               Algorithms Mol Biol:2, 15."
+description: This tool calculates P-values and score thresholds for Position Weight Matrices to assess the statistical significance of transcription factor binding site matches. Use when user asks to calculate the P-value for a match score, determine the score threshold for a specific significance level, or convert between scores and P-values for PWMs.
 homepage: https://cloud.r-project.org/web/packages/TFMPvalue/index.html
 ---
+
 
 # r-tfmpvalue
 

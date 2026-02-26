@@ -1,8 +1,9 @@
 ---
 name: crunchstat-summary
-description: The `crunchstat-summary` tool is a specialized utility for the Arvados ecosystem that parses execution logs to provide a human-readable summary of resource consumption.
+description: This tool parses Arvados execution logs to provide a human-readable summary of resource consumption such as RAM, CPU, and I/O usage. Use when user asks to summarize resource utilization, identify memory bottlenecks, or optimize compute requirements for Arvados containers.
 homepage: https://arvados.org
 ---
+
 
 # crunchstat-summary
 

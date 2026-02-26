@@ -1,8 +1,9 @@
 ---
 name: hmmer
-description: profile HMM construction from multiple sequence alignments
+description: HMMER is a suite for biosequence analysis that uses profile hidden Markov models to detect remote homologs and identify protein domains. Use when user asks to build profiles from alignments, search sequence databases for homologs, scan sequences for known domains, or perform iterative protein searches.
 homepage: http://hmmer.org/
 ---
+
 
 # hmmer
 

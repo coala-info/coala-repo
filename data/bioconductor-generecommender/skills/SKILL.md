@@ -1,8 +1,9 @@
 ---
 name: bioconductor-generecommender
-description: the package is available on all platforms; click for details.
+description: This tool identifies coexpressed genes in microarray data by ranking them based on their correlation with a specific set of query genes. Use when user asks to rank genes by functional similarity, find genes coexpressed with a query set, or identify genes related to a specific biological process in datasets with missing values.
 homepage: https://bioconductor.org/packages/release/bioc/html/geneRecommender.html
 ---
+
 
 # bioconductor-generecommender
 

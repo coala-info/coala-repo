@@ -1,8 +1,9 @@
 ---
 name: besst
-description: BESST (Biochemical Engineering Scaffolding Tool) is a genomic assembly scaffolder designed to bridge the gaps between contigs.
+description: BESST is a genomic assembly scaffolder that uses paired-end or mate-pair read information to order and orient contigs into larger scaffolds. Use when user asks to bridge gaps between contigs, scaffold genomic assemblies, or infer library characteristics from BAM files.
 homepage: https://github.com/ksahlin/BESST
 ---
+
 
 # besst
 

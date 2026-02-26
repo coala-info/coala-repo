@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kegggraph
-description: The package offers functionalities including parsing, graph operation, visualization and etc.
+description: This tool parses KEGG pathway files into graph objects for network analysis and visualization in R. Use when user asks to convert KGML files to graphNEL objects, merge pathways, expand gene nodes, or perform graph-theory analysis on biological networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/KEGGgraph.html
 ---
+
 
 # bioconductor-kegggraph
 

@@ -1,8 +1,9 @@
 ---
 name: cmash
-description: CMash is a bioinformatics tool designed for efficient genomic set similarity estimation using containment MinHash.
+description: "CMash estimates genomic set similarity and containment between sequences using MinHash sketches. Use when user asks to build a reference database from genomic files, estimate the presence of reference sequences in a metagenome, or perform multi-resolution k-mer analysis."
 homepage: https://github.com/dkoslicki/CMash
 ---
+
 
 # cmash
 

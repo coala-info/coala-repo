@@ -1,8 +1,9 @@
 ---
 name: bioconductor-calib
-description: the package is available on all platforms; click for details.
+description: This tool normalizes spotted microarray data using a physically motivated calibration model to estimate absolute transcript levels. Use when user asks to normalize spotted microarrays, estimate absolute expression levels from spike-in controls, or handle dye saturation effects.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/CALIB.html
 ---
+
 
 # bioconductor-calib
 

@@ -3,26 +3,32 @@
 ## galaxy-data
 
 ### Tool Description
-Galaxy data management tool (Note: The provided text contains error logs rather than help documentation, so no arguments could be extracted).
+FAIL to generate CWL: galaxy-data not found in Docker image. The image may not provide this executable.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/galaxy-data:25.0.4--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/galaxy-data:25.1.1--pyhdfd78af_0
 - **Homepage**: https://galaxyproject.org
 - **Package**: https://anaconda.org/channels/bioconda/packages/galaxy-data/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-data/overview
 - **Total Downloads**: 9.3K
 - **Last updated**: 2026-02-14
 - **GitHub**: https://github.com/galaxyproject/galaxy
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: galaxy-data not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: galaxy-data not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-data:25.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1895733666: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

@@ -1,8 +1,9 @@
 ---
 name: pydemult
-description: pydemult is a specialized tool for the streamed and parallel demultiplexing of FASTQ files.
+description: pydemult performs parallel demultiplexing of FASTQ files by identifying barcodes within read names using regular expressions. Use when user asks to demultiplex FASTQ files, extract barcodes from read headers, or perform high-throughput sample identification.
 homepage: https://github.com/jenzopr/pydemult
 ---
+
 
 # pydemult
 

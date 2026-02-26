@@ -1,8 +1,9 @@
 ---
 name: coot-headless
-description: The `coot-headless` skill enables the programmatic manipulation of protein and nucleic acid structures.
+description: Coot-headless provides a Python API for programmatic protein and nucleic acid structure manipulation, automated real-space refinement, and model validation without a graphical interface. Use when user asks to automate ligand fitting, perform high-throughput structural refinement, or script model building tasks using the Chapi interface.
 homepage: https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot
 ---
+
 
 # coot-headless
 

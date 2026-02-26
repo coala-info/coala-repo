@@ -1,8 +1,9 @@
 ---
 name: shigeifinder
-description: ShigEiFinder is a specialized bioinformatic tool designed to differentiate between Shigella species and EIEC, which are often difficult to distinguish using standard genomic methods.
+description: ShigEiFinder differentiates between *Shigella* species and enteroinvasive *Escherichia coli* (EIEC) using genomic serotyping and cluster-specific gene profiling. Use when user asks to differentiate *Shigella* from EIEC, serotype assembled genomes, or identify *Shigella* serotypes from raw sequencing reads.
 homepage: https://github.com/LanLab/ShigEiFinder
 ---
+
 
 # shigeifinder
 

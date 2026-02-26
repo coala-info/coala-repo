@@ -1,8 +1,9 @@
 ---
 name: r-mixomics
-description: R package mixomics (documentation from project home).
+description: This tool provides multivariate analysis and integration of large biological datasets using the mixOmics R package. Use when user asks to perform PCA or PLS-DA, integrate multiple omics layers with DIABLO, or combine datasets across different studies using MINT.
 homepage: https://cran.r-project.org/web/packages/mixomics/index.html
 ---
+
 
 # r-mixomics
 

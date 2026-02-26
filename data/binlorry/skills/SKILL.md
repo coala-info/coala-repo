@@ -1,8 +1,9 @@
 ---
 name: binlorry
-description: BinLorry is a flexible utility for bioinformaticians to organize and subset sequencing data.
+description: "BinLorry is a utility for partitioning and filtering sequencing reads based on header attributes or external metadata. Use when user asks to bin reads by barcode, filter sequences by length, or subset data using a CSV metadata table."
 homepage: https://github.com/rambaut/binlorry
 ---
+
 
 # binlorry
 

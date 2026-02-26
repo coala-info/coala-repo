@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.zebrafish
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Zebrafish genome array. Use when user asks to process Affymetrix Zebrafish microarray data, access platform design metadata, or perform low-level analysis of zebrafish gene expression arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.zebrafish.html
 ---
+
 
 # bioconductor-pd.zebrafish
 

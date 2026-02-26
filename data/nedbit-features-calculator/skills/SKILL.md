@@ -1,8 +1,9 @@
 ---
 name: nedbit-features-calculator
-description: The `nedbit-features-calculator` is a specialized tool designed for bioinformatics workflows that identify candidate disease genes.
+description: This tool converts raw biological network data into a multi-dimensional feature set for identifying candidate disease genes. Use when user asks to calculate network diffusion metrics, generate topological features for machine learning, or prepare data for the NIAPU pipeline.
 homepage: https://github.com/AndMastro/NIAPU
 ---
+
 
 # nedbit-features-calculator
 

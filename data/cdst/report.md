@@ -1,9 +1,9 @@
 # cdst CWL Generation Report
 
-## cdst
+## cdst_run
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+Run CDS analysis pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cdst:0.2.1--pyhdfd78af_0
@@ -18,35 +18,111 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cdst:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:1898cae23089d6a5e8a13ceda72b421ca5fb3fc9a221eda4d8353b2ef0f1ce93: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-1467017177/rootfs/usr/local/bin/python3.13: no space left on device
+usage: cdst run [-h] -i INPUT [INPUT ...] -o OUTPUT [-L MIN_CDS_LEN]
+                [-T {mst,hc,both}] [-v]
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT [INPUT ...]
+                        Input CDS FASTA files
+  -o, --output OUTPUT   Output directory
+  -L, --min-cds-len MIN_CDS_LEN
+                        Minimum CDS length
+  -T, --tree {mst,hc,both}
+                        Tree type to generate (default: both)
+  -v, --verbose         Verbose output
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## cdst_prodigal
+## cdst_generate
 
 ### Tool Description
-The provided text does not contain help documentation for the tool. It consists of system logs and a fatal error message regarding a container build failure (no space left on device).
+Generate CDS files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cdst:0.2.1--pyhdfd78af_0
 - **Homepage**: https://github.com/l1-mh/CDST
 - **Package**: https://anaconda.org/channels/bioconda/packages/cdst/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cdst:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:1898cae23089d6a5e8a13ceda72b421ca5fb3fc9a221eda4d8353b2ef0f1ce93: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-1847043266/rootfs/usr/local/bin/python3.13: no space left on device
+usage: cdst generate [-h] -i INPUT [INPUT ...] -o OUTPUT [-L MIN_CDS_LEN] [-v]
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT [INPUT ...]
+                        Input CDS FASTA files
+  -o, --output OUTPUT   Output directory
+  -L, --min-cds-len MIN_CDS_LEN
+                        Minimum CDS length
+  -v, --verbose         Verbose output
+```
+
+
+## cdst_matrix
+
+### Tool Description
+Generate a matrix from JSON input.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cdst:0.2.1--pyhdfd78af_0
+- **Homepage**: https://github.com/l1-mh/CDST
+- **Package**: https://anaconda.org/channels/bioconda/packages/cdst/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: cdst matrix [-h] -j JSON -o OUTPUT [-v]
+
+options:
+  -h, --help           show this help message and exit
+  -j, --json JSON      Input JSON file of MD5 hash lists
+  -o, --output OUTPUT  Output directory
+  -v, --verbose        Verbose output
+```
+
+
+## cdst_mst
+
+### Tool Description
+Compute the Minimum Spanning Tree (MST) of a difference matrix.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cdst:0.2.1--pyhdfd78af_0
+- **Homepage**: https://github.com/l1-mh/CDST
+- **Package**: https://anaconda.org/channels/bioconda/packages/cdst/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: cdst mst [-h] -m MATRIX -o OUTPUT
+
+options:
+  -h, --help           show this help message and exit
+  -m, --matrix MATRIX  Input difference matrix CSV
+  -o, --output OUTPUT  Output directory
+```
+
+
+## cdst_hc
+
+### Tool Description
+Performs hierarchical clustering on a difference matrix.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cdst:0.2.1--pyhdfd78af_0
+- **Homepage**: https://github.com/l1-mh/CDST
+- **Package**: https://anaconda.org/channels/bioconda/packages/cdst/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: cdst hc [-h] -m MATRIX -o OUTPUT
+
+options:
+  -h, --help           show this help message and exit
+  -m, --matrix MATRIX  Input difference matrix CSV
+  -o, --output OUTPUT  Output directory
 ```
 

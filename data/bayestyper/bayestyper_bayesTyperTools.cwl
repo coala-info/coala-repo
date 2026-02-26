@@ -1,16 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bayesTyperTools
+baseCommand: bayestyper_bayesTyperTools
 label: bayestyper_bayesTyperTools
-doc: "The provided text does not contain help information for bayesTyperTools; it
-  contains system logs and an error message regarding a container build failure (no
-  space left on device).\n\nTool homepage: https://github.com/bioinformatics-centre/BayesTyper"
-inputs: []
+doc: "BayesTyperTools (v1.5 )\n\nTool homepage: https://github.com/bioinformatics-centre/BayesTyper"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (makeBloom, convertAllele, combine, filter, 
+      annotate, addAttributes)
+    inputBinding:
+      position: 1
+  - id: options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Options for the selected command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/bayestyper:1.5--hdcf5f25_3
+    dockerPull: quay.io/biocontainers/bayestyper:1.5--h077b44d_4
 stdout: bayestyper_bayesTyperTools.out

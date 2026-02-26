@@ -3,7 +3,7 @@
 ## vcfanno
 
 ### Tool Description
-vcfanno: annotate a VCF with other VCFs/BEDs/tabix files
+vcfanno version 0.3.7 [built with go1.24.6]
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vcfanno:0.3.7--he881be0_0
@@ -18,13 +18,21 @@ vcfanno: annotate a VCF with other VCFs/BEDs/tabix files
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vcfanno:0.3.7--he881be0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+=============================================
+vcfanno version 0.3.7 [built with go1.24.6]
+
+see: https://github.com/brentp/vcfanno
+=============================================
+Usage of vcfanno:
+  -base-path string
+    	optional base-path to prepend to annotation files in the config
+  -ends
+    	annotate the start and end as well as the interval itself.
+  -lua string
+    	optional path to a file containing custom lua functions to be used as ops
+  -p int
+    	number of processes to use. (default 2)
+  -permissive-overlap
+    	annotate with an overlapping variant even it doesn't share the same ref and alt alleles. Default is to require exact match between variants.
 ```
 
-
-## Metadata
-- **Skill**: generated

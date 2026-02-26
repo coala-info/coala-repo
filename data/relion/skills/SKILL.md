@@ -1,8 +1,9 @@
 ---
 name: relion
-description: RELION (REgularised LIkelihood OptimisatioN) is a specialized suite for cryo-EM image processing.
+description: RELION is a specialized software suite for high-resolution cryo-EM image processing and 3D structure determination. Use when user asks to refine 3D reconstructions, perform 2D class averaging, manage GPU-accelerated workflows, or troubleshoot installation and execution issues in version 5.0+.
 homepage: https://github.com/3dem/relion
 ---
+
 
 # relion
 

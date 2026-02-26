@@ -1,8 +1,9 @@
 ---
 name: demultiplexer
-description: `demultiplexer` is a Python-based utility designed to handle complex Illumina datasets where standard index-based demultiplexing is insufficient.
+description: Demultiplexer sorts Illumina FASTQ files into sample-specific files by identifying inline tags or primer sequences within the read data. Use when user asks to demultiplex complex datasets, sort reads based on inline barcodes, or process sequencing data where standard index-based demultiplexing is insufficient.
 homepage: https://github.com/DominikBuchner/demultiplexer
 ---
+
 
 # demultiplexer
 

@@ -1,8 +1,9 @@
 ---
 name: graftm
-description: GraftM is a specialized bioinformatic pipeline designed for the high-speed identification and classification of specific marker genes (e.g., 16S rRNA, mcrA, pmoA) within meta-omic data.
+description: GraftM is a bioinformatic pipeline for the rapid identification and taxonomic classification of marker genes within meta-omic datasets. Use when user asks to identify specific genes in metagenomes, classify sequences using marker gene packages, or generate community profiles from raw reads.
 homepage: http://geronimp.github.io/graftM
 ---
+
 
 # graftm
 

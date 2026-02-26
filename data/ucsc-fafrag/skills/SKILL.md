@@ -1,8 +1,9 @@
 ---
 name: ucsc-fafrag
-description: The `faFrag` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed for high-performance sequence extraction.
+description: The `ucsc-fafrag` tool extracts a specific DNA sequence fragment from a FASTA file using defined coordinates. Use when user asks to extract a specific DNA fragment, pull out a window of DNA, extract promoter regions, specific genes, or flanking sequences.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fafrag
 

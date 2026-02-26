@@ -1,8 +1,9 @@
 ---
 name: ucsc-genepredcheck
-description: The `genePredCheck` utility is a diagnostic tool from the UCSC Genome Browser "Kent" suite.
+description: The ucsc-genepredcheck tool validates gene prediction files for structural integrity and adherence to UCSC Genome Browser database requirements. Use when user asks to validate gene prediction files, check their structural requirements, validate gene prediction database tables, or prepare gene prediction files for bigBed conversion.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-genepredcheck
 

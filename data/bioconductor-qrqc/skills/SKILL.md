@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qrqc
-description: the package is available on all platforms; click for details.
+description: "Bioconductor-qrqc provides rapid quality control and visualization for next-generation sequencing data. Use when user asks to perform quality control on FASTQ files, visualize base quality scores, or analyze sequence length and composition."
 homepage: https://bioconductor.org/packages/3.5/bioc/html/qrqc.html
 ---
+
 
 # bioconductor-qrqc
 

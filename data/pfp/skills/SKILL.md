@@ -1,8 +1,9 @@
 ---
 name: pfp
-description: The `pfp` tool implements a dictionary-based compression strategy called Prefix-Free Parsing.
+description: The pfp tool implements prefix-free parsing to decompose genomic data into a dictionary and a parse for memory-efficient Burrows-Wheeler Transform construction. Use when user asks to perform dictionary-based compression on FASTA files, parse variants from VCF files against a reference, or preprocess massive datasets for pangenome indexing.
 homepage: https://github.com/marco-oliva/pfp
 ---
+
 
 # pfp
 

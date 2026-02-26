@@ -1,8 +1,9 @@
 ---
 name: sdrf-pipelines
-description: sdrf-pipelines is a specialized toolkit designed to bridge the gap between experimental metadata and proteomics analysis workflows.
+description: sdrf-pipelines validates Sample and Data Relationship Format files and converts them into configuration files for proteomics analysis workflows. Use when user asks to validate SDRF metadata, check ontology terms, or generate configuration files for OpenMS, MaxQuant, and MSstats.
 homepage: https://github.com/bigbio/sdrf-pipelines
 ---
+
 
 # sdrf-pipelines
 

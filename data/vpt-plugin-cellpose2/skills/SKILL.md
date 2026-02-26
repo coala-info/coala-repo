@@ -1,8 +1,9 @@
 ---
 name: vpt-plugin-cellpose2
-description: The vpt-plugin-cellpose2 is a specialized extension for the Vizgen Post-processing Tool (VPT) that brings the power of Cellpose 2.0 to MERSCOPE spatial transcriptomics workflows.
+description: The vpt-plugin-cellpose2 performs cell segmentation for MERSCOPE spatial transcriptomics workflows. Use when user asks to segment cells.
 homepage: https://github.com/Vizgen/vpt-plugin-cellpose2
 ---
+
 
 # vpt-plugin-cellpose2
 

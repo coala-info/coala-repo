@@ -1,8 +1,9 @@
 ---
 name: rcorrector
-description: Rcorrector (RNA-seq error CORRECTOR) is a specialized tool for correcting sequencing errors in Illumina RNA-seq reads.
+description: Rcorrector is a kmer-based tool designed to correct sequencing errors in Illumina RNA-seq reads while accounting for non-uniform expression levels. Use when user asks to correct errors in RNA-seq data, fix sequencing mistakes in transcriptomic reads, or process non-uniform sequencing data like single-cell reads.
 homepage: https://github.com/mourisl/Rcorrector/
 ---
+
 
 # rcorrector
 

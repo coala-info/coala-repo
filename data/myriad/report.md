@@ -3,7 +3,7 @@
 ## myriad
 
 ### Tool Description
-A tool for processing genomic data (description not provided in help text)
+Run myriad client or server-client demo
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/myriad:0.1.4--py27_0
@@ -18,11 +18,16 @@ A tool for processing genomic data (description not provided in help text)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/myriad:0.1.4--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3929299064: no space left on device
+usage: myriad [-h] [--host HOST] [--port PORT] [--key KEY]
+              [--max_items MAX_ITEMS] (--client | --serverclient)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --host HOST
+  --port PORT
+  --key KEY
+  --max_items MAX_ITEMS
+  --client              Run client
+  --serverclient        Run server-client demo
 ```
 
-
-## Metadata
-- **Skill**: generated

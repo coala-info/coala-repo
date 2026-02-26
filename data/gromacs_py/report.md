@@ -1,9 +1,9 @@
 # gromacs_py CWL Generation Report
 
-## gromacs_py
+## gromacs_py_gmx
 
 ### Tool Description
-The provided text contains system error logs and environment information rather than tool help text. No command-line arguments or tool descriptions could be extracted.
+GROMACS command-line interface. Use 'gmx help' for more information.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gromacs:2022
@@ -18,11 +18,32 @@ The provided text contains system error logs and environment information rather 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gromacs:2022 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3049809179: no space left on device
+SYNOPSIS
+
+gmx [-[no]h] [-[no]quiet] [-[no]version] [-[no]copyright] [-nice <int>]
+    [-[no]backup]
+
+OPTIONS
+
+Other options:
+
+ -[no]h                     (no)
+           Print help and quit
+ -[no]quiet                 (no)
+           Do not print common startup info or quotes
+ -[no]version               (no)
+           Print extended version information and quit
+ -[no]copyright             (no)
+           Print copyright information on startup
+ -nice   <int>              (19)
+           Set the nicelevel (default depends on command)
+ -[no]backup                (yes)
+           Write backups if output files exist
+
+Additional help is available on the following topics:
+    commands    List of available commands
+    selections  Selection syntax and usage
+To access the help, use 'gmx help <topic>'.
+For help on a command, use 'gmx help <command>'.
 ```
 
-
-## Metadata
-- **Skill**: generated

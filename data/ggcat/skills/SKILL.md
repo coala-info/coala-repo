@@ -1,8 +1,9 @@
 ---
 name: ggcat
-description: ggcat (Compacted and Colored de Bruijn Graph Construction and Querying) is a high-performance bioinformatics tool designed to transform raw sequencing reads into compacted de Bruijn graphs.
+description: "ggcat constructs and queries compacted and colored de Bruijn graphs from sequencing reads. Use when user asks to build a compacted de Bruijn graph, create colored graphs to track k-mer sources, or query k-mers against an existing graph."
 homepage: https://github.com/algbio/ggcat
 ---
+
 
 # ggcat
 

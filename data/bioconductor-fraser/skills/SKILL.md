@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fraser
-description: The package aims to support diagnostics in the field of rare diseases where RNA-seq is performed to identify aberrant splicing defects.
+description: FRASER detects rare aberrant splicing events in RNA-seq data by modeling read count ratios and correcting for latent confounders using a denoising autoencoder. Use when user asks to identify splice site defects, quantify alternative splicing or intron retention, and call splicing outliers in rare disease diagnostics.
 homepage: https://bioconductor.org/packages/release/bioc/html/FRASER.html
 ---
+
 
 # bioconductor-fraser
 

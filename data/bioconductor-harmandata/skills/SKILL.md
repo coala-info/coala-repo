@@ -1,8 +1,9 @@
 ---
 name: bioconductor-harmandata
-description: the package is available on all platforms; click for details.
+description: HarmanData provides curated microarray and methylation datasets for testing and demonstrating batch-effect correction methods. Use when user asks to load example gene expression data, access methylation reference statistics, or benchmark batch correction algorithms.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HarmanData.html
 ---
+
 
 # bioconductor-harmandata
 

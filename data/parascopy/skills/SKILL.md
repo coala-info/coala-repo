@@ -1,8 +1,9 @@
 ---
 name: parascopy
-description: Parascopy is a specialized bioinformatics suite designed to resolve the complexities of duplicated genomic regions.
+description: Parascopy resolves duplicated genomic regions by estimating copy numbers and identifying variants across highly similar paralogs. Use when user asks to estimate aggregate or paralog-specific copy numbers, identify variants in homologous regions, or analyze complex gene families like SMN1 and SMN2.
 homepage: https://github.com/tprodanov/parascopy
 ---
+
 
 # parascopy
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-donapllp2013
-description: the package is available on all platforms; click for details.
+description: This package provides data and code to reproduce lifetime-ratio fluorescence intensity analysis of the zebrafish posterior lateral line primordium. Use when user asks to analyze protein stability, calculate RFP/GFP fluorescence ratios from dual-color z-stacks, or perform spatial image analysis on migrating tissue.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DonaPLLP2013.html
 ---
+
 
 # bioconductor-donapllp2013
 

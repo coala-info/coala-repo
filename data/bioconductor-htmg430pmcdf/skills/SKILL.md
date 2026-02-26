@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430pmcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix HT_MG-430_PM oligonucleotide array. Use when user asks to map probe coordinates to indices, access chip dimensions, or handle CDF data for HT_MG-430_PM AffyBatch objects.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430pmcdf.html
 ---
+
 
 # bioconductor-htmg430pmcdf
 

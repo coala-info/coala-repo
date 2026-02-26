@@ -3,7 +3,7 @@
 ## primerclip
 
 ### Tool Description
-A tool for trimming primer sequences from alignments. (Note: The provided text appears to be a container runtime error log rather than the tool's help documentation; therefore, no arguments could be extracted from the input.)
+Trim PCR primer sequences from aligned reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/primerclip:0.3.8--0
@@ -18,13 +18,18 @@ A tool for trimming primer sequences from alignments. (Note: The provided text a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/primerclip:0.3.8--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+primerclip -- Swift Biosciences Accel-Amplicon targeted panel primer trimming
+tool v0.3.8
+
+Usage: primerclip [-b|--bedpe] [-s|--single-end] PRIMER_COORDS_INFILE SAM_INFILE
+                  OUTPUT_SAM_FILENAME
+  Trim PCR primer sequences from aligned reads
+
+Available options:
+  -h,--help                Show this help text
+  -b,--bedpe               add this switch to use BEDPE coordinate input format
+                           (default format is master file)
+  -s,--single-end          add this switch to trim primers from single-end
+                           alignments
 ```
 
-
-## Metadata
-- **Skill**: generated

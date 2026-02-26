@@ -1,8 +1,9 @@
 ---
 name: gsea
-description: GSEA is a computational method that shifts the focus from individual genes to groups of genes (gene sets) that share common biological functions, chromosomal locations, or regulation.
+description: GSEA performs gene set enrichment analysis to identify groups of genes that are overrepresented in a large set of genes and may have an association with disease phenotypes. Use when user asks to perform pathway enrichment analysis, configure GSEA command-line parameters, format expression datasets and phenotype labels, or select enrichment metrics based on sample size.
 homepage: https://www.gsea-msigdb.org/gsea
 ---
+
 
 # gsea
 

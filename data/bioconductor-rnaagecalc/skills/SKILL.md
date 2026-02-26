@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnaagecalc
-description: the package is available on all platforms; click for details.
+description: RNAAgeCalc calculates transcriptomic age from RNA-seq gene expression data across various human tissues. Use when user asks to estimate biological age from gene expression data, calculate transcriptomic age, or analyze age-related changes in RNA-seq profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAAgeCalc.html
 ---
+
 
 # bioconductor-rnaagecalc
 

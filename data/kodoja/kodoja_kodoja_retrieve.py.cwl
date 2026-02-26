@@ -1,11 +1,65 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kodoja_kodoja_retrieve.py
+baseCommand: kodoja_retrieve.py
 label: kodoja_kodoja_retrieve.py
-doc: "The provided text does not contain help information for the tool. It contains
-  system error messages related to a container runtime (Apptainer/Singularity) failing
-  to build an image due to lack of disk space.\n\nTool homepage: https://github.com/abaizan/kodoja/"
-inputs: []
+doc: "Kodoja Retrieve is used with the output of Kodoja Search to give subsets of
+  your input sequencing reads matching viruses.\n\nTool homepage: https://github.com/abaizan/kodoja/"
+inputs:
+  - id: file_dir
+    type: Directory
+    doc: Path to directory of kodoja_search results, required
+    inputBinding:
+      position: 101
+      prefix: --file_dir
+  - id: genus
+    type:
+      - 'null'
+      - boolean
+    doc: Include sequences classified at genus
+    inputBinding:
+      position: 101
+      prefix: --genus
+  - id: read1
+    type: File
+    doc: Read 1 file path, required
+    inputBinding:
+      position: 101
+      prefix: --read1
+  - id: read2
+    type:
+      - 'null'
+      - File
+    doc: Read 2 file path
+    default: 'False'
+    inputBinding:
+      position: 101
+      prefix: --read2
+  - id: stringent
+    type:
+      - 'null'
+      - boolean
+    doc: Only subset sequences identified by both tools
+    inputBinding:
+      position: 101
+      prefix: --stringent
+  - id: taxid
+    type:
+      - 'null'
+      - string
+    doc: Virus tax ID for subsetting
+    default: All viral sequences
+    inputBinding:
+      position: 101
+      prefix: --taxID
+  - id: user_format
+    type:
+      - 'null'
+      - string
+    doc: Sequence data format
+    default: fastq
+    inputBinding:
+      position: 101
+      prefix: --user_format
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: poolsnp
-description: PoolSNP is a heuristic SNP calling pipeline specifically optimized for pooled sequencing (Pool-seq) data.
+description: PoolSNP is a heuristic SNP calling pipeline optimized for identifying polymorphisms and allele frequencies in pooled sequencing data. Use when user asks to call SNPs from MPILEUP files, analyze allele frequencies in Pool-seq libraries, or filter variants based on coverage and frequency thresholds.
 homepage: https://github.com/capoony/PoolSNP
 ---
+
 
 # poolsnp
 

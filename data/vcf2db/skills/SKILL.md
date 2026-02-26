@@ -1,8 +1,9 @@
 ---
 name: vcf2db
-description: vcf2db is a specialized utility designed to transform genomic variant data into a relational database format.
+description: vcf2db transforms genomic variant data into a relational database format. Use when user asks to transform VCF data into a relational database, create a SQLite database, load data into PostgreSQL or MySQL, or expand genotype fields.
 homepage: https://github.com/quinlan-lab/vcf2db
 ---
+
 
 # vcf2db
 

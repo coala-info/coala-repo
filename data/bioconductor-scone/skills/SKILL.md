@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scone
-description: the package is available on all platforms; click for details.
+description: Scone is an R package for quality control and normalization of single-cell RNA-seq data. Use when user asks to evaluate normalization workflows, perform quality control on single-cell transcriptomic data, or compare different data preprocessing methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/scone.html
 ---
+
 
 # bioconductor-scone
 

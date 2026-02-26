@@ -1,8 +1,9 @@
 ---
 name: virmet
-description: VirMet is a specialized bioinformatics pipeline designed for viral metagenomics (mNGS), particularly in clinical settings.
+description: VirMet is a bioinformatics pipeline designed to automate quality control, host decontamination, and viral identification for viral metagenomics sequencing data. Use when user asks to download, index, or update viral databases, analyze sequencing data for viral identification and host decontamination, or generate viral genome coverage plots.
 homepage: https://github.com/medvir/VirMet
 ---
+
 
 # virmet
 

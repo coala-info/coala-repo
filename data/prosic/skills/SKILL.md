@@ -1,8 +1,9 @@
 ---
 name: prosic
-description: prosic is a specialized bioinformatics tool designed for the discovery of somatic insertions and deletions.
+description: Prosic is a bioinformatics tool designed to discover somatic insertions and deletions using a Bayesian probabilistic framework. Use when user asks to discover somatic indels, identify low-frequency variants in tumor-normal pairs, or distinguish true somatic variants from sequencing noise.
 homepage: https://prosic.github.io
 ---
+
 
 # prosic
 

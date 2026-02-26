@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mineica
-description: the package is available on all platforms; click for details.
+description: MineICA performs the analysis and biological interpretation of Independent Component Analysis results applied to transcriptomic data. Use when user asks to analyze ICA results, interpret independent components, or integrate transcriptomic components with biological metadata.
 homepage: https://bioconductor.org/packages/release/bioc/html/MineICA.html
 ---
+
 
 # bioconductor-mineica
 

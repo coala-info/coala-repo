@@ -1,8 +1,9 @@
 ---
 name: r-r.rsp
-description: The RSP markup language makes any text-based document come alive.  RSP provides a powerful markup for controlling the content and output of LaTeX, HTML, Markdown, AsciiDoc, Sweave and knitr documents (and more), e.g. 'Today's date is &lt;%=Sys.Date()%&gt;'.  Contrary to many other literate programming languages, with RSP it is straightforward to loop over mixtures of code and text sections, e.g. in month-by-month summaries.  RSP has also several preprocessing directives for incorporating static and dynamic contents of external files (local or online) among other things.  Functions rstring() and rcat() make it easy to process RSP strings, rsource() sources an RSP file as it was an R script, while rfile() compiles it (even online) into its final output format, e.g. rfile('report.tex.rsp') generates 'report.pdf' and rfile('report.md.rsp') generates 'report.html'.  RSP is ideal for self-contained scientific reports and R package vignettes.  It's easy to use - if you know how to write an R script, you'll be up and running within minutes.</p>
+description: The R.rsp package implements the R Server Pages markup language to dynamically generate documents by embedding R code into any text-based format. Use when user asks to create dynamic reports, process RSP strings or files, set up R package vignettes, use preprocessing directives for conditional content, or loop over mixtures of R code and text blocks.
 homepage: https://cloud.r-project.org/web/packages/R.rsp/index.html
 ---
+
 
 # r-r.rsp
 

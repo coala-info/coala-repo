@@ -1,8 +1,9 @@
 ---
 name: goalign
-description: Goalign is a high-performance command-line toolkit designed for the rapid manipulation of multiple sequence alignments.
+description: Goalign is a high-performance command-line toolkit designed for the rapid manipulation, cleaning, and transformation of multiple sequence alignments. Use when user asks to convert alignment formats, remove gap-heavy sites or sequences, extract sub-alignments, translate sequences, or generate bootstrap alignments for phylogenetic analysis.
 homepage: https://github.com/fredericlemoine/goalign
 ---
+
 
 # goalign
 

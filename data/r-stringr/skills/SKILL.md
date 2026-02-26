@@ -1,8 +1,9 @@
 ---
 name: r-stringr
-description: "A consistent, simple and easy to use set of wrappers around     the fantastic 'stringi' package. All function and argument names (and     positions) are consistent, all functions deal with \"NA\"'s and zero     length vectors in the same way, and the output from one function is     easy to feed into the input of another.</p>"
+description: The r-stringr package provides a consistent and cohesive set of functions for robust string manipulation and pattern matching in R. Use when user asks to detect patterns, extract substrings, replace text, manage whitespace, or perform other character vector operations.
 homepage: https://cloud.r-project.org/web/packages/stringr/index.html
 ---
+
 
 # r-stringr
 

@@ -1,8 +1,9 @@
 ---
 name: esme_mvapich_4_0_ucx
-description: The `esme_mvapich_4_0_ucx` package provides a pre-configured Earth System Modelling Environment (ESME).
+description: This package provides a pre-configured Earth System Modelling Environment optimized for high-performance climate simulations using MVAPICH 4.0 and UCX. Use when user asks to install a bundle of scientific libraries like netCDF and ESMF, perform parallel I/O for climate models, or run MPI performance benchmarks.
 homepage: https://github.com/j34ni/bioconda-recipes
 ---
+
 
 # esme_mvapich_4_0_ucx
 

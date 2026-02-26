@@ -1,8 +1,9 @@
 ---
 name: amdirt
-description: The AncientMetagenomeDir Toolkit (`amdirt`) is a specialized Python-based utility designed for researchers working with ancient DNA (aDNA) and metagenomics.
+description: The AncientMetagenomeDir Toolkit is a Python utility for interacting with the AncientMetagenomeDir repository to manage ancient metagenomic metadata and sequencing data. Use when user asks to download ancient metagenomic data, validate metadata submissions, or generate samplesheets for bioinformatic pipelines.
 homepage: https://github.com/SPAAM-community/AMDirT
 ---
+
 
 # amdirt
 

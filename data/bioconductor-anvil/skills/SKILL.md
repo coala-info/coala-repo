@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anvil
-description: the package is available on all platforms; click for details.
+description: The AnVIL package provides an R interface to interact with the AnVIL cloud ecosystem for managing workspaces, data tables, and workflows. Use when user asks to manage Terra workspaces, interact with Google Cloud Storage buckets, manipulate data tables, or programmatically execute and monitor WDL workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVIL.html
 ---
+
 
 # bioconductor-anvil
 

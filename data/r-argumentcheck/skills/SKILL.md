@@ -1,8 +1,9 @@
 ---
 name: r-argumentcheck
-description: Skill for using the CRAN R package r-argumentcheck.
+description: This R package collects multiple argument validation errors and warnings to report them simultaneously rather than failing on the first issue. Use when user asks to validate function parameters, perform complex input checking, or implement a fail-all-at-once error reporting workflow in R.
 homepage: https://cloud.r-project.org/web/packages/ArgumentCheck/index.html
 ---
+
 
 # r-argumentcheck
 

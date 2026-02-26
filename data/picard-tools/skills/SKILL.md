@@ -1,8 +1,9 @@
 ---
 name: picard-tools
-description: Picard is the industry-standard toolkit for handling Next-Generation Sequencing (NGS) data formats.
+description: Picard-tools is a Java-based toolkit for processing and manipulating high-throughput sequencing data formats like SAM, BAM, CRAM, and VCF. Use when user asks to mark duplicates, validate alignment files, sort SAM or BAM files, or manage read group information in genomic data.
 homepage: http://broadinstitute.github.io/picard/
 ---
+
 
 # picard-tools
 

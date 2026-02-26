@@ -1,8 +1,9 @@
 ---
 name: genomelake
-description: genomelake is a specialized library designed to provide high-performance, random-access retrieval of genomic data.
+description: Genomelake provides high-performance, random-access retrieval of genomic data by converting FASTA and BigWig files into optimized data structures. Use when user asks to convert genomic files to optimized formats, extract DNA sequences or signal values for specific coordinates, or load genomic data into NumPy arrays for deep learning.
 homepage: https://github.com/kundajelab/genomelake
 ---
+
 
 # genomelake
 

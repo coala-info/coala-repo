@@ -1,8 +1,9 @@
 ---
 name: igda-script
-description: The `igda-script` package is a collection of shell wrappers for the iGDA (integrated Genetic Data Analysis) toolkit.
+description: The igda-script package provides shell wrappers for the iGDA toolkit to perform high-sensitivity detection and phasing of minor variants in long-read sequencing data. Use when user asks to detect minor SNVs, phase haplotypes in haploid or diploid samples, add genotype quality scores to VCF files, or extract specific genomic regions from BAM files.
 homepage: https://github.com/zhixingfeng/shell
 ---
+
 
 # igda-script
 

@@ -1,8 +1,9 @@
 ---
 name: pacu_snp
-description: PACU (Prokaryotic Awesome variant Calling Utility) is a specialized bioinformatics workflow that streamlines the transition from raw sequencing reads to phylogenetic analysis.
+description: PACU is a bioinformatics workflow that performs read mapping, variant calling, and SNP-based phylogenetic tree construction for prokaryotic genomes. Use when user asks to map sequencing reads to a reference, identify genomic variations, filter SNPs, mask recombinant regions, or construct high-resolution phylogenetic trees for bacterial isolates.
 homepage: https://github.com/BioinformaticsPlatformWIV-ISP/PACU
 ---
+
 
 # pacu_snp
 

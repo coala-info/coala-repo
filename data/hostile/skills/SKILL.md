@@ -1,8 +1,9 @@
 ---
 name: hostile
-description: Hostile is a specialized tool for decontaminating (meta)genomic datasets by identifying and removing reads that align to a host reference genome.
+description: Hostile decontaminates (meta)genomic datasets by identifying and removing reads that align to a host reference genome. Use when user asks to remove host contamination from sequencing data, decontaminate short or long reads, or mask human genetic information for privacy.
 homepage: https://github.com/bede/hostile
 ---
+
 
 # hostile
 

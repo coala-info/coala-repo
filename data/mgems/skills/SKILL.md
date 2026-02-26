@@ -1,8 +1,9 @@
 ---
 name: mgems
-description: mGEMS (mixed Genomic Epidemiology with Mixed Samples) is a tool for partitioning sequencing reads from a mixed sample into separate bins corresponding to different strains or species.
+description: mGEMS partitions sequencing reads from mixed samples into separate bins corresponding to different strains or species using a probabilistic framework. Use when user asks to bin mixed genomic reads, extract reads for specific taxonomic groups, or perform abundance-based read partitioning.
 homepage: https://github.com/PROBIC/mGEMS
 ---
+
 
 # mgems
 

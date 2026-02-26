@@ -1,8 +1,9 @@
 ---
 name: biom-format-tools
-description: "The `biom-format-tools` skill provides procedures for transforming BIOM data between its two primary formats: the legacy JSON-based Version 1.0 and the modern HDF5-based Version 2.x."
+description: This tool converts BIOM data between JSON-based Version 1.0 and HDF5-based Version 2.x formats using a web-based or API-driven interface. Use when user asks to convert BIOM files, deploy a BIOM conversion server, or perform programmatic BIOM format transformations.
 homepage: https://github.com/molbiodiv/biom-conversion-server
 ---
+
 
 # biom-format-tools
 

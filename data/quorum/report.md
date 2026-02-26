@@ -3,7 +3,7 @@
 ## quorum
 
 ### Tool Description
-The provided text is a container runtime error log and does not contain the help text or usage information for the 'quorum' tool.
+Run the quorum error corrector on the given fastq file. If the --paired-files switch is given, quorum expect an even number of files on the command line, each pair files containing pair end reads. The output will be two files (<prefix>_1.fa and <prefix>_2.fa) containing error corrected pair end reads.
 
 ### Metadata
 - **Docker Image**: biocontainers/quorum:v1.1.1-2-deb_cv1
@@ -18,52 +18,33 @@ The provided text is a container runtime error log and does not contain the help
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/quorum:v1.1.1-2-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+/usr/bin/quorum [options] .fastq [.fastq]+
+    
+Run the quorum error corrector on the given fastq file. If the --paired-files
+switch is given, quorum expect an even number of files on the command line,
+each pair files containing pair end reads. The output will be two files
+(<prefix>_1.fa and <prefix>_2.fa) containing error corrected pair end reads.
 
-
-## Metadata
-- **Skill**: generated
-
-## quorum_geth
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build/fetch process.
-
-### Metadata
-- **Docker Image**: biocontainers/quorum:v1.1.1-2-deb_cv1
-- **Homepage**: https://github.com/Consensys/quorum
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/quorum:v1.1.1-2-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## quorum_quorum-dev-quickstart
-
-### Tool Description
-The provided text appears to be a system log or error message from a container build process (Singularity/Apptainer) rather than the help text for the tool itself. No command-line arguments or tool descriptions could be extracted from this input.
-
-### Metadata
-- **Docker Image**: biocontainers/quorum:v1.1.1-2-deb_cv1
-- **Homepage**: https://github.com/Consensys/quorum
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/quorum:v1.1.1-2-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options:
+ -s, --size              Mer database size (default 200M)
+ -t, --threads           Number of threads (default number of cpus)
+ -p, --prefix            Output prefix (default quorum_corrected)
+ -k, --kmer-len          Kmer length (default 24)
+ -q, --min-q-char        Minimum quality char. Usually 33 or 64 (autodetect)
+ -m, --min-quality       Minimum above -q for high quality base (5)
+ -w, --window            Window size for trimming
+ -e, --error             Maximum number of errors in a window
+     --min-count         Minimum count for a k-mer to be good
+     --skip              Number of bases to skip to find anchor kmer
+     --anchor            Numer of good kmer in a row for anchor
+     --anchor-count      Minimum count for an anchor kmer
+     --contaminant       Contaminant sequences
+     --trim-contaminant  Trim sequences with contaminant mers
+ -d, --no-discard        Do not discard reads, output a single N (false)
+ -P, --paired-files      Preserve mate pairs in two files
+     --homo-trim         Trim homo-polymer on 3' end
+     --debug             Display debugging information
+     --version           Display version
+ -h, --help              This message
 ```
 

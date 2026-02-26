@@ -1,9 +1,9 @@
 # dart CWL Generation Report
 
-## dart_build
+## dart
 
 ### Tool Description
-The provided text appears to be an error log from a container build process (Apptainer/Singularity) rather than CLI help text. No usage information or arguments could be extracted.
+DART v1.4.6 (Hsin-Nan Lin & Wen-Lian Hsu)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dart:1.4.6--h13024bc_7
@@ -18,35 +18,24 @@ The provided text appears to be an error log from a container build process (App
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/dart:1.4.6--h13024bc_7 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-2658028046/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
+DART v1.4.6 (Hsin-Nan Lin & Wen-Lian Hsu)
 
+Usage: dart -i Index_Prefix -f <ReadFile_A1 ReadFile_B1 ...> [-f2 <ReadFile_A2 ReadFile_B2 ...>] -o|-bo Alignment_Output
 
-## Metadata
-- **Skill**: generated
-
-## dart
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It is a system error log indicating a failure to build or extract a container image due to insufficient disk space ('no space left on device').
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dart:1.4.6--h13024bc_7
-- **Homepage**: https://github.com/hsinnan75/Dart
-- **Package**: https://anaconda.org/channels/bioconda/packages/dart/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/dart:1.4.6--h13024bc_7 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-1172582591/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+Options: -t INT        number of threads [4]
+         -f            files with #1 mates reads
+         -f2           files with #2 mates reads
+         -mis INT      maximal number of mismatches in an alignment
+         -max_dup INT  maximal number of repetitive fragments (between 100-10000) [100]
+         -o            alignment filename in SAM format
+         -bo           alignment filename in BAM format
+         -j            splice junction output filename [junctions.tab]
+         -m            output multiple alignments [false]
+         -all_sj       detect all splice junction regardless of mapq score [false]
+         -p            paired-end reads are interlaced in the same file
+         -unique       output unique alignments
+         -max_intron   the maximal intron size [500000]
+         -min_intron   the minimal intron size [10]
+         -v            version
 ```
 

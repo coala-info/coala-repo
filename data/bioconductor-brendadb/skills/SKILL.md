@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brendadb
-description: the package is available on all platforms; click for details.
+description: The brendaDb package provides a structured R interface to parse, query, and analyze enzyme data from the BRENDA database. Use when user asks to download enzyme information, map gene symbols to EC numbers, or query kinetic parameters like KM values and pH optima.
 homepage: https://bioconductor.org/packages/release/bioc/html/brendaDb.html
 ---
+
 
 # bioconductor-brendadb
 

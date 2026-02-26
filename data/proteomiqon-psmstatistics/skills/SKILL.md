@@ -1,8 +1,9 @@
 ---
 name: proteomiqon-psmstatistics
-description: The `proteomiqon-psmstatistics` tool is designed to refine peptide identifications by statistically evaluating the quality of matches between measured MS/MS spectra and theoretical peptide sequences.
+description: This tool statistically evaluates and refines peptide-spectrum matches by calculating false discovery rates and confidence metrics using machine learning. Use when user asks to consolidate search engine scores, calculate Q-values or PEP values, and filter PSM results based on statistical thresholds.
 homepage: https://csbiology.github.io/ProteomIQon/
 ---
+
 
 # proteomiqon-psmstatistics
 

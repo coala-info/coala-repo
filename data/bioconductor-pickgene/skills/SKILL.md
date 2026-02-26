@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pickgene
-description: the package is available on all platforms; click for details.
+description: This tool identifies significant genes in microarray data using robust estimation and simulation-based methods. Use when user asks to pick genes from microarray experiments, identify differentially expressed genes, or perform robust gene selection.
 homepage: https://bioconductor.org/packages/release/bioc/html/pickgene.html
 ---
+
 
 # bioconductor-pickgene
 

@@ -1,8 +1,9 @@
 ---
 name: edena
-description: The `edena` skill provides a standardized interface for interacting with various AI-as-a-Service engines.
+description: Edena provides a standardized interface to interact with multiple AI-as-a-Service engines through a consistent syntax and response format. Use when user asks to translate text, extract keywords, perform object detection, process OCR, or execute asynchronous speech-to-text and video analysis across different AI providers.
 homepage: https://github.com/edenai/edenai-apis
 ---
+
 
 # edena
 

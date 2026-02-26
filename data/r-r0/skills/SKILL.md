@@ -1,8 +1,9 @@
 ---
 name: r-r0
-description: R package r0 (documentation from project home).
+description: This tool estimates basic and real-time reproduction numbers from epidemic incidence data using various statistical methods. Use when user asks to calculate R0 or R(t), define generation time distributions, perform sensitivity analyses on outbreak parameters, or plot epidemic curves with fitted models.
 homepage: https://cran.r-project.org/web/packages/r0/index.html
 ---
+
 
 # r-r0
 

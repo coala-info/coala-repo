@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bandle
-description: the package is available on all platforms; click for details.
+description: BANDLE is a Bioconductor package for comparative spatial proteomics that identifies protein translocation between two experimental conditions. Use when user asks to perform differential localization analysis, fit Gaussian Processes to organelle niches, or quantify uncertainty in protein subcellular movement using MCMC sampling.
 homepage: https://bioconductor.org/packages/release/bioc/html/bandle.html
 ---
+
 
 # bioconductor-bandle
 

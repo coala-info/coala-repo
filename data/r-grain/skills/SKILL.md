@@ -1,8 +1,9 @@
 ---
 name: r-grain
-description: R package grain (documentation from project home).
+description: The r-grain package performs probability propagation and inference in Bayesian Networks for discrete variables. Use when user asks to build graphical independence networks, set hard or virtual evidence, and calculate marginal or joint distributions.
 homepage: https://cran.r-project.org/web/packages/grain/index.html
 ---
+
 
 # r-grain
 

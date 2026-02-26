@@ -1,8 +1,9 @@
 ---
 name: rearr
-description: The `rearr` tool is a specialized bioinformatics package designed for the high-throughput analysis of CRISPR-sequencing data.
+description: The rearr tool analyzes CRISPR-sequencing data to identify complex genomic rearrangements and chimeric alignments. Use when user asks to identify genomic rearrangements, perform chimeric alignment, demultiplex CRISPR-seq reads, or remove duplicates from sequencing data.
 homepage: https://github.com/ljw20180420/sx_lcy
 ---
+
 
 # rearr
 

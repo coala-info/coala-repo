@@ -1,8 +1,9 @@
 ---
 name: seqlogo
-description: `seqlogo` is a Python port of the R Bioconductor `seqLogo` package, utilizing the WebLogo API for rendering.
+description: "seqlogo generates information-rich sequence logos from various position matrix formats for DNA, RNA, and protein sequences. Use when user asks to visualize sequence motifs, convert between position matrices like PPM and PWM, or render genomic site data into logo images."
 homepage: https://github.com/betteridiot/seqlogo
 ---
+
 
 # seqlogo
 

@@ -1,8 +1,9 @@
 ---
 name: aspera-cli
-description: The `aspera-cli` (invoked via the `ascli` command) is a unified interface for managing and executing high-speed data transfers across the IBM Aspera ecosystem.
+description: The aspera-cli provides a unified command-line interface for managing high-speed data transfers and interacting with IBM Aspera service APIs. Use when user asks to transfer files via FASP, download packages from Aspera on Cloud, browse remote nodes, or automate Aspera server administration.
 homepage: https://github.com/IBM/aspera-cli
 ---
+
 
 # aspera-cli
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affycoretools
-description: the package is available on all platforms; click for details.
+description: This tool automates the creation of annotated HTML reports, gene-level plots, and interactive Venn diagrams from microarray and RNA-Seq analysis results. Use when user asks to annotate ExpressionSets with gene symbols, generate publication-quality HTML tables with embedded expression plots, or create linked Venn diagrams from differential expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/affycoretools.html
 ---
+
 
 # bioconductor-affycoretools
 

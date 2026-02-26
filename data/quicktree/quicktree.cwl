@@ -2,11 +2,60 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: quicktree
 label: quicktree
-doc: "QuickTree is an efficient implementation of the neighbor-joining algorithm for
-  reconstruction of phylogenies. (Note: The provided help text contains only system
-  logs and error messages; no arguments could be extracted from the input.)\n\nTool
+doc: "Constructs a phylogenetic tree from a distance matrix or an alignment.\n\nTool
   homepage: https://github.com/khowe/quicktree"
-inputs: []
+inputs:
+  - id: inputfile
+    type: File
+    doc: Input file (distance matrix or alignment)
+    inputBinding:
+      position: 1
+  - id: boot
+    type:
+      - 'null'
+      - int
+    doc: Calcuate bootstrap values with n iterations (ignored for distance 
+      matrix outputs)
+    inputBinding:
+      position: 102
+      prefix: -boot
+  - id: input_format
+    type:
+      - 'null'
+      - string
+    doc: input file is a distance matrix in phylip format (m) or an alignment in
+      stockholm format* (a, default)
+    default: a
+    inputBinding:
+      position: 102
+      prefix: -in
+  - id: kimura
+    type:
+      - 'null'
+      - boolean
+    doc: Use the kimura translation for pairwise distances (ignored for distance
+      matrix inputs)
+    inputBinding:
+      position: 102
+      prefix: -kimura
+  - id: output_format
+    type:
+      - 'null'
+      - string
+    doc: output is a distance matrix in phylip format (m) or a tree in New 
+      Hampshire format
+    inputBinding:
+      position: 102
+      prefix: -out
+  - id: upgma
+    type:
+      - 'null'
+      - boolean
+    doc: Use the UPGMA method to construct the tree (ignored for distance matrix
+      outputs)
+    inputBinding:
+      position: 102
+      prefix: -upgma
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: scran-cli
-description: The `scran-cli` toolset provides a bridge between the specialized single-cell analysis functions of the `scran` R package and standard shell-based bioinformatics pipelines.
+description: "scran-cli provides a command-line interface for performing single-cell RNA-seq normalization, variance modeling, and clustering using the scran R package. Use when user asks to normalize single-cell data, model gene variance, denoise PCA results, build SNN graphs, or identify marker genes."
 homepage: https://github.com/ebi-gene-expression-group/scran-cli
 ---
+
 
 # scran-cli
 

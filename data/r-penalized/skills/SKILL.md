@@ -1,8 +1,9 @@
 ---
 name: r-penalized
-description: "Fitting possibly high dimensional penalized         regression models. The penalty structure can be any combination         of an L1 penalty (lasso and fused lasso), an L2 penalty (ridge) and a         positivity constraint on the regression coefficients. The         supported regression models are linear, logistic and Poisson         regression and the Cox Proportional Hazards model.         Cross-validation routines allow optimization of the tuning         parameters.</p>"
+description: The penalized package fits penalized regression models including Lasso, Ridge, and Elastic Net for high-dimensional data in R. Use when user asks to fit penalized linear, logistic, or Cox models, perform cross-validation for penalty parameters, or visualize coefficient paths.
 homepage: https://cloud.r-project.org/web/packages/penalized/index.html
 ---
+
 
 # r-penalized
 

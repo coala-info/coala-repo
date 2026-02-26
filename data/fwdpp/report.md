@@ -3,26 +3,32 @@
 ## fwdpp
 
 ### Tool Description
-fwdpp is a C++ template library for forward-time population genetic simulations.
+FAIL to generate CWL: fwdpp not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fwdpp:0.9.2--ha172671_0
 - **Homepage**: https://www.github.com/molpopgen/fwdpp
 - **Package**: https://anaconda.org/channels/bioconda/packages/fwdpp/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fwdpp/overview
-- **Total Downloads**: 36.1K
+- **Total Downloads**: 36.2K
 - **Last updated**: 2025-07-08
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: fwdpp not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: fwdpp not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fwdpp:0.9.2--ha172671_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3275776179: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

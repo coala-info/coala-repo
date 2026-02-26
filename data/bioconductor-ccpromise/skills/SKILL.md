@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ccpromise
-description: the package is available on all platforms; click for details.
+description: This tool integrates two types of molecular data to test their association with multiple phenotypic endpoints using a pattern-based approach. Use when user asks to perform integrative genomic analysis, test associations between molecular regulators and targets, or evaluate biological data against multiple clinical endpoints.
 homepage: https://bioconductor.org/packages/release/bioc/html/CCPROMISE.html
 ---
+
 
 # bioconductor-ccpromise
 

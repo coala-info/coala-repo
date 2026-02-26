@@ -1,8 +1,9 @@
 ---
 name: bioconductor-semisup
-description: the package is available on all platforms; click for details.
+description: This package implements a semi-supervised mixture model for detecting differential expression in genomic data. Use when user asks to perform semi-supervised clustering, detect differential expression in mixed populations, or identify subgroups using mixture models.
 homepage: https://bioconductor.org/packages/release/bioc/html/semisup.html
 ---
+
 
 # bioconductor-semisup
 

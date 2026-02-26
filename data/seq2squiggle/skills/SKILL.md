@@ -1,8 +1,9 @@
 ---
 name: seq2squiggle
-description: seq2squiggle is a deep learning-based simulator that uses feed-forward transformers to generate realistic nanopore signals from digital DNA sequences.
+description: "seq2squiggle simulates realistic nanopore signals from DNA sequences using deep learning transformers. Use when user asks to generate synthetic nanopore datasets, simulate specific sequencing chemistries, or transform FASTA/FASTQ sequences into raw signal squiggles."
 homepage: https://github.com/ZKI-PH-ImageAnalysis/seq2squiggle
 ---
+
 
 # seq2squiggle
 

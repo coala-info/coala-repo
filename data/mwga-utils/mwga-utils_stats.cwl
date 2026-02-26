@@ -1,13 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - mwga-utils
-  - stats
+baseCommand: stats
 label: mwga-utils_stats
-doc: "The provided text does not contain help information or usage instructions; it
-  contains container runtime log messages and a fatal error regarding disk space.\n
-  \nTool homepage: https://github.com/RomainFeron/mgwa_utils"
-inputs: []
+doc: "Compute a series of statistics on a MAF file:\n        - Number of BP aligned
+  in each assembly\n\nTool homepage: https://github.com/RomainFeron/mgwa_utils"
+inputs:
+  - id: maf_file
+    type: File
+    doc: Path to a MAF file.
+    inputBinding:
+      position: 1
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: Prefix for output stats files
+    default: stats
+    inputBinding:
+      position: 102
+      prefix: -p
 outputs:
   - id: stdout
     type: stdout

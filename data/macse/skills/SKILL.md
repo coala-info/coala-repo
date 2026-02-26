@@ -1,8 +1,9 @@
 ---
 name: macse
-description: MACSE (Multiple Alignment of Coding SEquences) is a specialized alignment tool that works at the nucleotide level while accounting for the amino acid translation.
+description: MACSE performs codon-aware multiple sequence alignment of nucleotide sequences while accounting for frameshifts and stop codons. Use when user asks to align coding sequences, handle frameshifts in alignments, or process pseudogenes and sequences with internal stop codons.
 homepage: https://bioweb.supagro.inra.fr/macse/
 ---
+
 
 # macse
 

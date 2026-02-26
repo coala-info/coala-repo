@@ -1,8 +1,9 @@
 ---
 name: segway
-description: Segway is a specialized tool for the unsupervised segmentation and annotation of multi-track functional genomics data.
+description: Segway performs unsupervised segmentation and annotation of multi-track functional genomics data using Dynamic Bayesian Networks at 1-bp resolution. Use when user asks to initialize models from Genomedata, train parameters on epigenomic tracks, or identify genomic states to generate segmentation BED files.
 homepage: http://segway.hoffmanlab.org/
 ---
+
 
 # segway
 

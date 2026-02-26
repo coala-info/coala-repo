@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bugsigdbr
-description: the package is to facilitate import of BugSigDB data into R/Bioconductor, provide utilities for extracting microbe signatures, and enable export of the extracted signatures to plain text files in standard file formats such as GMT.
+description: The bugsigdbr package provides an R interface to access and process manually curated microbial signatures from the BugSigDB database. Use when user asks to import microbial signatures, filter signatures by metadata or ontology terms, extract taxonomic lists for specific levels, or export signatures to GMT format for enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/bugsigdbr.html
 ---
+
 
 # bioconductor-bugsigdbr
 

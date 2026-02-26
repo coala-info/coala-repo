@@ -1,8 +1,9 @@
 ---
 name: slang
-description: Slang is a modular shading language designed to simplify the management of large-scale, high-performance shader codebases.
+description: Slang is a modular shading language and compiler that extends HLSL to support modern programming constructs and multi-platform shader deployment. Use when user asks to compile shaders to SPIR-V, DXIL, MSL, or CUDA, manage large-scale shader codebases using generics and modules, or implement automatic differentiation for graphics tasks.
 homepage: https://github.com/shader-slang/slang
 ---
+
 
 # slang
 

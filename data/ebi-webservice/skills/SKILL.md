@@ -1,8 +1,9 @@
 ---
 name: ebi-webservice
-description: The ebi-webservice skill facilitates programmatic access to the European Bioinformatics Institute's (EBI) computational tools.
+description: The ebi-webservice skill provides programmatic access to the European Bioinformatics Institute's computational tools for automated biological data processing. Use when user asks to submit bioinformatics jobs, run sequence alignments, perform BLAST searches, or manage asynchronous data processing workflows through the EBI Job Dispatcher.
 homepage: https://github.com/ebi-jdispatcher/webservice-clients
 ---
+
 
 # ebi-webservice
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-muscdata
-description: the package is available on all platforms; click for details.
+description: The muscData package provides a collection of multi-sample, multi-condition single-cell RNA-seq datasets. Use when user asks to access multi-subject single-cell RNA-seq data, download benchmarking datasets for differential state analysis, or load example single-cell datasets from Bioconductor.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/muscData.html
 ---
+
 
 # bioconductor-muscdata
 

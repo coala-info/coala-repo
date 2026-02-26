@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylmnm
-description: the package is available on all platforms; click for details.
+description: This R package detects differentially methylated regions by integrating MeDIP-seq and MRE-seq data. Use when user asks to identify differential methylation, integrate multiple types of methylation sequencing data, or perform the M&M statistical test.
 homepage: https://bioconductor.org/packages/release/bioc/html/methylMnM.html
 ---
+
 
 # bioconductor-methylmnm
 

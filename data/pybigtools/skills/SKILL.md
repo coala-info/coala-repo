@@ -1,8 +1,9 @@
 ---
 name: pybigtools
-description: pybigtools is a Python wrapper for the Bigtools Rust library, designed for high-performance I/O of BigWig and BigBed files.
+description: pybigtools is a high-performance library and command-line tool for reading, writing, and manipulating BigWig and BigBed files. Use when user asks to convert between BigWig/BigBed and BED/bedGraph formats, calculate signal statistics over genomic regions, merge multiple BigWig tracks, or access genomic data programmatically using Python.
 homepage: https://github.com/jackh726/bigtools/
 ---
+
 
 # pybigtools
 

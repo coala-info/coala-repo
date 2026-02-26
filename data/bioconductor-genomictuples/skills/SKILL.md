@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomictuples
-description: the package is available on all platforms; click for details.
+description: This tool manages and manipulates genomic tuples representing sets of specific genomic coordinates. Use when user asks to create GTuples objects, calculate intra-pair distances, find overlaps based on exact coordinate matching, or perform operations on sets of genomic positions rather than intervals.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicTuples.html
 ---
+
 
 # bioconductor-genomictuples
 

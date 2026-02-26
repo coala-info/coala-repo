@@ -1,8 +1,9 @@
 ---
 name: plasflow
-description: PlasFlow is a specialized tool for identifying plasmid sequences within metagenomic contigs.
+description: PlasFlow identifies plasmid sequences within metagenomic contigs using deep learning models trained on k-mer frequencies. Use when user asks to identify plasmids in metagenomic data, classify contigs as plasmid or chromosome, or recover mobile genetic elements from assemblies.
 homepage: https://github.com/smaegol/PlasFlow
 ---
+
 
 # plasflow
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-erma
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The erma package provides a streamlined interface for accessing and visualizing Roadmap Epigenomics project data, specifically focusing on the 25-state ChromImpute model. Use when user asks to access epigenomic metadata, map chromatin states to specific cell types, or visualize chromatin state profiles across different tissues in the context of gene models.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/erma.html
 ---
+
 
 # bioconductor-erma
 

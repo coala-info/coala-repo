@@ -1,8 +1,9 @@
 ---
 name: rust
-description: Rust is a systems programming language designed for performance, reliability, and productivity.
+description: Rust is a systems programming language and toolchain used for building high-performance, memory-safe software and managing projects via Cargo. Use when user asks to initialize projects, build or test code, lint with Clippy, format with rustfmt, or develop the Rust compiler using x.py.
 homepage: https://github.com/rust-lang/rust
 ---
+
 
 # rust
 

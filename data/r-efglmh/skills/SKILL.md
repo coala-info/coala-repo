@@ -1,8 +1,9 @@
 ---
 name: r-efglmh
-description: R package efglmh (documentation from project home).
+description: This R package provides specialized functions for manipulating, formatting, and analyzing microhaplotype and genotype data within a tidyverse-compatible framework. Use when user asks to process microhaplotype strings, convert genotype data formats, or perform tidy genetic data manipulation.
 homepage: https://cran.r-project.org/web/packages/efglmh/index.html
 ---
+
 
 # r-efglmh
 

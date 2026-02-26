@@ -1,8 +1,9 @@
 ---
 name: biopet
-description: Biopet (Bio Pipeline Execution Toolkit) is a comprehensive framework for managing and executing bioinformatics workflows.
+description: Biopet is a framework for managing and executing complex bioinformatics workflows and pipelines. Use when user asks to run DNA or RNA sequencing pipelines, manage cluster job submissions, or execute bioinformatics tools like Shiva and Gentrap.
 homepage: https://github.com/biopet/biopet
 ---
+
 
 # biopet
 

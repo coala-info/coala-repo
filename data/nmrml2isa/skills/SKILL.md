@@ -1,8 +1,9 @@
 ---
 name: nmrml2isa
-description: The `nmrml2isa` tool is a specialized parser designed to bridge the gap between the nmrML (Nuclear Magnetic Resonance Markup Language) format and the ISA-Tab (Investigation/Study/Assay) metadata standard.
+description: The nmrml2isa tool converts nmrML files into the ISA-Tab metadata format by extracting experimental parameters and metadata. Use when user asks to generate ISA-Tab studies from nmrML files, extract metadata from NMR data, or convert nmrML to ISA-Tab format.
 homepage: http://github.com/ISA-tools/nmrml2isa
 ---
+
 
 # nmrml2isa
 

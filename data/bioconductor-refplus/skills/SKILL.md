@@ -1,8 +1,9 @@
 ---
 name: bioconductor-refplus
-description: The package contains functions for pre-processing Affymetrix data using the RMA+ and the RMA++ methods.
+description: This R package provides functions for pre-processing Affymetrix microarray data using the RMA+ and RMA++ methods. Use when user asks to pre-process Affymetrix data, apply the RMA+ algorithm, or perform RMA++ normalization.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/RefPlus.html
 ---
+
 
 # bioconductor-refplus
 

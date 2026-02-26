@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffhic
-description: the package is available on all platforms; click for details.
+description: This tool detects differential interactions from Hi-C data by counting read pairs into genomic bin pairs and applying edgeR-based statistical frameworks. Use when user asks to process Hi-C data, count read pairs into genomic bins, perform LOESS or CNV-aware normalization, and identify significant changes in interaction intensity between biological conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/diffHic.html
 ---
+
 
 # bioconductor-diffhic
 

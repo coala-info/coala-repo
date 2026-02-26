@@ -1,8 +1,9 @@
 ---
 name: r-ptw
-description: "Parametric Time Warping aligns patterns, i.e., it aims to         put corresponding features at the same locations. The algorithm         searches for an optimal polynomial describing the warping. It         is possible to align one sample to a reference, several samples         to the same reference, or several samples to several         references. One can choose between calculating individual         warpings, or one global warping for a set of samples and one         reference. Two optimization criteria are implemented: RMS (Root         Mean Square error) and WCC (Weighted Cross Correlation). Both 	warping of peak profiles and of peak lists are supported. A 	vignette for the latter is contained in the inst/doc directory 	of the source package - the vignette source can be found on 	the package github site. See 'citation(\"ptw\")' for more details.</p>"
+description: This tool performs Parametric Time Warping to align signals or peak lists using polynomial warping functions. Use when user asks to align chromatographic or spectroscopic samples to a reference, correct retention time shifts, or perform profile-based warping using WCC or RMS criteria.
 homepage: https://cloud.r-project.org/web/packages/ptw/index.html
 ---
+
 
 # r-ptw
 

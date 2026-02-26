@@ -1,8 +1,9 @@
 ---
 name: constava
-description: Constava is a specialized tool for the statistical analysis of protein backbone dihedrals (phi and psi angles).
+description: Constava performs statistical analysis of protein backbone dihedral angles to categorize residues into conformational states. Use when user asks to extract dihedral angles from structural ensembles, analyze conformational state propensities, or train custom probabilistic models for protein flexibility.
 homepage: https://github.com/bio2byte/constava
 ---
+
 
 # constava
 

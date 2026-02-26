@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genesummary
-description: the package is available on all platforms; click for details.
+description: This tool retrieves functional gene summaries and biological descriptions from the NCBI RefSeq database for over 120 organisms. Use when user asks to get gene function descriptions, retrieve RefSeq summary comments, or annotate gene lists with human-readable functional information.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GeneSummary.html
 ---
+
 
 # bioconductor-genesummary
 

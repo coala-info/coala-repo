@@ -3,7 +3,7 @@
 ## danbing-tk
 
 ### Tool Description
-A toolkit for VNTR (Variable Number Tandem Repeat) genotyping. Note: The provided input text contains container runtime error logs rather than the tool's help documentation.
+A tool for processing sequencing reads, likely involving kmer analysis and alignment.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0
@@ -18,75 +18,46 @@ A toolkit for VNTR (Variable Number Tandem Repeat) genotyping. Note: The provide
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-3476879155/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## danbing-tk_vntr2kmers_thread
-
-### Tool Description
-A tool within the danbing-tk suite (Note: The provided help text contains only container runtime error logs and does not list specific arguments or a tool description).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0
-- **Homepage**: https://github.com/ChaissonLab/danbing-tk
-- **Package**: https://anaconda.org/channels/bioconda/packages/danbing-tk/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-1446000621/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
-
-## danbing-tk_ktools
-
-### Tool Description
-The provided text is an error log and does not contain a description of the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0
-- **Homepage**: https://github.com/ChaissonLab/danbing-tk
-- **Package**: https://anaconda.org/channels/bioconda/packages/danbing-tk/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-3252283081/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
-```
-
-## danbing-tk_danbing-tk-pred
-
-### Tool Description
-A tool from the danbing-tk suite (Note: The provided help text contains only container runtime error logs and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0
-- **Homepage**: https://github.com/ChaissonLab/danbing-tk
-- **Package**: https://anaconda.org/channels/bioconda/packages/danbing-tk/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/danbing-tk:1.3.2.5--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-1980612066/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+Usage: danbing-tk [-v] [-b] [-e] [-bu] [-g|-gc|-gcc] [-a|-ae] [-kf] [-cth] [-r] [-c] [-k] [-ik] [-p] <-o|-on> <-fa|-fq> -qs
+Options:
+  -v <INT>              Verbosity: 0-3. [0]
+  -b [STR]              read FP-specific kmers from file STR to remove FP reads.
+                        Specify file name STR if having a different prefix than the one for graph/index.
+  -e <INT>              Write mapped reads to STDOUT in fasta format.
+                        Specify 1 for keeping original read names. Will not write .kmers output.
+                        Specify 2 for appending assigned locus to each read name. Used to skip step1 for later queries.
+  -bu                   Write read (k+1)-mers divergent from graph to .bub
+  -xg                   Use only kmer matches to assign read to locus, skip threading.
+  -g <INT>              Use graph threading algorithm w/o error correction
+  -gc <INT1> [INT2]     Use graph threading algorithm w/ error correction, the default algorithm.
+                        Discard pe reads if # of matching kmers < INT1 [100]
+                        Maxmimal # of edits allowed = INT2 [3]
+  -gcc <INT1> [INT2]    Same as above, except also running sanity check
+  -a                    Output alignments for all reads entering threading. Only work with -g or -gc.
+  -ae                   Same as the -a option, but excluding unaligned reads in threading.
+  -kf <INT1> <INT2>     Parameters for kmer-based pre-filtering,
+                        optimized for 150bp paired-end reads.
+                        INT1 = # of sub-sampled kmers. [4]
+                        INT2 = minimal # of matches. [1]
+  -cth <INT>            Discard both pe reads if maxhit of one pe read is below this threshold. [45]
+                        Will skip read filtering and run threading directly if not specified.
+  -qth <INT>            At baiting step, only consider kmers of which overlapping bases have qual score >= INT. [20]
+  -r <FLOAT>            scaling factor for readsPerBatch. Can affect multiprocess efficiency. [1]
+  -c <STR>              Alternative kmer counting mode for .tr.kmers output: "aln" or "asgn"
+                        Default counts exact kmer matches
+                        aln: counts aligned kmers after applying CIGAR operations
+                        asgn: counts (exact kmer mathces) + (mismatches that should be assigned to TR region)
+                              Additional arguments allowed in the form '-c STR INT'
+                              Requires at least INT TR kmer matches for TR-spanning read. Default: not allowed.
+  -ik                   Use .inv.kmers to record invariant kmer counts
+  -k <INT>              Kmer size [21]
+  -p <INT>              Use n threads. [1]
+  -o <STR>              Output prefix
+  -on <STR>             Same as the -o option, but write locus and kmer name as well
+  -fa <STR>             Fasta file e.g. generated by samtools fasta -n; Reads are paired on the fly.
+  -fq <STR>             Fastq file e.g. generated by samtools fastq -n; Reads are paired on the fly.
+  -qs <STR>             Prefix for graph/index/bait files
+Developer mode:
+  -s <INT>            simulation mode
 ```
 

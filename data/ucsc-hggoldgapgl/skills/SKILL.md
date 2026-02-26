@@ -1,8 +1,9 @@
 ---
 name: ucsc-hggoldgapgl
-description: The `hgGoldGapGl` utility is a specialized tool within the UCSC Genome Browser "kent" suite.
+description: This tool inserts genome assembly specification files into the UCSC Genome Browser database. Use when user asks to insert genome assembly specification files into a database, load assembly data into the Genome Browser database, or populate genome assembly tables.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hggoldgapgl
 

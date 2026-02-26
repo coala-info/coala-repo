@@ -1,8 +1,9 @@
 ---
 name: perl-bio-eutilities
-description: This skill provides guidance for using the `Bio-EUtilities` suite, a collection of Perl scripts designed to interface with the NCBI eUtils API.
+description: This tool provides a collection of Perl scripts to interface with the NCBI eUtils API for high-throughput biological data retrieval. Use when user asks to search NCBI databases, download sequences or citations in batch, link records between databases, or automate workflows involving the NCBI history server.
 homepage: https://metacpan.org/release/Bio-EUtilities
 ---
+
 
 # perl-bio-eutilities
 

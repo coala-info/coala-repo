@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gaschyhs
-description: the package is available on all platforms; click for details.
+description: This tool provides access to the Gasch et al. (2000) yeast environmental stress response dataset as an ExpressionSet object. Use when user asks to access yeast transcriptomic data, analyze gene expression responses to environmental stress, or load the gaschYHS dataset.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gaschYHS.html
 ---
+
 
 # bioconductor-gaschyhs
 

@@ -1,14 +1,45 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - genera
-  - FASTSTEP3R
+baseCommand: /usr/local/bin/FASTSTEP3R
 label: genera_FASTSTEP3R
-doc: "The provided text does not contain help information or documentation for the
-  tool. It appears to be an error log from a container runtime (Apptainer/Singularity)
-  indicating a failure to build the image due to insufficient disk space.\n\nTool
-  homepage: https://github.com/josuebarrera/GenEra"
-inputs: []
+doc: "FASTSTEP3R tool for processing gene lists and diamond output.\n\nTool homepage:
+  https://github.com/josuebarrera/GenEra"
+inputs:
+  - id: cores
+    type:
+      - 'null'
+      - int
+    doc: Number of threads
+    inputBinding:
+      position: 101
+      prefix: --cores
+  - id: genelist
+    type:
+      - 'null'
+      - File
+    doc: Name of input tmp_genelist
+    default: tmp_gene_list
+    inputBinding:
+      position: 101
+      prefix: --genelist
+  - id: pattern
+    type:
+      - 'null'
+      - string
+    doc: Default pattern used to search ${DIAMONDOUT} splitted files in tmp 
+      directory
+    default: Diamond_F3R_
+    inputBinding:
+      position: 101
+      prefix: --pattern
+  - id: tmp
+    type:
+      - 'null'
+      - Directory
+    doc: ${TMP_PATH} directory to import and export results
+    inputBinding:
+      position: 101
+      prefix: --tmp
 outputs:
   - id: stdout
     type: stdout

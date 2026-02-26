@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bicare
-description: the package is available on all platforms; click for details.
+description: bioconductor-bicare performs biclustering analysis on gene expression data using the FLOC algorithm to identify sets of genes co-expressed across subsets of samples. Use when user asks to find biclusters in expression data, calculate residue scores, perform functional enrichment on gene sets, or generate HTML reports for biclustering results.
 homepage: https://bioconductor.org/packages/release/bioc/html/BicARE.html
 ---
+
 
 # bioconductor-bicare
 

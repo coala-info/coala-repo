@@ -1,8 +1,9 @@
 ---
 name: ipyrad
-description: ipyrad is an interactive toolkit designed for the assembly and analysis of restriction-site associated genomic data sets.
+description: ipyrad is an interactive toolkit for assembling and analyzing restriction-site associated genomic data through a modular seven-step pipeline. Use when user asks to assemble RAD-seq data, demultiplex raw reads, perform de novo or reference-based clustering, or export genomic datasets for population genetic and phylogenetic studies.
 homepage: http://github.com/dereneaton/ipyrad
 ---
+
 
 # ipyrad
 

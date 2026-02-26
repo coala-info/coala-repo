@@ -1,8 +1,9 @@
 ---
 name: multiqc_sav
-description: The `multiqc_sav` skill enables the integration of Illumina SAV data into standard MultiQC reports.
+description: This tool integrates Illumina SAV data into MultiQC reports to visualize raw sequencing run metrics from InterOp binary files. Use when user asks to visualize sequencing run performance, include SAV plots in MultiQC reports, or monitor cluster density and quality scores.
 homepage: http://multiqc.info
 ---
+
 
 # multiqc_sav
 

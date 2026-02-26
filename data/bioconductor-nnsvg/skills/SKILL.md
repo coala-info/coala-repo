@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nnsvg
-description: the package is available on all platforms; click for details.
+description: nnSVG identifies spatially variable genes in spatially resolved transcriptomics data using nearest-neighbor Gaussian processes. Use when user asks to identify spatially variable genes, analyze spatial transcriptomics data, or perform scalable identification of spatial expression patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/nnSVG.html
 ---
+
 
 # bioconductor-nnsvg
 

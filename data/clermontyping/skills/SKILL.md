@@ -1,8 +1,9 @@
 ---
 name: clermontyping
-description: The clermontyping skill enables the automated classification of Escherichia strains by simulating the Clermont quadriplex PCR method in silico.
+description: Clermontyping performs in silico phylogrouping of Escherichia strains by simulating the Clermont quadriplex PCR method on genomic assemblies. Use when user asks to classify E. coli strains into phylogroups, perform in silico PCR for strain characterization, or identify marker genes like arpA and chuA in genomic data.
 homepage: https://github.com/happykhan/ClermonTyping
 ---
+
 
 # clermontyping
 

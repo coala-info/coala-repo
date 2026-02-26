@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hs25kresogen.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation maps for translating hs25kresogen platform probe IDs into biological identifiers and functional metadata. Use when user asks to map probe IDs to gene symbols, Entrez IDs, GO terms, or KEGG pathways, and when retrieving genomic locations or cytoband information for human genomic research.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hs25kresogen.db.html
 ---
+
 
 # bioconductor-hs25kresogen.db
 

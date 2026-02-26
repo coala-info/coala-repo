@@ -1,8 +1,9 @@
 ---
 name: augur
-description: Augur is a modular bioinformatics toolkit designed for real-time phylodynamic analysis.
+description: "Augur is a modular bioinformatics toolkit designed for real-time phylodynamic analysis and sequence curation. Use when user asks to curate genomic data, align sequences, infer phylogenetic trees, reconstruct ancestral states, or export data for Nextstrain visualizations."
 homepage: https://github.com/nextstrain/augur
 ---
+
 
 # augur
 

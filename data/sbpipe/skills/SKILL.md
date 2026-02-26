@@ -1,8 +1,9 @@
 ---
 name: sbpipe
-description: The `sbpipe` tool streamlines the workflow for mathematical modellers by providing a consistent framework for repeating simulation and estimation sequences.
+description: sbpipe automates the execution and analysis of simulation and parameter estimation pipelines for mathematical models in systems biology. Use when user asks to run stochastic simulations, perform parameter estimation repeats, or execute modeling workflows on local multicores and clusters.
 homepage: http://sbpipe.readthedocs.io
 ---
+
 
 # sbpipe
 

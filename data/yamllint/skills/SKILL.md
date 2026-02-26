@@ -1,8 +1,9 @@
 ---
 name: yamllint
-description: yamllint is a specialized tool designed to verify that YAML files are not only syntactically correct but also follow best practices for readability and maintainability.
+description: yamllint checks YAML files for syntax errors and style violations. Use when user asks to lint YAML files, check YAML syntax, enforce style guidelines, detect issues like improper indentation, configure linting rules, or ignore specific files or rules.
 homepage: https://github.com/adrienverge/yamllint
 ---
+
 
 # yamllint
 

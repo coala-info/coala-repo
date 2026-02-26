@@ -1,8 +1,9 @@
 ---
 name: callstate
-description: `callstate` is a high-performance bioinformatics tool used to classify genomic regions into specific "callable" states based on sequencing depth and alignment quality.
+description: "callstate classifies genomic regions into specific callability states based on sequencing depth and alignment quality. Use when user asks to determine if genomic regions are callable, identify regions with low coverage or poor mapping quality, or calculate mean depth statistics for specific intervals."
 homepage: https://github.com/LuobinY/Callstate
 ---
+
 
 # callstate
 

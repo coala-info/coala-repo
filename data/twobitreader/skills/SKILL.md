@@ -1,8 +1,9 @@
 ---
 name: twobitreader
-description: twobitreader is a high-performance Python-based utility for interacting with .2bit genomic sequence files.
+description: twobitreader efficiently retrieves DNA sequences from .2bit genomic files. Use when user asks to retrieve DNA sequences from .2bit files, extract sequences for genomic regions defined in BED files, convert genomic regions to FASTA, or access specific sequences from a .2bit genome file.
 homepage: https://github.com/benjschiller/twobitreader
 ---
+
 
 # twobitreader
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprseekplus
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides a graphical interface for gRNA design, off-target scoring, and GUIDE-seq data analysis. Use when user asks to design target-specific gRNAs, score potential off-target effects, process GUIDE-seq sequencing data, or compare two sequences for allele-specific targeting.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/crisprseekplus.html
 ---
+
 
 # bioconductor-crisprseekplus
 

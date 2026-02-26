@@ -3,7 +3,7 @@
 ## sizemeup
 
 ### Tool Description
-The provided text does not contain help information or a description for the tool; it appears to be a log of a failed container build process.
+A simple tool to determine the genome size of an organism
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sizemeup:1.3.0--pyhdfd78af_0
@@ -18,33 +18,25 @@ The provided text does not contain help information or a description for the too
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sizemeup:1.3.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## sizemeup_sizemeup-build
-
-### Tool Description
-The provided text appears to be a log of a failed container build process rather than help documentation. No command-line arguments or usage instructions were found in the text.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sizemeup:1.3.0--pyhdfd78af_0
-- **Homepage**: https://github.com/rpetit3/sizemeup
-- **Package**: https://anaconda.org/channels/bioconda/packages/sizemeup/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sizemeup:1.3.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: sizemeup-main [OPTIONS]                                                 
+                                                                                
+ sizemeup - A simple tool to determine the genome size of an organism           
+                                                                                
+╭─ Required Options ───────────────────────────────────────────────────────────╮
+│ *  --query  -q  TEXT  The species name or taxid to determine the size of     │
+│                       [required]                                             │
+│ *  --sizes  -z  TEXT  The built in sizes file to use                         │
+│                       [default:                                              │
+│                       /usr/local/bin/../share/sizemeup/sizemeup-sizes.txt]   │
+│                       [required]                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Additional Options ─────────────────────────────────────────────────────────╮
+│ --outdir   -o  PATH  Directory to write output [default: ./]                 │
+│ --prefix   -p  TEXT  Prefix to use for output files [default: sizemeup]      │
+│ --silent             Only critical errors will be printed                    │
+│ --verbose            Increase the verbosity of output                        │
+│ --version  -V        Show the version and exit.                              │
+│ --help               Show this message and exit.                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 

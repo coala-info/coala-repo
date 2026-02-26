@@ -1,8 +1,9 @@
 ---
 name: r-biomartr
-description: "Perform large scale genomic data retrieval and functional annotation retrieval. This package aims to provide users with a standardized                 way to automate genome, proteome, 'RNA', coding sequence ('CDS'), 'GFF', and metagenome                 retrieval from 'NCBI RefSeq', 'NCBI Genbank', 'ENSEMBL',                  and 'UniProt' databases. Furthermore, an interface to the 'BioMart' database                 (Smedley et al."
+description: The biomartr R package provides a standardized interface for retrieving genomic data and functional annotations from major databases like NCBI, ENSEMBL, and UniProt. Use when user asks to download genomes, proteomes, or GFF files, perform bulk meta-genome retrieval, or map gene identifiers to functional annotations using BioMart.
 homepage: https://cran.r-project.org/web/packages/biomartr/index.html
 ---
+
 
 # r-biomartr
 

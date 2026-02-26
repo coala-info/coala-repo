@@ -1,8 +1,9 @@
 ---
 name: pybiolib
-description: The `pybiolib` tool is the official Python client and command-line interface for BioLib, a platform designed for hosting and running reproducible bioinformatics applications.
+description: The pybiolib tool is the official Python client and command-line interface for hosting, running, and managing reproducible bioinformatics applications on the BioLib platform. Use when user asks to initialize a project, deploy Dockerized applications to the cloud, or programmatically execute bioinformatics workflows.
 homepage: https://github.com/biolib
 ---
+
 
 # pybiolib
 

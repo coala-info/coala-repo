@@ -2,14 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pslMapPostChain
 label: ucsc-pslmappostchain
-doc: "Post-chaining of PSL alignments after mapping. This tool is part of the UCSC
-  Genome Browser utilities.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
-inputs: []
+doc: "Post-process pslMap output to chain together alignments.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
+inputs:
+  - id: in_psl
+    type: File
+    doc: Input PSL file (output from pslMap).
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_psl
+    type: File
+    doc: Output PSL file.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-pslmappostchain:482--h0b57e2e_0
-stdout: ucsc-pslmappostchain.out

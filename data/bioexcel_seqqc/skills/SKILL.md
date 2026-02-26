@@ -1,8 +1,9 @@
 ---
 name: bioexcel_seqqc
-description: `bioexcel_seqqc` is a Python-based pipeline designed to streamline genomic sequence quality control.
+description: bioexcel_seqqc is a Python-based pipeline that automates genomic sequence quality control by integrating FastQC assessment and Cutadapt trimming. Use when user asks to perform automated sequence quality control, run FastQC, trim adapters from reads, or execute high-throughput genomic data processing.
 homepage: https://github.com/bioexcel/bioexcel_seqqc
 ---
+
 
 # bioexcel_seqqc
 

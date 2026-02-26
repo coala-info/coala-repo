@@ -1,8 +1,9 @@
 ---
 name: tagra
-description: TaGra (Tabular to Graph) is a specialized tool designed to bridge the gap between structured tables and graph-based data structures.
+description: TaGra converts tabular data into graph-based structures by automating preprocessing, feature scaling, and edge construction. Use when user asks to generate adjacency structures from tables, perform network analysis on raw data, or construct graphs using K-Nearest Neighbors and similarity thresholds.
 homepage: https://github.com/davidetorre92/TaGra
 ---
+
 
 # tagra
 

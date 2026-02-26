@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rsvsim
-description: the package is available on all platforms; click for details.
+description: RSVSim simulates structural variations of various types and sizes in genomic sequences. Use when user asks to simulate deletions, insertions, inversions, tandem duplications, or translocations in a reference genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/RSVSim.html
 ---
+
 
 # bioconductor-rsvsim
 

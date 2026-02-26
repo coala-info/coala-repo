@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lobstahs
-description: the package is available on all platforms; click for details.
+description: This tool identifies lipid and oxylipin biomarkers in high-resolution HPLC-MS data using adduct hierarchy sequences. Use when user asks to screen mass spectrometry data for lipids, generate custom lipid databases, or identify isomers and isobars in lipidomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/LOBSTAHS.html
 ---
+
 
 # bioconductor-lobstahs
 

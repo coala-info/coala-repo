@@ -1,8 +1,9 @@
 ---
 name: pblat
-description: `pblat` is a performance-optimized implementation of the BLAT (Blast-Like Alignment Tool) designed for modern multi-core systems.
+description: pblat is a multi-threaded implementation of the Blast-Like Alignment Tool designed for high-performance genomic sequence alignment. Use when user asks to perform fast DNA or protein alignments, run BLAT with multiple CPU threads, or search large query files against a reference genome.
 homepage: https://github.com/icebert/pblat
 ---
+
 
 # pblat
 

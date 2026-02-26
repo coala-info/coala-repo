@@ -1,8 +1,9 @@
 ---
 name: perl-devel-assert
-description: The `perl-devel-assert` skill provides a mechanism for embedding zero-cost assertions into Perl code.
+description: This tool provides a mechanism for embedding zero-cost assertions into Perl code that are optimized away during production. Use when user asks to embed assertions in Perl, enable development-time safety checks, or verify code assumptions without incurring a runtime penalty.
 homepage: http://metacpan.org/pod/Devel::Assert
 ---
+
 
 # perl-devel-assert
 

@@ -1,8 +1,9 @@
 ---
 name: bcl2fastq-nextseq
-description: The `bcl2fastq-nextseq` skill provides a streamlined workflow for processing raw sequencing data from Illumina NextSeq platforms.
+description: This tool converts raw Illumina NextSeq sequencing data into merged FASTQ files while handling platform-specific index orientations and file cleanup. Use when user asks to convert BCL files to FASTQ, demultiplex NextSeq runs, reverse complement index sequences, or merge lane-specific sequencing files.
 homepage: https://github.com/brwnj/bcl2fastq
 ---
+
 
 # bcl2fastq-nextseq
 

@@ -1,8 +1,9 @@
 ---
 name: atactk
-description: The `atactk` toolkit provides a suite of command-line utilities designed to handle the unique properties of ATAC-seq data.
+description: The atactk toolkit provides command-line utilities for processing ATAC-seq data and generating quality control metrics. Use when user asks to generate fragment size distributions, calculate TSS enrichment scores, shift reads for Tn5 insertion offsets, or trim adapters.
 homepage: http://theparkerlab.org/
 ---
+
 
 # atactk
 

@@ -1,8 +1,9 @@
 ---
 name: montreal-forced-aligner
-description: The Montreal Forced Aligner (MFA) is a command-line utility designed to automate the process of aligning speech audio with its corresponding transcript.
+description: The Montreal Forced Aligner automates the alignment of speech audio with transcripts to provide precise word and phoneme timing information. Use when user asks to align audio to transcripts, validate speech datasets, download pre-trained acoustic models, identify out-of-vocabulary words, or generate transcriptions.
 homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
 ---
+
 
 # montreal-forced-aligner
 

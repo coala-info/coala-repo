@@ -1,8 +1,9 @@
 ---
 name: igblast-parser
-description: IgBLAST provides detailed information about immunoglobulin and T cell receptor sequences, including V(D)J germline gene matches and junctional analysis.
+description: This tool converts verbose IgBLAST output files into structured CSV tables or Python dictionaries for easier data analysis. Use when user asks to parse IgBLAST results, convert V(D)J alignment data to CSV, or extract immunoglobulin sequence features into a dataframe.
 homepage: https://github.com/aerijman/igblast-parser
 ---
+
 
 # igblast-parser
 

@@ -1,8 +1,9 @@
 ---
 name: eagle2
-description: Eagle2 is a high-efficiency software package designed to estimate haplotype phase.
+description: Eagle2 is a high-efficiency software package designed to estimate haplotype phase using a fast HMM-based algorithm. Use when user asks to estimate haplotype phase, execute phasing workflows with or without a reference panel, or process specific genomic regions.
 homepage: https://github.com/poruloh/Eagle
 ---
+
 
 # eagle2
 

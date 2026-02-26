@@ -1,8 +1,9 @@
 ---
 name: anchore-cli
-description: The `anchore-cli` skill provides a specialized interface for managing container security through the Anchore Engine REST API.
+description: anchore-cli manages container security by inspecting images for vulnerabilities and policy compliance via the Anchore Engine API. Use when user asks to add images for analysis, scan for vulnerabilities, check policy evaluation status, or list container image content.
 homepage: https://github.com/anchore/anchore-cli
 ---
+
 
 # anchore-cli
 

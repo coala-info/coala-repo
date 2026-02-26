@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedgraphpack
-description: The `ucsc-bedgraphpack` tool is a utility from the UCSC Genome Browser "kent" source tree designed to compress bedGraph data.
+description: The ucsc-bedgraphpack tool compresses bedGraph data by merging consecutive regions with identical scores into single records. Use when user asks to compress bedGraph data, pack bedGraph regions, reduce bedGraph file redundancy, or prepare bedGraph files for bigWig conversion.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedgraphpack
 

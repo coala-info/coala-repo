@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowsorted.dlpfc.450k
-description: the package is available on all platforms; click for details.
+description: This package provides a reference DNA methylation dataset of flow-sorted neurons and non-neurons from the human dorsolateral prefrontal cortex. Use when user asks to perform cell-type deconvolution on brain methylation data, estimate cellular proportions in bulk DLPFC samples, or access flow-sorted 450k reference data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.DLPFC.450k.html
 ---
+
 
 # bioconductor-flowsorted.dlpfc.450k
 

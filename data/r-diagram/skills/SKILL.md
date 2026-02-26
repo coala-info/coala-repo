@@ -1,8 +1,9 @@
 ---
 name: r-diagram
-description: "Visualises simple graphs (networks) based on a transition matrix, utilities to plot flow diagrams,       visualising webs, electrical networks, etc.      Support for the book \"A practical guide to ecological modelling -      using R as a simulation platform\"      by Karline Soetaert and Peter M.J. Herman (2009), Springer.      and the book \"Solving Differential Equations in R\"      by Karline Soetaert, Jeff Cash and Francesca Mazzia (2012), Springer.      Includes demo(flowchart), demo(plotmat), demo(plotweb).</p>"
+description: The r-diagram tool visualizes networks, flowcharts, and ecological webs using transition matrices and custom shapes in R. Use when user asks to create transition matrix visualizations, plot food webs, or design complex flow diagrams with specific box types and arrow styles.
 homepage: https://cloud.r-project.org/web/packages/diagram/index.html
 ---
+
 
 # r-diagram
 

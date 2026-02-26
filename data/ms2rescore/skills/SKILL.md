@@ -1,8 +1,9 @@
 ---
 name: ms2rescore
-description: ms2rescore is a post-processing tool designed to increase the number of confident peptide identifications from mass spectrometry data.
+description: ms2rescore is a post-processing tool that increases peptide identification confidence by recalculating search engine scores using machine learning and predicted spectral features. Use when user asks to rescore peptide-spectrum matches, improve identification rates using MS2PIP or DeepLC, or integrate predicted fragment intensities and retention times into mass spectrometry analysis.
 homepage: https://compomics.github.io/projects/ms2rescore/
 ---
+
 
 # ms2rescore
 

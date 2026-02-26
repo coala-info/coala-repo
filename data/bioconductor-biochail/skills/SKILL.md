@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biochail
-description: the package is available on all platforms; click for details.
+description: BiocHail provides an R interface to the Hail framework for scalable genomic analysis of large-scale genetic datasets. Use when user asks to perform high-throughput genomic analysis, run GWAS workflows, conduct quality control on MatrixTables, or assess population stratification using PCA.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocHail.html
 ---
+
 
 # bioconductor-biochail
 

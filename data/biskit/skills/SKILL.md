@@ -1,8 +1,9 @@
 ---
 name: biskit
-description: Biskit is an object-oriented Python platform designed to streamline structural bioinformatics research.
+description: Biskit is an object-oriented Python platform that integrates external tools and NumPy to automate structural bioinformatics workflows. Use when user asks to manipulate PDB models, analyze molecular dynamics trajectories, perform homology modeling, or conduct protein-protein docking.
 homepage: http://biskit.pasteur.fr
 ---
+
 
 # biskit
 

@@ -1,8 +1,9 @@
 ---
 name: sap
-description: SAP (Structural Alignment Program) is a specialized tool designed for the pairwise comparison of protein 3D structures.
+description: SAP performs pairwise comparison and spatial superposition of protein 3D structures using a double dynamic programming approach. Use when user asks to compare protein structures, find structural conservation, or align PDB files based on alpha-carbon coordinates.
 homepage: https://github.com/mathbio-nimr-mrc-ac-uk/SAP
 ---
+
 
 # sap
 

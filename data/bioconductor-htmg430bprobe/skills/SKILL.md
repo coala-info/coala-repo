@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430bprobe
-description: the package is available on all platforms; click for details.
+description: This package provides nucleotide sequence information and chip coordinates for probes on the Affymetrix HT_MG-430B microarray. Use when user asks to retrieve probe sequences, perform GC-content normalization, or map probe coordinates for low-level microarray analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430bprobe.html
 ---
+
 
 # bioconductor-htmg430bprobe
 

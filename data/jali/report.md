@@ -3,7 +3,7 @@
 ## jali
 
 ### Tool Description
-Joint Alignment of Large-scale genomic sequences (Note: The provided text contains system error logs and does not include usage instructions or argument definitions).
+Performs sequence alignment
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jali:1.3--0
@@ -18,11 +18,20 @@ Joint Alignment of Large-scale genomic sequences (Note: The provided text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jali:1.3--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2865444255: no space left on device
+Usage: jali [options] sequence.fasta alignment.fasta
+
+Options:
+  -w weights_filename      //amino acid similarity matrix
+  -i gap_initiation_cost   //must be smaller or equal to zero
+  -e gap_extension_cost    //must be smaller or equal to zero
+  -j jump_cost             //must be smaller or equal to zero
+  -f format_ID             //0:ASCII (default) 1:HTML 2:double-spaced HTML
+  -p                       //print alignment
+  -o                       //run in verbose mode
+  -v                       //print version
+  -h                       //print this help message
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

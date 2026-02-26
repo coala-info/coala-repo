@@ -1,8 +1,9 @@
 ---
 name: r-snowfall
-description: "Usability wrapper around snow for easier development of         parallel R programs. This package offers e.g. extended error         checks, and additional functions. All functions work in         sequential mode, too, if no cluster is present or wished.         Package is also designed as connector to the cluster management         tool sfCluster, but can also used without it.</p>"
+description: The snowfall package provides a simplified wrapper for parallel computing in R across multiple cores or clusters. Use when user asks to parallelize R code, run apply functions in parallel, or manage socket and MPI clusters for distributed computing.
 homepage: https://cloud.r-project.org/web/packages/snowfall/index.html
 ---
+
 
 # r-snowfall
 

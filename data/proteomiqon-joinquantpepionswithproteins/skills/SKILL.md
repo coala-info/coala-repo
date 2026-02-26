@@ -1,8 +1,9 @@
 ---
 name: proteomiqon-joinquantpepionswithproteins
-description: The `proteomiqon-joinquantpepionswithproteins` tool is a critical integration step in the ProteomIQon proteomics pipeline.
+description: This tool maps quantified peptide ions to their corresponding inferred protein groups to create a unified dataset for protein-level quantification. Use when user asks to join peptide quantification results with protein inference data, map peptides to proteins, or prepare data for label-free protein quantification.
 homepage: https://csbiology.github.io/ProteomIQon/
 ---
+
 
 # proteomiqon-joinquantpepionswithproteins
 

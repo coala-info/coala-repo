@@ -1,8 +1,9 @@
 ---
 name: ont-fast5-api
-description: The `ont-fast5-api` is the standard toolkit for interacting with HDF5-based .fast5 files produced by Oxford Nanopore sequencers.
+description: The ont-fast5-api is a toolkit for manipulating and interacting with HDF5-based .fast5 files produced by Oxford Nanopore sequencers. Use when user asks to convert between single-read and multi-read formats, subset reads by ID, demultiplex data based on summary files, or programmatically access raw signal data.
 homepage: https://github.com/nanoporetech/ont_fast5_api
 ---
+
 
 # ont-fast5-api
 

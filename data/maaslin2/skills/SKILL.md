@@ -1,8 +1,9 @@
 ---
 name: maaslin2
-description: MaAsLin2 (Microbiome Multivariable Association with Linear Models) is a comprehensive tool for determining associations between clinical metadata and microbial features.
+description: MaAsLin2 determines associations between clinical metadata and microbial features using multivariable linear models. Use when user asks to perform microbiome association analysis, account for fixed and random effects in longitudinal studies, or identify correlations between metadata and microbial abundances.
 homepage: http://huttenhower.sph.harvard.edu/maaslin2
 ---
+
 
 # maaslin2
 

@@ -3,10 +3,10 @@
 ## get_mnv
 
 ### Tool Description
-The provided text does not contain help information for the tool; it contains system log messages and a fatal error regarding container image acquisition.
+Identifies multiple SNVs within the same codon, reclassifies them as MNVs, and accurately computes resulting amino acid changes from genomic reads
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0
+- **Docker Image**: quay.io/biocontainers/get_mnv:1.0.0--ha7a4ace_1
 - **Homepage**: https://github.com/PathoGenOmics-Lab/get_mnv
 - **Package**: https://anaconda.org/channels/bioconda/packages/get_mnv/overview
 - **Validation**: PASS
@@ -18,11 +18,17 @@ The provided text does not contain help information for the tool; it contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1500504205: no space left on device
+Identifies multiple SNVs within the same codon, reclassifies them as MNVs, and accurately computes resulting amino acid changes from genomic reads
+
+Usage: get_mnv [OPTIONS] --vcf <VCF_FILE> --fasta <FASTA_FILE> --genes <GENES_FILE>
+
+Options:
+  -v, --vcf <VCF_FILE>      VCF file with SNPs
+  -b, --bam <BAM_FILE>      BAM file with aligned reads (optional)
+  -f, --fasta <FASTA_FILE>  FASTA file with reference sequence
+  -g, --genes <GENES_FILE>  File with gene information
+  -q, --quality <QUALITY>   Minimum Phred quality score (default: 20) [default: 20]
+  -h, --help                Print help
+  -V, --version             Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: perl-io-socket-ssl
-description: IO::Socket::SSL is the industry-standard Perl module for integrating SSL/TLS security into network applications.
+description: This Perl module provides a transparent SSL/TLS encryption layer for network applications by acting as a drop-in replacement for IO::Socket::INET. Use when user asks to integrate SSL/TLS security into Perl scripts, create secure client-server connections, or handle certificate validation and encrypted handshakes.
 homepage: https://github.com/noxxi/p5-io-socket-ssl
 ---
+
 
 # perl-io-socket-ssl
 

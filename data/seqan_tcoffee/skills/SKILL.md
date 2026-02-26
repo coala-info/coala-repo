@@ -1,8 +1,9 @@
 ---
 name: seqan_tcoffee
-description: `seqan_tcoffee` is a powerful multiple sequence alignment tool that combines the consistency-based approach of T-Coffee with the efficient data structures of the SeqAn library.
+description: seqan_tcoffee performs multiple sequence alignment using a consistency-based approach to produce high-quality results for divergent biological sequences. Use when user asks to generate a multiple sequence alignment, align protein or nucleotide sequences, or specify output formats like FASTA, MSF, and SAF.
 homepage: http://www.seqan.de/apps/seqan-t-coffee/
 ---
+
 
 # seqan_tcoffee
 

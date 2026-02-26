@@ -1,8 +1,9 @@
 ---
 name: msisensor-pro
-description: MSIsensor-pro is an advanced computational tool for determining MSI status from next-generation sequencing (NGS) data.
+description: MSIsensor-pro is a computational tool for determining microsatellite instability status from next-generation sequencing data with or without a matched normal sample. Use when user asks to scan a reference genome for microsatellites, build a baseline from normal samples, or perform MSI detection on tumor-normal pairs or tumor-only samples.
 homepage: https://github.com/xjtu-omics/msisensor-pro
 ---
+
 
 # msisensor-pro
 

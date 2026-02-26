@@ -1,8 +1,9 @@
 ---
 name: bioconductor-riboprofiling
-description: the package is available on all platforms; click for details.
+description: RiboProfiling is a Bioconductor package for the analysis and visualization of ribosome profiling data. Use when user asks to analyze Ribo-seq data, identify ribosome footprint positions, or perform quality control on ribosome profiling experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/RiboProfiling.html
 ---
+
 
 # bioconductor-riboprofiling
 

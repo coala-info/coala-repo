@@ -1,12 +1,12 @@
 # bcbio-rnaseq CWL Generation Report
 
-## bcbio-rnaseq
+## bcbio-rnaseq_compare
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a system error log indicating a failure to build or extract a container image due to insufficient disk space.
+Compare RNA-seq experiments
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bcbio-rnaseq:1.2.0--r3.3.1_2
+- **Docker Image**: quay.io/biocontainers/bcbio-rnaseq:1.2.0--r3.3.2_3
 - **Homepage**: https://github.com/hbc/bcbioRNASeq
 - **Package**: Not found
 - **Validation**: PASS
@@ -15,18 +15,68 @@ The provided text does not contain help information or usage instructions for th
 - **Total Downloads**: 39.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/hbc/bcbioRNASeq
-- **Stars**: 63
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 02:54:50  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/bcbio-rnaseq:1.2.0--r3.3.1_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:64db98461c6376e8a99b7963beab7bc01ee2ab2be66b00dd65a4d7fd78f1337f: unpack entry: usr/local/bin/bcbio-rnaseq: unpack to regular file: short write: write /scratch/21813747/build-temp-2673527515/rootfs/usr/local/bin/bcbio-rnaseq: no space left on device
+Usage: bcbio-rnaseq compare [options] project-file key
+
+Options:
+  -h, --help
+  -n, --cores CORES  1  Number of cores
+      --counts-only     Only run count-based analyses
+      --seqc            Data is from a SEQC alignment
+
+Arguments:
+  project-file    A bcbio-nextgen project file
+  key             Key in the metadata field to do pairwise comparisons
 ```
 
 
-## Metadata
-- **Skill**: generated
+## bcbio-rnaseq_simulate
+
+### Tool Description
+Simulate RNA-Seq data
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bcbio-rnaseq:1.2.0--r3.3.2_3
+- **Homepage**: https://github.com/hbc/bcbioRNASeq
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: bcbio-rnaseq simulate [options]
+
+Options:
+  -h, --help
+  -d, --out-dir OUT_DIR          simulate  Output directory
+  -c, --count-file COUNT_FILE              Optional count file for abudance distribution
+  -s, --sample-size SAMPLE_SIZE  3         Sample size of each group
+  -n, --num-genes NUM_GENES      10000     Number of genes to simulate.
+  -l, --library-size SIZE        20        Library size in millions of reads
+```
+
+
+## bcbio-rnaseq_summarize
+
+### Tool Description
+Summarize RNA-Seq analysis results from a bcbio project.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bcbio-rnaseq:1.2.0--r3.3.2_3
+- **Homepage**: https://github.com/hbc/bcbioRNASeq
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: bcbio-rnaseq summarize bcbio-project-file.yaml
+
+Options:
+  -h, --help
+  -f, --formula FORMULA      Formula to use in model (example: ~ batch + condition)
+  -d, --dexseq               Run DEXSeq
+  -o, --organism ORGANISM    organism (mouse, human)
+  -s, --sleuth               Run Sleuth
+```
+

@@ -1,8 +1,10 @@
 ---
 name: tifffile
-description: Tifffile is a specialized library designed for high-performance handling of Tagged Image File Format (TIFF) data, particularly in scientific, medical, and bioimaging contexts.
+description: Tifffile is a library for high-performance reading, writing, and managing TIFF image data, especially large and complex scientific formats. Use when user asks to 'read TIFF images', 'write TIFF images', 'handle large TIFF files', 'inspect TIFF metadata', 'preview TIFF images', 'compress TIFF files', or 'write OME-TIFF files'.
 homepage: https://github.com/cgohlke/tifffile
 ---
+
+
 
 # tifffile
 

@@ -1,8 +1,9 @@
 ---
 name: snakemake-executor-plugin-kubernetes
-description: The `snakemake-executor-plugin-kubernetes` enables Snakemake to dispatch workflow tasks as individual Jobs within a Kubernetes cluster.
+description: This plugin allows Snakemake to execute workflow tasks as individual jobs within a Kubernetes cluster. Use when user asks to run Snakemake workflows on Kubernetes, scale pipelines across cloud or on-premise K8s infrastructure, or manage containerized resource requirements.
 homepage: https://github.com/snakemake/snakemake-executor-plugin-kubernetes
 ---
+
 
 # snakemake-executor-plugin-kubernetes
 

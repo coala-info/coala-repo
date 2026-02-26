@@ -1,8 +1,9 @@
 ---
 name: perl-class-data-inheritable
-description: This skill provides guidance on implementing inheritable class attributes in Perl using `Class::Data::Inheritable`.
+description: This tool enables the creation of inheritable class attributes in Perl that can be shared across hierarchies or overridden by subclasses. Use when user asks to implement class-level data accessors, create inheritable configuration settings, or manage shared metadata in Perl object-oriented programming.
 homepage: http://metacpan.org/pod/Class-Data-Inheritable
 ---
+
 
 # perl-class-data-inheritable
 

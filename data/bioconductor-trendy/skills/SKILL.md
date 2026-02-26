@@ -1,8 +1,9 @@
 ---
 name: bioconductor-trendy
-description: the package is available on all platforms; click for details.
+description: Trendy identifies expression patterns in longitudinal gene expression data using segmented regression models. Use when user asks to analyze time-course gene expression, identify breakpoints in expression profiles, or characterize temporal trends in transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/Trendy.html
 ---
+
 
 # bioconductor-trendy
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.rn.u34
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Rat Genome U34 microarray. Use when user asks to process Affymetrix Rat Genome U34 microarray data, access platform design information for the rn.u34 array, or analyze rat expression sets using the oligo package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rn.u34.html
 ---
+
 
 # bioconductor-pd.rn.u34
 

@@ -1,8 +1,9 @@
 ---
 name: agtools
-description: The provided text does not contain help information or usage instructions; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+description: agtools is a Python framework for manipulating, analyzing, and converting assembly graphs in formats like GFA, FASTG, and ASQG. Use when user asks to convert graph formats, extract specific components, filter segments, clean graphs, or generate graph statistics and adjacency matrices.
 homepage: https://github.com/Vini2/agtools
 ---
+
 
 # agtools
 

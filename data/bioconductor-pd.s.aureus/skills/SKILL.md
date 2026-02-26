@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.s.aureus
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Staphylococcus aureus genome array. Use when user asks to process S. aureus microarray data, access platform design information for the S. aureus genome, or perform annotation for S. aureus chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.s.aureus.html
 ---
+
 
 # bioconductor-pd.s.aureus
 

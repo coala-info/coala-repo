@@ -1,8 +1,9 @@
 ---
 name: fununifrac
-description: FunUniFrac adapts the phylogenetic UniFrac metric for use with functional metagenomic profiles.
+description: FunUniFrac calculates phylogenetic-style UniFrac metrics for functional metagenomic profiles using a KEGG Orthology hierarchy. Use when user asks to infer functional tree edge lengths from protein sequence similarity, compute functional UniFrac distances between metagenomes, or perform differential abundance analysis on functional profiles.
 homepage: https://github.com/KoslickiLab/FunUniFrac
 ---
+
 
 # fununifrac
 

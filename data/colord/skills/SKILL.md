@@ -1,8 +1,9 @@
 ---
 name: colord
-description: colord is a specialized compression utility tailored for long-read sequencing data.
+description: "colord is a compression utility designed to transform long-read sequencing data into compact archives. Use when user asks to compress Oxford Nanopore or PacBio reads, decompress archives, manage quality score preservation, or perform reference-based compression."
 homepage: https://github.com/refresh-bio/colord
 ---
+
 
 # colord
 

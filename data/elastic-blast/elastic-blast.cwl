@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: elastic-blast
 label: elastic-blast
-doc: "ElasticBLAST is a tool for running BLAST searches in the cloud. (Note: The provided
-  text is a container execution error log and does not contain usage instructions
-  or argument definitions.)\n\nTool homepage: https://pypi.org/project/elastic-blast/"
-inputs: []
+doc: "This application facilitates running BLAST on large amounts of query sequence
+  data on the cloud\n\nTool homepage: https://pypi.org/project/elastic-blast/"
+inputs:
+  - id: command
+    type: string
+    doc: 'Subcommand to run: submit, status, delete, run-summary'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

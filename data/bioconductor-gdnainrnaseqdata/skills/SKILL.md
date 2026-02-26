@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdnainrnaseqdata
-description: the package is available on all platforms; click for details.
+description: This package provides access to RNA-seq BAM files with specific levels of genomic DNA contamination for benchmarking and analysis. Use when user asks to download experimental datasets for gDNA detection, retrieve RNA-seq files with known contamination levels, or access Li et al. (2022) subsetted BAM files.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gDNAinRNAseqData.html
 ---
+
 
 # bioconductor-gdnainrnaseqdata
 

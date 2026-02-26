@@ -1,8 +1,9 @@
 ---
 name: dipper
-description: DIPPER (DIstance-based Phylogenetic PlacER) is designed for high-throughput phylogenetics with a minimal memory footprint.
+description: DIPPER is a high-throughput phylogenetic tool designed for large-scale tree reconstruction using distance-based methods and GPU acceleration. Use when user asks to construct de-novo phylogenies, perform phylogenetic placement, or build trees from large sequence datasets using divide-and-conquer strategies.
 homepage: https://github.com/TurakhiaLab/DIPPER
 ---
+
 
 # dipper
 

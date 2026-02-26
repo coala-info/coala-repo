@@ -1,8 +1,9 @@
 ---
 name: perl-number-witherror
-description: The `Number::WithError` Perl module provides a container for numbers that have an associated uncertainty or error component.
+description: This tool provides a container for numbers with associated uncertainties that automatically handles Gaussian error propagation during mathematical operations. Use when user asks to perform arithmetic on values with errors, track uncertainty in scientific calculations, or format numbers based on significant figures.
 homepage: http://metacpan.org/pod/Number::WithError
 ---
+
 
 # perl-number-witherror
 

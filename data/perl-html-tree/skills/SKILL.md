@@ -1,8 +1,9 @@
 ---
 name: perl-html-tree
-description: The `perl-html-tree` skill provides a robust framework for representing HTML documents as a tree of objects.
+description: This tool parses HTML documents into a tree of objects for structured navigation and manipulation in Perl. Use when user asks to parse HTML into a logical model, find elements by tags or attributes, extract text from nodes, or modify HTML structures.
 homepage: http://metacpan.org/pod/HTML::Tree
 ---
+
 
 # perl-html-tree
 

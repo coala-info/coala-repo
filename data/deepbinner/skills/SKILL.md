@@ -1,8 +1,9 @@
 ---
 name: deepbinner
-description: Deepbinner is a specialized demultiplexer that utilizes a deep convolutional neural network to identify barcodes directly from the raw "squiggle" signal of Oxford Nanopore reads.
+description: Deepbinner is a demultiplexer that uses a deep convolutional neural network to identify barcodes from raw Oxford Nanopore signal data. Use when user asks to demultiplex fast5 files, classify raw squiggle signals, or perform real-time barcode identification during a sequencing run.
 homepage: https://github.com/rrwick/Deepbinner
 ---
+
 
 # deepbinner
 

@@ -1,8 +1,9 @@
 ---
 name: rapmap-example-data
-description: RapMap is a high-performance tool designed for the rapid mapping of sequencing reads, primarily optimized for transcriptomes rather than large mammalian genomes.
+description: RapMap performs rapid quasi-mapping of sequencing reads to a transcriptome by building a reference index and executing high-speed alignment. Use when user asks to index a reference transcriptome, map sequencing reads using quasi-mapping, or perform selective alignment for improved mapping accuracy.
 homepage: https://github.com/COMBINE-lab/RapMap
 ---
+
 
 # rapmap-example-data
 

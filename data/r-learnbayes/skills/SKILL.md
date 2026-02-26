@@ -1,8 +1,9 @@
 ---
 name: r-learnbayes
-description: R package learnbayes (documentation from project home).
+description: This tool performs Bayesian statistical inference and posterior simulation using the LearnBayes R package. Use when user asks to summarize posterior distributions, implement MCMC algorithms like Metropolis-Hastings or Gibbs sampling, conduct Bayesian regression, or fit hierarchical models.
 homepage: https://cran.r-project.org/web/packages/learnbayes/index.html
 ---
+
 
 # r-learnbayes
 

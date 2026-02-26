@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dks
-description: the package is available on all platforms; click for details.
+description: This tool evaluates the distribution of multiple testing p-values using Frequentist and Bayesian diagnostics to ensure they follow the expected uniform distribution. Use when user asks to validate multiple testing procedures, calculate Double Kolmogorov-Smirnov p-values, or assess the uniformity of simulated null p-values.
 homepage: https://bioconductor.org/packages/release/bioc/html/dks.html
 ---
+
 
 # bioconductor-dks
 

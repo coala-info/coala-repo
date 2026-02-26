@@ -1,8 +1,9 @@
 ---
 name: orientagraph
-description: OrientAGraph is an extension of the TreeMix software suite that implements Maximum Likelihood Network Orientation (MLNO).
+description: OrientAGraph builds and refines admixture graphs by optimizing the orientation of migration edges using Maximum Likelihood Network Orientation. Use when user asks to estimate admixture graphs with migration edges, optimize the orientation of gene flow events, or score and reorient existing population models.
 homepage: https://github.com/sriramlab/OrientAGraph
 ---
+
 
 # orientagraph
 

@@ -1,8 +1,9 @@
 ---
 name: pymvpa
-description: PyMVPA (Multivariate Pattern Analysis in Python) is a specialized framework designed to facilitate statistical learning analyses of large datasets, with a primary focus on neuroimaging (fMRI, EEG, MEG).
+description: PyMVPA is a Python framework for performing multivariate pattern analysis and statistical learning on neuroimaging datasets. Use when user asks to perform searchlight analysis, execute hyperalignment, manage neuroimaging datasets, or set up multivariate pattern analysis workflows.
 homepage: http://www.pymvpa.org/
 ---
+
 
 # pymvpa
 

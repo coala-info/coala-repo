@@ -1,8 +1,9 @@
 ---
 name: perl-perlio
-description: The `perl-perlio` skill provides expertise in using the `PerlIO::Util` module to extend Perl's standard I/O layers.
+description: This tool extends Perl's standard I/O layers to provide advanced file handling features like automatic locking, output multiplexing, and reverse line reading. Use when user asks to open files with atomic locking, tee output to multiple destinations, or read files backward.
 homepage: https://github.com/gfx/Perl-PerlIO-Util
 ---
+
 
 # perl-perlio
 

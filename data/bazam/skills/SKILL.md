@@ -1,8 +1,9 @@
 ---
 name: bazam
-description: Bazam is a specialized tool designed to efficiently extract paired reads from coordinate-sorted BAM files—a task that is traditionally difficult because mate pairs are often stored far apart in the file.
+description: "Bazam extracts paired reads from coordinate-sorted BAM files and streams them into interleaved FASTQ format for efficient re-alignment. Use when user asks to extract read pairs from a BAM file, pipe reads directly into an aligner like BWA, or filter reads by genomic region or custom criteria."
 homepage: https://github.com/ssadedin/bazam
 ---
+
 
 # bazam
 

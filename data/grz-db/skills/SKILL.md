@@ -1,8 +1,9 @@
 ---
 name: grz-db
-description: The `grz-db` package provides the foundational data layer for the GRZ toolset, specifically supporting `grz-cli`, `grzctl`, and `grz-watchdog`.
+description: The grz-db tool manages SQL models and migrations to track genomic study submissions across SQLite and PostgreSQL backends. Use when user asks to sync submissions from an inbox, list or inspect submission records, filter submissions by date, or check quality control status.
 homepage: https://github.com/BfArM-MVH/grz-tools
 ---
+
 
 # grz-db
 

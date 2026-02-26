@@ -1,8 +1,9 @@
 ---
 name: bolt
-description: `bolt` is a high-performance structural variant (SV) caller optimized for short-read sequencing data.
+description: Bolt is a high-performance structural variant caller optimized for short-read sequencing data. Use when user asks to call structural variants, format command-line arguments for SV detection, or manage the tool's installation and dependencies.
 homepage: https://github.com/sakkayaphab/bolt
 ---
+
 
 # bolt
 

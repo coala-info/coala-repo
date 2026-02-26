@@ -1,8 +1,9 @@
 ---
 name: bioconductor-topconfects
-description: the package is available on all platforms; click for details.
+description: Topconfects ranks features by confident effect sizes in differential expression analysis. Use when user asks to rank genes by confident effect size, identify top confident effect sizes, or prioritize features based on effect size magnitude.
 homepage: https://bioconductor.org/packages/release/bioc/html/topconfects.html
 ---
+
 
 # bioconductor-topconfects
 

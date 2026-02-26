@@ -1,8 +1,9 @@
 ---
 name: fastahack
-description: fastahack is a specialized utility for indexing and performing random access on FASTA-formatted sequence files.
+description: "fastahack indexes and performs random access on FASTA-formatted sequence files to rapidly extract genomic regions. Use when user asks to index a FASTA file, extract specific genomic sequences or regions, perform batch extraction via stdin, or calculate sequence entropy."
 homepage: https://github.com/ekg/fastahack
 ---
+
 
 # fastahack
 

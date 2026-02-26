@@ -1,8 +1,9 @@
 ---
 name: marvel
-description: MARVEL (Metagenomic Analysis and Retrieval of Viral Elements) is a specialized tool for the identification of bacteriophage sequences within metagenomic datasets.
+description: MARVEL identifies bacteriophage sequences within metagenomic bins using functional annotation and protein domain searching. Use when user asks to predict phage genomes from metagenomic bins, adjust classification confidence thresholds, or filter bins by size.
 homepage: http://github.com/quadram-institute-bioscience/marvel/
 ---
+
 
 # marvel
 

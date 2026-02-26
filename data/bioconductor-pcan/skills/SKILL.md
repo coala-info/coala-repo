@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pcan
-description: the package is available on all platforms; click for details.
+description: PCAN performs phenotype-based comparison and analysis of genes and diseases. Use when user asks to compare phenotypes, identify candidate genes, or assess functional relationships between genes and diseases using phenotypic similarity.
 homepage: https://bioconductor.org/packages/release/bioc/html/PCAN.html
 ---
+
 
 # bioconductor-pcan
 

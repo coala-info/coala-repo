@@ -1,8 +1,9 @@
 ---
 name: mokapot
-description: mokapot is a highly flexible Python implementation of the Percolator algorithm, designed to enhance the identification of peptides in proteomics workflows.
+description: mokapot uses semi-supervised machine learning to rescore peptide-spectrum matches and improve peptide identifications in proteomics workflows. Use when user asks to rescore PSMs, enhance peptide identification confidence, or apply the Percolator algorithm using custom machine learning classifiers.
 homepage: https://github.com/wfondrie/mokapot
 ---
+
 
 # mokapot
 

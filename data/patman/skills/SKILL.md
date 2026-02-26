@@ -1,8 +1,9 @@
 ---
 name: patman
-description: The `patman` skill facilitates the use of Patman's specialized fork of the x265 HEVC encoder.
+description: Patman is a specialized fork of the x265 HEVC encoder that enhances input pipeline management and progress monitoring for video compression. Use when user asks to encode video using Avisynth or Vapoursynth frame-servers, process Y4M inputs with XLENGTH tags, or utilize an enhanced CLI progress bar.
 homepage: https://github.com/Patman86/x265-Mod-by-Patman
 ---
+
 
 # patman
 

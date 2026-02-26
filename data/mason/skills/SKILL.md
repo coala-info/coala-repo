@@ -1,8 +1,9 @@
 ---
 name: mason
-description: The `mason` suite is a high-performance read simulator designed for generating synthetic sequencing data.
+description: Mason is a high-performance read simulator that generates synthetic sequencing data and genomic variations from a reference genome. Use when user asks to simulate Illumina or Sanger reads, generate mutated reference genomes with SNPs and indels, or create gold-standard datasets for benchmarking bioinformatics tools.
 homepage: https://www.seqan.de/apps/mason.html
 ---
+
 
 # mason
 

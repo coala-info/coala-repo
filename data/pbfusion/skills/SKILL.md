@@ -1,8 +1,9 @@
 ---
 name: pbfusion
-description: pbfusion is a specialized tool designed to identify fusion gene events from PacBio long-read Iso-Seq data.
+description: pbfusion identifies fusion gene events and precise breakpoints from PacBio long-read Iso-Seq data. Use when user asks to detect gene fusions, identify transcript breakpoints, or process aligned Iso-Seq BAM files for fusion discovery.
 homepage: https://github.com/PacificBiosciences/pbfusion
 ---
+
 
 # pbfusion
 

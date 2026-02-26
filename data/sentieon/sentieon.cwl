@@ -2,10 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: sentieon
 label: sentieon
-doc: "Sentieon genomics tools (Note: The provided text is a container runtime error
-  log and does not contain help documentation or usage instructions).\n\nTool homepage:
+doc: "Sentieon software package for genomic data analysis. Supported commands include
+  tools for read alignment, variant calling, and utility functions.\n\nTool homepage:
   https://github.com/Sentieon/sentieon-scripts"
-inputs: []
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'The specific Sentieon command to run. Supported commands: LongReadUtil,
+      STAR, bamslice, bwa, driver, fqidx, licclnt, licsrvr, minimap2, pgutil, plot,
+      pyexec, rcat, umi, util'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: seqsizzle
-description: seqsizzle is a terminal-based pager specifically designed for bioinformatics.
+description: seqsizzle is a terminal-based pager designed for viewing and analyzing bioinformatics sequencing files with visual cues for base quality and adapter matching. Use when user asks to interactively inspect FASTQ or FASTA files, identify enriched k-mers, or quantify adapter matches in sequencing reads.
 homepage: https://github.com/ChangqingW/SeqSizzle
 ---
+
 
 # seqsizzle
 

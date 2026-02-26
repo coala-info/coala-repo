@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celegans.db
-description: the package is available on all platforms; click for details.
+description: This package provides a comprehensive annotation database for C. elegans to map between various biological identifiers and functional information. Use when user asks to translate gene IDs, retrieve Gene Ontology terms, map KEGG pathways, or find genomic locations for C. elegans data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/celegans.db.html
 ---
+
 
 # bioconductor-celegans.db
 

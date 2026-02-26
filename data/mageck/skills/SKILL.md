@@ -1,8 +1,9 @@
 ---
 name: mageck
-description: MAGeCK is a computational pipeline designed for the analysis of genome-scale CRISPR-Cas9 knockout screens.
+description: MAGeCK is a computational pipeline for analyzing genome-scale CRISPR-Cas9 knockout screens to identify significantly enriched or depleted genes. Use when user asks to generate guide RNA counts from FASTQ files, perform statistical analysis using RRA, or calculate beta scores via maximum likelihood estimation for complex experimental designs.
 homepage: http://mageck.sourceforge.net
 ---
+
 
 # mageck
 

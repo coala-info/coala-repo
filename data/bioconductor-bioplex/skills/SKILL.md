@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioplex
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides access to BioPlex protein-protein interaction networks, CORUM complexes, and associated multi-omic data for human cell lines. Use when user asks to retrieve PPI networks, map protein identifiers, convert interaction data to graph objects, analyze CORUM protein complexes, or integrate interaction data with transcriptome and proteome profiles.
 homepage: https://bioconductor.org/packages/3.14/bioc/html/BioPlex.html
 ---
+
 
 # bioconductor-bioplex
 

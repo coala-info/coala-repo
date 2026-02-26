@@ -1,8 +1,9 @@
 ---
 name: perl-par-packer
-description: The `perl-par-packer` skill provides the procedural knowledge required to use the `pp` (Perl Packer) utility.
+description: The perl-par-packer tool bundles Perl scripts and their dependencies into single, portable executables or self-contained scripts. Use when user asks to create stand-alone binaries, package Perl applications with dependencies, or distribute scripts to systems without required modules.
 homepage: https://github.com/rschupp/PAR-Packer
 ---
+
 
 # perl-par-packer
 

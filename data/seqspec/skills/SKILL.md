@@ -1,8 +1,9 @@
 ---
 name: seqspec
-description: The `seqspec` tool provides a standardized framework for defining the architecture of genomic libraries.
+description: seqspec provides a standardized framework for defining and managing the physical architecture of genomic libraries. Use when user asks to validate library specifications, visualize library structures, extract sequence patterns for mapping tools, or update assay metadata.
 homepage: https://github.com/sbooeshaghi/seqspec
 ---
+
 
 # seqspec
 

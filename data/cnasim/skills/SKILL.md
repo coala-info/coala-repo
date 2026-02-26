@@ -1,8 +1,9 @@
 ---
 name: cnasim
-description: CNAsim is a specialized simulation framework designed to model the evolutionary dynamics and genomic profiles of tumor cell populations.
+description: CNAsim simulates the evolutionary dynamics and genomic profiles of tumor cell populations to generate synthetic single-cell datasets. Use when user asks to simulate copy number profiles, generate synthetic readcounts, or produce full-scale DNA sequencing reads for tumor cell lineages.
 homepage: https://github.com/samsonweiner/CNAsim
 ---
+
 
 # cnasim
 

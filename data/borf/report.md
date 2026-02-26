@@ -3,7 +3,7 @@
 ## borf
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'borf'. It contains system error messages related to a container runtime (Singularity/Apptainer) failing to pull an image due to insufficient disk space.
+Get orf predicitions from a nucleotide fasta file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/borf:1.2--py_0
@@ -18,9 +18,32 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/3fed861874de16cfabd7b07a1f321408fa28d2d92258cdda2673e348165bbe15: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/borf:1.2--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1439346893: no space left on device
+usage: borf [-h] [-o OUTPUT_PATH] [-s] [-a] [-l ORF_LENGTH]
+            [-u UPSTREAM_INCOMPLETE_LENGTH] [-b BATCH_SIZE] [-f]
+            fasta_file
+
+Get orf predicitions from a nucleotide fasta file
+
+positional arguments:
+  fasta_file            fasta file to predict ORFs
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUT_PATH, --output_path OUTPUT_PATH
+                        path to write output files. [OUTPUT_PATH].pep and
+                        [OUTPUT_PATH].txt (default: input .fa file name)
+  -s, --strand          Predict orfs for both strands
+  -a, --all_orfs        Return all ORFs for each sequence longer than the
+                        cutoff
+  -l ORF_LENGTH, --orf_length ORF_LENGTH
+                        Minimum ORF length (AA). (default: 100)
+  -u UPSTREAM_INCOMPLETE_LENGTH, --upstream_incomplete_length UPSTREAM_INCOMPLETE_LENGTH
+                        Minimum length (AA) of uninterupted sequence upstream
+                        of ORF to be included for incomplete_5prime
+                        transcripts (default: 50)
+  -b BATCH_SIZE, --batch_size BATCH_SIZE
+                        Number of fasta records to read in in each batch
+  -f, --force_overwrite
+                        Force overwriting of output files?
 ```
 

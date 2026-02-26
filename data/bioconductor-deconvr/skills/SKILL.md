@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deconvr
-description: The package includes the cell-type-specific methylation atlas and, Illumina Epic B5 probe ids that can be used in deconvolution. Additionally,we included BSmeth2Probe, to make mapping WGBS data to their probe IDs easier.
+description: The deconvR package performs computational deconvolution of bulk omic samples to estimate cell-type proportions. Use when user asks to deconvolute bulk methylation or RNA-seq data, map WGBS data to probe IDs, identify signature matrices, or simulate cell mixtures for benchmarking.
 homepage: https://bioconductor.org/packages/release/bioc/html/deconvR.html
 ---
+
 
 # bioconductor-deconvr
 

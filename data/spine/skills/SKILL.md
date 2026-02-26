@@ -1,8 +1,9 @@
 ---
 name: spine
-description: Spine is a specialized bioinformatics tool designed to define the core genome—the set of genomic regions conserved across a specified percentage of input organisms.
+description: Spine is a bioinformatics tool that identifies the core genome and accessory sequences across multiple organisms using the MUMmer alignment engine. Use when user asks to define a core genome, identify homologous genomic regions, generate pangenome data, or extract backbone sequences from bacterial genomes.
 homepage: https://github.com/egonozer/Spine
 ---
+
 
 # spine
 

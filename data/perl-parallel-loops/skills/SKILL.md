@@ -1,8 +1,9 @@
 ---
 name: perl-parallel-loops
-description: This skill provides guidance on implementing parallel execution in Perl scripts using `Parallel::Loops`.
+description: This tool enables parallel execution in Perl scripts by transforming sequential loops into multi-process workflows using the Parallel::Loops module. Use when user asks to parallelize Perl loops, execute tasks across multiple CPU cores, or manage concurrent subprocesses for batch data processing.
 homepage: http://metacpan.org/pod/Parallel::Loops
 ---
+
 
 # perl-parallel-loops
 

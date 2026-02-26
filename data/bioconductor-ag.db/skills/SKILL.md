@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ag.db
-description: the package is available on all platforms; click for details.
+description: This tool provides annotation data for the Arabidopsis thaliana platform to map manufacturer probe identifiers to biological metadata. Use when user asks to map probe IDs to AGI locus IDs, gene symbols, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ag.db.html
 ---
+
 
 # bioconductor-ag.db
 

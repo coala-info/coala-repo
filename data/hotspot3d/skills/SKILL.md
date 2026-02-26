@@ -1,8 +1,9 @@
 ---
 name: hotspot3d
-description: hotspot3d is a specialized bioinformatics tool used to identify mutation "hotspots" by analyzing the 3D proximity of amino acids within protein structures.
+description: hotspot3d identifies mutation hotspots by analyzing the 3D spatial proximity of amino acids within protein structures. Use when user asks to identify 3D mutation clusters, process MAF files for structural proximity, or visualize mutation hotspots in protein models.
 homepage: https://github.com/ding-lab/hotspot3d
 ---
+
 
 # hotspot3d
 

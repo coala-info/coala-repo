@@ -1,8 +1,9 @@
 ---
 name: confindr
-description: ConFindr is a bioinformatics tool designed to identify whether a bacterial sequencing sample is contaminated with DNA from another strain of the same species or a different species.
+description: ConFindr identifies bacterial sequencing sample contamination by detecting multiple alleles of core, single-copy genes. Use when user asks to check for sample contamination, identify multiple strains in a sequencing run, or run contamination reports using rMLST databases.
 homepage: https://github.com/lowandrew/ConFindr
 ---
+
 
 # confindr
 

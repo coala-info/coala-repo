@@ -1,54 +1,71 @@
 # bcbio-nextgen CWL Generation Report
 
-## bcbio-nextgen
+## bcbio-nextgen_bcbio_nextgen.py
 
 ### Tool Description
-Validated, scalable, community-developed variant calling, RNA-seq and small RNA analysis pipeline. (Note: The provided input text appears to be a system error log regarding a container build failure and does not contain the standard help documentation for the tool.)
+Community developed high throughput sequencing analysis.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bcbio-nextgen:1.0.5--py27_0
+- **Docker Image**: quay.io/biocontainers/bcbio-nextgen:1.2.9--pyh5e36f6f_3
 - **Homepage**: https://github.com/bcbio/bcbio-nextgen
 - **Package**: https://anaconda.org/channels/bioconda/packages/bcbio-nextgen/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bcbio-nextgen/overview
-- **Total Downloads**: 409.6K
+- **Total Downloads**: 409.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bcbio/bcbio-nextgen
-- **Stars**: 1026
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 02:45:41  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/bcbio-nextgen:1.0.5--py27_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:09706e760552dac464ba1931d706d204f29d079863f642978f9f237fa84d0807: unpack entry: usr/local/bin/linguist: unpack to regular file: short write: write /scratch/21813747/build-temp-4154898607/rootfs/usr/local/bin/linguist: no space left on device
-```
+Incorrect input arguments []
+usage: bcbio_nextgen.py [-h] [-n NUMCORES] [-t {local,ipython}]
+                        [-s {lsf,sge,torque,slurm,pbspro}]
+                        [--local_controller] [-q QUEUE] [-r RESOURCES]
+                        [--timeout TIMEOUT] [--retries RETRIES] [-p TAG]
+                        [-w WORKFLOW] [--workdir WORKDIR] [-v]
+                        [--force-single] [--separators SEPARATORS]
+                        [global_config] [fc_dir] [run_config ...]
 
+Community developed high throughput sequencing analysis.
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  global_config         Global YAML configuration file specifying details
+                        about the system (optional, defaults to installed
+                        bcbio_system.yaml)
+  fc_dir                A directory of Illumina output or fastq files to
+                        process (optional)
+  run_config            YAML file with details about samples to process
+                        (required, unless using Galaxy LIMS as input)
 
-## bcbio-nextgen_bcbio_nextgen_install.py
-
-### Tool Description
-Installation script for bcbio-nextgen (Note: The provided text appears to be a system log/error message rather than help text, so no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bcbio-nextgen:1.0.5--py27_0
-- **Homepage**: https://github.com/bcbio/bcbio-nextgen
-- **Package**: https://anaconda.org/channels/bioconda/packages/bcbio-nextgen/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 02:46:38  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/bcbio-nextgen:1.0.5--py27_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:09706e760552dac464ba1931d706d204f29d079863f642978f9f237fa84d0807: unpack entry: usr/local/bin/linguist: unpack to regular file: short write: write /scratch/21813747/build-temp-1102247788/rootfs/usr/local/bin/linguist: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -n NUMCORES, --numcores NUMCORES
+                        Total cores to use for processing
+  -t {local,ipython}, --paralleltype {local,ipython}
+                        Approach to parallelization
+  -s {lsf,sge,torque,slurm,pbspro}, --scheduler {lsf,sge,torque,slurm,pbspro}
+                        Scheduler to use for ipython parallel
+  --local_controller    run controller locally
+  -q QUEUE, --queue QUEUE
+                        Scheduler queue to run jobs on, for ipython parallel
+  -r RESOURCES, --resources RESOURCES
+                        Cluster specific resources specifications. Can be
+                        specified multiple times. Supports SGE, Torque, LSF
+                        and SLURM parameters.
+  --timeout TIMEOUT     Number of minutes before cluster startup times out.
+                        Defaults to 15
+  --retries RETRIES     Number of retries of failed tasks during distributed
+                        processing. Default 0 (no retries)
+  -p TAG, --tag TAG     Tag name to label jobs on the cluster
+  -w WORKFLOW, --workflow WORKFLOW
+                        Run a workflow with the given commandline arguments
+  --workdir WORKDIR     Directory to process in. Defaults to current working
+                        directory
+  -v, --version         Print current version
+  --force-single        Treat all files as single reads
+  --separators SEPARATORS
+                        comma separated list of separators that indicates
+                        paired files.
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hcamatrixbrowser
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides an R interface to the Human Cell Atlas Matrix Service for querying and retrieving gene expression data. Use when user asks to access HCA expression matrices, filter HCA datasets by metadata, or download single-cell data in Loom, MTX, or CSV formats.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/HCAMatrixBrowser.html
 ---
+
 
 # bioconductor-hcamatrixbrowser
 

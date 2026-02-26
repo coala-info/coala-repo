@@ -1,8 +1,9 @@
 ---
 name: snakemake-storage-plugin-sharepoint
-description: The `snakemake-storage-plugin-sharepoint` is a specialized extension for Snakemake that treats Microsoft SharePoint as a remote file system.
+description: This plugin enables Snakemake to use Microsoft SharePoint as a remote storage system for input and output files. Use when user asks to use SharePoint folders as native storage locations, automate file transfers between Snakemake and SharePoint, or configure SharePoint authentication for workflow execution.
 homepage: https://github.com/Hugovdberg/snakemake-storage-plugin-sharepoint
 ---
+
 
 # snakemake-storage-plugin-sharepoint
 

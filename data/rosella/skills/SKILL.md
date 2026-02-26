@@ -1,8 +1,9 @@
 ---
 name: rosella
-description: Rosella provides a high-performance metagenomic binning pipeline written in Rust with Python-based manifold learning.
+description: Rosella is a high-performance metagenomic binning pipeline that uses manifold learning to cluster sequence data based on composition and coverage. Use when user asks to install the tool, set up the environment, or execute binning workflows for shotgun metagenomic datasets.
 homepage: https://github.com/rhysnewell/rosella.git
 ---
+
 
 # rosella
 

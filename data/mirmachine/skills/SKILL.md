@@ -1,8 +1,9 @@
 ---
 name: mirmachine
-description: MirMachine is a command-line tool designed to identify miRNA homologs within genomic FASTA files.
+description: MirMachine identifies miRNA homologs in genomic FASTA files using covariance models. Use when user asks to identify miRNA homologs, search for specific miRNA families, or list available taxonomic nodes and families.
 homepage: https://github.com/sinanugur/MirMachine
 ---
+
 
 # mirmachine
 

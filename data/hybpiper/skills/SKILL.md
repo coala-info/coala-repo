@@ -1,8 +1,9 @@
 ---
 name: hybpiper
-description: HybPiper is a specialized bioinformatics suite designed for "target enrichment" or "Hyb-Seq" data.
+description: HybPiper processes target enrichment sequencing data to produce gene-by-gene assemblies and extract orthologous sequences for phylogenetic analysis. Use when user asks to assemble loci from Hyb-Seq reads, recover introns or supercontigs, generate gene recovery statistics, or investigate paralogs.
 homepage: https://github.com/mossmatters/HybPiper
 ---
+
 
 # hybpiper
 

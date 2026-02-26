@@ -1,8 +1,9 @@
 ---
 name: apscale
-description: apscale (Advanced Pipeline for Simple yet Comprehensive AnaLysEs) is a Python-based command-line tool designed to streamline DNA metabarcoding workflows.
+description: apscale is a Python-based command-line tool that automates DNA metabarcoding workflows to generate ESV and OTU tables from demultiplexed reads. Use when user asks to create a metabarcoding project structure, configure analysis via Excel, merge paired-end reads, trim primers, or perform denoising and clustering.
 homepage: https://github.com/DominikBuchner/apscale
 ---
+
 
 # apscale
 

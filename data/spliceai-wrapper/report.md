@@ -3,7 +3,7 @@
 ## spliceai-wrapper
 
 ### Tool Description
-A wrapper tool for SpliceAI (Note: The provided help text contains only system logs and error messages, no usage information was found).
+A wrapper for SpliceAI, a deep learning-based variant caller for splice-altering variants.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/spliceai-wrapper:0.1.0--0
@@ -18,13 +18,11 @@ A wrapper tool for SpliceAI (Note: The provided help text contains only system l
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/spliceai-wrapper:0.1.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Traceback (most recent call last):
+  File "/usr/local/bin/spliceai-wrapper", line 8, in <module>
+    from spliceai_wrapper.__main__ import main
+  File "/usr/local/lib/python3.6/site-packages/spliceai_wrapper/__main__.py", line 12, in <module>
+    import vcfpy
+ModuleNotFoundError: No module named 'vcfpy'
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-predasampledata
-description: the package is available on all platforms; click for details.
+description: This package provides sample data for the PREDA package to support position-related genomic data analysis. Use when user asks to access example datasets for PREDA, run package vignettes, or test functional genomics analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PREDAsampledata.html
 ---
+
 
 # bioconductor-predasampledata
 

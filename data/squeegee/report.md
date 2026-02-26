@@ -3,7 +3,7 @@
 ## squeegee
 
 ### Tool Description
-A tool for processing or cleaning data (Note: The provided text contains container build logs rather than CLI help documentation, so specific arguments could not be extracted).
+Scoring and final predictions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/squeegee:0.2.0--hdfd78af_0
@@ -18,13 +18,41 @@ A tool for processing or cleaning data (Note: The provided text contains contain
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/squeegee:0.2.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: squeegee [-h] [--numcore NUMCORE] [--min-reads MIN_READS]
+                [--min-abundance MIN_ABUNDANCE]
+                [--min-prevalence MIN_PREVALENCE] [--min-score MIN_SCORE]
+                [--min-align MIN_ALIGN] [--stacked-idx STACKED_IDX]
+                [--version]
+                metadata krakendb output
+
+Scoring and final predictions.
+
+positional arguments:
+  metadata              input matadata in txt format
+  krakendb              directory of kraken database
+  output                squeegee output directory
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --numcore NUMCORE     Number of threads.
+  --min-reads MIN_READS
+                        Minimum number of reads for a species to be consider
+                        as truely present in a sample.
+  --min-abundance MIN_ABUNDANCE
+                        Minimum abundance for a species to be consider as
+                        truely present in a sample.
+  --min-prevalence MIN_PREVALENCE
+                        Minimum prevalence threshold for a species to be
+                        indentified as a contaminant species.
+  --min-score MIN_SCORE
+                        Minimum contaminant score threshold for a species to
+                        be indentified as a contaminant species.
+  --min-align MIN_ALIGN
+                        Minimum breadth of genome coverge threshold for a
+                        species to be indentified as a contaminant species.
+  --stacked-idx STACKED_IDX
+                        Index to determine whether or not aligned reads have
+                        been stacked in small region.
+  --version             show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

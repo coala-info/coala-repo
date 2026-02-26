@@ -1,8 +1,9 @@
 ---
 name: iptkl
-description: The Immunopeptidomic Toolkit (iptkl) is a specialized Python library designed for the deep analysis of HLA-peptidomes.
+description: The Immunopeptidomic Toolkit (iptkl) is a Python library for the deep analysis of HLA-peptidomes that integrates transcriptomic data and protein structural information. Use when user asks to manage immunopeptidomics experiments, map HLA types to peptides, compute protein coverage, or generate visualizations for HLA-peptide data.
 homepage: https://github.com/ikmb/iptoolkit
 ---
+
 
 # iptkl
 

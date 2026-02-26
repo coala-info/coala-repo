@@ -1,9 +1,9 @@
 # ucsc-fasomerecords CWL Generation Report
 
-## ucsc-fasomerecords
+## ucsc-fasomerecords_faSomeRecords
 
 ### Tool Description
-Extract multiple fa records from a fasta file using a list of record names.
+Extract multiple fa records
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-fasomerecords:482--h0b57e2e_0
@@ -18,13 +18,10 @@ Extract multiple fa records from a fasta file using a list of record names.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-fasomerecords:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+faSomeRecords - Extract multiple fa records
+usage:
+   faSomeRecords in.fa listFile out.fa
+options:
+   -exclude - output sequences not in the list file.
 ```
 
-
-## Metadata
-- **Skill**: generated

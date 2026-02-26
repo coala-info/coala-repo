@@ -1,8 +1,9 @@
 ---
 name: bbmap
-description: Fast and accurate splice-aware read aligner.
+description: BBMap is a high-performance bioinformatics suite used for mapping, trimming, merging, and normalizing high-throughput sequencing data. Use when user asks to map reads to a reference genome, trim adapters, filter contaminants, merge paired-end reads, or normalize sequence coverage.
 homepage: https://sourceforge.net/projects/bbmap
 ---
+
 
 # bbmap
 

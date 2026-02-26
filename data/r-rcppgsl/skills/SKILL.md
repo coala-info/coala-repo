@@ -1,8 +1,9 @@
 ---
 name: r-rcppgsl
-description: R package rcppgsl (documentation from project home).
+description: The r-rcppgsl package provides an interface that allows R users to access the GNU Scientific Library (GSL) numerical routines through Rcpp-compatible C++ classes. Use when user asks to integrate GSL numerical routines into R, use GSL data structures in C++ code, or implement high-performance linear algebra and optimization functions.
 homepage: https://cran.r-project.org/web/packages/rcppgsl/index.html
 ---
+
 
 # r-rcppgsl
 

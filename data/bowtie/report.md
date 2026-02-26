@@ -3,35 +3,46 @@
 ## bowtie
 
 ### Tool Description
-An ultrafast, memory-efficient short read aligner (Note: The provided text contains system error messages rather than help text, so no arguments could be extracted).
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10
 - **Homepage**: https://github.com/BenLangmead/bowtie
 - **Package**: https://anaconda.org/channels/bioconda/packages/bowtie/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bowtie/overview
-- **Total Downloads**: 755.6K
+- **Total Downloads**: 755.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/BenLangmead/bowtie
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/97b4679a727f4de783edcf4a8bded107f05145ae79096f19205fe100dd266cf2: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3196432337: no space left on device
+Unable to find image 'quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10' locally
+1.3.1--py312hf8dbd9f_10: Pulling from biocontainers/bowtie
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+79021d4a4cad: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2346255163: no space left on device
+
+Run 'docker run --help' for more information
 ```
-
-
-## Metadata
-- **Skill**: generated
 
 ## bowtie_bowtie-build
 
 ### Tool Description
-The provided text contains system error messages related to disk space and container execution rather than the tool's help documentation. Bowtie-build is a tool for building index files from a set of DNA sequences.
+Builds a Bowtie index from a reference genome.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10
@@ -40,9 +51,54 @@ The provided text contains system error messages related to disk space and conta
 - **Validation**: PASS
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/97b4679a727f4de783edcf4a8bded107f05145ae79096f19205fe100dd266cf2: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2223301110: no space left on device
+Usage: bowtie-build [options]* <reference_in> <ebwt_outfile_base>
+    reference_in            comma-separated list of files with ref sequences
+    ebwt_outfile_base       write Ebwt data to files with this dir/basename
+Options:
+    -f                      reference files are Fasta (default)
+    -c                      reference sequences given on cmd line (as <seq_in>)
+    --large-index           force generated index to be 'large', even if ref
+                            has fewer than 4 billion nucleotides
+    -a/--noauto             disable automatic -p/--bmax/--dcv memory-fitting
+    -p/--packed             use packed strings internally; slower, uses less mem
+    --bmax <int>            max bucket sz for blockwise suffix-array builder
+    --bmaxdivn <int>        max bucket sz as divisor of ref len (default: 4)
+    --dcv <int>             diff-cover period for blockwise (default: 1024)
+    --nodc                  disable diff-cover (algorithm becomes quadratic)
+    -r/--noref              don't build .3/.4.ebwt (packed reference) portion
+    -3/--justref            just build .3/.4.ebwt (packed reference) portion
+    -o/--offrate <int>      SA is sampled every 2^offRate BWT chars (default: 5)
+    -t/--ftabchars <int>    # of chars consumed in initial lookup (default: 10)
+    --threads <int>         # of threads
+    --ntoa                  convert Ns in reference to As
+    --seed <int>            seed for random number generator
+    -q/--quiet              verbose output (for debugging)
+    -h/--help               print detailed description of tool and its options
+    --usage                 print this usage message
+    --version               print version information and quit
+```
+
+## bowtie
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/bowtie:1.3.1--py312hf8dbd9f_10
+- **Homepage**: https://github.com/BenLangmead/bowtie
+- **Package**: https://anaconda.org/channels/bioconda/packages/bowtie/overview
+- **Validation**: FAIL (generation failed)
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+### Validation Errors
+- No inputs — do not generate CWL.
+
+### Original Help Text
+```text
+docker: Error response from daemon: mkdir /var/lib/docker/overlay2/530b8385c132d9559369f09ca7b09e5b35186954aa2f203884b7f5e37f3d096c-init: no space left on device
+
+Run 'docker run --help' for more information
 ```
 

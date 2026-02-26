@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocancer
-description: the package is available on all platforms; click for details.
+description: This tool provides an interactive interface for visualizing and analyzing multi-OMICS cancer data from cBioPortal. Use when user asks to access cancer genomics data, perform gene classification by disease subtype, cluster cancer studies, or generate functional interaction networks with multi-OMICS overlays.
 homepage: https://bioconductor.org/packages/release/bioc/html/bioCancer.html
 ---
+
 
 # bioconductor-biocancer
 

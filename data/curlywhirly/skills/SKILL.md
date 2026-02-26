@@ -1,8 +1,9 @@
 ---
 name: curlywhirly
-description: CurlyWhirly is a high-performance 3D visualization tool specifically optimized for biological and genetic data.
+description: CurlyWhirly is a high-performance 3D visualization tool that transforms complex multi-dimensional coordinate data into interactive scatter plots. Use when user asks to visualize biological data in 3D, explore spatial relationships within large datasets, or filter data points based on metadata categories.
 homepage: https://ics.hutton.ac.uk/curlywhirly
 ---
+
 
 # curlywhirly
 

@@ -2,15 +2,117 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ViralMSA.py
 label: viralmsa_ViralMSA.py
-doc: "Viral Multiple Sequence Alignment tool. Note: The provided help text contains
-  only container runtime error logs and does not list specific command-line arguments.\n
-  \nTool homepage: https://github.com/niemasd/ViralMSA"
-inputs: []
-outputs:
+doc: "Reference-guided multiple sequence alignment of viral genomes\n\nTool homepage:
+  https://github.com/niemasd/ViralMSA"
+inputs:
+  - id: aligner
+    type:
+      - 'null'
+      - string
+    doc: 'Aligner (options: bowtie2, bwa, dragmap, hisat2, lra, minimap2, mm2-fast,
+      ngmlr, seq-align, star, unimap, wfmash, winnowmap)'
+    default: minimap2
+    inputBinding:
+      position: 101
+      prefix: --aligner
+  - id: buffer_size
+    type:
+      - 'null'
+      - int
+    doc: File Stream Buffer Size (bytes)
+    default: 1048576
+    inputBinding:
+      position: 101
+      prefix: --buffer_size
+  - id: email
+    type:
+      - 'null'
+      - string
+    doc: Email Address (for Entrez)
+    inputBinding:
+      position: 101
+      prefix: --email
+  - id: list_references
+    type:
+      - 'null'
+      - boolean
+    doc: List all reference sequences
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --list_references
+  - id: omit_ref
+    type:
+      - 'null'
+      - boolean
+    doc: Omit reference sequence from output alignment
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --omit_ref
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Suppress log output
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --quiet
+  - id: reference
+    type: File
+    doc: Reference
+    inputBinding:
+      position: 101
+      prefix: --reference
+  - id: sequences
+    type: File
+    doc: Input Sequences (FASTA format, or SAM if already mapped)
+    inputBinding:
+      position: 101
+      prefix: --sequences
   - id: stdout
-    type: stdout
-    doc: Standard output
+    type:
+      - 'null'
+      - boolean
+    doc: Write MSA to standard output instead of to file
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --stdout
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of Threads
+    default: 20
+    inputBinding:
+      position: 101
+      prefix: --threads
+  - id: update
+    type:
+      - 'null'
+      - boolean
+    doc: 'Update ViralMSA (current version: 1.1.46)'
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --update
+  - id: viralmsa_dir
+    type:
+      - 'null'
+      - Directory
+    doc: ViralMSA Cache Directory
+    default: /root/.viralmsa
+    inputBinding:
+      position: 101
+      prefix: --viralmsa_dir
+outputs:
+  - id: output
+    type: Directory
+    doc: Output Directory
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/viralmsa:1.1.46--hdfd78af_0
-stdout: viralmsa_ViralMSA.py.out

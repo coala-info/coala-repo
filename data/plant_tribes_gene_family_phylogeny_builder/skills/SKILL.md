@@ -1,8 +1,9 @@
 ---
 name: plant_tribes_gene_family_phylogeny_builder
-description: The `plant_tribes_gene_family_phylogeny_builder` is a specialized pipeline within the PlantTribes comparative genomics suite.
+description: This tool automates the construction of maximum likelihood phylogenetic trees from aligned gene family sequences using FastTree or RAxML. Use when user asks to generate phylogenetic trees for orthogroups, perform evolutionary analysis on gene families, or infer phylogenies from sequence alignments.
 homepage: https://github.com/dePamphilis/PlantTribes
 ---
+
 
 # plant_tribes_gene_family_phylogeny_builder
 

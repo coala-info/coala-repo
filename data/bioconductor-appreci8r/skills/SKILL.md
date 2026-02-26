@@ -1,8 +1,9 @@
 ---
 name: bioconductor-appreci8r
-description: the package is available on all platforms; click for details.
+description: This tool filters and classifies SNVs and short indels by integrating results from multiple variant calling tools using the appreci8 algorithm. Use when user asks to combine outputs from multiple variant callers, normalize and annotate variants, or filter and classify SNVs and short indels.
 homepage: https://bioconductor.org/packages/release/bioc/html/appreci8R.html
 ---
+
 
 # bioconductor-appreci8r
 

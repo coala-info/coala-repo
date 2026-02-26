@@ -1,8 +1,9 @@
 ---
 name: xcftools
-description: xcftools is a collection of fast, scriptable command-line utilities designed to handle GIMP's native XCF file format without requiring the GIMP engine or installation.
+description: xcftools provides command-line utilities for processing GIMP's XCF file format. Use when user asks to inspect XCF file metadata, convert XCF files to PNG or PNM, extract specific layers, flatten images with a background color, or extract an alpha map.
 homepage: https://github.com/j-jorge/xcftools
 ---
+
 
 # xcftools
 

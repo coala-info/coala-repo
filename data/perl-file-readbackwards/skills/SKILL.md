@@ -1,8 +1,9 @@
 ---
 name: perl-file-readbackwards
-description: This tool provides an efficient way to read files backwards.
+description: This tool reads files line by line starting from the end and moving toward the beginning. Use when user asks to read files backwards, tail log files, or extract the latest events from a dataset.
 homepage: http://metacpan.org/pod/File::ReadBackwards
 ---
+
 
 # perl-file-readbackwards
 

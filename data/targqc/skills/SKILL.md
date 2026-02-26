@@ -1,8 +1,9 @@
 ---
 name: targqc
-description: targqc is a specialized utility for evaluating the coverage quality of targeted sequencing experiments.
+description: targqc evaluates the coverage quality of targeted sequencing experiments by processing alignment files against specific genomic regions. Use when user asks to assess sequencing depth, identify coverage cold spots in capture assays, or generate quality control reports for targeted genomic data.
 homepage: https://github.com/vladsaveliev/TargQC
 ---
+
 
 # targqc
 

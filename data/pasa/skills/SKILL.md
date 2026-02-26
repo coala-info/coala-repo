@@ -1,8 +1,9 @@
 ---
 name: pasa
-description: PASA (Program to Assemble Spliced Alignments) is a specialized pipeline designed to bridge the gap between transcriptomic data and genomic annotation.
+description: "PASA assembles transcript alignments into coherent gene models to refine and validate genomic annotations. Use when user asks to assemble spliced alignments, update existing gene annotations, or classify alternative splicing events."
 homepage: https://pasapipeline.github.io/
 ---
+
 
 # pasa
 

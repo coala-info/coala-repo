@@ -3,7 +3,7 @@
 ## perl-pod-coverage
 
 ### Tool Description
-The provided text does not contain help information as the executable was not found in the environment.
+Check POD coverage of Perl modules.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-pod-coverage:0.23--pl5.22.0_0
@@ -18,37 +18,21 @@ The provided text does not contain help information as the executable was not fo
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 16:45:13  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "perl-pod-coverage": executable file not found in $PATH
-```
+Unable to find image 'quay.io/biocontainers/perl-pod-coverage:0.23--pl5.22.0_0' locally
+0.23--pl5.22.0_0: Pulling from biocontainers/perl-pod-coverage
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+ec087fe689b8: Pulling fs layer
+ec087fe689b8: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob2682866677: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## perl-pod-coverage_pod_cover
-
-### Tool Description
-Pod coverage analysis tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-pod-coverage:0.23--pl5.22.0_0
-- **Homepage**: https://github.com/richardc/perl-pod-coverage
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-Pod coverage analysis v1.00 (C) by Tels 2001.
-Using Pod::Coverage v0.23
-
-Sat Feb 14 16:46:21 2026 Starting analysis:
+Run 'docker run --help' for more information
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-caen
-description: the package is available on all platforms; click for details.
+description: The bioconductor-caen package implements a feature selection method for single-cell RNA-seq data using category number encoding and Spearman correlation. Use when user asks to select differentially expressed genes, estimate classification error rates, or perform zero-inflated Poisson linear discriminant analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/CAEN.html
 ---
+
 
 # bioconductor-caen
 

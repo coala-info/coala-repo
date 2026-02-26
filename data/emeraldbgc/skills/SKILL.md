@@ -1,8 +1,9 @@
 ---
 name: emeraldbgc
-description: `emeraldbgc` is a specialized tool for the detection of Small Molecule Biosynthetic Gene Clusters (SMBGCs).
+description: emeraldbgc detects small molecule biosynthetic gene clusters in genomic sequences using protein domain annotations and probability scoring. Use when user asks to identify biosynthetic gene clusters, find the nearest known MiBIG cluster, or generate GFF3-formatted cluster predictions.
 homepage: https://github.com/Finn-Lab/emeraldBGC
 ---
+
 
 # emeraldbgc
 

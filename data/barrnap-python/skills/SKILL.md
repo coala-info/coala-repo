@@ -1,8 +1,9 @@
 ---
 name: barrnap-python
-description: barrnap-python is a distribution of the Basic Rapid Ribosomal RNA Predictor (barrnap), originally developed by Torsten Seemann.
+description: barrnap-python predicts the location of ribosomal RNA genes in DNA sequences using hidden Markov models. Use when user asks to identify rRNA signatures, annotate ribosomal subunits in a genome, or generate GFF3 files for bacterial, archaeal, eukaryotic, or mitochondrial sequences.
 homepage: https://github.com/nickp60/barrnap-python
 ---
+
 
 # barrnap-python
 

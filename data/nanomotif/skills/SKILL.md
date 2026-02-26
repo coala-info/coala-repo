@@ -1,8 +1,9 @@
 ---
 name: nanomotif
-description: Nanomotif is a specialized bioinformatics tool designed to identify prokaryotic DNA methylation motifs from nanopore sequencing data.
+description: Nanomotif identifies prokaryotic DNA methylation motifs from nanopore sequencing data to characterize epigenetic patterns. Use when user asks to identify de novo methylation motifs, refine metagenomic bins, or score motif presence across an assembly.
 homepage: https://pypi.org/project/nanomotif/
 ---
+
 
 # nanomotif
 

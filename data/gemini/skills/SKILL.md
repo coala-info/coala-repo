@@ -1,8 +1,9 @@
 ---
 name: gemini
-description: GEMINI (GEnome MINIing) is a specialized framework for exploring genetic variation in personal and medical genetics.
+description: GEMINI integrates VCF files and genome annotations into a relational database to facilitate the exploration and analysis of genetic variation. Use when user asks to load VCF files into a database, query genetic variants using SQL, or identify inheritance patterns such as autosomal recessive, de novo, and compound heterozygote mutations.
 homepage: https://github.com/arq5x/gemini
 ---
+
 
 # gemini
 

@@ -1,8 +1,9 @@
 ---
 name: xsd
-description: The `xsdata` tool is a high-performance data binding library for Python.
+description: The `xsdata` tool generates Python dataclasses from XML schemas (XSD, WSDL) and facilitates binding XML and JSON data to these objects. Use when user asks to generate Python models from XSD or WSDL, parse XML into Python objects, or serialize Python objects to XML.
 homepage: https://github.com/tefra/xsdata
 ---
+
 
 # xsd
 

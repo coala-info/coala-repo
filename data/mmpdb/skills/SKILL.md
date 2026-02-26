@@ -1,8 +1,9 @@
 ---
 name: mmpdb
-description: mmpdb is a high-performance cheminformatics tool designed to identify and analyze Matched Molecular Pairs (MMPs) within large chemical libraries.
+description: mmpdb is a cheminformatics tool for identifying and analyzing Matched Molecular Pairs to understand how chemical substitutions affect molecular properties. Use when user asks to fragment molecules, index fragment files into databases, load property data, transform structures, or predict property changes based on molecular transformations.
 homepage: https://github.com/rdkit/mmpdb
 ---
+
 
 # mmpdb
 

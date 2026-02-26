@@ -1,15 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: expressbetadiversity_convertToEBD.py
+baseCommand: convertToEBD.py
 label: expressbetadiversity_convertToEBD.py
-doc: "A tool to convert data to EBD (Express Beta Diversity) format.\n\nTool homepage:
-  https://github.com/dparks1134/ExpressBetaDiversity"
-inputs: []
+doc: "Convert UniFrac environment files for use with EBD.\n\nTool homepage: https://github.com/dparks1134/ExpressBetaDiversity"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input OTU table in sparse or dense UniFrac format.
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Output OTU table in EBD format.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/expressbetadiversity:1.0.10--h9f5acd7_3
-stdout: expressbetadiversity_convertToEBD.py.out
+    dockerPull: quay.io/biocontainers/expressbetadiversity:1.0.10--h9948957_6

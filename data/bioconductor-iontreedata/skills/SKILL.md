@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iontreedata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides example mass spectrometry datasets and a demo SQLite database for the iontree package. Use when user asks to load raw MS2 or MS3 scans, access the demo mzDB database, or test iontree package functionalities.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/iontreeData.html
 ---
+
 
 # bioconductor-iontreedata
 

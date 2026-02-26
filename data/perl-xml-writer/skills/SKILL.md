@@ -1,8 +1,9 @@
 ---
 name: perl-xml-writer
-description: The `perl-xml-writer` skill provides a reliable interface for producing XML output from Perl scripts.
+description: The perl-xml-writer tool provides a Perl interface for generating well-formed XML documents with automatic handling of attribute escaping, tag nesting, and namespaces. Use when user asks to generate XML output from Perl scripts, manage XML namespaces, or create structured data files like configuration and bioinformatics reports.
 homepage: http://metacpan.org/pod/XML-Writer
 ---
+
 
 # perl-xml-writer
 

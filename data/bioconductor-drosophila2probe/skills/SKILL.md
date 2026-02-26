@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drosophila2probe
-description: the package is available on all platforms; click for details.
+description: This package provides the nucleotide sequence data and array coordinates for probes on the Affymetrix Drosophila Genome 2.0 Array. Use when user asks to access probe sequences, map probes to probe sets, or perform sequence-specific analysis for Drosophila melanogaster microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosophila2probe.html
 ---
+
 
 # bioconductor-drosophila2probe
 

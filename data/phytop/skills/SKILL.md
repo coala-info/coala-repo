@@ -1,8 +1,9 @@
 ---
 name: phytop
-description: Phytop is a specialized tool for evolutionary biologists to detect and visualize phylogenetic discordance.
+description: Phytop detects and visualizes phylogenetic discordance by quantifying incomplete lineage sorting and hybridization signals between gene trees and species trees. Use when user asks to visualize gene tree conflict, calculate ILS and IH indices, map discordance data onto species trees, or screen lineages for introgression.
 homepage: https://github.com/zhangrengang/phytop/
 ---
+
 
 # phytop
 

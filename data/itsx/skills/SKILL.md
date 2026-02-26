@@ -1,8 +1,9 @@
 ---
 name: itsx
-description: The `itsx` skill provides a specialized workflow for processing eukaryotic ribosomal sequences.
+description: ITSx identifies and extracts ITS1 and ITS2 subregions from eukaryotic ribosomal sequences while trimming conserved rRNA genes. Use when user asks to extract ITS regions, process fungal metabarcoding data, or isolate ribosomal subregions from FASTA files.
 homepage: http://microbiology.se/software/itsx/
 ---
+
 
 # itsx
 

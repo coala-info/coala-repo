@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseeu
-description: the package is available on all platforms; click for details.
+description: The bioconductor-iseeu package provides specialized panels and pre-configured application modes to extend the iSEE framework for interactive bioinformatics visualization. Use when user asks to visualize differential expression with volcano or MA plots, perform dynamic dimensionality reduction on selected data subsets, compute marker statistics in real-time, or launch pre-configured interactive app modes.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEu.html
 ---
+
 
 # bioconductor-iseeu
 

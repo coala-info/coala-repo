@@ -1,8 +1,9 @@
 ---
 name: strvctvre
-description: StrVCTVRE (Structural Variant Classifier Trained on Variants Rare and Exonic) is a specialized machine learning tool designed to predict the clinical impact of structural variants (SVs) that overlap exons.
+description: StrVCTVRE predicts the clinical impact of structural variants that overlap exons using a machine learning framework. Use when user asks to predict the pathogenicity of structural variants, annotate VCF or BED files with impact scores, or classify exonic deletions and duplications.
 homepage: https://github.com/andrewSharo/StrVCTVRE/tree/master
 ---
+
 
 # strvctvre
 

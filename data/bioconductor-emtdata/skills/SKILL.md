@@ -1,8 +1,9 @@
 ---
 name: bioconductor-emtdata
-description: the package is available on all platforms; click for details.
+description: This tool provides access to curated, pre-processed RNA-seq datasets related to Epithelial to Mesenchymal Transition (EMT) stored as SummarizedExperiment objects. Use when user asks to load EMT-related transcriptomic data, access Cursons or Foroutan datasets, or retrieve experiment data for differential expression and co-expression analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/emtdata.html
 ---
+
 
 # bioconductor-emtdata
 

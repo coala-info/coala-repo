@@ -1,8 +1,9 @@
 ---
 name: aquamis
-description: AQUAMIS (Assembly-based QUality Assessment for Microbial Isolate Sequencing) is a robust Snakemake-based pipeline designed for the routine processing of microbial isolate sequencing experiments.
+description: AQUAMIS is a Snakemake-based pipeline for the assembly and quality assessment of microbial isolate sequencing data. Use when user asks to process raw reads into assemblies, perform quality control on microbial isolates, or generate comprehensive QC reports for sequencing experiments.
 homepage: https://gitlab.com/bfr_bioinformatics/AQUAMIS
 ---
+
 
 # aquamis
 

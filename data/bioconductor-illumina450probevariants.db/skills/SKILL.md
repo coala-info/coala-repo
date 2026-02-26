@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illumina450probevariants.db
-description: the package is available on all platforms; click for details.
+description: This package provides genetic variant data from the 1000 Genomes Project mapped to Illumina HumanMethylation450 Bead Chip probes to identify potential confounding variations. Use when user asks to identify probes affected by SNPs or indels, filter methylation data by population-specific minor allele frequency, or flag variants within probe sequences.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Illumina450ProbeVariants.db.html
 ---
+
 
 # bioconductor-illumina450probevariants.db
 

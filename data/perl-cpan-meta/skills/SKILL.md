@@ -1,8 +1,9 @@
 ---
 name: perl-cpan-meta
-description: The `perl-cpan-meta` skill provides the capability to interact with CPAN distribution metadata.
+description: This tool reads, writes, and validates metadata files for Perl distributions according to the CPAN Meta Spec. Use when user asks to validate META.json or META.yml files, extract distribution versioning, or list package dependencies.
 homepage: https://github.com/dagolden/cpan-meta
 ---
+
 
 # perl-cpan-meta
 

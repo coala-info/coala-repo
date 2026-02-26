@@ -1,8 +1,9 @@
 ---
 name: kakscalculator2
-description: `kakscalculator2` is a specialized toolkit designed for molecular evolution studies.
+description: kakscalculator2 calculates the ratio of nonsynonymous to synonymous substitutions to estimate selective pressure on coding sequences. Use when user asks to calculate Ka/Ks ratios, perform sliding window selection analysis, or estimate evolutionary constraints on aligned sequences.
 homepage: https://github.com/kullrich/kakscalculator2
 ---
+
 
 # kakscalculator2
 

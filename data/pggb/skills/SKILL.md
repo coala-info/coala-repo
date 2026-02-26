@@ -1,8 +1,9 @@
 ---
 name: pggb
-description: The PanGenome Graph Builder (`pggb`) is a sophisticated pipeline designed to render a collection of genomes into a single, unified variation graph.
+description: The PanGenome Graph Builder renders a collection of genomes into a single, unified variation graph representing all structural variations. Use when user asks to build a pangenome graph, align multiple genomes into a graph structure, or generate a VCF from a pangenome.
 homepage: https://github.com/pangenome/pggb
 ---
+
 
 # pggb
 

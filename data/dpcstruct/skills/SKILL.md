@@ -1,8 +1,9 @@
 ---
 name: dpcstruct
-description: dpcstruct is a specialized tool for structural bioinformatics that automates the identification of protein domains through unsupervised clustering.
+description: dpcstruct identifies protein domains through unsupervised clustering of 3D structural alignments. Use when user asks to identify structural domains, partition proteins into functional units, or perform large-scale structural clustering.
 homepage: https://github.com/RitAreaSciencePark/DPCstruct
 ---
+
 
 # dpcstruct
 

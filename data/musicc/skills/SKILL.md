@@ -1,8 +1,9 @@
 ---
 name: musicc
-description: The MUSICC (Marker genes-based framework for metagenomic normalization) tool addresses the bias introduced by varying genome sizes in metagenomic samples.
+description: MUSICC normalizes metagenomic gene abundances by converting them into genomic copies per cell using universal single-copy marker genes. Use when user asks to normalize metagenomic data, correct for genome size bias, or convert gene counts to copies per cell.
 homepage: http://elbo.gs.washington.edu/software_musicc.html
 ---
+
 
 # musicc
 

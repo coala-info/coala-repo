@@ -1,8 +1,9 @@
 ---
 name: fastutils
-description: `fastutils` is a lightweight C++ toolkit designed for high-performance processing of genomic sequence data.
+description: fastutils is a high-performance toolkit for processing and manipulating genomic sequence data in FASTA and FASTQ formats. Use when user asks to generate sequence statistics, reformat or filter reads, interleave paired-end files, subsample datasets by coverage, extract subsequences, or perform reverse complement operations.
 homepage: https://github.com/haghshenas/fastutils
 ---
+
 
 # fastutils
 

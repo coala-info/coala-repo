@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fibroeset
-description: the package is available on all platforms; click for details.
+description: This package provides access to the Karaman et al. (2003) fibroblast gene expression dataset as a Bioconductor ExpressionSet object. Use when user asks to analyze comparative microarray data from human and ape cell lines, access primate fibroblast expression data, or utilize an example dataset for Bioconductor workflow demonstrations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fibroEset.html
 ---
+
 
 # bioconductor-fibroeset
 

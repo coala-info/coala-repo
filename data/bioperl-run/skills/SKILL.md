@@ -1,8 +1,9 @@
 ---
 name: bioperl-run
-description: bioperl-run is a specialized suite of Perl modules designed to provide a consistent interface to a wide array of external bioinformatics software.
+description: "Bioperl-run provides a consistent Perl interface to execute and manage external bioinformatics software using BioPerl objects. Use when user asks to run sequence alignment tools, perform homology searches, predict genes, or build phylogenetic trees through Perl scripts."
 homepage: https://github.com/bioperl/bioperl-run
 ---
+
 
 # bioperl-run
 

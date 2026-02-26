@@ -2,10 +2,56 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gfainject
 label: gfainject
-doc: "The provided text is a system error log (Apptainer/Singularity) and does not
-  contain the help documentation for gfainject. As a result, no arguments could be
-  extracted.\n\nTool homepage: https://github.com/AndreaGuarracino/gfainject"
-inputs: []
+doc: "Injects sequence information from BAM/PAF/GBAM files into a GFA graph.\n\nTool
+  homepage: https://github.com/AndreaGuarracino/gfainject"
+inputs:
+  - id: alt_hits
+    type:
+      - 'null'
+      - int
+    doc: Emit up to ALT_HITS alternative alignments (from XA tag, only for 
+      BAM/GBAM input)
+    inputBinding:
+      position: 101
+      prefix: --alt-hits
+  - id: bam
+    type:
+      - 'null'
+      - File
+    doc: Path to input BAM file
+    inputBinding:
+      position: 101
+      prefix: --bam
+  - id: gbam
+    type:
+      - 'null'
+      - File
+    doc: Path to input GBAM file
+    inputBinding:
+      position: 101
+      prefix: --gbam
+  - id: gfa
+    type: File
+    doc: Path to input GFA file
+    inputBinding:
+      position: 101
+      prefix: --gfa
+  - id: paf
+    type:
+      - 'null'
+      - File
+    doc: Path to input PAF file
+    inputBinding:
+      position: 101
+      prefix: --paf
+  - id: range
+    type:
+      - 'null'
+      - string
+    doc: Range query in format "path_name:start-end"
+    inputBinding:
+      position: 101
+      prefix: --range
 outputs:
   - id: stdout
     type: stdout

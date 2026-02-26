@@ -1,8 +1,9 @@
 ---
 name: bitseq
-description: BitSeq (Bayesian Inference of Transcripts from SEQuencing data) is a specialized toolset for analyzing RNA-seq data at the transcript level.
+description: "BitSeq uses a probabilistic framework to estimate transcript-level expression and differential expression from RNA-seq data. Use when user asks to parse alignments, estimate transcript expression using MCMC or Variational Bayes, perform differential expression analysis, or calculate posterior probabilities of log ratios."
 homepage: https://github.com/BitSeq/BitSeq
 ---
+
 
 # bitseq
 

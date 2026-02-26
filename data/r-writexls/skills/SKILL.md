@@ -1,8 +1,9 @@
 ---
 name: r-writexls
-description: "Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX)              files from one or more data frames. Each data frame will be              written to a separate named worksheet in the Excel spreadsheet.              The worksheet name will be the name of the data frame it contains              or can be specified by the user. </p>"
+description: This tool exports R data frames to Excel XLS or XLSX files using a Perl-based backend. Use when user asks to export data frames to Excel workbooks, save multiple datasets as named worksheets, or apply Excel formatting like frozen panes and auto-filters.
 homepage: https://cloud.r-project.org/web/packages/WriteXLS/index.html
 ---
+
 
 # r-writexls
 

@@ -1,8 +1,9 @@
 ---
 name: perl-parallel-iterator
-description: The `perl-parallel-iterator` skill provides guidance on using the `Parallel::Iterator` library to parallelize iterative tasks.
+description: This tool provides a simple interface to parallelize iterative tasks in Perl by managing a pool of worker processes. Use when user asks to parallelize loops or map calls, manage worker concurrency, or process large datasets in batches.
 homepage: http://metacpan.org/pod/Parallel::Iterator
 ---
+
 
 # perl-parallel-iterator
 

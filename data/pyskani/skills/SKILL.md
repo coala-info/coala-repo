@@ -1,8 +1,9 @@
 ---
 name: pyskani
-description: pyskani is a Python interface to skani, a high-performance method for genomic identity calculation using sparse chaining.
+description: pyskani provides a Python interface for fast and memory-efficient genomic identity calculations using sparse chaining. Use when user asks to calculate Average Nucleotide Identity (ANI), sketch genomic databases in memory, or query sequences against reference genomes.
 homepage: https://github.com/althonos/pyskani/
 ---
+
 
 # pyskani
 

@@ -1,8 +1,9 @@
 ---
 name: abnumber
-description: The `abnumber` skill provides a streamlined interface for antibody sequence analysis, acting as a high-level Python API for the ANARCI numbering tool.
+description: The abnumber tool provides a Python interface for antibody sequence numbering and structural region identification using the ANARCI tool. Use when user asks to number antibody sequences, extract CDR or framework regions, perform human germline alignment, or conduct CDR grafting for antibody engineering.
 homepage: https://github.com/prihoda/AbNumber
 ---
+
 
 # abnumber
 

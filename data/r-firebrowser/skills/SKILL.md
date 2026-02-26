@@ -1,8 +1,9 @@
 ---
 name: r-firebrowser
-description: R package firebrowser (documentation from project home).
+description: This R client provides programmatic access to the Broad Institute's Firehose Web API for downloading and analyzing TCGA data sets. Use when user asks to download TCGA data, retrieve mRNA expression levels, fetch clinical information, or query somatic mutations.
 homepage: https://cran.r-project.org/web/packages/firebrowser/index.html
 ---
+
 
 # r-firebrowser
 

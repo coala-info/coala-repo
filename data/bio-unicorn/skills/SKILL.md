@@ -1,8 +1,9 @@
 ---
 name: bio-unicorn
-description: bio-unicorn is a specialized tool for metagenomic profiling that extracts high-resolution statistics from short-read alignments.
+description: bio-unicorn is a metagenomic profiling tool that extracts high-resolution alignment statistics and resolves multi-mapped reads using an expectation-maximization algorithm. Use when user asks to calculate per-reference statistics, summarize taxonomic data by TaxID, resolve multi-mapping alignments, or generate global BAM summaries.
 homepage: https://github.com/GeoGenetics/unicorn
 ---
+
 
 # bio-unicorn
 

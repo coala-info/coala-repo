@@ -1,8 +1,9 @@
 ---
 name: abundancebin
-description: A tool for binning metagenomic sequences based on abundance and k-mer composition.
+description: AbundanceBin is a metagenomic binning tool that classifies sequences into clusters based on their abundance levels. Use when user asks to bin metagenomic sequences, perform recursive clustering on FASTA files, or classify sequences without pre-specifying the number of clusters.
 homepage: https://github.com/movingpictures83/AbundanceBin
 ---
+
 
 # abundancebin
 

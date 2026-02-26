@@ -1,8 +1,9 @@
 ---
 name: transgenescan
-description: TransGeneScan is a specialized gene-finding tool optimized for metatranscriptomic data.
+description: TransGeneScan predicts coding sequences and genes in metatranscriptomic data, including on both sense and anti-sense strands. Use when user asks to predict coding sequences, find genes in metatranscriptomic data, convert gene predictions to GFF format, separate sense and antisense gene predictions, or assemble transcripts and predict genes from raw reads.
 homepage: https://github.com/COL-IU/TransGeneScan
 ---
+
 
 # transgenescan
 

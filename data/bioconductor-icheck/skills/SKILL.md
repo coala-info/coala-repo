@@ -1,8 +1,9 @@
 ---
 name: bioconductor-icheck
-description: the package is available on all platforms; click for details.
+description: This tool provides a quality control and statistical analysis pipeline for Illumina mRNA expression data. Use when user asks to identify outlying probes, detect batch effects, perform data normalization, or run differential expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/iCheck.html
 ---
+
 
 # bioconductor-icheck
 

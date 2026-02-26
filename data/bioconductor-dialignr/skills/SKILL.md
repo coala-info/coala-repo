@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dialignr
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: DIAlignR performs retention time alignment of targeted mass spectrometry data using MS2 chromatograms to establish peak correspondence across multiple runs. Use when user asks to perform star, MST, or progressive alignment, visualize extracted-ion chromatograms, or extract aligned peak intensities across multiple proteomics or metabolomics runs.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/DIAlignR.html
 ---
+
 
 # bioconductor-dialignr
 

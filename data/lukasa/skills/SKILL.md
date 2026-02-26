@@ -1,8 +1,9 @@
 ---
 name: lukasa
-description: Lukasa is a bioinformatics utility designed to streamline the process of mapping protein evidence to eukaryotic genomes.
+description: Lukasa maps protein evidence to eukaryotic genomes using a splice-aware alignment workflow. Use when user asks to map protein sequences to a genome, perform splice-aware protein alignment, or generate GFF3 files for genome annotation.
 homepage: https://github.com/pvanheus/lukasa
 ---
+
 
 # lukasa
 

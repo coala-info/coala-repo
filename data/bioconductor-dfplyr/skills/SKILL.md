@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dfplyr
-description: the package is available on all platforms; click for details.
+description: DFplyr provides a dplyr-compatible interface for performing data manipulation directly on Bioconductor S4Vectors DataFrame objects. Use when user asks to manipulate DataFrame objects using dplyr verbs, preserve S4-specific column types like GRanges during data wrangling, or perform joins and grouped operations on Bioconductor metadata containers.
 homepage: https://bioconductor.org/packages/release/bioc/html/DFplyr.html
 ---
+
 
 # bioconductor-dfplyr
 

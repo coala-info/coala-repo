@@ -1,8 +1,9 @@
 ---
 name: r-sqldf
-description: "The sqldf() function is typically passed a single argument which  	is an SQL select statement where the table names are ordinary R data  	frame names.  sqldf() transparently sets up a database, imports the  	data frames into that database, performs the SQL select or other 	statement and returns the result using a heuristic to determine which  	class to assign to each column of the returned data frame.  The sqldf()  	or read.csv.sql() functions can also be used to read filtered files  	into R even if the original files are larger than R itself can handle. 	'RSQLite', 'RH2', 'RMySQL' and 'RPostgreSQL' backends are supported.</p>"
+description: This tool allows users to manipulate R data frames using SQL syntax. Use when user asks to perform complex data manipulation, join or aggregate data frames using SQL, or read and filter large CSV files that exceed available memory.
 homepage: https://cloud.r-project.org/web/packages/sqldf/index.html
 ---
+
 
 # r-sqldf
 

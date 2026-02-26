@@ -1,8 +1,9 @@
 ---
 name: expam
-description: `expam` is a computational tool designed for high-resolution metagenomic profiling.
+description: expam is a computational tool for high-resolution metagenomic profiling that maps sequencing reads to phylogenetic trees. Use when user asks to build genomic databases, perform tree-based metagenomic profiling, map results to NCBI taxonomy, or visualize microbial community distributions.
 homepage: https://github.com/seansolari/expam
 ---
+
 
 # expam
 

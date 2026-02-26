@@ -1,8 +1,9 @@
 ---
 name: famsa
-description: FAMSA (Fast Alignment of Multiple Sequences Algorithm) is a specialized tool for large-scale protein sequence alignment.
+description: FAMSA is a high-performance tool designed for large-scale multiple sequence alignment of protein datasets. Use when user asks to align protein sequences, perform profile-profile alignment, generate distance or identity matrices, or export guide trees.
 homepage: https://github.com/refresh-bio/FAMSA
 ---
+
 
 # famsa
 

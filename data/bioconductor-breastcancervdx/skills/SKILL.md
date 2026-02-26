@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breastcancervdx
-description: the package is available on all platforms; click for details.
+description: This package provides access to the breastCancerVDX Bioconductor experiment data containing gene expression and clinical metadata from two major breast cancer studies. Use when user asks to load the vdx ExpressionSet, analyze breast cancer gene expression data, or access clinical metadata for survival analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerVDX.html
 ---
+
 
 # bioconductor-breastcancervdx
 

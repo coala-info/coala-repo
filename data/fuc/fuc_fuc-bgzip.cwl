@@ -2,12 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - fuc
-  - bgzip
+  - fuc-bgzip
 label: fuc_fuc-bgzip
-doc: "The provided text does not contain help information for the tool. It contains
-  error messages related to a container runtime (Apptainer/Singularity) failing to
-  build an image due to insufficient disk space.\n\nTool homepage: https://github.com/sbslee/fuc"
-inputs: []
+doc: "Write a BGZF compressed file.\n\nTool homepage: https://github.com/sbslee/fuc"
+inputs:
+  - id: file
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: 'Input file to be compressed (default: stdin).'
+    default: stdin
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: jvarkit-bam2svg
-description: `jvarkit-bam2svg` is a specialized utility for rendering sequence alignment data into Scalable Vector Graphics (SVG) format.
+description: "jvarkit-bam2svg renders sequence alignment data from BAM files into high-fidelity SVG vector graphics for specific genomic regions. Use when user asks to visualize read-level alignment details, generate publication-quality figures of genomic intervals, or overlay variants and gene annotations onto sequence data."
 homepage: http://lindenb.github.io/jvarkit/BamToSVG.html
 ---
+
 
 # jvarkit-bam2svg
 

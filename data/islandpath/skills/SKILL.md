@@ -1,8 +1,9 @@
 ---
 name: islandpath
-description: IslandPath-DIMOB is a specialized bioinformatics tool designed to identify genomic islands—clusters of genes acquired through horizontal origin that often carry adaptations related to virulence, antibiotic resistance, or environmental metabolism.
+description: IslandPath-DIMOB identifies genomic islands in prokaryotic genomes by analyzing dinucleotide bias and the presence of mobility genes. Use when user asks to identify genomic islands, detect dinucleotide bias, or locate mobility-related genes in GenBank files.
 homepage: http://www.pathogenomics.sfu.ca/islandpath/
 ---
+
 
 # islandpath
 

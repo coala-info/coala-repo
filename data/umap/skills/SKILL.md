@@ -1,8 +1,9 @@
 ---
 name: umap
-description: The `umap` software suite provides a deterministic way to identify which regions of a genome can be uniquely mapped by sequencing reads of a specific length.
+description: Umap identifies regions of a genome that can be uniquely mapped by sequencing reads of a specific length. Use when user asks to calculate genome mappability, calculate methylome mappability, identify mappable cytosines, or filter ambiguous genomic regions.
 homepage: https://bitbucket.org/hoffmanlab/umap/
 ---
+
 
 # umap
 

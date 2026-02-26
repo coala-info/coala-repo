@@ -1,8 +1,9 @@
 ---
 name: vembrane
-description: vembrane is a specialized tool for the manipulation of Variant Call Format (VCF) and Binary VCF (BCF) files.
+description: vembrane manipulates VCF/BCF files using Python expressions for advanced filtering and data extraction. Use when user asks to filter or tag variants, extract variant data into tables, sort or prioritize variants, annotate variants, or convert VCF data to JSON, YAML, or FHIR.
 homepage: https://github.com/vembrane/vembrane
 ---
+
 
 # vembrane
 

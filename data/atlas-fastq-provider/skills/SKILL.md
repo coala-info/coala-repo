@@ -1,8 +1,9 @@
 ---
 name: atlas-fastq-provider
-description: The `atlas-fastq-provider` is a specialized utility designed to simplify the process of fetching raw sequencing data for bioinformatics pipelines.
+description: The atlas-fastq-provider utility retrieves raw sequencing data from various sources like ENA and HCA using a unified interface. Use when user asks to fetch FASTQ files, download ENA libraries, retrieve HCA data bundles, or validate data availability before running a pipeline.
 homepage: https://github.com/ebi-gene-expression-group/atlas-fastq-provider
 ---
+
 
 # atlas-fastq-provider
 

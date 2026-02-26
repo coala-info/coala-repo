@@ -3,7 +3,7 @@
 ## mvp
 
 ### Tool Description
-The provided text does not contain help information for the 'mvp' tool. It contains error messages related to a Singularity/Apptainer environment failure (no space left on device) while attempting to pull a Docker image.
+Motif-Variant Probe: detect motif gain and loss due to mutations
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mvp:0.4.3--py35_0
@@ -18,11 +18,27 @@ The provided text does not contain help information for the 'mvp' tool. It conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mvp:0.4.3--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2742135542: no space left on device
+usage: mvp [-h] [-o OUTFILE] -r REFERENCE (-f MOTIF_FILE | -m MOTIF_LIST)
+           [-t {dna,aa}]
+           infile
+
+Motif-Variant Probe: detect motif gain and loss due to mutations
+
+positional arguments:
+  infile                vcf or vcf.gz file containing mutations (default:
+                        stdin)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTFILE, --outfile OUTFILE
+                        results table (default: stdout)
+  -r REFERENCE, --reference REFERENCE
+                        reference sequence in fasta format
+  -f MOTIF_FILE, --motif-file MOTIF_FILE
+                        file containing a list of motifs to check
+  -m MOTIF_LIST, --motif-list MOTIF_LIST
+                        a comma-delimited string of motifs to check
+  -t {dna,aa}, --sequence-type {dna,aa}
+                        DNA or amino acid (default: dna)
 ```
 
-
-## Metadata
-- **Skill**: generated

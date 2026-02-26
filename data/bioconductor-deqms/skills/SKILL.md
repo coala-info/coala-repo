@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deqms
-description: The package can be applied to analyze both label-free and labelled proteomics data.
+description: DEqMS is an R package that performs differential expression analysis for proteomics data by adjusting variance estimates based on the number of peptides or PSMs quantified for each protein. Use when user asks to perform differential expression analysis on mass spectrometry data, adjust limma variance estimates using peptide counts, or aggregate PSM-level data to protein-level summaries.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEqMS.html
 ---
+
 
 # bioconductor-deqms
 

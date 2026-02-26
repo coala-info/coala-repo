@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcmap
-description: the package performs differential expression analysis using the limma or DESeq packages. Supplying a simple list of gene identifiers, global differential expression profiles or data from complete experiments as input, users can use a unified set of several well-known gene set enrichment analysis methods to retrieve experiments with similar changes in gene expression. To take into account the directionality of gene expression changes, gCMAPQuery introduces the SignedGeneSet class, directly extending GeneSet from the GSEABase package.  To increase performance of large queries, multiple gene sets are stored as sparse incidence matrices within CMAPCollection eSets. gCMAP offers implementations of 1. Fisher's exact test (Fisher, J R Stat Soc, 1922) 2. The "connectivity map" method (Lamb et al, Science, 2006) 3. Parametric and non-parametric t-statistic summaries (Jiang & Gentleman, Bioinformatics, 2007) and 4. Wilcoxon / Mann-Whitney rank sum statistics (Wilcoxon, Biometrics Bulletin, 1945) as well as wrappers for the 5. camera (Wu & Smyth, Nucleic Acid Res, 2012) 6. mroast and romer (Wu et al, Bioinformatics, 2010) functions from the limma package and 7. wraps the gsea method from the mgsa package (Bauer et al, NAR, 2010). All methods return CMAPResult objects, an S4 class inheriting from AnnotatedDataFrame, containing enrichment statistics as well as annotation data and providing simple high-level summary plots.
+description: This tool performs differential expression analysis and gene set enrichment analysis to compare transcriptomic profiles across experiments. Use when user asks to compare gene expression profiles, perform connectivity mapping, create gene set collections, or run enrichment algorithms like Fisher's exact test and Wilcoxon rank-sum.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gCMAP.html
 ---
+
 
 # bioconductor-gcmap
 

@@ -1,8 +1,9 @@
 ---
 name: bayescan
-description: BayeScan is a command-line tool designed to identify candidate loci under natural selection by analyzing differences in allele frequencies between populations.
+description: BayeScan identifies candidate loci under natural selection by analyzing differences in allele frequencies between populations using a Bayesian model. Use when user asks to detect outliers under selection, identify loci with significant FST coefficients, or perform genome scans for diversifying and balancing selection.
 homepage: https://github.com/mfoll/BayeScan
 ---
+
 
 # bayescan
 

@@ -1,8 +1,9 @@
 ---
 name: hic2cool
-description: "hic2cool is a specialized utility designed to bridge the gap between two major Hi-C data formats: the Java-based `.hic` format used by Juicer and the HDF5-based `.cool` format used by the Cooler suite."
+description: "hic2cool converts Hi-C data from the .hic format to the .cool or .mcool formats for use with the Cooler suite and HiGlass. Use when user asks to convert .hic files to cooler format, extract normalization vectors from .hic files, or update legacy cooler files for HiGlass compatibility."
 homepage: https://github.com/4dn-dcic/hic2cool
 ---
+
 
 # hic2cool
 

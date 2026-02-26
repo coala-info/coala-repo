@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chemminedrugs
-description: the package is available on all platforms; click for details.
+description: This package provides a curated SQLite database of the DrugBank data set for use within the ChemmineR ecosystem. Use when user asks to connect to the DrugBank database, retrieve drug compound information, or perform chemical feature searches.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ChemmineDrugs.html
 ---
+
 
 # bioconductor-chemminedrugs
 

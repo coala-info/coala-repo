@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.rno.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Entrez Gene IDs and Medical Subject Headings (MeSH) for Rattus norvegicus. Use when user asks to map rat Entrez Gene IDs to MeSH terms, perform functional annotation for rat genes, or retrieve MeSH metadata for Rattus norvegicus.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Rno.eg.db.html
 ---
+
 
 # bioconductor-mesh.rno.eg.db
 

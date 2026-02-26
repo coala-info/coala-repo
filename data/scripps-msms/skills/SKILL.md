@@ -1,8 +1,9 @@
 ---
 name: scripps-msms
-description: MSMS (Molecular Surface) is a high-performance algorithm designed to compute the Solvent Excluded Surface (SES) and Reduced Surface of molecular structures.
+description: MSMS computes the solvent excluded surface and reduced surface of molecular structures to generate triangulated meshes and surface area calculations. Use when user asks to calculate molecular surface areas, generate triangulated meshes from atomic coordinates, or identify internal cavities in a protein structure.
 homepage: https://ccsb.scripps.edu/msms/
 ---
+
 
 # scripps-msms
 

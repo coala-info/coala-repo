@@ -1,8 +1,9 @@
 ---
 name: eukrep
-description: EukRep is a classification tool that utilizes k-mer frequencies and machine learning to identify the taxonomic origin of sequences in metagenomic assemblies.
+description: EukRep classifies metagenomic contigs into eukaryotic or prokaryotic origins using k-mer frequencies and machine learning. Use when user asks to identify eukaryotic sequences in a metagenomic assembly, separate eukaryotic and prokaryotic contigs, or filter sequences for downstream eukaryotic analysis.
 homepage: https://github.com/patrickwest/EukRep
 ---
+
 
 # eukrep
 

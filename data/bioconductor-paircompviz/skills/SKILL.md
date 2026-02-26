@@ -1,8 +1,9 @@
 ---
 name: bioconductor-paircompviz
-description: the package is available on all platforms; click for details.
+description: This R package visualizes results from multiple pairwise comparison tests using Hasse diagrams. Use when user asks to visualize significant differences between groups, create Hasse diagrams for post-hoc tests, or compare multiple treatments.
 homepage: https://bioconductor.org/packages/release/bioc/html/paircompviz.html
 ---
+
 
 # bioconductor-paircompviz
 

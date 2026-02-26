@@ -1,8 +1,9 @@
 ---
 name: magetab-curation-scripts
-description: The magetab-curation-scripts package provides a suite of Perl-based tools for handling MAGE-TAB (MicroArray Gene Expression Tabular) files.
+description: This package provides a suite of Perl-based tools for validating, processing, and managing MAGE-TAB files and array designs. Use when user asks to validate IDF and SDRF files, check Expression Atlas eligibility, manage Array Design Files, or run automated submission tracking daemons.
 homepage: https://github.com/ebi-gene-expression-group/perl-curation-scripts
 ---
+
 
 # magetab-curation-scripts
 

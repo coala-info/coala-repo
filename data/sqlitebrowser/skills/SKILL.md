@@ -1,8 +1,9 @@
 ---
 name: sqlitebrowser
-description: DB Browser for SQLite (DB4S) is a visual, open-source tool for working with SQLite-compatible database files.
+description: DB Browser for SQLite is a graphical interface for managing, designing, and editing SQLite-compatible database files. Use when user asks to browse database records, modify table schemas, run SQL queries, or import data from CSV files.
 homepage: https://github.com/sqlitebrowser/sqlitebrowser
 ---
+
 
 # sqlitebrowser
 

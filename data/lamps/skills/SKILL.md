@@ -1,8 +1,9 @@
 ---
 name: lamps
-description: The `lamps` (Liverpool Annotation of Metabolites using Mass Spectrometry) tool provides a specialized framework for the identification and characterization of small molecules.
+description: The lamps tool identifies and annotates metabolites by mapping mass-to-charge ratios from mass spectrometry data to specific chemical entities. Use when user asks to annotate metabolites, identify small molecules, or match experimental m/z values against metabolite databases.
 homepage: https://pypi.org/project/lamps/
 ---
+
 
 # lamps
 

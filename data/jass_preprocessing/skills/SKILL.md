@@ -1,8 +1,9 @@
 ---
 name: jass_preprocessing
-description: The `jass_preprocessing` tool is a specialized command-line utility designed to transform inconsistent GWAS summary statistics into a uniform format.
+description: This tool transforms and harmonizes inconsistent GWAS summary statistics into a standardized format by aligning them against a reference panel. Use when user asks to format GWAS data, align alleles to a reference, calculate effective sample sizes, or prepare genetic datasets for multi-trait analysis.
 homepage: http://statistical-genetics.pages.pasteur.fr/jass_preprocessing/
 ---
+
 
 # jass_preprocessing
 

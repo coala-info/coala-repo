@@ -2,10 +2,71 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: snp-dists
 label: snp-dists
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity)
-  failing to fetch or build the image.\n\nTool homepage: https://github.com/tseemann/snp-dists"
-inputs: []
+doc: "Pairwise SNP distance matrix from a FASTA sequence alignment\n\nTool homepage:
+  https://github.com/tseemann/snp-dists"
+inputs:
+  - id: input_fasta
+    type: File
+    doc: Input FASTA alignment file
+    inputBinding:
+      position: 1
+  - id: blank
+    type:
+      - 'null'
+      - boolean
+    doc: Blank top-left corner (for PHYLIP compatibility)
+    inputBinding:
+      position: 102
+      prefix: -b
+  - id: csv
+    type:
+      - 'null'
+      - boolean
+    doc: Output CSV instead of TSV
+    inputBinding:
+      position: 102
+      prefix: -c
+  - id: keep_all_bases
+    type:
+      - 'null'
+      - boolean
+    doc: Keep all bases (don't ignore non-ACGT characters)
+    inputBinding:
+      position: 102
+      prefix: -k
+  - id: melt
+    type:
+      - 'null'
+      - boolean
+    doc: Melted format (sample1, sample2, distance)
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: pair
+    type:
+      - 'null'
+      - boolean
+    doc: Format as a list of pairs
+    inputBinding:
+      position: 102
+      prefix: -p
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet mode; check if any SNPs, return 0 or 1
+    inputBinding:
+      position: 102
+      prefix: -q
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: -j
 outputs:
   - id: stdout
     type: stdout

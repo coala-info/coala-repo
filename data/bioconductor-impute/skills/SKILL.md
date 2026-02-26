@@ -1,8 +1,9 @@
 ---
 name: bioconductor-impute
-description: the package is available on all platforms; click for details.
+description: This tool imputes missing values in microarray or high-dimensional expression data using the k-nearest neighbors algorithm. Use when user asks to handle missing data in an expression matrix, impute values using KNN, or perform two-means clustering for large-scale expression datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/impute.html
 ---
+
 
 # bioconductor-impute
 

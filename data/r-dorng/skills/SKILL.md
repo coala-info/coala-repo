@@ -1,8 +1,9 @@
 ---
 name: r-dorng
-description: Skill for using the CRAN R package r-dorng.
+description: This tool provides functions to perform reproducible parallel foreach loops in R using independent random streams. Use when user asks to ensure consistent results in parallel computations, use the %dorng% operator, or generate reproducible random numbers across multiple workers.
 homepage: https://cloud.r-project.org/web/packages/doRNG/index.html
 ---
+
 
 # r-dorng
 

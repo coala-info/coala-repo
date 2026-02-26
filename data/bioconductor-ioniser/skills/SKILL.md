@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ioniser
-description: the package is available on all platforms; click for details.
+description: IONiseR provides a framework for the quality control and visualization of Oxford Nanopore MinION sequencing data. Use when user asks to perform quality control on Fast5 files, visualize flow cell spatial biases, monitor read production rates, or extract FASTQ sequences from MinION data.
 homepage: https://bioconductor.org/packages/release/bioc/html/IONiseR.html
 ---
+
 
 # bioconductor-ioniser
 

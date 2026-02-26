@@ -1,8 +1,9 @@
 ---
 name: baitfisher
-description: BaitFisher is a specialized bioinformatic suite designed to optimize the creation of hybrid enrichment probes.
+description: BaitFisher is a bioinformatic suite designed to create and optimize hybrid enrichment probes from multiple sequence alignments. Use when user asks to design hybrid enrichment baits, filter baits for specificity and off-target binding, or convert bait designs into formats for synthesis providers.
 homepage: https://github.com/cmayer/BaitFisher-package
 ---
+
 
 # baitfisher
 

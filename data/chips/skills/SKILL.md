@@ -1,8 +1,9 @@
 ---
 name: chips
-description: ChIPs is a specialized toolkit designed for the simulation of ChIP-sequencing and other enrichment-based sequencing experiments.
+description: ChIPs is a toolkit designed for the simulation of ChIP-sequencing and other enrichment-based sequencing experiments. Use when user asks to simulate ChIP-seq reads, learn empirical parameters from existing datasets, or generate synthetic whole cell extract control data.
 homepage: https://github.com/gymreklab/chips
 ---
+
 
 # chips
 

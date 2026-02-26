@@ -1,8 +1,9 @@
 ---
 name: esme_omb_mpich_4_3_1
-description: The `esme_omb_mpich_4_3_1` skill provides procedural knowledge for executing the OSU Micro Benchmarks (OMB) suite.
+description: This tool executes the OSU Micro Benchmarks suite to characterize the performance of communication fabrics using MPICH 4.3.1. Use when user asks to measure network latency, evaluate MPI collective operation performance, or benchmark point-to-point and one-sided communication bandwidth.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_mpich_4_3_1
 

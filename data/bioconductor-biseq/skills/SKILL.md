@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biseq
-description: The package takes already aligned BS data from one or multiple samples.
+description: BiSeq analyzes targeted bisulfite sequencing data to detect differentially methylated regions through CpG clustering and beta regression. Use when user asks to detect differentially methylated regions, perform CpG clustering, smooth methylation data, or test for group-wise methylation differences in RRBS data.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiSeq.html
 ---
+
 
 # bioconductor-biseq
 

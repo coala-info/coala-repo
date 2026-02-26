@@ -1,8 +1,9 @@
 ---
 name: phylorank
-description: PhyloRank is a specialized tool for the manual and automated curation of microbial taxonomies within a phylogenetic context.
+description: PhyloRank curates microbial taxonomies by evaluating taxonomic assignments against phylogenetic tree topology and calculating evolutionary divergence. Use when user asks to decorate a tree with taxonomy, calculate Relative Evolutionary Divergence values, identify taxonomic outliers, or evaluate the consistency of taxonomic ranks.
 homepage: https://github.com/dparks1134/PhyloRank
 ---
+
 
 # phylorank
 

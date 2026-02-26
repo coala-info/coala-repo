@@ -1,8 +1,9 @@
 ---
 name: nonpareil
-description: Nonpareil is a bioinformatics tool used to assess the "completeness" of metagenomic datasets without the need for a reference genome.
+description: "Nonpareil estimates the coverage and redundancy of metagenomic datasets to determine sequencing completeness. Use when user asks to assess metagenomic library saturation, estimate required sequencing depth, or calculate sequence redundancy without a reference."
 homepage: http://nonpareil.readthedocs.io/
 ---
+
 
 # nonpareil
 

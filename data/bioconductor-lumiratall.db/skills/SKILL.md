@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lumiratall.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for Illumina Rat expression microarrays. Use when user asks to map Illumina Rat probe identifiers to gene symbols, annotate rat microarray data, or retrieve genomic metadata for Illumina rat chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiRatAll.db.html
 ---
+
 
 # bioconductor-lumiratall.db
 

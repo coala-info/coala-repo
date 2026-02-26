@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omixer
-description: the package is available on all platforms; click for details.
+description: Omixer optimizes experimental designs and plate layouts to minimize technical biases in large-scale omics studies. Use when user asks to randomize samples across plates, create experimental layouts, or mitigate batch effects during data collection.
 homepage: https://bioconductor.org/packages/release/bioc/html/Omixer.html
 ---
+
 
 # bioconductor-omixer
 

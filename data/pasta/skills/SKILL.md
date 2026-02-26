@@ -1,8 +1,9 @@
 ---
 name: pasta
-description: PASTA is a specialized tool for biological sequence analysis that scales multiple sequence alignment to massive datasets.
+description: PASTA performs large-scale multiple sequence alignment by decomposing datasets into subsets and merging them through an iterative tree-alignment process. Use when user asks to align massive biological sequence datasets, perform phylogenetic tree estimation, or use specific aligners like MAFFT or Contralign within a scalable framework.
 homepage: https://github.com/smirarab/pasta
 ---
+
 
 # pasta
 

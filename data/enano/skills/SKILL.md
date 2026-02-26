@@ -1,8 +1,9 @@
 ---
 name: enano
-description: ENANO is a specialized compression tool designed to handle the unique data structures of nanopore sequencing.
+description: ENANO is a specialized compression tool designed for high-ratio lossless compression of nanopore sequencing data. Use when user asks to compress FASTQ files, decompress ENANO files, or optimize storage for genomic datasets.
 homepage: https://github.com/guilledufort/EnanoFASTQ
 ---
+
 
 # enano
 

@@ -1,8 +1,9 @@
 ---
 name: staden
-description: Staden is a specialized outliner tool designed to provide a Logseq-inspired workflow for managing markdown notes.
+description: Staden is a Logseq-inspired outliner tool for managing markdown notes and structured data using SQLite queries. Use when user asks to set the workspace root, initialize the API, manage the application lifecycle, or run development workflows.
 homepage: https://github.com/oshikiri/staden-outliner
 ---
+
 
 # staden
 

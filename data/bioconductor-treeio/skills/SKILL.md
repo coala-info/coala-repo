@@ -1,8 +1,9 @@
 ---
 name: bioconductor-treeio
-description: the package is available on all platforms; click for details.
+description: The bioconductor-treeio package imports, exports, and processes phylogenetic trees with their associated data. Use when user asks to parse phylogenetic tree files, convert between tree formats, or merge external data with tree structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/treeio.html
 ---
+
 
 # bioconductor-treeio
 

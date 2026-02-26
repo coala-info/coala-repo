@@ -1,8 +1,9 @@
 ---
 name: phylofisher
-description: PhyloFisher is a specialized Python3-based toolkit designed for eukaryotic phylogenomics.
+description: PhyloFisher is a Python-based toolkit that automates the construction and analysis of phylogenomic datasets from eukaryotic protein sequences. Use when user asks to construct single-gene trees, build phylogenomic matrices, identify orthologs, or filter contaminants and paralogs.
 homepage: https://github.com/TheBrownLab/PhyloFisher
 ---
+
 
 # phylofisher
 

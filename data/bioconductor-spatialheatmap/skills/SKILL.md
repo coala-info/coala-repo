@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spatialheatmap
-description: the package is available on all platforms; click for details.
+description: This R package visualizes spatial gene expression data by mapping it onto anatomical or spatial images. Use when user asks to create spatial heatmaps, visualize gene expression in anatomical contexts, or map high-throughput data onto spatial images.
 homepage: https://bioconductor.org/packages/release/bioc/html/spatialHeatmap.html
 ---
+
 
 # bioconductor-spatialheatmap
 

@@ -1,8 +1,9 @@
 ---
 name: phirbo
-description: Phirbo (Phage-Host Interaction Search by Rank-Biased Overlap) is a tool designed to identify the most likely prokaryotic hosts for given phage sequences.
+description: Phirbo identifies the most likely prokaryotic hosts for phage sequences by comparing their similarity profiles against a shared reference database. Use when user asks to predict phage-host interactions, calculate rank-biased overlap scores between viruses and bacteria, or identify bacterial hosts for viral genomes.
 homepage: https://github.com/aziele/phirbo
 ---
+
 
 # phirbo
 

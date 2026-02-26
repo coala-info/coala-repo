@@ -1,8 +1,9 @@
 ---
 name: bioconductor-a4classif
-description: the package is available on all platforms; click for details.
+description: The a4Classif package provides a streamlined interface for classifying microarray data using Lasso, PAM, and Random Forest methods. Use when user asks to classify ExpressionSet data, perform feature selection on microarray datasets, or evaluate gene diagnostic power using ROC curves.
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Classif.html
 ---
+
 
 # bioconductor-a4classif
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-quasr
-description: the package is available on all platforms; click for details.
+description: QuasR is a Bioconductor package for the quantitative analysis of high-throughput sequencing data. Use when user asks to align reads to a reference, quantify genomic regions, or analyze RNA-seq and ChIP-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/QuasR.html
 ---
+
 
 # bioconductor-quasr
 

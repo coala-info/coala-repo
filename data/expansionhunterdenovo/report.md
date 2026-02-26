@@ -1,12 +1,12 @@
 # expansionhunterdenovo CWL Generation Report
 
-## expansionhunterdenovo
+## expansionhunterdenovo_ExpansionHunterDenovo
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains environment information and a fatal error message regarding a container build failure (no space left on device).
+ExpansionHunter Denovo: A tool for genome-wide detection of STR expansions
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/expansionhunterdenovo:0.9.0--h0cd1d96_4
+- **Docker Image**: quay.io/biocontainers/expansionhunterdenovo:0.9.0--h6ac36c1_11
 - **Homepage**: https://github.com/Illumina/ExpansionHunterDenovo
 - **Package**: https://anaconda.org/channels/bioconda/packages/expansionhunterdenovo/overview
 - **Validation**: PASS
@@ -18,29 +18,12 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/expansionhunterdenovo:0.9.0--h0cd1d96_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4127373694: no space left on device
-```
+ExpansionHunter Denovo v0.9.0
 
+Usage: ExpansionHunterDenovo <command> [options]
 
-## Metadata
-- **Skill**: generated
-
-## expansionhunterdenovo_make-bamlet
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system log messages and a fatal error regarding container image creation (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/expansionhunterdenovo:0.9.0--h0cd1d96_4
-- **Homepage**: https://github.com/Illumina/ExpansionHunterDenovo
-- **Package**: https://anaconda.org/channels/bioconda/packages/expansionhunterdenovo/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/expansionhunterdenovo:0.9.0--h0cd1d96_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4068539087: no space left on device
+Commands:
+ profile  Compute genome-wide STR profile
+ merge    Generate multisample STR profile from single-sample profiles
 ```
 

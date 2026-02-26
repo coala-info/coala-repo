@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gpart
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool partitions SNP sequences based on Linkage Disequilibrium structures and gene location information. Use when user asks to partition SNP sequences, construct LD blocks, perform gene-aware partitioning, cluster SNPs into LD bins, or visualize LD heatmaps.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gpart.html
 ---
+
 
 # bioconductor-gpart
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgraph2js
-description: the package is available on all platforms; click for details.
+description: "RGraph2js converts R graph objects into interactive JavaScript and D3.js visualizations. Use when user asks to create interactive network visualizations, convert igraph objects to JavaScript, or generate web-based graph displays."
 homepage: https://bioconductor.org/packages/release/bioc/html/RGraph2js.html
 ---
+
 
 # bioconductor-rgraph2js
 

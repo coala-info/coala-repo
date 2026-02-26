@@ -1,8 +1,9 @@
 ---
 name: muat
-description: MuAt (Mutation Attention) is a deep learning framework specialized in classifying tumor types and subtypes by analyzing somatic mutation patterns, specifically Single Nucleotide Variants (SNVs) and Multi-Nucleotide Variants (MNVs).
+description: MuAt is a deep learning framework that classifies tumor types and subtypes by analyzing somatic mutation patterns like SNVs and MNVs. Use when user asks to download genomic datasets, preprocess mutation files, train new models, or run high-accuracy ensemble predictions on tumor samples.
 homepage: https://github.com/primasanjaya/muat
 ---
+
 
 # muat
 

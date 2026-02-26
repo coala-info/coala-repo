@@ -1,8 +1,9 @@
 ---
 name: ucsc-chaintopslbasic
-description: The `chainToPslBasic` utility is a specialized tool from the UCSC Kent toolkit designed for the straightforward conversion of chain alignment files into PSL format.
+description: This tool converts chain alignment files into PSL format. Use when user asks to convert chain files to PSL format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chaintopslbasic
 

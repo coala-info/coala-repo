@@ -1,9 +1,9 @@
 # plncpro CWL Generation Report
 
-## plncpro
+## plncpro_predict
 
 ### Tool Description
-The provided text is a system error log indicating a failure to build or run the container image (no space left on device) and does not contain the tool's help documentation or argument definitions.
+This script classifies transcripts as coding or non coding transcripts
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0
@@ -18,15 +18,105 @@ The provided text is a system error log indicating a failure to build or run the
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 23:14:52  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a3c7a03f1564d16f7517f0aebe02655076e1b05303c5ec28a06e1c75208a604a: unpack entry: usr/local/lib/libopenblasp-r0.3.9.so: unpack to regular file: short write: write /tmp/build-temp-3141192803/rootfs/usr/local/lib/libopenblasp-r0.3.9.so: no space left on device
+[91m
+				  _____  _                  _____    _____     ____  
+				 |  __ \| |                |  __ \  |  __ \   / __ \ 
+				 | |__) | |  _ __     ___  | |__) | | |__) | | |  | |
+				 |  ___/| | |  _ \   / __| |  ___/  |  _  /  | |  | |
+				 | |    | | | | | | | (__  | |      | | \ \  | |__| |
+				 |_|    |_| |_| |_|  \___| |_|      |_|  \_\  \____/ 
+[0m
+*********************************************Help*********************************************
+DESCRIPTION
+This script classifies transcripts as coding or non coding transcripts
+Arguments:
+-h     print this message
+-p     output file name to store prediction results
+-i     path to file containing input sequences
+-m     path to the model file
+-o     output directory name to store all results
+-d     path to blast database
+                   OPTIONAL
+-t     number of threads[default: 4]
+-l     path to the files containg labels(this outputs performance of the classifier)
+-r     clean up intermediate files
+-v     show more messages
+--min_len     specifiy min_length to filter input files
+--noblast     Don't use blast features
+--no_ff     Don't use framefinder features
+--qcov_hsp     specify qcov parameter for blast[default:30]
+--blastres     path to blast output for input file
 ```
 
 
-## Metadata
-- **Skill**: generated
+## plncpro_build
+
+### Tool Description
+This script generates classification model from codin and non coding transcripts
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0
+- **Homepage**: https://github.com/urmi-21/PLncPRO
+- **Package**: https://anaconda.org/channels/bioconda/packages/plncpro/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[91m
+				  _____  _                  _____    _____     ____  
+				 |  __ \| |                |  __ \  |  __ \   / __ \ 
+				 | |__) | |  _ __     ___  | |__) | | |__) | | |  | |
+				 |  ___/| | |  _ \   / __| |  ___/  |  _  /  | |  | |
+				 | |    | | | | | | | (__  | |      | | \ \  | |__| |
+				 |_|    |_| |_| |_|  \___| |_|      |_|  \_\  \____/ 
+[0m
+*********************************************Help*********************************************
+                   DESCRIPTION
+This script generates classification model from codin and non coding transcripts
+Arguments:
+-h     print this message
+-p,--pos     path to file containing protein coding examples
+-n,--neg     path to file containing non coding examples
+-m,--model     output model name
+-o,--outdir     output directory name to store all results
+-d     path to blast database
+                   OPTIONAL
+-t     number of threads[default: 4]
+-k     number of trees[default: 1000]
+-r     clean up intermediate files
+-v     show more messages
+--min_len     specifiy min_length to filter input files
+--noblast     Don't use blast features
+--no_ff     Don't use framefinder features
+--qcov_hsp     specify qcov parameter for blast[default:30]
+--pos_blastres     path to blast output for positive input file
+--neg_blastres     path to blast output for negative input file
+```
+
+
+## plncpro_predtoseq
+
+### Tool Description
+Use this to extract lncRNA or mRNA sequences, as predicted by PLNCPRO, from the input fasta file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/plncpro:1.2.2--py37hc9558a2_0
+- **Homepage**: https://github.com/urmi-21/PLncPRO
+- **Package**: https://anaconda.org/channels/bioconda/packages/plncpro/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+[91m
+				  _____  _                  _____    _____     ____  
+				 |  __ \| |                |  __ \  |  __ \   / __ \ 
+				 | |__) | |  _ __     ___  | |__) | | |__) | | |  | |
+				 |  ___/| | |  _ \   / __| |  ___/  |  _  /  | |  | |
+				 | |    | | | | | | | (__  | |      | | \ \  | |__| |
+				 |_|    |_| |_| |_|  \___| |_|      |_|  \_\  \____/ 
+[0m
+Use this to extract lncRNA or mRNA sequences, as predicted by PLNCPRO, from the input fasta file
+Usage:
+predstoseq.py -f <input fastafile> -o <outputfile> -p <predictionfile> -l <required label default:0> -s <class_prob_cutoff[range 0-1], default:0> -m <min_length, default:0> <max_length, default:inf>
+```
+

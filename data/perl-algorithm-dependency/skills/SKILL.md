@@ -1,8 +1,9 @@
 ---
 name: perl-algorithm-dependency
-description: This skill provides guidance on using the `Algorithm::Dependency` Perl module to manage hierarchical relationships.
+description: This tool manages hierarchical relationships and generates linear execution orders for interdependent tasks. Use when user asks to manage software dependencies, schedule tasks with constraints, or resolve circular dependencies in Perl.
 homepage: http://metacpan.org/pod/Algorithm::Dependency
 ---
+
 
 # perl-algorithm-dependency
 

@@ -1,8 +1,9 @@
 ---
 name: icount
-description: iCount is a dedicated Python-based framework designed for the high-resolution analysis of protein-RNA interactions.
+description: iCount is a Python-based framework for analyzing protein-RNA interactions by processing raw iCLIP data into cross-link sites and binding motifs. Use when user asks to demultiplex FASTQ files, identify single-nucleotide cross-link positions, call peaks, cluster significant sites, or generate RNAmaps for positional distribution analysis.
 homepage: https://github.com/tomazc/iCount
 ---
+
 
 # icount
 

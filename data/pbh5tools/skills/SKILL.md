@@ -1,8 +1,9 @@
 ---
 name: pbh5tools
-description: The `pbh5tools` package is a specialized "swiss-army knife" for handling legacy PacBio HDF5 data.
+description: pbh5tools provides a suite of command-line utilities for manipulating and extracting metrics from legacy PacBio HDF5 data files. Use when user asks to summarize sequencing data, generate read statistics, subsample reads, or inspect aligned reads in bas.h5 and cmp.h5 formats.
 homepage: https://github.com/zkennedy/pbh5tools
 ---
+
 
 # pbh5tools
 

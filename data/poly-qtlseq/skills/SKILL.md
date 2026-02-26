@@ -1,8 +1,9 @@
 ---
 name: poly-qtlseq
-description: PolyploidQtlSeq is a specialized bioinformatics tool that extends the traditional QTL-seq method to accommodate polyploid species.
+description: PolyploidQtlSeq identifies genomic regions associated with specific traits in polyploid species by automating read mapping, variant detection, and SNP-index calculation. Use when user asks to perform QTL-seq analysis on polyploid organisms, calculate QTL detection thresholds using simulation-based approaches, or automate the pipeline from raw reads to statistical plotting.
 homepage: https://github.com/TatsumiMizubayashi/PolyploidQtlSeq
 ---
+
 
 # poly-qtlseq
 

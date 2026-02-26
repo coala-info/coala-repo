@@ -1,8 +1,9 @@
 ---
 name: devider
-description: The `devider` tool facilitates the separation of long reads into distinct groups based on shared alleles using a SNP-encoded positional de Bruijn graph approach.
+description: "Devider separates long reads into distinct haplotype groups using a SNP-encoded positional de Bruijn graph approach. Use when user asks to phase long reads locally, separate high-depth sequencing data into haplotypes, or perform haplotagging on high-heterogeneity samples."
 homepage: https://github.com/bluenote-1577/devider
 ---
+
 
 # devider
 

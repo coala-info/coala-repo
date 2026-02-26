@@ -1,8 +1,9 @@
 ---
 name: bioconductor-guitar
-description: The package is designed for visualization of RNA-related genomic features with respect to the landmarks of RNA transcripts, i.e., transcription starting site, start codon, stop codon and transcription ending site.
+description: This tool visualizes the distribution of RNA-related genomic features relative to standardized transcript landmarks like the TSS, start codon, stop codon, and TES. Use when user asks to analyze the distribution of genomic features across RNA transcripts, compare multiple feature sets, or generate Guitar plots to standardize transcript lengths into a common coordinate system.
 homepage: https://bioconductor.org/packages/release/bioc/html/Guitar.html
 ---
+
 
 # bioconductor-guitar
 

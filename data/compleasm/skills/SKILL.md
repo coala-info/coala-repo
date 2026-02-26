@@ -1,8 +1,9 @@
 ---
 name: compleasm
-description: `compleasm` is a specialized bioinformatics tool designed to assess the quality of genomic data by identifying the presence of Universal Single-Copy Orthologs (BUSCOs).
+description: compleasm assesses the completeness of genome assemblies and protein sets by identifying Universal Single-Copy Orthologs using miniprot. Use when user asks to evaluate assembly quality, download or list BUSCO lineages, run completeness pipelines with automatic lineage detection, or analyze protein sequences.
 homepage: https://github.com/huangnengCSU/compleasm
 ---
+
 
 # compleasm
 

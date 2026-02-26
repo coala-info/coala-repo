@@ -1,8 +1,9 @@
 ---
 name: phizz
-description: phizz is a specialized utility designed to bridge the gap between disease identifiers (OMIM) and phenotypic features (HPO).
+description: "phizz links disease identifiers to phenotypic features by querying OMIM and HPO data. Use when user asks to retrieve HPO terms associated with an OMIM ID, get descriptions for specific phenotype terms, or convert disease-phenotype associations into CSV or JSON formats."
 homepage: https://github.com/moonso/phizz
 ---
+
 
 # phizz
 

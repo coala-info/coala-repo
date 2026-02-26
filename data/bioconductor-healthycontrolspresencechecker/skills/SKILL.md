@@ -1,8 +1,9 @@
 ---
 name: bioconductor-healthycontrolspresencechecker
-description: the package is available on all platforms; click for details.
+description: This tool audits NCBI GEO datasets to determine if they contain healthy control samples based on metadata keyword searches. Use when user asks to check for healthy controls in a GEO dataset, verify dataset suitability for case-control studies, or scan GSE accession codes for specific keywords.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/healthyControlsPresenceChecker.html
 ---
+
 
 # bioconductor-healthycontrolspresencechecker
 

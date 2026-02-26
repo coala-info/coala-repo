@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omada
-description: the package is available on all platforms; click for details.
+description: Omada provides automated tools for evaluating and selecting optimal clustering models for high-dimensional omics data. Use when user asks to perform automated clustering analysis, determine the optimal number of clusters, or evaluate clustering stability in omics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/omada.html
 ---
+
 
 # bioconductor-omada
 

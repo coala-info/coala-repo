@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rbioformats
-description: the package is available on all platforms; click for details.
+description: RBioFormats provides an R interface to the Bio-Formats library for reading and writing biological image data. Use when user asks to read microscopy images, extract image metadata, or process various bio-imaging file formats in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/RBioFormats.html
 ---
+
 
 # bioconductor-rbioformats
 

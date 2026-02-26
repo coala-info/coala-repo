@@ -1,8 +1,9 @@
 ---
 name: sideretro
-description: sideRETRO is a specialized bioinformatics suite designed to identify somatic insertions of de novo retrocopies (processed pseudogenes) within genomic data.
+description: sideRETRO identifies somatic insertions of de novo retrocopies within genomic data by analyzing discordant and abnormal reads. Use when user asks to process alignment files to extract abnormal reads, merge and call retrocopy insertion events, or generate a VCF file of detected retrotranspositions.
 homepage: https://github.com/galantelab/sideRETRO
 ---
+
 
 # sideretro
 

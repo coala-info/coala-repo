@@ -1,8 +1,9 @@
 ---
 name: amplisim
-description: `amplisim` is a specialized C++ tool designed for the rapid simulation of amplicon sequences.
+description: "amplisim simulates synthetic amplicon sequences from a reference genome and a primer scheme. Use when user asks to generate synthetic FASTA data, simulate amplicon-based sequencing assays, or model PCR dropout and replication depth."
 homepage: https://github.com/rki-mf1/amplisim
 ---
+
 
 # amplisim
 

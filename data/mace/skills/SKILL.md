@@ -1,8 +1,9 @@
 ---
 name: mace
-description: MACE is a specialized bioinformatics suite tailored for the high-resolution mapping of protein-DNA interactions provided by ChIP-exo technology.
+description: MACE is a bioinformatics suite designed for high-resolution mapping of protein-DNA interactions from ChIP-exo sequencing data. Use when user asks to preprocess ChIP-exo replicates, normalize sequencing depth, or identify and pair border signals to pinpoint binding sites.
 homepage: http://chipexo.sourceforge.net
 ---
+
 
 # mace
 

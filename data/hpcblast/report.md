@@ -1,9 +1,9 @@
 # hpcblast CWL Generation Report
 
-## hpcblast
+## hpcblast_hpc-blast
 
 ### Tool Description
-High-Performance Computing BLAST (HPC-BLAST). Note: The provided text contains system error logs and does not list specific command-line arguments.
+hpc-blast <OPTIONS> <blast command>
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hpcblast:1.0.2--pyhdfd78af_0
@@ -18,29 +18,33 @@ High-Performance Computing BLAST (HPC-BLAST). Note: The provided text contains s
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hpcblast:1.0.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4173174836: no space left on device
-```
+usage: hpc-blast [--split <int> | --size <int>] [--num <int>]
+                 [--tempdir <dir>] [--log <file>] [--local] [--version] [-h]
+                 [--queue [<str> ...]] [--cpu <int>] [--memory <int>]
+                 <blast command>
 
+hpc-blast <OPTIONS> <blast command>
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  <blast command>      blast command, required
 
-## hpcblast_hpc-blast
+options:
+  --split <int>        split query into num of chunks, 10 by default
+  --size <int>         split query into multi chunks with N sequences
+  --num <int>          max number of chunks run parallelly, all chunks by
+                       default
+  --tempdir <dir>      hpc blast temp directory
+  --log <file>         append hpc-blast log info to file, sys.stdout by
+                       default
+  --local              run blast in localhost instead of sge
+  --version            show program's version number and exit
+  -h, --help           show this help message and exit
 
-### Tool Description
-HPC-BLAST (High-Performance Computing BLAST) is a tool for rapid sequence database searching. Note: The provided help text contains only system error logs and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hpcblast:1.0.2--pyhdfd78af_0
-- **Homepage**: https://github.com/yodeng/hpc-blast
-- **Package**: https://anaconda.org/channels/bioconda/packages/hpcblast/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hpcblast:1.0.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1953853546: no space left on device
+sge arguments:
+  --queue [<str> ...]  sge queue, multi-queue can be sepreated by whitespace,
+                       all access queue by default
+  --cpu <int>          cpu usage for sge, 1 by default, max(--cpu,
+                       -num_threads) will be used
+  --memory <int>       memory (GB) usage for sge, 1 by default
 ```
 

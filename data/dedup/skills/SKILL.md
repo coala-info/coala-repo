@@ -1,8 +1,9 @@
 ---
 name: dedup
-description: DeDup is a specialized PCR duplicate removal tool designed for ultra-short DNA fragments.
+description: DeDup removes PCR duplicates from DNA sequencing data by utilizing both start and end coordinates for merged fragments. Use when user asks to remove PCR duplicates, process ancient DNA fragments, or deduplicate a mixture of merged and unmerged reads.
 homepage: https://github.com/apeltzer/dedup
 ---
+
 
 # dedup
 

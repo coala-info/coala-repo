@@ -1,8 +1,9 @@
 ---
 name: wepp
-description: WEPP (Wastewater-Based Epidemiology using Phylogenetic Placements) is a pathogen-agnostic pipeline designed to provide high-resolution insights into the composition of community wastewater samples.
+description: WEPP is a pathogen-agnostic pipeline that analyzes wastewater samples to provide high-resolution insights into pathogen composition. Use when user asks to deconvolve complex pathogen mixtures, estimate lineage proportions, flag unaccounted alleles, or identify emerging variants.
 homepage: https://github.com/TurakhiaLab/WEPP
 ---
+
 
 # wepp
 

@@ -1,8 +1,9 @@
 ---
 name: phate
-description: PHATE (Potential of Heat-diffusion for Affinity-based Transition Embedding) is a dimensionality reduction and visualization method designed to capture the underlying structure of complex, high-dimensional data.
+description: PHATE is a dimensionality reduction and visualization tool that uses heat diffusion to capture global data geometry and continuous transitions in high-dimensional datasets. Use when user asks to visualize branching trajectories, preserve global structure in complex data, or perform manifold learning for biological systems.
 homepage: https://github.com/KrishnaswamyLab/PHATE
 ---
+
 
 # phate
 

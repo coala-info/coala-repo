@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicalignments
-description: the package is available on all platforms; click for details.
+description: The GenomicAlignments package provides efficient containers and methods for representing and manipulating high-throughput sequencing alignments in R. Use when user asks to load BAM files, count reads for differential expression, analyze RNA-seq splice compatibility, or perform nucleotide-level analysis on aligned sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicAlignments.html
 ---
+
 
 # bioconductor-genomicalignments
 

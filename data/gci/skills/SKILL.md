@@ -1,8 +1,9 @@
 ---
 name: gci
-description: The Genome Continuity Inspector (GCI) is a specialized tool designed to validate high-quality genome assemblies.
+description: The Genome Continuity Inspector validates genome assembly quality by analyzing long-read alignments to identify errors and calculate continuity scores. Use when user asks to validate a genome assembly, identify assembly issues, calculate a continuity score, or plot depth distributions for specific genomic regions.
 homepage: https://github.com/yeeus/GCI
 ---
+
 
 # gci
 

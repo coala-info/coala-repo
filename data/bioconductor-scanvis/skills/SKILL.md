@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scanvis
-description: the package is available on all platforms; click for details.
+description: SCANVIS provides tools for the annotation and visualization of splice junctions from RNA-seq data. Use when user asks to annotate splice junctions, visualize alternative splicing events, or identify novel splice junctions.
 homepage: https://bioconductor.org/packages/release/bioc/html/SCANVIS.html
 ---
+
 
 # bioconductor-scanvis
 

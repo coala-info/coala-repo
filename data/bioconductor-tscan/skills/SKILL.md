@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tscan
-description: the package is available on all platforms; click for details.
+description: TSCAN provides tools for trajectory inference and pseudotime analysis of single-cell RNA-seq data. Use when user asks to infer developmental trajectories, estimate pseudotime, or cluster single-cell expression profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/TSCAN.html
 ---
+
 
 # bioconductor-tscan
 

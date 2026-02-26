@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diggitdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and regulatory networks for glioblastoma to support the diggit package workflow. Use when user asks to access glioblastoma mRNA expression data, load copy number variation profiles, or use pre-computed ARACNe and MINDy regulatory networks for driver gene inference.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/diggitdata.html
 ---
+
 
 # bioconductor-diggitdata
 

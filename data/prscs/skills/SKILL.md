@@ -1,8 +1,9 @@
 ---
 name: prscs
-description: PRS-CS is a Python-based command-line tool designed for polygenic prediction.
+description: PRS-CS is a Bayesian regression tool that estimates SNP effect sizes for polygenic prediction by integrating GWAS summary statistics with LD reference panels. Use when user asks to calculate polygenic risk scores, estimate posterior SNP effect sizes, or perform polygenic prediction using continuous shrinkage priors.
 homepage: https://github.com/getian107/PRScs
 ---
+
 
 # prscs
 

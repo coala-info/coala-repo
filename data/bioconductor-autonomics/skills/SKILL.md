@@ -1,8 +1,9 @@
 ---
 name: bioconductor-autonomics
-description: the package is available on all platforms; click for details.
+description: The autonomics package provides a unified workflow for omics data analysis, including data ingestion, preprocessing, linear modeling, and visualization. Use when user asks to import and analyze RNAseq, proteomics, or metabolomics data, perform differential expression analysis with limma, or generate volcano and PCA plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/autonomics.html
 ---
+
 
 # bioconductor-autonomics
 

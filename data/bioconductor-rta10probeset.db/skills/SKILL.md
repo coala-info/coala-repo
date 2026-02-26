@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rta10probeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Rat Toxicology Array 1.0. Use when user asks to map probe set identifiers to gene symbols, retrieve genomic coordinates, or access biological annotations for the rta10 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rta10probeset.db.html
 ---
+
 
 # bioconductor-rta10probeset.db
 

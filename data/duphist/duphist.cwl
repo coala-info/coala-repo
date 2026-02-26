@@ -1,16 +1,37 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: duphist
+baseCommand: mkdir
 label: duphist
-doc: "A tool for generating duplicate histograms. (Note: The provided input text contains
-  system error messages regarding a container runtime failure and does not include
-  the actual help documentation for the tool.)\n\nTool homepage: https://github.com/minjeongjj/DupHIST"
-inputs: []
+doc: "Create DIRECTORY\n\nTool homepage: https://github.com/minjeongjj/DupHIST"
+inputs:
+  - id: directories
+    type:
+      type: array
+      items: Directory
+    doc: Directories to create
+    inputBinding:
+      position: 1
+  - id: mode
+    type:
+      - 'null'
+      - string
+    doc: Mode
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: parents
+    type:
+      - 'null'
+      - boolean
+    doc: No error if exists; make parent directories as needed
+    inputBinding:
+      position: 102
+      prefix: -p
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/duphist:1.0.9--hdfd78af_0
+    dockerPull: quay.io/biocontainers/duphist:1.1.0--hdfd78af_1
 stdout: duphist.out

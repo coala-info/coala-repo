@@ -1,8 +1,9 @@
 ---
 name: iucn_sim
-description: The `iucn_sim` tool provides a probabilistic framework for predicting when species might go extinct.
+description: iucn_sim provides a probabilistic framework for predicting species extinction times by simulating transitions between IUCN Red List categories. Use when user asks to estimate transition rates between threat levels, simulate future biodiversity loss, or project extinction dates for specific species groups.
 homepage: https://github.com/tobiashofmann88/iucn_extinction_simulator
 ---
+
 
 # iucn_sim
 

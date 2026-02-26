@@ -1,8 +1,9 @@
 ---
 name: perl-clone-choose
-description: The `perl-clone-choose` utility acts as a wrapper and selection logic for Perl's data cloning capabilities.
+description: This tool selects and wraps the most efficient available Perl module for performing deep copies of complex data structures. Use when user asks to perform deep cloning of Perl data, manage cloning dependencies, or select a specific backend for data replication.
 homepage: https://metacpan.org/release/Clone-Choose
 ---
+
 
 # perl-clone-choose
 

@@ -1,8 +1,9 @@
 ---
 name: pygvcf2coverage
-description: The `pygvcf2coverage` tool is a specialized utility for transforming gVCF (genomic VCF) files into a streamlined coverage report.
+description: pygvcf2coverage transforms gVCF files into streamlined coverage reports by collapsing genomic records into contiguous intervals. Use when user asks to extract coverage from a gVCF file, convert gVCF to TSV, or maintain ploidy information across genomic blocks.
 homepage: https://github.com/varda/varda2_preprocessing
 ---
+
 
 # pygvcf2coverage
 

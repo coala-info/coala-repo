@@ -1,8 +1,9 @@
 ---
 name: xs-sim
-description: The `xs-sim` tool (XS) is a specialized FASTQ read simulator designed for portability and flexibility.
+description: xs-sim generates synthetic FASTQ reads based on user-defined parameters for various sequencing technologies. Use when user asks to generate synthetic FASTQ reads, simulate Illumina, Ion Torrent, Roche-454, or ABI-SOLiD reads, define read length, set nucleotide frequencies, simulate repetitive DNA, or model quality scores.
 homepage: https://github.com/pratas/xs
 ---
+
 
 # xs-sim
 

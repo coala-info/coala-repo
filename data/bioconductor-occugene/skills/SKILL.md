@@ -1,8 +1,9 @@
 ---
 name: bioconductor-occugene
-description: The package has functions for handling the occupancy distribution for a multinomial and for estimating the number of essential genes in random transposon mutagenesis libraries.
+description: This package provides functions for multinomial occupancy distribution analysis and essential gene estimation in random transposon mutagenesis libraries. Use when user asks to estimate the number of essential genes, analyze multinomial occupancy distributions, or evaluate data from transposon mutagenesis experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/occugene.html
 ---
+
 
 # bioconductor-occugene
 

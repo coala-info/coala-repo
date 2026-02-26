@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.rnorvegicus.biomart.igis
-description: the package is available on all platforms; click for details.
+description: This package provides a transcript database for the Rattus norvegicus genome based on BioMart IGIS annotations. Use when user asks to retrieve rat transcript coordinates, map genomic features for Rattus norvegicus, or access IGIS-sourced gene models.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.BioMart.igis.html
 ---
+
 
 # bioconductor-txdb.rnorvegicus.biomart.igis
 

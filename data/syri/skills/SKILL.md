@@ -1,8 +1,9 @@
 ---
 name: syri
-description: SyRI (Synteny and Rearrangement Identifier) is a specialized tool for comparing two whole-genome assemblies to find genomic differences.
+description: SyRI identifies syntenic regions and structural rearrangements by comparing two whole-genome assemblies. Use when user asks to find genomic differences between assemblies, classify structural variations, or identify syntenic regions.
 homepage: https://github.com/schneebergerlab/syri
 ---
+
 
 # syri
 

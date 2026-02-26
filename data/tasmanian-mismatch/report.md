@@ -1,9 +1,9 @@
 # tasmanian-mismatch CWL Generation Report
 
-## tasmanian-mismatch
+## tasmanian-mismatch_run_intersections
 
 ### Tool Description
-A tool for mismatch analysis (Note: The provided text contains system logs and error messages rather than command-line help documentation; therefore, no arguments could be extracted).
+Run mismatch intersections between BAM and BEDGraph files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tasmanian-mismatch:1.0.9--pyhdfd78af_0
@@ -18,52 +18,46 @@ A tool for mismatch analysis (Note: The provided text contains system logs and e
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tasmanian-mismatch:1.0.9--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+samtools view <bam_file> | python -b <bed_file/bedGraph> -o <output.table>
+
+    		the bedGraph file should contain 3 or more columns separated by tabs:
+    		------------------------------------------
+    		chrI    850     879     +       L1P5    LINE    L1
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## tasmanian-mismatch_run_intersections
-
-### Tool Description
-The provided text does not contain help information or a description of the tool. It contains error logs related to a container image build failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tasmanian-mismatch:1.0.9--pyhdfd78af_0
-- **Homepage**: https://github.com/nebiolabs/tasmanian-mismatch
-- **Package**: https://anaconda.org/channels/bioconda/packages/tasmanian-mismatch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tasmanian-mismatch:1.0.9--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## tasmanian-mismatch_run_tasmanian
 
 ### Tool Description
-Tasmanian-mismatch tool (Help text provided contains only system logs and no usage information).
+Run Tasmanian mismatch caller
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tasmanian-mismatch:1.0.9--pyhdfd78af_0
 - **Homepage**: https://github.com/nebiolabs/tasmanian-mismatch
 - **Package**: https://anaconda.org/channels/bioconda/packages/tasmanian-mismatch/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tasmanian-mismatch:1.0.9--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+required:
+    --------
+    -r|--reference-fasta
+
+    optional:
+    --------
+    -u|--unmask-genome (convert masked bases to upper case and include them in the calculations - default=False)
+    -q|--base-quality (default=20)
+    -f|--filter-indel (exclude reads with indels default=False)
+    -l|--filter-length (include only reads with x,y range of lengths, default=0,350)
+    -s|--soft-clip-bypass (Decide when softclipped base is correct(0). Don't use these bases(1). Force use them(2).  default=0)
+    -m|--mapping-quality (minimum allowed mapping quality -defailt=0)
+    -h|--help
+    -g|--fragment-length (use fragments with these lengths ONLY)
+    -o|--output-prefix (use this prefix for the output and logging files)
+    -c|--confidence (number of bases in the confident region of the read) 
+    -d|--debug (create a log file)
+    -O|--ont (this is ONT data)
+    -p|--picard-logic (normalize tables based on picard CollectSequencingArtifactMetrics logic)
+    -P|--include-pwm
 ```
 

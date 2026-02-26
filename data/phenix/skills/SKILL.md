@@ -1,8 +1,9 @@
 ---
 name: phenix
-description: PHEnix is a specialized bioinformatics pipeline designed for SNP (Single Nucleotide Polymorphism) detection and analysis.
+description: PHEnix is a bioinformatics pipeline designed for SNP detection and analysis that integrates mapping and variant calling into a unified workflow. Use when user asks to prepare reference genomes, execute the SNP pipeline, filter variant calls, or convert VCF files to FASTA format for phylogenetic analysis.
 homepage: https://github.com/phe-bioinformatics/PHEnix
 ---
+
 
 # phenix
 

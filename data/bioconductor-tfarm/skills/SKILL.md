@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tfarm
-description: the package is available on all platforms; click for details.
+description: "TFARM mines association rules between transcription factors based on their genomic co-localization. Use when user asks to identify transcription factor associations, mine genomic association rules, or analyze co-binding patterns."
 homepage: https://bioconductor.org/packages/release/bioc/html/TFARM.html
 ---
+
 
 # bioconductor-tfarm
 

@@ -1,8 +1,9 @@
 ---
 name: r-ukbrapr
-description: R package ukbrapr (documentation from project home).
+description: The ukbrapR package streamlines phenotype extraction, diagnostic ascertainment, and genetic data processing within the UK Biobank Research Analysis Platform. Use when user asks to export medical records, ascertain diagnoses across multiple coding vocabularies, extract genetic variants, create polygenic scores, or label UK Biobank fields.
 homepage: https://cran.r-project.org/web/packages/ukbrapr/index.html
 ---
+
 
 # r-ukbrapr
 

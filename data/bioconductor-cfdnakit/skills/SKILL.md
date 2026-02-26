@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cfdnakit
-description: The package basically extracts the length of cfDNA fragments and aids the vistualization of fragment-length information. The package also extract fragment-length information per non-overlapping fixed-sized bins and used it for calculating ctDNA estimation score (CES).
+description: Bioconductor-cfdnakit analyzes cell-free DNA fragment length distributions and infers copy-number variations from shallow whole-genome sequencing data. Use when user asks to extract fragment lengths from BAM files, calculate short-to-long fragment ratios, estimate tumor fraction, or perform fragmentomics-based copy-number analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/cfdnakit.html
 ---
+
 
 # bioconductor-cfdnakit
 

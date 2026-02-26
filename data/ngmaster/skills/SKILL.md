@@ -1,8 +1,9 @@
 ---
 name: ngmaster
-description: ngmaster is a specialized bioinformatic tool for the rapid characterization of Neisseria gonorrhoeae isolates.
+description: ngmaster identifies NG-MAST and NG-STAR alleles from Neisseria gonorrhoeae genomic assemblies or FASTA sequence data. Use when user asks to perform NG-MAST or NG-STAR typing, update allele databases, extract allele sequences, or characterize Neisseria gonorrhoeae isolates.
 homepage: https://github.com/MDU-PHL/ngmaster
 ---
+
 
 # ngmaster
 

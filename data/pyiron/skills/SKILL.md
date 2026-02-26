@@ -1,8 +1,9 @@
 ---
 name: pyiron
-description: pyiron is an integrated development environment (IDE) designed to simplify the complexity of computational materials science.
+description: "pyiron is an integrated development environment that manages the simulation life cycle for computational materials science through a unified Python interface. Use when user asks to initialize projects, create atomic structures, manage simulation jobs, or retrieve and analyze simulation data."
 homepage: https://github.com/pyiron/pyiron
 ---
+
 
 # pyiron
 

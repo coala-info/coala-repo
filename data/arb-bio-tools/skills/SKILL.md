@@ -1,8 +1,9 @@
 ---
 name: arb-bio-tools
-description: The ARB (Latin for "tree") software suite is a specialized environment for handling large-scale sequence databases with a focus on phylogeny-based data organization.
+description: ARB is a software suite for managing large-scale sequence databases, performing phylogenetic analysis, and designing taxon-specific probes. Use when user asks to manage rRNA datasets, align sequences based on secondary structure, reconstruct phylogenetic trees, or design and verify molecular probes.
 homepage: http://www.arb-home.de
 ---
+
 
 # arb-bio-tools
 

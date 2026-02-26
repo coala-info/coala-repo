@@ -1,8 +1,9 @@
 ---
 name: graphtyper
-description: Graphtyper is a graph-based variant caller designed for population-scale genomic analysis.
+description: Graphtyper is a graph-based variant caller that genotypes genomic variations by aligning sequence reads to a pangenome graph. Use when user asks to genotype SNPs and small indels, genotype structural variants from a VCF, or merge regional VCF results into a population-scale file.
 homepage: https://github.com/DecodeGenetics/graphtyper
 ---
+
 
 # graphtyper
 

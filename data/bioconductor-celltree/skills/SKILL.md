@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celltree
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool infers and visualizes hierarchical tree structures from single-cell RNA-seq data using Latent Dirichlet Allocation topic modeling. Use when user asks to perform dimension reduction, identify latent gene groups, build backbone trees for cell differentiation paths, or perform Gene Ontology enrichment analysis on single-cell datasets.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/cellTree.html
 ---
+
 
 # bioconductor-celltree
 

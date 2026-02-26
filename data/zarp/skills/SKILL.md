@@ -1,8 +1,9 @@
 ---
 name: zarp
-description: ZARP is a user-friendly command-line interface designed to streamline RNA-Seq analysis.
+description: ZARP streamlines RNA-Seq analysis by automating metadata discovery and running a standardized pipeline. Use when user asks to analyze RNA-Seq data, process single-end or paired-end libraries, analyze SRA accessions, process samples from a table, assign custom sample names, or perform batch processing.
 homepage: https://github.com/zavolanlab/zarp-cli
 ---
+
 
 # zarp
 

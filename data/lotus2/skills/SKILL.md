@@ -1,8 +1,9 @@
 ---
 name: lotus2
-description: LotuS2 (Less OTU Scripts) is a high-performance, lightweight pipeline designed for the end-to-end analysis of amplicon data.
+description: LotuS2 is a high-performance pipeline for the end-to-end analysis of amplicon sequencing data from raw files to abundance tables and phylogenetic trees. Use when user asks to process raw amplicon sequences, generate OTU or ASV tables, perform taxonomic classification, or create phylogenetic trees.
 homepage: http://lotus2.earlham.ac.uk/
 ---
+
 
 # lotus2
 

@@ -1,8 +1,9 @@
 ---
 name: fmlrc
-description: fmlrc (FM-index Long Read Corrector) is a hybrid assembly tool that corrects errors in long-read sequencing data by using the Burrows-Wheeler Transform (BWT) and FM-index of short-read data.
+description: fmlrc corrects errors in long-read sequencing data by using a BWT and FM-index built from short-read data. Use when user asks to correct long reads, perform hybrid error correction, or resolve low-complexity regions in sequencing data using a short-read FM-index.
 homepage: https://github.com/holtjma/fmlrc
 ---
+
 
 # fmlrc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-traser
-description: the package is available on all platforms; click for details.
+description: traseR performs enrichment analysis of trait-associated SNPs within genomic intervals. Use when user asks to perform trait-associated SNP enrichment analysis, identify enrichment of SNPs in genomic regions, or link GWAS traits to genomic intervals.
 homepage: https://bioconductor.org/packages/release/bioc/html/traseR.html
 ---
+
 
 # bioconductor-traser
 

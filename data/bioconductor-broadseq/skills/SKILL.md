@@ -1,8 +1,9 @@
 ---
 name: bioconductor-broadseq
-description: the package is available on all platforms; click for details.
+description: This tool provides a unified interface for RNA-seq data normalization, quality control, and differential expression analysis using multiple Bioconductor methods. Use when user asks to normalize RNA-seq counts, perform PCA or MDS quality control, or compare differential expression results across methods like DESeq2, edgeR, and limma.
 homepage: https://bioconductor.org/packages/release/bioc/html/broadSeq.html
 ---
+
 
 # bioconductor-broadseq
 

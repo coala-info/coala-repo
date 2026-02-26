@@ -1,8 +1,9 @@
 ---
 name: pydamage
-description: PyDamage is a specialized bioinformatics tool for assessing the authenticity of ancient DNA.
+description: PyDamage is a bioinformatics tool that assesses ancient DNA authenticity by modeling C-to-T transition patterns and performing statistical significance testing. Use when user asks to estimate DNA damage parameters, filter ancient DNA contigs from modern contaminants, or perform likelihood ratio tests on alignment files.
 homepage: https://github.com/maxibor/pydamage
 ---
+
 
 # pydamage
 

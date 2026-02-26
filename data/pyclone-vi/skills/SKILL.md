@@ -1,8 +1,9 @@
 ---
 name: pyclone-vi
-description: PyClone-VI is a high-performance tool for inferring the clonal architecture of tumors.
+description: PyClone-VI is a high-performance tool for inferring the clonal architecture of tumors by clustering mutations and estimating their cellular prevalence. Use when user asks to infer clonal populations, cluster mutations, or estimate cellular prevalence while accounting for tumor purity and copy number variations.
 homepage: https://github.com/Roth-Lab/pyclone-vi
 ---
+
 
 # pyclone-vi
 

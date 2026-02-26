@@ -1,8 +1,9 @@
 ---
 name: haphic
-description: HapHiC is a high-performance bioinformatics tool used to bridge the gap between fragmented genome contigs and full chromosome-scale pseudomolecules.
+description: HapHiC scaffolds fragmented genome contigs into chromosome-scale pseudomolecules using Hi-C proximity ligation data. Use when user asks to scaffold a genome assembly, cluster and orient contigs, generate Hi-C contact maps, or perform reference-based sorting.
 homepage: https://github.com/zengxiaofei/HapHiC
 ---
+
 
 # haphic
 

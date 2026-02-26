@@ -1,16 +1,81 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: monovar
+baseCommand: monovar.py
 label: monovar
-doc: "The provided text does not contain help information or usage instructions. It
-  is an error log from a container runtime (Singularity/Apptainer) indicating a failure
-  to build the image due to lack of disk space.\n\nTool homepage: https://bitbucket.org/hamimzafar/monovar"
-inputs: []
+doc: "Monovar is a Single Nucleotide Variant (SNV) caller for single-cell DNA sequencing
+  data. It is designed to handle the high levels of noise and allelic dropout common
+  in single-cell sequencing.\n\nTool homepage: https://bitbucket.org/hamimzafar/monovar"
+inputs:
+  - id: bam_list
+    type: File
+    doc: Input file containing paths of BAM files
+    inputBinding:
+      position: 101
+      prefix: --bamfile
+  - id: consensus
+    type:
+      - 'null'
+      - boolean
+    doc: Output consensus genotype
+    inputBinding:
+      position: 101
+      prefix: --consensus
+  - id: min_base_quality
+    type:
+      - 'null'
+      - int
+    doc: Minimum base quality
+    default: 13
+    inputBinding:
+      position: 101
+      prefix: --min_bq
+  - id: min_mapping_quality
+    type:
+      - 'null'
+      - int
+    doc: Minimum mapping quality
+    default: 20
+    inputBinding:
+      position: 101
+      prefix: --min_mq
+  - id: prob_threshold
+    type:
+      - 'null'
+      - float
+    doc: Threshold for the probability of being a variant
+    default: 0.05
+    inputBinding:
+      position: 101
+      prefix: --prob_threshold
+  - id: reference
+    type: File
+    doc: Reference genome file (FASTA)
+    inputBinding:
+      position: 101
+      prefix: --ref
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --threads
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose mode
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_vcf
+    type: File
+    doc: Output VCF file
+    outputBinding:
+      glob: $(inputs.output_vcf)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/monovar:v0.0.1--py27_0
-stdout: monovar.out

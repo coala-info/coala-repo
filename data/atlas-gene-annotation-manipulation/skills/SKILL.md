@@ -1,8 +1,9 @@
 ---
 name: atlas-gene-annotation-manipulation
-description: The `atlas-gene-annotation-manipulation` tool provides a robust mechanism for extracting and reformatting metadata from Gene Transfer Format (GTF) files.
+description: This tool extracts and reformats metadata from GTF files to create custom annotation tables and synchronize sequence files. Use when user asks to generate gene-to-symbol mappings, create transcript-to-gene files for quantification tools, synchronize cDNA FASTA files with annotations, or flag mitochondrial features.
 homepage: https://github.com/ebi-gene-expression-group/atlas-gene-annotation-manipulation
 ---
+
 
 # atlas-gene-annotation-manipulation
 

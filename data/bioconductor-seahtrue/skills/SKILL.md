@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seahtrue
-description: the package is available on all platforms; click for details.
+description: This package provides tools for the analysis and visualization of metabolic data from Agilent Seahorse XF extracellular flux assays. Use when user asks to process Seahorse XF data, normalize metabolic flux measurements, or analyze oxygen consumption and extracellular acidification rates.
 homepage: https://bioconductor.org/packages/release/bioc/html/seahtrue.html
 ---
+
 
 # bioconductor-seahtrue
 

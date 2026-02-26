@@ -1,8 +1,9 @@
 ---
 name: bioconductor-goseq
-description: the package is available on all platforms; click for details.
+description: The goseq package performs functional enrichment analysis on RNA-seq data while accounting for gene length bias. Use when user asks to perform Gene Ontology or KEGG pathway enrichment analysis, account for selection bias in differential expression results, or fit a probability weighting function to gene data.
 homepage: https://bioconductor.org/packages/release/bioc/html/goseq.html
 ---
+
 
 # bioconductor-goseq
 

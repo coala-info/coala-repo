@@ -1,8 +1,9 @@
 ---
 name: cluster_vcf_records
-description: `cluster_vcf_records` is a specialized Python utility designed to consolidate variant records from one or more VCF files into non-redundant clusters.
+description: This tool consolidates variant records from multiple VCF files into non-redundant clusters by grouping physically close or overlapping variants. Use when user asks to cluster variants, merge VCF files, or normalize genomic records for pangenome graph construction.
 homepage: https://github.com/iqbal-lab-org/cluster_vcf_records
 ---
+
 
 # cluster_vcf_records
 

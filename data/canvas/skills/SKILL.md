@@ -1,8 +1,9 @@
 ---
 name: canvas
-description: Canvas is a tool designed to identify copy number alterations and loss of heterozygosity (LOH) by analyzing genomic coverage and B-allele frequencies from aligned sequencing reads.
+description: Canvas identifies copy number alterations and loss of heterozygosity by analyzing genomic coverage and B-allele frequencies from aligned sequencing reads. Use when user asks to detect somatic CNVs in tumor samples, call de novo variants in pedigrees, or analyze germline copy number status.
 homepage: https://github.com/Illumina/canvas
 ---
+
 
 # canvas
 

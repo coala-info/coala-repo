@@ -1,8 +1,9 @@
 ---
 name: phylotoast
-description: PhyloToAST (Phylogenetic Tools for Analysis, Species-level, and Training) is a suite of Python scripts designed to bridge the gap between general phylogenetic pipelines and specialized species-level insights.
+description: PhyloToAST is a suite of Python scripts for species-level phylogenetic analysis and visualization of microbial datasets. Use when user asks to generate PCOA or LDA plots, manipulate BIOM files, map OTU IDs to taxonomic names, or handle datasets with multiple primer sets.
 homepage: https://github.com/smdabdoub/phylotoast
 ---
+
 
 # phylotoast
 

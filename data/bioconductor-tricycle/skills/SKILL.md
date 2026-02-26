@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tricycle
-description: The package contains functions to infer and visualize cell cycle process using Single Cell RNASeq data. It exploits the idea of transfer learning, projecting new data to the previous learned biologically interpretable space. We provide a pre-learned cell cycle space, which could be used to infer cell cycle time of human and mouse single cell samples. In addition, we also offer functions to visualize cell cycle time on different embeddings and functions to build new reference.
+description: This R package infers and visualizes cell cycle position for single-cell RNA-seq data using transfer learning. Use when user asks to infer cell cycle time, visualize cell cycle position on embeddings, or build a new cell cycle reference space.
 homepage: https://bioconductor.org/packages/release/bioc/html/tricycle.html
 ---
+
 
 # bioconductor-tricycle
 

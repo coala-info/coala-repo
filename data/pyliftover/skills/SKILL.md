@@ -1,8 +1,9 @@
 ---
 name: pyliftover
-description: `pyliftover` is a pure-Python implementation of the UCSC `liftOver` tool.
+description: pyliftover converts genomic point coordinates between different assembly versions using chain files. Use when user asks to convert coordinates between assemblies, lift over genomic positions in Python, or map coordinates from one genome build to another.
 homepage: https://github.com/konstantint/pyliftover
 ---
+
 
 # pyliftover
 

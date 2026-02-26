@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geometadb
-description: the package is available on all platforms; click for details.
+description: This tool queries and navigates NCBI Gene Expression Omnibus (GEO) metadata using a local SQLite database. Use when user asks to search for microarray experiments, map between GEO accession types, or perform complex SQL queries on GEO metadata.
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOmetadb.html
 ---
+
 
 # bioconductor-geometadb
 

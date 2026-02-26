@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.cal.sc5314.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides MeSH annotation mappings for Candida albicans strain SC5314. Use when user asks to map Entrez Gene IDs to MeSH terms, perform MeSH enrichment analysis, or retrieve medical subject headings for this specific yeast strain.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Cal.SC5314.eg.db.html
 ---
+
 
 # bioconductor-mesh.cal.sc5314.eg.db
 

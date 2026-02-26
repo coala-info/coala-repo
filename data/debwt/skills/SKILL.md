@@ -1,8 +1,9 @@
 ---
 name: debwt
-description: deBWT is a specialized tool designed for the rapid construction of BWT indexes from DNA sequences.
+description: "deBWT rapidly constructs BWT indexes from DNA sequences using a de Bruijn graph-based data structure. Use when user asks to build a BWT index, process repetitive genomes, or construct indexes for large collections of DNA sequences."
 homepage: https://github.com/DixianZhu/deBWT
 ---
+
 
 # debwt
 

@@ -1,11 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plasmidid_summary_report_pid.py
+baseCommand: summary_report_pid.py
 label: plasmidid_summary_report_pid.py
-doc: "The provided text is a system error log indicating a failure to build or extract
-  a container image (no space left on device) and does not contain help text or usage
-  information for the tool.\n\nTool homepage: https://github.com/BU-ISCIII/plasmidID"
-inputs: []
+doc: "Creates a summary report in tsv and hml from plasmidID execution\n\nTool homepage:
+  https://github.com/BU-ISCIII/plasmidID"
+inputs:
+  - id: group
+    type:
+      - 'null'
+      - boolean
+    doc: Creates a group report instead of individual
+    default: true
+    inputBinding:
+      position: 101
+      prefix: --group
+  - id: input_folder
+    type: Directory
+    doc: REQUIRED.Input pID folder
+    inputBinding:
+      position: 101
+      prefix: --input
 outputs:
   - id: stdout
     type: stdout

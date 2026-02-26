@@ -3,7 +3,7 @@
 ## pygvcf2coverage
 
 ### Tool Description
-A tool for converting gVCF files to coverage information.
+Convert gVCF files to coverage BEDGraph files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pygvcf2coverage:0.2--py_0
@@ -18,33 +18,21 @@ A tool for converting gVCF files to coverage information.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pygvcf2coverage:0.2--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/pygvcf2coverage:0.2--py_0' locally
+0.2--py_0: Pulling from biocontainers/pygvcf2coverage
+1dbcab28ce46: Already exists
+cfb1ba34637d: Already exists
+ace2d8a63dd5: Already exists
+75c080ef15eb: Already exists
+316957f8baaf: Already exists
+dbd31e1d863d: Already exists
+2f8531d5a6ec: Already exists
+1dbcab28ce46: Already exists
+2e178fd72baf: Already exists
+0007f92f307a: Pulling fs layer
+0007f92f307a: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob1472928476: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## pygvcf2coverage_gvcf2coverage
-
-### Tool Description
-A tool to convert gVCF files to coverage. (Note: The provided help text contains only system logs and error messages; no specific command-line arguments could be extracted from the input.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pygvcf2coverage:0.2--py_0
-- **Homepage**: https://github.com/varda/varda2_preprocessing
-- **Package**: https://anaconda.org/channels/bioconda/packages/pygvcf2coverage/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pygvcf2coverage:0.2--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

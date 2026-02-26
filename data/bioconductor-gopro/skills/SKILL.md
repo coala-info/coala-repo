@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gopro
-description: the package is available on all platforms; click for details.
+description: This tool identifies characteristic Gene Ontology terms for groups of genes with similar expression profiles across multiple cohorts. Use when user asks to find overrepresented biological functions, group genes by expression patterns using Tukey's test or hierarchical clustering, or analyze gene expression data across different cohorts.
 homepage: https://bioconductor.org/packages/release/bioc/html/GOpro.html
 ---
+
 
 # bioconductor-gopro
 

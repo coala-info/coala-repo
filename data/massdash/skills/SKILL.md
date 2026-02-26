@@ -1,8 +1,9 @@
 ---
 name: massdash
-description: MassDash is a specialized platform designed for the exploration and optimization of DIA mass spectrometry data.
+description: MassDash is a platform for the visualization, exploration, and optimization of DIA mass spectrometry data. Use when user asks to launch a web-based dashboard for peak picking, visualize chromatograms or ion mobility plots, and programmatically analyze peptide precursors.
 homepage: https://github.com/Roestlab/massdash
 ---
+
 
 # massdash
 

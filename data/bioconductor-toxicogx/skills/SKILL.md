@@ -1,8 +1,9 @@
 ---
 name: bioconductor-toxicogx
-description: the package is available on all platforms; click for details.
+description: ToxicoGx provides a framework for the integrated analysis of large-scale toxicogenomic data. Use when user asks to analyze toxicogenomic datasets, process chemical sensitivity data, or perform integrative modeling of gene expression and toxicity.
 homepage: https://bioconductor.org/packages/release/bioc/html/ToxicoGx.html
 ---
+
 
 # bioconductor-toxicogx
 

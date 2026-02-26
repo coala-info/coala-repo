@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scanmirapp
-description: the package is available on all platforms; click for details.
+description: This R package provides a shiny application for scanning sequences for miRNA binding sites and predicting miRNA-target interactions. Use when user asks to scan sequences for miRNA binding sites, predict miRNA-target interactions, or visualize miRNA binding data through a graphical interface.
 homepage: https://bioconductor.org/packages/release/bioc/html/scanMiRApp.html
 ---
+
 
 # bioconductor-scanmirapp
 

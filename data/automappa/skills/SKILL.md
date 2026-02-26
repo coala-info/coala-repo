@@ -1,8 +1,9 @@
 ---
 name: automappa
-description: Automappa is a specialized interactive interface designed for the visual exploration and refinement of highly complex metagenomic datasets.
+description: Automappa provides an interactive web interface for the visual exploration and refinement of complex metagenomic datasets into high-quality genomes. Use when user asks to install Automappa via Conda, deploy the service using Docker, or access the interface for manual binning refinement.
 homepage: https://github.com/WiscEvan/Automappa
 ---
+
 
 # automappa
 

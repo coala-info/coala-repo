@@ -2,9 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ionquant
 label: ionquant
-doc: "IonQuant: A comprehensive and ultra-fast tool for MS1-based quantification.\n
-  \nTool homepage: https://github.com/Nesvilab/IonQuant"
-inputs: []
+doc: "Please provide pass a license key with the --key argument. You may obtain a
+  key by agreeing to the terms at https://msfragger.arsci.com/ionquant/.\n\nTool homepage:
+  https://github.com/Nesvilab/IonQuant"
+inputs:
+  - id: key
+    type: string
+    doc: license key
+    inputBinding:
+      position: 101
+      prefix: --key
 outputs:
   - id: stdout
     type: stdout

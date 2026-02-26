@@ -3,7 +3,7 @@
 ## spyder
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it is a log of a failed container build process.
+Spyder is a free and open-source Scientific Python Development Environment
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/spyder:3.3.1--py35_1
@@ -12,19 +12,34 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/spyder/overview
-- **Total Downloads**: 57.3K
-- **Last updated**: 2026-02-20
+- **Total Downloads**: 57.4K
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/spyder-ide/spyder
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/spyder:3.3.1--py35_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: spyder [options] files
+
+Options:
+  -h, --help            show this help message and exit
+  --new-instance        Run a new instance of Spyder, even if the single
+                        instance mode has been turned on (default)
+  --defaults            Reset configuration settings to defaults
+  --reset               Remove all configuration files!
+  --optimize            Optimize Spyder bytecode (this may require
+                        administrative privileges)
+  -w WORKING_DIRECTORY, --workdir=WORKING_DIRECTORY
+                        Default working directory
+  --hide-console        Hide parent console window (Windows)
+  --show-console        (Deprecated) Does nothing, now the default behavior is
+                        to show the console
+  --multithread         Internal console is executed in another thread
+                        (separate from main application thread)
+  --profile             Profile mode (internal test, not related with Python
+                        profiling)
+  --window-title=WINDOW_TITLE
+                        String to show in the main window title
+  -p OPEN_PROJECT, --project=OPEN_PROJECT
+                        Path that contains an Spyder project
 ```
 
-
-## Metadata
-- **Skill**: generated

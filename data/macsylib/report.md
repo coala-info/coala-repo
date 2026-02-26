@@ -1,9 +1,9 @@
 # macsylib CWL Generation Report
 
-## macsylib
+## macsylib_msl_data
 
 ### Tool Description
-Macsylib (Note: The provided text contains only environment logs and error messages; no help text or usage information was found to extract arguments).
+Model Management Tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/macsylib:1.0.4--pyhdfd78af_1
@@ -12,52 +12,54 @@ Macsylib (Note: The provided text contains only environment logs and error messa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/macsylib/overview
-- **Total Downloads**: 842
+- **Total Downloads**: 864
 - **Last updated**: 2025-12-17
 - **GitHub**: https://github.com/gem-pasteur/macsylib
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/macsylib:1.0.4--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3439628636: no space left on device
-```
+usage: msl_data [-h] [-v] [--version]
+                {available,download,install,uninstall,search,info,list,freeze,cite,help,check,show,definition,init} ...
 
+     *            *               *
+*           *               *   *   *  *    **
+  **     *    *   *  *     *        *
+            *      _      *   _   *   _      *
+  *  _ __ ___  ___| |      __| | __ _| |_ __ _
+    | '_ ` _ \/ __| |     / _` |/ _` | __/ _` |
+    | | | | | \__ \ |    | (_| | (_| | || (_| |
+    |_| |_| |_|___/_|_____\__,_|\__,_|\__\__,_|
+           *        |_____|          *
+ *      *   * *     *   **         *   *  *
+  *      *         *        *    *
+*                           *  *           *
 
-## Metadata
-- **Skill**: generated
+msl_data - Model Management Tool
 
-## macsylib_msl_data
+positional arguments:
+  {available,download,install,uninstall,search,info,list,freeze,cite,help,check,show,definition,init}
+    available           List Models available on macsy-models
+    download            Download model packages.
+    install             Install Model packages.
+    uninstall           Uninstall packages.
+    search              Discover new packages.
+    info                Show information about packages.
+    list                List installed packages.
+    freeze              List installed models in requirements format.
+    cite                How to cite a package.
+    help                get online documentation.
+    check               check if the directory is ready to be publish as data
+                        package
+    show                show the structure of model package
+    definition          show a model definition
+    init                Create a template for a new data package (REQUIRE
+                        git/GitPython installation)
 
-### Tool Description
-A tool for managing MacSyLib MSL (Macromolecular System Library) data.
+options:
+  -h, --help            show this help message and exit
+  -v, --verbose         Give more output.
+  --version             show program's version number and exit
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/macsylib:1.0.4--pyhdfd78af_1
-- **Homepage**: https://github.com/gem-pasteur/macsylib
-- **Package**: https://anaconda.org/channels/bioconda/packages/macsylib/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/macsylib:1.0.4--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3907327761: no space left on device
-```
-
-## macsylib_macsydata
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a system error log regarding a container runtime failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/macsylib:1.0.4--pyhdfd78af_1
-- **Homepage**: https://github.com/gem-pasteur/macsylib
-- **Package**: https://anaconda.org/channels/bioconda/packages/macsylib/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/macsylib:1.0.4--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1497986300: no space left on device
+For more details, visit the macsylib website and read the macsylib documentation.
 ```
 

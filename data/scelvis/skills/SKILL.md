@@ -1,8 +1,9 @@
 ---
 name: scelvis
-description: SCelVis is a specialized tool designed for the interactive, web-based visualization of single-cell transcriptomics data.
+description: SCelVis provides interactive, web-based visualization and exploration of single-cell transcriptomics data. Use when user asks to launch a visualization server, explore cell clusters and gene expression patterns, or convert data formats like MTX and Loom into AnnData files.
 homepage: https://github.com/bihealth/scelvis
 ---
+
 
 # scelvis
 

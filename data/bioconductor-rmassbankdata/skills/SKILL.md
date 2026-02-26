@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rmassbankdata
-description: The package is described in the man page for RMassBankData. Includes new XCMS test data.
+description: This package provides example datasets and test data for the RMassBank Bioconductor package. Use when user asks to access RMassBank test data, run package examples, or use XCMS sample datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RMassBankData.html
 ---
+
 
 # bioconductor-rmassbankdata
 

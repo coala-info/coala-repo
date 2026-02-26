@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gg4way
-description: The package also provides information about the correlation between contrasts and significant genes of interest.
+description: This tool creates 4-way plots to compare log-fold change values between two differential expression contrasts from RNA-seq or microarray data. Use when user asks to visualize shared and unique differentially expressed genes, calculate correlations between contrasts, or label specific genes of interest across two comparisons.
 homepage: https://bioconductor.org/packages/release/bioc/html/gg4way.html
 ---
+
 
 # bioconductor-gg4way
 

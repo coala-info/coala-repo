@@ -1,8 +1,9 @@
 ---
 name: perl-symbol-util
-description: Symbol::Util is a Perl module designed to simplify the manipulation of the Perl symbol table.
+description: This Perl module provides a functional interface for safely manipulating the Perl symbol table and managing package stashes. Use when user asks to fetch stashes, delete specific subroutines or typeglob slots, and perform dynamic symbol exporting or namespace cleanup between packages.
 homepage: https://github.com/dex4er/perl-Symbol-Util
 ---
+
 
 # perl-symbol-util
 

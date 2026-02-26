@@ -1,8 +1,9 @@
 ---
 name: obitools
-description: The OBITools package provides a comprehensive Unix-style command-line interface for the management of sequence data from the initial cleaning of raw reads to the final taxonomic identification.
+description: OBITools is a suite of command-line utilities designed for the management and analysis of large-scale DNA metabarcoding data. Use when user asks to align paired-end reads, demultiplex samples, dereplicate sequences, filter for quality, or perform taxonomic assignment.
 homepage: http://metabarcoding.org/obitools
 ---
+
 
 # obitools
 

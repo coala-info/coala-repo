@@ -1,8 +1,9 @@
 ---
 name: irep
-description: The `irep` skill enables the calculation of bacterial replication rates by measuring population genome copy number variation.
+description: The irep tool calculates bacterial replication rates by measuring genome copy number variation from metagenomic data. Use when user asks to measure microbial replication rates, analyze draft or complete genomes for growth activity, or calculate peak-to-trough ratios and GC skew.
 homepage: https://github.com/christophertbrown/iRep
 ---
+
 
 # irep
 

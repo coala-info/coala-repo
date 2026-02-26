@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gage
-description: the package is available on all platforms; click for details.
+description: This tool performs Generally Applicable Gene-set Enrichment (GAGE) analysis to identify significantly perturbed pathways or functional groups in high-throughput expression data. Use when user asks to perform gene-set enrichment analysis, identify differentially regulated KEGG pathways or GO terms, handle various experimental designs for pathway analysis, or visualize gene expression changes on pathway maps.
 homepage: https://bioconductor.org/packages/release/bioc/html/gage.html
 ---
+
 
 # bioconductor-gage
 

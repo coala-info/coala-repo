@@ -1,8 +1,9 @@
 ---
 name: homopolish
-description: Homopolish is a specialized bioinformatics tool designed to push genome assembly quality to >Q50 (99.999% accuracy) for viruses, bacteria, and fungi.
+description: "Homopolish corrects systematic homopolymer errors in genome assemblies using homologous sequences and machine learning to achieve high accuracy. Use when user asks to polish Nanopore or PacBio assemblies, correct indel errors using homologous genomes, or fix base modification-mediated errors."
 homepage: https://github.com/ythuang0522/homopolish
 ---
+
 
 # homopolish
 

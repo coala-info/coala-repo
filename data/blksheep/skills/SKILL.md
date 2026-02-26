@@ -1,8 +1,9 @@
 ---
 name: blksheep
-description: blksheep (BlackSheep) is a specialized tool for detecting differential outliers in high-dimensional data.
+description: blksheep detects differential outliers in high-dimensional data to identify features that are extreme in specific sample subgroups. Use when user asks to run an outlier analysis pipeline, binarize annotations, create outlier tables, or perform statistical enrichment testing for extreme values.
 homepage: https://github.com/ruggleslab/blackSheep/
 ---
+
 
 # blksheep
 

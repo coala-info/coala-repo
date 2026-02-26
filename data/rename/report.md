@@ -3,7 +3,7 @@
 ## rename
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be an error log from a container build process.
+Rename files according to a pattern.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rename:1.601--0
@@ -18,13 +18,41 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rename:1.601--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage:
+    rename [switches|transforms] [files]
+
+    Switches:
+
+    --man (read the full manual)
+    -0/--null (when reading from STDIN)
+    -f/--force or -i/--interactive (proceed or prompt when overwriting)
+    -g/--glob (expand "*" etc. in filenames, useful in Windows\x{2122} CMD.EXE)
+    -k/--backwards/--reverse-order
+    -l/--symlink or -L/--hardlink
+    -M/--use=Module
+    -n/--just-print/--dry-run
+    -N/--counter-format
+    -p/--mkpath/--make-dirs
+    --stdin/--no-stdin
+    -t/--sort-time
+    -T/--transcode=encoding
+    -v/--verbose
+
+    Transforms, applied sequentially:
+
+    -a/--append=str
+    -A/--prepend=str
+    -c/--lower-case
+    -C/--upper-case
+    -d/--delete=str
+    -D/--delete-all=str
+    -e/--expr=code
+    -P/--pipe=cmd
+    -s/--subst from to
+    -S/--subst-all from to
+    -x/--remove-extension
+    -X/--keep-extension
+    -z/--sanitize
+    --camelcase --urlesc --nows --rews --noctrl --nometa --trim (see manual)
 ```
 
-
-## Metadata
-- **Skill**: generated

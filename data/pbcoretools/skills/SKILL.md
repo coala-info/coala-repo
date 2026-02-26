@@ -1,8 +1,9 @@
 ---
 name: pbcoretools
-description: The `pbcoretools` package is a collection of Python-based CLI utilities designed for the manipulation and validation of PacBio-specific genomic data formats.
+description: pbcoretools provides a suite of command-line utilities for validating, filtering, and managing PacBio genomic data formats and metadata. Use when user asks to validate PacBio data files, subsample or anonymize BAM files, or split and merge Dataset XML files for parallel processing.
 homepage: https://github.com/mpkocher/pbcoretools
 ---
+
 
 # pbcoretools
 

@@ -1,8 +1,9 @@
 ---
 name: r-isva
-description: Skill for using the CRAN R package r-isva.
+description: The isva package performs feature selection by identifying and accounting for hidden confounding factors using Independent Component Analysis. Use when user asks to estimate surrogate variables, identify features associated with a phenotype, or perform Independent Surrogate Variable Analysis to control for unwanted variation.
 homepage: https://cran.r-project.org/web/packages/isva/index.html
 ---
+
 
 # r-isva
 

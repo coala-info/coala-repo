@@ -1,9 +1,9 @@
 # pygenomeviz CWL Generation Report
 
-## pygenomeviz
+## pygenomeviz_pgv-gui
 
 ### Tool Description
-A genome visualization tool for drawing genome track diagrams.
+Launch pyGenomeViz WebApp
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pygenomeviz:0.4.4--pyhdfd78af_0
@@ -18,33 +18,13 @@ A genome visualization tool for drawing genome track diagrams.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pygenomeviz:0.4.4--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: pgv-gui [-p] [-v] [-h]
 
+Launch pyGenomeViz WebApp
 
-## Metadata
-- **Skill**: generated
-
-## pygenomeviz_pgv-gui
-
-### Tool Description
-Launch the pyGenomeViz Graphical User Interface (GUI) for genome visualization.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pygenomeviz:0.4.4--pyhdfd78af_0
-- **Homepage**: https://github.com/moshi4/pyGenomeViz/
-- **Package**: https://anaconda.org/channels/bioconda/packages/pygenomeviz/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pygenomeviz:0.4.4--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -p , --port    Port number to open web browser (Default: 8501)
+  -v, --version  Print version information
+  -h, --help     Show this help message and exit
 ```
 

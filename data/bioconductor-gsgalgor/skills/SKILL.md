@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsgalgor
-description: the package is available on all platforms; click for details.
+description: GSgalgoR implements a multi-objective genetic algorithm to identify molecular subtypes by balancing cluster consistency and clinical survival differences. Use when user asks to discover cancer subtypes, optimize gene signatures using NSGA-II, or identify a Pareto front of solutions based on Silhouette Coefficient and Restricted Mean Survival Time.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSgalgoR.html
 ---
+
 
 # bioconductor-gsgalgor
 

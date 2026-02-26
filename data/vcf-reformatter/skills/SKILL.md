@@ -1,8 +1,9 @@
 ---
 name: vcf-reformatter
-description: VCF files often contain nested data and complex annotation strings (like VEP's CSQ or SnpEff's ANN fields) that are difficult to analyze directly.
+description: vcf-reformatter converts complex VCF files into flattened, row-based tables for easier analysis. Use when user asks to flatten VCF files, convert VCF to TSV, filter VCF transcripts to the most severe consequence, split VCF transcripts into separate rows, or generate MAF from VCF.
 homepage: https://github.com/flalom/vcf-reformatter
 ---
+
 
 # vcf-reformatter
 

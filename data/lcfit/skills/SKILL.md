@@ -1,8 +1,9 @@
 ---
 name: lcfit
-description: lcfit is a specialized toolset designed to approximate phylogenetic likelihood functions using nonlinear least squares.
+description: lcfit approximates phylogenetic likelihood functions using nonlinear least squares to enable rapid branch length estimation and posterior sampling. Use when user asks to fit surrogate functions to log-likelihood data, estimate maximum-likelihood branch lengths, or perform efficient posterior sampling in phylogenetic workflows.
 homepage: https://github.com/matsengrp/lcfit
 ---
+
 
 # lcfit
 

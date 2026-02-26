@@ -1,8 +1,9 @@
 ---
 name: cutesv
-description: cuteSV is a high-performance tool designed for sensitive and fast structural variation detection in human genomes using noisy long reads.
+description: "cuteSV detects and genotypes structural variations in human genomes using long-read sequencing data. Use when user asks to detect structural variants, genotype SVs from PacBio or ONT reads, or configure platform-specific parameters for SV discovery."
 homepage: https://github.com/tjiangHIT/cuteSV
 ---
+
 
 # cutesv
 

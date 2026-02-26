@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmusculus.ucsc.mm8.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the full masked genome sequences for the Mus musculus (mouse) UCSC mm8 assembly. Use when user asks to perform genomic analysis on the mm8 mouse assembly, mask assembly gaps or repeats, or search for motifs in unmasked regions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm8.masked.html
 ---
+
 
 # bioconductor-bsgenome.mmusculus.ucsc.mm8.masked
 

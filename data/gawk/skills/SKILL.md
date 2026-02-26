@@ -1,8 +1,9 @@
 ---
 name: gawk
-description: Gawk is the GNU Project's implementation of the AWK programming language, designed for powerful text manipulation and data extraction.
+description: Gawk is a text processing tool used for pattern matching, data extraction, and sophisticated file reformatting. Use when user asks to filter records by field values, calculate column sums, manipulate delimited text files, or perform complex string transformations.
 homepage: https://www.gnu.org/software/gawk/
 ---
+
 
 # gawk
 

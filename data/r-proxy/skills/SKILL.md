@@ -1,8 +1,9 @@
 ---
 name: r-proxy
-description: Provides an extensible framework for the efficient calculation of auto- and cross-proximities, along with implementations of the most popular ones. </p>
+description: The r-proxy package provides an extensible framework for calculating auto- and cross-proximities using a wide range of distance and similarity measures. Use when user asks to compute distances or similarities between datasets, manage proximity measures, or convert between similarity and distance matrices.
 homepage: https://cloud.r-project.org/web/packages/proxy/index.html
 ---
+
 
 # r-proxy
 

@@ -1,8 +1,9 @@
 ---
 name: unifrac-binaries
-description: The `unifrac-binaries` package provides a high-performance C++ implementation of phylogenetic diversity metrics.
+description: unifrac-binaries calculates phylogenetic diversity metrics and distances between samples using a high-performance C++ implementation. Use when user asks to calculate UniFrac distances (unweighted, weighted, generalized, variance adjusted) or Faith's Phylogenetic Diversity.
 homepage: https://github.com/biocore/unifrac-binaries
 ---
+
 
 # unifrac-binaries
 

@@ -1,12 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepsignal-plant
+baseCommand: deepsignal_plant
 label: deepsignal-plant_deepsignal_plant
-doc: "A tool for detecting DNA methylation from Nanopore sequencing data in plants.
-  (Note: The provided text is a container execution error log and does not contain
-  CLI help information; therefore, no arguments could be extracted.)\n\nTool homepage:
-  https://github.com/PengNi/deepsignal-plant"
-inputs: []
+doc: "deepsignal_plant detects base modifications from Nanopore reads of plants, which
+  contains five modules:\n\nTool homepage: https://github.com/PengNi/deepsignal-plant"
+inputs:
+  - id: module
+    type: string
+    doc: deepsignal_plant modules, use -h/--help for help
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

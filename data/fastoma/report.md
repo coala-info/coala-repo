@@ -1,9 +1,9 @@
 # fastoma CWL Generation Report
 
-## fastoma
+## fastoma_nextflow
 
 ### Tool Description
-FastOMA is a tool for orthology inference. (Note: The provided text contains container runtime error messages and does not include the actual help documentation or argument definitions).
+Nextflow is a workflow system that enables reproducible and scalable scientific computing.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastoma:0.5.1--pyhdfd78af_0
@@ -12,35 +12,62 @@ FastOMA is a tool for orthology inference. (Note: The provided text contains con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastoma/overview
-- **Total Downloads**: 948
+- **Total Downloads**: 952
 - **Last updated**: 2025-12-20
 - **GitHub**: https://github.com/DessimozLab/FastOMA
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastoma:0.5.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1631405481: no space left on device
-```
+Usage: nextflow [options] COMMAND [arg...]
 
+Options:
+  -C
+     Use the specified configuration file(s) overriding any defaults
+  -D
+     Set JVM properties
+  -bg
+     Execute nextflow in background
+  -c, -config
+     Add the specified file to configuration set
+  -config-ignore-includes
+     Disable the parsing of config includes
+  -h
+     Print this help
+  -log
+     Set nextflow log file path
+  -q, -quiet
+     Do not print information messages
+  -remote-debug
+     Enable JVM interactive remote debugging (experimental)
+  -syslog
+     Send logs to syslog server (eg. localhost:514)
+  -trace
+     Enable trace level logging for the specified package name - multiple packages can be provided separating them with a comma e.g. '-trace nextflow,io.seqera'
+  -v, -version
+     Print the program version
 
-## Metadata
-- **Skill**: generated
-
-## fastoma_nextflow
-
-### Tool Description
-The provided text does not contain help information for the tool; it contains system log messages and a fatal error regarding container image creation (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastoma:0.5.1--pyhdfd78af_0
-- **Homepage**: https://github.com/DessimozLab/FastOMA
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastoma/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastoma:0.5.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2752691476: no space left on device
+Commands:
+  auth          Manage Seqera Platform authentication
+  clean         Clean up project cache and work directories
+  clone         Clone a project into a folder
+  config        Print a project configuration
+  console       Launch Nextflow interactive console
+  drop          Delete the local copy of a project
+  fs            Perform filesystem operations
+  help          Print the usage help for a command
+  info          Print project and system runtime information
+  inspect       Inspect process settings in a pipeline project
+  kuberun       Execute a workflow in a Kubernetes cluster (experimental)
+  launch        Launch a workflow in Seqera Platform
+  lineage       Explore workflows lineage metadata
+  lint          Lint Nextflow scripts and config files
+  list          List all downloaded projects
+  log           Print executions log and runtime info
+  plugin        Execute plugin-specific commands
+  pull          Download or update a project
+  run           Execute a pipeline project
+  secrets       Manage pipeline secrets
+  self-update   Update nextflow runtime to the latest available version
+  view          View project script file(s)
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-coexnet
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package constructs and analyzes gene co-expression networks from transcriptomic data. Use when user asks to build gene co-expression networks, identify modules of correlated genes, or perform differential co-expression analysis.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/coexnet.html
 ---
+
 
 # bioconductor-coexnet
 

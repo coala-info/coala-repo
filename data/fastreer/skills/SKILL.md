@@ -1,8 +1,9 @@
 ---
 name: fastreer
-description: fastreeR is a hybrid toolkit that combines a high-performance Java backend with a Python CLI to provide rapid phylogenetic reconstruction.
+description: fastreeR is a hybrid toolkit for rapid phylogenetic reconstruction and distance matrix calculation from VCF or FASTA files. Use when user asks to calculate distance matrices, generate neighbor-joining trees, or perform streaming bootstrap analysis.
 homepage: https://github.com/gkanogiannis/fastreeR
 ---
+
 
 # fastreer
 

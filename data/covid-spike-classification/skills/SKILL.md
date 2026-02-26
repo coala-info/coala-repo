@@ -1,8 +1,9 @@
 ---
 name: covid-spike-classification
-description: The `covid-spike-classification` tool is a specialized bioinformatics utility designed to automate the identification of clinically relevant SARS-CoV-2 spike protein mutations.
+description: This tool identifies clinically relevant SARS-CoV-2 spike protein mutations from Sanger sequencing trace files. Use when user asks to classify spike mutations, process AB1 files, or identify SARS-CoV-2 variants from sequencing traces.
 homepage: https://github.com/kblin/covid-spike-classification/
 ---
+
 
 # covid-spike-classification
 

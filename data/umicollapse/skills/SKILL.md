@@ -1,8 +1,9 @@
 ---
 name: umicollapse
-description: UMICollapse is a specialized bioinformatic tool used to identify and collapse duplicate reads that share the same Unique Molecular Identifier (UMI).
+description: UMICollapse identifies and collapses duplicate reads based on Unique Molecular Identifiers (UMIs). Use when user asks to deduplicate aligned BAM files, deduplicate paired-end data, collapse reads in FASTQ files, or mark duplicates without removing them.
 homepage: https://github.com/Daniel-Liu-c0deb0t/UMICollapse
 ---
+
 
 # umicollapse
 

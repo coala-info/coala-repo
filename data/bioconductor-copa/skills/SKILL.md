@@ -1,8 +1,9 @@
 ---
 name: bioconductor-copa
-description: the package is available on all platforms; click for details.
+description: This tool performs Cancer Outlier Profile Analysis to identify genes with outlier expression patterns in a subset of samples. Use when user asks to identify outlier expression profiles, find recurrent chromosomal translocations, or perform cancer outlier profile analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/copa.html
 ---
+
 
 # bioconductor-copa
 

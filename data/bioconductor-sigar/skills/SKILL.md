@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sigar
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides statistical methods for the integrative analysis of multi-omics data like DNA copy number and gene expression. Use when user asks to perform integrative genomics analysis, correlate copy number variations with gene expression, or identify molecular drivers in genomic data.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/sigaR.html
 ---
+
 
 # bioconductor-sigar
 

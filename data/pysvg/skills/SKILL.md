@@ -1,8 +1,9 @@
 ---
 name: pysvg
-description: The `pysvg` skill enables the programmatic creation and modification of Scalable Vector Graphics (SVG) using a Python-based object model.
+description: The pysvg tool enables the programmatic creation, modification, and parsing of Scalable Vector Graphics using a Python-based object model. Use when user asks to generate data visualizations, create algorithmic art, draw geometric shapes, or manipulate existing SVG files.
 homepage: http://codeboje.de/pysvg/
 ---
+
 
 # pysvg
 

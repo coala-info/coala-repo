@@ -2,15 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: nedbit-features-calculator
 label: nedbit-features-calculator
-doc: "A tool for calculating features (Note: The provided text is a container runtime
-  error message and does not contain usage information or argument definitions).\n
-  \nTool homepage: https://github.com/AndMastro/NIAPU"
-inputs: []
+doc: "Calculate features from a file link and gene file, and output to a file.\n\n\
+  Tool homepage: https://github.com/AndMastro/NIAPU"
+inputs:
+  - id: filelink
+    type: File
+    doc: Input file link
+    inputBinding:
+      position: 1
+  - id: filegene
+    type: File
+    doc: Input gene file
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: fileout
+    type: File
+    doc: Output file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/nedbit-features-calculator:1.2--h7b50bb2_2
-stdout: nedbit-features-calculator.out
+    dockerPull: quay.io/biocontainers/nedbit-features-calculator:1.2--h031d066_0

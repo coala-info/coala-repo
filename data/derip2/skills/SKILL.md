@@ -1,8 +1,9 @@
 ---
 name: derip2
-description: The `derip2` tool is designed for evolutionary biologists and genomicists working with fungal genomes.
+description: The derip2 tool identifies and reverses Repeat-Induced Point (RIP) mutations in multiple sequence alignments to reconstruct ancestral sequences for fungal repetitive elements. Use when user asks to correct RIP mutations, generate a de-RIP'd consensus sequence, mask RIP-affected sites, or reaminate fungal genomic sequences.
 homepage: https://github.com/Adamtaranto/deRIP2
 ---
+
 
 # derip2
 

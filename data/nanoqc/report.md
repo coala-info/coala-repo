@@ -1,9 +1,9 @@
 # nanoqc CWL Generation Report
 
-## nanoqc
+## nanoqc_nanoQC
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for nanoqc. It contains container runtime error messages indicating a failure to build the image due to lack of disk space.
+Investigate nucleotide composition and base quality.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanoqc:0.10.0--pyhdfd78af_0
@@ -18,11 +18,23 @@ The provided text does not contain help information or usage instructions for na
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanoqc:0.10.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3632276483: no space left on device
+usage: nanoQC [-h] [-v] [-o OUTDIR] [--rna] [-l MINLEN] fastq
+
+Investigate nucleotide composition and base quality.
+
+positional arguments:
+  fastq                 Reads data in fastq.gz format.
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         Print version and exit.
+  -o OUTDIR, --outdir OUTDIR
+                        Specify directory in which output has to be created.
+  --rna                 Fastq is from direct RNA-seq and contains U
+                        nucleotides.
+  -l MINLEN, --minlen MINLEN
+                        Filters the reads on a minimal length of the given
+                        range. Also plots the given length/2 of the begin and
+                        end of the reads.
 ```
 
-
-## Metadata
-- **Skill**: generated

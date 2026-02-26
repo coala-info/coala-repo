@@ -2,10 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gbkviz_webapp
 label: gbkviz_gbkviz_webapp
-doc: "A tool for GenBank visualization (webapp). Note: The provided help text contains
-  only system error messages regarding container image building and does not list
-  specific command-line arguments.\n\nTool homepage: https://github.com/moshi4/GBKviz/"
-inputs: []
+doc: "Simple web application to visualize and compare genomes in Genbank files\n\n\
+  Tool homepage: https://github.com/moshi4/GBKviz/"
+inputs:
+  - id: port
+    type:
+      - 'null'
+      - int
+    doc: Port number to open web server
+    default: 8501
+    inputBinding:
+      position: 101
+      prefix: --port
 outputs:
   - id: stdout
     type: stdout

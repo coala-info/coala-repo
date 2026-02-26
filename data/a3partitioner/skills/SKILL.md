@@ -1,8 +1,9 @@
 ---
 name: a3partitioner
-description: Create APOBEC3 and non-APOBEC3 partitions from sequence alignments
+description: a3partitioner partitions nucleotide alignments by isolating or masking sites associated with the APOBEC3 mutation signature. Use when user asks to isolate APOBEC3-related sites, remove APOBEC3 bias from an alignment, or generate separate partitions for phylogenetic analysis.
 homepage: https://github.com/DaanJansen94/a3partitioner
 ---
+
 
 # a3partitioner
 

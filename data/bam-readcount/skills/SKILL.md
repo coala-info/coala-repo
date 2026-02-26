@@ -1,8 +1,9 @@
 ---
 name: bam-readcount
-description: `bam-readcount` is a specialized bioinformatics tool designed to provide granular, base-by-base metrics from aligned sequencing data.
+description: "bam-readcount generates detailed, base-by-base metrics and allele counts from aligned sequencing data at specific genomic positions. Use when user asks to count alleles at specific sites, extract base-level quality metrics from a BAM file, or validate variant calls using site-specific read statistics."
 homepage: https://github.com/genome/bam-readcount
 ---
+
 
 # bam-readcount
 

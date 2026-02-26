@@ -1,8 +1,9 @@
 ---
 name: prokka
-description: Prokka is a command-line tool that coordinates a suite of specialized bioinformatics software to provide rapid functional annotation of prokaryotic genomes.
+description: "Prokka provides rapid functional annotation of prokaryotic genomes by identifying genes, protein translations, and structural RNAs from genomic DNA sequences. Use when user asks to annotate bacterial or archaeal contigs, generate GFF or GenBank files from genomic sequences, or prepare genomic data for NCBI submission."
 homepage: https://github.com/tseemann/prokka
 ---
+
 
 # prokka
 

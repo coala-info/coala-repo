@@ -1,8 +1,9 @@
 ---
 name: minirmd
-description: minirmd is a high-performance C++ utility designed to identify and remove redundant sequences from FASTQ files.
+description: minirmd identifies and removes redundant or near-identical sequences from FASTQ files to reduce sequencing bias and computational costs. Use when user asks to deduplicate FASTQ files, remove redundant reads with allowed mismatches, or perform paired-end sequence deduplication.
 homepage: https://github.com/yuansliu/minirmd
 ---
+
 
 # minirmd
 

@@ -1,8 +1,9 @@
 ---
 name: pybedgraph
-description: pybedgraph is a performance-oriented tool, partially written in Cython, designed to query genomic signal tracks with extreme efficiency.
+description: pybedgraph is a performance-oriented tool designed to efficiently query and calculate statistics from genomic signal tracks. Use when user asks to calculate signal metrics like mean or coverage from bedGraph or bigWig files, query genomic intervals at high speed, or perform bulk statistical analysis on chromosome data.
 homepage: https://github.com/TheJacksonLaboratory/pyBedGraph
 ---
+
 
 # pybedgraph
 

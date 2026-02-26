@@ -1,8 +1,9 @@
 ---
 name: annosine2
-description: AnnoSINE_v2 is a specialized bioinformatics tool designed to identify and annotate SINEs within eukaryotic genomes.
+description: Annosine2 identifies and annotates Short Interspersed Nuclear Elements (SINEs) in eukaryotic genomes using homology-based and structure-based methods. Use when user asks to identify SINEs, generate non-redundant SINE libraries, or perform de novo repeat annotation.
 homepage: https://github.com/liaoherui/AnnoSINE
 ---
+
 
 # annosine2
 

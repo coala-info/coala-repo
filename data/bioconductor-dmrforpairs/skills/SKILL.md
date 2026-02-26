@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmrforpairs
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: DMRforPairs identifies differentially methylated regions by comparing unique samples based on probe proximity and functional annotation. Use when user asks to identify differentially methylated regions in n=1 vs n=1 comparisons, tune parameters for region identification, or visualize methylation patterns for specific genes and genomic coordinates.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/DMRforPairs.html
 ---
+
 
 # bioconductor-dmrforpairs
 

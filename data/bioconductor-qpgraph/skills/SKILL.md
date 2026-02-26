@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qpgraph
-description: the package is available on all platforms; click for details.
+description: The bioconductor-qpgraph package estimates gene and protein regulatory networks from high-throughput data using graphical models. Use when user asks to estimate molecular regulatory networks, calculate q-order partial correlation coefficients, or reverse engineer biological networks from expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/qpgraph.html
 ---
+
 
 # bioconductor-qpgraph
 

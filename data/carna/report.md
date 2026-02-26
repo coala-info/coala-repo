@@ -3,7 +3,7 @@
 ## carna
 
 ### Tool Description
-CARNA is a tool for ensemble-based alignment of RNA structures. (Note: The provided input text appears to be a container execution error log rather than help text, so no arguments could be extracted.)
+A tool for pairwise Alignment of RNA.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/carna:1.3.3--1
@@ -12,85 +12,125 @@ CARNA is a tool for ensemble-based alignment of RNA structures. (Note: The provi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/carna/overview
-- **Total Downloads**: 36.2K
+- **Total Downloads**: 36.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Code52/carnac
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 12:09:02  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/carna:1.3.3--1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:910e2d6f8985367be27d75b8757e2aa217435e1201de5df6c4780b859ea09ebe: unpack entry: usr/local/bin/RNAduplex: unpack to regular file: short write: write /tmp/build-temp-2798724053/rootfs/usr/local/bin/RNAduplex: no space left on device
-```
+carna 1.3.3
+A tool for pairwise Alignment of RNA.
+
+USAGE: carna [options] <file 1> <file 2>
+
+Options:
+
+Scoring parameters:
+  -m,--match=<score>(50)
+    Match score
+
+  -M,--mismatch=<score>(0)
+    Mismatch score
+
+  --ribosum-file=<f>(RIBOSUM85_60)
+    Ribosum file
+
+  --use-ribosum=<bool>(true)
+    Use ribosum scores
+
+  -i,--indel=<score>(-350)
+    Indel score
+
+  --indel-opening=<score>(-500)
+    Indel opening score
+
+  -s,--struct-weight=<score>(200)
+    Maximal weight of 1/2 arc match
+
+  -e,--exp-prob=<prob>
+    Expected probability
+
+  -t,--tau=<factor>(0)
+    Tau factor in percent
 
 
-## Metadata
-- **Skill**: generated
+Controlling output:
+  --gist
+    Use gist for graphical search (feature disabled, recompile to activate).
 
-## carna_carnac
+  -w,--width=<columns>(120)
+    Output width
 
-### Tool Description
-The provided text does not contain help information for the tool. It is a system error log indicating a failure to build or extract a container image due to insufficient disk space.
+  --clustal=<file>
+    Clustal output
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/carna:1.3.3--1
-- **Homepage**: https://github.com/Code52/carnac
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 12:10:25  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/carna:1.3.3--1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:910e2d6f8985367be27d75b8757e2aa217435e1201de5df6c4780b859ea09ebe: unpack entry: usr/local/bin/RNAduplex: unpack to regular file: short write: write /tmp/build-temp-2875852023/rootfs/usr/local/bin/RNAduplex: no space left on device
-```
+  --pp=<file>
+    PP output
 
-## carna_Setup.exe
+  --write-structure
+    Write guidance structure in output
 
-### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a log of a failed container build/execution process.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/carna:1.3.3--1
-- **Homepage**: https://github.com/Code52/carnac
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 12:10:43  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/carna:1.3.3--1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:910e2d6f8985367be27d75b8757e2aa217435e1201de5df6c4780b859ea09ebe: unpack entry: usr/local/bin/RNAduplex: unpack to regular file: short write: write /tmp/build-temp-1009008465/rootfs/usr/local/bin/RNAduplex: no space left on device
-```
+Heuristics for speed accuracy trade off:
+  -p,--min-prob=<prob>(0.01)
+    Minimal probability
 
-## carna_build.ps1
+  --max-bps-length-ratio=<factor>(0.0)
+    Maximal ratio of #base pairs divided by sequence length (default: no
+    effect)
 
-### Tool Description
-A script to build a SIF (Singularity Image Format) container for CARNA from a Docker/OCI source.
+  -D,--max-diff-am=<diff>(-1)
+    Maximal difference for sizes of matched arcs
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/carna:1.3.3--1
-- **Homepage**: https://github.com/Code52/carnac
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 12:10:58  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/carna:1.3.3--1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:910e2d6f8985367be27d75b8757e2aa217435e1201de5df6c4780b859ea09ebe: unpack entry: usr/local/bin/RNAduplex: unpack to regular file: short write: write /tmp/build-temp-1270901656/rootfs/usr/local/bin/RNAduplex: no space left on device
+  -d,--max-diff=<diff>(-1)
+    Maximal difference for alignment cuts
+
+  --max-diff-at-am=<diff>(-1)
+    Maximal difference for alignment traces, only at arc match positions
+
+
+Constraints:
+  --noLP
+    No lonely pairs (only used when predicing ensemble porobabilities and for
+    compatibility with locarna; otherwise no effect)
+
+  --maxBPspan=<span>(-1)
+    Limit maximum base pair span (default=off)
+
+  --relaxed-anchors
+    Relax anchor constraints (default=off)
+
+  --ignore-constraints
+    Ignore constraints in pp-file
+
+  --lb=<score>
+    Lower score bound
+
+  --ub=<score>
+    Upper score bound
+
+
+Controlling Gecode:
+  --c_d=<distance>(1)
+    Recomputation distance
+
+  --time-limit=<time>(300000)
+    Time limit in ms (always search first solution; turn off by 0).
+
+
+Standard options:
+  -h,--help
+    This help
+
+  -V,--version
+    Version info
+
+  -v,--verbose
+    Verbose
+
+
+RNA sequences and pair probabilities:
+
+Input_files RNA sequences and pair probabilities:
 ```
 

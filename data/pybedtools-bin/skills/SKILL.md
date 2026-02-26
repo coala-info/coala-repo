@@ -1,8 +1,9 @@
 ---
 name: pybedtools-bin
-description: pybedtools-bin provides a Pythonic interface to the BEDTools suite, enabling sophisticated genomic analysis without the overhead of complex shell scripts.
+description: pybedtools-bin provides a Pythonic interface to the BEDTools suite for performing genomic interval arithmetic. Use when user asks to intersect genomic intervals, subtract features, find the closest genomic features, or perform genome arithmetic using Python.
 homepage: https://github.com/daler/pybedtools
 ---
+
 
 # pybedtools-bin
 

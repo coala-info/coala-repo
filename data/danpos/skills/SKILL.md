@@ -1,8 +1,9 @@
 ---
 name: danpos
-description: The `danpos` (Dynamic Analysis of Nucleosome and Protein Occupancy by Sequencing) toolkit is a specialized suite for high-resolution chromatin analysis.
+description: The danpos toolkit performs high-resolution analysis of nucleosome and protein occupancy using sequencing data. Use when user asks to call nucleosome positions, identify transcription factor peaks, analyze broad histone modification regions, or perform differential chromatin analysis.
 homepage: https://sites.google.com/site/danposdoc/
 ---
+
 
 # danpos
 

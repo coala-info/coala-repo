@@ -1,8 +1,9 @@
 ---
 name: httpretty
-description: HTTPretty is a powerful HTTP client mocking tool for Python that operates by faking the underlying socket module.
+description: HTTPretty is a Python library that mocks HTTP requests by intercepting network traffic at the socket level. Use when user asks to mock API responses, intercept outgoing HTTP requests for testing, or simulate various network conditions like status codes and streaming data.
 homepage: https://github.com/gabrielfalcao/HTTPretty
 ---
+
 
 # httpretty
 

@@ -1,8 +1,9 @@
 ---
 name: fec
-description: `fec` (Fast Error Correction) is a tool designed to improve the quality of long-read sequencing data through a two-round overlapping and caching strategy.
+description: fec performs fast error correction on long-read sequencing data using a two-round overlapping and caching strategy. Use when user asks to correct errors in PacBio or Nanopore reads, improve long-read data quality, or perform two-round sequence correction.
 homepage: https://github.com/zhangjuncsu/Fec
 ---
+
 
 # fec
 

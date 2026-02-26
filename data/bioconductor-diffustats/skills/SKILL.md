@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffustats
-description: the package is available on all platforms; click for details.
+description: This tool computes and compares diffusion-based scores on biological networks to propagate labels from seed nodes to their neighbors. Use when user asks to prioritize genes, predict functional annotations, smooth molecular data over protein-protein interaction networks, or benchmark different network diffusion algorithms.
 homepage: https://bioconductor.org/packages/release/bioc/html/diffuStats.html
 ---
+
 
 # bioconductor-diffustats
 

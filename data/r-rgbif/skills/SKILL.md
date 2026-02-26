@@ -1,8 +1,9 @@
 ---
 name: r-rgbif
-description: Skill for using the CRAN R package r-rgbif.
+description: This tool provides an R interface to the Global Biodiversity Information Facility (GBIF) API for accessing biodiversity data. Use when user asks to search for species occurrence records, match taxonomic names to the GBIF backbone, download large biodiversity datasets, or retrieve occurrence statistics and maps.
 homepage: https://cloud.r-project.org/web/packages/rgbif/index.html
 ---
+
 
 # r-rgbif
 

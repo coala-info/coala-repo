@@ -1,8 +1,9 @@
 ---
 name: bioconductor-phipdata
-description: the package is available on all platforms; click for details.
+description: PhIPData provides a specialized container for storing and managing Phage Immunoprecipitation Sequencing (PhIP-seq) data within the Bioconductor framework. Use when user asks to store PhIP-seq experimental results, handle phage library metadata, or organize antibody-peptide binding counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/PhIPData.html
 ---
+
 
 # bioconductor-phipdata
 

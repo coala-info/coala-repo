@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.zma.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Entrez Gene identifiers and Medical Subject Headings for Zea mays. Use when user asks to map maize gene IDs to MeSH terms, perform MeSH enrichment analysis for Zea mays, or retrieve functional annotations for corn genes.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Zma.eg.db.html
 ---
+
 
 # bioconductor-mesh.zma.eg.db
 

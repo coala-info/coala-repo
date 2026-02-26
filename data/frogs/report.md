@@ -1,9 +1,9 @@
 # frogs CWL Generation Report
 
-## frogs
+## frogs_itsx.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error messages related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+Uses ITSx to detect/extracts ITS1 or ITS2 regions from ITS sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/frogs:5.1.0--h9ee0642_0
@@ -18,63 +18,53 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/frogs:5.1.0--h9ee0642_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1623659234: no space left on device
-```
+usage: itsx.py [-h] [--version] [--debug] [--nb-cpus NB_CPUS]
+               [--organism-groups ORGANISM_GROUPS [ORGANISM_GROUPS ...]]
+               (--region {ITS1,ITS2} | --check-its-only) --input-fasta
+               INPUT_FASTA [--input-biom INPUT_BIOM]
+               [--output-fasta OUTPUT_FASTA] [--output-biom OUTPUT_BIOM]
+               [--output-removed-sequences OUTPUT_REMOVED_SEQUENCES]
+               [--html HTML] [--log-file LOG_FILE]
 
+Uses ITSx to detect/extracts ITS1 or ITS2 regions from ITS sequences.
 
-## Metadata
-- **Skill**: generated
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --debug               Keep temporary files to debug program. [Default:
+                        False]
+  --nb-cpus NB_CPUS     The maximum number of CPUs used. [Default: 1]
 
-## frogs_biom2tsv.py
+Parameters:
+  --organism-groups ORGANISM_GROUPS [ORGANISM_GROUPS ...]
+                        Reduce ITSx scan to specified organim groups.
+                        [Default: ['F'] , which means Fungi only]
+  --region {ITS1,ITS2}  Which fungal ITS region is targeted and trimmed:
+                        either ITS1 or ITS2. (mutually exclusive with --check-
+                        its-only) [Default: None]
+  --check-its-only      Check only if sequences seem to be an ITS (mutually
+                        exclusive with --region) [Default: False]
 
-### Tool Description
-A tool to convert BIOM files to TSV format (Note: The provided help text contained only execution errors and no argument definitions).
+Inputs:
+  --input-fasta INPUT_FASTA
+                        The cluster sequences (format: FASTA).
+  --input-biom INPUT_BIOM
+                        The abundance file for clusters by sample (format:
+                        BIOM).
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/frogs:5.1.0--h9ee0642_0
-- **Homepage**: https://github.com/geraldinepascal/FROGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/frogs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/frogs:5.1.0--h9ee0642_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1487228409: no space left on device
-```
-
-## frogs_test_frogs.sh
-
-### Tool Description
-The provided text does not contain a description of the tool, as it appears to be an error log related to a container execution environment rather than help text.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/frogs:5.1.0--h9ee0642_0
-- **Homepage**: https://github.com/geraldinepascal/FROGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/frogs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/frogs:5.1.0--h9ee0642_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1690705730: no space left on device
-```
-
-## frogs_itsx.py
-
-### Tool Description
-The provided text does not contain help information for frogs_itsx.py; it contains system error messages regarding a container runtime failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/frogs:5.1.0--h9ee0642_0
-- **Homepage**: https://github.com/geraldinepascal/FROGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/frogs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/frogs:5.1.0--h9ee0642_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3063093232: no space left on device
+Outputs:
+  --output-fasta OUTPUT_FASTA
+                        sequences file out from ITSx (format: FASTA).
+                        [Default: itsx.fasta]
+  --output-biom OUTPUT_BIOM
+                        Abundance file without chimera (format: BIOM ).
+                        [Default: itsx_abundance.biom]
+  --output-removed-sequences OUTPUT_REMOVED_SEQUENCES
+                        sequences file removed (format: FASTA). [Default:
+                        itsx_removed.fasta]
+  --html HTML           The HTML file containing the graphs. [Default:
+                        itsx.html]
+  --log-file LOG_FILE   This output file will contain several informations on
+                        executed commands. [Default: stdout]
 ```
 

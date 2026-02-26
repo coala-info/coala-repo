@@ -3,7 +3,7 @@
 ## sbml2metexplorejsongraph
 
 ### Tool Description
-A tool to convert SBML (Systems Biology Markup Language) files into MetExplore JSON graph format. Note: The provided text contains container runtime errors and does not list specific command-line arguments.
+Convert Flux data contained in the SBML as mapping data
 
 ### Metadata
 - **Docker Image**: biocontainers/sbml2metexplorejsongraph:phenomenal-v1.2_cv1.1.7
@@ -18,13 +18,15 @@ A tool to convert SBML (Systems Biology Markup Language) files into MetExplore J
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/sbml2metexplorejsongraph:phenomenal-v1.2_cv1.1.7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Application Usage:
+ -flux2Mapp   : Convert Flux data contained in the SBML as mapping data
+                (default: false)
+ -h           : Prints this help. (default: false)
+ -inFile VAL  : [Required] Input SBML file.
+ -outFile VAL : [Required] Output json file name.
+ -validate    : Validate input SBML file. Default to false (default: false)
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

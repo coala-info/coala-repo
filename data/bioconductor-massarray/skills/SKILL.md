@@ -1,8 +1,9 @@
 ---
 name: bioconductor-massarray
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for the analysis of MassArray data, specifically for quantitative DNA methylation analysis. Use when user asks to analyze MassArray data, perform quantitative DNA methylation analysis, or process Sequenom EpiTyper results.
 homepage: https://bioconductor.org/packages/release/bioc/html/MassArray.html
 ---
+
 
 # bioconductor-massarray
 

@@ -1,8 +1,9 @@
 ---
 name: sra-human-scrubber
-description: The `sra-human-scrubber` (also known as the Human Read Removal Tool or HRRT) is a specialized utility designed to sanitize genomic data.
+description: The sra-human-scrubber identifies and masks or removes human reads from genomic data to prevent the sharing of identifiable genetic information. Use when user asks to remove human reads from metagenomic data, mask human sequences in FASTQ files, or sanitize clinical data for NCBI submission.
 homepage: https://github.com/ncbi/sra-human-scrubber
 ---
+
 
 # sra-human-scrubber
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ndexr
-description: the package is available on all platforms; click for details.
+description: The ndexr package provides an interface to the Network Data Exchange (NDEx) server for managing biological networks in R. Use when user asks to retrieve biological networks from NDEx, upload network data to the server, or search for specific network models.
 homepage: https://bioconductor.org/packages/release/bioc/html/ndexr.html
 ---
+
 
 # bioconductor-ndexr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-opossom
-description: the package is available on all platforms; click for details.
+description: This package analyzes and visualizes high-dimensional omics data using self-organizing maps. Use when user asks to perform molecular clustering, visualize large-scale transcriptomics data, or identify gene expression signatures.
 homepage: https://bioconductor.org/packages/release/bioc/html/oposSOM.html
 ---
+
 
 # bioconductor-opossom
 

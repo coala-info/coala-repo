@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fem
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool identifies functional epigenetic modules by integrating DNA methylation and gene expression data with protein-protein interaction networks. Use when user asks to identify interactome hotspots, find subnetworks associated with a phenotype, or integrate multi-omic data to detect differentially methylated and expressed gene modules.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FEM.html
 ---
+
 
 # bioconductor-fem
 

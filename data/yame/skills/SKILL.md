@@ -1,8 +1,9 @@
 ---
 name: yame
-description: YAME (Yet Another Methylation Encoder/Extractor) is a high-performance toolkit designed for the efficient storage and manipulation of DNA methylation data.
+description: YAME efficiently stores and manipulates DNA methylation data. Use when user asks to pack or unpack methylation data, subset or downsample datasets, perform row operations, summarize data, or integrate methylation workflows.
 homepage: https://github.com/zhou-lab/YAME
 ---
+
 
 # yame
 

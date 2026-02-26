@@ -1,8 +1,9 @@
 ---
 name: rsa
-description: The `rsa` skill leverages RsaCtfTool to automate the recovery of RSA private keys and the decryption of data.
+description: The rsa skill automates the recovery of RSA private keys and the decryption of data by exploiting mathematical weaknesses in RSA implementations. Use when user asks to recover a private key from a public key, decrypt ciphertext using weak RSA parameters, or perform specific attacks like Wiener's or Hastad's broadcast attack.
 homepage: https://github.com/RsaCtfTool/RsaCtfTool
 ---
+
 
 # rsa
 

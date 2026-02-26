@@ -1,8 +1,9 @@
 ---
 name: psap
-description: PSAP (Protein Phase Separation classifier) is a bioinformatics tool that implements a RandomForest machine learning approach to estimate the likelihood of a protein undergoing liquid-liquid phase separation.
+description: PSAP uses a RandomForest machine learning approach to predict the likelihood of protein liquid-liquid phase separation based on amino acid sequences. Use when user asks to predict phase separation scores, train custom protein classifiers, or annotate sequences with biochemical features.
 homepage: https://github.com/vanheeringen-lab/psap
 ---
+
 
 # psap
 

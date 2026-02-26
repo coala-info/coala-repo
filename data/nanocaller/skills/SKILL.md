@@ -1,8 +1,9 @@
 ---
 name: nanocaller
-description: NanoCaller is a variant calling tool that utilizes deep convolutional neural networks (CNN) and long-range haplotype information to identify genomic variants in long-read datasets.
+description: "NanoCaller identifies genomic variants in long-read sequencing data using deep convolutional neural networks and haplotype information. Use when user asks to call variants from long-read datasets, generate phased VCF files, or perform technology-specific variant calling for ONT and PacBio data."
 homepage: https://github.com/WGLab/NanoCaller
 ---
+
 
 # nanocaller
 

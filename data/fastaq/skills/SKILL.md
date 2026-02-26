@@ -1,8 +1,9 @@
 ---
 name: fastaq
-description: `fastaq` is a specialized toolkit designed for the rapid manipulation of biological sequence files.
+description: fastaq is a toolkit for the rapid manipulation, conversion, and filtering of biological sequence files. Use when user asks to interleave or deinterleave read pairs, reverse complement sequences, translate nucleotides to proteins, filter sequences by length, or convert between file formats like FASTA and FASTQ.
 homepage: https://github.com/sanger-pathogens/Fastaq
 ---
+
 
 # fastaq
 

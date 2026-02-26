@@ -1,8 +1,9 @@
 ---
 name: spectrassembler
-description: spectrassembler is an experimental tool designed to compute genome assembly layouts from uncorrected long-reads.
+description: "spectrassembler computes genome assembly layouts and consensus sequences from uncorrected long-reads using a spectral algorithm. Use when user asks to assemble genomes from long-reads, compute read ordering layouts, or generate consensus sequences from pairwise overlaps."
 homepage: https://github.com/antrec/spectrassembler
 ---
+
 
 # spectrassembler
 

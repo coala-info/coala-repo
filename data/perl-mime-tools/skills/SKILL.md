@@ -1,8 +1,9 @@
 ---
 name: perl-mime-tools
-description: This skill provides guidance on using the `MIME::Tools` suite to handle email structures.
+description: This tool parses, decomposes, and creates complex multi-part MIME email messages using Perl. Use when user asks to parse email attachments, extract data from MIME structures, or programmatically build multi-part email messages.
 homepage: https://metacpan.org/pod/MIME-tools
 ---
+
 
 # perl-mime-tools
 

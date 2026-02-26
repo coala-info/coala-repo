@@ -1,8 +1,9 @@
 ---
 name: r-listenv
-description: List environments are environments that have list-like properties.  For instance, the elements of a list environment are ordered and can be accessed and iterated over using index subsetting, e.g. 'x &lt;- listenv(a = 1, b = 2); for (i in seq_along(x)) x[[i]] &lt;- x[[i]] ^ 2; y &lt;- as.list(x)'.</p>
+description: The r-listenv tool creates and manages list environments in R that combine the indexing capabilities of lists with the reference semantics of environments. Use when user asks to create mutable data structures, manage objects with list-like indexing and environment-style mutability, or handle multi-dimensional environments.
 homepage: https://cloud.r-project.org/web/packages/listenv/index.html
 ---
+
 
 # r-listenv
 

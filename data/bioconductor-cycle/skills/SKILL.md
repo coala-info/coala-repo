@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cycle
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical assessment of periodic gene expression in time series data using Fourier analysis and autoregressive background models. Use when user asks to identify periodically expressed genes, detect circadian or cell cycle rhythms in transcriptomic data, or calculate false discovery rates for periodicity while accounting for temporal autocorrelation.
 homepage: https://bioconductor.org/packages/release/bioc/html/cycle.html
 ---
+
 
 # bioconductor-cycle
 

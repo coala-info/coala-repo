@@ -1,8 +1,9 @@
 ---
 name: lollipop
-description: Lollipop is a specialized genomic tool designed for wastewater-based surveillance.
+description: Lollipop deconvolves mixed viral signals in wastewater genomic data to estimate variant prevalence using time-series data and kernel-based smoothing. Use when user asks to generate mutation lists, extract mutation frequencies from base counts, or perform deconvolution on viral NGS data.
 homepage: https://github.com/cbg-ethz/LolliPop
 ---
+
 
 # lollipop
 

@@ -3,10 +3,10 @@
 ## fasta_windows
 
 ### Tool Description
-A tool for calculating statistics (like GC content) over windows of a FASTA file. (Note: The provided help text contains only container execution errors and does not list specific arguments.)
+Splits a FASTA file into smaller files.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fasta_windows:0.2.4--hec16e2b_0
+- **Docker Image**: quay.io/biocontainers/fasta-splitter:0.2.6--0
 - **Homepage**: https://github.com/tolkit/fasta_windows
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasta_windows/overview
 - **Validation**: PASS
@@ -18,46 +18,20 @@ A tool for calculating statistics (like GC content) over windows of a FASTA file
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasta_windows:0.2.4--hec16e2b_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2755574959: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/fasta-splitter:0.2.6--0' locally
+0.2.6--0: Pulling from biocontainers/fasta-splitter
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+c77a4e2e11f4: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob4239086853: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## fasta_windows_fw_group
-
-### Tool Description
-A tool for calculating statistics (like GC content) in sliding windows over FASTA files. (Note: The provided help text contains only system error messages and does not list specific arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fasta_windows:0.2.4--hec16e2b_0
-- **Homepage**: https://github.com/tolkit/fasta_windows
-- **Package**: https://anaconda.org/channels/bioconda/packages/fasta_windows/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasta_windows:0.2.4--hec16e2b_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3441416874: no space left on device
-```
-
-## fasta_windows_fw_plot
-
-### Tool Description
-The provided text does not contain help information for the tool; it contains system error messages regarding container image building and disk space issues.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fasta_windows:0.2.4--hec16e2b_0
-- **Homepage**: https://github.com/tolkit/fasta_windows
-- **Package**: https://anaconda.org/channels/bioconda/packages/fasta_windows/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasta_windows:0.2.4--hec16e2b_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2390540736: no space left on device
+Run 'docker run --help' for more information
 ```
 

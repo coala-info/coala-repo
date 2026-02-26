@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drimseq
-description: The package provides two frameworks. One for the differential transcript usage analysis between different conditions and one for the tuQTL analysis. Both are based on modeling the counts of genomic features (i.e., transcripts) with the Dirichlet-multinomial distribution. The package also makes available functions for visualization and exploration of the data and results.
+description: DRIMSeq implements a Dirichlet-multinomial framework for modeling multivariate count data to analyze transcript usage in RNA-seq experiments. Use when user asks to identify differential transcript usage between conditions or detect transcript usage quantitative trait loci.
 homepage: https://bioconductor.org/packages/release/bioc/html/DRIMSeq.html
 ---
+
 
 # bioconductor-drimseq
 

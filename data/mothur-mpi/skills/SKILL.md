@@ -1,8 +1,9 @@
 ---
 name: mothur-mpi
-description: mothur-mpi is a specialized toolset designed to handle the high-throughput bioinformatics needs of microbial ecologists.
+description: mothur-mpi processes large-scale environmental DNA sequence datasets for microbial ecology research. Use when user asks to perform sequence quality control, align reads to a reference, remove chimeras, assign taxonomy, or cluster sequences into operational taxonomic units.
 homepage: https://www.mothur.org
 ---
+
 
 # mothur-mpi
 

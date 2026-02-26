@@ -1,8 +1,9 @@
 ---
 name: sonneityping
-description: The sonneityping tool is a specialized parser designed to process output from Mykrobe predict specifically for *Shigella sonnei*.
+description: "sonneityping parses Mykrobe predict outputs to perform hierarchical genotyping and identify antimicrobial resistance mutations in Shigella sonnei. Use when user asks to genotype Shigella sonnei samples, identify gyrA or parC mutations, or transform Mykrobe JSON results into a structured summary report."
 homepage: https://github.com/katholt/sonneityping
 ---
+
 
 # sonneityping
 

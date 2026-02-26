@@ -1,8 +1,9 @@
 ---
 name: perl-soap-lite
-description: The `perl-soap-lite` skill provides procedural knowledge for utilizing the `SOAP::Lite` library, a versatile toolkit for implementing Web Services in Perl.
+description: This tool provides a Perl library for implementing and interacting with SOAP, XML-RPC, and UDDI web services. Use when user asks to create SOAP clients or servers, invoke remote methods, handle complex XML data structures, or configure transport layers for distributed communication in Perl.
 homepage: http://metacpan.org/pod/SOAP-Lite
 ---
+
 
 # perl-soap-lite
 

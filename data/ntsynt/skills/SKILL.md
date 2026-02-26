@@ -1,8 +1,9 @@
 ---
 name: ntsynt
-description: The `ntsynt` tool is a high-performance utility for detecting synteny blocks shared across multiple genomes.
+description: ntsynt detects synteny blocks shared across multiple genomes using a dynamic minimizer graph approach. Use when user asks to identify conserved genomic regions, perform large-scale comparative genomics, or detect macrosynteny across genomes with varying evolutionary distances.
 homepage: https://github.com/bcgsc/ntsynt
 ---
+
 
 # ntsynt
 

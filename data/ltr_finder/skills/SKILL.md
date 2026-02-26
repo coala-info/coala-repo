@@ -1,8 +1,9 @@
 ---
 name: ltr_finder
-description: ltr_finder is a specialized bioinformatics tool designed to detect LTR retrotransposons with high precision.
+description: ltr_finder identifies long terminal repeat (LTR) retrotransposons in genomic sequences using structural features and functional motifs. Use when user asks to detect LTR retrotransposons, identify protein domains like reverse transcriptase, or find target site repeats and primer binding sites in a genome.
 homepage: https://github.com/NBISweden/LTR_Finder/
 ---
+
 
 # ltr_finder
 

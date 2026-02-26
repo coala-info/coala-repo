@@ -1,8 +1,9 @@
 ---
 name: mirnature
-description: miRNAture is a computational pipeline designed for the "bona fide" annotation of animal miRNAs.
+description: miRNAture is a computational pipeline for the bona fide annotation and structural validation of animal miRNAs in genomic sequences. Use when user asks to annotate miRNAs, perform structural validation of miRNA candidates, or identify miRNA precursors using homology and covariance models.
 homepage: https://github.com/Bierinformatik/miRNAture
 ---
+
 
 # mirnature
 

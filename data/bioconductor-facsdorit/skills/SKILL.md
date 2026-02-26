@@ -1,8 +1,9 @@
 ---
 name: bioconductor-facsdorit
-description: the package prada.
+description: The bioconductor-facsdorit package provides example Flow Cytometry Standard 3.0 datasets for characterizing apoptosis and MAP-Kinase pathways. Use when user asks to load example FCS files, access cell-based assay data for the prada package, or analyze 96-well microtitre plate experiment data.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/facsDorit.html
 ---
+
 
 # bioconductor-facsdorit
 

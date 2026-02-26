@@ -1,8 +1,9 @@
 ---
 name: fasttree
-description: FastTree is a specialized tool designed for high-throughput phylogenetics.
+description: FastTree infers approximately-maximum-likelihood phylogenetic trees from protein or nucleotide sequence alignments. Use when user asks to build a phylogenetic tree, infer evolutionary relationships from sequence alignments, or perform high-throughput phylogenetics on large genomic datasets.
 homepage: https://morgannprice.github.io/fasttree
 ---
+
 
 # fasttree
 

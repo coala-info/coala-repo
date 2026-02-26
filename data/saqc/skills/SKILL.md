@@ -1,8 +1,9 @@
 ---
 name: saqc
-description: SaQC (System for automated Quality Control) is a specialized framework designed to ensure the integrity of time series data.
+description: SaQC is a specialized framework designed to automate the quality control, annotation, and processing of time series data. Use when user asks to flag outliers, handle missing values, align data streams, or implement reproducible quality control workflows for sensor-based information.
 homepage: https://github.com/Helmholtz-UFZ/saqc
 ---
+
 
 # saqc
 

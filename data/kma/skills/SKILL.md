@@ -1,8 +1,9 @@
 ---
 name: kma
-description: KMA (k-mer alignment) is a specialized mapping tool designed to handle the challenges of redundant databases.
+description: KMA is a k-mer alignment tool designed to map reads against redundant databases and accurately assign them to the most likely template. Use when user asks to index reference sequences, map single-end or paired-end reads to a database, identify genes in raw data, or generate consensus sequences.
 homepage: https://bitbucket.org/genomicepidemiology/kma
 ---
+
 
 # kma
 

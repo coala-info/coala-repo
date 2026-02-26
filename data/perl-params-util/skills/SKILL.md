@@ -1,8 +1,9 @@
 ---
 name: perl-params-util
-description: The `perl-params-util` skill facilitates the implementation of the `Params::Util` module for defensive programming in Perl.
+description: This tool provides lightweight functions for validating Perl data types and object instances to ensure input reliability. Use when user asks to validate strings or identifiers, check array or hash references, and verify object instances or class names in Perl.
 homepage: http://metacpan.org/pod/Params::Util
 ---
+
 
 # perl-params-util
 

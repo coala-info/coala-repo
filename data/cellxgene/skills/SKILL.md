@@ -1,8 +1,9 @@
 ---
 name: cellxgene
-description: cellxgene is an interactive, web-based data explorer designed for large-scale single-cell transcriptomics.
+description: cellxgene is an interactive, web-based data explorer for visualizing and analyzing large-scale single-cell transcriptomics datasets. Use when user asks to launch the explorer, visualize cell clusters, explore gene expression patterns, or manage h5ad data files.
 homepage: https://chanzuckerberg.github.io/cellxgene/
 ---
+
 
 # cellxgene
 

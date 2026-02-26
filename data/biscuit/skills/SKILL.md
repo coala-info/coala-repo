@@ -1,8 +1,9 @@
 ---
 name: biscuit
-description: The `biscuit` (BISulfite-seq CUI Toolkit) skill provides a specialized workflow for processing epigenetic sequencing data.
+description: Biscuit processes epigenetic sequencing data to perform alignment, methylation calling, and genetic variant analysis. Use when user asks to align bisulfite-treated reads, extract DNA methylation information, or generate quality control reports for epigenetic data.
 homepage: https://github.com/huishenlab/biscuit
 ---
+
 
 # biscuit
 

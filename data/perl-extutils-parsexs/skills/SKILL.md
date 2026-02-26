@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-parsexs
-description: This tool acts as the compiler/pre-processor for Perl's XS language.
+description: This tool converts Perl XS files into C code to facilitate the creation of Perl modules that interface with C libraries. Use when user asks to compile XS files, convert XS to C, or process XSUBs for Perl module development.
 homepage: https://metacpan.org/pod/ExtUtils::ParseXS
 ---
+
 
 # perl-extutils-parsexs
 

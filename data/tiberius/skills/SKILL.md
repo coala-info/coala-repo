@@ -1,8 +1,11 @@
 ---
 name: tiberius
-description: Tiberius is an end-to-end gene prediction tool that integrates convolutional and long short-term memory (LSTM) layers with a differentiable Hidden Markov Model (HMM) layer.
+description: Tiberius predicts gene structures from genomic sequences. Use when user asks to predict genes, list available models, extract coding sequences, or extract protein sequences.
 homepage: https://github.com/Gaius-Augustus/Tiberius
 ---
+
+
+
 
 # tiberius
 

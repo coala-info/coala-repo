@@ -3,112 +3,46 @@
 ## mummer
 
 ### Tool Description
-MUMmer is a system for rapidly aligning entire genomes. (Note: The provided help text contains only system error messages and no usage information.)
+Find and output (to stdout) the positions and length of all sufficiently long maximal matches of a substring in <query-file> and <reference-file>
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mummer:3.23--pl5321h503566f_21
+- **Docker Image**: quay.io/biocontainers/mummer:3.23--pl5321hdbdd923_18
 - **Homepage**: https://github.com/mummer4/mummer
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mummer/overview
-- **Total Downloads**: 145.1K
+- **Total Downloads**: 145.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mummer4/mummer
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mummer:3.23--pl5321h503566f_21 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2918884709: no space left on device
-```
+Usage: mummer [options] <reference-file> <query-files>
 
+Find and output (to stdout) the positions and length of all
+sufficiently long maximal matches of a substring in
+<query-file> and <reference-file>
 
-## Metadata
-- **Skill**: generated
-
-## mummer_nucmer
-
-### Tool Description
-The provided text contains container runtime error messages and does not include the help documentation for the tool. No arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mummer:3.23--pl5321h503566f_21
-- **Homepage**: https://github.com/mummer4/mummer
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mummer:3.23--pl5321h503566f_21 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2358647539: no space left on device
-```
-
-## mummer_promer
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container environment (Apptainer/Singularity) failing to pull an image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mummer:3.23--pl5321h503566f_21
-- **Homepage**: https://github.com/mummer4/mummer
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mummer:3.23--pl5321h503566f_21 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3912302594: no space left on device
-```
-
-## mummer_show-coords
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system logs and a fatal error regarding container image conversion and disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mummer:3.23--pl5321h503566f_21
-- **Homepage**: https://github.com/mummer4/mummer
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mummer:3.23--pl5321h503566f_21 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3084361601: no space left on device
-```
-
-## mummer_show-aligns
-
-### Tool Description
-The provided text contains system error messages and does not include the help documentation for the tool. As a result, no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mummer:3.23--pl5321h503566f_21
-- **Homepage**: https://github.com/mummer4/mummer
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mummer:3.23--pl5321h503566f_21 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3034658854: no space left on device
-```
-
-## mummer_show-diff
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error message regarding container image conversion and disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mummer:3.23--pl5321h503566f_21
-- **Homepage**: https://github.com/mummer4/mummer
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mummer:3.23--pl5321h503566f_21 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1211172590: no space left on device
+Options:
+-mum           compute maximal matches that are unique in both sequences
+-mumcand       same as -mumreference
+-mumreference  compute maximal matches that are unique in the reference-
+               sequence but not necessarily in the query-sequence (default)
+-maxmatch      compute all maximal matches regardless of their uniqueness
+-n             match only the characters a, c, g, or t
+               they can be in upper or in lower case
+-l             set the minimum length of a match
+               if not set, the default value is 20
+-b             compute forward and reverse complement matches
+-r             only compute reverse complement matches
+-s             show the matching substrings
+-c             report the query-position of a reverse complement match
+               relative to the original query sequence
+-F             force 4 column output format regardless of the number of
+               reference sequence inputs
+-L             show the length of the query sequences on the header line
+-h             show possible options
+-help          show possible options
 ```
 

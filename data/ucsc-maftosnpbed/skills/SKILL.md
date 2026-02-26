@@ -1,8 +1,9 @@
 ---
 name: ucsc-maftosnpbed
-description: The `mafToSnpBed` utility is a specialized tool from the UCSC Genome Browser "kent" source tree.
+description: This tool extracts single nucleotide polymorphisms (SNPs) and their functional context from MAF files, outputting them in BED format. Use when user asks to extract SNPs from MAF files, identify variants from multiple sequence alignments, or convert MAF alignment data into a BED file with functional context.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-maftosnpbed
 

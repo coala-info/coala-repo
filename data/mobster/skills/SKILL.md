@@ -1,8 +1,9 @@
 ---
 name: mobster
-description: Mobster is a specialized bioinformatics tool that identifies mobile element insertions (MEIs) by analyzing discordant read pairs and "clipped" reads within BAM files.
+description: Mobster identifies mobile element insertions by analyzing discordant and clipped reads in BAM files. Use when user asks to identify mobile element insertions, characterize the transposon landscape of a genomic sample, or perform multi-sample germline subtraction.
 homepage: https://github.com/jyhehir/mobster
 ---
+
 
 # mobster
 

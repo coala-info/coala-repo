@@ -1,8 +1,9 @@
 ---
 name: bioconductor-levi
-description: the package is available on all platforms; click for details.
+description: This tool projects gene expression data onto biological networks to create 2D density landscapes for visualizing functional modules. Use when user asks to visualize expression changes across network topologies, create 2D density plots from gene data, or identify coordinately regulated network neighborhoods.
 homepage: https://bioconductor.org/packages/release/bioc/html/levi.html
 ---
+
 
 # bioconductor-levi
 

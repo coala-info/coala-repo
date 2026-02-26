@@ -1,9 +1,9 @@
 # decom CWL Generation Report
 
-## decom
+## decom_decOM
 
 ### Tool Description
-The provided text does not contain help information or a description for the tool 'decom'. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build a SIF image due to lack of disk space.
+Microbial source tracking for contamination assessment of ancient oral samples using k-mer-based methods
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/decom:0.0.32--pyhdfd78af_2
@@ -18,11 +18,46 @@ The provided text does not contain help information or a description for the too
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/decom:0.0.32--pyhdfd78af_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2606047485: no space left on device
+usage: decOM [-h] (-s SINK | -p_sinks PATH_SINKS) -p_sources PATH_SOURCES
+             (-k KEY | -p_keys PATH_KEYS) -mem MEMORY -t THREADS [-o OUTPUT]
+             [-p {False,True}] [-V] [-v]
+
+Microbial source tracking for contamination assessment of ancient oral samples
+using k-mer-based methods
+
+options:
+  -h, --help            show this help message and exit
+  -s SINK, --sink SINK  Write down the name of your sink. It must be the same
+                        as the first element of key.fof. When this argument is
+                        set, -k/--key must be defined too
+  -p_sinks PATH_SINKS, --path_sinks PATH_SINKS
+                        .txt file with a list of sinks limited by a newline
+                        (\n). When this argument is set, -p_keys/--path_keys
+                        must be defined too.
+  -p_sources PATH_SOURCES, --path_sources PATH_SOURCES
+                        path to folder downloaded from https://zenodo.org/reco
+                        rd/6513520/files/decOM_sources.tar.gz
+  -k KEY, --key KEY     filtering key (a kmtricks fof with only one sample).
+                        When this argument is set, -s/--sink must be defined
+                        too.
+  -p_keys PATH_KEYS, --path_keys PATH_KEYS
+                        Path to folder with filtering keys (a kmtricks fof
+                        with only one sample). You should have as many .fof
+                        files as sinks. When this argument is set,
+                        -p_sinks/--path_sinks must be defined too.
+  -mem MEMORY, --memory MEMORY
+                        Write down how much memory you want to use for this
+                        process. Ex: 10GB
+  -t THREADS, --threads THREADS
+                        Number of threads to use. Ex: 5
+  -o OUTPUT, --output OUTPUT
+                        Path to output folder, where you want decOM to write
+                        the results. Folder must not exist, it won't be
+                        overwritten.
+  -p {False,True}, --plot {False,True}
+                        True if you want a plot (in pdf and html format) with
+                        the source proportions of the sink, else False
+  -V, --version         Show version number and exit
+  -v, --verbose         Verbose output
 ```
 
-
-## Metadata
-- **Skill**: generated

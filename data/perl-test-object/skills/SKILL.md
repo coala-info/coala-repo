@@ -1,8 +1,9 @@
 ---
 name: perl-test-object
-description: The `perl-test-object` skill facilitates the thorough testing of Perl objects by verifying their behavior against every class in their inheritance hierarchy.
+description: This tool verifies Perl objects by automatically executing registered test handlers for every class in an object's inheritance hierarchy. Use when user asks to register test handlers for Perl classes, verify object behavior across inheritance trees, or run automated tests on Perl objects using object_ok.
 homepage: https://github.com/karenetheridge/Test-Object
 ---
+
 
 # perl-test-object
 

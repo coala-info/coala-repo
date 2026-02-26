@@ -1,8 +1,9 @@
 ---
 name: rasusa
-description: `rasusa` is a high-performance utility designed for the unbiased downsampling of genomic sequencing data.
+description: "Rasusa performs unbiased downsampling of genomic sequencing data to a target coverage, base count, or fraction. Use when user asks to subsample reads to a specific coverage, downsample FastQ or BAM files, or reduce sequencing data volume while maintaining read length distribution."
 homepage: https://github.com/mbhall88/rasusa
 ---
+
 
 # rasusa
 

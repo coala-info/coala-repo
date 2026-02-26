@@ -1,8 +1,9 @@
 ---
 name: gseapy
-description: GSEApy is a high-performance Python library with a Rust-powered core designed for biological pathway analysis.
+description: GSEApy is a Python library for performing biological pathway enrichment analysis including GSEA, ssGSEA, and Enrichr API integration. Use when user asks to perform gene set enrichment analysis, run preranked GSEA, calculate single-sample enrichment scores, or access the Enrichr database.
 homepage: https://github.com/zqfang/gseapy
 ---
+
 
 # gseapy
 

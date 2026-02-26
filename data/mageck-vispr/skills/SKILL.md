@@ -1,8 +1,9 @@
 ---
 name: mageck-vispr
-description: MAGeCK-VISPR is an integrated workflow designed for the rigorous analysis of CRISPR/Cas9 screens.
+description: "MAGeCK-VISPR is an integrated workflow for the quality control, analysis, and visualization of CRISPR/Cas9 screens. Use when user asks to initialize a CRISPR analysis project, run the MAGeCK-VISPR pipeline, or visualize screen results with VISPR."
 homepage: https://bitbucket.org/liulab/mageck-vispr
 ---
+
 
 # mageck-vispr
 

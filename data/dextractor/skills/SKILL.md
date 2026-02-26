@@ -1,8 +1,9 @@
 ---
 name: dextractor
-description: UnityLive2DExtractor is a specialized tool designed to recover Live2D Cubism 3 assets from Unity-based game files.
+description: Dextractor recovers Live2D Cubism 3 assets and animation data from Unity-based game files. Use when user asks to extract Live2D models from AssetBundles, recover Cubism 3 assets from Unity games, or reconstruct model structures from game directories.
 homepage: https://github.com/Perfare/UnityLive2DExtractor
 ---
+
 
 # dextractor
 

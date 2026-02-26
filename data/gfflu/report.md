@@ -3,7 +3,7 @@
 ## gfflu
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to insufficient disk space.
+Annotate Influenza A virus sequences using Miniprot and BLASTX The Miniprot GFF for a particular reference sequence gene segment will have multiple annotations for the same gene. This script will select the top scoring annotation for each gene and write out a new GFF file that can be used with SnpEff.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gfflu:0.0.2--pyhdfd78af_0
@@ -18,11 +18,33 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfflu:0.0.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4082390999: no space left on device
+Usage: gfflu [OPTIONS] FASTA                                                   
+                                                                                
+ Annotate Influenza A virus sequences using Miniprot and BLASTX                 
+ The Miniprot GFF for a particular reference sequence gene segment will have    
+ multiple annotations for the same gene. This script will select the top        
+ scoring annotation for each gene and write out a new GFF file that can be used 
+ with SnpEff.                                                                   
+                                                                                
+╭─ Arguments ──────────────────────────────────────────────────────────────────╮
+│ *    fasta      FILE  Influenza virus nucleotide sequence FASTA file         │
+│                       [default: None]                                        │
+│                       [required]                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --outdir              -o      PATH  Output directory [default: gfflu-outdir] │
+│ --force               -f            Overwrite existing files                 │
+│ --prefix              -p      TEXT  Output file prefix [default: None]       │
+│ --verbose             -v                                                     │
+│ --version             -V            Print 'gfflu version 0.0.2' and exit     │
+│ --install-completion                Install completion for the current       │
+│                                     shell.                                   │
+│ --show-completion                   Show completion for the current shell,   │
+│                                     to copy it or customize the              │
+│                                     installation.                            │
+│ --help                              Show this message and exit.              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                                                                                
+ gfflu version 0.0.2; Python 3.10.12
 ```
 
-
-## Metadata
-- **Skill**: generated

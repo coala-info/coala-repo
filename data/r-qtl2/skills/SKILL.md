@@ -1,8 +1,9 @@
 ---
 name: r-qtl2
-description: "Provides a set of tools to perform quantitative     trait locus (QTL) analysis in experimental crosses. It is a     reimplementation of the 'R/qtl' package to better handle     high-dimensional data and complex cross designs.     Broman et al."
+description: The r-qtl2 tool performs Quantitative Trait Locus (QTL) analysis for high-dimensional genomic data and complex experimental crosses. Use when user asks to calculate genotype probabilities, perform genome scans with linear mixed models, identify QTL peaks, or conduct SNP association mapping.
 homepage: https://cran.r-project.org/web/packages/qtl2/index.html
 ---
+
 
 # r-qtl2
 

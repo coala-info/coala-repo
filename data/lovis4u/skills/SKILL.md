@@ -1,8 +1,9 @@
 ---
 name: lovis4u
-description: LoVis4u is a specialized bioinformatics pipeline designed to transform genomic data (GFF3 or Genbank) into high-quality vector graphics.
+description: LoVis4u is a bioinformatics pipeline that transforms genomic data into high-quality comparative visualizations with homology links and sequencing signal tracks. Use when user asks to visualize genomic loci, compare multiple genomes with homology links, plot sequencing coverage profiles, or perform automated functional annotation of gene clusters.
 homepage: https://art-egorov.github.io/lovis4u/
 ---
+
 
 # lovis4u
 

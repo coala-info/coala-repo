@@ -1,8 +1,9 @@
 ---
 name: wheezy.template
-description: The `wheezy.template` library provides a minimalist yet powerful templating system.
+description: Wheezy.template is a minimalist, high-performance templating system for dynamic content generation in Python. Use when user asks to generate dynamic content, evaluate expressions, implement conditional logic or loops in templates, compile templates, or render templates.
 homepage: https://bitbucket.org/akorn/wheezy.template
 ---
+
 
 # wheezy.template
 

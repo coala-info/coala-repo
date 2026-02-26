@@ -1,8 +1,9 @@
 ---
 name: uropa
-description: UROPA (Universal RObust Peak Annotator) is a versatile command-line tool designed to bridge the gap between genomic coordinates (peaks) and biological features (genes, exons, etc.).
+description: UROPA annotates genomic peaks by linking them to biological features using complex, configurable logic beyond simple proximity. Use when user asks to annotate genomic peaks, filter annotations by feature attributes, apply directional or strand-specific logic, use specific anchor points like TSS or TES, or perform multi-step annotation.
 homepage: https://github.molgen.mpg.de/loosolab/UROPA
 ---
+
 
 # uropa
 

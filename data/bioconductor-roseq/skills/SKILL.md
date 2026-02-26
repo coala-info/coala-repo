@@ -1,8 +1,9 @@
 ---
 name: bioconductor-roseq
-description: the package is available on all platforms; click for details.
+description: ROSeq performs differential expression analysis for single-cell RNA-sequencing data using a rank-based statistical approach. Use when user asks to identify differentially expressed genes in scRNA-seq data, perform rank-based testing for single-cell datasets, or find marker genes across cell populations.
 homepage: https://bioconductor.org/packages/release/bioc/html/ROSeq.html
 ---
+
 
 # bioconductor-roseq
 

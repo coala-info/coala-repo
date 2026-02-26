@@ -1,8 +1,9 @@
 ---
 name: haploconduct
-description: HaploConduct is a specialized bioinformatics toolkit for de novo assembly that focuses on preserving haplotype identity.
+description: HaploConduct is a bioinformatics toolkit for de novo assembly that reconstructs individual haplotype sequences from viral quasispecies or polyploid genomes. Use when user asks to perform strain-aware viral genome assembly, reconstruct haplotypes from high-coverage viral samples, or assemble polyploid genomes while preserving haplotype identity.
 homepage: https://github.com/HaploConduct/HaploConduct
 ---
+
 
 # haploconduct
 

@@ -1,8 +1,9 @@
 ---
 name: piemmer
-description: The `piemmer` tool implements an algorithm designed to streamline the data preparation phase of Principal Component Analysis.
+description: Piemmer simplifies input matrices and performs feature selection to streamline data preparation for Principal Component Analysis. Use when user asks to simplify input matrices for PCA, perform feature selection on large-scale datasets, or reduce noise before running principal component analysis.
 homepage: The package home page
 ---
+
 
 # piemmer
 

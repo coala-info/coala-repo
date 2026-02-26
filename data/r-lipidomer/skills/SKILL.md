@@ -1,8 +1,9 @@
 ---
 name: r-lipidomer
-description: R package lipidomer (documentation from project home).
+description: This tool creates integrative heatmaps for the statistical visualization of lipidomics data to identify patterns across lipid classes and species. Use when user asks to visualize lipidome-wide associations, create lipidomic heatmaps, or map statistical results onto lipid structures.
 homepage: https://cran.r-project.org/web/packages/lipidomer/index.html
 ---
+
 
 # r-lipidomer
 

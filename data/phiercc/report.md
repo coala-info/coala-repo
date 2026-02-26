@@ -1,9 +1,9 @@
 # phiercc CWL Generation Report
 
-## phiercc
+## phiercc_pHierCC
 
 ### Tool Description
-The provided text does not contain help information for the tool 'phiercc'; it contains error logs from a container build process. No arguments or descriptions could be extracted.
+pHierCC takes a file containing allelic profiles (as in https://pubmlst.org/data/) and works out hierarchical clusters of the full dataset based on a minimum-spanning tree.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/phiercc:1.24--pyhdfd78af_0
@@ -18,13 +18,26 @@ The provided text does not contain help information for the tool 'phiercc'; it c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phiercc:1.24--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: pHierCC [OPTIONS]
+
+  pHierCC takes a file containing allelic profiles (as in
+  https://pubmlst.org/data/) and works out hierarchical clusters of the full
+  dataset based on a minimum-spanning tree.
+
+Options:
+  -p, --profile TEXT           [INPUT] name of a profile file consisting of a
+                               table of columns of the ST numbers and the
+                               allelic numbers, separated by tabs. Can be
+                               GZIPped.  [required]
+  -o, --output TEXT            [OUTPUT] Prefix for the output files consisting
+                               of a  NUMPY and a TEXT version of the
+                               clustering result.   [required]
+  -a, --append TEXT            [INPUT; optional] The NPZ output of a previous
+                               pHierCC run (Default: None).
+  -m, --allowed_missing FLOAT  [INPUT; optional] Allowed proportion of missing
+                               genes in pairwise comparisons (Default: 0.03).
+  -n, --n_proc INTEGER         [INPUT; optional] Number of processes (CPUs) to
+                               use (Default: 4).
+  --help                       Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

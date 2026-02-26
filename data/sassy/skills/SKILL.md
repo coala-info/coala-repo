@@ -1,8 +1,9 @@
 ---
 name: sassy
-description: Sassy is a high-performance utility for SIMD-accelerated approximate string matching.
+description: "Sassy is a high-performance utility for SIMD-accelerated approximate string matching optimized for biological data. Use when user asks to search for DNA patterns with mismatches or indels, perform color-coded grep-like sequence matching, filter FASTA/FASTQ records based on pattern hits, or identify CRISPR off-target sites."
 homepage: https://github.com/ragnargrootkoerkamp/sassy
 ---
+
 
 # sassy
 

@@ -1,8 +1,9 @@
 ---
 name: fings
-description: FiNGS (Filters for Next Generation Sequencing) is a post-processing tool designed to increase the precision of somatic mutation calls.
+description: FiNGS is a post-processing tool that filters somatic mutation calls by analyzing BAM files to reduce false positives. Use when user asks to filter somatic variants, increase the precision of mutation calls, or apply ICGC-compliant filtering standards to VCF files.
 homepage: https://github.com/cpwardell/FiNGS
 ---
+
 
 # fings
 

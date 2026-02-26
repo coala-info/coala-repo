@@ -1,8 +1,9 @@
 ---
 name: grinder
-description: Angle Grinder (`agrind`) is a high-performance command-line tool designed for "slicing and dicing" logs.
+description: Angle Grinder is a high-performance command-line tool used to parse, transform, and aggregate logs using a functional piped syntax. Use when user asks to slice and dice logs, parse JSON or logfmt data, extract fields from raw text, or perform live-updating aggregations on log streams.
 homepage: https://github.com/rcoh/angle-grinder
 ---
+
 
 # grinder
 

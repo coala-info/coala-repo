@@ -1,8 +1,9 @@
 ---
 name: blacksheep-outliers
-description: BlackSheep is a specialized tool for "differential extreme-value analysis." Unlike standard differential expression tools that compare average values across groups, BlackSheep identifies features (like proteins or genes) that show extreme signals in a subset of samples.
+description: BlackSheep performs differential extreme-value analysis to identify features with outlier signals in specific sample subsets. Use when user asks to binarize metadata, call outliers based on interquartile ranges, or compare groups to find enrichment of extreme biological signals.
 homepage: https://github.com/ruggleslab/blackSheep/
 ---
+
 
 # blacksheep-outliers
 

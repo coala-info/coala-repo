@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basicstan
-description: the package is available on all platforms; click for details.
+description: BASiCStan provides a Stan-based implementation of the BASiCS model for Bayesian analysis of single-cell sequencing data. Use when user asks to perform Hamiltonian Monte Carlo sampling, variational inference, or MAP estimation for single-cell gene expression models.
 homepage: https://bioconductor.org/packages/release/bioc/html/BASiCStan.html
 ---
+
 
 # bioconductor-basicstan
 

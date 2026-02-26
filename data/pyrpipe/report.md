@@ -3,7 +3,7 @@
 ## pyrpipe
 
 ### Tool Description
-The provided text does not contain help information for pyrpipe; it contains error logs from a container runtime (Apptainer/Singularity) attempting to fetch the tool's image.
+A lightweight python package for RNA-Seq workflows
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyrpipe:0.0.5--py_0
@@ -15,55 +15,38 @@ The provided text does not contain help information for pyrpipe; it contains err
 - **Total Downloads**: 6.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/urmi-21/pyrpipe
-- **Stars**: 84
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyrpipe:0.0.5--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: 
+pyrpipe [<pyrpipe options>] --in <script.py> [<script options>]
+OR
+python <script.py> [<pyrpipe options>] [<script options>]
 
+use pyrpipe_diagnostic command for reports, and tests and installation of RNA-Seq tools
 
-## Metadata
-- **Skill**: generated
+pyrpipe: A lightweight python package for RNA-Seq workflows (version 0.0.5)
 
-## pyrpipe_pyrpipe_diagnostic
+optional arguments:
+  -h, --help            show this help message and exit
+  --threads THREADS     Num processes/threads to use Default:mp.cpu_count()
+  --max-memory MEM      Max memory to use (in GB) default: None
+  --verbose             Print pyrpipe_engine's stdout and stderr Default:
+                        False
+  --dry-run             Only print pyrpipe's commands and not execute anything
+                        through pyrpipe_engine module Default: False
+  --force               Force execution of commands if their target files
+                        already exist Default: False
+  --safe-mode           Disable file deletions through pyrpipe_engine module
+                        Default: False
+  --no-logs             Disable pyrpipe logs Default: False
+  --param-dir PARAMDIR  Directory containing parameter yaml files Default:
+                        ./params
+  --logs-dir LOGSDIR    Directory for saving log files Default: ./pyrpipe_logs
+  --multiqc             Autorun MultiQC after execution Default: False
+  --version             Print version information and exit
 
-### Tool Description
-A diagnostic tool for pyrpipe. Note: The provided help text contains only system logs and error messages regarding a failed container build and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyrpipe:0.0.5--py_0
-- **Homepage**: https://github.com/urmi-21/pyrpipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyrpipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyrpipe:0.0.5--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## pyrpipe_vdb-config
-
-### Tool Description
-The provided text does not contain help documentation or usage instructions; it consists of system logs and a fatal error message related to fetching a container image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyrpipe:0.0.5--py_0
-- **Homepage**: https://github.com/urmi-21/pyrpipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyrpipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyrpipe:0.0.5--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Required input file if invoking via pyrpipe command:
+  --in INFILE           The input python script
 ```
 

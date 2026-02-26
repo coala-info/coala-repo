@@ -1,8 +1,9 @@
 ---
 name: cramtools
-description: cramtools is a Java-based suite designed for the efficient compression and manipulation of genomic sequence read data.
+description: cramtools is a Java-based suite used for the compression, conversion, and manipulation of genomic sequence data between BAM and CRAM formats. Use when user asks to convert BAM to CRAM, restore CRAM to BAM, index genomic files, merge sequence data, or apply lossy quality score compression models.
 homepage: https://github.com/enasequence/cramtools
 ---
+
 
 # cramtools
 

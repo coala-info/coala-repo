@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sbgnview.data
-description: the package is available on all platforms; click for details.
+description: This package provides supporting data and pathway maps for the SBGNview visualization tool. Use when user asks to access pre-collected SBGN-ML files, retrieve pathway mapping data, or provide datasets for SBGNview visualizations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SBGNview.data.html
 ---
+
 
 # bioconductor-sbgnview.data
 

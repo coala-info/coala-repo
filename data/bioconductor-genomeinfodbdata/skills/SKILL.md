@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomeinfodbdata
-description: the package is available on all platforms; click for details.
+description: This package provides species and taxonomy ID lookup tables for Bioconductor's GenomeInfoDb. Use when user asks to map between NCBI taxonomy IDs and species names, find taxonomy IDs for specific organisms, or list species within a genus.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GenomeInfoDbData.html
 ---
+
 
 # bioconductor-genomeinfodbdata
 

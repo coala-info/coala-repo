@@ -1,8 +1,9 @@
 ---
 name: spydrpick
-description: SpydrPick is a specialized command-line tool for detecting co-evolutionary signals in aligned categorical datasets, such as nucleotide sequences.
+description: SpydrPick detects co-evolutionary signals in aligned genomic datasets by calculating mutual information and applying the ARACNE algorithm to identify direct genomic couplings. Use when user asks to detect co-evolutionary signals, identify genomic couplings, or analyze mutual information in nucleotide alignments while correcting for population structure and linkage disequilibrium.
 homepage: https://github.com/santeripuranen/SpydrPick
 ---
+
 
 # spydrpick
 

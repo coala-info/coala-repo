@@ -3,86 +3,35 @@
 ## pysam
 
 ### Tool Description
-The provided text does not contain help information or a description for the tool. It appears to be a log of a failed container build/fetch process.
+FAIL to generate CWL: pysam not found in Docker image. The image may not provide this executable.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1
+- **Docker Image**: quay.io/biocontainers/pysam:0.23.3--py313hd07c5dd_2
 - **Homepage**: https://github.com/pysam-developers/pysam
 - **Package**: https://anaconda.org/channels/bioconda/packages/pysam/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pysam/overview
 - **Total Downloads**: 8.5M
 - **Last updated**: 2026-02-09
 - **GitHub**: https://github.com/pysam-developers/pysam
-- **Stars**: 880
+- **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: pysam not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: pysam not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
 
 ## Metadata
 - **Skill**: generated
-
-## pysam_samtools
-
-### Tool Description
-The provided text does not contain help information or usage instructions; it is an error log from a container build process (Singularity/Apptainer) attempting to fetch a pysam image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1
-- **Homepage**: https://github.com/pysam-developers/pysam
-- **Package**: https://anaconda.org/channels/bioconda/packages/pysam/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## pysam_bcftools
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It consists of log messages and a fatal error related to a container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1
-- **Homepage**: https://github.com/pysam-developers/pysam
-- **Package**: https://anaconda.org/channels/bioconda/packages/pysam/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## pysam_tabix
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it appears to be a container build log indicating a failure to fetch an OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1
-- **Homepage**: https://github.com/pysam-developers/pysam
-- **Package**: https://anaconda.org/channels/bioconda/packages/pysam/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pysam:0.23.3--py39hdd5828d_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-

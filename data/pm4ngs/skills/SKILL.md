@@ -1,8 +1,9 @@
 ---
 name: pm4ngs
-description: pm4ngs (Project Management for Next Generation Sequencing) is a specialized tool designed to automate the creation of a consistent, reproducible organizational framework for bioinformatics projects.
+description: pm4ngs automates the creation of a standardized and reproducible directory structure for bioinformatics projects. Use when user asks to initialize a new project, set up a standard directory layout, or bootstrap a project environment for NGS data management.
 homepage: https://pypi.org/project/pm4ngs/
 ---
+
 
 # pm4ngs
 

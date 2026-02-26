@@ -1,8 +1,9 @@
 ---
 name: seqsero
-description: SeqSero2 is a specialized pipeline designed for the digital serotyping of Salmonella.
+description: SeqSero2 performs digital serotyping of Salmonella from raw sequencing data or genome assemblies. Use when user asks to predict Salmonella serotypes, perform allele micro-assembly for contamination detection, or run rapid k-mer based screening.
 homepage: https://github.com/denglab/SeqSero2
 ---
+
 
 # seqsero
 

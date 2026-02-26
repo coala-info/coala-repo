@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcsfilesystem
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The bioconductor-gcsfilesystem package provides a unified R interface to mount Google Cloud Storage buckets as local file systems on Windows, Linux, and macOS. Use when user asks to mount Google Cloud Storage buckets, access remote cloud files using standard R functions, or manage GCS mount points.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/GCSFilesystem.html
 ---
+
 
 # bioconductor-gcsfilesystem
 

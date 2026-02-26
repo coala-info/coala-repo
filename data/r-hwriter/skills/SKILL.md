@@ -1,8 +1,9 @@
 ---
 name: r-hwriter
-description: "Easy-to-use and versatile functions to output R objects in         HTML format.</p>"
+description: The r-hwriter tool exports R objects like data frames, matrices, and images into formatted HTML documents and tables. Use when user asks to generate HTML reports, convert R data to HTML tables, embed images in web pages, or apply CSS styling to R output.
 homepage: https://cloud.r-project.org/web/packages/hwriter/index.html
 ---
+
 
 # r-hwriter
 

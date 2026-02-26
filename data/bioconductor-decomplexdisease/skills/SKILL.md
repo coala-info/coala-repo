@@ -1,8 +1,9 @@
 ---
 name: bioconductor-decomplexdisease
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs differential expression analysis for heterogeneous diseases by identifying gene signatures shared by patient subsets through bi-clustering. Use when user asks to identify patient-specific modules, find differentially expressed genes in heterogeneous datasets, or discover disease subtypes based on shared expression patterns.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/DEComplexDisease.html
 ---
+
 
 # bioconductor-decomplexdisease
 

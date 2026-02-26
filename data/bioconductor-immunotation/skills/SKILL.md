@@ -1,8 +1,9 @@
 ---
 name: bioconductor-immunotation
-description: The package immunotation provides tools for consistent annotation of HLA genes in typical immunoinformatics workflows such as for example the prediction of MHC-presented peptides in different human donors. Converter functions that provide mappings between different HLA naming schemes are based on the MHC restriction ontology (MRO). The package also provides automated access to HLA alleles frequencies in worldwide human reference populations stored in the Allele Frequency Net Database.
+description: This package provides tools for HLA nomenclature mapping, gene annotation, and programmatic access to global allele frequency data. Use when user asks to convert HLA allele names between nomenclature schemes, format inputs for NetMHCpan, encode Multiple Allele Codes, or query the Allele Frequency Net Database.
 homepage: https://bioconductor.org/packages/release/bioc/html/immunotation.html
 ---
+
 
 # bioconductor-immunotation
 

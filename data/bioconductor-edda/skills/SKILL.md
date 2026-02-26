@@ -1,8 +1,9 @@
 ---
 name: bioconductor-edda
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: "bioconductor-edda simulates high-throughput sequencing data and evaluates the performance of differential abundance testing methods. Use when user asks to generate synthetic RNA-seq or metagenomic data, simulate experiments from pilot data, or evaluate differential abundance testing performance using ROC and AUC metrics."
 homepage: https://bioconductor.org/packages/3.6/bioc/html/EDDA.html
 ---
+
 
 # bioconductor-edda
 

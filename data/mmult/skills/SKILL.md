@@ -1,8 +1,9 @@
 ---
 name: mmult
-description: MMULT is a scalable suite of tools optimized for processing DNA methylation data from hundreds of samples.
+description: mmult is a scalable suite of tools designed for processing and analyzing DNA methylation data from large-scale datasets. Use when user asks to perform differential methylation analysis using beta-binomial models, consolidate methylation differences via KL-divergence, or identify variable methylated CpGs and regions within a single biological group.
 homepage: https://github.com/lijinbio/MMULT
 ---
+
 
 # mmult
 

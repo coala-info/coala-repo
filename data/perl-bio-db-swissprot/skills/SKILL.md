@@ -1,8 +1,9 @@
 ---
 name: perl-bio-db-swissprot
-description: This skill provides guidance on using the `Bio::DB::SwissProt` Perl module to programmatically access the UniProtKB/SwissProt database.
+description: This tool provides programmatic access to the UniProtKB/SwissProt database using the BioPerl interface to retrieve protein sequences and annotations. Use when user asks to fetch protein sequences by accession number, perform batch retrieval of SwissProt records, or parse UniProt data into BioPerl objects.
 homepage: https://metacpan.org/release/Bio-DB-SwissProt
 ---
+
 
 # perl-bio-db-swissprot
 

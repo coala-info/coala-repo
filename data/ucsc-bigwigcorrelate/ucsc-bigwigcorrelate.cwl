@@ -2,10 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bigWigCorrelate
 label: ucsc-bigwigcorrelate
-doc: "A tool from the UCSC Genome Browser utilities to correlate two bigWig files.
-  (Note: The provided help text contained a system error message rather than tool
-  usage instructions.)\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Correlate two or more bigWig files.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: bigwig_files
+    type:
+      type: array
+      items: File
+    doc: The bigWig files to correlate.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

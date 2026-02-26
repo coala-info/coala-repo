@@ -1,8 +1,9 @@
 ---
 name: intervene
-description: Intervene is a computational tool that automates the process of finding overlaps between genomic datasets and generating publication-quality visualizations.
+description: Intervene automates the identification of overlaps between genomic datasets and generates publication-quality visualizations such as Venn diagrams, UpSet plots, and pairwise heatmaps. Use when user asks to find intersections between genomic regions, compare multiple gene sets, or visualize overlaps across several experimental conditions.
 homepage: https://github.com/asntech/intervene
 ---
+
 
 # intervene
 

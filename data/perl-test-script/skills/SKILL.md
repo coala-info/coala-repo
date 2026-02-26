@@ -1,8 +1,9 @@
 ---
 name: perl-test-script
-description: The `perl-test-script` skill provides a standardized way to validate the "runnability" of Perl scripts.
+description: The perl-test-script tool validates the syntax, runnability, and command-line interface behavior of Perl scripts. Use when user asks to verify script compilation, test command-line arguments, or check script output and exit codes.
 homepage: https://metacpan.org/pod/Test::Script
 ---
+
 
 # perl-test-script
 

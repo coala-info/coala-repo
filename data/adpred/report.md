@@ -1,9 +1,9 @@
 # adpred CWL Generation Report
 
-## adpred
+## adpred_run-adpred
 
 ### Tool Description
-The provided text does not contain help information for the tool 'adpred'. It contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+Predicts activation domains (ADs) from protein sequences or UniProt IDs using deep learning and secondary structure prediction.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/adpred:1.3.1--pyhdfd78af_0
@@ -15,38 +15,23 @@ The provided text does not contain help information for the tool 'adpred'. It co
 - **Total Downloads**: 17.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/FredHutch/adpred
-- **Stars**: 1
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/adpred:1.3.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:cd2d265fbd441965075d1f2a1713a48996994a4b09d4ecaa6bc6d96bd6d45a95: unpack entry: usr/local/lib/cmake/re2/re2Config.cmake: unpack to regular file: short write: write /tmp/build-temp-1311528641/rootfs/usr/local/lib/cmake/re2/re2Config.cmake: no space left on device
-```
+2026-02-24 14:52:59.839599: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-24 14:52:59.889641: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+
+    
+If you wish to use a local installation of psipred, please indicate this,
+    by assigning the path to local_psipred (e.g. local_psipred = "~/psipred/run_psipred")
 
 
-## Metadata
-- **Skill**: generated
-
-## adpred_run-adpred
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains error logs related to a container environment (Apptainer/Singularity) failing to build an image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/adpred:1.3.1--pyhdfd78af_0
-- **Homepage**: https://github.com/FredHutch/adpred
-- **Package**: https://anaconda.org/channels/bioconda/packages/adpred/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/adpred:1.3.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:cd2d265fbd441965075d1f2a1713a48996994a4b09d4ecaa6bc6d96bd6d45a95: unpack entry: usr/local/lib/cmake/re2/re2Config.cmake: unpack to regular file: short write: write /tmp/build-temp-1648416923/rootfs/usr/local/lib/cmake/re2/re2Config.cmake: no space left on device
+2026-02-24 14:53:01.208416: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+using adpred version 1.2.8You should perovide sequence or uniprot Id..., see --helpTraceback (most recent call last):
+  File "/usr/local/bin/run-adpred", line 75, in <module>
+    predictions_f = open(out_prefix + '.predictions.csv','w')
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
 ```
 

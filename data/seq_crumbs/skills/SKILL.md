@@ -1,8 +1,9 @@
 ---
 name: seq_crumbs
-description: seq_crumbs is a collection of lightweight, specialized bioinformatics utilities designed to work within Unix pipelines.
+description: seq_crumbs is a collection of lightweight bioinformatics utilities designed for processing and filtering sequence data within Unix pipelines. Use when user asks to filter reads by quality or length, trim adapter sequences, convert sequence formats, or synchronize paired-end data.
 homepage: https://github.com/JoseBlanca/seq_crumbs
 ---
+
 
 # seq_crumbs
 

@@ -3,7 +3,7 @@
 ## trust4
 
 ### Tool Description
-TCR/BCR repertoire extraction and assembly from RNA-seq data
+TRUST4: a tool for TCR/BC repertoire reconstruction from high-throughput sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/trust4:1.1.8--h5ca1c30_0
@@ -18,35 +18,27 @@ TCR/BCR repertoire extraction and assembly from RNA-seq data
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/trust4:1.1.8--h5ca1c30_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:1582d69b5ce268d4c4cebf1fadfada7eb0a76581a0a0a483b3be4f628fba1a5c: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /tmp/build-temp-2101169573/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## trust4_run-trust4
-
-### Tool Description
-The provided text contains system error messages (out of disk space during container extraction) rather than the help text for the tool. No arguments could be extracted from the provided input.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/trust4:1.1.8--h5ca1c30_0
-- **Homepage**: https://github.com/liulab-dfci/TRUST4
-- **Package**: https://anaconda.org/channels/bioconda/packages/trust4/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/trust4:1.1.8--h5ca1c30_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:1582d69b5ce268d4c4cebf1fadfada7eb0a76581a0a0a483b3be4f628fba1a5c: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /tmp/build-temp-2385064072/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
+./trust4 [OPTIONS]:
+Required:
+	-f STRING: fasta file containing the receptor genome sequence
+	[Read file]
+	-u STRING: path to single-end read file
+		or
+	-1 STRING -2 STRING: path to paried-end read files
+		or
+	-b STRING: path to BAM alignment file
+Optional:
+	-o STRING: prefix of the output file (default: trust)
+	-t INT: number of threads (default: 1)
+	-c STRING: the path to the kmer count file
+	-k INT: the starting k-mer size for indexing contigs (default: 9)
+	--minHitLen INT: the minimal hit length for a valid overlap (default: auto)
+	--skipMateExtension: skip the step of extension assemblies with mate-pair information
+	--trimLevel INT: 0: no trim; 1: trim low quality; 2: trim unmatched (default: 1)
+	--barcode STRING: the path to the barcode file (default: not used)
+	--UMI STRING: the path to the UMI file (default: not used)
+	--cgeneEnd INT: skipping reads mapped to C gene coordinate greater than INT (default: 200)
+	--keepNoBarcode: assemble the reads with missing barcodes. (default: ignore the reads)
+	--contigMinCov INT: ignore contigs that have bases covered by fewer than INT reads (default: 0)
 ```
 

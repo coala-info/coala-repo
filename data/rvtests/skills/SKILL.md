@@ -1,8 +1,9 @@
 ---
 name: rvtests
-description: The `rvtests` (Rare Variant tests) suite is a specialized toolkit for genetic association studies, optimized for the unique challenges of rare variant analysis in large-scale sequencing datasets.
+description: rvtests is a toolkit for performing genetic association studies on rare variants using single-variant, burden, and kernel-based statistical tests. Use when user asks to perform rare variant association analysis, run gene-based aggregation tests like SKAT or CMC, handle family-based data with kinship matrices, or prepare summary statistics for meta-analysis.
 homepage: https://github.com/zhanxw/rvtests
 ---
+
 
 # rvtests
 

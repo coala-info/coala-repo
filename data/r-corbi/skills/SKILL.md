@@ -1,8 +1,9 @@
 ---
 name: r-corbi
-description: R package corbi (documentation from project home).
+description: The r-corbi tool provides a collection of rudimentary bioinformatics functions for network analysis and gene expression data processing in R. Use when user asks to align biological networks, query network patterns, extract subnetworks, or identify biomarkers from high-throughput data.
 homepage: https://cran.r-project.org/web/packages/corbi/index.html
 ---
+
 
 # r-corbi
 

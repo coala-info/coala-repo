@@ -3,7 +3,7 @@
 ## tagbam
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it contains container runtime error logs.
+Tag reads in BAM file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tagbam:0.1.0--h3ab6199_0
@@ -12,19 +12,24 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tagbam/overview
-- **Total Downloads**: 517
+- **Total Downloads**: 520
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/fellen31/tagbam
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tagbam:0.1.0--h3ab6199_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Tag reads in BAM file
+
+Usage: tagbam [OPTIONS] --input <INPUT> --tag <TAG> --value <VALUE> --output-file <OUTPUT_FILE>
+
+Options:
+  -i, --input <INPUT>              Input BAM file
+  -t, --threads <THREADS>          Number of parallel decompression & writer threads to use [default: 4]
+      --tag <TAG>                  Tag to add (must be 1-2 characters)
+  -v, --value <VALUE>              Value to add
+  -o, --output-file <OUTPUT_FILE>  Output file
+  -c, --compression <COMPRESSION>  BAM output compression level [default: 6]
+  -h, --help                       Print help
+  -V, --version                    Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

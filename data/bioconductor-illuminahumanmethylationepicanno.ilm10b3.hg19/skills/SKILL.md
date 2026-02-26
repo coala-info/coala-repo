@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylationepicanno.ilm10b3.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Illumina HumanMethylationEPIC platform to map probe IDs to genomic coordinates, gene symbols, and CpG island contexts. Use when user asks to annotate EPIC array data, map methylation probes to hg19 coordinates, or identify SNPs overlapping methylation sites.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICanno.ilm10b3.hg19.html
 ---
+
 
 # bioconductor-illuminahumanmethylationepicanno.ilm10b3.hg19
 

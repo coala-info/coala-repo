@@ -1,8 +1,9 @@
 ---
 name: psauron
-description: PSAURON (Protein Sequence Annotation Using Recurrent Neural networks) provides a rapid, machine-learning-based assessment of protein-coding gene annotations.
+description: "PSAURON uses recurrent neural networks to assess and score the likelihood that protein-coding gene annotations are genuine. Use when user asks to score protein-coding gene annotations, validate CDS or protein sequences, or filter gene predictions in non-model organisms."
 homepage: https://github.com/salzberg-lab/PSAURON
 ---
+
 
 # psauron
 

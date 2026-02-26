@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffloopdata
-description: the package is available on all platforms; click for details.
+description: This package provides example ChIA-PET data from human Chromosome 1 for use with the diffloop analysis tool. Use when user asks to access sample chromatin interaction data, demonstrate differential loop calling, or test diffloop package functions.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/diffloopdata.html
 ---
+
 
 # bioconductor-diffloopdata
 

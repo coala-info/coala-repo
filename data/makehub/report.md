@@ -1,9 +1,9 @@
 # makehub CWL Generation Report
 
-## makehub
+## makehub_make_hub.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error messages related to a container runtime failure (no space left on device).
+Generate UCSC assembly hub (e.g. from BRAKER or MAKER output).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
@@ -18,46 +18,534 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/makehub:1.0.8--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2345916848: no space left on device
+usage: make_hub.py [-h] [-p] [-e EMAIL] [-g GENOME] [-L LONG_LABEL]
+                   [-l SHORT_LABEL] [-b BAM [BAM ...]] [-c THREADS] [-d]
+                   [-E GEMOMA_FILTERED_PREDICTIONS] [-X BRAKER_OUT_DIR]
+                   [-M MAKER_GFF] [-I GLIMMER_GFF] [-S SNAP_GFF] [-a ANNOT]
+                   [-G GENE_TRACK [GENE_TRACK ...]] [-A] [-o OUTDIR] [-n]
+                   [-s SAMTOOLS_PATH] [-B BAM2WIG_PATH] [-i HINTS]
+                   [-t TRAINGENES] [-m GENEMARK] [-w AUG_AB_INITIO]
+                   [-x AUG_HINTS] [-y AUG_AB_INITIO_UTR] [-z AUG_HINTS_UTR]
+                   [-U BRAKER_GENES] [-N LATIN_NAME] [-V ASSEMBLY_VERSION]
+                   [-r] [-P] [-u VERBOSITY] [-v]
+
+Generate UCSC assembly hub (e.g. from BRAKER or MAKER output).
+
+options:
+  -h, --help            show this help message and exit
+  -p, --printUsageExamples
+                        Print usage examples for make_hub.py
+  -e EMAIL, --email EMAIL
+                        Contact e-mail adress for assembly hub
+  -g GENOME, --genome GENOME
+                        Genome fasta file (possibly softmasked)
+  -L LONG_LABEL, --long_label LONG_LABEL
+                        Long label for hub, e.g. species name in english and
+                        latin, pass in single quotation marks, e.g.
+                        --long_label 'Dorosphila melanogster (fruit fly)'
+  -l SHORT_LABEL, --short_label SHORT_LABEL
+                        Short label for hub, will also be used as directory
+                        name for hub, should not contain spaces or special
+                        characters, e.g. --short_label fly
+  -b BAM [BAM ...], --bam BAM [BAM ...]
+                        BAM file(s) - space separated - with RNA-Seq
+                        information, by default will be displayed as bigWig
+  -c THREADS, --threads THREADS
+                        Number of threads for samtools sort processes
+  -d, --display_bam_as_bam
+                        Display BAM file(s) as bam tracks
+  -E GEMOMA_FILTERED_PREDICTIONS, --gemoma_filtered_predictions GEMOMA_FILTERED_PREDICTIONS
+                        GFF3 output file of Gemoma
+  -X BRAKER_OUT_DIR, --braker_out_dir BRAKER_OUT_DIR
+                        BRAKER output directory with GTF files; works also for
+                        GALBA, warnings are expected in case of GALBA as
+                        input.
+  -M MAKER_GFF, --maker_gff MAKER_GFF
+                        MAKER2 output file in GFF3 format
+  -I GLIMMER_GFF, --glimmer_gff GLIMMER_GFF
+                        GFF3 output file of GlimmerHMM
+  -S SNAP_GFF, --snap_gff SNAP_GFF
+                        SNAP output file in GFF3 format
+  -a ANNOT, --annot ANNOT
+                        GTF file with reference annotation
+  -G GENE_TRACK [GENE_TRACK ...], --gene_track GENE_TRACK [GENE_TRACK ...]
+                        Gene track with user specified label, argument must be
+                        formatted as follows: --gene_track file.gtf tracklabel
+  -A, --add_track       Add track(s) to existing hub
+  -o OUTDIR, --outdir OUTDIR
+                        output directory to write hub to
+  -n, --no_repeats      Disable repeat track generation from softmasked genome
+                        sequence (saves time)
+  -s SAMTOOLS_PATH, --SAMTOOLS_PATH SAMTOOLS_PATH
+                        Path to samtools executable
+  -B BAM2WIG_PATH, --BAM2WIG_PATH BAM2WIG_PATH
+                        Path to bam2wig executable
+  -i HINTS, --hints HINTS
+                        GFF file with AUGUSTUS hints
+  -t TRAINGENES, --traingenes TRAINGENES
+                        GTF file with training genes
+  -m GENEMARK, --genemark GENEMARK
+                        GTF file with GeneMark predictions
+  -w AUG_AB_INITIO, --aug_ab_initio AUG_AB_INITIO
+                        GTF file with ab initio AUGUSTUS predictions
+  -x AUG_HINTS, --aug_hints AUG_HINTS
+                        GTF file with AUGUSTUS predictions with hints
+  -y AUG_AB_INITIO_UTR, --aug_ab_initio_utr AUG_AB_INITIO_UTR
+                        GTF file with ab initio AUGUSTUS predictions with UTRs
+  -z AUG_HINTS_UTR, --aug_hints_utr AUG_HINTS_UTR
+                        GTF file with AUGUSTUS predictions with hints with
+                        UTRs
+  -U BRAKER_GENES, --braker_genes BRAKER_GENES
+                        GTF file with BRAKER genes (generated by TSEBRA).
+  -N LATIN_NAME, --latin_name LATIN_NAME
+                        Latin species name, e.g. "Drosophila melanogaster".
+                        This argument must be provided if the hub is supposed
+                        to be added to the public UCSC list.
+  -V ASSEMBLY_VERSION, --assembly_version ASSEMBLY_VERSION
+                        Assembly version, e.g. "BDGP R4/dm3". This argument
+                        must be provided if the hub is supposed to be added to
+                        the public UCSC list.
+  -r, --no_tmp_rm       Do not delete temporary files
+  -P, --no_genePredToBigGenePred
+                        Option for the special case in which the precompiled
+                        UCSC binaries are not working on your system, and you
+                        installed kentutils from the older ENCODE github
+                        repository; if activated, gene prediction tracks will
+                        be output to bigBed instead of bigGenePred format and
+                        amino acid display will not be possible in gene
+                        tracks.
+  -u VERBOSITY, --verbosity VERBOSITY
+                        If INT>0 verbose output log is produced
+  -v, --version         show program's version number and exit
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## makehub_make_hub.py
+## makehub_bedToBigBed
 
 ### Tool Description
-The provided text does not contain help information for the tool, but appears to be a system error log regarding container image building (no space left on device).
+Convert bed file to bigBed.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
 - **Homepage**: https://github.com/Gaius-Augustus/MakeHub
 - **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/makehub:1.0.8--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3335514580: no space left on device
+bedToBigBed v. 2.10 - Convert bed file to bigBed. (bbi version: 4)
+usage:
+   bedToBigBed in.bed chrom.sizes out.bb
+Where in.bed is in one of the ascii bed formats, but not including track lines
+and chrom.sizes is a two-column file/URL: <chromosome name> <size in bases>
+and out.bb is the output indexed big bed file.
+
+If the assembly <db> is hosted by UCSC, chrom.sizes can be a URL like
+  http://hgdownload.soe.ucsc.edu/goldenPath/<db>/bigZips/<db>.chrom.sizes
+or you may use the script fetchChromSizes to download the chrom.sizes file.
+If you have bed annotations on patch sequences from NCBI, a more inclusive
+chrom.sizes file can be found using a URL like
+  http://hgdownload.soe.ucsc.edu/goldenPath/<db>/database/chromInfo.txt.gz
+If not hosted by UCSC, a chrom.sizes file can be generated by running
+twoBitInfo on the assembly .2bit file or the 2bit file or used directly
+if the -sizesIs2Bit option is specified.
+
+The chrom.sizes file may also be a chromAlias bigBed file, or a URL to
+such a file, by specifying the -sizesIsChromAliasBb option.  When using
+a chromAlias bigBed file, the input BED file may have chromosome names
+matching any of the sequence name aliases in the chromAlias file.
+
+For UCSC provided genomes, the chromAlias files can be found under:
+    https://hgdownload.soe.ucsc.edu/goldenPath/<db>/bigZips/<db>.chromAlias.bb
+For UCSC GenArk assembly hubs, the chrom aliases are namedd in the form:
+    https://hgdownload.soe.ucsc.edu/hubs/GCF/006/542/625/GCF_006542625.1/GCF_006542625.1.chromAlias.bb
+For a description of generating chromAlias files for your own assembly hub, see:
+      http://genomewiki.ucsc.edu/index.php/Chrom_Alias
+
+The in.bed file must be sorted by chromosome,start,
+  to sort a bed file, use the unix sort command:
+     sort -k1,1 -k2,2n unsorted.bed > sorted.bed
+Sequences must be sorted by name so all sequences with the same name
+are collected together, but they don't need to be in any particular order.
+
+options:
+   -type=bedN[+[P]] : 
+                      N is between 3 and 15, 
+                      optional (+) if extra "bedPlus" fields, 
+                      optional P specifies the number of extra fields. Not required, but preferred.
+                      Examples: -type=bed6 or -type=bed6+ or -type=bed6+3 
+                      (see http://genome.ucsc.edu/FAQ/FAQformat.html#format1)
+   -as=fields.as - If you have non-standard "bedPlus" fields, it's great to put a definition
+                   of each field in a row in AutoSql format here.
+   -blockSize=N - Number of items to bundle in r-tree.  Default 256
+   -itemsPerSlot=N - Number of data points bundled at lowest level. Default 512
+   -unc - If set, do not use compression.
+   -tab - If set, expect fields to be tab separated, normally
+           expects white space separator.
+   -extraIndex=fieldList - If set, make an index on each field in a comma separated list
+           extraIndex=name and extraIndex=name,id are commonly used.
+   -sizesIs2Bit  -- If set, the chrom.sizes file is assumed to be a 2bit file.
+   -sizesIsChromAliasBb -- If set, then chrom.sizes file is assumed to be a chromAlias
+    bigBed file or a URL to a such a file (see above).
+   -sizesIsBb  -- Obsolete name for -sizesIsChromAliasBb.
+   -udcDir=/path/to/udcCacheDir  -- sets the UDC cache dir for caching of remote files.
+   -allow1bpOverlap  -- allow exons to overlap by at most one base pair
+   -maxAlloc=N -- Set the maximum memory allocation size to N bytes
 ```
 
-## makehub_gemoma_to_augustus_like_gtf.py
+
+## makehub_faToTwoBit
 
 ### Tool Description
-A script to convert GeMoMa output to an Augustus-like GTF format. Note: The provided help text contains only system error messages and no usage information.
+Convert DNA from fasta to 2bit format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
 - **Homepage**: https://github.com/Gaius-Augustus/MakeHub
 - **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/makehub:1.0.8--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1037170248: no space left on device
+faToTwoBit - Convert DNA from fasta to 2bit format
+usage:
+   faToTwoBit in.fa [in2.fa in3.fa ...] out.2bit
+options:
+   -long            use 64-bit offsets for index.   Allow for twoBit to contain more than 4Gb of sequence. 
+                    NOT COMPATIBLE WITH OLDER CODE.
+   -noMask          Ignore lower-case masking in fa file.
+   -stripVersion    Strip off version number after '.' for GenBank accessions.
+   -ignoreDups      Convert first sequence only if there are duplicate sequence
+                    names.  Use 'twoBitDup' to find duplicate sequences.
+   -namePrefix=XX.  add XX. to start of sequence name in 2bit.
+```
+
+
+## makehub_gtfToGenePred
+
+### Tool Description
+convert a GTF file to a genePred
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+gtfToGenePred - convert a GTF file to a genePred
+usage:
+   gtfToGenePred gtf genePred
+
+options:
+     -genePredExt - create a extended genePred, including frame
+      information and gene name
+     -allErrors - skip groups with errors rather than aborting.
+      Useful for getting infomation about as many errors as possible.
+     -ignoreGroupsWithoutExons - skip groups contain no exons rather than
+      generate an error.
+     -infoOut=file - write a file with information on each transcript
+     -sourcePrefix=pre - only process entries where the source name has the
+      specified prefix.  May be repeated.
+     -impliedStopAfterCds - implied stop codon in after CDS
+     -simple    - just check column validity, not hierarchy, resulting genePred may be damaged
+     -geneNameAsName2 - if specified, use gene_name for the name2 field
+      instead of gene_id.
+     -includeVersion - it gene_version and/or transcript_version attributes exist, include the version
+      in the corresponding identifiers.
+```
+
+
+## makehub_hgGcPercent
+
+### Tool Description
+Calculate GC Percentage in 20kb windows
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+hgGcPercent - Calculate GC Percentage in 20kb windows
+usage:
+   hgGcPercent [options] database nibDir
+     nibDir can be a .2bit file, a directory that contains a
+     database.2bit file, or a directory that contains *.nib files.
+     Loads gcPercent table with counts from sequence.
+options:
+   -win=<size> - change windows size (default 20000)
+   -noLoad - do not load mysql table - create bed file
+   -file=<filename> - output to <filename> (stdout OK) (implies -noLoad)
+   -chr=<chrN> - process only chrN from the nibDir
+   -noRandom - ignore randome chromosomes from the nibDir
+   -noDots - do not display ... progress during processing
+   -doGaps - process gaps correctly (default: gaps are not counted as GC)
+   -wigOut - output wiggle ascii data ready to pipe to wigEncode
+   -overlap=N - overlap windows by N bases (default 0)
+   -verbose=N - display details to stderr during processing
+   -bedRegionIn=input.bed   Read in a bed file for GC content in specific regions and write to bedRegionsOut
+   -bedRegionOut=output.bed Write a bed file of GC content in specific regions from bedRegionIn
+
+example:
+  calculate GC percent in 5 base windows using a 2bit assembly (dp2):
+    hgGcPercent -wigOut -doGaps -win=5 -file=stdout -verbose=0 \
+      dp2 /cluster/data/dp2 \
+    | wigEncode stdin gc5Base.wig gc5Base.wib
+```
+
+
+## makehub_ixIxx
+
+### Tool Description
+Create indices for simple line-oriented file of format <symbol> <free text>
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+ixIxx - Create indices for simple line-oriented file of format 
+<symbol> <free text>
+usage:
+   ixIxx in.text out.ix out.ixx
+Where out.ix is a word index, and out.ixx is an index into the index.
+options:
+   -prefixSize=N Size of prefix to index on in ixx.  Default is 5.
+   -binSize=N Size of bins in ixx.  Default is 64k.
+   -maxWordLength=N Maximum allowed word length. 
+     Words with more characters than this limit are ignored and will not appear in index or be searchable.  Default is 31.
+```
+
+
+## makehub_twoBitInfo
+
+### Tool Description
+get information about sequences in a .2bit file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+twoBitInfo - get information about sequences in a .2bit file
+usage:
+   twoBitInfo input.2bit output.tab
+options:
+   -maskBed instead of seq sizes, output BED records that define 
+           areas with masked sequence
+   -nBed   instead of seq sizes, output BED records that define 
+           areas with N's in sequence
+   -noNs   outputs the length of each sequence, but does not count Ns 
+   -udcDir=/dir/to/cache - place to put cache for remote bigBed/bigWigs
+Output file has the columns::
+   seqName size
+
+The 2bit file may be specified in the form path:seq or path:seq1,seq2,seqN...
+so that information is returned only on the requested sequence(s).
+If the form path:seq:start-end is used, start-end is ignored.
+```
+
+
+## makehub_wigToBigWig
+
+### Tool Description
+Convert ascii format wig file (in fixedStep, variableStep or bedGraph format) to binary big wig format (bbi version: 4).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+wigToBigWig v 2.9 - Convert ascii format wig file (in fixedStep, variableStep
+or bedGraph format) to binary big wig format (bbi version: 4).
+usage:
+   wigToBigWig in.wig chrom.sizes out.bw
+Where in.wig is in one of the ascii wiggle formats, but not including track lines
+and chrom.sizes is a two-column file/URL: <chromosome name> <size in bases>
+and out.bw is the output indexed big wig file.
+If the assembly <db> is hosted by UCSC, chrom.sizes can be a URL like
+  http://hgdownload.soe.ucsc.edu/goldenPath/<db>/bigZips/<db>.chrom.sizes
+or you may use the script fetchChromSizes to download the chrom.sizes file.
+If not hosted by UCSC, a chrom.sizes file can be generated by running
+twoBitInfo on the assembly .2bit file.
+options:
+   -blockSize=N - Number of items to bundle in r-tree.  Default 256
+   -itemsPerSlot=N - Number of data points bundled at lowest level. Default 1024
+   -clip - If set just issue warning messages rather than dying if wig
+                  file contains items off end of chromosome or chromosomes
+                  that are not in the chrom.sizes file.
+   -unc - If set, do not use compression.
+   -fixedSummaries - If set, use a predefined sequence of summary levels.
+   -keepAllChromosomes - If set, store all chromosomes in b-tree.
+```
+
+
+## makehub_samtools
+
+### Tool Description
+Tools for alignments in the SAM format
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Program: samtools (Tools for alignments in the SAM format)
+Version: 1.21 (using htslib 1.21)
+
+Usage:   samtools <command> [options]
+
+Commands:
+  -- Indexing
+     dict           create a sequence dictionary file
+     faidx          index/extract FASTA
+     fqidx          index/extract FASTQ
+     index          index alignment
+
+  -- Editing
+     calmd          recalculate MD/NM tags and '=' bases
+     fixmate        fix mate information
+     reheader       replace BAM header
+     targetcut      cut fosmid regions (for fosmid pool only)
+     addreplacerg   adds or replaces RG tags
+     markdup        mark duplicates
+     ampliconclip   clip oligos from the end of reads
+
+  -- File operations
+     collate        shuffle and group alignments by name
+     cat            concatenate BAMs
+     consensus      produce a consensus Pileup/FASTA/FASTQ
+     merge          merge sorted alignments
+     mpileup        multi-way pileup
+     sort           sort alignment file
+     split          splits a file by read group
+     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
+     fastq          converts a BAM to a FASTQ
+     fasta          converts a BAM to a FASTA
+     import         Converts FASTA or FASTQ files to SAM/BAM/CRAM
+     reference      Generates a reference from aligned data
+     reset          Reverts aligner changes in reads
+
+  -- Statistics
+     bedcov         read depth per BED region
+     coverage       alignment depth and percent coverage
+     depth          compute the depth
+     flagstat       simple stats
+     idxstats       BAM index stats
+     cram-size      list CRAM Content-ID and Data-Series sizes
+     phase          phase heterozygotes
+     stats          generate stats (former bamcheck)
+     ampliconstats  generate amplicon specific stats
+
+  -- Viewing
+     flags          explain BAM flags
+     head           header viewer
+     tview          text alignment viewer
+     view           SAM<->BAM<->CRAM conversion
+     depad          convert padded BAM to unpadded BAM
+     samples        list the samples in a set of SAM/BAM/CRAM files
+
+  -- Misc
+     help [cmd]     display this help message or help for [cmd]
+     version        detailed version information
+```
+
+
+## makehub_python3
+
+### Tool Description
+Run a program in Python
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Options (and corresponding environment variables):
+-b     : issue warnings about converting bytes/bytearray to str and comparing
+         bytes/bytearray with str or bytes with int. (-bb: issue errors)
+-B     : don't write .pyc files on import; also PYTHONDONTWRITEBYTECODE=x
+-c cmd : program passed in as string (terminates option list)
+-d     : turn on parser debugging output (for experts only, only works on
+         debug builds); also PYTHONDEBUG=x
+-E     : ignore PYTHON* environment variables (such as PYTHONPATH)
+-h     : print this help message and exit (also -? or --help)
+-i     : inspect interactively after running script; forces a prompt even
+         if stdin does not appear to be a terminal; also PYTHONINSPECT=x
+-I     : isolate Python from the user's environment (implies -E and -s)
+-m mod : run library module as a script (terminates option list)
+-O     : remove assert and __debug__-dependent statements; add .opt-1 before
+         .pyc extension; also PYTHONOPTIMIZE=x
+-OO    : do -O changes and also discard docstrings; add .opt-2 before
+         .pyc extension
+-P     : don't prepend a potentially unsafe path to sys.path; also
+         PYTHONSAFEPATH
+-q     : don't print version and copyright messages on interactive startup
+-s     : don't add user site directory to sys.path; also PYTHONNOUSERSITE=x
+-S     : don't imply 'import site' on initialization
+-u     : force the stdout and stderr streams to be unbuffered;
+         this option has no effect on stdin; also PYTHONUNBUFFERED=x
+-v     : verbose (trace import statements); also PYTHONVERBOSE=x
+         can be supplied multiple times to increase verbosity
+-V     : print the Python version number and exit (also --version)
+         when given twice, print more information about the build
+-W arg : warning control; arg is action:message:category:module:lineno
+         also PYTHONWARNINGS=arg
+-x     : skip first line of source, allowing use of non-Unix forms of #!cmd
+-X opt : set implementation-specific option
+--check-hash-based-pycs always|default|never:
+         control how Python invalidates hash-based .pyc files
+--help-env: print help about Python environment variables and exit
+--help-xoptions: print help about implementation-specific -X options and exit
+--help-all: print complete help information and exit
+
+Arguments:
+file   : program read from script file
+-      : program read from stdin (default; interactive mode if a tty)
+arg ...: arguments passed to program in sys.argv[1:]
+```
+
+
+## makehub_bam2wig
+
+### Tool Description
+Converts BAM files to WIG format for visualization.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/makehub:1.0.8--hdfd78af_1
+- **Homepage**: https://github.com/Gaius-Augustus/MakeHub
+- **Package**: https://anaconda.org/channels/bioconda/packages/makehub/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+-----------------------------------------------------------------
+ -r   Allows user to specify a target region, e.g. 'chr3L:10-250'
+      This option can only be used if an index file exists
+      See: samtools index 
+ -t   A string might be provided as track name
+
+NOTE:File needs to be sorted by Reference ID (i.e. target name)
+Use 'samtools sort <in.bam>' to such effect.
 ```
 

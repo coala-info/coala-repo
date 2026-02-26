@@ -1,8 +1,9 @@
 ---
 name: smcpp
-description: SMC++ is a powerful tool for inferring population history from whole-genome sequence data.
+description: SMC++ infers population size history and divergence times from whole-genome sequence data by combining the sequentially Markovian coalescent with the site frequency spectrum. Use when user asks to estimate effective population size over time, determine population split times, or convert VCF files into SMC++ format for demographic modeling.
 homepage: https://github.com/popgenmethods/smcpp
 ---
+
 
 # smcpp
 

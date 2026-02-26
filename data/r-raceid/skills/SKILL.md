@@ -1,8 +1,9 @@
 ---
 name: r-raceid
-description: R package raceid (documentation from project home).
+description: The RaceID package provides a framework for single-cell RNA-seq analysis focusing on rare cell type identification and lineage reconstruction. Use when user asks to cluster single-cell data, identify rare cell types, infer differentiation trajectories, or analyze gene expression variability.
 homepage: https://cran.r-project.org/web/packages/raceid/index.html
 ---
+
 
 # r-raceid
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-netsyntenic
-description: The `netSyntenic` utility is a specialized tool within the UCSC Kent toolset designed for the post-processing of genome alignment nets.
+description: ucsc-netsyntenic identifies and annotates syntenic regions within genome alignment nets. Use when user asks to identify syntenic regions in genome alignments, add synteny information to alignment nets, or annotate genome alignment nets.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-netsyntenic
 

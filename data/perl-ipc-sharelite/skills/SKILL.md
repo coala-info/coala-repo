@@ -1,8 +1,9 @@
 ---
 name: perl-ipc-sharelite
-description: This skill provides guidance on utilizing the `IPC::ShareLite` Perl module to facilitate efficient data exchange between processes via shared memory.
+description: This tool provides a lightweight interface for Perl processes to exchange data through shared memory segments. Use when user asks to facilitate inter-process communication, store data in shared memory, or implement atomic data operations between multiple scripts.
 homepage: http://metacpan.org/pod/IPC::ShareLite
 ---
+
 
 # perl-ipc-sharelite
 

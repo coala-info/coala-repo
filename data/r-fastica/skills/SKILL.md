@@ -1,8 +1,9 @@
 ---
 name: r-fastica
-description: R package fastica (documentation from project home).
+description: The fastICA package implements the FastICA algorithm for performing independent component analysis and blind source separation in R. Use when user asks to decompose complex datasets into independent features, perform blind source separation, or extract hidden factors from random variables.
 homepage: https://cran.r-project.org/web/packages/fastica/index.html
 ---
+
 
 # r-fastica
 

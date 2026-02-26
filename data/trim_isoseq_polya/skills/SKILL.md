@@ -1,8 +1,9 @@
 ---
 name: trim_isoseq_polya
-description: The `trim_isoseq_polya` tool is a specialized utility designed for the Pacific Biosciences IsoSeq workflow.
+description: The `trim_isoseq_polya` tool identifies and removes polyA tail sequences from IsoSeq transcript FASTA files. Use when user asks to 'remove polyA tails', 'trim polyA sequences', or 'prepare IsoSeq transcripts for alignment'.
 homepage: https://github.com/PacificBiosciences/trim_isoseq_polyA
 ---
+
 
 # trim_isoseq_polya
 

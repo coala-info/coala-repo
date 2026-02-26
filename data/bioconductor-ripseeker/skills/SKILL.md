@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ripseeker
-description: the package is available on all platforms; click for details.
+description: RIPSeeker is a Bioconductor package for identifying protein-bound RNA transcripts from RIP-seq data using a Hidden Markov Model. Use when user asks to call peaks in RIP-seq data, identify protein-RNA interaction sites, or analyze RNA immunoprecipitation sequencing results.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/RIPSeeker.html
 ---
+
 
 # bioconductor-ripseeker
 

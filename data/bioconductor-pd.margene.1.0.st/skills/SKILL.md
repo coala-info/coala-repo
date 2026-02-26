@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.margene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Marmoset Gene 1.0 ST microarray. Use when user asks to process Affymetrix Marmoset Gene 1.0 ST array data or access annotation information for marmoset gene expression studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.margene.1.0.st.html
 ---
+
 
 # bioconductor-pd.margene.1.0.st
 

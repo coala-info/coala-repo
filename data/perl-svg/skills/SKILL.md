@@ -1,8 +1,9 @@
 ---
 name: perl-svg
-description: The `perl-svg` skill enables the programmatic generation of SVG documents through the `SVG.pm` Perl module.
+description: This tool programmatically generates Scalable Vector Graphics (SVG) documents using a Perl-based object-oriented interface. Use when user asks to create vector images, build SVG DOM structures, render shapes and paths, or generate data visualizations in Perl.
 homepage: http://metacpan.org/pod/SVG
 ---
+
 
 # perl-svg
 

@@ -1,8 +1,9 @@
 ---
 name: sqt
-description: sqtracker (sqt) is a modern, private BitTorrent tracker platform designed to be content-agnostic and highly customizable.
+description: sqt is a private BitTorrent tracker platform for managing content-agnostic torrent distribution and services. Use when user asks to deploy the tracker using Docker, configure system settings in config.js, manage administrative credentials, or add new language localizations.
 homepage: https://github.com/tdjsnelling/sqtracker
 ---
+
 
 # sqt
 

@@ -1,8 +1,9 @@
 ---
 name: autodock-getdata
-description: This skill facilitates the acquisition and installation of the AutoDock suite using the Bioconda distribution channel.
+description: This tool installs the AutoDock suite for molecular docking simulations via the Bioconda distribution channel. Use when user asks to install AutoDock, set up a computational environment for docking, or acquire the AutoDock and AutoGrid tools.
 homepage: http://autodock.scripps.edu/
 ---
+
 
 # autodock-getdata
 

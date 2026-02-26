@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beadarray
-description: The package is able to read bead-level data (raw TIFFs and text files) output by BeadScan as well as bead-summary data from BeadStudio. Methods for quality assessment and low-level analysis are provided.
+description: This package provides tools for the analysis of Illumina BeadArray data from raw bead-level or summarized formats. Use when user asks to import Illumina array data, perform quality control, visualize spatial artifacts, summarize bead-level intensities, or normalize expression and SNP array data.
 homepage: https://bioconductor.org/packages/release/bioc/html/beadarray.html
 ---
+
 
 # bioconductor-beadarray
 

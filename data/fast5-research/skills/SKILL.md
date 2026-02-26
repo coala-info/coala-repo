@@ -1,8 +1,9 @@
 ---
 name: fast5-research
-description: The `fast5-research` skill provides the procedural knowledge required to handle ONT's HDF5-based FAST5 format.
+description: This tool provides a Python API and command-line utilities for manipulating, reading, and writing Oxford Nanopore FAST5 files. Use when user asks to extract raw signal data, generate synthetic nanopore datasets, create read summaries, or perform granular HDF5 file manipulation for sequencing research.
 homepage: https://github.com/nanoporetech/fast5_research
 ---
+
 
 # fast5-research
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sctensor
-description: the package is available on all platforms; click for details.
+description: scTensor detects and visualizes cell-cell interactions from single-cell RNA-sequencing data using tensor decomposition. Use when user asks to identify cell-cell communication patterns, perform tensor decomposition on transcriptomic data, or analyze ligand-receptor interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/scTensor.html
 ---
+
 
 # bioconductor-sctensor
 

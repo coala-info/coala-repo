@@ -1,9 +1,9 @@
 # haslr CWL Generation Report
 
-## haslr
+## haslr_haslr.py
 
 ### Tool Description
-Hybrid Assembler for Long Reads (Note: The provided text is a container runtime error log and does not contain help information or argument definitions).
+A tool for long-read-first assembly.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/haslr:0.8a1--py310h275bdba_6
@@ -18,29 +18,25 @@ Hybrid Assembler for Long Reads (Note: The provided text is a container runtime 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/haslr:0.8a1--py310h275bdba_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2958662450: no space left on device
-```
+usage: haslr.py [-t THREADS] -o OUT_DIR -g GENOME_SIZE -l LONG -x LONG_TYPE -s SHORT [SHORT ...]
 
+required arguments:
+  -o, --out OUT_DIR              output directory
+  -g, --genome GENOME_SIZE       estimated genome size; accepted suffixes are k,m,g
+  -l, --long LONG                long read file
+  -x, --type LONG_TYPE           type of long reads chosen from {pacbio,nanopore}
+  -s, --short SHORT [SHORT ...]  short read file
 
-## Metadata
-- **Skill**: generated
-
-## haslr_haslr.py
-
-### Tool Description
-Hybrid Assembler for Long Reads (Note: The provided text contains container execution errors rather than help documentation. No arguments could be extracted from the input.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/haslr:0.8a1--py310h275bdba_6
-- **Homepage**: https://github.com/vpc-ccg/haslr
-- **Package**: https://anaconda.org/channels/bioconda/packages/haslr/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/haslr:0.8a1--py310h275bdba_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2987460523: no space left on device
+optional arguments:
+  -t, --threads THREADS          number of CPU threads to use [1]
+  --cov-lr COV_LR                amount of long read coverage to use for assembly [25]
+  --aln-block ALN_BLOCK          minimum length of alignment block [500]
+  --aln-sim ALN_SIM              minimum alignment similarity [0.85]
+  --edge-sup EDGE_SUP            minimum number of long read supporting each edge [3]
+  --minia-kmer MINIA_KMER        kmer size used by minia [49]
+  --minia-solid MINIA_SOLID      minimum kmer abundance used by minia [3]
+  --minia-asm MINIA_ASM          type of minia assembly chosen from {contigs,unitigs} [contigs]
+  -v, --version                  print version
+  -h, --help                     show this help message and exit
 ```
 

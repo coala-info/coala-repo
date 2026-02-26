@@ -1,8 +1,9 @@
 ---
 name: dropseq_tools
-description: The `dropseq_tools` suite provides a comprehensive set of Java-based command-line utilities designed to handle the unique requirements of Drop-seq data.
+description: The dropseq_tools suite provides command-line utilities for processing single-cell RNA-seq data from raw reads to gene expression matrices. Use when user asks to extract cell barcodes and UMIs, trim adapter sequences, correct bead synthesis errors, or generate digital gene expression counts.
 homepage: http://mccarrolllab.com/dropseq/
 ---
+
 
 # dropseq_tools
 

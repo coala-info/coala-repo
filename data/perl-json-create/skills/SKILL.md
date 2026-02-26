@@ -1,8 +1,9 @@
 ---
 name: perl-json-create
-description: The `perl-json-create` skill provides a streamlined interface for encoding Perl variables into JSON format.
+description: This tool encodes Perl data structures into JSON format with a focus on speed and UTF-8 output. Use when user asks to convert Perl variables to JSON, handle boolean values in JSON output, or serialize Perl objects using TO_JSON methods.
 homepage: https://metacpan.org/pod/distribution/JSON-Create/lib/JSON/Create.pod
 ---
+
 
 # perl-json-create
 

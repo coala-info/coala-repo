@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigwigaverageoverbed
-description: The `bigWigAverageOverBed` utility is a high-performance tool from the UCSC Genome Browser "kent" suite designed to aggregate BigWig signal data over regions specified in a BED file.
+description: The tool calculates the average signal from a BigWig file over genomic regions defined in a BED file. Use when user asks to calculate average expression, quantify binding levels, or get signal statistics for genomic features.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigwigaverageoverbed
 

@@ -1,8 +1,9 @@
 ---
 name: sodar-cli
-description: The `sodar-cli` tool is a command-line interface and Python library used to interact with SODAR servers.
+description: The sodar-cli tool provides a command-line interface and Python library for interacting with SODAR servers to manage project metadata and file storage. Use when user asks to configure authentication, manage project roles, retrieve iRODS connection details, or perform file operations within a SODAR environment.
 homepage: https://github.com/bihealth/sodar-cli
 ---
+
 
 # sodar-cli
 

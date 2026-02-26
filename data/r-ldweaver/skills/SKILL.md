@@ -1,8 +1,9 @@
 ---
 name: r-ldweaver
-description: R package ldweaver (documentation from project home).
+description: This tool performs genomewide epistasis and co-selection analysis in bacteria by identifying linkage disequilibrium outliers from sequence alignments. Use when user asks to identify epistatic interactions, detect linkage disequilibrium outliers, annotate genomic links, or visualize bacterial co-selection networks.
 homepage: https://cran.r-project.org/web/packages/ldweaver/index.html
 ---
+
 
 # r-ldweaver
 

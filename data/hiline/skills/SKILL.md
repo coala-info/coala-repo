@@ -1,8 +1,9 @@
 ---
 name: hiline
-description: HiLine is a specialized pipeline designed for the alignment and classification of Hi-C short-read data.
+description: HiLine is a pipeline for the alignment and classification of Hi-C short-read data. Use when user asks to align Hi-C reads, configure read-trimming for alignment accuracy, or generate alignment statistics for Hi-C experiments.
 homepage: https://github.com/wtsi-hpag/HiLine
 ---
+
 
 # hiline
 

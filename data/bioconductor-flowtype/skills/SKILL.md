@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowtype
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs automated phenotyping of flow cytometry data to identify and analyze multi-dimensional cell populations. Use when user asks to partition flow cytometry channels, calculate phenotype frequencies, extract mean fluorescence intensity, or conduct cross-sample statistical comparisons of cell populations.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/flowType.html
 ---
+
 
 # bioconductor-flowtype
 

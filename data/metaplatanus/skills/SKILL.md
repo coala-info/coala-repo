@@ -1,8 +1,9 @@
 ---
 name: metaplatanus
-description: MetaPlatanus is a specialized hybrid assembler designed for complex microbiome datasets.
+description: MetaPlatanus is a hybrid assembler designed to generate high-quality scaffolds and organized bins from complex metagenomic datasets. Use when user asks to assemble microbiome reads, perform hybrid assembly with long reads, or generate binned scaffolds from mixed-read libraries.
 homepage: https://github.com/rkajitani/metaplatanus
 ---
+
 
 # metaplatanus
 

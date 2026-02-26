@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tofsims
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides methods for processing and analyzing Time-of-Flight Secondary Ion Mass Spectrometry data. Use when user asks to process ToF-SIMS data, perform multivariate analysis on mass spectrometry imaging, or generate ion maps.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/tofsims.html
 ---
+
 
 # bioconductor-tofsims
 

@@ -1,8 +1,9 @@
 ---
 name: paidiverpy
-description: `paidiverpy` is a specialized Python framework that automates the transformation of raw biodiversity imagery into standardized, analysis-ready datasets.
+description: paidiverpy automates the transformation of raw biodiversity imagery into standardized, analysis-ready datasets. Use when user asks to process batches of biological images, run image processing pipelines, synchronize metadata with imagery, or convert raw image formats for biodiversity analysis.
 homepage: https://github.com/paidiver/paidiverpy
 ---
+
 
 # paidiverpy
 

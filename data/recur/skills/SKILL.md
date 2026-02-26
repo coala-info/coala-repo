@@ -1,8 +1,9 @@
 ---
 name: recur
-description: RECUR is a specialized phylogenetic tool that automates the identification of amino acid substitutions that have occurred multiple times independently across a tree.
+description: RECUR identifies amino acid substitutions that have occurred multiple times independently across a phylogenetic tree. Use when user asks to identify recurrent substitutions, perform ancestral state reconstruction, or detect sites of functional convergence in protein or codon alignments.
 homepage: https://github.com/OrthoFinder/RECUR
 ---
+
 
 # recur
 

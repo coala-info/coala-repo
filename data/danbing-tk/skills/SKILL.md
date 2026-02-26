@@ -1,8 +1,9 @@
 ---
 name: danbing-tk
-description: danbing-tk is a specialized bioinformatics toolkit designed to address the challenges of genotyping Variable Number Tandem Repeats (VNTRs).
+description: danbing-tk is a bioinformatics toolkit that genotypes Variable Number Tandem Repeats using a k-mer based repeat-pan genome graph approach. Use when user asks to genotype VNTRs from short-read sequencing data, build a repeat-pan genome graph, or predict motif dosage.
 homepage: https://github.com/ChaissonLab/danbing-tk
 ---
+
 
 # danbing-tk
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epivizr
-description: the package is available on all platforms; click for details.
+description: This tool provides an interactive interface for visualizing genomic data by establishing two-way communication between R/Bioconductor and the Epiviz web browser. Use when user asks to start an Epiviz session, plot genomic objects like GRanges or SummarizedExperiment, navigate the genome browser from R, or manage synchronized interactive visualizations.
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizr.html
 ---
+
 
 # bioconductor-epivizr
 

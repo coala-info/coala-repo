@@ -1,8 +1,9 @@
 ---
 name: hmntrimmer
-description: HmnTrimmer is a high-performance C++ tool designed for the preprocessing of NGS data.
+description: "HmnTrimmer is a high-performance tool for preprocessing and quality trimming of NGS data. Use when user asks to trim low-quality read tails, apply sliding window quality filters, filter low-complexity sequences using Dust scores, or remove reads based on minimum length."
 homepage: https://github.com/guillaume-gricourt/HmnTrimmer
 ---
+
 
 # hmntrimmer
 

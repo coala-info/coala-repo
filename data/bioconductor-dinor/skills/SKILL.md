@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dinor
-description: the package is available on all platforms; click for details.
+description: This tool analyzes NOMe-seq data to detect differences in nucleosome binding and accessibility patterns between experimental groups. Use when user asks to generate metaplots across regions of interest, classify and quantify chromatin footprints, or perform differential abundance testing of chromatin states between conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/dinoR.html
 ---
+
 
 # bioconductor-dinor
 

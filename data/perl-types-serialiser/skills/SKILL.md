@@ -1,8 +1,9 @@
 ---
 name: perl-types-serialiser
-description: This skill facilitates the use of `Types::Serialiser`, a Perl module providing a common repository of simple data types.
+description: This tool provides a common repository of simple data types to ensure data integrity when serializing Perl objects into formats like JSON or CBOR. Use when user asks to handle boolean constants, check for serializable error types, or implement FREEZE and THAW methods for custom object serialization.
 homepage: http://metacpan.org/pod/Types::Serialiser
 ---
+
 
 # perl-types-serialiser
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainsort
-description: The `ucsc-chainsort` utility (often invoked as `chainSort`) is a specialized tool from the UCSC Genome Browser "kent" source tree.
+description: The ucsc-chainsort tool organizes pairwise genomic alignment records within .chain files. Use when user asks to organize genomic alignment records, sort .chain files, or prepare alignment data for comparative genomics workflows.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chainsort
 

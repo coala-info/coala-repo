@@ -1,8 +1,9 @@
 ---
 name: mlstdb
-description: `mlstdb` is a specialized utility designed to bridge the gap between the `mlst` command-line tool and the evolving online MLST repositories (PubMLST and BIGSdb Pasteur).
+description: "mlstdb downloads and indexes Multi-Locus Sequence Typing (MLST) schemes from online repositories for use with the mlst tool. Use when user asks to fetch MLST scheme metadata, update the local MLST database, download sequences from PubMLST or BIGSdb Pasteur, or build BLAST indexes for sequence typing."
 homepage: https://github.com/himal2007/mlstdb
 ---
+
 
 # mlstdb
 

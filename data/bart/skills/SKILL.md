@@ -1,8 +1,9 @@
 ---
 name: bart
-description: `bart` (Bacterial Read Typer) is a high-performance tool designed to identify the sequence type (ST) of bacterial samples directly from raw sequencing data.
+description: Bacterial Read Typer (BART) identifies sequence types and antimicrobial resistance genes directly from raw bacterial sequencing data without requiring assembly. Use when user asks to perform MLST typing, identify bacterial species schemes, or screen for AMR genes using raw reads.
 homepage: https://github.com/tomdstanton/bart
 ---
+
 
 # bart
 

@@ -1,8 +1,9 @@
 ---
 name: showit
-description: The `showit` library provides a streamlined interface for image visualization in Python, acting as a "sensible" wrapper around Matplotlib.
+description: The showit library provides a streamlined interface for visualizing NumPy arrays as images or tiled grids without axes or interpolation artifacts. Use when user asks to display images, visualize image tiles, or inspect image data with specific colormaps and scaling.
 homepage: https://github.com/freeman-lab/showit
 ---
+
 
 # showit
 

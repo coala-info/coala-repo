@@ -1,8 +1,9 @@
 ---
 name: xdg
-description: The `xdg-base-dirs` module (formerly known as `xdg`) provides a reliable way to determine the correct filesystem paths for application-specific files.
+description: xdg helps applications find standard filesystem paths for user-specific configuration, data, and cache files. Use when user asks to get the configuration directory, find the data directory, locate the cache directory, determine the state directory, or retrieve the runtime directory.
 homepage: https://github.com/srstevenson/xdg
 ---
+
 
 # xdg
 

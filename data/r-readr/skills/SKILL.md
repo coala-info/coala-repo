@@ -1,8 +1,9 @@
 ---
 name: r-readr
-description: "The goal of 'readr' is to provide a fast and friendly way to     read rectangular data (like 'csv', 'tsv', and 'fwf').  It is designed     to flexibly parse many types of data found in the wild, while still     cleanly failing when data unexpectedly changes.</p>"
+description: The readr package provides a fast and consistent way to read rectangular data from delimited files into R as tibbles. Use when user asks to read CSV or TSV files, parse character vectors into specific data types, or handle international data formats using locales.
 homepage: https://cloud.r-project.org/web/packages/readr/index.html
 ---
+
 
 # r-readr
 

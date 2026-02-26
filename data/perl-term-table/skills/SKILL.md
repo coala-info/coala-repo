@@ -1,8 +1,9 @@
 ---
 name: perl-term-table
-description: The `perl-term-table` skill provides guidance on using the `Term::Table` Perl module to render structured data into clean, aligned ASCII tables.
+description: This tool renders structured data into aligned ASCII tables for terminal display using the Term::Table Perl module. Use when user asks to format array-based data into tables, manage terminal column alignment, or collapse empty columns in a dataset.
 homepage: http://metacpan.org/pod/Term::Table
 ---
+
 
 # perl-term-table
 

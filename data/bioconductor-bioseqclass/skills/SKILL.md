@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioseqclass
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: BioSeqClass provides a comprehensive framework for sequence-based biological classification and feature extraction in R. Use when user asks to perform homolog reduction, extract numerical features from DNA or protein sequences, select informative features, or build and evaluate machine learning models for biological sequence classification.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BioSeqClass.html
 ---
+
 
 # bioconductor-bioseqclass
 

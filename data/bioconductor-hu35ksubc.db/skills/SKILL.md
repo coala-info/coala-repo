@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksubc.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation mappings for the Affymetrix Human Genome hu35ksubc array. Use when user asks to map Affymetrix probe identifiers to biological identifiers like Gene Symbols, Entrez IDs, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubc.db.html
 ---
+
 
 # bioconductor-hu35ksubc.db
 

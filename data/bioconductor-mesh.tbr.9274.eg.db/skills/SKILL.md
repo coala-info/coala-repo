@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.tbr.9274.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Medical Subject Headings (MeSH) and Entrez Gene identifiers for Trypanosoma brucei. Use when user asks to map MeSH terms to Entrez Gene IDs, perform functional annotation, or conduct enrichment analysis for Trypanosoma brucei.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Tbr.9274.eg.db.html
 ---
+
 
 # bioconductor-mesh.tbr.9274.eg.db
 

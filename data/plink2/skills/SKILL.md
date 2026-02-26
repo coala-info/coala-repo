@@ -1,8 +1,9 @@
 ---
 name: plink2
-description: plink2 is a comprehensive toolset for efficient analysis of large-scale genetic datasets.
+description: plink2 is a high-performance toolset for the efficient analysis and manipulation of large-scale genomic datasets. Use when user asks to convert genetic file formats, perform quality control filtering, run principal component analysis, or conduct genome-wide association studies.
 homepage: https://www.cog-genomics.org/plink2
 ---
+
 
 # plink2
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-harbchip
-description: the package is available on all platforms; click for details.
+description: This package provides yeast upstream sequences and genome-wide transcription factor binding profiles for regulatory genomics analysis. Use when user asks to retrieve yeast ORF upstream sequences, analyze transcription factor binding data, or search for DNA motifs in yeast promoter regions.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/harbChIP.html
 ---
+
 
 # bioconductor-harbchip
 

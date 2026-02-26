@@ -1,8 +1,9 @@
 ---
 name: svist4get
-description: svist4get is a Python-based CLI utility designed to bridge the gap between raw sequencing data and visual interpretation.
+description: svist4get is a command-line utility that generates publication-quality visualizations of genomic regions by overlaying sequencing data tracks onto a reference genome. Use when user asks to visualize genomic regions, create snapshots of read alignments, display coverage profiles from BigWig files, or generate figures for gene annotations and variant calls.
 homepage: https://bitbucket.org/artegorov/svist4get/
 ---
+
 
 # svist4get
 

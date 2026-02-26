@@ -1,8 +1,9 @@
 ---
 name: svpg
-description: SVPG (Structural Variant detection based on Pangenome Graph) is a computational tool designed to identify structural variations by leveraging pangenome references.
+description: SVPG identifies structural variations in long-read sequencing data by leveraging pangenome graph alignments to improve precision and resolve complex variants. Use when user asks to call structural variants from BAM or GAF files, detect somatic variants, or augment a pangenome graph with newly discovered variants.
 homepage: https://github.com/coopsor/SVPG
 ---
+
 
 # svpg
 

@@ -1,8 +1,9 @@
 ---
 name: longbow
-description: Longbow is a diagnostic tool for Oxford Nanopore sequencing data.
+description: Longbow identifies the basecalling environment and flowcell type of Oxford Nanopore sequencing data by analyzing quality value patterns in FASTQ files. Use when user asks to predict basecaller versions, identify flowcell types, or analyze quality value distributions in nanopore datasets.
 homepage: https://github.com/JMencius/longbow
 ---
+
 
 # longbow
 

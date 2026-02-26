@@ -1,8 +1,9 @@
 ---
 name: bioconductor-massspecwavelet
-description: the package is available on all platforms; click for details.
+description: MassSpecWavelet performs peak detection in mass spectrometry data using continuous wavelet transforms. Use when user asks to detect peaks in mass spectrometry data, identify features in noisy spectra, or apply continuous wavelet transforms to signal data.
 homepage: https://bioconductor.org/packages/release/bioc/html/MassSpecWavelet.html
 ---
+
 
 # bioconductor-massspecwavelet
 

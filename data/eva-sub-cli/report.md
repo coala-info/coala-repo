@@ -3,26 +3,32 @@
 ## eva-sub-cli
 
 ### Tool Description
-The provided text does not contain help information; it is an error log indicating a failure to pull or build the container image due to insufficient disk space.
+FAIL to generate CWL: eva-sub-cli not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/eva-sub-cli:0.5.3--py313hdfd78af_0
 - **Homepage**: https://github.com/EBIvariation/eva-sub-cli
 - **Package**: https://anaconda.org/channels/bioconda/packages/eva-sub-cli/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/eva-sub-cli/overview
-- **Total Downloads**: 139.5K
+- **Total Downloads**: 140.4K
 - **Last updated**: 2026-02-11
 - **GitHub**: https://github.com/EBIvariation/eva-sub-cli
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: eva-sub-cli not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: eva-sub-cli not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/eva-sub-cli:0.5.3--py313hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1521741539: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

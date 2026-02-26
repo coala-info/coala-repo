@@ -3,10 +3,10 @@
 ## patchwork
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'patchwork'. It contains system error messages related to a container runtime (Singularity/Apptainer) failing to pull or build a Docker image due to insufficient disk space.
+Processes dot files to generate graph visualizations, with options for various layout engines and configurations.
 
 ### Metadata
-- **Docker Image**: biocontainers/patchwork:0.5.0_cv1
+- **Docker Image**: Not found
 - **Homepage**: https://github.com/ssbc/patchwork
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,28 +18,44 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/6335de008156480c8c24a283899f16ce96239d1d941e4679e5847c6d188db10d: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/patchwork:0.5.0_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3153274426: no space left on device
-```
+Error: patchwork: option -h unrecognized
 
+Usage: patchwork [-Vv?] [-(GNE)name=val] [-(KTlso)<val>] <dot files>
+(additional options for neato)    [-x] [-n<v>]
+(additional options for fdp)      [-L(gO)] [-L(nUCT)<val>]
+(additional options for memtest)  [-m<v>]
+(additional options for config)  [-cv]
 
-## Metadata
-- **Skill**: generated
+ -V          - Print version and exit
+ -v          - Enable verbose mode 
+ -Gname=val  - Set graph attribute 'name' to 'val'
+ -Nname=val  - Set node attribute 'name' to 'val'
+ -Ename=val  - Set edge attribute 'name' to 'val'
+ -Tv         - Set output format to 'v'
+ -Kv         - Set layout engine to 'v' (overrides default based on command name)
+ -lv         - Use external library 'v'
+ -ofile      - Write output to 'file'
+ -O          - Automatically generate an output filename based on the input filename with a .'format' appended. (Causes all -ofile options to be ignored.) 
+ -P          - Internally generate a graph of the current plugins. 
+ -q[l]       - Set level of message suppression (=1)
+ -s[v]       - Scale input by 'v' (=72)
+ -y          - Invert y coordinate in output
 
-## patchwork_ssb-patchwork
+ -n[v]       - No layout mode 'v' (=1)
+ -x          - Reduce graph
 
-### Tool Description
-The provided help text indicates a fatal error while attempting to run the tool via a container URI and does not contain usage information or argument definitions. No arguments could be extracted.
+ -Lg         - Don't use grid
+ -LO         - Use old attractive force
+ -Ln<i>      - Set number of iterations to i
+ -LU<i>      - Set unscaled factor to i
+ -LC<v>      - Set overlap expansion factor to v
+ -LT[*]<v>   - Set temperature (temperature factor) to v
 
-### Metadata
-- **Docker Image**: biocontainers/patchwork:0.5.0_cv1
-- **Homepage**: https://github.com/ssbc/patchwork
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-FATAL:   Unable to handle docker://biocontainers/patchwork:0.5.0_cv1 uri: failed to get checksum for docker://biocontainers/patchwork:0.5.0_cv1: error parsing IndexManifest: EOF
+ -m          - Memory test (Observe no growth with top. Kill when done.)
+ -m[v]       - Memory test - v iterations.
+
+ -c          - Configure plugins (Writes $prefix/lib/graphviz/config 
+               with available plugin information.  Needs write privilege.)
+ -?          - Print usage and exit
 ```
 

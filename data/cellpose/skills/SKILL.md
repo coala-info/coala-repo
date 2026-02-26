@@ -1,8 +1,9 @@
 ---
 name: cellpose
-description: Cellpose is a versatile algorithm designed for the precise segmentation of cells and nuclei across a wide variety of image types.
+description: Cellpose is a deep learning algorithm for the precise segmentation of cells and nuclei in diverse biological images. Use when user asks to segment cells or nuclei, process 3D image stacks, restore noisy microscopy images, or train custom segmentation models.
 homepage: https://github.com/MouseLand/cellpose
 ---
+
 
 # cellpose
 

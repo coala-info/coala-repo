@@ -1,8 +1,9 @@
 ---
 name: atol-qc-raw-shortread
-description: The `atol-qc-raw-shortread` tool is a specialized utility designed for the initial processing of Illumina short-read data, with a particular focus on Hi-C libraries.
+description: This tool performs quality control, adapter trimming, and filtering for Illumina short-read sequencing data. Use when user asks to process raw FASTQ files, trim adapters from Hi-C libraries, perform quality-based filtering, or generate read processing statistics.
 homepage: https://github.com/TomHarrop/atol-qc-raw-shortread
 ---
+
 
 # atol-qc-raw-shortread
 

@@ -1,8 +1,9 @@
 ---
 name: dnmtools
-description: dnmtools is a specialized suite of command-line utilities designed to handle the computational challenges of large-scale DNA methylation data.
+description: dnmtools is a suite of command-line utilities for analyzing large-scale DNA methylation data from bisulfite and Nanopore sequencing. Use when user asks to identify highly methylated regions, detect partially methylated domains, find allelically methylated regions, perform differential methylation analysis, or aggregate methylation levels across genomic features.
 homepage: https://github.com/smithlabcode/dnmtools
 ---
+
 
 # dnmtools
 

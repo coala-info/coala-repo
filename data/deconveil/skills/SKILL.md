@@ -1,8 +1,9 @@
 ---
 name: deconveil
-description: DeConveil is a specialized extension of the PyDESeq2/DESeq2 framework designed for "CN-aware" differential expression testing.
+description: DeConveil performs copy-number-aware differential expression analysis by adjusting gene expression for gene dosage effects. Use when user asks to perform differential expression testing in cancer research, adjust for gene dosage, or categorize genes into dosage-sensitive, dosage-insensitive, and dosage-compensated groups.
 homepage: https://github.com/caravagnalab/DeConveil
 ---
+
 
 # deconveil
 

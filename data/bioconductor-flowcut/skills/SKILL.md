@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowcut
-description: the package is available on all platforms; click for details.
+description: The flowCut package automatically detects and removes technical artifacts and outliers from flow cytometry data by analyzing statistical measures across time segments. Use when user asks to clean flow cytometry data, remove technical artifacts from FCS files, or perform quality control on flow cytometry experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCut.html
 ---
+
 
 # bioconductor-flowcut
 

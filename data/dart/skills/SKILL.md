@@ -1,8 +1,9 @@
 ---
 name: dart
-description: Dart (Divide-and-conquer Alignment of RNA-seq Reads) is a specialized mapper designed to handle the complexities of transcriptomic data.
+description: Dart is a specialized RNA-seq mapper that uses a divide-and-conquer strategy to identify optimal alignments and splice sites. Use when user asks to index a reference genome, map single-end or paired-end RNA-seq reads, and identify novel splice junctions.
 homepage: https://github.com/hsinnan75/Dart
 ---
+
 
 # dart
 

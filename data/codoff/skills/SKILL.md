@@ -1,8 +1,9 @@
 ---
 name: codoff
-description: `codoff` is a specialized bioinformatics tool designed to measure the irregularity of codon usage in a focal genomic region relative to its host genome.
+description: "codoff measures the irregularity of codon usage in a specific genomic region compared to its host genome using Monte Carlo simulations. Use when user asks to quantify codon usage discordance, identify potential horizontal gene transfer, or compare a focal genomic region against a host genome's background distribution."
 homepage: https://github.com/Kalan-Lab/codoff
 ---
+
 
 # codoff
 

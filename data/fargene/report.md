@@ -3,10 +3,10 @@
 ## fargene
 
 ### Tool Description
-Fragmented Antibiotic Resistance Gene Identifier
+Searches and retrieves new and previously known genes from fragmented metagenomic data and genomes. Copyright (c) Fanny Berglund 2018.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fargene:0.1--py27h864c0ab_3
+- **Docker Image**: quay.io/biocontainers/fargene:0.1--py27h5ca1d4c_2
 - **Homepage**: https://github.com/fannyhb/fargene
 - **Package**: https://anaconda.org/channels/bioconda/packages/fargene/overview
 - **Validation**: PASS
@@ -18,11 +18,84 @@ Fragmented Antibiotic Resistance Gene Identifier
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fargene:0.1--py27h864c0ab_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2782966940: no space left on device
+usage: fargene [-h] --infiles INFILES [INFILES ...] --hmm-model HMM_MODEL
+               [--score LONG_SCORE] [--meta] [--meta-score META_SCORE]
+               [--output OUTDIR] [--force] [--tmp-dir TMP_DIR] [--protein]
+               [--processes PROCESSES] [--min-orf-length MIN_ORF_LENGTH]
+               [--retrieve-whole] [--no-orf-predict] [--no-quality-filtering]
+               [--no-assembly] [--orf-finder] [--store-peptides] [--rerun]
+               [--amino-dir AMINO_DIR] [--fasta-dir FASTA_DIR]
+               [--translation-format TRANS_FORMAT] [--loglevel {DEBUG,INFO}]
+               [--logfile LOGFILE]
+
+Searches and retrieves new and previously known genes from fragmented
+metagenomic data and genomes. Copyright (c) Fanny Berglund 2018.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --infiles INFILES [INFILES ...], -i INFILES [INFILES ...]
+                        Input file(s) to be searched. Could either be in FASTA
+                        or FASTQ format.
+  --hmm-model HMM_MODEL
+                        The Hidden Markov Model that should be used to analyse
+                        the data. Could either be one of the pre-defined
+                        models or the path to a custom HMM.
+  --score LONG_SCORE, -sl LONG_SCORE
+                        The threshold score for a sequence to be classified as
+                        a (almost) complete gene (default: None).
+  --meta                If the input data is paired end metagenomic data
+                        (default: False).
+  --meta-score META_SCORE, -sm META_SCORE
+                        The threshold score for a fragment to be classified as
+                        a positive. Expressed as score per amino acid
+                        (default: None).
+  --output OUTDIR, -o OUTDIR
+                        The output directory for the whole run (default:
+                        ./fargene_output).
+  --force, -f           Overwrite output directory if it exists (default:
+                        False).
+  --tmp-dir TMP_DIR     Directory for (sometimes large) intermediate files.
+                        (default: OUT_DIR/tmpdir)
+  --protein             If the input sequence(s) is amino acids (default:
+                        False).
+  --processes PROCESSES, -p PROCESSES
+                        Number of processes to be used when processing
+                        metagenomic data (default: 1).
+  --min-orf-length MIN_ORF_LENGTH
+                        The minimal length for a retrieved predicted ORF (nt).
+                        (default: 90% of the length of the chosen hmm.)
+  --retrieve-whole      Use this flag if the whole sequence where a hit is
+                        detected should be retrieved (default: False).
+  --no-orf-predict      Do not perform ORF prediction.
+  --no-quality-filtering
+                        Use if no quality control should be performed on the
+                        metagenomic data (default: False).
+  --no-assembly         Use if you want to skip the assembly and retrieval of
+                        contigs for metagenomic data (default: False).
+  --orf-finder          Use NCBI ORFfinder instead of prodigal for ORF
+                        prediction of genomes/contigs (default: False).
+  --store-peptides, -sp
+                        Store the translated sequences. Useful if you plan to
+                        redo the analysis using a different model and want to
+                        skip the preprocessing steps (default: False).
+  --rerun               Use of you want to redo the analysis or do the
+                        analysis using a different model and have kept either
+                        the nucletide or amino acid sequences. Please note
+                        that this only works if the input data is the same for
+                        both runs (default: False).
+  --amino-dir AMINO_DIR
+                        Where the amino acid sequences generated by the method
+                        are located. Only to be used in combination with
+                        --rerun
+  --fasta-dir FASTA_DIR
+                        Where the nucleotide sequences in FASTA generated by
+                        previous runs of the method are located. Only to be
+                        used in combination with --rerun
+  --translation-format TRANS_FORMAT
+                        The translation format that transeq should use.
+                        (default: pearson)
+  --loglevel {DEBUG,INFO}
+                        Set logging level (default: INFO).
+  --logfile LOGFILE     Logfile (default: fargene_analysis.log).
 ```
 
-
-## Metadata
-- **Skill**: generated

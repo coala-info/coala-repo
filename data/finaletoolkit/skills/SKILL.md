@@ -1,8 +1,9 @@
 ---
 name: finaletoolkit
-description: FinaleToolkit is a high-performance bioinformatics suite designed for "fragmentomics"—the study of the fragmentation patterns of cell-free DNA.
+description: FinaleToolkit is a bioinformatics suite designed to analyze cell-free DNA fragmentation patterns and calculate fragmentomic metrics. Use when user asks to calculate fragment length distributions, analyze end motifs, compute windowed protection scores, or generate cleavage profiles from sequencing alignments.
 homepage: https://github.com/epifluidlab/FinaleToolkit
 ---
+
 
 # finaletoolkit
 

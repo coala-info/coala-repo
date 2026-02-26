@@ -1,8 +1,9 @@
 ---
 name: bioconductor-heebodata
-description: the package is available on all platforms; click for details.
+description: This package provides annotations, control metadata, and example data files for the Human Exon Evidence-Based Oligonucleotide microarray set. Use when user asks to access HEEBO probe sequences, identify mismatch or tiling controls, or load example Stanford GPR files for microarray analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HEEBOdata.html
 ---
+
 
 # bioconductor-heebodata
 

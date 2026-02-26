@@ -3,12 +3,12 @@
 ## segzoo
 
 ### Tool Description
-The provided text is a container build error log and does not contain help or usage information for the 'segzoo' tool.
+Segzoo is a tool that allows to run various genomic analysis on a segmentation obtained by segway. The results of each analysis are made available as well as a summarizing visualization of the results. The tool will download all necessary data into a common directory and run all the analysis, storing the results in an output directory. All this information is then transformed into a set of tables that can be found in this same directory under the "data" folder, that are used to generate a final visualization.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/segzoo:1.0.13--pyhdfd78af_0
 - **Homepage**: https://github.com/hoffmangroup/segzoo
-- **Package**: Not found
+- **Package**: https://anaconda.org/channels/bioconda/packages/segzoo/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/segzoo/overview
@@ -18,14 +18,48 @@ The provided text is a container build error log and does not contain help or us
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/segzoo:1.0.13--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8bfa64eb8645c5668b8efdaf2d5ea20439bf7ed2cee694674460cef6032bb01b: unpack entry: usr/local/bin/gmtkTime: unpack to regular file: short write: write /tmp/build-temp-3200464917/rootfs/usr/local/bin/gmtkTime: no space left on device
+usage: segzoo [-h] [--version] [--parameters PARAMETERS] [-o OUTDIR]
+              [-j CORES] [--species SPECIES] [--build BUILD] [--prefix PREFIX]
+              [--download-only] [--mne MNE] [--dendrogram] [--unlock]
+              segmentation
+
+Segzoo is a tool that allows to run various genomic analysis on a segmentation
+obtained by segway. The results of each analysis are made available as well as
+a summarizing visualization of the results. The tool will download all
+necessary data into a common directory and run all the analysis, storing the
+results in an output directory. All this information is then transformed into
+a set of tables that can be found in this same directory under the "data"
+folder, that are used to generate a final visualization.
+
+positional arguments:
+  segmentation          .bed.gz file, the segmentation/annotation output from
+                        Segway
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --parameters PARAMETERS
+                        The params.params file used to obtain the gmtk-
+                        parameters (default: False)
+  -o OUTDIR, --outdir OUTDIR
+                        Output directory to store all the results (default:
+                        outdir)
+  -j CORES              Number of cores to use (default: 1)
+  --species SPECIES     Species of the genome used for the segmentation
+                        (default: Homo_sapiens)
+  --build BUILD         Build of the genome assembly used for the segmentation
+                        (default: hg38)
+  --prefix PREFIX       Prefix where all the external data is going to be
+                        downloaded, followed by /share/ggd/SPECIES/BUILD
+                        (default: /usr/local)
+  --download-only       Execute only the rules that need internet connection,
+                        which store data in a shared directory (default:
+                        False)
+  --mne MNE             Allows specify an mne file to translate segment labels
+                        and track names on the shown on the figure (default:
+                        None)
+  --dendrogram          If set, perform hierarchical clustering of GMTK
+                        parameters table row-wise (default: False)
+  --unlock              unlock directory (see snakemake doc) (default: False)
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ataccogaps
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: ATACCoGAPS performs Bayesian Nonnegative Matrix Factorization on single-cell ATAC-seq data to identify latent biological patterns in chromatin accessibility. Use when user asks to decompose peak-by-cell matrices, identify pattern-specific peaks, perform motif enrichment analysis, or cluster cells based on chromatin accessibility profiles.
 homepage: https://bioconductor.org/packages/3.16/bioc/html/ATACCoGAPS.html
 ---
+
 
 # bioconductor-ataccogaps
 

@@ -1,8 +1,9 @@
 ---
 name: savana
-description: SAVANA is a specialized somatic structural variant (SV) and copy number aberration (SCNA) caller optimized for long-read sequencing technologies like Oxford Nanopore (ONT) and PacBio HiFi.
+description: Savana identifies somatic structural variants and copy number aberrations in long-read sequencing data. Use when user asks to call somatic breakpoints, estimate tumor purity, or perform copy number analysis from Oxford Nanopore or PacBio HiFi reads.
 homepage: https://github.com/cortes-ciriano-lab/savana
 ---
+
 
 # savana
 

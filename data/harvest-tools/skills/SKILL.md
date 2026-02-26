@@ -1,8 +1,9 @@
 ---
 name: harvest-tools
-description: Recon-ng is a modular reconnaissance framework designed to conduct thorough web-based information gathering.
+description: Harvest-tools is a modular reconnaissance framework designed for automated web-based information gathering and infrastructure discovery. Use when user asks to conduct reconnaissance, manage workspaces, install modules, manage API keys, or query harvested data.
 homepage: https://github.com/lanmaster53/recon-ng
 ---
+
 
 # harvest-tools
 

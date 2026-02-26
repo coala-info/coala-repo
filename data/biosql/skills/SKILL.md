@@ -1,8 +1,9 @@
 ---
 name: biosql
-description: BioSQL is a specialized relational database schema designed to provide a unified storage layer for biological sequences and their associated metadata (such as GenBank or SwissProt entries).
+description: BioSQL provides a unified relational database schema for storing biological sequences and metadata across different programming frameworks. Use when user asks to initialize a sequence database schema, load NCBI taxonomy data, or set up a cross-platform storage layer for genomic records.
 homepage: https://github.com/biosql/biosql
 ---
+
 
 # biosql
 

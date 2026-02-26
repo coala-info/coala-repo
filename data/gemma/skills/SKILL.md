@@ -1,8 +1,9 @@
 ---
 name: gemma
-description: GEMMA (Genome-wide Efficient Mixed Model Association) is a high-performance software toolkit designed for the rigorous analysis of large-scale genetic datasets.
+description: GEMMA is a software toolkit for performing genome-wide association studies using efficient mixed model algorithms to account for population stratification. Use when user asks to calculate kinship matrices, perform univariate or multivariate linear mixed model association tests, or estimate heritability and predict phenotypes using Bayesian sparse linear mixed models.
 homepage: https://github.com/genetics-statistics/GEMMA
 ---
+
 
 # gemma
 

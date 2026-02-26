@@ -3,7 +3,7 @@
 ## duphold
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull the image due to lack of disk space.
+duphold is a tool for calling structural variants (SVs) from long-read sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/duphold:0.2.1--hfb13731_0
@@ -18,11 +18,18 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/duphold:0.2.1--hfb13731_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3600528069: no space left on device
+version: 0.2.1
+
+  Usage: duphold [options]
+
+Options:
+  -v --vcf <path>           path to sorted SV VCF/BCF
+  -b --bam <path>           path to indexed BAM/CRAM
+  -f --fasta <path>         indexed fasta reference.
+  -s --snp <path>           optional path to snp/indel VCF/BCF with which to annotate SVs. BCF is highly recommended as it's much faster to parse.
+  -t --threads <int>        number of decompression threads. [default: 4]
+  -o --output <string>      output VCF/BCF (default is VCF to stdout) [default: -]
+  -d --drop                 drop all samples from a multi-sample --vcf *except* the sample in --bam. useful for parallelization by sample followed by merge.
+  -h --help                 show help
 ```
 
-
-## Metadata
-- **Skill**: generated

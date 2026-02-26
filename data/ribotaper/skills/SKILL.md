@@ -1,8 +1,9 @@
 ---
 name: ribotaper
-description: RiboTaper is a computational method designed to identify translated regions by leveraging the high-resolution periodicity of Ribosome Profiling data.
+description: RiboTaper identifies translated regions and open reading frames by leveraging the periodicity of ribosome profiling data. Use when user asks to identify translated regions, create specialized annotation files, perform metagene analysis for P-site definition, or find ORFs in coding and non-coding genomic regions.
 homepage: https://github.com/boboppie/RiboTaper
 ---
+
 
 # ribotaper
 

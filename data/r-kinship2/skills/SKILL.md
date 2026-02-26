@@ -1,8 +1,9 @@
 ---
 name: r-kinship2
-description: "Routines to handle family data with a pedigree object. The initial purpose 	     was to create correlation structures that describe family relationships such  	     as kinship and identity-by-descent, which can be used to model family data  	     in mixed effects models, such as in the coxme function. Also includes a tool 	     for pedigree drawing which is focused on producing compact layouts without  	     intervention. Recent additions include utilities to trim the pedigree object 	     with various criteria, and kinship for the X chromosome.</p>"
+description: "This tool manages pedigree data, calculates kinship matrices, and generates automated pedigree visualizations in R. Use when user asks to create pedigree objects, calculate kinship coefficients for autosomal or X-chromosomes, plot family trees, or clean pedigree data structures."
 homepage: https://cloud.r-project.org/web/packages/kinship2/index.html
 ---
+
 
 # r-kinship2
 

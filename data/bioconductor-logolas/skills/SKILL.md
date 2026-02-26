@@ -1,8 +1,9 @@
 ---
 name: bioconductor-logolas
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Logolas produces customizable sequence logos and enrichment plots for biological sequences and string data. Use when user asks to visualize sequence motifs, generate enrichment logos, or represent positional weight matrices for genomic and proteomic data.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/Logolas.html
 ---
+
 
 # bioconductor-logolas
 

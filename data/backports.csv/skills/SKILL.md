@@ -1,8 +1,9 @@
 ---
 name: backports.csv
-description: The `backports.csv` skill enables Python 2 environments to utilize the superior CSV handling logic found in Python 3.
+description: The backports.csv tool provides Python 2 environments with the Python 3 CSV module's native Unicode support and improved handling logic. Use when user asks to handle Unicode CSV files in Python 2, migrate CSV code from Python 3 to legacy systems, or use DictReader and DictWriter with international datasets.
 homepage: https://github.com/ryanhiebert/backports.csv
 ---
+
 
 # backports.csv
 

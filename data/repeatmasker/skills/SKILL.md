@@ -1,8 +1,9 @@
 ---
 name: repeatmasker
-description: RepeatMasker is the industry-standard tool for "masking" genomes—identifying transposable elements and repetitive regions to prevent them from interfering with downstream analyses like gene prediction or sequence alignment.
+description: RepeatMasker identifies and masks transposable elements and repetitive DNA sequences within genomic data. Use when user asks to mask a genome, identify repeat families, or prepare sequences for downstream gene prediction and alignment.
 homepage: https://www.repeatmasker.org/RepeatMasker
 ---
+
 
 # repeatmasker
 

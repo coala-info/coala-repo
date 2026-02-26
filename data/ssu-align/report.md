@@ -3,7 +3,7 @@
 ## ssu-align
 
 ### Tool Description
-Small subunit ribosomal RNA (SSU rRNA) sequence alignment tool. (Note: The provided text contains container execution logs and a fatal error rather than the tool's help documentation.)
+align SSU rRNA sequences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7
@@ -18,71 +18,44 @@ Small subunit ribosomal RNA (SSU rRNA) sequence alignment tool. (Note: The provi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+# _ssu-align :: align SSU rRNA sequences
+# SSU-ALIGN 0.1.1 (Feb 2016)
+# Copyright (C) 2016 Howard Hughes Medical Institute
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# command: _ssu-align -h 
+# date:    Wed Feb 25 12:39:58 2026
+Usage: ssu-align [-options] <sequence file> <output dir>
 
+where general options are:
+  -h     : show brief help on version and usage
+  -f     : force; if dir named <output dir> already exists, empty it first
+  -m <f> : use CM file <f> instead of the default CM file
+  -b <x> : set minimum bit score of a surviving subsequence as <x> [default: 50]
+  -l <n> : set minimum length    of a surviving subsequence as <n> [default: 1]
+  -i     : output alignments in interleaved Stockholm format (not 1 line/seq)
+  -n <s> : only search with and align to single CM named <s> in CM file
+           (default CM file includes 'archaea', 'bacteria', 'eukarya')
 
-## Metadata
-- **Skill**: generated
+miscellaneous output options:
+  --dna      : output alignments as DNA, default is RNA (even if input is DNA)
+  --rfonly   : discard inserts, only keep consensus (nongap RF) columns in alignments
+               (alignments will be fixed width but won't include all target nucleotides)
 
-## ssu-align_ssu-mask
+options for skipping the 1st (search) stage or 2nd (alignment) stage:
+  --no-align  : only search target sequence file for hits, skip alignment step
+  --no-search : only align  target sequence file, skip initial search step
 
-### Tool Description
-The provided text does not contain help information for ssu-mask; it contains a fatal error message from a container runtime (Apptainer/Singularity) indicating a failure to fetch or build the OCI image.
+expert options for tuning the initial search stage:
+  --toponly  : only search the top strand [default: search both strands]
+  --forward  : use the HMM forward algorithm for searching, not HMM viterbi
+  --global   : search with globally configured HMM [default: local]
+  --keep-int : keep intermediate files which are normally removed
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7
-- **Homepage**: http://eddylab.org/software/ssu-align/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ssu-align/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ssu-align_ssu-merge
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime logs and a fatal error message regarding an OCI image build failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7
-- **Homepage**: http://eddylab.org/software/ssu-align/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ssu-align/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ssu-align_ssu-draw
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7
-- **Homepage**: http://eddylab.org/software/ssu-align/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ssu-align/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ssu-align:0.1.1--h7b50bb2_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+expert options for tuning the alignment stage:
+  --aln-one <s> : only align best-matching sequences to the CM named <s> in CM file
+  --no-trunc    : do not truncate seqs to HMM predicted start/end, align full seqs
+  --no-prob     : do not append posterior probabilities to alignments
+  --mxsize <f>  : increase mx size for cmalign to <f> Mb [default: 4096]
 ```
 

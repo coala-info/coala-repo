@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simlr
-description: the package is available on all platforms; click for details.
+description: SIMLR performs clustering and visualization of single-cell transcriptomic data using multi-kernel learning. Use when user asks to cluster single-cell RNA-seq data, visualize cell populations, or perform dimensionality reduction.
 homepage: https://bioconductor.org/packages/release/bioc/html/SIMLR.html
 ---
+
 
 # bioconductor-simlr
 

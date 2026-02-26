@@ -1,8 +1,9 @@
 ---
 name: snostrip
-description: snostrip is a specialized bioinformatics workflow designed to streamline the discovery and characterization of snoRNAs.
+description: snostrip is a bioinformatics workflow for the discovery, characterization, and annotation of snoRNAs in genomic sequences. Use when user asks to annotate snoRNAs, search for conserved motifs, or predict interactions with target RNAs.
 homepage: http://snostrip.bioinf.uni-leipzig.de/help.py
 ---
+
 
 # snostrip
 

@@ -1,8 +1,9 @@
 ---
 name: pmlst
-description: pmlst is a specialized bioinformatics tool designed to identify plasmid types by comparing genomic sequences against a curated database of plasmid-specific housekeeping genes.
+description: pmlst identifies plasmid types by comparing genomic sequences against a database of plasmid-specific housekeeping genes. Use when user asks to identify plasmid sequence types, perform plasmid multilocus sequence typing, or track the epidemiology of plasmid-mediated outbreaks.
 homepage: https://bitbucket.org/genomicepidemiology/pmlst
 ---
+
 
 # pmlst
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-interactivecomplexheatmap
-description: the package is available on all platforms; click for details.
+description: This tool converts static ComplexHeatmap objects into interactive Shiny applications for exploring genomic data. Use when user asks to create interactive heatmaps, convert OncoPrints or UpSet plots to Shiny apps, or explore heatmap data through clicking and brushing.
 homepage: https://bioconductor.org/packages/release/bioc/html/InteractiveComplexHeatmap.html
 ---
+
 
 # bioconductor-interactivecomplexheatmap
 

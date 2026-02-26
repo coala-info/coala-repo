@@ -1,8 +1,9 @@
 ---
 name: fastqsplitter
-description: `fastqsplitter` is a high-performance utility for partitioning FASTQ files while preserving the mandatory four-line record structure (header, sequence, plus sign, and quality scores).
+description: fastqsplitter partitions FASTQ files into multiple chunks while preserving the mandatory four-line record structure. Use when user asks to split FASTQ files, partition sequencing data into smaller parts, or divide compressed FASTQ files.
 homepage: https://github.com/LUMC/fastqsplitter
 ---
+
 
 # fastqsplitter
 

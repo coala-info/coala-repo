@@ -1,8 +1,9 @@
 ---
 name: fast-fasta-compressor
-description: The Fast FASTA Compressor (FFC) is a specialized utility designed for speed and efficiency in genomic data management.
+description: Fast FASTA Compressor is a high-throughput utility designed to efficiently compress and decompress genomic data in FASTA format. Use when user asks to compress DNA sequences, decompress .ffc files, or integrate fasta compression into bioinformatics pipelines using streams.
 homepage: https://github.com/kowallus/ffc
 ---
+
 
 # fast-fasta-compressor
 

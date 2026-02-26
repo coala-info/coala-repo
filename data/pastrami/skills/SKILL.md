@@ -1,8 +1,9 @@
 ---
 name: pastrami
-description: Pastrami is a scalable computational algorithm designed for rapid human ancestry estimation.
+description: Pastrami is a scalable computational algorithm designed for rapid human ancestry estimation using exact haplotype matching and non-negative least square optimization. Use when user asks to estimate human ancestry, analyze query genotypes against reference populations, or generate co-ancestry matrices from large-scale genomic datasets.
 homepage: https://github.com/healthdisparities/pastrami
 ---
+
 
 # pastrami
 

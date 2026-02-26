@@ -1,8 +1,9 @@
 ---
 name: viramp-hub
-description: VirAmp-Hub is a specialized utility for handling the non-standardized file formats used to describe viral amplicon schemes.
+description: VirAmp-Hub converts viral amplicon primer scheme file formats. Use when user asks to convert viral amplicon primer schemes between formats, generate BEDPE schemes, generate amplicon info files, or handle nested primer schemes.
 homepage: https://github.com/wm75/viramp-hub
 ---
+
 
 # viramp-hub
 

@@ -1,8 +1,9 @@
 ---
 name: taxadb
-description: `taxadb` is a specialized tool designed to create and query a local mirror of the NCBI taxonomy database.
+description: taxadb creates and queries a local mirror of the NCBI taxonomy database for high-performance taxonomic lookups. Use when user asks to download NCBI taxonomy data, initialize a local taxonomy database, retrieve scientific names or lineages from TaxIDs, resolve organism names to IDs, or map accessions to taxonomy.
 homepage: https://github.com/HadrienG/taxadb
 ---
+
 
 # taxadb
 

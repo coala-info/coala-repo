@@ -1,8 +1,9 @@
 ---
 name: rapmap-dev
-description: RapMap is a high-performance tool designed for the rapid mapping of sequencing reads to a reference transcriptome.
+description: RapMap is a high-performance tool designed for the rapid quasi-mapping of sequencing reads to a reference transcriptome. Use when user asks to index a transcriptome, map single-end or paired-end reads, or perform selective alignment for transcript quantification.
 homepage: https://github.com/COMBINE-lab/RapMap
 ---
+
 
 # rapmap-dev
 

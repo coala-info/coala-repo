@@ -1,8 +1,9 @@
 ---
 name: perl-vcftools-vcf
-description: The `perl-vcftools-vcf` package provides a specialized set of Perl scripts and libraries that extend the core C++ VCFtools functionality.
+description: This tool provides Perl scripts for validating, merging, sorting, and comparing VCF files containing genomic variant data. Use when user asks to validate VCF format compliance, sort variants by position, merge multiple VCF files into a single multi-sample file, concatenate files from different regions, or generate variant statistics.
 homepage: https://github.com/vcftools/vcftools
 ---
+
 
 # perl-vcftools-vcf
 

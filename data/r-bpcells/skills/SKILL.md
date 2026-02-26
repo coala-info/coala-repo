@@ -1,8 +1,9 @@
 ---
 name: r-bpcells
-description: R package bpcells (documentation from project home).
+description: BPCells performs high-performance, memory-efficient single-cell analysis of large RNA-seq and ATAC-seq datasets using bitpacking compression and streaming. Use when user asks to import 10x data, perform disk-backed normalization, call ATAC-seq peaks, or conduct PCA and clustering on millions of cells.
 homepage: https://cran.r-project.org/web/packages/bpcells/index.html
 ---
+
 
 # r-bpcells
 

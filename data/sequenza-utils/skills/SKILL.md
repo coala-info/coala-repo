@@ -1,8 +1,9 @@
 ---
 name: sequenza-utils
-description: This skill provides the procedural knowledge to use the `sequenza-utils` Python suite.
+description: sequenza-utils processes genomic data to generate and format files required for copy number variation analysis with the Sequenza R package. Use when user asks to generate GC-content reference files, convert BAM or VCF files into seqz format, or perform binning to reduce data size for downstream analysis.
 homepage: http://sequenza-utils.readthedocs.org
 ---
+
 
 # sequenza-utils
 

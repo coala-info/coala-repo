@@ -1,8 +1,9 @@
 ---
 name: pywdl
-description: pywdl is a Python-based parser and object model for the Workflow Description Language (WDL).
+description: pywdl is a Python-based parser and object model for transforming Workflow Description Language source code into native Python objects or an Abstract Syntax Tree. Use when user asks to parse WDL files, inspect workflow structures programmatically, generate an AST, or validate WDL syntax using Python.
 homepage: https://github.com/broadinstitute/pywdl
 ---
+
 
 # pywdl
 

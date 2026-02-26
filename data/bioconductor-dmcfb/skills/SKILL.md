@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmcfb
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially methylated cytosines in bisulfite sequencing data using Bayesian functional regression models. Use when user asks to identify differentially methylated cytosines, analyze DNA methylation patterns, or process Bismark-style sequencing files.
 homepage: https://bioconductor.org/packages/release/bioc/html/DMCFB.html
 ---
+
 
 # bioconductor-dmcfb
 

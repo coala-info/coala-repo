@@ -3,7 +3,7 @@
 ## strike
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains error logs related to a container build failure for the 'strike' tool.
+v1.2
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/strike:1.2--h9948957_6
@@ -18,13 +18,10 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/strike:1.2--h9948957_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Program: STRIKE  v1.2
+-a <file> --alignment      Alignment File
+-c <file> --template_file  Connection File
+-n --normalize             Normalizes the score
+-o <file> --out_file       The file where the results will be saved
 ```
 
-
-## Metadata
-- **Skill**: generated

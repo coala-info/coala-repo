@@ -1,8 +1,9 @@
 ---
 name: isorefiner
-description: IsoRefiner is a bioinformatics tool designed to improve the accuracy of transcript isoform identification.
+description: IsoRefiner improves the accuracy of transcript isoform identification by integrating long-read data with reference genomes and annotations. Use when user asks to refine transcript isoforms, reconcile outputs from multiple identification algorithms, or run an end-to-end workflow for Oxford Nanopore cDNA reads.
 homepage: https://github.com/rkajitani/IsoRefiner
 ---
+
 
 # isorefiner
 

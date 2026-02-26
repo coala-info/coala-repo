@@ -1,8 +1,9 @@
 ---
 name: perl-io-pager
-description: The `perl-io-pager` tool provides a mechanism for Perl scripts to intelligently handle large volumes of text output.
+description: This tool enables Perl scripts to intelligently manage large text output by automatically selecting and piping content to a system pager when outputting to a terminal. Use when user asks to handle large volumes of text output in Perl, integrate paging logic into command-line workflows, or automatically detect TTY for screen-at-a-time display.
 homepage: http://metacpan.org/pod/IO-Pager
 ---
+
 
 # perl-io-pager
 

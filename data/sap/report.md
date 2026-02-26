@@ -3,7 +3,7 @@
 ## sap
 
 ### Tool Description
-Statistical Assignment Package (SAP) for phylogenetic assignment of DNA sequences.
+Aligns two protein sequences and outputs the alignment in PDB format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sap:1.1.3--h7b50bb2_5
@@ -12,19 +12,14 @@ Statistical Assignment Package (SAP) for phylogenetic assignment of DNA sequence
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sap/overview
-- **Total Downloads**: 71.4K
+- **Total Downloads**: 71.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mathbio-nimr-mrc-ac-uk/SAP
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sap:1.1.3--h7b50bb2_5 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage:  sap file1.pdb file2.pdb <one2one>
+	<one2one> is an integer value added to the diagonal
+	any negative value selects the default value of 1000
 ```
 
-
-## Metadata
-- **Skill**: generated

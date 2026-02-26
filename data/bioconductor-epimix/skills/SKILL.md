@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epimix
-description: the package is available on all platforms; click for details.
+description: EpiMix performs integrative analysis of DNA methylation and gene expression data using beta mixture models to identify functional epigenetic changes. Use when user asks to identify methylation-driven gene expression, analyze TCGA data, find survival-associated epigenetic biomarkers, or investigate methylation states in enhancers, miRNAs, and lncRNAs.
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiMix.html
 ---
+
 
 # bioconductor-epimix
 

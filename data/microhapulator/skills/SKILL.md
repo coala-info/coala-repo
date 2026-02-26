@@ -1,8 +1,9 @@
 ---
 name: microhapulator
-description: MicroHapulator is a specialized bioinformatics suite designed for the forensic analysis of microhaplotypes.
+description: MicroHapulator is a bioinformatics suite designed for the forensic analysis, haplotype calling, and simulation of microhaplotype sequencing data. Use when user asks to call haplotypes from Illumina data, filter sequence reads, analyze forensic mixtures, or generate simulated datasets for testing.
 homepage: https://github.com/bioforensics/MicroHapulator/
 ---
+
 
 # microhapulator
 

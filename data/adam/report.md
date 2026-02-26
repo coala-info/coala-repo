@@ -1,9 +1,9 @@
 # adam CWL Generation Report
 
-## adam
+## adam_adam-submit
 
 ### Tool Description
-ADAM is a genomics analysis platform and command line toolset built on Apache Spark.
+ADAM is a genomics analysis platform which leverages Apache Spark. This tool provides various actions for transforming, converting, and analyzing genomic data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/adam:1.0.1--hdfd78af_0
@@ -15,38 +15,39 @@ ADAM is a genomics analysis platform and command line toolset built on Apache Sp
 - **Total Downloads**: 60.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/bigdatagenomics/adam
-- **Stars**: 1046
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/adam:1.0.1--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8701bfd71e369e36e5fa1f67f3c7b14bf32caa63702cb0a41548c826b492b49a: unpack entry: usr/local/include/aws/iam/model/ListGroupPoliciesRequest.h: unpack to regular file: short write: write /tmp/build-temp-2132569010/rootfs/usr/local/include/aws/iam/model/ListGroupPoliciesRequest.h: no space left on device
-```
+e        888~-_         e            e    e
+      d8b       888   \       d8b          d8b  d8b
+     /Y88b      888    |     /Y88b        d888bdY88b
+    /  Y88b     888    |    /  Y88b      / Y88Y Y888b
+   /____Y88b    888   /    /____Y88b    /   YY   Y888b
+  /      Y88b   888_-~    /      Y88b  /          Y888b
 
+Usage: adam-submit [<spark-args> --] <adam-args>
 
-## Metadata
-- **Skill**: not generated
+Choose one of the following commands:
 
-## adam_adam-submit
+ADAM ACTIONS
+          countKmers : Counts the k-mers/q-mers from a read dataset.
+     countSliceKmers : Counts the k-mers/q-mers from a slice dataset.
+ transformAlignments : Convert SAM/BAM to ADAM format and optionally perform read pre-processing transformations
+   transformFeatures : Convert a file with sequence features into corresponding ADAM format and vice versa
+  transformGenotypes : Convert a file with genotypes into corresponding ADAM format and vice versa
+  transformSequences : Convert a FASTA file as sequences into corresponding ADAM format and vice versa
+     transformSlices : Convert a FASTA file as slices into corresponding ADAM format and vice versa
+   transformVariants : Convert a file with variants into corresponding ADAM format and vice versa
+         mergeShards : Merges the shards of a file
+            coverage : Calculate the coverage from a given ADAM file
 
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains error logs related to a failed container build process.
+CONVERSION OPERATIONS
+          adam2fastq : Convert BAM to FASTQ files
+  transformFragments : Convert alignments into fragment records.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/adam:1.0.1--hdfd78af_0
-- **Homepage**: https://github.com/bigdatagenomics/adam
-- **Package**: https://anaconda.org/channels/bioconda/packages/adam/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/adam:1.0.1--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8701bfd71e369e36e5fa1f67f3c7b14bf32caa63702cb0a41548c826b492b49a: unpack entry: usr/local/include/aws/iam/model/ListGroupPoliciesRequest.h: unpack to regular file: short write: write /tmp/build-temp-1434077363/rootfs/usr/local/include/aws/iam/model/ListGroupPoliciesRequest.h: no space left on device
+PRINT
+               print : Print an ADAM formatted file
+            flagstat : Print statistics on reads in an ADAM file (similar to samtools flagstat)
+                view : View certain reads from an alignment-record file.
 ```
 

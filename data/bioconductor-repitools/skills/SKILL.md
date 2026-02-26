@@ -1,8 +1,9 @@
 ---
 name: bioconductor-repitools
-description: the package is available on all platforms; click for details.
+description: Repitools is an R package designed for the analysis and visualization of enrichment-based epigenomic data such as MeDIP-seq and ChIP-seq. Use when user asks to analyze enrichment-based sequencing data, perform quality control on epigenomic experiments, or visualize genomic enrichment profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/Repitools.html
 ---
+
 
 # bioconductor-repitools
 

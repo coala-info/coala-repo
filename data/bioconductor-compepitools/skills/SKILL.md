@@ -1,8 +1,9 @@
 ---
 name: bioconductor-compepitools
-description: the package is available on all platforms; click for details.
+description: This package provides tools for the functional annotation and visualization of epigenomic data within the Bioconductor ecosystem. Use when user asks to annotate genomic regions, visualize ChIP-seq signal around transcription start sites, or perform integrative analysis of epigenomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/compEpiTools.html
 ---
+
 
 # bioconductor-compepitools
 

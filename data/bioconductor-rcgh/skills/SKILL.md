@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcgh
-description: the package is available on all platforms; click for details.
+description: The rCGH package provides a comprehensive pipeline for analyzing and visualizing array Comparative Genomic Hybridization data. Use when user asks to process aCGH data, perform genomic profiling, or visualize copy number variations.
 homepage: https://bioconductor.org/packages/release/bioc/html/rCGH.html
 ---
+
 
 # bioconductor-rcgh
 

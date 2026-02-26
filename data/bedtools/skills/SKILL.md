@@ -1,8 +1,9 @@
 ---
 name: bedtools
-description: Report overlaps between two feature files.
+description: "bedtools performs set theory operations and genome arithmetic on genomic intervals to analyze overlaps, proximity, and coverage. Use when user asks to intersect genomic features, merge overlapping intervals, find the closest gene to a peak, or calculate genome-wide coverage."
 homepage: http://bedtools.readthedocs.org/
 ---
+
 
 # bedtools
 

@@ -1,8 +1,9 @@
 ---
 name: bmtagger
-description: BMTagger (Best Match Tagger) is a specialized tool for the rapid identification of host DNA sequences within large NGS datasets.
+description: "BMTagger identifies and filters host DNA sequences from large NGS datasets using bitmask screening and high-sensitivity alignment. Use when user asks to identify host contaminants, filter human DNA from sequencing data, or remove host sequences using bitmask and SRPRISM indexes."
 homepage: https://github.com/movingpictures83/BMTagger
 ---
+
 
 # bmtagger
 

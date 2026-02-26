@@ -1,8 +1,9 @@
 ---
 name: hifi_trimmer
-description: hifi_trimmer is a command-line utility designed to clean HiFi read sets by filtering and trimming extraneous adapter hits.
+description: hifi_trimmer cleans HiFi read sets by identifying and removing adapter sequences based on BLAST results. Use when user asks to filter adapter hits, trim read ends, or generate cleaned FASTA or FASTQ files from HiFi reads.
 homepage: https://github.com/sanger-tol/hifi-trimmer
 ---
+
 
 # hifi_trimmer
 

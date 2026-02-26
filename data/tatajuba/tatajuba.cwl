@@ -2,10 +2,121 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tatajuba
 label: tatajuba
-doc: "A tool for alignment-free sequence comparison (Note: The provided input text
-  was a container build log and did not contain help documentation).\n\nTool homepage:
+doc: "Compare histograms of homopolymeric tract lengths, within context.\n\nTool homepage:
   https://github.com/quadram-institute-bioscience/tatajuba"
-inputs: []
+inputs:
+  - id: fastq_files
+    type:
+      type: array
+      items: File
+    doc: fastq file with reads (weirdly, fasta also possible as long as contains
+      all reads and not only contigs)
+    inputBinding:
+      position: 1
+  - id: generate_vcf
+    type:
+      - 'null'
+      - boolean
+    doc: generate VCF files for each sample, around the HT regions 
+      (EXPERIMENTAL) (default=not to save)
+    inputBinding:
+      position: 102
+      prefix: --vcf
+  - id: genome_fasta
+    type:
+      - 'null'
+      - File
+    doc: reference genome file in fasta format, if absent from GFF3
+    inputBinding:
+      position: 102
+      prefix: --fasta
+  - id: genome_gff
+    type: File
+    doc: reference genome file in GFF3, preferencially with sequence
+    inputBinding:
+      position: 102
+      prefix: --gff
+  - id: keep_bias
+    type:
+      - 'null'
+      - boolean
+    doc: keep biased tracts, i.e. present only in reverse or only in forward 
+      strains (default=remove)
+    inputBinding:
+      position: 102
+      prefix: --keep_bias
+  - id: kmer
+    type:
+      - 'null'
+      - int
+    doc: kmer size flanking each side of homopolymer
+    default: 25
+    inputBinding:
+      position: 102
+      prefix: --kmer
+  - id: levenshtein_distance
+    type:
+      - 'null'
+      - int
+    doc: levenshtein distance between flanking regions to merge them into one 
+      context (after ref genome mapping)
+    inputBinding:
+      position: 102
+      prefix: --leven
+  - id: max_flanking_kmer_distance
+    type:
+      - 'null'
+      - int
+    doc: maximum distance between kmers of a flanking region to merge them into 
+      one context
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: --maxdist
+  - id: min_homopolymer_tract_length
+    type:
+      - 'null'
+      - int
+    doc: minimum homopolymer tract length to be compared
+    default: 4
+    inputBinding:
+      position: 102
+      prefix: --minsize
+  - id: min_reads
+    type:
+      - 'null'
+      - int
+    doc: minimum number of reads for tract+context to be considered
+    default: 5
+    inputBinding:
+      position: 102
+      prefix: --minreads
+  - id: nthreads
+    type:
+      - 'null'
+      - int
+    doc: suggested number of threads (default is to let system decide; I may not
+      honour your suggestion btw)
+    inputBinding:
+      position: 102
+      prefix: --nthreads
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: output directory, or 'random' for generating random dir name
+    default: .
+    inputBinding:
+      position: 102
+      prefix: --outdir
+  - id: paired_end
+    type:
+      - 'null'
+      - boolean
+    doc: paired end (pairs of) files
+    inputBinding:
+      position: 102
+      prefix: --paired
 outputs:
   - id: stdout
     type: stdout

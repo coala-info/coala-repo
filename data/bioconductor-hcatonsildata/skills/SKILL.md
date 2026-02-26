@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hcatonsildata
-description: the package is available on all platforms; click for details.
+description: This package provides modular access to a comprehensive single-cell and spatial transcriptomics atlas of the human tonsil. Use when user asks to load scRNA-seq, scATAC-seq, CITE-seq, or Visium spatial data from the Human Cell Atlas tonsil dataset, retrieve cell type annotations, or access donor metadata.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HCATonsilData.html
 ---
+
 
 # bioconductor-hcatonsildata
 

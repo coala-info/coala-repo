@@ -1,8 +1,9 @@
 ---
 name: micall-lite
-description: The micall-lite skill provides a streamlined workflow for mapping high-throughput sequencing data to reference genomes.
+description: Micall-lite maps high-throughput sequencing data to reference genomes to generate alignments, counts, and consensus files for viral genotyping. Use when user asks to map sequencing reads to a reference, generate consensus sequences, or perform HIV-1 drug resistance prediction.
 homepage: https://github.com/PoonLab/MiCall-Lite
 ---
+
 
 # micall-lite
 

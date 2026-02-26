@@ -3,7 +3,7 @@
 ## showali
 
 ### Tool Description
-The provided text does not contain help information for the tool 'showali'. It contains error logs from a container runtime (Apptainer/Singularity) attempting to fetch the tool's image.
+Show alignment file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/showali:1.0.1--h7b50bb2_0
@@ -18,13 +18,22 @@ The provided text does not contain help information for the tool 'showali'. It c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/showali:1.0.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: showali [options] <alignment_file>
+Options:
+  -v, --version      Show version information
+  -h, --help         Show this help message
+  -n, --no-color     Disable ANSI color codes
+
+Controls:
+  Arrow keys         Navigate (hold for acceleration)
+  WASD               Navigate (jump half-screen)
+  Q                  Quit
+  J                  Jump to position
+  F                  Find
+  Mouse              Drag to select rectangular area
+  Right-click or C   Copy selection to clipboard
+  ESC                Clear selection
+                        
+Made in Berlin by Krlnk
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tinesath1probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix ATH1 Arabidopsis Thaliana genome array. Use when user asks to retrieve probe sequences for the ATH1 microarray, analyze Affymetrix ATH1 chip data, or access probe-level information for the tinesath1 platform.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tinesath1probe.html
 ---
+
 
 # bioconductor-tinesath1probe
 

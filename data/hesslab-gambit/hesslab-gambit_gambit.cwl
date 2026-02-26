@@ -2,10 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gambit
 label: hesslab-gambit_gambit
-doc: "Gambit (Genomic Approximation Map-Based Identification Tool) is a tool for rapid
-  taxonomic identification of microbial whole-genome sequencing reads or assemblies.\n
-  \nTool homepage: https://github.com/hesslab-gambit/gambit"
-inputs: []
+doc: "Tool for rapid taxonomic identification of microbial pathogens from genomic
+  data.\n\nTool homepage: https://github.com/hesslab-gambit/gambit"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (dist, query, signatures)
+    inputBinding:
+      position: 1
+  - id: args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the command
+    inputBinding:
+      position: 2
+  - id: db
+    type:
+      - 'null'
+      - Directory
+    doc: Directory containing GAMBIT database files.
+    inputBinding:
+      position: 103
+      prefix: --db
 outputs:
   - id: stdout
     type: stdout

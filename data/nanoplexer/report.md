@@ -3,10 +3,10 @@
 ## nanoplexer
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+Demultiplexes Nanopore sequencing reads based on barcodes.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/nanoplexer:0.1.2--h577a1d6_5
+- **Docker Image**: quay.io/biocontainers/nanoplexer:0.1.2--h7132678_2
 - **Homepage**: https://github.com/hanyue36/nanoplexer
 - **Package**: https://anaconda.org/channels/bioconda/packages/nanoplexer/overview
 - **Validation**: PASS
@@ -18,11 +18,29 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanoplexer:0.1.2--h577a1d6_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1700265013: no space left on device
+Usage: nanoplexer [options] input.fastq
+
+Options:
+ -b  FILE    barcode file
+ -d  FILE    dual barcode pair file
+ -p  CHAR    output path
+ -l  FILE    output log file
+ -M  CHAR    output mode, fastq or fasta [default fastq]
+ -B  NUM     batch size [default 400M]
+ -t  INT     number of threads [default 3]
+ -L  INT     target length for detecting barcode [default 150]
+ -m  INT     match score [default 2]
+ -x  INT     mismatch score [default 2]
+ -o  INT     gap open score [default 3]
+ -e  INT     gap extension score [default 1]
+ -s  INT     minimal alignment score for demultiplexing
+ -i          ignore parameter estimation
+ -h          help information
+ -v          show version number
+
+-b -p must be specified.
+
+Example:
+nanoplexer -b barcode.fa -p /ouput/ input.fastq
 ```
 
-
-## Metadata
-- **Skill**: generated

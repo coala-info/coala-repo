@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggtree
-description: the package is available on all platforms; click for details.
+description: This tool visualizes and annotates phylogenetic trees and associated data using the ggplot2 grammar of graphics. Use when user asks to create tree plots, map external data onto tree nodes, highlight clades, or combine trees with heatmaps and alignments.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggtree.html
 ---
+
 
 # bioconductor-ggtree
 

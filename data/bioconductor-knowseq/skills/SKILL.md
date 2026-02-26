@@ -1,8 +1,9 @@
 ---
 name: bioconductor-knowseq
-description: the package allows analyzing all the data manually, the main strenght of KnowSeq is the possibilty of carrying out an automatic and intelligent HTML report that collect all the involved steps in one document. It is important to highligh that the pipeline is totally modular and flexible, hence it can be started from whichever of the different steps. KnowSeq expects to serve as a novel tool to help to the experts in the field to acquire robust knowledge and conclusions for the data and diseases to study.
+description: KnowSeq provides a comprehensive pipeline for processing and analyzing transcriptomic gene expression data from raw sequences to biological insights. Use when user asks to retrieve data from public repositories like GEO or GDC, perform differential expression analysis, remove batch effects, or identify biomarkers using machine learning models.
 homepage: https://bioconductor.org/packages/release/bioc/html/KnowSeq.html
 ---
+
 
 # bioconductor-knowseq
 

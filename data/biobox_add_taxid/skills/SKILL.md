@@ -1,8 +1,9 @@
 ---
 name: biobox_add_taxid
-description: The `biobox_add_taxid` tool is a specialized utility for metagenomics workflows.
+description: This tool adds a TaxID column to biobox-formatted files by mapping sequence identifiers to NCBI Taxonomy IDs using an external mapping file. Use when user asks to add taxonomic identifiers to biobox files, map BinIDs or ContigIDs to TaxIDs, or prepare metagenomics binning data for evaluation with CAMI Amber.
 homepage: https://github.com/SantaMcCloud/biobox_add_taxid
 ---
+
 
 # biobox_add_taxid
 

@@ -1,9 +1,9 @@
 # hocort CWL Generation Report
 
-## hocort
+## hocort_map
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is an error log indicating a failure to build or run the container image due to insufficient disk space.
+map reads to a reference genome and output mapped/unmapped reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hocort:1.2.2--py39hdfd78af_0
@@ -18,11 +18,80 @@ The provided text does not contain help information for the tool. It is an error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hocort:1.2.2--py39hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1176677002: no space left on device
+usage: hocort map [pipeline] [options]
+
+hocort map: map reads to a reference genome and output mapped/unmapped reads
+
+positional arguments:
+  pipeline              str: pipeline to run (required)
+
+optional arguments:
+  -h, --help            flag: print help
+  -d, --debug           flag: verbose output
+  -q, --quiet           flag: quiet output (overrides -d/--debug)
+  -l LOG_FILE, --log-file LOG_FILE
+                        str: path to log file
+
+available pipelines:
+    bbmap
+    biobloom
+    bowtie2
+    bwamem2
+    hisat2
+    kraken2
+    kraken2bowtie2
+    kraken2hisat2
+    kraken2minimap2
+    minimap2
+
+Linux-6.8.0-100-generic-x86_64-with-glibc2.28
+Python 3.9.15
+Available threads: 20
+
+hocort: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
 
-## Metadata
-- **Skill**: generated
+## hocort_index
+
+### Tool Description
+build index/-es for supported tools
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hocort:1.2.2--py39hdfd78af_0
+- **Homepage**: https://github.com/ignasrum/hocort
+- **Package**: https://anaconda.org/channels/bioconda/packages/hocort/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: hocort index [tool] [options]
+
+hocort index: build index/-es for supported tools
+
+positional arguments:
+  tool                  str: tool to generate index for (required)
+
+optional arguments:
+  -h, --help            flag: print help
+  -d, --debug           flag: verbose output
+  -q, --quiet           flag: quiet output (overrides -d/--debug)
+  -l LOG_FILE, --log-file LOG_FILE
+                        str: path to log file
+
+available tools:
+    bbmap
+    biobloom
+    bowtie2
+    bwamem2
+    hisat2
+    kraken2
+    minimap2
+
+Linux-6.8.0-100-generic-x86_64-with-glibc2.28
+Python 3.9.15
+Available threads: 20
+
+hocort: error: argument -h/--help: ignored explicit argument 'elp'
+```
+

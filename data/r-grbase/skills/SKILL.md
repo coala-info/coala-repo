@@ -1,8 +1,9 @@
 ---
 name: r-grbase
-description: R package grbase (documentation from project home).
+description: gRbase is an R package that provides infrastructure for graphical modeling, graph manipulation, and efficient operations on multidimensional tables. Use when user asks to create undirected or directed acyclic graphs, triangulate graphs, find maximal cliques, moralize graphs, or perform marginalization and arithmetic on multidimensional arrays.
 homepage: https://cran.r-project.org/web/packages/grbase/index.html
 ---
+
 
 # r-grbase
 

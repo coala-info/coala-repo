@@ -1,8 +1,9 @@
 ---
 name: perl-module-corelist
-description: The `perl-module-corelist` skill provides a command-line interface to the `Module::CoreList` database.
+description: This tool queries the Module::CoreList database to determine which versions of Perl include specific modules or features. Use when user asks to check module availability in the Perl core, find the minimum Perl version required for a module, list all modules in a specific Perl release, or identify when features were introduced or deprecated.
 homepage: http://dev.perl.org/
 ---
+
 
 # perl-module-corelist
 

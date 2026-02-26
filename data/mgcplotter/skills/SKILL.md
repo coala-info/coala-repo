@@ -1,8 +1,9 @@
 ---
 name: mgcplotter
-description: MGCplotter is a command-line utility that automates the creation of publication-quality circular genome maps.
+description: MGCplotter automates the generation of publication-quality circular genome maps from GenBank files using Circos. Use when user asks to create circular genome visualizations, identify genomic islands via GC skew or content, or perform visual comparative genomics across multiple query genomes.
 homepage: https://github.com/moshi4/MGCplotter/
 ---
+
 
 # mgcplotter
 

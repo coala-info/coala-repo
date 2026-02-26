@@ -1,8 +1,9 @@
 ---
 name: kinex
-description: Kinex (Kinome Exploration Tool) is a Python-based bioinformatics package designed to infer causal kinases from phosphoproteomics datasets.
+description: Kinex is a bioinformatics tool designed to infer causal kinase activity from phosphoproteomics datasets by scoring peptide sequences and performing enrichment analysis. Use when user asks to score peptide sequences, perform kinase enrichment analysis, or identify upstream enzymatic activity in signaling pathways.
 homepage: https://github.com/bedapub/kinex
 ---
+
 
 # kinex
 

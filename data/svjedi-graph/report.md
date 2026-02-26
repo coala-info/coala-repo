@@ -1,9 +1,9 @@
 # svjedi-graph CWL Generation Report
 
-## svjedi-graph
+## svjedi-graph_svjedi-graph.py
 
 ### Tool Description
-A tool for structural variant genotyping using variation graphs. Note: The provided text contains installation/container logs rather than help documentation, so specific arguments could not be extracted.
+Generates a graph representation of structural variants from VCF, reference, and reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/svjedi-graph:1.2.1--hdfd78af_0
@@ -18,33 +18,21 @@ A tool for structural variant genotyping using variation graphs. Note: The provi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svjedi-graph:1.2.1--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: svjedi-graph.py [-h] -v VCF -r REF -q READS -p PREFIX [-t THREADS]
+                       [-ms <minNbAln>]
 
-
-## Metadata
-- **Skill**: generated
-
-## svjedi-graph_svjedi-graph.py
-
-### Tool Description
-A tool for structural variant genotyping using a variation graph. (Note: The provided text is a container build error log and does not contain help documentation; arguments could not be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/svjedi-graph:1.2.1--hdfd78af_0
-- **Homepage**: https://github.com/SandraLouise/SVJedi-graph
-- **Package**: https://anaconda.org/channels/bioconda/packages/svjedi-graph/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svjedi-graph:1.2.1--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help            show this help message and exit
+  -v VCF, --vcf VCF     SV set in vcf format
+  -r REF, --ref REF     Reference genome in fasta format
+  -q READS, --reads READS
+                        Long reads in fastq format
+  -p PREFIX, --prefix PREFIX
+                        Prefix of generated files
+  -t THREADS, --threads THREADS
+                        Number of threads to use for read mapping
+  -ms <minNbAln>, --minsupport <minNbAln>
+                        Minimum number of alignments to genotype a SV
+                        (default: 3>=)
 ```
 

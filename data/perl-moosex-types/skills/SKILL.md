@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-types
-description: The `perl-moosex-types` skill facilitates the creation and management of modular type libraries in Perl.
+description: This tool facilitates the creation and management of modular, package-scoped type libraries in Perl using MooseX::Types. Use when user asks to define custom type constraints, create namespaced type libraries, implement type coercions, or use bareword type names for compile-time validation.
 homepage: https://github.com/moose/MooseX-Types
 ---
+
 
 # perl-moosex-types
 

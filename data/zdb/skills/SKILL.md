@@ -1,8 +1,9 @@
 ---
 name: zdb
-description: zDB is an integrated platform for bacterial comparative genomics that streamlines the process of analyzing multiple genomes and visualizing the results.
+description: zDB is an integrated platform for bacterial comparative genomics that streamlines the process of analyzing multiple genomes and visualizing the results. Use when user asks to initialize reference databases, run comparative genomic analyses, visualize results, list available runs, export results, or import results.
 homepage: https://github.com/metagenlab/zDB/
 ---
+
 
 # zdb
 

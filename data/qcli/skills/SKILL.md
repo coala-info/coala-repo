@@ -1,8 +1,9 @@
 ---
 name: qcli
-description: LogiQCLI is an intelligent, extensible command-line interface designed to integrate AI capabilities directly into the developer terminal.
+description: LogiQCLI is an intelligent command-line interface that integrates AI capabilities into the terminal for specialized coding, debugging, and file management workflows. Use when user asks to switch operational modes, manage API keys, perform precise file edits, search codebases using regex, or retrieve library documentation.
 homepage: https://github.com/xyOz-dev/LogiQCLI
 ---
+
 
 # qcli
 

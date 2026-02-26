@@ -1,9 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fuc-exist
+baseCommand:
+  - fuc
+  - fuc-exist
 label: fuc_fuc-exist
-doc: "\nTool homepage: https://github.com/sbslee/fuc"
-inputs: []
+doc: "Check whether certain files exist.\n\nTool homepage: https://github.com/sbslee/fuc"
+inputs:
+  - id: files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Files and directories to be tested
+    default: stdin
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-graphalignment
-description: the package is available on all platforms; click for details.
+description: This tool aligns two networks by considering both node similarity and interaction topology using a Bayesian scoring scheme and iterative heuristic. Use when user asks to align protein-protein interaction networks, perform cross-species analysis of biological networks, or find optimal one-to-one mappings between nodes in two different graphs.
 homepage: https://bioconductor.org/packages/release/bioc/html/GraphAlignment.html
 ---
+
 
 # bioconductor-graphalignment
 

@@ -1,8 +1,9 @@
 ---
 name: gambitcore
-description: `gambitcore` is a specialized bioinformatics tool designed for the taxonomic identification and quality assessment of bacterial genome assemblies.
+description: gambitcore performs taxonomic identification and quality assessment of bacterial genome assemblies by comparing k-mer profiles against a reference database. Use when user asks to identify bacterial species, assess assembly completeness, or perform quality control on genomic FASTA files.
 homepage: https://github.com/gambit-suite/gambitcore
 ---
+
 
 # gambitcore
 

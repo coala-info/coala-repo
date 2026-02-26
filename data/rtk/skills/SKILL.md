@@ -1,8 +1,9 @@
 ---
 name: rtk
-description: The Rarefaction Toolkit (RTK) is a high-performance tool designed to rarefy large count tables (such as OTU or ASV tables) and calculate diversity measures.
+description: The Rarefaction Toolkit (rtk) rarefies large count tables and calculates diversity measures for ecological and microbiome research. Use when user asks to rarefy OTU or ASV tables, calculate alpha diversity metrics, or estimate rarefaction depth using column sums.
 homepage: https://github.com/hildebra/Rarefaction/
 ---
+
 
 # rtk
 

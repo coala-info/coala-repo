@@ -1,11 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribotaper_create_metaplots.bash
+baseCommand: create_metaplots.bash
 label: ribotaper_create_metaplots.bash
-doc: "Create metaplots for Ribo-seq data (Note: The provided text contains container
-  execution errors rather than help documentation, so arguments could not be extracted).\n
-  \nTool homepage: https://github.com/boboppie/RiboTaper"
-inputs: []
+doc: "Create metagene plots from Ribo-seq BAM files.\n\nTool homepage: https://github.com/boboppie/RiboTaper"
+inputs:
+  - id: ribo_bam
+    type: File
+    doc: Input Ribo-seq BAM file
+    inputBinding:
+      position: 1
+  - id: bedfile
+    type: File
+    doc: BED file with genomic features
+    inputBinding:
+      position: 2
+  - id: name
+    type: string
+    doc: Name for the output plots
+    inputBinding:
+      position: 3
 outputs:
   - id: stdout
     type: stdout

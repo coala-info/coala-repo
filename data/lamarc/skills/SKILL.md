@@ -1,8 +1,9 @@
 ---
 name: lamarc
-description: The `lamarc` skill (utilizing the `lamarck` CLI tool) is a specialized audio/visual toolkit designed to automate the creation of metadata from media files.
+description: Lamarc automates the creation of transcripts and metadata from media files using the Deepgram API. Use when user asks to generate SRT subtitles, transcribe audio or video files, or create markdown documents with specific timestamps.
 homepage: https://github.com/ChristopherBiscardi/lamarck
 ---
+
 
 # lamarc
 

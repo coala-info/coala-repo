@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cgdv17
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides access and analysis tools for the Complete Genomics Diversity panel variant calls on chromosome 17. Use when user asks to access VCF data for diverse human populations, filter variants by quality, count variants in specific genomic regions, or integrate variant data with gene annotations.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/cgdv17.html
 ---
+
 
 # bioconductor-cgdv17
 

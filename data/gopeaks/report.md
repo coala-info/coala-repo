@@ -3,7 +3,12 @@
 ## gopeaks
 
 ### Tool Description
-Peak caller for ChIP-seq and ATAC-seq (Note: The provided help text contains only system error messages and no command-line argument information).
+GoPeaks is a peak caller designed for CUT&TAG/CUT&RUN sequencing
+data. GoPeaks by default works best with narrow peaks such as
+H3K4me3 and transcription factors. GoPeaks can be used with the
+"--broad" flag to call broad peaks like H3K27Ac/H3K4me1. We
+encourage users to explore the parameters of GoPeaks to analyze
+their data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gopeaks:1.0.0--h047eeb3_3
@@ -18,11 +23,40 @@ Peak caller for ChIP-seq and ATAC-seq (Note: The provided help text contains onl
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gopeaks:1.0.0--h047eeb3_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2784610926: no space left on device
+unknown arguments --h
+usage: GoPeaks [-h|--help] [-b|--bam "<value>"] [-c|--control "<value>"]
+               [-s|--chromsize "<value>"] [-m|--mdist <integer>] [-r|--minreads
+               <integer>] [-p|--pval <float>] [-t|--step <integer>] [-l|--slide
+               <integer>] [-w|--minwidth <integer>] [-o|--prefix "<value>"]
+               [-v|--version] [--broad] [--verbose]
+
+               GoPeaks is a peak caller designed for CUT&TAG/CUT&RUN sequencing
+               data. GoPeaks by default works best with narrow peaks such as
+               H3K4me3 and transcription factors. GoPeaks can be used with the
+               "--broad" flag to call broad peaks like H3K27Ac/H3K4me1. We
+               encourage users to explore the parameters of GoPeaks to analyze
+               their data.
+
+Arguments:
+
+  -h  --help       Print help information
+  -b  --bam        Input BAM file (must be paired-end reads)
+  -c  --control    Input BAM file with control signal to be normalized (e.g.
+                   IgG, Input)
+  -s  --chromsize  Chromosome sizes for the genome if not found in the bam
+                   header
+  -m  --mdist      Merge peaks within <mdist> base pairs. Default: 1000
+  -r  --minreads   Test genome bins with at least <minreads> read pairs..
+                   Default: 15
+  -p  --pval       Define significance threshold <pval> with multiple
+                   hypothesis correction via Benjamini-Hochberg. Default: 0.05
+  -t  --step       Bin size for coverage bins. Default: 100
+  -l  --slide      Slide size for coverage bins. Default: 50
+  -w  --minwidth   Minimum width (bp) of a peak. Default: 150
+  -o  --prefix     Output prefix to write peaks and metrics file. Default:
+                   sample
+  -v  --version    Print the current GoPeaks version
+      --broad      Run GoPeaks on broad marks (--step 5000 & --slide 1000)
+      --verbose    Run GoPeaks in verbose mode.
 ```
 
-
-## Metadata
-- **Skill**: generated

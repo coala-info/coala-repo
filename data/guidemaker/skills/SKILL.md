@@ -1,8 +1,9 @@
 ---
 name: guidemaker
-description: GuideMaker is a specialized bioinformatics tool designed for the rapid identification and filtering of CRISPR guide RNAs.
+description: GuideMaker identifies and filters CRISPR guide RNAs for diverse genomes and custom Cas enzymes. Use when user asks to design gRNA panels, manage off-target constraints, or calculate efficiency scores for CRISPR experiments.
 homepage: https://github.com/USDA-ARS-GBRU/GuideMaker
 ---
+
 
 # guidemaker
 

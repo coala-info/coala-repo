@@ -1,8 +1,9 @@
 ---
 name: orfipy
-description: orfipy is a high-performance ORF discovery tool optimized for speed and flexibility.
+description: "orfipy is a high-performance tool for rapidly discovering and extracting open reading frames from DNA sequences. Use when user asks to find ORFs, translate sequences to peptides, generate BED or BED12 files for genomic mapping, or perform ORF discovery on transcriptome assemblies."
 homepage: https://github.com/urmi-21/orfipy
 ---
+
 
 # orfipy
 

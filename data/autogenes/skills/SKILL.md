@@ -1,8 +1,9 @@
 ---
 name: autogenes
-description: The `autogenes` tool automates the selection of informative genes required for the deconvolution of bulk RNA-seq data.
+description: "Autogenes automates the selection of informative gene sets for bulk RNA-seq deconvolution using multi-objective optimization. Use when user asks to select marker genes, optimize cell type signatures, or perform deconvolution on bulk RNA-seq data."
 homepage: https://github.com/theislab/AutoGeneS
 ---
+
 
 # autogenes
 

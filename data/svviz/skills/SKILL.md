@@ -1,8 +1,9 @@
 ---
 name: svviz
-description: svviz is a specialized tool designed to help researchers confirm structural variants by visualizing how high-throughput sequencing reads align to both the reference genome and a proposed variant sequence.
+description: svviz visualizes structural variants by re-aligning sequencing reads to both reference and alternative alleles to confirm their validity. Use when user asks to manually inspect individual structural variants, process variants from a VCF file for batch visualization, compare read support across multiple samples, or export high-quality variant visualizations for publication.
 homepage: https://github.com/svviz/svviz
 ---
+
 
 # svviz
 

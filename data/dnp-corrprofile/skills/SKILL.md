@@ -1,8 +1,9 @@
 ---
 name: dnp-corrprofile
-description: The `dnp-corrprofile` tool is a core component of the `dnpatterntools` suite.
+description: This tool calculates the Pearson correlation coefficient between dinucleotide frequency distributions on forward and reverse-complement DNA strands to identify structural symmetry. Use when user asks to evaluate nucleosome positioning symmetry, pinpoint the dyad axis of a nucleosome signal, or compute correlation profiles from dinucleotide frequency matrices.
 homepage: https://github.com/erinijapranckeviciene/dnpatterntools
 ---
+
 
 # dnp-corrprofile
 

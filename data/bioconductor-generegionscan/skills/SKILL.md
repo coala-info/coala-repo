@@ -1,8 +1,9 @@
 ---
 name: bioconductor-generegionscan
-description: The package includes a number of functions used for plotting these probe level data as a function of location along sequences of mRNA-strands. This can be used for analysis of variable splicing, and is especially well suited for use with exon-array data.
+description: GeneRegionScan performs high-resolution, probe-level analysis of specific genomic regions to investigate alternative splicing and eQTLs. Use when user asks to analyze probe-level expression data, visualize intensities across gene structures, test for genotype-specific expression, or identify co-expression patterns within genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneRegionScan.html
 ---
+
 
 # bioconductor-generegionscan
 

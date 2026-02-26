@@ -1,8 +1,9 @@
 ---
 name: eskrim
-description: ESKRIM (EStimate with K-mers the RIchness in a Microbiome) is a specialized bioinformatics tool designed for reference-free microbial richness estimation.
+description: Eskrim performs reference-free microbial richness estimation from shotgun metagenomic sequencing data using k-mer distributions. Use when user asks to estimate microbial richness, generate k-mer profiles from metagenomic reads, or compare diversity across samples without a reference genome.
 homepage: https://forgemia.inra.fr/metagenopolis/eskrim
 ---
+
 
 # eskrim
 

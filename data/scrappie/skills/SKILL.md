@@ -1,8 +1,9 @@
 ---
 name: scrappie
-description: Scrappie is a technology demonstrator developed by the Oxford Nanopore Research Algorithms group.
+description: "Scrappie is a basecalling and signal simulation tool for Oxford Nanopore sequencing data. Use when user asks to basecall sequences from raw signal or event data, simulate squiggles from FASTA sequences, or process legacy R9.4 and R10 nanopore models."
 homepage: https://github.com/nanoporetech/scrappie
 ---
+
 
 # scrappie
 

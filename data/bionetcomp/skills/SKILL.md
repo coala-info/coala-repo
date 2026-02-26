@@ -1,8 +1,9 @@
 ---
 name: bionetcomp
-description: BioNetComp is a specialized tool for differential network analysis.
+description: BioNetComp performs differential network analysis by comparing protein-protein interaction networks derived from two gene lists using STRING database data. Use when user asks to compare gene or protein lists, identify conserved or condition-specific network components, or perform comparative enrichment analysis between two biological states.
 homepage: https://github.com/lmigueel/bionetcomp/
 ---
+
 
 # bionetcomp
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hermes
-description: the package is available on all platforms; click for details.
+description: The hermes package provides an object-oriented framework for processing, quality controlling, and normalizing RNA-seq count data using standardized HermesData objects. Use when user asks to import RNA-seq data into a structured format, annotate genes via BioMart, flag low-quality samples or genes, normalize counts, or perform differential expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/hermes.html
 ---
+
 
 # bioconductor-hermes
 

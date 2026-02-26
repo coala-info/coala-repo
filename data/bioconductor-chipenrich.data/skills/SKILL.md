@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipenrich.data
-description: the package is available on all platforms; click for details.
+description: This package provides genomic annotations and data structures required for gene set enrichment analysis of ChIP-seq data. Use when user asks to access locus definitions, retrieve gene sets, obtain transcription start site locations, or load mappability data for genomic enrichment workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/chipenrich.data.html
 ---
+
 
 # bioconductor-chipenrich.data
 

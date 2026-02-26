@@ -1,8 +1,9 @@
 ---
 name: chromosight
-description: Chromosight is a specialized tool for pattern recognition in chromosome contact maps.
+description: Chromosight performs pattern recognition in chromosome contact maps to identify structural features like loops and boundaries using template matching. Use when user asks to detect genomic patterns in Hi-C data, quantify interaction strengths at specific coordinates, or generate custom kernels for feature detection.
 homepage: https://github.com/koszullab/chromosight
 ---
+
 
 # chromosight
 

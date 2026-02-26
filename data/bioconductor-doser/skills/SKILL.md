@@ -1,8 +1,9 @@
 ---
 name: bioconductor-doser
-description: The package has been tested using real and simulated data.
+description: bioconductor-doser analyzes dosage compensation by comparing gene expression across different genomic groupings and biological treatments. Use when user asks to calculate RPKM values, compare expression ratios between sexes, or perform statistical tests on dosage effects across chromosomes.
 homepage: https://bioconductor.org/packages/release/bioc/html/doseR.html
 ---
+
 
 # bioconductor-doser
 

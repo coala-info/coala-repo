@@ -1,8 +1,9 @@
 ---
 name: athena_meta
-description: Athena is a specialized de novo assembler designed to leverage the long-range information provided by barcoded "read cloud" technologies to produce highly contiguous metagenomic assemblies.
+description: Athena is a de novo assembler that uses barcoded read cloud data to produce highly contiguous metagenomic assemblies from draft seed contigs. Use when user asks to perform metagenomic assembly using read clouds, generate seed contigs, align barcoded reads to a draft assembly, or configure the Athena pipeline.
 homepage: https://github.com/abishara/athena_meta/
 ---
+
 
 # athena_meta
 

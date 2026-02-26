@@ -1,8 +1,9 @@
 ---
 name: latch
-description: Latch is an open-source Python framework designed to bridge the gap between complex bioinformatics code and scalable cloud execution.
+description: Latch is a Python framework for building bioinformatics workflows and deploying them to cloud infrastructure with automatically generated no-code interfaces. Use when user asks to initialize a bioinformatics project, register workflows to the cloud, or create graphical interfaces for non-technical collaborators.
 homepage: https://pypi.org/project/latch/
 ---
+
 
 # latch
 

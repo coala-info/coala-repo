@@ -1,8 +1,9 @@
 ---
 name: gff3toembl
-description: gff3toembl is a specialized conversion utility designed to bridge the gap between Prokka-generated GFF3 files and the strict EMBL flat-file submission format.
+description: gff3toembl converts Prokka-generated GFF3 files into the EMBL flat-file format required for genome submissions. Use when user asks to convert GFF3 files to EMBL format, prepare annotated genomes for ENA submission, or format feature tables and metadata for EMBL/GenBank.
 homepage: https://github.com/sanger-pathogens/gff3toembl/
 ---
+
 
 # gff3toembl
 

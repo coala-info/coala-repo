@@ -1,8 +1,9 @@
 ---
 name: muse
-description: MuSE (Mutation Somatic Evolution) is a specialized tool designed to identify somatic point mutations by accounting for tumor heterogeneity through a sample-specific error model.
+description: MuSE identifies somatic point mutations in tumor-normal BAM pairs by accounting for tumor heterogeneity through a sample-specific error model. Use when user asks to call somatic variants, identify point mutations in WES or WGS data, or calculate site-specific substitution probabilities.
 homepage: http://bioinformatics.mdanderson.org/main/MuSE
 ---
+
 
 # muse
 

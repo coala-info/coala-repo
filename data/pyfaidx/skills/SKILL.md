@@ -1,8 +1,9 @@
 ---
 name: pyfaidx
-description: The `pyfaidx` skill enables efficient interaction with FASTA format genomic data.
+description: pyfaidx provides efficient random access and manipulation of genomic sequences in FASTA files using a samtools-compatible index. Use when user asks to extract sequence slices, retrieve specific genomic coordinates, or perform reverse-complementation on FASTA records.
 homepage: https://github.com/mdshw5/pyfaidx
 ---
+
 
 # pyfaidx
 

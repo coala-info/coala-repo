@@ -1,8 +1,9 @@
 ---
 name: fastq-join
-description: fastq-join is a sequence assembly tool used to merge paired-end reads.
+description: fastq-join merges paired-end reads by identifying overlapping regions to create longer sequences. Use when user asks to join paired-end sequences, merge overlapping reads, or assemble fastq files.
 homepage: https://github.com/movingpictures83/FastQJoin
 ---
+
 
 # fastq-join
 

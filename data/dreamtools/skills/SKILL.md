@@ -1,8 +1,9 @@
 ---
 name: dreamtools
-description: The `dreamtools` skill provides a specialized interface for scoring collaborative DREAM (Dialogue on Reverse Engineering Assessment and Methods) challenges.
+description: Dreamtools evaluates systems biology models using official DREAM challenge scoring functions. Use when user asks to score submissions, download challenge templates, or retrieve gold standard datasets.
 homepage: https://github.com/dreamtools/dreamtools
 ---
+
 
 # dreamtools
 

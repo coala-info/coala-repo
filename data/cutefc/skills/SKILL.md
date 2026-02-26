@@ -1,8 +1,9 @@
 ---
 name: cutefc
-description: The cutefc tool provides an efficient method for force-calling structural variants.
+description: The cutefc tool force-calls and regenotypes structural variants from sequencing data using a set of predefined coordinates. Use when user asks to force-call structural variants, regenotype samples based on a population VCF, or determine the presence and zygosity of known variants in BAM or CRAM files.
 homepage: https://github.com/tjiangHIT/cuteFC
 ---
+
 
 # cutefc
 

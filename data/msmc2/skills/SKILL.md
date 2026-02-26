@@ -1,8 +1,9 @@
 ---
 name: msmc2
-description: msmc2 (Multiple Sequentially Markovian Coalescent 2) is a computational tool designed to reconstruct demographic history from genomic data.
+description: msmc2 reconstructs demographic history and estimates changes in effective population sizes by analyzing coalescence times between multiple haplotypes. Use when user asks to estimate population size history, calculate cross-population coalescence rates, or analyze population divergence from genomic data.
 homepage: https://github.com/stschiff/msmc2
 ---
+
 
 # msmc2
 

@@ -1,8 +1,9 @@
 ---
 name: pypore
-description: The `pypore` skill enables specialized analysis of nanopore translocation data.
+description: Pypore is a high-performance signal processing framework for analyzing nanopore translocation data. Use when user asks to install the package via Bioconda, perform programmatic translocation analysis, detect events in raw signal data, or launch the graphical user interface for data exploration.
 homepage: http://parkin.github.io/pypore/
 ---
+
 
 # pypore
 

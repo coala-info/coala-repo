@@ -1,8 +1,9 @@
 ---
 name: r-nor1mix
-description: "Onedimensional Normal (i.e. Gaussian) Mixture Models (S3) Classes,    for, e.g., density estimation or clustering algorithms research and teaching;    providing the widely used Marron-Wand densities.  Efficient random    number generation and graphics. Fitting to data by efficient ML (Maximum    Likelihood) or traditional EM estimation.</p>"
+description: "The r-nor1mix package provides tools for creating, fitting, and visualizing one-dimensional normal mixture models. Use when user asks to create normal mixture objects, fit models using EM or MLE algorithms, calculate mixture densities, or access Marron-Wand benchmark densities."
 homepage: https://cloud.r-project.org/web/packages/nor1mix/index.html
 ---
+
 
 # r-nor1mix
 

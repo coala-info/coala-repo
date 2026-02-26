@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggsc
-description: the package is available on all platforms; click for details.
+description: This tool creates ggplot2-based visualizations for single-cell RNA-seq and spatial transcriptomics data. Use when user asks to generate dimension reduction plots, visualize gene expression features, or create spatial transcriptomics maps.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggsc.html
 ---
+
 
 # bioconductor-ggsc
 

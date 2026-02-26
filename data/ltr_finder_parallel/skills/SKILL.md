@@ -1,8 +1,9 @@
 ---
 name: ltr_finder_parallel
-description: `ltr_finder_parallel` is a Perl-based wrapper designed to overcome the performance bottlenecks of the original LTR_FINDER.
+description: ltr_finder_parallel is a parallelized wrapper for LTR_FINDER that speeds up the identification of long terminal repeat retrotransposons by processing genomic sequences in chunks. Use when user asks to identify LTR retrotransposons, run LTR_FINDER in parallel, or annotate transposable elements in large plant genomes.
 homepage: https://github.com/oushujun/LTR_FINDER_parallel
 ---
+
 
 # ltr_finder_parallel
 

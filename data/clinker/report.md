@@ -3,7 +3,9 @@
 ## clinker
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'clinker'. It contains error logs related to a failed container image build (no space left on device).
+Clinker Wrapper Script
+The command clinker will invoke the Clinker bpipe pipeline with simple options. Use the direct pipeline method to use any advanced bpipe features.
+See https://github.com/Oshlack/Clinker/wiki/ for further information onusing Clinker.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/clinker:1.33--hdfd78af_0
@@ -18,14 +20,31 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clinker:1.33--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:73349e34840e6f54750ec5df84f447c2a01df267a601af1ca0ee7dffed8715f3: unpack entry: bin/bash: unpack to regular file: short write: write /tmp/build-temp-3130285123/rootfs/bin/bash: no space left on device
+___         ___             ___         ___         ___         ___     
+     /\  \       /\__\  ___      /\__\       /\__\       /\  \       /\  \    
+    /::\  \     /:/  / /\  \    /::|  |     /:/  /      /::\  \     /::\  \   
+   /:/\:\  \   /:/  /  \:\  \  /:|:|  |    /:/__/      /:/\:\  \   /:/\:\  \  
+  /:/  \:\  \ /:/  /   /::\__\/:/|:|  |__ /::\__\____ /::\~\:\  \ /::\~\:\  \ 
+ /:/__/ \:\__/:/__/ __/:/\/__/:/ |:| /\__/:/\:::::\__/:/\:\ \:\__/:/\:\ \:\__\ 
+ \:\  \  \/__\:\  \/\/:/  /  \/__|:|/:/  \/_|:|~~|~  \:\~\:\ \/__\/_|::\/:/  / 
+  \:\  \      \:\  \::/__/       |:/:/  /   |:|  |    \:\ \:\__\    |:|::/  / 
+   \:\  \      \:\  \:\__\       |::/  /    |:|  |     \:\ \/__/    |:|\/__/  
+    \:\__\      \:\__\/__/       /:/  /     |:|  |      \:\__\      |:|  |    
+     \/__/       \/__/           \/__/       \|__|       \/__/       \|__|    
+
+Clinker Wrapper Script
+
+The command clinker will invoke the Clinker bpipe pipeline with simple options. Use the direct pipeline method to use any advanced bpipe features.
+See https://github.com/Oshlack/Clinker/wiki/ for further information onusing Clinker.
+
+
+usage (info): clinker [-h] 
+
+usage (wrapper): clinker -w [-p option1="values" -p option2="values" ...]" *.fastq.gz 
+
+usage (direct):
+ export $CLINKERDIR=/usr/local/share/clinker-1.33-0;
+ bpipe run  [-p option1="values" -p option2="values" ...] [ <other bpipe options >] 
+	 $CLINKERDIR/workflow/clinker.pipe *.fastq.gz
 ```
 
-
-## Metadata
-- **Skill**: generated

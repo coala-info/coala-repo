@@ -1,8 +1,9 @@
 ---
 name: covtobed
-description: `covtobed` is a high-performance tool designed to transform sorted BAM files into BED files where each record represents a genomic interval with a constant coverage value.
+description: "covtobed converts sorted BAM files into BED files by collapsing adjacent bases with identical coverage into single genomic intervals. Use when user asks to transform BAM files to BED format, identify zero-coverage gaps, filter regions by depth and length, or calculate physical coverage for paired-end reads."
 homepage: https://github.com/telatin/covtobed/
 ---
+
 
 # covtobed
 

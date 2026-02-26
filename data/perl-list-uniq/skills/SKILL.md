@@ -1,8 +1,9 @@
 ---
 name: perl-list-uniq
-description: The `perl-list-uniq` skill facilitates the use of the `List::Uniq` Perl module to efficiently identify and extract unique items from a collection.
+description: This tool extracts unique elements from lists or nested arrays using the Perl List::Uniq module. Use when user asks to identify unique items in a collection, flatten nested array references, or generate sorted unique lists.
 homepage: http://metacpan.org/pod/List::Uniq
 ---
+
 
 # perl-list-uniq
 

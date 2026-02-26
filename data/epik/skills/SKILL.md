@@ -1,8 +1,9 @@
 ---
 name: epik
-description: EPIK (Evolutionary Placement with Informative K-mers) is a specialized tool for rapid phylogenetic placement that bypasses the need for query-to-reference alignment.
+description: EPIK performs rapid, alignment-free phylogenetic placement of query sequences onto a reference tree using informative k-mers. Use when user asks to place sequences into a phylogeny, build a phylo-k-mer database, or perform alignment-free evolutionary placement.
 homepage: https://github.com/phylo42/epik
 ---
+
 
 # epik
 

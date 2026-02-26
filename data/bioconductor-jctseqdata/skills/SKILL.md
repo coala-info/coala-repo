@@ -1,8 +1,9 @@
 ---
 name: bioconductor-jctseqdata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides example RNA-Seq datasets, annotation files, and count tables formatted for the JunctionSeq and QoRTs R packages. Use when user asks to access sample datasets for testing differential exon usage, retrieve GTF or GFF annotation files, or load pre-processed JunctionSeqCountSet objects for demonstration purposes.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/JctSeqData.html
 ---
+
 
 # bioconductor-jctseqdata
 

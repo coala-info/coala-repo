@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pcagopromoter
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs principal component analysis combined with Gene Ontology enrichment and promoter analysis to interpret high-dimensional biological data. Use when user asks to analyze gene expression data using PCA, identify enriched GO terms for principal components, or find overrepresented transcription factor binding sites.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pcaGoPromoter.html
 ---
+
 
 # bioconductor-pcagopromoter
 

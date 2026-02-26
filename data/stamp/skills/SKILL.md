@@ -1,8 +1,9 @@
 ---
 name: stamp
-description: Stampit is a lightweight JavaScript utility used to create "stamps," which are standardized, composable factory functions.
+description: Stampit is a JavaScript utility used to create composable factory functions for object-oriented programming without class-based inheritance. Use when user asks to create stamps, compose objects from multiple behaviors, manage private state through closures, or define shared methods and properties.
 homepage: https://github.com/stampit-org/stampit
 ---
+
 
 # stamp
 

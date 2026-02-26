@@ -1,8 +1,9 @@
 ---
 name: seg-suite
-description: The `seg-suite` is a specialized toolkit designed for the composition and manipulation of sequence alignments and annotations.
+description: The seg-suite toolkit performs composition and manipulation of sequence alignments and genomic annotations using a segment-based coordinate system. Use when user asks to convert MAF or BED files to seg format, compose transitive alignments between multiple species, or project annotations across different coordinate systems.
 homepage: https://github.com/mcfrith/seg-suite
 ---
+
 
 # seg-suite
 

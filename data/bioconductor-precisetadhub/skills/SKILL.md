@@ -1,8 +1,9 @@
 ---
 name: bioconductor-precisetadhub
-description: the package is available on all platforms; click for details.
+description: This package provides pre-trained models and data for predicting Topologically Associating Domain (TAD) boundaries at base-pair resolution. Use when user asks to access pre-trained models for TAD boundary prediction, download genomic data for preciseTAD, or predict high-resolution chromatin domain boundaries.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/preciseTADhub.html
 ---
+
 
 # bioconductor-precisetadhub
 

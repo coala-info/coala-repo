@@ -1,8 +1,9 @@
 ---
 name: enviroampdesigner
-description: EnviroAmpDesigner is a specialized bioinformatics tool tailored for Oxford Nanopore (ONT) amplicon sequencing.
+description: EnviroAmpDesigner identifies genotype-specific SNPs and designs optimized primers for Oxford Nanopore environmental amplicon sequencing. Use when user asks to identify SNPs that differentiate genotypes, design amplicons for specific targets, or optimize primer specificity against negative genomes.
 homepage: https://github.com/AntonS-bio/EnviroAmpDesigner
 ---
+
 
 # enviroampdesigner
 

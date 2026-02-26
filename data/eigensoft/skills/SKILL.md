@@ -1,8 +1,9 @@
 ---
 name: eigensoft
-description: The EIGENSOFT package is a suite of tools designed for population genetics and bioinformatics.
+description: EIGENSOFT is a suite of tools used to identify and adjust for population structure in genetic association studies using Principal Component Analysis. Use when user asks to perform PCA on genotype data, convert genetic data formats, or correct for population stratification in genomic datasets.
 homepage: https://github.com/DReichLab/EIG
 ---
+
 
 # eigensoft
 

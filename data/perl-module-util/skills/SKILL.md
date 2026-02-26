@@ -1,8 +1,9 @@
 ---
 name: perl-module-util
-description: The `perl-module-util` skill provides a set of tools for handling the relationship between Perl module names and the underlying filesystem.
+description: This tool manages the relationship between Perl module names and their locations on the filesystem. Use when user asks to validate module names, locate installed modules, find modules within a namespace, or convert between module names and file paths.
 homepage: http://metacpan.org/pod/Module::Util
 ---
+
 
 # perl-module-util
 

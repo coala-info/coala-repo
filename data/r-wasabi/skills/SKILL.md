@@ -1,8 +1,9 @@
 ---
 name: r-wasabi
-description: R package wasabi (documentation from project home).
+description: This tool converts Salmon or Sailfish transcript quantification output into the HDF5 format required for differential expression analysis with sleuth. Use when user asks to prepare quantification data for sleuth, convert Salmon or Sailfish results to HDF5, or process bootstrap samples for downstream analysis.
 homepage: https://cran.r-project.org/web/packages/wasabi/index.html
 ---
+
 
 # r-wasabi
 

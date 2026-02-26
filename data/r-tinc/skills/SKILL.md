@@ -1,8 +1,9 @@
 ---
 name: r-tinc
-description: R package tinc (documentation from project home).
+description: The r-tinc tool assesses tumour-in-normal contamination and tumour purity using read count data from matched sequencing assays. Use when user asks to estimate TIN or TIT scores, identify tumour DNA in normal samples, or evaluate the reliability of somatic mutation calls.
 homepage: https://cran.r-project.org/web/packages/tinc/index.html
 ---
+
 
 # r-tinc
 

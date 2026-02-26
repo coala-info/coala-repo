@@ -1,8 +1,9 @@
 ---
 name: pcasuite
-description: The `pcasuite` is a specialized toolkit for the efficient management of molecular dynamics (MD) data.
+description: pcasuite manages molecular dynamics data by compressing trajectories into PCA-based formats and performing structural analysis on the compressed files. Use when user asks to compress trajectories with pcazip, reconstruct files with pcaunzip, or analyze dynamics and extract structural metadata using pczdump.
 homepage: https://mmb.irbbarcelona.org/gitlab/andrio/pcasuite
 ---
+
 
 # pcasuite
 

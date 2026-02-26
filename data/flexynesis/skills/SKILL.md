@@ -1,8 +1,9 @@
 ---
 name: flexynesis
-description: Flexynesis is a specialized deep learning suite designed to integrate multiple types of omics data (e.g., RNA-seq, proteomics, methylation) to predict (pre-)clinical outcomes.
+description: Flexynesis is a deep learning suite designed to integrate multi-omics data for predicting clinical outcomes through various neural network architectures. Use when user asks to integrate multiple types of biological data, predict clinical outcomes such as survival or classification, implement specialized architectures like supervised VAEs or GNNs, and perform automated feature selection or model interpretation.
 homepage: https://github.com/BIMSBbioinfo/flexynesis
 ---
+
 
 # flexynesis
 

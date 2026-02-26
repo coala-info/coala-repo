@@ -3,7 +3,7 @@
 ## phylovega
 
 ### Tool Description
-No description available (The provided text contains system error messages rather than tool help text).
+Visualize phylogenetic trees with customizable styling.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/phylovega:0.3--py_0
@@ -18,9 +18,19 @@ No description available (The provided text contains system error messages rathe
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/196cb175e70816cc17bf7603de006eedd93384c46897b964b7bb7db70f216054: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/phylovega:0.3--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2017226111: no space left on device
+usage: phylovega [-h] [--height {}.{}] [--padding {}.{}] [--width {}.{}]
+                 [--data {}.{}] [--height_scale {}.{}] [--width_scale {}.{}]
+                 [--branch_color {}.{}] [--branch_width {}.{}]
+                 [--leaf_color {}.{}] [--leaf_edge_color {}.{}]
+                 [--leaf_edge_width {}.{}] [--leaf_labels {}.{}]
+                 [--leaf_size {}.{}] [--leaf_text_color {}.{}]
+                 [--leaf_text_column {}.{}] [--leaf_text_size {}.{}]
+                 [--leaf_text_xoffset {}.{}] [--leaf_text_yoffset {}.{}]
+                 [--node_color {}.{}] [--node_edge_color {}.{}]
+                 [--node_edge_width {}.{}] [--node_labels {}.{}]
+                 [--node_size {}.{}] [--node_text_color {}.{}]
+                 [--node_text_column {}.{}] [--node_text_size {}.{}]
+                 [--node_text_xoffset {}.{}] [--node_text_yoffset {}.{}]
+phylovega: error: ambiguous option: --h could match --help, --height, --height_scale
 ```
 

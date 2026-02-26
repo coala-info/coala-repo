@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chic
-description: The package provides functions to calculate a set of QC metrics, a compendium with reference values and machine learning models to score sample quality.
+description: This tool performs comprehensive quality control analysis for ChIP-seq data by calculating ENCODE, global, and local enrichment metrics. Use when user asks to evaluate ChIP-seq sample quality, calculate cross-correlation metrics, generate fingerprint plots, or compare datasets against reference compendia using machine learning models.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ChIC.html
 ---
+
 
 # bioconductor-chic
 

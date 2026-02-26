@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scpca
-description: the package is available on all platforms; click for details.
+description: "scPCA performs sparse contrastive principal component analysis to identify patterns in a target dataset that are not present in a background dataset. Use when user asks to perform sparse contrastive principal component analysis, identify unique variation in high-dimensional data, or reduce dimensionality with sparsity constraints."
 homepage: https://bioconductor.org/packages/release/bioc/html/scPCA.html
 ---
+
 
 # bioconductor-scpca
 

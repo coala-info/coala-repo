@@ -1,11 +1,37 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaomestats_countAssembly.py
+baseCommand: countAssembly.py
 label: metaomestats_countAssembly.py
-doc: "A tool from the metaomestats package for counting assembly statistics. (Note:
-  The provided help text contains only system error logs and no usage information.)\n
-  \nTool homepage: https://github.com/raw-lab/metaome_stats"
-inputs: []
+doc: "Count assembly statistics\n\nTool homepage: https://github.com/raw-lab/metaome_stats"
+inputs:
+  - id: fasta
+    type: File
+    doc: fasta file or folder
+    inputBinding:
+      position: 101
+      prefix: --fasta
+  - id: interval
+    type: int
+    doc: 'interval size in # of residues'
+    inputBinding:
+      position: 101
+      prefix: --interval
+  - id: ref
+    type:
+      - 'null'
+      - string
+    doc: reference genome
+    inputBinding:
+      position: 101
+      prefix: --ref
+  - id: size
+    type:
+      - 'null'
+      - string
+    doc: reference genome size
+    inputBinding:
+      position: 101
+      prefix: --size
 outputs:
   - id: stdout
     type: stdout

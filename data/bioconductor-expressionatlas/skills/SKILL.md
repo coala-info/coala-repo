@@ -1,8 +1,9 @@
 ---
 name: bioconductor-expressionatlas
-description: the package is available on all platforms; click for details.
+description: The ExpressionAtlas package provides a programmatic interface to search for and download curated gene expression datasets from the EMBL-EBI Expression Atlas. Use when user asks to search for experiments by biological attributes or species, download RNA-seq or microarray data, and retrieve datasets as standard Bioconductor objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/ExpressionAtlas.html
 ---
+
 
 # bioconductor-expressionatlas
 

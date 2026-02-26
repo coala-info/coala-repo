@@ -1,8 +1,9 @@
 ---
 name: bioconductor-raids
-description: the package is available on all platforms; click for details.
+description: The RAIDS package identifies cancer cell line identity and detects sample contamination using genomic data. Use when user asks to identify cancer cell lines, detect sample contamination, or verify cell line authenticity.
 homepage: https://bioconductor.org/packages/release/bioc/html/RAIDS.html
 ---
+
 
 # bioconductor-raids
 

@@ -1,8 +1,9 @@
 ---
 name: gafpack
-description: gafpack is a high-performance utility designed to quantify how alignments (in GAF format) map onto the nodes of a pangenome variation graph (in GFA format).
+description: gafpack quantifies GAF alignments onto pangenome variation graph nodes to generate coverage metrics. Use when user asks to calculate node coverage from GAF and GFA files, normalize coverage by node length, or generate coverage vectors for pangenomic analysis.
 homepage: https://github.com/pangenome/gafpack
 ---
+
 
 # gafpack
 

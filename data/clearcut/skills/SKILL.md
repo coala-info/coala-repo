@@ -1,8 +1,9 @@
 ---
 name: clearcut
-description: Clearcut is a machine learning tool designed to streamline incident detection by filtering large volumes of log data.
+description: Clearcut is a machine learning tool designed to filter large volumes of network log data to detect security incidents and suspicious traffic. Use when user asks to train models for anomaly detection, classify network flow data, or identify high-interest security events in Bro/Zeek logs.
 homepage: https://github.com/DavidJBianco/Clearcut
 ---
+
 
 # clearcut
 

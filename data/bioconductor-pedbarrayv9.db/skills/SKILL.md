@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pedbarrayv9.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the PedbArray v9 microarray platform. Use when user asks to map probe identifiers to gene symbols, retrieve genomic coordinates, or perform functional annotation for PedbArray v9 data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pedbarrayv9.db.html
 ---
+
 
 # bioconductor-pedbarrayv9.db
 

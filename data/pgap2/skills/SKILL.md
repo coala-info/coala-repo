@@ -1,8 +1,9 @@
 ---
 name: pgap2
-description: PGAP2 (Pan-Genome Analysis Pipeline 2) is a high-performance toolkit designed for the rapid construction and analysis of prokaryotic pan-genomes.
+description: PGAP2 is a high-performance toolkit designed for the rapid construction and analysis of prokaryotic pan-genomes using a fine-grained feature network. Use when user asks to perform quality control on genomic data, construct pan-genome maps, identify orthologous groups, build phylogenetic trees, or conduct population clustering and evolutionary statistics.
 homepage: https://github.com/bucongfan/PGAP2
 ---
+
 
 # pgap2
 

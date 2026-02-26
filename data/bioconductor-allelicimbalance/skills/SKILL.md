@@ -1,8 +1,9 @@
 ---
 name: bioconductor-allelicimbalance
-description: the package is available on all platforms; click for details.
+description: This package provides a framework for investigating allele-specific expression in RNA-seq data by analyzing allele counts at heterozygous SNP positions. Use when user asks to import BAM or VCF files into ASEset objects, perform statistical tests for allelic imbalance, or visualize allele-specific expression using barplots and genomic location plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/AllelicImbalance.html
 ---
+
 
 # bioconductor-allelicimbalance
 

@@ -1,8 +1,9 @@
 ---
 name: miru-hero
-description: The `miru-hero` tool is a specialized heuristic engine designed for the genomic surveillance of *Mycobacterium tuberculosis*.
+description: miru-hero identifies MIRU-VNTR loci and spoligotypes from Mycobacterium tuberculosis genome assemblies to determine phylogenetic lineages. Use when user asks to perform genomic surveillance, identify molecular signatures from FASTA sequences, or predict tuberculosis lineages.
 homepage: https://gitlab.com/LPCDRP/miru-hero
 ---
+
 
 # miru-hero
 

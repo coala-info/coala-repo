@@ -1,17 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - bam-read
+baseCommand: bam-read
 label: transrate-tools_bam-read
-doc: "The provided text does not contain help information for the tool. It is an error
-  log indicating a failure to build or extract a Singularity/Apptainer container due
-  to insufficient disk space.\n\nTool homepage: https://github.com/blahah/transrate-tools"
-inputs: []
+doc: "Reads BAM file and outputs a CSV file.\n\nTool homepage: https://github.com/blahah/transrate-tools"
+inputs:
+  - id: bam_file
+    type: File
+    doc: Input BAM file
+    inputBinding:
+      position: 1
+  - id: nullprior
+    type:
+      - 'null'
+      - float
+    doc: Null prior value (optional)
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_csv
+    type: File
+    doc: Output CSV file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/transrate-tools:v1.0.0-2-deb_cv1
-stdout: transrate-tools_bam-read.out

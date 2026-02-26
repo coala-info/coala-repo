@@ -1,8 +1,9 @@
 ---
 name: bbknn
-description: BBKNN (Batch Balanced K-Nearest Neighbors) is a fast, graph-based integration tool designed to mitigate batch effects in single-cell transcriptomics.
+description: BBKNN is a fast, graph-based integration tool that mitigates batch effects in single-cell transcriptomics by identifying neighbors within each batch independently. Use when user asks to integrate single-cell datasets, remove batch effects from neighbor graphs, or perform computationally efficient data integration after PCA.
 homepage: https://github.com/Teichlab/bbknn
 ---
+
 
 # bbknn
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-safe
-description: the package is available on all platforms; click for details.
+description: This R package performs Significance Analysis of Function and Expression to identify differentially expressed gene sets in gene expression data. Use when user asks to conduct gene set enrichment analysis, test for the significance of functional categories, or identify enriched pathways using resampling-based methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/safe.html
 ---
+
 
 # bioconductor-safe
 

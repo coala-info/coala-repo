@@ -1,8 +1,9 @@
 ---
 name: bioconductor-heatmaps
-description: the package is available on all platforms; click for details.
+description: The heatmaps package visualizes functional genomics data and sequence features over genomic windows using customizable heatmap plots. Use when user asks to create heatmaps for ChIP-seq coverage, visualize sequence patterns or PWM matches, smooth genomic signal data, and generate publication-ready multi-panel heatmap figures.
 homepage: https://bioconductor.org/packages/release/bioc/html/heatmaps.html
 ---
+
 
 # bioconductor-heatmaps
 

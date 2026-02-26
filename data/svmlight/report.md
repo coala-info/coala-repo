@@ -1,9 +1,9 @@
 # svmlight CWL Generation Report
 
-## svmlight
+## svmlight_svm_classify
 
 ### Tool Description
-The provided text does not contain help information for svmlight; it is an error log from a container runtime (Apptainer/Singularity) failing to fetch the svmlight image.
+SVM-light V6.02: Support Vector Machine, classification module
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/svmlight:6.02--h7b50bb2_8
@@ -18,52 +18,23 @@ The provided text does not contain help information for svmlight; it is an error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svmlight:6.02--h7b50bb2_8 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Not enough input parameters!
 
 
-## Metadata
-- **Skill**: generated
+SVM-light V6.02: Support Vector Machine, classification module     14.08.08
 
-## svmlight_svm_learn
+Copyright: Thorsten Joachims, thorsten@joachims.org
 
-### Tool Description
-SVM-light learning module. (Note: The provided input text contains container runtime errors and does not include the tool's help documentation.)
+This software is available for non-commercial use only. It must not
+be modified and distributed without prior permission of the author.
+The author is not responsible for implications from the use of this
+software.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/svmlight:6.02--h7b50bb2_8
-- **Homepage**: http://svmlight.joachims.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/svmlight/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svmlight:6.02--h7b50bb2_8 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+   usage: svm_classify [options] example_file model_file output_file
 
-## svmlight_svm_classify
-
-### Tool Description
-The provided text does not contain help information for the tool; it contains container runtime error logs indicating a failure to fetch or build the OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/svmlight:6.02--h7b50bb2_8
-- **Homepage**: http://svmlight.joachims.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/svmlight/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svmlight:6.02--h7b50bb2_8 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options: -h         -> this help
+         -v [0..3]  -> verbosity level (default 2)
+         -f [0,1]   -> 0: old output format of V1.0
+                    -> 1: output the value of decision function (default)
 ```
 

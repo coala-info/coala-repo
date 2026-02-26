@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ebseqhmm
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: EBSeqHMM performs differential expression analysis for ordered RNA-seq data using an empirical Bayesian autoregressive Hidden Markov Model. Use when user asks to identify expression paths across time points or spatial conditions, perform FDR-controlled detection of differentially expressed genes or isoforms, and cluster features by their most likely expression profiles.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/EBSeqHMM.html
 ---
+
 
 # bioconductor-ebseqhmm
 

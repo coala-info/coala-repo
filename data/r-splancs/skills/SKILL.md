@@ -1,8 +1,9 @@
 ---
 name: r-splancs
-description: The Splancs package was written as an enhancement to S-Plus for display and analysis of spatial point pattern data; it has been ported to R and is in "maintenance mode". </p>
+description: The r-splancs package provides tools for the display and analysis of spatial and space-time point pattern data. Use when user asks to analyze spatial point patterns, calculate Ripley's K-function, perform kernel density estimation, or test for space-time clustering and interaction.
 homepage: https://cran.r-project.org/web/packages/splancs/index.html
 ---
+
 
 # r-splancs
 

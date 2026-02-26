@@ -1,8 +1,9 @@
 ---
 name: juicebox_scripts
-description: The `juicebox_scripts` suite provides essential utilities for bioinformaticians working with Hi-C data to curate genome assemblies.
+description: juicebox_scripts provides utilities to convert between Juicebox assembly files and standard genomic formats like FASTA, AGP, and BED. Use when user asks to translate manual Juicebox edits into updated assembly files, convert AGP files to assembly format, or prepare genomic data for Hi-C visualization.
 homepage: https://github.com/phasegenomics/juicebox_scripts
 ---
+
 
 # juicebox_scripts
 

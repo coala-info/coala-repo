@@ -1,8 +1,9 @@
 ---
 name: r-quilt
-description: R package quilt (documentation from project home).
+description: r-quilt performs rapid genotype imputation and calling from low-coverage whole genome sequencing data using large reference panels within an R environment. Use when user asks to impute genotypes from low-coverage sequencing, perform NIPT mother-fetal genome imputation, or call variants from ancient DNA and short or long-read data.
 homepage: https://cran.r-project.org/web/packages/quilt/index.html
 ---
+
 
 # r-quilt
 

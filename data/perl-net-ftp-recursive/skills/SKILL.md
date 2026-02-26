@@ -1,8 +1,9 @@
 ---
 name: perl-net-ftp-recursive
-description: The `Net::FTP::Recursive` module extends the standard Perl `Net::FTP` class to support recursive directory traversal.
+description: The perl-net-ftp-recursive module extends the standard Net::FTP class to enable recursive directory uploads and downloads. Use when user asks to perform recursive FTP transfers, download nested directory structures, or upload local folders while maintaining directory hierarchy.
 homepage: http://metacpan.org/pod/Net::FTP::Recursive
 ---
+
 
 # perl-net-ftp-recursive
 

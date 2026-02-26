@@ -1,8 +1,9 @@
 ---
 name: alfa
-description: The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+description: ALFA analyzes the distribution of aligned NGS reads across genomic annotations to provide a global perspective on dataset composition. Use when user asks to intersect BAM files with GTF annotations, generate feature enrichment plots, or perform quality control on sequencing data.
 homepage: https://github.com/biocompibens/ALFA
 ---
+
 
 # alfa
 

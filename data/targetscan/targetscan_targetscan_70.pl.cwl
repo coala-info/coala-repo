@@ -2,16 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: targetscan_targetscan_70.pl
 label: targetscan_targetscan_70.pl
-doc: "TargetScan predicts biological targets of miRNAs by searching for the presence
-  of conserved 8mer, 7mer, and 6mer sites that match the seed region of each miRNA.
-  (Note: The provided help text contains container runtime errors and does not list
-  command-line arguments).\n\nTool homepage: https://www.targetscan.org/vert_80/"
-inputs: []
+doc: "Search for predicted miRNA targets using the modified TargetScanS algorithm.\n\
+  \nTool homepage: https://www.targetscan.org/vert_80/"
+inputs:
+  - id: miRNA_file
+    type: File
+    doc: miRNA families by species
+    inputBinding:
+      position: 1
+  - id: UTR_file
+    type: File
+    doc: Aligned UTRs
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: predicted_targets_output_file
+    type: File
+    doc: Lists sites using alignment coordinates (MSA and UTR)
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/targetscan:7.0--pl5321hdfd78af_0
-stdout: targetscan_targetscan_70.pl.out

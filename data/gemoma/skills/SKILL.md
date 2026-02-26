@@ -1,8 +1,9 @@
 ---
 name: gemoma
-description: GeMoMa (Gene Model Mapper) is a specialized tool for transferring gene annotations between species.
+description: GeMoMa transfers gene annotations from one or more reference species to a target genome by leveraging evolutionary conservation and RNA-seq evidence. Use when user asks to predict gene models, transfer annotations between species, or incorporate RNA-seq data into homology-based gene predictions.
 homepage: http://www.jstacs.de/index.php/GeMoMa
 ---
+
 
 # gemoma
 

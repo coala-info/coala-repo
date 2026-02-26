@@ -1,8 +1,9 @@
 ---
 name: r-hmm
-description: R package hmm (documentation from project home).
+description: This tool uses the R package HMM to build, simulate, and analyze discrete-time and discrete-space Hidden Markov Models. Use when user asks to initialize HMM parameters, simulate state sequences, decode hidden states using the Viterbi algorithm, calculate probabilities with Forward or Backward algorithms, or estimate parameters using Baum-Welch.
 homepage: https://cran.r-project.org/web/packages/hmm/index.html
 ---
+
 
 # r-hmm
 

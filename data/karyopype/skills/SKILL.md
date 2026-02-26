@@ -1,8 +1,9 @@
 ---
 name: karyopype
-description: karyopype is a Python-based tool designed for the rapid visualization of genomic data on a chromosomal scale.
+description: "karyopype is a Python tool for visualizing genomic intervals and BED files on chromosomal ideograms. Use when user asks to plot genomic regions on a chromosome map, visualize the distribution of ChIP-seq peaks, or create genome-wide ideogram plots."
 homepage: http://github.com/jakevc/karyopype
 ---
+
 
 # karyopype
 

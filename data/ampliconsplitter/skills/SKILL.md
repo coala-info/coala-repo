@@ -1,8 +1,9 @@
 ---
 name: ampliconsplitter
-description: AmpliconSplitter is a specialized tool for resolving "collapsed" amplicons in metagenomic or multi-variant samples.
+description: AmpliconSplitter resolves collapsed amplicons in metagenomic samples by using long reads and a reference to separate highly similar sequences. Use when user asks to unzip collapsed amplicons, resolve multi-variant samples, or identify correlating SNPs to distinguish between similar sequences.
 homepage: https://github.com/RolandFaure/AmpliconSplitter
 ---
+
 
 # ampliconsplitter
 

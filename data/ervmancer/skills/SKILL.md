@@ -1,8 +1,9 @@
 ---
 name: ervmancer
-description: ERVmancer is a specialized bioinformatics tool designed to accurately quantify HERV expression.
+description: ERVmancer is a bioinformatics tool designed to quantify Human Endogenous Retrovirus expression by resolving multi-mapping reads using a phylogenetic tree. Use when user asks to quantify HERV expression from FASTQ or SAM files, perform phylogenetic tree mapping of retroviral counts, or set up the ERVmancer environment.
 homepage: https://github.com/AuslanderLab/ervmancer
 ---
+
 
 # ervmancer
 

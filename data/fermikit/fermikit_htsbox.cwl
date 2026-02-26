@@ -2,9 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: htsbox
 label: fermikit_htsbox
-doc: "A tool within the fermikit suite (Note: The provided help text contains only
-  system error messages and no usage information).\n\nTool homepage: https://github.com/lh3/fermikit"
-inputs: []
+doc: "A collection of htslib-based tools for sequence data manipulation.\n\nTool homepage:
+  https://github.com/lh3/fermikit"
+inputs:
+  - id: command
+    type: string
+    doc: The command to execute (e.g., samview, vcfview, tabix, etc.)
+    inputBinding:
+      position: 1
+  - id: argument
+    type: string
+    doc: The argument for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

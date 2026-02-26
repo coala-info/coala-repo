@@ -1,9 +1,9 @@
 # uscdc-datasets-sars-cov-2 CWL Generation Report
 
-## uscdc-datasets-sars-cov-2
+## uscdc-datasets-sars-cov-2_GenFSGopher.pl
 
 ### Tool Description
-A tool for handling US CDC SARS-CoV-2 datasets. Note: The provided text contains container build logs and error messages rather than CLI help documentation, so no arguments could be extracted.
+Reads a standard dataset spreadsheet and downloads its data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/uscdc-datasets-sars-cov-2:0.7.2--hdfd78af_0
@@ -18,33 +18,29 @@ A tool for handling US CDC SARS-CoV-2 datasets. Note: The provided text contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/uscdc-datasets-sars-cov-2:0.7.2--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+GenFSGopher.pl: Reads a standard dataset spreadsheet and downloads its data
 
-
-## Metadata
-- **Skill**: generated
-
-## uscdc-datasets-sars-cov-2_GenFSGopher.pl
-
-### Tool Description
-A tool for processing SARS-CoV-2 datasets (Note: The provided text contains container execution logs and error messages rather than help documentation, so specific arguments could not be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/uscdc-datasets-sars-cov-2:0.7.2--hdfd78af_0
-- **Homepage**: https://github.com/CDCgov/datasets-sars-cov-2
-- **Package**: https://anaconda.org/channels/bioconda/packages/uscdc-datasets-sars-cov-2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/uscdc-datasets-sars-cov-2:0.7.2--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+  Usage: GenFSGopher.pl -o outdir spreadsheet.dataset.tsv
+  PARAM        DEFAULT  DESCRIPTION
+  --outdir     <req'd>  The output directory
+  --compressed          Compress files in the output directory
+  --format     tsv      The input format. Default: tsv. No other format
+                        is accepted at this time.
+  --layout     onedir   onedir   - Everything goes into one directory
+                        hashsums - Like 'onedir', but will recalculate hashsums
+                                   and will ignore hashsum warnings.
+                                   (deprecated in favor of adjustHashsums.pl)
+                        byrun    - Each genome run gets its separate directory
+                        byformat - Fastq files to one dir, assembly to another, etc
+                        cfsan    - Reference and samples in separate directories with
+                                   each sample in a separate subdirectory
+  --shuffled   <NONE>   Output the reads as interleaved instead of individual
+                        forward and reverse files.
+  --norun      <NONE>   Do not run anything; just create a Makefile.
+  --numcpus    1        How many jobs to run at once. Be careful of disk I/O.
+  --citation            Print the recommended citation for this script and exit
+  --version             Print the version and exit
+  --tempdir    ''       Choose a different temp directory than the system default
+  --help                Print the usage statement and exit
 ```
 

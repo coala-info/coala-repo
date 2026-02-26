@@ -1,8 +1,9 @@
 ---
 name: gxf2bed
-description: gxf2bed is a high-speed utility written in Rust designed to bridge the gap between complex gene annotation formats (GTF/GFF) and the simpler Browser Extensible Data (BED) format.
+description: "gxf2bed is a high-speed utility that converts GTF or GFF gene annotation files into BED format. Use when user asks to convert GTF to BED, transform GFF3 files to BED12, or extract specific genomic features and attributes into a BED file."
 homepage: https://github.com/alejandrogzi/gxf2bed
 ---
+
 
 # gxf2bed
 

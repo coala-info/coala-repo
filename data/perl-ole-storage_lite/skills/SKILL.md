@@ -1,8 +1,9 @@
 ---
 name: perl-ole-storage_lite
-description: This skill provides the procedural knowledge required to interface with the `OLE::Storage_Lite` Perl module.
+description: This Perl module provides an interface for reading and creating OLE storage structures and containers. Use when user asks to extract data from OLE files, create new OLE storage structures, or perform low-level forensic analysis on Office documents.
 homepage: http://metacpan.org/pod/OLE-Storage_Lite
 ---
+
 
 # perl-ole-storage_lite
 

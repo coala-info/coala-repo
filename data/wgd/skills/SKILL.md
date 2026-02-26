@@ -1,8 +1,9 @@
 ---
 name: wgd
-description: The `wgd` (v2) suite is a specialized bioinformatics toolkit designed to unearth traces of ancient polyploidy from genomic and transcriptomic data.
+description: wgd is a bioinformatics toolkit for identifying ancient polyploidy from genomic and transcriptomic data. Use when user asks to identify WGD-derived gene duplicates, distinguish them from small-scale duplications, place WGD events within a phylogenetic timeframe, calculate synonymous substitution rates, identify syntenic blocks, or identify age peaks in Ks distributions.
 homepage: https://github.com/heche-psb/wgd
 ---
+
 
 # wgd
 

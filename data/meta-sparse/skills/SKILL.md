@@ -1,8 +1,9 @@
 ---
 name: meta-sparse
-description: The `meta-sparse` tool (Strain Prediction and Analysis using Representative SEquences) is designed to identify the taxonomic origins of metagenomic reads with high precision.
+description: The meta-sparse tool identifies the taxonomic origins of metagenomic reads and distinguishes between closely related microbial strains using a hierarchical indexing system. Use when user asks to predict reference genomes in a sample, generate taxonomic profiles from raw FASTQ data, or extract reads that map to specific reference organisms.
 homepage: https://github.com/zheminzhou/SPARSE/
 ---
+
 
 # meta-sparse
 

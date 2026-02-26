@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metahdep
-description: the package is available on all platforms; click for details.
+description: This tool performs hierarchical meta-analysis of gene expression data while accounting for dependence between studies. Use when user asks to conduct meta-analysis on gene expression datasets, account for study dependence, or perform hierarchical modeling of effect sizes.
 homepage: https://bioconductor.org/packages/release/bioc/html/metahdep.html
 ---
+
 
 # bioconductor-metahdep
 

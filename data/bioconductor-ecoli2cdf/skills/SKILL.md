@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecoli2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix Escherichia coli antisense genome array. Use when user asks to handle E. coli antisense genome array data, map between chip coordinates and CEL file indices, or access the CDF environment for Affymetrix E. coli arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoli2cdf.html
 ---
+
 
 # bioconductor-ecoli2cdf
 

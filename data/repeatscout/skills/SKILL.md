@@ -1,8 +1,9 @@
 ---
 name: repeatscout
-description: RepeatScout is a specialized tool for discovering repeat families in large genomes without prior knowledge of the sequences.
+description: RepeatScout identifies and discovers de novo repeat families in large genomes by extending l-mer seeds into consensus sequences. Use when user asks to discover repeat families, build l-mer frequency tables, or filter low-complexity and tandem repeats from genomic sequences.
 homepage: https://github.com/Dfam-consortium/RepeatScout
 ---
+
 
 # repeatscout
 

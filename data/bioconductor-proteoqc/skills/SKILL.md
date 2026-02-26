@@ -1,8 +1,9 @@
 ---
 name: bioconductor-proteoqc
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This R package provides a comprehensive pipeline for the quality control of proteomics data. Use when user asks to perform quality control on proteomics experiments, generate QC reports, or evaluate mass spectrometry data quality.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/proteoQC.html
 ---
+
 
 # bioconductor-proteoqc
 

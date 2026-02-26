@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.tguttata.ucsc.taegut1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the Zebra finch based on the UCSC taeGut1 assembly. Use when user asks to retrieve DNA sequences, check chromosome lengths, or perform genome-wide motif searching for Taeniopygia guttata in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Tguttata.UCSC.taeGut1.html
 ---
+
 
 # bioconductor-bsgenome.tguttata.ucsc.taegut1
 

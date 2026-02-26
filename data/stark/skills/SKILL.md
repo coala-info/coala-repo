@@ -1,8 +1,9 @@
 ---
 name: stark
-description: The `stark` tool is a specialized utility designed for bioinformatics researchers working with bidirected de Bruijn graphs.
+description: Stark bluntifies bidirected de Bruijn graphs by identifying and removing sequence overlaps between connected nodes. Use when user asks to bluntify a graph, remove sequence overlaps from a bidirected de Bruijn graph, or convert a graph into a blunt-ended version.
 homepage: https://github.com/hnikaein/stark
 ---
+
 
 # stark
 

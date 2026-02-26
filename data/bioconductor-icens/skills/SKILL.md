@@ -1,8 +1,9 @@
 ---
 name: bioconductor-icens
-description: the package is available on all platforms; click for details.
+description: This tool computes the Nonparametric Maximum Likelihood Estimator for censored and truncated data using various optimization algorithms and intersection graph analysis. Use when user asks to estimate distribution functions for interval-censored data, perform bivariate censored data analysis, or visualize survival data using NPMLE.
 homepage: https://bioconductor.org/packages/release/bioc/html/Icens.html
 ---
+
 
 # bioconductor-icens
 

@@ -3,7 +3,7 @@
 ## chunked-scatter
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system logs and a fatal error regarding a container build failure (no space left on device).
+Given a sequence dict, fasta index or a bed file, scatter over the defined contigs/regions. Each contig/region will be split into multiple overlapping regions, which will be written to a new bed file. Each contig will be placed in a new file, unless the length of the contigs/regions doesn't exceed a given number.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/chunked-scatter:1.0.0--py_0
@@ -18,58 +18,47 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 16:18:15  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/chunked-scatter:1.0.0--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:cfb1ba34637d96787f6e780192bc5f09c04fe0b40c4e1acdcbc88953bce25b5b: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-1509555372/rootfs/lib/libc-2.18.so: no space left on device
-```
+usage: chunked-scatter [-h] [-p PREFIX] [-S] [-P] [-c SIZE]
+                       [-m MINIMUM_BP_PER_FILE] [-o OVERLAP]
+                       INPUT
 
+Given a sequence dict, fasta index or a bed file, scatter over the defined
+contigs/regions. Each contig/region will be split into multiple overlapping
+regions, which will be written to a new bed file. Each contig will be placed
+in a new file, unless the length of the contigs/regions doesn't exceed a given
+number.
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  INPUT                 The input file. The format is detected by the
+                        extension. Supported extensions are: '.bed', '.dict',
+                        '.fai', '.vcf', '.vcf.gz', '.bcf'.
 
-## chunked-scatter_scatter-regions
-
-### Tool Description
-A tool for scattering genomic regions into chunks. Note: The provided help text contains container execution errors and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/chunked-scatter:1.0.0--py_0
-- **Homepage**: https://github.com/biowdl/chunked-scatter
-- **Package**: https://anaconda.org/channels/bioconda/packages/chunked-scatter/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 16:19:18  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/chunked-scatter:1.0.0--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:cfb1ba34637d96787f6e780192bc5f09c04fe0b40c4e1acdcbc88953bce25b5b: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-3220846822/rootfs/lib/libc-2.18.so: no space left on device
-```
-
-## chunked-scatter_safe-scatter
-
-### Tool Description
-A tool for chunked scattering, likely used in bioinformatics workflows (Note: The provided text is an error log and does not contain usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/chunked-scatter:1.0.0--py_0
-- **Homepage**: https://github.com/biowdl/chunked-scatter
-- **Package**: https://anaconda.org/channels/bioconda/packages/chunked-scatter/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 16:19:31  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/chunked-scatter:1.0.0--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:cfb1ba34637d96787f6e780192bc5f09c04fe0b40c4e1acdcbc88953bce25b5b: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-2247515309/rootfs/lib/libc-2.18.so: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PREFIX, --prefix PREFIX
+                        The prefix of the ouput files. Output will be named
+                        like: <PREFIX><N>.bed, in which N is an incrementing
+                        number. Default 'scatter-'.
+  -S, --split-contigs   If set, contigs are allowed to be split up over
+                        multiple files.
+  -P, --print-paths     If set prints paths of the output files to STDOUT.
+                        This makes the program usable in scripts and
+                        worfklows.
+  -c SIZE, --chunk-size SIZE
+                        The size of the chunks. The first chunk in a region or
+                        contig will be exactly length SIZE, subsequent chunks
+                        will SIZE + OVERLAP and the final chunk may be
+                        anywhere from 0.5 to 1.5 times SIZE plus overlap. If a
+                        region (or contig) is smaller than SIZE the original
+                        regions will be returned. Defaults to 1e6
+  -m MINIMUM_BP_PER_FILE, --minimum-bp-per-file MINIMUM_BP_PER_FILE
+                        The minimum number of bases represented within a
+                        single output bed file. If an input contig or region
+                        is smaller than this MINIMUM_BP_PER_FILE, then the
+                        next contigs/regions will be placed in the same file
+                        untill this minimum is met. Defaults to 45e6.
+  -o OVERLAP, --overlap OVERLAP
+                        The number of bases which each chunk should overlap
+                        with the preceding one. Defaults to 150.
 ```
 

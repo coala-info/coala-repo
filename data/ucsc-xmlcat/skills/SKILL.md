@@ -1,8 +1,9 @@
 ---
 name: ucsc-xmlcat
-description: The `ucsc-xmlcat` utility is a specialized tool from the UCSC Genome Browser "Kent" suite used for XML data integration.
+description: ucsc-xmlcat merges multiple XML files into a single, valid XML document by nesting their content under a new root tag. Use when user asks to merge XML files, combine XML fragments, or integrate multiple XML documents into a single valid XML file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-xmlcat
 

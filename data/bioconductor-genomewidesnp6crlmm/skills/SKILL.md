@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomewidesnp6crlmm
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and parameters for processing Affymetrix Genome-Wide Human SNP Array 6.0 data using the crlmm algorithm. Use when user asks to perform genotyping, estimate copy numbers, or process .CEL files from Affymetrix SNP 6.0 platforms.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/genomewidesnp6Crlmm.html
 ---
+
 
 # bioconductor-genomewidesnp6crlmm
 

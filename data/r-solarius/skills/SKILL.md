@@ -1,8 +1,9 @@
 ---
 name: r-solarius
-description: Skill for using the CRAN R package r-solarius.
+description: r-solarius provides an R interface to the SOLAR software for performing genetic variance component estimation and linkage mapping on pedigree data. Use when user asks to estimate heritability, conduct genome-wide association studies, perform multipoint linkage analysis, or calculate genetic correlations between traits.
 homepage: https://cran.r-project.org/web/packages/solarius/index.html
 ---
+
 
 # r-solarius
 

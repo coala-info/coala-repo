@@ -1,8 +1,9 @@
 ---
 name: bioconductor-snpstats
-description: the package is available on all platforms; click for details.
+description: This R package provides classes and methods for large-scale association studies using single nucleotide polymorphism data. Use when user asks to perform quality control on SNP data, conduct association tests, or manage large-scale genetic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/snpStats.html
 ---
+
 
 # bioconductor-snpstats
 

@@ -1,8 +1,9 @@
 ---
 name: r-trimcluster
-description: Trimmed k-means clustering. The method is described in Cuesta-Albertos et al.
+description: The r-trimcluster package performs robust k-means clustering by trimming a specified proportion of outlying data points. Use when user asks to perform trimmed k-means clustering, exclude outliers from cluster center calculations, or identify anomalies in a dataset using robust clustering methods.
 homepage: https://cloud.r-project.org/web/packages/trimcluster/index.html
 ---
+
 
 # r-trimcluster
 

@@ -1,9 +1,9 @@
 # flask-bootstrap CWL Generation Report
 
-## flask-bootstrap
+## flask-bootstrap_flask
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it is a log of a failed execution attempt where the executable was not found.
+The Flask command line interface.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/flask-bootstrap:3.3.5.7--py36_0
@@ -18,37 +18,6 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/07 02:15:00  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "flask-bootstrap": executable file not found in $PATH
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## flask-bootstrap_flask
-
-### Tool Description
-Flask command line interface
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/flask-bootstrap:3.3.5.7--py36_0
-- **Homepage**: https://github.com/cookiecutter-flask/cookiecutter-flask
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
 Traceback (most recent call last):
   File "/usr/local/bin/flask", line 6, in <module>
     sys.exit(flask.cli.main())

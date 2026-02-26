@@ -1,8 +1,9 @@
 ---
 name: resfinder
-description: ResFinder is a specialized bioinformatics tool designed to detect the presence of antimicrobial resistance determinants in bacterial sequence data.
+description: "ResFinder identifies antimicrobial resistance genes and chromosomal mutations in bacterial sequence data. Use when user asks to detect AMR determinants, identify point mutations, or profile resistance from assemblies and raw reads."
 homepage: https://bitbucket.org/genomicepidemiology/resfinder
 ---
+
 
 # resfinder
 

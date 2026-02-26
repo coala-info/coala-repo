@@ -1,8 +1,9 @@
 ---
 name: spliceai
-description: SpliceAI is a deep learning-based tool developed by Illumina that predicts the probability of a variant altering splicing.
+description: SpliceAI is a deep learning tool that predicts the probability of genetic variants altering splicing by evaluating sequence context for the creation or disruption of splice sites. Use when user asks to predict splice-altering effects of variants, interpret delta scores in a VCF, or configure parameters for deep intronic cryptic splice site detection.
 homepage: https://github.com/Illumina/SpliceAI
 ---
+
 
 # spliceai
 

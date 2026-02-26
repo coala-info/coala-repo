@@ -1,8 +1,9 @@
 ---
 name: pangolearn
-description: The pangoLEARN package serves as the model repository for the pangolin tool.
+description: This tool provides the trained decision tree models used by pangolin to assign SARS-CoV-2 sequences to Pango lineages. Use when user asks to install, update, or verify the model repository for legacy pangolin v2 and v3 workflows.
 homepage: https://github.com/cov-lineages/pangoLEARN
 ---
+
 
 # pangolearn
 

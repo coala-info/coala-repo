@@ -1,8 +1,9 @@
 ---
 name: bioconductor-roar
-description: the package is available on all platforms; click for details.
+description: The bioconductor-roar package identifies preferential usage of alternative polyadenylation sites from RNA-seq data. Use when user asks to detect alternative polyadenylation, calculate roar scores, or analyze differential polyadenylation site usage between conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/roar.html
 ---
+
 
 # bioconductor-roar
 

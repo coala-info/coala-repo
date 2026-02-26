@@ -1,8 +1,9 @@
 ---
 name: shortstack
-description: ShortStack is a specialized bioinformatics pipeline for the comprehensive analysis of small RNA-seq data.
+description: ShortStack is a bioinformatics pipeline for the comprehensive analysis, alignment, and annotation of small RNA-seq data. Use when user asks to identify miRNA genes, perform adapter trimming, align small RNA reads to a reference genome, or discover small RNA clusters.
 homepage: https://github.com/MikeAxtell/ShortStack
 ---
+
 
 # shortstack
 

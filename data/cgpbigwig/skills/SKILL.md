@@ -1,8 +1,9 @@
 ---
 name: cgpbigwig
-description: cgpBigWig is a suite of high-performance C utilities designed for the efficient creation and manipulation of BigWig files.
+description: cgpBigWig is a suite of high-performance C utilities for creating, manipulating, and converting genomic alignment data into BigWig files. Use when user asks to convert BAM or CRAM files to BigWig coverage tracks, concatenate multiple BigWig files, generate per-base composition tracks, or convert BedGraph files to BigWig format.
 homepage: https://github.com/cancerit/cgpBigWig
 ---
+
 
 # cgpbigwig
 

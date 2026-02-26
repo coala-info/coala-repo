@@ -1,8 +1,9 @@
 ---
 name: methylextract
-description: MethylExtract is a specialized tool designed for the comprehensive analysis of bisulfite sequencing data.
+description: MethylExtract analyzes bisulfite sequencing data to generate high-resolution methylation profiles and detect single nucleotide variants. Use when user asks to generate methylation maps for cytosine contexts, call SNVs from bisulfite-treated reads, or filter sequencing data for quality control.
 homepage: http://bioinfo2.ugr.es/MethylExtract/
 ---
+
 
 # methylextract
 

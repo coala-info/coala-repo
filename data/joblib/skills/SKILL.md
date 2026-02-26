@@ -1,8 +1,9 @@
 ---
 name: joblib
-description: Joblib is a specialized Python library designed to enhance the performance of computational tasks.
+description: "Joblib provides tools for lightweight pipelining in Python through transparent disk-based caching and parallel computing. Use when user asks to parallelize loops, cache function results to disk, or efficiently save and load large NumPy arrays."
 homepage: https://github.com/joblib/joblib
 ---
+
 
 # joblib
 

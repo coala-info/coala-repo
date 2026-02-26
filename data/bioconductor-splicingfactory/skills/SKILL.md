@@ -1,8 +1,9 @@
 ---
 name: bioconductor-splicingfactory
-description: the package analyzes the isoform diversity data, looking for significant changes between conditions.
+description: SplicingFactory analyzes isoform diversity data to identify significant changes between conditions. Use when user asks to analyze isoform diversity or identify differential splicing between conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/SplicingFactory.html
 ---
+
 
 # bioconductor-splicingfactory
 

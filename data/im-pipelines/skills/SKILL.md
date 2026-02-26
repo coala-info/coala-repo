@@ -1,8 +1,9 @@
 ---
 name: im-pipelines
-description: The im-pipelines toolkit provides modular, containerized building blocks for cheminformatics and computational chemistry.
+description: The im-pipelines toolkit provides modular, containerized building blocks for creating cheminformatics and computational chemistry workflows. Use when user asks to build chemical data pipelines, manipulate molecular structures, calculate properties, or manage data formats like SDF and JSON.
 homepage: https://github.com/InformaticsMatters/pipelines
 ---
+
 
 # im-pipelines
 

@@ -1,8 +1,9 @@
 ---
 name: ensembl-utils
-description: The ensembl-utils skill enables efficient interaction with the Ensembl Python utility suite.
+description: The ensembl-utils skill provides a standardized suite of tools for managing Ensembl databases, retrieving genomic data, and processing bioinformatics workflows. Use when user asks to interface with Ensembl MySQL instances, fetch genomic features by ID or coordinates, or convert between Ensembl-specific and standard bioinformatics formats.
 homepage: https://www.ensembl.org/
 ---
+
 
 # ensembl-utils
 

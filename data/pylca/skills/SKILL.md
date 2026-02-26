@@ -1,8 +1,9 @@
 ---
 name: pylca
-description: The `pylca` library provides Python implementations of the Lowest Common Ancestor algorithm, originally developed by D.
+description: pylca provides Python implementations of the Lowest Common Ancestor algorithm for finding the shared ancestor furthest from the root for any two nodes in a tree. Use when user asks to find the lowest common ancestor, query shared ancestors in biological taxonomies, or perform batch processing of tree node pairs.
 homepage: https://github.com/pirovc/pylca
 ---
+
 
 # pylca
 

@@ -1,8 +1,9 @@
 ---
 name: epimuller
-description: epimuller is a Python-based toolset designed to visualize the evolution and frequency of viral lineages over time.
+description: "epimuller visualizes the evolution and frequency of viral lineages over time by generating Muller plots that integrate phylogenetic hierarchy. Use when user asks to visualize viral clade evolution, generate Muller plots from Nextstrain or TreeTime data, or track the frequency of specific amino acid mutations and lineages."
 homepage: https://github.com/jennifer-bio/epimuller
 ---
+
 
 # epimuller
 

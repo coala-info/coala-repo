@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adme16cod.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive SQLite-based annotation mappings for the adme16cod platform used in rat ADME studies. Use when user asks to map manufacturer probe identifiers to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/adme16cod.db.html
 ---
+
 
 # bioconductor-adme16cod.db
 

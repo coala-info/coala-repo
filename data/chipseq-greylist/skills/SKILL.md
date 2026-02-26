@@ -1,8 +1,9 @@
 ---
 name: chipseq-greylist
-description: The `chipseq-greylist` tool is a Python implementation of the Bioconductor `GreyListChIP` algorithm.
+description: This tool identifies sample-specific problematic genomic regions with anomalously high coverage from ChIP-seq control BAM files. Use when user asks to generate a greylist, identify high-depth artifacts in control samples, or reduce false discovery rates in peak calling.
 homepage: https://github.com/roryk/chipseq-greylist
 ---
+
 
 # chipseq-greylist
 

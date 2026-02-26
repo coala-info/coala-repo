@@ -1,8 +1,9 @@
 ---
 name: cgecore
-description: The `cgecore` module serves as the foundational library for tools developed by the Center for Genomic Epidemiology.
+description: This module provides standardized utility functions and genomic data processing tools for the Center for Genomic Epidemiology software suite. Use when user asks to validate FASTA or FASTQ inputs, parse CGE tool outputs, or manage database directories for tools like ResFinder and VirulenceFinder.
 homepage: https://bitbucket.org/genomicepidemiology/cge_core_module
 ---
+
 
 # cgecore
 

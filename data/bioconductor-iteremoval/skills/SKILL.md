@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iteremoval
-description: The package provides a flexible algorithm to screen features of two distinct groups in consideration of overfitting and overall performance. It was originally tailored for methylation locus screening of NGS data, and it can also be used as a generic method for feature selection. Each step of the algorithm provides a default method for simple implemention, and the method can be replaced by a user defined function.
+description: This tool implements an iterative removal algorithm for feature selection and screening to identify robust subsets of features that distinguish between two groups. Use when user asks to perform feature selection for binary classification, screen methylation loci or gene expression data, or identify stable feature subsets while minimizing overfitting.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/iteremoval.html
 ---
+
 
 # bioconductor-iteremoval
 

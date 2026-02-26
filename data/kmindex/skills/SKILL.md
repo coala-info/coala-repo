@@ -1,8 +1,9 @@
 ---
 name: kmindex
-description: kmindex is a specialized bioinformatics tool designed for the efficient indexing and querying of sequencing samples.
+description: "kmindex builds and queries k-mer indices from large-scale genomic datasets to identify sequence overlaps across multiple samples. Use when user asks to build a searchable k-mer index from genomic files, query sequences against an indexed databank, or calculate k-mer overlap between a query and multiple sequencing samples."
 homepage: https://github.com/tlemane/kmindex
 ---
+
 
 # kmindex
 

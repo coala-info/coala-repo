@@ -1,8 +1,9 @@
 ---
 name: r-scrm
-description: "A coalescent simulator that allows the rapid simulation of     biological sequences under neutral models of evolution, see     Staab et al."
+description: The scrm package provides a highly efficient coalescent simulator for biological sequences that supports complex demographic scenarios and chromosome-scale simulations. Use when user asks to simulate genetic sequences, generate genealogies using the coalescent model, or model population history events like migration and size changes.
 homepage: https://cloud.r-project.org/web/packages/scrm/index.html
 ---
+
 
 # r-scrm
 

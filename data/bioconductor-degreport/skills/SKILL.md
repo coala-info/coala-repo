@@ -1,8 +1,9 @@
 ---
 name: bioconductor-degreport
-description: the package is available on all platforms; click for details.
+description: DEGreport provides a suite of tools for the post-processing, quality control, and visualization of differential expression analysis results. Use when user asks to perform quality control on differential expression results, analyze the impact of covariates, visualize gene expression patterns, or cluster genes with similar expression profiles in complex experimental designs.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEGreport.html
 ---
+
 
 # bioconductor-degreport
 

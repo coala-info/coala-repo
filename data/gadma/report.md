@@ -3,7 +3,7 @@
 ## gadma
 
 ### Tool Description
-Genetic Algorithm for Demographic Model Analysis
+GADMA is a tool for demographic inference.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gadma:2.0.3--pyhdfd78af_0
@@ -18,11 +18,24 @@ Genetic Algorithm for Demographic Model Analysis
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gadma:2.0.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2300300579: no space left on device
+GADMA version 2.0.3	by Ekaterina Noskova (ekaterina.e.noskova@gmail.com)
+Usage: 
+	gadma	-p/--params	<params_file>
+		-e/--extra	<extra_params_file>
+
+
+Instead/With -p/--params and -e/--extra option you can set:
+	-o/--output	<output_dir>		output directory.
+	-i/--input	<in.fs>/<in.txt>/	input data for demographic inference
+			<in.vcf>,<popmap>	(AFS, dadi format or VCF).
+	--resume	<resume_dir>		resume another launch from <resume_dir>.
+	--only_models		flag to take models only from another
+				launch (--resume option).
+
+	-h/--help		show this help message and exit.
+	-v/--version		show version and exit.
+	--test			run test case.
+
+In case of any questions or problems, please contact: ekaterina.e.noskova@gmail.com
 ```
 
-
-## Metadata
-- **Skill**: generated

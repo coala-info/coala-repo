@@ -3,27 +3,32 @@
 ## colormath
 
 ### Tool Description
-A python module that abstracts common color math operations.
+FAIL to generate CWL: colormath not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/colormath:v3.0.0-1-deb-py3_cv1
 - **Homepage**: https://github.com/gtaylor/python-colormath
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/colormath/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/colormath/overview
+- **Total Downloads**: 607.8K
+- **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/gtaylor/python-colormath
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: colormath not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: colormath not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/430f39707736da8bfbc813255c50d2997c278c1c5726e478906222bab4c3616f: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/colormath:v3.0.0-1-deb-py3_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3989365020: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

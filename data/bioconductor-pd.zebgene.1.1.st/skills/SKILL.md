@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.zebgene.1.1.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix ZebGene 1.1 ST expression array. Use when user asks to process Affymetrix ZebGene 1.1 ST array data, access platform design metadata, or perform low-level analysis of these microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.zebgene.1.1.st.html
 ---
+
 
 # bioconductor-pd.zebgene.1.1.st
 

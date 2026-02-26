@@ -1,8 +1,9 @@
 ---
 name: bioconductor-muscle
-description: the package is available on all platforms; click for details.
+description: This R package performs multiple sequence alignment of nucleotide or protein sequences using the MUSCLE algorithm. Use when user asks to perform multiple sequence alignment, align protein sequences, or compare nucleotide sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/muscle.html
 ---
+
 
 # bioconductor-muscle
 

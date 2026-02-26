@@ -1,8 +1,9 @@
 ---
 name: gargammel-slim
-description: gargammel-slim is a specialized toolkit for modeling the unique characteristics of ancient DNA.
+description: gargammel-slim is a toolkit for simulating realistic ancient DNA datasets by modeling fragment degradation, biochemical damage, and contamination. Use when user asks to simulate ancient DNA fragments, model deamination patterns, or generate synthetic reads containing modern human and microbial contamination.
 homepage: https://github.com/grenaud/gargammel
 ---
+
 
 # gargammel-slim
 

@@ -1,8 +1,9 @@
 ---
 name: phylodeep
-description: PhyloDeep is a specialized tool for extracting epidemiological insights from the branching patterns of phylogenetic trees.
+description: PhyloDeep uses deep learning models to perform epidemiological inference and model selection from phylogenetic trees. Use when user asks to assess model adequacy, determine the most likely transmission model, or infer epidemiological parameters like the basic reproduction number and infectious period.
 homepage: https://github.com/evolbioinfo/phylodeep
 ---
+
 
 # phylodeep
 

@@ -1,8 +1,9 @@
 ---
 name: rukki
-description: Rukki is a graph-processing tool designed to reconstruct long, haplotype-resolved scaffolds from assembly graphs.
+description: "Rukki reconstructs haplotype-resolved scaffolds from assembly graphs by analyzing parental markers and graph topology. Use when user asks to reconstruct haplotype paths, assign assembly graph nodes to parental classes, or scaffold assembly graphs using trio-binning data."
 homepage: https://github.com/marbl/rukki
 ---
+
 
 # rukki
 

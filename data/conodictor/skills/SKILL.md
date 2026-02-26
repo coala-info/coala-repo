@@ -1,8 +1,9 @@
 ---
 name: conodictor
-description: ConoDictor is a specialized bioinformatics tool designed for the rapid discovery of bioactive peptides within cone snail venom.
+description: ConoDictor identifies and classifies conopeptide precursor sequences from transcriptomic data into superfamilies using HMM and PSSM models. Use when user asks to discover bioactive peptides in cone snail venom, classify conopeptide sequences, or identify superfamilies from transcriptomic datasets.
 homepage: https://github.com/koualab/conodictor
 ---
+
 
 # conodictor
 

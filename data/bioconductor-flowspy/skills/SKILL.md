@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowspy
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The flowSpy package provides an integrated workflow for analyzing high-dimensional single-cell cytometry data, specifically for time-course experiments and trajectory inference. Use when user asks to analyze flow or mass cytometry data, perform clustering and dimensionality reduction, build trajectory trees, or calculate pseudotime and identify cellular states.
 homepage: https://bioconductor.org/packages/3.10/bioc/html/flowSpy.html
 ---
+
 
 # bioconductor-flowspy
 

@@ -1,8 +1,9 @@
 ---
 name: fasten
-description: Fasten is a collection of modular executables written in Rust, optimized for processing FASTQ files via standard input and output.
+description: Fasten is a collection of modular executables designed to process and stream FASTQ files through efficient Unix pipelines. Use when user asks to generate read metrics, interleave paired-end reads, trim or clean sequences, downsample datasets, and filter reads by quality or regex motifs.
 homepage: https://github.com/lskatz/fasten
 ---
+
 
 # fasten
 

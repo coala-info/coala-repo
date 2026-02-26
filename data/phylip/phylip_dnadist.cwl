@@ -1,16 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: dnadist
+baseCommand:
+  - phylip
+  - dnadist
 label: phylip_dnadist
-doc: "DNA Distance Matrix program from the PHYLIP package. (Note: The provided text
-  contains system logs and error messages rather than tool help text; therefore, no
-  arguments could be extracted.)\n\nTool homepage: http://evolution.genetics.washington.edu/phylip/"
-inputs: []
+doc: "Computes distances between sequences.\n\nTool homepage: http://evolution.genetics.washington.edu/phylip/"
+inputs:
+  - id: infile
+    type: File
+    doc: Input file containing sequences
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outfile
+    type:
+      - 'null'
+      - File
+    doc: Output file for distances
+    outputBinding:
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylip:3.697--h470a237_0
-stdout: phylip_dnadist.out

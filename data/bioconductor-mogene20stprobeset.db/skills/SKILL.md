@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mogene20stprobeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for Affymetrix Mouse Gene 2.0 ST probesets. Use when user asks to map MoGene 2.0 ST probeset IDs to gene symbols, retrieve Entrez Gene identifiers, or access biological annotations for mouse transcriptomic data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene20stprobeset.db.html
 ---
+
 
 # bioconductor-mogene20stprobeset.db
 

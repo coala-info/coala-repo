@@ -1,8 +1,9 @@
 ---
 name: vcontact2
-description: vcontact2 (Viral Contig Automatic Clustering and Taxonomy) is a computational tool designed to classify viral sequences by analyzing their protein content.
+description: vcontact2 classifies viral sequences into genus-level clusters by analyzing their protein content. Use when user asks to classify viral sequences, group viral sequences into clusters, provide taxonomic context for unknown viral fragments, or visualize protein-sharing networks.
 homepage: https://bitbucket.org/MAVERICLab/vcontact2
 ---
+
 
 # vcontact2
 

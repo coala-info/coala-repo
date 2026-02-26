@@ -1,8 +1,9 @@
 ---
 name: enhjoerning
-description: `enhjoerning` (also known as Unicorn) is a specialized tool for extracting high-resolution statistics from short-read alignments.
+description: Enhjoerning extracts high-resolution statistics and metagenomic metrics from short-read alignments to evaluate reference coverage and taxonomic composition. Use when user asks to calculate ANI and breadth of coverage, aggregate alignment data by taxonomic ID, resolve multi-mapped reads using EM reassignment, or generate global BAM summary statistics.
 homepage: https://github.com/GeoGenetics/unicorn
 ---
+
 
 # enhjoerning
 

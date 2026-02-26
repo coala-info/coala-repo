@@ -1,8 +1,9 @@
 ---
 name: khmer
-description: The khmer software is a specialized suite of command-line tools designed to streamline the assembly and analysis of DNA shotgun sequencing data.
+description: khmer is a suite of command-line tools that uses memory-efficient probabilistic data structures to process and streamline DNA shotgun sequencing data. Use when user asks to perform digital normalization, filter reads by k-mer abundance, partition metagenomic graphs, or interleave paired-end reads.
 homepage: https://khmer.readthedocs.io/
 ---
+
 
 # khmer
 

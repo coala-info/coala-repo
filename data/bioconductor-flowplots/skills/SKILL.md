@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowplots
-description: the package is available on all platforms; click for details.
+description: The flowPlots package provides tools for the graphical display and statistical analysis of gated ICS flow cytometry data. Use when user asks to visualize group comparisons of profile data, compute polyfunctional degree statistics, or generate ternary and boxplots with embedded p-values.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowPlots.html
 ---
+
 
 # bioconductor-flowplots
 

@@ -3,7 +3,7 @@
 ## pangolin
 
 ### Tool Description
-Phylogenetic Assignment of Named Global Outbreak LINeages (Note: The provided text contains only system error messages and no help documentation; therefore, no arguments could be extracted).
+Phylogenetic Assignment of Named Global Outbreak LINeages
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pangolin:4.3.4--pyhdfd78af_1
@@ -12,18 +12,100 @@ Phylogenetic Assignment of Named Global Outbreak LINeages (Note: The provided te
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pangolin/overview
-- **Total Downloads**: 159.8K
+- **Total Downloads**: 160.0K
 - **Last updated**: 2026-02-16
 - **GitHub**: https://github.com/hCoV-2019/pangolin
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/2e16efd8671278e5b0824dcb3186320b8f7cc2d3a96d200c3a2f1cbb3a7e029b: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/pangolin:4.3.4--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-644131092: no space left on device
+usage: pangolin <query> [options]
+
+pangolin: Phylogenetic Assignment of Named Global Outbreak LINeages
+
+options:
+  -h, --help            show this help message and exit
+
+Input-Output options:
+  query                 Query fasta file of sequences to analyse.
+  -o OUTDIR, --outdir OUTDIR
+                        Output directory. Default: current working directory
+  --outfile OUTFILE     Optional output file name. Default: lineage_report.csv
+  --tempdir TEMPDIR     Specify where you want the temp stuff to go. Default:
+                        $TMPDIR
+  --no-temp             Output all intermediate files, for dev purposes.
+  --alignment           Output multiple sequence alignment.
+  --alignment-file ALIGNMENT_FILE
+                        Multiple sequence alignment file name.
+  --expanded-lineage    Optional expanded lineage from alias.json in report.
+
+Analysis options:
+  --analysis-mode ANALYSIS_MODE
+                        Pangolin includes multiple analysis engines: UShER and
+                        pangoLEARN. Scorpio is used in conjunction with
+                        pangoLEARN to curate variant of concern (VOC)-related
+                        lineage calls. UShER is the default and is selected
+                        using option "usher" or "accurate". pangoLEARN has
+                        been depreciated, but older models can be run using
+                        "pangolearn" or "fast" with "--datadir" provided.
+                        Finally, it is possible to skip the UShER/ pangoLEARN
+                        step by selecting "scorpio" mode, but in this case
+                        only VOC-related lineages will be assigned.
+  --skip-designation-cache
+                        Developer option - do not use designation cache to
+                        assign lineages.
+  --skip-scorpio        Developer option - do not use scorpio to check VOC/VUI
+                        lineage assignments.
+  --max-ambig MAXAMBIG  Maximum proportion of Ns allowed for pangolin to
+                        attempt assignment. Default: 0.3
+  --min-length MINLEN   Minimum query length allowed for pangolin to attempt
+                        assignment. Default: 25000
+
+Data options:
+  --update              Automatically updates to latest release of pangolin,
+                        pangolin-data, scorpio and constellations (and
+                        pangolin-assignment if it has been installed using
+                        --add-assignment-cache), then exits.
+  --update-data         Automatically updates to latest release of
+                        constellations and pangolin-data, including the
+                        pangoLEARN model, UShER tree file and alias file (also
+                        pangolin-assignment if it has been installed using
+                        --add-assignment-cache), then exits.
+  --add-assignment-cache
+                        Install the pangolin-assignment repository for use
+                        with --use-assignment-cache. This makes updates slower
+                        and makes pangolin slower for small numbers of input
+                        sequences but much faster for large numbers of input
+                        sequences.
+  --use-assignment-cache
+                        Use assignment cache from optional pangolin-assignment
+                        repository. NOTE: the repository must be installed by
+                        --add-assignment-cache before using --use-assignment-
+                        cache.
+  -d DATADIR, --datadir DATADIR
+                        Data directory minimally containing the pangoLEARN
+                        model and header files or UShER tree. Default:
+                        Installed pangolin-data package.
+  --use-old-datadir     Use the data from data directory even if older than
+                        data installed via Python packages. Default: False
+  --usher-tree USHER_PROTOBUF
+                        UShER Mutation Annotated Tree protobuf file to use
+                        instead of default from pangolin-data repository or
+                        --datadir.
+  --assignment-cache ASSIGNMENT_CACHE
+                        Cached precomputed assignment file to use instead of
+                        default from pangolin-assignment repository. Does not
+                        require installation of pangolin-assignment.
+
+Misc options:
+  --aliases             Print Pango alias_key.json and exit.
+  -v, --version         show program's version number and exit
+  -pv, --pangolin-data-version
+                        show version number of pangolin data files (UShER tree
+                        and pangoLEARN model files) and exit.
+  --all-versions        Print all tool, dependency, and data versions then
+                        exit.
+  --verbose             Print lots of stuff to screen
+  -t THREADS, --threads THREADS
+                        Number of threads
 ```
 
-
-## Metadata
-- **Skill**: generated

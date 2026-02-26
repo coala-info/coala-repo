@@ -1,8 +1,9 @@
 ---
 name: cfm
-description: The `cfm` toolset provides a computational framework for modeling the fragmentation of small molecules in electrospray ionization (ESI) and electron ionization (EI) mass spectrometry.
+description: The cfm toolset models small molecule fragmentation to predict mass spectra and identify unknown metabolites. Use when user asks to compute fragmentation graphs, generate predicted MS/MS spectra, or rank candidate structures against experimental mass spectrometry data.
 homepage: https://sourceforge.net/p/cfm-id/wiki/Home/
 ---
+
 
 # cfm
 

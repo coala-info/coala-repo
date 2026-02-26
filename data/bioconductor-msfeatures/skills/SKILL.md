@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msfeatures
-description: the package is available on all platforms; click for details.
+description: MsFeatures provides functions to manage and group mass spectrometry features based on their properties. Use when user asks to group mass spectrometry features, calculate feature correlations, or filter features by retention time.
 homepage: https://bioconductor.org/packages/release/bioc/html/MsFeatures.html
 ---
+
 
 # bioconductor-msfeatures
 

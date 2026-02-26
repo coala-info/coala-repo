@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnaseqpower
-description: the package is available on all platforms; click for details.
+description: RNASeqPower performs power analysis and sample size estimation for RNA-seq experiments. Use when user asks to calculate statistical power, estimate required sample sizes, or evaluate the impact of sequencing depth and biological variation on study design.
 homepage: https://bioconductor.org/packages/release/bioc/html/RNASeqPower.html
 ---
+
 
 # bioconductor-rnaseqpower
 

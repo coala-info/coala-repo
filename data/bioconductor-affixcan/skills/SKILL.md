@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affixcan
-description: the package is available on all platforms; click for details.
+description: AffiXcan estimates the genetic component of gene expression by modeling the relationship between total binding affinity scores and transcript levels. Use when user asks to train GReX models, impute genetically regulated expression, or perform transcriptome-wide association studies using transcription factor binding affinity.
 homepage: https://bioconductor.org/packages/release/bioc/html/AffiXcan.html
 ---
+
 
 # bioconductor-affixcan
 

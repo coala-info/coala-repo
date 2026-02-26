@@ -1,8 +1,9 @@
 ---
 name: bioconductor-inetgrate
-description: the package is available on all platforms; click for details.
+description: This tool integrates DNA methylation and gene expression data to construct correlation networks for module identification and survival analysis. Use when user asks to build multi-omic gene networks, identify module eigengenes, perform patient risk classification, or conduct survival modeling in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/iNETgrate.html
 ---
+
 
 # bioconductor-inetgrate
 

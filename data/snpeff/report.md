@@ -1,9 +1,9 @@
 # snpeff CWL Generation Report
 
-## snpeff
+## snpeff_snpEff
 
 ### Tool Description
-SnpEff is a genetic variant annotation and functional effect prediction toolbox. (Note: The provided text appears to be a container execution log rather than help text, so no arguments could be extracted.)
+SnpEff version SnpEff 5.4a (build 2025-11-25 12:22), by Pablo Cingolani
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/snpeff:5.4.0a--hdfd78af_0
@@ -12,39 +12,99 @@ SnpEff is a genetic variant annotation and functional effect prediction toolbox.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/snpeff/overview
-- **Total Downloads**: 562.3K
+- **Total Downloads**: 563.1K
 - **Last updated**: 2025-11-28
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/snpeff:5.4.0a--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Error        :	Missing genomer_version parameter
+Command line :	SnpEff  
+
+snpEff version SnpEff 5.4a (build 2025-11-25 12:22), by Pablo Cingolani
+Usage: snpEff [ann] [options] genome_version [input_file]
 
 
-## Metadata
-- **Skill**: generated
+	variants_file                   : Default is STDIN
 
-## snpeff_SnpSift
 
-### Tool Description
-SnpSift is a toolbox that allows you to filter and manipulate VCF files. (Note: The provided text contains error logs rather than help documentation; no arguments could be extracted from the input).
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/snpeff:5.4.0a--hdfd78af_0
-- **Homepage**: http://snpeff.sourceforge.net/
-- **Package**: https://anaconda.org/channels/bioconda/packages/snpeff/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/snpeff:5.4.0a--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options:
+	-chr <string>                   : Prepend 'string' to chromosome name (e.g. 'chr1' instead of '1'). Only on TXT output.
+	-classic                        : Use old style annotations instead of Sequence Ontology and Hgvs.
+	-csvStats <file>                : Create CSV summary file.
+	-download                       : Download reference genome if not available. Default: true
+	-i <format>                     : Input format [ vcf, bed ]. Default: VCF.
+	-fileList                       : Input actually contains a list of files to process.
+	-o <format>                     : Output format [ vcf, gatk, bed, bedAnn ]. Default: VCF.
+	-s , -stats, -htmlStats         : Create HTML summary file.  Default is 'snpEff_summary.html'
+	-noStats                        : Do not create stats (summary) file
+
+Results filter options:
+	-fi , -filterInterval  <file>   : Only analyze changes that intersect with the intervals specified in this file (you may use this option many times)
+	-no-downstream                  : Do not show DOWNSTREAM changes
+	-no-intergenic                  : Do not show INTERGENIC changes
+	-no-intron                      : Do not show INTRON changes
+	-no-upstream                    : Do not show UPSTREAM changes
+	-no-utr                         : Do not show 5_PRIME_UTR or 3_PRIME_UTR changes
+	-no <effectType>                : Do not show 'EffectType'. This option can be used several times.
+
+Annotations options:
+	-cancer                         : Perform 'cancer' comparisons (Somatic vs Germline). Default: false
+	-cancerSamples <file>           : Two column TXT file defining 'oringinal \t derived' samples.
+	-fastaProt <file>               : Create an output file containing the resulting protein sequences.
+	-fastaProtNoRef                 : Do not add reference sequences to the output (only valid when -fastaProt). Default: false
+	-formatEff                      : Use 'EFF' field compatible with older versions (instead of 'ANN').
+	-geneId                         : Use gene ID instead of gene name (VCF output). Default: false
+	-hgvs                           : Use HGVS annotations for amino acid sub-field. Default: true
+	-hgvsOld                        : Use old HGVS notation. Default: false
+	-hgvs1LetterAa                  : Use one letter Amino acid codes in HGVS notation. Default: false
+	-hgvsTrId                       : Use transcript ID in HGVS notation. Default: false
+	-lof                            : Add loss of function (LOF) and Nonsense mediated decay (NMD) tags.
+	-noHgvs                         : Do not add HGVS annotations.
+	-noLof                          : Do not add LOF and NMD annotations.
+	-noOut                          : Do not write the output resuts to STDOUT (maybe used for debugging).
+	-noShiftHgvs                    : Do not shift variants according to HGVS notation (most 3prime end).
+	-oicr                           : Add OICR tag in VCF file. Default: false
+	-sequenceOntology               : Use Sequence Ontology terms. Default: true
+
+Generic options:
+	-c , -config                 : Specify config file
+	-configOption name=value     : Override a config file option
+	-d , -debug                  : Debug mode (very verbose).
+	-dataDir <path>              : Override data_dir parameter from config file.
+	-download                    : Download a SnpEff database, if not available locally. Default: true
+	-nodownload                  : Do not download a SnpEff database, if not available locally.
+	-h , -help                   : Show this help and exit
+	-noLog                       : Do not report usage statistics to server
+	-q , -quiet                  : Quiet mode (do not show any messages or errors)
+	-v , -verbose                : Verbose mode
+	-version                     : Show version number and exit
+
+Database options:
+	-canon                       : Only use canonical transcripts.
+	-canonList <file>            : Only use canonical transcripts, replace some transcripts using the 'gene_id 	 transcript_id' entries in <file>.
+	-tag <tagName>               : Only use transcript having a tag 'tagName'. This option can be used multiple times.
+	-notag <tagName>             : Filter out transcript having a tag 'tagName'. This option can be used multiple times.
+	-interaction                 : Annotate using interactions (requires interaction database). Default: true
+	-interval <file>             : Use a custom intervals in TXT/BED/BigBed/VCF/GFF file (you may use this option many times)
+	-maxTSL <TSL_number>         : Only use transcripts having Transcript Support Level lower than <TSL_number>.
+	-motif                       : Annotate using motifs (requires Motif database). Default: true
+	-nextProt                    : Annotate using NextProt (requires NextProt database).
+	-noGenome                    : Do not load any genomic database (e.g. annotate using custom files).
+	-noExpandIUB                 : Disable IUB code expansion in input variants
+	-noInteraction               : Disable inteaction annotations
+	-noMotif                     : Disable motif annotations.
+	-noNextProt                  : Disable NextProt annotations.
+	-onlyReg                     : Only use regulation tracks.
+	-onlyProtein                 : Only use protein coding transcripts. Default: false
+	-onlyTr <file.txt>           : Only use the transcripts in this file. Format: One transcript ID per line.
+	-reg <name>                  : Regulation track to use (this option can be used add several times).
+	-ss , -spliceSiteSize <int>  : Set size for splice sites (donor and acceptor) in bases. Default: 2
+	-spliceRegionExonSize <int>  : Set size for splice site region within exons. Default: 3 bases
+	-spliceRegionIntronMin <int> : Set minimum number of bases for splice site region within intron. Default: 3 bases
+	-spliceRegionIntronMax <int> : Set maximum number of bases for splice site region within intron. Default: 8 bases
+	-strict                      : Only use 'validated' transcripts (i.e. sequence has been checked). Default: false
+	-ud , -upDownStreamLen <int> : Set upstream downstream interval length (in bases)
 ```
 

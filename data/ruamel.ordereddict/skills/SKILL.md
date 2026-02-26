@@ -1,8 +1,9 @@
 ---
 name: ruamel.ordereddict
-description: `ruamel.ordereddict` provides a robust, C-based implementation of ordered and sorted dictionaries for Python.
+description: "ruamel.ordereddict provides a C-based implementation of ordered and sorted dictionaries with advanced positional manipulation and slicing capabilities. Use when user asks to maintain key insertion order, perform index-based dictionary operations, rename keys in place, or manage automatically sorted dictionaries."
 homepage: https://github.com/ruamel/ordereddict
 ---
+
 
 # ruamel.ordereddict
 

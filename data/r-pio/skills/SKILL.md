@@ -1,8 +1,9 @@
 ---
 name: r-pio
-description: R package pio (documentation from project home).
+description: The r-pio tool generates formatted, colored, and structured console output in R to improve the readability of scripts and packages. Use when user asks to print headers, display status messages, report warnings or errors, and create pretty object summaries in the R console.
 homepage: https://cran.r-project.org/web/packages/pio/index.html
 ---
+
 
 # r-pio
 

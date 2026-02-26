@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epistack
-description: the package is available on all platforms; click for details.
+description: This tool visualizes genomic signal distributions by creating coordinated plots that combine average profiles, heatmaps, and quantitative metrics centered on genomic regions of interest. Use when user asks to create epistack plots, visualize genomic tracks centered on anchors, or integrate ChIP-seq signal heatmaps with gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/epistack.html
 ---
+
 
 # bioconductor-epistack
 

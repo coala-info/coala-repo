@@ -1,8 +1,9 @@
 ---
 name: r-ggalt
-description: Skill for using the CRAN R package r-ggalt.
+description: The r-ggalt package provides specialized geoms, coordinate systems, and statistical transformations as extensions to the ggplot2 visualization framework. Use when user asks to create dumbbell plots, lollipop charts, horizon charts, or encircle specific data points in R.
 homepage: https://cloud.r-project.org/web/packages/ggalt/index.html
 ---
+
 
 # r-ggalt
 

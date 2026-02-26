@@ -3,7 +3,7 @@
 ## mcroni
 
 ### Tool Description
-The provided text does not contain help information for mcroni; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the container due to lack of disk space.
+Analyse the local genomic context of mcr-1.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mcroni:1.0.4--pyh5e36f6f_0
@@ -18,11 +18,18 @@ The provided text does not contain help information for mcroni; it contains erro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mcroni:1.0.4--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3551712308: no space left on device
+usage: mcroni [-h] (--fasta FASTA | --filelist FILELIST) --output OUTPUT [-v]
+              [--force | --append]
+
+Analyse the local genomic context of mcr-1.
+
+options:
+  -h, --help           show this help message and exit
+  --fasta FASTA        Fasta file
+  --filelist FILELIST  Alternatively: a list of fasta files
+  --output OUTPUT      Output prefix
+  -v, --verbose        verbose output
+  --force              Force overwriting of output files.
+  --append             Append to existing output files.
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: phyloflash
-description: phyloFlash is a specialized bioinformatics pipeline designed to extract, assemble, and analyze SSU rRNA sequences (16S/18S) directly from raw Illumina sequencing reads.
+description: phyloFlash is a bioinformatics pipeline that extracts, assembles, and analyzes SSU rRNA sequences directly from raw Illumina metagenomic reads. Use when user asks to perform rapid taxonomic screening, reconstruct full-length rRNA genes, or generate comparative reports of microbial community composition.
 homepage: https://github.com/HRGV/phyloFlash
 ---
+
 
 # phyloflash
 

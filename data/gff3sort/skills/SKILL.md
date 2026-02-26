@@ -1,8 +1,9 @@
 ---
 name: gff3sort
-description: gff3sort is a specialized Perl script designed to address a specific limitation in standard GFF3 sorting methods.
+description: gff3sort is a Perl script that sorts GFF3 files while maintaining the correct hierarchical order of parent and child features. Use when user asks to sort GFF3 files by coordinate, prepare GFF3 files for tabix indexing, or fix parent-child structural errors for genome browsers.
 homepage: https://github.com/billzt/gff3sort
 ---
+
 
 # gff3sort
 

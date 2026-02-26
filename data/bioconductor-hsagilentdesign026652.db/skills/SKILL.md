@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hsagilentdesign026652.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides SQLite-based annotation data for the Agilent Design 026652 microarray platform. Use when user asks to map manufacturer probe identifiers to biological identifiers like Entrez Gene IDs, Gene Symbols, RefSeq, or GO terms for human genomic data analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HsAgilentDesign026652.db.html
 ---
+
 
 # bioconductor-hsagilentdesign026652.db
 

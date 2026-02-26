@@ -1,8 +1,9 @@
 ---
 name: physher
-description: physher is a multi-algorithmic framework designed for high-performance phylogenetic analysis.
+description: physher is a multi-algorithmic framework designed for high-performance phylogenetic analysis and the estimation of divergence times and evolutionary rates. Use when user asks to estimate divergence times, perform variational inference for phylogenetics, or run maximum likelihood and MCMC evolutionary models.
 homepage: https://github.com/4ment/physher
 ---
+
 
 # physher
 

@@ -1,8 +1,9 @@
 ---
 name: bwa-mem2
-description: bwa-mem2 is the high-performance successor to the widely used bwa-mem algorithm.
+description: bwa-mem2 is a high-performance tool for aligning DNA sequences against a large reference genome using SIMD parallelization. Use when user asks to index a reference genome, map short-read sequencing data, or perform fast sequence alignment.
 homepage: https://github.com/bwa-mem2/bwa-mem2
 ---
+
 
 # bwa-mem2
 

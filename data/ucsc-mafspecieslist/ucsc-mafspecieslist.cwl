@@ -2,11 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mafSpeciesList
 label: ucsc-mafspecieslist
-doc: "The provided text does not contain help information as it reflects a container
-  engine error (FATAL: Unable to handle docker uri). Based on the tool name, this
-  utility is typically used to list species in a Multiple Alignment Format (MAF) file.\n
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "List species in a Multiple Alignment Format (MAF) file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_maf
+    type: File
+    doc: Input MAF file to extract species list from
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: ucsc-twobitmask
-description: `ucsc-twobitmask` (invoked via the command `twoBitMask`) is a high-performance utility from the UCSC Genome Browser "kent" toolset designed to modify `.2bit` files.
+description: ucsc-twobitmask applies hard or soft masking to DNA sequences in .2bit files based on provided genomic coordinates. Use when user asks to apply hard or soft masking to DNA sequences, generate masked genome versions, hard mask specific regions, soft mask specific regions, or add new masked regions to an existing .2bit file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-twobitmask
 

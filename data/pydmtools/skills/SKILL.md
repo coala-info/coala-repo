@@ -1,8 +1,9 @@
 ---
 name: pydmtools
-description: `pydmtools` is a high-performance Python extension written in C that provides rapid access to DNA methylation (DM) files.
+description: pydmtools is a high-performance Python extension that provides rapid access to DNA methylation files for reading and writing genomic data. Use when user asks to extract methylation statistics, retrieve base-level values, query genomic intervals, or create new DM files.
 homepage: https://github.com/ZhouQiangwei/pydmtools
 ---
+
 
 # pydmtools
 

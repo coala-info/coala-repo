@@ -1,8 +1,9 @@
 ---
 name: qrisk2
-description: The `qrisk2` skill implements the QRisk2-2014 cardiovascular risk prediction algorithm via the `qrisk2-2014` JavaScript library.
+description: The qrisk2 tool calculates a patient's 10-year risk of heart attack or stroke using the QRisk2-2014 cardiovascular risk prediction algorithm. Use when user asks to calculate cardiovascular risk scores, predict the likelihood of heart disease, or assess clinical risk factors using the QRisk2-2014 library.
 homepage: https://github.com/BlackPearSw/qrisk2-2014
 ---
+
 
 # qrisk2
 

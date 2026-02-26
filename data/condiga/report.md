@@ -3,7 +3,7 @@
 ## condiga
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'condiga'. It consists of system error messages related to container image conversion and disk space issues.
+ConDiGA: Contigs directed gene annotation for accurate protein sequence database construction in metaproteomics.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/condiga:0.2.2--pyhdfd78af_0
@@ -18,9 +18,32 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/bf2d4f3331129ebca2644c454fece9628d0367a3044dfa95bb6bac20e43e9f48: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/condiga:0.2.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3251592741: no space left on device
+Usage: condiga [OPTIONS]
+
+  ConDiGA: Contigs directed gene annotation for accurate protein sequence
+  database construction in metaproteomics.
+
+Options:
+  -c, --contigs PATH              path to the contigs file  [required]
+  -ta, --taxa PATH                path to the taxanomic classification results
+                                  file  [required]
+  -g, --genes PATH                path to the genes file  [required]
+  -cov, --coverages PATH          path to the contig coverages file
+                                  [required]
+  -as, --assembly-summary PATH    path to the assembly_summary.txt file
+                                  [required]
+  -ra, --rel-abundance FLOAT RANGE
+                                  minimum relative abundance cut-off
+                                  [default: 0.0001; 0<=x<=1]
+  -gc, --genome-coverage FLOAT RANGE
+                                  minimum genome coverage cut-off  [default:
+                                  0.001; 0<=x<=1]
+  -mt, --map-threshold FLOAT RANGE
+                                  minimum mapping length threshold cut-off
+                                  [default: 0.5; 0<=x<=1]
+  -t, --nthreads INTEGER          number of threads to use  [default: 8]
+  -o, --output PATH               path to the output folder  [required]
+  -v, --version                   Show the version and exit.
+  --help                          Show this message and exit.
 ```
 

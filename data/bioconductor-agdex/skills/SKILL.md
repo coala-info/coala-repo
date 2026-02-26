@@ -1,8 +1,9 @@
 ---
 name: bioconductor-agdex
-description: the package is available on all platforms; click for details.
+description: This tool evaluates the agreement of differential expression results across two distinct experiments, such as cross-species or cross-platform studies. Use when user asks to integrate transcriptome data, identify shared differentially expressed genes, or calculate the statistical significance of similarity between two biological comparisons.
 homepage: https://bioconductor.org/packages/release/bioc/html/AGDEX.html
 ---
+
 
 # bioconductor-agdex
 

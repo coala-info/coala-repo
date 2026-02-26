@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.celegans
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix C. elegans GeneChip. Use when user asks to analyze C. elegans microarray data, map probes to genes, or access platform design information for C. elegans.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.celegans.html
 ---
+
 
 # bioconductor-pd.celegans
 

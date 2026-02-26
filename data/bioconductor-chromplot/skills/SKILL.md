@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromplot
-description: the package is available on all platforms; click for details.
+description: This tool visualizes genome-wide data and annotations along linear chromosomes for any organism. Use when user asks to create idiograms, plot genomic elements like genes or SNPs, visualize data tracks as histograms or XY plots, and map synteny between species.
 homepage: https://bioconductor.org/packages/release/bioc/html/chromPlot.html
 ---
+
 
 # bioconductor-chromplot
 

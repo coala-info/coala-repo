@@ -1,8 +1,9 @@
 ---
 name: ezcharts
-description: ezcharts is a Python library designed to simplify the creation of interactive web-based visualizations and comprehensive HTML reports.
+description: ezcharts is a Python library for creating interactive web-based visualizations and structured HTML reports using eCharts, Bokeh, and Seaborn-style APIs. Use when user asks to create interactive charts, generate comprehensive data analysis reports, or build multi-section HTML layouts with embedded plots and tables.
 homepage: https://github.com/epi2me-labs/ezcharts
 ---
+
 
 # ezcharts
 

@@ -1,9 +1,9 @@
 # shmlast CWL Generation Report
 
-## shmlast
+## shmlast_rbl
 
 ### Tool Description
-The provided text does not contain help information for the tool 'shmlast'. It appears to be a fatal error log from a container runtime (Singularity/Apptainer) attempting to fetch the tool's image.
+Run Reciprocal Best Hits between the query and database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/shmlast:1.6--py_0
@@ -18,13 +18,69 @@ The provided text does not contain help information for the tool 'shmlast'. It a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shmlast:1.6--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: shmlast rbl [-h] -q QUERY -d DATABASE [-o OUTPUT]
+                   [--n_threads N_THREADS] [-e EVALUE_CUTOFF]
+                   [--action ACTION] [--profile]
+                   [--profile-output PROFILE_OUTPUT]
+
+Run Reciprocal Best Hits between the query and database.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q QUERY, --query QUERY
+                        FASTA file with query transcriptome.
+  -d DATABASE, --database DATABASE
+                        FASTA file with database proteins.
+  -o OUTPUT, --output OUTPUT
+                        File to place the CSV format CRBL hits. By default,
+                        QUERY.x.DATABASE.{c}rbl.csv.
+  --n_threads N_THREADS
+                        Number of threads to use.
+  -e EVALUE_CUTOFF, --evalue-cutoff EVALUE_CUTOFF
+                        Maximum evalue to accept.
+  --action ACTION       pydoit action. A common alternative is "clean."
+  --profile             If True, record CPU time.
+  --profile-output PROFILE_OUTPUT
+                        Filename for profile results.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## shmlast_crbl
+
+### Tool Description
+Run Conditional Reciprocal Best Hits between the query and database.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/shmlast:1.6--py_0
+- **Homepage**: https://github.com/camillescott/shmlast
+- **Package**: https://anaconda.org/channels/bioconda/packages/shmlast/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: shmlast crbl [-h] -q QUERY -d DATABASE [-o OUTPUT]
+                    [--n_threads N_THREADS] [-e EVALUE_CUTOFF]
+                    [--action ACTION] [--profile]
+                    [--profile-output PROFILE_OUTPUT]
+
+Run Conditional Reciprocal Best Hits between the query and database.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q QUERY, --query QUERY
+                        FASTA file with query transcriptome.
+  -d DATABASE, --database DATABASE
+                        FASTA file with database proteins.
+  -o OUTPUT, --output OUTPUT
+                        File to place the CSV format CRBL hits. By default,
+                        QUERY.x.DATABASE.{c}rbl.csv.
+  --n_threads N_THREADS
+                        Number of threads to use.
+  -e EVALUE_CUTOFF, --evalue-cutoff EVALUE_CUTOFF
+                        Maximum evalue to accept.
+  --action ACTION       pydoit action. A common alternative is "clean."
+  --profile             If True, record CPU time.
+  --profile-output PROFILE_OUTPUT
+                        Filename for profile results.
+```
+

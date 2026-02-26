@@ -1,8 +1,9 @@
 ---
 name: dampa
-description: DAMPA (Diversity Aware Metagenomic Panel Assignment) is a specialized pipeline for designing oligonucleotide probes used in targeted sequencing.
+description: "DAMPA designs and evaluates oligonucleotide probes for targeted sequencing using a pangenome graph approach to account for genetic diversity. Use when user asks to design a new probeset from genomic data, evaluate the coverage of existing probes against target genomes, or optimize probe sets for diverse populations."
 homepage: https://github.com/MultipathogenGenomics/dampa
 ---
+
 
 # dampa
 

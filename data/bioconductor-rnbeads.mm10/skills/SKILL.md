@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnbeads.mm10
-description: the package is available on all platforms; click for details.
+description: This package provides mm10 mouse genome annotation data for DNA methylation analysis within the RnBeads framework. Use when user asks to analyze mouse DNA methylation data, load mm10 genome annotations, or perform epigenomic profiling for the mm10 assembly.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RnBeads.mm10.html
 ---
+
 
 # bioconductor-rnbeads.mm10
 

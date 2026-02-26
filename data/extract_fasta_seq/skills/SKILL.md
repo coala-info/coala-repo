@@ -1,8 +1,9 @@
 ---
 name: extract_fasta_seq
-description: The `extract_fasta_seq` tool is a specialized utility for retrieving specific records from FASTA-formatted files.
+description: This tool retrieves specific sequences from FASTA files based on provided identifiers or query files. Use when user asks to extract specific records from a FASTA file, filter out sequences using a list of IDs, or isolate genes and scaffolds from a multi-FASTA file.
 homepage: https://github.com/linzhi2013/extract_fasta_seq
 ---
+
 
 # extract_fasta_seq
 

@@ -1,8 +1,9 @@
 ---
 name: rgi_conda_dev
-description: The Resistance Gene Identifier (RGI) is the primary bioinformatic tool for the Comprehensive Antibiotic Resistance Database (CARD).
+description: The Resistance Gene Identifier predicts antibiotic resistance genes from genomic and metagenomic data using the Comprehensive Antibiotic Resistance Database. Use when user asks to identify resistomes in assemblies, map raw reads to resistance genes, or predict the pathogen origin of resistance alleles.
 homepage: https://card.mcmaster.ca
 ---
+
 
 # rgi_conda_dev
 

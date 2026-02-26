@@ -1,8 +1,9 @@
 ---
 name: r-rismed
-description: R package rismed (documentation from project home).
+description: The r-rismed tool extracts bibliographic data and metadata from NCBI databases like PubMed directly into R. Use when user asks to search for medical literature, retrieve article metadata such as titles or abstracts, and perform bibliometric analysis.
 homepage: https://cran.r-project.org/web/packages/rismed/index.html
 ---
+
 
 # r-rismed
 

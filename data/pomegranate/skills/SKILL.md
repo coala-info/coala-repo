@@ -1,8 +1,9 @@
 ---
 name: pomegranate
-description: pomegranate is a library for probabilistic modeling that emphasizes modularity and speed.
+description: pomegranate is a library for probabilistic modeling that uses PyTorch to provide fast, modular, and GPU-accelerated implementations of distributions and graphical models. Use when user asks to build Hidden Markov Models, perform Bayesian classification, handle missing data with MaskedTensors, or fit complex probability distributions to data.
 homepage: https://github.com/jmschrei/pomegranate
 ---
+
 
 # pomegranate
 

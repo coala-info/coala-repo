@@ -1,8 +1,9 @@
 ---
 name: rampler
-description: Rampler is a high-performance tool designed for the targeted sampling of genomic sequences.
+description: Rampler is a tool for the targeted sampling and splitting of genomic sequences in FASTA and FASTQ formats. Use when user asks to subsample reads to a specific fold-coverage or split large sequence files into smaller fragments.
 homepage: https://github.com/rvaser/rampler
 ---
+
 
 # rampler
 

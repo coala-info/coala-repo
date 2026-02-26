@@ -1,8 +1,9 @@
 ---
 name: orthofinder
-description: OrthoFinder is a high-accuracy phylogenetic tool designed to automate the inference of orthologous gene groups (orthogroups) from protein sequences.
+description: OrthoFinder automates the inference of orthologous gene groups and phylogenetic trees from protein sequences. Use when user asks to identify orthogroups, infer rooted species trees, or scale ortholog analysis to large genomic datasets.
 homepage: https://github.com/OrthoFinder/OrthoFinder
 ---
+
 
 # orthofinder
 

@@ -3,7 +3,7 @@
 ## clearcut
 
 ### Tool Description
-A tool for phylogenetic tree reconstruction using the Relaxed Neighbor-Joining (RNJ) algorithm.
+Compute tree by supplying distance matrix via stdin
 
 ### Metadata
 - **Docker Image**: biocontainers/clearcut:v1.0.9-3-deb_cv1
@@ -18,75 +18,40 @@ A tool for phylogenetic tree reconstruction using the Relaxed Neighbor-Joining (
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/clearcut:v1.0.9-3-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: bin/chown: unpack to regular file: short write: write /tmp/build-temp-3832016190/rootfs/bin/chown: no space left on device
-```
+Usage: clearcut --in=<infilename> --out=<outfilename> [options]...
+GENERAL OPTIONS:
+  -h, --help         Display this information.
+  -V, --version      Print the version of this program.
+  -v, --verbose      More output. (Default: OFF)
+  -q, --quiet        Silent operation. (Default: ON)
+  -s, --seed=<seed>  Explicitly set the PRNG seed to a specific value.
+  -r, --norandom     Attempt joins deterministically.  (Default: OFF)
+  -S, --shuffle      Randomly shuffle the distance matrix.  (Default: OFF)
+  -N, --neighbor     Use traditional Neighbor-Joining algorithm. (Default: OFF)
 
+INPUT OPTIONS:
+  -I, --stdin        Read input from STDIN.
+  -d, --distance     Input file is a distance matrix. (Default: ON)
+  -a, --alignment    Input file is a set of aligned sequences. (Default: OFF)
+  -D, --DNA          Input alignment are DNA sequences.
+  -P, --protein      Input alignment are protein sequences.
 
-## Metadata
-- **Skill**: generated
+CORRECTION MODEL FOR COMPUTING DISTANCE MATRIX (Default: NO Correction):
+  -j, --jukes        Use Jukes-Cantor correction for computing distance matrix.
+  -k, --kimura       Use Kimura correction for distance matrix.
 
-## clearcut_train_flows_rf.py
+OUTPUT OPTIONS:
+  -O, --stdout           Output tree to STDOUT.
+  -m, --matrixout=<file> Output distance matrix to specified file.
+  -n, --ntrees=<n>       Output n trees.  (Default: 1)
+  -e, --expblen          Exponential notation for branch lengths. (Default: OFF)
+  -E, --expdist          Exponential notation in distance output. (Default: OFF)
 
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It consists of system log messages indicating a failure to build or extract a container image due to insufficient disk space.
+EXAMPLES:
+  Compute tree by supplying distance matrix via stdin:
+  clearcut --distance < distances.txt > treefile.tre
 
-### Metadata
-- **Docker Image**: biocontainers/clearcut:v1.0.9-3-deb_cv1
-- **Homepage**: https://github.com/DavidJBianco/Clearcut
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/clearcut:v1.0.9-3-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: bin/chown: unpack to regular file: short write: write /tmp/build-temp-1804004373/rootfs/bin/chown: no space left on device
-```
-
-## clearcut_train_flows_iforest.py
-
-### Tool Description
-The provided text does not contain help documentation or usage instructions; it contains system error messages regarding a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: biocontainers/clearcut:v1.0.9-3-deb_cv1
-- **Homepage**: https://github.com/DavidJBianco/Clearcut
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/clearcut:v1.0.9-3-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: bin/chown: unpack to regular file: short write: write /tmp/build-temp-4280513724/rootfs/bin/chown: no space left on device
-```
-
-## clearcut_analyze_flows.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error logs related to a container runtime (Singularity/Apptainer) failure.
-
-### Metadata
-- **Docker Image**: biocontainers/clearcut:v1.0.9-3-deb_cv1
-- **Homepage**: https://github.com/DavidJBianco/Clearcut
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/clearcut:v1.0.9-3-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: bin/chown: unpack to regular file: short write: write /tmp/build-temp-2893388959/rootfs/bin/chown: no space left on device
+  Compute tree by supplying an alignment of DNA sequences from a file:
+  clearcut --alignment --DNA --in=alignment.txt --out=treefile.tre
 ```
 

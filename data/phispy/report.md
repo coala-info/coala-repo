@@ -3,10 +3,10 @@
 ## phispy
 
 ### Tool Description
-PhiSpy is a tool for identifying prophages in bacterial genomes. (Note: The provided help text contains only container runtime error messages and no usage information; arguments could not be extracted from the input.)
+PhiSpy is a tool for identifying prophages in bacterial genomes. It combines similarity searches and several statistical characteristics of prophage regions to identify prophages.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/phispy:4.2.21--py310h0dbaff4_2
+- **Docker Image**: quay.io/biocontainers/phispy:4.2.21--py39h2de1943_8
 - **Homepage**: https://github.com/linsalrob/PhiSpy
 - **Package**: https://anaconda.org/channels/bioconda/packages/phispy/overview
 - **Validation**: PASS
@@ -18,33 +18,13 @@ PhiSpy is a tool for identifying prophages in bacterial genomes. (Note: The prov
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phispy:4.2.21--py310h0dbaff4_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/phispy:4.2.21--py39h2de1943_8' locally
+4.2.21--py39h2de1943_8: Pulling from biocontainers/phispy
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+2467eb119f43: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3531855697: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## phispy_PhiSpy.py
-
-### Tool Description
-PhiSpy is a tool for identifying prophages in bacterial genomes. (Note: The provided help text contains only container execution errors and does not list specific arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phispy:4.2.21--py310h0dbaff4_2
-- **Homepage**: https://github.com/linsalrob/PhiSpy
-- **Package**: https://anaconda.org/channels/bioconda/packages/phispy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phispy:4.2.21--py310h0dbaff4_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

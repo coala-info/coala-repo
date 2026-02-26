@@ -3,7 +3,7 @@
 ## ucsc-pslpartition
 
 ### Tool Description
-The provided text does not contain help information as it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to fetch the image. pslPartition is a UCSC tool used to partition PSL files into smaller sets.
+Split a PSL file into smaller files based on record counts or other criteria.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-pslpartition:482--h0b57e2e_0
@@ -18,13 +18,16 @@ The provided text does not contain help information as it is an error log from a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-pslpartition:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-pslpartition:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-pslpartition
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+105549b3f77a: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2097216764: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

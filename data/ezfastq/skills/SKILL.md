@@ -1,8 +1,9 @@
 ---
 name: ezfastq
-description: `ezfastq` is a specialized utility for bioinformaticians to automate the discovery and organization of FASTQ files.
+description: ezfastq automates the discovery and organization of FASTQ files by scanning directories for specific sample names. Use when user asks to extract specific samples from a data repository, organize sequencing files into a destination directory, or stage FASTQ files using symbolic links.
 homepage: https://github.com/bioforensics/ezfastq/
 ---
+
 
 # ezfastq
 

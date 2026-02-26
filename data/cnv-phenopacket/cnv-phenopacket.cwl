@@ -2,15 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: cnv-phenopacket
 label: cnv-phenopacket
-doc: "A tool for converting CNV (Copy Number Variation) data to Phenopacket format.
-  (Note: The provided text is a container runtime error log and does not contain the
-  standard help documentation or argument list).\n\nTool homepage: https://github.com/conda-forge/cnv-phenopacket-feedstock"
-inputs: []
+doc: "Convert TSV metadata to Phenopacket JSON\n\nTool homepage: https://github.com/conda-forge/cnv-phenopacket-feedstock"
+inputs:
+  - id: input
+    type: File
+    doc: Input TSV metadata file name
+    inputBinding:
+      position: 101
+      prefix: --input
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type:
+      - 'null'
+      - File
+    doc: Output Phenopacket JSON file name
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/cnv-phenopacket:1.0.2
-stdout: cnv-phenopacket.out

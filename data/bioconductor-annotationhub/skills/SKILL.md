@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotationhub
-description: the package is available on all platforms; click for details.
+description: This tool provides a client interface to discover and retrieve a vast collection of genomic resources from Bioconductor's AnnotationHub web service. Use when user asks to retrieve genomic annotations, search for OrgDb objects, download Ensembl GTF or FASTA files, or obtain chain files for liftOver.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationHub.html
 ---
+
 
 # bioconductor-annotationhub
 

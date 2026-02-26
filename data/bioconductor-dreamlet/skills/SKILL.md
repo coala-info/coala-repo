@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dreamlet
-description: the package is available on all platforms; click for details.
+description: This tool performs differential expression analysis on single-cell RNA-seq data using linear mixed models on pseudobulk counts. Use when user asks to aggregate single-cell data to pseudobulk, perform variance partitioning, conduct differential expression analysis with random effects, or borrow information across cell types using mashr.
 homepage: https://bioconductor.org/packages/release/bioc/html/dreamlet.html
 ---
+
 
 # bioconductor-dreamlet
 

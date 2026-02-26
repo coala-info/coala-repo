@@ -1,8 +1,9 @@
 ---
 name: biotradis
-description: Bio-Tradis is a specialized toolkit designed for the processing and analysis of transposon insertion sequencing data.
+description: Bio-Tradis is a toolkit for processing and analyzing transposon insertion sequencing data to identify gene essentiality and compare growth conditions. Use when user asks to run a complete TraDIS analysis pipeline, filter or remove transposon tags, generate insertion site plots, or quantify gene insertions.
 homepage: https://github.com/sanger-pathogens/Bio-Tradis
 ---
+
 
 # biotradis
 

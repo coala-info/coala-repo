@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scdesign3
-description: the package is available on all platforms; click for details.
+description: scDesign3 is a statistical simulator for generating realistic single-cell and spatial omics data. Use when user asks to simulate single-cell datasets, generate synthetic spatial omics data, perform power analysis, or benchmark computational methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/scDesign3.html
 ---
+
 
 # bioconductor-scdesign3
 

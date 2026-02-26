@@ -1,8 +1,9 @@
 ---
 name: r-readmzxmldata
-description: Functions for reading mass spectrometry data in mzXML format.</p>
+description: The readMzXmlData package extracts mass spectrometry spectral data and metadata from mzXML files. Use when user asks to read mzXML files, import mass spectrometry data from a directory, or extract spectral information for MALDIquant analysis.
 homepage: https://cloud.r-project.org/web/packages/readMzXmlData/index.html
 ---
+
 
 # r-readmzxmldata
 

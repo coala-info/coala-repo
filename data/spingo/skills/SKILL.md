@@ -1,8 +1,9 @@
 ---
 name: spingo
-description: Spingo is a specialized orchestration toolset designed to simplify the deployment of Spinnaker on GCP.
+description: Spingo is an orchestration toolset that automates the deployment and management of Spinnaker on Google Cloud Platform using Terraform, Bash, and HashiCorp Vault. Use when user asks to deploy Spinnaker on GCP, manage deployment secrets via Vault, or configure Spinnaker infrastructure using Halyard.
 homepage: https://github.com/homedepot/spingo
 ---
+
 
 # spingo
 

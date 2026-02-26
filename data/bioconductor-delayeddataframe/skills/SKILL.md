@@ -1,8 +1,9 @@
 ---
 name: bioconductor-delayeddataframe
-description: the package is available on all platforms; click for details.
+description: This tool manages large-scale genomic data frames by keeping columns on-disk to minimize memory usage while providing a standard DataFrame interface. Use when user asks to handle large annotation files, perform delayed subsetting on genomic data, or manage data frames with HDF5 or GDS backends.
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedDataFrame.html
 ---
+
 
 # bioconductor-delayeddataframe
 

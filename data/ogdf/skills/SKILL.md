@@ -1,8 +1,9 @@
 ---
 name: ogdf
-description: OGDF (Open Graph Drawing Framework) is a comprehensive C++ library providing high-performance algorithms and data structures for graph theory and automatic graph visualization.
+description: OGDF is a C++ library providing high-performance algorithms and data structures for graph theory and automatic graph visualization. Use when user asks to integrate graph drawing algorithms into C++ projects, perform planarization or crossing minimization, generate specialized layouts like Sugiyama or force-directed drawings, and handle graph input/output operations.
 homepage: https://github.com/ogdf/ogdf
 ---
+
 
 # ogdf
 

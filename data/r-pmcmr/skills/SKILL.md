@@ -1,8 +1,9 @@
 ---
 name: r-pmcmr
-description: R package pmcmr (documentation from project home).
+description: This tool performs non-parametric pairwise multiple comparisons of mean rank sums to identify specific group differences after significant omnibus tests. Use when user asks to perform post-hoc tests following Kruskal-Wallis, Friedman, or Quade tests, conduct Dunn's or Nemenyi tests, or compare multiple groups with non-normal data.
 homepage: https://cran.r-project.org/web/packages/pmcmr/index.html
 ---
+
 
 # r-pmcmr
 

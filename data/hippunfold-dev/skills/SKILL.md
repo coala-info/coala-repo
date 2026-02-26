@@ -1,8 +1,9 @@
 ---
 name: hippunfold-dev
-description: The `hippunfold-dev` skill provides a specialized workflow for modeling the topological structure of the human hippocampus.
+description: This tool models the topological structure of the human hippocampus by transforming 3D anatomy into a flattened 2D coordinate system for high-precision surface analysis. Use when user asks to unfold hippocampal anatomy, perform subfield-specific morphometry, or map quantitative MRI data across hippocampal layers.
 homepage: https://github.com/khanlab/hippunfold
 ---
+
 
 # hippunfold-dev
 

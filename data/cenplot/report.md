@@ -3,29 +3,38 @@
 ## cenplot
 
 ### Tool Description
-A tool for plotting centromeric regions (Note: The provided help text contains only container build error logs and no usage information).
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/cenplot:0.1.5--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/cenplot:0.1.6--pyhdfd78af_0
 - **Homepage**: https://github.com/logsdon-lab/CenPlot
 - **Package**: https://anaconda.org/channels/bioconda/packages/cenplot/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cenplot/overview
-- **Total Downloads**: 615
+- **Total Downloads**: 624
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/logsdon-lab/CenPlot
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cenplot:0.1.5--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/getent: unpack to regular file: short write: write /tmp/build-temp-3371380714/rootfs/usr/bin/getent: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/cenplot", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/usr/local/lib/python3.14/site-packages/cenplot/main.py", line 26, in main
+    raise ValueError(f"Not a valid command ({args.cmd})")
+ValueError: Not a valid command (None)
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: qiime
-description: QIIME 2 (Quantitative Insights Into Microbial Ecology) is a decentralized microbiome bioinformatics platform.
+description: QIIME 2 is a microbiome bioinformatics platform used to analyze high-throughput community sequencing data through a plugin-based command line interface. Use when user asks to import sequencing data, denoise reads into feature tables, perform taxonomic classification, or calculate diversity metrics.
 homepage: https://github.com/YongxinLiu/QIIME2ChineseManual
 ---
+
 
 # qiime
 

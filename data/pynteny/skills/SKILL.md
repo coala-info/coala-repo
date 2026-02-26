@@ -1,8 +1,9 @@
 ---
 name: pynteny
-description: Pynteny is a bioinformatics tool designed to perform synteny-aware searches within sequence databases.
+description: "Pynteny performs synteny-aware searches in sequence databases to identify specific architectural arrangements of genes. Use when user asks to search for metabolic pathways or operons, define gene orientations and distances, or build a searchable peptide database from assembly data."
 homepage: http://github.com/robaina/Pynteny
 ---
+
 
 # pynteny
 

@@ -1,8 +1,9 @@
 ---
 name: fusepy
-description: `fusepy` is a lightweight, single-file Python module that provides ctypes bindings for FUSE.
+description: "fusepy provides Python bindings for FUSE to create custom filesystems in user space by mapping system calls to Python methods. Use when user asks to implement the Operations interface, mount virtual drives, or create filesystems in Python."
 homepage: http://github.com/terencehonles/fusepy
 ---
+
 
 # fusepy
 

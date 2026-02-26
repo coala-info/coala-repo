@@ -1,8 +1,9 @@
 ---
 name: sipros
-description: Sipros is a specialized bioinformatics toolkit designed for stable-isotope mass spectrometry-based metaproteomics.
+description: Sipros is a bioinformatics toolkit for identifying and quantifying proteins in stable-isotope mass spectrometry-based metaproteomics. Use when user asks to convert RAW files to FT2 format, perform unlabeled protein searches, or quantify isotopic enrichment through stable isotope probing.
 homepage: https://github.com/thepanlab/Sipros4
 ---
+
 
 # sipros
 

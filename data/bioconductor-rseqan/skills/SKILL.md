@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rseqan
-description: the package is available on all platforms; click for details.
+description: This package provides the SeqAn C++ library headers for biological sequence analysis in R. Use when user asks to perform sequence alignment, search for genomic patterns, or integrate SeqAn C++ functionality into R-based bioinformatics workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/RSeqAn.html
 ---
+
 
 # bioconductor-rseqan
 

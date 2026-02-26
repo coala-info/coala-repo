@@ -1,8 +1,9 @@
 ---
 name: ribocode
-description: RiboCode is a computational framework designed to detect actively translated regions by analyzing the 3-nucleotide periodicity of ribosome-protected fragments (RPFs).
+description: RiboCode identifies actively translated regions and non-canonical open reading frames by analyzing the 3-nucleotide periodicity of ribosome-protected fragments. Use when user asks to detect translated ORFs, perform P-site calibration, or identify non-canonical translation products like uORFs from Ribo-seq data.
 homepage: https://github.com/xryanglab/RiboCode
 ---
+
 
 # ribocode
 

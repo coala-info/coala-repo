@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromhmmdata
-description: The package includes data for two versions of the genome of humans and mice.
+description: The chromhmmData package provides essential auxiliary files, such as chromosome lengths and genomic coordinates, required to run the ChromHMM software for human and mouse assemblies. Use when user asks to access chromosome size files, retrieve genomic feature coordinates, or locate transcription start and end site anchors for hg18, hg19, mm9, or mm10.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chromhmmData.html
 ---
+
 
 # bioconductor-chromhmmdata
 

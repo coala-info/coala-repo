@@ -1,8 +1,9 @@
 ---
 name: perl-bioperl
-description: BioPerl is a modular, object-oriented framework for computational biology.
+description: BioPerl is a modular framework for processing, transforming, and analyzing biological data using the Perl programming language. Use when user asks to parse sequence files, convert between biological file formats, extract features from genomic annotations, or process search results from tools like BLAST.
 homepage: http://metacpan.org/pod/BioPerl
 ---
+
 
 # perl-bioperl
 

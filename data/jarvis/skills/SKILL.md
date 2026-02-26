@@ -1,8 +1,9 @@
 ---
 name: jarvis
-description: JARVIS (Genomic Assembler with Reference-free Variation Information Storage) is a specialized tool designed for the lossless compression of DNA sequences.
+description: "JARVIS is a specialized tool designed for the reference-free lossless compression and decompression of DNA sequences. Use when user asks to compress genomic sequences, decompress .jc files, or estimate sequence entropy."
 homepage: https://github.com/cobilab/jarvis
 ---
+
 
 # jarvis
 

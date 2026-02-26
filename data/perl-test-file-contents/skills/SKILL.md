@@ -1,8 +1,9 @@
 ---
 name: perl-test-file-contents
-description: The `Test::File::Contents` Perl module is a testing utility designed to streamline the validation of file data.
+description: This Perl module provides a declarative interface for validating and comparing the contents of files within test scripts. Use when user asks to verify file contents match a string, check files against regular expressions, or compare two files for identity.
 homepage: http://search.cpan.org/dist/Test-File-Contents/
 ---
+
 
 # perl-test-file-contents
 

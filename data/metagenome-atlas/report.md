@@ -1,9 +1,9 @@
 # metagenome-atlas CWL Generation Report
 
-## metagenome-atlas
+## metagenome-atlas_atlas
 
 ### Tool Description
-Metagenome-atlas is a tool for metagenome analysis. (Note: The provided text contains container execution logs and error messages rather than help documentation; therefore, no arguments could be extracted.)
+ATLAS - workflows for assembly, annotation, and genomic binning of metagenomic and metatranscriptomic data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metagenome-atlas:19.0.1--pyhdfd78af_0
@@ -12,35 +12,27 @@ Metagenome-atlas is a tool for metagenome analysis. (Note: The provided text con
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metagenome-atlas/overview
-- **Total Downloads**: 127.0K
+- **Total Downloads**: 127.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/metagenome-atlas/atlas
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metagenome-atlas:19.0.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2507442560: no space left on device
-```
+Usage: atlas [OPTIONS] COMMAND [ARGS]...
 
+  ATLAS - workflows for assembly, annotation, and genomic binning of
+  metagenomic and metatranscriptomic data.
 
-## Metadata
-- **Skill**: generated
+  For updates and reporting issues, see: https://github.com/metagenome-
+  atlas/atlas
 
-## metagenome-atlas_atlas
+Options:
+  --version   Show the version and exit.
+  -h, --help  Show this message and exit.
 
-### Tool Description
-Metagenome-atlas: a three-command pipeline for metagenome analysis.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metagenome-atlas:19.0.1--pyhdfd78af_0
-- **Homepage**: https://github.com/metagenome-atlas
-- **Package**: https://anaconda.org/channels/bioconda/packages/metagenome-atlas/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metagenome-atlas:19.0.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3863920766: no space left on device
+Commands:
+  download  download reference files (need ~50GB)
+  init      prepare configuration file and sample table for atlas run
+  run       run atlas main workflow
 ```
 

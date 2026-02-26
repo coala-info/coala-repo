@@ -3,7 +3,7 @@
 ## consensusfixer
 
 ### Tool Description
-ConsensusFixer is a tool designed to correct errors in consensus sequences. (Note: The provided help text contains only system logs and an execution error; no specific usage or arguments were found in the input text.)
+ConsensusFixer is a tool designed to compute a consensus sequence from a BAM file and a reference FASTA file, taking into account various parameters like minimum coverage and frequency thresholds.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/consensusfixer:0.4--2
@@ -12,24 +12,26 @@ ConsensusFixer is a tool designed to correct errors in consensus sequences. (Not
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/consensusfixer/overview
-- **Total Downloads**: 11.4K
+- **Total Downloads**: 11.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cbg-ethz/ConsensusFixer
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 14:31:24  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "consensusfixer": executable file not found in $PATH
+Unable to find image 'quay.io/biocontainers/consensusfixer:0.4--2' locally
+0.4--2: Pulling from biocontainers/consensusfixer
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+60819c1dae2a: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1392730782: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

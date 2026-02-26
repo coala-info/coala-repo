@@ -2,10 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: garli-mpi
 label: garli-mpi
-doc: 'GARLI (Genetic Algorithm for Rapid Likelihood Inference) is a program for phylogenetic
-  inference using the maximum likelihood criterion. (Note: The provided help text
-  contains system error messages and does not list specific arguments).'
-inputs: []
+doc: This MPI version is for doing a large number of search replicates or 
+  bootstrap replicates, each using the SAME config file. The results will be 
+  exactly identical to those obtained by executing the config file a comparable 
+  number of times with the serial version of the program.
+inputs:
+  - id: num_jobs
+    type: int
+    doc: Number of times to execute config file
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

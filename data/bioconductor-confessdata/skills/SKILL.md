@@ -1,8 +1,9 @@
 ---
 name: bioconductor-confessdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for the CONFESS R package to support single-cell image analysis and cell cycle estimation. Use when user asks to access sample data for the CONFESS package, load example single-cell images, or follow tutorials for cell cycle progression analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CONFESSdata.html
 ---
+
 
 # bioconductor-confessdata
 

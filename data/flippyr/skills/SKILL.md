@@ -1,8 +1,9 @@
 ---
 name: flippyr
-description: `flippyr` is a specialized tool for genomic data preprocessing that ensures PLINK binary filesets are correctly oriented and matched to a reference genome.
+description: "flippyr aligns PLINK binary filesets to a reference genome by identifying and correcting strand-flipped variants and allele mismatches. Use when user asks to orient genomic data to a reference, identify strand-flipped SNPs, or prepare PLINK files for imputation."
 homepage: https://github.com/BEFH/flippyr
 ---
+
 
 # flippyr
 

@@ -3,7 +3,7 @@
 ## rmap
 
 ### Tool Description
-The provided text is a container build error log and does not contain help documentation or usage instructions for the tool.
+Map fastq reads to a reference genome.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rmap:2.1--0
@@ -18,33 +18,22 @@ The provided text is a container build error log and does not contain help docum
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rmap:2.1--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: rmap [OPTIONS] <fastq-reads-file>
 
+Options:
+  -o, -output     output file name 
+  -c, -chrom      chromosomes in FASTA file or dir 
+  -T, -start      index of first read to map 
+  -N, -number     number of reads to map 
+  -s, -suffix     suffix of chrom files (assumes dir provided) 
+  -m, -mismatch   maximum allowed mismatches 
+  -a, -ambiguous  file to write names of ambiguously mapped reads 
+  -M, -max-map    maximum allowed mappings for a read 
+  -C, -clip       clip the specified adaptor 
+  -v, -verbose    print more run info 
 
-## Metadata
-- **Skill**: generated
-
-## rmap_rmapi
-
-### Tool Description
-The provided text does not contain help information for the tool; it appears to be a container build error log from Apptainer/Singularity.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rmap:2.1--0
-- **Homepage**: https://github.com/juruen/rmapi
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rmap:2.1--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Help options:
+  -?, -help       print this help message 
+      -about      print about message
 ```
 

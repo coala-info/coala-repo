@@ -1,8 +1,9 @@
 ---
 name: perl-variable-magic
-description: This skill provides guidance on using the `Variable::Magic` Perl module to attach "magic" behaviors to variables.
+description: This tool provides a lightweight mechanism to attach custom behaviors and callbacks to Perl variables by intercepting events like fetching, storing, or clearing. Use when user asks to attach magic to variables, intercept variable access or modification, create reactive data structures, or implement performant alternatives to the Perl tie mechanism.
 homepage: http://search.cpan.org/dist/Variable-Magic/
 ---
+
 
 # perl-variable-magic
 

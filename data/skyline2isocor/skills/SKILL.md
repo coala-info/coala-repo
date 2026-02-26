@@ -1,8 +1,9 @@
 ---
 name: skyline2isocor
-description: The `skyline2isocor` tool serves as a specialized data converter for metabolic flux analysis.
+description: The skyline2isocor tool converts Skyline transition results into the specific tab-delimited format required for IsoCor metabolic flux analysis. Use when user asks to reformat Skyline exports for isotope natural abundance correction, convert peak area data for IsoCor, or automate metabolic flux data preparation.
 homepage: https://pypi.org/project/skyline2isocor/
 ---
+
 
 # skyline2isocor
 

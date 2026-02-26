@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.athaliana.tair.04232008
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Arabidopsis thaliana based on the 2008 TAIR snapshot as a BSgenome object for R. Use when user asks to access Arabidopsis genome sequences, extract specific subsequences, search for motifs, or calculate nucleotide frequencies for the TAIR 04-23-2008 version.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Athaliana.TAIR.04232008.html
 ---
+
 
 # bioconductor-bsgenome.athaliana.tair.04232008
 

@@ -1,8 +1,9 @@
 ---
 name: piper
-description: Piper (pypiper) is a specialized Python toolkit designed to "glue" together command-line tools into robust, restartable pipelines.
+description: Piper is a Python toolkit for building and managing restartable command-line pipelines. Use when user asks to build robust workflows, manage pipeline checkpoints, or resume interrupted computational tasks.
 homepage: https://github.com/databio/pypiper/
 ---
+
 
 # piper
 

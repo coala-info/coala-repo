@@ -1,8 +1,9 @@
 ---
 name: perl-http-cookies
-description: The `perl-http-cookies` skill enables the management of "cookie jars" for Perl applications.
+description: This tool manages HTTP cookie jars for Perl applications to maintain stateful web interactions and user sessions. Use when user asks to manage cookies, maintain persistent web sessions, or simulate browser behavior in Perl scripts.
 homepage: https://github.com/libwww-perl/http-cookies
 ---
+
 
 # perl-http-cookies
 

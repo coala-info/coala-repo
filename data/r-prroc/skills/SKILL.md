@@ -1,8 +1,9 @@
 ---
 name: r-prroc
-description: R package prroc (documentation from project home).
+description: The r-prroc tool computes and visualizes Precision-Recall and ROC curves for evaluating binary classification models in R. Use when user asks to calculate area under the curve, generate PR or ROC plots, handle weighted data or soft labels, and perform non-linear interpolation for precision-recall analysis.
 homepage: https://cran.r-project.org/web/packages/prroc/index.html
 ---
+
 
 # r-prroc
 

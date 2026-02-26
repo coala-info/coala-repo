@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicontactsdata
-description: the package is available on all platforms; click for details.
+description: This package provides programmatic access to processed Hi-C and Micro-C datasets for testing and demonstration. Use when user asks to download sample genomic interaction data, access example Hi-C files, or retrieve datasets for benchmarking Hi-C analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HiContactsData.html
 ---
+
 
 # bioconductor-hicontactsdata
 

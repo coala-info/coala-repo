@@ -1,9 +1,9 @@
 # perl-bioperl-core CWL Generation Report
 
-## perl-bioperl-core
+## perl-bioperl-core_perldoc
 
 ### Tool Description
-BioPerl is a community effort to produce Perl modules which are useful in biology. This package provides the core modules.
+Look up Perl documentation in Pod format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-bioperl-core:1.007002--pl526_0
@@ -12,21 +12,61 @@ BioPerl is a community effort to produce Perl modules which are useful in biolog
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bioperl-core/overview
-- **Total Downloads**: 377.6K
+- **Total Downloads**: 378.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:11:20  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bioperl-core:1.007002--pl526_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:fc904c7e5e49d7ea89978933fe0bb488378f9efb22060ccd4bdc39df5f30e798: unpack entry: usr/local/lib/libffi.so.6.0.4: unpack to regular file: short write: write /tmp/build-temp-1979121851/rootfs/usr/local/lib/libffi.so.6.0.4: no space left on device
+perldoc [options] PageName|ModuleName|ProgramName|URL...
+perldoc [options] -f BuiltinFunction
+perldoc [options] -q FAQRegex
+perldoc [options] -v PerlVariable
+
+Options:
+    -h   Display this help message
+    -V   Report version
+    -r   Recursive search (slow)
+    -i   Ignore case
+    -t   Display pod using pod2text instead of Pod::Man and groff
+             (-t is the default on win32 unless -n is specified)
+    -u   Display unformatted pod text
+    -m   Display module's file in its entirety
+    -n   Specify replacement for groff
+    -l   Display the module's file name
+    -U   Don't attempt to drop privs for security
+    -F   Arguments are file names, not modules (implies -U)
+    -D   Verbosely describe what's going on
+    -T   Send output to STDOUT without any pager
+    -d output_filename_to_send_to
+    -o output_format_name
+    -M FormatterModuleNameToUse
+    -w formatter_option:option_value
+    -L translation_code   Choose doc translation (if any)
+    -X   Use index if present (looks for pod.idx at .../../lib/5.26.2/x86_64-linux-thread-multi)
+    -q   Search the text of questions (not answers) in perlfaq[1-9]
+    -f   Search Perl built-in functions
+    -a   Search Perl API
+    -v   Search predefined Perl variables
+
+PageName|ModuleName|ProgramName|URL...
+         is the name of a piece of documentation that you want to look at. You
+         may either give a descriptive name of the page (as in the case of
+         `perlfunc') the name of a module, either like `Term::Info' or like
+         `Term/Info', or the name of a program, like `perldoc', or a URL
+         starting with http(s).
+
+BuiltinFunction
+         is the name of a perl function.  Will extract documentation from
+         `perlfunc' or `perlop'.
+
+FAQRegex
+         is a regex. Will search perlfaq[1-9] for and extract any
+         questions that match.
+
+Any switches in the PERLDOC environment variable will be used before the
+command line arguments.  The optional pod index file contains a list of
+filenames, one per line.
+                                                       [Perldoc v3.28]
 ```
 
-
-## Metadata
-- **Skill**: generated

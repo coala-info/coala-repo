@@ -1,50 +1,49 @@
 # pybiolib CWL Generation Report
 
-## pybiolib
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system logs and a fatal error message regarding a container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pybiolib:1.2.1882--pyhdfd78af_0
-- **Homepage**: https://github.com/biolib
-- **Package**: https://anaconda.org/channels/bioconda/packages/pybiolib/overview
-- **Validation**: PASS
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pybiolib/overview
-- **Total Downloads**: 203.4K
-- **Last updated**: 2026-02-13
-- **GitHub**: N/A
-- **Stars**: N/A
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pybiolib:1.2.1882--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
 ## pybiolib_biolib
 
 ### Tool Description
-BioLib command line tool (Note: The provided text appears to be a system log rather than help text, so no arguments could be extracted).
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/pybiolib:1.2.1882--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/pybiolib:1.3.81--pyhdfd78af_0
 - **Homepage**: https://github.com/biolib
 - **Package**: https://anaconda.org/channels/bioconda/packages/pybiolib/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/pybiolib/overview
+- **Total Downloads**: 203.8K
+- **Last updated**: 2026-02-13
+- **GitHub**: N/A
+- **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pybiolib:1.2.1882--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: biolib [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --version   Show the version and exit.
+  -h, --help  Show this message and exit.
+
+Commands:
+  data-record  Data Records
+  index        Manage Indexes
+  login        Login your to BioLib account with web browser
+  logout       Logout of your BioLib account
+  push         Push an application to BioLib
+  run          Run an application on BioLib.
+  runtime      Commands available within a BioLib runtime
+  sdk          Advanced commands for developers
+  whoami       Prints out the full name of the user logged in
 ```
 

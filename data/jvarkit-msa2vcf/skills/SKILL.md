@@ -1,8 +1,9 @@
 ---
 name: jvarkit-msa2vcf
-description: The `jvarkit-msa2vcf` tool is a specialized utility for transforming sequence alignments into variant call format (VCF).
+description: This tool converts multiple sequence alignments into variant call format files by treating each sequence as a sample relative to a reference. Use when user asks to convert FASTA or CLUSTALW alignments to VCF, identify variants from a consensus sequence, or generate gVCF-style output including invariant sites.
 homepage: https://lindenb.github.io/jvarkit/MsaToVcf.html
 ---
+
 
 # jvarkit-msa2vcf
 

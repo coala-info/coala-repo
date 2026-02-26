@@ -1,9 +1,9 @@
 # pisad CWL Generation Report
 
-## pisad
+## pisad_run.sh
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'pisad'. It appears to be a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space.
+Runs the PISAD pipeline.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0
@@ -18,95 +18,88 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a73ecabff707eb700c0a07642ba025ea5cf691ec32657ae9e74d9036ef155f66: unpack entry: usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: unpack to regular file: short write: write /tmp/build-temp-2942592790/rootfs/usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: no space left on device
+Usage: /usr/local/bin/run.sh -i <input_files> -m <heterozygosity> [options...]
+Required parameters:
+  -i: Input files (space-separated *.fastq or *.fastq.gz files, no quotes needed)
+  -m: Heterozygosity parameter (0 for <1.2%, 1 otherwise)
+Optional parameters:
+  -k: kmer-size (default: 21)
+  -t: thread (default: 8)
+  -o: Output prefix (defaults: first input file's prefix)
+  -d1: Directory for dsk files (default: current directory)
+  -d2: Directory for output plot (default: current directory)
+  -d3: Directory for SNP output (default: current directory)
+  -h: Show this help message
+Advanced optional parameters:
+  -est: est_kmercov (default: Estimated by algorithm)
+  -cutoff: cutoff threshold (defaults: 0.95)
+  -het: Initial heterozygosity (defaults: 0/0.12)
+  -rho: Initial rho value (defaults: 0.2)
+  -setleft: Left boundary of the heterozygous region (defaults: Estimated by algorithm)
+  -setright: Right boundary of the heterozygous region (defaults: Estimated by algorithm)
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## pisad_run.sh
-
-### Tool Description
-The provided text is a system log indicating a container build failure (no space left on device) and does not contain help text, usage instructions, or argument definitions for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0
-- **Homepage**: https://github.com/ZhantianXu/PISAD
-- **Package**: https://anaconda.org/channels/bioconda/packages/pisad/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a73ecabff707eb700c0a07642ba025ea5cf691ec32657ae9e74d9036ef155f66: unpack entry: usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: unpack to regular file: short write: write /tmp/build-temp-2219236696/rootfs/usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: no space left on device
-```
 
 ## pisad_create
 
 ### Tool Description
-Phylogenetic Inference from Single-cell ATAC-seq Data (Note: The provided text is a container build log and does not contain command-line argument definitions).
+Create a new data structure from an input file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0
 - **Homepage**: https://github.com/ZhantianXu/PISAD
 - **Package**: https://anaconda.org/channels/bioconda/packages/pisad/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a73ecabff707eb700c0a07642ba025ea5cf691ec32657ae9e74d9036ef155f66: unpack entry: usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: unpack to regular file: short write: write /tmp/build-temp-1490866710/rootfs/usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: no space left on device
+Error: Input file (-i) is required
+Usage: create -i <inputFile> [-o <outputFile>] [-k <k>] [-l <limit>]
 ```
+
 
 ## pisad_pisadCount
 
 ### Tool Description
-The provided text does not contain help information for the tool, as it is an error log from a container build process. No arguments could be extracted.
+Calculate variant sketch statistics
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0
 - **Homepage**: https://github.com/ZhantianXu/PISAD
 - **Package**: https://anaconda.org/channels/bioconda/packages/pisad/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a73ecabff707eb700c0a07642ba025ea5cf691ec32657ae9e74d9036ef155f66: unpack entry: usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: unpack to regular file: short write: write /tmp/build-temp-1401719213/rootfs/usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: no space left on device
+Usage: pisadCount -s [FASTA] [OPTION]... [FILES...]
+Required options:
+  -s, --snp = STR        variant sketch (one or more) [required]
+Optional options:
+  -t, --threads = INT    Number of threads to run.[1]
+  -m, --maxCov = INT     k-mer coverage threshold for early termination. [inf]
+  -i, --information      extra debug information.
+  -k, --kmer = INT       k-mer size used. [21]
+  -h, --help             Display this dialog.
+  -o, --output           Evaluation file path
 ```
+
 
 ## pisad_pisadEval
 
 ### Tool Description
-The provided text does not contain help information for the tool, but appears to be a system error log indicating a failure to build or run a container due to lack of disk space.
+Optional options:
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0
 - **Homepage**: https://github.com/ZhantianXu/PISAD
 - **Package**: https://anaconda.org/channels/bioconda/packages/pisad/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pisad:1.2.0--pl5321h6f0a7f7_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a73ecabff707eb700c0a07642ba025ea5cf691ec32657ae9e74d9036ef155f66: unpack entry: usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: unpack to regular file: short write: write /tmp/build-temp-1376460535/rootfs/usr/local/include/boost/charconv/detail/dragonbox/dragonbox_common.hpp: no space left on device
+Usage: pisadEval[OPTION]... [FILES...]
+Optional options:
+  -t, --threads = INT    Number of threads to run.[1]
+  -h, --help             Display this dialog.
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hpannot
-description: the package is available on all platforms; click for details.
+description: This tool provides signaling pathway topologies and functional annotations for human, mouse, and rat to support the Hipathia signal transduction method. Use when user asks to retrieve pathway graphs, map gene identifiers, or access functional annotations like GO and UniProt for signaling network analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hpAnnot.html
 ---
+
 
 # bioconductor-hpannot
 

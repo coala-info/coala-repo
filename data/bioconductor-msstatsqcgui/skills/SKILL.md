@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msstatsqcgui
-description: the package is available on all platforms; click for details.
+description: MSstatsQCgui provides a graphical user interface for statistical quality control of mass spectrometry-based proteomics data. Use when user asks to monitor instrument performance, perform statistical process control, or visualize quality control metrics for proteomics experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsQCgui.html
 ---
+
 
 # bioconductor-msstatsqcgui
 

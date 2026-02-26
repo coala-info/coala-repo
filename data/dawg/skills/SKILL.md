@@ -1,8 +1,9 @@
 ---
 name: dawg
-description: Dawg (DNA Assembly with Gaps) is a simulation tool designed to model the evolution of recombinant DNA sequences in continuous time.
+description: "Dawg simulates the evolution of DNA sequences by modeling substitutions and length-dependent gap formation across a phylogeny. Use when user asks to simulate recombinant DNA sequences, generate true alignments for benchmarking, or model sequence evolution using GTR and indel models."
 homepage: https://github.com/reedacartwright/dawg
 ---
+
 
 # dawg
 

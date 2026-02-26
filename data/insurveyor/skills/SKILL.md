@@ -1,8 +1,9 @@
 ---
 name: insurveyor
-description: INSurVeyor is a specialized discovery tool designed to identify genomic insertions with high speed and precision.
+description: INSurVeyor is a specialized discovery tool designed to identify genomic insertions with high speed and precision in Illumina paired-end data. Use when user asks to identify genomic insertions, resolve novel insertion sequences, or detect structural variants from BAM or CRAM files.
 homepage: https://github.com/kensung-lab/INSurVeyor
 ---
+
 
 # insurveyor
 

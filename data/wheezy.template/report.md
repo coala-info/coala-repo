@@ -3,10 +3,10 @@
 ## wheezy.template
 
 ### Tool Description
-A fast, lightweight and flexible template engine.
+Renders a template with the provided context.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/wheezy.template:3.2.4--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/wheezy.template:3.2.5--pyhdfd78af_0
 - **Homepage**: https://bitbucket.org/akorn/wheezy.template
 - **Package**: https://anaconda.org/channels/bioconda/packages/wheezy.template/overview
 - **Validation**: PASS
@@ -18,13 +18,22 @@ A fast, lightweight and flexible template engine.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/wheezy.template:3.2.4--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Renders a template with the provided context.
+
+Usage: wheezy.template template [ context ... ]
+
+Positional arguments:
+  template    The template filename.
+  context     A filename or JSON string representing the context.
+
+Optional arguments:
+  -s path     Search path for templates (default ".").
+  -t token    Token start (default "@").
+  -j token    Line join token (default "\").
+  -w          Enable whitespace cleanup.
+  -h          Show this help message.
+
+The contexts passed are available as the __args__ list variable.
+error: option --help not recognized
 ```
 
-
-## Metadata
-- **Skill**: generated

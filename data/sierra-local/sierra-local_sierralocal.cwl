@@ -1,16 +1,111 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: sierra-local
+baseCommand: sierralocal
 label: sierra-local_sierralocal
-doc: "Sierra-local is a tool for local execution of the Stanford HIVDB Sierra engine.
-  (Note: The provided help text contains only container runtime logs and no usage
-  information.)\n\nTool homepage: https://github.com/PoonLab/sierra-local"
-inputs: []
+doc: "Local execution of Stanford HIVdb algorithm for mutation-based resistance scoring
+  of sequences.\n\nTool homepage: https://github.com/PoonLab/sierra-local"
+inputs:
+  - id: fasta
+    type:
+      type: array
+      items: File
+    doc: List of input files.
+    inputBinding:
+      position: 1
+  - id: alignment
+    type:
+      - 'null'
+      - string
+    doc: Alignment program to use, "post" for post align and "nuc" for nucamino
+    inputBinding:
+      position: 102
+      prefix: -alignment
+  - id: apobec_csv
+    type:
+      - 'null'
+      - File
+    doc: Path to CSV APOBEC csv file
+    default: apobecs.csv
+    inputBinding:
+      position: 102
+      prefix: -apobec_csv
+  - id: cleanup
+    type:
+      - 'null'
+      - boolean
+    doc: Deletes NucAmino alignment file after processing.
+    inputBinding:
+      position: 102
+      prefix: --cleanup
+  - id: forceupdate
+    type:
+      - 'null'
+      - boolean
+    doc: Forces update of HIVdb algorithm. Requires network connection.
+    inputBinding:
+      position: 102
+      prefix: --forceupdate
+  - id: json
+    type:
+      - 'null'
+      - File
+    doc: Path to JSON HIVdb APOBEC DRM file
+    inputBinding:
+      position: 102
+      prefix: -json
+  - id: mutation_csv
+    type:
+      - 'null'
+      - File
+    doc: Path to CSV file to determine mutation type
+    default: mutation-type-pairs_hiv1.csv
+    inputBinding:
+      position: 102
+      prefix: -mutation_csv
+  - id: sdrms_csv
+    type:
+      - 'null'
+      - File
+    doc: Path to CSV file to determine SDRM mutations
+    default: sdrms_hiv1.csv
+    inputBinding:
+      position: 102
+      prefix: -sdrms_csv
+  - id: unusual_csv
+    type:
+      - 'null'
+      - File
+    doc: Path to CSV file to determine if is unusual
+    default: rx-all_subtype-all.csv
+    inputBinding:
+      position: 102
+      prefix: -unusual_csv
+  - id: updater_outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to folder to store updated files from updater
+    default: sierralocal/data folder
+    inputBinding:
+      position: 102
+      prefix: -updater_outdir
+  - id: xml
+    type:
+      - 'null'
+      - File
+    doc: Path to HIVdb ASI2 XML file
+    default: HIVDB_9.4.xml
+    inputBinding:
+      position: 102
+      prefix: -xml
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outfile
+    type:
+      - 'null'
+      - File
+    doc: Output filename.
+    outputBinding:
+      glob: $(inputs.outfile)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sierra-local:0.4.3--py310hdfd78af_0
-stdout: sierra-local_sierralocal.out

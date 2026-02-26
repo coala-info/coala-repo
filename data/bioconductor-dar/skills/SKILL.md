@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dar
-description: the package is available on all platforms; click for details.
+description: The dar package provides a recipe-based framework for performing and aggregating multiple differential abundance analysis methods on microbiome data. Use when user asks to perform differential abundance analysis, identify microbial biomarkers using consensus strategies, or compare results from multiple statistical methods like ALDEx2, ANCOM-BC, and DESeq2.
 homepage: https://bioconductor.org/packages/release/bioc/html/dar.html
 ---
+
 
 # bioconductor-dar
 

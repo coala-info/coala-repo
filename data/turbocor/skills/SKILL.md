@@ -1,8 +1,9 @@
 ---
 name: turbocor
-description: Turbocor is a specialized utility optimized for the heavy lifting of correlation matrix calculations.
+description: Turbocor calculates correlation matrices for very large datasets. Use when user asks to calculate correlation matrices, perform high-dimensional correlation computations, or correlate variables in large genomic or feature datasets.
 homepage: https://github.com/dcjones/turbocor
 ---
+
 
 # turbocor
 

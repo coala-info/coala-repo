@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggdata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides access to integrated HapMap CEU genomic and transcriptomic data for 90 individuals. Use when user asks to perform eQTL analysis, conduct GWAS exemplars, or integrate SNP data with microarray expression profiles using the GGBase framework.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/GGdata.html
 ---
+
 
 # bioconductor-ggdata
 

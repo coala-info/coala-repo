@@ -1,8 +1,9 @@
 ---
 name: tandemtwister
-description: TandemTwister is a specialized bioinformatics tool designed to detect and genotype interleaved and embedded tandem repeats (TRs) using long-read sequencing data.
+description: TandemTwister detects and genotypes interleaved and embedded tandem repeats using long-read sequencing data. Use when user asks to genotype germline tandem repeats, profile somatic expansions, or analyze repeats from genome assemblies.
 homepage: https://github.com/Lionward/tandemtwister
 ---
+
 
 # tandemtwister
 

@@ -1,8 +1,9 @@
 ---
 name: gem2
-description: The `gem2` skill facilitates the transformation of RubyGems into RPM-compatible source packages.
+description: The gem2 tool converts RubyGems into RPM-compatible source packages by extracting metadata to generate spec files. Use when user asks to generate a spec file from a gem, fetch and convert a gem in one step, or create and use custom templates for RPM packaging.
 homepage: https://github.com/fedora-ruby/gem2rpm
 ---
+
 
 # gem2
 

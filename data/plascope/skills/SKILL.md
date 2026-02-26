@@ -1,8 +1,9 @@
 ---
 name: plascope
-description: PlaScope is a specialized genomic tool designed to distinguish between chromosomal and plasmid DNA in bacterial genome assemblies.
+description: PlaScope distinguishes between chromosomal and plasmid DNA in bacterial genome assemblies by classifying contigs using species-specific databases. Use when user asks to identify plasmid sequences, classify assembly contigs, or explore the plasmidome of bacterial samples.
 homepage: https://github.com/GuilhemRoyer/PlaScope
 ---
+
 
 # plascope
 

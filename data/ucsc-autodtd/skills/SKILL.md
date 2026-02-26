@@ -1,8 +1,9 @@
 ---
 name: ucsc-autodtd
-description: The `autoDtd` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed to reverse-engineer a DTD from a sample XML file.
+description: ucsc-autodtd reverse-engineers a Document Type Definition (DTD) from a sample XML file. Use when user asks to generate a DTD from an XML file, create an XML schema, or infer a DTD from an XML document.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-autodtd
 

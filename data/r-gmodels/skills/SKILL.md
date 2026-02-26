@@ -1,8 +1,9 @@
 ---
 name: r-gmodels
-description: Various R programming tools for model fitting.</p>
+description: The r-gmodels package provides a collection of R programming tools for model fitting, statistical inference, and SAS/SPSS-style data visualization. Use when user asks to perform cross-tabulations, calculate confidence intervals for model parameters, test general linear hypotheses, or compute custom contrasts for regression models.
 homepage: https://cloud.r-project.org/web/packages/gmodels/index.html
 ---
+
 
 # r-gmodels
 

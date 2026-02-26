@@ -3,7 +3,7 @@
 ## elph
 
 ### Tool Description
-ELPH is a general-purpose Gibbs sampler for finding motifs in a set of DNA or protein sequences.
+Motif finder program ELPH (Estimated Locations of Pattern Hits)
 
 ### Metadata
 - **Docker Image**: biocontainers/elph:v1.0.1-2-deb_cv1
@@ -18,29 +18,42 @@ ELPH is a general-purpose Gibbs sampler for finding motifs in a set of DNA or pr
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/elph:v1.0.1-2-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2440106609: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## elph_elpher
-
-### Tool Description
-ELPH is a general-purpose Gibbs sampler for finding motifs in a set of DNA or protein sequences. (Note: The provided text contains system error messages and does not list specific arguments or usage instructions).
-
-### Metadata
-- **Docker Image**: biocontainers/elph:v1.0.1-2-deb_cv1
-- **Homepage**: https://github.com/emacsmirror/elpher
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/elph:v1.0.1-2-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2810263922: no space left on device
+Motif finder program ELPH (Estimated Locations of Pattern Hits)
+Usage:
+  elph <multi-fasta_file> [options] OR
+  elph <multi-fasta_file-1> <multi-fasta_file-2> [-t <matrix>]
+  Options:
+  -h             : print this help
+  -b             : just brief results; don't print motif
+  -d             : find significance deterministically
+  -v             : find motif deterministically
+  -o <out_file>  : write output in <out_file> instead of stdout
+  -m <motif>     : use the given pattern <motif> to compute its best fit matrix
+                   to the data
+  -a             : use aac residues; default = nucleotides residues
+  -s <seed>      : sets the seed for the random generation
+  -p n           : n = no of iterations before deciding local maximum; plateau
+                   period variable
+  -x             : print maximum positions within sequences
+  -g             : find significance of motif
+  -t <matrix>    : test if there is significant difference between the two 
+                   input files for a given motif matrix; <matrix> is the file
+                   containing the motif matrix
+  -l             : compute Least Likely Consensus (LLC) for given motif 
+  -r             : in conjunction with -m option: motif is not necessarily in
+                   the closest edit distance from input motif
+  -e             : only when an additional file is used to test the significance
+                   of the motif: find only the motifs that exactly match the
+                   input pattern (-m or -t options) 
+  -n [0..5]      : degree of Markov chain used to generate the random file 
+                   used to test the significance of the motif
+                   default = 2
+  LEN=n          : n = length of motif
+  ITERNO=n       : n = no of iterations to compute the global maximum;
+                   default = 10
+  MAXLOOP=n      : n = no of iterations to compute the local maximum;
+                   default = 500
+  SGFNO=n        : n = no of iterations to compute significance of motif;
+                   default = 1000
 ```
 

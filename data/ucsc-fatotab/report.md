@@ -3,7 +3,7 @@
 ## ucsc-fatotab
 
 ### Tool Description
-The provided text contains a container execution error rather than the tool's help output. Based on the tool name 'ucsc-fatotab', this utility converts FASTA formatted files to tab-separated files.
+Convert DNA FASTA file to a 2 column tab-separated file (name and sequence).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-fatotab:482--h0b57e2e_0
@@ -18,13 +18,13 @@ The provided text contains a container execution error rather than the tool's he
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-fatotab:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-fatotab:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-fatotab
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+ebe9520b7e06: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1356858670: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

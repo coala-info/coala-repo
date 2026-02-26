@@ -1,8 +1,9 @@
 ---
 name: relion-bin-plusgui
-description: RELION (REgularised LIkelihood OptimisatioN) is a comprehensive suite for cryo-EM image processing.
+description: RELION is a comprehensive software suite for processing cryo-electron microscopy image data through tasks like motion correction, CTF estimation, and 3D refinement. Use when user asks to perform particle picking, refine 3D reconstructions, configure GPU-accelerated jobs, or manage cryo-EM workflows via the command-line interface.
 homepage: https://github.com/3dem/relion
 ---
+
 
 # relion-bin-plusgui
 

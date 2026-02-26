@@ -1,8 +1,9 @@
 ---
 name: run-dbcan
-description: run-dbcan is a specialized bioinformatics pipeline designed to identify and annotate CAZymes across diverse organisms, including prokaryotes, fungi, plants, and viruses.
+description: run-dbcan is a bioinformatics pipeline that identifies and annotates Carbohydrate-Active EnZymes (CAZymes) and their gene clusters in genomic and metagenomic data. Use when user asks to annotate protein or DNA sequences for CAZymes, predict carbohydrate substrates, or identify CAZyme Gene Clusters.
 homepage: https://github.com/linnabrown/run_dbcan
 ---
+
 
 # run-dbcan
 

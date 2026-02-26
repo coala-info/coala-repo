@@ -1,8 +1,9 @@
 ---
 name: fastalite
-description: fastalite is a minimalist bioinformatics utility designed for the simplest possible parsing of FASTA and FASTQ records.
+description: fastalite is a minimalist bioinformatics utility for parsing FASTA and FASTQ records into lightweight namedtuples. Use when user asks to parse sequence files, convert FASTQ to FASTA, or handle compressed genomic data in Python scripts.
 homepage: https://github.com/nhoffman/fastalite
 ---
+
 
 # fastalite
 

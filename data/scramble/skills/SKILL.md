@@ -1,8 +1,9 @@
 ---
 name: scramble
-description: SCRAMble (Soft Clipped Read Alignment Mapper) is a bioinformatics pipeline designed to detect non-reference mobile element insertions and deletions.
+description: SCRAMble detects non-reference mobile element insertions and structural deletions by analyzing soft-clipped read clusters in genomic alignment data. Use when user asks to identify retrotransposons, call mobile element insertions, or detect deletions from BAM files.
 homepage: https://github.com/GeneDx/scramble
 ---
+
 
 # scramble
 

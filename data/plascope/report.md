@@ -1,12 +1,12 @@
 # plascope CWL Generation Report
 
-## plascope
+## plascope_plaScope.sh
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is a log of a container build failure due to insufficient disk space.
+PlaScope: A tool for plasmid detection and classification.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/plascope:1.3.1--1
+- **Docker Image**: quay.io/biocontainers/plascope:1.3.1--0
 - **Homepage**: https://github.com/GuilhemRoyer/PlaScope
 - **Package**: https://anaconda.org/channels/bioconda/packages/plascope/overview
 - **Validation**: PASS
@@ -18,37 +18,37 @@ The provided text does not contain help information for the tool. It is a log of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:52:38  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/plascope:1.3.1--1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:910814d58b548b783820fc68dfec9d7c0e2d41baaaa54f6c513828fef5928aba: unpack entry: usr/local/lib/libtk8.6.so: unpack to regular file: short write: write /tmp/build-temp-3307857542/rootfs/usr/local/lib/libtk8.6.so: no space left on device
-```
+usage: plaScope.sh [OPTIONS] [ARGUMENTS]
+
+General options:
+  -h, --help		display this message and exit
+  -v, --version		display version number and exit
+  -n, --no-banner	don't print beautiful banners
+  -t			number of threads[OPTIONAL] [default : 8]
+  -o			output directory [OPTIONAL] [default : current directory]
+  --sample		Sample name [MANDATORY]
+  --db_dir		path to centrifuge database [MANDATORY]
+  --db_name		centrifuge database name [MANDATORY]
+
+Mode 1: SPAdes assembly + contig classification
+  -1			forward paired-end reads [MANDATORY]
+  -2			reverse paired-end reads [MANDATORY]
 
 
-## Metadata
-- **Skill**: generated
+Mode 2: contig classification of a fasta file (only if you already have your SPAdes assembly!)
+  --fasta		SPAdes assembly fasta file [MANDATORY]
 
-## plascope_plaScope.sh
 
-### Tool Description
-The provided text does not contain help information for the tool, but appears to be an error log from a container runtime (Singularity/Apptainer) indicating a failure to build the image due to lack of disk space.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plascope:1.3.1--1
-- **Homepage**: https://github.com/GuilhemRoyer/PlaScope
-- **Package**: https://anaconda.org/channels/bioconda/packages/plascope/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:53:46  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/plascope:1.3.1--1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:910814d58b548b783820fc68dfec9d7c0e2d41baaaa54f6c513828fef5928aba: unpack entry: usr/local/lib/libtk8.6.so: unpack to regular file: short write: write /tmp/build-temp-1863993534/rootfs/usr/local/lib/libtk8.6.so: no space left on device
+Example mode 1:
+plaScope.sh -1 my_reads_1.fastq.gz -2 my_reads_2.fastq.gz -o output_directory  --db_dir path/to/DB --db_name chromosome_plasmid_db --sample name_of_my_sample
+
+Example mode 2:
+plaScope.sh --fasta my_fastafile.fasta -o output_directory --db_dir path/to/DB --db_name chromosome_plasmid_db --sample name_of_my_sample
+
+
+
+Github:
+https://github.com/GuilhemRoyer/PlaScope
 ```
 

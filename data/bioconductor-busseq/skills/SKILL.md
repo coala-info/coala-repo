@@ -1,8 +1,9 @@
 ---
 name: bioconductor-busseq
-description: the package is available on all platforms; click for details.
+description: BUSseq implements a Bayesian hierarchical model to simultaneously correct batch effects, cluster cell types, and impute dropout events in single-cell RNA-sequencing data. Use when user asks to perform batch correction, cluster cells into latent types, impute missing counts, or identify intrinsic genes in scRNA-seq datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/BUSseq.html
 ---
+
 
 # bioconductor-busseq
 

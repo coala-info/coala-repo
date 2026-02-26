@@ -1,8 +1,9 @@
 ---
 name: optilcms
-description: OptiLCMS is a specialized R package that provides an optimized workflow for Liquid Chromatography-Mass Spectrometry (LC-MS) raw data processing.
+description: OptiLCMS is an R package designed for the optimized processing of raw liquid chromatography-mass spectrometry data. Use when user asks to perform peak detection, correct retention times, align features, or automate parameter selection for metabolomics workflows.
 homepage: https://github.com/xia-lab/OptiLCMS
 ---
+
 
 # optilcms
 

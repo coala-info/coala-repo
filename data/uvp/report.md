@@ -3,7 +3,7 @@
 ## uvp
 
 ### Tool Description
-The provided text contains container build logs rather than tool help text; therefore, no arguments or descriptions could be extracted.
+Call SNPs and InDels
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/uvp:2.7.0--py_0
@@ -18,52 +18,56 @@ The provided text contains container build logs rather than tool help text; ther
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/uvp:2.7.0--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: uvp -q STRING -r STRING -n STRING [-q2 STRING] [-o STRING]
+           [--keepfiles] [--bwa] [--all] [--gatk] [--samtools] [-a]
+           [-t THREADS] [-k STRING] [-c STRING] [-v] [-h] [--version]
 
+UVP - Call SNPs and InDels
 
-## Metadata
-- **Skill**: generated
+Input:
 
-## uvp_gatk-register
+  -q STRING, --fastq STRING
+                        Input FASTQ file
+  -r STRING, --reference STRING
+                        Reference genome in FASTA format.
+  -n STRING, --name STRING
+                        Sample name to be used as a prefix.
+  -q2 STRING, --fastq2 STRING
+                        Second paired-end FASTQ file.
 
-### Tool Description
-A tool for GATK registration. Note: The provided text contains container runtime logs and error messages rather than command-line help documentation, so no arguments could be extracted.
+Output:
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/uvp:2.7.0--py_0
-- **Homepage**: https://github.com/CPTR-ReSeqTB/UVP
-- **Package**: https://anaconda.org/channels/bioconda/packages/uvp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/uvp:2.7.0--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+  -o STRING, --outdir STRING
+                        Output directory
+  --keepfiles           Keep intermediate files.
 
-## uvp_snpEff
+Aligners:
+  Select a specific aligner.
 
-### Tool Description
-The provided text does not contain help information or usage instructions; it consists of container runtime log messages indicating a failure to fetch the OCI image.
+  --bwa                 Align Illumina reads using bwa. (Default)
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/uvp:2.7.0--py_0
-- **Homepage**: https://github.com/CPTR-ReSeqTB/UVP
-- **Package**: https://anaconda.org/channels/bioconda/packages/uvp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/uvp:2.7.0--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Callers:
+  Choose program(s) to call SNPs/InDels with.
+
+  --all                 Run all SNP / InDel calling programs.
+  --gatk                Run GATK SNP / InDel calling. (Default)
+  --samtools            Run SamTools SNP / InDel calling.
+
+Annotation:
+  Use snpEff to annotate VCF file
+
+  -a, --annotate        Run snpEff functional annotation.
+
+Optional:
+
+  -t THREADS, --threads THREADS
+                        Num CPU threads for parallel execution
+  -k STRING, --krakendb STRING
+                        Path to kraken database
+  -c STRING, --config STRING
+                        Config file
+  -v, --verbose         Produce status updates of the run.
+  -h, --help            Show this help message and exit
+  --version             Show program's version number and exit
 ```
 

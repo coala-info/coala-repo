@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dorothea
-description: the package is available on all platforms; click for details.
+description: This tool provides access to curated transcription factor-target gene interactions and regulons for human and mouse. Use when user asks to retrieve gene regulatory networks, filter transcription factor interactions by confidence levels, or prepare data for transcription factor activity inference.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/dorothea.html
 ---
+
 
 # bioconductor-dorothea
 

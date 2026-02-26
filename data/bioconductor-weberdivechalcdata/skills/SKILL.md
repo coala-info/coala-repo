@@ -1,8 +1,9 @@
 ---
 name: bioconductor-weberdivechalcdata
-description: the package is available on all platforms; click for details.
+description: This package provides spatially resolved transcriptomics and single-nucleus RNA-sequencing data from the human locus coeruleus. Use when user asks to access spatial transcriptomics datasets, retrieve single-nucleus RNA-seq data from the human locus coeruleus, or analyze Visium data from brain tissue.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/WeberDivechaLCdata.html
 ---
+
 
 # bioconductor-weberdivechalcdata
 

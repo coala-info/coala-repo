@@ -1,8 +1,9 @@
 ---
 name: chembl_webresource_client
-description: The `chembl_webresource_client` skill provides a high-level Python interface to the ChEMBL database, the primary open-source repository for bioactive molecules with drug-like properties.
+description: The chembl_webresource_client provides a Python interface for querying the ChEMBL database of bioactive molecules and their properties. Use when user asks to search for molecules, retrieve bioactivity data, filter targets or assays, and access chemical metadata for drug discovery.
 homepage: https://github.com/chembl/chembl_webresource_client
 ---
+
 
 # chembl_webresource_client
 

@@ -1,8 +1,9 @@
 ---
 name: esme_omb_mvapich_4_0
-description: The `esme_omb_mvapich_4_0` skill provides guidance on using the OSU Micro Benchmarks (OMB) to assess high-performance computing (HPC) interconnects and MPI implementations.
+description: This tool provides guidance on using the OSU Micro Benchmarks to evaluate the performance of HPC interconnects and MPI implementations. Use when user asks to measure network latency, assess bandwidth and message rates, evaluate collective communication efficiency, or tune MVAPICH runtime parameters for performance optimization.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_mvapich_4_0
 

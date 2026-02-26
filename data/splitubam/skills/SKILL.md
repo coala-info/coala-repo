@@ -1,8 +1,9 @@
 ---
 name: splitubam
-description: splitubam is a high-performance utility written in Rust designed to rapidly partition unmapped BAM files.
+description: splitubam rapidly partitions unmapped BAM files into a user-defined number of smaller files for distributed processing. Use when user asks to split uBAM files, partition datasets for parallel processing, or divide unmapped BAMs into multiple output files.
 homepage: https://github.com/fellen31/splitubam
 ---
+
 
 # splitubam
 

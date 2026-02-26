@@ -1,8 +1,9 @@
 ---
 name: rscape
-description: R-scape (RNA Structural Covariation Above Phylogenetic Expectation) is a statistical tool designed to verify if the base pairs in an RNA alignment show more covariation than would be expected by chance given the phylogeny.
+description: R-scape is a statistical tool that evaluates RNA alignments to determine if base pairs show significant covariation above what is expected from phylogenetic history. Use when user asks to verify conserved RNA structures, predict new structures using CaCoFold, or evaluate and improve existing structural models from Stockholm alignments.
 homepage: http://eddylab.org/R-scape/
 ---
+
 
 # rscape
 

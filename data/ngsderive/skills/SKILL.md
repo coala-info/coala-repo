@@ -1,8 +1,9 @@
 ---
 name: ngsderive
-description: `ngsderive` is a specialized bioinformatics utility designed for "backwards" derivation of experimental parameters from sequencing files.
+description: ngsderive infers experimental parameters and technical attributes from sequencing files by analyzing raw data. Use when user asks to infer sequencing instrument, determine RNA-Seq strandedness, compute read length distributions, identify PHRED quality encoding, or annotate splice junctions.
 homepage: https://github.com/claymcleod/ngsderive
 ---
+
 
 # ngsderive
 

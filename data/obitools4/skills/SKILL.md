@@ -1,8 +1,9 @@
 ---
 name: obitools4
-description: obitools4 is a specialized suite of command-line utilities designed for the management and analysis of high-throughput sequencing data, specifically tailored for environmental DNA (eDNA) and metabarcoding workflows.
+description: obitools4 is a suite of command-line utilities designed for processing and analyzing high-throughput environmental DNA and metabarcoding sequencing data. Use when user asks to pair reads, filter sequences, dereplicate identical reads, perform taxonomic assignment, simulate in silico PCR, or generate OTU count tables.
 homepage: https://obitools4.metabarcoding.org
 ---
+
 
 # obitools4
 

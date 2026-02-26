@@ -1,8 +1,9 @@
 ---
 name: dominate
-description: The `dominate` library provides a Pythonic way to create HTML structures using an elegant DOM API.
+description: "Dominate provides a Pythonic API to programmatically generate HTML structures using classes and context managers. Use when user asks to create HTML documents in Python, generate dynamic markup without templates, or build DOM trees using Python logic."
 homepage: https://github.com/Knio/dominate
 ---
+
 
 # dominate
 

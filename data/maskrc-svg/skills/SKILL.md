@@ -1,8 +1,9 @@
 ---
 name: maskrc-svg
-description: maskrc-svg is a specialized tool for bacterial genomics that cleans multi-FASTA alignments by masking regions identified as recombinant.
+description: maskrc-svg masks recombinant regions in bacterial multi-FASTA alignments using ClonalFrameML or Gubbins output and generates SVG visualizations of recombination events. Use when user asks to mask recombination in genomic alignments, visualize recombination hotspots, or create SVG maps of horizontal gene transfer.
 homepage: https://github.com/kwongj/maskrc-svg
 ---
+
 
 # maskrc-svg
 

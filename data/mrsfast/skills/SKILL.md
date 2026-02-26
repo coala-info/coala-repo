@@ -1,8 +1,9 @@
 ---
 name: mrsfast
-description: mrsfast (micro-read substitution-only Fast Alignment Search Tool) is a specialized genomic aligner designed for short-read sequences.
+description: mrsfast is a genomic aligner designed to map short-read sequences to a reference genome while focusing exclusively on substitutions. Use when user asks to index a reference genome, perform single-end or paired-end mapping, detect structural variations, or conduct copy number analysis.
 homepage: https://github.com/sfu-compbio/mrsfast
 ---
+
 
 # mrsfast
 

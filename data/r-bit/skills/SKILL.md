@@ -1,8 +1,9 @@
 ---
 name: r-bit
-description: "Provided are classes for boolean and skewed boolean vectors,     fast boolean methods, fast unique and non-unique integer sorting,     fast set operations on sorted and unsorted sets of integers, and     foundations for ff (range index, compression, chunked processing).</p>"
+description: The r-bit package provides memory-efficient boolean data classes and optimized C-based functions for fast integer set operations and sorting in R. Use when user asks to store dense or skewed boolean data with minimal memory, perform fast integer sorting, execute optimized set operations like unions or intersections, or process large datasets in chunks.
 homepage: https://cloud.r-project.org/web/packages/bit/index.html
 ---
+
 
 # r-bit
 

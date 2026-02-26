@@ -1,8 +1,9 @@
 ---
 name: metamaps
-description: MetaMaps is a specialized bioinformatics tool designed for the analysis of long-read metagenomic datasets.
+description: MetaMaps performs simultaneous read assignment and sample composition estimation for long-read metagenomic datasets. Use when user asks to map long reads to a reference database, classify taxonomic assignments, or estimate strain-level sample composition.
 homepage: https://github.com/DiltheyLab/MetaMaps
 ---
+
 
 # metamaps
 

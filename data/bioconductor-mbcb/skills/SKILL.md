@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mbcb
-description: the package is available on all platforms; click for details.
+description: MBCB provides model-based background correction for Illumina BeadArray gene expression data. Use when user asks to perform background correction on BeadArray data, apply maximum likelihood or Bayesian correction models, or preprocess Illumina microarray results.
 homepage: https://bioconductor.org/packages/release/bioc/html/MBCB.html
 ---
+
 
 # bioconductor-mbcb
 

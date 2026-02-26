@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-types-stringlike
-description: This skill provides procedural knowledge for working with the `MooseX::Types::Stringlike` Perl module.
+description: This tool provides Moose type constraints for values that are strings or objects with overloaded stringification. Use when user asks to install the library via Bioconda or CPAN, define string-like attribute constraints in Moose classes, or build and test the module using Dist::Zilla.
 homepage: https://github.com/dagolden/MooseX-Types-Stringlike
 ---
+
 
 # perl-moosex-types-stringlike
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-maser
-description: the package is available on all platforms; click for details.
+description: Maser provides tools for the functional annotation and visualization of alternative splicing events. Use when user asks to analyze alternative splicing data, visualize rMATS results, or investigate the functional impact of splicing events.
 homepage: https://bioconductor.org/packages/release/bioc/html/maser.html
 ---
+
 
 # bioconductor-maser
 

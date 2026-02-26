@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu6800.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation data for mapping Affymetrix Hu6800 chip probe identifiers to various biological and functional annotations. Use when user asks to map Hu6800 probe IDs to gene symbols, Entrez IDs, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800.db.html
 ---
+
 
 # bioconductor-hu6800.db
 

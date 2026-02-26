@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicaggr
-description: The package allows to import 1D genomics data, such as peaks from ATACSeq, ChIPSeq, to create potential couples between features of interest under user-defined parameters such as distance between pairs of features of interest. It allows then the extraction of contact values from the HiC data for these couples and to perform Aggregated Peak Analysis (APA) for visualization, but also to compare normalized contact values between conditions. Overall the package allows to integrate 1D genomics data with 3D genomics data, providing an easy access to HiC contact values.
+description: bioconductor-hicaggr performs Aggregated Peak Analysis (APA) to visualize and quantify genomic 3D conformation data. Use when user asks to integrate 1D genomic features with HiC data, perform matrix balancing, extract submatrices for specific genomic coordinates, or generate APA plots to analyze interaction patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/HicAggR.html
 ---
+
 
 # bioconductor-hicaggr
 

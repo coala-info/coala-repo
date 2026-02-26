@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basilisk.utils
-description: the package is available on all platforms; click for details.
+description: This tool provides a standardized framework for Bioconductor packages to manage and access isolated conda environments for Python dependencies. Use when user asks to find a conda executable, define or create conda environments for R packages, and configure automated environment installation during package setup.
 homepage: https://bioconductor.org/packages/release/bioc/html/basilisk.utils.html
 ---
+
 
 # bioconductor-basilisk.utils
 

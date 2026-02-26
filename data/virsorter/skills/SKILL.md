@@ -1,8 +1,9 @@
 ---
 name: virsorter
-description: VirSorter is a specialized tool for mining viral signals from microbial genomic data.
+description: VirSorter mines viral signals from microbial genomic data. Use when user asks to identify viral sequences, analyze microbial genomic or metagenomic data, select a database for viral analysis, or interpret viral predictions.
 homepage: https://github.com/simroux/VirSorter
 ---
+
 
 # virsorter
 

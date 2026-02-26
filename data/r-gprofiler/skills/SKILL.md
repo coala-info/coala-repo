@@ -1,8 +1,9 @@
 ---
 name: r-gprofiler
-description: R package gprofiler (documentation from project home).
+description: The r-gprofiler package provides an R interface for functional enrichment analysis, gene identifier conversion, and ortholog mapping using the g:Profiler toolkit. Use when user asks to perform functional profiling of gene lists, convert between different gene ID formats, find homologous genes across species, or map SNPs to gene names.
 homepage: https://cran.r-project.org/web/packages/gprofiler/index.html
 ---
+
 
 # r-gprofiler
 

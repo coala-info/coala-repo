@@ -1,8 +1,9 @@
 ---
 name: platypus-variant
-description: Platypus is a tool designed for efficient and accurate variant detection using a haplotype-based approach.
+description: "Platypus is a haplotype-based tool designed for efficient and accurate variant detection and joint-calling across multiple samples. Use when user asks to call variants from BAM files, perform joint-calling on multiple samples, or detect complex genomic variations using local assembly."
 homepage: http://www.well.ox.ac.uk/platypus
 ---
+
 
 # platypus-variant
 

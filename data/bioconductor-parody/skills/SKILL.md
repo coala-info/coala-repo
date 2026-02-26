@@ -1,8 +1,9 @@
 ---
 name: bioconductor-parody
-description: the package is available on all platforms; click for details.
+description: The bioconductor-parody package provides routines for univariate and multivariate outlier detection using parametric and resistant methods. Use when user asks to detect outliers in datasets, perform parametric outlier detection, or identify anomalies using resistant statistical methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/parody.html
 ---
+
 
 # bioconductor-parody
 

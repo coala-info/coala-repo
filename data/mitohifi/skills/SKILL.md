@@ -1,8 +1,9 @@
 ---
 name: mitohifi
-description: MitoHiFi is a specialized bioinformatics pipeline designed for mitochondrial genome reconstruction.
+description: MitoHiFi is a bioinformatics pipeline designed to automate the assembly, circularization, and annotation of mitochondrial genomes from long-reads or assembled contigs. Use when user asks to reconstruct a mitogenome, find a mitochondrial reference, assemble mitochondrial reads, or identify mitochondrial contigs from a whole-genome assembly.
 homepage: https://github.com/marcelauliano/MitoHiFi
 ---
+
 
 # mitohifi
 

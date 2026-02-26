@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene.1.0.st.v1frmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides frozen parameter vectors and background distribution data for the Affymetrix Human Gene 1.0 ST v1 array. Use when user asks to perform Frozen Robust Multi-array Analysis (fRMA), calculate Gene-specific Non-Unbiased Standard Error (GNUSE), or use the barcode function for this specific microarray platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene.1.0.st.v1frmavecs.html
 ---
+
 
 # bioconductor-hugene.1.0.st.v1frmavecs
 

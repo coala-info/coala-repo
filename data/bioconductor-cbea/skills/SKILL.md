@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cbea
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: CBEA performs set-based enrichment analysis for microbiome relative abundance data using competitive balances. Use when user asks to transform taxa-by-sample matrices into set-by-sample matrices, perform taxonomic enrichment analysis, or calculate enrichment scores for microbiome datasets.
 homepage: https://bioconductor.org/packages/3.16/bioc/html/CBEA.html
 ---
+
 
 # bioconductor-cbea
 

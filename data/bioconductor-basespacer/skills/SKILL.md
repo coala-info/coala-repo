@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basespacer
-description: the package is available on all platforms; click for details.
+description: BaseSpaceR provides an R interface to the Illumina BaseSpace cloud platform for managing genomic data and integrating resources into Bioconductor workflows. Use when user asks to manage genomic data, retrieve metadata, browse runs or projects, download files, and query coverage or variants from the BaseSpace platform.
 homepage: https://bioconductor.org/packages/release/bioc/html/BaseSpaceR.html
 ---
+
 
 # bioconductor-basespacer
 

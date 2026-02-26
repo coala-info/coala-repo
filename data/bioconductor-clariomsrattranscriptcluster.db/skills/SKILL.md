@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clariomsrattranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides SQLite-based annotation data for mapping Clariom S Rat Transcript Cluster probe set identifiers to biological metadata. Use when user asks to map probe IDs to gene symbols, retrieve Entrez or Ensembl identifiers, perform functional annotation with Gene Ontology terms, or identify KEGG pathways for rat transcriptomic data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomsrattranscriptcluster.db.html
 ---
+
 
 # bioconductor-clariomsrattranscriptcluster.db
 

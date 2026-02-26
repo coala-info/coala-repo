@@ -1,10 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: recycler_samtools
+baseCommand: samtools
 label: recycler_samtools
-doc: "No description available: The provided text contains container runtime error
-  messages rather than tool help text.\n\nTool homepage: https://github.com/Shamir-Lab/Recycler"
-inputs: []
+doc: "Tools for alignments in the SAM format\n\nTool homepage: https://github.com/Shamir-Lab/Recycler"
+inputs:
+  - id: command
+    type: string
+    doc: samtools command
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

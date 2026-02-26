@@ -1,8 +1,9 @@
 ---
 name: circlator
-description: Circlator is a specialized bioinformatics pipeline that automates the process of turning linear draft assembly contigs into circularized sequences.
+description: Circlator automates the circularization and start-position standardization of linear draft assembly contigs using corrected long reads. Use when user asks to circularize genome assemblies, fix the start position of circular contigs, or identify overlaps at contig ends.
 homepage: https://github.com/sanger-pathogens/circlator
 ---
+
 
 # circlator
 

@@ -1,8 +1,9 @@
 ---
 name: snakemake-storage-plugin-fs
-description: The `snakemake-storage-plugin-fs` allows Snakemake to interface with a local filesystem as if it were a remote storage provider.
+description: This plugin enables Snakemake to interface with a local filesystem as a remote storage provider using rsync for data transfers. Use when user asks to manage data persistence across distributed nodes, use a local path as a storage provider, or retrieve files on-demand via symlinks.
 homepage: https://github.com/snakemake/snakemake-storage-plugin-fs
 ---
+
 
 # snakemake-storage-plugin-fs
 

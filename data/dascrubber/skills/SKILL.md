@@ -1,8 +1,9 @@
 ---
 name: dascrubber
-description: DASCRUBBER is a suite of tools designed to "scrub" long-read sequencing data, primarily PacBio reads, to improve assembly quality.
+description: DASCRUBBER is a suite of tools designed to scrub long-read sequencing data by identifying chimeras and filtering low-quality segments to improve assembly quality. Use when user asks to scrub PacBio reads, identify chimeras and unremoved adapters, generate coverage histograms, or produce a database of edited high-quality sequences.
 homepage: https://github.com/thegenemyers/DASCRUBBER
 ---
+
 
 # dascrubber
 

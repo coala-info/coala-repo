@@ -1,8 +1,9 @@
 ---
 name: prosolo
-description: ProSolo is a Bayesian variant caller designed to handle the unique noise profiles of single-cell DNA sequencing, particularly data generated via Multiple Displacement Amplification (MDA).
+description: ProSolo is a Bayesian variant caller that distinguishes true biological variants from amplification artifacts in single-cell DNA sequencing data by comparing it against a bulk sample. Use when user asks to call single-cell variants, control false discovery rates for specific genomic events, or identify allele dropout.
 homepage: https://github.com/PROSIC/prosolo/tree/v0.2.0
 ---
+
 
 # prosolo
 

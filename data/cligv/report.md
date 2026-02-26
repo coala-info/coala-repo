@@ -3,7 +3,7 @@
 ## cligv
 
 ### Tool Description
-Command-line tool cligv (Help text provided contains only system error logs and no usage information).
+command line Interactive Genome Viewer. Displays FASTA sequence, VCF variants, and BAM alignments.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cligv:0.1.0--pyhdfd78af_0
@@ -18,14 +18,26 @@ Command-line tool cligv (Help text provided contains only system error logs and 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cligv:0.1.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-2895260749/rootfs/usr/bin/bash: no space left on device
+usage: cligv [-h] [-v VCF] [-b BAM] [-r REGION] [-t TAG] [--light-mode]
+             [--log-level {DEBUG,INFO,WARNING,ERROR}] [--version]
+             fasta
+
+clIGV - command line Interactive Genome Viewer. Displays FASTA sequence, VCF variants, and BAM alignments.
+
+positional arguments:
+  fasta                 Path to the reference genome FASTA file (indexed with .fai)
+
+options:
+  -h, --help            show this help message and exit
+  -v VCF, --vcf VCF     Path to VCF file (indexed with tabix)
+  -b BAM, --bam BAM     Path to BAM file (indexed with .bai or .csi)
+  -r REGION, --region REGION
+                        Initial region (e.g., chr1:1000-2000, chrX:50000, chrY)
+  -t TAG, --tag TAG     BAM tag name to use for coloring reads (e.g., 'ha' to use haplotype tags of STAR diploid)
+  --light-mode          Use light color theme (for light background terminals)
+  --log-level {DEBUG,INFO,WARNING,ERROR}
+                        Set the logging level.
+  --version             show program's version number and exit
+Browser closed.
 ```
 
-
-## Metadata
-- **Skill**: generated

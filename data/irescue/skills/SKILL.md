@@ -1,8 +1,9 @@
 ---
 name: irescue
-description: IRescue (Interspersed Repeats single-cell quantifier) is a bioinformatics tool designed to accurately quantify the expression of transposable element subfamilies in single-cell transcriptomics.
+description: IRescue quantifies transposable element expression in single-cell transcriptomics data by redistributing multi-mapping reads using an EM algorithm. Use when user asks to quantify TE subfamilies from BAM files, generate TE count matrices for Seurat or Scanpy, or handle multi-mapping reads in repetitive genomic regions.
 homepage: https://github.com/bodegalab/irescue
 ---
+
 
 # irescue
 

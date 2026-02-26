@@ -1,8 +1,9 @@
 ---
 name: mehari
-description: Mehari is a high-performance genomic variant annotator implemented in Rust.
+description: Mehari is a high-performance genomic variant annotator that maps variants to transcripts and generates HGVS-compliant nomenclature. Use when user asks to annotate VCF files, predict variant consequences, generate HGVS descriptions, or integrate population frequencies and clinical significance data.
 homepage: https://github.com/bihealth/mehari
 ---
+
 
 # mehari
 

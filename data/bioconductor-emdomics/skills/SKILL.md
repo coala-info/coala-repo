@@ -1,8 +1,9 @@
 ---
 name: bioconductor-emdomics
-description: the package is available on all platforms; click for details.
+description: This tool analyzes differences in genomics data between groups using distribution comparison tests like Earth Mover's Distance, Kolmogorov-Smirnov, and Cramer von Mises. Use when user asks to identify differentially expressed genes, compare gene expression distributions across two or more sample groups, or perform non-parametric significance testing with permutation-based q-values.
 homepage: https://bioconductor.org/packages/release/bioc/html/EMDomics.html
 ---
+
 
 # bioconductor-emdomics
 

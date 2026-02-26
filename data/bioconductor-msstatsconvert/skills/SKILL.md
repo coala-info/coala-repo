@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msstatsconvert
-description: the package is available on all platforms; click for details.
+description: MSstatsConvert transforms mass spectrometry data from various signal processing tools into a standardized format for MSstats analysis. Use when user asks to convert proteomics data, clean mass spectrometry datasets, or prepare data for downstream MSstats statistical analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsConvert.html
 ---
+
 
 # bioconductor-msstatsconvert
 

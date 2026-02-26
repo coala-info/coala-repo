@@ -1,8 +1,9 @@
 ---
 name: rascaf
-description: Rascaf (RNA-seq SCAFfolder) is a bioinformatics tool designed to improve draft genome assemblies by using the connectivity information inherent in paired-end RNA-seq data.
+description: Rascaf improves draft genome assemblies by using paired-end RNA-seq data to identify and bridge connections between contigs. Use when user asks to scaffold genome assemblies, improve draft assemblies using RNA-seq data, or join contigs based on transcript connectivity.
 homepage: https://github.com/mourisl/Rascaf
 ---
+
 
 # rascaf
 

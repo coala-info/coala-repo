@@ -1,8 +1,9 @@
 ---
 name: perl-template-toolkit
-description: The Perl Template Toolkit is a powerful and flexible engine for processing templates.
+description: The Perl Template Toolkit is a powerful engine for processing templates with embedded directives and dynamic data. Use when user asks to process templates using tpage or ttree, use Template Toolkit syntax for variable interpolation and control structures, or manage batch template processing for static sites and configurations.
 homepage: https://metacpan.org/pod/Template::Toolkit
 ---
+
 
 # perl-template-toolkit
 

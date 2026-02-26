@@ -1,8 +1,9 @@
 ---
 name: phylocsfpp
-description: PhyloCSF++ is a high-performance implementation of the PhyloCSF method, designed to distinguish protein-coding from non-coding regions by analyzing evolutionary signatures in multiple sequence alignments (MSA).
+description: PhyloCSF++ identifies protein-coding regions by analyzing evolutionary signatures in multiple sequence alignments. Use when user asks to score alignments for coding potential, build genome browser tracks, or annotate gene features with evolutionary scores.
 homepage: https://github.com/cpockrandt/PhyloCSFpp
 ---
+
 
 # phylocsfpp
 

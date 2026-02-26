@@ -1,8 +1,9 @@
 ---
 name: galaxy-job-config-init
-description: `galaxy-job-config-init` is a specialized utility designed for Galaxy administrators to programmatically generate job configuration files.
+description: This utility programmatically generates job configuration files for Galaxy administrators to define interactions with resource managers and container runtimes. Use when user asks to initialize a new job configuration, configure job runners like Slurm or Kubernetes, setup Docker or Singularity containerization, or manage volume mounts and job routing.
 homepage: https://github.com/galaxyproject/galaxy-job-config-init
 ---
+
 
 # galaxy-job-config-init
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cfdnapro
-description: the package is available on all platforms; click for details.
+description: This tool analyzes and visualizes cell-free DNA fragmentation patterns from Picard metrics or BAM files. Use when user asks to characterize fragment size distributions, calculate modal sizes, compare fragmentation profiles across cohorts, or quantify 10bp periodic oscillations.
 homepage: https://bioconductor.org/packages/release/bioc/html/cfDNAPro.html
 ---
+
 
 # bioconductor-cfdnapro
 

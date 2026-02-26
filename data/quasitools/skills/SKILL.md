@@ -1,8 +1,9 @@
 ---
 name: quasitools
-description: Quasitools is a specialized suite of bioinformatics tools designed to handle the unique challenges of viral population analysis.
+description: Quasitools is a bioinformatics suite designed for the analysis and characterization of viral quasispecies populations. Use when user asks to perform quality control on sequencing data, call nucleotide or amino acid variants, measure genetic diversity, identify drug resistance mutations, calculate evolutionary metrics like dN/dS ratios, or generate consensus sequences.
 homepage: https://github.com/phac-nml/quasitools/
 ---
+
 
 # quasitools
 

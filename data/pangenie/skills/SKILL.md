@@ -1,8 +1,9 @@
 ---
 name: pangenie
-description: PanGenie is a specialized bioinformatics tool that infers genotypes by comparing short-read k-mer distributions against a pangenome graph.
+description: PanGenie infers genotypes by comparing short-read k-mer distributions against a pangenome graph of assembled haplotypes. Use when user asks to genotype short reads using a pangenome reference, index a pangenome VCF, or call structural variants using a haplotype panel.
 homepage: https://github.com/eblerjana/pangenie
 ---
+
 
 # pangenie
 

@@ -1,9 +1,9 @@
 # favites_lite CWL Generation Report
 
-## favites_lite
+## favites_lite_favites_lite.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container runtime environment.
+FAVITES-Lite Niema Moshiri 2022
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/favites_lite:1.0.3--hdfd78af_0
@@ -18,29 +18,21 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/favites_lite:1.0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2572060076: no space left on device
-```
+usage: favites_lite.py [-h] -c CONFIG -o OUTPUT [--overwrite]
+                       [--rng_seed RNG_SEED] [--quiet] [--version]
 
+FAVITES-Lite Niema Moshiri 2022
 
-## Metadata
-- **Skill**: generated
-
-## favites_lite_favites_lite.py
-
-### Tool Description
-FAVITES (Framework for Actual Virological Informed Tool for Episodic Simulation) Lite version.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/favites_lite:1.0.3--hdfd78af_0
-- **Homepage**: https://github.com/niemasd/FAVITES-Lite
-- **Package**: https://anaconda.org/channels/bioconda/packages/favites_lite/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/favites_lite:1.0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1036569573: no space left on device
+options:
+  -h, --help            show this help message and exit
+  -c CONFIG, --config CONFIG
+                        FAVITES-Lite Config File (default: None)
+  -o OUTPUT, --output OUTPUT
+                        Output Directory (default: None)
+  --overwrite           Overwrite output directory if it exists (default:
+                        False)
+  --rng_seed RNG_SEED   Random Number Generator Seed (default: None)
+  --quiet               Suppress Log Messages (default: False)
+  --version             Show FAVITES-Lite version (default: False)
 ```
 

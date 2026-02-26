@@ -1,8 +1,9 @@
 ---
 name: taseq
-description: taseq is a bioinformatics toolkit designed for the efficient genotyping of targeted amplicon sequencing data.
+description: taseq is a bioinformatics toolkit designed for genotyping targeted amplicon sequencing data through a streamlined four-step workflow. Use when user asks to call haplotypes, generate genotype matrices, filter variants for R/qtl software, or visualize genotypes across chromosomes.
 homepage: https://github.com/KChigira/taseq/
 ---
+
 
 # taseq
 

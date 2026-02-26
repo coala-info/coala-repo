@@ -1,8 +1,9 @@
 ---
 name: r-basejump
-description: R package basejump (documentation from project home).
+description: The r-basejump package provides utility functions for bioinformatics data manipulation and R package development. Use when user asks to manipulate genomic data, convert Bioconductor S4 objects, map gene identifiers, or streamline R package development workflows.
 homepage: https://cran.r-project.org/web/packages/basejump/index.html
 ---
+
 
 # r-basejump
 

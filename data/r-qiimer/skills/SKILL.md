@@ -1,8 +1,9 @@
 ---
 name: r-qiimer
-description: Skill for using the CRAN R package r-qiimer.
+description: This tool imports, parses, and analyzes microbiome data from the QIIME pipeline within the R environment. Use when user asks to read QIIME mapping files, import OTU tables, parse distance matrices, or melt microbiome data for visualization.
 homepage: https://cran.r-project.org/web/packages/qiimer/index.html
 ---
+
 
 # r-qiimer
 

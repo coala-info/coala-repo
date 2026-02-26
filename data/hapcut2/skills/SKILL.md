@@ -1,8 +1,9 @@
 ---
 name: hapcut2
-description: HapCUT2 is a high-performance tool for reconstructing haplotypes from aligned sequence reads.
+description: HapCUT2 is a high-performance tool for reconstructing haplotypes from aligned sequence reads using a maximum-likelihood framework. Use when user asks to reconstruct haplotypes, phase variants from BAM and VCF files, or assemble haplotypes using long-read or Hi-C sequencing data.
 homepage: https://github.com/vibansal/HapCUT2/
 ---
+
 
 # hapcut2
 

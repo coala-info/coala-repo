@@ -1,8 +1,9 @@
 ---
 name: mvirs
-description: The `mvirs` (mVIRs) toolkit is designed for the precise localization of inducible prophages within bacterial genomes.
+description: The mvirs toolkit localizes inducible prophages within bacterial genomes by analyzing paired-end sequencing data for circularized or concatenated DNA segments. Use when user asks to index a reference genome, identify prophage boundaries using outward-oriented reads, or extract potential prophage sequences from sequencing data.
 homepage: https://github.com/SushiLab/mVIRs
 ---
+
 
 # mvirs
 

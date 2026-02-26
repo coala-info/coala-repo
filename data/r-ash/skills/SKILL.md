@@ -1,8 +1,9 @@
 ---
 name: r-ash
-description: David Scott's ASH routines ported from S-PLUS to R.</p>
+description: This tool performs fast, non-parametric 1D and 2D statistical density estimation using Averaged Shifted Histograms. Use when user asks to estimate data density, compute bin counts, or perform computationally efficient alternatives to kernel density estimation in R.
 homepage: https://cloud.r-project.org/web/packages/ash/index.html
 ---
+
 
 # r-ash
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enrichmentbrowser
-description: the package facilitates the visualization and exploration of such sets and pathways.
+description: The EnrichmentBrowser package provides a unified pipeline for performing set-based and network-based enrichment analysis on microarray and RNA-seq data. Use when user asks to perform functional enrichment analysis, map gene identifiers to Entrez IDs, execute topology-aware pathway analysis, or generate interactive reports for differentially regulated pathways.
 homepage: https://bioconductor.org/packages/release/bioc/html/EnrichmentBrowser.html
 ---
+
 
 # bioconductor-enrichmentbrowser
 

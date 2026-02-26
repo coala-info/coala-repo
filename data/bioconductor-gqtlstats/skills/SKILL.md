@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gqtlstats
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides infrastructure for the scalable analysis and FDR estimation of large-scale association studies like eQTL or mQTL. Use when user asks to compute permutation-based FDR, model association-FDR relationships, enumerate significant SNP-probe pairs, or generate annotated Manhattan plots from distributed association statistics.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gQTLstats.html
 ---
+
 
 # bioconductor-gqtlstats
 

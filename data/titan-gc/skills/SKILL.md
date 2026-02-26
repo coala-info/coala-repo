@@ -1,8 +1,10 @@
 ---
 name: titan-gc
-description: The titan-gc skill provides a specialized interface for the Titan genomic characterization workflow.
+description: Titan-gc processes raw viral sequencing data to provide genomic insights through automated multi-step procedures. Use when user asks to process viral sequencing data, clean reads, assemble viral genomes, call variants, assign clades or lineages, characterize viral genomes for specific pathogens, or prepare data for GISAID or GenBank submission.
 homepage: https://github.com/theiagen/public_health_viral_genomics
 ---
+
+
 
 # titan-gc
 

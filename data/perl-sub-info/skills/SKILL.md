@@ -1,8 +1,9 @@
 ---
 name: perl-sub-info
-description: The `perl-sub-info` tool (interfacing with the `Sub::Info` Perl module) provides a programmatic way to extract deep metadata about Perl subroutines.
+description: The perl-sub-info tool extracts detailed metadata and source location information for Perl subroutines. Use when user asks to inspect subroutine metadata, identify where a subroutine is defined, or differentiate between original and wrapped subroutines.
 homepage: http://metacpan.org/pod/Sub::Info
 ---
+
 
 # perl-sub-info
 

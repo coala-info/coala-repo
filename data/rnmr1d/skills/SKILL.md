@@ -1,8 +1,9 @@
 ---
 name: rnmr1d
-description: The `rnmr1d` skill enables the automated processing of 1D NMR datasets.
+description: The rnmr1d tool performs automated high-throughput processing and analysis of 1D NMR datasets. Use when user asks to process raw NMR spectra, apply macro-command sequences, extract bucket data matrices, or calculate signal-to-noise ratios.
 homepage: https://github.com/INRA/Rnmr1D
 ---
+
 
 # rnmr1d
 

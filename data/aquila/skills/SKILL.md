@@ -1,8 +1,9 @@
 ---
 name: aquila
-description: Aquila is a specialized bioinformatic pipeline designed for diploid genome reconstruction.
+description: Aquila is a bioinformatic pipeline designed for diploid genome reconstruction and local assembly using linked-read sequencing data. Use when user asks to partition reads into haplotypes, perform de novo diploid assembly, or detect complex structural variations in personal genomes.
 homepage: https://github.com/maiziex/Aquila
 ---
+
 
 # aquila
 

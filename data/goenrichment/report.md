@@ -3,7 +3,7 @@
 ## goenrichment
 
 ### Tool Description
-A tool for Gene Ontology (GO) enrichment analysis.
+GOEnrichment analyses a set of gene products for GO term enrichment
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/goenrichment:2.0.1--0
@@ -18,11 +18,26 @@ A tool for Gene Ontology (GO) enrichment analysis.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/goenrichment:2.0.1--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3505427768: no space left on device
+GOEnrichment analyses a set of gene products for GO term enrichment
+
+Usage: 'java -jar GOEnrichment.jar OPTIONS'
+
+Options:
+-g, --go FILE_PATH	Path to the Gene Ontology OBO or OWL file
+-a, --annotation FILE_PATH	Path to the tabular annotation file (GAF, BLAST2GO or 2-column table format
+-s, --study FILE_PATH	Path to the file listing the study set gene products
+[-p, --population FILE_PATH	Path to the file listing the population set gene products]
+[-c, --correction OPTION	Multiple test correction strategy (Bonferroni, Bonferroni-Holm, Sidak, SDA, or Benjamini-Hochberg)]
+[-gf, --graph_format OPTION	Output graph format (PNG,SVG,TXT)]
+[-so, --summarize_output	Summarizes the list of enriched GO terms by removing closely related terms]
+[-e, --exclude_singletons	Exclude GO terms that are annotated to a single gene product in the study set]
+[-o, --cut_off	q-value (or corrected p-value) cut-off to apply for the graph output]
+[-r, --use_all_relations	Infer annotations through 'part_of' and other non-hierarchical relations]
+[-mfr, --mf_result FILE_PATH	Path to the output MF result file]
+[-bpr, --bp_result FILE_PATH	Path to the output BP result file]
+[-ccr, --cc_result FILE_PATH	Path to the output CC result file]
+[-mfg, --mf_graph FILE_PATH	Path to the output MF graph file]
+[-bpg, --bp_graph FILE_PATH	Path to the output BP graph file]
+[-ccg, --cc_graph FILE_PATH	Path to the output CC graph file]
 ```
 
-
-## Metadata
-- **Skill**: generated

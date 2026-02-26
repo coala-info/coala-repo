@@ -1,8 +1,9 @@
 ---
 name: perl-devel-cover
-description: This skill enables the generation and analysis of code coverage metrics for Perl applications.
+description: This tool generates and analyzes code coverage metrics for Perl applications to identify untested code paths. Use when user asks to collect statement or branch coverage, generate HTML coverage reports, analyze POD documentation coverage, or convert gcov data for Perl XS extensions.
 homepage: http://www.pjcj.net/perl.html
 ---
+
 
 # perl-devel-cover
 

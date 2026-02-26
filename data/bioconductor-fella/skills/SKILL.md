@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fella
-description: the package is available on all platforms; click for details.
+description: bioconductor-fella performs network-based enrichment analysis for metabolomics data by propagating signal through a hierarchical KEGG graph. Use when user asks to perform pathway enrichment, identify intermediate biological entities like enzymes or reactions, and visualize metabolite-pathway relationships as a sub-network.
 homepage: https://bioconductor.org/packages/release/bioc/html/FELLA.html
 ---
+
 
 # bioconductor-fella
 

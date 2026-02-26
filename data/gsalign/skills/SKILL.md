@@ -1,8 +1,9 @@
 ---
 name: gsalign
-description: GSAlign is a high-performance alignment tool optimized for comparing genomes within the same species.
+description: GSAlign is a high-performance alignment tool designed for comparing and identifying differences between genomes of the same species. Use when user asks to align a query genome to a reference, index a genome, generate variant calls in VCF format, or create dot-plots for genomic comparisons.
 homepage: https://github.com/hsinnan75/GSAlign
 ---
+
 
 # gsalign
 

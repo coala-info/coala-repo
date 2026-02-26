@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dearseq
-description: the package is available on all platforms; click for details.
+description: This tool performs differential expression and gene set analysis on RNA-seq data using variance component score tests. Use when user asks to identify differentially expressed genes, perform gene set enrichment analysis, or analyze RNA-seq data with complex experimental designs like longitudinal studies and repeated measurements.
 homepage: https://bioconductor.org/packages/release/bioc/html/dearseq.html
 ---
+
 
 # bioconductor-dearseq
 

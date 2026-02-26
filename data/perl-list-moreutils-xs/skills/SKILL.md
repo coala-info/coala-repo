@@ -1,8 +1,9 @@
 ---
 name: perl-list-moreutils-xs
-description: The `perl-list-moreutils-xs` package provides the compiled C (XS) backend for the `List::MoreUtils` Perl module.
+description: This tool provides a high-performance C backend for the List::MoreUtils Perl module to accelerate list manipulation and searching tasks. Use when user asks to perform fast array transformations, find element indexes, remove duplicates, or partition lists into sub-groups within Perl scripts.
 homepage: https://metacpan.org/release/List-MoreUtils-XS
 ---
+
 
 # perl-list-moreutils-xs
 

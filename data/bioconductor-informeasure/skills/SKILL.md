@@ -1,8 +1,9 @@
 ---
 name: bioconductor-informeasure
-description: the package is available on all platforms; click for details.
+description: This tool quantifies nonlinear dependence between variables in biological regulatory networks using information theory. Use when user asks to calculate mutual information, infer bivariate or trivariate relationships in regulatory networks, or perform partial information decomposition on biological datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/Informeasure.html
 ---
+
 
 # bioconductor-informeasure
 

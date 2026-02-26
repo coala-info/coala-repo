@@ -1,8 +1,9 @@
 ---
 name: bioconductor-exploremodelmatrix
-description: the package is available on all platforms; click for details.
+description: This tool provides interactive exploration and visualization of R design matrices to help interpret model coefficients and experimental designs. Use when user asks to visualize design matrices, understand how design formulas map to model coefficients, or interactively explore sample metadata relationships in Bioconductor workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/ExploreModelMatrix.html
 ---
+
 
 # bioconductor-exploremodelmatrix
 

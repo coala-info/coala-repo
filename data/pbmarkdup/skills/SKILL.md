@@ -1,8 +1,9 @@
 ---
 name: pbmarkdup
-description: `pbmarkdup` is a reference-free tool designed specifically for PacBio HiFi (CCS) reads.
+description: "pbmarkdup identifies and marks or removes PCR duplicates from PacBio HiFi reads using a reference-free hierarchical comparison workflow. Use when user asks to mark duplicate reads, remove PCR duplicates from HiFi data, or perform cross-library deduplication."
 homepage: https://github.com/PacificBiosciences/pbmarkdup
 ---
+
 
 # pbmarkdup
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ggallus.ucsc.galgal4
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for the Gallus gallus (Chicken) UCSC galGal4 assembly as a BSgenome object. Use when user asks to access chicken genomic sequences, extract specific chromosome data, perform genome-wide motif searching, or retrieve upstream and downstream sequences for chicken genes.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ggallus.UCSC.galGal4.html
 ---
+
 
 # bioconductor-bsgenome.ggallus.ucsc.galgal4
 

@@ -3,26 +3,32 @@
 ## mobyle
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error logs related to a container runtime failure (no space left on device).
+[Errno 2] No such file or directory: 'mobyle'; fallback failed: [Errno 2] No such file or directory: 'mobyle'
 
 ### Metadata
-- **Docker Image**: biocontainers/mobyle:v1.5.5dfsg-6-deb_cv1
+- **Docker Image**: Not found
 - **Homepage**: https://github.com/tscolari/mobylette
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mobyle/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/tscolari/mobylette
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'mobyle'; fallback failed: [Errno 2] No such file or directory: 'mobyle'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'mobyle'; fallback failed: [Errno 2] No such file or directory: 'mobyle'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/mobyle:v1.5.5dfsg-6-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3225262234: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

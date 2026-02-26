@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scnorm
-description: the package is available on all platforms; click for details.
+description: SCnorm normalizes single-cell RNA-seq data by accounting for the non-constant relationship between expression levels and sequencing depth. Use when user asks to normalize scRNA-seq data, correct for sequencing depth biases, or scale single-cell expression counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/SCnorm.html
 ---
+
 
 # bioconductor-scnorm
 

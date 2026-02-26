@@ -2,16 +2,29 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: chainAntiRepeat
 label: ucsc-chainantirepeat
-doc: "The provided text is a container runtime error message and does not contain
-  help documentation for the tool. chainAntiRepeat is a UCSC Genome Browser utility
-  used to filter out genomic alignments (chains) that consist primarily of repeats.\n
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Remove chains that are primarily repeats.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: target_2bit
+    type: File
+    doc: Target sequence in 2bit format
+    inputBinding:
+      position: 1
+  - id: query_2bit
+    type: File
+    doc: Query sequence in 2bit format
+    inputBinding:
+      position: 2
+  - id: in_chain
+    type: File
+    doc: Input chain file
+    inputBinding:
+      position: 3
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_chain
+    type: File
+    doc: Output chain file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chainantirepeat:482--h0b57e2e_0
-stdout: ucsc-chainantirepeat.out

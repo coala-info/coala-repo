@@ -1,8 +1,9 @@
 ---
 name: bioconductor-h5vcdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets, including HDF5 tally files and BAM files, for testing and demonstrating the h5vc package. Use when user asks to access example variant call data, locate sample HDF5 tally files, or retrieve BAM files for the NRAS and DNMT3A loci.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/h5vcData.html
 ---
+
 
 # bioconductor-h5vcdata
 

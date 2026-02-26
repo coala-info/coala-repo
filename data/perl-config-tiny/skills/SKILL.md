@@ -1,8 +1,9 @@
 ---
 name: perl-config-tiny
-description: This skill provides guidance on using the `Config::Tiny` Perl module to handle simple configuration files.
+description: This tool provides a lightweight interface for reading and writing simple configuration files in the standard Windows-style INI format using Perl. Use when user asks to load settings from .ini files, save configuration data to disk, or manipulate INI-style strings within a Perl script.
 homepage: http://metacpan.org/pod/Config::Tiny
 ---
+
 
 # perl-config-tiny
 

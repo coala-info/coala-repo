@@ -1,9 +1,9 @@
 # ucsc-twobitmask CWL Generation Report
 
-## ucsc-twobitmask
+## ucsc-twobitmask_twoBitMask
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is a log of a fatal error encountered while attempting to fetch or build the container image.
+apply masking to a .2bit file, creating a new .2bit file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-twobitmask:482--h0b57e2e_0
@@ -18,33 +18,13 @@ The provided text does not contain help information for the tool; it is a log of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-twobitmask:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-twobitmask_twoBitMask
-
-### Tool Description
-A tool to mask sequences in a .2bit file. (Note: The provided text was a container execution error log and did not contain the standard help documentation; arguments could not be extracted from the input text.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-twobitmask:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-twobitmask/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-twobitmask:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+twoBitMask - apply masking to a .2bit file, creating a new .2bit file
+usage:
+   twoBitMask input.2bit maskFile output.2bit
+options:
+   -add   Don't remove pre-existing masking before applying maskFile.
+   -type=.XXX   Type of maskFile is XXX (bed or out).
+maskFile can be a RepeatMasker .out file or a .bed file.  It must not
+contain rows for sequences which are not in input.2bit.
 ```
 

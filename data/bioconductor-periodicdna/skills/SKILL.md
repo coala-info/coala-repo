@@ -1,8 +1,9 @@
 ---
 name: bioconductor-periodicdna
-description: the package is available on all platforms; click for details.
+description: This tool analyzes the periodicity of k-mers within genomic sequences to identify structural patterns. Use when user asks to identify periodic DNA patterns, calculate k-mer frequencies, or visualize sequence periodicity.
 homepage: https://bioconductor.org/packages/release/bioc/html/periodicDNA.html
 ---
+
 
 # bioconductor-periodicdna
 

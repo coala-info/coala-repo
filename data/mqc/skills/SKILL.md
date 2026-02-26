@@ -1,8 +1,9 @@
 ---
 name: mqc
-description: The `mqc` (Mapping Quality Control) tool is a specialized utility for assessing the quality of ribosome profiling experiments.
+description: The mqc tool assesses the quality of ribosome profiling experiments by analyzing triplet periodicity and P-site offsets in aligned reads. Use when user asks to evaluate Ribo-seq data quality, determine P-site offsets, or generate diagnostic reports for ribosome protected fragments.
 homepage: https://github.com/Biobix/mQC
 ---
+
 
 # mqc
 

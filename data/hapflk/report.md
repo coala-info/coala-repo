@@ -3,7 +3,7 @@
 ## hapflk
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to insufficient disk space.
+hapflk
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hapflk:1.3.0--py27_0
@@ -18,97 +18,63 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapflk:1.3.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2605307670: no space left on device
-```
+usage: hapflk [-h] [--ped FILE] [--map FILE] [--file PREFIX] [--bfile PREFIX]
+              [--miss_geno C] [--miss_pheno C] [--miss_parent C]
+              [--miss_sex C] [--chr C] [--from x] [--to x] [--other_map]
+              [-p PREFIX] [--ncpu N] [--eigen] [--kinship FILE]
+              [--reynolds-snps L] [--outgroup POP] [--keep-outgroup] [-K K]
+              [--nfit NFIT] [--phased] [--no-kfrq]
 
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PREFIX, --prefix PREFIX
+                        prefix for output files (default: hapflk)
+  --ncpu N              Use N processors when possible (default: 1)
+  --eigen               Perform eigen decomposition of tests (default: False)
 
-## Metadata
-- **Skill**: generated
+Input Files:
+  Available formats
 
-## hapflk_flkfreq
+  --ped FILE            PED file (default: None)
+  --map FILE            MAP file (default: None)
+  --file PREFIX         PLINK file prefix (ped,map) (default: None)
+  --bfile PREFIX        PLINK bfile prefix (bim,fam,bed) (default: None)
 
-### Tool Description
-The provided text does not contain help information for the tool, but rather system error messages related to a container runtime failure (no space left on device).
+Data format options:
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hapflk:1.3.0--py27_0
-- **Homepage**: https://github.com/BertrandServin/hapflk
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapflk:1.3.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1008893814: no space left on device
-```
+  --miss_geno C         Missing Genotype Code (default: 0)
+  --miss_pheno C        Missing Phenotype Code (default: -9)
+  --miss_parent C       Missing Parent Code (default: 0)
+  --miss_sex C          Missing Sex Code (default: 0)
 
-## hapflk_poolflkadapt
+SNP selection:
+  Filter SNP by genome position
 
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Singularity/Apptainer) failing to build an image due to insufficient disk space.
+  --chr C               Select chromosome C (default: None)
+  --from x              Select SNPs with position > x (in bp/cM) Warning :
+                        does not work with BED files (default: 0)
+  --to x                Select SNPs with position < x (in bp/cM) Warning :
+                        does not work with BED files (default: inf)
+  --other_map           Use alternative map (genetic/RH) (default: False)
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hapflk:1.3.0--py27_0
-- **Homepage**: https://github.com/BertrandServin/hapflk
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapflk:1.3.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1614926340: no space left on device
-```
+Population kinship :
+  Set parameters for getting the population kinship matrix
 
-## hapflk_flkpoptree
+  --kinship FILE        Read population kinship from file (if None, kinship is
+                        estimated) (default: None)
+  --reynolds-snps L     Number of SNPs to use to estimate Reynolds distances
+                        (default: 10000)
+  --outgroup POP        Use population POP as outgroup for tree rooting (if
+                        None, use midpoint rooting) (default: None)
+  --keep-outgroup       Keep outgroup in population set (default: False)
 
-### Tool Description
-The provided text contains system error messages and does not include help documentation or usage instructions for the tool.
+hapFLK and LD model:
+  Switch on hapFLK calculations and set parameters of the LD model
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hapflk:1.3.0--py27_0
-- **Homepage**: https://github.com/BertrandServin/hapflk
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapflk:1.3.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4052489512: no space left on device
-```
-
-## hapflk_hapviterbi
-
-### Tool Description
-HapFLK hapviterbi tool (Note: The provided input text contains container runtime error logs rather than tool help documentation; therefore, no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hapflk:1.3.0--py27_0
-- **Homepage**: https://github.com/BertrandServin/hapflk
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapflk:1.3.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1687671775: no space left on device
-```
-
-## hapflk_poolflkannot
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime error messages (Singularity/Apptainer) indicating a failure to pull or build the image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hapflk:1.3.0--py27_0
-- **Homepage**: https://github.com/BertrandServin/hapflk
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapflk:1.3.0--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3197409734: no space left on device
+  -K K                  Set the number of clusters to K. hapFLK calculations
+                        switched off if K<0 (default: -1)
+  --nfit NFIT           Set the number of model fit to use (default: 20)
+  --phased, --inbred    Haplotype data provided (default: False)
+  --no-kfrq             Do not write Cluster frequencies (default: False)
 ```
 

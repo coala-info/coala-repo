@@ -1,8 +1,9 @@
 ---
 name: r-rsolnp
-description: R package rsolnp (documentation from project home).
+description: The r-rsolnp package provides a robust general non-linear solver for R that handles optimization problems with equality and inequality constraints using the SOLNP algorithm. Use when user asks to solve constrained non-linear optimization problems, estimate GARCH models, or perform global optimization using multi-start methods.
 homepage: https://cran.r-project.org/web/packages/rsolnp/index.html
 ---
+
 
 # r-rsolnp
 

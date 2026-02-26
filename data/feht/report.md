@@ -3,7 +3,7 @@
 ## feht
 
 ### Tool Description
-A tool for performing Fisher's Exact test on Haplotype Tables (Note: The provided help text contains only container runtime error messages and no usage information).
+Predictive marker discovery for groups; binary data, genomic data (single nucleotide variants), and arbitrary character data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/feht:1.1.0--0
@@ -18,11 +18,36 @@ A tool for performing Fisher's Exact test on Haplotype Tables (Note: The provide
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/feht:1.1.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2619902588: no space left on device
+feht - predictive marker discovery
+
+Usage: feht (-i|--infoFile FILE) (-d|--datafile FILE)
+            [--one "Group1Name Group1Item Group1Item Group1Item"]
+            [--two "Group2Name Group2Item Group2Item Group2Item"]
+            [-l|--delimiter [',', '\t' ...], DEFAULT='\t']
+            [-m|--mode ['binary', 'snp'], DEFAULT='binary']
+            [-c|--correction ['none', 'bonferroni'], DEFAULT='bonferroni']
+            [-f|--ratioFilter [Filter results by ratio (0.00-1.00), DEFAULT=0]]
+  Predictive marker discovery for groups; binary data, genomic data (single
+  nucleotide variants), and arbitrary character data.
+
+Available options:
+  -i,--infoFile FILE       File of metadata information
+  -d,--datafile FILE       File of binary or single-nucleotide variant data
+  --one "Group1Name Group1Item Group1Item Group1Item"
+                           Group1 column name, followed by optional Group1
+                           labels to include as part of the group
+  --two "Group2Name Group2Item Group2Item Group2Item"
+                           Group2 column name, followed by optional Group2
+                           labels to include as part of the group
+  -l,--delimiter [',', '\t' ...], DEFAULT='\t'
+                           Delimiter used for both the metadata and data file
+  -m,--mode ['binary', 'snp'], DEFAULT='binary'
+                           Mode for program data; either 'binary' or 'snp'
+  -c,--correction ['none', 'bonferroni'], DEFAULT='bonferroni'
+                           Multiple-testing correction to apply
+  -f,--ratioFilter [Filter results by ratio (0.00-1.00), DEFAULT=0]
+                           Display only those results greater than or equal to
+                           the value
+  -h,--help                Show this help text
 ```
 
-
-## Metadata
-- **Skill**: generated

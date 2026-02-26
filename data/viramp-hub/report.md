@@ -1,9 +1,9 @@
 # viramp-hub CWL Generation Report
 
-## viramp-hub
+## viramp-hub_scheme-convert
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it appears to be a log of a failed container build process.
+Converts scheme files between different formats.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/viramp-hub:0.1.0--pyhdfd78af_0
@@ -18,33 +18,34 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/viramp-hub:0.1.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: scheme-convert [-h] -o OUTPUT [-a AMPLICON_INFO] -t {bed,amplicon-info}
+                      [-b {ivar,cojac}] [-r {full,inner,outer}] [-f {bed}]
+                      input
 
+positional arguments:
+  input                 Input file
 
-## Metadata
-- **Skill**: generated
-
-## viramp-hub_scheme-convert
-
-### Tool Description
-A tool for converting schemes within the viramp-hub suite.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/viramp-hub:0.1.0--pyhdfd78af_0
-- **Homepage**: https://github.com/wm75/viramp-hub
-- **Package**: https://anaconda.org/channels/bioconda/packages/viramp-hub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/viramp-hub:0.1.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Name of the output file
+  -a AMPLICON_INFO, --amplicon-info AMPLICON_INFO
+                        Amplicon info file for inputs from which primer
+                        groupings cannot be infered.
+  -t {bed,amplicon-info}, --to {bed,amplicon-info}
+                        Type of output to be generated
+  -b {ivar,cojac}, --bed-type {ivar,cojac}
+                        For "bed" output, the type of bed to be written;
+                        Currently, you can specify "ivar" to produce primer
+                        bed output compatible with the ivar suite of tools, or
+                        "cojac" to generate the amplicon insert bed expected
+                        by cojac.
+  -r {full,inner,outer}, --report-nested {full,inner,outer}
+                        For amplicons formed by nested primers, report all
+                        primers, or just inner or outer ones. Applied only
+                        when writing amplicon info files (default: "full").
+  -f {bed}, --from {bed}
+                        Format of the input file (only "bed" is supported in
+                        this version)
 ```
 

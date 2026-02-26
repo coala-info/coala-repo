@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nugohs1a520180probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the NuGO Human S1A microarray. Use when user asks to retrieve probe sequences for the NuGO Human S1A platform or perform sequence-level analysis on this microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugohs1a520180probe.html
 ---
+
 
 # bioconductor-nugohs1a520180probe
 

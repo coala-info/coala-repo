@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedextendranges
-description: The `ucsc-bedextendranges` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed to standardize the length of genomic intervals.
+description: ucsc-bedextendranges extends genomic intervals to a specified minimum length, using strand information to determine the direction of extension. Use when user asks to standardize peak widths, extend genomic regions to a minimum length, or prepare features for signal extraction.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedextendranges
 

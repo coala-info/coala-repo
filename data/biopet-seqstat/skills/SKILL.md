@@ -1,8 +1,9 @@
 ---
 name: biopet-seqstat
-description: biopet-seqstat is a bioinformatics utility designed to extract and manage descriptive statistics from FASTQ files.
+description: Biopet-seqstat extracts and manages descriptive quality statistics from FASTQ files, including read lengths and base quality metrics. Use when user asks to generate sequencing statistics, merge multiple stats files into a single report, or validate the integrity of stats files.
 homepage: https://github.com/biopet/seqstat
 ---
+
 
 # biopet-seqstat
 

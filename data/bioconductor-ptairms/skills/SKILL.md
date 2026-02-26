@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ptairms
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for the preprocessing and analysis of Proton Transfer Reaction Mass Spectrometry (PTR-MS) data. Use when user asks to process raw PTR-MS files, detect peaks, quantify volatile organic compounds, or visualize mass spectra.
 homepage: https://bioconductor.org/packages/release/bioc/html/ptairMS.html
 ---
+
 
 # bioconductor-ptairms
 

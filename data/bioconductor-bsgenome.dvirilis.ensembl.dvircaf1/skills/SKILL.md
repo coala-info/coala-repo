@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.dvirilis.ensembl.dvircaf1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Drosophila virilis (assembly dvir_caf1) as a Bioconductor BSgenome object. Use when user asks to extract sequences, search for DNA motifs, or perform coordinate-based genomic analysis using the D. virilis reference genome.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dvirilis.Ensembl.dvircaf1.html
 ---
+
 
 # bioconductor-bsgenome.dvirilis.ensembl.dvircaf1
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-interminer
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides an R interface to programmatically query and retrieve biological data from InterMine-powered warehouses. Use when user asks to connect to biological databases like HumanMine or FlyMine, run template queries, or build custom data mining queries for genomic and protein information.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/InterMineR.html
 ---
+
 
 # bioconductor-interminer
 

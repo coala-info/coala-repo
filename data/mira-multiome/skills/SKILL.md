@@ -1,8 +1,9 @@
 ---
 name: mira-multiome
-description: MIRA (Multimodal models for Integrated Regulatory Analysis) is a specialized Python framework designed to uncover the regulatory mechanisms driving cellular states and transitions.
+description: MIRA is a Python framework for the integrated regulatory analysis of single-cell gene expression and chromatin accessibility data. Use when user asks to perform topic modeling, construct joint representations of multi-modal data, model regulatory potential, or disentangle biological signals from technical batch effects.
 homepage: https://mira-multiome.readthedocs.io/en/latest/
 ---
+
 
 # mira-multiome
 

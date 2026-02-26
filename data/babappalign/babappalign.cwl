@@ -2,10 +2,45 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: babappalign
 label: babappalign
-doc: "The provided text contains system error messages regarding disk space and container
-  image retrieval rather than the tool's help documentation. As a result, no arguments
-  or descriptions could be extracted.\n\nTool homepage: https://github.com/sinhakrishnendu/BABAPPAlign"
-inputs: []
+doc: "\nTool homepage: https://github.com/sinhakrishnendu/BABAPPAlign"
+inputs:
+  - id: fasta
+    type: File
+    inputBinding:
+      position: 1
+  - id: device
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --device
+  - id: gap_extend
+    type:
+      - 'null'
+      - float
+    inputBinding:
+      position: 102
+      prefix: --gap-extend
+  - id: gap_open
+    type:
+      - 'null'
+      - float
+    inputBinding:
+      position: 102
+      prefix: --gap-open
+  - id: mode
+    type:
+      - 'null'
+      - string
+    inputBinding:
+      position: 102
+      prefix: --mode
+  - id: model
+    type: string
+    inputBinding:
+      position: 102
+      prefix: --model
 outputs:
   - id: stdout
     type: stdout

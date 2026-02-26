@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffcoexp
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially coexpressed links and genes from gene expression data under two conditions. Use when user asks to identify gene pairs with significantly different correlation coefficients or find genes with more differential coexpression than expected by chance.
 homepage: https://bioconductor.org/packages/release/bioc/html/diffcoexp.html
 ---
+
 
 # bioconductor-diffcoexp
 

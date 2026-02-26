@@ -1,8 +1,9 @@
 ---
 name: wbuild
-description: wbuild is a specialized tool designed to streamline the creation of R-based report galleries.
+description: wbuild streamlines the creation of R-based report galleries by generating a Snakemake workflow from R-markdown files. Use when user asks to create R-based report galleries, initialize a wbuild project, generate a sample project, build R-markdown reports, or organize R scripts for web output.
 homepage: https://github.com/gagneurlab/wBuild
 ---
+
 
 # wbuild
 

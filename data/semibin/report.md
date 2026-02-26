@@ -1,9 +1,9 @@
 # semibin CWL Generation Report
 
-## semibin
+## semibin_SemiBin2
 
 ### Tool Description
-Semi-supervised community-level metagenomic binning
+Neural network-based binning of metagenomic contigs
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/semibin:2.2.1--pyhdfd78af_0
@@ -18,35 +18,48 @@ Semi-supervised community-level metagenomic binning
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/semibin:2.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f4676076006027e4546a51f629f87868977681418d151d5cd512615b5df291a5: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-4145963817/rootfs/usr/local/bin/python3.13: no space left on device
-```
+usage: SemiBin2 [-h] [-v] [--verbose | --quiet]  ...
 
+Neural network-based binning of metagenomic contigs
 
-## Metadata
-- **Skill**: generated
+options:
+  -h, --help            show this help message and exit
+  -v, -V, --version     Print the version number
+  --verbose             Verbose output (default: False)
+  --quiet, -q           Quiet output (default: False)
 
-## semibin_SemiBin2
+SemiBin subcommands:
+  
+    single_easy_bin     Bin contigs (single or co-assembly) using one command.
+    multi_easy_bin      Bin contigs (multi-sample mode) using one command.
+    generate_sequence_features_single
+                        Generate sequence features (kmer and abundance) as
+                        training data for (semi/self)-supervised deep learning
+                        model training (single or co-assembly mode). This will
+                        produce the data.csv and data_split.csv files.
+    generate_sequence_features_multi (generate_sequence_features_multi)
+                        Generate sequence features (kmer and abundance) as
+                        training data for (semi/self)-supervised deep learning
+                        model training (multi-sample mode). This will produce
+                        the data.csv and data_split.csv files.
+    check_install       Check whether required dependencies are present.
+    concatenate_fasta   concatenate fasta files for multi-sample binning
+    split_contigs       Split contigs to generate data (only for strobealign-
+                        aemb pipeline)
+    train_self          Train the model with self-supervised learning
+    bin (bin_short)     Group the contigs into bins.
+    bin_long            Group the contigs from long reads into bins.
+    train_semi          [deprecated] Train the model.
+    generate_cannot_links (predict_taxonomy)
+                        [deprecated] Run the contig annotation using mmseqs
+                        with GTDB reference genome and generate cannot-link
+                        file used in the semi-supervised deep learning model
+                        training. This will download the GTDB database if not
+                        downloaded before.
+    download_GTDB       [deprecated] Download GTDB reference genomes.
+    citation            Print citation information
 
-### Tool Description
-SemiBin2 is a tool for metagenomic binning using self-supervised deep learning. (Note: The provided help text contains only system error logs regarding a failed container build and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/semibin:2.2.1--pyhdfd78af_0
-- **Homepage**: https://github.com/BigDataBiology/SemiBin
-- **Package**: https://anaconda.org/channels/bioconda/packages/semibin/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/semibin:2.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f4676076006027e4546a51f629f87868977681418d151d5cd512615b5df291a5: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-4036430922/rootfs/usr/local/bin/python3.13: no space left on device
+For more information, see
+https://semibin.readthedocs.io/en/latest/subcommands/
 ```
 

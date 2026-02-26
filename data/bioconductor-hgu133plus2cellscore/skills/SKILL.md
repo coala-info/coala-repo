@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133plus2cellscore
-description: the package is available on all platforms; click for details.
+description: This package provides a curated reference dataset of 837 Affymetrix Human Genome U133 Plus 2.0 microarray profiles for evaluating cell identity. Use when user asks to load the standard reference ExpressionSet for CellScore, access YuGene-normalized transcription profiles for normal tissues, or evaluate the identity of engineered cell types against a standard reference.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu133plus2CellScore.html
 ---
+
 
 # bioconductor-hgu133plus2cellscore
 

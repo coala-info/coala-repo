@@ -3,7 +3,7 @@
 ## theseus
 
 ### Tool Description
-The provided text is an error log from a container runtime (Singularity/Apptainer) and does not contain help information or argument definitions for the tool 'theseus'.
+Maximum likelihood multiple superpositioning
 
 ### Metadata
 - **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
@@ -18,261 +18,66 @@ The provided text is an error log from a container runtime (Singularity/Apptaine
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+-> No pdb files specified. <- 
 
 
-## Metadata
-- **Skill**: generated
+                            [1;31m< BEGIN THESEUS 3.3.0 >[0m 
+I===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-=I
+I                [1;36mTHESEUS[0m: Maximum likelihood multiple superpositioning        I
+I=-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===I
+  Usage:                                                                        
+    theseus [options] <pdb files>                                               
 
-## theseus_make
+  Algorithm options:                                                            
+    -a  atoms to include in superposition                                       
+          [1;32m0[0m = alpha carbons and phosphorous atoms                           
+          1 = backbone                                                          
+          2 = all                                                               
+          3 = alpha and beta carbons                                            
+          4 = all heavy atoms (all but hydrogens)                               
+            or                                                                  
+        a colon-delimited string specifying the atom-types PDB-style            
+        e.g., -a ' CA  : N  '                                                   
+        selects the alpha carbons and backone nitrogens                         
+    -f  only read the first model of a multi-model PDB file                     
+    -i  maximum iterations {[1;32m200[0m}                                            
+    -l  superimpose with conventional least squares method                      
+    -s  residues to select (e.g. -s15-45:50-55) {[1;32mall[0m}                       
+    -S  residues to exclude (e.g. -S15-45:50-55) {[1;32mnone[0m}                     
+    -[1;32mv[0m  use ML variance weighting (no correlations)                         
 
-### Tool Description
-The provided text appears to be a system error log from a container build process (Apptainer/Singularity) rather than the help text for the 'theseus_make' tool. As a result, no command-line arguments, flags, or descriptions could be extracted from the input.
+ Input/output options: 
+    --amber  for reading AMBER8 formatted PDB files                             
+    -A  sequence alignment file to use as a guide (CLUSTAL or A2M format)       
+    -E  print expert options                                                    
+    -F  print FASTA files of the sequences in PDB files and quit                
+    -h  help/usage                                                              
+    -I  just calculate statistics for input file (don't superposition)          
+    -M  file that maps sequences in the alignment file to PDB files             
+    -r  root name for output files {[1;32mtheseus[0m}                                
+    -V  version                                                                 
 
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+ Principal components analysis: 
+    -C  use covariance matrix for PCA (correlation matrix is default)           
+    -P  # of principal components to calculate {[1;32m0[0m}                          
 
-## theseus_gcc
+ Morphometrics: 
+    -d  calculate scale factors (for morphometrics)                             
+    -q  read and write Rohlf TPS morphometric landmark files                    
 
-### Tool Description
-Maximum likelihood multiple macromolecular structural alignment (Note: The provided text contains container build logs and error messages rather than CLI help text; therefore, no arguments could be extracted).
+ Citations: 
+   Douglas L. Theobald and Phillip A. Steindel (2012) 
+   "Optimal simultaneous superpositioning of multiple structures with missing
+   data."
+   Bioinformatics 28(15):1972-1979
 
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+   Douglas L. Theobald and Deborah S. Wuttke (2008) 
+   "Accurate structural correlations from maximum likelihood superpositions."
+   PLOS Computational Biology, 4(2):e43
 
-## theseus_nasm
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a log of a failed container build process (Apptainer/Singularity) attempting to fetch a Docker image.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_pkg-config
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build process (Apptainer/Singularity) while attempting to fetch a Docker image.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_grub-pc-bin
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a log of a failed container build or execution attempt.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_mtools
-
-### Tool Description
-Maximum likelihood multiple sequence alignment and superposition toolset.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_xorriso
-
-### Tool Description
-The provided text does not contain help information for the tool; it is a log of a failed container build/fetch process.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_qemu
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container build process.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_qemu-kvm
-
-### Tool Description
-Maximum likelihood superpositioning and analysis of macromolecular structures (Note: The provided text is a container build log and does not contain usage instructions or argument definitions).
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_wget
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build process (Apptainer/Singularity).
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_gmake
-
-### Tool Description
-The provided text does not contain help information or documentation for the tool; it is a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_sh
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a log of a failed container build or execution attempt.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## theseus_git
-
-### Tool Description
-The provided text does not contain help information or documentation for the tool. It appears to be a set of system logs and a fatal error message from a container runtime (Singularity/Apptainer) attempting to fetch a Docker image.
-
-### Metadata
-- **Docker Image**: biocontainers/theseus:v3.3.0-8-deb_cv1
-- **Homepage**: https://github.com/theseus-os/Theseus
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/theseus:v3.3.0-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+   http://www.theseus3d.org/
+   Compiled with GSL version 2.5
+I===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-===-==I
+                            [1;31m<  END THESEUS 3.3.0  >[0m
 ```
 

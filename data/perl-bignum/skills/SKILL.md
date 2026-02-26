@@ -1,8 +1,9 @@
 ---
 name: perl-bignum
-description: The perl-bignum skill enables transparent arbitrary-precision arithmetic in Perl environments.
+description: perl-bignum enables transparent arbitrary-precision arithmetic in Perl by automatically promoting numeric literals to big-number objects. Use when user asks to perform high-precision calculations, bypass 64-bit numeric limitations, or handle very large integers and floating-point numbers in Perl scripts.
 homepage: http://metacpan.org/pod/bignum
 ---
+
 
 # perl-bignum
 

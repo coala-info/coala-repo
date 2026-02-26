@@ -1,8 +1,9 @@
 ---
 name: bioconductor-consensusov
-description: the package implements a consensus classifier, which consolidates and improves on the robustness of the proposed subtype classifiers, thereby providing reliable stratification of patients with HGS ovarian tumors of clearly defined subtype.
+description: This R package implements a consensus classifier for the robust subtype stratification of high-grade serous ovarian cancer tumors. Use when user asks to classify ovarian cancer subtypes, consolidate multiple subtype classifiers, or perform patient stratification for HGS ovarian tumors.
 homepage: https://bioconductor.org/packages/release/bioc/html/consensusOV.html
 ---
+
 
 # bioconductor-consensusov
 

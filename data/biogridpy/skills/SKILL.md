@@ -1,8 +1,9 @@
 ---
 name: biogridpy
-description: The `biogridpy` skill enables seamless integration with the BioGRID (Biological General Repository for Interaction Datasets) REST service.
+description: "biogridpy retrieves protein-protein and genetic interaction data from the BioGRID database. Use when user asks to fetch biological interaction datasets, query gene interactions by taxonomy ID, or list valid experimental evidence types."
 homepage: https://github.com/arvkevi/biogridpy
 ---
+
 
 # biogridpy
 

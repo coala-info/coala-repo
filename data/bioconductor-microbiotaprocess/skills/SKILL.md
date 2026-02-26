@@ -1,8 +1,9 @@
 ---
 name: bioconductor-microbiotaprocess
-description: the package is available on all platforms; click for details.
+description: MicrobiotaProcess is an R package designed for comprehensive microbiome data analysis, visualization, and biomarker discovery. Use when user asks to analyze taxonomic profiles, calculate alpha and beta diversity, identify differential abundance, or visualize microbiome community structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/MicrobiotaProcess.html
 ---
+
 
 # bioconductor-microbiotaprocess
 

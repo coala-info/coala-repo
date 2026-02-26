@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133plus2barcodevecs
-description: the package is available on all platforms; click for details.
+description: This package provides pre-computed parameter estimates for the barcode R package to analyze Affymetrix Human Genome U133 Plus 2.0 microarrays. Use when user asks to perform gene expression barcoding, estimate the probability of expression for HGU133Plus2 probesets, or load the bcparams-GPL570 dataset for the barcode package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hgu133plus2barcodevecs.html
 ---
+
 
 # bioconductor-hgu133plus2barcodevecs
 

@@ -1,8 +1,9 @@
 ---
 name: preseq
-description: The `preseq` package provides a suite of tools for predicting the complexity and genomic coverage of high-throughput sequencing libraries.
+description: Preseq predicts the complexity and genomic coverage of high-throughput sequencing libraries to estimate the yield of unique reads at higher sequencing depths. Use when user asks to estimate library complexity, predict future sequencing yield, calculate genomic coverage, or determine the total number of distinct molecules in a library.
 homepage: https://github.com/smithlabcode/preseq
 ---
+
 
 # preseq
 

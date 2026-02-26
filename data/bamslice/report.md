@@ -3,7 +3,7 @@
 ## bamslice
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the 'bamslice' tool. It consists of system logs and error messages related to an Apptainer/Singularity container build failure (No space left on device).
+Extract byte ranges from BAM files and convert to interleaved FASTQ format for parallel processing
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bamslice:0.1.7--h67a98e6_0
@@ -12,23 +12,23 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bamslice/overview
-- **Total Downloads**: 4.9K
+- **Total Downloads**: 5.1K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/nebiolabs/bamslice
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bamslice:0.1.7--h67a98e6_0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+Extract byte ranges from BAM files and convert to interleaved FASTQ format for parallel processing
+
+Usage: bamslice [OPTIONS] --input <INPUT> --start-offset <START_OFFSET> --end-offset <END_OFFSET>
+
+Options:
+  -i, --input <INPUT>                Input BAM file
+  -s, --start-offset <START_OFFSET>  Starting byte offset (will find next BGZF block at or after this offset)
+  -e, --end-offset <END_OFFSET>      Ending byte offset (will process until reaching a block at or after this offset)
+  -o, --output <OUTPUT>              Output file (default: stdout)
+  -l, --log-level <LOG_LEVEL>        Log level (off, error, warn, info, debug, trace) [default: info]
+  -h, --help                         Print help
+  -V, --version                      Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

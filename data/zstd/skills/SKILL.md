@@ -1,8 +1,9 @@
 ---
 name: zstd
-description: Zstandard (zstd) is a fast, lossless compression algorithm designed to provide high compression ratios while maintaining real-time speeds.
+description: Zstandard (zstd) is a fast, lossless compression algorithm designed for high compression ratios and real-time speeds. Use when user asks to compress files, decompress files, adjust compression levels, train a dictionary, compress or decompress small files with a dictionary, use multiple CPU cores for compression, or benchmark compression.
 homepage: https://github.com/facebook/zstd
 ---
+
 
 # zstd
 

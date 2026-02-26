@@ -1,8 +1,9 @@
 ---
 name: rnaquast
-description: rnaQUAST (RNA-Seq Assembly Quality Assessment Tool) provides a comprehensive framework for evaluating the completeness and correctness of RNA-Seq assemblies.
+description: rnaQUAST evaluates the quality of RNA-Seq assemblies by comparing transcripts to a reference genome and gene annotations or performing de novo assessments. Use when user asks to assess assembly completeness, compare multiple RNA-Seq assemblers, or evaluate transcript correctness using a reference genome and GTF file.
 homepage: http://cab.spbu.ru/software/rnaquast/
 ---
+
 
 # rnaquast
 

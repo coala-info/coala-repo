@@ -1,8 +1,9 @@
 ---
 name: bioconductor-elmer
-description: the package is available on all platforms; click for details.
+description: ELMER reconstructs gene regulatory networks by integrating DNA methylation and gene expression data to identify distal regulatory elements and their target genes. Use when user asks to identify enhancers from methylation arrays, link distal probes to target genes via expression correlation, perform motif enrichment analysis, or identify master regulator transcription factors.
 homepage: https://bioconductor.org/packages/release/bioc/html/ELMER.html
 ---
+
 
 # bioconductor-elmer
 

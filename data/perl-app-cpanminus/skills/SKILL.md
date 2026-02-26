@@ -1,8 +1,9 @@
 ---
 name: perl-app-cpanminus
-description: cpanminus (cpanm) is a lightweight, zero-configuration script designed to get, unpack, build, and install modules from the Comprehensive Perl Archive Network (CPAN).
+description: perl-app-cpanminus is a lightweight script used to fetch, build, and install Perl modules from the Comprehensive Perl Archive Network. Use when user asks to install Perl dependencies, manage modules from CPAN, or resolve project requirements using a cpanfile.
 homepage: https://github.com/miyagawa/cpanminus
 ---
+
 
 # perl-app-cpanminus
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksubb.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive SQLite-based annotation data for the Affymetrix hu35ksubb platform. Use when user asks to map manufacturer probe identifiers to biological metadata, retrieve gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubb.db.html
 ---
+
 
 # bioconductor-hu35ksubb.db
 

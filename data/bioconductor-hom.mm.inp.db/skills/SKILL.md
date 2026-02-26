@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.mm.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool maps mouse gene identifiers to orthologous genes in other species using Inparanoid data. Use when user asks to find mouse orthologs in other organisms, map Ensembl protein IDs across species, or perform cross-species genomic analysis.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Mm.inp.db.html
 ---
+
 
 # bioconductor-hom.mm.inp.db
 

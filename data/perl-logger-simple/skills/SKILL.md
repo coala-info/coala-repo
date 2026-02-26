@@ -1,8 +1,9 @@
 ---
 name: perl-logger-simple
-description: The `perl-logger-simple` skill facilitates the implementation of straightforward logging mechanisms in Perl environments.
+description: This tool provides a simple logging mechanism for Perl applications to record messages to persistent log files. Use when user asks to initialize a logger, write messages to a log file, or manage log severity levels in Perl.
 homepage: http://metacpan.org/pod/Logger::Simple
 ---
+
 
 # perl-logger-simple
 

@@ -1,8 +1,9 @@
 ---
 name: quicksnp
-description: QuickSNP is a streamlined Python utility used to construct Neighbor Joining trees from SNP distance data.
+description: QuickSNP constructs Neighbor Joining trees from pre-computed SNP distance matrices. Use when user asks to build a Neighbor Joining tree, generate a Newick file from a square distance matrix, or create a phylogenetic tree from SNP distances.
 homepage: https://github.com/k-florek/QuickSNP
 ---
+
 
 # quicksnp
 

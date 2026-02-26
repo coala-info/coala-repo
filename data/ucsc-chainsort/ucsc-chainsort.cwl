@@ -1,16 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-chainsort
+baseCommand: chainSort
 label: ucsc-chainsort
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It appears to be a container execution log showing a fatal error during
-  the image build/fetch process.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Sort a chain file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_chain
+    type: File
+    doc: The input chain file to be sorted.
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_chain
+    type: File
+    doc: The sorted output chain file.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-chainsort:482--h0b57e2e_0
-stdout: ucsc-chainsort.out

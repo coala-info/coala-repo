@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprbwa
-description: the package is available on all platforms; click for details.
+description: This tool maps CRISPR guide RNA sequences to a reference genome using the BWA alignment algorithm. Use when user asks to align sgRNAs to a reference, map CRISPR spacer sequences, or perform genome-wide searches for guide RNA targets.
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprBwa.html
 ---
+
 
 # bioconductor-crisprbwa
 

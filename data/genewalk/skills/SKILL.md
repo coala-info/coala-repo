@@ -1,8 +1,9 @@
 ---
 name: genewalk
-description: GeneWalk is a specialized tool for functional genomics that goes beyond standard enrichment analysis.
+description: GeneWalk identifies context-specific biological functions of genes by performing random walks on a gene regulatory network to generate embeddings. Use when user asks to prioritize biological processes for a gene list, perform functional genomics analysis beyond standard enrichment, or identify significant GO terms for specific experimental data.
 homepage: https://github.com/churchmanlab/genewalk
 ---
+
 
 # genewalk
 

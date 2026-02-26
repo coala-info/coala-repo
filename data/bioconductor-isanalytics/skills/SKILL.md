@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isanalytics
-description: the package is available on all platforms; click for details.
+description: ISAnalytics analyzes genomic insertion site data to track clonal evolution in gene therapy studies. Use when user asks to import VISPA2 data, perform collision removal, aggregate integration site values, or analyze clonal sharing and abundance.
 homepage: https://bioconductor.org/packages/release/bioc/html/ISAnalytics.html
 ---
+
 
 # bioconductor-isanalytics
 

@@ -1,8 +1,9 @@
 ---
 name: flexi-formatter
-description: The `flexi-formatter` utility is a specialized bioinformatics tool designed to bridge the gap between `flexiplex` discovery and standard BAM-based single-cell analysis workflows.
+description: The flexi-formatter utility extracts cell barcodes and UMIs from read names and re-inserts them as formal BAM tags to ensure compatibility with standard single-cell analysis workflows. Use when user asks to convert flexiplex-formatted BAM files, move identifiers from read names to CB and UR tags, or prepare flexiplex output for downstream processing suites.
 homepage: https://github.com/VIB-CCB-BioIT/flexiplex_tag_formatter
 ---
+
 
 # flexi-formatter
 

@@ -1,8 +1,9 @@
 ---
 name: r-ontologyplot
-description: R package ontologyplot (documentation from project home).
+description: This tool visualizes ontological terms and their relationships as Directed Acyclic Graphs using the ontologyPlot R package. Use when user asks to create DAG plots of ontologies, highlight specific terms like HPO or GO, or generate grids of ontological term sets for comparative analysis.
 homepage: https://cran.r-project.org/web/packages/ontologyplot/index.html
 ---
+
 
 # r-ontologyplot
 

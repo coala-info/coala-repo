@@ -1,8 +1,9 @@
 ---
 name: poplddecay
-description: PopLDdecay is a high-performance tool designed for rapid linkage disequilibrium (LD) decay analysis.
+description: PopLDdecay is a high-performance tool designed for rapid linkage disequilibrium decay analysis and visualization using VCF or genotype data. Use when user asks to calculate LD statistics, generate LD decay plots, perform subpopulation comparisons, or analyze extended haplotype homozygosity.
 homepage: https://github.com/BGI-shenzhen/PopLDdecay
 ---
+
 
 # poplddecay
 

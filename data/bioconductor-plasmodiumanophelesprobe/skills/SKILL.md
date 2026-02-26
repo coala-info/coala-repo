@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plasmodiumanophelesprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Plasmodium/Anopheles genome microarray. Use when user asks to access probe sequences for Plasmodium or Anopheles microarrays, analyze probe-level data, or load the plasmodiumanophelesprobe package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/plasmodiumanophelesprobe.html
 ---
+
 
 # bioconductor-plasmodiumanophelesprobe
 

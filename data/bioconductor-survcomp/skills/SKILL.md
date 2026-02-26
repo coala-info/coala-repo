@@ -1,8 +1,9 @@
 ---
 name: bioconductor-survcomp
-description: the package is available on all platforms; click for details.
+description: Bioconductor-survcomp provides functions for the performance assessment and comparison of survival models. Use when user asks to evaluate survival model performance, compare multiple survival models, or conduct meta-analysis of survival data.
 homepage: https://bioconductor.org/packages/release/bioc/html/survcomp.html
 ---
+
 
 # bioconductor-survcomp
 

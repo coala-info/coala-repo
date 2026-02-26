@@ -1,8 +1,9 @@
 ---
 name: isoseq
-description: The `isoseq` toolset is the primary suite for analyzing PacBio long-read transcriptome data.
+description: The isoseq toolset transforms PacBio HiFi reads into high-quality, full-length transcript sequences through clustering and polishing. Use when user asks to cluster reads into isoforms, collapse redundant transcripts, or classify and filter transcripts using the pigeon toolkit.
 homepage: https://github.com/PacificBiosciences/pbbioconda
 ---
+
 
 # isoseq
 

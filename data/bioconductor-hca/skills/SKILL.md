@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hca
-description: the package allows the user to page through large result sets, and to flexibly query the 'list-of-lists' structure representing query responses.
+description: This tool provides an R interface to query, filter, and download single-cell data from the Human Cell Atlas. Use when user asks to search for datasets by metadata, navigate large result sets with pagination, or retrieve HCA projects and files for analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/hca.html
 ---
+
 
 # bioconductor-hca
 

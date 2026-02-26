@@ -1,8 +1,9 @@
 ---
 name: hyphy-mpi
-description: HyPhy (Hypothesis Testing using Phylogenies) is a comprehensive software package for molecular evolution research.
+description: HyPhy is a comprehensive software package for molecular evolution research that uses sophisticated models to characterize selective pressures on genetic sequences. Use when user asks to detect gene-wide selection, identify branch-specific or site-specific selection, test for selection relaxation, or screen for recombination breakpoints.
 homepage: http://hyphy.org/
 ---
+
 
 # hyphy-mpi
 

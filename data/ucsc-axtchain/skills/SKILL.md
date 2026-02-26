@@ -1,8 +1,9 @@
 ---
 name: ucsc-axtchain
-description: `axtChain` is a high-performance utility from the UCSC Genome Browser "Kent" source tree designed to organize local genomic alignments into "chains." While raw alignments (AXT format) represent local similarities, chaining joins these segments into larger, co-linear blocks that follow a consistent order and orientation in both the target and query genomes.
+description: `axtChain` organizes local genomic alignments into larger, co-linear blocks called "chains." Use when user asks to chain genomic alignments, chain cross-species alignments, or chain alignments using a custom score matrix.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-axtchain
 

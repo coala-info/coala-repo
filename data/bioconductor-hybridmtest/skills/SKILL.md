@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hybridmtest
-description: the package is available on all platforms; click for details.
+description: This package performs hybrid multiple hypothesis testing by combining parametric and non-parametric test results based on diagnostic statistics. Use when user asks to perform assumption adequacy averaging, calculate weighted empirical Bayes probabilities, or conduct robust differential expression analysis using multiple statistical tests.
 homepage: https://bioconductor.org/packages/release/bioc/html/HybridMTest.html
 ---
+
 
 # bioconductor-hybridmtest
 

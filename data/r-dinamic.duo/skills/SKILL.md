@@ -1,8 +1,9 @@
 ---
 name: r-dinamic.duo
-description: R package dinamic.duo (documentation from project home).
+description: The DiNAMIC.Duo package detects and compares recurrent DNA copy number alterations between two distinct cohorts using cyclic shift permutations. Use when user asks to identify differences in recurrence patterns between groups, find subtype-specific genomic drivers, or detect recurrent copy number changes in a single cohort.
 homepage: https://cran.r-project.org/web/packages/dinamic.duo/index.html
 ---
+
 
 # r-dinamic.duo
 

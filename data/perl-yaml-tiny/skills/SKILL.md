@@ -1,8 +1,9 @@
 ---
 name: perl-yaml-tiny
-description: This skill provides guidance on using `YAML::Tiny`, a Perl module designed to handle a subset of YAML with minimal overhead.
+description: This tool provides a lightweight Perl module for reading and writing a functional subset of YAML with minimal dependencies. Use when user asks to parse YAML files into Perl data structures, generate YAML from Perl objects, or manage simple configuration files in restricted environments.
 homepage: http://search.cpan.org/dist/YAML-Tiny/lib/YAML/Tiny.pm
 ---
+
 
 # perl-yaml-tiny
 

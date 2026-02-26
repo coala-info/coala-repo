@@ -1,8 +1,9 @@
 ---
 name: ucsc-mafspecieslist
-description: The `mafSpeciesList` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed to parse Multiple Alignment Format (MAF) files.
+description: The `ucsc-mafspecieslist` tool extracts unique species identifiers from Multiple Alignment Format (MAF) files. Use when user asks to list species in a MAF file, count species in an alignment, check for the presence of a specific species, or get a master list of species from multiple MAF files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-mafspecieslist
 

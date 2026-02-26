@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytomapper
-description: the package is available on all platforms; click for details.
+description: This tool visualizes highly multiplexed imaging cytometry data by handling multi-channel images and segmentation masks. Use when user asks to visualize pixel-level intensities, map single-cell metadata onto segmentation masks, or manage CytoImageList objects for spatial analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/cytomapper.html
 ---
+
 
 # bioconductor-cytomapper
 

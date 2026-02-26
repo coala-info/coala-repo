@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowvs
-description: the package is available on all platforms; click for details.
+description: This tool performs variance stabilization for flow cytometry and microarray data using an optimized inverse hyperbolic sine transformation. Use when user asks to stabilize variance across samples, estimate transformation cofactors for fluorescence channels, or apply asinh transformations to flowSet objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowVS.html
 ---
+
 
 # bioconductor-flowvs
 

@@ -1,8 +1,9 @@
 ---
 name: cthreepo
-description: `cthreepo` is a specialized utility designed to resolve sequence ID mismatches in bioinformatics workflows.
+description: "cthreepo converts sequence identifiers between RefSeq, UCSC, and Ensembl styles for various genomic file formats. Use when user asks to resolve sequence ID mismatches, interconvert chromosome naming conventions, or map identifiers across different assembly reports."
 homepage: https://github.com/vkkodali/cthreepo
 ---
+
 
 # cthreepo
 

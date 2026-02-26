@@ -1,8 +1,9 @@
 ---
 name: quast
-description: QUAST is a comprehensive suite for assessing the quality of genomic contigs.
+description: QUAST evaluates the quality and accuracy of genomic assemblies through statistical reports and visual representations. Use when user asks to assess assembly quality, compare multiple genome assemblies, evaluate metagenomes, or identify structural misassemblies.
 homepage: http://quast.sourceforge.net/
 ---
+
 
 # quast
 

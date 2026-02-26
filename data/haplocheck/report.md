@@ -3,7 +3,7 @@
 ## haplocheck
 
 ### Tool Description
-A tool for mitochondrial contamination detection (Note: The provided text contains execution errors and log messages rather than help documentation, so no arguments could be extracted).
+haplocheck 1.3.3
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/haplocheck:1.3.3--h2a3209d_2
@@ -18,11 +18,16 @@ A tool for mitochondrial contamination detection (Note: The provided text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/haplocheck:1.3.3--h2a3209d_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1833698952: no space left on device
+haplocheck 1.3.3
+https://github.com/genepi/haplocheck
+(c) 2020 Sebastian Schoenherr, Hansi Weissensteiner, Lukas Forer
+
+Usage: haplocheck [--help] [--raw] [--version] --out=<out> <vcf>
+      <vcf>         VCF File
+      --help
+      --out=<out>   Output report
+      --raw         Write raw report
+                      Default: false
+      --version
 ```
 
-
-## Metadata
-- **Skill**: generated

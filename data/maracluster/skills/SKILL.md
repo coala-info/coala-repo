@@ -1,8 +1,9 @@
 ---
 name: maracluster
-description: MaRaCluster is a specialized tool for the large-scale clustering of fragment spectra from shotgun proteomics experiments.
+description: MaRaCluster clusters fragment spectra from shotgun proteomics experiments to identify similar spectra and generate high-quality consensus spectra. Use when user asks to cluster mass spectrometry data, group similar fragment spectra, or generate consensus spectra from multiple proteomics runs.
 homepage: https://github.com/statisticalbiotechnology/maracluster
 ---
+
 
 # maracluster
 

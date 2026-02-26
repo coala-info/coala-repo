@@ -1,9 +1,9 @@
 # instrain CWL Generation Report
 
-## instrain
+## instrain_inStrain
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system log messages and a fatal error regarding container execution.
+Choose one of the operations below for more detailed help. See https://instrain.readthedocs.io for documentation. Example: inStrain profile -h
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/instrain:1.10.0--pyhdfd78af_0
@@ -12,17 +12,29 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/instrain/overview
-- **Total Downloads**: 94.7K
+- **Total Downloads**: 94.8K
 - **Last updated**: 2025-05-10
 - **GitHub**: https://github.com/MrOlm/inStrain
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/instrain:1.10.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3500981180: no space left on device
+...::: inStrain v1.10.0 :::...
+   
+  Matt Olm and Alex Crits-Christoph. MIT License. Banfield Lab, UC Berkeley.
+
+  Choose one of the operations below for more detailed help. See https://instrain.readthedocs.io for documentation.
+  Example: inStrain profile -h
+
+  Main operations:
+    profile           -> Create an inStrain profile (microdiversity analysis) from a mapping file
+    compare            -> Compare multiple inStrain profiles (popANI, coverage_overlap, etc.)
+
+  Auxiliary operations:
+    check_deps        -> Print a list of dependencies, versions, and whether they're working
+    parse_annotations -> Run a number of outputs based a table of gene annotations 
+    quick_profile     -> Quickly calculate coverage and breadth of a mapping using coverM
+    filter_reads      -> Commands related to filtering reads from .bam files
+    plot              -> Make figures from the results of "profile" or "compare"
+    other             -> Other miscellaneous operations
 ```
 
-
-## Metadata
-- **Skill**: generated

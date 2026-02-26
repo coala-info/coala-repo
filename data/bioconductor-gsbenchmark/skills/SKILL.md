@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsbenchmark
-description: The package contains a list of pathways and gene expression data sets used in "Identifying Tightly Regulated and Variably Expressed Networks by Differential Rank Conservation (DIRAC)" (2010) by Eddy et al.
+description: The GSBenchMark package provides curated gene expression datasets and pathway information for benchmarking the Differential Rank Conservation algorithm. Use when user asks to access standardized disease datasets, load DIRAC pathway lists, or prune gene sets for expression analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSBenchMark.html
 ---
+
 
 # bioconductor-gsbenchmark
 

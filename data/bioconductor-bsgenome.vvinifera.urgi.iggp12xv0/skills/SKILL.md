@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.vvinifera.urgi.iggp12xv0
-description: the package is available on all platforms; click for details.
+description: This package provides the full reference nuclear genome sequences for Vitis vinifera (grapevine) PN40024 assembly IGGP 12Xv0. Use when user asks to access grapevine chromosome sequences, extract genomic subsequences, calculate nucleotide frequencies, or perform genome-wide motif searching in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Vvinifera.URGI.IGGP12Xv0.html
 ---
+
 
 # bioconductor-bsgenome.vvinifera.urgi.iggp12xv0
 

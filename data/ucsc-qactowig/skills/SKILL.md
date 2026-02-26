@@ -1,8 +1,9 @@
 ---
 name: ucsc-qactowig
-description: The `ucsc-qactowig` skill facilitates the transformation of compressed quality score files (.qac) into a human-readable or browser-compatible wiggle format (.wig).
+description: This tool converts compressed quality score files (.qac) into wiggle format (.wig). Use when user asks to convert QAC files to WIG format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-qactowig
 

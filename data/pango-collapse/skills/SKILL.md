@@ -1,8 +1,9 @@
 ---
 name: pango-collapse
-description: pango-collapse is a bioinformatics utility designed to map granular SARS-CoV-2 sublineages back to their ancestral "parent" lineages.
+description: pango-collapse maps granular SARS-CoV-2 sublineages back to their ancestral parent lineages for simplified epidemiological reporting. Use when user asks to collapse sub-variants into major groups, process lineage CSVs with specific parent lists, or expand Pango lineages into their full hierarchical notation.
 homepage: https://github.com/MDU-PHL/pango-collapse
 ---
+
 
 # pango-collapse
 

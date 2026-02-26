@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kboost
-description: the package is available on all platforms; click for details.
+description: KBoost infers gene regulatory networks from gene expression data using kernel principal components regression and boosting. Use when user asks to estimate transcription factor regulation probabilities, incorporate prior biological knowledge into network inference, or analyze human-specific regulatory networks using built-in ChIP-seq priors.
 homepage: https://bioconductor.org/packages/release/bioc/html/KBoost.html
 ---
+
 
 # bioconductor-kboost
 

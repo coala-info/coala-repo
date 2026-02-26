@@ -1,8 +1,9 @@
 ---
 name: bioconductor-champ
-description: The package includes quality control metrics, a selection of normalization methods and novel methods to identify differentially methylated regions and to highlight copy number alterations.
+description: ChAMP is a comprehensive pipeline for the analysis of Illumina Methylation BeadArray data, including 450k and EPIC arrays. Use when user asks to load and filter methylation data, perform quality control and normalization, correct for batch effects, or identify differentially methylated probes, regions, and blocks.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChAMP.html
 ---
+
 
 # bioconductor-champ
 

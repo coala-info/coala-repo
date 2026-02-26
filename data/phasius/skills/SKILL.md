@@ -1,8 +1,9 @@
 ---
 name: phasius
-description: phasius is a high-performance Rust tool designed to create phase-block maps.
+description: "phasius creates interactive phase-block maps from alignment or variant files to visualize genomic phasing consistency. Use when user asks to visualize phase blocks, compare phasing across different data types, or create HTML maps for diploid assembly validation."
 homepage: https://github.com/wdecoster/phasius
 ---
+
 
 # phasius
 

@@ -1,8 +1,9 @@
 ---
 name: customtkinter
-description: CustomTkinter is a powerful Python UI library built on top of Tkinter that enables the creation of modern, high-DPI-aware desktop applications.
+description: CustomTkinter is a Python library that provides modern, themed widgets for building high-DPI-aware desktop applications on top of Tkinter. Use when user asks to create modern desktop interfaces, implement dark and light mode support, build scalable UI components using an object-oriented approach, or manage high-resolution display scaling.
 homepage: https://customtkinter.tomschimansky.com
 ---
+
 
 # customtkinter
 

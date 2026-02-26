@@ -1,8 +1,9 @@
 ---
 name: r-vision
-description: R package vision (documentation from project home).
+description: VISION is an R package for the functional interpretation of single-cell RNA-seq data through gene signature scoring and local consistency analysis. Use when user asks to identify coordinated variation between cells, compute signature scores, or generate interactive HTML reports for single-cell datasets.
 homepage: https://cran.r-project.org/web/packages/vision/index.html
 ---
+
 
 # r-vision
 

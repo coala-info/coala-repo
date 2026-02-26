@@ -1,8 +1,9 @@
 ---
 name: chromograph
-description: Chromograph is a specialized Python-based tool for transforming raw genomic data into intuitive PNG visualizations.
+description: "Chromograph transforms raw genomic data into PNG visualizations such as ideograms and coverage plots. Use when user asks to generate chromosomal ideograms, visualize coverage depth, plot regions of autozygosity, or visualize uniparental disomy."
 homepage: https://github.com/Clinical-Genomics/chromograph
 ---
+
 
 # chromograph
 

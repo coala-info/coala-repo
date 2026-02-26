@@ -1,8 +1,9 @@
 ---
 name: bioconductor-karyoploter
-description: the package is available on all platforms; click for details.
+description: karyoploteR is a Bioconductor package for creating highly customizable visualizations of genomic data along the chromosomes of any organism. Use when user asks to plot genomic data, create karyotypes, visualize regions or coverage, draw links between genomic locations, or generate multi-track genome plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/karyoploteR.html
 ---
+
 
 # bioconductor-karyoploter
 

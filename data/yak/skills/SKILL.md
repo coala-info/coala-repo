@@ -1,8 +1,9 @@
 ---
 name: yak
-description: yak (Yet Another K-mer analyzer) is a high-performance tool for genomic quality assessment.
+description: yak is a high-performance tool that analyzes k-mer distributions to assess genomic quality, estimate base accuracy, and evaluate assembly completeness. Use when user asks to build k-mer hash tables, estimate base accuracy, evaluate assembly completeness, generate k-mer histograms, or partition sex chromosomes.
 homepage: https://github.com/lh3/yak
 ---
+
 
 # yak
 

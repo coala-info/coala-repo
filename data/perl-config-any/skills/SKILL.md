@@ -1,8 +1,9 @@
 ---
 name: perl-config-any
-description: `Config::Any` provides a unified interface for loading configuration files regardless of their format.
+description: This tool provides a unified interface for loading configuration files across multiple formats into a standardized Perl hash. Use when user asks to load configuration files, detect file formats automatically, or parse multiple configuration stems and directories.
 homepage: http://metacpan.org/pod/Config-Any
 ---
+
 
 # perl-config-any
 

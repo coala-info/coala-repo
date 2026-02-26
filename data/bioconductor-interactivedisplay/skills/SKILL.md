@@ -1,8 +1,9 @@
 ---
 name: bioconductor-interactivedisplay
-description: the package is available on all platforms; click for details.
+description: This tool provides a Shiny-based framework for the interactive visualization and exploration of Bioconductor data objects and data frames. Use when user asks to launch interactive web applications for genomic data exploration, visualize ExpressionSet heatmaps, or subset GRanges and data frames through a graphical interface.
 homepage: https://bioconductor.org/packages/release/bioc/html/interactiveDisplay.html
 ---
+
 
 # bioconductor-interactivedisplay
 

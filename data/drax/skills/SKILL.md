@@ -1,8 +1,9 @@
 ---
 name: drax
-description: DRAX is a specialized bioinformatics pipeline that bridges the gap between identifying resistance genes and understanding which organisms carry them in a metagenomic sample.
+description: DRAX is a bioinformatics pipeline that identifies antibiotic resistance genes and performs taxonomic classification to determine their host organisms in metagenomic samples. Use when user asks to identify resistance genes, extract genomic neighborhoods, or perform host-association analysis for ARGs.
 homepage: https://github.com/will-rowe/drax
 ---
+
 
 # drax
 

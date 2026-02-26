@@ -1,8 +1,9 @@
 ---
 name: bacphlip
-description: BACPHLIP (Bacteriophage Lifestyle Prediction) is a specialized tool that uses a Random Forest classifier to determine if a phage genome is temperate (lysogenic) or virulent (lytic).
+description: BACPHLIP predicts whether a bacteriophage genome follows a temperate or virulent lifestyle using a Random Forest classifier. Use when user asks to determine phage lifestyle, predict if a phage is lytic or lysogenic, or identify temperate-specific protein domains in a phage genome.
 homepage: https://github.com/adamhockenberry/bacphlip
 ---
+
 
 # bacphlip
 

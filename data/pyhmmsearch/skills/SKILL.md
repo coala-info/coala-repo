@@ -1,8 +1,9 @@
 ---
 name: pyhmmsearch
-description: pyhmmsearch is a high-performance Python implementation of the `hmmsearch` algorithm from the HMMER suite.
+description: pyhmmsearch is a high-performance Python implementation of the HMMER algorithm used to search protein sequences against profile hidden Markov model databases. Use when user asks to search protein sequences against HMM databases, annotate protein sets, or serialize HMM models for faster database loading.
 homepage: https://github.com/new-atlantis-labs/pyhmmsearch-stable
 ---
+
 
 # pyhmmsearch
 

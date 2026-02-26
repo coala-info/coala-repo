@@ -1,8 +1,9 @@
 ---
 name: mm2plus
-description: `mm2plus` is an optimized version of the `minimap2` aligner, specifically engineered to reduce execution time for genomic workflows.
+description: mm2plus is an optimized version of the minimap2 aligner designed for high-speed genomic sequence alignment using parallelization and SIMD acceleration. Use when user asks to map long reads to a reference, perform whole-genome alignment, or execute spliced RNA-seq alignment.
 homepage: https://github.com/at-cg/mm2-plus
 ---
+
 
 # mm2plus
 

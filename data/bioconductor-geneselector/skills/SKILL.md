@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneselector
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs stability-based gene selection and rank aggregation for microarray data using various statistical criteria and resampling techniques. Use when user asks to assess the stability of gene rankings, perform differential expression analysis with multiple statistical tests, or aggregate multiple gene lists into a single robust ranking.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GeneSelector.html
 ---
+
 
 # bioconductor-geneselector
 

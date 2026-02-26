@@ -1,8 +1,9 @@
 ---
 name: mcl
-description: The Markov Cluster (MCL) algorithm is a fast and scalable unsupervised cluster algorithm for graphs (networks) based on simulation of stochastic flow.
+description: The Markov Cluster (MCL) algorithm performs unsupervised clustering of graphs and networks by simulating stochastic flow. Use when user asks to cluster protein sequences, detect communities in large networks, or configure the mcl command-line tool with specific inflation values.
 homepage: https://micans.org/mcl/
 ---
+
 
 # mcl
 

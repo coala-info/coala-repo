@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ceuhm3
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides HapMap Phase III genotype calls and expression data for the CEPH CEU cohort. Use when user asks to perform genetic association studies, conduct expression quantitative trait loci analysis, or retrieve genomic coordinates for SNPs within the CEU subpopulation.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ceuhm3.html
 ---
+
 
 # bioconductor-ceuhm3
 

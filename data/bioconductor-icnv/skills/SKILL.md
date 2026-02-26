@@ -1,8 +1,9 @@
 ---
 name: bioconductor-icnv
-description: the package is available on all platforms; click for details.
+description: bioconductor-icnv detects copy number variations by integrating data from NGS and SNP array platforms using a Hidden Markov Model. Use when user asks to detect CNVs, integrate WES or WGS with SNP array data, or perform platform-specific normalization for genomic structural variant analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/iCNV.html
 ---
+
 
 # bioconductor-icnv
 

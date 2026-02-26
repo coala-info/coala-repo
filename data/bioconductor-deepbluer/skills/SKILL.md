@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deepbluer
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: DeepBlueR provides an R interface to the DeepBlue Epigenomics Data Server for querying and processing large-scale epigenomic datasets. Use when user asks to search for epigenomic experiments, select genomic regions by metadata, perform server-side genomic operations like intersections or aggregations, and download processed results as GRanges objects.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/DeepBlueR.html
 ---
+
 
 # bioconductor-deepbluer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipsim
-description: the package is designed to support different types of experiments.
+description: This tool simulates ChIP-seq experiments to generate synthetic data for nucleosome positioning and transcription factor binding. Use when user asks to generate synthetic ChIP-seq data, simulate nucleosome positioning, or create FASTQ files to test analysis pipelines.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPsim.html
 ---
+
 
 # bioconductor-chipsim
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-philr
-description: the package is available on all platforms; click for details.
+description: This package implements phylogenetic isometric log-ratio transformations for analyzing compositional data. Use when user asks to perform phylogenetic isometric log-ratio transformations, analyze compositional data using phylogenetic trees, or conduct microbiome data analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/philr.html
 ---
+
 
 # bioconductor-philr
 

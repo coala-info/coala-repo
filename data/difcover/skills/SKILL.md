@@ -1,8 +1,9 @@
 ---
 name: difcover
-description: The difcover pipeline provides a specialized workflow for detecting differential genomic coverage between two samples aligned to the same reference.
+description: Difcover detects differential genomic coverage and copy number variations between two samples using a stretched window technique. Use when user asks to identify genomic differences, detect copy number variations, or calculate coverage ratios between two BAM files.
 homepage: https://github.com/timnat/DifCover
 ---
+
 
 # difcover
 

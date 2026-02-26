@@ -1,9 +1,9 @@
 # galaxy-ie-helpers CWL Generation Report
 
-## galaxy-ie-helpers
+## galaxy-ie-helpers_get
 
 ### Tool Description
-A set of helper utilities for Galaxy Interactive Environments. Note: The provided input text appears to be a container runtime error log rather than help documentation, so no arguments could be extracted.
+Get datasets from Galaxy.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0
@@ -18,63 +18,55 @@ A set of helper utilities for Galaxy Interactive Environments. Note: The provide
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1617929178: no space left on device
+usage: get [-h] -i ID [ID ...] [-t {hid,name,regex}] [--history-id HISTORY_ID]
+
+Get datasets from Galaxy.
+
+options:
+  -h, --help            show this help message and exit
+  -i ID [ID ...], --id ID [ID ...]
+                        The dataset ID/name from your Galaxy history, or a
+                        regex pattern to search all files in the history
+  -t {hid,name,regex}, --identifier_type {hid,name,regex}
+                        Type of the argument File/ID Number. Per default,
+                        integer ID number. If a pattern is specified in the -i
+                        argument, then this argument should be set to "regex"
+  --history-id HISTORY_ID
+                        History ID. The history ID and the dataset ID uniquly
+                        identify a dataset. Per default this is set to the
+                        current Galaxy history.
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## galaxy-ie-helpers_get
-
-### Tool Description
-A helper tool for Galaxy Interactive Environments to retrieve data. Note: The provided help text contains only system error logs and does not list specific arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0
-- **Homepage**: https://github.com/bgruening/galaxy_ie_helpers
-- **Package**: https://anaconda.org/channels/bioconda/packages/galaxy-ie-helpers/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3264909397: no space left on device
-```
 
 ## galaxy-ie-helpers_put
 
 ### Tool Description
-A helper utility for Galaxy Interactive Environments to upload/save files back to the Galaxy history.
+Put datasets back into Galaxy.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0
 - **Homepage**: https://github.com/bgruening/galaxy_ie_helpers
 - **Package**: https://anaconda.org/channels/bioconda/packages/galaxy-ie-helpers/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2685038763: no space left on device
-```
+usage: put [-h] -p FILEPATH [FILEPATH ...] [-t FILETYPE]
+           [--history-id HISTORY_ID]
 
-## galaxy-ie-helpers_find_matching_history_ids
+Put datasets back into Galaxy.
 
-### Tool Description
-A tool to find matching history IDs within a Galaxy Interactive Environment.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0
-- **Homepage**: https://github.com/bgruening/galaxy_ie_helpers
-- **Package**: https://anaconda.org/channels/bioconda/packages/galaxy-ie-helpers/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-ie-helpers:0.2.7--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1724687857: no space left on device
+options:
+  -h, --help            show this help message and exit
+  -p FILEPATH [FILEPATH ...], --filepath FILEPATH [FILEPATH ...]
+                        Specify the path to the files that should be uploaded
+                        to Galaxy.
+  -t FILETYPE, --filetype FILETYPE
+                        Galaxy file format. If not specified Galaxy will try
+                        to guess the filetype automatically.
+  --history-id HISTORY_ID
+                        History ID. The history ID and the dataset ID uniquly
+                        identify a dataset. Per default this is set to the
+                        current Galaxy history.
 ```
 

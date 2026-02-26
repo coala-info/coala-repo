@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genemeta
-description: the package is available on all platforms; click for details.
+description: This tool performs meta-analysis of microarray data to combine results from multiple studies. Use when user asks to identify consistently differentially expressed genes across experiments, calculate effect sizes, assess study homogeneity, or fit fixed and random effects models.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneMeta.html
 ---
+
 
 # bioconductor-genemeta
 

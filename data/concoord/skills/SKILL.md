@@ -1,8 +1,9 @@
 ---
 name: concoord
-description: CONCOORD is a specialized tool for sampling the conformational space of proteins.
+description: CONCOORD samples the conformational space of proteins by generating structural ensembles based on interatomic distance constraints. Use when user asks to generate alternative protein conformations, predict large-scale protein motions, or create structural ensembles for docking and NMR studies.
 homepage: https://www3.mpibpc.mpg.de/groups/de_groot/concoord
 ---
+
 
 # concoord
 

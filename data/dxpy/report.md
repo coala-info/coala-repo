@@ -1,9 +1,22 @@
 # dxpy CWL Generation Report
 
-## dxpy
+## dxpy_dx
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a system error log related to a container runtime (Singularity/Apptainer) failure due to insufficient disk space.
+DNAnexus Command-Line Client, API v1.0.0, client v0.400.1
+dx is a command-line client for interacting with the DNAnexus platform.  You
+can log in, navigate, upload, organize and share your data, launch analyses,
+and more.  For a quick tour of what the tool can do, see
+
+  https://documentation.dnanexus.com/getting-started/tutorials/cli-quickstart#quickstart-for-cli
+
+For a breakdown of dx commands by category, run "dx help".
+
+dx exits with exit code 3 if invalid input is provided or an invalid operation
+is requested, and exit code 1 if an internal error is encountered.  The latter
+usually indicate bugs in dx; please report them at
+
+  https://github.com/dnanexus/dx-toolkit/issues
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dxpy:0.400.1--pyhdfd78af_0
@@ -12,35 +25,34 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dxpy/overview
-- **Total Downloads**: 850.1K
+- **Total Downloads**: 850.9K
 - **Last updated**: 2025-11-06
 - **GitHub**: https://github.com/dnanexus/dx-toolkit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dxpy:0.400.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1446006936: no space left on device
-```
+usage: dx [-h] [--version] command ...
 
+DNAnexus Command-Line Client, API v1.0.0, client v0.400.1
 
-## Metadata
-- **Skill**: generated
+dx is a command-line client for interacting with the DNAnexus platform.  You
+can log in, navigate, upload, organize and share your data, launch analyses,
+and more.  For a quick tour of what the tool can do, see
 
-## dxpy_dx
+  https://documentation.dnanexus.com/getting-started/tutorials/cli-quickstart#quickstart-for-cli
 
-### Tool Description
-DNAnexus Command Line Interface (Note: The provided text contains system error logs regarding container image retrieval and does not list specific tool arguments or help documentation.)
+For a breakdown of dx commands by category, run "dx help".
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dxpy:0.400.1--pyhdfd78af_0
-- **Homepage**: https://github.com/dnanexus/dx-toolkit
-- **Package**: https://anaconda.org/channels/bioconda/packages/dxpy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dxpy:0.400.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3696539891: no space left on device
+dx exits with exit code 3 if invalid input is provided or an invalid operation
+is requested, and exit code 1 if an internal error is encountered.  The latter
+usually indicate bugs in dx; please report them at
+
+  https://github.com/dnanexus/dx-toolkit/issues
+
+options:
+  -h, --help  show this help message and exit
+  --env-help  Display help message for overriding environment
+              variables
+  --version   show program's version number and exit
 ```
 

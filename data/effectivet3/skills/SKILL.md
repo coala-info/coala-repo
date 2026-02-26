@@ -1,8 +1,9 @@
 ---
 name: effectivet3
-description: EffectiveT3 (v3.0) is a bioinformatics tool designed for the binary classification of proteins to determine if they are secreted by the bacterial Type III secretion system.
+description: EffectiveT3 classifies bacterial proteins to determine if they are secreted by the Type III secretion system based on N-terminal sequence features. Use when user asks to predict T3SS effectors, identify secreted proteins in bacterial sequences, or train a custom classification model for protein secretion.
 homepage: https://github.com/nicolasrnemeth/EffectiveT3
 ---
+
 
 # effectivet3
 

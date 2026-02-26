@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enrichedheatmap
-description: the package is available on all platforms; click for details.
+description: This tool creates enriched heatmaps in R to visualize genomic signal enrichment patterns over specific target regions. Use when user asks to normalize genomic signals into matrices, visualize enrichment patterns with line plots, or concatenate multiple heatmaps to show associations between different epigenomic data sources.
 homepage: https://bioconductor.org/packages/release/bioc/html/EnrichedHeatmap.html
 ---
+
 
 # bioconductor-enrichedheatmap
 

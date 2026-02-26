@@ -1,8 +1,9 @@
 ---
 name: mia-tools
-description: The MIA (Multi-patient Intracerebral data Analysis) toolbox is a specialized Matlab-based suite designed to aggregate and analyze electrophysiological data from cohorts of patients.
+description: The mia-tools suite aggregates and analyzes electrophysiological data from patient cohorts to facilitate group-level cognitive inference. Use when user asks to filter localized channels, extract time-frequency power, perform permutation-based statistical testing, or visualize ROI results on a template.
 homepage: https://github.com/MIA-iEEG/mia
 ---
+
 
 # mia-tools
 

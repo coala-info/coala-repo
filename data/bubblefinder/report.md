@@ -1,9 +1,9 @@
 # bubblefinder CWL Generation Report
 
-## bubblefinder
+## bubblefinder_BubbleFinder
 
 ### Tool Description
-A tool for finding bubbles in de Bruijn graphs (Note: The provided text contains system error messages regarding disk space and container extraction rather than the tool's help documentation).
+Compute and output the SPQR tree of the input graph
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bubblefinder:1.0.3--h503566f_0
@@ -12,15 +12,72 @@ A tool for finding bubbles in de Bruijn graphs (Note: The provided text contains
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bubblefinder/overview
-- **Total Downloads**: 672
+- **Total Downloads**: 699
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/algbio/BubbleFinder
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/3bafccf2c2c3b7b667bf56105b6323058fbd5da9969fa31e33e8c7ec934c9487: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bubblefinder:1.0.3--h503566f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1444708488: no space left on device
+Error: unknown command '-help'. Expected one of: superbubbles, directed-superbubbles, snarls, ultrabubbles, spqr-tree.
+
+Usage:
+  BubbleFinder <command> -g <graphFile> -o <outputFile> [options]
+
+Commands:
+  superbubbles
+      Bidirected superbubbles (GFA -> bidirected by default)
+  directed-superbubbles
+      Directed superbubbles (directed graph)
+  snarls
+      Snarls (typically on bidirected graphs from GFA)
+  ultrabubbles
+      Ultrabubbles (requires: each connected component has at least one tip; bidirected -> oriented directed graph -> superbubbles)
+  spqr-tree
+      Compute and output the SPQR tree of the input graph
+
+Format options (input format):
+  --gfa
+      GFA input (bidirected).
+  --gfa-directed
+      GFA input interpreted as a directed graph.
+  --graph
+      .graph text format with one directed edge per line:
+        • first line: two integers n and m
+            - n = number of distinct node IDs declared
+            - m = number of directed edges
+        • next m lines: 'u v' (separated by whitespace),
+            each describing a directed edge from u to v.
+        • u and v are arbitrary node identifiers (strings
+            without whitespace).
+  If none of these is given, the format is auto-detected
+  from the file extension (e.g. .gfa, .graph).
+
+Compression:
+  Compression is auto-detected from the file name suffix:
+    .gz / .bgz  -> gzip
+    .bz2        -> bzip2
+    .xz         -> xz
+
+General options:
+  -g <file>
+      Input graph file (possibly compressed)
+  -o <file>
+      Output file
+  -j <threads>
+      Number of threads
+  --gfa
+      Force GFA input (bidirected)
+  --gfa-directed
+      Force GFA input interpreted as directed graph
+  --graph
+      Force .graph text format (see 'Format options' above)
+  --clsd-trees <file>
+      Write CLSD superbubble trees (ultrabubble hierarchy) to <file> (ultrabubbles command only)
+  --report-json <file>
+      Write JSON metrics report
+  -m <bytes>
+      Stack size in bytes
+  -h, --help
+      Show this help message and exit
 ```
 

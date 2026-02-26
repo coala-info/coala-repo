@@ -3,10 +3,10 @@
 ## shark
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain help information or a description of the tool's functionality.
+missing required files
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/shark:1.2.0--h9a82719_1
+- **Docker Image**: quay.io/biocontainers/shark:1.2.0--h077b44d_5
 - **Homepage**: https://algolab.github.io/shark/
 - **Package**: https://anaconda.org/channels/bioconda/packages/shark/overview
 - **Validation**: PASS
@@ -18,14 +18,25 @@ The provided text is an error log from a container build process and does not co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shark:1.2.0--h9a82719_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:595b788f69b6f35cef6f3f9f339ad5ec71a758a49222454d54c714fecc9b0d0f: unpack entry: usr/local/lib/libgomp.so.1.0.0: unpack to regular file: short write: write /tmp/build-temp-4029586424/rootfs/usr/local/lib/libgomp.so.1.0.0: no space left on device
+shark : missing required files
+
+Usage: shark -r <references> -1 <sample1> [OPTIONAL ARGUMENTS]
+
+Arguments:
+      -r, --reference                   reference sequences in FASTA format (can be gzipped)
+      -1, --sample1                     sample in FASTQ (can be gzipped)
+
+Optional arguments:
+      -h, --help                        display this help and exit
+      -2, --sample2                     second sample in FASTQ (optional, can be gzipped)
+      -o, --out1                        first output sample in FASTQ (default: sharked_sample.1)
+      -p, --out2                        second output sample in FASTQ (default: sharked_sample.2)
+      -k, --kmer-size                   size of the kmers to index (default:17, max:31)
+      -c, --confidence                  confidence for associating a read to a gene (default:0.6)
+      -b, --bf-size                     bloom filter size in GB (default:1)
+      -q, --min-base-quality            minimum base quality (assume FASTQ Illumina 1.8+ Phred scale, default:0, i.e., no filtering)
+      -s, --single                      report an association only if a single gene is found
+      -t, --threads                     number of threads (default:1)
+      -v, --verbose                     verbose mode
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-charmdata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides a subsetted dataset of raw Nimblegen files and metadata for practicing DNA methylation microarray analysis with the charm package. Use when user asks to access example methylation microarray data, locate raw .xys files for testing, or follow the charm preprocessing pipeline.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/charmData.html
 ---
+
 
 # bioconductor-charmdata
 

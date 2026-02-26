@@ -1,15 +1,64 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pnetcdf_version
+baseCommand: esme_pnetcdf_openmpi_5_0_6_pnetcdf_version
 label: esme_pnetcdf_openmpi_5_0_6_pnetcdf_version
-doc: "A tool to report the version and build configuration of the Parallel netCDF
-  (PnetCDF) library.\n\nTool homepage: https://parallel-netcdf.github.io/"
-inputs: []
+doc: "PnetCDF Version Information\n\nTool homepage: https://parallel-netcdf.github.io/"
+inputs:
+  - id: pnetcdf_version
+    type:
+      - 'null'
+      - string
+    doc: PnetCDF Version
+    inputBinding:
+      position: 1
+  - id: pnetcdf_release_date
+    type:
+      - 'null'
+      - string
+    doc: PnetCDF Release date
+    inputBinding:
+      position: 2
+  - id: pnetcdf_configure
+    type:
+      - 'null'
+      - string
+    doc: PnetCDF configure options
+    inputBinding:
+      position: 3
+  - id: mpicc
+    type:
+      - 'null'
+      - string
+    doc: MPICC compiler command
+    inputBinding:
+      position: 4
+  - id: mpicxx
+    type:
+      - 'null'
+      - string
+    doc: MPICXX compiler command
+    inputBinding:
+      position: 5
+  - id: mpif77
+    type:
+      - 'null'
+      - string
+    doc: MPIF77 compiler command
+    inputBinding:
+      position: 6
+  - id: mpif90
+    type:
+      - 'null'
+      - string
+    doc: MPIF90 compiler command
+    inputBinding:
+      position: 7
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+    dockerPull: 
+      quay.io/biocontainers/esme_pnetcdf_openmpi_5_0_6:1.14.0--h1080dc9_0
 stdout: esme_pnetcdf_openmpi_5_0_6_pnetcdf_version.out

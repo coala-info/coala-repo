@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.mirna.3.0
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix miRNA 3.0 Array. Use when user asks to process Affymetrix miRNA 3.0 microarray data, annotate miRNA probes, or perform low-level analysis of miRNA 3.0 chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mirna.3.0.html
 ---
+
 
 # bioconductor-pd.mirna.3.0
 

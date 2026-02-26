@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cn.farms
-description: the package is available on all platforms; click for details.
+description: This tool provides a latent variable model for copy number analysis and summarization of high-density oligonucleotide microarray data. Use when user asks to estimate copy numbers, analyze Affymetrix SNP arrays, or perform robust microarray summarization.
 homepage: https://bioconductor.org/packages/release/bioc/html/cn.farms.html
 ---
+
 
 # bioconductor-cn.farms
 

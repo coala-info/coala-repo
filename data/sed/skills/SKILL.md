@@ -1,8 +1,9 @@
 ---
 name: sed
-description: `sed` (stream editor) is a powerful utility used to parse and transform text in a functional, line-oriented manner.
+description: sed is a stream editor used to programmatically parse and transform text in a line-oriented manner. Use when user asks to replace text patterns, delete specific lines, extract matching content, or perform in-place file modifications.
 homepage: https://www.gnu.org/software/sed/
 ---
+
 
 # sed
 

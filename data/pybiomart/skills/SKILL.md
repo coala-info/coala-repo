@@ -1,8 +1,9 @@
 ---
 name: pybiomart
-description: The `pybiomart` library provides a Pythonic interface to the BioMart data federation system.
+description: pybiomart provides a Python interface to the BioMart data federation system for querying and retrieving biological data as Pandas DataFrames. Use when user asks to retrieve gene metadata, query Ensembl datasets, map orthologs, or list available BioMart attributes and filters.
 homepage: https://github.com/jrderuiter/pybiomart
 ---
+
 
 # pybiomart
 

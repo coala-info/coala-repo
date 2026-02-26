@@ -1,8 +1,9 @@
 ---
 name: find_differential_primers
-description: The `find_differential_primers` tool (invoked via the `pdp` command) is a pipeline for the automated discovery of discriminatory PCR primers.
+description: This tool identifies discriminatory PCR primers that uniquely amplify target sequences while avoiding non-target groups. Use when user asks to design diagnostic primers, perform in silico primer validation, or identify specific markers for metabarcoding.
 homepage: https://github.com/widdowquinn/find_differential_primers
 ---
+
 
 # find_differential_primers
 

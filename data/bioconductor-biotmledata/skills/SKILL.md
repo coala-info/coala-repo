@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biotmledata
-description: the package is available on all platforms; click for details.
+description: This package provides example microarray and RNA-seq datasets for testing and demonstrating Targeted Minimum Loss-based Estimation workflows. Use when user asks to access sample data for the biotmle package, load the illuminaData SummarizedExperiment object, or explore pre-computed TMLE results for biomarker discovery.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/biotmleData.html
 ---
+
 
 # bioconductor-biotmledata
 

@@ -1,8 +1,9 @@
 ---
 name: negative_training_sampler
-description: The `negative_training_sampler` is a specialized tool for genomic data preprocessing.
+description: This tool performs GC-content distribution matching to select negative genomic samples that mirror the profile of positive samples. Use when user asks to generate balanced negative training sets, match GC content across genomic regions, or preprocess BED files for machine learning.
 homepage: https://github.com/kircherlab/negative_training_sampler
 ---
+
 
 # negative_training_sampler
 

@@ -1,8 +1,9 @@
 ---
 name: ribotin
-description: ribotin is a specialized bioinformatics tool designed to resolve the repetitive and complex structure of ribosomal DNA.
+description: ribotin resolves the repetitive and complex structure of ribosomal DNA by extracting specific reads and constructing high-accuracy consensus sequences. Use when user asks to assemble rDNA morphs, resolve rDNA tangles in assembly graphs, or phase ribosomal DNA using HiFi and ultralong ONT reads.
 homepage: https://github.com/maickrau/ribotin
 ---
+
 
 # ribotin
 

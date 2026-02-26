@@ -1,8 +1,9 @@
 ---
 name: jasminesv
-description: Jasmine (Jointly Accurate Sv Merging with Intersample Network Edges) is a high-performance tool designed to consolidate structural variants across individuals.
+description: Jasmine consolidates structural variants across multiple individuals by representing them as a network and merging analogous records. Use when user asks to merge structural variant VCF files, refine breakpoints with Iris, or automate IGV visualization for merged variants.
 homepage: https://github.com/mkirsche/Jasmine
 ---
+
 
 # jasminesv
 

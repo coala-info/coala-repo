@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tloh
-description: the package is available on all platforms; click for details.
+description: This tool assesses evidence for loss of heterozygosity in tumor samples using a Bayesian model. Use when user asks to assess loss of heterozygosity, identify LOH events in tumor samples, or analyze genomic imbalances from sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/tLOH.html
 ---
+
 
 # bioconductor-tloh
 

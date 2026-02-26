@@ -1,8 +1,9 @@
 ---
 name: fastoma
-description: FastOMA is a scalable orthology inference engine that transforms raw protein sequences into structured evolutionary data.
+description: FastOMA is a scalable orthology inference engine that identifies orthologs and organizes protein sequences into Hierarchical Orthologous Groups. Use when user asks to perform large-scale phylogenomic analysis, infer orthology from protein sequences, or generate Hierarchical Orthologous Groups using a species phylogeny.
 homepage: https://github.com/DessimozLab/FastOMA
 ---
+
 
 # fastoma
 

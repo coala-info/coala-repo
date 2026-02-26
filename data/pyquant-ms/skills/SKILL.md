@@ -1,8 +1,9 @@
 ---
 name: pyquant-ms
-description: pyquant-ms is a versatile framework designed for the automated quantification of mass spectrometry data.
+description: pyquant-ms is a framework for the automated quantification of mass spectrometry data through ion chromatogram extraction and peak fitting. Use when user asks to quantify proteomics data, perform SILAC or isobaric tagging analysis, or conduct NeuCode quantification.
 homepage: https://chris7.github.io/pyquant/
 ---
+
 
 # pyquant-ms
 

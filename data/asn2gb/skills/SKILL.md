@@ -1,8 +1,9 @@
 ---
 name: asn2gb
-description: The `asn2gb` tool is a specialized utility from the NCBI ToolBox designed to transform Abstract Syntax Notation One (ASN.1) formatted biological sequence data into standard flatfile formats.
+description: The asn2gb tool transforms NCBI ASN.1 formatted biological sequence data into standard GenBank or GenPept flatfile formats. Use when user asks to convert ASN.1 files to GenBank or GenPept, generate feature tables from sequence data, or process batch sequence sets and submissions.
 homepage: https://www.ncbi.nlm.nih.gov/IEB/ToolBox/C_DOC/lxr/source/doc/asn2gb.txt
 ---
+
 
 # asn2gb
 

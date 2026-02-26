@@ -1,8 +1,9 @@
 ---
 name: nextpolish2
-description: NextPolish2 is a specialized consensus refinement tool that targets small-scale assembly errors (SNVs and Indels) while maintaining the original haplotype structure.
+description: NextPolish2 is a consensus refinement tool that corrects small-scale assembly errors using HiFi reads and short-read k-mer data while preserving haplotype structure. Use when user asks to polish genome assemblies, correct SNVs and indels in long-read assemblies, or refine assemblies using short-read k-mers without collapsing heterozygous regions.
 homepage: https://github.com/Nextomics/NextPolish2
 ---
+
 
 # nextpolish2
 

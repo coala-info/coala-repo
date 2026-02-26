@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133afrmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides frozen parameter vectors for the Affymetrix Human Genome U133A Array to be used with fRMA and barcode algorithms. Use when user asks to perform single-array normalization, calculate GNUSE quality scores, or determine gene expression status using the barcode algorithm for hgu133a microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133afrmavecs.html
 ---
+
 
 # bioconductor-hgu133afrmavecs
 

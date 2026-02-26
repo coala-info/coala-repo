@@ -1,12 +1,12 @@
 # meta-apo CWL Generation Report
 
-## meta-apo
+## meta-apo_meta-apo-train
 
 ### Tool Description
-The provided text does not contain a description of the tool as it consists of system log messages and a fatal error regarding disk space.
+Model training using gene profiles of paired WGS-amplicon microbiomes
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/meta-apo:1.1--h9948957_7
+- **Docker Image**: quay.io/biocontainers/meta-apo:1.1--h9f5acd7_4
 - **Homepage**: https://github.com/qibebt-bioinfo/meta-apo
 - **Package**: https://anaconda.org/channels/bioconda/packages/meta-apo/overview
 - **Validation**: PASS
@@ -18,46 +18,56 @@ The provided text does not contain a description of the tool as it consists of s
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/meta-apo:1.1--h9948957_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2544205681: no space left on device
+meta-apo-train version : 1.01 for KEGG
+	Model training using gene profiles of paired WGS-amplicon microbiomes
+Usage: 
+meta-apo-train [Option] Value
+Options: 
+	[Input options, required]
+	  -L (upper) Input files list of training WGS samples
+	  -l Input files list of training amplicon samples
+	  -p List files path prefix [Optional for -l and -L]
+	or
+	  -T (upper) Input KO table (*.ko.abd) of training WGS samples
+	  -t Input KO table (*.ko.abd) of training amplicon samples
+	  -R (upper) If the input table is reversed, T(rue) or F(alse), default is false [Optional for -T and -t]
+	[Output options]
+	  -o Output mode file, default is "meta-apo.model" 
+	[Other options]
+	  -h Help
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## meta-apo_meta-apo-train
-
-### Tool Description
-Training tool for Meta-APO (Metagenomic Assembly Polishing and Optimization). Note: The provided help text contains only system error logs and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/meta-apo:1.1--h9948957_7
-- **Homepage**: https://github.com/qibebt-bioinfo/meta-apo
-- **Package**: https://anaconda.org/channels/bioconda/packages/meta-apo/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/meta-apo:1.1--h9948957_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2413799979: no space left on device
-```
 
 ## meta-apo_meta-apo-calibrate
 
 ### Tool Description
-A tool within the meta-apo suite (metagenomic assembly-based phylogenomic analysis). Note: The provided help text contains only container runtime error messages and does not list specific command-line arguments.
+Calibration of predicted gene profiles of amplicon microbiomes
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/meta-apo:1.1--h9948957_7
+- **Docker Image**: quay.io/biocontainers/meta-apo:1.1--h9f5acd7_4
 - **Homepage**: https://github.com/qibebt-bioinfo/meta-apo
 - **Package**: https://anaconda.org/channels/bioconda/packages/meta-apo/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/meta-apo:1.1--h9948957_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2684029027: no space left on device
+meta-apo-calibrate version : 1.01 for KEGG
+	Calibration of predicted gene profiles of amplicon microbiomes
+Usage: 
+meta-apo-calibrate [Option] Value
+Options: 
+	[Input options, required]
+	  -i Input a gene profile file for a single sample
+	or
+	  -l Input files list for multiple samples
+	  -p List files path prefix [Optional for -l]
+	or
+	  -t Input KO table (*.ko.abd) for multiple samples
+	  -R (upper) If the input table is reversed, T(rue) or F(alse), default is false [Optional for -t]
+	  -m Input model file
+	[Output options]
+	  -o Output path, default is "functions.calibrated"
+	[Other options]
+	  -h Help
 ```
 

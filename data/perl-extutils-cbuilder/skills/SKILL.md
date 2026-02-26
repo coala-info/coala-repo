@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-cbuilder
-description: This skill provides guidance on using `ExtUtils::CBuilder`, a Perl module that provides a platform-independent interface for compiling and linking C code.
+description: This tool provides a platform-independent Perl interface for compiling and linking C code and XS extensions. Use when user asks to compile C source files, link object files into dynamic libraries, or build Perl extensions without relying on a make utility.
 homepage: http://search.cpan.org/dist/ExtUtils-CBuilder
 ---
+
 
 # perl-extutils-cbuilder
 

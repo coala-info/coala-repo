@@ -1,8 +1,9 @@
 ---
 name: metawrap-kraken
-description: MetaWRAP-Kraken is a specialized module within the MetaWRAP suite designed to streamline taxonomic classification.
+description: MetaWRAP-Kraken performs taxonomic classification of metagenomic reads or contigs and generates interactive Krona visualizations. Use when user asks to assign taxonomic labels to sequencing data, profile microbial community composition, or generate Krona charts for metagenomic samples.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-kraken
 

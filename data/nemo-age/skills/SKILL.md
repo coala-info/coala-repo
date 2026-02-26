@@ -1,8 +1,9 @@
 ---
 name: nemo-age
-description: The `nemo-age` tool is a specialized evolutionary simulation engine.
+description: Nemo-age is an evolutionary simulation engine designed to model populations with complex age structures and demographic life tables. Use when user asks to simulate evolution in age-structured populations, define demographic transition matrices, or model species with long life cycles and dormant stages like seed banks.
 homepage: https://bitbucket.org/ecoevo/nemo-age-release
 ---
+
 
 # nemo-age
 

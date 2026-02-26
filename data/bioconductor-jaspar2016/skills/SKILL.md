@@ -1,8 +1,9 @@
 ---
 name: bioconductor-jaspar2016
-description: the package TFBSTools (>= 1.8.1).
+description: This package provides a SQLite interface to the JASPAR 2016 database of curated transcription factor binding profiles. Use when user asks to retrieve transcription factor matrices, search for motifs by species or experimental type, or access the JASPAR 2016 collection.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/JASPAR2016.html
 ---
+
 
 # bioconductor-jaspar2016
 

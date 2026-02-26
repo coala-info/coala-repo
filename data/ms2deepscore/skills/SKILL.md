@@ -1,8 +1,9 @@
 ---
 name: ms2deepscore
-description: ms2deepscore is a deep learning-based similarity measure designed to compare tandem mass spectrometry (MS/MS) spectra based on their underlying chemical similarity.
+description: ms2deepscore is a deep learning-based tool that predicts the structural similarity between tandem mass spectrometry spectra using Siamese neural networks. Use when user asks to calculate spectral similarity scores, generate vector embeddings for clustering, perform cross-ion mode comparisons, or train custom models on mass spectrometry data.
 homepage: https://github.com/matchms/ms2deepscore
 ---
+
 
 # ms2deepscore
 

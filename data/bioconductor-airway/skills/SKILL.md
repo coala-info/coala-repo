@@ -1,8 +1,9 @@
 ---
 name: bioconductor-airway
-description: "the package vignette. The citation for the experiment is: Himes BE, Jiang X, Wagner P, Hu R, Wang Q, Klanderman B, Whitaker RM, Duan Q, Lasky-Su J, Nikolos C, Jester W, Johnson M, Panettieri R Jr, Tantisira KG, Weiss ST, Lu Q. 'RNA-Seq Transcriptome Profiling Identifies CRISPLD2 as a Glucocorticoid Responsive Gene that Modulates Cytokine Function in Airway Smooth Muscle Cells.' PLoS One. 2014 Jun 13;9(6):e99625. PMID: 24926665. GEO: GSE52778."
+description: This package provides access to and workflows for the RNA-Seq dataset of human airway smooth muscle cells treated with dexamethasone. Use when user asks to load the airway experiment data, explore RangedSummarizedExperiment objects, or perform differential expression analysis using this benchmark dataset.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/airway.html
 ---
+
 
 # bioconductor-airway
 

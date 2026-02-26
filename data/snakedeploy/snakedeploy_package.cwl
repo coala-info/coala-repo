@@ -1,0 +1,45 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: snakedeploy
+label: snakedeploy_package
+doc: "snakedeploy: error: argument subcommand: invalid choice: 'package' (choose from
+  deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers,
+  scaffold-snakemake-plugin)\n\nTool homepage: https://github.com/snakemake/snakedeploy"
+inputs:
+  - id: subcommand
+    type:
+      type: array
+      items: string
+    doc: 'Subcommand to execute. Available choices: deploy-workflow, collect-files,
+      pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin'
+    inputBinding:
+      position: 1
+  - id: log_disable_color
+    type:
+      - 'null'
+      - boolean
+    inputBinding:
+      position: 102
+      prefix: --log-disable-color
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    inputBinding:
+      position: 102
+      prefix: --quiet
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    inputBinding:
+      position: 102
+      prefix: --verbose
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/snakedeploy:0.16.0--pyhdfd78af_0
+stdout: snakedeploy_package.out

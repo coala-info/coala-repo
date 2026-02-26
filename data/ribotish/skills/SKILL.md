@@ -1,8 +1,9 @@
 ---
 name: ribotish
-description: Ribotish (Ribo TIS Hunter) is a specialized bioinformatics tool designed to characterize translation activities from ribosome profiling data.
+description: Ribotish characterizes translation activities and predicts translation initiation sites and open reading frames from ribosome profiling data. Use when user asks to estimate P-site offsets, predict translation initiation sites, identify frame-biased open reading frames, or perform differential translation initiation analysis.
 homepage: https://github.com/zhpn1024/ribotish
 ---
+
 
 # ribotish
 

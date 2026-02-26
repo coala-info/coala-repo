@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgtrackdb
-description: The `ucsc-hgtrackdb` tool is a specialized utility within the UCSC Kent toolset designed to synchronize text-based track configurations with the Genome Browser's underlying database.
+description: The ucsc-hgtrackdb tool synchronizes text-based track configurations from `trackDb.ra` files with the UCSC Genome Browser's underlying database. Use when user asks to set up a local browser mirror, add or update data tracks in a local database, validate track configurations, or debug track hierarchy and inheritance.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgtrackdb
 

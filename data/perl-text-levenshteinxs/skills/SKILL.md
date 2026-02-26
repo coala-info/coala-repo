@@ -1,8 +1,9 @@
 ---
 name: perl-text-levenshteinxs
-description: The `perl-text-levenshteinxs` skill provides a fast, C-based (XS) implementation of the Levenshtein algorithm.
+description: This tool provides a high-performance C-based implementation for calculating the Levenshtein edit distance between strings. Use when user asks to calculate string similarity, perform spell-checking logic, or deduplicate data using the Levenshtein algorithm in Perl.
 homepage: http://metacpan.org/pod/Text::LevenshteinXS
 ---
+
 
 # perl-text-levenshteinxs
 

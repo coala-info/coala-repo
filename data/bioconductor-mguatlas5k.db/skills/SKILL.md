@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mguatlas5k.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation maps for the Affymetrix MGUAtlas5K mouse genome array. Use when user asks to map Affymetrix MGUAtlas5K probe identifiers to gene symbols, retrieve genomic annotations for the MGUAtlas5K chip, or perform identifier conversions for mouse genome data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mguatlas5k.db.html
 ---
+
 
 # bioconductor-mguatlas5k.db
 

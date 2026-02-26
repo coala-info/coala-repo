@@ -1,8 +1,9 @@
 ---
 name: khipu-metabolomics
-description: Khipu is a Python-based tool that organizes untargeted metabolomics features into "empirical compounds" using a tree-based grid structure.
+description: Khipu organizes untargeted metabolomics features into structured empirical compounds by grouping related isotopes and adducts. Use when user asks to annotate feature tables, group m/z peaks into biological molecules, or reduce data complexity in metabolomics experiments.
 homepage: https://github.com/shuzhao-li/khipu
 ---
+
 
 # khipu-metabolomics
 

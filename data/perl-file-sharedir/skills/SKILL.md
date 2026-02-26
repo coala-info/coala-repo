@@ -1,8 +1,9 @@
 ---
 name: perl-file-sharedir
-description: The `perl-file-sharedir` skill provides a standardized way to interact with "sharedir" resources in Perl.
+description: This tool provides a standardized way to locate and access non-executable auxiliary data files associated with Perl modules and distributions. Use when user asks to find shared resource directories, locate specific data files within a Perl module, or ensure portable file path resolution across different installation prefixes.
 homepage: https://metacpan.org/release/File-ShareDir
 ---
+
 
 # perl-file-sharedir
 

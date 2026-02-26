@@ -1,8 +1,9 @@
 ---
 name: levenshtein
-description: The `levenshtein` skill leverages the `fastest-levenshtein` library to provide high-performance string comparison.
+description: This tool calculates the edit distance between strings and identifies the closest match from a list of candidates. Use when user asks to calculate string similarity, find the closest matching word, or implement fuzzy search suggestions.
 homepage: https://github.com/ka-weihe/fastest-levenshtein
 ---
+
 
 # levenshtein
 

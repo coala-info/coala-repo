@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dsqtl
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool analyzes associations between DNA variants and DNaseI hypersensitivity sites using the dsQTL Bioconductor package. Use when user asks to explore dsQTL data, perform cis-association analysis between SNPs and DNase-seq data, or visualize relationships between genotypes and hypersensitivity scores.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/dsQTL.html
 ---
+
 
 # bioconductor-dsqtl
 

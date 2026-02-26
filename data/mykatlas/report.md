@@ -1,12 +1,12 @@
 # mykatlas CWL Generation Report
 
-## mykatlas
+## mykatlas_atlas
 
 ### Tool Description
-The provided text is a system error log regarding a container build failure and does not contain CLI help information or argument definitions.
+myKATLAS atlas tool
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mykatlas:0.6.1--py39hdff8610_8
+- **Docker Image**: quay.io/biocontainers/mykatlas:0.6.1--py39h6a678da_6
 - **Homepage**: http://github.com/phelimb/atlas
 - **Package**: https://anaconda.org/channels/bioconda/packages/mykatlas/overview
 - **Validation**: PASS
@@ -18,29 +18,20 @@ The provided text is a system error log regarding a container build failure and 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mykatlas:0.6.1--py39hdff8610_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1233445131: no space left on device
-```
+usage: atlas [-h] [--version] {genotype,walk,place,diff} ...
 
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             atlas version
 
-## Metadata
-- **Skill**: generated
-
-## mykatlas_atlas
-
-### Tool Description
-Mykrobe Atlas: Rapid antibiotic resistance prediction from NGS data
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mykatlas:0.6.1--py39hdff8610_8
-- **Homepage**: http://github.com/phelimb/atlas
-- **Package**: https://anaconda.org/channels/bioconda/packages/mykatlas/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mykatlas:0.6.1--py39hdff8610_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3940979760: no space left on device
+[sub-commands]:
+  {genotype,walk,place,diff}
+    genotype            genotype a sample using a probe set
+    walk                Walk through a graph using an existing sequence probe
+                        set as seeds. default walking algorithm is a depth
+                        first search
+    place               Place a sample on a prebuilt tree
+    diff                Outputs novel sequence by calculating the difference
+                        between the sequence and combined graph
 ```
 

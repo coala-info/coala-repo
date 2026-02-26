@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_psmpi_5_12_1
-description: This skill assists in the development and execution of applications using the NetCDF-C interface within high-performance computing (HPC) environments utilizing PSMPI.
+description: This tool provides the NetCDF-C interface optimized for parallel I/O operations using PSMPI in high-performance computing environments. Use when user asks to compile C applications with parallel NetCDF support, inspect NetCDF metadata using ncdump, or generate binary NetCDF files from CDL text using ncgen.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_psmpi_5_12_1
 

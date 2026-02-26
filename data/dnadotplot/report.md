@@ -3,7 +3,7 @@
 ## dnadotplot
 
 ### Tool Description
-A tool for generating DNA dot plots. (Note: The provided text contains system error messages and does not include usage instructions or argument definitions.)
+A DNA dot plot generator
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dnadotplot:0.1.4--hc1c3326_0
@@ -18,11 +18,21 @@ A tool for generating DNA dot plots. (Note: The provided text contains system er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dnadotplot:0.1.4--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1040575233: no space left on device
+A DNA dot plot generator
+
+Usage: dnadotplot [OPTIONS] --first-file <FILE> --output <FILE>
+
+Options:
+  -1, --first-file <FILE>   Path to the first FASTA file (can be gzipped)
+  -2, --second-file <FILE>  Path to the second FASTA file (if omitted, self alignment of the first)
+  -f, --first-name <STR>    Name of the FASTA sequence in the first file
+  -n, --second-name <STR>   Name of the FASTA sequence in the second file
+  -o, --output <FILE>       Path to the output file (PNG or SVG based on extension)
+  -s, --img-size <FLOAT>    Image size: if >1 use as pixels, if <1 use as fraction of longest sequence [default: 0.3]
+  -w, --window <INT>        Window size for matching (default: 10) [default: 10]
+  -r, --revcompl            Also look for reverse complement matches
+      --svg                 Force SVG output (auto-detected from .svg extension)
+  -h, --help                Print help
+  -V, --version             Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

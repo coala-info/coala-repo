@@ -1,8 +1,9 @@
 ---
 name: magus-msa
-description: MAGUS is a piecewise alignment strategy designed to scale high-accuracy base methods (like MAFFT -linsi) to massive datasets.
+description: MAGUS is a piecewise alignment tool that scales high-accuracy methods to massive datasets by decomposing sequences into subsets and merging them via graph clustering. Use when user asks to align large sets of unaligned sequences, merge existing subalignments into a single multiple sequence alignment, or configure decomposition and graph clustering parameters for complex biological data.
 homepage: https://github.com/vlasmirnov/MAGUS
 ---
+
 
 # magus-msa
 

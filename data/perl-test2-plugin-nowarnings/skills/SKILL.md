@@ -1,8 +1,9 @@
 ---
 name: perl-test2-plugin-nowarnings
-description: This plugin integrates with the Perl `Test2` testing framework to automatically monitor for warnings during test execution.
+description: This tool monitors Perl Test2 execution and treats any emitted warnings as test failures. Use when user asks to fail tests on warnings, enforce a zero-tolerance warning policy, or detect unexpected STDERR output during testing.
 homepage: https://metacpan.org/release/Test2-Plugin-NoWarnings
 ---
+
 
 # perl-test2-plugin-nowarnings
 

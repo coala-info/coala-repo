@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tmsig
-description: the package is available on all platforms; click for details.
+description: TMSig calculates and analyzes tumor microenvironment signatures from transcriptomic data. Use when user asks to calculate tumor microenvironment signature scores, evaluate the prognostic value of signatures, or perform signature-based analysis of bulk RNA-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/TMSig.html
 ---
+
 
 # bioconductor-tmsig
 

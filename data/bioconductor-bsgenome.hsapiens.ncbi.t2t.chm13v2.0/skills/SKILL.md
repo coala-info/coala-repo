@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ncbi.t2t.chm13v2.0
-description: the package is available on all platforms; click for details.
+description: This package provides the complete T2T-CHM13v2.0 human genome assembly as a BSgenome object for use in R. Use when user asks to access the full human genome sequence, perform genome-wide motif searching, or extract specific chromosomal sequences from the CHM13v2.0 reference.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ncbi.t2t.chm13v2.0
 

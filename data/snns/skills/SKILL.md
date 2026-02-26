@@ -1,8 +1,9 @@
 ---
 name: snns
-description: Self-Normalizing Networks (SNNs) leverage the Scaled Exponential Linear Unit (SELU) activation function to induce self-normalizing properties, effectively preventing vanishing and exploding gradients without the need for Batch Normalization.
+description: This tool provides implementation patterns and parameters for building Self-Normalizing Networks using SELU activation, Lecun initialization, and Alpha Dropout. Use when user asks to implement self-normalizing properties, prevent vanishing or exploding gradients without batch normalization, or configure SNNs in PyTorch and TensorFlow.
 homepage: https://github.com/bioinf-jku/SNNs
 ---
+
 
 # snns
 

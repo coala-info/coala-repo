@@ -3,7 +3,11 @@
 ## fragpipe
 
 ### Tool Description
-FragPipe is a suite of computational tools for comprehensive analysis of mass spectrometry-based proteomics data. (Note: The provided text is a system error log and does not contain help documentation or argument definitions).
+Please accept the academic license.
+
+FragPipe uses tools that are available freely for academic research and educational purposes only.
+
+Please provide license keys for MSFragger and IonQuant with the --msfragger_key and --ionquant_key flags. By passing these, you verify that you have read the ACADEMIC licenses for the MSFragger and IonQuant tools. You may obtain these keys by agreeing to the terms at http://msfragger-upgrader.nesvilab.org/upgrader/ and https://msfragger.arsci.com/ionquant/.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fragpipe:24.0--hdfd78af_0
@@ -18,11 +22,13 @@ FragPipe is a suite of computational tools for comprehensive analysis of mass sp
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fragpipe:24.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1662634083: no space left on device
+Please accept the academic license.
+
+FragPipe uses tools that are available freely for academic research and educational purposes only.
+
+Please provide license keys for MSFragger and IonQuant with the --msfragger_key and --ionquant_key flags. By passing these, you verify that you have read the ACADEMIC licenses for the MSFragger and IonQuant tools. You may obtain these keys by agreeing to the terms at http://msfragger-upgrader.nesvilab.org/upgrader/ and https://msfragger.arsci.com/ionquant/.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

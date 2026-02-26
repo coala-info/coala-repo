@@ -1,8 +1,9 @@
 ---
 name: ggd
-description: GGD (GoGetData) acts as a package manager specifically for genomic data, functioning similarly to how Conda manages software.
+description: GGD is a package manager for genomic data that automates the discovery, installation, and management of processed genomic files. Use when user asks to search for genomic data recipes, install reference genomes or annotations into environments, manage data environment variables, or uninstall genomic data packages.
 homepage: https://github.com/gogetdata/ggd-cli
 ---
+
 
 # ggd
 

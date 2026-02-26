@@ -1,8 +1,9 @@
 ---
 name: metawrap-mg
-description: MetaWRAP is a modular wrapper suite designed to streamline the transition from raw metagenomic reads to refined, annotated metagenome-assembled genomes (MAGs).
+description: MetaWRAP is a modular pipeline that streamlines metagenomic data processing from raw reads to refined and annotated metagenome-assembled genomes. Use when user asks to perform read quality control, assemble metagenomes, run multiple binning tools, refine bin sets, reassemble bins for improved quality, or taxonomically classify genomes.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-mg
 

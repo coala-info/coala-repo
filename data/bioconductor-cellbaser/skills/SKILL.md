@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellbaser
-description: the package is available on all platforms; click for details.
+description: The cellbaseR package provides an R interface to the CellBase RESTful Web service for high-throughput retrieval of integrated biological and genomic information. Use when user asks to query genomic features, retrieve variant annotations, fetch clinical data, annotate VCF files, or create gene models for visualization.
 homepage: https://bioconductor.org/packages/release/bioc/html/cellbaseR.html
 ---
+
 
 # bioconductor-cellbaser
 

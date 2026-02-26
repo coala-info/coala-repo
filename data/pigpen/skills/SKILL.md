@@ -1,8 +1,9 @@
 ---
 name: pigpen
-description: PIGPEN (Pipeline for Identification of Guanosine Positions Erroneously Notated) is a bioinformatics suite designed to detect and quantify oxidative marks on RNA molecules.
+description: PIGPEN is a bioinformatics suite designed to detect and quantify oxidative marks on RNA molecules by analyzing nucleotide conversions in sequencing data. Use when user asks to identify 8-oxoguanosine positions, quantify RNA localization at subcellular sites, or perform differential oxidation analysis.
 homepage: https://github.com/TaliaferroLab/OINC-seq
 ---
+
 
 # pigpen
 

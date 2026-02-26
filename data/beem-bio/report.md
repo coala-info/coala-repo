@@ -1,9 +1,9 @@
 # beem-bio CWL Generation Report
 
-## beem-bio
+## beem-bio_BeEM
 
 ### Tool Description
-Biomass Estimation using Expectation-Maximization (Note: The provided text is a container build error log and does not contain help documentation or argument definitions).
+convert PDBx/mmCIF format input file 'input.cif' to Best Effort/Minimal PDB files. Output results to *-pdb-bundle*
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/beem-bio:1.0.1--h9948957_0
@@ -18,55 +18,46 @@ Biomass Estimation using Expectation-Maximization (Note: The provided text is a 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/beem-bio:1.0.1--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:6fde5446a07c2960929a6b8c553ac1c4ba83a25adadfea9c153d8fc9307de8ac: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-2501823860/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
-```
+BeEM input.cif
+    convert PDBx/mmCIF format input file 'input.cif' to Best Effort/Minimal
+    PDB files. Output results to *-pdb-bundle*
 
-
-## Metadata
-- **Skill**: generated
-
-## beem-bio_BeEM
-
-### Tool Description
-BeEM (Biomass Estimation using Expectation-Maximization) is a tool for estimating microbial biomass from metagenomic data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/beem-bio:1.0.1--h9948957_0
-- **Homepage**: https://github.com/kad-ecoli/BeEM
-- **Package**: https://anaconda.org/channels/bioconda/packages/beem-bio/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/beem-bio:1.0.1--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:6fde5446a07c2960929a6b8c553ac1c4ba83a25adadfea9c153d8fc9307de8ac: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-3833332045/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
-```
-
-## beem-bio_cifte
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log from a container runtime (Singularity/Apptainer) indicating a failure to extract the OCI image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/beem-bio:1.0.1--h9948957_0
-- **Homepage**: https://github.com/kad-ecoli/BeEM
-- **Package**: https://anaconda.org/channels/bioconda/packages/beem-bio/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/beem-bio:1.0.1--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:6fde5446a07c2960929a6b8c553ac1c4ba83a25adadfea9c153d8fc9307de8ac: unpack entry: usr/local/lib/libstdc++.so.6.0.34: unpack to regular file: short write: write /scratch/21813747/build-temp-3745644492/rootfs/usr/local/lib/libstdc++.so.6.0.34: no space left on device
+option:
+    -p=xxxx          prefix of output file.
+                     default is the PDB ID read from the input
+    -seqres={0,1}    whether to convert SEQRES record
+                     0 - (default) do not convert SEQRES
+                     1 - convert SEQRES
+    -dbref={0,1}     whether to convert dbref record
+                     0 - (default) do not convert DBREF
+                     1 - convert DBREF
+    -gzip={0,1}      whether to perform gzip compression
+                     0 - (default) do not perform compression
+                     1 - perform compression if tar and gzip are available
+    -upper={0,1,2}   whether to convert PDB header text to upper case
+                     0 - do not convert to upper case
+                     1 - (default) only convert header text of single PDB
+                         file to upper case; allow lower case header for
+                         Best Effort/Minimal PDB bundle
+                     2 - convert all PDB text to upper case
+    -maxatom=99999   maximum number of atoms in a file. default is 99999.
+                     no limit on number of atoms if maxatom<=0
+ -outfmt={0,1,2,3,4} output format
+                     0 - (default) output a single PDB file if possible;
+                         otherwise, output Best Effort/Minimal PDB bundle
+                     1 - always output Best Effort/Minimal PDB bundle
+                     2 - output one chain per PDB file
+                     3 - always output a single PDB file
+                     4 - output FASTA sequence converted from coordinate
+   -chain=A,B        comma seperated list of chains to output
+                     default is to output all chains
+   -idmap={txt,tsv}  format of chain ID mapping file
+                     txt - (default) space-justified text
+                     tsv - tab-delimited tabular text
+   -ccd5={map,trim}  how to handle expanded chemical component ID >3 characters
+                     map  - (default) map the residue name to reserved set of 
+                            chemical component IDs: 01 - 99, DRG, INH, LIG
+                     trim - trim the residue name to keep only the first three
+                            characters
 ```
 

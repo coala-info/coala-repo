@@ -1,8 +1,9 @@
 ---
 name: 3seq
-description: 3seq is a specialized bioinformatics tool used to identify recombination events within a set of aligned nucleotide sequences.
+description: 3seq identifies recombination events within aligned nucleotide sequences by testing triplets for mosaic patterns. Use when user asks to detect recombination, identify parental sequences, generate p-value tables for statistical significance, or filter sequence alignments.
 homepage: https://mol.ax/software/3seq/
 ---
+
 
 # 3seq
 

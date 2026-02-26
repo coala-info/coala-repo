@@ -1,11 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: happy
+baseCommand: happy-python_happy
 label: happy-python_happy
-doc: "The provided text does not contain help information for the tool. It contains
-  system log messages and a fatal error regarding disk space during a container build
-  process.\n\nTool homepage: https://github.com/AntoineHo/HapPy"
-inputs: []
+doc: "Estimate assembly haploidy based on base depth of coverage histogram.\n\nTool
+  homepage: https://github.com/AntoineHo/HapPy"
+inputs:
+  - id: command
+    type: string
+    doc: The subcommand to run
+    inputBinding:
+      position: 1
+  - id: args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the subcommand
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

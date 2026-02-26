@@ -1,8 +1,9 @@
 ---
 name: galaxy-workflow-executor
-description: The `galaxy-workflow-executor` is a utility designed to bridge the gap between Galaxy's web-based workflow system and CLI-driven environments.
+description: The galaxy-workflow-executor utility bridges Galaxy's web-based workflow system with CLI environments to schedule workflows, upload datasets, and retrieve results using BioBlend. Use when user asks to prepare workflow files, generate parameter templates, execute runs with state management, or recover from failed workflow executions.
 homepage: https://github.com/ebi-gene-expression-group/galaxy-workflow-executor
 ---
+
 
 # galaxy-workflow-executor
 

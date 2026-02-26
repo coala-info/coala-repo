@@ -1,8 +1,9 @@
 ---
 name: metacherchant
-description: MetaCherchant is a specialized tool designed to extract and visualize the local genomic neighborhood of a target sequence directly from raw metagenomic reads.
+description: MetaCherchant extracts and visualizes the local genomic neighborhood of a target sequence directly from raw metagenomic reads using a targeted de Bruijn graph search. Use when user asks to reconstruct the genetic context of a gene, compare genomic environments across multiple samples, or link plasmids to hosts using Hi-C data.
 homepage: https://github.com/ctlab/metacherchant
 ---
+
 
 # metacherchant
 

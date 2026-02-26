@@ -1,8 +1,9 @@
 ---
 name: bioconductor-screenr
-description: the package is available on all platforms; click for details.
+description: ScreenR is an R package designed for the analysis and visualization of high-throughput genetic screening data. Use when user asks to analyze CRISPR or shRNA screening data, perform quality control on genetic screens, or identify hit genes from screening experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/ScreenR.html
 ---
+
 
 # bioconductor-screenr
 

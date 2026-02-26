@@ -1,8 +1,9 @@
 ---
 name: admixtools
-description: The provided text does not contain help information for the tool. It is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space ('no space left on device').
+description: ADMIXTOOLS is a software suite for formal statistical testing of population relationships and admixture history using genomic data. Use when user asks to calculate f-statistics, perform D-statistics tests, model ancestry with qpAdm, or convert between EIGENSTRAT and PACKEDANCESTRYMAP file formats.
 homepage: https://github.com/DReichLab/AdmixTools
 ---
+
 
 # admixtools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicranges
-description: the package is available on all platforms; click for details.
+description: The GenomicRanges package provides foundational infrastructure for representing and manipulating genomic intervals and their associated metadata in R. Use when user asks to create GRanges objects, perform genomic arithmetic like merging or resizing intervals, find overlaps between genomic features, or compute coverage across a genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicRanges.html
 ---
+
 
 # bioconductor-genomicranges
 

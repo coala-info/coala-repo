@@ -1,8 +1,9 @@
 ---
 name: pyseq-align
-description: The `pyseq-align` library is a Cython-based Python interface for the `seq-align` C library.
+description: pyseq-align provides a high-performance Cython interface for performing fast pairwise sequence alignments using C-based implementations. Use when user asks to perform global alignment with the Needleman-Wunsch algorithm or local alignment with the Smith-Waterman algorithm.
 homepage: https://github.com/Lioscro/pyseq-align
 ---
+
 
 # pyseq-align
 

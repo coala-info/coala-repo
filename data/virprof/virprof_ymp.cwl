@@ -1,11 +1,58 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: virprof
+baseCommand: ymp
 label: virprof_ymp
-doc: "A tool for viral profiling (Note: The provided text contains system logs and
-  error messages rather than command-line help documentation. No arguments could be
-  extracted from the input.)\n\nTool homepage: https://github.com/seiboldlab/virprof"
-inputs: []
+doc: "Welcome to YMP!\n\nTool homepage: https://github.com/seiboldlab/virprof"
+inputs:
+  - id: install_completion
+    type:
+      - 'null'
+      - boolean
+    doc: Install command completion for the current shell. Make sure to have 
+      psutil installed.
+    inputBinding:
+      position: 101
+      prefix: --install-completion
+  - id: log_file
+    type:
+      - 'null'
+      - string
+    doc: Specify a log file
+    inputBinding:
+      position: 101
+      prefix: --log-file
+  - id: pdb
+    type:
+      - 'null'
+      - boolean
+    doc: Drop into debugger on uncaught exception
+    inputBinding:
+      position: 101
+      prefix: --pdb
+  - id: profile
+    type:
+      - 'null'
+      - string
+    doc: Profile execution time using Yappi
+    inputBinding:
+      position: 101
+      prefix: --profile
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Decrease log verbosity
+    inputBinding:
+      position: 101
+      prefix: --quiet
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Increase log verbosity
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

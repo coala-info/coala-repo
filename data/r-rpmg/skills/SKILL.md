@@ -1,8 +1,9 @@
 ---
 name: r-rpmg
-description: R package rpmg (documentation from project home).
+description: The RPMG package provides a lightweight framework for creating interactive R sessions using buttons and mouse clicks on plots. Use when user asks to create interactive plots, add buttons to R graphics, or build simple graphical user interfaces for data picking and analysis.
 homepage: https://cran.r-project.org/web/packages/rpmg/index.html
 ---
+
 
 # r-rpmg
 

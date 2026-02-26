@@ -1,8 +1,9 @@
 ---
 name: frogs
-description: FROGS (Find, Rapidly, OTUs with Galaxy Solution) is a comprehensive bioinformatic suite designed for the analysis of amplicon sequencing data.
+description: FROGS is a bioinformatic suite designed to analyze amplicon sequencing data and transform raw reads into taxonomically annotated abundance tables. Use when user asks to preprocess and merge paired-end reads, perform denoising or clustering with Swarm and DADA2, assign taxonomic affiliations, or conduct functional predictions on microbial communities.
 homepage: https://github.com/geraldinepascal/FROGS
 ---
+
 
 # frogs
 

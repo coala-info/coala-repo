@@ -1,8 +1,9 @@
 ---
 name: soapdenovo2
-description: SOAPdenovo2 is a powerful de novo assembler designed to handle large-scale genomic data using short reads.
+description: "SOAPdenovo2 is a de novo genome assembler designed to construct draft assemblies from large-scale short-read sequencing data using a de Bruijn graph approach. Use when user asks to perform de novo genome assembly, build contigs and scaffolds from short reads, or construct a de Bruijn graph for large genomic datasets."
 homepage: https://github.com/aquaskyline/SOAPdenovo2
 ---
+
 
 # soapdenovo2
 

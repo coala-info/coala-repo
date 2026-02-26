@@ -1,8 +1,9 @@
 ---
 name: r-pathosurveilr
-description: R package pathosurveilr (documentation from project home).
+description: This R package analyzes, summarizes, and visualizes outputs from the nf-core/pathogensurveillance pipeline. Use when user asks to generate multigene phylogeny plots, calculate estimated ANI match tables, or parse sendsketch taxonomic data.
 homepage: https://cran.r-project.org/web/packages/pathosurveilr/index.html
 ---
+
 
 # r-pathosurveilr
 

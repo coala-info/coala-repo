@@ -1,8 +1,9 @@
 ---
 name: merquryfk
-description: MerquryFK is a refactored version of the original Merqury suite that replaces the meryl k-mer counter with FastK to achieve significantly faster processing times.
+description: MerquryFK performs k-mer-based assembly evaluation and genomic analysis using FastK tables to assess assembly quality and completeness. Use when user asks to generate copy-number spectrum plots, evaluate assembly accuracy, perform trio-based haplotype analysis, or assess genomic ploidy levels.
 homepage: https://github.com/thegenemyers/MERQURY.FK
 ---
+
 
 # merquryfk
 

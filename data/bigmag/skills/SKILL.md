@@ -1,8 +1,9 @@
 ---
 name: bigmag
-description: BIgMAG (Board InteGrating Metagenome-Assembled Genomes) is a visualization dashboard designed to consolidate multiple metagenome quality metrics and taxonomic annotations into a single interface.
+description: BIgMAG is a visualization dashboard that consolidates metagenome-assembled genome quality metrics and taxonomic annotations into an interactive interface. Use when user asks to launch an interactive dashboard for MAG quality assessment, generate standalone HTML reports from MAGFlow or nf-core/mag outputs, or visualize binning metrics like CheckM2 and BUSCO.
 homepage: https://github.com/jeffe107/BIgMAG
 ---
+
 
 # bigmag
 

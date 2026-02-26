@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ptroglodytes.ucsc.pantro3
-description: the package is available on all platforms; click for details.
+description: This package provides the Pan troglodytes (Chimp) genome sequences from the UCSC panTro3 assembly as a BSgenome data object. Use when user asks to retrieve chimp genome sequences, inspect chromosome metadata, extract specific sub-sequences, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ptroglodytes.UCSC.panTro3.html
 ---
+
 
 # bioconductor-bsgenome.ptroglodytes.ucsc.pantro3
 

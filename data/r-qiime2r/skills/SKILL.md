@@ -1,8 +1,9 @@
 ---
 name: r-qiime2r
-description: R package qiime2r (documentation from project home).
+description: This tool imports and analyzes QIIME2 artifacts directly in R by converting them into native data structures like phyloseq or TreeSummarizedExperiment objects. Use when user asks to read .qza or .qzv files, parse taxonomy strings, or convert QIIME2 data for statistical analysis and visualization in R.
 homepage: https://cran.r-project.org/web/packages/qiime2r/index.html
 ---
+
 
 # r-qiime2r
 

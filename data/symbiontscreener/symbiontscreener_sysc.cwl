@@ -1,11 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: symbiontscreener
+baseCommand: sysc
 label: symbiontscreener_sysc
-doc: "SymbiontScreener is a tool for screening symbionts. (Note: The provided text
-  is an error log from a container build process and does not contain help documentation
-  or argument definitions.)\n\nTool homepage: https://github.com/BGI-Qingdao/Symbiont-Screener"
-inputs: []
+doc: "Symbiont Screener (SYSC) is a tool for analyzing microbial communities. It supports
+  two main modes: strobemer mode (s40) and kmer mode (k21), with various actions for
+  building, density analysis, clustering, and consensus clustering.\n\nTool homepage:
+  https://github.com/BGI-Qingdao/Symbiont-Screener"
+inputs:
+  - id: action
+    type: string
+    doc: 'The action to perform. Available actions include: build_s40, build_k21,
+      density_s40, density_k21, trio_result_s40, trio_result_k21, cluster_s40, cluster_k21,
+      consensus_cluster_s40, consensus_cluster_k21.'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

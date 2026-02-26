@@ -1,8 +1,9 @@
 ---
 name: scepia
-description: The scepia (Single Cell Epigenome-based Inference of Activity) tool bridges the gap between transcriptomics and epigenomics.
+description: Scepia predicts transcription factor activity and calculates enhancer-based regulatory potential by integrating single-cell transcriptomics with epigenomic reference data. Use when user asks to infer motif activity, identify regulatory drivers of cell states, or calculate enhancer-based regulatory potential scores from BAM files.
 homepage: https://github.com/vanheeringen-lab/scepia
 ---
+
 
 # scepia
 

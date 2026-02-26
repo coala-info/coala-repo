@@ -1,8 +1,9 @@
 ---
 name: hopla
-description: Hopla is a specialized tool for clinical genomics designed to streamline the analysis of family pedigrees (singles, duos, trios, and larger groups) using a single multisample VCF.
+description: "Hopla analyzes family pedigrees from multisample VCF files to identify inheritance patterns and perform pedigree-based haplotyping. Use when user asks to analyze family pedigrees, perform haplotyping via Merlin, visualize B-allele frequency profiles, or identify inheritance patterns in clinical genomics."
 homepage: https://github.com/leraman/Hopla
 ---
+
 
 # hopla
 

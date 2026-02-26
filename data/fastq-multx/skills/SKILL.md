@@ -1,8 +1,9 @@
 ---
 name: fastq-multx
-description: The `fastq-multx` tool is a specialized utility for sorting sequencing reads into separate files based on barcode matches.
+description: fastq-multx demultiplexes sequencing reads by sorting them into separate files based on barcode matches. Use when user asks to demultiplex FASTQ files, sort reads by barcode, or handle dual-indexed sequencing data while maintaining paired-end synchronization.
 homepage: https://github.com/brwnj/fastq-multx
 ---
+
 
 # fastq-multx
 

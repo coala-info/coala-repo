@@ -3,7 +3,7 @@
 ## covid-spike-classification
 
 ### Tool Description
-A tool for COVID spike protein classification (Note: The provided text is a container build error log and does not contain usage instructions or argument definitions).
+Classify COVID spike protein sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/covid-spike-classification:0.6.4--pyhdfd78af_0
@@ -18,14 +18,36 @@ A tool for COVID spike protein classification (Note: The provided text is a cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/covid-spike-classification:0.6.4--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ec4aa8c90716a6db406029b2815d7d09d639e3f0abb96d352ffad601d85b9262: unpack entry: usr/local/include/boost/fusion/tuple/detail/preprocessed/make_tuple40.hpp: unpack to regular file: short write: write /scratch/21834835/build-temp-2415664051/rootfs/usr/local/include/boost/fusion/tuple/detail/preprocessed/make_tuple40.hpp: no space left on device
+usage: covid-spike-classification [-h] [-r REFERENCE] [-i {ab1,fasta,fastq}]
+                                  [-o OUTDIR] [-q] [-s] [-d]
+                                  [--show-unexpected] [--silence-warnings]
+                                  [-z]
+                                  reads
+
+positional arguments:
+  reads                 A zip file or directory containing the ab1 files to
+                        call variants on.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r REFERENCE, --reference REFERENCE
+                        Reference FASTA file to use (default:
+                        /ref/NC_045512.fasta).
+  -i {ab1,fasta,fastq}, --input-format {ab1,fasta,fastq}
+                        Select which input format to expect. Choices: ab1,
+                        fasta, fastq. default: ab1
+  -o OUTDIR, --outdir OUTDIR
+                        File to write result CSV and fastq files to (default:
+                        2026-02-25).
+  -q, --quiet           Suppress noisy output from the tools run
+  -s, --stdout          Print results to stdout in addition to writing them to
+                        disk
+  -d, --debug           Debug mode: Keep bam file around when the parsing
+                        crashes
+  --show-unexpected     Show unexpected mutations instead of reporting 'no
+                        known mutation'
+  --silence-warnings    Silence D614G warnings.
+  -z, --zip-results     Create a zipfile from the output directory instead of
+                        the output directory.
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: snmf
-description: The `snmf` tool provides a high-performance framework for inferring individual admixture coefficients.
+description: The snmf tool estimates individual admixture coefficients from large genomic datasets using sparse non-negative matrix factorization. Use when user asks to infer ancestry proportions, estimate admixture coefficients, or determine the optimal number of ancestral populations using cross-validation.
 homepage: http://membres-timc.imag.fr/Olivier.Francois/snmf/index.htm
 ---
+
 
 # snmf
 

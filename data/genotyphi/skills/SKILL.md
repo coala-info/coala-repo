@@ -1,8 +1,9 @@
 ---
 name: genotyphi
-description: The `genotyphi` skill provides a standardized framework for the classification of Salmonella Typhi.
+description: genotyphi classifies Salmonella Typhi strains into hierarchical lineages and identifies AMR genes and plasmid replicons from sequence data. Use when user asks to classify Salmonella Typhi genotypes, detect AMR mutations in Typhi, or identify plasmid replicons from FASTQ or VCF files.
 homepage: https://github.com/katholt/genotyphi
 ---
+
 
 # genotyphi
 

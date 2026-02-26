@@ -1,8 +1,9 @@
 ---
 name: reutils
-description: reutils is a Python-based suite of utilities designed to automate repetitive tasks in the reverse engineering workflow.
+description: reutils is a Python-based suite of utilities for inspecting and modifying ELF and PE binaries during reverse engineering and exploit development. Use when user asks to audit binary security protections, patch ELF interpreters to use specific libc versions, or extract System Service Numbers from Windows ntdll.dll files.
 homepage: https://github.com/Ayrx/reutils
 ---
+
 
 # reutils
 

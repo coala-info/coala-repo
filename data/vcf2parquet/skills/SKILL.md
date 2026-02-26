@@ -1,8 +1,9 @@
 ---
 name: vcf2parquet
-description: The `vcf2parquet` tool is a high-performance utility written in Rust designed to bridge the gap between traditional bioinformatics file formats and modern columnar data storage.
+description: The `vcf2parquet` tool transforms VCF records into the Apache Parquet format. Use when user asks to convert VCF files to Parquet, apply specific compression, split large VCFs into partitioned Parquet files, or optimize memory usage during conversion.
 homepage: https://github.com/natir/vcf2parquet
 ---
+
 
 # vcf2parquet
 

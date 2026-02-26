@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vbmp
-description: the package is available on all platforms; click for details.
+description: The vbmp package implements variational Bayesian multinomial probit regression for multi-class classification using Gaussian Process models. Use when user asks to perform multi-class classification, apply variational Bayesian inference, or model data using multinomial probit regression.
 homepage: https://bioconductor.org/packages/release/bioc/html/vbmp.html
 ---
+
 
 # bioconductor-vbmp
 

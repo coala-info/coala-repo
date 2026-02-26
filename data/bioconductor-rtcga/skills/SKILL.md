@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtcga
-description: the package is available on all platforms; click for details.
+description: RTCGA provides a streamlined interface for downloading and integrating clinical and genomic data from The Cancer Genome Atlas. Use when user asks to download TCGA datasets, integrate multi-omics cancer data, or perform large-scale genomic analysis in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/RTCGA.html
 ---
+
 
 # bioconductor-rtcga
 

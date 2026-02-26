@@ -1,8 +1,9 @@
 ---
 name: scanorama
-description: Scanorama is a tool designed for the "panoramic stitching" of single-cell transcriptomes.
+description: Scanorama integrates and batch-corrects heterogeneous single-cell transcriptome datasets by identifying mutual nearest neighbors across different technologies or biological conditions. Use when user asks to perform batch correction, integrate disparate single-cell datasets, or obtain low-dimensional embeddings for downstream clustering and visualization.
 homepage: https://github.com/brianhie/scanorama/
 ---
+
 
 # scanorama
 

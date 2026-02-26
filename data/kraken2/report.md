@@ -3,7 +3,7 @@
 ## kraken2
 
 ### Tool Description
-Kraken 2 is a taxonomic classification system that assigns taxonomic labels to short DNA sequences, usually obtained through metagenomic studies.
+Classify sequences using the Kraken 2 algorithm.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kraken2:2.17.1--pl5321h077b44d_0
@@ -12,35 +12,51 @@ Kraken 2 is a taxonomic classification system that assigns taxonomic labels to s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kraken2/overview
-- **Total Downloads**: 174.2K
+- **Total Downloads**: 174.6K
 - **Last updated**: 2025-11-25
 - **GitHub**: https://github.com/DerrickWood/kraken2
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kraken2:2.17.1--pl5321h077b44d_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3793278945: no space left on device
-```
+Need to specify input filenames!
+Usage: kraken2 [options] <filename(s)>
 
+Options:
+  --db NAME               Name for Kraken 2 DB
+                          (default: none)
+  --threads NUM           Number of threads (default: 1)
+  --quick                 Quick operation (use first hit or hits)
+  --unclassified-out FILENAME
+                          Print unclassified sequences to filename
+  --classified-out FILENAME
+                          Print classified sequences to filename
+  --output FILENAME       Print output to filename (default: stdout); "-" will
+                          suppress normal output
+  --confidence FLOAT      Confidence score threshold (default: 0.0); must be
+                          in [0, 1].
+  --minimum-base-quality NUM
+                          Minimum base quality used in classification (def: 0,
+                          only effective with FASTQ input).
+  --report FILENAME       Print a report with aggregrate counts/clade to file
+  --use-mpa-style         With --report, format report output like Kraken 1's
+                          kraken-mpa-report
+  --report-zero-counts    With --report, report counts for ALL taxa, even if
+                          counts are zero
+  --report-minimizer-data With --report, report minimizer and distinct minimizer
+                          count information in addition to normal Kraken report
+  --memory-mapping        Avoids loading database into RAM
+  --paired                The filenames provided have paired-end reads
+  --use-names             Print scientific names instead of just taxids
+  --gzip-compressed       Input files are compressed with gzip
+  --bzip2-compressed      Input files are compressed with bzip2
+  --minimum-hit-groups NUM
+                          Minimum number of hit groups (overlapping k-mers
+                          sharing the same minimizer) needed to make a call
+                          (default: 2)
+  --help                  Print this message
+  --version               Print version information
 
-## Metadata
-- **Skill**: generated
-
-## kraken2_kraken2-build
-
-### Tool Description
-The provided text does not contain help information for kraken2-build; it contains container runtime error messages regarding a lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kraken2:2.17.1--pl5321h077b44d_0
-- **Homepage**: http://ccb.jhu.edu/software/kraken/
-- **Package**: https://anaconda.org/channels/bioconda/packages/kraken2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kraken2:2.17.1--pl5321h077b44d_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2898574508: no space left on device
+If none of the *-compressed flags are specified, and the filename provided
+is a regular file, automatic format detection is attempted.
 ```
 

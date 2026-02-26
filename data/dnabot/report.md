@@ -3,26 +3,32 @@
 ## dnabot
 
 ### Tool Description
-DNAbot: a tool for automated DNA assembly design and execution.
+FAIL to generate CWL: dnabot not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dnabot:3.1.0
 - **Homepage**: https://github.com/Imperial-iGEM/Django-DNABOT
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/dnabot/overview
 - **Total Downloads**: 9.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Imperial-iGEM/Django-DNABOT
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: dnabot not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: dnabot not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dnabot:3.1.0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3467778130: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

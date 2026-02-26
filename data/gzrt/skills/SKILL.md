@@ -1,8 +1,9 @@
 ---
 name: gzrt
-description: The gzip Recovery Toolkit (gzrt) provides the `gzrecover` utility, designed to bypass corrupted sectors in gzip archives and extract any remaining readable data.
+description: The gzip Recovery Toolkit (gzrt) extracts readable data from corrupted gzip archives by bypassing damaged sectors and bitstream errors. Use when user asks to recover data from a corrupted gzip file, extract files from a damaged tarball, or bypass CRC errors during decompression.
 homepage: https://www.urbanophile.com/arenn/hacking/gzrt
 ---
+
 
 # gzrt
 

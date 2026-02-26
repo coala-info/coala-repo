@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslxtofa
-description: The `pslxToFa` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed to bridge the gap between alignment data and sequence retrieval.
+description: `ucsc-pslxtofa` converts PSLX alignment files, which contain query and target sequences, into standard FASTA format. Use when user asks to extract sequences from PSLX files, convert PSLX to FASTA, reconstruct sequences, perform motif analysis, or verify alignment content.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslxtofa
 

@@ -1,7 +1,8 @@
 ---
 name: altex-be
-description: Use when designing single guide RNAs (sgRNAs) for targeted exon skipping using Base Editing (ABE or CBE). This skill is applicable for identifying targetable exons (Skipped Exons, Alternative Splice Sites), designing candidates for specific base editors, and evaluating off-target risks in genomic research.
+description: AltEx-BE automates the design of sgRNAs for exon skipping using base editing by identifying targetable exons and assessing off-target risks. Use when user asks to design sgRNAs for exon skipping, identify base editing targets in specific genes, or perform batch processing of transcripts for base editor configuration.
 ---
+
 
 # altex-be
 

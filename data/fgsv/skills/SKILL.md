@@ -1,8 +1,9 @@
 ---
 name: fgsv
-description: The `fgsv` toolkit is a specialized suite for structural variant exploration and breakpoint detection.
+description: The fgsv toolkit provides high-resolution evidence gathering for structural variant exploration and breakpoint detection by analyzing alignment chains within read templates. Use when user asks to identify genomic junctions, aggregate clustered breakpoint signals, or prepare structural variant evidence for visualization in BEDPE format.
 homepage: https://github.com/fulcrumgenomics/fgsv
 ---
+
 
 # fgsv
 

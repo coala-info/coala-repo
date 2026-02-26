@@ -1,8 +1,9 @@
 ---
 name: bioconductor-comapr
-description: the package is available on all platforms; click for details.
+description: This tool detects, analyzes, and visualizes genetic crossover events from haplotyped genomic data. Use when user asks to identify crossover intervals, calculate genetic distances, construct genetic maps, or compare recombination rates across samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/comapr.html
 ---
+
 
 # bioconductor-comapr
 

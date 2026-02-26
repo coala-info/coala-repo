@@ -1,8 +1,9 @@
 ---
 name: bigsi
-description: BIGSI (BItsliced Genomic Signature Index) is a specialized tool for the efficient storage and querying of k-mers across massive genomic datasets.
+description: BIGSI provides efficient storage and near-instantaneous querying of k-mers across massive genomic datasets using bit-sliced Bloom filters. Use when user asks to build genomic indices, perform bulk sequence searches, or search for genomic variants across large-scale sequencing collections.
 homepage: https://github.com/Phelimb/BIGSI
 ---
+
 
 # bigsi
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-opencyto
-description: the package is available on all platforms; click for details.
+description: openCyto provides a framework for automated gating and analysis of high-dimensional flow cytometry data. Use when user asks to perform automated gating, analyze flow cytometry datasets, or manage hierarchical gating templates.
 homepage: https://bioconductor.org/packages/release/bioc/html/openCyto.html
 ---
+
 
 # bioconductor-opencyto
 

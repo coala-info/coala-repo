@@ -1,8 +1,9 @@
 ---
 name: centrifuge
-description: Centrifuge is a highly efficient taxonomic classification system designed for metagenomics.
+description: Centrifuge is a taxonomic classification system that performs rapid metagenomic sequence labeling using a memory-efficient indexing scheme. Use when user asks to build genomic indices, classify metagenomic reads, or generate taxonomic reports.
 homepage: https://github.com/DaehwanKimLab/centrifuge
 ---
+
 
 # centrifuge
 

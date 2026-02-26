@@ -1,8 +1,9 @@
 ---
 name: paplot
-description: The `paplot` tool transforms raw genomic analysis text data into interactive HTML reports.
+description: Paplot transforms genomic analysis text data into interactive HTML reports for visualizing cancer genomics datasets. Use when user asks to generate QC reports, visualize chromosomal aberrations, create mutation matrices, or display mutational signatures.
 homepage: https://github.com/Genomon-Project/paplot.git
 ---
+
 
 # paplot
 

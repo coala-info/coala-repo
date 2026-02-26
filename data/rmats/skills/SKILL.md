@@ -1,8 +1,9 @@
 ---
 name: rmats
-description: rMATS (Multivariate Analysis of Transcript Splicing) is a specialized bioinformatics tool used to quantify and compare alternative splicing patterns across replicate RNA-Seq datasets.
+description: rMATS quantifies and compares alternative splicing patterns between replicate RNA-Seq datasets using a statistical model. Use when user asks to detect differential splicing events, calculate inclusion levels between two conditions, or identify novel splice sites from transcriptomic data.
 homepage: http://rnaseq-mats.sourceforge.net
 ---
+
 
 # rmats
 

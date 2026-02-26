@@ -1,8 +1,9 @@
 ---
 name: perl-excel-writer-xlsx
-description: This skill enables the programmatic generation of Excel workbooks in the modern XLSX format.
+description: This tool programmatically generates and formats Excel workbooks in the XLSX format using Perl. Use when user asks to create Excel spreadsheets, apply cell formatting, insert formulas and charts, or optimize the generation of large data reports.
 homepage: http://jmcnamara.github.com/excel-writer-xlsx/
 ---
+
 
 # perl-excel-writer-xlsx
 

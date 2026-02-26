@@ -1,8 +1,9 @@
 ---
 name: r-breakaway
-description: Understanding the drivers of microbial diversity is an important frontier of microbial ecology, and investigating the diversity of samples from microbial ecosystems is a common step in any microbiome analysis. 'breakaway' is the premier package for statistical analysis of microbial diversity.
+description: The r-breakaway package provides statistical models to estimate species richness and account for unobserved taxa in microbial ecology data. Use when user asks to estimate species richness, build frequency count tables, or perform hypothesis testing on diversity estimates using the betta model.
 homepage: https://cloud.r-project.org/web/packages/breakaway/index.html
 ---
+
 
 # r-breakaway
 

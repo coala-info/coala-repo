@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mungesumstats
-description: the package is available on all platforms; click for details.
+description: MungeSumstats standardizes and performs quality control on GWAS summary statistics. Use when user asks to format GWAS summary data, standardize effect alleles, map SNP IDs, or convert genome builds for summary statistics.
 homepage: https://bioconductor.org/packages/release/bioc/html/MungeSumstats.html
 ---
+
 
 # bioconductor-mungesumstats
 

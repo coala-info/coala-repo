@@ -1,8 +1,9 @@
 ---
 name: isodate
-description: `isodate` is a specialized Python library designed to bridge the gap between the ISO 8601:2004 standard and Python's native `datetime` types.
+description: "isodate parses and formats ISO 8601 strings into Python datetime objects, including complex durations and time zones. Use when user asks to parse ISO 8601 date strings, handle calendar-based durations, or format datetime objects into ISO 8601 compliant strings."
 homepage: https://github.com/gweis/isodate
 ---
+
 
 # isodate
 

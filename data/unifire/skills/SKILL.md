@@ -1,8 +1,9 @@
 ---
 name: unifire
-description: UniFIRE (UniProt Functional annotation Inference Rule Engine) is the official toolset used by UniProt to automate protein functional annotation.
+description: UniFIRE automates protein functional annotation. Use when user asks to annotate protein sequences, generate functional predictions, or process raw sequence data or InterProScan results.
 homepage: https://github.com/cmatKhan/unifire/
 ---
+
 
 # unifire
 

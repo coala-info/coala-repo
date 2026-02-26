@@ -1,8 +1,9 @@
 ---
 name: asciigenome
-description: ASCIIGenome is a command-line genome browser that renders genomic tracks using ASCII characters.
+description: ASCIIGenome is a command-line genome browser that renders genomic tracks and read alignments using ASCII characters. Use when user asks to browse genomic data in the terminal, navigate chromosomes, inspect read alignments, or visualize tracks on remote servers.
 homepage: https://github.com/dariober/ASCIIGenome
 ---
+
 
 # asciigenome
 

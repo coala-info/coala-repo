@@ -1,8 +1,9 @@
 ---
 name: bioconductor-graper
-description: the package is available on all platforms; click for details.
+description: The graper package implements a Bayesian penalized regression model that automatically learns group-specific shrinkage and sparsity levels for high-dimensional data. Use when user asks to perform group-aware penalized regression, fit spike-and-slab models with feature annotations, or estimate group-wise importance and inclusion probabilities.
 homepage: https://bioconductor.org/packages/release/bioc/html/graper.html
 ---
+
 
 # bioconductor-graper
 

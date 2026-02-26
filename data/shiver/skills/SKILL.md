@@ -1,8 +1,9 @@
 ---
 name: shiver
-description: shiver (Sequences from HIV Easily Reconstructed) is a bioinformatics pipeline that automates the reconstruction of viral sequences.
+description: shiver is a bioinformatics pipeline that automates the reconstruction of viral consensus sequences using sample-specific contigs to create tailored references. Use when user asks to reconstruct HIV sequences, align viral contigs to a reference set, or map reads to a sample-specific reference.
 homepage: https://github.com/ChrisHIV/shiver
 ---
+
 
 # shiver
 

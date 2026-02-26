@@ -1,8 +1,9 @@
 ---
 name: r-bcbiosinglecell
-description: R package bcbiosinglecell (documentation from project home).
+description: This R package facilitates the post-processing, quality control, and visualization of single-cell RNA-seq data processed with the bcbio-nextgen pipeline. Use when user asks to load bcbio-nextgen outputs into R, perform automated quality control, filter low-quality cells, or generate standardized single-cell visualizations.
 homepage: https://cran.r-project.org/web/packages/bcbiosinglecell/index.html
 ---
+
 
 # r-bcbiosinglecell
 

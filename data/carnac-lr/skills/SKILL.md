@@ -1,8 +1,9 @@
 ---
 name: carnac-lr
-description: CARNAC-LR (Clustering coefficient-based Acquisition of RNA Communities in Long Reads) is a tool designed to cluster long-read RNA sequences into groups representing distinct transcripts or gene families.
+description: CARNAC-LR clusters long-read RNA sequences into groups representing distinct transcripts or gene families using a clustering coefficient-based approach. Use when user asks to cluster long-read transcriptomic data, group RNA reads into gene families, or identify transcript communities from error-prone sequencing reads.
 homepage: https://github.com/kamimrcht/CARNAC-LR
 ---
+
 
 # carnac-lr
 

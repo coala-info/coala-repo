@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipqc
-description: the package is available on all platforms; click for details.
+description: Bioconductor-chipqc performs quality control analysis and generates metrics for ChIP-seq datasets. Use when user asks to evaluate ChIP-seq experiment quality, calculate metrics like FRiP and SSD, or generate comprehensive quality control reports and visualizations from BAM and peak files.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPQC.html
 ---
+
 
 # bioconductor-chipqc
 

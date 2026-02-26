@@ -1,8 +1,9 @@
 ---
 name: bedgovcf
-description: bedgovcf is a specialized utility for transforming BED-formatted genomic data into VCF files.
+description: "bedgovcf converts BED-formatted genomic data into VCF files using a configuration-driven mapping approach. Use when user asks to transform BED files to VCF, map BED columns to specific VCF fields, or apply functional transformations like rounding and conditional logic to genomic data."
 homepage: https://github.com/nvnieuwk/bedgovcf
 ---
+
 
 # bedgovcf
 

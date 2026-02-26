@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hdf5array
-description: the package is available on all platforms; click for details.
+description: This tool provides a framework for representing and manipulating large-scale HDF5 datasets as DelayedArray objects in R. Use when user asks to load HDF5 or 10x Genomics data, perform block-processed operations on large matrices, or realize delayed operations to on-disk storage.
 homepage: https://bioconductor.org/packages/release/bioc/html/HDF5Array.html
 ---
+
 
 # bioconductor-hdf5array
 

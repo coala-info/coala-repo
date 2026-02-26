@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cancerclass
-description: the package is available on all platforms; click for details.
+description: The cancerclass package provides a framework for building and validating molecular classifiers using high-dimensional transcriptomic data. Use when user asks to build a nearest-centroid classifier, perform multiple random validation, or visualize prediction scores and ROC curves for clinical classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/cancerclass.html
 ---
+
 
 # bioconductor-cancerclass
 

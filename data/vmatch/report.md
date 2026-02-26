@@ -3,7 +3,7 @@
 ## vmatch
 
 ### Tool Description
-The provided text does not contain help information or a description for the tool; it contains container build logs and a fatal error message.
+vmatch
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0
@@ -12,115 +12,54 @@ The provided text does not contain help information or a description for the too
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vmatch/overview
-- **Total Downloads**: 21.8K
+- **Total Downloads**: 21.9K
 - **Last updated**: 2025-09-23
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## vmatch_mkvtree
-
-### Tool Description
-The provided text does not contain help information for vmatch_mkvtree; it contains container runtime log messages indicating a failure to fetch the OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0
-- **Homepage**: http://www.vmatch.de/
-- **Package**: https://anaconda.org/channels/bioconda/packages/vmatch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## vmatch_mkdna6idx
-
-### Tool Description
-The provided text does not contain help information for the tool; it contains container runtime (Apptainer/Singularity) log messages and a fatal error regarding an OCI image fetch failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0
-- **Homepage**: http://www.vmatch.de/
-- **Package**: https://anaconda.org/channels/bioconda/packages/vmatch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## vmatch_vmatchselect
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Singularity/Apptainer) indicating a failure to fetch or build the OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0
-- **Homepage**: http://www.vmatch.de/
-- **Package**: https://anaconda.org/channels/bioconda/packages/vmatch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## vmatch_chain2dim
-
-### Tool Description
-The provided text is a container runtime error log and does not contain help information or argument definitions for the tool vmatch_chain2dim.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0
-- **Homepage**: http://www.vmatch.de/
-- **Package**: https://anaconda.org/channels/bioconda/packages/vmatch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## vmatch_matchcluster
-
-### Tool Description
-A tool for clustering matches found by vmatch. (Note: The provided help text contains only system error messages and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0
-- **Homepage**: http://www.vmatch.de/
-- **Package**: https://anaconda.org/channels/bioconda/packages/vmatch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vmatch:2.3.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+-q           specify files containing queries to be matched
+-complete    specify that query sequences must match completely
+-online      run algorithms online without using the index
+-d           compute direct matches (default)
+-p           compute palindromic (i.e. reverse complemented matches)
+-l           specify that match must have the given length
+             optionally specify minimum and maximum size of
+             gaps between repeat instances
+-h           specify the allowed hamming distance > 0
+             in combination with option -complete one can switch on
+             the percentage search mode or the best search mode
+             for the percentage search mode use an argument
+             of the form ip where i is a positive integer
+             this means that up to i*100/m mismatches are
+             allowed in a match of a query of length m
+             for the best search mode use an argument
+             of the form ib where i is a positive integer
+             this means that in a first phase the minimum threshold q
+             is determined such that there is still a match
+             with q mismatches. q is in the range 0 to i*100/m
+-e           specify the allowed edit distance > 0
+             in combination with option -complete one can switch on
+             the percentage search mode or the best search mode
+             for the percentage search mode use an argument
+             of the form ip where i is a positive integer
+             this means that up to i*100/m differences are
+             allowed in a match of a query of length m
+             for the best search mode use an argument
+             of the form ib where i is a positive integer
+             this means that in a first phase the minimum threshold q
+             is determined such that there is still a match
+             with q differences. q is in the range 0 to i*100/m
+-hxdrop      specify the xdrop value for hamming distance extension
+-exdrop      specify the xdrop value for edit distance extension
+-leastscore  specify the minimum score of a match
+-evalue      specify the maximum E-value of a match
+-identity    specify minimum identity of match in range [1..100%]
+-s           show the alignment of matching sequences
+-showdesc    show sequence description of match
+-v           verbose mode
+-version     show the version of the Vmatch package
+-help        show basic options
+-help+       show all options
 ```
 

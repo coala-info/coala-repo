@@ -1,8 +1,9 @@
 ---
 name: diatracer
-description: diaTracer is a specialized tool designed to handle the complexity of Bruker diaPASEF mass spectrometry data.
+description: diaTracer performs three-dimensional peak tracing on Bruker diaPASEF mass spectrometry data to generate pseudo-MS/MS spectra for DDA-style searching. Use when user asks to extract precursor and fragment signals, convert diaPASEF data to mzML format, or optimize extraction parameters for spectral library generation.
 homepage: https://diatracer.nesvilab.org/
 ---
+
 
 # diatracer
 

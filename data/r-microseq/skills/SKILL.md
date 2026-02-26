@@ -1,8 +1,9 @@
 ---
 name: r-microseq
-description: Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.</p>
+description: This tool provides basic biological sequence handling in R by storing FASTA and FASTQ data in tibbles for compatibility with the tidyverse. Use when user asks to read or write sequence files, translate DNA to protein, find genes, or manipulate sequences using standard R data structures.
 homepage: https://cloud.r-project.org/web/packages/microseq/index.html
 ---
+
 
 # r-microseq
 

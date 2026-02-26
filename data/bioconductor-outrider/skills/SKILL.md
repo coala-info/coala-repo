@@ -1,8 +1,9 @@
 ---
 name: bioconductor-outrider
-description: the package is available on all platforms; click for details.
+description: "OUTRIDER identifies aberrant gene expression outliers in RNA-seq data. Use when user asks to detect expression outliers, identify aberrantly expressed genes, or perform quality control on transcriptomic datasets."
 homepage: https://bioconductor.org/packages/release/bioc/html/OUTRIDER.html
 ---
+
 
 # bioconductor-outrider
 

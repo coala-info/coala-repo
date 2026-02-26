@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicfeatures
-description: the package is available on all platforms; click for details.
+description: This tool manages and retrieves transcript-centric genomic annotations using TxDb objects. Use when user asks to load or create transcript databases, retrieve genomic coordinates for features like exons or promoters, group features by gene or transcript, map between genomic identifiers, or extract transcript sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html
 ---
+
 
 # bioconductor-genomicfeatures
 

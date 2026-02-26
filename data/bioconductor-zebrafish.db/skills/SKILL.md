@@ -1,8 +1,9 @@
 ---
 name: bioconductor-zebrafish.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides comprehensive genome-wide annotation maps for Zebrafish. Use when user asks to map gene identifiers, retrieve functional annotations, or perform cross-referencing for Danio rerio genomic data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/zebrafish.db.html
 ---
+
 
 # bioconductor-zebrafish.db
 

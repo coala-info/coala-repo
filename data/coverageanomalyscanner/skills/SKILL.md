@@ -1,8 +1,9 @@
 ---
 name: coverageanomalyscanner
-description: The Coverage Anomaly Scanner (CAS) is a specialized tool designed to find and interpret unexpected changes in read coverage within genomic sequence data.
+description: The coverageanomalyscanner tool identifies and interprets unexpected changes in genomic read coverage to predict structural variants like duplications and deletions. Use when user asks to scan alignment data for coverage anomalies, identify putative structural variants, or visualize coverage metadata.
 homepage: https://github.com/rki-mf1/CoverageAnomalyScanner
 ---
+
 
 # coverageanomalyscanner
 

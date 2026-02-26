@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytomds
-description: the package provides some diagnostic tools for both checking the quality of the MDS projection, as well as tools to help with the interpretation of the axes of the projection.
+description: This tool performs low-dimensional visualization and quality assessment of cytometry samples by calculating Earth Mover's Distance and Multi-Dimensional Scaling. Use when user asks to identify batch effects, detect outliers, visualize sample clusters, calculate pairwise distances between cytometry samples, or generate Shepard diagrams and bi-plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoMDS.html
 ---
+
 
 # bioconductor-cytomds
 

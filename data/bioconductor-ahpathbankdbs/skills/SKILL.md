@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahpathbankdbs
-description: The package provides a comprehensive mapping table of metabolites and proteins linked to PathBank pathways. The tables include HMDB, KEGG, ChEBI, CAS, Drugbank, Uniprot IDs. The tables are provided for each of the 10 species ("Homo sapiens", "Escherichia coli", "Mus musculus", "Arabidopsis thaliana", "Saccharomyces cerevisiae", "Bos taurus", "Caenorhabditis elegans", "Rattus norvegicus", "Drosophila melanogaster", and "Pseudomonas aeruginosa"). These table information can be used for Metabolite Set (and other) Enrichment Analysis.
+description: This tool provides access to PathBank pathway annotation databases for metabolites and proteins across multiple species via AnnotationHub. Use when user asks to retrieve PathBank mapping tables, perform metabolite set enrichment analysis, or map biological identifiers like HMDB, KEGG, and UniProt to pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHPathbankDbs.html
 ---
+
 
 # bioconductor-ahpathbankdbs
 

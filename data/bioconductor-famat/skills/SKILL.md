@@ -1,8 +1,9 @@
 ---
 name: bioconductor-famat
-description: the package is available on all platforms; click for details.
+description: The famat package identifies functional links between metabolites and genes by integrating multi-omics data through pathway enrichment, interaction extraction, and centrality analysis. Use when user asks to perform multi-omics pathway enrichment, identify direct molecular interactions between genes and metabolites, calculate element centrality, or visualize biological hierarchies in a Shiny interface.
 homepage: https://bioconductor.org/packages/release/bioc/html/famat.html
 ---
+
 
 # bioconductor-famat
 

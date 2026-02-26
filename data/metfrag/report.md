@@ -3,7 +3,7 @@
 ## metfrag
 
 ### Tool Description
-MetFrag: In silico fragmentation for computer-assisted identification of metabolite structures. (Note: The provided text is a system error log and does not contain usage instructions or argument definitions.)
+MetFrag command line tool for metabolite identification using MS/MS data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metfrag:2.4.5--3
@@ -18,11 +18,9 @@ MetFrag: In silico fragmentation for computer-assisted identification of metabol
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metfrag:2.4.5--3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2817992248: no space left on device
+Usage: java -jar MetFragCL.jar ParameterFile='path_to_parameterfile'
+			(to execute MetFrag with a parameter file)
+	or java -jar MetFragCL.jar [args...]
+			(to execute MetFrag with parameters given on command line)
 ```
 
-
-## Metadata
-- **Skill**: generated

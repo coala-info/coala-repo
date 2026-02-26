@@ -1,8 +1,9 @@
 ---
 name: smallgenomeutilities
-description: The `smallgenomeutilities` package is a collection of Python-based command-line tools specifically designed for the unique challenges of viral genomics.
+description: smallgenomeutilities provides a collection of command-line tools for processing viral genomic data, including alignment manipulation, consensus generation, and coverage analysis. Use when user asks to perform genomic liftover, merge paired-end reads, generate consensus sequences, check for frameshifts, or calculate coverage depth and quality metrics.
 homepage: https://github.com/cbg-ethz/smallgenomeutilities
 ---
+
 
 # smallgenomeutilities
 

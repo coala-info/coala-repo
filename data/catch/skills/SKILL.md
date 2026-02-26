@@ -1,8 +1,9 @@
 ---
 name: catch
-description: CATCH (Compact Aggregation of Targets for Comprehensive Hybridization) is a computational framework for designing compact, comprehensive probe sets that provide guaranteed coverage of diverse genomic sequences.
+description: CATCH designs compact, comprehensive probe sets for the enrichment and discovery of diverse genomic sequences. Use when user asks to design oligonucleotide probes, generate probe sequences in FASTA format, or fetch and process viral sequences via NCBI taxonomy IDs.
 homepage: https://github.com/broadinstitute/catch
 ---
+
 
 # catch
 

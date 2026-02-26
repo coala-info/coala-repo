@@ -1,8 +1,9 @@
 ---
 name: bioconductor-all
-description: the package is available on all platforms; click for details.
+description: This tool provides access to the Acute Lymphoblastic Leukemia (ALL) microarray dataset and its associated clinical metadata for bioinformatics analysis in R. Use when user asks to load the ALL dataset, explore patient phenotypic data, filter gene expression features, or perform classification tasks on leukemia samples.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ALL.html
 ---
+
 
 # bioconductor-all
 

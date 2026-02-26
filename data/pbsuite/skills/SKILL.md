@@ -1,8 +1,9 @@
 ---
 name: pbsuite
-description: PBSuite is a software suite designed for the analysis of Pacific Biosciences (PacBio) long-read sequencing data.
+description: PBSuite is a software suite used to improve genomic assemblies and detect structural variations using PacBio long-read sequencing data. Use when user asks to fill gaps in a reference assembly, refine genomic scaffolds, or identify structural variants such as deletions and translocations.
 homepage: https://github.com/dbrowneup/PBSuite
 ---
+
 
 # pbsuite
 

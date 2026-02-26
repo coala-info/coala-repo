@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cydar
-description: the package is available on all platforms; click for details.
+description: bioconductor-cydar performs differential abundance analysis for mass cytometry data using a hypersphere-based counting approach. Use when user asks to identify differentially abundant cell subpopulations, perform spatial FDR control on high-dimensional cytometry data, or count cells in hyperspheres without clustering.
 homepage: https://bioconductor.org/packages/release/bioc/html/cydar.html
 ---
+
 
 # bioconductor-cydar
 

@@ -1,8 +1,9 @@
 ---
 name: stecfinder
-description: STECFinder is a specialized bioinformatic tool designed to characterize Shigatoxin-producing *Escherichia coli*.
+description: STECFinder characterizes Shigatoxin-producing *Escherichia coli* by identifying O and H antigens, toxin profiles, and phylogenetic clusters from genomic data. Use when user asks to identify STEC lineages, detect stx2 alleles, or perform serotyping on E. coli assemblies and raw reads.
 homepage: https://github.com/LanLab/STECFinder
 ---
+
 
 # stecfinder
 

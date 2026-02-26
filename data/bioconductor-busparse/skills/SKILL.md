@@ -1,8 +1,9 @@
 ---
 name: bioconductor-busparse
-description: the package is available on all platforms; click for details.
+description: This tool processes and converts Barcode, UMI, Set (BUS) format data into sparse matrices for single-cell RNA-seq analysis. Use when user asks to map transcripts to genes, convert kallisto bus output into gene count or Transcript Compatibility Count matrices, and perform quality control filtering using knee plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/BUSpaRse.html
 ---
+
 
 # bioconductor-busparse
 

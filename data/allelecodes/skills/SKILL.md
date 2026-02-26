@@ -1,8 +1,9 @@
 ---
 name: allelecodes
-description: "A tool for standardizing allele codes (Note: The provided help text contains only system error logs and no usage information)."
+description: The allelecodes tool assigns standardized nomenclature codes to core genome Multilocus Sequence Typing profiles using a hierarchical clustering algorithm. Use when user asks to assign nomenclature codes to cgMLST profiles, determine genomic cluster names for surveillance, or compare allele profiles against a reference database.
 homepage: https://github.com/ncezid-biome/AlleleCodes
 ---
+
 
 # allelecodes
 

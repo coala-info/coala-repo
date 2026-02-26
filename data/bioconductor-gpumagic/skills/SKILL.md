@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gpumagic
-description: The package aims to help users write openCL code with little or no effort. It is able to compile an user-defined R function and run it on a device such as a CPU or a GPU. The user can also write and run their openCL code directly by calling .kernel function.
+description: This package compiles R functions into OpenCL code for execution on GPUs or multi-core CPUs to accelerate computations. Use when user asks to parallelize R functions with gpuSapply, write custom OpenCL kernels, or offload matrix operations to hardware acceleration.
 homepage: https://bioconductor.org/packages/release/bioc/html/gpuMagic.html
 ---
+
 
 # bioconductor-gpumagic
 

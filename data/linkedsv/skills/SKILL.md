@@ -1,8 +1,9 @@
 ---
 name: linkedsv
-description: LinkedSV is a specialized structural variant caller optimized for 10X Genomics linked-read data.
+description: LinkedSV identifies structural variants in 10X Genomics linked-read sequencing data by leveraging barcode information. Use when user asks to detect germline or somatic structural variants, identify large copy number variants, or analyze linked-read data from whole-genome or targeted sequencing.
 homepage: https://github.com/WGLab/LinkedSV
 ---
+
 
 # linkedsv
 

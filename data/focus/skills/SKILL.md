@@ -1,8 +1,9 @@
 ---
 name: focus
-description: FOCUS (Find Abundance of Composition Usage) is a computational tool used to characterize the microbial composition of metagenomic samples.
+description: FOCUS characterizes the microbial composition of metagenomic samples using k-mer frequencies for agile profiling. Use when user asks to profile metagenomic samples, generate taxonomic summaries, or identify the relative abundance of organisms in a dataset.
 homepage: https://edwards.sdsu.edu/FOCUS
 ---
+
 
 # focus
 

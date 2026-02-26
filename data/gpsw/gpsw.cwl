@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gpsw
 label: gpsw
-doc: "The provided text does not contain help information for the tool 'gpsw'. It
-  contains error logs related to a container runtime (Apptainer/Singularity) failing
-  to build a SIF image due to insufficient disk space.\n\nTool homepage: https://github.com/niekwit/gps-orfeome"
-inputs: []
+doc: "GPSW: A tool for analysing and processing Global Protein Stability Profiling
+  data.\n\nTool homepage: https://github.com/niekwit/gps-orfeome"
+inputs:
+  - id: sub_command
+    type: string
+    doc: Sub-command help
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

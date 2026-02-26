@@ -1,8 +1,9 @@
 ---
 name: pyslow5
-description: pyslow5 is the Python interface for slow5lib, a library designed for efficient storage and analysis of nanopore raw signal data.
+description: pyslow5 is a Python interface for reading, writing, and analyzing nanopore raw signal data in SLOW5 and BLOW5 formats. Use when user asks to read or write SLOW5/BLOW5 files, extract nanopore raw signal data, perform random access by read ID, or access file metadata and auxiliary fields.
 homepage: https://github.com/hasindu2008/slow5lib
 ---
+
 
 # pyslow5
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rhdf5filters
-description: The package is intended to provide seemless integration with rhdf5, however the compiled filters can also be used with external applications.
+description: This package provides HDF5 compression filters for seamless integration with rhdf5 and external applications. Use when user asks to install HDF5 compression filters, use Blosc or LZ4 filters in R, or manage data compression within HDF5 files.
 homepage: https://bioconductor.org/packages/release/bioc/html/rhdf5filters.html
 ---
+
 
 # bioconductor-rhdf5filters
 

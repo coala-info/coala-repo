@@ -1,8 +1,9 @@
 ---
 name: get_orfs
-description: `get_orfs` is a lightweight, C-based utility designed for the rapid translation of DNA sequences into protein sequences.
+description: This tool identifies and translates DNA sequences into protein sequences by finding open reading frames. Use when user asks to translate DNA to protein, identify open reading frames, or filter protein sequences by minimum length.
 homepage: https://github.com/linsalrob/get_orfs
 ---
+
 
 # get_orfs
 

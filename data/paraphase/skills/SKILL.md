@@ -1,8 +1,9 @@
 ---
 name: paraphase
-description: Paraphase is a specialized tool for genomic analysis using high-fidelity (HiFi) long reads.
+description: "Paraphase analyzes genomic regions with high homology using HiFi long reads to perform gene-family-centered realignment, phasing, and copy number estimation. Use when user asks to phase complex gene families, estimate copy number in segmental duplications, or call variants in dark regions of the genome."
 homepage: https://github.com/PacificBiosciences/paraphase
 ---
+
 
 # paraphase
 

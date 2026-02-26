@@ -1,8 +1,9 @@
 ---
 name: el_gato
-description: "The `el_gato` (Epidemiology of Legionella: Genome-bAsed Typing) tool is a specialized utility for determining the Sequence Type (ST) of *Legionella pneumophila*."
+description: el_gato determines the Sequence Type of Legionella pneumophila from NGS reads or genome assemblies by analyzing seven specific loci against the ESGLI database. Use when user asks to perform multilocus sequence typing for Legionella, identify allele numbers from sequencing data, or determine the ST of a Legionella sample.
 homepage: https://github.com/appliedbinf/el_gato
 ---
+
 
 # el_gato
 

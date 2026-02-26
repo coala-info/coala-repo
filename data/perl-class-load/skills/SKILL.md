@@ -1,8 +1,9 @@
 ---
 name: perl-class-load
-description: `Class::Load` provides a robust wrapper around Perl's `require` mechanism, allowing developers to load modules using standard package naming conventions.
+description: This tool provides a robust wrapper for Perl's require mechanism to dynamically load modules using package names. Use when user asks to load Perl classes dynamically, check if a module is already loaded, or handle optional dependencies with version requirements.
 homepage: https://github.com/moose/Class-Load
 ---
+
 
 # perl-class-load
 

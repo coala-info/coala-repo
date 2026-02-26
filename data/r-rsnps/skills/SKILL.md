@@ -1,8 +1,9 @@
 ---
 name: r-rsnps
-description: Skill for using the CRAN R package r-rsnps.
+description: The r-rsnps package provides a programmatic interface to retrieve SNP metadata, genotypes, and phenotypic traits from OpenSNP and NCBI dbSNP. Use when user asks to query SNP metadata, retrieve genotypes for specific users, list phenotypic variations, or access SNPedia and PLOS literature annotations.
 homepage: https://cran.r-project.org/web/packages/rsnps/index.html
 ---
+
 
 # r-rsnps
 

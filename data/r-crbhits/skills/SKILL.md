@@ -1,8 +1,9 @@
 ---
 name: r-crbhits
-description: R package crbhits (documentation from project home).
+description: The r-crbhits package implements the Conditional Reciprocal Best Hit algorithm to identify orthologous gene pairs and calculate evolutionary substitution rates. Use when user asks to identify orthologs between species, calculate Ka/Ks ratios, find syntenic blocks, or detect tandem duplicates.
 homepage: https://cran.r-project.org/web/packages/crbhits/index.html
 ---
+
 
 # r-crbhits
 

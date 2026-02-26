@@ -2,15 +2,438 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: melting
 label: melting
-doc: "A tool for computing melting temperatures of nucleic acid duplexes (Note: The
-  provided help text contains only system error messages and no usage information).\n
-  \nTool homepage: https://github.com/google-deepmind/meltingpot"
-inputs: []
+doc: "MELTING 5 help\n\nTool homepage: https://github.com/google-deepmind/meltingpot"
+inputs:
+  - id: agent_concentrations
+    type: string
+    doc: 'Different agent concentrations in the solution. The agents can be cations
+      (Na, K, Tris, Mg for Na+, K+, Tris+ and Mg2+), dNTP or other agents (DMSO, formamide).
+      The concentrations must be in Mol/L but there are some exceptions : DMSO is
+      a percentage, formamide is a percentage if the method lincorr is chosen and
+      in Mol/L if the method bla96 is chosen. At least one cation concentration is
+      mandatory, the other agents are optional. See the documentation for the concentration
+      limits. It depends on the used correction.'
+    inputBinding:
+      position: 101
+      prefix: -E
+  - id: approximative_formula
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific approximative formula. You can use one of the following
+      : (DNA) ahs01 (from von Ahsen et al. 2001), che93 (from Marmur 1962, Chester
+      et al. 1993), che93corr (from von Ahsen et al. 2001, Marmur 1962, Chester et
+      al. 1993), schdot (Marmur-Schildkraut-Doty formula), owe69 (from Owen et al.
+      1969), san98 (from Santalucia et al. 1998), wetdna91 (from Wetmur 1991) (by
+      default) (RNA) wetrna91 (from Wetmur 1991) (by default) (DNA/RNA) wetdnarna91
+      (from Wetmur 1991) (by default) If there is no formula name after the option
+      -am, we will compute the melting temperature with the default approximative
+      formula.'
+    inputBinding:
+      position: 101
+      prefix: -am
+  - id: azobenzene_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for DNA sequences containing
+      azobenzene (cis : X_C or trans : X_T). You can only use asa05 (from Asanuma
+      et al. 2005). To change the file containing the thermodynamic parameters for
+      azobenzene computation, the same syntax as the one for the -nn option is used.'
+    inputBinding:
+      position: 101
+      prefix: -azo
+  - id: calorimetric_tables_path
+    type:
+      - 'null'
+      - boolean
+    doc: Return path where to find the calorimetric tables.
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: cng_repeat_model
+    type:
+      - 'null'
+      - string
+    doc: Forces to use a specific nearest neighbor model for RNA sequences 
+      composed of CNG repeats (G(CNG)xC where N is a single N/N mismatch). You 
+      can only use bro05 (from Magdalena et al. 2005). To change the file 
+      containing the thermodynamic parameters for RNA sequences composed of CNG 
+      repeats computation, the same syntax as the one for the -nn option is 
+      used.
+    inputBinding:
+      position: 101
+      prefix: -CNG
+  - id: complementary_sequence
+    type:
+      - 'null'
+      - string
+    doc: Nucleic acid complementary sequence, mandatory only if there is inosine
+      bases or azobenznes in the sequence entered with the opton -S. The sens of
+      this sequence must be 3'-5''.
+    inputBinding:
+      position: 101
+      prefix: -C
+  - id: consecutive_locked_nucleic_acid_model
+    type:
+      - 'null'
+      - string
+    doc: Forces to use a specific nearest neighbor model for DNA sequences 
+      containing consecutive locked nucleic acid (Al, Tl, Cl or Gl). You can 
+      only use owc11 (from Owczarzy et al. 2011, by default). To change the file
+      containing the thermodynamic parameters for locked acid nucleic 
+      computation, the same syntax as the one for the -nn option is used.
+    inputBinding:
+      position: 101
+      prefix: -tanLck
+  - id: correction_factor
+    type:
+      - 'null'
+      - float
+    doc: Correction for the concentration of nucleic acid. F is automatically 1 
+      if the sequences are self complementary. Otherwise F is 4 if the both 
+      strands are present in equivalent amount and 1 if one strand is in excess.
+      The default factor value is 4.
+    default: 4.0
+    inputBinding:
+      position: 101
+      prefix: -F
+  - id: dmso_correction
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific DMSO correction (DMSO is always in percent). You
+      can use one of the following : (DNA) ahs01 (from von Ahsen et al 2001) (by default),
+      mus81 (from Musielski et al. 1981), cul76 (from Cullen et al. 1976), esc80 (from
+      Escara et al. 1980). For the other types of hybridization, the DNA default correction
+      is used but there is no guaranty of accuracy.'
+    inputBinding:
+      position: 101
+      prefix: -DMSO
+  - id: formamide_correction
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific formamide correction. You can use one of the following
+      : (DNA) bla96 (from Blake et al 1996) with formamide concentration in mol/L
+      (by default), lincorr (linear correction) with a percent of formamide volume
+      For the other types of hybridization, the DNA default correction is used but
+      there is no guaranty of accuracy.'
+    inputBinding:
+      position: 101
+      prefix: -for
+  - id: gu_pair_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for GU base pairs in RNA
+      sequences. You can use one of the following : tur99 (from Turner et al. 1999).
+      ser12 (from Serra et al. 2012) (by default) To change the file containing the
+      thermodynamic parameters for GU base pairs computation, the same syntax as the
+      one for the -nn option is used.'
+    inputBinding:
+      position: 101
+      prefix: -GU
+  - id: hybridization
+    type: string
+    doc: 'Type of hybridization, mandatory. Four types of hybridization are allowed
+      : dnadna (DNA duplex), rnarna (RNA duplex), dnarna or rnadna (hybrid DNA/RNA)
+      and mrnarna or rnamrna (2-o-methyl RNA/ RNA). The type of hybridization defines
+      the kind of the sequence and its complementary. Ex : dnarna = the sequence (entered
+      with the option -S) is a DNA sequence and its complementary (entered with the
+      option -C) is a RNA sequence. Ex : rnadna = the sequence (entered with the option
+      -S) is a RNA sequence and its complementary (entered with the option -C) is
+      a DNA sequence'
+    inputBinding:
+      position: 101
+      prefix: -H
+  - id: hydroxyadenine_model
+    type:
+      - 'null'
+      - string
+    doc: Forces to use a specific nearest neighbor model for hydroxyadenine base
+      (A*) in DNA sequences. You can only use sug01 (from Kawakami et al. 2001).
+      To change the file containing the thermodynamic parameters for 
+      hydroxyadenine base computation, the same syntax as the one for the -nn 
+      option is used.
+    inputBinding:
+      position: 101
+      prefix: -ha
+  - id: inosine_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for inosine base (I) in
+      the sequences. You can use one of the following : (DNA) san05 (from Watkins
+      and Santalucia 2005) (by default) (RNA) zno07 (from Wright et al. 2007) (by
+      default) To change the file containing the thermodynamic parameters for inosine
+      base computation, the same syntax as the one for the -nn option is used.'
+    inputBinding:
+      position: 101
+      prefix: -ino
+  - id: internal_loop_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for internal loop in the
+      sequences. You can use one of the following : (DNA) san04 (from Hicks and Santalucia
+      2004) (by default) (RNA) tur06 (from Lu et al. 2006) (by default), zno07 (from
+      Badhwarr et al. 2007, only for 1x2 loop) To change the file containing the thermodynamic
+      parameters for internal loop computation, the same syntax as the one for the
+      -nn option is used.'
+    inputBinding:
+      position: 101
+      prefix: -intLP
+  - id: ion_correction
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific ion correction. You can use one of the following
+      corrections : Sodium corrections : (DNA) ahs01 (from von Ahsen et al. 2001),
+      kam71 (from Frank-Kamenetskii et al 2001), owc1904 (equation 19 from Owczarzy
+      et al. 2004), owc2004 (equation 20 from Owczarzy et al. 2004), owc2104 (equation
+      21 from Owczarzy et al. 2004), owc2204 (equation 21 from Owczarzy et al. 2004)
+      (by default), san96 (from Santalucia et al. 1996), san04 (from Santalucia et
+      al. 1998, 2004), schlif (from Schildkraut and Lifson 1965), tanna06 (from Tan
+      et al. 2006), wetdna91 (from Wetmur 1991) (RNA or 2-o methyl RNA) tanna07 (from
+      Tan et al. 2007) (by default), wetrna91 (from Wetmur 1991) (RNA/DNA) wetdnarna91
+      (from Wetmur 1991) (by default) Magnesium corrections : (DNA) owcmg08 (from
+      Owczarzy et al. 2008) (by default), tanmg06 (from Tan et al. 2006) (RNA or 2-o
+      methyl RNA) tanmg07 (from Tan et al. 2007) (by default) Mixed Na Mg corrections
+      (DNA) owcmix08 (from Owczarzy et al. 2008) (by default), tanmix07 (from Tan
+      et al. 2007) (RNA or 2-o methyl RNA) tanmix07 (from Tan et al. 2007) (by default)
+      By default, the program use the algorithm from Owczarzy et al 2008 : ratio =
+      Mg^0.5 and monovalent = Na + Tris + K if monovalent = 0, a magnesium correction
+      is used. if ratio < 0.22, a sodium correction is used. if 0.22 <= ratio < 6,
+      a mixed Na Mg correction is used. if ratio >= 6, a magnesium correction is used.'
+    inputBinding:
+      position: 101
+      prefix: -ion
+  - id: legal_info
+    type:
+      - 'null'
+      - boolean
+    doc: Displays legal information and quit.
+    inputBinding:
+      position: 101
+      prefix: -L
+  - id: locked_nucleic_acid_model
+    type:
+      - 'null'
+      - string
+    doc: Forces to use a specific nearest neighbor model for DNA sequences 
+      containing locked nucleic acid (Al, Tl, Cl or Gl). You can use mct04 (from
+      McTigue et al. 2004) or owc11 (from Owczarzy et al. 2011, by default). To 
+      change the file containing the thermodynamic parameters for locked acid 
+      nucleic computation, the same syntax as the one for the -nn option is 
+      used.
+    inputBinding:
+      position: 101
+      prefix: -lck
+  - id: long_bulge_loop_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for long bulge loop(s) in
+      the sequences. You can use one of the following : (DNA) san04 (from Hicks and
+      Santalucia 2004) (by default) (RNA) tur06 (from Mathews et al. 1999 and Lu et
+      al 2006) (by default) To change the file containing the thermodynamic parameters
+      for long bulge loop computation, the same syntax as the one for the -nn option
+      is used.'
+    inputBinding:
+      position: 101
+      prefix: -lonBU
+  - id: long_dangling_end_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for long dangling end(s)
+      in the sequences (self complementary sequences). You can use one of the following
+      : (DNA) sugdna02 (from Ohmichi et al. 2002, only for polyA dangling ends) (by
+      default) (RNA) sugrna02 (from Ohmichi et al. 2002, only for polyA dangling ends)
+      (by default) To change the file containing the thermodynamic parameters for
+      long dangling end computation, the same syntax as the one for the -nn option
+      is used.'
+    inputBinding:
+      position: 101
+      prefix: -lonDE
+  - id: nearest_neighbor_model
+    type:
+      - 'null'
+      - string
+    doc: "Forces to use a specific nearest neighbor model. You can use one of the
+      following : (DNA) all97 (from Allawi and Santalucia 1997) (by default), bre86
+      (from Breslauer et al. 1986), san04 (from Hicks and Santalucia 2004), san96
+      (from Santalucia et al. 1996), sug96 (from Sugimoto et al 1996), tan04 (from
+      Tanaka et al. 2004) (RNA) fre86 (from Freier al. 1986), xia98 (from Xia et al.
+      1998) (by default) (DNA/RNA) sug95 (from Sugimoto et al. 1995) (by default)
+      (mRNA/RNA) tur06 (from Kierzek et al. 2006) (by default) If there is no formula
+      name after the option -nn, we will compute the melting temperature with the
+      default nearest neighbor model. Each nearest neighbor model uses a specific
+      xml file containing the thermodynamic values. If you want to use another file,
+      write the file name or the file pathway preceded by ':' (-nn [optionalname:optionalfile]).
+      Ex : -nn tan04:fileName if you want to use the nearest neighbor model from Tanaka
+      et al. 2004 with the thermodynamic parameters in the file fileName. Ex : -nn
+      :fileName if you want to use the default nearest neighbor model with the thermodynamic
+      parameters in the file fileName."
+    inputBinding:
+      position: 101
+      prefix: -nn
+  - id: nn_path
+    type:
+      - 'null'
+      - Directory
+    doc: Change the default pathway (Data) where to find the default 
+      calorimetric tables (thermodynamic parameters).
+    inputBinding:
+      position: 101
+      prefix: -nnpath
+  - id: nucleic_acid_concentration
+    type: float
+    doc: Concentration in mol/L of the nucleic acid strand in excess, mandatory.
+    inputBinding:
+      position: 101
+      prefix: -P
+  - id: second_dangling_end_model
+    type:
+      - 'null'
+      - string
+    doc: "Forces to use a specific nearest neighbor model for second dangling end(s)
+      in the sequences. You can use one of the following : (DNA) sugdna02 (from Ohmichi
+      et al. 2002, only for polyA dangling ends) (by default) (RNA) sugrna02 (from
+      Ohmichi et al. 2002, only for polyA dangling ends), ser05 (from O'toole et al.
+      2005), ser06 (from O'toole et al. 2006) (by default) To change the file containing
+      the thermodynamic parameters for second dangling end computation, the same syntax
+      as the one for the -nn option is used."
+    inputBinding:
+      position: 101
+      prefix: -secDE
+  - id: self_complementary
+    type:
+      - 'null'
+      - boolean
+    doc: To precise that the sequence entered with the option -S is self 
+      complementary. No complementary sequence is mandatory. The program 
+      automatically can detect a self complementary sequence for perfect 
+      matching sequences or sequences with dangling ends. In these cases, the 
+      option -self is not necessary, otherwise we need to precise that the 
+      sequences are self complementary.
+    inputBinding:
+      position: 101
+      prefix: -self
+  - id: sequence
+    type: string
+    doc: Nucleic acid sequence, mandatory. The sens of this sequence must be 
+      5'-3'.
+    inputBinding:
+      position: 101
+      prefix: -S
+  - id: single_bulge_loop_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for single bulge loop(s)
+      in the sequences. You can use one of the following : (DNA) san04 (from Hicks
+      and Santalucia 2004), tan04 (from Tanaka et al. 2004) (by default) (RNA) ser07
+      (from Blose et al. 2007), tur06 (from Lu et al. 1999 and 2006) (by default)
+      To change the file containing the thermodynamic parameters for single bulge
+      loop computation, the same syntax as the one for the -nn option is used.'
+    inputBinding:
+      position: 101
+      prefix: -sinBU
+  - id: single_dangling_end_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for single dangling end(s)
+      in the sequences. You can use one of the following : (DNA) bom00 (from Bommarito
+      et al. 2000) (by default), sugdna02 (from Ohmichi et al. 2002, only for polyA
+      dangling ends) (RNA) sugrna02 (from Ohmichi et al. 2002, only for polyA dangling
+      ends), ser08 (from Miller et al. 2008) (by default) To change the file containing
+      the thermodynamic parameters for single dangling end computation, the same syntax
+      as the one for the -nn option is used.'
+    inputBinding:
+      position: 101
+      prefix: -sinDE
+  - id: single_mismatch_locked_nucleic_acid_model
+    type:
+      - 'null'
+      - string
+    doc: Forces to use a specific nearest neighbor model for DNA sequences 
+      containing consecutive locked nucleic acid with one single mismatch (Al, 
+      Tl, Cl or Gl). You can use only owc11 (from Owczarzy et al. 2011, by 
+      default). To change the file containing the thermodynamic parameters for 
+      locked acid nucleic computation, the same syntax as the one for the -nn 
+      option is used.
+    inputBinding:
+      position: 101
+      prefix: -sinMMLck
+  - id: single_mismatch_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for single mismatch(es)
+      in the sequences. You can use one of the following : (DNA) allsanpey (from Allawi,
+      Santalucia and Peyret 1997, 1998 and 1999) (by default) (DNA/RNA) wat10 (from
+      Watkins et al. 2011) (by default) (RNA) tur06 (from Lu et al. 2006), zno07 (from
+      Davis et al. 2007) (by default), zno08 (from Davis et al. 2008) To change the
+      file containing the thermodynamic parameters for single mismatch computation,
+      the same syntax as the one for the -nn option is used.'
+    inputBinding:
+      position: 101
+      prefix: -sinMM
+  - id: sodium_equivalent_correction
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific ion correction which gives a sodium equivalent
+      concentration if other cations are present. You can use one of the following
+      : (DNA) ahs01 (from von Ahsen et al 2001) (by default), mit96 (from Mitsuhashi
+      et al. 1996), pey00 (from Peyret 2000) For the other types of hybridization,
+      the DNA default correction is used but there is no guaranty of accuracy.'
+    inputBinding:
+      position: 101
+      prefix: -naeq
+  - id: tandem_mismatch_model
+    type:
+      - 'null'
+      - string
+    doc: 'Forces to use a specific nearest neighbor model for tandem mismatches in
+      the sequences. You can use one of the following : (DNA) allsanpey (from Allawi,
+      Santalucia and Peyret 1997, 1998 and 1999) (by default) (RNA) tur99 (from Mathews
+      et al. 1999) (by default) To change the file containing the thermodynamic parameters
+      for tandem mismatches computation, the same syntax as the one for the -nn option
+      is used.'
+    inputBinding:
+      position: 101
+      prefix: -tanMM
+  - id: threshold
+    type:
+      - 'null'
+      - int
+    doc: Threshold for approximative computation. Default is 60.
+    default: 60
+    inputBinding:
+      position: 101
+      prefix: -T
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Switch ON the verbose mode, issuing lot more info. Default is OFF.
+    default: false
+    inputBinding:
+      position: 101
+      prefix: -v
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: To write the results in an output file. filename is the name or the 
+      pathway of the file.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/melting:v5.2.0-1-deb_cv1
-stdout: melting.out

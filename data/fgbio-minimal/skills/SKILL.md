@@ -1,8 +1,9 @@
 ---
 name: fgbio-minimal
-description: fgbio-minimal is a streamlined version of the Fulcrum Genomics bioinformatics toolkit, providing the core Java-based utilities for read-level data processing.
+description: fgbio-minimal provides core Java-based utilities for processing read-level sequencing data and managing molecular barcodes. Use when user asks to extract UMIs, group reads by molecular coordinates, call consensus reads, or manipulate BAM files for high-fidelity sequencing workflows.
 homepage: https://github.com/fulcrumgenomics/fgbio
 ---
+
 
 # fgbio-minimal
 

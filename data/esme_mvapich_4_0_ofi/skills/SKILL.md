@@ -1,8 +1,9 @@
 ---
 name: esme_mvapich_4_0_ofi
-description: The `esme_mvapich_4_0_ofi` package is a curated meta-environment designed for scientific computing and climate modeling.
+description: This package provides a curated meta-environment of high-performance I/O libraries and modeling frameworks optimized for MVAPICH 4.0 over the Open Fabrics Interface. Use when user asks to verify netCDF or ESMF configurations, check library versions for climate modeling, or run OSU Micro Benchmarks for MPI performance testing.
 homepage: https://github.com/j34ni/bioconda-recipes
 ---
+
 
 # esme_mvapich_4_0_ofi
 

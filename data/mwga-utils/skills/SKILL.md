@@ -1,8 +1,9 @@
 ---
 name: mwga-utils
-description: The `mwga-utils` suite provides high-performance C++ utilities for analyzing and manipulating MAF files.
+description: mwga-utils is a suite of C++ utilities for analyzing, manipulating, and calculating statistics from Multiple Alignment Format (MAF) files. Use when user asks to calculate genomic metrics like alignability and identity, fill missing reference regions, validate reference coverage, or generate alignment summaries.
 homepage: https://github.com/RomainFeron/mgwa_utils
 ---
+
 
 # mwga-utils
 

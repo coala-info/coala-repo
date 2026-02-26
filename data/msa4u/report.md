@@ -3,7 +3,7 @@
 ## msa4u
 
 ### Tool Description
-A tool for Multiple Sequence Alignment (Note: The provided text is a container execution error log and does not contain help documentation or argument definitions).
+Simple visualisation tool for Multiple Sequence Alignments.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/msa4u:0.4.0--pyh7e72e81_0
@@ -12,17 +12,65 @@ A tool for Multiple Sequence Alignment (Note: The provided text is a container e
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/msa4u/overview
-- **Total Downloads**: 427
+- **Total Downloads**: 428
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/GCA-VH-lab/msa4u
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/msa4u:0.4.0--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1018272507: no space left on device
+msa4u (version 0.4.0):
+Simple visualisation tool for Multiple Sequence Alignments.
+Home page and documentation:
+https://github.com/art-egorov/msa4u
+-------------------------------
+COMMAND-LINE PARAMETERS
+-------------------------------
+[POST-INSTALL STEPS]
+--data
+    Creates the 'uorf4u_data' folder in the current working directory.
+    The folder contains adjustable configuration files used by msa4u
+    (e.g. config, palettes...)
+--linux
+    Replaces the mafft path in the pre-made config file from the MacOS'
+    version [default] to the Linux'.
+-------------------------------
+[MANDATORY ARGUMENTS]
+-fa <input.fa>
+    Path to a fasta file with unaligned sequences.
+    Alignment will be performed with mafft:
+    [mafft --auto input.fa > input.aln.fa]
+ OR
+-aln <input.fa>
+    Path to a fasta file with aligned sequences.
+-------------------------------
+[OPTIONAL ARGUMENTS]
+-label <id|description|all>
+    Label style based on input fasta file.
+    id: sequence id from header (after > and before first space)
+    description: after first space on header
+    all: both (all header string)
+-o-aln <filename>
+    Alignment output filename.
+    (used only if input is unaligned sequences)
+    [default: auto; based on input file name]
+-o <filename>
+    Aligment visualisation filename.
+    [default: auto; based on input file name]
+-st <aa|nt|auto>
+    Sequence type
+    [default: auto; detected by used alphabet]
+-c <standard|<file.cfg>
+    Path to a configuration file or name of a premade config file
+    [default: standard].
+-------------------------------
+[MISCELLANEOUS ARGUMENTS]
+-h, --help
+    Show this help message and exit.
+-v, --version
+    Show program version.
+--debug
+    Provide detailed stack trace for debugging purposes.
+-q, --quiet
+    Don't show progress messages.
 ```
 
-
-## Metadata
-- **Skill**: generated

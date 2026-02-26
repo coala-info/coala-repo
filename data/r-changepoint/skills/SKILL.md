@@ -1,8 +1,9 @@
 ---
 name: r-changepoint
-description: Implements various mainstream and specialised changepoint methods for finding single and multiple changepoints within data.  Many popular non-parametric and frequentist methods are included.  The cpt.mean(), cpt.var(), cpt.meanvar() functions should be your first point of call.</p>
+description: The r-changepoint package provides frequentist and non-parametric methods for identifying structural breaks in data. Use when user asks to detect changes in mean, variance, or regression structure, identify single or multiple changepoints, or use algorithms like PELT and Binary Segmentation.
 homepage: https://cloud.r-project.org/web/packages/changepoint/index.html
 ---
+
 
 # r-changepoint
 

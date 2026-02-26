@@ -1,8 +1,9 @@
 ---
 name: bioconductor-decipher
-description: the package is available on all platforms; click for details.
+description: DECIPHER is a comprehensive R package for the manipulation, alignment, and analysis of biological sequences. Use when user asks to perform multiple sequence alignment, classify sequences taxonomically using IDTAXA, cluster large sequence datasets, or analyze genomic synteny.
 homepage: https://bioconductor.org/packages/release/bioc/html/DECIPHER.html
 ---
+
 
 # bioconductor-decipher
 

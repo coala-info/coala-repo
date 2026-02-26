@@ -3,7 +3,7 @@
 ## blastbesties
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error messages related to a Singularity/Docker container execution failure (no space left on device).
+Finds reciprocal best BLAST pairs from BLAST output format 6 (tabular). Where hits are sorted by query name then descending match quality.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/blastbesties:1.2.0--pyhdfd78af_0
@@ -18,9 +18,34 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/ad33a7db98569261c213300198f273e412b9aafea05224c2c5fa593ed2dc90cb: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/blastbesties:1.2.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3371077696: no space left on device
+usage: blastbesties [-h] [--version] -a BLASTAVB -b BLASTBVA [-l MINLEN]
+                    [-e EVAL] [-s BITSCORE] [-o OUTFILE] [-d OUTDIR]
+                    [--loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--tui]
+
+Finds reciprocal best BLAST pairs from BLAST output format 6 (tabular). Where
+hits are sorted by query name then descending match quality.
+
+options:
+  -h, --help            show this help message and exit
+  --version             Show program's version number and exit.
+  -a, --blastAvB BLASTAVB
+                        BLAST tab result file for fastaA query against fastaB
+                        subject.
+  -b, --blastBvA BLASTBVA
+                        BLAST tab result file for fastaB query against fastaA
+                        subject.
+  -l, --minLen MINLEN   Minimum length of hit to consider valid. Defaults to
+                        1.
+  -e, --eVal EVAL       Maximum e-value to consider valid pair. Defaults to
+                        0.001.
+  -s, --bitScore BITSCORE
+                        Minimum bitscore to consider valid pair. Defaults to
+                        1.0.
+  -o, --outFile OUTFILE
+                        Write reciprocal BLAST pairs to this file.
+  -d, --outDir OUTDIR   Directory for new sequence files to be written to.
+  --loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        Set logging level. Defaults to INFO.
+  --tui                 Open Textual UI.
 ```
 

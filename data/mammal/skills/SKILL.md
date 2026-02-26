@@ -1,8 +1,9 @@
 ---
 name: mammal
-description: The `mammal` (Multinomial Approximate Mixture Maximum Likelihood) tool accelerates the estimation of frequency classes in site-heterogeneous models.
+description: The mammal tool estimates optimized frequency classes and weights for site-heterogeneous models in protein sequence alignments. Use when user asks to estimate frequency classes, calculate mixture model weights, or generate an ESmodel for IQ-TREE.
 homepage: https://www.mathstat.dal.ca/~tsusko/doc/mammal.pdf
 ---
+
 
 # mammal
 

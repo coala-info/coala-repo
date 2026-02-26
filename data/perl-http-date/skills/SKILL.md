@@ -1,8 +1,9 @@
 ---
 name: perl-http-date
-description: The `perl-http-date` skill provides specialized routines for bridging the gap between human-readable date strings and machine-readable Unix timestamps (seconds since epoch).
+description: This tool converts between human-readable date strings and machine-readable Unix timestamps, specifically for HTTP protocol formats and common log styles. Use when user asks to parse date strings into epoch seconds, format timestamps for HTTP headers, or extract specific date components from various string formats.
 homepage: http://metacpan.org/pod/HTTP::Date
 ---
+
 
 # perl-http-date
 

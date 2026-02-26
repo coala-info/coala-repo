@@ -1,8 +1,9 @@
 ---
 name: dligand2
-description: DLIGAND2 is a specialized tool for estimating the binding affinity of protein-ligand complexes.
+description: DLIGAND2 estimates the binding affinity of protein-ligand complexes using a knowledge-based scoring function. Use when user asks to calculate binding energy, rank different ligands against a target protein, or evaluate docking poses.
 homepage: https://github.com/sysu-yanglab/DLIGAND2
 ---
+
 
 # dligand2
 

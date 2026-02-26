@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.amellifera.beebase.assembly4
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for the honey bee (Apis mellifera) based on the BeeBase assembly4. Use when user asks to access honey bee chromosome sequences, calculate sequence lengths, or perform genome-wide motif searching in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.BeeBase.assembly4.html
 ---
+
 
 # bioconductor-bsgenome.amellifera.beebase.assembly4
 

@@ -1,8 +1,9 @@
 ---
 name: bcbio-variation
-description: bcbio-variation is a Clojure-based toolkit built on top of the Genome Analysis Toolkit (GATK) specifically designed for the rigorous evaluation of genomic variants.
+description: bcbio-variation is a toolkit for normalizing, evaluating, and merging genomic variant calls to ensure consistency across different calling algorithms. Use when user asks to normalize VCF files, compare variant callsets for concordance, create ensemble callsets from multiple inputs, or generate variant statistics and annotations.
 homepage: https://github.com/chapmanb/bcbio.variation
 ---
+
 
 # bcbio-variation
 

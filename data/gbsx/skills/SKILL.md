@@ -1,8 +1,9 @@
 ---
 name: gbsx
-description: GBSX (Genotyping By Sequencing demultipleXing toolkit) is a suite of tools designed to bridge the gap between experimental design and initial data processing in GBS workflows.
+description: GBSX is a toolkit designed for demultiplexing genotyping-by-sequencing data and assisting in experimental design. Use when user asks to demultiplex reads with inline barcodes, predict restriction enzyme fragment distributions, or generate optimized barcode sets.
 homepage: https://github.com/GenomicsCoreLeuven/GBSX
 ---
+
 
 # gbsx
 

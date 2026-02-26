@@ -1,8 +1,9 @@
 ---
 name: espresso
-description: ESPRESSO (Error Statistics PRomoted Evaluator of Splice Site Options) is a specialized tool for long-read RNA-seq analysis.
+description: ESPRESSO is a long-read RNA-seq analysis tool that refines splice junctions and quantifies isoforms by correcting sequencing errors. Use when user asks to identify high-confidence splice sites, quantify transcript abundance from long-read data, or generate corrected SAM files for visualization.
 homepage: https://github.com/Xinglab/espresso
 ---
+
 
 # espresso
 

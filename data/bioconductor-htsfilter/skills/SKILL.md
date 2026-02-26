@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htsfilter
-description: the package is available on all platforms; click for details.
+description: This tool performs data-driven filtering of replicated high-throughput sequencing data to remove uninformative genes with low or constant expression. Use when user asks to filter RNA-seq data, identify optimal expression thresholds using the Jaccard index, or increase statistical power for differential expression analysis with edgeR or DESeq2.
 homepage: https://bioconductor.org/packages/release/bioc/html/HTSFilter.html
 ---
+
 
 # bioconductor-htsfilter
 

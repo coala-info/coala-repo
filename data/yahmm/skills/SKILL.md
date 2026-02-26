@@ -1,8 +1,9 @@
 ---
 name: yahmm
-description: The yahmm library provides a graph-based interface for constructing Hidden Markov Models.
+description: yahmm is a Python library for constructing and working with Hidden Markov Models using a graph-based interface. Use when user asks to initialize a Hidden Markov Model, define its topology, calculate sequence likelihood, decode hidden states, or train HMMs.
 homepage: https://github.com/jmschrei/yahmm
 ---
+
 
 # yahmm
 

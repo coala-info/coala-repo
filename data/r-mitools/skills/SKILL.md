@@ -1,8 +1,9 @@
 ---
 name: r-mitools
-description: "Tools to perform analyses and combine results from         multiple-imputation datasets.</p>"
+description: The r-mitools package provides a framework for managing, analyzing, and pooling results from multiply imputed datasets in R. Use when user asks to create imputation lists, perform analyses across multiple datasets, or combine results using Rubin's Rules.
 homepage: https://cloud.r-project.org/web/packages/mitools/index.html
 ---
+
 
 # r-mitools
 

@@ -1,8 +1,9 @@
 ---
 name: strainest
-description: StrainEst is a reference-based computational method used to determine the identity and relative abundance of coexisting microbial strains in metagenomic samples.
+description: StrainEst determines the identity and relative abundance of coexisting microbial strains in metagenomic samples by leveraging species-specific SNV profiles. Use when user asks to identify specific microbial strains, estimate strain-level relative abundance, or profile metagenomic reads against a reference SNV database.
 homepage: https://github.com/compmetagen/strainest
 ---
+
 
 # strainest
 

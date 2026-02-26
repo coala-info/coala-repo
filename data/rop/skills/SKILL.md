@@ -1,8 +1,9 @@
 ---
 name: rop
-description: The Read Origin Protocol (ROP) is a specialized bioinformatics pipeline designed to characterize the "unmapped" portion of sequencing datasets.
+description: The Read Origin Protocol (ROP) characterizes unmapped sequencing reads to identify complex RNA molecules, repetitive elements, and microbial sequences. Use when user asks to analyze unmapped reads, profile the immune repertoire, detect microbial contamination, or identify circular RNAs and repetitive elements.
 homepage: https://github.com/smangul1/rop
 ---
+
 
 # rop
 

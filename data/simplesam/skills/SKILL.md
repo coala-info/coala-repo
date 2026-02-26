@@ -1,8 +1,9 @@
 ---
 name: simplesam
-description: The `simplesam` skill provides a lightweight, Pythonic interface for interacting with SAM records.
+description: Simplesam provides a lightweight Pythonic interface for reading, manipulating, and writing SAM alignment records. Use when user asks to parse SAM files, modify record tags and attributes, or filter alignment data within Python scripts.
 homepage: http://mattshirley.com
 ---
+
 
 # simplesam
 

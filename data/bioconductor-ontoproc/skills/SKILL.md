@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ontoproc
-description: the package is available on all platforms; click for details.
+description: The ontoProc package provides tools for processing and mapping biological ontologies within the R environment. Use when user asks to map cell types to ontologies, visualize ontology structures, or manage biological nomenclature.
 homepage: https://bioconductor.org/packages/release/bioc/html/ontoProc.html
 ---
+
 
 # bioconductor-ontoproc
 

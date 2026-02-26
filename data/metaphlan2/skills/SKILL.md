@@ -1,8 +1,9 @@
 ---
 name: metaphlan2
-description: MetaPhlAn2 is a computational pipeline for profiling the relative abundance of microbial populations from metagenomic samples.
+description: MetaPhlAn2 profiles the relative abundance of microbial populations from metagenomic samples using clade-specific marker genes. Use when user asks to generate taxonomic profiles, identify microbial strains, or perform comparative metagenomics.
 homepage: https://bitbucket.org/biobakery/metaphlan2
 ---
+
 
 # metaphlan2
 

@@ -1,8 +1,9 @@
 ---
 name: bcbio
-description: bcbio-nextgen is a community-developed toolkit designed to automate the data processing component of high-throughput sequencing.
+description: bcbio-nextgen is a toolkit that automates high-throughput sequencing data processing through validated pipelines for variant calling and transcriptomics. Use when user asks to install genomic tools, initialize analysis projects from templates, or execute distributed sequencing pipelines.
 homepage: https://github.com/bcbio/bcbio-nextgen
 ---
+
 
 # bcbio
 

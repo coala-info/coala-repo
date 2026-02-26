@@ -3,7 +3,7 @@
 ## renano
 
 ### Tool Description
-Reference-based compressor for Nanopore data (Note: The provided text is a container build log and does not contain help documentation or argument definitions).
+Renano v1.0 Author Guillermo Dufort y Alvarez, 2020-2021
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/renano:1.3--h077b44d_4
@@ -18,13 +18,40 @@ Reference-based compressor for Nanopore data (Note: The provided text is a conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/renano:1.3--h077b44d_4 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+ERROR: Either input or output files are missing.
+Renano v1.0 Author Guillermo Dufort y Alvarez, 2020-2021
+
+COMPRESSION: 
+> Without reference:
+	renano [options] [input_file [output_file]]
+
+> With reference:
+	renano [options] -r [ref_file [paf_file]] [input_file [output_file]]
+
+> With reference and making decompression independent of the reference:
+	renano [options] -s [ref_file [paf_file]] [input_file [output_file]]
+
+COMPRESSION OPTIONS: 
+	-k <length>    Base call sequence context length. Default is 7 (max 13).
+
+	-l <lenght>    Length of the DNA neighborhood sequence. Default is 6.
+
+	-t <num>       Maximum number of threads allowed to use by the compressor. Default is 8.
+
+DECOMPRESSION: 
+> Without reference:
+	renano -d [options] foo.enano foo.fastq
+
+> With reference:
+	renano -d [options] -r [ref_file] foo.enano foo.fastq
+
+DECOMPRESSION OPTIONS: 
+	-t <num>       Maximum number of threads allowed to use by the decompressor. Default is 8.
+
+CREDITS :
+The methods used for encoding the reads identifiers, and to model frequency counters, 
+are the ones proposed by James Bonefield in FQZComp, with some modifications.
+The range coder is derived from Eugene Shelwien.
+The kseq library used to parse FASTA files is authored by Heng Li.
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: fermikit
-description: FermiKit is a specialized pipeline that transforms raw Illumina short reads into unitigs through de novo assembly before calling variants.
+description: FermiKit is a de novo assembly-based variant calling pipeline that transforms raw Illumina short reads into unitigs to identify SNPs, INDELs, and structural variations. Use when user asks to perform de novo assembly of short reads, call variants from assembled unitigs, or identify complex structural changes and novel sequences.
 homepage: https://github.com/lh3/fermikit
 ---
+
 
 # fermikit
 

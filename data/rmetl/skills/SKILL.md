@@ -1,8 +1,9 @@
 ---
 name: rmetl
-description: rMETL (Realignment-based Mobile Element insertion detection Tool for Long read) is a specialized bioinformatics suite designed to identify MEIs in noisy long-read datasets.
+description: rMETL identifies mobile element insertions in long-read sequencing data using a realignment-based strategy. Use when user asks to detect mobile element insertions, realign chimeric reads to a mobile element reference, or perform variant calling and genotyping on PacBio or ONT datasets.
 homepage: https://github.com/tjiangHIT/rMETL
 ---
+
 
 # rmetl
 

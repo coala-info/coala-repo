@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geosubmission
-description: the package is available on all platforms; click for details.
+description: The GEOsubmission package prepares microarray data and metadata for submission to the NCBI Gene Expression Omnibus by generating a SOFT format file. Use when user asks to deposit microarray data to GEO, convert metadata and expression data into SOFT format, or prepare Affymetrix CEL files for NCBI submission.
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOsubmission.html
 ---
+
 
 # bioconductor-geosubmission
 

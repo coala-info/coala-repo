@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmrseq
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical analysis of bisulfite-sequencing data to detect differentially methylated regions using a permutation-based approach. Use when user asks to detect differentially methylated regions, identify large-scale methylation blocks, or perform inference on whole genome bisulfite-sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/dmrseq.html
 ---
+
 
 # bioconductor-dmrseq
 

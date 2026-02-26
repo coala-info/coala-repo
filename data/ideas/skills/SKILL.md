@@ -1,8 +1,9 @@
 ---
 name: ideas
-description: IDEAS (Integrative Dynamic Epigenomic Annotation System) is a specialized tool for jointly and quantitatively characterizing multivariate epigenetic landscapes across many cell types, tissues, or conditions.
+description: IDEAS jointly and quantitatively characterizes multivariate epigenetic landscapes across multiple cell types or conditions to identify functional genomic elements. Use when user asks to generate epigenetic state annotations, model multiple epigenomic datasets simultaneously, or improve the continuity of genomic tracks using horizontal priors.
 homepage: https://github.com/yuzhang123/IDEAS
 ---
+
 
 # ideas
 

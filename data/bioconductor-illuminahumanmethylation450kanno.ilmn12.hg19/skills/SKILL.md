@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylation450kanno.ilmn12.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Illumina HumanMethylation450k DNA methylation microarray based on the hg19 genome build. Use when user asks to map probe IDs to genomic coordinates, access CpG island information, or identify SNPs that may bias methylation measurements.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation450kanno.ilmn12.hg19.html
 ---
+
 
 # bioconductor-illuminahumanmethylation450kanno.ilmn12.hg19
 

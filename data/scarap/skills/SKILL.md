@@ -1,8 +1,9 @@
 ---
 name: scarap
-description: The `scarap` toolkit is designed for high-throughput prokaryotic comparative genomics.
+description: The scarap toolkit automates prokaryotic comparative genomics by identifying orthologous groups and performing phylogenetic reconstruction. Use when user asks to identify orthologous groups, extract core genomes, or generate phylogenetic trees from bacterial genomic data.
 homepage: https://pypi.org/project/scarap
 ---
+
 
 # scarap
 

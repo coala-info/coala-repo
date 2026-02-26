@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pfam.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides comprehensive annotation data for protein families from the Pfam database. Use when user asks to retrieve Pfam identifiers, map protein domains to other biological databases, or access functional annotations for protein families.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/PFAM.db.html
 ---
+
 
 # bioconductor-pfam.db
 

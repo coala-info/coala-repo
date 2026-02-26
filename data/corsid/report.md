@@ -3,7 +3,7 @@
 ## corsid
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it is an error log from a container build process.
+Identify and classify ORFs in a FASTA genome file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/corsid:0.1.3--pyh5e36f6f_0
@@ -18,9 +18,37 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/corsid:0.1.3--pyh5e36f6f_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/263e5b7514316206043e684d6077cacb7c8e024c6decac52838ba1785fab4f551027238125: no space left on device
+usage: corsid [-h] -f FASTA [-g GFF] [-n NAME] [-o OUTPUT] [-r OUTPUT_ORF]
+              [-3 OUTPUT_GFF3] [-w WINDOW] [-x MISMATCH] [-t TAU_MIN]
+              [-T TAU_MAX] [--shrink SHRINK] [--no-missing-classifier]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g GFF, --gff GFF     GFF annotation file
+  -n NAME, --name NAME  sample name
+  -o OUTPUT, --output OUTPUT
+                        output json file name
+  -r OUTPUT_ORF, --output-orf OUTPUT_ORF
+                        output identified ORFs (FASTA), only contains the
+                        first solution
+  -3 OUTPUT_GFF3, --output-gff3 OUTPUT_GFF3
+                        output identified ORFs (FASTA), only contains the
+                        first solution
+  -w WINDOW, --window WINDOW
+                        length of sliding window [7]
+  -x MISMATCH, --mismatch MISMATCH
+                        mismatch score [-2]
+  -t TAU_MIN, --tau_min TAU_MIN
+                        minimum matching score threshold [2]
+  -T TAU_MAX, --tau_max TAU_MAX
+                        maximum matching score threshold [7]
+  --shrink SHRINK       fraction of positions that may overlap between
+                        consecutive genes [0.05]
+  --no-missing-classifier
+                        set flag to disable missing TRS-L classifier
+
+required arguments:
+  -f FASTA, --fasta FASTA
+                        FASTA genome file
 ```
 

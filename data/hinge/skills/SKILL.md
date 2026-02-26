@@ -1,8 +1,9 @@
 ---
 name: hinge
-description: Hingemonium is a specialized macOS application that transforms a MacBook into a virtual harmonium.
+description: Hingemonium transforms a MacBook into a virtual harmonium by using the laptop's lid movement to simulate bellows. Use when user asks to install the application, configure keyboard and bellows controls, select musical scales, or troubleshoot hardware sensor issues.
 homepage: https://github.com/Rocktopus101/Hingemonium
 ---
+
 
 # hinge
 

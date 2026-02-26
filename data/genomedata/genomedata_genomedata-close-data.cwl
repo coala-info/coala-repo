@@ -1,11 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - genomedata-close-data
+baseCommand: genomedata_genomedata-close-data
 label: genomedata_genomedata-close-data
-doc: "A tool from the Genomedata package. (Note: The provided help text contains only
-  container runtime error messages and no usage information.)\n\nTool homepage: http://genomedata.hoffmanlab.org"
-inputs: []
+doc: "Compute summary statistics for data in Genomedata archive and ready for accessing.\n\
+  \nTool homepage: http://genomedata.hoffmanlab.org"
+inputs:
+  - id: gdarchive
+    type: Directory
+    doc: genomedata archive
+    inputBinding:
+      position: 1
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print status updates and diagnostic messages
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

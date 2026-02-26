@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95av2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix Human Genome U95Av2 microarray. Use when user asks to access probe sequences, map probes to x/y coordinates, or identify interrogation positions for hgu95av2 chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95av2probe.html
 ---
+
 
 # bioconductor-hgu95av2probe
 

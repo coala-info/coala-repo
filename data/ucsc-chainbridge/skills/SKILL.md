@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainbridge
-description: The `ucsc-chainbridge` tool is a specialized utility from the UCSC Genome Browser "Kent" source tree designed to refine genomic alignments.
+description: The `ucsc-chainbridge` tool refines genomic alignments by identifying and closing double-sided gaps to extend alignment blocks. Use when user asks to stitch together alignment fragments, refine genomic alignments, or maximize alignment coverage and continuity.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-chainbridge
 

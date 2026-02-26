@@ -1,46 +1,39 @@
 # orthofinder CWL Generation Report
 
-## orthofinder
+## orthofinder_assign
 
 ### Tool Description
-The provided text is an error log from a container runtime (Singularity/Apptainer) and does not contain help information or argument definitions for the OrthoFinder tool.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/orthofinder:3.1.2--hdfd78af_1
+- **Docker Image**: quay.io/biocontainers/orthofinder:3.1.3--hdfd78af_0
 - **Homepage**: https://github.com/OrthoFinder/OrthoFinder
 - **Package**: https://anaconda.org/channels/bioconda/packages/orthofinder/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/orthofinder/overview
-- **Total Downloads**: 130.5K
+- **Total Downloads**: 130.9K
 - **Last updated**: 2026-02-17
 - **GitHub**: https://github.com/OrthoFinder/OrthoFinder
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/orthofinder:3.1.2--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3481000272: no space left on device
-```
+Unrecognised argument: assign
 
+ERROR: An error occurred, ***please review the error messages*** they may 
+contain useful information about the problem.
 
-## Metadata
-- **Skill**: generated
-
-## orthofinder_primary_transcript.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error logs related to a container runtime failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/orthofinder:3.1.2--hdfd78af_1
-- **Homepage**: https://github.com/OrthoFinder/OrthoFinder
-- **Package**: https://anaconda.org/channels/bioconda/packages/orthofinder/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/orthofinder:3.1.2--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2151022999: no space left on device
+[33;49mOrthoFinder[0m[39;49m finished in [0m[1;32;49m0.[0m[32;49m017280[0m[39;49ms[0m
 ```
 

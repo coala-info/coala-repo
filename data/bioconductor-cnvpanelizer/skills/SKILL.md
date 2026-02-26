@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnvpanelizer
-description: the package is available on all platforms; click for details.
+description: CNVPanelizer performs copy number variation analysis for targeted sequencing panels using a non-parametric approach. Use when user asks to detect copy number variations, analyze amplicon sequencing data, or identify genomic deletions and duplications in panel data.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVPanelizer.html
 ---
+
 
 # bioconductor-cnvpanelizer
 

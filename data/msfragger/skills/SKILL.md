@@ -1,8 +1,9 @@
 ---
 name: msfragger
-description: MSFragger is a high-performance database search engine for proteomics data.
+description: MSFragger is a high-performance database search engine used to identify peptides and proteins from mass spectrometry proteomics data. Use when user asks to perform fast database searches, conduct open searches for unknown modifications, or process large-scale datasets from instruments like the Bruker timsTOF.
 homepage: https://github.com/Nesvilab/MSFragger
 ---
+
 
 # msfragger
 

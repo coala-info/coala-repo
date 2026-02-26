@@ -1,8 +1,9 @@
 ---
 name: bioconductor-shinymethyl
-description: the package is available on all platforms; click for details.
+description: shinyMethyl provides an interactive tool for quality control and visualization of DNA methylation data from Illumina arrays. Use when user asks to perform quality control on methylation data, visualize DNA methylation arrays, or interactively explore Illumina 450k and EPIC data.
 homepage: https://bioconductor.org/packages/release/bioc/html/shinyMethyl.html
 ---
+
 
 # bioconductor-shinymethyl
 

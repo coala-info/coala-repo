@@ -3,7 +3,7 @@
 ## seer
 
 ### Tool Description
-Sequence Element Enrichment Analysis (seer) - a tool for genome-wide association studies (GWAS) on pangenomes.
+sequence element enrichment analysis
 
 ### Metadata
 - **Docker Image**: biocontainers/seer:v1.1.4-2b2-deb_cv1
@@ -18,14 +18,39 @@ Sequence Element Enrichment Analysis (seer) - a tool for genome-wide association
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/seer:v1.1.4-2b2-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Gaf.pl: unpack to regular file: short write: write /tmp/build-temp-2066271485/rootfs/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Gaf.pl: no space left on device
+seer: sequence element enrichment analysis
+
+Required options:
+  -k [ --kmers ] arg       dsm kmer output file
+  -p [ --pheno ] arg       .pheno metadata
+
+Covariate options:
+  --struct arg             mds values from kmds
+  --covar_file arg         file containing covariates
+  --covar_list arg         list of columns covariates to use. Format is 1,2q,3 
+                           (use q for quantitative)
+
+Performance options:
+  --threads arg (=1)       number of threads. Suggested: 20
+
+Filtering options:
+  --no_filtering           turn off all filtering and perform tests on all 
+                           kmers input
+  --max_length arg (=100)  maximum kmer length
+  --maf arg (=0.01)        minimum kmer frequency
+  --min_words arg          minimum kmer occurences. Overrides --maf
+  --chisq arg (=10e-5)     p-value threshold for initial chi squared test. Set 
+                           to 1 to show all
+  --pval arg (=10e-8)      p-value threshold for final logistic test. Set to 1 
+                           to show all
+
+Other options:
+  --print_samples          print lists of samples significant kmers were found 
+                           in
+  --version                prints version and exits
+  -h [ --help ]            full help message
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

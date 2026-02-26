@@ -1,8 +1,9 @@
 ---
 name: pisad
-description: PISAD (Phsaed Intraspecies Sample Anomalies Detection) is a specialized bioinformatics tool designed for cohort quality control.
+description: PISAD performs reference-free cohort quality control and intraspecies anomaly detection using k-mer counting. Use when user asks to identify sample swaps, detect intraspecies anomalies, or perform reference-free SNP calling and cohort comparison.
 homepage: https://github.com/ZhantianXu/PISAD
 ---
+
 
 # pisad
 

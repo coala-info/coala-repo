@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ig-checkflowtypes_checkFlowSet.R
 label: ig-checkflowtypes_checkFlowSet.R
-doc: "A tool for checking flow sets. (Note: The provided help text contains system
-  error logs and does not list specific command-line arguments.)\n\nTool homepage:
-  https://github.com/ImmPortDB/ig-checkflowtypes"
-inputs: []
+doc: "Checks flowSet objects for validity and readability.\n\nTool homepage: https://github.com/ImmPortDB/ig-checkflowtypes"
+inputs:
+  - id: input_file
+    type: File
+    doc: The flowSet object to check.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

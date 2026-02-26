@@ -1,8 +1,9 @@
 ---
 name: kb-python
-description: The `kb-python` skill provides a streamlined interface for the kallisto | bustools suite, transforming raw FASTQ files into analysis-ready count matrices.
+description: kb-python processes raw single-cell RNA-seq FASTQ files into gene or feature count matrices using the kallisto and bustools suite. Use when user asks to build a pseudoalignment index, quantify single-cell or single-nucleus reads, or perform feature barcoding workflows like CITE-seq.
 homepage: https://github.com/pachterlab/kb_python
 ---
+
 
 # kb-python
 

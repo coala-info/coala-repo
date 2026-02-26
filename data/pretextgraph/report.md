@@ -1,9 +1,9 @@
 # pretextgraph CWL Generation Report
 
-## pretextgraph
+## pretextgraph_PretextGraph
 
 ### Tool Description
-A tool for generating Pretext contact maps (description not available in provided text)
+PretextMap Version 0.0.9
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pretextgraph:0.0.9--h9948957_1
@@ -18,13 +18,20 @@ A tool for generating Pretext contact maps (description not available in provide
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pretextgraph:0.0.9--h9948957_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage is not correct, please check the usage below:
+
+PretextMap Version 0.0.9
+
+  (...bedgraph format |) PretextGraph -i input.pretext -n "graph name"
+                                        [-o output.pretext]
+                                        [-nf 0|1] (0: disable NOISE FILTER, 1: enable NOISE FILTER, (default: 1))
+                                        [-f debug.bedgraph] (debug bedgraph file)
+                                        [--help | -h] (view help)
+                                        [--licence] (view software licence)
+                                        [--thirdparty] (view third party software used)
+  (< bedgraph format)
+
+PretextGraph --licence    <- view software licence
+PretextGraph --thirdparty <- view third party software used
 ```
 
-
-## Metadata
-- **Skill**: generated

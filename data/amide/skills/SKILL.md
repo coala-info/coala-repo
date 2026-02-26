@@ -1,8 +1,9 @@
 ---
 name: amide
-description: AMIDES (Adaptive Misuse Detection System) is a machine learning framework designed to enhance traditional SIEM systems by detecting attacks that evade static rule matching.
+description: AMIDES is a machine learning framework that detects malicious events and rule evasions by training classifiers on historical benign data and known SIEM rules. Use when user asks to detect attacks that evade static rules, identify malicious variants, or perform rule attribution and ranking.
 homepage: https://github.com/fkie-cad/amides
 ---
+
 
 # amide
 

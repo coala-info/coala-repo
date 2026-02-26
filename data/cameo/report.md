@@ -1,9 +1,9 @@
 # cameo CWL Generation Report
 
-## cameo
+## cameo_design
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container build process (Apptainer/Singularity) indicating a 'no space left on device' failure.
+Compute strain designs for desired product.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cameo:0.13.6--pyhdfd78af_0
@@ -18,14 +18,75 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cameo:0.13.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c58174adcc415fcf7015882a6250b57de79a42e4797ea9667c6920d912af070f: unpack entry: usr/local/bin/pandoc: unpack to regular file: short write: write /tmp/build-temp-2414515555/rootfs/usr/local/bin/pandoc: no space left on device
+Usage: cameo design [OPTIONS] PRODUCT
+
+  Compute strain designs for desired product.
+
+Options:
+  -o, --output PATH               Output filename. Multiple output files can
+                                  be provided (pair with respective format
+                                  options).
+  -f, --format [xlsx|csv|tsv|pickle]
+                                  Output file format (default csv).
+  -h, --host [ecoli|scerevisiae]  The host organisms to consider (default:
+                                  all). Multiple hosts can be specified by
+                                  repeating --host HOST.
+  --aerobic / --anaerobic         Make oxygen available to the host organism
+                                  (default).
+  --cores INTEGER RANGE           Number of CPU cores to use (default 1).
+                                  [1<=x<=20]
+  --differential-fva / --no-differential-fva
+                                  Perform differential flux variability
+                                  analysis to determine flux modulation
+                                  targets (default).
+  --heuristic-optimization / --no-heuristic-optimization
+                                  Find gene knockout targets through heuristic
+                                  optimization (default).
+  --max-pathway-predictions INTEGER
+                                  Maximum number of heterologous pathways to
+                                  predict (default 1).
+  --differential-fva-points INTEGER
+                                  Grid points for differential FVA (default
+                                  10).
+  --pathway-prediction-timeout INTEGER
+                                  Time limit (min) for individual pathway
+                                  predictions (default 10 min).
+  --heuristic-optimization-timeout INTEGER
+                                  Time limit (min) on individual heuristic
+                                  optimizations (default 45 min).
+  --logging [CRITICAL|ERROR|WARNING|INFO|DEBUG]
+                                  Logging level (default WARNING).
+  --help                          Show this message and exit.
+```
+
+
+## cameo_search
+
+### Tool Description
+Search for available products.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cameo:0.13.6--pyhdfd78af_0
+- **Homepage**: http://cameo.bio
+- **Package**: https://anaconda.org/channels/bioconda/packages/cameo/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: cameo search [OPTIONS] PRODUCT
+
+  Search for available products.
+
+  PRODUCT: The target product. You can search by name, InChI, and metanetx ID.
+
+  Examples
+  --------
+  $ cameo search chebi:30838  # search for itaconate
+
+Options:
+  --help  Show this message and exit.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

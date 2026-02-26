@@ -1,8 +1,9 @@
 ---
 name: metagraph
-description: MetaGraph is a high-performance genomic indexing framework designed for petabase-scale sequence data.
+description: MetaGraph is a high-performance genomic indexing framework used to build, annotate, and query massive de Bruijn graphs from large-scale sequence data. Use when user asks to build de Bruijn graphs, annotate graphs with source information, transform annotations into efficient formats, query sequences against an index, or assemble unitigs.
 homepage: https://github.com/ratschlab/metagraph
 ---
+
 
 # metagraph
 

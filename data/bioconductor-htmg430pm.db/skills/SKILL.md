@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430pm.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix htmg430pm platform to map manufacturer probe identifiers to biological metadata for Mus musculus. Use when user asks to map probe IDs to gene symbols, Entrez Gene IDs, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430pm.db.html
 ---
+
 
 # bioconductor-htmg430pm.db
 

@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_mpich_4_3_1
-description: This skill facilitates the use of the NetCDF-C interface, a community standard for sharing and managing array-oriented scientific data.
+description: This tool provides the NetCDF-C interface linked with MPICH for managing and sharing array-oriented scientific data with parallel file access. Use when user asks to inspect NetCDF metadata, convert CDL files to binary, apply compression, or configure C applications for high-performance parallel I/O.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_mpich_4_3_1
 

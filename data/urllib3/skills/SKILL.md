@@ -1,8 +1,9 @@
 ---
 name: urllib3
-description: `urllib3` is a high-performance, low-level HTTP client for Python that provides features missing from the standard library.
+description: `urllib3` is a high-performance, low-level HTTP client for Python that handles network requests, connection pooling, and advanced communication patterns. Use when user asks to make HTTP requests, manage connection pools, implement retry strategies, set timeouts, parse JSON responses, use proxies, stream large downloads, or upload files and form data.
 homepage: https://github.com/urllib3/urllib3
 ---
+
 
 # urllib3
 

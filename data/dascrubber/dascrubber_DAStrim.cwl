@@ -2,11 +2,49 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: DAStrim
 label: dascrubber_DAStrim
-doc: "The provided input text does not contain help information for the tool, but
-  rather a system error log indicating a failure to build or extract a container image
-  due to lack of disk space. No arguments or usage instructions could be extracted.\n
-  \nTool homepage: https://github.com/thegenemyers/DASCRUBBER"
-inputs: []
+doc: "DAStrim\n\nTool homepage: https://github.com/thegenemyers/DASCRUBBER"
+inputs:
+  - id: source_db
+    type: File
+    doc: Source database file
+    inputBinding:
+      position: 1
+  - id: overlaps_las
+    type:
+      type: array
+      items: File
+    doc: Overlaps LAS files
+    inputBinding:
+      position: 2
+  - id: max_overlap_length
+    type:
+      - 'null'
+      - int
+    doc: Maximum overlap length
+    default: 1000
+    inputBinding:
+      position: 103
+      prefix: -l
+  - id: min_seed_coverage
+    type: int
+    doc: Minimum seed coverage
+    inputBinding:
+      position: 103
+      prefix: -b
+  - id: min_seed_length
+    type: int
+    doc: Minimum seed length
+    inputBinding:
+      position: 103
+      prefix: -g
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Enable verbose output
+    inputBinding:
+      position: 103
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

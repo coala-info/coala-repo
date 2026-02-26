@@ -1,8 +1,10 @@
 ---
 name: tmhg
-description: tMHG-Finder is a bioinformatics tool designed to categorize genomic sequences into homologous groups based on evolutionary relationships.
+description: tMHG categorizes genomic sequences into homologous groups based on evolutionary relationships. Use when user asks to find homologous groups or add new genomes to an existing analysis.
 homepage: https://github.com/yongze-yin/tMHG-Finder/
 ---
+
+
 
 # tmhg
 

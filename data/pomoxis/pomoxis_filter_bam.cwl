@@ -1,16 +1,112 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pomoxis_filter_bam
+baseCommand: filter_bam
 label: pomoxis_filter_bam
-doc: "The provided text does not contain help information for pomoxis_filter_bam;
-  it contains container runtime error logs. No arguments could be extracted.\n\nTool
-  homepage: https://github.com/nanoporetech/pomoxis"
-inputs: []
+doc: "Filter a bam\n\nTool homepage: https://github.com/nanoporetech/pomoxis"
+inputs:
+  - id: bam
+    type: File
+    doc: input bam file.
+    inputBinding:
+      position: 1
+  - id: accuracy
+    type:
+      - 'null'
+      - float
+    doc: Filter reads by accuracy.
+    default: None
+    inputBinding:
+      position: 102
+      prefix: --accuracy
+  - id: coverage
+    type:
+      - 'null'
+      - float
+    doc: "Filter reads by coverage (what fraction of the read\naligns)."
+    default: None
+    inputBinding:
+      position: 102
+      prefix: --coverage
+  - id: keep_supplementary
+    type:
+      - 'null'
+      - boolean
+    doc: Include supplementary alignments.
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --keep_supplementary
+  - id: keep_unmapped
+    type:
+      - 'null'
+      - boolean
+    doc: Include unmapped reads.
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --keep_unmapped
+  - id: length
+    type:
+      - 'null'
+      - int
+    doc: Filter reads by read length.
+    default: None
+    inputBinding:
+      position: 102
+      prefix: --length
+  - id: orientation
+    type:
+      - 'null'
+      - string
+    doc: Sample only forward or reverse reads.
+    default: None
+    inputBinding:
+      position: 102
+      prefix: --orientation
+  - id: primary_only
+    type:
+      - 'null'
+      - boolean
+    doc: Use only primary reads.
+    default: true
+    inputBinding:
+      position: 102
+      prefix: --primary_only
+  - id: quality
+    type:
+      - 'null'
+      - int
+    doc: Filter reads by mean qscore.
+    default: None
+    inputBinding:
+      position: 102
+      prefix: --quality
+  - id: region
+    type:
+      - 'null'
+      - string
+    doc: Only process given region.
+    default: None
+    inputBinding:
+      position: 102
+      prefix: --region
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of parallel threads for io processing.
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_bam
+    type:
+      - 'null'
+      - File
+    doc: Output bam file.
+    outputBinding:
+      glob: $(inputs.output_bam)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/pomoxis:0.3.16--pyhdfd78af_0
-stdout: pomoxis_filter_bam.out

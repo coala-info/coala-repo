@@ -1,8 +1,9 @@
 ---
 name: perl-http-tiny
-description: The `perl-http-tiny` tool (implemented as the `HTTP::Tiny` Perl module) is a small, simple, and correct HTTP/1.1 client.
+description: perl-http-tiny is a lightweight HTTP/1.1 client for Perl used for making web requests and retrieving data. Use when user asks to fetch web content, interact with APIs, or perform basic HTTP requests within Perl scripts.
 homepage: https://github.com/chansen/p5-http-tiny
 ---
+
 
 # perl-http-tiny
 

@@ -1,8 +1,9 @@
 ---
 name: poretools
-description: `poretools` is a specialized toolkit designed for the analysis and quality control of Nanopore sequencing data.
+description: Poretools is a toolkit for the analysis, quality control, and format conversion of Nanopore sequencing data stored in FAST5 files. Use when user asks to extract sequences in FASTA or FASTQ format, generate run statistics, or visualize sequencing yield and read length distributions.
 homepage: https://github.com/arq5x/poretools
 ---
+
 
 # poretools
 

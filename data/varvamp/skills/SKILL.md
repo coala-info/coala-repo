@@ -1,8 +1,9 @@
 ---
 name: varvamp
-description: varVAMP (Variable Virus AMPlicons) is a specialized primer design tool tailored for the extreme genetic diversity found in viral populations.
+description: varVAMP designs primers for highly diverse viral populations to enable downstream sequencing. Use when user asks to design primers for whole-genome sequencing of viruses, perform viral PCR screening or diagnostics, or design primers for viral qPCR.
 homepage: https://github.com/jonas-fuchs/varVAMP
 ---
+
 
 # varvamp
 

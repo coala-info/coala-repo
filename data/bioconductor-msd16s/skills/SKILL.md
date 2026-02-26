@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msd16s
-description: the package is available on all platforms; click for details.
+description: This package provides 16S rRNA marker gene survey data from the Moderate-to-Severe Diarrhea study for microbiome analysis. Use when user asks to access MSD study microbiome data, analyze 16S rRNA sequences from diarrhea cases, or perform comparative gut microbiota studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/msd16s.html
 ---
+
 
 # bioconductor-msd16s
 

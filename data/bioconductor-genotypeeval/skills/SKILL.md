@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genotypeeval
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs quality control and evaluation of human sequence data in VCF or gVCF files. Use when user asks to assess VCF quality metrics, compare variants against gold standards, estimate ancestry proportions, or flag samples based on custom thresholds for read depth and transition-transversion ratios.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/genotypeeval.html
 ---
+
 
 # bioconductor-genotypeeval
 

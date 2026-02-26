@@ -1,8 +1,9 @@
 ---
 name: guessmylt
-description: `guessmylt` is a diagnostic tool designed to infer the library preparation method of RNA-Seq datasets.
+description: GUESSmyLT infers the library preparation method and strandedness of RNA-Seq datasets by analyzing read mapping orientations. Use when user asks to identify library strandedness, determine read orientation, or infer the library type of RNA-Seq data.
 homepage: https://github.com/NBISweden/GUESSmyLT
 ---
+
 
 # guessmylt
 

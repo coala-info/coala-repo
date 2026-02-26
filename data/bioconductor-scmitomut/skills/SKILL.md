@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scmitomut
-description: the package is available on all platforms; click for details.
+description: scMitoMut identifies and analyzes mitochondrial DNA mutations from single-cell sequencing data. Use when user asks to detect mitochondrial variants, analyze single-cell heteroplasmy, or perform lineage tracing based on mitochondrial mutations.
 homepage: https://bioconductor.org/packages/release/bioc/html/scMitoMut.html
 ---
+
 
 # bioconductor-scmitomut
 

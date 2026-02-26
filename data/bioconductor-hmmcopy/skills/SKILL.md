@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hmmcopy
-description: the package is available on all platforms; click for details.
+description: Bioconductor-hmmcopy performs copy number estimation and segmentation for high-throughput sequencing data by correcting for GC-content and mappability biases. Use when user asks to estimate copy number profiles, correct sequencing biases in read counts, or perform Hidden Markov Model-based segmentation and classification of copy number states.
 homepage: https://bioconductor.org/packages/release/bioc/html/HMMcopy.html
 ---
+
 
 # bioconductor-hmmcopy
 

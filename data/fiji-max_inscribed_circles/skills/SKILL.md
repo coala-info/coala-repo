@@ -1,8 +1,9 @@
 ---
 name: fiji-max_inscribed_circles
-description: The `fiji-max_inscribed_circles` plugin provides a robust method for filling binary shapes with the largest possible non-touching circles.
+description: This tool fills binary shapes with the largest possible non-touching circles down to a specified minimum diameter. Use when user asks to find the maximum inscribed circles, calculate the width of irregular structures, or generate a central spine from a binary image.
 homepage: https://imagej.net/plugins/max-inscribed-circles
 ---
+
 
 # fiji-max_inscribed_circles
 

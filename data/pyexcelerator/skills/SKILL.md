@@ -1,8 +1,9 @@
 ---
 name: pyexcelerator
-description: The `pyexcelerator` library is a Python-based tool designed for the programmatic creation and manipulation of Excel spreadsheets.
+description: pyexcelerator is a Python library for programmatically creating, manipulating, and extracting data from Excel spreadsheets without requiring Microsoft Excel. Use when user asks to generate XLS files, convert spreadsheets to CSV, text, or HTML formats, or extract data from legacy binary Excel files.
 homepage: http://sourceforge.net/projects/pyexcelerator/
 ---
+
 
 # pyexcelerator
 

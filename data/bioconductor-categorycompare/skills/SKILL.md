@@ -1,8 +1,9 @@
 ---
 name: bioconductor-categorycompare
-description: the package is available on all platforms; click for details.
+description: This package performs meta-analysis of high-throughput biological data by comparing significantly enriched functional categories across multiple datasets. Use when user asks to perform enrichment meta-analysis, compare Gene Ontology terms or KEGG pathways across experiments, and visualize functional annotation networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/categoryCompare.html
 ---
+
 
 # bioconductor-categorycompare
 

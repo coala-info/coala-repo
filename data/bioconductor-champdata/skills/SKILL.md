@@ -1,8 +1,9 @@
 ---
 name: bioconductor-champdata
-description: the package is available on all platforms; click for details.
+description: This package provides essential datasets, probe annotations, and reference controls for the Chip Analysis Methylation Pipeline (ChAMP). Use when user asks to load methylation test datasets, access Illumina 450k or EPIC array annotations, perform CNA analysis with blood controls, or retrieve cell-type reference data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChAMPdata.html
 ---
+
 
 # bioconductor-champdata
 

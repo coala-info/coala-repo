@@ -1,8 +1,9 @@
 ---
 name: paraviewer
-description: Paraviewer is an automated visualization generator specifically built for the Paraphase HiFi analysis tool.
+description: Paraviewer generates an automated, self-contained website for visualizing Paraphase HiFi analysis results through interactive tables and integrated IGV.js tracks. Use when user asks to visualize Paraphase outputs, generate a web-based genomic viewer, or review haplotype-level data in a browser.
 homepage: https://github.com/PacificBiosciences/Paraviewer
 ---
+
 
 # paraviewer
 

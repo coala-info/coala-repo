@@ -1,8 +1,9 @@
 ---
 name: seqstats
-description: `seqstats` is a high-performance command-line tool written in C that provides quick summary statistics for biological sequence files.
+description: seqstats provides quick summary statistics for FASTA and FASTQ sequence files. Use when user asks to get an overview of sequence data, calculate statistics for multiple files, or process compressed biological sequences.
 homepage: https://github.com/clwgg/seqstats
 ---
+
 
 # seqstats
 

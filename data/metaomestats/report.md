@@ -1,9 +1,9 @@
 # metaomestats CWL Generation Report
 
-## metaomestats
+## metaomestats_countAssembly.py
 
 ### Tool Description
-A tool for calculating statistics on meta-omics data (Note: The provided help text contains only system error messages and no usage information).
+Count assembly statistics
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metaomestats:0.4--pyh5e36f6f_0
@@ -18,29 +18,17 @@ A tool for calculating statistics on meta-omics data (Note: The provided help te
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaomestats:0.4--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2866029638: no space left on device
-```
+usage: countAssembly.py -i INTERVAL -f FASTA [-r REF] [-s SIZE] [-h]
 
+required arguments:
+  -i INTERVAL, --interval INTERVAL
+                        interval size in # of residues
+  -f FASTA, --fasta FASTA
+                        fasta file or folder
 
-## Metadata
-- **Skill**: generated
-
-## metaomestats_countAssembly.py
-
-### Tool Description
-A tool from the metaomestats package for counting assembly statistics. (Note: The provided help text contains only system error logs and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metaomestats:0.4--pyh5e36f6f_0
-- **Homepage**: https://github.com/raw-lab/metaome_stats
-- **Package**: https://anaconda.org/channels/bioconda/packages/metaomestats/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaomestats:0.4--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1493327687: no space left on device
+optional arguments:
+  -r REF, --ref REF     reference genome
+  -s SIZE, --size SIZE  reference genome size
+  -h, --help            show this help message and exit
 ```
 

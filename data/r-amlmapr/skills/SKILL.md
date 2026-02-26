@@ -1,8 +1,9 @@
 ---
 name: r-amlmapr
-description: R package amlmapr (documentation from project home).
+description: This tool predicts transcriptional Acute Myeloid Leukemia subtypes from gene expression data using a Support Vector Machine model. Use when user asks to classify AML gene expression data into transcriptional clusters, predict AML subtypes, or map AML heterogeneity.
 homepage: https://cran.r-project.org/web/packages/amlmapr/index.html
 ---
+
 
 # r-amlmapr
 

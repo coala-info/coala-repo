@@ -1,8 +1,9 @@
 ---
 name: metatree
-description: metatree is a specialized bioinformatics tool designed to map and visualize polyphyletic groups by comparing a set of query phylogenetic trees against a designated reference tree.
+description: metatree maps and visualizes polyphyletic groups by comparing query phylogenetic trees against a reference tree to identify topological conflicts. Use when user asks to identify taxonomic inconsistencies across multiple trees, visualize polyphyly, or compare query tree topologies to a designated reference.
 homepage: https://github.com/aaronmussig/metatree
 ---
+
 
 # metatree
 

@@ -1,8 +1,9 @@
 ---
 name: viralmsa
-description: ViralMSA is a high-performance wrapper that leverages read-mapping algorithms (like Minimap2) to align viral sequences against a specific reference genome.
+description: ViralMSA performs high-performance alignment of viral sequences against a reference genome. Use when user asks to align viral sequences to a reference, fetch a reference by accession, use a preselected or local reference, align with a specific mapping algorithm, list available references, or omit the reference from the final alignment.
 homepage: https://github.com/niemasd/ViralMSA
 ---
+
 
 # viralmsa
 

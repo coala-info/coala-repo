@@ -1,8 +1,9 @@
 ---
 name: nanostat
-description: NanoStat is a specialized tool for the Oxford Nanopore Technologies (ONT) ecosystem that provides descriptive statistics for sequencing datasets.
+description: NanoStat calculates descriptive statistics and quality metrics for Oxford Nanopore sequencing datasets. Use when user asks to generate summary reports from FASTQ, BAM, or sequencing summary files, assess read length and quality scores, or perform quality control on long-read data.
 homepage: https://github.com/wdecoster/nanostat
 ---
+
 
 # nanostat
 

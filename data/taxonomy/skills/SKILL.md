@@ -1,8 +1,9 @@
 ---
 name: taxonomy
-description: The `taxonomy` library is a high-performance tool (built in Rust with Python bindings) for managing hierarchical biological classification data.
+description: The taxonomy library manages and navigates hierarchical biological classification data with high performance. Use when user asks to load NCBI or Newick data, traverse lineages, find lowest common ancestors, or prune and edit taxonomic trees.
 homepage: https://github.com/onecodex/taxonomy/
 ---
+
 
 # taxonomy
 

@@ -3,7 +3,7 @@
 ## debreak
 
 ### Tool Description
-A tool for structural variant detection (Note: The provided help text contains only container runtime error messages and no usage information).
+SV caller for long-read sequencing data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/debreak:1.3--h9ee0642_0
@@ -18,11 +18,38 @@ A tool for structural variant detection (Note: The provided help text contains o
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/debreak:1.3--h9ee0642_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2135879967: no space left on device
+usage: debreak.py [-h] --bam <sort.bam>
+
+SV caller for long-read sequencing data
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  --bam BAM             input sorted bam. index required
+  --samlist SAMLIST     a list of SAM files of same sample
+  -o OUTPATH, --outpath OUTPATH
+                        output directory
+  --min_size MIN_SIZE   minimal size of detected SV
+  --max_size MAX_SIZE   maxminal size of detected SV
+  -d DEPTH, --depth DEPTH
+                        sequencing depth of this dataset
+  -m MIN_SUPPORT, --min_support MIN_SUPPORT
+                        minimal number of supporting reads for one event
+  --min_quality MIN_QUALITY
+                        minimal mapping quality of reads
+  --aligner ALIGNER     aligner used to generate BAM/SAM
+  -t THREAD, --thread THREAD
+                        number of threads
+  --rescue_dup          rescue DUP from INS calls. minimap2,ref required
+  --rescue_large_ins    rescue large INS. wtdbg2,minimap2,ref required
+  --poa                 POA for accurate breakpoint. wtdbg2,minimap2,ref
+                        required.
+  --no_genotype         disable genotyping
+  -r REF, --ref REF     reference genome. Should be same with SAM/BAM
+  --maxcov MAXCOV       Maximal coverage for a SV. Suggested maxcov as 2 times
+                        mean depth.
+  --skip_detect         Skip SV raw signal detection.
+  --tumor               Allow clustered SV breakpoints during raw SV signal
+                        detection
 ```
 
-
-## Metadata
-- **Skill**: generated

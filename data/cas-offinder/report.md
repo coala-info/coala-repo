@@ -3,7 +3,7 @@
 ## cas-offinder
 
 ### Tool Description
-Cas-offinder is a tool that searches for potential off-target sites of CRISPR/Cas9 RNA-guided endonucleases.
+Cas-OFFinder v2.4.1 (Jul 24 2025)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cas-offinder:2.4.1--h503566f_0
@@ -18,14 +18,23 @@ Cas-offinder is a tool that searches for potential off-target sites of CRISPR/Ca
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cas-offinder:2.4.1--h503566f_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5ceed069d24a21b8d995a70ece6de162c5dbf48003ccae617fbf9b93d877bce6: unpack entry: usr/local/include/unicode/ucsdet.h: unpack to regular file: short write: write /tmp/build-temp-3068695721/rootfs/usr/local/include/unicode/ucsdet.h: no space left on device
+Cas-OFFinder v2.4.1 (Jul 24 2025)
+
+Copyright (c) 2013 Jeongbin Park and Sangsu Bae
+Website: http://github.com/snugel/cas-offinder
+
+Usage: cas-offinder {input_filename|-} {C|G|A}[device_id(s)] {output_filename|-}
+(C: using CPUs, G: using GPUs, A: using accelerators)
+
+Example input file:
+/var/chromosomes/human_hg19
+NNNNNNNNNNNNNNNNNNNNNRG
+GGCCGACCTGTCGCTGACGCNNN 5
+CGCCAGCGTCAGCGACAGGTNNN 5
+ACGGCGCCAGCGTCAGCGACNNN 5
+GTCGCTGACGCTGGCGCCGTNNN 5
+
+Available device list:
+Type: CPU, ID: 0, <cpu-haswell-12th Gen Intel(R) Core(TM) i9-12900H> on <Portable Computing Language>
 ```
 
-
-## Metadata
-- **Skill**: generated

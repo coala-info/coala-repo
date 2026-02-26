@@ -1,8 +1,9 @@
 ---
 name: ngsutils
-description: ngsutils is a comprehensive suite of tools designed for the programmatic manipulation and analysis of high-throughput sequencing data.
+description: ngsutils is a suite of tools for the programmatic manipulation and analysis of high-throughput sequencing data including BAM, BED, FASTQ, and GTF files. Use when user asks to filter BAM files, calculate RPKM, manipulate genomic intervals, preprocess FASTQ sequences, or manage gene annotations.
 homepage: https://github.com/ngsutils/ngsutils
 ---
+
 
 # ngsutils
 

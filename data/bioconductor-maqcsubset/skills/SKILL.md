@@ -1,8 +1,9 @@
 ---
 name: bioconductor-maqcsubset
-description: the package is available on all platforms; click for details.
+description: This package provides a subset of data from the MicroArray Quality Control project for testing and demonstration purposes. Use when user asks to access MAQC data subsets, test microarray analysis workflows, or demonstrate Bioconductor package functionality.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MAQCsubset.html
 ---
+
 
 # bioconductor-maqcsubset
 

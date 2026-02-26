@@ -1,8 +1,9 @@
 ---
 name: ucsc-blasttopsl
-description: The `blastToPsl` utility is a specialized converter within the UCSC Genome Browser "kent" tool suite.
+description: This tool converts standard BLAST output to PSL format. Use when user asks to convert BLAST output to PSL format, or prepare BLAST results for the UCSC Genome Browser.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-blasttopsl
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rae230b.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation maps for the Affymetrix Rat Expression 230 Board microarray. Use when user asks to map Affymetrix probe identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for the RAE230B platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230b.db.html
 ---
+
 
 # bioconductor-rae230b.db
 

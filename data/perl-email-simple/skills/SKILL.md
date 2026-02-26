@@ -1,8 +1,9 @@
 ---
 name: perl-email-simple
-description: The `perl-email-simple` skill provides a streamlined approach to handling email messages in the RFC2822 format.
+description: This tool parses, modifies, and creates email messages in the RFC2822 format using Perl. Use when user asks to extract email headers, retrieve message bodies, or programmatically modify email metadata.
 homepage: https://github.com/rjbs/Email-Simple
 ---
+
 
 # perl-email-simple
 

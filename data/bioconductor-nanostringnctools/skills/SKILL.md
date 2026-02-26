@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nanostringnctools
-description: the package is available on all platforms; click for details.
+description: NanoStringNCTools provides tools for the analysis and visualization of NanoString nCounter data. Use when user asks to read RCC files, perform quality control, or normalize NanoString expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/NanoStringNCTools.html
 ---
+
 
 # bioconductor-nanostringnctools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-codelink
-description: the package is available on all platforms; click for details.
+description: This package provides tools for the preprocessing and analysis of Codelink microarray data. Use when user asks to preprocess Codelink bioarray data, perform background correction, or normalize microarray intensities.
 homepage: https://bioconductor.org/packages/release/bioc/html/codelink.html
 ---
+
 
 # bioconductor-codelink
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.x.laevis.2
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Xenopus laevis 2.0 microarray. Use when user asks to process Affymetrix Xenopus laevis 2.0 microarray data, map probes to genomic features, or perform low-level analysis of these specific arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.x.laevis.2.html
 ---
+
 
 # bioconductor-pd.x.laevis.2
 

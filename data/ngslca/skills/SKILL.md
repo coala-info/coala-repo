@@ -1,8 +1,9 @@
 ---
 name: ngslca
-description: The `ngslca` tool provides a high-performance implementation of the Lowest Common Ancestor algorithm for DNA read classification.
+description: The ngslca tool performs taxonomic classification of DNA reads by calculating the lowest common ancestor from alignment files. Use when user asks to classify DNA reads, determine taxonomic ranks from BAM or SAM files, or resolve taxonomic ambiguity for sequences with multiple reference hits.
 homepage: https://github.com/miwipe/ngsLCA
 ---
+
 
 # ngslca
 

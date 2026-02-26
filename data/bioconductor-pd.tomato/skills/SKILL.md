@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.tomato
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Tomato Genome Array. Use when user asks to process tomato microarray data, map probes to genomic features, or install the pd.tomato annotation package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.tomato.html
 ---
+
 
 # bioconductor-pd.tomato
 

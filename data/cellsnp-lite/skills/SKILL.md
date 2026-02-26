@@ -1,8 +1,9 @@
 ---
 name: cellsnp-lite
-description: `cellsnp-lite` is a high-performance C implementation of the `cellSNP` tool, optimized for genotyping single cells at scale.
+description: "cellsnp-lite genotypes single cells by generating allele counts from BAM/SAM files for bi-allelic SNPs. Use when user asks to genotype known SNPs, perform de novo SNP discovery, or generate allele matrices for donor deconvolution and doublet detection."
 homepage: https://github.com/single-cell-genetics/cellSNP
 ---
+
 
 # cellsnp-lite
 

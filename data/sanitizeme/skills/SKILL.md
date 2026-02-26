@@ -1,8 +1,9 @@
 ---
 name: sanitizeme
-description: SanitizeMe is a bioinformatics utility that automates the removal of contaminant reads from sequencing datasets.
+description: SanitizeMe automates the removal of host contaminant reads from sequencing datasets by aligning them to a reference genome. Use when user asks to remove host DNA, filter out contaminant reads, or sanitize FASTQ files for pathogen detection.
 homepage: https://github.com/jiangweiyao/SanitizeMe
 ---
+
 
 # sanitizeme
 

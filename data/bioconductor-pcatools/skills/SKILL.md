@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pcatools
-description: the package is available on all platforms; click for details.
+description: PCAtools provides a suite of functions for performing principal component analysis and visualizing high-dimensional data. Use when user asks to perform PCA, generate biplots or scree plots, and identify variables contributing to principal components.
 homepage: https://bioconductor.org/packages/release/bioc/html/PCAtools.html
 ---
+
 
 # bioconductor-pcatools
 

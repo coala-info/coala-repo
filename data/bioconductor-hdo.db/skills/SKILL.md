@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hdo.db
-description: the package is available on all platforms; click for details.
+description: This package provides a Bioconductor annotation suite for the Human Disease Ontology to access disease terms, hierarchical relationships, and gene mappings in R. Use when user asks to retrieve disease metadata, navigate the ontology hierarchy, map diseases to genes, or perform disease enrichment analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HDO.db.html
 ---
+
 
 # bioconductor-hdo.db
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene20sttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation maps for the Affymetrix Human Gene 2.0 ST array to link transcript cluster identifiers with standard biological identifiers. Use when user asks to map probe IDs to gene symbols, retrieve Entrez IDs or GO terms for transcript clusters, and perform functional annotation for Human Gene 2.0 ST array data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene20sttranscriptcluster.db.html
 ---
+
 
 # bioconductor-hugene20sttranscriptcluster.db
 

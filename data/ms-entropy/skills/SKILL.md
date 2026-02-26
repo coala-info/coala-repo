@@ -1,8 +1,9 @@
 ---
 name: ms-entropy
-description: The `ms-entropy` tool provides a specialized Python implementation for information-theory-based mass spectrometry analysis.
+description: The ms-entropy tool provides a Python implementation for calculating spectral entropy and performing information-theory-based mass spectrometry similarity analysis. Use when user asks to calculate spectral entropy, determine spectral similarity, or perform rapid library searches using the Flash Entropy Search algorithm.
 homepage: https://github.com/YuanyueLi/MSEntropy
 ---
+
 
 # ms-entropy
 

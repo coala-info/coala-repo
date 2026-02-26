@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epistasisga
-description: the package is available on all platforms; click for details.
+description: This tool identifies multi-SNP disease associations and gene-by-environment interactions in nuclear families using the GADGETS genetic algorithm. Use when user asks to identify epistasis in case-parent triads or sibling pairs, detect higher-order gene-by-environment interactions, or run the GADGETS method for genetic association studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/epistasisGA.html
 ---
+
 
 # bioconductor-epistasisga
 

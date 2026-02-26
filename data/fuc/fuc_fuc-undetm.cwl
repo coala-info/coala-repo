@@ -2,12 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - fuc
-  - undetm
+  - fuc-undetm
 label: fuc_fuc-undetm
-doc: "The provided text does not contain help information for the tool; it contains
-  error messages related to a container runtime (Apptainer/Singularity) failing to
-  build an image due to insufficient disk space.\n\nTool homepage: https://github.com/sbslee/fuc"
-inputs: []
+doc: "Compute top unknown barcodes using undertermined FASTQ from bcl2fastq.\n\nTool
+  homepage: https://github.com/sbslee/fuc"
+inputs:
+  - id: fastq
+    type: File
+    doc: Undertermined FASTQ (compressed or uncompressed).
+    inputBinding:
+      position: 1
+  - id: count
+    type:
+      - 'null'
+      - int
+    doc: Number of top unknown barcodes to return
+    default: 30
+    inputBinding:
+      position: 102
+      prefix: --count
 outputs:
   - id: stdout
     type: stdout

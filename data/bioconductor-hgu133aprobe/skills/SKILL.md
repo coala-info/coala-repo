@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133aprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and physical coordinates for the Affymetrix HG-U133A microarray platform. Use when user asks to retrieve probe sequences, find x/y coordinates on the array, or access interrogation positions for specific probe sets.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133aprobe.html
 ---
+
 
 # bioconductor-hgu133aprobe
 

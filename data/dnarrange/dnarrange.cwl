@@ -2,10 +2,131 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: dnarrange
 label: dnarrange
-doc: "A tool for genomic rearrangement analysis. (Note: The provided text contains
-  container runtime error messages and does not include the actual help documentation
-  or argument definitions.)\n\nTool homepage: https://github.com/mcfrith/dnarrange"
-inputs: []
+doc: "Find rearranged query sequences in query-to-reference alignments.\n\nTool homepage:
+  https://github.com/mcfrith/dnarrange"
+inputs:
+  - id: case_files
+    type:
+      type: array
+      items: File
+    doc: case-file(s)
+    inputBinding:
+      position: 1
+  - id: control_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: control-file(s)
+    inputBinding:
+      position: 2
+  - id: filter
+    type:
+      - 'null'
+      - int
+    doc: discard case reads sharing any (0) or "strongest" (1) rearrangements 
+      with control reads
+    default: 1
+    inputBinding:
+      position: 103
+      prefix: --filter
+  - id: insert
+    type:
+      - 'null'
+      - string
+    doc: find insertions of the sequence with this name
+    inputBinding:
+      position: 103
+      prefix: --insert
+  - id: max_diff
+    type:
+      - 'null'
+      - int
+    doc: maximum query-length difference for shared rearrangement
+    default: 500
+    inputBinding:
+      position: 103
+      prefix: --max-diff
+  - id: max_mismap
+    type:
+      - 'null'
+      - float
+    doc: discard any alignment with mismap probability > PROB
+    default: 1.0
+    inputBinding:
+      position: 103
+      prefix: --max-mismap
+  - id: min_cov
+    type:
+      - 'null'
+      - int
+    doc: omit any query with any rearrangement shared by < N other queries
+    inputBinding:
+      position: 103
+      prefix: --min-cov
+  - id: min_gap
+    type:
+      - 'null'
+      - int
+    doc: minimum forward jump in the reference sequence counted as a "big gap"
+    default: 10000
+    inputBinding:
+      position: 103
+      prefix: --min-gap
+  - id: min_rev
+    type:
+      - 'null'
+      - int
+    doc: minimum reverse jump in the reference sequence counted as 
+      "non-colinear"
+    default: 1000
+    inputBinding:
+      position: 103
+      prefix: --min-rev
+  - id: min_seqs
+    type:
+      - 'null'
+      - int
+    doc: minimum query sequences per group
+    default: 2
+    inputBinding:
+      position: 103
+      prefix: --min-seqs
+  - id: shrink
+    type:
+      - 'null'
+      - boolean
+    doc: shrink the output
+    inputBinding:
+      position: 103
+      prefix: --shrink
+  - id: types
+    type:
+      - 'null'
+      - string
+    doc: 'rearrangement types: C=inter-chromosome, S=inter-strand, N=non-colinear,
+      G=big gap'
+    default: CSNG
+    inputBinding:
+      position: 103
+      prefix: --types
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: show progress messages
+    inputBinding:
+      position: 103
+      prefix: --verbose
+  - id: width
+    type:
+      - 'null'
+      - int
+    doc: line-wrap width of group summary lines
+    default: 79
+    inputBinding:
+      position: 103
+      prefix: --width
 outputs:
   - id: stdout
     type: stdout

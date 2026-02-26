@@ -1,8 +1,9 @@
 ---
 name: pxblat
-description: pxblat provides a high-performance, ergonomic interface for BLAT, optimized for speed and ease of use within the Python ecosystem.
+description: "pxblat provides a high-performance Python interface for executing BLAT alignments on genomic sequences with high identity. Use when user asks to align DNA or protein sequences to a reference, perform near-perfect sequence alignments, or run BLAT programmatically within a Python environment."
 homepage: https://pypi.org/project/pxblat/
 ---
+
 
 # pxblat
 

@@ -1,8 +1,9 @@
 ---
 name: hymet2
-description: HYMET2 (Hybrid Metagenomic Tool) is a specialized pipeline for the taxonomic classification of metagenomic data.
+description: HYMET2 is a specialized pipeline for the taxonomic classification of metagenomic data using hybrid sequence analysis methods. Use when user asks to classify metagenomic sequences, identify the taxonomic lineage of FASTA files, or perform origin identification for environmental or clinical samples.
 homepage: https://github.com/inesbmartins02/HYMET2
 ---
+
 
 # hymet2
 

@@ -1,8 +1,9 @@
 ---
 name: bactopia
-description: Bactopia is a flexible, Nextflow-based bioinformatic framework designed for the complete analysis of bacterial genomes.
+description: Bactopia is a Nextflow-based framework that automates the complete analysis of bacterial genomes from raw sequencing reads to annotated assemblies and comparative genomics. Use when user asks to process local or public bacterial sequencing data, perform batch isolate analysis, or conduct comparative genomic workflows like pan-genome construction and phylogenetic tree building.
 homepage: https://github.com/bactopia/bactopia
 ---
+
 
 # bactopia
 

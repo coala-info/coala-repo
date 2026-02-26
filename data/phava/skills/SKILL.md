@@ -1,8 +1,9 @@
 ---
 name: phava
-description: PhaVa (Phase Variation) is a specialized bioinformatics tool designed to identify "invertons"—genomic segments flanked by inverted repeats that can flip their orientation.
+description: PhaVa identifies and quantifies genomic invertons by analyzing long-read sequencing data against a reference genome. Use when user asks to identify phase variation, locate inverted repeats, or calculate the frequency of genomic inversions.
 homepage: https://github.com/patrickwest/PhaVa
 ---
+
 
 # phava
 

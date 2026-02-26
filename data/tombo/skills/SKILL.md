@@ -1,8 +1,9 @@
 ---
 name: tombo
-description: Tombo is a specialized suite of tools designed to process raw electrical signal data from Oxford Nanopore sequencers.
+description: Tombo processes Oxford Nanopore raw signal data to align signals to a reference and detect modified bases. Use when user asks to re-squiggle raw Nanopore signals, detect modified bases using an alternative model, compare modified and control samples, perform de novo modification detection, plot signal data, or export genome browser files.
 homepage: https://github.com/nanoporetech/tombo
 ---
+
 
 # tombo
 

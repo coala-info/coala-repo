@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rmmquant
-description: the package is available on all platforms; click for details.
+description: Rmmquant is a Bioconductor package that quantifies genomic features while accounting for multi-mapping reads in sequencing data. Use when user asks to count reads mapped to features, handle multi-mapping reads, or perform RNA-seq quantification.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rmmquant.html
 ---
+
 
 # bioconductor-rmmquant
 

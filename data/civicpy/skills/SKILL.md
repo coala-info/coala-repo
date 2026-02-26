@@ -1,8 +1,9 @@
 ---
 name: civicpy
-description: The `civicpy` skill enables programmatic access to the CIViC knowledgebase, a community-curated resource for clinical interpretations of cancer variants.
+description: The civicpy tool provides programmatic access to the CIViC knowledgebase for retrieving and analyzing clinical interpretations of cancer variants. Use when user asks to search for variants by genomic coordinates, annotate VCF files with clinical evidence, or integrate CIViC data into bioinformatics pipelines.
 homepage: http://civicpy.org
 ---
+
 
 # civicpy
 

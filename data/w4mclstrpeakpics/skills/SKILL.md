@@ -1,8 +1,9 @@
 ---
 name: w4mclstrpeakpics
-description: `w4mclstrpeakpics` is a specialized R package designed for the visual inspection of metabolomics data.
+description: w4mclstrpeakpics visualizes metabolomics feature clusters to assess data quality and validate peak alignment. Use when user asks to assess the quality of metabolomics feature clusters, identify outliers, validate peak alignment, or visualize feature consistency across samples.
 homepage: https://github.com/HegemanLab/w4mclstrpeakpics
 ---
+
 
 # w4mclstrpeakpics
 

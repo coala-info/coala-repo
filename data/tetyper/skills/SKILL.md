@@ -1,8 +1,9 @@
 ---
 name: tetyper
-description: TETyper is a specialized bioinformatics pipeline designed to characterize a specific transposable element of interest using high-throughput sequencing reads.
+description: TETyper characterizes transposable elements by combining SNV detection, structural variant analysis, and flanking sequence extraction from sequencing reads. Use when user asks to identify transposable element variants, determine insertion sites, or extract flanking sequences to analyze genomic context.
 homepage: https://github.com/aesheppard/TETyper
 ---
+
 
 # tetyper
 

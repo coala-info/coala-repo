@@ -1,8 +1,9 @@
 ---
 name: wgdi
-description: `wgdi` (Whole-Genome Duplication Integrated analysis) is a Python-based command-line utility designed for evolutionary genomics.
+description: wgdi is a command-line tool for analyzing whole-genome duplications and reconstructing ancestral karyotypes. Use when user asks to identify syntenic blocks, calculate synonymous substitution rates (Ks), visualize Ks distribution, reconstruct ancestral karyotypes, construct phylogenetic trees, or detect chromosomal fusion events.
 homepage: https://github.com/SunPengChuan/wgdi
 ---
+
 
 # wgdi
 

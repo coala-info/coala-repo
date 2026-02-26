@@ -1,8 +1,9 @@
 ---
 name: seqfold
-description: seqfold is a lightweight, open-source implementation of the Zuker dynamic programming algorithm used to predict the secondary structure of nucleic acids.
+description: seqfold predicts the secondary structure and minimum free energy of DNA or RNA sequences using the Zuker dynamic programming algorithm. Use when user asks to predict nucleic acid folding, calculate minimum free energy, generate dot-bracket notation, or analyze substructure energy contributions.
 homepage: https://github.com/Lattice-Automation/seqfold
 ---
+
 
 # seqfold
 

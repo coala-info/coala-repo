@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecoliasv2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Description File environment and coordinate mapping for the Affymetrix E. coli Antisense Genome Array v2. Use when user asks to process E. coli v2 CEL files, map probe coordinates to indices, or access CDF metadata for the ecoliasv2 chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliasv2cdf.html
 ---
+
 
 # bioconductor-ecoliasv2cdf
 

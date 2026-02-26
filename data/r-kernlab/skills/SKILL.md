@@ -1,8 +1,9 @@
 ---
 name: r-kernlab
-description: "Kernel-based machine learning methods for classification,         regression, clustering, novelty detection, quantile regression         and dimensionality reduction.  Among other methods 'kernlab'         includes Support Vector Machines, Spectral Clustering, Kernel         PCA, Gaussian Processes and a QP solver.</p>"
+description: This tool provides a comprehensive framework for kernel-based machine learning methods in R, including support vector machines, Gaussian processes, and spectral clustering. Use when user asks to perform classification, regression, dimensionality reduction via Kernel PCA, novelty detection, or spectral clustering using kernel methods.
 homepage: https://cloud.r-project.org/web/packages/kernlab/index.html
 ---
+
 
 # r-kernlab
 

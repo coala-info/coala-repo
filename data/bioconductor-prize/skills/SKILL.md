@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prize
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Prize prioritizes genes by integrating multiple data sources through a network-based approach. Use when user asks to prioritize genes, integrate genomic data, or perform network-based gene ranking.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/Prize.html
 ---
+
 
 # bioconductor-prize
 

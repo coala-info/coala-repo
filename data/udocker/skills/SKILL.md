@@ -1,8 +1,9 @@
 ---
 name: udocker
-description: udocker is a specialized tool designed to provide Docker-like capabilities in user space.
+description: udocker provides Docker-like container capabilities in user space without requiring root privileges or a daemon. Use when user asks to pull, create, run, or inspect container images and instances, search for images, get an interactive shell, mount volumes, or import Docker tarballs.
 homepage: https://github.com/indigo-dc/udocker
 ---
+
 
 # udocker
 

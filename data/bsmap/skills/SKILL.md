@@ -1,8 +1,9 @@
 ---
 name: bsmap
-description: BSMAP (Bisulfite Sequence Mapping Program) is a specialized alignment tool that handles the unique challenges of bisulfite-converted DNA.
+description: BSMAP is a specialized alignment tool designed to map bisulfite-converted DNA reads to a reference genome while accounting for C-to-T transitions. Use when user asks to map bisulfite-sequenced reads, perform RRBS alignment, or prepare data for methylation ratio extraction.
 homepage: https://code.google.com/archive/p/bsmap/
 ---
+
 
 # bsmap
 

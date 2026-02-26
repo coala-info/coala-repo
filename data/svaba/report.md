@@ -1,9 +1,9 @@
 # svaba CWL Generation Report
 
-## svaba
+## svaba_run
 
 ### Tool Description
-Structural variation analysis by assembly
+SV and indel detection using rolling SGA assembly and BWA-MEM realignment
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/svaba:1.2.0--h69ac913_1
@@ -12,19 +12,143 @@ Structural variation analysis by assembly
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/svaba/overview
-- **Total Downloads**: 8.9K
+- **Total Downloads**: 9.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/walaj/svaba
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svaba:1.2.0--h69ac913_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+run: option '--h' is ambiguous; possibilities: '--help' '--hp'
+
+Usage: svaba run -t <BAM/SAM/CRAM> -G <reference> -a myid [OPTIONS]
+
+  Description: SV and indel detection using rolling SGA assembly and BWA-MEM realignment
+
+  General options
+  -v, --verbose                        Select verbosity level (0-4). Default: 0 
+  -h, --help                           Display this help and exit
+  -p, --threads                        Use NUM threads to run svaba. Default: 1
+  -a, --id-string                      String specifying the analysis ID to be used as part of ID common.
+  Main input
+  -G, --reference-genome               Path to indexed reference genome to be used by BWA-MEM.
+  -t, --case-bam                       Case BAM/CRAM/SAM file (eg tumor). Can input multiple.
+  -n, --control-bam                    (optional) Control BAM/CRAM/SAM file (eg normal). Can input multiple.
+  -k, --region                         Run on targeted intervals. Accepts BED file or Samtools-style string
+      --germline                       Sets recommended settings for case-only analysis (eg germline). (-I, -L5, assembles NM >= 3 reads)
+  Variant filtering and classification
+      --lod                            LOD cutoff to classify indel as non-REF (tests AF=0 vs AF=MaxLikelihood(AF)) [8]
+      --lod-dbsnp                      LOD cutoff to classify indel as non-REF (tests AF=0 vs AF=MaxLikelihood(AF)) at DBSnp indel site [5]
+      --lod-somatic                    LOD cutoff to classify indel as somatic (tests AF=0 in normal vs AF=ML(0.5)) [2.5]
+      --lod-somatic-dbsnp              LOD cutoff to classify indel as somatic (tests AF=0 in normal vs AF=ML(0.5)) at DBSnp indel site [4]
+      --scale-errors                   Scale the priors that a site is artifact at given repeat count. 0 means assume low (const) error rate [1]
+  Additional options
+  -L, --mate-lookup-min                Minimum number of somatic reads required to attempt mate-region lookup [3]
+  -s, --disc-sd-cutoff                 Number of standard deviations of calculated insert-size distribution to consider discordant. [3.92]
+  -c, --chunk-size                     Size of a local assembly window (in bp). Set 0 for whole-BAM in one assembly. [25000]
+  -x, --max-reads                      Max total read count to read in from assembly region. Set 0 to turn off. [50000]
+  -M, --max-reads-mate-region          Max weird reads to include from a mate lookup region. [400]
+  -C, --max-coverage                   Max read coverage to send to assembler (per BAM). Subsample reads if exceeded. [500]
+      --no-interchrom-lookup           Skip mate lookup for inter-chr candidate events. Reduces power for translocations but less I/O.
+      --discordant-only                Only run the discordant read clustering module, skip assembly. 
+      --num-assembly-rounds            Run assembler multiple times. > 1 will bootstrap the assembly. [2]
+      --num-to-sample                  When learning about inputs, number of reads to sample. [2,000,000]
+      --hp                             Highly parallel. Don't write output until completely done. More memory, but avoids all thread-locks.
+      --override-reference-check       With much caution, allows user to run svaba with different reference genomes for BAMs and -G
+  Output options
+  -z, --g-zip                          Gzip and tabix the output VCF files. [off]
+  -A, --all-contigs                    Output all contigs that were assembled, regardless of mapping or length. [off]
+      --read-tracking                  Track supporting reads by qname. Increases file sizes. [off]
+      --write-extracted-reads          For the case BAM, write reads sent to assembly to a BAM file. [off]
+  Optional external database
+  -D, --dbsnp-vcf                      DBsnp database (VCF) to compare indels against
+  -B, --blacklist                      BED-file with blacklisted regions to not extract any reads from.
+  -Y, --microbial-genome               Path to indexed reference genome of microbial sequences to be used by BWA-MEM to filter reads.
+  -V, --germline-sv-database           BED file containing sites of known germline SVs. Used as additional filter for somatic SV detection
+  -R, --simple-seq-database            BED file containing sites of simple DNA that can confuse the contig re-alignment.
+  Assembly and EC params
+  -m, --min-overlap                    Minimum read overlap, an SGA parameter. Default: 0.4* readlength
+  -e, --error-rate                     Fractional difference two reads can have to overlap. See SGA. 0 is fast, but requires error correcting. [0]
+  -K, --ec-correct-type                (f) Fermi-kit BFC correction, (s) Kmer-correction from SGA, (0) no correction (then suggest non-zero -e) [f]
+  -E, --ec-subsample                   Learn from fraction of non-weird reads during error-correction. Lower number = faster compute [0.5]
+      --write-asqg                     Output an ASQG graph file for each assembly window.
+  BWA-MEM alignment params
+      --bwa-match-score                Set the BWA-MEM match score. BWA-MEM -A [2]
+      --gap-open-penalty               Set the BWA-MEM gap open penalty for contig to genome alignments. BWA-MEM -O [32]
+      --gap-extension-penalty          Set the BWA-MEM gap extension penalty for contig to genome alignments. BWA-MEM -E [1]
+      --mismatch-penalty               Set the BWA-MEM mismatch penalty for contig to genome alignments. BWA-MEM -b [18]
+      --bandwidth                      Set the BWA-MEM SW alignment bandwidth for contig to genome alignments. BWA-MEM -w [1000]
+      --z-dropoff                      Set the BWA-MEM SW alignment Z-dropoff for contig to genome alignments. BWA-MEM -d [100]
+      --reseed-trigger                 Set the BWA-MEM reseed trigger for reseeding mems for contig to genome alignments. BWA-MEM -r [1.5]
+      --penalty-clip-3                 Set the BWA-MEM penalty for 3' clipping. [5]
+      --penalty-clip-5                 Set the BWA-MEM penalty for 5' clipping. [5]
 ```
 
 
-## Metadata
-- **Skill**: generated
+## svaba_refilter
+
+### Tool Description
+Refilter SVABA results
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/svaba:1.2.0--h69ac913_1
+- **Homepage**: https://github.com/walaj/svaba
+- **Package**: https://anaconda.org/channels/bioconda/packages/svaba/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+BAM is required (for the header)
+
+Usage: svaba refilter [OPTION] -i bps.txt.gz -b <bam>
+
+  Description: 
+
+  General options
+  -v, --verbose                        Select verbosity level (0-4). Default: 1 
+  -h, --help                           Display this help and exit
+  -a, --id-string                      String specifying the analysis ID to be used as part of ID common.
+  Required input
+  -i, --input-bps                      Original bps.txt.gz file
+  -b, --bam                            BAM file used to grab header from
+  Optional external database
+  -D, --dbsnp-vcf                      DBsnp database (VCF) to compare indels against
+  Variant filtering and classification
+      --lod                            LOD cutoff to classify indel as non-REF (tests AF=0 vs AF=MaxLikelihood(AF)) [8]
+      --lod-dbsnp                      LOD cutoff to classify indel as non-REF (tests AF=0 vs AF=MaxLikelihood(AF)) at DBSnp indel site [5]
+      --lod-somatic                    LOD cutoff to classify indel as somatic (tests AF=0 in normal vs AF=ML(0.5)) [2.5]
+      --lod-somatic-dbsnp              LOD cutoff to classify indel as somatic (tests AF=0 in normal vs AF=ML(0.5)) at DBSnp indel site [4]
+      --scale-errors                   Scale the priors that a site is artifact at given repeat count. 0 means assume low (const) error rate [1]
+  Optional input
+      --read-tracking                  Track supporting reads by qname. Increases file sizes. [off]
+```
+
+
+## svaba_tovcf
+
+### Tool Description
+Convert a *bps.txt.gz file to a *vcf file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/svaba:1.2.0--h69ac913_1
+- **Homepage**: https://github.com/walaj/svaba
+- **Package**: https://anaconda.org/channels/bioconda/packages/svaba/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Error: svaba tovcf -- -a analysis id required, this names the VCF file
+BAM is required (for the header)
+
+Usage: svaba tovcf [OPTION] -i bps.txt.gz -b <bam>
+
+  Description: Convert a *bps.txt.gz file to a *vcf file
+
+  General options
+  -v, --verbose                        Flag to make more verbose
+  -h, --help                           Display this help and exit
+  Required input
+  -a, --id-string                      String specifying the analysis ID to be used as part of ID common.
+  -i, --input-bps                      Original bps.txt.gz file
+  -b, --bam                            BAM file used to grab header from
+```
+

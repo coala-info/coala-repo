@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scoreinvhap
-description: The package include this data for 21 inversions.
+description: This package estimates the inversion status of genomic regions using SNP data and reference panels. Use when user asks to score genomic inversions, predict inversion genotypes, or analyze chromosomal inversions from SNP data.
 homepage: https://bioconductor.org/packages/release/bioc/html/scoreInvHap.html
 ---
+
 
 # bioconductor-scoreinvhap
 

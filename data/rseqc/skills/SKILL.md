@@ -1,8 +1,9 @@
 ---
 name: rseqc
-description: rseqc is a specialized suite of tools designed to perform deep quality control on RNA-seq data.
+description: rseqc is a comprehensive suite of tools designed to perform deep quality control and technical evaluation of RNA-seq data. Use when user asks to determine library strand specificity, assess gene body coverage bias, analyze read distribution across genomic features, or calculate inner distances for paired-end reads.
 homepage: https://rseqc.sourceforge.net
 ---
+
 
 # rseqc
 

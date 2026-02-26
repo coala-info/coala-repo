@@ -1,8 +1,9 @@
 ---
 name: msweep
-description: mSWEEP (metagenomic Sweep) is a specialized tool for estimating the composition of bacterial communities from metagenomic sequencing data.
+description: mSWEEP estimates the taxonomic composition and lineage-specific abundances of bacterial communities from metagenomic sequencing data using pseudoalignments. Use when user asks to estimate relative abundances, bin reads into taxonomic groups, or quantify within-species lineages in metagenomic samples.
 homepage: https://github.com/PROBIC/mSWEEP
 ---
+
 
 # msweep
 

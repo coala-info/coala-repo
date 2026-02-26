@@ -1,8 +1,9 @@
 ---
 name: dinosaur
-description: Dinosaur is a specialized tool for detecting peptide features in MS1 mass spectrometry data.
+description: Dinosaur detects peptide features in MS1 mass spectrometry data. Use when user asks to detect peptide features, process mzML files, or perform isotope pattern clustering for proteomics analysis.
 homepage: https://github.com/fickludd/dinosaur
 ---
+
 
 # dinosaur
 

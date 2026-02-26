@@ -1,8 +1,9 @@
 ---
 name: mtsv-tools
-description: MTSv (Metagenomic Taxonomic Sequence viewer tools) is a high-performance suite designed for the taxonomic assignment of metagenomic sequencing reads.
+description: mtsv-tools is a high-performance suite for the taxonomic assignment of metagenomic sequencing reads using custom indices and SIMD-accelerated alignment. Use when user asks to chunk reference databases, build metagenomic indices, bin reads against a reference, or collapse taxonomic assignment results.
 homepage: https://github.com/FofanovLab/mtsv_tools
 ---
+
 
 # mtsv-tools
 

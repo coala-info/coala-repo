@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brainimagerdata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides brain maps, image masks, and gene expression data from the Allen Brain Institute for use with the brainImageR package. Use when user asks to retrieve prenatal or adult human brain spatial data, access gene expression metadata via ExperimentHub, or perform spatial and temporal brain enrichment analyses.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/brainImageRdata.html
 ---
+
 
 # bioconductor-brainimagerdata
 

@@ -1,8 +1,9 @@
 ---
 name: clustal-omega
-description: Clustal Omega is a scalable and highly accurate multiple sequence alignment tool that succeeds ClustalW.
+description: Clustal Omega is a scalable multiple sequence alignment tool that performs high-accuracy alignments of large genomic or proteomic datasets. Use when user asks to align multiple sequences, merge existing profiles, add new sequences to a seed alignment, or perform HMM-guided alignment.
 homepage: https://github.com/hybsearch/clustalo
 ---
+
 
 # clustal-omega
 

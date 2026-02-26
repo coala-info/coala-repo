@@ -1,8 +1,9 @@
 ---
 name: alignoth
-description: The provided text does not contain help information or a description of the tool; it is a container build error log indicating a 'no space left on device' failure during image extraction.
+description: Alignoth generates high-quality genomic alignment visualizations from BAM files as interactive HTML or Vega-Lite specifications. Use when user asks to visualize genomic regions, highlight specific variants or intervals, create interactive alignment plots, or generate static images of read alignments.
 homepage: https://github.com/koesterlab/alignoth
 ---
+
 
 # alignoth
 

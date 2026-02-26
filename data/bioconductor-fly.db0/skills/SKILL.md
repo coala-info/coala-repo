@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fly.db0
-description: the package is available on all platforms; click for details.
+description: This package provides the base SQLite databases for Drosophila melanogaster used by AnnotationDbi to construct functional annotation packages. Use when user asks to create custom fly annotation packages, use sqlForge to build chip-specific databases, or provide the raw data source for organism-specific annotation objects.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/fly.db0.html
 ---
+
 
 # bioconductor-fly.db0
 

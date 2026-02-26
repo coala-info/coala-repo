@@ -1,8 +1,9 @@
 ---
 name: wtdbg2
-description: wtdbg2 (also known as Redbean) is a specialized assembler designed for high-speed processing of long-read sequencing data.
+description: wtdbg2 is a high-speed assembler designed for long-read sequencing data, capable of assembling large genomes directly from raw, noisy reads. Use when user asks to assemble long-read sequencing data, generate contig layouts, produce consensus sequences, or polish an assembly.
 homepage: https://github.com/ruanjue/wtdbg2
 ---
+
 
 # wtdbg2
 

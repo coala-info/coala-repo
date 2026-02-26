@@ -1,8 +1,9 @@
 ---
 name: sequnwinder
-description: SeqUnwinder is a computational framework designed to find motifs that distinguish between different classes of genomic loci.
+description: SeqUnwinder is a computational framework that identifies motifs distinguishing between different classes of genomic loci using a multi-label classification approach. Use when user asks to find cell-type specific motifs, characterize sequence signatures of overlapping genomic annotations, or perform multi-class motif discovery.
 homepage: http://mahonylab.org/software/sequnwinder/
 ---
+
 
 # sequnwinder
 

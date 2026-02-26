@@ -1,8 +1,9 @@
 ---
 name: prophex
-description: ProPhex is a specialized tool designed for efficient k-mer indexing with a minimal memory footprint.
+description: ProPhex is a specialized tool for efficient k-mer indexing and genomic sequence querying using a minimal memory footprint. Use when user asks to construct BWT-based indices from FASTA files, query sequencing reads against an index, or generate k-LCP arrays for accelerated k-mer matching.
 homepage: https://github.com/prophyle/prophex
 ---
+
 
 # prophex
 

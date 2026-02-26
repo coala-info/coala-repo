@@ -1,8 +1,9 @@
 ---
 name: bioconductor-structuralvariantannotation
-description: the package is available on all platforms; click for details.
+description: This package provides functions for parsing, annotating, and manipulating structural variant calls in R. Use when user asks to parse structural variants from VCF files, annotate variants with genomic features, or convert between different structural variant representations.
 homepage: https://bioconductor.org/packages/release/bioc/html/StructuralVariantAnnotation.html
 ---
+
 
 # bioconductor-structuralvariantannotation
 

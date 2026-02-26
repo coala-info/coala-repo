@@ -1,8 +1,9 @@
 ---
 name: leviosam
-description: LevioSAM is a high-performance tool for re-coordinating sequence alignments.
+description: LevioSAM re-coordinates sequence alignments from a personalized or variant-aware reference back to a standard reference or between different assembly versions. Use when user asks to lift over alignments, map reads from a variant-aware reference to a standard reference, or convert alignments between assembly versions.
 homepage: https://github.com/alshai/levioSAM
 ---
+
 
 # leviosam
 

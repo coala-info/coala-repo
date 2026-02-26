@@ -1,8 +1,9 @@
 ---
 name: chain2paf
-description: chain2paf is a high-performance utility written in Rust that transforms genomic alignments from the gap-oriented CHAIN format into the more versatile PAF format.
+description: "chain2paf converts genomic alignments from the CHAIN format into the PAF format. Use when user asks to convert CHAIN files to PAF, generate CIGAR strings for genomic alignments, or transform gap-oriented alignments into sequence-level coordinate formats."
 homepage: https://github.com/AndreaGuarracino/chain2paf
 ---
+
 
 # chain2paf
 

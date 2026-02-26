@@ -1,8 +1,9 @@
 ---
 name: bioconductor-colonca
-description: the package is available on all platforms; click for details.
+description: This package provides access to the Alon et al. (1999) colon cancer microarray dataset as a Bioconductor ExpressionSet object. Use when user asks to load the colonCA dataset, perform differential expression analysis between tumor and normal colon tissues, or practice microarray data handling.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/colonCA.html
 ---
+
 
 # bioconductor-colonca
 

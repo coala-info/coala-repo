@@ -1,9 +1,9 @@
 # slicedimage CWL Generation Report
 
-## slicedimage
+## slicedimage_checksum
 
 ### Tool Description
-The provided text does not contain a description or usage information for the tool 'slicedimage'. It appears to be an error log from a container runtime (Apptainer/Singularity) failure.
+Calculate and write checksums for a sliced image partition file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/slicedimage:3.1.2--py_0
@@ -12,19 +12,23 @@ The provided text does not contain a description or usage information for the to
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/slicedimage/overview
-- **Total Downloads**: 46.7K
+- **Total Downloads**: 46.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/spacetx/slicedimage
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/slicedimage:3.1.2--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: slicedimage checksum [-h] [--pretty] in_url out_path
+
+positional arguments:
+  in_url      URL for the source partition file
+  out_path    Path to write partition file with checksums
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --pretty    Pretty-print the output file
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

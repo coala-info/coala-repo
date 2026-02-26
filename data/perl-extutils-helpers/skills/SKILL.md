@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-helpers
-description: This skill provides guidance on using `ExtUtils::Helpers`, a collection of portability utilities designed for Perl module builders.
+description: This tool provides portability utilities for Perl module builders to ensure consistent behavior across different operating systems. Use when user asks to make scripts executable, split strings like a shell, resolve home directory paths, or generate platform-specific man page names.
 homepage: http://metacpan.org/pod/ExtUtils::Helpers
 ---
+
 
 # perl-extutils-helpers
 

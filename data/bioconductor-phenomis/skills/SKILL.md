@@ -1,8 +1,9 @@
 ---
 name: bioconductor-phenomis
-description: the package is available on all platforms; click for details.
+description: Phenomis is a Bioconductor package for the preprocessing, analysis, and annotation of metabolomics and proteomics data. Use when user asks to normalize data, perform quality control, or conduct statistical analysis on metabolomics and proteomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/phenomis.html
 ---
+
 
 # bioconductor-phenomis
 

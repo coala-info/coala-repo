@@ -1,8 +1,9 @@
 ---
 name: seqscreen
-description: SeqScreen is a specialized genomic analysis pipeline designed to characterize short DNA sequences or open reading frames (ORFs).
+description: SeqScreen is a genomic analysis pipeline that identifies Functions of Sequences of Concern and taxonomic origins in DNA sequences for biosecurity and pathogen surveillance. Use when user asks to characterize short DNA sequences, identify potential virulence factors, perform biosecurity screening, or annotate the functional and taxonomic properties of genomic data.
 homepage: https://gitlab.com/treangenlab/seqscreen/-/wikis/home
 ---
+
 
 # seqscreen
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cancerinsilico
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides an R interface for running and analyzing cell-based mathematical models of tumor progression. Use when user asks to simulate cancer cell growth, run the Drasdo and Hohme model, or extract cell coordinates and growth metrics from tumor simulations.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CancerInSilico.html
 ---
+
 
 # bioconductor-cancerinsilico
 

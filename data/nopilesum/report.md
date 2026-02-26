@@ -3,7 +3,7 @@
 ## nopilesum
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to insufficient disk space.
+get pileup summaries
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nopilesum:1.1.2--h5884fcd_0
@@ -18,11 +18,13 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nopilesum:1.1.2--h5884fcd_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1632287851: no space left on device
+nopilesum: get pileup summaries
+usage: nopilesum <in.bam> <in.vcf> > summary.txt
+    --max-af VCF records with INFO/AF fields above this threshold won't be used (default 0.2)
+    --min-af VCF records with INFO/AF fields below this threshold won't be used (default 0.01)
+-q   --quiet quiet warnings
+-v --verbose see other info
+-d   --debug see even more info
+-h    --help This help information.
 ```
 
-
-## Metadata
-- **Skill**: generated

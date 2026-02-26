@@ -1,8 +1,9 @@
 ---
 name: bioconductor-barcodetrackr
-description: the package is available on all platforms; click for details.
+description: The barcodetrackR package analyzes clonal tracking data from barcode count matrices to visualize and quantify clonal dynamics. Use when user asks to create SummarizedExperiment objects for clonal tracking, filter barcodes using thresholds, visualize clonal patterns with heatmaps or chord diagrams, or analyze clonal bias and diversity.
 homepage: https://bioconductor.org/packages/release/bioc/html/barcodetrackR.html
 ---
+
 
 # bioconductor-barcodetrackr
 

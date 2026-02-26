@@ -1,8 +1,9 @@
 ---
 name: bs-seeker2
-description: BS Seeker 2 is a specialized bioinformatics pipeline designed for the efficient alignment of bisulfite-converted DNA sequences.
+description: BS Seeker 2 is a bioinformatics pipeline for aligning bisulfite-converted DNA sequences and calling methylation levels at single-base resolution. Use when user asks to index a reference genome, map bisulfite-treated reads, or extract methylation information.
 homepage: http://pellegrini.mcdb.ucla.edu/BS_Seeker2/
 ---
+
 
 # bs-seeker2
 

@@ -1,8 +1,9 @@
 ---
 name: snakemake-minimal_7.25.0--pyhdfd78af_0-test
-description: This skill facilitates the development and execution of Snakemake workflows.
+description: Snakemake-minimal is a workflow management system that uses a Python-based declarative language to create reproducible and scalable data analysis pipelines. Use when user asks to define rules for transforming files, execute workflows with specific core allocations, perform dry runs to verify execution plans, or manage software environments using Conda.
 homepage: https://snakemake.github.io
 ---
+
 
 # snakemake-minimal_7.25.0--pyhdfd78af_0-test
 

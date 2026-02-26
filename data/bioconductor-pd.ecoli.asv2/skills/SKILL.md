@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.ecoli.asv2
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix E. coli ASV2 expression array. Use when user asks to process E. coli ASV2 microarray data, retrieve probe sequences, or map probes to genomic locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ecoli.asv2.html
 ---
+
 
 # bioconductor-pd.ecoli.asv2
 

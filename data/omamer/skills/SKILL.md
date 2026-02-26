@@ -1,8 +1,9 @@
 ---
 name: omamer
-description: OMAmer is a high-performance tool designed for protein family assignment that bypasses traditional sequence alignment in favor of an evolutionary-informed k-mer mapping approach.
+description: OMAmer is a high-performance tool that assigns protein sequences to ancestral protein sub-families using an evolutionary-informed k-mer mapping approach. Use when user asks to assign proteins to hierarchical orthologous groups, search the OMA database, or build a custom k-mer database for protein family classification.
 homepage: https://github.com/DessimozLab/omamer
 ---
+
 
 # omamer
 

@@ -1,8 +1,9 @@
 ---
 name: namfinder
-description: namfinder is a high-performance sequence mapping utility that identifies shared regions between query and reference sequences using strobemer seeds.
+description: namfinder identifies shared regions between query and reference sequences using strobemer seeds to find approximate matches. Use when user asks to map sequences, identify shared genomic regions, or perform transcript-to-genome alignment.
 homepage: https://github.com/ksahlin/namfinder
 ---
+
 
 # namfinder
 

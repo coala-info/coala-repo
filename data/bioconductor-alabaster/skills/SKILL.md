@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster
-description: the package is available on all platforms; click for details.
+description: The alabaster package serves as an umbrella for the alabaster framework to ensure all associated sub-packages are installed for dynamic serialization and unserialization of Bioconductor objects. Use when user asks to install the complete alabaster ecosystem, manage dependencies for Bioconductor data storage, or resolve missing method errors during object saving and loading.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.html
 ---
+
 
 # bioconductor-alabaster
 

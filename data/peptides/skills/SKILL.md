@@ -1,8 +1,9 @@
 ---
 name: peptides
-description: The `peptides` package is a comprehensive Python library designed for the computational analysis of amino acid sequences.
+description: The peptides package provides a comprehensive suite of tools for calculating physicochemical properties, QSAR descriptors, and sequence statistics for amino acid sequences. Use when user asks to calculate isoelectric points, determine molecular weight, generate QSAR descriptors like Z-scales, or perform sequence outlier detection against reference databases.
 homepage: https://peptides.readthedocs.io/
 ---
+
 
 # peptides
 

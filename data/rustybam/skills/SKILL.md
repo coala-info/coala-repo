@@ -1,8 +1,9 @@
 ---
 name: rustybam
-description: `rustybam` (aliased as `rb`) is a high-performance utility designed for the "post-processing" phase of genomic alignments.
+description: "rustybam is a high-performance utility for refining, manipulating, and calculating statistics from genomic alignments in BAM or PAF formats. Use when user asks to calculate alignment statistics, liftover coordinates, trim overlapping alignments, break alignments at indels, or manipulate FASTA files."
 homepage: https://github.com/mrvollger/rustybam
 ---
+
 
 # rustybam
 

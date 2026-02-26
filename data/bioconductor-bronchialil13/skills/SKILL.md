@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bronchialil13
-description: the package is available on all platforms; click for details.
+description: This package provides raw and pre-processed microarray data from a time-course experiment tracking the response of human bronchial cells to Interleukin-13. Use when user asks to access AffyBatch or ExpressionSet data for IL13-treated A549 cell lines, perform time-course analysis on bronchial cell gene expression, or practice differential expression workflows with provided experimental data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bronchialIL13.html
 ---
+
 
 # bioconductor-bronchialil13
 

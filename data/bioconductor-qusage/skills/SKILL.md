@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qusage
-description: the package is available on all platforms; click for details.
+description: qusage performs quantitative gene set enrichment analysis by accounting for inter-gene correlations to provide a probability distribution of gene set activity. Use when user asks to perform gene set enrichment analysis, quantify pathway activity, or account for gene-gene correlations in expression studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/qusage.html
 ---
+
 
 # bioconductor-qusage
 

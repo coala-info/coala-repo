@@ -1,12 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: thapbi-pict
+baseCommand: thapbi_pict
 label: thapbi-pict_thapbi_pict
-doc: "THreat Assessment of Phytophthora BIdiversity - PIpeline for Comparison of Taxonomic
-  markers (Note: The provided text appears to be a container build error log rather
-  than CLI help text; no arguments could be extracted from the input).\n\nTool homepage:
+doc: "THAPBI Phytophthora ITS1 Classifier Tool (PICT), v1.0.21.\n\nTool homepage:
   https://github.com/peterjc/thapbi-pict"
-inputs: []
+inputs:
+  - id: subcommand
+    type: string
+    doc: Each subcommand has its own additional help.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

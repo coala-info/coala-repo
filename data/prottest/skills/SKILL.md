@@ -1,8 +1,9 @@
 ---
 name: prottest
-description: ProtTest is a bioinformatic tool designed to automate the selection of amino acid replacement models.
+description: ProtTest automates the selection of the best-fit amino acid substitution models for protein phylogenetic analysis. Use when user asks to select an evolutionary model, evaluate protein data against rate matrices, or determine optimal parameters for site-specific rate variation.
 homepage: https://github.com/ddarriba/prottest3
 ---
+
 
 # prottest
 

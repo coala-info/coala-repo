@@ -1,8 +1,9 @@
 ---
 name: bamhash
-description: BamHash is a specialized utility designed to generate order-independent checksums for genomic data.
+description: BamHash generates order-independent checksums for genomic data to verify file integrity across different formats and processing stages. Use when user asks to generate checksums for BAM, CRAM, or FASTQ files, verify data consistency after re-sorting, or compare raw reads to aligned outputs.
 homepage: https://github.com/DecodeGenetics/BamHash
 ---
+
 
 # bamhash
 

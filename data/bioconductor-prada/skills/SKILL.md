@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prada
-description: the package is available on all platforms; click for details.
+description: This package provides tools for the analysis and visualization of high-throughput cell-based functional assays. Use when user asks to analyze high-throughput screening data, normalize phenotypic readouts, or visualize cell-based assay results.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/prada.html
 ---
+
 
 # bioconductor-prada
 

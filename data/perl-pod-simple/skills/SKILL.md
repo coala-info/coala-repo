@@ -1,8 +1,9 @@
 ---
 name: perl-pod-simple
-description: Pod::Simple is a modular Perl framework designed to parse Pod markup.
+description: Perl-pod-simple is a modular framework used to parse and convert Perl Pod documentation into various formats like HTML, XHTML, or structural trees. Use when user asks to parse Pod markup, convert Perl documentation to HTML, extract a structural tree of a document, or generate batch documentation for Perl libraries.
 homepage: https://github.com/perl-pod/pod-simple
 ---
+
 
 # perl-pod-simple
 

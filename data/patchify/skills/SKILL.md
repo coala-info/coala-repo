@@ -1,8 +1,9 @@
 ---
 name: patchify
-description: patchify is a specialized Python library used to tile images into smaller "patches" and merge them back together.
+description: "patchify tiles large images or 3D volumes into smaller patches and merges them back into their original dimensions. Use when user asks to split images into patches, reconstruct images from tiles, or handle large medical and satellite imagery for model processing."
 homepage: https://github.com/dovahcrow/patchify.py
 ---
+
 
 # patchify
 

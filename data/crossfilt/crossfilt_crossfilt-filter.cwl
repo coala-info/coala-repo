@@ -2,10 +2,46 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: crossfilt-filter
 label: crossfilt_crossfilt-filter
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a system error log indicating a failure to build or run a container due to
-  insufficient disk space.\n\nTool homepage: https://github.com/kennethabarr/CrossFilt"
-inputs: []
+doc: "Outputs reads from bam1 that that have identical contig, position, CIGAR string,
+  and tag values (optional) in bam2\n\nTool homepage: https://github.com/kennethabarr/CrossFilt"
+inputs:
+  - id: bam1
+    type: File
+    doc: Input bam file 1.
+    inputBinding:
+      position: 1
+  - id: bam2
+    type: File
+    doc: Input bam file 2.
+    inputBinding:
+      position: 2
+  - id: compare_xf_tag
+    type:
+      - 'null'
+      - boolean
+    doc: Compare the XF tag. Equivalent to --tag XF
+    inputBinding:
+      position: 103
+      prefix: --xf
+  - id: tags
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Tag values to compare. Can be specified multiple times to compare 
+      multiple tags.
+    inputBinding:
+      position: 103
+      prefix: --tag
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of compression/decrpression threads when reading/writing bam 
+      files.
+    inputBinding:
+      position: 103
+      prefix: --threads
 outputs:
   - id: stdout
     type: stdout

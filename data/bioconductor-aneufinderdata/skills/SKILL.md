@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aneufinderdata
-description: the package is available on all platforms; click for details.
+description: This package provides example whole-genome single-cell sequencing data files for demonstrating and testing AneuFinder workflows. Use when user asks to access example BAM, BED, or aneuHMM files, test copy number variation calling, or perform karyotype analysis demonstrations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AneuFinderData.html
 ---
+
 
 # bioconductor-aneufinderdata
 

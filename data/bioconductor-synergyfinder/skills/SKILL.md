@@ -1,8 +1,9 @@
 ---
 name: bioconductor-synergyfinder
-description: the package is available on all platforms; click for details.
+description: Bioconductor-synergyfinder is an R package for analyzing and visualizing multi-drug combination synergy data. Use when user asks to calculate synergy scores, visualize dose-response surfaces, or analyze drug interaction experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/synergyfinder.html
 ---
+
 
 # bioconductor-synergyfinder
 

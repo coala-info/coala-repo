@@ -1,8 +1,9 @@
 ---
 name: deeptoolsintervals
-description: The `deeptoolsintervals` library is a specialized Python module for constructing and querying interval trees based on genomic annotations.
+description: The deeptoolsintervals library constructs and queries optimized interval trees for genomic annotations to retrieve features and their associated metadata. Use when user asks to find overlaps between genomic regions and annotated features, load GTF or BED files into interval trees, or manage transcript and exon coordinates.
 homepage: https://github.com/deeptools/deeptools_intervals
 ---
+
 
 # deeptoolsintervals
 

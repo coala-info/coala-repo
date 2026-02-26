@@ -1,8 +1,9 @@
 ---
 name: perl-font-ttf
-description: The `Font::TTF` library provides a comprehensive Perl interface for interacting with the internal structures of TrueType and OpenType fonts.
+description: The perl-font-ttf library provides a Perl interface for directly reading and manipulating the internal table structures of TrueType and OpenType fonts. Use when user asks to extract font metadata, modify internal font tables, analyze glyph outlines, or automate font auditing and batch updates.
 homepage: http://metacpan.org/pod/Font-TTF
 ---
+
 
 # perl-font-ttf
 

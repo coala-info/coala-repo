@@ -1,8 +1,9 @@
 ---
 name: perl-if
-description: The `perl-if` skill provides a mechanism for "lazy" or conditional module loading in Perl.
+description: The perl-if tool enables conditional or lazy loading of Perl modules at compile time based on a specified condition. Use when user asks to load modules based on operating system constraints, handle version-specific requirements, or enable optional dependencies and debugging tools.
 homepage: http://metacpan.org/pod/if
 ---
+
 
 # perl-if
 

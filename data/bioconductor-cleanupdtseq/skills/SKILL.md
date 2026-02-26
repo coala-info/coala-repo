@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cleanupdtseq
-description: the package is available on all platforms; click for details.
+description: This tool uses a Naive Bayes classifier to differentiate between true polyadenylation sites and internal priming artifacts in sequencing data. Use when user asks to filter internal priming sites, identify genuine polyadenylation sites, or process 3' end sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/cleanUpdTSeq.html
 ---
+
 
 # bioconductor-cleanupdtseq
 

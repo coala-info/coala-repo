@@ -1,8 +1,9 @@
 ---
 name: eval
-description: The `eval` package is a specialized suite for the quantitative assessment of genome annotations.
+description: The eval package quantitatively assesses genome annotations by comparing predicted gene structures against reference standards. Use when user asks to compare gene predictions to a reference, evaluate annotation accuracy, validate GTF file formatting, or analyze genomic feature distributions.
 homepage: http://mblab.wustl.edu/software.html
 ---
+
 
 # eval
 

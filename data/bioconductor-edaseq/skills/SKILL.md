@@ -1,8 +1,9 @@
 ---
 name: bioconductor-edaseq
-description: the package is available on all platforms; click for details.
+description: The EDASeq package provides a framework for exploratory data analysis and normalization of RNA-Seq data to account for GC-content and gene length biases. Use when user asks to perform quality control on sequencing reads, visualize systematic biases in gene expression, or apply within-lane and between-lane normalization.
 homepage: https://bioconductor.org/packages/release/bioc/html/EDASeq.html
 ---
+
 
 # bioconductor-edaseq
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.mmulatta.ucsc.rhemac3.refgene
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides a transcript database for Macaca mulatta based on the UCSC rheMac3 refGene annotation track. Use when user asks to retrieve transcript metadata, access gene models, or perform genomic coordinate mapping for the Rhesus monkey genome.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmulatta.UCSC.rheMac3.refGene.html
 ---
+
 
 # bioconductor-txdb.mmulatta.ucsc.rhemac3.refgene
 

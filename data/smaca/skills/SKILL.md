@@ -1,8 +1,9 @@
 ---
 name: smaca
-description: SMAca is a specialized genomic tool designed to identify individuals at risk of being SMA carriers by calculating the absolute copy number of the SMN1 gene.
+description: "SMAca calculates the absolute copy number of the SMN1 gene from BAM files to identify SMA carriers and silent carriers. Use when user asks to identify SMA carriers, calculate SMN1 copy number, or detect silent carriers using sequence-specific variants."
 homepage: https://github.com/babelomics/SMAca
 ---
+
 
 # smaca
 

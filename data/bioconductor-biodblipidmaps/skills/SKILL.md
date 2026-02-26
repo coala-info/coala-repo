@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodblipidmaps
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides a connector to the LIPID MAPS Structure Database for retrieving lipid structures, metadata, and identifiers within the biodb framework. Use when user asks to retrieve lipid entries by ID, search the LIPID MAPS database by name, or convert lipid metadata into data frames for lipidomics workflows.
 homepage: https://bioconductor.org/packages/3.14/bioc/html/biodbLipidmaps.html
 ---
+
 
 # bioconductor-biodblipidmaps
 

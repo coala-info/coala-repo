@@ -1,9 +1,9 @@
 # demultiplexer2 CWL Generation Report
 
-## demultiplexer2
+## demultiplexer2_create_primerset
 
 ### Tool Description
-A tool for demultiplexing. (Note: The provided text is a container execution error log and does not contain usage instructions or argument definitions).
+Create a primerset
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/demultiplexer2:1.1.6--pyhdfd78af_0
@@ -18,11 +18,69 @@ A tool for demultiplexing. (Note: The provided text is a container execution err
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/demultiplexer2:1.1.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4111768744: no space left on device
+usage: demultiplexer2 create_primerset [-h] --name NAME --n_primers N_PRIMERS
+
+options:
+  -h, --help            show this help message and exit
+  --name NAME           Define the name for the primerset to create.
+  --n_primers N_PRIMERS
+                        Define the number of forward and reverse primers in
+                        the primerset.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## demultiplexer2_create_tagging_scheme
+
+### Tool Description
+Create a tagging scheme for demultiplexing.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/demultiplexer2:1.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/DominikBuchner/demultiplexer2
+- **Package**: https://anaconda.org/channels/bioconda/packages/demultiplexer2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: demultiplexer2 create_tagging_scheme [-h] --name NAME --data_dir
+                                            DATA_DIR --primerset_path
+                                            PRIMERSET_PATH
+
+options:
+  -h, --help            show this help message and exit
+  --name NAME           Define the name for the tagging scheme to create
+  --data_dir DATA_DIR   Path to the directory that contains the files to
+                        demultiplex.
+  --primerset_path PRIMERSET_PATH
+                        Path to the primerset to be used for demultiplexing.
+```
+
+
+## demultiplexer2_demultiplex
+
+### Tool Description
+Demultiplexes sequencing reads based on primer and tagging schemes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/demultiplexer2:1.1.6--pyhdfd78af_0
+- **Homepage**: https://github.com/DominikBuchner/demultiplexer2
+- **Package**: https://anaconda.org/channels/bioconda/packages/demultiplexer2/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: demultiplexer2 demultiplex [-h] --primerset_path PRIMERSET_PATH
+                                  --tagging_scheme_path TAGGING_SCHEME_PATH
+                                  --output_dir OUTPUT_DIR
+
+options:
+  -h, --help            show this help message and exit
+  --primerset_path PRIMERSET_PATH
+                        Path to the primerset to be used for demultiplexing.
+  --tagging_scheme_path TAGGING_SCHEME_PATH
+                        Path to the tagging scheme to be used for
+                        demultiplexing.
+  --output_dir OUTPUT_DIR
+                        Directory to write the demultiplexed files to.
+```
+

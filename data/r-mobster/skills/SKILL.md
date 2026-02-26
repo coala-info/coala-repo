@@ -1,8 +1,9 @@
 ---
 name: r-mobster
-description: R package mobster (documentation from project home).
+description: r-mobster performs model-based subclonal deconvolution of bulk tumor sequencing data by integrating Dirichlet mixture models with population genetics. Use when user asks to perform subclonal reconstruction, cluster variant allele frequencies, or fit evolutionary models to distinguish between subclonal selection and neutral growth.
 homepage: https://cran.r-project.org/web/packages/mobster/index.html
 ---
+
 
 # r-mobster
 

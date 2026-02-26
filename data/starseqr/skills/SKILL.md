@@ -1,8 +1,9 @@
 ---
 name: starseqr
-description: STAR-SEQR is a specialized pipeline for the detection and quantification of RNA fusion events.
+description: STAR-SEQR is a pipeline that detects and quantifies RNA fusion events using STAR alignment and de novo assembly. Use when user asks to identify gene fusion partners, detect breakpoints, or quantify fusion transcripts from RNA-seq data.
 homepage: https://github.com/ExpressionAnalysis/STAR-SEQR
 ---
+
 
 # starseqr
 

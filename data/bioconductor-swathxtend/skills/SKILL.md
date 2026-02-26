@@ -1,8 +1,9 @@
 ---
 name: bioconductor-swathxtend
-description: the package is available on all platforms; click for details.
+description: SwathXtend provides tools for extending and integrating spectral libraries to enhance protein identification and quantification in SWATH-MS proteomics data. Use when user asks to extend spectral libraries, integrate mass spectrometry datasets, or improve protein quantification.
 homepage: https://bioconductor.org/packages/release/bioc/html/SwathXtend.html
 ---
+
 
 # bioconductor-swathxtend
 

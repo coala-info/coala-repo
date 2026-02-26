@@ -1,8 +1,9 @@
 ---
 name: bioconductor-charge
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool identifies chromosomal duplications, additions, and deletions from gene expression data using clustering and bimodality tests. Use when user asks to detect large-scale genomic alterations, identify hyperploidy or hypoploidy in RNA-seq data, or scan for unknown aneuploid regions.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CHARGE.html
 ---
+
 
 # bioconductor-charge
 

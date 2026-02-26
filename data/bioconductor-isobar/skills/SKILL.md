@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isobar
-description: the package is available on all platforms; click for details.
+description: This tool provides a framework for the statistical analysis and exploration of iTRAQ and TMT isobaric labeling proteomics data. Use when user asks to process MS/MS data, perform isotope impurity correction, normalize reporter ion intensities, fit noise models, or calculate protein and peptide ratios.
 homepage: https://bioconductor.org/packages/release/bioc/html/isobar.html
 ---
+
 
 # bioconductor-isobar
 

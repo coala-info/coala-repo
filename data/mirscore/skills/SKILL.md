@@ -1,8 +1,9 @@
 ---
 name: mirscore
-description: miRScore is a specialized bioinformatics tool used to distinguish high-confidence microRNA loci from other small RNA-producing regions.
+description: miRScore distinguishes high-confidence microRNA loci from other small RNA-producing regions by analyzing structural features and quantitative expression data. Use when user asks to validate novel miRNA annotations, score miRNA candidates based on secondary structure, or execute the miRScore pipeline for plant and animal small RNA-seq data.
 homepage: https://github.com/Aez35/miRScore
 ---
+
 
 # mirscore
 

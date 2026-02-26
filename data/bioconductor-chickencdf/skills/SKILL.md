@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chickencdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Chicken Genome Array to map probe identifiers to genomic locations. Use when user asks to map probe sets to array indices, convert between chip coordinates and index sequences, or retrieve dimensions for chicken expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chickencdf.html
 ---
+
 
 # bioconductor-chickencdf
 

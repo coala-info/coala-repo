@@ -1,8 +1,9 @@
 ---
 name: cellqc
-description: The `cellqc` skill provides a streamlined workflow for the systematic quality control of single-cell RNA-Seq data.
+description: "cellqc automates quality control for single-cell RNA-Seq data by integrating empty droplet filtering, ambient RNA removal, and doublet detection. Use when user asks to perform quality control on single-cell RNA-Seq data, filter empty droplets, remove ambient RNA, or detect doublets."
 homepage: https://github.com/lijinbio/cellqc
 ---
+
 
 # cellqc
 

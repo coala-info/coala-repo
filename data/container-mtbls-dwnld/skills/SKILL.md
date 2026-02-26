@@ -1,8 +1,9 @@
 ---
 name: container-mtbls-dwnld
-description: The container-mtbls-dwnld tool is a specialized downloader designed to bridge the gap between the MetaboLights public repository and the Workflow4Metabolomics (W4M) analytical environment.
+description: This tool downloads MetaboLights study data and transforms it into simplified tabular files for metabolomics analysis. Use when user asks to download MetaboLights datasets, convert ISA-Tab files to tabular formats, or prepare metabolomics data for Workflow4Metabolomics.
 homepage: https://github.com/phnmnl/container-mtbls-dwnld
 ---
+
 
 # container-mtbls-dwnld
 

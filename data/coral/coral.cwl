@@ -2,15 +2,118 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: coral
 label: coral
-doc: "The provided text is a runtime error log from a container build/execution process
-  and does not contain help text or usage information. Consequently, no arguments
-  could be extracted.\n\nTool homepage: https://github.com/Shao-Group/coral"
-inputs: []
+doc: "Coral v1.0.0 (c) 2019 Mingfu Shao, The Pennsylvania State University\n\nTool
+  homepage: https://github.com/Shao-Group/coral"
+inputs:
+  - id: dp_solution_size
+    type:
+      - 'null'
+      - int
+    doc: candidate number of bridgign paths
+    default: 10
+    inputBinding:
+      position: 101
+      prefix: --dp_solution_size
+  - id: dp_stack_size
+    type:
+      - 'null'
+      - int
+    doc: number of weights maintained for each bridging path
+    default: 5
+    inputBinding:
+      position: 101
+      prefix: --dp_stack_size
+  - id: flank_tiny_length
+    type:
+      - 'null'
+      - int
+    doc: maximized length for reconsidering error correction
+    default: 10
+    inputBinding:
+      position: 101
+      prefix: --flank_tiny_length
+  - id: flank_tiny_ratio
+    type:
+      - 'null'
+      - float
+    doc: maximized ratio for reconsidering error correction
+    default: 0.4
+    inputBinding:
+      position: 101
+      prefix: --flank_tiny_ratio
+  - id: input_bam_file
+    type: File
+    doc: input-bam-file
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: library_type
+    type:
+      - 'null'
+      - string
+    doc: library type of the sample
+    default: unstranded
+    inputBinding:
+      position: 101
+      prefix: --library_type
+  - id: max_clustring_flank
+    type:
+      - 'null'
+      - int
+    doc: maximized basepair difference for being in an equivalent class
+    default: 30
+    inputBinding:
+      position: 101
+      prefix: --max_clustring_flank
+  - id: max_num_cigar
+    type:
+      - 'null'
+      - int
+    doc: ignore reads with CIGAR size larger than this value
+    default: 1000
+    inputBinding:
+      position: 101
+      prefix: --max_num_cigar
+  - id: min_bridging_score
+    type:
+      - 'null'
+      - float
+    doc: the minimized bottleneck weight in bridging path
+    default: 0.5
+    inputBinding:
+      position: 101
+      prefix: --min_bridging_score
+  - id: min_splice_bundary_hits
+    type:
+      - 'null'
+      - int
+    doc: minimum number of spliced reads required for a junction
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --min_splice_bundary_hits
+  - id: preview
+    type:
+      - 'null'
+      - boolean
+    doc: determine fragment-length-range and library-type and exit
+    inputBinding:
+      position: 101
+      prefix: --preview
+  - id: refernece
+    type:
+      - 'null'
+      - File
+    doc: refernece
+    inputBinding:
+      position: 101
+      prefix: -r
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_bam_file
+    type: File
+    doc: output-bam-file
+    outputBinding:
+      glob: $(inputs.output_bam_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/coral:1.0.0--hf5e1fbb_1
-stdout: coral.out

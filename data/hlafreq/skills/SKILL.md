@@ -1,8 +1,9 @@
 ---
 name: hlafreq
-description: hlafreq is a Python-based tool designed to automate the collection and meta-analysis of Human Leukocyte Antigen (HLA) allele frequencies.
+description: hlafreq automates the collection, standardization, and meta-analysis of Human Leukocyte Antigen (HLA) allele frequency data. Use when user asks to fetch data from the Allele Frequency Net Database, filter studies for quality, standardize allele resolution, or calculate combined frequency estimates.
 homepage: https://github.com/Vaccitech/HLAfreq
 ---
+
 
 # hlafreq
 

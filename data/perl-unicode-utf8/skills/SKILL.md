@@ -1,8 +1,9 @@
 ---
 name: perl-unicode-utf8
-description: The `perl-unicode-utf8` skill provides guidance on implementing the `Unicode::UTF8` Perl module for efficient character encoding.
+description: This tool provides a high-performance Perl implementation for encoding and decoding UTF-8 strings with strict validation. Use when user asks to encode or decode UTF-8 bytes, validate UTF-8 sequences, or optimize character encoding performance in Perl.
 homepage: http://metacpan.org/pod/Unicode::UTF8
 ---
+
 
 # perl-unicode-utf8
 

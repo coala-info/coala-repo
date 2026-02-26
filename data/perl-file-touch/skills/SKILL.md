@@ -1,8 +1,9 @@
 ---
 name: perl-file-touch
-description: The `perl-file-touch` skill provides a specialized interface for managing file timestamps through the `File::Touch` Perl module.
+description: This tool manages file timestamps and creates new files using the Perl File::Touch module. Use when user asks to update file access or modification times, synchronize timestamps with a reference file, or set specific epoch times with sub-second resolution.
 homepage: https://github.com/neilb/File-Touch
 ---
+
 
 # perl-file-touch
 

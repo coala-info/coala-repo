@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ideal
-description: the package is available on all platforms; click for details.
+description: The bioconductor-ideal package provides a framework for interactive differential expression analysis of RNA-seq data by wrapping DESeq2 and Shiny. Use when user asks to perform interactive differential expression analysis, visualize RNA-seq results with MA or volcano plots, or generate reproducible reports from transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ideal.html
 ---
+
 
 # bioconductor-ideal
 

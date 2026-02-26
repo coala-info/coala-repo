@@ -1,8 +1,9 @@
 ---
 name: bioconductor-transcriptr
-description: the package is available on all platforms; click for details.
+description: transcriptR identifies and analyzes transcription units and start sites from high-throughput sequencing data. Use when user asks to identify transcription start sites, delineate transcription units, or analyze nascent RNA sequencing data like GRO-seq or PRO-seq.
 homepage: https://bioconductor.org/packages/release/bioc/html/transcriptR.html
 ---
+
 
 # bioconductor-transcriptr
 

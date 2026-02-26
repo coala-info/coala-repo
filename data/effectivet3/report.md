@@ -3,44 +3,48 @@
 ## effectivet3
 
 ### Tool Description
-EffectiveT3 is a tool for the prediction of Type III secretion system (T3SS) effector proteins. Note: The provided help text contains only container runtime error messages and does not list specific command-line arguments.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/effectivet3:1.0.1--py36_0
 - **Homepage**: https://github.com/nicolasrnemeth/EffectiveT3
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/effectivet3/overview
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/nicolasrnemeth/EffectiveT3
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/effectivet3:1.0.1--py36_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4074740089: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## effectivet3_effectiveTrain
-
-### Tool Description
-EffectiveT3: Prediction of Type III Secretion System (T3SS) effector proteins (Note: The provided help text contains only container runtime error messages and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/effectivet3:1.0.1--py36_0
-- **Homepage**: https://github.com/nicolasrnemeth/EffectiveT3
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/effectivet3:1.0.1--py36_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1582981756: no space left on device
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.simontuffs.onejar.Boot.run(Boot.java:243)
+	at com.simontuffs.onejar.Boot.main(Boot.java:89)
+Caused by: java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:204)
+	at java.awt.Window.<init>(Window.java:536)
+	at java.awt.Frame.<init>(Frame.java:420)
+	at java.awt.Frame.<init>(Frame.java:385)
+	at javax.swing.JFrame.<init>(JFrame.java:189)
+	at de.tum.wzw.gui.GUIFrame.<init>(GUIFrame.java:47)
+	at de.tum.wzw.controller.MainController.main(MainController.java:143)
+	... 6 more
 ```
 

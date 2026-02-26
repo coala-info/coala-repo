@@ -1,8 +1,9 @@
 ---
 name: fraposa-pgsc
-description: The `fraposa-pgsc` tool is a specialized version of FRAPOSA (Fast and Robust Ancestry Prediction) integrated into the PGS Catalog pipeline.
+description: This tool projects genomic study samples into a reference PCA space to predict genetic ancestry using computationally efficient methods. Use when user asks to project samples into a reference PCA space, determine genetic ancestry, or predict population labels for study datasets.
 homepage: https://github.com/PGScatalog/fraposa_pgsc
 ---
+
 
 # fraposa-pgsc
 

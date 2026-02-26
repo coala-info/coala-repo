@@ -1,8 +1,9 @@
 ---
 name: angsd
-description: ANGSD is a specialized suite for analyzing NGS data that accounts for genotype uncertainty.
+description: ANGSD is a software suite for analyzing next-generation sequencing data using genotype likelihoods to account for uncertainty. Use when user asks to estimate allele frequencies, call SNPs, calculate the site frequency spectrum, or perform population genetics analyses such as Fst and neutrality tests.
 homepage: http://www.popgen.dk/angsd/index.php/ANGSD
 ---
+
 
 # angsd
 

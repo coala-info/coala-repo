@@ -1,8 +1,9 @@
 ---
 name: bigtools
-description: bigtools is a high-performance, Rust-based suite of utilities designed to handle BigWig and BigBed files, which are standard formats for genomic signal tracks and features.
+description: bigtools is a high-performance suite of utilities for processing, converting, and analyzing BigWig and BigBed genomic file formats. Use when user asks to view metadata, convert bedGraph or BED files to BigWig or BigBed, calculate signal averages over genomic regions, or merge multiple signal tracks.
 homepage: https://github.com/jackh726/bigtools/
 ---
+
 
 # bigtools
 

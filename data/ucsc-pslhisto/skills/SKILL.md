@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslhisto
-description: The `pslHisto` utility is a specialized tool from the UCSC Genome Browser "kent" source suite designed to aggregate statistics from PSL alignment files.
+description: The `ucsc-pslhisto` tool aggregates statistics from PSL alignment files to produce frequency counts for generating histograms. Use when user asks to 'aggregate statistics from PSL alignment files', 'produce frequency counts from alignment data', 'prepare data for alignment histograms', or 'analyze alignment distributions for quality control'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslhisto
 

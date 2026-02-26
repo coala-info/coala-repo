@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eupathdb
-description: the package is available on all platforms; click for details.
+description: This tool provides a standardized interface to access and query genomic annotations and structural data for eukaryotic pathogens from EuPathDB via AnnotationHub. Use when user asks to retrieve OrgDb or GRanges objects, access gene-level functional annotations, or query genomic coordinates for pathogens like Plasmodium, Trypanosoma, and Toxoplasma.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EuPathDB.html
 ---
+
 
 # bioconductor-eupathdb
 

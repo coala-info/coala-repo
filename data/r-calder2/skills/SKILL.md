@@ -1,8 +1,9 @@
 ---
 name: r-calder2
-description: R package calder2 (documentation from project home).
+description: "r-calder2 performs hierarchical analysis of Hi-C data to identify chromatin domains, sub-compartments, and nested sub-domains. Use when user asks to compute chromatin domains, identify hierarchical sub-compartments, or detect nested TAD-like structures from Hi-C contact matrices."
 homepage: https://cran.r-project.org/web/packages/calder2/index.html
 ---
+
 
 # r-calder2
 

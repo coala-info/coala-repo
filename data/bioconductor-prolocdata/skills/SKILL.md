@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prolocdata
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of spatial proteomics data sets for use with the pRoloc software. Use when user asks to access example spatial proteomics data, load organelle proteomics data sets, or explore mass spectrometry-based protein localization data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pRolocdata.html
 ---
+
 
 # bioconductor-prolocdata
 

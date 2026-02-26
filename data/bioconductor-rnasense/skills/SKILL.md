@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnasense
-description: the package is available on all platforms; click for details.
+description: RNAsense analyzes RNA stability and degradation kinetics from time-course metabolic labeling experiments. Use when user asks to model RNA turnover, calculate degradation rates, or analyze transcript stability over time.
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAsense.html
 ---
+
 
 # bioconductor-rnasense
 

@@ -1,8 +1,9 @@
 ---
 name: sopa
-description: Sopa is a specialized Python-based suite designed for high-throughput spatial-omics analysis.
+description: Sopa is a Python-based suite for high-throughput spatial-omics analysis that transforms raw spatial data into single-cell resolution insights using various segmentation algorithms. Use when user asks to align multimodal images, create image or transcript patches, perform cell segmentation, or export data for interactive visualization in Xenium Explorer.
 homepage: https://gustaveroussy.github.io/sopa
 ---
+
 
 # sopa
 

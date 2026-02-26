@@ -1,8 +1,9 @@
 ---
 name: r-dunn.test
-description: Computes Dunn's test (1964) for stochastic dominance and reports the results among multiple pairwise comparisons after a Kruskal-Wallis test for 0th-order stochastic dominance among k groups (Kruskal and Wallis, 1952). 'dunn.test' makes k(k-1)/2 multiple pairwise comparisons based on Dunn's z-test-statistic approximations to the actual rank statistics. The null hypothesis for each pairwise comparison is that the probability of observing a randomly selected value from the first group that is larger than a randomly selected value from the second group equals one half; this null hypothesis corresponds to that of the Wilcoxon-Mann-Whitney rank-sum test. Like the rank-sum test, if the data can be assumed to be continuous, and the distributions are assumed identical except for a difference in location, Dunn's test may be understood as a test for median difference and for mean difference. 'dunn.test' accounts for tied ranks.</p>
+description: This tool performs Dunn's non-parametric test for pairwise multiple comparisons of stochastic dominance between groups. Use when user asks to perform a post hoc analysis after a Kruskal-Wallis test, compare multiple independent groups using rank-based statistics, or apply p-value adjustments for multiple testing.
 homepage: https://cloud.r-project.org/web/packages/dunn.test/index.html
 ---
+
 
 # r-dunn.test
 

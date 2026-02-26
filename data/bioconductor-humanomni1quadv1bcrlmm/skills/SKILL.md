@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humanomni1quadv1bcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for Illumina Omni1 Quad v1b arrays to support genotype calling and copy number analysis. Use when user asks to perform genotype calling, conduct copy number analysis, or process Illumina HumanOmni1-Quad v1b BeadChip data using the crlmm package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanomni1quadv1bCrlmm.html
 ---
+
 
 # bioconductor-humanomni1quadv1bcrlmm
 

@@ -1,9 +1,9 @@
 # cogclassifier CWL Generation Report
 
-## cogclassifier
+## cogclassifier_COGclassifier
 
 ### Tool Description
-A tool for COG (Clusters of Orthologous Groups) classification of protein sequences.
+A tool for classifying prokaryote protein sequences into COG functional category
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cogclassifier:2.0.0--pyhdfd78af_0
@@ -18,9 +18,21 @@ A tool for COG (Clusters of Orthologous Groups) classification of protein sequen
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/f3e88f4239cdc54307be8172334fa2be06545c01ed693c69be7f0d17ac79f5b4: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cogclassifier:2.0.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1866084100: no space left on device
+Usage: COGclassifier [OPTIONS]                                                 
+                                                                                
+ A tool for classifying prokaryote protein sequences into COG functional        
+ category                                                                       
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ *  --infile        -i        Input query protein fasta file [required]       │
+│ *  --outdir        -o        Output directory [required]                     │
+│    --download_dir  -d        Download COG & CDD resources directory          │
+│                              [default: /root/.cache/cogclassifier_v2]        │
+│    --thread_num    -t        RPS-BLAST num_thread parameter [default: 19]    │
+│    --evalue        -e        RPS-BLAST e-value parameter [default: 0.01]     │
+│    --quiet         -q        No print log on screen                          │
+│    --version       -v        Print version information                       │
+│    --help          -h        Show this message and exit.                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 

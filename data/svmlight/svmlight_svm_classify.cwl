@@ -2,15 +2,43 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: svm_classify
 label: svmlight_svm_classify
-doc: "The provided text does not contain help information for the tool; it contains
-  container runtime error logs indicating a failure to fetch or build the OCI image.\n
-  \nTool homepage: http://svmlight.joachims.org/"
-inputs: []
+doc: "SVM-light V6.02: Support Vector Machine, classification module\n\nTool homepage:
+  http://svmlight.joachims.org/"
+inputs:
+  - id: example_file
+    type: File
+    doc: File containing the examples to classify
+    inputBinding:
+      position: 1
+  - id: model_file
+    type: File
+    doc: File containing the trained SVM model
+    inputBinding:
+      position: 2
+  - id: output_format
+    type:
+      - 'null'
+      - int
+    doc: '0: old output format of V1.0, 1: output the value of decision function (default)'
+    default: 1
+    inputBinding:
+      position: 103
+      prefix: -f
+  - id: verbosity_level
+    type:
+      - 'null'
+      - int
+    doc: verbosity level (default 2)
+    default: 2
+    inputBinding:
+      position: 103
+      prefix: -v
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: File to write the classification results to
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/svmlight:6.02--h7b50bb2_8
-stdout: svmlight_svm_classify.out

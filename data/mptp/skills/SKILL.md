@@ -1,8 +1,9 @@
 ---
 name: mptp
-description: mPTP (multi-rate Poisson Tree Processes) is a specialized tool for delimiting species based on a rooted phylogenetic tree.
+description: "mPTP delimits species from a rooted phylogenetic tree using multi-rate Poisson Tree Processes. Use when user asks to delimit species boundaries, perform maximum likelihood or Bayesian species delimitation, or assess delimitation confidence with MCMC support values."
 homepage: https://github.com/Pas-Kapli/mptp
 ---
+
 
 # mptp
 

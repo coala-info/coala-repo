@@ -1,8 +1,9 @@
 ---
 name: pgenlib
-description: pgenlib is a Python wrapper for the core C++ library used by PLINK 2.0.
+description: pgenlib is a Python wrapper for the PLINK 2.0 C++ library that provides high-performance access to PGEN genomic data files. Use when user asks to read or interact with PGEN files, handle large-scale genomic datasets with multiallelic variants, or process phased and dosage information.
 homepage: https://github.com/chrchang/plink-ng
 ---
+
 
 # pgenlib
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-benchdamic
-description: the package is available on all platforms; click for details.
+description: This package benchmarks differential abundance detection methods for microbial data using various statistical and biological metrics. Use when user asks to evaluate goodness of fit, assess type I error control, measure concordance between methods, or perform enrichment analysis for microbiome datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/benchdamic.html
 ---
+
 
 # bioconductor-benchdamic
 

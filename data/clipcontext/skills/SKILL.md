@@ -1,8 +1,9 @@
 ---
 name: clipcontext
-description: The `clipcontext` tool suite facilitates the comparative analysis of CLIP-seq data by bridging the gap between genomic locations and their corresponding transcriptomic contexts.
+description: clipcontext maps CLIP-seq genomic coordinates to transcriptomic contexts and analyzes binding site distribution relative to gene architecture. Use when user asks to map coordinates between genome and transcriptome, identify prominent isoforms, filter intronic sites, or extract exon border sequences.
 homepage: https://github.com/BackofenLab/CLIPcontext
 ---
+
 
 # clipcontext
 

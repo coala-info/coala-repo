@@ -1,8 +1,9 @@
 ---
 name: cobra-meta
-description: COBRA (Contig Overlap Based Re-Assembly) is a post-assembly tool designed to rescue fragmented viral genomes.
+description: COBRA is a post-assembly tool that joins fragmented viral contigs into more complete scaffolds using k-mer overlap and paired-end read linkage. Use when user asks to rescue fragmented viral genomes, extend contigs after assembly, or join viral scaffolds using coverage and mapping data.
 homepage: https://github.com/linxingchen/cobra
 ---
+
 
 # cobra-meta
 

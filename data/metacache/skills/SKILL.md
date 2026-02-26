@@ -1,8 +1,9 @@
 ---
 name: metacache
-description: MetaCache is a specialized classification system designed to map genomic sequences from metagenomic samples to their most likely taxon of origin.
+description: MetaCache is a taxonomic classification system that maps metagenomic sequences to reference genomes using locality-sensitive hashing. Use when user asks to classify metagenomic reads, build reference databases from RefSeq, partition large genomic databases, or generate taxonomic abundance summaries and Krona visualizations.
 homepage: https://github.com/muellan/metacache
 ---
+
 
 # metacache
 

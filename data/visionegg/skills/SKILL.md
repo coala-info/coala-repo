@@ -1,8 +1,9 @@
 ---
 name: visionegg
-description: VisionEgg is a specialized Python library used to produce high-accuracy, real-time visual stimuli for vision science experiments.
+description: VisionEgg is a Python library for producing high-accuracy, real-time visual stimuli for vision science experiments. Use when user asks to 'produce visual stimuli', 'install VisionEgg', 'check VisionEgg configuration', 'run VisionEgg demos', 'troubleshoot VisionEgg', or 'resolve compatibility issues'.
 homepage: https://github.com/visionegg/visionegg
 ---
+
 
 # visionegg
 

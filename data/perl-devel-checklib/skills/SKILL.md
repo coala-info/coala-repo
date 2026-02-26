@@ -1,8 +1,9 @@
 ---
 name: perl-devel-checklib
-description: This skill provides guidance on using `Devel::CheckLib` to verify that specific C libraries, header files, and symbols are available on the host system.
+description: This tool verifies the presence of specific C libraries, header files, and symbols on a system during the Perl module configuration process. Use when user asks to check for library dependencies, verify header file availability, or ensure specific symbols exist before compiling Perl modules.
 homepage: http://metacpan.org/pod/Devel-CheckLib
 ---
+
 
 # perl-devel-checklib
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-phenopath
-description: the package is available on all platforms; click for details.
+description: Phenopath models genomic trajectories to identify interactions between pseudotime and external covariates. Use when user asks to model pseudotime trajectories, identify covariate-dependent gene expression, or analyze single-cell data with multiple conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/phenopath.html
 ---
+
 
 # bioconductor-phenopath
 

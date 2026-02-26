@@ -1,8 +1,9 @@
 ---
 name: mzpaf
-description: The `mzpaf` skill enables the handling of standardized fragment ion peak annotations.
+description: The mzpaf tool parses, serializes, and manipulates standardized fragment ion peak annotations using a concise string-based format. Use when user asks to parse mzPAF strings, generate peak annotations for fragment ions, or programmatically handle mass deltas and confidence scores in mass spectrometry data.
 homepage: https://github.com/HUPO-PSI/mzPAF
 ---
+
 
 # mzpaf
 

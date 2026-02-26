@@ -1,11 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gapless_gapless.py
+baseCommand: gapless.py
 label: gapless_gapless.py
-doc: "A tool for closing gaps in genome assemblies. (Note: The provided text contains
-  system error messages and does not include usage instructions or argument definitions.)\n
+doc: "Program: gapless\nVersion: 0.4\nContact: https://github.com/schmeing/gapless\n\
   \nTool homepage: https://github.com/schmeing/gapless"
-inputs: []
+inputs:
+  - id: module
+    type: string
+    doc: 'Module to run. Available modules: split, scaffold, extend, finish, visualize,
+      test'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

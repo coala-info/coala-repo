@@ -1,8 +1,9 @@
 ---
 name: r-quorts
-description: R package quorts (documentation from project home).
+description: This tool provides quality control, data management, and visualization for RNA-Seq and DNA-Seq datasets. Use when user asks to analyze sequencing metrics, visualize gene body coverage, identify technical biases, or detect outlier samples in sequencing data.
 homepage: https://cran.r-project.org/web/packages/quorts/index.html
 ---
+
 
 # r-quorts
 

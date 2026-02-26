@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rsffreader
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The rSFFreader package reads Standard Flowgram Format (SFF) files into the R environment for biological data analysis. Use when user asks to read SFF files, extract sequence data from 454 sequencing files, or process flowgram information in R.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/rSFFreader.html
 ---
+
 
 # bioconductor-rsffreader
 

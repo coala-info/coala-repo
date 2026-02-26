@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genrank
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The GenRank package prioritizes candidate genes by integrating results from multiple independent evidence layers such as different -omics studies or experimental contexts. Use when user asks to rank genes using convergent evidence, calculate rank products across replicates, or combine p-values from multiple studies using meta-analysis techniques.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GenRank.html
 ---
+
 
 # bioconductor-genrank
 

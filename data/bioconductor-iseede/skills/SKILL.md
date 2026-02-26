@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseede
-description: the package is available on all platforms; click for details.
+description: This tool provides specialized panels for the iSEE framework to interactively visualize differential expression results from limma, DESeq2, and edgeR. Use when user asks to embed differential expression statistics into SummarizedExperiment objects, create interactive Volcano or MA plots, or compare log-fold changes across different contrasts.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEde.html
 ---
+
 
 # bioconductor-iseede
 

@@ -1,8 +1,9 @@
 ---
 name: hicap
-description: hicap is a specialized bioinformatics tool designed to automate the identification and characterization of the Haemophilus influenzae capsule (cap) locus.
+description: "hicap identifies and characterizes the Haemophilus influenzae capsule locus to determine capsular serotypes from genome assemblies. Use when user asks to identify serotypes, annotate cap locus regions, or visualize the structural organization of Haemophilus influenzae assemblies."
 homepage: https://github.com/scwatts/hicap
 ---
+
 
 # hicap
 

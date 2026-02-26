@@ -1,8 +1,9 @@
 ---
 name: sctriangulate
-description: sctriangulate is a specialized tool for "decision-level" integration of single-cell data.
+description: sctriangulate reconciles conflicting single-cell cluster assignments from different algorithms or modalities to determine the most stable identity for each cell. Use when user asks to resolve cluster ambiguities, integrate multimodal annotations, or identify the optimal clustering resolution for specific cell populations.
 homepage: https://github.com/frankligy/scTriangulate
 ---
+
 
 # sctriangulate
 

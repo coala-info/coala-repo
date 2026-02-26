@@ -1,8 +1,9 @@
 ---
 name: hocort
-description: HoCoRT (Host Contamination Removal Tool) is a specialized wrapper designed to simplify the process of cleaning sequencing data.
+description: HoCoRT automates the removal of host contamination from sequencing data by mapping reads against a reference genome. Use when user asks to remove host DNA from FastQ files, filter contaminant sequences, or extract specific organism reads using various bioinformatic aligners.
 homepage: https://github.com/ignasrum/hocort
 ---
+
 
 # hocort
 

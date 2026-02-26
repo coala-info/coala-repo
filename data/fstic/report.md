@@ -3,7 +3,7 @@
 ## fstic
 
 ### Tool Description
-The provided text does not contain help information for the tool 'fstic'. It contains error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to lack of disk space.
+Calculates pairwise genetic distances between samples using standard estimators.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fstic:1.0.0--h4349ce8_0
@@ -18,11 +18,31 @@ The provided text does not contain help information for the tool 'fstic'. It con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fstic:1.0.0--h4349ce8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2926949547: no space left on device
+fstic 1.0.0
+Paula Ruiz-Rodriguez <paula.ruiz.rodriguez@csic.es>
+Calculates pairwise genetic distances between samples using standard estimators.
+
+USAGE:
+    fstic [FLAGS] [OPTIONS] --output <OUTPUT_FILE> --reference <FASTA_FILE> --table <TABLE_FILES>... --table-list <TABLE_LIST> --vcf <VCF_FILES>... --vcf-list <VCF_LIST>
+
+FLAGS:
+    -h, --help         Prints help information
+        --normalize    Normalize by the number of loci (affects: fst, chord, bray-curtis, jost_d).
+    -V, --version      Prints version information
+
+OPTIONS:
+    -f, --formula <FORMULA>          The distance formula to use. [default: fst]  [possible values: fst, gst, nei,
+                                     chord, bray-curtis, jost_d, reynolds, rogers]
+        --min-af <FREQ>              Minimum alternate allele frequency to keep a variant. [default: 0.05]
+        --min-alt-reads <AD>         Minimum number of alternate allele reads to keep a variant. [default: 2]
+        --min-alt-rev-reads <ADR>    Minimum number of alternate allele reverse reads to keep a variant. [default: 2]
+        --min-depth <DP>             Minimum total read depth to keep a variant. [default: 30]
+    -o, --output <OUTPUT_FILE>       Output file name for the distance matrix.
+    -r, --reference <FASTA_FILE>     Reference FASTA file (required for all inputs).
+        --table <TABLE_FILES>...     One or more input table files (format detected by extension: .csv, .tsv, .tab).
+        --table-list <TABLE_LIST>    A file containing a list of input table files.
+        --vcf <VCF_FILES>...         One or more input VCF files.
+        --vcf-list <VCF_LIST>        A file containing a list of input VCF files.
+    -w, --workers <NUM_WORKERS>      Number of worker threads (default: all available cores).
 ```
 
-
-## Metadata
-- **Skill**: generated

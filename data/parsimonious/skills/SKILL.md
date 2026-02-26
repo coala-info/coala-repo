@@ -1,8 +1,9 @@
 ---
 name: parsimonious
-description: Parsimonious is a lightweight, pure-Python PEG parser designed for speed and usability.
+description: Parsimonious is a lightweight PEG parser that converts text into abstract syntax trees using an EBNF-like syntax. Use when user asks to define a grammar, parse text into a syntax tree, or use a NodeVisitor to transform parsed data.
 homepage: https://github.com/erikrose/parsimonious
 ---
+
 
 # parsimonious
 

@@ -1,8 +1,9 @@
 ---
 name: r-phylobase
-description: "Provides a base S4 class for comparative methods, incorporating     one or more trees and trait data.</p>"
+description: The r-phylobase package provides an S4 infrastructure for representing and manipulating phylogenetic trees and associated comparative data in R. Use when user asks to create phylo4 or phylo4d objects, perform tree-walking to find ancestors or descendants, prune or subset trees while keeping data synchronized, or access tree components like node labels and edge lengths.
 homepage: https://cloud.r-project.org/web/packages/phylobase/index.html
 ---
+
 
 # r-phylobase
 

@@ -1,8 +1,9 @@
 ---
 name: quicksect
-description: `quicksect` is a Cython-accelerated library designed for efficient interval tree operations.
+description: Quicksect is a Cython-accelerated library for performing efficient interval tree operations and range searching. Use when user asks to build interval trees, find overlapping intervals, or perform proximity-based searches for neighboring ranges.
 homepage: https://github.com/brentp/quicksect
 ---
+
 
 # quicksect
 

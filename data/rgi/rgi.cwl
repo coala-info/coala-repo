@@ -2,10 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rgi
 label: rgi
-doc: "The provided text does not contain help information or a description of the
-  tool. It appears to be a log of a failed container build/execution process.\n\n
+doc: "Use the Resistance Gene Identifier to predict resistome(s) from protein or nucleotide
+  data based on homology and SNP models. Check https://card.mcmaster.ca/download for
+  software and data updates. Receive email notification of monthly CARD updates via
+  the CARD Mailing List (https://mailman.mcmaster.ca/mailman/listinfo/card-l)\n\n\
   Tool homepage: https://card.mcmaster.ca"
-inputs: []
+inputs:
+  - id: command
+    type: string
+    doc: Subcommand to run
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

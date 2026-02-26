@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicrep
-description: the package is available on all platforms; click for details.
+description: The hicrep package evaluates the reproducibility of Hi-C data by calculating a stratum-adjusted correlation coefficient that accounts for distance-dependent interaction patterns. Use when user asks to assess Hi-C replicate quality, calculate stratum-adjusted correlation coefficients, or normalize Hi-C sequencing depth.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/hicrep.html
 ---
+
 
 # bioconductor-hicrep
 

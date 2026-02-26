@@ -1,8 +1,9 @@
 ---
 name: wdltool
-description: wdltool is a specialized command-line utility designed to assist bioinformaticians and pipeline developers in managing WDL workflows.
+description: wdltool is a command-line utility for validating, parsing, and generating artifacts for WDL workflows. Use when user asks to validate WDL workflows, generate input templates, visualize workflow logic, highlight WDL syntax, or parse WDL files.
 homepage: https://github.com/broadinstitute/wdltool
 ---
+
 
 # wdltool
 

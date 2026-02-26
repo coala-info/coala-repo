@@ -1,8 +1,9 @@
 ---
 name: pglite
-description: PGlite is a specialized build of PostgreSQL compiled to WebAssembly, allowing it to function as a client-side or embedded library.
+description: PGlite is a WebAssembly-compiled version of PostgreSQL that runs natively within JavaScript environments as an embedded database. Use when user asks to run PostgreSQL in a browser or Node.js environment, implement local-first data persistence, or execute SQL queries within a client-side application without a separate server.
 homepage: https://github.com/electric-sql/pglite
 ---
+
 
 # pglite
 

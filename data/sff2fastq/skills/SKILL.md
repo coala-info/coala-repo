@@ -1,8 +1,9 @@
 ---
 name: sff2fastq
-description: The `sff2fastq` utility is a lightweight tool designed to extract read information from binary SFF files produced by 454 genome sequencers.
+description: sff2fastq extracts read information from binary SFF files and converts them into Sanger FASTQ format. Use when user asks to convert 454 sequencing data to FASTQ, extract trimmed or untrimmed sequences from SFF files, or stream compressed SFF data into a processing pipeline.
 homepage: https://github.com/indraniel/sff2fastq
 ---
+
 
 # sff2fastq
 

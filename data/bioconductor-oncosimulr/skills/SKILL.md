@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oncosimulr
-description: the package is available on all platforms; click for details.
+description: OncoSimulR simulates tumor progression and clonal evolution using fitness landscapes and somatic mutation models. Use when user asks to simulate cancer progression, model clonal evolution, or analyze fitness landscapes in tumor development.
 homepage: https://bioconductor.org/packages/release/bioc/html/OncoSimulR.html
 ---
+
 
 # bioconductor-oncosimulr
 

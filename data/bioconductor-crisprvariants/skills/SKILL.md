@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprvariants
-description: the package is available on all platforms; click for details.
+description: CrispRVariants analyzes and visualizes the range of variants produced in CRISPR-Cas9 mutagenesis experiments. Use when user asks to analyze CRISPR sequencing data, quantify genomic variants at target sites, or visualize mutation patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/CrispRVariants.html
 ---
+
 
 # bioconductor-crisprvariants
 

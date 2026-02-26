@@ -1,8 +1,9 @@
 ---
 name: nucdiff
-description: NucDiff is a comparative genomics tool designed to map and classify differences between two sets of DNA sequences.
+description: NucDiff is a comparative genomics tool that maps and classifies local, structural, and global differences between two sets of DNA sequences. Use when user asks to compare two genomes, identify structural rearrangements, classify SNPs and indels, or validate de novo assemblies against a reference.
 homepage: https://github.com/uio-cels/NucDiff
 ---
+
 
 # nucdiff
 

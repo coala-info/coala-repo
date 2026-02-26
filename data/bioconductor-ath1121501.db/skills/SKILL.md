@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ath1121501.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Affymetrix Arabidopsis ATH1 Genome Array probe identifiers to biological metadata. Use when user asks to map probe IDs to gene symbols, AGI locus IDs, chromosomal locations, GO terms, or KEGG and AraCyc pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501.db.html
 ---
+
 
 # bioconductor-ath1121501.db
 

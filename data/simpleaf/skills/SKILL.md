@@ -1,8 +1,9 @@
 ---
 name: simpleaf
-description: simpleaf is a high-level framework designed to simplify the single-cell RNA-seq processing pipeline.
+description: simpleaf is a high-level framework that simplifies single-cell RNA-seq processing by providing a unified interface for reference indexing and sample quantification. Use when user asks to build an expanded reference index, perform single-cell quantification, or process raw sequencing data into count matrices.
 homepage: https://github.com/COMBINE-lab/simpleaf
 ---
+
 
 # simpleaf
 

@@ -1,11 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermikit_seqtk
+baseCommand: seqtk
 label: fermikit_seqtk
-doc: "The provided text does not contain help information for the tool. It contains
-  system error messages related to a container runtime (Apptainer/Singularity) failing
-  to build an image due to insufficient disk space.\n\nTool homepage: https://github.com/lh3/fermikit"
-inputs: []
+doc: "A toolkit for processing sequences.\n\nTool homepage: https://github.com/lh3/fermikit"
+inputs:
+  - id: command
+    type: string
+    doc: 'The command to execute. Available commands: seq, size, comp, sample, subseq,
+      fqchk, mergepe, split, trimfq, hety, gc, mutfa, mergefa, famask, dropse, rename,
+      randbase, cutN, gap, listhet, hpc, telo'
+    inputBinding:
+      position: 1
+  - id: arguments
+    type:
+      type: array
+      items: string
+    doc: Arguments for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

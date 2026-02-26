@@ -1,8 +1,9 @@
 ---
 name: unikmer
-description: `unikmer` is a high-performance toolkit designed for k-mer analysis with a focus on taxonomic integration.
+description: unikmer is a high-performance toolkit for k-mer analysis, enabling taxonomic integration and set operations on k-mer sets. Use when user asks to count or sketch k-mers, perform set operations on k-mer sets, inspect or convert k-mer files, locate or map k-mers to a genome, or filter k-mers taxonomically.
 homepage: https://github.com/shenwei356/unikmer
 ---
+
 
 # unikmer
 

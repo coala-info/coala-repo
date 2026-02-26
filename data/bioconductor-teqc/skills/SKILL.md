@@ -1,8 +1,9 @@
 ---
 name: bioconductor-teqc
-description: the package is available on all platforms; click for details.
+description: TEQC performs quality control and assessment for targeted enrichment sequencing data. Use when user asks to evaluate capture efficiency, analyze coverage uniformity, or generate quality reports for targeted sequencing experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/TEQC.html
 ---
+
 
 # bioconductor-teqc
 

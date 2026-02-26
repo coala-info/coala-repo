@@ -1,8 +1,9 @@
 ---
 name: dbghaplo
-description: dbghaplo is a high-performance tool for phasing long-read sequencing data from heterogeneous samples.
+description: dbghaplo phases long-read sequencing data from heterogeneous samples using a SNP-encoded positional de Bruijn Graph approach. Use when user asks to phase long reads into distinct haplotypes, reconstruct viral quasispecies, or process high-depth amplicon sequencing data.
 homepage: https://github.com/bluenote-1577/dbghaplo
 ---
+
 
 # dbghaplo
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tumourmethdata
-description: the package is available on all platforms; click for details.
+description: This package provides access to curated DNA methylation datasets from various tumor types. Use when user asks to download tumor methylation data, access curated cancer epigenomic datasets, or retrieve DNA methylation profiles for research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TumourMethData.html
 ---
+
 
 # bioconductor-tumourmethdata
 

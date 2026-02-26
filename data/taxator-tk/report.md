@@ -1,9 +1,9 @@
 # taxator-tk CWL Generation Report
 
-## taxator-tk
+## taxator-tk_fasta-strip-identifier
 
 ### Tool Description
-A toolkit for taxonomic analysis of nucleotide sequences.
+Strips the identifier from FASTA sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/taxator-tk:1.3.3e--0
@@ -18,52 +18,47 @@ A toolkit for taxonomic analysis of nucleotide sequences.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/taxator-tk:1.3.3e--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Traceback (most recent call last):
+  File "/usr/local/bin/fasta-strip-identifier", line 21, in <module>
+    while line_outer:
+NameError: name 'line_outer' is not defined
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## taxator-tk_fasta-strip-identifier
-
-### Tool Description
-The provided text does not contain help information for the tool, but instead shows a container build error (FATAL: Unable to handle docker://... uri). Based on the tool name, this utility likely strips identifiers from FASTA files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/taxator-tk:1.3.3e--0
-- **Homepage**: https://github.com/fungs/taxator-tk
-- **Package**: https://anaconda.org/channels/bioconda/packages/taxator-tk/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/taxator-tk:1.3.3e--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## taxator-tk_taxator
 
 ### Tool Description
-Taxonomic sequence classifier (Note: The provided text contains system logs and a fatal error rather than help documentation; therefore, no arguments could be extracted).
+Specify a taxonomy mapping file for the reference sequence identifiers
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/taxator-tk:1.3.3e--0
 - **Homepage**: https://github.com/fungs/taxator-tk
 - **Package**: https://anaconda.org/channels/bioconda/packages/taxator-tk/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/taxator-tk:1.3.3e--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Specify a taxonomy mapping file for the reference sequence identifiers
+Allowed options:
+  -h [ --help ]                      show help message
+  --citation                         show citation info
+  --advanced-options                 show advanced program options
+  -a [ --algorithm ] arg (=rpa)      set the algorithm that is used to predict 
+                                     taxonomic ids from alignments
+  -g [ --seqid-taxid-mapping ] arg   filename of seqid->taxid mapping for 
+                                     reference
+  -q [ --query-sequences ] arg       query sequences FASTA
+  -v [ --query-sequences-index ] arg query sequences FASTA index, for 
+                                     out-of-memory operation; is created if not
+                                     existing
+  -f [ --ref-sequences ] arg         reference sequences FASTA
+  -i [ --ref-sequences-index ] arg   FASTA file index, for out-of-memory 
+                                     operation; is created if not existing
+  -p [ --processors ] arg (=1)       sets number of threads, number > 2 will 
+                                     heavily profit from multi-core 
+                                     architectures, set to 0 for max. 
+                                     performance
+  -l [ --logfile ] arg (=/dev/null)  specify name of file for logging 
+                                     (appending lines)
 ```
 

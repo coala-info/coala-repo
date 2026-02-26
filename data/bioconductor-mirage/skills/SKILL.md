@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirage
-description: The package contains functions for inferece of target gene regulation by miRNA, based on only target gene expression profile.
+description: MiRaGE infers miRNA-mediated regulation of target genes using only gene expression profiles. Use when user asks to infer miRNA regulation, analyze miRNA activity from expression data, or identify target gene regulation by miRNAs.
 homepage: https://bioconductor.org/packages/release/bioc/html/MiRaGE.html
 ---
+
 
 # bioconductor-mirage
 

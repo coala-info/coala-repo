@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-fileattribute
-description: MooseX::FileAttribute is a Moose extension designed to reduce boilerplate when defining attributes that represent filesystem paths.
+description: This Moose extension simplifies the definition of attributes representing filesystem paths by automatically applying Path::Class type constraints and coercions. Use when user asks to define file or directory attributes in Moose, reduce boilerplate for path handling, or enforce that a file path must exist on disk.
 homepage: https://github.com/moose/MooseX-FileAttribute
 ---
+
 
 # perl-moosex-fileattribute
 

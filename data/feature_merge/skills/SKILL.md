@@ -1,8 +1,9 @@
 ---
 name: feature_merge
-description: `feature_merge` is a specialized utility for processing genomic annotation files (GFF or GTF).
+description: This tool consolidates genomic annotation features from GFF or GTF files based on spatial proximity, feature types, and strand orientation. Use when user asks to merge genomic features, consolidate overlapping annotations, handle ID collisions between annotation files, or remove redundant sub-features.
 homepage: https://github.com/brinkmanlab/feature_merge
 ---
+
 
 # feature_merge
 

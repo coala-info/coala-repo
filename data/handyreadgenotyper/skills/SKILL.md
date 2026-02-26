@@ -1,8 +1,9 @@
 ---
 name: handyreadgenotyper
-description: The `handyreadgenotyper` tool (also known as `AmpliconTyper`) provides a specialized workflow for genotyping environmental ONT data.
+description: handyreadgenotyper genotypes environmental ONT data by training classification models on known samples and applying them to new sequencing reads. Use when user asks to train a classification model for target amplicons, genotype environmental samples, or classify reads based on specific SNPs.
 homepage: https://github.com/AntonS-bio/HandyReadGenotyper
 ---
+
 
 # handyreadgenotyper
 

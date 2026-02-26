@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pasillatranscriptexpr
-description: the package is available on all platforms; click for details.
+description: This package provides transcript-level expression data from the pasilla experiment in Drosophila melanogaster. Use when user asks to access example transcript expression data, perform differential expression analysis on the pasilla dataset, or explore alternative splicing results.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PasillaTranscriptExpr.html
 ---
+
 
 # bioconductor-pasillatranscriptexpr
 

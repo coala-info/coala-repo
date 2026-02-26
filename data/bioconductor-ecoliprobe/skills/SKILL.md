@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecoliprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and physical coordinates for Affymetrix E. coli microarrays. Use when user asks to access probe sequences, map probes to array coordinates, or analyze sequence-level information for E. coli genomic studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliprobe.html
 ---
+
 
 # bioconductor-ecoliprobe
 

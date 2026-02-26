@@ -1,8 +1,9 @@
 ---
 name: phyling
-description: Phyling is a specialized tool designed for fast and scalable phylogenomic inference.
+description: Phyling is a tool for fast and scalable phylogenomic inference that identifies single-copy orthologs and constructs species trees from annotated genomes. Use when user asks to download HMM marker sets, align sequences to identify orthologs, or build phylogenetic trees using concatenation or consensus methods.
 homepage: https://github.com/stajichlab/Phyling
 ---
+
 
 # phyling
 

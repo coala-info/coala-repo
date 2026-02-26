@@ -1,8 +1,9 @@
 ---
 name: transcriptm
-description: The transcriptm tool is a specialized pipeline designed to process metatranscriptomic data in the context of a reference metagenome.
+description: The transcriptm tool processes raw metatranscriptomic reads to generate normalized gene expression counts against a reference metagenome. Use when user asks to 'process metatranscriptomic data', 'quantify gene expression in microbial populations', 'map metatranscriptomic reads to a metagenome', or 'normalize gene expression counts'.
 homepage: https://github.com/elfrouin/transcriptM
 ---
+
 
 # transcriptm
 

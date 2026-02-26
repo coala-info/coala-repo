@@ -1,8 +1,9 @@
 ---
 name: sword
-description: SWORD (Smith Waterman On Reduced Database) is a specialized tool designed for protein sequence alignment.
+description: "SWORD performs protein sequence alignment using a heuristic filter followed by an optimal Smith-Waterman phase. Use when user asks to search a query sequence against a protein database, perform sensitive protein alignment, or use the Smith-Waterman algorithm on a reduced database."
 homepage: https://github.com/rvaser/sword
 ---
+
 
 # sword
 

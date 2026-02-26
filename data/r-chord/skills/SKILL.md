@@ -1,8 +1,9 @@
 ---
 name: r-chord
-description: R package chord (documentation from project home).
+description: This tool predicts Homologous Recombination Deficiency status and types from somatic mutation contexts using a random forest model. Use when user asks to predict HRD status, extract mutation signatures from VCF files, or classify samples as BRCA1-type or BRCA2-type deficient.
 homepage: https://cran.r-project.org/web/packages/chord/index.html
 ---
+
 
 # r-chord
 

@@ -1,8 +1,9 @@
 ---
 name: megapath-nano
-description: MegaPath-Nano is a specialized bioinformatics suite designed to handle the unique challenges of Oxford Nanopore Technologies (ONT) long-read metagenomic data.
+description: MegaPath-Nano is a bioinformatics suite designed for taxonomic profiling and antimicrobial resistance detection in Oxford Nanopore long-read metagenomic data. Use when user asks to perform data cleansing, identify pathogens at the strain level, detect AMR genes from reads or BAM files, or filter metagenomic amplicon data.
 homepage: https://github.com/HKU-BAL/MegaPath-Nano
 ---
+
 
 # megapath-nano
 

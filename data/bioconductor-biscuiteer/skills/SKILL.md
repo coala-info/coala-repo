@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biscuiteer
-description: the package is available on all platforms; click for details.
+description: The biscuiteer package processes and integrates output from the biscuit aligner into the Bioconductor ecosystem for advanced DNA methylation analysis. Use when user asks to load biscuit-formatted methylation data, estimate epigenetic age, combine multiple datasets, or prepare data for genomic compartment inference.
 homepage: https://bioconductor.org/packages/release/bioc/html/biscuiteer.html
 ---
+
 
 # bioconductor-biscuiteer
 

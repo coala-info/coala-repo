@@ -1,8 +1,9 @@
 ---
 name: r-pamr
-description: Some functions for sample classification in microarrays.</p>
+description: The r-pamr package implements the nearest shrunken centroids method for class prediction and feature selection in high-dimensional genomic data. Use when user asks to perform nearest shrunken centroids classification, identify diagnostic gene sets, or conduct cross-validation for threshold selection in microarray datasets.
 homepage: https://cloud.r-project.org/web/packages/pamr/index.html
 ---
+
 
 # r-pamr
 

@@ -1,8 +1,9 @@
 ---
 name: fishplotpy
-description: The `fishplotpy` skill provides a Python-based workflow for generating professional clonal evolution visualizations.
+description: fishplotpy generates clonal evolution visualizations by translating clonal fraction data and parent-child relationships into area-based fish plots. Use when user asks to visualize clonal evolution, generate fish plots of sub-clonal dynamics, or illustrate how sub-clones emerge from founders over time.
 homepage: https://github.com/Sayitobar/fishplotpy
 ---
+
 
 # fishplotpy
 

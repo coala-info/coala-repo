@@ -1,8 +1,9 @@
 ---
 name: bioconductor-loci2path
-description: the package is available on all platforms; click for details.
+description: Bioconductor-loci2path performs regulatory element-to-pathway enrichment analysis to link genomic loci with functional biological pathways. Use when user asks to perform pathway enrichment analysis for genomic regions, link SNPs to functional pathways, or identify biological themes in regulatory elements.
 homepage: https://bioconductor.org/packages/release/bioc/html/loci2path.html
 ---
+
 
 # bioconductor-loci2path
 

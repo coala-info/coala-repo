@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gosorensen
-description: the package is available on all platforms; click for details.
+description: This tool performs equivalence testing and calculates functional dissimilarity between gene lists based on Gene Ontology enrichment and the Sorensen-Dice index. Use when user asks to calculate functional dissimilarity between gene lists, perform equivalence testing to prove biological similarity, generate irrelevance-threshold dissimilarity matrices, or visualize gene list relationships via dendrograms and MDS biplots.
 homepage: https://bioconductor.org/packages/release/bioc/html/goSorensen.html
 ---
+
 
 # bioconductor-gosorensen
 

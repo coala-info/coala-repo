@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bambu
-description: the package is available on all platforms; click for details.
+description: Bambu performs transcript discovery and quantification from long-read RNA-Seq data. Use when user asks to identify novel isoforms, estimate transcript or gene abundance, or analyze long-read sequencing data from Nanopore or PacBio.
 homepage: https://bioconductor.org/packages/release/bioc/html/bambu.html
 ---
+
 
 # bioconductor-bambu
 

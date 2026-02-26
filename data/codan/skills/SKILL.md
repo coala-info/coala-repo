@@ -1,8 +1,9 @@
 ---
 name: codan
-description: CodAn (Coding sequence Annotator) is a specialized tool for characterizing the structure of eukaryotic transcripts by predicting CDS and UTR regions.
+description: CodAn predicts coding sequences and untranslated regions in eukaryotic transcripts to characterize their structure. Use when user asks to predict CDS and UTR regions, identify open reading frames, or annotate transcriptome assemblies using taxonomic-specific models.
 homepage: https://github.com/pedronachtigall/CodAn
 ---
+
 
 # codan
 

@@ -1,8 +1,9 @@
 ---
 name: r-ngsplot
-description: R package ngsplot (documentation from project home).
+description: r-ngsplot visualizes Next-Generation Sequencing data by generating average profiles and heatmaps across functional genomic elements. Use when user asks to generate average profiles, create heatmaps for genomic regions, visualize ChIP-seq or RNA-seq enrichment, or plot data across TSS and gene bodies.
 homepage: https://cran.r-project.org/web/packages/ngsplot/index.html
 ---
+
 
 # r-ngsplot
 

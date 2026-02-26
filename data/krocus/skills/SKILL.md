@@ -1,8 +1,9 @@
 ---
 name: krocus
-description: Krocus is a specialized genomic tool designed to predict sequence types (ST) directly from noisy, uncorrected long-read data.
+description: Krocus predicts sequence types directly from uncorrected long-read genomic data using a k-mer based alignment-free approach. Use when user asks to predict MLST sequence types from raw reads, download MLST schemas, or perform real-time sequence typing during a sequencing run.
 homepage: https://github.com/andrewjpage/krocus
 ---
+
 
 # krocus
 

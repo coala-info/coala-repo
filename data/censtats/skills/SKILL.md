@@ -1,8 +1,9 @@
 ---
 name: censtats
-description: `censtats` is a specialized bioinformatics toolkit designed for the statistical characterization of centromeres.
+description: censtats is a bioinformatics toolkit for the statistical characterization of centromeres, including the quantification of array lengths and sequence complexity. Use when user asks to estimate HOR array lengths, calculate sequence entropy, perform self-identity analysis, or identify non-redundant centromere sets.
 homepage: https://github.com/logsdon-lab/CenStats
 ---
+
 
 # censtats
 

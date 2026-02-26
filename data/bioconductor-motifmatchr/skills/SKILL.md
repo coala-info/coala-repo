@@ -1,8 +1,9 @@
 ---
 name: bioconductor-motifmatchr
-description: the package is available on all platforms; click for details.
+description: motifmatchr identifies motif matches in genomic sequences or ranges using position weight matrices. Use when user asks to find motif occurrences, match position weight matrices to DNA sequences, or identify transcription factor binding sites in genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/motifmatchr.html
 ---
+
 
 # bioconductor-motifmatchr
 

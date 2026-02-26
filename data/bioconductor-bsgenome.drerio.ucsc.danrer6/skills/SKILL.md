@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.drerio.ucsc.danrer6
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Danio rerio based on the UCSC danRer6 assembly for use in R. Use when user asks to access Zebrafish genomic sequences, extract specific chromosome data, perform genome-wide motif searching, or retrieve upstream sequences for gene models.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer6.html
 ---
+
 
 # bioconductor-bsgenome.drerio.ucsc.danrer6
 

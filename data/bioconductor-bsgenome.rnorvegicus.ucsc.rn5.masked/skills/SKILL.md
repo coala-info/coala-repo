@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.rnorvegicus.ucsc.rn5.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the masked genome sequences for Rattus norvegicus based on the UCSC rn5 assembly. Use when user asks to access rat genome sequences with assembly gaps, ambiguities, or repeat masks, manage active sequence masks, or analyze non-masked genomic regions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Rnorvegicus.UCSC.rn5.masked.html
 ---
+
 
 # bioconductor-bsgenome.rnorvegicus.ucsc.rn5.masked
 

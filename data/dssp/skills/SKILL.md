@@ -1,8 +1,9 @@
 ---
 name: dssp
-description: DSSP (Define Secondary Structure of Proteins) is a specialized tool designed to standardize the assignment of secondary structure elements to protein entries.
+description: DSSP assigns secondary structure elements to protein structures based on 3D coordinates and hydrogen bonding patterns. Use when user asks to assign secondary structure codes, process mmCIF or PDB files for structural annotation, or identify specific motifs like alpha helices and beta strands.
 homepage: https://github.com/PDB-REDO/dssp
 ---
+
 
 # dssp
 

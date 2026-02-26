@@ -1,8 +1,9 @@
 ---
 name: riboplot
-description: The `riboplot` skill (utilizing the RiboPlotR package) enables the visualization of translation dynamics by plotting RNA-seq coverage and Ribo-seq P-site positions against transcript models.
+description: riboplot visualizes translation dynamics by plotting RNA-seq coverage and Ribo-seq P-site positions against transcript models. Use when user asks to visualize translation events, identify translated isoforms, detect frameshifts, or plot Ribo-seq data against gene structures.
 homepage: https://github.com/hsinyenwu/RiboPlotR
 ---
+
 
 # riboplot
 

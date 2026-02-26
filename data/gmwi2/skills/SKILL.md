@@ -1,8 +1,9 @@
 ---
 name: gmwi2
-description: GMWI2 (Gut Microbiome Wellness Index 2) is a command-line tool designed to predict health status based on taxonomic profiles derived from stool shotgun metagenomes.
+description: GMWI2 predicts health status and calculates wellness scores from stool shotgun metagenomic data or existing taxonomic profiles. Use when user asks to predict health status from metagenomes, calculate a gut microbiome wellness index, or process MetaPhlAn results into wellness scores.
 homepage: https://github.com/danielchang2002/GMWI2
 ---
+
 
 # gmwi2
 

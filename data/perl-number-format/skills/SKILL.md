@@ -1,8 +1,9 @@
 ---
 name: perl-number-format
-description: The `perl-number-format` skill enables the transformation of raw numbers into localized or custom-formatted strings.
+description: This tool formats raw numbers into localized strings, human-readable byte sizes, or rounded values. Use when user asks to format numbers with separators, convert bytes to human-readable units, round numeric values, or parse formatted strings back into raw numbers.
 homepage: http://metacpan.org/pod/Number::Format
 ---
+
 
 # perl-number-format
 

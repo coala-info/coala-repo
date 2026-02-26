@@ -1,8 +1,9 @@
 ---
 name: bioconductor-motifdb
-description: the package is available on all platforms; click for details.
+description: MotifDb provides a unified collection of protein-DNA binding sequence motifs from multiple public databases for use in R. Use when user asks to retrieve transcription factor binding motifs, query motif databases, or access DNA binding site sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/MotifDb.html
 ---
+
 
 # bioconductor-motifdb
 

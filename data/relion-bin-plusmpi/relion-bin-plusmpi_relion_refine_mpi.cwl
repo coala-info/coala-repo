@@ -1,10 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: relion_refine_mpi
+baseCommand: relion-bin-plusmpi_relion_refine_mpi
 label: relion-bin-plusmpi_relion_refine_mpi
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a container execution error log.\n\nTool homepage: https://github.com/3dem/relion"
-inputs: []
+doc: "RELION MPI setup\n\nTool homepage: https://github.com/3dem/relion"
+inputs:
+  - id: master_host
+    type:
+      - 'null'
+      - string
+    doc: Master (0) runs on host
+    inputBinding:
+      position: 101
+  - id: num_mpi_processes
+    type:
+      - 'null'
+      - int
+    doc: Number of MPI processes
+    default: 1
+    inputBinding:
+      position: 101
 outputs:
   - id: stdout
     type: stdout

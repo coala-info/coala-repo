@@ -3,7 +3,7 @@
 ## tophat-recondition
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is a log of a failed container build process.
+Post-process TopHat unmapped reads. Corrects issues with TopHat unmapped read files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tophat-recondition:1.4--py35_0
@@ -18,33 +18,33 @@ The provided text does not contain help information for the tool; it is a log of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tophat-recondition:1.4--py35_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: tophat-recondition [-h] [-l LOGFILE] [-m MAPPED_FILE] [-q]
+                          [-r RESULT_DIR] [-u UNMAPPED_FILE] [-v]
+                          tophat_result_dir
 
+Post-process TopHat unmapped reads. For detailed information on the issues
+this software corrects, please consult the software homepage:
+https://github.com/cbrueffer/tophat-recondition
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  tophat_result_dir     directory containing TopHat mapped and unmapped read
+                        files.
 
-## tophat-recondition_tophat-recondition.py
-
-### Tool Description
-A post-processor for TopHat unmapped reads. (Note: The provided text contains container build logs rather than tool help text, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tophat-recondition:1.4--py35_0
-- **Homepage**: https://github.com/cbrueffer/tophat-recondition
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tophat-recondition:1.4--py35_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LOGFILE, --logfile LOGFILE
+                        log file (optional, (default: result_dir/tophat-
+                        recondition.log)
+  -m MAPPED_FILE, --mapped-file MAPPED_FILE
+                        Name of the file containing mapped reads (default:
+                        accepted_hits.bam)
+  -q, --quiet           quiet mode, no console output
+  -r RESULT_DIR, --result_dir RESULT_DIR
+                        directory to write unmapped_fixup.bam to (default:
+                        tophat_output_dir)
+  -u UNMAPPED_FILE, --unmapped-file UNMAPPED_FILE
+                        Name of the file containing unmapped reads (default:
+                        unmapped.bam)
+  -v, --version         show program's version number and exit
 ```
 

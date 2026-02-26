@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methvisual
-description: The package 'methVisual' allows the visualization of DNA methylation data after bisulfite sequencing.
+description: "methVisual visualizes DNA methylation data after bisulfite sequencing. Use when user asks to visualize DNA methylation data, analyze bisulfite sequencing results, or generate methylation plots."
 homepage: https://bioconductor.org/packages/3.8/bioc/html/methVisual.html
 ---
+
 
 # bioconductor-methvisual
 

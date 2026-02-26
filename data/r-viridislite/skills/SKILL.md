@@ -1,8 +1,9 @@
 ---
 name: r-viridislite
-description: "Color maps designed to improve graph readability for readers with      common forms of color blindness and/or color vision deficiency. The color      maps are also perceptually-uniform, both in regular form and also when      converted to black-and-white for printing."
+description: The r-viridislite tool generates colorblind-friendly and perceptually-uniform color palettes for R programming. Use when user asks to generate accessible color maps, create hex color codes for R graphics, or implement lightweight viridis scales that remain readable in grayscale.
 homepage: https://cloud.r-project.org/web/packages/viridisLite/index.html
 ---
+
 
 # r-viridislite
 

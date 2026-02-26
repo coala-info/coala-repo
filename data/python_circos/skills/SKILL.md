@@ -1,8 +1,9 @@
 ---
 name: python_circos
-description: The `python_circos` (pyCircos) skill enables the programmatic generation of circular plots directly within Python.
+description: python_circos generates circular genomic plots and data visualizations using a Matplotlib backend. Use when user asks to create circular plots, visualize genomic segments as arcs, add data tracks like line or bar plots, or draw chord diagrams to show relationships between locations.
 homepage: https://github.com/ponnhide/pyCircos
 ---
+
 
 # python_circos
 

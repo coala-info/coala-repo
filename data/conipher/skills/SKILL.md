@@ -1,8 +1,9 @@
 ---
 name: conipher
-description: CONIPHER (COmputational iNference of PHylogeny in sEquencing Reads) is an R-based tool designed for cancer genomics research.
+description: CONIPHER automates the grouping of somatic mutations into subclonal clusters and reconstructs the phylogenetic evolutionary history of tumors. Use when user asks to infer subclonal architecture, cluster mutations from multi-region sequencing data, or build tumor phylogenetic trees.
 homepage: https://github.com/McGranahanLab/CONIPHER/
 ---
+
 
 # conipher
 

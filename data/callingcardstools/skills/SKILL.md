@@ -1,8 +1,9 @@
 ---
 name: callingcardstools
-description: callingcardstools is a specialized suite of command-line utilities and a Python API designed to process raw Calling Cards sequencing data.
+description: callingcardstools is a suite of command-line utilities and a Python API designed to process raw Calling Cards sequencing data to identify transposon insertion sites and analyze genomic enrichment. Use when user asks to call peaks, calculate enrichment at genomic features, perform rank response analysis, or process yeast and mammalian sequencing data.
 homepage: https://github.com/cmatKhan/callingCardsTools
 ---
+
 
 # callingcardstools
 

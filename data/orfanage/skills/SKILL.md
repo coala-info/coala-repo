@@ -1,8 +1,9 @@
 ---
 name: orfanage
-description: ORFanage is a specialized bioinformatics tool designed to find the best-matching ORF for transcripts by using existing reference annotations as templates.
+description: ORFanage identifies optimal open reading frames for transcripts by using reference annotations as templates. Use when user asks to find ORFs in novel transcripts, rescue truncated coding sequences, or annotate transcripts using known protein-coding evidence.
 homepage: https://github.com/alevar/ORFanage
 ---
+
 
 # orfanage
 

@@ -1,8 +1,9 @@
 ---
 name: cdst
-description: CDST (CoDing Sequence Typer) is a lightweight, decentralized tool for whole-genome or core-genome multi-locus sequence typing (wgMLST/cgMLST).
+description: CDST performs decentralized multi-locus sequence typing by using MD5 hashes of coding sequences to identify alleles and cluster bacterial isolates. Use when user asks to perform wgMLST or cgMLST, generate distance matrices, create minimum spanning trees, or merge decentralized allele databases.
 homepage: https://github.com/l1-mh/CDST
 ---
+
 
 # cdst
 

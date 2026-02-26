@@ -1,8 +1,9 @@
 ---
 name: vcf_parser
-description: The `vcf_parser` skill enables efficient handling of genomic variant data.
+description: vcf_parser processes and navigates genomic variant call format (VCF) files. Use when user asks to split multiallelic variants, access genotype attributes, or create new VCF files.
 homepage: https://github.com/moonso/vcf_parser
 ---
+
 
 # vcf_parser
 

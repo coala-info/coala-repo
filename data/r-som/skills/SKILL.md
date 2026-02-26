@@ -1,8 +1,9 @@
 ---
 name: r-som
-description: Self-Organizing Map (with application in gene clustering).</p>
+description: This tool implements Self-Organizing Maps for unsupervised learning, clustering, and dimensionality reduction of high-dimensional data. Use when user asks to train a SOM, cluster gene expression profiles, normalize datasets for neural networks, or visualize complex patterns in a low-dimensional grid.
 homepage: https://cloud.r-project.org/web/packages/som/index.html
 ---
+
 
 # r-som
 

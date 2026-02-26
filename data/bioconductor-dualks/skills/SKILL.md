@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dualks
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs multi-class classification and discriminant analysis of gene expression data using the Kolmogorov-Smirnov rank-sum statistic. Use when user asks to identify gene signatures for biological classes, classify gene expression samples, or perform discriminant analysis using KS scores.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/dualKS.html
 ---
+
 
 # bioconductor-dualks
 

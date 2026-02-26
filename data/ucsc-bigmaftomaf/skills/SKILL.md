@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigmaftomaf
-description: The `ucsc-bigmaftomaf` skill facilitates the restoration of genomic alignments from the compressed, indexed bigMaf format into the human-readable Multiple Alignment Format (MAF).
+description: The ucsc-bigmaftomaf tool converts genomic alignments from bigMaf format to MAF format. Use when user asks to convert bigMaf to MAF, restore genomic alignments, or prepare bigMaf files for command-line analysis.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-bigmaftomaf
 

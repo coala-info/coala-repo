@@ -1,8 +1,9 @@
 ---
 name: pyega3
-description: The `pyega3` skill provides a specialized interface for the official European Genome-phenome Archive (EGA) Python download client.
+description: The pyega3 tool provides a command-line interface for securely downloading genomic datasets and files from the European Genome-phenome Archive. Use when user asks to list authorized datasets, download specific files or entire datasets, or retrieve genomic range slices using the htsget protocol.
 homepage: https://github.com/EGA-archive/ega-download-client
 ---
+
 
 # pyega3
 

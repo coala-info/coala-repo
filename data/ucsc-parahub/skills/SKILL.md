@@ -1,8 +1,9 @@
 ---
 name: ucsc-parahub
-description: The `ucsc-parahub` package is a component of the Parasol system, a lightweight job control system developed by the UCSC Genome Browser team.
+description: ucsc-parahub manages and distributes large batches of computational jobs across a cluster of machines. Use when user asks to configure the hub server, manage worker nodes, start or stop the hub, start or stop worker nodes, check node status, submit job lists, check the job queue, manage job priorities, test worker node configuration, or synchronize files across a cluster.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-parahub
 

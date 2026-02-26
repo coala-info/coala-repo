@@ -2,10 +2,23 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: nanometa-live
 label: nanometa-live
-doc: "A tool for real-time taxonomic analysis of Nanopore metagenomic data (Note:
-  Provided help text contained only system error logs and no usage information).\n
-  \nTool homepage: https://github.com/FOI-Bioinformatics/nanometa_live"
-inputs: []
+doc: "Starting the Nanometa Live pipeline.\n\nTool homepage: https://github.com/FOI-Bioinformatics/nanometa_live"
+inputs:
+  - id: config
+    type:
+      - 'null'
+      - File
+    doc: Path to the configuration file.
+    default: config.yaml
+    inputBinding:
+      position: 101
+      prefix: --config
+  - id: path
+    type: Directory
+    doc: The path to the project directory.
+    inputBinding:
+      position: 101
+      prefix: --path
 outputs:
   - id: stdout
     type: stdout

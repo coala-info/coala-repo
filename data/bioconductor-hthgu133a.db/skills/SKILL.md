@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hthgu133a.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Affymetrix Human Genome U133A platform. Use when user asks to map manufacturer probe identifiers to biological metadata, retrieve gene symbols or Entrez IDs, and perform GO or KEGG pathway annotations in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133a.db.html
 ---
+
 
 # bioconductor-hthgu133a.db
 

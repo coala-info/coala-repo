@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pdatk
-description: the package is available on all platforms; click for details.
+description: PDATK provides a toolkit for phenotype-driven analysis and the discovery of gene signatures in genomic data. Use when user asks to identify molecular signatures, perform phenotype classification, or validate biomarkers across genomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/PDATK.html
 ---
+
 
 # bioconductor-pdatk
 

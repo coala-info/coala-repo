@@ -1,8 +1,9 @@
 ---
 name: bioconductor-impcdata
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface to access and retrieve phenotyping data from the International Mouse Phenotyping Consortium (IMPC) database. Use when user asks to explore IMPC pipelines and procedures, list phenotyping centers, or download mouse phenotyping datasets for statistical analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/IMPCdata.html
 ---
+
 
 # bioconductor-impcdata
 

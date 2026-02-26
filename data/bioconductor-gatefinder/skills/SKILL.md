@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gatefinder
-description: the package is available on all platforms; click for details.
+description: This tool identifies optimal gating strategies for flow and mass cytometry data using projection-based convex hulls. Use when user asks to identify a sequence of 2D gates to isolate a target cell population, automate gating strategy discovery, or optimize precision and recall for cytometry data analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/GateFinder.html
 ---
+
 
 # bioconductor-gatefinder
 

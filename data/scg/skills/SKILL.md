@@ -1,8 +1,9 @@
 ---
 name: scg
-description: The Single Cell Genotyper (SCG) is a statistical framework used to infer the clonal evolution and population structure of tumors from single-cell sequencing.
+description: The Single Cell Genotyper is a statistical framework for inferring clonal evolution and subclonal population structure from single-cell sequencing data. Use when user asks to infer clonal evolution, perform subclonal clustering, or call genotypes from single-cell experiments.
 homepage: https://bitbucket.org/aroth85/scg/wiki/Home
 ---
+
 
 # scg
 

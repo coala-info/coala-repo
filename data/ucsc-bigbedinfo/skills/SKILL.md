@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigbedinfo
-description: The `bigBedInfo` utility is a specialized tool from the UCSC Genome Browser group used to retrieve header information and summary statistics from bigBed files.
+description: The ucsc-bigbedinfo tool retrieves header information and summary statistics from bigBed files. Use when user asks to 'get bigBed file header information', 'list chromosomes', 'display the schema', 'get the item count', or 'get summary statistics'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigbedinfo
 

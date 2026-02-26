@@ -1,8 +1,9 @@
 ---
 name: tedna
-description: Tedna is a specialized, lightweight assembler designed to extract and assemble transposable elements (TEs) directly from sequencing reads.
+description: Tedna is a lightweight assembler designed to extract and assemble transposable elements directly from sequencing reads using high-frequency k-mers. Use when user asks to assemble transposable elements, discover repetitive genomic components, or perform de novo assembly of repeats from short or long sequencing reads.
 homepage: https://github.com/mzytnicki/tedna
 ---
+
 
 # tedna
 

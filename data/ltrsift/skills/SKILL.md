@@ -1,8 +1,9 @@
 ---
 name: ltrsift
-description: ltrsift is a specialized tool designed for the downstream analysis of LTR (Long Terminal Repeat) retrotransposons.
+description: ltrsift is a postprocessing tool for the classification, refinement, and visualization of LTR retrotransposon candidates in genomic sequences. Use when user asks to filter LTR retrotransposon candidates, visualize genomic features, or classify retrotransposons using rule-based analysis.
 homepage: https://github.com/satta/ltrsift
 ---
+
 
 # ltrsift
 

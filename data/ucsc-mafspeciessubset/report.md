@@ -3,7 +3,7 @@
 ## ucsc-mafspeciessubset
 
 ### Tool Description
-Extract a subset of species from a MAF file.
+Extract a subset of species from a MAF (Multiple Alignment Format) file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0
@@ -18,13 +18,68 @@ Extract a subset of species from a MAF file.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-mafspeciessubset
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+03ae155a6375: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob4079777506: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## ucsc-mafspeciessubset_mafSpeciesList
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0
+- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
+- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-mafspeciessubset/overview
+- **Validation**: FAIL (generation failed)
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+### Validation Errors
+- No inputs — do not generate CWL.
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-mafspeciessubset
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+03ae155a6375: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2421212437: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+## ucsc-mafspeciessubset_mafFilter
+
+### Tool Description
+Filter a MAF (Multiple Alignment Format) file based on species, score, or completeness.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0
+- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
+- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-mafspeciessubset/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/ucsc-mafspeciessubset:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-mafspeciessubset
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+03ae155a6375: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2092364348: no space left on device
+
+Run 'docker run --help' for more information
+```
+

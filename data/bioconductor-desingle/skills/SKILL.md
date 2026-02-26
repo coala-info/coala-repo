@@ -1,8 +1,9 @@
 ---
 name: bioconductor-desingle
-description: the package is available on all platforms; click for details.
+description: DEsingle performs differential expression analysis for single-cell RNA-seq data using a zero-inflated negative binomial model to distinguish between biological and technical zeros. Use when user asks to detect differentially expressed genes between two cell groups, classify DE genes into regulatory types based on expression status and abundance, or perform statistical testing on raw scRNA-seq read counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEsingle.html
 ---
+
 
 # bioconductor-desingle
 

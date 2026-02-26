@@ -1,8 +1,9 @@
 ---
 name: xpressplot
-description: XPRESSplot is a specialized Python toolkit designed to streamline the exploration of genomic expression data.
+description: XPRESSplot is a Python toolkit for exploring and visualizing genomic expression data. Use when user asks to 'process gene-by-sample dataframes', 'visualize differential expression', or 'standardize gene identifiers'.
 homepage: https://github.com/XPRESSyourself/XPRESSplot
 ---
+
 
 # xpressplot
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sigsquared
-description: the package is available on all platforms; click for details.
+description: This R package generates gene signatures and classifies samples using RNA-seq expression data. Use when user asks to generate gene signatures, score gene expression datasets, or perform sample classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/sigsquared.html
 ---
+
 
 # bioconductor-sigsquared
 

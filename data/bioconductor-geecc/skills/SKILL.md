@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geecc
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-geecc performs gene set enrichment analysis using log-linear models for 2x2 and 2x2x2 contingency tables. Use when user asks to perform enrichment analysis between two or three categories, detect mutual or joint independence between genomic variables, or account for biases like sequence length and GC content in gene sets.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/geecc.html
 ---
+
 
 # bioconductor-geecc
 

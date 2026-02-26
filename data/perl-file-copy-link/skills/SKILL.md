@@ -1,8 +1,9 @@
 ---
 name: perl-file-copy-link
-description: The `perl-file-copy-link` tool (and its associated Perl module `File::Copy::Link`) provides a reliable way to transform symbolic links into regular files.
+description: This tool replaces symbolic links with copies of their target files. Use when user asks to transform symlinks into regular files, replace a link with its actual content, or freeze a linked resource.
 homepage: https://metacpan.org/pod/File::Copy::Link
 ---
+
 
 # perl-file-copy-link
 

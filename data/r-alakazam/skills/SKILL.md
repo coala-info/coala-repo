@@ -1,8 +1,9 @@
 ---
 name: r-alakazam
-description: "Provides methods for high-throughput adaptive immune      receptor repertoire sequencing (AIRR-Seq; Rep-Seq) analysis. In      particular, immunoglobulin (Ig) sequence lineage reconstruction,      lineage topology analysis, diversity profiling, amino acid property      analysis and gene usage."
+description: The alakazam package provides tools for high-throughput B cell and T cell repertoire analysis, including clonal diversity estimation and gene usage quantification. Use when user asks to analyze clonal abundance, calculate diversity curves, quantify V(D)J gene usage, or evaluate physicochemical properties of CDR3 sequences.
 homepage: https://cran.r-project.org/web/packages/alakazam/index.html
 ---
+
 
 # r-alakazam
 

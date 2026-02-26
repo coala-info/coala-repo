@@ -1,8 +1,9 @@
 ---
 name: bioconductor-inspect
-description: the package is available on all platforms; click for details.
+description: This tool infers RNA synthesis, processing, and degradation rates from transcriptomic data using ordinary differential equations. Use when user asks to analyze RNA dynamics in time-course or steady-state experiments, model RNA life-cycle kinetics from RNA-seq or 4sU-seq data, or quantify intronic and exonic expressions to estimate kinetic rates.
 homepage: https://bioconductor.org/packages/release/bioc/html/INSPEcT.html
 ---
+
 
 # bioconductor-inspect
 

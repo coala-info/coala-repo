@@ -1,8 +1,9 @@
 ---
 name: r-dndscv
-description: R package dndscv (documentation from project home).
+description: This tool quantifies selection in cancer and somatic evolution by calculating dN/dS ratios for somatic mutations. Use when user asks to detect cancer driver genes, estimate dN/dS ratios for different mutation types, or build custom reference databases for somatic mutation analysis.
 homepage: https://cran.r-project.org/web/packages/dndscv/index.html
 ---
+
 
 # r-dndscv
 

@@ -1,8 +1,9 @@
 ---
 name: perl-graphviz
-description: The `perl-graphviz` skill facilitates the creation of graph-based visualizations through Perl scripts.
+description: This tool creates graph-based visualizations and diagrams using Perl scripts to interface with the Graphviz toolset. Use when user asks to generate hierarchical or radial graphs, define nodes and edges with specific attributes, or render network layouts into formats like PNG and SVG.
 homepage: https://metacpan.org/pod/GraphViz
 ---
+
 
 # perl-graphviz
 

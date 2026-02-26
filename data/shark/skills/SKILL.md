@@ -1,8 +1,9 @@
 ---
 name: shark
-description: The `shark` tool provides a high-speed, memory-efficient method for isolating reads belonging to specific genes of interest from an RNA-Seq dataset.
+description: The shark tool performs mapping-free isolation of RNA-Seq reads belonging to specific genes of interest using Bloom filters and k-mer indexing. Use when user asks to fish relevant reads from a dataset, filter reads by gene, or perform targeted read extraction without full alignment.
 homepage: https://algolab.github.io/shark/
 ---
+
 
 # shark
 

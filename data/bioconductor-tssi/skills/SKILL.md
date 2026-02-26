@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tssi
-description: the package is available on all platforms; click for details.
+description: TSSi identifies transcription start sites from high-throughput sequencing data. Use when user asks to identify transcription start sites, cluster 5' end sequencing reads, or analyze promoter regions.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/TSSi.html
 ---
+
 
 # bioconductor-tssi
 

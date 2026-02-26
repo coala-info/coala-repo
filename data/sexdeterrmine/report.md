@@ -3,7 +3,7 @@
 ## sexdeterrmine
 
 ### Tool Description
-A tool for sex determination from sequencing data (Note: The provided help text appears to be a container build error log and does not contain usage information).
+Calculate the relative X- and Y-chromosome coverage of data, as well as the associated error bars for each.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sexdeterrmine:1.1.2--hdfd78af_1
@@ -18,35 +18,20 @@ A tool for sex determination from sequencing data (Note: The provided help text 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sexdeterrmine:1.1.2--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:769449c4469a271f5eb8d9f4cc57aff08040d84e1b2dea80186a1fb4e6dd7d37: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /tmp/build-temp-2733140477/rootfs/usr/local/bin/python3.9: no space left on device
-```
+usage: sexdeterrmine [-h] [-I <INPUT FILE>] [-f SAMPLELIST] [-v]
 
+Calculate the relative X- and Y-chromosome coverage of data, as well as the
+associated error bars for each.
 
-## Metadata
-- **Skill**: generated
-
-## sexdeterrmine_Sex.DetERRmine.py
-
-### Tool Description
-A tool for sex determination from sequencing data (Note: The provided text is a container build error log and does not contain help documentation or argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sexdeterrmine:1.1.2--hdfd78af_1
-- **Homepage**: https://github.com/TCLamnidis/Sex.DetERRmine
-- **Package**: https://anaconda.org/channels/bioconda/packages/sexdeterrmine/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sexdeterrmine:1.1.2--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:769449c4469a271f5eb8d9f4cc57aff08040d84e1b2dea80186a1fb4e6dd7d37: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /tmp/build-temp-1668369487/rootfs/usr/local/bin/python3.9: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -I <INPUT FILE>, --Input <INPUT FILE>
+                        The input samtools depth file. Omit to read from
+                        stdin.
+  -f SAMPLELIST, --SampleList SAMPLELIST
+                        A list of samples/bams that were in the depth file.
+                        One per line. Should be in the order of the samtools
+                        depth output.
+  -v, --version         Print the version of the script and exit.
 ```
 

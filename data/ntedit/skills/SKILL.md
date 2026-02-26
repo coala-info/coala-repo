@@ -1,8 +1,9 @@
 ---
 name: ntedit
-description: ntEdit is a high-performance genomics application designed for the rapid refinement of genome assemblies.
+description: ntEdit is a high-performance genomics tool that rapidly refines and corrects errors in genome assemblies using k-mer analysis and Bloom filters. Use when user asks to polish genome assemblies, correct draft sequences using short or long reads, or perform k-mer-based SNV detection.
 homepage: https://github.com/bcgsc/ntEdit
 ---
+
 
 # ntedit
 

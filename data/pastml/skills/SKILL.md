@@ -1,8 +1,9 @@
 ---
 name: pastml
-description: PastML is a specialized tool for mapping discrete characters onto rooted phylogenetic trees.
+description: PastML reconstructs ancestral states by mapping discrete characters onto rooted phylogenetic trees and generating interactive visualizations. Use when user asks to reconstruct ancestral scenarios, map discrete characters onto phylogenetic trees, select inference models like MPPA, or generate interactive HTML visualizations.
 homepage: https://pastml.pasteur.fr
 ---
+
 
 # pastml
 

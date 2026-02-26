@@ -1,8 +1,9 @@
 ---
 name: perl-file-next
-description: This skill provides guidance on implementing `File::Next` within Perl applications.
+description: This tool provides a memory-efficient iterator for traversing and filtering file systems in Perl. Use when user asks to iterate through directories, filter files during traversal, or process large directory structures without high memory consumption.
 homepage: http://metacpan.org/pod/File::Next
 ---
+
 
 # perl-file-next
 

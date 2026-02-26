@@ -1,8 +1,9 @@
 ---
 name: porechop_abi
-description: Porechop_ABI is an extension of the original Porechop tool designed to handle Oxford Nanopore Technologies (ONT) reads using an "ab initio" approach.
+description: Porechop_ABI discovers and trims adapter sequences from Oxford Nanopore reads using an ab initio approach based on k-mer counting and graph assembly. Use when user asks to infer adapter sequences, perform automated trimming of ONT reads, or identify novel adapters without a reference database.
 homepage: https://github.com/bonsai-team/Porechop_ABI
 ---
+
 
 # porechop_abi
 

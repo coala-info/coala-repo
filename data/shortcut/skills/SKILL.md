@@ -1,8 +1,9 @@
 ---
 name: shortcut
-description: ShortCut is a streamlined pipeline for the initial processing of small RNA-seq (sRNA-seq) datasets.
+description: ShortCut is a streamlined pipeline for the initial processing, alignment, and annotation of small RNA-seq datasets. Use when user asks to process sRNA-seq libraries, trim adapter sequences, analyze read size distributions, or perform alignment and annotation of miRNAs and siRNAs.
 homepage: https://github.com/Aez35/ShortCut
 ---
+
 
 # shortcut
 

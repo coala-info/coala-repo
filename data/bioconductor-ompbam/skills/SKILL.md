@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ompbam
-description: the package is available on all platforms; click for details.
+description: The ompBAM package provides a C++ header-only library for parallelizing the processing of BAM files using OpenMP. Use when user asks to parallelize BAM file reading, write C++ extensions for genomic data processing, or implement multi-threaded sequence analysis in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/ompBAM.html
 ---
+
 
 # bioconductor-ompbam
 

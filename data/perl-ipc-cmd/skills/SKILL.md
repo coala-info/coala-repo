@@ -1,8 +1,9 @@
 ---
 name: perl-ipc-cmd
-description: The `IPC::Cmd` module provides a robust, cross-platform method for executing shell commands within Perl.
+description: This Perl module provides a cross-platform interface for executing shell commands and capturing their output. Use when user asks to execute shell commands in Perl, check if an executable exists in the PATH, or capture command output and error streams separately.
 homepage: http://metacpan.org/pod/IPC::Cmd
 ---
+
 
 # perl-ipc-cmd
 

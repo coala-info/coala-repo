@@ -1,8 +1,9 @@
 ---
 name: r-bigmemory.sri
-description: A shared resource interface for the bigmemory and synchronicity packages.</p>
+description: This tool provides a shared resource interface for managing and describing shared memory objects across different R sessions. Use when user asks to describe shared resources, attach to shared memory objects, or manage metadata for parallel computing in R.
 homepage: https://cloud.r-project.org/web/packages/bigmemory.sri/index.html
 ---
+
 
 # r-bigmemory.sri
 

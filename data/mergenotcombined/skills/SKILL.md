@@ -1,8 +1,9 @@
 ---
 name: mergenotcombined
-description: mergenotcombined is a specialized C-based utility designed for processing paired-end sequencing data.
+description: mergenotcombined joins paired-end sequencing reads into a single sequence by inserting a spacer string between the forward read and the reverse complement of the reverse read. Use when user asks to join paired-end reads without overlapping, create a single-sequence representation of a pair, or append a spacer string between R1 and the reverse complement of R2.
 homepage: https://github.com/andvides/mergeNotCombined.git
 ---
+
 
 # mergenotcombined
 

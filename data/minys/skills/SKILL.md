@@ -1,8 +1,9 @@
 ---
 name: minys
-description: MinYS (MineYourSymbiont) is a specialized bioinformatics pipeline for reconstructing target genomes from metagenomic samples using a reference-guided approach.
+description: MinYS is a bioinformatics pipeline that reconstructs target genomes from metagenomic samples using a reference-guided assembly approach. Use when user asks to assemble symbiont genomes, perform reference-guided metagenomic assembly, or fill gaps between contigs using sequencing reads.
 homepage: https://github.com/cguyomar/MinYS
 ---
+
 
 # minys
 

@@ -1,8 +1,9 @@
 ---
 name: perl-xml-xpath
-description: The `perl-xml-xpath` tool provides a way to interact with XML documents using the XPath (XML Path Language) specification.
+description: This tool navigates and extracts data from XML documents using the XPath specification via a command-line utility or Perl API. Use when user asks to extract specific elements or attributes from XML files, navigate complex XML structures, or perform programmatic XML processing in Perl.
 homepage: https://metacpan.org/pod/XML::XPath
 ---
+
 
 # perl-xml-xpath
 

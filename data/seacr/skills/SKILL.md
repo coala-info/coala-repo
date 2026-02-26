@@ -1,8 +1,9 @@
 ---
 name: seacr
-description: SEACR (Sparse Enrichment Analysis for CUT&RUN) is a peak caller specifically designed for high-sensitivity, low-background chromatin profiling data.
+description: SEACR is a peak caller designed to identify enriched regions in high-sensitivity, low-background chromatin profiling data like CUT&RUN and CUT&Tag. Use when user asks to call peaks from bedgraph files, perform sparse enrichment analysis, or identify chromatin footprints using control-based or numeric thresholding.
 homepage: https://github.com/FredHutch/SEACR
 ---
+
 
 # seacr
 

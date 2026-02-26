@@ -1,8 +1,9 @@
 ---
 name: music-deconvolution
-description: MuSiC (Multi-subject Single Cell Deconvolution) is an R-based analysis toolkit that utilizes cross-subject scRNA-seq data as a reference to estimate cell type proportions in bulk RNA-seq samples.
+description: MuSiC is an R-based toolkit that estimates cell type proportions in bulk RNA-seq samples using multi-subject single-cell RNA-seq data as a reference. Use when user asks to perform bulk RNA-seq deconvolution, estimate cell type proportions, or account for cross-subject expression consistency in multi-condition datasets.
 homepage: https://github.com/xuranw/MuSiC
 ---
+
 
 # music-deconvolution
 

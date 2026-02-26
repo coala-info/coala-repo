@@ -1,8 +1,9 @@
 ---
 name: beem-bio
-description: BeEM (BEst Effort/Minimal) is a specialized utility for structural bioinformatics that bridges the gap between modern mmCIF data and legacy software requiring PDB files.
+description: BeEM converts mmCIF files into minimal PDB files and vice versa to facilitate the use of modern structural data with legacy bioinformatics software. Use when user asks to convert mmCIF to PDB, convert PDB to mmCIF, or generate PDB files for large structures that exceed standard atom limits.
 homepage: https://github.com/kad-ecoli/BeEM
 ---
+
 
 # beem-bio
 

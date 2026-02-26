@@ -1,8 +1,9 @@
 ---
 name: emmtyper
-description: The emmtyper tool is a specialized command-line utility designed for the genomic surveillance of Streptococcus pyogenes.
+description: emmtyper identifies the emm gene type from Streptococcus pyogenes genomic assemblies for subtyping and surveillance. Use when user asks to identify emm types, subtype Streptococcus pyogenes, or perform genomic surveillance on assembly files.
 homepage: https://github.com/MDUPHL/emmtyper
 ---
+
 
 # emmtyper
 

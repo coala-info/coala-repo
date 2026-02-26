@@ -1,8 +1,9 @@
 ---
 name: rsidx
-description: rsidx provides a mechanism for indexing VCF files by rsID, enabling the same high-speed random access for identifiers that tabix provides for genomic coordinates.
+description: rsidx indexes VCF files by rsID to enable high-speed random access to variant data using identifiers instead of genomic coordinates. Use when user asks to index VCF files by rsID, search for specific rsIDs in a VCF, or perform batch lookups of variant identifiers.
 homepage: https://github.com/bioforensics/rsidx
 ---
+
 
 # rsidx
 

@@ -1,8 +1,9 @@
 ---
 name: perl-string-diff
-description: perl-string-diff provides a specialized way to compare strings beyond simple line-based differences.
+description: perl-string-diff compares strings to identify character-level differences and generates marked-up outputs or regular expressions. Use when user asks to compare two strings, highlight insertions and deletions with custom markers, merge differences into a single string, or generate a regex that matches multiple string variations.
 homepage: https://github.com/yappo/p5-String-Diff
 ---
+
 
 # perl-string-diff
 

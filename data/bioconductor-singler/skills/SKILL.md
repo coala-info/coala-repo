@@ -1,8 +1,9 @@
 ---
 name: bioconductor-singler
-description: the package is available on all platforms; click for details.
+description: SingleR performs automated cell type annotation for single-cell RNA sequencing data by leveraging reference transcriptomic datasets. Use when user asks to annotate cell types, label single-cell clusters, or classify cells using reference data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleR.html
 ---
+
 
 # bioconductor-singler
 

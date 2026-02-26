@@ -1,8 +1,9 @@
 ---
 name: r-htmltools
-description: Tools for HTML generation and output.</p>
+description: The r-htmltools package provides tools to programmatically generate, manipulate, and manage HTML tags and web dependencies within R. Use when user asks to create HTML tags, manage CSS and JavaScript dependencies, query or modify HTML structures, or render R objects as web content.
 homepage: https://cloud.r-project.org/web/packages/htmltools/index.html
 ---
+
 
 # r-htmltools
 

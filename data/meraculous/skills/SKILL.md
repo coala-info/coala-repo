@@ -1,8 +1,9 @@
 ---
 name: meraculous
-description: Meraculous is a specialized genome assembler designed to handle large-scale datasets efficiently.
+description: Meraculous is a specialized genome assembler designed to efficiently process large-scale Illumina sequencing datasets using a hybrid k-mer and read-based approach. Use when user asks to assemble large genomes, perform de novo assembly of Illumina reads, or manage modular assembly pipelines.
 homepage: https://jgi.doe.gov/data-and-tools/meraculous/
 ---
+
 
 # meraculous
 

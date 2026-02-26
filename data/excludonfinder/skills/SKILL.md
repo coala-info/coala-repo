@@ -1,8 +1,9 @@
 ---
 name: excludonfinder
-description: "ExcludonFinder is a specialized bioinformatics tool used to map transcriptional overlaps between adjacent genes, a phenomenon known as an \"excludon.\" The tool automates a multi-step workflow: it aligns RNA-seq reads to a reference genome, calculates per-nucleotide coverage, and defines Transcriptional Units (TUs) based on where expression decays below a user-defined threshold."
+description: ExcludonFinder maps transcriptional overlaps between adjacent genes to identify and annotate excludons from RNA-seq data. Use when user asks to map transcriptional overlaps, identify excludons, define transcriptional units, or analyze antisense regulation between convergent and divergent gene pairs.
 homepage: https://github.com/Alvarosmb/ExcludonFinder
 ---
+
 
 # excludonfinder
 

@@ -1,8 +1,9 @@
 ---
 name: mmseqs2-server
-description: The mmseqs2-server (part of the MMseqs2-App ecosystem) provides a graphical interface and API for interactive exploration of massive sequence and structure datasets.
+description: The mmseqs2-server provides a web-based interface and API for searching and exploring massive sequence and structure datasets using tools like MMseqs2 and Foldseek. Use when user asks to deploy a sequence search web server, initialize search databases like PDB or Uniclust, or configure the backend environment for structural and genomic analysis.
 homepage: https://github.com/soedinglab/MMseqs2-App
 ---
+
 
 # mmseqs2-server
 

@@ -3,7 +3,7 @@
 ## proteomiqon-mzmltomzlite
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a log of a failed container build process.
+Converts mzML files to MzLite format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/proteomiqon-mzmltomzlite:0.0.8--hdfd78af_0
@@ -15,36 +15,32 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 8.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CSBiology/ProteomIQon
-- **Stars**: 14
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/proteomiqon-mzmltomzlite:0.0.8--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+ERROR: unrecognized argument: '-help'.
+USAGE: ProteomIQon.MzMLToMzLite [--help] [--instrumentoutput [<path>...]]
+                                [--outputdirectory <path>] [--paramfile <path>]
+                                [--parallelism-level <level>]
+                                [--log-level <level>]
+                                [--verbosity-level <level>]
 
+OPTIONS:
 
-## Metadata
-- **Skill**: generated
-
-## proteomiqon-mzmltomzlite_proteomiqon
-
-### Tool Description
-A tool for converting mzML files to the mzLite format. (Note: The provided help text contains system logs and build errors rather than command-line usage information; therefore, specific arguments could not be extracted from the source text.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/proteomiqon-mzmltomzlite:0.0.8--hdfd78af_0
-- **Homepage**: https://csbiology.github.io/ProteomIQon/
-- **Package**: https://anaconda.org/channels/bioconda/packages/proteomiqon-mzmltomzlite/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/proteomiqon-mzmltomzlite:0.0.8--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+    --instrumentoutput, -i [<path>...]
+                          specify mass spectrometry Output
+    --outputdirectory, -o <path>
+                          specify output directory
+    --paramfile, -p <path>
+                          specify param file For centroidization
+    --parallelism-level, -c <level>
+                          Set the number of cores the programm can use.
+                          Parallelization occurs on file level. This flag is
+                          only of effect if a input directory (-i) is specified.
+    --log-level, -l <level>
+                          set the log level.
+    --verbosity-level, -v <level>
+                          set the verbosity level.
+    --help                display this list of options.
 ```
 

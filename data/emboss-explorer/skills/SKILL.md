@@ -1,8 +1,9 @@
 ---
 name: emboss-explorer
-description: EMBOSS is a comprehensive, open-source suite of over 200 command-line applications designed for molecular biology and bioinformatics.
+description: EMBOSS is a comprehensive suite of bioinformatics tools for sequence analysis, alignment, and database searching. Use when user asks to align sequences, search databases, identify protein motifs, analyze nucleic acids, or perform restriction mapping.
 homepage: http://emboss.open-bio.org/
 ---
+
 
 # emboss-explorer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedbladderdata
-description: the package is available on all platforms; click for details.
+description: This R package provides a collection of curated gene expression datasets and clinical metadata for bladder cancer. Use when user asks to access bladder cancer transcriptomic data, perform meta-analysis on bladder cancer studies, or retrieve standardized genomic datasets for bladder cancer research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedBladderData.html
 ---
+
 
 # bioconductor-curatedbladderdata
 

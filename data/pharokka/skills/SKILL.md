@@ -1,8 +1,9 @@
 ---
 name: pharokka
-description: pharokka is a specialized annotation pipeline tailored specifically for bacteriophages.
+description: pharokka is a specialized annotation pipeline designed to identify and functionally characterize genes in bacteriophage genomes using phage-specific predictors and databases. Use when user asks to annotate phage genomes, identify phage gene families using PHROGs, or generate standardized outputs for comparative genomics tools like Roary.
 homepage: https://github.com/gbouras13/pharokka
 ---
+
 
 # pharokka
 

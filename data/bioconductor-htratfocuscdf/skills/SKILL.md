@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htratfocuscdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix Rat Focus Genome Array. Use when user asks to map chip coordinates to probe indices, access CDF environment data, or process raw CEL files for the Rat Focus microarray.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htratfocuscdf.html
 ---
+
 
 # bioconductor-htratfocuscdf
 

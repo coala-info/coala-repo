@@ -1,8 +1,9 @@
 ---
 name: pal2nal
-description: pal2nal is a specialized tool designed to "back-translate" a protein alignment into a nucleotide alignment.
+description: "pal2nal converts a protein alignment into a codon-aware nucleotide alignment by using the protein sequences as a template. Use when user asks to back-translate protein alignments to DNA, prepare sequences for PAML analysis, or maintain reading frames in nucleotide alignments."
 homepage: http://www.bork.embl.de/pal2nal/
 ---
+
 
 # pal2nal
 

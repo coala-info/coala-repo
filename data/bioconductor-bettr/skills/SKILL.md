@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bettr
-description: the package is available on all platforms; click for details.
+description: The bioconductor-bettr package provides tools for the visual exploration, aggregation, and comparative analysis of benchmarking results. Use when user asks to aggregate performance metrics, rank methods, create interactive benchmarking dashboards, or generate heatmaps and polar plots for benchmark data.
 homepage: https://bioconductor.org/packages/release/bioc/html/bettr.html
 ---
+
 
 # bioconductor-bettr
 

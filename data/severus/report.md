@@ -3,7 +3,7 @@
 ## severus
 
 ### Tool Description
-Severus is a tool for detecting structural variants (SVs) from long-read sequencing data.
+Find breakpoints and build breakpoint graph from a bam file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/severus:1.6--pyhdfd78af_0
@@ -18,14 +18,85 @@ Severus is a tool for detecting structural variants (SVs) from long-read sequenc
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/severus:1.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:3d0c4b0f321e282b2911416d2f57dbc852716719fd3bd969139ac1d0bc619a7e: unpack entry: usr/local/bin/openssl: unpack to regular file: short write: write /tmp/build-temp-1279853942/rootfs/usr/local/bin/openssl: no space left on device
+usage: severus [-h] [-v] --target-bam path [path ...]
+               [--control-bam path [path ...]] --out-dir path [-t int]
+               [--min-support int] [--min-reference-flank int]
+               [--bp-cluster-size int] [--min-sv-size int]
+               [--max-read-error float] [--min-mapq int]
+               [--reference-adjacencies] [--write-alignments] [--single-bp]
+               [--max-genomic-len int] [--phasing-vcf path] [--vntr-bed path]
+               [--TIN-ratio float] [--control-cov-thr float] [--vaf-thr float]
+               [--write-collapsed-dup] [--no-ins-seq] [--output-LOH]
+               [--resolve-overlaps] [--ins-to-tra] [--output-read-ids]
+               [--between-junction-ins] [--max-unmapped-seq int]
+               [--use-supplementary-tag] [--PON path] [--whitelist path]
+               [--low-quality] [--junction-vcf]
+               [--target-sample TARGET_NAME [TARGET_NAME ...]]
+               [--control-sample CONTROL_NAME [CONTROL_NAME ...]]
+
+Find breakpoints and build breakpoint graph from a bam file
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  --target-bam path [path ...]
+                        path to one or multiple target bam files (e.g. tumor,
+                        must be indexed)
+  --control-bam path [path ...]
+                        path to the control bam file (e.g. normal, must be
+                        indexed)
+  --out-dir path        Output directory
+  -t, --threads int     number of parallel threads [8]
+  --min-support int     minimum reads supporting double breakpoint [3]
+  --min-reference-flank int
+                        minimum distance between a breakpoint and reference
+                        ends [10000]
+  --bp-cluster-size int
+                        maximum distance in bp cluster [50]
+  --min-sv-size int     minimim size for sv [50]
+  --max-read-error float
+                        maximum base alignment error [0.005]
+  --min-mapq int        minimum mapping quality for aligned segment [10]
+  --reference-adjacencies
+                        draw reference adjacencies [False]
+  --write-alignments    write read alignments to file [False]
+  --single-bp           Add hagning breakpoints [False]
+  --max-genomic-len int
+                        maximum length of genomic segment to form connected
+                        components [2000000]
+  --phasing-vcf path    path to vcf file used for phasing (if using haplotype
+                        specific SV calling)[None]
+  --vntr-bed path       bed file with tandem repeat locations [None]
+  --TIN-ratio float     Tumor in normal ratio[{CONTROL_VAF}]
+  --control-cov-thr float
+                        Min normal coverage[{CONTROL_COV_THR}]
+  --vaf-thr float       Tumor in normal ratio[{CONTROL_VAF}]
+  --write-collapsed-dup
+                        outputs a bed file with identified collapsed
+                        duplication regions
+  --no-ins-seq          do not output insertion sequences to the vcf file
+  --output-LOH          outputs a bed file with predicted LOH regions
+  --resolve-overlaps
+  --ins-to-tra          converts insertions to translocations if mapping is
+                        known
+  --output-read-ids     to output supporting read ids
+  --between-junction-ins
+                        reports unmapped sequence between breakpoints
+  --max-unmapped-seq int
+                        maximum length of unmapped sequence between two mapped
+                        segments (if --between-junction-ins is selected the
+                        unmapped sequnce will be reported in the vcf))
+  --use-supplementary-tag
+                        Uses haplotype tag in supplementary alignments
+  --PON path            Uses PON data
+  --whitelist path      Outputs all the SVs within the bed file
+  --low-quality         Uses set of parameters optimized for the analysis with
+                        lower quality
+  --junction-vcf        Outputs a junction vcf in which all DELs, DUPs and
+                        INVs are represented as a BND
+  --target-sample TARGET_NAME [TARGET_NAME ...]
+                        Sample name for the target bams
+  --control-sample CONTROL_NAME [CONTROL_NAME ...]
+                        Sample name for the control bam
 ```
 
-
-## Metadata
-- **Skill**: generated

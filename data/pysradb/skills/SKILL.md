@@ -1,8 +1,9 @@
 ---
 name: pysradb
-description: `pysradb` is a specialized command-line utility and Python library that streamlines the retrieval of Next-Generation Sequencing (NGS) metadata.
+description: pysradb is a command-line utility and Python library for retrieving and managing Next-Generation Sequencing metadata from SRA and GEO. Use when user asks to fetch study metadata, convert identifiers between GEO and SRA, search for genomic datasets, or download SRA data.
 homepage: https://github.com/saketkc/pysradb
 ---
+
 
 # pysradb
 

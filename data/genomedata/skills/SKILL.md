@@ -1,8 +1,9 @@
 ---
 name: genomedata
-description: Genomedata is a specialized high-performance format designed to store multiple tracks of numeric genomic data anchored to a reference genome.
+description: "Genomedata stores and manages large-scale genomic track data in a high-performance HDF5-based format for fast random access. Use when user asks to create genomic archives from sequence files, load numeric tracks from BED or Wiggle files, query specific genomic regions, or access track data via the Python API."
 homepage: http://genomedata.hoffmanlab.org
 ---
+
 
 # genomedata
 

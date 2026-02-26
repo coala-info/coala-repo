@@ -1,8 +1,9 @@
 ---
 name: r-qorts
-description: R package qorts (documentation from project home).
+description: The r-qorts tool performs quality control, data management, and visualization for RNA-Seq and DNA-Seq datasets. Use when user asks to visualize sequencing metrics, detect biases or artifacts, generate count matrices for differential expression, or create genome browser tracks.
 homepage: https://cran.r-project.org/web/packages/qorts/index.html
 ---
+
 
 # r-qorts
 

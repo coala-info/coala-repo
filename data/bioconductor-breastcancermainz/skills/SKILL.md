@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breastcancermainz
-description: the package is available on all platforms; click for details.
+description: This tool provides access to the Schmidt et al. (2008) breast cancer gene expression dataset containing microarray data for 200 node-negative patients. Use when user asks to load the MAINZ cohort, analyze metastasis-free survival data, or access Affymetrix hgu133a expression profiles for breast cancer research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerMAINZ.html
 ---
+
 
 # bioconductor-breastcancermainz
 

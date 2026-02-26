@@ -1,8 +1,9 @@
 ---
 name: tadlib
-description: TADLib is a specialized bioinformatics library designed to explore and quantify chromatin interaction patterns within Topologically Associating Domains (TADs).
+description: TADLib is a bioinformatics library used to identify and quantify chromatin interaction patterns and Topologically Associating Domains from Hi-C data. Use when user asks to detect hierarchical TADs and sub-TADs, calculate aggregation preference metrics, or perform single-level domain calling on chromatin contact matrices.
 homepage: https://github.com/XiaoTaoWang/TADLib/
 ---
+
 
 # tadlib
 

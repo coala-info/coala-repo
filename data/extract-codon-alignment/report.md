@@ -1,9 +1,9 @@
 # extract-codon-alignment CWL Generation Report
 
-## extract-codon-alignment
+## extract-codon-alignment_extract_codon_alignment
 
 ### Tool Description
-A tool to extract codon alignments (Note: The provided help text contains only container runtime error messages and no usage information).
+To extract some codon positions (1st, 2nd, 3rd) from a CDS alignment.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0
@@ -18,29 +18,20 @@ A tool to extract codon alignments (Note: The provided help text contains only c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3051449542: no space left on device
-```
+usage: extract_codon_alignment [-h] --alignedCDS <file>
+                               [--aln_format <format>]
+                               [--codonPoses {1,2,3,12,13,23}] --outAln <file>
 
+To extract some codon positions (1st, 2nd, 3rd) from a CDS alignment.
 
-## Metadata
-- **Skill**: generated
-
-## extract-codon-alignment_extract_codon_alignment
-
-### Tool Description
-A tool for extracting codon alignments (Note: The provided help text contains only system error messages and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0
-- **Homepage**: https://github.com/linzhi2013/extract_codon_alignment
-- **Package**: https://anaconda.org/channels/bioconda/packages/extract-codon-alignment/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4153144964: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  --alignedCDS <file>   The CDS alignment.
+  --aln_format <format>
+                        the file format for the CDS alignment. Anything
+                        accepted by BioPython is fine [fasta]
+  --codonPoses {1,2,3,12,13,23}
+                        Codon position(s) to be extracted [12]
+  --outAln <file>       output file name
 ```
 

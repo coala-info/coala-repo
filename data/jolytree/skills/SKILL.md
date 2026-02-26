@@ -1,8 +1,9 @@
 ---
 name: jolytree
-description: JolyTree is a bioinformatics tool designed for the rapid estimation of evolutionary distances between genomes.
+description: JolyTree is an alignment-free tool for the rapid estimation of evolutionary distances and phylogenetic tree reconstruction from genome assemblies. Use when user asks to infer phylogenetic trees from contig files, estimate evolutionary distances between genomes, or perform high-performance genomic analysis using MinHash transformations.
 homepage: https://research.pasteur.fr/fr/software/jolytree/
 ---
+
 
 # jolytree
 

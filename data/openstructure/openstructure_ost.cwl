@@ -2,10 +2,56 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ost
 label: openstructure_ost
-doc: "OpenStructure (OST) is a modular software framework for structural biology.
-  Note: The provided help text contains only system error messages regarding container
-  execution and does not list command-line arguments.\n\nTool homepage: https://openstructure.org"
-inputs: []
+doc: "OpenStructure command-line interface\n\nTool homepage: https://openstructure.org"
+inputs:
+  - id: action_name
+    type:
+      - 'null'
+      - string
+    doc: action name
+    inputBinding:
+      position: 1
+  - id: script_to_execute
+    type:
+      - 'null'
+      - string
+    doc: script to execute
+    inputBinding:
+      position: 2
+  - id: action_options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: action options
+    inputBinding:
+      position: 3
+  - id: script_parameters
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: script parameters
+    inputBinding:
+      position: 4
+  - id: interactive
+    type:
+      - 'null'
+      - boolean
+    doc: start interpreter interactively (must be first parameter, ignored 
+      otherwise)
+    inputBinding:
+      position: 105
+      prefix: --interactive
+  - id: verbosity_level
+    type:
+      - 'null'
+      - int
+    doc: sets the verbosity level
+    default: 2
+    inputBinding:
+      position: 105
+      prefix: --verbosity_level
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lionessr
-description: the package is available on all platforms; click for details.
+description: This tool reconstructs single-sample networks from aggregate data using the Linear Interpolation to Obtain Network Estimates for Single Samples algorithm. Use when user asks to perform single-sample co-expression analysis, identify individual-specific network edges, or conduct differential co-expression analysis between patient groups in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/lionessR.html
 ---
+
 
 # bioconductor-lionessr
 

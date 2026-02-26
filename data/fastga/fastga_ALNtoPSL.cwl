@@ -1,11 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastga_ALNtoPSL
+baseCommand: ALNtoPSL
 label: fastga_ALNtoPSL
-doc: "A tool to convert ALN alignment files to PSL format. (Note: The provided help
-  text contains only container execution errors and does not list specific arguments.)\n
-  \nTool homepage: https://github.com/thegenemyers/FASTGA"
-inputs: []
+doc: "Convert alignment file to PSL format.\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
+inputs:
+  - id: alignment_file
+    type: File
+    doc: Input alignment file (e.g., .1aln)
+    inputBinding:
+      position: 1
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use
+    default: 8
+    inputBinding:
+      position: 102
+      prefix: -T
 outputs:
   - id: stdout
     type: stdout

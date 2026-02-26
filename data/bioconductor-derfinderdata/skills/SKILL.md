@@ -1,8 +1,9 @@
 ---
 name: bioconductor-derfinderdata
-description: the package is available on all platforms; click for details.
+description: This package provides BrainSpan genomic data and phenotype information for testing and examples in differential expression analysis. Use when user asks to access sample BigWig files, load BrainSpan phenotype data, or run example workflows for the derfinder and derfinderPlot packages.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/derfinderData.html
 ---
+
 
 # bioconductor-derfinderdata
 

@@ -1,8 +1,9 @@
 ---
 name: wipertools
-description: wipertools is a specialized suite of programs (including fastqwiper, splitfastq, and summarygather) designed to sanitize genomic sequencing data.
+description: wipertools sanitizes genomic sequencing data by cleaning and repairing FASTQ files. Use when user asks to clean FASTQ files, repair corrupted genomic sequencing data, define allowed sequence alphabets, generate quality reports, split or merge FASTQ files, or aggregate summary reports.
 homepage: https://github.com/mazzalab/fastqwiper
 ---
+
 
 # wipertools
 

@@ -1,8 +1,9 @@
 ---
 name: r-progress
-description: "Configurable Progress bars, they may include percentage,     elapsed time, and/or the estimated completion time. They work in     terminals, in 'Emacs' 'ESS', 'RStudio', 'Windows' 'Rgui' and the     'macOS' 'R.app'. The package also provides a 'C++' 'API', that works     with or without 'Rcpp'.</p>"
+description: This tool creates and manages configurable terminal progress bars in R to provide visual feedback for long-running tasks. Use when user asks to create a progress bar, track loop iterations, estimate completion time for data processing, or integrate visual feedback into purrr and plyr functions.
 homepage: https://cloud.r-project.org/web/packages/progress/index.html
 ---
+
 
 # r-progress
 

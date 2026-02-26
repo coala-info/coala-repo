@@ -1,8 +1,9 @@
 ---
 name: bioconductor-depecher
-description: the package is available on all platforms; click for details.
+description: Bioconductor-depecher performs automated clustering and group differentiation for high-dimensional single-cell data such as flow cytometry and scRNA-seq. Use when user asks to identify cell populations, visualize marker distributions on tSNE or UMAP, and statistically compare cluster abundances between experimental groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/DepecheR.html
 ---
+
 
 # bioconductor-depecher
 

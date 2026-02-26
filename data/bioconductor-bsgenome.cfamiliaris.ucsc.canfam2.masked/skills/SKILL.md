@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.cfamiliaris.ucsc.canfam2.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the masked genome sequences for Canis lupus familiaris based on the UCSC canFam2 assembly. Use when user asks to load the dog genome with built-in masks for assembly gaps and repeats, perform motif searching in non-masked regions, or manage genomic masks for Canis lupus familiaris.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cfamiliaris.UCSC.canFam2.masked.html
 ---
+
 
 # bioconductor-bsgenome.cfamiliaris.ucsc.canfam2.masked
 

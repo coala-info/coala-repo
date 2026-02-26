@@ -3,7 +3,7 @@
 ## ucsc-lavtoaxt
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container execution error log. Based on the tool name, this utility is typically used to convert LAV alignment files to AXT format.
+Convert lav format to axt format. targetDir and queryDir can be either a directory of .fa files or a single .2bit file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-lavtoaxt:482--h0b57e2e_0
@@ -18,13 +18,14 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-lavtoaxt:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-lavtoaxt:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-lavtoaxt
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+0bfd133f769f: Pulling fs layer
+0bfd133f769f: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob1817164444: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

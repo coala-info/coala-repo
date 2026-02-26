@@ -1,8 +1,9 @@
 ---
 name: msproteomicstools
-description: The `msproteomicstools` library is a specialized suite for mass spectrometry-based proteomics.
+description: This library provides tools for the post-processing, alignment, and visualization of mass spectrometry-based proteomics data. Use when user asks to align targeted proteomics features across multiple runs, visualize chromatograms with TAPIR, or convert transition lists for SpectraST.
 homepage: https://github.com/msproteomicstools/msproteomicstools
 ---
+
 
 # msproteomicstools
 

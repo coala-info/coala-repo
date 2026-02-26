@@ -1,8 +1,9 @@
 ---
 name: foldseek
-description: Foldseek is a high-performance tool designed for the rapid comparison of large-scale protein structure datasets.
+description: Foldseek performs rapid, large-scale protein structure comparisons and alignments by encoding tertiary interactions into a structural alphabet. Use when user asks to search protein structures against databases, cluster structures by similarity, create custom structural databases, or perform multimer alignments.
 homepage: https://github.com/steineggerlab/foldseek
 ---
+
 
 # foldseek
 

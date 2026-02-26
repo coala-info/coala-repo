@@ -1,8 +1,9 @@
 ---
 name: bioconductor-yeastcc
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides expression data from several yeast cell cycle experiments. Use when user asks to access yeast cell cycle microarray datasets, analyze gene expression patterns over the yeast cell cycle, or load the yeastCC data package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/yeastCC.html
 ---
+
 
 # bioconductor-yeastcc
 

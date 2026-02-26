@@ -1,8 +1,9 @@
 ---
 name: libmems
-description: libmems provides the foundational algorithms for comparative genomics, specifically focusing on the identification of conserved segments across multiple DNA sequences.
+description: libmems provides algorithms for identifying conserved segments and maximal exact matches across multiple DNA sequences. Use when user asks to find maximal exact matches, detect synteny blocks, identify genomic rearrangements, or index sequences using suffix structures.
 homepage: http://darlinglab.org/mauve/
 ---
+
 
 # libmems
 

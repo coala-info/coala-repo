@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fcscan
-description: the package is available on all platforms; click for details.
+description: This tool detects clusters of genomic features such as transcription factor binding sites or mutations within defined window sizes. Use when user asks to scan BED or VCF files for specific combinations of genomic sites, identify clusters based on feature order or orientation, or find genomic regions enriched with specific site counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/fcScan.html
 ---
+
 
 # bioconductor-fcscan
 

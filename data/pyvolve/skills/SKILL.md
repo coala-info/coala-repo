@@ -1,8 +1,9 @@
 ---
 name: pyvolve
-description: Pyvolve is a Python-based simulation framework designed to generate molecular sequences along a phylogeny.
+description: "Pyvolve is a Python-based simulation framework used to generate molecular sequences along a phylogeny using flexible evolutionary models. Use when user asks to simulate nucleotide, amino acid, or codon sequences, define custom substitution matrices, or model site-specific rate heterogeneity."
 homepage: https://github.com/sjspielman/pyvolve
 ---
+
 
 # pyvolve
 

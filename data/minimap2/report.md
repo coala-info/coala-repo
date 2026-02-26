@@ -3,7 +3,7 @@
 ## minimap2
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to insufficient disk space ('no space left on device').
+A versatile pairwise aligner for genomic and spliced nucleotide sequences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/minimap2:2.30--h577a1d6_0
@@ -18,11 +18,13 @@ The provided text does not contain help information or usage instructions. It is
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/minimap2:2.30--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3617168550: no space left on device
+Unable to find image 'quay.io/biocontainers/minimap2:2.30--h577a1d6_0' locally
+2.30--h577a1d6_0: Pulling from biocontainers/minimap2
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+8ae63e739747: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3639784536: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

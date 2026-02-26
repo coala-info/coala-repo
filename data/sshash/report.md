@@ -1,9 +1,9 @@
 # sshash CWL Generation Report
 
-## sshash
+## sshash_build
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it consists of system logs and a fatal error message regarding a container build failure.
+Build a shash index from a FASTA file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
@@ -12,19 +12,113 @@ The provided text does not contain help information or usage instructions; it co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sshash/overview
-- **Total Downloads**: 702
+- **Total Downloads**: 722
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/jermp/sshash
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sshash:5.0.0--haf24da9_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+sshash build --help
 ```
 
 
-## Metadata
-- **Skill**: generated
+## sshash_query
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
+- **Homepage**: https://github.com/jermp/sshash
+- **Package**: https://anaconda.org/channels/bioconda/packages/sshash/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+sshash query --help
+```
+
+
+## sshash_check
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
+- **Homepage**: https://github.com/jermp/sshash
+- **Package**: https://anaconda.org/channels/bioconda/packages/sshash/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+sshash check --help
+```
+
+
+## sshash_bench
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
+- **Homepage**: https://github.com/jermp/sshash
+- **Package**: https://anaconda.org/channels/bioconda/packages/sshash/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+sshash bench --help
+```
+
+
+## sshash_permute
+
+### Tool Description
+Permute the order of sequences in a FASTA file.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sshash:5.0.0--haf24da9_0
+- **Homepage**: https://github.com/jermp/sshash
+- **Package**: https://anaconda.org/channels/bioconda/packages/sshash/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+sshash permute --help
+```
+

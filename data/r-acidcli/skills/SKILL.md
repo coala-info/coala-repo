@@ -1,8 +1,9 @@
 ---
 name: r-acidcli
-description: R package acidcli (documentation from project home).
+description: This tool provides a standardized command-line interface toolkit for managing messaging and session states in R scripts. Use when user asks to standardize console output, handle errors in R scripts, or manage interactive CLI sessions.
 homepage: https://cran.r-project.org/web/packages/acidcli/index.html
 ---
+
 
 # r-acidcli
 

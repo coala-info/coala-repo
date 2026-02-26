@@ -1,8 +1,9 @@
 ---
 name: plotcritic
-description: PlotCritic is a deployment tool that transforms a directory of images into a functional, local HTML/JavaScript website for rapid curation.
+description: PlotCritic transforms a directory of images into a local HTML/JavaScript website for rapid curation and human-in-the-loop verification. Use when user asks to create an image-scoring project, curate genomic structural variants, or generate a web-based interface for visual data review.
 homepage: https://github.com/jbelyeu/PlotCritic
 ---
+
 
 # plotcritic
 

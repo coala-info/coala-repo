@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocpkgtools
-description: the package is available on all platforms; click for details.
+description: BiocPkgTools provides a tidy data interface for accessing and analyzing Bioconductor package metadata, download statistics, and dependency networks. Use when user asks to retrieve package metadata, analyze download statistics, monitor build health, or visualize package dependency graphs.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocPkgTools.html
 ---
+
 
 # bioconductor-biocpkgtools
 

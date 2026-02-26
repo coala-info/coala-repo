@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oscope
-description: the package is available on all platforms; click for details.
+description: Oscope identifies oscillatory genes and reconstructs cyclic trajectories from unsynchronized single-cell RNA-seq data. Use when user asks to identify oscillatory gene expression patterns, reconstruct the cyclic order of cells, or analyze periodic processes in single-cell transcriptomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/Oscope.html
 ---
+
 
 # bioconductor-oscope
 

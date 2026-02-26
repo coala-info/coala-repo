@@ -1,8 +1,9 @@
 ---
 name: r-pscbs
-description: R package pscbs (documentation from project home).
+description: This tool performs parent-specific DNA copy-number segmentation on genomic data to identify total and allele-specific copy numbers. Use when user asks to perform genomic segmentation on paired tumor-normal data, identify loss of heterozygosity, or detect allelic imbalances.
 homepage: https://cran.r-project.org/web/packages/pscbs/index.html
 ---
+
 
 # r-pscbs
 

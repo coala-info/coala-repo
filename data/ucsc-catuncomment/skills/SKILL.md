@@ -1,8 +1,9 @@
 ---
 name: ucsc-catuncomment
-description: The `catUncomment` utility is a specialized concatenation tool from the UCSC Genome Browser "kent" source tree.
+description: The `ucsc-catuncomment` tool concatenates files and filters out lines that begin with a hash character. Use when user asks to remove comments from files, strip headers from genomic data, clean tabular data, or merge files while removing comments.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-catuncomment
 

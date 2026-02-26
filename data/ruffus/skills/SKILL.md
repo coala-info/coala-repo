@@ -1,8 +1,9 @@
 ---
 name: ruffus
-description: Ruffus is a lightweight Python library used to manage computational pipelines.
+description: Ruffus is a lightweight Python library designed to manage and automate computational pipelines by tracking file dependencies through decorators. Use when user asks to manage data processing workflows, track file dependencies between pipeline stages, run tasks in parallel, or generate pipeline flowcharts.
 homepage: http://www.ruffus.org.uk/
 ---
+
 
 # ruffus
 

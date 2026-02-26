@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gispa
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: GISPA defines and ranks gene sets that satisfy a predefined molecular profile across three sample classes by integrating up to three different genomic features. Use when user asks to identify gene sets with specific multi-omic profiles, integrate RNA-seq and DNA copy number data, or rank genes based on their support for a molecular profile using change-point analysis.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GISPA.html
 ---
+
 
 # bioconductor-gispa
 

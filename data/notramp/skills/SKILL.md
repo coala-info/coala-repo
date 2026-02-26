@@ -1,8 +1,9 @@
 ---
 name: notramp
-description: The `notramp` skill enables efficient processing of multiplexed amplicon reads.
+description: The notramp tool performs coverage normalization and primer trimming for multiplexed amplicon sequencing data. Use when user asks to downsample over-represented amplicons, clip reads to amplicon boundaries, or prepare raw reads for variant calling and assembly.
 homepage: https://github.com/simakro/NoTrAmp.git
 ---
+
 
 # notramp
 

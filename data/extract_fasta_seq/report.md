@@ -3,10 +3,10 @@
 ## extract_fasta_seq
 
 ### Tool Description
-A tool to extract sequences from FASTA files (Note: The provided help text contains only system error messages and no usage information).
+Print numbers from FIRST to LAST, in steps of INC. FIRST, INC default to 1.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/extract_fasta_seq:0.0.1--py_0
+- **Docker Image**: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0
 - **Homepage**: https://github.com/linzhi2013/extract_fasta_seq
 - **Package**: https://anaconda.org/channels/bioconda/packages/extract_fasta_seq/overview
 - **Validation**: PASS
@@ -18,11 +18,14 @@ A tool to extract sequences from FASTA files (Note: The provided help text conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/extract_fasta_seq:0.0.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3065284137: no space left on device
+BusyBox v1.22.1 (2014-05-23 01:24:27 UTC) multi-call binary.
+
+Usage: seq [-w] [-s SEP] [FIRST [INC]] LAST
+
+Print numbers from FIRST to LAST, in steps of INC.
+FIRST, INC default to 1.
+
+	-w	Pad to last with leading zeros
+	-s SEP	String separator
 ```
 
-
-## Metadata
-- **Skill**: generated

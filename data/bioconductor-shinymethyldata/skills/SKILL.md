@@ -1,8 +1,9 @@
 ---
 name: bioconductor-shinymethyldata
-description: the package shinyMethyl. Original samples are from 450k methylation arrays, and were obtained from The Cancer Genome Atlas (TCGA). 310 samples are from tumor, 50 are matched normals and 9 are technical replicates of a control cell line.
+description: This package provides example DNA methylation data from TCGA for use with the shinyMethyl package. Use when user asks to access example 450k methylation array datasets, test the shinyMethyl package, or explore TCGA tumor and normal sample data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/shinyMethylData.html
 ---
+
 
 # bioconductor-shinymethyldata
 

@@ -2,10 +2,247 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: metaprokka
 label: metaprokka
-doc: "Prokaryotic genome annotation for metagenomes. (Note: The provided text contains
-  container runtime error logs rather than tool help text, so specific arguments could
-  not be extracted from the input.)\n\nTool homepage: https://github.com/telatin/metaprokka"
-inputs: []
+doc: "rapid bacterial genome annotation, adapted for large datasets\n\nTool homepage:
+  https://github.com/telatin/metaprokka"
+inputs:
+  - id: contigs_fasta
+    type: File
+    doc: Input contigs FASTA file
+    inputBinding:
+      position: 1
+  - id: cdsrnaolap
+    type:
+      - 'null'
+      - boolean
+    doc: Allow [tr]RNA to overlap CDS (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --cdsrnaolap
+  - id: coverage
+    type:
+      - 'null'
+      - float
+    doc: Minimum coverage on query protein
+    default: 80
+    inputBinding:
+      position: 102
+      prefix: --coverage
+  - id: cpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs to use [0=all]
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: --cpus
+  - id: dbdir
+    type:
+      - 'null'
+      - Directory
+    doc: Prokka database root folders
+    default: /usr/local/db
+    inputBinding:
+      position: 102
+      prefix: --dbdir
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: 'Debug mode: keep all temporary files (default OFF)'
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --debug
+  - id: dotbl2asn
+    type:
+      - 'null'
+      - boolean
+    doc: Run tbl2asn (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --dotbl2asn
+  - id: dotrna
+    type:
+      - 'null'
+      - boolean
+    doc: Run tRNA search (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --dotrna
+  - id: evalue
+    type:
+      - 'null'
+      - float
+    doc: Similarity e-value cut-off
+    default: '1e-09'
+    inputBinding:
+      position: 102
+      prefix: --evalue
+  - id: fast
+    type:
+      - 'null'
+      - boolean
+    doc: Fast mode - only use basic BLASTP databases (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --fast
+  - id: force
+    type:
+      - 'null'
+      - boolean
+    doc: Force overwriting existing output folder (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --force
+  - id: gffver
+    type:
+      - 'null'
+      - int
+    doc: GFF version
+    default: 3
+    inputBinding:
+      position: 102
+      prefix: --gffver
+  - id: hmms
+    type:
+      - 'null'
+      - File
+    doc: Trusted HMM to first annotate from
+    default: ''
+    inputBinding:
+      position: 102
+      prefix: --hmms
+  - id: increment
+    type:
+      - 'null'
+      - int
+    doc: Locus tag counter increment
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: --increment
+  - id: listdb
+    type:
+      - 'null'
+      - boolean
+    doc: List all configured databases
+    inputBinding:
+      position: 102
+      prefix: --listdb
+  - id: locustag
+    type:
+      - 'null'
+      - string
+    doc: Locus tag prefix
+    default: auto
+    inputBinding:
+      position: 102
+      prefix: --locustag
+  - id: mincontiglen
+    type:
+      - 'null'
+      - int
+    doc: Minimum contig size [NCBI needs 200]
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: --mincontiglen
+  - id: noanno
+    type:
+      - 'null'
+      - boolean
+    doc: For CDS just set /product="unannotated protein" (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --noanno
+  - id: norrna
+    type:
+      - 'null'
+      - boolean
+    doc: Don't run rRNA search (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --norrna
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Output folder
+    default: auto
+    inputBinding:
+      position: 102
+      prefix: --outdir
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: Filename output prefix
+    default: auto
+    inputBinding:
+      position: 102
+      prefix: --prefix
+  - id: prodigaltf
+    type:
+      - 'null'
+      - File
+    doc: Prodigal training file
+    default: ''
+    inputBinding:
+      position: 102
+      prefix: --prodigaltf
+  - id: proteins
+    type:
+      - 'null'
+      - File
+    doc: FASTA or GBK file to use as 1st priority
+    default: ''
+    inputBinding:
+      position: 102
+      prefix: --proteins
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: No screen output (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --quiet
+  - id: rawproduct
+    type:
+      - 'null'
+      - boolean
+    doc: Do not clean up /product annotation (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --rawproduct
+  - id: rfam
+    type:
+      - 'null'
+      - boolean
+    doc: Enable searching for ncRNAs with Infernal+Rfam (SLOW!)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --rfam
+  - id: rnammer
+    type:
+      - 'null'
+      - boolean
+    doc: Prefer RNAmmer over Barrnap for rRNA prediction (default OFF)
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --rnammer
 outputs:
   - id: stdout
     type: stdout

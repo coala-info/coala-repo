@@ -1,8 +1,9 @@
 ---
 name: chexalign
-description: ChExAlign is a specialized computational framework for the comparative analysis of ChIP-exo datasets.
+description: ChExAlign performs comparative analysis and alignment of ChIP-exo crosslinking patterns to identify high-resolution protein-DNA interaction footprints. Use when user asks to align ChIP-exo signatures across genomic sites, deconvolve crosslinking events, or quantify binding strengths within protein-DNA complexes.
 homepage: https://github.com/seqcode/chexalign
 ---
+
 
 # chexalign
 

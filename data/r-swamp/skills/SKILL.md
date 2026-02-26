@@ -1,8 +1,9 @@
 ---
 name: r-swamp
-description: "Collection of functions to connect the structure of the data with the information on the samples. Three types of associations are covered: 1. linear model of principal components. 2. hierarchical clustering analysis. 3. distribution of features-sample annotation associations. Additionally, the inter-relation between sample annotations can be analyzed. Simple methods are provided for the correction of batch effects and removal of principal components.</p>"
+description: r-swamp analyzes and visualizes high-dimensional data to identify associations between principal components and sample annotations. Use when user asks to identify batch effects, perform principal component analysis associated with metadata, conduct hierarchical clustering with annotation bars, or adjust data to remove unwanted variation.
 homepage: https://cran.r-project.org/web/packages/swamp/index.html
 ---
+
 
 # r-swamp
 

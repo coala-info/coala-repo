@@ -1,8 +1,9 @@
 ---
 name: r-dowser
-description: "Provides a set of functions for inferring, visualizing, and analyzing B cell phylogenetic trees.     Provides methods to 1) reconstruct unmutated ancestral sequences,     2) build B cell phylogenetic trees using multiple methods,     3) visualize trees with metadata at the tips,     4) reconstruct intermediate sequences,     5) detect biased ancestor-descendant relationships among metadata types     Workflow examples available at documentation site (see URL)."
+description: The dowser package provides a comprehensive toolkit for B cell receptor phylogenetics, including germline reconstruction, lineage tree building, and evolutionary analysis. Use when user asks to reconstruct B cell lineage trees, estimate time-resolved phylogenies, or perform statistical tests for isotype switching and migration.
 homepage: https://cran.r-project.org/web/packages/dowser/index.html
 ---
+
 
 # r-dowser
 

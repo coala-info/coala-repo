@@ -1,8 +1,9 @@
 ---
 name: hairsplitter
-description: Hairsplitter is a specialized tool designed to "un-collapse" genomic regions where an assembler has merged distinct but similar sequences—such as alleles, repeats, or strain-specific variants—into a single contig.
+description: Hairsplitter un-collapses genomic regions by partitioning long reads to reconstruct distinct sequences such as alleles, repeats, or strain-specific variants. Use when user asks to un-collapse merged contigs, partition reads into distinct haplotypes, or recover lost strains in metagenomic assemblies.
 homepage: https://github.com/RolandFaure/HairSplitter
 ---
+
 
 # hairsplitter
 

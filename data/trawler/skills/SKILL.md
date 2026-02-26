@@ -1,8 +1,9 @@
 ---
 name: trawler
-description: Trawler is a specialized bioinformatics tool designed to find over-represented DNA sequences (motifs) within a set of genomic coordinates.
+description: Trawler identifies over-represented DNA sequence motifs and calculates their enrichment. Use when user asks to find DNA sequence motifs, analyze ChIP-seq data, calculate motif enrichment, cluster motifs, or compare motifs to databases.
 homepage: https://trawler.erc.monash.edu.au/help.html
 ---
+
 
 # trawler
 

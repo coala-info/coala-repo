@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcellminerdata
-description: the package is available on all platforms; click for details.
+description: This package provides molecular and pharmacological data for the NCI-60 cell line panel. Use when user asks to access NCI-60 datasets, retrieve molecular profiles, or analyze pharmacological data for cancer research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/rcellminerData.html
 ---
+
 
 # bioconductor-rcellminerdata
 

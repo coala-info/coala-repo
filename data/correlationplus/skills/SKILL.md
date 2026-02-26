@@ -1,8 +1,9 @@
 ---
 name: correlationplus
-description: correlationplus is a Python-based suite designed for the biophysical analysis of protein systems.
+description: "correlationplus is a Python suite for calculating and analyzing residue correlation matrices and communication networks from protein structures or molecular dynamics trajectories. Use when user asks to calculate dynamical cross-correlations or linear mutual information, visualize correlation heatmaps, perform centrality analysis to identify critical residues, or find communication pathways between residues."
 homepage: https://github.com/tekpinar/correlationplus
 ---
+
 
 # correlationplus
 

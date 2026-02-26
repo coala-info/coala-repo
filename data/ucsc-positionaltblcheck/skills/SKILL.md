@@ -1,8 +1,9 @@
 ---
 name: ucsc-positionaltblcheck
-description: The `positionalTblCheck` utility is a specialized validation tool from the UCSC Genome Browser "kent" source suite.
+description: ucsc-positionaltblcheck validates that genomic data tables are correctly sorted by chromosome and start position. Use when user asks to check the sorting of genomic tables, verify BED file order, confirm integrity of exported genomic data, or validate sorting in bioinformatics pipelines.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-positionaltblcheck
 

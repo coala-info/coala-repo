@@ -1,8 +1,9 @@
 ---
 name: hivtrace
-description: HIV-TRACE (TRAnsmission Cluster Engine) is a specialized molecular epidemiology tool used to identify potential transmission clusters within HIV sequence data.
+description: HIV-TRACE identifies transmission clusters in HIV sequence data by calculating genetic distances and inferring molecular networks. Use when user asks to identify transmission clusters, calculate pairwise genetic distances using the TN93 model, or perform molecular epidemiology for public health surveillance.
 homepage: https://github.com/veg/hivtrace
 ---
+
 
 # hivtrace
 

@@ -3,7 +3,7 @@
 ## dinosaur
 
 ### Tool Description
-Dinosaur is a tool for peptide feature detection (Note: The provided text is an error log and does not contain help information or argument definitions).
+Analyze MzML files for isotope patterns.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dinosaur:1.2.0--hdfd78af_1
@@ -18,29 +18,37 @@ Dinosaur is a tool for peptide feature detection (Note: The provided text is an 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dinosaur:1.2.0--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3184730976: no space left on device
-```
+usage:
+> java -jar Dinosaur-1.2.0.jar [OPTIONS] mzML
+OPTIONS:
+              PARAMETER DEFAULT         	DESCRIPTION
+                advHelp false           	set to output adv param file help and quit
+              advParams                 	path to adv param file
+            concurrency 2               	the number of assays to analyze in parallel
+                  force false           	ignore missing mzML params
+              maxCharge 6               	max searched ion charge
+              minCharge 1               	min searched ion charge
+                   mode global          	analysis mode: global or target. Global mode reports all isotope patterns, targeted only those matching targets.
+                   mzML -               	The shotgun MzML file to analyze
+                nReport 10              	number of random assay to export control figure for
+                 outDir                 	output directory (by default same as input mzML)
+                outName                 	basename for output files (by default same as input mzML)
+              profiling false           	set to enable CPU profiling
+    reportDeisoMzHeight 15.0            	mz range in deisotoper reports
+          reportHighRes false           	generate high-resolution plot trail when supported (for print)
+             reportSeed -1              	seed to use for report assay selection (<0 means random)
+          reportTargets false           	set to create a special report figure for each target
+                   seed -1              	seed to use for bootstrapping of mass calibration (<0 means random)
+       targetPreference rt              	if multiple isotope patterns fit target, take the closest rt apex (rt) or the most intense (intensity)
+                targets                 	path to isotope patterns target file (not used by default)
+                verbose false           	increase details in output
+            writeBinary false           	set to output binary MSFeatureProtocol file
+             writeHills false           	set to output csv file with all hills assigned to isotope patterns
+         writeMsInspect false           	set to output MsInspect feature csv file
+           writeQuantML false           	set to output mzQuantML file
+            zipQcFolder false           	set to zip the entire qc folder on algorithm completion
 
-
-## Metadata
-- **Skill**: generated
-
-## dinosaur_Dinosaur.jar
-
-### Tool Description
-Dinosaur is a peptide feature detector for LC-MS data. (Note: The provided help text contains only system error messages regarding container execution and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dinosaur:1.2.0--hdfd78af_1
-- **Homepage**: https://github.com/fickludd/dinosaur
-- **Package**: https://anaconda.org/channels/bioconda/packages/dinosaur/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dinosaur:1.2.0--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1731463002: no space left on device
+Error parsing 'help'. Option does not exist.
+Not enough arguments!
 ```
 

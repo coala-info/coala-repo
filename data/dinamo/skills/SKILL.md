@@ -1,8 +1,9 @@
 ---
 name: dinamo
-description: DiNAMO is an exhaustive and efficient tool designed for the discovery of IUPAC motifs in DNA sequences.
+description: DiNAMO is a discriminative motif discovery tool that identifies overrepresented IUPAC patterns by comparing signal and control DNA datasets. Use when user asks to discover motifs in DNA sequences, perform discriminative motif discovery, or find overrepresented patterns using Fisher's exact test.
 homepage: https://github.com/bonsai-team/DiNAMO/
 ---
+
 
 # dinamo
 

@@ -1,9 +1,9 @@
 # motifraptor CWL Generation Report
 
-## motifraptor
+## motifraptor_MotifRaptor
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for motifraptor. It contains a fatal error message regarding container image conversion and disk space.
+Analyze motifs and SNPs in the dataset.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/motifraptor:0.3.0--py36h40b2fa4_5
@@ -18,11 +18,33 @@ The provided text does not contain help information or usage instructions for mo
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/motifraptor:0.3.0--py36h40b2fa4_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2834776831: no space left on device
+usage: MotifRaptor [-h] [--version]
+                   {preprocess,preprocess_ukbb_v3,celltype,snpmotif,snpfeature,motiffilter,motifspecific,snpspecific,snpmotifradar,snpindex,snpscan,set,info}
+                   ...
+
+Analyze motifs and SNPs in the dataset.
+
+positional arguments:
+  {preprocess,preprocess_ukbb_v3,celltype,snpmotif,snpfeature,motiffilter,motifspecific,snpspecific,snpmotifradar,snpindex,snpscan,set,info}
+                        help for subcommand: celltype, snpmotif, snpfeature,
+                        motiffilter, motifspecific, snpspecific
+    preprocess          Pre-process the summary statistics
+    preprocess_ukbb_v3  Pre-process the summary statistics from UKBB version 3
+                        TSV files
+    celltype            cell type or tissue type analysis help
+    snpmotif            snp motif test help
+    snpfeature          snp feature help
+    motiffilter         motifs filtering help
+    motifspecific       motifs specific analysis help
+    snpspecific         SNP specific analysis help
+    snpmotifradar       SNP motif radar plot help
+    snpindex            index the SNPs (with flanking sequences) help
+    snpscan             scan SNP database (already indexed) help
+    set                 Set Path and Global Values
+    info                Get Informationa and Print Global Values
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

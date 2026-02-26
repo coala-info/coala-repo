@@ -1,8 +1,9 @@
 ---
 name: pbmm2
-description: `pbmm2` is the official Pacific Biosciences wrapper for `minimap2`, serving as the modern replacement for BLASR.
+description: "pbmm2 is a Pacific Biosciences wrapper for minimap2 designed to align long-read sequences to a reference genome. Use when user asks to align PacBio subreads or HiFi reads, index a reference genome, or generate coordinate-sorted BAM files for downstream analysis."
 homepage: https://github.com/PacificBiosciences/pbmm2
 ---
+
 
 # pbmm2
 

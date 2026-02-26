@@ -1,10 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: megapath_bwa
+baseCommand: bwa
 label: megapath_bwa
-doc: "Metagenomic pathogen detection pipeline (Note: The provided help text contains
-  only system error messages and no usage information).\n\nTool homepage: https://github.com/edwwlui/MegaPath"
-inputs: []
+doc: "alignment via Burrows-Wheeler transformation\n\nTool homepage: https://github.com/edwwlui/MegaPath"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (index, mem, fastmap, pemerge, aln, samse, sampe, 
+      bwasw, shm, fa2pac, pac2bwt, pac2bwtgen, bwtupdate, bwt2sa)
+    inputBinding:
+      position: 1
+  - id: options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Options for the selected command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

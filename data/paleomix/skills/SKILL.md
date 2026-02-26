@@ -1,8 +1,9 @@
 ---
 name: paleomix
-description: PALEOMIX is a specialized bioinformatics toolkit designed to streamline the processing of raw sequencing reads into analysis-ready files.
+description: PALEOMIX is a bioinformatics toolkit designed to process raw sequencing reads into analysis-ready files with a focus on ancient DNA characteristics. Use when user asks to process reads into BAM files, perform phylogenetic inference, or identify equine hybrids using the Zonkey pipeline.
 homepage: https://github.com/MikkelSchubert/paleomix
 ---
+
 
 # paleomix
 

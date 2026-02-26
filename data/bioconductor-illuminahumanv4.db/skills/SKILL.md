@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanv4.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Illumina Humanv4 expression microarray platform. Use when user asks to map Illumina probe identifiers to biological annotations, access custom re-annotation data, or filter probes by quality.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html
 ---
+
 
 # bioconductor-illuminahumanv4.db
 

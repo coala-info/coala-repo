@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txcutr
-description: the package is available on all platforms; click for details.
+description: bioconductor-txcutr truncates transcript models to a fixed length from the 3' end. Use when user asks to truncate transcripts, generate 3' end focused transcript annotations, or prepare custom GTF files for 3' end sequencing analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/txcutr.html
 ---
+
 
 # bioconductor-txcutr
 

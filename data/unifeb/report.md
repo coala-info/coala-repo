@@ -1,9 +1,9 @@
 # unifeb CWL Generation Report
 
-## unifeb
+## unifeb_hnsw
 
 ### Tool Description
-The provided text contains container build logs rather than tool help documentation. No arguments or descriptions could be extracted.
+Build HNSW/HubNSW graph
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/unifeb:0.1.1--h3ab6199_0
@@ -12,19 +12,23 @@ The provided text contains container build logs rather than tool help documentat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/unifeb/overview
-- **Total Downloads**: 467
+- **Total Downloads**: 469
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jianshu93/unifeb
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unifeb:0.1.1--h3ab6199_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+************** initializing logger *****************
+
+Build HNSW/HubNSW graph
+
+Usage: unifeb --tree <tree> --feature-table <featuretable> hnsw [OPTIONS] --nbconn <nbconn> --knbn <knbn> --ef <ef>
+
+Options:
+      --nbconn <nbconn>                Number of neighbours by layer
+      --knbn <knbn>                    Number of neighbours to keep in final adjacency
+      --ef <ef>                        Search factor for HNSW construction
+      --scale_modify_f <scale_modify>  scale modification factor in HNSW or HubNSW, must be in [0.2,1] [default: 0.25]
+  -h, --help                           Print help
 ```
 
-
-## Metadata
-- **Skill**: generated

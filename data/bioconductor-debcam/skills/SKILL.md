@@ -1,8 +1,9 @@
 ---
 name: bioconductor-debcam
-description: the package is available on all platforms; click for details.
+description: debCAM performs unsupervised deconvolution of molecular mixture data to estimate subpopulation-specific expression profiles and proportions using convex analysis. Use when user asks to perform unsupervised deconvolution, identify molecular markers from mixture data, estimate cell type proportions, or visualize data distributions using simplex plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/debCAM.html
 ---
+
 
 # bioconductor-debcam
 

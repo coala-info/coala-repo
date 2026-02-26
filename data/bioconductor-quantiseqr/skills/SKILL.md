@@ -1,8 +1,9 @@
 ---
 name: bioconductor-quantiseqr
-description: the package is available on all platforms; click for details.
+description: This R package quantifies the relative fractions of immune cell types from bulk RNA-sequencing data. Use when user asks to quantify immune cell fractions, perform deconvolution of bulk RNA-seq data, or estimate the proportions of tumor-infiltrating immune cells.
 homepage: https://bioconductor.org/packages/release/bioc/html/quantiseqr.html
 ---
+
 
 # bioconductor-quantiseqr
 

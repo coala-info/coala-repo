@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gnosis
-description: the package is available on all platforms; click for details.
+description: GNOSIS provides a workflow for the statistical and survival analysis of cancer genomics data. Use when user asks to launch the interactive Shiny interface, perform survival analysis using Kaplan-Meier curves or Cox models, integrate clinical data with CNA and MAF files, or conduct statistical association testing.
 homepage: https://bioconductor.org/packages/release/bioc/html/GNOSIS.html
 ---
+
 
 # bioconductor-gnosis
 

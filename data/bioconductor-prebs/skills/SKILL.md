@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prebs
-description: the package is available on all platforms; click for details.
+description: This package estimates expression levels for probe regions from RNA-seq data to facilitate comparison with microarray results. Use when user asks to calculate probe region expression values, compare RNA-seq data to Affymetrix microarrays, or estimate expression for specific probe sets.
 homepage: https://bioconductor.org/packages/release/bioc/html/prebs.html
 ---
+
 
 # bioconductor-prebs
 

@@ -1,8 +1,9 @@
 ---
 name: scatac-fragment-tools
-description: The `scatac-fragment-tools` suite provides high-performance utilities written in Rust with a Python interface for managing single-cell ATAC-seq data.
+description: The scatac-fragment-tools suite provides high-performance utilities for managing, splitting, and generating genomic coverage tracks from single-cell ATAC-seq fragment files. Use when user asks to generate bigWig tracks from fragments, split fragment files by cell barcode, or modify fragment files for downstream analysis.
 homepage: https://github.com/aertslab/scatac_fragment_tools/
 ---
+
 
 # scatac-fragment-tools
 

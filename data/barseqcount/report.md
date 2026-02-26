@@ -1,9 +1,9 @@
 # barseqcount CWL Generation Report
 
-## barseqcount
+## barseqcount_count
 
 ### Tool Description
-A tool for counting barcodes in sequencing data (Note: The provided text contains container build errors rather than help documentation; no arguments could be extracted).
+Counts barcodes in sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/barseqcount:0.1.5--pyhdfd78af_0
@@ -18,14 +18,80 @@ A tool for counting barcodes in sequencing data (Note: The provided text contain
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/barseqcount:0.1.5--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:6599067f86458fa4f3ec2f23a38ac83a7ec293fb0da52237b8718337d9e1fa9b: unpack entry: usr/local/lib/libopenblasp-r0.3.21.so: unpack to regular file: short write: write /scratch/21813747/build-temp-3018278015/rootfs/usr/local/lib/libopenblasp-r0.3.21.so: no space left on device
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.11/site-packages/barseqcount.py", line 1086, in <module>
+    main()
+  File "/usr/local/lib/python3.11/site-packages/barseqcount.py", line 30, in main
+    count(args)
+  File "/usr/local/lib/python3.11/site-packages/barseqcount.py", line 40, in count
+    countconf(fname,args)
+  File "/usr/local/lib/python3.11/site-packages/barseqcount.py", line 978, in countconf
+    content,dirname,rfiles=dbl.conf_start(z)
+                           ^^^^^^^^^^^^^^^^^
+TypeError: conf_start() missing 1 required positional argument: 'title'
+```
+
+
+## barseqcount_analyze
+
+### Tool Description
+Analyze barseqcount results
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/barseqcount:0.1.5--pyhdfd78af_0
+- **Homepage**: https://github.com/damienmarsic/barseqcount
+- **Package**: https://anaconda.org/channels/bioconda/packages/barseqcount/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: barseqcount.py analyze [-h] [-c CONFIGURATION_FILE] [-n]
+                              [-f FILE_FORMAT]
+
+options:
+  -h, --help            show this help message and exit
+  -c CONFIGURATION_FILE, --configuration_file CONFIGURATION_FILE
+                        Configuration file for the barseqcount analyze program
+                        (default: barseqcount_analyze.conf), will be created
+                        if absent
+  -n, --new             Create new configuration file and rename existing one
+  -f FILE_FORMAT, --file_format FILE_FORMAT
+                        Save each figure in separate file with choice of
+                        format instead of the default single multipage pdf
+                        file. Choices: svg, png, jpg, pdf, ps, eps, pgf, raw,
+                        rgba, tif
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## barseqcount
+
+### Tool Description
+Analysis of DNA barcode sequencing experiments. For full documentation, visit: https://barseqcount.readthedocs.io
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/barseqcount:0.1.5--pyhdfd78af_0
+- **Homepage**: https://github.com/damienmarsic/barseqcount
+- **Package**: https://anaconda.org/channels/bioconda/packages/barseqcount/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+usage: barseqcount.py [-h] [-v] {count,analyze} ...
+
+Analysis of DNA barcode sequencing experiments. For full documentation, visit:
+https://barseqcount.readthedocs.io
+
+positional arguments:
+  {count,analyze}
+    count          Count barcodes from read files
+    analyze        Analyze data
+
+options:
+  -h, --help       show this help message and exit
+  -v, --version    Display version
+```
+

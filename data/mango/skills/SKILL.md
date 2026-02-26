@@ -1,8 +1,9 @@
 ---
 name: mango
-description: Mango is a high-performance genomic visualization engine designed to handle the scale of modern sequencing data.
+description: Mango is a high-performance genomic visualization engine designed for low-latency browsing and analysis of large-scale sequencing data. Use when user asks to visualize genomic alignments, inspect variant calls, or browse reference genomes across large cohorts using distributed computing.
 homepage: https://github.com/bdgenomics/mango
 ---
+
 
 # mango
 

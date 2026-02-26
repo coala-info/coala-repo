@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hiannotator
-description: "The package comes with three types of annotation functions which calculates if a position from query is: within a feature, near a feature, or count features in defined window sizes. Moreover, each function is equipped with parallel backend to utilize the foreach package. In addition, the package is equipped with wrapper functions, which finds appropriate columns needed to make a GRanges object from a common data frame."
+description: bioconductor-hiannotator provides a framework for annotating genomic intervals by relating them to features like genes, CpG islands, or regulatory elements. Use when user asks to annotate genomic coordinates, find the nearest genomic feature, or count feature density within specific window sizes.
 homepage: https://bioconductor.org/packages/release/bioc/html/hiAnnotator.html
 ---
+
 
 # bioconductor-hiannotator
 

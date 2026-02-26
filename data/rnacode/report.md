@@ -1,9 +1,9 @@
 # rnacode CWL Generation Report
 
-## rnacode
+## rnacode_RNAcode
 
 ### Tool Description
-RNAcode predicts protein coding regions in multiple sequence alignments. It uses a statistical model to distinguish between coding and non-coding evolutionary patterns.
+RNAcode 0.3.1
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rnacode:0.3.1--h7b50bb2_0
@@ -15,16 +15,26 @@ RNAcode predicts protein coding regions in multiple sequence alignments. It uses
 - **Total Downloads**: 9.5K
 - **Last updated**: 2025-09-30
 - **GitHub**: https://github.com/ViennaRNA/RNAcode
-- **Stars**: 25
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rnacode:0.3.1--h7b50bb2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+RNAcode 0.3.1
+
+Usage: RNAcode [OPTIONS]... [FILE]
+
+--outfile     -o  Output file  (default: stdout)
+--gtf         -g  Format output as GTF
+--tabular     -t  Format output as tab delimited fields
+--best-only   -b  Show only best hit
+--best-region -r  Show only best non-overlapping hits
+--stop-early  -s  Don't calculate p-values for hits likely to be above cutoff
+--num-samples -n  Number of samples to calculate p-value (default: 100)
+--cutoff      -p  p-value cutoff (default: 1.0)
+--pars        -c  Parameters as comma separated string (see README for details)
+--eps         -e  Create colored plots in EPS format
+--eps-cutoff  -i  Create plots only if p better than this cutoff (default: 0.05)
+--eps-dir     -d  Directory to put eps-files (default: eps)
+--help        -h  Print this help screen
+--version     -v  Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: locarna
-description: LocARNA (Local Alignment of RNA) provides a suite of tools for the structural analysis of RNA by performing simultaneous alignment and folding.
+description: LocARNA performs simultaneous alignment and folding of RNA sequences to identify common secondary structures. Use when user asks to perform multiple or pairwise RNA structural alignment, align sequences with low sequence identity, or use sparsified alignment for long RNA sequences.
 homepage: https://s-will.github.io/LocARNA
 ---
+
 
 # locarna
 

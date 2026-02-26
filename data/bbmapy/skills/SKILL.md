@@ -1,8 +1,9 @@
 ---
 name: bbmapy
-description: `bbmapy` is a Pythonic interface for the BBTools suite, a collection of high-performance bioinformatics utilities.
+description: bbmapy provides a Pythonic interface for executing the BBTools suite of bioinformatics utilities. Use when user asks to align reads to a reference, perform quality trimming and filtering, or manage Java-based genomic data processing within Python pipelines.
 homepage: https://github.com/urineri/bbmapy
 ---
+
 
 # bbmapy
 

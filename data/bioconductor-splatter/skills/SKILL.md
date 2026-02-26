@@ -1,8 +1,9 @@
 ---
 name: bioconductor-splatter
-description: the package is available on all platforms; click for details.
+description: Splatter simulates single-cell RNA sequencing data using a variety of statistical models. Use when user asks to simulate scRNA-seq datasets, estimate parameters from real single-cell data, or benchmark single-cell analysis workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/splatter.html
 ---
+
 
 # bioconductor-splatter
 

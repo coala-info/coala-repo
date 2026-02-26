@@ -1,8 +1,9 @@
 ---
 name: perl-compress-raw-bzip2
-description: The `perl-compress-raw-bzip2` skill provides procedural knowledge for utilizing the `Compress::Raw::Bzip2` Perl module.
+description: This tool provides a low-level Perl interface to the bzlib library for high-performance, in-memory bzip2 compression and decompression. Use when user asks to compress data blocks using Perl, decompress bzip2 streams, or manage memory-efficient data transformation within bioinformatics pipelines.
 homepage: http://metacpan.org/pod/Compress::Raw::Bzip2
 ---
+
 
 # perl-compress-raw-bzip2
 

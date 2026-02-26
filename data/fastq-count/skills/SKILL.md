@@ -1,8 +1,9 @@
 ---
 name: fastq-count
-description: `fastq-count` is a specialized, high-performance utility written in Rust for the bioinformatics domain.
+description: fastq-count is a high-performance utility that calculates the total number of reads and bases in FASTQ datasets. Use when user asks to count reads and bases, process paired-end data, or generate summary statistics for compressed FASTQ files.
 homepage: https://github.com/sndrtj/fastq-count
 ---
+
 
 # fastq-count
 

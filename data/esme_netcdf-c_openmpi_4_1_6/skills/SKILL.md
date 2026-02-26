@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_openmpi_4_1_6
-description: This skill assists in the development and execution of applications using the NetCDF-C interface within a parallel computing context.
+description: This tool provides the NetCDF-C interface integrated with OpenMPI for managing and processing array-oriented scientific data in parallel computing environments. Use when user asks to compile C applications with parallel NetCDF support, perform collective parallel I/O operations, or use utilities like ncdump and ncgen to manage NetCDF files.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_openmpi_4_1_6
 

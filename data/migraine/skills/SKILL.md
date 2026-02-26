@@ -1,8 +1,9 @@
 ---
 name: migraine
-description: The `migraine` tool provides a framework for likelihood-based inference in population genetics.
+description: Migraine performs likelihood-based inference to estimate population genetic parameters and fit complex demographic models. Use when user asks to estimate parameters like population size and migration rates, fit demographic models such as isolation by distance or population fluctuations, and perform maximum likelihood estimation using genetic data.
 homepage: http://kimura.univ-montp2.fr/~rousset/Migraine.htm
 ---
+
 
 # migraine
 

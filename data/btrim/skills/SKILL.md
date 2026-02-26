@@ -1,8 +1,9 @@
 ---
 name: btrim
-description: btrim is a specialized tool designed to refine compacted de Bruijn graphs by trimming "tips"—short, dead-end paths that usually represent sequencing errors rather than true biological variation.
+description: "btrim refines compacted de Bruijn graphs by trimming short dead-end paths that represent sequencing errors. Use when user asks to trim tips from a unitig graph, simplify a de Bruijn graph, or remove sequencing artifacts from assembly graphs."
 homepage: https://github.com/Malfoy/BTRIM
 ---
+
 
 # btrim
 

@@ -1,8 +1,9 @@
 ---
 name: fastaindex
-description: FastaIndex is a high-performance utility for managing FastA files.
+description: FastaIndex is a high-performance utility for managing FastA files that provides sequence extraction and detailed assembly statistics. Use when user asks to index FastA files, extract specific sequences or reverse complements, calculate N50 and L50 metrics, or generate genomic assembly statistics.
 homepage: https://github.com/lpryszcz/FastaIndex
 ---
+
 
 # fastaindex
 

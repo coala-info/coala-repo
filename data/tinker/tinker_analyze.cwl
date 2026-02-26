@@ -1,11 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: analyze
+baseCommand: tinker_analyze
 label: tinker_analyze
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a fatal error log from a container runtime (Apptainer/Singularity) failing
-  to fetch a Docker image.\n\nTool homepage: https://dasher.wustl.edu/tinker/"
-inputs: []
+doc: "Software Tools for Molecular Design\n\nTool homepage: https://dasher.wustl.edu/tinker/"
+inputs:
+  - id: coordinate_file
+    type: File
+    doc: Cartesian Coordinate File Name
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

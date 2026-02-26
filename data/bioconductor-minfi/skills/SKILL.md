@@ -1,8 +1,9 @@
 ---
 name: bioconductor-minfi
-description: the package is available on all platforms; click for details.
+description: This package analyzes and visualizes Illumina Infinium DNA methylation microarray data. Use when user asks to preprocess methylation data, perform quality control, normalize signals, or identify differentially methylated regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/minfi.html
 ---
+
 
 # bioconductor-minfi
 

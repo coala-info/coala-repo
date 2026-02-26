@@ -1,8 +1,9 @@
 ---
 name: r-params
-description: "An interface to simplify organizing parameters used in a package,     using external configuration files. This attempts to provide a cleaner     alternative to options().</p>"
+description: The params package provides a streamlined system for managing, loading, and nesting configuration parameters in R. Use when user asks to manage global or package-specific options, load parameters from configuration files, or use mustache-style templating for dynamic parameter values.
 homepage: https://cloud.r-project.org/web/packages/params/index.html
 ---
+
 
 # r-params
 

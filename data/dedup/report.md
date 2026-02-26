@@ -3,7 +3,7 @@
 ## dedup
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it is an error log indicating a failure to build a container image due to insufficient disk space.
+DeDup tool for deduplicating reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dedup:0.12.9--hdfd78af_0
@@ -18,29 +18,18 @@ The provided text does not contain help information or usage instructions; it is
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dedup:0.12.9--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3786106242: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## dedup_AdapterRemovalFixPrefix
-
-### Tool Description
-A tool for deduplicating sequencing reads, often used in paleogenomics pipelines. Note: The provided help text contains only system error messages and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dedup:0.12.9--hdfd78af_0
-- **Homepage**: https://github.com/apeltzer/dedup
-- **Package**: https://anaconda.org/channels/bioconda/packages/dedup/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dedup:0.12.9--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4239846525: no space left on device
+usage: dedup
+ -h,--help           show this help page
+ -i,--input <arg>    the input file if this option is not specified,
+                     the input is expected to be piped in
+ -m,--merged         the input only contains merged reads.
+                     If this option is specified read names are not
+                     examined for prefixes.
+                     Both the start and end of the aligment are considered
+                     for all reads.
+ -o,--output <arg>   the output folder. Has to be specified if input is
+                     set.
+ -u,--unsorted       Do not automatically sort the output
+ -v,--version        the version of DeDup.
 ```
 

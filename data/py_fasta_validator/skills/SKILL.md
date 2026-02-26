@@ -1,8 +1,9 @@
 ---
 name: py_fasta_validator
-description: The `py_fasta_validator` tool is a high-performance C-extension for Python designed to quickly verify the integrity of FASTA files.
+description: This tool verifies the integrity and formatting of FASTA files using a high-performance C-extension. Use when user asks to validate FASTA file headers, check for duplicate sequence identifiers, or ensure sequence lines contain only valid characters.
 homepage: https://github.com/linsalrob/py_fasta_validator
 ---
+
 
 # py_fasta_validator
 

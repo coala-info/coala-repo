@@ -1,8 +1,9 @@
 ---
 name: r-eacon
-description: R package eacon (documentation from project home).
+description: EaCoN is an R package for performing full-workflow copy-number analysis on microarray and whole-exome sequencing data. Use when user asks to normalize raw data, perform segmentation, estimate copy numbers, or generate interactive reports.
 homepage: https://cran.r-project.org/web/packages/eacon/index.html
 ---
+
 
 # r-eacon
 

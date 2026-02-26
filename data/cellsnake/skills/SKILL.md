@@ -1,8 +1,9 @@
 ---
 name: cellsnake
-description: cellsnake is a Snakemake-based command-line tool designed to streamline and automate single-cell RNA sequencing (scRNA-seq) analysis.
+description: cellsnake is a Snakemake-based tool that automates single-cell RNA sequencing analysis workflows including quality control, clustering, and visualization. Use when user asks to process scRNA-seq data, integrate multiple datasets, perform differential expression analysis, or determine optimal clustering resolutions.
 homepage: https://github.com/sinanugur/cellsnake
 ---
+
 
 # cellsnake
 

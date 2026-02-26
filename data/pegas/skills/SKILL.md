@@ -1,8 +1,9 @@
 ---
 name: pegas
-description: PeGAS (Pathogenic Bacterial Genomic Analysis Solution) is a comprehensive bioinformatic pipeline designed to streamline the processing of bacterial genomic data.
+description: PeGAS is a bioinformatic pipeline that automates quality control, de novo assembly, and functional annotation for bacterial genomic data. Use when user asks to process raw Illumina reads into annotated assemblies, generate virulence or AMR gene profiles, or create pangenome reports.
 homepage: https://github.com/liviurotiul/PeGAS
 ---
+
 
 # pegas
 

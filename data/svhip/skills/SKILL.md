@@ -1,8 +1,9 @@
 ---
 name: svhip
-description: svhip is a machine learning pipeline designed to detect conserved RNA secondary structures across genomes.
+description: svhip is a machine learning pipeline designed to detect conserved RNA secondary structures within genomic alignments. Use when user asks to generate training features from sequences, train structural classifiers, slice alignments into overlapping windows, or predict functional non-coding RNAs.
 homepage: https://github.com/chrisBioInf/Svhip
 ---
+
 
 # svhip
 

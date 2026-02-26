@@ -1,11 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: barseqcount
+baseCommand: barseqcount.py
 label: barseqcount
-doc: "A tool for counting barcodes in sequencing data (Note: The provided text contains
-  container build errors rather than help documentation; no arguments could be extracted).\n
-  \nTool homepage: https://github.com/damienmarsic/barseqcount"
-inputs: []
+doc: "Analysis of DNA barcode sequencing experiments. For full documentation, visit:
+  https://barseqcount.readthedocs.io\n\nTool homepage: https://github.com/damienmarsic/barseqcount"
+inputs:
+  - id: command
+    type: string
+    doc: 'Subcommand to run: count or analyze'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

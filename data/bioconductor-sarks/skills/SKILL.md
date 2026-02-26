@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sarks
-description: the package is available on all platforms; click for details.
+description: Sarks identifies sequence motifs correlated with numeric scores using suffix array kernel smoothing. Use when user asks to find regulatory motifs, identify k-mers associated with differential expression, or perform suffix array kernel smoothing on biological sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/sarks.html
 ---
+
 
 # bioconductor-sarks
 

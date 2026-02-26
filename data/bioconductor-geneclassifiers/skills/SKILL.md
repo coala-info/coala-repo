@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneclassifiers
-description: the package is available on all platforms; click for details.
+description: This tool applies linear gene classifiers to gene expression data to estimate patient prognosis and risk scores. Use when user asks to list available classifiers, prepare ExpressionSet data for classification, run classifiers on normalized microarray data, or handle missing probe-sets via reweighting.
 homepage: https://bioconductor.org/packages/release/bioc/html/geneClassifiers.html
 ---
+
 
 # bioconductor-geneclassifiers
 

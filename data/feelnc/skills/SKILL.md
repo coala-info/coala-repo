@@ -1,8 +1,9 @@
 ---
 name: feelnc
-description: FEELnc (FlExible Extraction of Long non-coding RNAs) is a specialized pipeline for identifying lncRNAs in transcriptomes reconstructed from RNA-seq data, with or without a reference genome.
+description: FEELnc is a specialized pipeline for identifying and classifying long non-coding RNAs from RNA-seq transcriptomes. Use when user asks to filter transcript candidates, calculate coding potential scores, or classify lncRNAs based on their genomic location.
 homepage: https://github.com/tderrien/FEELnc
 ---
+
 
 # feelnc
 

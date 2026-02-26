@@ -3,28 +3,32 @@
 ## pybigwig
 
 ### Tool Description
-A python extension for accessing BigWig files
+FAIL to generate CWL: pybigwig not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pybigwig:0.3.25--py39h956d262_0
 - **Homepage**: https://github.com/deeptools/pyBigWig
 - **Package**: https://anaconda.org/channels/bioconda/packages/pybigwig/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pybigwig/overview
-- **Total Downloads**: 651.6K
+- **Total Downloads**: 653.9K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/deeptools/pyBigWig
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: pybigwig not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: pybigwig not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pybigwig:0.3.25--py39h956d262_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
-
-## Metadata
-- **Skill**: generated

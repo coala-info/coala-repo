@@ -1,9 +1,9 @@
 # mlst-cge CWL Generation Report
 
-## mlst-cge
+## mlst-cge_mlst.py
 
 ### Tool Description
-Multi-Locus Sequence Typing (MLST) tool (Note: The provided text is a container runtime error log and does not contain usage information or argument definitions).
+Performs Multi-Locus Sequence Typing (MLST) on input FASTA or FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mlst-cge:2.0.9--hdfd78af_0
@@ -18,46 +18,37 @@ Multi-Locus Sequence Typing (MLST) tool (Note: The provided text is a container 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mlst-cge:2.0.9--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3223064827: no space left on device
-```
+usage: mlst.py [-h] -i INFILE [INFILE ...] [-o OUTDIR] -s SPECIES
+               [-p DATABASE] [-t TMP_DIR] [-mp METHOD_PATH] [-x] [-q]
+               [-matrix] [-d DEPTH]
 
-
-## Metadata
-- **Skill**: generated
-
-## mlst-cge_install_update_pack.py
-
-### Tool Description
-Install or update packs for MLST-CGE. Note: The provided input text appears to be a container runtime error log rather than help text, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mlst-cge:2.0.9--hdfd78af_0
-- **Homepage**: https://bitbucket.org/genomicepidemiology/mlst
-- **Package**: https://anaconda.org/channels/bioconda/packages/mlst-cge/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mlst-cge:2.0.9--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1264163824: no space left on device
-```
-
-## mlst-cge_mlst.py
-
-### Tool Description
-MLST (Multi-Locus Sequence Typing) tool from the Center for Genomic Epidemiology (CGE).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mlst-cge:2.0.9--hdfd78af_0
-- **Homepage**: https://bitbucket.org/genomicepidemiology/mlst
-- **Package**: https://anaconda.org/channels/bioconda/packages/mlst-cge/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mlst-cge:2.0.9--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2713659364: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INFILE [INFILE ...], --infile INFILE [INFILE ...]
+                        FASTA or FASTQ files to do MLST on.
+  -o OUTDIR, --outdir OUTDIR
+                        Output directory.
+  -s SPECIES, --species SPECIES
+                        species database used for MLST prediction
+  -p DATABASE, --database DATABASE
+                        Directory containing the databases.
+  -t TMP_DIR, --tmp_dir TMP_DIR
+                        Temporary directory for storage of the results from
+                        the external software.
+  -mp METHOD_PATH, --method_path METHOD_PATH
+                        Path to the method to use (kma or blastn) if assembled
+                        contigs are inputted the path to executable blastn
+                        should be given, if fastq files are given path to
+                        executable kma should be given
+  -x, --extented_output
+                        Give extented output with allignment files, template
+                        and query hits in fasta and a tab seperated file with
+                        allele profile results
+  -q, --quiet
+  -matrix, --matrix     Gives the counts all all called bases at each position
+                        in each mapped template. Columns are: reference base,
+                        A count, C count, G count, T count, N count, - count.
+  -d DEPTH, --depth DEPTH
+                        The minimum required depth for a gene to be considered
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: r-loose.rock
-description: Skill for using the CRAN R package r-loose.rock.
+description: This R package provides tools for enhancing workflow productivity through result caching, balanced data partitioning, and string manipulation. Use when user asks to cache function results, split datasets into balanced training and testing sets, or format strings and manage project directories.
 homepage: https://cran.r-project.org/web/packages/loose.rock/index.html
 ---
+
 
 # r-loose.rock
 

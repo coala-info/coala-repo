@@ -1,8 +1,9 @@
 ---
 name: esme_pnetcdf_psmpi_5_12_1
-description: This skill provides guidance on using PnetCDF (Parallel NetCDF), a library designed for efficient, concurrent access to NetCDF files.
+description: PnetCDF provides a library and utility tools for high-performance, concurrent access to NetCDF files using MPI. Use when user asks to perform parallel I/O on shared datasets, optimize collective data access, validate CDF file formats, or compare NetCDF files in parallel.
 homepage: https://parallel-netcdf.github.io/
 ---
+
 
 # esme_pnetcdf_psmpi_5_12_1
 

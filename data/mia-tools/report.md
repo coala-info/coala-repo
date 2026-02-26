@@ -3,26 +3,32 @@
 ## mia-tools
 
 ### Tool Description
-The provided text does not contain help information for mia-tools; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull or build the container image due to insufficient disk space.
+FAIL to generate CWL: mia-tools not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/mia-tools:v2.4.6-4-deb_cv1
-- **Homepage**: https://github.com/MIA-iEEG/mia
+- **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mia-tools/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/MIA-iEEG/mia
+- **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: mia-tools not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: mia-tools not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/mia-tools:v2.4.6-4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2596230811: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

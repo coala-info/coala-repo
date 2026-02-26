@@ -2,10 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pisadEval
 label: pisad_pisadEval
-doc: "The provided text does not contain help information for the tool, but appears
-  to be a system error log indicating a failure to build or run a container due to
-  lack of disk space.\n\nTool homepage: https://github.com/ZhantianXu/PISAD"
-inputs: []
+doc: "Optional options:\n\nTool homepage: https://github.com/ZhantianXu/PISAD"
+inputs:
+  - id: files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input files
+    inputBinding:
+      position: 1
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to run.
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: --threads
 outputs:
   - id: stdout
     type: stdout

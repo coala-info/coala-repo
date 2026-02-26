@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mosbi
-description: the package is available on all platforms; click for details.
+description: mosbi is an R package for the integration, comparison, and visualization of multiple biclustering results. Use when user asks to integrate biclustering results, calculate similarity between biclusters, or identify robust biclusters across different algorithms and datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/mosbi.html
 ---
+
 
 # bioconductor-mosbi
 

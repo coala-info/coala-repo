@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nudge
-description: the package is available on all platforms; click for details.
+description: This package implements a mixture model to identify differentially expressed genes in microarray data. Use when user asks to detect differential gene expression, fit normal-uniform mixture models, or analyze normalized microarray experiments.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/nudge.html
 ---
+
 
 # bioconductor-nudge
 

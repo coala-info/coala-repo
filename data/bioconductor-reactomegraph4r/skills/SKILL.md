@@ -1,8 +1,9 @@
 ---
 name: bioconductor-reactomegraph4r
-description: the package is available on all platforms; click for details.
+description: ReactomeGraph4R converts Reactome pathways into graph objects for network analysis in R. Use when user asks to convert Reactome pathways to graphs, perform network analysis on biological pathways, or visualize Reactome data as networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/ReactomeGraph4R.html
 ---
+
 
 # bioconductor-reactomegraph4r
 

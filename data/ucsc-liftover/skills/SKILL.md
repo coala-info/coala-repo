@@ -1,8 +1,9 @@
 ---
 name: ucsc-liftover
-description: The `ucsc-liftover` suite, primarily centered around the `liftOver` binary, is the standard utility for "lifting" genomic features between different assembly coordinates.
+description: ucsc-liftover translates genomic features between different assembly coordinates. Use when user asks to lift genomic features between assemblies, update genomic coordinates from an older reference genome, or map coordinates between different species.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-liftover
 

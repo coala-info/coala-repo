@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotationdbi
-description: the package is available on all platforms; click for details.
+description: AnnotationDbi provides a unified interface for querying and mapping biological identifiers across SQLite-based Bioconductor annotation packages. Use when user asks to map between different biological identifiers, query organism-level or transcript-centric databases, or retrieve genomic feature information using the select interface.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationDbi.html
 ---
+
 
 # bioconductor-annotationdbi
 

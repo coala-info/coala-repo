@@ -1,8 +1,9 @@
 ---
 name: recontig
-description: recontig is a high-performance utility designed to rapidly convert contig nomenclature within standard bioinformatics file formats.
+description: "recontig converts contig nomenclature between different naming conventions like UCSC, NCBI, and Ensembl across various bioinformatics file formats. Use when user asks to rename chromosomes in genomic files, map contig names between genome builds, or generate custom sequence mapping files."
 homepage: https://github.com/blachlylab/recontig
 ---
+
 
 # recontig
 

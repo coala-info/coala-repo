@@ -1,8 +1,9 @@
 ---
 name: probabilistic2020
-description: Probabilistic 20/20 is a bioinformatics tool used to distinguish cancer driver genes from passenger mutations through a randomization-based statistical test.
+description: Probabilistic 20/20 identifies cancer driver genes by performing gene-specific Monte Carlo simulations to distinguish oncogenic patterns from background mutations. Use when user asks to identify driver genes, distinguish passenger mutations, or find significant codon-level clustering in mutation data.
 homepage: https://github.com/KarchinLab/probabilistic2020
 ---
+
 
 # probabilistic2020
 

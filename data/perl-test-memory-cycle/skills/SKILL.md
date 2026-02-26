@@ -1,8 +1,9 @@
 ---
 name: perl-test-memory-cycle
-description: `Test::Memory::Cycle` is a specialized Perl testing utility built upon `Devel::Cycle`.
+description: This Perl testing utility checks objects and data structures for circular references to prevent memory leaks. Use when user asks to verify that objects have no memory cycles, check for expected circular references, or integrate memory leak testing into a Test::More suite.
 homepage: http://metacpan.org/pod/Test::Memory::Cycle
 ---
+
 
 # perl-test-memory-cycle
 

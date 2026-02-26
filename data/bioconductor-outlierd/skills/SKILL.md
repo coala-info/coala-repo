@@ -1,8 +1,9 @@
 ---
 name: bioconductor-outlierd
-description: the package is available on all platforms; click for details.
+description: OutlierD detects outliers in high-throughput biological data using quantile regression. Use when user asks to detect outliers in gene expression data, identify outliers in high-throughput biological datasets, or perform outlier detection using quantile regression.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/OutlierD.html
 ---
+
 
 # bioconductor-outlierd
 

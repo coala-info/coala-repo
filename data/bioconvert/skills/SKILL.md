@@ -1,8 +1,9 @@
 ---
 name: bioconvert
-description: Bioconvert is a specialized tool designed to handle the complex landscape of bioinformatics file formats.
+description: Bioconvert converts bioinformatics data between various file formats while optimizing for performance and handling compression automatically. Use when user asks to convert file formats, change compression types, list available conversion methods, or optimize data transformation using specific underlying tools.
 homepage: http://bioconvert.readthedocs.io/
 ---
+
 
 # bioconvert
 

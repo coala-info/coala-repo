@@ -1,8 +1,9 @@
 ---
 name: recon
-description: The recon skill leverages the reconFTW framework to automate the complex process of information gathering and vulnerability identification.
+description: The recon tool automates information gathering and vulnerability identification by orchestrating various security tools to map an organization's external attack surface. Use when user asks to perform subdomain enumeration, conduct OSINT, analyze web assets, or run automated vulnerability scans on a target domain.
 homepage: https://github.com/six2dez/reconftw
 ---
+
 
 # recon
 

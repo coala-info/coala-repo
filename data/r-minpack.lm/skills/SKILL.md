@@ -1,8 +1,9 @@
 ---
 name: r-minpack.lm
-description: The nls.lm function provides an R interface to lmder and lmdif from the MINPACK library, for solving nonlinear least-squares problems by a modification of the Levenberg-Marquardt algorithm, with support for lower and upper parameter bounds.  The implementation can be used via nls-like calls using the nlsLM function.  </p>
+description: This tool solves nonlinear least-squares problems in R using the Levenberg-Marquardt algorithm. Use when user asks to perform nonlinear regression, fit models with parameter bounds, or resolve convergence issues encountered with the standard nls function.
 homepage: https://cloud.r-project.org/web/packages/minpack.lm/index.html
 ---
+
 
 # r-minpack.lm
 

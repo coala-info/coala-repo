@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scde
-description: the package is available on all platforms; click for details.
+description: The scde package provides statistical methods for analyzing single-cell RNA-seq data, specifically for differential expression and subpopulation identification. Use when user asks to perform differential expression analysis on single-cell RNA-seq data, identify cell subpopulations, or account for technical noise and dropouts in single-cell experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/scde.html
 ---
+
 
 # bioconductor-scde
 

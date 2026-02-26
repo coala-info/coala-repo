@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecolik12.db0
-description: the package is available on all platforms; click for details.
+description: This package provides the base SQLite annotation database for Escherichia coli K12 used by the sqlForge toolset. Use when user asks to build organism-specific annotation packages, create custom E. coli K12 metadata mappings, or provide source data for AnnotationDbi construction functions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliK12.db0.html
 ---
+
 
 # bioconductor-ecolik12.db0
 

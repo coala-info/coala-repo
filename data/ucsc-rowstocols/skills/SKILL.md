@@ -1,8 +1,9 @@
 ---
 name: ucsc-rowstocols
-description: `rowsToCols` is a specialized command-line utility for transposing the axes of a delimited text file.
+description: The `ucsc-rowstocols` tool transposes the rows and columns of a delimited text file. Use when user asks to transpose a file, rotate a data matrix, switch between wide and long data formats, or convert rows to columns.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-rowstocols
 

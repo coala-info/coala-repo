@@ -1,8 +1,9 @@
 ---
 name: apptainer
-description: Apptainer is a specialized container platform designed for ease of use on shared systems and High-Performance Computing (HPC) environments.
+description: Apptainer is a container platform designed for high-performance computing environments that utilizes the Singularity Image Format to run applications with host-level integration. Use when user asks to run or execute commands in a container, build SIF images from definition files or Docker URIs, manage background instances, or access host GPUs and filesystems within a secure, shared environment.
 homepage: https://github.com/apptainer/apptainer
 ---
+
 
 # apptainer
 

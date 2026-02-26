@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hthgu133acdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix HT Human Genome U133A platform to map probe coordinates to indices. Use when user asks to convert between (x,y) coordinates and CEL file indices, access CDF environment metadata, or work with HT_HG-U133A microarray data in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133acdf.html
 ---
+
 
 # bioconductor-hthgu133acdf
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dmrscan
-description: the package is available on all platforms; click for details.
+description: bioconductor-dmrscan identifies differentially methylated regions by applying a sliding window scan statistic to CpG-wise test statistics. Use when user asks to detect genomic regions with significant methylation changes, analyze bisulfite sequencing or array data, or estimate significance thresholds for sliding windows.
 homepage: https://bioconductor.org/packages/release/bioc/html/DMRScan.html
 ---
+
 
 # bioconductor-dmrscan
 

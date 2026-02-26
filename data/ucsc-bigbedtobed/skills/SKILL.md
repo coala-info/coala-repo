@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigbedtobed
-description: The `bigBedToBed` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed to reverse the bigBed creation process.
+description: The ucsc-bigbedtobed tool converts binary bigBed files into standard tab-delimited BED format. Use when user asks to convert bigBed files to BED format, extract specific regions, include headers in the output, convert remote bigBed files, or pipe bigBed content to another tool.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigbedtobed
 

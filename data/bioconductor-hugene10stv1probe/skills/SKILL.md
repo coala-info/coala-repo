@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene10stv1probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and metadata for the Affymetrix Human Gene 1.0 ST v1 microarray. Use when user asks to retrieve probe sequences, access x/y coordinates on the array, identify probe set names, or perform sequence-level analysis for the hugene10stv1 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene10stv1probe.html
 ---
+
 
 # bioconductor-hugene10stv1probe
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtracklayer
-description: the package is available on all platforms; click for details.
+description: The rtracklayer package provides an interface for importing, exporting, and manipulating genomic tracks and interacting with genome browsers. Use when user asks to import or export genomic data formats such as BED, GFF, and BigWig, or manage tracks in the UCSC Genome Browser.
 homepage: https://bioconductor.org/packages/release/bioc/html/rtracklayer.html
 ---
+
 
 # bioconductor-rtracklayer
 

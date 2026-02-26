@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedadiporna
-description: The package document the data collection, pre-processing and processing. In addition to the documentation, the package contains the scripts that was used to generated the data.
+description: This Bioconductor package provides curated RNA-seq data from adipose tissue and the scripts used for its processing. Use when user asks to access curated adipose RNA-seq datasets, retrieve data generation scripts, or examine pre-processing workflows for adipose tissue data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedAdipoRNA.html
 ---
+
 
 # bioconductor-curatedadiporna
 

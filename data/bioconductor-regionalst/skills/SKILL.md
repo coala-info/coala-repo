@@ -1,8 +1,9 @@
 ---
 name: bioconductor-regionalst
-description: the package is available on all platforms; click for details.
+description: RegionalST performs regional analysis and identifies spatial domains in spatial transcriptomics data. Use when user asks to identify spatial regions, perform differential expression analysis between regions, or analyze spatial patterns in transcriptomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/RegionalST.html
 ---
+
 
 # bioconductor-regionalst
 

@@ -1,8 +1,9 @@
 ---
 name: mitgard
-description: MITGARD (Mitochondrial Genome Assembly from RNA-seq Data) is a specialized computational pipeline that leverages the presence of mitochondrial transcripts in RNA-seq libraries to reconstruct complete or near-complete mitochondrial genomes.
+description: "MITGARD reconstructs complete or near-complete mitochondrial genomes from RNA-seq data. Use when user asks to assemble mitochondrial genomes from transcriptomic data, process Illumina or long-read RNA-seq libraries, or recover mitogenomes for non-model organisms."
 homepage: https://github.com/pedronachtigall/MITGARD
 ---
+
 
 # mitgard
 

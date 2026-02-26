@@ -1,8 +1,9 @@
 ---
 name: renet2
-description: RENET2 is a deep learning-based relation extraction tool specifically optimized for identifying links between genes and diseases in complex biomedical texts.
+description: "RENET2 is a deep learning tool designed to extract gene-disease associations from full-text biomedical literature. Use when user asks to predict gene-disease relations, train custom relation extraction models, or evaluate performance using cross-validation."
 homepage: https://github.com/sujunhao/RENET2
 ---
+
 
 # renet2
 

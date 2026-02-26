@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cpvsnp
-description: the package is available on all platforms; click for details.
+description: This package combines p-values from SNP-level association studies to identify significant gene sets or genomic regions. Use when user asks to combine SNP p-values into gene-set scores, perform pathway analysis on GWAS results, or identify significant genomic regions from association studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/cpvSNP.html
 ---
+
 
 # bioconductor-cpvsnp
 

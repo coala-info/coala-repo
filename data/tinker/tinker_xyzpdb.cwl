@@ -2,11 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tinker_xyzpdb
 label: tinker_xyzpdb
-doc: "A utility from the TINKER molecular modeling package to convert XYZ Cartesian
-  coordinate files to Protein Data Bank (PDB) files. (Note: The provided help text
-  contained container runtime error logs rather than tool usage instructions.)\n\n
-  Tool homepage: https://dasher.wustl.edu/tinker/"
-inputs: []
+doc: "Software Tools for Molecular Design\n\nTool homepage: https://dasher.wustl.edu/tinker/"
+inputs:
+  - id: coordinate_file
+    type: File
+    doc: Enter Cartesian Coordinate File Name
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

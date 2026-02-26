@@ -1,8 +1,9 @@
 ---
 name: bioconductor-reusedata
-description: the package is available on all platforms; click for details.
+description: ReUseData manages and reuses large-scale genomic data resources through standardized transformation recipes. Use when user asks to create data transformation recipes, manage genomic data resources, or share reproducible data objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/ReUseData.html
 ---
+
 
 # bioconductor-reusedata
 

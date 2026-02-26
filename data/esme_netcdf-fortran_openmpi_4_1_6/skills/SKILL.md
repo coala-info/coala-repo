@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-fortran_openmpi_4_1_6
-description: This skill provides technical guidance for utilizing the NetCDF-Fortran library distributed via Bioconda.
+description: This tool provides the NetCDF-Fortran library built with OpenMPI 4.1.6 to enable parallel I/O capabilities for Fortran-based scientific applications. Use when user asks to configure the build environment, link against NetCDF-Fortran libraries using nf-config, or compile Fortran code with parallel NetCDF support.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-fortran_openmpi_4_1_6
 

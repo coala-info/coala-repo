@@ -1,8 +1,9 @@
 ---
 name: rnastructure
-description: This skill provides guidance for utilizing the RNAstructure software suite to model nucleic acid folding.
+description: RNAstructure is a software suite for modeling nucleic acid folding and predicting secondary structures for RNA or DNA sequences. Use when user asks to predict minimum free energy structures, calculate base pairing probabilities, analyze bimolecular binding affinity, or find common structures between unaligned sequences.
 homepage: http://rna.urmc.rochester.edu/RNAstructure.html
 ---
+
 
 # rnastructure
 

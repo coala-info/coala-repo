@@ -1,8 +1,9 @@
 ---
 name: ericscript
-description: EricScript is a specialized bioinformatics pipeline for discovering chimeric transcripts (gene fusions) in transcriptomic data.
+description: EricScript is a bioinformatics pipeline designed to discover and score chimeric transcripts and gene fusions from transcriptomic data. Use when user asks to identify gene fusions, download Ensembl-based reference databases, or predict high-confidence chimeric transcripts using the EricScore.
 homepage: https://github.com/databio/ericscript
 ---
+
 
 # ericscript
 

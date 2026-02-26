@@ -3,7 +3,7 @@
 ## schavott
 
 ### Tool Description
-A tool for processing or analyzing data (description not provided in help text)
+Scaffold genomes in real time
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/schavott:0.5.0--py35_0
@@ -18,9 +18,46 @@ A tool for processing or analyzing data (description not provided in help text)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/4995d1589d9249c0228dc511c358e66dc01653f7ed33632a6c30884fa9ce44b0: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/schavott:0.5.0--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2866571832: no space left on device
+usage: schavott [-h] [--run_mode {scaffold,assembly}]
+                [--scaffolder {links,sspace}] [--sspace_path SSPACE_PATH]
+                [--read_type {fast5,fastq,fasta}]
+                [--min_read_length MIN_READ_LENGTH]
+                [--min_quality MIN_QUALITY] --watch WATCH
+                [--contig_file CONTIG_FILE] [--trigger_mode {time,reads}]
+                [--skip SKIP] [--intensity INTENSITY] [--plot]
+                [--output OUTPUT]
+
+Scaffold genomes in real time
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --run_mode {scaffold,assembly}, -r {scaffold,assembly}
+                        Run scaffolding or assembly
+  --scaffolder {links,sspace}, -s {links,sspace}
+                        Which scaffolder to use.
+  --sspace_path SSPACE_PATH, -p SSPACE_PATH
+                        Path to SSPACE (Only for scaffolding)
+  --read_type {fast5,fastq,fasta}, -rt {fast5,fastq,fasta}
+                        Select input type: fastq, fast5 or fasta, this is also
+                        the search pattern for shavott (*.read_type)
+  --min_read_length MIN_READ_LENGTH, -l MIN_READ_LENGTH
+                        Minimum read length from MinION to use.
+  --min_quality MIN_QUALITY, -q MIN_QUALITY
+                        Minimum quality for reads from MinION to use.
+  --watch WATCH, -w WATCH
+                        Directory to watch for fast5 files
+  --contig_file CONTIG_FILE, -c CONTIG_FILE
+                        Path to contig file (Only for scaffolding)
+  --trigger_mode {time,reads}, -t {time,reads}
+                        Use timer or read count. [reads]
+  --skip SKIP, -j SKIP  Skips the first j read of the sequencing
+  --intensity INTENSITY, -i INTENSITY
+                        How often the scaffolding process should run. If run
+                        mode is set to reads, scaffolding will run every i:th
+                        read. If run mode is time, scaffolding will run every
+                        i:th second. [100 reads]
+  --plot                Plot result in web-browser
+  --output OUTPUT, -o OUTPUT
+                        Set output filename. (Defaut: schavott)
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gosummaries
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool visualizes Gene Ontology enrichment results by combining word clouds with experimental data plots like boxplots or violin plots. Use when user asks to visualize GO enrichment results, create word clouds for gene lists, or summarize results from PCA, k-means clustering, and differential expression analysis.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GOsummaries.html
 ---
+
 
 # bioconductor-gosummaries
 

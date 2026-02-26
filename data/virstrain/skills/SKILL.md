@@ -1,8 +1,9 @@
 ---
 name: virstrain
-description: VirStrain is a high-resolution viral strain identification tool that operates on both raw sequencing reads and assembled genomic contigs.
+description: VirStrain is a high-resolution viral strain identification tool that operates on both raw sequencing reads and assembled genomic contigs. Use when user asks to identify viral strains from short reads, identify viral strains from assembled contigs, build custom viral strain databases, or merge viral strain databases.
 homepage: https://github.com/liaoherui/VirStrain
 ---
+
 
 # virstrain
 

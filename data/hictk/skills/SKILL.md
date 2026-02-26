@@ -1,8 +1,9 @@
 ---
 name: hictk
-description: `hictk` is a high-performance C++ toolkit designed for efficient manipulation of Hi-C data.
+description: hictk is a high-performance C++ toolkit for the efficient manipulation, conversion, and normalization of Hi-C data in Cooler and Juicer formats. Use when user asks to convert between .hic and .cool formats, dump interaction matrices, balance matrices, merge datasets, or create multi-resolution files.
 homepage: https://github.com/paulsengroup/hictk
 ---
+
 
 # hictk
 

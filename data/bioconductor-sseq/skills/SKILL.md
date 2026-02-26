@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sseq
-description: the package is available on all platforms; click for details.
+description: This tool performs differential expression analysis of RNA-seq count data using a shrinkage approach for dispersion estimation. Use when user asks to identify differentially expressed genes, estimate dispersion parameters in high-throughput sequencing data, or perform statistical testing on count-based genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/sSeq.html
 ---
+
 
 # bioconductor-sseq
 

@@ -1,8 +1,9 @@
 ---
 name: r-netcomi
-description: R package netcomi (documentation from project home).
+description: NetCoMi provides a comprehensive workflow for the construction, analysis, and comparison of microbial association networks from compositional microbiome data. Use when user asks to construct microbial networks, handle compositional data normalization, compute associations using methods like SPIEC-EASI or SPRING, or compare network topologies between experimental groups.
 homepage: https://cran.r-project.org/web/packages/netcomi/index.html
 ---
+
 
 # r-netcomi
 

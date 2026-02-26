@@ -1,8 +1,9 @@
 ---
 name: pyani
-description: pyani is a specialized toolset for calculating genome-scale similarity between microbial sequences.
+description: pyani calculates genome-scale similarity and average nucleotide identity between microbial sequences to define species boundaries. Use when user asks to calculate ANI, compare microbial genomes, generate identity heatmaps, or automate pairwise genomic alignments.
 homepage: https://github.com/widdowquinn/pyani
 ---
+
 
 # pyani
 

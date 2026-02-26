@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hoodscanr
-description: the package are built based on the SpatialExperiment object, allowing integration into various spatial transcriptomics-related packages from Bioconductor. The package can result in cell-level neighborhood annotation output, along with funtions to perform neighborhood colocalization analysis and neighborhood-based cell clustering.
+description: bioconductor-hoodscanr performs cellular neighborhood analysis and spatial microenvironment characterization for single-cell spatial transcriptomics data. Use when user asks to identify cellular neighborhoods, calculate colocalization metrics, perform spatial clustering, or analyze cell-type interactions using the SpatialExperiment infrastructure.
 homepage: https://bioconductor.org/packages/release/bioc/html/hoodscanR.html
 ---
+
 
 # bioconductor-hoodscanr
 

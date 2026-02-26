@@ -1,8 +1,9 @@
 ---
 name: fstic
-description: fstic is a high-performance Rust-based utility designed to compute genetic distance matrices from variant data.
+description: fstic is a high-performance utility that computes genetic distance matrices from variant data using various estimators. Use when user asks to calculate genetic differentiation, generate distance matrices from VCF files, or perform phylogenetic analysis using metrics like FST and Nei’s D.
 homepage: https://github.com/PathoGenOmics-Lab/fstic
 ---
+
 
 # fstic
 

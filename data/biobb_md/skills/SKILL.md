@@ -1,8 +1,9 @@
 ---
 name: biobb_md
-description: The biobb_md skill provides a standardized interface for executing molecular dynamics tasks.
+description: The biobb_md tool provides a standardized interface for executing molecular dynamics tasks and GROMACS simulation workflows. Use when user asks to convert PDB files to topologies, define simulation boxes, solvate structures, or execute molecular dynamics simulations.
 homepage: https://github.com/bioexcel/biobb_md
 ---
+
 
 # biobb_md
 

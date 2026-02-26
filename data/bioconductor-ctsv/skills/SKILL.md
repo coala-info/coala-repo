@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ctsv
-description: The package outputs p-values and q-values for genes in each cell type, and CTSV is scalable to datasets with tens of thousands of genes measured on hundreds of spots. CTSV can be installed in Windows, Linux, and Mac OS.
+description: CTSV identifies cell-type-specific spatially variable genes in spatial transcriptomics data. Use when user asks to identify cell-type-specific spatially variable genes or calculate p-values for gene expression across different cell types in spatial datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/CTSV.html
 ---
+
 
 # bioconductor-ctsv
 

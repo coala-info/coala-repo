@@ -1,8 +1,9 @@
 ---
 name: kallisto
-description: kallisto is a specialized bioinformatics tool designed for the near-optimal quantification of transcript abundances from high-throughput sequencing reads.
+description: kallisto is a bioinformatics tool that performs near-optimal quantification of transcript abundances from RNA-Seq reads using a pseudoalignment strategy. Use when user asks to build a transcriptome index, quantify bulk RNA-Seq reads, or process single-cell RNA-Seq data using the BUS workflow.
 homepage: https://pachterlab.github.io/kallisto
 ---
+
 
 # kallisto
 

@@ -3,7 +3,7 @@
 ## irida-staramr-results
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it consists of system log messages and a fatal error regarding a container build failure (no space left on device). No arguments could be extracted.
+Exports StarAMR results available through IRIDA into a single excel report.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/irida-staramr-results:0.3.1--pyh5e36f6f_0
@@ -18,11 +18,32 @@ The provided text does not contain help information or usage instructions; it co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/irida-staramr-results:0.3.1--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3292541131: no space left on device
+usage: irida-staramr-results [-h] [-v] -p PROJECT [-o OUTPUT] [-u USERNAME]
+                             [-pw PASSWORD] -c CONFIG [-sr] [-fd FROM_DATE]
+                             [-td TO_DATE]
+
+Exports StarAMR results available through IRIDA into a single excel report.
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         The current version of irida-staramr-results.
+  -p PROJECT, --project PROJECT
+                        Required. Project(s) to scan for StarAMR results.
+  -o OUTPUT, --output OUTPUT
+                        The name of the output excel file.
+  -u USERNAME, --username USERNAME
+                        This is your IRIDA account username.
+  -pw PASSWORD, --password PASSWORD
+                        This is your IRIDA account password.
+  -c CONFIG, --config CONFIG
+                        Required. Path to a configuration file.
+  -sr, --split_results  Export each analysis results into separate output
+                        files resulting to one excel file per analysis.
+  -fd FROM_DATE, --from_date FROM_DATE
+                        Download only results of the analysis that were
+                        created FROM this date (YYYY-MM-DD).
+  -td TO_DATE, --to_date TO_DATE
+                        Download only results of the analysis that were
+                        created UP UNTIL this date (YYYY-MM-DD).
 ```
 
-
-## Metadata
-- **Skill**: generated

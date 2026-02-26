@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cager
-description: the package is available on all platforms; click for details.
+description: CAGEr analyzes Cap Analysis of Gene Expression (CAGE) data to identify transcription start sites and characterize promoter architecture. Use when user asks to map transcription start sites, cluster tags into promoters, normalize CAGE-seq data, or analyze differential promoter usage.
 homepage: https://bioconductor.org/packages/release/bioc/html/CAGEr.html
 ---
+
 
 # bioconductor-cager
 

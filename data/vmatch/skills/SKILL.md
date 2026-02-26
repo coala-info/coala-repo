@@ -1,8 +1,9 @@
 ---
 name: vmatch
-description: vmatch is a high-performance suite for large-scale sequence matching and repeat analysis.
+description: vmatch performs high-performance sequence matching and repeat analysis across large datasets. Use when user asks to find exact or approximate repeats, query sequences against an index, filter or cluster matches, or mask repeats.
 homepage: http://www.vmatch.de/
 ---
+
 
 # vmatch
 

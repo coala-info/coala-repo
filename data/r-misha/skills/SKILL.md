@@ -1,8 +1,9 @@
 ---
 name: r-misha
-description: "A toolkit for analysis of genomic data. The 'misha' package     implements an efficient data structure for storing genomic data, and     provides a set of functions for data extraction, manipulation and     analysis."
+description: The r-misha package provides an efficient framework for managing and analyzing large-scale genomic data using a specialized database structure for 1D and 2D tracks. Use when user asks to create or initialize genomic databases, manipulate interval sets, perform track expressions, or extract data from genomic tracks.
 homepage: https://cran.r-project.org/web/packages/misha/index.html
 ---
+
 
 # r-misha
 

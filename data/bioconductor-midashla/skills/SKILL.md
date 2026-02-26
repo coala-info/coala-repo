@@ -1,8 +1,9 @@
 ---
 name: bioconductor-midashla
-description: the package is available on all platforms; click for details.
+description: midasHLA is an R package for the statistical analysis and transformation of immunogenetics data including HLA and KIR variants. Use when user asks to perform HLA association studies, map alleles to amino acid sequences, or analyze HLA-KIR interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/midasHLA.html
 ---
+
 
 # bioconductor-midashla
 

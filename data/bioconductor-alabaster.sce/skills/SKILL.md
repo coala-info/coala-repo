@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.sce
-description: the package is available on all platforms; click for details.
+description: This tool saves and loads SingleCellExperiment objects to and from file artifacts using the alabaster framework. Use when user asks to save SingleCellExperiment objects to disk, load SCE artifacts into an R session, or persist single-cell data in a language-agnostic format.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.sce.html
 ---
+
 
 # bioconductor-alabaster.sce
 

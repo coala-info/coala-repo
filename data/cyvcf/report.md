@@ -1,9 +1,9 @@
 # cyvcf CWL Generation Report
 
-## cyvcf
+## cyvcf_cyvcf2
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it is a system error log indicating a failure to pull or build the container image due to insufficient disk space.
+cyvcf2 is a fast, zero-copy, Pythonic interface to htslib's VCF/BCF reading and writing capabilities.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cyvcf:0.8.0--py36_0
@@ -18,37 +18,19 @@ The provided text does not contain help information or usage instructions; it is
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 16:48:44  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cyvcf:0.8.0--py36_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a3a67eeb3f2f351264bf6a4540ba14153659e39b0ee29aa1d66cc3e350dfa2c9: unpack entry: usr/local/bin/assistant: unpack to regular file: short write: write /tmp/build-temp-3461909521/rootfs/usr/local/bin/assistant: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## cyvcf_cyvcf2
-
-### Tool Description
-A fast VCF parser based on htslib.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cyvcf:0.8.0--py36_0
-- **Homepage**: https://github.com/brentp/cyvcf2
-- **Package**: https://anaconda.org/channels/bioconda/packages/cyvcf/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 16:49:38  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cyvcf:0.8.0--py36_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a3a67eeb3f2f351264bf6a4540ba14153659e39b0ee29aa1d66cc3e350dfa2c9: unpack entry: usr/local/bin/assistant: unpack to regular file: short write: write /tmp/build-temp-4023390425/rootfs/usr/local/bin/assistant: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/cyvcf2", line 11, in <module>
+    load_entry_point('cyvcf2==0.8.0', 'console_scripts', 'cyvcf2')()
+  File "/usr/local/lib/python3.6/site-packages/click/core.py", line 722, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/click/core.py", line 676, in main
+    _verify_python3_env()
+  File "/usr/local/lib/python3.6/site-packages/click/_unicodefun.py", line 64, in _verify_python3_env
+    stderr=subprocess.PIPE).communicate()[0]
+  File "/usr/local/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/usr/local/lib/python3.6/subprocess.py", line 1344, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'locale': 'locale'
 ```
 

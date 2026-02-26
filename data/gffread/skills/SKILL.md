@@ -1,8 +1,9 @@
 ---
 name: gffread
-description: The `gffread` utility is a versatile tool for handling GFF and GTF files.
+description: "gffread is a versatile utility for processing, converting, and validating GFF and GTF annotation files. Use when user asks to convert between GFF and GTF formats, extract transcript sequences from a genome, or validate the structural integrity of gene models."
 homepage: http://ccb.jhu.edu/software/stringtie/gff.shtml
 ---
+
 
 # gffread
 

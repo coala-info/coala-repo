@@ -1,8 +1,9 @@
 ---
 name: phenograph
-description: PhenoGraph is a clustering method designed to handle the complexity and dimensionality of single-cell biological data.
+description: PhenoGraph is a clustering method that partitions single-cell biological data into distinct subpopulations by identifying communities within a phenotypic similarity graph. Use when user asks to cluster single-cell data, identify cell types without prior labeling, or detect communities in high-dimensional biological datasets.
 homepage: https://github.com/dpeerlab/PhenoGraph
 ---
+
 
 # phenograph
 

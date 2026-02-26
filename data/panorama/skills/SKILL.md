@@ -1,8 +1,9 @@
 ---
 name: panorama
-description: PANORAMA (Pangenome-based Analysis of Biological Systems) is a specialized software suite for the large-scale comparison of partitioned pangenome graphs.
+description: PANORAMA is a software suite for the large-scale comparison and structural analysis of partitioned pangenome graphs. Use when user asks to detect biological systems using HMM models, compare genomic spots across species, generate system distribution heatmaps, or align and cluster gene families across pangenomes.
 homepage: https://github.com/labgem/panorama
 ---
+
 
 # panorama
 

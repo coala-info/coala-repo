@@ -1,8 +1,9 @@
 ---
 name: bioconductor-focalcall
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool identifies and annotates focal copy number aberrations in cancer genomic data while filtering out germ-line variations. Use when user asks to detect focal aberrations, distinguish somatic events from germ-line CNVs, generate frequency plots, or export IGV-compatible files.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/focalCall.html
 ---
+
 
 # bioconductor-focalcall
 

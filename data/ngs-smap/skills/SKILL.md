@@ -1,8 +1,9 @@
 ---
 name: ngs-smap
-description: The ngs-smap (Stack-based Mapping) toolset provides a specialized workflow for analyzing Next-Generation Sequencing data by focusing on "stacks" of reads.
+description: ngs-smap is a toolset for analyzing Next-Generation Sequencing data by identifying stacks of overlapping reads to delineate haplotypes and clusters. Use when user asks to delineate loci from alignment files, call haplotypes, generate genomic relationship matrices, or compare sample sets.
 homepage: https://gitlab.com/truttink/smap
 ---
+
 
 # ngs-smap
 

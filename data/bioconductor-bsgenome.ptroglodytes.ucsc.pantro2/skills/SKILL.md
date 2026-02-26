@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ptroglodytes.ucsc.pantro2
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the chimpanzee (Pan troglodytes) based on the UCSC panTro2 assembly. Use when user asks to access chimpanzee DNA sequences, extract sequences for specific genomic ranges, or perform genome-wide motif searching using the panTro2 build in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ptroglodytes.UCSC.panTro2.html
 ---
+
 
 # bioconductor-bsgenome.ptroglodytes.ucsc.pantro2
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgu34aprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Rat Genome U34A microarray. Use when user asks to retrieve probe sequences for the RG-U34A array, perform sequence-specific analysis, or integrate probe data into genomic workflows.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rgu34aprobe.html
 ---
+
 
 # bioconductor-rgu34aprobe
 

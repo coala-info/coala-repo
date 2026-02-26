@@ -1,8 +1,9 @@
 ---
 name: stream_atac
-description: stream_atac is a preprocessing utility that converts sparse scATAC-seq peak data into a dense feature space suitable for trajectory reconstruction.
+description: stream_atac converts sparse scATAC-seq peak data into a dense feature space of k-mer or transcription factor motif z-scores for trajectory reconstruction. Use when user asks to preprocess scATAC-seq data, calculate chromatin accessibility z-scores, or convert peak matrices into k-mer and motif features.
 homepage: https://github.com/pinellolab/STREAM_atac
 ---
+
 
 # stream_atac
 

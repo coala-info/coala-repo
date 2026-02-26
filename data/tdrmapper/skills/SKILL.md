@@ -1,8 +1,9 @@
 ---
 name: tdrmapper
-description: tDRmapper is a specialized bioinformatics pipeline designed to address the unique alignment challenges posed by tRNA-derived RNAs, which often contain modifications or fragments that confound general-purpose aligners.
+description: tDRmapper is a bioinformatics pipeline for aligning and quantifying tRNA-derived RNAs using a tiered mapping strategy. Use when user asks to map and quantify tRNA-derived RNAs, analyze tDR species from small RNA-seq data, or visualize tDR expression.
 homepage: https://github.com/sararselitsky/tDRmapper
 ---
+
 
 # tdrmapper
 

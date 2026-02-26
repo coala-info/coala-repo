@@ -1,8 +1,9 @@
 ---
 name: minimizers
-description: The `minimizers` tool is a specialized utility for bioinformatics workflows that require sequence sketching.
+description: The minimizers tool performs sequence sketching by extracting the smallest k-mers from sliding windows in genomic datasets. Use when user asks to extract minimizers, generate sequence sketches, perform frequency analysis, or process large FASTA files in parallel.
 homepage: https://github.com/cumbof/minimizers
 ---
+
 
 # minimizers
 

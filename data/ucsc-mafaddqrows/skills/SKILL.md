@@ -1,8 +1,9 @@
 ---
 name: ucsc-mafaddqrows
-description: The `mafAddQRows` utility is part of the UCSC Genome Browser "kent" toolset.
+description: The `ucsc-mafaddqrows` tool inserts quality score rows into Multiple Alignment Format (MAF) files. Use when user asks to 'add quality scores to MAF files', 'insert quality rows into MAF files', or 'include sequence quality in MAF alignments'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-mafaddqrows
 

@@ -1,8 +1,9 @@
 ---
 name: pepsirf
-description: The Peptide-based Serological Immune Response Framework (PepSIRF) is a specialized suite of tools designed to handle the end-to-end workflow of peptide microarray or PhIP-seq data analysis.
+description: PepSIRF processes peptide microarray or PhIP-seq data to transform raw sequencing reads into immunological insights. Use when user asks to demultiplex FASTQ files, normalize peptide counts, calculate Z-scores, or perform enrichment analysis and epitope mapping.
 homepage: https://github.com/LadnerLab/PepSIRF
 ---
+
 
 # pepsirf
 

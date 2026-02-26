@@ -1,8 +1,9 @@
 ---
 name: epa-ng
-description: EPA-ng (Evolutionary Placement Algorithm - next generation) is a massively parallel tool designed to place query sequences into an existing phylogenetic framework.
+description: EPA-ng is a massively parallel tool designed to place query sequences into an existing phylogenetic reference tree. Use when user asks to place sequences into a phylogeny, identify the origin of environmental DNA, or add new sequences to a known tree without re-inferring it.
 homepage: https://github.com/Pbdas/epa-ng
 ---
+
 
 # epa-ng
 

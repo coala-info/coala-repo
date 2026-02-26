@@ -1,8 +1,9 @@
 ---
 name: longranger
-description: The longranger skill provides procedural knowledge for transforming a standard HID Prox or iCLASS long-range reader into a wireless badge-cloning device.
+description: The longranger tool transforms a long-range HID reader into a wireless badge-cloning device by integrating it with a Raspberry Pi to capture and host RFID data. Use when user asks to configure Wiegand hardware connections, install the listener software, or retrieve captured badge credentials via the local web interface.
 homepage: https://github.com/linuz/LongRangeReader
 ---
+
 
 # longranger
 

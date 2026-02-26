@@ -1,8 +1,9 @@
 ---
 name: msalign2
-description: msalign2 is a specialized tool for aligning liquid chromatography-mass spectrometry (LC-MS) or capillary electrophoresis-mass spectrometry (CE-MS) data.
+description: msalign2 aligns liquid chromatography-mass spectrometry or capillary electrophoresis-mass spectrometry data by calculating temporal transformation curves to correct for experimental drift. Use when user asks to align LC-MS or CE-MS datasets, correct retention or migration time shifts, or calculate temporal transformations between mass spectrometry runs.
 homepage: http://www.ms-utils.org/msalign2/index.html
 ---
+
 
 # msalign2
 

@@ -2,14 +2,115 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: vphaser2
 label: vphaser2
-doc: 'V-Phaser 2 is a variant caller for viral populations. Note: The provided text
-  contains system error logs rather than tool help documentation.'
-inputs: []
+doc: Phases variants in a BAM file.
+inputs:
+  - id: alignment_window_size
+    type:
+      - 'null'
+      - int
+    doc: default 500; alignment window size
+    default: 500
+    inputBinding:
+      position: 101
+      prefix: -w
+  - id: dinucleotide_err_prob
+    type:
+      - 'null'
+      - int
+    doc: 'default 1; 1: dinucleotide for err prob measure; 0: not'
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -dt
+  - id: err_calibr_qual_quantile
+    type:
+      - 'null'
+      - int
+    doc: default 20; quantile of qual for err calibr
+    default: 20
+    inputBinding:
+      position: 101
+      prefix: -qual
+  - id: ignore_bases
+    type:
+      - 'null'
+      - int
+    doc: 'default 0; # of bases to ignore on both end of a read'
+    default: 0
+    inputBinding:
+      position: 101
+      prefix: -ig
+  - id: input_bam
+    type:
+      - 'null'
+      - File
+    doc: input sorted bam file
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: mate_pair_err_calibr
+    type:
+      - 'null'
+      - int
+    doc: 'default 1; 1: mate-pair for err calibr; 0: not'
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -mp
+  - id: mode
+    type:
+      - 'null'
+      - int
+    doc: 'default 1; 1: pileup + phasing; 2: pileup'
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -e
+  - id: pe_distance_delta
+    type:
+      - 'null'
+      - int
+    doc: default 2; constrain PE distance by delta x fragsize_variation (auto 
+      measured by program)
+    default: 2
+    inputBinding:
+      position: 101
+      prefix: -delta
+  - id: read_cycle_err_calibr
+    type:
+      - 'null'
+      - int
+    doc: 'default 1; 1: read cycle for err calibr; 0: not'
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -cy
+  - id: significance_value
+    type:
+      - 'null'
+      - float
+    doc: default 0.05; significance value for stat test
+    default: 0.05
+    inputBinding:
+      position: 101
+      prefix: -a
+  - id: stats_sampling_percentage
+    type:
+      - 'null'
+      - int
+    doc: default 30; percentage of reads to sample to get stats.
+    default: 30
+    inputBinding:
+      position: 101
+      prefix: -ps
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/vphaser2:2.0--h2bd4fab_16
-stdout: vphaser2.out

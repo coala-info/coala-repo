@@ -1,9 +1,9 @@
 # ucsc-pslmap CWL Generation Report
 
-## ucsc-pslmap
+## ucsc-pslmap_pslMap
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the OCI image.
+map PSLs alignments to new targets using alignments of the old target to the new target.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-pslmap:482--h0b57e2e_0
@@ -18,52 +18,92 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-pslmap:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+pslMap - map PSLs alignments to new targets using alignments of the old target to the new target.
+usage:
+   pslMap [options] inPsl mapFile outPsl
 
+pslMap - map PSLs alignments to new targets using alignments of
+the old target to the new target.  Given inPsl and mapPsl, where
+the target of inPsl is the query of mapPsl, create a new PSL
+with the query of inPsl aligned to all the targets of mapPsl.
 
-## Metadata
-- **Skill**: generated
+If inPsl is a protein to nucleotide alignment and mapPsl is a
+nucleotide to nucleotide alignment, the resulting alignment is
+nucleotide to nucleotide alignment of the CDS coordinates mRNA that
+would code for the protein.  This is useful as it gives base
+alignments of spliced codons.
 
-## ucsc-pslmap_pslMapPostChain
+Protein to NA alignments can be determine from the PSL, otherwise
+they are assumed to be NA-NA unless the types of the alignments are
+specified with -inType and -mapType.  The following combinations are
+valid, along with the type of output,
 
-### Tool Description
-Post-chaining of PSL alignments after mapping. (Note: The provided help text contains a fatal error and does not list usage instructions.)
+     inPslType   mapPslType  outPslType
+     na_na       na_na       na_na
+     prot_prot   prot_prot   prot_prot
+     prot_na     na_na       cds_na
+     prot_prot   na_na       cds_na
+     prot_prot   prot_na     cds_na
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-pslmap:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-pslmap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-pslmap:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+A chain file may be used instead mapPsl.
 
-## ucsc-pslmap_pslCheck
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime logs and a fatal error message indicating a failure to fetch or build the OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-pslmap:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-pslmap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-pslmap:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options:
+  -chainMapFile - mapFile is a chain file instead of a psl file
+  -swapMap - swap query and target sides of map file.
+  -swapIn - swap query and target sides of inPsl file.
+  -check - validate input, mapping, and mapped PSLs.  This does slow
+   down the program some, so it is optional.
+  -suffix=str - append str to the query ids in the output
+   alignment.  Useful with protein alignments, where the result
+   is not actually and alignment of the protein.
+  -keepTranslated - if either psl is translated, the output psl
+   will be translated (both strands explicted).  Normally an
+   untranslated psl will always be created
+  -mapFileWithInQName - The first column of the mapFile PSL records are a qName,
+   the remainder is a standard PSL.  When an inPsl record is mapped, only
+   mapping records are used with the corresponding qName.
+  -inType=type - input alignment type (prot-port, prot-na, na-na)
+   This is the type after swapping if -swapIn is supplied.
+  -mapType=type - map alignment type (prot-port, prot-na, na-na)
+   This is the type after swapping if -swapMap is supplied.
+  -mapInfo=file - output a file with information about each mapping.
+   The file has the following columns:
+     o srcQName, srcQStart, srcQEnd, srcQSize - qName, etc of
+       psl being mapped (source alignment)
+     o srcTName, srcTStart, srcTEnd - tName, etc of psl being
+       mapped
+     o srcStrand - strand of psl being mapped
+     o srcAligned - number of aligned based in psl being mapped
+     o mappingQName, mappingQStart, mappingQEnd - qName, etc of
+       mapping psl used to map alignment
+     o mappingTName, mappingTStart, mappingTEnd - tName, etc of
+       mapping psl
+     o mappingStrand - strand of mapping psl
+     o mappingId - chain id, or psl file row
+     o mappedQName mappedQStart, mappedQEnd - qName, etc of
+       mapped psl
+     o mappedTName, mappedTStart, mappedTEnd - tName, etc of
+       mapped psl
+     o mappedStrand - strand of mapped psl
+     o mappedAligned - number of aligned bases that were mapped
+     o qStartTrunc - aligned bases at qStart not mapped due to
+       mapping psl/chain not covering the entire soruce psl.
+       This is from the start of the query in the positive
+       direction.
+     o qEndTrunc - similary for qEnd
+     o mappedPslLine - zero-based line number of the corresponding PSL line number
+       in outPsl.
+   If the psl count not be mapped, the mapping* and mapped* columns are empty.
+  -tsv - write output of mapInfo as a TSV rather than autoSql format file.
+  -mappingPsls=pslFile - write mapping alignments that were used in
+   PSL format to this file.  Transformations that were done, such as
+   -swapMap, will be reflected in this file.  There will be a one-to-one
+   correspondence of rows of this file to rows of the outPsl file.
+  -simplifyMappingIds - simplifying mapping ids (inPsl target
+   name and mapFile query name) before matching them. This
+   first drops everything after the last `-', and then drops
+   everything after the last remaining `.'.
+  -verbose=n  - verbose output
+     2 - show each overlap and the mapping
 ```
 

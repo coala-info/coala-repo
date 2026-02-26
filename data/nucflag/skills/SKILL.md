@@ -1,8 +1,9 @@
 ---
 name: nucflag
-description: nucflag is a diagnostic tool for genome assemblies that analyzes read alignments to identify structural discrepancies.
+description: nucflag identifies structural discrepancies and misassemblies in genome assemblies by analyzing read alignment patterns and nucleotide frequencies. Use when user asks to call misassemblies, identify collapsed regions, generate NucFreq-style plots, or calculate assembly quality values.
 homepage: https://github.com/logsdon-lab/NucFlag
 ---
+
 
 # nucflag
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spqndata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for the spatial quantile normalization method. Use when user asks to access sample data for spatial quantile normalization, run spqn package vignettes, or practice with gene expression correlation data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/spqnData.html
 ---
+
 
 # bioconductor-spqndata
 

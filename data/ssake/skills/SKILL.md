@@ -1,8 +1,9 @@
 ---
 name: ssake
-description: SSAKE (Short Sequence Assembly by K-mer search and 3' read Extension) is a specialized tool designed for the de novo assembly of millions of very short DNA sequences.
+description: SSAKE performs de novo assembly of short DNA sequences using a prefix tree and k-mer searching to extend reads into contigs. Use when user asks to assemble short reads into contigs, perform targeted assembly from a seed sequence, or process linked-read data.
 homepage: https://github.com/warrenlr/SSAKE
 ---
+
 
 # ssake
 

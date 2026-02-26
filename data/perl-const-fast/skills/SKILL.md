@@ -1,8 +1,9 @@
 ---
 name: perl-const-fast
-description: The `Const::Fast` module is a streamlined alternative to the built-in `constant` pragma and `Readonly` module.
+description: The perl-const-fast module creates read-only variables that behave like normal variables but throw an error if modified. Use when user asks to define immutable scalars, arrays, or hashes, create read-only configuration tables, or ensure data integrity for constants in Perl.
 homepage: http://metacpan.org/pod/Const-Fast
 ---
+
 
 # perl-const-fast
 

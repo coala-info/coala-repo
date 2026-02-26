@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahcytobands
-description: the package is available on all platforms; click for details.
+description: This tool provides access to chromosomal cytogenetic band data and ideograms for various organisms via AnnotationHub. Use when user asks to retrieve cytoband coordinates, map genomic locations to cytogenetic bands, or obtain Giemsa stain information for visualizing ideograms.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHCytoBands.html
 ---
+
 
 # bioconductor-ahcytobands
 

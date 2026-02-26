@@ -1,8 +1,9 @@
 ---
 name: biobb_io
-description: `biobb_io` serves as the data acquisition layer for the BioExcel Building Blocks suite.
+description: biobb_io retrieves molecular data and structural files from various bioinformatics repositories. Use when user asks to fetch PDB structures, download AlphaFold predictions, or retrieve molecular dynamics trajectories and chemical components.
 homepage: https://github.com/bioexcel/biobb_io
 ---
+
 
 # biobb_io
 

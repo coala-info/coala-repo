@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ifaa
-description: the package is available on all platforms; click for details.
+description: bioconductor-ifaa identifies robust associations between covariates and the absolute abundance of microbiome taxa while adjusting for confounders and controlling the false discovery rate. Use when user asks to estimate associations between variables and microbiome abundance, handle high-dimensional compositional data without zero-imputation, or analyze abundance ratios using multivariate zero-inflated logistic normal regression.
 homepage: https://bioconductor.org/packages/release/bioc/html/IFAA.html
 ---
+
 
 # bioconductor-ifaa
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-daglogo
-description: the package is available on all platforms; click for details.
+description: This tool identifies and visualizes statistically significant differential usage of amino acids in peptide sequences relative to a background model. Use when user asks to perform sequence logo analysis, identify over-represented amino acid patterns, compare peptide sets against a proteome, or group residues by physico-chemical properties.
 homepage: https://bioconductor.org/packages/release/bioc/html/dagLogo.html
 ---
+
 
 # bioconductor-daglogo
 

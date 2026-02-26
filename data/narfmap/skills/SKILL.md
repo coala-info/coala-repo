@@ -1,8 +1,9 @@
 ---
 name: narfmap
-description: NARFMAP is an open-source, high-efficiency mapper and aligner derived from the Illumina DRAGMAP project.
+description: NARFMAP is a high-efficiency mapper and aligner that provides the speed and accuracy of the Dragen algorithm in a software-only format. Use when user asks to map or align genomic reads, generate a reference hash table, or perform hardware-agnostic sequence alignment.
 homepage: https://github.com/Emiller88/NARFMAP
 ---
+
 
 # narfmap
 

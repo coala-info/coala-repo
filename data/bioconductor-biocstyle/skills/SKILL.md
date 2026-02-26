@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocstyle
-description: the package is available on all platforms; click for details.
+description: "BiocStyle provides specialized formatting and styling for Bioconductor R package vignettes and reports. Use when user asks to format R Markdown or Sweave documents, style Bioconductor vignettes, or create standardized links to bioinformatics packages."
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocStyle.html
 ---
+
 
 # bioconductor-biocstyle
 

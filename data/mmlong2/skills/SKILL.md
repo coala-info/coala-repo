@@ -1,8 +1,9 @@
 ---
 name: mmlong2
-description: `mmlong2` is a comprehensive Snakemake-based pipeline designed to transform raw long-read metagenomic data into analyzed, high-quality metagenome-assembled genomes (MAGs).
+description: mmlong2 is a Snakemake-based pipeline that automates the assembly, binning, and taxonomic classification of long-read metagenomic data into high-quality genomes. Use when user asks to assemble long reads into MAGs, perform metagenomic binning, or classify microbial communities from Nanopore or PacBio data.
 homepage: https://github.com/Serka-M/mmlong2
 ---
+
 
 # mmlong2
 

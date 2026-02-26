@@ -1,8 +1,9 @@
 ---
 name: moss
-description: Moss is a specialized somatic variant caller designed to improve the detection of single nucleotide variants (SNVs) that exhibit low variant allele frequencies (VAF) across multiple related samples.
+description: Moss is a somatic variant caller that uses joint analysis across multiple related samples to detect low-frequency single nucleotide variants. Use when user asks to call somatic SNVs from a cohort of samples, recover low-VAF variants using joint calling, or refine candidate mutations from primary callers like Strelka2 or Mutect2.
 homepage: https://github.com/elkebir-group/Moss
 ---
+
 
 # moss
 

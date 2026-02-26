@@ -3,7 +3,7 @@
 ## ucsc-avecols
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is a fatal error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+Average columns in a file. This tool calculates the average value for each column across multiple rows in a provided input file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-avecols:482--h0b57e2e_0
@@ -18,12 +18,14 @@ The provided text does not contain help information for the tool. It is a fatal 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-avecols:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:9419a86d66a0beda4a217936f91667c9a4ac906016fa55ea3de085cc713d957d: unpack entry: usr/local/lib/libquadmath.so.0.0.0: unpack to regular file: short write: write /tmp/build-temp-1298995451/rootfs/usr/local/lib/libquadmath.so.0.0.0: no space left on device
+Unable to find image 'quay.io/biocontainers/ucsc-avecols:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-avecols
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+9419a86d66a0: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2818636265: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

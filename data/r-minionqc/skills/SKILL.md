@@ -1,8 +1,9 @@
 ---
 name: r-minionqc
-description: R package minionqc (documentation from project home).
+description: This tool performs quality control and generates summary statistics for Oxford Nanopore MinION sequencing data. Use when user asks to analyze sequencing_summary.txt files, generate QC plots, or evaluate flow cell performance and read quality.
 homepage: https://cran.r-project.org/web/packages/minionqc/index.html
 ---
+
 
 # r-minionqc
 

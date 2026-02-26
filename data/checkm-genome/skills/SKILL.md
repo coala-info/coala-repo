@@ -1,8 +1,9 @@
 ---
 name: checkm-genome
-description: CheckM is a specialized bioinformatic toolset designed to determine the quality of microbial genomes.
+description: CheckM assesses the quality of microbial genomes by estimating completeness and contamination using lineage-specific marker genes. Use when user asks to evaluate genome bin quality, identify marker genes, or determine the taxonomic placement of metagenome-assembled genomes.
 homepage: https://github.com/Ecogenomics/CheckM
 ---
+
 
 # checkm-genome
 

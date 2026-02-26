@@ -1,8 +1,9 @@
 ---
 name: perl-string-escape
-description: The `perl-string-escape` skill provides a robust interface for common string transformation tasks that go beyond Perl's built-in functions.
+description: This tool provides functions for escaping, unescaping, quoting, and truncating strings using various backslash and word-boundary conventions. Use when user asks to backslash escape control characters, unquote strings, truncate text with elision, or convert between lists and space-separated quoted strings.
 homepage: http://metacpan.org/pod/String::Escape
 ---
+
 
 # perl-string-escape
 

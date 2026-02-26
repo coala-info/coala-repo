@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mapredictdsc
-description: the package is available on all platforms; click for details.
+description: This package provides a pipeline for phenotypic prediction and classification using gene expression data. Use when user asks to predict phenotypes from microarray data, perform gene expression classification, or implement the Diagnostic Signature Challenge framework.
 homepage: https://bioconductor.org/packages/release/bioc/html/maPredictDSC.html
 ---
+
 
 # bioconductor-mapredictdsc
 

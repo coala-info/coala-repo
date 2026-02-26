@@ -3,90 +3,32 @@
 ## cycle
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the 'cycle' tool. It appears to be a log of a failed container build/extraction process (Apptainer/Singularity) due to insufficient disk space.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: biocontainers/cycle:v0.3.1-14-deb_cv1
 - **Homepage**: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cycle/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/cycle:v0.3.1-14-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: lib/x86_64-linux-gnu/libc-2.28.so: unpack to regular file: short write: write /tmp/build-temp-1673970568/rootfs/lib/x86_64-linux-gnu/libc-2.28.so: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## cycle_python
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be an error log from a container build process (Apptainer/Singularity) failing due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: biocontainers/cycle:v0.3.1-14-deb_cv1
-- **Homepage**: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/cycle:v0.3.1-14-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: lib/x86_64-linux-gnu/libc-2.28.so: unpack to regular file: short write: write /tmp/build-temp-2824250799/rootfs/lib/x86_64-linux-gnu/libc-2.28.so: no space left on device
-```
-
-## cycle_conda
-
-### Tool Description
-The provided text does not contain help information or usage instructions; it appears to be a log of a failed container build process due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: biocontainers/cycle:v0.3.1-14-deb_cv1
-- **Homepage**: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/cycle:v0.3.1-14-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: lib/x86_64-linux-gnu/libc-2.28.so: unpack to regular file: short write: write /tmp/build-temp-3534808671/rootfs/lib/x86_64-linux-gnu/libc-2.28.so: no space left on device
-```
-
-## cycle_torchrun
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be an error log from a container build process (Apptainer/Singularity) indicating a 'no space left on device' failure.
-
-### Metadata
-- **Docker Image**: biocontainers/cycle:v0.3.1-14-deb_cv1
-- **Homepage**: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/cycle:v0.3.1-14-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: lib/x86_64-linux-gnu/libc-2.28.so: unpack to regular file: short write: write /tmp/build-temp-2273643959/rootfs/lib/x86_64-linux-gnu/libc-2.28.so: no space left on device
+Unable to access the X Display, is $DISPLAY set properly?
 ```
 

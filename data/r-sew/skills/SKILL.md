@@ -1,8 +1,9 @@
 ---
 name: r-sew
-description: R package sew (documentation from project home).
+description: The r-sew tool performs reference panel-free phasing and genotype imputation for long-read sequencing data using an expectation-maximization algorithm. Use when user asks to phase long-read BAM files into haplotypes, output imputed genotypes in VCF format, or perform probabilistic read partitioning without a reference panel.
 homepage: https://cran.r-project.org/web/packages/sew/index.html
 ---
+
 
 # r-sew
 

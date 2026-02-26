@@ -1,12 +1,12 @@
 # lordec CWL Generation Report
 
-## lordec
+## lordec_lordec-correct
 
 ### Tool Description
-LoRDEC (Long Read DNA Error Correction) is a tool for error correction of long reads using short reads. Note: The provided help text contains only system error messages regarding a container build failure and does not list specific command-line arguments.
+Corrects long reads using short reads.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lordec:0.9--ha87ae23_0
+- **Docker Image**: quay.io/biocontainers/lordec:0.9--h77376b9_3
 - **Homepage**: http://www.atgc-montpellier.fr/lordec/
 - **Package**: https://anaconda.org/channels/bioconda/packages/lordec/overview
 - **Validation**: PASS
@@ -18,80 +18,103 @@ LoRDEC (Long Read DNA Error Correction) is a tool for error correction of long r
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lordec:0.9--ha87ae23_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1252965090: no space left on device
+LoRDEC v0.9
+using GATB v1.4.1
+website : http://www.atgc-montpellier.fr/lordec/
+FAQ : https://www.lirmm.fr/~rivals/lordec/FAQ/
+
+Usage :
+
+lordec-correct
+
+-i|--long_reads <long read FASTA/Q file>
+-2|--short_reads <short read FASTA/Q file(s)>
+-k|--kmer_len <k-mer size>
+-o|--corrected_read_file <output reads file>
+-s|solid_threshold <solid k-mer abundance threshold>
+[-t|--trials <number of paths to try from a k-mer>]
+[-b|--branch <maximum number of branches to explore>]
+[-e|--errorrate <maximum error rate>]
+[-T|--threads <number of threads>]
+[-S|--stat_file <out statistics file>]
+[-c|--complete_search]
+[-a|--abundance-max <abundance max threshold for k-mers>]
+[-O|--out-tmp <GATB graph creation temporary files directory>]
+[-p|--progress]
+[-g|--graph_named_like_output]
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## lordec_lordec-correct
-
-### Tool Description
-LoRDEC (Long Read De-bruijn Graph Error Correction) is a hybrid error correction tool for long reads using short reads. Note: The provided help text contains only system error messages regarding container execution and does not list available command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lordec:0.9--ha87ae23_0
-- **Homepage**: http://www.atgc-montpellier.fr/lordec/
-- **Package**: https://anaconda.org/channels/bioconda/packages/lordec/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lordec:0.9--ha87ae23_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1168186502: no space left on device
-```
 
 ## lordec_lordec-trim
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull or build the image due to lack of disk space.
+LoRDEC v0.9
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lordec:0.9--ha87ae23_0
+- **Docker Image**: quay.io/biocontainers/lordec:0.9--h77376b9_3
 - **Homepage**: http://www.atgc-montpellier.fr/lordec/
 - **Package**: https://anaconda.org/channels/bioconda/packages/lordec/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lordec:0.9--ha87ae23_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1126743453: no space left on device
+LoRDEC v0.9
+using GATB v1.4.1
+website : http://www.atgc-montpellier.fr/lordec/
+FAQ : https://www.lirmm.fr/~rivals/lordec/FAQ/
+
+Usage :
+
+lordec-trim -i <FASTA-file> -o <output-file>
 ```
+
 
 ## lordec_lordec-trim-split
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains a fatal error message from the Apptainer/Singularity container runtime indicating a failure to build the image due to lack of disk space.
+Scan a set of corrected long reads (in FASTA format) and output as sequence their regions that have indeed been corrected (which are in uppercase).
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lordec:0.9--ha87ae23_0
+- **Docker Image**: quay.io/biocontainers/lordec:0.9--h77376b9_3
 - **Homepage**: http://www.atgc-montpellier.fr/lordec/
 - **Package**: https://anaconda.org/channels/bioconda/packages/lordec/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lordec:0.9--ha87ae23_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2123587777: no space left on device
+LoRDEC v0.9
+using GATB v1.4.1
+website : http://www.atgc-montpellier.fr/lordec/
+FAQ : https://www.lirmm.fr/~rivals/lordec/FAQ/
+
+Usage :
+
+lordec-trim-split -i <FASTA-file> -o <output-file>
+       scan a set of corrected long reads (in FASTA format) and output as sequence their regions that have indeed been corrected (which are in uppercase).
 ```
+
 
 ## lordec_lordec-build-SR-graph
 
 ### Tool Description
-A tool from the LoRDEC suite for building a Short Read (SR) graph. (Note: The provided help text contains system error messages and does not list usage or arguments).
+reads the <FASTA/Q file(s)> of short reads, then builds and save their de Bruijn graph for k-mers of length <k-mer size> and occurring at least <abundance threshold> time; the graph is saved in an external file named <out graph file>
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lordec:0.9--ha87ae23_0
+- **Docker Image**: quay.io/biocontainers/lordec:0.9--h77376b9_3
 - **Homepage**: http://www.atgc-montpellier.fr/lordec/
 - **Package**: https://anaconda.org/channels/bioconda/packages/lordec/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lordec:0.9--ha87ae23_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1859687368: no space left on device
+LoRDEC v0.9
+using GATB v1.4.1
+website : http://www.atgc-montpellier.fr/lordec/
+FAQ : https://www.lirmm.fr/~rivals/lordec/FAQ/
+
+Usage :
+
+lordec-build-SR-graph [-T <number of threads>] [-O <GATB graph creation temporary files directory>] [-a <abundance max threshold for k-mers>] -2 <short read FASTA/Q file(s)> -k <k-mer size> -s <solid k-mer abundance threshold> -g <out graph file> 
+         reads the <FASTA/Q file(s)> of short reads, then builds and save their de Bruijn graph for k-mers of length <k-mer size> and occurring at least <abundance threshold> time; the graph is saved in an external file named <out graph file>
 ```
 

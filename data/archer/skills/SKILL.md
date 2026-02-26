@@ -1,8 +1,9 @@
 ---
 name: archer
-description: Archer (Artic Resource for Classifying, Honing & Exporting Reads) is a microservice designed to prepare genomic data for the CLIMB (Cloud Infrastructure for Microbial Bioinformatics) environment.
+description: Archer prepares genomic data for the CLIMB environment by validating metadata, filtering reads against primer schemes, and uploading processed data to S3 storage. Use when user asks to launch the microservice, process genomic samples, or monitor the status of ongoing processing tasks.
 homepage: https://github.com/will-rowe/archer
 ---
+
 
 # archer
 

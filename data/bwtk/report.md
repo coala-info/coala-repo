@@ -1,9 +1,9 @@
 # bwtk CWL Generation Report
 
-## bwtk
+## bwtk_help
 
 ### Tool Description
-A command-line toolkit that uses subcommands for processing. (Note: The provided help text indicates that '-h' is not a valid flag and suggests using the 'help' subcommand for usage information).
+A tool for manipulating bigWig files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bwtk:1.8.1--h9990f68_0
@@ -12,22 +12,23 @@ A command-line toolkit that uses subcommands for processing. (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bwtk/overview
-- **Total Downloads**: 771
+- **Total Downloads**: 793
 - **Last updated**: 2025-11-16
 - **GitHub**: https://github.com/bjmt/bwtk
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-[E::main] Unknown subcommand '-h'; try 'help' for usage
+bwtk v1.8.1  Copyright (C) 2025  Benjamin Jean-Marie Tremblay
+Usage:  bwtk <subcommand> [options]
+Available subcommands:
+    bg2bw      Convert a bedGraph file to bigWig
+    adjust     Perform an operation on a bigWig
+    merge      Average multiple bigWig files together
+    values     Return bigWig values from overlapping BED ranges
+    score      Get summary scores of bigWig values from BED ranges
+    chroms     Print a chrom.sizes file from a bigWig header
+    help       Print this message and exit
+    version    Print the version number and exit
+For subcommand usage, try: bwtk <subcommand> -h
 ```
 
-
-## Metadata
-- **Skill**: generated

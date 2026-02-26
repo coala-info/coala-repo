@@ -1,0 +1,128 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: /usr/local/bin/CONSENT-correct
+label: consent_CONSENT-correct
+doc: "Indicate whether the long reads are from PacBio (--type PB) or Oxford Nanopore
+  (--type ONT)\n\nTool homepage: https://github.com/morispi/CONSENT"
+inputs:
+  - id: in_long_reads
+    type: File
+    doc: fasta or fastq file of long reads to correct.
+    inputBinding:
+      position: 1
+  - id: type_reads_technology
+    type: string
+    doc: Indicate whether the long reads are from PacBio (--type PB) or Oxford 
+      Nanopore (--type ONT)
+    inputBinding:
+      position: 2
+  - id: anchor_support
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of sequences supporting (Ai) - (Ai+1) to keep the two 
+      anchors in the chaining.
+    default: 8
+    inputBinding:
+      position: 103
+      prefix: --anchorSupport
+  - id: max_support
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of overlaps to include in a pile.
+    default: 150
+    inputBinding:
+      position: 103
+      prefix: --maxSupport
+  - id: mer_size
+    type:
+      - 'null'
+      - int
+    doc: k-mer size for chaining and polishing.
+    default: 9
+    inputBinding:
+      position: 103
+      prefix: --merSize
+  - id: min_anchors
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of anchors in a window to allow consensus computation.
+    default: 10
+    inputBinding:
+      position: 103
+      prefix: --minAnchors
+  - id: min_support
+    type:
+      - 'null'
+      - int
+    doc: Minimum support to consider a window for correction.
+    default: 3
+    inputBinding:
+      position: 103
+      prefix: --minSupport
+  - id: minimap_index
+    type:
+      - 'null'
+      - int
+    doc: Split minimap2 index every INT input bases
+    default: 500M
+    inputBinding:
+      position: 103
+      prefix: --minimapIndex
+  - id: nproc
+    type:
+      - 'null'
+      - int
+    doc: Number of processes to run in parallel
+    default: number of cores
+    inputBinding:
+      position: 103
+      prefix: --nproc
+  - id: solid
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of occurrences to consider a k-mer as solid during 
+      polishing.
+    default: 4
+    inputBinding:
+      position: 103
+      prefix: --solid
+  - id: tmpdir
+    type:
+      - 'null'
+      - string
+    doc: Path where to store the temporary files
+    default: working directory
+    inputBinding:
+      position: 103
+      prefix: --tmpdir
+  - id: window_overlap
+    type:
+      - 'null'
+      - int
+    doc: Overlap size between consecutive windows.
+    default: 50
+    inputBinding:
+      position: 103
+      prefix: --windowOverlap
+  - id: window_size
+    type:
+      - 'null'
+      - int
+    doc: Size of the windows to process.
+    default: 500
+    inputBinding:
+      position: 103
+      prefix: --windowSize
+outputs:
+  - id: out_result
+    type: File
+    doc: fasta file where to output the corrected long reads.
+    outputBinding:
+      glob: '*.out'
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/consent:2.2.2--h3452944_6

@@ -1,8 +1,9 @@
 ---
 name: wes-service-client
-description: The `wes-service-client` is a specialized tool for managing computational workflows on remote execution engines that implement the GA4GH WES standard.
+description: The `wes-service-client` manages computational workflows on remote execution engines using the GA4GH WES standard. Use when user asks to get service information, submit a workflow, list workflow runs, get workflow run status, or get workflow run logs.
 homepage: https://github.com/common-workflow-language/workflow-service
 ---
+
 
 # wes-service-client
 

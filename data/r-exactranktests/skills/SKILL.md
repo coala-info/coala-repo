@@ -1,8 +1,9 @@
 ---
 name: r-exactranktests
-description: R package exactranktests (documentation from project home).
+description: This package computes exact conditional p-values and quantiles for non-parametric tests using the Shift-Algorithm. Use when user asks to perform exact Wilcoxon Rank Sum tests, Wilcoxon Signed Rank tests, Ansari-Bradley tests, or permutation tests for small sample sizes or data with ties.
 homepage: https://cran.r-project.org/web/packages/exactranktests/index.html
 ---
+
 
 # r-exactranktests
 

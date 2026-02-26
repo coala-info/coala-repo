@@ -1,8 +1,9 @@
 ---
 name: rebar
-description: rebar (REcombination BARcode detector) is a specialized bioinformatics tool designed to identify and characterize genomic recombination.
+description: rebar identifies and characterizes genomic recombination by scanning mutational barcodes to detect parental origins and breakpoint locations. Use when user asks to detect recombinant lineages, identify parental origins and breakpoints, download reference datasets, or visualize recombination patterns through plots.
 homepage: https://github.com/phac-nml/rebar
 ---
+
 
 # rebar
 

@@ -1,8 +1,9 @@
 ---
 name: r-batchjobs
-description: "Provides Map, Reduce and Filter variants to generate jobs on     batch computing systems like PBS/Torque, LSF, SLURM and Sun Grid     Engine.  Multicore and SSH systems are also supported. For further     details see the project web page.</p>"
+description: "BatchJobs provides an abstraction layer for managing and submitting batch computing jobs from R to cluster queuing systems. Use when user asks to create a job registry, submit R functions to a cluster scheduler, monitor job status, or collect results from batch computations."
 homepage: https://cloud.r-project.org/web/packages/BatchJobs/index.html
 ---
+
 
 # r-batchjobs
 

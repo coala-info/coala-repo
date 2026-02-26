@@ -1,8 +1,9 @@
 ---
 name: flask-admin
-description: Flask-Admin is a powerful extension that automates the creation of administrative backends for Flask web applications.
+description: Flask-Admin automates the creation of customizable administrative backends and CRUD interfaces for Flask web applications. Use when user asks to create an admin dashboard, manage database records through a web UI, secure administrative routes, or implement file management features.
 homepage: https://github.com/pallets-eco/flask-admin
 ---
+
 
 # flask-admin
 

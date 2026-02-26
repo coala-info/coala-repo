@@ -1,8 +1,9 @@
 ---
 name: bioconductor-svmdo
-description: the package is available on all platforms; click for details.
+description: SVMDO predicts disease ontology terms for gene lists using support vector machines. Use when user asks to predict disease ontology terms, classify genes into disease categories, or perform disease-based functional annotation.
 homepage: https://bioconductor.org/packages/release/bioc/html/SVMDO.html
 ---
+
 
 # bioconductor-svmdo
 

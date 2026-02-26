@@ -1,8 +1,9 @@
 ---
 name: ghm
-description: The `ghm` (Genehunter-Modscore) tool is a specialized extension of the Genehunter software suite.
+description: The ghm tool performs parametric linkage analysis by optimizing trait model parameters to maximize LOD scores. Use when user asks to perform MOD-score analysis, optimize trait parameters for complex diseases, or conduct linkage analysis with unknown genetic models.
 homepage: https://www.helmholtz-muenchen.de/en/ige/service/software-download/genehunter-modscore/index.html
 ---
+
 
 # ghm
 

@@ -1,8 +1,9 @@
 ---
 name: needletail
-description: Needletail is a specialized library designed for rapid FASTX (FASTA and FASTQ) parsing and k-mer processing.
+description: "Needletail is a high-performance library for rapid FASTX parsing and k-mer processing in Python and Rust. Use when user asks to parse FASTA or FASTQ files, normalize sequences, generate k-mers, or calculate reverse complements."
 homepage: https://github.com/onecodex/needletail
 ---
+
 
 # needletail
 

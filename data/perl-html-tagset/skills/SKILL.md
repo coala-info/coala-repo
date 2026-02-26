@@ -1,8 +1,9 @@
 ---
 name: perl-html-tagset
-description: This skill provides access to the structural rules of HTML as defined by the `HTML::Tagset` Perl module.
+description: This tool provides data tables and structural rules for HTML elements to assist in parsing and validating web content. Use when user asks to identify tag categories, determine element nesting rules, or find link-bearing attributes in HTML.
 homepage: https://metacpan.org/pod/HTML::Tagset
 ---
+
 
 # perl-html-tagset
 

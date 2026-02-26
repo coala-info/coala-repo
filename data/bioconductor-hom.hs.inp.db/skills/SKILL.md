@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.hs.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides orthology and paralogy mappings between human genes and other species based on the Inparanoid algorithm. Use when user asks to identify human gene counterparts in other organisms, map Ensembl protein IDs across species, or retrieve ortholog data for species like mouse, rat, or yeast.
 homepage: https://bioconductor.org/packages/3.11/data/annotation/html/hom.Hs.inp.db.html
 ---
+
 
 # bioconductor-hom.hs.inp.db
 

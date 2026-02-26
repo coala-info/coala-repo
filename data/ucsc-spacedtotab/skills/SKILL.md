@@ -1,8 +1,9 @@
 ---
 name: ucsc-spacedtotab
-description: The `spacedToTab` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed to sanitize whitespace-delimited data.
+description: `ucsc-spacedtotab` converts whitespace-delimited data, especially from genomic pipelines, into strict tab-delimited format. Use when user asks to convert whitespace-delimited data to tab-delimited, prepare genomic data for database loading, or convert command output to TSV.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-spacedtotab
 

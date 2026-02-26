@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anopheles.db0
-description: the package is available on all platforms; click for details.
+description: This package provides the base SQLite databases required by sqlForge to build organism-specific or chip-specific annotation packages for Anopheles. Use when user asks to install the Anopheles annotation base package, locate raw annotation data for building custom packages, or use sqlForge to create new Anopheles-related annotation resources.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/anopheles.db0.html
 ---
+
 
 # bioconductor-anopheles.db0
 

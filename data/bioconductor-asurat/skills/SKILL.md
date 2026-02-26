@@ -1,8 +1,9 @@
 ---
 name: bioconductor-asurat
-description: the package is available on all platforms; click for details.
+description: "ASURAT performs multifaceted analysis of single-cell transcriptomes by transforming gene expression data into functional feature matrices called Sign-by-Sample Matrices. Use when user asks to create sign-by-sample matrices, characterize cells through biological entities like metabolic pathways or cell types, and identify significant biological signs for cell clusters."
 homepage: https://bioconductor.org/packages/release/bioc/html/ASURAT.html
 ---
+
 
 # bioconductor-asurat
 

@@ -1,8 +1,9 @@
 ---
 name: wally
-description: wally is a high-performance visualization tool designed for aligned sequencing reads and genomic variants.
+description: wally is a high-performance visualization tool for aligned sequencing reads and genomic variants. Use when user asks to visualize genomic regions, compare multiple samples, inspect structural variants, highlight breakpoints, visualize translocations, or trace long-read alignments.
 homepage: https://github.com/tobiasrausch/wally
 ---
+
 
 # wally
 

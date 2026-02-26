@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnvmetrics
-description: the package is available on all platforms; click for details.
+description: CNVMetrics calculates similarity metrics and facilitates the comparison of copy number variation profiles between genomic samples. Use when user asks to calculate similarity between CNV profiles, compare copy number variation data, or quantify the distance between genomic segments.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVMetrics.html
 ---
+
 
 # bioconductor-cnvmetrics
 

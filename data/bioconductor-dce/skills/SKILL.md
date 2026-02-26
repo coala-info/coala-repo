@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dce
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool analyzes differential causal effects in biological pathways by quantifying changes in gene interactions between different conditions using expression data and pathway topologies. Use when user asks to estimate changes in causal relationships between genes, compute differential causal effects from gene expression matrices, or visualize dysregulated pathway edges between healthy and diseased states.
 homepage: https://bioconductor.org/packages/3.13/bioc/html/dce.html
 ---
+
 
 # bioconductor-dce
 

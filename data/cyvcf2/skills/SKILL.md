@@ -1,8 +1,9 @@
 ---
 name: cyvcf2
-description: cyvcf2 is a specialized tool for the rapid processing of genomic variant data.
+description: cyvcf2 is a high-performance tool and Python library for the rapid processing and filtering of VCF and BCF genomic variant data. Use when user asks to parse variant files, query specific genomic regions, extract genotype data as NumPy arrays, or filter VCF records by INFO fields.
 homepage: https://github.com/brentp/cyvcf2
 ---
+
 
 # cyvcf2
 

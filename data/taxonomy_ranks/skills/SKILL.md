@@ -1,8 +1,9 @@
 ---
 name: taxonomy_ranks
-description: The `taxonomy_ranks` skill provides a streamlined interface for querying the NCBI Taxonomy database to obtain standardized rank information.
+description: This tool queries the NCBI Taxonomy database to retrieve standardized rank information and lineage strings for TaxIDs or species names. Use when user asks to obtain taxonomic annotations, resolve species names, or generate lineage data for a list of taxa.
 homepage: https://github.com/linzhi2013/taxonomy_ranks
 ---
+
 
 # taxonomy_ranks
 

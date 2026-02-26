@@ -1,8 +1,9 @@
 ---
 name: ucsc-wigtobigwig
-description: The `wigToBigWig` utility is a core component of the UCSC Kent toolkit.
+description: ucsc-wigtobigwig converts ASCII-formatted Wiggle files into the compressed, binary BigWig format. Use when user asks to convert Wiggle files to BigWig, prepare genomic signal data for the UCSC Genome Browser, or create BigWig files for rapid random access.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-wigtobigwig
 

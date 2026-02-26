@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.gga.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Medical Subject Headings (MeSH) and Entrez Gene identifiers for Gallus gallus. Use when user asks to map MeSH terms to chicken genes, perform MeSH-based functional enrichment analysis, or retrieve gene-to-MeSH associations for Gallus gallus.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Gga.eg.db.html
 ---
+
 
 # bioconductor-mesh.gga.eg.db
 

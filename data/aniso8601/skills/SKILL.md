@@ -1,8 +1,9 @@
 ---
 name: aniso8601
-description: aniso8601 is a pure-Python library that provides logical and consistent parsing of ISO 8601 strings.
+description: "aniso8601 is a Python library for parsing ISO 8601 strings into native Python date and time objects. Use when user asks to parse ISO 8601 strings, handle fractional time elements, convert durations and intervals to Python objects, or process repeating date patterns."
 homepage: https://github.com/sloanlance/aniso8601
 ---
+
 
 # aniso8601
 

@@ -1,8 +1,9 @@
 ---
 name: perl-image-exiftool
-description: The `exiftool` command-line application is a powerful, platform-independent utility for manipulating file metadata.
+description: ExifTool is a command-line utility for reading, writing, and editing metadata across a wide variety of file formats. Use when user asks to extract specific metadata tags, update or delete file information, rename files based on internal dates, or organize media into directories using metadata properties.
 homepage: https://metacpan.org/pod/Image::ExifTool
 ---
+
 
 # perl-image-exiftool
 

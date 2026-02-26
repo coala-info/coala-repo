@@ -1,8 +1,9 @@
 ---
 name: jaligner
-description: JAligner provides a robust Java-based environment for aligning two biological sequences.
+description: JAligner performs local and global alignments of biological sequences using the Smith-Waterman algorithm with affine gap penalties. Use when user asks to align two sequences, apply substitution matrices, or configure gap opening and extension penalties.
 homepage: https://github.com/ahmedmoustafa/JAligner
 ---
+
 
 # jaligner
 

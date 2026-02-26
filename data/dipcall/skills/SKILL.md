@@ -1,8 +1,9 @@
 ---
 name: dipcall
-description: dipcall is a specialized pipeline designed to identify genomic variations by aligning two phased haplotype assemblies to a common reference.
+description: dipcall identifies genomic variations by aligning two phased haplotype assemblies to a common reference genome. Use when user asks to call small variants and long INDELs from assembly contigs, generate high-confidence VCF and BED files, or process phased haplotype assemblies for male or female samples.
 homepage: https://github.com/lh3/dipcall
 ---
+
 
 # dipcall
 

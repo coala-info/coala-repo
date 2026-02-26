@@ -1,8 +1,9 @@
 ---
 name: clearcnv
-description: ClearCNV is a specialized tool for detecting Copy Number Variations (CNVs) in clinical sequencing panels.
+description: "ClearCNV detects copy number variations in clinical sequencing panels by normalizing coverage and clustering samples. Use when user asks to call CNVs from BAM files, reassign samples to compatible sequencing panels, or calculate match scores for normalization."
 homepage: https://github.com/bihealth/clear-cnv
 ---
+
 
 # clearcnv
 

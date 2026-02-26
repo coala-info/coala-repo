@@ -1,8 +1,9 @@
 ---
 name: genomad
-description: genomad is a specialized tool designed to find and classify mobile genetic elements within nucleotide sequences.
+description: genomad identifies and classifies mobile genetic elements like viruses and plasmids within nucleotide sequences using a hybrid neural network and protein-based approach. Use when user asks to identify viruses or plasmids in metagenomic data, find proviruses, or annotate mobile genetic elements.
 homepage: https://portal.nersc.gov/genomad/
 ---
+
 
 # genomad
 

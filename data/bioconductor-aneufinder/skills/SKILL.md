@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aneufinder
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-aneufinder analyzes copy number variations in whole-genome single-cell sequencing data using various calling algorithms and quality control methods. Use when user asks to perform CNV calling, apply mappability correction, create genomic blacklists, or visualize single-cell karyotype heterogeneity.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/AneuFinder.html
 ---
+
 
 # bioconductor-aneufinder
 

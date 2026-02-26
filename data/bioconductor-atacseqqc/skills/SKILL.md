@@ -1,8 +1,9 @@
 ---
 name: bioconductor-atacseqqc
-description: the package is available on all platforms; click for details.
+description: This tool performs quality control and preprocessing for ATAC-seq data, including fragment size analysis and Tn5 transposase bias correction. Use when user asks to assess library complexity, calculate TSS enrichment scores, shift read coordinates, or split BAM files into nucleosome-free and nucleosome-bound fractions.
 homepage: https://bioconductor.org/packages/release/bioc/html/ATACseqQC.html
 ---
+
 
 # bioconductor-atacseqqc
 

@@ -1,8 +1,9 @@
 ---
 name: r-gwasexacthw
-description: R package gwasexacthw (documentation from project home).
+description: This tool performs exact Hardy-Weinberg Equilibrium testing for SNP genotypes using Fisher's exact test. Use when user asks to calculate exact p-values for HWE, test genotype distributions in GWAS data, or handle HWE testing for rare alleles and small sample sizes.
 homepage: https://cran.r-project.org/web/packages/gwasexacthw/index.html
 ---
+
 
 # r-gwasexacthw
 

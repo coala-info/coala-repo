@@ -1,8 +1,9 @@
 ---
 name: cadd-scripts
-description: CADD (Combined Annotation Dependent Depletion) is a framework for integrating diverse genomic annotations into a single measure (C-score) for variant effect prediction.
+description: "cadd-scripts integrates diverse genomic annotations into a single C-score to predict the effect of genetic variants. Use when user asks to install the CADD scoring environment, manage large-scale genomic annotation data, or execute the Snakemake-based pipeline to score novel or known variants."
 homepage: https://github.com/kircherlab/CADD-scripts
 ---
+
 
 # cadd-scripts
 

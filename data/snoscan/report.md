@@ -3,7 +3,7 @@
 ## snoscan
 
 ### Tool Description
-A tool for searching for C/D box methylation guide snoRNA genes in genomic sequences.
+Find snoRNA genes containing rRNA complementarity and C & D boxes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/snoscan:1.0--pl5321h031d066_5
@@ -18,13 +18,31 @@ A tool for searching for C/D box methylation guide snoRNA genes in genomic seque
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/snoscan:1.0--pl5321h031d066_5 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+FATAL: Wrong number of arguments specified on command line
+
+Usage: snoscan [-options] <rRNA sequence file> <query sequence file>
+Find snoRNA genes containing rRNA complementarity
+and C & D boxes
+
+Available options:
+-h             : help - print version and usage info
+-m <meth file> : specify methylation sites
+-o <outfile>   : save candidates in <outfile>
+-s             : save snoRNA sequences with hit info
+-l <length>    : set minimim length for snoRNA-rRNA pairing (def=9bp)
+-C <Score>     : set C Box score cutoff to <Score>
+-D <Score>     : set D prime Box score cutoff to <Score>
+-X <Score>     : set final score cutoff to <Score>
+-c <score>     : set min score for complementary region match
+-d <dist>      : set max distance between C & D boxes
+-p <dist>      : set min distance between rRNA match & 
+                 D box when D prime box is present (def=10bp)
+-i <position>  : Initiate scan at <position> in sequence (def=1)
+
+-M <integer>   : set max distance to known meth site (Def=0)
+-V             : verbose output
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

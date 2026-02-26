@@ -1,69 +1,80 @@
 # ultraheatmap CWL Generation Report
 
-## ultraheatmap
+## ultraheatmap_computeorderedmatrix
 
 ### Tool Description
-A tool for generating and clustering heatmaps (Note: The provided text is an error log and does not contain help information).
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ultraheatmap:1.3.1--pyh3252c3a_0
 - **Homepage**: https://github.com/maxplanck-ie/ultraheatmap/
 - **Package**: https://anaconda.org/channels/bioconda/packages/ultraheatmap/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ultraheatmap/overview
-- **Total Downloads**: 14.2K
+- **Total Downloads**: 14.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/maxplanck-ie/ultraheatmap
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ultraheatmap:1.3.1--pyh3252c3a_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: ultraheatmap [-h] [--version]
+
+                    [Tools]
+                    computeOrderedMatrix
+                    addFeatureToMatrix
+                    
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## ultraheatmap_computeOrderedMatrix
+## ultraheatmap_addfeaturetomatrix
 
 ### Tool Description
-A tool to compute an ordered matrix for heatmap visualization. (Note: The provided help text contains container runtime errors and does not list specific arguments.)
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ultraheatmap:1.3.1--pyh3252c3a_0
 - **Homepage**: https://github.com/maxplanck-ie/ultraheatmap/
 - **Package**: https://anaconda.org/channels/bioconda/packages/ultraheatmap/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ultraheatmap:1.3.1--pyh3252c3a_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: ultraheatmap [-h] [--version]
 
-## ultraheatmap_addFeatureToMatrix
+                    [Tools]
+                    computeOrderedMatrix
+                    addFeatureToMatrix
+                    
 
-### Tool Description
-Add features to a matrix (Note: The provided help text contains only container build error logs and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ultraheatmap:1.3.1--pyh3252c3a_0
-- **Homepage**: https://github.com/maxplanck-ie/ultraheatmap/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ultraheatmap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ultraheatmap:1.3.1--pyh3252c3a_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
 ```
 

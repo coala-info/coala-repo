@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.charm.hg18.example
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the CHARM analysis method using the hg18 human genome assembly. Use when user asks to access platform design information for CHARM microarrays, analyze DNA methylation data with the hg18 reference, or run example CHARM workflows.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.charm.hg18.example.html
 ---
+
 
 # bioconductor-pd.charm.hg18.example
 

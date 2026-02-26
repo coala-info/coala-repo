@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deeppincs
-description: the package is available on all platforms; click for details.
+description: DeepPINCS is a deep learning framework for predicting interactions between proteins and compounds using sequence-based neural network encoders. Use when user asks to predict drug-target interactions, perform drug repurposing studies, or model protein-protein and chemical-chemical interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/DeepPINCS.html
 ---
+
 
 # bioconductor-deeppincs
 

@@ -1,8 +1,9 @@
 ---
 name: scspectra
-description: scspectra (SPECTRA) is a factor analysis tool designed to decompose single-cell gene expression matrices into biologically interpretable programs.
+description: scspectra decomposes single-cell gene expression matrices into biologically interpretable factors by incorporating prior knowledge from gene sets. Use when user asks to perform factor analysis on single-cell data, decompose gene expression into global or cell-type-specific programs, or link latent variables to known biological pathways.
 homepage: https://github.com/dpeerlab/spectra
 ---
+
 
 # scspectra
 

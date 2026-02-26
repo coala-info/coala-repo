@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biochubsshiny
-description: the package is available on all platforms; click for details.
+description: BiocHubsShiny provides a graphical interface for interactively searching and retrieving genomic resources from Bioconductor’s AnnotationHub and ExperimentHub. Use when user asks to launch the interactive hub browser, filter biological resources by species or genome build, and generate R code for reproducible data import.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocHubsShiny.html
 ---
+
 
 # bioconductor-biochubsshiny
 

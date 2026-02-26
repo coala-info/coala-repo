@@ -1,8 +1,9 @@
 ---
 name: mhcnames
-description: mhcnames is a specialized utility designed to handle the complexities and variations in MHC (specifically HLA) naming conventions.
+description: mhcnames is a utility for parsing and standardizing MHC and HLA allele naming conventions. Use when user asks to parse allele names into structured components, compact allele strings for legacy tools, or clean immunological data for MHC binding predictors.
 homepage: https://github.com/hammerlab/mhcnames
 ---
+
 
 # mhcnames
 

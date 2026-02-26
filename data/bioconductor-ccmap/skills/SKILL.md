@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ccmap
-description: the package is available on all platforms; click for details.
+description: This tool predicts drugs and drug combinations that reverse a specific disease gene expression signature. Use when user asks to identify potential therapeutic candidates, perform connectivity mapping, or find synergistic drug pairs from differential expression results.
 homepage: https://bioconductor.org/packages/release/bioc/html/ccmap.html
 ---
+
 
 # bioconductor-ccmap
 

@@ -1,8 +1,9 @@
 ---
 name: diffexpir
-description: DiffExpIR is a specialized bioinformatics tool designed to detect differential intron retention (DIR) events.
+description: DiffExpIR detects differential intron retention events by comparing expression levels between two experimental groups using TPMCalculator output. Use when user asks to detect differential intron retention, calculate Log2 TPM ratios for introns, or perform statistical analysis on intronic expression across conditions.
 homepage: https://github.com/r78v10a07/DiffExpIR
 ---
+
 
 # diffexpir
 

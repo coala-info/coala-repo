@@ -1,8 +1,9 @@
 ---
 name: r-svdialogs
-description: "Quickly construct standard dialog boxes for your GUI, including    message boxes, input boxes, list, file or directory selection, ... In case R   cannot display GUI dialog boxes, a simpler command line version of these   interactive elements is also provided as fallback solution.</p>"
+description: This tool provides a cross-platform interface for creating interactive modal dialog boxes such as message boxes, input fields, and file pickers in R. Use when user asks to display GUI notifications, capture text input, select items from a list, or open and save files through system dialogs.
 homepage: https://cloud.r-project.org/web/packages/svDialogs/index.html
 ---
+
 
 # r-svdialogs
 

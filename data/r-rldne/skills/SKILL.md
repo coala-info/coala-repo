@@ -1,8 +1,9 @@
 ---
 name: r-rldne
-description: R package rldne (documentation from project home).
+description: This tool interfaces with NeEstimator 2.1 to estimate contemporary effective population size using the linkage disequilibrium method within R. Use when user asks to estimate effective population size, automate NeEstimator workflows, or process genetic data for linkage disequilibrium analysis.
 homepage: https://cran.r-project.org/web/packages/rldne/index.html
 ---
+
 
 # r-rldne
 

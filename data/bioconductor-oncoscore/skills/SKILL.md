@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oncoscore
-description: the package is available on all platforms; click for details.
+description: OncoScore ranks genes according to their oncogenic potential using text-mining of biomedical literature. Use when user asks to score genes for cancer association, rank genes by oncogenic potential, or identify candidate oncogenes from a gene list.
 homepage: https://bioconductor.org/packages/release/bioc/html/OncoScore.html
 ---
+
 
 # bioconductor-oncoscore
 

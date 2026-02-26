@@ -1,8 +1,9 @@
 ---
 name: rdeval
-description: `rdeval` is a high-performance, multithreaded utility designed for the rapid assessment and transformation of genomic read data.
+description: "rdeval calculates quality metrics and transforms genomic read data across various sequence formats. Use when user asks to calculate read N50 or GC content, estimate genome coverage, convert sequence file formats, or perform in-silico digestion of PacBio CiFi reads."
 homepage: https://github.com/vgl-hub/rdeval
 ---
+
 
 # rdeval
 

@@ -1,9 +1,9 @@
 # womtool CWL Generation Report
 
-## womtool
+## womtool_validate
 
 ### Tool Description
-A tool for working with Workflow Description Language (WDL) files, including syntax validation, graph generation, and input template creation.
+A tool for validating and manipulating WDL workflows.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/womtool:61--hdfd78af_0
@@ -18,52 +18,44 @@ A tool for working with Workflow Description Language (WDL) files, including syn
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/womtool:61--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Error: Missing value after -h
+Error: Missing argument workflow-source
+Try --help for more information.
+womtool 61-unknown-SNAP
+Usage: java -jar womtool.jar [validate|inputs|outputs|parse|highlight|graph|upgrade|womgraph] [options] workflow-source
 
+  workflow-source          Path to workflow file.
+  -i, --inputs <value>     Workflow inputs file.
+  -h, --highlight-mode <value>
+                           Highlighting mode, one of 'html', 'console' (used only with 'highlight' command)
+  -o, --optional-inputs <value>
+                           If set, optional inputs are also included in the inputs set. Default is 'true' (used only with the inputs command)
+  -l, --list-dependencies  An optional flag to list files referenced in import statements (used only with 'validate' command)
+  --help
+  --version
 
-## Metadata
-- **Skill**: generated
+Command: validate
+Validate a workflow source file. If inputs are provided then 'validate' also checks that the inputs file is a valid set of inputs for the workflow.
 
-## womtool_womtool.jar
+Command: inputs
+Generate and output a new inputs JSON for this workflow.
 
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be an error log from a container runtime (Singularity/Apptainer) failing to fetch or build the tool's image.
+Command: outputs
+Generate and output a list of output types in JSON for this workflow.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/womtool:61--hdfd78af_0
-- **Homepage**: https://cromwell.readthedocs.io/en/develop/WOMtool/
-- **Package**: https://anaconda.org/channels/bioconda/packages/womtool/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/womtool:61--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Command: parse
+(Deprecated; WDL draft 2 only) Print out the Hermes parser's abstract syntax tree for the source file.
 
-## womtool_womgraph
+Command: highlight
+(Deprecated; WDL draft 2 only) Print out the Hermes parser's abstract syntax tree for the source file. Requires at least one of 'html' or 'console'
 
-### Tool Description
-The provided text does not contain help information or argument definitions; it is an error log from a container runtime (Singularity/Apptainer) failing to pull the womtool image.
+Command: graph
+Generate and output a graph visualization of the workflow in .dot format
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/womtool:61--hdfd78af_0
-- **Homepage**: https://cromwell.readthedocs.io/en/develop/WOMtool/
-- **Package**: https://anaconda.org/channels/bioconda/packages/womtool/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/womtool:61--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Command: upgrade
+Automatically upgrade the WDL to version 1.0 and output the result.
+
+Command: womgraph
+(Advanced) Generate and output a graph visualization of Cromwell's internal Workflow Object Model structure for this workflow in .dot format
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: moabs
-description: MOABS (Model-based Analysis of Bisulfite Sequencing data) is an integrated suite designed for the efficient processing of large-scale methylation datasets.
+description: MOABS is an integrated suite for processing large-scale bisulfite sequencing data to identify methylation metrics and differentially methylated regions. Use when user asks to process raw sequencing reads, call methylation from BAM files, or identify differentially methylated regions between groups.
 homepage: https://github.com/sunnyisgalaxy/moabs
 ---
+
 
 # moabs
 

@@ -1,8 +1,9 @@
 ---
 name: r-diffcorr
-description: R package diffcorr (documentation from project home).
+description: This tool analyzes and visualizes differential correlations in biological networks to identify pattern changes between two experimental conditions. Use when user asks to identify changes in correlation networks, calculate correlation matrices, perform Fisher's z-tests, or identify eigen-molecules.
 homepage: https://cran.r-project.org/web/packages/diffcorr/index.html
 ---
+
 
 # r-diffcorr
 

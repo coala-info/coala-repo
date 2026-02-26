@@ -1,8 +1,9 @@
 ---
 name: viloca
-description: VILOCA (VIral LOcal haplotype reconstruction and mutation CAlling) is a bioinformatics tool designed to analyze next-generation sequencing (NGS) data from viral populations.
+description: VILOCA analyzes next-generation sequencing data from viral populations to call mutations and reconstruct local haplotypes. Use when user asks to analyze viral NGS data, call mutations, reconstruct local haplotypes, estimate variant frequencies, or call insertions.
 homepage: https://github.com/cbg-ethz/VILOCA
 ---
+
 
 # viloca
 

@@ -1,8 +1,9 @@
 ---
 name: sequana_pipetools
-description: sequana_pipetools is the foundational utility for the Sequana ecosystem, designed to streamline the lifecycle of Snakemake-based bioinformatics pipelines.
+description: Sequana_pipetools is a utility for managing the lifecycle and execution of Snakemake-based bioinformatics pipelines within the Sequana ecosystem. Use when user asks to initialize new pipeline projects, diagnose SLURM log errors, visualize workflow DAGs, or generate configuration validation schemas.
 homepage: https://github.com/sequana/sequana_pipetools
 ---
+
 
 # sequana_pipetools
 

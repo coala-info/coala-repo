@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scoup
-description: the package is available on all platforms; click for details.
+description: SCOUP estimates pseudo-time and infers cell lineages from single-cell RNA-seq data using an Ornstein-Uhlenbeck process. Use when user asks to estimate pseudo-time, infer developmental trajectories, or perform lineage inference on single-cell transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/scoup.html
 ---
+
 
 # bioconductor-scoup
 

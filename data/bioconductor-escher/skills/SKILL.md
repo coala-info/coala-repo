@@ -1,8 +1,9 @@
 ---
 name: bioconductor-escher
-description: the package is available on all platforms; click for details.
+description: This tool creates multi-dimensional spatial visualizations for spatially-resolved transcriptomics data using Gestalt principles. Use when user asks to visualize gene expression, map spatial domains, overlay multiple data dimensions, or create hex-binned spatial plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/escheR.html
 ---
+
 
 # bioconductor-escher
 

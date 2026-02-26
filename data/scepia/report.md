@@ -3,7 +3,7 @@
 ## scepia
 
 ### Tool Description
-Single-Cell Epigenome-based Inference of cell-type Activities (Note: The provided text contains only system error messages and no help documentation; therefore, no arguments could be extracted).
+SCEPIA: Single-cell RNA sequencing data analysis pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scepia:0.5.1--pyhdfd78af_1
@@ -18,9 +18,25 @@ Single-Cell Epigenome-based Inference of cell-type Activities (Note: The provide
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/459ae9bffc8a4b6802225a68556a9fb5ac9d9fb3c831d3e1bbcce9467977963e: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/scepia:0.5.1--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2203617068: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/scepia", line 7, in <module>
+    from scepia.cli import cli
+  File "/usr/local/lib/python3.9/site-packages/scepia/cli.py", line 5, in <module>
+    from scepia.sc import full_analysis
+  File "/usr/local/lib/python3.9/site-packages/scepia/sc.py", line 20, in <module>
+    import scanpy as sc
+  File "/usr/local/lib/python3.9/site-packages/scanpy/__init__.py", line 6, in <module>
+    from ._utils import check_versions
+  File "/usr/local/lib/python3.9/site-packages/scanpy/_utils/__init__.py", line 29, in <module>
+    from .compute.is_constant import is_constant
+  File "/usr/local/lib/python3.9/site-packages/scanpy/_utils/compute/is_constant.py", line 5, in <module>
+    from numba import njit
+  File "/usr/local/lib/python3.9/site-packages/numba/__init__.py", line 43, in <module>
+    from numba.np.ufunc import (vectorize, guvectorize, threading_layer,
+  File "/usr/local/lib/python3.9/site-packages/numba/np/ufunc/__init__.py", line 3, in <module>
+    from numba.np.ufunc.decorators import Vectorize, GUVectorize, vectorize, guvectorize
+  File "/usr/local/lib/python3.9/site-packages/numba/np/ufunc/decorators.py", line 3, in <module>
+    from numba.np.ufunc import _internal
+SystemError: initialization of _internal failed without raising an exception
 ```
 

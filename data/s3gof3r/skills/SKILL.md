@@ -1,8 +1,9 @@
 ---
 name: s3gof3r
-description: s3gof3r (via the `gof3r` CLI) is a specialized tool designed for maximum throughput when interacting with Amazon S3.
+description: s3gof3r is a high-throughput CLI tool designed for fast, parallelized multipart uploads and downloads with Amazon S3. Use when user asks to stream data to or from S3, perform high-speed file transfers, or ensure data integrity during large object uploads and downloads.
 homepage: https://github.com/rlmcpherson/s3gof3r
 ---
+
 
 # s3gof3r
 

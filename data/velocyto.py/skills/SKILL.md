@@ -1,8 +1,9 @@
 ---
 name: velocyto.py
-description: `velocyto.py` is a specialized bioinformatics tool used to estimate RNA velocity—the rate of change in gene expression—by analyzing the ratio of unspliced to spliced mRNA in single-cell RNA-seq datasets.
+description: Velocyto.py is a bioinformatics tool that estimates RNA velocity by analyzing unspliced to spliced mRNA ratios in single-cell RNA-seq data. Use when user asks to estimate RNA velocity, process single-cell RNA-seq alignment data, quantify unspliced and spliced mRNA, or generate Loom files from 10x Genomics, Smart-seq2, Drop-seq, or generic BAM files.
 homepage: https://github.com/velocyto-team/velocyto.py
 ---
+
 
 # velocyto.py
 

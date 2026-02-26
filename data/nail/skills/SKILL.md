@@ -1,8 +1,9 @@
 ---
 name: nail
-description: Nail (Alignment Inference tooL) is a bioinformatics utility designed for efficient protein sequence alignment.
+description: Nail performs efficient protein sequence alignment using a fast approximation of the HMMER3 Forward/Backward algorithm. Use when user asks to search protein sequences against a database, perform sensitive probabilistic sequence modeling, or run accelerated HMMER-style searches.
 homepage: https://github.com/TravisWheelerLab/nail
 ---
+
 
 # nail
 

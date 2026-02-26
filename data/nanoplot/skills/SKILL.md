@@ -1,8 +1,9 @@
 ---
 name: nanoplot
-description: NanoPlot is a command-line tool designed to provide comprehensive visualization and statistical reporting for long-read sequencing datasets.
+description: "NanoPlot generates visualizations and statistical reports for long-read sequencing data from various input formats. Use when user asks to visualize sequencing quality, calculate N50 metrics, generate length and quality plots, or process Oxford Nanopore summary files."
 homepage: https://github.com/wdecoster/NanoPlot
 ---
+
 
 # nanoplot
 

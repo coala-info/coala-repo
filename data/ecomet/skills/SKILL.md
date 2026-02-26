@@ -1,8 +1,9 @@
 ---
 name: ecomet
-description: The ecomet skill facilitates the management and monitoring of I2C-connected hardware modules on single-board computers.
+description: The ecomet tool manages and monitors I2C-connected hardware modules and sensors on single-board computers. Use when user asks to detect I2C devices, configure environmental sensors, manage power units, or interface with hardware drivers like LEDs and EEPROMs.
 homepage: https://github.com/mamin27/ecomet_i2c_raspberry_tools
 ---
+
 
 # ecomet
 

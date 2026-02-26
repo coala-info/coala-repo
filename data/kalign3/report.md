@@ -3,7 +3,7 @@
 ## kalign3
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container runtime failure (no space left on device).
+Kalign is a fast and accurate multiple sequence alignment algorithm.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kalign3:3.4.0--h503566f_2
@@ -18,11 +18,13 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kalign3:3.4.0--h503566f_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3602276102: no space left on device
+Unable to find image 'quay.io/biocontainers/kalign3:3.4.0--h503566f_2' locally
+3.4.0--h503566f_2: Pulling from biocontainers/kalign3
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+c8a4a7dd5b21: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3837785035: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

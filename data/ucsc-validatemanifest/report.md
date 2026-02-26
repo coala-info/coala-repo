@@ -3,7 +3,7 @@
 ## ucsc-validatemanifest
 
 ### Tool Description
-A tool to validate manifest files, typically used in the context of UCSC Genome Browser data submissions.
+Validate a manifest file to ensure it is correctly formatted and optionally check that files exist and match metadata.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-validatemanifest:482--h0b57e2e_0
@@ -18,11 +18,14 @@ A tool to validate manifest files, typically used in the context of UCSC Genome 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-validatemanifest:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-validatemanifest:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-validatemanifest
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+57372b815c08: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2797848600: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

@@ -1,8 +1,9 @@
 ---
 name: bwtk
-description: bwtk is a specialized toolkit designed for the efficient handling of bigWig files, which are indexed binary formats used in genomics for fast data retrieval.
+description: "bwtk is a specialized toolkit for efficiently creating, merging, and manipulating bigWig files in genomics. Use when user asks to convert bedGraph files to bigWig, merge multiple tracks, extract base-resolution scores, or optimize file size through binning and mathematical transformations."
 homepage: https://github.com/bjmt/bwtk
 ---
+
 
 # bwtk
 

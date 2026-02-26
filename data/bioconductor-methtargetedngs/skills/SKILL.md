@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methtargetedngs
-description: the package is available on all platforms; click for details.
+description: MethTargetedNGS performs targeted DNA methylation analysis and visualization for next-generation sequencing data. Use when user asks to analyze targeted bisulfite sequencing data, calculate methylation levels in specific genomic regions, or visualize methylation patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/MethTargetedNGS.html
 ---
+
 
 # bioconductor-methtargetedngs
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-idiogram
-description: the package is available on all platforms; click for details.
+description: This tool plots genomic data integrated with cytogenetic banding patterns for human, mouse, and rat genomes. Use when user asks to visualize gene expression or SNP data alongside chromosomal regions, generate idiograms, or interactively identify genes within specific cytogenetic bands.
 homepage: https://bioconductor.org/packages/release/bioc/html/idiogram.html
 ---
+
 
 # bioconductor-idiogram
 

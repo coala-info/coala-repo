@@ -1,8 +1,9 @@
 ---
 name: super_distance
-description: `super_distance` implements distance-based summary statistics methods to reconstruct a species tree from multiple gene trees.
+description: This tool reconstructs species trees from multiple gene trees using distance-based summary statistics. Use when user asks to reconstruct a species tree from gene trees, handle paralogs in multi-labeled trees, or aggregate information from trees with non-overlapping leaf sets.
 homepage: https://github.com/quadram-institute-bioscience/super_distance
 ---
+
 
 # super_distance
 

@@ -1,8 +1,9 @@
 ---
 name: super-focus
-description: SUPER-FOCUS (Subsystems Profile by Electronic Resource Focused On Chemotaxis, Unknowns, and Secretion) is a tool designed for the rapid functional profiling of shotgun metagenomic datasets.
+description: SUPER-FOCUS performs rapid functional profiling of shotgun metagenomic datasets using a reduced database of protein families. Use when user asks to annotate metagenomic reads, perform functional profiling of subsystems, or download the required protein database.
 homepage: https://edwards.sdsu.edu/SUPERFOCUS
 ---
+
 
 # super-focus
 

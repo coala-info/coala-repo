@@ -1,8 +1,9 @@
 ---
 name: bioconductor-doubletrouble
-description: the package is available on all platforms; click for details.
+description: This tool identifies and classifies duplicated genes from whole-genome protein sequences into various duplication modes. Use when user asks to classify gene pairs into duplication modes, calculate substitution rates, identify Ks peaks for whole-genome duplication events, or visualize duplication frequencies and age distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/doubletrouble.html
 ---
+
 
 # bioconductor-doubletrouble
 

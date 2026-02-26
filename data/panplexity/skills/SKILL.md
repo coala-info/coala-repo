@@ -1,8 +1,9 @@
 ---
 name: panplexity
-description: panplexity is a high-performance Rust tool designed to detect repetitive or low-information regions within pangenome graphs.
+description: panplexity detects repetitive or low-information regions within pangenome graphs by calculating complexity scores. Use when user asks to identify low-complexity regions, annotate GFA files with complexity tags, or prepare pangenome graphs for visualization.
 homepage: https://github.com/AndreaGuarracino/panplexity
 ---
+
 
 # panplexity
 

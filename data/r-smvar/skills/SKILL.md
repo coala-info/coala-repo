@@ -1,8 +1,9 @@
 ---
 name: r-smvar
-description: R package smvar (documentation from project home).
+description: This tool performs statistical analysis of gene expression data using a structural model for variances to detect differentially expressed genes. Use when user asks to identify differentially expressed genes, stabilize variance estimates in small sample sizes, or perform paired and unpaired transcriptomics data analysis.
 homepage: https://cran.r-project.org/web/packages/smvar/index.html
 ---
+
 
 # r-smvar
 

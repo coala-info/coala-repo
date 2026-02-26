@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human650v3acrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and platform-specific constants for performing genotype calling or copy number analysis on Illumina 650k (v3a) arrays using the CRLMM algorithm. Use when user asks to perform genotyping, analyze copy number variations, or process raw intensity data from Illumina 650k v3a SNP arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human650v3aCrlmm.html
 ---
+
 
 # bioconductor-human650v3acrlmm
 

@@ -1,8 +1,9 @@
 ---
 name: perl-hook-lexwrap
-description: The `perl-hook-lexwrap` skill provides a mechanism to "wrap" existing Perl subroutines with custom code that runs immediately before (`pre`) or after (`post`) the original routine.
+description: This tool provides a mechanism to wrap Perl subroutines with custom pre- and post-execution code while maintaining the original caller and context information. Use when user asks to wrap Perl subroutines with hooks, add temporary or lexical subroutine wrappers, or modify subroutine arguments and return values transparently.
 homepage: https://github.com/karenetheridge/Hook-LexWrap
 ---
+
 
 # perl-hook-lexwrap
 

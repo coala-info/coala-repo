@@ -1,8 +1,9 @@
 ---
 name: strainr2
-description: StrainR2 is a specialized metagenomic tool designed to deconvolve the relative abundance of specific microbial strains within a known community.
+description: StrainR2 deconvolves the relative abundance of specific microbial strains within a known community using a two-step database preparation and read normalization process. Use when user asks to create a reference database from genome files, quantify strain abundances in metagenomic samples, or normalize reads to account for genome quality biases.
 homepage: https://github.com/BisanzLab/StrainR2
 ---
+
 
 # strainr2
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmusculus.ucsc.mm8
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Mus musculus based on the UCSC mm8 assembly for use within the Bioconductor framework. Use when user asks to access mouse genomic sequences, retrieve specific chromosome data, extract upstream promoter regions, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm8.html
 ---
+
 
 # bioconductor-bsgenome.mmusculus.ucsc.mm8
 

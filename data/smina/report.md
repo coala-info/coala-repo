@@ -3,7 +3,7 @@
 ## smina
 
 ### Tool Description
-smina is a fork of AutoDock Vina that is customized to better support scoring function development and user-specified scoring functions. (Note: The provided text is a container runtime error log and does not contain help information or argument definitions).
+smina is a fork of AutoDock Vina that is customized to better support scoring function development and high-performance docking.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/smina:2017.11.9--0
@@ -18,13 +18,20 @@ smina is a fork of AutoDock Vina that is customized to better support scoring fu
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/smina:2017.11.9--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/smina:2017.11.9--0' locally
+2017.11.9--0: Pulling from biocontainers/smina
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+85037084e4f9: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3879472755: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

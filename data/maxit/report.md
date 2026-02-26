@@ -3,7 +3,7 @@
 ## maxit
 
 ### Tool Description
-The provided text does not contain help information for the tool 'maxit'. It contains error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to insufficient disk space.
+Translate between PDB and CIF formats.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/maxit:11.400--h503566f_0
@@ -18,11 +18,12 @@ The provided text does not contain help information for the tool 'maxit'. It con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/maxit:11.400--h503566f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1653904175: no space left on device
+Usage: maxit -input inputfile -output outputfile -o num [ -log logfile ]
+  [-o  1: Translate PDB format file to CIF format file]
+  [-o  2: Translate CIF format file to PDB format file]
+  [-o  8: Translate CIF format file to mmCIF format file]
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

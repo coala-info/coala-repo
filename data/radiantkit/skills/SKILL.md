@@ -1,8 +1,9 @@
 ---
 name: radiantkit
-description: `radiantkit` is a specialized Python-based toolkit designed for the quantitative analysis of YFISH images to reveal the radial organization of chromatin within the cell nucleus.
+description: radiantkit is a Python-based toolkit for the quantitative analysis of YFISH images to study the radial organization of chromatin within the cell nucleus. Use when user asks to convert microscopy formats, perform nuclear segmentation, or calculate spatial metrics from imaging data.
 homepage: https://github.com/bicrolab/radiantkit
 ---
+
 
 # radiantkit
 

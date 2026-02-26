@@ -1,8 +1,9 @@
 ---
 name: bamutil
-description: The `bamutil` suite provides a comprehensive set of tools for processing high-throughput sequencing data in SAM/BAM formats.
+description: The bamutil suite provides a collection of tools for processing, validating, and manipulating high-throughput sequencing data in SAM/BAM formats. Use when user asks to merge BAM files, clip adapter sequences, validate file integrity, generate alignment statistics, or convert between SAM and BAM formats.
 homepage: http://genome.sph.umich.edu/wiki/BamUtil
 ---
+
 
 # bamutil
 

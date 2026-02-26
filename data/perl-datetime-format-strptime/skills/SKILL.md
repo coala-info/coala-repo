@@ -1,8 +1,9 @@
 ---
 name: perl-datetime-format-strptime
-description: The `perl-datetime-format-strptime` tool (representing the `DateTime::Format::Strptime` Perl module) provides a robust mechanism for converting between arbitrary date/time strings and structured `DateTime` objects.
+description: This tool parses and formats date and time strings using POSIX-style patterns to convert between text and structured DateTime objects. Use when user asks to parse custom date formats, convert timestamps between different string representations, or handle locale-specific date strings in Perl.
 homepage: https://metacpan.org/dist/DateTime-Format-Strptime
 ---
+
 
 # perl-datetime-format-strptime
 

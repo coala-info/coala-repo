@@ -1,8 +1,9 @@
 ---
 name: mirge
-description: The mirge skill enables the processing of small RNA sequencing data through a streamlined pipeline.
+description: miRge processes small RNA sequencing data to perform quality control, adapter trimming, and alignment against miRNA databases. Use when user asks to annotate miRNAs, identify isomiRs or tRNA fragments, and generate functional expression profiles from raw sequencing reads.
 homepage: https://github.com/mhalushka/miRge
 ---
+
 
 # mirge
 

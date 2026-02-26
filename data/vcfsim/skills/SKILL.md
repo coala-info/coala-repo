@@ -1,8 +1,9 @@
 ---
 name: vcfsim
-description: vcfsim bridges the gap between complex coalescent simulations and standard bioinformatics file formats.
+description: vcfsim simulates genetic data and outputs it into VCF files. Use when user asks to simulate genetic data, generate ground-truth genomic data, validate variant callers, test population genetic software, perform power analyses, create null datasets, benchmark selection detection tools, or benchmark demographic inference algorithms.
 homepage: https://github.com/Pie115/VCFSimulator-SamukLab
 ---
+
 
 # vcfsim
 

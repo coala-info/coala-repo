@@ -2,15 +2,98 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pslFilter
 label: ucsc-pslfilter
-doc: "The provided text does not contain help information for the tool. It contains
-  container runtime log messages and a fatal error indicating a failure to fetch or
-  build the image.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Filter PSL files based on score, identity, coverage, and other criteria.\n\n\
+  Tool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: psl_in
+    type: File
+    doc: Input PSL file
+    inputBinding:
+      position: 1
+  - id: best
+    type:
+      - 'null'
+      - boolean
+    doc: Only output best match for each query
+    inputBinding:
+      position: 102
+      prefix: -best
+  - id: ignore_introns
+    type:
+      - 'null'
+      - boolean
+    doc: Ignore introns when calculating score/id
+    inputBinding:
+      position: 102
+      prefix: -ignoreIntrons
+  - id: max_gap
+    type:
+      - 'null'
+      - int
+    doc: Maximum gap size is N
+    default: 100
+    inputBinding:
+      position: 102
+      prefix: -maxGap
+  - id: min_cover
+    type:
+      - 'null'
+      - float
+    doc: Minimum coverage is N.N (0.0 to 1.0)
+    default: 0.0
+    inputBinding:
+      position: 102
+      prefix: -minCover
+  - id: min_id
+    type:
+      - 'null'
+      - float
+    doc: Minimum identity is N.N (0.0 to 1.0)
+    default: 0.0
+    inputBinding:
+      position: 102
+      prefix: -minId
+  - id: min_score
+    type:
+      - 'null'
+      - int
+    doc: Minimum score is N
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: -minScore
+  - id: min_size
+    type:
+      - 'null'
+      - int
+    doc: Minimum size is N
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: -minSize
+  - id: nohead
+    type:
+      - 'null'
+      - boolean
+    doc: Don't output PSL header
+    inputBinding:
+      position: 102
+      prefix: -nohead
+  - id: non_size
+    type:
+      - 'null'
+      - int
+    doc: Minimum size of non-gap is N
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: -nonSize
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: psl_out
+    type: File
+    doc: Output filtered PSL file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-pslfilter:482--h0b57e2e_0
-stdout: ucsc-pslfilter.out

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95bprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and spatial coordinates for the Affymetrix HGU95B microarray chip. Use when user asks to retrieve nucleotide sequences, identify probe coordinates, or perform probe-level analysis for the Human Genome U95B array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95bprobe.html
 ---
+
 
 # bioconductor-hgu95bprobe
 

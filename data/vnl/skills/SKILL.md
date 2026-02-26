@@ -1,8 +1,9 @@
 ---
 name: vnl
-description: VNL (Virtual Normal Loss) is a specialized framework for monocular depth prediction that improves upon standard methods by enforcing geometric constraints through "virtual normals." This approach allows the model to better capture the underlying 3D structure of a scene from a single 2D image.
+description: VNL is a framework for monocular depth prediction, capturing 3D structure from single 2D images. Use when user asks to evaluate the model on benchmark datasets, process custom images for depth prediction, or train the model.
 homepage: https://github.com/YvanYin/VNL_Monocular_Depth_Prediction
 ---
+
 
 # vnl
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnbeads.rn5
-description: the package is available on all platforms; click for details.
+description: This package provides DNA methylation analysis and annotation data for the rat genome assembly rn5. Use when user asks to analyze DNA methylation data for the rn5 rat genome, perform differential methylation analysis, or generate comprehensive methylation reports.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RnBeads.rn5.html
 ---
+
 
 # bioconductor-rnbeads.rn5
 

@@ -3,7 +3,7 @@
 ## ditasic
 
 ### Tool Description
-Differential Abundance Table Similarity Correction. (Note: The provided text is a system error log indicating a failure to build the container image due to lack of disk space and does not contain the tool's help documentation.)
+Differential Taxon Abundance Subtraction and Intersection Counting for accurate profiling of metagenomes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ditasic:0.2--py37h470a237_0
@@ -18,9 +18,22 @@ Differential Abundance Table Similarity Correction. (Note: The provided text is 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ditasic:0.2--py37h470a237_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1721963782: no space left on device
+Unable to find image 'quay.io/biocontainers/ditasic:0.2--py37h470a237_0' locally
+0.2--py37h470a237_0: Pulling from biocontainers/ditasic
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+fc5f6d86f4d9: Pulling fs layer
+fc5f6d86f4d9: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob3412267906: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

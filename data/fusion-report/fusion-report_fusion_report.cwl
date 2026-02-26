@@ -1,11 +1,35 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fusion-report
+baseCommand: fusion_report
 label: fusion-report_fusion_report
-doc: "A tool for generating reports on gene fusions. (Note: The provided help text
-  contains only system error logs and does not list specific command-line arguments.)\n
-  \nTool homepage: https://github.com/matq007/fusion-report"
-inputs: []
+doc: "Tool for generating friendly UI custom report.\n\nTool homepage: https://github.com/matq007/fusion-report"
+inputs:
+  - id: command
+    type: string
+    doc: 'Command to execute: run, download, or sync'
+    inputBinding:
+      position: 1
+  - id: download
+    type:
+      - 'null'
+      - boolean
+    doc: Download required databases
+    inputBinding:
+      position: 102
+  - id: run
+    type:
+      - 'null'
+      - boolean
+    doc: Run application
+    inputBinding:
+      position: 102
+  - id: sync
+    type:
+      - 'null'
+      - boolean
+    doc: Synchronize databases
+    inputBinding:
+      position: 102
 outputs:
   - id: stdout
     type: stdout

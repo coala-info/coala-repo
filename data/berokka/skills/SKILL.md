@@ -1,8 +1,9 @@
 ---
 name: berokka
-description: Berokka is a specialized utility designed to "clean up" bacterial genome assemblies produced by long-read sequencing technologies.
+description: "Berokka identifies and removes redundant overlaps from the ends of circular bacterial genome assembly contigs. Use when user asks to clean up bacterial genome assemblies, trim terminal redundancy from contigs, or circularize FASTA sequences."
 homepage: https://github.com/tseemann/berokka
 ---
+
 
 # berokka
 

@@ -1,8 +1,9 @@
 ---
 name: biocommons.seqrepo
-description: biocommons.seqrepo is a specialized system for storing and accessing biological sequences locally.
+description: biocommons.seqrepo is a system for the local storage, deduplication, and retrieval of biological sequences using hash-based identifiers. Use when user asks to retrieve sequence slices, map between different sequence identifier namespaces, or maintain a local mirror of public sequence databases.
 homepage: https://github.com/biocommons/biocommons.seqrepo
 ---
+
 
 # biocommons.seqrepo
 

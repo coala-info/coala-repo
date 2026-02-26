@@ -1,8 +1,9 @@
 ---
 name: perl-super
-description: The `perl-super` (SUPER) module provides a more robust and flexible way to call parent methods compared to Perl's built-in `SUPER::` mechanism.
+description: The perl-super module provides a robust mechanism for calling parent methods that respects the runtime inheritance hierarchy more accurately than Perl's built-in SUPER pseudo-class. Use when user asks to call parent methods with Ruby-style dispatch, pass modified arguments to a superclass, or handle complex method redispatch in roles and mixins.
 homepage: http://metacpan.org/pod/SUPER
 ---
+
 
 # perl-super
 

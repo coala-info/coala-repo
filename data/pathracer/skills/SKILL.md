@@ -1,8 +1,9 @@
 ---
 name: pathracer
-description: PathRacer is a specialized alignment tool designed to bridge the gap between profile HMMs and fragmented assembly graphs.
+description: PathRacer aligns profile HMMs to assembly graphs to reconstruct complete sequences across fragmented segments. Use when user asks to align HMMs to GFA or FASTG graphs, identify full-length genes in metagenomic data, or traverse assembly paths to recover fragmented sequences.
 homepage: http://cab.spbu.ru/software/pathracer/
 ---
+
 
 # pathracer
 

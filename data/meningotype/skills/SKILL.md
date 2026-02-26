@@ -1,8 +1,9 @@
 ---
 name: meningotype
-description: The `meningotype` skill enables the rapid characterization of *Neisseria meningitidis* isolates using whole-genome sequencing (WGS) data.
+description: meningotype performs rapid characterization of Neisseria meningitidis isolates by predicting serogroups and identifying antigen variants from genomic data. Use when user asks to predict serogroups, perform finetyping, determine MLST, or assess vaccine coverage using the MenDeVAR index.
 homepage: https://github.com/MDU-PHL/meningotype
 ---
+
 
 # meningotype
 

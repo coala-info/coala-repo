@@ -1,8 +1,9 @@
 ---
 name: viewbs
-description: ViewBS is a powerful toolkit designed for the graphical representation of DNA methylation data.
+description: ViewBS visualizes DNA methylation data, transforming genome-wide reports into interpretable graphics for comparing methylation profiles. Use when user asks to visualize DNA methylation data, compare methylation profiles across samples, inspect methylation at specific genomic loci, plot average methylation over functional regions, or generate global methylation statistics.
 homepage: https://github.com/xie186/ViewBS
 ---
+
 
 # viewbs
 

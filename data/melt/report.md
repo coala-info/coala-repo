@@ -3,26 +3,32 @@
 ## melt
 
 ### Tool Description
-Mobile Element Locator Tool (MELT)
+FAIL to generate CWL: melt not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/melt:1.0.3--py35_1
 - **Homepage**: https://github.com/meltylabs/melty
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/melt/overview
-- **Total Downloads**: 35.1K
+- **Total Downloads**: 35.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/meltylabs/melty
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: melt not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: melt not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/melt:1.0.3--py35_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1522332844: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

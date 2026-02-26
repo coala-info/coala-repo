@@ -1,8 +1,9 @@
 ---
 name: functools32
-description: functools32 is a backport of the Python 3.2 `functools` module for use in Python 2.7 and PyPy environments.
+description: functools32 provides a backport of Python 3.2 higher-order functions and operations on callable objects to Python 2.7 and PyPy. Use when user asks to implement memoization with lru_cache, simplify rich comparisons with total_ordering, or preserve function metadata using wraps in legacy Python environments.
 homepage: https://github.com/michilu/python-functools32
 ---
+
 
 # functools32
 

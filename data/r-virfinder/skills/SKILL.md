@@ -1,8 +1,9 @@
 ---
 name: r-virfinder
-description: R package virfinder (documentation from project home).
+description: VirFinder identifies viral sequences from assembled metagenomic data using k-mer signatures and logistic regression models. Use when user asks to predict viral contigs in FASTA files, estimate false discovery rates for viral predictions, or train custom viral detection models.
 homepage: https://cran.r-project.org/web/packages/virfinder/index.html
 ---
+
 
 # r-virfinder
 

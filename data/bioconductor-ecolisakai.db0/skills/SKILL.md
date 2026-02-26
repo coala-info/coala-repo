@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecolisakai.db0
-description: the package is available on all platforms; click for details.
+description: This package provides base annotation data for Escherichia coli Sakai to be used as a data source for building custom annotation packages. Use when user asks to access raw SQLite databases for E. coli Sakai or use sqlForge to generate schema-stable annotation packages.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliSakai.db0.html
 ---
+
 
 # bioconductor-ecolisakai.db0
 

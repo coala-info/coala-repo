@@ -1,8 +1,9 @@
 ---
 name: pyquery
-description: PyQuery provides a Pythonic way to interact with XML and HTML documents by mimicking the popular jQuery API.
+description: "PyQuery provides a Pythonic way to interact with XML and HTML documents by mimicking the jQuery API. Use when user asks to parse HTML or XML documents, select elements using CSS selectors, extract text or attributes, and modify DOM structures."
 homepage: https://github.com/gawel/pyquery
 ---
+
 
 # pyquery
 

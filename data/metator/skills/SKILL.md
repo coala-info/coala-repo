@@ -1,8 +1,9 @@
 ---
 name: metator
-description: MetaTOR (Metagenomic Tridimensional Organisation-based Reassembly) is a computational pipeline designed to bin metagenomic contigs by leveraging the spatial proximity information provided by Hi-C data.
+description: MetaTOR bins metagenomic contigs by leveraging spatial proximity information from Hi-C data. Use when user asks to bin metagenomic contigs, generate a metaHi-C network, partition contigs into communities, or validate and decontaminate metagenome-assembled genomes.
 homepage: https://github.com/koszullab/metator
 ---
+
 
 # metator
 

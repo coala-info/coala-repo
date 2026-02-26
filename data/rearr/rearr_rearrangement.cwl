@@ -1,13 +1,100 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - rearr
-  - rearrangement
+baseCommand: rearrangement
 label: rearr_rearrangement
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It appears to be a log of a failed container build/fetch process.\n\n
-  Tool homepage: https://github.com/ljw20180420/sx_lcy"
-inputs: []
+doc: "Perform rearrangement analysis\n\nTool homepage: https://github.com/ljw20180420/sx_lcy"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input file
+    inputBinding:
+      position: 1
+  - id: reference_file
+    type: File
+    doc: Reference file
+    inputBinding:
+      position: 2
+  - id: gap_extending_penalty
+    type:
+      - 'null'
+      - int
+    doc: Gap-extending penalty.
+    default: -3
+    inputBinding:
+      position: 103
+      prefix: -u
+  - id: gap_extending_unaligned_query
+    type:
+      - 'null'
+      - int
+    doc: Gap-extending penalty for unaligned query parts.
+    default: 0
+    inputBinding:
+      position: 103
+      prefix: -qu
+  - id: gap_extending_unaligned_ref_ends
+    type:
+      - 'null'
+      - int
+    doc: Gap-extending penalty for unaligned reference ends.
+    default: 0
+    inputBinding:
+      position: 103
+      prefix: -ru
+  - id: gap_opening_penalty
+    type:
+      - 'null'
+      - int
+    doc: Gap-opening penalty.
+    default: -9
+    inputBinding:
+      position: 103
+      prefix: -v
+  - id: gap_opening_unaligned_query
+    type:
+      - 'null'
+      - int
+    doc: Gap-opening penalty for unaligned query parts.
+    default: -5
+    inputBinding:
+      position: 103
+      prefix: -qv
+  - id: gap_opening_unaligned_ref_ends
+    type:
+      - 'null'
+      - int
+    doc: Gap-opening penalty for unaligned reference ends.
+    default: 0
+    inputBinding:
+      position: 103
+      prefix: -rv
+  - id: matching_score_extension
+    type:
+      - 'null'
+      - int
+    doc: Matching score for extension reference part.
+    default: 2
+    inputBinding:
+      position: 103
+      prefix: -s2
+  - id: matching_score_non_extension
+    type:
+      - 'null'
+      - int
+    doc: Matching score for non-extension reference part.
+    default: 4
+    inputBinding:
+      position: 103
+      prefix: -s1
+  - id: mismatching_score
+    type:
+      - 'null'
+      - int
+    doc: Mismatching score.
+    default: -6
+    inputBinding:
+      position: 103
+      prefix: -s0
 outputs:
   - id: stdout
     type: stdout

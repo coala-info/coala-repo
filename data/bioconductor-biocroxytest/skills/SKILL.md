@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocroxytest
-description: the package is available on all platforms; click for details.
+description: This tool manages Bioconductor long tests by using roxygen2 tags to automate the creation of test files that exceed standard daily build time limits. Use when user asks to set up long test infrastructure, implement the @longtests roclet, or manage extensive R package tests that require more than 40 minutes to run.
 homepage: https://bioconductor.org/packages/release/bioc/html/biocroxytest.html
 ---
+
 
 # bioconductor-biocroxytest
 

@@ -1,8 +1,9 @@
 ---
 name: pancake
-description: The PancakeSwap frontend is a complex monorepo built with TypeScript, pnpm, and Turborepo.
+description: This tool manages the development lifecycle and core features of the PancakeSwap frontend monorepo. Use when user asks to start the development server, build specialized application modules like the Aptos dApp, or utilize internal SDKs for trade routing and smart contract interactions.
 homepage: https://github.com/pancakeswap/pancake-frontend
 ---
+
 
 # pancake
 

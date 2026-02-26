@@ -1,8 +1,9 @@
 ---
 name: bioconductor-h10kcod.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based maps to link manufacturer probe identifiers from the h10kcod platform to various biological annotations. Use when user asks to map h10kcod probes to Entrez Gene IDs, gene symbols, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/h10kcod.db.html
 ---
+
 
 # bioconductor-h10kcod.db
 

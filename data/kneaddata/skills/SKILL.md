@@ -1,8 +1,9 @@
 ---
 name: kneaddata
-description: KneadData is a specialized pipeline for cleaning metagenomic datasets.
+description: KneadData is a pipeline designed to clean metagenomic datasets by performing quality trimming and removing host contaminant reads. Use when user asks to perform quality control on metagenomic sequences, filter out host DNA, or remove low-complexity sequences from sequencing reads.
 homepage: https://huttenhower.sph.harvard.edu/kneaddata
 ---
+
 
 # kneaddata
 

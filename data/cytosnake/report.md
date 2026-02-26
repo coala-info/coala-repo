@@ -1,9 +1,9 @@
 # cytosnake CWL Generation Report
 
-## cytosnake
+## cytosnake_makedb
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain help text or argument definitions for the tool 'cytosnake'.
+Builds a database for cytosnake.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cytosnake:0.0.2--pyhdfd78af_0
@@ -18,14 +18,66 @@ The provided text is an error log from a container build process and does not co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cytosnake:0.0.2--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:642efca944a099a40fb3c07af9503df633650ab4299bba89f04e2106bfe2d85e: unpack entry: sbin/ldconfig: unpack to regular file: short write: write /tmp/build-temp-1353823638/rootfs/sbin/ldconfig: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/cytosnake", line 10, in <module>
+    sys.exit(run_cmd())
+  File "/usr/local/lib/python3.10/site-packages/cytosnake/cli/cmd.py", line 122, in run_cmd
+    raise RuntimeError("Unexpected error captured in mode selection")
+RuntimeError: Unexpected error captured in mode selection
 ```
 
 
-## Metadata
-- **Skill**: generated
+## cytosnake_align
+
+### Tool Description
+Aligns sequencing reads to a reference genome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cytosnake:0.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/WayScience/CytoSnake
+- **Package**: https://anaconda.org/channels/bioconda/packages/cytosnake/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/cytosnake", line 10, in <module>
+    sys.exit(run_cmd())
+  File "/usr/local/lib/python3.10/site-packages/cytosnake/cli/cmd.py", line 122, in run_cmd
+    raise RuntimeError("Unexpected error captured in mode selection")
+RuntimeError: Unexpected error captured in mode selection
+```
+
+
+## cytosnake_view
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cytosnake:0.0.2--pyhdfd78af_0
+- **Homepage**: https://github.com/WayScience/CytoSnake
+- **Package**: https://anaconda.org/channels/bioconda/packages/cytosnake/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/cytosnake", line 10, in <module>
+    sys.exit(run_cmd())
+  File "/usr/local/lib/python3.10/site-packages/cytosnake/cli/cmd.py", line 122, in run_cmd
+    raise RuntimeError("Unexpected error captured in mode selection")
+RuntimeError: Unexpected error captured in mode selection
+```
+

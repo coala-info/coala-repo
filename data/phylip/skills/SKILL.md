@@ -1,8 +1,9 @@
 ---
 name: phylip
-description: PHYLIP (the Phylogeny Inference Package) is a comprehensive collection of over 30 programs designed to model evolutionary relationships.
+description: PHYLIP is a comprehensive suite of programs for inferring evolutionary relationships and constructing phylogenetic trees. Use when user asks to infer phylogenies, calculate distance matrices, perform bootstrapping, or generate consensus trees from DNA or protein sequences.
 homepage: http://evolution.genetics.washington.edu/phylip/
 ---
+
 
 # phylip
 

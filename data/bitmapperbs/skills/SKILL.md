@@ -1,8 +1,9 @@
 ---
 name: bitmapperbs
-description: BitMapperBS is an ultra-fast and memory-efficient read aligner tailored for bisulfite-converted DNA sequences.
+description: BitMapperBS is an ultra-fast and memory-efficient read aligner designed for bisulfite-converted DNA sequences. Use when user asks to build a specialized reference index for WGBS data, align single-end or paired-end bisulfite reads, or generate BAM files for downstream methylation analysis.
 homepage: https://github.com/chhylp123/BitMapperBS
 ---
+
 
 # bitmapperbs
 

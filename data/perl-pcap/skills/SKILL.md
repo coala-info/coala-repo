@@ -1,8 +1,9 @@
 ---
 name: perl-pcap
-description: The `perl-pcap` package (also known as PCAP-core) provides the reference implementations for the ICGC/TCGA Pan-Cancer Analysis Project.
+description: perl-pcap provides standardized genomic alignment and BAM processing tools for the ICGC/TCGA Pan-Cancer Analysis Project. Use when user asks to align paired-end reads using BWA-MEM, compare BAM files for consistency, or download genomic data from GNOS repositories.
 homepage: https://github.com/ICGC-TCGA-PanCancer/PCAP-core
 ---
+
 
 # perl-pcap
 

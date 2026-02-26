@@ -3,7 +3,7 @@
 ## dice
 
 ### Tool Description
-Differential Inference of Chromatin Elements
+A tool for phylogenetic reconstruction.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dice:1.1.0--pyhdfd78af_0
@@ -18,11 +18,36 @@ Differential Inference of Chromatin Elements
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dice:1.1.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3742450351: no space left on device
+usage: dice [-h] -i INPUT [-o OUTPUT] [-p PREFIX] [-s] [-b] [-t]
+            [-d DIST_TYPE] [-m REC_METHOD] [-n] [-f FASTME_PATH] [-z SEED]
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Path to dataset.
+  -o OUTPUT, --output OUTPUT
+                        Output directory. Will create one if it does not
+                        exist. Default is current directory.
+  -p PREFIX, --prefix PREFIX
+                        Prefix to add to output files.
+  -s, --save-dm         Toggle to save the distance matrix to a file.
+  -b, --breakpoint      Toggle to use breakpoint profiles.
+  -t, --total-cn        Use total copy numbers instead of allele-specific copy
+                        numbers.
+  -d DIST_TYPE, --dist-type DIST_TYPE
+                        Distance measure type. Options are 'root', 'log',
+                        'manhattan', and 'euclidean'. Defaults to root.
+  -m REC_METHOD, --rec-method REC_METHOD
+                        Phylogenetic reconstruction algorithm. If not
+                        specified, will compute the distance matrix and save
+                        to a file. Options are 'NJ', 'uNJ', 'balME', and
+                        'olsME'.
+  -n, --use-NNI         For ME methods, toggle to use NNI tree search. By
+                        default, SPR tree search is used.
+  -f FASTME_PATH, --fastme-path FASTME_PATH
+                        Path to 'fastme' executable. By default, assumes the
+                        fastme executable is added to the user $PATH and is
+                        called directly.
+  -z SEED, --seed SEED  Randomization seed used in fastme.
 ```
 
-
-## Metadata
-- **Skill**: generated

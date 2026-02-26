@@ -1,8 +1,9 @@
 ---
 name: sequenoscope
-description: Sequenoscope is a specialized bioinformatics toolkit designed to handle the unique outputs of ONT adaptive sampling.
+description: Sequenoscope is a bioinformatics toolkit designed to analyze, visualize, and filter Oxford Nanopore adaptive sampling data to assess enrichment or depletion. Use when user asks to process raw sequencing data, compare test and control conditions through interactive plots, or subset reads based on ONT metadata.
 homepage: https://github.com/phac-nml/sequenoscope
 ---
+
 
 # sequenoscope
 

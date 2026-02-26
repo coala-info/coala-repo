@@ -1,8 +1,9 @@
 ---
 name: phylophlan
-description: PhyloPhlAn is a comprehensive pipeline designed for high-resolution phylogenetic analysis of microbial isolates and metagenome-assembled genomes (MAGs).
+description: PhyloPhlAn is a comprehensive pipeline for high-resolution phylogenetic analysis of microbial isolates and metagenome-assembled genomes. Use when user asks to generate phylogenetic trees, identify phylogenetic markers, or perform strain-level and tree-of-life taxonomic analyses.
 homepage: https://github.com/biobakery/phylophlan
 ---
+
 
 # phylophlan
 

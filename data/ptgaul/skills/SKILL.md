@@ -1,8 +1,9 @@
 ---
 name: ptgaul
-description: ptGAUL (Plastid Genome Assembly Using Long-read data) is a specialized bioinformatics pipeline for the rapid assembly of chloroplast genomes.
+description: ptGAUL is a bioinformatics pipeline for the rapid assembly of chloroplast genomes using long-read data and a reference-guided approach. Use when user asks to assemble plastid genomes, perform post-assembly path extraction, or implement polishing workflows for high-quality plastome sequences.
 homepage: https://github.com/Bean061/ptgaul
 ---
+
 
 # ptgaul
 

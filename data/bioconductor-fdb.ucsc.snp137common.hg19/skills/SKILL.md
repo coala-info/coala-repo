@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fdb.ucsc.snp137common.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides a FeatureDb object containing common SNP data from dbSNP build 137 for the hg19 human genome assembly. Use when user asks to retrieve SNP locations, annotate genomic data with common variants, or extract human SNP features as GRanges objects for the hg19 build.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.UCSC.snp137common.hg19.html
 ---
+
 
 # bioconductor-fdb.ucsc.snp137common.hg19
 

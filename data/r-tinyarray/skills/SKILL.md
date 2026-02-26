@@ -1,8 +1,9 @@
 ---
 name: r-tinyarray
-description: Skill for using the CRAN R package r-tinyarray.
+description: The tinyarray package streamlines bioinformatics workflows for analyzing and visualizing NCBI GEO and TCGA datasets. Use when user asks to download GEO data, perform differential expression analysis, process TCGA barcodes, conduct survival analysis, or generate standard bioinformatics plots like heatmaps and volcano plots.
 homepage: https://cran.r-project.org/web/packages/tinyarray/index.html
 ---
+
 
 # r-tinyarray
 

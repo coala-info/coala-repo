@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rbm
-description: the package is available on all platforms; click for details.
+description: The bioconductor-rbm package identifies differentially expressed genes and proteins in microarray and proteomics data using a resampling-based method. Use when user asks to perform differential expression analysis, analyze microarray datasets, or apply resampling-based statistical tests to biological data.
 homepage: https://bioconductor.org/packages/release/bioc/html/RBM.html
 ---
+
 
 # bioconductor-rbm
 

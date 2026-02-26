@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fdrame
-description: the package is available on all platforms; click for details.
+description: This tool performs False Discovery Rate adjustments for microarray experiments to identify differentially expressed genes. Use when user asks to adjust p-values for multiple hypothesis testing, apply Benjamini-Hochberg or adaptive two-stage FDR procedures, and perform resampling-based FDR adjustments on gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/fdrame.html
 ---
+
 
 # bioconductor-fdrame
 

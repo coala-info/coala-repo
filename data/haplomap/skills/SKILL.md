@@ -1,8 +1,9 @@
 ---
 name: haplomap
-description: The haplomap tool is a modern successor to the Haplotype-based Computational Genetic Mapping (HBCGM) project.
+description: Haplomap is an automated graph-based pipeline designed to identify genetic loci associated with specific phenotypes in inbred populations. Use when user asks to perform genetic mapping, identify genetic drivers of complex traits, or process murine phenotype and variant data.
 homepage: https://github.com/zqfang/haplomap
 ---
+
 
 # haplomap
 

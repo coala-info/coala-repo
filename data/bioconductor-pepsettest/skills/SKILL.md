@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pepsettest
-description: the package is available on all platforms; click for details.
+description: PepSetTest performs peptide set enrichment analysis for peptide microarray data. Use when user asks to test for enrichment in peptide sets, analyze peptide microarray results, or identify differentially reactive peptide groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/PepSetTest.html
 ---
+
 
 # bioconductor-pepsettest
 

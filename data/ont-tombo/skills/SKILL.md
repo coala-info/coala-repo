@@ -1,8 +1,9 @@
 ---
 name: ont-tombo
-description: Tombo is a specialized suite of tools designed to process the raw electrical signal from Nanopore sequencers.
+description: "Tombo processes raw Nanopore electrical signals to align them to a reference genome and identify base modifications. Use when user asks to resquiggle reads, detect DNA or RNA modifications using alternative models or sample comparisons, and visualize raw signal deviations."
 homepage: https://github.com/nanoporetech/tombo
 ---
+
 
 # ont-tombo
 

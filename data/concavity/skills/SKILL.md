@@ -1,8 +1,9 @@
 ---
 name: concavity
-description: Concavity is a Python-based spatial analysis tool designed to solve the "gift-wrapping" problem more precisely than standard convex hull algorithms.
+description: Concavity is a Python spatial analysis tool that generates concave hulls and identifies concave or convex vertices. Use when user asks to generate concave hulls, identify concave or convex vertices, analyze polygon topology, or perform geometric feature recognition.
 homepage: https://github.com/mlichter2/concavity
 ---
+
 
 # concavity
 

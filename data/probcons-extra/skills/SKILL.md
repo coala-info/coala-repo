@@ -1,8 +1,9 @@
 ---
 name: probcons-extra
-description: PROBCONS is a specialized tool for aligning multiple protein sequences by combining hidden Markov models with a consistency-based scoring function.
+description: "PROBCONS performs multiple protein sequence alignment using hidden Markov models and consistency-based scoring to maximize accuracy. Use when user asks to align multiple protein sequences, perform iterative refinement, generate MFA or ClustalW outputs, or compute EM parameter training."
 homepage: http://probcons.stanford.edu/
 ---
+
 
 # probcons-extra
 

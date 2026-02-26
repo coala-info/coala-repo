@@ -1,8 +1,9 @@
 ---
 name: kseqpp
-description: kseqpp is a high-performance C++11 re-implementation of the popular kseq library by Heng Li.
+description: "kseqpp is a high-performance C++ library for reading and writing FASTA and FASTQ sequence files. Use when user asks to parse genomic sequences, handle compressed sequence I/O, or integrate fast sequence processing into C++ bioinformatics applications."
 homepage: https://github.com/cartoonist/kseqpp
 ---
+
 
 # kseqpp
 

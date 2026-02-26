@@ -1,8 +1,9 @@
 ---
 name: ngmerge
-description: NGmerge is a specialized tool for the post-sequencing processing of paired-end FASTQ files.
+description: NGmerge merges overlapping paired-end reads into consensus sequences and removes adapter sequences by aligning reads against each other. Use when user asks to merge overlapping FASTQ reads, remove adapter sequences from paired-end data, or process interleaved sequencing files.
 homepage: https://github.com/harvardinformatics/NGmerge
 ---
+
 
 # ngmerge
 

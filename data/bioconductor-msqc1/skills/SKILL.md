@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msqc1
-description: the package is available on all platforms; click for details.
+description: This package provides data from the Mass Spectrometry Quality Control consortium for benchmarking and quality control in mass spectrometry. Use when user asks to access MSQC1 data sets, evaluate mass spectrometry performance, or benchmark proteomics analysis pipelines.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/msqc1.html
 ---
+
 
 # bioconductor-msqc1
 

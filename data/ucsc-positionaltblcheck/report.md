@@ -1,9 +1,9 @@
 # ucsc-positionaltblcheck CWL Generation Report
 
-## ucsc-positionaltblcheck
+## ucsc-positionaltblcheck_positionalTblCheck
 
 ### Tool Description
-A tool to check that a table has positional information (chrom, chromStart, chromEnd). Note: The provided help text contains a container execution error and does not list specific arguments.
+check that positional tables are sorted
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-positionaltblcheck:482--h0b57e2e_0
@@ -18,13 +18,14 @@ A tool to check that a table has positional information (chrom, chromStart, chro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-positionaltblcheck:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+positionalTblCheck - check that positional tables are sorted
+usage:
+   positionalTblCheck db table
+
+options:
+  -verbose=n  n>=2, print tables as checked
+This will check sorting of a table in a variety of formats.
+It looks for commonly used names for chrom and chrom start
+columns.  It also handles split tables
 ```
 
-
-## Metadata
-- **Skill**: generated

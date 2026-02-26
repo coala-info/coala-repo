@@ -1,8 +1,9 @@
 ---
 name: ucsc-coltransform
-description: The `ucsc-coltransform` utility is a specialized command-line tool from the UCSC Genome Browser "kent" source tree designed for rapid, in-place arithmetic modification of tabular data.
+description: ucsc-coltransform performs rapid arithmetic modification of specific columns in tabular data. Use when user asks to normalize signal tracks, convert units, scale data, multiply a column, shift data, add a constant to a column, or apply combined arithmetic transformations.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-coltransform
 

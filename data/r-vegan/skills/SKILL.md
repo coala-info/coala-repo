@@ -1,8 +1,9 @@
 ---
 name: r-vegan
-description: "Ordination methods, diversity analysis and other   functions for community and vegetation ecologists.</p>"
+description: This tool provides expert guidance for community ecology analysis and multivariate statistics using the R package vegan. Use when user asks to calculate diversity indices, perform rarefaction, compute ecological dissimilarities, conduct ordination such as NMDS, RDA, or CCA, and run statistical tests like PERMANOVA.
 homepage: https://cloud.r-project.org/web/packages/vegan/index.html
 ---
+
 
 # r-vegan
 

@@ -1,8 +1,9 @@
 ---
 name: blend-bio
-description: BLEND is a high-performance alignment tool designed to improve the speed and accuracy of genome analysis through a unique fuzzy seeding mechanism.
+description: BLEND is a high-performance alignment tool that uses fuzzy seeding for fast and accurate genome analysis. Use when user asks to find overlapping reads, map long reads to a reference genome, or perform all-vs-all read alignment.
 homepage: https://github.com/CMU-SAFARI/BLEND
 ---
+
 
 # blend-bio
 

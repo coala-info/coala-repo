@@ -1,8 +1,9 @@
 ---
 name: r-runit
-description: R package runit (documentation from project home).
+description: This tool implements unit testing in R using the RUnit framework to automate code verification and generate detailed reports. Use when user asks to perform unit testing in R, define test suites, use assertions to validate code logic, or generate test reports in text or HTML formats.
 homepage: https://cran.r-project.org/web/packages/runit/index.html
 ---
+
 
 # r-runit
 

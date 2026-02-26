@@ -1,8 +1,9 @@
 ---
 name: bioconductor-contibait
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool clusters and orients genomic contigs into scaffolds using Strand-seq data. Use when user asks to cluster contigs, orient genomic fragments, or improve genome assemblies using Strand-seq data.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/contiBAIT.html
 ---
+
 
 # bioconductor-contibait
 

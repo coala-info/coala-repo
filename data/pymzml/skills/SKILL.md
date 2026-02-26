@@ -1,8 +1,9 @@
 ---
 name: pymzml
-description: `pymzml` is a specialized Python library designed to act as a high-performance interface for mzML mass spectrometry data.
+description: "pymzml is a high-performance Python library for parsing and analyzing mzML mass spectrometry data. Use when user asks to parse mzML files, extract m/z and intensity arrays, filter spectra by MS level, or handle compressed mass spectrometry datasets."
 homepage: https://github.com/pymzml/pymzML
 ---
+
 
 # pymzml
 

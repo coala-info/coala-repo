@@ -2,10 +2,80 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: readItAndKeep
 label: read-it-and-keep_readItAndKeep
-doc: "A tool for filtering sequencing reads (Note: The provided help text contains
-  only container runtime error messages and no usage information).\n\nTool homepage:
-  https://github.com/GenomePathogenAnalysisService/read-it-and-keep"
-inputs: []
+doc: "Read-it-and-keep is a tool to filter reads based on mapping information.\n\n\
+  Tool homepage: https://github.com/GenomePathogenAnalysisService/read-it-and-keep"
+inputs:
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Debug mode. More verbose and writes debugging files
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: enumerate_names
+    type:
+      - 'null'
+      - boolean
+    doc: Rename the reads 1,2,3,... (for paired reads, will also add /1 or /2 on
+      the end of names)
+    inputBinding:
+      position: 101
+      prefix: --enumerate_names
+  - id: min_map_length
+    type:
+      - 'null'
+      - int
+    doc: Minimum length of match required to keep a read in bp
+    default: 50
+    inputBinding:
+      position: 101
+      prefix: --min_map_length
+  - id: min_map_length_percent
+    type:
+      - 'null'
+      - float
+    doc: Minimum length of match required to keep a read, as a percent of the 
+      read length
+    default: 50.0
+    inputBinding:
+      position: 101
+      prefix: --min_map_length_pc
+  - id: output_prefix
+    type: string
+    doc: Prefix of output files
+    inputBinding:
+      position: 101
+      prefix: --outprefix
+  - id: reads1
+    type: File
+    doc: Name of first reads file
+    inputBinding:
+      position: 101
+      prefix: --reads1
+  - id: reads2
+    type:
+      - 'null'
+      - File
+    doc: Name of second reads file, ie mates file for paired reads
+    inputBinding:
+      position: 101
+      prefix: --reads2
+  - id: reference_fasta
+    type: File
+    doc: Reference genome FASTA filename
+    inputBinding:
+      position: 101
+      prefix: --ref_fasta
+  - id: sequencing_technology
+    type:
+      - 'null'
+      - string
+    doc: Sequencing technology, must be 'illumina' or 'ont'
+    default: illumina
+    inputBinding:
+      position: 101
+      prefix: --tech
 outputs:
   - id: stdout
     type: stdout

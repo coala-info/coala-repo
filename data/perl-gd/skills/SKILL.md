@@ -1,8 +1,9 @@
 ---
 name: perl-gd
-description: The `perl-gd` skill provides a specialized interface for the GD graphics library, enabling programmatic image creation and editing.
+description: The perl-gd tool provides a Perl interface to the GD graphics library for programmatically creating and manipulating images. Use when user asks to create dynamic graphs, draw geometric shapes, render text on images, or process image files like PNG and JPEG.
 homepage: http://metacpan.org/pod/GD
 ---
+
 
 # perl-gd
 

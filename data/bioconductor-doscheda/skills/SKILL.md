@@ -1,8 +1,9 @@
 ---
 name: bioconductor-doscheda
-description: The package provides a shiny application to run the pipeline, several visualisations and a downloadable report of an experiment.
+description: This tool analyzes downstream chemo-proteomics data to identify protein-drug interactions. Use when user asks to process quantitative chemical proteomics data, perform peptide-to-protein summarization, normalize fold-changes, or fit dose-response models to estimate drug affinity.
 homepage: https://bioconductor.org/packages/release/bioc/html/Doscheda.html
 ---
+
 
 # bioconductor-doscheda
 

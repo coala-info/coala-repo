@@ -1,8 +1,9 @@
 ---
 name: connectome-workbench
-description: The Connectome Workbench is a specialized suite for neuroimaging analysis that bridges the gap between volumetric (3D) and surface-based (2D) brain data.
+description: Connectome Workbench is a neuroimaging analysis suite for processing and visualizing surface-based and volumetric brain data. Use when user asks to perform surface smoothing, resample mesh densities, map volume data to surfaces, or manipulate CIFTI and GIFTI files.
 homepage: https://www.humanconnectome.org/software/connectome-workbench
 ---
+
 
 # connectome-workbench
 

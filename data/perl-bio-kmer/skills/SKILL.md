@@ -1,8 +1,9 @@
 ---
 name: perl-bio-kmer
-description: The `perl-bio-kmer` skill provides a streamlined interface for k-mer based genomic analysis.
+description: This tool performs k-mer counting and frequency analysis for genomic sequence data. Use when user asks to count k-mers, estimate genome size, or generate k-mer histograms for sequencing depth assessment.
 homepage: https://metacpan.org/pod/Bio::Kmer
 ---
+
 
 # perl-bio-kmer
 

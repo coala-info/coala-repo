@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcas
-description: the package is available on all platforms; click for details.
+description: RCAS provides functional annotation and analysis for transcriptomic data, specifically focusing on RNA-binding sites. Use when user asks to annotate RNA-binding sites, perform functional enrichment analysis, or analyze the genomic distribution of transcriptomic features.
 homepage: https://bioconductor.org/packages/release/bioc/html/RCAS.html
 ---
+
 
 # bioconductor-rcas
 

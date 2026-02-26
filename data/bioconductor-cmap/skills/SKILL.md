@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cmap
-description: the package is available on all platforms; click for details.
+description: This tool provides access to molecular interactions, molecule metadata, and pathway definitions from the NCICB Pathway Interaction Database via the cMAP Bioconductor package. Use when user asks to retrieve pathway mappings from BioCarta or KEGG, find molecular interaction partners, or access metadata for proteins, complexes, and compounds.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cMAP.html
 ---
+
 
 # bioconductor-cmap
 

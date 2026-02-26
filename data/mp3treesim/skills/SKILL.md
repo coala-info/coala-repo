@@ -1,8 +1,9 @@
 ---
 name: mp3treesim
-description: The `mp3treesim` tool implements a triplet-based similarity measure designed for complex tree structures.
+description: mp3treesim calculates similarity scores between complex tree structures using a triplet-based measure that supports multiple and repeating labels. Use when user asks to compare tree structures, calculate similarity between Graphviz files, or analyze trees with multi-labeled nodes.
 homepage: https://algolab.github.io/mp3treesim/
 ---
+
 
 # mp3treesim
 

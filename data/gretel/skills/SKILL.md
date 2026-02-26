@@ -1,8 +1,9 @@
 ---
 name: gretel
-description: Gretel is a bioinformatic tool that recovers haplotypes from metagenomes without requiring a priori knowledge of the number of strains or specific distribution parameters.
+description: "Gretel recovers and ranks haplotypes from metagenomic data by reconstructing the most likely sequences of variants from aligned reads. Use when user asks to recover haplotypes from metagenomes, reconstruct strain sequences from BAM and VCF files, or rank genomic variants by likelihood."
 homepage: https://github.com/SamStudio8/gretel
 ---
+
 
 # gretel
 

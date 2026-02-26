@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pics
-description: the package is available on all platforms; click for details.
+description: "PICS performs probabilistic peak calling for ChIP-Seq data to identify protein-binding sites. Use when user asks to call peaks, estimate fragment length, or resolve closely spaced binding sites in ChIP-Seq experiments."
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PICS.html
 ---
+
 
 # bioconductor-pics
 

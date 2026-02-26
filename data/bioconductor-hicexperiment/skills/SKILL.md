@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicexperiment
-description: the package is available on all platforms; click for details.
+description: This package provides a standardized Bioconductor interface for importing, managing, and subsetting Hi-C contact matrices and pairs files. Use when user asks to import .cool or .hic files into R, convert Hi-C data to GInteractions objects, or subset contact matrices by genomic coordinates.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCExperiment.html
 ---
+
 
 # bioconductor-hicexperiment
 

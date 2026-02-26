@@ -1,8 +1,9 @@
 ---
 name: flumut
-description: FluMut is a specialized bioinformatics tool designed for the surveillance of H5N1 avian influenza.
+description: FluMut scans H5N1 avian influenza sequences against a database of molecular markers to predict host adaptation and antiviral resistance. Use when user asks to update the marker database, analyze influenza sequences for mutations, generate reports in Excel or TSV format, or perform relaxed searches for partial markers.
 homepage: https://github.com/izsvenezie-virology/FluMut
 ---
+
 
 # flumut
 

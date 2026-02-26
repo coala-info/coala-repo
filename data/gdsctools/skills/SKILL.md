@@ -1,8 +1,9 @@
 ---
 name: gdsctools
-description: gdsctools is a specialized suite for bio-informatics analysis of GDSC data (cancerrxgene.org).
+description: gdsctools automates the identification of genomic markers of drug sensitivity by correlating drug response data with genomic features. Use when user asks to perform ANOVA analysis on GDSC data, identify genomic markers of drug response, or run regression models on IC50 matrices.
 homepage: http://pypi.python.org/pypi/gdsctools
 ---
+
 
 # gdsctools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133bcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment and coordinate mapping functions for the Affymetrix Human Genome U133B array. Use when user asks to process HG-U133B CEL files, map probes to probesets, or convert between chip coordinates and indices.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133bcdf.html
 ---
+
 
 # bioconductor-hgu133bcdf
 

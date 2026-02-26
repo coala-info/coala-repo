@@ -1,8 +1,9 @@
 ---
 name: gbdraw
-description: gbdraw is a specialized tool for the visual representation of microbial and organellar genomes.
+description: "gbdraw creates customizable circular or linear diagrams for the visual representation of microbial and organellar genomes. Use when user asks to generate genomic maps from GenBank or GFF3 files, visualize GC content and skew, or create comparative genomics diagrams using BLAST results."
 homepage: https://github.com/satoshikawato/gbdraw
 ---
+
 
 # gbdraw
 

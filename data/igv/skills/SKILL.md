@@ -1,8 +1,9 @@
 ---
 name: igv
-description: IGV is a high-performance visualization tool designed for the interactive exploration of large, integrated genomic datasets.
+description: IGV is a high-performance visualization tool for the interactive exploration and automated snapshot generation of large genomic datasets. Use when user asks to visualize sequencing alignments, inspect variants, navigate genomic loci, or generate automated image snapshots of specific regions.
 homepage: http://www.broadinstitute.org/software/igv/home
 ---
+
 
 # igv
 

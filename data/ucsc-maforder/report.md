@@ -1,9 +1,9 @@
 # ucsc-maforder CWL Generation Report
 
-## ucsc-maforder
+## ucsc-maforder_mafOrder
 
 ### Tool Description
-The provided text is a container execution error log and does not contain help information for the tool. Based on the tool name hint, this utility is part of the UCSC Genome Browser toolset used to reorder sequences in Multiple Alignment Format (MAF) files.
+order components within a maf file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-maforder:482--h0b57e2e_0
@@ -18,13 +18,10 @@ The provided text is a container execution error log and does not contain help i
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-maforder:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+mafOrder - order components within a maf file
+usage:
+   mafOrder mafIn order.lst mafOut
+where order.lst has one species per line
+options:
 ```
 
-
-## Metadata
-- **Skill**: generated

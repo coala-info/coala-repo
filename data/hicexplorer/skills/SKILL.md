@@ -1,8 +1,9 @@
 ---
 name: hicexplorer
-description: HiCExplorer is a comprehensive suite of tools designed to handle the complex requirements of 3D genome analysis.
+description: HiCExplorer is a comprehensive suite of tools for processing, normalizing, and analyzing Hi-C data to study 3D genomic interactions. Use when user asks to build contact matrices, normalize Hi-C data, detect Topologically Associating Domains, or identify A/B compartments.
 homepage: https://github.com/deeptools/HiCExplorer
 ---
+
 
 # hicexplorer
 

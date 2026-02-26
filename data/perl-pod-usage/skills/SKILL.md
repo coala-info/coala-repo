@@ -1,8 +1,9 @@
 ---
 name: perl-pod-usage
-description: The `perl-pod-usage` skill provides a standardized way to bridge the gap between script documentation and user interface.
+description: This tool extracts and displays usage messages or full documentation from a Perl script's internal POD sections. Use when user asks to print help messages, display script documentation, or format command-line usage instructions in Perl scripts.
 homepage: http://search.cpan.org/~marekr/Pod-Usage-1.69/
 ---
+
 
 # perl-pod-usage
 

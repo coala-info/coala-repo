@@ -1,8 +1,9 @@
 ---
 name: pyfastg
-description: pyfastg is a specialized Python library designed to bridge the gap between raw sequencing assembly files and the NetworkX graph analysis ecosystem.
+description: "pyfastg converts FASTG assembly files into NetworkX graph objects for biological sequence analysis. Use when user asks to parse FASTG files, convert assembly graphs to NetworkX objects, or analyze sequencing assembly connectivity and metadata."
 homepage: https://github.com/fedarko/pyfastg
 ---
+
 
 # pyfastg
 

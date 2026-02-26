@@ -1,8 +1,9 @@
 ---
 name: tandem
-description: TANDEM is a real-time monocular tracking and dense mapping framework developed by TUM-Vision.
+description: TANDEM is a real-time monocular tracking and dense mapping framework that combines visual odometry with deep learning-based multi-view stereo. Use when user asks to perform real-time SLAM, estimate camera poses using photometric bundle adjustment, or generate dense 3D maps from monocular video sequences.
 homepage: https://github.com/tum-vision/tandem
 ---
+
 
 # tandem
 

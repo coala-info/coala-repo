@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprdesign
-description: the package is available on all platforms; click for details.
+description: The crisprDesign package provides a comprehensive framework for designing, annotating, and evaluating CRISPR guide RNAs. Use when user asks to design CRISPR guide RNAs, predict off-target activities, or characterize gRNA sequences for various CRISPR technologies.
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprDesign.html
 ---
+
 
 # bioconductor-crisprdesign
 

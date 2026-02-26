@@ -1,8 +1,9 @@
 ---
 name: pypeflow
-description: pypeflow is a lightweight, Python-native workflow management library that provides a declarative way to define data processing pipelines.
+description: pypeflow is a lightweight Python-native workflow management library used to define and execute data processing pipelines with dependency tracking. Use when user asks to manage complex file dependencies, wrap command-line tools into pipelines, or execute tasks on cluster resource managers like Slurm and PBS.
 homepage: https://github.com/PacificBiosciences/pypeFLOW
 ---
+
 
 # pypeflow
 

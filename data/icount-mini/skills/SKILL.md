@@ -1,8 +1,9 @@
 ---
 name: icount-mini
-description: icount-mini is a specialized computational pipeline designed for protein-RNA interaction analytics.
+description: icount-mini is a computational pipeline designed for protein-RNA interaction analytics and iCLIP data analysis. Use when user asks to demultiplex FASTQ files, identify cross-link sites, segment the genome, call significant crosslinks, merge peaks, or generate metagene plots.
 homepage: https://github.com/ulelab/iCount-Mini
 ---
+
 
 # icount-mini
 

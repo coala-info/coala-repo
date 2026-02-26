@@ -1,8 +1,9 @@
 ---
 name: bioconductor-duoclustering2018
-description: the package is available on all platforms; click for details.
+description: This package provides access to benchmark datasets and pre-computed clustering results from the DuoClustering2018 study for single-cell RNA-seq analysis. Use when user asks to retrieve SingleCellExperiment benchmark datasets, access pre-computed clustering performance summaries, or visualize clustering metrics like ARI, stability, and timing.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DuoClustering2018.html
 ---
+
 
 # bioconductor-duoclustering2018
 

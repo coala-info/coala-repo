@@ -1,8 +1,9 @@
 ---
 name: kmtricks
-description: kmtricks is a modular framework specialized in handling k-mer data across massive collections of sequencing reads.
+description: kmtricks is a modular framework for counting and constructing k-mer abundance or membership matrices across large-scale sequencing read collections. Use when user asks to build k-mer matrices from multiple samples, rescue low-abundance k-mers across datasets, or partition and aggregate genomic k-mer data.
 homepage: https://github.com/tlemane/kmtricks
 ---
+
 
 # kmtricks
 

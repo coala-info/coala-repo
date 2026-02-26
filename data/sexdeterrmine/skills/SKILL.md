@@ -1,8 +1,9 @@
 ---
 name: sexdeterrmine
-description: `sexdeterrmine` is a specialized bioinformatics tool designed to estimate the biological sex of individuals from sequencing data.
+description: sexdeterrmine estimates the biological sex of individuals from sequencing data by comparing X and Y chromosome coverage relative to autosomes. Use when user asks to determine biological sex from BAM files, calculate relative chromosome depth, or perform sex assignment for low-coverage sequencing data.
 homepage: https://github.com/TCLamnidis/Sex.DetERRmine
 ---
+
 
 # sexdeterrmine
 

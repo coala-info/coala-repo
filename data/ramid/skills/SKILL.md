@@ -1,8 +1,9 @@
 ---
 name: ramid
-description: PyRAMID-CT is a specialized Python framework designed to mitigate motion-induced blurring and artifacts in dynamic CT scans.
+description: ramid mitigates motion-induced blurring and artifacts in dynamic CT scans using piecewise linear interpolation and 4D Total Variation regularization. Use when user asks to perform motion-compensated reconstruction, reduce artifacts in synchrotron or industrial CT data, or augment temporal resolution in dynamic datasets.
 homepage: https://github.com/eboigne/PyRAMID-CT
 ---
+
 
 # ramid
 

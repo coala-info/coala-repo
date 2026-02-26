@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sscore
-description: the package is available on all platforms; click for details.
+description: This package implements the S-Score algorithm for comparing Affymetrix GeneChip microarrays to detect differential gene expression. Use when user asks to calculate S-scores, compare two Affymetrix microarrays, or identify differentially expressed genes between two samples.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/sscore.html
 ---
+
 
 # bioconductor-sscore
 

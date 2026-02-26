@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metid
-description: the package is available on all platforms; click for details.
+description: MetID provides a comprehensive pipeline for metabolite identification in untargeted metabolomics data. Use when user asks to identify metabolites, search chemical databases, or annotate mass spectrometry features.
 homepage: https://bioconductor.org/packages/release/bioc/html/MetID.html
 ---
+
 
 # bioconductor-metid
 

@@ -1,8 +1,9 @@
 ---
 name: reparation_blast
-description: reparation_blast is a specialized bioinformatics pipeline designed for the (re-)annotation of prokaryotic genomes.
+description: reparation_blast is a bioinformatics pipeline that uses ribosome profiling data and machine learning to re-annotate prokaryotic genomes and identify novel open reading frames. Use when user asks to re-annotate a prokaryotic genome, identify novel ORFs using Ribo-seq data, or predict coding sequences with a Random Forest model.
 homepage: https://github.com/RickGelhausen/REPARATION_blast
 ---
+
 
 # reparation_blast
 

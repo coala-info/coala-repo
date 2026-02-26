@@ -1,8 +1,9 @@
 ---
 name: perl-digest-hmac
-description: The `perl-digest-hmac` skill provides the procedural knowledge required to utilize the `Digest::HMAC` module suite.
+description: This tool generates message authentication codes using the HMAC algorithm to ensure data integrity and authenticity. Use when user asks to calculate HMAC digests, verify API signatures, or generate secure message authentication codes using various hash functions.
 homepage: https://metacpan.org/pod/Digest-HMAC
 ---
+
 
 # perl-digest-hmac
 

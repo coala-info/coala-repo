@@ -1,9 +1,9 @@
 # survindel2 CWL Generation Report
 
-## survindel2
+## survindel2_survindel2.py
 
 ### Tool Description
-The provided text does not contain help information for survindel2; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to fetch the tool's image.
+SurVIndel2, a CNV caller.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/survindel2:1.1.4--h503566f_0
@@ -18,71 +18,55 @@ The provided text does not contain help information for survindel2; it contains 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/survindel2:1.1.4--h503566f_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: survindel2.py [-h] [--threads THREADS] [--seed SEED]
+                     [--min_sv_size MIN_SV_SIZE] [--min_clip_len MIN_CLIP_LEN]
+                     [--max_seq_error MAX_SEQ_ERROR]
+                     [--max_clipped_pos_dist MAX_CLIPPED_POS_DIST]
+                     [--min_size_for_depth_filtering MIN_SIZE_FOR_DEPTH_FILTERING]
+                     [--samplename SAMPLENAME]
+                     [--sampling-regions SAMPLING_REGIONS] [--log]
+                     [--match_score MATCH_SCORE] [--min-diff-hsr MIN_DIFF_HSR]
+                     [--version]
+                     bam_file workdir reference
 
+SurVIndel2, a CNV caller.
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  bam_file              Input bam file.
+  workdir               Working directory for Surveyor to use.
+  reference             Reference genome in FASTA format.
 
-## survindel2_survindel2.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains container runtime logs and a fatal error message regarding image fetching.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/survindel2:1.1.4--h503566f_0
-- **Homepage**: https://github.com/kensung-lab/SurVIndel2
-- **Package**: https://anaconda.org/channels/bioconda/packages/survindel2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/survindel2:1.1.4--h503566f_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## survindel2_train_classifier.py
-
-### Tool Description
-Train classifier for SurvinDel2 (Note: The provided text contains container runtime error logs rather than tool help text; no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/survindel2:1.1.4--h503566f_0
-- **Homepage**: https://github.com/kensung-lab/SurVIndel2
-- **Package**: https://anaconda.org/channels/bioconda/packages/survindel2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/survindel2:1.1.4--h503566f_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## survindel2_run_classifier.py
-
-### Tool Description
-The provided text does not contain help information for survindel2_run_classifier.py; it contains container runtime error logs. No arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/survindel2:1.1.4--h503566f_0
-- **Homepage**: https://github.com/kensung-lab/SurVIndel2
-- **Package**: https://anaconda.org/channels/bioconda/packages/survindel2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/survindel2:1.1.4--h503566f_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help            show this help message and exit
+  --threads THREADS     Number of threads to be used.
+  --seed SEED           Seed for random sampling of genomic positions.
+  --min_sv_size MIN_SV_SIZE
+                        Min SV size.
+  --min_clip_len MIN_CLIP_LEN
+                        Min length for a clip to be used.
+  --max_seq_error MAX_SEQ_ERROR
+                        Max sequencing error admissible on the platform used.
+  --max_clipped_pos_dist MAX_CLIPPED_POS_DIST
+                        Max clipped position distance.
+  --min_size_for_depth_filtering MIN_SIZE_FOR_DEPTH_FILTERING
+                        Minimum size for depth filtering.
+  --samplename SAMPLENAME
+                        Name of the sample to be used in the VCF output.If not
+                        provided, the basename of the bam/cram file will be
+                        used,up until the first '.'
+  --sampling-regions SAMPLING_REGIONS
+                        File in BED format containing a list of regions to be
+                        used to estimatestatistics such as depth.
+  --log                 Activate in-depth logging (can be very large and
+                        cryptic).
+  --match_score MATCH_SCORE
+                        Match score used by the aligner that produced tha
+                        BAM/CRAM file (TODO: auto-determine).
+  --min-diff-hsr MIN_DIFF_HSR
+                        Minimum number of differences with the reference
+                        (considered as number of insertions, deletions and
+                        mismatches) for a read to be considered a hidden split
+                        read.
+  --version             Print version number.
 ```
 

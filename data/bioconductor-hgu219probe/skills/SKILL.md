@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu219probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and microarray coordinates for the Affymetrix Human Genome U219 platform. Use when user asks to retrieve probe sequences, map probe identifiers to physical coordinates, or perform sequence-specific analysis for hgu219 microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu219probe.html
 ---
+
 
 # bioconductor-hgu219probe
 

@@ -1,8 +1,9 @@
 ---
 name: consensify
-description: Consensify is a tool designed to produce high-quality pseudohaploid sequences by mitigating the impact of sequencing errors and post-mortem DNA damage.
+description: Consensify generates high-quality pseudohaploid sequences by applying a consensus-based sampling approach to reduce sequencing errors and DNA damage. Use when user asks to produce consensus sequences from low-coverage genomic data, mitigate post-mortem DNA damage, or generate pseudohaploid FASTA files from read counts.
 homepage: https://github.com/jlapaijmans/Consensify
 ---
+
 
 # consensify
 

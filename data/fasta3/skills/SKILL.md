@@ -1,8 +1,9 @@
 ---
 name: fasta3
-description: The FASTA3 package is a comprehensive suite of programs designed for biological sequence comparison.
+description: "fasta3 is a suite of programs used for comparing biological sequences through various heuristic and rigorous alignment algorithms. Use when user asks to perform protein or DNA sequence searches, conduct Smith-Waterman local alignments, or compare translated DNA sequences against protein databases."
 homepage: http://faculty.virginia.edu/wrpearson/fasta
 ---
+
 
 # fasta3
 

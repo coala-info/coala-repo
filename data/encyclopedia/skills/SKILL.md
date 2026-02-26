@@ -1,8 +1,9 @@
 ---
 name: encyclopedia
-description: EncyclopeDIA is a specialized search engine designed for the analysis of DIA proteomics data.
+description: EncyclopeDIA is a specialized search engine for identifying and quantifying peptides in DIA proteomics data. Use when user asks to search DIA data against spectrum libraries, perform library-free analysis using FASTA files, or generate chromatogram libraries.
 homepage: https://bitbucket.org/searleb/encyclopedia/wiki/Home
 ---
+
 
 # encyclopedia
 

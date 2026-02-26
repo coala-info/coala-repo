@@ -2,10 +2,31 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pynnotator
 label: pynnotator
-doc: "A tool for annotating human genetic variants (Note: The provided text is an
-  error log and does not contain help information or argument definitions).\n\nTool
-  homepage: http://github.com/raonyguimaraes/pynnotator"
-inputs: []
+doc: "Annotate VCF files\n\nTool homepage: http://github.com/raonyguimaraes/pynnotator"
+inputs:
+  - id: options
+    type:
+      - 'null'
+      - string
+    doc: install test
+    inputBinding:
+      position: 1
+  - id: genome_build
+    type:
+      - 'null'
+      - string
+    doc: The genome build you want to use
+    inputBinding:
+      position: 102
+      prefix: -b
+  - id: input_vcf
+    type:
+      - 'null'
+      - File
+    doc: a VCF file to be annotated
+    inputBinding:
+      position: 102
+      prefix: -i
 outputs:
   - id: stdout
     type: stdout

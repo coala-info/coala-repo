@@ -1,8 +1,9 @@
 ---
 name: perl-return-multilevel
-description: The `Return::MultiLevel` module provides a way to exit from a deeply nested call stack back to a specific higher-level point, effectively allowing a "long return." Unlike standard Perl `return`, which only exits the current subroutine, this tool creates a scoped return callback.
+description: This tool provides a way to exit from deeply nested call stacks back to a specific higher-level point using a scoped return callback. Use when user asks to perform a multi-level return, escape nested callbacks, or implement non-local control flow without using exceptions.
 homepage: http://metacpan.org/pod/Return::MultiLevel
 ---
+
 
 # perl-return-multilevel
 

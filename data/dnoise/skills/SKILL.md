@@ -1,8 +1,9 @@
 ---
 name: dnoise
-description: DnoisE is a parallelizable denoising tool designed as an alternative to the Unoise algorithm.
+description: DnoisE is a parallelizable denoising tool that merges error sequences into true variants while optionally weighting genetic distances based on codon entropy. Use when user asks to denoise Illumina datasets, perform entropy-corrected denoising for coding sequences, or merge sequences using ratio and distance criteria.
 homepage: https://github.com/adriantich/DnoisE
 ---
+
 
 # dnoise
 

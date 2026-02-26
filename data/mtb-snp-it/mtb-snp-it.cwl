@@ -2,15 +2,31 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mtb-snp-it
 label: mtb-snp-it
-doc: "A tool for identifying Mycobacterium tuberculosis lineages from SNP data. (Note:
-  The provided help text contains only system error messages and no usage information.)\n
-  \nTool homepage: https://github.com/samlipworth/snpit"
-inputs: []
+doc: "A tool to identify the lineage of Mycobacterium tuberculosis isolates from VCF
+  files.\n\nTool homepage: https://github.com/samlipworth/snpit"
+inputs:
+  - id: input_vcf
+    type: File
+    doc: Input VCF file containing SNP information
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Enable verbose output
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output file to write results (defaults to stdout if not specified)
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mtb-snp-it:1.1--py_0
-stdout: mtb-snp-it.out

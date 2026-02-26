@@ -1,8 +1,9 @@
 ---
 name: r-rvertnet
-description: Retrieve, map and summarize data from the 'VertNet.
+description: This tool accesses and searches vertebrate specimen records from the VertNet database. Use when user asks to retrieve biodiversity data for vertebrates, search specimen records by taxonomic or geographic terms, perform spatial searches within a radius, or request large-scale data downloads via email.
 homepage: https://cloud.r-project.org/web/packages/rvertnet/index.html
 ---
+
 
 # r-rvertnet
 

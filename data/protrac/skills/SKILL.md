@@ -1,8 +1,9 @@
 ---
 name: protrac
-description: protrac (probabilistic tracking) is a specialized bioinformatics tool designed to identify piRNA clusters within genomic sequences.
+description: protrac is a probabilistic tool used to identify and analyze piRNA clusters within genomic sequences. Use when user asks to identify piRNA clusters, filter small RNA-rich regions, or analyze piRNA signatures like strand bias and sequence motifs.
 homepage: http://www.smallrnagroup.uni-mainz.de/software.html
 ---
+
 
 # protrac
 

@@ -1,8 +1,9 @@
 ---
 name: fastmd5
-description: fastmd5 is a Rust-based utility designed for high-throughput MD5 operations.
+description: "fastmd5 is a parallelized utility designed for high-throughput MD5 checksum generation and verification. Use when user asks to generate MD5 sums for files or directories, verify file integrity against a checksum list, or perform fast probabilistic hashing on massive datasets."
 homepage: https://github.com/moold/fastMD5
 ---
+
 
 # fastmd5
 

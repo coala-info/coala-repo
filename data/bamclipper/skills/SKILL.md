@@ -1,8 +1,9 @@
 ---
 name: bamclipper
-description: bamclipper is a specialized utility designed to remove gene-specific primer sequences from SAM/BAM alignments of PCR amplicons.
+description: "bamclipper removes gene-specific primer sequences from SAM or BAM alignments of PCR amplicons by soft-clipping reads based on genomic coordinates. Use when user asks to remove primer sequences from BAM files, soft-clip amplicon sequencing data, or process alignments using a primer manifest in BEDPE format."
 homepage: https://github.com/tommyau/bamclipper
 ---
+
 
 # bamclipper
 

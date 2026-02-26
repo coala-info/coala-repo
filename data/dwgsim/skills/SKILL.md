@@ -1,8 +1,9 @@
 ---
 name: dwgsim
-description: dwgsim is a robust command-line tool designed to simulate the sequencing process for whole genomes.
+description: "dwgsim simulates the sequencing process for whole genomes by generating reads from a reference FASTA file with realistic errors and mutations. Use when user asks to simulate paired-end or single-end sequencing reads, generate synthetic variants in a VCF file, or model specific sequencing coverage and error rates."
 homepage: https://github.com/nh13/DWGSIM
 ---
+
 
 # dwgsim
 

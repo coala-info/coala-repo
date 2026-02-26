@@ -13,9 +13,13 @@ while IFS= read -r i || [[ -n "$i" ]]; do
     echo "[skip] $i (already has .cwl)"
     continue
   fi
+  # if [[ -f "$i/report.md" ]] && grep -q 'FAIL (generation failed)' "$i/report.md" 2>/dev/null; then
+  #   echo "[skip] $i (Validation: FAIL generation failed)"
+  #   continue
+  # fi
 
   echo "[run] $i"
-  cwlagent generate "$i" --singularity || echo "[warn] $i: generate failed"
+  cwlagent generate "$i" -m gemini-2.5-flash-lite|| echo "[warn] $i: generate failed"
   skip_skill=
   if [[ -f "$i/skills/SKILL.md" ]]; then
     skip_skill="skills/SKILL.md exists"
@@ -25,8 +29,8 @@ while IFS= read -r i || [[ -n "$i" ]]; do
   if [[ -n "$skip_skill" ]]; then
     echo "[skip] $i skill/regenerate ($skip_skill)"
   else
-    cwlagent skill "$i" || echo "[warn] $i: skill failed"
-    cwlagent regenerate "$i" --singularity || echo "[warn] $i: regenerate failed"
+    cwlagent skill "$i" -m gemini-2.5-flash-lite|| echo "[warn] $i: skill failed"
+    cwlagent regenerate "$i" -m gemini-2.5-flash-lite|| echo "[warn] $i: regenerate failed"
   fi
   # Remove this tool's Docker image from report.md if present
   report="$i/report.md"

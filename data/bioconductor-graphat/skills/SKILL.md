@@ -1,8 +1,9 @@
 ---
 name: bioconductor-graphat
-description: the package is available on all platforms; click for details.
+description: This tool performs graph theoretic association tests to evaluate the statistical significance of associations between integrated functional genomics data sources. Use when user asks to perform edge and node permutation tests, convert cluster memberships to adjacency matrices, test associations between disparate genomics data sources, or estimate the power of permutation tests.
 homepage: https://bioconductor.org/packages/release/bioc/html/GraphAT.html
 ---
+
 
 # bioconductor-graphat
 

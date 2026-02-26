@@ -1,8 +1,9 @@
 ---
 name: salsa2
-description: SALSA (Simple Assembly Line Scaffolder for Assemblies) is a specialized tool for upgrading fragmented long-read assemblies to chromosome-scale scaffolds using Hi-C proximity ligation data.
+description: SALSA2 scaffolds fragmented genome assemblies into chromosome-scale sequences using Hi-C proximity ligation data and assembly graphs. Use when user asks to scaffold contigs, upgrade assemblies to chromosome scale, or correct misassemblies using Hi-C data.
 homepage: https://github.com/marbl/SALSA
 ---
+
 
 # salsa2
 

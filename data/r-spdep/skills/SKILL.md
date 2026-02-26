@@ -1,8 +1,9 @@
 ---
 name: r-spdep
-description: Skill for using the CRAN R package r-spdep.
+description: This tool provides expert guidance for spatial dependence analysis in R using the spdep package. Use when user asks to create spatial weights, calculate global or local spatial autocorrelation statistics like Moran's I, or perform hypothesis testing for spatial patterns in areal data.
 homepage: https://cloud.r-project.org/web/packages/spdep/index.html
 ---
+
 
 # r-spdep
 

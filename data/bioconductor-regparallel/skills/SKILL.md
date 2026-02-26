@@ -1,8 +1,9 @@
 ---
 name: bioconductor-regparallel
-description: the package is available on all platforms; click for details.
+description: RegParallel performs large-scale parallelized regression analysis for genomic datasets in R. Use when user asks to perform parallelized linear or logistic regressions, conduct epigenome-wide association studies, or analyze large-scale genomic data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RegParallel.html
 ---
+
 
 # bioconductor-regparallel
 

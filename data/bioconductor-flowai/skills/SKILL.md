@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowai
-description: "The package is able to perform an automatic or interactive quality control on FCS data acquired using flow cytometry instruments. By evaluating three different properties: 1) flow rate, 2) signal acquisition, 3) dynamic range, the quality control enables the detection and removal of anomalies."
+description: This tool provides automated and interactive quality control for flow cytometry data to identify and remove technical artifacts. Use when user asks to perform quality control on FCS files, detect anomalies in flow rate or signal acquisition, and clean flow cytometry data before downstream analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowAI.html
 ---
+
 
 # bioconductor-flowai
 

@@ -1,11 +1,50 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: FetchSequence
+baseCommand: Fetchsequence
 label: biobasehttptools_FetchSequence
-doc: "Fetch sequences using biobasehttptools. (Note: The provided input text contains
-  system error messages regarding a container build failure and does not include the
-  actual help documentation for the tool.)\n\nTool homepage: https://github.com/eggzilla/BiobaseHTTPTools"
-inputs: []
+doc: "Fetch sequence information based on gene ID, start, and stop.\n\nTool homepage:
+  https://github.com/eggzilla/BiobaseHTTPTools"
+inputs:
+  - id: geneid
+    type:
+      - 'null'
+      - int
+    doc: Gene id
+    inputBinding:
+      position: 101
+      prefix: --geneid
+  - id: genestart
+    type:
+      - 'null'
+      - int
+    doc: Gene start
+    inputBinding:
+      position: 101
+      prefix: --genestart
+  - id: genestop
+    type:
+      - 'null'
+      - int
+    doc: Gene stop
+    inputBinding:
+      position: 101
+      prefix: --genestop
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet verbosity
+    inputBinding:
+      position: 101
+      prefix: --quiet
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Loud verbosity
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

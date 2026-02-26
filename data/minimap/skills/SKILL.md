@@ -1,8 +1,9 @@
 ---
 name: minimap
-description: Minimap2 is a high-performance, versatile pairwise aligner for genomic and spliced nucleotide sequences.
+description: Minimap2 is a versatile pairwise aligner used for mapping genomic and spliced nucleotide sequences against a reference. Use when user asks to align long-read sequencing data, map short reads, perform whole-genome comparisons, or generate overlaps for assembly.
 homepage: https://github.com/lh3/minimap2
 ---
+
 
 # minimap
 

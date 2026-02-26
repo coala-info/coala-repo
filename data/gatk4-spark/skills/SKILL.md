@@ -1,8 +1,9 @@
 ---
 name: gatk4-spark
-description: The `gatk4-spark` skill provides specialized guidance for executing the Spark-enabled versions of the Genome Analysis Toolkit (GATK).
+description: This tool provides guidance for executing Spark-enabled GATK tools to parallelize compute-intensive genomic workflows. Use when user asks to run GATK tools on Spark, optimize resource allocation for variant discovery, or manage Spark-specific arguments like spark-master and memory configurations.
 homepage: https://www.broadinstitute.org/gatk/
 ---
+
 
 # gatk4-spark
 

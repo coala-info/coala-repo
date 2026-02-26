@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hguqiagenv3.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based mappings between Qiagen Human Genome U133 Plus 2.0 probe identifiers and various biological databases. Use when user asks to map probe IDs to gene symbols, retrieve Entrez or Ensembl identifiers, or access Gene Ontology and pathway annotations for this specific platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hguqiagenv3.db.html
 ---
+
 
 # bioconductor-hguqiagenv3.db
 

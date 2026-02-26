@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rhesusprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Rhesus Macaque Affymetrix genome chip. Use when user asks to retrieve probe sequences for Macaca mulatta, analyze Rhesus Macaque Affymetrix data, or access rhesusprobe annotation information.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rhesusprobe.html
 ---
+
 
 # bioconductor-rhesusprobe
 

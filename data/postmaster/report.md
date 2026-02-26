@@ -3,7 +3,7 @@
 ## postmaster
 
 ### Tool Description
-The provided text does not contain help information for the tool 'postmaster'. It appears to be a log of a failed container build/fetch process (Apptainer/Singularity).
+N/A
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/postmaster:0.1.0--ha6fb395_1
@@ -12,19 +12,20 @@ The provided text does not contain help information for the tool 'postmaster'. I
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/postmaster/overview
-- **Total Downloads**: 592
+- **Total Downloads**: 594
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/COMBINE-lab/postmaster
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/postmaster:0.1.0--ha6fb395_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: postmaster [OPTIONS] --quant <QUANT>
+
+Options:
+  -a, --alignments <ALIGNMENTS>    
+  -q, --quant <QUANT>              
+  -o, --output <OUTPUT>            
+  -n, --num-threads <NUM_THREADS>  [default: 2]
+  -h, --help                       Print help
+  -V, --version                    Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

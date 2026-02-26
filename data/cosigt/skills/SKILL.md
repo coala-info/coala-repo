@@ -1,8 +1,9 @@
 ---
 name: cosigt
-description: cosigt (COsine SImilarity-based GenoTyper) is a specialized bioinformatics pipeline designed to assign structural haplotypes to sequenced samples.
+description: cosigt is a bioinformatics pipeline that assigns structural haplotypes to sequenced samples by comparing sequencing data against pangenome graphs using cosine similarity. Use when user asks to assign structural haplotypes, genotype samples using pangenome graphs, or analyze complex structural variations.
 homepage: https://github.com/davidebolo1993/cosigt
 ---
+
 
 # cosigt
 

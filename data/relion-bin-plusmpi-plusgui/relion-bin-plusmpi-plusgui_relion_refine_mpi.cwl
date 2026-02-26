@@ -2,10 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: relion_refine_mpi
 label: relion-bin-plusmpi-plusgui_relion_refine_mpi
-doc: "Relion Refine MPI (Note: The provided input text contains container execution
-  errors rather than tool help text, so no arguments could be extracted.)\n\nTool
-  homepage: https://github.com/3dem/relion"
-inputs: []
+doc: "RELION MPI setup\n\nTool homepage: https://github.com/3dem/relion"
+inputs:
+  - id: num_mpi_processes
+    type:
+      - 'null'
+      - int
+    doc: Number of MPI processes
+    default: 1
+    inputBinding:
+      position: 101
 outputs:
   - id: stdout
     type: stdout

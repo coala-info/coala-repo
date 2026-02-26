@@ -1,8 +1,9 @@
 ---
 name: phlame
-description: PHLAME (Phylogenetic-based Metagenomic Evaluation) is a specialized bioinformatics pipeline for high-resolution intraspecies profiling.
+description: PHLAME is a bioinformatics pipeline for high-resolution intraspecies profiling and estimating strain divergence from reference phylogenies. Use when user asks to identify specific clades within a species, quantify genomic novelty, or track strain dynamics in metagenomic samples.
 homepage: https://github.com/quevan/phlame
 ---
+
 
 # phlame
 

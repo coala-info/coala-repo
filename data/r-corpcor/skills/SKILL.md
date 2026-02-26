@@ -1,8 +1,9 @@
 ---
 name: r-corpcor
-description: "Implements a James-Stein-type shrinkage estimator for    the covariance matrix, with separate shrinkage for variances and correlations."
+description: This tool provides efficient estimation of covariance and partial correlation matrices using James-Stein-type shrinkage for high-dimensional data. Use when user asks to estimate shrinkage covariance or correlation, compute partial correlations, perform fast singular value decomposition, or calculate efficient matrix inverses and powers.
 homepage: https://cloud.r-project.org/web/packages/corpcor/index.html
 ---
+
 
 # r-corpcor
 

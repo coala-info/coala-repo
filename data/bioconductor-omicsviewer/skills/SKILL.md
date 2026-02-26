@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omicsviewer
-description: the package is available on all platforms; click for details.
+description: omicsViewer provides an interactive interface for the visualization and exploration of multi-omics data. Use when user asks to visualize omics data, create interactive dashboards for biological datasets, or explore multi-omics results.
 homepage: https://bioconductor.org/packages/release/bioc/html/omicsViewer.html
 ---
+
 
 # bioconductor-omicsviewer
 

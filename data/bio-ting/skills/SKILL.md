@@ -1,8 +1,9 @@
 ---
 name: bio-ting
-description: The `bio-ting` skill facilitates the use of the **T cell receptor interaction grouping (ting)** tool.
+description: The bio-ting tool clusters T cell receptor sequences to identify functional groups and significant motifs within immunosequencing data. Use when user asks to cluster TCR repertoires, identify antigen-specific sequence groups, or discover enriched CDR3b motifs.
 homepage: https://github.com/FelixMoelder/ting
 ---
+
 
 # bio-ting
 

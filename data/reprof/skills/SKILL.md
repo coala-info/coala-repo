@@ -1,8 +1,9 @@
 ---
 name: reprof
-description: ReproFed (reprof) transforms Fedora system management from manual package installation to a desired-state model.
+description: ReproFed manages Fedora systems using a declarative profile model to ensure the installed packages match a desired state. Use when user asks to apply a system profile, list available configurations, update the tool, or synchronize system state to eliminate configuration drift.
 homepage: https://github.com/ephmo/reprofed
 ---
+
 
 # reprof
 

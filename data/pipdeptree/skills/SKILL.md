@@ -1,8 +1,9 @@
 ---
 name: pipdeptree
-description: The `pipdeptree` skill enables the analysis of Python environments by transforming the flat list of packages provided by `pip freeze` into a structured dependency tree.
+description: pipdeptree visualizes and analyzes Python package dependencies by transforming flat pip lists into a hierarchical tree structure. Use when user asks to visualize dependency trees, identify version conflicts, perform reverse lookups to find why a package is installed, or generate requirements files.
 homepage: https://github.com/tox-dev/pipdeptree
 ---
+
 
 # pipdeptree
 

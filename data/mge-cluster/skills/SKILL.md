@@ -1,8 +1,9 @@
 ---
 name: mge-cluster
-description: mge-cluster is a specialized bioinformatics framework designed to bring order to the diversity of mobile genetic elements.
+description: mge-cluster is a bioinformatics framework designed to classify and group mobile genetic elements based on sequence similarity and structural features. Use when user asks to cluster mobile genetic elements, classify MGEs, or analyze horizontal gene transfer landscapes in genomic data.
 homepage: https://gitlab.com/sirarredondo/mge_cluster
 ---
+
 
 # mge-cluster
 

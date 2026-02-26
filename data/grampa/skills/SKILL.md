@@ -1,8 +1,9 @@
 ---
 name: grampa
-description: GRAMPA (Gene-tree Reconciliation Algorithm with MUL-trees for Polyploid Analysis) is a specialized tool for evolutionary biology designed to handle the complexities of polyploid species.
+description: GRAMPA reconciles gene trees with species trees using MUL-trees to analyze gene duplications and losses in polyploid species. Use when user asks to identify polyploidy events, perform gene-tree reconciliation with subgenomes, or test specific hypotheses for parental lineages.
 homepage: https://github.com/gwct/grampa
 ---
+
 
 # grampa
 

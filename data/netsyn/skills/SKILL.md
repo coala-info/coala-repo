@@ -1,8 +1,9 @@
 ---
 name: netsyn
-description: NetSyn is a bioinformatics tool designed to identify and analyze synteny—the conservation of gene order and genomic context—across a list of target proteins.
+description: NetSyn identifies and analyzes synteny by constructing genomic neighborhood graphs from protein sequences or accessions. Use when user asks to identify conserved gene order, analyze genomic neighborhoods, perform functional annotation of protein families, or study operon-like structures across diverse taxa.
 homepage: https://github.com/labgem/netsyn
 ---
+
 
 # netsyn
 

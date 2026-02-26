@@ -3,7 +3,7 @@
 ## lighter
 
 ### Tool Description
-Lighter is a fast and memory-efficient error correction method for Illumina reads. (Note: The provided text is a container runtime error log and does not contain help documentation or argument definitions.)
+OPTIONS:
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lighter:1.1.3--h077b44d_2
@@ -12,17 +12,33 @@ Lighter is a fast and memory-efficient error correction method for Illumina read
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lighter/overview
-- **Total Downloads**: 38.5K
+- **Total Downloads**: 38.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mourisl/Lighter
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lighter:1.1.3--h077b44d_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1625752766: no space left on device
+Usage: ./lighter [OPTIONS]
+OPTIONS:
+Required parameters:
+	-r seq_file: seq_file is the path to the sequence file. Can use multiple -r to specifiy multiple sequence files
+	             The file can be fasta and fastq, and can be gzip'ed with extension *.gz.
+	             When the input file is *.gz, the corresponding output file will also be gzip'ed.
+	-k kmer_length genome_size alpha: (see README for information on setting alpha)
+					or
+	-K kmer_length genom_size: in this case, the genome size should be relative accurate.
+Other parameters:
+	-od output_file_directory: (default: ./)
+	-t num_of_threads: number of threads to use (default: 1)
+	-maxcor INT: the maximum number of corrections within a 20bp window (default: 4)
+	-trim: allow trimming (default: false)
+	-discard: discard unfixable reads. Will LOSE paired-end matching when discarding (default: false)
+	-noQual: ignore the quality socre (default: false)
+	-newQual ascii_quality_score: set the quality for the bases corrected to the specified score (default: not used)
+	-saveTrustedKmers file: save the trusted kmers to specified file then stop (default: not used)
+	-loadTrustedKmers file: directly get solid kmers from specified file (default: not used)
+	-zlib compress_level: set the compression level(0-9) of gzip (default: 1)
+	-h: print the help message and quit
+	-v: print the version information and quit
 ```
 
-
-## Metadata
-- **Skill**: generated

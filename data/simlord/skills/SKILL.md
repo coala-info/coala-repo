@@ -1,8 +1,9 @@
 ---
 name: simlord
-description: SimLoRD (Simulation of Long Reads from DNA) is a specialized tool designed to mimic the characteristics of third-generation sequencing.
+description: SimLoRD simulates long-read sequencing data from a reference genome with realistic PacBio error profiles and read-length distributions. Use when user asks to generate synthetic long reads, simulate PacBio sequencing data, or create realistic datasets for benchmarking and tool development.
 homepage: https://bitbucket.org/genomeinformatics/simlord/
 ---
+
 
 # simlord
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-s4arrays
-description: the package is available on all platforms; click for details.
+description: S4Arrays provides a framework and infrastructure for representing array-like objects as S4 objects in R. Use when user asks to define virtual array classes, wrap data into array-like structures, or develop infrastructure for large-scale genomic data arrays.
 homepage: https://bioconductor.org/packages/release/bioc/html/S4Arrays.html
 ---
+
 
 # bioconductor-s4arrays
 

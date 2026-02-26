@@ -1,8 +1,9 @@
 ---
 name: geneimpacts
-description: geneimpacts is a specialized Python library used to normalize and compare the severity of genomic variant consequences.
+description: "geneimpacts normalizes and compares the severity of genomic variant consequences from SnpEff, VEP, and BCFTools annotations. Use when user asks to normalize variant impact categories, compare the severity of different genomic annotations, or identify the most severe effect for a variant."
 homepage: https://github.com/brentp/geneimpacts
 ---
+
 
 # geneimpacts
 

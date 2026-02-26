@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genenetworkbuilder
-description: the package is available on all platforms; click for details.
+description: GeneNetworkBuilder integrates transcription factor binding data with expression profiles to construct and visualize regulatory networks. Use when user asks to build gene regulatory networks, integrate ChIP-seq with RNA-seq data, identify direct and indirect targets, or visualize TF-miRNA interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneNetworkBuilder.html
 ---
+
 
 # bioconductor-genenetworkbuilder
 

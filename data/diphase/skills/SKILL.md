@@ -1,8 +1,9 @@
 ---
 name: diphase
-description: Diphase is a bioinformatics pipeline designed to resolve diploid genome assemblies into distinct haplotypes.
+description: Diphase resolves diploid genome assemblies into distinct haplotypes by integrating long-read sequencing variations with Hi-C spatial proximity data. Use when user asks to phase primary and alternate contigs, resolve diploid assemblies into haplotypes, or perform variant-based phasing using long reads and Hi-C data.
 homepage: https://github.com/zhangjuncsu/Diphase
 ---
+
 
 # diphase
 

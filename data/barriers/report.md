@@ -3,7 +3,7 @@
 ## barriers
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'barriers'. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) indicating a failure to build or extract the container image due to insufficient disk space ('no space left on device').
+Compute local minima and energy barriers of a landscape
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/barriers:1.8.1--pl5321h503566f_4
@@ -18,14 +18,76 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/barriers:1.8.1--pl5321h503566f_4 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8565ac24338b5ed30f13e36aef4b5e60b449f082fb46ffb2072d583bf468d44e: unpack entry: usr/local/bin/python3.12: unpack to regular file: short write: write /scratch/21813747/build-temp-2814320529/rootfs/usr/local/bin/python3.12: no space left on device
+barriers 1.8.1
+
+Compute local minima and energy barriers of a landscape
+
+Usage: barriers [OPTIONS]... [[FILE]]...
+
+This program reads an energy sorted list of conformations of a landscape, and
+computes local minima and energy barriers of the landscape. For RNA secondary
+structures, suitable input is produced by RNAsubopt. For each local minimum
+found it prints to stdout, the conformation of the minimum, its energy, the
+number of the "parent"-minimum it merges with, and the height of the energy
+barrier. Additional information on each minimum, such as saddle point
+conformation and basin sizes can be included via options.
+
+A PostScript drawing of the resulting tree is written to "tree.ps" in the
+current directory.
+
+  -h, --help                    Print help and exit
+      --detailed-help           Print help, including all details and hidden
+                                  options, and exit
+      --full-help               Print help, including hidden options, and exit
+  -V, --version                 Print version and exit
+
+General Options:
+  Command line options which alter the general behavior of this program.
+
+
+  -v, --verbose                 Be verbose, i.e. print more information.
+                                  (default=off)
+  -q, --quiet                   Be quiet (also inhibit PS tree output).
+                                  (default=off)
+
+Graphs and Move Sets:
+  The graph and move set options specify the types of states/conformations in
+  the system as well as their neighborhood. Some graphs provide different
+  neighborhood settings. The type of landscape may also be set by the input
+  file using the fourth word on first line. E.g.:
+
+   AUCGUGAGCUGUGUAGCUUAGCUAGCUAGC -610 100 :: RNA-noLP
+
+
+   for a landscape of canonical RNA structures.
+
+
+  -G, --graph=Graph             Define type of the graph, i.e. configuration
+                                  space.  (default=`RNA')
+  -M, --moves=STRING            Select the move-set for generating neighbors of
+                                  a configuration (if Graph allows several
+                                  different ones).
+
+Barrier Tree Computation:
+  -c, --connected               Restrict the output to the connected component.
+                                  (default=off)
+      --bsize                   Print the size of of each basin in output.
+                                  (default=off)
+      --ssize                   Print saddle component sizes.  (default=off)
+      --max=INT                 Compute only the lowest <num> local minima.
+                                  (default=`100')
+      --minh=<delta>            Print only minima with energy barrier greater
+                                  than delta.  (default=`0.000001')
+      --saddle                  Print the saddle point conformations in output.
+                                  (default=off)
+
+Transition Rate Computation:
+      --rates                   Compute rates between macro states (basins).
+                                  (default=off)
+
+Miscellaneous Options:
+  -P, --path=<l1>=<l2>          Backtrack an optimal path between local minimum
+                                  l2 and l1.
+      --mapstruc=<filename>     Map conformations to minima in the tree.
 ```
 
-
-## Metadata
-- **Skill**: generated

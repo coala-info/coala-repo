@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cleanuprnaseq
-description: the package is available on all platforms; click for details.
+description: CleanUpRNAseq corrects for genomic DNA contamination in RNA-seq data. Use when user asks to remove genomic DNA contamination, correct for gDNA artifacts, or clean up RNA-seq datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/CleanUpRNAseq.html
 ---
+
 
 # bioconductor-cleanuprnaseq
 

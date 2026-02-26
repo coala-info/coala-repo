@@ -1,8 +1,9 @@
 ---
 name: esme_pnetcdf_mpich_4_2_3
-description: PnetCDF (Parallel netCDF) is a specialized library designed to enable multiple MPI processes to read and write netCDF files concurrently.
+description: PnetCDF provides a library and command-line utilities for high-performance, concurrent access to netCDF files using MPI. Use when user asks to validate netCDF file specifications, compare parallel datasets, check variable file offsets, or tune parallel I/O performance using environment variables and alignment hints.
 homepage: https://parallel-netcdf.github.io/
 ---
+
 
 # esme_pnetcdf_mpich_4_2_3
 

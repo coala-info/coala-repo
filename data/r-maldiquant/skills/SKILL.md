@@ -1,8 +1,9 @@
 ---
 name: r-maldiquant
-description: "A complete analysis pipeline for matrix-assisted laser         desorption/ionization-time-of-flight (MALDI-TOF) and other         two-dimensional mass spectrometry data. In addition to commonly         used plotting and processing methods it includes distinctive         features, namely baseline subtraction methods such as         morphological filters (TopHat) or the statistics-sensitive         non-linear iterative peak-clipping algorithm (SNIP), peak         alignment using warping functions, handling of replicated         measurements as well as allowing spectra with different         resolutions.</p>"
+description: MALDIquant is an R package providing a complete analysis pipeline for MALDI-TOF and other 2D mass spectrometry data. Use when user asks to import raw mass spectrometry data, perform preprocessing steps like baseline correction and normalization, align spectra, detect peaks, or generate a feature matrix for statistical analysis.
 homepage: https://cloud.r-project.org/web/packages/MALDIquant/index.html
 ---
+
 
 # r-maldiquant
 

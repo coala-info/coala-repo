@@ -1,8 +1,9 @@
 ---
 name: bioconductor-agimicrorna
-description: the package is available on all platforms; click for details.
+description: This tool processes, normalizes, and analyzes Agilent microRNA microarray data exported from Agilent Feature Extraction software. Use when user asks to read AFE files, perform TGS or RMA normalization, generate quality control plots, or conduct differential expression analysis using limma.
 homepage: https://bioconductor.org/packages/release/bioc/html/AgiMicroRna.html
 ---
+
 
 # bioconductor-agimicrorna
 

@@ -1,8 +1,9 @@
 ---
 name: coconet-binning
-description: CoCoNet (Composition and Coverage Network) is a specialized bioinformatic tool for binning viral contigs.
+description: CoCoNet is a bioinformatic tool that uses a neural network to bin viral contigs based on k-mer composition and read coverage. Use when user asks to bin viral contigs, cluster metagenomic fragments, or predict if contig pairs originate from the same genome.
 homepage: https://github.com/Puumanamana/CoCoNet
 ---
+
 
 # coconet-binning
 

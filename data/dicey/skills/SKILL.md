@@ -1,8 +1,9 @@
 ---
 name: dicey
-description: The `dicey` skill provides a specialized workflow for simulating molecular biology assays computationally.
+description: Dicey simulates molecular biology assays and performs high-speed sequence searching to validate primers and design probes. Use when user asks to index a reference genome, search for specific nucleotide sequences, perform in-silico PCR, or design padlock probes for mRNA imaging.
 homepage: https://github.com/gear-genomics/dicey
 ---
+
 
 # dicey
 

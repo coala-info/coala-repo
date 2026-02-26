@@ -1,8 +1,9 @@
 ---
 name: kf2vec
-description: The `kf2vec` tool transforms raw genomic sequences into numerical vectors based on k-mer frequencies.
+description: kf2vec transforms raw genomic sequences into numerical vectors based on k-mer frequencies for phylogenetic representation learning. Use when user asks to extract k-mer frequencies, partition phylogenetic trees, compute distance matrices, or train classifiers to place query sequences within a phylogeny.
 homepage: https://github.com/noraracht/kf2vec
 ---
+
 
 # kf2vec
 

@@ -1,8 +1,9 @@
 ---
 name: mbuffer
-description: mbuffer (measuring buffer) is a high-performance replacement for the standard `buffer` tool.
+description: mbuffer is a high-performance multithreaded tool that buffers data between a producer and a consumer to smooth out I/O spikes and monitor transfer speeds. Use when user asks to prevent tape drive underruns, transfer data over a network, or diagnose performance bottlenecks in a command-line pipeline.
 homepage: https://github.com/ilovezfs/mbuffer-osx
 ---
+
 
 # mbuffer
 

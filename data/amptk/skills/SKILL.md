@@ -1,8 +1,9 @@
 ---
 name: amptk
-description: AMPtk (Amplicon ToolKit) is a specialized suite designed to handle the complexities of amplicon sequencing analysis.
+description: AMPtk is a specialized suite designed to automate the preprocessing, clustering, and taxonomic classification of amplicon sequencing data. Use when user asks to process raw amplicon reads, remove chimeras, generate OTUs or ASVs using DADA2 or UNOISE3, and assign taxonomy to fungal or bacterial datasets.
 homepage: https://github.com/nextgenusfs/amptk
 ---
+
 
 # amptk
 

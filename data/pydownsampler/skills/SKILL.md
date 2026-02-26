@@ -1,8 +1,9 @@
 ---
 name: pydownsampler
-description: pydownsampler is a bioinformatics utility designed to simplify the process of reducing the depth of sequence alignment files.
+description: pydownsampler is a bioinformatics utility used to reduce the depth of sequence alignment files to a specific target coverage level. Use when user asks to downsample BAM, CRAM, or SAM files to a precise depth or check the current coverage of an alignment file.
 homepage: https://github.com/LindoNkambule/pydownsampler
 ---
+
 
 # pydownsampler
 

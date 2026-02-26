@@ -1,8 +1,9 @@
 ---
 name: mquad
-description: MQuad (Mitochondrial Mutation Mixture Model) is a specialized tool designed to identify high-quality mitochondrial variants that are informative for clonal substructure analysis.
+description: MQuad identifies informative mitochondrial DNA variants for clonal substructure analysis using a binomial mixture model. Use when user asks to identify high-quality mitochondrial variants, filter noisy background mutations, or calculate deltaBIC scores for single-cell mtDNA data.
 homepage: https://github.com/aaronkwc/MQuad
 ---
+
 
 # mquad
 

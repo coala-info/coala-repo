@@ -1,8 +1,9 @@
 ---
 name: edtsurf
-description: EDTSurf is a high-performance tool designed for the rapid construction of macromolecular surfaces using Euclidean Distance Transforms.
+description: "EDTSurf constructs macromolecular surfaces and calculates structural metrics using Euclidean Distance Transforms. Use when user asks to generate molecular surfaces, calculate protein depth, identify internal cavities, or create triangulated meshes from PDB files."
 homepage: https://github.com/UnixJunkie/EDTSurf
 ---
+
 
 # edtsurf
 

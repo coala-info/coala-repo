@@ -1,9 +1,9 @@
 # tritimap CWL Generation Report
 
-## tritimap
+## tritimap_init
 
 ### Tool Description
-A tool for mapping and analysis (Note: The provided text contains system error logs rather than help documentation, so specific arguments could not be extracted).
+Generate snakemake configuration file and other needed file. The command will generate three configuration files(config.yaml, sample.csv and region.csv) in the running directory.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tritimap:0.9.7--pyh5e36f6f_0
@@ -18,14 +18,45 @@ A tool for mapping and analysis (Note: The provided text contains system error l
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tritimap:0.9.7--pyh5e36f6f_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:3ee0affba792d9a7bdb77a9d7f2361ddc860b0d52e28dfe29ed46d92cef8a01f: unpack entry: usr/local/bin/bedmap-float128: unpack to regular file: short write: write /tmp/build-temp-3244398082/rootfs/usr/local/bin/bedmap-float128: no space left on device
+Usage: tritimap init [OPTIONS]
+
+  Generate snakemake configuration file and other needed file. The command
+  will generate three configuration files(config.yaml, sample.csv and
+  region.csv) in the running directory.
+
+Options:
+  -d, --working-dir PATH  Triti-Map running directory.
+  -h, --help              Show this message and exit.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## tritimap_run
+
+### Tool Description
+Triti-Map main command. The pipeline supports three execute modules: all, only_mapping and only_assembly. First, you need to fill in the configuration file correctly.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/tritimap:0.9.7--pyh5e36f6f_0
+- **Homepage**: https://github.com/fei0810/Triti-Map
+- **Package**: https://anaconda.org/channels/bioconda/packages/tritimap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: tritimap run [OPTIONS] [[all|only_mapping|only_assembly]]
+                    [SNAKEMAKE_ARGS]...
+
+  Triti-Map main command. The pipeline supports three execute modules: all,
+  only_mapping and only_assembly. First, you need to fill in the configuration
+  file correctly.
+
+Options:
+  -d, --working-dir PATH  Triti-Map running directory.
+  -c, --config-file PATH  Triti-Map config file, generated with tritimap init.
+  -j, --jobs INTEGER      Use at most N CPU cores/jobs in parallel.
+  -n, --dryrun            Do not execute anything, and display what would be
+                          done.  [default: False]
+  --profile TEXT          Name of profile to use for configuring Snakemake.
+  -h, --help              Show this message and exit.
+```
+

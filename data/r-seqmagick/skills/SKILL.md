@@ -1,8 +1,9 @@
 ---
 name: r-seqmagick
-description: "Tools for reading and writing biological sequences in multiple     formats, including 'FASTA', 'PHYLIP', 'CLUSTAL', 'STOCKHOLM', 'MEGA' and     'GenBank'. Supports interleaved and sequential layouts where applicable,     converts between formats, and manipulates sequence sets (e.g., filtering by     patterns and computing consensus sequences from alignments). Also includes     functions to download nucleotide records from NCBI by accession.</p>"
+description: The r-seqmagick package provides utilities for sequence manipulation, file conversion, and alignment processing within the R environment. Use when user asks to download sequences from GenBank, convert between FASTA and PHYLIP formats, filter sequences by pattern, or generate consensus sequences from alignments.
 homepage: https://cran.r-project.org/web/packages/seqmagick/index.html
 ---
+
 
 # r-seqmagick
 

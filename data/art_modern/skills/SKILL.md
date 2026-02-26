@@ -1,8 +1,9 @@
 ---
 name: art_modern
-description: art_modern is a modernized re-implementation of the popular ART read simulator, optimized for better performance and expanded functionality.
+description: art_modern generates synthetic sequencing reads from reference genomes or transcriptomes to create datasets with known ground truths for tool validation. Use when user asks to simulate sequencing reads, generate synthetic datasets for WGS or RNA-Seq, or create custom error profiles from existing sequencing data.
 homepage: https://github.com/YU-Zhejian/art_modern
 ---
+
 
 # art_modern
 

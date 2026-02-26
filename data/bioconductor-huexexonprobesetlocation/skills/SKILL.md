@@ -1,8 +1,9 @@
 ---
 name: bioconductor-huexexonprobesetlocation
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence and genomic location data for Affymetrix Human Exon microarrays. Use when user asks to map HuEx probeset names to genomic coordinates, retrieve probe sequences, or identify physical array positions for exon-level expression analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuExExonProbesetLocation.html
 ---
+
 
 # bioconductor-huexexonprobesetlocation
 

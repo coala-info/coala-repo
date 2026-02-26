@@ -1,8 +1,9 @@
 ---
 name: phiercc
-description: pHierCC is a specialized tool for analyzing bacterial population structures through hierarchical clustering of allelic data.
+description: pHierCC performs hierarchical clustering of bacterial allelic data to establish stable genomic nomenclature and population structures. Use when user asks to build a new hierarchical clustering scheme from core genome profiles or assign new samples to an existing clustering framework.
 homepage: https://github.com/zheminzhou/pHierCC
 ---
+
 
 # phiercc
 

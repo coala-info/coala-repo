@@ -1,8 +1,9 @@
 ---
 name: lightning
-description: PyTorch Lightning is a high-level framework designed to decouple the "science" of deep learning (model architecture and loss functions) from the "engineering" (training loops, hardware distribution, and checkpointing).
+description: PyTorch Lightning is a high-level framework that decouples deep learning engineering tasks from model architecture to simplify training and scaling. Use when user asks to organize PyTorch code into a structured module, automate training loops, or scale models across multiple GPUs and TPUs.
 homepage: https://github.com/Lightning-AI/pytorch-lightning
 ---
+
 
 # lightning
 

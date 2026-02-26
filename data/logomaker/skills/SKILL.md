@@ -1,8 +1,9 @@
 ---
 name: logomaker
-description: Logomaker is a Python library designed to create highly customizable sequence logos.
+description: Logomaker is a Python library that creates highly customizable sequence logos from sequence alignments, energy matrices, or saliency maps using matplotlib. Use when user asks to generate sequence logos, visualize Shannon information, create enrichment logos from count matrices, or style character-based vector graphics.
 homepage: http://logomaker.readthedocs.io
 ---
+
 
 # logomaker
 

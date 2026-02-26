@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simbindprofiles
-description: the package is available on all platforms; click for details.
+description: SimBindProfiles identifies differentially bound regions and compares ChIP-seq profiles across different experimental conditions. Use when user asks to identify differentially bound regions, compare ChIP-seq profiles, or analyze similarities between binding data.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SimBindProfiles.html
 ---
+
 
 # bioconductor-simbindprofiles
 

@@ -1,9 +1,9 @@
 # crisprme CWL Generation Report
 
-## crisprme
+## crisprme_crisprme.py
 
 ### Tool Description
-CRISPRme: A tool for comprehensive personalized CRISPR off-target assessment (Note: The provided help text contains system error logs and does not list specific command-line arguments).
+CRISPRme is a tool for analyzing CRISPR-Cas9 off-target effects.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/crisprme:2.1.9--py38hdfd78af_0
@@ -18,35 +18,39 @@ CRISPRme: A tool for comprehensive personalized CRISPR off-target assessment (No
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/crisprme:2.1.9--py38hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5b1d7536fb741c216aa50bcd0409517ebe13d832981c405503036e75cf9111f6: unpack entry: usr/local/lib/python3.8/site-packages/plotly/validators/layout/xaxis/__pycache__/_ticksuffix.cpython-38.pyc: unpack to regular file: short write: write /tmp/build-temp-907060055/rootfs/usr/local/lib/python3.8/site-packages/plotly/validators/layout/xaxis/__pycache__/_ticksuffix.cpython-38.pyc: no space left on device
-```
+ERROR! --help is not an allowed command!
 
+Help:
 
-## Metadata
-- **Skill**: generated
+- ALL FASTA FILEs USED BY THE SOFTWARE MUST BE UNZIPPED AND SEPARATED BY CHROMOSOME
+- ALL VCFs USED BY THE SOFTWARE MUST BE ZIPPED (WITH BGZIP) AND SEPARATED BY CHROMOSOME
 
-## crisprme_crisprme.py
+Functionalities:
 
-### Tool Description
-The provided text does not contain help information; it is an error log indicating a failure to build or extract the container image due to insufficient disk space.
+crisprme.py complete-search
+	Performs genome-wide off-targets search (reference and variant, if specified), including CFD and CRISTA analysis, and target selection
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/crisprme:2.1.9--py38hdfd78af_0
-- **Homepage**: https://github.com/samuelecancellieri/CRISPRme
-- **Package**: https://anaconda.org/channels/bioconda/packages/crisprme/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/crisprme:2.1.9--py38hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5b1d7536fb741c216aa50bcd0409517ebe13d832981c405503036e75cf9111f6: unpack entry: usr/local/include/boost/fusion/container/generation/detail/preprocessed/make_list20.hpp: unpack to regular file: short write: write /tmp/build-temp-2458780183/rootfs/usr/local/include/boost/fusion/container/generation/detail/preprocessed/make_list20.hpp: no space left on device
+crisprme.py complete-test
+	Test the complete CRISPRme pipeline on single chromosomes or complete genomes
+
+crisprme.py validate-test
+	Validate targets obtained from complete-test by comparing them against brute-force search and alignment results
+
+crisprme.py targets-integration
+	Integrates in-silico targets with empirical data to generate a usable panel
+
+crisprme.py gnomAD-converter
+	Converts gnomAD VCF files into CRISPRme compatible VCFs (supports gnomAD >= v3.1)
+
+crisprme.py generate-personal-card
+	Generates a personal card for specific samples by extracting all private targets
+
+crisprme.py web-interface
+	Activates CRISPRme's web interface for local browser use
+
+crisprme.py --version
+	Prints CRISPRme version to stdout and exit
+
+For additional information on each CRISPRme functionality type <function> --help (e.g. 'crisprme.py complete-search --help')
 ```
 

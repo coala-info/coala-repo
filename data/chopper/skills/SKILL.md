@@ -1,8 +1,9 @@
 ---
 name: chopper
-description: Chopper is a high-performance Rust-based utility designed for the preprocessing of long-read sequencing data.
+description: "Chopper is a high-performance utility for preprocessing, filtering, and trimming long-read sequencing data. Use when user asks to filter FASTQ files by quality, length, or GC content, trim reads using various quality-based strategies, or remove contaminant sequences."
 homepage: https://github.com/wdecoster/chopper
 ---
+
 
 # chopper
 

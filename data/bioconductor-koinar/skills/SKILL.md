@@ -1,8 +1,9 @@
 ---
 name: bioconductor-koinar
-description: the package is available on all platforms; click for details.
+description: The koinar package provides an R client for the Koina service to generate machine learning predictions for peptide properties like fragment intensities and retention times. Use when user asks to predict peptide properties, interface with Koina machine learning models, or compare predicted spectra against experimental data.
 homepage: https://bioconductor.org/packages/release/bioc/html/koinar.html
 ---
+
 
 # bioconductor-koinar
 

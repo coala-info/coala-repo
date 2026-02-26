@@ -1,8 +1,9 @@
 ---
 name: humann
-description: HUMAnN is a pipeline designed to efficiently and accurately profile the presence and abundance of microbial pathways in a community.
+description: HUMAnN profiles the presence and abundance of microbial pathways and gene families from metagenomic or metatranscriptomic sequencing data. Use when user asks to profile metabolic pathways, manage ChocoPhlAn or UniRef databases, normalize gene family abundances, or regroup features into functional namespaces.
 homepage: http://huttenhower.sph.harvard.edu/humann
 ---
+
 
 # humann
 

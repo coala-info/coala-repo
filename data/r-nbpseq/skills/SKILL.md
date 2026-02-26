@@ -1,8 +1,9 @@
 ---
 name: r-nbpseq
-description: R package nbpseq (documentation from project home).
+description: This tool performs differential expression analysis of RNA-Seq count data using Negative Binomial models to account for overdispersion. Use when user asks to identify differentially expressed genes, perform two-group comparisons of RNA-Seq data, or estimate dispersion parameters in count-based sequencing datasets.
 homepage: https://cran.r-project.org/web/packages/nbpseq/index.html
 ---
+
 
 # r-nbpseq
 

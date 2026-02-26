@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ebimage
-description: the package is available on all platforms; click for details.
+description: EBImage provides general-purpose functionality for image processing and analysis within the R environment. Use when user asks to read or display images, perform spatial transformations and filtering, or execute image segmentation workflows to identify and quantify cellular objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/EBImage.html
 ---
+
 
 # bioconductor-ebimage
 

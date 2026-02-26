@@ -1,8 +1,9 @@
 ---
 name: perl-test-fatal
-description: `Test::Fatal` is a streamlined Perl testing utility designed to handle exceptions with minimal overhead.
+description: This Perl testing utility captures and returns exceptions thrown by code blocks to facilitate error inspection. Use when user asks to capture exceptions in Perl tests, verify that code dies with a specific error, or check that a block of code executes without throwing an exception.
 homepage: https://github.com/rjbs/Test-Fatal
 ---
+
 
 # perl-test-fatal
 

@@ -3,7 +3,7 @@
 ## jmespath
 
 ### Tool Description
-The provided text does not contain a description of the tool's functionality, as it is an error log related to a container environment failure.
+JMESPath command line interface for querying JSON data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jmespath:0.9.0--py36_0
@@ -13,34 +13,25 @@ The provided text does not contain a description of the tool's functionality, as
 
 - **Conda**: https://anaconda.org/channels/main/packages/jmespath/overview
 - **Total Downloads**: 14.3K
-- **Last updated**: 2026-02-14
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/jmespath/jmespath.py
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jmespath:0.9.0--py36_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1929182484: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/jmespath:0.9.0--py36_0' locally
+0.9.0--py36_0: Pulling from biocontainers/jmespath
+a3ed95caeb02: Already exists
+77c6c00e8b61: Already exists
+3aaade50789a: Already exists
+00cf8b9f3d2a: Already exists
+7ff999a2256f: Already exists
+d2ba336f2e44: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+89e33264494b: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2226494828: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## jmespath_jp.py
-
-### Tool Description
-A JMESPath command-line processor. (Note: The provided text is a system error log and does not contain usage instructions or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/jmespath:0.9.0--py36_0
-- **Homepage**: https://github.com/jmespath/jmespath.py
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jmespath:0.9.0--py36_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2765505239: no space left on device
+Run 'docker run --help' for more information
 ```
 

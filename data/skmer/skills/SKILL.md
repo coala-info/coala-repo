@@ -1,8 +1,9 @@
 ---
 name: skmer
-description: `skmer` provides a fast, alignment-free workflow for calculating genomic distances between samples using k-mer statistics.
+description: Skmer calculates genomic distances and mutation rates from sequencing reads using alignment-free k-mer statistics. Use when user asks to build a reference library, query samples against a library, calculate pairwise genomic distances, or estimate uncertainty in distance measurements.
 homepage: https://github.com/shahab-sarmashghi/Skmer
 ---
+
 
 # skmer
 

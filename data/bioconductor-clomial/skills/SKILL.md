@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clomial
-description: the package is available on all platforms; click for details.
+description: Clomial infers the clonal composition and proportions of tumors from next-generation sequencing data using a binomial model. Use when user asks to infer clonal genotypes, estimate subclonal proportions, or analyze tumor heterogeneity from sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/Clomial.html
 ---
+
 
 # bioconductor-clomial
 

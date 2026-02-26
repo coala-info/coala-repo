@@ -1,8 +1,9 @@
 ---
 name: perl-indirect
-description: The `perl-indirect` module is a pragma used to detect and discourage the "indirect object" syntax in Perl.
+description: This module detects and discourages the use of indirect object syntax in Perl to prevent parsing ambiguities. Use when user asks to identify indirect method calls, enforce direct method syntax, or audit Perl scripts for potential bugs caused by indirect calls.
 homepage: http://search.cpan.org/dist/indirect/
 ---
+
 
 # perl-indirect
 

@@ -1,8 +1,9 @@
 ---
 name: srf-n-trf
-description: srf-n-trf is a specialized utility designed to refine and filter tandem repeat data.
+description: srf-n-trf refines and filters tandem repeat data by processing srf and trf outputs into standard BED9 formats. Use when user asks to extract monomers with specific periodicities, filter motifs based on monomer content, or define larger genomic regions of contiguous repeats.
 homepage: https://github.com/koisland/srf-n-trf
 ---
+
 
 # srf-n-trf
 

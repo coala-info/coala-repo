@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hcg110.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for mapping manufacturer probe identifiers from the hcg110 platform to biological metadata. Use when user asks to map probes to gene symbols, retrieve Entrez IDs, find GO terms, or access chromosomal locations for the hcg110 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hcg110.db.html
 ---
+
 
 # bioconductor-hcg110.db
 

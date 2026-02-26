@@ -1,8 +1,9 @@
 ---
 name: sashimi-py
-description: `trackplot` is a versatile Python utility for visualizing genomic data across various sequencing platforms.
+description: "sashimi-py generates sashimi plots, heatmaps, and coverage diagrams to visualize genomic data from various sequencing platforms. Use when user asks to visualize RNA-seq splicing junctions, generate genomic coverage plots, create single-cell RNA-seq track visualizations, or highlight specific genomic regions in publication-quality images."
 homepage: https://github.com/ygidtu/sashimi.py
 ---
+
 
 # sashimi-py
 

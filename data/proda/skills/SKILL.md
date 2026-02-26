@@ -1,8 +1,9 @@
 ---
 name: proda
-description: ProDA (Protein Domain Aligner) is a specialized tool for aligning protein sequences that do not share a single global homology.
+description: ProDA aligns protein sequences with non-global homology to identify conserved local blocks, repeats, and shuffled domains. Use when user asks to align proteins with multiple domains, find local homology blocks, or handle sequences with shuffled architectures and repeats.
 homepage: http://proda.stanford.edu/
 ---
+
 
 # proda
 

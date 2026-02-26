@@ -1,8 +1,9 @@
 ---
 name: stress-ng
-description: `stress-ng` is a comprehensive tool designed to exercise a computer system's various physical subsystems and OS kernel interfaces.
+description: stress-ng exercises a computer system's physical subsystems and kernel interfaces by running a wide variety of specialized stress tests. Use when user asks to stress test the CPU, memory, or I/O, perform system stability testing, or simulate heavy workloads to uncover hardware flaws.
 homepage: https://github.com/ColinIanKing/stress-ng
 ---
+
 
 # stress-ng
 

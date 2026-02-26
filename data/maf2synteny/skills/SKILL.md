@@ -1,8 +1,9 @@
 ---
 name: maf2synteny
-description: `maf2synteny` is a comparative genomics tool that transforms fine-grained local alignments into larger, biologically significant synteny blocks.
+description: maf2synteny transforms local genomic alignments into large-scale synteny blocks by filtering out small variations and noise. Use when user asks to generate synteny blocks from MAF files, perform multi-scale genomic analysis, or identify structural conservation between genomes.
 homepage: https://github.com/fenderglass/maf2synteny
 ---
+
 
 # maf2synteny
 

@@ -1,8 +1,9 @@
 ---
 name: deepmased
-description: DeepMAsED (Deep learning for Metagenome Assembly Error Detection) is a specialized toolset designed to validate the structural integrity of metagenomic assemblies.
+description: DeepMAsED is a deep learning toolset designed to identify structural misassemblies in metagenomic contigs by analyzing read alignment features. Use when user asks to validate metagenome assemblies, detect assembly errors, extract read-level features for misassembly prediction, or train custom models for assembly quality assessment.
 homepage: https://github.com/leylabmpi/DeepMAsED
 ---
+
 
 # deepmased
 

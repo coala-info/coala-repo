@@ -1,8 +1,9 @@
 ---
 name: perl-minion-backend-sqlite
-description: The `Minion::Backend::SQLite` module provides a lightweight, file-based storage engine for the Minion job queue.
+description: This tool provides a lightweight SQLite-based storage engine for the Minion job queue. Use when user asks to set up a file-based job queue, initialize a Minion backend for testing or development, or manage background jobs using a local SQLite database.
 homepage: https://github.com/Grinnz/Minion-Backend-SQLite
 ---
+
 
 # perl-minion-backend-sqlite
 

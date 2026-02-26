@@ -1,8 +1,9 @@
 ---
 name: orientationpy
-description: OrientationPy provides a Python-based framework for gradient-based orientation analysis, serving as the successor to the OrientationJ Fiji plugin.
+description: OrientationPy performs gradient-based orientation analysis to quantify the alignment, coherency, and energy of features in 2D and 3D images. Use when user asks to calculate structure tensors, determine local orientation angles, or measure the anisotropy of structures in multidimensional image data.
 homepage: https://pypi.org/project/orientationpy
 ---
+
 
 # orientationpy
 

@@ -1,8 +1,9 @@
 ---
 name: transcov
-description: The `transcov` tool is designed for high-resolution mapping of sequencing reads around transcription start sites.
+description: `transcov` maps sequencing reads around transcription start sites. Use when user asks to map coverage around transcription start sites, quantify transcriptional activity or protein binding, identify promoter-proximal pausing, determine TSS strength, generate aggregate coverage plots, or normalize coverage data.
 homepage: https://github.com/hogfeldt/transcov
 ---
+
 
 # transcov
 

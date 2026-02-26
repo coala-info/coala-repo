@@ -1,8 +1,9 @@
 ---
 name: bioconductor-poplarprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Poplar Genome Array. Use when user asks to retrieve probe sequences for the Poplar microarray or analyze probe-level data for Poplar.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/poplarprobe.html
 ---
+
 
 # bioconductor-poplarprobe
 

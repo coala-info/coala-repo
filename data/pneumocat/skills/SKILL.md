@@ -1,8 +1,9 @@
 ---
 name: pneumocat
-description: PneumoCaT (Pneumococcal Capsular Typing) is a specialized bioinformatic tool designed to assign serotypes to *S.
+description: "PneumoCaT assigns serotypes to *Streptococcus pneumoniae* genomic data using a hierarchical mapping and variant-calling approach. Use when user asks to assign serotypes to pneumococcal genomic data, differentiate between serotypes within a serogroup, or perform capsular typing on Illumina fastq files."
 homepage: https://github.com/phe-bioinformatics/pneumocat/archive/v1.1.tar.gz
 ---
+
 
 # pneumocat
 

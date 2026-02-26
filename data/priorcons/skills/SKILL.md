@@ -1,8 +1,9 @@
 ---
 name: priorcons
-description: priorcons is a specialized bioinformatics tool designed to produce high-quality viral consensus sequences.
+description: priorcons generates high-quality viral consensus sequences by filling gaps in mapping-based assemblies with evolutionary-verified sequences. Use when user asks to build evolutionary priors from a multiple sequence alignment, integrate consensus sequences to fill gaps, or refine viral genome assemblies using statistical models of genetic variation.
 homepage: https://github.com/GERMAN00VP/priorcons
 ---
+
 
 # priorcons
 

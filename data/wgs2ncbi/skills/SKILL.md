@@ -1,8 +1,9 @@
 ---
 name: wgs2ncbi
-description: The `wgs2ncbi` toolkit is designed to streamline the transition from a scaffolded assembly (FASTA) and gene predictions (GFF3) to a valid NCBI submission.
+description: wgs2ncbi converts genome assemblies and gene predictions into a valid NCBI submission package. Use when user asks to submit a genome to NCBI, prepare a genome assembly for NCBI submission, convert GFF3 and FASTA to NCBI submission format, or generate NCBI SeqIn files.
 homepage: https://github.com/naturalis/wgs2ncbi
 ---
+
 
 # wgs2ncbi
 

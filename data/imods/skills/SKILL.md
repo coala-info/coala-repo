@@ -1,8 +1,9 @@
 ---
 name: imods
-description: The imods toolkit (iMOD) is a specialized suite for exploring the conformational space of biological macromolecules using Normal Mode Analysis in internal coordinates.
+description: The imods toolkit uses internal coordinate Normal Mode Analysis to explore the conformational space and flexibility of biological macromolecules. Use when user asks to calculate normal modes, animate vibrations, visualize modes, perform Monte-Carlo sampling, morph between conformations, or determine structural deformability.
 homepage: https://chaconlab.org/multiscale-simulations/imod
 ---
+
 
 # imods
 

@@ -1,8 +1,9 @@
 ---
 name: merfin
-description: Merfin (k-mer based variant filtering) is a specialized tool for improving the accuracy of genomic variant calls and assembly consensus.
+description: Merfin improves the accuracy of genomic variant calls and assembly consensus by comparing k-mer multiplicity in raw reads against variant consequences. Use when user asks to filter VCF files for polishing, calculate assembly quality metrics like QV*, or identify assembly errors such as collapses and duplications.
 homepage: https://github.com/arangrhie/merfin
 ---
+
 
 # merfin
 

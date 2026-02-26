@@ -1,8 +1,9 @@
 ---
 name: r-genomictools.filehandler
-description: R package genomictools.filehandler (documentation from project home).
+description: This R package provides tools for reading and writing common genomic file formats like FASTA, FASTQ, BED, GFF, GTF, VCF, and PED/MAP as data.table objects. Use when user asks to import genomic data into R, export data frames to standard genomic formats, or convert between different genomic file types.
 homepage: https://cran.r-project.org/web/packages/genomictools.filehandler/index.html
 ---
+
 
 # r-genomictools.filehandler
 

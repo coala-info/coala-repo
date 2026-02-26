@@ -1,8 +1,9 @@
 ---
 name: perl-date-manip
-description: The `perl-date-manip` skill provides a robust interface for handling virtually any date or time operation.
+description: This tool provides a comprehensive interface for parsing, manipulating, and performing arithmetic on complex date and time strings. Use when user asks to parse natural language dates, calculate business day offsets, determine time intervals, or compare timestamps.
 homepage: https://metacpan.org/pod/Date::Manip
 ---
+
 
 # perl-date-manip
 

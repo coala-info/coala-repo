@@ -1,8 +1,9 @@
 ---
 name: mfqe
-description: `mfqe` is a high-performance utility designed for the rapid extraction of sequences from genomic data files.
+description: "mfqe extracts specific sequences from FASTA and FASTQ files based on provided lists of sequence identifiers. Use when user asks to extract reads from genomic data, filter sequences by name, or isolate specific reads for targeted assembly."
 homepage: https://github.com/wwood/mfqe
 ---
+
 
 # mfqe
 

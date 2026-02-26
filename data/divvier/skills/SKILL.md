@@ -1,8 +1,9 @@
 ---
 name: divvier
-description: Divvier is a bioinformatic tool used to improve the quality of Multiple Sequence Alignments by addressing alignment uncertainty.
+description: Divvier improves the quality of multiple sequence alignments by identifying and filtering regions of alignment uncertainty. Use when user asks to clean multiple sequence alignments, perform divvying or partial filtering, and prepare alignments for phylogenetic tree construction.
 homepage: https://github.com/simonwhelan/Divvier
 ---
+
 
 # divvier
 

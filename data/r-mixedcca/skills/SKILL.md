@@ -1,8 +1,9 @@
 ---
 name: r-mixedcca
-description: R package mixedcca (documentation from project home).
+description: This tool performs sparse canonical correlation analysis for datasets containing mixed data types such as continuous, binary, and truncated variables. Use when user asks to estimate canonical correlations, find sparse canonical vectors for mixed-type data, or calculate latent correlation matrices using semiparametric methods.
 homepage: https://cran.r-project.org/web/packages/mixedcca/index.html
 ---
+
 
 # r-mixedcca
 

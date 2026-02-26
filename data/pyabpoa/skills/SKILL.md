@@ -1,8 +1,9 @@
 ---
 name: pyabpoa
-description: pyabpoa (the Python interface for abPOA) is a high-performance alignment tool that utilizes SIMD vectorization and adaptive banding to perform Partial Order Alignment.
+description: pyabpoa is a high-performance tool that performs partial order alignment to generate consensus sequences and multiple sequence alignments from sets of sequences. Use when user asks to generate a consensus sequence, perform multiple sequence alignment, create an alignment graph, or align sequences to an existing graph.
 homepage: https://github.com/yangao07/abPOA
 ---
+
 
 # pyabpoa
 

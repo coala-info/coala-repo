@@ -1,8 +1,9 @@
 ---
 name: perl-list-moreutils
-description: `List::MoreUtils` is a standard Perl module that extends the core `List::Util` library.
+description: This Perl module provides a comprehensive set of high-performance list processing functions that extend the core library. Use when user asks to check list properties with boolean logic, filter unique elements, partition lists, or iterate through multiple arrays simultaneously.
 homepage: https://metacpan.org/release/List-MoreUtils
 ---
+
 
 # perl-list-moreutils
 

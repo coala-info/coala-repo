@@ -1,8 +1,9 @@
 ---
 name: snakemake-executor-plugin-tes
-description: The `snakemake-executor-plugin-tes` is a specialized plugin for Snakemake 8+ that allows workflow tasks to be offloaded to any infrastructure implementing the GA4GH Task Execution Service (TES) API.
+description: This plugin enables Snakemake to execute workflow tasks on infrastructure using the GA4GH Task Execution Service (TES) API. Use when user asks to execute Snakemake workflows via TES, submit jobs to a TES server, or offload tasks to GA4GH-compliant infrastructure.
 homepage: https://github.com/snakemake/snakemake-executor-plugin-tes
 ---
+
 
 # snakemake-executor-plugin-tes
 

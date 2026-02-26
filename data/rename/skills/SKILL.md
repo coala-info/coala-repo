@@ -1,8 +1,9 @@
 ---
 name: rename
-description: The `rename` tool is a powerful Perl-based utility designed for sophisticated batch renaming.
+description: The rename tool performs sophisticated batch renaming of files using Perl-based transformations and regular expressions. Use when user asks to change file cases, sanitize filenames, perform search-and-replace substitutions, manage file extensions, or dynamically reorganize files into directory structures.
 homepage: http://plasmasturm.org/code/rename
 ---
+
 
 # rename
 

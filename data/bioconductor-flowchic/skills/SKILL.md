@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowchic
-description: the package is available on all platforms; click for details.
+description: This tool analyzes flow cytometric data of microbial communities by converting FCS files into histogram images for comparison. Use when user asks to convert FCS files to images, perform image-based similarity analysis, or visualize community dynamics using NMDS and cluster analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCHIC.html
 ---
+
 
 # bioconductor-flowchic
 

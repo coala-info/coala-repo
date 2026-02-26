@@ -1,8 +1,9 @@
 ---
 name: r-aptreeshape
-description: R package aptreeshape (documentation from project home).
+description: This tool analyzes the topological balance and shape of phylogenetic trees using statistical indices and null models of speciation. Use when user asks to simulate trees under Yule or PDA models, calculate Colless or Sackin imbalance indices, or perform statistical tests on tree topology.
 homepage: https://cran.r-project.org/web/packages/aptreeshape/index.html
 ---
+
 
 # r-aptreeshape
 

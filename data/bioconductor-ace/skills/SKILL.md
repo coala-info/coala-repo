@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ace
-description: the package is available on all platforms; click for details.
+description: The bioconductor-ace package performs absolute copy number estimation by scaling segmented genomic data to fit various cellularity and ploidy models. Use when user asks to estimate tumor cell percentage, calculate absolute copy numbers from segmented data, or link genetic mutations to specific copy number states.
 homepage: https://bioconductor.org/packages/release/bioc/html/ACE.html
 ---
+
 
 # bioconductor-ace
 

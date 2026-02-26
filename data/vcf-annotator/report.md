@@ -3,7 +3,7 @@
 ## vcf-annotator
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) failing to pull the image.
+Annotate variants from a VCF file using the reference genome's GenBank file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vcf-annotator:0.7--hdfd78af_0
@@ -18,13 +18,18 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vcf-annotator:0.7--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: vcf-annotator.py [-h] [--output STRING] [--version]
+                        VCF_FILE GENBANK_FILE
+
+Annotate variants from a VCF file using the reference genome's GenBank file.
+
+positional arguments:
+  VCF_FILE         VCF file of variants
+  GENBANK_FILE     GenBank file of the reference genome.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --output STRING  File to write VCF output to (Default STDOUT).
+  --version        show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

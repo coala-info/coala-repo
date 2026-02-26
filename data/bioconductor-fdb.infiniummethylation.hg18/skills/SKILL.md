@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fdb.infiniummethylation.hg18
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for Illumina Infinium 27k and 450k DNA methylation probes mapped to the hg18 genome assembly. Use when user asks to retrieve probe coordinates, find nearest genes or transcription start sites for methylation sites, and overlap methylation data with hg18 genomic features like CpG islands.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.InfiniumMethylation.hg18.html
 ---
+
 
 # bioconductor-fdb.infiniummethylation.hg18
 

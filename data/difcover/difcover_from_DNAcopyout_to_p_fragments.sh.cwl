@@ -1,11 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: difcover_from_DNAcopyout_to_p_fragments.sh
+baseCommand: from_DNAcopyout_to_p_fragments.sh
 label: difcover_from_DNAcopyout_to_p_fragments.sh
-doc: "A script to process DNAcopy output into p-fragments. (Note: The provided help
-  text contains only container runtime errors and no usage information).\n\nTool homepage:
-  https://github.com/timnat/DifCover"
-inputs: []
+doc: "Converts DNAcopy output to p fragments, filtering intervals based on enrichment
+  scores.\n\nTool homepage: https://github.com/timnat/DifCover"
+inputs:
+  - id: dna_copy_out_files
+    type:
+      type: array
+      items: File
+    doc: 'Input files in *.DNAcopyout format. Format: scaffold fragment_start fragment_size
+      number_of_windows_merged_into_fragment av(adj_coef*log2ratio).'
+    inputBinding:
+      position: 1
+  - id: enrichment_filter_p
+    type: float
+    doc: Filter only intervals with |enrichment scores| > p
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

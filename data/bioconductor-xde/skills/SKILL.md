@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xde
-description: the package is available on all platforms; click for details.
+description: Bioconductor-xde provides a Bayesian hierarchical model for conducting cross-study differential expression analysis of gene expression data. Use when user asks to perform meta-analysis of transcriptomic datasets, identify differentially expressed genes across multiple studies, or integrate gene expression data from different platforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/XDE.html
 ---
+
 
 # bioconductor-xde
 

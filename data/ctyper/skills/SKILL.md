@@ -1,8 +1,9 @@
 ---
 name: ctyper
-description: ctyper is a specialized bioinformatics tool designed to resolve complex genomic regions that traditional genotypers often struggle with, particularly those involving duplicated genes and high copy-number variation.
+description: ctyper performs rapid, allele-specific genotyping of complex genomic regions and high copy-number variants using a pangenome allele database. Use when user asks to genotype duplicated genes, resolve complex loci, annotate genotypes with clinical nomenclature, or generate mutation plots for visual validation.
 homepage: https://github.com/ChaissonLab/Ctyper
 ---
+
 
 # ctyper
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bgeedb
-description: the package is available on all platforms; click for details.
+description: Bioconductor-bgeedb provides an R interface to the Bgee database for retrieving curated, healthy wild-type gene expression data and performing anatomical enrichment analyses. Use when user asks to retrieve processed expression data, fetch experiment metadata, or perform TopAnat enrichment tests to identify anatomical structures where genes are significantly expressed.
 homepage: https://bioconductor.org/packages/release/bioc/html/BgeeDB.html
 ---
+
 
 # bioconductor-bgeedb
 

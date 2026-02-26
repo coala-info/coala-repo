@@ -1,8 +1,9 @@
 ---
 name: perl-sereal-encoder
-description: The `perl-sereal-encoder` provides the Perl implementation of the Sereal binary serialization format.
+description: This tool encodes Perl data structures into the high-performance Sereal binary serialization format. Use when user asks to serialize complex Perl objects, convert data to a compact binary stream, or optimize data storage speed and size compared to JSON or Storable.
 homepage: https://metacpan.org/pod/Sereal::Encoder
 ---
+
 
 # perl-sereal-encoder
 

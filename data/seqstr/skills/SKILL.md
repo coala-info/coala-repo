@@ -1,8 +1,9 @@
 ---
 name: seqstr
-description: `seqstr` (sequence string) is a specialized utility for programmatically defining genomic sequences.
+description: "seqstr programmatically defines and constructs genomic sequences using a recipe format that combines reference intervals, mutations, and custom strings. Use when user asks to generate specific sequence variants, extract genomic intervals, apply point mutations to sequences, or create chimeric sequences from multiple reference genomes."
 homepage: https://github.com/jzhoulab/Seqstr
 ---
+
 
 # seqstr
 

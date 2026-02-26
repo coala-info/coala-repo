@@ -1,8 +1,9 @@
 ---
 name: sonicparanoid
-description: SonicParanoid is a high-performance tool designed for orthology inference, capable of processing thousands of genomes with high speed and accuracy.
+description: SonicParanoid is a high-performance tool for identifying orthologous relationships between proteins across large-scale genomic datasets. Use when user asks to perform orthology inference, run comparative genomics workflows, or add new genomes to an existing orthology analysis.
 homepage: http://iwasakilab.bs.s.u-tokyo.ac.jp/sonicparanoid/
 ---
+
 
 # sonicparanoid
 

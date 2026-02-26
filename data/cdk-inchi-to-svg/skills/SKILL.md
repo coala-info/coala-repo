@@ -1,8 +1,9 @@
 ---
 name: cdk-inchi-to-svg
-description: The `cdk-inchi-to-svg` tool is a specialized Java-based utility that leverages the Chemistry Development Kit (CDK) to render chemical structures.
+description: This tool converts InChI strings into SVG images to provide visual representations of chemical structures. Use when user asks to render chemical structures from InChI strings, generate SVG files for metabolites, or create high-resolution chemical diagrams for publications.
 homepage: https://github.com/ipb-halle/cdk-inchi-to-svg
 ---
+
 
 # cdk-inchi-to-svg
 

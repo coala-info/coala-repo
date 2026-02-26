@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clumsid
-description: the package is available on all platforms; click for details.
+description: CluMSID is an R package for clustering tandem mass spectrometry data to facilitate metabolite identification. Use when user asks to cluster MS2 spectra, calculate spectral similarities, or perform metabolite identification and annotation.
 homepage: https://bioconductor.org/packages/release/bioc/html/CluMSID.html
 ---
+
 
 # bioconductor-clumsid
 

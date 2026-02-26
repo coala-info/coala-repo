@@ -1,8 +1,9 @@
 ---
 name: bioconductor-skewr
-description: the package is available on all platforms; click for details.
+description: bioconductor-skewr visualizes and analyzes the distribution of signal intensities from Illumina Infinium HumanMethylation450 BeadChip data. Use when user asks to visualize methylation signal intensities, analyze the skewness of BeadChip data, or inspect methylated and unmethylated channel distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/skewr.html
 ---
+
 
 # bioconductor-skewr
 

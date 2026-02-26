@@ -1,8 +1,9 @@
 ---
 name: rust-mdbg
-description: `rust-mdbg` is a specialized assembler that operates in "minimizer-space." By representing reads, assembly graphs, and the final assembly as ordered lists of minimizers rather than nucleotide strings, it achieves significant performance gains.
+description: rust-mdbg is a high-speed assembler that performs genome assembly in minimizer-space for high-accuracy PacBio HiFi reads. Use when user asks to assemble genomes or metagenomes, construct minimizer-space graphs, or convert assembly graphs to base-space.
 homepage: https://github.com/ekimb/rust-mdbg
 ---
+
 
 # rust-mdbg
 

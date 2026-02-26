@@ -1,8 +1,9 @@
 ---
 name: itero
-description: itero is a "strongly opinionated" bioinformatics pipeline designed for guided contig assembly.
+description: itero is a bioinformatics pipeline that performs guided contig assembly using a reference-based seed approach to iteratively map reads and extend sequences. Use when user asks to perform guided assembly, extend contigs from seeds, or run iterative local assemblies using BWA and SPAdes.
 homepage: https://github.com/faircloth-lab/itero
 ---
+
 
 # itero
 

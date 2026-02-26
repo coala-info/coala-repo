@@ -1,8 +1,9 @@
 ---
 name: shovill-se
-description: shovill-se is a specialized fork of the Shovill assembly pipeline that extends support to single-end Illumina sequencing data.
+description: Shovill-se is a streamlined pipeline for assembling bacterial isolate genomes from single-end or paired-end Illumina sequencing data. Use when user asks to assemble microbial genomes, perform read depth reduction, or run an opinionated assembly workflow using engines like SPAdes, SKESA, or MEGAHIT.
 homepage: https://github.com/rpetit3/shovill
 ---
+
 
 # shovill-se
 

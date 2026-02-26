@@ -1,8 +1,9 @@
 ---
 name: unetcoreograph
-description: UNetCoreograph is a specialized tool for the automated processing of Tissue Microarray (TMA) slides.
+description: UNetCoreograph processes Tissue Microarray (TMA) slides by locating tissue cores and generating precise tissue masks. Use when user asks to dearray a TMA, split a TMA image into individual core files, locate tissue cores, create tissue masks, or export core images.
 homepage: https://github.com/HMS-IDAC/UNetCoreograph
 ---
+
 
 # unetcoreograph
 

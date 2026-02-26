@@ -1,8 +1,9 @@
 ---
 name: varcode
-description: varcode is a Pythonic interface for genomic variant analysis that simplifies the process of mapping raw mutations to their biological effects.
+description: varcode analyzes genomic variants to predict their biological effects on proteins. Use when user asks to load genomic variants, group or filter variants, predict protein effects, or determine how variants alter amino acid sequences.
 homepage: https://github.com/openvax/varcode
 ---
+
 
 # varcode
 

@@ -1,9 +1,9 @@
 # centroid_rna_package CWL Generation Report
 
-## centroid_rna_package
+## centroid_rna_package_centroid_fold
 
 ### Tool Description
-Centroid-based RNA secondary structure prediction package. (Note: The provided input text consists of container runtime error logs and does not contain usage instructions or argument definitions.)
+CentroidFold v0.0.16 for predicting RNA secondary structures
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/centroid_rna_package:0.0.16--0
@@ -12,64 +12,107 @@ Centroid-based RNA secondary structure prediction package. (Note: The provided i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/centroid_rna_package/overview
-- **Total Downloads**: 10.3K
+- **Total Downloads**: 10.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/satoken/centroid-rna-package
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 14:25:55  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/centroid_rna_package:0.0.16--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-1135189502/rootfs/lib/libc-2.18.so: no space left on device
+CentroidFold v0.0.16 for predicting RNA secondary structures
+  (available engines: CONTRAfold, McCaskill, pfold, AUX)
+Usage:
+ centroid_fold [options] seq [bp_matrix ...]
+
+Options:
+  -h [ --help ]          show this message
+  -e [ --engine ] arg    specify the inference engine (default: "McCaskill")
+  -w [ --mixture ] arg   mixture weights of inference engines
+  -g [ --gamma ] arg     weight of base pairs
+  -t [ --threshold ] arg thereshold of base pairs (this option overwrites 
+                         'gamma')
+  --ea arg               compute (pseudo-)expected accuracy (pseudo if arg==0, 
+                         sampling if arg>0; arg: # of sampling)
+  --max-mcc arg          predict secondary structure by maximizing 
+                         pseudo-expected MCC (arg: # of sampling)
+  --mea                  run as an MEA estimator
+  --noncanonical         allow non-canonical base-pairs
+  -C [ --constraints ]   use structure constraints
+  -o [ --output ] arg    specify filename to output predicted secondary 
+                         structures. If empty, use the standard output.
+  --posteriors arg       output base-pairing probability matrices which contain
+                         base-pairing probabilities more than the given value.
+  --oposteriors arg      specify filename to output base-pairing probability 
+                         matrices. If empty, use the standard output.
+  --postscript arg       draw predicted secondary structures with the 
+                         postscript (PS) format
+  --params arg           use the parameter file
+
+Options for CONTRAfold model:
+  -d [ --max-dist ] arg (=0) the maximum distance of base-pairs
+
+Options for sampling:
+  -s [ --sampling ] arg           specify the number of samples to be generated
+                                  for each sequence
+  -c [ --max-clusters ] arg (=10) the maximum number of clusters for the 
+                                  stochastic sampling algorithm
+  --seed arg (=0)                 specify the seed for the random number 
+                                  generator (set this automatically if seed=0)
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## centroid_rna_package_centroid_fold
-
-### Tool Description
-The provided text does not contain help information for the tool, but rather a system error log indicating a failure to build or extract the container image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/centroid_rna_package:0.0.16--0
-- **Homepage**: https://github.com/satoken/centroid-rna-package
-- **Package**: https://anaconda.org/channels/bioconda/packages/centroid_rna_package/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 14:26:57  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/centroid_rna_package:0.0.16--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-2212918793/rootfs/lib/libc-2.18.so: no space left on device
-```
 
 ## centroid_rna_package_centroid_alifold
 
 ### Tool Description
-Centroid-based RNA secondary structure prediction from alignments (Note: The provided help text contains a system error and does not list arguments).
+CentroidAlifold v0.0.16 for predicting common RNA secondary structures
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/centroid_rna_package:0.0.16--0
 - **Homepage**: https://github.com/satoken/centroid-rna-package
 - **Package**: https://anaconda.org/channels/bioconda/packages/centroid_rna_package/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 14:27:10  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/centroid_rna_package:0.0.16--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-1321356783/rootfs/lib/libc-2.18.so: no space left on device
+CentroidAlifold v0.0.16 for predicting common RNA secondary structures
+  (available engines: CONTRAfold, McCaskill, Alifold, pfold, AUX)
+Usage:
+ centroid_alifold [options] seq [bp_matrix ...]
+
+Options:
+  -h [ --help ]           show this message
+  -e [ --engine ] arg     specify the inference engine (default: "McCaskill & 
+                          Alifold")
+  -w [ --mixture ] arg    mixture weights of inference engines
+  -g [ --gamma ] arg      weight of base pairs
+  -t [ --threshold ] arg  thereshold of base pairs (this option overwrites 
+                          'gamma')
+  --ea arg                compute (pseudo-)expected accuracy (pseudo if arg==0,
+                          sampling if arg>0; arg: # of sampling)
+  --max-mcc arg           predict secondary structure by maximizing 
+                          pseudo-expected MCC (arg: # of sampling)
+  --mea                   run as an MEA estimator
+  --noncanonical          allow non-canonical base-pairs
+  -C [ --constraints ]    use structure constraints
+  -o [ --output ] arg     specify filename to output predicted secondary 
+                          structures. If empty, use the standard output.
+  --posteriors arg        output base-pairing probability matrices which 
+                          contain base-pairing probabilities more than the 
+                          given value.
+  --posteriors-output arg specify filename to output base-pairing probability 
+                          matrices. If empty, use the standard output.
+  --postscript arg        draw predicted secondary structures with the 
+                          postscript (PS) format
+  --params arg            use the parameter file
+
+Options for CONTRAfold model:
+  -d [ --max-dist ] arg (=0) the maximum distance of base-pairs
+
+Options for sampling:
+  -s [ --sampling ] arg           specify the number of samples to be generated
+                                  for each sequence
+  -c [ --max-clusters ] arg (=10) the maximum number of clusters for the 
+                                  stochastic sampling algorithm
+  --seed arg (=0)                 specify the seed for the random number 
+                                  generator (set this automatically if seed=0)
 ```
 

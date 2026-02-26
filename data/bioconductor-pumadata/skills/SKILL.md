@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pumadata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for the Propagating Uncertainty in Microarray Analysis (puma) R package. Use when user asks to access example microarray data, run puma package vignettes, or test gene expression analysis methods.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/pumadata.html
 ---
+
 
 # bioconductor-pumadata
 

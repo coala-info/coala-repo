@@ -3,7 +3,7 @@
 ## robust-bias-aware
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system logs and a fatal error message related to a container build process.
+Description of your program
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/robust-bias-aware:0.0.1--pyh7cba7a3_1
@@ -18,13 +18,27 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/robust-bias-aware:0.0.1--pyh7cba7a3_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: robust-bias-aware [-h] --seeds SEEDS --outfile OUTFILE
+                         [--network NETWORK] [--namespace NAMESPACE]
+                         [--alpha ALPHA] [--beta BETA] [--n N] [--tau TAU]
+                         [--study_bias_scores STUDY_BIAS_SCORES]
+                         [--gamma GAMMA]
+
+Description of your program
+
+options:
+  -h, --help            show this help message and exit
+  --seeds SEEDS         Path to seeds file
+  --outfile OUTFILE     Output file name
+  --network NETWORK     Network type
+  --namespace NAMESPACE
+                        Namespace
+  --alpha ALPHA         Alpha value
+  --beta BETA           Beta value
+  --n N                 n value
+  --tau TAU             Tau value
+  --study_bias_scores STUDY_BIAS_SCORES
+                        Study bias scores
+  --gamma GAMMA         Gamma value
 ```
 
-
-## Metadata
-- **Skill**: generated

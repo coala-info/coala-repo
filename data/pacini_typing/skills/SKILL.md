@@ -1,8 +1,9 @@
 ---
 name: pacini_typing
-description: The `pacini_typing` skill enables the automated detection of genes and SNPs within bacterial genomes.
+description: This tool detects genes and SNPs in bacterial genomes using BLAST for assemblies and KMA for raw sequencing reads. Use when user asks to identify genetic patterns, characterize isolates, detect point mutations, or generate genotyping reports from sequence data.
 homepage: https://github.com/RIVM-bioinformatics/Pacini-typing
 ---
+
 
 # pacini_typing
 

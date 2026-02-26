@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95bcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix HG-U95B GeneChip. Use when user asks to map probe coordinates to indices, access CDF environment metadata, or process raw intensity data for HG-U95B oligonucleotide arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95bcdf.html
 ---
+
 
 # bioconductor-hgu95bcdf
 

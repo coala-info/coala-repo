@@ -1,8 +1,9 @@
 ---
 name: nf-core
-description: The `nf-core` tool is a Python-based command-line interface designed to streamline the experience of working with Nextflow pipelines.
+description: The nf-core tool is a command-line interface designed to manage, launch, and develop standardized Nextflow pipelines. Use when user asks to list available pipelines, launch a workflow with an interactive wizard, download pipelines for offline use, or create and lint new pipeline projects.
 homepage: http://nf-co.re/
 ---
+
 
 # nf-core
 

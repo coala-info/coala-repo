@@ -3,7 +3,7 @@
 ## trinculo
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it is a log of a failed container image build (Apptainer/Singularity) due to insufficient disk space.
+Trinculo is a tool for analyzing RNA sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/trinculo:0.96--h470a237_2
@@ -18,18 +18,9 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 07:01:23  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/trinculo:0.96--h470a237_2 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+Error: mode --help not recognised. Use trinculo multinom --help for usage.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

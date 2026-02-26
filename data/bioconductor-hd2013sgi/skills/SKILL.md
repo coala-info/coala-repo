@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hd2013sgi
-description: the package is available on all platforms; click for details.
+description: This package provides tools and data for analyzing multiparametric genetic interaction screens in human cancer cells. Use when user asks to access data from the Laufer et al. (2013) study, perform image segmentation and feature extraction, normalize phenotypic data, or calculate pi-scores for genetic interactions.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HD2013SGI.html
 ---
+
 
 # bioconductor-hd2013sgi
 

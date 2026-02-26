@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eisar
-description: the package is available on all platforms; click for details.
+description: The eisaR package performs Exon-Intron Split Analysis to distinguish between transcriptional and post-transcriptional gene regulation using RNA-seq data. Use when user asks to perform Exon-Intron Split Analysis, quantify exonic and intronic reads, or generate reference files for RNA velocity analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/eisaR.html
 ---
+
 
 # bioconductor-eisar
 

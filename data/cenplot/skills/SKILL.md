@@ -1,8 +1,9 @@
 ---
 name: cenplot
-description: CenPlot is a specialized Python library and command-line tool designed for the high-resolution visualization of centromeric regions.
+description: CenPlot is a specialized tool for the high-resolution visualization of centromeric regions and complex repetitive structures. Use when user asks to visualize Higher-Order Repeats, identify centromeric dip regions, or generate multi-track genomic figures of centromeres.
 homepage: https://github.com/logsdon-lab/CenPlot
 ---
+
 
 # cenplot
 

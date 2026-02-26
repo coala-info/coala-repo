@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-fortran_openmpi_5_0_7
-description: This skill provides technical guidance for utilizing the NetCDF-Fortran interface within an OpenMPI 5.0.7 framework.
+description: This tool provides a Fortran interface for managing self-describing scientific data within an OpenMPI 5.0.7 environment. Use when user asks to compile Fortran code with NetCDF, perform parallel I/O on large datasets, or retrieve configuration flags using nf-config.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-fortran_openmpi_5_0_7
 

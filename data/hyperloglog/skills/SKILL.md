@@ -1,8 +1,9 @@
 ---
 name: hyperloglog
-description: The `hyperloglog` skill provides a Python-based implementation for counting unique elements in a dataset without the memory overhead of storing every individual item.
+description: The hyperloglog tool estimates the number of unique elements in a dataset using a memory-efficient cardinality counting algorithm. Use when user asks to count unique items, estimate cardinality with a specific error rate, or track unique elements within a sliding time window.
 homepage: https://github.com/svpcom/hyperloglog
 ---
+
 
 # hyperloglog
 

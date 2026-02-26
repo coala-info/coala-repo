@@ -3,26 +3,32 @@
 ## gwama
 
 ### Tool Description
-Genome-Wide Association Meta-Analysis (GWAMA) software for performing meta-analysis of genome-wide association studies.
+FAIL to generate CWL: gwama not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gwama:2.2.2--h077b44d_5
 - **Homepage**: https://www.geenivaramu.ee/en/tools/gwama
 - **Package**: https://anaconda.org/channels/bioconda/packages/gwama/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gwama/overview
 - **Total Downloads**: 5.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: gwama not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: gwama not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gwama:2.2.2--h077b44d_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2623370498: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

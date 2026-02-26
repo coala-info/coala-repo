@@ -1,8 +1,9 @@
 ---
 name: bioconductor-frmaexampledata
-description: the package is available on all platforms; click for details.
+description: This package provides example AffyBatch datasets for testing and demonstrating frozen Robust Multi-array Analysis workflows. Use when user asks to access sample microarray data, practice preprocessing with frma or frmaTools, or load platform-specific datasets like HGU133a and HGU133plus2.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/frmaExampleData.html
 ---
+
 
 # bioconductor-frmaexampledata
 

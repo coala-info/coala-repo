@@ -1,8 +1,9 @@
 ---
 name: genome_profiler
-description: genome_profiler is a specialized bioinformatics pipeline designed for the comprehensive annotation of prokaryotic genetic material.
+description: genome_profiler is a bioinformatics pipeline for the comprehensive annotation of prokaryotic genomes and the identification of genetic features. Use when user asks to annotate prokaryotic genetic material, identify resistance genes and virulence factors, or detect mobile genetic elements and plasmids.
 homepage: https://github.com/Syrinx55/GenomeProfiler
 ---
+
 
 # genome_profiler
 

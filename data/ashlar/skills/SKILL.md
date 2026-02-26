@@ -1,8 +1,9 @@
 ---
 name: ashlar
-description: Ashlar (Alignment by Simultaneous Harmonization of Layer/Adjacency Registration) is a specialized tool for handling high-resolution microscopy data.
+description: "Ashlar aligns and stitches high-resolution microscopy image tiles into seamless, multi-cycle mosaics. Use when user asks to stitch image tiles, register multiple imaging cycles, or generate pyramidal OME-TIFF files from raw microscopy data."
 homepage: https://github.com/sorgerlab/ashlar
 ---
+
 
 # ashlar
 

@@ -1,8 +1,9 @@
 ---
 name: intervaltree_bio
-description: The `intervaltree_bio` library is a specialized extension of the Python `intervaltree` package, tailored for bioinformatics workflows.
+description: The intervaltree_bio library provides a GenomeIntervalTree structure to manage and search genomic intervals across multiple chromosomes. Use when user asks to load UCSC annotation tables, search for genomic features by coordinates, or parse BED and GenePred files into an interval tree.
 homepage: https://github.com/konstantint/intervaltree-bio
 ---
+
 
 # intervaltree_bio
 

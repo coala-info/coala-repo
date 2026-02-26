@@ -1,8 +1,9 @@
 ---
 name: foldmason
-description: FoldMason is a high-performance tool designed for large-scale multiple protein structure alignment.
+description: FoldMason performs large-scale multiple protein structure alignment by leveraging the 3Di structural alphabet for high speed and accuracy. Use when user asks to perform multiple structure alignments, generate structural trees, visualize structural conservation in HTML reports, or calculate LDDT scores for existing alignments.
 homepage: https://github.com/steineggerlab/foldmason
 ---
+
 
 # foldmason
 

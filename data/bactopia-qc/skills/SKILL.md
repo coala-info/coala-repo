@@ -1,8 +1,9 @@
 ---
 name: bactopia-qc
-description: The `bactopia-qc` skill focuses on the initial processing and quality assessment of raw sequencing reads.
+description: Bactopia-qc performs quality assessment, adapter trimming, and filtering of raw sequencing reads for bacterial genomics. Use when user asks to process raw reads, perform quality control, or prepare sequencing data for assembly.
 homepage: https://bactopia.github.io/
 ---
+
 
 # bactopia-qc
 

@@ -1,8 +1,9 @@
 ---
 name: epic
-description: `epic` is a high-performance, parallelized implementation of the SICER algorithm.
+description: epic is a high-performance implementation of the SICER algorithm used to identify diffuse domains in ChIP-Seq data. Use when user asks to call peaks for broad epigenetic marks, identify diffuse enriched regions, or perform parallelized SICER analysis on BED or BEDPE files.
 homepage: http://github.com/endrebak/epic
 ---
+
 
 # epic
 

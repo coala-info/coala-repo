@@ -1,8 +1,9 @@
 ---
 name: r-presto
-description: R package presto (documentation from project home).
+description: Presto performs fast Wilcoxon rank sum tests and auROC analysis for high-dimensional data such as single-cell genomics. Use when user asks to perform differential expression analysis, find marker genes in Seurat or SingleCellExperiment objects, or conduct large-scale rank-based statistical testing on sparse matrices.
 homepage: https://cran.r-project.org/web/packages/presto/index.html
 ---
+
 
 # r-presto
 

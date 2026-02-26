@@ -1,8 +1,9 @@
 ---
 name: olga
-description: The `olga` skill provides a specialized interface for the Optimized Likelihood estimate of immunoGlobulin Amino-acid sequences (OLGA) software.
+description: "OLGA calculates the generation probability of immune receptor sequences and generates synthetic repertoires based on genomic models. Use when user asks to compute Pgen for TCR or BCR sequences, generate random synthetic sequences, or analyze V(D)J recombination probabilities."
 homepage: https://github.com/zsethna/OLGA
 ---
+
 
 # olga
 

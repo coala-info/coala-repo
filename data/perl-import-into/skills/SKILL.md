@@ -1,8 +1,9 @@
 ---
 name: perl-import-into
-description: The `Import::Into` module solves the "double-export" problem in Perl.
+description: This tool allows Perl modules to import pragmas or other modules directly into a caller's namespace. Use when user asks to re-export dependencies, inject pragmas like strict or Moo into a calling package, or handle imports at specific stack levels.
 homepage: http://metacpan.org/pod/Import::Into
 ---
+
 
 # perl-import-into
 

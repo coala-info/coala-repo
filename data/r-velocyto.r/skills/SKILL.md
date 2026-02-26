@@ -1,8 +1,9 @@
 ---
 name: r-velocyto.r
-description: R package velocyto.r (documentation from project home).
+description: This tool estimates RNA velocity from single-cell RNA-seq data by modeling the relationship between spliced and unspliced mRNA abundances. Use when user asks to calculate RNA velocity, perform trajectory inference, or visualize cellular differentiation trends on embeddings like t-SNE or UMAP.
 homepage: https://cran.r-project.org/web/packages/velocyto.r/index.html
 ---
+
 
 # r-velocyto.r
 

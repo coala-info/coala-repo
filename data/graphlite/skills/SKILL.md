@@ -1,8 +1,9 @@
 ---
 name: graphlite
-description: Graphlite is a Python-based graph engine that builds a specialized graph layer on top of SQLite.
+description: Graphlite is a Python-based graph engine that stores and queries directed relationships between integer identifiers using a specialized SQLite layer. Use when user asks to store graph edges, perform relationship traversals, or manage an embedded graph database for integer-based nodes.
 homepage: https://github.com/eugene-eeo/graphlite
 ---
+
 
 # graphlite
 

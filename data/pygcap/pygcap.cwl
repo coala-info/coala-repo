@@ -2,10 +2,56 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: pygcap
 label: pygcap
-doc: "The provided text does not contain help information or usage instructions for
-  the tool 'pygcap'. It appears to be a log of a failed container build/fetch process.\n
-  \nTool homepage: https://github.com/jrim42/pyGCAP"
-inputs: []
+doc: "Find Gene Cluster\n\nTool homepage: https://github.com/jrim42/pyGCAP"
+inputs:
+  - id: taxon
+    type: string
+    doc: Taxon identifier
+    inputBinding:
+      position: 1
+  - id: probe_path
+    type: File
+    doc: Probe file path
+    inputBinding:
+      position: 2
+  - id: identity
+    type:
+      - 'null'
+      - float
+    inputBinding:
+      position: 103
+      prefix: --identity
+  - id: max_target_seqs
+    type:
+      - 'null'
+      - int
+    inputBinding:
+      position: 103
+      prefix: --max_target_seqs
+  - id: skip
+    type:
+      - 'null'
+      - string
+    doc: Options to skip steps, e.g., ncbi, mmseqs2, parsing, uniprot, blastdb 
+      or all
+    inputBinding:
+      position: 103
+      prefix: --skip
+  - id: thread
+    type:
+      - 'null'
+      - int
+    inputBinding:
+      position: 103
+      prefix: --thread
+  - id: working_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Working directory path
+    inputBinding:
+      position: 103
+      prefix: --working_dir
 outputs:
   - id: stdout
     type: stdout

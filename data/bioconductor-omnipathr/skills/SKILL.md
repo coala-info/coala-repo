@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omnipathr
-description: the package is available on all platforms; click for details.
+description: OmnipathR is an R client for accessing the OmniPath database of molecular biology networks and signaling pathways. Use when user asks to retrieve protein-protein interactions, access signaling pathway data, or download intercellular communication networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/OmnipathR.html
 ---
+
 
 # bioconductor-omnipathr
 

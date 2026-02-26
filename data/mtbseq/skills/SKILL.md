@@ -1,8 +1,9 @@
 ---
 name: mtbseq
-description: MTBseq is a semi-automated bioinformatics pipeline specifically tailored for the Mycobacterium tuberculosis complex (MTBC).
+description: MTBseq is a bioinformatics pipeline for processing Illumina sequencing data to perform variant detection and lineage classification for the Mycobacterium tuberculosis complex. Use when user asks to map reads, detect variants, identify drug resistance polymorphisms, or perform phylogenetic classification of MTBC samples.
 homepage: https://github.com/ngs-fzb/MTBseq_source
 ---
+
 
 # mtbseq
 

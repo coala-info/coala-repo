@@ -1,8 +1,9 @@
 ---
 name: oases
-description: The oases skill provides guidance on utilizing the qpOASES library to solve dense quadratic programming problems.
+description: The oases skill provides guidance on using the qpOASES library to solve dense quadratic programming problems through an active-set strategy. Use when user asks to solve quadratic programs, implement model predictive control, or hot-start optimization problems in C++ or Python.
 homepage: https://github.com/coin-or/qpOASES
 ---
+
 
 # oases
 

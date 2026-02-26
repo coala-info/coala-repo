@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipseqdbdata
-description: the package is available on all platforms; click for details.
+description: This package provides curated ChIP-seq datasets as BAM files and metadata for differential binding analysis. Use when user asks to retrieve H3K9ac, H3K4me3, CBP, NF-YA, or H3K27me3 mouse datasets for genomic workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/chipseqDBData.html
 ---
+
 
 # bioconductor-chipseqdbdata
 

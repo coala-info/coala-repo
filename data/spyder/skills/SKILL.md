@@ -1,8 +1,9 @@
 ---
 name: spyder
-description: Spyder (the Scientific Python Development Environment) is a powerful IDE tailored for scientists, engineers, and data analysts.
+description: "Spyder is a scientific integrated development environment designed for data exploration, interactive execution, and Python development. Use when user asks to launch the IDE, manage development environments, inspect variables, or perform static code analysis and profiling."
 homepage: https://github.com/spyder-ide/spyder
 ---
+
 
 # spyder
 

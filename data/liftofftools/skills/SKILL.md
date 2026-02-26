@@ -1,8 +1,9 @@
 ---
 name: liftofftools
-description: LiftoffTools is a specialized bioinformatics toolkit designed to evaluate and compare gene annotations between a reference and a target genome assembly.
+description: LiftoffTools evaluates and compares gene annotations between reference and target genome assemblies to identify sequence variants, synteny changes, and gene copy number variations. Use when user asks to identify variant effects on protein-coding genes, compare gene order between assemblies, or group genes into clusters to find paralogs.
 homepage: https://github.com/agshumate/LiftoffTools
 ---
+
 
 # liftofftools
 

@@ -1,8 +1,9 @@
 ---
 name: hmmlearn
-description: `hmmlearn` is a Python library for unsupervised learning and inference of Hidden Markov Models.
+description: "hmmlearn is a Python library for unsupervised learning and inference of Hidden Markov Models with a scikit-learn compatible API. Use when user asks to train hidden Markov models, decode hidden state sequences, or predict the likelihood of observations using Gaussian, multinomial, or Poisson distributions."
 homepage: https://github.com/hmmlearn/hmmlearn
 ---
+
 
 # hmmlearn
 

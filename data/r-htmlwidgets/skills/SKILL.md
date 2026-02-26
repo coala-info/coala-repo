@@ -1,8 +1,9 @@
 ---
 name: r-htmlwidgets
-description: "A framework for creating HTML widgets that render in various     contexts including the R console, 'R Markdown' documents, and 'Shiny'     web applications.</p>"
+description: The htmlwidgets package provides a framework for creating R bindings to JavaScript libraries to produce interactive web visualizations. Use when user asks to create custom interactive widgets, bridge R data with JavaScript libraries, or develop visualization components for Shiny and R Markdown.
 homepage: https://cloud.r-project.org/web/packages/htmlwidgets/index.html
 ---
+
 
 # r-htmlwidgets
 

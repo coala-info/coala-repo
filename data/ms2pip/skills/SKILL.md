@@ -1,8 +1,9 @@
 ---
 name: ms2pip
-description: ms2pip (MS² Peak Intensity Prediction) is a high-performance tool designed to predict the relative intensities of fragment ions in tandem mass spectrometry (MS2) spectra.
+description: ms2pip predicts the relative intensities of fragment ions in tandem mass spectrometry spectra using machine learning models. Use when user asks to predict peptide fragment ion intensities, generate theoretical spectral libraries, or compare predicted spectra against experimental data.
 homepage: http://compomics.github.io/projects/ms2pip_c
 ---
+
 
 # ms2pip
 

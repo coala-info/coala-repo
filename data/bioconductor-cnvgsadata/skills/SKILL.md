@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnvgsadata
-description: the package is available on all platforms; click for details.
+description: This package provides demonstration datasets and example files for the cnvGSA R package workflow. Use when user asks to access example CNV data, load pre-built CnvGSAInput objects, or practice gene-set enrichment analysis for rare copy number variations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/cnvGSAdata.html
 ---
+
 
 # bioconductor-cnvgsadata
 

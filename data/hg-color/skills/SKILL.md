@@ -1,8 +1,9 @@
 ---
 name: hg-color
-description: HG-CoLoR is a hybrid correction tool designed to fix errors in long-read sequencing data.
+description: HG-CoLoR is a hybrid correction tool that fixes errors in long-read sequencing data by aligning short reads and traversing a de Bruijn graph. Use when user asks to correct long reads using short reads, improve long-read accuracy, or perform hybrid error correction.
 homepage: https://github.com/pierre-morisse/HG-CoLoR
 ---
+
 
 # hg-color
 

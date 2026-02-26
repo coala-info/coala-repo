@@ -1,8 +1,9 @@
 ---
 name: r-leaps
-description: Regression subset selection, including exhaustive search.</p>
+description: This tool performs regression subset selection and exhaustive search to identify the best-fitting linear models. Use when user asks to perform feature selection, find the best subsets of regressors, or evaluate models using criteria like R-squared, Adjusted R-squared, Mallows' Cp, and BIC.
 homepage: https://cloud.r-project.org/web/packages/leaps/index.html
 ---
+
 
 # r-leaps
 

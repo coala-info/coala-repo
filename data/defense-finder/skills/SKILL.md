@@ -1,8 +1,9 @@
 ---
 name: defense-finder
-description: Defense-finder is a specialized bioinformatic tool that automates the detection of known anti-phage systems in genomic sequences.
+description: Defense-finder automates the detection of known anti-phage systems in genomic sequences using HMM profiles and MacSyFinder. Use when user asks to identify defense systems in genomes, update defense system models, or analyze protein sequences for anti-phage mechanisms.
 homepage: https://github.com/mdmparis/defense-finder
 ---
+
 
 # defense-finder
 

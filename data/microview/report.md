@@ -3,7 +3,9 @@
 ## microview
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information or command-line arguments for the microview tool.
+MicroView, a reporting tool for taxonomic classification
+MicroView agreggates reports from taxonomic classification tools, such as
+Kaiju and Kraken.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/microview:0.11.0--py312h031d066_0
@@ -18,11 +20,22 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/microview:0.11.0--py312h031d066_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-486115307: no space left on device
+Usage: microview [OPTIONS]                                                     
+                                                                                
+ MicroView, a reporting tool for taxonomic classification                       
+ MicroView agreggates reports from taxonomic classification tools, such as      
+ Kaiju and Kraken.                                                              
+ You can provide either a path to results in the -t argument or, with -df, a    
+ path to a 2-column CSV file, the first column sample paths and the second      
+ containing group names or contrasts.                                           
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --version              Show the version and exit.                            │
+│ --taxonomy  -t   PATH  Path to taxonomy classification results               │
+│ --csv-file  -df  PATH  2-column CSV table (sample,group) with taxonomy       │
+│                        classification results paths                          │
+│ --output    -o   PATH  Report file name                                      │
+│ --help      -h         Show this message and exit.                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: rnabloom
-description: RNA-Bloom is a fast, memory-efficient Java-based tool designed for the de novo assembly of transcript sequences.
+description: RNA-Bloom is a fast and memory-efficient tool for the de novo assembly of transcript sequences from short-read, long-read, or hybrid RNA-seq data. Use when user asks to perform de novo transcriptome assembly, assemble single-cell RNA-seq data, or conduct reference-guided and hybrid transcript assembly.
 homepage: https://github.com/bcgsc/RNA-Bloom
 ---
+
 
 # rnabloom
 

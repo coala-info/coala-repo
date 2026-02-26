@@ -1,8 +1,9 @@
 ---
 name: bioconductor-barley1cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Description File environment for the Affymetrix Barley Genome Array. Use when user asks to access probe set mappings, convert between chip coordinates and indices, or perform low-level analysis of Barley1 CEL files.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/barley1cdf.html
 ---
+
 
 # bioconductor-barley1cdf
 

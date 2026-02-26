@@ -1,8 +1,9 @@
 ---
 name: sra-tools
-description: The SRA Toolkit is the standard suite of utilities for interacting with the International Nucleotide Sequence Database Collaboration (INSDC) Sequence Read Archives.
+description: The SRA Toolkit provides a suite of utilities for downloading and converting sequence data from the International Nucleotide Sequence Database Collaboration archives. Use when user asks to download SRA accessions, convert SRA files to FASTQ or SAM formats, configure NCBI cloud data access, or validate the integrity of downloaded sequencing runs.
 homepage: https://github.com/ncbi/sra-tools
 ---
+
 
 # sra-tools
 

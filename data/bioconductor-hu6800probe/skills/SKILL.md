@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu6800probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix hu6800 microarray platform. Use when user asks to map probe identifiers to sequences, retrieve array coordinates, or analyze interrogation positions for hu6800 chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu6800probe.html
 ---
+
 
 # bioconductor-hu6800probe
 

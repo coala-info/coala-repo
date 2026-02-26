@@ -1,8 +1,9 @@
 ---
 name: meta-neuro
-description: Medial Tractography Analysis (MeTA) is a specialized neuroimaging workflow designed to minimize microstructural heterogeneity in diffusion MRI metrics.
+description: MeTA is a neuroimaging workflow that extracts and parcellates the core volume of white matter bundles to minimize microstructural heterogeneity in diffusion MRI metrics. Use when user asks to generate medial surfaces, perform bundle parcellation, extract microstructural profiles, or calculate shape features from tractography data.
 homepage: https://github.com/bagari/meta
 ---
+
 
 # meta-neuro
 

@@ -1,8 +1,9 @@
 ---
 name: macs
-description: MACS (Model-based Analysis of ChIP-Seq) is a computational tool designed to identify genome-wide protein-DNA interaction sites.
+description: MACS identifies genome-wide protein-DNA interaction sites by analyzing ChIP-Seq data to call peaks. Use when user asks to call peaks, incorporate control samples, adjust peak calling stringency, or handle duplicate reads.
 homepage: http://liulab.dfci.harvard.edu/MACS/
 ---
+
 
 # macs
 

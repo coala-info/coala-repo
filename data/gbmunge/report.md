@@ -3,7 +3,7 @@
 ## gbmunge
 
 ### Tool Description
-A tool for munging GenBank files (Note: The provided help text contains only system error messages and no usage information).
+Extract from a GenBank flat file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gbmunge:2018.07.06--h7b50bb2_7
@@ -18,11 +18,10 @@ A tool for munging GenBank files (Note: The provided help text contains only sys
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gbmunge:2018.07.06--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2809610960: no space left on device
+Error: No input filename specified.
+
+Extract from a GenBank flat file.
+
+Usage: gbmunge [-h] -i <Genbank_file> -f <sequence_output> -o <metadata_output> [-t] [-s]
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: perl-module-implementation
-description: The libwww-perl (LWP) collection is the industry-standard suite of Perl modules for World-Wide Web interaction.
+description: This tool implements the LWP::UserAgent Perl module to dispatch web requests and manage HTTP responses. Use when user asks to fetch web content, handle cookies, configure secure SSL connections, or use command-line utilities like lwp-request.
 homepage: https://github.com/libwww-perl/libwww-perl
 ---
+
 
 # perl-module-implementation
 

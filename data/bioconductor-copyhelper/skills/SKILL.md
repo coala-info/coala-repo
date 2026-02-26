@@ -1,8 +1,9 @@
 ---
 name: bioconductor-copyhelper
-description: the package is available on all platforms; click for details.
+description: CopyhelpeR provides helper files for copy number estimation from off-target sequencing reads. Use when user asks to generate GC content and mappability files, perform copy number profiling, or estimate copy number using off-target reads.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CopyhelpeR.html
 ---
+
 
 # bioconductor-copyhelper
 

@@ -1,8 +1,9 @@
 ---
 name: flaimapper
-description: FlaiMapper (Fragment Location Annotation Identification Mapper) is a specialized tool for the computational annotation of fragments derived from small non-coding RNAs (sncRNAs) such as tRNAs, snoRNAs, and snRNAs.
+description: FlaiMapper annotates the genomic boundaries of fragments derived from small non-coding RNAs using high-throughput RNA-seq data. Use when user asks to identify fragment locations, annotate sncRNA fragments, or process BAM files to find genomic boundaries for tRNAs and snoRNAs.
 homepage: https://github.com/yhoogstrate/flaimapper/
 ---
+
 
 # flaimapper
 

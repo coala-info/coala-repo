@@ -1,8 +1,9 @@
 ---
 name: perl-carp
-description: The perl-carp skill (specifically for the Raku implementation of Perl's Carp) allows developers to report errors from the caller's perspective.
+description: The perl-carp tool reports errors and warnings from the perspective of the calling code rather than the library's internal implementation. Use when user asks to report errors from the caller's site, generate stack traces for warnings or fatal errors, or use Carp routines like carp, cluck, croak, and confess in Raku.
 homepage: https://github.com/alabamenhu/Carp
 ---
+
 
 # perl-carp
 

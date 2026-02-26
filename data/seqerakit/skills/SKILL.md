@@ -1,8 +1,9 @@
 ---
 name: seqerakit
-description: seqerakit acts as a powerful automation wrapper for the Seqera Platform CLI (`tw`).
+description: Seqerakit is an automation wrapper for the Seqera Platform CLI that manages complex resource hierarchies and pipeline executions through YAML configuration files. Use when user asks to bootstrap environments, migrate configurations between organizations, automate resource provisioning, or perform dry-runs of platform setups.
 homepage: https://github.com/seqeralabs/seqera-kit
 ---
+
 
 # seqerakit
 

@@ -2,14 +2,34 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mafAddQRows
 label: ucsc-mafaddqrows_mafAddQRows
-doc: "Add quality scores to a MAF file. (Note: The provided help text contains a container
-  runtime error and does not list specific arguments.)\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Add quality data to a maf\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: species_lst
+    type: File
+    doc: 'species.lst file where each line contains two fields: 1) species name, 2)
+      directory where the .qac and .qdx files are located'
+    inputBinding:
+      position: 1
+  - id: in_maf
+    type: File
+    doc: Input MAF file
+    inputBinding:
+      position: 2
+  - id: divisor
+    type:
+      - 'null'
+      - float
+    doc: value to divide Q value by
+    default: 5
+    inputBinding:
+      position: 103
+      prefix: --divisor
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_maf
+    type: File
+    doc: Output MAF file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-mafaddqrows:482--h0b57e2e_0
-stdout: ucsc-mafaddqrows_mafAddQRows.out

@@ -1,8 +1,9 @@
 ---
 name: metaboliteidconverter
-description: MetaboliteIDConverter is a post-processing tool that leverages the Chemical Translation Service (CTS) to standardize and enrich metabolite data.
+description: MetaboliteIDConverter converts metabolite identifiers into a wide range of cross-referenced database IDs to standardize and enrich chemical data. Use when user asks to convert metabolite IDs, standardize chemical names, or map experimental data to metabolic networks.
 homepage: https://github.com/phnmnl/container-MetaboliteIDConverter
 ---
+
 
 # metaboliteidconverter
 

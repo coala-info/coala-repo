@@ -1,8 +1,9 @@
 ---
 name: portcullis
-description: Portcullis (PORTable CULLing of Invalid Splice junctions) is a post-alignment processing tool designed to improve the reliability of splice junction (SJ) predictions.
+description: Portcullis is a post-alignment processing tool that filters out false-positive splice junctions from RNA-seq data to improve the reliability of transcriptomic analysis. Use when user asks to identify high-quality splice junctions, filter invalid junctions from BAM files, or create cleaned alignments for gene modeling.
 homepage: https://github.com/maplesond/portcullis
 ---
+
 
 # portcullis
 

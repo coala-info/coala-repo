@@ -1,8 +1,9 @@
 ---
 name: bioconductor-h20kcod.db
-description: the package is available on all platforms; click for details.
+description: This tool provides genomic annotation and mapping for the h20kcod platform using the Bioconductor R package h20kcod.db. Use when user asks to map h20kcod probe identifiers to biological identifiers like Entrez Gene IDs, Gene Symbols, or GO terms, and perform functional annotation or chromosomal localization for this chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/h20kcod.db.html
 ---
+
 
 # bioconductor-h20kcod.db
 

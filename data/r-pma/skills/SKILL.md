@@ -1,8 +1,9 @@
 ---
 name: r-pma
-description: Skill for using the CRAN R package r-pma.
+description: This tool performs Penalized Multivariate Analysis in R to identify sparse structures in high-dimensional datasets. Use when user asks to perform sparse principal component analysis, find sparse canonical correlations between datasets, or conduct sparse linear discriminant analysis.
 homepage: https://cloud.r-project.org/web/packages/PMA/index.html
 ---
+
 
 # r-pma
 

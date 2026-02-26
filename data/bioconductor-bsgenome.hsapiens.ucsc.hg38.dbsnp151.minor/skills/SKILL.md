@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.minor
-description: the package is available on all platforms; click for details.
+description: This tool provides the human hg38 genome sequence with injected minor alleles from dbSNP151 for variants with a frequency greater than 0.01. Use when user asks to perform allele-aware sequence analysis, reduce reference bias in genomic workflows, or extract human sequences containing minor alleles.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg38.dbsnp151.minor
 

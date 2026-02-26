@@ -1,8 +1,9 @@
 ---
 name: perl-alien-build
-description: `Alien::Build` is the industry-standard Perl framework for finding or building external libraries and tools that Perl modules depend on.
+description: Perl-alien-build provides a framework for finding or building external libraries and tools that Perl modules depend on. Use when user asks to create an alienfile, force a system or share installation, probe for system libraries using pkg-config, or integrate external dependencies into Perl installers.
 homepage: https://metacpan.org/pod/Alien::Build
 ---
+
 
 # perl-alien-build
 

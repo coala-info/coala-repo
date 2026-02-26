@@ -1,8 +1,9 @@
 ---
 name: bioconductor-measurementerror.cor
-description: the package is available on all platforms; click for details.
+description: This package estimates the correlation coefficient between two variables that are subject to measurement error. Use when user asks to calculate measurement error corrected correlations, adjust correlation estimates for noise, or perform error-corrected correlation analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/MeasurementError.cor.html
 ---
+
 
 # bioconductor-measurementerror.cor
 

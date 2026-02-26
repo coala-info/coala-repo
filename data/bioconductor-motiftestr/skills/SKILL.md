@@ -1,8 +1,9 @@
 ---
 name: bioconductor-motiftestr
-description: The package also contains core functions to prepare data for analysis, and to visualise results.
+description: motifTestR is a Bioconductor package used to test sequence motifs and visualize analysis results. Use when user asks to test for motif enrichment, prepare data for motif analysis, or visualize motif results.
 homepage: https://bioconductor.org/packages/release/bioc/html/motifTestR.html
 ---
+
 
 # bioconductor-motiftestr
 

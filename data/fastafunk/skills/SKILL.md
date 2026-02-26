@@ -1,8 +1,9 @@
 ---
 name: fastafunk
-description: The `fastafunk` skill provides a suite of utilities designed for high-throughput FASTA file processing.
+description: Fastafunk provides a suite of utilities for high-throughput FASTA file processing, including filtering, merging, and metadata annotation. Use when user asks to filter sequences, merge FASTA files, annotate headers with metadata, or subsample datasets.
 homepage: https://github.com/cov-ert/fastafunk
 ---
+
 
 # fastafunk
 

@@ -1,8 +1,9 @@
 ---
 name: cmip
-description: CMIP is a specialized tool for calculating classical molecular interaction potentials.
+description: CMIP calculates classical molecular interaction potentials between a target molecule and a probe across a 3D grid. Use when user asks to calculate molecular interaction potentials, predict structural water positions, or identify favorable interaction sites on protein surfaces.
 homepage: http://mmb.irbbarcelona.org/gitlab/gelpi/CMIP
 ---
+
 
 # cmip
 

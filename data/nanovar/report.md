@@ -3,7 +3,7 @@
 ## nanovar
 
 ### Tool Description
-NanoVar is a tool for structural variant discovery using long-read sequencing. (Note: The provided text is a container execution error log and does not contain help information or argument definitions.)
+NanoVar is a long-read structural variant (SV) caller.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanovar:1.8.3--py311haab0aaa_0
@@ -18,11 +18,61 @@ NanoVar is a tool for structural variant discovery using long-read sequencing. (
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanovar:1.8.3--py311haab0aaa_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3714942390: no space left on device
+usage: nanovar [options] [FASTQ/FASTA/BAM/CRAM] [REFERENCE_GENOME] [WORK_DIRECTORY]
+
+NanoVar is a long-read structural variant (SV) caller.
+
+positional arguments:
+  [FASTQ/FASTA/BAM/CRAM]
+                        Path to long reads or mapped BAM/CRAM file.
+                        Formats: fasta/fa/fa.gzip/fa.gz/fastq/fq/fq.gzip/fq.gz/bam/cram
+  [reference_genome]    Path to reference genome in FASTA. Genome indexes created 
+                        will overwrite indexes created by other aligners such as bwa.
+  [work_directory]      Path to work directory. Directory will be created 
+                        if it does not exist.
+
+options:
+  -h, --help            show this help message and exit
+  -x str, --data_type str
+                        Type of long-read data [ont]
+                        ont - Oxford Nanopore Technologies
+                        pacbio-clr - Pacific Biosciences CLR
+                        pacbio-ccs - Pacific Biosciences CCS
+  -f file, --filter_bed file
+                        BED file with genomic regions to be excluded [None]
+                        (e.g. telomeres and centromeres) Either specify name of in-built 
+                        reference genome filter (i.e. hg38, hg19, mm10) or provide full 
+                        path to own BED file.
+  --annotate_ins str    Enable annotation of INS with NanoINSight, 
+                        please specify species of sample [None]
+                        Currently supported species are:
+                        'human', 'mouse', and 'rattus'.
+  -c int, --mincov int  Minimum number of reads required to call a breakend [4]
+  -l int, --minlen int  Minimum length of SV to be detected [25]
+  -p float, --splitpct float
+                        Minimum percentage of unmapped bases within a long read 
+                        to be considered as a split-read. 0.05<=p<=0.50 [0.05]
+  -a int, --minalign int
+                        Minimum alignment length for single alignment reads [200]
+  -b int, --buffer int  Nucleotide length buffer for SV breakend clustering [50]
+  -s float, --score float
+                        Score threshold for defining PASS/FAIL SVs in VCF [1.0]
+                        Default score 1.0 was estimated from simulated analysis. 
+  --homo float          Lower limit of a breakend read ratio to classify a homozygous state [0.75]
+                        (i.e. Any breakend with homo<=ratio<=1.00 is classified as homozygous)
+  --hetero float        Lower limit of a breakend read ratio to classify a heterozygous state [0.35]
+                        (i.e. Any breakend with hetero<=ratio<homo is classified as heterozygous)
+  --sv_bam_out          Outputs a BAM file containing only SV-supporting reads with 
+                        their corresponding SV-ID(s) stored in the "nv" tag separated by comma.
+  --debug               Run in debug mode
+  -v, --version         Show version and exit
+  -q, --quiet           Hide verbose
+  -t int, --threads int
+                        Number of available threads for use [1]
+  --model path          Specify path to custom-built model
+  --mm path             Specify path to 'minimap2' executable
+  --st path             Specify path to 'samtools' executable
+  --ma path             Specify path to 'mafft' executable for NanoINSight
+  --rm path             Specify path to 'RepeatMasker' executable for NanoINSight
 ```
 
-
-## Metadata
-- **Skill**: generated

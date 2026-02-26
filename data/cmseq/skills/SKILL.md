@@ -1,8 +1,9 @@
 ---
 name: cmseq
-description: cmseq is a suite of command-line utilities designed to provide a streamlined interface for extracting biological metrics from BAM files.
+description: "cmseq extracts biological metrics from BAM files to assess strain heterogeneity and genome coverage in metagenomics. Use when user asks to calculate breadth and depth of coverage, identify synonymous and non-synonymous mutations, or generate consensus sequences."
 homepage: https://github.com/SegataLab/cmseq
 ---
+
 
 # cmseq
 

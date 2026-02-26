@@ -3,7 +3,7 @@
 ## cmfinder
 
 ### Tool Description
-CMfinder is a tool for RNA motif discovery. (Note: The provided input text appears to be a container runtime error log rather than help text, so no arguments could be extracted.)
+learning motif covariance model for unaligned sequences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmfinder:0.4.1.9--pl5.22.0_1
@@ -18,9 +18,24 @@ CMfinder is a tool for RNA motif discovery. (Note: The provided input text appea
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmfinder:0.4.1.9--pl5.22.0_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2891558212: no space left on device
+cmfinder: learning motif covariance model for unaligned sequences
+
+					   Usage: cmfinder [-options] <seqfile in> <cmfile output> 
+					   where options are:
+					   -c <candidate file>: the candidate file 
+					   -a <align file>    : the initial motif alignment 
+					   -i <cm file>       : the initial covariance model
+					   -o <align file>    : the output motif structural alignment in stockholm format 
+					   -v verbose         : print intermediate alignments 
+						   -h                 : print short help and version info
+					   
+						Expert, in development, or infrequently used options are:
+								--g <gap threshold> : the gap threshold to determine the conserved column
+						--hmm               : apply HMM filter 
+						--cmzasha           : apply cmzasha filter 
+										--update            : Update instead of scanning for new candidates at each iteration 
+						--informat <s>: specify that input alignment is in format <s>
+						--fragmentary : account for fragmentary input sequences
 ```
 
 

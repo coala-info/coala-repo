@@ -1,8 +1,9 @@
 ---
 name: bioconductor-orthogene
-description: the package is available on all platforms; click for details.
+description: orthogene is an R package for cross-species gene orthology mapping and gene ID conversion. Use when user asks to map genes between species, convert gene symbols to orthologs, or perform cross-species gene set enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/orthogene.html
 ---
+
 
 # bioconductor-orthogene
 

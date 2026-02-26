@@ -1,8 +1,9 @@
 ---
 name: architeuthis
-description: architeuthis is a specialized command-line utility designed to bridge the gap between raw Kraken-family outputs and downstream statistical analysis.
+description: Architeuthis is a bioinformatics utility designed to merge, annotate, and analyze Kraken and Bracken classification reports. Use when user asks to merge multiple sample outputs into a single table, append taxonomic lineage to Bracken files, or analyze k-mer mapping quality and consistency.
 homepage: https://github.com/cdiener/architeuthis
 ---
+
 
 # architeuthis
 

@@ -1,8 +1,9 @@
 ---
 name: phu
-description: `phu` (Phage Utilities) is a modular bioinformatics toolkit designed to streamline viral genomics workflows.
+description: phu is a modular bioinformatics toolkit designed to streamline viral genomics workflows by providing tools for sequence clustering, protein family screening, and taxonomic data parsing. Use when user asks to identify protein families within DNA contigs, dereplicate viral sequences into species-level vOTUs, or simplify complex taxonomy prediction outputs.
 homepage: https://github.com/camilogarciabotero/phu
 ---
+
 
 # phu
 

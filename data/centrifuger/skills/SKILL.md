@@ -1,8 +1,9 @@
 ---
 name: centrifuger
-description: Centrifuger is a high-performance taxonomic classifier designed for metagenomic analysis.
+description: Centrifuger is a high-performance taxonomic classifier that maps metagenomic sequencing reads to large-scale reference databases using lossless compression. Use when user asks to build a compressed genomic index, classify sequencing reads to identify taxonomic origins, or perform quantification to estimate relative abundances.
 homepage: https://github.com/mourisl/centrifuger
 ---
+
 
 # centrifuger
 

@@ -1,8 +1,9 @@
 ---
 name: mmlong2-lite
-description: `mmlong2-lite` is a streamlined Snakemake-based bioinformatics pipeline designed to recover microbial genomes from complex metagenomic samples.
+description: mmlong2-lite is a Snakemake-based pipeline that automates the recovery of microbial genomes from long-read metagenomic data through assembly, binning, and curation. Use when user asks to recover microbial genomes from Nanopore or PacBio reads, perform differential coverage binning, or identify circular genomes in metagenomic samples.
 homepage: https://github.com/Serka-M/mmlong2-lite
 ---
+
 
 # mmlong2-lite
 

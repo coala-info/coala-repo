@@ -1,8 +1,9 @@
 ---
 name: svjedi-graph
-description: SVJedi-graph is a structural variation genotyper that leverages variation graphs to represent SV alleles.
+description: SVJedi-graph is a structural variation genotyper that uses variation graphs and long reads to estimate genotypes for structural variants. Use when user asks to genotype structural variants, represent SV alleles using variation graphs, or resolve genotypes in complex genomic regions using long-read alignments.
 homepage: https://github.com/SandraLouise/SVJedi-graph
 ---
+
 
 # svjedi-graph
 

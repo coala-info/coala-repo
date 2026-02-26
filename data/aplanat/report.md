@@ -3,23 +3,32 @@
 ## aplanat_demo
 
 ### Tool Description
-Aplanat demo component (Note: The provided help text is a Python traceback indicating a missing dependency 'sigfig' and does not contain argument details).
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/aplanat:0.5.6--pyhfa5458b_0
 - **Homepage**: https://github.com/epi2me-labs/aplanat
 - **Package**: https://anaconda.org/channels/bioconda/packages/aplanat/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/aplanat/overview
 - **Total Downloads**: 56.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/epi2me-labs/aplanat
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 Traceback (most recent call last):
   File "/usr/local/bin/aplanat", line 10, in <module>
     sys.exit(cli())
@@ -40,6 +49,3 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'sigfig'
 ```
 
-
-## Metadata
-- **Skill**: not generated

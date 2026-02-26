@@ -1,8 +1,9 @@
 ---
 name: perl-go-perl
-description: The `perl-go-perl` suite provides a robust set of tools for bioinformaticians to interact with structured biological ontologies.
+description: This tool provides command-line utilities for processing, converting, and filtering Gene Ontology files and other structured biological ontologies. Use when user asks to convert ontology formats, filter ontologies by namespace, extract subgraphs, or validate OBO file syntax.
 homepage: http://metacpan.org/pod/go-perl
 ---
+
 
 # perl-go-perl
 

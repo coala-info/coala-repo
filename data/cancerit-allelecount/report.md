@@ -1,9 +1,9 @@
 # cancerit-allelecount CWL Generation Report
 
-## cancerit-allelecount
+## cancerit-allelecount_alleleCounter
 
 ### Tool Description
-A tool to count alleles in a BAM file at specific locations.
+Counts alleles in a BAM/CRAM file based on a loci file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cancerit-allelecount:4.3.0--h8bd2d3b_7
@@ -12,61 +12,36 @@ A tool to count alleles in a BAM file at specific locations.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cancerit-allelecount/overview
-- **Total Downloads**: 36.5K
+- **Total Downloads**: 36.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/cancerit/alleleCount
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cancerit-allelecount:4.3.0--h8bd2d3b_7 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:3e40c3dae4d40ab2d12348a7f78047f96ef9215c6ba7176ca64607313f73708c: unpack entry: usr/local/lib/libcrypto.so.3: unpack to regular file: short write: write /tmp/build-temp-3803434574/rootfs/usr/local/lib/libcrypto.so.3: no space left on device
-```
+Loci file (null) does not appear to exist.
+Usage: alleleCounter -l loci_file.txt -b sample.bam -o output.txt [-m int] [-r ref.fa.fai]
 
+ -l  --loci-file [file]           Path to loci file.
+ -b  --hts-file [file]            Path to sample HTS file.
+ -o  --output-file [file]         Path write output file.
 
-## Metadata
-- **Skill**: generated
-
-## cancerit-allelecount_alleleCounter.pl
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is a system error log indicating a failure to build a container image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cancerit-allelecount:4.3.0--h8bd2d3b_7
-- **Homepage**: https://github.com/cancerit/alleleCount
-- **Package**: https://anaconda.org/channels/bioconda/packages/cancerit-allelecount/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cancerit-allelecount:4.3.0--h8bd2d3b_7 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:3e40c3dae4d40ab2d12348a7f78047f96ef9215c6ba7176ca64607313f73708c: unpack entry: usr/local/lib/libcrypto.so.3: unpack to regular file: short write: write /tmp/build-temp-1309140471/rootfs/usr/local/lib/libcrypto.so.3: no space left on device
-```
-
-## cancerit-allelecount_alleleCounterToJson.pl
-
-### Tool Description
-A script to convert alleleCount output to JSON format. Note: The provided help text contains only system error logs and does not list specific arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cancerit-allelecount:4.3.0--h8bd2d3b_7
-- **Homepage**: https://github.com/cancerit/alleleCount
-- **Package**: https://anaconda.org/channels/bioconda/packages/cancerit-allelecount/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cancerit-allelecount:4.3.0--h8bd2d3b_7 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:3e40c3dae4d40ab2d12348a7f78047f96ef9215c6ba7176ca64607313f73708c: unpack entry: usr/local/lib/libcrypto.so.3: unpack to regular file: short write: write /tmp/build-temp-3104782454/rootfs/usr/local/lib/libcrypto.so.3: no space left on device
+Optional
+ -r  --ref-file [file]           Path to reference fasta index file.
+                                 NB. If cram format is supplied via -b and the reference listed in the cram header
+                                     can't be found alleleCounter may fail to work correctly.
+ -m  --min-base-qual [int]       Minimum base quality [Default: 20].
+ -q  --min-map-qual [int]        Minimum mapping quality [Default: 35].
+ -c  --contig [string]           Limit calling to named contig.
+ -d  --dense-snps                Improves performance where many positions are close together 
+ -x  --is-10x                    Enables 10X processing mode.
+                                   In this mode the HTS input file must be a cellranger produced BAM file.  Allele
+                                   counts are then given on a per-cellular barcode basis, with each count representing
+                                   the consensus base for that UMI. 
+                                 by iterating through bam file rather than using a 'fetch' approach.
+ -f  --required-flag [int]       Flag value of reads to retain in allele counting default: [3].
+                                 N.B. if the proper-pair flag is are selected, alleleCounter will assume paired-end
+                                 and filter out any proper-pair flagged reads not in F/R orientation. -F  --filtered-flag [int]       Flag value of reads to exclude in allele counting default: [3852].
+ -v  --version                   Display version number.
+ -h  --help                      Display this usage information.
 ```
 

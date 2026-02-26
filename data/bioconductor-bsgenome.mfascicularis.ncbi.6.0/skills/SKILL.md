@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mfascicularis.ncbi.6.0
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Macaca fascicularis based on the NCBI assembly Macaca_fascicularis_6.0 as a BSgenome object. Use when user asks to access Crab-eating macaque genomic sequences, perform motif searching, or analyze nucleotide frequencies within the Bioconductor environment.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mfascicularis.NCBI.6.0.html
 ---
+
 
 # bioconductor-bsgenome.mfascicularis.ncbi.6.0
 

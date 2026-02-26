@@ -1,8 +1,9 @@
 ---
 name: fastremap-bio
-description: FastRemap is a high-performance C++ implementation designed to convert genomic coordinates between assembly versions.
+description: "FastRemap converts genomic coordinates between different assembly versions using UCSC chain files. Use when user asks to remap coordinates between genome assemblies, convert BAM, SAM, or BED files to a new reference version, or migrate legacy datasets to updated builds."
 homepage: https://github.com/CMU-SAFARI/FastRemap
 ---
+
 
 # fastremap-bio
 

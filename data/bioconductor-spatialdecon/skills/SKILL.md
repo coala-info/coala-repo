@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spatialdecon
-description: the package is available on all platforms; click for details.
+description: SpatialDecon estimates cell type abundances from spatial gene expression data using deconvolution. Use when user asks to perform spatial deconvolution, estimate cell type proportions, or analyze cell type composition in spatial transcriptomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpatialDecon.html
 ---
+
 
 # bioconductor-spatialdecon
 

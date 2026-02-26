@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromdraw
-description: the package is available on all platforms; click for details.
+description: This tool visualizes karyotypes in linear and circular formats using genomic data from text files, BED files, or GenomicRanges objects. Use when user asks to visualize chromosome structures, compare multiple karyotypes, or generate karyotype plots from BED files and R data structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/chromDraw.html
 ---
+
 
 # bioconductor-chromdraw
 

@@ -1,8 +1,9 @@
 ---
 name: git-lfs
-description: Git Large File Storage (LFS) replaces large files with text pointers inside Git while storing the actual file contents on a remote server.
+description: Git Large File Storage replaces large files with text pointers to prevent repository bloat and maintain fast performance. Use when user asks to track large binary assets, migrate repository history to LFS, manage file locks, or prune local storage.
 homepage: https://github.com/git-lfs/git-lfs
 ---
+
 
 # git-lfs
 

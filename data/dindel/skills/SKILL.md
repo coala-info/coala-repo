@@ -1,8 +1,9 @@
 ---
 name: dindel
-description: Dindel is a specialized variant caller designed to identify small indels in Illumina sequencing data.
+description: Dindel identifies small insertions and deletions in Illumina sequencing data by performing local realignment of reads to candidate haplotypes. Use when user asks to call small indels, perform local realignment of reads, or validate candidate indels using Bayesian inference.
 homepage: https://github.com/genome/dindel-tgi
 ---
+
 
 # dindel
 

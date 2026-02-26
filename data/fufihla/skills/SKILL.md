@@ -1,8 +1,9 @@
 ---
 name: fufihla
-description: FuFiHLA (Full Field HLA typing for Long reads) is a specialized bioinformatics pipeline that generates high-accuracy HLA allele calls and consensus sequences without requiring a specific reference genome like GRCh38.
+description: FuFiHLA is a bioinformatics pipeline that generates high-accuracy HLA allele calls and consensus sequences from long-read sequencing data. Use when user asks to perform HLA typing, prepare IMGT reference data, or generate consensus sequences from PacBio or Nanopore reads.
 homepage: https://github.com/jingqing-hu/FuFiHLA
 ---
+
 
 # fufihla
 

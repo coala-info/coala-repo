@@ -2,10 +2,56 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mira
 label: mira
-doc: "MIRA is a multi-purpose assembly system for whole genome sequencing (Note: The
-  provided text contains container runtime errors and does not include the actual
-  help documentation for the tool).\n\nTool homepage: https://github.com/DrMicrobit/mira"
-inputs: []
+doc: "A multi-pass sequencing data assembler or mapper for small genomes and\nEST/RNASeq
+  projects.\n\nTool homepage: https://github.com/DrMicrobit/mira"
+inputs:
+  - id: manifest_files
+    type:
+      type: array
+      items: File
+    doc: Manifest file(s) to process
+    inputBinding:
+      position: 1
+  - id: change_working_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Change working directory
+    inputBinding:
+      position: 102
+      prefix: --cwd
+  - id: check_manifest_and_data
+    type:
+      - 'null'
+      - boolean
+    doc: Like -m, but also check existence of data files.
+    inputBinding:
+      position: 102
+      prefix: --mdcheck
+  - id: check_manifest_only
+    type:
+      - 'null'
+      - boolean
+    doc: Only check the manifest file, then exit.
+    inputBinding:
+      position: 102
+      prefix: --mcheck
+  - id: resume_assembly
+    type:
+      - 'null'
+      - boolean
+    doc: Resume/restart an interrupted assembly
+    inputBinding:
+      position: 102
+      prefix: --resume
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Force number of threads (overrides equivalent -GE:not manifest entry)
+    inputBinding:
+      position: 102
+      prefix: --threads
 outputs:
   - id: stdout
     type: stdout

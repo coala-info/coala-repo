@@ -1,8 +1,9 @@
 ---
 name: baktfold
-description: Baktfold is a specialized annotation tool designed to provide functional insights into proteins that traditional sequence-based tools (like Bakta or Prokka) often fail to characterize.
+description: Baktfold performs functional protein annotation by converting amino acid sequences into structural tokens and searching for remote homologs using Foldseek. Use when user asks to annotate hypothetical proteins from Bakta, identify structural homologs for sequence-divergent proteins, or characterize novel bacterial genomes and MAGs.
 homepage: https://github.com/gbouras13/baktfold
 ---
+
 
 # baktfold
 

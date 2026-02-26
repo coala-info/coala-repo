@@ -1,8 +1,9 @@
 ---
 name: assemblycomparator2
-description: The `assemblycomparator2` tool (also known as CompareM2) is a scalable genomes-to-report pipeline designed for microbial genomics.
+description: Assemblycomparator2 is a scalable microbial genomics pipeline that automates genome characterization and generates comprehensive reports from assembly files. Use when user asks to characterize prokaryotic genomes, assess assembly quality, perform species identification, or generate functional profiles and comparative genomics reports.
 homepage: https://github.com/cmkobel/assemblycomparator2
 ---
+
 
 # assemblycomparator2
 

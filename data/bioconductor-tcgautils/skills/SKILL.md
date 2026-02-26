@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tcgautils
-description: the package is available on all platforms; click for details.
+description: TCGAutils provides a collection of helper functions for managing and manipulating The Cancer Genome Atlas data within the Bioconductor ecosystem. Use when user asks to convert TCGA identifiers, curate genomic data, or integrate multi-omic datasets into MultiAssayExperiment objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/TCGAutils.html
 ---
+
 
 # bioconductor-tcgautils
 

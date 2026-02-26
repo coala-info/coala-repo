@@ -1,8 +1,9 @@
 ---
 name: ncbitk
-description: `ncbitk` (NCBI Tool Kit) is a specialized command-line utility for bioinformaticians managing local repositories of bacterial genomic data.
+description: ncbitk automates the retrieval, synchronization, and curation of bacterial genomic data from GenBank. Use when user asks to download bacterial sequences, update local genome collections, or check the status of genomic datasets.
 homepage: https://github.com/andrewsanchez/NCBITK
 ---
+
 
 # ncbitk
 

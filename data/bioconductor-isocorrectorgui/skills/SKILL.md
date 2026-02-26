@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isocorrectorgui
-description: the package is available on all platforms; click for details.
+description: IsoCorrectoRGUI corrects mass spectrometry data from stable isotope labeling experiments for natural abundance and tracer impurity. Use when user asks to perform isotopic correction on MS or MS/MS data, launch the IsoCorrectoR graphical user interface, or process high-resolution multiple-tracer experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoCorrectoRGUI.html
 ---
+
 
 # bioconductor-isocorrectorgui
 

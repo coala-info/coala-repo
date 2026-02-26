@@ -1,8 +1,9 @@
 ---
 name: psm-utils
-description: `psm-utils` is a high-level library and command-line interface designed to bridge the gap between the numerous output formats produced by proteomics search engines.
+description: psm-utils is a library and command-line interface for handling and converting peptide-spectrum match (PSM) files across various proteomics search engine formats. Use when user asks to convert search engine results, standardize peptide modifications using ProForma 2.0, or prepare proteomics data for rescoring and visualization.
 homepage: https://github.com/compomics/psm_utils
 ---
+
 
 # psm-utils
 

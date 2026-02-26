@@ -1,9 +1,9 @@
 # glnexus CWL Generation Report
 
-## glnexus
+## glnexus_glnexus_cli
 
 ### Tool Description
-The provided text is an error log from a container runtime (Singularity/Apptainer) and does not contain CLI help information or usage instructions for glnexus. As a result, no arguments could be extracted.
+Merge and joint-call input gVCF files, emitting multi-sample BCF on standard output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glnexus:1.4.1--h17e8430_5
@@ -18,29 +18,37 @@ The provided text is an error log from a container runtime (Singularity/Apptaine
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glnexus:1.4.1--h17e8430_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1739457207: no space left on device
-```
+Usage: glnexus_cli [options] /vcf/file/1 .. /vcf/file/N
+Merge and joint-call input gVCF files, emitting multi-sample BCF on standard output.
 
+Options:
+  --dir DIR, -d DIR              scratch directory path (mustn't already exist; default: ./GLnexus.DB)
+  --config X, -c X               configuration preset name or .yml filename (default: gatk)
+  --bed FILE, -b FILE            three-column BED file with ranges to analyze (if neither --range nor --bed: use full length of all contigs)
+  --list, -l                     expect given files to contain lists of gVCF filenames, one per line
 
-## Metadata
-- **Skill**: generated
+  --more-PL, -P                  include PL from reference bands and other cases omitted by default
+  --squeeze, -S                  reduce pVCF size by suppressing detail in cells derived from reference bands
+  --trim-uncalled-alleles, -a    remove alleles with no output GT calls in postprocessing
 
-## glnexus_glnexus_cli
+  --mem-gbytes X, -m X           memory budget, in gbytes (default: most of system memory)
+  --threads X, -t X              thread budget (default: all hardware threads)
 
-### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a system error log related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+  --help, -h                     print this help message
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/glnexus:1.4.1--h17e8430_5
-- **Homepage**: https://github.com/dnanexus-rnd/GLnexus
-- **Package**: https://anaconda.org/channels/bioconda/packages/glnexus/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glnexus:1.4.1--h17e8430_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3375572454: no space left on device
+Configuration presets:
+            Name          CRC32C	Description
+            gatk      1926883223	Joint-call GATK-style gVCFs
+ gatk_unfiltered      4039280095	Merge GATK-style gVCFs with no QC filters or genotype revision
+          xAtlas      1991666133	Joint-call xAtlas gVCFs
+xAtlas_unfiltered       221875257	Merge xAtlas gVCFs with no QC filters or genotype revision
+          weCall      2898360729	Joint-call weCall gVCFs
+weCall_unfiltered      4254257210	Merge weCall gVCFs with no filtering or genotype revision
+     DeepVariant      2932316105	Joint call DeepVariant whole genome sequencing gVCFs
+  DeepVariantWGS      2932316105	Joint call DeepVariant whole genome sequencing gVCFs
+  DeepVariantWES      1063427682	Joint call DeepVariant whole exome sequencing gVCFs
+DeepVariantWES_MED_DP      2412618877	Joint call DeepVariant whole exome sequencing gVCFs, populating 0/0 DP from MED_DP instead of MIN_DP
+DeepVariant_unfiltered      3285998180	Merge DeepVariant gVCFs with no QC filters or genotype revision
+        Strelka2       395868656	[EXPERIMENTAL] Merge Strelka2 gVCFs with no QC filters or genotype revision
 ```
 

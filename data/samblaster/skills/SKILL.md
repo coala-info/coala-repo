@@ -1,8 +1,9 @@
 ---
 name: samblaster
-description: samblaster is a high-performance tool designed for bioinformatics pipelines to handle duplicate marking and read extraction in a single pass.
+description: "samblaster marks duplicate reads and extracts discordant or split read pairs from read-id grouped SAM files. Use when user asks to mark duplicates, extract discordant read pairs, or isolate split-read mappings for structural variant analysis."
 homepage: https://github.com/GregoryFaust/samblaster
 ---
+
 
 # samblaster
 

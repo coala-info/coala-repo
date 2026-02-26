@@ -1,8 +1,9 @@
 ---
 name: gait-gm
-description: gait-gm (Gene Analysis Integration Tool - Genomes to Metabolomes) is a bioinformatics suite designed to identify and model the relationships between gene expression levels and metabolite concentrations.
+description: gait-gm is a bioinformatics suite used to model and identify relationships between gene expression levels and metabolite concentrations. Use when user asks to perform Sparse Partial Least Squares regression, conduct all-by-all correlation analysis, or map biological data to KEGG pathways.
 homepage: https://github.com/secimTools/gait-gm
 ---
+
 
 # gait-gm
 

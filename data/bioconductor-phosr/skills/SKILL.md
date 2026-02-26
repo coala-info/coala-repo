@@ -1,8 +1,9 @@
 ---
 name: bioconductor-phosr
-description: the package is available on all platforms; click for details.
+description: PhosR is a comprehensive R package designed for the processing and downstream analysis of phosphoproteomics data. Use when user asks to analyze phosphoproteomic datasets, impute missing phosphorylation sites, normalize signal intensities, or infer kinase activities.
 homepage: https://bioconductor.org/packages/release/bioc/html/PhosR.html
 ---
+
 
 # bioconductor-phosr
 

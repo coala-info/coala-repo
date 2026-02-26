@@ -1,8 +1,9 @@
 ---
 name: fastqtl
-description: FastQTL is a specialized tool for molecular QTL mapping, used to scan for statistical associations between genetic polymorphisms (genotypes) and quantitative traits (phenotypes) such as gene expression or protein levels.
+description: FastQTL performs molecular QTL mapping to identify statistical associations between genetic polymorphisms and quantitative traits. Use when user asks to map quantitative trait loci, perform nominal or permutation passes, or calculate empirical p-values for genomic datasets.
 homepage: https://github.com/francois-a/fastqtl
 ---
+
 
 # fastqtl
 

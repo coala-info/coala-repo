@@ -1,8 +1,9 @@
 ---
 name: deepvariant
-description: DeepVariant is a deep-learning-based variant calling pipeline that replaces traditional statistical callers.
+description: DeepVariant is a deep-learning-based variant calling pipeline that uses convolutional neural networks to identify genetic variants from aligned genomic reads. Use when user asks to call variants, generate VCF or gVCF files, or identify genotypes from WGS, WES, PacBio, or Oxford Nanopore data.
 homepage: https://github.com/google/deepvariant
 ---
+
 
 # deepvariant
 

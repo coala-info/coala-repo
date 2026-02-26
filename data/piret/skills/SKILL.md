@@ -1,8 +1,9 @@
 ---
 name: piret
-description: PiReT is a specialized pipeline designed to streamline RNA-seq data processing.
+description: PiReT is a bioinformatics pipeline that automates RNA-seq data processing by integrating tools for alignment, quantification, and differential expression analysis. Use when user asks to process raw sequencing reads, perform gene expression analysis, or identify differentially expressed genes across experimental groups.
 homepage: https://github.com/mshakya/PyPiReT
 ---
+
 
 # piret
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mzr
-description: the package is available on all platforms; click for details.
+description: The bioconductor-mzr package provides a unified interface for reading and parsing mass spectrometry data files in various formats. Use when user asks to read mzML files, parse mzXML data, or extract metadata from mass spectrometry experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/mzR.html
 ---
+
 
 # bioconductor-mzr
 

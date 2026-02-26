@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cghnormaliter
-description: the package is available on all platforms; click for details.
+description: This tool normalizes two-channel array Comparative Genomic Hybridization (aCGH) data using an iterative strategy to account for copy number imbalances. Use when user asks to normalize aCGH data, apply local-LOWESS normalization to samples with many aberrations, or perform iterative segmentation and calling for genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHnormaliter.html
 ---
+
 
 # bioconductor-cghnormaliter
 

@@ -1,8 +1,9 @@
 ---
 name: hap-ibd
-description: The `hap-ibd` tool identifies genomic segments shared between individuals (IBD) or within a single individual (HBD) due to common ancestry.
+description: "hap-ibd identifies identity-by-descent (IBD) and homozygosity-by-descent (HBD) segments in phased genomic data. Use when user asks to detect shared genomic segments between individuals, analyze recent ancestry, or identify runs of homozygosity."
 homepage: https://github.com/browning-lab/hap-ibd
 ---
+
 
 # hap-ibd
 

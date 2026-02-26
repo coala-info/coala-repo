@@ -3,7 +3,7 @@
 ## beav
 
 ### Tool Description
-Binary Editor And Viewer (Note: The provided text is a system error log regarding a container build failure and does not contain the tool's help documentation or argument definitions).
+BEAV- Bacterial Element Annotation reVamped
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/beav:1.4.0--hdfd78af_1
@@ -18,55 +18,52 @@ Binary Editor And Viewer (Note: The provided text is a system error log regardin
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/beav:1.4.0--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:07263bacf6d1544c7a053545a4a0f9fc7793223d01536e8a00c2abd9691dce98: unpack entry: usr/local/bin/RNALalifold: unpack to regular file: short write: write /scratch/21813747/build-temp-2994359323/rootfs/usr/local/bin/RNALalifold: no space left on device
-```
+BEAV version 1.4.0
 
+--help
 
-## Metadata
-- **Skill**: generated
-
-## beav_beav_db
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build process due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/beav:1.4.0--hdfd78af_1
-- **Homepage**: https://github.com/weisberglab/beav
-- **Package**: https://anaconda.org/channels/bioconda/packages/beav/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/beav:1.4.0--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:07263bacf6d1544c7a053545a4a0f9fc7793223d01536e8a00c2abd9691dce98: unpack entry: usr/local/bin/RNALalifold: unpack to regular file: short write: write /scratch/21813747/build-temp-2346254875/rootfs/usr/local/bin/RNALalifold: no space left on device
-```
-
-## beav_beav_circos
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log indicating a failure to build or extract a container image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/beav:1.4.0--hdfd78af_1
-- **Homepage**: https://github.com/weisberglab/beav
-- **Package**: https://anaconda.org/channels/bioconda/packages/beav/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/beav:1.4.0--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:07263bacf6d1544c7a053545a4a0f9fc7793223d01536e8a00c2abd9691dce98: unpack entry: usr/local/bin/RNALalifold: unpack to regular file: short write: write /scratch/21813747/build-temp-1453331774/rootfs/usr/local/bin/RNALalifold: no space left on device
+usage: beav [--input INPUT] [--output OUTPUT_DIRECTORY] [--strain STRAIN] [--bakta_arguments BAKTA_ARGUMENTS] [--tiger_arguments TIGER_ARGUMENTS][--agrobacterium AGROBACTERIUM] [--skip_macsyfinder] [--skip_integronfinder][--skip_defensefinder] [--skip_tiger] [--skip_gapmind][--skip_dcscan-swa] [--skip_antismash] [--help] [--threads THREADS] [--genbank] [--continue]
+    BEAV- Bacterial Element Annotation reVamped
+    Input/Output:
+        --input, -i INPUT.fna
+                Input file in fasta nucleotide format (Required)
+        --output DIRECTORY
+                Output directory (default: current working directory)
+        --strain STRAIN
+                Strain name (default: input file prefix)
+        --bakta_arguments ARGUMENTS
+                Additional arguments specific to Bakta
+        --antismash_arguments ARGUMENTS
+                Additional arguments specific to antiSMASH (Default: "")
+        --tiger_blast_database DATABASE_PATH
+                Path to a reference genome blast database for TIGER2 ICE analysis (Required unless --skip_tiger is used)
+        --run_operon_email EMAIL
+                Run the Operon-mapper pipeline [remote]. Requires an email address for the operon-mapper webserver job
+    Options:
+        --agrobacterium
+                Agrobacterium specific tools that identify biovar/species group, Ti/Ri plasmid, T-DNA borders, virboxes and traboxes
+        --skip_macsyfinder
+                Skip detection and annotation of secretion systems
+        --skip_integronfinder
+                Skip detection and annotation of integrons
+        --skip_defensefinder
+                Skip detection and annotation of anti-phage defense systems
+        --skip_tiger
+                Skip detection and annotation of integrative conjugative elements (ICEs)
+        --skip_gapmind
+                Skip detection of amino acid biosynthesis and carbon metabolism pathways
+        --skip_dbscan-swa
+                Skip detection and annotation of prophage
+        --skip_antismash
+                Skip detection and annotation of biosynthetic gene clusters
+        --gbk
+                Use a GenBank file as input
+    General:
+        --help, -h
+                Show BEAV help message
+        --threads, -t
+                Number of CPU threads
+        --continue
+                Continue a previously started run
 ```
 

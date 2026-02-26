@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cosmic.67
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides access to the Catalogue Of Somatic Mutations In Cancer (COSMIC) version 67 data. Use when user asks to retrieve somatic mutation data, access cancer genomics records from COSMIC version 67, or analyze cancer-related genetic variants.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/COSMIC.67.html
 ---
+
 
 # bioconductor-cosmic.67
 

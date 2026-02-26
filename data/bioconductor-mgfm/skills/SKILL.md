@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgfm
-description: the package is available on all platforms; click for details.
+description: MGFM identifies marker genes from microarray gene expression data. Use when user asks to identify marker genes, find tissue-specific expression patterns, or detect markers in microarray datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/MGFM.html
 ---
+
 
 # bioconductor-mgfm
 

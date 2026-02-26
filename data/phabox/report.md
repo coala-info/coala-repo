@@ -1,12 +1,12 @@
 # phabox CWL Generation Report
 
-## phabox
+## phabox_phabox2
 
 ### Tool Description
-PhaBOX: a tool for phage host prediction and analysis. Note: The provided input text appears to be a container execution error log (no space left on device) rather than the tool's help documentation, so no arguments could be extracted.
+PhaBOX v2.1.13
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/phabox:2.1.13--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/phabox:2.1.13--pyhdfd78af_1
 - **Homepage**: https://github.com/KennthShang/PhaBOX
 - **Package**: https://anaconda.org/channels/bioconda/packages/phabox/overview
 - **Validation**: PASS
@@ -18,35 +18,73 @@ PhaBOX: a tool for phage host prediction and analysis. Note: The provided input 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phabox:2.1.13--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c7afdb9d945fc0ac17b022bb1de0f236590663f3f1de71802cb10ca4cbb70bd4: unpack entry: usr/local/conda-meta/perl-pathtools-3.75-pl5321hb9d3cd8_2: mkdirall: unpriv.mkdirall: mkdir /tmp/build-temp-1922046380/rootfs/usr/local/conda-meta/perl-pathtools-3.75-pl5321hb9d3cd8_2: no space left on device
-```
+[1m[96mPhaBOX v2.1.13[0m[0m                  
+               [1m[96mJiayu SHANG, Cheng Peng, and Yanni SUN Sep. 2025[0m[0m 
 
 
-## Metadata
-- **Skill**: generated
+[1mDocumentation, support and updates available at https://github.com/KennthShang/PhaBOX/wiki [0m
 
-## phabox_phabox2
 
-### Tool Description
-PhaBOX: A tool for phage analysis (Note: The provided help text contains only system error logs regarding a failed container build and does not list command-line arguments).
+Syntax: phabox2 [--help] [--task TASK] [--dbdir DBDIR] [--outpth OUTPTH] 
+                    [--contigs CONTIGS] [--proteins PROTEINS]
+                    [--midfolder MIDFOLDER] [--threads THREADS]
+                    [--len LEN] [--reject REJECT] [--aai AAI] [--skip N/Y]
+                    [--share SHARE] [--pcov PCOV]
+                    [--pident PIDENT] [--cov COV] 
+                    [--blast BLAST] [--sensitive SENSITIVE] 
+                    [--draw DRAW] [--marker MARKER [MARKER ...]]
+                    [--tree TREE] [--bfolder BFOLDER] [--magonly MAGONLY]
+                    [--mode MODE] [--ani ANI]
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phabox:2.1.13--pyhdfd78af_0
-- **Homepage**: https://github.com/KennthShang/PhaBOX
-- **Package**: https://anaconda.org/channels/bioconda/packages/phabox/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phabox:2.1.13--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c7afdb9d945fc0ac17b022bb1de0f236590663f3f1de71802cb10ca4cbb70bd4: unpack entry: usr/local/conda-meta/perl-parent-0.243-pl5321hd8ed1ab_0/licenses/Copying: unpack to regular file: short write: write /tmp/build-temp-1938527493/rootfs/usr/local/conda-meta/perl-parent-0.243-pl5321hd8ed1ab_0/licenses/Copying: no space left on device
+
+
+[93mGeneral options:[0m
+
+[94m--task[0m    
+    Select a program to run:
+    end_to_end    || Run phamer, phagcn, phatyp, cherry, and phavip once (default) 
+                     --skip Y can skip the phamer (deault N)
+    phamer        || Virus identification
+    phagcn        || Taxonomy classification
+    phatyp        || Lifestyle prediction
+    cherry        || Host prediction
+    phavip        || Protein annotation
+    contamination || Contamination/proviurs detection
+    votu          || vOTU grouping (ANI-based or AAI-based)
+    tree          || Build phylogenetic trees based on marker genes
+
+    [93mFor more options in specific tasks, please run:[0m
+        [93mphabox2 --task [task] -h[0m
+        [93mExample:[0m
+            [93mphabox2 --task phamer -h[0m
+            [93mphabox2 --task phagcn -h[0m
+    [93mend_to_end task will not show the options but use all the parameters[0m
+    [93mYou can also check the parameters via: https://github.com/KennthShang/PhaBOX/wiki/Command-line-options [0m
+            
+
+
+[94m--dbdir[0m 
+    Path of downloaded phabox2 database directory (required)
+
+[94m--outpth[0m         
+    Rootpth for the output folder (required)
+    All the results, including intermediate files and final predictions, are stored in this folder. 
+
+[94m--contigs[0m
+    Path of the input FASTA file (required)
+
+[94m--proteins[0m  
+    FASTA file of predicted proteins. (optional)
+
+[94m--midfolder[0m 
+    Midfolder for intermediate files. (optional)
+    This folder will be created within the --outpth to store intermediate files.
+
+[94m--len[0m
+    Filter the length of contigs || default: 3000
+    Contigs with length smaller than this value will not proceed 
+
+[94m--threads[0m   
+    Number of threads to use || default: all available threads
 ```
 

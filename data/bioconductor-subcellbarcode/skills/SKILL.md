@@ -1,8 +1,9 @@
 ---
 name: bioconductor-subcellbarcode
-description: the package is available on all platforms; click for details.
+description: SubCellBarCode provides tools for mapping and visualizing protein subcellular localization using mass spectrometry-based spatial proteomics data. Use when user asks to analyze spatial proteomics data, determine protein subcellular locations, or visualize protein distribution across cellular compartments.
 homepage: https://bioconductor.org/packages/release/bioc/html/SubCellBarCode.html
 ---
+
 
 # bioconductor-subcellbarcode
 

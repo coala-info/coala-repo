@@ -1,8 +1,9 @@
 ---
 name: bioconductor-densvis
-description: the package is available on all platforms; click for details.
+description: The densvis package implements density-preserving versions of t-SNE and UMAP to ensure cluster sizes in low-dimensional embeddings reflect their original high-dimensional data density. Use when user asks to perform density-preserving dimensionality reduction, run densne, or run densmap.
 homepage: https://bioconductor.org/packages/release/bioc/html/densvis.html
 ---
+
 
 # bioconductor-densvis
 

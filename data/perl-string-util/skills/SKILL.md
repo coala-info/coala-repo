@@ -1,8 +1,9 @@
 ---
 name: perl-string-util
-description: The `perl-string-util` skill leverages the `String::Util` module to simplify repetitive string handling tasks.
+description: The perl-string-util tool provides a collection of functions for common string processing tasks such as whitespace management, content validation, and data sanitization. Use when user asks to trim whitespace, collapse internal spaces, validate string content, perform safe equality comparisons, or sanitize strings for HTML and filenames.
 homepage: http://metacpan.org/pod/String::Util
 ---
+
 
 # perl-string-util
 

@@ -1,8 +1,9 @@
 ---
 name: minipolish
-description: Minipolish is a specialized wrapper designed to bridge the gap between the high-speed assembly of miniasm and the high-accuracy requirements of downstream analysis.
+description: Minipolish is a wrapper that refines raw miniasm assemblies by performing multiple rounds of Racon polishing while preserving GFA graph structure. Use when user asks to polish long-read assemblies, improve the accuracy of miniasm contigs, or generate polished GFA files for visualization in Bandage.
 homepage: https://github.com/rrwick/Minipolish
 ---
+
 
 # minipolish
 

@@ -1,8 +1,9 @@
 ---
 name: wordcloud
-description: wordcloud2.js is a specialized library designed to create "Wordle" style tag clouds on 2D canvases or via HTML elements.
+description: This tool generates visual representations of text data where word frequency or importance is shown by font size and orientation. Use when user asks to create a word cloud, generate a tag cloud, or visualize word frequency.
 homepage: https://github.com/timdream/wordcloud2.js
 ---
+
 
 # wordcloud
 

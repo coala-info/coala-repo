@@ -1,8 +1,9 @@
 ---
 name: emblmygff3
-description: The `emblmygff3` tool is an efficient converter designed to transform GFF3 annotation files and their corresponding FASTA sequences into the EMBL flat file format.
+description: emblmygff3 converts GFF3 annotation files and FASTA sequences into the EMBL flat file format required for ENA submissions. Use when user asks to convert GFF3 to EMBL format, prepare genomic data for ENA submission, or map genomic features to INSDC standards.
 homepage: https://github.com/NBISweden/EMBLmyGFF3
 ---
+
 
 # emblmygff3
 

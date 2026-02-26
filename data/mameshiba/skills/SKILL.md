@@ -1,8 +1,9 @@
 ---
 name: mameshiba
-description: mameshiba is a streamlined, minimal distribution of the Shiba computational framework.
+description: mameshiba is a lightweight distribution of the Shiba framework designed for the systematic identification of differential RNA splicing events. Use when user asks to identify differential splicing events, perform transcript assembly, or run the core Shiba splicing analysis pipeline.
 homepage: https://github.com/Sika-Zheng-Lab/Shiba
 ---
+
 
 # mameshiba
 

@@ -1,8 +1,9 @@
 ---
 name: pangu
-description: Pangu is a specialized star-typer designed specifically for the CYP2D6 gene, leveraging the unique length and accuracy of PacBio HiFi reads.
+description: Pangu is a star-typer that identifies complex structural variants and diplotypes for the CYP2D6 gene using PacBio HiFi reads. Use when user asks to call CYP2D6 star alleles, identify structural variants in the CYP2D6 locus, or generate PharmVar-compatible genotypes from HiFi data.
 homepage: https://github.com/PacificBiosciences/pangu
 ---
+
 
 # pangu
 

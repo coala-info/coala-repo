@@ -1,8 +1,9 @@
 ---
 name: radtk
-description: The `radtk` toolkit is a high-performance utility written in Rust for managing RAD files, which are frequently generated in single-cell transcriptomics workflows (such as those using alevin-fry).
+description: radtk is a high-performance toolkit for managing, concatenating, inspecting, and partitioning RAD files used in single-cell transcriptomics workflows. Use when user asks to merge multiple RAD files, convert binary RAD files to JSON for inspection, or split a RAD file into multiple parts.
 homepage: https://github.com/COMBINE-lab/radtk
 ---
+
 
 # radtk
 

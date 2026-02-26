@@ -2,10 +2,96 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: humid
 label: humid
-doc: "A tool for deduplicating UMI-tagged reads (Note: The provided text is a container
-  execution error log and does not contain usage information or argument definitions).\n
-  \nTool homepage: https://github.com/jfjlaros/HUMID"
-inputs: []
+doc: "Deduplicate a dataset.\n\nTool homepage: https://github.com/jfjlaros/HUMID"
+inputs:
+  - id: files
+    type:
+      type: array
+      items: File
+    doc: FastQ files
+    inputBinding:
+      position: 1
+  - id: allowed_mismatches
+    type:
+      - 'null'
+      - int
+    doc: allowed mismatches
+    default: 1
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: calculate_statistics
+    type:
+      - 'null'
+      - boolean
+    doc: calculate statistics
+    default: false
+    inputBinding:
+      position: 102
+      prefix: -s
+  - id: log_file
+    type:
+      - 'null'
+      - string
+    doc: log file name
+    default: /dev/stderr
+    inputBinding:
+      position: 102
+      prefix: -l
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    default: .
+    inputBinding:
+      position: 102
+      prefix: -d
+  - id: use_edit_distance
+    type:
+      - 'null'
+      - boolean
+    doc: use edit distance
+    default: false
+    inputBinding:
+      position: 102
+      prefix: -e
+  - id: use_maximum_clustering
+    type:
+      - 'null'
+      - boolean
+    doc: use maximum clustering method
+    default: false
+    inputBinding:
+      position: 102
+      prefix: -x
+  - id: word_length
+    type:
+      - 'null'
+      - int
+    doc: word length
+    default: 24
+    inputBinding:
+      position: 102
+      prefix: -n
+  - id: write_annotated_fastq
+    type:
+      - 'null'
+      - boolean
+    doc: write annotated FastQ files
+    default: false
+    inputBinding:
+      position: 102
+      prefix: -a
+  - id: write_deduplicated_fastq
+    type:
+      - 'null'
+      - boolean
+    doc: write deduplicated FastQ files
+    default: true
+    inputBinding:
+      position: 102
+      prefix: -q
 outputs:
   - id: stdout
     type: stdout

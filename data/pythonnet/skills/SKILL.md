@@ -1,8 +1,9 @@
 ---
 name: pythonnet
-description: Python for .NET (pythonnet) provides a bridge between the Python and .NET environments.
+description: Pythonnet provides a bridge for seamless integration between the Python and .NET environments. Use when user asks to call .NET classes from Python, load .NET assemblies, embed CPython into .NET applications, or manage interoperability between Python and .NET runtimes.
 homepage: https://github.com/pythonnet/pythonnet
 ---
+
 
 # pythonnet
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hippo
-description: the package is available on all platforms; click for details.
+description: bioconductor-hippo performs hierarchical clustering and feature selection on single-cell RNA-seq data using Poisson-based modeling. Use when user asks to diagnose cell heterogeneity, perform iterative hierarchical clustering, conduct feature selection based on zero-inflation, or visualize clustering results with UMAP and t-SNE.
 homepage: https://bioconductor.org/packages/release/bioc/html/HIPPO.html
 ---
+
 
 # bioconductor-hippo
 

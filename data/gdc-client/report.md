@@ -1,9 +1,9 @@
 # gdc-client CWL Generation Report
 
-## gdc-client
+## gdc-client_for
 
 ### Tool Description
-The Genomic Data Commons (GDC) Data Transfer Tool.
+The Genomic Data Commons Command Line Client
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1
@@ -18,11 +18,176 @@ The Genomic Data Commons (GDC) Data Transfer Tool.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1991176440: no space left on device
+usage: gdc-client [-h] [--version] {download,upload,settings} ...
+
+The Genomic Data Commons Command Line Client
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+commands:
+  {download,upload,settings}
+                        for more information, specify -h after a command
+    download            download data from the GDC
+    upload              upload data to the GDC
+    settings            display default settings
+
+gdc-client error: argument command: invalid choice: 'for' (choose from download, upload, settings)
 ```
 
 
-## Metadata
-- **Skill**: generated
+## gdc-client_download
+
+### Tool Description
+Download files from the GDC
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1
+- **Homepage**: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
+- **Package**: https://anaconda.org/channels/bioconda/packages/gdc-client/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gdc-client download [-h] [--debug] [--log-file LOG_FILE] [--color_off]
+                           [-t TOKEN_FILE] [-d DIR] [-s server]
+                           [--no-segment-md5sums] [--no-file-md5sum]
+                           [-n N_PROCESSES]
+                           [--http-chunk-size HTTP_CHUNK_SIZE]
+                           [--save-interval SAVE_INTERVAL] [-k]
+                           [--no-related-files] [--no-annotations]
+                           [--no-auto-retry] [--retry-amount RETRY_AMOUNT]
+                           [--wait-time WAIT_TIME] [--latest] [--config FILE]
+                           [-m MANIFEST]
+                           [file_id ...]
+
+positional arguments:
+  file_id               The GDC UUID of the file(s) to download
+
+options:
+  -h, --help            show this help message and exit
+  --debug               Enable debug logging. If a failure occurs, the program
+                        will stop.
+  --log-file LOG_FILE   Save logs to file. Amount logged affected by --debug
+  --color_off           Disable colored output
+  -t, --token-file TOKEN_FILE
+                        GDC API auth token file
+  -d, --dir DIR         Directory to download files to. Defaults to current
+                        directory
+  -s, --server server   The TCP server address server[:port]
+  --no-segment-md5sums  Do not calculate inbound segment md5sums and/or do not
+                        verify md5sums on restart
+  --no-file-md5sum      Do not verify file md5sum after download
+  -n, --n-processes N_PROCESSES
+                        Number of client connections.
+  --http-chunk-size, -c HTTP_CHUNK_SIZE
+                        Size in bytes of standard HTTP block size.
+  --save-interval SAVE_INTERVAL
+                        The number of chunks after which to flush state file.
+                        A lower save interval will result in more frequent
+                        printout but lower performance.
+  -k, --no-verify       Perform insecure SSL connection and transfer
+  --no-related-files    Do not download related files.
+  --no-annotations      Do not download annotations.
+  --no-auto-retry       Ask before retrying to download a file
+  --retry-amount RETRY_AMOUNT
+                        Number of times to retry a download
+  --wait-time WAIT_TIME
+                        Amount of seconds to wait before retrying
+  --latest              Download latest version of a file if it exists
+  --config FILE         Path to INI-type config file
+  -m, --manifest MANIFEST
+                        GDC download manifest file
+
+gdc-client error: ambiguous option: --h could match --help, --http-chunk-size
+```
+
+
+## gdc-client_upload
+
+### Tool Description
+Upload files to the GDC.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1
+- **Homepage**: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
+- **Package**: https://anaconda.org/channels/bioconda/packages/gdc-client/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gdc-client upload [-h] [--debug] [--log-file LOG_FILE] [--color_off]
+                         [-t TOKEN_FILE] [--project-id PROJECT_ID]
+                         [--path path] [--upload-id UPLOAD_ID] [--insecure]
+                         [--server SERVER] [--part-size PART_SIZE]
+                         [--upload-part-size UPLOAD_PART_SIZE]
+                         [-n N_PROCESSES] [--disable-multipart] [--abort]
+                         [--resume] [--delete] [--manifest MANIFEST]
+                         [--config FILE]
+                         [file_id ...]
+
+positional arguments:
+  file_id               The GDC UUID of the file(s) to upload
+
+options:
+  -h, --help            show this help message and exit
+  --debug               Enable debug logging. If a failure occurs, the program
+                        will stop.
+  --log-file LOG_FILE   Save logs to file. Amount logged affected by --debug
+  --color_off           Disable colored output
+  -t, --token-file TOKEN_FILE
+                        GDC API auth token file
+  --project-id, -p PROJECT_ID
+                        The project ID that owns the file
+  --path, -f path       directory path to find file
+  --upload-id, -u UPLOAD_ID
+                        Multipart upload id
+  --insecure, -k        Allow connections to server without certs
+  --server, -s SERVER   GDC API server address
+  --part-size PART_SIZE
+                        DEPRECATED in favor of [--upload-part-size]
+  --upload-part-size, -c UPLOAD_PART_SIZE
+                        Part size for multipart upload
+  -n, --n-processes N_PROCESSES
+                        Number of client connections
+  --disable-multipart   Disable multipart upload
+  --abort               Abort previous multipart upload
+  --resume, -r          Resume previous multipart upload
+  --delete              Delete an uploaded file
+  --manifest, -m MANIFEST
+                        Manifest which describes files to be uploaded
+  --config FILE         Path to INI-type config file
+
+gdc-client error: A token is required in order to upload.
+```
+
+
+## gdc-client_settings
+
+### Tool Description
+Manage gdc-client settings
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/gdc-client:2.3--pyhdfd78af_1
+- **Homepage**: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
+- **Package**: https://anaconda.org/channels/bioconda/packages/gdc-client/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: gdc-client settings [-h] [--config FILE] {download,upload} ...
+
+options:
+  -h, --help         show this help message and exit
+  --config FILE      Path to INI-type config file. See what settings will look
+                     like if a custom config file is used
+
+Settings to display:
+  {download,upload}
+    download         Display download settings
+    upload           Display upload settings
+
+gdc-client error: the following arguments are required: section
+```
+

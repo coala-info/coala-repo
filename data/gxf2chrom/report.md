@@ -3,7 +3,7 @@
 ## gxf2chrom
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is an error log indicating a failure to build or pull the container image due to insufficient disk space.
+Everythin in .chrom from GTF/GFF
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gxf2chrom:0.1.0--h9948957_1
@@ -18,11 +18,35 @@ The provided text does not contain help information for the tool; it is an error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gxf2chrom:0.1.0--h9948957_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3344072737: no space left on device
+2026-02-25T22:44:33.686Z INFO  [gxf2chrom] gxf2chrom v0.1.0
+2026-02-25T22:44:33.686Z WARN  [gxf2chrom] For any bug/issue contact: https://github.com/alejandrogzi/gxf2chrom
+Everythin in .chrom from GTF/GFF
+
+Usage: gxf2chrom [OPTIONS] --input <GXF> --output <CHROM>
+
+Options:
+  -i, --input <GXF>
+          ...
+          
+          This program converts GTF/GFF3 files to .chrom format. Start by providing the path to the GTF/GFF3 file with -i/--input file.gtf or -i/--input file.gff3.
+
+  -o, --output <CHROM>
+          Path to output .chrom file
+
+  -t, --threads <THREADS>
+          Number of threads
+          
+          [default: 20]
+
+  -f, --feature <FEATURE>
+          Feature to extract
+          
+          [default: protein_id]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

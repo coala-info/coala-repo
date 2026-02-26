@@ -1,9 +1,9 @@
 # fastan CWL Generation Report
 
-## fastan
+## fastan_FasTAN
 
 ### Tool Description
-The provided text does not contain help information for the tool 'fastan'. It contains error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to insufficient disk space.
+FasTAN: Fast Alignment of Nucleotide sequences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastan:0.5--h577a1d6_0
@@ -12,17 +12,19 @@ The provided text does not contain help information for the tool 'fastan'. It co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastan/overview
-- **Total Downloads**: 657
+- **Total Downloads**: 674
 - **Last updated**: 2025-11-29
 - **GitHub**: https://github.com/thegenemyers/FASTAN
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastan:0.5--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2718868359: no space left on device
+Usage: FasTAN [-vm] [-T(8)] <source:path>[<fa_extn>|<1_extn>] <target>[.1aln]
+
+           <fa_extn> = (.fa|.fna|.fasta)[.gz]
+           <1_extn>  = any valid 1-code sequence file type
+
+      -v: Verbose mode, output statistics as proceed.
+      -T: Number of threads to use.
+      -m: Compute models of each hit (not yet implemented).
 ```
 
-
-## Metadata
-- **Skill**: generated

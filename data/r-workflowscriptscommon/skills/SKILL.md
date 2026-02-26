@@ -1,8 +1,9 @@
 ---
 name: r-workflowscriptscommon
-description: R package workflowscriptscommon (documentation from project home).
+description: This package provides accessory functions and standardized utilities for developing R-based bioinformatics workflow scripts. Use when user asks to parse command-line arguments, handle input/output for Seurat or SingleCellExperiment objects, or manage environment-specific configurations in R pipelines.
 homepage: https://cran.r-project.org/web/packages/workflowscriptscommon/index.html
 ---
+
 
 # r-workflowscriptscommon
 

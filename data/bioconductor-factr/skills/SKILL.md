@@ -1,8 +1,9 @@
 ---
 name: bioconductor-factr
-description: the package is available on all platforms; click for details.
+description: This tool performs functional annotation of custom transcriptomes to predict protein-coding potential and functional consequences of novel isoforms. Use when user asks to process custom GTF files, construct CDS information, predict NMD sensitivity, identify protein domains, or visualize transcript structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/factR.html
 ---
+
 
 # bioconductor-factr
 

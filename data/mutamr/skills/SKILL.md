@@ -1,8 +1,9 @@
 ---
 name: mutamr
-description: mutamr is a specialized, lightweight tool designed for clinical and public health laboratories to identify variants associated with AMR.
+description: mutamr identifies antimicrobial resistance variants by processing raw paired-end fastq files into annotated VCF files. Use when user asks to identify AMR-associated variants, process paired-end reads against a reference genome, or detect mutations in Mycobacterium tuberculosis.
 homepage: https://github.com/MDU-PHL/mutamr
 ---
+
 
 # mutamr
 

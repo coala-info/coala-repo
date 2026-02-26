@@ -1,8 +1,9 @@
 ---
 name: sompy
-description: `sompy` is a lightweight, NumPy-based library for implementing Self-Organizing Maps (SOM).
+description: sompy is a NumPy-based library for implementing Self-Organizing Maps to project high-dimensional data onto a lower-dimensional grid. Use when user asks to initialize SOM models, train competitive learning algorithms, or visualize topological properties of input data.
 homepage: https://github.com/ttlg/sompy
 ---
+
 
 # sompy
 

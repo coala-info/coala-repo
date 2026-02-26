@@ -1,8 +1,9 @@
 ---
 name: semibin
-description: SemiBin (specifically the SemiBin2 command) is a deep-learning-based tool for metagenomic binning that utilizes Siamese neural networks.
+description: "SemiBin is a deep-learning-based tool used for metagenomic binning to cluster contigs into high-quality bins. Use when user asks to bin metagenomic contigs, perform single-sample or multi-sample binning, or process long-read sequencing data for binning."
 homepage: https://github.com/BigDataBiology/SemiBin
 ---
+
 
 # semibin
 

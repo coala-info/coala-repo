@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene10sttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Affymetrix Human Gene 1.0 ST Transcript Cluster platform. Use when user asks to map probe identifiers to gene symbols, Entrez IDs, GO terms, or KEGG pathways for this specific microarray.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene10sttranscriptcluster.db.html
 ---
+
 
 # bioconductor-hugene10sttranscriptcluster.db
 

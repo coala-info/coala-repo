@@ -3,28 +3,32 @@
 ## probalign
 
 ### Tool Description
-Probalign is a tool for multiple sequence alignment. (Note: The provided text appears to be a container build error log rather than help text, so no arguments could be extracted.)
+[Errno 2] No such file or directory: 'probalign'; fallback failed: [Errno 2] No such file or directory: 'probalign'
 
 ### Metadata
-- **Docker Image**: biocontainers/probalign:v1.4-8-deb_cv1
+- **Docker Image**: Not found
 - **Homepage**: https://github.com/ProbAlign/ProbAlign
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/probalign/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/ProbAlign/ProbAlign
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'probalign'; fallback failed: [Errno 2] No such file or directory: 'probalign'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'probalign'; fallback failed: [Errno 2] No such file or directory: 'probalign'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/probalign:v1.4-8-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

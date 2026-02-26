@@ -1,8 +1,9 @@
 ---
 name: genera
-description: GenEra (Genomic Evolutionary Rate Analysis) is a bioinformatics tool designed to identify gene-family founder events.
+description: GenEra identifies gene-family founder events by searching for homologs across databases and mapping results to the NCBI Taxonomy to determine gene ages. Use when user asks to assign phylostrata to protein sequences, identify orphan genes, or perform genomic evolutionary rate analysis.
 homepage: https://github.com/josuebarrera/GenEra
 ---
+
 
 # genera
 

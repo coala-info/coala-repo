@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ygs98frmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides frozen robust multi-array analysis vectors for the Affymetrix Yeast Genome S98 platform. Use when user asks to perform fRMA normalization or preprocess microarray data for the Yeast Genome S98 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ygs98frmavecs.html
 ---
+
 
 # bioconductor-ygs98frmavecs
 

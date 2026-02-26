@@ -1,8 +1,9 @@
 ---
 name: pyfastx
-description: pyfastx is a lightweight Python C extension designed for efficient parsing and random access of plain or gzipped FASTA and FASTQ files.
+description: pyfastx is a lightweight Python extension for efficient parsing, random access, and manipulation of FASTA and FASTQ files. Use when user asks to generate sequence statistics, extract subsequences, split files, convert FASTQ to FASTA, or randomly sample reads.
 homepage: https://github.com/lmdu/pyfastx
 ---
+
 
 # pyfastx
 

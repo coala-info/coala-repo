@@ -1,8 +1,9 @@
 ---
 name: bioconductor-abaenrichment
-description: The package ABAEnrichment is designed to test for enrichment of user defined candidate genes in the set of expressed genes in different human brain regions. The core function 'aba_enrich' integrates the expression of the candidate gene set (averaged across donors) and the structural information of the brain using an ontology, both provided by the Allen Brain Atlas project. 'aba_enrich' interfaces the ontology enrichment software FUNC to perform the statistical analyses. Additional functions provided in this package like 'get_expression' and 'plot_expression' facilitate exploring the expression data. From version 1.3.5 onwards genomic regions can be provided as input, too; and from version 1.5.9 onwards the function 'get_annotated_genes' offers an easy way to obtain annotations of genes to enriched or user-defined brain regions.
+description: This tool performs gene expression enrichment analysis in human brain regions using data from the Allen Brain Atlas. Use when user asks to test if a set of genes is specifically expressed in certain brain structures, perform enrichment analysis across developmental stages, or retrieve brain-specific expression data.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ABAEnrichment.html
 ---
+
 
 # bioconductor-abaenrichment
 

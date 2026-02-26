@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tidytof
-description: the package is available on all platforms; click for details.
+description: tidytof provides a tidy framework for analyzing and visualizing high-dimensional cytometry data in R. Use when user asks to preprocess CyTOF data, perform quality control on cytometry experiments, or analyze single-cell protein expression datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/tidytof.html
 ---
+
 
 # bioconductor-tidytof
 

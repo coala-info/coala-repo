@@ -3,7 +3,7 @@
 ## idba_subasm
 
 ### Tool Description
-The provided help text contains only system error messages (environment variable warnings and a 'no space left on device' fatal error) and does not contain the actual usage information or argument descriptions for the tool idba_subasm.
+Iterative De Bruijn Graph Assembler for assembling sub-reads.
 
 ### Metadata
 - **Docker Image**: biocontainers/idba:v1.1.3-3-deb_cv1
@@ -18,29 +18,17 @@ The provided help text contains only system error messages (environment variable
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/idba:v1.1.3-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3824130937: no space left on device
-```
+Unable to find image 'biocontainers/idba:v1.1.3-3-deb_cv1' locally
+v1.1.3-3-deb_cv1: Pulling from biocontainers/idba
+478cd0aa93c0: Already exists
+94d6a239eb0e: Already exists
+e8e87313e9cb: Already exists
+1badce2e48be: Already exists
+732b6ad56c57: Already exists
+f464fdba1cc8: Already exists
+a7a1d7c3b5ce: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3920673700: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## idba_subasm_fq2fa
-
-### Tool Description
-A tool within the IDBA suite, likely used for converting FASTQ files to FASTA format for sub-assembly.
-
-### Metadata
-- **Docker Image**: biocontainers/idba:v1.1.3-3-deb_cv1
-- **Homepage**: https://github.com/abishara/idba
-- **Package**: https://anaconda.org/channels/bioconda/packages/idba_subasm/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/idba:v1.1.3-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1712960342: no space left on device
+Run 'docker run --help' for more information
 ```
 

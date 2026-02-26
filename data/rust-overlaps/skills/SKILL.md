@@ -1,8 +1,9 @@
 ---
 name: rust-overlaps
-description: `rust-overlaps` is a high-performance command-line utility designed to solve the Approximate Suffix-Prefix Overlap Problem (ASPOP).
+description: rust-overlaps identifies approximate suffix-prefix overlaps between sequences for constructing overlap graphs in de novo assembly. Use when user asks to find sequence overlaps, solve the approximate suffix-prefix overlap problem, or identify matches between sequence suffixes and prefixes with a specific error rate.
 homepage: https://github.com/jbaaijens/rust-overlaps
 ---
+
 
 # rust-overlaps
 

@@ -3,7 +3,7 @@
 ## flock
 
 ### Tool Description
-The provided text does not contain help information for the tool 'flock'. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or pull the container image due to insufficient disk space.
+Manage file locks from shell scripts
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/flock:1.0--0
@@ -18,9 +18,21 @@ The provided text does not contain help information for the tool 'flock'. It app
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/flock:1.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2292376900: no space left on device
+Unable to find image 'quay.io/biocontainers/flock:1.0--0' locally
+1.0--0: Pulling from biocontainers/flock
+a3ed95caeb02: Already exists
+77c6c00e8b61: Already exists
+3aaade50789a: Already exists
+00cf8b9f3d2a: Already exists
+7ff999a2256f: Already exists
+d2ba336f2e44: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+7b35bb3c2501: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3490585856: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

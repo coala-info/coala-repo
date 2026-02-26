@@ -1,8 +1,9 @@
 ---
 name: biomaj
-description: BioMAJ (BIOlogie Mise A Jour) is a specialized workflow engine designed to maintain local mirrors of large biological datasets.
+description: BioMAJ is a workflow engine designed to automate the synchronization, update, and post-processing of local mirrors for biological datasets. Use when user asks to maintain local databank mirrors, automate biological data downloads, or manage the lifecycle of public database updates.
 homepage: https://github.com/genouest/biomaj
 ---
+
 
 # biomaj
 

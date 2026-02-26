@@ -1,8 +1,9 @@
 ---
 name: ucsc-axttomaf
-description: The `axtToMaf` utility is a specialized tool within the UCSC Genome Browser "kent" source tree designed to transform pairwise alignment data.
+description: This tool converts pairwise alignment data from AXT format to MAF format. Use when user asks to convert AXT files to MAF files or transform pairwise alignment data.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-axttomaf
 

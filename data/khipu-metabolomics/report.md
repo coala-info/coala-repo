@@ -1,9 +1,9 @@
 # khipu-metabolomics CWL Generation Report
 
-## khipu-metabolomics
+## khipu-metabolomics_khipu
 
 ### Tool Description
-A tool for untargeted metabolomics data pre-processing and analysis. (Note: The provided input text was a system error message regarding container execution and did not contain command-line argument definitions.)
+annotating metabolomics features to empCpds
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/khipu-metabolomics:2.0.4--pyhdfd78af_0
@@ -18,11 +18,25 @@ A tool for untargeted metabolomics data pre-processing and analysis. (Note: The 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/khipu-metabolomics:2.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1122533279: no space left on device
+~~~~~~~ Hello from Khipu (2.0.4) ~~~~~~~~~
+
+usage: khipu [-h] [-v] [-m MODE] [--ppm PPM] [--rtol RTOL] [-i INPUT]
+             [-s START] [-e END] [-o OUTPUT] [-r]
+
+khipu, annotating metabolomics features to empCpds
+
+options:
+  -h, --help           show this help message and exit
+  -v, --version        print version and exit
+  -m, --mode MODE      mode of ionization, pos or neg
+  --ppm PPM            mass precision in ppm (part per million), same as
+                       mz_tolerance_ppm
+  --rtol RTOL          tolerance of retention time match, arbitrary unit
+                       dependent on preprocessing tool
+  -i, --input INPUT    input file as feature table
+  -s, --start START    start column for intensity in input table
+  -e, --end END        end column for intensity in input table
+  -o, --output OUTPUT  prefix of output files
+  -r, --regular        toggle on if there is no isotopic labeled sample
 ```
 
-
-## Metadata
-- **Skill**: generated

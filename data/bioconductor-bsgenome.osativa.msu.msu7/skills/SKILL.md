@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.osativa.msu.msu7
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Oryza sativa (Rice) based on the MSU7 Genome Release as a BSgenome object. Use when user asks to access rice chromosome sequences, extract genomic subsequences, calculate nucleotide frequencies, or perform genome-wide motif searching in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Osativa.MSU.MSU7.html
 ---
+
 
 # bioconductor-bsgenome.osativa.msu.msu7
 

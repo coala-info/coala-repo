@@ -1,8 +1,9 @@
 ---
 name: autobigs-engine
-description: The autobigs-engine is a specialized bioinformatics tool designed for high-throughput MLST profiling.
+description: The autobigs-engine is a bioinformatics tool designed for high-throughput MLST profiling and genomic sequence comparison against disease databases. Use when user asks to determine sequence types, identify allelic profiles, update MLST schemas, or perform batch genomic surveillance.
 homepage: https://github.com/RealYHD/autoBIGS.engine
 ---
+
 
 # autobigs-engine
 

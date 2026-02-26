@@ -1,8 +1,9 @@
 ---
 name: perl-aceperl
-description: AcePerl (Ace.pm) is a specialized Perl interface for ACEDB, an object-oriented database system widely used in bioinformatics.
+description: AcePerl provides a specialized Perl interface for interacting with ACEDB object-oriented databases. Use when user asks to connect to local or remote ACEDB instances, retrieve genomic objects, or write Perl scripts for managing biological data.
 homepage: https://github.com/WormBase/AcePerl
 ---
+
 
 # perl-aceperl
 

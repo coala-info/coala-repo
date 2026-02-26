@@ -1,8 +1,9 @@
 ---
 name: perl-pod-eventual
-description: The `perl-pod-eventual` tool (based on the `Pod::Eventual` Perl library) provides a low-level, event-based parser for POD documents.
+description: This tool provides an event-based parser that treats POD documents as a stream of commands, text blocks, and non-POD code. Use when user asks to parse POD documentation line-by-line, extract specific POD headers, or filter documentation from Perl source code.
 homepage: https://github.com/rjbs/Pod-Eventual
 ---
+
 
 # perl-pod-eventual
 

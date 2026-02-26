@@ -3,7 +3,7 @@
 ## maxquant
 
 ### Tool Description
-MaxQuant is a quantitative proteomics software package. (Note: The provided help text contains only system error messages regarding container execution and does not list command-line arguments.)
+Complete run of an existing mqpar.xml file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1
@@ -18,29 +18,50 @@ MaxQuant is a quantitative proteomics software package. (Note: The provided help
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1563823399: no space left on device
-```
+MaxQuantCmd 2.0.3.0
+Copyright © Max-Planck-Institute of Biochemistry 2021
 
+ERROR(S):
+  Option 'h' is unknown.
+  Option 'e, partial-processing-end' is defined with a bad format.
+  A required value not bound to option name is missing.
+USAGE:
+Complete run of an existing mqpar.xml file:
+  MaxQuantCmd.exe mqpar.xml
+Print job ids/names table:
+  MaxQuantCmd.exe --dryrun mqpar.xml
+Rerunning second and third parts of the analysis:
+  MaxQuantCmd.exe --partial-processing-end=3 --partial-processing=1 mqpar.xml
+Changing folder location for fasta files and raw files for a given mqpar file:
+  MaxQuantCmd.exe --changeFolder="<new mqpar.xml>" "<new folder with fasta
+  files>" "<new folder with raw files>" mqpar.xml
 
-## Metadata
-- **Skill**: generated
+  -p, --partial-processing        (Default: 1) Start processing from the
+                                  specified job id. Can be used to continue/redo
+                                  parts of the processing. Job id's can be
+                                  obtained in the MaxQuant GUI partial
+                                  processing view or from --dryrun option. The
+                                  first job id is 1.
 
-## maxquant_MaxQuantCmd.exe
+  -e, --partial-processing-end    (Default: 2147483647) Finish processing at the
+                                  specified job id. 1-based indexing is used.
 
-### Tool Description
-MaxQuant command line tool for quantitative proteomics research.
+  -n, --dryrun                    Print job ids and job names table.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1
-- **Homepage**: http://www.coxdocs.org/doku.php?id=maxquant:start
-- **Package**: https://anaconda.org/channels/bioconda/packages/maxquant/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/maxquant:2.0.3.0--py310hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1067483090: no space left on device
+  -c, --create                    Create a template of MaxQuant parameter file.
+
+  -f, --changeFolder              Change folder location for fasta and raw files
+                                  (presuming all raw files are in the same
+                                  folder). Expecting three locations separated
+                                  by space. 1) path to the mqpar file 2) path to
+                                  the fasta file(s) 3) path to the raw files.
+
+  --help                          Display this help screen.
+
+  --version                       Display version information.
+
+  mqpar (pos. 0)                  Required. Path to the mqpar.xml file. If you
+                                  do not have an mqpar.xml, you can generate one
+                                  using the MaxQuant GUI or use --create option.
 ```
 

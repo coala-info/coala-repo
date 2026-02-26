@@ -1,8 +1,9 @@
 ---
 name: metameta
-description: MetaMeta is a pipeline designed to improve the accuracy of taxonomic profiling by integrating the outputs of several established metagenome analysis tools.
+description: MetaMeta is a pipeline that integrates multiple metagenome analysis tools to improve taxonomic profiling accuracy through a consensus approach. Use when user asks to perform taxonomic profiling, run multiple metagenome profilers simultaneously, or merge classification results from different tools.
 homepage: https://github.com/pirovc/metameta/
 ---
+
 
 # metameta
 

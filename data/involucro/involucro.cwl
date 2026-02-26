@@ -2,9 +2,80 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: involucro
 label: involucro
-doc: "Involucro is a tool used for orchestrating and wrapping Docker builds, often
-  used in bioinformatics containerization workflows.\n\nTool homepage: https://github.com/involucro/involucro"
-inputs: []
+doc: "v1.1.2\n\nTool homepage: https://github.com/involucro/involucro"
+inputs:
+  - id: control_file
+    type:
+      - 'null'
+      - string
+    doc: Set the control file
+    default: invfile.lua
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: docker_url
+    type:
+      - 'null'
+      - string
+    doc: Set the URL of the Docker instance
+    default: unix:///var/run/docker.sock
+    inputBinding:
+      position: 101
+      prefix: --host
+  - id: evaluate_script
+    type:
+      - 'null'
+      - string
+    doc: Evaluate the given script directly, not evaluating the control file
+    inputBinding:
+      position: 101
+      prefix: -e
+  - id: set_vars
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Used as KEY=VALUE, makes VAR[KEY] available with value VALUE in Lua 
+      script
+    default: []
+    inputBinding:
+      position: 101
+      prefix: --set
+  - id: tasks
+    type:
+      - 'null'
+      - boolean
+    doc: Shorthand for --tasks
+    inputBinding:
+      position: 101
+      prefix: --tasks
+  - id: verbosity
+    type:
+      - 'null'
+      - int
+    doc: Set verbosity, 3 logs everything, 2 shows standard output
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -v
+  - id: working_dir
+    type:
+      - 'null'
+      - string
+    doc: Set working dir, being the base for all operations. Also settable via 
+      environment variable $INVOLUCRO_WORKDIR
+    default: .
+    inputBinding:
+      position: 101
+      prefix: -w
+  - id: wrap_task
+    type:
+      - 'null'
+      - string
+    doc: Execute encoded wrap task
+    inputBinding:
+      position: 101
+      prefix: -wrap
 outputs:
   - id: stdout
     type: stdout

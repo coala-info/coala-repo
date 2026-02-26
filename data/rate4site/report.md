@@ -3,7 +3,7 @@
 ## rate4site
 
 ### Tool Description
-Rate4Site is a tool for calculating the relative evolutionary rate at each site for a given multiple sequence alignment (MSA). Note: The provided help text contains only container runtime error messages and does not list specific tool arguments.
+Rate4Site calculates the relative evolutionary rate of each site in a multiple sequence alignment (MSA) using a maximum likelihood or an empirical Bayesian approach.
 
 ### Metadata
 - **Docker Image**: biocontainers/rate4site:v3.0.0-6-deb_cv1
@@ -18,11 +18,18 @@ Rate4Site is a tool for calculating the relative evolutionary rate at each site 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/rate4site:v3.0.0-6-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'biocontainers/rate4site:v3.0.0-6-deb_cv1' locally
+v3.0.0-6-deb_cv1: Pulling from biocontainers/rate4site
+478cd0aa93c0: Already exists
+94d6a239eb0e: Already exists
+e8e87313e9cb: Already exists
+1badce2e48be: Already exists
+732b6ad56c57: Already exists
+f464fdba1cc8: Already exists
+bfe251cd7793: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3204011157: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

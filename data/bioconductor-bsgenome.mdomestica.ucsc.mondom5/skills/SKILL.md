@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mdomestica.ucsc.mondom5
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for the Monodelphis domestica (gray short-tailed opossum) based on the UCSC monDom5 assembly. Use when user asks to access opossum genomic sequences, extract specific chromosome sub-sequences, or perform genome-wide motif searching and sequence analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mdomestica.UCSC.monDom5.html
 ---
+
 
 # bioconductor-bsgenome.mdomestica.ucsc.mondom5
 

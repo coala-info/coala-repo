@@ -1,8 +1,9 @@
 ---
 name: cansnper
-description: CanSNPer is a specialized tool for the hierarchical genotype classification of clonal bacterial pathogens.
+description: CanSNPer performs hierarchical genotype classification of bacterial pathogens by identifying canonical Single Nucleotide Polymorphisms in query sequences. Use when user asks to classify query FASTA sequences, map SNPs to a phylogenetic structure, generate visual phylogenetic trees, or manage a local SNP database.
 homepage: https://github.com/adrlar/CanSNPer/
 ---
+
 
 # cansnper
 

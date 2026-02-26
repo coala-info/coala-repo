@@ -1,8 +1,9 @@
 ---
 name: r-seurat-scripts
-description: R package seurat-scripts (documentation from project home).
+description: This package provides a collection of R scripts that wrap Seurat functions into modular steps for reproducible single-cell analysis pipelines and data format conversion. Use when user asks to load 10X data, filter cells, normalize data, perform dimensionality reduction, identify clusters, or convert between Seurat, AnnData, Loom, and SingleCellExperiment formats.
 homepage: https://cran.r-project.org/web/packages/seurat-scripts/index.html
 ---
+
 
 # r-seurat-scripts
 

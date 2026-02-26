@@ -1,8 +1,9 @@
 ---
 name: r-sbpiper
-description: Skill for using the CRAN R package r-sbpiper.
+description: The r-sbpiper tool provides functions to analyze and visualize repetitive parameter estimations and simulations for mathematical models. Use when user asks to calculate parameter density statistics, perform PCA on best fits, generate profile likelihood estimations, or visualize deterministic and stochastic time-course simulations.
 homepage: https://cran.r-project.org/web/packages/sbpiper/index.html
 ---
+
 
 # r-sbpiper
 

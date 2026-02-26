@@ -1,8 +1,9 @@
 ---
 name: gem3-mapper
-description: The gem3-mapper skill provides procedural knowledge for using the GEM3 suite to perform fast and sensitive genomic read mapping.
+description: gem3-mapper performs fast and sensitive genomic read mapping by aligning sequences against large reference genomes using a custom FM-Index. Use when user asks to index a reference genome, map single-end or paired-end reads, or perform high-throughput sequence alignment with GPU acceleration.
 homepage: https://github.com/smarco/gem3-mapper
 ---
+
 
 # gem3-mapper
 

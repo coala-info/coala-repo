@@ -1,8 +1,9 @@
 ---
 name: perl-test-utf8
-description: The `Test::utf8` Perl module provides a set of handy functions for testing Unicode and UTF-8 strings within a standard `Test::More` environment.
+description: The perl-test-utf8 tool provides functions for testing the UTF-8 state and validity of strings within a Perl testing environment. Use when user asks to check if a string has the UTF-8 flag set, verify valid UTF-8 byte sequences, or detect double-encoding and mojibake in Perl scripts.
 homepage: https://github.com/2shortplanks/Test-utf8/tree
 ---
+
 
 # perl-test-utf8
 

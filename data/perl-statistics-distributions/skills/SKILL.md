@@ -1,8 +1,9 @@
 ---
 name: perl-statistics-distributions
-description: This skill provides guidance on using the Statistics::Descriptive Perl module to analyze numerical datasets.
+description: This Perl module performs basic and advanced statistical analysis on numerical datasets using memory-efficient or full-data modes. Use when user asks to calculate mean, median, variance, or percentiles from data using Perl.
 homepage: https://github.com/shlomif/perl-Statistics-Descriptive
 ---
+
 
 # perl-statistics-distributions
 

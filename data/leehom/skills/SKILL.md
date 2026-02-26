@@ -1,8 +1,9 @@
 ---
 name: leehom
-description: leehom is a specialized bioinformatics tool designed for the reconstruction of DNA fragments from Illumina sequencing data.
+description: leehom reconstructs DNA fragments by stripping sequencing adapters and merging overlapping paired-end reads using a Bayesian algorithm. Use when user asks to strip sequencing adapters, merge overlapping paired-end reads, reconstruct DNA fragments from ancient DNA, or automatically infer adapter sequences.
 homepage: https://grenaud.github.io/leeHom/
 ---
+
 
 # leehom
 

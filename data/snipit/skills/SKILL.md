@@ -1,8 +1,9 @@
 ---
 name: snipit
-description: `snipit` is a specialized tool for summarizing and visualizing genetic variation across multiple sequences.
+description: "snipit summarizes and visualizes genetic variation by plotting mutations in nucleotide or protein sequences relative to a reference. Use when user asks to visualize SNPs, create mutation plots from alignments, highlight specific genomic regions, or perform recombination analysis."
 homepage: https://github.com/aineniamh/snipit
 ---
+
 
 # snipit
 

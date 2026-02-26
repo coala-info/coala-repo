@@ -1,11 +1,96 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: taxator
+baseCommand: taxator-tk_taxator
 label: taxator-tk_taxator
-doc: "Taxonomic sequence classifier (Note: The provided text contains system logs
-  and a fatal error rather than help documentation; therefore, no arguments could
-  be extracted).\n\nTool homepage: https://github.com/fungs/taxator-tk"
-inputs: []
+doc: "Specify a taxonomy mapping file for the reference sequence identifiers\n\nTool
+  homepage: https://github.com/fungs/taxator-tk"
+inputs:
+  - id: advanced_options
+    type:
+      - 'null'
+      - boolean
+    doc: show advanced program options
+    inputBinding:
+      position: 101
+      prefix: --advanced-options
+  - id: algorithm
+    type:
+      - 'null'
+      - string
+    doc: set the algorithm that is used to predict taxonomic ids from alignments
+    default: rpa
+    inputBinding:
+      position: 101
+      prefix: --algorithm
+  - id: citation
+    type:
+      - 'null'
+      - boolean
+    doc: show citation info
+    inputBinding:
+      position: 101
+      prefix: --citation
+  - id: logfile
+    type:
+      - 'null'
+      - File
+    doc: specify name of file for logging (appending lines)
+    default: /dev/null
+    inputBinding:
+      position: 101
+      prefix: --logfile
+  - id: processors
+    type:
+      - 'null'
+      - int
+    doc: sets number of threads, number > 2 will heavily profit from multi-core 
+      architectures, set to 0 for max. performance
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --processors
+  - id: query_sequences
+    type:
+      - 'null'
+      - File
+    doc: query sequences FASTA
+    inputBinding:
+      position: 101
+      prefix: --query-sequences
+  - id: query_sequences_index
+    type:
+      - 'null'
+      - File
+    doc: query sequences FASTA index, for out-of-memory operation; is created if
+      not existing
+    inputBinding:
+      position: 101
+      prefix: --query-sequences-index
+  - id: ref_sequences
+    type:
+      - 'null'
+      - File
+    doc: reference sequences FASTA
+    inputBinding:
+      position: 101
+      prefix: --ref-sequences
+  - id: ref_sequences_index
+    type:
+      - 'null'
+      - File
+    doc: FASTA file index, for out-of-memory operation; is created if not 
+      existing
+    inputBinding:
+      position: 101
+      prefix: --ref-sequences-index
+  - id: seqid_taxid_mapping
+    type:
+      - 'null'
+      - File
+    doc: filename of seqid->taxid mapping for reference
+    inputBinding:
+      position: 101
+      prefix: --seqid-taxid-mapping
 outputs:
   - id: stdout
     type: stdout

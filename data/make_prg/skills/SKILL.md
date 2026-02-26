@@ -1,8 +1,9 @@
 ---
 name: make_prg
-description: `make_prg` is a specialized bioinformatics tool designed to transform linear sequence alignments into graph-based reference structures.
+description: "make_prg transforms linear sequence alignments into graph-based reference structures for pangenome-aware mapping and variant calling. Use when user asks to create a PRG from multiple sequence alignments, update an existing graph with new sequence data, or generate GFA files for genetic diversity representation."
 homepage: https://github.com/rmcolq/make_prg
 ---
+
 
 # make_prg
 

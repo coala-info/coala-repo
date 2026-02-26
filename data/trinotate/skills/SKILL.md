@@ -1,8 +1,9 @@
 ---
 name: trinotate
-description: Trinotate is a comprehensive framework for functional annotation of transcriptomic data, specifically optimized for non-model organisms where a reference genome may be unavailable.
+description: Trinotate provides a comprehensive framework for functional annotation of transcriptomic data. Use when user asks to annotate transcriptomes, assign biological context to sequences, perform homology searches, identify protein domains, or generate annotation reports.
 homepage: https://trinotate.github.io/
 ---
+
 
 # trinotate
 

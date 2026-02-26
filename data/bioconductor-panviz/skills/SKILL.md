@@ -1,8 +1,9 @@
 ---
 name: bioconductor-panviz
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: PanViz provides interactive visualization of pangenome data to explore gene presence and absence across multiple genomes. Use when user asks to visualize pangenomes, analyze gene presence-absence patterns, or explore genomic diversity across multiple strains.
 homepage: https://bioconductor.org/packages/3.16/bioc/html/PanViz.html
 ---
+
 
 # bioconductor-panviz
 

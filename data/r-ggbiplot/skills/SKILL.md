@@ -1,8 +1,9 @@
 ---
 name: r-ggbiplot
-description: "A 'ggplot2' based implementation of biplots, giving a representation of a dataset in     a two dimensional space accounting for the greatest variance, together with variable vectors     showing how the data variables relate to this space. It provides a      replacement for stats::biplot(), but with many enhancements to control the analysis and     graphical display. It implements      biplot and scree plot methods which can be used with the results of prcomp(), princomp(),     FactoMineR::PCA(), ade4::dudi.pca() or MASS::lda() and can be customized using 'ggplot2' techniques.</p>"
+description: This tool creates ggplot2-based biplots and scree plots to visualize multivariate data from PCA or LDA objects. Use when user asks to create biplots, visualize principal component analysis results, generate scree plots, or plot linear discriminant analysis objects.
 homepage: https://cran.r-project.org/web/packages/ggbiplot/index.html
 ---
+
 
 # r-ggbiplot
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-debrowser
-description: the package is available on all platforms; click for details.
+description: Bioconductor-debrowser provides an interactive Shiny-based interface and R functions for performing differential expression analysis and data visualization. Use when user asks to perform RNA-Seq data normalization, filter low counts, correct batch effects, conduct differential expression analysis using DESeq2, edgeR, or limma, and generate interactive plots like heatmaps, volcano plots, or GO/KEGG enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/debrowser.html
 ---
+
 
 # bioconductor-debrowser
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multimir
-description: the package is available on all platforms; click for details.
+description: multiMiR is an R package that integrates multiple databases to retrieve miRNA-target interactions and their associations with diseases and drugs. Use when user asks to retrieve miRNA-target interactions, find validated or predicted targets, or search for miRNA-disease and miRNA-drug associations.
 homepage: https://bioconductor.org/packages/release/bioc/html/multiMiR.html
 ---
+
 
 # bioconductor-multimir
 

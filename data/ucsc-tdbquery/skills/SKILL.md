@@ -1,8 +1,9 @@
 ---
 name: ucsc-tdbquery
-description: The `ucsc-tdbquery` tool (often invoked as `tdbQuery`) provides a command-line interface to interact with the UCSC Genome Browser's `trackDb` (Track Database) system.
+description: The ucsc-tdbquery tool queries and filters metadata from the UCSC Genome Browser's track database. Use when user asks to select track fields, filter tracks by type or keywords, or extract track configuration parameters.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-tdbquery
 

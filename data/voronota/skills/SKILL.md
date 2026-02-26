@@ -1,8 +1,9 @@
 ---
 name: voronota
-description: Voronota is a specialized software suite designed for the geometric analysis of biological macromolecules.
+description: Voronota performs geometric analysis of biological macromolecules using Voronoi diagrams. Use when user asks to convert atomic coordinates, calculate Voronoi diagrams, calculate inter-atom contacts, perform structural queries, assess model quality, or analyze membrane proteins.
 homepage: https://www.voronota.com/
 ---
+
 
 # voronota
 

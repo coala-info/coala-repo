@@ -1,8 +1,9 @@
 ---
 name: xtea
-description: xTea (comprehensive transposable element analyzer) is a tool designed to detect non-reference transposable element insertions.
+description: xTea detects non-reference transposable element insertions. Use when user asks to detect non-reference transposable element insertions, identify germline TE insertions, identify somatic TE insertions, or analyze TE insertions using hybrid data.
 homepage: https://github.com/parklab/xTea
 ---
+
 
 # xtea
 

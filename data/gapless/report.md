@@ -1,9 +1,9 @@
 # gapless CWL Generation Report
 
-## gapless
+## gapless_gapless.sh
 
 ### Tool Description
-A tool for closing gaps in genome assemblies (Note: The provided text contains only container runtime error messages and no help documentation. No arguments could be extracted.)
+Improves input assembly with reads in {long_reads}.fq using gapless, minimap2, racon and seqtk
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gapless:0.4--hdfd78af_0
@@ -18,46 +18,46 @@ A tool for closing gaps in genome assemblies (Note: The provided text contains o
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gapless:0.4--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4214416367: no space left on device
+Usage: gapless.sh [OPTIONS] {long_reads}.fq
+Improves input assembly with reads in {long_reads}.fq using gapless, minimap2, racon and seqtk
+  -h -?                    Display this help and exit
+  -i [STRING]              Input assembly (fasta)
+  -j [INT]                 Number of threads [4]
+  -n [INT]                 Number of iterations [3]
+  -o [STRING]              Output directory (improved assembly is written to gapless.fa in this directory) [gapless_run]
+  -r                       Restart at the start iteration and overwrite instead of incorporat already present files
+  -s [INT]                 Start iteration (Previous runs must be present in output directory) [1]
+  -t [STRING]              Type of long reads ('pb_clr','pb_hifi','nanopore')
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## gapless_gapless.sh
-
-### Tool Description
-A tool for gapless assembly (scaffolding/finishing). Note: The provided help text contains only system error messages and no usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gapless:0.4--hdfd78af_0
-- **Homepage**: https://github.com/schmeing/gapless
-- **Package**: https://anaconda.org/channels/bioconda/packages/gapless/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gapless:0.4--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1310122186: no space left on device
-```
 
 ## gapless_gapless.py
 
 ### Tool Description
-A tool for closing gaps in genome assemblies. (Note: The provided text contains system error messages and does not include usage instructions or argument definitions.)
+Program: gapless
+Version: 0.4
+Contact: https://github.com/schmeing/gapless
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gapless:0.4--hdfd78af_0
 - **Homepage**: https://github.com/schmeing/gapless
 - **Package**: https://anaconda.org/channels/bioconda/packages/gapless/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gapless:0.4--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3526991902: no space left on device
+Unknown module: -help.
+Program: gapless
+Version: 0.4
+Contact: https://github.com/schmeing/gapless
+
+Usage:  gapless.py <module> [options]
+Modules:
+split         Splits scaffolds into contigs
+scaffold      Scaffolds contigs and assigns reads to gaps
+extend        Extend scaffold ends
+finish        Create new fasta assembly file
+visualize     Visualizes regions to manually inspect breaks or joins
+test          Short test
 ```
 

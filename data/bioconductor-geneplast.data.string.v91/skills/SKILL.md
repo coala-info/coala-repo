@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneplast.data.string.v91
-description: The package geneplast.data.string.v91 contains input data used in the analysis pipelines available in the geneplast package.
+description: This package provides evolutionary root inference data and phylogenetic trees from the STRING database version 9.1 for phylogenomic analysis. Use when user asks to retrieve COG mappings, access eukaryotic species identifiers, or perform bridge-species analysis with the geneplast package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/geneplast.data.string.v91.html
 ---
+
 
 # bioconductor-geneplast.data.string.v91
 

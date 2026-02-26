@@ -1,8 +1,9 @@
 ---
 name: genin2
-description: Genin2 is a high-performance bioinformatics tool designed to assign genotypes to European H5 clade 2.3.4.4b viruses collected since October 2020.
+description: Genin2 assigns genotypes to European H5 clade 2.3.4.4b viruses by classifying genomic segments from FASTA files. Use when user asks to identify virus genotypes, classify influenza segments, or perform genomic surveillance on H5 avian influenza samples.
 homepage: https://github.com/izsvenezie-virology/genin2
 ---
+
 
 # genin2
 

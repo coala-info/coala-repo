@@ -1,8 +1,9 @@
 ---
 name: setsimilaritysearch
-description: The `setsimilaritysearch` library provides high-performance algorithms for finding similar sets in Python.
+description: The setsimilaritysearch library provides high-performance algorithms for finding similar sets and performing all-pairs similarity searches in Python. Use when user asks to find similar sets, perform all-pairs similarity search, deduplicate data, or query a collection for sets exceeding a similarity threshold.
 homepage: https://github.com/ekzhu/SetSimilaritySearch
 ---
+
 
 # setsimilaritysearch
 

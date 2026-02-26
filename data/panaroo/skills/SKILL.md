@@ -1,8 +1,9 @@
 ---
 name: panaroo
-description: Panaroo is a specialized tool designed to construct pangenomes from annotated prokaryotic genomes (GFF3 files).
+description: Panaroo is a graph-based tool used to construct and analyze prokaryotic pangenomes from annotated GFF3 files while accounting for assembly errors and fragmentation. Use when user asks to construct a pangenome, handle fragmented assemblies, merge existing pangenomes, or generate core-genome alignments for phylogenetics.
 homepage: https://gtonkinhill.github.io/panaroo
 ---
+
 
 # panaroo
 

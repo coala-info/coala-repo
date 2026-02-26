@@ -3,7 +3,7 @@
 ## minimizers
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help information or usage instructions for the 'minimizers' tool.
+Extract the set of minimizers from a sequence file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/minimizers:0.1.2--pyhdfd78af_0
@@ -18,11 +18,39 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/minimizers:0.1.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2938251751: no space left on device
+usage: minimizers [-h] [-a] -i INPUT [-o OUTPUT] [-t {list,fasta}] -s SIZE -w
+                  WINDOW [--report-counts] [--top-perc TOP_PERC]
+                  [--top-num TOP_NUM] [-n NPROC] [--verbose] [-v]
+
+Extract the set of minimizers from a sequence file
+
+options:
+  -h, --help            show this help message and exit
+  -a, --aggregate       Aggregate record results (default: False)
+  -i INPUT, --input INPUT
+                        Path to the input sequence file in fasta format. It
+                        can be Gzip compressed (default: None)
+  -o OUTPUT, --output OUTPUT
+                        Path to the output file with minimizers. Results are
+                        printed on the stdout if no output is provided
+                        (default: None)
+  -t {list,fasta}, --output-type {list,fasta}
+                        The output can be formatted as a list of kmers or as a
+                        fasta file (default: list)
+  -s SIZE, --size SIZE  Length of the minimizers (default: None)
+  -w WINDOW, --window WINDOW
+                        Size of the sliding window. It must be greater than
+                        the minimizer size (default: None)
+  --report-counts       Report the frequencies of the minimizers. This is
+                        compatible with "--output-type list" only (default:
+                        False)
+  --top-perc TOP_PERC   Report the top percentage of minimizers based on their
+                        frequency (default: None)
+  --top-num TOP_NUM     Report the top number of minimizers based on their
+                        frequency (default: None)
+  -n NPROC, --nproc NPROC
+                        Make it parallel (default: 1)
+  --verbose             Print messages on the stdout (default: False)
+  -v, --version         Print the "minimizers" version and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

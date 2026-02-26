@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocversion
-description: the package is available on all platforms; click for details.
+description: This package defines and identifies the specific Bioconductor repository version currently active in an R session. Use when user asks to check the Bioconductor version, determine which repository is being used for package installations, or verify version mapping for BiocManager.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocVersion.html
 ---
+
 
 # bioconductor-biocversion
 

@@ -1,8 +1,9 @@
 ---
 name: pycistopic
-description: pycisTopic is a specialized Python framework designed for the analysis of single-cell chromatin accessibility data.
+description: pycisTopic is a Python framework for analyzing single-cell chromatin accessibility data using Latent Dirichlet Allocation to identify cis-regulatory topics. Use when user asks to process scATAC-seq fragments, perform topic modeling, identify co-accessible genomic regions, or cluster cells based on regulatory landscapes.
 homepage: https://github.com/aertslab/pycistopic
 ---
+
 
 # pycistopic
 

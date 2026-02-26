@@ -1,8 +1,9 @@
 ---
 name: metaphor
-description: Metaphor is a Snakemake-based pipeline designed to simplify genome-resolved metagenomics.
+description: Metaphor is a Snakemake-based pipeline designed to automate genome-resolved metagenomics from raw short reads to refined metagenome-assembled genomes. Use when user asks to process metagenomic data, assemble and bin genomes, or generate reproducible metagenomic workflows.
 homepage: https://github.com/vinisalazar/metaphor
 ---
+
 
 # metaphor
 

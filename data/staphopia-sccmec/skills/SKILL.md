@@ -1,8 +1,9 @@
 ---
 name: staphopia-sccmec
-description: The `staphopia-sccmec` tool provides a streamlined command-line interface for identifying the Staphylococcal Cassette Chromosome mec (SCCmec) type in *Staphylococcus aureus*.
+description: staphopia-sccmec identifies the Staphylococcal Cassette Chromosome mec type in Staphylococcus aureus genomic assemblies using a primer-based scheme. Use when user asks to predict SCCmec types, identify MRSA subtypes, or analyze Staphopia pipeline results.
 homepage: https://github.com/staphopia/staphopia-sccmec
 ---
+
 
 # staphopia-sccmec
 

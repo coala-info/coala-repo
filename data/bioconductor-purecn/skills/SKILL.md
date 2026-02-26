@@ -1,8 +1,9 @@
 ---
 name: bioconductor-purecn
-description: the package is available on all platforms; click for details.
+description: PureCN estimates tumor purity, ploidy, and copy number from targeted or whole exome sequencing data. Use when user asks to estimate tumor purity, determine sample ploidy, or perform copy number analysis on sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/PureCN.html
 ---
+
 
 # bioconductor-purecn
 

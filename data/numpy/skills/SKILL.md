@@ -1,8 +1,9 @@
 ---
 name: numpy
-description: NumPy is the fundamental package for scientific computing in Python.
+description: NumPy provides a powerful N-dimensional array object and high-performance functions for vectorized numerical operations and scientific computing in Python. Use when user asks to perform complex mathematical operations, design memory-efficient data pipelines, manipulate multidimensional arrays, or integrate Fortran code using f2py.
 homepage: https://github.com/numpy/numpy
 ---
+
 
 # numpy
 

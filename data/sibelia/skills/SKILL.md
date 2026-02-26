@@ -1,8 +1,9 @@
 ---
 name: sibelia
-description: Sibelia is a specialized genomic toolset designed for the comparison of closely related sequences, such as different strains of the same bacterial species.
+description: Sibelia identifies synteny blocks and genomic variants by comparing closely related microbial sequences using de Bruijn graphs. Use when user asks to find conserved regions across multiple genomes, perform pairwise genome comparisons, or detect SNPs and indels in bacterial datasets.
 homepage: https://github.com/bioinf/Sibelia
 ---
+
 
 # sibelia
 

@@ -1,8 +1,9 @@
 ---
 name: cactus
-description: Cactus is a high-performance genomic alignment framework that utilizes "Cactus graphs" to represent complex structural relationships between genomes without relying on a single reference sequence.
+description: Cactus is a high-performance genomic alignment framework that creates reference-free alignments and pangenome graphs using Cactus graphs. Use when user asks to perform inter-species evolutionary alignments, construct pangenome graphs from multiple genomes of the same species, or generate HAL files.
 homepage: https://github.com/ComparativeGenomicsToolkit/cactus
 ---
+
 
 # cactus
 

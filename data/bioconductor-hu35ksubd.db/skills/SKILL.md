@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksubd.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Human Genome hu35ksubd chip. Use when user asks to map manufacturer probe identifiers to biological identifiers like Entrez Gene IDs, Gene Symbols, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubd.db.html
 ---
+
 
 # bioconductor-hu35ksubd.db
 

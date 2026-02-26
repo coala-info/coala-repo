@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arrayquality
-description: the package is available on all platforms; click for details.
+description: This tool performs comprehensive quality assessment and diagnostic reporting for spotted microarrays. Use when user asks to generate diagnostic plots, perform print-run quality assessment, or create HTML quality reports for Agilent, GenePix, or Spot format data.
 homepage: https://bioconductor.org/packages/release/bioc/html/arrayQuality.html
 ---
+
 
 # bioconductor-arrayquality
 

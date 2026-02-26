@@ -3,7 +3,7 @@
 ## pasty
 
 ### Tool Description
-A tool for P-serotyping of Pseudomonas aeruginosa (Note: The provided text contains system error logs rather than help documentation, so no arguments could be extracted).
+Classify assemblies using BLAST against larger genomic regions
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pasty:2.2.1--hdfd78af_0
@@ -18,9 +18,34 @@ A tool for P-serotyping of Pseudomonas aeruginosa (Note: The provided text conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/2176d371c9061e8ad52bbac90b3eca5f1b79888d9fc59a6f7df845ba92c1c841: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/pasty:2.2.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1208083346: no space left on device
+Usage: camlhmp-blast-regions [OPTIONS]                                         
+                                                                                
+ 🐪 camlhmp-blast-regions 🐪 - Classify assemblies using BLAST against larger   
+ genomic regions                                                                
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ *  --input         -i  TEXT     Input file in FASTA format to classify       │
+│                                 [required]                                   │
+│ *  --yaml          -y  TEXT     YAML file documenting the targets and types  │
+│                                 [default:                                    │
+│                                 /usr/local/bin/../share/pasty/pa-osa.yaml]   │
+│                                 [required]                                   │
+│ *  --targets       -t  TEXT     Query targets in FASTA format                │
+│                                 [default:                                    │
+│                                 /usr/local/bin/../share/pasty/pa-osa.fasta]  │
+│                                 [required]                                   │
+│    --outdir        -o  PATH     Directory to write output [default: ./]      │
+│    --prefix        -p  TEXT     Prefix to use for output files               │
+│                                 [default: camlhmp]                           │
+│    --min-pident        INTEGER  Minimum percent identity to count a hit      │
+│                                 [default: 95]                                │
+│    --min-coverage      INTEGER  Minimum percent coverage to count a hit      │
+│                                 [default: 95]                                │
+│    --force                      Overwrite existing reports                   │
+│    --verbose                    Increase the verbosity of output             │
+│    --silent                     Only critical errors will be printed         │
+│    --version                    Print schema and camlhmp version             │
+│    --help                       Show this message and exit.                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 

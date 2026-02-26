@@ -1,8 +1,9 @@
 ---
 name: samap
-description: SAMap (Self-Assembling Manifold mapping) is a computational framework designed to integrate single-cell gene expression data from species separated by hundreds of millions of years of evolution.
+description: SAMap integrates single-cell gene expression data across evolutionarily distant species by mapping manifolds through a gene-cell graph. Use when user asks to integrate cross-species single-cell datasets, run reciprocal BLAST for gene mapping, or identify conserved cell types across divergent organisms.
 homepage: https://github.com/atarashansky/SAMap
 ---
+
 
 # samap
 

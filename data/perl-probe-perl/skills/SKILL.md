@@ -1,8 +1,9 @@
 ---
 name: perl-probe-perl
-description: The `perl-probe-perl` skill provides a reliable way to inspect the Perl environment.
+description: This tool provides a unified interface to reliably identify the absolute path of the Perl executable and inspect its environment properties across different operating systems. Use when user asks to find the path to the perl binary, check the perl version, or identify specific Perl distributions like Strawberry Perl or ActivePerl.
 homepage: http://metacpan.org/pod/Probe::Perl
 ---
+
 
 # perl-probe-perl
 

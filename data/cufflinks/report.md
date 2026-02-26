@@ -3,7 +3,7 @@
 ## cufflinks
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a system error log indicating a failure to build or extract a container image due to insufficient disk space ('no space left on device').
+Cufflinks assembles transcripts, estimates their abundances, and tests for differential expression and regulation in RNA-Seq samples.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cufflinks:2.2.1--py35_2
@@ -18,15 +18,21 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 16:00:52  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cufflinks:2.2.1--py35_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:750770ad205ed7d1c50884f4f4a8fb50743c9e3366b22c5551f37bdccf99300c: unpack entry: usr/local/bin/gtf_to_sam: unpack to regular file: short write: write /tmp/build-temp-2817140013/rootfs/usr/local/bin/gtf_to_sam: no space left on device
+Unable to find image 'quay.io/biocontainers/cufflinks:2.2.1--py35_2' locally
+2.2.1--py35_2: Pulling from biocontainers/cufflinks
+a3ed95caeb02: Already exists
+77c6c00e8b61: Already exists
+3aaade50789a: Already exists
+00cf8b9f3d2a: Already exists
+7ff999a2256f: Already exists
+d2ba336f2e44: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+750770ad205e: Pulling fs layer
+750770ad205e: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob960021021: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

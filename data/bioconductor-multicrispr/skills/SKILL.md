@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multicrispr
-description: the package is available on all platforms; click for details.
+description: multicrispr designs CRISPR guide RNAs for multiple genomic targets. Use when user asks to design CRISPR guide RNAs, perform off-target analysis, or find optimal spacers for multiple genomic targets.
 homepage: https://bioconductor.org/packages/release/bioc/html/multicrispr.html
 ---
+
 
 # bioconductor-multicrispr
 

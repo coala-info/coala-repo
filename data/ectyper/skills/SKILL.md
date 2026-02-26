@@ -1,8 +1,9 @@
 ---
 name: ectyper
-description: The ectyper tool is a specialized bioinformatic module designed for the rapid characterization of *Escherichia coli*.
+description: Ectyper performs species identification, serotyping, and pathotyping for Escherichia coli using raw sequencing reads or assembled genomes. Use when user asks to identify E. coli species, determine O and H antigens, perform pathotyping, or conduct Shiga toxin subtyping.
 homepage: https://github.com/phac-nml/ecoli_serotyping
 ---
+
 
 # ectyper
 

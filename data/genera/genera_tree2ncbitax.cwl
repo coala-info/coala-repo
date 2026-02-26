@@ -1,16 +1,36 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genera_tree2ncbitax
+baseCommand: tree2ncbitax
 label: genera_tree2ncbitax
-doc: "The provided text does not contain help information for the tool. It contains
-  system error messages related to a container runtime (Apptainer/Singularity) failing
-  to build an image due to lack of disk space.\n\nTool homepage: https://github.com/josuebarrera/GenEra"
-inputs: []
+doc: "Converts a NEWICK tree to NCBI taxonomy format.\n\nTool homepage: https://github.com/josuebarrera/GenEra"
+inputs:
+  - id: genome
+    type: string
+    doc: Name of the target genome (the name should match the NEWICK labels)
+    inputBinding:
+      position: 101
+      prefix: --genome
+  - id: input_file
+    type: File
+    doc: Name of input NEWICK tree
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: taxid
+    type: int
+    doc: NCBI taxonomy ID that is shared between all the organims in the 
+      phylogeny
+    inputBinding:
+      position: 101
+      prefix: --taxid
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output file name
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genera:1.4.2--py38hdfd78af_0
-stdout: genera_tree2ncbitax.out

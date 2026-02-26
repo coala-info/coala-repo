@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowclean
-description: the package is available on all platforms; click for details.
+description: bioconductor-flowclean performs quality control on flow cytometry data by identifying and filtering out technical artifacts and fluctuations in fluorescent intensity over time. Use when user asks to clean FCS files, detect problematic time segments in flow cytometry experiments, or filter out cellular populations with non-uniform collection.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowClean.html
 ---
+
 
 # bioconductor-flowclean
 

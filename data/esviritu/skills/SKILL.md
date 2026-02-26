@@ -1,8 +1,9 @@
 ---
 name: esviritu
-description: EsViritu is a specialized bioinformatics pipeline designed for the sensitive detection of viral sequences within complex metagenomic datasets.
+description: EsViritu is a bioinformatics pipeline designed to detect and reconstruct viral sequences within complex metagenomic datasets. Use when user asks to identify viruses in metagenomic samples, map reads against viral genome databases, filter host contamination, or generate interactive summary reports of detected viral taxa.
 homepage: https://github.com/cmmr/EsViritu
 ---
+
 
 # esviritu
 

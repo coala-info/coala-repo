@@ -1,8 +1,9 @@
 ---
 name: bam2plot
-description: The `bam2plot` tool is a specialized utility for bioinformaticians to visualize sequencing depth and coverage.
+description: The bam2plot tool visualizes sequencing depth and coverage by transforming BAM or FastQ files into PNG or SVG plots. Use when user asks to visualize genomic coverage, identify sequencing gaps, analyze GC content, or inspect alignment quality.
 homepage: https://github.com/willros/bam2plot
 ---
+
 
 # bam2plot
 

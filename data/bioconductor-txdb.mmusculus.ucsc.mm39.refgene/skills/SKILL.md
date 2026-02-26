@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.mmusculus.ucsc.mm39.refgene
-description: the package is available on all platforms; click for details.
+description: This package provides a transcript database for the Mus musculus mm39 genome assembly using UCSC RefSeq annotations. Use when user asks to retrieve genomic coordinates for mouse transcripts, access gene models for the mm39 assembly, or map genomic features to RefSeq annotations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Mmusculus.UCSC.mm39.refGene.html
 ---
+
 
 # bioconductor-txdb.mmusculus.ucsc.mm39.refgene
 

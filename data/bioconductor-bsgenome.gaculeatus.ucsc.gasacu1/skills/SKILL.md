@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.gaculeatus.ucsc.gasacu1
-description: the package is available on all platforms; click for details.
+description: This package provides the complete genome sequence for the stickleback (*Gasterosteus aculeatus*) based on the UCSC gasAcu1 assembly for use in Bioconductor workflows. Use when user asks to access chromosome sequences, extract specific genomic regions, or perform genome-wide motif searching for the stickleback.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Gaculeatus.UCSC.gasAcu1.html
 ---
+
 
 # bioconductor-bsgenome.gaculeatus.ucsc.gasacu1
 

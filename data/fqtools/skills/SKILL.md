@@ -1,8 +1,9 @@
 ---
 name: fqtools
-description: `fqtools` is a high-performance software suite written in C, designed for the efficient processing of FASTQ files.
+description: fqtools is a high-performance software suite designed for the efficient processing, manipulation, and validation of FASTQ files. Use when user asks to count reads, validate file integrity, identify quality encoding, convert FASTQ to FASTA, trim sequences, or extract specific read components.
 homepage: https://github.com/alastair-droop/fqtools
 ---
+
 
 # fqtools
 

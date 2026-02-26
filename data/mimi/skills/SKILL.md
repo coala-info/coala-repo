@@ -1,8 +1,9 @@
 ---
 name: mimi
-description: MIMI (Molecular Isotope Mass Identifier) is a specialized bioinformatics tool for processing ultra-high-resolution Fourier Transform Ion Cyclotron Resonance (UHR-FT-ICR) mass spectrometry data.
+description: MIMI identifies chemical formulas from ultra-high-resolution mass spectrometry data by matching observed peaks against compound databases and verifying isotopic fine-structure patterns. Use when user asks to extract compounds from KEGG or HMDB, create mass matching caches for natural or labeled isotopes, and perform mass analysis to identify metabolites in mass spectrometry samples.
 homepage: https://github.com/NYUAD-Core-Bioinformatics/MIMI
 ---
+
 
 # mimi
 

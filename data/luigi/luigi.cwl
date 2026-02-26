@@ -1,11 +1,65 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: luigi
+baseCommand: luigid
 label: luigi
-doc: "The provided text does not contain help information or a description of the
-  tool; it contains system log messages and a fatal error regarding container image
-  conversion and disk space.\n\nTool homepage: https://github.com/spotify/luigi"
-inputs: []
+doc: "Central luigi server\n\nTool homepage: https://github.com/spotify/luigi"
+inputs:
+  - id: address
+    type:
+      - 'null'
+      - string
+    doc: Listening interface
+    inputBinding:
+      position: 101
+      prefix: --address
+  - id: background
+    type:
+      - 'null'
+      - boolean
+    doc: Run in background mode
+    inputBinding:
+      position: 101
+      prefix: --background
+  - id: logdir
+    type:
+      - 'null'
+      - Directory
+    doc: log directory
+    inputBinding:
+      position: 101
+      prefix: --logdir
+  - id: pidfile
+    type:
+      - 'null'
+      - File
+    doc: Write pidfile
+    inputBinding:
+      position: 101
+      prefix: --pidfile
+  - id: port
+    type:
+      - 'null'
+      - int
+    doc: Listening port
+    inputBinding:
+      position: 101
+      prefix: --port
+  - id: state_path
+    type:
+      - 'null'
+      - File
+    doc: Pickled state file
+    inputBinding:
+      position: 101
+      prefix: --state-path
+  - id: unix_socket
+    type:
+      - 'null'
+      - File
+    doc: Unix socket path
+    inputBinding:
+      position: 101
+      prefix: --unix-socket
 outputs:
   - id: stdout
     type: stdout

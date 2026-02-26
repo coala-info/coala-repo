@@ -1,8 +1,9 @@
 ---
 name: tomm40_wgs
-description: The `tomm40_wgs` skill provides a specialized workflow for automated genotyping of the TOMM40'523 poly-T repeat.
+description: The tomm40_wgs tool performs automated genotyping of the TOMM40'523 poly-T repeat from genomic alignment files. Use when user asks to genotype the TOMM40'523 poly-T repeat, determine TOMM40 S/L/VL status, or analyze TOMM40 poly-T repeat length.
 homepage: https://github.com/RushAlz/TOMM40_WGS/
 ---
+
 
 # tomm40_wgs
 

@@ -1,8 +1,9 @@
 ---
 name: blockclust
-description: BlockClust is a specialized bioinformatics tool designed to detect transcripts with similar processing patterns.
+description: BlockClust detects and classifies non-coding RNA transcripts by clustering expression profiles using graph-kernel techniques. Use when user asks to cluster novel ncRNAs, classify known ncRNA families, or process expression profiles into discrete structures for similarity analysis.
 homepage: https://github.com/pavanvidem/blockclust
 ---
+
 
 # blockclust
 

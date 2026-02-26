@@ -1,8 +1,9 @@
 ---
 name: referee
-description: Referee is a tool designed to assign empirical quality scores to genome assemblies.
+description: Referee assigns empirical quality scores to genome assemblies by analyzing mapped reads and calculating genotype likelihoods. Use when user asks to assess assembly quality, identify low-quality regions, or perform reference base correction.
 homepage: https://github.com/gwct/referee
 ---
+
 
 # referee
 

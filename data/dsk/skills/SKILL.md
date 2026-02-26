@@ -1,8 +1,9 @@
 ---
 name: dsk
-description: DSK (Disk Streaming K-mer counter) is a resource-efficient tool designed to count k-mers in reads or genomes.
+description: DSK is a resource-efficient tool designed to count k-mers in genomic reads or assemblies using a disk-based approach. Use when user asks to count k-mers, identify solid k-mers with a minimum abundance threshold, generate k-mer frequency histograms, or compare k-mer distributions between assemblies and reads.
 homepage: https://github.com/GATB/dsk/
 ---
+
 
 # dsk
 

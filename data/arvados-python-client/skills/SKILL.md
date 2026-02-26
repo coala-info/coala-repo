@@ -1,8 +1,9 @@
 ---
 name: arvados-python-client
-description: The Arvados Python Client provides the programmatic interface for Arvados, an open-source platform for managing and analyzing scientific big data.
+description: The Arvados Python Client provides a programmatic interface and command-line tools for managing data and orchestrating resources on the Arvados platform. Use when user asks to upload or download data from Keep, query metadata, manage collections, or interact with Arvados services via the Python SDK.
 homepage: https://github.com/curoverse/arvados/tree/main/sdk/python
 ---
+
 
 # arvados-python-client
 

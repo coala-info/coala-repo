@@ -1,8 +1,9 @@
 ---
 name: sherpas
-description: SHERPAS (Screening Historical Events of Recombination in a Phylogeny via Ancestral Sequences) is a high-throughput bioinformatics tool used to identify recombination patterns in genomic data.
+description: SHERPAS is a high-throughput bioinformatics tool used to identify recombination patterns in genomic data by mapping query sequences to a reference tree using phylo-kmers. Use when user asks to detect recombination events, analyze viral sequences for mosaicism, or map unaligned genomic reads to a phylogenetic reference.
 homepage: https://github.com/phylo42/sherpas
 ---
+
 
 # sherpas
 

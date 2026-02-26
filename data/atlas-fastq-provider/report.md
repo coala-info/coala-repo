@@ -1,9 +1,9 @@
 # atlas-fastq-provider CWL Generation Report
 
-## atlas-fastq-provider
+## atlas-fastq-provider_fetchFastq.sh
 
 ### Tool Description
-A tool for providing FASTQ files (Note: The provided text contains system error messages rather than help documentation).
+Fetches FASTQ files from various sources.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/atlas-fastq-provider:0.4.8--hdfd78af_0
@@ -18,9 +18,41 @@ A tool for providing FASTQ files (Note: The provided text contains system error 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/697a1d741b053bdc17b8d82ac6845635c906c70b3aebf03f46df871603c10175: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/atlas-fastq-provider:0.4.8--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1028622827: no space left on device
+Usage: /usr/local/bin/fetchFastq.sh [-f <file or uri>] [-t <target file>] [-s <source resource or directory, default 'auto'>] [-m <retrieval method, default 'wget'>] [-p <public or private, default public>] [-l <library, by default inferred from file name>] [-c <config file to override defaults>] [-v <validate only, don't download>] [-d <download type, fastq or srr>]
+```
+
+
+## atlas-fastq-provider_fetchEnaLibraryFastqs.sh
+
+### Tool Description
+Fetches ENA library FASTQ files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/atlas-fastq-provider:0.4.8--hdfd78af_0
+- **Homepage**: https://github.com/ebi-gene-expression-group/atlas-fastq-provider
+- **Package**: https://anaconda.org/channels/bioconda/packages/atlas-fastq-provider/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: /usr/local/bin/fetchEnaLibraryFastqs.sh -l <library> -d <output directory> [-m <retrieval method, default 'wget'>] [-s <source directory for method 'dir'>] [-p <public or private, default public>] [-c <config file to override defaults>] [-t <download type, fastq or srr>] [-n <SINGLE or PAIRED, default PAIRED>]
+```
+
+
+## atlas-fastq-provider_deinterleave_fastq.sh
+
+### Tool Description
+Deinterleaves paired-end FASTQ files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/atlas-fastq-provider:0.4.8--hdfd78af_0
+- **Homepage**: https://github.com/ebi-gene-expression-group/atlas-fastq-provider
+- **Package**: https://anaconda.org/channels/bioconda/packages/atlas-fastq-provider/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+/usr/local/bin/deinterleave_fastq.sh: line 28: $1: ambiguous redirect
+/usr/local/bin/deinterleave_fastq.sh: line 28: $2: ambiguous redirect
 ```
 

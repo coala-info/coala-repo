@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotationtools
-description: the package is available on all platforms; click for details.
+description: This tool annotates DNA microarray data and integrates gene expression profiles across different platforms and species. Use when user asks to map probe sets to gene symbols or GO terms, find orthologous genes using HomoloGene, and translate probe set IDs between different array platforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/annotationTools.html
 ---
+
 
 # bioconductor-annotationtools
 

@@ -1,8 +1,9 @@
 ---
 name: short-read-connector
-description: Short Read Connector (SRC) is a resource-frugal tool designed for the rapid comparison of large sequencing datasets.
+description: Short Read Connector is a resource-frugal tool designed for the rapid comparison of large sequencing datasets using k-mer indexing. Use when user asks to compare metagenomic datasets, identify shared sequences between samples, or filter reads based on k-mer presence in a reference bank.
 homepage: https://github.com/GATB/short_read_connector
 ---
+
 
 # short-read-connector
 

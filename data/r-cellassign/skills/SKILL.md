@@ -1,8 +1,9 @@
 ---
 name: r-cellassign
-description: R package cellassign (documentation from project home).
+description: r-cellassign performs automated, probabilistic cell type assignment for single-cell RNA-seq data using a marker gene matrix and a hierarchical Bayesian model. Use when user asks to classify cells into types based on marker genes, assign cell types in scRNA-seq data, or account for batch effects during cell type identification.
 homepage: https://cran.r-project.org/web/packages/cellassign/index.html
 ---
+
 
 # r-cellassign
 

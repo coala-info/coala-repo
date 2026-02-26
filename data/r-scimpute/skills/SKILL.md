@@ -1,8 +1,9 @@
 ---
 name: r-scimpute
-description: R package scimpute (documentation from project home).
+description: scImpute identifies and imputes dropout values in single-cell RNA-seq data while preserving biological zeros. Use when user asks to impute missing values in scRNA-seq counts, handle dropout events, or improve gene expression matrices for downstream analysis.
 homepage: https://cran.r-project.org/web/packages/scimpute/index.html
 ---
+
 
 # r-scimpute
 

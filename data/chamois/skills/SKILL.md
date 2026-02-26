@@ -1,8 +1,9 @@
 ---
 name: chamois
-description: CHAMOIS (Chemical Hierarchy Approximation for secondary Metabolism clusters Obtained In Silico) is a specialized bioinformatics tool designed to bridge the gap between genomic data and chemical structures.
+description: CHAMOIS predicts hierarchical chemical classifications for biosynthetic gene clusters using machine learning to link genomic data with chemical structures. Use when user asks to predict chemical features from GenBank files, search metabolite catalogs for similar compounds, or explain which genes influenced a specific chemical classification.
 homepage: https://chamois.readthedocs.io/
 ---
+
 
 # chamois
 

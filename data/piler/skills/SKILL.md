@@ -1,8 +1,9 @@
 ---
 name: piler
-description: The `piler` skill (based on pagePiling.js) enables the creation of immersive, layered scrolling experiences for web applications.
+description: The piler tool implements and configures the pagePiling.js library to create single-page scrolling websites with layered section transitions. Use when user asks to create a piling scroll effect, configure pagePiling.js settings, or set up HTML structures for layered scrolling web pages.
 homepage: https://github.com/alvarotrigo/pagePiling.js
 ---
+
 
 # piler
 

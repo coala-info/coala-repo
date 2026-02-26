@@ -1,9 +1,9 @@
 # scramble CWL Generation Report
 
-## scramble
+## scramble_cluster_identifier
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container runtime failure.
+Identify clusters in BAM/CRAM files based on soft-clipped bases and reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scramble:1.0.2--h031d066_1
@@ -18,9 +18,6 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/f3fc2be687f810977dc5ddff83f6dbddb4d06d3998172f6d1115e4abaf377d93: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/scramble:1.0.2--h031d066_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2311539839: no space left on device
+Usage: cluster_identifier [-m min soft clipped bases] [-s min soft clipped reads] [-r region] cram/bam
 ```
 

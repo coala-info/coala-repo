@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beclear
-description: the package is available on all platforms; click for details.
+description: BEclear detects and corrects batch effects in DNA methylation data or other numeric matrices using Latent Factor Models. Use when user asks to identify batch-specific differences, calculate batch severity scores, or impute values to remove batch effects while preserving biological signal.
 homepage: https://bioconductor.org/packages/release/bioc/html/BEclear.html
 ---
+
 
 # bioconductor-beclear
 

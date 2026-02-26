@@ -1,8 +1,9 @@
 ---
 name: borf
-description: `borf` is a Python-based command-line tool designed to identify and extract Open Reading Frames (ORFs) from RNA sequences.
+description: Borf identifies and extracts Open Reading Frames from RNA sequences to produce peptide files and coordinate metadata. Use when user asks to predict ORFs, extract peptide sequences from RNA transcripts, identify the longest ORF per sequence, or classify ORFs as complete or incomplete.
 homepage: https://github.com/betsig/borf
 ---
+
 
 # borf
 

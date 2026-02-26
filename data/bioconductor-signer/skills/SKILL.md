@@ -1,8 +1,9 @@
 ---
 name: bioconductor-signer
-description: the package is available on all platforms; click for details.
+description: This R package performs mutational signature discovery and exposure estimation using an empirical Bayesian approach. Use when user asks to identify mutational signatures, estimate signature exposures, or analyze somatic mutation patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/signeR.html
 ---
+
 
 # bioconductor-signer
 

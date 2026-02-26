@@ -1,8 +1,9 @@
 ---
 name: vcf2variants
-description: The `vcf2variants` tool is a specialized utility within the Varda2 preprocessing pipeline.
+description: vcf2variants converts VCF data into a simplified, tabular format for the Varda2 database. Use when user asks to transform VCF data, convert VCF to Varda2 format, or prepare genomic data for Varda2.
 homepage: https://github.com/varda/varda2_preprocessing
 ---
+
 
 # vcf2variants
 

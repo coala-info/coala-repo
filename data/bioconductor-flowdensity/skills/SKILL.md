@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowdensity
-description: the package is available on all platforms; click for details.
+description: This tool performs automated sequential gating of flow cytometry data by analyzing density distributions to identify cell populations. Use when user asks to perform automated gating, find density thresholds, remove margin events, or visualize flow cytometry populations in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowDensity.html
 ---
+
 
 # bioconductor-flowdensity
 

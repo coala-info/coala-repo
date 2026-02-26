@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lungcanceracvssccgeo
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides gene expression data from the Gene Expression Omnibus for comparing lung adenocarcinoma and squamous cell carcinoma. Use when user asks to access lung cancer gene expression datasets, compare adenocarcinoma and squamous cell carcinoma profiles, or retrieve GEO data for lung cancer analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/LungCancerACvsSCCGEO.html
 ---
+
 
 # bioconductor-lungcanceracvssccgeo
 

@@ -1,8 +1,9 @@
 ---
 name: metapi
-description: metapi is a modular metagenomics data mining system designed to automate the transition from raw sequencing data to refined genomic bins and gene catalogs.
+description: metapi is a modular metagenomics data mining system that automates the processing of raw sequencing data into genomic bins and gene catalogs. Use when user asks to initialize metagenomic projects, configure sample sheets, run Metagenome-Assembled Genome pipelines, or perform gene-centric workflows.
 homepage: https://github.com/ohmeta/metapi
 ---
+
 
 # metapi
 

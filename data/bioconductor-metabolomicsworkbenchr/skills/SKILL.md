@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metabolomicsworkbenchr
-description: the package is available on all platforms; click for details.
+description: This package provides an interface to interact with and download data from the Metabolomics Workbench repository. Use when user asks to search for metabolomics studies, download datasets, or retrieve metabolite and experimental data from the Metabolomics Workbench.
 homepage: https://bioconductor.org/packages/release/bioc/html/metabolomicsWorkbenchR.html
 ---
+
 
 # bioconductor-metabolomicsworkbenchr
 

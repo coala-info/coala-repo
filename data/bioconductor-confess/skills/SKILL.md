@@ -1,8 +1,9 @@
 ---
 name: bioconductor-confess
-description: the package is available on all platforms; click for details.
+description: CONFESS is a Bioconductor package for cell ordering and cell cycle phase estimation using single-cell fluorescence signals. Use when user asks to estimate cell cycle phases, order single cells based on fluorescence signals, or quantify single-cell image data.
 homepage: https://bioconductor.org/packages/release/bioc/html/CONFESS.html
 ---
+
 
 # bioconductor-confess
 

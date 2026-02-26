@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_openmpi_5_0_6
-description: This skill provides guidance for utilizing the `esme_netcdf-c_openmpi_5_0_6` package, which provides the C interface for the Network Common Data Form (netCDF).
+description: This tool provides a C interface for the Network Common Data Form (netCDF) with OpenMPI support for parallel data access and manipulation. Use when user asks to handle multidimensional arrays, convert netCDF files to ASCII, generate files from CDL descriptions, or perform parallel I/O in high-performance computing environments.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_openmpi_5_0_6
 

@@ -1,8 +1,9 @@
 ---
 name: dram
-description: DRAM (Distilled and Refined Annotation of Metabolism) is a bioinformatic tool designed to provide high-resolution functional profiling of microbial and viral genomes.
+description: DRAM provides high-resolution functional profiling and metabolic annotation of microbial and viral genomes by distilling database hits into refined summaries. Use when user asks to annotate microbial genomes, distill functional profiles, identify auxiliary metabolic genes in viral contigs, or perform metabolic reconstruction across multiple genomes.
 homepage: https://github.com/shafferm/DRAM/
 ---
+
 
 # dram
 

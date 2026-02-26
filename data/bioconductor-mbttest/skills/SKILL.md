@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mbttest
-description: the package is available on all platforms; click for details.
+description: MBttest performs multiple beta t-tests to identify differentially expressed genes in transcriptomic data. Use when user asks to identify differentially expressed genes, perform multiple beta t-tests, or analyze digital gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/MBttest.html
 ---
+
 
 # bioconductor-mbttest
 

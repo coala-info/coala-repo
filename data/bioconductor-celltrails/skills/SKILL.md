@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celltrails
-description: the package is available on all platforms; click for details.
+description: CellTrails performs de novo chronological ordering and trajectory reconstruction of single-cell expression data using manifold learning. Use when user asks to reconstruct branching trajectories, identify cellular states, calculate pseudotime, or visualize gene expression dynamics across developmental pathways.
 homepage: https://bioconductor.org/packages/release/bioc/html/CellTrails.html
 ---
+
 
 # bioconductor-celltrails
 

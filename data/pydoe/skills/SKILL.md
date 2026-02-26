@@ -1,8 +1,9 @@
 ---
 name: pydoe
-description: The `pydoe` skill provides a suite of Design of Experiments (DOE) methods to help you create structured experimental plans.
+description: The pydoe tool generates structured experimental design matrices using various Design of Experiments methods to optimize information gain and minimize trial counts. Use when user asks to create factorial designs, generate Latin-Hypercube samples, perform response-surface modeling, or construct optimal experimental plans.
 homepage: https://github.com/pydoe/pydoe
 ---
+
 
 # pydoe
 

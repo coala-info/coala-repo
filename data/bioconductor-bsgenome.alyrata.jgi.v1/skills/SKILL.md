@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.alyrata.jgi.v1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Arabidopsis lyrata (JGI V1.0) as a Biostrings-based BSgenome object for analysis in R. Use when user asks to access Arabidopsis lyrata sequences, extract specific genomic regions, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Alyrata.JGI.v1.html
 ---
+
 
 # bioconductor-bsgenome.alyrata.jgi.v1
 

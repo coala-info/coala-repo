@@ -3,7 +3,7 @@
 ## luigi
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system log messages and a fatal error regarding container image conversion and disk space.
+Central luigi server
 
 ### Metadata
 - **Docker Image**: biocontainers/luigi:phenomenal-v2.6.0_cv0.1.6
@@ -13,16 +13,62 @@ The provided text does not contain help information or a description of the tool
 
 - **Conda**: https://anaconda.org/channels/main/packages/luigi/overview
 - **Total Downloads**: 9.2K
-- **Last updated**: 2026-02-14
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/spotify/luigi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/luigi:phenomenal-v2.6.0_cv0.1.6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3212097134: no space left on device
+usage: luigid [-h] [--background] [--pidfile PIDFILE] [--logdir LOGDIR]
+              [--state-path STATE_PATH] [--address ADDRESS]
+              [--unix-socket UNIX_SOCKET] [--port PORT]
+
+Central luigi server
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --background          Run in background mode
+  --pidfile PIDFILE     Write pidfile
+  --logdir LOGDIR       log directory
+  --state-path STATE_PATH
+                        Pickled state file
+  --address ADDRESS     Listening interface
+  --unix-socket UNIX_SOCKET
+                        Unix socket path
+  --port PORT           Listening port
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## luigi
+
+### Tool Description
+Central luigi server
+
+### Metadata
+- **Docker Image**: biocontainers/luigi:phenomenal-v2.6.0_cv0.1.6
+- **Homepage**: https://github.com/spotify/luigi
+- **Package**: Not found
+- **Validation**: PASS
+### Original Help Text
+```text
+usage: luigid [-h] [--background] [--pidfile PIDFILE] [--logdir LOGDIR]
+              [--state-path STATE_PATH] [--address ADDRESS]
+              [--unix-socket UNIX_SOCKET] [--port PORT]
+
+Central luigi server
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --background          Run in background mode
+  --pidfile PIDFILE     Write pidfile
+  --logdir LOGDIR       log directory
+  --state-path STATE_PATH
+                        Pickled state file
+  --address ADDRESS     Listening interface
+  --unix-socket UNIX_SOCKET
+                        Unix socket path
+  --port PORT           Listening port
+```
+

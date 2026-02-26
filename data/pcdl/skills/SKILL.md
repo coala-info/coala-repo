@@ -1,8 +1,9 @@
 ---
 name: pcdl
-description: The `pcdl` (PhysiCell Data Loader) tool is a specialized interface designed to bridge the gap between PhysiCell's raw simulation output and standard data analysis environments.
+description: The pcdl tool loads PhysiCell simulation data into Python-native structures like Pandas DataFrames and AnnData objects for analysis and visualization. Use when user asks to load agent-based modeling data, list cell attributes, extract spatial data, render images with Neuroglancer, or generate time-series plots.
 homepage: https://github.com/elmbeech/physicelldataloader
 ---
+
 
 # pcdl
 

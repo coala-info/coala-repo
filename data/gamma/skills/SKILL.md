@@ -1,8 +1,9 @@
 ---
 name: gamma
-description: GAMMA (Gene Allele Mutation Microbial Assessment) is a specialized tool for identifying gene matches in microbial genomic assemblies.
+description: GAMMA identifies gene matches in microbial genomic assemblies by evaluating protein-coding identity and annotating specific mutations. Use when user asks to identify gene alleles, detect mutations in genomic assemblies, or annotate antimicrobial resistance genes.
 homepage: https://github.com/rastanton/GAMMA
 ---
+
 
 # gamma
 

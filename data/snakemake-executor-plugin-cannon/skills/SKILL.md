@@ -1,8 +1,9 @@
 ---
 name: snakemake-executor-plugin-cannon
-description: The Cannon executor plugin is a specialized fork of the Snakemake SLURM executor, specifically tuned for the Harvard Cannon cluster environment.
+description: This plugin automates the mapping of Snakemake rule resources to appropriate partitions on the Harvard Cannon cluster. Use when user asks to run Snakemake workflows on the Cannon cluster, automatically select partitions based on memory or runtime, or submit GPU jobs to Cannon.
 homepage: https://github.com/harvardinformatics/snakemake-executor-plugin-cannon
 ---
+
 
 # snakemake-executor-plugin-cannon
 

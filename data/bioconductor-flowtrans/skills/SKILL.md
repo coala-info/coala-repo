@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowtrans
-description: the package is available on all platforms; click for details.
+description: This package optimizes parameters for flow cytometry transformations using profile maximum likelihood to improve data normality. Use when user asks to transform flow cytometry data, optimize transformation parameters, or apply multivariate Box-Cox, ArcSinh, or biexponential transformations to flowFrame objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowTrans.html
 ---
+
 
 # bioconductor-flowtrans
 

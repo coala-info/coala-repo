@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.spatial
-description: the package is available on all platforms; click for details.
+description: The alabaster.spatial package provides a framework for saving and loading SpatialExperiment objects to and from disk while preserving all metadata and image data. Use when user asks to save spatial omics data, load SpatialExperiment objects from file, or serialize spatial coordinates and images for the alabaster ecosystem.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.spatial.html
 ---
+
 
 # bioconductor-alabaster.spatial
 

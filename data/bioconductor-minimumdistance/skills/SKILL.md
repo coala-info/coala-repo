@@ -1,8 +1,9 @@
 ---
 name: bioconductor-minimumdistance
-description: the package is available on all platforms; click for details.
+description: MinimumDistance detects de novo copy number variants in parent-offspring trios using genomic data. Use when user asks to identify de novo CNVs, calculate minimum distance statistics, or perform trio-based copy number analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/MinimumDistance.html
 ---
+
 
 # bioconductor-minimumdistance
 

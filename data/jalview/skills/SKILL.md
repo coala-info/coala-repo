@@ -1,8 +1,9 @@
 ---
 name: jalview
-description: Jalview is a comprehensive bioinformatics workbench designed for the manipulation and analysis of biological sequences.
+description: Jalview is a comprehensive bioinformatics workbench for the manipulation, analysis, and visualization of biological sequence alignments and structures. Use when user asks to align sequences, map genomic variants to protein structures, generate publication-quality alignment figures, or integrate sequence data with 3D structural information.
 homepage: http://www.jalview.org/
 ---
+
 
 # jalview
 

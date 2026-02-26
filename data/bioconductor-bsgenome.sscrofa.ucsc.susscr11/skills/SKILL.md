@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.sscrofa.ucsc.susscr11
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Sus scrofa (Pig) based on the UCSC susScr11 assembly for use within the Bioconductor framework. Use when user asks to retrieve pig genomic sequences, perform genome-wide motif searching, or analyze sequence data for the susScr11 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Sscrofa.UCSC.susScr11.html
 ---
+
 
 # bioconductor-bsgenome.sscrofa.ucsc.susscr11
 

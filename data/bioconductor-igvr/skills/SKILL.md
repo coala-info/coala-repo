@@ -1,8 +1,9 @@
 ---
 name: bioconductor-igvr
-description: the package is available on all platforms; click for details.
+description: This tool provides programmatic control of the igv.js genome browser from an R session via a websocket connection. Use when user asks to initialize the igvR browser, set stock or custom genomes, navigate genomic regions, or display track types such as alignments, quantitative data, GWAS results, and genomic interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/igvR.html
 ---
+
 
 # bioconductor-igvr
 

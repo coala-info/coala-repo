@@ -1,8 +1,9 @@
 ---
 name: tribal
-description: TRIBAL (TRee Inference of B cell clonAl Lineages) is a computational framework designed to infer the evolutionary history of B cells from single-cell RNA sequencing (scRNA-seq) data.
+description: TRIBAL infers the evolutionary history of B cells from single-cell RNA sequencing data. Use when user asks to infer B cell evolutionary history, infer B cell lineage trees, model somatic hypermutation, model class switch recombination, preprocess B cell sequencing data, or analyze B cell receptor sequences.
 homepage: https://github.com/elkebir-group/TRIBAL
 ---
+
 
 # tribal
 

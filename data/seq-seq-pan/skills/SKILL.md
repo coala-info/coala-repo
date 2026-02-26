@@ -1,8 +1,9 @@
 ---
 name: seq-seq-pan
-description: seq-seq-pan is a specialized bioinformatics workflow designed for the sequential alignment of genomic sequences.
+description: seq-seq-pan is a bioinformatics workflow designed for the sequential alignment of genomic sequences to build a pangenome iteratively. Use when user asks to perform whole-genome alignment, split a pangenome by chromosomes, extract specific genomic subregions, or map coordinates between a consensus sequence and individual genomes.
 homepage: https://gitlab.com/chrjan/seq-seq-pan
 ---
+
 
 # seq-seq-pan
 

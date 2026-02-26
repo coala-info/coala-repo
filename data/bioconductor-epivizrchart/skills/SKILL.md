@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epivizrchart
-description: the package is available on all platforms; click for details.
+description: This package creates interactive, linked genomic visualizations and web components for RMarkdown documents and Shiny applications. Use when user asks to create interactive genomic charts, link multiple plots with cross-chart brushing, or embed genomic navigation tracks into HTML reports.
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrChart.html
 ---
+
 
 # bioconductor-epivizrchart
 

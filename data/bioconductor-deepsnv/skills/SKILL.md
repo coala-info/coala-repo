@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deepsnv
-description: the package is available on all platforms; click for details.
+description: This tool detects subclonal single nucleotide variants in deep sequencing data by comparing test samples against controls or cohorts. Use when user asks to detect subclonal mutations, compare test versus control experiments, or call variants in large cohorts using the Shearwater algorithm.
 homepage: https://bioconductor.org/packages/release/bioc/html/deepSNV.html
 ---
+
 
 # bioconductor-deepsnv
 

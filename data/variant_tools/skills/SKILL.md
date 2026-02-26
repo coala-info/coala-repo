@@ -1,8 +1,9 @@
 ---
 name: variant_tools
-description: The `variant_tools` suite (accessed via the `vtools` command) is a project-based framework for the manipulation and analysis of large-scale genetic variant data.
+description: `variant_tools` is a project-based framework for manipulating, analyzing, and annotating large-scale genetic variant data. Use when user asks to initialize a project, import variants, access annotation databases, select or filter variants, export variants, or manage multi-sample datasets.
 homepage: https://github.com/vatlab/varianttools
 ---
+
 
 # variant_tools
 

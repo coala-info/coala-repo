@@ -1,8 +1,9 @@
 ---
 name: perl-module-load-conditional
-description: The `perl-module-load-conditional` skill provides procedural knowledge for using the `Module::Load::Conditional` Perl module.
+description: This tool enables Perl scripts to query module availability, check versions, and conditionally load multiple dependencies at runtime. Use when user asks to check if a Perl module is installed, verify module version requirements, or perform all-or-nothing loading of multiple Perl modules.
 homepage: http://metacpan.org/pod/Module::Load::Conditional
 ---
+
 
 # perl-module-load-conditional
 

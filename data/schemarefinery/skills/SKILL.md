@@ -1,8 +1,9 @@
 ---
 name: schemarefinery
-description: SchemaRefinery is a specialized toolkit designed to improve the quality and reliability of genomic schemas used in multilocus sequence typing (MLST).
+description: SchemaRefinery is a toolkit designed to refine and improve the quality of genomic schemas for multilocus sequence typing by filtering problematic loci and ensuring proper annotation. Use when user asks to download assemblies for schema development, identify paralogous or spurious loci, annotate schemas with functional metadata, or apply refinement recommendations to finalize a schema structure.
 homepage: https://github.com/B-UMMI/Schema_Refinery
 ---
+
 
 # schemarefinery
 

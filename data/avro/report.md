@@ -3,7 +3,7 @@
 ## avro
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the 'avro' tool. It consists of system error messages related to a container execution failure (no space left on device).
+Avro command-line interface. This script is used to generate Java classes from Avro schema files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/avro:1.8.0--py35_0
@@ -18,12 +18,19 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/70d1f1c23e0327eadce4dd08e07e309195d07f5201e854e9359feaf9804fb1f3: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/avro:1.8.0--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-485299530: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/avro", line 4, in <module>
+    __import__('pkg_resources').run_script('avro==1.8.0', 'avro')
+  File "/usr/local/lib/python3.5/site-packages/pkg_resources/__init__.py", line 744, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/usr/local/lib/python3.5/site-packages/pkg_resources/__init__.py", line 1505, in run_script
+    script_code = compile(script_text, script_filename, 'exec')
+  File "/usr/local/lib/python3.5/site-packages/avro-1.8.0-py3.5.egg/EGG-INFO/scripts/avro", line 107
+    print json.dumps(json.loads(schema), indent=4)
+             ^
+SyntaxError: invalid syntax
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

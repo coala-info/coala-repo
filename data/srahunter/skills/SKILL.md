@@ -1,8 +1,9 @@
 ---
 name: srahunter
-description: The `srahunter` skill enables efficient interaction with the NCBI SRA database.
+description: srahunter downloads sequencing data from the NCBI SRA database and converts it into FASTQ format while retrieving associated metadata. Use when user asks to download SRA accessions, convert SRA files to FASTQ, or retrieve standard and full metadata for sequencing runs.
 homepage: https://github.com/GitEnricoNeko/srahunter
 ---
+
 
 # srahunter
 

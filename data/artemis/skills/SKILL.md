@@ -1,8 +1,9 @@
 ---
 name: artemis
-description: Artemis is a specialized suite of Java-based tools designed for the visualization and annotation of genomic data.
+description: Artemis is a suite of tools for the visualization, annotation, and comparison of genomic data and sequencing reads. Use when user asks to visualize genomic features, compare DNA sequences, view BAM or CRAM alignment files, or generate circular and linear DNA maps.
 homepage: http://sanger-pathogens.github.io/Artemis/
 ---
+
 
 # artemis
 

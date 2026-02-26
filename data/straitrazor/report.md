@@ -1,12 +1,12 @@
 # straitrazor CWL Generation Report
 
-## straitrazor
+## straitrazor_str8rzr
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build/fetch process.
+Processes fastq files to identify STRs based on a configuration file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/straitrazor:3.0.1--h9948957_7
+- **Docker Image**: quay.io/biocontainers/straitrazor:3.0.1--h7d875b9_3
 - **Homepage**: https://github.com/Ahhgust/STRaitRazor
 - **Package**: https://anaconda.org/channels/bioconda/packages/straitrazor/overview
 - **Validation**: PASS
@@ -18,90 +18,28 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/straitrazor:3.0.1--h9948957_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Not enough arguments!
+Correct usage for version cstr8 v3.01
+str8rzr -c configFile [OPTIONS] fastqfile1 [fastqfile2 ... ]
+OR
+str8rzr -c configFile [OPTIONS] < fastqfile1
 
+IE, This program takes in standard input, or a bunch of (uncompressed) fastq files
+And remember, options are specified *before* the configfile and fastqs (ie, the arguments)
 
-## Metadata
-- **Skill**: generated
+Possible arguments:
 
-## straitrazor_str8rzr
+	-h (help; causes this to be printed)
+	-n (no reverse complement-- this turns off the default behavior of reverse-complementing matches on the negative strand)
+	-v (verbose ; prints out additional diagnostic information)
+	-i (Include anchors ; includes the Anchor sequences in the reported haplotypes)
 
-### Tool Description
-StraitRazor is a tool for the analysis of Short Tandem Repeats (STRs) from sequencing data. (Note: The provided help text contains only system error logs and does not list specific arguments or usage instructions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/straitrazor:3.0.1--h9948957_7
-- **Homepage**: https://github.com/Ahhgust/STRaitRazor
-- **Package**: https://anaconda.org/channels/bioconda/packages/straitrazor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/straitrazor:3.0.1--h9948957_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## straitrazor_str8rzr.exe
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is a container engine error log. No arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/straitrazor:3.0.1--h9948957_7
-- **Homepage**: https://github.com/Ahhgust/STRaitRazor
-- **Package**: https://anaconda.org/channels/bioconda/packages/straitrazor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/straitrazor:3.0.1--h9948957_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## straitrazor_batchCstr8.bash
-
-### Tool Description
-The provided text is a container build error log and does not contain help documentation or usage instructions for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/straitrazor:3.0.1--h9948957_7
-- **Homepage**: https://github.com/Ahhgust/STRaitRazor
-- **Package**: https://anaconda.org/channels/bioconda/packages/straitrazor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/straitrazor:3.0.1--h9948957_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## straitrazor_batchCstr8.bat
-
-### Tool Description
-A batch processing tool for STRait Razor. Note: The provided text appears to be a container runtime error log rather than help documentation, so no specific arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/straitrazor:3.0.1--h9948957_7
-- **Homepage**: https://github.com/Ahhgust/STRaitRazor
-- **Package**: https://anaconda.org/channels/bioconda/packages/straitrazor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/straitrazor:3.0.1--h9948957_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+	-a integer (default 1; the maximum Hamming distance used with anchor search. can only be 0, 1 or 2)
+	-m integer (default 0; the maximum Hamming distance used with motif search. can only be 0 or 1)
+	-c configFile (REQUIRED; the locus config file used to define the STRs)
+	-p integer (The number of processors/cpus used)
+	-t filter (This filters on Type, e.g. AUTOSOMES; ie, it restricts the output to STRs that have the same type as specified in column 2 of the config file)
+	-o filename (This writes the output to filename, as opposed to standard out)
+	-f integer (Min match; this causes haplotypes with less than f occurences to be omitted from the final output file
 ```
 

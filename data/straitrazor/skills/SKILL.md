@@ -1,8 +1,9 @@
 ---
 name: straitrazor
-description: STRait Razor (Short Tandem Repeat Allele Identification Tool) is a specialized bioinformatic tool designed for the forensic analysis of genetic markers.
+description: STRait Razor is a bioinformatic tool designed for the forensic analysis of genetic markers by identifying length-based and sequence-based alleles in raw sequencing data. Use when user asks to detect STR motifs, identify isoalleles, or process FASTQ files for forensic genetic marker analysis.
 homepage: https://github.com/Ahhgust/STRaitRazor
 ---
+
 
 # straitrazor
 

@@ -1,8 +1,9 @@
 ---
 name: perl-io-handle
-description: The `perl-io-handle` skill provides an object-oriented interface for Perl I/O handles, serving as the base class for more specialized modules like `IO::File`.
+description: This tool provides an object-oriented interface for managing Perl input/output streams and filehandles. Use when user asks to manage filehandles as objects, control stream buffering, or perform low-level file descriptor operations.
 homepage: http://metacpan.org/pod/IO::Handle
 ---
+
 
 # perl-io-handle
 

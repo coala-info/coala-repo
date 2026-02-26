@@ -1,8 +1,9 @@
 ---
 name: bioconductor-idr2d
-description: the package is available on all platforms; click for details.
+description: The idr2d package identifies reproducible genomic interactions and peaks across replicates by extending the Irreproducible Discovery Rate framework to two-dimensional data. Use when user asks to estimate reproducibility for Hi-C or ChIA-PET interactions, calculate IDR for ChIP-seq peaks, or visualize the distribution of IDR values.
 homepage: https://bioconductor.org/packages/release/bioc/html/idr2d.html
 ---
+
 
 # bioconductor-idr2d
 

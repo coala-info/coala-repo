@@ -1,8 +1,9 @@
 ---
 name: edd
-description: EDD (Enriched Domain Detector) is a specialized bioinformatics tool for identifying megabase-sized enriched domains in ChIP-seq data.
+description: EDD identifies megabase-sized enriched domains in ChIP-seq data, specifically targeting broad enrichment patterns rather than narrow peaks. Use when user asks to detect large-scale enriched domains, identify broad ChIP-seq peaks, or account for unalignable genomic regions in domain detection.
 homepage: http://github.com/CollasLab/edd
 ---
+
 
 # edd
 

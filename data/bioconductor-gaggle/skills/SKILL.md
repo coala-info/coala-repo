@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gaggle
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool facilitates interactive data exchange between R and other biological software using the Gaggle framework. Use when user asks to broadcast or receive name lists, matrices, networks, and associative arrays between R and applications like Cytoscape, MeV, or STRING.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gaggle.html
 ---
+
 
 # bioconductor-gaggle
 

@@ -1,8 +1,9 @@
 ---
 name: pytest-marks
-description: The pytest-marks skill (utilizing the `pytest-lazy-fixture` plugin) enables the use of fixtures within pytest marks.
+description: This tool enables the use of fixtures within pytest marks by resolving them lazily at test execution time. Use when user asks to use fixtures in parametrize decorators, reference fixtures by name in marks, or create dynamic test matrices using lazy fixture wrappers.
 homepage: https://github.com/TvoroG/pytest-lazy-fixture
 ---
+
 
 # pytest-marks
 

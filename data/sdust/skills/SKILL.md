@@ -1,8 +1,9 @@
 ---
 name: sdust
-description: `sdust` is a high-performance implementation of the symmetric DUST algorithm used to identify regions of low linguistic complexity within DNA sequences (such as simple repeats).
+description: "sdust identifies low-complexity regions in DNA sequences using the symmetric DUST algorithm. Use when user asks to find low-complexity regions, mask genomic sequences, or identify simple repeats in FASTA files."
 homepage: https://github.com/lh3/sdust
 ---
+
 
 # sdust
 

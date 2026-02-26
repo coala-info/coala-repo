@@ -1,8 +1,9 @@
 ---
 name: pyfastani
-description: `pyfastani` provides Cython bindings and a native Python interface for FastANI, a popular method for fast whole-genome similarity estimation.
+description: pyfastani provides a Python interface and Cython bindings for FastANI to perform fast whole-genome similarity estimation in memory. Use when user asks to compute average nucleotide identity, sketch reference genomes, or perform fast genomic similarity searches without using command-line wrappers.
 homepage: https://github.com/althonos/pyfastani
 ---
+
 
 # pyfastani
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-highlyreplicatedrnaseq
-description: the package is available on all platforms; click for details.
+description: This package provides access to a highly replicated bulk RNA-seq dataset from Saccharomyces cerevisiae for benchmarking differential expression analysis. Use when user asks to load the Schurch 2016 dataset, access high-replicate yeast RNA-seq counts, or benchmark the effect of biological replicates on statistical power.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HighlyReplicatedRNASeq.html
 ---
+
 
 # bioconductor-highlyreplicatedrnaseq
 

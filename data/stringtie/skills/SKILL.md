@@ -1,8 +1,9 @@
 ---
 name: stringtie
-description: StringTie is a highly efficient bioinformatic tool designed to assemble RNA-Seq alignments into full-length transcripts and quantify their expression levels.
+description: StringTie assembles RNA-Seq alignments into full-length transcripts and quantifies their expression levels using a network flow algorithm. Use when user asks to assemble transcripts, quantify gene expression, merge multiple sample assemblies, or process long-read and hybrid RNA-Seq datasets.
 homepage: https://ccb.jhu.edu/software/stringtie
 ---
+
 
 # stringtie
 

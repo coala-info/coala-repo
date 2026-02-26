@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylationepicv2anno.20a1.hg38
-description: the package is available on all platforms; click for details.
+description: This package provides hg38-based genomic annotations for Illumina Methylation EPIC v2.0 BeadChips. Use when user asks to map EPIC v2.0 probes to genomic features, handle duplicated probe IDs, or integrate EPIC v2.0 data with the minfi package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICv2anno.20a1.hg38.html
 ---
+
 
 # bioconductor-illuminahumanmethylationepicv2anno.20a1.hg38
 

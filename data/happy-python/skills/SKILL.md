@@ -1,8 +1,9 @@
 ---
 name: happy-python
-description: HapPy (Haploidy using Python) is a specialized tool for assessing the haploidy of a genome assembly.
+description: HapPy assesses the haploidy of a genome assembly by analyzing per-base coverage histograms to identify collapsed and uncollapsed regions. Use when user asks to generate coverage histograms from BAM files, estimate haploidy metrics, or evaluate genome assembly quality.
 homepage: https://github.com/AntoineHo/HapPy
 ---
+
 
 # happy-python
 

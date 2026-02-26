@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioccheck
-description: the package is available on all platforms; click for details.
+description: This tool validates R packages against Bioconductor-specific guidelines and best practices to ensure they meet repository standards. Use when user asks to check a package for Bioconductor submission, perform quality control on R package source code, or troubleshoot BiocCheck errors, warnings, and notes.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocCheck.html
 ---
+
 
 # bioconductor-bioccheck
 

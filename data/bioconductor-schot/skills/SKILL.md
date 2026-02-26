@@ -1,8 +1,9 @@
 ---
 name: bioconductor-schot
-description: the package is available on all platforms; click for details.
+description: scHOT identifies changes in higher-order interactions such as correlation across single-cell trajectories or spatial patterns. Use when user asks to identify genes with differential correlation, detect higher-order changes along a trajectory, or perform single-cell higher-order testing.
 homepage: https://bioconductor.org/packages/release/bioc/html/scHOT.html
 ---
+
 
 # bioconductor-schot
 

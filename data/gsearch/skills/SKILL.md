@@ -1,8 +1,9 @@
 ---
 name: gsearch
-description: `gsearch` is a high-performance tool designed for large-scale genomic comparisons.
+description: gsearch performs large-scale genomic comparisons and searches using locality-sensitive hashing and graph-based indexing. Use when user asks to build a searchable genomic database, search query genomes against a reference index, or update an existing database with new sequences.
 homepage: https://github.com/jean-pierreBoth/gsearch
 ---
+
 
 # gsearch
 

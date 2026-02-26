@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lumihumanall.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for Illumina human microarrays. Use when user asks to map Illumina probe identifiers to gene symbols, annotate human expression data, or retrieve genomic metadata for Illumina human chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiHumanAll.db.html
 ---
+
 
 # bioconductor-lumihumanall.db
 

@@ -1,9 +1,9 @@
 # ucsc-estorient CWL Generation Report
 
-## ucsc-estorient
+## ucsc-estorient_estOrient
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container execution error log from Apptainer/Singularity.
+convert ESTs so that orientation matches directory of transcription
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-estorient:482--h0b57e2e_0
@@ -18,13 +18,33 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-estorient:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+estOrient - convert ESTs so that orientation matches directory of transcription
+
+usage: estOrient [options] db estTable outPsl
+
+Read ESTs from a database and determine orientation based on
+estOrientInfo table or direction in gbCdnaInfo table.  Update
+PSLs so that the strand reflects the direction of transcription.
+By default, PSLs where the direction can't be determined are dropped.
+
+Options:
+   -chrom=chr - process this chromosome, maybe repeated
+   -keepDisoriented - don't drop ESTs where orientation can't
+    be determined.
+   -disoriented=psl - output ESTs that where orientation can't
+    be determined to this file.
+   -inclVer - add NCBI version number to accession if not already
+    present.
+   -fileInput - estTable is a psl file
+   -estOrientInfo=file - instead of getting the orientation information
+    from the estOrientInfo table, load it from this file.  This data is the
+    output of polyInfo command.  If this option is specified, the direction
+    will not be looked up in the gbCdnaInfo table and db can be `no'.
+   -info=infoFile - write information about each EST to this tab
+    separated file 
+       qName tName tStart tEnd origStrand newStrand orient
+    where orient is < 0 if PSL was reverse, > 0 if it was left unchanged
+    and 0 if the orientation couldn't be determined (and was left
+    unchanged).
 ```
 
-
-## Metadata
-- **Skill**: generated

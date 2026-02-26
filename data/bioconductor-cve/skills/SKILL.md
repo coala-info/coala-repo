@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cve
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-cve provides an interactive Shiny-based framework for prioritizing and exploring cancer variants in precision oncology. Use when user asks to annotate variants via Oncotator, launch the Cancer Variant Explorer application, or analyze variants within melanoma-specific co-expression networks.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/CVE.html
 ---
+
 
 # bioconductor-cve
 

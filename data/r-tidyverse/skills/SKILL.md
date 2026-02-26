@@ -1,8 +1,9 @@
 ---
 name: r-tidyverse
-description: "The 'tidyverse' is a set of packages that work in harmony     because they share common data representations and 'API' design. This     package is designed to make it easy to install and load multiple     'tidyverse' packages in a single step."
+description: The tidyverse provides a collection of R packages designed for data science tasks including data manipulation, visualization, and functional programming. Use when user asks to import data, tidy datasets, transform variables with dplyr, create visualizations with ggplot2, or apply functional programming patterns with purrr.
 homepage: https://cloud.r-project.org/web/packages/tidyverse/index.html
 ---
+
 
 # r-tidyverse
 

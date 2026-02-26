@@ -1,8 +1,9 @@
 ---
 name: weeder
-description: Weeder is a specialized static analysis tool for Haskell that detects "weeds"—code that is defined but never reachable from specified entry points (roots).
+description: Weeder is a static analysis tool for Haskell that detects unreachable code. Use when user asks to find unused Haskell code, identify dead code in a Haskell project, or generate a default configuration.
 homepage: https://github.com/ocharles/weeder
 ---
+
 
 # weeder
 

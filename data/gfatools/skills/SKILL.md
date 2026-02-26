@@ -1,8 +1,9 @@
 ---
 name: gfatools
-description: gfatools is a high-performance utility for handling sequence graphs, commonly used in pangenomics and genome assembly.
+description: gfatools is a high-performance utility for manipulating and converting sequence graphs in GFA and rGFA formats. Use when user asks to extract subgraphs, convert graphs to FASTA sequences, or generate BED files from reference GFA data.
 homepage: https://github.com/lh3/gfatools
 ---
+
 
 # gfatools
 

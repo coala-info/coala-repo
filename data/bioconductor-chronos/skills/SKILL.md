@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chronos
-description: the package is available on all platforms; click for details.
+description: CHRONOS is an R package that analyzes time-series transcriptomic data to identify and score dynamic linear sub-pathways integrated with miRNA regulation. Use when user asks to analyze time-varying biological mechanisms, extract sub-pathways from KEGG maps, or integrate miRNA-mRNA interactions into pathway analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/CHRONOS.html
 ---
+
 
 # bioconductor-chronos
 

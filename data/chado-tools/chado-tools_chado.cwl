@@ -2,10 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: chado
 label: chado-tools_chado
-doc: "Chado-tools command-line utility. (Note: The provided input text appears to
-  be a container runtime error log rather than help text, so no arguments could be
-  extracted.)\n\nTool homepage: https://github.com/sanger-pathogens/chado-tools/"
-inputs: []
+doc: "Tools to access CHADO databases\n\nTool homepage: https://github.com/sanger-pathogens/chado-tools/"
+inputs:
+  - id: command
+    type: string
+    doc: The subcommand to run (connect, query, extract, insert, delete, import,
+      export, execute, admin)
+    inputBinding:
+      position: 1
+  - id: command_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the selected subcommand
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

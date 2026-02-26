@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg.u95d
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Human Genome U95D microarray. Use when user asks to process Affymetrix HG-U95D microarray data, access platform design metadata, or perform low-level analysis on Human Genome U95D chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u95d.html
 ---
+
 
 # bioconductor-pd.hg.u95d
 

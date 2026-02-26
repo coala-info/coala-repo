@@ -1,11 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minimize
+baseCommand: tinker_minimize
 label: tinker_minimize
-doc: "The provided text contains container runtime logs and a fatal error message
-  rather than the help documentation for the tool. Consequently, no arguments or tool
-  descriptions could be extracted.\n\nTool homepage: https://dasher.wustl.edu/tinker/"
-inputs: []
+doc: "Software Tools for Molecular Design\n\nTool homepage: https://dasher.wustl.edu/tinker/"
+inputs:
+  - id: input_file
+    type: File
+    doc: Cartesian Coordinate File Name
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

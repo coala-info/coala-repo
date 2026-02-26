@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipseeker
-description: the package is available on all platforms; click for details.
+description: ChIPseeker is an R/Bioconductor package used for annotating, visualizing, and comparing ChIP-seq peak data with genomic features. Use when user asks to annotate peaks with genomic features, visualize binding profiles around transcription start sites, perform functional enrichment analysis on peak-associated genes, or compare multiple ChIP-seq datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPseeker.html
 ---
+
 
 # bioconductor-chipseeker
 

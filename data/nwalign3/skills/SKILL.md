@@ -1,8 +1,9 @@
 ---
 name: nwalign3
-description: The `nwalign3` skill provides a robust implementation of the Needleman-Wunsch algorithm for global sequence alignment.
+description: The nwalign3 tool performs global sequence alignment for DNA, RNA, or protein sequences using the Needleman-Wunsch algorithm. Use when user asks to perform global sequence alignments, calculate alignment scores, or customize gap penalties and substitution matrices.
 homepage: https://github.com/briney/nwalign3
 ---
+
 
 # nwalign3
 

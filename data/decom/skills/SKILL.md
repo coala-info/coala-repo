@@ -1,8 +1,9 @@
 ---
 name: decom
-description: decOM is a high-accuracy microbial source tracking tool specifically designed for the contamination assessment of ancient oral samples.
+description: decOM is a microbial source tracking tool that estimates the contribution of different environments to metagenomic samples using a k-mer-based approach. Use when user asks to assess contamination in ancient oral samples, estimate source environment proportions, or perform microbial source tracking on metagenomic data.
 homepage: https://github.com/CamilaDuitama/decOM
 ---
+
 
 # decom
 

@@ -1,8 +1,9 @@
 ---
 name: dr-disco
-description: Dr.
+description: Dr. Disco identifies genomic breakpoints of fusion transcripts, including exon-to-exon and intron-to-intron junctions, using RNA-seq data. Use when user asks to detect gene fusions, identify genomic breakpoints in RNA-seq data, or find novel splice junctions and fusions to non-gene regions.
 homepage: https://github.com/yhoogstrate/dr-disco
 ---
+
 
 # dr-disco
 

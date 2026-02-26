@@ -1,8 +1,9 @@
 ---
 name: coolbox
-description: CoolBox is a modular toolkit designed for the visual analysis of genomics data.
+description: CoolBox is a modular toolkit for creating and exploring multi-omics genomic visualizations using a grammar of graphics approach. Use when user asks to visualize genomic tracks, create Hi-C interaction plots, or interactively browse multi-omics data in Jupyter environments.
 homepage: https://github.com/GangCaoLab/CoolBox
 ---
+
 
 # coolbox
 

@@ -1,8 +1,9 @@
 ---
 name: mentalist
-description: MentaLiST is a high-performance MLST caller designed to handle the computational challenges of large-scale bacterial genotyping.
+description: "MentaLiST is a high-performance MLST caller that uses a k-mer counting algorithm for rapid bacterial genotyping. Use when user asks to download MLST schemas, build custom k-mer databases, or call alleles from sequencing reads."
 homepage: https://github.com/WGS-TB/MentaLiST
 ---
+
 
 # mentalist
 

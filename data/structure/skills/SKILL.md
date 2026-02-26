@@ -1,8 +1,9 @@
 ---
 name: structure
-description: The `structure` skill provides a framework for applying Bayesian clustering algorithms to genetic data.
+description: The structure tool applies Bayesian clustering algorithms to genetic data to identify population subdivisions and estimate individual ancestry proportions. Use when user asks to determine the number of populations in a dataset, quantify ancestral proportions, or account for population stratification in genetic studies.
 homepage: https://web.stanford.edu/group/pritchardlab/structure.html
 ---
+
 
 # structure
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-igc
-description: the package is available on all platforms; click for details.
+description: The iGC package performs integrated analysis of gene expression and copy number alterations to identify genes whose expression levels are driven by genomic gains or losses. Use when user asks to identify CNA-driven genes, integrate gene expression with copy number data, or analyze the impact of genomic alterations on transcript levels.
 homepage: https://bioconductor.org/packages/release/bioc/html/iGC.html
 ---
+
 
 # bioconductor-igc
 

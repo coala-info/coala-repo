@@ -1,8 +1,9 @@
 ---
 name: rabbitqcplus
-description: RabbitQCPlus is a high-performance quality control tool designed to replace or augment traditional tools like fastp, FASTQC, and SOAPnuke.
+description: RabbitQCPlus is a high-performance quality control and error correction tool for processing Next-Generation and Third-Generation sequencing data. Use when user asks to perform quality control, filter reads, correct sequencing errors, or generate QC reports for FASTQ files.
 homepage: https://github.com/RabbitBio/RabbitQCPlus
 ---
+
 
 # rabbitqcplus
 

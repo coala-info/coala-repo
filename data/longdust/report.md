@@ -3,7 +3,7 @@
 ## longdust
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a system error log indicating a failure to build a container image due to insufficient disk space.
+Finds regions of high sequence complexity in a FASTA file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/longdust:1.4--h577a1d6_0
@@ -18,11 +18,22 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/longdust:1.4--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2451259853: no space left on device
+Usage: longdust [options] <in.fa>
+Options:
+  -k INT      k-mer length [7]
+  -w INT      window size [5000]
+  -t FLOAT    score threshold [0.6]
+  -g FLOAT    genome-wide GC content [0.5]
+  -e INT      extension X-drop length (0 to disable) [50]
+  -s INT      min start k-mer count (2 or 3) [3]
+  -f          forward strand only
+  -a          guaranteed O(Lw) algorithm but with more approximation
+  -v          version number
+Notes:
+  * Recommend w < 4^k for performance, especially given large w
+  * Use "-k8 -w20000" for longer motifs
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

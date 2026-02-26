@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clustall
-description: the package is available on all platforms; click for details.
+description: ClustAll is a Bioconductor package used for the integrated clustering of multi-omics data. Use when user asks to cluster multi-omics datasets, integrate different biological data types, or identify consensus clusters across multiple omics layers.
 homepage: https://bioconductor.org/packages/release/bioc/html/ClustAll.html
 ---
+
 
 # bioconductor-clustall
 

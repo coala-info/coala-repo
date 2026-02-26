@@ -1,8 +1,9 @@
 ---
 name: translate-gard
-description: The `translate-gard` utility is a specialized bioinformatics tool designed to bridge the gap between legacy HyPhy GARD outputs and modern data formats.
+description: `translate-gard` converts HyPhy GARD output files into a modern JSON format. Use when user asks to 'convert GARD output to JSON', 'prepare GARD data for visualization', or 'make GARD results compatible with modern data formats'.
 homepage: https://github.com/veg/translate-gard/
 ---
+
 
 # translate-gard
 

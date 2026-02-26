@@ -1,8 +1,9 @@
 ---
 name: gffcompare
-description: The `gffcompare` skill provides a framework for bioinformatic analysis of transcript structures.
+description: Gffcompare compares, classifies, and merges transcript structures from GTF or GFF files against a reference annotation. Use when user asks to evaluate assembly accuracy, merge multiple GTF files into a non-redundant set, or classify transcripts based on their overlap with a reference.
 homepage: https://ccb.jhu.edu/software/stringtie/gffcompare.shtml
 ---
+
 
 # gffcompare
 

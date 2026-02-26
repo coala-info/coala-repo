@@ -1,8 +1,9 @@
 ---
 name: bamcmp
-description: bamcmp is a specialized tool for deconvolving host and graft reads in chimeric samples, such as Patient-Derived Xenografts (PDX).
+description: bamcmp deconvolves host and graft reads in chimeric samples by comparing alignments from the same sequencing library against two different reference genomes. Use when user asks to separate human and mouse reads in PDX samples, resolve mapping conflicts between two species, or categorize reads as unique, better, or ambiguous based on alignment scores.
 homepage: https://github.com/CRUKMI-ComputationalBiology/bamcmp
 ---
+
 
 # bamcmp
 

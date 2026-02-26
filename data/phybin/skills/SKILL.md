@@ -1,8 +1,9 @@
 ---
 name: phybin
-description: PhyBin is a command-line utility designed to organize large collections of phylogenetic trees by their topological similarity.
+description: PhyBin organizes large collections of phylogenetic trees by grouping them based on topological similarity or Robinson-Foulds distance. Use when user asks to bin identical trees, perform hierarchical clustering, calculate Robinson-Foulds distances, or normalize taxa names across multiple gene trees.
 homepage: https://github.com/rrnewton/PhyBin
 ---
+
 
 # phybin
 

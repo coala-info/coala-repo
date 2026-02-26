@@ -1,8 +1,9 @@
 ---
 name: dropest
-description: The `dropest` skill provides a specialized workflow for the initial analysis of droplet-based single-cell RNA-seq (scRNA-seq) data.
+description: The dropest tool processes raw droplet-based single-cell RNA-seq data to generate high-quality gene expression matrices. Use when user asks to extract cell barcodes and UMIs, estimate molecular count matrices from aligned BAM files, or perform UMI error correction and quality reporting.
 homepage: https://github.com/hms-dbmi/dropEst/
 ---
+
 
 # dropest
 

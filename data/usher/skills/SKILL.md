@@ -1,8 +1,9 @@
 ---
 name: usher
-description: The UShER (Ultrafast Sample Placement on Existing Trees) package is a specialized suite of tools designed for high-performance phylogenetics.
+description: The usher tool places new genetic samples onto an existing mutation-annotated tree. Use when user asks to place new samples, identify parsimonious sample placement, or update a mutation-annotated tree.
 homepage: https://github.com/yatisht/usher
 ---
+
 
 # usher
 

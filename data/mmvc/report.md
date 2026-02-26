@@ -3,10 +3,10 @@
 ## mmvc
 
 ### Tool Description
-The provided text does not contain help information for the tool 'mmvc'. It contains error logs related to a container runtime (Apptainer/Singularity) failing to pull the tool's image due to lack of disk space.
+call variants using a multinomial model sampled by MCMC
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mmvc:1.0.2--1
+- **Docker Image**: quay.io/biocontainers/mmvc:1.0.2--0
 - **Homepage**: https://github.com/veg/mmvc
 - **Package**: https://anaconda.org/channels/bioconda/packages/mmvc/overview
 - **Validation**: PASS
@@ -18,29 +18,29 @@ The provided text does not contain help information for the tool 'mmvc'. It cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mmvc:1.0.2--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4075414780: no space left on device
-```
+usage: mmvc [-g GRID-DENSITY] [-c CHAIN-LENGTH] [-b BURNIN-FRACTION]
+            [-t TARGET-RATE] [-p POSTERIOR-THRESHOLD] [-f FILTER]
+            [-j JSON-REPORT] [-h] msa
 
+call variants using a multinomial model sampled by MCMC
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  msa
 
-## mmvc_mmvc.jl
+optional arguments:
+  -g, --grid-density GRID-DENSITY
+                        (type: Int64, default: 10)
+  -c, --chain-length CHAIN-LENGTH
+                        (type: Int64, default: 2000000)
+  -b, --burnin-fraction BURNIN-FRACTION
+                        (type: Float64, default: 0.5)
+  -t, --target-rate TARGET-RATE
+                        (type: Float64, default: 0.01)
+  -p, --posterior-threshold POSTERIOR-THRESHOLD
+                        (type: Float64, default: 0.95)
+  -f, --filter FILTER
+  -j, --json-report JSON-REPORT
 
-### Tool Description
-Multi-view Model-based Clustering (Note: The provided text contains a container runtime error and does not include usage instructions or argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mmvc:1.0.2--1
-- **Homepage**: https://github.com/veg/mmvc
-- **Package**: https://anaconda.org/channels/bioconda/packages/mmvc/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mmvc:1.0.2--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1695238728: no space left on device
+  -h, --help            show this help message and exit
 ```
 

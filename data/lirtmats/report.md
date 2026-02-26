@@ -1,9 +1,9 @@
 # lirtmats CWL Generation Report
 
-## lirtmats
+## lirtmats_cli
 
 ### Tool Description
-Long-read Isoform Reconstruction and rMATS-based differential splicing analysis. (Note: The provided text contains system error messages regarding container execution and does not include the tool's help documentation or argument list.)
+Executing lirtmats version 1.0.0.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lirtmats:1.0.0--pyhdfd78af_0
@@ -18,11 +18,60 @@ Long-read Isoform Reconstruction and rMATS-based differential splicing analysis.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lirtmats:1.0.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1326515955: no space left on device
+Executing lirtmats version 1.0.0.
+usage: lirtmats cli [-h] --input-data INPUT_DATA [--col-idx COL_IDX]
+                    [--input-sep {tab,comma}] [--rt-path RT_PATH]
+                    [--rt-sep {tab,comma}] [--rt-tol RT_TOL]
+                    [--ion-mode {pos,neg}] [--save-db]
+                    [--summ-type {xlsx,tsv,csv}]
+
+options:
+  -h, --help            show this help message and exit
+  --input-data INPUT_DATA
+                        Data set including peak-list.
+  --col-idx COL_IDX     Column index of name, mz, rt and start of data
+                        intensity
+  --input-sep {tab,comma}
+                        Values in input or output file are separated by this
+                        character.
+  --rt-path RT_PATH     Retention time reference file for matching.
+  --rt-sep {tab,comma}  Delimiter in retention time reference file
+  --rt-tol RT_TOL       Retention time tolerance in seconds.
+  --ion-mode {pos,neg}  Ion mode of data set.
+  --save-db             Save all results in a sql database.
+  --summ-type {xlsx,tsv,csv}
+                        Retention time matching result file format.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## lirtmats_gui
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/lirtmats:1.0.0--pyhdfd78af_0
+- **Homepage**: https://pypi.org/project/lirtmats/
+- **Package**: https://anaconda.org/channels/bioconda/packages/lirtmats/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Executing lirtmats version 1.0.0.
+usage: lirtmats gui [-h]
+
+options:
+  -h, --help  show this help message and exit
+```
+

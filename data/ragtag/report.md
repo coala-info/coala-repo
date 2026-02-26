@@ -1,9 +1,9 @@
 # ragtag CWL Generation Report
 
-## ragtag
+## ragtag_ragtag.py
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch the ragtag image.
+RagTag: Tools for fast and flexible genome assembly scaffolding and improvement.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ragtag:2.1.0--pyhb7b1952_0
@@ -12,39 +12,35 @@ The provided text does not contain help information for the tool. It appears to 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ragtag/overview
-- **Total Downloads**: 33.4K
+- **Total Downloads**: 33.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/malonge/RagTag
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ragtag:2.1.0--pyhb7b1952_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+RagTag: Tools for fast and flexible genome assembly scaffolding and improvement.
+Version: v2.1.0
 
+usage: ragtag.py <command> [options]
+    
+    assembly improvement:
+      correct         homology-based misassembly correction
+      scaffold        homology-based assembly scaffolding
+      patch           homology-based assembly patching
+      merge           scaffold merging
+      
+    file utilities:
+      agp2fa          build a FASTA file from an AGP file
+      agpcheck        check for valid AGP file format
+      asmstats        assembly statistics
+      splitasm        split an assembly at gaps
+      delta2paf       delta to PAF file conversion
+      paf2delta       PAF to delta file conversion
+      updategff       update gff intervals
+      
 
-## Metadata
-- **Skill**: generated
-
-## ragtag_ragtag.py
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ragtag:2.1.0--pyhb7b1952_0
-- **Homepage**: https://github.com/malonge/RagTag
-- **Package**: https://anaconda.org/channels/bioconda/packages/ragtag/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ragtag:2.1.0--pyhb7b1952_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+    options:
+      -c, --citation  
+      -v, --version
 ```
 

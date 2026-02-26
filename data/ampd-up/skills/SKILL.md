@@ -1,8 +1,9 @@
 ---
 name: ampd-up
-description: AMPd-Up is a specialized bioinformatics tool for the de novo generation of antimicrobial peptide sequences.
+description: AMPd-Up is a bioinformatics tool that uses recurrent neural networks for the de novo generation of synthetic antimicrobial peptide sequences. Use when user asks to generate antimicrobial peptides, train models on custom peptide data, or sample sequences from pre-trained model weights.
 homepage: https://github.com/bcgsc/AMPd-Up
 ---
+
 
 # ampd-up
 

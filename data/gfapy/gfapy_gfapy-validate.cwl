@@ -2,8 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gfapy-validate
 label: gfapy_gfapy-validate
-doc: "Validate GFA (Graphical Fragment Assembly) files.\n\nTool homepage: https://github.com/ggonnella/gfapy"
-inputs: []
+doc: "Validate a GFA file\n\nTool homepage: https://github.com/ggonnella/gfapy"
+inputs:
+  - id: filename
+    type: File
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

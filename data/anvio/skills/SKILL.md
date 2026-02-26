@@ -1,8 +1,9 @@
 ---
 name: anvio
-description: anvi'o is an advanced analysis and visualization platform designed for microbial 'omics.
+description: Anvi’o is an advanced analysis and visualization platform for integrating and exploring microbial 'omics data. Use when user asks to generate contigs databases, profile mapping results, perform pangenomic analysis, or interactively refine metagenome-assembled genomes.
 homepage: http://merenlab.org/software/anvio/
 ---
+
 
 # anvio
 

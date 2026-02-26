@@ -1,8 +1,9 @@
 ---
 name: pipits
-description: PIPITS is a specialized bioinformatics pipeline designed specifically for fungal community analysis.
+description: PIPITS is a bioinformatics pipeline that automates the processing of Illumina sequencing reads for fungal community analysis. Use when user asks to perform fungal metabarcoding, extract ITS subregions, or generate OTU tables from raw sequence data.
 homepage: https://github.com/hsgweon/pipits
 ---
+
 
 # pipits
 

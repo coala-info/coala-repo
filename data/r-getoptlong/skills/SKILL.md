@@ -1,8 +1,9 @@
 ---
 name: r-getoptlong
-description: "This is a command-line argument parser which wraps the      powerful Perl module Getopt::Long and with some adaptations for easier use 	in R. It also provides a simple way for variable interpolation in R.</p>"
+description: "This tool parses command-line arguments in R using Perl-style syntax and provides variable interpolation for string construction. Use when user asks to parse complex command-line flags, implement git-style sub-commands in R scripts, or perform variable interpolation within strings."
 homepage: https://cloud.r-project.org/web/packages/GetoptLong/index.html
 ---
+
 
 # r-getoptlong
 

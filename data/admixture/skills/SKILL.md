@@ -1,8 +1,9 @@
 ---
 name: admixture
-description: ADMIXTURE is a software tool for maximum likelihood estimation of individual ancestries from multilocus SNP genotype datasets.
+description: Admixture estimates individual ancestry coefficients from large-scale SNP datasets using a maximum likelihood approach. Use when user asks to estimate ancestry proportions, determine the optimal number of ancestral populations through cross-validation, or perform supervised ancestry analysis.
 homepage: http://www.genetics.ucla.edu/software/admixture/index.html
 ---
+
 
 # admixture
 

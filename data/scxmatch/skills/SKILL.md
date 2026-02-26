@@ -1,8 +1,9 @@
 ---
 name: scxmatch
-description: The `scxmatch` package provides a Python implementation of Rosenbaum’s cross-match test, specifically optimized for single-cell data.
+description: scxmatch performs Rosenbaum’s cross-match test to determine if two multivariate distributions in single-cell data are significantly different. Use when user asks to compare cellular distributions between conditions, perform a non-parametric test for global shifts in cell states, or execute a distance-based graph matching test on AnnData objects.
 homepage: https://github.com/bionetslab/scxmatch
 ---
+
 
 # scxmatch
 

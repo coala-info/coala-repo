@@ -3,7 +3,7 @@
 ## kmer-counter
 
 ### Tool Description
-A tool for counting k-mers (Note: The provided help text contains only container runtime error messages and no usage information).
+Tally nucleotide counts in multi-entry fasta
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kmer-counter:0.1.2--h4349ce8_0
@@ -12,17 +12,26 @@ A tool for counting k-mers (Note: The provided help text contains only container
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kmer-counter/overview
-- **Total Downloads**: 766
+- **Total Downloads**: 786
 - **Last updated**: 2025-11-15
 - **GitHub**: https://github.com/CobiontID/kmer-counter
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmer-counter:0.1.2--h4349ce8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3026953622: no space left on device
+K-mer counter 0.1.2
+Claudia C. Weber <cw21@sanger.ac.uk>>
+Tally nucleotide counts in multi-entry fasta
+
+USAGE:
+    kmer-counter [OPTIONS] --file <file>
+
+OPTIONS:
+    -c, --collapse <collapse>    Canonicalize k-mers (default 1 = True [default: 1]
+    -f, --file <file>            Fasta file to tally.
+    -h, --help                   Print help information
+    -i, --ids <ids>              File to write identifiers to [default: ids.txt]
+    -k, --klength <klength>      K-mer length [default: 4]
+    -o, --out <out>              Output file name. [default: counter_output.npy]
+    -V, --version                Print version information
 ```
 
-
-## Metadata
-- **Skill**: generated

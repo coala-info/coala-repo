@@ -3,7 +3,7 @@
 ## mashpit
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it contains system log messages and a fatal error regarding a container build failure (no space left on device).
+mashpit: error: argument -h/--help: ignored explicit argument 'elp'
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mashpit:0.9.10--pyhdfd78af_1
@@ -12,17 +12,20 @@ The provided text does not contain help information or usage instructions; it co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mashpit/overview
-- **Total Downloads**: 5.3K
+- **Total Downloads**: 5.4K
 - **Last updated**: 2025-06-16
 - **GitHub**: https://github.com/tongzhouxu/mashpit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mashpit:0.9.10--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1031621892: no space left on device
+/usr/local/lib/python3.9/site-packages/dask/dataframe/__init__.py:42: FutureWarning: 
+Dask dataframe query planning is disabled because dask-expr is not installed.
+
+You can install it with `pip install dask[dataframe]` or `conda install dask`.
+This will raise in a future version.
+
+  warnings.warn(msg, FutureWarning)
+usage: mashpit [-h] [-v] command ...
+mashpit: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
-
-## Metadata
-- **Skill**: generated

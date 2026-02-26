@@ -1,8 +1,9 @@
 ---
 name: oarfish
-description: Oarfish is a high-performance tool written in Rust designed for fast and accurate transcript quantification from long-read RNA-seq technologies, including Nanopore (cDNA and direct RNA) and PacBio.
+description: Oarfish is a high-performance tool designed for fast and accurate transcript quantification from long-read RNA-seq data using a probabilistic expectation-maximization algorithm. Use when user asks to quantify transcripts from Nanopore or PacBio reads, handle multi-mapping reads in long-read datasets, or perform single-cell RNA-seq quantification.
 homepage: https://github.com/COMBINE-lab/oarfish
 ---
+
 
 # oarfish
 

@@ -1,8 +1,9 @@
 ---
 name: t-coffee
-description: T-Coffee (Tree-based Consistency Objective For alignment Evaluation) is a comprehensive suite of tools designed for multiple sequence alignment.
+description: T-Coffee is a comprehensive suite of tools designed for generating high-consistency multiple sequence alignments by combining various alignment sources. Use when user asks to align protein or nucleotide sequences, perform structure-based alignments, or use homology-extended methods for low-identity sequences.
 homepage: https://github.com/cbcrg/tcoffee
 ---
+
 
 # t-coffee
 

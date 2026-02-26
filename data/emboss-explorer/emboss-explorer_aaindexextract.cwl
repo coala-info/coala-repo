@@ -1,10 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aaindexextract
+baseCommand: emboss-explorer_aaindexextract
 label: emboss-explorer_aaindexextract
-doc: "Extract amino acid index data (Note: The provided help text contains system
-  error messages and does not list specific arguments).\n\nTool homepage: http://emboss.open-bio.org/"
-inputs: []
+doc: "Extract amino acid property data from AAINDEX\n\nTool homepage: http://emboss.open-bio.org/"
+inputs:
+  - id: infile
+    type: File
+    doc: AAINDEX database file
+    inputBinding:
+      position: 101
 outputs:
   - id: stdout
     type: stdout

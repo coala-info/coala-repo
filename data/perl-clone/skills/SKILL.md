@@ -1,8 +1,9 @@
 ---
 name: perl-clone
-description: The `perl-clone` skill provides a high-performance mechanism for deep-copying Perl data types.
+description: This tool provides a high-performance mechanism for deep-copying complex Perl data structures and objects. Use when user asks to deep copy Perl data types, recursively duplicate nested hashes or arrays, or create independent copies of objects to avoid reference sharing.
 homepage: http://metacpan.org/pod/Clone
 ---
+
 
 # perl-clone
 

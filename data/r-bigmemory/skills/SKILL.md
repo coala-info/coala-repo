@@ -1,8 +1,9 @@
 ---
 name: r-bigmemory
-description: "Create, store, access, and manipulate massive matrices.     Matrices are allocated to shared memory and may use memory-mapped     files.  Packages 'biganalytics', 'bigtabulate', 'synchronicity', and     'bigalgebra' provide advanced functionality.</p>"
+description: The r-bigmemory tool manages massive matrices in R using shared memory and memory-mapped files to handle datasets exceeding available RAM. Use when user asks to create big.matrix objects, manage datasets larger than physical memory, or perform shared-memory parallel computing.
 homepage: https://cloud.r-project.org/web/packages/bigmemory/index.html
 ---
+
 
 # r-bigmemory
 

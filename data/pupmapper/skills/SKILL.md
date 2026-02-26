@@ -1,8 +1,9 @@
 ---
 name: pupmapper
-description: The `pupmapper` skill provides a streamlined workflow for assessing genomic "dark matter"—regions where short-read sequencing data is difficult to map uniquely.
+description: Pupmapper calculates pileup mappability scores to identify genomic regions where short-read sequencing data is difficult to map uniquely. Use when user asks to assess genomic dark matter, calculate k-mer mappability, filter unreliable variant calls, or generate bigwig files for mappability visualization.
 homepage: https://github.com/maxgmarin/pupmapper
 ---
+
 
 # pupmapper
 

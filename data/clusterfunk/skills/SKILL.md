@@ -1,8 +1,9 @@
 ---
 name: clusterfunk
-description: clusterfunk is a specialized suite of tools for phylogenetic tree manipulation, often used in genomic epidemiology workflows.
+description: "clusterfunk is a suite of tools for manipulating phylogenetic trees and integrating them with tabular metadata. Use when user asks to annotate tips, relabel taxa, prune trees, reconstruct ancestral states, graft trees, or assign phylotypes."
 homepage: https://github.com/cov-ert/clusterfunk
 ---
+
 
 # clusterfunk
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-italics
-description: the package is available on all platforms; click for details.
+description: The ITALICS package implements an iterative method to normalize Affymetrix SNP arrays by estimating biological signals and non-relevant variations. Use when user asks to normalize Affymetrix 100K or 500K SNP arrays, estimate copy number alterations, or perform iterative normalization and segmentation of genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ITALICS.html
 ---
+
 
 # bioconductor-italics
 

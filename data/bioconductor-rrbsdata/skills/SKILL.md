@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rrbsdata
-description: the package is available on all platforms; click for details.
+description: This package provides an example Reduced Representation Bisulfite Sequencing dataset for DNA methylation analysis. Use when user asks to access sample RRBS data, practice DNA methylation analysis, or use the methylSig package example data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RRBSdata.html
 ---
+
 
 # bioconductor-rrbsdata
 

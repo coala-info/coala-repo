@@ -1,8 +1,9 @@
 ---
 name: pytest-mpl
-description: The `pytest-mpl` plugin extends the pytest framework to automate the comparison of Matplotlib figures.
+description: The pytest-mpl plugin automates the comparison of Matplotlib figures against baseline images to detect visual regressions. Use when user asks to compare Matplotlib plots, generate baseline images for visual testing, or perform image-based regression tests.
 homepage: https://github.com/matplotlib/pytest-mpl
 ---
+
 
 # pytest-mpl
 

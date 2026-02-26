@@ -1,8 +1,9 @@
 ---
 name: mdmcleaner
-description: mdmcleaner is a bioinformatics pipeline designed for the assessment, classification, and refinement of microbial genomes, particularly those belonging to "microbial dark matter." It addresses the challenge of fragmented assemblies in Metagenome Assembled Genomes (MAGs) and Single-cell Amplified Genomes (SAGs).
+description: mdmcleaner is a bioinformatics pipeline for assessing, classifying, and refining microbial genomes to identify and remove contamination. Use when user asks to clean metagenome assembled genomes, assess bin completeness, build reference databases, or extract taxonomic marker genes.
 homepage: https://github.com/KIT-IBG-5/mdmcleaner
 ---
+
 
 # mdmcleaner
 

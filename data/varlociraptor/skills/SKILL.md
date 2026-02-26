@@ -1,8 +1,9 @@
 ---
 name: varlociraptor
-description: Varlociraptor is a high-precision variant caller that replaces traditional heuristic filters with a unified statistical model.
+description: Varlociraptor is a high-precision variant caller that statistically models and filters genetic variants. Use when user asks to estimate sequencing error profiles, call genetic variants, filter variant calls by FDR, re-evaluate candidate variants, estimate allele fractions, or analyze multi-sample scenarios.
 homepage: https://varlociraptor.github.io
 ---
+
 
 # varlociraptor
 

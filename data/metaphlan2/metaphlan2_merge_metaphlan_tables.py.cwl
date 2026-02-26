@@ -1,15 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metaphlan2_merge_metaphlan_tables.py
+baseCommand: merge_metaphlan_tables.py
 label: metaphlan2_merge_metaphlan_tables.py
-doc: "Merge MetaPhlAn tables (Note: The provided help text contains system error messages
-  and no usage information was found).\n\nTool homepage: https://bitbucket.org/biobakery/metaphlan2"
-inputs: []
+doc: "Performs a table join on one or more metaphlan output files.\n\nTool homepage:
+  https://bitbucket.org/biobakery/metaphlan2"
+inputs:
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: One or more tab-delimited text tables to join
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Name of output file in which joined tables are saved
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metaphlan2:2.96.1--py_0
-stdout: metaphlan2_merge_metaphlan_tables.py.out

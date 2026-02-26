@@ -1,8 +1,9 @@
 ---
 name: pandas
-description: Pandas is the foundational Python library for data science, providing high-performance, easy-to-use data structures like the DataFrame and Series.
+description: Pandas provides high-performance data structures and tools for manipulating, cleaning, and analyzing relational or labeled datasets in Python. Use when user asks to load data from various formats, handle missing values, transform dataframes, or perform complex data aggregations and merges.
 homepage: https://github.com/pandas-dev/pandas
 ---
+
 
 # pandas
 

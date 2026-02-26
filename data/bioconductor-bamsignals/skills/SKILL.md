@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bamsignals
-description: the package is available on all platforms; click for details.
+description: This tool efficiently extracts read counts, coverage, and genomic profiles from BAM files into R using C-level optimization. Use when user asks to quantify genomic signals, generate base-pair resolution profiles, calculate read coverage, or extract count vectors from high-throughput sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/bamsignals.html
 ---
+
 
 # bioconductor-bamsignals
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-samspectral
-description: the package is available on all platforms; click for details.
+description: SamSPECTRAL performs spectral clustering to identify cell populations in flow cytometry data. Use when user asks to cluster flow cytometry data, identify cell populations, or analyze large-scale flow cytometry datasets using spectral clustering.
 homepage: https://bioconductor.org/packages/release/bioc/html/SamSPECTRAL.html
 ---
+
 
 # bioconductor-samspectral
 

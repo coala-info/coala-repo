@@ -3,7 +3,7 @@
 ## ir
 
 ### Tool Description
-The provided text does not contain help information for the tool 'ir'. It consists of error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to lack of disk space.
+calculate the index of repetitiveness, I_r
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ir:2.8.0--h7b50bb2_8
@@ -18,11 +18,32 @@ The provided text does not contain help information for the tool 'ir'. It consis
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ir:2.8.0--h7b50bb2_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3075498877: no space left on device
+# unknown argument: -
+ir version 2.8.0, copyright (c) 2006-2008 Bernhard Haubold & Thomas Wiehe
+	distributed under the GNU General Public License.
+purpose: calculate the index of repetitiveness, I_r
+usage: ir [options]
+options:
+	[-i <FILE> read query sequence(s) from FILE; default: FILE=stdin]
+	[-j <FILE> read sbjct sequence(s) from FILE; default: analyse only query]
+	[-o <FILE> write output to FILE; default: FILE=stdout]
+	[-w <NUM> sliding window of width NUM; default: no sliding window]
+	[-f <NUM> filter private regions of minimum length NUM; default: no filter]
+	[-c <NUM> increment sliding window by NUM positions; default: window_width/10]
+	[-n <NUM> print NUM characters of header; all if NUM<0; default: NUM=30]
+	[-r <NUM> compute Ae by randomizing sbjct NUM times; NUM=0 for analytical computation (fast)
+		default: NUM=floor(pow(10,4.99999999-log(seq->numSbjctNuc/2)/log(10)))+1]
+	[-S <NUM> NUM is seed of random number generator; default: seed from file or clock]
+	[-P <NUM> proportion of random shustrings considered; default:  1]
+	[-D <NUM> maximum depth of suffix tree; default: 1000000]
+	[-s treat each sequence (query & sbjct) separately; default: union(query)/union(sbjct)]
+	[-u unnormalize Ir; default: normalized Ir]
+	[-I compare sequences with identical headers when using -s (slow); default: assume ir=1]
+	[-p print information about program]
+	[-h print this help message]
+	[-d print debugging messages (use in conjunction with grep)]
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

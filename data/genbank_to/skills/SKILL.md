@@ -1,8 +1,9 @@
 ---
 name: genbank_to
-description: The `genbank_to` tool is a specialized utility designed to bridge the gap between GenBank records and various bioinformatics pipelines.
+description: The genbank_to tool extracts specific genomic components such as sequences, ORFs, and functional tables from GenBank records into various standardized bioinformatics formats. Use when user asks to extract nucleotide or protein sequences, generate GFF3 or functional tables, split multi-record GenBank files, or prepare data for AMR Finder Plus and Bakta.
 homepage: https://github.com/linsalrob/genbank_to
 ---
+
 
 # genbank_to
 

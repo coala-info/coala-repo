@@ -1,8 +1,9 @@
 ---
 name: phertilizer
-description: Phertilizer is a specialized tool for reconstructing clonal trees from ultra-low coverage single-cell DNA sequencing (scDNA-seq) data.
+description: Phertilizer reconstructs clonal trees from ultra-low coverage single-cell DNA sequencing data by integrating variant and binned read counts. Use when user asks to infer tumor evolutionary history, prepare variant and binned read count input files, or execute the clonal tree inference algorithm.
 homepage: https://github.com/elkebir-group/phertilizer
 ---
+
 
 # phertilizer
 

@@ -1,8 +1,9 @@
 ---
 name: nullarbor
-description: Nullarbor is a "reads-to-report" pipeline designed for the rapid analysis of bacterial NGS data, specifically tailored for public health microbiology.
+description: Nullarbor is a reads-to-report pipeline that automates the analysis of bacterial NGS data for public health microbiology and outbreak investigations. Use when user asks to perform isolate identification, variant calling, annotation, and phylogenetic analysis to generate a centralized HTML report.
 homepage: https://github.com/tseemann/nullarbor
 ---
+
 
 # nullarbor
 

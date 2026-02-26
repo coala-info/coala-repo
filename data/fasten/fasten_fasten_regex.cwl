@@ -2,10 +2,51 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fasten_regex
 label: fasten_fasten_regex
-doc: "The provided text does not contain help information for the tool. It contains
-  error messages related to a container runtime (Singularity/Apptainer) failing to
-  build an image due to lack of disk space.\n\nTool homepage: https://github.com/lskatz/fasten"
-inputs: []
+doc: "Filter reads based on a regular expression.\n\nTool homepage: https://github.com/lskatz/fasten"
+inputs:
+  - id: numcpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --numcpus
+  - id: paired_end
+    type:
+      - 'null'
+      - boolean
+    doc: The input reads are interleaved paired-end
+    inputBinding:
+      position: 101
+      prefix: --paired-end
+  - id: regex
+    type:
+      - 'null'
+      - string
+    doc: Regular expression
+    default: .
+    inputBinding:
+      position: 101
+      prefix: --regex
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print more status messages
+    inputBinding:
+      position: 101
+      prefix: --verbose
+  - id: which
+    type:
+      - 'null'
+      - string
+    doc: Which field to match on? ID, SEQ, QUAL.
+    default: SEQ
+    inputBinding:
+      position: 101
+      prefix: --which
 outputs:
   - id: stdout
     type: stdout

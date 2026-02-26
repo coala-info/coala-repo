@@ -1,8 +1,9 @@
 ---
 name: perl-module-load
-description: The `Module::Load` Perl module provides a "Do What I Mean" (DWIM) interface for loading modules and files.
+description: This tool provides a unified interface for dynamically loading Perl modules and files using a single function. Use when user asks to load a Perl module from a variable, include a file path, or handle conditional dependencies without complex require syntax.
 homepage: http://metacpan.org/pod/Module::Load
 ---
+
 
 # perl-module-load
 

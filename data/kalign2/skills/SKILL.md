@@ -1,8 +1,9 @@
 ---
 name: kalign2
-description: Kalign2 is a command-line utility optimized for speed and scalability in biological sequence alignment.
+description: Kalign2 is a fast and scalable command-line tool for biological sequence alignment. Use when user asks to perform multiple sequence alignment, handle large datasets, adjust gap penalties, or specify output formats like Clustal or PHYLIP.
 homepage: http://msa.sbc.su.se/cgi-bin/msa.cgi
 ---
+
 
 # kalign2
 

@@ -1,8 +1,9 @@
 ---
 name: beav
-description: beav (Bacterial Element Annotation reVamped) is a command-line pipeline designed to streamline the functional annotation of bacterial genomes.
+description: beav is a command-line pipeline that orchestrates the functional annotation of bacterial genomes by integrating tools like Bakta, antiSMASH, and DefenseFinder. Use when user asks to annotate bacterial genomes, identify biosynthetic gene clusters, analyze integrative and conjugative elements, or classify Agrobacterium Ti/Ri plasmids.
 homepage: https://github.com/weisberglab/beav
 ---
+
 
 # beav
 

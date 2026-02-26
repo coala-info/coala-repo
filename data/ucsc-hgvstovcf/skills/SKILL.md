@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgvstovcf
-description: The `ucsc-hgvstovcf` tool (internally executed as `hgvsToVcf`) is a specialized utility from the UCSC Genome Browser "kent" suite.
+description: The ucsc-hgvstovcf tool converts genetic variants from HGVS nomenclature to VCF format. Use when user asks to convert HGVS to VCF, convert a list of HGVS variants to VCF, or convert HGVS variants for a specific reference assembly.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgvstovcf
 

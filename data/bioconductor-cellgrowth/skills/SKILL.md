@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellgrowth
-description: the package is available on all platforms; click for details.
+description: This package analyzes cell growth data by fitting non-parametric and parametric models to estimate growth rates and maximum growth. Use when user asks to load growth data from well-plate formats, fit growth curves to time-series OD data, perform automatic bandwidth selection via cross-validation, or visualize growth fits and plate layouts.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/cellGrowth.html
 ---
+
 
 # bioconductor-cellgrowth
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ogre
-description: the package is available on all platforms; click for details.
+description: OGRE calculates the overlap between user-defined genomic regions and various genomic features or regulatory elements. Use when user asks to calculate genomic overlaps, analyze associations with regulatory elements, or find intersections between genomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/OGRE.html
 ---
+
 
 # bioconductor-ogre
 

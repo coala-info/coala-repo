@@ -3,7 +3,7 @@
 ## shovill
 
 ### Tool Description
-The provided text does not contain help information; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to fetch the shovill image. No arguments or descriptions could be parsed from this input.
+De novo assembly pipeline for Illumina paired reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/shovill:1.4.2--hdfd78af_0
@@ -12,19 +12,47 @@ The provided text does not contain help information; it is an error log from a c
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/shovill/overview
-- **Total Downloads**: 59.1K
+- **Total Downloads**: 59.2K
 - **Last updated**: 2025-12-13
 - **GitHub**: https://github.com/tseemann/shovill
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shovill:1.4.2--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+SYNOPSIS
+  De novo assembly pipeline for Illumina paired reads
+USAGE
+  shovill [options] --outdir DIR --R1 R1.fq.gz --R2 R2.fq.gz
+GENERAL
+  --help          This help
+  --version       Print version and exit
+  --check         Check dependencies are installed
+INPUT
+  --R1 XXX        Read 1 FASTQ (default: '')
+  --R2 XXX        Read 2 FASTQ (default: '')
+  --depth N       Sub-sample --R1/--R2 to this depth. Disable with --depth 0 (default: 150)
+  --gsize XXX     Estimated genome size eg. 3.2M <blank=AUTODETECT> (default: '')
+OUTPUT
+  --outdir XXX    Output folder (default: '')
+  --force         Force overwite of existing output folder (default: OFF)
+  --minlen N      Minimum contig length <0=AUTO> (default: 0)
+  --mincov n.nn   Minimum contig coverage <0=AUTO> (default: 2)
+  --namefmt XXX   Format of contig FASTA IDs in 'printf' style (default: 'contig%05d')
+  --keepfiles     Keep intermediate files (default: OFF)
+RESOURCES
+  --tmpdir XXX    Fast temporary directory (blank=AUTO) (default: '')
+  --cpus N        Number of CPUs to use (0=ALL) (default: 8)
+  --ram n.nn      Try to keep RAM usage below this many GB (default: 16)
+ASSEMBLER
+  --assembler XXX Assembler: megahit skesa spades velvet (default: 'spades')
+  --plasmid       Use plasmid mode if availabnlke (default: OFF)
+  --opts XXX      Extra assembler options in quotes eg. spades: '--sc' (default: '')
+  --kmers XXX     K-mers to use <blank=AUTO> (default: '')
+MODULES
+  --trim          Enable adaptor trimming (default: OFF)
+  --noreadcorr    Disable read error correction (default: OFF)
+  --nostitch      Disable read stitching (default: OFF)
+  --nocorr        Disable post-assembly correction (default: OFF)
+HOMEPAGE
+  https://github.com/tseemann/shovill - Torsten Seemann
 ```
 
-
-## Metadata
-- **Skill**: generated

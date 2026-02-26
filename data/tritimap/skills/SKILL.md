@@ -1,8 +1,9 @@
 ---
 name: tritimap
-description: Triti-Map is a specialized bioinformatics pipeline designed to handle the unique challenges of gene mapping in the large and complex genomes of the Triticeae tribe.
+description: Triti-Map is a bioinformatics pipeline for gene mapping, causal variant identification, and novel gene discovery in Triticeae genomes. Use when user asks to 'map genes', 'identify causal variants', 'discover novel genes', or 'perform bulk-segregant analysis'.
 homepage: https://github.com/fei0810/Triti-Map
 ---
+
 
 # tritimap
 

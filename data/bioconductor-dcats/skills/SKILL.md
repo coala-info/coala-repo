@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dcats
-description: the package is available on all platforms; click for details.
+description: DCATS performs differential cell type abundance analysis for single-cell RNA-seq data while accounting for clustering uncertainty and misclassification. Use when user asks to detect changes in cell type proportions between conditions, account for cell type confusion using a similarity matrix, or perform differential composition analysis along continuous covariates.
 homepage: https://bioconductor.org/packages/release/bioc/html/DCATS.html
 ---
+
 
 # bioconductor-dcats
 

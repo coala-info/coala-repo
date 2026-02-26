@@ -1,8 +1,9 @@
 ---
 name: perl-array-utils
-description: The `perl-array-utils` skill focuses on the `Operator::Util` library, which provides a pragmatic way to apply standard Perl operators to entire lists.
+description: This tool provides functions to apply standard Perl operators to entire lists for reduction, zipping, and cross-product transformations. Use when user asks to collapse lists into single values, interleave multiple arrays element-wise, or generate Cartesian products using specific operators.
 homepage: https://github.com/patch-orphan/operator-util-pm5
 ---
+
 
 # perl-array-utils
 

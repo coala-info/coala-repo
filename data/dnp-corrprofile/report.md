@@ -3,7 +3,9 @@
 ## dnp-corrprofile
 
 ### Tool Description
-A tool for DNP (Dynamic Nuclear Polarization) correlation profiling. (Note: The provided text contains system error messages regarding container image conversion and does not include specific usage instructions or argument definitions).
+This program computes correlations between the profiles of dinucleotide
+    frequency on forward and reverse complent sequences within a sliding
+    window.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dnp-corrprofile:1.0--hd6d6fdc_6
@@ -18,46 +20,49 @@ A tool for DNP (Dynamic Nuclear Polarization) correlation profiling. (Note: The 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dnp-corrprofile:1.0--hd6d6fdc_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3632683437: no space left on device
-```
+corrprofile - Correlations between Dinucleotide Profiles
+========================================================
 
+SYNOPSIS
+    corrprofile [OPTIONS] "dinucleotideProfilesFile"
 
-## Metadata
-- **Skill**: generated
+DESCRIPTION
+    This program computes correlations between the profiles of dinucleotide
+    frequency on forward and reverse complent sequences within a sliding
+    window.
 
-## dnp-corrprofile_dnp-diprofile
+REQUIRED ARGUMENTS
+    PROFILE_FILE STRING
 
-### Tool Description
-The provided text does not contain help information as it is a system error log regarding container image conversion and disk space. No arguments could be extracted.
+OPTIONS
+    -h, --help
+          Display the help message.
+    --version-check BOOL
+          Turn this option off to disable version update notifications of the
+          application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
+          Default: 1.
+    -w, --window INTEGER
+          Sliding window size, < than length. In range [10..146]. Default: 10.
+    -n, --length INTEGER
+          Dinucleotide profile sequence length. In range [25..600]. Default:
+          600.
+    -v, --verbose
+          Print parameters and variables.
+    --version
+          Display version information.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnp-corrprofile:1.0--hd6d6fdc_6
-- **Homepage**: https://github.com/erinijapranckeviciene/dnpatterntools
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnp-corrprofile/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dnp-corrprofile:1.0--hd6d6fdc_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3578758398: no space left on device
-```
+EXAMPLES
+    corrprofile -w 146 -n 400 path/to/profiles/file
+          Compute correlations at each position in 400bp long profile within
+          the sliding 146bp window
 
-## dnp-corrprofile_dnp-correlation-between-profiles.sh
+OUTPUT
+    Column of correlation coefficients
+          between forward and reverse profile at each position
 
-### Tool Description
-A tool to calculate the correlation between profiles. (Note: The provided help text contains only system error messages regarding container image acquisition and does not list specific arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dnp-corrprofile:1.0--hd6d6fdc_6
-- **Homepage**: https://github.com/erinijapranckeviciene/dnpatterntools
-- **Package**: https://anaconda.org/channels/bioconda/packages/dnp-corrprofile/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dnp-corrprofile:1.0--hd6d6fdc_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2733751635: no space left on device
+VERSION
+    Last update: April 2017
+    corrprofile version: 1.0
+    SeqAn version: 2.4.0
 ```
 

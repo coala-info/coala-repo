@@ -1,8 +1,9 @@
 ---
 name: chexmix
-description: ChExMix (ChIP-exo Mixture Model) is a specialized tool for processing ChIP-exo data.
+description: ChExMix identifies genomic binding locations and categorizes them into distinct subtypes using a mixture modeling framework for ChIP-exo data. Use when user asks to identify protein-DNA binding events, discover crosslinking subtypes, or perform motif-based analysis on ChIP-exo experiments.
 homepage: http://mahonylab.org/software/chexmix/
 ---
+
 
 # chexmix
 

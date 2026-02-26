@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nucler
-description: the package is available on all platforms; click for details.
+description: nucleR is a Bioconductor package for the analysis of nucleosome positioning from high-throughput sequencing data. Use when user asks to detect nucleosome peaks, classify nucleosome positioning, or process MNase-seq and ChIP-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/nucleR.html
 ---
+
 
 # bioconductor-nucler
 

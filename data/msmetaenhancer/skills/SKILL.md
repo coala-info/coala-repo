@@ -1,8 +1,9 @@
 ---
 name: msmetaenhancer
-description: MSMetaEnhancer is a specialized utility designed to automate the enrichment of mass spectrometry metadata.
+description: MSMetaEnhancer automates the enrichment of mass spectrometry metadata by querying web services to fill in missing chemical identifiers. Use when user asks to enrich msp files, curate chemical metadata, or convert between identifiers like compound names, InChIKeys, and SMILES strings.
 homepage: https://github.com/RECETOX/MSMetaEnhancer
 ---
+
 
 # msmetaenhancer
 

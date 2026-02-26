@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fgga
-description: the package is available on all platforms; click for details.
+description: This package implements a hierarchical ensemble method using factor graphs to predict Gene Ontology annotations while ensuring consistency with the Gene Ontology directed acyclic graph structure. Use when user asks to perform hierarchical gene ontology annotation, train SVM classifiers for GO terms, or reconcile flat predictions using message-passing algorithms.
 homepage: https://bioconductor.org/packages/release/bioc/html/fgga.html
 ---
+
 
 # bioconductor-fgga
 

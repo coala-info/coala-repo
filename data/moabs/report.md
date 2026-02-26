@@ -3,10 +3,10 @@
 ## moabs
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull the image due to insufficient disk space.
+moabs
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/moabs:1.3.9.6--h3e6c209_8
+- **Docker Image**: quay.io/biocontainers/moabs:1.3.9.6--pl526r40h3d033a0_0
 - **Homepage**: https://github.com/sunnyisgalaxy/moabs
 - **Package**: https://anaconda.org/channels/bioconda/packages/moabs/overview
 - **Validation**: PASS
@@ -18,46 +18,39 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/moabs:1.3.9.6--h3e6c209_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2427430009: no space left on device
-```
+Program : /usr/local/bin/moabs
+        Version : 1.3.9.6
+        Contact : dsun@tamu.edu
+        Usage : /usr/local/bin/moabs [options]
+                --help	Help
+                -i 	<str>	input files.
+                --cf 	<str>	configuration file.
+                --def 	<str>	overwrite definitions in configuration file. --def key=value
+                -v	<boleen>	verbose output	[0 or 1, default 0]
 
+Example: /usr/local/bin/moabs -i s1_r1_1.fq -i s1_r1_2.fq -i s1_r2_1.fq -i s1_r2_2.fq 
+	      -i s2_r1_1.fq -i s2_r1_2.fq -i s2_r2_1.fq -i s2_r2_2.fq
+Example: /usr/local/bin/moabs --cf myrun.cfg
+Example: /usr/local/bin/moabs --cf myrun.cfg --def MMAP.Path=./bsmap/bsmap
 
-## Metadata
-- **Skill**: generated
+Note:
+1. Input files should be set by either `--cf` or `-i`. Inputs are FASTQ files.
+They can be defined in the [INPUT] block in the configuration file by `--cf`.
+They can be also specified by the option `-i`. Inputs by `-i` will ovewrite the
+ones configured by `--cf`.
 
-## moabs_mcomp
+2. `--def` overwrites parameters defined in the configuration file.
+Multiple-level parameters are connected by `.`. E.g., "--def TASK.Label=wt,ko
+--def A=a --def B.C=z". However, `--def` can not overwrite inputs. Inputs are
+specified only by `--cf` or `-i`.
 
-### Tool Description
-MOABS (Model-based Analysis of Bisulfite Sequencing) comparison tool. Note: The provided text contains a system error message regarding container execution and does not list command-line arguments.
+3. Analysis blocks will be skipped for downstream analysis when result files
+are observed. For example, BSMAP will be skipped when `SampleID.bam` is under the
+current directory. MCALL will be skipped when `SampleID.G.bed` is observed.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/moabs:1.3.9.6--h3e6c209_8
-- **Homepage**: https://github.com/sunnyisgalaxy/moabs
-- **Package**: https://anaconda.org/channels/bioconda/packages/moabs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/moabs:1.3.9.6--h3e6c209_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1276294116: no space left on device
-```
-
-## moabs_mcall
-
-### Tool Description
-MOABS (Model-based Analysis of Bisulfite Sequencing) mcall subcommand. Note: The provided input text contains container runtime error logs rather than the tool's help documentation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/moabs:1.3.9.6--h3e6c209_8
-- **Homepage**: https://github.com/sunnyisgalaxy/moabs
-- **Package**: https://anaconda.org/channels/bioconda/packages/moabs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/moabs:1.3.9.6--h3e6c209_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3039439166: no space left on device
+4. TASK.Label is used in MCOMP only. While SampleID is used for BSMAP BAM and
+MCALL BED filenames. SampleID is inferred from input names. Input names are
+split by `_`, say sampleid_replicateid_layout. For example, "s1_r1_1=file_1.fastq.gz
+s1_r1_2=file_2.fastq.gz" by `--cf`. Or `-i s1_r1_1.fastq.gz -i s1_r1_2.fastq.gz`.
 ```
 

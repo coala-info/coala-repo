@@ -1,8 +1,9 @@
 ---
 name: multiqc
-description: MultiQC is a reporting tool that searches a given directory for log files and output data from supported bioinformatics software.
+description: MultiQC aggregates log files and output data from multiple bioinformatics tools into a single interactive HTML report and structured data tables. Use when user asks to summarize analysis results, generate a quality control report, identify batch effects, or visualize metrics across multiple samples.
 homepage: https://multiqc.info/
 ---
+
 
 # multiqc
 

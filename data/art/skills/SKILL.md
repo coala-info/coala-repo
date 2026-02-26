@@ -1,8 +1,9 @@
 ---
 name: art
-description: The "art" skill provides a distilled collection of command-line wisdom designed to improve flexibility and productivity for engineers.
+description: The art skill provides a collection of command-line patterns and tools designed to improve productivity in Bash-centric environments. Use when user asks to master CLI principles, manage files and data, monitor system processes, or optimize shell efficiency.
 homepage: https://github.com/jlevy/the-art-of-command-line
 ---
+
 
 # art
 

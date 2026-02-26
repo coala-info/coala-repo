@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mops
-description: the package is available on all platforms; click for details.
+description: MoPS screens for periodic patterns in genomic time-series data using a model-based approach. Use when user asks to identify periodic genes, analyze rhythmic biological signals, or perform periodicity screening on time-series datasets.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/MoPS.html
 ---
+
 
 # bioconductor-mops
 

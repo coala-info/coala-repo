@@ -1,8 +1,9 @@
 ---
 name: scsplit
-description: scSplit is a computational tool designed to demultiplex pooled single-cell RNA-seq data without requiring prior knowledge of the individual genotypes.
+description: scSplit demultiplexes pooled single-cell RNA-seq data by identifying genetically distinct samples based on allelic ratios at heterozygous SNV sites. Use when user asks to demultiplex pooled single-cell data without reference genotypes, build allele count matrices, or assign cells to samples in a mixed population.
 homepage: https://github.com/jon-xu/scSplit
 ---
+
 
 # scsplit
 

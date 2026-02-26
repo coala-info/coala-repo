@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vega
-description: the package is available on all platforms; click for details.
+description: Vega performs segmentation of genomic copy number profiles using a variational estimator. Use when user asks to segment copy number data, identify genomic aberrations, or analyze array comparative genomic hybridization profiles.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Vega.html
 ---
+
 
 # bioconductor-vega
 

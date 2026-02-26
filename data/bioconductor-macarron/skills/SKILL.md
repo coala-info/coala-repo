@@ -1,8 +1,9 @@
 ---
 name: bioconductor-macarron
-description: the package is available on all platforms; click for details.
+description: Macarron prioritizes metabolic features in untargeted metabolomics data by integrating multiple types of evidence. Use when user asks to prioritize metabolic features, identify significant metabolites, or analyze untargeted metabolomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/Macarron.html
 ---
+
 
 # bioconductor-macarron
 

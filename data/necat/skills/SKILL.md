@@ -1,8 +1,9 @@
 ---
 name: necat
-description: NECAT is an integrated assembly pipeline specifically optimized for Oxford Nanopore Technologies (ONT) data.
+description: NECAT is an integrated assembly pipeline optimized for performing de-novo assembly and error correction on Oxford Nanopore Technologies long-read data. Use when user asks to generate configuration templates, correct noisy long reads, assemble contigs, or bridge and polish genomic datasets.
 homepage: https://github.com/xiaochuanle/NECAT
 ---
+
 
 # necat
 

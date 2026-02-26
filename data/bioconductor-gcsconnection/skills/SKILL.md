@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcsconnection
-description: The package also provide functions to view and manage files on Google Cloud.
+description: This tool provides an R connection interface to read, write, and manage files on Google Cloud Storage. Use when user asks to authenticate with Google Cloud, create connections to GCS buckets, manage files using an S4 interface, or optimize data transfer performance.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/GCSConnection.html
 ---
+
 
 # bioconductor-gcsconnection
 

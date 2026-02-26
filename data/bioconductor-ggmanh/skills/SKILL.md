@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggmanh
-description: the package is available on all platforms; click for details.
+description: The ggmanh package generates Manhattan plots from GWAS or PWAS results with features for y-axis rescaling, data thinning, and binned visualization. Use when user asks to create Manhattan plots, visualize large association study datasets, highlight significant variants, or annotate genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggmanh.html
 ---
+
 
 # bioconductor-ggmanh
 

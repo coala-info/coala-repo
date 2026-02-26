@@ -1,8 +1,9 @@
 ---
 name: popins2
-description: PopIns2 is a specialized bioinformatics suite designed to discover and genotype sequence insertions that are absent from a reference genome.
+description: "PopIns2 discovers and genotypes non-reference sequence insertions across population-scale genomic datasets. Use when user asks to assemble unmapped reads, merge contigs into a de Bruijn graph, anchor insertions to a reference genome, or genotype discovered sequences."
 homepage: https://github.com/kehrlab/PopIns2
 ---
+
 
 # popins2
 

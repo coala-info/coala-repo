@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rhesuscdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Rhesus Macaque genome array. Use when user asks to analyze Rhesus Macaque microarray data, map probes to genes, or access Affymetrix chip definition files.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rhesuscdf.html
 ---
+
 
 # bioconductor-rhesuscdf
 

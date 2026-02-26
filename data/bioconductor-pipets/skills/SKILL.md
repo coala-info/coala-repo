@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pipets
-description: the package is available on all platforms; click for details.
+description: PIPETS integrates gene expression data with protein-protein interaction networks to generate tissue-specific networks. Use when user asks to create tissue-specific protein-protein interaction networks, integrate gene expression with PPI data, or analyze tissue-specific molecular interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/PIPETS.html
 ---
+
 
 # bioconductor-pipets
 

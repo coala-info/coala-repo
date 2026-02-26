@@ -1,8 +1,9 @@
 ---
 name: rsrq
-description: rsrq (Rust Redis Queue) is a high-performance, minimal job queue system written in Rust.
+description: "rsrq is a high-performance job queue system that uses Redis to distribute and execute shell commands across parallel workers. Use when user asks to enqueue shell commands, start parallel workers, monitor queue status, or integrate job scheduling with Snakemake."
 homepage: https://github.com/aaronmussig/rsrq
 ---
+
 
 # rsrq
 

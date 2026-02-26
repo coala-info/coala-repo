@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgfr
-description: The package is designed to detect marker genes from RNA-seq data.
+description: MGFR detects marker genes from RNA-seq data. Use when user asks to detect marker genes or identify cell-type specific markers from transcriptomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/MGFR.html
 ---
+
 
 # bioconductor-mgfr
 

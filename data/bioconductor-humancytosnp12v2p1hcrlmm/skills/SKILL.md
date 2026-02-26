@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humancytosnp12v2p1hcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and metadata for the Illumina HumanCytoSNP-12 v2.1 platform to be used with the crlmm genotyping algorithm. Use when user asks to process Illumina HumanCytoSNP-12 v2.1 arrays, perform genotype calling, or load platform-specific metadata for crlmm analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humancytosnp12v2p1hCrlmm.html
 ---
+
 
 # bioconductor-humancytosnp12v2p1hcrlmm
 

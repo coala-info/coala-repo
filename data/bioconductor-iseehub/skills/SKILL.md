@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseehub
-description: the package is available on all platforms; click for details.
+description: iSEEhub provides an interactive interface for browsing and visualizing Bioconductor ExperimentHub datasets using the iSEE framework. Use when user asks to browse ExperimentHub datasets, launch the iSEEhub Shiny application, or configure interactive data visualizations for omics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEhub.html
 ---
+
 
 # bioconductor-iseehub
 

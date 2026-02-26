@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnvgsa
-description: the package is available on all platforms; click for details.
+description: This R package performs gene set enrichment analysis for copy number variation data. Use when user asks to perform gene set analysis on CNVs, test for enrichment of copy number variants in genomic pathways, or identify gene sets associated with copy number changes.
 homepage: https://bioconductor.org/packages/release/bioc/html/cnvGSA.html
 ---
+
 
 # bioconductor-cnvgsa
 

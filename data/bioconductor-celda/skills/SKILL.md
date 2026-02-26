@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celda
-description: the package is available on all platforms; click for details.
+description: This tool provides Bayesian hierarchical models for bi-clustering single-cell RNA-seq data and removing ambient RNA contamination. Use when user asks to perform cell and feature clustering, identify co-expression modules, or decontaminate counts from ambient RNA.
 homepage: https://bioconductor.org/packages/release/bioc/html/celda.html
 ---
+
 
 # bioconductor-celda
 

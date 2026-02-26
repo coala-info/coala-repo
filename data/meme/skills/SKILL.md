@@ -1,8 +1,9 @@
 ---
 name: meme
-description: STREME (Sensitive, Thorough, Rapid, Enriched Motif Elicitation) discovers motifs in a set of sequences.
+description: The MEME Suite discovers novel motifs and analyzes known patterns within DNA, RNA, or protein sequences. Use when user asks to discover ungapped motifs, search for known motifs in new sequences, or perform motif enrichment analysis.
 homepage: https://meme-suite.org
 ---
+
 
 # meme
 

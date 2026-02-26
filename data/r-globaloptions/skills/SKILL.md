@@ -1,8 +1,9 @@
 ---
 name: r-globaloptions
-description: "It provides more configurations on the option values such as validation     and filtering on the values, making options invisible or private.</p>"
+description: This tool creates and manages custom global options functions in R with built-in validation, filtering, and access control. Use when user asks to generate package-specific option functions, enforce data types for global settings, or implement local scoping for configuration values.
 homepage: https://cloud.r-project.org/web/packages/GlobalOptions/index.html
 ---
+
 
 # r-globaloptions
 

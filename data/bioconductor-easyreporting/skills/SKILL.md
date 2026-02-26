@@ -1,8 +1,9 @@
 ---
 name: bioconductor-easyreporting
-description: the package is available on all platforms; click for details.
+description: The easyreporting package provides an R6-based interface to simplify the real-time creation and management of Rmarkdown reports during an analysis. Use when user asks to initialize a report instance, add markdown headers or text, document code chunks, track variable assignments, or compile analysis steps into a reproducible document.
 homepage: https://bioconductor.org/packages/release/bioc/html/easyreporting.html
 ---
+
 
 # bioconductor-easyreporting
 

@@ -1,8 +1,10 @@
 ---
 name: tiny-count
-description: tiny-count is a specialized bioinformatic utility designed for the high-precision quantification of small RNA (sRNA) sequencing data.
+description: tiny-count quantifies small RNA sequencing data by resolving complex read-to-feature assignments using hierarchical logic. Use when user asks to quantify small RNA, assign sequencing reads to genomic features, categorize reads overlapping multiple features, define hierarchical rules for read assignment, or identify RNA editing events.
 homepage: https://github.com/MontgomeryLab/tinyRNA
 ---
+
+
 
 # tiny-count
 

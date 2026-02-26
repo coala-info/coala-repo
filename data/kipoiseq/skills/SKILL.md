@@ -1,8 +1,9 @@
 ---
 name: kipoiseq
-description: kipoiseq is a specialized library providing standardized data-loaders for DNA sequence-based models.
+description: kipoiseq provides standardized data-loaders to transform genomic files into tensors for DNA sequence-based models. Use when user asks to extract sequences from FASTA and BED files, perform one-hot encoding, integrate variants from VCF files, or implement parallel data loading for genomic deep learning.
 homepage: https://github.com/kipoi/kipoiseq
 ---
+
 
 # kipoiseq
 

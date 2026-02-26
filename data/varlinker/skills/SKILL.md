@@ -1,8 +1,9 @@
 ---
 name: varlinker
-description: `varlinker` is a high-performance, Rust-based tool designed for exact point variant annotation in human genomics.
+description: varlinker annotates point variants in human genomics by mapping VCF coordinates to biological features. Use when user asks to 'perform full variant annotation', 'annotate specific reference alleles', or 'annotate specific alternate alleles'.
 homepage: https://github.com/IBCHgenomic/varlinker
 ---
+
 
 # varlinker
 

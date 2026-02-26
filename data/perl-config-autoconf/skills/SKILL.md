@@ -1,8 +1,9 @@
 ---
 name: perl-config-autoconf
-description: This skill facilitates the use of `Config::AutoConf`, a Perl module that replicates the functionality of GNU Autoconf.
+description: This Perl module replicates GNU Autoconf functionality to probe host system capabilities like C headers, libraries, and compiler characteristics. Use when user asks to check for system headers, verify library functions, search for executables, or determine data type sizes in Perl configuration scripts.
 homepage: https://metacpan.org/release/Config-AutoConf
 ---
+
 
 # perl-config-autoconf
 

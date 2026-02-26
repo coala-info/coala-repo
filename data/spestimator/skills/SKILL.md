@@ -1,8 +1,9 @@
 ---
 name: spestimator
-description: Spestimator is a specialized Python-based command-line utility designed to streamline the identification of bacterial organisms within genomic data.
+description: Spestimator identifies bacterial species in genomic data by aligning sequences against a 16S rRNA database and mapping hits to reference genome accessions. Use when user asks to identify organisms in FASTA files, download corresponding reference genomes, or update the local RefSeq database.
 homepage: https://github.com/erinyoung/Spestimator
 ---
+
 
 # spestimator
 

@@ -1,8 +1,9 @@
 ---
 name: gene-fetch
-description: The `gene-fetch` tool is a specialized Python utility designed for bioinformatics researchers who need to extract sequence data from NCBI without manually constructing complex search queries.
+description: This tool extracts gene or protein sequence data from NCBI for specific species or taxonomic IDs. Use when user asks to fetch sequences for a list of taxa, download specific genes like cox1 or 16S, or automate taxonomic traversal to find sequence matches.
 homepage: https://github.com/bge-barcoding/gene_fetch
 ---
+
 
 # gene-fetch
 

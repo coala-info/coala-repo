@@ -1,8 +1,9 @@
 ---
 name: fgsmk
-description: The `fgsmk` package provides a suite of Python-based helper functions designed to streamline the development of Snakemake workflows, particularly those focused on genomic data processing.
+description: The fgsmk package provides Python-based helper functions to streamline the development and management of Snakemake workflows for genomic data processing. Use when user asks to manage file paths, calculate resource requirements, or simplify command-line construction within Snakemake rules.
 homepage: https://pypi.org/project/fgsmk/
 ---
+
 
 # fgsmk
 

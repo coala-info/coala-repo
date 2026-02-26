@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simffpe
-description: the package is available on all platforms; click for details.
+description: SimFFPE simulates Next-Generation Sequencing data from Formalin-Fixed Paraffin-Embedded samples while accounting for characteristic artifacts. Use when user asks to simulate FFPE sequencing data, model chimeric reads, or generate synthetic reads with FFPE-specific damage.
 homepage: https://bioconductor.org/packages/release/bioc/html/SimFFPE.html
 ---
+
 
 # bioconductor-simffpe
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aracne.networks
-description: the package is available on all platforms; click for details.
+description: This package provides access to pre-computed transcriptional regulatory networks for 25 cancer types generated from TCGA data using the ARACNe-AP algorithm. Use when user asks to load cancer-specific regulon objects, identify gene-regulator interactions, or export network data including mode of action and likelihood scores.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/aracne.networks.html
 ---
+
 
 # bioconductor-aracne.networks
 

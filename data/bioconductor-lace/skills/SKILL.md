@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lace
-description: the package is available on all platforms; click for details.
+description: "LACE processes longitudinal single-cell somatic mutation profiles to reconstruct the evolutionary history of cancer. Use when user asks to infer longitudinal models of cancer evolution, perform Boolean Matrix Factorization with phylogenetic constraints, or visualize clonal trees and prevalences from multi-temporal single-cell data."
 homepage: https://bioconductor.org/packages/release/bioc/html/LACE.html
 ---
+
 
 # bioconductor-lace
 

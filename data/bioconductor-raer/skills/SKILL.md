@@ -1,8 +1,9 @@
 ---
 name: bioconductor-raer
-description: the package is available on all platforms; click for details.
+description: The raer package calculates the mismatch rate of RNA-seq reads aligned to a reference genome to estimate alignment error rates. Use when user asks to estimate RNA-seq alignment error rates, calculate mismatch rates, or assess the quality of RNA-seq alignments.
 homepage: https://bioconductor.org/packages/release/bioc/html/raer.html
 ---
+
 
 # bioconductor-raer
 

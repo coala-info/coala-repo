@@ -1,9 +1,9 @@
 # upd CWL Generation Report
 
-## upd
+## upd_regions
 
 ### Tool Description
-A tool for detecting Uniparental Disomy (UPD) from NGS data.
+Manage UPF regions
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/upd:0.1.1--pyhdfd78af_0
@@ -18,13 +18,29 @@ A tool for detecting Uniparental Disomy (UPD) from NGS data.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/upd:0.1.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: upd [OPTIONS] COMMAND [ARGS]...
+Try 'upd --help' for help.
+
+Error: Missing option '--vcf'.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## upd_sites
+
+### Tool Description
+Update variant sites
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/upd:0.1.1--pyhdfd78af_0
+- **Homepage**: https://github.com/bjhall/upd
+- **Package**: https://anaconda.org/channels/bioconda/packages/upd/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: upd [OPTIONS] COMMAND [ARGS]...
+Try 'upd --help' for help.
+
+Error: Missing option '--vcf'.
+```
+

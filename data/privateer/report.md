@@ -3,10 +3,10 @@
 ## privateer
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a log of a failed container build/execution attempt.
+Privateer Version MKV. Copyright 2013-2024 Jon Agirre (@glycojones) & University of York.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/privateer:MKV--py312h490764d_2
+- **Docker Image**: quay.io/biocontainers/privateer:MKV--py311h8d1dbc1_0
 - **Homepage**: https://github.com/glycojones/privateer
 - **Package**: https://anaconda.org/channels/bioconda/packages/privateer/overview
 - **Validation**: PASS
@@ -18,13 +18,79 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/privateer:MKV--py312h490764d_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+`PRIVATEERDATA` is set to: /usr/local/share/privateer/privateer_data.
+`PRIVATEERRESULTS` is set to: /usr/local/share/privateer/results.
+`CLIBD_MON` is set to: /usr/local/share/privateer/privateer_data/monomers/.
+<B><FONT COLOR='#FF0000'><!--SUMMARY_BEGIN-->
+<html> <!-- CCP4 HTML LOGFILE -->
+<hr>
+<pre>
+ 
+ ###############################################################
+ ###############################################################
+ ###############################################################
+ ### CCP4 8.0: Privateer                version MKV : 06/02/21##
+ ###############################################################
+ User: unknown  Run date: 26/ 2/2026 Run time: 17:15:03 
+
+
+ Please reference: Collaborative Computational Project, Number 4. 2011.
+ "Overview of the CCP4 suite and current developments". Acta Cryst. D67, 235-242.
+ as well as any specific reference in the program write-up.
+
+<!--SUMMARY_END--></FONT></B>
+
+Privateer Version MKV. Copyright 2013-2024 Jon Agirre (@glycojones) & University of York.
+Contributors: Haroldas Bagdonas (@GABRAHREX), Jordan Dialpuri (@Dialpuri), Lucy Schofield (@lcs551) and Lou Holland (@louholland).
+If you find Privateer useful, please reference these articles: 
+
+   - 'Online carbohydrate 3D structure validation with the Privateer web app'
+   -  Dialpuri et al., 2024, Acta Crystallographica Section F, 80, 30-35.
+
+   -  Analysis and validation of overall N-glycan conformation in Privateer.
+   -  Dialpuri et al., 2024, Acta Crystallographica Section D, 79, 462-472.
+
+   - 'Privateer: software for the conformational validation of carbohydrate structures'
+      Agirre et al., 2015 Nat Struct & Mol Biol 22(11):833-834.
+
+   - 'Leveraging glycomics data in glycoprotein 3D structure validation with Privateer'
+      Bagdonas, Ungar & Agirre, 2020 Beilstein Journal of Organic Chemistry 16(1):2523-2533.
+
+Supplied arguments: 
+help
+
+Unrecognised:	-help
+
+Usage: privateer
+
+	-pdbin <.pdb>			COMPULSORY: input model in PDB or mmCIF format
+	-cifin <.cif> OR -mtzin <.mtz>	mmCIF or MTZ file with merged I or F (needed for RSCC)
+					Note: intensities will ctruncate-d into amplitudes
+	-mtzout <.mtz>			Output best and difference map coefficients to MTZ files
+	-colin-fo			Columns containing F & SIGF, e.g. FOBS,SIGFOBS
+					If not supplied, Privateer will try to guess the path
+	-codein <3-letter code>		A 3-letter code (should match that in -valstring)
+	-rscc-best			Calculate RSCC against best omit density (Fobs used by default)
+	-valstring <options>		Use external validation options (to be deprecated in MKV)
+					Example: SUG,O5/C1/C2/C3/C4/C5,A,D,4c1
+					Three-letter code, ring atoms, anomer, handedness, expected conformation
+	-showgeom			Ring bond lengths, angles and torsions are reported clockwise
+					Example: first bond (O5-C1) angle (C5-O5-C1) & torsion (C5-O5-C1-C2) for aldopyranoses
+	-radiusin <value>		A radius (def:2.5)for the calculation of a mask around the target monosaccharide
+	-list				Produces a list of space-separated supported 3-letter codes and stops
+	-mode <normal|ccp4i2>		Run mode (def:normal). ccp4i2 mode produces XML and CSV files
+	-expression			Specify which expression system the input glycoprotein was produced in
+					Supported systems: undefined, fungal, yeast, plant, insect, mammalian, human
+	-vertical/-essentials/-invert	Control SNFG glycan plot output (SVG graphics)
+
+	Detected issues can be checked in Coot by running 'coot --script privateer-results.py'
+
+
+<B><FONT COLOR='#FF0000'><!--SUMMARY_BEGIN-->
+Privateer: Failed
+Times: User:       0.0s System:    0.0s Elapsed:     0:00  
+</pre>
+</html>
+<!--SUMMARY_END--></FONT></B>
 ```
 
-
-## Metadata
-- **Skill**: generated

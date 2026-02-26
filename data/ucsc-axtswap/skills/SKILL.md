@@ -1,8 +1,9 @@
 ---
 name: ucsc-axtswap
-description: The `axtSwap` utility is a specialized tool from the UCSC Genome Browser "kent" source suite designed to manipulate AXT alignment files.
+description: ucsc-axtswap reorients AXT alignment files by swapping the target and query sequences. Use when user asks to swap target and query sequences in AXT files, generate reciprocal best alignments, or reorient alignments for database integration.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-axtswap
 

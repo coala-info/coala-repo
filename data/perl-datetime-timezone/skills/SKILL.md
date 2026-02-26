@@ -1,8 +1,9 @@
 ---
 name: perl-datetime-timezone
-description: The `perl-datetime-timezone` skill provides a standardized interface for managing time zone data within the Perl ecosystem.
+description: This tool provides a standardized interface for managing time zone data and retrieving offsets based on the Olson database within Perl. Use when user asks to create time zone objects, retrieve UTC offsets, check daylight savings status, or list available time zone names.
 homepage: https://metacpan.org/release/DateTime-TimeZone
 ---
+
 
 # perl-datetime-timezone
 

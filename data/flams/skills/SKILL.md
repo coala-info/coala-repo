@@ -1,8 +1,9 @@
 ---
 name: flams
-description: FLAMS (Find Lysine Acylations & other Modification Sites) is a bioinformatics utility that performs position-based searches to identify conserved post-translational modifications.
+description: FLAMS identifies conserved post-translational modification sites by aligning query proteins against a compendium of known modification data. Use when user asks to search for specific protein modifications at a given residue, identify conserved lysine acylations across species, or batch process protein sequences to verify known modification sites.
 homepage: https://github.com/hannelorelongin/FLAMS
 ---
+
 
 # flams
 

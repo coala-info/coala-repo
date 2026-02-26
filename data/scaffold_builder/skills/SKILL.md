@@ -1,8 +1,9 @@
 ---
 name: scaffold_builder
-description: The `scaffold_builder` tool is a Python-based utility designed to bridge the gap between de novo assembly and reference-guided mapping.
+description: Scaffold_builder aligns de novo assembled contigs against a reference genome to determine their relative order and orientation for a more contiguous assembly. Use when user asks to scaffold contigs, order and orient assembly fragments against a reference, or bridge gaps in a de novo assembly.
 homepage: http://edwards.sdsu.edu/scaffold_builder
 ---
+
 
 # scaffold_builder
 

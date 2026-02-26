@@ -1,8 +1,9 @@
 ---
 name: barcode_splitter
-description: `barcode_splitter` is a specialized utility designed to demultiplex FASTQ files by matching sequence barcodes against a user-defined list.
+description: This tool demultiplexes FASTQ files by matching sequence barcodes against a user-defined list to assign reads to specific output files. Use when user asks to demultiplex sequencing data, split FASTQ files by barcode, or process paired-end reads with configurable mismatch tolerances.
 homepage: https://bitbucket.org/princeton_genomics/barcode_splitter
 ---
+
 
 # barcode_splitter
 

@@ -1,8 +1,10 @@
 ---
 name: tirmite
-description: TIRmite is a specialized tool for the discovery and annotation of transposable elements that share conserved terminal sequences but may have highly variable internal regions.
+description: TIRmite discovers and annotates transposable elements by identifying conserved terminal sequences using profile HMMs. Use when user asks to build a profile HMM for transposable elements, search a genome for transposable elements, pair transposable element termini, identify transposable element candidates, or extract transposable element sequences.
 homepage: https://github.com/Adamtaranto/TIRmite
 ---
+
+
 
 # tirmite
 

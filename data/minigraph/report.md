@@ -3,7 +3,7 @@
 ## minigraph
 
 ### Tool Description
-The provided text does not contain help information for minigraph; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+Proof-of-concept bidirected graph aligner and graph constructor
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/minigraph:0.21--h577a1d6_3
@@ -18,29 +18,13 @@ The provided text does not contain help information for minigraph; it contains e
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/minigraph:0.21--h577a1d6_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3164699746: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/minigraph:0.21--h577a1d6_3' locally
+0.21--h577a1d6_3: Pulling from biocontainers/minigraph
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+8617062ed618: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2071593585: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## minigraph_gfatools
-
-### Tool Description
-The provided text is an error log indicating a failure to pull or run the container (no space left on device) and does not contain help information or argument definitions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/minigraph:0.21--h577a1d6_3
-- **Homepage**: https://github.com/lh3/minigraph
-- **Package**: https://anaconda.org/channels/bioconda/packages/minigraph/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/minigraph:0.21--h577a1d6_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4192342509: no space left on device
+Run 'docker run --help' for more information
 ```
 

@@ -3,7 +3,7 @@
 ## ogtfinder
 
 ### Tool Description
-A tool for predicting the optimal growth temperature (OGT) of prokaryotes. Note: The provided input text contains container runtime error messages and does not include the standard help documentation or argument definitions.
+Optimal growth temperature prediction using proteome-derived features
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ogtfinder:0.0.2--pyhdfd78af_0
@@ -12,17 +12,32 @@ A tool for predicting the optimal growth temperature (OGT) of prokaryotes. Note:
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ogtfinder/overview
-- **Total Downloads**: 543
+- **Total Downloads**: 551
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/SC-Git1/OGTFinder
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ogtfinder:0.0.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1119826751: no space left on device
+usage: ogtfinder [-h] [--domain {Bacteria,Archaea}] [-o OUTDIR] [--force]
+                 [--verbose {0,1,2}] [-v] [--debug]
+                 <proteome.fasta>
+
+Optimal growth temperature prediction using proteome-derived features
+
+positional arguments:
+  <proteome.fasta>
+
+options:
+  -h, --help            Show this help message and exit
+  --domain {Bacteria,Archaea}
+                        Taxonomic domain name (default: Bacteria)
+  -o OUTDIR, --outdir OUTDIR
+                        Output directory (default: [auto])
+  --force               Overwrite output directory (default: OFF)
+  --verbose {0,1,2}     Output verbosity. Levels: 0 (silent), 1 (warnings), 2
+                        (verbose) (default: 2)
+  -v, --version         Show the version and exit
+  --debug               Debug mode: also keep intermediate results (default:
+                        OFF)
 ```
 
-
-## Metadata
-- **Skill**: generated

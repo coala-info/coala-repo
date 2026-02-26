@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msdata
-description: the package is available on all platforms; click for details.
+description: This package provides example mass spectrometry data files for Bioconductor software demonstrations and testing. Use when user asks to access sample mass spectrometry datasets, load raw MS data files for tutorials, or test mass spectrometry analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/msdata.html
 ---
+
 
 # bioconductor-msdata
 

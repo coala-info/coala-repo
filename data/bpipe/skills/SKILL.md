@@ -1,8 +1,9 @@
 ---
 name: bpipe
-description: Bpipe is a tool for managing data analysis pipelines, specifically designed for bioinformatics.
+description: Bpipe manages data analysis pipelines by wrapping shell commands into robust, restartable workflows with automatic dependency tracking and transactional file management. Use when user asks to run bioinformatics pipelines, manage intermediate file naming, retry failed workflow stages, or create audit trails for data processing.
 homepage: http://docs.bpipe.org/
 ---
+
 
 # bpipe
 

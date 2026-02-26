@@ -1,8 +1,9 @@
 ---
 name: fatslim_biobb
-description: The `fatslim_biobb` skill provides a streamlined interface for FATSLiM (Fast Analysis Toolbox for Simulations of Lipid Membranes).
+description: This tool performs rapid, memory-efficient analysis of lipid membrane molecular dynamics trajectories across various morphologies and force fields. Use when user asks to identify membrane leaflets, calculate membrane thickness, or determine area per lipid for bilayers and vesicles.
 homepage: https://fatslim.github.io/
 ---
+
 
 # fatslim_biobb
 

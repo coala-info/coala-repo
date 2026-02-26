@@ -1,8 +1,9 @@
 ---
 name: r-buencolors
-description: R package buencolors (documentation from project home).
+description: The r-buencolors package provides curated color palettes and plotting utilities specifically designed for genomic data visualization and standardized cell type mapping. Use when user asks to access specialized color palettes, apply consistent color mappings to hematopoietic cell types, create publication-ready ggplot2 figures, or calculate point density for scatter plots.
 homepage: https://cran.r-project.org/web/packages/buencolors/index.html
 ---
+
 
 # r-buencolors
 

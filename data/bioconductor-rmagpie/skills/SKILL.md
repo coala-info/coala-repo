@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rmagpie
-description: the package is available on all platforms; click for details.
+description: "Rmagpie is a Bioconductor package designed for the classification of microarray data through automated machine learning pipelines. Use when user asks to classify microarray samples, perform gene feature selection, or build and evaluate predictive models for gene expression datasets."
 homepage: https://bioconductor.org/packages/release/bioc/html/Rmagpie.html
 ---
+
 
 # bioconductor-rmagpie
 

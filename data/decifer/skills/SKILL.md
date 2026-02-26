@@ -1,8 +1,9 @@
 ---
 name: decifer
-description: DeCiFer (Descendant Cell Fraction) is a computational method used to analyze the clonal structure of tumors.
+description: DeCiFer is a computational method used to analyze the clonal structure of tumors by accounting for mutation loss due to copy-number events. Use when user asks to analyze clonal structure, calculate descendant cell fractions, or cluster mutations while accounting for deleterious copy-number changes.
 homepage: https://github.com/raphael-group/decifer
 ---
+
 
 # decifer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-damirseq
-description: The package accepts any kind of data presented as a table of raw counts and allows including both continous and factorial variables that occur with the experimental setting. A series of functions enable the user to clean up the data by filtering genomic features and samples, to adjust data by identifying and removing the unwanted source of variation (i.e. batches and confounding factors) and to select the best predictors for modeling. Finally, a "stacking" ensemble learning technique is applied to build a robust classification model. Every step includes a checkpoint that the user may exploit to assess the effects of data management by looking at diagnostic plots, such as clustering and heatmaps, RLE boxplots, MDS or correlation plot.
+description: DaMiRseq provides a comprehensive pipeline for RNA-Seq data mining, normalization, and feature selection to build robust ensemble classification models. Use when user asks to normalize count data, remove batch effects using surrogate variable analysis, perform feature selection, or train ensemble learning models for sample classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/DaMiRseq.html
 ---
+
 
 # bioconductor-damirseq
 

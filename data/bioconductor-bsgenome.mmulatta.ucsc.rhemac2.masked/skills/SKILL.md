@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmulatta.ucsc.rhemac2.masked
-description: the package is available on all platforms; click for details.
+description: This package provides full masked genome sequences for the Macaca mulatta (Rhesus monkey) based on the UCSC rheMac2 assembly. Use when user asks to perform genomic analysis on the Rhesus monkey genome, access masked sequences for assembly gaps or repeats, or search for motifs while excluding specific genomic regions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac2.masked.html
 ---
+
 
 # bioconductor-bsgenome.mmulatta.ucsc.rhemac2.masked
 

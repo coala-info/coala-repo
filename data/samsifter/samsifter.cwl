@@ -2,9 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: samsifter
 label: samsifter
-doc: 'A tool for sifting SAM/BAM files (Note: The provided text contains system error
-  logs rather than help documentation; no arguments could be extracted).'
-inputs: []
+doc: "samsifter: error: argument -h/--help: ignored explicit argument 'elp'"
+inputs:
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    inputBinding:
+      position: 101
+      prefix: -d
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    inputBinding:
+      position: 101
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

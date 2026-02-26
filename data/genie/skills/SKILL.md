@@ -1,8 +1,9 @@
 ---
 name: genie
-description: Genie is a specialized bioinformatics suite designed for high-performance manipulation of next-generation sequencing data.
+description: Genie is a bioinformatics suite for high-performance manipulation, filtering, and transformation of next-generation sequencing data. Use when user asks to convert sequencing formats, filter reads by quality or length, modify headers, or trim sequences.
 homepage: https://github.com/sakkayaphab/genie
 ---
+
 
 # genie
 

@@ -1,8 +1,9 @@
 ---
 name: ibdmix
-description: IBDmix is a specialized tool for detecting archaic admixture in modern human populations.
+description: IBDmix detects archaic admixture in modern human populations using a probabilistic approach that does not require a modern reference population. Use when user asks to identify introgressed regions, merge archaic and modern VCF files, or filter archaic segments based on LOD scores and length.
 homepage: https://github.com/PrincetonUniversity/IBDmix
 ---
+
 
 # ibdmix
 

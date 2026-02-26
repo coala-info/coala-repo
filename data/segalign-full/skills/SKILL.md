@@ -1,8 +1,9 @@
 ---
 name: segalign-full
-description: SegAlign is a high-performance genomic alignment tool designed to leverage NVIDIA GPUs to accelerate the comparison of whole genomes.
+description: SegAlign is a GPU-accelerated tool for high-performance pairwise whole genome alignment and genomic comparison. Use when user asks to perform pairwise whole genome alignment, run repeat masking on genomic sequences, or accelerate genomic comparisons using NVIDIA GPUs.
 homepage: https://github.com/gsneha26/SegAlign
 ---
+
 
 # segalign-full
 

@@ -1,8 +1,9 @@
 ---
 name: ima3
-description: IMa3 is a specialized tool for evolutionary genetics designed to solve the challenge of modeling phylogenetic history alongside population genetic processes.
+description: IMa3 models phylogenetic history and population genetic processes to estimate rooted trees while accounting for gene flow between populations. Use when user asks to estimate posterior distributions of phylogenies, infer population divergence with migration, or generate figures from IMa3 output files.
 homepage: https://github.com/jodyhey/IMa3
 ---
+
 
 # ima3
 

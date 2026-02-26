@@ -1,8 +1,9 @@
 ---
 name: opticlust
-description: opticlust is a Python-based utility designed to streamline the often-arbitrary process of selecting clustering resolutions in single-cell genomics.
+description: opticlust is a Python utility that automates the selection and evaluation of clustering resolutions in single-cell genomics data. Use when user asks to score multiple clustering resolutions, visualize cluster evolution with trees, or identify optimal sub-populations in Scanpy workflows.
 homepage: https://github.com/siebrenf/opticlust
 ---
+
 
 # opticlust
 

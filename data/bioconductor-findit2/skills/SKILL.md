@@ -1,8 +1,9 @@
 ---
 name: bioconductor-findit2
-description: the package is available on all platforms; click for details.
+description: Bioconductor-findit2 identifies influential transcription factors and target genes by integrating multi-omics data such as ChIP-seq, ATAC-seq, and RNA-seq. Use when user asks to annotate genomic peaks to multiple genes, calculate regulatory potential scores, find influential transcription factors through enrichment tests, or calculate peak-gene correlations.
 homepage: https://bioconductor.org/packages/release/bioc/html/FindIT2.html
 ---
+
 
 # bioconductor-findit2
 

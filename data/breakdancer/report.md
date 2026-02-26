@@ -1,9 +1,9 @@
 # breakdancer CWL Generation Report
 
-## breakdancer
+## breakdancer_bam2cfg.pl
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it contains system error messages related to a container runtime (Singularity/Apptainer) failing to pull the image due to lack of disk space.
+Convert BAM files to configuration files for structural variant detection.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/breakdancer:1.4.5--pl5321h264e753_11
@@ -18,9 +18,32 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/0bfd62dfd71bd3b58abaeda1ad0bc1264ee3814cb4a8264c734a7a3e40d98c87: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/breakdancer:1.4.5--pl5321h264e753_11 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3885947988: no space left on device
+/usr/local/bin/bam2cfg.pl version [unknown] calling Getopt::Std::getopts (version 1.12 [paranoid]),
+running under Perl version 5.32.1.
+
+Usage: bam2cfg.pl [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]
+
+The following single-character options are accepted:
+	With arguments: -q -n -c -b -p -s -f -v
+	Boolean (without arguments): -h -m -g -C
+
+Options may be merged together.  -- stops processing of options.
+Space is not required between options and their arguments.
+  [Now continuing due to backward compatibility and excessive paranoia.
+   See 'perldoc Getopt::Std' about $Getopt::Std::STANDARD_HELP_VERSION.]
+
+Usage:   bam2cfg.pl <bam files>
+Options:
+         -q INT    Minimum mapping quality [35]
+         -m        Using mapping quality instead of alternative mapping quality
+         -s        Minimal mean insert size [50]
+         -C        Change default system from Illumina to SOLiD
+         -c FLOAT  Cutoff in unit of standard deviation [4]
+         -n INT    Number of observation required to estimate mean and s.d. insert size [10000]
+         -v FLOAT  Cutoff on coefficients of variation [1]
+         -f STRING A two column tab-delimited text file (RG, LIB) specify the RG=>LIB mapping, useful when BAM header is incomplete
+	 -b INT	   Number of bins in the histogram [50] 
+         -g        Output mapping flag distribution
+         -h        Plot insert size histogram for each BAM library
 ```
 

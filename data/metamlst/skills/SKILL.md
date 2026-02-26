@@ -1,8 +1,9 @@
 ---
 name: metamlst
-description: MetaMLST is a computational pipeline designed to provide strain-level resolution for microbial species within complex metagenomic datasets.
+description: MetaMLST performs strain-level identification and multi-locus sequence typing of microbial species directly from metagenomic shotgun sequencing reads. Use when user asks to identify strains in metagenomes, reconstruct MLST loci from raw reads, or track pathogens across multiple samples without assembly.
 homepage: https://github.com/SegataLab/metamlst
 ---
+
 
 # metamlst
 

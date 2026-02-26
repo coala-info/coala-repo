@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ggallus.ucsc.galgal3.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the full masked genome sequences for the Gallus gallus (chicken) UCSC galGal3 assembly. Use when user asks to access chicken genomic sequences, handle assembly gaps and ambiguities, or analyze non-masked regions using RepeatMasker and Tandem Repeats Finder data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ggallus.UCSC.galGal3.masked.html
 ---
+
 
 # bioconductor-bsgenome.ggallus.ucsc.galgal3.masked
 

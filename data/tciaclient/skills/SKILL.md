@@ -1,8 +1,9 @@
 ---
 name: tciaclient
-description: The `tciaclient` is a specialized Python library that provides a simplified interface to the official TCIA REST API.
+description: The tciaclient library provides a Python interface for interacting with the Cancer Imaging Archive REST API to retrieve medical imaging data and metadata. Use when user asks to browse imaging collections, query series metadata by modality, or download cancer datasets as ZIP files.
 homepage: https://github.com/moritzschwyzer/tciaclient/tree/master/
 ---
+
 
 # tciaclient
 

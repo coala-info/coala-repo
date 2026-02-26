@@ -1,8 +1,9 @@
 ---
 name: learnmsa
-description: The `learnmsa` tool (specifically learnMSA2) is a high-performance protein sequence aligner designed to handle datasets ranging from hundreds to millions of sequences.
+description: learnmsa is a high-performance protein sequence aligner that uses Hidden Markov Models and language models to process datasets ranging from hundreds to millions of sequences. Use when user asks to align protein sequences, perform large-scale genomic or proteomic studies, generate sequence logos, or calculate alignment scores.
 homepage: https://github.com/Gaius-Augustus/learnMSA
 ---
+
 
 # learnmsa
 

@@ -3,7 +3,7 @@
 ## riboplot
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it is a log of a container execution failure.
+Plot and output read counts for a single transcript
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/riboplot:0.3.1--py27_0
@@ -18,13 +18,41 @@ The provided text does not contain help information or usage instructions; it is
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/riboplot:0.3.1--py27_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: riboplot.py [-h] -b RIBO_FILE -f TRANSCRIPTOME_FASTA -t TEXT
+                   [-n RNA_FILE] [-l READ_LENGTHS] [-s READ_OFFSETS]
+                   [-c {default,colorbrewer,rgb,greyorfs}] [-m HTML_FILE]
+                   [-o OUTPUT_PATH] [-d]
+
+Plot and output read counts for a single transcript
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n RNA_FILE, --rna_file RNA_FILE
+                        RNA-Seq alignment file (BAM)
+  -l READ_LENGTHS, --read_lengths READ_LENGTHS
+                        Read lengths to consider (default: 0). Multiple read
+                        lengths should be separated by commas. If multiple
+                        read lengths are specified, corresponding read offsets
+                        should also be specified. If you do not wish to apply
+                        an offset, please input 0 for the corresponding read
+                        length
+  -s READ_OFFSETS, --read_offsets READ_OFFSETS
+                        Read offsets (default: 0). Multiple read offsets
+                        should be separated by commas
+  -c {default,colorbrewer,rgb,greyorfs}, --color_scheme {default,colorbrewer,rgb,greyorfs}
+                        Color scheme to use (default: default)
+  -m HTML_FILE, --html_file HTML_FILE
+                        Output file for results (HTML)
+  -o OUTPUT_PATH, --output_path OUTPUT_PATH
+                        Files are saved in this directory
+  -d, --debug           Flag. Produce debug output
+
+required arguments:
+  -b RIBO_FILE, --ribo_file RIBO_FILE
+                        Ribo-Seq alignment file in BAM format
+  -f TRANSCRIPTOME_FASTA, --transcriptome_fasta TRANSCRIPTOME_FASTA
+                        FASTA format file of the transcriptome
+  -t TEXT, --transcript_name TEXT
+                        Transcript name
 ```
 
-
-## Metadata
-- **Skill**: generated

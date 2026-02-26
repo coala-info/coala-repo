@@ -1,8 +1,9 @@
 ---
 name: perl-html-form
-description: The `perl-html-form` skill provides a programmatic interface to HTML `<form>` elements.
+description: This tool provides a programmatic interface to parse, manipulate, and generate requests from HTML form elements. Use when user asks to parse HTML forms, fill out form fields, or generate HTTP requests for form submission.
 homepage: https://metacpan.org/pod/HTML::Form
 ---
+
 
 # perl-html-form
 

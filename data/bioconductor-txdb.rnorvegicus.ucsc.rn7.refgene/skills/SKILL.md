@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.rnorvegicus.ucsc.rn7.refgene
-description: the package is available on all platforms; click for details.
+description: This package provides transcript-level annotations for the Rattus norvegicus genome based on the UCSC rn7 refGene track. Use when user asks to retrieve rat gene models, access transcript coordinates for the rn7 assembly, or map genomic features to rat gene annotations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.UCSC.rn7.refGene.html
 ---
+
 
 # bioconductor-txdb.rnorvegicus.ucsc.rn7.refgene
 

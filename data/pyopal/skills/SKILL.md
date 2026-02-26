@@ -1,8 +1,9 @@
 ---
 name: pyopal
-description: PyOpal provides Python bindings for the Opal library, a SIMD-accelerated aligner.
+description: PyOpal provides SIMD-accelerated Python bindings for the Opal library to perform fast sequence alignments using multi-sequence vectorization. Use when user asks to align sequences, search a query against a database, or perform high-throughput protein and nucleotide sequence comparisons.
 homepage: https://github.com/althonos/pyopal
 ---
+
 
 # pyopal
 

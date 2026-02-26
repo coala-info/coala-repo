@@ -1,8 +1,9 @@
 ---
 name: genomepy
-description: genomepy is a specialized tool designed to streamline the acquisition and preprocessing of genomic sequences and gene annotations.
+description: genomepy streamlines the acquisition and preprocessing of genomic sequences and gene annotations from multiple providers through a unified interface. Use when user asks to search for assemblies, install genomes and annotations, preview annotation files, or manage local genomic data and aligner indexes.
 homepage: https://github.com/vanheeringen-lab/genomepy
 ---
+
 
 # genomepy
 

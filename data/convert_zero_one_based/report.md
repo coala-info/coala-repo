@@ -3,7 +3,7 @@
 ## convert_zero_one_based
 
 ### Tool Description
-A tool to convert between zero-based and one-based coordinate systems (Note: The provided text contains only system error messages and no usage information).
+Converts between zero-based and one-based indexing in BED files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/convert_zero_one_based:0.0.1--py_0
@@ -18,12 +18,19 @@ A tool to convert between zero-based and one-based coordinate systems (Note: The
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/6371c117c5865e86b81872e65e1a652309c91337c8774f95ec0c6896eb8d3cd3: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/convert_zero_one_based:0.0.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2430194434: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/convert_zero_one_based", line 6, in <module>
+    exit(main())
+  File "/usr/local/lib/python3.6/site-packages/click/core.py", line 722, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/click/core.py", line 676, in main
+    _verify_python3_env()
+  File "/usr/local/lib/python3.6/site-packages/click/_unicodefun.py", line 64, in _verify_python3_env
+    stderr=subprocess.PIPE).communicate()[0]
+  File "/usr/local/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/usr/local/lib/python3.6/subprocess.py", line 1344, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'locale': 'locale'
 ```
 
-
-## Metadata
-- **Skill**: generated

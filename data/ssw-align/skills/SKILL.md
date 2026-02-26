@@ -1,8 +1,9 @@
 ---
 name: ssw-align
-description: The `ssw-align` skill provides a Python-based implementation of the Striped Smith-Waterman algorithm.
+description: This tool performs fast local sequence alignment using the Striped Smith-Waterman algorithm to calculate optimal scores and CIGAR strings. Use when user asks to calculate local alignment scores, determine alignment boundaries, generate aligned sequences, or retrieve CIGAR strings for sequence pairs.
 homepage: https://github.com/kyu999/ssw_aligner
 ---
+
 
 # ssw-align
 

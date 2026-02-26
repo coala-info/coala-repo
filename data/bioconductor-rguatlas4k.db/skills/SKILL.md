@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rguatlas4k.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Rat Genome UAtlas 4.0 Array. Use when user asks to map Affymetrix probe identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for rat genome data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rguatlas4k.db.html
 ---
+
 
 # bioconductor-rguatlas4k.db
 

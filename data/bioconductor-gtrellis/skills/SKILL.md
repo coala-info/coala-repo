@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gtrellis
-description: the package is available on all platforms; click for details.
+description: The gtrellis package arranges genomic categories into a Trellis layout for visualizing multi-track data across chromosomes. Use when user asks to initialize genomic layouts, add data tracks to chromosomes, or create visualizations like rainfall plots and karyograms.
 homepage: https://bioconductor.org/packages/release/bioc/html/gtrellis.html
 ---
+
 
 # bioconductor-gtrellis
 

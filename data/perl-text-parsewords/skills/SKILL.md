@@ -1,8 +1,9 @@
 ---
 name: perl-text-parsewords
-description: The `Text::ParseWords` module provides a robust way to tokenize strings by handling nested quotes and escape characters similarly to a Unix shell.
+description: The Text::ParseWords module tokenizes strings into discrete elements while correctly handling nested quotes and escape characters. Use when user asks to parse shell-like command strings, tokenize text with complex quote handling, or split strings into arrays while preserving or removing delimiters.
 homepage: http://metacpan.org/pod/Text::ParseWords
 ---
+
 
 # perl-text-parsewords
 

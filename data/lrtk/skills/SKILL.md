@@ -1,8 +1,9 @@
 ---
 name: lrtk
-description: LRTK is a unified platform for processing linked-read data from both human genomes and metagenomes.
+description: LRTK is a unified platform for processing and analyzing linked-read data from human genomes and metagenomes. Use when user asks to simulate linked-reads, perform barcode-aware alignment, reconstruct DNA fragments, call genomic variants, phase haplotypes, or perform metagenome assembly.
 homepage: https://github.com/ericcombiolab/LRTK
 ---
+
 
 # lrtk
 

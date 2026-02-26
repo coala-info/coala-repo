@@ -1,8 +1,9 @@
 ---
 name: prefersim
-description: PReFerSim is an ANSI C program designed for fast forward-time simulations of genetic data.
+description: PReFerSim performs fast forward-time simulations of genetic data under the Poisson Random Field model to study natural selection and complex demographic histories. Use when user asks to simulate genetic variation patterns, model population bottlenecks, or analyze the distribution of fitness effects.
 homepage: https://github.com/LohmuellerLab/PReFerSim
 ---
+
 
 # prefersim
 

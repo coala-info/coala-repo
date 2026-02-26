@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnvranger
-description: the package is available on all platforms; click for details.
+description: CNVRanger summarizes individual copy number variation calls into genomic regions and performs association analysis with phenotypes. Use when user asks to summarize copy number variation calls, define copy number variation regions, or conduct association studies between CNVs and phenotypes.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVRanger.html
 ---
+
 
 # bioconductor-cnvranger
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mircomp
-description: the package is available on all platforms; click for details.
+description: miRcomp provides tools for assessing and comparing the performance of miRNA expression estimation methods. Use when user asks to evaluate miRNA expression quantification methods, compare different miRNA analysis pipelines, or benchmark miRNA data.
 homepage: https://bioconductor.org/packages/release/bioc/html/miRcomp.html
 ---
+
 
 # bioconductor-mircomp
 

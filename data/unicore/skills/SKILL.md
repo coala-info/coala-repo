@@ -1,8 +1,9 @@
 ---
 name: unicore
-description: Unicore is a specialized phylogenetic tool that reconstructs evolutionary relationships by identifying "structural core genes." It moves beyond traditional sequence-based methods by using the ProstT5 protein language model to predict structural features (3Di structural alphabets) and Foldseek for efficient clustering.
+description: Unicore is a phylogenetic tool that reconstructs evolutionary relationships by identifying structural core genes. Use when user asks to build a phylogenetic tree, identify core genes, create a structural protein database, cluster protein sequences, or generate structure-aware alignments.
 homepage: https://github.com/steineggerlab/unicore
 ---
+
 
 # unicore
 

@@ -1,8 +1,9 @@
 ---
 name: bamaddrg
-description: bamaddrg is a specialized tool for injecting Read Group metadata into BAM files on the fly.
+description: "bamaddrg adds or modifies Read Group metadata in BAM files while merging them into a single stream. Use when user asks to inject read group tags, merge multiple BAM files for streaming, or clear existing read group information."
 homepage: https://github.com/ekg/bamaddrg
 ---
+
 
 # bamaddrg
 

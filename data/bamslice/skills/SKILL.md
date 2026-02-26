@@ -1,8 +1,9 @@
 ---
 name: bamslice
-description: bamslice is a specialized utility for high-efficiency genomic data processing.
+description: bamslice extracts genomic data from BAM or CRAM files into interleaved FASTQ format based on specific byte offsets. Use when user asks to slice large genomic files by byte ranges, parallelize BAM processing without index files, or convert specific file chunks to interleaved FASTQ.
 homepage: https://github.com/nebiolabs/bamslice
 ---
+
 
 # bamslice
 

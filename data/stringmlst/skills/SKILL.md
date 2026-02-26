@@ -1,8 +1,9 @@
 ---
 name: stringmlst
-description: stringMLST is a lightweight, k-mer based tool designed to predict the sequence type (ST) of a bacterial isolate directly from genome sequencing reads.
+description: stringMLST is a k-mer based tool designed to predict the sequence type of bacterial isolates directly from raw sequencing reads without the need for assembly. Use when user asks to download MLST databases, build k-mer databases for specific species, or predict sequence types from FASTQ files.
 homepage: https://github.com/jordanlab/stringMLST
 ---
+
 
 # stringmlst
 

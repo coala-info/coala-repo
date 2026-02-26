@@ -1,8 +1,9 @@
 ---
 name: bioconductor-customprodb
-description: the package is available on all platforms; click for details.
+description: This tool generates customized protein databases by incorporating genomic variations and transcriptomic information from NGS data for proteomics search. Use when user asks to create FASTA files with protein variations, generate databases for alternative splicing isoforms, or identify novel junction peptides from genomic coordinates.
 homepage: https://bioconductor.org/packages/release/bioc/html/customProDB.html
 ---
+
 
 # bioconductor-customprodb
 

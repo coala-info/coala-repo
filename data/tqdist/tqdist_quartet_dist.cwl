@@ -1,11 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tqdist_quartet_dist
+baseCommand: quartet_dist
 label: tqdist_quartet_dist
-doc: "A tool for computing the quartet distance between trees. (Note: The provided
-  help text contains container execution errors and does not list usage or arguments.)\n
-  \nTool homepage: http://users-cs.au.dk/cstorm/software/tqdist/"
-inputs: []
+doc: "Calculates the quartet distance between two trees in Newick format. The quartet
+  distance is printed to stdout.\n\nTool homepage: http://users-cs.au.dk/cstorm/software/tqdist/"
+inputs:
+  - id: filename1
+    type: File
+    doc: First file containing one tree in Newick format
+    inputBinding:
+      position: 1
+  - id: filename2
+    type: File
+    doc: Second file containing one tree in Newick format
+    inputBinding:
+      position: 2
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: If used, reports additional numbers including number of leaves, number 
+      of quartets, quartet distance, normalized quartet distance, and quartet 
+      agreement/unresolved statistics
+    inputBinding:
+      position: 103
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

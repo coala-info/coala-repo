@@ -1,8 +1,9 @@
 ---
 name: vclean
-description: vclean is an automated command-line pipeline designed to identify and mitigate contamination within viral genome assemblies.
+description: vclean identifies and mitigates contamination within viral genome assemblies. Use when user asks to identify contamination in viral genome assemblies, remove contamination from viral genome assemblies, purify viral genome assemblies, or calculate contamination probabilities for viral genomes.
 homepage: https://github.com/TsumaR/vclean
 ---
+
 
 # vclean
 

@@ -1,8 +1,9 @@
 ---
 name: coolpuppy
-description: coolpuppy is a specialized tool for performing pile-up analysis on Hi-C data stored in the `.cool` format.
+description: coolpuppy performs high-performance pile-up analysis on Hi-C data in .cool format to identify focal enrichments in contact matrices. Use when user asks to perform pile-up analysis, calculate loop strength, analyze TAD boundary intensity, or visualize averaged genomic interactions.
 homepage: https://github.com/open2c/coolpuppy
 ---
+
 
 # coolpuppy
 

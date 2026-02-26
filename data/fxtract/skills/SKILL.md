@@ -1,8 +1,9 @@
 ---
 name: fxtract
-description: fxtract is a specialized bioinformatics utility designed for high-performance sequence extraction from FASTX (FASTA and FASTQ) files.
+description: fxtract extracts biological records from FASTA and FASTQ files using format-aware sequence or header matching. Use when user asks to extract sequences from FASTX files, search for motifs using regular expressions, or filter records by header information.
 homepage: https://github.com/ctSkennerton/fxtract
 ---
+
 
 # fxtract
 

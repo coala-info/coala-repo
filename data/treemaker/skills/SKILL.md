@@ -1,8 +1,9 @@
 ---
 name: treemaker
-description: `treemaker` is a specialized utility for transforming flat, comma-separated classification strings into hierarchical tree structures.
+description: `treemaker` transforms flat, comma-separated classification strings into hierarchical tree structures. Use when user asks to create hierarchical trees, convert classification strings to Newick or Nexus format, or include internal node labels.
 homepage: https://github.com/SimonGreenhill/treemaker
 ---
+
 
 # treemaker
 

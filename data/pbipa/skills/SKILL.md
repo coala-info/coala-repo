@@ -1,8 +1,9 @@
 ---
 name: pbipa
-description: The Improved Phased Assembly (IPA) tool is PacBio's official solution for rapid, phased de novo assembly of HiFi reads.
+description: pbipa is a tool for the rapid, phased de novo assembly of PacBio HiFi reads. Use when user asks to install the software via Bioconda, perform de novo assembly of genomic data, or generate phased contigs from HiFi reads.
 homepage: https://github.com/PacificBiosciences/pbbioconda
 ---
+
 
 # pbipa
 

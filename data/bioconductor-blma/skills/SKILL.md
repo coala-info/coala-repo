@@ -1,8 +1,9 @@
 ---
 name: bioconductor-blma
-description: The package can be used in a wide range of applications, including general hypothesis testings, differential expression analysis, functional analysis, and pathway analysis.
+description: Bioconductor-blma performs bi-level meta-analysis to integrate multiple omics datasets at both intra-experiment and inter-experiment levels. Use when user asks to combine p-values using the Central Limit Theorem, perform bi-level differential expression analysis, or integrate pathway and gene set enrichment results across multiple studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/BLMA.html
 ---
+
 
 # bioconductor-blma
 

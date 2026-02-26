@@ -2,15 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: netClass
 label: ucsc-netclass
-doc: "The provided text contains container execution logs and error messages rather
-  than the command-line help documentation for ucsc-netclass. As a result, no arguments
-  or tool descriptions could be extracted from the input.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Classify nets in a UCSC net file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: net_file
+    type: File
+    doc: Input net file
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_class
+    type: File
+    doc: Output classification file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-netclass:482--h0b57e2e_0
-stdout: ucsc-netclass.out

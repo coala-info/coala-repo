@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kegglincs
-description: the package is available on all platforms; click for details.
+description: This package expands KEGG pathway nodes and edges to allow for granular mapping and visualization of experimental data like LINCS L1000. Use when user asks to expand KEGG pathways, map experimental data to individual pathway edges, or visualize expanded pathways in Cytoscape.
 homepage: https://bioconductor.org/packages/release/bioc/html/KEGGlincs.html
 ---
+
 
 # bioconductor-kegglincs
 

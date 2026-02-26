@@ -1,8 +1,10 @@
 ---
 name: tinysink
-description: tinysink is a specialized utility designed for bioinformatics workflows involving Oxford Nanopore Technologies (ONT).
+description: tinysink automates the synchronization of raw sequencing data from a local device to a remote server. Use when user asks to 'synchronize sequencing data', 'transfer sequencing data to a remote server', 'offload sequencing data during a run', or 'perform batch transfers of sequencing data'.
 homepage: https://github.com/mbhall88/tinysink
 ---
+
+
 
 # tinysink
 

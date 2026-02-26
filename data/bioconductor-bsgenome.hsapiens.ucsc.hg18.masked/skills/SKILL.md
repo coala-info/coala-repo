@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg18.masked
-description: the package is available on all platforms; click for details.
+description: "This package provides masked genomic sequences for the Homo sapiens hg18 assembly from UCSC. Use when user asks to retrieve human genome sequences with assembly gaps, ambiguities, or repeat masks applied, toggle specific genomic masks, or analyze non-masked regions of the hg18 build."
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg18.masked.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg18.masked
 

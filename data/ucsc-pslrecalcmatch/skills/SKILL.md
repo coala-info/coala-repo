@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslrecalcmatch
-description: The `pslRecalcMatch` utility is a specialized tool from the UCSC Kent toolkit used to refresh the scoring columns of a PSL file.
+description: It recalculates and updates the scoring columns of a PSL alignment file based on target and query sequences. Use when user asks to recalculate PSL alignment scores, update match and mismatch counts in a PSL file, or verify alignment identity.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslrecalcmatch
 

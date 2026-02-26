@@ -1,8 +1,9 @@
 ---
 name: delve-bio
-description: Delve is a specialized variant caller optimized for samples containing multiple pathogen strains.
+description: Delve is a variant caller designed to identify low-frequency alleles and minor clones in samples containing multiple pathogen strains. Use when user asks to call variants in mixed infections, detect minor clones in haploid organisms, or perform targeted variant calling using a BED file.
 homepage: https://github.com/berndbohmeier/delve
 ---
+
 
 # delve-bio
 

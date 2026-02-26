@@ -1,8 +1,9 @@
 ---
 name: r-drc
-description: Analysis of dose-response data is made available through a suite of flexible and versatile model fitting and after-fitting functions.</p>
+description: This tool provides expert assistance for dose-response curve analysis using the R package drc. Use when user asks to fit non-linear models to bioassay data, calculate effective doses, perform lack-of-fit tests, compare multiple curves, or analyze mixture toxicity.
 homepage: https://cloud.r-project.org/web/packages/drc/index.html
 ---
+
 
 # r-drc
 

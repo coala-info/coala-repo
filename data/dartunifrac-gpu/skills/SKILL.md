@@ -1,8 +1,9 @@
 ---
 name: dartunifrac-gpu
-description: DartUniFrac-GPU is a specialized tool for ultra-fast UniFrac distance estimation.
+description: DartUniFrac-GPU provides ultra-fast unweighted and weighted UniFrac distance estimation for large-scale microbiome datasets using GPU acceleration. Use when user asks to calculate UniFrac distances, estimate diversity metrics for millions of samples, or perform rapid Principle Coordinate Analysis.
 homepage: https://github.com/jianshu93/DartUniFrac
 ---
+
 
 # dartunifrac-gpu
 

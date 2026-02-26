@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ebarrays
-description: the package is available on all platforms; click for details.
+description: This tool uses parametric empirical Bayes methods to analyze microarray gene expression data across multiple experimental conditions. Use when user asks to identify differentially expressed genes, calculate posterior probabilities of expression patterns, or perform model diagnostics using Gamma-Gamma or Lognormal-Normal models.
 homepage: https://bioconductor.org/packages/release/bioc/html/EBarrays.html
 ---
+
 
 # bioconductor-ebarrays
 

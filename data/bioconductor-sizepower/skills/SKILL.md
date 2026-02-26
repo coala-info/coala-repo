@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sizepower
-description: the package is available on all platforms; click for details.
+description: This R package calculates sample size and statistical power for microarray experiments and high-throughput biological studies. Use when user asks to calculate sample size, determine statistical power, or plan experimental designs for genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/sizepower.html
 ---
+
 
 # bioconductor-sizepower
 

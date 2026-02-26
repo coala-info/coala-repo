@@ -1,8 +1,9 @@
 ---
 name: bamstats
-description: bamstats is a high-performance command-line tool written in Go that extracts detailed mapping metrics from BAM files.
+description: "bamstats extracts detailed mapping metrics and genomic region coverage from BAM files. Use when user asks to generate mapping statistics, compute coverage across genomic features, or calculate insert size distributions."
 homepage: https://github.com/guigolab/bamstats
 ---
+
 
 # bamstats
 

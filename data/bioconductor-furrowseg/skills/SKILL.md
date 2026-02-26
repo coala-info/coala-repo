@@ -1,8 +1,9 @@
 ---
 name: bioconductor-furrowseg
-description: the package is available on all platforms; click for details.
+description: This tool performs automated image segmentation and feature extraction for time-lapse microscopy data of embryo furrowing. Use when user asks to segment cell boundaries in Drosophila embryos, calculate A-P anisotropy, or track cell area evolution and tissue invagination over time.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/furrowSeg.html
 ---
+
 
 # bioconductor-furrowseg
 

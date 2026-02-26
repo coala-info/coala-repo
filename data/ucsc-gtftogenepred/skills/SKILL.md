@@ -1,8 +1,9 @@
 ---
 name: ucsc-gtftogenepred
-description: `gtfToGenePred` is a specialized utility from the UCSC Genome Browser "kent" toolset.
+description: The ucsc-gtftogenepred tool converts GTF (Gene Transfer Format) files into the genePred format. Use when user asks to convert GTF files to genePred format, create extended genePred files, handle non-standard GTF files, or debug GTF conversion errors.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-gtftogenepred
 

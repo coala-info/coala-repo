@@ -1,8 +1,9 @@
 ---
 name: bioconductor-holofoodr
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface to the HoloFood database for searching and retrieving multi-omics holobiont data. Use when user asks to query animal metadata, fetch multi-omics results as MultiAssayExperiment objects, or integrate targeted metabolomics with MGnify metagenomics data.
 homepage: https://bioconductor.org/packages/release/bioc/html/HoloFoodR.html
 ---
+
 
 # bioconductor-holofoodr
 

@@ -1,8 +1,9 @@
 ---
 name: examine
-description: eXamine provides a set-oriented visualization for network modules.
+description: eXamine provides set-oriented visualization for network modules by adding colored contours to represent shared annotations. Use when user asks to visualize biological networks with overlapping functional categories, explore network topology through interactive contours, or generate set-oriented diagrams for node-link data.
 homepage: https://github.com/AlBi-HHU/eXamine-stand-alone
 ---
+
 
 # examine
 

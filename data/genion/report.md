@@ -3,7 +3,7 @@
 ## genion
 
 ### Tool Description
-The provided text does not contain help information for the tool 'genion'. It appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to lack of disk space.
+GENe fusION
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/genion:1.2.3--h077b44d_2
@@ -18,11 +18,35 @@ The provided text does not contain help information for the tool 'genion'. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genion:1.2.3--h077b44d_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3939377668: no space left on device
+gtf is required!
+output is required!
+gpaf is required!
+duplications is required!
+GENe fusION
+Usage:
+  genion [OPTION...]
+
+      --gtf arg                 GTF annotation path
+  -i, --input arg               Input fast{a,q} file
+  -g, --gpaf arg                Long read whole genom e alignment paf path
+  -d, --duplications arg        genomicSuperDups.txt, unzipped
+  -s, --transcriptome-self-align arg
+                                Self align tsv
+  -o, --output arg              Output path for an existing path
+      --log arg                 logfile path (default: output_path + .log)
+      --min-support arg         Minimum read support for fusion calls
+                                (default: 3)
+      --max-rt-distance arg     Maximum distance between genes for
+                                read-through events (default: 500000)
+      --max-rt-fin arg          Maximum value of chimeric-count /
+                                normal-count for read-through events (default: 0.2)
+      --max-base-percent-in-exon arg
+                                Maximum ratio of a base type (AGTC) in an
+                                potential fusion exon (This is used for low
+                                complexity filtering) (default: 0.65)
+      --non-coding              Allow non-coding genes and transcripts while
+                                calling gene fusions
+  -h, --help                    Prints help
+  -v, --version                 Prints version
 ```
 
-
-## Metadata
-- **Skill**: generated

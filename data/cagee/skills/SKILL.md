@@ -1,8 +1,9 @@
 ---
 name: cagee
-description: CAGEE (Computational Analysis of Gene Expression Evolution) provides a statistical framework for making evolutionary inferences from transcriptomic data.
+description: CAGEE is a statistical framework that models gene expression evolution across phylogenetic trees to identify expression shifts and estimate evolutionary rates. Use when user asks to identify significant shifts in gene expression across clades, estimate the rate of expression evolution, or reconstruct ancestral expression counts.
 homepage: https://github.com/hahnlab/CAGEE
 ---
+
 
 # cagee
 

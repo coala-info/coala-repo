@@ -1,11 +1,61 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdb_to_taxdump_gtdb_to_diamond.py
+baseCommand: gtdb_to_diamond.py
 label: gtdb_to_taxdump_gtdb_to_diamond.py
-doc: "A tool to convert GTDB (Genome Taxonomy Database) data to a DIAMOND-compatible
-  taxdump format. (Note: The provided help text contains only system error messages
-  and no usage information; arguments could not be extracted.)\n\nTool homepage: https://github.com/nick-youngblut/gtdb_to_taxdump"
-inputs: []
+doc: "Convert GTDB taxonomy to input for \"diamond makedb --taxonmap\"\n\nTool homepage:
+  https://github.com/nick-youngblut/gtdb_to_taxdump"
+inputs:
+  - id: faa_tarball
+    type: File
+    doc: tarball of GTDB ref genome gene animo acid data files
+    inputBinding:
+      position: 1
+  - id: names_dmp
+    type: File
+    doc: taxdump names.dmp file (eg., from gtdb_to_taxdump.py)
+    inputBinding:
+      position: 2
+  - id: nodes_dmp
+    type: File
+    doc: taxdump nodes.dmp file (eg., from gtdb_to_taxdump.py)
+    inputBinding:
+      position: 3
+  - id: gzip
+    type:
+      - 'null'
+      - boolean
+    doc: gzip output fasta?
+    default: false
+    inputBinding:
+      position: 104
+      prefix: --gzip
+  - id: keep_temp
+    type:
+      - 'null'
+      - boolean
+    doc: Keep temporary output?
+    default: false
+    inputBinding:
+      position: 104
+      prefix: --keep-temp
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    default: gtdb_to_diamond
+    inputBinding:
+      position: 104
+      prefix: --outdir
+  - id: tmpdir
+    type:
+      - 'null'
+      - Directory
+    doc: Temporary directory
+    default: gtdb_to_diamond_TMP
+    inputBinding:
+      position: 104
+      prefix: --tmpdir
 outputs:
   - id: stdout
     type: stdout

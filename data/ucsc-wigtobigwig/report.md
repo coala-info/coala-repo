@@ -3,7 +3,7 @@
 ## ucsc-wigtobigwig
 
 ### Tool Description
-Convert wig file to BigWig file.
+Convert ASCII wig file to binary bigWig format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-wigtobigwig:482--hdc0a859_1
@@ -12,19 +12,19 @@ Convert wig file to BigWig file.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ucsc-wigtobigwig/overview
-- **Total Downloads**: 367.4K
+- **Total Downloads**: 367.5K
 - **Last updated**: 2025-06-21
 - **GitHub**: https://github.com/ucscGenomeBrowser/kent
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-wigtobigwig:482--hdc0a859_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-wigtobigwig:482--hdc0a859_1' locally
+482--hdc0a859_1: Pulling from biocontainers/ucsc-wigtobigwig
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+d2cd7a7eee45: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2267954316: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: parnas
-description: PARNAS (Phylogenetic maximum representation sampling) is a specialized tool designed to solve the problem of taxon selection in large phylogenies.
+description: PARNAS identifies the most representative taxa in a phylogenetic tree to capture maximum evolutionary diversity or cover the tree within a specific divergence radius. Use when user asks to select representative strains, downsample a large phylogeny, determine optimal sample sizes for diversity coverage, or identify new representatives while accounting for existing ones.
 homepage: https://github.com/flu-crew/parnas
 ---
+
 
 # parnas
 

@@ -1,8 +1,9 @@
 ---
 name: mgikit
-description: `mgikit` is a specialized bioinformatics toolkit designed for MGI sequencing platforms.
+description: mgikit is a bioinformatics toolkit designed to demultiplex and reformat raw sequencing data from MGI platforms. Use when user asks to identify index templates, demultiplex reads into sample-specific FASTQ files, convert MGI headers to Illumina format, or merge quality control reports.
 homepage: https://sagc-bioinformatics.github.io/mgikit/
 ---
+
 
 # mgikit
 

@@ -1,8 +1,9 @@
 ---
 name: bioinfokit
-description: Bioinfokit is a specialized Python toolkit designed to simplify the analysis and visualization of genome-scale omics experiments.
+description: Bioinfokit is a Python toolkit designed for the analysis and visualization of genome-scale omics data through high-level wrappers for statistical testing and bioinformatics tasks. Use when user asks to generate volcano or Manhattan plots, normalize RNA-seq data, perform biostatistical tests like Tukey HSD, or manipulate sequence files such as VCF and GFF3.
 homepage: https://reneshbedre.github.io/blog/howtoinstall.html
 ---
+
 
 # bioinfokit
 

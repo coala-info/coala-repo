@@ -1,8 +1,9 @@
 ---
 name: gecode
-description: Gecode is a high-performance, open-source toolkit for developing constraint-based systems.
+description: Gecode is a high-performance toolkit for developing constraint-based systems and solving complex combinatorial problems. Use when user asks to model constraint satisfaction problems, select branching strategies, or find optimal solutions using search engines like branch-and-bound.
 homepage: http://www.gecode.org/
 ---
+
 
 # gecode
 

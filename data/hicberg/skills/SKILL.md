@@ -1,8 +1,9 @@
 ---
 name: hicberg
-description: hicberg is a bioinformatics tool designed for the statistical profiling and reconstruction of genomic contact data.
+description: hicberg transforms raw sequencing reads into high-quality genomic contact maps through a unified pipeline of alignment, filtering, and normalization. Use when user asks to process Hi-C data, generate COOL format matrices from FASTQ files, or reconstruct genomic contact data.
 homepage: https://github.com/sebgra/hicberg
 ---
+
 
 # hicberg
 

@@ -1,8 +1,9 @@
 ---
 name: rcx-tk
-description: The `rcx-tk` (RECETOX Toolkit) is a specialized utility for preprocessing environmental chemistry and mass spectrometry metadata.
+description: The rcx-tk utility preprocesses and validates environmental chemistry and mass spectrometry metadata spreadsheets for downstream analysis. Use when user asks to process general metadata, handle alkane retention index files, validate injection numbers, or generate standardized sample identifiers.
 homepage: https://github.com/RECETOX/rcx-tk
 ---
+
 
 # rcx-tk
 

@@ -1,8 +1,9 @@
 ---
 name: r-statmod
-description: A collection of algorithms and functions to aid statistical modeling. Includes limiting dilution analysis (aka ELDA), growth curve comparisons, mixed linear models, heteroscedastic regression, inverse-Gaussian probability calculations, Gauss quadrature and a secure convergence algorithm for nonlinear models. Also includes advanced generalized linear model functions including Tweedie and Digamma distributional families, secure convergence and exact distributional calculations for unit deviances.</p>
+description: The r-statmod package provides specialized algorithms for advanced statistical modeling, including limiting dilution analysis, complex generalized linear models, and numerical integration. Use when user asks to perform limiting dilution analysis, fit Tweedie or Digamma GLMs, calculate Gauss quadrature points, work with inverse-Gaussian distributions, or compare growth curves.
 homepage: https://cloud.r-project.org/web/packages/statmod/index.html
 ---
+
 
 # r-statmod
 

@@ -1,14 +1,29 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - coatran
-  - coatran_expgrowth
+baseCommand: coatran_expgrowth
 label: coatran_coatran_expgrowth
-doc: "Comparative Transcriptomics Analysis (coatran) - exponential growth module.
-  Note: The provided help text contains only system error logs regarding container
-  image creation and does not list specific command-line arguments.\n\nTool homepage:
-  https://github.com/niemasd/CoaTran"
-inputs: []
+doc: "CoaTran (exponential effective population size growth)\n\nTool homepage: https://github.com/niemasd/CoaTran"
+inputs:
+  - id: trans_network
+    type: File
+    doc: Transmission network file
+    inputBinding:
+      position: 1
+  - id: sample_times
+    type: File
+    doc: Sample times file
+    inputBinding:
+      position: 2
+  - id: init_eff_pop_size
+    type: float
+    doc: Initial effective population size
+    inputBinding:
+      position: 3
+  - id: eff_pop_growth
+    type: float
+    doc: Effective population growth rate
+    inputBinding:
+      position: 4
 outputs:
   - id: stdout
     type: stdout

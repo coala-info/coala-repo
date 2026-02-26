@@ -1,8 +1,9 @@
 ---
 name: bioconductor-siggenes
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially expressed genes using Significance Analysis of Microarrays (SAM) and Empirical Bayes Analysis of Microarrays (EBAM). Use when user asks to identify differentially expressed genes, perform SAM analysis, or conduct EBAM analysis on high-throughput genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/siggenes.html
 ---
+
 
 # bioconductor-siggenes
 

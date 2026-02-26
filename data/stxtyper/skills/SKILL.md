@@ -1,8 +1,9 @@
 ---
 name: stxtyper
-description: StxTyper is a specialized bioinformatic tool developed by NCBI for the precise classification of Shiga toxin genes from nucleotide sequences.
+description: StxTyper classifies Shiga toxin genes from nucleotide sequences to identify specific stx subtypes and operon structural integrity. Use when user asks to identify Shiga toxin subtypes, characterize stx operons in E. coli assemblies, or detect truncated and non-functional toxin genes.
 homepage: https://github.com/ncbi/stxtyper
 ---
+
 
 # stxtyper
 

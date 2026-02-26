@@ -1,8 +1,9 @@
 ---
 name: rodeo
-description: The RODEO (Rapid ORF Description and Evaluation Online) tool is designed for the automated discovery and classification of RiPP biosynthetic gene clusters.
+description: RODEO automates the discovery and classification of RiPP biosynthetic gene clusters by analyzing the genomic neighborhood of core enzymes. Use when user asks to identify small precursor peptides, characterize biosynthetic gene neighborhoods, or score the RiPP-likeness of genomic regions using pHMMs and SVM classifiers.
 homepage: http://ripp.rodeo/index.html
 ---
+
 
 # rodeo
 

@@ -1,8 +1,9 @@
 ---
 name: cromshell
-description: cromshell is a command-line utility that acts as a wrapper for the Cromwell REST API.
+description: cromshell is a command-line wrapper for the Cromwell REST API that simplifies submitting, tracking, and managing WDL-based workflows. Use when user asks to submit genomic pipelines, check workflow status, retrieve execution logs, or calculate cloud processing costs.
 homepage: https://github.com/broadinstitute/cromshell
 ---
+
 
 # cromshell
 

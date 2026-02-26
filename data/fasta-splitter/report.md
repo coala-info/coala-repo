@@ -3,7 +3,7 @@
 ## fasta-splitter
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system log messages and a fatal error regarding container image building (no space left on device).
+Divide FASTA files into parts based on size, count, or number of parts.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasta-splitter:0.2.6--0
@@ -18,29 +18,22 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasta-splitter:0.2.6--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2576450634: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## fasta-splitter_fasta-splitter.pl
-
-### Tool Description
-A tool to split FASTA files into smaller chunks. (Note: The provided help text contains a system error and does not list specific arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fasta-splitter:0.2.6--0
-- **Homepage**: http://kirill-kryukov.com/study/tools/fasta-splitter/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fasta-splitter/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasta-splitter:0.2.6--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3659628987: no space left on device
+fasta-splitter, version 0.2.6, 2017-08-01
+Copyright (c) 2012-2017 Kirill Kryukov
+Usage: fasta-splitter [options] <file>...
+Options:
+    --n-parts <N>        - Divide into <N> parts
+    --part-size <N>      - Divide into parts of size <N>
+    --measure (all|seq|count) - Specify whether all data, sequence length, or
+                           number of sequences is used for determining part
+                           sizes ('all' by default).
+    --line-length        - Set output sequence line length, 0 for single line
+                           (default: 60).
+    --eol (dos|mac|unix) - Choose end-of-line character ('unix' by default).
+    --part-num-prefix T  - Put T before part number in file names (def.: .part-)
+    --out-dir            - Specify output directory.
+    --nopad              - Don't pad part numbers with 0.
+    --version            - Show version.
+    --help               - Show help.
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: csblast
-description: CS-BLAST extends the standard BLAST algorithm by using context-specific amino acid substitution matrices.
+description: CS-BLAST performs protein sequence searches using context-specific amino acid substitution matrices to increase sensitivity for finding distant evolutionary relationships. Use when user asks to search protein databases for remote homologs, generate context-specific profiles, or perform sensitive sequence alignments.
 homepage: http://wwwuser.gwdg.de/~compbiol/data/csblast/
 ---
+
 
 # csblast
 

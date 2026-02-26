@@ -1,8 +1,9 @@
 ---
 name: longcalld
-description: `longcalld` is a specialized genomic tool that utilizes local haplotagging to perform joint calling of small variants and structural variants (SVs) in a single pass.
+description: longcalld performs joint calling of small variants and structural variants using local haplotagging on long-read sequencing data. Use when user asks to call variants from PacBio or ONT reads, detect mosaic variants, identify mobile element insertions, or generate phased VCFs.
 homepage: https://github.com/yangao07/longcallD
 ---
+
 
 # longcalld
 

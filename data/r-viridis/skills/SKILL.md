@@ -1,8 +1,9 @@
 ---
 name: r-viridis
-description: "Color maps designed to improve graph readability for readers with      common forms of color blindness and/or color vision deficiency. The color      maps are also perceptually-uniform, both in regular form and also when      converted to black-and-white for printing. This package also contains      'ggplot2' bindings for discrete and continuous color and fill scales."
+description: The r-viridis package provides colorblind-friendly and perceptually-uniform color maps for R visualizations. Use when user asks to create accessible color scales, apply viridis palettes to ggplot2 or base R plots, or improve the readability of heatmaps and high-density data visualizations.
 homepage: https://cloud.r-project.org/web/packages/viridis/index.html
 ---
+
 
 # r-viridis
 

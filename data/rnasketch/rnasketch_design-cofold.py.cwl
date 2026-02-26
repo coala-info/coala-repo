@@ -1,11 +1,110 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnasketch_design-cofold.py
+baseCommand: design-cofold.py
 label: rnasketch_design-cofold.py
-doc: "A tool for RNA design and cofolding. (Note: The provided help text contains
-  container execution errors and does not list specific arguments.)\n\nTool homepage:
-  https://github.com/ViennaRNA/RNAsketch"
-inputs: []
+doc: "Design a cofold device.\n\nTool homepage: https://github.com/ViennaRNA/RNAsketch"
+inputs:
+  - id: csv
+    type:
+      - 'null'
+      - boolean
+    doc: Write output as semi-colon csv file to stdout
+    inputBinding:
+      position: 101
+      prefix: --csv
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Show debug information of library
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: graphml
+    type:
+      - 'null'
+      - File
+    doc: Write a graphml file with the given filename.
+    inputBinding:
+      position: 101
+      prefix: --graphml
+  - id: input
+    type:
+      - 'null'
+      - boolean
+    doc: Read custom structures and sequence constraints from stdin
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: kill
+    type:
+      - 'null'
+      - int
+    doc: Timeout value of graph construction in seconds.
+    default: infinite
+    inputBinding:
+      position: 101
+      prefix: --kill
+  - id: mode
+    type:
+      - 'null'
+      - string
+    doc: 'Mode for getting a new sequence: sample, sample_plocal, sample_clocal, random'
+    inputBinding:
+      position: 101
+      prefix: --mode
+  - id: number
+    type:
+      - 'null'
+      - int
+    doc: Number of designs to generate
+    inputBinding:
+      position: 101
+      prefix: --number
+  - id: package
+    type:
+      - 'null'
+      - string
+    doc: 'Chose the calculation package: hotknots, pkiss, nupack, or vrna/ViennaRNA'
+    default: vrna
+    inputBinding:
+      position: 101
+      prefix: --package
+  - id: progress
+    type:
+      - 'null'
+      - boolean
+    doc: Show progress of optimization
+    inputBinding:
+      position: 101
+      prefix: --progress
+  - id: reporter
+    type:
+      - 'null'
+      - string
+    doc: The coding sequence context, excluding the start codon that should be 
+      part of the sequence constraint.
+    default: the first 66 nucleotides of eGFP
+    inputBinding:
+      position: 101
+      prefix: --reporter
+  - id: stop
+    type:
+      - 'null'
+      - int
+    doc: Stop optimization run if no better solution is aquired after (stop) 
+      trials.
+    inputBinding:
+      position: 101
+      prefix: --stop
+  - id: temperature
+    type:
+      - 'null'
+      - float
+    doc: Temperature of the energy calculations.
+    inputBinding:
+      position: 101
+      prefix: --temperature
 outputs:
   - id: stdout
     type: stdout

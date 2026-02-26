@@ -1,8 +1,9 @@
 ---
 name: bioconductor-resolve
-description: the package is available on all platforms; click for details.
+description: This tool denoises and restores single-cell RNA-seq data by evaluating local variation to mitigate technical noise. Use when user asks to denoise scRNA-seq data, restore gene expression levels, or account for dropout events in single-cell datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/RESOLVE.html
 ---
+
 
 # bioconductor-resolve
 

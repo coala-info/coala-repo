@@ -1,8 +1,9 @@
 ---
 name: pretextmap
-description: PretextMap (Paired REad TEXTure Mapper) is a high-performance utility designed to transform aligned sequence data into genome contact maps.
+description: PretextMap transforms aligned sequence data into compressed genome contact maps for rapid visualization. Use when user asks to convert BAM, CRAM, or pairs files into the pretext format, generate Hi-C contact maps, or filter sequences to improve map resolution.
 homepage: https://github.com/wtsi-hpag/PretextMap
 ---
+
 
 # pretextmap
 

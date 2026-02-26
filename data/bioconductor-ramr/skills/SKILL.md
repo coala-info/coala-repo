@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ramr
-description: the package is available on all platforms; click for details.
+description: The bioconductor-ramr package detects rare aberrantly methylated regions in DNA methylation data. Use when user asks to identify methylation outliers, find rare epigenetic aberrations, or analyze aberrantly methylated regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/ramr.html
 ---
+
 
 # bioconductor-ramr
 

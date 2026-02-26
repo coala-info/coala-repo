@@ -1,9 +1,9 @@
 # coast CWL Generation Report
 
-## coast
+## coast_valid
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull the image due to lack of disk space.
+COAST (Coastal Ocean Analysis and Statistics Tool) command-line interface for searching, reporting, retrieving, and comparing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coast:0.2.2--pyh5e36f6f_0
@@ -18,9 +18,26 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coast:0.2.2--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4200432457: no space left on device
+usage: coast [-h] {search,report,retrieve,compare} ...
+coast: error: argument {search,report,retrieve,compare}: invalid choice: 'valid' (choose from 'search', 'report', 'retrieve', 'compare')
+```
+
+
+## coast_additional
+
+### Tool Description
+A tool for searching, reporting, retrieving, and comparing data (COAST).
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/coast:0.2.2--pyh5e36f6f_0
+- **Homepage**: https://gitlab.com/coast_tool/COAST
+- **Package**: https://anaconda.org/channels/bioconda/packages/coast/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: coast [-h] {search,report,retrieve,compare} ...
+coast: error: argument {search,report,retrieve,compare}: invalid choice: 'additional' (choose from 'search', 'report', 'retrieve', 'compare')
 ```
 
 

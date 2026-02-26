@@ -1,8 +1,9 @@
 ---
 name: contammix
-description: The `contammix` tool is a specialized R-based package designed for ancient DNA (aDNA) bioinformatics.
+description: The contammix tool uses a Bayesian mixture model to estimate the proportion of modern DNA contamination in ancient DNA samples. Use when user asks to estimate contamination levels in ancient DNA, run a Gibbs sampler for MCMC estimation, or assess the authenticity of sequencing reads.
 homepage: https://github.com/plfjohnson/contamMix
 ---
+
 
 # contammix
 

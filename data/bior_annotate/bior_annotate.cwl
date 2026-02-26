@@ -2,10 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bior_annotate
 label: bior_annotate
-doc: "The provided text does not contain help information or usage instructions. It
-  consists of system error messages related to a failed container execution (no space
-  left on device).\n\nTool homepage: https://github.com/michaelmeiners/biorAnnotateLite"
-inputs: []
+doc: "Annotates variants in a given input file (vcf)\n\nTool homepage: https://github.com/michaelmeiners/biorAnnotateLite"
+inputs:
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: The config file containing the columns to be shown in the result.
+    inputBinding:
+      position: 101
+      prefix: --configfile
+  - id: log
+    type:
+      - 'null'
+      - boolean
+    doc: Use this option to generate the log file. By default, the log file is 
+      not generated.
+    inputBinding:
+      position: 101
+      prefix: --log
 outputs:
   - id: stdout
     type: stdout

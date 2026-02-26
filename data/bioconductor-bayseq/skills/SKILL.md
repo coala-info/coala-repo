@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bayseq
-description: the package is available on all platforms; click for details.
+description: This tool performs empirical Bayesian analysis to identify patterns of differential expression in high-throughput sequencing count data. Use when user asks to perform differential expression analysis on RNA-seq or sRNA-seq data, evaluate complex experimental designs across multiple groups, or analyze paired genomic data using custom distribution models.
 homepage: https://bioconductor.org/packages/release/bioc/html/baySeq.html
 ---
+
 
 # bioconductor-bayseq
 

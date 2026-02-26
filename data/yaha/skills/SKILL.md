@@ -1,8 +1,9 @@
 ---
 name: yaha
-description: Yaha is a high-performance Chinese word segmentation tool designed for speed and flexibility.
+description: Yaha is a high-performance Chinese word segmentation tool that also supports new word discovery and text analysis. Use when user asks to segment Chinese text, define custom segmentation rules, discover new vocabulary, extract keywords, summarize text, or correct spelling.
 homepage: https://github.com/jannson/yaha
 ---
+
 
 # yaha
 

@@ -1,8 +1,9 @@
 ---
 name: bioformats
-description: The `bioformats` library is a Python-based toolkit designed to simplify the handling of bioinformatics data.
+description: The bioformats library provides Python classes for extracting and manipulating data from various biological file formats. Use when user asks to parse bioinformatics files, integrate genomic data into a pipeline, or perform exploratory analysis on biological records.
 homepage: https://github.com/gtamazian/bioformats
 ---
+
 
 # bioformats
 

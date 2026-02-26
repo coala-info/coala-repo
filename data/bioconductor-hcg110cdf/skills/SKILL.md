@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hcg110cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix hcg110 microarray platform. Use when user asks to map probe coordinates to indices, access CDF environments, or retrieve chip dimensions for the hcg110 chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hcg110cdf.html
 ---
+
 
 # bioconductor-hcg110cdf
 

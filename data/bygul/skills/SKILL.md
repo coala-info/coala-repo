@@ -1,8 +1,9 @@
 ---
 name: bygul
-description: Bygul is a specialized tool designed to simulate amplicon reads, particularly for applications like wastewater surveillance where multiple viral or bacterial strains are present in a single sample.
+description: Bygul simulates amplicon sequencing reads from complex mixtures of viral or bacterial strains with specified or random proportions. Use when user asks to simulate amplicon reads, generate sequencing data for wastewater surveillance, or create mixtures of genomic samples with specific proportions.
 homepage: https://github.com/andersen-lab/Bygul
 ---
+
 
 # bygul
 

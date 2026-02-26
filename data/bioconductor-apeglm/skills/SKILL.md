@@ -1,8 +1,9 @@
 ---
 name: bioconductor-apeglm
-description: the package is available on all platforms; click for details.
+description: This tool calculates empirical Bayes shrinkage estimators for effect sizes in generalized linear models using a heavy-tailed Cauchy prior. Use when user asks to shrink log fold changes, calculate posterior effect size estimates, or compute s-values for RNA-seq and other genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/apeglm.html
 ---
+
 
 # bioconductor-apeglm
 

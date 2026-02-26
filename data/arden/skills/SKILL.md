@@ -1,8 +1,9 @@
 ---
 name: arden
-description: Ardent is an extension for Laravel's Eloquent ORM that simplifies data integrity by making models "self-aware." Instead of manually triggering validation in controllers, Ardent models automatically validate themselves upon saving.
+description: Arden is an extension for Laravel's Eloquent ORM that provides self-contained model validation and data integrity features. Use when user asks to implement automatic model validation, purge redundant attributes, or hash sensitive fields within Laravel applications.
 homepage: https://github.com/laravel-ardent/ardent
 ---
+
 
 # arden
 

@@ -1,8 +1,9 @@
 ---
 name: perl-bundle-bioperl
-description: This skill facilitates the deployment of the `Bundle::BioPerl` collection via the Bioconda ecosystem.
+description: This tool installs the Bundle::BioPerl collection to satisfy the complex Perl dependency chains required for BioPerl 1.5.2. Use when user asks to install BioPerl dependencies, run legacy Perl scripts, or resolve missing CPAN modules for sequence alignment and database querying.
 homepage: http://metacpan.org/pod/Bundle::BioPerl
 ---
+
 
 # perl-bundle-bioperl
 

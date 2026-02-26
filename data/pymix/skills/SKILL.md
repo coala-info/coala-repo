@@ -1,8 +1,9 @@
 ---
 name: pymix
-description: The `pymix` skill (based on `pymixconsole`) provides a headless multitrack mixing environment.
+description: The pymix tool provides a headless multitrack mixing environment for programmatically applying signal chains and summing audio tracks into stereo output. Use when user asks to simulate a mixing console, apply gain, panning, equalization, or dynamic processing to audio data, and automate multitrack audio mixing.
 homepage: https://github.com/csteinmetz1/pymixconsole
 ---
+
 
 # pymix
 

@@ -1,8 +1,9 @@
 ---
 name: rotate
-description: The `rotate` utility is a specialized tool for re-centering circular DNA sequences.
+description: The rotate utility re-centers circular DNA sequences by shifting their starting positions and provides sequence composition analysis. Use when user asks to shift the start of a circular sequence to a specific index or motif, generate reverse complements of rotated sequences, or calculate sequence statistics and base distributions.
 homepage: https://github.com/richarddurbin/rotate
 ---
+
 
 # rotate
 

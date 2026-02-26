@@ -1,8 +1,9 @@
 ---
 name: ebisearch
-description: The ebisearch skill facilitates programmatic access to the European Bioinformatics Institute's search engine.
+description: The ebisearch tool provides programmatic access to the European Bioinformatics Institute's search engine to query biological data domains. Use when user asks to fetch metadata, list database domains, or execute search queries for biological entries.
 homepage: https://github.com/ebi-wp/EBISearch-webservice-clients
 ---
+
 
 # ebisearch
 

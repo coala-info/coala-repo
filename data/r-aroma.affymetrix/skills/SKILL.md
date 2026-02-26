@@ -1,8 +1,9 @@
 ---
 name: r-aroma.affymetrix
-description: A cross-platform R framework that facilitates processing of any number of Affymetrix microarray samples regardless of computer system.  The only parameter that limits the number of chips that can be processed is the amount of available disk space.  The Aroma Framework has successfully been used in studies to process tens of thousands of arrays.  This package has actively been used since 2006.</p>
+description: This tool processes and analyzes large-scale Affymetrix microarray data sets using a memory-efficient framework in R. Use when user asks to process CEL files, perform RMA background correction, normalize SNP or exon arrays, or estimate copy numbers using CRMA.
 homepage: https://cran.r-project.org/web/packages/aroma.affymetrix/index.html
 ---
+
 
 # r-aroma.affymetrix
 

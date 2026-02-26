@@ -1,8 +1,9 @@
 ---
 name: nanopolish
-description: Nanopolish is a specialized suite of algorithms designed to analyze the raw ionic current signal (the "squiggles") produced by Oxford Nanopore Technologies (ONT) sequencers.
+description: Nanopolish analyzes raw ionic current signal from Oxford Nanopore sequencers to improve genome assembly accuracy and detect base modifications. Use when user asks to index raw signal data, polish draft assemblies, call DNA methylation, or estimate poly-A tail lengths.
 homepage: https://github.com/jts/nanopolish
 ---
+
 
 # nanopolish
 

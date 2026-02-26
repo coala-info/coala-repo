@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alps
-description: The package provides analysis and publication quality visualization routines for genome-wide epigenomics data such as histone modification or transcription factor ChIP-seq, ATAC-seq, DNase-seq etc. The functions in the package can be used with any type of data that can be represented with bigwig files at any resolution. The goal of the ALPS is to provide analysis tools for most downstream analysis without leaving the R environment and most tools in the package require a minimal input that can be prepared with basic R, unix or excel skills.
+description: ALPS is a Bioconductor package for the downstream analysis, quantification, and visualization of epigenomic data from bigwig and BED files. Use when user asks to quantify enrichments, perform exploratory data analysis, annotate peaks, or generate browser tracks and motif logos.
 homepage: https://bioconductor.org/packages/3.10/bioc/html/ALPS.html
 ---
+
 
 # bioconductor-alps
 

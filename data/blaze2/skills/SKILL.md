@@ -1,8 +1,9 @@
 ---
 name: blaze2
-description: BLAZE (Barcode identification from Long reads for AnalyZing single-cell gene Expression) is a specialized demultiplexing tool optimized for the high error rates associated with Nanopore long-read sequencing.
+description: blaze2 demultiplexes Nanopore long-read single-cell data by identifying and error-correcting cell barcodes and UMIs. Use when user asks to demultiplex long-read single-cell RNA-seq data, extract cell barcodes and UMIs, or prepare Nanopore reads for isoform-level analysis.
 homepage: https://github.com/shimlab/BLAZE
 ---
+
 
 # blaze2
 

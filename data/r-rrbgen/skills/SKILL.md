@@ -1,8 +1,9 @@
 ---
 name: r-rrbgen
-description: R package rrbgen (documentation from project home).
+description: rrbgen is an R package for reading and writing BGEN v1.3 files containing bi-allelic SNPs and diploid samples. Use when user asks to load sample names, extract variant information, read genotype probabilities, or write BGEN files.
 homepage: https://cran.r-project.org/web/packages/rrbgen/index.html
 ---
+
 
 # r-rrbgen
 

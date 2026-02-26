@@ -1,8 +1,9 @@
 ---
 name: switchtfi
-description: SwitchTFI is a specialized computational framework implemented in Python for identifying the regulatory drivers of cell fate transitions.
+description: SwitchTFI identifies transcription factors that act as regulatory switches during cell fate transitions by integrating scRNA-seq data with gene regulatory networks. Use when user asks to rank transcription factors, fit weights for regulatory interactions, or calculate p-values to validate the biological significance of regulators in specific cell lineages.
 homepage: https://github.com/bionetslab/SwitchTFI
 ---
+
 
 # switchtfi
 

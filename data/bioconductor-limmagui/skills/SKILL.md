@@ -1,8 +1,9 @@
 ---
 name: bioconductor-limmagui
-description: the package is available on all platforms; click for details.
+description: Bioconductor-limmagui provides a graphical user interface for the limma R package to analyze two-color microarray data. Use when user asks to perform microarray normalization, generate diagnostic plots, fit linear models for differential expression, or interact with limma through a point-and-click interface.
 homepage: https://bioconductor.org/packages/release/bioc/html/limmaGUI.html
 ---
+
 
 # bioconductor-limmagui
 

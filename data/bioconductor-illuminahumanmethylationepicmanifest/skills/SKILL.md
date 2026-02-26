@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylationepicmanifest
-description: the package is available on all platforms; click for details.
+description: This package provides the manifest object containing design metadata for the Illumina HumanMethylationEPIC v1.0 microarray. Use when user asks to process EPIC beadchip data, map methylation probes to genomic locations, or initialize GenomicRatioSet objects using the minfi package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICmanifest.html
 ---
+
 
 # bioconductor-illuminahumanmethylationepicmanifest
 

@@ -1,8 +1,9 @@
 ---
 name: praat
-description: Praat is a specialized tool for doing phonetics by computer, capable of analyzing, synthesizing, and manipulating speech.
+description: Praat is a specialized tool for analyzing, synthesizing, and manipulating speech for phonetic research. Use when user asks to execute phonetic scripts, perform acoustic analysis, automate speech labeling, or manipulate audio properties like pitch and duration.
 homepage: https://github.com/praat/praat.github.io
 ---
+
 
 # praat
 

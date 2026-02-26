@@ -1,8 +1,9 @@
 ---
 name: chopin2
-description: chopin2 is a supervised learning tool based on the architecture of Hyperdimensional Computing.
+description: chopin2 is a supervised learning tool that uses Hyperdimensional Computing to perform classification and feature selection on complex datasets. Use when user asks to build classification models, perform backward variable selection, or scale machine learning tasks using GPUs and Apache Spark.
 homepage: https://github.com/cumbof/chopin2
 ---
+
 
 # chopin2
 

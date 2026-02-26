@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnu34probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix RNU34 microarray chip. Use when user asks to retrieve probe sequences for the RNU34 platform or access microarray annotation data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rnu34probe.html
 ---
+
 
 # bioconductor-rnu34probe
 

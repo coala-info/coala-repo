@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gwascatdata
-description: the package is available on all platforms; click for details.
+description: This package provides a static March 2021 snapshot of the EBI/EMBL GWAS catalog as an AnnotationHub resource for reproducible research. Use when user asks to retrieve historical GWAS catalog data, access the March 2021 GWAS snapshot, or load GWAS records for GRCh38 genomic analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/gwascatData.html
 ---
+
 
 # bioconductor-gwascatdata
 

@@ -1,8 +1,9 @@
 ---
 name: groot
-description: GROOT (Graphing Resistance Out Of meTagenomes) is a bioinformatics tool specifically designed for "resistome profiling"—the identification and quantification of antibiotic resistance genes within a metagenomic sample.
+description: "GROOT identifies and quantifies antibiotic resistance genes in metagenomic samples using variation graphs and locality sensitive hashing. Use when user asks to profile the resistome, index antibiotic resistance gene databases, or align metagenomic reads to variation graphs."
 homepage: https://github.com/will-rowe/groot
 ---
+
 
 # groot
 

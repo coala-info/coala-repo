@@ -1,9 +1,9 @@
 # gfapy CWL Generation Report
 
-## gfapy
+## gfapy_gfapy-convert
 
 ### Tool Description
-A Python library and command-line tool for parsing, manipulating, and writing GFA (Graphical Fragment Assembly) files.
+Convert a GFA file to the other specification version
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0
@@ -18,63 +18,75 @@ A Python library and command-line tool for parsing, manipulating, and writing GF
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1947999815: no space left on device
+usage: gfapy-convert [-h] [--version] filename
+
+Convert a GFA file to the other specification version
+
+positional arguments:
+  filename
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## gfapy_gfapy-convert
-
-### Tool Description
-A tool for converting GFA (Graphical Fragment Assembly) files using the gfapy library.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0
-- **Homepage**: https://github.com/ggonnella/gfapy
-- **Package**: https://anaconda.org/channels/bioconda/packages/gfapy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1485232318: no space left on device
-```
 
 ## gfapy_gfapy-mergelinear
 
 ### Tool Description
-A tool from the gfapy package, likely used for merging linear paths in GFA files. Note: The provided help text contains only container runtime error messages and no usage information.
+Merge linear paths in a GFA graph
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0
 - **Homepage**: https://github.com/ggonnella/gfapy
 - **Package**: https://anaconda.org/channels/bioconda/packages/gfapy/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3673770213: no space left on device
+usage: gfapy-mergelinear [-h] [--redundant] [--no-progress] [--quiet]
+                         [--short] [--vlevel VLEVEL] [--version]
+                         filename
+
+Merge linear paths in a GFA graph
+
+positional arguments:
+  filename
+
+options:
+  -h, --help         show this help message and exit
+  --redundant, -r    create redundant paths, similar to the contigs
+                     constructed by Readjoiner
+  --no-progress, -p  do not show progress log
+  --quiet, -q        suppress output
+  --short            use short names for merged segments
+  --vlevel VLEVEL    validation level
+  --version          show program's version number and exit
 ```
+
 
 ## gfapy_gfapy-validate
 
 ### Tool Description
-Validate GFA (Graphical Fragment Assembly) files.
+Validate a GFA file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0
 - **Homepage**: https://github.com/ggonnella/gfapy
 - **Package**: https://anaconda.org/channels/bioconda/packages/gfapy/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfapy:1.2.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1014492902: no space left on device
+usage: gfapy-validate [-h] [--version] filename
+
+Validate a GFA file
+
+positional arguments:
+  filename
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
 ```
 

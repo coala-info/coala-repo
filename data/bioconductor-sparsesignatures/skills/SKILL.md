@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sparsesignatures
-description: the package is available on all platforms; click for details.
+description: SparseSignatures identifies mutational signatures in genomic data using a sparse non-negative matrix factorization approach. Use when user asks to discover mutational signatures, extract mutational processes from catalogs, or account for background mutation rates in signature analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/SparseSignatures.html
 ---
+
 
 # bioconductor-sparsesignatures
 

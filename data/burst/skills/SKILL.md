@@ -1,8 +1,9 @@
 ---
 name: burst
-description: BURST (formerly embalmer) is a specialized DNA aligner designed for high-throughput sequencing data where accuracy is paramount.
+description: BURST is a DNA aligner that provides provably optimal end-to-end alignments for high-throughput sequencing data. Use when user asks to align DNA sequences, perform taxonomy assignment using a Least Common Ancestor approach, or build indexed databases for microbial amplicon and shotgun sequencing.
 homepage: https://github.com/knights-lab/BURST
 ---
+
 
 # burst
 

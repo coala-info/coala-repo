@@ -1,8 +1,9 @@
 ---
 name: perl-datetime-locale
-description: This skill provides guidance on using the `DateTime::Locale` Perl module to localize date and time information.
+description: This tool provides localized date and time formatting for Perl applications using the Unicode Common Locale Data Repository. Use when user asks to localize date strings, retrieve regional month or day names, or format time data according to specific language and territory conventions.
 homepage: http://metacpan.org/release/DateTime-Locale
 ---
+
 
 # perl-datetime-locale
 

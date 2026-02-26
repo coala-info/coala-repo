@@ -1,8 +1,9 @@
 ---
 name: perl-bio-rna-rnaalisplit
-description: This tool provides a specialized interface for manipulating structural RNA alignments.
+description: This tool splits structural RNA alignments into smaller subsets while preserving secondary structure metadata. Use when user asks to split RNA alignments, extract individual sequences from a Stockholm file, or deconvolve multi-sequence alignments while maintaining consensus structure information.
 homepage: http://metacpan.org/pod/Bio::RNA::RNAaliSplit
 ---
+
 
 # perl-bio-rna-rnaalisplit
 

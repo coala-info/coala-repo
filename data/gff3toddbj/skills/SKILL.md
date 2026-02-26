@@ -1,8 +1,9 @@
 ---
 name: gff3toddbj
-description: gff3toddbj is a specialized bioinformatics utility designed to bridge the gap between standard GFF3/FASTA files and the specific annotation requirements of the DNA Data Bank of Japan (DDBJ).
+description: gff3toddbj converts GFF3 and FASTA files into the specific annotation format required for submission to the DNA Data Bank of Japan. Use when user asks to prepare genomic data for DDBJ submission, translate GFF3 features to INSDC format, or generate DDBJ-compliant annotation files.
 homepage: https://github.com/yamaton/gff3toddbj
 ---
+
 
 # gff3toddbj
 

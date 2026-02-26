@@ -3,7 +3,7 @@
 ## dipcall
 
 ### Tool Description
-The provided text does not contain help information for dipcall; it contains container runtime error messages regarding a failure to build the SIF format due to insufficient disk space.
+A variant calling pipeline for diploid assemblies. It takes a reference genome and two haploid assemblies (paternal and maternal) to produce a VCF of variants.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dipcall:0.3--hdfd78af_0
@@ -18,46 +18,13 @@ The provided text does not contain help information for dipcall; it contains con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dipcall:0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3182464366: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/dipcall:0.3--hdfd78af_0' locally
+0.3--hdfd78af_0: Pulling from biocontainers/dipcall
+c1a16a04cedd: Already exists
+4ca545ee6d5d: Already exists
+d9110e543e0e: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3045582792: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## dipcall_run-dipcall
-
-### Tool Description
-A variant calling pipeline for diploid genomes (Note: The provided help text contains only system error messages and no argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dipcall:0.3--hdfd78af_0
-- **Homepage**: https://github.com/lh3/dipcall
-- **Package**: https://anaconda.org/channels/bioconda/packages/dipcall/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dipcall:0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3469299281: no space left on device
-```
-
-## dipcall_make
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container runtime error log (Apptainer/Singularity) indicating a failure to build the SIF format due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dipcall:0.3--hdfd78af_0
-- **Homepage**: https://github.com/lh3/dipcall
-- **Package**: https://anaconda.org/channels/bioconda/packages/dipcall/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dipcall:0.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1065575074: no space left on device
+Run 'docker run --help' for more information
 ```
 

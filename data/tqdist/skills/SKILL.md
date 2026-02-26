@@ -1,8 +1,9 @@
 ---
 name: tqdist
-description: The `tqdist` tool provides a high-performance implementation for measuring the topological distance between phylogenetic trees.
+description: tqdist measures the topological distance between phylogenetic trees using Triplet Distance for rooted trees and Quartet Distance for unrooted trees. Use when user asks to measure triplet distance between rooted trees, measure quartet distance between unrooted trees, compare distances between pairs of trees, or compare all-against-all distances within or between tree files.
 homepage: http://users-cs.au.dk/cstorm/software/tqdist/
 ---
+
 
 # tqdist
 

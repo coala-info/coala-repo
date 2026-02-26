@@ -1,8 +1,9 @@
 ---
 name: r-r2html
-description: "Includes HTML function and methods to write in an HTML         file. Thus, making HTML reports is easy. Includes a function         that allows redirection on the fly, which appears to be very         useful for teaching purpose, as the student can keep a copy of         the produced output to keep all that he did during the course.         Package comes with a vignette describing how to write HTML         reports for statistical analysis. Finally, a driver for 'Sweave'         allows to parse HTML flat files containing R code and to         automatically write the corresponding outputs (tables and         graphs).</p>"
+description: "This tool exports R objects, console output, and plots into formatted HTML reports and files. Use when user asks to generate HTML-based statistical reports, redirect R console output to HTML in real-time, create sortable data tables, or embed R plots and LaTeX equations into HTML documents."
 homepage: https://cloud.r-project.org/web/packages/R2HTML/index.html
 ---
+
 
 # r-r2html
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biomartgogenesets
-description: the package is available on all platforms; click for details.
+description: This tool provides pre-compiled Gene Ontology gene sets and genomic coordinates for over 700 organisms supported by BioMart. Use when user asks to retrieve GO gene sets, fetch gene annotations as GRanges, identify supported organisms, or map between different sequence naming styles.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BioMartGOGeneSets.html
 ---
+
 
 # bioconductor-biomartgogenesets
 

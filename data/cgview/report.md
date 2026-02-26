@@ -3,7 +3,7 @@
 ## cgview
 
 ### Tool Description
-A tool for generating high-quality, interactive maps of circular genomes.
+Generates graphical representations of circular genomes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cgview:1.0--py35pl5.22.0_1
@@ -18,15 +18,77 @@ A tool for generating high-quality, interactive maps of circular genomes.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 14:59:48  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cgview:1.0--py35pl5.22.0_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-2081938763/rootfs/lib/libc-2.18.so: no space left on device
+illegal value '' for option -h/--htmlFile
+usage: java -jar cgview.jar [OPTION]...
+-A <integer> Specifies a label font size.
+-c <integer> Specifies the base to center on when zooming.
+-D <integer> Specifies a legend font size.
+-d <real> Specifies tick density, between 0 and 1.0. Default is 1.0.
+-E <boolean> Whether or not to embed vector-based text in SVG output.
+-e <boolean> Whether or not to exclude SVG output from image series.
+-f <format> The format of the output: PNG, JPG, SVG, or SVGZ.
+-h <file> HTML file to create.
+-H <integer> The height of the map.
+-i <file> The input file to parse.
+-I <boolean> Whether or not to draw labels on the inside of the backbone circle.
+-L <integer> The width of an external legend.
+-o <file> The image file to create.
+-p <path> The path to the image file in the HTML file created using the -h option.
+-r <boolean> Whether or not to remove legends.
+-R <boolean> Whether or not to remove labels.
+-s <directory> Directory to receive an image series.
+-S <boolean> Whether or not to reference external stylesheet in HTML output.
+-u <boolean> Whether or not to reference overlib.js in HTML output.
+-U <integer> Specifies a sequence ruler font size.
+-W <integer> The width of the map.
+-x <string> Comma separated zoom values for image series.
+-z <real> The factor to zoom in by.
+Example usage: java -jar cgview.jar -f png -i cybercell.xml -o my_picture.png -h view_image.html.
+Example usage: java -jar cgview.jar -i cybercell.xml -s directory_for_series -e true.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## cgview
+
+### Tool Description
+Generates graphical representations of circular genomes.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cgview:1.0--py35pl5.22.0_1
+- **Homepage**: http://wishart.biology.ualberta.ca/cgview/
+- **Package**: https://anaconda.org/channels/bioconda/packages/cgview/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+illegal value '' for option -h/--htmlFile
+usage: java -jar cgview.jar [OPTION]...
+-A <integer> Specifies a label font size.
+-c <integer> Specifies the base to center on when zooming.
+-D <integer> Specifies a legend font size.
+-d <real> Specifies tick density, between 0 and 1.0. Default is 1.0.
+-E <boolean> Whether or not to embed vector-based text in SVG output.
+-e <boolean> Whether or not to exclude SVG output from image series.
+-f <format> The format of the output: PNG, JPG, SVG, or SVGZ.
+-h <file> HTML file to create.
+-H <integer> The height of the map.
+-i <file> The input file to parse.
+-I <boolean> Whether or not to draw labels on the inside of the backbone circle.
+-L <integer> The width of an external legend.
+-o <file> The image file to create.
+-p <path> The path to the image file in the HTML file created using the -h option.
+-r <boolean> Whether or not to remove legends.
+-R <boolean> Whether or not to remove labels.
+-s <directory> Directory to receive an image series.
+-S <boolean> Whether or not to reference external stylesheet in HTML output.
+-u <boolean> Whether or not to reference overlib.js in HTML output.
+-U <integer> Specifies a sequence ruler font size.
+-W <integer> The width of the map.
+-x <string> Comma separated zoom values for image series.
+-z <real> The factor to zoom in by.
+Example usage: java -jar cgview.jar -f png -i cybercell.xml -o my_picture.png -h view_image.html.
+Example usage: java -jar cgview.jar -i cybercell.xml -s directory_for_series -e true.
+```
+

@@ -1,8 +1,9 @@
 ---
 name: pyopenms
-description: pyOpenMS provides Python bindings for the OpenMS C++ library, a comprehensive framework for mass spectrometry data processing.
+description: pyOpenMS provides Python bindings for the OpenMS library to process and analyze mass spectrometry data. Use when user asks to read or write MS file formats, perform feature detection, execute label-free quantification, or extract ion chromatograms.
 homepage: https://github.com/OpenMS/OpenMS
 ---
+
 
 # pyopenms
 

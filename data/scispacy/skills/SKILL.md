@@ -1,8 +1,9 @@
 ---
 name: scispacy
-description: ScispaCy is a specialized library designed to handle the linguistic complexities of scientific and biomedical text.
+description: ScispaCy is a specialized library for processing and analyzing scientific and biomedical text using pre-trained spaCy pipelines. Use when user asks to identify medical entities, perform sentence segmentation on research papers, or link mentions to biomedical databases.
 homepage: https://allenai.github.io/scispacy
 ---
+
 
 # scispacy
 

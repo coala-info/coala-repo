@@ -1,8 +1,9 @@
 ---
 name: filechunkio
-description: `filechunkio` is a Python utility that creates a file-like object representing a specific "chunk" or slice of an existing file on disk.
+description: Filechunkio creates a seekable, file-like object representing a specific chunk of an existing file without duplicating data on disk. Use when user asks to perform multipart uploads, slice large files without consuming extra disk space, or read specific byte ranges efficiently.
 homepage: https://github.com/fabiant7t/filechunkio
 ---
+
 
 # filechunkio
 

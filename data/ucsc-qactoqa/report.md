@@ -3,7 +3,7 @@
 ## ucsc-qactoqa
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container runtime error log.
+Convert a .qac file to .qa format. (Note: The provided help text was incomplete due to a system error, but the tool is part of the UCSC Genome Browser utilities used for quality score file conversion.)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-qactoqa:482--h0b57e2e_0
@@ -18,33 +18,13 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-qactoqa:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/ucsc-qactoqa:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-qactoqa
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+fdb3895724a0: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2571679541: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-qactoqa_qacToQa
-
-### Tool Description
-The provided text does not contain help information for the tool; it contains container runtime (Singularity/Apptainer) error logs regarding a failed image build.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-qactoqa:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-qactoqa/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-qactoqa:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

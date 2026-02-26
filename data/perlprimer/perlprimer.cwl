@@ -2,10 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: perlprimer
 label: perlprimer
-doc: "PerlPrimer is a graphical user interface application for designing primers for
-  PCR. (Note: The provided text is a system error log regarding a container build
-  failure and does not contain CLI help documentation.)\n\nTool homepage: https://github.com/owenjm/perlprimer"
-inputs: []
+doc: "PerlPrimer is a graphical design tool for PCR primers. It calculates melting
+  temperatures using accurate near-neighbor thermodynamic parameters.\n\nTool homepage:
+  https://github.com/owenjm/perlprimer"
+inputs:
+  - id: project_file
+    type:
+      - 'null'
+      - File
+    doc: Optional PerlPrimer project file (.ppr) to open on startup
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: marti
-description: MARTi (Metagenomic Analysis in Real Time) is a specialized suite designed to process and analyze metagenomic sequencing data as it is generated.
+description: MARTi processes and analyzes metagenomic sequencing data in real time to provide taxonomic profiles and antimicrobial resistance insights. Use when user asks to analyze streaming Nanopore data, generate taxonomic classifications, detect AMR genes, or visualize metagenomic results through a web-based GUI.
 homepage: https://github.com/richardmleggett/MARTi
 ---
+
 
 # marti
 

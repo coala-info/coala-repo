@@ -1,8 +1,9 @@
 ---
 name: swarm
-description: Swarm is a specialized tool designed for the clustering of massive sets of amplicons, typically used in environmental DNA and microbiome studies.
+description: Swarm clusters massive sets of amplicon sequences using a local linking threshold and iterative growth to distinguish biological sequences from experimental noise. Use when user asks to cluster amplicons, perform high-resolution sequence clustering, or identify representative sequences in microbiome and environmental DNA studies.
 homepage: https://github.com/torognes/swarm
 ---
+
 
 # swarm
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clusterseq
-description: the package is available on all platforms; click for details.
+description: The bioconductor-clusterseq package identifies clusters of co-expressed genes across multiple experimental conditions in high-throughput sequencing data. Use when user asks to identify co-expression patterns, cluster genes by expression profiles, or find groups of genes with similar expression trends across samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/clusterSeq.html
 ---
+
 
 # bioconductor-clusterseq
 

@@ -1,8 +1,9 @@
 ---
 name: galaxy-ie-helpers
-description: The `galaxy-ie-helpers` package is a collection of utility scripts designed to bridge the gap between Galaxy's web-based history and the local file system of an Interactive Environment.
+description: The galaxy-ie-helpers package provides utility scripts to automate data transfer between a Galaxy history and an Interactive Environment's local file system. Use when user asks to import datasets from Galaxy, export files back to a history, or search for specific history IDs.
 homepage: https://github.com/bgruening/galaxy_ie_helpers
 ---
+
 
 # galaxy-ie-helpers
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.se
-description: the package is available on all platforms; click for details.
+description: This package serializes and restores SummarizedExperiment and RangedSummarizedExperiment objects for structured file-based storage. Use when user asks to save SummarizedExperiment objects to disk, load serialized experiments from a directory, or preserve genomic metadata and assays in a portable format.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.se.html
 ---
+
 
 # bioconductor-alabaster.se
 

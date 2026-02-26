@@ -1,8 +1,9 @@
 ---
 name: deepmicroclass
-description: DeepMicroClass is a specialized tool designed to sort metagenomic contigs into distinct biological categories using deep learning models.
+description: DeepMicroClass classifies metagenomic contigs into categories such as prokaryotic, eukaryotic, and viral sequences using deep learning models. Use when user asks to predict contig classes, sort metagenomic sequences, or extract specific biological categories like viruses and plasmids from FASTA files.
 homepage: https://github.com/chengsly/DeepMicroClass
 ---
+
 
 # deepmicroclass
 

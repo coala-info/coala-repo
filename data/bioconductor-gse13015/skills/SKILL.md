@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gse13015
-description: the package is available on all platforms; click for details.
+description: This tool provides access to the GSE13015 dataset containing microarray expression data and clinical metadata for septicemic patients via ExperimentHub. Use when user asks to load normalized expression data for sepsis patients, access clinical metadata from GEO accession GSE13015, or perform differential expression and modular repertoire analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSE13015.html
 ---
+
 
 # bioconductor-gse13015
 

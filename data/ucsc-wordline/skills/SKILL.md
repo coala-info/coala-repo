@@ -1,8 +1,9 @@
 ---
 name: ucsc-wordline
-description: The `ucsc-wordline` utility is a specialized text-processing tool from the UCSC Genome Browser "Kent" suite.
+description: The `ucsc-wordline` tool parses input text, tokenizes words by any whitespace, and outputs them as a single space-separated line. Use when user asks to normalize text file spacing, flatten multi-line text, clean up output from other tools, or convert lists to space-separated strings.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-wordline
 

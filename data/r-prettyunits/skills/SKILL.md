@@ -1,8 +1,9 @@
 ---
 name: r-prettyunits
-description: "Pretty, human readable formatting of quantities.     Time intervals: '1337000' -&gt; '15d 11h 23m 20s'.     Vague time intervals: '2674000' -&gt; 'about a month ago'.     Bytes: '1337' -&gt; '1.34 kB'.     Rounding: '99' with 3 significant digits -&gt; '99.0'     p-values: '0.00001' -&gt; '&lt;0.0001'.     Colors: '#FF0000' -&gt; 'red'.     Quantities: '1239437' -&gt; '1.24 M'.</p>"
+description: The r-prettyunits package formats quantities like time, bytes, and numbers into human-readable strings. Use when user asks to format time intervals, convert bytes to readable sizes, add SI prefixes to numbers, or generate human-friendly color names.
 homepage: https://cloud.r-project.org/web/packages/prettyunits/index.html
 ---
+
 
 # r-prettyunits
 

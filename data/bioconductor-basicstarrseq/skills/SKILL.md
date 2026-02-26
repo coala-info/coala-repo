@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basicstarrseq
-description: the package is available on all platforms; click for details.
+description: This package identifies enhancers from STARR-seq data by comparing a STARR-seq library against an input control library using a binomial model. Use when user asks to call peaks from STARR-seq data, identify genomic enhancers, or calculate enrichment scores between STARR-seq and control libraries.
 homepage: https://bioconductor.org/packages/release/bioc/html/BasicSTARRseq.html
 ---
+
 
 # bioconductor-basicstarrseq
 

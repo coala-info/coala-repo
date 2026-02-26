@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowfit
-description: The package uses an R implementation of the Levenberg-Marquardt algorithm (minpack.lm) to fit a set of peaks (corresponding to different generations of cells) over the proliferation-tracking dye distribution in a FACS experiment.
+description: This tool analyzes cell proliferation tracking dye data from flow cytometry by fitting Gaussian peaks to fluorescence intensity distributions. Use when user asks to estimate the percentage of cells in each generation, calculate proliferation indices, or fit models to CFSE, CTV, or CPD dye data.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/flowFit.html
 ---
+
 
 # bioconductor-flowfit
 

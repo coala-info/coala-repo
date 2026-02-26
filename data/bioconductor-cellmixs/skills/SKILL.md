@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellmixs
-description: the package is available on all platforms; click for details.
+description: This tool evaluates and visualizes batch effects and data integration quality in single-cell RNA-seq data. Use when user asks to quantify batch mixing, calculate Cellspecific Mixing Scores, evaluate structural preservation after integration, or visualize integration metrics.
 homepage: https://bioconductor.org/packages/release/bioc/html/CellMixS.html
 ---
+
 
 # bioconductor-cellmixs
 

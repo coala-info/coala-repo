@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pedixplorer
-description: the package is available on all platforms; click for details.
+description: Pedixplorer is an R package used for the visualization and exploration of pedigree data. Use when user asks to visualize family trees, analyze genetic pedigrees, or explore inheritance patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/Pedixplorer.html
 ---
+
 
 # bioconductor-pedixplorer
 

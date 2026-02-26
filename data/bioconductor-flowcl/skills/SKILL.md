@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowcl
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: bioconductor-flowcl performs semantic labeling of flow cytometric cell populations by matching marker phenotypes to the Cell Ontology. Use when user asks to identify cell type labels from surface markers, automate the annotation of cell populations, or visualize the relationship between markers and cell types in an ontology tree.
 homepage: https://bioconductor.org/packages/3.16/bioc/html/flowCL.html
 ---
+
 
 # bioconductor-flowcl
 

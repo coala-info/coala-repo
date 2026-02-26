@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cdi
-description: the package is available on all platforms; click for details.
+description: This tool evaluates and selects optimal clustering labels for single-cell RNA-sequencing UMI counts using the Clustering Deviation Index. Use when user asks to compare different clustering results, determine the optimal number of clusters, or evaluate clustering performance across single or multiple batches using AIC or BIC criteria.
 homepage: https://bioconductor.org/packages/release/bioc/html/CDI.html
 ---
+
 
 # bioconductor-cdi
 

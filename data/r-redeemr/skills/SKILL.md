@@ -1,8 +1,9 @@
 ---
 name: r-redeemr
-description: R package redeemr (documentation from project home).
+description: r-redeemr is an R package for downstream lineage tracing and integrative multi-omic analysis using mitochondrial DNA mutations. Use when user asks to refine mtDNA variants, construct single-cell phylogenetic trees, or integrate lineage information with RNA and ATAC data.
 homepage: https://cran.r-project.org/web/packages/redeemr/index.html
 ---
+
 
 # r-redeemr
 

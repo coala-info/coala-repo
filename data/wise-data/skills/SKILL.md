@@ -1,8 +1,9 @@
 ---
 name: wise-data
-description: wise-data is a specialized stream editor designed for efficient, command-line-based text manipulation.
+description: wise-data is a command-line stream editor for efficient text manipulation, filtering, and extraction. Use when user asks to delete specific lines, replace strings, filter text, or extract text based on patterns.
 homepage: https://www.gnu.org/software/sed/
 ---
+
 
 # wise-data
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-meshes
-description: the package is available on all platforms; click for details.
+description: This R package performs enrichment analysis and semantic similarity measures based on Medical Subject Headings. Use when user asks to perform MeSH enrichment analysis, calculate semantic similarity between genes or MeSH terms, or analyze functional associations using MeSH descriptors.
 homepage: https://bioconductor.org/packages/release/bioc/html/meshes.html
 ---
+
 
 # bioconductor-meshes
 

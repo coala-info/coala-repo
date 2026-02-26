@@ -1,8 +1,9 @@
 ---
 name: bioconductor-amaretto
-description: the package is available on all platforms; click for details.
+description: Bioconductor-amaretto integrates multi-omics data to identify cancer driver genes and co-expressed gene modules through regulatory modeling. Use when user asks to identify cancer drivers, perform regulatory network analysis, integrate multi-omics data, or cluster genes into functional modules based on genomic alterations.
 homepage: https://bioconductor.org/packages/release/bioc/html/AMARETTO.html
 ---
+
 
 # bioconductor-amaretto
 

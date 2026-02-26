@@ -1,8 +1,9 @@
 ---
 name: esme_omb_psmpi_5_12_1
-description: The `esme_omb_psmpi_5_12_1` skill provides procedural knowledge for utilizing the OSU Micro Benchmarks (OMB) version 7.5.1.
+description: This tool provides procedural knowledge for executing and tuning the OSU Micro Benchmarks to measure MPI communication performance and identify network bottlenecks. Use when user asks to measure latency and bandwidth, run collective or one-sided benchmarks, optimize job startup, or apply CPU affinity and interconnect tuning parameters.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_psmpi_5_12_1
 

@@ -1,8 +1,9 @@
 ---
 name: r-kmsurv
-description: R package kmsurv (documentation from project home).
+description: The r-kmsurv package provides survival analysis datasets and specialized functions for life table construction and survival function estimation. Use when user asks to access survival analysis datasets, create life tables for grouped data, or calculate survival function confidence intervals using specific transformations.
 homepage: https://cran.r-project.org/web/packages/kmsurv/index.html
 ---
+
 
 # r-kmsurv
 

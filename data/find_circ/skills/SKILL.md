@@ -1,8 +1,9 @@
 ---
 name: find_circ
-description: The find_circ pipeline identifies circular RNA by analyzing reads that fail to map contiguously to a reference genome.
+description: find_circ identifies circular RNA junctions by analyzing back-spliced alignments of unmapped read anchors. Use when user asks to identify circular RNA, extract anchors from unmapped reads, or detect back-splice junctions from RNA-seq data.
 homepage: https://github.com/marvin-jens/find_circ
 ---
+
 
 # find_circ
 

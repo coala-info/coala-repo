@@ -1,8 +1,9 @@
 ---
 name: fusioncatcher
-description: FusionCatcher is a specialized bioinformatic pipeline designed to identify somatic fusion genes in RNA-seq data from diseased samples.
+description: FusionCatcher identifies somatic fusion genes in RNA-seq data while automatically filtering out false positives. Use when user asks to find candidate fusion genes, process raw NGS reads for gene fusions, or detect chromosomal rearrangements in diseased samples.
 homepage: https://github.com/ndaniel/fusioncatcher
 ---
+
 
 # fusioncatcher
 

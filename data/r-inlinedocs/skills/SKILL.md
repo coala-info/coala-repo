@@ -1,8 +1,9 @@
 ---
 name: r-inlinedocs
-description: "Generates Rd files from R source code with comments.  The main features of the default syntax are that  (1) docs are defined in comments near the relevant code,  (2) function argument names are not repeated in comments, and  (3) examples are defined in R code, not comments.  It is also easy to define a new syntax.</p>"
+description: This tool generates R documentation files from inline comments within R source code. Use when user asks to generate .Rd files, document R packages using inline syntax, or automate the creation of documentation from R code comments.
 homepage: https://cloud.r-project.org/web/packages/inlinedocs/index.html
 ---
+
 
 # r-inlinedocs
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-interaccircos
-description: the package is available on all platforms; click for details.
+description: This tool creates interactive circular genomic visualizations in R by interfacing with JavaScript-based Circos libraries. Use when user asks to generate interactive Circos plots, visualize genomic data tracks like SNPs or histograms, or layer multiple circular data modules.
 homepage: https://bioconductor.org/packages/release/bioc/html/interacCircos.html
 ---
+
 
 # bioconductor-interaccircos
 

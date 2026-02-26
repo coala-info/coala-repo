@@ -1,9 +1,9 @@
 # gfa1 CWL Generation Report
 
-## gfa1
+## gfa1_gfaview
 
 ### Tool Description
-A tool for handling GFA1 (Graphical Fragment Assembly) files. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+View and simplify a GFA graph.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gfa1:0.53.alpha--h577a1d6_3
@@ -18,29 +18,26 @@ A tool for handling GFA1 (Graphical Fragment Assembly) files. Note: The provided
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfa1:0.53.alpha--h577a1d6_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4096889068: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## gfa1_gfaview
-
-### Tool Description
-A tool for viewing and processing GFA1 (Graphical Fragment Assembly) files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gfa1:0.53.alpha--h577a1d6_3
-- **Homepage**: https://github.com/lh3/gfa1
-- **Package**: https://anaconda.org/channels/bioconda/packages/gfa1/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfa1:0.53.alpha--h577a1d6_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1668504764: no space left on device
+Usage: gfaview [options] <in.gfa>
+Options:
+  General:
+    -v INT      verbose level [2]
+    -1          only output CIGAR-M operators (for compatibility)
+    -u          generate unitig graph (unambiguous merge)
+  Subgraph:
+    -s EXPR     list of segment names to extract []
+    -S INT      include neighbors in a radius [0]
+    -d EXPR     list of segment names to delete []
+  Graph simplification:
+    -r          transitive reduction
+    -R INT      fuzzy length for -r [1000]
+    -t          trim tips
+    -T INT      tip length for -t [4]
+    -b          pop bubbles
+    -B INT      max bubble dist for -b [50000]
+    -o          drop shorter overlaps
+    -O FLOAT    dropped/longest<FLOAT, for -o [0.7]
+    -m          misc trimming
+Note: the order of options matters; one option may be applied >1 times.
 ```
 

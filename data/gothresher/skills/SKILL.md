@@ -1,8 +1,9 @@
 ---
 name: gothresher
-description: GOThresher is a specialized bioinformatics tool designed to create more balanced protein function datasets.
+description: GOThresher identifies and removes annotation biases from Gene Association Files to create balanced protein function datasets. Use when user asks to filter GAF files by evidence codes, remove redundant Gene Ontology terms based on information content, or generate ontology graphs and ancestor maps.
 homepage: https://github.com/FriedbergLab/GOThresher
 ---
+
 
 # gothresher
 

@@ -1,8 +1,9 @@
 ---
 name: perl-sys-info
-description: The `perl-sys-info` skill provides a standardized interface for probing system internals.
+description: The perl-sys-info tool provides a standardized interface for probing system internals and hardware metadata across different platforms. Use when user asks to retrieve CPU details, identify operating system metadata, or generate cross-platform system reports.
 homepage: http://metacpan.org/pod/Sys::Info
 ---
+
 
 # perl-sys-info
 

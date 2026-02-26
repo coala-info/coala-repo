@@ -1,8 +1,9 @@
 ---
 name: superstr
-description: superSTR is a lightweight, alignment-free bioinformatics utility designed to identify reads containing repetitive sequences directly from raw data.
+description: superSTR is an alignment-free bioinformatics utility that identifies reads containing repetitive sequences directly from raw genomic or transcriptomic data. Use when user asks to process raw reads for repeat content, screen for specific repeat motifs, or perform outlier detection to identify repeat expansion disorders.
 homepage: https://github.com/bahlolab/superSTR
 ---
+
 
 # superstr
 

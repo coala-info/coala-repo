@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomation
-description: The package can use any tabular genomic feature data as long as it has minimal information on the locations of genomic intervals. In addition, It can use BAM or BigWig files as input.
+description: Bioconductor-genomation is a toolkit for the annotation and visualization of genomic intervals and signal enrichment data in R. Use when user asks to read genomic data formats, extract signal scores into matrices, generate heatmaps or meta-plots, and annotate genomic regions with gene features.
 homepage: https://bioconductor.org/packages/release/bioc/html/genomation.html
 ---
+
 
 # bioconductor-genomation
 

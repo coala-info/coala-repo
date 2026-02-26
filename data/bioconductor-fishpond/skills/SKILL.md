@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fishpond
-description: the package contains a number of utilities for working with Salmon and Alevin quantification files.
+description: The fishpond package performs differential analysis of RNA-seq data using inferential replicates to account for quantification uncertainty. Use when user asks to perform transcript-level differential expression, analyze differential transcript usage, or detect allelic imbalance using the Swish algorithm.
 homepage: https://bioconductor.org/packages/release/bioc/html/fishpond.html
 ---
+
 
 # bioconductor-fishpond
 

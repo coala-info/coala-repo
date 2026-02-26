@@ -1,8 +1,9 @@
 ---
 name: r-kriging
-description: An implementation of a simple and highly optimized ordinary kriging algorithm to plot geographical data.</p>
+description: The r-kriging package provides an optimized implementation of the ordinary kriging algorithm for spatial interpolation. Use when user asks to interpolate values from scattered points onto a grid, create smooth contour plots from geographical data, or perform ordinary kriging in R.
 homepage: https://cloud.r-project.org/web/packages/kriging/index.html
 ---
+
 
 # r-kriging
 

@@ -1,9 +1,9 @@
 # firecloud CWL Generation Report
 
-## firecloud
+## firecloud_fissfc
 
 ### Tool Description
-The provided text does not contain help information for the firecloud tool, but rather error logs from a container runtime (Apptainer/Singularity) indicating a failure to pull or build the container image due to lack of disk space.
+FISS: The FireCloud CLI
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/firecloud:0.16.38--pyhdfd78af_0
@@ -18,29 +18,30 @@ The provided text does not contain help information for the firecloud tool, but 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/firecloud:0.16.38--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3058980815: no space left on device
-```
+usage: fissfc [OPTIONS] [CMD [-h | arg ...]]
 
+FISS: The FireCloud CLI
 
-## Metadata
-- **Skill**: generated
+options:
+  -h, --help            show this help message and exit
+  -u API_URL, --url API_URL
+                        Firecloud API root URL [default:
+                        https://api.firecloud.org/api/]
+  -c CREDENTIALS, --credentials CREDENTIALS
+                        Firecloud credentials file
+  -v, --version         show program's version number and exit
+  -V, --verbose         Emit progressively more detailed feedback during
+                        execution, e.g. to confirm when actions have completed
+                        or to show URL and parameters of REST calls. Multiple
+                        -V may be given.
+  -y, --yes             Assume yes for any prompts
+  -l [CMD], --list [CMD]
+                        list or search available commands and exit
+  -F CMD [CMD ...], --function CMD [CMD ...]
+                        Show the code for the given command(s) and exit
 
-## firecloud_fissfc
-
-### Tool Description
-FireCloud Service Selector (FISS) CLI. Note: The provided input text contains system error logs rather than help documentation, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/firecloud:0.16.38--pyhdfd78af_0
-- **Homepage**: https://github.com/broadinstitute/fiss
-- **Package**: https://anaconda.org/channels/bioconda/packages/firecloud/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/firecloud:0.16.38--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3136768338: no space left on device
+positional arguments:
+  CMD [-h | arg ...]    Command and arguments to run.
+None
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: perl-lwp-protocol-https
-description: This skill enables Perl applications to communicate over secure HTTPS channels.
+description: This tool enables Perl applications to communicate over secure HTTPS channels by providing a transparent plugin for the LWP::UserAgent module. Use when user asks to make HTTPS requests in Perl, configure SSL verification settings, or specify custom certificate authority paths for secure web communication.
 homepage: https://metacpan.org/pod/LWP::Protocol::https
 ---
+
 
 # perl-lwp-protocol-https
 

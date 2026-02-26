@@ -1,8 +1,9 @@
 ---
 name: piranha
-description: Piranha is a high-performance, multilingual toolset designed to automate code transformations through structural search and replace.
+description: Piranha is a high-performance refactoring engine that automates code transformations through structural search and replace using Abstract Syntax Trees. Use when user asks to prune code associated with expired feature flags, perform large-scale code refactoring, or automate the cleanup of redundant logic and expressions.
 homepage: https://github.com/uber/piranha
 ---
+
 
 # piranha
 

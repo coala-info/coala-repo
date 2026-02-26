@@ -1,8 +1,9 @@
 ---
 name: pbsim
-description: PBSIM3 is a simulator designed to generate synthetic long reads that mimic the characteristics of real PacBio and ONT platforms.
+description: pbsim simulates synthetic long reads that mimic the characteristics of PacBio and Oxford Nanopore sequencing platforms. Use when user asks to generate benchmark datasets for bioinformatics tools, simulate whole genome or transcriptome sequencing, or create multi-pass reads for HiFi generation.
 homepage: https://github.com/yukiteruono/pbsim3
 ---
+
 
 # pbsim
 

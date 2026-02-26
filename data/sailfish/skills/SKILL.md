@@ -1,8 +1,9 @@
 ---
 name: sailfish
-description: Sailfish is a template engine for Rust designed for extreme speed and simplicity.
+description: Sailfish is a high-performance template engine for Rust that compiles templates into code for type safety and speed. Use when user asks to generate Rust template structs, write .stpl files, or choose rendering traits for performance requirements.
 homepage: https://github.com/rust-sailfish/sailfish
 ---
+
 
 # sailfish
 

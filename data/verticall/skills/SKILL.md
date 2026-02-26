@@ -1,8 +1,9 @@
 ---
 name: verticall
-description: Verticall is a specialized tool designed to reconstruct the vertical evolutionary history of bacteria by identifying and masking horizontally acquired sequences (recombination).
+description: Verticall reconstructs the vertical evolutionary history of bacteria by identifying and masking horizontally acquired sequences. Use when user asks to 'reconstruct vertical evolutionary history', 'identify and mask horizontally acquired sequences', 'generate a recombination-free distance matrix', or 'create a masked alignment for phylogenetic tree building'.
 homepage: https://github.com/rrwick/Verticall
 ---
+
 
 # verticall
 

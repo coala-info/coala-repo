@@ -1,8 +1,9 @@
 ---
 name: deeplift
-description: DeepLIFT (Deep Learning Important FeaTures) is a specialized framework for decomposing the output predictions of deep neural networks.
+description: DeepLIFT is a framework for decomposing deep neural network predictions to explain the contribution of input features relative to a reference. Use when user asks to explain model predictions, compute feature importance scores, identify regulatory motifs in genomics, or handle gradient saturation in deep learning models.
 homepage: https://github.com/kundajelab/deeplift
 ---
+
 
 # deeplift
 

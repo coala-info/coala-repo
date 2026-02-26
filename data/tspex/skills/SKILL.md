@@ -1,8 +1,9 @@
 ---
 name: tspex
-description: The `tspex` tool is a specialized utility for bioinformaticians and researchers to quantify the tissue-specificity of gene expression.
+description: The tspex tool quantifies the tissue-specificity of gene expression. Use when user asks to quantify gene expression tissue-specificity, identify tissue-specific or ubiquitous genes, calculate various specificity metrics, or analyze raw expression data with custom thresholds.
 homepage: https://github.com/apcamargo/tspex
 ---
+
 
 # tspex
 

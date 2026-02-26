@@ -1,8 +1,9 @@
 ---
 name: vsclust
-description: vsclust provides a specialized framework for analyzing quantitative biological datasets.
+description: vsclust analyzes quantitative biological datasets, incorporating variance between replicates to identify co-regulated features. Use when user asks to cluster quantitative biological data, identify co-regulated features, process expression matrices, or determine the optimal number of clusters.
 homepage: https://bitbucket.org/veitveit/vsclust/src/master/
 ---
+
 
 # vsclust
 

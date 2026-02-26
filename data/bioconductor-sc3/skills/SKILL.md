@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sc3
-description: the package is available on all platforms; click for details.
+description: SC3 performs consensus clustering of single-cell RNA-seq expression data. Use when user asks to cluster single-cell RNA-seq data, identify cell subpopulations, or perform consensus clustering.
 homepage: https://bioconductor.org/packages/release/bioc/html/SC3.html
 ---
+
 
 # bioconductor-sc3
 

@@ -1,8 +1,9 @@
 ---
 name: r-sgtr
-description: R package sgtr (documentation from project home).
+description: This tool visualizes population genomics results from RADSex and PSASS workflows using Manhattan, Circos, and region-specific plots in R. Use when user asks to create Manhattan plots, generate Circos visualizations, plot marker distributions, or visualize specific genomic regions.
 homepage: https://cran.r-project.org/web/packages/sgtr/index.html
 ---
+
 
 # r-sgtr
 

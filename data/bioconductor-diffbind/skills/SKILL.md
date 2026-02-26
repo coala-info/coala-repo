@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffbind
-description: the package is available on all platforms; click for details.
+description: Bioconductor-diffbind identifies significant changes in protein-DNA binding or chromatin accessibility between experimental conditions using genomic intervals and sequencing reads. Use when user asks to perform differential binding analysis, identify differentially bound sites in ChIP-seq or ATAC-seq data, normalize binding affinity, or visualize differential occupancy results.
 homepage: https://bioconductor.org/packages/release/bioc/html/DiffBind.html
 ---
+
 
 # bioconductor-diffbind
 

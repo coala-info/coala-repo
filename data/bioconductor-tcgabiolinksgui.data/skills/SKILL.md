@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tcgabiolinksgui.data
-description: the package is available on all platforms; click for details.
+description: This package provides the necessary data for the TCGAbiolinksGUI tool to support cancer genomics analysis. Use when user asks to access supporting data for TCGAbiolinksGUI, retrieve cancer genomic datasets, or facilitate graphical analysis of TCGA data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TCGAbiolinksGUI.data.html
 ---
+
 
 # bioconductor-tcgabiolinksgui.data
 

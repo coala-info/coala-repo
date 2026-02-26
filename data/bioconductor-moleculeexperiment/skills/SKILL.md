@@ -1,8 +1,9 @@
 ---
 name: bioconductor-moleculeexperiment
-description: the package is available on all platforms; click for details.
+description: MoleculeExperiment provides a standardized container for storing and manipulating molecule-level spatial transcriptomics data in R. Use when user asks to manage molecule coordinates, process spatial transcriptomics datasets, or integrate molecule-level information with single-cell experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/MoleculeExperiment.html
 ---
+
 
 # bioconductor-moleculeexperiment
 

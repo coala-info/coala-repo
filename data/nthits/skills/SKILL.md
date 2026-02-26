@@ -1,8 +1,9 @@
 ---
 name: nthits
-description: ntHits is a specialized bioinformatics tool designed for the efficient counting and filtering of k-mers based on their frequency of occurrence.
+description: ntHits is a bioinformatics tool used for the efficient counting and filtering of k-mers based on their frequency. Use when user asks to filter solid k-mers, extract k-mers within specific frequency ranges, generate Bloom filters, or process long-read data for k-mer analysis.
 homepage: https://github.com/bcgsc/ntHits
 ---
+
 
 # nthits
 

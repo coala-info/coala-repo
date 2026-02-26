@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scry
-description: the package is available on all platforms; click for details.
+description: Scry provides methods for feature selection and dimension reduction of single-cell RNA-seq data using multinomial null residuals. Use when user asks to select informative genes, calculate deviance statistics, or perform dimensionality reduction on raw count data.
 homepage: https://bioconductor.org/packages/release/bioc/html/scry.html
 ---
+
 
 # bioconductor-scry
 

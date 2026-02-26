@@ -1,8 +1,9 @@
 ---
 name: filo
-description: FiloDB is a distributed, in-memory time-series database designed for massive scalability and Prometheus compatibility.
+description: FiloDB is a distributed, in-memory time-series database designed for massive scalability and Prometheus-compatible operational metrics. Use when user asks to build FiloDB components, initialize Cassandra storage schemas, or utilize the command-line interface for database operations and PromQL querying.
 homepage: https://github.com/filodb/FiloDB
 ---
+
 
 # filo
 

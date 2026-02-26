@@ -1,8 +1,9 @@
 ---
 name: sscocaller
-description: sscocaller is a specialized bioinformatics tool designed to handle the unique challenges of single-cell gamete sequencing.
+description: sscocaller performs haplotyping and identifies crossover locations in single-cell gamete sequencing data by analyzing allelic counts at known SNP positions. Use when user asks to call haplotypes from single-cell or bulk BAM files, identify crossover events in gametes, or filter SNP sites by depth.
 homepage: https://gitlab.svi.edu.au/biocellgen-public/sscocaller
 ---
+
 
 # sscocaller
 

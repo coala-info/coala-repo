@@ -1,8 +1,9 @@
 ---
 name: bioconductor-structstrings
-description: the package is available on all platforms; click for details.
+description: This package provides classes and functions for handling and manipulating biological sequences with secondary structure information. Use when user asks to store dot-bracket notation, manipulate RNA secondary structures, or convert between sequence and structure formats.
 homepage: https://bioconductor.org/packages/release/bioc/html/Structstrings.html
 ---
+
 
 # bioconductor-structstrings
 

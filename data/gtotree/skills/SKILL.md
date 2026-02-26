@@ -1,8 +1,9 @@
 ---
 name: gtotree
-description: GToTree is a high-throughput workflow designed to streamline the complex process of phylogenomics.
+description: GToTree is a high-throughput workflow that automates the identification of single-copy genes and the construction of phylogenomic trees from various genomic input formats. Use when user asks to build a phylogenomic tree, identify single-copy genes using HMMs, or generate concatenated gene alignments from NCBI accessions and FASTA files.
 homepage: https://github.com/AstrobioMike/GToTree/wiki/what-is-gtotree%3F
 ---
+
 
 # gtotree
 

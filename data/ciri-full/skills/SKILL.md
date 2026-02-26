@@ -1,8 +1,9 @@
 ---
 name: ciri-full
-description: CIRI-full is a specialized bioinformatics suite designed to reconstruct the complete internal structure of circular RNAs.
+description: CIRI-full is a bioinformatics suite used to reconstruct the full-length internal structure and quantify isoforms of circular RNAs. Use when user asks to reconstruct full-length circRNA sequences, identify reverse overlap features, or quantify circRNA isoforms from paired-end RNA-seq data.
 homepage: https://ciri-cookbook.readthedocs.io/en/latest/CIRI-full.html
 ---
+
 
 # ciri-full
 

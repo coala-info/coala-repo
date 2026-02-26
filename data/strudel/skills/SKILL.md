@@ -1,8 +1,9 @@
 ---
 name: strudel
-description: Strudel is a high-performance graphical tool designed for the comparative visualization of genomic maps.
+description: Strudel is a graphical tool for the comparative visualization and real-time exploration of genomic maps and syntenic relationships. Use when user asks to visualize homologous regions across species, compare genomic maps at multiple resolutions, or explore synteny between different genomes.
 homepage: https://ics.hutton.ac.uk/strudel
 ---
+
 
 # strudel
 

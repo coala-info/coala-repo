@@ -3,7 +3,7 @@
 ## fwdpy11
 
 ### Tool Description
-The provided text does not contain help information for fwdpy11; it contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull a Docker image due to insufficient disk space.
+Helper script for fwdpy11.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fwdpy11:0.24.5--py311h0f4446f_0
@@ -12,17 +12,24 @@ The provided text does not contain help information for fwdpy11; it contains sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fwdpy11/overview
-- **Total Downloads**: 266.3K
+- **Total Downloads**: 266.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/molpopgen/fwdpy11
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fwdpy11:0.24.5--py311h0f4446f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2394715620: no space left on device
+usage: python -m fwdpy11 [-h] [--includes] [--fwdpy11_headers]
+                         [--fwdpp_headers] [--mako]
+
+options:
+  -h, --help         show this help message and exit
+  --includes         Print the CPPFLAGS required to use fwdpy11 and fwdpp
+                     headers.
+  --fwdpy11_headers  Get location of fwdpy11 headers
+  --fwdpp_headers    Get location of fwdpp headers
+  --mako             Print minimal mako header for use with cppimport.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

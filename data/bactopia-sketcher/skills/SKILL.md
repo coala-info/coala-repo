@@ -1,8 +1,9 @@
 ---
 name: bactopia-sketcher
-description: bactopia-sketcher is a specialized utility within the Bactopia framework designed to generate "sketches" of genomic data using minmer (MinHash) algorithms.
+description: bactopia-sketcher generates compact MinHash sketches of genomic data to enable rapid comparison and identification of sequencing reads or assemblies. Use when user asks to create Mash or Sourmash signatures, estimate genetic distance, identify species, or screen for contamination.
 homepage: https://bactopia.github.io/
 ---
+
 
 # bactopia-sketcher
 

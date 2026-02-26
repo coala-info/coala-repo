@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ruvnormalize
-description: the package is available on all platforms; click for details.
+description: RUVnormalize removes unwanted variation from high-dimensional data using control genes or samples. Use when user asks to normalize gene expression data, remove batch effects, or perform RUV-based normalization on biological datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/RUVnormalize.html
 ---
+
 
 # bioconductor-ruvnormalize
 

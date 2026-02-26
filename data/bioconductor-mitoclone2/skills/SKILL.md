@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mitoclone2
-description: the package is available on all platforms; click for details.
+description: mitoClone2 identifies mitochondrial DNA variants and infers clonal population structures from sequencing data. Use when user asks to track cell lineages, identify mitochondrial mutations, or estimate clonal evolution in single-cell data.
 homepage: https://bioconductor.org/packages/release/bioc/html/mitoClone2.html
 ---
+
 
 # bioconductor-mitoclone2
 

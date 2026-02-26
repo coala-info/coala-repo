@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anvilgcp
-description: The package provides a set of functions to interact with the Google Cloud Platform (GCP) services on the AnVIL platform. The package is designed to use the API calls from the AnVIL package. It coordinates AnVIL workspace functionality with native GCP tools.
+description: This package provides an R interface for managing Google Cloud Platform services and data structures within the AnVIL platform. Use when user asks to manage AnVIL workspaces, interact with Google Cloud Storage buckets, manipulate AnVIL data tables, or synchronize notebooks.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILGCP.html
 ---
+
 
 # bioconductor-anvilgcp
 

@@ -1,8 +1,9 @@
 ---
 name: r-batch
-description: Functions to allow you to easily pass command-line arguments into R, and functions to aid in submitting your R code in parallel on a cluster and joining the results afterward (e.g. multiple parameter values for simulations running in parallel, splitting up a permutation test in parallel, etc.). See &lsquo;parseCommandArgs(...)&rsquo; for the main example of how to use this package.</p>
+description: This tool manages command-line argument parsing and parallel batch job submission for R scripts. Use when user asks to parse command-line arguments, submit parallel batch jobs, or merge results from multiple R runs.
 homepage: https://cloud.r-project.org/web/packages/batch/index.html
 ---
+
 
 # r-batch
 

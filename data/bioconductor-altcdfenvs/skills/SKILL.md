@@ -1,8 +1,9 @@
 ---
 name: bioconductor-altcdfenvs
-description: the package is available on all platforms; click for details.
+description: This tool creates and manages alternative Chip Definition File (CDF) environments for re-mapping Affymetrix GeneChip probes to updated genomic information. Use when user asks to re-map probes to new gene targets using FASTA sequences, create subset CDFs for multi-genome chips, or build custom CdfEnvAffy objects for use with AffyBatch data.
 homepage: https://bioconductor.org/packages/release/bioc/html/altcdfenvs.html
 ---
+
 
 # bioconductor-altcdfenvs
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fmrs
-description: The package obtains parameter estimation, i.e., maximum likelihood estimators (MLE), via the Expectation-Maximization (EM) algorithm for the Finite Mixture of Regression (FMR) models with Normal distribution, and MLE for the Finite Mixture of Accelerated Failure Time Regression (FMAFTR) subject to right censoring with Log-Normal and Weibull distributions via the EM algorithm and the Newton-Raphson algorithm (for Weibull distribution). More importantly, the package obtains the maximum penalized likelihood (MPLE) for both FMR and FMAFTR models (collectively called FMRs). A component-wise tuning parameter selection based on a component-wise BIC is implemented in the package. Furthermore, this package provides Ridge Regression and Elastic Net.
+description: This tool performs parameter estimation and variable selection for Finite Mixture of Regression and Finite Mixture of Accelerated Failure Time models. Use when user asks to fit mixture models, perform variable selection for heterogeneous data, handle right-censored regression data, or estimate parameters using maximum likelihood and penalized likelihood methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/fmrs.html
 ---
+
 
 # bioconductor-fmrs
 

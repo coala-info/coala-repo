@@ -1,8 +1,9 @@
 ---
 name: perl-log-log4perl
-description: `perl-log-log4perl` is the definitive logging framework for Perl, modeled after the Java Log4j library.
+description: perl-log-log4perl provides a comprehensive logging framework for Perl that allows developers to manage log verbosity and destinations through external configurations or simple API calls. Use when user asks to initialize loggers, configure appenders and layouts, implement category-based logging, or optimize logging performance in Perl applications.
 homepage: http://metacpan.org/pod/Log::Log4perl
 ---
+
 
 # perl-log-log4perl
 

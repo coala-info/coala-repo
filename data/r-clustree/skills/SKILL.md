@@ -1,8 +1,9 @@
 ---
 name: r-clustree
-description: "Deciding what resolution to use can be a difficult question when     approaching a clustering analysis. One way to approach this problem is to     look at how samples move as the number of clusters increases. This package     allows you to produce clustering trees, a visualisation for interrogating     clusterings as resolution increases.</p>"
+description: The clustree package visualizes the relationships between clusterings at different resolutions by building a clustering tree to identify stable clusters and over-clustering. Use when user asks to visualize clustering trees, compare cluster assignments across resolutions, identify stable clusters, or overlay clustering trees on dimensionality reduction plots.
 homepage: https://cloud.r-project.org/web/packages/clustree/index.html
 ---
+
 
 # r-clustree
 

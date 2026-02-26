@@ -3,10 +3,10 @@
 ## vuegen
 
 ### Tool Description
-A tool for generating VUE (Variant of Unknown Significance Evidence) reports or related genomic data visualizations.
+Please provide a configuration file or directory path:
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/vuegen:0.5.1--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/vuegen:0.6.0--pyhdfd78af_0
 - **Homepage**: https://github.com/Multiomics-Analytics-Group/vuegen
 - **Package**: https://anaconda.org/channels/bioconda/packages/vuegen/overview
 - **Validation**: PASS
@@ -18,33 +18,31 @@ A tool for generating VUE (Variant of Unknown Significance Evidence) reports or 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vuegen:0.5.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Please provide a configuration file or directory path:
 
+usage: VueGen [-h] [-c CONFIG] [-dir DIRECTORY] [-rt REPORT_TYPE]
+              [-output_dir OUTPUT_DIRECTORY] [-st_autorun] [-qt_checks]
+              [-mdep MAX_DEPTH]
 
-## Metadata
-- **Skill**: generated
-
-## vuegen_quarto
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build or execution attempt.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vuegen:0.5.1--pyhdfd78af_0
-- **Homepage**: https://github.com/Multiomics-Analytics-Group/vuegen
-- **Package**: https://anaconda.org/channels/bioconda/packages/vuegen/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vuegen:0.5.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help            show this help message and exit
+  -c, --config CONFIG   Path to the YAML configuration file.
+  -dir, --directory DIRECTORY
+                        Path to the directory from which the YAML config will
+                        be inferred.
+  -rt, --report_type REPORT_TYPE
+                        Type of the report to generate: streamlit, html, pdf,
+                        docx, odt, revealjs, pptx, or jupyter.
+  -output_dir, --output_directory OUTPUT_DIRECTORY
+                        Path to the output directory for the generated report.
+  -st_autorun, --streamlit_autorun
+                        Automatically run the Streamlit app after report
+                        generation.
+  -qt_checks, --quarto_checks
+                        Check if Quarto is installed and available for report
+                        generation.
+  -mdep, --max_depth MAX_DEPTH
+                        Maximum depth for the recursive search of files in the
+                        input directory. Ignored if a config file is provided.
 ```
 

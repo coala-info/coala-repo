@@ -1,9 +1,9 @@
 # ucsc-paratestjob CWL Generation Report
 
-## ucsc-paratestjob
+## ucsc-paratestjob_paraTestJob
 
 ### Tool Description
-The provided text is a container engine error log and does not contain help information for the tool. paraTestJob is a UCSC utility typically used for testing the Parasol job scheduling system.
+A good test job to run on Parasol. Can be configured to take a long time or crash.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-paratestjob:482--h0b57e2e_2
@@ -18,13 +18,18 @@ The provided text is a container engine error log and does not contain help info
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paratestjob:482--h0b57e2e_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+paraTestJob - version 12.19
+A good test job to run on Parasol.  Can be configured to take a long time or crash.
+usage:
+   paraTestJob count
+Run a relatively time consuming algorithm count times.
+This algorithm takes about 1/10 per second each time.
+options:
+   -crash  Try to write to NULL when done.
+   -err  Return -1 error code when done.
+   -output=file  Make some output in file as well.
+   -heavy=n  Make output heavy: n extra lumberjack lines.
+   -input=file  Make it read in a file too.
+   -sleep=n  Sleep for N seconds.
 ```
 
-
-## Metadata
-- **Skill**: generated

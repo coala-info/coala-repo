@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pepxmltab
-description: The package tries to handle pepXML files generated from different softwares. The output will be a peptide-spectrum-matching tabular file. The package also provide function to filter the PSMs based on FDR.
+description: This tool converts pepXML files into peptide-spectrum-matching tabular files and filters results based on false discovery rate. Use when user asks to convert pepXML files to tabular format, process peptide-spectrum matches, or filter PSMs by FDR.
 homepage: https://bioconductor.org/packages/release/bioc/html/pepXMLTab.html
 ---
+
 
 # bioconductor-pepxmltab
 

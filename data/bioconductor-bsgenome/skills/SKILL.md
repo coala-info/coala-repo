@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome
-description: the package is available on all platforms; click for details.
+description: This package provides infrastructure for memory-efficient access, manipulation, and searching of full genome sequences in Bioconductor. Use when user asks to load genome data packages, extract chromosome sequences, handle assembly masks, or perform genome-wide pattern matching.
 homepage: https://bioconductor.org/packages/release/bioc/html/BSgenome.html
 ---
+
 
 # bioconductor-bsgenome
 

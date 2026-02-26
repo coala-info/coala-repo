@@ -1,8 +1,9 @@
 ---
 name: r-locfdr
-description: Computation of local false discovery rates.</p>
+description: The locfdr package computes the local false discovery rate for a vector of summary statistics to identify significant cases in large datasets. Use when user asks to estimate local fdr, calculate empirical null distributions, or identify interesting cases from z-scores.
 homepage: https://cloud.r-project.org/web/packages/locfdr/index.html
 ---
+
 
 # r-locfdr
 

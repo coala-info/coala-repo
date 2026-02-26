@@ -1,8 +1,9 @@
 ---
 name: r-upsetr
-description: Skill for using the CRAN R package r-upsetr.
+description: This tool creates scalable UpSet plots to visualize complex set intersections as an alternative to Venn diagrams. Use when user asks to visualize intersecting sets, analyze attributes across intersections, or create matrix-based visualizations of set metadata.
 homepage: https://cloud.r-project.org/web/packages/UpSetR/index.html
 ---
+
 
 # r-upsetr
 

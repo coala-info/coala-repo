@@ -1,8 +1,9 @@
 ---
 name: ucsc-matrixtobarchartbed
-description: The `matrixToBarChartBed` utility is part of the UCSC Kent toolkit.
+description: `ucsc-matrixtobarchartbed` converts a quantitative data matrix into a specialized BED format for visualization as a bar chart track on the UCSC Genome Browser. Use when user asks to join a quantitative matrix with a BED file, convert an expression matrix for browser display, create a bar chart track for the UCSC Genome Browser.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-matrixtobarchartbed
 

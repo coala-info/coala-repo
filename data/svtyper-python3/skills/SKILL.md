@@ -1,8 +1,9 @@
 ---
 name: svtyper-python3
-description: SVTyper is a specialized tool for assigning genotypes to structural variant (SV) calls.
+description: SVTyper assigns genotypes to structural variant calls by analyzing paired-end and split-read alignment patterns. Use when user asks to genotype structural variants, refine SV calls from discovery tools, or extract library metrics for genomic alignments.
 homepage: https://github.com/hall-lab/svtyper
 ---
+
 
 # svtyper-python3
 

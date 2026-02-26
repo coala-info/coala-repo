@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metaboannotation
-description: the package is available on all platforms; click for details.
+description: MetaboAnnotation provides infrastructure and functions for annotating metabolomics data by matching experimental features against reference libraries. Use when user asks to annotate metabolomics features, match experimental spectra to reference databases, or perform chemical identity mapping.
 homepage: https://bioconductor.org/packages/release/bioc/html/MetaboAnnotation.html
 ---
+
 
 # bioconductor-metaboannotation
 

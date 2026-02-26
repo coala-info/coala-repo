@@ -1,8 +1,9 @@
 ---
 name: perl-test-nowarnings
-description: `Test::NoWarnings` is a Perl testing utility that captures all warnings emitted during the execution of a test script.
+description: This Perl testing utility captures warnings emitted during test execution and adds a final test case to ensure no unexpected warnings occurred. Use when user asks to validate that a test suite runs without warnings, integrate warning checks into fixed or dynamic test plans, or debug the source of unexpected warnings using stack traces.
 homepage: https://metacpan.org/pod/Test::NoWarnings
 ---
+
 
 # perl-test-nowarnings
 

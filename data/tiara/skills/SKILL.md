@@ -1,8 +1,9 @@
 ---
 name: tiara
-description: Tiara (The Internet Archive Research Assistant) is a Python-based automation tool designed to monitor the Internet Archive for new content.
+description: Tiara monitors the Internet Archive for new content by comparing search results against a local database of previously discovered items. Use when user asks to track new archive uploads, automate keyword searches on the Internet Archive, or generate reports on newly discovered digital resources.
 homepage: https://github.com/savetz/tiara
 ---
+
 
 # tiara
 

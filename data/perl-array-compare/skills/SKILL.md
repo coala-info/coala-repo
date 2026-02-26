@@ -1,8 +1,9 @@
 ---
 name: perl-array-compare
-description: Array::Compare is a Perl extension designed to simplify the process of comparing two arrays.
+description: perl-array-compare is a Perl extension that provides a comparator object for comparing two arrays with configurable constraints. Use when user asks to compare arrays for equality, find indices of differing elements, check if arrays are permutations of each other, or perform comparisons while ignoring specific indices or case sensitivity.
 homepage: http://metacpan.org/pod/Array::Compare
 ---
+
 
 # perl-array-compare
 

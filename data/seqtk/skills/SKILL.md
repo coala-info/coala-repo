@@ -1,8 +1,9 @@
 ---
 name: seqtk
-description: The `seqtk` skill provides a streamlined interface for high-performance sequence manipulation.
+description: Seqtk is a high-performance tool for processing and transforming FASTA and FASTQ sequence files. Use when user asks to convert sequence formats, subsample reads, trim low-quality bases, or extract specific sequences by name or genomic region.
 homepage: https://github.com/lh3/seqtk
 ---
+
 
 # seqtk
 

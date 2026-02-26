@@ -1,8 +1,9 @@
 ---
 name: r-argparser
-description: "Cross-platform command-line argument parser written purely in R     with no external dependencies. It is useful with the Rscript     front-end and facilitates turning an R script into an executable script.</p>"
+description: This tool creates and manages command-line interfaces for R scripts using the argparser package. Use when user asks to turn an R script into an executable command-line tool, define positional arguments or optional flags, and handle parameter parsing with automatic help message generation.
 homepage: https://cloud.r-project.org/web/packages/argparser/index.html
 ---
+
 
 # r-argparser
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirsponger
-description: the package is available on all platforms; click for details.
+description: This R package identifies and analyzes miRNA sponge interaction networks and modules. Use when user asks to identify miRNA sponge interactions, discover miRNA sponge modules, or validate miRNA sponge competitive relationships.
 homepage: https://bioconductor.org/packages/release/bioc/html/miRspongeR.html
 ---
+
 
 # bioconductor-mirsponger
 

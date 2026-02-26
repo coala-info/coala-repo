@@ -1,8 +1,9 @@
 ---
 name: bioconductor-assorthead
-description: the package is available on all platforms; click for details.
+description: This package provides a centralized collection of high-performance C++ header-only libraries for Bioconductor R package development. Use when user asks to integrate standardized C++ dependencies like tatami or Eigen, manage matrix operations, perform single-cell analysis in C++, or avoid manual vendoring of header libraries.
 homepage: https://bioconductor.org/packages/release/bioc/html/assorthead.html
 ---
+
 
 # bioconductor-assorthead
 

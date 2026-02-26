@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isobayes
-description: the package is available on all platforms; click for details.
+description: IsoBayes performs Bayesian inference for protein isoform-level quantification and presence estimation using mass spectrometry data. Use when user asks to estimate protein isoform abundance, integrate transcriptomics data as informative priors, or identify discrepancies between protein and transcript relative abundances.
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoBayes.html
 ---
+
 
 # bioconductor-isobayes
 

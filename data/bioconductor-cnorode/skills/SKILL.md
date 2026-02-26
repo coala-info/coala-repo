@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnorode
-description: the package is available on all platforms; click for details.
+description: CNORode trains logic-based models of signaling networks using ordinary differential equations to represent time-course data. Use when user asks to model signaling network dynamics, convert logic models to ODEs, or calibrate network models using time-series data.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNORode.html
 ---
+
 
 # bioconductor-cnorode
 

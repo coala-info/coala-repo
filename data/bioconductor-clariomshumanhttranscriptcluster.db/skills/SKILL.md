@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clariomshumanhttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides annotation mappings between Clariom S Human HT Transcript Cluster probe identifiers and various biological identifiers. Use when user asks to map probe IDs to gene symbols or Entrez IDs, retrieve functional annotations like GO terms and KEGG pathways, or access chromosomal locations for human transcript clusters.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomshumanhttranscriptcluster.db.html
 ---
+
 
 # bioconductor-clariomshumanhttranscriptcluster.db
 

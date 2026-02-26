@@ -1,8 +1,9 @@
 ---
 name: backports.unittest_mock
-description: The backports.unittest_mock package is a compatibility layer designed for legacy Python environments where the `unittest.mock` module is not available in the standard library (Python 3.2 and below).
+description: This package provides a compatibility layer that installs the mock library into the unittest namespace for legacy Python environments. Use when user asks to provide unittest.mock support for Python versions 3.2 and below, write forward-compatible test code, or integrate mock backports with pytest.
 homepage: https://github.com/jaraco/backports.unittest_mock
 ---
+
 
 # backports.unittest_mock
 

@@ -1,8 +1,9 @@
 ---
 name: hamronization
-description: The `hamronization` tool is a specialized parser designed to unify the outputs of 17 different antimicrobial resistance gene detection tools into a single, standardized data structure.
+description: The hamronization tool unifies the outputs of various antimicrobial resistance gene detection tools into a single, standardized data structure. Use when user asks to standardize AMR detection reports, combine results from different algorithms into a single table, or generate interactive summary dashboards.
 homepage: https://github.com/pha4ge/hAMRonization
 ---
+
 
 # hamronization
 
